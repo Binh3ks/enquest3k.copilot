@@ -1,5 +1,5 @@
 {
-  "text": "Hey there kids. Everybody listen carefully and repeat after me. Here we go! Duck. Duck. Cow. Cow. Pig. Pig. Horse. Horse. Chicken. Chicken. Dog. Dog. Cat. Cat. Rabbit. Rabbit. Sheep. Sheep. Goat. Goat. Well done, kids. That was great! Now it's your turn. In a big voice, repeat after me. Here we go! Duck. Cow. Pig. Horse. Chicken. Dog. Cat. Rabbit. Sheep. Goat. That was great, kids! Good job!",
+  "text": "Hey there, kids. Everybody listen carefully and repeat after me. Here we go. Duck. Duck. Cow. Cow. Pig. Pig. Horse. Horse. Chicken. Chicken. Dog. Dog. Cat. Cat. Rabbit. Rabbit. Sheep. Sheep. Goat. Goat. Well done, kids. That was great. Now it's your turn. In a big voice, repeat after me. Here we go. Duck. Cow. Pig. Horse. Chicken. Dog. Cat. Rabbit. Sheep. Goat. That was great kids. Good job.",
   "segments": [
     {
       "id": 1,
@@ -121,43 +121,23 @@
     },
     {
       "id": 5,
-      "text": "Duck.",
+      "text": "Duck. Duck. Cow.",
       "speaker": "Speaker0",
       "start": 18.12,
-      "duration": 0.5,
+      "duration": 6.74,
       "words": [
         {
           "word": "duck",
           "start": 18.12,
           "end": 18.62,
           "confidence": 0.912
-        }
-      ],
-      "confidence": 0.912
-    },
-    {
-      "id": 6,
-      "text": "Duck.",
-      "speaker": "Speaker0",
-      "start": 21.24,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "duck",
           "start": 21.24,
           "end": 21.74,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 7,
-      "text": "Cow.",
-      "speaker": "Speaker0",
-      "start": 24.36,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "cow",
           "start": 24.36,
@@ -165,47 +145,27 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.967
     },
     {
-      "id": 8,
-      "text": "Cow.",
+      "id": 6,
+      "text": "Cow. Pig. Pig.",
       "speaker": "Speaker0",
       "start": 27.67,
-      "duration": 0.5,
+      "duration": 6.82,
       "words": [
         {
           "word": "cow",
           "start": 27.67,
           "end": 28.17,
           "confidence": 0.994
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 9,
-      "text": "Pig.",
-      "speaker": "Speaker0",
-      "start": 30.95,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "pig",
           "start": 30.95,
           "end": 31.45,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 10,
-      "text": "Pig.",
-      "speaker": "Speaker0",
-      "start": 33.99,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "pig",
           "start": 33.99,
@@ -213,47 +173,27 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.996
     },
     {
-      "id": 11,
-      "text": "Horse.",
+      "id": 7,
+      "text": "Horse. Horse. Chicken.",
       "speaker": "Speaker0",
       "start": 37.19,
-      "duration": 0.5,
+      "duration": 7.11,
       "words": [
         {
           "word": "horse",
           "start": 37.19,
           "end": 37.69,
           "confidence": 0.917
-        }
-      ],
-      "confidence": 0.917
-    },
-    {
-      "id": 12,
-      "text": "Horse.",
-      "speaker": "Speaker0",
-      "start": 40.44,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "horse",
           "start": 40.44,
           "end": 40.94,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.993
-    },
-    {
-      "id": 13,
-      "text": "Chicken.",
-      "speaker": "Speaker0",
-      "start": 43.8,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "chicken",
           "start": 43.8,
@@ -261,47 +201,27 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.967
     },
     {
-      "id": 14,
-      "text": "Chicken.",
+      "id": 8,
+      "text": "Chicken. Dog. Dog.",
       "speaker": "Speaker0",
       "start": 46.76,
-      "duration": 0.5,
+      "duration": 6.97,
       "words": [
         {
           "word": "chicken",
           "start": 46.76,
           "end": 47.26,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 15,
-      "text": "Dog.",
-      "speaker": "Speaker0",
-      "start": 49.8,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "dog",
           "start": 49.8,
           "end": 50.3,
           "confidence": 0.996
-        }
-      ],
-      "confidence": 0.996
-    },
-    {
-      "id": 16,
-      "text": "Dog.",
-      "speaker": "Speaker0",
-      "start": 53.23,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "dog",
           "start": 53.23,
@@ -309,47 +229,27 @@
           "confidence": 0.979
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.991
     },
     {
-      "id": 17,
-      "text": "Cat.",
+      "id": 9,
+      "text": "Cat. Cat. Rabbit.",
       "speaker": "Speaker0",
       "start": 56.35,
-      "duration": 0.5,
+      "duration": 6.98,
       "words": [
         {
           "word": "cat",
           "start": 56.35,
           "end": 56.85,
           "confidence": 0.986
-        }
-      ],
-      "confidence": 0.986
-    },
-    {
-      "id": 18,
-      "text": "Cat.",
-      "speaker": "Speaker0",
-      "start": 59.71,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "cat",
           "start": 59.71,
           "end": 60.21,
           "confidence": 0.99
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 19,
-      "text": "Rabbit.",
-      "speaker": "Speaker0",
-      "start": 62.83,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "rabbit",
           "start": 62.83,
@@ -357,47 +257,27 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.989
     },
     {
-      "id": 20,
-      "text": "Rabbit.",
+      "id": 10,
+      "text": "Rabbit. Sheep. Sheep.",
       "speaker": "Speaker0",
       "start": 66.03,
-      "duration": 0.5,
+      "duration": 6.89,
       "words": [
         {
           "word": "rabbit",
           "start": 66.03,
           "end": 66.53,
           "confidence": 0.994
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 21,
-      "text": "Sheep.",
-      "speaker": "Speaker0",
-      "start": 69.22,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sheep",
           "start": 69.22,
           "end": 69.72,
           "confidence": 0.748
-        }
-      ],
-      "confidence": 0.748
-    },
-    {
-      "id": 22,
-      "text": "Sheep.",
-      "speaker": "Speaker0",
-      "start": 72.42,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sheep",
           "start": 72.42,
@@ -405,47 +285,27 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.912
     },
     {
-      "id": 23,
-      "text": "Goat.",
+      "id": 11,
+      "text": "Goat. Goat. Well done, kids.",
       "speaker": "Speaker0",
       "start": 75.7,
-      "duration": 0.5,
+      "duration": 8.53,
       "words": [
         {
           "word": "goat",
           "start": 75.7,
           "end": 76.2,
           "confidence": 0.788
-        }
-      ],
-      "confidence": 0.788
-    },
-    {
-      "id": 24,
-      "text": "Goat.",
-      "speaker": "Speaker0",
-      "start": 78.83,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "goat",
           "start": 78.83,
           "end": 79.33,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 25,
-      "text": "Well done, kids.",
-      "speaker": "Speaker0",
-      "start": 83.09,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "well",
           "start": 83.09,
@@ -465,10 +325,10 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.91
+      "confidence": 0.898
     },
     {
-      "id": 26,
+      "id": 12,
       "text": "That was great.",
       "speaker": "Speaker0",
       "start": 85.01,
@@ -496,7 +356,7 @@
       "confidence": 0.999
     },
     {
-      "id": 27,
+      "id": 13,
       "text": "Now it's your turn.",
       "speaker": "Speaker0",
       "start": 86.93,
@@ -530,7 +390,7 @@
       "confidence": 0.961
     },
     {
-      "id": 28,
+      "id": 14,
       "text": "In a big voice,",
       "speaker": "Speaker0",
       "start": 88.85,
@@ -564,7 +424,7 @@
       "confidence": 0.993
     },
     {
-      "id": 29,
+      "id": 15,
       "text": "repeat after me.",
       "speaker": "Speaker0",
       "start": 90.69,
@@ -592,7 +452,7 @@
       "confidence": 0.999
     },
     {
-      "id": 30,
+      "id": 16,
       "text": "Here we go.",
       "speaker": "Speaker0",
       "start": 93.02,
@@ -620,44 +480,24 @@
       "confidence": 0.992
     },
     {
-      "id": 31,
-      "text": "Duck.",
+      "id": 17,
+      "text": "Duck. Cow. Pig.",
       "speaker": "Speaker0",
       "start": 94.85,
-      "duration": 0.5,
+      "duration": 13.35,
       "words": [
         {
           "word": "duck",
           "start": 94.85,
           "end": 95.35,
           "confidence": 0.818
-        }
-      ],
-      "confidence": 0.818
-    },
-    {
-      "id": 32,
-      "text": "Cow.",
-      "speaker": "Speaker0",
-      "start": 101.33,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "cow",
           "start": 101.33,
           "end": 101.83,
           "confidence": 0.983
-        }
-      ],
-      "confidence": 0.983
-    },
-    {
-      "id": 33,
-      "text": "Pig.",
-      "speaker": "Speaker0",
-      "start": 107.7,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "pig",
           "start": 107.7,
@@ -665,47 +505,27 @@
           "confidence": 0.923
         }
       ],
-      "confidence": 0.923
+      "confidence": 0.908
     },
     {
-      "id": 34,
-      "text": "Horse.",
+      "id": 18,
+      "text": "Horse. Chicken. Dog.",
       "speaker": "Speaker0",
       "start": 113.94,
-      "duration": 0.5,
+      "duration": 13.4,
       "words": [
         {
           "word": "horse",
           "start": 113.94,
           "end": 114.44,
           "confidence": 0.936
-        }
-      ],
-      "confidence": 0.936
-    },
-    {
-      "id": 35,
-      "text": "Chicken.",
-      "speaker": "Speaker0",
-      "start": 120.37,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "chicken",
           "start": 120.37,
           "end": 120.87,
           "confidence": 0.648
-        }
-      ],
-      "confidence": 0.648
-    },
-    {
-      "id": 36,
-      "text": "Dog.",
-      "speaker": "Speaker0",
-      "start": 126.84,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "dog",
           "start": 126.84,
@@ -713,47 +533,27 @@
           "confidence": 0.964
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.849
     },
     {
-      "id": 37,
-      "text": "Cat.",
+      "id": 19,
+      "text": "Cat. Rabbit. Sheep.",
       "speaker": "Speaker0",
       "start": 133.34,
-      "duration": 0.5,
+      "duration": 13.24,
       "words": [
         {
           "word": "cat",
           "start": 133.34,
           "end": 133.84,
           "confidence": 0.539
-        }
-      ],
-      "confidence": 0.539
-    },
-    {
-      "id": 38,
-      "text": "Rabbit.",
-      "speaker": "Speaker0",
-      "start": 139.58,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "rabbit",
           "start": 139.58,
           "end": 140.08,
           "confidence": 0.987
-        }
-      ],
-      "confidence": 0.987
-    },
-    {
-      "id": 39,
-      "text": "Sheep.",
-      "speaker": "Speaker0",
-      "start": 146.08,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sheep",
           "start": 146.08,
@@ -761,31 +561,21 @@
           "confidence": 0.917
         }
       ],
-      "confidence": 0.917
+      "confidence": 0.814
     },
     {
-      "id": 40,
-      "text": "Goat.",
+      "id": 20,
+      "text": "Goat. That was great kids.",
       "speaker": "Speaker0",
       "start": 152.41,
-      "duration": 0.5,
+      "duration": 8.76,
       "words": [
         {
           "word": "goat",
           "start": 152.41,
           "end": 152.91,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 41,
-      "text": "That was great kids.",
-      "speaker": "Speaker0",
-      "start": 159.79,
-      "duration": 1.38,
-      "words": [
+        },
         {
           "word": "that",
           "start": 159.79,
@@ -811,10 +601,10 @@
           "confidence": 0.733
         }
       ],
-      "confidence": 0.865
+      "confidence": 0.931
     },
     {
-      "id": 42,
+      "id": 21,
       "text": "Good job.",
       "speaker": "Speaker0",
       "start": 162.99,
@@ -848,5 +638,13 @@
     "dgUtteranceCount": 42,
     "matchedSegments": 42,
     "totalDuration": 163.73
+  },
+  "repairedAt": "2026-07-23T04:33:44.464532Z",
+  "repairInfo": {
+    "beforeSegments": 42,
+    "afterSegments": 21,
+    "beforeAvgWords": 1.6,
+    "afterAvgWords": 3.3,
+    "merged": 21
   }
 }

@@ -1,5 +1,5 @@
 {
-  "text": "Hey there kids! Listen carefully and repeat. The moon. The moon. The sun. The sun. Star. Star. Tree. Tree. Mountain. Mountain. River. River. The sea. The sea. Rainbow. Rainbow. The sky. The sky. Flower. Flower. That was great kids, let's do it one more time. In a big voice, repeat after me. Here we go. The moon. The sun. Star. Tree. Mountain. River. The sea. Rainbow. The sky. Flower. Well done kids, that was great. See you!",
+  "text": "Hey there, kids. Listen carefully and repeat. The moon. The moon. The sun. The sun. Star, star, tree, tree, mountain, mountain, river, river, the sea, the sea, rainbow, rainbow, the sky, the sky, flower, Flower. That was great, kids. Let's do it one more time. In a big voice, repeat after me. Here we go. The moon, the sun, star, tree, Mountain. River. The sea. Rainbow. The sky. Flower. Well done kids! That was great! See you!",
   "segments": [
     {
       "id": 1,
@@ -31,10 +31,10 @@
     },
     {
       "id": 2,
-      "text": "Listen carefully",
+      "text": "Listen carefully and repeat.",
       "speaker": "Speaker0",
       "start": 8.0,
-      "duration": 0.98,
+      "duration": 2.82,
       "words": [
         {
           "word": "listen",
@@ -47,17 +47,7 @@
           "start": 8.48,
           "end": 8.98,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 3,
-      "text": "and repeat.",
-      "speaker": "Speaker0",
-      "start": 9.92,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "and",
           "start": 9.92,
@@ -71,14 +61,14 @@
           "confidence": 0.827
         }
       ],
-      "confidence": 0.85
+      "confidence": 0.925
     },
     {
-      "id": 4,
-      "text": "The moon.",
+      "id": 3,
+      "text": "The moon. The moon.",
       "speaker": "Speaker0",
       "start": 12.46,
-      "duration": 0.91,
+      "duration": 4.74,
       "words": [
         {
           "word": "the",
@@ -91,17 +81,7 @@
           "start": 12.87,
           "end": 13.37,
           "confidence": 0.776
-        }
-      ],
-      "confidence": 0.864
-    },
-    {
-      "id": 5,
-      "text": "The moon.",
-      "speaker": "Speaker0",
-      "start": 16.39,
-      "duration": 0.81,
-      "words": [
+        },
         {
           "word": "the",
           "start": 16.39,
@@ -115,14 +95,14 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.928
     },
     {
-      "id": 6,
-      "text": "The sun.",
+      "id": 4,
+      "text": "The sun. The sun.",
       "speaker": "Speaker0",
       "start": 20.39,
-      "duration": 0.81,
+      "duration": 4.81,
       "words": [
         {
           "word": "the",
@@ -135,17 +115,7 @@
           "start": 20.7,
           "end": 21.2,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 7,
-      "text": "The sun.",
-      "speaker": "Speaker0",
-      "start": 24.46,
-      "duration": 0.74,
-      "words": [
+        },
         {
           "word": "the",
           "start": 24.46,
@@ -159,31 +129,21 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.995
     },
     {
-      "id": 8,
-      "text": "Star,",
+      "id": 5,
+      "text": "Star, star, tree, tree, mountain, mountain, river, river, the sea, the sea, rainbow, rainbow, the sky, the sky, flower, Flower.",
       "speaker": "Speaker0",
       "start": 32.25,
-      "duration": 0.5,
+      "duration": 56.99,
       "words": [
         {
           "word": "star",
           "start": 32.25,
           "end": 32.75,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 9,
-      "text": "star, tree,",
-      "speaker": "Speaker0",
-      "start": 36.25,
-      "duration": 0.98,
-      "words": [
+        },
         {
           "word": "star",
           "start": 36.25,
@@ -195,129 +155,49 @@
           "start": 36.73,
           "end": 37.23,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 10,
-      "text": "tree,",
-      "speaker": "Speaker0",
-      "start": 40.57,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tree",
           "start": 40.57,
           "end": 41.07,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 11,
-      "text": "mountain,",
-      "speaker": "Speaker0",
-      "start": 44.91,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "mountain",
           "start": 44.91,
           "end": 45.41,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 12,
-      "text": "mountain,",
-      "speaker": "Speaker0",
-      "start": 48.66,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "mountain",
           "start": 48.66,
           "end": 49.16,
           "confidence": 0.964
-        }
-      ],
-      "confidence": 0.964
-    },
-    {
-      "id": 13,
-      "text": "river,",
-      "speaker": "Speaker0",
-      "start": 52.74,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "river",
           "start": 52.74,
           "end": 53.24,
           "confidence": 0.98
-        }
-      ],
-      "confidence": 0.98
-    },
-    {
-      "id": 14,
-      "text": "river,",
-      "speaker": "Speaker0",
-      "start": 56.66,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "river",
           "start": 56.66,
           "end": 57.16,
           "confidence": 0.923
-        }
-      ],
-      "confidence": 0.923
-    },
-    {
-      "id": 15,
-      "text": "the",
-      "speaker": "Speaker0",
-      "start": 59.68,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "the",
           "start": 59.68,
           "end": 60.18,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 16,
-      "text": "sea,",
-      "speaker": "Speaker0",
-      "start": 60.8,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sea",
           "start": 60.8,
           "end": 61.3,
           "confidence": 0.961
-        }
-      ],
-      "confidence": 0.961
-    },
-    {
-      "id": 17,
-      "text": "the sea,",
-      "speaker": "Speaker0",
-      "start": 64.4,
-      "duration": 0.74,
-      "words": [
+        },
         {
           "word": "the",
           "start": 64.4,
@@ -329,49 +209,19 @@
           "start": 64.64,
           "end": 65.14,
           "confidence": 0.969
-        }
-      ],
-      "confidence": 0.978
-    },
-    {
-      "id": 18,
-      "text": "rainbow,",
-      "speaker": "Speaker0",
-      "start": 68.72,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "rainbow",
           "start": 68.72,
           "end": 69.22,
           "confidence": 0.984
-        }
-      ],
-      "confidence": 0.984
-    },
-    {
-      "id": 19,
-      "text": "rainbow,",
-      "speaker": "Speaker0",
-      "start": 72.72,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "rainbow",
           "start": 72.72,
           "end": 73.22,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 20,
-      "text": "the sky,",
-      "speaker": "Speaker0",
-      "start": 76.66,
-      "duration": 0.57,
-      "words": [
+        },
         {
           "word": "the",
           "start": 76.66,
@@ -383,17 +233,7 @@
           "start": 76.73,
           "end": 77.23,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.988
-    },
-    {
-      "id": 21,
-      "text": "the sky,",
-      "speaker": "Speaker0",
-      "start": 80.49,
-      "duration": 0.67,
-      "words": [
+        },
         {
           "word": "the",
           "start": 80.49,
@@ -405,33 +245,13 @@
           "start": 80.66,
           "end": 81.16,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.996
-    },
-    {
-      "id": 22,
-      "text": "flower,",
-      "speaker": "Speaker0",
-      "start": 84.73,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "flower",
           "start": 84.73,
           "end": 85.23,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 23,
-      "text": "Flower.",
-      "speaker": "Speaker0",
-      "start": 88.74,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "flower",
           "start": 88.74,
@@ -439,10 +259,10 @@
           "confidence": 0.983
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.982
     },
     {
-      "id": 24,
+      "id": 6,
       "text": "That was great, kids.",
       "speaker": "Speaker0",
       "start": 93.78,
@@ -476,7 +296,7 @@
       "confidence": 0.913
     },
     {
-      "id": 25,
+      "id": 7,
       "text": "Let's do it one more time.",
       "speaker": "Speaker0",
       "start": 96.5,
@@ -522,11 +342,11 @@
       "confidence": 0.983
     },
     {
-      "id": 26,
-      "text": "In a big",
+      "id": 8,
+      "text": "In a big voice, repeat after me.",
       "speaker": "Speaker0",
       "start": 99.58,
-      "duration": 0.83,
+      "duration": 3.95,
       "words": [
         {
           "word": "in",
@@ -545,49 +365,19 @@
           "start": 99.91,
           "end": 100.41,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 27,
-      "text": "voice,",
-      "speaker": "Speaker0",
-      "start": 100.78,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "voice",
           "start": 100.78,
           "end": 101.28,
           "confidence": 0.894
-        }
-      ],
-      "confidence": 0.894
-    },
-    {
-      "id": 28,
-      "text": "repeat",
-      "speaker": "Speaker0",
-      "start": 101.67,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "repeat",
           "start": 101.67,
           "end": 102.17,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 29,
-      "text": "after me.",
-      "speaker": "Speaker0",
-      "start": 102.62,
-      "duration": 0.91,
-      "words": [
+        },
         {
           "word": "after",
           "start": 102.62,
@@ -601,10 +391,10 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.972
     },
     {
-      "id": 30,
+      "id": 9,
       "text": "Here we go.",
       "speaker": "Speaker0",
       "start": 104.62,
@@ -632,11 +422,11 @@
       "confidence": 0.992
     },
     {
-      "id": 31,
-      "text": "The moon,",
+      "id": 10,
+      "text": "The moon, the sun, star, tree, Mountain.",
       "speaker": "Speaker0",
       "start": 108.39,
-      "duration": 0.81,
+      "duration": 39.44,
       "words": [
         {
           "word": "the",
@@ -649,17 +439,7 @@
           "start": 108.7,
           "end": 109.2,
           "confidence": 0.872
-        }
-      ],
-      "confidence": 0.824
-    },
-    {
-      "id": 32,
-      "text": "the sun,",
-      "speaker": "Speaker0",
-      "start": 116.45,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "the",
           "start": 116.45,
@@ -671,49 +451,19 @@
           "start": 116.77,
           "end": 117.27,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.89
-    },
-    {
-      "id": 33,
-      "text": "star,",
-      "speaker": "Speaker0",
-      "start": 124.61,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "star",
           "start": 124.61,
           "end": 125.11,
           "confidence": 0.99
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 34,
-      "text": "tree,",
-      "speaker": "Speaker0",
-      "start": 132.57,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tree",
           "start": 132.57,
           "end": 133.07,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 35,
-      "text": "Mountain.",
-      "speaker": "Speaker0",
-      "start": 147.33,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "mountain",
           "start": 147.33,
@@ -721,47 +471,27 @@
           "confidence": 0.84
         }
       ],
-      "confidence": 0.84
+      "confidence": 0.909
     },
     {
-      "id": 36,
-      "text": "River.",
+      "id": 11,
+      "text": "River. The sea.",
       "speaker": "Speaker0",
       "start": 148.61,
-      "duration": 0.5,
+      "duration": 8.63,
       "words": [
         {
           "word": "river",
           "start": 148.61,
           "end": 149.11,
           "confidence": 0.937
-        }
-      ],
-      "confidence": 0.937
-    },
-    {
-      "id": 37,
-      "text": "The",
-      "speaker": "Speaker0",
-      "start": 155.69,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "the",
           "start": 155.69,
           "end": 156.19,
           "confidence": 0.615
-        }
-      ],
-      "confidence": 0.615
-    },
-    {
-      "id": 38,
-      "text": "sea.",
-      "speaker": "Speaker0",
-      "start": 156.74,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sea",
           "start": 156.74,
@@ -769,47 +499,27 @@
           "confidence": 0.766
         }
       ],
-      "confidence": 0.766
+      "confidence": 0.773
     },
     {
-      "id": 39,
-      "text": "Rainbow.",
+      "id": 12,
+      "text": "Rainbow. The sky.",
       "speaker": "Speaker0",
       "start": 164.66,
-      "duration": 0.5,
+      "duration": 8.63,
       "words": [
         {
           "word": "rainbow",
           "start": 164.66,
           "end": 165.16,
           "confidence": 0.963
-        }
-      ],
-      "confidence": 0.963
-    },
-    {
-      "id": 40,
-      "text": "The",
-      "speaker": "Speaker0",
-      "start": 171.27,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "the",
           "start": 171.27,
           "end": 171.77,
           "confidence": 0.697
-        }
-      ],
-      "confidence": 0.697
-    },
-    {
-      "id": 41,
-      "text": "sky.",
-      "speaker": "Speaker0",
-      "start": 172.79,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sky",
           "start": 172.79,
@@ -817,31 +527,21 @@
           "confidence": 0.851
         }
       ],
-      "confidence": 0.851
+      "confidence": 0.837
     },
     {
-      "id": 42,
-      "text": "Flower.",
+      "id": 13,
+      "text": "Flower. Well done kids!",
       "speaker": "Speaker0",
       "start": 180.63,
-      "duration": 0.5,
+      "duration": 9.91,
       "words": [
         {
           "word": "flower",
           "start": 180.63,
           "end": 181.13,
           "confidence": 0.987
-        }
-      ],
-      "confidence": 0.987
-    },
-    {
-      "id": 43,
-      "text": "Well done kids!",
-      "speaker": "Speaker0",
-      "start": 189.41,
-      "duration": 1.13,
-      "words": [
+        },
         {
           "word": "well",
           "start": 189.41,
@@ -861,10 +561,10 @@
           "confidence": 0.557
         }
       ],
-      "confidence": 0.805
+      "confidence": 0.896
     },
     {
-      "id": 44,
+      "id": 14,
       "text": "That was great!",
       "speaker": "Speaker0",
       "start": 191.56,
@@ -892,7 +592,7 @@
       "confidence": 0.922
     },
     {
-      "id": 45,
+      "id": 15,
       "text": "See you!",
       "speaker": "Speaker0",
       "start": 193.64,
@@ -926,5 +626,13 @@
     "dgUtteranceCount": 45,
     "matchedSegments": 45,
     "totalDuration": 194.38
+  },
+  "repairedAt": "2026-07-23T04:33:44.516055Z",
+  "repairInfo": {
+    "beforeSegments": 45,
+    "afterSegments": 15,
+    "beforeAvgWords": 1.7,
+    "afterAvgWords": 5.1,
+    "merged": 30
   }
 }

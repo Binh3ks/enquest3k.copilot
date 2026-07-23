@@ -1,5 +1,5 @@
 {
-  "text": "Uh. What's wrong with you john you look sick. I don't know what is wrong with me. Don't you have a cold. What is your symptom. Um. I was shivering and it was cold last. Night. I think i have a headache too. I also snuffle and cough too. And i'm so tired. Oh my goodness. I'm pretty sure you have a cold. What. It's not even winter yet and the weather. Is warm too. John listen. It's warm afternoon. But what about in morning. Isn't it cold. It's easy to catch a cold during the. Change of seasons. I did not know that. I thought i only catch a cold during the. Winter. You should drink lots of warm water and. Eat fruits for vitamins. If you are not cured you need to go to a. Hospital. Yeah i should. When is the science homework due. Ouch. What's. Wrong it hurts so much. I'm scared that this could be a serious. One. Where. Did you get hurt. Look at. This john i have a bandage. Don't be a crybaby. A chill. Oops what's wrong with you. Oh no. I think i caught a cold from you. At 2. Let's role play. So. Wow. So. Yes. Woof. Oh wow. Wow.",
+  "text": "What's wrong with you, John? You look sick. I don't know what is wrong with me. Don't you have a cold? What is your symptom? I was shivering and it was cold last night. I think I have a headache too. I also snuffle and cough too. And I'm so tired. Oh, my goodness. I'm pretty sure you have a cold. What? It's not even winter yet, and the weather is warm, too. John, listen. It's warm in afternoon. But what about in morning? Isn't it cold? It's easy to catch a cold during the change of seasons. I did not know that. I thought I only catch a cold during the winter. You should drink lots of warm water and eat foods for vitamins. If you are not cured, you need to go to a hospital. Yeah, I should. When is the science homework due? Ouch. What's wrong? It hurts so much. I'm scared that this could be a serious one. Where? Did you get hurt? Look at this. John, I have a bandage. Don't be a crybaby. Achoo. Oops. What's wrong with you? Oh, no. I think I caught a cold from you. Achoo. Let's role play.",
   "segments": [
     {
       "id": 1,
@@ -469,27 +469,17 @@
     },
     {
       "id": 11,
-      "text": "What?",
+      "text": "What? It's not even winter yet, and the weather is warm, too.",
       "speaker": "Speaker1",
       "start": 58.98,
-      "duration": 0.5,
+      "duration": 5.06,
       "words": [
         {
           "word": "what",
           "start": 58.98,
           "end": 59.48,
           "confidence": 0.872
-        }
-      ],
-      "confidence": 0.872
-    },
-    {
-      "id": 12,
-      "text": "It's not even winter yet, and the weather is warm, too.",
-      "speaker": "Speaker1",
-      "start": 60.02,
-      "duration": 4.02,
-      "words": [
+        },
         {
           "word": "it's",
           "start": 60.02,
@@ -557,14 +547,14 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.968
+      "confidence": 0.92
     },
     {
-      "id": 13,
-      "text": "John, listen.",
+      "id": 12,
+      "text": "John, listen. It's warm in afternoon.",
       "speaker": "Speaker0",
       "start": 65.72,
-      "duration": 0.9,
+      "duration": 2.83,
       "words": [
         {
           "word": "john",
@@ -577,17 +567,7 @@
           "start": 66.12,
           "end": 66.62,
           "confidence": 0.94
-        }
-      ],
-      "confidence": 0.952
-    },
-    {
-      "id": 14,
-      "text": "It's warm in afternoon.",
-      "speaker": "Speaker0",
-      "start": 67.16,
-      "duration": 1.39,
-      "words": [
+        },
         {
           "word": "it's",
           "start": 67.16,
@@ -613,10 +593,10 @@
           "confidence": 0.921
         }
       ],
-      "confidence": 0.855
+      "confidence": 0.903
     },
     {
-      "id": 15,
+      "id": 13,
       "text": "But what about in morning?",
       "speaker": "Speaker0",
       "start": 70.28,
@@ -656,7 +636,7 @@
       "confidence": 0.982
     },
     {
-      "id": 16,
+      "id": 14,
       "text": "Isn't it cold?",
       "speaker": "Speaker0",
       "start": 73.0,
@@ -684,7 +664,7 @@
       "confidence": 0.999
     },
     {
-      "id": 17,
+      "id": 15,
       "text": "It's easy to catch a cold during the change of seasons.",
       "speaker": "Speaker0",
       "start": 75.33,
@@ -760,7 +740,7 @@
       "confidence": 0.997
     },
     {
-      "id": 18,
+      "id": 16,
       "text": "I did not know that.",
       "speaker": "Speaker1",
       "start": 80.27,
@@ -800,7 +780,7 @@
       "confidence": 0.972
     },
     {
-      "id": 19,
+      "id": 17,
       "text": "I thought I only catch a cold during the winter.",
       "speaker": "Speaker1",
       "start": 82.27,
@@ -870,7 +850,7 @@
       "confidence": 0.995
     },
     {
-      "id": 20,
+      "id": 18,
       "text": "You should drink lots of warm water and eat foods for vitamins.",
       "speaker": "Speaker0",
       "start": 86.67,
@@ -952,7 +932,7 @@
       "confidence": 0.985
     },
     {
-      "id": 21,
+      "id": 19,
       "text": "If you are not cured,",
       "speaker": "Speaker0",
       "start": 92.03,
@@ -992,7 +972,7 @@
       "confidence": 0.986
     },
     {
-      "id": 22,
+      "id": 20,
       "text": "you need to go to a hospital.",
       "speaker": "Speaker0",
       "start": 93.79,
@@ -1044,7 +1024,7 @@
       "confidence": 0.997
     },
     {
-      "id": 23,
+      "id": 21,
       "text": "Yeah, I should.",
       "speaker": "Speaker1",
       "start": 97.12,
@@ -1072,7 +1052,7 @@
       "confidence": 0.993
     },
     {
-      "id": 24,
+      "id": 22,
       "text": "When is the science homework due?",
       "speaker": "Speaker1",
       "start": 103.12,
@@ -1118,28 +1098,18 @@
       "confidence": 0.985
     },
     {
-      "id": 25,
-      "text": "Ouch.",
+      "id": 23,
+      "text": "Ouch. What's wrong?",
       "speaker": "Speaker1",
       "start": 106.65,
-      "duration": 0.5,
+      "duration": 6.1,
       "words": [
         {
           "word": "ouch",
           "start": 106.65,
           "end": 107.15,
           "confidence": 0.911
-        }
-      ],
-      "confidence": 0.911
-    },
-    {
-      "id": 26,
-      "text": "What's wrong?",
-      "speaker": "Speaker1",
-      "start": 111.77,
-      "duration": 0.98,
-      "words": [
+        },
         {
           "word": "what's",
           "start": 111.77,
@@ -1153,10 +1123,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.929
     },
     {
-      "id": 27,
+      "id": 24,
       "text": "It hurts so much.",
       "speaker": "Speaker1",
       "start": 114.09,
@@ -1190,7 +1160,7 @@
       "confidence": 0.893
     },
     {
-      "id": 28,
+      "id": 25,
       "text": "I'm scared that this could be a serious one.",
       "speaker": "Speaker1",
       "start": 116.89,
@@ -1254,28 +1224,18 @@
       "confidence": 0.996
     },
     {
-      "id": 29,
-      "text": "Where?",
+      "id": 26,
+      "text": "Where? Did you get hurt?",
       "speaker": "Speaker0",
       "start": 120.89,
-      "duration": 0.5,
+      "duration": 2.58,
       "words": [
         {
           "word": "where",
           "start": 120.89,
           "end": 121.39,
           "confidence": 0.976
-        }
-      ],
-      "confidence": 0.976
-    },
-    {
-      "id": 30,
-      "text": "Did you get hurt?",
-      "speaker": "Speaker0",
-      "start": 122.25,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "did",
           "start": 122.25,
@@ -1301,10 +1261,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.988
     },
     {
-      "id": 31,
+      "id": 27,
       "text": "Look at this.",
       "speaker": "Speaker1",
       "start": 125.17,
@@ -1332,7 +1292,7 @@
       "confidence": 0.997
     },
     {
-      "id": 32,
+      "id": 28,
       "text": "John, I have a bandage.",
       "speaker": "Speaker0",
       "start": 127.97,
@@ -1372,7 +1332,7 @@
       "confidence": 0.965
     },
     {
-      "id": 33,
+      "id": 29,
       "text": "Don't be a crybaby.",
       "speaker": "Speaker0",
       "start": 131.01,
@@ -1406,7 +1366,7 @@
       "confidence": 0.985
     },
     {
-      "id": 34,
+      "id": 30,
       "text": "Achoo.",
       "speaker": "Speaker0",
       "start": 136.13,
@@ -1422,28 +1382,18 @@
       "confidence": 0.952
     },
     {
-      "id": 35,
-      "text": "Oops.",
+      "id": 31,
+      "text": "Oops. What's wrong with you?",
       "speaker": "Speaker1",
       "start": 139.07,
-      "duration": 0.5,
+      "duration": 2.1,
       "words": [
         {
           "word": "oops",
           "start": 139.07,
           "end": 139.57,
           "confidence": 0.768
-        }
-      ],
-      "confidence": 0.768
-    },
-    {
-      "id": 36,
-      "text": "What's wrong with you?",
-      "speaker": "Speaker1",
-      "start": 139.87,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "what's",
           "start": 139.87,
@@ -1469,14 +1419,14 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.883
     },
     {
-      "id": 37,
-      "text": "Oh, no.",
+      "id": 32,
+      "text": "Oh, no. I think I caught a cold from you.",
       "speaker": "Speaker0",
       "start": 147.07,
-      "duration": 0.82,
+      "duration": 3.46,
       "words": [
         {
           "word": "oh",
@@ -1489,17 +1439,7 @@
           "start": 147.39,
           "end": 147.89,
           "confidence": 0.989
-        }
-      ],
-      "confidence": 0.826
-    },
-    {
-      "id": 38,
-      "text": "I think I caught a cold from you.",
-      "speaker": "Speaker0",
-      "start": 148.35,
-      "duration": 2.18,
-      "words": [
+        },
         {
           "word": "i",
           "start": 148.35,
@@ -1549,31 +1489,21 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.911
     },
     {
-      "id": 39,
-      "text": "Achoo.",
+      "id": 33,
+      "text": "Achoo. Let's role play.",
       "speaker": "Speaker1",
       "start": 152.31,
-      "duration": 0.5,
+      "duration": 8.34,
       "words": [
         {
           "word": "achoo",
           "start": 152.31,
           "end": 152.81,
           "confidence": 0.802
-        }
-      ],
-      "confidence": 0.802
-    },
-    {
-      "id": 40,
-      "text": "Let's role play.",
-      "speaker": "Speaker1",
-      "start": 159.43,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "let's",
           "start": 159.43,
@@ -1593,7 +1523,7 @@
           "confidence": 0.924
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.881
     }
   ],
   "fetchedAt": "2026-07-23T04:07:22.607964+00:00",
@@ -1609,5 +1539,13 @@
     "dgUtteranceCount": 40,
     "matchedSegments": 40,
     "totalDuration": 160.65
+  },
+  "repairedAt": "2026-07-23T04:33:44.510261Z",
+  "repairInfo": {
+    "beforeSegments": 40,
+    "afterSegments": 33,
+    "beforeAvgWords": 5.0,
+    "afterAvgWords": 6.0,
+    "merged": 7
   }
 }

@@ -1,5 +1,5 @@
 {
-  "text": "How was your summer vacation. How are you. I'm good. How was your summer vacation. It was great. I went to jeju-do with my family. Really. What did you do there. We looked around jejudo. Sounds great. We rode horses and walked along jejuole. What's that. It's a walking path. You can see beautiful beaches and fields. From there. Wow i want to go there too. How about your vacation. What did you do. I took taekwondo lessons. Great. What color belt do you have. White i want to get my blue belt soon. Good luck. Listen. How are you. I'm good. How was your summer vacation. It was great. I went to jeju-do with my family. Really. What did you do there. We looked around trejo. Sounds great. We rode horses and walked along. Jeju ole. What's that. It's a walking path. You can see beautiful beaches and fields. From there. Wow i want to go there too. How about your vacation. What did you do. I took taekwondo lessons. Great. What color belt do you have. White i want to get my blue belt soon. Good luck. Speak aloud. Bye. Me. Your turn. You.",
+  "text": "English sing sing. How was your summer vacation? How are you? I'm good. How was your summer vacation? It was great. I went to Jeju Do with my family. Really? What did you do there? We looked around Jeju Do. Sounds great. We rode horses and walked along Jeju Ole. Jeju Ole? What's that? It's a walking path. You can see beautiful beaches and fields from there. Wow, I want to go there too. How about your vacation? What did you do? I took Taekwondo lessons. Great. What color belt do you have? White. I want to get my blue belt soon. Good luck. Listen. How are you? I'm good. How was your summer vacation? It was great. I went to Jeju Do with my family. Really? What did you do there? We looked around Jeju Do. Sounds great. We rode horses and walked along Jeju Ole. Jeju Ole? What's that? It's a walking path. You can see beautiful beaches and fields from there. Wow, I want to go there too. How about your vacation? What did you do? I took Taekwondo lessons. Great. What color belt do you have? White. I want to get my blue belt soon. Good luck. Speak aloud. Your turn.",
   "segments": [
     {
       "id": 1,
@@ -99,10 +99,10 @@
     },
     {
       "id": 4,
-      "text": "I'm good.",
+      "text": "I'm good. How was your summer vacation?",
       "speaker": "Speaker0",
       "start": 20.14,
-      "duration": 0.82,
+      "duration": 3.15,
       "words": [
         {
           "word": "i'm",
@@ -115,17 +115,7 @@
           "start": 20.46,
           "end": 20.96,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 5,
-      "text": "How was your summer vacation?",
-      "speaker": "Speaker0",
-      "start": 21.59,
-      "duration": 1.7,
-      "words": [
+        },
         {
           "word": "how",
           "start": 21.59,
@@ -157,10 +147,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.946
+      "confidence": 0.972
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "It was great.",
       "speaker": "Speaker0",
       "start": 24.62,
@@ -188,7 +178,7 @@
       "confidence": 0.999
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "I went to Jeju Do with my family.",
       "speaker": "Speaker1",
       "start": 26.72,
@@ -246,28 +236,18 @@
       "confidence": 0.963
     },
     {
-      "id": 8,
-      "text": "Really?",
+      "id": 7,
+      "text": "Really? What did you do there?",
       "speaker": "Speaker0",
       "start": 31.28,
-      "duration": 0.5,
+      "duration": 2.98,
       "words": [
         {
           "word": "really",
           "start": 31.28,
           "end": 31.78,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 9,
-      "text": "What did you do there?",
-      "speaker": "Speaker0",
-      "start": 32.8,
-      "duration": 1.46,
-      "words": [
+        },
         {
           "word": "what",
           "start": 32.8,
@@ -299,10 +279,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.996
     },
     {
-      "id": 10,
+      "id": 8,
       "text": "We looked around Jeju Do.",
       "speaker": "Speaker0",
       "start": 35.36,
@@ -342,11 +322,11 @@
       "confidence": 0.997
     },
     {
-      "id": 11,
-      "text": "Sounds great.",
+      "id": 9,
+      "text": "Sounds great. We rode horses and walked along Jeju Ole.",
       "speaker": "Speaker0",
       "start": 38.41,
-      "duration": 0.82,
+      "duration": 5.23,
       "words": [
         {
           "word": "sounds",
@@ -359,17 +339,7 @@
           "start": 38.73,
           "end": 39.23,
           "confidence": 0.876
-        }
-      ],
-      "confidence": 0.934
-    },
-    {
-      "id": 12,
-      "text": "We rode horses and walked along Jeju Ole.",
-      "speaker": "Speaker0",
-      "start": 40.66,
-      "duration": 2.98,
-      "words": [
+        },
         {
           "word": "we",
           "start": 40.66,
@@ -419,14 +389,14 @@
           "confidence": 0.837
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.956
     },
     {
-      "id": 13,
-      "text": "Jeju Ole?",
+      "id": 10,
+      "text": "Jeju Ole? What's that?",
       "speaker": "Speaker0",
       "start": 44.9,
-      "duration": 0.98,
+      "duration": 2.58,
       "words": [
         {
           "word": "jeju",
@@ -439,17 +409,7 @@
           "start": 45.38,
           "end": 45.88,
           "confidence": 0.976
-        }
-      ],
-      "confidence": 0.987
-    },
-    {
-      "id": 14,
-      "text": "What's that?",
-      "speaker": "Speaker0",
-      "start": 46.66,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "what's",
           "start": 46.66,
@@ -463,10 +423,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.993
     },
     {
-      "id": 15,
+      "id": 11,
       "text": "It's a walking path.",
       "speaker": "Speaker0",
       "start": 48.66,
@@ -500,7 +460,7 @@
       "confidence": 0.999
     },
     {
-      "id": 16,
+      "id": 12,
       "text": "You can see beautiful beaches and fields from there.",
       "speaker": "Speaker2",
       "start": 51.61,
@@ -564,7 +524,7 @@
       "confidence": 0.999
     },
     {
-      "id": 17,
+      "id": 13,
       "text": "Wow, I want to go there too.",
       "speaker": "Speaker0",
       "start": 55.85,
@@ -616,7 +576,7 @@
       "confidence": 0.94
     },
     {
-      "id": 18,
+      "id": 14,
       "text": "How about your vacation?",
       "speaker": "Speaker0",
       "start": 59.53,
@@ -650,7 +610,7 @@
       "confidence": 0.994
     },
     {
-      "id": 19,
+      "id": 15,
       "text": "What did you do?",
       "speaker": "Speaker0",
       "start": 62.01,
@@ -684,11 +644,11 @@
       "confidence": 0.999
     },
     {
-      "id": 20,
-      "text": "I took Taekwondo",
+      "id": 16,
+      "text": "I took Taekwondo lessons.",
       "speaker": "Speaker0",
       "start": 65.28,
-      "duration": 1.06,
+      "duration": 1.87,
       "words": [
         {
           "word": "i",
@@ -707,17 +667,7 @@
           "start": 65.84,
           "end": 66.34,
           "confidence": 0.873
-        }
-      ],
-      "confidence": 0.954
-    },
-    {
-      "id": 21,
-      "text": "lessons.",
-      "speaker": "Speaker0",
-      "start": 66.65,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "lessons",
           "start": 66.65,
@@ -725,31 +675,21 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.975
     },
     {
-      "id": 22,
-      "text": "Great.",
+      "id": 17,
+      "text": "Great. What color belt do you have?",
       "speaker": "Speaker0",
       "start": 68.41,
-      "duration": 0.5,
+      "duration": 3.06,
       "words": [
         {
           "word": "great",
           "start": 68.41,
           "end": 68.91,
           "confidence": 0.99
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 23,
-      "text": "What color belt do you have?",
-      "speaker": "Speaker0",
-      "start": 69.53,
-      "duration": 1.94,
-      "words": [
+        },
         {
           "word": "what",
           "start": 69.53,
@@ -787,10 +727,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.994
     },
     {
-      "id": 24,
+      "id": 18,
       "text": "White. I want to get my blue belt soon.",
       "speaker": "Speaker0",
       "start": 73.05,
@@ -854,28 +794,18 @@
       "confidence": 0.998
     },
     {
-      "id": 25,
-      "text": "Good",
+      "id": 19,
+      "text": "Good luck.",
       "speaker": "Speaker0",
       "start": 76.51,
-      "duration": 0.5,
+      "duration": 5.38,
       "words": [
         {
           "word": "good",
           "start": 76.51,
           "end": 77.01,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 26,
-      "text": "luck.",
-      "speaker": "Speaker0",
-      "start": 81.39,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "luck",
           "start": 81.39,
@@ -883,10 +813,10 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.993
     },
     {
-      "id": 27,
+      "id": 20,
       "text": "Listen.",
       "speaker": "Speaker1",
       "start": 84.83,
@@ -902,7 +832,7 @@
       "confidence": 0.977
     },
     {
-      "id": 28,
+      "id": 21,
       "text": "How are you?",
       "speaker": "Speaker0",
       "start": 95.69,
@@ -930,11 +860,11 @@
       "confidence": 0.986
     },
     {
-      "id": 29,
-      "text": "I'm good.",
+      "id": 22,
+      "text": "I'm good. How was your summer vacation?",
       "speaker": "Speaker0",
       "start": 98.09,
-      "duration": 0.9,
+      "duration": 3.14,
       "words": [
         {
           "word": "i'm",
@@ -947,17 +877,7 @@
           "start": 98.49,
           "end": 98.99,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.996
-    },
-    {
-      "id": 30,
-      "text": "How was your summer vacation?",
-      "speaker": "Speaker0",
-      "start": 99.53,
-      "duration": 1.7,
-      "words": [
+        },
         {
           "word": "how",
           "start": 99.53,
@@ -989,10 +909,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.996
     },
     {
-      "id": 31,
+      "id": 23,
       "text": "It was great.",
       "speaker": "Speaker0",
       "start": 102.49,
@@ -1020,7 +940,7 @@
       "confidence": 0.999
     },
     {
-      "id": 32,
+      "id": 24,
       "text": "I went to Jeju Do with my family.",
       "speaker": "Speaker1",
       "start": 104.67,
@@ -1078,28 +998,18 @@
       "confidence": 0.989
     },
     {
-      "id": 33,
-      "text": "Really?",
+      "id": 25,
+      "text": "Really? What did you do there?",
       "speaker": "Speaker0",
       "start": 109.31,
-      "duration": 0.5,
+      "duration": 2.9,
       "words": [
         {
           "word": "really",
           "start": 109.31,
           "end": 109.81,
           "confidence": 0.987
-        }
-      ],
-      "confidence": 0.987
-    },
-    {
-      "id": 34,
-      "text": "What did you do there?",
-      "speaker": "Speaker0",
-      "start": 110.83,
-      "duration": 1.38,
-      "words": [
+        },
         {
           "word": "what",
           "start": 110.83,
@@ -1131,10 +1041,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.993
     },
     {
-      "id": 35,
+      "id": 26,
       "text": "We looked around Jeju Do.",
       "speaker": "Speaker0",
       "start": 113.31,
@@ -1174,11 +1084,11 @@
       "confidence": 0.998
     },
     {
-      "id": 36,
-      "text": "Sounds great.",
+      "id": 27,
+      "text": "Sounds great. We rode horses and walked along Jeju Ole.",
       "speaker": "Speaker0",
       "start": 116.44,
-      "duration": 0.75,
+      "duration": 5.22,
       "words": [
         {
           "word": "sounds",
@@ -1191,17 +1101,7 @@
           "start": 116.69,
           "end": 117.19,
           "confidence": 0.83
-        }
-      ],
-      "confidence": 0.911
-    },
-    {
-      "id": 37,
-      "text": "We rode horses and walked along Jeju Ole.",
-      "speaker": "Speaker0",
-      "start": 118.6,
-      "duration": 3.06,
-      "words": [
+        },
         {
           "word": "we",
           "start": 118.6,
@@ -1251,14 +1151,14 @@
           "confidence": 0.829
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.944
     },
     {
-      "id": 38,
-      "text": "Jeju Ole?",
+      "id": 28,
+      "text": "Jeju Ole? What's that?",
       "speaker": "Speaker0",
       "start": 122.84,
-      "duration": 1.07,
+      "duration": 2.66,
       "words": [
         {
           "word": "jeju",
@@ -1271,17 +1171,7 @@
           "start": 123.41,
           "end": 123.91,
           "confidence": 0.977
-        }
-      ],
-      "confidence": 0.987
-    },
-    {
-      "id": 39,
-      "text": "What's that?",
-      "speaker": "Speaker0",
-      "start": 124.6,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "what's",
           "start": 124.6,
@@ -1295,10 +1185,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.992
     },
     {
-      "id": 40,
+      "id": 29,
       "text": "It's a walking path.",
       "speaker": "Speaker0",
       "start": 126.69,
@@ -1332,7 +1222,7 @@
       "confidence": 0.999
     },
     {
-      "id": 41,
+      "id": 30,
       "text": "You can see beautiful beaches and fields from there.",
       "speaker": "Speaker2",
       "start": 129.58,
@@ -1396,7 +1286,7 @@
       "confidence": 0.999
     },
     {
-      "id": 42,
+      "id": 31,
       "text": "Wow, I want to go there too.",
       "speaker": "Speaker0",
       "start": 133.82,
@@ -1448,7 +1338,7 @@
       "confidence": 0.939
     },
     {
-      "id": 43,
+      "id": 32,
       "text": "How about your vacation?",
       "speaker": "Speaker0",
       "start": 137.5,
@@ -1482,7 +1372,7 @@
       "confidence": 0.994
     },
     {
-      "id": 44,
+      "id": 33,
       "text": "What did you do?",
       "speaker": "Speaker0",
       "start": 139.98,
@@ -1516,7 +1406,7 @@
       "confidence": 1.0
     },
     {
-      "id": 45,
+      "id": 34,
       "text": "I took Taekwondo lessons.",
       "speaker": "Speaker0",
       "start": 143.22,
@@ -1550,28 +1440,18 @@
       "confidence": 0.966
     },
     {
-      "id": 46,
-      "text": "Great.",
+      "id": 35,
+      "text": "Great. What color belt do you have?",
       "speaker": "Speaker0",
       "start": 146.43,
-      "duration": 0.5,
+      "duration": 2.98,
       "words": [
         {
           "word": "great",
           "start": 146.43,
           "end": 146.93,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 47,
-      "text": "What color belt do you have?",
-      "speaker": "Speaker0",
-      "start": 147.54,
-      "duration": 1.87,
-      "words": [
+        },
         {
           "word": "what",
           "start": 147.54,
@@ -1609,31 +1489,21 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.994
     },
     {
-      "id": 48,
-      "text": "White.",
+      "id": 36,
+      "text": "White. I want to get my blue belt soon.",
       "speaker": "Speaker0",
       "start": 150.99,
-      "duration": 0.5,
+      "duration": 2.89,
       "words": [
         {
           "word": "white",
           "start": 150.99,
           "end": 151.49,
           "confidence": 0.99
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 49,
-      "text": "I want to get my blue belt soon.",
-      "speaker": "Speaker0",
-      "start": 151.78,
-      "duration": 2.1,
-      "words": [
+        },
         {
           "word": "i",
           "start": 151.78,
@@ -1683,47 +1553,27 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.994
     },
     {
-      "id": 50,
-      "text": "Good",
+      "id": 37,
+      "text": "Good luck. Speak aloud.",
       "speaker": "Speaker0",
       "start": 154.48,
-      "duration": 0.5,
+      "duration": 9.86,
       "words": [
         {
           "word": "good",
           "start": 154.48,
           "end": 154.98,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 51,
-      "text": "luck.",
-      "speaker": "Speaker0",
-      "start": 159.36,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "luck",
           "start": 159.36,
           "end": 159.86,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 52,
-      "text": "Speak aloud.",
-      "speaker": "Speaker0",
-      "start": 163.6,
-      "duration": 0.74,
-      "words": [
+        },
         {
           "word": "speak",
           "start": 163.6,
@@ -1737,10 +1587,10 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.853
+      "confidence": 0.948
     },
     {
-      "id": 53,
+      "id": 38,
       "text": "Your turn.",
       "speaker": "Speaker0",
       "start": 241.17,
@@ -1776,5 +1626,13 @@
     "dgUtteranceCount": 53,
     "matchedSegments": 53,
     "totalDuration": 242.07
+  },
+  "repairedAt": "2026-07-23T04:33:44.494859Z",
+  "repairInfo": {
+    "beforeSegments": 53,
+    "afterSegments": 38,
+    "beforeAvgWords": 3.9,
+    "afterAvgWords": 5.4,
+    "merged": 15
   }
 }

@@ -1,5 +1,5 @@
 {
-  "text": "Day. Wake up! Get up. Get up. I get up at 7:00. Have breakfast. Have breakfast. I have breakfast. Brush my teeth. Brush my teeth. I brush my teeth. Wash my face. Wash my face. I wash my face. Get dressed. Get dressed. I get dressed. Hurry up! Go to school. Go to school. I go to school. Take classes. Take classes. I take classes at school. Have lunch. Have lunch. I have lunch at the cafeteria. Play with friends. Play with friends. I play with my friends. Come home. I come home. Come home. Do my homework. Do my homework. I do my homework. Have dinner. Have dinner. I have dinner. Take a shower. Take a shower. I take a shower. Go to bed. Go to bed. I go to bed. Good night! Review.",
+  "text": "English Sing Sing. My day. Wake up. Get up. Get up. I get up at seven. Have breakfast have breakfast I have breakfast brush my teeth brush my teeth I brush my teeth. Wash my face. Wash my face. I wash my face. Duck dressed duck dressed I get dressed. Hurry up. Go to school go to school I go to school. Take classes. Take classes. I take classes at school. Have lunch have lunch I have lunch at the cafeteria. Play with friends play with friends I play with my friends. Come home I come home come home do my homework do my homework I do my homework. Have dinner have dinner I have dinner take a shower take a shower I take a shower. Go to bed go to bed I go to bed. Goodnight. Review get up have breakfast brush my teeth wash my face, get dressed, go to school, take classes, have lunch, play with friends, come home, do my homework, have dinner, take a shower, go to bed.",
   "segments": [
     {
       "id": 1,
@@ -31,10 +31,10 @@
     },
     {
       "id": 2,
-      "text": "My day.",
+      "text": "My day. Wake up.",
       "speaker": "Speaker0",
       "start": 7.36,
-      "duration": 0.82,
+      "duration": 6.5,
       "words": [
         {
           "word": "my",
@@ -47,17 +47,7 @@
           "start": 7.68,
           "end": 8.18,
           "confidence": 0.987
-        }
-      ],
-      "confidence": 0.77
-    },
-    {
-      "id": 3,
-      "text": "Wake up.",
-      "speaker": "Speaker0",
-      "start": 13.12,
-      "duration": 0.74,
-      "words": [
+        },
         {
           "word": "wake",
           "start": 13.12,
@@ -71,14 +61,14 @@
           "confidence": 0.983
         }
       ],
-      "confidence": 0.922
+      "confidence": 0.846
     },
     {
-      "id": 4,
-      "text": "Get up.",
+      "id": 3,
+      "text": "Get up. Get up.",
       "speaker": "Speaker0",
       "start": 15.43,
-      "duration": 0.75,
+      "duration": 3.62,
       "words": [
         {
           "word": "get",
@@ -91,17 +81,7 @@
           "start": 15.68,
           "end": 16.18,
           "confidence": 0.985
-        }
-      ],
-      "confidence": 0.969
-    },
-    {
-      "id": 5,
-      "text": "Get up.",
-      "speaker": "Speaker0",
-      "start": 18.31,
-      "duration": 0.74,
-      "words": [
+        },
         {
           "word": "get",
           "start": 18.31,
@@ -115,10 +95,10 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.967
     },
     {
-      "id": 6,
+      "id": 4,
       "text": "I get up at seven.",
       "speaker": "Speaker0",
       "start": 21.84,
@@ -158,11 +138,11 @@
       "confidence": 0.998
     },
     {
-      "id": 7,
-      "text": "Have breakfast",
+      "id": 5,
+      "text": "Have breakfast have breakfast",
       "speaker": "Speaker0",
       "start": 29.9,
-      "duration": 0.74,
+      "duration": 4.02,
       "words": [
         {
           "word": "have",
@@ -175,17 +155,7 @@
           "start": 30.14,
           "end": 30.64,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.951
-    },
-    {
-      "id": 8,
-      "text": "have breakfast",
-      "speaker": "Speaker0",
-      "start": 33.1,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "have",
           "start": 33.1,
@@ -199,10 +169,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.832
+      "confidence": 0.891
     },
     {
-      "id": 9,
+      "id": 6,
       "text": "I have breakfast",
       "speaker": "Speaker0",
       "start": 37.1,
@@ -230,7 +200,7 @@
       "confidence": 0.962
     },
     {
-      "id": 10,
+      "id": 7,
       "text": "brush my teeth",
       "speaker": "Speaker0",
       "start": 45.09,
@@ -258,7 +228,7 @@
       "confidence": 0.997
     },
     {
-      "id": 11,
+      "id": 8,
       "text": "brush my teeth",
       "speaker": "Speaker0",
       "start": 48.45,
@@ -286,7 +256,7 @@
       "confidence": 0.998
     },
     {
-      "id": 12,
+      "id": 9,
       "text": "I brush my teeth.",
       "speaker": "Speaker0",
       "start": 51.02,
@@ -320,7 +290,7 @@
       "confidence": 0.911
     },
     {
-      "id": 13,
+      "id": 10,
       "text": "Wash my face.",
       "speaker": "Speaker0",
       "start": 56.13,
@@ -348,7 +318,7 @@
       "confidence": 0.953
     },
     {
-      "id": 14,
+      "id": 11,
       "text": "Wash my face.",
       "speaker": "Speaker0",
       "start": 59.73,
@@ -376,7 +346,7 @@
       "confidence": 0.994
     },
     {
-      "id": 15,
+      "id": 12,
       "text": "I wash my face.",
       "speaker": "Speaker0",
       "start": 63.41,
@@ -410,11 +380,11 @@
       "confidence": 0.999
     },
     {
-      "id": 16,
-      "text": "Duck dressed",
+      "id": 13,
+      "text": "Duck dressed duck dressed",
       "speaker": "Speaker0",
       "start": 71.83,
-      "duration": 0.89,
+      "duration": 4.42,
       "words": [
         {
           "word": "duck",
@@ -427,17 +397,7 @@
           "start": 72.22,
           "end": 72.72,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.974
-    },
-    {
-      "id": 17,
-      "text": "duck dressed",
-      "speaker": "Speaker0",
-      "start": 75.34,
-      "duration": 0.91,
-      "words": [
+        },
         {
           "word": "duck",
           "start": 75.34,
@@ -451,10 +411,10 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.841
+      "confidence": 0.907
     },
     {
-      "id": 18,
+      "id": 14,
       "text": "I get dressed.",
       "speaker": "Speaker0",
       "start": 78.7,
@@ -482,11 +442,11 @@
       "confidence": 0.977
     },
     {
-      "id": 19,
-      "text": "Hurry up.",
+      "id": 15,
+      "text": "Hurry up. Go to school",
       "speaker": "Speaker0",
       "start": 80.78,
-      "duration": 0.88,
+      "duration": 6.58,
       "words": [
         {
           "word": "hurry",
@@ -499,17 +459,7 @@
           "start": 81.27,
           "end": 81.66,
           "confidence": 0.842
-        }
-      ],
-      "confidence": 0.921
-    },
-    {
-      "id": 20,
-      "text": "Go to school",
-      "speaker": "Speaker0",
-      "start": 86.38,
-      "duration": 0.98,
-      "words": [
+        },
         {
           "word": "go",
           "start": 86.38,
@@ -529,10 +479,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.954
     },
     {
-      "id": 21,
+      "id": 16,
       "text": "go to school",
       "speaker": "Speaker0",
       "start": 89.66,
@@ -560,7 +510,7 @@
       "confidence": 0.974
     },
     {
-      "id": 22,
+      "id": 17,
       "text": "I go to school.",
       "speaker": "Speaker0",
       "start": 93.02,
@@ -594,11 +544,11 @@
       "confidence": 0.974
     },
     {
-      "id": 23,
-      "text": "Take classes.",
+      "id": 18,
+      "text": "Take classes. Take classes.",
       "speaker": "Speaker0",
       "start": 101.67,
-      "duration": 0.74,
+      "duration": 3.93,
       "words": [
         {
           "word": "take",
@@ -611,17 +561,7 @@
           "start": 101.91,
           "end": 102.41,
           "confidence": 0.785
-        }
-      ],
-      "confidence": 0.806
-    },
-    {
-      "id": 24,
-      "text": "Take classes.",
-      "speaker": "Speaker0",
-      "start": 104.86,
-      "duration": 0.74,
-      "words": [
+        },
         {
           "word": "take",
           "start": 104.86,
@@ -635,10 +575,10 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.886
     },
     {
-      "id": 25,
+      "id": 19,
       "text": "I take classes at school.",
       "speaker": "Speaker0",
       "start": 107.75,
@@ -678,11 +618,11 @@
       "confidence": 0.997
     },
     {
-      "id": 26,
-      "text": "Have lunch",
+      "id": 20,
+      "text": "Have lunch have lunch",
       "speaker": "Speaker0",
       "start": 115.16,
-      "duration": 0.66,
+      "duration": 4.5,
       "words": [
         {
           "word": "have",
@@ -695,17 +635,7 @@
           "start": 115.32,
           "end": 115.82,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.805
-    },
-    {
-      "id": 27,
-      "text": "have lunch",
-      "speaker": "Speaker0",
-      "start": 118.84,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "have",
           "start": 118.84,
@@ -719,10 +649,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.853
+      "confidence": 0.829
     },
     {
-      "id": 28,
+      "id": 21,
       "text": "I have lunch at the cafeteria.",
       "speaker": "Speaker0",
       "start": 122.52,
@@ -768,7 +698,7 @@
       "confidence": 0.965
     },
     {
-      "id": 29,
+      "id": 22,
       "text": "Play with friends",
       "speaker": "Speaker0",
       "start": 129.75,
@@ -796,7 +726,7 @@
       "confidence": 0.942
     },
     {
-      "id": 30,
+      "id": 23,
       "text": "play with friends",
       "speaker": "Speaker0",
       "start": 133.34,
@@ -824,7 +754,7 @@
       "confidence": 0.915
     },
     {
-      "id": 31,
+      "id": 24,
       "text": "I play with my friends.",
       "speaker": "Speaker0",
       "start": 138.15,
@@ -864,11 +794,11 @@
       "confidence": 0.966
     },
     {
-      "id": 32,
-      "text": "Come home",
+      "id": 25,
+      "text": "Come home I come home come home",
       "speaker": "Speaker0",
       "start": 147.08,
-      "duration": 0.66,
+      "duration": 6.5,
       "words": [
         {
           "word": "come",
@@ -881,17 +811,7 @@
           "start": 147.24,
           "end": 147.74,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.905
-    },
-    {
-      "id": 33,
-      "text": "I come home",
-      "speaker": "Speaker0",
-      "start": 149.88,
-      "duration": 1.06,
-      "words": [
+        },
         {
           "word": "i",
           "start": 149.88,
@@ -909,17 +829,7 @@
           "start": 150.44,
           "end": 150.94,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.98
-    },
-    {
-      "id": 34,
-      "text": "come home",
-      "speaker": "Speaker0",
-      "start": 152.76,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "come",
           "start": 152.76,
@@ -933,10 +843,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.93
+      "confidence": 0.938
     },
     {
-      "id": 35,
+      "id": 26,
       "text": "do my homework",
       "speaker": "Speaker0",
       "start": 158.29,
@@ -964,7 +874,7 @@
       "confidence": 0.997
     },
     {
-      "id": 36,
+      "id": 27,
       "text": "do my homework",
       "speaker": "Speaker0",
       "start": 160.85,
@@ -992,7 +902,7 @@
       "confidence": 0.982
     },
     {
-      "id": 37,
+      "id": 28,
       "text": "I do my homework.",
       "speaker": "Speaker0",
       "start": 164.29,
@@ -1026,11 +936,11 @@
       "confidence": 0.956
     },
     {
-      "id": 38,
-      "text": "Have dinner",
+      "id": 29,
+      "text": "Have dinner have dinner",
       "speaker": "Speaker0",
       "start": 170.66,
-      "duration": 0.9,
+      "duration": 4.58,
       "words": [
         {
           "word": "have",
@@ -1043,17 +953,7 @@
           "start": 171.06,
           "end": 171.56,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.993
-    },
-    {
-      "id": 39,
-      "text": "have dinner",
-      "speaker": "Speaker0",
-      "start": 174.34,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "have",
           "start": 174.34,
@@ -1067,10 +967,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.958
+      "confidence": 0.976
     },
     {
-      "id": 40,
+      "id": 30,
       "text": "I have dinner",
       "speaker": "Speaker0",
       "start": 178.02,
@@ -1098,7 +998,7 @@
       "confidence": 0.985
     },
     {
-      "id": 41,
+      "id": 31,
       "text": "take a shower",
       "speaker": "Speaker0",
       "start": 186.07,
@@ -1126,7 +1026,7 @@
       "confidence": 0.998
     },
     {
-      "id": 42,
+      "id": 32,
       "text": "take a shower",
       "speaker": "Speaker0",
       "start": 189.03,
@@ -1154,7 +1054,7 @@
       "confidence": 0.972
     },
     {
-      "id": 43,
+      "id": 33,
       "text": "I take a shower.",
       "speaker": "Speaker0",
       "start": 192.07,
@@ -1188,7 +1088,7 @@
       "confidence": 0.976
     },
     {
-      "id": 44,
+      "id": 34,
       "text": "Go to bed",
       "speaker": "Speaker0",
       "start": 195.93,
@@ -1216,7 +1116,7 @@
       "confidence": 0.964
     },
     {
-      "id": 45,
+      "id": 35,
       "text": "go to bed",
       "speaker": "Speaker0",
       "start": 199.45,
@@ -1244,7 +1144,7 @@
       "confidence": 0.918
     },
     {
-      "id": 46,
+      "id": 36,
       "text": "I go to bed.",
       "speaker": "Speaker0",
       "start": 201.69,
@@ -1278,44 +1178,24 @@
       "confidence": 0.956
     },
     {
-      "id": 47,
-      "text": "Goodnight.",
+      "id": 37,
+      "text": "Goodnight. Review get up have breakfast",
       "speaker": "Speaker0",
       "start": 205.29,
-      "duration": 0.5,
+      "duration": 11.77,
       "words": [
         {
           "word": "goodnight",
           "start": 205.29,
           "end": 205.79,
           "confidence": 0.878
-        }
-      ],
-      "confidence": 0.878
-    },
-    {
-      "id": 48,
-      "text": "Review",
-      "speaker": "Speaker0",
-      "start": 209.29,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "review",
           "start": 209.29,
           "end": 209.79,
           "confidence": 0.953
-        }
-      ],
-      "confidence": 0.953
-    },
-    {
-      "id": 49,
-      "text": "get up",
-      "speaker": "Speaker0",
-      "start": 212.88,
-      "duration": 0.65,
-      "words": [
+        },
         {
           "word": "get",
           "start": 212.88,
@@ -1327,17 +1207,7 @@
           "start": 213.03,
           "end": 213.53,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.968
-    },
-    {
-      "id": 50,
-      "text": "have breakfast",
-      "speaker": "Speaker0",
-      "start": 216.16,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "have",
           "start": 216.16,
@@ -1351,10 +1221,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.949
     },
     {
-      "id": 51,
+      "id": 38,
       "text": "brush my teeth",
       "speaker": "Speaker0",
       "start": 219.67,
@@ -1382,11 +1252,11 @@
       "confidence": 0.998
     },
     {
-      "id": 52,
-      "text": "wash my face,",
+      "id": 39,
+      "text": "wash my face, get dressed,",
       "speaker": "Speaker0",
       "start": 223.1,
-      "duration": 1.22,
+      "duration": 4.34,
       "words": [
         {
           "word": "wash",
@@ -1405,17 +1275,7 @@
           "start": 223.82,
           "end": 224.32,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 53,
-      "text": "get dressed,",
-      "speaker": "Speaker0",
-      "start": 226.54,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "get",
           "start": 226.54,
@@ -1432,11 +1292,11 @@
       "confidence": 1.0
     },
     {
-      "id": 54,
-      "text": "go to school,",
+      "id": 40,
+      "text": "go to school, take classes, have lunch,",
       "speaker": "Speaker0",
       "start": 230.06,
-      "duration": 1.06,
+      "duration": 7.86,
       "words": [
         {
           "word": "go",
@@ -1455,17 +1315,7 @@
           "start": 230.62,
           "end": 231.12,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 55,
-      "text": "take classes,",
-      "speaker": "Speaker0",
-      "start": 233.42,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "take",
           "start": 233.42,
@@ -1477,17 +1327,7 @@
           "start": 233.82,
           "end": 234.32,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 56,
-      "text": "have lunch,",
-      "speaker": "Speaker0",
-      "start": 237.01,
-      "duration": 0.91,
-      "words": [
+        },
         {
           "word": "have",
           "start": 237.01,
@@ -1504,11 +1344,11 @@
       "confidence": 1.0
     },
     {
-      "id": 57,
-      "text": "play with friends,",
+      "id": 41,
+      "text": "play with friends, come home,",
       "speaker": "Speaker0",
       "start": 240.53,
-      "duration": 1.22,
+      "duration": 4.43,
       "words": [
         {
           "word": "play",
@@ -1527,17 +1367,7 @@
           "start": 241.25,
           "end": 241.75,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 58,
-      "text": "come home,",
-      "speaker": "Speaker0",
-      "start": 243.97,
-      "duration": 0.99,
-      "words": [
+        },
         {
           "word": "come",
           "start": 243.97,
@@ -1551,14 +1381,14 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.998
     },
     {
-      "id": 59,
-      "text": "do my homework,",
+      "id": 42,
+      "text": "do my homework, have dinner,",
       "speaker": "Speaker0",
       "start": 247.66,
-      "duration": 1.06,
+      "duration": 4.22,
       "words": [
         {
           "word": "do",
@@ -1577,17 +1407,7 @@
           "start": 248.22,
           "end": 248.72,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 60,
-      "text": "have dinner,",
-      "speaker": "Speaker0",
-      "start": 251.06,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "have",
           "start": 251.06,
@@ -1604,7 +1424,7 @@
       "confidence": 1.0
     },
     {
-      "id": 61,
+      "id": 43,
       "text": "take a shower,",
       "speaker": "Speaker0",
       "start": 255.14,
@@ -1632,7 +1452,7 @@
       "confidence": 1.0
     },
     {
-      "id": 62,
+      "id": 44,
       "text": "go to bed.",
       "speaker": "Speaker0",
       "start": 259.54,
@@ -1672,5 +1492,13 @@
     "dgUtteranceCount": 62,
     "matchedSegments": 62,
     "totalDuration": 260.6
+  },
+  "repairedAt": "2026-07-23T04:33:44.525184Z",
+  "repairInfo": {
+    "beforeSegments": 62,
+    "afterSegments": 44,
+    "beforeAvgWords": 2.8,
+    "afterAvgWords": 3.9,
+    "merged": 18
   }
 }

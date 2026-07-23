@@ -1,5 +1,5 @@
 {
-  "text": ". What does she look like? Rora? I don't know. Oh, no. Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? She's 6 years old. What does she look like? She has short, curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Rora! Listen. Rora? I don't know. Oh, no. Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? Rora. She's 6 years old. What does she look like? She has short, curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Rora. Speak aloud. Your turn. Ah.",
+  "text": "English sing sing. What does she look like? Where is Rora? I don't know. Oh, no. Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? Her name is Aurora. She's six years old. What does she look like? She has short curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Listen. Where is Rora? I don't know. Oh, no. Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? Her name is Aurora. She's six years old. What does she look like? She has short curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Rora. Speak aloud. Your turn.",
   "segments": [
     {
       "id": 1,
@@ -127,10 +127,10 @@
     },
     {
       "id": 5,
-      "text": "Oh, no.",
+      "text": "Oh, no. Excuse me.",
       "speaker": "Speaker0",
       "start": 22.68,
-      "duration": 0.81,
+      "duration": 6.66,
       "words": [
         {
           "word": "oh",
@@ -143,17 +143,7 @@
           "start": 22.99,
           "end": 23.49,
           "confidence": 0.988
-        }
-      ],
-      "confidence": 0.953
-    },
-    {
-      "id": 6,
-      "text": "Excuse me.",
-      "speaker": "Speaker0",
-      "start": 28.27,
-      "duration": 1.07,
-      "words": [
+        },
         {
           "word": "excuse",
           "start": 28.27,
@@ -167,10 +157,10 @@
           "confidence": 0.899
         }
       ],
-      "confidence": 0.901
+      "confidence": 0.927
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "I'm looking for my little sister.",
       "speaker": "Speaker0",
       "start": 30.03,
@@ -216,28 +206,18 @@
       "confidence": 1.0
     },
     {
-      "id": 8,
-      "text": "Okay.",
+      "id": 7,
+      "text": "Okay. Don't worry. What's her name?",
       "speaker": "Speaker0",
       "start": 33.63,
-      "duration": 0.5,
+      "duration": 3.46,
       "words": [
         {
           "word": "okay",
           "start": 33.63,
           "end": 34.13,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 9,
-      "text": "Don't worry. What's her name?",
-      "speaker": "Speaker0",
-      "start": 34.91,
-      "duration": 2.18,
-      "words": [
+        },
         {
           "word": "don't",
           "start": 34.91,
@@ -272,7 +252,7 @@
       "confidence": 0.998
     },
     {
-      "id": 10,
+      "id": 8,
       "text": "Her name is Aurora.",
       "speaker": "Speaker0",
       "start": 38.19,
@@ -306,7 +286,7 @@
       "confidence": 0.948
     },
     {
-      "id": 11,
+      "id": 9,
       "text": "She's six years old.",
       "speaker": "Speaker0",
       "start": 40.27,
@@ -340,7 +320,7 @@
       "confidence": 0.997
     },
     {
-      "id": 12,
+      "id": 10,
       "text": "What does she look like?",
       "speaker": "Speaker0",
       "start": 42.84,
@@ -380,7 +360,7 @@
       "confidence": 1.0
     },
     {
-      "id": 13,
+      "id": 11,
       "text": "She has short curly hair.",
       "speaker": "Speaker0",
       "start": 45.16,
@@ -420,7 +400,7 @@
       "confidence": 0.97
     },
     {
-      "id": 14,
+      "id": 12,
       "text": "What is she wearing?",
       "speaker": "Speaker0",
       "start": 47.96,
@@ -454,7 +434,7 @@
       "confidence": 1.0
     },
     {
-      "id": 15,
+      "id": 13,
       "text": "She's wearing a pink shirt and blue pants.",
       "speaker": "Speaker0",
       "start": 50.05,
@@ -512,7 +492,7 @@
       "confidence": 0.973
     },
     {
-      "id": 16,
+      "id": 14,
       "text": "And she's wearing a white cap.",
       "speaker": "Speaker0",
       "start": 53.96,
@@ -558,28 +538,18 @@
       "confidence": 0.999
     },
     {
-      "id": 17,
-      "text": "Listen.",
+      "id": 15,
+      "text": "Listen. Where is Rora?",
       "speaker": "Speaker0",
       "start": 76.05,
-      "duration": 0.5,
+      "duration": 12.6,
       "words": [
         {
           "word": "listen",
           "start": 76.05,
           "end": 76.55,
           "confidence": 0.772
-        }
-      ],
-      "confidence": 0.772
-    },
-    {
-      "id": 18,
-      "text": "Where is Rora?",
-      "speaker": "Speaker0",
-      "start": 87.43,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "where",
           "start": 87.43,
@@ -599,10 +569,10 @@
           "confidence": 0.894
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.863
     },
     {
-      "id": 19,
+      "id": 16,
       "text": "I don't know.",
       "speaker": "Speaker0",
       "start": 89.83,
@@ -630,11 +600,11 @@
       "confidence": 0.995
     },
     {
-      "id": 20,
-      "text": "Oh, no.",
+      "id": 17,
+      "text": "Oh, no. Excuse me.",
       "speaker": "Speaker0",
       "start": 91.67,
-      "duration": 0.82,
+      "duration": 6.74,
       "words": [
         {
           "word": "oh",
@@ -647,17 +617,7 @@
           "start": 91.99,
           "end": 92.49,
           "confidence": 0.986
-        }
-      ],
-      "confidence": 0.945
-    },
-    {
-      "id": 21,
-      "text": "Excuse me.",
-      "speaker": "Speaker0",
-      "start": 97.43,
-      "duration": 0.98,
-      "words": [
+        },
         {
           "word": "excuse",
           "start": 97.43,
@@ -671,10 +631,10 @@
           "confidence": 0.895
         }
       ],
-      "confidence": 0.895
+      "confidence": 0.92
     },
     {
-      "id": 22,
+      "id": 18,
       "text": "I'm looking for my little sister.",
       "speaker": "Speaker0",
       "start": 99.05,
@@ -720,28 +680,18 @@
       "confidence": 1.0
     },
     {
-      "id": 23,
-      "text": "Okay.",
+      "id": 19,
+      "text": "Okay. Don't worry.",
       "speaker": "Speaker0",
       "start": 102.73,
-      "duration": 0.5,
+      "duration": 2.02,
       "words": [
         {
           "word": "okay",
           "start": 102.73,
           "end": 103.23,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 24,
-      "text": "Don't worry.",
-      "speaker": "Speaker0",
-      "start": 103.92,
-      "duration": 0.83,
-      "words": [
+        },
         {
           "word": "don't",
           "start": 103.92,
@@ -755,10 +705,10 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.996
     },
     {
-      "id": 25,
+      "id": 20,
       "text": "What's her name?",
       "speaker": "Speaker0",
       "start": 105.05,
@@ -786,7 +736,7 @@
       "confidence": 0.999
     },
     {
-      "id": 26,
+      "id": 21,
       "text": "Her name is Aurora.",
       "speaker": "Speaker0",
       "start": 107.2,
@@ -820,7 +770,7 @@
       "confidence": 0.953
     },
     {
-      "id": 27,
+      "id": 22,
       "text": "She's six years old.",
       "speaker": "Speaker0",
       "start": 109.28,
@@ -854,7 +804,7 @@
       "confidence": 0.997
     },
     {
-      "id": 28,
+      "id": 23,
       "text": "What does she look like?",
       "speaker": "Speaker0",
       "start": 111.81,
@@ -894,7 +844,7 @@
       "confidence": 1.0
     },
     {
-      "id": 29,
+      "id": 24,
       "text": "She has short curly hair.",
       "speaker": "Speaker0",
       "start": 114.21,
@@ -934,7 +884,7 @@
       "confidence": 0.982
     },
     {
-      "id": 30,
+      "id": 25,
       "text": "What is she wearing?",
       "speaker": "Speaker0",
       "start": 116.93,
@@ -968,7 +918,7 @@
       "confidence": 1.0
     },
     {
-      "id": 31,
+      "id": 26,
       "text": "She's wearing a pink shirt and blue pants.",
       "speaker": "Speaker0",
       "start": 119.09,
@@ -1026,7 +976,7 @@
       "confidence": 0.969
     },
     {
-      "id": 32,
+      "id": 27,
       "text": "And she's wearing a white cap.",
       "speaker": "Speaker0",
       "start": 123.01,
@@ -1072,28 +1022,18 @@
       "confidence": 0.998
     },
     {
-      "id": 33,
-      "text": "Rora.",
+      "id": 28,
+      "text": "Rora. Speak aloud.",
       "speaker": "Speaker0",
       "start": 134.47,
-      "duration": 0.5,
+      "duration": 12.0,
       "words": [
         {
           "word": "rora",
           "start": 134.47,
           "end": 134.97,
           "confidence": 0.59
-        }
-      ],
-      "confidence": 0.59
-    },
-    {
-      "id": 34,
-      "text": "Speak aloud.",
-      "speaker": "Speaker0",
-      "start": 145.65,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "speak",
           "start": 145.65,
@@ -1107,10 +1047,10 @@
           "confidence": 0.966
         }
       ],
-      "confidence": 0.804
+      "confidence": 0.697
     },
     {
-      "id": 35,
+      "id": 29,
       "text": "Your turn.",
       "speaker": "Speaker0",
       "start": 214.35,
@@ -1144,5 +1084,13 @@
     "dgUtteranceCount": 35,
     "matchedSegments": 35,
     "totalDuration": 215.18
+  },
+  "repairedAt": "2026-07-23T04:33:44.448574Z",
+  "repairInfo": {
+    "beforeSegments": 35,
+    "afterSegments": 29,
+    "beforeAvgWords": 3.7,
+    "afterAvgWords": 4.5,
+    "merged": 6
   }
 }

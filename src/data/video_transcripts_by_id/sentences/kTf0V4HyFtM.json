@@ -83,10 +83,10 @@
     },
     {
       "id": 3,
-      "text": "Hi, Billy.",
+      "text": "Hi, Billy. Hi, Tim.",
       "speaker": "Speaker1",
       "start": 10.72,
-      "duration": 0.82,
+      "duration": 2.26,
       "words": [
         {
           "word": "hi",
@@ -99,17 +99,7 @@
           "start": 11.04,
           "end": 11.54,
           "confidence": 0.929
-        }
-      ],
-      "confidence": 0.96
-    },
-    {
-      "id": 4,
-      "text": "Hi, Tim.",
-      "speaker": "Speaker1",
-      "start": 11.92,
-      "duration": 1.06,
-      "words": [
+        },
         {
           "word": "hi",
           "start": 11.92,
@@ -123,10 +113,10 @@
           "confidence": 0.978
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.962
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "Where are you?",
       "speaker": "Speaker1",
       "start": 13.81,
@@ -154,7 +144,7 @@
       "confidence": 1.0
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "I'm at work.",
       "speaker": "Speaker1",
       "start": 15.34,
@@ -182,7 +172,7 @@
       "confidence": 0.997
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "What did you do at the weekend?",
       "speaker": "Speaker1",
       "start": 17.18,
@@ -234,11 +224,11 @@
       "confidence": 0.998
     },
     {
-      "id": 8,
-      "text": "The weekend.",
+      "id": 7,
+      "text": "The weekend. I went hiking.",
       "speaker": "Speaker1",
       "start": 20.77,
-      "duration": 0.82,
+      "duration": 3.3,
       "words": [
         {
           "word": "the",
@@ -251,17 +241,7 @@
           "start": 21.09,
           "end": 21.59,
           "confidence": 0.955
-        }
-      ],
-      "confidence": 0.973
-    },
-    {
-      "id": 9,
-      "text": "I went hiking.",
-      "speaker": "Speaker1",
-      "start": 22.77,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "i",
           "start": 22.77,
@@ -281,14 +261,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.984
     },
     {
-      "id": 10,
-      "text": "Do you usually",
+      "id": 8,
+      "text": "Do you usually go hiking?",
       "speaker": "Speaker1",
       "start": 26.82,
-      "duration": 0.82,
+      "duration": 2.1,
       "words": [
         {
           "word": "do",
@@ -307,17 +287,7 @@
           "start": 27.14,
           "end": 27.64,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.9
-    },
-    {
-      "id": 11,
-      "text": "go hiking?",
-      "speaker": "Speaker1",
-      "start": 28.02,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "go",
           "start": 28.02,
@@ -331,31 +301,21 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.95
     },
     {
-      "id": 12,
-      "text": "Yes.",
+      "id": 9,
+      "text": "Yes. I often go hiking.",
       "speaker": "Speaker1",
       "start": 29.78,
-      "duration": 0.5,
+      "duration": 2.34,
       "words": [
         {
           "word": "yes",
           "start": 29.78,
           "end": 30.28,
           "confidence": 0.78
-        }
-      ],
-      "confidence": 0.78
-    },
-    {
-      "id": 13,
-      "text": "I often go hiking.",
-      "speaker": "Speaker1",
-      "start": 30.66,
-      "duration": 1.46,
-      "words": [
+        },
         {
           "word": "i",
           "start": 30.66,
@@ -381,10 +341,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.89
     },
     {
-      "id": 14,
+      "id": 10,
       "text": "What else did you do?",
       "speaker": "Speaker1",
       "start": 32.5,
@@ -424,7 +384,7 @@
       "confidence": 0.989
     },
     {
-      "id": 15,
+      "id": 11,
       "text": "I ate dinner with my friends.",
       "speaker": "Speaker1",
       "start": 34.82,
@@ -470,11 +430,11 @@
       "confidence": 0.985
     },
     {
-      "id": 16,
-      "text": "What did you eat? We ate",
+      "id": 12,
+      "text": "What did you eat? We ate pasta.",
       "speaker": "Speaker1",
       "start": 39.27,
-      "duration": 2.65,
+      "duration": 3.53,
       "words": [
         {
           "word": "what",
@@ -511,17 +471,7 @@
           "start": 41.42,
           "end": 41.92,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 17,
-      "text": "pasta.",
-      "speaker": "Speaker1",
-      "start": 42.3,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "pasta",
           "start": 42.3,
@@ -532,7 +482,7 @@
       "confidence": 1.0
     },
     {
-      "id": 18,
+      "id": 13,
       "text": "I also watched a film at home.",
       "speaker": "Speaker1",
       "start": 45.19,
@@ -584,7 +534,7 @@
       "confidence": 0.999
     },
     {
-      "id": 19,
+      "id": 14,
       "text": "What film did you watch?",
       "speaker": "Speaker1",
       "start": 49.18,
@@ -624,11 +574,11 @@
       "confidence": 1.0
     },
     {
-      "id": 20,
-      "text": "I watched",
+      "id": 15,
+      "text": "I watched a horror film.",
       "speaker": "Speaker1",
       "start": 51.48,
-      "duration": 0.74,
+      "duration": 2.42,
       "words": [
         {
           "word": "i",
@@ -641,17 +591,7 @@
           "start": 51.72,
           "end": 52.22,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 21,
-      "text": "a horror film.",
-      "speaker": "Speaker1",
-      "start": 52.6,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "a",
           "start": 52.6,
@@ -671,10 +611,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.999
     },
     {
-      "id": 22,
+      "id": 16,
       "text": "How was your weekend, Bully?",
       "speaker": "Speaker1",
       "start": 55.32,
@@ -714,7 +654,7 @@
       "confidence": 0.932
     },
     {
-      "id": 23,
+      "id": 17,
       "text": "It was great. Thanks.",
       "speaker": "Speaker1",
       "start": 57.88,
@@ -748,7 +688,7 @@
       "confidence": 0.991
     },
     {
-      "id": 24,
+      "id": 18,
       "text": "What did you do?",
       "speaker": "Speaker1",
       "start": 60.12,
@@ -782,7 +722,7 @@
       "confidence": 1.0
     },
     {
-      "id": 25,
+      "id": 19,
       "text": "I went to the beach.",
       "speaker": "Speaker1",
       "start": 61.96,
@@ -822,7 +762,7 @@
       "confidence": 1.0
     },
     {
-      "id": 26,
+      "id": 20,
       "text": "Do you usually go to the beach?",
       "speaker": "Speaker1",
       "start": 64.19,
@@ -874,28 +814,18 @@
       "confidence": 0.999
     },
     {
-      "id": 27,
-      "text": "No.",
+      "id": 21,
+      "text": "No. It's usually too cold.",
       "speaker": "Speaker1",
       "start": 67.14,
-      "duration": 0.5,
+      "duration": 2.83,
       "words": [
         {
           "word": "no",
           "start": 67.14,
           "end": 67.64,
           "confidence": 0.99
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 28,
-      "text": "It's usually too cold.",
-      "speaker": "Speaker1",
-      "start": 68.03,
-      "duration": 1.94,
-      "words": [
+        },
         {
           "word": "it's",
           "start": 68.03,
@@ -921,10 +851,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.994
     },
     {
-      "id": 29,
+      "id": 22,
       "text": "What did you do at the beach?",
       "speaker": "Speaker1",
       "start": 70.67,
@@ -976,28 +906,18 @@
       "confidence": 0.999
     },
     {
-      "id": 30,
-      "text": "I",
+      "id": 23,
+      "text": "I had an ice cream.",
       "speaker": "Speaker1",
       "start": 73.22,
-      "duration": 0.5,
+      "duration": 2.42,
       "words": [
         {
           "word": "i",
           "start": 73.22,
           "end": 73.72,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 31,
-      "text": "had an ice cream.",
-      "speaker": "Speaker1",
-      "start": 74.27,
-      "duration": 1.37,
-      "words": [
+        },
         {
           "word": "had",
           "start": 74.27,
@@ -1026,7 +946,7 @@
       "confidence": 0.998
     },
     {
-      "id": 32,
+      "id": 24,
       "text": "Oh. What flavor ice cream did you have?",
       "speaker": "Speaker1",
       "start": 76.03,
@@ -1084,7 +1004,7 @@
       "confidence": 0.932
     },
     {
-      "id": 33,
+      "id": 25,
       "text": "I had a strawberry ice cream.",
       "speaker": "Speaker1",
       "start": 79.93,
@@ -1130,7 +1050,7 @@
       "confidence": 0.999
     },
     {
-      "id": 34,
+      "id": 26,
       "text": "Sean, are you there?",
       "speaker": "Speaker1",
       "start": 84.01,
@@ -1164,7 +1084,7 @@
       "confidence": 0.982
     },
     {
-      "id": 35,
+      "id": 27,
       "text": "Yes. I am. How was your weekend?",
       "speaker": "Speaker1",
       "start": 86.01,
@@ -1216,7 +1136,7 @@
       "confidence": 0.979
     },
     {
-      "id": 36,
+      "id": 28,
       "text": "It was fun. Thanks.",
       "speaker": "Speaker2",
       "start": 88.97,
@@ -1250,7 +1170,7 @@
       "confidence": 0.994
     },
     {
-      "id": 37,
+      "id": 29,
       "text": "What did you do?",
       "speaker": "Speaker1",
       "start": 91.05,
@@ -1284,7 +1204,7 @@
       "confidence": 1.0
     },
     {
-      "id": 38,
+      "id": 30,
       "text": "I made a cake.",
       "speaker": "Speaker2",
       "start": 92.65,
@@ -1318,7 +1238,7 @@
       "confidence": 0.999
     },
     {
-      "id": 39,
+      "id": 31,
       "text": "What kind of cake did you make?",
       "speaker": "Speaker1",
       "start": 95.33,
@@ -1370,7 +1290,7 @@
       "confidence": 1.0
     },
     {
-      "id": 40,
+      "id": 32,
       "text": "I made a chocolate cake.",
       "speaker": "Speaker2",
       "start": 98.45,
@@ -1410,11 +1330,11 @@
       "confidence": 1.0
     },
     {
-      "id": 41,
-      "text": "Sounds delicious.",
+      "id": 33,
+      "text": "Sounds delicious. Can I have some?",
       "speaker": "Speaker1",
       "start": 101.09,
-      "duration": 0.99,
+      "duration": 2.99,
       "words": [
         {
           "word": "sounds",
@@ -1427,17 +1347,7 @@
           "start": 101.58,
           "end": 102.08,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 42,
-      "text": "Can I have some?",
-      "speaker": "Speaker1",
-      "start": 102.94,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "can",
           "start": 102.94,
@@ -1463,10 +1373,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.999
     },
     {
-      "id": 43,
+      "id": 34,
       "text": "Sorry, Tim. My family ate it all.",
       "speaker": "Speaker2",
       "start": 104.38,
@@ -1518,7 +1428,7 @@
       "confidence": 0.992
     },
     {
-      "id": 44,
+      "id": 35,
       "text": "What else did you do?",
       "speaker": "Speaker2",
       "start": 108.38,
@@ -1558,7 +1468,7 @@
       "confidence": 0.999
     },
     {
-      "id": 45,
+      "id": 36,
       "text": "I went to the park and played Frisbee.",
       "speaker": "Speaker2",
       "start": 111.81,
@@ -1616,7 +1526,7 @@
       "confidence": 0.983
     },
     {
-      "id": 46,
+      "id": 37,
       "text": "Hello. Hi, Georgie. What did you do at the weekend?",
       "speaker": "Speaker2",
       "start": 115.65,
@@ -1686,7 +1596,7 @@
       "confidence": 0.993
     },
     {
-      "id": 47,
+      "id": 38,
       "text": "I went swimming.",
       "speaker": "Speaker3",
       "start": 120.13,
@@ -1714,7 +1624,7 @@
       "confidence": 1.0
     },
     {
-      "id": 48,
+      "id": 39,
       "text": "Where did you go swimming?",
       "speaker": "Speaker3",
       "start": 122.85,
@@ -1754,7 +1664,7 @@
       "confidence": 1.0
     },
     {
-      "id": 49,
+      "id": 40,
       "text": "I went swimming at the swimming pool.",
       "speaker": "Speaker3",
       "start": 124.95,
@@ -1806,7 +1716,7 @@
       "confidence": 0.999
     },
     {
-      "id": 50,
+      "id": 41,
       "text": "What else did you do?",
       "speaker": "Speaker3",
       "start": 128.24,
@@ -1846,7 +1756,7 @@
       "confidence": 0.999
     },
     {
-      "id": 51,
+      "id": 42,
       "text": "I read a book. What book did you read?",
       "speaker": "Speaker2",
       "start": 130.07,
@@ -1910,7 +1820,7 @@
       "confidence": 0.999
     },
     {
-      "id": 52,
+      "id": 43,
       "text": "I read a detective story.",
       "speaker": "Speaker5",
       "start": 134.72,
@@ -1950,7 +1860,7 @@
       "confidence": 0.998
     },
     {
-      "id": 53,
+      "id": 44,
       "text": "Click on the link to download a free worksheet.",
       "speaker": "Speaker1",
       "start": 138.24,
@@ -2014,7 +1924,7 @@
       "confidence": 0.99
     },
     {
-      "id": 54,
+      "id": 45,
       "text": "Now back to the lesson.",
       "speaker": "Speaker0",
       "start": 144.21,
@@ -2054,7 +1964,7 @@
       "confidence": 0.936
     },
     {
-      "id": 55,
+      "id": 46,
       "text": "How was your weekend?",
       "speaker": "Speaker6",
       "start": 146.61,
@@ -2088,7 +1998,7 @@
       "confidence": 0.997
     },
     {
-      "id": 56,
+      "id": 47,
       "text": "What did you do?",
       "speaker": "Speaker2",
       "start": 148.37,
@@ -2122,7 +2032,7 @@
       "confidence": 0.995
     },
     {
-      "id": 57,
+      "id": 48,
       "text": "I went to the cinema.",
       "speaker": "Speaker0",
       "start": 157.15,
@@ -2162,7 +2072,7 @@
       "confidence": 0.993
     },
     {
-      "id": 58,
+      "id": 49,
       "text": "What else did you do?",
       "speaker": "Speaker1",
       "start": 160.1,
@@ -2202,7 +2112,7 @@
       "confidence": 0.998
     },
     {
-      "id": 59,
+      "id": 50,
       "text": "I had lunch with my friends.",
       "speaker": "Speaker0",
       "start": 168.1,
@@ -2248,7 +2158,7 @@
       "confidence": 0.999
     },
     {
-      "id": 60,
+      "id": 51,
       "text": "What did you eat?",
       "speaker": "Speaker1",
       "start": 171.92,
@@ -2282,7 +2192,7 @@
       "confidence": 0.999
     },
     {
-      "id": 61,
+      "id": 52,
       "text": "We ate pasta.",
       "speaker": "Speaker0",
       "start": 180.08,
@@ -2310,7 +2220,7 @@
       "confidence": 0.988
     },
     {
-      "id": 62,
+      "id": 53,
       "text": "What else did you do?",
       "speaker": "Speaker6",
       "start": 183.38,
@@ -2350,7 +2260,7 @@
       "confidence": 1.0
     },
     {
-      "id": 63,
+      "id": 54,
       "text": "I made a cake.",
       "speaker": "Speaker0",
       "start": 191.78,
@@ -2384,7 +2294,7 @@
       "confidence": 0.921
     },
     {
-      "id": 64,
+      "id": 55,
       "text": "How is Georgie feeling?",
       "speaker": "Speaker1",
       "start": 198.09,
@@ -2418,7 +2328,7 @@
       "confidence": 0.974
     },
     {
-      "id": 65,
+      "id": 56,
       "text": "Find out in the next episode.",
       "speaker": "Speaker1",
       "start": 203.67,
@@ -2464,28 +2374,18 @@
       "confidence": 0.936
     },
     {
-      "id": 66,
-      "text": "Now",
+      "id": 57,
+      "text": "Now back to the lesson.",
       "speaker": "Speaker1",
       "start": 206.87,
-      "duration": 0.5,
+      "duration": 1.94,
       "words": [
         {
           "word": "now",
           "start": 206.87,
           "end": 207.37,
           "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 67,
-      "text": "back to the lesson.",
-      "speaker": "Speaker1",
-      "start": 207.67,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "back",
           "start": 207.67,
@@ -2511,14 +2411,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.911
+      "confidence": 0.953
     },
     {
-      "id": 68,
-      "text": "What did",
+      "id": 58,
+      "text": "What did Tim do at the weekend?",
       "speaker": "Speaker6",
       "start": 212.95,
-      "duration": 0.96,
+      "duration": 2.99,
       "words": [
         {
           "word": "what",
@@ -2531,17 +2431,7 @@
           "start": 213.43,
           "end": 213.91,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.976
-    },
-    {
-      "id": 69,
-      "text": "Tim do at the weekend?",
-      "speaker": "Speaker6",
-      "start": 214.24,
-      "duration": 1.7,
-      "words": [
+        },
         {
           "word": "tim",
           "start": 214.24,
@@ -2573,10 +2463,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.988
     },
     {
-      "id": 70,
+      "id": 59,
       "text": "He went hiking.",
       "speaker": "Speaker0",
       "start": 224.39,
@@ -2604,11 +2494,11 @@
       "confidence": 0.998
     },
     {
-      "id": 71,
-      "text": "That's right.",
+      "id": 60,
+      "text": "That's right. What did",
       "speaker": "Speaker1",
       "start": 227.02,
-      "duration": 0.82,
+      "duration": 2.02,
       "words": [
         {
           "word": "that's",
@@ -2621,17 +2511,7 @@
           "start": 227.34,
           "end": 227.84,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 72,
-      "text": "What did",
-      "speaker": "Speaker1",
-      "start": 228.22,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "what",
           "start": 228.22,
@@ -2648,7 +2528,7 @@
       "confidence": 1.0
     },
     {
-      "id": 73,
+      "id": 61,
       "text": "Sian do at the weekend?",
       "speaker": "Speaker1",
       "start": 229.34,
@@ -2688,7 +2568,7 @@
       "confidence": 0.99
     },
     {
-      "id": 74,
+      "id": 62,
       "text": "She made a chocolate cake.",
       "speaker": "Speaker0",
       "start": 238.46,
@@ -2728,7 +2608,7 @@
       "confidence": 0.966
     },
     {
-      "id": 75,
+      "id": 63,
       "text": "Correct. What did Bunni do at the weekend?",
       "speaker": "Speaker2",
       "start": 242.19,
@@ -2786,7 +2666,7 @@
       "confidence": 0.91
     },
     {
-      "id": 76,
+      "id": 64,
       "text": "He went to the beach.",
       "speaker": "Speaker0",
       "start": 252.03,
@@ -2826,11 +2706,11 @@
       "confidence": 0.964
     },
     {
-      "id": 77,
-      "text": "That's right.",
+      "id": 65,
+      "text": "That's right. What did Georgie do at the weekend?",
       "speaker": "Speaker1",
       "start": 255.54,
-      "duration": 0.83,
+      "duration": 3.71,
       "words": [
         {
           "word": "that's",
@@ -2843,17 +2723,7 @@
           "start": 255.86,
           "end": 256.37,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 78,
-      "text": "What did Georgie do at the weekend?",
-      "speaker": "Speaker1",
-      "start": 256.91,
-      "duration": 2.34,
-      "words": [
+        },
         {
           "word": "what",
           "start": 256.91,
@@ -2900,7 +2770,7 @@
       "confidence": 0.996
     },
     {
-      "id": 79,
+      "id": 66,
       "text": "She read a book.",
       "speaker": "Speaker0",
       "start": 266.03,
@@ -2934,28 +2804,18 @@
       "confidence": 0.987
     },
     {
-      "id": 80,
-      "text": "Correct.",
+      "id": 67,
+      "text": "Correct. What did you do at the weekend?",
       "speaker": "Speaker6",
       "start": 269.64,
-      "duration": 0.5,
+      "duration": 3.47,
       "words": [
         {
           "word": "correct",
           "start": 269.64,
           "end": 270.14,
           "confidence": 0.994
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 81,
-      "text": "What did you do at the weekend?",
-      "speaker": "Speaker6",
-      "start": 270.76,
-      "duration": 2.35,
-      "words": [
+        },
         {
           "word": "what",
           "start": 270.76,
@@ -2999,10 +2859,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.997
     },
     {
-      "id": 82,
+      "id": 68,
       "text": "Let us know in the comments.",
       "speaker": "Speaker6",
       "start": 273.73,
@@ -3048,7 +2908,7 @@
       "confidence": 1.0
     },
     {
-      "id": 83,
+      "id": 69,
       "text": "Click here to find out what we do every day. And click here to subscribe to our channel.",
       "speaker": "Speaker2",
       "start": 276.12,
@@ -3166,7 +3026,7 @@
       "confidence": 0.995
     },
     {
-      "id": 84,
+      "id": 70,
       "text": "See you in the next video.",
       "speaker": "Speaker1",
       "start": 283.78,
@@ -3212,7 +3072,7 @@
       "confidence": 0.999
     },
     {
-      "id": 85,
+      "id": 71,
       "text": "Goodbye.",
       "speaker": "Speaker0",
       "start": 286.58,
@@ -3244,5 +3104,14 @@
     "dgUtteranceCount": 85,
     "matchedSegments": 85,
     "totalDuration": 287.08
+  },
+  "text": "Easy English conversations. What did you do at the weekend? Hi, Billy. Hi, Tim. Where are you? I'm at work. What did you do at the weekend? The weekend. I went hiking. Do you usually go hiking? Yes. I often go hiking. What else did you do? I ate dinner with my friends. What did you eat? We ate pasta. I also watched a film at home. What film did you watch? I watched a horror film. How was your weekend, Bully? It was great. Thanks. What did you do? I went to the beach. Do you usually go to the beach? No. It's usually too cold. What did you do at the beach? I had an ice cream. Oh. What flavor ice cream did you have? I had a strawberry ice cream. Sean, are you there? Yes. I am. How was your weekend? It was fun. Thanks. What did you do? I made a cake. What kind of cake did you make? I made a chocolate cake. Sounds delicious. Can I have some? Sorry, Tim. My family ate it all. What else did you do? I went to the park and played Frisbee. Hello. Hi, Georgie. What did you do at the weekend? I went swimming. Where did you go swimming? I went swimming at the swimming pool. What else did you do? I read a book. What book did you read? I read a detective story. Click on the link to download a free worksheet. Now back to the lesson. How was your weekend? What did you do? I went to the cinema. What else did you do? I had lunch with my friends. What did you eat? We ate pasta. What else did you do? I made a cake. How is Georgie feeling? Find out in the next episode. Now back to the lesson. What did Tim do at the weekend? He went hiking. That's right. What did Sian do at the weekend? She made a chocolate cake. Correct. What did Bunni do at the weekend? He went to the beach. That's right. What did Georgie do at the weekend? She read a book. Correct. What did you do at the weekend? Let us know in the comments. Click here to find out what we do every day. And click here to subscribe to our channel. See you in the next video. Goodbye.",
+  "repairedAt": "2026-07-23T04:33:44.504781Z",
+  "repairInfo": {
+    "beforeSegments": 85,
+    "afterSegments": 71,
+    "beforeAvgWords": 4.7,
+    "afterAvgWords": 5.6,
+    "merged": 14
   }
 }

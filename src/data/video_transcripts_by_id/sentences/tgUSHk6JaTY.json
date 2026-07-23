@@ -1,5 +1,5 @@
 {
-  "text": "What do you like? What do you like? What do you like? Baseball, baseball. I like baseball. Basketball, basketball. I like basketball. Volleyball, volleyball. I like volleyball. Soccer, soccer. I like soccer. Baseball, basketball, volleyball, soccer. I like sports! Hurray! What do you like? What do you like? What do you like? Diving, diving. I like diving. Swimming, swimming. I like swimming. Skiing, skiing. I like skiing. Skating, skating. I like skating. Diving, swimming, skiing, skating. I like sports! Hurray! What do you like? What do you like? What do you like? Tennis, tennis. I like tennis. Badminton, badminton. I like badminton. Fencing, fencing. I like fencing. Boxing, boxing. I like boxing. Tennis, badminton, fencing, boxing. I like sports! Hurray! Hurray!",
+  "text": "What do you like? What do you like? What do you like? Baseball, baseball, I like baseball. Basketball. Basketball. I like basketball. Volleyball. Volleyball. I like volleyball. Soccer. Soccer. I like soccer. Baseball. Basketball. Volleyball. Soccer. I like sports. Sports, hallway. What do you like? What do you like? What do you like? Diving, diving. I like diving, swimming, swimming. I like swimming, skiing, skiing. I like skiing, skating, skating. I like skating, diving, swimming, I like skates. Hooray! What do you like? What do you like? What do you like? Tennis, tennis, I like tennis. Badminton, badminton. I like badminton. Fencing, fencing. I like fencing. Boxing, boxing. I like boxing. Tennis, badminton, fencing, fencing. I Let's listen. What do you like? What do you like? What do you like? Baseball, baseball, I like baseball. Basketball, basketball, I like basketball, basketball, volleyball, volleyball. I like volleyball. Soccer, soccer. I like soccer. Baseball, basketball, volleyball, soccer. I like sports. What do you like? What do you like? What do you like? What do you like? Diving, diving. I like diving, swimming, swimming. I like swimming, skiing, skiing. I like skiing, skating, skating. I like skating, diving, swimming, skiing, skating. I like skates. Hurray. What do you like? What do you like? What do you like? Tennis, tennis, I like tennis. Badminton, badminton, I like badminton. Fencing, fencing. I like fencing. Boxing, boxing, I like boxing. Tennis, badminton, fencing, fencing. I like sports. Hooray, hooray. Let's sing.",
   "segments": [
     {
       "id": 1,
@@ -105,43 +105,23 @@
     },
     {
       "id": 4,
-      "text": "Baseball,",
+      "text": "Baseball, baseball, I like baseball.",
       "speaker": "Speaker1",
       "start": 12.16,
-      "duration": 0.5,
+      "duration": 3.27,
       "words": [
         {
           "word": "baseball",
           "start": 12.16,
           "end": 12.66,
           "confidence": 0.598
-        }
-      ],
-      "confidence": 0.598
-    },
-    {
-      "id": 5,
-      "text": "baseball,",
-      "speaker": "Speaker1",
-      "start": 13.12,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "baseball",
           "start": 13.12,
           "end": 13.62,
           "confidence": 0.726
-        }
-      ],
-      "confidence": 0.726
-    },
-    {
-      "id": 6,
-      "text": "I like baseball.",
-      "speaker": "Speaker1",
-      "start": 14.0,
-      "duration": 1.43,
-      "words": [
+        },
         {
           "word": "i",
           "start": 14.0,
@@ -161,47 +141,27 @@
           "confidence": 0.963
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.77
     },
     {
-      "id": 7,
-      "text": "Basketball.",
+      "id": 5,
+      "text": "Basketball. Basketball. I like basketball. Volleyball.",
       "speaker": "Speaker1",
       "start": 15.73,
-      "duration": 0.5,
+      "duration": 3.86,
       "words": [
         {
           "word": "basketball",
           "start": 15.73,
           "end": 16.23,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 8,
-      "text": "Basketball.",
-      "speaker": "Speaker1",
-      "start": 16.54,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "basketball",
           "start": 16.54,
           "end": 17.04,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 9,
-      "text": "I like basketball. Volleyball.",
-      "speaker": "Speaker1",
-      "start": 17.41,
-      "duration": 2.18,
-      "words": [
+        },
         {
           "word": "i",
           "start": 17.41,
@@ -227,31 +187,21 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.989
     },
     {
-      "id": 10,
-      "text": "Volleyball.",
+      "id": 6,
+      "text": "Volleyball. I like volleyball. Soccer. Soccer.",
       "speaker": "Speaker1",
       "start": 20.05,
-      "duration": 0.5,
+      "duration": 3.79,
       "words": [
         {
           "word": "volleyball",
           "start": 20.05,
           "end": 20.55,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 11,
-      "text": "I like volleyball. Soccer. Soccer.",
-      "speaker": "Speaker1",
-      "start": 20.93,
-      "duration": 2.91,
-      "words": [
+        },
         {
           "word": "i",
           "start": 20.93,
@@ -283,10 +233,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.987
     },
     {
-      "id": 12,
+      "id": 7,
       "text": "I like soccer.",
       "speaker": "Speaker1",
       "start": 24.54,
@@ -314,44 +264,24 @@
       "confidence": 0.97
     },
     {
-      "id": 13,
-      "text": "Baseball.",
+      "id": 8,
+      "text": "Baseball. Basketball. Volleyball.",
       "speaker": "Speaker1",
       "start": 26.05,
-      "duration": 0.5,
+      "duration": 2.26,
       "words": [
         {
           "word": "baseball",
           "start": 26.05,
           "end": 26.55,
           "confidence": 0.944
-        }
-      ],
-      "confidence": 0.944
-    },
-    {
-      "id": 14,
-      "text": "Basketball.",
-      "speaker": "Speaker1",
-      "start": 26.93,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "basketball",
           "start": 26.93,
           "end": 27.43,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 15,
-      "text": "Volleyball.",
-      "speaker": "Speaker1",
-      "start": 27.81,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "volleyball",
           "start": 27.81,
@@ -359,31 +289,21 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.978
     },
     {
-      "id": 16,
-      "text": "Soccer.",
+      "id": 9,
+      "text": "Soccer. I like sports.",
       "speaker": "Speaker1",
       "start": 28.61,
-      "duration": 0.5,
+      "duration": 1.81,
       "words": [
         {
           "word": "soccer",
           "start": 28.61,
           "end": 29.11,
           "confidence": 0.994
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 17,
-      "text": "I like sports.",
-      "speaker": "Speaker1",
-      "start": 29.73,
-      "duration": 0.69,
-      "words": [
+        },
         {
           "word": "i",
           "start": 29.73,
@@ -403,10 +323,10 @@
           "confidence": 0.641
         }
       ],
-      "confidence": 0.82
+      "confidence": 0.907
     },
     {
-      "id": 18,
+      "id": 10,
       "text": "Sports,",
       "speaker": "Speaker1",
       "start": 31.22,
@@ -422,28 +342,18 @@
       "confidence": 0.423
     },
     {
-      "id": 19,
-      "text": "hallway.",
+      "id": 11,
+      "text": "hallway. What do you like?",
       "speaker": "Speaker0",
       "start": 32.02,
-      "duration": 0.5,
+      "duration": 3.38,
       "words": [
         {
           "word": "hallway",
           "start": 32.02,
           "end": 32.52,
           "confidence": 0.788
-        }
-      ],
-      "confidence": 0.788
-    },
-    {
-      "id": 20,
-      "text": "What do you like?",
-      "speaker": "Speaker0",
-      "start": 34.1,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "what",
           "start": 34.1,
@@ -469,10 +379,10 @@
           "confidence": 0.902
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.875
     },
     {
-      "id": 21,
+      "id": 12,
       "text": "What do you like?",
       "speaker": "Speaker0",
       "start": 35.78,
@@ -506,7 +416,7 @@
       "confidence": 1.0
     },
     {
-      "id": 22,
+      "id": 13,
       "text": "What do you like?",
       "speaker": "Speaker0",
       "start": 39.22,
@@ -540,11 +450,11 @@
       "confidence": 0.998
     },
     {
-      "id": 23,
-      "text": "Diving, diving.",
+      "id": 14,
+      "text": "Diving, diving. I like diving, swimming, swimming.",
       "speaker": "Speaker0",
       "start": 40.98,
-      "duration": 1.22,
+      "duration": 4.74,
       "words": [
         {
           "word": "diving",
@@ -557,17 +467,7 @@
           "start": 41.7,
           "end": 42.2,
           "confidence": 0.777
-        }
-      ],
-      "confidence": 0.78
-    },
-    {
-      "id": 24,
-      "text": "I like diving, swimming, swimming.",
-      "speaker": "Speaker0",
-      "start": 42.74,
-      "duration": 2.98,
-      "words": [
+        },
         {
           "word": "i",
           "start": 42.74,
@@ -599,14 +499,14 @@
           "confidence": 0.958
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.879
     },
     {
-      "id": 25,
-      "text": "I like swimming,",
+      "id": 15,
+      "text": "I like swimming, skiing, skiing.",
       "speaker": "Speaker0",
       "start": 46.34,
-      "duration": 1.14,
+      "duration": 2.89,
       "words": [
         {
           "word": "i",
@@ -625,17 +525,7 @@
           "start": 46.98,
           "end": 47.48,
           "confidence": 0.926
-        }
-      ],
-      "confidence": 0.974
-    },
-    {
-      "id": 26,
-      "text": "skiing, skiing.",
-      "speaker": "Speaker0",
-      "start": 48.02,
-      "duration": 1.21,
-      "words": [
+        },
         {
           "word": "skiing",
           "start": 48.02,
@@ -649,14 +539,14 @@
           "confidence": 0.954
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.972
     },
     {
-      "id": 27,
-      "text": "I like skiing, skating,",
+      "id": 16,
+      "text": "I like skiing, skating, skating.",
       "speaker": "Speaker0",
       "start": 49.94,
-      "duration": 1.86,
+      "duration": 2.9,
       "words": [
         {
           "word": "i",
@@ -681,17 +571,7 @@
           "start": 51.3,
           "end": 51.8,
           "confidence": 0.986
-        }
-      ],
-      "confidence": 0.986
-    },
-    {
-      "id": 28,
-      "text": "skating.",
-      "speaker": "Speaker0",
-      "start": 52.34,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "skating",
           "start": 52.34,
@@ -699,10 +579,10 @@
           "confidence": 0.954
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.97
     },
     {
-      "id": 29,
+      "id": 17,
       "text": "I like skating, diving, swimming,",
       "speaker": "Speaker0",
       "start": 53.22,
@@ -742,7 +622,7 @@
       "confidence": 0.957
     },
     {
-      "id": 30,
+      "id": 18,
       "text": "I like skates. Hooray!",
       "speaker": "Speaker0",
       "start": 59.74,
@@ -776,7 +656,7 @@
       "confidence": 0.625
     },
     {
-      "id": 31,
+      "id": 19,
       "text": "What do you like? What do you like?",
       "speaker": "Speaker0",
       "start": 62.78,
@@ -834,7 +714,7 @@
       "confidence": 0.99
     },
     {
-      "id": 32,
+      "id": 20,
       "text": "What do you like?",
       "speaker": "Speaker0",
       "start": 67.9,
@@ -868,44 +748,24 @@
       "confidence": 0.989
     },
     {
-      "id": 33,
-      "text": "Tennis,",
+      "id": 21,
+      "text": "Tennis, tennis, I like tennis. Badminton, badminton.",
       "speaker": "Speaker2",
       "start": 69.58,
-      "duration": 0.5,
+      "duration": 4.92,
       "words": [
         {
           "word": "tennis",
           "start": 69.58,
           "end": 70.08,
           "confidence": 0.691
-        }
-      ],
-      "confidence": 0.691
-    },
-    {
-      "id": 34,
-      "text": "tennis,",
-      "speaker": "Speaker2",
-      "start": 70.46,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tennis",
           "start": 70.46,
           "end": 70.96,
           "confidence": 0.858
-        }
-      ],
-      "confidence": 0.858
-    },
-    {
-      "id": 35,
-      "text": "I like tennis. Badminton,",
-      "speaker": "Speaker2",
-      "start": 71.42,
-      "duration": 2.2,
-      "words": [
+        },
         {
           "word": "i",
           "start": 71.42,
@@ -929,17 +789,7 @@
           "start": 73.12,
           "end": 73.62,
           "confidence": 0.994
-        }
-      ],
-      "confidence": 0.962
-    },
-    {
-      "id": 36,
-      "text": "badminton.",
-      "speaker": "Speaker2",
-      "start": 74.0,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "badminton",
           "start": 74.0,
@@ -947,10 +797,10 @@
           "confidence": 0.926
         }
       ],
-      "confidence": 0.926
+      "confidence": 0.859
     },
     {
-      "id": 37,
+      "id": 22,
       "text": "I like badminton.",
       "speaker": "Speaker3",
       "start": 75.12,
@@ -978,11 +828,11 @@
       "confidence": 0.968
     },
     {
-      "id": 38,
-      "text": "Fencing, fencing.",
+      "id": 23,
+      "text": "Fencing, fencing. I like fencing. Boxing, boxing.",
       "speaker": "Speaker3",
       "start": 76.72,
-      "duration": 1.22,
+      "duration": 4.67,
       "words": [
         {
           "word": "fencing",
@@ -995,17 +845,7 @@
           "start": 77.44,
           "end": 77.94,
           "confidence": 0.95
-        }
-      ],
-      "confidence": 0.972
-    },
-    {
-      "id": 39,
-      "text": "I like fencing. Boxing,",
-      "speaker": "Speaker3",
-      "start": 78.25,
-      "duration": 2.25,
-      "words": [
+        },
         {
           "word": "i",
           "start": 78.25,
@@ -1029,17 +869,7 @@
           "start": 80.0,
           "end": 80.5,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.979
-    },
-    {
-      "id": 40,
-      "text": "boxing.",
-      "speaker": "Speaker3",
-      "start": 80.89,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "boxing",
           "start": 80.89,
@@ -1047,10 +877,10 @@
           "confidence": 0.808
         }
       ],
-      "confidence": 0.808
+      "confidence": 0.92
     },
     {
-      "id": 41,
+      "id": 24,
       "text": "I like boxing.",
       "speaker": "Speaker3",
       "start": 81.92,
@@ -1078,44 +908,24 @@
       "confidence": 0.987
     },
     {
-      "id": 42,
-      "text": "Tennis,",
+      "id": 25,
+      "text": "Tennis, badminton, fencing, fencing. I",
       "speaker": "Speaker3",
       "start": 83.69,
-      "duration": 0.5,
+      "duration": 3.37,
       "words": [
         {
           "word": "tennis",
           "start": 83.69,
           "end": 84.19,
           "confidence": 0.956
-        }
-      ],
-      "confidence": 0.956
-    },
-    {
-      "id": 43,
-      "text": "badminton,",
-      "speaker": "Speaker3",
-      "start": 84.48,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "badminton",
           "start": 84.48,
           "end": 84.98,
           "confidence": 0.989
-        }
-      ],
-      "confidence": 0.989
-    },
-    {
-      "id": 44,
-      "text": "fencing, fencing. I",
-      "speaker": "Speaker3",
-      "start": 85.28,
-      "duration": 1.78,
-      "words": [
+        },
         {
           "word": "fencing",
           "start": 85.28,
@@ -1135,14 +945,14 @@
           "confidence": 0.948
         }
       ],
-      "confidence": 0.939
+      "confidence": 0.961
     },
     {
-      "id": 45,
-      "text": "Let's listen.",
+      "id": 26,
+      "text": "Let's listen. What do you like?",
       "speaker": "Speaker0",
       "start": 94.88,
-      "duration": 0.74,
+      "duration": 8.42,
       "words": [
         {
           "word": "let's",
@@ -1155,17 +965,7 @@
           "start": 95.12,
           "end": 95.62,
           "confidence": 0.962
-        }
-      ],
-      "confidence": 0.792
-    },
-    {
-      "id": 46,
-      "text": "What do you like?",
-      "speaker": "Speaker0",
-      "start": 102.16,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "what",
           "start": 102.16,
@@ -1191,10 +991,10 @@
           "confidence": 0.976
         }
       ],
-      "confidence": 0.742
+      "confidence": 0.767
     },
     {
-      "id": 47,
+      "id": 27,
       "text": "What do you like?",
       "speaker": "Speaker0",
       "start": 103.67,
@@ -1228,7 +1028,7 @@
       "confidence": 0.981
     },
     {
-      "id": 48,
+      "id": 28,
       "text": "What do you like?",
       "speaker": "Speaker1",
       "start": 107.19,
@@ -1262,44 +1062,24 @@
       "confidence": 0.97
     },
     {
-      "id": 49,
-      "text": "Baseball,",
+      "id": 29,
+      "text": "Baseball, baseball, I like baseball.",
       "speaker": "Speaker1",
       "start": 108.95,
-      "duration": 0.5,
+      "duration": 2.99,
       "words": [
         {
           "word": "baseball",
           "start": 108.95,
           "end": 109.45,
           "confidence": 0.53
-        }
-      ],
-      "confidence": 0.53
-    },
-    {
-      "id": 50,
-      "text": "baseball,",
-      "speaker": "Speaker1",
-      "start": 109.76,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "baseball",
           "start": 109.76,
           "end": 110.26,
           "confidence": 0.682
-        }
-      ],
-      "confidence": 0.682
-    },
-    {
-      "id": 51,
-      "text": "I like baseball.",
-      "speaker": "Speaker1",
-      "start": 110.64,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "i",
           "start": 110.64,
@@ -1319,47 +1099,27 @@
           "confidence": 0.684
         }
       ],
-      "confidence": 0.845
+      "confidence": 0.686
     },
     {
-      "id": 52,
-      "text": "Basketball,",
+      "id": 30,
+      "text": "Basketball, basketball, I like basketball, basketball, volleyball, volleyball.",
       "speaker": "Speaker1",
       "start": 112.31,
-      "duration": 0.5,
+      "duration": 4.93,
       "words": [
         {
           "word": "basketball",
           "start": 112.31,
           "end": 112.81,
           "confidence": 0.945
-        }
-      ],
-      "confidence": 0.945
-    },
-    {
-      "id": 53,
-      "text": "basketball,",
-      "speaker": "Speaker1",
-      "start": 113.19,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "basketball",
           "start": 113.19,
           "end": 113.69,
           "confidence": 0.708
-        }
-      ],
-      "confidence": 0.708
-    },
-    {
-      "id": 54,
-      "text": "I like basketball, basketball, volleyball, volleyball.",
-      "speaker": "Speaker1",
-      "start": 114.16,
-      "duration": 3.08,
-      "words": [
+        },
         {
           "word": "i",
           "start": 114.16,
@@ -1397,14 +1157,14 @@
           "confidence": 0.917
         }
       ],
-      "confidence": 0.791
+      "confidence": 0.815
     },
     {
-      "id": 55,
-      "text": "I like volleyball. Soccer,",
+      "id": 31,
+      "text": "I like volleyball. Soccer, soccer.",
       "speaker": "Speaker1",
       "start": 117.78,
-      "duration": 1.86,
+      "duration": 2.82,
       "words": [
         {
           "word": "i",
@@ -1429,17 +1189,7 @@
           "start": 119.14,
           "end": 119.64,
           "confidence": 0.937
-        }
-      ],
-      "confidence": 0.896
-    },
-    {
-      "id": 56,
-      "text": "soccer.",
-      "speaker": "Speaker1",
-      "start": 120.1,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "soccer",
           "start": 120.1,
@@ -1447,10 +1197,10 @@
           "confidence": 0.89
         }
       ],
-      "confidence": 0.89
+      "confidence": 0.893
     },
     {
-      "id": 57,
+      "id": 32,
       "text": "I like soccer.",
       "speaker": "Speaker1",
       "start": 121.14,
@@ -1478,44 +1228,24 @@
       "confidence": 0.955
     },
     {
-      "id": 58,
-      "text": "Baseball,",
+      "id": 33,
+      "text": "Baseball, basketball, volleyball, soccer.",
       "speaker": "Speaker1",
       "start": 122.74,
-      "duration": 0.5,
+      "duration": 3.06,
       "words": [
         {
           "word": "baseball",
           "start": 122.74,
           "end": 123.24,
           "confidence": 0.932
-        }
-      ],
-      "confidence": 0.932
-    },
-    {
-      "id": 59,
-      "text": "basketball,",
-      "speaker": "Speaker1",
-      "start": 123.7,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "basketball",
           "start": 123.7,
           "end": 124.2,
           "confidence": 0.982
-        }
-      ],
-      "confidence": 0.982
-    },
-    {
-      "id": 60,
-      "text": "volleyball, soccer.",
-      "speaker": "Speaker1",
-      "start": 124.5,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "volleyball",
           "start": 124.5,
@@ -1529,10 +1259,10 @@
           "confidence": 0.948
         }
       ],
-      "confidence": 0.96
+      "confidence": 0.958
     },
     {
-      "id": 61,
+      "id": 34,
       "text": "I like sports.",
       "speaker": "Speaker1",
       "start": 126.42,
@@ -1560,7 +1290,7 @@
       "confidence": 0.832
     },
     {
-      "id": 62,
+      "id": 35,
       "text": "What do you like?",
       "speaker": "Speaker0",
       "start": 131.09,
@@ -1594,7 +1324,7 @@
       "confidence": 0.756
     },
     {
-      "id": 63,
+      "id": 36,
       "text": "What do you like?",
       "speaker": "Speaker0",
       "start": 132.53,
@@ -1628,7 +1358,7 @@
       "confidence": 0.996
     },
     {
-      "id": 64,
+      "id": 37,
       "text": "What do you like? What do you like?",
       "speaker": "Speaker0",
       "start": 135.97,
@@ -1686,11 +1416,11 @@
       "confidence": 0.97
     },
     {
-      "id": 65,
-      "text": "Diving, diving.",
+      "id": 38,
+      "text": "Diving, diving. I like diving, swimming, swimming.",
       "speaker": "Speaker0",
       "start": 137.65,
-      "duration": 1.22,
+      "duration": 4.66,
       "words": [
         {
           "word": "diving",
@@ -1703,17 +1433,7 @@
           "start": 138.37,
           "end": 138.87,
           "confidence": 0.791
-        }
-      ],
-      "confidence": 0.794
-    },
-    {
-      "id": 66,
-      "text": "I like diving,",
-      "speaker": "Speaker0",
-      "start": 139.56,
-      "duration": 1.06,
-      "words": [
+        },
         {
           "word": "i",
           "start": 139.56,
@@ -1731,17 +1451,7 @@
           "start": 140.12,
           "end": 140.62,
           "confidence": 0.909
-        }
-      ],
-      "confidence": 0.964
-    },
-    {
-      "id": 67,
-      "text": "swimming, swimming.",
-      "speaker": "Speaker0",
-      "start": 141.0,
-      "duration": 1.31,
-      "words": [
+        },
         {
           "word": "swimming",
           "start": 141.0,
@@ -1755,14 +1465,14 @@
           "confidence": 0.956
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.91
     },
     {
-      "id": 68,
-      "text": "I like swimming,",
+      "id": 39,
+      "text": "I like swimming, skiing,",
       "speaker": "Speaker0",
       "start": 142.69,
-      "duration": 1.51,
+      "duration": 2.39,
       "words": [
         {
           "word": "i",
@@ -1781,17 +1491,7 @@
           "start": 143.7,
           "end": 144.2,
           "confidence": 0.954
-        }
-      ],
-      "confidence": 0.983
-    },
-    {
-      "id": 69,
-      "text": "skiing,",
-      "speaker": "Speaker0",
-      "start": 144.58,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "skiing",
           "start": 144.58,
@@ -1799,10 +1499,10 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.987
     },
     {
-      "id": 70,
+      "id": 40,
       "text": "skiing. I like",
       "speaker": "Speaker0",
       "start": 145.94,
@@ -1830,7 +1530,7 @@
       "confidence": 0.972
     },
     {
-      "id": 71,
+      "id": 41,
       "text": "skiing, skating, skating.",
       "speaker": "Speaker0",
       "start": 147.78,
@@ -1858,11 +1558,11 @@
       "confidence": 0.96
     },
     {
-      "id": 72,
-      "text": "I like skating,",
+      "id": 42,
+      "text": "I like skating, diving, swimming, skiing, skating.",
       "speaker": "Speaker0",
       "start": 149.86,
-      "duration": 1.3,
+      "duration": 4.74,
       "words": [
         {
           "word": "i",
@@ -1881,65 +1581,25 @@
           "start": 150.66,
           "end": 151.16,
           "confidence": 0.845
-        }
-      ],
-      "confidence": 0.945
-    },
-    {
-      "id": 73,
-      "text": "diving,",
-      "speaker": "Speaker0",
-      "start": 151.46,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "diving",
           "start": 151.46,
           "end": 151.96,
           "confidence": 0.986
-        }
-      ],
-      "confidence": 0.986
-    },
-    {
-      "id": 74,
-      "text": "swimming,",
-      "speaker": "Speaker0",
-      "start": 152.34,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "swimming",
           "start": 152.34,
           "end": 152.84,
           "confidence": 0.976
-        }
-      ],
-      "confidence": 0.976
-    },
-    {
-      "id": 75,
-      "text": "skiing,",
-      "speaker": "Speaker0",
-      "start": 153.22,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "skiing",
           "start": 153.22,
           "end": 153.72,
           "confidence": 0.823
-        }
-      ],
-      "confidence": 0.823
-    },
-    {
-      "id": 76,
-      "text": "skating.",
-      "speaker": "Speaker0",
-      "start": 154.1,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "skating",
           "start": 154.1,
@@ -1947,10 +1607,10 @@
           "confidence": 0.952
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.936
     },
     {
-      "id": 77,
+      "id": 43,
       "text": "I like skates.",
       "speaker": "Speaker0",
       "start": 155.14,
@@ -1978,28 +1638,18 @@
       "confidence": 0.889
     },
     {
-      "id": 78,
-      "text": "Hurray.",
+      "id": 44,
+      "text": "Hurray. What do you like?",
       "speaker": "Speaker0",
       "start": 157.06,
-      "duration": 0.5,
+      "duration": 3.63,
       "words": [
         {
           "word": "hurray",
           "start": 157.06,
           "end": 157.56,
           "confidence": 0.826
-        }
-      ],
-      "confidence": 0.826
-    },
-    {
-      "id": 79,
-      "text": "What do you like?",
-      "speaker": "Speaker0",
-      "start": 159.47,
-      "duration": 1.22,
-      "words": [
+        },
         {
           "word": "what",
           "start": 159.47,
@@ -2028,11 +1678,11 @@
       "confidence": 0.825
     },
     {
-      "id": 80,
-      "text": "What do you",
+      "id": 45,
+      "text": "What do you like?",
       "speaker": "Speaker0",
       "start": 161.15,
-      "duration": 1.06,
+      "duration": 1.91,
       "words": [
         {
           "word": "what",
@@ -2051,17 +1701,7 @@
           "start": 161.71,
           "end": 162.21,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 81,
-      "text": "like?",
-      "speaker": "Speaker0",
-      "start": 162.56,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "like",
           "start": 162.56,
@@ -2069,47 +1709,27 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.996
     },
     {
-      "id": 82,
-      "text": "What",
+      "id": 46,
+      "text": "What do you like? Tennis, tennis,",
       "speaker": "Speaker0",
       "start": 163.43,
-      "duration": 0.5,
+      "duration": 4.13,
       "words": [
         {
           "word": "what",
           "start": 163.43,
           "end": 163.93,
           "confidence": 0.846
-        }
-      ],
-      "confidence": 0.846
-    },
-    {
-      "id": 83,
-      "text": "do",
-      "speaker": "Speaker0",
-      "start": 164.28,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "do",
           "start": 164.28,
           "end": 164.78,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 84,
-      "text": "you like? Tennis,",
-      "speaker": "Speaker0",
-      "start": 165.15,
-      "duration": 1.46,
-      "words": [
+        },
         {
           "word": "you",
           "start": 165.15,
@@ -2127,17 +1747,7 @@
           "start": 166.11,
           "end": 166.61,
           "confidence": 0.691
-        }
-      ],
-      "confidence": 0.897
-    },
-    {
-      "id": 85,
-      "text": "tennis,",
-      "speaker": "Speaker0",
-      "start": 167.06,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tennis",
           "start": 167.06,
@@ -2145,10 +1755,10 @@
           "confidence": 0.751
         }
       ],
-      "confidence": 0.751
+      "confidence": 0.873
     },
     {
-      "id": 86,
+      "id": 47,
       "text": "I like tennis.",
       "speaker": "Speaker2",
       "start": 168.11,
@@ -2176,28 +1786,18 @@
       "confidence": 0.929
     },
     {
-      "id": 87,
-      "text": "Badminton,",
+      "id": 48,
+      "text": "Badminton, badminton,",
       "speaker": "Speaker2",
       "start": 169.78,
-      "duration": 0.5,
+      "duration": 1.39,
       "words": [
         {
           "word": "badminton",
           "start": 169.78,
           "end": 170.28,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.993
-    },
-    {
-      "id": 88,
-      "text": "badminton,",
-      "speaker": "Speaker2",
-      "start": 170.67,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "badminton",
           "start": 170.67,
@@ -2205,10 +1805,10 @@
           "confidence": 0.922
         }
       ],
-      "confidence": 0.922
+      "confidence": 0.958
     },
     {
-      "id": 89,
+      "id": 49,
       "text": "I like badminton.",
       "speaker": "Speaker3",
       "start": 171.71,
@@ -2236,44 +1836,24 @@
       "confidence": 0.969
     },
     {
-      "id": 90,
-      "text": "Fencing,",
+      "id": 50,
+      "text": "Fencing, fencing. I like fencing.",
       "speaker": "Speaker3",
       "start": 173.24,
-      "duration": 0.5,
+      "duration": 2.98,
       "words": [
         {
           "word": "fencing",
           "start": 173.24,
           "end": 173.74,
           "confidence": 0.988
-        }
-      ],
-      "confidence": 0.988
-    },
-    {
-      "id": 91,
-      "text": "fencing.",
-      "speaker": "Speaker3",
-      "start": 174.12,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "fencing",
           "start": 174.12,
           "end": 174.62,
           "confidence": 0.897
-        }
-      ],
-      "confidence": 0.897
-    },
-    {
-      "id": 92,
-      "text": "I like fencing.",
-      "speaker": "Speaker3",
-      "start": 175.08,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "i",
           "start": 175.08,
@@ -2293,47 +1873,27 @@
           "confidence": 0.898
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.95
     },
     {
-      "id": 93,
-      "text": "Boxing,",
+      "id": 51,
+      "text": "Boxing, boxing, I like boxing.",
       "speaker": "Speaker3",
       "start": 176.68,
-      "duration": 0.5,
+      "duration": 3.06,
       "words": [
         {
           "word": "boxing",
           "start": 176.68,
           "end": 177.18,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 94,
-      "text": "boxing,",
-      "speaker": "Speaker3",
-      "start": 177.56,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "boxing",
           "start": 177.56,
           "end": 178.06,
           "confidence": 0.776
-        }
-      ],
-      "confidence": 0.776
-    },
-    {
-      "id": 95,
-      "text": "I like boxing.",
-      "speaker": "Speaker3",
-      "start": 178.6,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "i",
           "start": 178.6,
@@ -2353,63 +1913,33 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.918
     },
     {
-      "id": 96,
-      "text": "Tennis,",
+      "id": 52,
+      "text": "Tennis, badminton, fencing, fencing.",
       "speaker": "Speaker3",
       "start": 180.12,
-      "duration": 0.5,
+      "duration": 3.14,
       "words": [
         {
           "word": "tennis",
           "start": 180.12,
           "end": 180.62,
           "confidence": 0.853
-        }
-      ],
-      "confidence": 0.853
-    },
-    {
-      "id": 97,
-      "text": "badminton,",
-      "speaker": "Speaker3",
-      "start": 181.16,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "badminton",
           "start": 181.16,
           "end": 181.66,
           "confidence": 0.971
-        }
-      ],
-      "confidence": 0.971
-    },
-    {
-      "id": 98,
-      "text": "fencing,",
-      "speaker": "Speaker3",
-      "start": 181.96,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "fencing",
           "start": 181.96,
           "end": 182.46,
           "confidence": 0.906
-        }
-      ],
-      "confidence": 0.906
-    },
-    {
-      "id": 99,
-      "text": "fencing.",
-      "speaker": "Speaker3",
-      "start": 182.76,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "fencing",
           "start": 182.76,
@@ -2417,10 +1947,10 @@
           "confidence": 0.828
         }
       ],
-      "confidence": 0.828
+      "confidence": 0.889
     },
     {
-      "id": 100,
+      "id": 53,
       "text": "I like sports.",
       "speaker": "Speaker3",
       "start": 183.8,
@@ -2448,28 +1978,18 @@
       "confidence": 0.95
     },
     {
-      "id": 101,
-      "text": "Hooray,",
+      "id": 54,
+      "text": "Hooray, hooray.",
       "speaker": "Speaker3",
       "start": 185.96,
-      "duration": 0.5,
+      "duration": 1.46,
       "words": [
         {
           "word": "hooray",
           "start": 185.96,
           "end": 186.46,
           "confidence": 0.819
-        }
-      ],
-      "confidence": 0.819
-    },
-    {
-      "id": 102,
-      "text": "hooray.",
-      "speaker": "Speaker3",
-      "start": 186.92,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "hooray",
           "start": 186.92,
@@ -2477,10 +1997,10 @@
           "confidence": 0.888
         }
       ],
-      "confidence": 0.888
+      "confidence": 0.853
     },
     {
-      "id": 103,
+      "id": 55,
       "text": "Let's sing.",
       "speaker": "Speaker0",
       "start": 288.21,
@@ -2517,5 +2037,13 @@
     "dgUtteranceCount": 103,
     "matchedSegments": 103,
     "totalDuration": 289.19
+  },
+  "repairedAt": "2026-07-23T04:33:44.484371Z",
+  "repairInfo": {
+    "beforeSegments": 103,
+    "afterSegments": 55,
+    "beforeAvgWords": 2.4,
+    "afterAvgWords": 4.5,
+    "merged": 48
   }
 }

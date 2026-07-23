@@ -3,10 +3,10 @@
   "segments": [
     {
       "id": 1,
-      "text": "Little moths.",
+      "text": "Little moths. On the monster.",
       "speaker": "Speaker0",
       "start": 2.16,
-      "duration": 1.06,
+      "duration": 5.38,
       "words": [
         {
           "word": "little",
@@ -19,17 +19,7 @@
           "start": 2.72,
           "end": 3.22,
           "confidence": 0.78
-        }
-      ],
-      "confidence": 0.707
-    },
-    {
-      "id": 2,
-      "text": "On the monster.",
-      "speaker": "Speaker0",
-      "start": 6.48,
-      "duration": 1.06,
-      "words": [
+        },
         {
           "word": "on",
           "start": 6.48,
@@ -49,10 +39,10 @@
           "confidence": 0.923
         }
       ],
-      "confidence": 0.949
+      "confidence": 0.828
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "I am not afraid of the monster.",
       "speaker": "Speaker0",
       "start": 17.02,
@@ -104,7 +94,7 @@
       "confidence": 0.946
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "I am on the monster.",
       "speaker": "Speaker0",
       "start": 22.93,
@@ -144,7 +134,7 @@
       "confidence": 0.988
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "I am behind the monster.",
       "speaker": "Speaker0",
       "start": 31.53,
@@ -184,7 +174,7 @@
       "confidence": 0.909
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "I am under the monster.",
       "speaker": "Speaker0",
       "start": 41.34,
@@ -224,7 +214,7 @@
       "confidence": 0.889
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "I am next to the monster.",
       "speaker": "Speaker0",
       "start": 49.34,
@@ -270,7 +260,7 @@
       "confidence": 0.988
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "I am in front of the monster.",
       "speaker": "Speaker0",
       "start": 57.37,
@@ -322,7 +312,7 @@
       "confidence": 0.963
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "I am in the helicopter.",
       "speaker": "Speaker0",
       "start": 69.08,
@@ -362,7 +352,7 @@
       "confidence": 0.989
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "I am above the monster.",
       "speaker": "Speaker0",
       "start": 75.16,
@@ -402,7 +392,7 @@
       "confidence": 0.954
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Oh, no. The monster got me.",
       "speaker": "Speaker0",
       "start": 86.69,
@@ -448,7 +438,7 @@
       "confidence": 0.935
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "Where is Kitty?",
       "speaker": "Speaker1",
       "start": 100.11,
@@ -476,7 +466,7 @@
       "confidence": 0.948
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Where is Kitty?",
       "speaker": "Speaker1",
       "start": 108.36,
@@ -504,7 +494,7 @@
       "confidence": 0.89
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Kitty is not under the bed.",
       "speaker": "Speaker1",
       "start": 116.84,
@@ -550,7 +540,7 @@
       "confidence": 0.98
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "Kitty is not under the sofa.",
       "speaker": "Speaker1",
       "start": 124.09,
@@ -596,7 +586,7 @@
       "confidence": 0.993
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "Kitty is not under the table.",
       "speaker": "Speaker1",
       "start": 138.66,
@@ -642,7 +632,7 @@
       "confidence": 0.968
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "Kitty is not under the",
       "speaker": "Speaker1",
       "start": 147.62,
@@ -682,7 +672,7 @@
       "confidence": 0.998
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "chair. Kitty is not under the desk.",
       "speaker": "Speaker1",
       "start": 158.38,
@@ -734,7 +724,7 @@
       "confidence": 0.992
     },
     {
-      "id": 19,
+      "id": 18,
       "text": "Kitty is not under the car.",
       "speaker": "Speaker1",
       "start": 167.85,
@@ -780,7 +770,7 @@
       "confidence": 0.986
     },
     {
-      "id": 20,
+      "id": 19,
       "text": "Kitty is under the tree.",
       "speaker": "Speaker1",
       "start": 178.53,
@@ -820,7 +810,7 @@
       "confidence": 0.99
     },
     {
-      "id": 21,
+      "id": 20,
       "text": "Little fox.",
       "speaker": "Speaker0",
       "start": 192.85,
@@ -854,5 +844,14 @@
     "dgUtteranceCount": 21,
     "matchedSegments": 21,
     "totalDuration": 193.99
+  },
+  "text": "Little moths. On the monster. I am not afraid of the monster. I am on the monster. I am behind the monster. I am under the monster. I am next to the monster. I am in front of the monster. I am in the helicopter. I am above the monster. Oh, no. The monster got me. Where is Kitty? Where is Kitty? Kitty is not under the bed. Kitty is not under the sofa. Kitty is not under the table. Kitty is not under the chair. Kitty is not under the desk. Kitty is not under the car. Kitty is under the tree. Little fox.",
+  "repairedAt": "2026-07-23T04:33:44.452771Z",
+  "repairInfo": {
+    "beforeSegments": 21,
+    "afterSegments": 20,
+    "beforeAvgWords": 5.0,
+    "afterAvgWords": 5.2,
+    "merged": 1
   }
 }

@@ -261,10 +261,10 @@
     },
     {
       "id": 7,
-      "text": "I'm panicking.",
+      "text": "I'm panicking. Seriously,",
       "speaker": "Speaker1",
       "start": 18.98,
-      "duration": 0.75,
+      "duration": 2.98,
       "words": [
         {
           "word": "i'm",
@@ -277,17 +277,7 @@
           "start": 19.23,
           "end": 19.73,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 8,
-      "text": "Seriously,",
-      "speaker": "Speaker1",
-      "start": 21.46,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "seriously",
           "start": 21.46,
@@ -295,10 +285,10 @@
           "confidence": 0.837
         }
       ],
-      "confidence": 0.837
+      "confidence": 0.918
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "where is it? Look at your hand.",
       "speaker": "Speaker0",
       "start": 22.43,
@@ -350,28 +340,18 @@
       "confidence": 1.0
     },
     {
-      "id": 10,
-      "text": "Oh,",
+      "id": 9,
+      "text": "Oh, there it is. Exactly.",
       "speaker": "Speaker1",
       "start": 25.54,
-      "duration": 0.5,
+      "duration": 2.87,
       "words": [
         {
           "word": "oh",
           "start": 25.54,
           "end": 26.04,
           "confidence": 0.944
-        }
-      ],
-      "confidence": 0.944
-    },
-    {
-      "id": 11,
-      "text": "there it is. Exactly.",
-      "speaker": "Speaker1",
-      "start": 26.63,
-      "duration": 1.78,
-      "words": [
+        },
         {
           "word": "there",
           "start": 26.63,
@@ -397,10 +377,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.971
     },
     {
-      "id": 12,
+      "id": 10,
       "text": "That was embarrassing.",
       "speaker": "Speaker1",
       "start": 29.11,
@@ -428,7 +408,7 @@
       "confidence": 0.999
     },
     {
-      "id": 13,
+      "id": 11,
       "text": "A little.",
       "speaker": "Speaker0",
       "start": 30.47,
@@ -450,7 +430,7 @@
       "confidence": 0.999
     },
     {
-      "id": 14,
+      "id": 12,
       "text": "Okay. Can we pretend that didn't happen? No.",
       "speaker": "Speaker1",
       "start": 31.43,
@@ -508,7 +488,7 @@
       "confidence": 0.997
     },
     {
-      "id": 15,
+      "id": 13,
       "text": "Fair enough.",
       "speaker": "Speaker1",
       "start": 35.03,
@@ -530,7 +510,7 @@
       "confidence": 1.0
     },
     {
-      "id": 16,
+      "id": 14,
       "text": "Today's topic is perfect for you. Why?",
       "speaker": "Speaker0",
       "start": 36.23,
@@ -582,7 +562,7 @@
       "confidence": 1.0
     },
     {
-      "id": 17,
+      "id": 15,
       "text": "Because you can't live without your phone. That's not true.",
       "speaker": "Speaker0",
       "start": 40.05,
@@ -652,7 +632,7 @@
       "confidence": 1.0
     },
     {
-      "id": 18,
+      "id": 16,
       "text": "Really?",
       "speaker": "Speaker0",
       "start": 44.37,
@@ -668,28 +648,18 @@
       "confidence": 0.979
     },
     {
-      "id": 19,
-      "text": "Okay.",
+      "id": 17,
+      "text": "Okay. Maybe a little. A little.",
       "speaker": "Speaker1",
       "start": 45.33,
-      "duration": 0.5,
+      "duration": 2.65,
       "words": [
         {
           "word": "okay",
           "start": 45.33,
           "end": 45.83,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 20,
-      "text": "Maybe a little. A little.",
-      "speaker": "Speaker1",
-      "start": 46.2,
-      "duration": 1.78,
-      "words": [
+        },
         {
           "word": "maybe",
           "start": 46.2,
@@ -721,31 +691,21 @@
           "confidence": 0.908
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.986
     },
     {
-      "id": 21,
-      "text": "Fine.",
+      "id": 18,
+      "text": "Fine. A lot.",
       "speaker": "Speaker1",
       "start": 48.45,
-      "duration": 0.5,
+      "duration": 1.53,
       "words": [
         {
           "word": "fine",
           "start": 48.45,
           "end": 48.95,
           "confidence": 0.928
-        }
-      ],
-      "confidence": 0.928
-    },
-    {
-      "id": 22,
-      "text": "A lot.",
-      "speaker": "Speaker1",
-      "start": 49.33,
-      "duration": 0.65,
-      "words": [
+        },
         {
           "word": "a",
           "start": 49.33,
@@ -759,10 +719,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.964
     },
     {
-      "id": 23,
+      "id": 19,
       "text": "I knew it. What about you? I use my phone every day. Everyone does. That's true.",
       "speaker": "Speaker0",
       "start": 50.36,
@@ -868,7 +828,7 @@
       "confidence": 0.989
     },
     {
-      "id": 24,
+      "id": 20,
       "text": "My phone is my alarm clock. Mine too. It's my camera.",
       "speaker": "Speaker1",
       "start": 56.76,
@@ -944,7 +904,7 @@
       "confidence": 0.995
     },
     {
-      "id": 25,
+      "id": 21,
       "text": "Mine too. It's my map.",
       "speaker": "Speaker1",
       "start": 60.84,
@@ -984,7 +944,7 @@
       "confidence": 0.999
     },
     {
-      "id": 26,
+      "id": 22,
       "text": "Mine too. It's my music player. Mine too. Wow. We're the same person.",
       "speaker": "Speaker1",
       "start": 63.08,
@@ -1072,7 +1032,7 @@
       "confidence": 0.994
     },
     {
-      "id": 27,
+      "id": 23,
       "text": "That's a scary thought.",
       "speaker": "Speaker0",
       "start": 69.32,
@@ -1106,7 +1066,7 @@
       "confidence": 1.0
     },
     {
-      "id": 28,
+      "id": 24,
       "text": "Very scary.",
       "speaker": "Speaker1",
       "start": 71.55,
@@ -1128,7 +1088,7 @@
       "confidence": 1.0
     },
     {
-      "id": 29,
+      "id": 25,
       "text": "How often do you check your phone?",
       "speaker": "Speaker0",
       "start": 73.06,
@@ -1180,7 +1140,7 @@
       "confidence": 1.0
     },
     {
-      "id": 30,
+      "id": 26,
       "text": "Honestly?",
       "speaker": "Speaker1",
       "start": 76.27,
@@ -1196,7 +1156,7 @@
       "confidence": 0.956
     },
     {
-      "id": 31,
+      "id": 27,
       "text": "Yes.",
       "speaker": "Speaker0",
       "start": 77.14,
@@ -1212,7 +1172,7 @@
       "confidence": 0.995
     },
     {
-      "id": 32,
+      "id": 28,
       "text": "Too often. Really?",
       "speaker": "Speaker1",
       "start": 78.19,
@@ -1240,7 +1200,7 @@
       "confidence": 0.996
     },
     {
-      "id": 33,
+      "id": 29,
       "text": "Sometimes I check my phone.",
       "speaker": "Speaker1",
       "start": 80.34,
@@ -1280,7 +1240,7 @@
       "confidence": 0.943
     },
     {
-      "id": 34,
+      "id": 30,
       "text": "And? Then I forget why I picked it up.",
       "speaker": "Speaker1",
       "start": 82.27,
@@ -1344,11 +1304,11 @@
       "confidence": 0.998
     },
     {
-      "id": 35,
-      "text": "Me too.",
+      "id": 31,
+      "text": "Me too. I'm glad it's not just me. Definitely not. Have you ever left your phone at home? Yes.",
       "speaker": "Speaker0",
       "start": 86.55,
-      "duration": 0.74,
+      "duration": 7.06,
       "words": [
         {
           "word": "me",
@@ -1361,17 +1321,7 @@
           "start": 86.79,
           "end": 87.29,
           "confidence": 0.962
-        }
-      ],
-      "confidence": 0.981
-    },
-    {
-      "id": 36,
-      "text": "I'm glad it's not just me. Definitely not. Have you ever left your phone at home? Yes.",
-      "speaker": "Speaker0",
-      "start": 87.75,
-      "duration": 5.86,
-      "words": [
+        },
         {
           "word": "i'm",
           "start": 87.75,
@@ -1475,10 +1425,10 @@
           "confidence": 0.962
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.989
     },
     {
-      "id": 37,
+      "id": 32,
       "text": "Once.",
       "speaker": "Speaker1",
       "start": 94.07,
@@ -1494,7 +1444,7 @@
       "confidence": 0.999
     },
     {
-      "id": 38,
+      "id": 33,
       "text": "Only once?",
       "speaker": "Speaker0",
       "start": 95.03,
@@ -1516,7 +1466,7 @@
       "confidence": 0.998
     },
     {
-      "id": 39,
+      "id": 34,
       "text": "Only once.",
       "speaker": "Speaker1",
       "start": 96.31,
@@ -1538,7 +1488,7 @@
       "confidence": 1.0
     },
     {
-      "id": 40,
+      "id": 35,
       "text": "What happened?",
       "speaker": "Speaker0",
       "start": 97.43,
@@ -1560,7 +1510,7 @@
       "confidence": 1.0
     },
     {
-      "id": 41,
+      "id": 36,
       "text": "I felt strange all day.",
       "speaker": "Speaker1",
       "start": 98.47,
@@ -1600,28 +1550,18 @@
       "confidence": 1.0
     },
     {
-      "id": 42,
-      "text": "Exactly.",
+      "id": 37,
+      "text": "Exactly. I kept checking my pocket.",
       "speaker": "Speaker1",
       "start": 100.5,
-      "duration": 0.5,
+      "duration": 2.9,
       "words": [
         {
           "word": "exactly",
           "start": 100.5,
           "end": 101.0,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 43,
-      "text": "I kept checking my pocket.",
-      "speaker": "Speaker1",
-      "start": 101.94,
-      "duration": 1.46,
-      "words": [
+        },
         {
           "word": "i",
           "start": 101.94,
@@ -1653,10 +1593,10 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.999
     },
     {
-      "id": 44,
+      "id": 38,
       "text": "Me too.",
       "speaker": "Speaker0",
       "start": 103.78,
@@ -1678,7 +1618,7 @@
       "confidence": 0.989
     },
     {
-      "id": 45,
+      "id": 39,
       "text": "Even though I knew my phone wasn't there.",
       "speaker": "Speaker1",
       "start": 104.97,
@@ -1736,7 +1676,7 @@
       "confidence": 0.998
     },
     {
-      "id": 46,
+      "id": 40,
       "text": "That's funny.",
       "speaker": "Speaker0",
       "start": 107.38,
@@ -1758,7 +1698,7 @@
       "confidence": 0.995
     },
     {
-      "id": 47,
+      "id": 41,
       "text": "It's also a little sad.",
       "speaker": "Speaker1",
       "start": 108.66,
@@ -1798,28 +1738,18 @@
       "confidence": 0.999
     },
     {
-      "id": 48,
-      "text": "Maybe.",
+      "id": 42,
+      "text": "Maybe. Do you think people use phones too much?",
       "speaker": "Speaker0",
       "start": 110.66,
-      "duration": 0.5,
+      "duration": 3.78,
       "words": [
         {
           "word": "maybe",
           "start": 110.66,
           "end": 111.16,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 49,
-      "text": "Do you think people use phones too much?",
-      "speaker": "Speaker0",
-      "start": 111.53,
-      "duration": 2.91,
-      "words": [
+        },
         {
           "word": "do",
           "start": 111.53,
@@ -1869,10 +1799,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.998
     },
     {
-      "id": 50,
+      "id": 43,
       "text": "That's a dangerous question.",
       "speaker": "Speaker1",
       "start": 114.88,
@@ -1906,7 +1836,7 @@
       "confidence": 1.0
     },
     {
-      "id": 51,
+      "id": 44,
       "text": "Why?",
       "speaker": "Speaker0",
       "start": 116.8,
@@ -1922,7 +1852,7 @@
       "confidence": 1.0
     },
     {
-      "id": 52,
+      "id": 45,
       "text": "Because the answer is yes.",
       "speaker": "Speaker1",
       "start": 117.6,
@@ -1962,7 +1892,7 @@
       "confidence": 0.997
     },
     {
-      "id": 53,
+      "id": 46,
       "text": "I agree.",
       "speaker": "Speaker0",
       "start": 119.44,
@@ -1984,7 +1914,7 @@
       "confidence": 1.0
     },
     {
-      "id": 54,
+      "id": 47,
       "text": "Including me.",
       "speaker": "Speaker1",
       "start": 120.48,
@@ -2006,7 +1936,7 @@
       "confidence": 0.999
     },
     {
-      "id": 55,
+      "id": 48,
       "text": "Including me too.",
       "speaker": "Speaker0",
       "start": 121.84,
@@ -2034,7 +1964,7 @@
       "confidence": 0.968
     },
     {
-      "id": 56,
+      "id": 49,
       "text": "At least we're honest.",
       "speaker": "Speaker1",
       "start": 123.52,
@@ -2068,7 +1998,7 @@
       "confidence": 0.988
     },
     {
-      "id": 57,
+      "id": 50,
       "text": "That's true. You know what's funny? What?",
       "speaker": "Speaker1",
       "start": 125.12,
@@ -2120,7 +2050,7 @@
       "confidence": 0.989
     },
     {
-      "id": 58,
+      "id": 51,
       "text": "Sometimes I spend ten minutes looking for my phone.",
       "speaker": "Speaker1",
       "start": 128.16,
@@ -2184,11 +2114,11 @@
       "confidence": 0.96
     },
     {
-      "id": 59,
-      "text": "No way.",
+      "id": 52,
+      "text": "No way. Seriously.",
       "speaker": "Speaker0",
       "start": 131.28,
-      "duration": 0.73,
+      "duration": 1.62,
       "words": [
         {
           "word": "no",
@@ -2201,17 +2131,7 @@
           "start": 131.51,
           "end": 132.01,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 60,
-      "text": "Seriously.",
-      "speaker": "Speaker0",
-      "start": 132.4,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "seriously",
           "start": 132.4,
@@ -2219,10 +2139,10 @@
           "confidence": 0.969
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.984
     },
     {
-      "id": 61,
+      "id": 53,
       "text": "Where do you usually find it? In my hand.",
       "speaker": "Speaker0",
       "start": 133.51,
@@ -2286,7 +2206,7 @@
       "confidence": 0.99
     },
     {
-      "id": 62,
+      "id": 54,
       "text": "That's happened to me too. Really?",
       "speaker": "Speaker0",
       "start": 138.39,
@@ -2332,7 +2252,7 @@
       "confidence": 0.99
     },
     {
-      "id": 63,
+      "id": 55,
       "text": "More than once.",
       "speaker": "Speaker0",
       "start": 141.35,
@@ -2360,7 +2280,7 @@
       "confidence": 1.0
     },
     {
-      "id": 64,
+      "id": 56,
       "text": "I feel better now. You're welcome.",
       "speaker": "Speaker1",
       "start": 142.73,
@@ -2406,7 +2326,7 @@
       "confidence": 1.0
     },
     {
-      "id": 65,
+      "id": 57,
       "text": "So today's topic is basically about us.",
       "speaker": "Speaker1",
       "start": 145.53,
@@ -2458,11 +2378,11 @@
       "confidence": 0.997
     },
     {
-      "id": 66,
-      "text": "And probably",
+      "id": 58,
+      "text": "And probably everyone listening.",
       "speaker": "Speaker0",
       "start": 148.57,
-      "duration": 0.98,
+      "duration": 2.34,
       "words": [
         {
           "word": "and",
@@ -2475,17 +2395,7 @@
           "start": 149.05,
           "end": 149.55,
           "confidence": 0.951
-        }
-      ],
-      "confidence": 0.974
-    },
-    {
-      "id": 67,
-      "text": "everyone listening.",
-      "speaker": "Speaker0",
-      "start": 149.85,
-      "duration": 1.06,
-      "words": [
+        },
         {
           "word": "everyone",
           "start": 149.85,
@@ -2499,10 +2409,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.976
     },
     {
-      "id": 68,
+      "id": 59,
       "text": "That's true.",
       "speaker": "Speaker1",
       "start": 151.29,
@@ -2524,7 +2434,7 @@
       "confidence": 1.0
     },
     {
-      "id": 69,
+      "id": 60,
       "text": "Because let's be honest.",
       "speaker": "Speaker0",
       "start": 152.33,
@@ -2558,7 +2468,7 @@
       "confidence": 0.962
     },
     {
-      "id": 70,
+      "id": 61,
       "text": "What?",
       "speaker": "Speaker1",
       "start": 154.09,
@@ -2574,7 +2484,7 @@
       "confidence": 0.999
     },
     {
-      "id": 71,
+      "id": 62,
       "text": "Most people can't live without their phones.",
       "speaker": "Speaker0",
       "start": 155.05,
@@ -2626,7 +2536,7 @@
       "confidence": 1.0
     },
     {
-      "id": 72,
+      "id": 63,
       "text": "Including us.",
       "speaker": "Speaker1",
       "start": 157.85,
@@ -2648,44 +2558,24 @@
       "confidence": 0.995
     },
     {
-      "id": 73,
-      "text": "Especially",
+      "id": 64,
+      "text": "Especially us. You're right. Have you ever lost your phone?",
       "speaker": "Speaker0",
       "start": 159.38,
-      "duration": 0.5,
+      "duration": 4.97,
       "words": [
         {
           "word": "especially",
           "start": 159.38,
           "end": 159.88,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 74,
-      "text": "us.",
-      "speaker": "Speaker0",
-      "start": 160.18,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "us",
           "start": 160.18,
           "end": 160.68,
           "confidence": 0.986
-        }
-      ],
-      "confidence": 0.986
-    },
-    {
-      "id": 75,
-      "text": "You're right. Have you ever lost your phone?",
-      "speaker": "Speaker0",
-      "start": 161.69,
-      "duration": 2.66,
-      "words": [
+        },
         {
           "word": "you're",
           "start": 161.69,
@@ -2735,31 +2625,21 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.995
     },
     {
-      "id": 76,
-      "text": "Unfortunately,",
+      "id": 65,
+      "text": "Unfortunately, yes.",
       "speaker": "Speaker1",
       "start": 164.74,
-      "duration": 0.5,
+      "duration": 1.29,
       "words": [
         {
           "word": "unfortunately",
           "start": 164.74,
           "end": 165.24,
           "confidence": 0.98
-        }
-      ],
-      "confidence": 0.98
-    },
-    {
-      "id": 77,
-      "text": "yes.",
-      "speaker": "Speaker1",
-      "start": 165.53,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "yes",
           "start": 165.53,
@@ -2767,10 +2647,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.99
     },
     {
-      "id": 78,
+      "id": 66,
       "text": "Really?",
       "speaker": "Speaker0",
       "start": 166.5,
@@ -2786,7 +2666,7 @@
       "confidence": 0.912
     },
     {
-      "id": 79,
+      "id": 67,
       "text": "It was terrible.",
       "speaker": "Speaker1",
       "start": 167.29,
@@ -2814,7 +2694,7 @@
       "confidence": 1.0
     },
     {
-      "id": 80,
+      "id": 68,
       "text": "What happened? I couldn't find my phone one morning. Where was it? I had no idea. Were you worried?",
       "speaker": "Speaker1",
       "start": 168.74,
@@ -2938,7 +2818,7 @@
       "confidence": 0.999
     },
     {
-      "id": 81,
+      "id": 69,
       "text": "Very worried.",
       "speaker": "Speaker1",
       "start": 175.56,
@@ -2960,7 +2840,7 @@
       "confidence": 1.0
     },
     {
-      "id": 82,
+      "id": 70,
       "text": "Why?",
       "speaker": "Speaker0",
       "start": 176.76,
@@ -2976,7 +2856,7 @@
       "confidence": 1.0
     },
     {
-      "id": 83,
+      "id": 71,
       "text": "Because everything is on my phone. That's true.",
       "speaker": "Speaker1",
       "start": 177.64,
@@ -3034,7 +2914,7 @@
       "confidence": 1.0
     },
     {
-      "id": 84,
+      "id": 72,
       "text": "My messages.",
       "speaker": "Speaker1",
       "start": 180.84,
@@ -3056,7 +2936,7 @@
       "confidence": 0.877
     },
     {
-      "id": 85,
+      "id": 73,
       "text": "My photos.",
       "speaker": "Speaker0",
       "start": 182.04,
@@ -3078,7 +2958,7 @@
       "confidence": 0.999
     },
     {
-      "id": 86,
+      "id": 74,
       "text": "My contacts.",
       "speaker": "Speaker1",
       "start": 183.32,
@@ -3100,7 +2980,7 @@
       "confidence": 0.95
     },
     {
-      "id": 87,
+      "id": 75,
       "text": "Exactly.",
       "speaker": "Speaker0",
       "start": 184.84,
@@ -3116,7 +2996,7 @@
       "confidence": 1.0
     },
     {
-      "id": 88,
+      "id": 76,
       "text": "I searched everywhere.",
       "speaker": "Speaker1",
       "start": 186.08,
@@ -3144,7 +3024,7 @@
       "confidence": 1.0
     },
     {
-      "id": 89,
+      "id": 77,
       "text": "Did you find it? Eventually.",
       "speaker": "Speaker0",
       "start": 187.75,
@@ -3184,7 +3064,7 @@
       "confidence": 1.0
     },
     {
-      "id": 90,
+      "id": 78,
       "text": "Where was it? In the refrigerator.",
       "speaker": "Speaker0",
       "start": 189.92,
@@ -3230,11 +3110,11 @@
       "confidence": 0.999
     },
     {
-      "id": 91,
-      "text": "No way.",
+      "id": 79,
+      "text": "No way. Yes.",
       "speaker": "Speaker0",
       "start": 192.64,
-      "duration": 0.74,
+      "duration": 1.86,
       "words": [
         {
           "word": "no",
@@ -3247,17 +3127,7 @@
           "start": 192.88,
           "end": 193.38,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 92,
-      "text": "Yes.",
-      "speaker": "Speaker0",
-      "start": 194.0,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "yes",
           "start": 194.0,
@@ -3268,7 +3138,7 @@
       "confidence": 1.0
     },
     {
-      "id": 93,
+      "id": 80,
       "text": "Why was your phone in the refrigerator?",
       "speaker": "Speaker0",
       "start": 195.03,
@@ -3320,7 +3190,7 @@
       "confidence": 1.0
     },
     {
-      "id": 94,
+      "id": 81,
       "text": "That's an excellent question.",
       "speaker": "Speaker1",
       "start": 197.75,
@@ -3354,7 +3224,7 @@
       "confidence": 1.0
     },
     {
-      "id": 95,
+      "id": 82,
       "text": "Do you have an answer?",
       "speaker": "Speaker0",
       "start": 199.44,
@@ -3394,28 +3264,18 @@
       "confidence": 1.0
     },
     {
-      "id": 96,
-      "text": "No.",
+      "id": 83,
+      "text": "No. That's funny.",
       "speaker": "Speaker0",
       "start": 200.94,
-      "duration": 0.5,
+      "duration": 2.82,
       "words": [
         {
           "word": "no",
           "start": 200.94,
           "end": 201.44,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 97,
-      "text": "That's funny.",
-      "speaker": "Speaker0",
-      "start": 202.94,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "that's",
           "start": 202.94,
@@ -3429,10 +3289,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 1.0
     },
     {
-      "id": 98,
+      "id": 84,
       "text": "I think I was holding my phone and a bottle of water.",
       "speaker": "Speaker1",
       "start": 204.14,
@@ -3514,28 +3374,18 @@
       "confidence": 0.999
     },
     {
-      "id": 99,
-      "text": "And?",
+      "id": 85,
+      "text": "And? I put the wrong thing away.",
       "speaker": "Speaker1",
       "start": 207.42,
-      "duration": 0.5,
+      "duration": 2.82,
       "words": [
         {
           "word": "and",
           "start": 207.42,
           "end": 207.92,
           "confidence": 0.894
-        }
-      ],
-      "confidence": 0.894
-    },
-    {
-      "id": 100,
-      "text": "I put the wrong thing away.",
-      "speaker": "Speaker1",
-      "start": 208.54,
-      "duration": 1.7,
-      "words": [
+        },
         {
           "word": "i",
           "start": 208.54,
@@ -3573,10 +3423,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.947
     },
     {
-      "id": 101,
+      "id": 86,
       "text": "That's amazing.",
       "speaker": "Speaker0",
       "start": 210.54,
@@ -3598,7 +3448,7 @@
       "confidence": 1.0
     },
     {
-      "id": 102,
+      "id": 87,
       "text": "Not my proudest moment.",
       "speaker": "Speaker1",
       "start": 212.3,
@@ -3632,7 +3482,7 @@
       "confidence": 1.0
     },
     {
-      "id": 103,
+      "id": 88,
       "text": "I can imagine.",
       "speaker": "Speaker0",
       "start": 214.17,
@@ -3660,7 +3510,7 @@
       "confidence": 1.0
     },
     {
-      "id": 104,
+      "id": 89,
       "text": "What about you? Have you ever lost your phone? Not exactly.",
       "speaker": "Speaker1",
       "start": 215.28,
@@ -3736,7 +3586,7 @@
       "confidence": 0.999
     },
     {
-      "id": 105,
+      "id": 90,
       "text": "What does that mean? I left it in a taxi once.",
       "speaker": "Speaker0",
       "start": 219.93,
@@ -3812,7 +3662,7 @@
       "confidence": 0.999
     },
     {
-      "id": 106,
+      "id": 91,
       "text": "Oh, wow. That's worse.",
       "speaker": "Speaker1",
       "start": 223.37,
@@ -3846,7 +3696,7 @@
       "confidence": 0.991
     },
     {
-      "id": 107,
+      "id": 92,
       "text": "I know. Did you get it back? Thankfully,",
       "speaker": "Speaker1",
       "start": 225.53,
@@ -3904,28 +3754,18 @@
       "confidence": 0.997
     },
     {
-      "id": 108,
-      "text": "yes.",
+      "id": 93,
+      "text": "yes. Really? The driver was very kind. That's great.",
       "speaker": "Speaker0",
       "start": 228.56,
-      "duration": 0.5,
+      "duration": 4.48,
       "words": [
         {
           "word": "yes",
           "start": 228.56,
           "end": 229.06,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 109,
-      "text": "Really? The driver was very kind. That's great.",
-      "speaker": "Speaker0",
-      "start": 229.37,
-      "duration": 3.67,
-      "words": [
+        },
         {
           "word": "really",
           "start": 229.37,
@@ -3978,7 +3818,7 @@
       "confidence": 1.0
     },
     {
-      "id": 110,
+      "id": 94,
       "text": "I was so happy.",
       "speaker": "Speaker0",
       "start": 233.34,
@@ -4012,7 +3852,7 @@
       "confidence": 1.0
     },
     {
-      "id": 111,
+      "id": 95,
       "text": "I would be too. For a few hours, I felt completely disconnected.",
       "speaker": "Speaker0",
       "start": 235.02,
@@ -4094,28 +3934,18 @@
       "confidence": 0.996
     },
     {
-      "id": 112,
-      "text": "Exactly.",
+      "id": 96,
+      "text": "Exactly. It's a strange feeling.",
       "speaker": "Speaker1",
       "start": 239.58,
-      "duration": 0.5,
+      "duration": 2.34,
       "words": [
         {
           "word": "exactly",
           "start": 239.58,
           "end": 240.08,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 113,
-      "text": "It's a strange feeling.",
-      "speaker": "Speaker1",
-      "start": 240.54,
-      "duration": 1.38,
-      "words": [
+        },
         {
           "word": "it's",
           "start": 240.54,
@@ -4141,10 +3971,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.998
     },
     {
-      "id": 114,
+      "id": 97,
       "text": "Very strange.",
       "speaker": "Speaker0",
       "start": 242.46,
@@ -4166,7 +3996,7 @@
       "confidence": 1.0
     },
     {
-      "id": 115,
+      "id": 98,
       "text": "Have you ever sent a message to the wrong person?",
       "speaker": "Speaker1",
       "start": 243.76,
@@ -4236,7 +4066,7 @@
       "confidence": 1.0
     },
     {
-      "id": 116,
+      "id": 99,
       "text": "Oh, no. Don't remind me. Uh-huh.",
       "speaker": "Speaker0",
       "start": 246.64,
@@ -4282,7 +4112,7 @@
       "confidence": 0.993
     },
     {
-      "id": 117,
+      "id": 100,
       "text": "You have?",
       "speaker": "Speaker1",
       "start": 249.84,
@@ -4304,28 +4134,18 @@
       "confidence": 0.998
     },
     {
-      "id": 118,
-      "text": "Yes.",
+      "id": 101,
+      "text": "Yes. Tell me. No.",
       "speaker": "Speaker0",
       "start": 250.88,
-      "duration": 0.5,
+      "duration": 2.26,
       "words": [
         {
           "word": "yes",
           "start": 250.88,
           "end": 251.38,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 119,
-      "text": "Tell me. No.",
-      "speaker": "Speaker0",
-      "start": 251.69,
-      "duration": 1.45,
-      "words": [
+        },
         {
           "word": "tell",
           "start": 251.69,
@@ -4345,10 +4165,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 1.0
     },
     {
-      "id": 120,
+      "id": 102,
       "text": "Come on.",
       "speaker": "Speaker1",
       "start": 253.69,
@@ -4370,7 +4190,7 @@
       "confidence": 0.999
     },
     {
-      "id": 121,
+      "id": 103,
       "text": "It's embarrassing.",
       "speaker": "Speaker0",
       "start": 254.81,
@@ -4392,7 +4212,7 @@
       "confidence": 1.0
     },
     {
-      "id": 122,
+      "id": 104,
       "text": "That's why it's interesting.",
       "speaker": "Speaker1",
       "start": 256.49,
@@ -4426,28 +4246,18 @@
       "confidence": 1.0
     },
     {
-      "id": 123,
-      "text": "Fine.",
+      "id": 105,
+      "text": "Fine. I'm listening.",
       "speaker": "Speaker1",
       "start": 258.31,
-      "duration": 0.5,
+      "duration": 1.78,
       "words": [
         {
           "word": "fine",
           "start": 258.31,
           "end": 258.81,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 124,
-      "text": "I'm listening.",
-      "speaker": "Speaker1",
-      "start": 259.27,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "i'm",
           "start": 259.27,
@@ -4464,7 +4274,7 @@
       "confidence": 1.0
     },
     {
-      "id": 125,
+      "id": 106,
       "text": "I once complained about my brother in a message. Uh-oh.",
       "speaker": "Speaker0",
       "start": 260.47,
@@ -4534,11 +4344,11 @@
       "confidence": 0.98
     },
     {
-      "id": 126,
-      "text": "And accidentally",
+      "id": 107,
+      "text": "And accidentally sent it to my brother.",
       "speaker": "Speaker0",
       "start": 264.39,
-      "duration": 0.9,
+      "duration": 2.66,
       "words": [
         {
           "word": "and",
@@ -4551,17 +4361,7 @@
           "start": 264.79,
           "end": 265.29,
           "confidence": 0.981
-        }
-      ],
-      "confidence": 0.99
-    },
-    {
-      "id": 127,
-      "text": "sent it to my brother.",
-      "speaker": "Speaker0",
-      "start": 265.67,
-      "duration": 1.38,
-      "words": [
+        },
         {
           "word": "sent",
           "start": 265.67,
@@ -4593,14 +4393,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.994
     },
     {
-      "id": 128,
-      "text": "No way.",
+      "id": 108,
+      "text": "No way. Yes.",
       "speaker": "Speaker1",
       "start": 267.75,
-      "duration": 0.9,
+      "duration": 2.02,
       "words": [
         {
           "word": "no",
@@ -4613,17 +4413,7 @@
           "start": 268.15,
           "end": 268.65,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 129,
-      "text": "Yes.",
-      "speaker": "Speaker1",
-      "start": 269.27,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "yes",
           "start": 269.27,
@@ -4634,7 +4424,7 @@
       "confidence": 1.0
     },
     {
-      "id": 130,
+      "id": 109,
       "text": "What happened?",
       "speaker": "Speaker1",
       "start": 270.25,
@@ -4656,7 +4446,7 @@
       "confidence": 1.0
     },
     {
-      "id": 131,
+      "id": 110,
       "text": "He replied immediately.",
       "speaker": "Speaker0",
       "start": 271.37,
@@ -4684,7 +4474,7 @@
       "confidence": 0.994
     },
     {
-      "id": 132,
+      "id": 111,
       "text": "What did he say? Thank you for your honesty.",
       "speaker": "Speaker0",
       "start": 273.37,
@@ -4748,7 +4538,7 @@
       "confidence": 1.0
     },
     {
-      "id": 133,
+      "id": 112,
       "text": "That's hilarious.",
       "speaker": "Speaker1",
       "start": 279.04,
@@ -4770,7 +4560,7 @@
       "confidence": 1.0
     },
     {
-      "id": 134,
+      "id": 113,
       "text": "I wanted to disappear.",
       "speaker": "Speaker0",
       "start": 280.72,
@@ -4804,7 +4594,7 @@
       "confidence": 1.0
     },
     {
-      "id": 135,
+      "id": 114,
       "text": "I don't blame you. Have you ever done something like that? Absolutely.",
       "speaker": "Speaker0",
       "start": 282.88,
@@ -4886,7 +4676,7 @@
       "confidence": 1.0
     },
     {
-      "id": 136,
+      "id": 115,
       "text": "Really? I once sent a work message to my friend.",
       "speaker": "Speaker1",
       "start": 287.18,
@@ -4956,7 +4746,7 @@
       "confidence": 0.995
     },
     {
-      "id": 137,
+      "id": 116,
       "text": "That's not too bad. Wait. There's more.",
       "speaker": "Speaker0",
       "start": 290.94,
@@ -5008,7 +4798,7 @@
       "confidence": 0.978
     },
     {
-      "id": 138,
+      "id": 117,
       "text": "Oh, no.",
       "speaker": "Speaker0",
       "start": 294.06,
@@ -5030,7 +4820,7 @@
       "confidence": 0.992
     },
     {
-      "id": 139,
+      "id": 118,
       "text": "Then I sent a personal message to my boss.",
       "speaker": "Speaker1",
       "start": 295.34,
@@ -5094,7 +4884,7 @@
       "confidence": 0.977
     },
     {
-      "id": 140,
+      "id": 119,
       "text": "No way. Yes.",
       "speaker": "Speaker0",
       "start": 298.86,
@@ -5122,7 +4912,7 @@
       "confidence": 0.999
     },
     {
-      "id": 141,
+      "id": 120,
       "text": "What did you do? Nothing.",
       "speaker": "Speaker0",
       "start": 300.86,
@@ -5162,7 +4952,7 @@
       "confidence": 1.0
     },
     {
-      "id": 142,
+      "id": 121,
       "text": "Nothing?",
       "speaker": "Speaker0",
       "start": 303.07,
@@ -5178,7 +4968,7 @@
       "confidence": 0.962
     },
     {
-      "id": 143,
+      "id": 122,
       "text": "I stared at the screen.",
       "speaker": "Speaker1",
       "start": 303.95,
@@ -5218,7 +5008,7 @@
       "confidence": 1.0
     },
     {
-      "id": 144,
+      "id": 123,
       "text": "That's not a solution. It was the only solution I had. What did your boss say? Thankfully, he laughed.",
       "speaker": "Speaker1",
       "start": 306.83,
@@ -5342,7 +5132,7 @@
       "confidence": 0.997
     },
     {
-      "id": 145,
+      "id": 124,
       "text": "You got lucky. Very lucky. You know what's funny? What? Phones make life easier.",
       "speaker": "Speaker0",
       "start": 313.95,
@@ -5436,7 +5226,7 @@
       "confidence": 0.998
     },
     {
-      "id": 146,
+      "id": 125,
       "text": "Definitely.",
       "speaker": "Speaker1",
       "start": 320.09,
@@ -5452,7 +5242,7 @@
       "confidence": 1.0
     },
     {
-      "id": 147,
+      "id": 126,
       "text": "But they also create new problems.",
       "speaker": "Speaker0",
       "start": 321.21,
@@ -5498,7 +5288,7 @@
       "confidence": 0.999
     },
     {
-      "id": 148,
+      "id": 127,
       "text": "That's true. Wrong messages.",
       "speaker": "Speaker0",
       "start": 323.61,
@@ -5532,7 +5322,7 @@
       "confidence": 0.991
     },
     {
-      "id": 149,
+      "id": 128,
       "text": "Low battery.",
       "speaker": "Speaker1",
       "start": 326.33,
@@ -5554,11 +5344,11 @@
       "confidence": 0.999
     },
     {
-      "id": 150,
-      "text": "No Internet.",
+      "id": 129,
+      "text": "No Internet. Lost phones.",
       "speaker": "Speaker0",
       "start": 327.53,
-      "duration": 0.74,
+      "duration": 2.18,
       "words": [
         {
           "word": "no",
@@ -5571,17 +5361,7 @@
           "start": 327.77,
           "end": 328.27,
           "confidence": 0.835
-        }
-      ],
-      "confidence": 0.918
-    },
-    {
-      "id": 151,
-      "text": "Lost phones.",
-      "speaker": "Speaker0",
-      "start": 328.81,
-      "duration": 0.9,
-      "words": [
+        },
         {
           "word": "lost",
           "start": 328.81,
@@ -5595,10 +5375,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.958
     },
     {
-      "id": 152,
+      "id": 130,
       "text": "Too many notifications.",
       "speaker": "Speaker0",
       "start": 330.13,
@@ -5626,7 +5406,7 @@
       "confidence": 0.999
     },
     {
-      "id": 153,
+      "id": 131,
       "text": "Exactly.",
       "speaker": "Speaker1",
       "start": 332.13,
@@ -5642,7 +5422,7 @@
       "confidence": 1.0
     },
     {
-      "id": 154,
+      "id": 132,
       "text": "What's your biggest phone problem?",
       "speaker": "Speaker0",
       "start": 333.25,
@@ -5682,11 +5462,11 @@
       "confidence": 1.0
     },
     {
-      "id": 155,
-      "text": "Battery life.",
+      "id": 133,
+      "text": "Battery life. Really?",
       "speaker": "Speaker0",
       "start": 335.65,
-      "duration": 0.82,
+      "duration": 1.62,
       "words": [
         {
           "word": "battery",
@@ -5699,17 +5479,7 @@
           "start": 335.97,
           "end": 336.47,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 156,
-      "text": "Really?",
-      "speaker": "Speaker0",
-      "start": 336.77,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "really",
           "start": 336.77,
@@ -5720,7 +5490,7 @@
       "confidence": 1.0
     },
     {
-      "id": 157,
+      "id": 134,
       "text": "My battery is always low. Mine too. It's stressful.",
       "speaker": "Speaker1",
       "start": 337.65,
@@ -5784,7 +5554,7 @@
       "confidence": 0.996
     },
     {
-      "id": 158,
+      "id": 135,
       "text": "Very stressful.",
       "speaker": "Speaker0",
       "start": 342.31,
@@ -5806,7 +5576,7 @@
       "confidence": 1.0
     },
     {
-      "id": 159,
+      "id": 136,
       "text": "5% battery feels like an emergency.",
       "speaker": "Speaker1",
       "start": 343.75,
@@ -5852,7 +5622,7 @@
       "confidence": 0.998
     },
     {
-      "id": 160,
+      "id": 137,
       "text": "That's so true.",
       "speaker": "Speaker0",
       "start": 348.07,
@@ -5880,7 +5650,7 @@
       "confidence": 1.0
     },
     {
-      "id": 161,
+      "id": 138,
       "text": "Especially when you're outside.",
       "speaker": "Speaker1",
       "start": 349.59,
@@ -5914,28 +5684,18 @@
       "confidence": 0.972
     },
     {
-      "id": 162,
-      "text": "Exactly.",
+      "id": 139,
+      "text": "Exactly. Modern life is funny. Why? A low battery can ruin an entire day. You're right. And somehow, we all understand that. We really do. That's funny.",
       "speaker": "Speaker1",
       "start": 351.43,
-      "duration": 0.5,
+      "duration": 12.93,
       "words": [
         {
           "word": "exactly",
           "start": 351.43,
           "end": 351.93,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 163,
-      "text": "Modern life is funny. Why? A low battery can ruin an entire day. You're right. And somehow, we all understand that. We really do. That's funny.",
-      "speaker": "Speaker1",
-      "start": 352.71,
-      "duration": 11.65,
-      "words": [
+        },
         {
           "word": "modern",
           "start": 352.71,
@@ -6093,10 +5853,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.997
     },
     {
-      "id": 164,
+      "id": 140,
       "text": "And a little scary.",
       "speaker": "Speaker0",
       "start": 364.66,
@@ -6130,7 +5890,7 @@
       "confidence": 0.999
     },
     {
-      "id": 165,
+      "id": 141,
       "text": "A little? Okay. Very scary. You know what? What? Phones were very different when I was a child. Really?",
       "speaker": "Speaker0",
       "start": 366.66,
@@ -6254,7 +6014,7 @@
       "confidence": 0.996
     },
     {
-      "id": 166,
+      "id": 142,
       "text": "Very different. Tell me. My first phone was tiny.",
       "speaker": "Speaker0",
       "start": 374.17,
@@ -6318,11 +6078,11 @@
       "confidence": 1.0
     },
     {
-      "id": 167,
-      "text": "Tiny? Well, it felt amazing at the time. What could it do? Call people,",
+      "id": 143,
+      "text": "Tiny? Well, it felt amazing at the time. What could it do? Call people, send",
       "speaker": "Speaker0",
       "start": 377.61,
-      "duration": 5.06,
+      "duration": 5.89,
       "words": [
         {
           "word": "tiny",
@@ -6407,17 +6167,7 @@
           "start": 382.17,
           "end": 382.67,
           "confidence": 0.98
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 168,
-      "text": "send",
-      "speaker": "Speaker0",
-      "start": 383.0,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "send",
           "start": 383.0,
@@ -6425,10 +6175,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.999
     },
     {
-      "id": 169,
+      "id": 144,
       "text": "messages. That's it. That's all? That's all. No social media? No. No videos?",
       "speaker": "Speaker1",
       "start": 383.96,
@@ -6516,7 +6266,7 @@
       "confidence": 0.991
     },
     {
-      "id": 170,
+      "id": 145,
       "text": "No. No games? A few simple games.",
       "speaker": "Speaker0",
       "start": 389.63,
@@ -6568,7 +6318,7 @@
       "confidence": 1.0
     },
     {
-      "id": 171,
+      "id": 146,
       "text": "Wow. You lived in a difficult time.",
       "speaker": "Speaker1",
       "start": 392.92,
@@ -6620,7 +6370,7 @@
       "confidence": 0.997
     },
     {
-      "id": 172,
+      "id": 147,
       "text": "It wasn't that bad. What was your favorite thing about your first phone? Sending messages to my friends. Really? Yes. Every message felt important. That's true. What about your first phone? It was old.",
       "speaker": "Speaker0",
       "start": 396.04,
@@ -6834,11 +6584,11 @@
       "confidence": 0.992
     },
     {
-      "id": 173,
-      "text": "Very old.",
+      "id": 148,
+      "text": "Very old. How old? Let's just say, it wasn't smart.",
       "speaker": "Speaker1",
       "start": 408.76,
-      "duration": 1.06,
+      "duration": 4.67,
       "words": [
         {
           "word": "very",
@@ -6851,17 +6601,7 @@
           "start": 409.32,
           "end": 409.82,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 174,
-      "text": "How old? Let's just say, it wasn't smart.",
-      "speaker": "Speaker1",
-      "start": 410.12,
-      "duration": 3.31,
-      "words": [
+        },
         {
           "word": "how",
           "start": 410.12,
@@ -6911,10 +6651,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.968
+      "confidence": 0.984
     },
     {
-      "id": 175,
+      "id": 149,
       "text": "A phone that wasn't smart. Exactly. Did you like it? I loved it. Really. It made me feel grown up. I understand that. I carried it everywhere. Even though it couldn't do much? Yes. I was proud of it. That's actually cute. Thank you. Did your family have rules about phones?",
       "speaker": "Speaker0",
       "start": 414.85,
@@ -7230,7 +6970,7 @@
       "confidence": 0.995
     },
     {
-      "id": 176,
+      "id": 150,
       "text": "Definitely. Like what? No phones at the dinner table. My family had the same rule. Really? Yes. Family time was family time. I think that's a good rule. Me too. Nowadays, it's harder. Why? Because phones do everything.",
       "speaker": "Speaker1",
       "start": 432.89,
@@ -7468,11 +7208,11 @@
       "confidence": 0.997
     },
     {
-      "id": 177,
-      "text": "That's true. Work, messages,",
+      "id": 151,
+      "text": "That's true. Work, messages, photos, maps, music. Exactly.",
       "speaker": "Speaker1",
       "start": 447.8,
-      "duration": 2.01,
+      "duration": 5.5,
       "words": [
         {
           "word": "that's",
@@ -7497,17 +7237,7 @@
           "start": 449.31,
           "end": 449.81,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.993
-    },
-    {
-      "id": 178,
-      "text": "photos, maps,",
-      "speaker": "Speaker1",
-      "start": 450.28,
-      "duration": 1.29,
-      "words": [
+        },
         {
           "word": "photos",
           "start": 450.28,
@@ -7519,17 +7249,7 @@
           "start": 451.07,
           "end": 451.57,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 179,
-      "text": "music. Exactly.",
-      "speaker": "Speaker1",
-      "start": 452.0,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "music",
           "start": 452.0,
@@ -7543,10 +7263,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.968
+      "confidence": 0.987
     },
     {
-      "id": 180,
+      "id": 152,
       "text": "It's difficult to ignore them. Do you think children use phones too much? Sometimes. I agree. When I was younger, I spent more time outside. Me too. I played with friends.",
       "speaker": "Speaker1",
       "start": 453.68,
@@ -7742,7 +7462,7 @@
       "confidence": 0.999
     },
     {
-      "id": 181,
+      "id": 153,
       "text": "Same here. Now many people stay home and look at screens.",
       "speaker": "Speaker1",
       "start": 463.93,
@@ -7818,7 +7538,7 @@
       "confidence": 0.966
     },
     {
-      "id": 182,
+      "id": 154,
       "text": "That's true. Do you miss the old days? Sometimes.",
       "speaker": "Speaker1",
       "start": 467.69,
@@ -7882,7 +7602,7 @@
       "confidence": 0.999
     },
     {
-      "id": 183,
+      "id": 155,
       "text": "Really? Yes. Life felt simpler.",
       "speaker": "Speaker0",
       "start": 470.96,
@@ -7922,7 +7642,7 @@
       "confidence": 0.953
     },
     {
-      "id": 184,
+      "id": 156,
       "text": "I understand that. But I also love modern technology.",
       "speaker": "Speaker0",
       "start": 474.0,
@@ -7986,7 +7706,7 @@
       "confidence": 0.999
     },
     {
-      "id": 185,
+      "id": 157,
       "text": "Me too. Imagine traveling without a phone. That sounds difficult.",
       "speaker": "Speaker1",
       "start": 477.29,
@@ -8056,7 +7776,7 @@
       "confidence": 0.994
     },
     {
-      "id": 186,
+      "id": 158,
       "text": "Very difficult.",
       "speaker": "Speaker0",
       "start": 481.77,
@@ -8078,7 +7798,7 @@
       "confidence": 1.0
     },
     {
-      "id": 187,
+      "id": 159,
       "text": "I'd get lost immediately.",
       "speaker": "Speaker1",
       "start": 482.97,
@@ -8112,7 +7832,7 @@
       "confidence": 1.0
     },
     {
-      "id": 188,
+      "id": 160,
       "text": "I believe that. Thank you for your confidence. You're welcome. Do you remember phone numbers? A few.",
       "speaker": "Speaker1",
       "start": 485.77,
@@ -8224,7 +7944,7 @@
       "confidence": 0.997
     },
     {
-      "id": 189,
+      "id": 161,
       "text": "Really? Yes. My parents' numbers, a few friends.",
       "speaker": "Speaker0",
       "start": 492.06,
@@ -8282,11 +8002,11 @@
       "confidence": 0.963
     },
     {
-      "id": 190,
-      "text": "I'm impressed.",
+      "id": 162,
+      "text": "I'm impressed. What about you? Honestly?",
       "speaker": "Speaker1",
       "start": 495.81,
-      "duration": 0.82,
+      "duration": 2.66,
       "words": [
         {
           "word": "i'm",
@@ -8299,17 +8019,7 @@
           "start": 496.13,
           "end": 496.63,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 191,
-      "text": "What about you? Honestly?",
-      "speaker": "Speaker1",
-      "start": 496.94,
-      "duration": 1.53,
-      "words": [
+        },
         {
           "word": "what",
           "start": 496.94,
@@ -8335,10 +8045,10 @@
           "confidence": 0.927
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.991
     },
     {
-      "id": 192,
+      "id": 163,
       "text": "Yes. I barely remember my own number. No way. Seriously.",
       "speaker": "Speaker1",
       "start": 499.01,
@@ -8408,11 +8118,11 @@
       "confidence": 0.992
     },
     {
-      "id": 193,
-      "text": "That's funny.",
+      "id": 164,
+      "text": "That's funny. My phone remembers everything for me. That's the problem. Maybe. We're becoming too dependent. You're probably right. If your phone disappeared forever,",
       "speaker": "Speaker0",
       "start": 504.58,
-      "duration": 0.74,
+      "duration": 10.02,
       "words": [
         {
           "word": "that's",
@@ -8425,17 +8135,7 @@
           "start": 504.82,
           "end": 505.32,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 194,
-      "text": "My phone remembers everything for me. That's the problem. Maybe. We're becoming too dependent. You're probably right. If your phone disappeared forever,",
-      "speaker": "Speaker0",
-      "start": 505.62,
-      "duration": 8.98,
-      "words": [
+        },
         {
           "word": "my",
           "start": 505.62,
@@ -8572,7 +8272,7 @@
       "confidence": 0.999
     },
     {
-      "id": 195,
+      "id": 165,
       "text": "what would you miss most? The photos. Really? Definitely.",
       "speaker": "Speaker0",
       "start": 515.14,
@@ -8636,7 +8336,7 @@
       "confidence": 0.985
     },
     {
-      "id": 196,
+      "id": 166,
       "text": "Photos hold memories. That's a beautiful answer. Thank you. What about you? The messages.",
       "speaker": "Speaker0",
       "start": 519.35,
@@ -8730,7 +8430,7 @@
       "confidence": 0.999
     },
     {
-      "id": 197,
+      "id": 167,
       "text": "Why? Because they remind me of people I care about. I like that answer. Phones aren't just technology.",
       "speaker": "Speaker0",
       "start": 525.26,
@@ -8848,7 +8548,7 @@
       "confidence": 0.998
     },
     {
-      "id": 198,
+      "id": 168,
       "text": "They're connected to our lives. Exactly.",
       "speaker": "Speaker1",
       "start": 532.03,
@@ -8894,7 +8594,7 @@
       "confidence": 1.0
     },
     {
-      "id": 199,
+      "id": 169,
       "text": "Wow. This conversation became deep. A little. Quick. Say something funny. Why? Before everyone starts crying over their phones.",
       "speaker": "Speaker1",
       "start": 535.07,
@@ -9018,7 +8718,7 @@
       "confidence": 0.989
     },
     {
-      "id": 200,
+      "id": 170,
       "text": "Good idea. That's what I'm here for. Making jokes. And keeping conversations balanced.",
       "speaker": "Speaker1",
       "start": 544.35,
@@ -9106,7 +8806,7 @@
       "confidence": 0.979
     },
     {
-      "id": 201,
+      "id": 171,
       "text": "Mostly making jokes. Fair enough. You know, this conversation made me think. Uh-oh.",
       "speaker": "Speaker0",
       "start": 550.11,
@@ -9194,7 +8894,7 @@
       "confidence": 0.977
     },
     {
-      "id": 202,
+      "id": 172,
       "text": "That's always dangerous.",
       "speaker": "Speaker1",
       "start": 555.87,
@@ -9222,7 +8922,7 @@
       "confidence": 0.998
     },
     {
-      "id": 203,
+      "id": 173,
       "text": "Not this time. Good.",
       "speaker": "Speaker0",
       "start": 557.95,
@@ -9256,7 +8956,7 @@
       "confidence": 0.977
     },
     {
-      "id": 204,
+      "id": 174,
       "text": "What were you thinking about? How much phones have changed our lives? That's true. Sometimes I forget how much I use mine. Same here. From the moment I wake up To the moment I go to sleep. Exactly. My phone is basically my assistant. Mine too. It reminds me of meetings. Mine reminds me of birth days. Mine reminds me to drink water. Really? And I still ignore it.",
       "speaker": "Speaker1",
       "start": 560.16,
@@ -9680,7 +9380,7 @@
       "confidence": 0.972
     },
     {
-      "id": 205,
+      "id": 175,
       "text": "That's funny. Do you think you could live without your phone for one week? One week? Yes. Honestly? Yes. It would be difficult. Me too. But I think I could do it. Really? Maybe? That doesn't sound confident. Because I'm not confident.",
       "speaker": "Speaker0",
       "start": 580.59,
@@ -9942,7 +9642,7 @@
       "confidence": 0.99
     },
     {
-      "id": 206,
+      "id": 176,
       "text": "Fair enough. What about you? One week without my phone sounds impossible. Impossible?",
       "speaker": "Speaker1",
       "start": 595.22,
@@ -10030,11 +9730,11 @@
       "confidence": 0.998
     },
     {
-      "id": 207,
-      "text": "Almost. Why? Because everything is on my phone. That's true. Messages,",
+      "id": 177,
+      "text": "Almost. Why? Because everything is on my phone. That's true. Messages, photos, work, maps,",
       "speaker": "Speaker1",
       "start": 600.58,
-      "duration": 4.25,
+      "duration": 7.29,
       "words": [
         {
           "word": "almost",
@@ -10101,33 +9801,13 @@
           "start": 604.33,
           "end": 604.83,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.993
-    },
-    {
-      "id": 208,
-      "text": "photos,",
-      "speaker": "Speaker1",
-      "start": 605.52,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "photos",
           "start": 605.52,
           "end": 606.02,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 209,
-      "text": "work, maps,",
-      "speaker": "Speaker1",
-      "start": 606.57,
-      "duration": 1.3,
-      "words": [
+        },
         {
           "word": "work",
           "start": 606.57,
@@ -10144,7 +9824,7 @@
       "confidence": 0.997
     },
     {
-      "id": 210,
+      "id": 178,
       "text": "music. I understand. But maybe that's a problem. What do you mean? Maybe we're a little too dependent on our phones. I think many people would agree. Including us. Especially us.",
       "speaker": "Speaker0",
       "start": 608.33,
@@ -10340,7 +10020,7 @@
       "confidence": 0.994
     },
     {
-      "id": 211,
+      "id": 179,
       "text": "You're right. Do you think phones make life better? Overall? Yes. Definitely. I agree. We can talk to friends anywhere. Stay connected with family. Learn new things. Take photos. Travel more easily. There are many benefits. Absolutely.",
       "speaker": "Speaker0",
       "start": 620.43,
@@ -10572,7 +10252,7 @@
       "confidence": 0.996
     },
     {
-      "id": 212,
+      "id": 180,
       "text": "But balance is important. Very important. Sometimes we need to put our phones down. And enjoy real life. Exactly.",
       "speaker": "Speaker0",
       "start": 633.61,
@@ -10696,7 +10376,7 @@
       "confidence": 0.985
     },
     {
-      "id": 213,
+      "id": 181,
       "text": "Spend time with friends. Talk to family. Go outside. Take a walk. Or eat pizza. Dave. What? You always find a way to mention food. It's a gift. A very strange gift. Thank you. That wasn't a compliment. I know. If you had one piece of advice, what would it be? Use your phone. Don't let your phone use you. Wow. That's actually very good. I'm surprised too.",
       "speaker": "Speaker0",
       "start": 640.97,
@@ -11114,7 +10794,7 @@
       "confidence": 0.995
     },
     {
-      "id": 214,
+      "id": 182,
       "text": "What about this? What? Enjoy technology, but don't forget real life. I love that. Thank you. You know what's funny? What? We spent an entire conversation",
       "speaker": "Speaker0",
       "start": 663.71,
@@ -11280,7 +10960,7 @@
       "confidence": 0.991
     },
     {
-      "id": 215,
+      "id": 183,
       "text": "talking about phones. And we probably checked our phones during the conversation.",
       "speaker": "Speaker0",
       "start": 673.0,
@@ -11362,7 +11042,7 @@
       "confidence": 0.999
     },
     {
-      "id": 216,
+      "id": 184,
       "text": "Probably.",
       "speaker": "Speaker1",
       "start": 677.56,
@@ -11378,7 +11058,7 @@
       "confidence": 0.998
     },
     {
-      "id": 217,
+      "id": 185,
       "text": "Actually What? I checked mine twice. Only twice? Yes. I'm proud of you. Thank you. How many times did you check yours? Let's not talk about that.",
       "speaker": "Speaker0",
       "start": 678.44,
@@ -11550,7 +11230,7 @@
       "confidence": 0.999
     },
     {
-      "id": 218,
+      "id": 186,
       "text": "That's what I thought. Some secrets should remain secret. Fair enough. Well, this was fun. It really was. And now I suddenly want to check my phone. Me too. We're hopeless. A little. Thank you everyone for listening. Thank you so much for listening today. Keep practicing your English every day. Don't forget to subscribe, like, and comment. See you in the next lesson.",
       "speaker": "Speaker0",
       "start": 689.57,
@@ -11956,5 +11636,14 @@
     "dgUtteranceCount": 218,
     "matchedSegments": 218,
     "totalDuration": 709.9
+  },
+  "text": "Hello, everyone, and welcome back to Smart Learning English Channel. Dave, where is your phone? My phone? Yes. Why? Just answer the question. I don't know. Really? Wait. Don't panic. I'm not panicking. I'm panicking. Seriously, where is it? Look at your hand. Oh, there it is. Exactly. That was embarrassing. A little. Okay. Can we pretend that didn't happen? No. Fair enough. Today's topic is perfect for you. Why? Because you can't live without your phone. That's not true. Really? Okay. Maybe a little. A little. Fine. A lot. I knew it. What about you? I use my phone every day. Everyone does. That's true. My phone is my alarm clock. Mine too. It's my camera. Mine too. It's my map. Mine too. It's my music player. Mine too. Wow. We're the same person. That's a scary thought. Very scary. How often do you check your phone? Honestly? Yes. Too often. Really? Sometimes I check my phone. And? Then I forget why I picked it up. Me too. I'm glad it's not just me. Definitely not. Have you ever left your phone at home? Yes. Once. Only once? Only once. What happened? I felt strange all day. Exactly. I kept checking my pocket. Me too. Even though I knew my phone wasn't there. That's funny. It's also a little sad. Maybe. Do you think people use phones too much? That's a dangerous question. Why? Because the answer is yes. I agree. Including me. Including me too. At least we're honest. That's true. You know what's funny? What? Sometimes I spend ten minutes looking for my phone. No way. Seriously. Where do you usually find it? In my hand. That's happened to me too. Really? More than once. I feel better now. You're welcome. So today's topic is basically about us. And probably everyone listening. That's true. Because let's be honest. What? Most people can't live without their phones. Including us. Especially us. You're right. Have you ever lost your phone? Unfortunately, yes. Really? It was terrible. What happened? I couldn't find my phone one morning. Where was it? I had no idea. Were you worried? Very worried. Why? Because everything is on my phone. That's true. My messages. My photos. My contacts. Exactly. I searched everywhere. Did you find it? Eventually. Where was it? In the refrigerator. No way. Yes. Why was your phone in the refrigerator? That's an excellent question. Do you have an answer? No. That's funny. I think I was holding my phone and a bottle of water. And? I put the wrong thing away. That's amazing. Not my proudest moment. I can imagine. What about you? Have you ever lost your phone? Not exactly. What does that mean? I left it in a taxi once. Oh, wow. That's worse. I know. Did you get it back? Thankfully, yes. Really? The driver was very kind. That's great. I was so happy. I would be too. For a few hours, I felt completely disconnected. Exactly. It's a strange feeling. Very strange. Have you ever sent a message to the wrong person? Oh, no. Don't remind me. Uh-huh. You have? Yes. Tell me. No. Come on. It's embarrassing. That's why it's interesting. Fine. I'm listening. I once complained about my brother in a message. Uh-oh. And accidentally sent it to my brother. No way. Yes. What happened? He replied immediately. What did he say? Thank you for your honesty. That's hilarious. I wanted to disappear. I don't blame you. Have you ever done something like that? Absolutely. Really? I once sent a work message to my friend. That's not too bad. Wait. There's more. Oh, no. Then I sent a personal message to my boss. No way. Yes. What did you do? Nothing. Nothing? I stared at the screen. That's not a solution. It was the only solution I had. What did your boss say? Thankfully, he laughed. You got lucky. Very lucky. You know what's funny? What? Phones make life easier. Definitely. But they also create new problems. That's true. Wrong messages. Low battery. No Internet. Lost phones. Too many notifications. Exactly. What's your biggest phone problem? Battery life. Really? My battery is always low. Mine too. It's stressful. Very stressful. 5% battery feels like an emergency. That's so true. Especially when you're outside. Exactly. Modern life is funny. Why? A low battery can ruin an entire day. You're right. And somehow, we all understand that. We really do. That's funny. And a little scary. A little? Okay. Very scary. You know what? What? Phones were very different when I was a child. Really? Very different. Tell me. My first phone was tiny. Tiny? Well, it felt amazing at the time. What could it do? Call people, send messages. That's it. That's all? That's all. No social media? No. No videos? No. No games? A few simple games. Wow. You lived in a difficult time. It wasn't that bad. What was your favorite thing about your first phone? Sending messages to my friends. Really? Yes. Every message felt important. That's true. What about your first phone? It was old. Very old. How old? Let's just say, it wasn't smart. A phone that wasn't smart. Exactly. Did you like it? I loved it. Really. It made me feel grown up. I understand that. I carried it everywhere. Even though it couldn't do much? Yes. I was proud of it. That's actually cute. Thank you. Did your family have rules about phones? Definitely. Like what? No phones at the dinner table. My family had the same rule. Really? Yes. Family time was family time. I think that's a good rule. Me too. Nowadays, it's harder. Why? Because phones do everything. That's true. Work, messages, photos, maps, music. Exactly. It's difficult to ignore them. Do you think children use phones too much? Sometimes. I agree. When I was younger, I spent more time outside. Me too. I played with friends. Same here. Now many people stay home and look at screens. That's true. Do you miss the old days? Sometimes. Really? Yes. Life felt simpler. I understand that. But I also love modern technology. Me too. Imagine traveling without a phone. That sounds difficult. Very difficult. I'd get lost immediately. I believe that. Thank you for your confidence. You're welcome. Do you remember phone numbers? A few. Really? Yes. My parents' numbers, a few friends. I'm impressed. What about you? Honestly? Yes. I barely remember my own number. No way. Seriously. That's funny. My phone remembers everything for me. That's the problem. Maybe. We're becoming too dependent. You're probably right. If your phone disappeared forever, what would you miss most? The photos. Really? Definitely. Photos hold memories. That's a beautiful answer. Thank you. What about you? The messages. Why? Because they remind me of people I care about. I like that answer. Phones aren't just technology. They're connected to our lives. Exactly. Wow. This conversation became deep. A little. Quick. Say something funny. Why? Before everyone starts crying over their phones. Good idea. That's what I'm here for. Making jokes. And keeping conversations balanced. Mostly making jokes. Fair enough. You know, this conversation made me think. Uh-oh. That's always dangerous. Not this time. Good. What were you thinking about? How much phones have changed our lives? That's true. Sometimes I forget how much I use mine. Same here. From the moment I wake up To the moment I go to sleep. Exactly. My phone is basically my assistant. Mine too. It reminds me of meetings. Mine reminds me of birth days. Mine reminds me to drink water. Really? And I still ignore it. That's funny. Do you think you could live without your phone for one week? One week? Yes. Honestly? Yes. It would be difficult. Me too. But I think I could do it. Really? Maybe? That doesn't sound confident. Because I'm not confident. Fair enough. What about you? One week without my phone sounds impossible. Impossible? Almost. Why? Because everything is on my phone. That's true. Messages, photos, work, maps, music. I understand. But maybe that's a problem. What do you mean? Maybe we're a little too dependent on our phones. I think many people would agree. Including us. Especially us. You're right. Do you think phones make life better? Overall? Yes. Definitely. I agree. We can talk to friends anywhere. Stay connected with family. Learn new things. Take photos. Travel more easily. There are many benefits. Absolutely. But balance is important. Very important. Sometimes we need to put our phones down. And enjoy real life. Exactly. Spend time with friends. Talk to family. Go outside. Take a walk. Or eat pizza. Dave. What? You always find a way to mention food. It's a gift. A very strange gift. Thank you. That wasn't a compliment. I know. If you had one piece of advice, what would it be? Use your phone. Don't let your phone use you. Wow. That's actually very good. I'm surprised too. What about this? What? Enjoy technology, but don't forget real life. I love that. Thank you. You know what's funny? What? We spent an entire conversation talking about phones. And we probably checked our phones during the conversation. Probably. Actually What? I checked mine twice. Only twice? Yes. I'm proud of you. Thank you. How many times did you check yours? Let's not talk about that. That's what I thought. Some secrets should remain secret. Fair enough. Well, this was fun. It really was. And now I suddenly want to check my phone. Me too. We're hopeless. A little. Thank you everyone for listening. Thank you so much for listening today. Keep practicing your English every day. Don't forget to subscribe, like, and comment. See you in the next lesson.",
+  "repairedAt": "2026-07-23T04:33:44.471452Z",
+  "repairInfo": {
+    "beforeSegments": 218,
+    "afterSegments": 186,
+    "beforeAvgWords": 7.5,
+    "afterAvgWords": 8.7,
+    "merged": 32
   }
 }

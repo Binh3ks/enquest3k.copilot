@@ -1,5 +1,5 @@
 {
-  "text": "What did you do. Good morning sally. How are you. I'm great. What did you do yesterday. We went to the park. What did you do in the park. We flew kites. His kites flew high. Wow you're good. What did you do yesterday sally. I read bucks. Let's go to the classroom. What did you do yesterday. I watched a science movie. What did you do yesterday mike. I made frugal ghee with my dad. How was it. It was very delicious. We had a bulgogi party. I made cookies yesterday i brought. Cookies for you. Thanks. Mmm. Delicious. Listen. Good morning sally. How are you. I'm great. What did you do yesterday. We went to the park. What did you do in the park. We flew kites. His kites flew high. Wow you're good. What did you do yesterday sally. I read books. Let's go to the classroom. What did you do yesterday. I watched a science movie. What did you do yesterday mike. I made progogy with my dad. How was it. It was very delicious. We had a bulgogi party. I made cookies yesterday i brought. Cookies for you. Thanks. Mmm. Delicious. Speak aloud. Wow. Down. Your turn. Wow. Down. You.",
+  "text": "English sing sing. What did you do? Good morning, Sally. How are you? I'm great. What did you do yesterday? We went to the park. What did you do in the park? We flew kites. His kites flew high. Wow, you're good. What did you do yesterday, Sally? I read books. Let's go to the classroom. What did you do yesterday? I watched a science movie. What did you do yesterday, Mike? I made bulgogi with my dad. How was it? It was very delicious. We had a bulgogi party. I made cookies yesterday. I brought cookies for you. Thanks. Delicious. Good morning, Sally. How are you? I'm great. What did you do yesterday? We went to the park. What did you do in the park? We flew kites. His kites flew high. Wow, you're good. What did you do yesterday, Sally? I read books. Let's go to the classroom. What did you do yesterday? I watched a science movie. What did you do yesterday, Mike? I made bulgogi with my dad. How was it? It was very delicious. We had a bulgogi party. I made cookies yesterday. I brought cookies for you. Thanks. Delicious. Your turn. Turn. Down yum.",
   "segments": [
     {
       "id": 1,
@@ -121,10 +121,10 @@
     },
     {
       "id": 5,
-      "text": "I'm great.",
+      "text": "I'm great. What did you do yesterday?",
       "speaker": "Speaker0",
       "start": 16.79,
-      "duration": 0.89,
+      "duration": 2.89,
       "words": [
         {
           "word": "i'm",
@@ -137,17 +137,7 @@
           "start": 17.18,
           "end": 17.68,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 6,
-      "text": "What did you do yesterday?",
-      "speaker": "Speaker0",
-      "start": 18.23,
-      "duration": 1.45,
-      "words": [
+        },
         {
           "word": "what",
           "start": 18.23,
@@ -182,7 +172,7 @@
       "confidence": 0.994
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "We went to the park.",
       "speaker": "Speaker0",
       "start": 20.95,
@@ -222,7 +212,7 @@
       "confidence": 0.999
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "What did you do in the park?",
       "speaker": "Speaker0",
       "start": 23.66,
@@ -274,7 +264,7 @@
       "confidence": 0.997
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "We flew kites.",
       "speaker": "Speaker0",
       "start": 26.14,
@@ -302,7 +292,7 @@
       "confidence": 0.996
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "His kites flew high.",
       "speaker": "Speaker2",
       "start": 28.62,
@@ -336,7 +326,7 @@
       "confidence": 0.9
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Wow, you're good.",
       "speaker": "Speaker0",
       "start": 32.21,
@@ -364,7 +354,7 @@
       "confidence": 0.887
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "What did you do yesterday, Sally?",
       "speaker": "Speaker0",
       "start": 34.53,
@@ -410,7 +400,7 @@
       "confidence": 0.948
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "I read books.",
       "speaker": "Speaker0",
       "start": 38.21,
@@ -438,7 +428,7 @@
       "confidence": 0.988
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Let's go to the classroom.",
       "speaker": "Speaker3",
       "start": 43.25,
@@ -478,7 +468,7 @@
       "confidence": 0.996
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "What did you do yesterday?",
       "speaker": "Speaker4",
       "start": 49.97,
@@ -518,7 +508,7 @@
       "confidence": 0.925
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "I watched a science movie.",
       "speaker": "Speaker5",
       "start": 52.93,
@@ -558,7 +548,7 @@
       "confidence": 0.998
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "What did you do yesterday, Mike?",
       "speaker": "Speaker4",
       "start": 56.84,
@@ -604,7 +594,7 @@
       "confidence": 0.998
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "I made bulgogi with my dad.",
       "speaker": "Speaker6",
       "start": 59.8,
@@ -650,7 +640,7 @@
       "confidence": 0.988
     },
     {
-      "id": 19,
+      "id": 18,
       "text": "How was it?",
       "speaker": "Speaker7",
       "start": 62.76,
@@ -678,7 +668,7 @@
       "confidence": 0.939
     },
     {
-      "id": 20,
+      "id": 19,
       "text": "It was very delicious.",
       "speaker": "Speaker7",
       "start": 64.36,
@@ -712,7 +702,7 @@
       "confidence": 0.998
     },
     {
-      "id": 21,
+      "id": 20,
       "text": "We had a bulgogi party.",
       "speaker": "Speaker7",
       "start": 66.68,
@@ -752,7 +742,7 @@
       "confidence": 0.987
     },
     {
-      "id": 22,
+      "id": 21,
       "text": "I made cookies yesterday.",
       "speaker": "Speaker4",
       "start": 71.59,
@@ -786,7 +776,7 @@
       "confidence": 0.995
     },
     {
-      "id": 23,
+      "id": 22,
       "text": "I brought cookies for you.",
       "speaker": "Speaker4",
       "start": 73.83,
@@ -826,28 +816,18 @@
       "confidence": 0.999
     },
     {
-      "id": 24,
-      "text": "Thanks.",
+      "id": 23,
+      "text": "Thanks. Delicious.",
       "speaker": "Speaker7",
       "start": 76.23,
-      "duration": 0.5,
+      "duration": 2.5,
       "words": [
         {
           "word": "thanks",
           "start": 76.23,
           "end": 76.73,
           "confidence": 0.992
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 25,
-      "text": "Delicious.",
-      "speaker": "Speaker7",
-      "start": 78.23,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "delicious",
           "start": 78.23,
@@ -855,10 +835,10 @@
           "confidence": 0.696
         }
       ],
-      "confidence": 0.696
+      "confidence": 0.844
     },
     {
-      "id": 26,
+      "id": 24,
       "text": "Good morning, Sally.",
       "speaker": "Speaker1",
       "start": 93.62,
@@ -886,7 +866,7 @@
       "confidence": 0.887
     },
     {
-      "id": 27,
+      "id": 25,
       "text": "How are you?",
       "speaker": "Speaker1",
       "start": 95.58,
@@ -914,11 +894,11 @@
       "confidence": 0.998
     },
     {
-      "id": 28,
-      "text": "I'm great.",
+      "id": 26,
+      "text": "I'm great. What did you do yesterday?",
       "speaker": "Speaker0",
       "start": 97.42,
-      "duration": 0.91,
+      "duration": 2.91,
       "words": [
         {
           "word": "i'm",
@@ -931,17 +911,7 @@
           "start": 97.83,
           "end": 98.33,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.996
-    },
-    {
-      "id": 29,
-      "text": "What did you do yesterday?",
-      "speaker": "Speaker0",
-      "start": 98.86,
-      "duration": 1.47,
-      "words": [
+        },
         {
           "word": "what",
           "start": 98.86,
@@ -973,10 +943,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.996
     },
     {
-      "id": 30,
+      "id": 27,
       "text": "We went to the park.",
       "speaker": "Speaker0",
       "start": 101.58,
@@ -1016,7 +986,7 @@
       "confidence": 0.998
     },
     {
-      "id": 31,
+      "id": 28,
       "text": "What did you do in the park?",
       "speaker": "Speaker0",
       "start": 104.31,
@@ -1068,7 +1038,7 @@
       "confidence": 0.997
     },
     {
-      "id": 32,
+      "id": 29,
       "text": "We flew kites.",
       "speaker": "Speaker0",
       "start": 106.78,
@@ -1096,7 +1066,7 @@
       "confidence": 0.996
     },
     {
-      "id": 33,
+      "id": 30,
       "text": "His kites flew high.",
       "speaker": "Speaker2",
       "start": 109.38,
@@ -1130,7 +1100,7 @@
       "confidence": 0.989
     },
     {
-      "id": 34,
+      "id": 31,
       "text": "Wow, you're good.",
       "speaker": "Speaker0",
       "start": 112.5,
@@ -1158,7 +1128,7 @@
       "confidence": 0.883
     },
     {
-      "id": 35,
+      "id": 32,
       "text": "What did you do yesterday, Sally?",
       "speaker": "Speaker0",
       "start": 115.3,
@@ -1204,7 +1174,7 @@
       "confidence": 0.991
     },
     {
-      "id": 36,
+      "id": 33,
       "text": "I read books.",
       "speaker": "Speaker0",
       "start": 118.82,
@@ -1232,7 +1202,7 @@
       "confidence": 0.994
     },
     {
-      "id": 37,
+      "id": 34,
       "text": "Let's go to the classroom.",
       "speaker": "Speaker3",
       "start": 123.8,
@@ -1272,7 +1242,7 @@
       "confidence": 0.972
     },
     {
-      "id": 38,
+      "id": 35,
       "text": "What did you do yesterday?",
       "speaker": "Speaker4",
       "start": 130.59,
@@ -1312,7 +1282,7 @@
       "confidence": 0.981
     },
     {
-      "id": 39,
+      "id": 36,
       "text": "I watched a science movie.",
       "speaker": "Speaker5",
       "start": 133.56,
@@ -1352,7 +1322,7 @@
       "confidence": 0.999
     },
     {
-      "id": 40,
+      "id": 37,
       "text": "What did you do yesterday, Mike?",
       "speaker": "Speaker4",
       "start": 137.48,
@@ -1398,7 +1368,7 @@
       "confidence": 0.998
     },
     {
-      "id": 41,
+      "id": 38,
       "text": "I made bulgogi with my dad.",
       "speaker": "Speaker6",
       "start": 140.44,
@@ -1444,7 +1414,7 @@
       "confidence": 0.989
     },
     {
-      "id": 42,
+      "id": 39,
       "text": "How was it?",
       "speaker": "Speaker6",
       "start": 143.4,
@@ -1472,7 +1442,7 @@
       "confidence": 0.901
     },
     {
-      "id": 43,
+      "id": 40,
       "text": "It was very delicious.",
       "speaker": "Speaker7",
       "start": 145.0,
@@ -1506,7 +1476,7 @@
       "confidence": 0.999
     },
     {
-      "id": 44,
+      "id": 41,
       "text": "We had a bulgogi party.",
       "speaker": "Speaker7",
       "start": 147.32,
@@ -1546,7 +1516,7 @@
       "confidence": 0.991
     },
     {
-      "id": 45,
+      "id": 42,
       "text": "I made cookies yesterday.",
       "speaker": "Speaker4",
       "start": 152.22,
@@ -1580,7 +1550,7 @@
       "confidence": 0.995
     },
     {
-      "id": 46,
+      "id": 43,
       "text": "I brought cookies for you.",
       "speaker": "Speaker4",
       "start": 154.47,
@@ -1620,28 +1590,18 @@
       "confidence": 0.999
     },
     {
-      "id": 47,
-      "text": "Thanks.",
+      "id": 44,
+      "text": "Thanks. Delicious.",
       "speaker": "Speaker7",
       "start": 156.86,
-      "duration": 0.5,
+      "duration": 2.5,
       "words": [
         {
           "word": "thanks",
           "start": 156.86,
           "end": 157.36,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 48,
-      "text": "Delicious.",
-      "speaker": "Speaker7",
-      "start": 158.86,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "delicious",
           "start": 158.86,
@@ -1649,10 +1609,10 @@
           "confidence": 0.697
         }
       ],
-      "confidence": 0.697
+      "confidence": 0.844
     },
     {
-      "id": 49,
+      "id": 45,
       "text": "Your turn.",
       "speaker": "Speaker0",
       "start": 249.16,
@@ -1674,7 +1634,7 @@
       "confidence": 0.784
     },
     {
-      "id": 50,
+      "id": 46,
       "text": "Turn.",
       "speaker": "Speaker3",
       "start": 253.03,
@@ -1690,7 +1650,7 @@
       "confidence": 0.98
     },
     {
-      "id": 51,
+      "id": 47,
       "text": "Down yum.",
       "speaker": "Speaker6",
       "start": 319.1,
@@ -1731,5 +1691,13 @@
     "dgUtteranceCount": 51,
     "matchedSegments": 51,
     "totalDuration": 320.0
+  },
+  "repairedAt": "2026-07-23T04:33:44.508078Z",
+  "repairInfo": {
+    "beforeSegments": 51,
+    "afterSegments": 47,
+    "beforeAvgWords": 3.9,
+    "afterAvgWords": 4.3,
+    "merged": 4
   }
 }

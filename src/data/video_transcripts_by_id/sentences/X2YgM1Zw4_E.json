@@ -1,5 +1,5 @@
 {
-  "text": "I have a very. Important mission to look after the. Environment and help so that kids like. You join us in this task which is vital. For our planet. As you may already know human beings and. The environment are closely linked. Together every time people harm nature. They cause environmental problems. These problems involve damaging changes. In the environment many of which will be. Irreversible and will affect the health. Of all human beings look at this River. People have thrown waste in it the water. Has been contaminated and now nobody can. Drink it oh no there are also many. Animals and living beings that will die. Because of contamination. Luckily it's in our hands to protect. Nature and look after the environment. That's why I want to share with you. These 10 easy ways to look after the. Environment let's take a look. Turn off the lights and the electronic. Devices you're not using to save energy. Replace plastic bags with reusable cloth. Bags it takes plastic bags years to. Decompose and making them is a very. Contaminating process. Separate and recycle the different types. Of wastes organic inorganic containers. Glass or paper and cardboard. To avoid wasting water make sure Taps. Are completely turned off. The toilet is not a rubbish bin did you. Know that we waste 10 liters of water. Every time we flush the toilet. Have a shower instead of a bath a. Five-minute shower uses about 100 liters. Of water while a full bath would use up. To 250 liters. Turn off the water tap while brushing. Your teeth if you didn't shut off the. Faucet you would waste an average of 20. Liters every time you brushed your teeth. Reuse paper for example remember that. You can write on both sides of the sheet. To maximize its use. Pick up your litter every time you go to. The beach or the mountains. Respect and look after the animals. Flowers and trees around you. Easy ways to look after the environment. I'm sure you already know about. Them and do most of them with simple. Actions like recycling saving energy and. Water and looking after all living. Beings we contribute to a more. Sustainable planet do you know this word. A sustainable planet or city are those. That provide people with a good quality. Of life without risking natural. Resources this way future Generations. Will enjoy a wonderful planet where. Economic growth environmental care and. Social well-being are in Balance. Remember it's in your hands. Want to join us in our mission. Did you like the video. Subscribe by clicking on the seal ah and. If you want to keep watching more videos. Click on the boxes.",
+  "text": "Smile and learn. Hey there, friends. I have a very important mission, to look after the environment and help so that kids like you join us in this task, which is vital for our planet. As you may already know, human beings and the environment are closely linked together. Every time people harm nature, they cause environmental problems. These problems involve damaging changes in the environment, many of which will be irreversible and will affect the health of all human beings. Look at this river. People have thrown waste in it. The water has been contaminated, and now nobody can drink it. Oh, no. There are also many animals and living beings that will die because of contamination. Luckily, it's in our hands to protect nature and look after the environment. That's why I want to share with you these 10 easy ways to look after the environment. Let's take a look. Turn off the lights and the electronic devices you're not using to save energy. Replace plastic bags with reusable cloth bags. It takes plastic bags years to decompose, and making them is a very contaminating process. Separate and recycle the different types of waste. Organic, inorganic, containers, glass, or paper and cardboard. To avoid wasting water, make sure taps are completely turned off. The toilet is not a rubbish bin. Did you know that we waste 10 liters of water every time we flush the toilet? Have a shower instead of a bath. A five minute shower uses about 100 liters of water, while a full bath would use up to 250 liters. Turn off the water tap while brushing your teeth. If you didn't shut off the faucet, you would waste an average of 20 liters every time you brushed your teeth. Reuse paper. For example, remember that you can write on both sides of the sheet to maximize its use. Pick up your litter every time you go to the beach or the mountains. Respect and look after the animals, flowers, and trees around you. Easy ways to look after the environment, right? I'm sure you already know about them and do most of them. With simple actions like recycling, saving energy and water, and looking after all living beings, we contribute to a more sustainable planet. Do you know this word? A sustainable planet or city are those that provide people with a good quality of life without risking natural resources. This way, future generations will enjoy a wonderful planet where economic growth, environmental care, and social well-being are in balance. Remember, it's in your hands. Wanna join us in our mission? Did you like the video? We have so many more. Subscribe by clicking on the seal. And if you want to keep watching more videos, click on the boxes.",
   "segments": [
     {
       "id": 1,
@@ -337,10 +337,10 @@
     },
     {
       "id": 5,
-      "text": "Every time people harm nature, they cause environmental",
+      "text": "Every time people harm nature, they cause environmental problems.",
       "speaker": "Speaker1",
       "start": 23.55,
-      "duration": 3.13,
+      "duration": 4.09,
       "words": [
         {
           "word": "every",
@@ -389,17 +389,7 @@
           "start": 26.18,
           "end": 26.68,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.992
-    },
-    {
-      "id": 6,
-      "text": "problems.",
-      "speaker": "Speaker1",
-      "start": 27.14,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "problems",
           "start": 27.14,
@@ -407,10 +397,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.996
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "These problems involve damaging changes in the environment,",
       "speaker": "Speaker1",
       "start": 28.8,
@@ -468,7 +458,7 @@
       "confidence": 0.981
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "many of which will be irreversible",
       "speaker": "Speaker1",
       "start": 32.48,
@@ -514,7 +504,7 @@
       "confidence": 0.995
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "and will affect the health of all human",
       "speaker": "Speaker1",
       "start": 34.64,
@@ -572,7 +562,7 @@
       "confidence": 0.987
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "beings. Look at this river.",
       "speaker": "Speaker1",
       "start": 37.92,
@@ -612,7 +602,7 @@
       "confidence": 0.915
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "People have thrown waste in it. The water has been contaminated, and now nobody can drink it. Oh, no.",
       "speaker": "Speaker1",
       "start": 39.68,
@@ -736,7 +726,7 @@
       "confidence": 0.954
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "There are also many animals and living beings that will die because of contamination.",
       "speaker": "Speaker1",
       "start": 46.35,
@@ -830,7 +820,7 @@
       "confidence": 0.994
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Luckily, it's in our hands to protect nature and look after the environment.",
       "speaker": "Speaker1",
       "start": 51.55,
@@ -918,7 +908,7 @@
       "confidence": 0.991
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "That's why I want to share with you these 10 easy ways to look after the environment.",
       "speaker": "Speaker1",
       "start": 56.71,
@@ -1030,7 +1020,7 @@
       "confidence": 0.991
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "Let's take a look.",
       "speaker": "Speaker1",
       "start": 62.87,
@@ -1064,7 +1054,7 @@
       "confidence": 0.982
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "Turn off the lights and the electronic devices you're not using to save energy.",
       "speaker": "Speaker1",
       "start": 65.19,
@@ -1158,11 +1148,11 @@
       "confidence": 0.985
     },
     {
-      "id": 17,
-      "text": "Replace plastic bags with reusable cloth bags. It takes plastic bags years to decompose, and making them is a very contaminating",
+      "id": 16,
+      "text": "Replace plastic bags with reusable cloth bags. It takes plastic bags years to decompose, and making them is a very contaminating process.",
       "speaker": "Speaker1",
       "start": 72.12,
-      "duration": 8.35,
+      "duration": 9.3,
       "words": [
         {
           "word": "replace",
@@ -1289,17 +1279,7 @@
           "start": 79.97,
           "end": 80.47,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.968
-    },
-    {
-      "id": 18,
-      "text": "process.",
-      "speaker": "Speaker1",
-      "start": 80.92,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "process",
           "start": 80.92,
@@ -1307,14 +1287,14 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.984
     },
     {
-      "id": 19,
-      "text": "Separate and recycle the different types of waste. Organic,",
+      "id": 17,
+      "text": "Separate and recycle the different types of waste. Organic, inorganic, containers,",
       "speaker": "Speaker1",
       "start": 84.17,
-      "duration": 3.78,
+      "duration": 5.78,
       "words": [
         {
           "word": "separate",
@@ -1369,33 +1349,13 @@
           "start": 87.45,
           "end": 87.95,
           "confidence": 0.996
-        }
-      ],
-      "confidence": 0.962
-    },
-    {
-      "id": 20,
-      "text": "inorganic,",
-      "speaker": "Speaker1",
-      "start": 88.41,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "inorganic",
           "start": 88.41,
           "end": 88.91,
           "confidence": 0.984
-        }
-      ],
-      "confidence": 0.984
-    },
-    {
-      "id": 21,
-      "text": "containers,",
-      "speaker": "Speaker1",
-      "start": 89.45,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "containers",
           "start": 89.45,
@@ -1403,10 +1363,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.982
     },
     {
-      "id": 22,
+      "id": 18,
       "text": "glass, or paper and cardboard.",
       "speaker": "Speaker1",
       "start": 90.33,
@@ -1446,7 +1406,7 @@
       "confidence": 0.891
     },
     {
-      "id": 23,
+      "id": 19,
       "text": "To avoid wasting water,",
       "speaker": "Speaker1",
       "start": 94.67,
@@ -1480,7 +1440,7 @@
       "confidence": 0.976
     },
     {
-      "id": 24,
+      "id": 20,
       "text": "make sure taps are completely turned off.",
       "speaker": "Speaker1",
       "start": 96.5,
@@ -1532,7 +1492,7 @@
       "confidence": 0.999
     },
     {
-      "id": 25,
+      "id": 21,
       "text": "The toilet is not a rubbish bin.",
       "speaker": "Speaker1",
       "start": 101.47,
@@ -1584,7 +1544,7 @@
       "confidence": 0.999
     },
     {
-      "id": 26,
+      "id": 22,
       "text": "Did you know that we waste 10 liters of water every time we flush the toilet?",
       "speaker": "Speaker1",
       "start": 104.1,
@@ -1690,7 +1650,7 @@
       "confidence": 0.999
     },
     {
-      "id": 27,
+      "id": 23,
       "text": "Have a shower instead of a bath.",
       "speaker": "Speaker1",
       "start": 111.76,
@@ -1742,11 +1702,11 @@
       "confidence": 0.995
     },
     {
-      "id": 28,
-      "text": "A five minute shower uses about 100 liters of water, while a full bath would use up to 250",
+      "id": 24,
+      "text": "A five minute shower uses about 100 liters of water, while a full bath would use up to 250 liters.",
       "speaker": "Speaker1",
       "start": 114.16,
-      "duration": 6.96,
+      "duration": 7.46,
       "words": [
         {
           "word": "a",
@@ -1861,17 +1821,7 @@
           "start": 120.0,
           "end": 121.12,
           "confidence": 0.941
-        }
-      ],
-      "confidence": 0.983
-    },
-    {
-      "id": 29,
-      "text": "liters.",
-      "speaker": "Speaker1",
-      "start": 121.12,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "liters",
           "start": 121.12,
@@ -1879,10 +1829,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.991
     },
     {
-      "id": 30,
+      "id": 25,
       "text": "Turn off the water tap while brushing your teeth. If you didn't shut off the faucet, you would waste an average of 20 liters every time you brushed your teeth.",
       "speaker": "Speaker1",
       "start": 124.14,
@@ -2072,11 +2022,11 @@
       "confidence": 0.997
     },
     {
-      "id": 31,
-      "text": "Reuse paper.",
+      "id": 26,
+      "text": "Reuse paper. For example, remember that you can write on both sides of the sheet to maximize its use.",
       "speaker": "Speaker1",
       "start": 135.35,
-      "duration": 0.98,
+      "duration": 6.74,
       "words": [
         {
           "word": "reuse",
@@ -2089,17 +2039,7 @@
           "start": 135.83,
           "end": 136.33,
           "confidence": 0.969
-        }
-      ],
-      "confidence": 0.978
-    },
-    {
-      "id": 32,
-      "text": "For example, remember that you can write on both sides of the sheet to maximize its use.",
-      "speaker": "Speaker1",
-      "start": 136.71,
-      "duration": 5.38,
-      "words": [
+        },
         {
           "word": "for",
           "start": 136.71,
@@ -2203,10 +2143,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.988
     },
     {
-      "id": 33,
+      "id": 27,
       "text": "Pick up your litter every time you go to the beach or the mountains.",
       "speaker": "Speaker1",
       "start": 144.39,
@@ -2300,7 +2240,7 @@
       "confidence": 0.964
     },
     {
-      "id": 34,
+      "id": 28,
       "text": "Respect and look after the animals, flowers, and trees around you.",
       "speaker": "Speaker1",
       "start": 150.35,
@@ -2376,7 +2316,7 @@
       "confidence": 0.995
     },
     {
-      "id": 35,
+      "id": 29,
       "text": "Easy ways to look after the environment, right? I'm sure you already know about them and do most of them.",
       "speaker": "Speaker1",
       "start": 157.07,
@@ -2506,7 +2446,7 @@
       "confidence": 0.981
     },
     {
-      "id": 36,
+      "id": 30,
       "text": "With simple actions like recycling,",
       "speaker": "Speaker1",
       "start": 163.38,
@@ -2546,7 +2486,7 @@
       "confidence": 0.99
     },
     {
-      "id": 37,
+      "id": 31,
       "text": "saving energy and water, and looking after all living beings, we contribute to a more sustainable planet.",
       "speaker": "Speaker1",
       "start": 165.7,
@@ -2658,7 +2598,7 @@
       "confidence": 0.989
     },
     {
-      "id": 38,
+      "id": 32,
       "text": "Do you know this word?",
       "speaker": "Speaker1",
       "start": 172.82,
@@ -2698,7 +2638,7 @@
       "confidence": 0.996
     },
     {
-      "id": 39,
+      "id": 33,
       "text": "A sustainable planet or city are those that provide people with a good quality of life without risking natural resources.",
       "speaker": "Speaker1",
       "start": 174.34,
@@ -2828,7 +2768,7 @@
       "confidence": 0.997
     },
     {
-      "id": 40,
+      "id": 34,
       "text": "This way, future generations will enjoy a wonderful planet where economic growth, environmental",
       "speaker": "Speaker1",
       "start": 182.66,
@@ -2916,7 +2856,7 @@
       "confidence": 0.996
     },
     {
-      "id": 41,
+      "id": 35,
       "text": "care, and social well-being are in balance.",
       "speaker": "Speaker1",
       "start": 188.41,
@@ -2968,7 +2908,7 @@
       "confidence": 0.995
     },
     {
-      "id": 42,
+      "id": 36,
       "text": "Remember, it's in your hands.",
       "speaker": "Speaker1",
       "start": 191.79,
@@ -3008,7 +2948,7 @@
       "confidence": 0.991
     },
     {
-      "id": 43,
+      "id": 37,
       "text": "Wanna join us in our mission?",
       "speaker": "Speaker1",
       "start": 194.27,
@@ -3054,7 +2994,7 @@
       "confidence": 0.991
     },
     {
-      "id": 44,
+      "id": 38,
       "text": "Did you like the video? We have so many more.",
       "speaker": "Speaker0",
       "start": 202.43,
@@ -3124,7 +3064,7 @@
       "confidence": 0.965
     },
     {
-      "id": 45,
+      "id": 39,
       "text": "Subscribe by clicking on the seal.",
       "speaker": "Speaker0",
       "start": 205.84,
@@ -3170,7 +3110,7 @@
       "confidence": 0.988
     },
     {
-      "id": 46,
+      "id": 40,
       "text": "And if you want to keep watching more videos, click on the boxes.",
       "speaker": "Speaker0",
       "start": 208.47,
@@ -3271,5 +3211,13 @@
     "dgUtteranceCount": 46,
     "matchedSegments": 46,
     "totalDuration": 211.78
+  },
+  "repairedAt": "2026-07-23T04:33:44.537447Z",
+  "repairInfo": {
+    "beforeSegments": 46,
+    "afterSegments": 40,
+    "beforeAvgWords": 10.1,
+    "afterAvgWords": 11.7,
+    "merged": 6
   }
 }

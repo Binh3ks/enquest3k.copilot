@@ -971,10 +971,10 @@
     },
     {
       "id": 15,
-      "text": "which go until quarter past ten. 10:45, we have break for fifteen minutes. Then eleven",
+      "text": "which go until quarter past ten. 10:45, we have break for fifteen minutes. Then eleven till 12:40, we have",
       "speaker": "Speaker0",
       "start": 58.83,
-      "duration": 6.66,
+      "duration": 9.94,
       "words": [
         {
           "word": "which",
@@ -1065,17 +1065,7 @@
           "start": 64.99,
           "end": 65.49,
           "confidence": 0.927
-        }
-      ],
-      "confidence": 0.961
-    },
-    {
-      "id": 16,
-      "text": "till 12:40,",
-      "speaker": "Speaker0",
-      "start": 66.11,
-      "duration": 1.7,
-      "words": [
+        },
         {
           "word": "till",
           "start": 66.11,
@@ -1087,17 +1077,7 @@
           "start": 66.67,
           "end": 67.81,
           "confidence": 0.985
-        }
-      ],
-      "confidence": 0.941
-    },
-    {
-      "id": 17,
-      "text": "we have",
-      "speaker": "Speaker0",
-      "start": 68.11,
-      "duration": 0.66,
-      "words": [
+        },
         {
           "word": "we",
           "start": 68.11,
@@ -1111,10 +1091,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.967
     },
     {
-      "id": 18,
+      "id": 16,
       "text": "two more lessons,",
       "speaker": "Speaker0",
       "start": 69.17,
@@ -1142,7 +1122,7 @@
       "confidence": 0.931
     },
     {
-      "id": 19,
+      "id": 17,
       "text": "and then lunchtime.",
       "speaker": "Speaker0",
       "start": 71.17,
@@ -1170,7 +1150,7 @@
       "confidence": 0.958
     },
     {
-      "id": 20,
+      "id": 18,
       "text": "I can go into town to get my lunch, but most people have to stay in the school and eat the school food, and British school food isn't very",
       "speaker": "Speaker0",
       "start": 73.09,
@@ -1354,7 +1334,7 @@
       "confidence": 0.984
     },
     {
-      "id": 21,
+      "id": 19,
       "text": "nice. Then we have two more lessons after lunch, and we we finish school at 03:30.",
       "speaker": "Speaker0",
       "start": 84.01,
@@ -1460,7 +1440,7 @@
       "confidence": 0.919
     },
     {
-      "id": 22,
+      "id": 20,
       "text": "Usually I come home and I just sort of relax for a bit,",
       "speaker": "Speaker0",
       "start": 89.45,
@@ -1548,7 +1528,7 @@
       "confidence": 0.925
     },
     {
-      "id": 23,
+      "id": 21,
       "text": "and that's usually for maybe an hour.",
       "speaker": "Speaker0",
       "start": 93.69,
@@ -1600,7 +1580,7 @@
       "confidence": 0.971
     },
     {
-      "id": 24,
+      "id": 22,
       "text": "I I read or I watch television.",
       "speaker": "Speaker0",
       "start": 96.33,
@@ -1652,7 +1632,7 @@
       "confidence": 0.967
     },
     {
-      "id": 25,
+      "id": 23,
       "text": "And my mom gets home about usually between a half past five and six,",
       "speaker": "Speaker0",
       "start": 99.6,
@@ -1746,7 +1726,7 @@
       "confidence": 0.861
     },
     {
-      "id": 26,
+      "id": 24,
       "text": "and so we'll usually eat dinner about 06:30.",
       "speaker": "Speaker0",
       "start": 104.81,
@@ -1815,5 +1795,14 @@
     "dgUtteranceCount": 26,
     "matchedSegments": 26,
     "totalDuration": 107.55
+  },
+  "text": "My name's Fred. I live in London, and I'm 17 years old. I wake up at seven, and I usually get out of bed about 07:30. Then I I come down stairs and have breakfast. Usually, I have cereal for breakfast with orange juice, but sometimes I have, toast with usually jam or honey. Then I pack my bag for school. I walk because my school's only, it's only in the center of the town where I live, so it's only fifteen minutes walk in the morning, which is good because it means I can sleep later. The school is quite old. It's been, a school for about four hundred years and it's got about a thousand students there in seven age groups and it's only boys there. School starts at, 08:30, and then we have two lessons, which go until quarter past ten. 10:45, we have break for fifteen minutes. Then eleven till 12:40, we have two more lessons, and then lunchtime. I can go into town to get my lunch, but most people have to stay in the school and eat the school food, and British school food isn't very nice. Then we have two more lessons after lunch, and we we finish school at 03:30. Usually I come home and I just sort of relax for a bit, and that's usually for maybe an hour. I I read or I watch television. And my mom gets home about usually between a half past five and six, and so we'll usually eat dinner about 06:30.",
+  "repairedAt": "2026-07-23T04:33:44.512224Z",
+  "repairInfo": {
+    "beforeSegments": 26,
+    "afterSegments": 24,
+    "beforeAvgWords": 9.9,
+    "afterAvgWords": 10.7,
+    "merged": 2
   }
 }

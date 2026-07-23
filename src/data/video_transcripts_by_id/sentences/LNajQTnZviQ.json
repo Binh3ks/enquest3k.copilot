@@ -1,5 +1,5 @@
 {
-  "text": "Senses. I can see! I can see with my eyes! See. Eyes. I can hear! I can hear with my ears! Hear. Ears. I can smell! I can smell with my nose! Smell. Nose. I can feel! Oh! It’s too cold! Feel. Skin. I can taste! I can taste with my tongue! Yummy! Taste. Tongue. Review.",
+  "text": "English sing sing. Five zzz's. I can see. I can see with my eyes. See See eyes eyes I can hear I can hear with my ears Hear ear ears ears I can smell I can smell with my nose. Smell smell nose nose I can feel. Oh, it's too cold. Feel feel skin skin I can taste. I can taste with my tongue. Yummy. Taste taste tongue tongue Review. Ears, hear, eyes, see, nose smell skin feel tongue taste.",
   "segments": [
     {
       "id": 1,
@@ -31,10 +31,10 @@
     },
     {
       "id": 2,
-      "text": "Five zzz's.",
+      "text": "Five zzz's. I can see.",
       "speaker": "Speaker0",
       "start": 8.24,
-      "duration": 0.98,
+      "duration": 6.34,
       "words": [
         {
           "word": "five",
@@ -47,17 +47,7 @@
           "start": 8.72,
           "end": 9.22,
           "confidence": 0.565
-        }
-      ],
-      "confidence": 0.558
-    },
-    {
-      "id": 3,
-      "text": "I can see.",
-      "speaker": "Speaker0",
-      "start": 13.6,
-      "duration": 0.98,
-      "words": [
+        },
         {
           "word": "i",
           "start": 13.6,
@@ -77,10 +67,10 @@
           "confidence": 0.983
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.768
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "I can see with my eyes.",
       "speaker": "Speaker0",
       "start": 18.34,
@@ -126,60 +116,30 @@
       "confidence": 0.998
     },
     {
-      "id": 5,
-      "text": "See",
+      "id": 4,
+      "text": "See See eyes eyes",
       "speaker": "Speaker0",
       "start": 24.57,
-      "duration": 0.5,
+      "duration": 9.17,
       "words": [
         {
           "word": "see",
           "start": 24.57,
           "end": 25.07,
           "confidence": 0.638
-        }
-      ],
-      "confidence": 0.638
-    },
-    {
-      "id": 6,
-      "text": "See",
-      "speaker": "Speaker0",
-      "start": 27.3,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "see",
           "start": 27.3,
           "end": 27.8,
           "confidence": 0.465
-        }
-      ],
-      "confidence": 0.465
-    },
-    {
-      "id": 7,
-      "text": "eyes",
-      "speaker": "Speaker0",
-      "start": 30.84,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "eyes",
           "start": 30.84,
           "end": 31.34,
           "confidence": 0.903
-        }
-      ],
-      "confidence": 0.903
-    },
-    {
-      "id": 8,
-      "text": "eyes",
-      "speaker": "Speaker0",
-      "start": 33.24,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "eyes",
           "start": 33.24,
@@ -187,10 +147,10 @@
           "confidence": 0.972
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.745
     },
     {
-      "id": 9,
+      "id": 5,
       "text": "I can hear",
       "speaker": "Speaker0",
       "start": 37.64,
@@ -218,11 +178,11 @@
       "confidence": 0.976
     },
     {
-      "id": 10,
-      "text": "I can hear with my ears",
+      "id": 6,
+      "text": "I can hear with my ears Hear ear ears ears",
       "speaker": "Speaker0",
       "start": 40.68,
-      "duration": 2.18,
+      "duration": 27.17,
       "words": [
         {
           "word": "i",
@@ -259,33 +219,13 @@
           "start": 42.36,
           "end": 42.86,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.974
-    },
-    {
-      "id": 11,
-      "text": "Hear",
-      "speaker": "Speaker0",
-      "start": 52.68,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "hear",
           "start": 52.68,
           "end": 53.18,
           "confidence": 0.496
-        }
-      ],
-      "confidence": 0.496
-    },
-    {
-      "id": 12,
-      "text": "ear ears",
-      "speaker": "Speaker0",
-      "start": 56.87,
-      "duration": 0.82,
-      "words": [
+        },
         {
           "word": "ear",
           "start": 56.87,
@@ -297,17 +237,7 @@
           "start": 57.19,
           "end": 57.69,
           "confidence": 0.975
-        }
-      ],
-      "confidence": 0.94
-    },
-    {
-      "id": 13,
-      "text": "ears",
-      "speaker": "Speaker0",
-      "start": 67.35,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "ears",
           "start": 67.35,
@@ -315,10 +245,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.852
     },
     {
-      "id": 14,
+      "id": 7,
       "text": "I can smell",
       "speaker": "Speaker0",
       "start": 69.43,
@@ -346,7 +276,7 @@
       "confidence": 0.954
     },
     {
-      "id": 15,
+      "id": 8,
       "text": "I can smell with my nose.",
       "speaker": "Speaker0",
       "start": 73.33,
@@ -392,44 +322,24 @@
       "confidence": 0.998
     },
     {
-      "id": 16,
-      "text": "Smell",
+      "id": 9,
+      "text": "Smell smell nose",
       "speaker": "Speaker0",
       "start": 79.5,
-      "duration": 0.5,
+      "duration": 6.81,
       "words": [
         {
           "word": "smell",
           "start": 79.5,
           "end": 80.0,
           "confidence": 0.545
-        }
-      ],
-      "confidence": 0.545
-    },
-    {
-      "id": 17,
-      "text": "smell",
-      "speaker": "Speaker0",
-      "start": 83.26,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "smell",
           "start": 83.26,
           "end": 83.76,
           "confidence": 0.905
-        }
-      ],
-      "confidence": 0.905
-    },
-    {
-      "id": 18,
-      "text": "nose",
-      "speaker": "Speaker0",
-      "start": 85.81,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "nose",
           "start": 85.81,
@@ -437,10 +347,10 @@
           "confidence": 0.944
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.798
     },
     {
-      "id": 19,
+      "id": 10,
       "text": "nose I can feel.",
       "speaker": "Speaker0",
       "start": 96.64,
@@ -474,11 +384,11 @@
       "confidence": 0.958
     },
     {
-      "id": 20,
-      "text": "Oh, it's too cold. Feel",
+      "id": 11,
+      "text": "Oh, it's too cold. Feel feel skin skin",
       "speaker": "Speaker0",
       "start": 100.44,
-      "duration": 2.66,
+      "duration": 19.92,
       "words": [
         {
           "word": "oh",
@@ -509,49 +419,19 @@
           "start": 102.6,
           "end": 103.1,
           "confidence": 0.945
-        }
-      ],
-      "confidence": 0.971
-    },
-    {
-      "id": 21,
-      "text": "feel",
-      "speaker": "Speaker0",
-      "start": 104.36,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "feel",
           "start": 104.36,
           "end": 104.86,
           "confidence": 0.878
-        }
-      ],
-      "confidence": 0.878
-    },
-    {
-      "id": 22,
-      "text": "skin",
-      "speaker": "Speaker0",
-      "start": 111.33,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "skin",
           "start": 111.33,
           "end": 111.83,
           "confidence": 0.978
-        }
-      ],
-      "confidence": 0.978
-    },
-    {
-      "id": 23,
-      "text": "skin",
-      "speaker": "Speaker0",
-      "start": 119.86,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "skin",
           "start": 119.86,
@@ -559,10 +439,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.957
     },
     {
-      "id": 24,
+      "id": 12,
       "text": "I can taste.",
       "speaker": "Speaker0",
       "start": 121.3,
@@ -590,7 +470,7 @@
       "confidence": 0.92
     },
     {
-      "id": 25,
+      "id": 13,
       "text": "I can taste with my tongue.",
       "speaker": "Speaker0",
       "start": 124.66,
@@ -636,60 +516,30 @@
       "confidence": 0.997
     },
     {
-      "id": 26,
-      "text": "Yummy.",
+      "id": 14,
+      "text": "Yummy. Taste taste tongue tongue Review. Ears, hear, eyes, see, nose smell skin feel tongue taste.",
       "speaker": "Speaker0",
       "start": 129.44,
-      "duration": 0.5,
+      "duration": 45.6,
       "words": [
         {
           "word": "yummy",
           "start": 129.44,
           "end": 129.94,
           "confidence": 0.939
-        }
-      ],
-      "confidence": 0.939
-    },
-    {
-      "id": 27,
-      "text": "Taste",
-      "speaker": "Speaker0",
-      "start": 131.76,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "taste",
           "start": 131.76,
           "end": 132.26,
           "confidence": 0.877
-        }
-      ],
-      "confidence": 0.877
-    },
-    {
-      "id": 28,
-      "text": "taste",
-      "speaker": "Speaker0",
-      "start": 134.09,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "taste",
           "start": 134.09,
           "end": 134.59,
           "confidence": 0.857
-        }
-      ],
-      "confidence": 0.857
-    },
-    {
-      "id": 29,
-      "text": "tongue tongue",
-      "speaker": "Speaker0",
-      "start": 139.84,
-      "duration": 0.83,
-      "words": [
+        },
         {
           "word": "tongue",
           "start": 139.84,
@@ -701,17 +551,7 @@
           "start": 140.17,
           "end": 140.67,
           "confidence": 0.976
-        }
-      ],
-      "confidence": 0.977
-    },
-    {
-      "id": 30,
-      "text": "Review. Ears,",
-      "speaker": "Speaker0",
-      "start": 145.3,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "review",
           "start": 145.3,
@@ -723,145 +563,55 @@
           "start": 145.94,
           "end": 146.44,
           "confidence": 0.83
-        }
-      ],
-      "confidence": 0.914
-    },
-    {
-      "id": 31,
-      "text": "hear,",
-      "speaker": "Speaker0",
-      "start": 149.06,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "hear",
           "start": 149.06,
           "end": 149.56,
           "confidence": 0.741
-        }
-      ],
-      "confidence": 0.741
-    },
-    {
-      "id": 32,
-      "text": "eyes,",
-      "speaker": "Speaker0",
-      "start": 152.42,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "eyes",
           "start": 152.42,
           "end": 152.92,
           "confidence": 0.988
-        }
-      ],
-      "confidence": 0.988
-    },
-    {
-      "id": 33,
-      "text": "see,",
-      "speaker": "Speaker0",
-      "start": 155.86,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "see",
           "start": 155.86,
           "end": 156.36,
           "confidence": 0.84
-        }
-      ],
-      "confidence": 0.84
-    },
-    {
-      "id": 34,
-      "text": "nose",
-      "speaker": "Speaker0",
-      "start": 158.53,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "nose",
           "start": 158.53,
           "end": 159.03,
           "confidence": 0.996
-        }
-      ],
-      "confidence": 0.996
-    },
-    {
-      "id": 35,
-      "text": "smell",
-      "speaker": "Speaker0",
-      "start": 164.14,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "smell",
           "start": 164.14,
           "end": 164.64,
           "confidence": 0.977
-        }
-      ],
-      "confidence": 0.977
-    },
-    {
-      "id": 36,
-      "text": "skin",
-      "speaker": "Speaker0",
-      "start": 166.14,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "skin",
           "start": 166.14,
           "end": 166.64,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 37,
-      "text": "feel",
-      "speaker": "Speaker0",
-      "start": 169.01,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "feel",
           "start": 169.01,
           "end": 169.51,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 38,
-      "text": "tongue",
-      "speaker": "Speaker0",
-      "start": 172.29,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tongue",
           "start": 172.29,
           "end": 172.79,
           "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 39,
-      "text": "taste.",
-      "speaker": "Speaker0",
-      "start": 174.54,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "taste",
           "start": 174.54,
@@ -869,7 +619,7 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.935
     }
   ],
   "fetchedAt": "2026-07-23T04:10:14.688323+00:00",
@@ -884,5 +634,13 @@
     "dgUtteranceCount": 39,
     "matchedSegments": 39,
     "totalDuration": 175.04
+  },
+  "repairedAt": "2026-07-23T04:33:44.523882Z",
+  "repairInfo": {
+    "beforeSegments": 39,
+    "afterSegments": 14,
+    "beforeAvgWords": 2.1,
+    "afterAvgWords": 5.7,
+    "merged": 25
   }
 }

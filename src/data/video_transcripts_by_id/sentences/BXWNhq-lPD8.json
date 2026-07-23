@@ -1,5 +1,5 @@
 {
-  "text": "Feel. Angry. Angry. Are you angry? I’m angry. Bored. Bored. Are you bored? I’m bored. Excited. Excited. Are you excited? I’m excited. Happy. Happy. Are you happy? I’m happy. Hungry. Hungry. Are you hungry? I’m hungry. Sad. Sad. Are you sad? I’m sad. Scared. Scared. Are you scared? I’m scared. Shy. Shy. Are you shy? I’m shy. Sleepy. Sleepy. Are you sleepy? I’m sleepy. Thirsty. Thirsty. Are you thirsty? I’m thirsty. Tired. Tired. Are you tired? I’m tired. Worried. Worried. Are you worried? I’m worried.",
+  "text": "English sing sing. Angry angry Are you angry? I'm angry. Bored bored Are you bored? I'm bored. Excited excited Are you excited? I'm excited. Happy happy Are you happy? I'm happy. Hungry hungry Are you hungry? I'm hungry. Sad sad Are you sad? I'm sad. Scared scared Are you scared? I'm scared. Shy shy Are you shy? I'm shy. Sleepy sleepy Are you sleepy? I'm sleepy. Thirsty thirsty Are you thirsty? I'm thirsty. Tired tired Are you tired? I'm tired. Worried worried Are you worried? I'm worried. Review. Angry. Bored. Excited. Happy. Hungry sad scared shy sleepy thirsty tired worried",
   "segments": [
     {
       "id": 1,
@@ -31,43 +31,23 @@
     },
     {
       "id": 2,
-      "text": "Angry",
+      "text": "Angry angry Are you angry?",
       "speaker": "Speaker0",
       "start": 16.5,
-      "duration": 0.5,
+      "duration": 4.82,
       "words": [
         {
           "word": "angry",
           "start": 16.5,
           "end": 17.0,
           "confidence": 0.79
-        }
-      ],
-      "confidence": 0.79
-    },
-    {
-      "id": 3,
-      "text": "angry",
-      "speaker": "Speaker0",
-      "start": 18.34,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "angry",
           "start": 18.34,
           "end": 18.84,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 4,
-      "text": "Are you angry?",
-      "speaker": "Speaker0",
-      "start": 20.18,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "are",
           "start": 20.18,
@@ -87,14 +67,14 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.887
+      "confidence": 0.892
     },
     {
-      "id": 5,
-      "text": "I'm angry.",
+      "id": 3,
+      "text": "I'm angry. Bored bored",
       "speaker": "Speaker0",
       "start": 22.49,
-      "duration": 1.22,
+      "duration": 11.08,
       "words": [
         {
           "word": "i'm",
@@ -107,33 +87,13 @@
           "start": 23.21,
           "end": 23.71,
           "confidence": 0.979
-        }
-      ],
-      "confidence": 0.967
-    },
-    {
-      "id": 6,
-      "text": "Bored",
-      "speaker": "Speaker0",
-      "start": 31.23,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "bored",
           "start": 31.23,
           "end": 31.73,
           "confidence": 0.768
-        }
-      ],
-      "confidence": 0.768
-    },
-    {
-      "id": 7,
-      "text": "bored",
-      "speaker": "Speaker0",
-      "start": 33.07,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "bored",
           "start": 33.07,
@@ -141,10 +101,10 @@
           "confidence": 0.977
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.904
     },
     {
-      "id": 8,
+      "id": 4,
       "text": "Are you bored?",
       "speaker": "Speaker0",
       "start": 34.51,
@@ -172,11 +132,11 @@
       "confidence": 0.956
     },
     {
-      "id": 9,
-      "text": "I'm bored.",
+      "id": 5,
+      "text": "I'm bored. Excited excited",
       "speaker": "Speaker0",
       "start": 36.99,
-      "duration": 0.9,
+      "duration": 10.85,
       "words": [
         {
           "word": "i'm",
@@ -189,33 +149,13 @@
           "start": 37.39,
           "end": 37.89,
           "confidence": 0.982
-        }
-      ],
-      "confidence": 0.987
-    },
-    {
-      "id": 10,
-      "text": "Excited",
-      "speaker": "Speaker0",
-      "start": 45.27,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "excited",
           "start": 45.27,
           "end": 45.77,
           "confidence": 0.991
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 11,
-      "text": "excited",
-      "speaker": "Speaker0",
-      "start": 47.34,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "excited",
           "start": 47.34,
@@ -223,10 +163,10 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.992
     },
     {
-      "id": 12,
+      "id": 6,
       "text": "Are you excited?",
       "speaker": "Speaker0",
       "start": 49.18,
@@ -254,11 +194,11 @@
       "confidence": 0.996
     },
     {
-      "id": 13,
-      "text": "I'm excited.",
+      "id": 7,
+      "text": "I'm excited. Happy happy",
       "speaker": "Speaker0",
       "start": 51.34,
-      "duration": 1.07,
+      "duration": 10.15,
       "words": [
         {
           "word": "i'm",
@@ -271,33 +211,13 @@
           "start": 51.91,
           "end": 52.41,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.995
-    },
-    {
-      "id": 14,
-      "text": "Happy",
-      "speaker": "Speaker0",
-      "start": 59.07,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "happy",
           "start": 59.07,
           "end": 59.57,
           "confidence": 0.988
-        }
-      ],
-      "confidence": 0.988
-    },
-    {
-      "id": 15,
-      "text": "happy",
-      "speaker": "Speaker0",
-      "start": 60.99,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "happy",
           "start": 60.99,
@@ -305,10 +225,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.994
     },
     {
-      "id": 16,
+      "id": 8,
       "text": "Are you happy?",
       "speaker": "Speaker0",
       "start": 62.67,
@@ -336,11 +256,11 @@
       "confidence": 1.0
     },
     {
-      "id": 17,
-      "text": "I'm happy.",
+      "id": 9,
+      "text": "I'm happy. Hungry hungry",
       "speaker": "Speaker0",
       "start": 65.17,
-      "duration": 0.81,
+      "duration": 8.89,
       "words": [
         {
           "word": "i'm",
@@ -353,33 +273,13 @@
           "start": 65.48,
           "end": 65.98,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.991
-    },
-    {
-      "id": 18,
-      "text": "Hungry",
-      "speaker": "Speaker0",
-      "start": 71.72,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "hungry",
           "start": 71.72,
           "end": 72.22,
           "confidence": 0.983
-        }
-      ],
-      "confidence": 0.983
-    },
-    {
-      "id": 19,
-      "text": "hungry",
-      "speaker": "Speaker0",
-      "start": 73.56,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "hungry",
           "start": 73.56,
@@ -387,10 +287,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.991
     },
     {
-      "id": 20,
+      "id": 10,
       "text": "Are you hungry?",
       "speaker": "Speaker0",
       "start": 75.17,
@@ -418,11 +318,11 @@
       "confidence": 0.997
     },
     {
-      "id": 21,
-      "text": "I'm hungry.",
+      "id": 11,
+      "text": "I'm hungry. Sad sad",
       "speaker": "Speaker0",
       "start": 77.56,
-      "duration": 0.99,
+      "duration": 11.36,
       "words": [
         {
           "word": "i'm",
@@ -435,33 +335,13 @@
           "start": 78.05,
           "end": 78.55,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 22,
-      "text": "Sad",
-      "speaker": "Speaker0",
-      "start": 87.38,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sad",
           "start": 87.38,
           "end": 87.88,
           "confidence": 0.956
-        }
-      ],
-      "confidence": 0.956
-    },
-    {
-      "id": 23,
-      "text": "sad",
-      "speaker": "Speaker0",
-      "start": 88.42,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sad",
           "start": 88.42,
@@ -469,10 +349,10 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.985
     },
     {
-      "id": 24,
+      "id": 12,
       "text": "Are you sad?",
       "speaker": "Speaker0",
       "start": 89.78,
@@ -500,11 +380,11 @@
       "confidence": 0.985
     },
     {
-      "id": 25,
-      "text": "I'm sad.",
+      "id": 13,
+      "text": "I'm sad. Scared scared",
       "speaker": "Speaker0",
       "start": 92.58,
-      "duration": 0.98,
+      "duration": 8.95,
       "words": [
         {
           "word": "i'm",
@@ -517,17 +397,7 @@
           "start": 93.06,
           "end": 93.56,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 26,
-      "text": "Scared scared",
-      "speaker": "Speaker0",
-      "start": 100.47,
-      "duration": 1.06,
-      "words": [
+        },
         {
           "word": "scared",
           "start": 100.47,
@@ -541,10 +411,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.982
     },
     {
-      "id": 27,
+      "id": 14,
       "text": "Are you scared?",
       "speaker": "Speaker0",
       "start": 102.56,
@@ -572,11 +442,11 @@
       "confidence": 0.995
     },
     {
-      "id": 28,
-      "text": "I'm scared.",
+      "id": 15,
+      "text": "I'm scared. Shy shy",
       "speaker": "Speaker0",
       "start": 105.11,
-      "duration": 0.98,
+      "duration": 8.88,
       "words": [
         {
           "word": "i'm",
@@ -589,33 +459,13 @@
           "start": 105.59,
           "end": 106.09,
           "confidence": 0.996
-        }
-      ],
-      "confidence": 0.996
-    },
-    {
-      "id": 29,
-      "text": "Shy",
-      "speaker": "Speaker0",
-      "start": 111.81,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "shy",
           "start": 111.81,
           "end": 112.31,
           "confidence": 0.792
-        }
-      ],
-      "confidence": 0.792
-    },
-    {
-      "id": 30,
-      "text": "shy",
-      "speaker": "Speaker0",
-      "start": 113.49,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "shy",
           "start": 113.49,
@@ -623,10 +473,10 @@
           "confidence": 0.984
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.924
     },
     {
-      "id": 31,
+      "id": 16,
       "text": "Are you shy?",
       "speaker": "Speaker0",
       "start": 115.09,
@@ -654,11 +504,11 @@
       "confidence": 0.992
     },
     {
-      "id": 32,
-      "text": "I'm shy.",
+      "id": 17,
+      "text": "I'm shy. Sleepy sleepy",
       "speaker": "Speaker0",
       "start": 117.49,
-      "duration": 0.98,
+      "duration": 17.86,
       "words": [
         {
           "word": "i'm",
@@ -671,33 +521,13 @@
           "start": 117.97,
           "end": 118.47,
           "confidence": 0.973
-        }
-      ],
-      "confidence": 0.984
-    },
-    {
-      "id": 33,
-      "text": "Sleepy",
-      "speaker": "Speaker0",
-      "start": 132.93,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sleepy",
           "start": 132.93,
           "end": 133.43,
           "confidence": 0.786
-        }
-      ],
-      "confidence": 0.786
-    },
-    {
-      "id": 34,
-      "text": "sleepy",
-      "speaker": "Speaker0",
-      "start": 134.85,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sleepy",
           "start": 134.85,
@@ -705,10 +535,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.923
     },
     {
-      "id": 35,
+      "id": 18,
       "text": "Are you sleepy?",
       "speaker": "Speaker0",
       "start": 136.45,
@@ -736,11 +566,11 @@
       "confidence": 0.971
     },
     {
-      "id": 36,
-      "text": "I'm sleepy.",
+      "id": 19,
+      "text": "I'm sleepy. Thirsty thirsty",
       "speaker": "Speaker0",
       "start": 138.85,
-      "duration": 1.06,
+      "duration": 8.9,
       "words": [
         {
           "word": "i'm",
@@ -753,33 +583,13 @@
           "start": 139.41,
           "end": 139.91,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
-    },
-    {
-      "id": 37,
-      "text": "Thirsty",
-      "speaker": "Speaker0",
-      "start": 145.17,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "thirsty",
           "start": 145.17,
           "end": 145.67,
           "confidence": 0.9
-        }
-      ],
-      "confidence": 0.9
-    },
-    {
-      "id": 38,
-      "text": "thirsty",
-      "speaker": "Speaker0",
-      "start": 147.25,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "thirsty",
           "start": 147.25,
@@ -787,10 +597,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.965
     },
     {
-      "id": 39,
+      "id": 20,
       "text": "Are you thirsty?",
       "speaker": "Speaker0",
       "start": 149.41,
@@ -818,11 +628,11 @@
       "confidence": 1.0
     },
     {
-      "id": 40,
-      "text": "I'm thirsty.",
+      "id": 21,
+      "text": "I'm thirsty. Tired tired",
       "speaker": "Speaker0",
       "start": 151.9,
-      "duration": 1.13,
+      "duration": 10.98,
       "words": [
         {
           "word": "i'm",
@@ -835,33 +645,13 @@
           "start": 152.53,
           "end": 153.03,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 41,
-      "text": "Tired",
-      "speaker": "Speaker0",
-      "start": 155.01,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tired",
           "start": 155.01,
           "end": 155.51,
           "confidence": 0.773
-        }
-      ],
-      "confidence": 0.773
-    },
-    {
-      "id": 42,
-      "text": "tired",
-      "speaker": "Speaker0",
-      "start": 162.38,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tired",
           "start": 162.38,
@@ -869,10 +659,10 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.92
     },
     {
-      "id": 43,
+      "id": 22,
       "text": "Are you tired?",
       "speaker": "Speaker0",
       "start": 164.14,
@@ -900,11 +690,11 @@
       "confidence": 1.0
     },
     {
-      "id": 44,
-      "text": "I'm tired.",
+      "id": 23,
+      "text": "I'm tired. Worried worried",
       "speaker": "Speaker0",
       "start": 166.46,
-      "duration": 0.98,
+      "duration": 12.85,
       "words": [
         {
           "word": "i'm",
@@ -917,33 +707,13 @@
           "start": 166.94,
           "end": 167.44,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 45,
-      "text": "Worried",
-      "speaker": "Speaker0",
-      "start": 177.06,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "worried",
           "start": 177.06,
           "end": 177.56,
           "confidence": 0.887
-        }
-      ],
-      "confidence": 0.887
-    },
-    {
-      "id": 46,
-      "text": "worried",
-      "speaker": "Speaker0",
-      "start": 178.81,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "worried",
           "start": 178.81,
@@ -951,10 +721,10 @@
           "confidence": 0.958
         }
       ],
-      "confidence": 0.958
+      "confidence": 0.948
     },
     {
-      "id": 47,
+      "id": 24,
       "text": "Are you worried?",
       "speaker": "Speaker0",
       "start": 180.41,
@@ -982,11 +752,11 @@
       "confidence": 0.944
     },
     {
-      "id": 48,
-      "text": "I'm worried.",
+      "id": 25,
+      "text": "I'm worried. Review.",
       "speaker": "Speaker0",
       "start": 182.74,
-      "duration": 0.89,
+      "duration": 4.98,
       "words": [
         {
           "word": "i'm",
@@ -999,17 +769,7 @@
           "start": 183.13,
           "end": 183.63,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 49,
-      "text": "Review.",
-      "speaker": "Speaker0",
-      "start": 187.22,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "review",
           "start": 187.22,
@@ -1017,47 +777,27 @@
           "confidence": 0.924
         }
       ],
-      "confidence": 0.924
+      "confidence": 0.962
     },
     {
-      "id": 50,
-      "text": "Angry.",
+      "id": 26,
+      "text": "Angry. Bored. Excited.",
       "speaker": "Speaker0",
       "start": 190.15,
-      "duration": 0.5,
+      "duration": 7.86,
       "words": [
         {
           "word": "angry",
           "start": 190.15,
           "end": 190.65,
           "confidence": 0.963
-        }
-      ],
-      "confidence": 0.963
-    },
-    {
-      "id": 51,
-      "text": "Bored.",
-      "speaker": "Speaker0",
-      "start": 193.91,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "bored",
           "start": 193.91,
           "end": 194.41,
           "confidence": 0.953
-        }
-      ],
-      "confidence": 0.953
-    },
-    {
-      "id": 52,
-      "text": "Excited.",
-      "speaker": "Speaker0",
-      "start": 197.51,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "excited",
           "start": 197.51,
@@ -1065,143 +805,63 @@
           "confidence": 0.978
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.965
     },
     {
-      "id": 53,
-      "text": "Happy.",
+      "id": 27,
+      "text": "Happy. Hungry sad scared shy sleepy thirsty tired worried",
       "speaker": "Speaker0",
       "start": 200.95,
-      "duration": 0.5,
+      "duration": 29.88,
       "words": [
         {
           "word": "happy",
           "start": 200.95,
           "end": 201.45,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 54,
-      "text": "Hungry",
-      "speaker": "Speaker0",
-      "start": 204.66,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "hungry",
           "start": 204.66,
           "end": 205.16,
           "confidence": 0.994
-        }
-      ],
-      "confidence": 0.994
-    },
-    {
-      "id": 55,
-      "text": "sad",
-      "speaker": "Speaker0",
-      "start": 208.58,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sad",
           "start": 208.58,
           "end": 209.08,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 56,
-      "text": "scared",
-      "speaker": "Speaker0",
-      "start": 212.01,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "scared",
           "start": 212.01,
           "end": 212.51,
           "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
-    },
-    {
-      "id": 57,
-      "text": "shy",
-      "speaker": "Speaker0",
-      "start": 215.62,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "shy",
           "start": 215.62,
           "end": 216.12,
           "confidence": 0.993
-        }
-      ],
-      "confidence": 0.993
-    },
-    {
-      "id": 58,
-      "text": "sleepy",
-      "speaker": "Speaker0",
-      "start": 219.13,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "sleepy",
           "start": 219.13,
           "end": 219.63,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 59,
-      "text": "thirsty",
-      "speaker": "Speaker0",
-      "start": 222.81,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "thirsty",
           "start": 222.81,
           "end": 223.31,
           "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
-    },
-    {
-      "id": 60,
-      "text": "tired",
-      "speaker": "Speaker0",
-      "start": 226.57,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "tired",
           "start": 226.57,
           "end": 227.07,
           "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
-    },
-    {
-      "id": 61,
-      "text": "worried",
-      "speaker": "Speaker0",
-      "start": 230.33,
-      "duration": 0.5,
-      "words": [
+        },
         {
           "word": "worried",
           "start": 230.33,
@@ -1209,7 +869,7 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 0.998
     }
   ],
   "fetchedAt": "2026-07-23T03:58:27.746744+00:00",
@@ -1224,5 +884,13 @@
     "dgUtteranceCount": 61,
     "matchedSegments": 61,
     "totalDuration": 230.83
+  },
+  "repairedAt": "2026-07-23T04:33:44.450121Z",
+  "repairInfo": {
+    "beforeSegments": 61,
+    "afterSegments": 27,
+    "beforeAvgWords": 1.6,
+    "afterAvgWords": 3.7,
+    "merged": 34
   }
 }
