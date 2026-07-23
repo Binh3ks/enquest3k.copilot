@@ -46,8 +46,13 @@ function getRawMap() {
 }
 
 export function getTranscript(videoId) {
+  // Priority 1: sentences/ (Deepgram-aligned L3 with words[])
+  const sentence = getSentenceMap()[videoId];
+  if (sentence && !sentence.error && sentence.segments?.length > 0) return sentence;
+  // Priority 2: cleaned/ (older cleaned transcripts)
   const cleaned = getCleanedMap()[videoId];
   if (cleaned && !cleaned.error) return cleaned;
+  // Priority 3: raw/ (raw auto-captions)
   const entry = getRawMap()[videoId];
   if (entry && !entry.error) return entry;
   return null;
