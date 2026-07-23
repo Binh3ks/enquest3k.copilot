@@ -1,0 +1,169 @@
+# PIPELINE_RULES.md — Frozen Audio-Transcript Pipeline
+
+> **FROZEN**: 2026-07-22 | **Authority**: User (binh4k)
+> **Enforced by**: `force_align_transcript.py` (locked script)
+
+---
+
+## Rule 1: SINGLE SOURCE OF TRUTH
+
+**All transcripts MUST come directly from raw audio via Deepgram.**
+
+- The only acceptable source for transcript text and timestamps is the Deepgram Nova-2 API response.
+- YouTube auto-captions are NOT a valid transcript source.
+- Manual text construction is NOT allowed.
+- If audio changes, the transcript MUST be re-generated from scratch.
+
+---
+
+## Rule 2: NO LLM HALLUCINATIONS
+
+**AI models (Claude, GPT, Gemini, etc.) are STRICTLY FORBIDDEN from:**
+
+- Generating, rewriting, summarizing, or paraphrasing transcript text
+- Guessing or interpolating timestamps (L2 or L3)
+- Constructing sentences that don't exist in the audio
+- Modifying the `text` field of any segment after Deepgram produces it
+- Adding, removing, or merging utterances
+
+The `text` field in every segment is a **1:1 mathematical copy** of Deepgram's `transcript` field. This is non-negotiable.
+
+---
+
+## Rule 3: 1:1 MAPPING
+
+**The frontend MUST rely exclusively on the `words[]` array for karaoke highlighting.**
+
+Each segment in the JSON contains:
+- `words[]` — L3 word-level timestamps from Deepgram (physical `start`/`end` times)
+- `start` — L2 sentence start = first word's `start`
+- `duration` — L2 sentence duration = last word's `end` − first word's `start`
+
+The karaoke highlighter in `useWordHighlight.js` must use `sentence.words[]` when available. The synthetic fallback (evenly-distributed 0.4s/word) is ONLY for segments without L3 data (which should never exist in a properly aligned file).
+
+---
+
+## Frozen Script Parameters
+
+`tools/force_align_transcript.py` uses these Deepgram parameters **exactly**:
+
+| Parameter | Value | Purpose |
+|-----------|-------|---------|
+| `model` | `nova-2` | Deepgram Nova-2 model |
+| `timestamps` | `true` | L3 word-level timestamps |
+| `diarize` | `true` | Speaker diarization |
+| `smart_format` | `true` | Punctuation + formatting |
+| `utterances` | `true` | Utterance-level segmentation |
+| `language` | `en` | English |
+
+**Do NOT add, remove, or change any parameter without explicit user authorization.**
+
+---
+
+## Golden Schema (curo8LPPA5Y.json)
+
+### Top-level structure
+
+```json
+{
+  "videoId": "curo8LPPA5Y",
+  "fetchedAt": "2026-07-22T...",
+  "segments": [ ... ],
+  "speakerMap": { "0": "Anna", "1": "John", "2": "Narrator" },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-22T...",
+    "dgWordCount": 610,
+    "dgUtteranceCount": 82,
+    "matchedSegments": 82,
+    "totalDuration": 327.46
+  }
+}
+```
+
+### Segment structure (per utterance)
+
+```json
+{
+  "id": 6,
+  "text": "Do you come here often?",
+  "speaker": "John",
+  "start": 27.27,
+  "duration": 1.37,
+  "words": [
+    { "word": "do",      "start": 27.27, "end": 27.43, "confidence": 0.997 },
+    { "word": "you",     "start": 27.43, "end": 27.59, "confidence": 1.000 },
+    { "word": "come",    "start": 27.59, "end": 27.82, "confidence": 1.000 },
+    { "word": "here",    "start": 27.82, "end": 28.14, "confidence": 1.000 },
+    { "word": "often",   "start": 28.14, "end": 28.64, "confidence": 0.998 }
+  ],
+  "confidence": 0.999
+}
+```
+
+### Field definitions
+
+| Field | Type | Source | Description |
+|-------|------|--------|-------------|
+| `id` | int | Sequential | Segment number (1-indexed) |
+| `text` | string | Deepgram `utterances[].transcript` | **EXACT** Deepgram text — NEVER modified |
+| `speaker` | string | `speakerMap[utterance.speaker]` | Speaker name from diarization |
+| `start` | float | First word `words[].start` | L2 start time (seconds) |
+| `duration` | float | Last word `end` − first word `start` | L2 duration (seconds) |
+| `words[]` | array | Deepgram `words[]` filtered by time range | L3 word-level timestamps |
+| `words[].word` | string | Deepgram `words[].word` | Individual word text |
+| `words[].start` | float | Deepgram `words[].start` | Word start time (seconds) |
+| `words[].end` | float | Deepgram `words[].end` | Word end time (seconds) |
+| `words[].confidence` | float | Deepgram `words[].confidence` | Deepgram confidence (0-1) |
+| `confidence` | float | Deepgram `utterances[].confidence` | Utterance-level confidence |
+
+---
+
+## How to Run for a New Week
+
+```bash
+# 1. Ensure DEEPGRAM_API_KEY is in .env
+grep DEEPGRAM_API_KEY .env
+
+# 2. Run the frozen pipeline
+python3 tools/force_align_transcript.py <videoId>
+
+# 3. Verify output
+python3 -c "
+import json
+d = json.load(open('src/data/video_transcripts_by_id/sentences/<videoId>.json'))
+segs = d['segments']
+print(f'{len(segs)} segments, {sum(len(s[\"words\"]) for s in segs)} words')
+print(f'Duration: {segs[-1][\"start\"] + segs[-1][\"duration\"]:.2f}s')
+assert all(s['words'] for s in segs), 'Missing L3 data!'
+print('All segments have L3 words ✓')
+"
+
+# 4. Build
+npm run build
+```
+
+---
+
+## What Changed vs Previous Approach
+
+| Aspect | Old (Broken) | New (Frozen) |
+|--------|-------------|--------------|
+| Text source | YouTube auto-captions + LLM rewrite | Deepgram Nova-2 on raw audio |
+| Timestamps | Manual guesswork / LLM interpolation | Deepgram word-level acoustic analysis |
+| Segments | Manually constructed 29 sentences | Deepgram utterances (1:1) |
+| L3 words[] | Synthetic 0.4s/word | Physical start/end from audio |
+| Hallucinations | Sentences 16-29 were fabricated | Zero — text is 1:1 from Deepgram |
+| Duration covered | ~60s (subset) | Full video (327s) |
+
+---
+
+## Violations
+
+Any future modification to `force_align_transcript.py` or the transcript JSON that:
+- Rewrites transcript text
+- Adds/removes timestamps
+- Injects sentences not in the audio
+- Changes Deepgram API parameters
+
+...is a **pipeline violation** and MUST be reverted.

@@ -1,35 +1,47 @@
 #!/usr/bin/env python3
 """
-force_align_transcript.py — Forced alignment via Deepgram Nova-2.
+force_align_transcript.py — GOLDEN PIPELINE (frozen 2026-07-22).
 
-Downloads YouTube audio, sends to Deepgram for word-level timestamps,
-then maps the result back to our fixed sentence transcript.
+Downloads YouTube audio → Deepgram Nova-2 → 1:1 utterance mapping → JSON.
+
+⚠️  FROZEN SCRIPT — Do NOT modify logic without explicit user authorization.
+    See PIPELINE_RULES.md for immutable constraints.
 
 Usage:
     python3 tools/force_align_transcript.py <videoId>
-    python3 tools/force_align_transcript.py curo8LPPA5Y
 
 Requires:
-    - yt-dlp (installed)
+    - yt-dlp (with --js-runtimes node)
     - DEEPGRAM_API_KEY in .env or environment
 
 Output:
     src/data/video_transcripts_by_id/sentences/<videoId>.json
-    (updated with L2 start/duration + L3 words[] per sentence)
 """
 
 import json
 import os
-import re
 import subprocess
 import sys
 from pathlib import Path
+from datetime import datetime, timezone
 
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent.parent
 TMP_DIR = ROOT / "tmp"
 SENTENCES_DIR = ROOT / "src" / "data" / "video_transcripts_by_id" / "sentences"
+
+# ── FROZEN CONSTANTS (see PIPELINE_RULES.md) ────────────────────────
+DEEPGRAM_MODEL = "nova-2"
+# Must always include ALL of these parameters:
+DEEPGRAM_PARAMS = {
+    "model": DEEPGRAM_MODEL,       # Nova-2 model
+    "timestamps": "true",          # L3 word-level timestamps
+    "diarize": "true",             # Speaker diarization
+    "smart_format": "true",        # Punctuation + formatting
+    "utterances": "true",          # Utterance-level segmentation
+    "language": "en",              # English
+}
 
 load_dotenv(ROOT / ".env")
 
@@ -58,15 +70,15 @@ def download_audio(video_id: str) -> Path:
         sys.exit(1)
 
 
-def transcribe_with_deepgram(audio_path: Path, api_key: str) -> list:
-    """Send audio to Deepgram Nova-2 for word-level transcription."""
+def transcribe_with_deepgram(audio_path: Path, api_key: str) -> dict:
+    """Send audio to Deepgram Nova-2. Returns FULL response (not just words)."""
     import urllib.request
 
     audio_bytes = audio_path.read_bytes()
     print(f"[align] Sending {len(audio_bytes)} bytes to Deepgram...")
 
-    params = "?model=nova-2&timestamps=true&smart_format=true&language=en"
-    url = f"https://api.deepgram.com/v1/listen{params}"
+    query = "&".join(f"{k}={v}" for k, v in DEEPGRAM_PARAMS.items())
+    url = f"https://api.deepgram.com/v1/listen?{query}"
     req = urllib.request.Request(
         url,
         data=audio_bytes,
@@ -76,7 +88,7 @@ def transcribe_with_deepgram(audio_path: Path, api_key: str) -> list:
         },
     )
     try:
-        resp = urllib.request.urlopen(req, timeout=180)
+        resp = urllib.request.urlopen(req, timeout=300)
         data = json.loads(resp.read())
     except Exception as e:
         print(f"[align] Deepgram error: {e}")
@@ -88,143 +100,79 @@ def transcribe_with_deepgram(audio_path: Path, api_key: str) -> list:
         .get("alternatives", [{}])[0]
         .get("words", [])
     )
-    print(f"[align] Deepgram returned {len(words)} words")
-    return words
+    utterances = data.get("results", {}).get("utterances", [])
+    print(f"[align] Deepgram returned {len(words)} words, {len(utterances)} utterances")
+    return data
 
 
-def normalize(text: str) -> str:
-    """Normalize text for matching: lowercase, strip punctuation."""
-    text = text.lower().replace("’", "'").replace("‘", "'")
-    text = re.sub(r"[^a-z'\s]", "", text)
-    return re.sub(r"\s+", " ", text).strip()
+def map_utterances_to_segments(deepgram_data: dict) -> list:
+    """Map Deepgram utterances 1:1 to segments. ZERO text modification.
 
-
-def find_subsequence(target_norms: list, dg_norms: list, search_from: int,
-                     max_skip: int = 8) -> tuple:
-    """Find target words as a subsequence in Deepgram words.
-
-    Allows skipping up to max_skip Deepgram words between matches.
-    Returns (start_idx, end_idx, matched_count) or (-1, -1, 0).
+    This is the core of the frozen pipeline:
+    - Each utterance becomes one segment
+    - Text is EXACTLY what Deepgram produced (no rewriting)
+    - L3 words[] come from the global word array, matched by time range
+    - L2 start/duration computed from first/last word timestamps
     """
-    n_dg = len(dg_norms)
-    n_tgt = len(target_norms)
+    words = (
+        deepgram_data["results"]["channels"][0]["alternatives"][0]["words"]
+    )
+    utterances = deepgram_data["results"]["utterances"]
 
-    for dg_start in range(search_from, min(search_from + 50, n_dg)):
-        if dg_norms[dg_start] != target_norms[0]:
-            continue
+    # Build speaker map from diarization
+    speaker_ids = set(u.get("speaker", 0) for u in utterances)
+    # Default mapping: spk 0=first speaker, 1=second, etc.
+    # Override with video-specific names if known
+    speaker_map = {}
+    for sid in sorted(speaker_ids):
+        speaker_map[str(sid)] = f"Speaker{sid}"
 
-        # Try to match from this start position
-        dg_i = dg_start
-        tgt_i = 0
-        skip = 0
+    dg_idx = 0
+    segments = []
 
-        while tgt_i < n_tgt and dg_i < n_dg and skip <= max_skip:
-            if dg_norms[dg_i] == target_norms[tgt_i]:
-                tgt_i += 1
-                dg_i += 1
-                skip = 0
+    for i, u in enumerate(utterances):
+        u_start = u["start"]
+        u_end = u["end"]
+
+        # Collect words within this utterance's time window
+        matched_words = []
+        while dg_idx < len(words):
+            w = words[dg_idx]
+            if w["start"] >= u_start - 0.05 and w["end"] <= u_end + 0.05:
+                matched_words.append({
+                    "word": w["word"],
+                    "start": round(w["start"], 2),
+                    "end": round(w["end"], 2),
+                    "confidence": round(w.get("confidence", 0), 3),
+                })
+                dg_idx += 1
+            elif w["start"] < u_start - 0.05:
+                dg_idx += 1
             else:
-                skip += 1
-                dg_i += 1
+                break
 
-        # Score: what fraction of target words were matched
-        if tgt_i >= n_tgt * 0.6:  # at least 60% matched
-            return dg_start, dg_i, tgt_i
-
-    return -1, -1, 0
-
-
-def match_words_to_sentences(deepgram_words: list, sentences: list) -> list:
-    """Match Deepgram words to sentences using subsequence matching.
-
-    For sentences whose text closely matches the audio, we get exact L3
-    timestamps. For sentences that are simplified/edited versions of the
-    audio (or don't exist in the audio at all), we mark them and use
-    fallback timing.
-    """
-    dg_norms = [normalize(w["word"]) for w in deepgram_words]
-    result = []
-    search_from = 0
-
-    for sent in sentences:
-        sent_norm = normalize(sent["text"])
-        target_words = sent_norm.split()
-
-        match_start, match_end, matched_count = find_subsequence(
-            target_words, dg_norms, search_from
-        )
-
-        if match_start >= 0 and matched_count >= 2:
-            # Collect all Deepgram words in the match range
-            range_words = deepgram_words[match_start:match_end]
-
-            # Extract only the words that match our sentence (in order)
-            matched_l3 = []
-            ti = 0
-            for w in range_words:
-                if ti < len(target_words) and normalize(w["word"]) == target_words[ti]:
-                    matched_l3.append({
-                        "word": w["word"],
-                        "start": round(w["start"], 2),
-                        "end": round(w["end"], 2),
-                    })
-                    ti += 1
-
-            # If we filtered too aggressively, use all range words
-            if len(matched_l3) < len(target_words) * 0.4:
-                matched_l3 = [
-                    {"word": w["word"], "start": round(w["start"], 2), "end": round(w["end"], 2)}
-                    for w in range_words
-                ]
-
-            start = matched_l3[0]["start"]
-            end = matched_l3[-1]["end"]
+        # L2 from first/last word
+        if matched_words:
+            start = matched_words[0]["start"]
+            end = matched_words[-1]["end"]
             duration = round(end - start, 2)
-
-            search_from = match_end
-            status = f"✅ matched dg[{match_start}:{match_end}] words={len(matched_l3)}"
-
-            result.append({
-                "id": sent["id"],
-                "text": sent["text"],
-                "start": round(start, 2),
-                "duration": duration,
-                "words": matched_l3,
-            })
         else:
-            # No match — text doesn't exist in this audio
-            status = f"❌ no match (text not in audio)"
-            result.append({
-                "id": sent["id"],
-                "text": sent["text"],
-                "start": 0,
-                "duration": 0,
-                "words": [],
-            })
+            start = u_start
+            duration = round(u_end - u_start, 2)
 
-        print(f"  [{sent['id']:2d}] {status}")
+        speaker_id = str(u.get("speaker", 0))
 
-    return result
+        segments.append({
+            "id": i + 1,
+            "text": u["transcript"],  # 1:1 — EXACT Deepgram text
+            "speaker": speaker_map.get(speaker_id, f"Speaker{speaker_id}"),
+            "start": round(start, 2),
+            "duration": duration,
+            "words": matched_words,
+            "confidence": round(u.get("confidence", 0), 3),
+        })
 
-
-def validate(segments: list) -> tuple:
-    """Validate output segments."""
-    issues = []
-    matched = sum(1 for s in segments if s["words"])
-    unmatched = len(segments) - matched
-
-    if unmatched > 0:
-        issues.append(f"{unmatched}/{len(segments)} sentences have no words (not in audio)")
-
-    # Check that matched segments have increasing timestamps
-    prev_end = 0
-    for s in segments:
-        if s["words"] and s["start"] < prev_end - 0.1:
-            issues.append(f"Segment {s['id']} start {s['start']} < previous end {prev_end}")
-        if s["words"]:
-            prev_end = s["start"] + s["duration"]
-
-    return len(issues) == 0, issues
+    return segments, speaker_map
 
 
 def main():
@@ -238,59 +186,52 @@ def main():
         print("[align] DEEPGRAM_API_KEY not found")
         sys.exit(1)
 
-    # Load existing sentences
+    # Load or create JSON
     json_path = SENTENCES_DIR / f"{video_id}.json"
-    if not json_path.exists():
-        print(f"[align] No sentences file: {json_path}")
-        sys.exit(1)
-
-    existing = json.loads(json_path.read_text())
-    sentences = existing.get("segments", [])
-    print(f"[align] Loaded {len(sentences)} sentences from {video_id}.json")
+    if json_path.exists():
+        existing = json.loads(json_path.read_text())
+    else:
+        existing = {"videoId": video_id}
 
     # Download audio
     audio_path = download_audio(video_id)
 
-    # Transcribe
-    deepgram_words = transcribe_with_deepgram(audio_path, api_key)
-    if not deepgram_words:
+    # Transcribe with Deepgram (frozen parameters)
+    deepgram_data = transcribe_with_deepgram(audio_path, api_key)
+
+    words = (
+        deepgram_data["results"]["channels"][0]["alternatives"][0]["words"]
+    )
+    utterances = deepgram_data["results"].get("utterances", [])
+    if not words:
         print("[align] No words returned — aborting")
         sys.exit(1)
 
-    # Match words to sentences
-    aligned = match_words_to_sentences(deepgram_words, sentences)
-
-    # Validate
-    ok, issues = validate(aligned)
-    if issues:
-        print("[align] Notes:")
-        for issue in issues:
-            print(f"  - {issue}")
+    # Map 1:1 (frozen logic — no text modification)
+    segments, speaker_map = map_utterances_to_segments(deepgram_data)
 
     # Update JSON
-    existing["segments"] = aligned
-    existing["fetchedAt"] = __import__("datetime").datetime.utcnow().isoformat() + "Z"
+    existing["segments"] = segments
+    existing["speakerMap"] = speaker_map
+    existing["fetchedAt"] = datetime.now(timezone.utc).isoformat()
     existing["alignment"] = {
-        "engine": "deepgram-nova-2",
-        "alignedAt": __import__("datetime").datetime.utcnow().isoformat() + "Z",
-        "dgWordCount": len(deepgram_words),
-        "matchedSentences": sum(1 for s in aligned if s["words"]),
+        "engine": f"deepgram-{DEEPGRAM_MODEL}",
+        "alignedAt": datetime.now(timezone.utc).isoformat(),
+        "dgWordCount": len(words),
+        "dgUtteranceCount": len(utterances),
+        "matchedSegments": len(segments),
+        "totalDuration": round(words[-1]["end"], 2),
     }
+
     json_path.write_text(json.dumps(existing, indent=2, ensure_ascii=False) + "\n")
-    print(f"[align] Saved: {json_path}")
+    print(f"[align] Saved {len(segments)} segments to {json_path.name}")
 
     # Summary
-    matched = [s for s in aligned if s["words"]]
-    unmatched = [s for s in aligned if not s["words"]]
     print(f"\n[align] Summary:")
-    print(f"  Total sentences: {len(aligned)}")
-    print(f"  Matched (in audio): {len(matched)}")
-    print(f"  Unmatched (not in audio): {len(unmatched)}")
-    if matched:
-        print(f"  First word: {matched[0]['start']:.2f}s")
-        print(f"  Last word:  {matched[-1]['start'] + matched[-1]['duration']:.2f}s")
-    if unmatched:
-        print(f"  Unmatched sentences: {[s['id'] for s in unmatched]}")
+    print(f"  Segments: {len(segments)}")
+    print(f"  Words: {len(words)}")
+    print(f"  Speakers: {set(s['speaker'] for s in segments)}")
+    print(f"  Duration: {existing['alignment']['totalDuration']:.2f}s")
 
 
 if __name__ == "__main__":
