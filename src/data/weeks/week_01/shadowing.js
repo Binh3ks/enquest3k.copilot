@@ -1,6 +1,6 @@
 export default {
   title: "Alex's School Day",
-  videoId: "8wZi38lF28E",
+  videoId: "O_xXC26Nm7Y",
   content_en: "My name is Alex. I am a student at Greenwood Elementary School. Every morning, I **wake up early** and **get ready for school**. My backpack is heavy because I carry my book and notebook every day. In my classroom, there are twenty desks and one big whiteboard. My teacher, Ms. Johnson, is **very kind and patient**. She teaches us English, Math, and Science. I love **learning new things** every day. After school, I **go to the library** to read. I want to become a scientist when I grow up.",
   script: [
     { id: 1, text: "My name is Alex.", vi: "Tên tôi là Alex." },

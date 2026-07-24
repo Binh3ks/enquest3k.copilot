@@ -1,6 +1,6 @@
 export default {
   title: "Shadowing: The Magic Trip",
-  videoId: "aSdnkKnL6Ys",  // Fairy Tale — palace, king, magic fairy dragon (was: Town vocab — reused from W14)
+  videoId: "_r0dNs2kPz0",  // Fairy Tale — palace, king, magic fairy dragon (was: Town vocab — reused from W14)
   content_en: `Last week, the children at Green School went on a **magic trip** to a **wonderful place**. First, they got on a **magic carpet** that flew to a tiny green island in the sea.
 
 On the island, a friendly pilot came to help them. He picked up a beautiful photo and gave it to the teacher. A kind farmer went to the field and gave them fresh mangoes. The children looked at the bright fruit and smiled.

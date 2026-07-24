@@ -1,6 +1,6 @@
 export default {
   title: "Exploring the City",
-  videoId: "jWY6N9QXmEY",
+  videoId: "m7LV4oaY2TE",
   content_en: "Today I visit the city! I walk on a busy street. There are many people and cars. It is a noisy place. I **hear car horns** and people talking. I see a tall building. It is very high! It is **next to the bus stop**. A yellow bus **get on the bus** near me. Many people get on the bus. There is **lots of traffic**. Many vehicles move slowly. I see another street. It is less busy than the main street. I walk there and it is quieter. The city has tall buildings, busy streets, and **lots of traffic**. But it is exciting! I like exploring the modern city. Next time, I want to ride a bus and see more buildings!",
   script: [
     { id: 1, text: "Today I visit the city!", vi: "Hôm nay tôi đến thành phố!" },

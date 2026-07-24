@@ -1,6 +1,6 @@
 export default {
   title: "The Farm Adventure",
-  videoId: "bgfdqVmVjfk",  // Farm Animals Vocabulary Chant (was: Zoo)
+  videoId: "W-6aSMfP1g4",  // Farm Animals Vocabulary Chant (was: Zoo)
   content_en: "Today I visit my uncle's farm **in the countryside**. The city is noisy, but the farm is quiet. I am so happy! **In the city**, there are many cars, but here there are **many animals**. I see a big cow. The cow is eating fresh grass. I see a chicken. The chicken **run very fast**! The city is dirty, but the farm is clean. The air is fresh. I walk **in the big green field**. The field is beautiful. There are **many trees**. The trees are tall. The city is busy, but the countryside is peaceful. I love the farm! My uncle says: 'The city is big, but the farm is beautiful. The city has buildings, but the farm has nature.' I agree! **Next time**, I want to stay longer. The farm is the best place!",
   script: [
     { id: 1, text: "Today I visit my uncle's farm in the countryside.", vi: "Hôm nay tôi đến thăm trang trại của chú trong vùng nông thôn." },

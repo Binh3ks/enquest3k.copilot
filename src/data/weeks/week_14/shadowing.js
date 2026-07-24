@@ -1,5 +1,5 @@
 export default {
-  videoId: "vGiVWmh_17s",  // What's your favorite subject? (school context, was: Town vocab)
+  videoId: "wVBB0zk2Z18",  // What's your favorite subject? (school context, was: Town vocab)
   content_en: "Welcome to my presentation! My name is Emma and I am 8 years old. Today I present my poster because I want to **share my world** with you. This is my family. I have 4 people in my family: my mom, my dad, my sister, and me. Now I talk about my talents! I can **sing very well**, and I can also dance when I am happy. I am good at drawing too. When I **stand here**, I **feel very confident** because the audience **listen carefully**. I **introduce myself** with a big smile, and then I describe my project **in detail**. I am **so proud of my work**. **Thank you for listening**! This is my special day!",
   script: [
     { id: 1, text: "Welcome to my presentation!", vi: "Chào mừng đến với bài thuyết trình của tôi!" },

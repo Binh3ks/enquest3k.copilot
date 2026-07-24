@@ -1,5 +1,5 @@
 export default {
-  videoId: "X2YgM1Zw4_E",
+  videoId: "tITw1eEFT5Y",
   content_en: "Our planet Earth is very beautiful. It has blue oceans, green forests, and high mountains. But our planet is in danger. Climate change is making the Earth warmer. Polar ice is melting. Sea levels are rising. We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees. Small actions can make a big difference. We must act now!",
   script: [
     { id: 1, text: "Our planet is very beautiful.", vi: "Hành tinh Trái Đất của chúng ta rất đẹp." },

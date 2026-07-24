@@ -1,6 +1,6 @@
 export default {
   title: "My Day",
-  videoId: "ico9ztlb46k",
+  videoId: "ddCVfSr_yCU",
   content_en: "My name is Tom. This is my day. I **wake up**. Mom wakes me up. I **brush my teeth**. I **eat breakfast**. I like bread. I **go to school**. I see my teacher. I play at school. I **play with** Ben. We have fun. I **have lunch**. Lunch is good. I come home. Mom is home. I **do homework**. I write my name. I **have dinner**. Dad is home too. Dinner is yummy. I **watch TV**. I watch cartoons. I **go to bed**. I close my eyes. Good night!",
   script: [
     { id: 1, text: "My name is Tom.", vi: "Tên tôi là Tom." },
