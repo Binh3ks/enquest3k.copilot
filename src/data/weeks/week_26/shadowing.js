@@ -1,6 +1,6 @@
 export default {
   title: "Leo's Comic Strip Adventure",
-  videoId: "64WlaYp1NhQ",  // Carter family camping - weekend adventure (was: 50-min Speaking Story)
+  videoId: "OdNv-J31Kk8",  // Carter family camping - weekend adventure (was: 50-min Speaking Story)
   content_en: `It was Sunday afternoon when Leo sat down with his pencils, paper, and a big smile. He had decided to create a **comic strip** about his adventure-filled weekend.
 
 First, Leo wrote the title across the top of the paper: 'My Weekend Adventure — by Leo.' He felt very proud just looking at those words.

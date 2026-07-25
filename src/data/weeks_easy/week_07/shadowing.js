@@ -1,6 +1,6 @@
 export default {
   title: "My School Bag",
-  videoId: "2Ja4J28cSrs",
+  videoId: "vb4ZF3pYtuw",
   content_en: "Today I go to school. There is a school bag **on my bed**. I **open it**. There is a pencil inside the bag. There is a crayon too. There is paper in the bag. There is a folder **for my homework**. I see my **lunch box**. There is a **water bottle** **next to** it. There is glue **in my pencil case**. There are scissors too. There is a marker to draw. I **put everything** in my bag. Now I am ready **for school**!",
   script: [
     { id: 1, text: "Today I go to school.", vi: "Hôm nay tôi đi học." },

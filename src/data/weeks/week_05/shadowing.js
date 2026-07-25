@@ -1,6 +1,6 @@
 export default {
   title: "The Mystery House",
-  videoId: "Jx0btWenzts",  // Welcome to my house (was: Put on your coat)
+  videoId: "O07X1XLK4tM",  // Welcome to my house (was: Put on your coat)
   content_en: "**There is a big house on the hill**. It is a mystery house. Nobody knows what is inside. One day, I open the door. Upstairs, there is a nice bedroom. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find **the living room**. There is a big sofa and many shelves with books. In the kitchen, I open the cabinet and look in the fridge. There is food and drink inside! This mystery house has beautiful furniture. Now it is my new home. I love this mystery house!",
   script: [
     { id: 1, text: "There is a big house on the hill.", vi: "Có một ngôi nhà lớn trên đồi." },

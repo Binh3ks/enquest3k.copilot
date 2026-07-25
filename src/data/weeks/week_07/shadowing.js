@@ -1,6 +1,6 @@
 export default {
   title: "Sam's School Supplies",
-  videoId: "2Ja4J28cSrs",
+  videoId: "vb4ZF3pYtuw",
   content_en: "Sam goes to school today. There is a backpack on his chair. He looks inside. There is a pen **in the pencil case**. There is a ruler **next to the pen**. There is an eraser **in the pencil case** too. Sam checks his desk. There is a book **on the desk**. There is a notebook next to the book. **At school**, there is a whiteboard **in the classroom**. There is a computer on the teacher's desk. There is a teacher **near the whiteboard**. The teacher says, \"Welcome! There is a pencil case **for everyone**!\" Sam is happy. He has all his school supplies!",
   script: [
     { id: 1, text: "Sam goes to school today.", vi: "Sam đi học hôm nay." },

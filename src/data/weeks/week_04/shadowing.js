@@ -1,6 +1,6 @@
 export default {
   title: "My Happy Jar",
-  videoId: "ne_VxGyrfVo",  // Feelings video (was: Fashion conversation)
+  videoId: "BXWNhq-lPD8",  // Feelings video (was: Fashion conversation)
   content_en: "My name is Sam. I have a happy jar at home. **Every day**, I put happy things in my jar. When I am playing with my dog, I **feel excited**. I put a yellow star in my jar. When I am reading a good book, I **feel calm** and **feel happy**. I put a blue heart in my jar. When I am drawing pictures, I **feel creative**. I put a green circle in my jar. My mom is friendly and funny. She makes me laugh every day. I love my happy jar. It helps me **remember all the good moments**. My jar is now full of happy things!",
   script: [
     { id: 1, text: "My name is Sam.", vi: "Tên tôi là Sam." },
