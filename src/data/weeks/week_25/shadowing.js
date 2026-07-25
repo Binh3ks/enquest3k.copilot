@@ -1,6 +1,6 @@
 export default {
-  title: "Leo's Sandwich Disaster",
-  videoId: "curo8LPPA5Y",  // A Fun Day At The Park (has first/next/then, was: In/On/Under)
+  title: "Making a Sandwich",
+  videoId: "cH8BuvQ7ZoI",  // A Fun Day At The Park (has first/next/then, was: In/On/Under)
   content_en: `It was Saturday morning and Leo decided to make a jam sandwich for breakfast — all by himself. First, he grabbed two slices of bread from the bag. Next, he picked up the knife and used it to spread strawberry jam on one slice. Then, he pressed the two slices together carefully. Finally, he cut the sandwich in half and put it on a plate.
 
 Mia watched from the doorway and smiled. 'That was a perfect sequence!' she said. 'You followed every step in the right order.'
@@ -13,13 +13,45 @@ Mia nodded. 'Exactly. Think about brushing your teeth too. First, you squeeze so
 
 'Well done!' said Mia. 'You are a sequence champion!'`,
   script: [
-    { id: 1, text: "First, Leo grabbed two slices of bread from the bag.", vi: null },
-    { id: 2, text: "Next, he used the knife to spread jam on one slice.", vi: null },
-    { id: 3, text: "Then, he pressed the two slices together carefully.", vi: null },
-    { id: 4, text: "Finally, he cut the sandwich in half and put it on a plate.", vi: null },
-    { id: 5, text: "First, you squeeze some toothpaste onto your brush.", vi: null },
-    { id: 6, text: "Next, you brush your teeth carefully for two minutes.", vi: null },
-    { id: 7, text: "Then, you rinse your mouth with clean water.", vi: null },
-    { id: 8, text: "Finally, Leo poured himself a glass of juice without spilling a drop.", vi: null },
+    { id: 1, text: "Lesson one. I am very hungry.", vi: null, start: 3.04, duration: 5.64 },
+    { id: 2, text: ">> Mommy, I am hungry. Hello, Berry.", vi: null, start: 11.84, duration: 6.2 },
+    { id: 3, text: "Do you want to make a sandwich?", vi: null, start: 20.72, duration: 4.04 },
+    { id: 4, text: "Yes,", vi: null, start: 28.56, duration: 6.36 },
+    { id: 5, text: "I want to make a sandwich. Ah,", vi: null, start: 30.08, duration: 4.84 },
+    { id: 6, text: ">> hello. I am Mr. Bread. You can call me", vi: null, start: 35.52, duration: 7.52 },
+    { id: 7, text: "Mr. B. Wow.", vi: null, start: 38.72, duration: 9.24 },
+    { id: 8, text: "Bread. I like bread.", vi: null, start: 43.04, duration: 4.92 },
+    { id: 9, text: "Here is some cheese.", vi: null, start: 52.96, duration: 3.8 },
+    { id: 10, text: "Yummy. I like cheese very much. Hi", vi: null, start: 56.8, duration: 7.12 },
+    { id: 11, text: "Paint. Nuring laugh and resto of fonts", vi: null, start: 60.48, duration: 6.44 },
+    { id: 12, text: "there.", vi: null, start: 63.92, duration: 3 },
+    { id: 13, text: "This is ham.", vi: null, start: 69.36, duration: 7.16 },
+    { id: 14, text: "Ham is very delicious.", vi: null, start: 72.32, duration: 4.2 },
+    { id: 15, text: "Hello, I am a tomato.", vi: null, start: 82.32, duration: 4.24 },
+    { id: 16, text: "A red tomato.", vi: null, start: 92.56, duration: 3.56 },
+    { id: 17, text: "Yes, I am sweet and red.", vi: null, start: 99.28, duration: 6.2 },
+    { id: 18, text: "Are you ready to cook, Barry?", vi: null, start: 108.56, duration: 4.44 },
+    { id: 19, text: "Yes. Let's make it.", vi: null, start: 116.48, duration: 5.84 },
+    { id: 20, text: ">> Lesson two.", vi: null, start: 120.64, duration: 2.24 },
+    { id: 21, text: ">> Mhm.", vi: null, start: 122.32, duration: 4.08 },
+    { id: 22, text: ">> Let's learn kitchen tools.", vi: null, start: 122.88, duration: 7.48 },
+    { id: 23, text: ">> Mhm. Mhm.", vi: null, start: 126.4, duration: 3.96 },
+    { id: 24, text: ">> This is a cutting board, Berry.", vi: null, start: 132.24, duration: 5 },
+    { id: 25, text: ">> A cutting board. It is hard.", vi: null, start: 140.64, duration: 5 },
+    { id: 26, text: "And this is a plate.", vi: null, start: 148.48, duration: 8.64 },
+    { id: 27, text: "Oh, a plate. It is a nice bed.", vi: null, start: 151.04, duration: 10.84 },
+    { id: 28, text: "Haha ha haha.", vi: null, start: 157.12, duration: 4.76 },
+    { id: 29, text: "This is a knife. Be very careful.", vi: null, start: 164.64, duration: 5.16 },
+    { id: 30, text: "Yes, mommy. I will be careful.", vi: null, start: 172.08, duration: 5.76 },
+    { id: 31, text: ">> Look,", vi: null, start: 177.84, duration: 6.28 },
+    { id: 32, text: "this is green lettuce.", vi: null, start: 179.84, duration: 4.28 },
+    { id: 33, text: "Lettuce is my good friend.", vi: null, start: 189.2, duration: 4.36 },
+    { id: 34, text: "I like green lettuce, too.", vi: null, start: 197.76, duration: 4.36 },
+    { id: 35, text: "This is butter.", vi: null, start: 202.64, duration: 5.88 },
+    { id: 36, text: "We spread it.", vi: null, start: 204.72, duration: 3.8 },
+    { id: 37, text: ">> Butter smells so good.", vi: null, start: 212.56, duration: 4.28 },
+    { id: 38, text: "This is mayonnaise.", vi: null, start: 220.16, duration: 3.48 },
+    { id: 39, text: "I do not like mayonnaise. That is okay.", vi: null, start: 228.32, duration: 5.88 },
+    { id: 40, text: "We have everything. Are you ready? Yes.", vi: null, start: 235.6, duration: 6.04 }
   ]
 };
