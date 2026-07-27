@@ -260,6 +260,13 @@ const CHANNEL_BLACKLIST = [
   'gmat'
 ];
 
+// Hardcoded video blacklist for testing (pedagogically irrelevant videos)
+const VIDEO_BLACKLIST = [
+  '5cYMu3RTMJU',  // Days of the Week — not school vocabulary
+  '7isSwerYaQc',  // School Conversation — no target chunks
+  'Fw0rdSHzWFY',  // Greeting — no target chunks
+];
+
 const KIDS_KEYWORDS = ['kids', 'children', 'beginner', 'young learners', 'pre-a1', 'a1', 'family', 'simple', 'nursery', 'story'];
 const CONVERSATION_KEYWORDS = ['conversation', 'dialogue', 'story', 'speaking', 'talk', 'chat', 'shadowing', 'listen and repeat'];
 const NEGATIVE_KEYWORDS = ['grammar', 'lesson', 'tutorial', 'test', 'exam', 'ielts', 'toefl', 'advanced', 'vocabulary list', 'word list'];
@@ -268,36 +275,34 @@ const NEGATIVE_KEYWORDS = ['grammar', 'lesson', 'tutorial', 'test', 'exam', 'iel
 // YouTube API — Enhanced Search with Syllabus Context
 // ────────────────────────────────────────────────────────────────────
 function buildSmartQuery(syllabusMeta, weekTitle) {
-  // Build query from syllabus metadata — NOT generic keywords
+  // YouTube SEO: use simple nouns and topic, NOT grammar terms
+  // Grammar terms like "Subject Pronouns & Verb to be" return trash results
   const parts = [];
 
-  // 1. Use grammar focus (e.g., "subject pronouns verb to be")
-  if (syllabusMeta.grammarFocus) {
-    parts.push(syllabusMeta.grammarFocus);
-  }
-
-  // 2. Use top vocab words (e.g., "student school teacher classroom")
+  // 1. Use top 4 PRIMARY NOUNS from vocab (not grammar terms)
   if (syllabusMeta.vocabWords.length > 0) {
     parts.push(syllabusMeta.vocabWords.slice(0, 4).join(' '));
   }
 
-  // 3. Use read chunks (e.g., "wake up early get ready for school")
-  if (syllabusMeta.readChunks.length > 0) {
-    parts.push(syllabusMeta.readChunks.slice(0, 3).join(' '));
+  // 2. Use topic if it contains useful nouns
+  if (syllabusMeta.topic) {
+    // Strip non-noun words, keep meaningful terms
+    const cleanTopic = syllabusMeta.topic
+      .replace(/[^a-zA-Z0-9 ]/g, '')
+      .split(/\s+/)
+      .filter(w => w.length > 2 && !/^(the|and|for|with|is|are|was|were|my|your|his|her)$/i.test(w))
+      .slice(0, 3)
+      .join(' ');
+    if (cleanTopic) parts.push(cleanTopic);
   }
 
-  // 4. Fallback to topic
-  if (parts.length === 0 && syllabusMeta.topic) {
-    parts.push(syllabusMeta.topic);
-  }
-
-  // 5. Final fallback to week title
+  // 3. Fallback to week title (cleaned)
   if (parts.length === 0) {
-    parts.push(weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 40));
+    parts.push(weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 30));
   }
 
-  const query = parts.join(' ');
-  return `ESL kids conversation ${query}`.trim();
+  const nouns = parts.join(' ');
+  return `"ESL kids" ${nouns} conversation dialogue`.trim();
 }
 
 async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
@@ -356,6 +361,12 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
     const viewCount = parseInt(videoInfo.statistics?.viewCount || 0);
 
     // PRE-FILTERS (hard constraints)
+    // Hardcoded video blacklist
+    if (VIDEO_BLACKLIST.includes(videoId)) {
+      log(`    ❌ ${videoId}: on hardcoded blacklist`);
+      continue;
+    }
+
     if (duration < 60 || duration > 900) {
       log(`    ❌ ${videoId}: duration ${duration}s out of range [60-900]`);
       continue;
@@ -509,9 +520,9 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
       score += relevanceScore;
       reasons.push(`vocab:+${relevanceScore} (${vocabOverlap}/${syllabusMeta.vocabWords.length} words, ${chunkOverlap} chunks, ${grammarOverlap} grammar)`);
 
-      // HARD REJECT: MUST have at least ONE chunk/collocation in actual transcript
-      if (chunkOverlap === 0) {
-        log(`    ❌ ${videoId}: HARD REJECT — no target chunks/collocations in transcript`);
+      // HARD REJECT: MUST have ≥3 vocab words AND ≥2 chunks in actual transcript
+      if (vocabOverlap < 3 || chunkOverlap < 2) {
+        log(`    ❌ ${videoId}: HARD REJECT — need ≥3 vocab + ≥2 chunks (got ${vocabOverlap} words, ${chunkOverlap} chunks)`);
         continue;
       }
     }
