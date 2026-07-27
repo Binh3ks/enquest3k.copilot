@@ -278,8 +278,12 @@ async function searchVideo(weekTitle, contentEn) {
       continue;
     }
 
-    // Fetch transcript for speech rate + availability check
-    const transcript = await fetchTranscript(videoId);
+    // Fetch transcript for speech rate + availability check + caption quality
+    const transcriptResult = await fetchTranscript(videoId);
+    const transcript = transcriptResult.segments || [];
+    const captionQuality = transcriptResult.quality || 'unknown';
+    const hasPunctuation = transcriptResult.hasPunctuation || false;
+
     if (transcript.length === 0) {
       log(`    ❌ ${videoId}: no transcript available`);
       continue;
@@ -289,7 +293,7 @@ async function searchVideo(weekTitle, contentEn) {
     const totalMinutes = duration / 60;
     const speechRate = totalWords / totalMinutes;
 
-    log(`    ✅ ${videoId}: "${title}" | ${duration}s | ${transcript.length} segs | ${Math.round(speechRate)} WPM`);
+    log(`    ✅ ${videoId}: "${title}" | ${duration}s | ${transcript.length} segs | ${Math.round(speechRate)} WPM | ${captionQuality}`);
 
     // SCORING
     let score = 0;
@@ -364,6 +368,22 @@ async function searchVideo(weekTitle, contentEn) {
       reasons.push(`negative:-${penalty}`);
     }
 
+    // 10. Caption quality (25 pts max)
+    if (captionQuality === 'manual_punctuated') {
+      score += 25;
+      reasons.push(`captions:+25 (manual+punctuated)`);
+    } else if (captionQuality === 'manual_unpunctuated') {
+      score += 15;
+      reasons.push(`captions:+15 (manual)`);
+    } else if (captionQuality === 'asr_punctuated') {
+      score += 10;
+      reasons.push(`captions:+10 (asr+punctuated)`);
+    } else {
+      // asr_unpunctuated — penalty
+      score -= 10;
+      reasons.push(`captions:-10 (asr unpunctuated)`);
+    }
+
     log(`      Score: ${score} | ${reasons.join(', ')}`);
 
     candidates.push({
@@ -371,6 +391,7 @@ async function searchVideo(weekTitle, contentEn) {
       title,
       duration,
       transcript,
+      captionQuality,
       speechRate: Math.round(speechRate),
       score,
       reasons: reasons.join(', ')
@@ -393,6 +414,7 @@ async function searchVideo(weekTitle, contentEn) {
     title: winner.title,
     duration: winner.duration,
     transcript: winner.transcript,
+    captionQuality: winner.captionQuality,
     score: winner.score
   };
 }
@@ -435,8 +457,11 @@ async function scoreExistingVideo(videoId, title, contentEn) {
   const tags = (videoInfo.snippet.tags || []).map(t => t.toLowerCase());
   const viewCount = parseInt(videoInfo.statistics?.viewCount || 0);
 
-  // Fetch transcript
-  const transcript = await fetchTranscript(videoId);
+  // Fetch transcript + caption quality
+  const transcriptResult = await fetchTranscript(videoId);
+  const transcript = transcriptResult.segments || [];
+  const captionQuality = transcriptResult.quality || 'unknown';
+
   if (transcript.length === 0) {
     log(`  ⚠️  No transcript for existing video ${videoId}`);
     return 0;
@@ -486,7 +511,13 @@ async function scoreExistingVideo(videoId, title, contentEn) {
   const negMatches = NEGATIVE_KEYWORDS.filter(kw => textLower.includes(kw)).length;
   if (negMatches > 0) score -= negMatches * 5;
 
-  log(`  📊 Existing video ${videoId} score: ${score} (duration: ${duration}s, ${Math.round(speechRate)} WPM, ${transcript.length} segments)`);
+  // 10. Caption quality (25 pts max)
+  if (captionQuality === 'manual_punctuated') score += 25;
+  else if (captionQuality === 'manual_unpunctuated') score += 15;
+  else if (captionQuality === 'asr_punctuated') score += 10;
+  else score -= 10;
+
+  log(`  📊 Existing video ${videoId} score: ${score} (duration: ${duration}s, ${Math.round(speechRate)} WPM, ${transcript.length} segments, ${captionQuality})`);
   return score;
 }
 
@@ -522,15 +553,48 @@ async function fetchTranscript(videoId) {
       const pyFile = path.join(BASE, 'scripts', 'tmp_transcript.py');
       const pythonScript = `
 from youtube_transcript_api import YouTubeTranscriptApi
-import json, sys
+import json, sys, re
 
 ytt = YouTubeTranscriptApi()
+
+# Step 1: Check available transcripts and their quality
 try:
-    transcript = ytt.fetch('${videoId}', languages=['en'])
+    transcript_list = ytt.list(video_id='${videoId}')
 except Exception as e:
-    print(json.dumps([]))
+    print(json.dumps({'segments': [], 'quality': 'error', 'is_generated': True, 'has_punctuation': False}))
     sys.exit(0)
 
+# Find English transcript, prefer manual over auto-generated
+best_transcript = None
+for t in transcript_list:
+    if t.language_code.startswith('en'):
+        if not t.is_generated:
+            best_transcript = t  # Manual = best
+            break
+        elif best_transcript is None:
+            best_transcript = t  # Auto-generated = fallback
+
+if best_transcript is None:
+    print(json.dumps({'segments': [], 'quality': 'none', 'is_generated': True, 'has_punctuation': False}))
+    sys.exit(0)
+
+# Step 2: Fetch the transcript
+try:
+    transcript = best_transcript.fetch()
+except Exception as e:
+    print(json.dumps({'segments': [], 'quality': 'error', 'is_generated': best_transcript.is_generated, 'has_punctuation': False}))
+    sys.exit(0)
+
+# Step 3: Check punctuation quality
+all_text = ' '.join([s.text.strip() for s in transcript.snippets])
+has_periods = bool(re.search(r'[.!?]', all_text))
+word_count = len(all_text.split())
+punctuation_count = len(re.findall(r'[.!?]', all_text))
+# Good punctuation: at least 1 punctuation mark per 20 words
+punctuation_ratio = punctuation_count / max(word_count / 20, 1)
+has_good_punctuation = has_periods and punctuation_ratio >= 0.3
+
+# Step 4: Build segments
 segments = []
 for seg in transcript.snippets:
     text = seg.text.strip()
@@ -541,7 +605,23 @@ for seg in transcript.snippets:
             'duration': round(seg.duration, 2)
         })
 
-print(json.dumps(segments))
+# Determine quality label
+if not best_transcript.is_generated and has_good_punctuation:
+    quality = 'manual_punctuated'
+elif not best_transcript.is_generated:
+    quality = 'manual_unpunctuated'
+elif has_good_punctuation:
+    quality = 'asr_punctuated'
+else:
+    quality = 'asr_unpunctuated'
+
+print(json.dumps({
+    'segments': segments,
+    'quality': quality,
+    'is_generated': best_transcript.is_generated,
+    'has_punctuation': has_good_punctuation,
+    'punctuation_ratio': round(punctuation_ratio, 2)
+}))
 `.trim();
 
       fs.writeFileSync(pyFile, pythonScript, 'utf8');
@@ -553,7 +633,11 @@ print(json.dumps(segments))
 
       try { fs.unlinkSync(pyFile); } catch (_) {}
 
-      const segments = JSON.parse(output.trim());
+      const result = JSON.parse(output.trim());
+      const segments = result.segments || [];
+      const quality = result.quality || 'unknown';
+      const isGenerated = result.is_generated !== false;
+      const hasPunctuation = result.has_punctuation || false;
 
       // Check for IP block (0 segments = likely blocked)
       if (segments.length === 0 && attempt < MAX_RETRIES) {
@@ -561,8 +645,13 @@ print(json.dumps(segments))
         continue;
       }
 
-      log(`  ✅ Fetched ${segments.length} raw segments`);
-      return segments;
+      // Caption quality logging
+      const qualityEmoji = quality === 'manual_punctuated' ? '🏆' :
+                           quality === 'manual_unpunctuated' ? '📝' :
+                           quality === 'asr_punctuated' ? '✅' : '⚠️';
+      log(`  ${qualityEmoji} Caption quality: ${quality} (${segments.length} segments, punctuation: ${hasPunctuation})`);
+
+      return { segments, quality, isGenerated, hasPunctuation };
     } catch (err) {
       log(`  ❌ Transcript fetch failed: ${err.message}`);
       try { fs.unlinkSync(path.join(BASE, 'scripts', 'tmp_transcript.py')); } catch (_) {}
@@ -616,17 +705,30 @@ function isFragment(text) {
   const t = text.trim();
   if (t.length < 3) return true;
   const words = t.split(/\s+/);
+
+  // If text ends with proper punctuation, it's NOT a fragment — even if short
+  // "It's Wednesday." is a complete thought, not a fragment
+  if (/[.!?]"?\s*$/.test(t)) return false;
+
+  // Unpunctuated short text = fragment
   if (words.length < 4) return true;
   if (/^[a-z]/.test(t)) return true;
   if (CONJUNCTIONS.test(t)) return true;
-  if (!/[.!?]$/.test(t)) return true;
   return false;
 }
 
 function splitIntoSentences(segments) {
   // Split each raw segment into individual sentence-level chunks
+  // Uses smart heuristics for unpunctuated auto-captions
   const result = [];
   const TURN_WORDS = new Set(['hi','hello','hey','bye','goodbye','okay','ok','yes','no','nice','great','wow','really','so','well','thank','thanks']);
+
+  // Sentence-starters: words that typically begin a new sentence in unpunctuated dialogue
+  // WH-questions, subject pronouns, dialogue markers, conjunctions
+  const SENTENCE_STARTERS = /^(how|what|where|when|why|who|i|you|he|she|it|we|they|hi|hello|hey|bye|okay|ok|yes|no|but|because|so|and|well|oh|please|let|come|go|do|are|is|that|this|there|here|my|your|his|her|our|their|very|just|also|too|nice|great|thank|wow|really|maybe|sure|right|exactly|oh|um|uh)\b/i;
+
+  // Words that typically END a clause/thought (before a new sentence starts)
+  const CLAUSE_ENDERS = /^(is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|am|been|being|go|goes|went|come|comes|came|like|likes|liked|live|lives|lived|work|works|worked|study|studies|studied|want|wants|wanted|need|needs|needed|love|loves|loved|think|thinks|thought|know|knows|knew|say|says|said|tell|tells|told|give|gives|gave|take|takes|took|make|makes|made|see|sees|saw|get|gets|got|put|puts|let|lets|try|tries|tried|help|helps|helped|play|plays|played|eat|eats|ate|drink|drinks|drank|sleep|sleeps|slept|walk|walks|walked|run|runs|ran|sit|sits|sat|stand|stands|stood|open|opens|opened|close|closes|closed|stop|stops|stopped|wait|waits|waited|start|starts|started|finish|finishes|finished|good|bad|nice|great|fine|okay|ok|well|sick|tired|happy|sad|hot|cold|big|small|long|short|old|new|young|fast|slow|easy|hard|right|wrong|here|there|now|then|today|tomorrow|yesterday|morning|afternoon|evening|night|always|never|sometimes|often|usually|really|very|too|quite|just|also|still|already|finally|maybe|sure|right|exactly|correct)\b/i;
 
   for (const seg of segments) {
     let text = seg.text;
@@ -636,18 +738,48 @@ function splitIntoSentences(segments) {
     text = text.replace(/\[.*?\]/g, '').trim();
     if (!text || text.length < 3) continue;
 
-    // Split at: sentence-ending punctuation followed by any letter
+    // Step 1: Split at existing punctuation
     let parts = text.split(/(?<=[.!?])\s+(?=[a-zA-Z])/);
 
-    // ALWAYS scan for dialogue turn markers (regardless of word count)
-    // This handles short auto-caption segments where turns are mid-segment
-    {
+    // Step 2: For unpunctuated text, use smart heuristics
+    // Find split points where a new sentence likely starts
+    if (parts.length <= 1) {
       const words = text.split(/\s+/);
       const splitPoints = [];
+
       for (let w = 1; w < words.length; w++) {
         const word = words[w].toLowerCase().replace(/[^a-z]/g, '');
+        const prevWord = words[w - 1].toLowerCase().replace(/[^a-z]/g, '');
+
+        // Rule 1: Turn markers (hi, hello, bye, okay, yes, no, nice, great, thank, wow, really)
         if (TURN_WORDS.has(word)) {
           splitPoints.push(w);
+          continue;
+        }
+
+        // Rule 2: WH-questions (how, what, where, when, why, who)
+        if (/^(how|what|where|when|why|who)$/i.test(word)) {
+          splitPoints.push(w);
+          continue;
+        }
+
+        // Rule 3: Subject pronouns AFTER a clause-ender
+        // "I live in Alabama" after "nice" → split before "I"
+        if (/^(i|you|he|she|it|we|they)$/i.test(word) && CLAUSE_ENDERS.test(prevWord)) {
+          splitPoints.push(w);
+          continue;
+        }
+
+        // Rule 4: "do you", "are you", "is it" after a clause-ender
+        if (/^(do|are|is|can|will|would|could|should)$/i.test(word) && CLAUSE_ENDERS.test(prevWord)) {
+          splitPoints.push(w);
+          continue;
+        }
+
+        // Rule 5: Conjunctions (but, because, so, and) after 3+ words
+        if (/^(but|because|so|and)$/i.test(word) && w >= 3) {
+          splitPoints.push(w);
+          continue;
         }
       }
 
@@ -679,7 +811,6 @@ function splitIntoSentences(segments) {
         const partDuration = seg.duration * proportion;
 
         // Mark dialogue turns: only if starts with a turn word AND has ≥3 words
-        // Short fragments like "Okay" or "Really" should NOT be flagged — let them merge
         const isFirstWord = TURN_WORDS.has(part.trim().split(/\s+/)[0]?.toLowerCase().replace(/[^a-z]/g, ''));
         const partWordCount = part.trim().split(/\s+/).length;
 
@@ -1023,12 +1154,13 @@ function saveTranscriptJSON(videoId, segments) {
           // Then search for better candidates
           result = await searchVideo(title, contentEn);
 
-          // Replace only if new candidate scores higher (+20 points threshold)
-          if (currentScore >= 60 && result.score < currentScore + 20) {
-            log(`📊 Keeping current video (score: ${currentScore} vs ${result.score})`);
-            summary.keptVideos.push({ week: weekNum, videoId, title });
-          } else {
-            log(`📊 Replacing: current=${currentScore}, new=${result.score}`);
+          // Replace if: new score is higher OR new has better caption quality
+          const captionUpgrade = result.captionQuality === 'manual_punctuated' && currentScore < 90;
+          const scoreHigher = result.score > currentScore;
+          const scoreClose = result.score >= currentScore - 5 && captionUpgrade;
+
+          if (scoreHigher || scoreClose) {
+            log(`📊 Replacing: current=${currentScore} (${result.captionQuality}) → new=${result.score}`);
             videoId = result.videoId;
             replaced = true;
             summary.replacedVideos.push({
@@ -1037,7 +1169,10 @@ function saveTranscriptJSON(videoId, segments) {
               newVideoId: result.videoId,
               title: result.title
             });
-            log(`🆕 Replacement found: ${videoId} "${result.title}" (${result.duration}s)`);
+            log(`🆕 Replacement found: ${videoId} "${result.title}" (${result.duration}s, ${result.captionQuality})`);
+          } else {
+            log(`📊 Keeping current video (score: ${currentScore} vs ${result.score})`);
+            summary.keptVideos.push({ week: weekNum, videoId, title });
           }
         } else {
           // No videoId at all — search for one
@@ -1056,11 +1191,15 @@ function saveTranscriptJSON(videoId, segments) {
 
         // Fetch transcript (use cached from search if available, otherwise fetch fresh)
         let rawSegments;
+        let captionQuality = 'unknown';
         if (result && result.transcript && result.transcript.length > 0) {
           rawSegments = result.transcript;
-          log(`  Using ${rawSegments.length} segments from search cache`);
+          captionQuality = result.captionQuality || 'unknown';
+          log(`  Using ${rawSegments.length} segments from search cache (${captionQuality})`);
         } else {
-          rawSegments = await fetchTranscript(videoId);
+          const transcriptResult = await fetchTranscript(videoId);
+          rawSegments = transcriptResult.segments || [];
+          captionQuality = transcriptResult.quality || 'unknown';
         }
 
         if (rawSegments.length === 0) {
