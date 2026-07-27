@@ -626,6 +626,7 @@ function isFragment(text) {
 function splitIntoSentences(segments) {
   // Split each raw segment into individual sentence-level chunks
   const result = [];
+  const TURN_WORDS = new Set(['hi','hello','hey','bye','goodbye','okay','ok','yes','no','nice','great','wow','really','so','well','thank','thanks']);
 
   for (const seg of segments) {
     let text = seg.text;
@@ -635,9 +636,33 @@ function splitIntoSentences(segments) {
     text = text.replace(/\[.*?\]/g, '').trim();
     if (!text || text.length < 3) continue;
 
-    // Split at sentence-ending punctuation followed by a space and uppercase letter
-    // e.g. "Hello world. How are you?" → ["Hello world.", "How are you?"]
-    const parts = text.split(/(?<=[.!?])\s+(?=[A-Z])/);
+    // Split at: sentence-ending punctuation followed by any letter
+    let parts = text.split(/(?<=[.!?])\s+(?=[a-zA-Z])/);
+
+    // ALWAYS scan for dialogue turn markers (regardless of word count)
+    // This handles short auto-caption segments where turns are mid-segment
+    {
+      const words = text.split(/\s+/);
+      const splitPoints = [];
+      for (let w = 1; w < words.length; w++) {
+        const word = words[w].toLowerCase().replace(/[^a-z]/g, '');
+        if (TURN_WORDS.has(word)) {
+          splitPoints.push(w);
+        }
+      }
+
+      if (splitPoints.length > 0) {
+        parts = [];
+        let prev = 0;
+        for (const sp of splitPoints) {
+          if (sp > prev) {
+            parts.push(words.slice(prev, sp).join(' '));
+            prev = sp;
+          }
+        }
+        if (prev < words.length) parts.push(words.slice(prev).join(' '));
+      }
+    }
 
     if (parts.length <= 1) {
       // No split — keep as one segment
@@ -647,15 +672,22 @@ function splitIntoSentences(segments) {
       const totalWords = text.split(/\s+/).length;
       let cursor = seg.start;
 
-      for (const part of parts) {
+      for (let p = 0; p < parts.length; p++) {
+        const part = parts[p];
         const partWords = part.trim().split(/\s+/).length;
         const proportion = partWords / totalWords;
         const partDuration = seg.duration * proportion;
 
+        // Mark dialogue turns: only if starts with a turn word AND has ≥3 words
+        // Short fragments like "Okay" or "Really" should NOT be flagged — let them merge
+        const isFirstWord = TURN_WORDS.has(part.trim().split(/\s+/)[0]?.toLowerCase().replace(/[^a-z]/g, ''));
+        const partWordCount = part.trim().split(/\s+/).length;
+
         result.push({
           text: part.trim(),
           start: cursor,
-          duration: Math.round(partDuration * 100) / 100
+          duration: Math.round(partDuration * 100) / 100,
+          isDialogueTurn: p > 0 && isFirstWord && partWordCount >= 3
         });
         cursor += partDuration;
       }
@@ -668,6 +700,7 @@ function splitIntoSentences(segments) {
 function mergeFragments(sentences) {
   // Build complete sentences by chaining fragments
   // PRIORITY: Natural sentence integrity > word count limits
+  // NEVER merge across dialogue turn boundaries (isDialogueTurn flag)
   if (sentences.length === 0) return [];
 
   const result = [];
@@ -681,6 +714,17 @@ function mergeFragments(sentences) {
     const segConj = CONJUNCTIONS.test(seg.text.trim());
     const segFrag = isFragment(seg.text);
     const mergedWords = currentWords + seg.text.split(/\s+/).length;
+
+    // RULE 0: NEVER merge across dialogue turn boundaries
+    if (seg.isDialogueTurn) {
+      result.push({
+        text: current.text.trim(),
+        start: current.start,
+        duration: Math.round((current.end - current.start) * 100) / 100
+      });
+      current = { text: seg.text, start: seg.start, end: seg.start + seg.duration };
+      continue;
+    }
 
     // RULE 1: Always merge if current is incomplete — never leave dangling fragments
     // RULE 2: Always merge if next is a fragment/continuation (starts lowercase, is conjunction, etc.)
@@ -763,6 +807,7 @@ function formatSegments(rawSegments) {
   // Step 1: Split multi-sentence segments into sentence-level chunks
   const split = splitIntoSentences(rawSegments);
   log(`    After sentence split: ${split.length} chunks`);
+  log(`    Dialogue turns detected: ${split.filter(s => s.isDialogueTurn).length}`);
 
   // Step 2: Deduplicate by normalized text
   const seen = new Set();
@@ -775,19 +820,50 @@ function formatSegments(rawSegments) {
     }
   }
   log(`    After dedup: ${deduped.length} chunks`);
+  log(`    Dialogue turns after dedup: ${deduped.filter(s => s.isDialogueTurn).length}`);
 
   // Step 3: Merge fragments into complete sentences
   const merged = mergeFragments(deduped);
   log(`    After fragment merge: ${merged.length} segments`);
 
-  // Step 4: Group short sentences to fit ≤ MAX_SEGMENTS
-  let final = merged;
-  if (merged.length > MAX_SEGMENTS) {
-    final = groupShortSentences(merged, MAX_SEGMENTS);
+  // Step 4: Combine consecutive short non-flagged segments
+  // After aggressive turn splitting, we get tiny segments like "okay" (1w)
+  // Merge them with adjacent non-flagged segments until MIN_WORDS reached
+  // NEVER combine across turn boundaries (buffer or seg has flag)
+  const combined = [];
+  let buffer = merged[0] || null;
+
+  for (let i = 1; i < merged.length; i++) {
+    const seg = merged[i];
+    const bufWords = buffer ? buffer.text.split(/\s+/).length : 0;
+    const bufHasFlag = buffer && buffer.isDialogueTurn;
+    const segHasFlag = seg.isDialogueTurn;
+
+    // Combine if: buffer is short, both have no flags, and combined won't exceed HARD_CEILING
+    const combinedWords = bufWords + seg.text.split(/\s+/).length;
+    if (buffer && !bufHasFlag && !segHasFlag && combinedWords <= HARD_CEILING) {
+      buffer = {
+        text: buffer.text + ' ' + seg.text,
+        start: buffer.start,
+        duration: Math.round(((seg.start + seg.duration) - buffer.start) * 100) / 100
+      };
+    } else {
+      // Save buffer and start new
+      if (buffer) combined.push(buffer);
+      buffer = seg;
+    }
+  }
+  if (buffer) combined.push(buffer);
+  log(`    After combine short: ${combined.length} segments`);
+
+  // Step 5: Group short sentences to fit ≤ MAX_SEGMENTS
+  let final = combined;
+  if (combined.length > MAX_SEGMENTS) {
+    final = groupShortSentences(combined, MAX_SEGMENTS);
     log(`    After grouping: ${final.length} segments`);
   }
 
-  // Step 5: Polish — capitalize, punctuation
+  // Step 6: Polish — capitalize, punctuation
   const polished = final.map((seg, i) => ({
     id: i + 1,
     text: polishSegment(seg.text),
