@@ -111,6 +111,87 @@ function extractVideoId(filePath) {
 }
 
 // ────────────────────────────────────────────────────────────────────
+// Syllabus Metadata Reader
+// ────────────────────────────────────────────────────────────────────
+function readSyllabusMetadata(weekNum) {
+  const padded = weekNum.padStart(2, '0');
+  log(`  📚 readSyllabusMetadata: weekNum=${weekNum} padded=${padded}`);
+  const meta = {
+    topic: '',
+    grammarFocus: '',
+    vocabWords: [],
+    vocabCollocations: [],
+    readContentEn: '',
+    readChunks: []
+  };
+
+  try {
+    // Read grammar.js for grammar focus
+    const grammarPath = path.join(BASE, 'src/data/weeks', `week_${padded}`, 'grammar.js');
+    if (fs.existsSync(grammarPath)) {
+      const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+      const titleMatch = grammarContent.match(/title_en:\s*["`']([^"`']+)["`']/);
+      if (titleMatch) meta.grammarFocus = titleMatch[1];
+      log(`    grammar.js: ${fs.existsSync(grammarPath) ? 'exists' : 'missing'} → "${meta.grammarFocus}"`);
+    } else {
+      log(`    grammar.js: MISSING at ${grammarPath}`);
+    }
+
+    // Read vocab.js for target vocabulary
+    const vocabPath = path.join(BASE, 'src/data/weeks', `week_${padded}`, 'vocab.js');
+    if (fs.existsSync(vocabPath)) {
+      const vocabContent = fs.readFileSync(vocabPath, 'utf8');
+      // Extract word entries — only actual words, not audio paths
+      // Match word: "xxx" but exclude paths containing /
+      const wordMatches = vocabContent.matchAll(/word:\s*["`']([^"`'/]+)["`']/g);
+      for (const m of wordMatches) {
+        const word = m[1].trim().toLowerCase();
+        if (word.length > 1 && !word.includes('/')) {
+          meta.vocabWords.push(word);
+        }
+      }
+      // Extract collocations
+      const collocMatches = vocabContent.matchAll(/collocation:\s*\[([^\]]+)\]/g);
+      for (const m of collocMatches) {
+        const collocs = m[1].match(/["`']([^"`']+)["`']/g);
+        if (collocs) {
+          for (const c of collocs) {
+            const colloc = c.replace(/["`']/g, '').toLowerCase();
+            if (!colloc.includes('/')) {
+              meta.vocabCollocations.push(colloc);
+            }
+          }
+        }
+      }
+    }
+
+    // Read read.js for topic and content
+    const readPath = path.join(BASE, 'src/data/weeks', `week_${padded}`, 'read.js');
+    if (fs.existsSync(readPath)) {
+      const readContent = fs.readFileSync(readPath, 'utf8');
+      const titleMatch = readContent.match(/title:\s*["`']([^"`']+)["`']/);
+      if (titleMatch) meta.topic = titleMatch[1];
+
+      const contentMatch = readContent.match(/content_en:\s*["`'](.+?)["`']/s);
+      if (contentMatch) {
+        meta.readContentEn = contentMatch[1];
+        // Extract bolded chunks
+        const chunkMatches = contentMatch[1].matchAll(/\*\*([^*]+)\*\*/g);
+        for (const m of chunkMatches) {
+          meta.readChunks.push(m[1].toLowerCase());
+        }
+      }
+    }
+
+    log(`  📚 Syllabus: topic="${meta.topic}" | grammar="${meta.grammarFocus}" | vocab=${meta.vocabWords.length} words | chunks=${meta.readChunks.length}`);
+  } catch (err) {
+    log(`  ⚠️  Error reading syllabus: ${err.message}`);
+  }
+
+  return meta;
+}
+
+// ────────────────────────────────────────────────────────────────────
 // Channel Intelligence — STRICT WHITELIST (hard reject)
 // ────────────────────────────────────────────────────────────────────
 const CHANNEL_WHITELIST = [
@@ -186,25 +267,47 @@ const NEGATIVE_KEYWORDS = ['grammar', 'lesson', 'tutorial', 'test', 'exam', 'iel
 // ────────────────────────────────────────────────────────────────────
 // YouTube API — Enhanced Search with Syllabus Context
 // ────────────────────────────────────────────────────────────────────
-function buildSmartQuery(weekTitle, contentEn) {
-  // Extract key vocabulary from content_en (first 200 chars)
-  const vocab = contentEn
-    .toLowerCase()
-    .match(/\b(family|home|school|park|food|animal|friend|play|day|night|color|number|game|picnic|market|city|farm|beach|zoo|library|museum)\b/g);
+function buildSmartQuery(syllabusMeta, weekTitle) {
+  // Build query from syllabus metadata — NOT generic keywords
+  const parts = [];
 
-  const uniqueVocab = [...new Set(vocab || [])].slice(0, 3).join(' ');
+  // 1. Use grammar focus (e.g., "subject pronouns verb to be")
+  if (syllabusMeta.grammarFocus) {
+    parts.push(syllabusMeta.grammarFocus);
+  }
 
-  // Build query: contextual vocab + ESL constraint
-  const baseQuery = uniqueVocab || weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 30);
-  return `${baseQuery} ESL kids conversation story A1`.trim();
+  // 2. Use top vocab words (e.g., "student school teacher classroom")
+  if (syllabusMeta.vocabWords.length > 0) {
+    parts.push(syllabusMeta.vocabWords.slice(0, 4).join(' '));
+  }
+
+  // 3. Use read chunks (e.g., "wake up early get ready for school")
+  if (syllabusMeta.readChunks.length > 0) {
+    parts.push(syllabusMeta.readChunks.slice(0, 3).join(' '));
+  }
+
+  // 4. Fallback to topic
+  if (parts.length === 0 && syllabusMeta.topic) {
+    parts.push(syllabusMeta.topic);
+  }
+
+  // 5. Final fallback to week title
+  if (parts.length === 0) {
+    parts.push(weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 40));
+  }
+
+  const query = parts.join(' ');
+  return `ESL kids conversation ${query}`.trim();
 }
 
-async function searchVideo(weekTitle, contentEn) {
+async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
   if (!API_KEY) {
     throw new Error('YOUTUBE_API_KEY not found in environment');
   }
 
-  const searchQuery = buildSmartQuery(weekTitle, contentEn);
+  const meta = syllabusMeta || { topic: weekTitle, grammarFocus: '', vocabWords: [], readChunks: [] };
+  log(`  🔍 searchVideo: topic="${meta.topic}" grammar="${meta.grammarFocus}" vocab=${meta.vocabWords.length} chunks=${meta.readChunks.length}`);
+  const searchQuery = buildSmartQuery(meta, weekTitle);
   const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDuration=medium&videoDefinition=high&relevanceLanguage=en&maxResults=10&key=${API_KEY}`;
 
   log(`  Smart query: "${searchQuery}"`);
@@ -382,6 +485,36 @@ async function searchVideo(weekTitle, contentEn) {
       // asr_unpunctuated — penalty
       score -= 10;
       reasons.push(`captions:-10 (asr unpunctuated)`);
+    }
+
+    // 11. Vocabulary relevance (30 pts max) — HARD REJECT if no overlap
+    if (syllabusMeta && syllabusMeta.vocabWords.length > 0) {
+      const transcriptLower = transcript.map(s => s.text.toLowerCase()).join(' ');
+      const titleLower = title.toLowerCase();
+      const allText = transcriptLower + ' ' + titleLower + ' ' + description;
+
+      // Check overlap with target vocabulary
+      const vocabOverlap = syllabusMeta.vocabWords.filter(vw => allText.includes(vw)).length;
+      const vocabRatio = vocabOverlap / syllabusMeta.vocabWords.length;
+
+      // Check overlap with read chunks (bolded collocations)
+      const chunkOverlap = syllabusMeta.readChunks.filter(rc => allText.includes(rc)).length;
+      const chunkRatio = syllabusMeta.readChunks.length > 0 ? chunkOverlap / syllabusMeta.readChunks.length : 0;
+
+      // Check grammar focus keywords
+      const grammarWords = syllabusMeta.grammarFocus.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+      const grammarOverlap = grammarWords.filter(gw => allText.includes(gw)).length;
+      const grammarRatio = grammarWords.length > 0 ? grammarOverlap / grammarWords.length : 0;
+
+      const relevanceScore = Math.round((vocabRatio * 15) + (chunkRatio * 10) + (grammarRatio * 5));
+      score += relevanceScore;
+      reasons.push(`vocab:+${relevanceScore} (${vocabOverlap}/${syllabusMeta.vocabWords.length} words, ${chunkOverlap} chunks, ${grammarOverlap} grammar)`);
+
+      // HARD REJECT: if vocab overlap < 20% AND chunk overlap < 10%, reject
+      if (vocabRatio < 0.2 && chunkRatio < 0.1) {
+        log(`    ❌ ${videoId}: vocab relevance too low (${vocabOverlap}/${syllabusMeta.vocabWords.length} words, ${chunkOverlap} chunks)`);
+        continue;
+      }
     }
 
     log(`      Score: ${score} | ${reasons.join(', ')}`);
@@ -1117,12 +1250,14 @@ function saveTranscriptJSON(videoId, segments) {
       try {
         const title = extractTitle(advPath) || extractContentEn(advPath).slice(0, 50) || `Week ${weekNum}`;
         const contentEn = extractContentEn(advPath);
+        const syllabusMeta = readSyllabusMetadata(weekNum);
         let videoId = extractVideoId(advPath);
         let replaced = false;
         let result = null;
 
         log(`Title: "${title}"`);
         log(`Current videoId: ${videoId || 'NONE'}`);
+        log(`  syllabusMeta: grammar="${syllabusMeta.grammarFocus}" vocab=${syllabusMeta.vocabWords.length} chunks=${syllabusMeta.readChunks.length}`);
 
         // Verify current video (or skip if --force-search)
         if (videoId && !FORCE_SEARCH) {
@@ -1132,7 +1267,7 @@ function saveTranscriptJSON(videoId, segments) {
             summary.keptVideos.push({ week: weekNum, videoId, title });
           } else {
             log(`❌ Current video ${videoId} is DEAD — searching for replacement...`);
-            result = await searchVideo(title, contentEn);
+            result = await searchVideo(title, contentEn, syllabusMeta);
             videoId = result.videoId;
             replaced = true;
             summary.replacedVideos.push({
@@ -1152,7 +1287,7 @@ function saveTranscriptJSON(videoId, segments) {
           log(`📊 Current video score: ${currentScore}`);
 
           // Then search for better candidates
-          result = await searchVideo(title, contentEn);
+          result = await searchVideo(title, contentEn, syllabusMeta);
 
           // Replace if: new score is higher OR new has better caption quality
           const captionUpgrade = result.captionQuality === 'manual_punctuated' && currentScore < 90;
@@ -1177,7 +1312,7 @@ function saveTranscriptJSON(videoId, segments) {
         } else {
           // No videoId at all — search for one
           log(`⚠️  No videoId found — searching...`);
-          result = await searchVideo(title, contentEn);
+          result = await searchVideo(title, contentEn, syllabusMeta);
           videoId = result.videoId;
           replaced = true;
           summary.replacedVideos.push({
