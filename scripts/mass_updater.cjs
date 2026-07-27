@@ -487,32 +487,31 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
       reasons.push(`captions:-10 (asr unpunctuated)`);
     }
 
-    // 11. Vocabulary relevance (30 pts max) — HARD REJECT if no overlap
+    // 11. Vocabulary relevance (30 pts max) — STRICTLY transcript-only
     if (syllabusMeta && syllabusMeta.vocabWords.length > 0) {
+      // ONLY check actual spoken words in transcript — NOT title, NOT description, NOT tags
       const transcriptLower = transcript.map(s => s.text.toLowerCase()).join(' ');
-      const titleLower = title.toLowerCase();
-      const allText = transcriptLower + ' ' + titleLower + ' ' + description;
 
-      // Check overlap with target vocabulary
-      const vocabOverlap = syllabusMeta.vocabWords.filter(vw => allText.includes(vw)).length;
+      // Check overlap with target vocabulary (transcript only)
+      const vocabOverlap = syllabusMeta.vocabWords.filter(vw => transcriptLower.includes(vw)).length;
       const vocabRatio = vocabOverlap / syllabusMeta.vocabWords.length;
 
-      // Check overlap with read chunks (bolded collocations)
-      const chunkOverlap = syllabusMeta.readChunks.filter(rc => allText.includes(rc)).length;
+      // Check overlap with read chunks/collocations (transcript only)
+      const chunkOverlap = syllabusMeta.readChunks.filter(rc => transcriptLower.includes(rc)).length;
       const chunkRatio = syllabusMeta.readChunks.length > 0 ? chunkOverlap / syllabusMeta.readChunks.length : 0;
 
-      // Check grammar focus keywords
+      // Check grammar focus keywords (transcript only)
       const grammarWords = syllabusMeta.grammarFocus.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-      const grammarOverlap = grammarWords.filter(gw => allText.includes(gw)).length;
+      const grammarOverlap = grammarWords.filter(gw => transcriptLower.includes(gw)).length;
       const grammarRatio = grammarWords.length > 0 ? grammarOverlap / grammarWords.length : 0;
 
       const relevanceScore = Math.round((vocabRatio * 15) + (chunkRatio * 10) + (grammarRatio * 5));
       score += relevanceScore;
       reasons.push(`vocab:+${relevanceScore} (${vocabOverlap}/${syllabusMeta.vocabWords.length} words, ${chunkOverlap} chunks, ${grammarOverlap} grammar)`);
 
-      // HARD REJECT: if vocab overlap < 20% AND chunk overlap < 10%, reject
-      if (vocabRatio < 0.2 && chunkRatio < 0.1) {
-        log(`    ❌ ${videoId}: vocab relevance too low (${vocabOverlap}/${syllabusMeta.vocabWords.length} words, ${chunkOverlap} chunks)`);
+      // HARD REJECT: MUST have at least ONE chunk/collocation in actual transcript
+      if (chunkOverlap === 0) {
+        log(`    ❌ ${videoId}: HARD REJECT — no target chunks/collocations in transcript`);
         continue;
       }
     }
@@ -567,7 +566,7 @@ async function verifyVideo(videoId) {
   }
 }
 
-async function scoreExistingVideo(videoId, title, contentEn) {
+async function scoreExistingVideo(videoId, title, contentEn, syllabusMeta = null) {
   // Fetch video details
   const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet,statistics&id=${videoId}&key=${API_KEY}`;
   const detailsRes = await fetch(detailsUrl);
@@ -649,6 +648,26 @@ async function scoreExistingVideo(videoId, title, contentEn) {
   else if (captionQuality === 'manual_unpunctuated' || captionQuality === 'cached_unpunctuated') score += 15;
   else if (captionQuality === 'asr_punctuated') score += 10;
   else score -= 10;
+
+  // 11. Vocabulary relevance (30 pts max) — STRICTLY transcript-only
+  if (syllabusMeta && syllabusMeta.vocabWords.length > 0) {
+    // ONLY check actual spoken words in transcript — NOT title, NOT description, NOT tags
+    const transcriptLower = transcript.map(s => s.text.toLowerCase()).join(' ');
+
+    const vocabOverlap = syllabusMeta.vocabWords.filter(vw => transcriptLower.includes(vw)).length;
+    const vocabRatio = vocabOverlap / syllabusMeta.vocabWords.length;
+
+    const chunkOverlap = syllabusMeta.readChunks.filter(rc => transcriptLower.includes(rc)).length;
+    const chunkRatio = syllabusMeta.readChunks.length > 0 ? chunkOverlap / syllabusMeta.readChunks.length : 0;
+
+    const grammarWords = syllabusMeta.grammarFocus.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+    const grammarOverlap = grammarWords.filter(gw => transcriptLower.includes(gw)).length;
+    const grammarRatio = grammarWords.length > 0 ? grammarOverlap / grammarWords.length : 0;
+
+    const relevanceScore = Math.round((vocabRatio * 15) + (chunkRatio * 10) + (grammarRatio * 5));
+    score += relevanceScore;
+    log(`    📚 Vocab relevance: +${relevanceScore} (${vocabOverlap}/${syllabusMeta.vocabWords.length} words, ${chunkOverlap} chunks, ${grammarOverlap} grammar)`);
+  }
 
   log(`  📊 Existing video ${videoId} score: ${score} (duration: ${duration}s, ${Math.round(speechRate)} WPM, ${transcript.length} segments, ${captionQuality})`);
   return score;
@@ -1116,9 +1135,8 @@ function formatSegments(rawSegments) {
   log(`    After fragment merge: ${merged.length} segments`);
 
   // Step 4: Combine consecutive short non-flagged segments
-  // After aggressive turn splitting, we get tiny segments like "okay" (1w)
-  // Merge them with adjacent non-flagged segments until MIN_WORDS reached
-  // NEVER combine across turn boundaries (buffer or seg has flag)
+  // ONLY merge tiny fragments (<4 words) that don't end with terminal punctuation
+  // NEVER merge complete sentences (ending with .?!) — they are complete thoughts
   const combined = [];
   let buffer = merged[0] || null;
 
@@ -1128,9 +1146,14 @@ function formatSegments(rawSegments) {
     const bufHasFlag = buffer && buffer.isDialogueTurn;
     const segHasFlag = seg.isDialogueTurn;
 
-    // Combine if: buffer is short, both have no flags, and combined won't exceed HARD_CEILING
+    // Check if buffer ends with terminal punctuation (complete sentence)
+    const bufEndsSentence = buffer && /[.!?]"?\s*$/.test(buffer.text.trim());
+    const bufIsTiny = bufWords < 4;
+
+    // Combine ONLY if: buffer is tiny (<4 words) AND doesn't end with sentence punctuation
+    // AND no turn flags AND combined won't exceed HARD_CEILING
     const combinedWords = bufWords + seg.text.split(/\s+/).length;
-    if (buffer && !bufHasFlag && !segHasFlag && combinedWords <= HARD_CEILING) {
+    if (buffer && !bufHasFlag && !segHasFlag && bufIsTiny && !bufEndsSentence && combinedWords <= HARD_CEILING) {
       buffer = {
         text: buffer.text + ' ' + seg.text,
         start: buffer.start,
@@ -1308,7 +1331,7 @@ function saveTranscriptJSON(videoId, segments) {
           log(`🔍 AUDIT MODE: Evaluating current video ${videoId} against new candidates...`);
 
           // First, score the current video
-          const currentScore = await scoreExistingVideo(videoId, title, contentEn);
+          const currentScore = await scoreExistingVideo(videoId, title, contentEn, syllabusMeta);
           log(`📊 Current video score: ${currentScore}`);
 
           // Then search for better candidates
