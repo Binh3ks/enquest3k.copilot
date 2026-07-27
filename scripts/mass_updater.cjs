@@ -24,6 +24,13 @@ const API_KEY = process.env.YOUTUBE_API_KEY;
 const DEBUG_LOG = path.join(BASE, 'scripts/debug.log');
 const MAX_SEGMENTS = 40;
 
+// ────────────────────────────────────────────────────────────────────
+// CLI Argument Parsing
+// ────────────────────────────────────────────────────────────────────
+const args = process.argv.slice(2);
+const FORCE_SEARCH = args.includes('--force-search');
+const WEEK_ONLY = args.find(arg => /^\d{2}$/.test(arg))?.slice(0, 2) || null;
+
 // Check Node version for native fetch
 const NODE_MAJOR = parseInt(process.version.slice(1).split('.')[0]);
 const hasFetch = NODE_MAJOR >= 18;
@@ -42,6 +49,10 @@ const log = (...args) => {
   const timestamp = new Date().toISOString();
   logStream.write(`[${timestamp}] ${args.join(' ')}\n`);
 };
+
+if (FORCE_SEARCH) {
+  log('⚡ FORCE-SEARCH MODE: Will search for better videos even if current is working');
+}
 
 log('='.repeat(80));
 log('Pipeline v4 — Mass Updater STARTED');
@@ -100,17 +111,103 @@ function extractVideoId(filePath) {
 }
 
 // ────────────────────────────────────────────────────────────────────
-// YouTube API
+// Channel Intelligence — STRICT WHITELIST (hard reject)
 // ────────────────────────────────────────────────────────────────────
-async function searchVideo(query) {
+const CHANNEL_WHITELIST = [
+  // Primary ESL kids channels (shadowing-friendly)
+  'super simple songs',
+  'super simple english',
+  'english singsing',
+  'easy english',
+  'easy english对话',
+  'maple leaf learning',
+  'listen and share',
+  'daily english conversation',
+  'english for kids',
+  'kids english',
+  'english with kids',
+  'lets learn english',
+  'learn english with tv series',
+  'learn english kids',
+  // British / institutional
+  'british council',
+  'learnenglish kids',
+  'cbeebies',
+  'sesame street',
+  // Popular kids education
+  'blippi',
+  'gracie\'s corner',
+  'peppa pig official',
+  'cocomelon',
+  'little angel',
+  'dave and ava',
+  'nursery rhymes',
+  // Story/dialogue channels
+  'story for kids',
+  'kids stories',
+  'english story',
+  'animated story',
+  'read aloud',
+  // Conversation-focused
+  'english conversation',
+  'speaking english',
+  'english dialogue',
+  'talk english',
+  // Broad kids education that sometimes has good content
+  'khan academy kids',
+  'ted-ed',
+  'national geographic kids',
+  'pinkfong'
+];
+
+const CHANNEL_BLACKLIST = [
+  'news',
+  'cnn',
+  'bbc news',
+  'fox news',
+  'podcast',
+  'lecture',
+  'university',
+  'college',
+  'professor',
+  'academic',
+  'ielts',
+  'toefl',
+  'exam',
+  'test prep',
+  'gre',
+  'gmat'
+];
+
+const KIDS_KEYWORDS = ['kids', 'children', 'beginner', 'young learners', 'pre-a1', 'a1', 'family', 'simple', 'nursery', 'story'];
+const CONVERSATION_KEYWORDS = ['conversation', 'dialogue', 'story', 'speaking', 'talk', 'chat', 'shadowing', 'listen and repeat'];
+const NEGATIVE_KEYWORDS = ['grammar', 'lesson', 'tutorial', 'test', 'exam', 'ielts', 'toefl', 'advanced', 'vocabulary list', 'word list'];
+
+// ────────────────────────────────────────────────────────────────────
+// YouTube API — Enhanced Search with Syllabus Context
+// ────────────────────────────────────────────────────────────────────
+function buildSmartQuery(weekTitle, contentEn) {
+  // Extract key vocabulary from content_en (first 200 chars)
+  const vocab = contentEn
+    .toLowerCase()
+    .match(/\b(family|home|school|park|food|animal|friend|play|day|night|color|number|game|picnic|market|city|farm|beach|zoo|library|museum)\b/g);
+
+  const uniqueVocab = [...new Set(vocab || [])].slice(0, 3).join(' ');
+
+  // Build query: contextual vocab + ESL constraint
+  const baseQuery = uniqueVocab || weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 30);
+  return `${baseQuery} ESL kids conversation story A1`.trim();
+}
+
+async function searchVideo(weekTitle, contentEn) {
   if (!API_KEY) {
     throw new Error('YOUTUBE_API_KEY not found in environment');
   }
 
-  const searchQuery = `${query} ESL for kids conversation landscape`;
-  const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDuration=medium&maxResults=10&key=${API_KEY}`;
+  const searchQuery = buildSmartQuery(weekTitle, contentEn);
+  const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDuration=medium&videoDefinition=high&relevanceLanguage=en&maxResults=10&key=${API_KEY}`;
 
-  log(`  Searching YouTube: "${searchQuery}"`);
+  log(`  Smart query: "${searchQuery}"`);
 
   const searchRes = await fetch(searchUrl);
   if (!searchRes.ok) {
@@ -122,50 +219,182 @@ async function searchVideo(query) {
     throw new Error('No search results from YouTube API');
   }
 
-  log(`  Found ${searchData.items.length} candidates`);
+  log(`  Found ${searchData.items.length} candidates — evaluating...`);
 
-  // Check each video for duration and shorts filter
+  // Collect all candidates with scores
+  const candidates = [];
+
   for (const item of searchData.items) {
     const videoId = item.id.videoId;
-    const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoId}&key=${API_KEY}`;
+    const snippet = item.snippet;
 
-    await sleep(300); // Rate limit between detail calls
+    // Fetch video details
+    const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet,statistics&id=${videoId}&key=${API_KEY}`;
+    await sleep(300);
 
     const detailsRes = await fetch(detailsUrl);
     if (!detailsRes.ok) {
-      log(`  ⚠️  Video ${videoId} details fetch failed: ${detailsRes.status}`);
+      log(`    ⚠️  ${videoId}: details fetch failed`);
       continue;
     }
 
     const detailsData = await detailsRes.json();
     if (!detailsData.items || detailsData.items.length === 0) {
-      log(`  ⚠️  Video ${videoId} has no details`);
+      log(`    ⚠️  ${videoId}: no details`);
       continue;
     }
 
     const videoInfo = detailsData.items[0];
     const duration = parseDuration(videoInfo.contentDetails.duration);
     const title = videoInfo.snippet.title;
+    const description = videoInfo.snippet.description || '';
+    const channelTitle = videoInfo.snippet.channelTitle.toLowerCase();
     const tags = (videoInfo.snippet.tags || []).map(t => t.toLowerCase());
+    const viewCount = parseInt(videoInfo.statistics?.viewCount || 0);
 
-    log(`  Checking ${videoId}: "${title}" (${duration}s)`);
-
-    // Filter: must be ≥60s, not a Short
-    if (duration < 60) {
-      log(`    ❌ Too short: ${duration}s`);
+    // PRE-FILTERS (hard constraints)
+    if (duration < 60 || duration > 900) {
+      log(`    ❌ ${videoId}: duration ${duration}s out of range [60-900]`);
       continue;
     }
 
     if (title.toLowerCase().includes('short') || tags.includes('shorts')) {
-      log(`    ❌ Detected as Short`);
+      log(`    ❌ ${videoId}: detected as Short`);
       continue;
     }
 
-    log(`    ✅ SUITABLE: ${videoId} "${title}" (${duration}s)`);
-    return { videoId, title, duration };
+    // HARD REJECT: Channel must be on whitelist
+    const channelLower = videoInfo.snippet.channelTitle.toLowerCase();
+    const isWhitelisted = CHANNEL_WHITELIST.some(wl => channelLower.includes(wl));
+    if (!isWhitelisted) {
+      log(`    ❌ ${videoId}: channel "${videoInfo.snippet.channelTitle}" NOT on whitelist`);
+      continue;
+    }
+
+    // HARD REJECT: Blacklisted channel keywords
+    const isBlacklisted = CHANNEL_BLACKLIST.some(bl => channelLower.includes(bl));
+    if (isBlacklisted) {
+      log(`    ❌ ${videoId}: channel "${videoInfo.snippet.channelTitle}" is BLACKLISTED`);
+      continue;
+    }
+
+    // Fetch transcript for speech rate + availability check
+    const transcript = await fetchTranscript(videoId);
+    if (transcript.length === 0) {
+      log(`    ❌ ${videoId}: no transcript available`);
+      continue;
+    }
+
+    const totalWords = transcript.reduce((sum, seg) => sum + seg.text.split(/\s+/).length, 0);
+    const totalMinutes = duration / 60;
+    const speechRate = totalWords / totalMinutes;
+
+    log(`    ✅ ${videoId}: "${title}" | ${duration}s | ${transcript.length} segs | ${Math.round(speechRate)} WPM`);
+
+    // SCORING
+    let score = 0;
+    const reasons = [];
+
+    // 1. Kids keywords in title/description (30 pts)
+    const textLower = (title + ' ' + description).toLowerCase();
+    const kidsMatches = KIDS_KEYWORDS.filter(kw => textLower.includes(kw)).length;
+    if (kidsMatches > 0) {
+      const pts = Math.min(kidsMatches * 10, 30);
+      score += pts;
+      reasons.push(`kids:+${pts}`);
+    }
+
+    // 2. Conversation keywords (25 pts)
+    const convMatches = CONVERSATION_KEYWORDS.filter(kw => textLower.includes(kw)).length;
+    if (convMatches > 0) {
+      const pts = Math.min(convMatches * 10, 25);
+      score += pts;
+      reasons.push(`conv:+${pts}`);
+    }
+
+    // 3. Transcript quality (20 pts)
+    if (transcript.length >= 20 && transcript.length <= 50) {
+      score += 20;
+      reasons.push(`transcript:+20`);
+    } else if (transcript.length >= 10) {
+      score += 10;
+      reasons.push(`transcript:+10`);
+    }
+
+    // 4. Speech rate (WPM) — Pacing Floor + Ceiling
+    if (speechRate < 60) {
+      score -= 15;
+      reasons.push(`speech:-15 (dead air)`);
+    } else if (speechRate < 80) {
+      score += 10;
+      reasons.push(`speech:+10`);
+    } else if (speechRate <= 130) {
+      score += 15;
+      reasons.push(`speech:+15 (sweet spot)`);
+    } else if (speechRate <= 150) {
+      score += 5;
+      reasons.push(`speech:+5`);
+    } else {
+      score -= 10;
+      reasons.push(`speech:-10 (too fast)`);
+    }
+
+    // 5. Duration sweet spot 90-360s (10 pts)
+    if (duration >= 90 && duration <= 360) {
+      score += 10;
+      reasons.push(`duration:+10`);
+    }
+
+    // 6. View count (quality proxy, 10 pts)
+    if (viewCount >= 100000) {
+      score += 10;
+      reasons.push(`views:+10`);
+    } else if (viewCount >= 10000) {
+      score += 5;
+      reasons.push(`views:+5`);
+    }
+
+    // 7. Channel already validated by hard-reject filter above — no scoring needed
+
+    // 9. Negative keywords (-15 pts)
+    const negMatches = NEGATIVE_KEYWORDS.filter(kw => textLower.includes(kw)).length;
+    if (negMatches > 0) {
+      const penalty = negMatches * 5;
+      score -= penalty;
+      reasons.push(`negative:-${penalty}`);
+    }
+
+    log(`      Score: ${score} | ${reasons.join(', ')}`);
+
+    candidates.push({
+      videoId,
+      title,
+      duration,
+      transcript,
+      speechRate: Math.round(speechRate),
+      score,
+      reasons: reasons.join(', ')
+    });
   }
 
-  throw new Error('No suitable landscape video found (all were Shorts or too short)');
+  // Sort by score descending
+  candidates.sort((a, b) => b.score - a.score);
+
+  if (candidates.length === 0) {
+    throw new Error('No valid candidates after filtering (all failed transcript/duration checks)');
+  }
+
+  const winner = candidates[0];
+  log(`  🏆 WINNER: ${winner.videoId} "${winner.title}" | Score: ${winner.score} | ${winner.speechRate} WPM`);
+  log(`     Reasons: ${winner.reasons}`);
+
+  return {
+    videoId: winner.videoId,
+    title: winner.title,
+    duration: winner.duration,
+    transcript: winner.transcript,
+    score: winner.score
+  };
 }
 
 async function verifyVideo(videoId) {
@@ -183,11 +412,115 @@ async function verifyVideo(videoId) {
   }
 }
 
-function fetchTranscript(videoId) {
-  try {
-    log(`  Fetching transcript for ${videoId}...`);
-    const pyFile = path.join(BASE, 'scripts', 'tmp_transcript.py');
-    const pythonScript = `
+async function scoreExistingVideo(videoId, title, contentEn) {
+  // Fetch video details
+  const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet,statistics&id=${videoId}&key=${API_KEY}`;
+  const detailsRes = await fetch(detailsUrl);
+
+  if (!detailsRes.ok) {
+    log(`  ⚠️  Could not fetch details for existing video ${videoId}`);
+    return 0;
+  }
+
+  const detailsData = await detailsRes.json();
+  if (!detailsData.items || detailsData.items.length === 0) {
+    log(`  ⚠️  No details for existing video ${videoId}`);
+    return 0;
+  }
+
+  const videoInfo = detailsData.items[0];
+  const duration = parseDuration(videoInfo.contentDetails.duration);
+  const description = videoInfo.snippet.description || '';
+  const channelTitle = videoInfo.snippet.channelTitle.toLowerCase();
+  const tags = (videoInfo.snippet.tags || []).map(t => t.toLowerCase());
+  const viewCount = parseInt(videoInfo.statistics?.viewCount || 0);
+
+  // Fetch transcript
+  const transcript = await fetchTranscript(videoId);
+  if (transcript.length === 0) {
+    log(`  ⚠️  No transcript for existing video ${videoId}`);
+    return 0;
+  }
+
+  const totalWords = transcript.reduce((sum, seg) => sum + seg.text.split(/\s+/).length, 0);
+  const totalMinutes = duration / 60;
+  const speechRate = totalWords / totalMinutes;
+
+  // SCORING (same logic as searchVideo)
+  let score = 0;
+  const textLower = (title + ' ' + description).toLowerCase();
+
+  // 1. Kids keywords (30 pts)
+  const kidsMatches = KIDS_KEYWORDS.filter(kw => textLower.includes(kw)).length;
+  if (kidsMatches > 0) score += Math.min(kidsMatches * 10, 30);
+
+  // 2. Conversation keywords (25 pts)
+  const convMatches = CONVERSATION_KEYWORDS.filter(kw => textLower.includes(kw)).length;
+  if (convMatches > 0) score += Math.min(convMatches * 10, 25);
+
+  // 3. Transcript quality (20 pts)
+  if (transcript.length >= 20 && transcript.length <= 50) score += 20;
+  else if (transcript.length >= 10) score += 10;
+
+  // 4. Speech rate (WPM) — Pacing Floor + Ceiling
+  if (speechRate < 60) score -= 15;
+  else if (speechRate < 80) score += 10;
+  else if (speechRate <= 130) score += 15;
+  else if (speechRate <= 150) score += 5;
+  else score -= 10;
+
+  // 5. Duration sweet spot (10 pts)
+  if (duration >= 90 && duration <= 360) score += 10;
+
+  // 6. View count (10 pts)
+  if (viewCount >= 100000) score += 10;
+  else if (viewCount >= 10000) score += 5;
+
+  // 7. Channel whitelist (15 pts)
+  if (CHANNEL_WHITELIST.some(wl => channelTitle.includes(wl))) score += 15;
+
+  // 8. Channel blacklist (-20 pts)
+  if (CHANNEL_BLACKLIST.some(bl => channelTitle.includes(bl))) score -= 20;
+
+  // 9. Negative keywords (-15 pts)
+  const negMatches = NEGATIVE_KEYWORDS.filter(kw => textLower.includes(kw)).length;
+  if (negMatches > 0) score -= negMatches * 5;
+
+  log(`  📊 Existing video ${videoId} score: ${score} (duration: ${duration}s, ${Math.round(speechRate)} WPM, ${transcript.length} segments)`);
+  return score;
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Rate Limiting & Retry Logic
+// ────────────────────────────────────────────────────────────────────
+const TRANSCRIPT_DELAY_MS = 1500; // 1.5s between transcript calls (prevents IP ban)
+const MAX_RETRIES = 2;
+let lastTranscriptCall = 0;
+
+async function rateLimitedDelay() {
+  const now = Date.now();
+  const timeSinceLastCall = now - lastTranscriptCall;
+  if (timeSinceLastCall < TRANSCRIPT_DELAY_MS) {
+    const waitTime = TRANSCRIPT_DELAY_MS - timeSinceLastCall;
+    await sleep(waitTime);
+  }
+  lastTranscriptCall = Date.now();
+}
+
+async function fetchTranscript(videoId) {
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      if (attempt > 0) {
+        const backoffMs = Math.pow(2, attempt) * 2000; // 4s, 8s
+        log(`  ⏳ Retry ${attempt}/${MAX_RETRIES} for ${videoId} (waiting ${backoffMs}ms)...`);
+        await sleep(backoffMs);
+      }
+
+      log(`  Fetching transcript for ${videoId}...`);
+      await rateLimitedDelay();
+
+      const pyFile = path.join(BASE, 'scripts', 'tmp_transcript.py');
+      const pythonScript = `
 from youtube_transcript_api import YouTubeTranscriptApi
 import json, sys
 
@@ -211,113 +544,260 @@ for seg in transcript.snippets:
 print(json.dumps(segments))
 `.trim();
 
-    fs.writeFileSync(pyFile, pythonScript, 'utf8');
-    const output = execSync(`python3 "${pyFile}"`, {
-      encoding: 'utf8',
-      timeout: 30000,
-      stdio: ['pipe', 'pipe', 'pipe']
-    });
+      fs.writeFileSync(pyFile, pythonScript, 'utf8');
+      const output = execSync(`python3 "${pyFile}"`, {
+        encoding: 'utf8',
+        timeout: 30000,
+        stdio: ['pipe', 'pipe', 'pipe']
+      });
 
-    try { fs.unlinkSync(pyFile); } catch (_) {}
+      try { fs.unlinkSync(pyFile); } catch (_) {}
 
-    const segments = JSON.parse(output.trim());
-    log(`  ✅ Fetched ${segments.length} raw segments`);
-    return segments;
-  } catch (err) {
-    log(`  ❌ Transcript fetch failed: ${err.message}`);
-    try { fs.unlinkSync(path.join(BASE, 'scripts', 'tmp_transcript.py')); } catch (_) {}
-    return [];
+      const segments = JSON.parse(output.trim());
+
+      // Check for IP block (0 segments = likely blocked)
+      if (segments.length === 0 && attempt < MAX_RETRIES) {
+        log(`  ⚠️  Got 0 segments — possible IP block, retrying...`);
+        continue;
+      }
+
+      log(`  ✅ Fetched ${segments.length} raw segments`);
+      return segments;
+    } catch (err) {
+      log(`  ❌ Transcript fetch failed: ${err.message}`);
+      try { fs.unlinkSync(path.join(BASE, 'scripts', 'tmp_transcript.py')); } catch (_) {}
+
+      if (attempt < MAX_RETRIES) {
+        log(`  ⚠️  Retrying due to error...`);
+        continue;
+      }
+      return [];
+    }
   }
+  return [];
 }
 
 // ────────────────────────────────────────────────────────────────────
-// Transcript Formatting (Rule 6)
+// Transcript Formatting — Grammar-Aware (Phase 2)
 // ────────────────────────────────────────────────────────────────────
-function formatSegments(rawSegments) {
-  log(`  Formatting ${rawSegments.length} raw segments...`);
 
-  // Step 1: Deduplicate
-  const seen = new Set();
-  const unique = [];
-  for (const seg of rawSegments) {
-    const key = seg.text.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
-    if (!seen.has(key) && key.length > 2) {
-      seen.add(key);
-      unique.push(seg);
-    }
-  }
-  log(`    After dedup: ${unique.length} segments`);
+const CONJUNCTIONS = /^(and|but|because|so|then|or|yet|for|nor|when|if|while|that|which|who|whom|where|how|what|why|oh|well|yes|no|okay|ok)\b/i;
 
-  // Step 2: Clean each segment
-  const cleaned = [];
-  for (const seg of unique) {
+// Words that cannot end a complete sentence (function words / incomplete endings)
+// These indicate the sentence is cut off mid-thought
+const INCOMPLETE_ENDINGS = /^(I|he|she|it|we|they|a|an|the|my|your|his|her|its|our|their|to|in|on|at|for|with|and|but|or|so|yet|if|when|while|because|that|which|who|whom|where|how|what|why|is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|please|really|very|just|also|too|about|over|out|up|down|back|here|there|some|any|more|much|many|quite|rather)\b/i;
+
+const MIN_WORDS = 10;   // Soft minimum — prefer longer segments
+const MAX_WORDS = 35;   // Soft maximum — allow up to 35 if it preserves sentence integrity
+const HARD_CEILING = 50; // Absolute maximum — must never exceed this, even for incomplete sentences
+
+function isCompleteSentence(text) {
+  const t = text.trim();
+  if (t.length < 3) return false;
+
+  // Must end with sentence-ending punctuation
+  if (!/[.!?]"?\s*$/.test(t)) return false;
+
+  // Starts with "Yes/No/Okay/Sure/Great/Good/Thank" → likely complete short response
+  if (/^(Yes|No|Okay|Ok|Sure|Right|Exactly|Correct|Great|Good|Well done|Thank you|Thanks)\b/i.test(t)) return true;
+
+  // Check last word for ANY sentence length — period alone doesn't guarantee completeness
+  const clean = t.replace(/[.!?]"?\s*$/, '').trim();
+  const words = clean.split(/\s+/);
+  if (words.length === 0) return false;
+
+  const lastWord = words[words.length - 1].toLowerCase().replace(/[^a-z]/g, '');
+  if (INCOMPLETE_ENDINGS.test(lastWord)) return false;
+
+  return true;
+}
+
+function isFragment(text) {
+  const t = text.trim();
+  if (t.length < 3) return true;
+  const words = t.split(/\s+/);
+  if (words.length < 4) return true;
+  if (/^[a-z]/.test(t)) return true;
+  if (CONJUNCTIONS.test(t)) return true;
+  if (!/[.!?]$/.test(t)) return true;
+  return false;
+}
+
+function splitIntoSentences(segments) {
+  // Split each raw segment into individual sentence-level chunks
+  const result = [];
+
+  for (const seg of segments) {
     let text = seg.text;
 
     // Remove markers
     text = text.replace(/>>+\s*/g, '').trim();
     text = text.replace(/\[.*?\]/g, '').trim();
+    if (!text || text.length < 3) continue;
 
-    if (!text) continue;
+    // Split at sentence-ending punctuation followed by a space and uppercase letter
+    // e.g. "Hello world. How are you?" → ["Hello world.", "How are you?"]
+    const parts = text.split(/(?<=[.!?])\s+(?=[A-Z])/);
 
-    // Capitalize first letter
-    text = text.charAt(0).toUpperCase() + text.slice(1);
-
-    // Ensure ends with punctuation
-    if (!/[.!?]$/.test(text)) {
-      text += '.';
-    }
-
-    cleaned.push({
-      text,
-      start: seg.start,
-      duration: seg.duration
-    });
-  }
-  log(`    After cleaning: ${cleaned.length} segments`);
-
-  // Step 3: If ≤40, we're done
-  if (cleaned.length <= MAX_SEGMENTS) {
-    return cleaned.map((seg, index) => ({
-      id: index + 1,
-      text: seg.text,
-      vi: null,
-      start: seg.start,
-      duration: seg.duration
-    }));
-  }
-
-  // Step 4: Merge adjacent fragments to get ≤40
-  log(`    Merging to reach ≤${MAX_SEGMENTS}...`);
-  const merged = [cleaned[0]];
-  for (let i = 1; i < cleaned.length; i++) {
-    if (merged.length >= MAX_SEGMENTS) break;
-
-    const prev = merged[merged.length - 1];
-    const curr = cleaned[i];
-
-    const gap = curr.start - (prev.start + prev.duration);
-    const combinedText = prev.text.replace(/\.$/, '') + ' ' + curr.text.charAt(0).toLowerCase() + curr.text.slice(1);
-
-    // Merge if within 2s gap and combined < 120 chars
-    if (gap < 2.0 && combinedText.length < 120) {
-      prev.text = combinedText;
-      prev.duration = (curr.start + curr.duration) - prev.start;
+    if (parts.length <= 1) {
+      // No split — keep as one segment
+      result.push({ text: text.trim(), start: seg.start, duration: seg.duration });
     } else {
-      merged.push(curr);
+      // Distribute time proportionally by word count
+      const totalWords = text.split(/\s+/).length;
+      let cursor = seg.start;
+
+      for (const part of parts) {
+        const partWords = part.trim().split(/\s+/).length;
+        const proportion = partWords / totalWords;
+        const partDuration = seg.duration * proportion;
+
+        result.push({
+          text: part.trim(),
+          start: cursor,
+          duration: Math.round(partDuration * 100) / 100
+        });
+        cursor += partDuration;
+      }
     }
   }
 
-  // Step 5: Truncate to exactly 40 if still over
-  const final = merged.slice(0, MAX_SEGMENTS);
-  log(`    Final count: ${final.length} segments`);
+  return result;
+}
 
-  return final.map((seg, index) => ({
-    id: index + 1,
-    text: seg.text,
+function mergeFragments(sentences) {
+  // Build complete sentences by chaining fragments
+  // PRIORITY: Natural sentence integrity > word count limits
+  if (sentences.length === 0) return [];
+
+  const result = [];
+  let current = { text: sentences[0].text, start: sentences[0].start, end: sentences[0].start + sentences[0].duration };
+
+  for (let i = 1; i < sentences.length; i++) {
+    const seg = sentences[i];
+    const currentComplete = isCompleteSentence(current.text);
+    const currentWords = current.text.split(/\s+/).length;
+    const segLow = /^[a-z]/.test(seg.text.trim());
+    const segConj = CONJUNCTIONS.test(seg.text.trim());
+    const segFrag = isFragment(seg.text);
+    const mergedWords = currentWords + seg.text.split(/\s+/).length;
+
+    // RULE 1: Always merge if current is incomplete — never leave dangling fragments
+    // RULE 2: Always merge if next is a fragment/continuation (starts lowercase, is conjunction, etc.)
+    // RULE 3: Respect MAX_WORDS only when current is already a complete sentence
+    // RULE 4: HARD CEILING — never exceed HARD_CEILING words, even for incomplete sentences
+    const mustMerge = !currentComplete || segFrag || segLow || segConj;
+    const withinSoftLimit = mergedWords <= MAX_WORDS;
+    const withinHardCeiling = mergedWords <= HARD_CEILING;
+
+    const shouldMerge = (mustMerge && withinHardCeiling) || (withinSoftLimit && !currentComplete);
+
+    if (shouldMerge) {
+      current.text += ' ' + seg.text;
+      current.end = seg.start + seg.duration;
+    } else {
+      // Save current and start new
+      result.push({
+        text: current.text.trim(),
+        start: current.start,
+        duration: Math.round((current.end - current.start) * 100) / 100
+      });
+      current = { text: seg.text, start: seg.start, end: seg.start + seg.duration };
+    }
+  }
+
+  // Push last
+  result.push({
+    text: current.text.trim(),
+    start: current.start,
+    duration: Math.round((current.end - current.start) * 100) / 100
+  });
+
+  return result;
+}
+
+function groupShortSentences(segments, target) {
+  // If we have more than target, merge consecutive short sentences
+  if (segments.length <= target) return segments;
+
+  const result = [];
+  let i = 0;
+
+  while (i < segments.length && result.length < target) {
+    const curr = segments[i];
+    const currWords = curr.text.split(/\s+/).length;
+    const remaining = segments.length - i;
+    const slotsLeft = target - result.length;
+
+    // Merge with next if: we still need to reduce, current is short, and there's a next
+    if (remaining > slotsLeft && currWords < 12 && i + 1 < segments.length) {
+      const next = segments[i + 1];
+      result.push({
+        text: curr.text + ' ' + next.text,
+        start: curr.start,
+        duration: Math.round(((next.start + next.duration) - curr.start) * 100) / 100
+      });
+      i += 2;
+    } else {
+      result.push(curr);
+      i++;
+    }
+  }
+
+  return result;
+}
+
+function polishSegment(text) {
+  let t = text.trim();
+  // Remove leading/trailing whitespace
+  // Capitalize first letter
+  if (t.length > 0) t = t.charAt(0).toUpperCase() + t.slice(1);
+  // Ensure ends with punctuation
+  if (!/[.!?]"?\s*$/.test(t)) t += '.';
+  return t;
+}
+
+function formatSegments(rawSegments) {
+  log(`  Formatting ${rawSegments.length} raw segments...`);
+
+  // Step 1: Split multi-sentence segments into sentence-level chunks
+  const split = splitIntoSentences(rawSegments);
+  log(`    After sentence split: ${split.length} chunks`);
+
+  // Step 2: Deduplicate by normalized text
+  const seen = new Set();
+  const deduped = [];
+  for (const seg of split) {
+    const key = seg.text.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+    if (!seen.has(key) && key.length > 3) {
+      seen.add(key);
+      deduped.push(seg);
+    }
+  }
+  log(`    After dedup: ${deduped.length} chunks`);
+
+  // Step 3: Merge fragments into complete sentences
+  const merged = mergeFragments(deduped);
+  log(`    After fragment merge: ${merged.length} segments`);
+
+  // Step 4: Group short sentences to fit ≤ MAX_SEGMENTS
+  let final = merged;
+  if (merged.length > MAX_SEGMENTS) {
+    final = groupShortSentences(merged, MAX_SEGMENTS);
+    log(`    After grouping: ${final.length} segments`);
+  }
+
+  // Step 5: Polish — capitalize, punctuation
+  const polished = final.map((seg, i) => ({
+    id: i + 1,
+    text: polishSegment(seg.text),
     vi: null,
     start: seg.start,
     duration: seg.duration
   }));
+
+  log(`    Final count: ${polished.length} segments`);
+  return polished;
 }
 
 // ────────────────────────────────────────────────────────────────────
@@ -411,8 +891,9 @@ function saveTranscriptJSON(videoId, segments) {
     for (const weekDir of allWeekDirs) {
       const weekNum = weekDir.replace('week_', '');
 
-      // TEMP FILTER: Week 01 ONLY during debugging
-      if (weekNum !== '01') continue;
+      // Optional: filter by week number (e.g., "01")
+      if (WEEK_ONLY && weekNum !== WEEK_ONLY) continue;
+
       const advPath = path.join(BASE, 'src/data/weeks', weekDir, 'shadowing.js');
       const easyPath = path.join(BASE, 'src/data/weeks_easy', weekDir, 'shadowing.js');
 
@@ -428,22 +909,50 @@ function saveTranscriptJSON(videoId, segments) {
 
       try {
         const title = extractTitle(advPath) || extractContentEn(advPath).slice(0, 50) || `Week ${weekNum}`;
+        const contentEn = extractContentEn(advPath);
         let videoId = extractVideoId(advPath);
         let replaced = false;
+        let result = null;
 
         log(`Title: "${title}"`);
         log(`Current videoId: ${videoId || 'NONE'}`);
 
-        // Verify current video
-        if (videoId) {
+        // Verify current video (or skip if --force-search)
+        if (videoId && !FORCE_SEARCH) {
           const isWorking = await verifyVideo(videoId);
           if (isWorking) {
             log(`✅ Current video ${videoId} is WORKING`);
             summary.keptVideos.push({ week: weekNum, videoId, title });
           } else {
             log(`❌ Current video ${videoId} is DEAD — searching for replacement...`);
-            const searchQuery = title.replace(/[^a-zA-Z0-9 ]/g, ' ').trim();
-            const result = await searchVideo(searchQuery);
+            result = await searchVideo(title, contentEn);
+            videoId = result.videoId;
+            replaced = true;
+            summary.replacedVideos.push({
+              week: weekNum,
+              oldVideoId: videoId,
+              newVideoId: result.videoId,
+              title: result.title
+            });
+            log(`🆕 Replacement found: ${videoId} "${result.title}" (${result.duration}s)`);
+          }
+        } else if (videoId && FORCE_SEARCH) {
+          // --force-search: Audit current video against new candidates
+          log(`🔍 AUDIT MODE: Evaluating current video ${videoId} against new candidates...`);
+
+          // First, score the current video
+          const currentScore = await scoreExistingVideo(videoId, title, contentEn);
+          log(`📊 Current video score: ${currentScore}`);
+
+          // Then search for better candidates
+          result = await searchVideo(title, contentEn);
+
+          // Replace only if new candidate scores higher (+20 points threshold)
+          if (currentScore >= 60 && result.score < currentScore + 20) {
+            log(`📊 Keeping current video (score: ${currentScore} vs ${result.score})`);
+            summary.keptVideos.push({ week: weekNum, videoId, title });
+          } else {
+            log(`📊 Replacing: current=${currentScore}, new=${result.score}`);
             videoId = result.videoId;
             replaced = true;
             summary.replacedVideos.push({
@@ -457,8 +966,7 @@ function saveTranscriptJSON(videoId, segments) {
         } else {
           // No videoId at all — search for one
           log(`⚠️  No videoId found — searching...`);
-          const searchQuery = title.replace(/[^a-zA-Z0-9 ]/g, ' ').trim();
-          const result = await searchVideo(searchQuery);
+          result = await searchVideo(title, contentEn);
           videoId = result.videoId;
           replaced = true;
           summary.replacedVideos.push({
@@ -470,8 +978,15 @@ function saveTranscriptJSON(videoId, segments) {
           log(`🆕 Found: ${videoId} "${result.title}" (${result.duration}s)`);
         }
 
-        // Fetch transcript
-        const rawSegments = fetchTranscript(videoId);
+        // Fetch transcript (use cached from search if available, otherwise fetch fresh)
+        let rawSegments;
+        if (result && result.transcript && result.transcript.length > 0) {
+          rawSegments = result.transcript;
+          log(`  Using ${rawSegments.length} segments from search cache`);
+        } else {
+          rawSegments = await fetchTranscript(videoId);
+        }
+
         if (rawSegments.length === 0) {
           throw new Error(`No transcript available for ${videoId}`);
         }
