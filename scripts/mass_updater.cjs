@@ -265,47 +265,49 @@ const VIDEO_BLACKLIST = [
   '5cYMu3RTMJU',  // Days of the Week — not school vocabulary
   '7isSwerYaQc',  // School Conversation — no target chunks
   'Fw0rdSHzWFY',  // Greeting — no target chunks
+  'FZPmnw4Ws5A',  // Too long (456s), broken punctuation
 ];
 
 const KIDS_KEYWORDS = ['kids', 'children', 'beginner', 'young learners', 'pre-a1', 'a1', 'family', 'simple', 'nursery', 'story'];
 const CONVERSATION_KEYWORDS = ['conversation', 'dialogue', 'story', 'speaking', 'talk', 'chat', 'shadowing', 'listen and repeat'];
 const NEGATIVE_KEYWORDS = ['grammar', 'lesson', 'tutorial', 'test', 'exam', 'ielts', 'toefl', 'advanced', 'vocabulary list', 'word list'];
 
+// Anti-dangling: words that should NOT end a sentence (dangling prepositions/articles)
+const DANGLING_WORDS = /^(and|to|the|a|an|my|your|his|her|its|our|their|in|on|at|for|with|is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|but|or|so|yet|if|when|while|that|which|who|whom|where|how|what|why|of|from|by|about|into|through|during|before|after|above|below|between|under|over)\.?\s*$/i;
+
 // ────────────────────────────────────────────────────────────────────
 // YouTube API — Enhanced Search with Syllabus Context
 // ────────────────────────────────────────────────────────────────────
 function buildSmartQuery(syllabusMeta, weekTitle) {
-  // YouTube SEO: use simple nouns and topic, NOT grammar terms
-  // Grammar terms like "Subject Pronouns & Verb to be" return trash results
+  // YouTube SEO: simple nouns, NO quotes, NO grammar terms
   const parts = [];
 
-  // 1. Use top 4 PRIMARY NOUNS from vocab (not grammar terms)
+  // 1. Use top 3 PRIMARY NOUNS from vocab
   if (syllabusMeta.vocabWords.length > 0) {
-    parts.push(syllabusMeta.vocabWords.slice(0, 4).join(' '));
+    parts.push(syllabusMeta.vocabWords.slice(0, 3).join(' '));
   }
 
   // 2. Use topic if it contains useful nouns
   if (syllabusMeta.topic) {
-    // Strip non-noun words, keep meaningful terms
     const cleanTopic = syllabusMeta.topic
       .replace(/[^a-zA-Z0-9 ]/g, '')
       .split(/\s+/)
       .filter(w => w.length > 2 && !/^(the|and|for|with|is|are|was|were|my|your|his|her)$/i.test(w))
-      .slice(0, 3)
+      .slice(0, 2)
       .join(' ');
     if (cleanTopic) parts.push(cleanTopic);
   }
 
   // 3. Fallback to week title (cleaned)
   if (parts.length === 0) {
-    parts.push(weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 30));
+    parts.push(weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 20));
   }
 
   const nouns = parts.join(' ');
-  return `"ESL kids" ${nouns} conversation dialogue`.trim();
+  return `ESL kids ${nouns} conversation`.trim();
 }
 
-async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
+async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = '99') {
   if (!API_KEY) {
     throw new Error('YOUTUBE_API_KEY not found in environment');
   }
@@ -369,6 +371,13 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
 
     if (duration < 60 || duration > 900) {
       log(`    ❌ ${videoId}: duration ${duration}s out of range [60-900]`);
+      continue;
+    }
+
+    // STRICT DURATION LIMIT for early weeks (W01-10): max 300s, sweet spot 60-180s
+    const weekNumInt = parseInt(weekNum || '99');
+    if (weekNumInt <= 10 && duration > 300) {
+      log(`    ❌ ${videoId}: duration ${duration}s > 300s limit for W${weekNumInt}`);
       continue;
     }
 
@@ -1031,7 +1040,7 @@ function mergeFragments(sentences) {
     const currentWords = current.text.split(/\s+/).length;
     const segLow = /^[a-z]/.test(seg.text.trim());
     const segConj = CONJUNCTIONS.test(seg.text.trim());
-    const segFrag = isFragment(seg.text);
+    const segFrag = isFragment(seg.text) || seg.isFragment; // Also check anti-dangling flag
     const mergedWords = currentWords + seg.text.split(/\s+/).length;
 
     // RULE 0: NEVER merge across dialogue turn boundaries
@@ -1049,7 +1058,7 @@ function mergeFragments(sentences) {
     // RULE 2: Always merge if next is a fragment/continuation (starts lowercase, is conjunction, etc.)
     // RULE 3: Respect MAX_WORDS only when current is already a complete sentence
     // RULE 4: HARD CEILING — never exceed HARD_CEILING words, even for incomplete sentences
-    const mustMerge = !currentComplete || segFrag || segLow || segConj;
+    const mustMerge = !currentComplete || segFrag || segLow || segConj || current.isFragment; // Also check current segment's anti-dangling flag
     const withinSoftLimit = mergedWords <= MAX_WORDS;
     const withinHardCeiling = mergedWords <= HARD_CEILING;
 
@@ -1127,6 +1136,19 @@ function formatSegments(rawSegments) {
   const split = splitIntoSentences(rawSegments);
   log(`    After sentence split: ${split.length} chunks`);
   log(`    Dialogue turns detected: ${split.filter(s => s.isDialogueTurn).length}`);
+
+  // Step 1.5: Anti-dangling regex — strip periods from dangling prepositions/articles
+  // YouTube auto-captions often put periods after prepositions: "Walk slowly and." → merge with next
+  for (let i = 0; i < split.length; i++) {
+    const text = split[i].text.trim();
+    // Check if segment ends with a dangling word + period
+    if (DANGLING_WORDS.test(text) && /[.!?]$/.test(text)) {
+      // Strip the period — this is not a real sentence ending
+      split[i].text = text.replace(/[.!?]+$/, '').trim();
+      split[i].isFragment = true; // Mark as needing merge
+      log(`    🔧 Anti-dangling: stripped period from "${text.slice(-20)}"`);
+    }
+  }
 
   // Step 2: Deduplicate by normalized text
   const seen = new Set();
@@ -1326,7 +1348,7 @@ function saveTranscriptJSON(videoId, segments) {
             summary.keptVideos.push({ week: weekNum, videoId, title });
           } else {
             log(`❌ Current video ${videoId} is DEAD — searching for replacement...`);
-            result = await searchVideo(title, contentEn, syllabusMeta);
+            result = await searchVideo(title, contentEn, syllabusMeta, weekNum);
             videoId = result.videoId;
             replaced = true;
             summary.replacedVideos.push({
@@ -1346,7 +1368,7 @@ function saveTranscriptJSON(videoId, segments) {
           log(`📊 Current video score: ${currentScore}`);
 
           // Then search for better candidates
-          result = await searchVideo(title, contentEn, syllabusMeta);
+          result = await searchVideo(title, contentEn, syllabusMeta, weekNum);
 
           // Replace if: new score is higher OR new has better caption quality
           const captionUpgrade = result.captionQuality === 'manual_punctuated' && currentScore < 90;
@@ -1371,7 +1393,7 @@ function saveTranscriptJSON(videoId, segments) {
         } else {
           // No videoId at all — search for one
           log(`⚠️  No videoId found — searching...`);
-          result = await searchVideo(title, contentEn, syllabusMeta);
+          result = await searchVideo(title, contentEn, syllabusMeta, weekNum);
           videoId = result.videoId;
           replaced = true;
           summary.replacedVideos.push({
