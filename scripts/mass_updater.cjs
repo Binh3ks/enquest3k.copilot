@@ -472,12 +472,12 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null) {
     }
 
     // 10. Caption quality (25 pts max)
-    if (captionQuality === 'manual_punctuated') {
+    if (captionQuality === 'manual_punctuated' || captionQuality === 'cached_punctuated') {
       score += 25;
-      reasons.push(`captions:+25 (manual+punctuated)`);
-    } else if (captionQuality === 'manual_unpunctuated') {
+      reasons.push(`captions:+25 (${captionQuality})`);
+    } else if (captionQuality === 'manual_unpunctuated' || captionQuality === 'cached_unpunctuated') {
       score += 15;
-      reasons.push(`captions:+15 (manual)`);
+      reasons.push(`captions:+15 (${captionQuality})`);
     } else if (captionQuality === 'asr_punctuated') {
       score += 10;
       reasons.push(`captions:+10 (asr+punctuated)`);
@@ -645,8 +645,8 @@ async function scoreExistingVideo(videoId, title, contentEn) {
   if (negMatches > 0) score -= negMatches * 5;
 
   // 10. Caption quality (25 pts max)
-  if (captionQuality === 'manual_punctuated') score += 25;
-  else if (captionQuality === 'manual_unpunctuated') score += 15;
+  if (captionQuality === 'manual_punctuated' || captionQuality === 'cached_punctuated') score += 25;
+  else if (captionQuality === 'manual_unpunctuated' || captionQuality === 'cached_unpunctuated') score += 15;
   else if (captionQuality === 'asr_punctuated') score += 10;
   else score -= 10;
 
@@ -672,6 +672,31 @@ async function rateLimitedDelay() {
 }
 
 async function fetchTranscript(videoId) {
+  // First, check for cached transcript
+  const cachePath = path.join(BASE, 'src/data/video_transcripts_by_id/cleaned', `${videoId}.json`);
+  if (fs.existsSync(cachePath)) {
+    try {
+      const cached = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+      if (cached.segments && cached.segments.length > 0) {
+        log(`  📦 Using cached transcript for ${videoId} (${cached.segments.length} segments)`);
+
+        // Check quality from cached data
+        const allText = cached.segments.map(s => s.text).join(' ');
+        const hasPunctuation = /[.!?]/.test(allText);
+        const quality = hasPunctuation ? 'cached_punctuated' : 'cached_unpunctuated';
+
+        return {
+          segments: cached.segments,
+          quality,
+          isGenerated: false,
+          hasPunctuation
+        };
+      }
+    } catch (e) {
+      log(`  ⚠️  Cache read error: ${e.message}`);
+    }
+  }
+
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     try {
       if (attempt > 0) {
