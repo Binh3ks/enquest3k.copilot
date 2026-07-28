@@ -1,10 +1,18 @@
 export default {
   title: "My New Classroom",
-  videoId: "5cYMu3RTMJU",
+  videoId: "I3eu3qpq0GE",
   content_en: "Hi! My name is Alex. I am at school today. I am in Grade 1. This is my desk and chair. I **sit next to** my friend Lily. I have a pen and a **book in my bag**. I can see a picture **on the wall** and a big door **at the front**. My teacher is kind. I like my classroom! **Every day** is a **happy day**.",
   script: [
-    { id: 1, text: "Theme 3 Day you play baseball this afternoon? What day is it today? It’s Wednesday. Sorry, I can’t. I have a piano lesson. Let’s play on Friday. Sounds good. Monday, Tuesday, Wednesday. Thursday, Friday, Saturday, Sunday. It's Monday. It's Sunday. It's Wednesday, Wednesday, Wednesday. Today is Friday, Friday, Friday.", vi: null, start: 3.38, duration: 127.37 },
-    { id: 2, text: "Monday, Monday. Tuesday, Tuesday. Wednesday, Wednesday. Thursday, Thursday. Friday, Friday. Saturday, Saturday. Sunday, Sunday. What day is it? It's Tuesday. I'm hungry. I had an apple yesterday. There's an orange. Umm~ Yummy! I had an orange yesterday. There's a tomato. What day is today? It's Thursday. Wake up! It's Friday!", vi: null, start: 130.74341463414635, duration: 93.12 },
-    { id: 3, text: "Sorry? Friday! It's Fri.... I can fly! Beautiful!", vi: null, start: 223.8565934065934, duration: 16.9 }
+    { id: 1, text: "Schools in the At secondary school, lessons usually start at Students study lots of different subjects. Science, maths, music, and They also learn to cook.", vi: null, start: 1.12, duration: 40.22 },
+    { id: 2, text: "Students have their lunch at school.", vi: null, start: 41.339999999999996, duration: 6.82 },
+    { id: 3, text: "They eat in the school canteen.", vi: null, start: 44.64, duration: 4.34 },
+    { id: 4, text: "You can have a school meal or you can bring your lunch from home.", vi: null, start: 48.98, duration: 5.76 },
+    { id: 5, text: "Lunchtime is usually 1 hour.", vi: null, start: 54.736, duration: 3.28 },
+    { id: 6, text: "There's always time to play games or talk with friends in the playground.", vi: null, start: 58.01714285714286, duration: 6.53 },
+    { id: 7, text: "Secondary schools often have a school uniform, trousers for boys, and trousers or a skirt for girls. Then a shirt, a tie, and a jacket or a jumper.", vi: null, start: 64.552, duration: 16.57 },
+    { id: 8, text: "Afternoon lessons usually finish Secondary schools usually have after school clubs.", vi: null, start: 81.12, duration: 10.46 },
+    { id: 9, text: "There are sports clubs like basketball and gymnastics and other clubs like dance club.", vi: null, start: 91.58, duration: 14.58 },
+    { id: 10, text: "You can play an instrument in the school orchestra, In the UK, the school summer holidays are six weeks.", vi: null, start: 104.08, duration: 11.78 },
+    { id: 11, text: "They start in July and they end in September.", vi: null, start: 115.86, duration: 6.02 }
   ]
 };
