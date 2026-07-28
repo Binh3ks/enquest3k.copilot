@@ -238,7 +238,17 @@ const CHANNEL_WHITELIST = [
   'khan academy kids',
   'ted-ed',
   'national geographic kids',
-  'pinkfong'
+  'pinkfong',
+  // Additional ESL channels found in search results
+  'slow stories english',
+  'learnenglishwithnks',
+  'english learning',
+  'english singing',
+  'english with',
+  'esl',
+  'learn english with',
+  'story toon',
+  'rainbow sky',
 ];
 
 const CHANNEL_BLACKLIST = [
@@ -292,131 +302,132 @@ const CHAR_NAMES = /^(alex|sophia|mason|maya|kate|clara|emma|liam|oliver|noah|li
 // These are what the week actually teaches — not the story/unit name
 const TOPIC_MAPPING = {
   // W01: Alex's School Day → teaches school vocabulary
-  'school day': '"school day" OR "first day of school"',
-  'school': '"school day" OR "first day of school"',
+  'school day': 'school day first day school',
+  'school': 'school day first day school',
 
   // W02: Family → teaches family member vocabulary
-  'family': '"family members" OR "family tree"',
-  'family squad': '"family members" OR "family tree"',
+  'family': 'family members family tree',
+  'family squad': 'family members family tree',
 
   // W03: Finding Rora → teaches park/outdoor vocabulary
-  'park': '"park" OR "playground" OR "outdoor"',
-  'finding rora': '"park" OR "playground" OR "outdoor"',
+  'park': 'park playground outdoor',
+  'finding rora': 'park playground outdoor',
 
   // W04: Mystery House → teaches rooms/furniture vocabulary
-  'mystery house': '"rooms in the house" OR "furniture"',
-  'house': '"rooms in the house" OR "furniture"',
-  'home': '"rooms in the house" OR "furniture"',
+  'mystery house': 'rooms house furniture',
+  'house': 'rooms house furniture',
+  'home': 'rooms house furniture',
 
   // W05: Treasure Hunt → teaches prepositions/location vocabulary
-  'treasure hunt': '"prepositions of place" OR "where is it"',
-  'treasure': '"prepositions of place" OR "where is it"',
+  'treasure hunt': 'prepositions place where',
+  'treasure': 'prepositions place where',
 
   // W06: Nature Hike → teaches nature vocabulary
-  'nature': '"nature vocabulary" OR "plants and trees"',
-  'hike': '"nature vocabulary" OR "plants and trees"',
+  'nature': 'nature plants trees',
+  'hike': 'nature plants trees',
 
   // W07: Beaver Valley → teaches animal vocabulary
-  'beaver valley': '"farm animals" OR "animal names"',
-  'valley': '"farm animals" OR "animal names"',
+  'beaver valley': 'farm animals animal names',
+  'valley': 'farm animals animal names',
 
   // W08: Monday Morning → teaches days/time vocabulary
-  'monday morning': '"days of the week" OR "telling time"',
-  'morning routine': '"days of the week" OR "telling time"',
+  'monday morning': 'days week telling time',
+  'morning routine': 'days week telling time',
 
   // W09: Exploring the City → teaches places vocabulary
-  'exploring the city': '"places in the city" OR "buildings"',
-  'city': '"places in the city" OR "buildings"',
+  'exploring the city': 'places city buildings',
+  'city': 'places city buildings',
 
   // W10: Farm Adventure → teaches farm vocabulary
-  'farm adventure': '"farm animals" OR "farm vocabulary"',
-  'farm': '"farm animals" OR "farm vocabulary"',
+  'farm adventure': 'farm animals farm',
+  'farm': 'farm animals farm',
 
   // W11: Weekend Adventure → teaches weekend/activity vocabulary
-  'weekend adventure': '"weekend activities" OR "weekend plans"',
-  'weekend': '"weekend activities" OR "weekend plans"',
+  'weekend adventure': 'weekend activities',
+  'weekend': 'weekend activities',
 
   // W12: School Talent Show → teaches sports/hobbies vocabulary
-  'talent show': '"sports and hobbies" OR "after school activities"',
+  'talent show': 'sports hobbies after school',
 
   // W13: Perfect School Day → teaches daily routine vocabulary
-  'perfect school day': '"daily routine" OR "school activities"',
+  'perfect school day': 'daily routine school',
 
   // W14: Presentation → teaches presentation/describing vocabulary
-  'presentation': '"describing things" OR "adjectives"',
+  'presentation': 'describing things adjectives',
 
   // W15: Park Visit → teaches park vocabulary
-  'park visit': '"park vocabulary" OR "outdoor activities"',
+  'park visit': 'park outdoor',
 
   // W16: Soccer Game → teaches sports vocabulary
-  'soccer game': '"sports vocabulary" OR "ball games"',
+  'soccer game': 'sports ball games',
 
   // W17: Weather → teaches weather vocabulary
-  'weather': '"weather vocabulary" OR "weather forecast"',
+  'weather': 'weather forecast',
 
   // W18: News → teaches media vocabulary
-  'news': '"news vocabulary" OR "media for kids"',
+  'news': 'news media',
 
   // W19: Grandma Moses → teaches art vocabulary
-  'grandma moses': '"art vocabulary" OR "painting for kids"',
+  'grandma moses': 'art painting',
 
   // W20: Detective Luna → teaches mystery vocabulary
-  'detective luna': '"mystery vocabulary" OR "detective story"',
+  'detective luna': 'mystery detective story',
 
   // W21: Detective Max → teaches mystery vocabulary
-  'detective max': '"mystery vocabulary" OR "detective story"',
+  'detective max': 'mystery detective story',
 
   // W22: Nova Case → teaches problem-solving vocabulary
-  'nova case': '"problem solving" OR "thinking vocabulary"',
+  'nova case': 'problem solving thinking',
 
   // W23: Art Class → teaches art vocabulary
-  'art class': '"art vocabulary" OR "painting for kids"',
+  'art class': 'art painting',
 
   // W24: Emotional Monday → teaches feelings vocabulary
-  'emotional monday': '"feelings and emotions" OR "happy sad angry"',
+  'emotional monday': 'feelings emotions happy sad',
 
   // W25: Making a Sandwich → teaches food vocabulary
-  'making a sandwich': '"food vocabulary" OR "cooking for kids"',
-  'sandwich': '"food vocabulary" OR "cooking for kids"',
+  'making a sandwich': 'food cooking',
+  'sandwich': 'food cooking',
 
   // W26: Leo Airport → teaches travel vocabulary
-  'leo airport': '"airport vocabulary" OR "travel for kids"',
+  'leo airport': 'airport travel',
 
   // W27: Maya Nature → teaches nature vocabulary
-  'maya nature': '"nature vocabulary" OR "plants and trees"',
+  'maya nature': 'nature plants trees',
 
   // W28: Transport Race → teaches transport vocabulary
-  'transport race': '"transportation vocabulary" OR "vehicles"',
+  'transport race': 'transportation vehicles',
 
   // W29: Magic Trip → teaches travel vocabulary
-  'magic trip': '"travel vocabulary" OR "vacation for kids"',
+  'magic trip': 'travel vacation',
 
   // W30: Picnic Day → teaches food/outdoor vocabulary
-  'picnic day': '"picnic vocabulary" OR "food outdoors"',
+  'picnic day': 'picnic food outdoor',
 
   // W31: Market Day → teaches shopping vocabulary
-  'market day': '"market vocabulary" OR "shopping for kids"',
+  'market day': 'market shopping',
 
   // W32: Tom's Story → teaches story vocabulary
-  'tom story': '"story telling" OR "narrative for kids"',
+  'tom story': 'storytelling narrative',
 
   // W33: School Monday → teaches school vocabulary
-  'school monday': '"school activities" OR "Monday routine"',
+  'school monday': 'school activities Monday',
 
   // W34: Week 34 → generic
-  'week 34': '"English conversation" OR "dialogue for kids"',
+  'week 34': 'English conversation dialogue',
 
   // W35: Earth Day → teaches earth/environment vocabulary
-  'earth day': '"earth vocabulary" OR "environment for kids"',
-  'earth': '"earth vocabulary" OR "environment for kids"',
+  'earth day': 'earth environment',
+  'earth': 'earth environment',
 
   // W36+: generic
-  'default': '"English conversation" OR "dialogue for kids"',
+  'default': 'English conversation dialogue',
 };
 
 // Query formula components
-const ESL_MODIFIER = '("ESL kids" OR "English for kids" OR "learn English")';
-const FORMAT = '(dialogue OR conversation OR story)';
+// YouTube Search does NOT support parenthesized boolean OR — use simple keywords
+const ESL_MODIFIER = 'ESL kids conversation';
+const FORMAT = 'dialogue';
 const EXCLUSIONS = '-compilation -song -dance -music -nursery -rhyme -rap';
 
 function buildSmartQuery(syllabusMeta, weekTitle) {
