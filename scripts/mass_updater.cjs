@@ -16,6 +16,11 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
+// LLM-driven pipeline modules
+const { callLLM } = require('./llmClient');
+const { analyzeSyllabus } = require('./syllabusAnalyzer');
+const { evaluateTranscript } = require('./transcriptEvaluator');
+
 // ────────────────────────────────────────────────────────────────────
 // Configuration
 // ────────────────────────────────────────────────────────────────────
@@ -488,12 +493,28 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = 
   }
 
   const meta = syllabusMeta || { topic: weekTitle, grammarFocus: '', vocabWords: [], readChunks: [] };
-  log(`  🔍 searchVideo: topic="${meta.topic}" grammar="${meta.grammarFocus}" vocab=${meta.vocabWords.length} chunks=${meta.readChunks.length}`);
-  const searchQuery = buildSmartQuery(meta, weekTitle);
+  log(`  🔍 searchVideo: topic="${meta.topic}" grammar="${meta.grammarFocus}" vocab=${meta.vocabWords.length}`);
+
+  // ── LLM STEP 1: Generate search queries dynamically ──
+  let searchQuery;
+  let conversationalExpressions = [];
+  try {
+    log(`  🤖 Asking LLM to generate search queries...`);
+    const llmResult = await analyzeSyllabus(meta, weekTitle);
+    searchQuery = llmResult.searchQueries[0] || buildSmartQuery(meta, weekTitle);
+    conversationalExpressions = llmResult.expressions || [];
+    log(`  🤖 LLM query: "${searchQuery}"`);
+    log(`  🤖 LLM expressions: ${conversationalExpressions.slice(0, 3).join(', ')}...`);
+  } catch (llmErr) {
+    log(`  ⚠️  LLM query generation failed: ${llmErr.message}, using fallback`);
+    searchQuery = buildSmartQuery(meta, weekTitle);
+  }
+
+  // Store expressions in syllabusMeta for transcript evaluation
+  meta.conversationalExpressions = conversationalExpressions;
 
   // NOTE: videoDuration parameter is BROKEN on YouTube Search API — it is ignored.
   // All duration filtering MUST happen post-fetch in the loop below.
-  // Do NOT add videoDuration to the URL — it gives false confidence.
   const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDefinition=high&relevanceLanguage=en&maxResults=10&key=${API_KEY}`;
 
   log(`  Smart query: "${searchQuery}"`);
@@ -581,10 +602,11 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = 
       continue;
     }
 
-    // HARD REJECT: Channel must be on whitelist
+    // HARD REJECT: Channel must be on whitelist OR contain "english" in name
     const channelLower = videoInfo.snippet.channelTitle.toLowerCase();
     const isWhitelisted = CHANNEL_WHITELIST.some(wl => channelLower.includes(wl));
-    if (!isWhitelisted) {
+    const hasEnglish = channelLower.includes('english') || channelLower.includes('esl');
+    if (!isWhitelisted && !hasEnglish) {
       log(`    ❌ ${videoId}: channel "${videoInfo.snippet.channelTitle}" NOT on whitelist`);
       continue;
     }
@@ -702,32 +724,51 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = 
       reasons.push(`captions:-10 (asr unpunctuated)`);
     }
 
-    // 11. Vocabulary relevance (30 pts max) — STRICTLY transcript-only
+    // 11. LLM-driven semantic evaluation (replaces string-matching)
     if (syllabusMeta && syllabusMeta.vocabWords.length > 0) {
-      // ONLY check actual spoken words in transcript — NOT title, NOT description, NOT tags
-      const transcriptLower = transcript.map(s => s.text.toLowerCase()).join(' ');
+      const transcriptText = transcript.map(s => s.text).join(' ');
 
-      // Check overlap with target vocabulary (transcript only)
+      // Try LLM evaluation first
+      let llmEval = null;
+      try {
+        llmEval = await evaluateTranscript(transcriptText, syllabusMeta, weekTitle, title);
+        log(`    🤖 LLM eval: score=${llmEval.score} verdict=${llmEval.verdict} (${llmEval.details?.reason || ''})`);
+      } catch (llmErr) {
+        log(`    ⚠️  LLM eval failed: ${llmErr.message}, falling back to string match`);
+      }
+
+      // Also compute string-match score as fallback/backup
+      const transcriptLower = transcriptText.toLowerCase();
       const vocabOverlap = syllabusMeta.vocabWords.filter(vw => transcriptLower.includes(vw)).length;
-      const vocabRatio = vocabOverlap / syllabusMeta.vocabWords.length;
-
-      // Check overlap with read chunks/collocations (transcript only)
-      const chunkOverlap = syllabusMeta.readChunks.filter(rc => transcriptLower.includes(rc)).length;
-      const chunkRatio = syllabusMeta.readChunks.length > 0 ? chunkOverlap / syllabusMeta.readChunks.length : 0;
-
-      // Check grammar focus keywords (transcript only)
+      const expressionOverlap = (syllabusMeta.conversationalExpressions || [])
+        .filter(expr => transcriptLower.includes(expr.toLowerCase())).length;
       const grammarWords = syllabusMeta.grammarFocus.toLowerCase().split(/\s+/).filter(w => w.length > 3);
       const grammarOverlap = grammarWords.filter(gw => transcriptLower.includes(gw)).length;
-      const grammarRatio = grammarWords.length > 0 ? grammarOverlap / grammarWords.length : 0;
 
-      const relevanceScore = Math.round((vocabRatio * 15) + (chunkRatio * 10) + (grammarRatio * 5));
-      score += relevanceScore;
-      reasons.push(`vocab:+${relevanceScore} (${vocabOverlap}/${syllabusMeta.vocabWords.length} words, ${chunkOverlap} chunks, ${grammarOverlap} grammar)`);
+      if (llmEval) {
+        // Use LLM score as primary (0-100), normalize to our scoring scale
+        const llmScore = Math.round(llmEval.score * 0.4); // 0-40 pts
+        score += llmScore;
+        reasons.push(`llm:${llmEval.verdict}+${llmScore} (vocab:${llmEval.details?.vocabulary_match?.count || 0}, expr:${expressionOverlap})`);
 
-      // HARD REJECT: MUST have ≥3 vocab words AND ≥2 chunks in actual transcript
-      if (vocabOverlap < 3 || chunkOverlap < 2) {
-        log(`    ❌ ${videoId}: HARD REJECT — need ≥3 vocab + ≥2 chunks (got ${vocabOverlap} words, ${chunkOverlap} chunks)`);
-        continue;
+        // HARD REJECT from LLM verdict
+        if (llmEval.verdict === 'FAIL' && llmEval.score < 30) {
+          log(`    ❌ ${videoId}: LLM REJECT (score=${llmEval.score}, ${llmEval.details?.reason || 'unsuitable'})`);
+          continue;
+        }
+      } else {
+        // Fallback: simple string match scoring
+        const vocabScore = Math.round((vocabOverlap / syllabusMeta.vocabWords.length) * 20);
+        const exprScore = Math.min(expressionOverlap * 5, 15);
+        const grammarScore = grammarWords.length > 0 ? Math.round((grammarOverlap / grammarWords.length) * 5) : 0;
+        const fallbackScore = vocabScore + exprScore + grammarScore;
+        score += fallbackScore;
+        reasons.push(`fallback:${vocabOverlap}w/${expressionOverlap}e/${grammarOverlap}g:+${fallbackScore}`);
+
+        if (vocabOverlap < 3) {
+          log(`    ❌ ${videoId}: HARD REJECT — only ${vocabOverlap}/9 vocab words in transcript`);
+          continue;
+        }
       }
     }
 
