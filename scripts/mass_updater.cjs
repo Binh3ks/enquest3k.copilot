@@ -278,33 +278,47 @@ const DANGLING_WORDS = /^(and|to|the|a|an|my|your|his|her|its|our|their|in|on|at
 // ────────────────────────────────────────────────────────────────────
 // YouTube API — Enhanced Search with Syllabus Context
 // ────────────────────────────────────────────────────────────────────
+// Names that are syllabus-specific, NOT YouTube search keywords
+const CHAR_NAMES = /^(alex|sophia|mason|maya|kate|clara|emma|liam|oliver|noah|lily|jack|tom|jerry|bob|sam|max|lucy|luna|leo|mia|ben|peter|anna|daisy|charlie|jackie)$/i;
+
 function buildSmartQuery(syllabusMeta, weekTitle) {
-  // YouTube SEO: simple nouns, NO quotes, NO grammar terms
+  // YouTube SEO: specific nouns, NOT character names, NOT compilations
   const parts = [];
 
-  // 1. Use top 3 PRIMARY NOUNS from vocab
+  // 1. Use top 3 PRIMARY NOUNS from vocab (filtered for search relevance)
   if (syllabusMeta.vocabWords.length > 0) {
-    parts.push(syllabusMeta.vocabWords.slice(0, 3).join(' '));
+    const searchWords = syllabusMeta.vocabWords
+      .filter(w => !CHAR_NAMES.test(w) && w.length > 3)
+      .slice(0, 3);
+    if (searchWords.length > 0) parts.push(searchWords.join(' '));
   }
 
-  // 2. Use topic if it contains useful nouns
+  // 2. Use topic — strip character names
   if (syllabusMeta.topic) {
     const cleanTopic = syllabusMeta.topic
       .replace(/[^a-zA-Z0-9 ]/g, '')
       .split(/\s+/)
-      .filter(w => w.length > 2 && !/^(the|and|for|with|is|are|was|were|my|your|his|her)$/i.test(w))
+      .filter(w => w.length > 2 && !CHAR_NAMES.test(w) && !/^(the|and|for|with|is|are|was|were|my|your|his|her)$/i.test(w))
       .slice(0, 2)
       .join(' ');
     if (cleanTopic) parts.push(cleanTopic);
   }
 
-  // 3. Fallback to week title (cleaned)
+  // 3. Fallback to week title — strip character names
   if (parts.length === 0) {
-    parts.push(weekTitle.replace(/[^a-zA-Z0-9 ]/g, '').slice(0, 20));
+    const cleanTitle = weekTitle
+      .replace(/[^a-zA-Z0-9 ]/g, '')
+      .split(/\s+/)
+      .filter(w => !CHAR_NAMES.test(w) && w.length > 2)
+      .slice(0, 3)
+      .join(' ');
+    if (cleanTitle) parts.push(cleanTitle);
   }
 
   const nouns = parts.join(' ');
-  return `ESL kids ${nouns} conversation`.trim();
+  // Target SHORT videos: "2 minutes" biases YouTube toward shorter content
+  // Exclude compilations and full lessons
+  return `"ESL kids" ${nouns} 2 minutes -compilation -full -complete`.trim();
 }
 
 async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = '99') {
@@ -315,7 +329,9 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = 
   const meta = syllabusMeta || { topic: weekTitle, grammarFocus: '', vocabWords: [], readChunks: [] };
   log(`  🔍 searchVideo: topic="${meta.topic}" grammar="${meta.grammarFocus}" vocab=${meta.vocabWords.length} chunks=${meta.readChunks.length}`);
   const searchQuery = buildSmartQuery(meta, weekTitle);
-  const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDuration=medium&videoDefinition=high&relevanceLanguage=en&maxResults=10&key=${API_KEY}`;
+  // Use videoDuration=short (< 4 min) for W01-10, medium (4-20 min) for later weeks
+  const durationFilter = parseInt(weekNum || '99') <= 10 ? 'short' : 'medium';
+  const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDuration=${durationFilter}&videoDefinition=high&relevanceLanguage=en&maxResults=10&key=${API_KEY}`;
 
   log(`  Smart query: "${searchQuery}"`);
 
