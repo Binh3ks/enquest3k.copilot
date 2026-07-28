@@ -290,6 +290,11 @@ const NEGATIVE_KEYWORDS = ['grammar', 'lesson', 'tutorial', 'test', 'exam', 'iel
 // Anti-dangling: words that should NOT end a sentence (dangling prepositions/articles)
 const DANGLING_WORDS = /^(and|to|the|a|an|my|your|his|her|its|our|their|in|on|at|for|with|is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|but|or|so|yet|if|when|while|that|which|who|whom|where|how|what|why|of|from|by|about|into|through|during|before|after|above|below|between|under|over)\.?\s*$/i;
 
+// Anti-dangling for pronoun+be verb hallucinations (ASR often puts periods after these)
+// "Wow, I'm." → should merge with next segment
+// Uses word boundary check to catch "I'm" at END of any text (not just start)
+const PRONOUN_BE_ENDINGS = /\b(I'm|he's|she's|it's|we're|they're|you're|that's|there's|here's|let's|what's|where's|how's|who's)\.?\s*$/i;
+
 // ────────────────────────────────────────────────────────────────────
 // YouTube API — Enhanced Search with Syllabus Context
 // ────────────────────────────────────────────────────────────────────
@@ -708,20 +713,20 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = 
       reasons.push(`negative:-${penalty}`);
     }
 
-    // 10. Caption quality (25 pts max)
+    // 10. Caption quality (10 pts max — reduced, LLM is primary decider)
     if (captionQuality === 'manual_punctuated' || captionQuality === 'cached_punctuated') {
-      score += 25;
-      reasons.push(`captions:+25 (${captionQuality})`);
-    } else if (captionQuality === 'manual_unpunctuated' || captionQuality === 'cached_unpunctuated') {
-      score += 15;
-      reasons.push(`captions:+15 (${captionQuality})`);
-    } else if (captionQuality === 'asr_punctuated') {
       score += 10;
-      reasons.push(`captions:+10 (asr+punctuated)`);
+      reasons.push(`captions:+10 (${captionQuality})`);
+    } else if (captionQuality === 'manual_unpunctuated' || captionQuality === 'cached_unpunctuated') {
+      score += 5;
+      reasons.push(`captions:+5 (${captionQuality})`);
+    } else if (captionQuality === 'asr_punctuated') {
+      score += 5;
+      reasons.push(`captions:+5 (asr+punctuated)`);
     } else {
       // asr_unpunctuated — penalty
-      score -= 10;
-      reasons.push(`captions:-10 (asr unpunctuated)`);
+      score -= 5;
+      reasons.push(`captions:-5 (asr unpunctuated)`);
     }
 
     // 11. LLM-driven semantic evaluation (replaces string-matching)
@@ -746,8 +751,9 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = 
       const grammarOverlap = grammarWords.filter(gw => transcriptLower.includes(gw)).length;
 
       if (llmEval) {
-        // Use LLM score as primary (0-100), normalize to our scoring scale
-        const llmScore = Math.round(llmEval.score * 0.4); // 0-40 pts
+        // Use LLM score as PRIMARY decider (0-100), normalize to our scoring scale
+        // LLM is now the dominant factor — a 95-score video must beat a 75-score video
+        const llmScore = Math.round(llmEval.score * 0.6); // 0-60 pts
         score += llmScore;
         reasons.push(`llm:${llmEval.verdict}+${llmScore} (vocab:${llmEval.details?.vocabulary_match?.count || 0}, expr:${expressionOverlap})`);
 
@@ -1107,7 +1113,8 @@ const CONJUNCTIONS = /^(and|but|because|so|then|or|yet|for|nor|when|if|while|tha
 
 // Words that cannot end a complete sentence (function words / incomplete endings)
 // These indicate the sentence is cut off mid-thought
-const INCOMPLETE_ENDINGS = /^(I|he|she|it|we|they|a|an|the|my|your|his|her|its|our|their|to|in|on|at|for|with|and|but|or|so|yet|if|when|while|because|that|which|who|whom|where|how|what|why|is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|please|really|very|just|also|too|about|over|out|up|down|back|here|there|some|any|more|much|many|quite|rather)\b/i;
+// IMPORTANT: "too", "really", "very", "just", "also" are VALID sentence endings — do NOT include them
+const INCOMPLETE_ENDINGS = /^(I|he|she|it|we|they|a|an|the|my|your|his|her|its|our|their|to|in|on|at|for|with|and|but|or|so|yet|if|when|while|because|that|which|who|whom|where|how|what|why|is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|please|about|over|out|up|down|back|here|there|some|any|more|much|many|quite|rather)\b/i;
 
 const MIN_WORDS = 10;   // Soft minimum — prefer longer segments
 const MAX_WORDS = 35;   // Soft maximum — allow up to 35 if it preserves sentence integrity
@@ -1364,12 +1371,25 @@ function formatSegments(rawSegments) {
   // YouTube auto-captions often put periods after prepositions: "Walk slowly and." → merge with next
   for (let i = 0; i < split.length; i++) {
     const text = split[i].text.trim();
+    const wordCount = text.split(/\s+/).length;
     // Check if segment ends with a dangling word + period
     if (DANGLING_WORDS.test(text) && /[.!?]$/.test(text)) {
-      // Strip the period — this is not a real sentence ending
       split[i].text = text.replace(/[.!?]+$/, '').trim();
-      split[i].isFragment = true; // Mark as needing merge
+      split[i].isFragment = true;
       log(`    🔧 Anti-dangling: stripped period from "${text.slice(-20)}"`);
+    }
+    // Check for ASR hallucination: pronoun+be verb with period ("I'm.", "he's.", etc.)
+    if (PRONOUN_BE_ENDINGS.test(text) && /[.!?]$/.test(text)) {
+      split[i].text = text.replace(/[.!?]+$/, '').trim();
+      split[i].isFragment = true;
+      log(`    🔧 Pronoun+be: stripped period from "${text.slice(-20)}"`);
+    }
+    // Soft anti-dangling: if ≤4 words and ends with "not." → likely ASR hallucination
+    // "Yes, I'm not." should merge with "So nervous anymore."
+    if (wordCount <= 4 && /\bnot\.?\s*$/.test(text) && /[.!?]$/.test(text)) {
+      split[i].text = text.replace(/[.!?]+$/, '').trim();
+      split[i].isFragment = true;
+      log(`    🔧 Soft anti-dangling: stripped period from "${text.slice(-20)}"`);
     }
   }
 
