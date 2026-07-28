@@ -281,44 +281,153 @@ const DANGLING_WORDS = /^(and|to|the|a|an|my|your|his|her|its|our|their|in|on|at
 // Names that are syllabus-specific, NOT YouTube search keywords
 const CHAR_NAMES = /^(alex|sophia|mason|maya|kate|clara|emma|liam|oliver|noah|lily|jack|tom|jerry|bob|sam|max|lucy|luna|leo|mia|ben|peter|anna|daisy|charlie|jackie)$/i;
 
-function buildSmartQuery(syllabusMeta, weekTitle) {
-  // YouTube SEO: specific nouns, NOT character names, NOT compilations
-  const parts = [];
+// Semantic topic phrases — each maps syllabus theme to YouTube-friendly search terms
+// Format: syllabus keyword → natural YouTube search phrase
+const TOPIC_PHRASES = {
+  'school': 'school day conversation for kids',
+  'family': 'family members English for kids',
+  'classroom': 'classroom English conversation for kids',
+  'greeting': 'saying hello goodbye English for kids',
+  'daily': 'daily routine English for kids',
+  'home': 'house and home English for kids',
+  'friends': 'friends talking English for kids',
+  'weather': 'weather conversation English for kids',
+  'food': 'food and eating English for kids',
+  'animals': 'animals English for kids',
+  'colors': 'colors and shapes English for kids',
+  'body': 'body parts English for kids',
+  'clothes': 'clothes and dressing English for kids',
+  'shopping': 'shopping conversation English for kids',
+  'transport': 'transportation English for kids',
+  'nature': 'nature and outdoors English for kids',
+  'feelings': 'feelings and emotions English for kids',
+  'time': 'telling time English for kids',
+  'numbers': 'counting numbers English for kids',
+  'games': 'playing games English for kids',
+  'city': 'city and places English for kids',
+  'beach': 'beach and ocean English for kids',
+  'zoo': 'zoo animals English for kids',
+  'library': 'library books English for kids',
+  'museum': 'museum visit English for kids',
+  'market': 'market shopping English for kids',
+  'park': 'park and playground English for kids',
+  'birthday': 'birthday party English for kids',
+  'holiday': 'holiday celebration English for kids',
+  'doctor': 'doctor visit English for kids',
+  'dentist': 'dentist visit English for kids',
+  'restaurant': 'restaurant ordering English for kids',
+  'airport': 'airport travel English for kids',
+  'farm': 'farm animals English for kids',
+  'supermarket': 'supermarket shopping English for kids',
+  'post office': 'post office English for kids',
+  'fire station': 'fire station English for kids',
+  'police': 'police station English for kids',
+  'sports': 'sports and games English for kids',
+  'music': 'music class English for kids',
+  'art': 'art class English for kids',
+  'cooking': 'cooking English for kids',
+  'cleaning': 'cleaning and chores English for kids',
+  'travel': 'travel and vacation English for kids',
+  'pets': 'pets and animals English for kids',
+  'seasons': 'seasons weather English for kids',
+  'hobbies': 'hobbies English for kids',
+  'jobs': 'jobs and work English for kids',
+  'community': 'community places English for kids',
+  'safety': 'safety rules English for kids',
+  'environment': 'environment nature English for kids',
+  'technology': 'technology computers English for kids',
+  'culture': 'culture traditions English for kids',
+  'adventure': 'adventure story English for kids',
+  'mystery': 'mystery story English for kids',
+  'fairy tale': 'fairy tale story English for kids',
+  'bedtime': 'bedtime story English for kids',
+  'morning': 'morning routine English for kids',
+  'evening': 'evening routine English for kids',
+  'weekend': 'weekend activities English for kids',
+  'holiday': 'holiday English for kids',
+  'vacation': 'vacation English for kids',
+  'summer': 'summer activities English for kids',
+  'winter': 'winter activities English for kids',
+  'spring': 'spring activities English for kids',
+  'autumn': 'autumn fall English for kids',
+  'earth': 'earth planet English for kids',
+  'space': 'space and stars English for kids',
+  'science': 'science experiment English for kids',
+  'math': 'math counting English for kids',
+  'reading': 'reading books English for kids',
+  'writing': 'writing English for kids',
+  'spelling': 'spelling English for kids',
+  'phonics': 'phonics letter sounds English for kids',
+  'alphabet': 'alphabet letters English for kids',
+  'opposites': 'opposites antonyms English for kids',
+  'prepositions': 'prepositions English for kids',
+  'verbs': 'action verbs English for kids',
+  'adjectives': 'adjectives describing words English for kids',
+  'pronouns': 'pronouns English for kids',
+  'questions': 'asking questions English for kids',
+  'commands': 'instructions commands English for kids',
+  'requests': 'polite requests English for kids',
+  'apologies': 'saying sorry English for kids',
+  'thanks': 'saying thank you English for kids',
+  'introductions': 'introducing yourself English for kids',
+  'describing': 'describing things English for kids',
+  'comparing': 'comparing things English for kids',
+  'telling stories': 'telling stories English for kids',
+  'dialogue': 'conversation dialogue English for kids',
+  'conversation': 'conversation dialogue English for kids',
+  'shadowing': 'shadowing practice English for kids',
+};
 
-  // 1. Use top 3 PRIMARY NOUNS from vocab (filtered for search relevance)
-  if (syllabusMeta.vocabWords.length > 0) {
-    const searchWords = syllabusMeta.vocabWords
-      .filter(w => !CHAR_NAMES.test(w) && w.length > 3)
-      .slice(0, 3);
-    if (searchWords.length > 0) parts.push(searchWords.join(' '));
+function buildSmartQuery(syllabusMeta, weekTitle) {
+  // Use SEMANTIC TOPIC PHRASES — natural YouTube-friendly searches
+  // NOT random keyword soup
+
+  // 1. Check if topic matches a known semantic phrase
+  let topicPhrase = null;
+  if (syllabusMeta.topic) {
+    const topicLower = syllabusMeta.topic.toLowerCase();
+    // Find the longest matching key
+    for (const [key, phrase] of Object.entries(TOPIC_PHRASES)) {
+      if (topicLower.includes(key)) {
+        if (!topicPhrase || key.length > topicPhrase.key.length) {
+          topicPhrase = { key, phrase };
+        }
+      }
+    }
   }
 
-  // 2. Use topic — strip character names
+  // 2. Check read chunks for semantic context
+  if (!topicPhrase && syllabusMeta.readChunks.length > 0) {
+    for (const chunk of syllabusMeta.readChunks) {
+      const chunkLower = chunk.toLowerCase();
+      for (const [key, phrase] of Object.entries(TOPIC_PHRASES)) {
+        if (chunkLower.includes(key)) {
+          if (!topicPhrase || key.length > topicPhrase.key.length) {
+            topicPhrase = { key, phrase };
+          }
+        }
+      }
+    }
+  }
+
+  // 3. Build query
+  if (topicPhrase) {
+    return topicPhrase.phrase;
+  }
+
+  // 4. Fallback: extract meaningful nouns from topic
   if (syllabusMeta.topic) {
     const cleanTopic = syllabusMeta.topic
       .replace(/[^a-zA-Z0-9 ]/g, '')
       .split(/\s+/)
       .filter(w => w.length > 2 && !CHAR_NAMES.test(w) && !/^(the|and|for|with|is|are|was|were|my|your|his|her)$/i.test(w))
-      .slice(0, 2)
-      .join(' ');
-    if (cleanTopic) parts.push(cleanTopic);
-  }
-
-  // 3. Fallback to week title — strip character names
-  if (parts.length === 0) {
-    const cleanTitle = weekTitle
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .split(/\s+/)
-      .filter(w => !CHAR_NAMES.test(w) && w.length > 2)
       .slice(0, 3)
       .join(' ');
-    if (cleanTitle) parts.push(cleanTitle);
+    if (cleanTopic) return `${cleanTopic} conversation for kids`;
   }
 
-  const nouns = parts.join(' ');
-  // Target SHORT videos: "2 minutes" biases YouTube toward shorter content
-  // Exclude compilations and full lessons
-  return `"ESL kids" ${nouns} 2 minutes -compilation -full -complete`.trim();
+  // 5. Final fallback
+  return `${weekTitle} English for kids conversation`;
 }
 
 async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = '99') {
@@ -329,19 +438,37 @@ async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = 
   const meta = syllabusMeta || { topic: weekTitle, grammarFocus: '', vocabWords: [], readChunks: [] };
   log(`  🔍 searchVideo: topic="${meta.topic}" grammar="${meta.grammarFocus}" vocab=${meta.vocabWords.length} chunks=${meta.readChunks.length}`);
   const searchQuery = buildSmartQuery(meta, weekTitle);
-  // Use videoDuration=short (< 4 min) for W01-10, medium (4-20 min) for later weeks
-  const durationFilter = parseInt(weekNum || '99') <= 10 ? 'short' : 'medium';
-  const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDuration=${durationFilter}&videoDefinition=high&relevanceLanguage=en&maxResults=10&key=${API_KEY}`;
+
+  // NOTE: videoDuration parameter is BROKEN on YouTube Search API — it is ignored.
+  // All duration filtering MUST happen post-fetch in the loop below.
+  // Do NOT add videoDuration to the URL — it gives false confidence.
+  const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&videoDefinition=high&relevanceLanguage=en&maxResults=10&key=${API_KEY}`;
 
   log(`  Smart query: "${searchQuery}"`);
 
-  const searchRes = await fetch(searchUrl);
-  if (!searchRes.ok) {
-    throw new Error(`YouTube Search API failed: ${searchRes.status} ${searchRes.statusText}`);
+  // 429 retry with exponential backoff
+  let searchData = null;
+  for (let attempt = 0; attempt <= 3; attempt++) {
+    if (attempt > 0) {
+      const backoffMs = Math.pow(2, attempt) * 3000; // 6s, 12s, 24s
+      log(`  ⏳ 429 retry ${attempt}/3 (waiting ${backoffMs}ms)...`);
+      await sleep(backoffMs);
+    }
+
+    const searchRes = await fetch(searchUrl);
+    if (searchRes.status === 429) {
+      log(`  ⚠️  429 Too Many Requests — will retry...`);
+      continue;
+    }
+    if (!searchRes.ok) {
+      throw new Error(`YouTube Search API failed: ${searchRes.status} ${searchRes.statusText}`);
+    }
+
+    searchData = await searchRes.json();
+    break;
   }
 
-  const searchData = await searchRes.json();
-  if (!searchData.items || searchData.items.length === 0) {
+  if (!searchData || !searchData.items || searchData.items.length === 0) {
     throw new Error('No search results from YouTube API');
   }
 
