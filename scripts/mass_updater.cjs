@@ -17,9 +17,9 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // LLM-driven pipeline modules
-const { callLLM } = require('./llmClient');
-const { analyzeSyllabus } = require('./syllabusAnalyzer');
-const { evaluateTranscript } = require('./transcriptEvaluator');
+const { callLLM } = require('./llmClient.cjs');
+const { analyzeSyllabus } = require('./syllabusAnalyzer.cjs');
+const { evaluateTranscript } = require('./transcriptEvaluator.cjs');
 
 // ────────────────────────────────────────────────────────────────────
 // Configuration
