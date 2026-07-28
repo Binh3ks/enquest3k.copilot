@@ -1262,9 +1262,10 @@ function splitIntoSentences(segments) {
 }
 
 function mergeFragments(sentences) {
-  // Build complete sentences by chaining fragments
-  // PRIORITY: Natural sentence integrity > word count limits
-  // NEVER merge across dialogue turn boundaries (isDialogueTurn flag)
+  // CORE RULE: Only merge when CURRENT segment is incomplete.
+  // If current ends with terminal punctuation (.), ?, !), it is a COMPLETE THOUGHT.
+  // NEVER merge a complete sentence just because the next one is short.
+  // Only merge orphaned fragments (unpunctuated words, dangling prepositions).
   if (sentences.length === 0) return [];
 
   const result = [];
@@ -1272,54 +1273,40 @@ function mergeFragments(sentences) {
 
   for (let i = 1; i < sentences.length; i++) {
     const seg = sentences[i];
-    const currentComplete = isCompleteSentence(current.text);
-    const currentWords = current.text.split(/\s+/).length;
-    const segLow = /^[a-z]/.test(seg.text.trim());
-    const segConj = CONJUNCTIONS.test(seg.text.trim());
-    const segFrag = isFragment(seg.text) || seg.isFragment; // Also check anti-dangling flag
-    const mergedWords = currentWords + seg.text.split(/\s+/).length;
 
     // RULE 0: NEVER merge across dialogue turn boundaries
     if (seg.isDialogueTurn) {
-      result.push({
-        text: current.text.trim(),
-        start: current.start,
-        duration: Math.round((current.end - current.start) * 100) / 100
-      });
+      result.push({ text: current.text.trim(), start: current.start, duration: Math.round((current.end - current.start) * 100) / 100 });
       current = { text: seg.text, start: seg.start, end: seg.start + seg.duration };
       continue;
     }
 
-    // RULE 1: Always merge if current is incomplete — never leave dangling fragments
-    // RULE 2: Always merge if next is a fragment/continuation (starts lowercase, is conjunction, etc.)
-    // RULE 3: Respect MAX_WORDS only when current is already a complete sentence
-    // RULE 4: HARD CEILING — never exceed HARD_CEILING words, even for incomplete sentences
-    const mustMerge = !currentComplete || segFrag || segLow || segConj || current.isFragment; // Also check current segment's anti-dangling flag
-    const withinSoftLimit = mergedWords <= MAX_WORDS;
+    // RULE 1: If current is a COMPLETE SENTENCE (ends with ., ?, or !), SAVE IT.
+    // Don't merge just because the next segment is short or starts lowercase.
+    const currentComplete = isCompleteSentence(current.text);
+    if (currentComplete) {
+      result.push({ text: current.text.trim(), start: current.start, duration: Math.round((current.end - current.start) * 100) / 100 });
+      current = { text: seg.text, start: seg.start, end: seg.start + seg.duration };
+      continue;
+    }
+
+    // RULE 2: Current is INCOMPLETE — check if we should merge with next
+    const mergedWords = current.text.split(/\s+/).length + seg.text.split(/\s+/).length;
     const withinHardCeiling = mergedWords <= HARD_CEILING;
 
-    const shouldMerge = (mustMerge && withinHardCeiling) || (withinSoftLimit && !currentComplete);
-
-    if (shouldMerge) {
+    // Only merge if: next is a fragment/continuation AND we won't exceed ceiling
+    if (withinHardCeiling) {
       current.text += ' ' + seg.text;
       current.end = seg.start + seg.duration;
     } else {
-      // Save current and start new
-      result.push({
-        text: current.text.trim(),
-        start: current.start,
-        duration: Math.round((current.end - current.start) * 100) / 100
-      });
+      // Even incomplete segments must be saved if they'd exceed ceiling
+      result.push({ text: current.text.trim(), start: current.start, duration: Math.round((current.end - current.start) * 100) / 100 });
       current = { text: seg.text, start: seg.start, end: seg.start + seg.duration };
     }
   }
 
   // Push last
-  result.push({
-    text: current.text.trim(),
-    start: current.start,
-    duration: Math.round((current.end - current.start) * 100) / 100
-  });
+  result.push({ text: current.text.trim(), start: current.start, duration: Math.round((current.end - current.start) * 100) / 100 });
 
   return result;
 }
