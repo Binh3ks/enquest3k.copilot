@@ -1114,7 +1114,7 @@ const CONJUNCTIONS = /^(and|but|because|so|then|or|yet|for|nor|when|if|while|tha
 // Words that cannot end a complete sentence (function words / incomplete endings)
 // These indicate the sentence is cut off mid-thought
 // IMPORTANT: "too", "really", "very", "just", "also" are VALID sentence endings — do NOT include them
-const INCOMPLETE_ENDINGS = /^(I|he|she|it|we|they|a|an|the|my|your|his|her|its|our|their|to|in|on|at|for|with|and|but|or|so|yet|if|when|while|because|that|which|who|whom|where|how|what|why|is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|please|about|over|out|up|down|back|here|there|some|any|more|much|many|quite|rather)\b/i;
+const INCOMPLETE_ENDINGS = /^(I|he|she|it|we|they|a|an|the|my|your|his|her|its|our|their|to|in|on|at|for|with|and|but|or|so|yet|if|when|while|because|that|which|who|whom|where|how|what|why|is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|please|about|over|out|up|down|back|some|any|more|much|many|quite|rather)\b/i;
 
 const MIN_WORDS = 10;   // Soft minimum — prefer longer segments
 const MAX_WORDS = 35;   // Soft maximum — allow up to 35 if it preserves sentence integrity
@@ -1124,19 +1124,23 @@ function isCompleteSentence(text) {
   const t = text.trim();
   if (t.length < 3) return false;
 
-  // Must end with sentence-ending punctuation
+  // MUST end with sentence-ending punctuation (. ? !)
   if (!/[.!?]"?\s*$/.test(t)) return false;
 
-  // Starts with "Yes/No/Okay/Sure/Great/Good/Thank" → likely complete short response
-  if (/^(Yes|No|Okay|Ok|Sure|Right|Exactly|Correct|Great|Good|Well done|Thank you|Thanks)\b/i.test(t)) return true;
-
-  // Check last word for ANY sentence length — period alone doesn't guarantee completeness
+  // Has terminal punctuation AND ≥4 words → COMPLETE (trust the punctuation)
   const clean = t.replace(/[.!?]"?\s*$/, '').trim();
   const words = clean.split(/\s+/);
-  if (words.length === 0) return false;
+  if (words.length >= 4) return true;
 
-  const lastWord = words[words.length - 1].toLowerCase().replace(/[^a-z]/g, '');
-  if (INCOMPLETE_ENDINGS.test(lastWord)) return false;
+  // Short responses (1-3 words) — check if it's a valid short sentence
+  // "Yes, I am." / "That's okay." / "Don't worry." / "Really?" → complete
+  // "in the." / "with the." → incomplete (dangling preposition)
+  if (words.length <= 3) {
+    const lastWord = words[words.length - 1].toLowerCase().replace(/[^a-z]/g, '');
+    // If last word is a pronoun+be verb or function word after very short text → likely fragment
+    if (INCOMPLETE_ENDINGS.test(lastWord) && words.length <= 2) return false;
+    return true; // Short sentences with period are usually complete
+  }
 
   return true;
 }
