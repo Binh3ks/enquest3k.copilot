@@ -23,6 +23,8 @@ Your job:
 RULES:
 - Search queries must use simple, natural English — no grammar jargon.
 - Exclude compilations, songs, dances, nursery rhymes.
+- DO NOT use the word "short" in queries — YouTube interprets it as Shorts.
+- DO NOT use parentheses, boolean operators, or special characters.
 - Conversational expressions must be REAL phrases (e.g., "Where are you from?"
    not "Elementary school student studies science").
 - Output MUST be valid JSON.
