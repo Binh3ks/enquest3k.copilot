@@ -281,153 +281,194 @@ const DANGLING_WORDS = /^(and|to|the|a|an|my|your|his|her|its|our|their|in|on|at
 // Names that are syllabus-specific, NOT YouTube search keywords
 const CHAR_NAMES = /^(alex|sophia|mason|maya|kate|clara|emma|liam|oliver|noah|lily|jack|tom|jerry|bob|sam|max|lucy|luna|leo|mia|ben|peter|anna|daisy|charlie|jackie)$/i;
 
-// Semantic topic phrases — each maps syllabus theme to YouTube-friendly search terms
-// Format: syllabus keyword → natural YouTube search phrase
-const TOPIC_PHRASES = {
-  'school': 'school day conversation for kids',
-  'family': 'family members English for kids',
-  'classroom': 'classroom English conversation for kids',
-  'greeting': 'saying hello goodbye English for kids',
-  'daily': 'daily routine English for kids',
-  'home': 'house and home English for kids',
-  'friends': 'friends talking English for kids',
-  'weather': 'weather conversation English for kids',
-  'food': 'food and eating English for kids',
-  'animals': 'animals English for kids',
-  'colors': 'colors and shapes English for kids',
-  'body': 'body parts English for kids',
-  'clothes': 'clothes and dressing English for kids',
-  'shopping': 'shopping conversation English for kids',
-  'transport': 'transportation English for kids',
-  'nature': 'nature and outdoors English for kids',
-  'feelings': 'feelings and emotions English for kids',
-  'time': 'telling time English for kids',
-  'numbers': 'counting numbers English for kids',
-  'games': 'playing games English for kids',
-  'city': 'city and places English for kids',
-  'beach': 'beach and ocean English for kids',
-  'zoo': 'zoo animals English for kids',
-  'library': 'library books English for kids',
-  'museum': 'museum visit English for kids',
-  'market': 'market shopping English for kids',
-  'park': 'park and playground English for kids',
-  'birthday': 'birthday party English for kids',
-  'holiday': 'holiday celebration English for kids',
-  'doctor': 'doctor visit English for kids',
-  'dentist': 'dentist visit English for kids',
-  'restaurant': 'restaurant ordering English for kids',
-  'airport': 'airport travel English for kids',
-  'farm': 'farm animals English for kids',
-  'supermarket': 'supermarket shopping English for kids',
-  'post office': 'post office English for kids',
-  'fire station': 'fire station English for kids',
-  'police': 'police station English for kids',
-  'sports': 'sports and games English for kids',
-  'music': 'music class English for kids',
-  'art': 'art class English for kids',
-  'cooking': 'cooking English for kids',
-  'cleaning': 'cleaning and chores English for kids',
-  'travel': 'travel and vacation English for kids',
-  'pets': 'pets and animals English for kids',
-  'seasons': 'seasons weather English for kids',
-  'hobbies': 'hobbies English for kids',
-  'jobs': 'jobs and work English for kids',
-  'community': 'community places English for kids',
-  'safety': 'safety rules English for kids',
-  'environment': 'environment nature English for kids',
-  'technology': 'technology computers English for kids',
-  'culture': 'culture traditions English for kids',
-  'adventure': 'adventure story English for kids',
-  'mystery': 'mystery story English for kids',
-  'fairy tale': 'fairy tale story English for kids',
-  'bedtime': 'bedtime story English for kids',
-  'morning': 'morning routine English for kids',
-  'evening': 'evening routine English for kids',
-  'weekend': 'weekend activities English for kids',
-  'holiday': 'holiday English for kids',
-  'vacation': 'vacation English for kids',
-  'summer': 'summer activities English for kids',
-  'winter': 'winter activities English for kids',
-  'spring': 'spring activities English for kids',
-  'autumn': 'autumn fall English for kids',
-  'earth': 'earth planet English for kids',
-  'space': 'space and stars English for kids',
-  'science': 'science experiment English for kids',
-  'math': 'math counting English for kids',
-  'reading': 'reading books English for kids',
-  'writing': 'writing English for kids',
-  'spelling': 'spelling English for kids',
-  'phonics': 'phonics letter sounds English for kids',
-  'alphabet': 'alphabet letters English for kids',
-  'opposites': 'opposites antonyms English for kids',
-  'prepositions': 'prepositions English for kids',
-  'verbs': 'action verbs English for kids',
-  'adjectives': 'adjectives describing words English for kids',
-  'pronouns': 'pronouns English for kids',
-  'questions': 'asking questions English for kids',
-  'commands': 'instructions commands English for kids',
-  'requests': 'polite requests English for kids',
-  'apologies': 'saying sorry English for kids',
-  'thanks': 'saying thank you English for kids',
-  'introductions': 'introducing yourself English for kids',
-  'describing': 'describing things English for kids',
-  'comparing': 'comparing things English for kids',
-  'telling stories': 'telling stories English for kids',
-  'dialogue': 'conversation dialogue English for kids',
-  'conversation': 'conversation dialogue English for kids',
-  'shadowing': 'shadowing practice English for kids',
+// ────────────────────────────────────────────────────────────────────
+// Query Formula: [ESL Modifier] + [Core Target] + [Format] + [Exclusions]
+//
+// Core Target = the ACTUAL pedagogical concept being taught (nouns/verbs)
+// NOT the fictional syllabus unit title
+// ────────────────────────────────────────────────────────────────────
+
+// Maps syllabus topic keywords to CORE PEDAGOGICAL TARGETS
+// These are what the week actually teaches — not the story/unit name
+const TOPIC_MAPPING = {
+  // W01: Alex's School Day → teaches school vocabulary
+  'school day': '"school day" OR "first day of school"',
+  'school': '"school day" OR "first day of school"',
+
+  // W02: Family → teaches family member vocabulary
+  'family': '"family members" OR "family tree"',
+  'family squad': '"family members" OR "family tree"',
+
+  // W03: Finding Rora → teaches park/outdoor vocabulary
+  'park': '"park" OR "playground" OR "outdoor"',
+  'finding rora': '"park" OR "playground" OR "outdoor"',
+
+  // W04: Mystery House → teaches rooms/furniture vocabulary
+  'mystery house': '"rooms in the house" OR "furniture"',
+  'house': '"rooms in the house" OR "furniture"',
+  'home': '"rooms in the house" OR "furniture"',
+
+  // W05: Treasure Hunt → teaches prepositions/location vocabulary
+  'treasure hunt': '"prepositions of place" OR "where is it"',
+  'treasure': '"prepositions of place" OR "where is it"',
+
+  // W06: Nature Hike → teaches nature vocabulary
+  'nature': '"nature vocabulary" OR "plants and trees"',
+  'hike': '"nature vocabulary" OR "plants and trees"',
+
+  // W07: Beaver Valley → teaches animal vocabulary
+  'beaver valley': '"farm animals" OR "animal names"',
+  'valley': '"farm animals" OR "animal names"',
+
+  // W08: Monday Morning → teaches days/time vocabulary
+  'monday morning': '"days of the week" OR "telling time"',
+  'morning routine': '"days of the week" OR "telling time"',
+
+  // W09: Exploring the City → teaches places vocabulary
+  'exploring the city': '"places in the city" OR "buildings"',
+  'city': '"places in the city" OR "buildings"',
+
+  // W10: Farm Adventure → teaches farm vocabulary
+  'farm adventure': '"farm animals" OR "farm vocabulary"',
+  'farm': '"farm animals" OR "farm vocabulary"',
+
+  // W11: Weekend Adventure → teaches weekend/activity vocabulary
+  'weekend adventure': '"weekend activities" OR "weekend plans"',
+  'weekend': '"weekend activities" OR "weekend plans"',
+
+  // W12: School Talent Show → teaches sports/hobbies vocabulary
+  'talent show': '"sports and hobbies" OR "after school activities"',
+
+  // W13: Perfect School Day → teaches daily routine vocabulary
+  'perfect school day': '"daily routine" OR "school activities"',
+
+  // W14: Presentation → teaches presentation/describing vocabulary
+  'presentation': '"describing things" OR "adjectives"',
+
+  // W15: Park Visit → teaches park vocabulary
+  'park visit': '"park vocabulary" OR "outdoor activities"',
+
+  // W16: Soccer Game → teaches sports vocabulary
+  'soccer game': '"sports vocabulary" OR "ball games"',
+
+  // W17: Weather → teaches weather vocabulary
+  'weather': '"weather vocabulary" OR "weather forecast"',
+
+  // W18: News → teaches media vocabulary
+  'news': '"news vocabulary" OR "media for kids"',
+
+  // W19: Grandma Moses → teaches art vocabulary
+  'grandma moses': '"art vocabulary" OR "painting for kids"',
+
+  // W20: Detective Luna → teaches mystery vocabulary
+  'detective luna': '"mystery vocabulary" OR "detective story"',
+
+  // W21: Detective Max → teaches mystery vocabulary
+  'detective max': '"mystery vocabulary" OR "detective story"',
+
+  // W22: Nova Case → teaches problem-solving vocabulary
+  'nova case': '"problem solving" OR "thinking vocabulary"',
+
+  // W23: Art Class → teaches art vocabulary
+  'art class': '"art vocabulary" OR "painting for kids"',
+
+  // W24: Emotional Monday → teaches feelings vocabulary
+  'emotional monday': '"feelings and emotions" OR "happy sad angry"',
+
+  // W25: Making a Sandwich → teaches food vocabulary
+  'making a sandwich': '"food vocabulary" OR "cooking for kids"',
+  'sandwich': '"food vocabulary" OR "cooking for kids"',
+
+  // W26: Leo Airport → teaches travel vocabulary
+  'leo airport': '"airport vocabulary" OR "travel for kids"',
+
+  // W27: Maya Nature → teaches nature vocabulary
+  'maya nature': '"nature vocabulary" OR "plants and trees"',
+
+  // W28: Transport Race → teaches transport vocabulary
+  'transport race': '"transportation vocabulary" OR "vehicles"',
+
+  // W29: Magic Trip → teaches travel vocabulary
+  'magic trip': '"travel vocabulary" OR "vacation for kids"',
+
+  // W30: Picnic Day → teaches food/outdoor vocabulary
+  'picnic day': '"picnic vocabulary" OR "food outdoors"',
+
+  // W31: Market Day → teaches shopping vocabulary
+  'market day': '"market vocabulary" OR "shopping for kids"',
+
+  // W32: Tom's Story → teaches story vocabulary
+  'tom story': '"story telling" OR "narrative for kids"',
+
+  // W33: School Monday → teaches school vocabulary
+  'school monday': '"school activities" OR "Monday routine"',
+
+  // W34: Week 34 → generic
+  'week 34': '"English conversation" OR "dialogue for kids"',
+
+  // W35: Earth Day → teaches earth/environment vocabulary
+  'earth day': '"earth vocabulary" OR "environment for kids"',
+  'earth': '"earth vocabulary" OR "environment for kids"',
+
+  // W36+: generic
+  'default': '"English conversation" OR "dialogue for kids"',
 };
 
-function buildSmartQuery(syllabusMeta, weekTitle) {
-  // Use SEMANTIC TOPIC PHRASES — natural YouTube-friendly searches
-  // NOT random keyword soup
+// Query formula components
+const ESL_MODIFIER = '("ESL kids" OR "English for kids" OR "learn English")';
+const FORMAT = '(dialogue OR conversation OR story)';
+const EXCLUSIONS = '-compilation -song -dance -music -nursery -rhyme -rap';
 
-  // 1. Check if topic matches a known semantic phrase
-  let topicPhrase = null;
+function buildSmartQuery(syllabusMeta, weekTitle) {
+  // Step 1: Find the CORE PEDAGOGICAL TARGET from topic
+  let coreTarget = null;
+
   if (syllabusMeta.topic) {
     const topicLower = syllabusMeta.topic.toLowerCase();
     // Find the longest matching key
-    for (const [key, phrase] of Object.entries(TOPIC_PHRASES)) {
+    for (const [key, target] of Object.entries(TOPIC_MAPPING)) {
+      if (key === 'default') continue;
       if (topicLower.includes(key)) {
-        if (!topicPhrase || key.length > topicPhrase.key.length) {
-          topicPhrase = { key, phrase };
+        if (!coreTarget || key.length > coreTarget.key.length) {
+          coreTarget = { key, target };
         }
       }
     }
   }
 
-  // 2. Check read chunks for semantic context
-  if (!topicPhrase && syllabusMeta.readChunks.length > 0) {
+  // Step 2: Check read chunks for additional context
+  if (!coreTarget && syllabusMeta.readChunks.length > 0) {
     for (const chunk of syllabusMeta.readChunks) {
       const chunkLower = chunk.toLowerCase();
-      for (const [key, phrase] of Object.entries(TOPIC_PHRASES)) {
+      for (const [key, target] of Object.entries(TOPIC_MAPPING)) {
+        if (key === 'default') continue;
         if (chunkLower.includes(key)) {
-          if (!topicPhrase || key.length > topicPhrase.key.length) {
-            topicPhrase = { key, phrase };
+          if (!coreTarget || key.length > coreTarget.key.length) {
+            coreTarget = { key, target };
           }
         }
       }
     }
   }
 
-  // 3. Build query
-  if (topicPhrase) {
-    return topicPhrase.phrase;
+  // Step 2b: Check vocab words for additional context
+  if (!coreTarget && syllabusMeta.vocabWords.length > 0) {
+    for (const word of syllabusMeta.vocabWords) {
+      const wordLower = word.toLowerCase();
+      for (const [key, target] of Object.entries(TOPIC_MAPPING)) {
+        if (key === 'default') continue;
+        if (wordLower.includes(key) || key.includes(wordLower)) {
+          if (!coreTarget || key.length > coreTarget.key.length) {
+            coreTarget = { key, target };
+          }
+        }
+      }
+    }
   }
 
-  // 4. Fallback: extract meaningful nouns from topic
-  if (syllabusMeta.topic) {
-    const cleanTopic = syllabusMeta.topic
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .split(/\s+/)
-      .filter(w => w.length > 2 && !CHAR_NAMES.test(w) && !/^(the|and|for|with|is|are|was|were|my|your|his|her)$/i.test(w))
-      .slice(0, 3)
-      .join(' ');
-    if (cleanTopic) return `${cleanTopic} conversation for kids`;
-  }
-
-  // 5. Final fallback
-  return `${weekTitle} English for kids conversation`;
+  // Step 3: Build query using the formula
+  const core = coreTarget ? coreTarget.target : TOPIC_MAPPING['default'];
+  return `${ESL_MODIFIER} ${core} ${FORMAT} ${EXCLUSIONS}`;
 }
 
 async function searchVideo(weekTitle, contentEn, syllabusMeta = null, weekNum = '99') {
