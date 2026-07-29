@@ -26,10 +26,10 @@ const CACHE_DIR = path.join(__dirname, '..', 'src/data/video_transcripts_by_id/c
 function phase1Check(text) {
   const lower = text.toLowerCase();
 
-  // Count dialogue indicators
-  const secondPerson = (lower.match(/\b(you are|you have|you like|your name|are you|do you|what's your|how are you|where are you|nice to meet you)\b/g) || []).length;
+  // Count dialogue indicators (no \b for contractions)
+  const secondPerson = (lower.match(/(you are|you have|you like|your name|are you|do you|what's your|how are you|where are you|nice to meet you)/g) || []).length;
   const questions = (text.match(/\?/g) || []).length;
-  const hasGreetings = /\b(hi |hello |hey |welcome |thank you|nice to meet|good morning|good afternoon)\b/i.test(lower);
+  const hasGreetings = /(hi |hello |hey |welcome |thank you|nice to meet|good morning|good afternoon)/i.test(lower);
 
   // Detect repeated word chants (e.g., "Book Book", "Notebook Notebook")
   const words = lower.split(/\s+/);
