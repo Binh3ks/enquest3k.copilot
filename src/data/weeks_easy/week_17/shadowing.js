@@ -14,8 +14,7 @@ export default {
     { id: 10, text: "I'm working.", vi: null, start: 29.56, duration: 2.08 },
     { id: 11, text: "It's raining.", vi: null, start: 34.8, duration: 1.44 },
     { id: 12, text: "Hello!", vi: null, start: 36.36, duration: 1.32 },
-    { id: 13, text: "— Hi!
-— Hiya!", vi: null, start: 37.8, duration: 1.39 },
+    { id: 13, text: "— Hi! — Hiya!", vi: null, start: 37.8, duration: 1.39 },
     { id: 14, text: "Where are you?", vi: null, start: 39.19428571428571, duration: 1.05 },
     { id: 15, text: "I'm in Japan.", vi: null, start: 40.36, duration: 1.64 },
     { id: 16, text: "You doing?", vi: null, start: 42.739999999999995, duration: 0.62 },

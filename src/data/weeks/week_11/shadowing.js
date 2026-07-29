@@ -2,7 +2,7 @@ export default {
   videoId: "SRJqmRPcOII",
   title: "My Weekend Adventure",
   content_en: "Today is Saturday! I have a fun weekend plan. First, I **go to the park**. I **play at the park** with my friends. We run and laugh! Then, I go to the library. I **read a book** at the library. The book is about animals. It is very interesting! After that, my mom and I go to the supermarket. We buy food at the supermarket. I **help my mom** carry the bags. Finally, we go to the playground. I **slide down** at the playground. I love the slide! **On Sunday**, I go to the zoo. I see many animals at the zoo. I see a lion and a monkey! Then we **have lunch** at a restaurant. The food is delicious! I also go to school on Monday to read and learn. I love my weekend! Every place is special and fun!",
-  audio_full: "/audio/week11/shadowing_full.mp3"
+  audio_full: "/audio/week11/shadowing_full.mp3",
   script: [
     { id: 1, text: "Books.", vi: null, start: 0.42, duration: 5.02 },
     { id: 2, text: "We are not friends.", vi: null, start: 10.34, duration: 9.01 },

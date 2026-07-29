@@ -3,8 +3,7 @@ export default {
   videoId: "FJTad0pyB8U",  // Farm Animals Vocabulary Chant (was: Zoo)
   content_en: "Today I visit a farm. The farm is quiet. I am happy! I see a **big brown cow**. The animal **eats grass** in the field. I see a **small white chicken**. The bird **runs fast**! The farm is clean. The field is green. I see **tall trees**. The countryside is peaceful. I see **farm animals**. My uncle says the farm is nice. I agree!",
   script: [
-    { id: 1, text: "So, we have three options for our vacation 
-this summer. We can go to a beach resort, to the PandaLand Amusement Park or we can go camping at the lake!", vi: null, start: 7.8909090909090915, duration: 14.4 },
+    { id: 1, text: "So, we have three options for our vacation this summer. We can go to a beach resort, to the PandaLand Amusement Park or we can go camping at the lake!", vi: null, start: 7.8909090909090915, duration: 14.4 },
     { id: 2, text: "What do you think? We need to make a decision today.", vi: null, start: 22.29, duration: 3.01 },
     { id: 3, text: "I want to go to PandaLand! It's more exciting than a boring old beach or camping.", vi: null, start: 25.3, duration: 7.44 },
     { id: 4, text: "Well, honey... PandaLand is more expensive than the other two.", vi: null, start: 35.92, duration: 4.92 },
