@@ -1,0 +1,157 @@
+{
+  "text": "What do you like? What do you like? What do you like? Baseball, baseball. I like baseball. Basketball, basketball. I like basketball. Volleyball, volleyball. I like volleyball. Soccer, soccer. I like soccer. Baseball, basketball, volleyball, soccer. I like sports! Hurray! What do you like? What do you like? What do you like? Diving, diving. I like diving. Swimming, swimming. I like swimming. Skiing, skiing. I like skiing. Skating, skating. I like skating. Diving, swimming, skiing, skating. I like sports! Hurray! What do you like? What do you like? What do you like? Tennis, tennis. I like tennis. Badminton, badminton. I like badminton. Fencing, fencing. I like fencing. Boxing, boxing. I like boxing. Tennis, badminton, fencing, boxing. I like sports! Hurray! Hurray!",
+  "segments": [
+    {
+      "id": 1,
+      "text": "What do you like? What do you like?",
+      "start": 5.3,
+      "duration": 3.36
+    },
+    {
+      "id": 2,
+      "text": "What do you like?",
+      "start": 10.56,
+      "duration": 1.68
+    },
+    {
+      "id": 3,
+      "text": "Baseball, baseball. I like baseball.",
+      "start": 12.24,
+      "duration": 3.38
+    },
+    {
+      "id": 4,
+      "text": "Basketball, basketball. I like basketball.",
+      "start": 15.62,
+      "duration": 3.44
+    },
+    {
+      "id": 5,
+      "text": "Volleyball, volleyball. I like volleyball.",
+      "start": 19.06,
+      "duration": 3.24
+    },
+    {
+      "id": 6,
+      "text": "Soccer, soccer. I like soccer.",
+      "start": 22.3,
+      "duration": 3.6
+    },
+    {
+      "id": 7,
+      "text": "Baseball, basketball, volleyball, soccer.",
+      "start": 26.02,
+      "duration": 3.58
+    },
+    {
+      "id": 8,
+      "text": "I like sports! Hurray!",
+      "start": 29.62,
+      "duration": 3.18
+    },
+    {
+      "id": 9,
+      "text": "What do you like? What do you like?",
+      "start": 33.92,
+      "duration": 3.32
+    },
+    {
+      "id": 10,
+      "text": "What do you like?",
+      "start": 39.1,
+      "duration": 1.56
+    },
+    {
+      "id": 11,
+      "text": "Diving, diving. I like diving.",
+      "start": 40.94,
+      "duration": 3.22
+    },
+    {
+      "id": 12,
+      "text": "Swimming, swimming. I like swimming.",
+      "start": 44.16,
+      "duration": 3.48
+    },
+    {
+      "id": 13,
+      "text": "Skiing, skiing. I like skiing.",
+      "start": 47.64,
+      "duration": 3.4
+    },
+    {
+      "id": 14,
+      "text": "Skating, skating. I like skating.",
+      "start": 51.04,
+      "duration": 3.7
+    },
+    {
+      "id": 15,
+      "text": "Diving, swimming, skiing, skating.",
+      "start": 54.74,
+      "duration": 3.38
+    },
+    {
+      "id": 16,
+      "text": "I like sports! Hurray!",
+      "start": 58.14,
+      "duration": 3.3
+    },
+    {
+      "id": 17,
+      "text": "What do you like? What do you like?",
+      "start": 62.58,
+      "duration": 3.4
+    },
+    {
+      "id": 18,
+      "text": "What do you like?",
+      "start": 67.8,
+      "duration": 1.46
+    },
+    {
+      "id": 19,
+      "text": "Tennis, tennis. I like tennis.",
+      "start": 69.28,
+      "duration": 3.48
+    },
+    {
+      "id": 20,
+      "text": "Badminton, badminton. I like badminton.",
+      "start": 72.76,
+      "duration": 3.72
+    },
+    {
+      "id": 21,
+      "text": "Fencing, fencing. I like fencing.",
+      "start": 76.48,
+      "duration": 3.44
+    },
+    {
+      "id": 22,
+      "text": "Boxing, boxing. I like boxing.",
+      "start": 79.92,
+      "duration": 3.5
+    },
+    {
+      "id": 23,
+      "text": "Tennis, badminton, fencing, boxing.",
+      "start": 83.42,
+      "duration": 3.36
+    },
+    {
+      "id": 24,
+      "text": "I like sports! Hurray!",
+      "start": 86.8,
+      "duration": 3.46
+    },
+    {
+      "id": 25,
+      "text": "Hurray!",
+      "start": 90.26,
+      "duration": 0.9
+    }
+  ],
+  "videoId": "tgUSHk6JaTY",
+  "source": "cleaned"
+}

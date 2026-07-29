@@ -1,0 +1,79 @@
+{
+  "text": "Hey there kids. Everybody listen carefully and repeat after me Here we go. Duck Duck Cow Cow. Pig Pig Horse Horse. Chicken Chicken Dog Dog. Cat Cat Rabbit Rabbit. Sheep Sheep Goat Goat. Well done, kids. That was great Now it's your turn In a big voice, repeat after me. Here we go Duck Cow. Pig Horse Chicken. Dog Cat Rabbit. Sheep Goat That was great, kids. Good job.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Hey there kids. Everybody listen carefully and repeat after me Here we go.",
+      "start": 5.88,
+      "duration": 9.45
+    },
+    {
+      "id": 2,
+      "text": "Duck Duck Cow Cow.",
+      "start": 18.12,
+      "duration": 11.55
+    },
+    {
+      "id": 3,
+      "text": "Pig Pig Horse Horse.",
+      "start": 30.91,
+      "duration": 11.58
+    },
+    {
+      "id": 4,
+      "text": "Chicken Chicken Dog Dog.",
+      "start": 43.63,
+      "duration": 11.67
+    },
+    {
+      "id": 5,
+      "text": "Cat Cat Rabbit Rabbit.",
+      "start": 56.52,
+      "duration": 11.08
+    },
+    {
+      "id": 6,
+      "text": "Sheep Sheep Goat Goat.",
+      "start": 69.13,
+      "duration": 11.71
+    },
+    {
+      "id": 7,
+      "text": "Well done, kids. That was great Now it's your turn In a big voice, repeat after me.",
+      "start": 83.1,
+      "duration": 9.1
+    },
+    {
+      "id": 8,
+      "text": "Here we go Duck Cow.",
+      "start": 93.13,
+      "duration": 10.12
+    },
+    {
+      "id": 9,
+      "text": "Pig Horse Chicken.",
+      "start": 107.68,
+      "duration": 14.73
+    },
+    {
+      "id": 10,
+      "text": "Dog Cat Rabbit.",
+      "start": 126.86,
+      "duration": 14.82
+    },
+    {
+      "id": 11,
+      "text": "Sheep Goat That was great, kids.",
+      "start": 145.92,
+      "duration": 15.95
+    },
+    {
+      "id": 12,
+      "text": "Good job.",
+      "start": 162.92,
+      "duration": 1.88
+    }
+  ],
+  "videoId": "t1tSx5cI9eg",
+  "source": "cleaned"
+}

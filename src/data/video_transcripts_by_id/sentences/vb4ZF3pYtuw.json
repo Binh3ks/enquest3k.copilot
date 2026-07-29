@@ -1,0 +1,151 @@
+{
+  "text": "Learn English with Sun English Center. My school things. Hi Quan. Do you have a pencil? Yes, I do. It's new. Great. Do you have an eraser? No, I don't. It's at home. That's okay. I have one. Here you are. Thank you. Do you have a notebook? Yes, I do. Do you have a pencil case? Yes, I do. Do you have a ruler? Yes, I do. Do you have a school bag? Yes, I do. Thank you for the chat! You're welcome!",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Learn English with Sun English Center.",
+      "start": 1.28,
+      "duration": 7.12
+    },
+    {
+      "id": 2,
+      "text": "My school things.",
+      "start": 8.4,
+      "duration": 0.96
+    },
+    {
+      "id": 3,
+      "text": "Hi Quan.",
+      "start": 9.36,
+      "duration": 1.92
+    },
+    {
+      "id": 4,
+      "text": "Do you have a pencil?",
+      "start": 11.28,
+      "duration": 1.59
+    },
+    {
+      "id": 5,
+      "text": "Yes, I do.",
+      "start": 12.87,
+      "duration": 3.32
+    },
+    {
+      "id": 6,
+      "text": "It's new.",
+      "start": 16.19,
+      "duration": 2.21
+    },
+    {
+      "id": 7,
+      "text": "Great.",
+      "start": 18.4,
+      "duration": 0.93
+    },
+    {
+      "id": 8,
+      "text": "Do you have an eraser?",
+      "start": 19.33,
+      "duration": 3.02
+    },
+    {
+      "id": 9,
+      "text": "No, I don't.",
+      "start": 22.34,
+      "duration": 3.02
+    },
+    {
+      "id": 10,
+      "text": "It's at home.",
+      "start": 25.36,
+      "duration": 1.14
+    },
+    {
+      "id": 11,
+      "text": "That's okay.",
+      "start": 26.5,
+      "duration": 2.12
+    },
+    {
+      "id": 12,
+      "text": "I have one.",
+      "start": 28.62,
+      "duration": 1.89
+    },
+    {
+      "id": 13,
+      "text": "Here you are.",
+      "start": 30.51,
+      "duration": 1.33
+    },
+    {
+      "id": 14,
+      "text": "Thank you.",
+      "start": 31.84,
+      "duration": 2.66
+    },
+    {
+      "id": 15,
+      "text": "Do you have a notebook?",
+      "start": 34.5,
+      "duration": 3.44
+    },
+    {
+      "id": 16,
+      "text": "Yes, I do.",
+      "start": 37.94,
+      "duration": 1.1
+    },
+    {
+      "id": 17,
+      "text": "Do you have a pencil case?",
+      "start": 39.04,
+      "duration": 2.83
+    },
+    {
+      "id": 18,
+      "text": "Yes, I do.",
+      "start": 41.87,
+      "duration": 1.65
+    },
+    {
+      "id": 19,
+      "text": "Do you have a ruler?",
+      "start": 43.52,
+      "duration": 4.51
+    },
+    {
+      "id": 20,
+      "text": "Yes, I do.",
+      "start": 48.03,
+      "duration": 1.31
+    },
+    {
+      "id": 21,
+      "text": "Do you have a school bag?",
+      "start": 49.35,
+      "duration": 2.65
+    },
+    {
+      "id": 22,
+      "text": "Yes, I do.",
+      "start": 52,
+      "duration": 2.16
+    },
+    {
+      "id": 23,
+      "text": "Thank you for the chat!",
+      "start": 54.16,
+      "duration": 2
+    },
+    {
+      "id": 24,
+      "text": "You're welcome!",
+      "start": 56.16,
+      "duration": 2
+    }
+  ],
+  "videoId": "vb4ZF3pYtuw",
+  "source": "cleaned"
+}
