@@ -1,0 +1,132 @@
+{
+  "videoId": "feai5JCEzqs",
+  "text": "English Singsing What are you doing? It's a beautiful park! Look at the sky and trees. You doing, Jinsu? I’m drawing trees. Trees are good. I like trees. You doing, Sally? I'm jumping. Wow, you’re jumping high. A big fire! Now, come to the fire, everyone! They doing? They are dancing. They are good dancers. That’s right. Let’s dance together. Hahaha. What is she doing? Shhh! She is sleeping.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "English Singsing What are you doing?",
+      "start": 1.72,
+      "duration": 5.72
+    },
+    {
+      "id": 2,
+      "text": "It's a beautiful park!",
+      "start": 14.96,
+      "duration": 1.97
+    },
+    {
+      "id": 3,
+      "text": "Look at the sky and trees.",
+      "start": 19.06,
+      "duration": 2.54
+    },
+    {
+      "id": 4,
+      "text": "You doing, Jinsu?",
+      "start": 30.312,
+      "duration": 1.49
+    },
+    {
+      "id": 5,
+      "text": "I’m drawing trees.",
+      "start": 32.15,
+      "duration": 2.17
+    },
+    {
+      "id": 6,
+      "text": "Trees are good.",
+      "start": 35.41,
+      "duration": 1.76
+    },
+    {
+      "id": 7,
+      "text": "I like trees.",
+      "start": 38.42,
+      "duration": 2.22
+    },
+    {
+      "id": 8,
+      "text": "You doing, Sally?",
+      "start": 46.928,
+      "duration": 1.21
+    },
+    {
+      "id": 9,
+      "text": "I'm jumping.",
+      "start": 48.66,
+      "duration": 1.66
+    },
+    {
+      "id": 10,
+      "text": "Wow, you’re jumping high.",
+      "start": 51.98,
+      "duration": 2.36
+    },
+    {
+      "id": 11,
+      "text": "A big fire!",
+      "start": 61.225,
+      "duration": 2.11
+    },
+    {
+      "id": 12,
+      "text": "Now, come to the fire, everyone!",
+      "start": 64.05,
+      "duration": 2.94
+    },
+    {
+      "id": 13,
+      "text": "They doing?",
+      "start": 70.945,
+      "duration": 1.15
+    },
+    {
+      "id": 14,
+      "text": "They are dancing.",
+      "start": 72.78,
+      "duration": 2
+    },
+    {
+      "id": 15,
+      "text": "They are good dancers.",
+      "start": 75.72,
+      "duration": 2.31
+    },
+    {
+      "id": 16,
+      "text": "That’s right.",
+      "start": 78.81,
+      "duration": 1.33
+    },
+    {
+      "id": 17,
+      "text": "Let’s dance together.",
+      "start": 80.142,
+      "duration": 2
+    },
+    {
+      "id": 18,
+      "text": "Hahaha.",
+      "start": 90.28,
+      "duration": 0.61
+    },
+    {
+      "id": 19,
+      "text": "What is she doing?",
+      "start": 90.888,
+      "duration": 2.43
+    },
+    {
+      "id": 20,
+      "text": "Shhh!",
+      "start": 95.4,
+      "duration": 1
+    },
+    {
+      "id": 21,
+      "text": "She is sleeping.",
+      "start": 96.58,
+      "duration": 1.9
+    }
+  ]
+}
