@@ -1,81 +1,88 @@
 /**
- * transcriptEvaluator.js — LLM-driven semantic evaluation of video transcripts
+ * transcriptEvaluator.js — Shadowing-specific LLM evaluation
  *
- * Instead of counting exact string matches for chunks, this module:
- * 1. Feeds the LLM the video transcript + syllabus goals
- * 2. Asks it to evaluate semantic alignment (0-100 score)
- * 3. Returns structured relevance data
+ * Evaluated videos must be TWO-WAY DIALOGUES suitable for role-play shadowing.
+ * Monologues, documentaries, and narration are instant-rejected.
  */
 
 const { callLLM } = require('./llmClient.cjs');
 
-const SYSTEM_PROMPT = `You are an ESL content evaluator for Vietnamese K-12 students (A1-B1).
-You evaluate whether a YouTube video transcript is suitable for an English learning lesson.
+const SYSTEM_PROMPT = `You are an Expert ESL Curriculum Director specializing in K-12 language acquisition. Your task is to evaluate YouTube video transcripts to determine if they are highly suitable for a "Shadowing" (Listen & Repeat) role-play exercise.
 
-IMPORTANT CONTEXT: You are evaluating REAL YouTube videos, not ideal textbook content.
-A natural 3-5 minute ESL dialogue will NEVER contain 100% of a textbook's vocabulary list.
-Your job is to find videos that are GOOD ENOUGH for classroom use, not perfect matches.
+You will be provided with:
+1. Target Topic & Target Age Group
+2. Target Grammar Focus
+3. Target Vocabulary List
+4. Video Transcript (with timestamps/sentences)
 
-SCORING CRITERIA (0-100):
+### CORE PHILOSOPHY
+A great shadowing video is a NATURAL, TWO-WAY CONVERSATION. Students must shadow authentic back-and-forth dialogue (First and Second person: "I", "You"). They should NOT shadow a narrator, a documentary, a vlog monologue, or a list of textbook sentences.
 
-1. Vocabulary Relevance (0-30 points):
-   The target vocabulary list is a TEXTBOOK INVENTION. In real ESL videos:
-   - 0-10 pts: 0-1 target words found, topic completely unrelated
-   - 11-20 pts: 2-3 target words found, OR topic is related but words don't appear
-   - 21-30 pts: 4+ target words found, OR strong semantic alignment with topic
-   EXAMPLES:
-   - "school" topic: video about "classroom", "teacher", "book", "student" = GOOD (semantic alignment)
-   - "family" topic: video about "mom", "dad", "brother", "sister" = GOOD (semantic alignment)
-   - "sports" topic: video about "football", "basketball", "running" = GOOD (semantic alignment)
-   DO NOT require exact word matches. Semantic alignment with the TOPIC matters more.
+### INSTANT REJECT CONDITIONS (FATAL FLAWS)
+If ANY of the following are true, immediately set verdict to "FAIL" and score to 0:
+1. THE MONOLOGUE TRAP: The transcript is mostly third-person description (e.g., "Students go to school. They eat lunch.") or a single person talking to the camera without interaction.
+2. ADULT/OFF-TOPIC THEMES: The content contains inappropriate topics or complex adult scenarios (e.g., corporate job interviews, political debates) unsuitable for the Target Age Group.
+3. INCOMPREHENSIBLE ASR: The transcript is a wall of text with missing punctuation, run-on sentences, or garbled words that would make sentence-by-sentence chunking impossible.
 
-2. Grammar Alignment (0-20 points):
-   - Does the transcript use the target grammar structures naturally?
-   - For "verb to be": look for "I am", "you are", "he is", "we are" etc.
-   - If grammar appears even once in natural dialogue = full points
-   - If grammar is absent but dialogue is natural = still give 10+ points
+### EVALUATION RUBRIC (0 - 100 Points)
 
-3. Conversational Authenticity (0-20 points):
-   - Is this natural dialogue between real people?
-   - Does it sound like something kids would actually hear?
-   - Robotic/scripted content = low score (5-10 pts)
-   - Natural back-and-forth = high score (15-20 pts)
+1. Format & Interaction (0 - 35 points) - THE MOST CRITICAL FACTOR
+- 35 pts: Authentic two-way (or multi-speaker) dialogue. Clear question-and-answer patterns. Frequent use of "I" and "You". Natural conversational markers (greetings, fillers like "Oh", "Really?").
+- 15 pts: Q&A format but feels heavily scripted or slightly robotic.
+- 0 pts: Monologue, documentary, or presentation. (Triggers Instant Reject).
 
-4. Age Appropriateness (0-15 points):
-   - Content suitable for 6-12 year old Vietnamese students?
-   - Topics like jobs, dating, politics = low score (0-5 pts)
-   - Topics like school, family, daily routine = high score (12-15 pts)
+2. Vocabulary Integration (0 - 25 points) - BE REALISTIC
+*DO NOT demand a 100% vocabulary match.* Authentic conversations rarely contain every word from a syllabus.
+- 20-25 pts: Contains a reasonable portion (30-50%+) of the target vocabulary used in a natural, highly contextual way.
+- 10-19 pts: Contains 1-2 target words, but the overall topic is highly relevant.
+- 0 pts: Completely off-topic and zero target words.
 
-5. Transcript Quality (0-15 points):
-   - Punctuated, well-structured, easy to read
-   - Auto-generated captions with errors = low score (5 pts)
-   - Manually created captions = high score (12-15 pts)
+3. Grammar Alignment (0 - 20 points)
+- 15-20 pts: Naturally showcases the Target Grammar Focus (e.g., if focus is 'Verb to be', it has plenty of "Are you...?", "I am...").
+- 5-14 pts: Grammar is present but not a prominent feature of the conversation.
+- 0 pts: Grammar structure is missing entirely or too complex (e.g., using past perfect for an A1 present simple lesson).
 
-VERDICT RULES:
-- PASS if score >= 50 AND the video is pedagogically useful for this topic
-- FAIL if score < 50 OR content is completely off-topic
-- A score of 50-65 = "usable but not ideal"
-- A score of 65-80 = "good match"
-- A score of 80+ = "excellent match"
+4. Shadowing Suitability (0 - 20 points)
+- 15-20 pts: Sentences are relatively short (5-15 words). The pacing allows for easy repeating. The punctuation in the transcript is logically placed.
+- 0-14 pts: Contains massive, complex, compound sentences that would leave a student breathless when trying to repeat them.
 
-BE GENEROUS: A video with 3+ vocab words, natural grammar, and authentic dialogue
-should almost always PASS, even if it doesn't contain every target word.
+### VERDICT RULES
+- "PASS": Score is >= 75 AND it passes all Instant Reject conditions. This video is ready for production.
+- "FAIL": Score is < 75 OR it hits an Instant Reject condition.
 
-Output MUST be valid JSON.`;
+### OUTPUT FORMAT
+You must output ONLY valid JSON in the following format:
+{
+  "score": <integer 0-100>,
+  "verdict": "<PASS or FAIL>",
+  "sub_scores": {
+    "format_interaction": <int>,
+    "vocabulary": <int>,
+    "grammar": <int>,
+    "shadowing_suitability": <int>
+  },
+  "vocabulary_match": {
+    "matched_words": ["word1", "word2"],
+    "percentage": "<string, e.g., '40%'>"
+  },
+  "reasoning": {
+    "format_analysis": "<Briefly prove this is a dialogue, not a monologue>",
+    "overall_justification": "<Explain the final verdict>"
+  }
+}`;
 
 function buildEvaluationPrompt(transcript, syllabusMeta, weekTitle, videoTitle) {
-  // Truncate transcript to ~2000 chars to fit context
-  const truncatedTranscript = transcript.length > 2000
-    ? transcript.slice(0, 2000) + '... [truncated]'
+  const truncatedTranscript = transcript.length > 3000
+    ? transcript.slice(0, 3000) + '... [truncated]'
     : transcript;
 
-  return `Evaluate this YouTube video transcript for an English lesson.
+  return `Evaluate this YouTube video transcript for a Shadowing (Listen & Repeat) role-play exercise.
 
-LESSON CONTEXT:
-- Week Topic: "${syllabusMeta.topic || weekTitle}"
+TARGET CONTEXT:
+- Topic: "${syllabusMeta.topic || weekTitle}"
 - Grammar Focus: "${syllabusMeta.grammarFocus || 'none'}"
 - Target Vocabulary: ${JSON.stringify(syllabusMeta.vocabWords || [])}
-- Target Conversational Phrases: ${JSON.stringify(syllabusMeta.conversationalExpressions || [])}
+- Age Group: 6-12 year old Vietnamese students (A1 level)
 
 VIDEO:
 - Title: "${videoTitle}"
@@ -83,54 +90,11 @@ VIDEO:
 TRANSCRIPT:
 ${truncatedTranscript}
 
-EVALUATION RULES:
-1. Check if transcript words are SEMANTICALLY RELATED to the topic
-2. Check if transcript uses the target grammar structures
-3. Check if dialogue is authentic and age-appropriate
-4. Check transcript quality
-
-SCORING GUIDELINES:
-- Vocabulary: 3+ words from topic = good (20/30), 5+ = great (25/30)
-- Grammar: Used naturally = full points (20/20)
-- Conversation: Natural flow = high points (up to 20/20)
-- Age: School/family/daily routine = high (up to 15/15)
-- Quality: Punctuated captions = high (up to 15/15)
-
-VERDICT:
-- PASS if total score >= 50 AND the video is pedagogically useful
-- FAIL only if score < 50 OR completely off-topic
-
-Return this JSON:
-{
-  "score": 0-100,
-  "verdict": "PASS" or "FAIL",
-  "vocabulary_match": {
-    "matched_words": ["list of target words found in transcript"],
-    "count": 0,
-    "percentage": "e.g. 33%",
-    "score": 0-30
-  },
-  "grammar_match": {
-    "matched_structures": ["list of grammar patterns found"],
-    "score": 0-20
-  },
-  "conversational_quality": {
-    "is_natural_dialogue": true/false,
-    "score": 0-20
-  },
-  "age_appropriate": true/false,
-  "age_score": 0-15,
-  "transcript_quality": {
-    "has_punctuation": true/false,
-    "is_readable": true/false,
-    "score": 0-15
-  },
-  "reason": "one sentence explaining the verdict"
-}`;
+Apply the evaluation rubric and output ONLY valid JSON.`;
 }
 
 /**
- * Evaluate a transcript against syllabus goals using LLM
+ * Evaluate a transcript for Shadowing suitability using LLM
  * @param {string} transcript - The full transcript text
  * @param {Object} syllabusMeta - { topic, grammarFocus, vocabWords, conversationalExpressions }
  * @param {string} weekTitle - fallback title
@@ -159,40 +123,21 @@ async function evaluateTranscript(transcript, syllabusMeta, weekTitle, videoTitl
         // Try cleaning common JSON issues (trailing commas, unescaped quotes)
         const cleaned = jsonMatch[1].trim()
           .replace(/,\s*}/g, '}')
-          .replace(/,\s*]/g, ']')
-          .replace(/"/g, '"')
-          .replace(/\\"/g, '"');
+          .replace(/,\s*]/g, ']');
         try { parsed = JSON.parse(cleaned); } catch (e3) { /* continue */ }
-      }
-    }
-    if (!parsed) {
-      // Try finding any JSON object in the response
-      const objMatch = rawResponse.match(/\{[\s\S]*\}/);
-      if (objMatch) {
-        try {
-          const cleaned = objMatch[0]
-            .replace(/,\s*}/g, '}')
-            .replace(/,\s*]/g, ']');
-          parsed = JSON.parse(cleaned);
-        } catch (e4) { /* continue */ }
       }
     }
     if (!parsed) {
       // Final fallback: extract score + verdict from raw text via regex
       const scoreMatch = rawResponse.match(/"score"\s*:\s*(\d+)/);
       const verdictMatch = rawResponse.match(/"verdict"\s*:\s*"(PASS|FAIL)"/);
-      const reasonMatch = rawResponse.match(/"reason"\s*:\s*"([^"]+)"/);
       if (scoreMatch && verdictMatch) {
         parsed = {
           score: parseInt(scoreMatch[1]),
           verdict: verdictMatch[1],
-          reason: reasonMatch ? reasonMatch[1] : 'Parsed from text',
-          vocabulary_match: { matched_words: [], count: 0, score: 0 },
-          grammar_match: { matched_structures: [], score: 0 },
-          conversational_quality: { is_natural_dialogue: true, score: 0 },
-          age_appropriate: true,
-          age_score: 0,
-          transcript_quality: { has_punctuation: true, is_readable: true, score: 0 }
+          sub_scores: { format_interaction: 0, vocabulary: 0, grammar: 0, shadowing_suitability: 0 },
+          vocabulary_match: { matched_words: [], percentage: '0%' },
+          reasoning: { format_analysis: 'Regex fallback', overall_justification: 'Parsed from text' }
         };
         console.log(`    🤖 Regex fallback: score=${parsed.score} verdict=${parsed.verdict}`);
       } else {
