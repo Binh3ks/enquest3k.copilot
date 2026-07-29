@@ -1,32 +1,11 @@
 export default {
   title: "The Monday Morning Count",
-  videoId: "7isSwerYaQc",
+  videoId: "hjFaqDNUVFo",
   content_en: "It is Monday morning. The students arrive **at school**. **There are 30 students in our class**! Every student has a bag. There are bags on the floor and **on the hooks**. There are desks **in neat rows**. There are also chairs — one chair for each student! The teacher writes on the board. There are markers in the tray next to the board. There are pencils **in every pencil case**. There are papers **on each desk** for today's art project. There are crayons and markers in the art box. There are three shelves **on the wall**, full of books. There are **so many things** in our busy classroom! We love counting **at school**!",
   script: [
-    { id: 1, text: "Welcome to kids pages improve your vocabulary and learn new English words school dialogues.", vi: null, start: 0.03, duration: 14.780000000000001 },
-    { id: 2, text: "Papel is ranging class is about to start we should go inside let's hurry up good.", vi: null, start: 17.92, duration: 22.269999999999996 },
-    { id: 3, text: "Morning everyone how are you today I'm happy to hear that it's so great to see you again teacher may I open the window.", vi: null, start: 29.51, duration: 20.429999999999996 },
-    { id: 4, text: "Certainly it's very hot in the classroom today come in good morning I'm sorry Ann Lee may I.", vi: null, start: 46.63, duration: 21.35 },
-    { id: 5, text: "Come in yes please you may go to your place thank You teacher who can tell me what day is it today.", vi: null, start: 64.32, duration: 15.63000000000001 },
-    { id: 6, text: "Please raise your hand Emma stand up it's Monday very good sit down what date is it Jason its September 17th.", vi: null, start: 75.72, duration: 18.14 },
-    { id: 7, text: "Speak louder please I can't hear you it's September 17th that's right did you do your homework yes.", vi: null, start: 90.27, duration: 19.680000000000007 },
-    { id: 8, text: "Great let's check it please open your books to page 20 let's read a text.", vi: null, start: 101.94, duration: 12.980000000000004 },
-    { id: 9, text: "Teacher may I ask you a question yes please well does that word mean listen and repeat after me.", vi: null, start: 118.25, duration: 16.810000000000002 },
-    { id: 10, text: "Environment I don't understand can you repeat please how do you spell 8e n V I r onem2m excuse me teacher I don't have.", vi: null, start: 129.71, duration: 24.339999999999975 },
-    { id: 11, text: "A pencil may I borrow one from my classmates yes you may kate please come to the blackboard.", vi: null, start: 151.62, duration: 19.659999999999997 },
-    { id: 12, text: "Please write the days of the week on the blackboard well done you may go back to your place.", vi: null, start: 173.35, duration: 8.72999999999999 },
-    { id: 13, text: "Please be quiet stop talking and pay attention what happened what was that noise.", vi: null, start: 186.12, duration: 11.579999999999984 },
-    { id: 14, text: "I'm sorry teacher I took my pencil case it's okay please pick it up who wants to clean the.", vi: null, start: 194.26, duration: 19.55000000000001 },
-    { id: 15, text: "Blackboard I do it's break time goodbye students would you like to go outside in the schoolyard yes that's a.", vi: null, start: 207.16, duration: 23.039999999999992 },
-    { id: 16, text: "Very good idea let's go i'd rather have a snack I'm very hungry.", vi: null, start: 227.89, duration: 7.640000000000015 },
-    { id: 17, text: "What is your favorite subject my favorite subject is silence what about you I love English very much I really.", vi: null, start: 240.06, duration: 14.890000000000015 },
-    { id: 18, text: "Like math it's so awesome break time is over let's go back into the classroom.", vi: null, start: 249.31, duration: 9.949999999999989 },
-    { id: 19, text: "What class is next sport do you like sport yes I do but I like music more I love singing what about you Sport is.", vi: null, start: 262.02, duration: 17.680000000000007 },
-    { id: 20, text: "Okay but my favorite class geography I enjoy traveling.", vi: null, start: 276.55, duration: 6.7999999999999545 },
-    { id: 21, text: "What time is it it's 12 o'clock it's lunch time let's go to the cafeteria and have lunch yes let's go.", vi: null, start: 285.61, duration: 17.079999999999984 },
-    { id: 22, text: "I'm starving how does he run school so resistant I recognize very much what about yours it's great I have spaghetti.", vi: null, start: 295.61, duration: 21.360000000000014 },
-    { id: 23, text: "It smells terrific the school is over is trying to go home would you like to come.", vi: null, start: 309.62, duration: 12.75 },
-    { id: 24, text: "Over to my place in the afternoon and play basketball yes I would love to great I can't wait see you later then if.", vi: null, start: 320.3, duration: 18.180000000000007 },
-    { id: 25, text: "You liked that video please subscribe to our YouTube channel thank you very much.", vi: null, start: 336.32, duration: 11.810000000000002 }
+    { id: 1, text: "Pick up your pencil, pencil, pencil.", vi: null, start: 10.68, duration: 3.02 },
+    { id: 2, text: "Write your name, write your name!", vi: null, start: 13.7, duration: 3.02 },
+    { id: 3, text: "Put your pencil down Touch your book Time's up!", vi: null, start: 28.6, duration: 10.84 },
+    { id: 4, text: "Touch your bag Touch your eraser Touch your ruler Touch your paper Touch your glue.", vi: null, start: 40.26, duration: 71.94 }
   ]
 };

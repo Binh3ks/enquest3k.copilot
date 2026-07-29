@@ -1,0 +1,30 @@
+{
+  "videoId": "hjFaqDNUVFo",
+  "text": "Pick up your pencil, pencil, pencil. Write your name, write your name! Put your pencil down Touch your book Time's up! Touch your bag Touch your eraser Touch your ruler Touch your paper Touch your glue.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Pick up your pencil, pencil, pencil.",
+      "start": 10.68,
+      "duration": 3.02
+    },
+    {
+      "id": 2,
+      "text": "Write your name, write your name!",
+      "start": 13.7,
+      "duration": 3.02
+    },
+    {
+      "id": 3,
+      "text": "Put your pencil down Touch your book Time's up!",
+      "start": 28.6,
+      "duration": 10.84
+    },
+    {
+      "id": 4,
+      "text": "Touch your bag Touch your eraser Touch your ruler Touch your paper Touch your glue.",
+      "start": 40.26,
+      "duration": 71.94
+    }
+  ]
+}
