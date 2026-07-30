@@ -4,282 +4,66 @@
     {
       "id": 1,
       "text": "Hey there, it's a lovely Sunny day today.",
-      "start": 11.05,
-      "duration": 3.34
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "I came down for a sun bath.",
-      "start": 14.93,
-      "duration": 2.08
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "Don't look at me like that!",
-      "start": 17.9,
-      "duration": 1.59
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
-      "text": "Didn't your teachers tell you Sunlight is a good source of Vitamin D.",
-      "start": 20.19,
-      "duration": 4.41
+      "text": "Didn't your teachers tell you Sunlight is a good source of Vitamin D?",
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "Hey!",
-      "start": 25.95,
-      "duration": 0.53
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "Don't forget that we trees and plants make our food from sunlight!",
-      "start": 26.476923076923075,
-      "duration": 6.32
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "Yes you're right Mr.",
-      "start": 33.48,
-      "duration": 1.66
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "Tree!",
-      "start": 35.135999999999996,
-      "duration": 0.41
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "Isn't the process called Photosynthesis?",
-      "start": 36.12,
-      "duration": 2.34
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
-      "text": "Come friends, let's learn about Photosynthesis today.",
-      "start": 40.87,
-      "duration": 3.9
-    },
-    {
-      "id": 11,
-      "text": "Zoom in!",
-      "start": 44.97,
-      "duration": 1.05
-    },
-    {
-      "id": 12,
-      "text": "Doesn't that sound like a big word?",
-      "start": 52.16,
-      "duration": 2.39
-    },
-    {
-      "id": 13,
-      "text": "Well, don't be bogged down by it.",
-      "start": 55.99,
-      "duration": 2.51
-    },
-    {
-      "id": 14,
-      "text": "I'll tell you what it means",
-      "start": 58.8,
-      "duration": 1.96
-    },
-    {
-      "id": 15,
-      "text": "'Photo' is a Greek word for Light",
-      "start": 61.82,
-      "duration": 3.18
-    },
-    {
-      "id": 16,
-      "text": "And 'Synthesis' is a Greek word for 'Putting together'.",
-      "start": 65.82,
-      "duration": 4.17
-    },
-    {
-      "id": 17,
-      "text": "Now, it's simple!",
-      "start": 71.04,
-      "duration": 1.59
-    },
-    {
-      "id": 18,
-      "text": "Photosynthesis is using light to put things together!",
-      "start": 73.03,
-      "duration": 4.52
-    },
-    {
-      "id": 19,
-      "text": "Plants use this process to make their food",
-      "start": 78.25,
-      "duration": 2.48
-    },
-    {
-      "id": 20,
-      "text": "With the help of sunlight, water and carbon dioxide.",
-      "start": 80.83,
-      "duration": 8.14
-    },
-    {
-      "id": 21,
-      "text": "Did you know that plants breathe just like us?",
-      "start": 90.29,
-      "duration": 3.51
-    },
-    {
-      "id": 22,
-      "text": "You didn't?",
-      "start": 94.1,
-      "duration": 1.18
-    },
-    {
-      "id": 23,
-      "text": "Well, now you do!",
-      "start": 95.28,
-      "duration": 2.36
-    },
-    {
-      "id": 24,
-      "text": "Plants have tiny openings called the Stomata,",
-      "start": 98.59,
-      "duration": 2.59
-    },
-    {
-      "id": 25,
-      "text": "Present in their leaves, through which they take in carbon dioxide.",
-      "start": 101.48,
-      "duration": 4.68
-    },
-    {
-      "id": 26,
-      "text": "Yes, they breathe in carbon dioxide and give out oxygen.",
-      "start": 106.9,
-      "duration": 4.84
-    },
-    {
-      "id": 27,
-      "text": "They also use water and other nutrients to make food",
-      "start": 114.08,
-      "duration": 3.93
-    },
-    {
-      "id": 28,
-      "text": "Which is absorbed by their roots.",
-      "start": 118.21,
-      "duration": 2.67
-    },
-    {
-      "id": 29,
-      "text": "The leaves contain tiny pigments called the Chloroplasts.",
-      "start": 129.39,
-      "duration": 3.67
-    },
-    {
-      "id": 30,
-      "text": "These pigments take in carbon dioxide,",
-      "start": 134.08,
-      "duration": 2.94
-    },
-    {
-      "id": 31,
-      "text": "Water and sunlight,",
-      "start": 138.6,
-      "duration": 3.82
-    },
-    {
-      "id": 32,
-      "text": "And turn them into sugar and oxygen.",
-      "start": 143.37,
-      "duration": 5.03
-    },
-    {
-      "id": 33,
-      "text": "The sugar is then used by the plants as their food,",
-      "start": 150.06,
-      "duration": 3.39
-    },
-    {
-      "id": 34,
-      "text": "And the oxygen is given out into the atmosphere",
-      "start": 154.1,
-      "duration": 3.87
-    },
-    {
-      "id": 35,
-      "text": "This process as a whole is called \"Photosynthesis.\"",
-      "start": 158.5,
-      "duration": 4.51
-    },
-    {
-      "id": 36,
-      "text": "Mr.",
-      "start": 167.32,
-      "duration": 0.66
-    },
-    {
-      "id": 37,
-      "text": "Tree?",
-      "start": 167.975,
-      "duration": 0.66
-    },
-    {
-      "id": 38,
-      "text": "Yes, you are!",
-      "start": 169.5,
-      "duration": 1.79
-    },
-    {
-      "id": 39,
-      "text": "Chlorophyll is a green pigment that is found in the chloroplast of the plant.",
-      "start": 175.45,
-      "duration": 4.77
-    },
-    {
-      "id": 40,
-      "text": "It makes the plant look green.",
-      "start": 180.32,
-      "duration": 2.16
-    },
-    {
-      "id": 41,
-      "text": "Plants are often known as 'Lungs of the world'",
-      "start": 183.52,
-      "duration": 3.19
-    },
-    {
-      "id": 42,
-      "text": "As they take in carbon dioxide and give out oxygen,",
-      "start": 187.08,
-      "duration": 3.61
-    },
-    {
-      "id": 43,
-      "text": "Which the humans breathe!",
-      "start": 191.31,
-      "duration": 1.47
-    },
-    {
-      "id": 44,
-      "text": "It's time for some more sun bath.",
-      "start": 195.38,
-      "duration": 2.31
-    },
-    {
-      "id": 45,
-      "text": "Zooming out.",
-      "start": 197.79,
-      "duration": 2.51
-    },
-    {
-      "id": 46,
-      "text": "Tune in next time for some more fun facts!",
-      "start": 200.5,
-      "duration": 3.05
+      "text": "Come",
+      "start": 18,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-06-22T02:05:49Z",
   "videoId": "D1Ymc311XS8",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.352Z"
+  "formattedAt": "2026-07-30T13:15:08.636Z"
 }

@@ -4,212 +4,308 @@
     {
       "id": 1,
       "text": "English Sing Sing.",
-      "start": 5.28,
-      "duration": 1.38
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Fairy tale song.",
-      "start": 10.4,
-      "duration": 1.38
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "Who will win?",
-      "start": 12.48,
-      "duration": 1.06
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "It a race.",
-      "start": 29.01,
-      "duration": 16.24
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
-      "text": "hoo i can win you i can win you slow",
-      "start": 45.7,
-      "duration": 3.69
+      "text": "Hoo, I can win you.",
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
-      "text": "but the steady winner it's not over until the end",
-      "start": 49.39,
-      "duration": 4.81
+      "text": "I can win you.",
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
-      "text": "Let's have a race.",
-      "start": 54.59,
-      "duration": 1.53
+      "text": "Slow but the steady winner.",
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
-      "text": "I'm so fast and I'm the best.",
-      "start": 60.42,
-      "duration": 1.94
+      "text": "It's not over until the end.",
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
-      "text": "La la la.",
-      "start": 62.9,
-      "duration": 1.28
+      "text": "Let's have a race.",
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
-      "text": "Enjoy your race, enjoy your race, la la la.",
-      "start": 64.18,
-      "duration": 3.46
+      "text": "I'm so fast and I'm the best.",
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
-      "text": "I can win you, I can win you fast.",
-      "start": 68.18,
-      "duration": 2.34
+      "text": "La la la.",
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
-      "text": "And the best winner, it's not over until the end.",
-      "start": 70.58,
-      "duration": 4.75
+      "text": "Enjoy your race.",
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
-      "text": "Let's enjoy a race.",
-      "start": 75.8,
-      "duration": 1.45
+      "text": "Enjoy your race.",
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
-      "text": "Let's listen.",
-      "start": 110.14,
-      "duration": 0.91
+      "text": "La la la.",
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
-      "text": "And go slow and fast.",
-      "start": 118.4,
-      "duration": 1.12
+      "text": "I can win you.",
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
-      "text": "Run or race, run or race, walk.",
-      "start": 119.52,
-      "duration": 2.5
+      "text": "I can win you fast.",
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
-      "text": "hurrah who will win",
-      "start": 122.24,
-      "duration": 2.08
+      "text": "And the best winner.",
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
-      "text": "who will win slow will win or fast will win it's not all",
-      "start": 124.32,
-      "duration": 4.32
+      "text": "It's not over until the end.",
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
-      "text": "until the end",
-      "start": 128.64,
-      "duration": 1.94
+      "text": "Let's enjoy a race.",
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
-      "text": "Let's run or race.",
-      "start": 130.96,
-      "duration": 1.38
+      "text": "Let's listen.",
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
-      "text": "I'm so slow but I'm so steady.",
-      "start": 136.82,
-      "duration": 1.94
+      "text": "And go slow and fast.",
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
-      "text": "Hoo Have a race, have a race.",
-      "start": 139.47,
-      "duration": 3.22
+      "text": "Run or race.",
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
-      "text": "hoo i can win you i can win you slow",
-      "start": 143.15,
-      "duration": 3.67
+      "text": "Run or race.",
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
-      "text": "but the steady winner it's not over until the end",
-      "start": 146.82,
-      "duration": 4.92
+      "text": "Walk.",
+      "start": 46,
+      "duration": 2
     },
     {
       "id": 25,
-      "text": "Let's have a race.",
-      "start": 152.12,
-      "duration": 1.54
+      "text": "Hurrah!",
+      "start": 48,
+      "duration": 2
     },
     {
       "id": 26,
-      "text": "I'm so fast and I'm the best.",
-      "start": 158.04,
-      "duration": 1.86
+      "text": "Who will win?",
+      "start": 50,
+      "duration": 2
     },
     {
       "id": 27,
-      "text": "La la la.",
-      "start": 160.6,
-      "duration": 0.74
+      "text": "Who will win?",
+      "start": 52,
+      "duration": 2
     },
     {
       "id": 28,
-      "text": "Enjoy a race, enjoy a race.",
-      "start": 161.75,
+      "text": "Slow will win or fast will win?",
+      "start": 54,
       "duration": 2
     },
     {
       "id": 29,
-      "text": "La la la.",
-      "start": 163.75,
-      "duration": 1.46
+      "text": "It's not all until the end.",
+      "start": 56,
+      "duration": 2
     },
     {
       "id": 30,
-      "text": "I can win you, I can win you fast.",
-      "start": 165.75,
-      "duration": 2.34
+      "text": "Let's run or race.",
+      "start": 58,
+      "duration": 2
     },
     {
       "id": 31,
-      "text": "And the best winner, it's not over until the end.",
-      "start": 168.15,
-      "duration": 4.74
+      "text": "I'm so slow but I'm so steady.",
+      "start": 60,
+      "duration": 2
     },
     {
       "id": 32,
-      "text": "Let's enjoy a",
-      "start": 173.19,
-      "duration": 1.4
+      "text": "Hoo.",
+      "start": 62,
+      "duration": 2
     },
     {
       "id": 33,
-      "text": "race.",
-      "start": 175.05,
-      "duration": 0.5
+      "text": "Have a race.",
+      "start": 64,
+      "duration": 2
     },
     {
       "id": 34,
-      "text": "Sing along.",
-      "start": 207.79,
-      "duration": 0.82
+      "text": "Have a race.",
+      "start": 66,
+      "duration": 2
     },
     {
       "id": 35,
+      "text": "Hoo, I can win you.",
+      "start": 68,
+      "duration": 2
+    },
+    {
+      "id": 36,
+      "text": "I can win you.",
+      "start": 70,
+      "duration": 2
+    },
+    {
+      "id": 37,
+      "text": "Slow but the steady winner.",
+      "start": 72,
+      "duration": 2
+    },
+    {
+      "id": 38,
+      "text": "It's not over until the end.",
+      "start": 74,
+      "duration": 2
+    },
+    {
+      "id": 39,
+      "text": "Let's have a race.",
+      "start": 76,
+      "duration": 2
+    },
+    {
+      "id": 40,
+      "text": "I'm so fast and I'm the best.",
+      "start": 78,
+      "duration": 2
+    },
+    {
+      "id": 41,
+      "text": "La la la.",
+      "start": 80,
+      "duration": 2
+    },
+    {
+      "id": 42,
+      "text": "Enjoy a race.",
+      "start": 82,
+      "duration": 2
+    },
+    {
+      "id": 43,
+      "text": "Enjoy a race.",
+      "start": 84,
+      "duration": 2
+    },
+    {
+      "id": 44,
+      "text": "La la la.",
+      "start": 86,
+      "duration": 2
+    },
+    {
+      "id": 45,
+      "text": "I can win you.",
+      "start": 88,
+      "duration": 2
+    },
+    {
+      "id": 46,
+      "text": "I can win you fast.",
+      "start": 90,
+      "duration": 2
+    },
+    {
+      "id": 47,
+      "text": "And the best winner.",
+      "start": 92,
+      "duration": 2
+    },
+    {
+      "id": 48,
+      "text": "It's not over until the end.",
+      "start": 94,
+      "duration": 2
+    },
+    {
+      "id": 49,
+      "text": "Let's enjoy a race.",
+      "start": 96,
+      "duration": 2
+    },
+    {
+      "id": 50,
+      "text": "Sing along.",
+      "start": 98,
+      "duration": 2
+    },
+    {
+      "id": 51,
       "text": "Let's sing.",
-      "start": 304.55,
-      "duration": 0.98
+      "start": 100,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-23T06:28:10.723026+00:00",
@@ -239,5 +335,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.391Z"
+  "formattedAt": "2026-07-30T13:22:26.815Z"
 }

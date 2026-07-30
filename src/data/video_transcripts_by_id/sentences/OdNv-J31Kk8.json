@@ -3,213 +3,147 @@
   "segments": [
     {
       "id": 1,
-      "text": "The Carter Family Episode four A Camping Trip Yay, said Harry.",
-      "start": 5.6,
-      "duration": 15.76
+      "text": "The Carter Family.",
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
-      "text": "We're going camping.",
-      "start": 22.14,
-      "duration": 1.22
+      "text": "Episode four.",
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
-      "text": "Mom put the tent and food in the car.",
-      "start": 31.94,
-      "duration": 2.26
+      "text": "A Camping Trip. \"Yay,\" said Harry.",
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
-      "text": "Dad put the sleeping bags in the car.",
-      "start": 35.46,
-      "duration": 2.18
+      "text": "We're going camping.",
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
-      "text": "The kids played in the yard.",
-      "start": 42.38,
-      "duration": 1.71
+      "text": "Mom put the tent and food in the car.",
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
-      "text": "Harry threw a stick.",
-      "start": 45.59,
-      "duration": 1.37
+      "text": "Dad put the sleeping bags in the car.",
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
-      "text": "Rover ran after it.",
-      "start": 51.98,
-      "duration": 1.54
+      "text": "The kids played in the yard.",
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
-      "text": "Everybody in the car, dad said.",
-      "start": 55.53,
-      "duration": 2.58
+      "text": "Harry threw a stick.",
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
-      "text": "Rover looked for the stick.",
-      "start": 58.65,
-      "duration": 1.54
+      "text": "Rover ran after it. \"Everybody in the car,\" Dad said.",
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
-      "text": "It's time to go camping, Rover, said Harry.",
-      "start": 63.93,
-      "duration": 2.65
+      "text": "Rover looked for the stick. \"It's time to go camping, Rover,\" said Harry.",
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "Rover was still looking for the stick.",
-      "start": 67.78,
-      "duration": 2.27
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
-      "text": "Everybody pulled Rover into the car.",
-      "start": 77.7,
-      "duration": 2.27
+      "text": "Everybody pulled Rover into the car. \"Here we go,\" said Dad.",
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
-      "text": "Here we go.",
-      "start": 85.34,
-      "duration": 1.26
+      "text": "Dad drove, and Rover barked loudly.",
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
-      "text": "Said dad.",
-      "start": 86.60000000000001,
-      "duration": 0.84
+      "text": "Soon, they were in the woods.",
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
-      "text": "Dad drove, and Rover barked loudly.",
-      "start": 88.54,
-      "duration": 2.58
+      "text": "Mom and Harry set up the tent.",
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
-      "text": "Soon, they were in the woods.",
-      "start": 101.34,
-      "duration": 1.46
+      "text": "Dad and Emmy made a campfire.",
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
-      "text": "Mom and Harry set up the tent.",
-      "start": 110.67,
-      "duration": 1.86
+      "text": "Oliver found bugs.",
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
-      "text": "Dad and Emmy made a campfire.",
-      "start": 115.63,
-      "duration": 1.62
+      "text": "Grover sniffed all around.",
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
-      "text": "Oliver found bugs.",
-      "start": 122.35,
-      "duration": 1.38
+      "text": "Dad cooked dinner over the fire.",
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
-      "text": "Grover sniffed all around.",
-      "start": 126.88,
-      "duration": 1.69
+      "text": "Everybody ate. \"It's getting dark,\" said Dad. \"We need to tie up our food.",
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
-      "text": "Dad cooked dinner over the fire.",
-      "start": 132.16,
-      "duration": 1.85
+      "text": "There are bears in the woods.\" \"Bears?\" Harry looked around. \"Bears?\" Emmy looked around. \"I like bears,\" said Oliver.",
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
-      "text": "everybody ate it's getting dark said dad we need to tie up our food there",
-      "start": 136.71,
-      "duration": 14
+      "text": "Suddenly, the bushes moved. \"Is it a bear?\" asked Emmy.",
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
-      "text": "are bears in the woods",
-      "start": 150.71,
-      "duration": 1.38
+      "text": "A sound came from the bushes. \"It must be a bear,\" said Harry. \"Woof woof!\" Rover jumped out.",
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
-      "text": "Bears?",
-      "start": 154.84,
-      "duration": 0.5
-    },
-    {
-      "id": 25,
-      "text": "Harry looked around.",
-      "start": 155.79,
-      "duration": 1.15
-    },
-    {
-      "id": 26,
-      "text": "Bears?",
-      "start": 157.79,
-      "duration": 0.47
-    },
-    {
-      "id": 27,
-      "text": "Emmy looked around.",
-      "start": 158.2575,
-      "duration": 1.4
-    },
-    {
-      "id": 28,
-      "text": "I like bears, said Oliver.",
-      "start": 161.08,
-      "duration": 2.26
-    },
-    {
-      "id": 29,
-      "text": "Suddenly, the bushes moved.",
-      "start": 165.93,
-      "duration": 1.7
-    },
-    {
-      "id": 30,
-      "text": "Is it a bear?",
-      "start": 168.41,
-      "duration": 1.06
-    },
-    {
-      "id": 31,
-      "text": "Asked Emmy.",
-      "start": 169.61,
-      "duration": 0.82
-    },
-    {
-      "id": 32,
-      "text": "A sound came from the bushes.",
-      "start": 174.81,
-      "duration": 1.7
-    },
-    {
-      "id": 33,
-      "text": "It must be a bear, said Harry.",
-      "start": 177.61,
-      "duration": 2.26
-    },
-    {
-      "id": 34,
-      "text": "Woof woof, Rover jumped out.",
-      "start": 187.6,
-      "duration": 2.5
-    },
-    {
-      "id": 35,
       "text": "Rover had a new stick.",
-      "start": 190.97,
-      "duration": 1.78
+      "start": 46,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-23T06:27:52.542724+00:00",
@@ -236,5 +170,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.361Z"
+  "formattedAt": "2026-07-30T13:17:12.642Z"
 }

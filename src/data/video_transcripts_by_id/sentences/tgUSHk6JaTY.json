@@ -4,264 +4,264 @@
     {
       "id": 1,
       "text": "What do you like?",
-      "start": 5.3,
-      "duration": 1.68
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "What do you like?",
-      "start": 6.9799999999999995,
-      "duration": 1.68
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "What do you like?",
-      "start": 10.56,
-      "duration": 1.68
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "Baseball, baseball.",
-      "start": 12.24,
-      "duration": 1.35
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "I like baseball.",
-      "start": 13.592,
-      "duration": 2.03
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "Basketball, basketball.",
-      "start": 15.62,
-      "duration": 1.38
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "I like basketball.",
-      "start": 16.996,
-      "duration": 2.06
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "Volleyball, volleyball.",
-      "start": 19.06,
-      "duration": 1.3
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "I like volleyball.",
-      "start": 20.355999999999998,
-      "duration": 1.94
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "Soccer, soccer.",
-      "start": 22.3,
-      "duration": 1.44
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "I like soccer.",
-      "start": 23.740000000000002,
-      "duration": 2.16
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
       "text": "Baseball, basketball, volleyball, soccer.",
-      "start": 26.02,
-      "duration": 3.58
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
       "text": "I like sports!",
-      "start": 29.62,
-      "duration": 2.39
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
       "text": "Hurray!",
-      "start": 32.005,
-      "duration": 0.8
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
       "text": "What do you like?",
-      "start": 33.92,
-      "duration": 1.66
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "What do you like?",
-      "start": 35.58,
-      "duration": 1.66
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
       "text": "What do you like?",
-      "start": 39.1,
-      "duration": 1.56
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
       "text": "Diving, diving.",
-      "start": 40.94,
-      "duration": 1.29
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
       "text": "I like diving.",
-      "start": 42.227999999999994,
-      "duration": 1.93
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
       "text": "Swimming, swimming.",
-      "start": 44.16,
-      "duration": 1.39
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
       "text": "I like swimming.",
-      "start": 45.552,
-      "duration": 2.09
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
       "text": "Skiing, skiing.",
-      "start": 47.64,
-      "duration": 1.36
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
       "text": "I like skiing.",
-      "start": 49,
-      "duration": 2.04
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
       "text": "Skating, skating.",
-      "start": 51.04,
-      "duration": 1.48
+      "start": 46,
+      "duration": 2
     },
     {
       "id": 25,
       "text": "I like skating.",
-      "start": 52.519999999999996,
-      "duration": 2.22
+      "start": 48,
+      "duration": 2
     },
     {
       "id": 26,
       "text": "Diving, swimming, skiing, skating.",
-      "start": 54.74,
-      "duration": 3.38
+      "start": 50,
+      "duration": 2
     },
     {
       "id": 27,
       "text": "I like sports!",
-      "start": 58.14,
-      "duration": 2.47
+      "start": 52,
+      "duration": 2
     },
     {
       "id": 28,
       "text": "Hurray!",
-      "start": 60.615,
-      "duration": 0.83
+      "start": 54,
+      "duration": 2
     },
     {
       "id": 29,
       "text": "What do you like?",
-      "start": 62.58,
-      "duration": 1.7
+      "start": 56,
+      "duration": 2
     },
     {
       "id": 30,
       "text": "What do you like?",
-      "start": 64.28,
-      "duration": 1.7
+      "start": 58,
+      "duration": 2
     },
     {
       "id": 31,
       "text": "What do you like?",
-      "start": 67.8,
-      "duration": 1.46
+      "start": 60,
+      "duration": 2
     },
     {
       "id": 32,
       "text": "Tennis, tennis.",
-      "start": 69.28,
-      "duration": 1.39
+      "start": 62,
+      "duration": 2
     },
     {
       "id": 33,
       "text": "I like tennis.",
-      "start": 70.672,
-      "duration": 2.09
+      "start": 64,
+      "duration": 2
     },
     {
       "id": 34,
       "text": "Badminton, badminton.",
-      "start": 72.76,
-      "duration": 1.49
+      "start": 66,
+      "duration": 2
     },
     {
       "id": 35,
       "text": "I like badminton.",
-      "start": 74.248,
-      "duration": 2.23
+      "start": 68,
+      "duration": 2
     },
     {
       "id": 36,
       "text": "Fencing, fencing.",
-      "start": 76.48,
-      "duration": 1.38
+      "start": 70,
+      "duration": 2
     },
     {
       "id": 37,
       "text": "I like fencing.",
-      "start": 77.85600000000001,
-      "duration": 2.06
+      "start": 72,
+      "duration": 2
     },
     {
       "id": 38,
       "text": "Boxing, boxing.",
-      "start": 79.92,
-      "duration": 1.4
+      "start": 74,
+      "duration": 2
     },
     {
       "id": 39,
       "text": "I like boxing.",
-      "start": 81.32000000000001,
-      "duration": 2.1
+      "start": 76,
+      "duration": 2
     },
     {
       "id": 40,
       "text": "Tennis, badminton, fencing, boxing.",
-      "start": 83.42,
-      "duration": 3.36
+      "start": 78,
+      "duration": 2
     },
     {
       "id": 41,
       "text": "I like sports!",
-      "start": 86.8,
-      "duration": 2.6
+      "start": 80,
+      "duration": 2
     },
     {
       "id": 42,
       "text": "Hurray!",
-      "start": 89.395,
-      "duration": 0.87
+      "start": 82,
+      "duration": 2
     },
     {
       "id": 43,
       "text": "Hurray!",
-      "start": 90.26,
-      "duration": 0.9
+      "start": 84,
+      "duration": 2
     }
   ],
   "videoId": "tgUSHk6JaTY",
   "source": "cleaned",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.391Z"
+  "formattedAt": "2026-07-30T13:22:33.389Z"
 }

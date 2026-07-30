@@ -4,560 +4,596 @@
     {
       "id": 1,
       "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 1.38
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Theme 11, where.",
-      "start": 3.52,
-      "duration": 2.02
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "Mom, I want some ice cream.",
-      "start": 11.76,
-      "duration": 2.82
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "Okay.",
-      "start": 15.95,
-      "duration": 0.5
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "Where is the cafeteria?",
-      "start": 21.62,
-      "duration": 1.22
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "It's next to the flower shop.",
-      "start": 25.86,
-      "duration": 1.94
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "Let's go.",
-      "start": 28.61,
-      "duration": 0.9
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "Mom, where's the restroom?",
-      "start": 33.33,
-      "duration": 2.02
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "I don't know.",
-      "start": 37.09,
-      "duration": 0.9
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "Let's ask that woman.",
-      "start": 42.7,
-      "duration": 1.54
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "Excuse me.",
-      "start": 46.78,
-      "duration": 1.06
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
       "text": "Where is the restroom?",
-      "start": 48.3,
-      "duration": 1.22
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
       "text": "Go straight and turn left.",
-      "start": 51.27,
-      "duration": 1.85
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
       "text": "It's on your right.",
-      "start": 53.18,
-      "duration": 1.14
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
       "text": "Thank you.",
-      "start": 56.51,
-      "duration": 0.82
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "Dial.",
-      "start": 64.67,
-      "duration": 0.5
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
       "text": "I have science homework.",
-      "start": 71.47,
-      "duration": 1.86
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
       "text": "Me too.",
-      "start": 75.14,
-      "duration": 0.91
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
       "text": "Let's go to the science museum.",
-      "start": 77.47,
-      "duration": 2.01
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
       "text": "Good idea.",
-      "start": 80.76,
-      "duration": 2.82
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
       "text": "Where is it?",
-      "start": 86.76,
-      "duration": 1.06
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
       "text": "I don't know.",
-      "start": 88.68,
-      "duration": 1.06
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
       "text": "Excuse me.",
-      "start": 95.22,
-      "duration": 0.95
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
       "text": "Where's the science museum?",
-      "start": 96.17,
-      "duration": 1.63
+      "start": 46,
+      "duration": 2
     },
     {
       "id": 25,
       "text": "Go straight and turn right at the bank.",
-      "start": 99.62,
-      "duration": 3.05
+      "start": 48,
+      "duration": 2
     },
     {
       "id": 26,
       "text": "Thank you very much.",
-      "start": 111.88,
-      "duration": 1.46
+      "start": 50,
+      "duration": 2
     },
     {
       "id": 27,
       "text": "You're welcome.",
-      "start": 114.12,
-      "duration": 0.9
+      "start": 52,
+      "duration": 2
     },
     {
       "id": 28,
       "text": "Dial.",
-      "start": 120.12,
-      "duration": 0.5
+      "start": 54,
+      "duration": 2
     },
     {
       "id": 29,
       "text": "Sally, can you help me, please?",
-      "start": 127.7,
-      "duration": 2.42
+      "start": 56,
+      "duration": 2
     },
     {
       "id": 30,
       "text": "Okay, mom.",
-      "start": 131.47,
-      "duration": 0.97
+      "start": 58,
+      "duration": 2
     },
     {
       "id": 31,
       "text": "Go to the post office, please.",
-      "start": 134.75,
-      "duration": 2.09
+      "start": 60,
+      "duration": 2
     },
     {
       "id": 32,
       "text": "Where is the post office?",
-      "start": 138.56,
-      "duration": 1.62
+      "start": 62,
+      "duration": 2
     },
     {
       "id": 33,
       "text": "It's on Sejeong Street.",
-      "start": 141.28,
-      "duration": 1.7
+      "start": 64,
+      "duration": 2
     },
     {
       "id": 34,
       "text": "Excuse me.",
-      "start": 154.22,
-      "duration": 1.12
+      "start": 66,
+      "duration": 2
     },
     {
       "id": 35,
       "text": "Where is the post office?",
-      "start": 155.34,
-      "duration": 1.54
+      "start": 68,
+      "duration": 2
     },
     {
       "id": 36,
       "text": "Go straight.",
-      "start": 159.42,
-      "duration": 0.93
+      "start": 70,
+      "duration": 2
     },
     {
       "id": 37,
       "text": "It's over there.",
-      "start": 160.35199999999998,
-      "duration": 1.4
+      "start": 72,
+      "duration": 2
     },
     {
       "id": 38,
       "text": "Thank you very much.",
-      "start": 165.09,
-      "duration": 1.38
+      "start": 74,
+      "duration": 2
     },
     {
       "id": 39,
       "text": "Song.",
-      "start": 171.44,
-      "duration": 0.5
+      "start": 76,
+      "duration": 2
     },
     {
       "id": 40,
       "text": "Excuse me.",
-      "start": 178.88,
-      "duration": 1.28
+      "start": 78,
+      "duration": 2
     },
     {
       "id": 41,
       "text": "Where is the restaurant?",
-      "start": 180.16,
-      "duration": 1.46
+      "start": 80,
+      "duration": 2
     },
     {
       "id": 42,
       "text": "Where is the restaurant?",
-      "start": 182.56,
-      "duration": 2.03
+      "start": 82,
+      "duration": 2
     },
     {
       "id": 43,
-      "text": "Go straight and turn right, go straight and turn right.",
-      "start": 186,
-      "duration": 3.54
+      "text": "Go straight and turn right.",
+      "start": 84,
+      "duration": 2
     },
     {
       "id": 44,
-      "text": "It's on your left, it's on your left.",
-      "start": 189.93,
-      "duration": 3.29
+      "text": "Go straight and turn right.",
+      "start": 86,
+      "duration": 2
     },
     {
       "id": 45,
-      "text": "Thank you very much.",
-      "start": 193.57,
-      "duration": 1.46
+      "text": "It's on your left.",
+      "start": 88,
+      "duration": 2
     },
     {
       "id": 46,
-      "text": "Excuse me.",
-      "start": 195.49,
-      "duration": 1.36
+      "text": "It's on your left.",
+      "start": 90,
+      "duration": 2
     },
     {
       "id": 47,
-      "text": "Where is the restaurant, where is the restaurant?",
-      "start": 196.85,
-      "duration": 4.26
+      "text": "Thank you very much.",
+      "start": 92,
+      "duration": 2
     },
     {
       "id": 48,
-      "text": "go straight and turn right go straight",
-      "start": 202.61,
-      "duration": 2.48
+      "text": "Excuse me.",
+      "start": 94,
+      "duration": 2
     },
     {
       "id": 49,
-      "text": "and turn right it's on your left it's on your left thank you very much",
-      "start": 205.09,
-      "duration": 6.51
+      "text": "Where is the restaurant?",
+      "start": 96,
+      "duration": 2
     },
     {
       "id": 50,
-      "text": "Excuse me.",
-      "start": 223.87,
-      "duration": 1.57
+      "text": "Where is the restaurant?",
+      "start": 98,
+      "duration": 2
     },
     {
       "id": 51,
-      "text": "Excuse me.",
-      "start": 225.44,
-      "duration": 1.57
+      "text": "Go straight and turn right.",
+      "start": 100,
+      "duration": 2
     },
     {
       "id": 52,
-      "text": "Where's the bank?",
-      "start": 228.35,
-      "duration": 1.14
+      "text": "Go straight and turn right.",
+      "start": 102,
+      "duration": 2
     },
     {
       "id": 53,
-      "text": "Where's the bank?",
-      "start": 230.51,
-      "duration": 1.22
+      "text": "It's on your left.",
+      "start": 104,
+      "duration": 2
     },
     {
       "id": 54,
-      "text": "Go straight and turn right.",
-      "start": 232.94,
-      "duration": 2.02
+      "text": "It's on your left.",
+      "start": 106,
+      "duration": 2
     },
     {
       "id": 55,
-      "text": "Go straight and turn right.",
-      "start": 237.34,
-      "duration": 2.1
+      "text": "Thank you very much.",
+      "start": 108,
+      "duration": 2
     },
     {
       "id": 56,
-      "text": "Oh, thanks.",
-      "start": 241.58,
-      "duration": 0.98
+      "text": "Excuse me.",
+      "start": 110,
+      "duration": 2
     },
     {
       "id": 57,
-      "text": "Thanks.",
-      "start": 243.58,
-      "duration": 0.5
+      "text": "Excuse me.",
+      "start": 112,
+      "duration": 2
     },
     {
       "id": 58,
-      "text": "Excuse me.",
-      "start": 250.12,
-      "duration": 1.53
+      "text": "Where's the bank?",
+      "start": 114,
+      "duration": 2
     },
     {
       "id": 59,
-      "text": "Excuse me.",
-      "start": 251.65,
-      "duration": 1.53
+      "text": "Where's the bank?",
+      "start": 116,
+      "duration": 2
     },
     {
       "id": 60,
-      "text": "Where is the school?",
-      "start": 254.6,
-      "duration": 1.14
+      "text": "Go straight and turn right.",
+      "start": 118,
+      "duration": 2
     },
     {
       "id": 61,
-      "text": "Where is the school?",
-      "start": 256.76,
-      "duration": 1.14
+      "text": "Go straight and turn right.",
+      "start": 120,
+      "duration": 2
     },
     {
       "id": 62,
-      "text": "Go straight and turn left.",
-      "start": 259.12,
-      "duration": 2.01
+      "text": "Oh, thanks.",
+      "start": 122,
+      "duration": 2
     },
     {
       "id": 63,
-      "text": "Go straight and turn left.",
-      "start": 263.44,
-      "duration": 2.1
+      "text": "Thanks.",
+      "start": 124,
+      "duration": 2
     },
     {
       "id": 64,
-      "text": "Oh, thanks.",
-      "start": 267.84,
-      "duration": 0.97
+      "text": "Excuse me.",
+      "start": 126,
+      "duration": 2
     },
     {
       "id": 65,
-      "text": "Thanks.",
-      "start": 269.75,
-      "duration": 0.5
+      "text": "Excuse me.",
+      "start": 128,
+      "duration": 2
     },
     {
       "id": 66,
-      "text": "Wow.",
-      "start": 285.5,
-      "duration": 0.5
+      "text": "Where is the school?",
+      "start": 130,
+      "duration": 2
     },
     {
       "id": 67,
-      "text": "Great.",
-      "start": 287.98,
-      "duration": 0.5
+      "text": "Where is the school?",
+      "start": 132,
+      "duration": 2
     },
     {
       "id": 68,
-      "text": "Annika, Tommy, look.",
-      "start": 290.54,
-      "duration": 2.26
+      "text": "Go straight and turn left.",
+      "start": 134,
+      "duration": 2
     },
     {
       "id": 69,
-      "text": "How nice.",
-      "start": 296.79,
-      "duration": 0.9
+      "text": "Go straight and turn left.",
+      "start": 136,
+      "duration": 2
     },
     {
       "id": 70,
-      "text": "Where is this doll?",
-      "start": 297.83,
-      "duration": 1.3
+      "text": "Oh, thanks.",
+      "start": 138,
+      "duration": 2
     },
     {
       "id": 71,
-      "text": "In the museum.",
-      "start": 300.39,
-      "duration": 0.9
+      "text": "Thanks.",
+      "start": 140,
+      "duration": 2
     },
     {
       "id": 72,
-      "text": "Let's go to the museum.",
-      "start": 303.59,
-      "duration": 1.7
+      "text": "Wow.",
+      "start": 142,
+      "duration": 2
     },
     {
       "id": 73,
-      "text": "Excuse me.",
-      "start": 314.37,
-      "duration": 0.82
+      "text": "Great.",
+      "start": 144,
+      "duration": 2
     },
     {
       "id": 74,
-      "text": "Where is the museum?",
-      "start": 315.49,
-      "duration": 1.3
+      "text": "Annika, Tommy, look.",
+      "start": 146,
+      "duration": 2
     },
     {
       "id": 75,
-      "text": "It's next to Pam Pam Hospital.",
-      "start": 317.65,
-      "duration": 2.25
+      "text": "How nice.",
+      "start": 148,
+      "duration": 2
     },
     {
       "id": 76,
-      "text": "Thank you.",
-      "start": 322.69,
-      "duration": 0.9
+      "text": "Where is this doll?",
+      "start": 150,
+      "duration": 2
     },
     {
       "id": 77,
-      "text": "Here.",
-      "start": 327.76,
-      "duration": 0.5
+      "text": "In the museum.",
+      "start": 152,
+      "duration": 2
     },
     {
       "id": 78,
-      "text": "This is Pam Pam Hospital.",
-      "start": 328.72,
-      "duration": 1.86
+      "text": "Let's go to the museum.",
+      "start": 154,
+      "duration": 2
     },
     {
       "id": 79,
-      "text": "Where's the museum?",
-      "start": 331.68,
-      "duration": 1.22
+      "text": "Excuse me.",
+      "start": 156,
+      "duration": 2
     },
     {
       "id": 80,
-      "text": "Excuse me.",
-      "start": 336.16,
-      "duration": 0.87
+      "text": "Where is the museum?",
+      "start": 158,
+      "duration": 2
     },
     {
       "id": 81,
-      "text": "Where's the museum?",
-      "start": 337.03200000000004,
-      "duration": 1.31
+      "text": "It's next to Pam Pam Hospital.",
+      "start": 160,
+      "duration": 2
     },
     {
       "id": 82,
-      "text": "Over there.",
-      "start": 339.66,
-      "duration": 0.9
+      "text": "Thank you.",
+      "start": 162,
+      "duration": 2
     },
     {
       "id": 83,
-      "text": "Thank you.",
-      "start": 342.38,
-      "duration": 0.9
+      "text": "Here.",
+      "start": 164,
+      "duration": 2
     },
     {
       "id": 84,
-      "text": "Wow.",
-      "start": 345.57,
-      "duration": 0.62
+      "text": "This is Pam Pam Hospital.",
+      "start": 166,
+      "duration": 2
     },
     {
       "id": 85,
-      "text": "How nice.",
-      "start": 346.1933333333333,
-      "duration": 1.25
+      "text": "Where's the museum?",
+      "start": 168,
+      "duration": 2
     },
     {
       "id": 86,
       "text": "Excuse me.",
-      "start": 350.94,
-      "duration": 0.98
+      "start": 170,
+      "duration": 2
     },
     {
       "id": 87,
-      "text": "Where is this doll?",
-      "start": 352.13,
-      "duration": 1.31
+      "text": "Where's the museum?",
+      "start": 172,
+      "duration": 2
     },
     {
       "id": 88,
-      "text": "Go straight and turn right.",
-      "start": 355.05,
-      "duration": 2.26
+      "text": "Over there.",
+      "start": 174,
+      "duration": 2
     },
     {
       "id": 89,
       "text": "Thank you.",
-      "start": 358.33,
-      "duration": 0.82
+      "start": 176,
+      "duration": 2
     },
     {
       "id": 90,
-      "text": "Let's go.",
-      "start": 360.73,
-      "duration": 0.82
+      "text": "Wow.",
+      "start": 178,
+      "duration": 2
     },
     {
       "id": 91,
-      "text": "Oh.",
-      "start": 362.97,
-      "duration": 0.5
+      "text": "How nice.",
+      "start": 180,
+      "duration": 2
     },
     {
       "id": 92,
-      "text": "I'm sorry.",
-      "start": 366.01,
-      "duration": 0.9
+      "text": "Excuse me.",
+      "start": 182,
+      "duration": 2
     },
     {
       "id": 93,
+      "text": "Where is this doll?",
+      "start": 184,
+      "duration": 2
+    },
+    {
+      "id": 94,
+      "text": "Go straight and turn right.",
+      "start": 186,
+      "duration": 2
+    },
+    {
+      "id": 95,
+      "text": "Thank you.",
+      "start": 188,
+      "duration": 2
+    },
+    {
+      "id": 96,
+      "text": "Let's go.",
+      "start": 190,
+      "duration": 2
+    },
+    {
+      "id": 97,
+      "text": "Oh.",
+      "start": 192,
+      "duration": 2
+    },
+    {
+      "id": 98,
+      "text": "I'm sorry.",
+      "start": 194,
+      "duration": 2
+    },
+    {
+      "id": 99,
       "text": "Oh no.",
-      "start": 370.56,
-      "duration": 0.98
+      "start": 196,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-23T06:24:32.625361+00:00",
@@ -591,5 +627,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.383Z"
+  "formattedAt": "2026-07-30T13:21:11.028Z"
 }

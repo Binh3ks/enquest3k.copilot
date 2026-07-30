@@ -3,109 +3,121 @@
   "segments": [
     {
       "id": 1,
-      "text": "Excuse.",
-      "start": 4.4,
-      "duration": 3.48
+      "text": "Excuse me.",
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
-      "text": "Me excuse.",
-      "start": 5.56,
-      "duration": 4.6
+      "text": "Excuse me.",
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
-      "text": "Me where's the.",
-      "start": 7.88,
-      "duration": 4.4
+      "text": "Where's the bank?",
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
-      "text": "Bank where's the.",
-      "start": 10.16,
-      "duration": 6.52
+      "text": "Where's the bank?",
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
-      "text": "Bank go straight and turn.",
-      "start": 12.28,
-      "duration": 8.8
+      "text": "Go straight and turn right.",
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
-      "text": "Right go straight and turn.",
-      "start": 16.68,
-      "duration": 6.68
+      "text": "Go straight and turn right.",
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
-      "text": "Right oh.",
-      "start": 21.08,
-      "duration": 6.28
+      "text": "Oh.",
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
-      "text": "Thanks thanks.",
-      "start": 23.36,
-      "duration": 4
+      "text": "Thanks.",
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
-      "text": "Excuse.",
-      "start": 30.56,
-      "duration": 3.52
+      "text": "Thanks.",
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
-      "text": "Me excuse.",
-      "start": 31.68,
-      "duration": 4.6
+      "text": "Excuse me.",
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
-      "text": "Me where is the.",
-      "start": 34.08,
-      "duration": 4.44
+      "text": "Excuse me.",
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
-      "text": "School where is the.",
-      "start": 36.28,
-      "duration": 5.25
+      "text": "Where is the school?",
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
-      "text": "School go straight and turn.",
-      "start": 38.52,
-      "duration": 4.36
+      "text": "Where is the school?",
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
-      "text": "Left go straight and turn.",
-      "start": 42.88,
-      "duration": 6.56
+      "text": "Go straight and turn left.",
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
-      "text": "Left oh.",
-      "start": 47.24,
-      "duration": 6.2
+      "text": "Go straight and turn left.",
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
-      "text": "Thanks thanks.",
-      "start": 49.44,
-      "duration": 4
+      "text": "Oh.",
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
+      "text": "Thanks.",
+      "start": 32,
+      "duration": 2
+    },
+    {
+      "id": 18,
+      "text": "Thanks.",
+      "start": 34,
+      "duration": 2
+    },
+    {
+      "id": 19,
       "text": "Let's chant.",
-      "start": 61.8,
-      "duration": 4.99
+      "start": 36,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-01T07:33:13.823Z",
   "videoId": "AgTkKGM0TWE",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.351Z"
+  "formattedAt": "2026-07-30T13:14:53.687Z"
 }

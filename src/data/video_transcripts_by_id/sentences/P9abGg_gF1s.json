@@ -4,686 +4,104 @@
     {
       "id": 1,
       "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 1.38
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Theme four.",
-      "start": 3.6,
-      "duration": 1.08
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "Weather.",
-      "start": 4.68,
-      "duration": 0.54
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "Dialogue.",
-      "start": 10.96,
-      "duration": 0.5
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "Let's play outside.",
-      "start": 15.2,
-      "duration": 1.21
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "Sorry, I can't.",
-      "start": 18.32,
-      "duration": 1.45
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "It's cold and windy.",
-      "start": 19.99,
-      "duration": 1.39
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "Look, it's snowing.",
-      "start": 27.52,
-      "duration": 1.21
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "It's all white.",
-      "start": 31.43,
-      "duration": 1.3
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "Do you like snow?",
-      "start": 35.19,
-      "duration": 1.22
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "Yes, I do.",
-      "start": 37.35,
-      "duration": 1.14
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
       "text": "Let's go.",
-      "start": 39.51,
-      "duration": 1.06
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
       "text": "Can you make a snowman?",
-      "start": 45.66,
-      "duration": 1.39
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
       "text": "Sure, I can.",
-      "start": 48.3,
-      "duration": 1.06
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
       "text": "A snowman?",
-      "start": 58.4,
-      "duration": 0.82
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "You're good.",
-      "start": 59.6,
-      "duration": 0.98
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
-      "text": "Thank you.",
-      "start": 61.6,
-      "duration": 0.82
-    },
-    {
-      "id": 18,
-      "text": "What's that?",
-      "start": 66.24,
-      "duration": 0.98
-    },
-    {
-      "id": 19,
-      "text": "His nose.",
-      "start": 68.02,
-      "duration": 0.98
-    },
-    {
-      "id": 20,
-      "text": "Wow, a nose.",
-      "start": 73.53,
-      "duration": 1.63
-    },
-    {
-      "id": 21,
-      "text": "Song.",
-      "start": 81.86,
-      "duration": 0.5
-    },
-    {
-      "id": 22,
-      "text": "How's the weather?",
-      "start": 94.02,
-      "duration": 1.3
-    },
-    {
-      "id": 23,
-      "text": "How's the weather?",
-      "start": 95.73,
-      "duration": 1.7
-    },
-    {
-      "id": 24,
-      "text": "It's sunny.",
-      "start": 97.428,
-      "duration": 1.13
-    },
-    {
-      "id": 25,
-      "text": "It's sunny.",
-      "start": 99.25,
-      "duration": 1.06
-    },
-    {
-      "id": 26,
-      "text": "How's the weather?",
-      "start": 101.25,
-      "duration": 1.39
-    },
-    {
-      "id": 27,
-      "text": "How's the weather?",
-      "start": 103.02,
-      "duration": 1.45
-    },
-    {
-      "id": 28,
-      "text": "It's cloudy.",
-      "start": 104.78,
-      "duration": 0.98
-    },
-    {
-      "id": 29,
-      "text": "It's cloudy.",
-      "start": 106.61,
-      "duration": 0.91
-    },
-    {
-      "id": 30,
-      "text": "How's the weather?",
-      "start": 108.45,
-      "duration": 1.38
-    },
-    {
-      "id": 31,
-      "text": "How's the weather?",
-      "start": 110.14,
-      "duration": 1.25
-    },
-    {
-      "id": 32,
-      "text": "It's raining.",
-      "start": 112.35,
-      "duration": 0.82
-    },
-    {
-      "id": 33,
-      "text": "It's raining.",
-      "start": 114.03,
-      "duration": 0.9
-    },
-    {
-      "id": 34,
-      "text": "How's the weather?",
-      "start": 115.95,
-      "duration": 1.14
-    },
-    {
-      "id": 35,
-      "text": "How's the weather?",
-      "start": 117.47,
-      "duration": 1.46
-    },
-    {
-      "id": 36,
-      "text": "It's snowing.",
-      "start": 119.31,
-      "duration": 0.93
-    },
-    {
-      "id": 37,
-      "text": "It's snowing.",
-      "start": 120.24000000000001,
-      "duration": 0.93
-    },
-    {
-      "id": 38,
-      "text": "Song.",
-      "start": 127.17,
-      "duration": 0.5
-    },
-    {
-      "id": 39,
-      "text": "How's the weather?",
-      "start": 137.09,
-      "duration": 1.45
-    },
-    {
-      "id": 40,
-      "text": "It's rainy.",
-      "start": 139.13,
-      "duration": 1.49
-    },
-    {
-      "id": 41,
-      "text": "It's rainy.",
-      "start": 140.62,
-      "duration": 1.49
-    },
-    {
-      "id": 42,
-      "text": "Is this yours?",
-      "start": 143.21,
-      "duration": 1.38
-    },
-    {
-      "id": 43,
-      "text": "Yes, it's mine.",
-      "start": 145.05,
-      "duration": 1.62
-    },
-    {
-      "id": 44,
-      "text": "How's the weather?",
-      "start": 149.13,
-      "duration": 1.46
-    },
-    {
-      "id": 45,
-      "text": "It's sunny.",
-      "start": 151.16,
-      "duration": 0.97
-    },
-    {
-      "id": 46,
-      "text": "It's sunny.",
-      "start": 153.07,
-      "duration": 0.99
-    },
-    {
-      "id": 47,
-      "text": "Is this yours?",
-      "start": 155.16,
-      "duration": 1.45
-    },
-    {
-      "id": 48,
-      "text": "No, it's not mine.",
-      "start": 157.07,
-      "duration": 1.71
-    },
-    {
-      "id": 49,
-      "text": "How's the weather?",
-      "start": 161.16,
-      "duration": 1.45
-    },
-    {
-      "id": 50,
-      "text": "It's windy.",
-      "start": 163.23,
-      "duration": 0.9
-    },
-    {
-      "id": 51,
-      "text": "It's windy.",
-      "start": 165.23,
-      "duration": 0.9
-    },
-    {
-      "id": 52,
-      "text": "Is this yours?",
-      "start": 167.39,
-      "duration": 1.3
-    },
-    {
-      "id": 53,
-      "text": "Yes, it's mine.",
-      "start": 169.15,
-      "duration": 1.54
-    },
-    {
-      "id": 54,
-      "text": "How's the weather?",
-      "start": 185.91,
-      "duration": 1.13
-    },
-    {
-      "id": 55,
-      "text": "Cloudy, cloudy, it's cloudy.",
-      "start": 188.06,
-      "duration": 2.35
-    },
-    {
-      "id": 56,
-      "text": "How's the weather?",
-      "start": 192.54,
-      "duration": 1.15
-    },
-    {
-      "id": 57,
-      "text": "Raining, raining, it's raining.",
-      "start": 194.86,
-      "duration": 4.4
-    },
-    {
-      "id": 58,
-      "text": "How's the weather?",
-      "start": 199.48,
-      "duration": 0.9
-    },
-    {
-      "id": 59,
-      "text": "Snowing, snowing, it's snowing.",
-      "start": 201.56,
-      "duration": 2.18
-    },
-    {
-      "id": 60,
-      "text": "How's the weather?",
-      "start": 205.96,
-      "duration": 1.14
-    },
-    {
-      "id": 61,
-      "text": "Sunny, it's sunny.",
-      "start": 208.36,
-      "duration": 1.72
-    },
-    {
-      "id": 62,
-      "text": "How's the weather here?",
-      "start": 226.73,
-      "duration": 1.54
-    },
-    {
-      "id": 63,
-      "text": "How's the weather here?",
-      "start": 228.57,
-      "duration": 1.54
-    },
-    {
-      "id": 64,
-      "text": "It's windy and snowy.",
-      "start": 230.41,
-      "duration": 1.54
-    },
-    {
-      "id": 65,
-      "text": "It's windy and snowy.",
-      "start": 232.25,
-      "duration": 1.46
-    },
-    {
-      "id": 66,
-      "text": "Put on this hat.",
-      "start": 234.25,
-      "duration": 1.38
-    },
-    {
-      "id": 67,
-      "text": "Yes.",
-      "start": 235.93,
-      "duration": 0.5
-    },
-    {
-      "id": 68,
-      "text": "Put on these gloves.",
-      "start": 237.93,
-      "duration": 1.01
-    },
-    {
-      "id": 69,
-      "text": "Gloves.",
-      "start": 238.94,
-      "duration": 0.5
-    },
-    {
-      "id": 70,
-      "text": "Yes.",
-      "start": 239.57,
-      "duration": 0.5
-    },
-    {
-      "id": 71,
-      "text": "How's the weather outside?",
-      "start": 248.78,
-      "duration": 1.46
-    },
-    {
-      "id": 72,
-      "text": "How's the weather outside?",
-      "start": 250.61,
-      "duration": 1.46
-    },
-    {
-      "id": 73,
-      "text": "It's rainy and cold.",
-      "start": 252.61,
-      "duration": 2.35
-    },
-    {
-      "id": 74,
-      "text": "It's rainy and cold.",
-      "start": 256.3,
-      "duration": 2.42
-    },
-    {
-      "id": 75,
-      "text": "Bring this umbrella.",
-      "start": 259.9,
-      "duration": 1.38
-    },
-    {
-      "id": 76,
-      "text": "Yes.",
-      "start": 261.74,
-      "duration": 0.5
-    },
-    {
-      "id": 77,
-      "text": "Bring this umbrella.",
-      "start": 263.66,
-      "duration": 1.3
-    },
-    {
-      "id": 78,
-      "text": "Yes.",
-      "start": 265.66,
-      "duration": 0.5
-    },
-    {
-      "id": 79,
-      "text": "Story.",
-      "start": 277.11,
-      "duration": 0.5
-    },
-    {
-      "id": 80,
-      "text": "How's the weather?",
-      "start": 285.68,
-      "duration": 1.38
-    },
-    {
-      "id": 81,
-      "text": "It's raining.",
-      "start": 291.12,
-      "duration": 0.98
-    },
-    {
-      "id": 82,
-      "text": "Oh, no.",
-      "start": 293.89,
-      "duration": 1.23
-    },
-    {
-      "id": 83,
-      "text": "How's the weather?",
-      "start": 300.94,
-      "duration": 1.37
-    },
-    {
-      "id": 84,
-      "text": "It's sunny.",
-      "start": 303.57,
-      "duration": 0.91
-    },
-    {
-      "id": 85,
-      "text": "Oh, no.",
-      "start": 306.39,
-      "duration": 1.3
-    },
-    {
-      "id": 86,
-      "text": "Look.",
-      "start": 313.51,
-      "duration": 0.46
-    },
-    {
-      "id": 87,
-      "text": "It's raining.",
-      "start": 313.96999999999997,
-      "duration": 0.92
-    },
-    {
-      "id": 88,
-      "text": "Okay.",
-      "start": 316.79,
-      "duration": 0.5
-    },
-    {
-      "id": 89,
-      "text": "Sounds good.",
-      "start": 318.07,
-      "duration": 1.14
-    },
-    {
-      "id": 90,
-      "text": "It's sunny now.",
-      "start": 324.44,
-      "duration": 1.13
-    },
-    {
-      "id": 91,
-      "text": "That's good.",
-      "start": 328.27,
-      "duration": 1.23
-    },
-    {
-      "id": 92,
-      "text": "Story.",
-      "start": 334.71,
-      "duration": 0.5
-    },
-    {
-      "id": 93,
-      "text": "Grumpy, happy, dopey.",
-      "start": 341.91,
-      "duration": 2.58
-    },
-    {
-      "id": 94,
-      "text": "Coming.",
-      "start": 345.6,
-      "duration": 0.5
-    },
-    {
-      "id": 95,
-      "text": "Let's play outside.",
-      "start": 347.44,
-      "duration": 1.06
-    },
-    {
-      "id": 96,
-      "text": "Sorry.",
-      "start": 350,
-      "duration": 0.49
-    },
-    {
-      "id": 97,
-      "text": "We can't.",
-      "start": 350.4866666666667,
-      "duration": 0.97
-    },
-    {
-      "id": 98,
-      "text": "It's raining.",
-      "start": 355.04,
-      "duration": 0.83
-    },
-    {
-      "id": 99,
-      "text": "It's not raining.",
-      "start": 357.33,
-      "duration": 1.22
-    },
-    {
-      "id": 100,
-      "text": "It's snowing.",
-      "start": 358.85,
-      "duration": 1.14
-    },
-    {
-      "id": 101,
-      "text": "Snow?",
-      "start": 361.09,
-      "duration": 0.5
-    },
-    {
-      "id": 102,
-      "text": "Look.",
-      "start": 363.25,
-      "duration": 0.49
-    },
-    {
-      "id": 103,
-      "text": "It's snowing.",
-      "start": 363.7366666666667,
-      "duration": 0.97
-    },
-    {
-      "id": 104,
-      "text": "It's all white.",
-      "start": 365.41,
-      "duration": 1.14
-    },
-    {
-      "id": 105,
-      "text": "A nice hat.",
-      "start": 372.14,
-      "duration": 1.14
-    },
-    {
-      "id": 106,
-      "text": "What's that?",
-      "start": 376.78,
-      "duration": 0.91
-    },
-    {
-      "id": 107,
-      "text": "It's an apple.",
-      "start": 378.14,
-      "duration": 1.06
-    },
-    {
-      "id": 108,
-      "text": "Oh, no.",
-      "start": 379.75,
-      "duration": 0.89
-    },
-    {
-      "id": 109,
-      "text": "No apples.",
-      "start": 381.1,
-      "duration": 0.98
-    },
-    {
-      "id": 110,
-      "text": "Can you help me?",
-      "start": 385.75,
-      "duration": 1.37
-    },
-    {
-      "id": 111,
-      "text": "Sure.",
-      "start": 387.56,
-      "duration": 0.5
-    },
-    {
-      "id": 112,
-      "text": "Please.",
-      "start": 388.44,
-      "duration": 0.5
-    },
-    {
-      "id": 113,
-      "text": "You can eat this apple.",
-      "start": 390.52,
-      "duration": 1.46
-    },
-    {
-      "id": 114,
-      "text": "Oh.",
-      "start": 393.8,
-      "duration": 0.5
+      "text": "Thank",
+      "start": 32,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-23T06:26:15.958019+00:00",
@@ -711,5 +129,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.362Z"
+  "formattedAt": "2026-07-30T13:17:21.448Z"
 }

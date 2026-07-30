@@ -3,67 +3,67 @@
   "segments": [
     {
       "id": 1,
-      "text": "What i like.",
-      "start": 7.52,
-      "duration": 2.88
+      "text": "What I like.",
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "I like clowns because they are funny.",
-      "start": 15.52,
-      "duration": 9.84
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "I like roses because they are beautiful.",
-      "start": 25.36,
-      "duration": 5.08
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "I like beaches because they are fun.",
-      "start": 38.56,
-      "duration": 5.24
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "I like puppies because they are cute.",
-      "start": 48.72,
-      "duration": 8.98
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "I like grandpa because he is interesting.",
-      "start": 58.48,
-      "duration": 8.55
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "I like bananas because they are yummy.",
-      "start": 67.2,
-      "duration": 5.4
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "I like blankets because they are warm.",
-      "start": 78.48,
-      "duration": 5.16
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "I like my friend because she is nice.",
-      "start": 86.72,
-      "duration": 11.89
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "You.",
-      "start": 108.08,
-      "duration": 2.08
+      "start": 18,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-06-22T02:05:15Z",
   "videoId": "ewV4gJlP5hM",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.376Z"
+  "formattedAt": "2026-07-30T13:20:10.740Z"
 }

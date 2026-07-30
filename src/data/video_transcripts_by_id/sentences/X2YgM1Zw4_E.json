@@ -4,326 +4,254 @@
     {
       "id": 1,
       "text": "Smile and learn.",
-      "start": 3.2,
-      "duration": 1.3
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Hey there, friends.",
-      "start": 5.92,
-      "duration": 1.14
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
-      "text": "i have a very important mission to look",
-      "start": 7.36,
-      "duration": 3.12
+      "text": "I have a very important mission to look after the environment and help so that kids like you join us in this task which is vital for our planet.",
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
-      "text": "after the environment and help so",
-      "start": 10.48,
-      "duration": 2.34
+      "text": "As you may already know, human beings and the environment are closely linked together.",
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
-      "text": "that kids like you join us in this task which is vital for our planet",
-      "start": 12.82,
-      "duration": 4.18
+      "text": "Every time people harm nature, they cause environmental problems.",
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
-      "text": "As you may already know, human beings and the environment are closely linked together.",
-      "start": 17.62,
-      "duration": 5.15
+      "text": "These problems involve damaging changes in the environment, many of which will be irreversible and will affect the health of all human beings.",
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
-      "text": "Every time people harm nature, they cause environmental problems.",
-      "start": 23.55,
-      "duration": 4.09
+      "text": "Look at this river.",
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
-      "text": "these problems involve damaging changes in the environment many of",
-      "start": 28.8,
-      "duration": 4.08
+      "text": "People have thrown waste in it.",
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
-      "text": "which will be irreversible and will affect the health of all human",
-      "start": 32.88,
-      "duration": 4.18
+      "text": "The water has been contaminated, and now nobody can drink it.",
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
-      "text": "beings.",
-      "start": 37.92,
-      "duration": 0.28
+      "text": "Oh, no.",
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
-      "text": "Look at this river.",
-      "start": 38.196000000000005,
-      "duration": 1.1
+      "text": "There are also many animals and living beings that will die because of contamination.",
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
-      "text": "People have thrown waste in it.",
-      "start": 39.68,
-      "duration": 1.8
+      "text": "Luckily, it's in our hands to protect nature and look after the environment.",
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
-      "text": "The water has been contaminated, and now nobody can drink it.",
-      "start": 41.72,
-      "duration": 3.45
+      "text": "That's why I want to share with you these 10 easy ways to look after the environment.",
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
-      "text": "Oh, no.",
-      "start": 45.23,
-      "duration": 0.75
+      "text": "Let's take a look.",
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
-      "text": "There are also many animals and living beings that will die because of contamination.",
-      "start": 46.35,
-      "duration": 4.18
+      "text": "Turn off the lights and the electronic devices you're not using to save energy.",
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
-      "text": "Luckily, it's in our hands to protect nature and look after the environment.",
-      "start": 51.55,
-      "duration": 4.46
+      "text": "Replace plastic bags with reusable cloth bags.",
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
-      "text": "that's why i want to share with you these 10 easy ways to look",
-      "start": 56.71,
-      "duration": 4.32
+      "text": "It takes plastic bags years to decompose, and making them is a very contaminating process.",
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
-      "text": "after the environment",
-      "start": 61.03,
-      "duration": 0.98
+      "text": "Separate and recycle the different types of waste.",
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
-      "text": "Let's take a look.",
-      "start": 62.87,
-      "duration": 1.14
+      "text": "Organic, inorganic, containers, glass, or paper and cardboard.",
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
-      "text": "Turn off the lights and the electronic devices you're not using to save energy.",
-      "start": 65.19,
-      "duration": 4.5
+      "text": "To avoid wasting water, make sure taps are completely turned off.",
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
-      "text": "Replace plastic bags with reusable cloth bags.",
-      "start": 72.12,
-      "duration": 3.3
+      "text": "The toilet is not a rubbish bin.",
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
-      "text": "It takes plastic bags years to decompose, and making them is a very contaminating process.",
-      "start": 75.64,
-      "duration": 5.78
+      "text": "Did you know that we waste 10 liters of water every time we flush the toilet?",
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
-      "text": "Separate and recycle the different types of waste.",
-      "start": 84.17,
-      "duration": 3.06
+      "text": "Have a shower instead of a bath.",
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
-      "text": "Organic, inorganic, containers, glass, or paper and cardboard.",
-      "start": 87.45,
-      "duration": 4.66
+      "text": "A five minute shower uses about 100 liters of water, while a full bath would use up to 250 liters.",
+      "start": 46,
+      "duration": 2
     },
     {
       "id": 25,
-      "text": "To avoid wasting water, make sure taps are completely turned off.",
-      "start": 94.67,
-      "duration": 4.57
+      "text": "Turn off the water tap while brushing your teeth.",
+      "start": 48,
+      "duration": 2
     },
     {
       "id": 26,
-      "text": "The toilet is not a rubbish bin.",
-      "start": 101.47,
-      "duration": 2.25
+      "text": "If you didn't shut off the faucet, you would waste an average of 20 liters every time you brushed your teeth.",
+      "start": 50,
+      "duration": 2
     },
     {
       "id": 27,
-      "text": "did you know",
-      "start": 104.1,
-      "duration": 0.73
+      "text": "Reuse paper.",
+      "start": 52,
+      "duration": 2
     },
     {
       "id": 28,
-      "text": "that we waste 10 liters of water every time we flush the toilet",
-      "start": 104.83,
-      "duration": 4.41
+      "text": "For example, remember that you can write on both sides of the sheet to maximize its use.",
+      "start": 54,
+      "duration": 2
     },
     {
       "id": 29,
-      "text": "Have a shower instead of a bath.",
-      "start": 111.76,
-      "duration": 2.02
+      "text": "Pick up your litter every time you go to the beach or the mountains.",
+      "start": 56,
+      "duration": 2
     },
     {
       "id": 30,
-      "text": "a five minute shower uses about 100 liters of water",
-      "start": 114.16,
-      "duration": 3.86
+      "text": "Respect and look after the animals, flowers, and trees around you.",
+      "start": 58,
+      "duration": 2
     },
     {
       "id": 31,
-      "text": "while a full bath would use up to 250 liters",
-      "start": 118.08,
-      "duration": 3.54
+      "text": "Easy ways to look after the environment, right?",
+      "start": 60,
+      "duration": 2
     },
     {
       "id": 32,
-      "text": "Turn off the water tap while brushing your teeth.",
-      "start": 124.14,
-      "duration": 2.58
+      "text": "I'm sure you already know about them and do most of them.",
+      "start": 62,
+      "duration": 2
     },
     {
       "id": 33,
-      "text": "if you didn't shut off the faucet you would waste an average of 20 liters",
-      "start": 126.78,
-      "duration": 4.34
+      "text": "With simple actions like recycling, saving energy and water, and looking after all living beings, we contribute to a more sustainable planet.",
+      "start": 64,
+      "duration": 2
     },
     {
       "id": 34,
-      "text": "every time you brushed your teeth",
-      "start": 131.18,
-      "duration": 1.85
+      "text": "Do you know this word?",
+      "start": 66,
+      "duration": 2
     },
     {
       "id": 35,
-      "text": "Reuse paper.",
-      "start": 135.35,
-      "duration": 0.98
+      "text": "A sustainable planet or city are those that provide people with a good quality of life without risking natural resources.",
+      "start": 68,
+      "duration": 2
     },
     {
       "id": 36,
-      "text": "for example remember",
-      "start": 136.71,
-      "duration": 1.36
+      "text": "This way, future generations will enjoy a wonderful planet where economic growth, environmental care, and social well-being are in balance.",
+      "start": 70,
+      "duration": 2
     },
     {
       "id": 37,
-      "text": "that you can write on both sides of the sheet to maximize its use",
-      "start": 138.07,
-      "duration": 4.02
+      "text": "Remember, it's in your hands.",
+      "start": 72,
+      "duration": 2
     },
     {
       "id": 38,
-      "text": "Pick up your litter every time you go to the beach or the mountains.",
-      "start": 144.39,
-      "duration": 3.22
+      "text": "Wanna join us in our mission?",
+      "start": 74,
+      "duration": 2
     },
     {
       "id": 39,
-      "text": "Respect and look after the animals, flowers, and trees around you.",
-      "start": 150.35,
-      "duration": 3.78
+      "text": "Did you like the video?",
+      "start": 76,
+      "duration": 2
     },
     {
       "id": 40,
-      "text": "Easy ways to look after the environment, right?",
-      "start": 157.07,
-      "duration": 2.67
+      "text": "We have so many more.",
+      "start": 78,
+      "duration": 2
     },
     {
       "id": 41,
-      "text": "I'm sure you already know about them and do most of them.",
-      "start": 159.88,
-      "duration": 3.13
+      "text": "Subscribe by clicking on the seal.",
+      "start": 80,
+      "duration": 2
     },
     {
       "id": 42,
-      "text": "with simple actions like recycling saving energy",
-      "start": 163.38,
-      "duration": 3.12
-    },
-    {
-      "id": 43,
-      "text": "and water and looking after all living beings we contribute to a more sustainable planet",
-      "start": 166.5,
-      "duration": 5.62
-    },
-    {
-      "id": 44,
-      "text": "Do you know this word?",
-      "start": 172.82,
-      "duration": 1.22
-    },
-    {
-      "id": 45,
-      "text": "a sustainable planet or city are those",
-      "start": 174.34,
-      "duration": 2.55
-    },
-    {
-      "id": 46,
-      "text": "that provide people with a good quality of life without risking natural resources",
-      "start": 176.89,
-      "duration": 5.06
-    },
-    {
-      "id": 47,
-      "text": "this way future generations will enjoy a wonderful planet",
-      "start": 182.66,
-      "duration": 3.51
-    },
-    {
-      "id": 48,
-      "text": "where economic growth environmental care and social well-being are in balance",
-      "start": 186.17,
-      "duration": 4.83
-    },
-    {
-      "id": 49,
-      "text": "Remember, it's in your hands.",
-      "start": 191.79,
-      "duration": 1.7
-    },
-    {
-      "id": 50,
-      "text": "Wanna join us in our mission?",
-      "start": 194.27,
-      "duration": 1.54
-    },
-    {
-      "id": 51,
-      "text": "Did you like the video?",
-      "start": 202.43,
-      "duration": 1.14
-    },
-    {
-      "id": 52,
-      "text": "We have so many more.",
-      "start": 203.71,
-      "duration": 1.46
-    },
-    {
-      "id": 53,
-      "text": "Subscribe by clicking on the seal.",
-      "start": 205.84,
-      "duration": 1.69
-    },
-    {
-      "id": 54,
       "text": "And if you want to keep watching more videos, click on the boxes.",
-      "start": 208.47,
-      "duration": 3.31
+      "start": 82,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-23T06:29:09.345808+00:00",
@@ -351,5 +279,5 @@
     "danglingFragments": 1
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.368Z"
+  "formattedAt": "2026-07-30T13:18:10.269Z"
 }

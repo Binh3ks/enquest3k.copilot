@@ -5,932 +5,884 @@
     {
       "id": 1,
       "text": "Hello.",
-      "start": 6.56,
-      "duration": 0.5
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Welcome to the English easy practicing story number three.",
-      "start": 7.12,
-      "duration": 3.54
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "Now, you are going to listen to the story.",
-      "start": 11.76,
-      "duration": 2.21
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "Then, I will ask many questions about it.",
-      "start": 14.36,
-      "duration": 2.66
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "You must answer every question.",
-      "start": 17.47,
-      "duration": 1.62
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "Let's get started.",
-      "start": 20.91,
-      "duration": 1.06
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "I am a student.",
-      "start": 25.23,
-      "duration": 1.06
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "I get up early every morning.",
-      "start": 28.64,
-      "duration": 1.94
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "I go to school every weekday.",
-      "start": 31.6,
-      "duration": 2.1
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "I have lots of books.",
-      "start": 35.52,
-      "duration": 1.38
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "I love reading so much.",
-      "start": 37.84,
-      "duration": 1.78
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
       "text": "My father is a constructor.",
-      "start": 41.53,
-      "duration": 1.38
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
       "text": "He builds houses.",
-      "start": 44.02,
-      "duration": 1.06
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
       "text": "He usually goes to work by car, but he sometimes walks.",
-      "start": 47.94,
-      "duration": 3.06
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
       "text": "My mother is a teacher.",
-      "start": 53.79,
-      "duration": 1.38
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "She teaches mathematics in the school.",
-      "start": 56.19,
-      "duration": 2.1
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
       "text": "She likes music, and she very often plays piano.",
-      "start": 60.27,
-      "duration": 3.06
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
       "text": "My sister Julia works very hard.",
-      "start": 66.02,
-      "duration": 2.42
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
       "text": "She starts at 07:30 and finishes at 08:00 in the evening.",
-      "start": 70.17,
-      "duration": 3.46
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
       "text": "She is very clever.",
-      "start": 76.25,
-      "duration": 1.3
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
       "text": "She speaks four languages.",
-      "start": 79.59,
-      "duration": 1.86
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
       "text": "She speaks English, German, Spanish, and Chinese.",
-      "start": 83.43,
-      "duration": 3.54
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
       "text": "Hello.",
-      "start": 90.07,
-      "duration": 0.5
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
       "text": "Are you enjoying the story?",
-      "start": 90.87,
-      "duration": 1.54
+      "start": 46,
+      "duration": 2
     },
     {
       "id": 25,
       "text": "Please give us a like.",
-      "start": 93.17,
-      "duration": 1.43
+      "start": 48,
+      "duration": 2
     },
     {
       "id": 26,
       "text": "Thank you.",
-      "start": 94.6,
-      "duration": 0.74
+      "start": 50,
+      "duration": 2
     },
     {
       "id": 27,
       "text": "The weather here is always cold.",
-      "start": 98.2,
-      "duration": 2.27
+      "start": 52,
+      "duration": 2
     },
     {
       "id": 28,
-      "text": "It sometimes rains, But it often snows.",
-      "start": 102.52,
-      "duration": 5.76
+      "text": "It sometimes rains, but it often snows.",
+      "start": 54,
+      "duration": 2
     },
     {
       "id": 29,
       "text": "We live in a small town.",
-      "start": 112.66,
-      "duration": 1.62
+      "start": 56,
+      "duration": 2
     },
     {
       "id": 30,
       "text": "We go skiing every weekend.",
-      "start": 117.3,
-      "duration": 1.89
+      "start": 58,
+      "duration": 2
     },
     {
       "id": 31,
       "text": "We like it so much.",
-      "start": 120.69,
-      "duration": 1.62
+      "start": 60,
+      "duration": 2
     },
     {
       "id": 32,
-      "text": "if you like this video",
-      "start": 126.37,
-      "duration": 1.36
+      "text": "If you like this video and want to see more videos like it, be sure to subscribe to our channel.",
+      "start": 62,
+      "duration": 2
     },
     {
       "id": 33,
-      "text": "and want to see more videos like it be sure to subscribe to our channel",
-      "start": 127.73,
-      "duration": 4.09
+      "text": "Thanks for watching.",
+      "start": 64,
+      "duration": 2
     },
     {
       "id": 34,
-      "text": "Thanks for watching.",
-      "start": 131.97,
-      "duration": 1.06
+      "text": "Okay.",
+      "start": 66,
+      "duration": 2
     },
     {
       "id": 35,
-      "text": "Okay.",
-      "start": 136.05,
-      "duration": 0.48
+      "text": "That is the end of the story.",
+      "start": 68,
+      "duration": 2
     },
     {
       "id": 36,
-      "text": "That is the end of the story.",
-      "start": 136.53,
-      "duration": 1.38
+      "text": "Let's go back to the beginning, this time with questions.",
+      "start": 70,
+      "duration": 2
     },
     {
       "id": 37,
-      "text": "Let's go back to the beginning, this time with questions.",
-      "start": 138.29,
-      "duration": 2.98
+      "text": "I am a student.",
+      "start": 72,
+      "duration": 2
     },
     {
       "id": 38,
-      "text": "I am a student.",
-      "start": 143.81,
-      "duration": 1.06
+      "text": "I get up early every morning.",
+      "start": 74,
+      "duration": 2
     },
     {
       "id": 39,
-      "text": "I get up early every morning.",
-      "start": 145.09,
-      "duration": 1.94
+      "text": "Do I get up late?",
+      "start": 76,
+      "duration": 2
     },
     {
       "id": 40,
-      "text": "Do I get up late?",
-      "start": 149.76,
-      "duration": 1.46
+      "text": "No, I don't.",
+      "start": 78,
+      "duration": 2
     },
     {
       "id": 41,
-      "text": "No, I don't.",
-      "start": 153.76,
-      "duration": 0.8
+      "text": "I don't get up late.",
+      "start": 80,
+      "duration": 2
     },
     {
       "id": 42,
-      "text": "I don't get up late.",
-      "start": 154.56,
-      "duration": 0.97
+      "text": "I get up early.",
+      "start": 82,
+      "duration": 2
     },
     {
       "id": 43,
-      "text": "I get up early.",
-      "start": 155.53,
-      "duration": 0.97
+      "text": "How often do I get up early?",
+      "start": 84,
+      "duration": 2
     },
     {
       "id": 44,
-      "text": "How often do I get up early?",
-      "start": 158.81,
-      "duration": 2.18
+      "text": "Every morning.",
+      "start": 86,
+      "duration": 2
     },
     {
       "id": 45,
-      "text": "Every morning.",
-      "start": 163.15,
-      "duration": 0.9
+      "text": "I get up early every morning.",
+      "start": 88,
+      "duration": 2
     },
     {
       "id": 46,
-      "text": "I get up early every morning.",
-      "start": 165.15,
-      "duration": 2.18
+      "text": "I go to school every weekday.",
+      "start": 90,
+      "duration": 2
     },
     {
       "id": 47,
-      "text": "I go to school every weekday.",
-      "start": 170.03,
-      "duration": 1.54
+      "text": "Do I go to school every weekend?",
+      "start": 92,
+      "duration": 2
     },
     {
       "id": 48,
-      "text": "Do I go to school every weekend?",
-      "start": 174.22,
-      "duration": 2.5
+      "text": "No, I don't.",
+      "start": 94,
+      "duration": 2
     },
     {
       "id": 49,
-      "text": "No, I don't.",
-      "start": 179.5,
-      "duration": 0.97
+      "text": "I don't go to school on the weekend.",
+      "start": 96,
+      "duration": 2
     },
     {
       "id": 50,
-      "text": "I don't go to school on the weekend.",
-      "start": 180.62,
-      "duration": 1.85
+      "text": "I go to school every weekday.",
+      "start": 98,
+      "duration": 2
     },
     {
       "id": 51,
-      "text": "I go to school every weekday.",
-      "start": 183.33,
-      "duration": 1.95
+      "text": "Do I go to the cinema every weekday?",
+      "start": 100,
+      "duration": 2
     },
     {
       "id": 52,
-      "text": "Do I go to the cinema every weekday?",
-      "start": 188.35,
-      "duration": 2.58
+      "text": "No, I don't.",
+      "start": 102,
+      "duration": 2
     },
     {
       "id": 53,
-      "text": "No, I don't.",
-      "start": 191.95,
-      "duration": 0.96
+      "text": "I don't go to the cinema every weekday.",
+      "start": 104,
+      "duration": 2
     },
     {
       "id": 54,
-      "text": "I don't go to the cinema every weekday.",
-      "start": 192.91,
-      "duration": 2.18
+      "text": "I go to school every weekday.",
+      "start": 106,
+      "duration": 2
     },
     {
       "id": 55,
-      "text": "I go to school every weekday.",
-      "start": 195.15,
-      "duration": 2.02
+      "text": "My father is a constructor.",
+      "start": 108,
+      "duration": 2
     },
     {
       "id": 56,
-      "text": "My father is a constructor.",
-      "start": 199.71,
-      "duration": 1.38
+      "text": "He builds houses.",
+      "start": 110,
+      "duration": 2
     },
     {
       "id": 57,
-      "text": "He builds houses.",
-      "start": 201.31,
-      "duration": 1.06
+      "text": "Is my father a musician?",
+      "start": 112,
+      "duration": 2
     },
     {
       "id": 58,
-      "text": "Is my father a musician?",
-      "start": 205.44,
-      "duration": 1.69
+      "text": "No, he isn't.",
+      "start": 114,
+      "duration": 2
     },
     {
       "id": 59,
-      "text": "No, he isn't.",
-      "start": 209.35,
-      "duration": 0.96
+      "text": "He is not a musician.",
+      "start": 116,
+      "duration": 2
     },
     {
       "id": 60,
-      "text": "He is not a musician.",
-      "start": 210.31,
-      "duration": 1.54
+      "text": "He is a constructor.",
+      "start": 118,
+      "duration": 2
     },
     {
       "id": 61,
-      "text": "He is a constructor.",
-      "start": 212.07,
-      "duration": 1.22
+      "text": "What does he do?",
+      "start": 120,
+      "duration": 2
     },
     {
       "id": 62,
-      "text": "What does he do?",
-      "start": 216.45,
-      "duration": 1.06
+      "text": "He builds houses.",
+      "start": 122,
+      "duration": 2
     },
     {
       "id": 63,
-      "text": "He builds houses.",
-      "start": 219.81,
-      "duration": 1.06
+      "text": "He is a constructor.",
+      "start": 124,
+      "duration": 2
     },
     {
       "id": 64,
-      "text": "He is a constructor.",
-      "start": 221.25,
-      "duration": 1.3
+      "text": "Does he destroy houses?",
+      "start": 126,
+      "duration": 2
     },
     {
       "id": 65,
-      "text": "Does he destroy houses?",
-      "start": 227.01,
-      "duration": 2.1
+      "text": "No, he doesn't.",
+      "start": 128,
+      "duration": 2
     },
     {
       "id": 66,
-      "text": "No, he doesn't.",
-      "start": 231.62,
-      "duration": 0.97
+      "text": "He doesn't destroy houses, he builds houses.",
+      "start": 130,
+      "duration": 2
     },
     {
       "id": 67,
-      "text": "He doesn't destroy houses, he builds houses.",
-      "start": 232.59,
-      "duration": 3.13
+      "text": "How does he go to work?",
+      "start": 132,
+      "duration": 2
     },
     {
       "id": 68,
-      "text": "How does he go to work?",
-      "start": 238.43,
-      "duration": 1.45
+      "text": "He usually goes to work by car, but sometimes he walks.",
+      "start": 134,
+      "duration": 2
     },
     {
       "id": 69,
-      "text": "He usually goes to work by car, but sometimes he walks.",
-      "start": 241.78,
-      "duration": 4.13
+      "text": "Does he go to work by vessel?",
+      "start": 136,
+      "duration": 2
     },
     {
       "id": 70,
-      "text": "Does he go to work by vessel?",
-      "start": 249.11,
-      "duration": 1.78
+      "text": "No.",
+      "start": 138,
+      "duration": 2
     },
     {
       "id": 71,
-      "text": "No.",
-      "start": 253.67,
-      "duration": 0.24
+      "text": "He doesn't.",
+      "start": 140,
+      "duration": 2
     },
     {
       "id": 72,
-      "text": "He doesn't.",
-      "start": 253.91,
-      "duration": 0.64
+      "text": "He doesn't go to work by vessel.",
+      "start": 142,
+      "duration": 2
     },
     {
       "id": 73,
-      "text": "He doesn't go to work by vessel.",
-      "start": 254.55,
-      "duration": 1.7
+      "text": "He goes to work by car.",
+      "start": 144,
+      "duration": 2
     },
     {
       "id": 74,
-      "text": "He goes to work by car.",
-      "start": 256.39,
-      "duration": 1.78
+      "text": "Does he go to work by a car?",
+      "start": 146,
+      "duration": 2
     },
     {
       "id": 75,
-      "text": "Does he go to work by a car?",
-      "start": 261.19,
-      "duration": 2.57
+      "text": "Yes, he does.",
+      "start": 148,
+      "duration": 2
     },
     {
       "id": 76,
-      "text": "Yes, he does.",
-      "start": 265.82,
-      "duration": 1.14
+      "text": "He usually goes to work by car, but sometimes he walks.",
+      "start": 150,
+      "duration": 2
     },
     {
       "id": 77,
-      "text": "He usually goes to work by car, but sometimes he walks.",
-      "start": 267.02,
-      "duration": 3.54
+      "text": "How often does he walk to work?",
+      "start": 152,
+      "duration": 2
     },
     {
       "id": 78,
-      "text": "How often does he walk to work?",
-      "start": 274.68,
-      "duration": 2.5
+      "text": "Sometimes.",
+      "start": 154,
+      "duration": 2
     },
     {
       "id": 79,
-      "text": "Sometimes.",
-      "start": 278.68,
-      "duration": 0.5
+      "text": "He walks to work sometimes.",
+      "start": 156,
+      "duration": 2
     },
     {
       "id": 80,
-      "text": "He walks to work sometimes.",
-      "start": 279.72,
-      "duration": 1.86
+      "text": "How does he go to work usually?",
+      "start": 158,
+      "duration": 2
     },
     {
       "id": 81,
-      "text": "How does he go to work usually?",
-      "start": 284.38,
-      "duration": 2.18
+      "text": "By car.",
+      "start": 160,
+      "duration": 2
     },
     {
       "id": 82,
-      "text": "By car.",
-      "start": 289.98,
-      "duration": 0.9
+      "text": "He usually goes to work by car.",
+      "start": 162,
+      "duration": 2
     },
     {
       "id": 83,
-      "text": "He usually goes to work by car.",
-      "start": 290.94,
-      "duration": 2.25
+      "text": "What does my mother do?",
+      "start": 164,
+      "duration": 2
     },
     {
       "id": 84,
-      "text": "What does my mother do?",
-      "start": 296.62,
-      "duration": 1.62
+      "text": "She is a teacher.",
+      "start": 166,
+      "duration": 2
     },
     {
       "id": 85,
-      "text": "She is a teacher.",
-      "start": 300.74,
-      "duration": 1.06
+      "text": "She teaches mathematics in school.",
+      "start": 168,
+      "duration": 2
     },
     {
       "id": 86,
-      "text": "She teaches mathematics in school.",
-      "start": 302.58,
-      "duration": 2.1
+      "text": "Is she a nurse?",
+      "start": 170,
+      "duration": 2
     },
     {
       "id": 87,
-      "text": "Is she a nurse?",
-      "start": 307.38,
-      "duration": 1.46
+      "text": "No, she isn't.",
+      "start": 172,
+      "duration": 2
     },
     {
       "id": 88,
-      "text": "No, she isn't.",
-      "start": 310.74,
-      "duration": 1.04
+      "text": "She is not a nurse.",
+      "start": 174,
+      "duration": 2
     },
     {
       "id": 89,
-      "text": "She is not a nurse.",
-      "start": 311.78,
-      "duration": 1.46
+      "text": "She is a teacher.",
+      "start": 176,
+      "duration": 2
     },
     {
       "id": 90,
-      "text": "She is a teacher.",
-      "start": 313.38,
-      "duration": 1.06
+      "text": "What does she teach?",
+      "start": 178,
+      "duration": 2
     },
     {
       "id": 91,
-      "text": "What does she teach?",
-      "start": 317.44,
-      "duration": 1.62
+      "text": "Math.",
+      "start": 180,
+      "duration": 2
     },
     {
       "id": 92,
-      "text": "Math.",
-      "start": 321.92,
-      "duration": 0.52
+      "text": "She teaches mathematics.",
+      "start": 182,
+      "duration": 2
     },
     {
       "id": 93,
-      "text": "She teaches mathematics.",
-      "start": 322.4425,
-      "duration": 1.57
+      "text": "She is a math teacher.",
+      "start": 184,
+      "duration": 2
     },
     {
       "id": 94,
-      "text": "She is a math teacher.",
-      "start": 325.27,
-      "duration": 2.11
+      "text": "Where does she teach math?",
+      "start": 186,
+      "duration": 2
     },
     {
       "id": 95,
-      "text": "Where does she teach math?",
-      "start": 330.07,
-      "duration": 1.7
+      "text": "In the school.",
+      "start": 188,
+      "duration": 2
     },
     {
       "id": 96,
-      "text": "In the school.",
-      "start": 334.47,
-      "duration": 0.98
+      "text": "She teaches math in the school.",
+      "start": 190,
+      "duration": 2
     },
     {
       "id": 97,
-      "text": "She teaches math in the school.",
-      "start": 335.99,
-      "duration": 2.1
+      "text": "She likes music and she often plays piano.",
+      "start": 192,
+      "duration": 2
     },
     {
       "id": 98,
-      "text": "She likes music and she often plays piano.",
-      "start": 340.79,
-      "duration": 2.42
+      "text": "Does she like soccer?",
+      "start": 194,
+      "duration": 2
     },
     {
       "id": 99,
-      "text": "Does she like soccer?",
-      "start": 346.22,
-      "duration": 1.78
+      "text": "No, she doesn't.",
+      "start": 196,
+      "duration": 2
     },
     {
       "id": 100,
-      "text": "No, she doesn't.",
-      "start": 350.62,
-      "duration": 0.96
+      "text": "She doesn't like soccer.",
+      "start": 198,
+      "duration": 2
     },
     {
       "id": 101,
-      "text": "She doesn't like soccer.",
-      "start": 351.58,
-      "duration": 1.3
+      "text": "She likes music.",
+      "start": 200,
+      "duration": 2
     },
     {
       "id": 102,
-      "text": "She likes music.",
-      "start": 352.94,
-      "duration": 1.06
+      "text": "My sister, Julia, works very hard.",
+      "start": 202,
+      "duration": 2
     },
     {
       "id": 103,
-      "text": "My sister, Julia, works very hard.",
-      "start": 356.62,
-      "duration": 2.54
+      "text": "Does she work?",
+      "start": 204,
+      "duration": 2
     },
     {
       "id": 104,
-      "text": "Does she work?",
-      "start": 362.12,
-      "duration": 0.98
+      "text": "Yes.",
+      "start": 206,
+      "duration": 2
     },
     {
       "id": 105,
-      "text": "Yes.",
-      "start": 364.36,
-      "duration": 0.5
+      "text": "She does.",
+      "start": 208,
+      "duration": 2
     },
     {
       "id": 106,
-      "text": "She does.",
-      "start": 365,
-      "duration": 0.56
+      "text": "She works very hard.",
+      "start": 210,
+      "duration": 2
     },
     {
       "id": 107,
-      "text": "She works very hard.",
-      "start": 365.56,
-      "duration": 1.3
+      "text": "How much time does she work?",
+      "start": 212,
+      "duration": 2
     },
     {
       "id": 108,
-      "text": "How much time does she work?",
-      "start": 369,
-      "duration": 1.86
+      "text": "Twelve point five hours.",
+      "start": 214,
+      "duration": 2
     },
     {
       "id": 109,
-      "text": "Twelve point five hours.",
-      "start": 372.19,
-      "duration": 1.76
+      "text": "She works twelve point five hours.",
+      "start": 216,
+      "duration": 2
     },
     {
       "id": 110,
-      "text": "She works twelve point five hours.",
-      "start": 373.95,
-      "duration": 2.11
+      "text": "She starts at 07:30 and finishes at 08:00 in the evening.",
+      "start": 218,
+      "duration": 2
     },
     {
       "id": 111,
-      "text": "She starts at 07:30 and finishes at 08:00",
-      "start": 376.51,
-      "duration": 3.87
+      "text": "Does she start at 09:30?",
+      "start": 220,
+      "duration": 2
     },
     {
       "id": 112,
-      "text": "in the evening.",
-      "start": 380.44,
-      "duration": 0.89
+      "text": "No, she doesn't.",
+      "start": 222,
+      "duration": 2
     },
     {
       "id": 113,
-      "text": "Does she start at 09:30?",
-      "start": 383.31,
-      "duration": 1.94
+      "text": "She doesn't start at 09:30.",
+      "start": 224,
+      "duration": 2
     },
     {
       "id": 114,
-      "text": "No, she doesn't.",
-      "start": 386.47,
-      "duration": 1.04
+      "text": "She starts at 07:30.",
+      "start": 226,
+      "duration": 2
     },
     {
       "id": 115,
-      "text": "She doesn't start at 09:30.",
-      "start": 387.51,
-      "duration": 1.6
+      "text": "What does she start?",
+      "start": 228,
+      "duration": 2
     },
     {
       "id": 116,
-      "text": "She starts at 07:30.",
-      "start": 389.11,
-      "duration": 1.78
+      "text": "To work.",
+      "start": 230,
+      "duration": 2
     },
     {
       "id": 117,
-      "text": "What does she start?",
-      "start": 393.35,
-      "duration": 1.3
+      "text": "She starts to work at 07:30.",
+      "start": 232,
+      "duration": 2
     },
     {
       "id": 118,
-      "text": "To work.",
-      "start": 396.87,
-      "duration": 0.8
+      "text": "Does she speak 10 languages?",
+      "start": 234,
+      "duration": 2
     },
     {
       "id": 119,
-      "text": "She starts to work at 07:30.",
-      "start": 397.67,
-      "duration": 2.34
+      "text": "No, she doesn't.",
+      "start": 236,
+      "duration": 2
     },
     {
       "id": 120,
-      "text": "Does she speak 10 languages?",
-      "start": 403.12,
-      "duration": 2.09
+      "text": "She doesn't speak 10 languages.",
+      "start": 238,
+      "duration": 2
     },
     {
       "id": 121,
-      "text": "No, she doesn't.",
-      "start": 407.6,
-      "duration": 0.97
+      "text": "She speaks four languages.",
+      "start": 240,
+      "duration": 2
     },
     {
       "id": 122,
-      "text": "She doesn't speak 10 languages.",
-      "start": 408.63,
-      "duration": 1.47
+      "text": "How many languages does she speak?",
+      "start": 242,
+      "duration": 2
     },
     {
       "id": 123,
-      "text": "She speaks four languages.",
-      "start": 410.48,
-      "duration": 1.53
+      "text": "Four.",
+      "start": 244,
+      "duration": 2
     },
     {
       "id": 124,
-      "text": "How many languages does she speak?",
-      "start": 415.2,
-      "duration": 2.58
+      "text": "She speaks four languages.",
+      "start": 246,
+      "duration": 2
     },
     {
       "id": 125,
-      "text": "Four.",
-      "start": 420.8,
-      "duration": 0.36
+      "text": "Which languages does she speak?",
+      "start": 248,
+      "duration": 2
     },
     {
       "id": 126,
-      "text": "She speaks four languages.",
-      "start": 421.156,
-      "duration": 1.42
+      "text": "She speaks English, German, Spanish, and Chinese.",
+      "start": 250,
+      "duration": 2
     },
     {
       "id": 127,
-      "text": "Which languages does she speak?",
-      "start": 425.46,
-      "duration": 2.1
+      "text": "Does she speak French?",
+      "start": 252,
+      "duration": 2
     },
     {
       "id": 128,
-      "text": "She speaks English, German, Spanish, and Chinese.",
-      "start": 429.94,
-      "duration": 4.98
+      "text": "No.",
+      "start": 254,
+      "duration": 2
     },
     {
       "id": 129,
-      "text": "Does she speak French?",
-      "start": 437.15,
-      "duration": 1.62
+      "text": "She doesn't.",
+      "start": 256,
+      "duration": 2
     },
     {
       "id": 130,
-      "text": "No.",
-      "start": 441.47,
-      "duration": 0.32
+      "text": "She doesn't speak French.",
+      "start": 258,
+      "duration": 2
     },
     {
       "id": 131,
-      "text": "She doesn't.",
-      "start": 441.79,
-      "duration": 0.64
+      "text": "If you want to complete your practice of this story, you can go to englisheasypractice.com and download the audio lessons of the story.",
+      "start": 260,
+      "duration": 2
     },
     {
       "id": 132,
-      "text": "She doesn't speak French.",
-      "start": 442.43,
-      "duration": 1.22
+      "text": "So you can practice English with it whenever and wherever you want.",
+      "start": 262,
+      "duration": 2
     },
     {
       "id": 133,
-      "text": "if you want to complete your practice of this story you can go to englisheasypractice.com",
-      "start": 445.87,
-      "duration": 6.05
+      "text": "Just listen to our short stories and answer the easy question out loud.",
+      "start": 264,
+      "duration": 2
     },
     {
       "id": 134,
-      "text": "and download the audio lessons of the story",
-      "start": 451.92,
-      "duration": 2.33
+      "text": "You will improve your listening and speaking skills fast.",
+      "start": 266,
+      "duration": 2
     },
     {
       "id": 135,
-      "text": "so you can practice English with it whenever and wherever you want.",
-      "start": 456.24,
-      "duration": 4.09
+      "text": "Listen to the lessons repeatedly to think in English and automatic speaking.",
+      "start": 268,
+      "duration": 2
     },
     {
       "id": 136,
-      "text": "Just listen to our short stories and answer the easy question out loud.",
-      "start": 462.97,
-      "duration": 4.02
+      "text": "Repetition is very, very important to become fluent.",
+      "start": 270,
+      "duration": 2
     },
     {
       "id": 137,
-      "text": "You will improve your listening and speaking skills fast.",
-      "start": 467.37,
-      "duration": 3.3
+      "text": "You need to speak English fluently, without translating in your head.",
+      "start": 272,
+      "duration": 2
     },
     {
       "id": 138,
-      "text": "Listen to the lessons repeatedly to think in English and automatic speaking.",
-      "start": 473.13,
-      "duration": 4.45
+      "text": "The words should come out of your mouth automatically.",
+      "start": 274,
+      "duration": 2
     },
     {
       "id": 139,
-      "text": "Repetition is very very important to become fluent.",
-      "start": 479.58,
-      "duration": 3.38
+      "text": "So this is where the repetition comes in.",
+      "start": 276,
+      "duration": 2
     },
     {
       "id": 140,
-      "text": "You need to speak English fluently, without translating in your head.",
-      "start": 484.46,
-      "duration": 4.5
+      "text": "If you repeat the same vocabulary and sentences many times, you will become a master of this vocabulary and grammar.",
+      "start": 278,
+      "duration": 2
     },
     {
       "id": 141,
-      "text": "The words should come out of your mouth automatically.",
-      "start": 489.66,
-      "duration": 2.5
+      "text": "So you will be able to use that words automatically without thinking about grammar rules and without translating vocabulary in your head.",
+      "start": 280,
+      "duration": 2
     },
     {
       "id": 142,
-      "text": "So this is where the repetition comes in.",
-      "start": 492.66,
-      "duration": 4.02
+      "text": "In order to think in English, you must repeat vocabulary and sentences as much as you can.",
+      "start": 282,
+      "duration": 2
     },
     {
       "id": 143,
-      "text": "if you repeat the same vocabulary",
-      "start": 498.58,
-      "duration": 1.86
+      "text": "After lots of repetition, eventually you will start to think English in your head and improve your speaking skills.",
+      "start": 284,
+      "duration": 2
     },
     {
       "id": 144,
-      "text": "and sentences many times you will become a master of this vocabulary and grammar",
-      "start": 500.66,
-      "duration": 5.94
+      "text": "As I mentioned before, we use the question and answer method repeatedly in our short story lessons.",
+      "start": 286,
+      "duration": 2
     },
     {
       "id": 145,
-      "text": "so you will be able to use",
-      "start": 508.08,
-      "duration": 1.85
+      "text": "So, you will listen to the vocabulary and sentences many times in the same lesson.",
+      "start": 288,
+      "duration": 2
     },
     {
       "id": 146,
-      "text": "that words automatically without thinking about grammar rules and without translating vocabulary in your head",
-      "start": 509.93,
-      "duration": 7.14
+      "text": "And that's all for now.",
+      "start": 290,
+      "duration": 2
     },
     {
       "id": 147,
-      "text": "in order to think in english you must repeat vocabulary",
-      "start": 519.86,
-      "duration": 3.14
-    },
-    {
-      "id": 148,
-      "text": "and sentences as much as you can",
-      "start": 523.38,
-      "duration": 2.18
-    },
-    {
-      "id": 149,
-      "text": "after lots of repetition eventually you will start to think english in your head",
-      "start": 526.5,
-      "duration": 4.96
-    },
-    {
-      "id": 150,
-      "text": "and improve your speaking skills",
-      "start": 531.46,
-      "duration": 1.78
-    },
-    {
-      "id": 151,
-      "text": "as i mentioned before we use the question",
-      "start": 535.33,
-      "duration": 2.99
-    },
-    {
-      "id": 152,
-      "text": "and answer method repeatedly in our short story lessons",
-      "start": 538.45,
-      "duration": 3.7
-    },
-    {
-      "id": 153,
-      "text": "So, you will listen to the vocabulary and sentences many times in the same lesson.",
-      "start": 543.1,
-      "duration": 5.38
-    },
-    {
-      "id": 154,
-      "text": "And that's all for now.",
-      "start": 551.93,
-      "duration": 1.38
-    },
-    {
-      "id": 155,
       "text": "See you at englisheasypractice.com.",
-      "start": 553.37,
-      "duration": 3.14
+      "start": 292,
+      "duration": 2
     }
   ],
   "speakerMap": {
@@ -953,5 +905,5 @@
     "afterSegments": 153
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.355Z"
+  "formattedAt": "2026-07-30T13:15:38.442Z"
 }

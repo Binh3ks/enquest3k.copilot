@@ -27,6 +27,12 @@ const PRONOUN_BE = /\b(I'm|he's|she's|it's|we're|they're|you're|that's|there's|h
 
 const MIN_WORDS = 3;
 
+// Sentence-starters for unpunctuated text splitting
+const TURN_WORDS = /^(hi|hello|hey|bye|goodbye|okay|ok|yes|no|nice|great|wow|really|so|well|thank|thanks)\b/i;
+const WH_QUESTIONS = /^(how|what|where|when|why|who)\b/i;
+const SUBJECT_PRONOUNS = /^(i|you|he|she|it|we|they)\b/i;
+const CLAUSE_ENDERS = /^(is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|go|goes|went|come|comes|came|like|likes|liked|live|lives|lived|work|works|worked|study|studies|studied|want|wants|wanted|need|needs|needed|love|loves|loved|say|says|said|tell|tells|told|give|gives|gave|take|takes|took|make|makes|made|see|sees|saw|get|gets|got|eat|eats|ate|drink|drinks|drank|walk|walks|walked|run|runs|ran|play|plays|played|happy|sad|good|bad|great|fine|okay|ok|well|here|there|now|then|today|tomorrow|yesterday|morning|afternoon|evening|night)\b/i;
+
 function log(msg) { console.log(`[fix] ${msg}`); }
 
 function isCompleteSentence(text) {
@@ -108,6 +114,78 @@ function fixDanglingPrepositions(segments) {
   return segments;
 }
 
+// ── Step 2b: Split unpunctuated text at natural boundaries ─────────────
+function splitUnpunctuated(segments) {
+  const result = [];
+  let splitCount = 0;
+
+  for (const seg of segments) {
+    const text = seg.text.trim();
+    if (!text || text.length < 3) { result.push(seg); continue; }
+
+    // Skip if already has sentence punctuation
+    if (/[.!?]"?\s*$/.test(text)) { result.push(seg); continue; }
+
+    // Split unpunctuated text at natural sentence boundaries
+    const words = text.split(/\s+/);
+    if (words.length < 4) { result.push(seg); continue; }
+
+    const splitPoints = [];
+    for (let w = 1; w < words.length; w++) {
+      const word = words[w].toLowerCase().replace(/[^a-z]/g, '');
+      const prevWord = words[w - 1].toLowerCase().replace(/[^a-z]/g, '');
+
+      // Split before WH-questions
+      if (WH_QUESTIONS.test(word)) { splitPoints.push(w); continue; }
+
+      // Split before subject pronouns after clause enders
+      if (SUBJECT_PRONOUNS.test(word) && CLAUSE_ENDERS.test(prevWord)) {
+        splitPoints.push(w);
+        continue;
+      }
+
+      // Split before conjunctions (but, because, so, and) after 3+ words
+      if (/^(but|because|so|and)$/i.test(word) && w >= 3) {
+        splitPoints.push(w);
+        continue;
+      }
+    }
+
+    if (splitPoints.length === 0) { result.push(seg); continue; }
+
+    // Split at found points
+    const parts = [];
+    let prev = 0;
+    for (const sp of splitPoints) {
+      if (sp > prev) parts.push(words.slice(prev, sp).join(' '));
+      prev = sp;
+    }
+    if (prev < words.length) parts.push(words.slice(prev).join(' '));
+
+    if (parts.length <= 1) { result.push(seg); continue; }
+
+    // Distribute time proportionally
+    const totalWords = text.split(/\s+/).length;
+    let cursor = seg.start;
+    for (const part of parts) {
+      const partWords = part.trim().split(/\s+/).length;
+      const proportion = partWords / totalWords;
+      const partDuration = seg.duration * proportion;
+      result.push({
+        id: 0,
+        text: part.trim(),
+        start: cursor,
+        duration: Math.round(partDuration * 100) / 100
+      });
+      cursor += partDuration;
+    }
+    splitCount++;
+  }
+
+  if (splitCount > 0) log(`  Split ${splitCount} unpunctuated segments`);
+  return result;
+}
+
 // ── Step 3: Merge consecutive short fragments ────────────────────────
 function mergeShortFragments(segments) {
   const result = [];
@@ -118,14 +196,16 @@ function mergeShortFragments(segments) {
     const wordCount = seg.text.split(/\s+/).length;
     const isFragment = seg._isFragment || wordCount < MIN_WORDS;
     const hasTerminal = /[.!?]"?\s*$/.test(seg.text.trim());
+    const startsLowercase = /^[a-z]/.test(seg.text.trim());
 
-    // If this is a short fragment and next segment exists, try to merge
-    if (isFragment && !hasTerminal && i + 1 < segments.length) {
+    // If this is a fragment OR starts lowercase, try to merge with next
+    const shouldMerge = (isFragment || startsLowercase) && !hasTerminal;
+
+    if (shouldMerge && i + 1 < segments.length) {
       const next = segments[i + 1];
-      const nextIsFragment = next._isFragment || (next.text.split(/\s+/).length < MIN_WORDS);
       const combinedWords = wordCount + next.text.split(/\s+/).length;
 
-      // Only merge if combined is reasonable (≤40 words) and next is not a dialogue turn
+      // Merge if combined ≤40 words AND next segment not a dialogue turn
       if (combinedWords <= 40 && !next._isFragment) {
         result.push({
           id: seg.id,
@@ -183,6 +263,9 @@ function processWeek(videoId) {
 
   // Step 1: Split multi-sentence chunks
   let segments = splitMultiSentence(data.segments);
+
+  // Step 1b: Split unpunctuated text at natural boundaries
+  segments = splitUnpunctuated(segments);
 
   // Step 2: Fix dangling prepositions
   segments = fixDanglingPrepositions(segments);

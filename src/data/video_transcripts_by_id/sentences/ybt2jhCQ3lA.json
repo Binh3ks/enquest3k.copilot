@@ -4,408 +4,126 @@
     {
       "id": 1,
       "text": "Color.",
-      "start": 6.7,
-      "duration": 0.9
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Red.",
-      "start": 12.2,
-      "duration": 0.92
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "The color is red.",
-      "start": 13.76,
-      "duration": 2.34
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "Blue.",
-      "start": 19.44,
-      "duration": 0.98
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "The color is blue.",
-      "start": 20.82,
-      "duration": 2.4
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "Red and blue.",
-      "start": 24.28,
-      "duration": 1.98
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "Purple.",
-      "start": 29.64,
-      "duration": 1.14
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "Red and blue make purple.",
-      "start": 30.8,
-      "duration": 2.64
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "Yellow.",
-      "start": 35.86,
-      "duration": 1.36
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "The color is yellow.",
-      "start": 37.68,
-      "duration": 2.26
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "Blue and yellow.",
-      "start": 41.16,
-      "duration": 2.02
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
       "text": "Green.",
-      "start": 46.62,
-      "duration": 1.12
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
       "text": "Blue and yellow make green.",
-      "start": 47.74,
-      "duration": 2.72
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
       "text": "Yellow and red.",
-      "start": 52.64,
-      "duration": 1.8
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
       "text": "Orange.",
-      "start": 57.82,
-      "duration": 1.2
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "Yellow and red make orange.",
-      "start": 59.12,
-      "duration": 2.86
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
       "text": "Red, blue, and yellow.",
-      "start": 64.14,
-      "duration": 2.64
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
       "text": "Black.",
-      "start": 69.18,
-      "duration": 1.06
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
       "text": "Red, blue, and yellow make black.",
-      "start": 70.26,
-      "duration": 3.42
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
       "text": "Red.",
-      "start": 74.88,
-      "duration": 0.76
-    },
-    {
-      "id": 21,
-      "text": "Purple.",
-      "start": 75.78,
-      "duration": 0.84
-    },
-    {
-      "id": 22,
-      "text": "Blue.",
-      "start": 76.86,
-      "duration": 0.9
-    },
-    {
-      "id": 23,
-      "text": "Green.",
-      "start": 77.98,
-      "duration": 1.02
-    },
-    {
-      "id": 24,
-      "text": "Yellow.",
-      "start": 79.28,
-      "duration": 1.2
-    },
-    {
-      "id": 25,
-      "text": "Orange.",
-      "start": 80.48,
-      "duration": 1.12
-    },
-    {
-      "id": 26,
-      "text": "Black.",
-      "start": 81.6,
-      "duration": 1.1
-    },
-    {
-      "id": 27,
-      "text": "Red.",
-      "start": 87.76,
-      "duration": 0.94
-    },
-    {
-      "id": 28,
-      "text": "The color is red.",
-      "start": 90.42,
-      "duration": 2.04
-    },
-    {
-      "id": 29,
-      "text": "White.",
-      "start": 95.42,
-      "duration": 1.12
-    },
-    {
-      "id": 30,
-      "text": "The color is white.",
-      "start": 96.54,
-      "duration": 2.56
-    },
-    {
-      "id": 31,
-      "text": "Red and white.",
-      "start": 100.7,
-      "duration": 1.8
-    },
-    {
-      "id": 32,
-      "text": "Pink.",
-      "start": 105.56,
-      "duration": 1.06
-    },
-    {
-      "id": 33,
-      "text": "Red and white make pink.",
-      "start": 106.62,
-      "duration": 2.62
-    },
-    {
-      "id": 34,
-      "text": "Black.",
-      "start": 110.74,
-      "duration": 0.94
-    },
-    {
-      "id": 35,
-      "text": "The color is black.",
-      "start": 112.36,
-      "duration": 2.24
-    },
-    {
-      "id": 36,
-      "text": "White and black.",
-      "start": 115.7,
-      "duration": 1.7
-    },
-    {
-      "id": 37,
-      "text": "Gray.",
-      "start": 121.56,
-      "duration": 0.84
-    },
-    {
-      "id": 38,
-      "text": "White and black make gray.",
-      "start": 122.54,
-      "duration": 2.76
-    },
-    {
-      "id": 39,
-      "text": "Orange.",
-      "start": 127.58,
-      "duration": 1.12
-    },
-    {
-      "id": 40,
-      "text": "The color is orange.",
-      "start": 129.02,
-      "duration": 2.54
-    },
-    {
-      "id": 41,
-      "text": "Black and orange.",
-      "start": 133,
-      "duration": 1.92
-    },
-    {
-      "id": 42,
-      "text": "Brown.",
-      "start": 138.6,
-      "duration": 1.1
-    },
-    {
-      "id": 43,
-      "text": "Black and orange make brown.",
-      "start": 139.88,
-      "duration": 2.72
-    },
-    {
-      "id": 44,
-      "text": "Red.",
-      "start": 144.28,
-      "duration": 0.9
-    },
-    {
-      "id": 45,
-      "text": "Pink.",
-      "start": 145.48,
-      "duration": 0.94
-    },
-    {
-      "id": 46,
-      "text": "White.",
-      "start": 146.68,
-      "duration": 1.06
-    },
-    {
-      "id": 47,
-      "text": "Gray.",
-      "start": 148.08,
-      "duration": 0.96
-    },
-    {
-      "id": 48,
-      "text": "Black.",
-      "start": 149.42,
-      "duration": 1.02
-    },
-    {
-      "id": 49,
-      "text": "Brown.",
-      "start": 150.58,
-      "duration": 0.96
-    },
-    {
-      "id": 50,
-      "text": "Orange.",
-      "start": 152,
-      "duration": 1.22
-    },
-    {
-      "id": 51,
-      "text": "We are living in a colorful world!",
-      "start": 158.16,
-      "duration": 3.7
-    },
-    {
-      "id": 52,
-      "text": "Rainbow.",
-      "start": 162.4,
-      "duration": 1.36
-    },
-    {
-      "id": 53,
-      "text": "Red.",
-      "start": 164.42,
-      "duration": 0.9
-    },
-    {
-      "id": 54,
-      "text": "Orange.",
-      "start": 165.68,
-      "duration": 0.96
-    },
-    {
-      "id": 55,
-      "text": "Yellow.",
-      "start": 166.86,
-      "duration": 1
-    },
-    {
-      "id": 56,
-      "text": "Green.",
-      "start": 168.08,
-      "duration": 1.02
-    },
-    {
-      "id": 57,
-      "text": "Blue.",
-      "start": 169.36,
-      "duration": 1.02
-    },
-    {
-      "id": 58,
-      "text": "Indigo.",
-      "start": 170.68,
-      "duration": 0.92
-    },
-    {
-      "id": 59,
-      "text": "Violet.",
-      "start": 171.84,
-      "duration": 1.2
-    },
-    {
-      "id": 60,
-      "text": "Red.",
-      "start": 176,
-      "duration": 1.12
-    },
-    {
-      "id": 61,
-      "text": "Orange.",
-      "start": 177.46,
-      "duration": 1.06
-    },
-    {
-      "id": 62,
-      "text": "Yellow.",
-      "start": 178.82,
-      "duration": 1.16
-    },
-    {
-      "id": 63,
-      "text": "Green.",
-      "start": 180.24,
-      "duration": 1.08
-    },
-    {
-      "id": 64,
-      "text": "Blue.",
-      "start": 181.52,
-      "duration": 1.12
-    },
-    {
-      "id": 65,
-      "text": "Indigo.",
-      "start": 182.88,
-      "duration": 1.18
-    },
-    {
-      "id": 66,
-      "text": "Violet.",
-      "start": 184.3,
-      "duration": 1.24
-    },
-    {
-      "id": 67,
-      "text": "These are rainbow colors!",
-      "start": 186.58,
-      "duration": 3.2
+      "start": 38,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-06-22T02:05:41Z",
   "videoId": "ybt2jhCQ3lA",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.399Z"
+  "formattedAt": "2026-07-30T13:23:40.156Z"
 }

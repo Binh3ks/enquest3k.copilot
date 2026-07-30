@@ -5,1250 +5,1220 @@
     {
       "id": 1,
       "text": "There is, there are.",
-      "start": 0.72,
-      "duration": 2.1
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
-      "text": "in the living room the dad is reading the newspaper",
-      "start": 4.24,
-      "duration": 3.06
+      "text": "In the living room, the dad is reading the newspaper and the mom is arranging flowers.",
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
-      "text": "and the mom is arranging flowers",
-      "start": 7.84,
-      "duration": 1.94
+      "text": "Then, Remy comes into the room.",
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
-      "text": "Then, Remy comes into the room.",
-      "start": 10.8,
-      "duration": 2.58
+      "text": "Mom, dad, I'm going to school now.",
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
-      "text": "Mom, dad, I'm going to school now.",
-      "start": 20.73,
-      "duration": 3.22
+      "text": "Remy, have you had your breakfast yet?",
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
-      "text": "Remy, have you had your breakfast yet?",
-      "start": 24.89,
-      "duration": 2.97
+      "text": "Not yet, mom.",
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
-      "text": "Not yet, mom.",
-      "start": 28.87,
-      "duration": 1.41
+      "text": "I'm behind schedule.",
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
-      "text": "I'm behind schedule.",
-      "start": 30.28,
-      "duration": 1.41
+      "text": "What schedule?",
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
-      "text": "What schedule?",
-      "start": 32.79,
-      "duration": 0.9
+      "text": "Nothing's more important than eating breakfast.",
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
-      "text": "Nothing's more important than eating breakfast.",
-      "start": 34.87,
-      "duration": 2.74
+      "text": "Let's eat your breakfast, Remy.",
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
-      "text": "Let's eat your breakfast, Remy.",
-      "start": 38.79,
-      "duration": 1.7
+      "text": "Your mommy's right, sweetie.",
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
-      "text": "Your mommy's right, sweetie.",
-      "start": 41.43,
-      "duration": 1.62
+      "text": "You shouldn't skip the meal.",
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
-      "text": "You shouldn't skip the meal.",
-      "start": 43.99,
-      "duration": 1.78
+      "text": "It's not good for your health.",
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
-      "text": "It's not good for your health.",
-      "start": 46.63,
-      "duration": 1.62
+      "text": "Alright.",
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
-      "text": "Alright.",
-      "start": 49.27,
-      "duration": 0.5
+      "text": "I know.",
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "I know.",
-      "start": 50.23,
-      "duration": 0.77
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
-      "text": "I know.",
-      "start": 51,
-      "duration": 0.77
+      "text": "There is a bowl of cereal on the table and there is your favorite strawberry milk there too.",
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
-      "text": "there is a bowl of cereal on the table",
-      "start": 53.03,
-      "duration": 2.35
+      "text": "I don't see them anywhere.",
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
-      "text": "and there is your favorite strawberry milk there too",
-      "start": 56.28,
-      "duration": 3.06
+      "text": "When you go to the kitchen, you can't miss them.",
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
-      "text": "I don't see them anywhere.",
-      "start": 60.2,
-      "duration": 1.54
+      "text": "There is no cereal bowl on the table.",
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
-      "text": "When you go to the kitchen, you can't miss them.",
-      "start": 62.76,
-      "duration": 3.22
+      "text": "Oops.",
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
-      "text": "There is no cereal bowl on the table.",
-      "start": 69.56,
-      "duration": 2.59
+      "text": "The bus is here now.",
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
-      "text": "Oops.",
-      "start": 77.25,
-      "duration": 0.5
+      "text": "Mom, dad, I gotta go.",
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
-      "text": "The bus is here now.",
-      "start": 77.97,
-      "duration": 1.45
+      "text": "Remy, at least drink the milk.",
+      "start": 46,
+      "duration": 2
     },
     {
       "id": 25,
-      "text": "Mom, dad, I gotta go.",
-      "start": 80.37,
-      "duration": 2.41
+      "text": "There is a new canteen at my school.",
+      "start": 48,
+      "duration": 2
     },
     {
       "id": 26,
-      "text": "Remy, at least drink the milk.",
-      "start": 84.16,
-      "duration": 2.66
+      "text": "I'll buy some sandwiches there.",
+      "start": 50,
+      "duration": 2
     },
     {
       "id": 27,
-      "text": "There is a new canteen at my school.",
-      "start": 87.84,
-      "duration": 2.18
+      "text": "Love you.",
+      "start": 52,
+      "duration": 2
     },
     {
       "id": 28,
-      "text": "I'll buy some sandwiches there.",
-      "start": 90.8,
-      "duration": 2.26
+      "text": "The married couples are sitting at a lunch desk and talking.",
+      "start": 54,
+      "duration": 2
     },
     {
       "id": 29,
-      "text": "Love you.",
-      "start": 94.08,
-      "duration": 0.82
+      "text": "They have just moved to this town.",
+      "start": 56,
+      "duration": 2
     },
     {
       "id": 30,
-      "text": "The married couples are sitting at a lunch desk and talking.",
-      "start": 101.88,
-      "duration": 3.61
+      "text": "Baby, do you know that there is a new market in town?",
+      "start": 58,
+      "duration": 2
     },
     {
       "id": 31,
-      "text": "They have just moved to this town.",
-      "start": 106.44,
-      "duration": 2.17
+      "text": "I guess you don't since we've just moved here.",
+      "start": 60,
+      "duration": 2
     },
     {
       "id": 32,
-      "text": "Baby, do you know that there is a new market in town?",
-      "start": 110.37,
-      "duration": 3.38
+      "text": "Oh, where is it?",
+      "start": 62,
+      "duration": 2
     },
     {
       "id": 33,
-      "text": "I guess you don't since we've just moved here.",
-      "start": 114.85,
-      "duration": 3.14
+      "text": "It is at 2200 Irving Street, very near our house.",
+      "start": 64,
+      "duration": 2
     },
     {
       "id": 34,
-      "text": "Oh, where is it?",
-      "start": 118.77,
-      "duration": 2.02
+      "text": "I passed by that street today on the way home.",
+      "start": 66,
+      "duration": 2
     },
     {
       "id": 35,
-      "text": "It is at 2200 Irving Street, very near our house.",
-      "start": 121.67,
-      "duration": 5.77
+      "text": "No wonder why so many transportations went in and out.",
+      "start": 68,
+      "duration": 2
     },
     {
       "id": 36,
-      "text": "I passed by that street today on the way home.",
-      "start": 128.62,
-      "duration": 2.98
+      "text": "Did they cause some jams?",
+      "start": 70,
+      "duration": 2
     },
     {
       "id": 37,
-      "text": "No wonder why so many transportations went in and out.",
-      "start": 132.71,
-      "duration": 3.7
+      "text": "Yes.",
+      "start": 72,
+      "duration": 2
     },
     {
       "id": 38,
-      "text": "Did they cause some jams?",
-      "start": 139.79,
-      "duration": 1.62
+      "text": "They did.",
+      "start": 74,
+      "duration": 2
     },
     {
       "id": 39,
-      "text": "Yes.",
-      "start": 142.67,
-      "duration": 0.5
+      "text": "I thought there was a circus show or a fair there.",
+      "start": 76,
+      "duration": 2
     },
     {
       "id": 40,
-      "text": "They did.",
-      "start": 143.47,
-      "duration": 0.74
+      "text": "That's the market.",
+      "start": 78,
+      "duration": 2
     },
     {
       "id": 41,
-      "text": "I thought there was a circus show or a fair there.",
-      "start": 144.99,
-      "duration": 4.02
+      "text": "But how did you know?",
+      "start": 80,
+      "duration": 2
     },
     {
       "id": 42,
-      "text": "That's the market.",
-      "start": 150.07,
-      "duration": 1.22
+      "text": "This morning, I wanted to cook.",
+      "start": 82,
+      "duration": 2
     },
     {
       "id": 43,
-      "text": "But how did you know?",
-      "start": 152.4,
-      "duration": 1.61
+      "text": "But when taking a look at our fridge, there was only a loaf of bread.",
+      "start": 84,
+      "duration": 2
     },
     {
       "id": 44,
-      "text": "This morning, I wanted to cook.",
-      "start": 155.51,
-      "duration": 2.18
+      "text": "Then I asked our neighbors and they showed me the way.",
+      "start": 86,
+      "duration": 2
     },
     {
       "id": 45,
-      "text": "But when taking a look at our fridge, there was only a loaf of bread.",
-      "start": 158.56,
-      "duration": 4.57
+      "text": "They seem very friendly, do they?",
+      "start": 88,
+      "duration": 2
     },
     {
       "id": 46,
-      "text": "Then I asked our neighbors and they showed me the way.",
-      "start": 164.27,
-      "duration": 3.14
+      "text": "That's why I made them an apple pie.",
+      "start": 90,
+      "duration": 2
     },
     {
       "id": 47,
-      "text": "They seem very friendly, do they?",
-      "start": 168.27,
-      "duration": 2.26
+      "text": "Oops.",
+      "start": 92,
+      "duration": 2
     },
     {
       "id": 48,
-      "text": "That's why I made them an apple pie.",
-      "start": 171.23,
-      "duration": 2.58
+      "text": "I ate that twenty minutes ago.",
+      "start": 94,
+      "duration": 2
     },
     {
       "id": 49,
-      "text": "Oops.",
-      "start": 176.45,
-      "duration": 0.5
+      "text": "Baby.",
+      "start": 96,
+      "duration": 2
     },
     {
       "id": 50,
-      "text": "I ate that twenty minutes ago.",
-      "start": 177.5,
-      "duration": 1.94
+      "text": "Simon is in front of Hannah's door.",
+      "start": 98,
+      "duration": 2
     },
     {
       "id": 51,
-      "text": "Baby.",
-      "start": 180.45,
-      "duration": 0.5
+      "text": "He comes here to pick Hannah for a picnic.",
+      "start": 100,
+      "duration": 2
     },
     {
       "id": 52,
-      "text": "Simon is in front of Hannah's door.",
-      "start": 186.61,
-      "duration": 2.18
+      "text": "Hannah, do you wanna go for a picnic?",
+      "start": 102,
+      "duration": 2
     },
     {
       "id": 53,
-      "text": "He comes here to pick Hannah for a picnic.",
-      "start": 189.17,
-      "duration": 2.27
+      "text": "Yeah.",
+      "start": 104,
+      "duration": 2
     },
     {
       "id": 54,
-      "text": "Hannah, do you wanna go for a picnic?",
-      "start": 202.19,
-      "duration": 2.42
+      "text": "Absolutely.",
+      "start": 106,
+      "duration": 2
     },
     {
       "id": 55,
-      "text": "Yeah.",
-      "start": 205.84,
-      "duration": 0.46
+      "text": "I love picnics.",
+      "start": 108,
+      "duration": 2
     },
     {
       "id": 56,
-      "text": "Absolutely.",
-      "start": 206.29500000000002,
-      "duration": 0.46
+      "text": "I know you do.",
+      "start": 110,
+      "duration": 2
     },
     {
       "id": 57,
-      "text": "I love picnics.",
-      "start": 207.69,
-      "duration": 1.37
+      "text": "But don't you think that it's going to rain?",
+      "start": 112,
+      "duration": 2
     },
     {
       "id": 58,
-      "text": "I know you do.",
-      "start": 210.49,
-      "duration": 1.13
+      "text": "Hopefully not, Hannah.",
+      "start": 114,
+      "duration": 2
     },
     {
       "id": 59,
-      "text": "But don't you think that it's going to rain?",
-      "start": 212.56,
-      "duration": 2.91
+      "text": "Look, there is a very big gray cloud coming.",
+      "start": 116,
+      "duration": 2
     },
     {
       "id": 60,
-      "text": "Hopefully not, Hannah.",
-      "start": 217.69,
-      "duration": 1.3
+      "text": "I'm sure it's going to rain soon.",
+      "start": 118,
+      "duration": 2
     },
     {
       "id": 61,
-      "text": "Look, there is a very big gray cloud coming.",
-      "start": 220.04,
-      "duration": 3.7
+      "text": "Oh no, it's drizzling.",
+      "start": 120,
+      "duration": 2
     },
     {
       "id": 62,
-      "text": "I'm sure it's going to rain soon.",
-      "start": 225.08,
-      "duration": 2.26
+      "text": "Let's come inside my house.",
+      "start": 122,
+      "duration": 2
     },
     {
       "id": 63,
-      "text": "Oh no, it's drizzling.",
-      "start": 228.44,
-      "duration": 2.42
+      "text": "How unfortunate.",
+      "start": 124,
+      "duration": 2
     },
     {
       "id": 64,
-      "text": "Let's come inside my house.",
-      "start": 231.56,
-      "duration": 1.78
+      "text": "It's a drizzle.",
+      "start": 126,
+      "duration": 2
     },
     {
       "id": 65,
-      "text": "How unfortunate.",
-      "start": 240.66,
-      "duration": 0.81
+      "text": "We should have gone for a picnic yesterday.",
+      "start": 128,
+      "duration": 2
     },
     {
       "id": 66,
-      "text": "It's a drizzle.",
-      "start": 242.41,
-      "duration": 0.9
+      "text": "There wasn't a cloud in the sky.",
+      "start": 130,
+      "duration": 2
     },
     {
       "id": 67,
-      "text": "We should have gone for a picnic yesterday.",
-      "start": 244.5,
-      "duration": 2.33
+      "text": "Yes.",
+      "start": 132,
+      "duration": 2
     },
     {
       "id": 68,
-      "text": "There wasn't a cloud in the sky.",
-      "start": 248,
-      "duration": 1.86
+      "text": "The sky seemed crystal clear, Simon.",
+      "start": 134,
+      "duration": 2
     },
     {
       "id": 69,
-      "text": "Yes.",
-      "start": 250.96,
-      "duration": 0.5
+      "text": "It was a perfect day.",
+      "start": 136,
+      "duration": 2
     },
     {
       "id": 70,
-      "text": "The sky seemed crystal clear, Simon.",
-      "start": 251.92,
-      "duration": 2.82
+      "text": "It sure was.",
+      "start": 138,
+      "duration": 2
     },
     {
       "id": 71,
-      "text": "It was a perfect day.",
-      "start": 255.84,
-      "duration": 1.7
+      "text": "Do you want to eat the picnic food that I prepared?",
+      "start": 140,
+      "duration": 2
     },
     {
       "id": 72,
-      "text": "It sure was.",
-      "start": 258.56,
-      "duration": 1.14
+      "text": "Yes, I do.",
+      "start": 142,
+      "duration": 2
     },
     {
       "id": 73,
-      "text": "Do you want to eat the picnic food that I prepared?",
-      "start": 260.77,
-      "duration": 2.98
+      "text": "But wait, I'll get us some drinks.",
+      "start": 144,
+      "duration": 2
     },
     {
       "id": 74,
-      "text": "Yes, I do.",
-      "start": 265.01,
-      "duration": 1.7
+      "text": "There is some lemonade in the kitchen.",
+      "start": 146,
+      "duration": 2
     },
     {
       "id": 75,
-      "text": "But wait, I'll get us some drinks.",
-      "start": 267.65,
-      "duration": 2.66
+      "text": "That's great.",
+      "start": 148,
+      "duration": 2
     },
     {
       "id": 76,
-      "text": "There is some lemonade in the kitchen.",
-      "start": 275.1,
-      "duration": 2.1
+      "text": "Let's have a party on this rainy day.",
+      "start": 150,
+      "duration": 2
     },
     {
       "id": 77,
-      "text": "That's great.",
-      "start": 278.3,
-      "duration": 1.06
+      "text": "Mooney is going to intend an interview to become an author.",
+      "start": 152,
+      "duration": 2
     },
     {
       "id": 78,
-      "text": "Let's have a party on this rainy day.",
-      "start": 280.3,
-      "duration": 2.26
+      "text": "The interview's in the city, which is quite far from his hometown.",
+      "start": 154,
+      "duration": 2
     },
     {
       "id": 79,
-      "text": "Mooney is going to intend an interview to become an author.",
-      "start": 287.02,
-      "duration": 3.62
+      "text": "How are you going to the city tomorrow, Mooney?",
+      "start": 156,
+      "duration": 2
     },
     {
       "id": 80,
-      "text": "The interview's in the city, which is quite far from his hometown.",
-      "start": 291.63,
-      "duration": 3.78
+      "text": "I'm taking the train, Kevin.",
+      "start": 158,
+      "duration": 2
     },
     {
       "id": 81,
-      "text": "How are you going to the city tomorrow, Mooney?",
-      "start": 304.52,
-      "duration": 2.26
+      "text": "The train?",
+      "start": 160,
+      "duration": 2
     },
     {
       "id": 82,
-      "text": "I'm taking the train, Kevin.",
-      "start": 307.72,
-      "duration": 1.86
+      "text": "Yes.",
+      "start": 162,
+      "duration": 2
     },
     {
       "id": 83,
-      "text": "The train?",
-      "start": 310.52,
-      "duration": 0.82
+      "text": "I bought the earliest ticket.",
+      "start": 164,
+      "duration": 2
     },
     {
       "id": 84,
-      "text": "Yes.",
-      "start": 312.44,
-      "duration": 0.5
+      "text": "Is it expensive?",
+      "start": 166,
+      "duration": 2
     },
     {
       "id": 85,
-      "text": "I bought the earliest ticket.",
-      "start": 313.4,
-      "duration": 1.86
+      "text": "It's quite costly.",
+      "start": 168,
+      "duration": 2
     },
     {
       "id": 86,
-      "text": "Is it expensive?",
-      "start": 316.44,
-      "duration": 0.98
+      "text": "Because there is only one train running at that time.",
+      "start": 170,
+      "duration": 2
     },
     {
       "id": 87,
-      "text": "It's quite costly.",
-      "start": 318.61,
-      "duration": 1.62
+      "text": "Oh, is there?",
+      "start": 172,
+      "duration": 2
     },
     {
       "id": 88,
-      "text": "Because there is only one train running at that time.",
-      "start": 321.25,
-      "duration": 3.46
+      "text": "Yes, Kevin.",
+      "start": 174,
+      "duration": 2
     },
     {
       "id": 89,
-      "text": "Oh, is there?",
-      "start": 325.81,
-      "duration": 1.54
+      "text": "I just won't want to be late for my first interview.",
+      "start": 176,
+      "duration": 2
     },
     {
       "id": 90,
-      "text": "Yes, Kevin.",
-      "start": 328.29,
-      "duration": 0.9
+      "text": "You thought of everything, Mooney.",
+      "start": 178,
+      "duration": 2
     },
     {
       "id": 91,
-      "text": "I just won't want to be late for my first interview.",
-      "start": 330.21,
-      "duration": 2.98
+      "text": "Good luck, my friend.",
+      "start": 180,
+      "duration": 2
     },
     {
       "id": 92,
-      "text": "You thought of everything, Mooney.",
-      "start": 334.31,
-      "duration": 2.02
+      "text": "Oh, no.",
+      "start": 182,
+      "duration": 2
     },
     {
       "id": 93,
-      "text": "Good luck, my friend.",
-      "start": 337.35,
-      "duration": 1.46
+      "text": "I'm late for the train.",
+      "start": 184,
+      "duration": 2
     },
     {
       "id": 94,
-      "text": "Oh, no.",
-      "start": 347.99,
-      "duration": 0.9
+      "text": "It's already gone.",
+      "start": 186,
+      "duration": 2
     },
     {
       "id": 95,
-      "text": "I'm late for the train.",
-      "start": 349.45,
-      "duration": 1.46
+      "text": "What is the next train going to the city?",
+      "start": 188,
+      "duration": 2
     },
     {
       "id": 96,
-      "text": "It's already gone.",
-      "start": 351.94,
-      "duration": 1.3
+      "text": "There is a train at 10am and there is another one running to the city at 11:30am.",
+      "start": 190,
+      "duration": 2
     },
     {
       "id": 97,
-      "text": "What is the next train going to the city?",
-      "start": 356.57,
-      "duration": 2.26
+      "text": "Which one suits you the best?",
+      "start": 192,
+      "duration": 2
     },
     {
       "id": 98,
-      "text": "there is a train at 10am",
-      "start": 359.94,
-      "duration": 2.18
+      "text": "Excuse me, sir.",
+      "start": 194,
+      "duration": 2
     },
     {
       "id": 99,
-      "text": "and there is another one running to the city at 11:30am",
-      "start": 362.33,
-      "duration": 4.35
+      "text": "Is there a shuttle bus coming soon?",
+      "start": 196,
+      "duration": 2
     },
     {
       "id": 100,
-      "text": "Which one suits you the best?",
-      "start": 367.46,
-      "duration": 1.78
+      "text": "I think so.",
+      "start": 198,
+      "duration": 2
     },
     {
       "id": 101,
-      "text": "Excuse me, sir.",
-      "start": 374.66,
-      "duration": 1.3
+      "text": "That's good.",
+      "start": 200,
+      "duration": 2
     },
     {
       "id": 102,
-      "text": "Is there a shuttle bus coming soon?",
-      "start": 376.82,
-      "duration": 2.34
+      "text": "In the morning, Alice has just arrived at the office and sees a lot of gifts there.",
+      "start": 202,
+      "duration": 2
     },
     {
       "id": 103,
-      "text": "I think so.",
-      "start": 380.25,
-      "duration": 1.38
+      "text": "Good morning, everyone.",
+      "start": 204,
+      "duration": 2
     },
     {
       "id": 104,
-      "text": "That's good.",
-      "start": 382.65,
-      "duration": 0.98
+      "text": "Morning, Alice.",
+      "start": 206,
+      "duration": 2
     },
     {
       "id": 105,
-      "text": "in the morning alice has just arrived at the office",
-      "start": 388.65,
-      "duration": 3.71
+      "text": "Hi, Alice.",
+      "start": 208,
+      "duration": 2
     },
     {
       "id": 106,
-      "text": "and sees a lot of gifts there",
-      "start": 392.74,
-      "duration": 2.1
+      "text": "Look, there are presents in our office.",
+      "start": 210,
+      "duration": 2
     },
     {
       "id": 107,
-      "text": "Good morning, everyone.",
-      "start": 399.4,
-      "duration": 1.46
+      "text": "We know, Alice.",
+      "start": 212,
+      "duration": 2
     },
     {
       "id": 108,
-      "text": "Morning, Alice.",
-      "start": 402.36,
-      "duration": 1.3
+      "text": "Those gifts have been here since I first came to work.",
+      "start": 214,
+      "duration": 2
     },
     {
       "id": 109,
-      "text": "Hi, Alice.",
-      "start": 405.24,
-      "duration": 0.82
+      "text": "Who are they for?",
+      "start": 216,
+      "duration": 2
     },
     {
       "id": 110,
-      "text": "Look, there are presents in our office.",
-      "start": 407.24,
-      "duration": 3.38
+      "text": "We don't know.",
+      "start": 218,
+      "duration": 2
     },
     {
       "id": 111,
-      "text": "We know, Alice.",
-      "start": 412.12,
-      "duration": 1.13
+      "text": "Maybe Mr.",
+      "start": 220,
+      "duration": 2
     },
     {
       "id": 112,
-      "text": "Those gifts have been here since I first came to work.",
-      "start": 414.44,
-      "duration": 3.21
+      "text": "Santa Claus borrowed our office as his warehouse.",
+      "start": 222,
+      "duration": 2
     },
     {
       "id": 113,
-      "text": "Who are they for?",
-      "start": 418.51,
-      "duration": 1.14
+      "text": "Christmas isn't coming to town soon, is it?",
+      "start": 224,
+      "duration": 2
     },
     {
       "id": 114,
-      "text": "We don't know.",
-      "start": 420.68,
-      "duration": 0.97
+      "text": "You're right.",
+      "start": 226,
+      "duration": 2
     },
     {
       "id": 115,
-      "text": "Maybe Mr.",
-      "start": 422.61,
-      "duration": 0.88
+      "text": "It's just September.",
+      "start": 228,
+      "duration": 2
     },
     {
       "id": 116,
-      "text": "Santa Claus borrowed our office as his warehouse.",
-      "start": 423.49,
-      "duration": 2.82
+      "text": "You know what?",
+      "start": 230,
+      "duration": 2
     },
     {
       "id": 117,
-      "text": "Christmas isn't coming to town soon, is it?",
-      "start": 427.65,
-      "duration": 3.3
+      "text": "I guess those are ours, and our boss is trying to surprise us.",
+      "start": 232,
+      "duration": 2
     },
     {
       "id": 118,
-      "text": "You're right.",
-      "start": 431.81,
-      "duration": 0.82
+      "text": "I don't think he's gonna give us presents for nothing.",
+      "start": 234,
+      "duration": 2
     },
     {
       "id": 119,
-      "text": "It's just September.",
-      "start": 433.17,
-      "duration": 1.22
+      "text": "Look at how many presents there are.",
+      "start": 236,
+      "duration": 2
     },
     {
       "id": 120,
-      "text": "You know what?",
-      "start": 435.65,
-      "duration": 0.9
+      "text": "There are many clients working with our company.",
+      "start": 238,
+      "duration": 2
     },
     {
       "id": 121,
-      "text": "I guess those are ours, and our boss is trying to surprise us.",
-      "start": 437.56,
-      "duration": 4.01
+      "text": "Agreed.",
+      "start": 240,
+      "duration": 2
     },
     {
       "id": 122,
-      "text": "I don't think he's gonna give us presents for nothing.",
-      "start": 443.95,
-      "duration": 3.38
+      "text": "Must be thank you gifts.",
+      "start": 242,
+      "duration": 2
     },
     {
       "id": 123,
-      "text": "Look at how many presents there are.",
-      "start": 448.6,
-      "duration": 2.09
+      "text": "Morning, guys.",
+      "start": 244,
+      "duration": 2
     },
     {
       "id": 124,
-      "text": "There are many clients working with our company.",
-      "start": 451.5,
-      "duration": 2.9
+      "text": "Morning, boss.",
+      "start": 246,
+      "duration": 2
     },
     {
       "id": 125,
-      "text": "Agreed.",
-      "start": 455.58,
-      "duration": 0.5
+      "text": "I know what you're thinking.",
+      "start": 248,
+      "duration": 2
     },
     {
       "id": 126,
-      "text": "Must be thank you gifts.",
-      "start": 456.7,
-      "duration": 1.86
+      "text": "We're giving gifts to needy children on the streets.",
+      "start": 250,
+      "duration": 2
     },
     {
       "id": 127,
-      "text": "Morning, guys.",
-      "start": 459.74,
-      "duration": 0.98
+      "text": "Surprise.",
+      "start": 252,
+      "duration": 2
     },
     {
       "id": 128,
-      "text": "Morning, boss.",
-      "start": 461.98,
-      "duration": 0.98
+      "text": "Anna is taking her African friend out for a walk in her beautiful New York City.",
+      "start": 254,
+      "duration": 2
     },
     {
       "id": 129,
-      "text": "I know what you're thinking.",
-      "start": 464.19,
-      "duration": 1.62
+      "text": "This is the first time I came to America.",
+      "start": 256,
+      "duration": 2
     },
     {
       "id": 130,
-      "text": "We're giving gifts to needy children on the streets.",
-      "start": 466.84,
-      "duration": 3.29
+      "text": "Anna, thank you for showing me around the city.",
+      "start": 258,
+      "duration": 2
     },
     {
       "id": 131,
-      "text": "Surprise.",
-      "start": 471.31,
-      "duration": 0.5
+      "text": "You're so welcome.",
+      "start": 260,
+      "duration": 2
     },
     {
       "id": 132,
-      "text": "anna is taking her african friend out for a walk in her beautiful new york",
-      "start": 477.13,
-      "duration": 5.04
+      "text": "There are so many interesting places that we can go sightseeing together.",
+      "start": 262,
+      "duration": 2
     },
     {
       "id": 133,
-      "text": "city This is the first time I came to America.",
-      "start": 482.17,
-      "duration": 12.09
+      "text": "Yes.",
+      "start": 264,
+      "duration": 2
     },
     {
       "id": 134,
-      "text": "Anna, thank you for showing me around the city.",
-      "start": 495.61,
-      "duration": 2.74
+      "text": "There are.",
+      "start": 266,
+      "duration": 2
     },
     {
       "id": 135,
-      "text": "You're so welcome.",
-      "start": 499.37,
-      "duration": 1.3
+      "text": "Are you feeling tired yet?",
+      "start": 268,
+      "duration": 2
     },
     {
       "id": 136,
-      "text": "There are so many interesting places that we can go sightseeing together.",
-      "start": 501.85,
-      "duration": 4.65
+      "text": "A little bit.",
+      "start": 270,
+      "duration": 2
     },
     {
       "id": 137,
-      "text": "Yes.",
-      "start": 507.66,
-      "duration": 0.5
+      "text": "Okay.",
+      "start": 272,
+      "duration": 2
     },
     {
       "id": 138,
-      "text": "There are.",
-      "start": 508.78,
-      "duration": 0.82
+      "text": "Let's go to that park and take a break.",
+      "start": 274,
+      "duration": 2
     },
     {
       "id": 139,
-      "text": "Are you feeling tired yet?",
-      "start": 510.46,
-      "duration": 1.94
+      "text": "There are kids over there.",
+      "start": 276,
+      "duration": 2
     },
     {
       "id": 140,
-      "text": "A little bit.",
-      "start": 513.5,
-      "duration": 0.98
+      "text": "What are they doing?",
+      "start": 278,
+      "duration": 2
     },
     {
       "id": 141,
-      "text": "Okay.",
-      "start": 515.42,
-      "duration": 0.5
+      "text": "They're playing at the playground.",
+      "start": 280,
+      "duration": 2
     },
     {
       "id": 142,
-      "text": "Let's go to that park and take a break.",
-      "start": 516.3,
-      "duration": 2.34
+      "text": "There aren't many parks in my village.",
+      "start": 282,
+      "duration": 2
     },
     {
       "id": 143,
-      "text": "There are kids over there.",
-      "start": 519.66,
-      "duration": 1.7
+      "text": "Our children often play in the paddy fields or in their gardens.",
+      "start": 284,
+      "duration": 2
     },
     {
       "id": 144,
-      "text": "What are they doing?",
-      "start": 522.32,
-      "duration": 1.06
+      "text": "Oh, what do they play at those places?",
+      "start": 286,
+      "duration": 2
     },
     {
       "id": 145,
-      "text": "They're playing at the playground.",
-      "start": 524.39,
-      "duration": 1.38
+      "text": "There are so many fun things to play with such as the trees, the flowers, and the animals.",
+      "start": 288,
+      "duration": 2
     },
     {
       "id": 146,
-      "text": "There aren't many parks in my village.",
-      "start": 531.27,
-      "duration": 2.19
+      "text": "Kids can climb the trees and build their tree houses too.",
+      "start": 290,
+      "duration": 2
     },
     {
       "id": 147,
-      "text": "Our children often play in the paddy fields or in their gardens.",
-      "start": 534.65,
-      "duration": 3.62
+      "text": "Wow.",
+      "start": 292,
+      "duration": 2
     },
     {
       "id": 148,
-      "text": "Oh, what do they play at those places?",
-      "start": 539.61,
-      "duration": 3.06
+      "text": "That sounds wonderful.",
+      "start": 294,
+      "duration": 2
     },
     {
       "id": 149,
-      "text": "there are so many fun things to play with such as the trees the flowers",
-      "start": 543.93,
-      "duration": 5.21
+      "text": "Lily and Oscar are sisters.",
+      "start": 296,
+      "duration": 2
     },
     {
       "id": 150,
-      "text": "and the animals",
-      "start": 549.61,
-      "duration": 0.97
+      "text": "Lily is older.",
+      "start": 298,
+      "duration": 2
     },
     {
       "id": 151,
-      "text": "Kids can climb the trees and build their tree houses too.",
-      "start": 551.76,
-      "duration": 3.14
+      "text": "The two come to the house of their uncle, Nick, to visit him.",
+      "start": 300,
+      "duration": 2
     },
     {
       "id": 152,
-      "text": "Wow.",
-      "start": 555.92,
-      "duration": 0.5
+      "text": "Uncle Nick.",
+      "start": 302,
+      "duration": 2
     },
     {
       "id": 153,
-      "text": "That sounds wonderful.",
-      "start": 557.04,
-      "duration": 1.31
+      "text": "Hello there.",
+      "start": 304,
+      "duration": 2
     },
     {
       "id": 154,
-      "text": "Lily and Oscar are sisters.",
-      "start": 564.63,
-      "duration": 2.02
+      "text": "You're back.",
+      "start": 306,
+      "duration": 2
     },
     {
       "id": 155,
-      "text": "Lily is older.",
-      "start": 567.67,
-      "duration": 1.38
+      "text": "As soon as we knew you're home, we came to see you immediately.",
+      "start": 308,
+      "duration": 2
     },
     {
       "id": 156,
-      "text": "The two come to the house of their uncle, Nick, to visit him.",
-      "start": 569.83,
-      "duration": 4.26
+      "text": "We missed you.",
+      "start": 310,
+      "duration": 2
     },
     {
       "id": 157,
-      "text": "Uncle Nick.",
-      "start": 579.26,
-      "duration": 1.14
+      "text": "I miss you kids too.",
+      "start": 312,
+      "duration": 2
     },
     {
       "id": 158,
-      "text": "Hello there.",
-      "start": 582.78,
-      "duration": 0.98
+      "text": "Uncle Nick, daddy said you've traveled around the world with just a tiny suitcase.",
+      "start": 314,
+      "duration": 2
     },
     {
       "id": 159,
-      "text": "You're back.",
-      "start": 584.78,
-      "duration": 0.98
+      "text": "That's right, Oscar.",
+      "start": 316,
+      "duration": 2
     },
     {
       "id": 160,
-      "text": "As soon as we knew you're home, we came to see you immediately.",
-      "start": 587.04,
-      "duration": 3.7
+      "text": "Have you unpacked your suitcase yet?",
+      "start": 318,
+      "duration": 2
     },
     {
       "id": 161,
-      "text": "We missed you.",
-      "start": 592.16,
-      "duration": 1.22
+      "text": "We want to see how many things you can put in there.",
+      "start": 320,
+      "duration": 2
     },
     {
       "id": 162,
-      "text": "I miss you kids too.",
-      "start": 594.56,
-      "duration": 1.94
+      "text": "Unfortunately, I've unpacked almost everything.",
+      "start": 322,
+      "duration": 2
     },
     {
       "id": 163,
-      "text": "Uncle Nick, daddy said you've traveled around the world with just a tiny suitcase.",
-      "start": 597.84,
-      "duration": 6.29
+      "text": "There are just my shorts and socks in the suitcase now.",
+      "start": 324,
+      "duration": 2
     },
     {
       "id": 164,
-      "text": "That's right, Oscar.",
-      "start": 605.55,
-      "duration": 1.22
+      "text": "Did you bring your toothbrush?",
+      "start": 326,
+      "duration": 2
     },
     {
       "id": 165,
-      "text": "Have you unpacked your suitcase yet?",
-      "start": 607.88,
-      "duration": 2.25
+      "text": "Yes.",
+      "start": 328,
+      "duration": 2
     },
     {
       "id": 166,
-      "text": "We want to see how many things you can put in there.",
-      "start": 611,
-      "duration": 3.13
+      "text": "There were my hygiene items such as shampoo, toothpaste, and towels.",
+      "start": 330,
+      "duration": 2
     },
     {
       "id": 167,
-      "text": "Unfortunately, I've unpacked almost everything.",
-      "start": 615.12,
-      "duration": 3.7
+      "text": "How about your clothes?",
+      "start": 332,
+      "duration": 2
     },
     {
       "id": 168,
-      "text": "There are just my shorts and socks in the suitcase now.",
-      "start": 619.76,
-      "duration": 3.86
+      "text": "There were just some outfits.",
+      "start": 334,
+      "duration": 2
     },
     {
       "id": 169,
-      "text": "Did you bring your toothbrush?",
-      "start": 624.48,
-      "duration": 1.54
+      "text": "Wow.",
+      "start": 336,
+      "duration": 2
     },
     {
       "id": 170,
-      "text": "Yes.",
-      "start": 627.62,
-      "duration": 0.5
+      "text": "You're a real pro, Uncle Nick.",
+      "start": 338,
+      "duration": 2
     },
     {
       "id": 171,
-      "text": "There were my hygiene items such as shampoo, toothpaste, and towels.",
-      "start": 628.5,
-      "duration": 6.41
+      "text": "There are two things that I bought for you.",
+      "start": 340,
+      "duration": 2
     },
     {
       "id": 172,
-      "text": "How about your clothes?",
-      "start": 636.17,
-      "duration": 1.38
+      "text": "You will be adventurers someday.",
+      "start": 342,
+      "duration": 2
     },
     {
       "id": 173,
-      "text": "There were just some outfits.",
-      "start": 638.89,
-      "duration": 1.71
+      "text": "Celine and Max are throwing a celebration at their new sweet home.",
+      "start": 344,
+      "duration": 2
     },
     {
       "id": 174,
-      "text": "Wow.",
-      "start": 641.98,
-      "duration": 0.5
+      "text": "They're preparing for the party.",
+      "start": 346,
+      "duration": 2
     },
     {
       "id": 175,
-      "text": "You're a real pro, uncle Nick.",
-      "start": 642.94,
-      "duration": 2.42
+      "text": "We're gonna celebrate our housewarming party tonight.",
+      "start": 348,
+      "duration": 2
     },
     {
       "id": 176,
-      "text": "There are two things that I bought for you.",
-      "start": 647.82,
-      "duration": 2.82
+      "text": "True, Celine.",
+      "start": 350,
+      "duration": 2
     },
     {
       "id": 177,
-      "text": "You will be adventurers someday.",
-      "start": 652.3,
-      "duration": 2.34
+      "text": "I'm so excited to receive our guests, Max.",
+      "start": 352,
+      "duration": 2
     },
     {
       "id": 178,
-      "text": "Celine and Max are throwing a celebration at their new sweet home.",
-      "start": 660.82,
-      "duration": 4.89
+      "text": "By the way, are there many coming to our house?",
+      "start": 354,
+      "duration": 2
     },
     {
       "id": 179,
-      "text": "They're preparing for the party.",
-      "start": 665.93,
-      "duration": 1.62
+      "text": "Not a lot of people.",
+      "start": 356,
+      "duration": 2
     },
     {
       "id": 180,
-      "text": "We're gonna celebrate our housewarming party tonight.",
-      "start": 672.83,
-      "duration": 3.06
+      "text": "There are some of our closest friends, family, and relatives.",
+      "start": 358,
+      "duration": 2
     },
     {
       "id": 181,
-      "text": "True, Celine.",
-      "start": 677.31,
-      "duration": 0.9
+      "text": "Yes.",
+      "start": 360,
+      "duration": 2
     },
     {
       "id": 182,
-      "text": "I'm so excited to receive our guests, Max.",
-      "start": 679.39,
-      "duration": 3.86
+      "text": "I already prepared some dishes.",
+      "start": 362,
+      "duration": 2
     },
     {
       "id": 183,
-      "text": "By the way, are there many coming to our house?",
-      "start": 684.43,
-      "duration": 3.55
+      "text": "And there are some batches of raspberry muffins in the oven.",
+      "start": 364,
+      "duration": 2
     },
     {
       "id": 184,
-      "text": "Not a lot of people.",
-      "start": 689.24,
-      "duration": 1.53
+      "text": "Honey, are there three bottles of champagne in our cupboard?",
+      "start": 366,
+      "duration": 2
     },
     {
       "id": 185,
-      "text": "There are some of our closest friends, family, and relatives.",
-      "start": 691.72,
-      "duration": 4.41
+      "text": "No.",
+      "start": 368,
+      "duration": 2
     },
     {
       "id": 186,
-      "text": "Yes.",
-      "start": 697.5,
-      "duration": 0.5
+      "text": "There isn't.",
+      "start": 370,
+      "duration": 2
     },
     {
       "id": 187,
-      "text": "I already prepared some dishes.",
-      "start": 698.54,
-      "duration": 2.42
+      "text": "There is only one bottle.",
+      "start": 372,
+      "duration": 2
     },
     {
       "id": 188,
-      "text": "And there are some batches of raspberry muffins in the oven.",
-      "start": 702.14,
-      "duration": 3.78
+      "text": "Oh, no.",
+      "start": 374,
+      "duration": 2
     },
     {
       "id": 189,
-      "text": "Honey, are there three bottles of champagne in our cupboard?",
-      "start": 706.94,
-      "duration": 4.1
+      "text": "That means I gotta go buy some more.",
+      "start": 376,
+      "duration": 2
     },
     {
       "id": 190,
-      "text": "No.",
-      "start": 712.27,
-      "duration": 0.49
+      "text": "Yes.",
+      "start": 378,
+      "duration": 2
     },
     {
       "id": 191,
-      "text": "There isn't.",
-      "start": 712.76,
-      "duration": 0.98
+      "text": "Hurry up, Max.",
+      "start": 380,
+      "duration": 2
     },
     {
       "id": 192,
-      "text": "There is only one bottle.",
-      "start": 714.67,
-      "duration": 1.62
+      "text": "Our guests can come to our house at any time.",
+      "start": 382,
+      "duration": 2
     },
     {
       "id": 193,
-      "text": "Oh, no.",
-      "start": 717.39,
-      "duration": 0.83
+      "text": "Alright.",
+      "start": 384,
+      "duration": 2
     },
     {
       "id": 194,
-      "text": "That means I gotta go buy some more.",
-      "start": 718.84,
-      "duration": 2.5
+      "text": "I got it.",
+      "start": 386,
+      "duration": 2
     },
     {
       "id": 195,
-      "text": "Yes.",
-      "start": 722.36,
-      "duration": 0.5
+      "text": "You're quick, my friend.",
+      "start": 388,
+      "duration": 2
     },
     {
       "id": 196,
-      "text": "Hurry up, Max.",
-      "start": 723.24,
-      "duration": 1.29
+      "text": "Hello, Arthur.",
+      "start": 390,
+      "duration": 2
     },
     {
       "id": 197,
-      "text": "Our guests can come to our house at any time.",
-      "start": 725.88,
-      "duration": 3.22
+      "text": "Welcome to our party.",
+      "start": 392,
+      "duration": 2
     },
     {
       "id": 198,
-      "text": "Alright.",
-      "start": 730.28,
-      "duration": 0.5
+      "text": "Look what I brought.",
+      "start": 394,
+      "duration": 2
     },
     {
       "id": 199,
-      "text": "I got it.",
-      "start": 731.24,
-      "duration": 3.7
+      "text": "Two bottles of 100 year old red wine.",
+      "start": 396,
+      "duration": 2
     },
     {
       "id": 200,
-      "text": "You're quick, my friend.",
-      "start": 737.4,
-      "duration": 1.38
+      "text": "Oh, my, Arthur.",
+      "start": 398,
+      "duration": 2
     },
     {
       "id": 201,
-      "text": "Hello, Arthur.",
-      "start": 739.88,
-      "duration": 0.74
+      "text": "You are such a savior.",
+      "start": 400,
+      "duration": 2
     },
     {
       "id": 202,
-      "text": "Welcome to our party.",
-      "start": 741.39,
-      "duration": 1.38
+      "text": "There is a bowl of cereal on the table.",
+      "start": 402,
+      "duration": 2
     },
     {
       "id": 203,
-      "text": "Look what I brought.",
-      "start": 743.72,
-      "duration": 1.21
-    },
-    {
-      "id": 204,
-      "text": "Two bottles of 100 year old red wine.",
-      "start": 745.88,
-      "duration": 3.62
-    },
-    {
-      "id": 205,
-      "text": "Oh, my, Arthur.",
-      "start": 750.75,
-      "duration": 1.47
-    },
-    {
-      "id": 206,
-      "text": "You are such a savior.",
-      "start": 753.08,
-      "duration": 1.78
-    },
-    {
-      "id": 207,
-      "text": "There is a bowl of cereal on the table.",
-      "start": 771.2,
-      "duration": 2.42
-    },
-    {
-      "id": 208,
       "text": "There are kids over there.",
-      "start": 778.15,
-      "duration": 1.71
+      "start": 404,
+      "duration": 2
     }
   ],
   "speakerMap": {
@@ -1270,5 +1240,5 @@
     "afterSegments": 205
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.365Z"
+  "formattedAt": "2026-07-30T13:17:36.504Z"
 }

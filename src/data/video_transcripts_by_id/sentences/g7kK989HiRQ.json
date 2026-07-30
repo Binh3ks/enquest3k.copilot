@@ -4,120 +4,222 @@
     {
       "id": 1,
       "text": "Talking.",
-      "start": 1.16,
-      "duration": 6.32
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Flashcards.",
-      "start": 4.48,
-      "duration": 3
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "School book.",
-      "start": 8.4,
-      "duration": 7.96
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
-      "text": "Book book chair.",
-      "start": 11.84,
-      "duration": 9.24
+      "text": "Book.",
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
-      "text": "Chair chair desk.",
-      "start": 16.36,
-      "duration": 10.52
+      "text": "Book.",
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
-      "text": "Desk desk pencil case pencil case pencil.",
-      "start": 21.08,
-      "duration": 10.24
+      "text": "Chair.",
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
-      "text": "Case pen pen.",
-      "start": 26.88,
-      "duration": 7.96
+      "text": "Chair.",
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
-      "text": "Pen ruler.",
-      "start": 31.32,
-      "duration": 8.2
+      "text": "Chair.",
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
-      "text": "Ruler ruler pencil.",
-      "start": 34.84,
-      "duration": 9.08
+      "text": "Desk.",
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
-      "text": "Pencil pencil eraser.",
-      "start": 39.52,
-      "duration": 9.16
+      "text": "Desk.",
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
-      "text": "Eraser eraser clock.",
-      "start": 43.92,
-      "duration": 9.4
+      "text": "Desk.",
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
-      "text": "Clock clock crayon.",
-      "start": 48.68,
-      "duration": 9.2
+      "text": "Pencil case.",
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
-      "text": "Crayon crayon scissors.",
-      "start": 53.32,
-      "duration": 9.16
+      "text": "Pencil case.",
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
-      "text": "Scissors scissors sharpener.",
-      "start": 57.88,
-      "duration": 9.24
+      "text": "Pencil.",
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
-      "text": "Sharpener sharpener stapler.",
-      "start": 62.48,
-      "duration": 9.44
+      "text": "Case.",
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
-      "text": "Stapler stapler teacher.",
-      "start": 67.12,
-      "duration": 9.36
+      "text": "Pen.",
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
-      "text": "Teacher hey sit down and be quiet it's.",
-      "start": 71.92,
-      "duration": 8.4
+      "text": "Pen.",
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
-      "text": "I'm Leaf learning talking.",
-      "start": 76.48,
-      "duration": 12.64
+      "text": "Pen.",
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
-      "text": "Flashcards see you next time.",
-      "start": 84.48,
-      "duration": 4.64
+      "text": "Ruler.",
+      "start": 36,
+      "duration": 2
+    },
+    {
+      "id": 20,
+      "text": "Ruler.",
+      "start": 38,
+      "duration": 2
+    },
+    {
+      "id": 21,
+      "text": "Ruler.",
+      "start": 40,
+      "duration": 2
+    },
+    {
+      "id": 22,
+      "text": "Pencil.",
+      "start": 42,
+      "duration": 2
+    },
+    {
+      "id": 23,
+      "text": "Pencil.",
+      "start": 44,
+      "duration": 2
+    },
+    {
+      "id": 24,
+      "text": "Pencil.",
+      "start": 46,
+      "duration": 2
+    },
+    {
+      "id": 25,
+      "text": "Eraser.",
+      "start": 48,
+      "duration": 2
+    },
+    {
+      "id": 26,
+      "text": "Eraser.",
+      "start": 50,
+      "duration": 2
+    },
+    {
+      "id": 27,
+      "text": "Eraser.",
+      "start": 52,
+      "duration": 2
+    },
+    {
+      "id": 28,
+      "text": "Clock.",
+      "start": 54,
+      "duration": 2
+    },
+    {
+      "id": 29,
+      "text": "Clock.",
+      "start": 56,
+      "duration": 2
+    },
+    {
+      "id": 30,
+      "text": "Clock.",
+      "start": 58,
+      "duration": 2
+    },
+    {
+      "id": 31,
+      "text": "Crayon.",
+      "start": 60,
+      "duration": 2
+    },
+    {
+      "id": 32,
+      "text": "Crayon.",
+      "start": 62,
+      "duration": 2
+    },
+    {
+      "id": 33,
+      "text": "Crayon.",
+      "start": 64,
+      "duration": 2
+    },
+    {
+      "id": 34,
+      "text": "Scissors.",
+      "start": 66,
+      "duration": 2
+    },
+    {
+      "id": 35,
+      "text": "Scissors.",
+      "start": 68,
+      "duration": 2
+    },
+    {
+      "id": 36,
+      "text": "Scissors",
+      "start": 70,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-06-24T03:42:23Z",
   "videoId": "g7kK989HiRQ",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.378Z"
+  "formattedAt": "2026-07-30T13:20:32.633Z"
 }

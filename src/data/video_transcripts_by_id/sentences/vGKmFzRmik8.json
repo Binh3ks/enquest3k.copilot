@@ -3,553 +3,61 @@
   "segments": [
     {
       "id": 1,
-      "text": "How are my word lover friends.",
-      "start": 6.08,
-      "duration": 4.56
+      "text": "How are my word lover friends?",
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Today we'll continue learning more.",
-      "start": 8.88,
-      "duration": 3.12
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "Adjectives.",
-      "start": 10.64,
-      "duration": 2.88
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
-      "text": "What do you say.",
-      "start": 12,
-      "duration": 3.52
+      "text": "What do you say?",
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
-      "text": "Do you remember what they are.",
-      "start": 13.52,
-      "duration": 4.53
+      "text": "Do you remember what they are?",
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
-      "text": "If not i'll remind you.",
-      "start": 15.52,
-      "duration": 5.91
+      "text": "If not I'll remind you.",
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
-      "text": "Adjectives are words used to give.",
-      "start": 21.84,
-      "duration": 6.16
+      "text": "Adjectives are words used to give information about people, animals, places or things.",
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
-      "text": "Information about people animals places.",
-      "start": 24.08,
-      "duration": 4.76
+      "text": "They usually follow the noun and express a quality about it.",
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
-      "text": "Or Things they usually follow the noun and.",
-      "start": 28,
-      "duration": 7.2
-    },
-    {
-      "id": 10,
-      "text": "Express a quality about it.",
-      "start": 32.4,
-      "duration": 6.16
-    },
-    {
-      "id": 11,
-      "text": "For example in the sentence the long.",
-      "start": 35.2,
-      "duration": 6.4
-    },
-    {
-      "id": 12,
-      "text": "Sword long would be the adjective.",
-      "start": 38.56,
-      "duration": 5.44
-    },
-    {
-      "id": 13,
-      "text": "Because it tells us what the sword is.",
-      "start": 41.6,
-      "duration": 4.16
-    },
-    {
-      "id": 14,
-      "text": "Like.",
-      "start": 44,
-      "duration": 4.24
-    },
-    {
-      "id": 15,
-      "text": "In this video we're going to learn about.",
-      "start": 45.76,
-      "duration": 5.76
-    },
-    {
-      "id": 16,
-      "text": "Some adjectives that describe qualities.",
-      "start": 48.24,
-      "duration": 7.12
-    },
-    {
-      "id": 17,
-      "text": "About different people here we go.",
-      "start": 51.52,
-      "duration": 8.16
-    },
-    {
-      "id": 18,
-      "text": "This basketball player is tall.",
-      "start": 55.36,
-      "duration": 6.64
-    },
-    {
-      "id": 19,
-      "text": "Tall.",
-      "start": 59.68,
-      "duration": 2.32
-    },
-    {
-      "id": 20,
-      "text": "Repeat after me.",
-      "start": 62.72,
-      "duration": 4.32
-    },
-    {
-      "id": 21,
-      "text": "Tall.",
-      "start": 64.8,
-      "duration": 2.24
-    },
-    {
-      "id": 22,
-      "text": "But this clown is short.",
-      "start": 69.28,
-      "duration": 4.44
-    },
-    {
-      "id": 23,
-      "text": "Short.",
-      "start": 74.24,
-      "duration": 2.4
-    },
-    {
-      "id": 24,
-      "text": "Repeat after me.",
-      "start": 77.12,
-      "duration": 4.56
-    },
-    {
-      "id": 25,
-      "text": "Short.",
-      "start": 79.28,
-      "duration": 2.4
-    },
-    {
-      "id": 26,
-      "text": "Tall.",
-      "start": 83.2,
-      "duration": 3
-    },
-    {
-      "id": 27,
-      "text": "Short.",
-      "start": 86.24,
-      "duration": 2.4
-    },
-    {
-      "id": 28,
-      "text": "Paula has blonde hair.",
-      "start": 90.72,
-      "duration": 3.6
-    },
-    {
-      "id": 29,
-      "text": "Blonde.",
-      "start": 94.72,
-      "duration": 2.64
-    },
-    {
-      "id": 30,
-      "text": "Repeat after me.",
-      "start": 97.68,
-      "duration": 4.16
-    },
-    {
-      "id": 31,
-      "text": "Blonde.",
-      "start": 99.68,
-      "duration": 2.16
-    },
-    {
-      "id": 32,
-      "text": "And miguel has brown hair.",
-      "start": 104.32,
-      "duration": 4.8
-    },
-    {
-      "id": 33,
-      "text": "Brown.",
-      "start": 109.12,
-      "duration": 2.48
-    },
-    {
-      "id": 34,
-      "text": "Repeat after me brown.",
-      "start": 112.08,
-      "duration": 6.08
-    },
-    {
-      "id": 35,
-      "text": "Blonde.",
-      "start": 118.16,
-      "duration": 2.56
-    },
-    {
-      "id": 36,
-      "text": "Brown.",
-      "start": 121.12,
-      "duration": 2.48
-    },
-    {
-      "id": 37,
-      "text": "This grandmother is old.",
-      "start": 125.68,
-      "duration": 6.56
-    },
-    {
-      "id": 38,
-      "text": "Old.",
-      "start": 129.76,
-      "duration": 2.48
-    },
-    {
-      "id": 39,
-      "text": "Repeat after me.",
-      "start": 132.72,
-      "duration": 3.58
-    },
-    {
-      "id": 40,
-      "text": "Old.",
-      "start": 134.8,
-      "duration": 4.16
-    },
-    {
-      "id": 41,
-      "text": "And this boy is young.",
-      "start": 138.96,
-      "duration": 4.24
-    },
-    {
-      "id": 42,
-      "text": "Young.",
-      "start": 143.2,
-      "duration": 2.32
-    },
-    {
-      "id": 43,
-      "text": "Repeat after me.",
-      "start": 146.08,
-      "duration": 4.48
-    },
-    {
-      "id": 44,
-      "text": "Young.",
-      "start": 148.24,
-      "duration": 2.32
-    },
-    {
-      "id": 45,
-      "text": "Old.",
-      "start": 152.24,
-      "duration": 2.48
-    },
-    {
-      "id": 46,
-      "text": "Young.",
-      "start": 155.2,
-      "duration": 2.64
-    },
-    {
-      "id": 47,
-      "text": "This witch is sad.",
-      "start": 159.84,
-      "duration": 3.52
-    },
-    {
-      "id": 48,
-      "text": "Sad.",
-      "start": 163.84,
-      "duration": 2.48
-    },
-    {
-      "id": 49,
-      "text": "Repeat after me.",
-      "start": 166.72,
-      "duration": 5.08
-    },
-    {
-      "id": 50,
-      "text": "Sad.",
-      "start": 168.8,
-      "duration": 3
-    },
-    {
-      "id": 51,
-      "text": "But this musician is happy.",
-      "start": 173.12,
-      "duration": 4.16
-    },
-    {
-      "id": 52,
-      "text": "Happy.",
-      "start": 178.24,
-      "duration": 2.88
-    },
-    {
-      "id": 53,
-      "text": "Repeat after me.",
-      "start": 181.12,
-      "duration": 4.72
-    },
-    {
-      "id": 54,
-      "text": "Happy.",
-      "start": 183.2,
-      "duration": 2.64
-    },
-    {
-      "id": 55,
-      "text": "Sad.",
-      "start": 187.28,
-      "duration": 2.48
-    },
-    {
-      "id": 56,
-      "text": "Happy.",
-      "start": 190.16,
-      "duration": 2.48
-    },
-    {
-      "id": 57,
-      "text": "This boxer is strong.",
-      "start": 194.72,
-      "duration": 6.64
-    },
-    {
-      "id": 58,
-      "text": "Strong.",
-      "start": 198.88,
-      "duration": 2.48
-    },
-    {
-      "id": 59,
-      "text": "Repeat after me.",
-      "start": 201.68,
-      "duration": 4.72
-    },
-    {
-      "id": 60,
-      "text": "Strong.",
-      "start": 203.84,
-      "duration": 2.56
-    },
-    {
-      "id": 61,
-      "text": "But this boy is weak.",
-      "start": 208.32,
-      "duration": 4.6
-    },
-    {
-      "id": 62,
-      "text": "Week.",
-      "start": 213.28,
-      "duration": 2.8
-    },
-    {
-      "id": 63,
-      "text": "Repeat after me.",
-      "start": 216.08,
-      "duration": 2.9
-    },
-    {
-      "id": 64,
-      "text": "Weak.",
-      "start": 218.32,
-      "duration": 3.83
-    },
-    {
-      "id": 65,
-      "text": "Strong.",
-      "start": 222.24,
-      "duration": 2.48
-    },
-    {
-      "id": 66,
-      "text": "Weak.",
-      "start": 225.36,
-      "duration": 3.68
-    },
-    {
-      "id": 67,
-      "text": "We've learned a lot of adjectives about.",
-      "start": 229.04,
-      "duration": 6.72
-    },
-    {
-      "id": 68,
-      "text": "These friendly people let's review them.",
-      "start": 231.52,
-      "duration": 7.24
-    },
-    {
-      "id": 69,
-      "text": "Tall.",
-      "start": 235.76,
-      "duration": 3
-    },
-    {
-      "id": 70,
-      "text": "Short.",
-      "start": 240.48,
-      "duration": 2.48
-    },
-    {
-      "id": 71,
-      "text": "Blonde.",
-      "start": 246.96,
-      "duration": 4.64
-    },
-    {
-      "id": 72,
-      "text": "Brown.",
-      "start": 251.6,
-      "duration": 5.61
-    },
-    {
-      "id": 73,
-      "text": "Old.",
-      "start": 258.24,
-      "duration": 2.32
-    },
-    {
-      "id": 74,
-      "text": "Young.",
-      "start": 262.88,
-      "duration": 3
-    },
-    {
-      "id": 75,
-      "text": "Sad.",
-      "start": 269.44,
-      "duration": 2.48
-    },
-    {
-      "id": 76,
-      "text": "Happy.",
-      "start": 274,
-      "duration": 2.4
-    },
-    {
-      "id": 77,
-      "text": "Strong.",
-      "start": 280.72,
-      "duration": 4.56
-    },
-    {
-      "id": 78,
-      "text": "Weak.",
-      "start": 285.28,
-      "duration": 2.32
-    },
-    {
-      "id": 79,
-      "text": "Good job.",
-      "start": 289.92,
-      "duration": 3.28
-    },
-    {
-      "id": 80,
-      "text": "Adjectives are super fun.",
-      "start": 293.2,
-      "duration": 4.8
-    },
-    {
-      "id": 81,
-      "text": "In this video we've learned a lot about.",
-      "start": 295.76,
-      "duration": 4.24
-    },
-    {
-      "id": 82,
-      "text": "Them with some people.",
-      "start": 298,
-      "duration": 4.64
-    },
-    {
-      "id": 83,
-      "text": "In the next one we will learn more.",
-      "start": 300,
-      "duration": 5.76
-    },
-    {
-      "id": 84,
-      "text": "But this time with places.",
-      "start": 302.64,
-      "duration": 7.4
-    },
-    {
-      "id": 85,
-      "text": "Don't miss the next video.",
-      "start": 305.76,
-      "duration": 4.28
-    },
-    {
-      "id": 86,
-      "text": "We've learned so much in just one video.",
-      "start": 313.92,
-      "duration": 5.84
-    },
-    {
-      "id": 87,
-      "text": "Did you know there are many more videos.",
-      "start": 316.96,
-      "duration": 5.12
-    },
-    {
-      "id": 88,
-      "text": "Imagine how much you could learn.",
-      "start": 319.76,
-      "duration": 4.24
-    },
-    {
-      "id": 89,
-      "text": "Subscribe to the smile and learn.",
-      "start": 322.08,
-      "duration": 4.24
-    },
-    {
-      "id": 90,
-      "text": "Educational channel to learn and have.",
-      "start": 324,
-      "duration": 6.04
-    },
-    {
-      "id": 91,
-      "text": "Fun at the same time.",
-      "start": 326.32,
-      "duration": 6.75
+      "text": "For example, in the sentence \"the long sword,\" long would be",
+      "start": 16,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-06-22T02:05:09Z",
   "videoId": "vGKmFzRmik8",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.393Z"
+  "formattedAt": "2026-07-30T13:22:47.595Z"
 }

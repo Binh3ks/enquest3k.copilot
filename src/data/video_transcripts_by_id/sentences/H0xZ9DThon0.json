@@ -4,468 +4,138 @@
     {
       "id": 1,
       "text": "Let's go.",
-      "start": 12,
-      "duration": 3.24
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Look.",
-      "start": 18.96,
-      "duration": 4.88
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "The bear is playing with the ball.",
-      "start": 19.84,
-      "duration": 6.08
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "Bear.",
-      "start": 23.84,
-      "duration": 4.04
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "Bear.",
-      "start": 25.92,
-      "duration": 3.52
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "The crocodile has a big mouth.",
-      "start": 29.44,
-      "duration": 6.8
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "Crocodile.",
-      "start": 33.76,
-      "duration": 4.11
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "Crocodile.",
-      "start": 36.24,
-      "duration": 4.4
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "The deer has pretty eyes.",
-      "start": 40.64,
-      "duration": 5.44
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "Deer.",
-      "start": 44.08,
-      "duration": 3.08
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "Deer.",
-      "start": 46.08,
-      "duration": 4.16
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
       "text": "Look.",
-      "start": 50.24,
-      "duration": 5.28
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
       "text": "The elephant has a long trunk.",
-      "start": 51.2,
-      "duration": 6.88
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
       "text": "Elephant.",
-      "start": 55.52,
-      "duration": 3.91
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
       "text": "Elephant.",
-      "start": 58.08,
-      "duration": 3.28
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "The dolphin can jump high.",
-      "start": 61.36,
-      "duration": 4
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
       "text": "Dolphin.",
-      "start": 66.48,
-      "duration": 4.24
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
       "text": "Dolphin.",
-      "start": 68.64,
-      "duration": 5.13
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
       "text": "The giraffe's neck is long.",
-      "start": 70.72,
-      "duration": 4.8
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
       "text": "Giraffe.",
-      "start": 75.52,
-      "duration": 4.48
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
       "text": "Giraffe.",
-      "start": 77.52,
-      "duration": 7.2
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
-      "text": "The gorilla is beating its chest.",
-      "start": 80,
-      "duration": 7.2
-    },
-    {
-      "id": 23,
-      "text": "Gorilla.",
-      "start": 84.72,
-      "duration": 5.12
-    },
-    {
-      "id": 24,
-      "text": "Gorilla.",
-      "start": 87.2,
-      "duration": 6.48
-    },
-    {
-      "id": 25,
-      "text": "The hippo is yawning.",
-      "start": 89.84,
-      "duration": 6.16
-    },
-    {
-      "id": 26,
-      "text": "Hippo.",
-      "start": 93.68,
-      "duration": 4.21
-    },
-    {
-      "id": 27,
-      "text": "Hippo.",
-      "start": 96,
-      "duration": 4.08
-    },
-    {
-      "id": 28,
-      "text": "The kangaroo has a baby in its pocket.",
-      "start": 100.08,
-      "duration": 7.68
-    },
-    {
-      "id": 29,
-      "text": "Kangaroo.",
-      "start": 105.28,
-      "duration": 5.28
-    },
-    {
-      "id": 30,
-      "text": "Kangaroo.",
-      "start": 107.76,
-      "duration": 2.8
-    },
-    {
-      "id": 31,
-      "text": "The lion is roaring.",
-      "start": 110.8,
-      "duration": 3.76
-    },
-    {
-      "id": 32,
-      "text": "Lion.",
-      "start": 114.56,
-      "duration": 2.08
-    },
-    {
-      "id": 33,
-      "text": "Lion.",
-      "start": 116.64,
-      "duration": 2.56
-    },
-    {
-      "id": 34,
-      "text": "The monkey is hanging from the tree.",
-      "start": 119.92,
-      "duration": 6.48
-    },
-    {
-      "id": 35,
-      "text": "Monkey.",
-      "start": 123.92,
-      "duration": 2.48
-    },
-    {
-      "id": 36,
-      "text": "Monkey.",
-      "start": 126.72,
-      "duration": 3.76
-    },
-    {
-      "id": 37,
-      "text": "The ostrich can run very fast.",
-      "start": 130.48,
-      "duration": 6.96
-    },
-    {
-      "id": 38,
-      "text": "Ostrich.",
-      "start": 134.72,
-      "duration": 2.72
-    },
-    {
-      "id": 39,
-      "text": "Ostrich.",
-      "start": 137.6,
-      "duration": 3
-    },
-    {
-      "id": 40,
-      "text": "The panda likes bamboo.",
-      "start": 142.4,
-      "duration": 3.92
-    },
-    {
-      "id": 41,
-      "text": "Panda.",
-      "start": 145.52,
-      "duration": 1.19
-    },
-    {
-      "id": 42,
-      "text": "Panda.",
-      "start": 148.32,
-      "duration": 2.64
-    },
-    {
-      "id": 43,
-      "text": "Look.",
-      "start": 151.6,
-      "duration": 5.28
-    },
-    {
-      "id": 44,
-      "text": "The peacock is spreading its feathers.",
-      "start": 152.48,
-      "duration": 6.64
-    },
-    {
-      "id": 45,
-      "text": "Peacock.",
-      "start": 156.88,
-      "duration": 3.89
-    },
-    {
-      "id": 46,
-      "text": "Peacock.",
-      "start": 159.12,
-      "duration": 3.2
-    },
-    {
-      "id": 47,
-      "text": "The penguin is waddling on the ice.",
-      "start": 162.32,
-      "duration": 8.2
-    },
-    {
-      "id": 48,
-      "text": "Penguin.",
-      "start": 167.52,
-      "duration": 3
-    },
-    {
-      "id": 49,
-      "text": "Penguin.",
-      "start": 170.8,
-      "duration": 4.32
-    },
-    {
-      "id": 50,
-      "text": "The snake is slithering up a tree.",
-      "start": 175.12,
-      "duration": 7.36
-    },
-    {
-      "id": 51,
-      "text": "Snake.",
-      "start": 180,
-      "duration": 2.48
-    },
-    {
-      "id": 52,
-      "text": "Snake.",
-      "start": 182.8,
-      "duration": 3
-    },
-    {
-      "id": 53,
-      "text": "The tiger is eating meat.",
-      "start": 186.64,
-      "duration": 6.08
-    },
-    {
-      "id": 54,
-      "text": "Tiger.",
-      "start": 190.24,
-      "duration": 3.53
-    },
-    {
-      "id": 55,
-      "text": "Tiger.",
-      "start": 192.72,
-      "duration": 2.88
-    },
-    {
-      "id": 56,
-      "text": "The zebra has many stripes.",
-      "start": 195.6,
-      "duration": 5.92
-    },
-    {
-      "id": 57,
-      "text": "Zebra.",
-      "start": 199.2,
-      "duration": 3.48
-    },
-    {
-      "id": 58,
-      "text": "Zebra.",
-      "start": 201.52,
-      "duration": 3.52
-    },
-    {
-      "id": 59,
-      "text": "Review.",
-      "start": 205.04,
-      "duration": 2.56
-    },
-    {
-      "id": 60,
-      "text": "Bear.",
-      "start": 208.08,
-      "duration": 2.4
-    },
-    {
-      "id": 61,
-      "text": "Crocodile.",
-      "start": 211.44,
-      "duration": 2.4
-    },
-    {
-      "id": 62,
-      "text": "Deer.",
-      "start": 215.36,
-      "duration": 2.4
-    },
-    {
-      "id": 63,
-      "text": "Elephant.",
-      "start": 218.8,
-      "duration": 2.72
-    },
-    {
-      "id": 64,
-      "text": "Dolphin.",
-      "start": 222.48,
-      "duration": 3
-    },
-    {
-      "id": 65,
-      "text": "Giraffe.",
-      "start": 226.16,
-      "duration": 2.56
-    },
-    {
-      "id": 66,
-      "text": "Gorilla.",
-      "start": 229.76,
-      "duration": 2.64
-    },
-    {
-      "id": 67,
-      "text": "Hippo.",
-      "start": 233.28,
-      "duration": 2.48
-    },
-    {
-      "id": 68,
-      "text": "Kangaroo.",
-      "start": 236.88,
-      "duration": 3
-    },
-    {
-      "id": 69,
-      "text": "Lion.",
-      "start": 240.72,
-      "duration": 2.48
-    },
-    {
-      "id": 70,
-      "text": "Monkey.",
-      "start": 244.16,
-      "duration": 2.48
-    },
-    {
-      "id": 71,
-      "text": "Ostrich.",
-      "start": 247.92,
-      "duration": 2.64
-    },
-    {
-      "id": 72,
-      "text": "Panda.",
-      "start": 251.44,
-      "duration": 3
-    },
-    {
-      "id": 73,
-      "text": "Peacock.",
-      "start": 255.2,
-      "duration": 2.72
-    },
-    {
-      "id": 74,
-      "text": "Penguin.",
-      "start": 258.88,
-      "duration": 2.64
-    },
-    {
-      "id": 75,
-      "text": "Snake.",
-      "start": 262.56,
-      "duration": 2.56
-    },
-    {
-      "id": 76,
-      "text": "Tiger.",
-      "start": 266.24,
-      "duration": 3
-    },
-    {
-      "id": 77,
-      "text": "Zebra.",
-      "start": 269.68,
-      "duration": 3
+      "text": "The gorilla is beating its",
+      "start": 42,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-01T07:33:01.732Z",
   "videoId": "H0xZ9DThon0",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.356Z"
+  "formattedAt": "2026-07-30T13:15:57.073Z"
 }

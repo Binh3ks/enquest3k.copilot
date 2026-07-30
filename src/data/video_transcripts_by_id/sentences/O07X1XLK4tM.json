@@ -4,218 +4,218 @@
     {
       "id": 1,
       "text": "Welcome to my house.",
-      "start": 13.6,
-      "duration": 1.46
+      "start": 0,
+      "duration": 2
     },
     {
       "id": 2,
       "text": "Anne, you have a nice garden.",
-      "start": 16.91,
-      "duration": 2.02
+      "start": 2,
+      "duration": 2
     },
     {
       "id": 3,
       "text": "Flowers and trees are so beautiful.",
-      "start": 20.66,
-      "duration": 2.5
+      "start": 4,
+      "duration": 2
     },
     {
       "id": 4,
       "text": "Thank you.",
-      "start": 25.22,
-      "duration": 0.83
+      "start": 6,
+      "duration": 2
     },
     {
       "id": 5,
       "text": "My family planted them in last spring.",
-      "start": 27.06,
-      "duration": 2.82
+      "start": 8,
+      "duration": 2
     },
     {
       "id": 6,
       "text": "Let's go inside.",
-      "start": 32.71,
-      "duration": 1.06
+      "start": 10,
+      "duration": 2
     },
     {
       "id": 7,
       "text": "Oh, this is the living room.",
-      "start": 39.19,
-      "duration": 2.02
+      "start": 12,
+      "duration": 2
     },
     {
       "id": 8,
       "text": "Yes.",
-      "start": 42.65,
-      "duration": 0.5
+      "start": 14,
+      "duration": 2
     },
     {
       "id": 9,
       "text": "My family usually watch TV and talk in here.",
-      "start": 43.6,
-      "duration": 3.79
+      "start": 16,
+      "duration": 2
     },
     {
       "id": 10,
       "text": "What about your room?",
-      "start": 48.73,
-      "duration": 1.28
+      "start": 18,
+      "duration": 2
     },
     {
       "id": 11,
       "text": "Where is it?",
-      "start": 50.01,
-      "duration": 1.06
+      "start": 20,
+      "duration": 2
     },
     {
       "id": 12,
       "text": "Here.",
-      "start": 55.54,
-      "duration": 0.46
+      "start": 22,
+      "duration": 2
     },
     {
       "id": 13,
       "text": "Come in.",
-      "start": 56,
-      "duration": 0.92
+      "start": 24,
+      "duration": 2
     },
     {
       "id": 14,
       "text": "Oh, it looks so much neater than I thought.",
-      "start": 60.98,
-      "duration": 3.06
+      "start": 26,
+      "duration": 2
     },
     {
       "id": 15,
       "text": "So I guess you sleep and study here.",
-      "start": 65.94,
-      "duration": 2.82
+      "start": 28,
+      "duration": 2
     },
     {
       "id": 16,
       "text": "That's right.",
-      "start": 69.92,
-      "duration": 0.89
+      "start": 30,
+      "duration": 2
     },
     {
       "id": 17,
       "text": "Why don't you take a look around?",
-      "start": 71.44,
-      "duration": 1.86
+      "start": 32,
+      "duration": 2
     },
     {
       "id": 18,
       "text": "Are these only books you have?",
-      "start": 78.64,
-      "duration": 1.94
+      "start": 34,
+      "duration": 2
     },
     {
       "id": 19,
       "text": "Nope.",
-      "start": 82.73,
-      "duration": 0.5
+      "start": 36,
+      "duration": 2
     },
     {
       "id": 20,
       "text": "There is a study room on the opposite of this room.",
-      "start": 84.17,
-      "duration": 3.46
+      "start": 38,
+      "duration": 2
     },
     {
       "id": 21,
       "text": "Wow.",
-      "start": 89.13,
-      "duration": 0.5
+      "start": 40,
+      "duration": 2
     },
     {
       "id": 22,
       "text": "Can I see it?",
-      "start": 90.17,
-      "duration": 1.14
+      "start": 42,
+      "duration": 2
     },
     {
       "id": 23,
       "text": "Sure thing.",
-      "start": 91.85,
-      "duration": 0.9
+      "start": 44,
+      "duration": 2
     },
     {
       "id": 24,
       "text": "Follow me.",
-      "start": 93.77,
-      "duration": 0.9
+      "start": 46,
+      "duration": 2
     },
     {
       "id": 25,
       "text": "I'm hungry.",
-      "start": 100.84,
-      "duration": 0.91
+      "start": 48,
+      "duration": 2
     },
     {
       "id": 26,
       "text": "And do you have something to eat?",
-      "start": 102.77,
-      "duration": 2.17
+      "start": 50,
+      "duration": 2
     },
     {
       "id": 27,
       "text": "Alright.",
-      "start": 105.48,
-      "duration": 0.5
+      "start": 52,
+      "duration": 2
     },
     {
       "id": 28,
       "text": "My mom made some cupcakes.",
-      "start": 108.28,
-      "duration": 1.78
+      "start": 54,
+      "duration": 2
     },
     {
       "id": 29,
       "text": "Let's go to the kitchen.",
-      "start": 110.69,
-      "duration": 1.29
+      "start": 56,
+      "duration": 2
     },
     {
       "id": 30,
       "text": "Yay.",
-      "start": 114.26,
-      "duration": 0.45
+      "start": 58,
+      "duration": 2
     },
     {
       "id": 31,
       "text": "Hooray.",
-      "start": 114.71000000000001,
-      "duration": 0.45
+      "start": 60,
+      "duration": 2
     },
     {
       "id": 32,
       "text": "Oh, Anne, where's the bathroom?",
-      "start": 131.34,
-      "duration": 2.59
+      "start": 62,
+      "duration": 2
     },
     {
       "id": 33,
       "text": "It's right next to my room.",
-      "start": 135.66,
-      "duration": 1.87
+      "start": 64,
+      "duration": 2
     },
     {
       "id": 34,
       "text": "Okay.",
-      "start": 138.13,
-      "duration": 0.5
+      "start": 66,
+      "duration": 2
     },
     {
       "id": 35,
       "text": "Gotcha.",
-      "start": 139.41,
-      "duration": 0.5
+      "start": 68,
+      "duration": 2
     },
     {
       "id": 36,
       "text": "Let's role play.",
-      "start": 144.21,
-      "duration": 1.22
+      "start": 70,
+      "duration": 2
     }
   ],
   "fetchedAt": "2026-07-23T06:23:59.248828+00:00",
@@ -244,5 +244,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.361Z"
+  "formattedAt": "2026-07-30T13:17:05.663Z"
 }
