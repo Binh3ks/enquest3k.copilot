@@ -1,5 +1,5 @@
 export default {
-  videoId: "qwjfQNQsRRI",  // Whispering Woods mystery - past tense (was: asking the way)
+  videoId: "79Yxp84s0KI",  // Party conversation - past tense dialogue
   content_en: `Nova was working on a difficult case in the old town of **Hoi An**, Vietnam. She was very careful. She arrived at the scene and opened her notebook immediately. The narrow lantern-lit streets were quiet, but someone had reported a mystery **last night**.
 
 Nova began the interview calmly. She had three questions for the suspect. "Where were you **yesterday morning**?" she asked. The suspect **answered clearly** and **without hesitation**. Nova **wrote every answer** as a new clue **in her notebook**.

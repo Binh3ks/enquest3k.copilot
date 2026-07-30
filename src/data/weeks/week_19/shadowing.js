@@ -1,5 +1,5 @@
 export default {
-  videoId: "wy398w9QcB4",
+  videoId: "wy398w9QcB4",  // Grandma Moses - album/photo - PAST tense
   content_en: "Today I found an album in my grandma's house. It is full of photos from the past. Look at this one! Who is this baby? My mom says, \\",
   script: [
     { id: 1, text: "Today I found an album in my grandma's house.", vi: "Hôm nay tôi tìm thấy một cuốn album trong nhà bà." },
