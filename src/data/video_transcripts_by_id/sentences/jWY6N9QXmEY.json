@@ -4,2818 +4,560 @@
     {
       "id": 1,
       "text": "English sing sing.",
-      "speaker": "Speaker0",
       "start": 1.76,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "english",
-          "start": 1.76,
-          "end": 2.26,
-          "confidence": 0.974
-        },
-        {
-          "word": "sing",
-          "start": 2.4,
-          "end": 2.64,
-          "confidence": 0.625
-        },
-        {
-          "word": "sing",
-          "start": 2.64,
-          "end": 3.14,
-          "confidence": 0.928
-        }
-      ],
-      "confidence": 0.843
+      "duration": 1.38
     },
     {
       "id": 2,
       "text": "Theme 11, where.",
-      "speaker": "Speaker0",
       "start": 3.52,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "theme",
-          "start": 3.52,
-          "end": 4.0,
-          "confidence": 0.922
-        },
-        {
-          "word": "11",
-          "start": 4.0,
-          "end": 4.5,
-          "confidence": 0.894
-        },
-        {
-          "word": "where",
-          "start": 5.04,
-          "end": 5.54,
-          "confidence": 0.456
-        }
-      ],
-      "confidence": 0.682
+      "duration": 2.02
     },
     {
       "id": 3,
       "text": "Mom, I want some ice cream.",
-      "speaker": "Speaker1",
       "start": 11.76,
-      "duration": 2.82,
-      "words": [
-        {
-          "word": "mom",
-          "start": 11.76,
-          "end": 12.26,
-          "confidence": 0.815
-        },
-        {
-          "word": "i",
-          "start": 13.04,
-          "end": 13.28,
-          "confidence": 0.993
-        },
-        {
-          "word": "want",
-          "start": 13.28,
-          "end": 13.52,
-          "confidence": 1.0
-        },
-        {
-          "word": "some",
-          "start": 13.52,
-          "end": 13.84,
-          "confidence": 0.999
-        },
-        {
-          "word": "ice",
-          "start": 13.84,
-          "end": 14.08,
-          "confidence": 1.0
-        },
-        {
-          "word": "cream",
-          "start": 14.08,
-          "end": 14.58,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.906
+      "duration": 2.82
     },
     {
       "id": 4,
       "text": "Okay.",
-      "speaker": "Speaker1",
       "start": 15.95,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "okay",
-          "start": 15.95,
-          "end": 16.45,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.997
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "Where is the cafeteria?",
-      "speaker": "Speaker2",
       "start": 21.62,
-      "duration": 1.22,
-      "words": [
-        {
-          "word": "where",
-          "start": 21.62,
-          "end": 21.95,
-          "confidence": 0.989
-        },
-        {
-          "word": "is",
-          "start": 21.95,
-          "end": 22.11,
-          "confidence": 0.991
-        },
-        {
-          "word": "the",
-          "start": 22.11,
-          "end": 22.34,
-          "confidence": 0.999
-        },
-        {
-          "word": "cafeteria",
-          "start": 22.34,
-          "end": 22.84,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.995
+      "duration": 1.22
     },
     {
       "id": 6,
       "text": "It's next to the flower shop.",
-      "speaker": "Speaker1",
       "start": 25.86,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "it's",
-          "start": 25.86,
-          "end": 26.18,
-          "confidence": 0.991
-        },
-        {
-          "word": "next",
-          "start": 26.18,
-          "end": 26.5,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 26.5,
-          "end": 26.74,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 26.74,
-          "end": 26.9,
-          "confidence": 1.0
-        },
-        {
-          "word": "flower",
-          "start": 26.9,
-          "end": 27.3,
-          "confidence": 0.992
-        },
-        {
-          "word": "shop",
-          "start": 27.3,
-          "end": 27.8,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
+      "duration": 1.94
     },
     {
       "id": 7,
       "text": "Let's go.",
-      "speaker": "Speaker2",
       "start": 28.61,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "let's",
-          "start": 28.61,
-          "end": 29.01,
-          "confidence": 0.815
-        },
-        {
-          "word": "go",
-          "start": 29.01,
-          "end": 29.51,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.904
+      "duration": 0.9
     },
     {
       "id": 8,
       "text": "Mom, where's the restroom?",
-      "speaker": "Speaker1",
       "start": 33.33,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "mom",
-          "start": 33.33,
-          "end": 33.83,
-          "confidence": 0.701
-        },
-        {
-          "word": "where's",
-          "start": 34.13,
-          "end": 34.53,
-          "confidence": 0.951
-        },
-        {
-          "word": "the",
-          "start": 34.53,
-          "end": 34.85,
-          "confidence": 1.0
-        },
-        {
-          "word": "restroom",
-          "start": 34.85,
-          "end": 35.35,
-          "confidence": 0.995
-        }
-      ],
-      "confidence": 0.912
+      "duration": 2.02
     },
     {
       "id": 9,
       "text": "I don't know.",
-      "speaker": "Speaker2",
       "start": 37.09,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "i",
-          "start": 37.09,
-          "end": 37.25,
-          "confidence": 0.998
-        },
-        {
-          "word": "don't",
-          "start": 37.25,
-          "end": 37.49,
-          "confidence": 1.0
-        },
-        {
-          "word": "know",
-          "start": 37.49,
-          "end": 37.99,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.998
+      "duration": 0.9
     },
     {
       "id": 10,
       "text": "Let's ask that woman.",
-      "speaker": "Speaker2",
       "start": 42.7,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "let's",
-          "start": 42.7,
-          "end": 43.1,
-          "confidence": 0.993
-        },
-        {
-          "word": "ask",
-          "start": 43.1,
-          "end": 43.42,
-          "confidence": 1.0
-        },
-        {
-          "word": "that",
-          "start": 43.42,
-          "end": 43.74,
-          "confidence": 1.0
-        },
-        {
-          "word": "woman",
-          "start": 43.74,
-          "end": 44.24,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
+      "duration": 1.54
     },
     {
       "id": 11,
       "text": "Excuse me.",
-      "speaker": "Speaker2",
       "start": 46.78,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 46.78,
-          "end": 47.28,
-          "confidence": 0.996
-        },
-        {
-          "word": "me",
-          "start": 47.34,
-          "end": 47.84,
-          "confidence": 0.982
-        }
-      ],
-      "confidence": 0.989
+      "duration": 1.06
     },
     {
       "id": 12,
       "text": "Where is the restroom?",
-      "speaker": "Speaker2",
       "start": 48.3,
-      "duration": 1.22,
-      "words": [
-        {
-          "word": "where",
-          "start": 48.3,
-          "end": 48.62,
-          "confidence": 0.999
-        },
-        {
-          "word": "is",
-          "start": 48.62,
-          "end": 48.86,
-          "confidence": 0.998
-        },
-        {
-          "word": "the",
-          "start": 48.86,
-          "end": 49.02,
-          "confidence": 1.0
-        },
-        {
-          "word": "restroom",
-          "start": 49.02,
-          "end": 49.52,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
+      "duration": 1.22
     },
     {
       "id": 13,
       "text": "Go straight and turn left.",
-      "speaker": "Speaker2",
       "start": 51.27,
-      "duration": 1.85,
-      "words": [
-        {
-          "word": "go",
-          "start": 51.27,
-          "end": 51.74,
-          "confidence": 0.999
-        },
-        {
-          "word": "straight",
-          "start": 51.74,
-          "end": 52.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 52.06,
-          "end": 52.3,
-          "confidence": 0.985
-        },
-        {
-          "word": "turn",
-          "start": 52.3,
-          "end": 52.62,
-          "confidence": 1.0
-        },
-        {
-          "word": "left",
-          "start": 52.62,
-          "end": 53.12,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
+      "duration": 1.85
     },
     {
       "id": 14,
       "text": "It's on your right.",
-      "speaker": "Speaker2",
       "start": 53.18,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "it's",
-          "start": 53.18,
-          "end": 53.42,
-          "confidence": 1.0
-        },
-        {
-          "word": "on",
-          "start": 53.42,
-          "end": 53.59,
-          "confidence": 1.0
-        },
-        {
-          "word": "your",
-          "start": 53.59,
-          "end": 53.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "right",
-          "start": 53.82,
-          "end": 54.32,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "duration": 1.14
     },
     {
       "id": 15,
       "text": "Thank you.",
-      "speaker": "Speaker2",
       "start": 56.51,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "thank",
-          "start": 56.51,
-          "end": 56.83,
-          "confidence": 0.978
-        },
-        {
-          "word": "you",
-          "start": 56.83,
-          "end": 57.33,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.989
+      "duration": 0.82
     },
     {
       "id": 16,
       "text": "Dial.",
-      "speaker": "Speaker2",
       "start": 64.67,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "dial",
-          "start": 64.67,
-          "end": 65.17,
-          "confidence": 0.71
-        }
-      ],
-      "confidence": 0.71
+      "duration": 0.5
     },
     {
       "id": 17,
       "text": "I have science homework.",
-      "speaker": "Speaker0",
       "start": 71.47,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "i",
-          "start": 71.47,
-          "end": 71.94,
-          "confidence": 0.893
-        },
-        {
-          "word": "have",
-          "start": 71.94,
-          "end": 72.34,
-          "confidence": 1.0
-        },
-        {
-          "word": "science",
-          "start": 72.34,
-          "end": 72.83,
-          "confidence": 0.983
-        },
-        {
-          "word": "homework",
-          "start": 72.83,
-          "end": 73.33,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.968
+      "duration": 1.86
     },
     {
       "id": 18,
       "text": "Me too.",
-      "speaker": "Speaker3",
       "start": 75.14,
-      "duration": 0.91,
-      "words": [
-        {
-          "word": "me",
-          "start": 75.14,
-          "end": 75.55,
-          "confidence": 0.994
-        },
-        {
-          "word": "too",
-          "start": 75.55,
-          "end": 76.05,
-          "confidence": 0.915
-        }
-      ],
-      "confidence": 0.955
+      "duration": 0.91
     },
     {
       "id": 19,
       "text": "Let's go to the science museum.",
-      "speaker": "Speaker4",
       "start": 77.47,
-      "duration": 2.01,
-      "words": [
-        {
-          "word": "let's",
-          "start": 77.47,
-          "end": 77.78,
-          "confidence": 0.997
-        },
-        {
-          "word": "go",
-          "start": 77.78,
-          "end": 78.1,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 78.1,
-          "end": 78.27,
-          "confidence": 0.995
-        },
-        {
-          "word": "the",
-          "start": 78.27,
-          "end": 78.5,
-          "confidence": 0.999
-        },
-        {
-          "word": "science",
-          "start": 78.5,
-          "end": 78.98,
-          "confidence": 0.922
-        },
-        {
-          "word": "museum",
-          "start": 78.98,
-          "end": 79.48,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.985
+      "duration": 2.01
     },
     {
       "id": 20,
-      "text": "Good",
-      "speaker": "Speaker0",
+      "text": "Good idea.",
       "start": 80.76,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "good",
-          "start": 80.76,
-          "end": 81.26,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.996
+      "duration": 2.82
     },
     {
       "id": 21,
-      "text": "idea.",
-      "speaker": "Speaker5",
-      "start": 83.08,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "idea",
-          "start": 83.08,
-          "end": 83.58,
-          "confidence": 0.992
-        }
-      ],
-      "confidence": 0.992
+      "text": "Where is it?",
+      "start": 86.76,
+      "duration": 1.06
     },
     {
       "id": 22,
-      "text": "Where is it?",
-      "speaker": "Speaker3",
-      "start": 86.76,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "where",
-          "start": 86.76,
-          "end": 87.08,
-          "confidence": 0.937
-        },
-        {
-          "word": "is",
-          "start": 87.08,
-          "end": 87.32,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 87.32,
-          "end": 87.82,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.979
+      "text": "I don't know.",
+      "start": 88.68,
+      "duration": 1.06
     },
     {
       "id": 23,
-      "text": "I don't know.",
-      "speaker": "Speaker0",
-      "start": 88.68,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "i",
-          "start": 88.68,
-          "end": 88.92,
-          "confidence": 0.999
-        },
-        {
-          "word": "don't",
-          "start": 88.92,
-          "end": 89.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "know",
-          "start": 89.24,
-          "end": 89.74,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
+      "text": "Excuse me.",
+      "start": 95.22,
+      "duration": 0.95
     },
     {
       "id": 24,
-      "text": "Excuse me.",
-      "speaker": "Speaker4",
-      "start": 95.22,
-      "duration": 0.95,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 95.22,
-          "end": 95.69,
-          "confidence": 0.986
-        },
-        {
-          "word": "me",
-          "start": 95.69,
-          "end": 96.17,
-          "confidence": 0.919
-        }
-      ],
-      "confidence": 0.968
+      "text": "Where's the science museum?",
+      "start": 96.17,
+      "duration": 1.63
     },
     {
       "id": 25,
-      "text": "Where's the science museum?",
-      "speaker": "Speaker4",
-      "start": 96.17,
-      "duration": 1.63,
-      "words": [
-        {
-          "word": "where's",
-          "start": 96.17,
-          "end": 96.58,
-          "confidence": 0.962
-        },
-        {
-          "word": "the",
-          "start": 96.58,
-          "end": 96.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "science",
-          "start": 96.81,
-          "end": 97.3,
-          "confidence": 0.945
-        },
-        {
-          "word": "museum",
-          "start": 97.3,
-          "end": 97.8,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.968
+      "text": "Go straight and turn right at the bank.",
+      "start": 99.62,
+      "duration": 3.05
     },
     {
       "id": 26,
-      "text": "Go straight and turn right at the bank.",
-      "speaker": "Speaker6",
-      "start": 99.62,
-      "duration": 3.05,
-      "words": [
-        {
-          "word": "go",
-          "start": 99.62,
-          "end": 100.02,
-          "confidence": 0.98
-        },
-        {
-          "word": "straight",
-          "start": 100.02,
-          "end": 100.52,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 100.66,
-          "end": 100.98,
-          "confidence": 0.684
-        },
-        {
-          "word": "turn",
-          "start": 100.98,
-          "end": 101.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "right",
-          "start": 101.38,
-          "end": 101.78,
-          "confidence": 1.0
-        },
-        {
-          "word": "at",
-          "start": 101.78,
-          "end": 102.02,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 102.02,
-          "end": 102.17,
-          "confidence": 1.0
-        },
-        {
-          "word": "bank",
-          "start": 102.17,
-          "end": 102.67,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.958
+      "text": "Thank you very much.",
+      "start": 111.88,
+      "duration": 1.46
     },
     {
       "id": 27,
-      "text": "Thank you very much.",
-      "speaker": "Speaker4",
-      "start": 111.88,
-      "duration": 1.46,
-      "words": [
-        {
-          "word": "thank",
-          "start": 111.88,
-          "end": 112.2,
-          "confidence": 0.787
-        },
-        {
-          "word": "you",
-          "start": 112.2,
-          "end": 112.52,
-          "confidence": 1.0
-        },
-        {
-          "word": "very",
-          "start": 112.52,
-          "end": 112.84,
-          "confidence": 1.0
-        },
-        {
-          "word": "much",
-          "start": 112.84,
-          "end": 113.34,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.947
+      "text": "You're welcome.",
+      "start": 114.12,
+      "duration": 0.9
     },
     {
       "id": 28,
-      "text": "You're welcome.",
-      "speaker": "Speaker6",
-      "start": 114.12,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "you're",
-          "start": 114.12,
-          "end": 114.52,
-          "confidence": 0.998
-        },
-        {
-          "word": "welcome",
-          "start": 114.52,
-          "end": 115.02,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
+      "text": "Dial.",
+      "start": 120.12,
+      "duration": 0.5
     },
     {
       "id": 29,
-      "text": "Dial.",
-      "speaker": "Speaker2",
-      "start": 120.12,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "dial",
-          "start": 120.12,
-          "end": 120.62,
-          "confidence": 0.879
-        }
-      ],
-      "confidence": 0.879
+      "text": "Sally, can you help me, please?",
+      "start": 127.7,
+      "duration": 2.42
     },
     {
       "id": 30,
-      "text": "Sally, can you help me, please?",
-      "speaker": "Speaker6",
-      "start": 127.7,
-      "duration": 2.42,
-      "words": [
-        {
-          "word": "sally",
-          "start": 127.7,
-          "end": 128.21,
-          "confidence": 0.906
-        },
-        {
-          "word": "can",
-          "start": 128.66,
-          "end": 128.82,
-          "confidence": 0.996
-        },
-        {
-          "word": "you",
-          "start": 128.82,
-          "end": 129.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "help",
-          "start": 129.06,
-          "end": 129.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 129.38,
-          "end": 129.62,
-          "confidence": 0.983
-        },
-        {
-          "word": "please",
-          "start": 129.62,
-          "end": 130.12,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.951
+      "text": "Okay, mom.",
+      "start": 131.47,
+      "duration": 0.97
     },
     {
       "id": 31,
-      "text": "Okay, mom.",
-      "speaker": "Speaker3",
-      "start": 131.47,
-      "duration": 0.97,
-      "words": [
-        {
-          "word": "okay",
-          "start": 131.47,
-          "end": 131.94,
-          "confidence": 0.995
-        },
-        {
-          "word": "mom",
-          "start": 131.94,
-          "end": 132.44,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.993
+      "text": "Go to the post office, please.",
+      "start": 134.75,
+      "duration": 2.09
     },
     {
       "id": 32,
-      "text": "Go to the post office, please.",
-      "speaker": "Speaker6",
-      "start": 134.75,
-      "duration": 2.09,
-      "words": [
-        {
-          "word": "go",
-          "start": 134.75,
-          "end": 135.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 135.06,
-          "end": 135.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 135.31,
-          "end": 135.47,
-          "confidence": 1.0
-        },
-        {
-          "word": "post",
-          "start": 135.47,
-          "end": 135.78,
-          "confidence": 1.0
-        },
-        {
-          "word": "office",
-          "start": 135.78,
-          "end": 136.28,
-          "confidence": 0.999
-        },
-        {
-          "word": "please",
-          "start": 136.34,
-          "end": 136.84,
-          "confidence": 0.995
-        }
-      ],
-      "confidence": 0.999
+      "text": "Where is the post office?",
+      "start": 138.56,
+      "duration": 1.62
     },
     {
       "id": 33,
-      "text": "Where is the post office?",
-      "speaker": "Speaker3",
-      "start": 138.56,
-      "duration": 1.62,
-      "words": [
-        {
-          "word": "where",
-          "start": 138.56,
-          "end": 138.88,
-          "confidence": 0.999
-        },
-        {
-          "word": "is",
-          "start": 138.88,
-          "end": 139.12,
-          "confidence": 0.967
-        },
-        {
-          "word": "the",
-          "start": 139.12,
-          "end": 139.28,
-          "confidence": 1.0
-        },
-        {
-          "word": "post",
-          "start": 139.28,
-          "end": 139.68,
-          "confidence": 1.0
-        },
-        {
-          "word": "office",
-          "start": 139.68,
-          "end": 140.18,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.993
+      "text": "It's on Sejeong Street.",
+      "start": 141.28,
+      "duration": 1.7
     },
     {
       "id": 34,
-      "text": "It's on Sejeong Street.",
-      "speaker": "Speaker6",
-      "start": 141.28,
-      "duration": 1.7,
-      "words": [
-        {
-          "word": "it's",
-          "start": 141.28,
-          "end": 141.6,
-          "confidence": 1.0
-        },
-        {
-          "word": "on",
-          "start": 141.6,
-          "end": 141.92,
-          "confidence": 1.0
-        },
-        {
-          "word": "sejeong",
-          "start": 141.92,
-          "end": 142.42,
-          "confidence": 0.85
-        },
-        {
-          "word": "street",
-          "start": 142.48,
-          "end": 142.98,
-          "confidence": 0.895
-        }
-      ],
-      "confidence": 0.936
+      "text": "Excuse me.",
+      "start": 154.22,
+      "duration": 1.12
     },
     {
       "id": 35,
-      "text": "Excuse me.",
-      "speaker": "Speaker3",
-      "start": 154.22,
-      "duration": 1.12,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 154.22,
-          "end": 154.72,
-          "confidence": 0.925
-        },
-        {
-          "word": "me",
-          "start": 154.86,
-          "end": 155.34,
-          "confidence": 0.895
-        }
-      ],
-      "confidence": 0.955
+      "text": "Where is the post office?",
+      "start": 155.34,
+      "duration": 1.54
     },
     {
       "id": 36,
-      "text": "Where is the post office?",
-      "speaker": "Speaker3",
-      "start": 155.34,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "where",
-          "start": 155.34,
-          "end": 155.66,
-          "confidence": 0.998
-        },
-        {
-          "word": "is",
-          "start": 155.66,
-          "end": 155.81,
-          "confidence": 0.872
-        },
-        {
-          "word": "the",
-          "start": 155.81,
-          "end": 156.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "post",
-          "start": 156.06,
-          "end": 156.38,
-          "confidence": 0.997
-        },
-        {
-          "word": "office",
-          "start": 156.38,
-          "end": 156.88,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.955
+      "text": "Go straight.",
+      "start": 159.42,
+      "duration": 0.93
     },
     {
       "id": 37,
-      "text": "Go straight. It's over there.",
-      "speaker": "Speaker5",
-      "start": 159.42,
-      "duration": 2.33,
-      "words": [
-        {
-          "word": "go",
-          "start": 159.42,
-          "end": 159.81,
-          "confidence": 0.921
-        },
-        {
-          "word": "straight",
-          "start": 159.81,
-          "end": 160.31,
-          "confidence": 0.99
-        },
-        {
-          "word": "it's",
-          "start": 160.53,
-          "end": 160.94,
-          "confidence": 0.999
-        },
-        {
-          "word": "over",
-          "start": 160.94,
-          "end": 161.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "there",
-          "start": 161.25,
-          "end": 161.75,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.982
+      "text": "It's over there.",
+      "start": 160.35199999999998,
+      "duration": 1.4
     },
     {
       "id": 38,
       "text": "Thank you very much.",
-      "speaker": "Speaker3",
       "start": 165.09,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "thank",
-          "start": 165.09,
-          "end": 165.42,
-          "confidence": 0.983
-        },
-        {
-          "word": "you",
-          "start": 165.42,
-          "end": 165.66,
-          "confidence": 1.0
-        },
-        {
-          "word": "very",
-          "start": 165.66,
-          "end": 165.97,
-          "confidence": 1.0
-        },
-        {
-          "word": "much",
-          "start": 165.97,
-          "end": 166.47,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.996
+      "duration": 1.38
     },
     {
       "id": 39,
       "text": "Song.",
-      "speaker": "Speaker5",
       "start": 171.44,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "song",
-          "start": 171.44,
-          "end": 171.94,
-          "confidence": 0.796
-        }
-      ],
-      "confidence": 0.796
+      "duration": 0.5
     },
     {
       "id": 40,
       "text": "Excuse me.",
-      "speaker": "Speaker0",
       "start": 178.88,
-      "duration": 1.28,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 178.88,
-          "end": 179.38,
-          "confidence": 0.986
-        },
-        {
-          "word": "me",
-          "start": 179.76,
-          "end": 180.16,
-          "confidence": 0.817
-        }
-      ],
-      "confidence": 0.963
+      "duration": 1.28
     },
     {
       "id": 41,
       "text": "Where is the restaurant?",
-      "speaker": "Speaker0",
       "start": 180.16,
-      "duration": 1.46,
-      "words": [
-        {
-          "word": "where",
-          "start": 180.16,
-          "end": 180.65,
-          "confidence": 0.995
-        },
-        {
-          "word": "is",
-          "start": 180.81,
-          "end": 181.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 181.04,
-          "end": 181.12,
-          "confidence": 0.999
-        },
-        {
-          "word": "restaurant",
-          "start": 181.12,
-          "end": 181.62,
-          "confidence": 0.888
-        }
-      ],
-      "confidence": 0.963
+      "duration": 1.46
     },
     {
       "id": 42,
       "text": "Where is the restaurant?",
-      "speaker": "Speaker0",
       "start": 182.56,
-      "duration": 2.03,
-      "words": [
-        {
-          "word": "where",
-          "start": 182.56,
-          "end": 182.89,
-          "confidence": 0.989
-        },
-        {
-          "word": "is",
-          "start": 182.89,
-          "end": 183.21,
-          "confidence": 0.996
-        },
-        {
-          "word": "the",
-          "start": 183.21,
-          "end": 183.71,
-          "confidence": 0.998
-        },
-        {
-          "word": "restaurant",
-          "start": 184.09,
-          "end": 184.59,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.995
+      "duration": 2.03
     },
     {
       "id": 43,
       "text": "Go straight and turn right, go straight and turn right.",
-      "speaker": "Speaker0",
-      "start": 186.0,
-      "duration": 3.54,
-      "words": [
-        {
-          "word": "go",
-          "start": 186.0,
-          "end": 186.25,
-          "confidence": 0.989
-        },
-        {
-          "word": "straight",
-          "start": 186.25,
-          "end": 186.72,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 186.72,
-          "end": 186.97,
-          "confidence": 0.909
-        },
-        {
-          "word": "turn",
-          "start": 186.97,
-          "end": 187.28,
-          "confidence": 0.999
-        },
-        {
-          "word": "right",
-          "start": 187.28,
-          "end": 187.78,
-          "confidence": 0.844
-        },
-        {
-          "word": "go",
-          "start": 187.84,
-          "end": 188.17,
-          "confidence": 0.844
-        },
-        {
-          "word": "straight",
-          "start": 188.17,
-          "end": 188.49,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 188.49,
-          "end": 188.72,
-          "confidence": 0.997
-        },
-        {
-          "word": "turn",
-          "start": 188.72,
-          "end": 189.04,
-          "confidence": 0.999
-        },
-        {
-          "word": "right",
-          "start": 189.04,
-          "end": 189.54,
-          "confidence": 0.911
-        }
-      ],
-      "confidence": 0.949
+      "start": 186,
+      "duration": 3.54
     },
     {
       "id": 44,
       "text": "It's on your left, it's on your left.",
-      "speaker": "Speaker0",
       "start": 189.93,
-      "duration": 3.29,
-      "words": [
-        {
-          "word": "it's",
-          "start": 189.93,
-          "end": 190.32,
-          "confidence": 0.989
-        },
-        {
-          "word": "on",
-          "start": 190.32,
-          "end": 190.56,
-          "confidence": 1.0
-        },
-        {
-          "word": "your",
-          "start": 190.56,
-          "end": 190.81,
-          "confidence": 0.997
-        },
-        {
-          "word": "left",
-          "start": 190.81,
-          "end": 191.31,
-          "confidence": 0.951
-        },
-        {
-          "word": "it's",
-          "start": 191.76,
-          "end": 192.17,
-          "confidence": 0.993
-        },
-        {
-          "word": "on",
-          "start": 192.17,
-          "end": 192.41,
-          "confidence": 1.0
-        },
-        {
-          "word": "your",
-          "start": 192.41,
-          "end": 192.72,
-          "confidence": 0.999
-        },
-        {
-          "word": "left",
-          "start": 192.72,
-          "end": 193.22,
-          "confidence": 0.882
-        }
-      ],
-      "confidence": 0.976
+      "duration": 3.29
     },
     {
       "id": 45,
       "text": "Thank you very much.",
-      "speaker": "Speaker0",
       "start": 193.57,
-      "duration": 1.46,
-      "words": [
-        {
-          "word": "thank",
-          "start": 193.57,
-          "end": 193.81,
-          "confidence": 0.992
-        },
-        {
-          "word": "you",
-          "start": 193.81,
-          "end": 194.13,
-          "confidence": 1.0
-        },
-        {
-          "word": "very",
-          "start": 194.13,
-          "end": 194.53,
-          "confidence": 0.997
-        },
-        {
-          "word": "much",
-          "start": 194.53,
-          "end": 195.03,
-          "confidence": 0.901
-        }
-      ],
-      "confidence": 0.973
+      "duration": 1.46
     },
     {
       "id": 46,
       "text": "Excuse me.",
-      "speaker": "Speaker0",
       "start": 195.49,
-      "duration": 1.36,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 195.49,
-          "end": 195.99,
-          "confidence": 0.98
-        },
-        {
-          "word": "me",
-          "start": 196.45,
-          "end": 196.85,
-          "confidence": 0.814
-        }
-      ],
-      "confidence": 0.951
+      "duration": 1.36
     },
     {
       "id": 47,
       "text": "Where is the restaurant, where is the restaurant?",
-      "speaker": "Speaker0",
       "start": 196.85,
-      "duration": 4.26,
-      "words": [
-        {
-          "word": "where",
-          "start": 196.85,
-          "end": 197.25,
-          "confidence": 0.978
-        },
-        {
-          "word": "is",
-          "start": 197.25,
-          "end": 197.57,
-          "confidence": 0.998
-        },
-        {
-          "word": "the",
-          "start": 197.57,
-          "end": 197.81,
-          "confidence": 0.999
-        },
-        {
-          "word": "restaurant",
-          "start": 197.81,
-          "end": 198.31,
-          "confidence": 0.752
-        },
-        {
-          "word": "where",
-          "start": 199.17,
-          "end": 199.57,
-          "confidence": 0.985
-        },
-        {
-          "word": "is",
-          "start": 199.57,
-          "end": 199.89,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 199.89,
-          "end": 200.39,
-          "confidence": 0.999
-        },
-        {
-          "word": "restaurant",
-          "start": 200.61,
-          "end": 201.11,
-          "confidence": 0.874
-        }
-      ],
-      "confidence": 0.951
+      "duration": 4.26
     },
     {
       "id": 48,
       "text": "go straight and turn right go straight",
-      "speaker": "Speaker0",
       "start": 202.61,
-      "duration": 2.48,
-      "words": [
-        {
-          "word": "go",
-          "start": 202.61,
-          "end": 202.85,
-          "confidence": 0.989
-        },
-        {
-          "word": "straight",
-          "start": 202.85,
-          "end": 203.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 203.25,
-          "end": 203.49,
-          "confidence": 0.978
-        },
-        {
-          "word": "turn",
-          "start": 203.49,
-          "end": 203.81,
-          "confidence": 0.985
-        },
-        {
-          "word": "right",
-          "start": 203.81,
-          "end": 204.31,
-          "confidence": 0.928
-        },
-        {
-          "word": "go",
-          "start": 204.45,
-          "end": 204.61,
-          "confidence": 0.896
-        },
-        {
-          "word": "straight",
-          "start": 204.61,
-          "end": 205.09,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.971
+      "duration": 2.48
     },
     {
       "id": 49,
       "text": "and turn right it's on your left it's on your left thank you very much",
-      "speaker": "Speaker0",
       "start": 205.09,
-      "duration": 6.51,
-      "words": [
-        {
-          "word": "and",
-          "start": 205.09,
-          "end": 205.43,
-          "confidence": 0.997
-        },
-        {
-          "word": "turn",
-          "start": 205.43,
-          "end": 205.75,
-          "confidence": 0.999
-        },
-        {
-          "word": "right",
-          "start": 205.75,
-          "end": 206.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "it's",
-          "start": 206.54,
-          "end": 207.03,
-          "confidence": 0.982
-        },
-        {
-          "word": "on",
-          "start": 207.03,
-          "end": 207.26,
-          "confidence": 0.998
-        },
-        {
-          "word": "your",
-          "start": 207.26,
-          "end": 207.43,
-          "confidence": 0.996
-        },
-        {
-          "word": "left",
-          "start": 207.43,
-          "end": 207.93,
-          "confidence": 0.999
-        },
-        {
-          "word": "it's",
-          "start": 208.39,
-          "end": 208.87,
-          "confidence": 0.945
-        },
-        {
-          "word": "on",
-          "start": 208.87,
-          "end": 209.1,
-          "confidence": 0.999
-        },
-        {
-          "word": "your",
-          "start": 209.1,
-          "end": 209.26,
-          "confidence": 0.999
-        },
-        {
-          "word": "left",
-          "start": 209.26,
-          "end": 209.76,
-          "confidence": 0.998
-        },
-        {
-          "word": "thank",
-          "start": 210.15,
-          "end": 210.39,
-          "confidence": 0.921
-        },
-        {
-          "word": "you",
-          "start": 210.39,
-          "end": 210.71,
-          "confidence": 0.999
-        },
-        {
-          "word": "very",
-          "start": 210.71,
-          "end": 211.1,
-          "confidence": 0.998
-        },
-        {
-          "word": "much",
-          "start": 211.1,
-          "end": 211.6,
-          "confidence": 0.869
-        }
-      ],
-      "confidence": 0.971
+      "duration": 6.51
     },
     {
       "id": 50,
-      "text": "Excuse me. Excuse me.",
-      "speaker": "Speaker7",
+      "text": "Excuse me.",
       "start": 223.87,
-      "duration": 3.14,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 223.87,
-          "end": 224.37,
-          "confidence": 0.706
-        },
-        {
-          "word": "me",
-          "start": 225.63,
-          "end": 226.03,
-          "confidence": 0.815
-        },
-        {
-          "word": "excuse",
-          "start": 226.03,
-          "end": 226.51,
-          "confidence": 0.978
-        },
-        {
-          "word": "me",
-          "start": 226.51,
-          "end": 227.01,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.818
+      "duration": 1.57
     },
     {
       "id": 51,
-      "text": "Where's the bank?",
-      "speaker": "Speaker7",
-      "start": 228.35,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "where's",
-          "start": 228.35,
-          "end": 228.75,
-          "confidence": 0.962
-        },
-        {
-          "word": "the",
-          "start": 228.75,
-          "end": 228.99,
-          "confidence": 0.973
-        },
-        {
-          "word": "bank",
-          "start": 228.99,
-          "end": 229.49,
-          "confidence": 0.992
-        }
-      ],
-      "confidence": 0.975
+      "text": "Excuse me.",
+      "start": 225.44,
+      "duration": 1.57
     },
     {
       "id": 52,
       "text": "Where's the bank?",
-      "speaker": "Speaker7",
-      "start": 230.51,
-      "duration": 1.22,
-      "words": [
-        {
-          "word": "where's",
-          "start": 230.51,
-          "end": 230.99,
-          "confidence": 0.986
-        },
-        {
-          "word": "the",
-          "start": 230.99,
-          "end": 231.23,
-          "confidence": 1.0
-        },
-        {
-          "word": "bank",
-          "start": 231.23,
-          "end": 231.73,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.995
+      "start": 228.35,
+      "duration": 1.14
     },
     {
       "id": 53,
-      "text": "Go straight and turn right.",
-      "speaker": "Speaker5",
-      "start": 232.94,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "go",
-          "start": 232.94,
-          "end": 233.18,
-          "confidence": 0.993
-        },
-        {
-          "word": "straight",
-          "start": 233.18,
-          "end": 233.66,
-          "confidence": 0.999
-        },
-        {
-          "word": "and",
-          "start": 233.66,
-          "end": 233.97,
-          "confidence": 0.996
-        },
-        {
-          "word": "turn",
-          "start": 233.97,
-          "end": 234.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "right",
-          "start": 234.46,
-          "end": 234.96,
-          "confidence": 0.942
-        }
-      ],
-      "confidence": 0.986
+      "text": "Where's the bank?",
+      "start": 230.51,
+      "duration": 1.22
     },
     {
       "id": 54,
       "text": "Go straight and turn right.",
-      "speaker": "Speaker5",
-      "start": 237.34,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "go",
-          "start": 237.34,
-          "end": 237.74,
-          "confidence": 0.972
-        },
-        {
-          "word": "straight",
-          "start": 237.74,
-          "end": 238.06,
-          "confidence": 0.999
-        },
-        {
-          "word": "and",
-          "start": 238.06,
-          "end": 238.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "turn",
-          "start": 238.38,
-          "end": 238.88,
-          "confidence": 1.0
-        },
-        {
-          "word": "right",
-          "start": 238.94,
-          "end": 239.44,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.992
+      "start": 232.94,
+      "duration": 2.02
     },
     {
       "id": 55,
-      "text": "Oh, thanks.",
-      "speaker": "Speaker7",
-      "start": 241.58,
-      "duration": 0.98,
-      "words": [
-        {
-          "word": "oh",
-          "start": 241.58,
-          "end": 242.06,
-          "confidence": 0.941
-        },
-        {
-          "word": "thanks",
-          "start": 242.06,
-          "end": 242.56,
-          "confidence": 0.83
-        }
-      ],
-      "confidence": 0.885
+      "text": "Go straight and turn right.",
+      "start": 237.34,
+      "duration": 2.1
     },
     {
       "id": 56,
-      "text": "Thanks.",
-      "speaker": "Speaker7",
-      "start": 243.58,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "thanks",
-          "start": 243.58,
-          "end": 244.08,
-          "confidence": 0.885
-        }
-      ],
-      "confidence": 0.885
+      "text": "Oh, thanks.",
+      "start": 241.58,
+      "duration": 0.98
     },
     {
       "id": 57,
-      "text": "Excuse me. Excuse me.",
-      "speaker": "Speaker7",
-      "start": 250.12,
-      "duration": 3.06,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 250.12,
-          "end": 250.62,
-          "confidence": 0.948
-        },
-        {
-          "word": "me",
-          "start": 251.88,
-          "end": 252.2,
-          "confidence": 0.983
-        },
-        {
-          "word": "excuse",
-          "start": 252.2,
-          "end": 252.68,
-          "confidence": 0.95
-        },
-        {
-          "word": "me",
-          "start": 252.68,
-          "end": 253.18,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.963
+      "text": "Thanks.",
+      "start": 243.58,
+      "duration": 0.5
     },
     {
       "id": 58,
-      "text": "Where is the school?",
-      "speaker": "Speaker7",
-      "start": 254.6,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "where",
-          "start": 254.6,
-          "end": 254.84,
-          "confidence": 0.998
-        },
-        {
-          "word": "is",
-          "start": 254.84,
-          "end": 255.0,
-          "confidence": 0.974
-        },
-        {
-          "word": "the",
-          "start": 255.0,
-          "end": 255.24,
-          "confidence": 0.79
-        },
-        {
-          "word": "school",
-          "start": 255.24,
-          "end": 255.74,
-          "confidence": 0.96
-        }
-      ],
-      "confidence": 0.93
+      "text": "Excuse me.",
+      "start": 250.12,
+      "duration": 1.53
     },
     {
       "id": 59,
-      "text": "Where is the school?",
-      "speaker": "Speaker7",
-      "start": 256.76,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "where",
-          "start": 256.76,
-          "end": 257.0,
-          "confidence": 0.981
-        },
-        {
-          "word": "is",
-          "start": 257.0,
-          "end": 257.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 257.24,
-          "end": 257.4,
-          "confidence": 0.999
-        },
-        {
-          "word": "school",
-          "start": 257.4,
-          "end": 257.9,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.995
+      "text": "Excuse me.",
+      "start": 251.65,
+      "duration": 1.53
     },
     {
       "id": 60,
-      "text": "Go straight and turn left.",
-      "speaker": "Speaker5",
-      "start": 259.12,
-      "duration": 2.01,
-      "words": [
-        {
-          "word": "go",
-          "start": 259.12,
-          "end": 259.51,
-          "confidence": 0.971
-        },
-        {
-          "word": "straight",
-          "start": 259.51,
-          "end": 259.84,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 259.84,
-          "end": 260.15,
-          "confidence": 0.995
-        },
-        {
-          "word": "turn",
-          "start": 260.15,
-          "end": 260.63,
-          "confidence": 1.0
-        },
-        {
-          "word": "left",
-          "start": 260.63,
-          "end": 261.13,
-          "confidence": 0.956
-        }
-      ],
-      "confidence": 0.984
+      "text": "Where is the school?",
+      "start": 254.6,
+      "duration": 1.14
     },
     {
       "id": 61,
-      "text": "Go straight and turn left.",
-      "speaker": "Speaker5",
-      "start": 263.44,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "go",
-          "start": 263.44,
-          "end": 263.92,
-          "confidence": 0.936
-        },
-        {
-          "word": "straight",
-          "start": 263.92,
-          "end": 264.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 264.24,
-          "end": 264.56,
-          "confidence": 0.999
-        },
-        {
-          "word": "turn",
-          "start": 264.56,
-          "end": 265.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "left",
-          "start": 265.04,
-          "end": 265.54,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.985
+      "text": "Where is the school?",
+      "start": 256.76,
+      "duration": 1.14
     },
     {
       "id": 62,
-      "text": "Oh, thanks.",
-      "speaker": "Speaker7",
-      "start": 267.84,
-      "duration": 0.97,
-      "words": [
-        {
-          "word": "oh",
-          "start": 267.84,
-          "end": 268.31,
-          "confidence": 0.938
-        },
-        {
-          "word": "thanks",
-          "start": 268.31,
-          "end": 268.81,
-          "confidence": 0.875
-        }
-      ],
-      "confidence": 0.907
+      "text": "Go straight and turn left.",
+      "start": 259.12,
+      "duration": 2.01
     },
     {
       "id": 63,
-      "text": "Thanks.",
-      "speaker": "Speaker7",
-      "start": 269.75,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "thanks",
-          "start": 269.75,
-          "end": 270.25,
-          "confidence": 0.933
-        }
-      ],
-      "confidence": 0.933
+      "text": "Go straight and turn left.",
+      "start": 263.44,
+      "duration": 2.1
     },
     {
       "id": 64,
-      "text": "Wow.",
-      "speaker": "Speaker3",
-      "start": 285.5,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "wow",
-          "start": 285.5,
-          "end": 286.0,
-          "confidence": 0.979
-        }
-      ],
-      "confidence": 0.979
+      "text": "Oh, thanks.",
+      "start": 267.84,
+      "duration": 0.97
     },
     {
       "id": 65,
-      "text": "Great.",
-      "speaker": "Speaker2",
-      "start": 287.98,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "great",
-          "start": 287.98,
-          "end": 288.48,
-          "confidence": 0.995
-        }
-      ],
-      "confidence": 0.995
+      "text": "Thanks.",
+      "start": 269.75,
+      "duration": 0.5
     },
     {
       "id": 66,
-      "text": "Annika, Tommy, look.",
-      "speaker": "Speaker6",
-      "start": 290.54,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "annika",
-          "start": 290.54,
-          "end": 291.04,
-          "confidence": 0.903
-        },
-        {
-          "word": "tommy",
-          "start": 291.42,
-          "end": 291.92,
-          "confidence": 0.95
-        },
-        {
-          "word": "look",
-          "start": 292.3,
-          "end": 292.8,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.948
+      "text": "Wow.",
+      "start": 285.5,
+      "duration": 0.5
     },
     {
       "id": 67,
-      "text": "How nice.",
-      "speaker": "Speaker2",
-      "start": 296.79,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "how",
-          "start": 296.79,
-          "end": 297.19,
-          "confidence": 0.905
-        },
-        {
-          "word": "nice",
-          "start": 297.19,
-          "end": 297.69,
-          "confidence": 0.949
-        }
-      ],
-      "confidence": 0.965
+      "text": "Great.",
+      "start": 287.98,
+      "duration": 0.5
     },
     {
       "id": 68,
-      "text": "Where is this doll?",
-      "speaker": "Speaker2",
-      "start": 297.83,
-      "duration": 1.3,
-      "words": [
-        {
-          "word": "where",
-          "start": 297.83,
-          "end": 298.15,
-          "confidence": 0.998
-        },
-        {
-          "word": "is",
-          "start": 298.15,
-          "end": 298.39,
-          "confidence": 0.943
-        },
-        {
-          "word": "this",
-          "start": 298.39,
-          "end": 298.63,
-          "confidence": 0.996
-        },
-        {
-          "word": "doll",
-          "start": 298.63,
-          "end": 299.13,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.965
+      "text": "Annika, Tommy, look.",
+      "start": 290.54,
+      "duration": 2.26
     },
     {
       "id": 69,
-      "text": "In the museum.",
-      "speaker": "Speaker6",
-      "start": 300.39,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "in",
-          "start": 300.39,
-          "end": 300.55,
-          "confidence": 0.992
-        },
-        {
-          "word": "the",
-          "start": 300.55,
-          "end": 300.79,
-          "confidence": 0.999
-        },
-        {
-          "word": "museum",
-          "start": 300.79,
-          "end": 301.29,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.995
+      "text": "How nice.",
+      "start": 296.79,
+      "duration": 0.9
     },
     {
       "id": 70,
-      "text": "Let's go to the museum.",
-      "speaker": "Speaker6",
-      "start": 303.59,
-      "duration": 1.7,
-      "words": [
-        {
-          "word": "let's",
-          "start": 303.59,
-          "end": 304.07,
-          "confidence": 0.955
-        },
-        {
-          "word": "go",
-          "start": 304.07,
-          "end": 304.39,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 304.39,
-          "end": 304.55,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 304.55,
-          "end": 304.79,
-          "confidence": 0.998
-        },
-        {
-          "word": "museum",
-          "start": 304.79,
-          "end": 305.29,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.99
+      "text": "Where is this doll?",
+      "start": 297.83,
+      "duration": 1.3
     },
     {
       "id": 71,
-      "text": "Excuse me.",
-      "speaker": "Speaker6",
-      "start": 314.37,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 314.37,
-          "end": 314.69,
-          "confidence": 0.947
-        },
-        {
-          "word": "me",
-          "start": 314.69,
-          "end": 315.19,
-          "confidence": 0.913
-        }
-      ],
-      "confidence": 0.93
+      "text": "In the museum.",
+      "start": 300.39,
+      "duration": 0.9
     },
     {
       "id": 72,
-      "text": "Where is the museum?",
-      "speaker": "Speaker6",
-      "start": 315.49,
-      "duration": 1.3,
-      "words": [
-        {
-          "word": "where",
-          "start": 315.49,
-          "end": 315.81,
-          "confidence": 0.999
-        },
-        {
-          "word": "is",
-          "start": 315.81,
-          "end": 316.05,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 316.05,
-          "end": 316.29,
-          "confidence": 0.998
-        },
-        {
-          "word": "museum",
-          "start": 316.29,
-          "end": 316.79,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
+      "text": "Let's go to the museum.",
+      "start": 303.59,
+      "duration": 1.7
     },
     {
       "id": 73,
-      "text": "It's next to Pam Pam Hospital.",
-      "speaker": "Speaker5",
-      "start": 317.65,
-      "duration": 2.25,
-      "words": [
-        {
-          "word": "it's",
-          "start": 317.65,
-          "end": 318.05,
-          "confidence": 0.999
-        },
-        {
-          "word": "next",
-          "start": 318.05,
-          "end": 318.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 318.53,
-          "end": 318.76,
-          "confidence": 1.0
-        },
-        {
-          "word": "pam",
-          "start": 318.76,
-          "end": 319.09,
-          "confidence": 0.908
-        },
-        {
-          "word": "pam",
-          "start": 319.09,
-          "end": 319.4,
-          "confidence": 0.987
-        },
-        {
-          "word": "hospital",
-          "start": 319.4,
-          "end": 319.9,
-          "confidence": 0.949
-        }
-      ],
-      "confidence": 0.974
+      "text": "Excuse me.",
+      "start": 314.37,
+      "duration": 0.82
     },
     {
       "id": 74,
-      "text": "Thank you.",
-      "speaker": "Speaker7",
-      "start": 322.69,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "thank",
-          "start": 322.69,
-          "end": 323.09,
-          "confidence": 0.987
-        },
-        {
-          "word": "you",
-          "start": 323.09,
-          "end": 323.59,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.993
+      "text": "Where is the museum?",
+      "start": 315.49,
+      "duration": 1.3
     },
     {
       "id": 75,
-      "text": "Here.",
-      "speaker": "Speaker6",
-      "start": 327.76,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "here",
-          "start": 327.76,
-          "end": 328.26,
-          "confidence": 0.864
-        }
-      ],
-      "confidence": 0.864
+      "text": "It's next to Pam Pam Hospital.",
+      "start": 317.65,
+      "duration": 2.25
     },
     {
       "id": 76,
-      "text": "This is Pam Pam Hospital.",
-      "speaker": "Speaker6",
-      "start": 328.72,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "this",
-          "start": 328.72,
-          "end": 329.04,
-          "confidence": 0.996
-        },
-        {
-          "word": "is",
-          "start": 329.04,
-          "end": 329.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "pam",
-          "start": 329.36,
-          "end": 329.68,
-          "confidence": 0.848
-        },
-        {
-          "word": "pam",
-          "start": 329.68,
-          "end": 330.08,
-          "confidence": 0.918
-        },
-        {
-          "word": "hospital",
-          "start": 330.08,
-          "end": 330.58,
-          "confidence": 0.911
-        }
-      ],
-      "confidence": 0.935
+      "text": "Thank you.",
+      "start": 322.69,
+      "duration": 0.9
     },
     {
       "id": 77,
-      "text": "Where's the museum?",
-      "speaker": "Speaker6",
-      "start": 331.68,
-      "duration": 1.22,
-      "words": [
-        {
-          "word": "where's",
-          "start": 331.68,
-          "end": 332.16,
-          "confidence": 0.841
-        },
-        {
-          "word": "the",
-          "start": 332.16,
-          "end": 332.4,
-          "confidence": 0.997
-        },
-        {
-          "word": "museum",
-          "start": 332.4,
-          "end": 332.9,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.945
+      "text": "Here.",
+      "start": 327.76,
+      "duration": 0.5
     },
     {
       "id": 78,
-      "text": "Excuse me. Where's the museum?",
-      "speaker": "Speaker2",
-      "start": 336.16,
-      "duration": 2.18,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 336.16,
-          "end": 336.66,
-          "confidence": 0.998
-        },
-        {
-          "word": "me",
-          "start": 336.72,
-          "end": 337.2,
-          "confidence": 0.962
-        },
-        {
-          "word": "where's",
-          "start": 337.2,
-          "end": 337.6,
-          "confidence": 0.99
-        },
-        {
-          "word": "the",
-          "start": 337.6,
-          "end": 337.84,
-          "confidence": 0.999
-        },
-        {
-          "word": "museum",
-          "start": 337.84,
-          "end": 338.34,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.99
+      "text": "This is Pam Pam Hospital.",
+      "start": 328.72,
+      "duration": 1.86
     },
     {
       "id": 79,
-      "text": "Over there.",
-      "speaker": "Speaker6",
-      "start": 339.66,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "over",
-          "start": 339.66,
-          "end": 340.06,
-          "confidence": 0.998
-        },
-        {
-          "word": "there",
-          "start": 340.06,
-          "end": 340.56,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
+      "text": "Where's the museum?",
+      "start": 331.68,
+      "duration": 1.22
     },
     {
       "id": 80,
-      "text": "Thank you.",
-      "speaker": "Speaker0",
-      "start": 342.38,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "thank",
-          "start": 342.38,
-          "end": 342.78,
-          "confidence": 0.954
-        },
-        {
-          "word": "you",
-          "start": 342.78,
-          "end": 343.28,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.977
+      "text": "Excuse me.",
+      "start": 336.16,
+      "duration": 0.87
     },
     {
       "id": 81,
-      "text": "Wow. How nice.",
-      "speaker": "Speaker0",
-      "start": 345.57,
-      "duration": 1.87,
-      "words": [
-        {
-          "word": "wow",
-          "start": 345.57,
-          "end": 346.07,
-          "confidence": 0.925
-        },
-        {
-          "word": "how",
-          "start": 346.38,
-          "end": 346.88,
-          "confidence": 0.997
-        },
-        {
-          "word": "nice",
-          "start": 346.94,
-          "end": 347.44,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.973
+      "text": "Where's the museum?",
+      "start": 337.03200000000004,
+      "duration": 1.31
     },
     {
       "id": 82,
-      "text": "Excuse me.",
-      "speaker": "Speaker6",
-      "start": 350.94,
-      "duration": 0.98,
-      "words": [
-        {
-          "word": "excuse",
-          "start": 350.94,
-          "end": 351.42,
-          "confidence": 0.987
-        },
-        {
-          "word": "me",
-          "start": 351.42,
-          "end": 351.92,
-          "confidence": 0.988
-        }
-      ],
-      "confidence": 0.995
+      "text": "Over there.",
+      "start": 339.66,
+      "duration": 0.9
     },
     {
       "id": 83,
-      "text": "Where is this doll?",
-      "speaker": "Speaker6",
-      "start": 352.13,
-      "duration": 1.31,
-      "words": [
-        {
-          "word": "where",
-          "start": 352.13,
-          "end": 352.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "is",
-          "start": 352.46,
-          "end": 352.69,
-          "confidence": 0.996
-        },
-        {
-          "word": "this",
-          "start": 352.69,
-          "end": 352.94,
-          "confidence": 0.999
-        },
-        {
-          "word": "doll",
-          "start": 352.94,
-          "end": 353.44,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.995
+      "text": "Thank you.",
+      "start": 342.38,
+      "duration": 0.9
     },
     {
       "id": 84,
-      "text": "Go straight and turn right.",
-      "speaker": "Speaker5",
-      "start": 355.05,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "go",
-          "start": 355.05,
-          "end": 355.53,
-          "confidence": 0.997
-        },
-        {
-          "word": "straight",
-          "start": 355.53,
-          "end": 356.03,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 356.17,
-          "end": 356.49,
-          "confidence": 0.895
-        },
-        {
-          "word": "turn",
-          "start": 356.49,
-          "end": 356.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "right",
-          "start": 356.81,
-          "end": 357.31,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.978
+      "text": "Wow.",
+      "start": 345.57,
+      "duration": 0.62
     },
     {
       "id": 85,
-      "text": "Thank you.",
-      "speaker": "Speaker6",
-      "start": 358.33,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "thank",
-          "start": 358.33,
-          "end": 358.65,
-          "confidence": 0.998
-        },
-        {
-          "word": "you",
-          "start": 358.65,
-          "end": 359.15,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "How nice.",
+      "start": 346.1933333333333,
+      "duration": 1.25
     },
     {
       "id": 86,
-      "text": "Let's go.",
-      "speaker": "Speaker6",
-      "start": 360.73,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "let's",
-          "start": 360.73,
-          "end": 361.05,
-          "confidence": 0.998
-        },
-        {
-          "word": "go",
-          "start": 361.05,
-          "end": 361.55,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "Excuse me.",
+      "start": 350.94,
+      "duration": 0.98
     },
     {
       "id": 87,
-      "text": "Oh.",
-      "speaker": "Speaker5",
-      "start": 362.97,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "oh",
-          "start": 362.97,
-          "end": 363.47,
-          "confidence": 0.821
-        }
-      ],
-      "confidence": 0.821
+      "text": "Where is this doll?",
+      "start": 352.13,
+      "duration": 1.31
     },
     {
       "id": 88,
-      "text": "I'm sorry.",
-      "speaker": "Speaker6",
-      "start": 366.01,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "i'm",
-          "start": 366.01,
-          "end": 366.41,
-          "confidence": 0.988
-        },
-        {
-          "word": "sorry",
-          "start": 366.41,
-          "end": 366.91,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.994
+      "text": "Go straight and turn right.",
+      "start": 355.05,
+      "duration": 2.26
     },
     {
       "id": 89,
+      "text": "Thank you.",
+      "start": 358.33,
+      "duration": 0.82
+    },
+    {
+      "id": 90,
+      "text": "Let's go.",
+      "start": 360.73,
+      "duration": 0.82
+    },
+    {
+      "id": 91,
+      "text": "Oh.",
+      "start": 362.97,
+      "duration": 0.5
+    },
+    {
+      "id": 92,
+      "text": "I'm sorry.",
+      "start": 366.01,
+      "duration": 0.9
+    },
+    {
+      "id": 93,
       "text": "Oh no.",
-      "speaker": "Speaker0",
       "start": 370.56,
-      "duration": 0.98,
-      "words": [
-        {
-          "word": "oh",
-          "start": 370.56,
-          "end": 371.04,
-          "confidence": 0.917
-        },
-        {
-          "word": "no",
-          "start": 371.04,
-          "end": 371.54,
-          "confidence": 0.728
-        }
-      ],
-      "confidence": 0.822
+      "duration": 0.98
     }
   ],
   "fetchedAt": "2026-07-23T06:24:32.625361+00:00",
@@ -2847,5 +589,7 @@
     "afterAvgWords": 3.6,
     "merged": -3,
     "danglingFragments": 0
-  }
+  },
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.383Z"
 }

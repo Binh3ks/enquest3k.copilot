@@ -5,2060 +5,302 @@
     {
       "id": 1,
       "text": "English Sing Sing.",
-      "speaker": "Speaker0",
       "start": 1.68,
-      "duration": 1.46,
-      "words": [
-        {
-          "word": "english",
-          "start": 1.68,
-          "end": 2.18,
-          "confidence": 0.747
-        },
-        {
-          "word": "sing",
-          "start": 2.4,
-          "end": 2.64,
-          "confidence": 0.963
-        },
-        {
-          "word": "sing",
-          "start": 2.64,
-          "end": 3.14,
-          "confidence": 0.93
-        }
-      ],
-      "confidence": 0.88
+      "duration": 1.46
     },
     {
       "id": 2,
-      "text": "The lion",
-      "speaker": "Speaker1",
+      "text": "The lion and the mouse.",
       "start": 7.76,
-      "duration": 0.66,
-      "words": [
-        {
-          "word": "the",
-          "start": 7.76,
-          "end": 7.92,
-          "confidence": 0.916
-        },
-        {
-          "word": "lion",
-          "start": 7.92,
-          "end": 8.42,
-          "confidence": 0.622
-        }
-      ],
-      "confidence": 0.769
+      "duration": 2.34
     },
     {
       "id": 3,
-      "text": "and the mouse.",
-      "speaker": "Speaker2",
-      "start": 8.88,
-      "duration": 1.22,
-      "words": [
-        {
-          "word": "and",
-          "start": 8.88,
-          "end": 9.28,
-          "confidence": 0.987
-        },
-        {
-          "word": "the",
-          "start": 9.28,
-          "end": 9.6,
-          "confidence": 0.979
-        },
-        {
-          "word": "mouse",
-          "start": 9.6,
-          "end": 10.1,
-          "confidence": 0.983
-        }
-      ],
-      "confidence": 0.983
+      "text": "A lion was sleeping under a tree.",
+      "start": 13.71,
+      "duration": 3.69
     },
     {
       "id": 4,
-      "text": "A lion was sleeping under a tree.",
-      "speaker": "Speaker2",
-      "start": 13.71,
-      "duration": 3.69,
-      "words": [
-        {
-          "word": "a",
-          "start": 13.71,
-          "end": 13.95,
-          "confidence": 0.965
-        },
-        {
-          "word": "lion",
-          "start": 13.95,
-          "end": 14.45,
-          "confidence": 0.999
-        },
-        {
-          "word": "was",
-          "start": 14.82,
-          "end": 15.14,
-          "confidence": 0.999
-        },
-        {
-          "word": "sleeping",
-          "start": 15.14,
-          "end": 15.64,
-          "confidence": 1.0
-        },
-        {
-          "word": "under",
-          "start": 16.02,
-          "end": 16.52,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 16.59,
-          "end": 16.9,
-          "confidence": 0.998
-        },
-        {
-          "word": "tree",
-          "start": 16.9,
-          "end": 17.4,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.994
+      "text": "A little mouse was playing around the lion.",
+      "start": 20.18,
+      "duration": 4.27
     },
     {
       "id": 5,
-      "text": "A little mouse was playing around the lion.",
-      "speaker": "Speaker2",
-      "start": 20.18,
-      "duration": 4.27,
-      "words": [
-        {
-          "word": "a",
-          "start": 20.18,
-          "end": 20.5,
-          "confidence": 0.846
-        },
-        {
-          "word": "little",
-          "start": 20.5,
-          "end": 20.98,
-          "confidence": 0.998
-        },
-        {
-          "word": "mouse",
-          "start": 20.98,
-          "end": 21.48,
-          "confidence": 1.0
-        },
-        {
-          "word": "was",
-          "start": 22.02,
-          "end": 22.34,
-          "confidence": 0.994
-        },
-        {
-          "word": "playing",
-          "start": 22.34,
-          "end": 22.84,
-          "confidence": 1.0
-        },
-        {
-          "word": "around",
-          "start": 23.06,
-          "end": 23.56,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 23.7,
-          "end": 23.95,
-          "confidence": 0.999
-        },
-        {
-          "word": "lion",
-          "start": 23.95,
-          "end": 24.45,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.973
+      "text": "Squeak, squeak.",
+      "start": 28.82,
+      "duration": 1.54
     },
     {
       "id": 6,
-      "text": "Squeak, squeak.",
-      "speaker": "Speaker0",
-      "start": 28.82,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "squeak",
-          "start": 28.82,
-          "end": 29.32,
-          "confidence": 0.866
-        },
-        {
-          "word": "squeak",
-          "start": 29.86,
-          "end": 30.36,
-          "confidence": 0.945
-        }
-      ],
-      "confidence": 0.905
+      "text": "Suddenly, the lion woke up.",
+      "start": 31.86,
+      "duration": 3.3
     },
     {
       "id": 7,
-      "text": "Suddenly, the lion woke up.",
-      "speaker": "Speaker2",
-      "start": 31.86,
-      "duration": 3.3,
-      "words": [
-        {
-          "word": "suddenly",
-          "start": 31.86,
-          "end": 32.36,
-          "confidence": 0.84
-        },
-        {
-          "word": "the",
-          "start": 33.14,
-          "end": 33.38,
-          "confidence": 0.997
-        },
-        {
-          "word": "lion",
-          "start": 33.38,
-          "end": 33.88,
-          "confidence": 0.999
-        },
-        {
-          "word": "woke",
-          "start": 34.1,
-          "end": 34.6,
-          "confidence": 0.998
-        },
-        {
-          "word": "up",
-          "start": 34.66,
-          "end": 35.16,
-          "confidence": 0.995
-        }
-      ],
-      "confidence": 0.918
+      "text": "Who woke me up?",
+      "start": 40.1,
+      "duration": 2.58
     },
     {
       "id": 8,
-      "text": "Who woke me up?",
-      "speaker": "Speaker1",
-      "start": 40.1,
-      "duration": 2.58,
-      "words": [
-        {
-          "word": "who",
-          "start": 40.1,
-          "end": 40.6,
-          "confidence": 0.622
-        },
-        {
-          "word": "woke",
-          "start": 40.82,
-          "end": 41.32,
-          "confidence": 0.997
-        },
-        {
-          "word": "me",
-          "start": 41.38,
-          "end": 41.88,
-          "confidence": 1.0
-        },
-        {
-          "word": "up",
-          "start": 42.18,
-          "end": 42.68,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.902
+      "text": "I will eat you.",
+      "start": 43.45,
+      "duration": 2.02
     },
     {
       "id": 9,
-      "text": "I will eat you.",
-      "speaker": "Speaker1",
-      "start": 43.45,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "i",
-          "start": 43.45,
-          "end": 43.84,
-          "confidence": 0.992
-        },
-        {
-          "word": "will",
-          "start": 43.84,
-          "end": 44.34,
-          "confidence": 0.996
-        },
-        {
-          "word": "eat",
-          "start": 44.56,
-          "end": 44.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 44.97,
-          "end": 45.47,
-          "confidence": 0.942
-        }
-      ],
-      "confidence": 0.982
+      "text": "The lion picked up the mouse and opened his mouth.",
+      "start": 47.84,
+      "duration": 5.22
     },
     {
       "id": 10,
-      "text": "The lion picked up the mouse and opened his mouth.",
-      "speaker": "Speaker2",
-      "start": 47.84,
-      "duration": 5.22,
-      "words": [
-        {
-          "word": "the",
-          "start": 47.84,
-          "end": 48.01,
-          "confidence": 0.975
-        },
-        {
-          "word": "lion",
-          "start": 48.01,
-          "end": 48.51,
-          "confidence": 0.998
-        },
-        {
-          "word": "picked",
-          "start": 48.88,
-          "end": 49.28,
-          "confidence": 0.997
-        },
-        {
-          "word": "up",
-          "start": 49.28,
-          "end": 49.69,
-          "confidence": 0.995
-        },
-        {
-          "word": "the",
-          "start": 49.69,
-          "end": 50.01,
-          "confidence": 0.998
-        },
-        {
-          "word": "mouse",
-          "start": 50.01,
-          "end": 50.51,
-          "confidence": 0.998
-        },
-        {
-          "word": "and",
-          "start": 51.12,
-          "end": 51.6,
-          "confidence": 0.943
-        },
-        {
-          "word": "opened",
-          "start": 51.6,
-          "end": 52.1,
-          "confidence": 0.998
-        },
-        {
-          "word": "his",
-          "start": 52.24,
-          "end": 52.56,
-          "confidence": 0.995
-        },
-        {
-          "word": "mouth",
-          "start": 52.56,
-          "end": 53.06,
-          "confidence": 0.995
-        }
-      ],
-      "confidence": 0.989
+      "text": "Oh, no.",
+      "start": 55.62,
+      "duration": 0.82
     },
     {
       "id": 11,
-      "text": "Oh, no.",
-      "speaker": "Speaker0",
-      "start": 55.62,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "oh",
-          "start": 55.62,
-          "end": 55.94,
-          "confidence": 0.814
-        },
-        {
-          "word": "no",
-          "start": 55.94,
-          "end": 56.44,
-          "confidence": 0.735
-        }
-      ],
-      "confidence": 0.774
+      "text": "Please don't eat me.",
+      "start": 57.22,
+      "duration": 2.1
     },
     {
       "id": 12,
-      "text": "Please don't eat me.",
-      "speaker": "Speaker0",
-      "start": 57.22,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "please",
-          "start": 57.22,
-          "end": 57.7,
-          "confidence": 0.991
-        },
-        {
-          "word": "don't",
-          "start": 57.7,
-          "end": 58.2,
-          "confidence": 0.977
-        },
-        {
-          "word": "eat",
-          "start": 58.42,
-          "end": 58.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 58.82,
-          "end": 59.32,
-          "confidence": 0.984
-        }
-      ],
-      "confidence": 0.988
+      "text": "If you let me go, I will help you one day.",
+      "start": 60.02,
+      "duration": 4.9
     },
     {
       "id": 13,
-      "text": "If you let me go, I will help you one day.",
-      "speaker": "Speaker3",
-      "start": 60.02,
-      "duration": 4.9,
-      "words": [
-        {
-          "word": "if",
-          "start": 60.02,
-          "end": 60.34,
-          "confidence": 0.991
-        },
-        {
-          "word": "you",
-          "start": 60.34,
-          "end": 60.74,
-          "confidence": 0.999
-        },
-        {
-          "word": "let",
-          "start": 60.74,
-          "end": 61.06,
-          "confidence": 0.959
-        },
-        {
-          "word": "me",
-          "start": 61.06,
-          "end": 61.38,
-          "confidence": 0.999
-        },
-        {
-          "word": "go",
-          "start": 61.38,
-          "end": 61.88,
-          "confidence": 0.97
-        },
-        {
-          "word": "i",
-          "start": 62.5,
-          "end": 62.82,
-          "confidence": 0.999
-        },
-        {
-          "word": "will",
-          "start": 62.82,
-          "end": 63.3,
-          "confidence": 0.993
-        },
-        {
-          "word": "help",
-          "start": 63.3,
-          "end": 63.7,
-          "confidence": 1.0
-        },
-        {
-          "word": "you",
-          "start": 63.7,
-          "end": 64.1,
-          "confidence": 0.997
-        },
-        {
-          "word": "one",
-          "start": 64.1,
-          "end": 64.42,
-          "confidence": 0.997
-        },
-        {
-          "word": "day",
-          "start": 64.42,
-          "end": 64.92,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.99
+      "text": "You?",
+      "start": 68.97,
+      "duration": 0.5
     },
     {
       "id": 14,
-      "text": "You?",
-      "speaker": "Speaker1",
-      "start": 68.97,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "you",
-          "start": 68.97,
-          "end": 69.47,
-          "confidence": 0.771
-        }
-      ],
-      "confidence": 0.771
+      "text": "I'm a lion and you're a mouse.",
+      "start": 70.42,
+      "duration": 3.93
     },
     {
       "id": 15,
-      "text": "I'm a lion and you're a mouse.",
-      "speaker": "Speaker1",
-      "start": 70.42,
-      "duration": 3.93,
-      "words": [
-        {
-          "word": "i'm",
-          "start": 70.42,
-          "end": 70.73,
-          "confidence": 0.97
-        },
-        {
-          "word": "a",
-          "start": 70.73,
-          "end": 71.14,
-          "confidence": 0.999
-        },
-        {
-          "word": "lion",
-          "start": 71.14,
-          "end": 71.64,
-          "confidence": 0.999
-        },
-        {
-          "word": "and",
-          "start": 72.49,
-          "end": 72.89,
-          "confidence": 0.699
-        },
-        {
-          "word": "you're",
-          "start": 72.89,
-          "end": 73.39,
-          "confidence": 0.971
-        },
-        {
-          "word": "a",
-          "start": 73.45,
-          "end": 73.85,
-          "confidence": 1.0
-        },
-        {
-          "word": "mouse",
-          "start": 73.85,
-          "end": 74.35,
-          "confidence": 0.968
-        }
-      ],
-      "confidence": 0.949
+      "text": "What can you do?",
+      "start": 75.3,
+      "duration": 1.53
     },
     {
       "id": 16,
-      "text": "What can you do?",
-      "speaker": "Speaker1",
-      "start": 75.3,
-      "duration": 1.53,
-      "words": [
-        {
-          "word": "what",
-          "start": 75.3,
-          "end": 75.61,
-          "confidence": 0.995
-        },
-        {
-          "word": "can",
-          "start": 75.61,
-          "end": 76.02,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 76.02,
-          "end": 76.33,
-          "confidence": 1.0
-        },
-        {
-          "word": "do",
-          "start": 76.33,
-          "end": 76.83,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "text": "The lion laughed.",
+      "start": 78.02,
+      "duration": 1.21
     },
     {
       "id": 17,
-      "text": "The lion laughed.",
-      "speaker": "Speaker2",
-      "start": 78.02,
-      "duration": 1.21,
-      "words": [
-        {
-          "word": "the",
-          "start": 78.02,
-          "end": 78.25,
-          "confidence": 0.952
-        },
-        {
-          "word": "lion",
-          "start": 78.25,
-          "end": 78.73,
-          "confidence": 0.999
-        },
-        {
-          "word": "laughed",
-          "start": 78.73,
-          "end": 79.23,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.982
+      "text": "Fine, I'll let you go.",
+      "start": 82.49,
+      "duration": 3.06
     },
     {
       "id": 18,
-      "text": "Fine, I'll let you go.",
-      "speaker": "Speaker1",
-      "start": 82.49,
-      "duration": 3.06,
-      "words": [
-        {
-          "word": "fine",
-          "start": 82.49,
-          "end": 82.99,
-          "confidence": 0.889
-        },
-        {
-          "word": "i'll",
-          "start": 83.85,
-          "end": 84.35,
-          "confidence": 0.99
-        },
-        {
-          "word": "let",
-          "start": 84.41,
-          "end": 84.73,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 84.73,
-          "end": 85.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "go",
-          "start": 85.05,
-          "end": 85.55,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.943
+      "text": "The mouse ran away.",
+      "start": 87.29,
+      "duration": 2.26
     },
     {
       "id": 19,
-      "text": "The mouse ran away.",
-      "speaker": "Speaker2",
-      "start": 87.29,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "the",
-          "start": 87.29,
-          "end": 87.61,
-          "confidence": 0.982
-        },
-        {
-          "word": "mouse",
-          "start": 87.61,
-          "end": 88.11,
-          "confidence": 0.98
-        },
-        {
-          "word": "ran",
-          "start": 88.41,
-          "end": 88.91,
-          "confidence": 0.982
-        },
-        {
-          "word": "away",
-          "start": 89.05,
-          "end": 89.55,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.984
+      "text": "The next day, the lion got caught in a trap.",
+      "start": 92.81,
+      "duration": 4.94
     },
     {
       "id": 20,
-      "text": "The next day, the lion got caught in a trap.",
-      "speaker": "Speaker2",
-      "start": 92.81,
-      "duration": 4.94,
-      "words": [
-        {
-          "word": "the",
-          "start": 92.81,
-          "end": 93.13,
-          "confidence": 0.998
-        },
-        {
-          "word": "next",
-          "start": 93.13,
-          "end": 93.53,
-          "confidence": 0.999
-        },
-        {
-          "word": "day",
-          "start": 93.53,
-          "end": 94.03,
-          "confidence": 0.927
-        },
-        {
-          "word": "the",
-          "start": 94.69,
-          "end": 94.94,
-          "confidence": 0.997
-        },
-        {
-          "word": "lion",
-          "start": 94.94,
-          "end": 95.44,
-          "confidence": 0.995
-        },
-        {
-          "word": "got",
-          "start": 95.49,
-          "end": 95.97,
-          "confidence": 0.991
-        },
-        {
-          "word": "caught",
-          "start": 95.97,
-          "end": 96.47,
-          "confidence": 0.999
-        },
-        {
-          "word": "in",
-          "start": 96.61,
-          "end": 96.94,
-          "confidence": 0.999
-        },
-        {
-          "word": "a",
-          "start": 96.94,
-          "end": 97.25,
-          "confidence": 0.995
-        },
-        {
-          "word": "trap",
-          "start": 97.25,
-          "end": 97.75,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.986
+      "text": "The mouse who saw this ran to the lion.",
+      "start": 100.05,
+      "duration": 4.26
     },
     {
       "id": 21,
-      "text": "The mouse who saw this ran to the lion.",
-      "speaker": "Speaker2",
-      "start": 100.05,
-      "duration": 4.26,
-      "words": [
-        {
-          "word": "the",
-          "start": 100.05,
-          "end": 100.3,
-          "confidence": 0.993
-        },
-        {
-          "word": "mouse",
-          "start": 100.3,
-          "end": 100.8,
-          "confidence": 0.988
-        },
-        {
-          "word": "who",
-          "start": 101.17,
-          "end": 101.41,
-          "confidence": 0.881
-        },
-        {
-          "word": "saw",
-          "start": 101.41,
-          "end": 101.73,
-          "confidence": 1.0
-        },
-        {
-          "word": "this",
-          "start": 101.73,
-          "end": 102.23,
-          "confidence": 0.997
-        },
-        {
-          "word": "ran",
-          "start": 102.45,
-          "end": 102.95,
-          "confidence": 0.74
-        },
-        {
-          "word": "to",
-          "start": 103.17,
-          "end": 103.58,
-          "confidence": 0.998
-        },
-        {
-          "word": "the",
-          "start": 103.58,
-          "end": 103.81,
-          "confidence": 0.999
-        },
-        {
-          "word": "lion",
-          "start": 103.81,
-          "end": 104.31,
-          "confidence": 0.992
-        }
-      ],
-      "confidence": 0.968
+      "text": "It began to chew the rope.",
+      "start": 106.92,
+      "duration": 2.5
     },
     {
       "id": 22,
-      "text": "It began to chew the rope.",
-      "speaker": "Speaker2",
-      "start": 106.92,
-      "duration": 2.5,
-      "words": [
-        {
-          "word": "it",
-          "start": 106.92,
-          "end": 107.32,
-          "confidence": 0.988
-        },
-        {
-          "word": "began",
-          "start": 107.32,
-          "end": 107.82,
-          "confidence": 0.997
-        },
-        {
-          "word": "to",
-          "start": 107.96,
-          "end": 108.28,
-          "confidence": 0.998
-        },
-        {
-          "word": "chew",
-          "start": 108.28,
-          "end": 108.68,
-          "confidence": 0.995
-        },
-        {
-          "word": "the",
-          "start": 108.68,
-          "end": 108.92,
-          "confidence": 0.999
-        },
-        {
-          "word": "rope",
-          "start": 108.92,
-          "end": 109.42,
-          "confidence": 0.968
-        }
-      ],
-      "confidence": 0.991
+      "text": "Thank you.",
+      "start": 113.24,
+      "duration": 0.82
     },
     {
       "id": 23,
-      "text": "Thank you.",
-      "speaker": "Speaker1",
-      "start": 113.24,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "thank",
-          "start": 113.24,
-          "end": 113.56,
-          "confidence": 0.579
-        },
-        {
-          "word": "you",
-          "start": 113.56,
-          "end": 114.06,
-          "confidence": 0.973
-        }
-      ],
-      "confidence": 0.776
+      "text": "You saved my life.",
+      "start": 114.68,
+      "duration": 1.94
     },
     {
       "id": 24,
-      "text": "You saved my life.",
-      "speaker": "Speaker1",
-      "start": 114.68,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "you",
-          "start": 114.68,
-          "end": 115.16,
-          "confidence": 0.995
-        },
-        {
-          "word": "saved",
-          "start": 115.16,
-          "end": 115.66,
-          "confidence": 0.943
-        },
-        {
-          "word": "my",
-          "start": 115.8,
-          "end": 116.12,
-          "confidence": 1.0
-        },
-        {
-          "word": "life",
-          "start": 116.12,
-          "end": 116.62,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.984
+      "text": "From that day, the lion and mouse became best friends.",
+      "start": 119.9,
+      "duration": 6.41
     },
     {
       "id": 25,
-      "text": "From that day, the lion and mouse became best friends.",
-      "speaker": "Speaker2",
-      "start": 119.9,
-      "duration": 6.41,
-      "words": [
-        {
-          "word": "from",
-          "start": 119.9,
-          "end": 120.38,
-          "confidence": 0.872
-        },
-        {
-          "word": "that",
-          "start": 120.38,
-          "end": 120.78,
-          "confidence": 1.0
-        },
-        {
-          "word": "day",
-          "start": 120.78,
-          "end": 121.28,
-          "confidence": 0.753
-        },
-        {
-          "word": "the",
-          "start": 121.97,
-          "end": 122.38,
-          "confidence": 0.974
-        },
-        {
-          "word": "lion",
-          "start": 122.38,
-          "end": 122.86,
-          "confidence": 0.996
-        },
-        {
-          "word": "and",
-          "start": 122.86,
-          "end": 123.17,
-          "confidence": 1.0
-        },
-        {
-          "word": "mouse",
-          "start": 123.17,
-          "end": 123.67,
-          "confidence": 0.959
-        },
-        {
-          "word": "became",
-          "start": 124.22,
-          "end": 124.72,
-          "confidence": 0.983
-        },
-        {
-          "word": "best",
-          "start": 125.09,
-          "end": 125.59,
-          "confidence": 0.996
-        },
-        {
-          "word": "friends",
-          "start": 125.81,
-          "end": 126.31,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.959
+      "text": "Follow after me.",
+      "start": 133.97,
+      "duration": 1.42
     },
     {
       "id": 26,
-      "text": "Follow after me.",
-      "speaker": "Speaker0",
-      "start": 133.97,
-      "duration": 1.42,
-      "words": [
-        {
-          "word": "follow",
-          "start": 133.97,
-          "end": 134.47,
-          "confidence": 0.707
-        },
-        {
-          "word": "after",
-          "start": 134.53,
-          "end": 134.94,
-          "confidence": 0.994
-        },
-        {
-          "word": "me",
-          "start": 134.94,
-          "end": 135.39,
-          "confidence": 0.972
-        }
-      ],
-      "confidence": 0.891
+      "text": "A lion was sleeping under a tree.",
+      "start": 137.31,
+      "duration": 3.86
     },
     {
       "id": 27,
-      "text": "A lion was sleeping under a tree.",
-      "speaker": "Speaker2",
-      "start": 137.31,
-      "duration": 3.86,
-      "words": [
-        {
-          "word": "a",
-          "start": 137.31,
-          "end": 137.63,
-          "confidence": 0.675
-        },
-        {
-          "word": "lion",
-          "start": 137.63,
-          "end": 138.13,
-          "confidence": 0.999
-        },
-        {
-          "word": "was",
-          "start": 138.51,
-          "end": 138.83,
-          "confidence": 0.998
-        },
-        {
-          "word": "sleeping",
-          "start": 138.83,
-          "end": 139.33,
-          "confidence": 1.0
-        },
-        {
-          "word": "under",
-          "start": 139.71,
-          "end": 140.21,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 140.43,
-          "end": 140.67,
-          "confidence": 0.998
-        },
-        {
-          "word": "tree",
-          "start": 140.67,
-          "end": 141.17,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.945
+      "text": "A little mouse was playing around the lion",
+      "start": 149.39,
+      "duration": 4.18
     },
     {
       "id": 28,
-      "text": "A little mouse was playing around the lion",
-      "speaker": "Speaker2",
-      "start": 149.39,
-      "duration": 4.18,
-      "words": [
-        {
-          "word": "a",
-          "start": 149.39,
-          "end": 149.55,
-          "confidence": 0.732
-        },
-        {
-          "word": "little",
-          "start": 149.55,
-          "end": 150.03,
-          "confidence": 1.0
-        },
-        {
-          "word": "mouse",
-          "start": 150.03,
-          "end": 150.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "was",
-          "start": 151.07,
-          "end": 151.4,
-          "confidence": 0.996
-        },
-        {
-          "word": "playing",
-          "start": 151.4,
-          "end": 151.9,
-          "confidence": 1.0
-        },
-        {
-          "word": "around",
-          "start": 152.03,
-          "end": 152.53,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 152.68,
-          "end": 153.07,
-          "confidence": 0.998
-        },
-        {
-          "word": "lion",
-          "start": 153.07,
-          "end": 153.57,
-          "confidence": 0.989
-        }
-      ],
-      "confidence": 0.954
+      "text": "Squeak!",
+      "start": 164.59,
+      "duration": 0.5
     },
     {
       "id": 29,
       "text": "Squeak!",
-      "speaker": "Speaker0",
-      "start": 164.59,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "squeak",
-          "start": 164.59,
-          "end": 165.09,
-          "confidence": 0.698
-        }
-      ],
-      "confidence": 0.698
+      "start": 165.72,
+      "duration": 0.5
     },
     {
       "id": 30,
-      "text": "Squeak!",
-      "speaker": "Speaker0",
-      "start": 165.72,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "squeak",
-          "start": 165.72,
-          "end": 166.22,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.99
+      "text": "Suddenly, the lion woke up.",
+      "start": 170.17,
+      "duration": 3.54
     },
     {
       "id": 31,
-      "text": "Suddenly, the lion woke up.",
-      "speaker": "Speaker2",
-      "start": 170.17,
-      "duration": 3.54,
-      "words": [
-        {
-          "word": "suddenly",
-          "start": 170.17,
-          "end": 170.67,
-          "confidence": 0.901
-        },
-        {
-          "word": "the",
-          "start": 171.61,
-          "end": 171.93,
-          "confidence": 0.989
-        },
-        {
-          "word": "lion",
-          "start": 171.93,
-          "end": 172.43,
-          "confidence": 0.986
-        },
-        {
-          "word": "woke",
-          "start": 172.65,
-          "end": 173.15,
-          "confidence": 0.998
-        },
-        {
-          "word": "up",
-          "start": 173.21,
-          "end": 173.71,
-          "confidence": 0.986
-        }
-      ],
-      "confidence": 0.946
+      "text": "Who woke me up?",
+      "start": 184.46,
+      "duration": 2.33
     },
     {
       "id": 32,
-      "text": "Who woke me up?",
-      "speaker": "Speaker1",
-      "start": 184.46,
-      "duration": 2.33,
-      "words": [
-        {
-          "word": "who",
-          "start": 184.46,
-          "end": 184.96,
-          "confidence": 0.547
-        },
-        {
-          "word": "woke",
-          "start": 185.01,
-          "end": 185.51,
-          "confidence": 0.998
-        },
-        {
-          "word": "me",
-          "start": 185.57,
-          "end": 186.07,
-          "confidence": 0.999
-        },
-        {
-          "word": "up",
-          "start": 186.29,
-          "end": 186.79,
-          "confidence": 0.991
-        }
-      ],
-      "confidence": 0.884
+      "text": "I will eat you.",
+      "start": 187.57,
+      "duration": 1.94
     },
     {
       "id": 33,
-      "text": "I will eat you.",
-      "speaker": "Speaker1",
-      "start": 187.57,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "i",
-          "start": 187.57,
-          "end": 187.97,
-          "confidence": 0.997
-        },
-        {
-          "word": "will",
-          "start": 187.97,
-          "end": 188.47,
-          "confidence": 1.0
-        },
-        {
-          "word": "eat",
-          "start": 188.78,
-          "end": 189.01,
-          "confidence": 0.998
-        },
-        {
-          "word": "you",
-          "start": 189.01,
-          "end": 189.51,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.997
+      "text": "The lion picked up the mouse and opened his mouth.",
+      "start": 202.1,
+      "duration": 5.3
     },
     {
       "id": 34,
-      "text": "The lion picked up the mouse and opened his mouth.",
-      "speaker": "Speaker2",
-      "start": 202.1,
-      "duration": 5.3,
-      "words": [
-        {
-          "word": "the",
-          "start": 202.1,
-          "end": 202.34,
-          "confidence": 0.905
-        },
-        {
-          "word": "lion",
-          "start": 202.34,
-          "end": 202.84,
-          "confidence": 1.0
-        },
-        {
-          "word": "picked",
-          "start": 203.22,
-          "end": 203.62,
-          "confidence": 0.998
-        },
-        {
-          "word": "up",
-          "start": 203.62,
-          "end": 204.02,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 204.02,
-          "end": 204.26,
-          "confidence": 1.0
-        },
-        {
-          "word": "mouse",
-          "start": 204.26,
-          "end": 204.76,
-          "confidence": 0.999
-        },
-        {
-          "word": "and",
-          "start": 205.38,
-          "end": 205.86,
-          "confidence": 0.956
-        },
-        {
-          "word": "opened",
-          "start": 205.86,
-          "end": 206.36,
-          "confidence": 0.998
-        },
-        {
-          "word": "his",
-          "start": 206.5,
-          "end": 206.9,
-          "confidence": 0.995
-        },
-        {
-          "word": "mouth",
-          "start": 206.9,
-          "end": 207.4,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.979
+      "text": "Oh, no!",
+      "start": 217.51,
+      "duration": 0.74
     },
     {
       "id": 35,
-      "text": "Oh, no!",
-      "speaker": "Speaker0",
-      "start": 217.51,
-      "duration": 0.74,
-      "words": [
-        {
-          "word": "oh",
-          "start": 217.51,
-          "end": 217.75,
-          "confidence": 0.743
-        },
-        {
-          "word": "no",
-          "start": 217.75,
-          "end": 218.25,
-          "confidence": 0.729
-        }
-      ],
-      "confidence": 0.736
+      "text": "Please don't eat me.",
+      "start": 218.96,
+      "duration": 2.01
     },
     {
       "id": 36,
-      "text": "Please don't eat me.",
-      "speaker": "Speaker0",
-      "start": 218.96,
-      "duration": 2.01,
-      "words": [
-        {
-          "word": "please",
-          "start": 218.96,
-          "end": 219.46,
-          "confidence": 0.993
-        },
-        {
-          "word": "don't",
-          "start": 219.51,
-          "end": 220.01,
-          "confidence": 0.923
-        },
-        {
-          "word": "eat",
-          "start": 220.24,
-          "end": 220.47,
-          "confidence": 0.914
-        },
-        {
-          "word": "me",
-          "start": 220.47,
-          "end": 220.97,
-          "confidence": 0.777
-        }
-      ],
-      "confidence": 0.902
+      "text": "If you let me go, I will help you one day.",
+      "start": 226.41,
+      "duration": 4.9
     },
     {
       "id": 37,
-      "text": "If you let me go, I will help you one day.",
-      "speaker": "Speaker3",
-      "start": 226.41,
-      "duration": 4.9,
-      "words": [
-        {
-          "word": "if",
-          "start": 226.41,
-          "end": 226.65,
-          "confidence": 0.991
-        },
-        {
-          "word": "you",
-          "start": 226.65,
-          "end": 227.13,
-          "confidence": 1.0
-        },
-        {
-          "word": "let",
-          "start": 227.13,
-          "end": 227.45,
-          "confidence": 0.993
-        },
-        {
-          "word": "me",
-          "start": 227.45,
-          "end": 227.77,
-          "confidence": 0.998
-        },
-        {
-          "word": "go",
-          "start": 227.77,
-          "end": 228.27,
-          "confidence": 0.949
-        },
-        {
-          "word": "i",
-          "start": 228.81,
-          "end": 229.21,
-          "confidence": 0.999
-        },
-        {
-          "word": "will",
-          "start": 229.21,
-          "end": 229.61,
-          "confidence": 0.985
-        },
-        {
-          "word": "help",
-          "start": 229.61,
-          "end": 230.01,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 230.01,
-          "end": 230.49,
-          "confidence": 0.999
-        },
-        {
-          "word": "one",
-          "start": 230.49,
-          "end": 230.81,
-          "confidence": 0.997
-        },
-        {
-          "word": "day",
-          "start": 230.81,
-          "end": 231.31,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.991
+      "text": "You?",
+      "start": 242.06,
+      "duration": 0.5
     },
     {
       "id": 38,
-      "text": "You?",
-      "speaker": "Speaker1",
-      "start": 242.06,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "you",
-          "start": 242.06,
-          "end": 242.56,
-          "confidence": 0.874
-        }
-      ],
-      "confidence": 0.874
+      "text": "I'm a lion and you're a mouse.",
+      "start": 243.57,
+      "duration": 4.02
     },
     {
       "id": 39,
-      "text": "I'm a lion and you're a mouse.",
-      "speaker": "Speaker1",
-      "start": 243.57,
-      "duration": 4.02,
-      "words": [
-        {
-          "word": "i'm",
-          "start": 243.57,
-          "end": 244.06,
-          "confidence": 0.992
-        },
-        {
-          "word": "a",
-          "start": 244.06,
-          "end": 244.38,
-          "confidence": 0.995
-        },
-        {
-          "word": "lion",
-          "start": 244.38,
-          "end": 244.88,
-          "confidence": 0.995
-        },
-        {
-          "word": "and",
-          "start": 245.66,
-          "end": 246.14,
-          "confidence": 0.377
-        },
-        {
-          "word": "you're",
-          "start": 246.14,
-          "end": 246.64,
-          "confidence": 0.984
-        },
-        {
-          "word": "a",
-          "start": 246.69,
-          "end": 247.09,
-          "confidence": 1.0
-        },
-        {
-          "word": "mouse",
-          "start": 247.09,
-          "end": 247.59,
-          "confidence": 0.961
-        }
-      ],
-      "confidence": 0.912
+      "text": "What can you do?",
+      "start": 256.91,
+      "duration": 1.46
     },
     {
       "id": 40,
-      "text": "What can you do?",
-      "speaker": "Speaker1",
-      "start": 256.91,
-      "duration": 1.46,
-      "words": [
-        {
-          "word": "what",
-          "start": 256.91,
-          "end": 257.23,
-          "confidence": 0.891
-        },
-        {
-          "word": "can",
-          "start": 257.23,
-          "end": 257.55,
-          "confidence": 0.997
-        },
-        {
-          "word": "you",
-          "start": 257.55,
-          "end": 257.87,
-          "confidence": 0.999
-        },
-        {
-          "word": "do",
-          "start": 257.87,
-          "end": 258.37,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.971
+      "text": "The lion laughed.",
+      "start": 259.63,
+      "duration": 1.3
     },
     {
       "id": 41,
-      "text": "The lion laughed.",
-      "speaker": "Speaker2",
-      "start": 259.63,
-      "duration": 1.3,
-      "words": [
-        {
-          "word": "the",
-          "start": 259.63,
-          "end": 259.87,
-          "confidence": 0.963
-        },
-        {
-          "word": "lion",
-          "start": 259.87,
-          "end": 260.37,
-          "confidence": 0.998
-        },
-        {
-          "word": "laughed",
-          "start": 260.43,
-          "end": 260.93,
-          "confidence": 0.975
-        }
-      ],
-      "confidence": 0.979
+      "text": "Fine.",
+      "start": 269.05,
+      "duration": 0.5
     },
     {
       "id": 42,
-      "text": "Fine.",
-      "speaker": "Speaker1",
-      "start": 269.05,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "fine",
-          "start": 269.05,
-          "end": 269.55,
-          "confidence": 0.722
-        }
-      ],
-      "confidence": 0.722
+      "text": "I'll let you go.",
+      "start": 270.4,
+      "duration": 1.79
     },
     {
       "id": 43,
-      "text": "I'll let you go.",
-      "speaker": "Speaker1",
-      "start": 270.4,
-      "duration": 1.79,
-      "words": [
-        {
-          "word": "i'll",
-          "start": 270.4,
-          "end": 270.9,
-          "confidence": 0.996
-        },
-        {
-          "word": "let",
-          "start": 271.05,
-          "end": 271.37,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 271.37,
-          "end": 271.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "go",
-          "start": 271.69,
-          "end": 272.19,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
+      "text": "The mouse ran away.",
+      "start": 278.42,
+      "duration": 2.26
     },
     {
       "id": 44,
-      "text": "The mouse ran away.",
-      "speaker": "Speaker2",
-      "start": 278.42,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "the",
-          "start": 278.42,
-          "end": 278.74,
-          "confidence": 0.956
-        },
-        {
-          "word": "mouse",
-          "start": 278.74,
-          "end": 279.24,
-          "confidence": 0.995
-        },
-        {
-          "word": "ran",
-          "start": 279.54,
-          "end": 280.04,
-          "confidence": 0.988
-        },
-        {
-          "word": "away",
-          "start": 280.18,
-          "end": 280.68,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.985
+      "text": "The next day, the lion got caught in a trap.",
+      "start": 288.5,
+      "duration": 4.92
     },
     {
       "id": 45,
-      "text": "The next day, the lion got caught in a trap.",
-      "speaker": "Speaker2",
-      "start": 288.5,
-      "duration": 4.92,
-      "words": [
-        {
-          "word": "the",
-          "start": 288.5,
-          "end": 288.9,
-          "confidence": 0.982
-        },
-        {
-          "word": "next",
-          "start": 288.9,
-          "end": 289.22,
-          "confidence": 1.0
-        },
-        {
-          "word": "day",
-          "start": 289.22,
-          "end": 289.72,
-          "confidence": 0.976
-        },
-        {
-          "word": "the",
-          "start": 290.5,
-          "end": 290.74,
-          "confidence": 0.997
-        },
-        {
-          "word": "lion",
-          "start": 290.74,
-          "end": 291.24,
-          "confidence": 0.999
-        },
-        {
-          "word": "got",
-          "start": 291.3,
-          "end": 291.78,
-          "confidence": 0.997
-        },
-        {
-          "word": "caught",
-          "start": 291.78,
-          "end": 292.27,
-          "confidence": 0.999
-        },
-        {
-          "word": "in",
-          "start": 292.51,
-          "end": 292.75,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 292.75,
-          "end": 292.92,
-          "confidence": 0.999
-        },
-        {
-          "word": "trap",
-          "start": 292.92,
-          "end": 293.42,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.992
+      "text": "The mouse who saw this ran to the lion.",
+      "start": 301.79,
+      "duration": 4.34
     },
     {
       "id": 46,
-      "text": "The mouse who saw this ran to the lion.",
-      "speaker": "Speaker2",
-      "start": 301.79,
-      "duration": 4.34,
-      "words": [
-        {
-          "word": "the",
-          "start": 301.79,
-          "end": 302.19,
-          "confidence": 0.909
-        },
-        {
-          "word": "mouse",
-          "start": 302.19,
-          "end": 302.69,
-          "confidence": 0.998
-        },
-        {
-          "word": "who",
-          "start": 302.91,
-          "end": 303.24,
-          "confidence": 0.703
-        },
-        {
-          "word": "saw",
-          "start": 303.24,
-          "end": 303.56,
-          "confidence": 1.0
-        },
-        {
-          "word": "this",
-          "start": 303.56,
-          "end": 304.06,
-          "confidence": 0.984
-        },
-        {
-          "word": "ran",
-          "start": 304.35,
-          "end": 304.85,
-          "confidence": 0.723
-        },
-        {
-          "word": "to",
-          "start": 304.91,
-          "end": 305.39,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 305.39,
-          "end": 305.63,
-          "confidence": 0.999
-        },
-        {
-          "word": "lion",
-          "start": 305.63,
-          "end": 306.13,
-          "confidence": 0.985
-        }
-      ],
-      "confidence": 0.922
+      "text": "It began to chew the rope.",
+      "start": 314.65,
+      "duration": 2.5
     },
     {
       "id": 47,
-      "text": "It began to chew the rope.",
-      "speaker": "Speaker2",
-      "start": 314.65,
-      "duration": 2.5,
-      "words": [
-        {
-          "word": "it",
-          "start": 314.65,
-          "end": 315.05,
-          "confidence": 0.925
-        },
-        {
-          "word": "began",
-          "start": 315.05,
-          "end": 315.55,
-          "confidence": 0.992
-        },
-        {
-          "word": "to",
-          "start": 315.77,
-          "end": 316.09,
-          "confidence": 0.997
-        },
-        {
-          "word": "chew",
-          "start": 316.09,
-          "end": 316.49,
-          "confidence": 0.995
-        },
-        {
-          "word": "the",
-          "start": 316.49,
-          "end": 316.65,
-          "confidence": 0.999
-        },
-        {
-          "word": "rope",
-          "start": 316.65,
-          "end": 317.15,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.984
+      "text": "Thank you.",
+      "start": 325.14,
+      "duration": 0.82
     },
     {
       "id": 48,
-      "text": "Thank you.",
-      "speaker": "Speaker1",
-      "start": 325.14,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "thank",
-          "start": 325.14,
-          "end": 325.46,
-          "confidence": 0.666
-        },
-        {
-          "word": "you",
-          "start": 325.46,
-          "end": 325.96,
-          "confidence": 0.87
-        }
-      ],
-      "confidence": 0.768
+      "text": "You saved my life.",
+      "start": 326.58,
+      "duration": 1.94
     },
     {
       "id": 49,
-      "text": "You saved my life.",
-      "speaker": "Speaker1",
-      "start": 326.58,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "you",
-          "start": 326.58,
-          "end": 327.06,
-          "confidence": 0.983
-        },
-        {
-          "word": "saved",
-          "start": 327.06,
-          "end": 327.56,
-          "confidence": 0.97
-        },
-        {
-          "word": "my",
-          "start": 327.7,
-          "end": 328.02,
-          "confidence": 1.0
-        },
-        {
-          "word": "life",
-          "start": 328.02,
-          "end": 328.52,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.986
+      "text": "From that day, the lion and mouse became best friends.",
+      "start": 336.67,
+      "duration": 6.44
     },
     {
       "id": 50,
-      "text": "From that day, the lion and mouse became best friends.",
-      "speaker": "Speaker2",
-      "start": 336.67,
-      "duration": 6.44,
-      "words": [
-        {
-          "word": "from",
-          "start": 336.67,
-          "end": 337.17,
-          "confidence": 0.88
-        },
-        {
-          "word": "that",
-          "start": 337.23,
-          "end": 337.55,
-          "confidence": 1.0
-        },
-        {
-          "word": "day",
-          "start": 337.55,
-          "end": 338.05,
-          "confidence": 0.829
-        },
-        {
-          "word": "the",
-          "start": 338.85,
-          "end": 339.17,
-          "confidence": 0.988
-        },
-        {
-          "word": "lion",
-          "start": 339.17,
-          "end": 339.65,
-          "confidence": 0.993
-        },
-        {
-          "word": "and",
-          "start": 339.65,
-          "end": 340.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "mouse",
-          "start": 340.05,
-          "end": 340.55,
-          "confidence": 0.974
-        },
-        {
-          "word": "became",
-          "start": 341.01,
-          "end": 341.51,
-          "confidence": 0.993
-        },
-        {
-          "word": "best",
-          "start": 341.97,
-          "end": 342.47,
-          "confidence": 0.999
-        },
-        {
-          "word": "friends",
-          "start": 342.61,
-          "end": 343.11,
-          "confidence": 0.833
-        }
-      ],
-      "confidence": 0.95
-    },
-    {
-      "id": 51,
       "text": "Now your turn.",
-      "speaker": "Speaker3",
       "start": 357.59,
-      "duration": 1.53,
-      "words": [
-        {
-          "word": "now",
-          "start": 357.59,
-          "end": 358.09,
-          "confidence": 0.958
-        },
-        {
-          "word": "your",
-          "start": 358.31,
-          "end": 358.62,
-          "confidence": 0.57
-        },
-        {
-          "word": "turn",
-          "start": 358.62,
-          "end": 359.12,
-          "confidence": 0.991
-        }
-      ],
-      "confidence": 0.84
+      "duration": 1.53
     }
   ],
   "speakerMap": {
@@ -2081,5 +323,7 @@
     "version": 4,
     "beforeSegments": 79,
     "afterSegments": 51
-  }
+  },
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.400Z"
 }

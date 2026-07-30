@@ -1,1 +1,153 @@
-{"text":"Hey there kids! Listen carefully and repeat. French fries French fries Pancakes Pancakes Bread Bread Cheese Cheese Salad Salad Hot dog Hot dog Rice Rice Noodles Noodles Sandwich Sandwich Pizza Pizza That was great kids. Let's do it one more time. In a big voice, repeat after me. Here we go. French fries Pancakes Bread Cheese Salad Hot dog Rice Noodles Sandwich Pizza Well done, kids. That was great. See ya!","segments":[{"id":1,"text":"Hey there kids! Listen carefully and repeat.","start":5.8,"duration":5.31},{"id":2,"text":"French fries","start":12.56,"duration":2.48},{"id":3,"text":"French fries","start":16.57,"duration":2.68},{"id":4,"text":"Pancakes","start":20.58,"duration":1.72},{"id":5,"text":"Pancakes","start":24.29,"duration":1.9},{"id":6,"text":"Bread","start":28.39,"duration":2.02},{"id":7,"text":"Bread","start":32.37,"duration":1.96},{"id":8,"text":"Cheese","start":36.37,"duration":2.26},{"id":9,"text":"Cheese","start":40.41,"duration":2.22},{"id":10,"text":"Salad","start":44.38,"duration":2.22},{"id":11,"text":"Salad","start":48.4,"duration":2.24},{"id":12,"text":"Hot dog","start":52.47,"duration":2.22},{"id":13,"text":"Hot dog","start":56.35,"duration":2.22},{"id":14,"text":"Rice","start":60.4,"duration":2.38},{"id":15,"text":"Rice","start":64.37,"duration":2.8},{"id":16,"text":"Noodles","start":68.5,"duration":2.36},{"id":17,"text":"Noodles","start":72.37,"duration":2.58},{"id":18,"text":"Sandwich","start":76.41,"duration":2.3},{"id":19,"text":"Sandwich","start":80.36,"duration":2.32},{"id":20,"text":"Pizza","start":84.53,"duration":2.66},{"id":21,"text":"Pizza","start":88.3,"duration":2.94},{"id":22,"text":"That was great kids. Let's do it one more time.","start":93.74,"duration":5.37},{"id":23,"text":"In a big voice, repeat after me. Here we go.","start":99.43,"duration":6.37},{"id":24,"text":"French fries","start":108.55,"duration":2.13},{"id":25,"text":"Pancakes","start":116.51,"duration":2.26},{"id":26,"text":"Bread","start":124.39,"duration":2.42},{"id":27,"text":"Cheese","start":132.45,"duration":2.88},{"id":28,"text":"Salad","start":140.33,"duration":2.98},{"id":29,"text":"Hot dog","start":148.42,"duration":2.74},{"id":30,"text":"Rice","start":156.4,"duration":2.8},{"id":31,"text":"Noodles","start":164.44,"duration":3.02},{"id":32,"text":"Sandwich","start":172.35,"duration":2.78},{"id":33,"text":"Pizza","start":180.62,"duration":2.88},{"id":34,"text":"Well done, kids. That was great. See ya!","start":189.11,"duration":6.55}],"fetchedAt":"2026-06-24T03:43:19Z","videoId":"HAinuR8WfXA"}
+{
+  "text": "Hey there kids! Listen carefully and repeat. French fries French fries Pancakes Pancakes Bread Bread Cheese Cheese Salad Salad Hot dog Hot dog Rice Rice Noodles Noodles Sandwich Sandwich Pizza Pizza That was great kids. Let's do it one more time. In a big voice, repeat after me. Here we go. French fries Pancakes Bread Cheese Salad Hot dog Rice Noodles Sandwich Pizza Well done, kids. That was great. See ya!",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Hey there kids!",
+      "start": 5.8,
+      "duration": 2.28
+    },
+    {
+      "id": 2,
+      "text": "Listen carefully and repeat.",
+      "start": 8.075714285714286,
+      "duration": 3.03
+    },
+    {
+      "id": 3,
+      "text": "French fries French fries",
+      "start": 12.56,
+      "duration": 6.69
+    },
+    {
+      "id": 4,
+      "text": "Pancakes Pancakes",
+      "start": 20.58,
+      "duration": 5.61
+    },
+    {
+      "id": 5,
+      "text": "Bread Bread",
+      "start": 28.39,
+      "duration": 5.94
+    },
+    {
+      "id": 6,
+      "text": "Cheese Cheese",
+      "start": 36.37,
+      "duration": 6.26
+    },
+    {
+      "id": 7,
+      "text": "Salad Salad",
+      "start": 44.38,
+      "duration": 6.26
+    },
+    {
+      "id": 8,
+      "text": "Hot dog Hot dog",
+      "start": 52.47,
+      "duration": 6.1
+    },
+    {
+      "id": 9,
+      "text": "Rice Rice",
+      "start": 60.4,
+      "duration": 6.77
+    },
+    {
+      "id": 10,
+      "text": "Noodles Noodles",
+      "start": 68.5,
+      "duration": 6.45
+    },
+    {
+      "id": 11,
+      "text": "Sandwich Sandwich",
+      "start": 76.41,
+      "duration": 6.27
+    },
+    {
+      "id": 12,
+      "text": "Pizza Pizza",
+      "start": 84.53,
+      "duration": 6.71
+    },
+    {
+      "id": 13,
+      "text": "That was great kids.",
+      "start": 93.74,
+      "duration": 2.15
+    },
+    {
+      "id": 14,
+      "text": "Let's do it one more time.",
+      "start": 95.88799999999999,
+      "duration": 3.22
+    },
+    {
+      "id": 15,
+      "text": "In a big voice, repeat after me.",
+      "start": 99.43,
+      "duration": 4.46
+    },
+    {
+      "id": 16,
+      "text": "Here we go.",
+      "start": 103.88900000000001,
+      "duration": 1.91
+    },
+    {
+      "id": 17,
+      "text": "French fries Pancakes",
+      "start": 108.55,
+      "duration": 10.22
+    },
+    {
+      "id": 18,
+      "text": "Bread Cheese",
+      "start": 124.39,
+      "duration": 10.94
+    },
+    {
+      "id": 19,
+      "text": "Salad Hot dog",
+      "start": 140.33,
+      "duration": 10.83
+    },
+    {
+      "id": 20,
+      "text": "Rice Noodles",
+      "start": 156.4,
+      "duration": 11.06
+    },
+    {
+      "id": 21,
+      "text": "Sandwich Pizza",
+      "start": 172.35,
+      "duration": 11.15
+    },
+    {
+      "id": 22,
+      "text": "Well done, kids.",
+      "start": 189.11,
+      "duration": 2.46
+    },
+    {
+      "id": 23,
+      "text": "That was great.",
+      "start": 191.56625000000003,
+      "duration": 2.46
+    },
+    {
+      "id": 24,
+      "text": "See ya!",
+      "start": 194.02250000000004,
+      "duration": 1.64
+    }
+  ],
+  "fetchedAt": "2026-06-24T03:43:19Z",
+  "videoId": "HAinuR8WfXA",
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.357Z"
+}

@@ -4,852 +4,134 @@
     {
       "id": 1,
       "text": "Little moths.",
-      "speaker": "Speaker0",
       "start": 2.16,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "little",
-          "start": 2.16,
-          "end": 2.66,
-          "confidence": 0.633
-        },
-        {
-          "word": "moths",
-          "start": 2.72,
-          "end": 3.22,
-          "confidence": 0.78
-        }
-      ],
-      "confidence": 0.707
+      "duration": 1.06
     },
     {
       "id": 2,
       "text": "On the monster.",
-      "speaker": "Speaker0",
       "start": 6.48,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "on",
-          "start": 6.48,
-          "end": 6.72,
-          "confidence": 0.934
-        },
-        {
-          "word": "the",
-          "start": 6.72,
-          "end": 7.04,
-          "confidence": 0.99
-        },
-        {
-          "word": "monster",
-          "start": 7.04,
-          "end": 7.54,
-          "confidence": 0.923
-        }
-      ],
-      "confidence": 0.949
+      "duration": 1.06
     },
     {
       "id": 3,
       "text": "I am not afraid of the monster.",
-      "speaker": "Speaker0",
       "start": 17.02,
-      "duration": 2.34,
-      "words": [
-        {
-          "word": "i",
-          "start": 17.02,
-          "end": 17.41,
-          "confidence": 0.682
-        },
-        {
-          "word": "am",
-          "start": 17.41,
-          "end": 17.65,
-          "confidence": 0.994
-        },
-        {
-          "word": "not",
-          "start": 17.65,
-          "end": 18.05,
-          "confidence": 0.997
-        },
-        {
-          "word": "afraid",
-          "start": 18.05,
-          "end": 18.54,
-          "confidence": 1.0
-        },
-        {
-          "word": "of",
-          "start": 18.54,
-          "end": 18.7,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 18.7,
-          "end": 18.86,
-          "confidence": 1.0
-        },
-        {
-          "word": "monster",
-          "start": 18.86,
-          "end": 19.36,
-          "confidence": 0.949
-        }
-      ],
-      "confidence": 0.946
+      "duration": 2.34
     },
     {
       "id": 4,
       "text": "I am on the monster.",
-      "speaker": "Speaker0",
       "start": 22.93,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "i",
-          "start": 22.93,
-          "end": 23.18,
-          "confidence": 0.962
-        },
-        {
-          "word": "am",
-          "start": 23.18,
-          "end": 23.49,
-          "confidence": 0.999
-        },
-        {
-          "word": "on",
-          "start": 23.49,
-          "end": 23.73,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 23.73,
-          "end": 23.97,
-          "confidence": 0.988
-        },
-        {
-          "word": "monster",
-          "start": 23.97,
-          "end": 24.47,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.988
+      "duration": 1.54
     },
     {
       "id": 5,
       "text": "I am behind the monster.",
-      "speaker": "Speaker0",
       "start": 31.53,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "i",
-          "start": 31.53,
-          "end": 32.01,
-          "confidence": 0.732
-        },
-        {
-          "word": "am",
-          "start": 32.01,
-          "end": 32.33,
-          "confidence": 0.939
-        },
-        {
-          "word": "behind",
-          "start": 32.33,
-          "end": 32.81,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 32.81,
-          "end": 33.05,
-          "confidence": 0.99
-        },
-        {
-          "word": "monster",
-          "start": 33.05,
-          "end": 33.55,
-          "confidence": 0.884
-        }
-      ],
-      "confidence": 0.909
+      "duration": 2.02
     },
     {
       "id": 6,
       "text": "I am under the monster.",
-      "speaker": "Speaker0",
       "start": 41.34,
-      "duration": 1.69,
-      "words": [
-        {
-          "word": "i",
-          "start": 41.34,
-          "end": 41.5,
-          "confidence": 0.56
-        },
-        {
-          "word": "am",
-          "start": 41.5,
-          "end": 41.9,
-          "confidence": 0.996
-        },
-        {
-          "word": "under",
-          "start": 41.9,
-          "end": 42.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 42.38,
-          "end": 42.53,
-          "confidence": 0.999
-        },
-        {
-          "word": "monster",
-          "start": 42.53,
-          "end": 43.03,
-          "confidence": 0.891
-        }
-      ],
-      "confidence": 0.889
+      "duration": 1.69
     },
     {
       "id": 7,
       "text": "I am next to the monster.",
-      "speaker": "Speaker0",
       "start": 49.34,
-      "duration": 1.61,
-      "words": [
-        {
-          "word": "i",
-          "start": 49.34,
-          "end": 49.58,
-          "confidence": 0.934
-        },
-        {
-          "word": "am",
-          "start": 49.58,
-          "end": 49.82,
-          "confidence": 0.998
-        },
-        {
-          "word": "next",
-          "start": 49.82,
-          "end": 50.14,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 50.14,
-          "end": 50.3,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 50.3,
-          "end": 50.45,
-          "confidence": 1.0
-        },
-        {
-          "word": "monster",
-          "start": 50.45,
-          "end": 50.95,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.988
+      "duration": 1.61
     },
     {
       "id": 8,
       "text": "I am in front of the monster.",
-      "speaker": "Speaker0",
       "start": 57.37,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "i",
-          "start": 57.37,
-          "end": 57.53,
-          "confidence": 0.764
-        },
-        {
-          "word": "am",
-          "start": 57.53,
-          "end": 57.85,
-          "confidence": 0.986
-        },
-        {
-          "word": "in",
-          "start": 57.85,
-          "end": 58.01,
-          "confidence": 0.998
-        },
-        {
-          "word": "front",
-          "start": 58.01,
-          "end": 58.33,
-          "confidence": 0.999
-        },
-        {
-          "word": "of",
-          "start": 58.33,
-          "end": 58.49,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 58.49,
-          "end": 58.73,
-          "confidence": 0.999
-        },
-        {
-          "word": "monster",
-          "start": 58.73,
-          "end": 59.23,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.963
+      "duration": 1.86
     },
     {
       "id": 9,
       "text": "I am in the helicopter.",
-      "speaker": "Speaker0",
       "start": 69.08,
-      "duration": 1.77,
-      "words": [
-        {
-          "word": "i",
-          "start": 69.08,
-          "end": 69.39,
-          "confidence": 0.954
-        },
-        {
-          "word": "am",
-          "start": 69.39,
-          "end": 69.64,
-          "confidence": 0.997
-        },
-        {
-          "word": "in",
-          "start": 69.64,
-          "end": 69.88,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 69.88,
-          "end": 70.35,
-          "confidence": 1.0
-        },
-        {
-          "word": "helicopter",
-          "start": 70.35,
-          "end": 70.85,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.989
+      "duration": 1.77
     },
     {
       "id": 10,
       "text": "I am above the monster.",
-      "speaker": "Speaker0",
       "start": 75.16,
-      "duration": 1.53,
-      "words": [
-        {
-          "word": "i",
-          "start": 75.16,
-          "end": 75.31,
-          "confidence": 0.779
-        },
-        {
-          "word": "am",
-          "start": 75.31,
-          "end": 75.56,
-          "confidence": 0.998
-        },
-        {
-          "word": "above",
-          "start": 75.56,
-          "end": 75.95,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 75.95,
-          "end": 76.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "monster",
-          "start": 76.19,
-          "end": 76.69,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.954
+      "duration": 1.53
     },
     {
       "id": 11,
       "text": "Oh, no.",
-      "speaker": "Speaker0",
       "start": 86.69,
-      "duration": 0.98,
-      "words": [
-        {
-          "word": "oh",
-          "start": 86.69,
-          "end": 87.17,
-          "confidence": 0.703
-        },
-        {
-          "word": "no",
-          "start": 87.17,
-          "end": 87.67,
-          "confidence": 0.925
-        }
-      ],
-      "confidence": 0.935
+      "duration": 0.98
     },
     {
       "id": 12,
       "text": "The monster got me.",
-      "speaker": "Speaker0",
       "start": 87.89,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "the",
-          "start": 87.89,
-          "end": 88.05,
-          "confidence": 0.997
-        },
-        {
-          "word": "monster",
-          "start": 88.05,
-          "end": 88.55,
-          "confidence": 0.99
-        },
-        {
-          "word": "got",
-          "start": 88.69,
-          "end": 88.93,
-          "confidence": 0.999
-        },
-        {
-          "word": "me",
-          "start": 88.93,
-          "end": 89.43,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.935
+      "duration": 1.54
     },
     {
       "id": 13,
       "text": "Where is Kitty?",
-      "speaker": "Speaker1",
       "start": 100.11,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "where",
-          "start": 100.11,
-          "end": 100.52,
-          "confidence": 0.92
-        },
-        {
-          "word": "is",
-          "start": 100.52,
-          "end": 100.99,
-          "confidence": 0.99
-        },
-        {
-          "word": "kitty",
-          "start": 100.99,
-          "end": 101.49,
-          "confidence": 0.935
-        }
-      ],
-      "confidence": 0.948
+      "duration": 1.38
     },
     {
       "id": 14,
       "text": "Where is Kitty?",
-      "speaker": "Speaker1",
       "start": 108.36,
-      "duration": 1.3,
-      "words": [
-        {
-          "word": "where",
-          "start": 108.36,
-          "end": 108.84,
-          "confidence": 0.901
-        },
-        {
-          "word": "is",
-          "start": 108.84,
-          "end": 109.16,
-          "confidence": 1.0
-        },
-        {
-          "word": "kitty",
-          "start": 109.16,
-          "end": 109.66,
-          "confidence": 0.768
-        }
-      ],
-      "confidence": 0.89
+      "duration": 1.3
     },
     {
       "id": 15,
       "text": "Kitty is not under the bed.",
-      "speaker": "Speaker1",
       "start": 116.84,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "kitty",
-          "start": 116.84,
-          "end": 117.24,
-          "confidence": 0.887
-        },
-        {
-          "word": "is",
-          "start": 117.24,
-          "end": 117.56,
-          "confidence": 0.998
-        },
-        {
-          "word": "not",
-          "start": 117.56,
-          "end": 117.96,
-          "confidence": 0.999
-        },
-        {
-          "word": "under",
-          "start": 117.96,
-          "end": 118.28,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 118.28,
-          "end": 118.44,
-          "confidence": 0.998
-        },
-        {
-          "word": "bed",
-          "start": 118.44,
-          "end": 118.94,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.98
+      "duration": 2.1
     },
     {
       "id": 16,
       "text": "Kitty is not under the sofa.",
-      "speaker": "Speaker1",
       "start": 124.09,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "kitty",
-          "start": 124.09,
-          "end": 124.5,
-          "confidence": 0.956
-        },
-        {
-          "word": "is",
-          "start": 124.5,
-          "end": 124.73,
-          "confidence": 1.0
-        },
-        {
-          "word": "not",
-          "start": 124.73,
-          "end": 125.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "under",
-          "start": 125.06,
-          "end": 125.3,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 125.3,
-          "end": 125.53,
-          "confidence": 0.999
-        },
-        {
-          "word": "sofa",
-          "start": 125.53,
-          "end": 126.03,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.993
+      "duration": 1.94
     },
     {
       "id": 17,
       "text": "Kitty is not under the table.",
-      "speaker": "Speaker1",
       "start": 138.66,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "kitty",
-          "start": 138.66,
-          "end": 138.98,
-          "confidence": 0.808
-        },
-        {
-          "word": "is",
-          "start": 138.98,
-          "end": 139.3,
-          "confidence": 1.0
-        },
-        {
-          "word": "not",
-          "start": 139.3,
-          "end": 139.54,
-          "confidence": 1.0
-        },
-        {
-          "word": "under",
-          "start": 139.54,
-          "end": 139.94,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 139.94,
-          "end": 140.1,
-          "confidence": 1.0
-        },
-        {
-          "word": "table",
-          "start": 140.1,
-          "end": 140.6,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.968
+      "duration": 1.94
     },
     {
       "id": 18,
       "text": "Kitty is not under the chair.",
-      "speaker": "Speaker1",
       "start": 147.62,
-      "duration": 11.16,
-      "words": [
-        {
-          "word": "kitty",
-          "start": 147.62,
-          "end": 148.1,
-          "confidence": 0.992
-        },
-        {
-          "word": "is",
-          "start": 148.1,
-          "end": 148.26,
-          "confidence": 1.0
-        },
-        {
-          "word": "not",
-          "start": 148.26,
-          "end": 148.58,
-          "confidence": 1.0
-        },
-        {
-          "word": "under",
-          "start": 148.58,
-          "end": 148.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 148.82,
-          "end": 149.03,
-          "confidence": 0.999
-        },
-        {
-          "word": "chair",
-          "start": 158.38,
-          "end": 158.78,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.995
+      "duration": 11.16
     },
     {
       "id": 19,
       "text": "Kitty is not under the desk.",
-      "speaker": "Speaker1",
       "start": 158.78,
-      "duration": 2.03,
-      "words": [
-        {
-          "word": "kitty",
-          "start": 158.78,
-          "end": 159.19,
-          "confidence": 0.946
-        },
-        {
-          "word": "is",
-          "start": 159.19,
-          "end": 159.42,
-          "confidence": 0.999
-        },
-        {
-          "word": "not",
-          "start": 159.42,
-          "end": 159.75,
-          "confidence": 1.0
-        },
-        {
-          "word": "under",
-          "start": 159.75,
-          "end": 160.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 160.06,
-          "end": 160.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "desk",
-          "start": 160.31,
-          "end": 160.81,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.992
+      "duration": 2.03
     },
     {
       "id": 20,
       "text": "Kitty is not under the car.",
-      "speaker": "Speaker1",
       "start": 167.85,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "kitty",
-          "start": 167.85,
-          "end": 168.25,
-          "confidence": 0.918
-        },
-        {
-          "word": "is",
-          "start": 168.25,
-          "end": 168.41,
-          "confidence": 0.999
-        },
-        {
-          "word": "not",
-          "start": 168.41,
-          "end": 168.73,
-          "confidence": 1.0
-        },
-        {
-          "word": "under",
-          "start": 168.73,
-          "end": 169.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 169.05,
-          "end": 169.29,
-          "confidence": 1.0
-        },
-        {
-          "word": "car",
-          "start": 169.29,
-          "end": 169.79,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.986
+      "duration": 1.94
     },
     {
       "id": 21,
       "text": "Kitty is under the tree.",
-      "speaker": "Speaker1",
       "start": 178.53,
-      "duration": 1.69,
-      "words": [
-        {
-          "word": "kitty",
-          "start": 178.53,
-          "end": 178.92,
-          "confidence": 0.958
-        },
-        {
-          "word": "is",
-          "start": 178.92,
-          "end": 179.16,
-          "confidence": 0.999
-        },
-        {
-          "word": "under",
-          "start": 179.16,
-          "end": 179.49,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 179.49,
-          "end": 179.72,
-          "confidence": 0.999
-        },
-        {
-          "word": "tree",
-          "start": 179.72,
-          "end": 180.22,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.99
+      "duration": 1.69
     },
     {
       "id": 22,
       "text": "Little fox.",
-      "speaker": "Speaker0",
       "start": 192.85,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "little",
-          "start": 192.85,
-          "end": 193.35,
-          "confidence": 0.499
-        },
-        {
-          "word": "fox",
-          "start": 193.49,
-          "end": 193.99,
-          "confidence": 0.958
-        }
-      ],
-      "confidence": 0.728
+      "duration": 1.14
     }
   ],
   "speakerMap": {
@@ -875,5 +157,7 @@
     "afterAvgWords": 4.8,
     "merged": 0,
     "danglingFragments": 0
-  }
+  },
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.367Z"
 }

@@ -1,1 +1,729 @@
-{"text":"Put on It's snowing! Let's play outside. Okay! It's cold and windy. Put on your coat, please. Thank you, mom! Put on your... Gloves, mom! It’s sunny, but cold outside. Let’s check the presents. Gloves, socks, hats, and balloons. Pies and cookies, too. Good. Put on your pants. Is this mine? Yes, it’s yours. Put on your coat, too. Is this yours? No, it’s not mine. Oh, it’s mine. Okay! Now, let’s go. Thank you for coming. You’re welcome. Nice to see you. It’s cold and snowy. How are you all? Fine, thanks. Is this mine? Yes, it's yours. I made it for you. My hat is great! I'm a queen! Let's play outside. It's snowing. It's snowing. Put on your sweater. Put on your sweater. Put on your coat. Put on your coat. Okay! Okay! Thanks, mom. Thank you. Let's play outside. It's cold. It's cold. Put on your hat. Put on your hat. Put on your gloves. Put on your gloves. Okay! Okay! Thanks, mom. Thanks, mom. Socks, hat, coat. It's cold. It's cold. Put on your coat. Put on your hat. Put on your socks. Okay! Okay! Okay! Sweater, gloves, coat. It's cold. It's cold. Put on your sweater. Put on your gloves. Put on your coat. Okay! Okay! Okay! I don’t like the red coat. Do you like this coat? I don’t. They can make a good coat. Great! Make a good coat. Okay! Stand up, please. Put on this coat, please. Okay. How nice! Good! I like this coat. It’s raining. It’s windy, too. It’s okay. Umbrella, please. Haha~ Put on your coat, please! Haha ... It’s too cold! You can go to the Christmas party. Mr. Lawrence is waiting for you all. Great! Meg, is this your dress? Yes, it’s mine. Is this your hat? No, it’s not mine. Mom, how’s the weather outside? It’s cold and snowy. Please put on your coats, everyone. Mom. Put on your gloves, too. Mom, my shoes are too small. Take these. You can have mine. You’re very kind. Good! Let’s go. We’re late. Mr. Lawrence. Welcome, you all . Come in, please. Mr. Lawrence. Nice to meet you.","segments":[{"id":1,"text":"Put on","start":3.38,"duration":2.84},{"id":2,"text":"It's snowing!","start":17.92,"duration":1.84},{"id":3,"text":"Let's play outside.","start":20.54,"duration":2.36},{"id":4,"text":"Okay!","start":23.94,"duration":1.38},{"id":5,"text":"It's cold and windy.","start":28.16,"duration":2.28},{"id":6,"text":"Put on your coat, please.","start":31.04,"duration":2.12},{"id":7,"text":"Thank you, mom!","start":33.36,"duration":1.56},{"id":8,"text":"Put on your...","start":35.1,"duration":1.32},{"id":9,"text":"Gloves, mom!","start":36.74,"duration":1.66},{"id":10,"text":"It’s sunny, but cold outside.","start":52.1,"duration":2.8},{"id":11,"text":"Let’s check the presents.","start":56.94,"duration":2.22},{"id":12,"text":"Gloves, socks, hats, and balloons.","start":60.84,"duration":4.24},{"id":13,"text":"Pies and cookies, too.","start":65.2,"duration":2.32},{"id":14,"text":"Good.","start":69.14,"duration":1.08},{"id":15,"text":"Put on your pants.","start":70.68,"duration":1.62},{"id":16,"text":"Is this mine?","start":73.44,"duration":1.74},{"id":17,"text":"Yes, it’s yours.","start":75.18,"duration":1.44},{"id":18,"text":"Put on your coat, too.","start":76.62,"duration":1.84},{"id":19,"text":"Is this yours?","start":80.16,"duration":1.66},{"id":20,"text":"No, it’s not mine.","start":82.2,"duration":2.68},{"id":21,"text":"Oh, it’s mine.","start":85,"duration":2.2},{"id":22,"text":"Okay! Now, let’s go.","start":87.44,"duration":2.58},{"id":23,"text":"Thank you for coming.","start":94.38,"duration":1.58},{"id":24,"text":"You’re welcome. Nice to see you.","start":96.64,"duration":3.24},{"id":25,"text":"It’s cold and snowy.","start":100.9,"duration":2.34},{"id":26,"text":"How are you all?","start":103.24,"duration":1.42},{"id":27,"text":"Fine, thanks.","start":104.82,"duration":2},{"id":28,"text":"Is this mine?","start":109.86,"duration":1.68},{"id":29,"text":"Yes, it's yours.","start":111.78,"duration":1.76},{"id":30,"text":"I made it for you.","start":113.54,"duration":1.8},{"id":31,"text":"My hat is great! I'm a queen!","start":116.22,"duration":3.9},{"id":32,"text":"Let's play outside.","start":134.16,"duration":2.02},{"id":33,"text":"It's snowing. It's snowing.","start":136.28,"duration":3.6},{"id":34,"text":"Put on your sweater. Put on your sweater.","start":140.02,"duration":3.68},{"id":35,"text":"Put on your coat. Put on your coat.","start":143.76,"duration":4.32},{"id":36,"text":"Okay! Okay! Thanks, mom. Thank you.","start":149.12,"duration":3.82},{"id":37,"text":"Let's play outside.","start":153,"duration":1.78},{"id":38,"text":"It's cold. It's cold.","start":154.78,"duration":3.6},{"id":39,"text":"Put on your hat. Put on your hat.","start":158.38,"duration":3.78},{"id":40,"text":"Put on your gloves. Put on your gloves.","start":162.16,"duration":4.72},{"id":41,"text":"Okay! Okay! Thanks, mom. Thanks, mom.","start":167.64,"duration":4.1},{"id":42,"text":"Socks, hat, coat.","start":184.68,"duration":3.3},{"id":43,"text":"It's cold. It's cold.","start":188.22,"duration":3.8},{"id":44,"text":"Put on your coat. Put on your hat.","start":192.42,"duration":3.98},{"id":45,"text":"Put on your socks.","start":196.4,"duration":1.74},{"id":46,"text":"Okay! Okay! Okay!","start":198.18,"duration":2.22},{"id":47,"text":"Sweater, gloves, coat.","start":203.92,"duration":3.02},{"id":48,"text":"It's cold. It's cold.","start":207.3,"duration":3.72},{"id":49,"text":"Put on your sweater. Put on your gloves.","start":211.56,"duration":3.82},{"id":50,"text":"Put on your coat.","start":215.38,"duration":1.86},{"id":51,"text":"Okay! Okay! Okay!","start":217.3,"duration":2.22},{"id":52,"text":"I don’t like the red coat.","start":236.3,"duration":2.64},{"id":53,"text":"Do you like this coat?","start":239.88,"duration":2.1},{"id":54,"text":"I don’t.","start":242.94,"duration":1.58},{"id":55,"text":"They can make a good coat.","start":253.92,"duration":2.52},{"id":56,"text":"Great! Make a good coat.","start":256.72,"duration":3.28},{"id":57,"text":"Okay!","start":260.3,"duration":1.3},{"id":58,"text":"Stand up, please.","start":270.18,"duration":1.92},{"id":59,"text":"Put on this coat, please.","start":274.24,"duration":2},{"id":60,"text":"Okay.","start":278.48,"duration":1.08},{"id":61,"text":"How nice!","start":285,"duration":1.66},{"id":62,"text":"Good! I like this coat.","start":287.3,"duration":2.66},{"id":63,"text":"It’s raining.","start":300.7,"duration":1.84},{"id":64,"text":"It’s windy, too.","start":302.96,"duration":2.26},{"id":65,"text":"It’s okay. Umbrella, please.","start":307.9,"duration":3.3},{"id":66,"text":"Haha~ Put on your coat, please!","start":313.58,"duration":3.14},{"id":67,"text":"Haha ...","start":316.96,"duration":2.82},{"id":68,"text":"It’s too cold!","start":320.32,"duration":2.12},{"id":69,"text":"You can go to the Christmas party.","start":333.92,"duration":2.56},{"id":70,"text":"Mr. Lawrence is waiting for you all.","start":336.48,"duration":2.72},{"id":71,"text":"Great!","start":339.2,"duration":1.36},{"id":72,"text":"Meg, is this your dress?","start":344.92,"duration":2.76},{"id":73,"text":"Yes, it’s mine.","start":347.74,"duration":2.3},{"id":74,"text":"Is this your hat?","start":350.72,"duration":1.64},{"id":75,"text":"No, it’s not mine.","start":352.66,"duration":2.44},{"id":76,"text":"Mom, how’s the weather outside?","start":355.1,"duration":3.1},{"id":77,"text":"It’s cold and snowy.","start":358.84,"duration":1.76},{"id":78,"text":"Please put on your coats, everyone.","start":360.62,"duration":2.4},{"id":79,"text":"Mom.","start":363.06,"duration":1.46},{"id":80,"text":"Put on your gloves, too.","start":364.66,"duration":1.98},{"id":81,"text":"Mom, my shoes are too small.","start":366.86,"duration":3.04},{"id":82,"text":"Take these. You can have mine.","start":370.16,"duration":3.42},{"id":83,"text":"You’re very kind.","start":376.64,"duration":1.9},{"id":84,"text":"Good! Let’s go. We’re late.","start":378.84,"duration":3.74},{"id":85,"text":"Mr. Lawrence.","start":390.02,"duration":2.2},{"id":86,"text":"Welcome, you all . Come in, please.","start":392.62,"duration":3.44},{"id":87,"text":"Mr. Lawrence. Nice to meet you.","start":396.06,"duration":3.04}],"fetchedAt":"2026-07-01T07:32:58.113Z","videoId":"5e3kVR3wSSM"}
+{
+  "text": "Put on It's snowing! Let's play outside. Okay! It's cold and windy. Put on your coat, please. Thank you, mom! Put on your... Gloves, mom! It’s sunny, but cold outside. Let’s check the presents. Gloves, socks, hats, and balloons. Pies and cookies, too. Good. Put on your pants. Is this mine? Yes, it’s yours. Put on your coat, too. Is this yours? No, it’s not mine. Oh, it’s mine. Okay! Now, let’s go. Thank you for coming. You’re welcome. Nice to see you. It’s cold and snowy. How are you all? Fine, thanks. Is this mine? Yes, it's yours. I made it for you. My hat is great! I'm a queen! Let's play outside. It's snowing. It's snowing. Put on your sweater. Put on your sweater. Put on your coat. Put on your coat. Okay! Okay! Thanks, mom. Thank you. Let's play outside. It's cold. It's cold. Put on your hat. Put on your hat. Put on your gloves. Put on your gloves. Okay! Okay! Thanks, mom. Thanks, mom. Socks, hat, coat. It's cold. It's cold. Put on your coat. Put on your hat. Put on your socks. Okay! Okay! Okay! Sweater, gloves, coat. It's cold. It's cold. Put on your sweater. Put on your gloves. Put on your coat. Okay! Okay! Okay! I don’t like the red coat. Do you like this coat? I don’t. They can make a good coat. Great! Make a good coat. Okay! Stand up, please. Put on this coat, please. Okay. How nice! Good! I like this coat. It’s raining. It’s windy, too. It’s okay. Umbrella, please. Haha~ Put on your coat, please! Haha ... It’s too cold! You can go to the Christmas party. Mr. Lawrence is waiting for you all. Great! Meg, is this your dress? Yes, it’s mine. Is this your hat? No, it’s not mine. Mom, how’s the weather outside? It’s cold and snowy. Please put on your coats, everyone. Mom. Put on your gloves, too. Mom, my shoes are too small. Take these. You can have mine. You’re very kind. Good! Let’s go. We’re late. Mr. Lawrence. Welcome, you all . Come in, please. Mr. Lawrence. Nice to meet you.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Put on It's snowing!",
+      "start": 3.38,
+      "duration": 16.38
+    },
+    {
+      "id": 2,
+      "text": "Let's play outside.",
+      "start": 20.54,
+      "duration": 2.36
+    },
+    {
+      "id": 3,
+      "text": "Okay!",
+      "start": 23.94,
+      "duration": 1.38
+    },
+    {
+      "id": 4,
+      "text": "It's cold and windy.",
+      "start": 28.16,
+      "duration": 2.28
+    },
+    {
+      "id": 5,
+      "text": "Put on your coat, please.",
+      "start": 31.04,
+      "duration": 2.12
+    },
+    {
+      "id": 6,
+      "text": "Thank you, mom!",
+      "start": 33.36,
+      "duration": 1.56
+    },
+    {
+      "id": 7,
+      "text": "Put on your...",
+      "start": 35.1,
+      "duration": 1.32
+    },
+    {
+      "id": 8,
+      "text": "Gloves, mom!",
+      "start": 36.74,
+      "duration": 1.66
+    },
+    {
+      "id": 9,
+      "text": "It’s sunny, but cold outside.",
+      "start": 52.1,
+      "duration": 2.8
+    },
+    {
+      "id": 10,
+      "text": "Let’s check the presents.",
+      "start": 56.94,
+      "duration": 2.22
+    },
+    {
+      "id": 11,
+      "text": "Gloves, socks, hats, and balloons.",
+      "start": 60.84,
+      "duration": 4.24
+    },
+    {
+      "id": 12,
+      "text": "Pies and cookies, too.",
+      "start": 65.2,
+      "duration": 2.32
+    },
+    {
+      "id": 13,
+      "text": "Good.",
+      "start": 69.14,
+      "duration": 1.08
+    },
+    {
+      "id": 14,
+      "text": "Put on your pants.",
+      "start": 70.68,
+      "duration": 1.62
+    },
+    {
+      "id": 15,
+      "text": "Is this mine?",
+      "start": 73.44,
+      "duration": 1.74
+    },
+    {
+      "id": 16,
+      "text": "Yes, it’s yours.",
+      "start": 75.18,
+      "duration": 1.44
+    },
+    {
+      "id": 17,
+      "text": "Put on your coat, too.",
+      "start": 76.62,
+      "duration": 1.84
+    },
+    {
+      "id": 18,
+      "text": "Is this yours?",
+      "start": 80.16,
+      "duration": 1.66
+    },
+    {
+      "id": 19,
+      "text": "No, it’s not mine.",
+      "start": 82.2,
+      "duration": 2.68
+    },
+    {
+      "id": 20,
+      "text": "Oh, it’s mine.",
+      "start": 85,
+      "duration": 2.2
+    },
+    {
+      "id": 21,
+      "text": "Okay!",
+      "start": 87.44,
+      "duration": 0.65
+    },
+    {
+      "id": 22,
+      "text": "Now, let’s go.",
+      "start": 88.085,
+      "duration": 1.94
+    },
+    {
+      "id": 23,
+      "text": "Thank you for coming.",
+      "start": 94.38,
+      "duration": 1.58
+    },
+    {
+      "id": 24,
+      "text": "You’re welcome.",
+      "start": 96.64,
+      "duration": 1.08
+    },
+    {
+      "id": 25,
+      "text": "Nice to see you.",
+      "start": 97.72,
+      "duration": 2.16
+    },
+    {
+      "id": 26,
+      "text": "It’s cold and snowy.",
+      "start": 100.9,
+      "duration": 2.34
+    },
+    {
+      "id": 27,
+      "text": "How are you all?",
+      "start": 103.24,
+      "duration": 1.42
+    },
+    {
+      "id": 28,
+      "text": "Fine, thanks.",
+      "start": 104.82,
+      "duration": 2
+    },
+    {
+      "id": 29,
+      "text": "Is this mine?",
+      "start": 109.86,
+      "duration": 1.68
+    },
+    {
+      "id": 30,
+      "text": "Yes, it's yours.",
+      "start": 111.78,
+      "duration": 1.76
+    },
+    {
+      "id": 31,
+      "text": "I made it for you.",
+      "start": 113.54,
+      "duration": 1.8
+    },
+    {
+      "id": 32,
+      "text": "My hat is great!",
+      "start": 116.22,
+      "duration": 2.23
+    },
+    {
+      "id": 33,
+      "text": "I'm a queen!",
+      "start": 118.44857142857143,
+      "duration": 1.67
+    },
+    {
+      "id": 34,
+      "text": "Let's play outside.",
+      "start": 134.16,
+      "duration": 2.02
+    },
+    {
+      "id": 35,
+      "text": "It's snowing.",
+      "start": 136.28,
+      "duration": 1.8
+    },
+    {
+      "id": 36,
+      "text": "It's snowing.",
+      "start": 138.08,
+      "duration": 1.8
+    },
+    {
+      "id": 37,
+      "text": "Put on your sweater.",
+      "start": 140.02,
+      "duration": 1.84
+    },
+    {
+      "id": 38,
+      "text": "Put on your sweater.",
+      "start": 141.86,
+      "duration": 1.84
+    },
+    {
+      "id": 39,
+      "text": "Put on your coat.",
+      "start": 143.76,
+      "duration": 2.16
+    },
+    {
+      "id": 40,
+      "text": "Put on your coat.",
+      "start": 145.92,
+      "duration": 2.16
+    },
+    {
+      "id": 41,
+      "text": "Okay!",
+      "start": 149.12,
+      "duration": 0.64
+    },
+    {
+      "id": 42,
+      "text": "Okay!",
+      "start": 149.75666666666666,
+      "duration": 0.64
+    },
+    {
+      "id": 43,
+      "text": "Thanks, mom.",
+      "start": 150.39333333333332,
+      "duration": 1.27
+    },
+    {
+      "id": 44,
+      "text": "Thank you.",
+      "start": 151.66666666666666,
+      "duration": 1.27
+    },
+    {
+      "id": 45,
+      "text": "Let's play outside.",
+      "start": 153,
+      "duration": 1.78
+    },
+    {
+      "id": 46,
+      "text": "It's cold.",
+      "start": 154.78,
+      "duration": 1.8
+    },
+    {
+      "id": 47,
+      "text": "It's cold.",
+      "start": 156.58,
+      "duration": 1.8
+    },
+    {
+      "id": 48,
+      "text": "Put on your hat.",
+      "start": 158.38,
+      "duration": 1.89
+    },
+    {
+      "id": 49,
+      "text": "Put on your hat.",
+      "start": 160.26999999999998,
+      "duration": 1.89
+    },
+    {
+      "id": 50,
+      "text": "Put on your gloves.",
+      "start": 162.16,
+      "duration": 2.36
+    },
+    {
+      "id": 51,
+      "text": "Put on your gloves.",
+      "start": 164.52,
+      "duration": 2.36
+    },
+    {
+      "id": 52,
+      "text": "Okay!",
+      "start": 167.64,
+      "duration": 0.68
+    },
+    {
+      "id": 53,
+      "text": "Okay!",
+      "start": 168.32333333333332,
+      "duration": 0.68
+    },
+    {
+      "id": 54,
+      "text": "Thanks, mom.",
+      "start": 169.00666666666666,
+      "duration": 1.37
+    },
+    {
+      "id": 55,
+      "text": "Thanks, mom.",
+      "start": 170.37333333333333,
+      "duration": 1.37
+    },
+    {
+      "id": 56,
+      "text": "Socks, hat, coat.",
+      "start": 184.68,
+      "duration": 3.3
+    },
+    {
+      "id": 57,
+      "text": "It's cold.",
+      "start": 188.22,
+      "duration": 1.9
+    },
+    {
+      "id": 58,
+      "text": "It's cold.",
+      "start": 190.12,
+      "duration": 1.9
+    },
+    {
+      "id": 59,
+      "text": "Put on your coat.",
+      "start": 192.42,
+      "duration": 1.99
+    },
+    {
+      "id": 60,
+      "text": "Put on your hat.",
+      "start": 194.41,
+      "duration": 1.99
+    },
+    {
+      "id": 61,
+      "text": "Put on your socks.",
+      "start": 196.4,
+      "duration": 1.74
+    },
+    {
+      "id": 62,
+      "text": "Okay!",
+      "start": 198.18,
+      "duration": 0.74
+    },
+    {
+      "id": 63,
+      "text": "Okay!",
+      "start": 198.92000000000002,
+      "duration": 0.74
+    },
+    {
+      "id": 64,
+      "text": "Okay!",
+      "start": 199.66000000000003,
+      "duration": 0.74
+    },
+    {
+      "id": 65,
+      "text": "Sweater, gloves, coat.",
+      "start": 203.92,
+      "duration": 3.02
+    },
+    {
+      "id": 66,
+      "text": "It's cold.",
+      "start": 207.3,
+      "duration": 1.86
+    },
+    {
+      "id": 67,
+      "text": "It's cold.",
+      "start": 209.16000000000003,
+      "duration": 1.86
+    },
+    {
+      "id": 68,
+      "text": "Put on your sweater.",
+      "start": 211.56,
+      "duration": 1.91
+    },
+    {
+      "id": 69,
+      "text": "Put on your gloves.",
+      "start": 213.47,
+      "duration": 1.91
+    },
+    {
+      "id": 70,
+      "text": "Put on your coat.",
+      "start": 215.38,
+      "duration": 1.86
+    },
+    {
+      "id": 71,
+      "text": "Okay!",
+      "start": 217.3,
+      "duration": 0.74
+    },
+    {
+      "id": 72,
+      "text": "Okay!",
+      "start": 218.04000000000002,
+      "duration": 0.74
+    },
+    {
+      "id": 73,
+      "text": "Okay!",
+      "start": 218.78000000000003,
+      "duration": 0.74
+    },
+    {
+      "id": 74,
+      "text": "I don’t like the red coat.",
+      "start": 236.3,
+      "duration": 2.64
+    },
+    {
+      "id": 75,
+      "text": "Do you like this coat?",
+      "start": 239.88,
+      "duration": 2.1
+    },
+    {
+      "id": 76,
+      "text": "I don’t.",
+      "start": 242.94,
+      "duration": 1.58
+    },
+    {
+      "id": 77,
+      "text": "They can make a good coat.",
+      "start": 253.92,
+      "duration": 2.52
+    },
+    {
+      "id": 78,
+      "text": "Great!",
+      "start": 256.72,
+      "duration": 0.66
+    },
+    {
+      "id": 79,
+      "text": "Make a good coat.",
+      "start": 257.37600000000003,
+      "duration": 2.62
+    },
+    {
+      "id": 80,
+      "text": "Okay!",
+      "start": 260.3,
+      "duration": 1.3
+    },
+    {
+      "id": 81,
+      "text": "Stand up, please.",
+      "start": 270.18,
+      "duration": 1.92
+    },
+    {
+      "id": 82,
+      "text": "Put on this coat, please.",
+      "start": 274.24,
+      "duration": 2
+    },
+    {
+      "id": 83,
+      "text": "Okay.",
+      "start": 278.48,
+      "duration": 1.08
+    },
+    {
+      "id": 84,
+      "text": "How nice!",
+      "start": 285,
+      "duration": 1.66
+    },
+    {
+      "id": 85,
+      "text": "Good!",
+      "start": 287.3,
+      "duration": 0.53
+    },
+    {
+      "id": 86,
+      "text": "I like this coat.",
+      "start": 287.832,
+      "duration": 2.13
+    },
+    {
+      "id": 87,
+      "text": "It’s raining.",
+      "start": 300.7,
+      "duration": 1.84
+    },
+    {
+      "id": 88,
+      "text": "It’s windy, too.",
+      "start": 302.96,
+      "duration": 2.26
+    },
+    {
+      "id": 89,
+      "text": "It’s okay.",
+      "start": 307.9,
+      "duration": 1.65
+    },
+    {
+      "id": 90,
+      "text": "Umbrella, please.",
+      "start": 309.54999999999995,
+      "duration": 1.65
+    },
+    {
+      "id": 91,
+      "text": "Haha~ Put on your coat, please!",
+      "start": 313.58,
+      "duration": 3.14
+    },
+    {
+      "id": 92,
+      "text": "Haha ...",
+      "start": 316.96,
+      "duration": 2.82
+    },
+    {
+      "id": 93,
+      "text": "It’s too cold!",
+      "start": 320.32,
+      "duration": 2.12
+    },
+    {
+      "id": 94,
+      "text": "You can go to the Christmas party.",
+      "start": 333.92,
+      "duration": 2.56
+    },
+    {
+      "id": 95,
+      "text": "Mr.",
+      "start": 336.48,
+      "duration": 0.39
+    },
+    {
+      "id": 96,
+      "text": "Lawrence is waiting for you all.",
+      "start": 336.86857142857144,
+      "duration": 2.33
+    },
+    {
+      "id": 97,
+      "text": "Great!",
+      "start": 339.2,
+      "duration": 1.36
+    },
+    {
+      "id": 98,
+      "text": "Meg, is this your dress?",
+      "start": 344.92,
+      "duration": 2.76
+    },
+    {
+      "id": 99,
+      "text": "Yes, it’s mine.",
+      "start": 347.74,
+      "duration": 2.3
+    },
+    {
+      "id": 100,
+      "text": "Is this your hat?",
+      "start": 350.72,
+      "duration": 1.64
+    },
+    {
+      "id": 101,
+      "text": "No, it’s not mine.",
+      "start": 352.66,
+      "duration": 2.44
+    },
+    {
+      "id": 102,
+      "text": "Mom, how’s the weather outside?",
+      "start": 355.1,
+      "duration": 3.1
+    },
+    {
+      "id": 103,
+      "text": "It’s cold and snowy.",
+      "start": 358.84,
+      "duration": 1.76
+    },
+    {
+      "id": 104,
+      "text": "Please put on your coats, everyone.",
+      "start": 360.62,
+      "duration": 2.4
+    },
+    {
+      "id": 105,
+      "text": "Mom.",
+      "start": 363.06,
+      "duration": 1.46
+    },
+    {
+      "id": 106,
+      "text": "Put on your gloves, too.",
+      "start": 364.66,
+      "duration": 1.98
+    },
+    {
+      "id": 107,
+      "text": "Mom, my shoes are too small.",
+      "start": 366.86,
+      "duration": 3.04
+    },
+    {
+      "id": 108,
+      "text": "Take these.",
+      "start": 370.16,
+      "duration": 1.14
+    },
+    {
+      "id": 109,
+      "text": "You can have mine.",
+      "start": 371.3,
+      "duration": 2.28
+    },
+    {
+      "id": 110,
+      "text": "You’re very kind.",
+      "start": 376.64,
+      "duration": 1.9
+    },
+    {
+      "id": 111,
+      "text": "Good!",
+      "start": 378.84,
+      "duration": 0.75
+    },
+    {
+      "id": 112,
+      "text": "Let’s go.",
+      "start": 379.58799999999997,
+      "duration": 1.5
+    },
+    {
+      "id": 113,
+      "text": "We’re late.",
+      "start": 381.08399999999995,
+      "duration": 1.5
+    },
+    {
+      "id": 114,
+      "text": "Mr.",
+      "start": 390.02,
+      "duration": 1.1
+    },
+    {
+      "id": 115,
+      "text": "Lawrence.",
+      "start": 391.12,
+      "duration": 1.1
+    },
+    {
+      "id": 116,
+      "text": "Welcome, you all .",
+      "start": 392.62,
+      "duration": 1.97
+    },
+    {
+      "id": 117,
+      "text": "Come in, please.",
+      "start": 394.5857142857143,
+      "duration": 1.47
+    },
+    {
+      "id": 118,
+      "text": "Mr.",
+      "start": 396.06,
+      "duration": 0.51
+    },
+    {
+      "id": 119,
+      "text": "Lawrence.",
+      "start": 396.56666666666666,
+      "duration": 0.51
+    },
+    {
+      "id": 120,
+      "text": "Nice to meet you.",
+      "start": 397.0733333333333,
+      "duration": 2.03
+    }
+  ],
+  "fetchedAt": "2026-07-01T07:32:58.113Z",
+  "videoId": "5e3kVR3wSSM",
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.347Z"
+}

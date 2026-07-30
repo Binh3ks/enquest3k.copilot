@@ -1,1 +1,681 @@
-{"text":"Good morning. Good morning, everyone. How are you? Fine, thanks. How are you? Great! Come in, please. Nice to meet you. Kate. Nice to meet you, too. Sit down, please. Thank you. This is the music room. Wow! They are good. That's the school library. Wow! Many books! Good afternoon, everyone. Mr. Kim. Kate. How are you? I'm great. Nice to meet you, Kate. Good morning. Good morning. Jiho. This is Bomi. Jiho. Bomi. Good afternoon. Good afternoon. Wiz. This is Wiki. Wiz. Wiki. Good morning. Good morning. Good morning. How are you? I'm fine. I'm fine. I'm fine. Thank you. Good afternoon. Good afternoon. Good afternoon. How are you? I'm not good. I'm not good. I'm not good. Oh, no. Good evening. Good evening. Good evening. How are you? I'm great. I'm great. I'm great. Thank you. Good morning, morning, morning. Good afternoon, afternoon, afternoon. Good evening, evening, evening. Jiho. This is Bomi. Toto. Bunny. Okay. I'm Kiki. Kiki. I'm Toto. Foxy. This is Toto. Toto. I'm Foxy. Bunny. Bunny. Good afternoon. Good evening. Good evening. Good bye. Bye. Good morning! Nice to meet you. Nice to meet you. How are you? Um... I'm Okay. How are you? Fine, thank you. Hahaha. Let's go! Good afternoon! How are you? Not good! Thank you! Are you okay? Hahaha! I'm great. Let's go! Are you okay? I'm not okay! I'm not happy! Oh no... Good evening, everyone! Who are you? Oh, no! It's a lion! Wow, you are a great lion! Thank you! Now, let's go to OZ!","segments":[{"id":1,"text":"Good morning.","start":16.26,"duration":1.28},{"id":2,"text":"Good morning, everyone.","start":18.52,"duration":1.4},{"id":3,"text":"How are you?","start":21.04,"duration":1.04},{"id":4,"text":"Fine, thanks. How are you?","start":23.24,"duration":2.04},{"id":5,"text":"Great!","start":26.5,"duration":0.88},{"id":6,"text":"Come in, please.","start":28.3,"duration":1.12},{"id":7,"text":"Nice to meet you.","start":32.46,"duration":1.28},{"id":8,"text":"Kate.","start":34.68,"duration":1.48},{"id":9,"text":"Nice to meet you, too.","start":37.5,"duration":1.82},{"id":10,"text":"Sit down, please.","start":42.12,"duration":1.42},{"id":11,"text":"Thank you.","start":44.26,"duration":0.76},{"id":12,"text":"This is the music room.","start":62.98,"duration":1.28},{"id":13,"text":"Wow! They are good.","start":66.8,"duration":2.46},{"id":14,"text":"That's the school library.","start":78.4,"duration":2.06},{"id":15,"text":"Wow! Many books!","start":84.08,"duration":2.26},{"id":16,"text":"Good afternoon, everyone.","start":89.36,"duration":1.84},{"id":17,"text":"Mr. Kim.","start":91.74,"duration":1.8},{"id":18,"text":"Kate. How are you?","start":96.54,"duration":2.7},{"id":19,"text":"I'm great. Nice to meet you, Kate.","start":100.52,"duration":3.18},{"id":20,"text":"Good morning. Good morning.","start":117.68,"duration":3.1},{"id":21,"text":"Jiho. This is Bomi.","start":121.28,"duration":3.4},{"id":22,"text":"Jiho.","start":124.88,"duration":3.04},{"id":23,"text":"Bomi.","start":128.5,"duration":2.8},{"id":24,"text":"Good afternoon. Good afternoon.","start":135.68,"duration":3.24},{"id":25,"text":"Wiz. This is Wiki.","start":139.36,"duration":3.36},{"id":26,"text":"Wiz.","start":142.92,"duration":3.16},{"id":27,"text":"Wiki.","start":146.56,"duration":3.04},{"id":28,"text":"Good morning. Good morning.","start":163.04,"duration":1.98},{"id":29,"text":"Good morning. How are you?","start":165.16,"duration":1.94},{"id":30,"text":"I'm fine. I'm fine.","start":167.24,"duration":2},{"id":31,"text":"I'm fine. Thank you.","start":169.3,"duration":2.16},{"id":32,"text":"Good afternoon. Good afternoon.","start":171.56,"duration":2.24},{"id":33,"text":"Good afternoon. How are you?","start":173.92,"duration":1.92},{"id":34,"text":"I'm not good. I'm not good.","start":175.9,"duration":2.22},{"id":35,"text":"I'm not good. Oh, no.","start":178.28,"duration":2.02},{"id":36,"text":"Good evening. Good evening.","start":184.86,"duration":2.08},{"id":37,"text":"Good evening. How are you?","start":187,"duration":2.06},{"id":38,"text":"I'm great. I'm great.","start":189.16,"duration":1.92},{"id":39,"text":"I'm great. Thank you.","start":191.16,"duration":2.18},{"id":40,"text":"Good morning, morning, morning.","start":207.06,"duration":3.28},{"id":41,"text":"Good afternoon, afternoon, afternoon.","start":210.64,"duration":3.94},{"id":42,"text":"Good evening, evening, evening.","start":214.64,"duration":3.78},{"id":43,"text":"Jiho. This is Bomi.","start":218.62,"duration":3.8},{"id":44,"text":"Toto.","start":232.6,"duration":1.88},{"id":45,"text":"Bunny.","start":235.1,"duration":1.5},{"id":46,"text":"Okay.","start":247.68,"duration":1.2},{"id":47,"text":"I'm Kiki.","start":256.46,"duration":1.9},{"id":48,"text":"Kiki. I'm Toto.","start":259.08,"duration":2.9},{"id":49,"text":"Foxy. This is Toto.","start":263.54,"duration":3.48},{"id":50,"text":"Toto. I'm Foxy.","start":267.56,"duration":2.74},{"id":51,"text":"Bunny.","start":279.12,"duration":1.14},{"id":52,"text":"Bunny.","start":281.36,"duration":1.62},{"id":53,"text":"Good afternoon.","start":285.22,"duration":1.16},{"id":54,"text":"Good evening.","start":296.18,"duration":1.06},{"id":55,"text":"Good evening.","start":297.8,"duration":1.52},{"id":56,"text":"Good bye.","start":299.62,"duration":1.06},{"id":57,"text":"Bye.","start":301.22,"duration":0.78},{"id":58,"text":"Good morning! Nice to meet you.","start":318.46,"duration":2.52},{"id":59,"text":"Nice to meet you.","start":322.08,"duration":1.36},{"id":60,"text":"How are you?","start":324.48,"duration":0.92},{"id":61,"text":"Um... I'm Okay. How are you?","start":329.12,"duration":3.72},{"id":62,"text":"Fine, thank you.","start":334.12,"duration":1.78},{"id":63,"text":"Hahaha.","start":337.26,"duration":0.9},{"id":64,"text":"Let's go!","start":340,"duration":1.08},{"id":65,"text":"Good afternoon! How are you?","start":347.48,"duration":2.48},{"id":66,"text":"Not good!","start":351.52,"duration":0.86},{"id":67,"text":"Thank you!","start":360.1,"duration":0.78},{"id":68,"text":"Are you okay?","start":362.02,"duration":1.24},{"id":69,"text":"Hahaha! I'm great.","start":365.08,"duration":1.96},{"id":70,"text":"Let's go!","start":371.32,"duration":1.2},{"id":71,"text":"Are you okay?","start":379.3,"duration":1.38},{"id":72,"text":"I'm not okay! I'm not happy!","start":383.46,"duration":3.92},{"id":73,"text":"Oh no...","start":392.38,"duration":1.44},{"id":74,"text":"Good evening, everyone!","start":398.12,"duration":1.44},{"id":75,"text":"Who are you?","start":401.22,"duration":1.06},{"id":76,"text":"Oh, no!","start":405.32,"duration":1.62},{"id":77,"text":"It's a lion!","start":410.44,"duration":1.02},{"id":78,"text":"Wow, you are a great lion!","start":416.76,"duration":2.56},{"id":79,"text":"Thank you!","start":421.22,"duration":0.98},{"id":80,"text":"Now, let's go to OZ!","start":423.26,"duration":2.5}],"fetchedAt":"2026-07-01T07:33:26.813Z","videoId":"Fw0rdSHzWFY"}
+{
+  "text": "Good morning. Good morning, everyone. How are you? Fine, thanks. How are you? Great! Come in, please. Nice to meet you. Kate. Nice to meet you, too. Sit down, please. Thank you. This is the music room. Wow! They are good. That's the school library. Wow! Many books! Good afternoon, everyone. Mr. Kim. Kate. How are you? I'm great. Nice to meet you, Kate. Good morning. Good morning. Jiho. This is Bomi. Jiho. Bomi. Good afternoon. Good afternoon. Wiz. This is Wiki. Wiz. Wiki. Good morning. Good morning. Good morning. How are you? I'm fine. I'm fine. I'm fine. Thank you. Good afternoon. Good afternoon. Good afternoon. How are you? I'm not good. I'm not good. I'm not good. Oh, no. Good evening. Good evening. Good evening. How are you? I'm great. I'm great. I'm great. Thank you. Good morning, morning, morning. Good afternoon, afternoon, afternoon. Good evening, evening, evening. Jiho. This is Bomi. Toto. Bunny. Okay. I'm Kiki. Kiki. I'm Toto. Foxy. This is Toto. Toto. I'm Foxy. Bunny. Bunny. Good afternoon. Good evening. Good evening. Good bye. Bye. Good morning! Nice to meet you. Nice to meet you. How are you? Um... I'm Okay. How are you? Fine, thank you. Hahaha. Let's go! Good afternoon! How are you? Not good! Thank you! Are you okay? Hahaha! I'm great. Let's go! Are you okay? I'm not okay! I'm not happy! Oh no... Good evening, everyone! Who are you? Oh, no! It's a lion! Wow, you are a great lion! Thank you! Now, let's go to OZ!",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Good morning.",
+      "start": 16.26,
+      "duration": 1.28
+    },
+    {
+      "id": 2,
+      "text": "Good morning, everyone.",
+      "start": 18.52,
+      "duration": 1.4
+    },
+    {
+      "id": 3,
+      "text": "How are you?",
+      "start": 21.04,
+      "duration": 1.04
+    },
+    {
+      "id": 4,
+      "text": "Fine, thanks.",
+      "start": 23.24,
+      "duration": 0.82
+    },
+    {
+      "id": 5,
+      "text": "How are you?",
+      "start": 24.055999999999997,
+      "duration": 1.22
+    },
+    {
+      "id": 6,
+      "text": "Great!",
+      "start": 26.5,
+      "duration": 0.88
+    },
+    {
+      "id": 7,
+      "text": "Come in, please.",
+      "start": 28.3,
+      "duration": 1.12
+    },
+    {
+      "id": 8,
+      "text": "Nice to meet you.",
+      "start": 32.46,
+      "duration": 1.28
+    },
+    {
+      "id": 9,
+      "text": "Kate.",
+      "start": 34.68,
+      "duration": 1.48
+    },
+    {
+      "id": 10,
+      "text": "Nice to meet you, too.",
+      "start": 37.5,
+      "duration": 1.82
+    },
+    {
+      "id": 11,
+      "text": "Sit down, please.",
+      "start": 42.12,
+      "duration": 1.42
+    },
+    {
+      "id": 12,
+      "text": "Thank you.",
+      "start": 44.26,
+      "duration": 0.76
+    },
+    {
+      "id": 13,
+      "text": "This is the music room.",
+      "start": 62.98,
+      "duration": 1.28
+    },
+    {
+      "id": 14,
+      "text": "Wow!",
+      "start": 66.8,
+      "duration": 0.62
+    },
+    {
+      "id": 15,
+      "text": "They are good.",
+      "start": 67.41499999999999,
+      "duration": 1.85
+    },
+    {
+      "id": 16,
+      "text": "That's the school library.",
+      "start": 78.4,
+      "duration": 2.06
+    },
+    {
+      "id": 17,
+      "text": "Wow!",
+      "start": 84.08,
+      "duration": 0.75
+    },
+    {
+      "id": 18,
+      "text": "Many books!",
+      "start": 84.83333333333333,
+      "duration": 1.51
+    },
+    {
+      "id": 19,
+      "text": "Good afternoon, everyone.",
+      "start": 89.36,
+      "duration": 1.84
+    },
+    {
+      "id": 20,
+      "text": "Mr.",
+      "start": 91.74,
+      "duration": 0.9
+    },
+    {
+      "id": 21,
+      "text": "Kim.",
+      "start": 92.64,
+      "duration": 0.9
+    },
+    {
+      "id": 22,
+      "text": "Kate.",
+      "start": 96.54,
+      "duration": 0.68
+    },
+    {
+      "id": 23,
+      "text": "How are you?",
+      "start": 97.215,
+      "duration": 2.03
+    },
+    {
+      "id": 24,
+      "text": "I'm great.",
+      "start": 100.52,
+      "duration": 0.91
+    },
+    {
+      "id": 25,
+      "text": "Nice to meet you, Kate.",
+      "start": 101.42857142857143,
+      "duration": 2.27
+    },
+    {
+      "id": 26,
+      "text": "Good morning.",
+      "start": 117.68,
+      "duration": 1.55
+    },
+    {
+      "id": 27,
+      "text": "Good morning.",
+      "start": 119.23,
+      "duration": 1.55
+    },
+    {
+      "id": 28,
+      "text": "Jiho.",
+      "start": 121.28,
+      "duration": 0.85
+    },
+    {
+      "id": 29,
+      "text": "This is Bomi.",
+      "start": 122.13,
+      "duration": 2.55
+    },
+    {
+      "id": 30,
+      "text": "Jiho.",
+      "start": 124.88,
+      "duration": 3.04
+    },
+    {
+      "id": 31,
+      "text": "Bomi.",
+      "start": 128.5,
+      "duration": 2.8
+    },
+    {
+      "id": 32,
+      "text": "Good afternoon.",
+      "start": 135.68,
+      "duration": 1.62
+    },
+    {
+      "id": 33,
+      "text": "Good afternoon.",
+      "start": 137.3,
+      "duration": 1.62
+    },
+    {
+      "id": 34,
+      "text": "Wiz.",
+      "start": 139.36,
+      "duration": 0.84
+    },
+    {
+      "id": 35,
+      "text": "This is Wiki.",
+      "start": 140.20000000000002,
+      "duration": 2.52
+    },
+    {
+      "id": 36,
+      "text": "Wiz.",
+      "start": 142.92,
+      "duration": 3.16
+    },
+    {
+      "id": 37,
+      "text": "Wiki.",
+      "start": 146.56,
+      "duration": 3.04
+    },
+    {
+      "id": 38,
+      "text": "Good morning.",
+      "start": 163.04,
+      "duration": 0.99
+    },
+    {
+      "id": 39,
+      "text": "Good morning.",
+      "start": 164.03,
+      "duration": 0.99
+    },
+    {
+      "id": 40,
+      "text": "Good morning.",
+      "start": 165.16,
+      "duration": 0.78
+    },
+    {
+      "id": 41,
+      "text": "How are you?",
+      "start": 165.936,
+      "duration": 1.16
+    },
+    {
+      "id": 42,
+      "text": "I'm fine.",
+      "start": 167.24,
+      "duration": 1
+    },
+    {
+      "id": 43,
+      "text": "I'm fine.",
+      "start": 168.24,
+      "duration": 1
+    },
+    {
+      "id": 44,
+      "text": "I'm fine.",
+      "start": 169.3,
+      "duration": 1.08
+    },
+    {
+      "id": 45,
+      "text": "Thank you.",
+      "start": 170.38000000000002,
+      "duration": 1.08
+    },
+    {
+      "id": 46,
+      "text": "Good afternoon.",
+      "start": 171.56,
+      "duration": 1.12
+    },
+    {
+      "id": 47,
+      "text": "Good afternoon.",
+      "start": 172.68,
+      "duration": 1.12
+    },
+    {
+      "id": 48,
+      "text": "Good afternoon.",
+      "start": 173.92,
+      "duration": 0.77
+    },
+    {
+      "id": 49,
+      "text": "How are you?",
+      "start": 174.688,
+      "duration": 1.15
+    },
+    {
+      "id": 50,
+      "text": "I'm not good.",
+      "start": 175.9,
+      "duration": 1.11
+    },
+    {
+      "id": 51,
+      "text": "I'm not good.",
+      "start": 177.01000000000002,
+      "duration": 1.11
+    },
+    {
+      "id": 52,
+      "text": "I'm not good.",
+      "start": 178.28,
+      "duration": 1.21
+    },
+    {
+      "id": 53,
+      "text": "Oh, no.",
+      "start": 179.492,
+      "duration": 0.81
+    },
+    {
+      "id": 54,
+      "text": "Good evening.",
+      "start": 184.86,
+      "duration": 1.04
+    },
+    {
+      "id": 55,
+      "text": "Good evening.",
+      "start": 185.9,
+      "duration": 1.04
+    },
+    {
+      "id": 56,
+      "text": "Good evening.",
+      "start": 187,
+      "duration": 0.82
+    },
+    {
+      "id": 57,
+      "text": "How are you?",
+      "start": 187.824,
+      "duration": 1.24
+    },
+    {
+      "id": 58,
+      "text": "I'm great.",
+      "start": 189.16,
+      "duration": 0.96
+    },
+    {
+      "id": 59,
+      "text": "I'm great.",
+      "start": 190.12,
+      "duration": 0.96
+    },
+    {
+      "id": 60,
+      "text": "I'm great.",
+      "start": 191.16,
+      "duration": 1.09
+    },
+    {
+      "id": 61,
+      "text": "Thank you.",
+      "start": 192.25,
+      "duration": 1.09
+    },
+    {
+      "id": 62,
+      "text": "Good morning, morning, morning.",
+      "start": 207.06,
+      "duration": 3.28
+    },
+    {
+      "id": 63,
+      "text": "Good afternoon, afternoon, afternoon.",
+      "start": 210.64,
+      "duration": 3.94
+    },
+    {
+      "id": 64,
+      "text": "Good evening, evening, evening.",
+      "start": 214.64,
+      "duration": 3.78
+    },
+    {
+      "id": 65,
+      "text": "Jiho.",
+      "start": 218.62,
+      "duration": 0.95
+    },
+    {
+      "id": 66,
+      "text": "This is Bomi.",
+      "start": 219.57,
+      "duration": 2.85
+    },
+    {
+      "id": 67,
+      "text": "Toto.",
+      "start": 232.6,
+      "duration": 1.88
+    },
+    {
+      "id": 68,
+      "text": "Bunny.",
+      "start": 235.1,
+      "duration": 1.5
+    },
+    {
+      "id": 69,
+      "text": "Okay.",
+      "start": 247.68,
+      "duration": 1.2
+    },
+    {
+      "id": 70,
+      "text": "I'm Kiki.",
+      "start": 256.46,
+      "duration": 1.9
+    },
+    {
+      "id": 71,
+      "text": "Kiki.",
+      "start": 259.08,
+      "duration": 0.97
+    },
+    {
+      "id": 72,
+      "text": "I'm Toto.",
+      "start": 260.0466666666666,
+      "duration": 1.93
+    },
+    {
+      "id": 73,
+      "text": "Foxy.",
+      "start": 263.54,
+      "duration": 0.87
+    },
+    {
+      "id": 74,
+      "text": "This is Toto.",
+      "start": 264.41,
+      "duration": 2.61
+    },
+    {
+      "id": 75,
+      "text": "Toto.",
+      "start": 267.56,
+      "duration": 0.91
+    },
+    {
+      "id": 76,
+      "text": "I'm Foxy.",
+      "start": 268.47333333333336,
+      "duration": 1.83
+    },
+    {
+      "id": 77,
+      "text": "Bunny.",
+      "start": 279.12,
+      "duration": 1.14
+    },
+    {
+      "id": 78,
+      "text": "Bunny.",
+      "start": 281.36,
+      "duration": 1.62
+    },
+    {
+      "id": 79,
+      "text": "Good afternoon.",
+      "start": 285.22,
+      "duration": 1.16
+    },
+    {
+      "id": 80,
+      "text": "Good evening.",
+      "start": 296.18,
+      "duration": 1.06
+    },
+    {
+      "id": 81,
+      "text": "Good evening.",
+      "start": 297.8,
+      "duration": 1.52
+    },
+    {
+      "id": 82,
+      "text": "Good bye.",
+      "start": 299.62,
+      "duration": 1.06
+    },
+    {
+      "id": 83,
+      "text": "Bye.",
+      "start": 301.22,
+      "duration": 0.78
+    },
+    {
+      "id": 84,
+      "text": "Good morning!",
+      "start": 318.46,
+      "duration": 0.84
+    },
+    {
+      "id": 85,
+      "text": "Nice to meet you.",
+      "start": 319.29999999999995,
+      "duration": 1.68
+    },
+    {
+      "id": 86,
+      "text": "Nice to meet you.",
+      "start": 322.08,
+      "duration": 1.36
+    },
+    {
+      "id": 87,
+      "text": "How are you?",
+      "start": 324.48,
+      "duration": 0.92
+    },
+    {
+      "id": 88,
+      "text": "Um...",
+      "start": 329.12,
+      "duration": 0.62
+    },
+    {
+      "id": 89,
+      "text": "I'm Okay.",
+      "start": 329.74,
+      "duration": 1.24
+    },
+    {
+      "id": 90,
+      "text": "How are you?",
+      "start": 330.98,
+      "duration": 1.86
+    },
+    {
+      "id": 91,
+      "text": "Fine, thank you.",
+      "start": 334.12,
+      "duration": 1.78
+    },
+    {
+      "id": 92,
+      "text": "Hahaha.",
+      "start": 337.26,
+      "duration": 0.9
+    },
+    {
+      "id": 93,
+      "text": "Let's go!",
+      "start": 340,
+      "duration": 1.08
+    },
+    {
+      "id": 94,
+      "text": "Good afternoon!",
+      "start": 347.48,
+      "duration": 0.99
+    },
+    {
+      "id": 95,
+      "text": "How are you?",
+      "start": 348.47200000000004,
+      "duration": 1.49
+    },
+    {
+      "id": 96,
+      "text": "Not good!",
+      "start": 351.52,
+      "duration": 0.86
+    },
+    {
+      "id": 97,
+      "text": "Thank you!",
+      "start": 360.1,
+      "duration": 0.78
+    },
+    {
+      "id": 98,
+      "text": "Are you okay?",
+      "start": 362.02,
+      "duration": 1.24
+    },
+    {
+      "id": 99,
+      "text": "Hahaha!",
+      "start": 365.08,
+      "duration": 0.65
+    },
+    {
+      "id": 100,
+      "text": "I'm great.",
+      "start": 365.7333333333333,
+      "duration": 1.31
+    },
+    {
+      "id": 101,
+      "text": "Let's go!",
+      "start": 371.32,
+      "duration": 1.2
+    },
+    {
+      "id": 102,
+      "text": "Are you okay?",
+      "start": 379.3,
+      "duration": 1.38
+    },
+    {
+      "id": 103,
+      "text": "I'm not okay!",
+      "start": 383.46,
+      "duration": 1.96
+    },
+    {
+      "id": 104,
+      "text": "I'm not happy!",
+      "start": 385.41999999999996,
+      "duration": 1.96
+    },
+    {
+      "id": 105,
+      "text": "Oh no...",
+      "start": 392.38,
+      "duration": 1.44
+    },
+    {
+      "id": 106,
+      "text": "Good evening, everyone!",
+      "start": 398.12,
+      "duration": 1.44
+    },
+    {
+      "id": 107,
+      "text": "Who are you?",
+      "start": 401.22,
+      "duration": 1.06
+    },
+    {
+      "id": 108,
+      "text": "Oh, no!",
+      "start": 405.32,
+      "duration": 1.62
+    },
+    {
+      "id": 109,
+      "text": "It's a lion!",
+      "start": 410.44,
+      "duration": 1.02
+    },
+    {
+      "id": 110,
+      "text": "Wow, you are a great lion!",
+      "start": 416.76,
+      "duration": 2.56
+    },
+    {
+      "id": 111,
+      "text": "Thank you!",
+      "start": 421.22,
+      "duration": 0.98
+    },
+    {
+      "id": 112,
+      "text": "Now, let's go to OZ!",
+      "start": 423.26,
+      "duration": 2.5
+    }
+  ],
+  "fetchedAt": "2026-07-01T07:33:26.813Z",
+  "videoId": "Fw0rdSHzWFY",
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.356Z"
+}

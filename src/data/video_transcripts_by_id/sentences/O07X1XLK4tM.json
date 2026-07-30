@@ -4,1212 +4,218 @@
     {
       "id": 1,
       "text": "Welcome to my house.",
-      "speaker": "Speaker0",
       "start": 13.6,
-      "duration": 1.46,
-      "words": [
-        {
-          "word": "welcome",
-          "start": 13.6,
-          "end": 14.1,
-          "confidence": 0.887
-        },
-        {
-          "word": "to",
-          "start": 14.16,
-          "end": 14.32,
-          "confidence": 1.0
-        },
-        {
-          "word": "my",
-          "start": 14.32,
-          "end": 14.56,
-          "confidence": 1.0
-        },
-        {
-          "word": "house",
-          "start": 14.56,
-          "end": 15.06,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.971
+      "duration": 1.46
     },
     {
       "id": 2,
       "text": "Anne, you have a nice garden.",
-      "speaker": "Speaker1",
       "start": 16.91,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "anne",
-          "start": 16.91,
-          "end": 17.41,
-          "confidence": 0.857
-        },
-        {
-          "word": "you",
-          "start": 17.46,
-          "end": 17.62,
-          "confidence": 0.998
-        },
-        {
-          "word": "have",
-          "start": 17.62,
-          "end": 17.86,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 17.86,
-          "end": 17.95,
-          "confidence": 0.998
-        },
-        {
-          "word": "nice",
-          "start": 17.95,
-          "end": 18.43,
-          "confidence": 1.0
-        },
-        {
-          "word": "garden",
-          "start": 18.43,
-          "end": 18.93,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.975
+      "duration": 2.02
     },
     {
       "id": 3,
       "text": "Flowers and trees are so beautiful.",
-      "speaker": "Speaker1",
       "start": 20.66,
-      "duration": 2.5,
-      "words": [
-        {
-          "word": "flowers",
-          "start": 20.66,
-          "end": 21.14,
-          "confidence": 0.962
-        },
-        {
-          "word": "and",
-          "start": 21.14,
-          "end": 21.46,
-          "confidence": 0.999
-        },
-        {
-          "word": "trees",
-          "start": 21.46,
-          "end": 21.86,
-          "confidence": 0.999
-        },
-        {
-          "word": "are",
-          "start": 21.86,
-          "end": 22.18,
-          "confidence": 1.0
-        },
-        {
-          "word": "so",
-          "start": 22.18,
-          "end": 22.66,
-          "confidence": 0.999
-        },
-        {
-          "word": "beautiful",
-          "start": 22.66,
-          "end": 23.16,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.993
+      "duration": 2.5
     },
     {
       "id": 4,
       "text": "Thank you.",
-      "speaker": "Speaker0",
       "start": 25.22,
-      "duration": 0.83,
-      "words": [
-        {
-          "word": "thank",
-          "start": 25.22,
-          "end": 25.55,
-          "confidence": 0.944
-        },
-        {
-          "word": "you",
-          "start": 25.55,
-          "end": 26.05,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.97
+      "duration": 0.83
     },
     {
       "id": 5,
       "text": "My family planted them in last spring.",
-      "speaker": "Speaker0",
       "start": 27.06,
-      "duration": 2.82,
-      "words": [
-        {
-          "word": "my",
-          "start": 27.06,
-          "end": 27.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "family",
-          "start": 27.38,
-          "end": 27.88,
-          "confidence": 1.0
-        },
-        {
-          "word": "planted",
-          "start": 27.95,
-          "end": 28.34,
-          "confidence": 1.0
-        },
-        {
-          "word": "them",
-          "start": 28.34,
-          "end": 28.66,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 28.66,
-          "end": 28.98,
-          "confidence": 0.949
-        },
-        {
-          "word": "last",
-          "start": 28.98,
-          "end": 29.38,
-          "confidence": 0.986
-        },
-        {
-          "word": "spring",
-          "start": 29.38,
-          "end": 29.88,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.991
+      "duration": 2.82
     },
     {
       "id": 6,
       "text": "Let's go inside.",
-      "speaker": "Speaker0",
       "start": 32.71,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "let's",
-          "start": 32.71,
-          "end": 33.03,
-          "confidence": 0.985
-        },
-        {
-          "word": "go",
-          "start": 33.03,
-          "end": 33.27,
-          "confidence": 1.0
-        },
-        {
-          "word": "inside",
-          "start": 33.27,
-          "end": 33.77,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.994
+      "duration": 1.06
     },
     {
       "id": 7,
       "text": "Oh, this is the living room.",
-      "speaker": "Speaker2",
       "start": 39.19,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "oh",
-          "start": 39.19,
-          "end": 39.69,
-          "confidence": 0.805
-        },
-        {
-          "word": "this",
-          "start": 39.75,
-          "end": 40.07,
-          "confidence": 0.987
-        },
-        {
-          "word": "is",
-          "start": 40.07,
-          "end": 40.23,
-          "confidence": 0.996
-        },
-        {
-          "word": "the",
-          "start": 40.23,
-          "end": 40.31,
-          "confidence": 0.998
-        },
-        {
-          "word": "living",
-          "start": 40.31,
-          "end": 40.71,
-          "confidence": 1.0
-        },
-        {
-          "word": "room",
-          "start": 40.71,
-          "end": 41.21,
-          "confidence": 0.991
-        }
-      ],
-      "confidence": 0.963
+      "duration": 2.02
     },
     {
       "id": 8,
       "text": "Yes.",
-      "speaker": "Speaker0",
       "start": 42.65,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "yes",
-          "start": 42.65,
-          "end": 43.15,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.993
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "My family usually watch TV and talk in here.",
-      "speaker": "Speaker0",
       "start": 43.6,
-      "duration": 3.79,
-      "words": [
-        {
-          "word": "my",
-          "start": 43.6,
-          "end": 43.92,
-          "confidence": 1.0
-        },
-        {
-          "word": "family",
-          "start": 43.92,
-          "end": 44.42,
-          "confidence": 1.0
-        },
-        {
-          "word": "usually",
-          "start": 44.48,
-          "end": 44.98,
-          "confidence": 0.999
-        },
-        {
-          "word": "watch",
-          "start": 45.12,
-          "end": 45.52,
-          "confidence": 0.994
-        },
-        {
-          "word": "tv",
-          "start": 45.52,
-          "end": 46.02,
-          "confidence": 0.975
-        },
-        {
-          "word": "and",
-          "start": 46.09,
-          "end": 46.41,
-          "confidence": 0.997
-        },
-        {
-          "word": "talk",
-          "start": 46.41,
-          "end": 46.73,
-          "confidence": 0.997
-        },
-        {
-          "word": "in",
-          "start": 46.73,
-          "end": 46.89,
-          "confidence": 0.999
-        },
-        {
-          "word": "here",
-          "start": 46.89,
-          "end": 47.39,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.996
+      "duration": 3.79
     },
     {
       "id": 10,
       "text": "What about your room?",
-      "speaker": "Speaker2",
       "start": 48.73,
-      "duration": 1.28,
-      "words": [
-        {
-          "word": "what",
-          "start": 48.73,
-          "end": 48.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "about",
-          "start": 48.97,
-          "end": 49.28,
-          "confidence": 1.0
-        },
-        {
-          "word": "your",
-          "start": 49.28,
-          "end": 49.52,
-          "confidence": 0.998
-        },
-        {
-          "word": "room",
-          "start": 49.52,
-          "end": 50.01,
-          "confidence": 0.978
-        }
-      ],
-      "confidence": 0.996
+      "duration": 1.28
     },
     {
       "id": 11,
       "text": "Where is it?",
-      "speaker": "Speaker2",
       "start": 50.01,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "where",
-          "start": 50.01,
-          "end": 50.41,
-          "confidence": 0.999
-        },
-        {
-          "word": "is",
-          "start": 50.41,
-          "end": 50.57,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 50.57,
-          "end": 51.07,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.996
+      "duration": 1.06
     },
     {
       "id": 12,
-      "text": "Here. Come in.",
-      "speaker": "Speaker0",
+      "text": "Here.",
       "start": 55.54,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "here",
-          "start": 55.54,
-          "end": 56.04,
-          "confidence": 0.765
-        },
-        {
-          "word": "come",
-          "start": 56.1,
-          "end": 56.42,
-          "confidence": 0.999
-        },
-        {
-          "word": "in",
-          "start": 56.42,
-          "end": 56.92,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.921
+      "duration": 0.46
     },
     {
       "id": 13,
-      "text": "Oh, it looks so much neater than I thought.",
-      "speaker": "Speaker2",
-      "start": 60.98,
-      "duration": 3.06,
-      "words": [
-        {
-          "word": "oh",
-          "start": 60.98,
-          "end": 61.48,
-          "confidence": 0.802
-        },
-        {
-          "word": "it",
-          "start": 61.62,
-          "end": 61.86,
-          "confidence": 0.989
-        },
-        {
-          "word": "looks",
-          "start": 61.86,
-          "end": 62.18,
-          "confidence": 0.996
-        },
-        {
-          "word": "so",
-          "start": 62.18,
-          "end": 62.42,
-          "confidence": 0.999
-        },
-        {
-          "word": "much",
-          "start": 62.42,
-          "end": 62.66,
-          "confidence": 0.999
-        },
-        {
-          "word": "neater",
-          "start": 62.66,
-          "end": 63.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "than",
-          "start": 63.06,
-          "end": 63.3,
-          "confidence": 0.996
-        },
-        {
-          "word": "i",
-          "start": 63.3,
-          "end": 63.54,
-          "confidence": 0.999
-        },
-        {
-          "word": "thought",
-          "start": 63.54,
-          "end": 64.04,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.976
+      "text": "Come in.",
+      "start": 56,
+      "duration": 0.92
     },
     {
       "id": 14,
-      "text": "So I guess you sleep and study here.",
-      "speaker": "Speaker1",
-      "start": 65.94,
-      "duration": 2.82,
-      "words": [
-        {
-          "word": "so",
-          "start": 65.94,
-          "end": 66.44,
-          "confidence": 0.999
-        },
-        {
-          "word": "i",
-          "start": 66.66,
-          "end": 66.82,
-          "confidence": 0.812
-        },
-        {
-          "word": "guess",
-          "start": 66.82,
-          "end": 67.14,
-          "confidence": 1.0
-        },
-        {
-          "word": "you",
-          "start": 67.14,
-          "end": 67.38,
-          "confidence": 0.988
-        },
-        {
-          "word": "sleep",
-          "start": 67.38,
-          "end": 67.62,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 67.62,
-          "end": 67.86,
-          "confidence": 1.0
-        },
-        {
-          "word": "study",
-          "start": 67.86,
-          "end": 68.26,
-          "confidence": 1.0
-        },
-        {
-          "word": "here",
-          "start": 68.26,
-          "end": 68.76,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.974
+      "text": "Oh, it looks so much neater than I thought.",
+      "start": 60.98,
+      "duration": 3.06
     },
     {
       "id": 15,
-      "text": "That's right.",
-      "speaker": "Speaker0",
-      "start": 69.92,
-      "duration": 0.89,
-      "words": [
-        {
-          "word": "that's",
-          "start": 69.92,
-          "end": 70.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "right",
-          "start": 70.31,
-          "end": 70.81,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
+      "text": "So I guess you sleep and study here.",
+      "start": 65.94,
+      "duration": 2.82
     },
     {
       "id": 16,
-      "text": "Why don't you take a look around?",
-      "speaker": "Speaker0",
-      "start": 71.44,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "why",
-          "start": 71.44,
-          "end": 71.67,
-          "confidence": 0.999
-        },
-        {
-          "word": "don't",
-          "start": 71.67,
-          "end": 71.92,
-          "confidence": 1.0
-        },
-        {
-          "word": "you",
-          "start": 71.92,
-          "end": 72.08,
-          "confidence": 1.0
-        },
-        {
-          "word": "take",
-          "start": 72.08,
-          "end": 72.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 72.31,
-          "end": 72.4,
-          "confidence": 1.0
-        },
-        {
-          "word": "look",
-          "start": 72.4,
-          "end": 72.8,
-          "confidence": 1.0
-        },
-        {
-          "word": "around",
-          "start": 72.8,
-          "end": 73.3,
-          "confidence": 0.82
-        }
-      ],
-      "confidence": 0.974
+      "text": "That's right.",
+      "start": 69.92,
+      "duration": 0.89
     },
     {
       "id": 17,
-      "text": "Are these only books you have?",
-      "speaker": "Speaker1",
-      "start": 78.64,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "are",
-          "start": 78.64,
-          "end": 78.88,
-          "confidence": 0.994
-        },
-        {
-          "word": "these",
-          "start": 78.88,
-          "end": 79.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "only",
-          "start": 79.19,
-          "end": 79.52,
-          "confidence": 0.992
-        },
-        {
-          "word": "books",
-          "start": 79.52,
-          "end": 79.83,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 79.83,
-          "end": 80.08,
-          "confidence": 1.0
-        },
-        {
-          "word": "have",
-          "start": 80.08,
-          "end": 80.58,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.997
+      "text": "Why don't you take a look around?",
+      "start": 71.44,
+      "duration": 1.86
     },
     {
       "id": 18,
-      "text": "Nope.",
-      "speaker": "Speaker0",
-      "start": 82.73,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "nope",
-          "start": 82.73,
-          "end": 83.23,
-          "confidence": 0.992
-        }
-      ],
-      "confidence": 0.992
+      "text": "Are these only books you have?",
+      "start": 78.64,
+      "duration": 1.94
     },
     {
       "id": 19,
-      "text": "There is a study room on the opposite of this room.",
-      "speaker": "Speaker0",
-      "start": 84.17,
-      "duration": 3.46,
-      "words": [
-        {
-          "word": "there",
-          "start": 84.17,
-          "end": 84.49,
-          "confidence": 0.991
-        },
-        {
-          "word": "is",
-          "start": 84.49,
-          "end": 84.73,
-          "confidence": 0.992
-        },
-        {
-          "word": "a",
-          "start": 84.73,
-          "end": 84.97,
-          "confidence": 0.994
-        },
-        {
-          "word": "study",
-          "start": 84.97,
-          "end": 85.29,
-          "confidence": 1.0
-        },
-        {
-          "word": "room",
-          "start": 85.29,
-          "end": 85.69,
-          "confidence": 0.999
-        },
-        {
-          "word": "on",
-          "start": 85.69,
-          "end": 85.85,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 85.85,
-          "end": 86.01,
-          "confidence": 0.999
-        },
-        {
-          "word": "opposite",
-          "start": 86.01,
-          "end": 86.51,
-          "confidence": 1.0
-        },
-        {
-          "word": "of",
-          "start": 86.57,
-          "end": 86.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "this",
-          "start": 86.81,
-          "end": 87.13,
-          "confidence": 1.0
-        },
-        {
-          "word": "room",
-          "start": 87.13,
-          "end": 87.63,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "text": "Nope.",
+      "start": 82.73,
+      "duration": 0.5
     },
     {
       "id": 20,
-      "text": "Wow.",
-      "speaker": "Speaker1",
-      "start": 89.13,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "wow",
-          "start": 89.13,
-          "end": 89.63,
-          "confidence": 0.962
-        }
-      ],
-      "confidence": 0.962
+      "text": "There is a study room on the opposite of this room.",
+      "start": 84.17,
+      "duration": 3.46
     },
     {
       "id": 21,
-      "text": "Can I see it?",
-      "speaker": "Speaker1",
-      "start": 90.17,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "can",
-          "start": 90.17,
-          "end": 90.41,
-          "confidence": 0.999
-        },
-        {
-          "word": "i",
-          "start": 90.41,
-          "end": 90.57,
-          "confidence": 0.998
-        },
-        {
-          "word": "see",
-          "start": 90.57,
-          "end": 90.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 90.81,
-          "end": 91.31,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
+      "text": "Wow.",
+      "start": 89.13,
+      "duration": 0.5
     },
     {
       "id": 22,
-      "text": "Sure thing.",
-      "speaker": "Speaker0",
-      "start": 91.85,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "sure",
-          "start": 91.85,
-          "end": 92.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "thing",
-          "start": 92.25,
-          "end": 92.75,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
+      "text": "Can I see it?",
+      "start": 90.17,
+      "duration": 1.14
     },
     {
       "id": 23,
-      "text": "Follow me.",
-      "speaker": "Speaker0",
-      "start": 93.77,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "follow",
-          "start": 93.77,
-          "end": 94.17,
-          "confidence": 0.994
-        },
-        {
-          "word": "me",
-          "start": 94.17,
-          "end": 94.67,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
+      "text": "Sure thing.",
+      "start": 91.85,
+      "duration": 0.9
     },
     {
       "id": 24,
-      "text": "I'm hungry.",
-      "speaker": "Speaker2",
-      "start": 100.84,
-      "duration": 0.91,
-      "words": [
-        {
-          "word": "i'm",
-          "start": 100.84,
-          "end": 101.25,
-          "confidence": 0.763
-        },
-        {
-          "word": "hungry",
-          "start": 101.25,
-          "end": 101.75,
-          "confidence": 0.958
-        }
-      ],
-      "confidence": 0.86
+      "text": "Follow me.",
+      "start": 93.77,
+      "duration": 0.9
     },
     {
       "id": 25,
-      "text": "And do you have something to eat?",
-      "speaker": "Speaker2",
-      "start": 102.77,
-      "duration": 2.17,
-      "words": [
-        {
-          "word": "and",
-          "start": 102.77,
-          "end": 103.27,
-          "confidence": 0.617
-        },
-        {
-          "word": "do",
-          "start": 103.41,
-          "end": 103.65,
-          "confidence": 0.896
-        },
-        {
-          "word": "you",
-          "start": 103.65,
-          "end": 103.72,
-          "confidence": 1.0
-        },
-        {
-          "word": "have",
-          "start": 103.72,
-          "end": 103.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "something",
-          "start": 103.97,
-          "end": 104.28,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 104.28,
-          "end": 104.44,
-          "confidence": 1.0
-        },
-        {
-          "word": "eat",
-          "start": 104.44,
-          "end": 104.94,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.93
+      "text": "I'm hungry.",
+      "start": 100.84,
+      "duration": 0.91
     },
     {
       "id": 26,
-      "text": "Alright.",
-      "speaker": "Speaker2",
-      "start": 105.48,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "alright",
-          "start": 105.48,
-          "end": 105.98,
-          "confidence": 0.988
-        }
-      ],
-      "confidence": 0.988
+      "text": "And do you have something to eat?",
+      "start": 102.77,
+      "duration": 2.17
     },
     {
       "id": 27,
-      "text": "My mom made some cupcakes.",
-      "speaker": "Speaker0",
-      "start": 108.28,
-      "duration": 1.78,
-      "words": [
-        {
-          "word": "my",
-          "start": 108.28,
-          "end": 108.61,
-          "confidence": 0.987
-        },
-        {
-          "word": "mom",
-          "start": 108.61,
-          "end": 109.01,
-          "confidence": 0.997
-        },
-        {
-          "word": "made",
-          "start": 109.01,
-          "end": 109.25,
-          "confidence": 0.998
-        },
-        {
-          "word": "some",
-          "start": 109.25,
-          "end": 109.56,
-          "confidence": 0.999
-        },
-        {
-          "word": "cupcakes",
-          "start": 109.56,
-          "end": 110.06,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.996
+      "text": "Alright.",
+      "start": 105.48,
+      "duration": 0.5
     },
     {
       "id": 28,
-      "text": "Let's go to the kitchen.",
-      "speaker": "Speaker0",
-      "start": 110.69,
-      "duration": 1.29,
-      "words": [
-        {
-          "word": "let's",
-          "start": 110.69,
-          "end": 111.01,
-          "confidence": 1.0
-        },
-        {
-          "word": "go",
-          "start": 111.01,
-          "end": 111.17,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 111.17,
-          "end": 111.33,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 111.33,
-          "end": 111.48,
-          "confidence": 0.999
-        },
-        {
-          "word": "kitchen",
-          "start": 111.48,
-          "end": 111.98,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "My mom made some cupcakes.",
+      "start": 108.28,
+      "duration": 1.78
     },
     {
       "id": 29,
-      "text": "Yay. Hooray.",
-      "speaker": "Speaker2",
-      "start": 114.26,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "yay",
-          "start": 114.26,
-          "end": 114.66,
-          "confidence": 0.933
-        },
-        {
-          "word": "hooray",
-          "start": 114.66,
-          "end": 115.16,
-          "confidence": 0.929
-        }
-      ],
-      "confidence": 0.931
+      "text": "Let's go to the kitchen.",
+      "start": 110.69,
+      "duration": 1.29
     },
     {
       "id": 30,
-      "text": "Oh, Anne, where's the bathroom?",
-      "speaker": "Speaker2",
-      "start": 131.34,
-      "duration": 2.59,
-      "words": [
-        {
-          "word": "oh",
-          "start": 131.34,
-          "end": 131.84,
-          "confidence": 0.89
-        },
-        {
-          "word": "anne",
-          "start": 132.22,
-          "end": 132.72,
-          "confidence": 0.705
-        },
-        {
-          "word": "where's",
-          "start": 132.78,
-          "end": 133.19,
-          "confidence": 0.967
-        },
-        {
-          "word": "the",
-          "start": 133.19,
-          "end": 133.43,
-          "confidence": 0.999
-        },
-        {
-          "word": "bathroom",
-          "start": 133.43,
-          "end": 133.93,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.903
+      "text": "Yay.",
+      "start": 114.26,
+      "duration": 0.45
     },
     {
       "id": 31,
-      "text": "It's right next to my room.",
-      "speaker": "Speaker0",
-      "start": 135.66,
-      "duration": 1.87,
-      "words": [
-        {
-          "word": "it's",
-          "start": 135.66,
-          "end": 136.06,
-          "confidence": 0.821
-        },
-        {
-          "word": "right",
-          "start": 136.06,
-          "end": 136.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "next",
-          "start": 136.31,
-          "end": 136.54,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 136.54,
-          "end": 136.78,
-          "confidence": 1.0
-        },
-        {
-          "word": "my",
-          "start": 136.78,
-          "end": 137.03,
-          "confidence": 1.0
-        },
-        {
-          "word": "room",
-          "start": 137.03,
-          "end": 137.53,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.97
+      "text": "Hooray.",
+      "start": 114.71000000000001,
+      "duration": 0.45
     },
     {
       "id": 32,
-      "text": "Okay.",
-      "speaker": "Speaker0",
-      "start": 138.13,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "okay",
-          "start": 138.13,
-          "end": 138.63,
-          "confidence": 0.735
-        }
-      ],
-      "confidence": 0.735
+      "text": "Oh, Anne, where's the bathroom?",
+      "start": 131.34,
+      "duration": 2.59
     },
     {
       "id": 33,
-      "text": "Gotcha.",
-      "speaker": "Speaker0",
-      "start": 139.41,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "gotcha",
-          "start": 139.41,
-          "end": 139.91,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.996
+      "text": "It's right next to my room.",
+      "start": 135.66,
+      "duration": 1.87
     },
     {
       "id": 34,
+      "text": "Okay.",
+      "start": 138.13,
+      "duration": 0.5
+    },
+    {
+      "id": 35,
+      "text": "Gotcha.",
+      "start": 139.41,
+      "duration": 0.5
+    },
+    {
+      "id": 36,
       "text": "Let's role play.",
-      "speaker": "Speaker2",
       "start": 144.21,
-      "duration": 1.22,
-      "words": [
-        {
-          "word": "let's",
-          "start": 144.21,
-          "end": 144.61,
-          "confidence": 0.966
-        },
-        {
-          "word": "role",
-          "start": 144.61,
-          "end": 144.93,
-          "confidence": 0.963
-        },
-        {
-          "word": "play",
-          "start": 144.93,
-          "end": 145.43,
-          "confidence": 0.954
-        }
-      ],
-      "confidence": 0.961
+      "duration": 1.22
     }
   ],
   "fetchedAt": "2026-07-23T06:23:59.248828+00:00",
@@ -1236,5 +242,7 @@
     "afterAvgWords": 4.3,
     "merged": 0,
     "danglingFragments": 0
-  }
+  },
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.361Z"
 }

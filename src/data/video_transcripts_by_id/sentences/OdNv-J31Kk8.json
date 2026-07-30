@@ -4,1448 +4,212 @@
     {
       "id": 1,
       "text": "The Carter Family Episode four A Camping Trip Yay, said Harry.",
-      "speaker": "Speaker0",
       "start": 5.6,
-      "duration": 15.76,
-      "words": [
-        {
-          "word": "the",
-          "start": 5.6,
-          "end": 5.92,
-          "confidence": 0.669
-        },
-        {
-          "word": "carter",
-          "start": 5.92,
-          "end": 6.24,
-          "confidence": 0.991
-        },
-        {
-          "word": "family",
-          "start": 6.24,
-          "end": 6.74,
-          "confidence": 0.934
-        },
-        {
-          "word": "episode",
-          "start": 7.12,
-          "end": 7.62,
-          "confidence": 0.892
-        },
-        {
-          "word": "four",
-          "start": 7.76,
-          "end": 8.26,
-          "confidence": 0.965
-        },
-        {
-          "word": "a",
-          "start": 8.56,
-          "end": 8.88,
-          "confidence": 0.443
-        },
-        {
-          "word": "camping",
-          "start": 8.88,
-          "end": 9.28,
-          "confidence": 0.98
-        },
-        {
-          "word": "trip",
-          "start": 9.28,
-          "end": 9.78,
-          "confidence": 0.99
-        },
-        {
-          "word": "yay",
-          "start": 19.59,
-          "end": 20.09,
-          "confidence": 0.915
-        },
-        {
-          "word": "said",
-          "start": 20.46,
-          "end": 20.86,
-          "confidence": 0.716
-        },
-        {
-          "word": "harry",
-          "start": 20.86,
-          "end": 21.36,
-          "confidence": 0.985
-        }
-      ],
-      "confidence": 0.871
+      "duration": 15.76
     },
     {
       "id": 2,
       "text": "We're going camping.",
-      "speaker": "Speaker0",
       "start": 22.14,
-      "duration": 1.22,
-      "words": [
-        {
-          "word": "we're",
-          "start": 22.14,
-          "end": 22.46,
-          "confidence": 0.999
-        },
-        {
-          "word": "going",
-          "start": 22.46,
-          "end": 22.86,
-          "confidence": 0.999
-        },
-        {
-          "word": "camping",
-          "start": 22.86,
-          "end": 23.36,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.998
+      "duration": 1.22
     },
     {
       "id": 3,
       "text": "Mom put the tent and food in the car.",
-      "speaker": "Speaker0",
       "start": 31.94,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "mom",
-          "start": 31.94,
-          "end": 32.18,
-          "confidence": 0.696
-        },
-        {
-          "word": "put",
-          "start": 32.18,
-          "end": 32.42,
-          "confidence": 0.996
-        },
-        {
-          "word": "the",
-          "start": 32.42,
-          "end": 32.58,
-          "confidence": 0.998
-        },
-        {
-          "word": "tent",
-          "start": 32.58,
-          "end": 32.9,
-          "confidence": 0.999
-        },
-        {
-          "word": "and",
-          "start": 32.9,
-          "end": 33.14,
-          "confidence": 0.999
-        },
-        {
-          "word": "food",
-          "start": 33.14,
-          "end": 33.38,
-          "confidence": 0.998
-        },
-        {
-          "word": "in",
-          "start": 33.38,
-          "end": 33.54,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 33.54,
-          "end": 33.7,
-          "confidence": 1.0
-        },
-        {
-          "word": "car",
-          "start": 33.7,
-          "end": 34.2,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.965
+      "duration": 2.26
     },
     {
       "id": 4,
       "text": "Dad put the sleeping bags in the car.",
-      "speaker": "Speaker0",
       "start": 35.46,
-      "duration": 2.18,
-      "words": [
-        {
-          "word": "dad",
-          "start": 35.46,
-          "end": 35.78,
-          "confidence": 0.977
-        },
-        {
-          "word": "put",
-          "start": 35.78,
-          "end": 35.94,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 35.94,
-          "end": 36.1,
-          "confidence": 0.997
-        },
-        {
-          "word": "sleeping",
-          "start": 36.1,
-          "end": 36.5,
-          "confidence": 1.0
-        },
-        {
-          "word": "bags",
-          "start": 36.5,
-          "end": 36.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 36.82,
-          "end": 36.98,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 36.98,
-          "end": 37.14,
-          "confidence": 1.0
-        },
-        {
-          "word": "car",
-          "start": 37.14,
-          "end": 37.64,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
+      "duration": 2.18
     },
     {
       "id": 5,
       "text": "The kids played in the yard.",
-      "speaker": "Speaker0",
       "start": 42.38,
-      "duration": 1.71,
-      "words": [
-        {
-          "word": "the",
-          "start": 42.38,
-          "end": 42.62,
-          "confidence": 0.888
-        },
-        {
-          "word": "kids",
-          "start": 42.62,
-          "end": 42.95,
-          "confidence": 0.999
-        },
-        {
-          "word": "played",
-          "start": 42.95,
-          "end": 43.27,
-          "confidence": 0.999
-        },
-        {
-          "word": "in",
-          "start": 43.27,
-          "end": 43.42,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 43.42,
-          "end": 43.59,
-          "confidence": 0.999
-        },
-        {
-          "word": "yard",
-          "start": 43.59,
-          "end": 44.09,
-          "confidence": 0.992
-        }
-      ],
-      "confidence": 0.98
+      "duration": 1.71
     },
     {
       "id": 6,
       "text": "Harry threw a stick.",
-      "speaker": "Speaker0",
       "start": 45.59,
-      "duration": 1.37,
-      "words": [
-        {
-          "word": "harry",
-          "start": 45.59,
-          "end": 46.06,
-          "confidence": 0.994
-        },
-        {
-          "word": "threw",
-          "start": 46.06,
-          "end": 46.23,
-          "confidence": 0.993
-        },
-        {
-          "word": "a",
-          "start": 46.23,
-          "end": 46.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "stick",
-          "start": 46.46,
-          "end": 46.96,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.995
+      "duration": 1.37
     },
     {
       "id": 7,
       "text": "Rover ran after it.",
-      "speaker": "Speaker0",
       "start": 51.98,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "rover",
-          "start": 51.98,
-          "end": 52.46,
-          "confidence": 0.938
-        },
-        {
-          "word": "ran",
-          "start": 52.46,
-          "end": 52.7,
-          "confidence": 0.989
-        },
-        {
-          "word": "after",
-          "start": 52.7,
-          "end": 53.02,
-          "confidence": 0.999
-        },
-        {
-          "word": "it",
-          "start": 53.02,
-          "end": 53.52,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.98
+      "duration": 1.54
     },
     {
       "id": 8,
       "text": "Everybody in the car, dad said.",
-      "speaker": "Speaker0",
       "start": 55.53,
-      "duration": 2.58,
-      "words": [
-        {
-          "word": "everybody",
-          "start": 55.53,
-          "end": 56.03,
-          "confidence": 0.99
-        },
-        {
-          "word": "in",
-          "start": 56.17,
-          "end": 56.41,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 56.41,
-          "end": 56.49,
-          "confidence": 0.999
-        },
-        {
-          "word": "car",
-          "start": 56.49,
-          "end": 56.99,
-          "confidence": 0.731
-        },
-        {
-          "word": "dad",
-          "start": 57.21,
-          "end": 57.61,
-          "confidence": 0.748
-        },
-        {
-          "word": "said",
-          "start": 57.61,
-          "end": 58.11,
-          "confidence": 0.987
-        }
-      ],
-      "confidence": 0.909
+      "duration": 2.58
     },
     {
       "id": 9,
       "text": "Rover looked for the stick.",
-      "speaker": "Speaker0",
       "start": 58.65,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "rover",
-          "start": 58.65,
-          "end": 59.05,
-          "confidence": 0.967
-        },
-        {
-          "word": "looked",
-          "start": 59.05,
-          "end": 59.29,
-          "confidence": 0.835
-        },
-        {
-          "word": "for",
-          "start": 59.29,
-          "end": 59.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 59.53,
-          "end": 59.69,
-          "confidence": 0.999
-        },
-        {
-          "word": "stick",
-          "start": 59.69,
-          "end": 60.19,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.96
+      "duration": 1.54
     },
     {
       "id": 10,
       "text": "It's time to go camping, Rover, said Harry.",
-      "speaker": "Speaker0",
       "start": 63.93,
-      "duration": 2.65,
-      "words": [
-        {
-          "word": "it's",
-          "start": 63.93,
-          "end": 64.25,
-          "confidence": 0.95
-        },
-        {
-          "word": "time",
-          "start": 64.25,
-          "end": 64.41,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 64.41,
-          "end": 64.57,
-          "confidence": 0.999
-        },
-        {
-          "word": "go",
-          "start": 64.57,
-          "end": 64.73,
-          "confidence": 1.0
-        },
-        {
-          "word": "camping",
-          "start": 64.73,
-          "end": 65.21,
-          "confidence": 0.946
-        },
-        {
-          "word": "rover",
-          "start": 65.21,
-          "end": 65.71,
-          "confidence": 0.774
-        },
-        {
-          "word": "said",
-          "start": 65.85,
-          "end": 66.17,
-          "confidence": 0.857
-        },
-        {
-          "word": "harry",
-          "start": 66.17,
-          "end": 66.58,
-          "confidence": 0.989
-        }
-      ],
-      "confidence": 0.939
+      "duration": 2.65
     },
     {
       "id": 11,
       "text": "Rover was still looking for the stick.",
-      "speaker": "Speaker0",
       "start": 67.78,
-      "duration": 2.27,
-      "words": [
-        {
-          "word": "rover",
-          "start": 67.78,
-          "end": 68.27,
-          "confidence": 0.851
-        },
-        {
-          "word": "was",
-          "start": 68.27,
-          "end": 68.5,
-          "confidence": 0.999
-        },
-        {
-          "word": "still",
-          "start": 68.5,
-          "end": 68.83,
-          "confidence": 1.0
-        },
-        {
-          "word": "looking",
-          "start": 68.83,
-          "end": 69.22,
-          "confidence": 1.0
-        },
-        {
-          "word": "for",
-          "start": 69.22,
-          "end": 69.39,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 69.39,
-          "end": 69.55,
-          "confidence": 1.0
-        },
-        {
-          "word": "stick",
-          "start": 69.55,
-          "end": 70.05,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.978
+      "duration": 2.27
     },
     {
       "id": 12,
       "text": "Everybody pulled Rover into the car.",
-      "speaker": "Speaker0",
       "start": 77.7,
-      "duration": 2.27,
-      "words": [
-        {
-          "word": "everybody",
-          "start": 77.7,
-          "end": 78.2,
-          "confidence": 0.951
-        },
-        {
-          "word": "pulled",
-          "start": 78.34,
-          "end": 78.58,
-          "confidence": 1.0
-        },
-        {
-          "word": "rover",
-          "start": 78.58,
-          "end": 78.98,
-          "confidence": 0.918
-        },
-        {
-          "word": "into",
-          "start": 78.98,
-          "end": 79.31,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 79.31,
-          "end": 79.47,
-          "confidence": 1.0
-        },
-        {
-          "word": "car",
-          "start": 79.47,
-          "end": 79.97,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.978
+      "duration": 2.27
     },
     {
       "id": 13,
-      "text": "Here we go. Said dad.",
-      "speaker": "Speaker0",
+      "text": "Here we go.",
       "start": 85.34,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "here",
-          "start": 85.34,
-          "end": 85.66,
-          "confidence": 0.98
-        },
-        {
-          "word": "we",
-          "start": 85.66,
-          "end": 85.82,
-          "confidence": 0.999
-        },
-        {
-          "word": "go",
-          "start": 85.82,
-          "end": 86.32,
-          "confidence": 0.838
-        },
-        {
-          "word": "said",
-          "start": 86.54,
-          "end": 86.94,
-          "confidence": 0.994
-        },
-        {
-          "word": "dad",
-          "start": 86.94,
-          "end": 87.44,
-          "confidence": 0.956
-        }
-      ],
-      "confidence": 0.954
+      "duration": 1.26
     },
     {
       "id": 14,
-      "text": "Dad drove, and Rover barked loudly.",
-      "speaker": "Speaker0",
-      "start": 88.54,
-      "duration": 2.58,
-      "words": [
-        {
-          "word": "dad",
-          "start": 88.54,
-          "end": 88.94,
-          "confidence": 0.922
-        },
-        {
-          "word": "drove",
-          "start": 88.94,
-          "end": 89.44,
-          "confidence": 0.831
-        },
-        {
-          "word": "and",
-          "start": 89.58,
-          "end": 89.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "rover",
-          "start": 89.82,
-          "end": 90.3,
-          "confidence": 0.825
-        },
-        {
-          "word": "barked",
-          "start": 90.3,
-          "end": 90.62,
-          "confidence": 0.961
-        },
-        {
-          "word": "loudly",
-          "start": 90.62,
-          "end": 91.12,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.923
+      "text": "Said dad.",
+      "start": 86.60000000000001,
+      "duration": 0.84
     },
     {
       "id": 15,
-      "text": "Soon, they were in the woods.",
-      "speaker": "Speaker0",
-      "start": 101.34,
-      "duration": 1.46,
-      "words": [
-        {
-          "word": "soon",
-          "start": 101.34,
-          "end": 101.66,
-          "confidence": 0.679
-        },
-        {
-          "word": "they",
-          "start": 101.66,
-          "end": 101.81,
-          "confidence": 0.997
-        },
-        {
-          "word": "were",
-          "start": 101.81,
-          "end": 102.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 102.06,
-          "end": 102.22,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 102.22,
-          "end": 102.3,
-          "confidence": 1.0
-        },
-        {
-          "word": "woods",
-          "start": 102.3,
-          "end": 102.8,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.946
+      "text": "Dad drove, and Rover barked loudly.",
+      "start": 88.54,
+      "duration": 2.58
     },
     {
       "id": 16,
-      "text": "Mom and Harry set up the tent.",
-      "speaker": "Speaker0",
-      "start": 110.67,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "mom",
-          "start": 110.67,
-          "end": 110.91,
-          "confidence": 0.877
-        },
-        {
-          "word": "and",
-          "start": 110.91,
-          "end": 111.07,
-          "confidence": 1.0
-        },
-        {
-          "word": "harry",
-          "start": 111.07,
-          "end": 111.47,
-          "confidence": 0.991
-        },
-        {
-          "word": "set",
-          "start": 111.47,
-          "end": 111.71,
-          "confidence": 0.991
-        },
-        {
-          "word": "up",
-          "start": 111.71,
-          "end": 111.79,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 111.79,
-          "end": 112.03,
-          "confidence": 0.998
-        },
-        {
-          "word": "tent",
-          "start": 112.03,
-          "end": 112.53,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.979
+      "text": "Soon, they were in the woods.",
+      "start": 101.34,
+      "duration": 1.46
     },
     {
       "id": 17,
-      "text": "Dad and Emmy made a campfire.",
-      "speaker": "Speaker0",
-      "start": 115.63,
-      "duration": 1.62,
-      "words": [
-        {
-          "word": "dad",
-          "start": 115.63,
-          "end": 115.95,
-          "confidence": 0.992
-        },
-        {
-          "word": "and",
-          "start": 115.95,
-          "end": 116.11,
-          "confidence": 0.995
-        },
-        {
-          "word": "emmy",
-          "start": 116.11,
-          "end": 116.51,
-          "confidence": 0.918
-        },
-        {
-          "word": "made",
-          "start": 116.51,
-          "end": 116.67,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 116.67,
-          "end": 116.75,
-          "confidence": 0.999
-        },
-        {
-          "word": "campfire",
-          "start": 116.75,
-          "end": 117.25,
-          "confidence": 0.988
-        }
-      ],
-      "confidence": 0.982
+      "text": "Mom and Harry set up the tent.",
+      "start": 110.67,
+      "duration": 1.86
     },
     {
       "id": 18,
-      "text": "Oliver found bugs.",
-      "speaker": "Speaker0",
-      "start": 122.35,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "oliver",
-          "start": 122.35,
-          "end": 122.85,
-          "confidence": 0.993
-        },
-        {
-          "word": "found",
-          "start": 122.91,
-          "end": 123.23,
-          "confidence": 1.0
-        },
-        {
-          "word": "bugs",
-          "start": 123.23,
-          "end": 123.73,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.996
+      "text": "Dad and Emmy made a campfire.",
+      "start": 115.63,
+      "duration": 1.62
     },
     {
       "id": 19,
-      "text": "Grover sniffed all around.",
-      "speaker": "Speaker0",
-      "start": 126.88,
-      "duration": 1.69,
-      "words": [
-        {
-          "word": "grover",
-          "start": 126.88,
-          "end": 127.35,
-          "confidence": 0.945
-        },
-        {
-          "word": "sniffed",
-          "start": 127.35,
-          "end": 127.85,
-          "confidence": 0.995
-        },
-        {
-          "word": "all",
-          "start": 127.92,
-          "end": 128.07,
-          "confidence": 1.0
-        },
-        {
-          "word": "around",
-          "start": 128.07,
-          "end": 128.57,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.984
+      "text": "Oliver found bugs.",
+      "start": 122.35,
+      "duration": 1.38
     },
     {
       "id": 20,
-      "text": "Dad cooked dinner over the fire.",
-      "speaker": "Speaker0",
-      "start": 132.16,
-      "duration": 1.85,
-      "words": [
-        {
-          "word": "dad",
-          "start": 132.16,
-          "end": 132.47,
-          "confidence": 0.991
-        },
-        {
-          "word": "cooked",
-          "start": 132.47,
-          "end": 132.72,
-          "confidence": 0.994
-        },
-        {
-          "word": "dinner",
-          "start": 132.72,
-          "end": 133.12,
-          "confidence": 1.0
-        },
-        {
-          "word": "over",
-          "start": 133.12,
-          "end": 133.35,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 133.35,
-          "end": 133.51,
-          "confidence": 1.0
-        },
-        {
-          "word": "fire",
-          "start": 133.51,
-          "end": 134.01,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
+      "text": "Grover sniffed all around.",
+      "start": 126.88,
+      "duration": 1.69
     },
     {
       "id": 21,
-      "text": "everybody ate it's getting dark said dad we need to tie up our food there",
-      "speaker": "Speaker0",
-      "start": 136.71,
-      "duration": 14.0,
-      "words": [
-        {
-          "word": "everybody",
-          "start": 136.71,
-          "end": 137.21,
-          "confidence": 0.917
-        },
-        {
-          "word": "ate",
-          "start": 143.67,
-          "end": 143.99,
-          "confidence": 0.945
-        },
-        {
-          "word": "it's",
-          "start": 143.99,
-          "end": 144.15,
-          "confidence": 0.926
-        },
-        {
-          "word": "getting",
-          "start": 144.15,
-          "end": 144.55,
-          "confidence": 0.993
-        },
-        {
-          "word": "dark",
-          "start": 144.55,
-          "end": 145.05,
-          "confidence": 0.991
-        },
-        {
-          "word": "said",
-          "start": 145.27,
-          "end": 145.51,
-          "confidence": 0.9
-        },
-        {
-          "word": "dad",
-          "start": 145.51,
-          "end": 146.01,
-          "confidence": 0.915
-        },
-        {
-          "word": "we",
-          "start": 146.87,
-          "end": 147.03,
-          "confidence": 0.413
-        },
-        {
-          "word": "need",
-          "start": 147.03,
-          "end": 147.27,
-          "confidence": 0.996
-        },
-        {
-          "word": "to",
-          "start": 147.27,
-          "end": 147.35,
-          "confidence": 0.998
-        },
-        {
-          "word": "tie",
-          "start": 147.35,
-          "end": 147.59,
-          "confidence": 0.993
-        },
-        {
-          "word": "up",
-          "start": 147.59,
-          "end": 147.75,
-          "confidence": 0.997
-        },
-        {
-          "word": "our",
-          "start": 147.75,
-          "end": 147.91,
-          "confidence": 0.983
-        },
-        {
-          "word": "food",
-          "start": 147.91,
-          "end": 148.41,
-          "confidence": 0.994
-        },
-        {
-          "word": "there",
-          "start": 150.47,
-          "end": 150.71,
-          "confidence": 0.804
-        }
-      ],
-      "confidence": 0.928
+      "text": "Dad cooked dinner over the fire.",
+      "start": 132.16,
+      "duration": 1.85
     },
     {
       "id": 22,
-      "text": "are bears in the woods",
-      "speaker": "Speaker0",
-      "start": 150.71,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "are",
-          "start": 150.71,
-          "end": 150.95,
-          "confidence": 0.987
-        },
-        {
-          "word": "bears",
-          "start": 150.95,
-          "end": 151.35,
-          "confidence": 0.858
-        },
-        {
-          "word": "in",
-          "start": 151.35,
-          "end": 151.51,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 151.51,
-          "end": 151.59,
-          "confidence": 0.997
-        },
-        {
-          "word": "woods",
-          "start": 151.59,
-          "end": 152.09,
-          "confidence": 0.992
-        }
-      ],
-      "confidence": 0.928
+      "text": "everybody ate it's getting dark said dad we need to tie up our food there",
+      "start": 136.71,
+      "duration": 14
     },
     {
       "id": 23,
-      "text": "Bears?",
-      "speaker": "Speaker0",
-      "start": 154.84,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "bears",
-          "start": 154.84,
-          "end": 155.34,
-          "confidence": 0.977
-        }
-      ],
-      "confidence": 0.977
+      "text": "are bears in the woods",
+      "start": 150.71,
+      "duration": 1.38
     },
     {
       "id": 24,
-      "text": "Harry looked around.",
-      "speaker": "Speaker0",
-      "start": 155.79,
-      "duration": 1.15,
-      "words": [
-        {
-          "word": "harry",
-          "start": 155.79,
-          "end": 156.12,
-          "confidence": 0.999
-        },
-        {
-          "word": "looked",
-          "start": 156.12,
-          "end": 156.44,
-          "confidence": 1.0
-        },
-        {
-          "word": "around",
-          "start": 156.44,
-          "end": 156.94,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
+      "text": "Bears?",
+      "start": 154.84,
+      "duration": 0.5
     },
     {
       "id": 25,
-      "text": "Bears? Emmy looked around.",
-      "speaker": "Speaker0",
-      "start": 157.79,
-      "duration": 1.87,
-      "words": [
-        {
-          "word": "bears",
-          "start": 157.79,
-          "end": 158.29,
-          "confidence": 0.986
-        },
-        {
-          "word": "emmy",
-          "start": 158.51,
-          "end": 158.92,
-          "confidence": 0.766
-        },
-        {
-          "word": "looked",
-          "start": 158.92,
-          "end": 159.16,
-          "confidence": 1.0
-        },
-        {
-          "word": "around",
-          "start": 159.16,
-          "end": 159.66,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.938
+      "text": "Harry looked around.",
+      "start": 155.79,
+      "duration": 1.15
     },
     {
       "id": 26,
-      "text": "I like bears, said Oliver.",
-      "speaker": "Speaker0",
-      "start": 161.08,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "i",
-          "start": 161.08,
-          "end": 161.31,
-          "confidence": 0.975
-        },
-        {
-          "word": "like",
-          "start": 161.31,
-          "end": 161.72,
-          "confidence": 0.999
-        },
-        {
-          "word": "bears",
-          "start": 161.72,
-          "end": 162.22,
-          "confidence": 0.916
-        },
-        {
-          "word": "said",
-          "start": 162.44,
-          "end": 162.84,
-          "confidence": 0.924
-        },
-        {
-          "word": "oliver",
-          "start": 162.84,
-          "end": 163.34,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.962
+      "text": "Bears?",
+      "start": 157.79,
+      "duration": 0.47
     },
     {
       "id": 27,
-      "text": "Suddenly, the bushes moved.",
-      "speaker": "Speaker0",
-      "start": 165.93,
-      "duration": 1.7,
-      "words": [
-        {
-          "word": "suddenly",
-          "start": 165.93,
-          "end": 166.43,
-          "confidence": 0.896
-        },
-        {
-          "word": "the",
-          "start": 166.49,
-          "end": 166.73,
-          "confidence": 0.999
-        },
-        {
-          "word": "bushes",
-          "start": 166.73,
-          "end": 167.13,
-          "confidence": 0.999
-        },
-        {
-          "word": "moved",
-          "start": 167.13,
-          "end": 167.63,
-          "confidence": 0.987
-        }
-      ],
-      "confidence": 0.97
+      "text": "Emmy looked around.",
+      "start": 158.2575,
+      "duration": 1.4
     },
     {
       "id": 28,
-      "text": "Is it a bear?",
-      "speaker": "Speaker0",
-      "start": 168.41,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "is",
-          "start": 168.41,
-          "end": 168.65,
-          "confidence": 0.99
-        },
-        {
-          "word": "it",
-          "start": 168.65,
-          "end": 168.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 168.81,
-          "end": 168.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "bear",
-          "start": 168.97,
-          "end": 169.47,
-          "confidence": 0.949
-        }
-      ],
-      "confidence": 0.897
+      "text": "I like bears, said Oliver.",
+      "start": 161.08,
+      "duration": 2.26
     },
     {
       "id": 29,
-      "text": "Asked Emmy.",
-      "speaker": "Speaker0",
-      "start": 169.61,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "asked",
-          "start": 169.61,
-          "end": 169.93,
-          "confidence": 0.526
-        },
-        {
-          "word": "emmy",
-          "start": 169.93,
-          "end": 170.43,
-          "confidence": 0.918
-        }
-      ],
-      "confidence": 0.897
+      "text": "Suddenly, the bushes moved.",
+      "start": 165.93,
+      "duration": 1.7
     },
     {
       "id": 30,
-      "text": "A sound came from the bushes.",
-      "speaker": "Speaker0",
-      "start": 174.81,
-      "duration": 1.7,
-      "words": [
-        {
-          "word": "a",
-          "start": 174.81,
-          "end": 175.05,
-          "confidence": 0.933
-        },
-        {
-          "word": "sound",
-          "start": 175.05,
-          "end": 175.45,
-          "confidence": 0.999
-        },
-        {
-          "word": "came",
-          "start": 175.45,
-          "end": 175.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "from",
-          "start": 175.69,
-          "end": 175.85,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 175.85,
-          "end": 176.01,
-          "confidence": 0.999
-        },
-        {
-          "word": "bushes",
-          "start": 176.01,
-          "end": 176.51,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.988
+      "text": "Is it a bear?",
+      "start": 168.41,
+      "duration": 1.06
     },
     {
       "id": 31,
-      "text": "It must be a bear, said Harry.",
-      "speaker": "Speaker0",
-      "start": 177.61,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "it",
-          "start": 177.61,
-          "end": 177.77,
-          "confidence": 0.984
-        },
-        {
-          "word": "must",
-          "start": 177.77,
-          "end": 178.09,
-          "confidence": 1.0
-        },
-        {
-          "word": "be",
-          "start": 178.09,
-          "end": 178.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 178.25,
-          "end": 178.41,
-          "confidence": 0.998
-        },
-        {
-          "word": "bear",
-          "start": 178.41,
-          "end": 178.89,
-          "confidence": 0.991
-        },
-        {
-          "word": "said",
-          "start": 178.89,
-          "end": 179.37,
-          "confidence": 0.808
-        },
-        {
-          "word": "harry",
-          "start": 179.37,
-          "end": 179.87,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.967
+      "text": "Asked Emmy.",
+      "start": 169.61,
+      "duration": 0.82
     },
     {
       "id": 32,
-      "text": "Woof woof, Rover jumped out.",
-      "speaker": "Speaker0",
-      "start": 187.6,
-      "duration": 2.5,
-      "words": [
-        {
-          "word": "woof",
-          "start": 187.6,
-          "end": 188.09,
-          "confidence": 0.804
-        },
-        {
-          "word": "woof",
-          "start": 188.09,
-          "end": 188.59,
-          "confidence": 0.649
-        },
-        {
-          "word": "rover",
-          "start": 188.81,
-          "end": 189.28,
-          "confidence": 0.626
-        },
-        {
-          "word": "jumped",
-          "start": 189.28,
-          "end": 189.6,
-          "confidence": 1.0
-        },
-        {
-          "word": "out",
-          "start": 189.6,
-          "end": 190.1,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.815
+      "text": "A sound came from the bushes.",
+      "start": 174.81,
+      "duration": 1.7
     },
     {
       "id": 33,
+      "text": "It must be a bear, said Harry.",
+      "start": 177.61,
+      "duration": 2.26
+    },
+    {
+      "id": 34,
+      "text": "Woof woof, Rover jumped out.",
+      "start": 187.6,
+      "duration": 2.5
+    },
+    {
+      "id": 35,
       "text": "Rover had a new stick.",
-      "speaker": "Speaker0",
       "start": 190.97,
-      "duration": 1.78,
-      "words": [
-        {
-          "word": "rover",
-          "start": 190.97,
-          "end": 191.47,
-          "confidence": 0.782
-        },
-        {
-          "word": "had",
-          "start": 191.53,
-          "end": 191.76,
-          "confidence": 0.998
-        },
-        {
-          "word": "a",
-          "start": 191.76,
-          "end": 191.84,
-          "confidence": 0.999
-        },
-        {
-          "word": "new",
-          "start": 191.84,
-          "end": 192.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "stick",
-          "start": 192.25,
-          "end": 192.75,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.955
+      "duration": 1.78
     }
   ],
   "fetchedAt": "2026-07-23T06:27:52.542724+00:00",
@@ -1470,5 +234,7 @@
     "afterAvgWords": 5.6,
     "merged": -1,
     "danglingFragments": 0
-  }
+  },
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.361Z"
 }

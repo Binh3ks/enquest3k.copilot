@@ -5,5814 +5,638 @@
     {
       "id": 1,
       "text": "Hi, Jerry.",
-      "speaker": "Speaker0",
       "start": 16.88,
-      "duration": 0.98,
-      "words": [
-        {
-          "word": "hi",
-          "start": 16.88,
-          "end": 17.36,
-          "confidence": 0.982
-        },
-        {
-          "word": "jerry",
-          "start": 17.36,
-          "end": 17.86,
-          "confidence": 0.987
-        }
-      ],
-      "confidence": 0.984
+      "duration": 0.98
     },
     {
       "id": 2,
       "text": "Hi, Mike.",
-      "speaker": "Speaker0",
       "start": 18.55,
-      "duration": 0.83,
-      "words": [
-        {
-          "word": "hi",
-          "start": 18.55,
-          "end": 18.88,
-          "confidence": 0.999
-        },
-        {
-          "word": "mike",
-          "start": 18.88,
-          "end": 19.38,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
+      "duration": 0.83
     },
     {
       "id": 3,
       "text": "Did you just get back from a trip?",
-      "speaker": "Speaker0",
       "start": 20.16,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "did",
-          "start": 20.16,
-          "end": 20.39,
-          "confidence": 1.0
-        },
-        {
-          "word": "you",
-          "start": 20.39,
-          "end": 20.55,
-          "confidence": 1.0
-        },
-        {
-          "word": "just",
-          "start": 20.55,
-          "end": 20.8,
-          "confidence": 0.999
-        },
-        {
-          "word": "get",
-          "start": 20.8,
-          "end": 20.95,
-          "confidence": 1.0
-        },
-        {
-          "word": "back",
-          "start": 20.95,
-          "end": 21.2,
-          "confidence": 1.0
-        },
-        {
-          "word": "from",
-          "start": 21.2,
-          "end": 21.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 21.36,
-          "end": 21.52,
-          "confidence": 0.999
-        },
-        {
-          "word": "trip",
-          "start": 21.52,
-          "end": 22.02,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
+      "duration": 1.86
     },
     {
       "id": 4,
       "text": "Yeah.",
-      "speaker": "Speaker1",
       "start": 23.11,
-      "duration": 0.48,
-      "words": [
-        {
-          "word": "yeah",
-          "start": 23.11,
-          "end": 23.59,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.998
+      "duration": 0.48
     },
     {
       "id": 5,
       "text": "We went camping.",
-      "speaker": "Speaker1",
       "start": 23.59,
-      "duration": 0.98,
-      "words": [
-        {
-          "word": "we",
-          "start": 23.59,
-          "end": 23.84,
-          "confidence": 1.0
-        },
-        {
-          "word": "went",
-          "start": 23.84,
-          "end": 24.07,
-          "confidence": 1.0
-        },
-        {
-          "word": "camping",
-          "start": 24.07,
-          "end": 24.57,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.998
+      "duration": 0.98
     },
     {
       "id": 6,
       "text": "What a trip.",
-      "speaker": "Speaker1",
       "start": 24.8,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "what",
-          "start": 24.8,
-          "end": 25.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 25.04,
-          "end": 25.2,
-          "confidence": 0.999
-        },
-        {
-          "word": "trip",
-          "start": 25.2,
-          "end": 25.7,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.998
+      "duration": 0.9
     },
     {
       "id": 7,
       "text": "Was it fun?",
-      "speaker": "Speaker0",
       "start": 26.64,
-      "duration": 0.97,
-      "words": [
-        {
-          "word": "was",
-          "start": 26.64,
-          "end": 26.88,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 26.88,
-          "end": 27.11,
-          "confidence": 1.0
-        },
-        {
-          "word": "fun",
-          "start": 27.11,
-          "end": 27.61,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
+      "duration": 0.97
     },
     {
       "id": 8,
       "text": "Fun?",
-      "speaker": "Speaker1",
       "start": 28.77,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "fun",
-          "start": 28.77,
-          "end": 29.27,
-          "confidence": 0.969
-        }
-      ],
-      "confidence": 0.969
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "That's not exactly what I'd call it.",
-      "speaker": "Speaker1",
       "start": 29.57,
-      "duration": 2.0,
-      "words": [
-        {
-          "word": "that's",
-          "start": 29.57,
-          "end": 29.97,
-          "confidence": 1.0
-        },
-        {
-          "word": "not",
-          "start": 29.97,
-          "end": 30.21,
-          "confidence": 1.0
-        },
-        {
-          "word": "exactly",
-          "start": 30.21,
-          "end": 30.61,
-          "confidence": 0.998
-        },
-        {
-          "word": "what",
-          "start": 30.61,
-          "end": 30.85,
-          "confidence": 1.0
-        },
-        {
-          "word": "i'd",
-          "start": 30.85,
-          "end": 31.09,
-          "confidence": 0.987
-        },
-        {
-          "word": "call",
-          "start": 31.09,
-          "end": 31.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 31.25,
-          "end": 31.57,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.998
+      "duration": 2
     },
     {
       "id": 10,
       "text": "We had a lot of problems.",
-      "speaker": "Speaker1",
       "start": 31.57,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "we",
-          "start": 31.57,
-          "end": 31.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "had",
-          "start": 31.81,
-          "end": 32.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 32.05,
-          "end": 32.13,
-          "confidence": 1.0
-        },
-        {
-          "word": "lot",
-          "start": 32.13,
-          "end": 32.37,
-          "confidence": 1.0
-        },
-        {
-          "word": "of",
-          "start": 32.37,
-          "end": 32.61,
-          "confidence": 0.999
-        },
-        {
-          "word": "problems",
-          "start": 32.61,
-          "end": 33.11,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "duration": 1.54
     },
     {
       "id": 11,
-      "text": "That's too bad. What happened?",
-      "speaker": "Speaker0",
+      "text": "That's too bad.",
       "start": 34.21,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "that's",
-          "start": 34.21,
-          "end": 34.61,
-          "confidence": 1.0
-        },
-        {
-          "word": "too",
-          "start": 34.61,
-          "end": 34.85,
-          "confidence": 1.0
-        },
-        {
-          "word": "bad",
-          "start": 34.85,
-          "end": 35.35,
-          "confidence": 0.995
-        },
-        {
-          "word": "what",
-          "start": 35.41,
-          "end": 35.65,
-          "confidence": 1.0
-        },
-        {
-          "word": "happened",
-          "start": 35.65,
-          "end": 36.15,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "duration": 1.16
     },
     {
       "id": 12,
-      "text": "It all began when we got to the campsite on Friday evening.",
-      "speaker": "Speaker1",
-      "start": 37.33,
-      "duration": 2.98,
-      "words": [
-        {
-          "word": "it",
-          "start": 37.33,
-          "end": 37.49,
-          "confidence": 0.999
-        },
-        {
-          "word": "all",
-          "start": 37.49,
-          "end": 37.73,
-          "confidence": 1.0
-        },
-        {
-          "word": "began",
-          "start": 37.73,
-          "end": 38.13,
-          "confidence": 1.0
-        },
-        {
-          "word": "when",
-          "start": 38.13,
-          "end": 38.29,
-          "confidence": 1.0
-        },
-        {
-          "word": "we",
-          "start": 38.29,
-          "end": 38.45,
-          "confidence": 1.0
-        },
-        {
-          "word": "got",
-          "start": 38.45,
-          "end": 38.61,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 38.61,
-          "end": 38.69,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 38.69,
-          "end": 38.85,
-          "confidence": 0.998
-        },
-        {
-          "word": "campsite",
-          "start": 38.85,
-          "end": 39.25,
-          "confidence": 0.997
-        },
-        {
-          "word": "on",
-          "start": 39.25,
-          "end": 39.41,
-          "confidence": 1.0
-        },
-        {
-          "word": "friday",
-          "start": 39.41,
-          "end": 39.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "evening",
-          "start": 39.81,
-          "end": 40.31,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "What happened?",
+      "start": 35.374,
+      "duration": 0.78
     },
     {
       "id": 13,
-      "text": "We unloaded the car then sat down and drink some juice.",
-      "speaker": "Speaker1",
-      "start": 42.24,
-      "duration": 3.31,
-      "words": [
-        {
-          "word": "we",
-          "start": 42.24,
-          "end": 42.48,
-          "confidence": 1.0
-        },
-        {
-          "word": "unloaded",
-          "start": 42.48,
-          "end": 42.97,
-          "confidence": 0.998
-        },
-        {
-          "word": "the",
-          "start": 42.97,
-          "end": 43.2,
-          "confidence": 1.0
-        },
-        {
-          "word": "car",
-          "start": 43.2,
-          "end": 43.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "then",
-          "start": 43.69,
-          "end": 44.01,
-          "confidence": 0.673
-        },
-        {
-          "word": "sat",
-          "start": 44.01,
-          "end": 44.24,
-          "confidence": 0.989
-        },
-        {
-          "word": "down",
-          "start": 44.24,
-          "end": 44.48,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 44.48,
-          "end": 44.65,
-          "confidence": 0.991
-        },
-        {
-          "word": "drink",
-          "start": 44.65,
-          "end": 44.88,
-          "confidence": 0.645
-        },
-        {
-          "word": "some",
-          "start": 44.88,
-          "end": 45.05,
-          "confidence": 0.984
-        },
-        {
-          "word": "juice",
-          "start": 45.05,
-          "end": 45.55,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.935
+      "text": "It all began when we got to the campsite on Friday evening.",
+      "start": 37.33,
+      "duration": 2.98
     },
     {
       "id": 14,
-      "text": "We were happy that we had chosen such a beautiful camping spot.",
-      "speaker": "Speaker1",
-      "start": 47.05,
-      "duration": 3.22,
-      "words": [
-        {
-          "word": "we",
-          "start": 47.05,
-          "end": 47.2,
-          "confidence": 1.0
-        },
-        {
-          "word": "were",
-          "start": 47.2,
-          "end": 47.45,
-          "confidence": 1.0
-        },
-        {
-          "word": "happy",
-          "start": 47.45,
-          "end": 47.77,
-          "confidence": 1.0
-        },
-        {
-          "word": "that",
-          "start": 47.77,
-          "end": 47.92,
-          "confidence": 0.999
-        },
-        {
-          "word": "we",
-          "start": 47.92,
-          "end": 48.09,
-          "confidence": 1.0
-        },
-        {
-          "word": "had",
-          "start": 48.09,
-          "end": 48.24,
-          "confidence": 0.989
-        },
-        {
-          "word": "chosen",
-          "start": 48.24,
-          "end": 48.65,
-          "confidence": 0.999
-        },
-        {
-          "word": "such",
-          "start": 48.65,
-          "end": 48.88,
-          "confidence": 0.999
-        },
-        {
-          "word": "a",
-          "start": 48.88,
-          "end": 48.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "beautiful",
-          "start": 48.97,
-          "end": 49.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "camping",
-          "start": 49.36,
-          "end": 49.77,
-          "confidence": 1.0
-        },
-        {
-          "word": "spot",
-          "start": 49.77,
-          "end": 50.27,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "We unloaded the car then sat down and drink some juice.",
+      "start": 42.24,
+      "duration": 3.31
     },
     {
       "id": 15,
-      "text": "After a while, my wife said I should go park the car.",
-      "speaker": "Speaker1",
-      "start": 51.77,
-      "duration": 3.14,
-      "words": [
-        {
-          "word": "after",
-          "start": 51.77,
-          "end": 52.09,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 52.09,
-          "end": 52.24,
-          "confidence": 0.995
-        },
-        {
-          "word": "while",
-          "start": 52.24,
-          "end": 52.74,
-          "confidence": 0.997
-        },
-        {
-          "word": "my",
-          "start": 52.8,
-          "end": 53.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "wife",
-          "start": 53.05,
-          "end": 53.28,
-          "confidence": 1.0
-        },
-        {
-          "word": "said",
-          "start": 53.28,
-          "end": 53.52,
-          "confidence": 0.999
-        },
-        {
-          "word": "i",
-          "start": 53.52,
-          "end": 53.6,
-          "confidence": 0.983
-        },
-        {
-          "word": "should",
-          "start": 53.6,
-          "end": 53.77,
-          "confidence": 1.0
-        },
-        {
-          "word": "go",
-          "start": 53.77,
-          "end": 54.0,
-          "confidence": 0.998
-        },
-        {
-          "word": "park",
-          "start": 54.0,
-          "end": 54.24,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 54.24,
-          "end": 54.41,
-          "confidence": 0.999
-        },
-        {
-          "word": "car",
-          "start": 54.41,
-          "end": 54.91,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
+      "text": "We were happy that we had chosen such a beautiful camping spot.",
+      "start": 47.05,
+      "duration": 3.22
     },
     {
       "id": 16,
-      "text": "I felt in my pocket for the keys, but they weren't there.",
-      "speaker": "Speaker1",
-      "start": 55.95,
-      "duration": 3.3,
-      "words": [
-        {
-          "word": "i",
-          "start": 55.95,
-          "end": 56.11,
-          "confidence": 0.997
-        },
-        {
-          "word": "felt",
-          "start": 56.11,
-          "end": 56.43,
-          "confidence": 0.978
-        },
-        {
-          "word": "in",
-          "start": 56.43,
-          "end": 56.59,
-          "confidence": 0.957
-        },
-        {
-          "word": "my",
-          "start": 56.59,
-          "end": 56.75,
-          "confidence": 0.998
-        },
-        {
-          "word": "pocket",
-          "start": 56.75,
-          "end": 57.07,
-          "confidence": 0.999
-        },
-        {
-          "word": "for",
-          "start": 57.07,
-          "end": 57.23,
-          "confidence": 0.996
-        },
-        {
-          "word": "the",
-          "start": 57.23,
-          "end": 57.39,
-          "confidence": 0.997
-        },
-        {
-          "word": "keys",
-          "start": 57.39,
-          "end": 57.89,
-          "confidence": 0.986
-        },
-        {
-          "word": "but",
-          "start": 58.03,
-          "end": 58.27,
-          "confidence": 1.0
-        },
-        {
-          "word": "they",
-          "start": 58.27,
-          "end": 58.35,
-          "confidence": 0.995
-        },
-        {
-          "word": "weren't",
-          "start": 58.35,
-          "end": 58.75,
-          "confidence": 0.999
-        },
-        {
-          "word": "there",
-          "start": 58.75,
-          "end": 59.25,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.992
+      "text": "After a while, my wife said I should go park the car.",
+      "start": 51.77,
+      "duration": 3.14
     },
     {
       "id": 17,
-      "text": "I couldn't remember where I had put them.",
-      "speaker": "Speaker1",
-      "start": 60.43,
-      "duration": 2.18,
-      "words": [
-        {
-          "word": "i",
-          "start": 60.43,
-          "end": 60.67,
-          "confidence": 0.934
-        },
-        {
-          "word": "couldn't",
-          "start": 60.67,
-          "end": 61.07,
-          "confidence": 0.999
-        },
-        {
-          "word": "remember",
-          "start": 61.07,
-          "end": 61.39,
-          "confidence": 1.0
-        },
-        {
-          "word": "where",
-          "start": 61.39,
-          "end": 61.63,
-          "confidence": 0.999
-        },
-        {
-          "word": "i",
-          "start": 61.63,
-          "end": 61.71,
-          "confidence": 0.997
-        },
-        {
-          "word": "had",
-          "start": 61.71,
-          "end": 61.87,
-          "confidence": 0.983
-        },
-        {
-          "word": "put",
-          "start": 61.87,
-          "end": 62.11,
-          "confidence": 0.99
-        },
-        {
-          "word": "them",
-          "start": 62.11,
-          "end": 62.61,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.987
+      "text": "I felt in my pocket for the keys, but they weren't there.",
+      "start": 55.95,
+      "duration": 3.3
     },
     {
       "id": 18,
-      "text": "So what did you do?",
-      "speaker": "Speaker0",
-      "start": 66.27,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "so",
-          "start": 66.27,
-          "end": 66.51,
-          "confidence": 0.647
-        },
-        {
-          "word": "what",
-          "start": 66.51,
-          "end": 66.75,
-          "confidence": 0.757
-        },
-        {
-          "word": "did",
-          "start": 66.75,
-          "end": 66.99,
-          "confidence": 0.998
-        },
-        {
-          "word": "you",
-          "start": 66.99,
-          "end": 67.15,
-          "confidence": 1.0
-        },
-        {
-          "word": "do",
-          "start": 67.15,
-          "end": 67.65,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.88
+      "text": "I couldn't remember where I had put them.",
+      "start": 60.43,
+      "duration": 2.18
     },
     {
       "id": 19,
-      "text": "I must have spent an hour or so looking for my keys.",
-      "speaker": "Speaker1",
-      "start": 68.2,
-      "duration": 2.83,
-      "words": [
-        {
-          "word": "i",
-          "start": 68.2,
-          "end": 68.44,
-          "confidence": 1.0
-        },
-        {
-          "word": "must",
-          "start": 68.44,
-          "end": 68.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "have",
-          "start": 68.69,
-          "end": 68.84,
-          "confidence": 0.841
-        },
-        {
-          "word": "spent",
-          "start": 68.84,
-          "end": 69.17,
-          "confidence": 0.994
-        },
-        {
-          "word": "an",
-          "start": 69.17,
-          "end": 69.33,
-          "confidence": 0.999
-        },
-        {
-          "word": "hour",
-          "start": 69.33,
-          "end": 69.56,
-          "confidence": 1.0
-        },
-        {
-          "word": "or",
-          "start": 69.56,
-          "end": 69.72,
-          "confidence": 0.996
-        },
-        {
-          "word": "so",
-          "start": 69.72,
-          "end": 69.97,
-          "confidence": 1.0
-        },
-        {
-          "word": "looking",
-          "start": 69.97,
-          "end": 70.2,
-          "confidence": 0.998
-        },
-        {
-          "word": "for",
-          "start": 70.2,
-          "end": 70.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "my",
-          "start": 70.36,
-          "end": 70.53,
-          "confidence": 0.999
-        },
-        {
-          "word": "keys",
-          "start": 70.53,
-          "end": 71.03,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.986
+      "text": "So what did you do?",
+      "start": 66.27,
+      "duration": 1.38
     },
     {
       "id": 20,
-      "text": "Everyone lent me a hand, but the keys were nowhere to be found.",
-      "speaker": "Speaker1",
-      "start": 72.69,
-      "duration": 3.69,
-      "words": [
-        {
-          "word": "everyone",
-          "start": 72.69,
-          "end": 73.19,
-          "confidence": 0.939
-        },
-        {
-          "word": "lent",
-          "start": 73.24,
-          "end": 73.56,
-          "confidence": 0.99
-        },
-        {
-          "word": "me",
-          "start": 73.56,
-          "end": 73.72,
-          "confidence": 0.998
-        },
-        {
-          "word": "a",
-          "start": 73.72,
-          "end": 73.88,
-          "confidence": 0.999
-        },
-        {
-          "word": "hand",
-          "start": 73.88,
-          "end": 74.28,
-          "confidence": 0.977
-        },
-        {
-          "word": "but",
-          "start": 74.28,
-          "end": 74.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 74.53,
-          "end": 74.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "keys",
-          "start": 74.69,
-          "end": 75.0,
-          "confidence": 0.999
-        },
-        {
-          "word": "were",
-          "start": 75.0,
-          "end": 75.17,
-          "confidence": 0.99
-        },
-        {
-          "word": "nowhere",
-          "start": 75.17,
-          "end": 75.48,
-          "confidence": 0.994
-        },
-        {
-          "word": "to",
-          "start": 75.48,
-          "end": 75.72,
-          "confidence": 1.0
-        },
-        {
-          "word": "be",
-          "start": 75.72,
-          "end": 75.88,
-          "confidence": 1.0
-        },
-        {
-          "word": "found",
-          "start": 75.88,
-          "end": 76.38,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.991
+      "text": "I must have spent an hour or so looking for my keys.",
+      "start": 68.2,
+      "duration": 2.83
     },
     {
       "id": 21,
-      "text": "We really thought they were lost for good.",
-      "speaker": "Speaker1",
-      "start": 78.05,
-      "duration": 2.26,
-      "words": [
-        {
-          "word": "we",
-          "start": 78.05,
-          "end": 78.44,
-          "confidence": 0.878
-        },
-        {
-          "word": "really",
-          "start": 78.44,
-          "end": 78.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "thought",
-          "start": 78.69,
-          "end": 78.92,
-          "confidence": 0.999
-        },
-        {
-          "word": "they",
-          "start": 78.92,
-          "end": 79.08,
-          "confidence": 0.996
-        },
-        {
-          "word": "were",
-          "start": 79.08,
-          "end": 79.33,
-          "confidence": 1.0
-        },
-        {
-          "word": "lost",
-          "start": 79.33,
-          "end": 79.56,
-          "confidence": 0.999
-        },
-        {
-          "word": "for",
-          "start": 79.56,
-          "end": 79.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "good",
-          "start": 79.81,
-          "end": 80.31,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.984
+      "text": "Everyone lent me a hand, but the keys were nowhere to be found.",
+      "start": 72.69,
+      "duration": 3.69
     },
     {
       "id": 22,
-      "text": "finally i looked in the car",
-      "speaker": "Speaker1",
-      "start": 82.58,
-      "duration": 1.68,
-      "words": [
-        {
-          "word": "finally",
-          "start": 82.58,
-          "end": 83.08,
-          "confidence": 0.999
-        },
-        {
-          "word": "i",
-          "start": 83.38,
-          "end": 83.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "looked",
-          "start": 83.46,
-          "end": 83.7,
-          "confidence": 0.997
-        },
-        {
-          "word": "in",
-          "start": 83.7,
-          "end": 83.86,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 83.86,
-          "end": 83.94,
-          "confidence": 0.997
-        },
-        {
-          "word": "car",
-          "start": 83.94,
-          "end": 84.26,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "text": "We really thought they were lost for good.",
+      "start": 78.05,
+      "duration": 2.26
     },
     {
       "id": 23,
-      "text": "and saw that my keys were still in the ignition",
-      "speaker": "Speaker1",
-      "start": 84.26,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "and",
-          "start": 84.26,
-          "end": 84.42,
-          "confidence": 0.992
-        },
-        {
-          "word": "saw",
-          "start": 84.42,
-          "end": 84.66,
-          "confidence": 1.0
-        },
-        {
-          "word": "that",
-          "start": 84.66,
-          "end": 84.82,
-          "confidence": 0.999
-        },
-        {
-          "word": "my",
-          "start": 84.82,
-          "end": 84.98,
-          "confidence": 0.999
-        },
-        {
-          "word": "keys",
-          "start": 84.98,
-          "end": 85.22,
-          "confidence": 1.0
-        },
-        {
-          "word": "were",
-          "start": 85.22,
-          "end": 85.38,
-          "confidence": 0.997
-        },
-        {
-          "word": "still",
-          "start": 85.38,
-          "end": 85.62,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 85.62,
-          "end": 85.7,
-          "confidence": 0.993
-        },
-        {
-          "word": "the",
-          "start": 85.7,
-          "end": 85.86,
-          "confidence": 1.0
-        },
-        {
-          "word": "ignition",
-          "start": 85.86,
-          "end": 86.36,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "text": "finally i looked in the car",
+      "start": 82.58,
+      "duration": 1.68
     },
     {
       "id": 24,
-      "text": "Yay.",
-      "speaker": "Speaker0",
-      "start": 87.86,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "yay",
-          "start": 87.86,
-          "end": 88.36,
-          "confidence": 0.737
-        }
-      ],
-      "confidence": 0.737
+      "text": "and saw that my keys were still in the ignition",
+      "start": 84.26,
+      "duration": 2.1
     },
     {
       "id": 25,
-      "text": "By that time, it was dark and we still hadn't pitched the tent.",
-      "speaker": "Speaker1",
-      "start": 91.86,
-      "duration": 3.54,
-      "words": [
-        {
-          "word": "by",
-          "start": 91.86,
-          "end": 92.1,
-          "confidence": 0.969
-        },
-        {
-          "word": "that",
-          "start": 92.1,
-          "end": 92.34,
-          "confidence": 1.0
-        },
-        {
-          "word": "time",
-          "start": 92.34,
-          "end": 92.74,
-          "confidence": 0.984
-        },
-        {
-          "word": "it",
-          "start": 92.74,
-          "end": 92.9,
-          "confidence": 0.999
-        },
-        {
-          "word": "was",
-          "start": 92.9,
-          "end": 93.14,
-          "confidence": 1.0
-        },
-        {
-          "word": "dark",
-          "start": 93.14,
-          "end": 93.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 93.46,
-          "end": 93.62,
-          "confidence": 0.935
-        },
-        {
-          "word": "we",
-          "start": 93.62,
-          "end": 93.78,
-          "confidence": 0.999
-        },
-        {
-          "word": "still",
-          "start": 93.78,
-          "end": 94.02,
-          "confidence": 1.0
-        },
-        {
-          "word": "hadn't",
-          "start": 94.02,
-          "end": 94.34,
-          "confidence": 0.998
-        },
-        {
-          "word": "pitched",
-          "start": 94.34,
-          "end": 94.66,
-          "confidence": 0.94
-        },
-        {
-          "word": "the",
-          "start": 94.66,
-          "end": 94.9,
-          "confidence": 0.997
-        },
-        {
-          "word": "tent",
-          "start": 94.9,
-          "end": 95.4,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.986
+      "text": "Yay.",
+      "start": 87.86,
+      "duration": 0.5
     },
     {
       "id": 26,
-      "text": "We had never set up a tent before, so we read the instructions quickly,",
-      "speaker": "Speaker1",
-      "start": 96.47,
-      "duration": 3.61,
-      "words": [
-        {
-          "word": "we",
-          "start": 96.47,
-          "end": 96.7,
-          "confidence": 1.0
-        },
-        {
-          "word": "had",
-          "start": 96.7,
-          "end": 96.87,
-          "confidence": 0.995
-        },
-        {
-          "word": "never",
-          "start": 96.87,
-          "end": 97.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "set",
-          "start": 97.19,
-          "end": 97.34,
-          "confidence": 0.984
-        },
-        {
-          "word": "up",
-          "start": 97.34,
-          "end": 97.51,
-          "confidence": 0.998
-        },
-        {
-          "word": "a",
-          "start": 97.51,
-          "end": 97.58,
-          "confidence": 0.996
-        },
-        {
-          "word": "tent",
-          "start": 97.58,
-          "end": 97.83,
-          "confidence": 1.0
-        },
-        {
-          "word": "before",
-          "start": 97.83,
-          "end": 98.31,
-          "confidence": 0.943
-        },
-        {
-          "word": "so",
-          "start": 98.31,
-          "end": 98.55,
-          "confidence": 0.999
-        },
-        {
-          "word": "we",
-          "start": 98.55,
-          "end": 98.7,
-          "confidence": 0.997
-        },
-        {
-          "word": "read",
-          "start": 98.7,
-          "end": 98.87,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 98.87,
-          "end": 99.03,
-          "confidence": 0.997
-        },
-        {
-          "word": "instructions",
-          "start": 99.03,
-          "end": 99.53,
-          "confidence": 0.997
-        },
-        {
-          "word": "quickly",
-          "start": 99.58,
-          "end": 100.08,
-          "confidence": 0.911
-        }
-      ],
-      "confidence": 0.987
+      "text": "By that time, it was dark and we still hadn't pitched the tent.",
+      "start": 91.86,
+      "duration": 3.54
     },
     {
       "id": 27,
-      "text": "but we understood nothing of what was written there.",
-      "speaker": "Speaker1",
-      "start": 101.75,
-      "duration": 2.58,
-      "words": [
-        {
-          "word": "but",
-          "start": 101.75,
-          "end": 101.91,
-          "confidence": 0.995
-        },
-        {
-          "word": "we",
-          "start": 101.91,
-          "end": 102.15,
-          "confidence": 0.999
-        },
-        {
-          "word": "understood",
-          "start": 102.15,
-          "end": 102.62,
-          "confidence": 0.999
-        },
-        {
-          "word": "nothing",
-          "start": 102.62,
-          "end": 103.03,
-          "confidence": 1.0
-        },
-        {
-          "word": "of",
-          "start": 103.03,
-          "end": 103.19,
-          "confidence": 0.996
-        },
-        {
-          "word": "what",
-          "start": 103.19,
-          "end": 103.34,
-          "confidence": 0.999
-        },
-        {
-          "word": "was",
-          "start": 103.34,
-          "end": 103.51,
-          "confidence": 0.999
-        },
-        {
-          "word": "written",
-          "start": 103.51,
-          "end": 103.83,
-          "confidence": 1.0
-        },
-        {
-          "word": "there",
-          "start": 103.83,
-          "end": 104.33,
-          "confidence": 0.995
-        }
-      ],
-      "confidence": 0.998
+      "text": "We had never set up a tent before, so we read the instructions quickly,",
+      "start": 96.47,
+      "duration": 3.61
     },
     {
       "id": 28,
-      "text": "I think we were too tired.",
-      "speaker": "Speaker1",
-      "start": 106.06,
-      "duration": 1.63,
-      "words": [
-        {
-          "word": "i",
-          "start": 106.06,
-          "end": 106.31,
-          "confidence": 0.986
-        },
-        {
-          "word": "think",
-          "start": 106.31,
-          "end": 106.55,
-          "confidence": 1.0
-        },
-        {
-          "word": "we",
-          "start": 106.55,
-          "end": 106.7,
-          "confidence": 0.976
-        },
-        {
-          "word": "were",
-          "start": 106.7,
-          "end": 106.94,
-          "confidence": 0.99
-        },
-        {
-          "word": "too",
-          "start": 106.94,
-          "end": 107.19,
-          "confidence": 0.998
-        },
-        {
-          "word": "tired",
-          "start": 107.19,
-          "end": 107.69,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.992
+      "text": "but we understood nothing of what was written there.",
+      "start": 101.75,
+      "duration": 2.58
     },
     {
       "id": 29,
-      "text": "Luckily, someone camping nearby came to help us.",
-      "speaker": "Speaker1",
-      "start": 110.1,
-      "duration": 3.3,
-      "words": [
-        {
-          "word": "luckily",
-          "start": 110.1,
-          "end": 110.6,
-          "confidence": 0.97
-        },
-        {
-          "word": "someone",
-          "start": 111.06,
-          "end": 111.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "camping",
-          "start": 111.46,
-          "end": 111.78,
-          "confidence": 1.0
-        },
-        {
-          "word": "nearby",
-          "start": 111.78,
-          "end": 112.26,
-          "confidence": 1.0
-        },
-        {
-          "word": "came",
-          "start": 112.26,
-          "end": 112.42,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 112.42,
-          "end": 112.58,
-          "confidence": 1.0
-        },
-        {
-          "word": "help",
-          "start": 112.58,
-          "end": 112.9,
-          "confidence": 1.0
-        },
-        {
-          "word": "us",
-          "start": 112.9,
-          "end": 113.4,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.985
+      "text": "I think we were too tired.",
+      "start": 106.06,
+      "duration": 1.63
     },
     {
       "id": 30,
-      "text": "Did the rest of the trip go okay?",
-      "speaker": "Speaker0",
-      "start": 120.5,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "did",
-          "start": 120.5,
-          "end": 120.74,
-          "confidence": 0.783
-        },
-        {
-          "word": "the",
-          "start": 120.74,
-          "end": 120.9,
-          "confidence": 1.0
-        },
-        {
-          "word": "rest",
-          "start": 120.9,
-          "end": 121.14,
-          "confidence": 1.0
-        },
-        {
-          "word": "of",
-          "start": 121.14,
-          "end": 121.3,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 121.3,
-          "end": 121.38,
-          "confidence": 0.998
-        },
-        {
-          "word": "trip",
-          "start": 121.38,
-          "end": 121.7,
-          "confidence": 1.0
-        },
-        {
-          "word": "go",
-          "start": 121.7,
-          "end": 121.94,
-          "confidence": 1.0
-        },
-        {
-          "word": "okay",
-          "start": 121.94,
-          "end": 122.44,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.972
+      "text": "Luckily, someone camping nearby came to help us.",
+      "start": 110.1,
+      "duration": 3.3
     },
     {
       "id": 31,
-      "text": "Not exactly.",
-      "speaker": "Speaker0",
-      "start": 123.59,
-      "duration": 0.89,
-      "words": [
-        {
-          "word": "not",
-          "start": 123.59,
-          "end": 123.98,
-          "confidence": 1.0
-        },
-        {
-          "word": "exactly",
-          "start": 123.98,
-          "end": 124.48,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
+      "text": "Did the rest of the trip go okay?",
+      "start": 120.5,
+      "duration": 1.94
     },
     {
       "id": 32,
-      "text": "I had brought some newspaper and matches,",
-      "speaker": "Speaker1",
-      "start": 126.39,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "i",
-          "start": 126.39,
-          "end": 126.62,
-          "confidence": 0.999
-        },
-        {
-          "word": "had",
-          "start": 126.62,
-          "end": 126.78,
-          "confidence": 0.984
-        },
-        {
-          "word": "brought",
-          "start": 126.78,
-          "end": 126.94,
-          "confidence": 0.993
-        },
-        {
-          "word": "some",
-          "start": 126.94,
-          "end": 127.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "newspaper",
-          "start": 127.19,
-          "end": 127.69,
-          "confidence": 0.999
-        },
-        {
-          "word": "and",
-          "start": 127.75,
-          "end": 127.91,
-          "confidence": 0.997
-        },
-        {
-          "word": "matches",
-          "start": 127.91,
-          "end": 128.41,
-          "confidence": 0.803
-        }
-      ],
-      "confidence": 0.968
+      "text": "Not exactly.",
+      "start": 123.59,
+      "duration": 0.89
     },
     {
       "id": 33,
-      "text": "so I lit the fire to cook our food,",
-      "speaker": "Speaker1",
-      "start": 129.43,
-      "duration": 2.18,
-      "words": [
-        {
-          "word": "so",
-          "start": 129.43,
-          "end": 129.67,
-          "confidence": 0.999
-        },
-        {
-          "word": "i",
-          "start": 129.67,
-          "end": 129.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "lit",
-          "start": 129.82,
-          "end": 130.06,
-          "confidence": 0.992
-        },
-        {
-          "word": "the",
-          "start": 130.06,
-          "end": 130.22,
-          "confidence": 0.984
-        },
-        {
-          "word": "fire",
-          "start": 130.22,
-          "end": 130.54,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 130.54,
-          "end": 130.71,
-          "confidence": 1.0
-        },
-        {
-          "word": "cook",
-          "start": 130.71,
-          "end": 130.87,
-          "confidence": 1.0
-        },
-        {
-          "word": "our",
-          "start": 130.87,
-          "end": 131.11,
-          "confidence": 1.0
-        },
-        {
-          "word": "food",
-          "start": 131.11,
-          "end": 131.61,
-          "confidence": 0.964
-        }
-      ],
-      "confidence": 0.993
+      "text": "I had brought some newspaper and matches,",
+      "start": 126.39,
+      "duration": 2.02
     },
     {
       "id": 34,
-      "text": "but the flames kept shooting up too high.",
-      "speaker": "Speaker1",
-      "start": 132.78,
-      "duration": 2.34,
-      "words": [
-        {
-          "word": "but",
-          "start": 132.78,
-          "end": 133.03,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 133.03,
-          "end": 133.19,
-          "confidence": 0.999
-        },
-        {
-          "word": "flames",
-          "start": 133.19,
-          "end": 133.59,
-          "confidence": 1.0
-        },
-        {
-          "word": "kept",
-          "start": 133.59,
-          "end": 133.82,
-          "confidence": 0.998
-        },
-        {
-          "word": "shooting",
-          "start": 133.82,
-          "end": 134.15,
-          "confidence": 1.0
-        },
-        {
-          "word": "up",
-          "start": 134.15,
-          "end": 134.39,
-          "confidence": 1.0
-        },
-        {
-          "word": "too",
-          "start": 134.39,
-          "end": 134.62,
-          "confidence": 0.998
-        },
-        {
-          "word": "high",
-          "start": 134.62,
-          "end": 135.12,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "so I lit the fire to cook our food,",
+      "start": 129.43,
+      "duration": 2.18
     },
     {
       "id": 35,
-      "text": "We tried to cook some hot dogs over it, but they all burnt.",
-      "speaker": "Speaker1",
-      "start": 136.64,
-      "duration": 3.06,
-      "words": [
-        {
-          "word": "we",
-          "start": 136.64,
-          "end": 136.88,
-          "confidence": 0.996
-        },
-        {
-          "word": "tried",
-          "start": 136.88,
-          "end": 137.12,
-          "confidence": 0.993
-        },
-        {
-          "word": "to",
-          "start": 137.12,
-          "end": 137.2,
-          "confidence": 1.0
-        },
-        {
-          "word": "cook",
-          "start": 137.2,
-          "end": 137.44,
-          "confidence": 1.0
-        },
-        {
-          "word": "some",
-          "start": 137.44,
-          "end": 137.68,
-          "confidence": 1.0
-        },
-        {
-          "word": "hot",
-          "start": 137.68,
-          "end": 137.84,
-          "confidence": 1.0
-        },
-        {
-          "word": "dogs",
-          "start": 137.84,
-          "end": 138.08,
-          "confidence": 0.661
-        },
-        {
-          "word": "over",
-          "start": 138.08,
-          "end": 138.4,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 138.4,
-          "end": 138.56,
-          "confidence": 0.767
-        },
-        {
-          "word": "but",
-          "start": 138.56,
-          "end": 138.8,
-          "confidence": 1.0
-        },
-        {
-          "word": "they",
-          "start": 138.8,
-          "end": 138.96,
-          "confidence": 1.0
-        },
-        {
-          "word": "all",
-          "start": 138.96,
-          "end": 139.2,
-          "confidence": 0.999
-        },
-        {
-          "word": "burnt",
-          "start": 139.2,
-          "end": 139.7,
-          "confidence": 0.989
-        }
-      ],
-      "confidence": 0.954
+      "text": "but the flames kept shooting up too high.",
+      "start": 132.78,
+      "duration": 2.34
     },
     {
       "id": 36,
-      "text": "When the flame died down, we cooked some more hot dogs and ate every bite.",
-      "speaker": "Speaker1",
-      "start": 141.92,
-      "duration": 5.54,
-      "words": [
-        {
-          "word": "when",
-          "start": 141.92,
-          "end": 142.24,
-          "confidence": 0.619
-        },
-        {
-          "word": "the",
-          "start": 142.24,
-          "end": 142.32,
-          "confidence": 1.0
-        },
-        {
-          "word": "flame",
-          "start": 142.32,
-          "end": 142.72,
-          "confidence": 0.996
-        },
-        {
-          "word": "died",
-          "start": 142.72,
-          "end": 142.96,
-          "confidence": 0.997
-        },
-        {
-          "word": "down",
-          "start": 142.96,
-          "end": 143.44,
-          "confidence": 0.985
-        },
-        {
-          "word": "we",
-          "start": 143.44,
-          "end": 143.6,
-          "confidence": 0.999
-        },
-        {
-          "word": "cooked",
-          "start": 143.6,
-          "end": 143.92,
-          "confidence": 0.858
-        },
-        {
-          "word": "some",
-          "start": 143.92,
-          "end": 144.08,
-          "confidence": 1.0
-        },
-        {
-          "word": "more",
-          "start": 144.08,
-          "end": 144.32,
-          "confidence": 0.999
-        },
-        {
-          "word": "hot",
-          "start": 144.32,
-          "end": 144.48,
-          "confidence": 1.0
-        },
-        {
-          "word": "dogs",
-          "start": 144.48,
-          "end": 144.98,
-          "confidence": 0.994
-        },
-        {
-          "word": "and",
-          "start": 146.16,
-          "end": 146.48,
-          "confidence": 0.951
-        },
-        {
-          "word": "ate",
-          "start": 146.48,
-          "end": 146.72,
-          "confidence": 0.995
-        },
-        {
-          "word": "every",
-          "start": 146.72,
-          "end": 146.96,
-          "confidence": 1.0
-        },
-        {
-          "word": "bite",
-          "start": 146.96,
-          "end": 147.46,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.971
+      "text": "We tried to cook some hot dogs over it, but they all burnt.",
+      "start": 136.64,
+      "duration": 3.06
     },
     {
       "id": 37,
-      "text": "We had been so hungry.",
-      "speaker": "Speaker1",
-      "start": 147.68,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "we",
-          "start": 147.68,
-          "end": 147.92,
-          "confidence": 0.999
-        },
-        {
-          "word": "had",
-          "start": 147.92,
-          "end": 148.08,
-          "confidence": 0.995
-        },
-        {
-          "word": "been",
-          "start": 148.08,
-          "end": 148.4,
-          "confidence": 1.0
-        },
-        {
-          "word": "so",
-          "start": 148.4,
-          "end": 148.72,
-          "confidence": 1.0
-        },
-        {
-          "word": "hungry",
-          "start": 148.72,
-          "end": 149.22,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.992
+      "text": "When the flame died down, we cooked some more hot dogs and ate every bite.",
+      "start": 141.92,
+      "duration": 5.54
     },
     {
       "id": 38,
-      "text": "Were you able to sleep in the tent?",
-      "speaker": "Speaker0",
-      "start": 153.41,
-      "duration": 1.78,
-      "words": [
-        {
-          "word": "were",
-          "start": 153.41,
-          "end": 153.66,
-          "confidence": 0.984
-        },
-        {
-          "word": "you",
-          "start": 153.66,
-          "end": 153.89,
-          "confidence": 1.0
-        },
-        {
-          "word": "able",
-          "start": 153.89,
-          "end": 154.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 154.06,
-          "end": 154.22,
-          "confidence": 0.999
-        },
-        {
-          "word": "sleep",
-          "start": 154.22,
-          "end": 154.45,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 154.45,
-          "end": 154.61,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 154.61,
-          "end": 154.69,
-          "confidence": 0.998
-        },
-        {
-          "word": "tent",
-          "start": 154.69,
-          "end": 155.19,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "text": "We had been so hungry.",
+      "start": 147.68,
+      "duration": 1.54
     },
     {
       "id": 39,
-      "text": "We hardly slept all night because we got bitten by mosquitoes.",
-      "speaker": "Speaker1",
-      "start": 157.17,
-      "duration": 3.22,
-      "words": [
-        {
-          "word": "we",
-          "start": 157.17,
-          "end": 157.41,
-          "confidence": 0.997
-        },
-        {
-          "word": "hardly",
-          "start": 157.41,
-          "end": 157.81,
-          "confidence": 1.0
-        },
-        {
-          "word": "slept",
-          "start": 157.81,
-          "end": 158.22,
-          "confidence": 1.0
-        },
-        {
-          "word": "all",
-          "start": 158.22,
-          "end": 158.45,
-          "confidence": 1.0
-        },
-        {
-          "word": "night",
-          "start": 158.45,
-          "end": 158.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "because",
-          "start": 158.69,
-          "end": 158.94,
-          "confidence": 0.994
-        },
-        {
-          "word": "we",
-          "start": 158.94,
-          "end": 159.17,
-          "confidence": 1.0
-        },
-        {
-          "word": "got",
-          "start": 159.17,
-          "end": 159.33,
-          "confidence": 1.0
-        },
-        {
-          "word": "bitten",
-          "start": 159.33,
-          "end": 159.66,
-          "confidence": 0.996
-        },
-        {
-          "word": "by",
-          "start": 159.66,
-          "end": 159.89,
-          "confidence": 1.0
-        },
-        {
-          "word": "mosquitoes",
-          "start": 159.89,
-          "end": 160.39,
-          "confidence": 0.995
-        }
-      ],
-      "confidence": 0.998
+      "text": "Were you able to sleep in the tent?",
+      "start": 153.41,
+      "duration": 1.78
     },
     {
       "id": 40,
-      "text": "When we woke up in the morning, our bodies were really itchy.",
-      "speaker": "Speaker1",
-      "start": 163.3,
-      "duration": 3.38,
-      "words": [
-        {
-          "word": "when",
-          "start": 163.3,
-          "end": 163.54,
-          "confidence": 0.998
-        },
-        {
-          "word": "we",
-          "start": 163.54,
-          "end": 163.7,
-          "confidence": 1.0
-        },
-        {
-          "word": "woke",
-          "start": 163.7,
-          "end": 163.94,
-          "confidence": 0.999
-        },
-        {
-          "word": "up",
-          "start": 163.94,
-          "end": 164.1,
-          "confidence": 0.999
-        },
-        {
-          "word": "in",
-          "start": 164.1,
-          "end": 164.26,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 164.26,
-          "end": 164.42,
-          "confidence": 0.999
-        },
-        {
-          "word": "morning",
-          "start": 164.42,
-          "end": 164.92,
-          "confidence": 0.999
-        },
-        {
-          "word": "our",
-          "start": 165.06,
-          "end": 165.3,
-          "confidence": 1.0
-        },
-        {
-          "word": "bodies",
-          "start": 165.3,
-          "end": 165.7,
-          "confidence": 1.0
-        },
-        {
-          "word": "were",
-          "start": 165.7,
-          "end": 165.94,
-          "confidence": 0.998
-        },
-        {
-          "word": "really",
-          "start": 165.94,
-          "end": 166.18,
-          "confidence": 1.0
-        },
-        {
-          "word": "itchy",
-          "start": 166.18,
-          "end": 166.68,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "We hardly slept all night because we got bitten by mosquitoes.",
+      "start": 157.17,
+      "duration": 3.22
     },
     {
       "id": 41,
-      "text": "Did you do anything fun with your family in the campsite?",
-      "speaker": "Speaker0",
-      "start": 168.58,
-      "duration": 2.58,
-      "words": [
-        {
-          "word": "did",
-          "start": 168.58,
-          "end": 168.82,
-          "confidence": 0.989
-        },
-        {
-          "word": "you",
-          "start": 168.82,
-          "end": 168.9,
-          "confidence": 1.0
-        },
-        {
-          "word": "do",
-          "start": 168.9,
-          "end": 169.06,
-          "confidence": 0.999
-        },
-        {
-          "word": "anything",
-          "start": 169.06,
-          "end": 169.46,
-          "confidence": 0.999
-        },
-        {
-          "word": "fun",
-          "start": 169.46,
-          "end": 169.7,
-          "confidence": 0.999
-        },
-        {
-          "word": "with",
-          "start": 169.7,
-          "end": 169.94,
-          "confidence": 1.0
-        },
-        {
-          "word": "your",
-          "start": 169.94,
-          "end": 170.1,
-          "confidence": 0.999
-        },
-        {
-          "word": "family",
-          "start": 170.1,
-          "end": 170.42,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 170.42,
-          "end": 170.5,
-          "confidence": 0.995
-        },
-        {
-          "word": "the",
-          "start": 170.5,
-          "end": 170.66,
-          "confidence": 0.998
-        },
-        {
-          "word": "campsite",
-          "start": 170.66,
-          "end": 171.16,
-          "confidence": 0.991
-        }
-      ],
-      "confidence": 0.997
+      "text": "When we woke up in the morning, our bodies were really itchy.",
+      "start": 163.3,
+      "duration": 3.38
     },
     {
       "id": 42,
-      "text": "Yes. We did.",
-      "speaker": "Speaker1",
-      "start": 172.82,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "yes",
-          "start": 172.82,
-          "end": 173.22,
-          "confidence": 0.944
-        },
-        {
-          "word": "we",
-          "start": 173.22,
-          "end": 173.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "did",
-          "start": 173.46,
-          "end": 173.96,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.981
+      "text": "Did you do anything fun with your family in the campsite?",
+      "start": 168.58,
+      "duration": 2.58
     },
     {
       "id": 43,
-      "text": "On Saturday, we swam in the lake.",
-      "speaker": "Speaker1",
-      "start": 174.34,
-      "duration": 2.18,
-      "words": [
-        {
-          "word": "on",
-          "start": 174.34,
-          "end": 174.58,
-          "confidence": 0.999
-        },
-        {
-          "word": "saturday",
-          "start": 174.58,
-          "end": 175.08,
-          "confidence": 0.996
-        },
-        {
-          "word": "we",
-          "start": 175.22,
-          "end": 175.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "swam",
-          "start": 175.38,
-          "end": 175.7,
-          "confidence": 0.997
-        },
-        {
-          "word": "in",
-          "start": 175.7,
-          "end": 175.86,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 175.86,
-          "end": 176.02,
-          "confidence": 1.0
-        },
-        {
-          "word": "lake",
-          "start": 176.02,
-          "end": 176.52,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
+      "text": "Yes.",
+      "start": 172.82,
+      "duration": 0.38
     },
     {
       "id": 44,
-      "text": "My son hadn't swum before, so I taught him how to swim.",
-      "speaker": "Speaker1",
-      "start": 177.46,
-      "duration": 3.37,
-      "words": [
-        {
-          "word": "my",
-          "start": 177.46,
-          "end": 177.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "son",
-          "start": 177.69,
-          "end": 178.01,
-          "confidence": 1.0
-        },
-        {
-          "word": "hadn't",
-          "start": 178.01,
-          "end": 178.33,
-          "confidence": 0.999
-        },
-        {
-          "word": "swum",
-          "start": 178.33,
-          "end": 178.66,
-          "confidence": 0.978
-        },
-        {
-          "word": "before",
-          "start": 178.66,
-          "end": 179.16,
-          "confidence": 0.919
-        },
-        {
-          "word": "so",
-          "start": 179.22,
-          "end": 179.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "i",
-          "start": 179.46,
-          "end": 179.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "taught",
-          "start": 179.53,
-          "end": 179.78,
-          "confidence": 0.989
-        },
-        {
-          "word": "him",
-          "start": 179.78,
-          "end": 180.01,
-          "confidence": 1.0
-        },
-        {
-          "word": "how",
-          "start": 180.01,
-          "end": 180.18,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 180.18,
-          "end": 180.33,
-          "confidence": 0.999
-        },
-        {
-          "word": "swim",
-          "start": 180.33,
-          "end": 180.83,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.99
+      "text": "We did.",
+      "start": 173.2,
+      "duration": 0.76
     },
     {
       "id": 45,
-      "text": "We had so much fun.",
-      "speaker": "Speaker1",
-      "start": 182.74,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "we",
-          "start": 182.74,
-          "end": 182.97,
-          "confidence": 0.985
-        },
-        {
-          "word": "had",
-          "start": 182.97,
-          "end": 183.22,
-          "confidence": 1.0
-        },
-        {
-          "word": "so",
-          "start": 183.22,
-          "end": 183.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "much",
-          "start": 183.38,
-          "end": 183.78,
-          "confidence": 1.0
-        },
-        {
-          "word": "fun",
-          "start": 183.78,
-          "end": 184.28,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
+      "text": "On Saturday, we swam in the lake.",
+      "start": 174.34,
+      "duration": 2.18
     },
     {
       "id": 46,
-      "text": "later that day i went out in a canoe on the lake with my daughter",
-      "speaker": "Speaker1",
-      "start": 189.38,
-      "duration": 3.23,
-      "words": [
-        {
-          "word": "later",
-          "start": 189.38,
-          "end": 189.78,
-          "confidence": 0.986
-        },
-        {
-          "word": "that",
-          "start": 189.78,
-          "end": 190.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "day",
-          "start": 190.13,
-          "end": 190.45,
-          "confidence": 0.997
-        },
-        {
-          "word": "i",
-          "start": 190.45,
-          "end": 190.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "went",
-          "start": 190.53,
-          "end": 190.77,
-          "confidence": 1.0
-        },
-        {
-          "word": "out",
-          "start": 190.77,
-          "end": 190.93,
-          "confidence": 0.999
-        },
-        {
-          "word": "in",
-          "start": 190.93,
-          "end": 191.17,
-          "confidence": 0.987
-        },
-        {
-          "word": "a",
-          "start": 191.17,
-          "end": 191.25,
-          "confidence": 0.982
-        },
-        {
-          "word": "canoe",
-          "start": 191.25,
-          "end": 191.57,
-          "confidence": 0.999
-        },
-        {
-          "word": "on",
-          "start": 191.57,
-          "end": 191.65,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 191.65,
-          "end": 191.73,
-          "confidence": 0.999
-        },
-        {
-          "word": "lake",
-          "start": 191.73,
-          "end": 191.97,
-          "confidence": 0.997
-        },
-        {
-          "word": "with",
-          "start": 191.97,
-          "end": 192.21,
-          "confidence": 1.0
-        },
-        {
-          "word": "my",
-          "start": 192.21,
-          "end": 192.29,
-          "confidence": 1.0
-        },
-        {
-          "word": "daughter",
-          "start": 192.29,
-          "end": 192.61,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.997
+      "text": "My son hadn't swum before, so I taught him how to swim.",
+      "start": 177.46,
+      "duration": 3.37
     },
     {
       "id": 47,
-      "text": "to catch some fish",
-      "speaker": "Speaker1",
-      "start": 192.61,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "to",
-          "start": 192.61,
-          "end": 192.77,
-          "confidence": 1.0
-        },
-        {
-          "word": "catch",
-          "start": 192.77,
-          "end": 193.01,
-          "confidence": 1.0
-        },
-        {
-          "word": "some",
-          "start": 193.01,
-          "end": 193.25,
-          "confidence": 0.999
-        },
-        {
-          "word": "fish",
-          "start": 193.25,
-          "end": 193.75,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.997
+      "text": "We had so much fun.",
+      "start": 182.74,
+      "duration": 1.54
     },
     {
       "id": 48,
-      "text": "After a little while, she felt a big tug on the line.",
-      "speaker": "Speaker1",
-      "start": 196.29,
-      "duration": 3.14,
-      "words": [
-        {
-          "word": "after",
-          "start": 196.29,
-          "end": 196.61,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 196.61,
-          "end": 196.77,
-          "confidence": 0.999
-        },
-        {
-          "word": "little",
-          "start": 196.77,
-          "end": 197.01,
-          "confidence": 0.999
-        },
-        {
-          "word": "while",
-          "start": 197.01,
-          "end": 197.51,
-          "confidence": 0.996
-        },
-        {
-          "word": "she",
-          "start": 197.57,
-          "end": 197.73,
-          "confidence": 1.0
-        },
-        {
-          "word": "felt",
-          "start": 197.73,
-          "end": 197.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "a",
-          "start": 197.97,
-          "end": 198.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "big",
-          "start": 198.05,
-          "end": 198.37,
-          "confidence": 0.997
-        },
-        {
-          "word": "tug",
-          "start": 198.37,
-          "end": 198.61,
-          "confidence": 1.0
-        },
-        {
-          "word": "on",
-          "start": 198.61,
-          "end": 198.77,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 198.77,
-          "end": 198.93,
-          "confidence": 0.999
-        },
-        {
-          "word": "line",
-          "start": 198.93,
-          "end": 199.43,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.999
+      "text": "later that day i went out in a canoe on the lake with my daughter",
+      "start": 189.38,
+      "duration": 3.23
     },
     {
       "id": 49,
-      "text": "She stood up to reel her line in,",
-      "speaker": "Speaker1",
-      "start": 201.09,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "she",
-          "start": 201.09,
-          "end": 201.41,
-          "confidence": 1.0
-        },
-        {
-          "word": "stood",
-          "start": 201.41,
-          "end": 201.65,
-          "confidence": 1.0
-        },
-        {
-          "word": "up",
-          "start": 201.65,
-          "end": 201.81,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 201.81,
-          "end": 201.97,
-          "confidence": 1.0
-        },
-        {
-          "word": "reel",
-          "start": 201.97,
-          "end": 202.21,
-          "confidence": 0.998
-        },
-        {
-          "word": "her",
-          "start": 202.21,
-          "end": 202.37,
-          "confidence": 1.0
-        },
-        {
-          "word": "line",
-          "start": 202.37,
-          "end": 202.61,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 202.61,
-          "end": 203.11,
-          "confidence": 0.98
-        }
-      ],
-      "confidence": 0.997
+      "text": "to catch some fish",
+      "start": 192.61,
+      "duration": 1.14
     },
     {
       "id": 50,
-      "text": "but she fell out of the canoe.",
-      "speaker": "Speaker1",
-      "start": 204.09,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "but",
-          "start": 204.09,
-          "end": 204.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "she",
-          "start": 204.25,
-          "end": 204.5,
-          "confidence": 0.997
-        },
-        {
-          "word": "fell",
-          "start": 204.5,
-          "end": 204.74,
-          "confidence": 0.998
-        },
-        {
-          "word": "out",
-          "start": 204.74,
-          "end": 204.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "of",
-          "start": 204.97,
-          "end": 205.06,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 205.06,
-          "end": 205.13,
-          "confidence": 0.986
-        },
-        {
-          "word": "canoe",
-          "start": 205.13,
-          "end": 205.63,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.997
+      "text": "After a little while, she felt a big tug on the line.",
+      "start": 196.29,
+      "duration": 3.14
     },
     {
       "id": 51,
-      "text": "I hope she knew how to swim.",
-      "speaker": "Speaker0",
-      "start": 208.41,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "i",
-          "start": 208.41,
-          "end": 208.57,
-          "confidence": 0.732
-        },
-        {
-          "word": "hope",
-          "start": 208.57,
-          "end": 208.81,
-          "confidence": 0.999
-        },
-        {
-          "word": "she",
-          "start": 208.81,
-          "end": 208.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "knew",
-          "start": 208.97,
-          "end": 209.13,
-          "confidence": 0.998
-        },
-        {
-          "word": "how",
-          "start": 209.13,
-          "end": 209.29,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 209.29,
-          "end": 209.45,
-          "confidence": 1.0
-        },
-        {
-          "word": "swim",
-          "start": 209.45,
-          "end": 209.95,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.961
+      "text": "She stood up to reel her line in,",
+      "start": 201.09,
+      "duration": 2.02
     },
     {
       "id": 52,
-      "text": "Yes. She's a strong swimmer.",
-      "speaker": "Speaker1",
-      "start": 211.29,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "yes",
-          "start": 211.29,
-          "end": 211.79,
-          "confidence": 0.968
-        },
-        {
-          "word": "she's",
-          "start": 212.01,
-          "end": 212.33,
-          "confidence": 0.994
-        },
-        {
-          "word": "a",
-          "start": 212.33,
-          "end": 212.5,
-          "confidence": 0.999
-        },
-        {
-          "word": "strong",
-          "start": 212.5,
-          "end": 212.89,
-          "confidence": 1.0
-        },
-        {
-          "word": "swimmer",
-          "start": 212.89,
-          "end": 213.39,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.992
+      "text": "but she fell out of the canoe.",
+      "start": 204.09,
+      "duration": 1.54
     },
     {
       "id": 53,
-      "text": "She got back in the boat and caught a huge fish.",
-      "speaker": "Speaker1",
-      "start": 214.09,
-      "duration": 2.54,
-      "words": [
-        {
-          "word": "she",
-          "start": 214.09,
-          "end": 214.33,
-          "confidence": 0.999
-        },
-        {
-          "word": "got",
-          "start": 214.33,
-          "end": 214.5,
-          "confidence": 1.0
-        },
-        {
-          "word": "back",
-          "start": 214.5,
-          "end": 214.74,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 214.74,
-          "end": 214.89,
-          "confidence": 0.996
-        },
-        {
-          "word": "the",
-          "start": 214.89,
-          "end": 214.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "boat",
-          "start": 214.97,
-          "end": 215.22,
-          "confidence": 0.999
-        },
-        {
-          "word": "and",
-          "start": 215.22,
-          "end": 215.38,
-          "confidence": 0.99
-        },
-        {
-          "word": "caught",
-          "start": 215.38,
-          "end": 215.61,
-          "confidence": 0.995
-        },
-        {
-          "word": "a",
-          "start": 215.61,
-          "end": 215.78,
-          "confidence": 0.999
-        },
-        {
-          "word": "huge",
-          "start": 215.78,
-          "end": 216.17,
-          "confidence": 1.0
-        },
-        {
-          "word": "fish",
-          "start": 216.17,
-          "end": 216.63,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
+      "text": "I hope she knew how to swim.",
+      "start": 208.41,
+      "duration": 1.54
     },
     {
       "id": 54,
-      "text": "We cooked it for dinner that night.",
-      "speaker": "Speaker1",
-      "start": 221.11,
-      "duration": 1.78,
-      "words": [
-        {
-          "word": "we",
-          "start": 221.11,
-          "end": 221.35,
-          "confidence": 0.997
-        },
-        {
-          "word": "cooked",
-          "start": 221.35,
-          "end": 221.59,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 221.59,
-          "end": 221.75,
-          "confidence": 0.999
-        },
-        {
-          "word": "for",
-          "start": 221.75,
-          "end": 221.91,
-          "confidence": 1.0
-        },
-        {
-          "word": "dinner",
-          "start": 221.91,
-          "end": 222.23,
-          "confidence": 1.0
-        },
-        {
-          "word": "that",
-          "start": 222.23,
-          "end": 222.39,
-          "confidence": 1.0
-        },
-        {
-          "word": "night",
-          "start": 222.39,
-          "end": 222.89,
-          "confidence": 0.985
-        }
-      ],
-      "confidence": 0.998
+      "text": "Yes.",
+      "start": 211.29,
+      "duration": 0.42
     },
     {
       "id": 55,
-      "text": "It was delicious.",
-      "speaker": "Speaker1",
-      "start": 223.11,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "it",
-          "start": 223.11,
-          "end": 223.43,
-          "confidence": 1.0
-        },
-        {
-          "word": "was",
-          "start": 223.43,
-          "end": 223.75,
-          "confidence": 1.0
-        },
-        {
-          "word": "delicious",
-          "start": 223.75,
-          "end": 224.25,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "text": "She's a strong swimmer.",
+      "start": 211.70999999999998,
+      "duration": 1.68
     },
     {
       "id": 56,
-      "text": "You won't believe what happened next.",
-      "speaker": "Speaker1",
-      "start": 227.35,
-      "duration": 2.02,
-      "words": [
-        {
-          "word": "you",
-          "start": 227.35,
-          "end": 227.59,
-          "confidence": 0.999
-        },
-        {
-          "word": "won't",
-          "start": 227.59,
-          "end": 227.83,
-          "confidence": 1.0
-        },
-        {
-          "word": "believe",
-          "start": 227.83,
-          "end": 228.23,
-          "confidence": 1.0
-        },
-        {
-          "word": "what",
-          "start": 228.23,
-          "end": 228.47,
-          "confidence": 1.0
-        },
-        {
-          "word": "happened",
-          "start": 228.47,
-          "end": 228.87,
-          "confidence": 0.999
-        },
-        {
-          "word": "next",
-          "start": 228.87,
-          "end": 229.37,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
+      "text": "She got back in the boat and caught a huge fish.",
+      "start": 214.09,
+      "duration": 2.54
     },
     {
       "id": 57,
-      "text": "Not long after we had gone to bed, I thought I heard something growling outside.",
-      "speaker": "Speaker1",
-      "start": 230.88,
-      "duration": 4.18,
-      "words": [
-        {
-          "word": "not",
-          "start": 230.88,
-          "end": 231.21,
-          "confidence": 1.0
-        },
-        {
-          "word": "long",
-          "start": 231.21,
-          "end": 231.44,
-          "confidence": 1.0
-        },
-        {
-          "word": "after",
-          "start": 231.44,
-          "end": 231.69,
-          "confidence": 0.998
-        },
-        {
-          "word": "we",
-          "start": 231.69,
-          "end": 231.84,
-          "confidence": 0.998
-        },
-        {
-          "word": "had",
-          "start": 231.84,
-          "end": 232.0,
-          "confidence": 0.991
-        },
-        {
-          "word": "gone",
-          "start": 232.0,
-          "end": 232.25,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 232.25,
-          "end": 232.41,
-          "confidence": 0.999
-        },
-        {
-          "word": "bed",
-          "start": 232.41,
-          "end": 232.91,
-          "confidence": 0.993
-        },
-        {
-          "word": "i",
-          "start": 232.97,
-          "end": 233.12,
-          "confidence": 1.0
-        },
-        {
-          "word": "thought",
-          "start": 233.12,
-          "end": 233.37,
-          "confidence": 0.998
-        },
-        {
-          "word": "i",
-          "start": 233.37,
-          "end": 233.44,
-          "confidence": 0.994
-        },
-        {
-          "word": "heard",
-          "start": 233.44,
-          "end": 233.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "something",
-          "start": 233.69,
-          "end": 234.09,
-          "confidence": 0.999
-        },
-        {
-          "word": "growling",
-          "start": 234.09,
-          "end": 234.56,
-          "confidence": 0.999
-        },
-        {
-          "word": "outside",
-          "start": 234.56,
-          "end": 235.06,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.998
+      "text": "We cooked it for dinner that night.",
+      "start": 221.11,
+      "duration": 1.78
     },
     {
       "id": 58,
-      "text": "It sounded like a bear.",
-      "speaker": "Speaker1",
-      "start": 237.04,
-      "duration": 1.71,
-      "words": [
-        {
-          "word": "it",
-          "start": 237.04,
-          "end": 237.37,
-          "confidence": 0.922
-        },
-        {
-          "word": "sounded",
-          "start": 237.37,
-          "end": 237.84,
-          "confidence": 0.999
-        },
-        {
-          "word": "like",
-          "start": 237.84,
-          "end": 238.17,
-          "confidence": 0.999
-        },
-        {
-          "word": "a",
-          "start": 238.17,
-          "end": 238.25,
-          "confidence": 0.999
-        },
-        {
-          "word": "bear",
-          "start": 238.25,
-          "end": 238.75,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.984
+      "text": "It was delicious.",
+      "start": 223.11,
+      "duration": 1.14
     },
     {
       "id": 59,
-      "text": "I told my family to stay in the tent while I crept outside.",
-      "speaker": "Speaker1",
-      "start": 239.93,
-      "duration": 6.17,
-      "words": [
-        {
-          "word": "i",
-          "start": 239.93,
-          "end": 240.17,
-          "confidence": 0.999
-        },
-        {
-          "word": "told",
-          "start": 240.17,
-          "end": 240.41,
-          "confidence": 1.0
-        },
-        {
-          "word": "my",
-          "start": 240.41,
-          "end": 240.65,
-          "confidence": 0.999
-        },
-        {
-          "word": "family",
-          "start": 240.65,
-          "end": 241.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 241.04,
-          "end": 241.21,
-          "confidence": 0.999
-        },
-        {
-          "word": "stay",
-          "start": 241.21,
-          "end": 241.37,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 241.37,
-          "end": 241.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 241.53,
-          "end": 241.69,
-          "confidence": 0.988
-        },
-        {
-          "word": "tent",
-          "start": 241.69,
-          "end": 242.0,
-          "confidence": 0.991
-        },
-        {
-          "word": "while",
-          "start": 242.0,
-          "end": 242.25,
-          "confidence": 0.992
-        },
-        {
-          "word": "i",
-          "start": 242.25,
-          "end": 242.32,
-          "confidence": 0.999
-        },
-        {
-          "word": "crept",
-          "start": 242.32,
-          "end": 242.64,
-          "confidence": 0.969
-        },
-        {
-          "word": "outside",
-          "start": 245.6,
-          "end": 246.1,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.998
+      "text": "You won't believe what happened next.",
+      "start": 227.35,
+      "duration": 2.02
     },
     {
       "id": 60,
-      "text": "Through the dark, I saw something very large and hairy.",
-      "speaker": "Speaker1",
-      "start": 246.64,
-      "duration": 3.46,
-      "words": [
-        {
-          "word": "through",
-          "start": 246.64,
-          "end": 246.88,
-          "confidence": 0.993
-        },
-        {
-          "word": "the",
-          "start": 246.88,
-          "end": 246.96,
-          "confidence": 1.0
-        },
-        {
-          "word": "dark",
-          "start": 246.96,
-          "end": 247.46,
-          "confidence": 0.997
-        },
-        {
-          "word": "i",
-          "start": 247.76,
-          "end": 247.92,
-          "confidence": 1.0
-        },
-        {
-          "word": "saw",
-          "start": 247.92,
-          "end": 248.16,
-          "confidence": 1.0
-        },
-        {
-          "word": "something",
-          "start": 248.16,
-          "end": 248.64,
-          "confidence": 1.0
-        },
-        {
-          "word": "very",
-          "start": 248.64,
-          "end": 249.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "large",
-          "start": 249.04,
-          "end": 249.44,
-          "confidence": 1.0
-        },
-        {
-          "word": "and",
-          "start": 249.44,
-          "end": 249.6,
-          "confidence": 0.991
-        },
-        {
-          "word": "hairy",
-          "start": 249.6,
-          "end": 250.1,
-          "confidence": 0.997
-        }
-      ],
-      "confidence": 0.998
+      "text": "Not long after we had gone to bed, I thought I heard something growling outside.",
+      "start": 230.88,
+      "duration": 4.18
     },
     {
       "id": 61,
-      "text": "It was a big bear.",
-      "speaker": "Speaker1",
-      "start": 251.68,
-      "duration": 1.78,
-      "words": [
-        {
-          "word": "it",
-          "start": 251.68,
-          "end": 251.92,
-          "confidence": 0.998
-        },
-        {
-          "word": "was",
-          "start": 251.92,
-          "end": 252.16,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 252.16,
-          "end": 252.32,
-          "confidence": 0.998
-        },
-        {
-          "word": "big",
-          "start": 252.32,
-          "end": 252.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "bear",
-          "start": 252.96,
-          "end": 253.46,
-          "confidence": 0.998
-        }
-      ],
-      "confidence": 0.999
+      "text": "It sounded like a bear.",
+      "start": 237.04,
+      "duration": 1.71
     },
     {
       "id": 62,
-      "text": "he had eaten the burnt hot dogs we had left left out",
-      "speaker": "Speaker1",
-      "start": 254.88,
-      "duration": 2.36,
-      "words": [
-        {
-          "word": "he",
-          "start": 254.88,
-          "end": 255.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "had",
-          "start": 255.04,
-          "end": 255.2,
-          "confidence": 0.997
-        },
-        {
-          "word": "eaten",
-          "start": 255.2,
-          "end": 255.52,
-          "confidence": 0.996
-        },
-        {
-          "word": "the",
-          "start": 255.52,
-          "end": 255.6,
-          "confidence": 0.997
-        },
-        {
-          "word": "burnt",
-          "start": 255.6,
-          "end": 256.0,
-          "confidence": 0.984
-        },
-        {
-          "word": "hot",
-          "start": 256.0,
-          "end": 256.16,
-          "confidence": 0.998
-        },
-        {
-          "word": "dogs",
-          "start": 256.16,
-          "end": 256.48,
-          "confidence": 0.728
-        },
-        {
-          "word": "we",
-          "start": 256.48,
-          "end": 256.56,
-          "confidence": 0.993
-        },
-        {
-          "word": "had",
-          "start": 256.56,
-          "end": 256.72,
-          "confidence": 0.985
-        },
-        {
-          "word": "left",
-          "start": 256.72,
-          "end": 256.88,
-          "confidence": 0.569
-        },
-        {
-          "word": "left",
-          "start": 256.95,
-          "end": 257.12,
-          "confidence": 0.996
-        },
-        {
-          "word": "out",
-          "start": 257.12,
-          "end": 257.24,
-          "confidence": 0.815
-        }
-      ],
-      "confidence": 0.949
+      "text": "I told my family to stay in the tent while I crept outside.",
+      "start": 239.93,
+      "duration": 6.17
     },
     {
       "id": 63,
-      "text": "and he was wandering around our campsite",
-      "speaker": "Speaker1",
-      "start": 257.24,
-      "duration": 2.06,
-      "words": [
-        {
-          "word": "and",
-          "start": 257.24,
-          "end": 257.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "he",
-          "start": 257.36,
-          "end": 257.6,
-          "confidence": 0.999
-        },
-        {
-          "word": "was",
-          "start": 257.6,
-          "end": 257.83,
-          "confidence": 1.0
-        },
-        {
-          "word": "wandering",
-          "start": 257.83,
-          "end": 258.31,
-          "confidence": 0.978
-        },
-        {
-          "word": "around",
-          "start": 258.31,
-          "end": 258.63,
-          "confidence": 0.999
-        },
-        {
-          "word": "our",
-          "start": 258.63,
-          "end": 258.8,
-          "confidence": 0.998
-        },
-        {
-          "word": "campsite",
-          "start": 258.8,
-          "end": 259.3,
-          "confidence": 0.99
-        }
-      ],
-      "confidence": 0.949
+      "text": "Through the dark, I saw something very large and hairy.",
+      "start": 246.64,
+      "duration": 3.46
     },
     {
       "id": 64,
-      "text": "We had made a mistake by leaving the burnt hot dogs there.",
-      "speaker": "Speaker1",
-      "start": 261.04,
-      "duration": 2.9,
-      "words": [
-        {
-          "word": "we",
-          "start": 261.04,
-          "end": 261.19,
-          "confidence": 0.999
-        },
-        {
-          "word": "had",
-          "start": 261.19,
-          "end": 261.36,
-          "confidence": 0.998
-        },
-        {
-          "word": "made",
-          "start": 261.36,
-          "end": 261.6,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 261.6,
-          "end": 261.68,
-          "confidence": 1.0
-        },
-        {
-          "word": "mistake",
-          "start": 261.68,
-          "end": 262.15,
-          "confidence": 1.0
-        },
-        {
-          "word": "by",
-          "start": 262.15,
-          "end": 262.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "leaving",
-          "start": 262.31,
-          "end": 262.48,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 262.48,
-          "end": 262.63,
-          "confidence": 0.998
-        },
-        {
-          "word": "burnt",
-          "start": 262.63,
-          "end": 262.95,
-          "confidence": 0.995
-        },
-        {
-          "word": "hot",
-          "start": 262.95,
-          "end": 263.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "dogs",
-          "start": 263.19,
-          "end": 263.44,
-          "confidence": 0.997
-        },
-        {
-          "word": "there",
-          "start": 263.44,
-          "end": 263.94,
-          "confidence": 0.991
-        }
-      ],
-      "confidence": 0.998
+      "text": "It was a big bear.",
+      "start": 251.68,
+      "duration": 1.78
     },
     {
       "id": 65,
-      "text": "We had meant to put them away in a safe place,",
-      "speaker": "Speaker1",
-      "start": 265.44,
-      "duration": 2.42,
-      "words": [
-        {
-          "word": "we",
-          "start": 265.44,
-          "end": 265.6,
-          "confidence": 0.999
-        },
-        {
-          "word": "had",
-          "start": 265.6,
-          "end": 265.75,
-          "confidence": 0.999
-        },
-        {
-          "word": "meant",
-          "start": 265.75,
-          "end": 266.07,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 266.07,
-          "end": 266.15,
-          "confidence": 0.999
-        },
-        {
-          "word": "put",
-          "start": 266.15,
-          "end": 266.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "them",
-          "start": 266.31,
-          "end": 266.56,
-          "confidence": 1.0
-        },
-        {
-          "word": "away",
-          "start": 266.56,
-          "end": 266.8,
-          "confidence": 1.0
-        },
-        {
-          "word": "in",
-          "start": 266.8,
-          "end": 266.95,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 266.95,
-          "end": 267.04,
-          "confidence": 0.998
-        },
-        {
-          "word": "safe",
-          "start": 267.04,
-          "end": 267.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "place",
-          "start": 267.36,
-          "end": 267.86,
-          "confidence": 0.967
-        }
-      ],
-      "confidence": 0.996
+      "text": "he had eaten the burnt hot dogs we had left left out",
+      "start": 254.88,
+      "duration": 2.36
     },
     {
       "id": 66,
-      "text": "but we completely forgot about that.",
-      "speaker": "Speaker1",
-      "start": 269.61,
-      "duration": 2.1,
-      "words": [
-        {
-          "word": "but",
-          "start": 269.61,
-          "end": 269.85,
-          "confidence": 1.0
-        },
-        {
-          "word": "we",
-          "start": 269.85,
-          "end": 270.09,
-          "confidence": 0.999
-        },
-        {
-          "word": "completely",
-          "start": 270.09,
-          "end": 270.57,
-          "confidence": 0.999
-        },
-        {
-          "word": "forgot",
-          "start": 270.57,
-          "end": 270.89,
-          "confidence": 0.999
-        },
-        {
-          "word": "about",
-          "start": 270.89,
-          "end": 271.21,
-          "confidence": 1.0
-        },
-        {
-          "word": "that",
-          "start": 271.21,
-          "end": 271.71,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "and he was wandering around our campsite",
+      "start": 257.24,
+      "duration": 2.06
     },
     {
       "id": 67,
-      "text": "The bear had been drawn to the camp by the smell.",
-      "speaker": "Speaker1",
-      "start": 273.21,
-      "duration": 2.66,
-      "words": [
-        {
-          "word": "the",
-          "start": 273.21,
-          "end": 273.45,
-          "confidence": 0.999
-        },
-        {
-          "word": "bear",
-          "start": 273.45,
-          "end": 273.77,
-          "confidence": 0.999
-        },
-        {
-          "word": "had",
-          "start": 273.77,
-          "end": 274.01,
-          "confidence": 0.973
-        },
-        {
-          "word": "been",
-          "start": 274.01,
-          "end": 274.17,
-          "confidence": 1.0
-        },
-        {
-          "word": "drawn",
-          "start": 274.17,
-          "end": 274.41,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 274.41,
-          "end": 274.57,
-          "confidence": 0.996
-        },
-        {
-          "word": "the",
-          "start": 274.57,
-          "end": 274.73,
-          "confidence": 0.999
-        },
-        {
-          "word": "camp",
-          "start": 274.73,
-          "end": 275.05,
-          "confidence": 1.0
-        },
-        {
-          "word": "by",
-          "start": 275.05,
-          "end": 275.29,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 275.29,
-          "end": 275.37,
-          "confidence": 1.0
-        },
-        {
-          "word": "smell",
-          "start": 275.37,
-          "end": 275.87,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.997
+      "text": "We had made a mistake by leaving the burnt hot dogs there.",
+      "start": 261.04,
+      "duration": 2.9
     },
     {
       "id": 68,
-      "text": "I thought the bear saw me standing there, so I froze in place.",
-      "speaker": "Speaker1",
-      "start": 278.01,
-      "duration": 3.54,
-      "words": [
-        {
-          "word": "i",
-          "start": 278.01,
-          "end": 278.25,
-          "confidence": 0.998
-        },
-        {
-          "word": "thought",
-          "start": 278.25,
-          "end": 278.49,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 278.49,
-          "end": 278.65,
-          "confidence": 0.997
-        },
-        {
-          "word": "bear",
-          "start": 278.65,
-          "end": 278.97,
-          "confidence": 0.999
-        },
-        {
-          "word": "saw",
-          "start": 278.97,
-          "end": 279.13,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 279.13,
-          "end": 279.29,
-          "confidence": 0.999
-        },
-        {
-          "word": "standing",
-          "start": 279.29,
-          "end": 279.77,
-          "confidence": 1.0
-        },
-        {
-          "word": "there",
-          "start": 279.77,
-          "end": 280.09,
-          "confidence": 0.959
-        },
-        {
-          "word": "so",
-          "start": 280.09,
-          "end": 280.33,
-          "confidence": 0.999
-        },
-        {
-          "word": "i",
-          "start": 280.33,
-          "end": 280.57,
-          "confidence": 0.987
-        },
-        {
-          "word": "froze",
-          "start": 280.57,
-          "end": 280.89,
-          "confidence": 0.998
-        },
-        {
-          "word": "in",
-          "start": 280.89,
-          "end": 281.05,
-          "confidence": 0.997
-        },
-        {
-          "word": "place",
-          "start": 281.05,
-          "end": 281.55,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.995
+      "text": "We had meant to put them away in a safe place,",
+      "start": 265.44,
+      "duration": 2.42
     },
     {
       "id": 69,
-      "text": "Oh, no.",
-      "speaker": "Speaker0",
-      "start": 283.9,
-      "duration": 0.72,
-      "words": [
-        {
-          "word": "oh",
-          "start": 283.9,
-          "end": 284.14,
-          "confidence": 0.969
-        },
-        {
-          "word": "no",
-          "start": 284.14,
-          "end": 284.62,
-          "confidence": 0.983
-        }
-      ],
-      "confidence": 0.992
+      "text": "but we completely forgot about that.",
+      "start": 269.61,
+      "duration": 2.1
     },
     {
       "id": 70,
-      "text": "That sounds scary.",
-      "speaker": "Speaker0",
-      "start": 284.62,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "that",
-          "start": 284.62,
-          "end": 284.94,
-          "confidence": 0.999
-        },
-        {
-          "word": "sounds",
-          "start": 284.94,
-          "end": 285.26,
-          "confidence": 0.969
-        },
-        {
-          "word": "scary",
-          "start": 285.26,
-          "end": 285.76,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.992
+      "text": "The bear had been drawn to the camp by the smell.",
+      "start": 273.21,
+      "duration": 2.66
     },
     {
       "id": 71,
-      "text": "Did the bear go away?",
-      "speaker": "Speaker0",
-      "start": 286.06,
-      "duration": 1.31,
-      "words": [
-        {
-          "word": "did",
-          "start": 286.06,
-          "end": 286.31,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 286.31,
-          "end": 286.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "bear",
-          "start": 286.38,
-          "end": 286.7,
-          "confidence": 0.999
-        },
-        {
-          "word": "go",
-          "start": 286.7,
-          "end": 286.87,
-          "confidence": 1.0
-        },
-        {
-          "word": "away",
-          "start": 286.87,
-          "end": 287.37,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.992
+      "text": "I thought the bear saw me standing there, so I froze in place.",
+      "start": 278.01,
+      "duration": 3.54
     },
     {
       "id": 72,
-      "text": "i was afraid the bear would come towards the tent",
-      "speaker": "Speaker1",
-      "start": 288.54,
-      "duration": 2.33,
-      "words": [
-        {
-          "word": "i",
-          "start": 288.54,
-          "end": 288.7,
-          "confidence": 0.999
-        },
-        {
-          "word": "was",
-          "start": 288.7,
-          "end": 288.87,
-          "confidence": 1.0
-        },
-        {
-          "word": "afraid",
-          "start": 288.87,
-          "end": 289.26,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 289.26,
-          "end": 289.43,
-          "confidence": 0.992
-        },
-        {
-          "word": "bear",
-          "start": 289.43,
-          "end": 289.66,
-          "confidence": 1.0
-        },
-        {
-          "word": "would",
-          "start": 289.66,
-          "end": 289.75,
-          "confidence": 0.998
-        },
-        {
-          "word": "come",
-          "start": 289.75,
-          "end": 289.99,
-          "confidence": 1.0
-        },
-        {
-          "word": "towards",
-          "start": 289.99,
-          "end": 290.31,
-          "confidence": 0.995
-        },
-        {
-          "word": "the",
-          "start": 290.31,
-          "end": 290.46,
-          "confidence": 0.999
-        },
-        {
-          "word": "tent",
-          "start": 290.46,
-          "end": 290.87,
-          "confidence": 0.971
-        }
-      ],
-      "confidence": 0.997
+      "text": "Oh, no.",
+      "start": 283.9,
+      "duration": 0.72
     },
     {
       "id": 73,
-      "text": "and i didn't want him to hurt my family",
-      "speaker": "Speaker1",
-      "start": 290.87,
-      "duration": 2.01,
-      "words": [
-        {
-          "word": "and",
-          "start": 290.87,
-          "end": 291.1,
-          "confidence": 1.0
-        },
-        {
-          "word": "i",
-          "start": 291.1,
-          "end": 291.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "didn't",
-          "start": 291.19,
-          "end": 291.5,
-          "confidence": 1.0
-        },
-        {
-          "word": "want",
-          "start": 291.5,
-          "end": 291.66,
-          "confidence": 1.0
-        },
-        {
-          "word": "him",
-          "start": 291.66,
-          "end": 291.9,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 291.9,
-          "end": 291.99,
-          "confidence": 0.999
-        },
-        {
-          "word": "hurt",
-          "start": 291.99,
-          "end": 292.22,
-          "confidence": 1.0
-        },
-        {
-          "word": "my",
-          "start": 292.22,
-          "end": 292.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "family",
-          "start": 292.38,
-          "end": 292.88,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.997
+      "text": "That sounds scary.",
+      "start": 284.62,
+      "duration": 1.14
     },
     {
       "id": 74,
-      "text": "i ran away from the tent",
-      "speaker": "Speaker1",
-      "start": 294.48,
-      "duration": 1.2,
-      "words": [
-        {
-          "word": "i",
-          "start": 294.48,
-          "end": 294.72,
-          "confidence": 0.996
-        },
-        {
-          "word": "ran",
-          "start": 294.72,
-          "end": 294.96,
-          "confidence": 0.997
-        },
-        {
-          "word": "away",
-          "start": 294.96,
-          "end": 295.2,
-          "confidence": 1.0
-        },
-        {
-          "word": "from",
-          "start": 295.2,
-          "end": 295.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 295.36,
-          "end": 295.52,
-          "confidence": 0.999
-        },
-        {
-          "word": "tent",
-          "start": 295.52,
-          "end": 295.68,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.987
+      "text": "Did the bear go away?",
+      "start": 286.06,
+      "duration": 1.31
     },
     {
       "id": 75,
-      "text": "and into the woods hoping the bear would follow me",
-      "speaker": "Speaker1",
-      "start": 295.68,
-      "duration": 2.98,
-      "words": [
-        {
-          "word": "and",
-          "start": 295.68,
-          "end": 295.84,
-          "confidence": 0.983
-        },
-        {
-          "word": "into",
-          "start": 295.84,
-          "end": 296.16,
-          "confidence": 0.999
-        },
-        {
-          "word": "the",
-          "start": 296.16,
-          "end": 296.24,
-          "confidence": 0.998
-        },
-        {
-          "word": "woods",
-          "start": 296.24,
-          "end": 296.74,
-          "confidence": 0.826
-        },
-        {
-          "word": "hoping",
-          "start": 296.88,
-          "end": 297.2,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 297.2,
-          "end": 297.36,
-          "confidence": 0.999
-        },
-        {
-          "word": "bear",
-          "start": 297.36,
-          "end": 297.68,
-          "confidence": 1.0
-        },
-        {
-          "word": "would",
-          "start": 297.68,
-          "end": 297.84,
-          "confidence": 1.0
-        },
-        {
-          "word": "follow",
-          "start": 297.84,
-          "end": 298.16,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 298.16,
-          "end": 298.66,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.987
+      "text": "i was afraid the bear would come towards the tent",
+      "start": 288.54,
+      "duration": 2.33
     },
     {
       "id": 76,
-      "text": "What happened next?",
-      "speaker": "Speaker0",
-      "start": 304.64,
-      "duration": 1.14,
-      "words": [
-        {
-          "word": "what",
-          "start": 304.64,
-          "end": 304.88,
-          "confidence": 0.857
-        },
-        {
-          "word": "happened",
-          "start": 304.88,
-          "end": 305.28,
-          "confidence": 1.0
-        },
-        {
-          "word": "next",
-          "start": 305.28,
-          "end": 305.78,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.976
+      "text": "and i didn't want him to hurt my family",
+      "start": 290.87,
+      "duration": 2.01
     },
     {
       "id": 77,
-      "text": "I'm guessing the bear didn't hurt you because you seem fine.",
-      "speaker": "Speaker0",
-      "start": 306.08,
-      "duration": 2.98,
-      "words": [
-        {
-          "word": "i'm",
-          "start": 306.08,
-          "end": 306.32,
-          "confidence": 0.998
-        },
-        {
-          "word": "guessing",
-          "start": 306.32,
-          "end": 306.64,
-          "confidence": 1.0
-        },
-        {
-          "word": "the",
-          "start": 306.64,
-          "end": 306.8,
-          "confidence": 0.998
-        },
-        {
-          "word": "bear",
-          "start": 306.8,
-          "end": 307.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "didn't",
-          "start": 307.04,
-          "end": 307.36,
-          "confidence": 1.0
-        },
-        {
-          "word": "hurt",
-          "start": 307.36,
-          "end": 307.6,
-          "confidence": 1.0
-        },
-        {
-          "word": "you",
-          "start": 307.6,
-          "end": 307.76,
-          "confidence": 0.999
-        },
-        {
-          "word": "because",
-          "start": 307.76,
-          "end": 308.0,
-          "confidence": 0.934
-        },
-        {
-          "word": "you",
-          "start": 308.0,
-          "end": 308.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "seem",
-          "start": 308.24,
-          "end": 308.56,
-          "confidence": 0.885
-        },
-        {
-          "word": "fine",
-          "start": 308.56,
-          "end": 309.06,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.976
+      "text": "i ran away from the tent",
+      "start": 294.48,
+      "duration": 1.2
     },
     {
       "id": 78,
-      "text": "No.",
-      "speaker": "Speaker1",
-      "start": 311.09,
-      "duration": 0.5,
-      "words": [
-        {
-          "word": "no",
-          "start": 311.09,
-          "end": 311.59,
-          "confidence": 0.981
-        }
-      ],
-      "confidence": 0.97
+      "text": "and into the woods hoping the bear would follow me",
+      "start": 295.68,
+      "duration": 2.98
     },
     {
       "id": 79,
-      "text": "He didn't hurt me, and he never caught me.",
-      "speaker": "Speaker1",
-      "start": 311.81,
-      "duration": 2.34,
-      "words": [
-        {
-          "word": "he",
-          "start": 311.81,
-          "end": 312.06,
-          "confidence": 0.998
-        },
-        {
-          "word": "didn't",
-          "start": 312.06,
-          "end": 312.38,
-          "confidence": 1.0
-        },
-        {
-          "word": "hurt",
-          "start": 312.38,
-          "end": 312.62,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 312.62,
-          "end": 312.85,
-          "confidence": 0.756
-        },
-        {
-          "word": "and",
-          "start": 312.85,
-          "end": 313.01,
-          "confidence": 1.0
-        },
-        {
-          "word": "he",
-          "start": 313.01,
-          "end": 313.18,
-          "confidence": 0.999
-        },
-        {
-          "word": "never",
-          "start": 313.18,
-          "end": 313.5,
-          "confidence": 1.0
-        },
-        {
-          "word": "caught",
-          "start": 313.5,
-          "end": 313.65,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 313.65,
-          "end": 314.15,
-          "confidence": 0.969
-        }
-      ],
-      "confidence": 0.97
+      "text": "What happened next?",
+      "start": 304.64,
+      "duration": 1.14
     },
     {
       "id": 80,
-      "text": "But believe me, I ran for my life.",
-      "speaker": "Speaker1",
-      "start": 315.18,
-      "duration": 2.5,
-      "words": [
-        {
-          "word": "but",
-          "start": 315.18,
-          "end": 315.5,
-          "confidence": 0.984
-        },
-        {
-          "word": "believe",
-          "start": 315.5,
-          "end": 315.89,
-          "confidence": 0.967
-        },
-        {
-          "word": "me",
-          "start": 315.89,
-          "end": 316.29,
-          "confidence": 0.957
-        },
-        {
-          "word": "i",
-          "start": 316.29,
-          "end": 316.53,
-          "confidence": 1.0
-        },
-        {
-          "word": "ran",
-          "start": 316.53,
-          "end": 316.77,
-          "confidence": 0.995
-        },
-        {
-          "word": "for",
-          "start": 316.77,
-          "end": 317.01,
-          "confidence": 0.999
-        },
-        {
-          "word": "my",
-          "start": 317.01,
-          "end": 317.18,
-          "confidence": 0.999
-        },
-        {
-          "word": "life",
-          "start": 317.18,
-          "end": 317.68,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.987
+      "text": "I'm guessing the bear didn't hurt you because you seem fine.",
+      "start": 306.08,
+      "duration": 2.98
     },
     {
       "id": 81,
-      "text": "I hid behind the first big tree I found.",
-      "speaker": "Speaker1",
-      "start": 318.77,
-      "duration": 2.58,
-      "words": [
-        {
-          "word": "i",
-          "start": 318.77,
-          "end": 319.01,
-          "confidence": 0.969
-        },
-        {
-          "word": "hid",
-          "start": 319.01,
-          "end": 319.33,
-          "confidence": 0.999
-        },
-        {
-          "word": "behind",
-          "start": 319.33,
-          "end": 319.74,
-          "confidence": 0.998
-        },
-        {
-          "word": "the",
-          "start": 319.74,
-          "end": 319.89,
-          "confidence": 1.0
-        },
-        {
-          "word": "first",
-          "start": 319.89,
-          "end": 320.13,
-          "confidence": 0.999
-        },
-        {
-          "word": "big",
-          "start": 320.13,
-          "end": 320.45,
-          "confidence": 0.999
-        },
-        {
-          "word": "tree",
-          "start": 320.45,
-          "end": 320.69,
-          "confidence": 1.0
-        },
-        {
-          "word": "i",
-          "start": 320.69,
-          "end": 320.85,
-          "confidence": 0.993
-        },
-        {
-          "word": "found",
-          "start": 320.85,
-          "end": 321.35,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.995
+      "text": "No.",
+      "start": 311.09,
+      "duration": 0.5
     },
     {
       "id": 82,
-      "text": "The bear passed right by me, but he didn't see me.",
-      "speaker": "Speaker1",
-      "start": 323.68,
-      "duration": 3.06,
-      "words": [
-        {
-          "word": "the",
-          "start": 323.68,
-          "end": 324.0,
-          "confidence": 0.998
-        },
-        {
-          "word": "bear",
-          "start": 324.0,
-          "end": 324.32,
-          "confidence": 0.997
-        },
-        {
-          "word": "passed",
-          "start": 324.32,
-          "end": 324.64,
-          "confidence": 0.966
-        },
-        {
-          "word": "right",
-          "start": 324.64,
-          "end": 324.96,
-          "confidence": 0.999
-        },
-        {
-          "word": "by",
-          "start": 324.96,
-          "end": 325.12,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 325.12,
-          "end": 325.36,
-          "confidence": 0.984
-        },
-        {
-          "word": "but",
-          "start": 325.36,
-          "end": 325.52,
-          "confidence": 1.0
-        },
-        {
-          "word": "he",
-          "start": 325.52,
-          "end": 325.68,
-          "confidence": 0.999
-        },
-        {
-          "word": "didn't",
-          "start": 325.68,
-          "end": 326.0,
-          "confidence": 1.0
-        },
-        {
-          "word": "see",
-          "start": 326.0,
-          "end": 326.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 326.24,
-          "end": 326.74,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.995
+      "text": "He didn't hurt me, and he never caught me.",
+      "start": 311.81,
+      "duration": 2.34
     },
     {
       "id": 83,
-      "text": "I felt very relieved.",
-      "speaker": "Speaker1",
-      "start": 329.68,
-      "duration": 1.54,
-      "words": [
-        {
-          "word": "i",
-          "start": 329.68,
-          "end": 329.92,
-          "confidence": 0.956
-        },
-        {
-          "word": "felt",
-          "start": 329.92,
-          "end": 330.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "very",
-          "start": 330.24,
-          "end": 330.72,
-          "confidence": 1.0
-        },
-        {
-          "word": "relieved",
-          "start": 330.72,
-          "end": 331.22,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.989
+      "text": "But believe me, I ran for my life.",
+      "start": 315.18,
+      "duration": 2.5
     },
     {
       "id": 84,
-      "text": "It took me a while to calm down.",
-      "speaker": "Speaker1",
-      "start": 331.6,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "it",
-          "start": 331.6,
-          "end": 331.76,
-          "confidence": 1.0
-        },
-        {
-          "word": "took",
-          "start": 331.76,
-          "end": 331.92,
-          "confidence": 1.0
-        },
-        {
-          "word": "me",
-          "start": 331.92,
-          "end": 332.08,
-          "confidence": 0.999
-        },
-        {
-          "word": "a",
-          "start": 332.08,
-          "end": 332.24,
-          "confidence": 0.974
-        },
-        {
-          "word": "while",
-          "start": 332.24,
-          "end": 332.64,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 332.64,
-          "end": 332.8,
-          "confidence": 1.0
-        },
-        {
-          "word": "calm",
-          "start": 332.8,
-          "end": 333.04,
-          "confidence": 0.999
-        },
-        {
-          "word": "down",
-          "start": 333.04,
-          "end": 333.54,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.997
+      "text": "I hid behind the first big tree I found.",
+      "start": 318.77,
+      "duration": 2.58
     },
     {
       "id": 85,
-      "text": "I'm glad none of you got hurt.",
-      "speaker": "Speaker0",
-      "start": 335.6,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "i'm",
-          "start": 335.6,
-          "end": 335.92,
-          "confidence": 0.994
-        },
-        {
-          "word": "glad",
-          "start": 335.92,
-          "end": 336.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "none",
-          "start": 336.24,
-          "end": 336.4,
-          "confidence": 0.999
-        },
-        {
-          "word": "of",
-          "start": 336.4,
-          "end": 336.56,
-          "confidence": 1.0
-        },
-        {
-          "word": "you",
-          "start": 336.56,
-          "end": 336.72,
-          "confidence": 1.0
-        },
-        {
-          "word": "got",
-          "start": 336.72,
-          "end": 336.96,
-          "confidence": 1.0
-        },
-        {
-          "word": "hurt",
-          "start": 336.96,
-          "end": 337.46,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "The bear passed right by me, but he didn't see me.",
+      "start": 323.68,
+      "duration": 3.06
     },
     {
       "id": 86,
-      "text": "Do you think you'll go camping with your family again?",
-      "speaker": "Speaker0",
-      "start": 338.35,
-      "duration": 2.41,
-      "words": [
-        {
-          "word": "do",
-          "start": 338.35,
-          "end": 338.5,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 338.5,
-          "end": 338.58,
-          "confidence": 1.0
-        },
-        {
-          "word": "think",
-          "start": 338.58,
-          "end": 338.82,
-          "confidence": 1.0
-        },
-        {
-          "word": "you'll",
-          "start": 338.82,
-          "end": 338.99,
-          "confidence": 1.0
-        },
-        {
-          "word": "go",
-          "start": 338.99,
-          "end": 339.23,
-          "confidence": 1.0
-        },
-        {
-          "word": "camping",
-          "start": 339.23,
-          "end": 339.55,
-          "confidence": 1.0
-        },
-        {
-          "word": "with",
-          "start": 339.55,
-          "end": 339.71,
-          "confidence": 1.0
-        },
-        {
-          "word": "your",
-          "start": 339.71,
-          "end": 339.79,
-          "confidence": 1.0
-        },
-        {
-          "word": "family",
-          "start": 339.79,
-          "end": 340.26,
-          "confidence": 1.0
-        },
-        {
-          "word": "again",
-          "start": 340.26,
-          "end": 340.76,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
+      "text": "I felt very relieved.",
+      "start": 329.68,
+      "duration": 1.54
     },
     {
       "id": 87,
-      "text": "Maybe, but not too soon.",
-      "speaker": "Speaker1",
-      "start": 342.5,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "maybe",
-          "start": 342.5,
-          "end": 343.0,
-          "confidence": 0.876
-        },
-        {
-          "word": "but",
-          "start": 343.14,
-          "end": 343.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "not",
-          "start": 343.46,
-          "end": 343.62,
-          "confidence": 1.0
-        },
-        {
-          "word": "too",
-          "start": 343.62,
-          "end": 343.94,
-          "confidence": 1.0
-        },
-        {
-          "word": "soon",
-          "start": 343.94,
-          "end": 344.44,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.975
+      "text": "It took me a while to calm down.",
+      "start": 331.6,
+      "duration": 1.94
     },
     {
       "id": 88,
-      "text": "For our next vacation, we'll probably book a nice hotel on the beach instead.",
-      "speaker": "Speaker1",
-      "start": 345.23,
-      "duration": 4.5,
-      "words": [
-        {
-          "word": "for",
-          "start": 345.23,
-          "end": 345.46,
-          "confidence": 1.0
-        },
-        {
-          "word": "our",
-          "start": 345.46,
-          "end": 345.62,
-          "confidence": 1.0
-        },
-        {
-          "word": "next",
-          "start": 345.62,
-          "end": 346.02,
-          "confidence": 1.0
-        },
-        {
-          "word": "vacation",
-          "start": 346.02,
-          "end": 346.52,
-          "confidence": 0.999
-        },
-        {
-          "word": "we'll",
-          "start": 346.82,
-          "end": 347.06,
-          "confidence": 1.0
-        },
-        {
-          "word": "probably",
-          "start": 347.06,
-          "end": 347.55,
-          "confidence": 1.0
-        },
-        {
-          "word": "book",
-          "start": 347.55,
-          "end": 347.79,
-          "confidence": 1.0
-        },
-        {
-          "word": "a",
-          "start": 347.79,
-          "end": 347.94,
-          "confidence": 1.0
-        },
-        {
-          "word": "nice",
-          "start": 347.94,
-          "end": 348.11,
-          "confidence": 1.0
-        },
-        {
-          "word": "hotel",
-          "start": 348.11,
-          "end": 348.58,
-          "confidence": 1.0
-        },
-        {
-          "word": "on",
-          "start": 348.58,
-          "end": 348.75,
-          "confidence": 0.997
-        },
-        {
-          "word": "the",
-          "start": 348.75,
-          "end": 348.82,
-          "confidence": 0.977
-        },
-        {
-          "word": "beach",
-          "start": 348.82,
-          "end": 349.23,
-          "confidence": 1.0
-        },
-        {
-          "word": "instead",
-          "start": 349.23,
-          "end": 349.73,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.998
+      "text": "I'm glad none of you got hurt.",
+      "start": 335.6,
+      "duration": 1.86
     },
     {
       "id": 89,
-      "text": "Yes.",
-      "speaker": "Speaker0",
-      "start": 351.95,
-      "duration": 0.48,
-      "words": [
-        {
-          "word": "yes",
-          "start": 351.95,
-          "end": 352.43,
-          "confidence": 0.942
-        }
-      ],
-      "confidence": 0.991
+      "text": "Do you think you'll go camping with your family again?",
+      "start": 338.35,
+      "duration": 2.41
     },
     {
       "id": 90,
-      "text": "That sounds like a good idea.",
-      "speaker": "Speaker0",
-      "start": 352.43,
-      "duration": 1.62,
-      "words": [
-        {
-          "word": "that",
-          "start": 352.43,
-          "end": 352.75,
-          "confidence": 1.0
-        },
-        {
-          "word": "sounds",
-          "start": 352.75,
-          "end": 352.99,
-          "confidence": 0.997
-        },
-        {
-          "word": "like",
-          "start": 352.99,
-          "end": 353.15,
-          "confidence": 0.999
-        },
-        {
-          "word": "a",
-          "start": 353.15,
-          "end": 353.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "good",
-          "start": 353.31,
-          "end": 353.55,
-          "confidence": 1.0
-        },
-        {
-          "word": "idea",
-          "start": 353.55,
-          "end": 354.05,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.991
+      "text": "Maybe, but not too soon.",
+      "start": 342.5,
+      "duration": 1.94
     },
     {
       "id": 91,
-      "text": "This experience taught me to always be prepared.",
-      "speaker": "Speaker1",
-      "start": 354.99,
-      "duration": 2.58,
-      "words": [
-        {
-          "word": "this",
-          "start": 354.99,
-          "end": 355.31,
-          "confidence": 1.0
-        },
-        {
-          "word": "experience",
-          "start": 355.31,
-          "end": 355.81,
-          "confidence": 0.998
-        },
-        {
-          "word": "taught",
-          "start": 355.87,
-          "end": 356.11,
-          "confidence": 0.997
-        },
-        {
-          "word": "me",
-          "start": 356.11,
-          "end": 356.27,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 356.27,
-          "end": 356.43,
-          "confidence": 0.999
-        },
-        {
-          "word": "always",
-          "start": 356.43,
-          "end": 356.83,
-          "confidence": 0.998
-        },
-        {
-          "word": "be",
-          "start": 356.83,
-          "end": 357.07,
-          "confidence": 0.999
-        },
-        {
-          "word": "prepared",
-          "start": 357.07,
-          "end": 357.57,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "For our next vacation, we'll probably book a nice hotel on the beach instead.",
+      "start": 345.23,
+      "duration": 4.5
     },
     {
       "id": 92,
-      "text": "i could have saved myself a lot of trouble",
-      "speaker": "Speaker1",
-      "start": 358.43,
-      "duration": 2.32,
-      "words": [
-        {
-          "word": "i",
-          "start": 358.43,
-          "end": 358.67,
-          "confidence": 0.999
-        },
-        {
-          "word": "could",
-          "start": 358.67,
-          "end": 358.91,
-          "confidence": 1.0
-        },
-        {
-          "word": "have",
-          "start": 358.91,
-          "end": 359.07,
-          "confidence": 0.891
-        },
-        {
-          "word": "saved",
-          "start": 359.07,
-          "end": 359.39,
-          "confidence": 0.998
-        },
-        {
-          "word": "myself",
-          "start": 359.39,
-          "end": 359.87,
-          "confidence": 0.999
-        },
-        {
-          "word": "a",
-          "start": 359.87,
-          "end": 359.95,
-          "confidence": 1.0
-        },
-        {
-          "word": "lot",
-          "start": 359.95,
-          "end": 360.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "of",
-          "start": 360.19,
-          "end": 360.35,
-          "confidence": 0.998
-        },
-        {
-          "word": "trouble",
-          "start": 360.35,
-          "end": 360.75,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.991
+      "text": "Yes.",
+      "start": 351.95,
+      "duration": 0.48
     },
     {
       "id": 93,
-      "text": "if i had known more about camping",
-      "speaker": "Speaker1",
-      "start": 360.75,
-      "duration": 1.7,
-      "words": [
-        {
-          "word": "if",
-          "start": 360.75,
-          "end": 360.91,
-          "confidence": 0.99
-        },
-        {
-          "word": "i",
-          "start": 360.91,
-          "end": 360.99,
-          "confidence": 0.997
-        },
-        {
-          "word": "had",
-          "start": 360.99,
-          "end": 361.15,
-          "confidence": 0.993
-        },
-        {
-          "word": "known",
-          "start": 361.15,
-          "end": 361.39,
-          "confidence": 0.992
-        },
-        {
-          "word": "more",
-          "start": 361.39,
-          "end": 361.63,
-          "confidence": 1.0
-        },
-        {
-          "word": "about",
-          "start": 361.63,
-          "end": 361.95,
-          "confidence": 1.0
-        },
-        {
-          "word": "camping",
-          "start": 361.95,
-          "end": 362.45,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.991
+      "text": "That sounds like a good idea.",
+      "start": 352.43,
+      "duration": 1.62
     },
     {
       "id": 94,
-      "text": "That's true.",
-      "speaker": "Speaker0",
-      "start": 364.39,
-      "duration": 0.9,
-      "words": [
-        {
-          "word": "that's",
-          "start": 364.39,
-          "end": 364.79,
-          "confidence": 1.0
-        },
-        {
-          "word": "true",
-          "start": 364.79,
-          "end": 365.29,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.999
+      "text": "This experience taught me to always be prepared.",
+      "start": 354.99,
+      "duration": 2.58
     },
     {
       "id": 95,
-      "text": "You should always be prepared.",
-      "speaker": "Speaker0",
-      "start": 365.36,
-      "duration": 1.38,
-      "words": [
-        {
-          "word": "you",
-          "start": 365.36,
-          "end": 365.6,
-          "confidence": 1.0
-        },
-        {
-          "word": "should",
-          "start": 365.6,
-          "end": 365.75,
-          "confidence": 1.0
-        },
-        {
-          "word": "always",
-          "start": 365.75,
-          "end": 366.07,
-          "confidence": 1.0
-        },
-        {
-          "word": "be",
-          "start": 366.07,
-          "end": 366.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "prepared",
-          "start": 366.24,
-          "end": 366.74,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.999
+      "text": "i could have saved myself a lot of trouble",
+      "start": 358.43,
+      "duration": 2.32
     },
     {
       "id": 96,
-      "text": "It was nice talking to you, Jerry, but I have to finish Max's walk.",
-      "speaker": "Speaker0",
-      "start": 367.83,
-      "duration": 3.55,
-      "words": [
-        {
-          "word": "it",
-          "start": 367.83,
-          "end": 368.0,
-          "confidence": 0.998
-        },
-        {
-          "word": "was",
-          "start": 368.0,
-          "end": 368.24,
-          "confidence": 1.0
-        },
-        {
-          "word": "nice",
-          "start": 368.24,
-          "end": 368.48,
-          "confidence": 1.0
-        },
-        {
-          "word": "talking",
-          "start": 368.48,
-          "end": 368.79,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 368.79,
-          "end": 368.95,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 368.95,
-          "end": 369.12,
-          "confidence": 0.988
-        },
-        {
-          "word": "jerry",
-          "start": 369.12,
-          "end": 369.51,
-          "confidence": 0.939
-        },
-        {
-          "word": "but",
-          "start": 369.51,
-          "end": 369.75,
-          "confidence": 1.0
-        },
-        {
-          "word": "i",
-          "start": 369.75,
-          "end": 369.83,
-          "confidence": 1.0
-        },
-        {
-          "word": "have",
-          "start": 369.83,
-          "end": 370.0,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 370.0,
-          "end": 370.15,
-          "confidence": 1.0
-        },
-        {
-          "word": "finish",
-          "start": 370.15,
-          "end": 370.48,
-          "confidence": 1.0
-        },
-        {
-          "word": "max's",
-          "start": 370.48,
-          "end": 370.88,
-          "confidence": 0.996
-        },
-        {
-          "word": "walk",
-          "start": 370.88,
-          "end": 371.38,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 0.994
+      "text": "if i had known more about camping",
+      "start": 360.75,
+      "duration": 1.7
     },
     {
       "id": 97,
-      "text": "He doesn't like it when I stand around.",
-      "speaker": "Speaker0",
-      "start": 372.15,
-      "duration": 1.95,
-      "words": [
-        {
-          "word": "he",
-          "start": 372.15,
-          "end": 372.39,
-          "confidence": 0.999
-        },
-        {
-          "word": "doesn't",
-          "start": 372.39,
-          "end": 372.71,
-          "confidence": 1.0
-        },
-        {
-          "word": "like",
-          "start": 372.71,
-          "end": 372.88,
-          "confidence": 1.0
-        },
-        {
-          "word": "it",
-          "start": 372.88,
-          "end": 373.04,
-          "confidence": 1.0
-        },
-        {
-          "word": "when",
-          "start": 373.04,
-          "end": 373.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "i",
-          "start": 373.19,
-          "end": 373.35,
-          "confidence": 1.0
-        },
-        {
-          "word": "stand",
-          "start": 373.35,
-          "end": 373.6,
-          "confidence": 1.0
-        },
-        {
-          "word": "around",
-          "start": 373.6,
-          "end": 374.1,
-          "confidence": 1.0
-        }
-      ],
-      "confidence": 1.0
+      "text": "That's true.",
+      "start": 364.39,
+      "duration": 0.9
     },
     {
       "id": 98,
-      "text": "No problem.",
-      "speaker": "Speaker1",
-      "start": 376.08,
-      "duration": 0.82,
-      "words": [
-        {
-          "word": "no",
-          "start": 376.08,
-          "end": 376.4,
-          "confidence": 0.708
-        },
-        {
-          "word": "problem",
-          "start": 376.4,
-          "end": 376.9,
-          "confidence": 0.993
-        }
-      ],
-      "confidence": 0.851
+      "text": "You should always be prepared.",
+      "start": 365.36,
+      "duration": 1.38
     },
     {
       "id": 99,
-      "text": "Nice talking to you too, Mike.",
-      "speaker": "Speaker1",
-      "start": 377.36,
-      "duration": 1.86,
-      "words": [
-        {
-          "word": "nice",
-          "start": 377.36,
-          "end": 377.76,
-          "confidence": 1.0
-        },
-        {
-          "word": "talking",
-          "start": 377.76,
-          "end": 378.08,
-          "confidence": 1.0
-        },
-        {
-          "word": "to",
-          "start": 378.08,
-          "end": 378.16,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 378.16,
-          "end": 378.4,
-          "confidence": 1.0
-        },
-        {
-          "word": "too",
-          "start": 378.4,
-          "end": 378.72,
-          "confidence": 0.976
-        },
-        {
-          "word": "mike",
-          "start": 378.72,
-          "end": 379.22,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.996
+      "text": "It was nice talking to you, Jerry, but I have to finish Max's walk.",
+      "start": 367.83,
+      "duration": 3.55
     },
     {
       "id": 100,
-      "text": "let me know if you ever go camping",
-      "speaker": "Speaker1",
-      "start": 380.8,
-      "duration": 1.78,
-      "words": [
-        {
-          "word": "let",
-          "start": 380.8,
-          "end": 380.96,
-          "confidence": 0.999
-        },
-        {
-          "word": "me",
-          "start": 380.96,
-          "end": 381.12,
-          "confidence": 1.0
-        },
-        {
-          "word": "know",
-          "start": 381.12,
-          "end": 381.28,
-          "confidence": 1.0
-        },
-        {
-          "word": "if",
-          "start": 381.28,
-          "end": 381.44,
-          "confidence": 0.999
-        },
-        {
-          "word": "you",
-          "start": 381.44,
-          "end": 381.6,
-          "confidence": 0.999
-        },
-        {
-          "word": "ever",
-          "start": 381.6,
-          "end": 381.84,
-          "confidence": 0.998
-        },
-        {
-          "word": "go",
-          "start": 381.84,
-          "end": 382.08,
-          "confidence": 0.999
-        },
-        {
-          "word": "camping",
-          "start": 382.08,
-          "end": 382.58,
-          "confidence": 0.861
-        }
-      ],
-      "confidence": 0.99
+      "text": "He doesn't like it when I stand around.",
+      "start": 372.15,
+      "duration": 1.95
     },
     {
       "id": 101,
-      "text": "and i'll tell you what not to do",
-      "speaker": "Speaker1",
-      "start": 382.64,
-      "duration": 1.94,
-      "words": [
-        {
-          "word": "and",
-          "start": 382.64,
-          "end": 382.8,
-          "confidence": 1.0
-        },
-        {
-          "word": "i'll",
-          "start": 382.8,
-          "end": 382.96,
-          "confidence": 0.999
-        },
-        {
-          "word": "tell",
-          "start": 382.96,
-          "end": 383.2,
-          "confidence": 1.0
-        },
-        {
-          "word": "you",
-          "start": 383.2,
-          "end": 383.36,
-          "confidence": 0.995
-        },
-        {
-          "word": "what",
-          "start": 383.36,
-          "end": 383.6,
-          "confidence": 1.0
-        },
-        {
-          "word": "not",
-          "start": 383.6,
-          "end": 383.92,
-          "confidence": 0.996
-        },
-        {
-          "word": "to",
-          "start": 383.92,
-          "end": 384.08,
-          "confidence": 0.999
-        },
-        {
-          "word": "do",
-          "start": 384.08,
-          "end": 384.58,
-          "confidence": 0.999
-        }
-      ],
-      "confidence": 0.99
+      "text": "No problem.",
+      "start": 376.08,
+      "duration": 0.82
     },
     {
       "id": 102,
-      "text": "Thanks for watching.",
-      "speaker": "Speaker1",
-      "start": 416.27,
-      "duration": 1.06,
-      "words": [
-        {
-          "word": "thanks",
-          "start": 416.27,
-          "end": 416.59,
-          "confidence": 0.818
-        },
-        {
-          "word": "for",
-          "start": 416.59,
-          "end": 416.83,
-          "confidence": 1.0
-        },
-        {
-          "word": "watching",
-          "start": 416.83,
-          "end": 417.33,
-          "confidence": 0.996
-        }
-      ],
-      "confidence": 0.938
+      "text": "Nice talking to you too, Mike.",
+      "start": 377.36,
+      "duration": 1.86
     },
     {
       "id": 103,
+      "text": "let me know if you ever go camping",
+      "start": 380.8,
+      "duration": 1.78
+    },
+    {
+      "id": 104,
+      "text": "and i'll tell you what not to do",
+      "start": 382.64,
+      "duration": 1.94
+    },
+    {
+      "id": 105,
+      "text": "Thanks for watching.",
+      "start": 416.27,
+      "duration": 1.06
+    },
+    {
+      "id": 106,
       "text": "If you like this video, please subscribe to our YouTube channel.",
-      "speaker": "Speaker1",
       "start": 417.79,
-      "duration": 3.3,
-      "words": [
-        {
-          "word": "if",
-          "start": 417.79,
-          "end": 417.95,
-          "confidence": 0.988
-        },
-        {
-          "word": "you",
-          "start": 417.95,
-          "end": 418.11,
-          "confidence": 1.0
-        },
-        {
-          "word": "like",
-          "start": 418.11,
-          "end": 418.35,
-          "confidence": 0.797
-        },
-        {
-          "word": "this",
-          "start": 418.35,
-          "end": 418.59,
-          "confidence": 1.0
-        },
-        {
-          "word": "video",
-          "start": 418.59,
-          "end": 419.09,
-          "confidence": 0.992
-        },
-        {
-          "word": "please",
-          "start": 419.23,
-          "end": 419.47,
-          "confidence": 1.0
-        },
-        {
-          "word": "subscribe",
-          "start": 419.47,
-          "end": 419.87,
-          "confidence": 0.999
-        },
-        {
-          "word": "to",
-          "start": 419.87,
-          "end": 420.03,
-          "confidence": 0.999
-        },
-        {
-          "word": "our",
-          "start": 420.03,
-          "end": 420.19,
-          "confidence": 1.0
-        },
-        {
-          "word": "youtube",
-          "start": 420.19,
-          "end": 420.59,
-          "confidence": 0.973
-        },
-        {
-          "word": "channel",
-          "start": 420.59,
-          "end": 421.09,
-          "confidence": 0.994
-        }
-      ],
-      "confidence": 0.977
+      "duration": 3.3
     }
   ],
   "speakerMap": {
@@ -5833,5 +657,7 @@
     "version": 4,
     "beforeSegments": 91,
     "afterSegments": 103
-  }
+  },
+  "formatted": true,
+  "formattedAt": "2026-07-30T11:50:56.386Z"
 }
