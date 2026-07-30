@@ -24,7 +24,8 @@ const WH_QUESTIONS = /^(how|what|where|when|why|who)\b/i;
 const SUBJECT_PRONOUNS = /^(i|you|he|she|it|we|they)\b/i;
 const CLAUSE_ENDERS = /^(is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|go|goes|went|come|comes|came|like|likes|liked|live|lives|lived|work|works|worked|study|studies|studied|want|wants|wanted|need|needs|needed|love|loves|loved|say|says|said|tell|tells|told|give|gives|gave|take|takes|took|make|makes|made|see|sees|saw|get|gets|got|eat|eats|ate|drink|drinks|drank|walk|walks|walked|run|runs|ran|play|plays|played|happy|sad|good|bad|great|fine|okay|ok|well|here|there|now|then|today|tomorrow|yesterday|morning|afternoon|evening|night)\b/i;
 
-function splitAtPunctuation(segments) {
+async function splitAtPunctuation(segments) {
+  const { callLLM } = require('./llmClient.cjs');
   const result = [];
   let splitCount = 0;
 
@@ -32,32 +33,34 @@ function splitAtPunctuation(segments) {
     const text = seg.text.trim();
     if (!text || text.length < 3) { result.push(seg); continue; }
 
-    // Step 1: Split at existing punctuation (.?! followed by space + letter)
+    // Step 1: Split at existing punctuation
     let parts = text.split(/(?<=[.!?])\s+(?=[a-zA-Z])/);
 
-    // Step 2: If no punctuation, split at natural dialogue boundaries
-    if (parts.length <= 1) {
-      const words = text.split(/\s+/);
-      if (words.length < 6) { result.push(seg); continue; }
-
-      const splitPoints = [];
-      for (let w = 1; w < words.length; w++) {
-        const word = words[w].toLowerCase().replace(/[^a-z]/g, '');
-        const prevWord = words[w - 1].toLowerCase().replace(/[^a-z]/g, '');
-
-        if (WH_QUESTIONS.test(word)) { splitPoints.push(w); continue; }
-        if (SUBJECT_PRONOUNS.test(word) && CLAUSE_ENDERS.test(prevWord)) { splitPoints.push(w); continue; }
-        if (/^(but|because|so|and)$/i.test(word) && w >= 4) { splitPoints.push(w); continue; }
-      }
-
-      if (splitPoints.length > 0) {
-        parts = [];
-        let prev = 0;
-        for (const sp of splitPoints) {
-          if (sp > prev) parts.push(words.slice(prev, sp).join(' '));
-          prev = sp;
+    // Step 2: If no punctuation AND text >10 words, call LLM to add sentence boundaries
+    if (parts.length <= 1 && text.split(/\s+/).length > 10) {
+      try {
+        const prompt = `Add sentence boundaries to this unpunctuated text. ONLY insert periods, question marks, and exclamation marks. Do NOT change any words. Return ONLY the corrected text, nothing else.\n\n${text}`;
+        const cleaned = await callLLM(prompt, 'You are a punctuation editor. Insert sentence boundaries into unpunctuated text. Return ONLY the corrected text.');
+        parts = cleaned.split(/(?<=[.!?])\s+(?=[A-Za-z])/);
+        log(`    LLM split: ${parts.length} parts`);
+      } catch (e) {
+        log(`    LLM failed: ${e.message}`);
+        // Fall back to regex split
+        const words = text.split(/\s+/);
+        const splitPoints = [];
+        for (let w = 1; w < words.length; w++) {
+          const word = words[w].toLowerCase().replace(/[^a-z]/g, '');
+          const prevWord = words[w - 1].toLowerCase().replace(/[^a-z]/g, '');
+          if (WH_QUESTIONS.test(word)) { splitPoints.push(w); continue; }
+          if (SUBJECT_PRONOUNS.test(word) && CLAUSE_ENDERS.test(prevWord)) { splitPoints.push(w); continue; }
+          if (/^(but|because|so|and)$/i.test(word) && w >= 4) { splitPoints.push(w); continue; }
         }
-        if (prev < words.length) parts.push(words.slice(prev).join(' '));
+        if (splitPoints.length > 0) {
+          parts = [];
+          let prev = 0;
+          for (const sp of splitPoints) { if (sp > prev) parts.push(words.slice(prev, sp).join(' ')); prev = sp; }
+          if (prev < words.length) parts.push(words.slice(prev).join(' '));
+        }
       }
     }
 
