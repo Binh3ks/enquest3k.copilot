@@ -5,596 +5,596 @@
     {
       "id": 1,
       "text": "What are they doing?",
-      "start": 0,
-      "duration": 2
+      "start": 4,
+      "duration": 1.22
     },
     {
       "id": 2,
       "text": "The Clarks are having such a great time.",
-      "start": 2,
-      "duration": 2
+      "start": 8.24,
+      "duration": 2.5
     },
     {
       "id": 3,
       "text": "It's a pleasant evening.",
-      "start": 4,
-      "duration": 2
+      "start": 11.12,
+      "duration": 1.3
     },
     {
       "id": 4,
       "text": "Paul and his parents are watching a comedy.",
-      "start": 6,
-      "duration": 2
+      "start": 13.09,
+      "duration": 2.34
     },
     {
       "id": 5,
       "text": "It's so funny.",
-      "start": 8,
-      "duration": 2
+      "start": 15.96,
+      "duration": 1.06
     },
     {
       "id": 6,
       "text": "They're laughing a lot.",
-      "start": 10,
-      "duration": 2
+      "start": 17.57,
+      "duration": 1.38
     },
     {
       "id": 7,
       "text": "Lucy and her mom are sitting on the sofa.",
-      "start": 12,
-      "duration": 2
+      "start": 20.05,
+      "duration": 2.18
     },
     {
       "id": 8,
       "text": "Lucy is playing with her doll.",
-      "start": 14,
-      "duration": 2
+      "start": 22.77,
+      "duration": 1.69
     },
     {
       "id": 9,
       "text": "Oliver is playing with his toy car on the floor.",
-      "start": 16,
-      "duration": 2
+      "start": 25.1,
+      "duration": 2.66
     },
     {
       "id": 10,
       "text": "Lucy and Oliver are not watching the comedy.",
-      "start": 18,
-      "duration": 2
+      "start": 28.94,
+      "duration": 2.58
     },
     {
       "id": 11,
       "text": "Olivia is in her room.",
-      "start": 20,
-      "duration": 2
+      "start": 32.7,
+      "duration": 1.46
     },
     {
       "id": 12,
       "text": "She is sitting at her desk.",
-      "start": 22,
-      "duration": 2
+      "start": 34.7,
+      "duration": 1.62
     },
     {
       "id": 13,
       "text": "She is typing on her laptop.",
-      "start": 24,
-      "duration": 2
+      "start": 36.78,
+      "duration": 1.7
     },
     {
       "id": 14,
       "text": "Missus Clark is leaving now.",
-      "start": 26,
-      "duration": 2
+      "start": 39.59,
+      "duration": 1.86
     },
     {
       "id": 15,
       "text": "Where are you going, honey?",
-      "start": 28,
-      "duration": 2
+      "start": 43.76,
+      "duration": 1.22
     },
     {
       "id": 16,
       "text": "I'm going to the kitchen.",
-      "start": 30,
-      "duration": 2
+      "start": 46.16,
+      "duration": 1.22
     },
     {
       "id": 17,
       "text": "I have to make dinner.",
-      "start": 32,
-      "duration": 2
+      "start": 47.99,
+      "duration": 1.31
     },
     {
       "id": 18,
       "text": "I'm coming too.",
-      "start": 34,
-      "duration": 2
+      "start": 49.84,
+      "duration": 1.14
     },
     {
       "id": 19,
       "text": "I wanna help you.",
-      "start": 36,
-      "duration": 2
+      "start": 51.11,
+      "duration": 1.23
     },
     {
       "id": 20,
       "text": "Mister and missus Clark are making dinner now.",
-      "start": 38,
-      "duration": 2
+      "start": 55.03,
+      "duration": 2.66
     },
     {
       "id": 21,
       "text": "They like to cook together.",
-      "start": 40,
-      "duration": 2
+      "start": 58.07,
+      "duration": 1.3
     },
     {
       "id": 22,
       "text": "Missus Clark is slicing the vegetables and her husband is frying the food.",
-      "start": 42,
-      "duration": 2
+      "start": 59.91,
+      "duration": 4.18
     },
     {
       "id": 23,
       "text": "Dinner is ready now, but Olivia is missing.",
-      "start": 44,
-      "duration": 2
+      "start": 67.14,
+      "duration": 3.3
     },
     {
       "id": 24,
       "text": "Where's Olivia?",
-      "start": 46,
-      "duration": 2
+      "start": 70.9,
+      "duration": 0.9
     },
     {
       "id": 25,
       "text": "Paul, please go to her room and tell her we are waiting for her.",
-      "start": 48,
-      "duration": 2
+      "start": 72.26,
+      "duration": 3.46
     },
     {
       "id": 26,
       "text": "What are you doing, Olivia?",
-      "start": 50,
-      "duration": 2
+      "start": 76.73,
+      "duration": 1.39
     },
     {
       "id": 27,
       "text": "I'm writing an email to my friend Amy.",
-      "start": 52,
-      "duration": 2
+      "start": 80.08,
+      "duration": 2.58
     },
     {
       "id": 28,
       "text": "Dinner is ready.",
-      "start": 54,
-      "duration": 2
+      "start": 83.76,
+      "duration": 0.98
     },
     {
       "id": 29,
       "text": "Everyone is waiting for you.",
-      "start": 56,
-      "duration": 2
+      "start": 84.96,
+      "duration": 1.62
     },
     {
       "id": 30,
       "text": "I'm sending it now.",
-      "start": 58,
-      "duration": 2
+      "start": 87.84,
+      "duration": 1.38
     },
     {
       "id": 31,
       "text": "I'm coming.",
-      "start": 60,
-      "duration": 2
+      "start": 89.76,
+      "duration": 0.9
     },
     {
       "id": 32,
       "text": "The clerks are having dinner now.",
-      "start": 62,
-      "duration": 2
+      "start": 92.3,
+      "duration": 2.01
     },
     {
       "id": 33,
       "text": "They are enjoying it.",
-      "start": 64,
-      "duration": 2
+      "start": 94.78,
+      "duration": 1.3
     },
     {
       "id": 34,
       "text": "It's almost bedtime.",
-      "start": 66,
-      "duration": 2
+      "start": 97.09,
+      "duration": 1.22
     },
     {
       "id": 35,
       "text": "Paul is going to the bathroom.",
-      "start": 68,
-      "duration": 2
+      "start": 99.02,
+      "duration": 1.62
     },
     {
       "id": 36,
       "text": "He is brushing his teeth.",
-      "start": 70,
-      "duration": 2
+      "start": 104.78,
+      "duration": 1.62
     },
     {
       "id": 37,
       "text": "Mom, what are Lucy and Oliver doing?",
-      "start": 72,
-      "duration": 2
+      "start": 109.34,
+      "duration": 2.58
     },
     {
       "id": 38,
       "text": "Are they sleeping?",
-      "start": 74,
-      "duration": 2
+      "start": 112.3,
+      "duration": 0.9
     },
     {
       "id": 39,
       "text": "No, they aren't.",
-      "start": 76,
-      "duration": 2
+      "start": 114.3,
+      "duration": 1.38
     },
     {
       "id": 40,
       "text": "They are taking a bath.",
-      "start": 78,
-      "duration": 2
+      "start": 116.14,
+      "duration": 1.38
     },
     {
       "id": 41,
       "text": "Fun?",
-      "start": 80,
-      "duration": 2
+      "start": 117.7,
+      "duration": 0.5
     },
     {
       "id": 42,
       "text": "And they are splashing water all around.",
-      "start": 82,
-      "duration": 2
+      "start": 123.47,
+      "duration": 2.73
     },
     {
       "id": 43,
       "text": "They are having so much fun.",
-      "start": 84,
-      "duration": 2
+      "start": 127.78,
+      "duration": 1.78
     },
     {
       "id": 44,
       "text": "Oliver and Lucy are in bed now.",
-      "start": 86,
-      "duration": 2
+      "start": 133.34,
+      "duration": 2.1
     },
     {
       "id": 45,
       "text": "Their mom is telling them a bedtime story.",
-      "start": 88,
-      "duration": 2
+      "start": 135.9,
+      "duration": 2.5
     },
     {
       "id": 46,
       "text": "Olivia is lying on her bed.",
-      "start": 90,
-      "duration": 2
+      "start": 140.78,
+      "duration": 1.86
     },
     {
       "id": 47,
       "text": "She is looking at some photos on her phone.",
-      "start": 92,
-      "duration": 2
+      "start": 143.1,
+      "duration": 2.43
     },
     {
       "id": 48,
       "text": "Her parents are knocking at the door.",
-      "start": 94,
-      "duration": 2
+      "start": 146,
+      "duration": 2.01
     },
     {
       "id": 49,
       "text": "They are opening the door.",
-      "start": 96,
-      "duration": 2
+      "start": 149.59,
+      "duration": 1.47
     },
     {
       "id": 50,
       "text": "Olivia, are you playing games on your phone?",
-      "start": 98,
-      "duration": 2
+      "start": 152.16,
+      "duration": 2.74
     },
     {
       "id": 51,
       "text": "No, I'm not.",
-      "start": 100,
-      "duration": 2
+      "start": 156.24,
+      "duration": 1.29
     },
     {
       "id": 52,
       "text": "I'm just looking at some photos.",
-      "start": 102,
-      "duration": 2
+      "start": 157.75,
+      "duration": 1.71
     },
     {
       "id": 53,
       "text": "Her mom is taking away her phone.",
-      "start": 104,
-      "duration": 2
+      "start": 161.19,
+      "duration": 2.26
     },
     {
       "id": 54,
       "text": "It's very late.",
-      "start": 106,
-      "duration": 2
+      "start": 164.63,
+      "duration": 1.06
     },
     {
       "id": 55,
       "text": "It's time to go to sleep, my dear.",
-      "start": 108,
-      "duration": 2
+      "start": 166.15,
+      "duration": 2.1
     },
     {
       "id": 56,
       "text": "Olivia's parents are kissing her goodnight.",
-      "start": 110,
-      "duration": 2
+      "start": 169.35,
+      "duration": 2.34
     },
     {
       "id": 57,
       "text": "Olivia is sleeping now.",
-      "start": 112,
-      "duration": 2
+      "start": 174.23,
+      "duration": 1.62
     },
     {
       "id": 58,
       "text": "Paul can't sleep.",
-      "start": 114,
-      "duration": 2
+      "start": 178.38,
+      "duration": 1.15
     },
     {
       "id": 59,
       "text": "He is going on a class trip tomorrow.",
-      "start": 116,
-      "duration": 2
+      "start": 179.99,
+      "duration": 2.26
     },
     {
       "id": 60,
       "text": "He is thinking about it.",
-      "start": 118,
-      "duration": 2
+      "start": 182.71,
+      "duration": 1.54
     },
     {
       "id": 61,
       "text": "He is very excited.",
-      "start": 120,
-      "duration": 2
+      "start": 184.62,
+      "duration": 1.31
     },
     {
       "id": 62,
       "text": "It's morning.",
-      "start": 122,
-      "duration": 2
+      "start": 205.34,
+      "duration": 0.74
     },
     {
       "id": 63,
       "text": "Paul is going on the trip by bus.",
-      "start": 124,
-      "duration": 2
+      "start": 206.54,
+      "duration": 2.02
     },
     {
       "id": 64,
       "text": "The kids are looking out of the window.",
-      "start": 126,
-      "duration": 2
+      "start": 209.03,
+      "duration": 1.94
     },
     {
       "id": 65,
       "text": "Look.",
-      "start": 128,
-      "duration": 2
+      "start": 213.43,
+      "duration": 0.5
     },
     {
       "id": 66,
       "text": "A fox is chasing a rabbit.",
-      "start": 130,
-      "duration": 2
+      "start": 214.31,
+      "duration": 1.85
     },
     {
       "id": 67,
       "text": "The rabbit is running really fast.",
-      "start": 132,
-      "duration": 2
+      "start": 216.78,
+      "duration": 2.1
     },
     {
       "id": 68,
       "text": "The bus is crossing a bridge.",
-      "start": 134,
-      "duration": 2
+      "start": 220.11,
+      "duration": 1.78
     },
     {
       "id": 69,
       "text": "Bull, there are some animals at the stream.",
-      "start": 136,
-      "duration": 2
+      "start": 225.39,
+      "duration": 3.14
     },
     {
       "id": 70,
       "text": "A bear is eating fish, and a deer is drinking water.",
-      "start": 138,
-      "duration": 2
+      "start": 229.15,
+      "duration": 5.2
     },
     {
       "id": 71,
       "text": "A squirrel is coming too.",
-      "start": 140,
-      "duration": 2
+      "start": 235.13,
+      "duration": 1.78
     },
     {
       "id": 72,
       "text": "It's running towards the stream.",
-      "start": 142,
-      "duration": 2
+      "start": 237.13,
+      "duration": 1.7
     },
     {
       "id": 73,
       "text": "Look, there is a helicopter coming towards us.",
-      "start": 144,
-      "duration": 2
+      "start": 249.74,
+      "duration": 3.46
     },
     {
       "id": 74,
       "text": "It is flying very low.",
-      "start": 146,
-      "duration": 2
+      "start": 253.58,
+      "duration": 1.62
     },
     {
       "id": 75,
       "text": "Is the pilot waving?",
-      "start": 148,
-      "duration": 2
+      "start": 258.17,
+      "duration": 1.44
     },
     {
       "id": 76,
       "text": "Kid asked.",
-      "start": 150,
-      "duration": 2
+      "start": 259.61,
+      "duration": 0.82
     },
     {
       "id": 77,
       "text": "Yes, he is.",
-      "start": 152,
-      "duration": 2
+      "start": 261.2,
+      "duration": 1.47
     },
     {
       "id": 78,
       "text": "Let's wave back at him.",
-      "start": 154,
-      "duration": 2
+      "start": 262.81,
+      "duration": 1.69
     },
     {
       "id": 79,
       "text": "The kids are waving back at the pilot.",
-      "start": 156,
-      "duration": 2
+      "start": 265.44,
+      "duration": 2.02
     },
     {
       "id": 80,
       "text": "Wow.",
-      "start": 158,
-      "duration": 2
+      "start": 271.06,
+      "duration": 0.5
     },
     {
       "id": 81,
       "text": "We are entering a tunnel.",
-      "start": 160,
-      "duration": 2
+      "start": 272.02,
+      "duration": 1.7
     },
     {
       "id": 82,
       "text": "It is getting darker and darker.",
-      "start": 162,
-      "duration": 2
+      "start": 275.54,
+      "duration": 2.34
     },
     {
       "id": 83,
       "text": "Oh.",
-      "start": 164,
-      "duration": 2
+      "start": 278.18,
+      "duration": 0.5
     },
     {
       "id": 84,
       "text": "We are coming out of the tunnel now.",
-      "start": 166,
-      "duration": 2
+      "start": 279.22,
+      "duration": 1.94
     },
     {
       "id": 85,
       "text": "The class is visiting the botanical garden now.",
-      "start": 168,
-      "duration": 2
+      "start": 287.63,
+      "duration": 2.83
     },
     {
       "id": 86,
       "text": "The teacher is showing the kids many plants and flowers.",
-      "start": 170,
-      "duration": 2
+      "start": 291.56,
+      "duration": 3.13
     },
     {
       "id": 87,
       "text": "The kids are listening carefully.",
-      "start": 172,
-      "duration": 2
+      "start": 296.44,
+      "duration": 1.62
     },
     {
       "id": 88,
       "text": "Look.",
-      "start": 174,
-      "duration": 2
+      "start": 299.79,
+      "duration": 0.5
     },
     {
       "id": 89,
       "text": "There is a bird nest in the tree.",
-      "start": 176,
-      "duration": 2
+      "start": 300.83,
+      "duration": 2.02
     },
     {
       "id": 90,
       "text": "Three baby birds are sitting in the nest.",
-      "start": 178,
-      "duration": 2
+      "start": 303.47,
+      "duration": 2.5
     },
     {
       "id": 91,
       "text": "They are waiting for their mother.",
-      "start": 180,
-      "duration": 2
+      "start": 306.91,
+      "duration": 1.7
     },
     {
       "id": 92,
       "text": "It is coming now.",
-      "start": 182,
-      "duration": 2
+      "start": 309.71,
+      "duration": 1.3
     },
     {
       "id": 93,
       "text": "It's feeding them.",
-      "start": 184,
-      "duration": 2
+      "start": 314.81,
+      "duration": 1.3
     },
     {
       "id": 94,
       "text": "The bird is singing so sweetly.",
-      "start": 186,
-      "duration": 2
+      "start": 319.21,
+      "duration": 2.17
     },
     {
       "id": 95,
       "text": "It's getting late.",
-      "start": 188,
-      "duration": 2
+      "start": 324.56,
+      "duration": 1.15
     },
     {
       "id": 96,
       "text": "Everybody is getting on the bus.",
-      "start": 190,
-      "duration": 2
+      "start": 326.17,
+      "duration": 1.77
     },
     {
       "id": 97,
       "text": "The bus is going back home.",
-      "start": 192,
-      "duration": 2
+      "start": 333.28,
+      "duration": 1.86
     },
     {
       "id": 98,
       "text": "Thanks for watching.",
-      "start": 194,
-      "duration": 2
+      "start": 340.8,
+      "duration": 1.14
     },
     {
       "id": 99,
       "text": "Please subscribe to our YouTube channel and visit our website kidstages.com.",
-      "start": 196,
-      "duration": 2
+      "start": 342.7,
+      "duration": 4.5
     }
   ],
   "speakerMap": {
@@ -620,5 +620,5 @@
     "afterSegments": 99
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T13:17:55.652Z"
+  "formattedAt": "2026-07-30T11:50:56.366Z"
 }

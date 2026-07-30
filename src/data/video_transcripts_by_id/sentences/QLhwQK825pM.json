@@ -4,318 +4,354 @@
     {
       "id": 1,
       "text": "This is a short English story for beginners.",
-      "start": 0,
-      "duration": 2
+      "start": 0.96,
+      "duration": 6.64
     },
     {
       "id": 2,
-      "text": "Listen carefully and try to understand the story.",
-      "start": 2,
-      "duration": 2
+      "text": "Listen carefully and try to understand the  story.",
+      "start": 7.6,
+      "duration": 6.64
     },
     {
       "id": 3,
       "text": "Emma is a young girl.",
-      "start": 4,
-      "duration": 2
+      "start": 10.48,
+      "duration": 3.25
     },
     {
       "id": 4,
       "text": "She lives in a small town near a forest.",
-      "start": 6,
-      "duration": 2
+      "start": 13.726428571428572,
+      "duration": 5.84
     },
     {
       "id": 5,
       "text": "Sunny morning, she decides to take a walk in the forest.",
-      "start": 8,
-      "duration": 2
+      "start": 17.84,
+      "duration": 6.4
     },
     {
       "id": 6,
       "text": "The birds are singing and the wind is soft.",
-      "start": 10,
-      "duration": 2
+      "start": 24.2365,
+      "duration": 5.23
     },
     {
       "id": 7,
       "text": "While walking, Emma sees something strange on the ground.",
-      "start": 12,
-      "duration": 2
+      "start": 27.2,
+      "duration": 5.38
     },
     {
       "id": 8,
       "text": "It is a small wooden box.",
-      "start": 14,
-      "duration": 2
+      "start": 32.576,
+      "duration": 3.58
     },
     {
       "id": 9,
-      "text": "The box is old, dusty, and has a small, rusty lock.",
-      "start": 16,
-      "duration": 2
+      "text": "The  box is old, dusty, and has a small, rusty lock.",
+      "start": 36.16,
+      "duration": 6.32
     },
     {
       "id": 10,
-      "text": "Emma picks it up carefully.",
-      "start": 18,
-      "duration": 2
+      "text": "Emma picks  it up carefully.",
+      "start": 42.485,
+      "duration": 2.88
     },
     {
       "id": 11,
       "text": "Looks around.",
-      "start": 20,
-      "duration": 2
+      "start": 42.8,
+      "duration": 1.76
     },
     {
       "id": 12,
       "text": "No one is near.",
-      "start": 22,
-      "duration": 2
+      "start": 44.559999999999995,
+      "duration": 3.52
     },
     {
       "id": 13,
       "text": "The forest is quiet.",
-      "start": 24,
-      "duration": 2
+      "start": 48.08,
+      "duration": 1.79
     },
     {
       "id": 14,
-      "text": "Emma wonders, \"Where did this box come from?",
-      "start": 26,
-      "duration": 2
+      "text": "Emma wonders,  \"Where did this box come from?",
+      "start": 49.86666666666667,
+      "duration": 3.57
     },
     {
       "id": 15,
       "text": "And what is inside?\" She tries to open but the lock is too strong.",
-      "start": 28,
-      "duration": 2
+      "start": 53.440000000000005,
+      "duration": 7.36
     },
     {
       "id": 16,
-      "text": "She decides to take the box home and ask her brother for help.",
-      "start": 30,
-      "duration": 2
+      "text": "She decides to take the box home and ask her brother for  help.",
+      "start": 58,
+      "duration": 7.6
     },
     {
       "id": 17,
       "text": "At home, Emma shows the box to her brother, Jack.",
-      "start": 32,
-      "duration": 2
+      "start": 65.6,
+      "duration": 6.05
     },
     {
       "id": 18,
-      "text": "Jack looks at it with curiosity. \"Wow, this looks very old.",
-      "start": 34,
-      "duration": 2
+      "text": "Jack  looks at it with curiosity.",
+      "start": 71.64999999999999,
+      "duration": 3.63
     },
     {
       "id": 19,
-      "text": "Maybe it is valuable,\" he says.",
-      "start": 36,
-      "duration": 2
+      "text": "\"Wow, this looks very old.",
+      "start": 70.96,
+      "duration": 4.4
     },
     {
       "id": 20,
-      "text": "They try to open the box together, the lock does not move.",
-      "start": 38,
-      "duration": 2
+      "text": "Maybe it is valuable,\" he says.",
+      "start": 75.36,
+      "duration": 5.28
     },
     {
       "id": 21,
-      "text": "Emma remembers an old key she found in the garden last year.",
-      "start": 40,
-      "duration": 2
+      "text": "They try to open the box together, the lock does not move.",
+      "start": 77.68,
+      "duration": 8
     },
     {
       "id": 22,
-      "text": "Searches her room and finds the key.",
-      "start": 42,
-      "duration": 2
+      "text": "Emma remembers  an old key she found in the garden last year.",
+      "start": 83.2,
+      "duration": 7.62
     },
     {
       "id": 23,
-      "text": "Carefully, she inserts the key into the lock.",
-      "start": 44,
-      "duration": 2
+      "text": "Searches her room and finds the key.",
+      "start": 88.56,
+      "duration": 3.98
     },
     {
       "id": 24,
-      "text": "Click.",
-      "start": 46,
-      "duration": 2
+      "text": "Carefully, she inserts  the key into the lock.",
+      "start": 92.54066666666667,
+      "duration": 4.55
     },
     {
       "id": 25,
-      "text": "The box opens.",
-      "start": 48,
-      "duration": 2
+      "text": "Click.",
+      "start": 97.08571428571429,
+      "duration": 1.11
     },
     {
       "id": 26,
-      "text": "Inside, they see a small map.",
-      "start": 50,
-      "duration": 2
+      "text": "The box opens.",
+      "start": 98.19571428571429,
+      "duration": 3.33
     },
     {
       "id": 27,
-      "text": "The map shows a path through the forest with a red X at the end.",
-      "start": 52,
-      "duration": 2
+      "text": "Inside,  they see a small map.",
+      "start": 98.64,
+      "duration": 2.91
     },
     {
       "id": 28,
-      "text": "Emma and Jack are excited. \"Let's follow the map tomorrow,\" Emma says.",
-      "start": 54,
-      "duration": 2
+      "text": "The map shows a path through the forest with a red X at the end.",
+      "start": 101.54571428571428,
+      "duration": 7.26
     },
     {
       "id": 29,
-      "text": "They hide the box safely and go to sleep, dreaming about the adventure.",
-      "start": 56,
-      "duration": 2
+      "text": "Emma and Jack are excited.",
+      "start": 108.80888888888889,
+      "duration": 2.51
     },
     {
       "id": 30,
-      "text": "Next morning, Emma and Jack wake up early.",
-      "start": 58,
-      "duration": 2
+      "text": "Let's follow the map tomorrow, Emma says.",
+      "start": 111.32138888888889,
+      "duration": 3.52
     },
     {
       "id": 31,
-      "text": "They take the map and walk into the forest, following the path.",
-      "start": 60,
-      "duration": 2
+      "text": "They hide the box safely and go to sleep, dreaming about the adventure.",
+      "start": 114.82666666666667,
+      "duration": 7.25
     },
     {
       "id": 32,
-      "text": "They cross a small stream, climb a hill, and walk through tall trees.",
-      "start": 62,
-      "duration": 2
+      "text": "Next morning, Emma and Jack wake up early.",
+      "start": 119.36,
+      "duration": 3.85
     },
     {
       "id": 33,
-      "text": "Finally, they reach a big tree exactly where the red X is marked on the map.",
-      "start": 64,
-      "duration": 2
+      "text": "They take the map and walk into the forest, following  the path.",
+      "start": 123.212,
+      "duration": 5.78
     },
     {
       "id": 34,
-      "text": "Emma starts to dig carefully near the tree roots.",
-      "start": 66,
-      "duration": 2
+      "text": "They cross a small stream, climb a hill, and walk through tall trees.",
+      "start": 128.99,
+      "duration": 11.25
     },
     {
       "id": 35,
-      "text": "After a few minutes, they find a small treasure chest.",
-      "start": 68,
-      "duration": 2
+      "text": "Finally, they reach a big tree exactly where the red  X is marked on the Emma starts to dig carefully near the tree roots.",
+      "start": 136.48,
+      "duration": 14.64
     },
     {
       "id": 36,
-      "text": "They open the chest slowly.",
-      "start": 70,
-      "duration": 2
+      "text": "After  a few minutes, they find a small treasure chest.",
+      "start": 148.48,
+      "duration": 5.86
     },
     {
       "id": 37,
-      "text": "Inside, they see gold coins, sparkling jewels, and a shiny necklace.",
-      "start": 72,
-      "duration": 2
+      "text": "They open the chest slowly.",
+      "start": 154.33999999999997,
+      "duration": 2.93
     },
     {
       "id": 38,
-      "text": "Emma and Jack are amazed.",
-      "start": 74,
-      "duration": 2
+      "text": "Inside, they see gold coins, sparkling jewels, and a shiny necklace.",
+      "start": 157.26857142857145,
+      "duration": 7.69
     },
     {
       "id": 39,
-      "text": "Have never seen so many treasures.",
-      "start": 76,
-      "duration": 2
+      "text": "Emma and Jack are amazed.",
+      "start": 164.95482142857145,
+      "duration": 3.49
     },
     {
       "id": 40,
-      "text": "But suddenly they hear a soft noise behind the tree.",
-      "start": 78,
-      "duration": 2
+      "text": "Have never seen so many treasures.",
+      "start": 165.92,
+      "duration": 3.89
     },
     {
       "id": 41,
-      "text": "They turn around and see a strange man standing quietly.",
-      "start": 80,
-      "duration": 2
+      "text": "But suddenly they hear  a soft noise behind the tree.",
+      "start": 169.8125,
+      "duration": 6.49
     },
     {
       "id": 42,
-      "text": "The man looks surprised at first.",
-      "start": 82,
-      "duration": 2
+      "text": "They turn around and see a strange man standing quietly.",
+      "start": 176.29714285714286,
+      "duration": 3.81
     },
     {
       "id": 43,
-      "text": "Then he smiles. \"You found my treasure?",
-      "start": 84,
-      "duration": 2
+      "text": "The man  looks surprised at first.",
+      "start": 180.10964285714286,
+      "duration": 2.29
     },
     {
       "id": 44,
-      "text": "Very clever,\" he says.",
-      "start": 86,
-      "duration": 2
+      "text": "Then he smiles.",
+      "start": 182.40285714285716,
+      "duration": 3.13
     },
     {
       "id": 45,
-      "text": "Jack is scared, but the man continues. \"I left this treasure for someone honest to find.",
-      "start": 88,
-      "duration": 2
+      "text": "You found my treasure?",
+      "start": 185.5314285714286,
+      "duration": 0.16
     },
     {
       "id": 46,
-      "text": "You two are brave and kind.\" Emma and Jack feel relieved.",
-      "start": 90,
-      "duration": 2
+      "text": "Very clever, he says.",
+      "start": 185.6914285714286,
+      "duration": 3.57
     },
     {
       "id": 47,
-      "text": "The man gives them permission to take some coins and the necklace as a gift.",
-      "start": 92,
-      "duration": 2
+      "text": "Jack are scared, but the man continues.",
+      "start": 188.66,
+      "duration": 3.3
     },
     {
       "id": 48,
-      "text": "The man disappears quietly into the forest.",
-      "start": 94,
-      "duration": 2
+      "text": "I left this treasure for someone honest to find.",
+      "start": 191.95999999999998,
+      "duration": 6.07
     },
     {
       "id": 49,
-      "text": "Emma and Jack walk home happily.",
-      "start": 96,
-      "duration": 2
+      "text": "You two are brave and kind.",
+      "start": 198.02666666666664,
+      "duration": 1.65
     },
     {
       "id": 50,
-      "text": "They feel proud because they found the treasure honestly.",
-      "start": 98,
-      "duration": 2
+      "text": "Emma and Jack feel relieved.",
+      "start": 199.68,
+      "duration": 1.13
     },
     {
       "id": 51,
-      "text": "Emma says, \"Sometimes the smallest good action brings great rewards.\" Jack nods and smiles. \"Tomorrow we will explore more,\" he says. \"What would you do if you found a mysterious treasure?",
-      "start": 100,
-      "duration": 2
+      "text": "The man gives them permission to take some coins and the necklace as a gift.",
+      "start": 200.81333333333333,
+      "duration": 7.05
     },
     {
       "id": 52,
-      "text": "Write your answer in the comments.\"",
-      "start": 102,
-      "duration": 2
+      "text": "The man disappears quietly into the forest.",
+      "start": 207.86285714285714,
+      "duration": 4.41
+    },
+    {
+      "id": 53,
+      "text": "Emma and Jack walk home happily.",
+      "start": 212.272,
+      "duration": 1.67
+    },
+    {
+      "id": 54,
+      "text": "They feel proud because they found the treasure honestly.",
+      "start": 213.94285714285715,
+      "duration": 2.88
+    },
+    {
+      "id": 55,
+      "text": "Emma says,  \"Sometimes the smallest good action brings great rewards.\" Jack nods and smiles.",
+      "start": 216.82000000000002,
+      "duration": 10.54
+    },
+    {
+      "id": 56,
+      "text": "\"Tomorrow we will explore more,\" he says.",
+      "start": 224.8,
+      "duration": 7.2
+    },
+    {
+      "id": 57,
+      "text": "\"What would you do if you found a mysterious treasure?",
+      "start": 229.2,
+      "duration": 5.38
+    },
+    {
+      "id": 58,
+      "text": "Write your answer in the comments.",
+      "start": 234.576,
+      "duration": 3.86
     }
   ],
   "videoId": "QLhwQK825pM",
   "source": "cleaned",
   "formatted": true,
-  "formattedAt": "2026-07-30T13:17:24.536Z"
+  "formattedAt": "2026-07-30T11:50:56.362Z"
 }

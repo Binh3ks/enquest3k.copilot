@@ -4,296 +4,314 @@
     {
       "id": 1,
       "text": "Hello, young adventurers.",
-      "start": 0,
-      "duration": 2
+      "start": 0.24,
+      "duration": 1.94
     },
     {
       "id": 2,
       "text": "Tonight, I have a mystery for you.",
-      "start": 2,
-      "duration": 2
+      "start": 2.64,
+      "duration": 3.06
     },
     {
       "id": 3,
       "text": "Shh.",
-      "start": 4,
-      "duration": 2
+      "start": 5.76,
+      "duration": 0.48
     },
     {
       "id": 4,
       "text": "Can you hear that?",
-      "start": 6,
-      "duration": 2
+      "start": 6.24,
+      "duration": 1.3
     },
     {
       "id": 5,
       "text": "The forest is whispering a secret.",
-      "start": 8,
-      "duration": 2
+      "start": 7.76,
+      "duration": 2.58
     },
     {
       "id": 6,
       "text": "Welcome to the case of the whispering woods.",
-      "start": 10,
-      "duration": 2
+      "start": 10.72,
+      "duration": 3.06
     },
     {
       "id": 7,
       "text": "Stay till the end, because you'll be the detective helping us solve this curious case.",
-      "start": 12,
-      "duration": 2
+      "start": 14.08,
+      "duration": 6.24
     },
     {
       "id": 8,
-      "text": "Once upon a time, two curious siblings, Emma and Jack, went camping with their parents at the edge of an old forest.",
-      "start": 14,
-      "duration": 2
+      "text": "once upon a time two curious siblings emma",
+      "start": 20.86,
+      "duration": 4.41
     },
     {
       "id": 9,
-      "text": "As a campfire crackled and the stars sparkled above, Emma froze.",
-      "start": 16,
-      "duration": 2
+      "text": "and jack went camping with their parents at the edge of an old forest",
+      "start": 25.27,
+      "duration": 5.05
     },
     {
       "id": 10,
-      "text": "Jack, did you hear that?",
-      "start": 18,
-      "duration": 2
+      "text": "As a campfire crackled and the stars sparkled above, Emma froze.",
+      "start": 30.79,
+      "duration": 5.46
     },
     {
       "id": 11,
-      "text": "A soft whisper drifted through the trees.",
-      "start": 20,
-      "duration": 2
+      "text": "Jack, did you hear that?",
+      "start": 36.39,
+      "duration": 1.94
     },
     {
       "id": 12,
-      "text": "Find the glowing stone.",
-      "start": 22,
-      "duration": 2
+      "text": "A soft whisper drifted through the trees, Find the glowing stone.",
+      "start": 38.55,
+      "duration": 5.22
     },
     {
       "id": 13,
       "text": "Jack's eyes grew wide.",
-      "start": 24,
-      "duration": 2
+      "start": 44.09,
+      "duration": 1.71
     },
     {
       "id": 14,
       "text": "Who said that?",
-      "start": 26,
-      "duration": 2
+      "start": 45.94,
+      "duration": 1.22
     },
     {
       "id": 15,
       "text": "But when they looked around, no one was there.",
-      "start": 28,
-      "duration": 2
+      "start": 47.3,
+      "duration": 3.61
     },
     {
       "id": 16,
       "text": "Just the quiet forest and the flickering fire.",
-      "start": 30,
-      "duration": 2
+      "start": 51.14,
+      "duration": 3.54
     },
     {
       "id": 17,
       "text": "That night, while their parents slept, Emma and Jack spotted a trail of glowing fireflies.",
-      "start": 32,
-      "duration": 2
+      "start": 54.82,
+      "duration": 6.81
     },
     {
       "id": 18,
       "text": "They twinkled like tiny lanterns, leading deeper into the woods.",
-      "start": 34,
-      "duration": 2
+      "start": 62.25,
+      "duration": 4.98
     },
     {
       "id": 19,
       "text": "Do you think they're showing us something?",
-      "start": 36,
-      "duration": 2
+      "start": 67.37,
+      "duration": 2.58
     },
     {
       "id": 20,
       "text": "Emma asked.",
-      "start": 38,
-      "duration": 2
+      "start": 70.17,
+      "duration": 1.06
     },
     {
       "id": 21,
       "text": "Jack gulped but nodded.",
-      "start": 40,
-      "duration": 2
+      "start": 71.37,
+      "duration": 1.7
     },
     {
       "id": 22,
       "text": "Only one way to find out.",
-      "start": 42,
-      "duration": 2
+      "start": 73.58,
+      "duration": 2.17
     },
     {
       "id": 23,
       "text": "Step by step, the children followed the glowing trail.",
-      "start": 44,
-      "duration": 2
+      "start": 76.38,
+      "duration": 4.26
     },
     {
       "id": 24,
       "text": "The whispers grew louder.",
-      "start": 46,
-      "duration": 2
+      "start": 80.78,
+      "duration": 1.78
     },
     {
       "id": 25,
-      "text": "Find the stone.",
-      "start": 48,
-      "duration": 2
+      "text": "Find the stone!",
+      "start": 83.02,
+      "duration": 1.37
     },
     {
       "id": 26,
       "text": "Glowing stone.",
-      "start": 50,
-      "duration": 2
+      "start": 84.69,
+      "duration": 0.98
     },
     {
       "id": 27,
-      "text": "The forest seemed alive, holding its breath, waiting for them.",
-      "start": 52,
-      "duration": 2
+      "text": "The forest seemed alive holding its breath, waiting for them.",
+      "start": 86.04,
+      "duration": 4.82
     },
     {
       "id": 28,
       "text": "At last, they reached a small clearing.",
-      "start": 54,
-      "duration": 2
+      "start": 91,
+      "duration": 2.98
     },
     {
       "id": 29,
       "text": "There, half hidden under moss, stood a giant stone covered in strange carvings.",
-      "start": 56,
-      "duration": 2
+      "start": 94.36,
+      "duration": 6.26
     },
     {
       "id": 30,
       "text": "As Emma touched it, the carvings began to glow with a soft, golden light.",
-      "start": 58,
-      "duration": 2
+      "start": 101.05,
+      "duration": 6.01
     },
     {
       "id": 31,
-      "text": "The whispers surrounded them, but then Jack noticed something.",
-      "start": 60,
-      "duration": 2
+      "text": "The whispers surrounded them but then Jack noticed something.",
+      "start": 107.2,
+      "duration": 4.11
     },
     {
       "id": 32,
       "text": "Wait.",
-      "start": 62,
-      "duration": 2
+      "start": 111.6,
+      "duration": 0.5
     },
     {
       "id": 33,
       "text": "It's not a ghost.",
-      "start": 64,
-      "duration": 2
+      "start": 112.33,
+      "duration": 1.13
     },
     {
       "id": 34,
       "text": "It's a wind.",
-      "start": 66,
-      "duration": 2
+      "start": 113.86,
+      "duration": 1.06
     },
     {
       "id": 35,
-      "text": "Sure enough, tiny holes in the stone made the air whistle and sounding just like a voice.",
-      "start": 68,
-      "duration": 2
+      "text": "sure enough tiny holes in the stone made the air whistle",
+      "start": 115.22,
+      "duration": 4.4
     },
     {
       "id": 36,
-      "text": "The whispering woods weren't haunted at all.",
-      "start": 70,
-      "duration": 2
+      "text": "and sounding just like a voice",
+      "start": 119.62,
+      "duration": 3.22
     },
     {
       "id": 37,
-      "text": "It was nature's music, waiting to be discovered.",
-      "start": 72,
-      "duration": 2
+      "text": "The whispering woods weren't haunted at all.",
+      "start": 123.14,
+      "duration": 3.28
     },
     {
       "id": 38,
-      "text": "Emma smiled.",
-      "start": 74,
-      "duration": 2
+      "text": "It was nature's music, waiting to be discovered.",
+      "start": 126.42,
+      "duration": 3.8
     },
     {
       "id": 39,
-      "text": "So the forest wasn't trying to scare us.",
-      "start": 76,
-      "duration": 2
+      "text": "Emma smiled.",
+      "start": 130.51,
+      "duration": 0.99
     },
     {
       "id": 40,
-      "text": "It was inviting us to listen.",
-      "start": 78,
-      "duration": 2
+      "text": "So the forest wasn't trying to scare us.",
+      "start": 131.88,
+      "duration": 3.13
     },
     {
       "id": 41,
-      "text": "The children hurried back to their tent, safe and excited.",
-      "start": 80,
-      "duration": 2
+      "text": "It was inviting us to listen.",
+      "start": 135.07,
+      "duration": 2.27
     },
     {
       "id": 42,
-      "text": "From then on, they learned that mysteries don't always mean dangerous.",
-      "start": 82,
-      "duration": 2
+      "text": "The children hurried back to their tent, safe and excited.",
+      "start": 137.88,
+      "duration": 4.41
     },
     {
       "id": 43,
-      "text": "Sometimes they are just secrets of nature waiting for brave hearts to explore.",
-      "start": 84,
-      "duration": 2
+      "text": "from then on they learned",
+      "start": 142.69,
+      "duration": 1.76
     },
     {
       "id": 44,
-      "text": "And that, young detectives, was a case of the whispering woods.",
-      "start": 86,
-      "duration": 2
+      "text": "that mysteries don't always mean dangerous sometimes they readjust secrets of nature waiting for brave",
+      "start": 144.45,
+      "duration": 7.2
     },
     {
       "id": 45,
-      "text": "Did you solve the mystery before Emma and Jack?",
-      "start": 88,
-      "duration": 2
+      "text": "hearts to explore",
+      "start": 151.65,
+      "duration": 1.22
     },
     {
       "id": 46,
-      "text": "Tell me in the comments below.",
-      "start": 90,
-      "duration": 2
+      "text": "And that young detectives was a case of the whispering woods.",
+      "start": 153.17,
+      "duration": 4.5
     },
     {
       "id": 47,
-      "text": "Don't forget to like this video, share it with your friends, and subscribe for more curious adventures every week.",
-      "start": 92,
-      "duration": 2
+      "text": "Did you solve the mystery before Emma and Jack?",
+      "start": 157.94,
+      "duration": 3.22
     },
     {
       "id": 48,
-      "text": "Until next time, stay curious, and keep listening.",
-      "start": 94,
-      "duration": 2
+      "text": "Tell me in the comments below.",
+      "start": 161.38,
+      "duration": 1.93
     },
     {
       "id": 49,
+      "text": "don't forget to like this video share it with your friends",
+      "start": 163.62,
+      "duration": 4.18
+    },
+    {
+      "id": 50,
+      "text": "and subscribe for more curious adventures every week",
+      "start": 167.94,
+      "duration": 4.18
+    },
+    {
+      "id": 51,
+      "text": "Until next time stay curious, and keep listening.",
+      "start": 172.39,
+      "duration": 3.46
+    },
+    {
+      "id": 52,
       "text": "Because the world is full of secrets.",
-      "start": 96,
-      "duration": 2
+      "start": 176.23,
+      "duration": 2.58
     }
   ],
   "fetchedAt": "2026-07-23T06:27:07.002301+00:00",
@@ -320,5 +338,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T13:22:05.936Z"
+  "formattedAt": "2026-07-30T11:50:56.388Z"
 }

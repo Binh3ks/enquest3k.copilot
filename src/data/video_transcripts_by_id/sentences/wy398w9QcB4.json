@@ -4,308 +4,308 @@
     {
       "id": 1,
       "text": "English sing sing.",
-      "start": 0,
-      "duration": 2
+      "start": 1.68,
+      "duration": 1.46
     },
     {
       "id": 2,
       "text": "How was your summer vacation?",
-      "start": 2,
-      "duration": 2
+      "start": 5.84,
+      "duration": 1.94
     },
     {
       "id": 3,
       "text": "How are you?",
-      "start": 4,
-      "duration": 2
+      "start": 17.74,
+      "duration": 0.98
     },
     {
       "id": 4,
       "text": "I'm good.",
-      "start": 6,
-      "duration": 2
+      "start": 20.14,
+      "duration": 0.82
     },
     {
       "id": 5,
       "text": "How was your summer vacation?",
-      "start": 8,
-      "duration": 2
+      "start": 21.59,
+      "duration": 1.7
     },
     {
       "id": 6,
       "text": "It was great.",
-      "start": 10,
-      "duration": 2
+      "start": 24.62,
+      "duration": 1.06
     },
     {
       "id": 7,
       "text": "I went to Jeju Do with my family.",
-      "start": 12,
-      "duration": 2
+      "start": 26.72,
+      "duration": 2.26
     },
     {
       "id": 8,
       "text": "Really?",
-      "start": 14,
-      "duration": 2
+      "start": 31.28,
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "What did you do there?",
-      "start": 16,
-      "duration": 2
+      "start": 32.8,
+      "duration": 1.46
     },
     {
       "id": 10,
       "text": "We looked around Jeju Do.",
-      "start": 18,
-      "duration": 2
+      "start": 35.36,
+      "duration": 2.02
     },
     {
       "id": 11,
       "text": "Sounds great.",
-      "start": 20,
-      "duration": 2
+      "start": 38.41,
+      "duration": 0.82
     },
     {
       "id": 12,
       "text": "We rode horses and walked along Jeju Ole.",
-      "start": 22,
-      "duration": 2
+      "start": 40.66,
+      "duration": 2.98
     },
     {
       "id": 13,
       "text": "Jeju Ole?",
-      "start": 24,
-      "duration": 2
+      "start": 44.9,
+      "duration": 0.98
     },
     {
       "id": 14,
       "text": "What's that?",
-      "start": 26,
-      "duration": 2
+      "start": 46.66,
+      "duration": 0.82
     },
     {
       "id": 15,
       "text": "It's a walking path.",
-      "start": 28,
-      "duration": 2
+      "start": 48.66,
+      "duration": 1.61
     },
     {
       "id": 16,
       "text": "You can see beautiful beaches and fields from there.",
-      "start": 30,
-      "duration": 2
+      "start": 51.61,
+      "duration": 3.06
     },
     {
       "id": 17,
       "text": "Wow, I want to go there too.",
-      "start": 32,
-      "duration": 2
+      "start": 55.85,
+      "duration": 2.42
     },
     {
       "id": 18,
       "text": "How about your vacation?",
-      "start": 34,
-      "duration": 2
+      "start": 59.53,
+      "duration": 1.3
     },
     {
       "id": 19,
       "text": "What did you do?",
-      "start": 36,
-      "duration": 2
+      "start": 62.01,
+      "duration": 1.22
     },
     {
       "id": 20,
       "text": "I took Taekwondo lessons.",
-      "start": 38,
-      "duration": 2
+      "start": 65.28,
+      "duration": 1.87
     },
     {
       "id": 21,
       "text": "Great.",
-      "start": 40,
-      "duration": 2
+      "start": 68.41,
+      "duration": 0.5
     },
     {
       "id": 22,
       "text": "What color belt do you have?",
-      "start": 42,
-      "duration": 2
+      "start": 69.53,
+      "duration": 1.94
     },
     {
       "id": 23,
       "text": "White.",
-      "start": 44,
-      "duration": 2
+      "start": 73.05,
+      "duration": 0.5
     },
     {
       "id": 24,
       "text": "I want to get my blue belt soon.",
-      "start": 46,
-      "duration": 2
+      "start": 73.77,
+      "duration": 2.1
     },
     {
       "id": 25,
       "text": "Good luck.",
-      "start": 48,
-      "duration": 2
+      "start": 76.51,
+      "duration": 5.38
     },
     {
       "id": 26,
       "text": "Listen.",
-      "start": 50,
-      "duration": 2
+      "start": 84.83,
+      "duration": 0.5
     },
     {
       "id": 27,
       "text": "How are you?",
-      "start": 52,
-      "duration": 2
+      "start": 95.69,
+      "duration": 0.9
     },
     {
       "id": 28,
       "text": "I'm good.",
-      "start": 54,
-      "duration": 2
+      "start": 98.09,
+      "duration": 0.9
     },
     {
       "id": 29,
       "text": "How was your summer vacation?",
-      "start": 56,
-      "duration": 2
+      "start": 99.53,
+      "duration": 1.7
     },
     {
       "id": 30,
       "text": "It was great.",
-      "start": 58,
-      "duration": 2
+      "start": 102.49,
+      "duration": 1.14
     },
     {
       "id": 31,
       "text": "I went to Jeju Do with my family.",
-      "start": 60,
-      "duration": 2
+      "start": 104.67,
+      "duration": 2.26
     },
     {
       "id": 32,
       "text": "Really?",
-      "start": 62,
-      "duration": 2
+      "start": 109.31,
+      "duration": 0.5
     },
     {
       "id": 33,
       "text": "What did you do there?",
-      "start": 64,
-      "duration": 2
+      "start": 110.83,
+      "duration": 1.38
     },
     {
       "id": 34,
       "text": "We looked around Jeju Do.",
-      "start": 66,
-      "duration": 2
+      "start": 113.31,
+      "duration": 1.94
     },
     {
       "id": 35,
       "text": "Sounds great.",
-      "start": 68,
-      "duration": 2
+      "start": 116.44,
+      "duration": 0.75
     },
     {
       "id": 36,
       "text": "We rode horses and walked along Jeju Ole.",
-      "start": 70,
-      "duration": 2
+      "start": 118.6,
+      "duration": 3.06
     },
     {
       "id": 37,
       "text": "Jeju Ole?",
-      "start": 72,
-      "duration": 2
+      "start": 122.84,
+      "duration": 1.07
     },
     {
       "id": 38,
       "text": "What's that?",
-      "start": 74,
-      "duration": 2
+      "start": 124.6,
+      "duration": 0.9
     },
     {
       "id": 39,
       "text": "It's a walking path.",
-      "start": 76,
-      "duration": 2
+      "start": 126.69,
+      "duration": 1.53
     },
     {
       "id": 40,
       "text": "You can see beautiful beaches and fields from there.",
-      "start": 78,
-      "duration": 2
+      "start": 129.58,
+      "duration": 3.06
     },
     {
       "id": 41,
       "text": "Wow, I want to go there too.",
-      "start": 80,
-      "duration": 2
+      "start": 133.82,
+      "duration": 2.42
     },
     {
       "id": 42,
       "text": "How about your vacation?",
-      "start": 82,
-      "duration": 2
+      "start": 137.5,
+      "duration": 1.3
     },
     {
       "id": 43,
       "text": "What did you do?",
-      "start": 84,
-      "duration": 2
+      "start": 139.98,
+      "duration": 1.22
     },
     {
       "id": 44,
       "text": "I took Taekwondo lessons.",
-      "start": 86,
-      "duration": 2
+      "start": 143.22,
+      "duration": 1.86
     },
     {
       "id": 45,
       "text": "Great.",
-      "start": 88,
-      "duration": 2
+      "start": 146.43,
+      "duration": 0.5
     },
     {
       "id": 46,
       "text": "What color belt do you have?",
-      "start": 90,
-      "duration": 2
+      "start": 147.54,
+      "duration": 1.87
     },
     {
       "id": 47,
       "text": "White.",
-      "start": 92,
-      "duration": 2
+      "start": 150.99,
+      "duration": 0.5
     },
     {
       "id": 48,
       "text": "I want to get my blue belt soon.",
-      "start": 94,
-      "duration": 2
+      "start": 151.78,
+      "duration": 2.1
     },
     {
       "id": 49,
       "text": "Good luck.",
-      "start": 96,
-      "duration": 2
+      "start": 154.48,
+      "duration": 5.38
     },
     {
       "id": 50,
       "text": "Speak aloud.",
-      "start": 98,
-      "duration": 2
+      "start": 163.6,
+      "duration": 0.74
     },
     {
       "id": 51,
       "text": "Your turn.",
-      "start": 100,
-      "duration": 2
+      "start": 241.17,
+      "duration": 0.9
     }
   ],
   "fetchedAt": "2026-07-23T06:26:57.846275+00:00",
@@ -334,5 +334,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T13:23:17.130Z"
+  "formattedAt": "2026-07-30T11:50:56.398Z"
 }

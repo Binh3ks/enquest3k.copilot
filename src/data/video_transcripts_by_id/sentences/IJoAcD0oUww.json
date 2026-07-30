@@ -3,43 +3,655 @@
   "segments": [
     {
       "id": 1,
-      "text": "Have you ever heard of global warming?",
-      "start": 0,
-      "duration": 2
+      "text": "Have you ever heard of global warming.",
+      "start": 6,
+      "duration": 5.68
     },
     {
       "id": 2,
-      "text": "Did you know that over the past decades, sea level has risen?",
-      "start": 2,
-      "duration": 2
+      "text": "Did you know that over the past decades.",
+      "start": 8.96,
+      "duration": 4.8
     },
     {
       "id": 3,
-      "text": "All these news are related to climate change.",
-      "start": 4,
-      "duration": 2
+      "text": "Sea level has risen.",
+      "start": 11.68,
+      "duration": 4.56
     },
     {
       "id": 4,
-      "text": "To understand better what climate change is, we should define what climate is.",
-      "start": 6,
-      "duration": 2
+      "text": "All these news are related to climate.",
+      "start": 13.76,
+      "duration": 3.6
     },
     {
       "id": 5,
-      "text": "The climate is the combination of atmospheric conditions that occur in a place for a prolonged period of time.",
-      "start": 8,
-      "duration": 2
+      "text": "Change.",
+      "start": 16.24,
+      "duration": 3.36
     },
     {
       "id": 6,
-      "text": "Over the past centuries, the climate everywhere around the Earth has changed, altering",
-      "start": 10,
-      "duration": 2
+      "text": "To understand better what climate change.",
+      "start": 17.36,
+      "duration": 7.2
+    },
+    {
+      "id": 7,
+      "text": "Is we should define what climate is.",
+      "start": 19.6,
+      "duration": 4.96
+    },
+    {
+      "id": 8,
+      "text": "The climate is the combination of.",
+      "start": 24.8,
+      "duration": 4.4
+    },
+    {
+      "id": 9,
+      "text": "Atmospheric conditions that occur in.",
+      "start": 26.88,
+      "duration": 6.56
+    },
+    {
+      "id": 10,
+      "text": "Place for a prolonged period of time.",
+      "start": 29.2,
+      "duration": 6.72
+    },
+    {
+      "id": 11,
+      "text": "Over the past centuries the climate.",
+      "start": 33.44,
+      "duration": 5.04
+    },
+    {
+      "id": 12,
+      "text": "Everywhere around the earth has changed.",
+      "start": 35.92,
+      "duration": 5.52
+    },
+    {
+      "id": 13,
+      "text": "Altering the usual conditions of a place.",
+      "start": 38.48,
+      "duration": 6.08
+    },
+    {
+      "id": 14,
+      "text": "Regarding precipitation and temperature.",
+      "start": 41.44,
+      "duration": 6.32
+    },
+    {
+      "id": 15,
+      "text": "This way water shortage desertification.",
+      "start": 44.56,
+      "duration": 5.6
+    },
+    {
+      "id": 16,
+      "text": "The disappearance of lakes or even sea.",
+      "start": 47.76,
+      "duration": 4.8
+    },
+    {
+      "id": 17,
+      "text": "Level rise are becoming more and more.",
+      "start": 50.16,
+      "duration": 3.44
+    },
+    {
+      "id": 18,
+      "text": "Common.",
+      "start": 52.56,
+      "duration": 3.28
+    },
+    {
+      "id": 19,
+      "text": "In addition the number of natural.",
+      "start": 53.6,
+      "duration": 5.52
+    },
+    {
+      "id": 20,
+      "text": "Disasters like droughts floods or huge.",
+      "start": 55.84,
+      "duration": 5.6
+    },
+    {
+      "id": 21,
+      "text": "Storms has increased.",
+      "start": 59.12,
+      "duration": 4.8
+    },
+    {
+      "id": 22,
+      "text": "All these situations are a consequence.",
+      "start": 61.44,
+      "duration": 5.2
+    },
+    {
+      "id": 23,
+      "text": "Of global warming meaning the increase.",
+      "start": 63.92,
+      "duration": 5.28
+    },
+    {
+      "id": 24,
+      "text": "In temperature happening on the planet.",
+      "start": 66.64,
+      "duration": 7
+    },
+    {
+      "id": 25,
+      "text": "Owing mainly to human activity.",
+      "start": 69.2,
+      "duration": 4.44
+    },
+    {
+      "id": 26,
+      "text": "But why has the planet's temperature.",
+      "start": 73.76,
+      "duration": 4.56
+    },
+    {
+      "id": 27,
+      "text": "Risen.",
+      "start": 76.08,
+      "duration": 3.68
+    },
+    {
+      "id": 28,
+      "text": "The earth is surrounded by the.",
+      "start": 78.32,
+      "duration": 3.84
+    },
+    {
+      "id": 29,
+      "text": "Atmosphere a thin layer of gas which.",
+      "start": 79.76,
+      "duration": 4.64
+    },
+    {
+      "id": 30,
+      "text": "Allows part of the solar radiation to.",
+      "start": 82.16,
+      "duration": 4.56
+    },
+    {
+      "id": 31,
+      "text": "Penetrate.",
+      "start": 84.4,
+      "duration": 4.88
+    },
+    {
+      "id": 32,
+      "text": "For that this layer consists of gases.",
+      "start": 86.72,
+      "duration": 5.04
+    },
+    {
+      "id": 33,
+      "text": "Called greenhouse effect gases whose.",
+      "start": 89.28,
+      "duration": 5.12
+    },
+    {
+      "id": 34,
+      "text": "Mission is to absorb part of the energy.",
+      "start": 91.76,
+      "duration": 5.2
+    },
+    {
+      "id": 35,
+      "text": "Received and maintain the planet's.",
+      "start": 94.4,
+      "duration": 5.2
+    },
+    {
+      "id": 36,
+      "text": "Temperature.",
+      "start": 96.96,
+      "duration": 5.68
+    },
+    {
+      "id": 37,
+      "text": "One of the main greenhouse effect gases.",
+      "start": 99.6,
+      "duration": 5.28
+    },
+    {
+      "id": 38,
+      "text": "Is co2.",
+      "start": 102.64,
+      "duration": 4.88
+    },
+    {
+      "id": 39,
+      "text": "With the industrial revolution.",
+      "start": 104.88,
+      "duration": 5.68
+    },
+    {
+      "id": 40,
+      "text": "Co2 emissions started to increase owing.",
+      "start": 107.52,
+      "duration": 6.48
+    },
+    {
+      "id": 41,
+      "text": "To the use of fossil fuels like coal or.",
+      "start": 110.56,
+      "duration": 4.8
+    },
+    {
+      "id": 42,
+      "text": "Petrol.",
+      "start": 114,
+      "duration": 3.12
+    },
+    {
+      "id": 43,
+      "text": "Over the past years the presence of.",
+      "start": 115.36,
+      "duration": 4.08
+    },
+    {
+      "id": 44,
+      "text": "Gases like co2 in the atmosphere.",
+      "start": 117.12,
+      "duration": 4.4
+    },
+    {
+      "id": 45,
+      "text": "Increased and for this reason its.",
+      "start": 119.44,
+      "duration": 4.88
+    },
+    {
+      "id": 46,
+      "text": "Capacity to retain solar radiation has.",
+      "start": 121.52,
+      "duration": 5.92
+    },
+    {
+      "id": 47,
+      "text": "Been enhanced resulting in an increase.",
+      "start": 124.32,
+      "duration": 7.44
+    },
+    {
+      "id": 48,
+      "text": "Of the average temperature of the planet.",
+      "start": 127.44,
+      "duration": 4.32
+    },
+    {
+      "id": 49,
+      "text": "Climate change affects every country in.",
+      "start": 132.32,
+      "duration": 4.88
+    },
+    {
+      "id": 50,
+      "text": "The world causing a negative impact on.",
+      "start": 134.56,
+      "duration": 5.28
+    },
+    {
+      "id": 51,
+      "text": "Their economy people's lives and all.",
+      "start": 137.2,
+      "duration": 4.16
+    },
+    {
+      "id": 52,
+      "text": "Living beings.",
+      "start": 139.84,
+      "duration": 4.72
+    },
+    {
+      "id": 53,
+      "text": "Here are some facts.",
+      "start": 141.36,
+      "duration": 3.2
+    },
+    {
+      "id": 54,
+      "text": "Over the past 150 years the average.",
+      "start": 145.28,
+      "duration": 5.28
+    },
+    {
+      "id": 55,
+      "text": "Global temperature increased almost 2.",
+      "start": 147.92,
+      "duration": 5.12
+    },
+    {
+      "id": 56,
+      "text": "Degrees fahrenheit.",
+      "start": 150.56,
+      "duration": 5.52
+    },
+    {
+      "id": 57,
+      "text": "Would you say it's not much.",
+      "start": 153.04,
+      "duration": 6
+    },
+    {
+      "id": 58,
+      "text": "If the earth's temperature keeps rising.",
+      "start": 156.08,
+      "duration": 5.6
+    },
+    {
+      "id": 59,
+      "text": "Thousands of animal and plant species.",
+      "start": 159.04,
+      "duration": 4.64
+    },
+    {
+      "id": 60,
+      "text": "May disappear forever.",
+      "start": 161.68,
+      "duration": 4.56
+    },
+    {
+      "id": 61,
+      "text": "Oceans got warmer and for this reason.",
+      "start": 163.68,
+      "duration": 5.2
+    },
+    {
+      "id": 62,
+      "text": "The amounts of ice have decreased.",
+      "start": 166.24,
+      "duration": 5.28
+    },
+    {
+      "id": 63,
+      "text": "Causing sea levels to rise.",
+      "start": 168.88,
+      "duration": 6.64
+    },
+    {
+      "id": 64,
+      "text": "Did you know that between 1901 and 2010.",
+      "start": 171.52,
+      "duration": 8.48
+    },
+    {
+      "id": 65,
+      "text": "The sea level has risen 7.5 inches.",
+      "start": 175.52,
+      "duration": 7.2
+    },
+    {
+      "id": 66,
+      "text": "This may cause some places to disappear.",
+      "start": 180,
+      "duration": 6.56
+    },
+    {
+      "id": 67,
+      "text": "Beneath the water's surface.",
+      "start": 182.72,
+      "duration": 3.84
+    },
+    {
+      "id": 68,
+      "text": "Worse consequences are predicted in the.",
+      "start": 187.44,
+      "duration": 3.76
+    },
+    {
+      "id": 69,
+      "text": "Future if we don't take measures.",
+      "start": 189.44,
+      "duration": 4.4
+    },
+    {
+      "id": 70,
+      "text": "Urgently.",
+      "start": 191.2,
+      "duration": 2.64
+    },
+    {
+      "id": 71,
+      "text": "Currently.",
+      "start": 194.4,
+      "duration": 4.08
+    },
+    {
+      "id": 72,
+      "text": "There are some viable solutions at hand.",
+      "start": 195.52,
+      "duration": 5.84
+    },
+    {
+      "id": 73,
+      "text": "Would you like to learn about them.",
+      "start": 198.48,
+      "duration": 5.28
+    },
+    {
+      "id": 74,
+      "text": "It is necessary to turn to renewable.",
+      "start": 201.36,
+      "duration": 6.88
+    },
+    {
+      "id": 75,
+      "text": "Energies to reduce co2 emissions.",
+      "start": 203.76,
+      "duration": 6.88
+    },
+    {
+      "id": 76,
+      "text": "Cars are responsible for 10 percent of.",
+      "start": 208.24,
+      "duration": 4.56
+    },
+    {
+      "id": 77,
+      "text": "Co2 emissions.",
+      "start": 210.64,
+      "duration": 4.4
+    },
+    {
+      "id": 78,
+      "text": "Use public transport.",
+      "start": 212.8,
+      "duration": 3.76
+    },
+    {
+      "id": 79,
+      "text": "Bicycle.",
+      "start": 215.04,
+      "duration": 3.92
+    },
+    {
+      "id": 80,
+      "text": "Or walk.",
+      "start": 216.56,
+      "duration": 4.88
+    },
+    {
+      "id": 81,
+      "text": "Reduce your plastic use.",
+      "start": 218.96,
+      "duration": 4.96
+    },
+    {
+      "id": 82,
+      "text": "Use less plastic.",
+      "start": 221.44,
+      "duration": 5.28
+    },
+    {
+      "id": 83,
+      "text": "Producing plastic involves high co2.",
+      "start": 223.92,
+      "duration": 5.84
+    },
+    {
+      "id": 84,
+      "text": "Emissions in the atmosphere.",
+      "start": 226.72,
+      "duration": 5.36
+    },
+    {
+      "id": 85,
+      "text": "Plant a tree taking into account the.",
+      "start": 229.76,
+      "duration": 5.92
+    },
+    {
+      "id": 86,
+      "text": "Ecological characteristics of your area.",
+      "start": 232.08,
+      "duration": 5.84
+    },
+    {
+      "id": 87,
+      "text": "Did you know that five trees can absorb.",
+      "start": 235.68,
+      "duration": 5.12
+    },
+    {
+      "id": 88,
+      "text": "Up to one metric ton of co2 during their.",
+      "start": 237.92,
+      "duration": 5.36
+    },
+    {
+      "id": 89,
+      "text": "Life cycle.",
+      "start": 240.8,
+      "duration": 4.4
+    },
+    {
+      "id": 90,
+      "text": "Always recycle.",
+      "start": 243.28,
+      "duration": 4.4
+    },
+    {
+      "id": 91,
+      "text": "An interesting fact is that we would.",
+      "start": 245.2,
+      "duration": 4.96
+    },
+    {
+      "id": 92,
+      "text": "Need less energy to make paper from old.",
+      "start": 247.68,
+      "duration": 4.72
+    },
+    {
+      "id": 93,
+      "text": "Newspapers than if we made it using.",
+      "start": 250.16,
+      "duration": 5.68
+    },
+    {
+      "id": 94,
+      "text": "Directly the wood from trees.",
+      "start": 252.4,
+      "duration": 3.44
+    },
+    {
+      "id": 95,
+      "text": "Turn off the lights whenever they are.",
+      "start": 255.92,
+      "duration": 4.8
+    },
+    {
+      "id": 96,
+      "text": "Not needed if we save electricity we.",
+      "start": 257.76,
+      "duration": 5.68
+    },
+    {
+      "id": 97,
+      "text": "Also reduce the energy waste required to.",
+      "start": 260.72,
+      "duration": 6.28
+    },
+    {
+      "id": 98,
+      "text": "Produce it.",
+      "start": 263.44,
+      "duration": 3.56
+    },
+    {
+      "id": 99,
+      "text": "Remember.",
+      "start": 268.8,
+      "duration": 3.2
+    },
+    {
+      "id": 100,
+      "text": "It's in your hands to look after the.",
+      "start": 269.92,
+      "duration": 3.12
+    },
+    {
+      "id": 101,
+      "text": "Planet.",
+      "start": 272,
+      "duration": 4.64
+    },
+    {
+      "id": 102,
+      "text": "Wanna join us in our mission.",
+      "start": 273.04,
+      "duration": 3.6
+    },
+    {
+      "id": 103,
+      "text": "Did you like the video we have so many.",
+      "start": 281.2,
+      "duration": 3.28
+    },
+    {
+      "id": 104,
+      "text": "More.",
+      "start": 283.52,
+      "duration": 3.36
+    },
+    {
+      "id": 105,
+      "text": "Subscribe by clicking on the seal.",
+      "start": 284.48,
+      "duration": 4.48
+    },
+    {
+      "id": 106,
+      "text": "Ah and if you want to keep watching more.",
+      "start": 286.88,
+      "duration": 6.2
+    },
+    {
+      "id": 107,
+      "text": "Videos click on the boxes.",
+      "start": 288.96,
+      "duration": 4.12
+    },
+    {
+      "id": 108,
+      "text": "You.",
+      "start": 299.2,
+      "duration": 2.08
     }
   ],
   "fetchedAt": "2026-06-22T02:06:02Z",
   "videoId": "IJoAcD0oUww",
   "formatted": true,
-  "formattedAt": "2026-07-30T13:16:17.952Z"
+  "formattedAt": "2026-07-30T11:50:56.358Z"
 }

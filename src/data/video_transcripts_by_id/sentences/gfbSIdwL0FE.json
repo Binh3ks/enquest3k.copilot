@@ -4,390 +4,954 @@
     {
       "id": 1,
       "text": "In a forest lived a rabbit.",
-      "start": 0,
-      "duration": 2
+      "start": 3.28,
+      "duration": 5.2
     },
     {
       "id": 2,
-      "text": "Wandering all day long, all he did was jump, hop, and admire himself.",
-      "start": 2,
-      "duration": 2
+      "text": "Wandering all day long all he did was.",
+      "start": 5.76,
+      "duration": 5.6
     },
     {
       "id": 3,
-      "text": "He loved talking about how much faster he was than the other animals. \"I'm the fastest animal in the forest.",
-      "start": 4,
-      "duration": 2
+      "text": "Jump hop and admire himself he loved.",
+      "start": 8.48,
+      "duration": 4.64
     },
     {
       "id": 4,
-      "text": "Would anyone like to race with me?\" He sure did run fast with his very big feet.",
-      "start": 6,
-      "duration": 2
+      "text": "Talking about how much faster he was.",
+      "start": 11.36,
+      "duration": 3.56
     },
     {
       "id": 5,
-      "text": "The other animals hated the way he would show off.",
-      "start": 8,
-      "duration": 2
+      "text": "Than the other.",
+      "start": 13.12,
+      "duration": 4.48
     },
     {
       "id": 6,
-      "text": "In saying that, they never ever won a race. \"Yes, I win again.",
-      "start": 10,
-      "duration": 2
+      "text": "Animals i'm the fastest animal in the.",
+      "start": 14.92,
+      "duration": 6.84
     },
     {
       "id": 7,
-      "text": "Why?",
-      "start": 12,
-      "duration": 2
+      "text": "Forest would anyone like to race with me.",
+      "start": 17.6,
+      "duration": 4.16
     },
     {
       "id": 8,
-      "text": "Because I'm fast.\" Everywhere he went he would say, \"I'm so fast.",
-      "start": 14,
-      "duration": 2
+      "text": "He sure did run fast with his very big.",
+      "start": 22.48,
+      "duration": 3.84
     },
     {
       "id": 9,
-      "text": "No one could ever pass me.\" His words had began to disturb all the other animals in the forest. \"Okay, he might be the fastest, but the fact that he says and shows up about it's not nice.",
-      "start": 16,
-      "duration": 2
+      "text": "Feet.",
+      "start": 25.28,
+      "duration": 3.36
     },
     {
       "id": 10,
-      "text": "So, what should teach my lesson to smarten up?\" All that was said amongst all the animals in the forest managed to go to the turtle.",
-      "start": 18,
-      "duration": 2
+      "text": "The other animals hated the way he would.",
+      "start": 26.32,
+      "duration": 5.68
     },
     {
       "id": 11,
-      "text": "The turtle walked very slow.",
-      "start": 20,
-      "duration": 2
+      "text": "Show off in saying that they never ever.",
+      "start": 28.64,
+      "duration": 4.47
     },
     {
       "id": 12,
-      "text": "It would take him a day to reach the distance the rabbit could make in a minute.",
-      "start": 22,
-      "duration": 2
+      "text": "Won a race.",
+      "start": 32,
+      "duration": 4
     },
     {
       "id": 13,
-      "text": "The turtle wished he would come across the rabbit one of these days.",
-      "start": 24,
-      "duration": 2
+      "text": "Yes i win again why because i'm fast.",
+      "start": 36,
+      "duration": 8.8
     },
     {
       "id": 14,
-      "text": "He went to the other animals and told them that he would like to race with the rabbit. \"You want to race him?",
-      "start": 26,
-      "duration": 2
+      "text": "Everywhere he went he would say i'm so.",
+      "start": 42.08,
+      "duration": 6.08
     },
     {
       "id": 15,
-      "text": "Not even the fastest animals have won against a rabbit.",
-      "start": 28,
-      "duration": 2
+      "text": "Fast no one could ever pass me his words.",
+      "start": 44.8,
+      "duration": 5.12
     },
     {
       "id": 16,
-      "text": "How can you?\" \"You leave that part up to me.\" The turtle went next to the rabbit. \"Good day, Mr.",
-      "start": 30,
-      "duration": 2
+      "text": "Had began to disturb all the other.",
+      "start": 48.16,
+      "duration": 4.32
     },
     {
       "id": 17,
-      "text": "Rabbit.",
-      "start": 32,
-      "duration": 2
+      "text": "Animals in the forest okay he might be.",
+      "start": 49.92,
+      "duration": 4.72
     },
     {
       "id": 18,
-      "text": "I have been searching for you.\" Curiously, the rabbit asked, \"And why might you be looking for me?\" \"I hear that you are the fastest animal in the forest.\" \"Well, actually, that's what you think.",
-      "start": 34,
-      "duration": 2
+      "text": "The fastest but the fact that he says.",
+      "start": 52.48,
+      "duration": 5.04
     },
     {
       "id": 19,
-      "text": "But to be sure, I would like to race with you.",
-      "start": 36,
-      "duration": 2
+      "text": "And shows up about it's not nice.",
+      "start": 54.64,
+      "duration": 4.56
     },
     {
       "id": 20,
-      "text": "Let's see who is faster.\" As soon as the turtle had finished what he had to say, the rabbit began to laugh so hard that all the other animals in the forest heard him. \"Are you joking me?",
-      "start": 38,
-      "duration": 2
+      "text": "So what should teach my lesson to.",
+      "start": 57.52,
+      "duration": 3.6
     },
     {
       "id": 21,
-      "text": "It's impossible for you to pass me.",
-      "start": 40,
-      "duration": 2
+      "text": "Smarten up.",
+      "start": 59.2,
+      "duration": 3.76
     },
     {
       "id": 22,
-      "text": "By the time you take a step, I would finish the race.\" \"Well, unless we race, we will never know, will we?\" \"Okay, be ready then.",
-      "start": 42,
-      "duration": 2
+      "text": "All that was said amongst all the.",
+      "start": 61.12,
+      "duration": 4.32
     },
     {
       "id": 23,
-      "text": "Tomorrow morning will rise.\" As the turtle began walking away, the rabbit continued on laughing.",
-      "start": 44,
-      "duration": 2
+      "text": "Animals in the forest managed to go to.",
+      "start": 62.96,
+      "duration": 3.68
     },
     {
       "id": 24,
-      "text": "The following morning, the animals arrived at the racecourse.",
-      "start": 46,
-      "duration": 2
+      "text": "The turtle.",
+      "start": 65.44,
+      "duration": 4.4
     },
     {
       "id": 25,
-      "text": "They noticed the turtle waiting at the starting line, all ready to go.",
-      "start": 48,
-      "duration": 2
+      "text": "The turtle walked very slow.",
+      "start": 66.64,
+      "duration": 5.36
     },
     {
       "id": 26,
-      "text": "Very sure of himself, the turtle was smiling. \"Please tell me how you're going to beat the rabbit.\" \"If he really is so proud and the big show off as you all say he is, then this race isn't going to be hard at all.\" Soon after, with his very stuck-up attitude, holding a carrot, the rabbit arrived at the racecourse. \"Let's race and finish this.",
-      "start": 50,
-      "duration": 2
+      "text": "It would take him a day to reach the.",
+      "start": 69.84,
+      "duration": 4.32
     },
     {
       "id": 27,
-      "text": "I still haven't had breakfast.\" Finishing their last preparations, they arrived at the starting point. \"The first one that allows it to redline up the United Forest wets.\" With the mark of the mole, the race started.",
-      "start": 52,
-      "duration": 2
+      "text": "Distance the rabbit could make in a.",
+      "start": 72,
+      "duration": 3.2
     },
     {
       "id": 28,
-      "text": "Just like an arrow, the rabbit flew by.",
-      "start": 54,
-      "duration": 2
+      "text": "Minute.",
+      "start": 74.16,
+      "duration": 2.8
     },
     {
       "id": 29,
-      "text": "The turtle, on the other hand, began to walk slowly.",
-      "start": 56,
-      "duration": 2
+      "text": "The turtle wished he would come across.",
+      "start": 75.2,
+      "duration": 3.92
     },
     {
       "id": 30,
-      "text": "Whoa, the rabbit was nowhere to be seen.",
-      "start": 58,
-      "duration": 2
+      "text": "The rabbit one of these days.",
+      "start": 76.96,
+      "duration": 4.4
     },
     {
       "id": 31,
-      "text": "The animals watching the race thought that the turtle was going to get beaten.",
-      "start": 60,
-      "duration": 2
+      "text": "He went to the other animals and told.",
+      "start": 79.12,
+      "duration": 4.8
     },
     {
       "id": 32,
-      "text": "After running a while, the rabbit stopped and had a look behind him.",
-      "start": 62,
-      "duration": 2
+      "text": "Them that he would like to race with the.",
+      "start": 81.36,
+      "duration": 3.68
     },
     {
       "id": 33,
-      "text": "There was nothing to be seen. \"By the looks of it, the turtle will finish the race tonight.",
-      "start": 64,
-      "duration": 2
+      "text": "Rabbit.",
+      "start": 83.92,
+      "duration": 3.04
     },
     {
       "id": 34,
-      "text": "I better sit and finish my carrot.\" The rabbit finished eating his carrot.",
-      "start": 66,
-      "duration": 2
+      "text": "You want to raise him.",
+      "start": 85.04,
+      "duration": 4
     },
     {
       "id": 35,
-      "text": "Looked up the road and from afar he saw the turtle coming.",
-      "start": 68,
-      "duration": 2
+      "text": "Not even the fastest animals have won.",
+      "start": 86.96,
+      "duration": 4
     },
     {
       "id": 36,
-      "text": "With a cheeky grin, he stood up and continued on running.",
-      "start": 70,
-      "duration": 2
+      "text": "Against a rabbit.",
+      "start": 89.04,
+      "duration": 3.92
     },
     {
       "id": 37,
-      "text": "The rabbit had nearly reached the finishing point. \"I'm a bit sleepy after breakfast.",
-      "start": 72,
-      "duration": 2
+      "text": "How can you.",
+      "start": 90.96,
+      "duration": 7.28
     },
     {
       "id": 38,
-      "text": "I might sit under this tree and take a nap.\" As confident as he was about winning the race, the rabbit drifted off to sleep.",
-      "start": 74,
-      "duration": 2
+      "text": "You leave that part up to me.",
+      "start": 92.96,
+      "duration": 5.28
     },
     {
       "id": 39,
-      "text": "The turtle continued on walking very, very slowly but with great confidence.",
-      "start": 76,
-      "duration": 2
+      "text": "The turtle went next to the rabbit.",
+      "start": 98.32,
+      "duration": 3.68
     },
     {
       "id": 40,
-      "text": "At last, he arrived next to the rabbit.",
-      "start": 78,
-      "duration": 2
+      "text": "Good day mr rabbit.",
+      "start": 102,
+      "duration": 5.92
     },
     {
       "id": 41,
-      "text": "He saw that the rabbit was in a deep sleep.",
-      "start": 80,
-      "duration": 2
+      "text": "I have been searching for you.",
+      "start": 105.04,
+      "duration": 5.36
     },
     {
       "id": 42,
-      "text": "Without stopping, he continued on his way.",
-      "start": 82,
-      "duration": 2
+      "text": "Curiously the rabbit asked.",
+      "start": 107.92,
+      "duration": 5.68
     },
     {
       "id": 43,
-      "text": "A while later, the rabbit woke up.",
-      "start": 84,
-      "duration": 2
+      "text": "And why might you be looking for me.",
+      "start": 110.4,
+      "duration": 7.2
     },
     {
       "id": 44,
-      "text": "When he looked and could not see the turtle. \"The turtle is nowhere to be seen.",
-      "start": 86,
-      "duration": 2
+      "text": "I hear that you are the fastest animal.",
+      "start": 113.6,
+      "duration": 6.48
     },
     {
       "id": 45,
-      "text": "Maybe he doesn't want to race anymore.",
-      "start": 88,
-      "duration": 2
+      "text": "In the forest.",
+      "start": 117.6,
+      "duration": 3.36
     },
     {
       "id": 46,
-      "text": "I should finish my race now.\" As the rabbit was slowly making his way to the finishing point, what does he see?",
-      "start": 90,
-      "duration": 2
+      "text": "Well.",
+      "start": 120.08,
+      "duration": 4.08
     },
     {
       "id": 47,
-      "text": "The turtle had passed him.",
-      "start": 92,
-      "duration": 2
+      "text": "Actually that's what you think.",
+      "start": 120.96,
+      "duration": 5.04
     },
     {
       "id": 48,
-      "text": "In fact, he was about to finish the race.",
-      "start": 94,
-      "duration": 2
+      "text": "But to be sure.",
+      "start": 124.16,
+      "duration": 4.8
     },
     {
       "id": 49,
-      "text": "Using all the energy he had left over, he tried to pass the turtle.",
-      "start": 96,
-      "duration": 2
+      "text": "I would like to race with you.",
+      "start": 126,
+      "duration": 4.24
     },
     {
       "id": 50,
-      "text": "But the turtle had already finished the race.",
-      "start": 98,
-      "duration": 2
+      "text": "Let's see.",
+      "start": 128.96,
+      "duration": 4.24
     },
     {
       "id": 51,
-      "text": "Some of the animals waiting at the finish line were extremely happy.",
-      "start": 100,
-      "duration": 2
+      "text": "Who is faster.",
+      "start": 130.24,
+      "duration": 4.72
     },
     {
       "id": 52,
-      "text": "All the animals were throwing the turtle up in the air with great excitement.",
-      "start": 102,
-      "duration": 2
+      "text": "As soon as the turtle had finished what.",
+      "start": 133.2,
+      "duration": 4.24
     },
     {
       "id": 53,
-      "text": "While the rabbits stood in the corner with great sadness.",
-      "start": 104,
-      "duration": 2
+      "text": "He had to say the rabbit began to laugh.",
+      "start": 134.96,
+      "duration": 4.4
     },
     {
       "id": 54,
-      "text": "Turtle, the winner of the race, walked towards the rabbit. \"Mr.",
-      "start": 106,
-      "duration": 2
+      "text": "So hard that all the other animals in.",
+      "start": 137.44,
+      "duration": 5.2
     },
     {
       "id": 55,
-      "text": "Rabbit, the important thing is being consistent about everything that you do.",
-      "start": 108,
-      "duration": 2
+      "text": "The forest heard him.",
+      "start": 139.36,
+      "duration": 3.28
     },
     {
       "id": 56,
-      "text": "To brag with nonsense and love yourself is weakness.",
-      "start": 110,
-      "duration": 2
+      "text": "Are you joking me it's impossible for.",
+      "start": 149.44,
+      "duration": 4.48
     },
     {
       "id": 57,
-      "text": "I beat you not because I was faster, but I was wiser and did what I did seriously.\" \"You're right.",
-      "start": 112,
-      "duration": 2
+      "text": "You to pass me by the time you take a.",
+      "start": 151.84,
+      "duration": 4.56
     },
     {
       "id": 58,
-      "text": "From now on, I will stop bragging about being the fastest amongst everyone.",
-      "start": 114,
-      "duration": 2
+      "text": "Step i would finish the race.",
+      "start": 153.92,
+      "duration": 5.92
     },
     {
       "id": 59,
-      "text": "I should return now.",
-      "start": 116,
-      "duration": 2
+      "text": "Well unless we race we will never know.",
+      "start": 156.4,
+      "duration": 6.08
     },
     {
       "id": 60,
-      "text": "My home is a long journey away.\" The turtle smiled and continued on his way.",
-      "start": 118,
-      "duration": 2
+      "text": "Will we okay be ready then tomorrow.",
+      "start": 159.84,
+      "duration": 4.48
     },
     {
       "id": 61,
-      "text": "The rabbit learnt a good lesson and noticed his mistake.",
-      "start": 120,
-      "duration": 2
+      "text": "Morning will rise.",
+      "start": 162.48,
+      "duration": 4.08
     },
     {
       "id": 62,
-      "text": "After that day on, he never ever bragged about himself.",
-      "start": 122,
-      "duration": 2
+      "text": "As the turtle began walking away the.",
+      "start": 164.32,
+      "duration": 6.6
     },
     {
       "id": 63,
-      "text": "Nor did he ever race again.",
-      "start": 124,
-      "duration": 2
+      "text": "Rabbit continued on laughing.",
+      "start": 166.56,
+      "duration": 4.36
     },
     {
       "id": 64,
+      "text": "The following morning the animals.",
+      "start": 174.24,
+      "duration": 4.32
+    },
+    {
+      "id": 65,
+      "text": "Arrived at the racecourse they noticed.",
+      "start": 176,
+      "duration": 5.76
+    },
+    {
+      "id": 66,
+      "text": "The turtle waiting at the starting line.",
+      "start": 178.56,
+      "duration": 7.36
+    },
+    {
+      "id": 67,
+      "text": "All ready to go very sure of himself.",
+      "start": 181.76,
+      "duration": 7.04
+    },
+    {
+      "id": 68,
+      "text": "The turtle was smiling.",
+      "start": 185.92,
+      "duration": 4.72
+    },
+    {
+      "id": 69,
+      "text": "Please tell me how you're going to beat.",
+      "start": 188.8,
+      "duration": 3.76
+    },
+    {
+      "id": 70,
+      "text": "The rabbit.",
+      "start": 190.64,
+      "duration": 6.08
+    },
+    {
+      "id": 71,
+      "text": "If he really is so proud and the big.",
+      "start": 192.56,
+      "duration": 8
+    },
+    {
+      "id": 72,
+      "text": "Show off as you all say he is.",
+      "start": 196.72,
+      "duration": 7.2
+    },
+    {
+      "id": 73,
+      "text": "Then this race isn't going to be hard at.",
+      "start": 200.56,
+      "duration": 5.2
+    },
+    {
+      "id": 74,
+      "text": "All.",
+      "start": 203.92,
+      "duration": 4.4
+    },
+    {
+      "id": 75,
+      "text": "Soon after with his very stuck-up.",
+      "start": 205.76,
+      "duration": 4
+    },
+    {
+      "id": 76,
+      "text": "Attitude.",
+      "start": 208.32,
+      "duration": 4.08
+    },
+    {
+      "id": 77,
+      "text": "Holding a carrot the rabbit arrived at.",
+      "start": 209.76,
+      "duration": 5.28
+    },
+    {
+      "id": 78,
+      "text": "The racecourse.",
+      "start": 212.4,
+      "duration": 5.04
+    },
+    {
+      "id": 79,
+      "text": "Let's race and finish this i still.",
+      "start": 215.04,
+      "duration": 5.28
+    },
+    {
+      "id": 80,
+      "text": "Haven't had breakfast.",
+      "start": 217.44,
+      "duration": 5.2
+    },
+    {
+      "id": 81,
+      "text": "Finishing their last preparations they.",
+      "start": 220.32,
+      "duration": 6.16
+    },
+    {
+      "id": 82,
+      "text": "Arrived at the starting point.",
+      "start": 222.64,
+      "duration": 6.08
+    },
+    {
+      "id": 83,
+      "text": "The first one that allows it to redline.",
+      "start": 226.48,
+      "duration": 5.28
+    },
+    {
+      "id": 84,
+      "text": "Up the united forest wets.",
+      "start": 228.72,
+      "duration": 4.88
+    },
+    {
+      "id": 85,
+      "text": "With the mark of the mole the race.",
+      "start": 231.76,
+      "duration": 3.12
+    },
+    {
+      "id": 86,
+      "text": "Started.",
+      "start": 233.6,
+      "duration": 4.16
+    },
+    {
+      "id": 87,
+      "text": "Just like an arrow the rabbit flew by.",
+      "start": 234.88,
+      "duration": 4.8
+    },
+    {
+      "id": 88,
+      "text": "The turtle on the other hand began to.",
+      "start": 237.76,
+      "duration": 2.64
+    },
+    {
+      "id": 89,
+      "text": "Walk.",
+      "start": 239.68,
+      "duration": 1.82
+    },
+    {
+      "id": 90,
+      "text": "Slowly.",
+      "start": 240.4,
+      "duration": 4.48
+    },
+    {
+      "id": 91,
+      "text": "Whoa the rabbit was nowhere to be seen.",
+      "start": 244.88,
+      "duration": 8.03
+    },
+    {
+      "id": 92,
+      "text": "The animals watching the race thought.",
+      "start": 253.6,
+      "duration": 5.92
+    },
+    {
+      "id": 93,
+      "text": "That the turtle was going to get beaten.",
+      "start": 255.6,
+      "duration": 3.92
+    },
+    {
+      "id": 94,
+      "text": "After running a while the rabbit stopped.",
+      "start": 261.76,
+      "duration": 4.56
+    },
+    {
+      "id": 95,
+      "text": "And had a look behind him.",
+      "start": 263.84,
+      "duration": 6.48
+    },
+    {
+      "id": 96,
+      "text": "There was nothing to be seen.",
+      "start": 266.32,
+      "duration": 4
+    },
+    {
+      "id": 97,
+      "text": "By the looks of it the turtle will.",
+      "start": 271.44,
+      "duration": 4.64
+    },
+    {
+      "id": 98,
+      "text": "Finish the race tonight i better sit and.",
+      "start": 273.36,
+      "duration": 5.76
+    },
+    {
+      "id": 99,
+      "text": "Finish my carrot.",
+      "start": 276.08,
+      "duration": 3.04
+    },
+    {
+      "id": 100,
+      "text": "The rabbit finished eating his carrot.",
+      "start": 281.76,
+      "duration": 6.08
+    },
+    {
+      "id": 101,
+      "text": "Looked up the road and from afar he saw.",
+      "start": 284.64,
+      "duration": 4.09
+    },
+    {
+      "id": 102,
+      "text": "The turtle coming.",
+      "start": 287.84,
+      "duration": 4.16
+    },
+    {
+      "id": 103,
+      "text": "With a cheeky grin he stood up and.",
+      "start": 292,
+      "duration": 5.92
+    },
+    {
+      "id": 104,
+      "text": "Continued on running.",
+      "start": 294.96,
+      "duration": 5.12
+    },
+    {
+      "id": 105,
+      "text": "The rabbit had nearly reached the.",
+      "start": 297.92,
+      "duration": 5.04
+    },
+    {
+      "id": 106,
+      "text": "Finishing point.",
+      "start": 300.08,
+      "duration": 2.88
+    },
+    {
+      "id": 107,
+      "text": "I'm a bit sleepy after breakfast.",
+      "start": 307.92,
+      "duration": 5.6
+    },
+    {
+      "id": 108,
+      "text": "I might sit under this tree and take a.",
+      "start": 311.36,
+      "duration": 4.48
+    },
+    {
+      "id": 109,
+      "text": "Nap.",
+      "start": 313.52,
+      "duration": 2.32
+    },
+    {
+      "id": 110,
+      "text": "As confident as he was about winning the.",
+      "start": 315.92,
+      "duration": 5.36
+    },
+    {
+      "id": 111,
+      "text": "Race the rabbit drifted off to sleep.",
+      "start": 318.16,
+      "duration": 6.16
+    },
+    {
+      "id": 112,
+      "text": "The turtle continued on walking very.",
+      "start": 321.28,
+      "duration": 8.64
+    },
+    {
+      "id": 113,
+      "text": "Very slowly but with great confidence.",
+      "start": 324.32,
+      "duration": 5.6
+    },
+    {
+      "id": 114,
+      "text": "At last he arrived next to the rabbit he.",
+      "start": 334.16,
+      "duration": 6.32
+    },
+    {
+      "id": 115,
+      "text": "Saw that the rabbit was in a deep sleep.",
+      "start": 337.36,
+      "duration": 8.16
+    },
+    {
+      "id": 116,
+      "text": "Without stopping he continued on his way.",
+      "start": 340.48,
+      "duration": 5.04
+    },
+    {
+      "id": 117,
+      "text": "A while later the rabbit woke up.",
+      "start": 349.68,
+      "duration": 6.88
+    },
+    {
+      "id": 118,
+      "text": "When he looked and could not see the.",
+      "start": 354.24,
+      "duration": 3.44
+    },
+    {
+      "id": 119,
+      "text": "Turtle.",
+      "start": 356.56,
+      "duration": 3.6
+    },
+    {
+      "id": 120,
+      "text": "The turtle is nowhere to be seen maybe.",
+      "start": 357.68,
+      "duration": 4.96
+    },
+    {
+      "id": 121,
+      "text": "He doesn't want to race anymore.",
+      "start": 360.16,
+      "duration": 6.4
+    },
+    {
+      "id": 122,
+      "text": "I should finish my race now.",
+      "start": 362.64,
+      "duration": 6.16
+    },
+    {
+      "id": 123,
+      "text": "As the rabbit was slowly making his way.",
+      "start": 366.56,
+      "duration": 4
+    },
+    {
+      "id": 124,
+      "text": "To the finishing point.",
+      "start": 368.8,
+      "duration": 3.36
+    },
+    {
+      "id": 125,
+      "text": "What does he see.",
+      "start": 370.56,
+      "duration": 4
+    },
+    {
+      "id": 126,
+      "text": "The turtle had passed him.",
+      "start": 372.16,
+      "duration": 5.68
+    },
+    {
+      "id": 127,
+      "text": "In fact he was about to finish the race.",
+      "start": 374.56,
+      "duration": 5.28
+    },
+    {
+      "id": 128,
+      "text": "Using all the energy he had left over he.",
+      "start": 377.84,
+      "duration": 5.2
+    },
+    {
+      "id": 129,
+      "text": "Tried to pass the turtle.",
+      "start": 379.84,
+      "duration": 4.96
+    },
+    {
+      "id": 130,
+      "text": "But the turtle had already finished the.",
+      "start": 383.04,
+      "duration": 4.08
+    },
+    {
+      "id": 131,
+      "text": "Race.",
+      "start": 384.8,
+      "duration": 2.32
+    },
+    {
+      "id": 132,
+      "text": "Some of the animals waiting at the.",
+      "start": 387.52,
+      "duration": 6.52
+    },
+    {
+      "id": 133,
+      "text": "Finish line were extremely happy.",
+      "start": 388.96,
+      "duration": 5.08
+    },
+    {
+      "id": 134,
+      "text": "All the animals were throwing the turtle.",
+      "start": 394.4,
+      "duration": 6.8
+    },
+    {
+      "id": 135,
+      "text": "Up in the air with great excitement.",
+      "start": 396.4,
+      "duration": 6.64
+    },
+    {
+      "id": 136,
+      "text": "While the rabbits stood in the corner.",
+      "start": 401.2,
+      "duration": 4.08
+    },
+    {
+      "id": 137,
+      "text": "With great sadness.",
+      "start": 403.04,
+      "duration": 4.88
+    },
+    {
+      "id": 138,
+      "text": "Turtle the winner of the race walk.",
+      "start": 405.28,
+      "duration": 4.88
+    },
+    {
+      "id": 139,
+      "text": "Towards the rabbit.",
+      "start": 407.92,
+      "duration": 4
+    },
+    {
+      "id": 140,
+      "text": "Mr rabbit.",
+      "start": 410.16,
+      "duration": 5.36
+    },
+    {
+      "id": 141,
+      "text": "The important thing is being consistent.",
+      "start": 411.92,
+      "duration": 6.88
+    },
+    {
+      "id": 142,
+      "text": "About everything that you do.",
+      "start": 415.52,
+      "duration": 6.48
+    },
+    {
+      "id": 143,
+      "text": "To brag with nonsense and love yourself.",
+      "start": 418.8,
+      "duration": 5.04
+    },
+    {
+      "id": 144,
+      "text": "Is weakness.",
+      "start": 422,
+      "duration": 5.76
+    },
+    {
+      "id": 145,
+      "text": "I beat you not because i was faster.",
+      "start": 423.84,
+      "duration": 5.92
+    },
+    {
+      "id": 146,
+      "text": "But i was wiser.",
+      "start": 427.76,
+      "duration": 5.76
+    },
+    {
+      "id": 147,
+      "text": "And did what i did seriously.",
+      "start": 429.76,
+      "duration": 6.08
+    },
+    {
+      "id": 148,
+      "text": "You're right from now on i will stop.",
+      "start": 433.52,
+      "duration": 4.24
+    },
+    {
+      "id": 149,
+      "text": "Bragging about being the fastest amongst.",
+      "start": 435.84,
+      "duration": 6
+    },
+    {
+      "id": 150,
+      "text": "Everyone i should return now my home is.",
+      "start": 437.76,
+      "duration": 6.56
+    },
+    {
+      "id": 151,
+      "text": "A long journey away.",
+      "start": 441.84,
+      "duration": 5.04
+    },
+    {
+      "id": 152,
+      "text": "The turtle smiled and continued on his.",
+      "start": 444.32,
+      "duration": 5.28
+    },
+    {
+      "id": 153,
+      "text": "Way the rabbit learnt a good lesson and.",
+      "start": 446.88,
+      "duration": 4.72
+    },
+    {
+      "id": 154,
+      "text": "Noticed his mistake.",
+      "start": 449.6,
+      "duration": 4.96
+    },
+    {
+      "id": 155,
+      "text": "After that day on he never ever bragged.",
+      "start": 451.6,
+      "duration": 4.4
+    },
+    {
+      "id": 156,
+      "text": "About himself.",
+      "start": 454.56,
+      "duration": 6.36
+    },
+    {
+      "id": 157,
+      "text": "Nor did he ever race again.",
+      "start": 456,
+      "duration": 4.92
+    },
+    {
+      "id": 158,
       "text": "You.",
-      "start": 126,
-      "duration": 2
+      "start": 481.68,
+      "duration": 2.08
     }
   ],
   "fetchedAt": "2026-06-22T02:05:51Z",
   "videoId": "gfbSIdwL0FE",
   "formatted": true,
-  "formattedAt": "2026-07-30T13:20:42.256Z"
+  "formattedAt": "2026-07-30T11:50:56.379Z"
 }

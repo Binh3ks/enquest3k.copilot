@@ -4,152 +4,152 @@
     {
       "id": 1,
       "text": "Good morning, Sally.",
-      "start": 0,
-      "duration": 2
+      "start": 3.68,
+      "duration": 1.22
     },
     {
       "id": 2,
       "text": "How are you?",
-      "start": 2,
-      "duration": 2
+      "start": 5.52,
+      "duration": 0.98
     },
     {
       "id": 3,
       "text": "I'm great.",
-      "start": 4,
-      "duration": 2
+      "start": 7.44,
+      "duration": 0.9
     },
     {
       "id": 4,
       "text": "What did you do yesterday?",
-      "start": 6,
-      "duration": 2
+      "start": 8.88,
+      "duration": 1.46
     },
     {
       "id": 5,
       "text": "We went to the park.",
-      "start": 8,
-      "duration": 2
+      "start": 11.52,
+      "duration": 1.54
     },
     {
       "id": 6,
       "text": "What did you do in the park?",
-      "start": 10,
-      "duration": 2
+      "start": 14.28,
+      "duration": 1.77
     },
     {
       "id": 7,
       "text": "We flew kites.",
-      "start": 12,
-      "duration": 2
+      "start": 16.68,
+      "duration": 1.37
     },
     {
       "id": 8,
       "text": "His kites flew high.",
-      "start": 14,
-      "duration": 2
+      "start": 19.23,
+      "duration": 1.71
     },
     {
       "id": 9,
       "text": "Wow.",
-      "start": 16,
-      "duration": 2
+      "start": 22.52,
+      "duration": 0.54
     },
     {
       "id": 10,
       "text": "You're good.",
-      "start": 18,
-      "duration": 2
+      "start": 23.06,
+      "duration": 1.08
     },
     {
       "id": 11,
       "text": "What did you do yesterday, Sally?",
-      "start": 20,
-      "duration": 2
+      "start": 25.23,
+      "duration": 2.26
     },
     {
       "id": 12,
       "text": "I read books.",
-      "start": 22,
-      "duration": 2
+      "start": 28.88,
+      "duration": 1.22
     },
     {
       "id": 13,
       "text": "Let's go to the classroom.",
-      "start": 24,
-      "duration": 2
+      "start": 33.84,
+      "duration": 1.7
     },
     {
       "id": 14,
       "text": "What did you do yesterday?",
-      "start": 26,
-      "duration": 2
+      "start": 40.64,
+      "duration": 1.46
     },
     {
       "id": 15,
       "text": "I watched a science movie.",
-      "start": 28,
-      "duration": 2
+      "start": 43.62,
+      "duration": 2.03
     },
     {
       "id": 16,
       "text": "What did you do yesterday, Mike?",
-      "start": 30,
-      "duration": 2
+      "start": 47.47,
+      "duration": 2.18
     },
     {
       "id": 17,
       "text": "I made bulgogi with my dad.",
-      "start": 32,
-      "duration": 2
+      "start": 50.42,
+      "duration": 2.27
     },
     {
       "id": 18,
       "text": "How was it?",
-      "start": 34,
-      "duration": 2
+      "start": 53.47,
+      "duration": 0.98
     },
     {
       "id": 19,
       "text": "It was very delicious.",
-      "start": 36,
-      "duration": 2
+      "start": 55,
+      "duration": 1.46
     },
     {
       "id": 20,
       "text": "We had a bulgogi party.",
-      "start": 38,
-      "duration": 2
+      "start": 57.4,
+      "duration": 1.94
     },
     {
       "id": 21,
       "text": "I made cookies yesterday.",
-      "start": 40,
-      "duration": 2
+      "start": 62.04,
+      "duration": 1.86
     },
     {
       "id": 22,
       "text": "I brought cookies for you.",
-      "start": 42,
-      "duration": 2
+      "start": 64.52,
+      "duration": 1.86
     },
     {
       "id": 23,
       "text": "Thanks.",
-      "start": 44,
-      "duration": 2
+      "start": 66.92,
+      "duration": 0.5
     },
     {
       "id": 24,
       "text": "Delicious.",
-      "start": 46,
-      "duration": 2
+      "start": 69.02,
+      "duration": 0.5
     },
     {
       "id": 25,
       "text": "Let's role play.",
-      "start": 48,
-      "duration": 2
+      "start": 77.33,
+      "duration": 1.22
     }
   ],
   "fetchedAt": "2026-07-23T06:28:28.803023+00:00",
@@ -177,5 +177,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T13:19:06.511Z"
+  "formattedAt": "2026-07-30T11:50:56.372Z"
 }

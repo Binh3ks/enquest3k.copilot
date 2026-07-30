@@ -5,128 +5,302 @@
     {
       "id": 1,
       "text": "English Sing Sing.",
-      "start": 0,
-      "duration": 2
+      "start": 1.68,
+      "duration": 1.46
     },
     {
       "id": 2,
       "text": "The lion and the mouse.",
-      "start": 2,
-      "duration": 2
+      "start": 7.76,
+      "duration": 2.34
     },
     {
       "id": 3,
       "text": "A lion was sleeping under a tree.",
-      "start": 4,
-      "duration": 2
+      "start": 13.71,
+      "duration": 3.69
     },
     {
       "id": 4,
       "text": "A little mouse was playing around the lion.",
-      "start": 6,
-      "duration": 2
+      "start": 20.18,
+      "duration": 4.27
     },
     {
       "id": 5,
-      "text": "Squeak!",
-      "start": 8,
-      "duration": 2
+      "text": "Squeak, squeak.",
+      "start": 28.82,
+      "duration": 1.54
     },
     {
       "id": 6,
-      "text": "Squeak!",
-      "start": 10,
-      "duration": 2
+      "text": "Suddenly, the lion woke up.",
+      "start": 31.86,
+      "duration": 3.3
     },
     {
       "id": 7,
-      "text": "Suddenly, the lion woke up.",
-      "start": 12,
-      "duration": 2
+      "text": "Who woke me up?",
+      "start": 40.1,
+      "duration": 2.58
     },
     {
       "id": 8,
-      "text": "Who woke me up?",
-      "start": 14,
-      "duration": 2
+      "text": "I will eat you.",
+      "start": 43.45,
+      "duration": 2.02
     },
     {
       "id": 9,
-      "text": "I will eat you.",
-      "start": 16,
-      "duration": 2
+      "text": "The lion picked up the mouse and opened his mouth.",
+      "start": 47.84,
+      "duration": 5.22
     },
     {
       "id": 10,
-      "text": "The lion picked up the mouse and opened his mouth.",
-      "start": 18,
-      "duration": 2
+      "text": "Oh, no.",
+      "start": 55.62,
+      "duration": 0.82
     },
     {
       "id": 11,
-      "text": "Oh, no!",
-      "start": 20,
-      "duration": 2
+      "text": "Please don't eat me.",
+      "start": 57.22,
+      "duration": 2.1
     },
     {
       "id": 12,
-      "text": "Please don't eat me.",
-      "start": 22,
-      "duration": 2
+      "text": "If you let me go, I will help you one day.",
+      "start": 60.02,
+      "duration": 4.9
     },
     {
       "id": 13,
-      "text": "If you let me go, I will help you one day.",
-      "start": 24,
-      "duration": 2
+      "text": "You?",
+      "start": 68.97,
+      "duration": 0.5
     },
     {
       "id": 14,
-      "text": "You?",
-      "start": 26,
-      "duration": 2
+      "text": "I'm a lion and you're a mouse.",
+      "start": 70.42,
+      "duration": 3.93
     },
     {
       "id": 15,
-      "text": "I'm a lion and you're a mouse.",
-      "start": 28,
-      "duration": 2
+      "text": "What can you do?",
+      "start": 75.3,
+      "duration": 1.53
     },
     {
       "id": 16,
-      "text": "What can you do?",
-      "start": 30,
-      "duration": 2
+      "text": "The lion laughed.",
+      "start": 78.02,
+      "duration": 1.21
     },
     {
       "id": 17,
-      "text": "The lion laughed.",
-      "start": 32,
-      "duration": 2
+      "text": "Fine, I'll let you go.",
+      "start": 82.49,
+      "duration": 3.06
     },
     {
       "id": 18,
-      "text": "Fine.",
-      "start": 34,
-      "duration": 2
+      "text": "The mouse ran away.",
+      "start": 87.29,
+      "duration": 2.26
     },
     {
       "id": 19,
-      "text": "I'll let you go.",
-      "start": 36,
-      "duration": 2
+      "text": "The next day, the lion got caught in a trap.",
+      "start": 92.81,
+      "duration": 4.94
     },
     {
       "id": 20,
-      "text": "The mouse ran away.",
-      "start": 38,
-      "duration": 2
+      "text": "The mouse who saw this ran to the lion.",
+      "start": 100.05,
+      "duration": 4.26
     },
     {
       "id": 21,
-      "text": "The next",
-      "start": 40,
-      "duration": 2
+      "text": "It began to chew the rope.",
+      "start": 106.92,
+      "duration": 2.5
+    },
+    {
+      "id": 22,
+      "text": "Thank you.",
+      "start": 113.24,
+      "duration": 0.82
+    },
+    {
+      "id": 23,
+      "text": "You saved my life.",
+      "start": 114.68,
+      "duration": 1.94
+    },
+    {
+      "id": 24,
+      "text": "From that day, the lion and mouse became best friends.",
+      "start": 119.9,
+      "duration": 6.41
+    },
+    {
+      "id": 25,
+      "text": "Follow after me.",
+      "start": 133.97,
+      "duration": 1.42
+    },
+    {
+      "id": 26,
+      "text": "A lion was sleeping under a tree.",
+      "start": 137.31,
+      "duration": 3.86
+    },
+    {
+      "id": 27,
+      "text": "A little mouse was playing around the lion",
+      "start": 149.39,
+      "duration": 4.18
+    },
+    {
+      "id": 28,
+      "text": "Squeak!",
+      "start": 164.59,
+      "duration": 0.5
+    },
+    {
+      "id": 29,
+      "text": "Squeak!",
+      "start": 165.72,
+      "duration": 0.5
+    },
+    {
+      "id": 30,
+      "text": "Suddenly, the lion woke up.",
+      "start": 170.17,
+      "duration": 3.54
+    },
+    {
+      "id": 31,
+      "text": "Who woke me up?",
+      "start": 184.46,
+      "duration": 2.33
+    },
+    {
+      "id": 32,
+      "text": "I will eat you.",
+      "start": 187.57,
+      "duration": 1.94
+    },
+    {
+      "id": 33,
+      "text": "The lion picked up the mouse and opened his mouth.",
+      "start": 202.1,
+      "duration": 5.3
+    },
+    {
+      "id": 34,
+      "text": "Oh, no!",
+      "start": 217.51,
+      "duration": 0.74
+    },
+    {
+      "id": 35,
+      "text": "Please don't eat me.",
+      "start": 218.96,
+      "duration": 2.01
+    },
+    {
+      "id": 36,
+      "text": "If you let me go, I will help you one day.",
+      "start": 226.41,
+      "duration": 4.9
+    },
+    {
+      "id": 37,
+      "text": "You?",
+      "start": 242.06,
+      "duration": 0.5
+    },
+    {
+      "id": 38,
+      "text": "I'm a lion and you're a mouse.",
+      "start": 243.57,
+      "duration": 4.02
+    },
+    {
+      "id": 39,
+      "text": "What can you do?",
+      "start": 256.91,
+      "duration": 1.46
+    },
+    {
+      "id": 40,
+      "text": "The lion laughed.",
+      "start": 259.63,
+      "duration": 1.3
+    },
+    {
+      "id": 41,
+      "text": "Fine.",
+      "start": 269.05,
+      "duration": 0.5
+    },
+    {
+      "id": 42,
+      "text": "I'll let you go.",
+      "start": 270.4,
+      "duration": 1.79
+    },
+    {
+      "id": 43,
+      "text": "The mouse ran away.",
+      "start": 278.42,
+      "duration": 2.26
+    },
+    {
+      "id": 44,
+      "text": "The next day, the lion got caught in a trap.",
+      "start": 288.5,
+      "duration": 4.92
+    },
+    {
+      "id": 45,
+      "text": "The mouse who saw this ran to the lion.",
+      "start": 301.79,
+      "duration": 4.34
+    },
+    {
+      "id": 46,
+      "text": "It began to chew the rope.",
+      "start": 314.65,
+      "duration": 2.5
+    },
+    {
+      "id": 47,
+      "text": "Thank you.",
+      "start": 325.14,
+      "duration": 0.82
+    },
+    {
+      "id": 48,
+      "text": "You saved my life.",
+      "start": 326.58,
+      "duration": 1.94
+    },
+    {
+      "id": 49,
+      "text": "From that day, the lion and mouse became best friends.",
+      "start": 336.67,
+      "duration": 6.44
+    },
+    {
+      "id": 50,
+      "text": "Now your turn.",
+      "start": 357.59,
+      "duration": 1.53
     }
   ],
   "speakerMap": {
@@ -151,5 +325,5 @@
     "afterSegments": 51
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T13:23:58.403Z"
+  "formattedAt": "2026-07-30T11:50:56.400Z"
 }

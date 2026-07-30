@@ -4,378 +4,378 @@
     {
       "id": 1,
       "text": "Can you play baseball this afternoon?",
-      "start": 0,
-      "duration": 2
+      "start": 17.42,
+      "duration": 2.88
     },
     {
       "id": 2,
       "text": "What day is it today?",
-      "start": 2,
-      "duration": 2
+      "start": 22.9,
+      "duration": 1.62
     },
     {
       "id": 3,
       "text": "It’s Wednesday.",
-      "start": 4,
-      "duration": 2
+      "start": 26.54,
+      "duration": 1.72
     },
     {
       "id": 4,
       "text": "I can’t.",
-      "start": 6,
-      "duration": 2
+      "start": 30.06,
+      "duration": 1.36
     },
     {
       "id": 5,
       "text": "I have a piano lesson.",
-      "start": 8,
-      "duration": 2
+      "start": 32.28,
+      "duration": 1.72
     },
     {
       "id": 6,
       "text": "Let’s play on Friday.",
-      "start": 10,
-      "duration": 2
+      "start": 38.52,
+      "duration": 1.86
     },
     {
       "id": 7,
       "text": "Sounds good.",
-      "start": 12,
-      "duration": 2
+      "start": 42.16,
+      "duration": 1.36
     },
     {
       "id": 8,
       "text": "Wednesday.",
-      "start": 14,
-      "duration": 2
+      "start": 63.44,
+      "duration": 3.16
     },
     {
       "id": 9,
       "text": "Sunday.",
-      "start": 16,
-      "duration": 2
+      "start": 66.6,
+      "duration": 3.18
     },
     {
       "id": 10,
       "text": "What day is it today?",
-      "start": 18,
-      "duration": 2
+      "start": 69.86,
+      "duration": 2.94
     },
     {
       "id": 11,
       "text": "It's Monday.",
-      "start": 20,
-      "duration": 2
+      "start": 73.02,
+      "duration": 2.64
     },
     {
       "id": 12,
       "text": "What day is it today?",
-      "start": 22,
-      "duration": 2
+      "start": 76.24,
+      "duration": 2.9
     },
     {
       "id": 13,
       "text": "It's Sunday.",
-      "start": 24,
-      "duration": 2
+      "start": 79.42,
+      "duration": 2.78
     },
     {
       "id": 14,
       "text": "Wednesday.",
-      "start": 26,
-      "duration": 2
+      "start": 85.84,
+      "duration": 3.14
     },
     {
       "id": 15,
       "text": "Sunday.",
-      "start": 28,
-      "duration": 2
+      "start": 88.98,
+      "duration": 3.24
     },
     {
       "id": 16,
       "text": "What day is it today?",
-      "start": 30,
-      "duration": 2
+      "start": 92.26,
+      "duration": 2.94
     },
     {
       "id": 17,
       "text": "It's Monday.",
-      "start": 32,
-      "duration": 2
+      "start": 95.44,
+      "duration": 2.94
     },
     {
       "id": 18,
       "text": "What day is it today?",
-      "start": 34,
-      "duration": 2
+      "start": 98.64,
+      "duration": 2.86
     },
     {
       "id": 19,
       "text": "It's Sunday.",
-      "start": 36,
-      "duration": 2
+      "start": 101.62,
+      "duration": 3.3
     },
     {
       "id": 20,
       "text": "What day is it?",
-      "start": 38,
-      "duration": 2
+      "start": 115.3,
+      "duration": 1.54
     },
     {
       "id": 21,
       "text": "What day is it?",
-      "start": 40,
-      "duration": 2
+      "start": 117.1,
+      "duration": 1.52
     },
     {
       "id": 22,
       "text": "It's Wednesday, Wednesday, Wednesday.",
-      "start": 42,
-      "duration": 2
+      "start": 118.78,
+      "duration": 2.02
     },
     {
       "id": 23,
       "text": "What day is it today?",
-      "start": 44,
-      "duration": 2
+      "start": 122.52,
+      "duration": 1.82
     },
     {
       "id": 24,
       "text": "What day is it today?",
-      "start": 46,
-      "duration": 2
+      "start": 124.34,
+      "duration": 1.62
     },
     {
       "id": 25,
       "text": "Friday, Friday.",
-      "start": 48,
-      "duration": 2
+      "start": 126.12,
+      "duration": 2.9
     },
     {
       "id": 26,
       "text": "Monday.",
-      "start": 50,
-      "duration": 2
+      "start": 129.8,
+      "duration": 1.84
     },
     {
       "id": 27,
       "text": "Tuesday.",
-      "start": 52,
-      "duration": 2
+      "start": 131.66,
+      "duration": 1.76
     },
     {
       "id": 28,
       "text": "Wednesday.",
-      "start": 54,
-      "duration": 2
+      "start": 133.5,
+      "duration": 1.78
     },
     {
       "id": 29,
       "text": "Thursday.",
-      "start": 56,
-      "duration": 2
+      "start": 135.42,
+      "duration": 1.66
     },
     {
       "id": 30,
       "text": "Friday.",
-      "start": 58,
-      "duration": 2
+      "start": 137.16,
+      "duration": 1.66
     },
     {
       "id": 31,
       "text": "Saturday.",
-      "start": 60,
-      "duration": 2
+      "start": 138.86,
+      "duration": 1.76
     },
     {
       "id": 32,
       "text": "Sunday.",
-      "start": 62,
-      "duration": 2
+      "start": 140.66,
+      "duration": 1.86
     },
     {
       "id": 33,
       "text": "Hmm...",
-      "start": 64,
-      "duration": 2
+      "start": 156.44,
+      "duration": 0.4
     },
     {
       "id": 34,
       "text": "What day is it?",
-      "start": 66,
-      "duration": 2
+      "start": 156.84,
+      "duration": 1.6
     },
     {
       "id": 35,
       "text": "It's Tuesday.",
-      "start": 68,
-      "duration": 2
+      "start": 158.84,
+      "duration": 1.36
     },
     {
       "id": 36,
       "text": "I'm hungry.",
-      "start": 70,
-      "duration": 2
+      "start": 160.76,
+      "duration": 0.98
     },
     {
       "id": 37,
       "text": "I had an apple yesterday.",
-      "start": 72,
-      "duration": 2
+      "start": 161.73714285714286,
+      "duration": 2.44
     },
     {
       "id": 38,
       "text": "Wow.",
-      "start": 74,
-      "duration": 2
+      "start": 165.48,
+      "duration": 0.53
     },
     {
       "id": 39,
       "text": "There's an orange.",
-      "start": 76,
-      "duration": 2
+      "start": 166.005,
+      "duration": 1.58
     },
     {
       "id": 40,
       "text": "Umm~ Yummy!",
-      "start": 78,
-      "duration": 2
+      "start": 171.48,
+      "duration": 1.8
     },
     {
       "id": 41,
       "text": "Hmm....",
-      "start": 80,
-      "duration": 2
+      "start": 180.7,
+      "duration": 0.4
     },
     {
       "id": 42,
       "text": "What day is it?",
-      "start": 82,
-      "duration": 2
+      "start": 181.1,
+      "duration": 1.6
     },
     {
       "id": 43,
       "text": "It's Wednesday.",
-      "start": 84,
-      "duration": 2
+      "start": 183.02,
+      "duration": 1.28
     },
     {
       "id": 44,
       "text": "I'm hungry.",
-      "start": 86,
-      "duration": 2
+      "start": 184.74,
+      "duration": 1.07
     },
     {
       "id": 45,
       "text": "I had an orange yesterday.",
-      "start": 88,
-      "duration": 2
+      "start": 185.81428571428572,
+      "duration": 2.69
     },
     {
       "id": 46,
       "text": "Wow.",
-      "start": 90,
-      "duration": 2
+      "start": 189.12,
+      "duration": 0.59
     },
     {
       "id": 47,
       "text": "There's a tomato.",
-      "start": 92,
-      "duration": 2
+      "start": 189.71,
+      "duration": 1.77
     },
     {
       "id": 48,
       "text": "Umm~ Yummy!",
-      "start": 94,
-      "duration": 2
+      "start": 195.26,
+      "duration": 1.76
     },
     {
       "id": 49,
       "text": "What day is today?",
-      "start": 96,
-      "duration": 2
+      "start": 207.84,
+      "duration": 1.62
     },
     {
       "id": 50,
       "text": "It's Thursday.",
-      "start": 98,
-      "duration": 2
+      "start": 209.86,
+      "duration": 1.4
     },
     {
       "id": 51,
       "text": "I'm...",
-      "start": 100,
-      "duration": 2
+      "start": 212.34,
+      "duration": 1.37
     },
     {
       "id": 52,
       "text": "I...",
-      "start": 102,
-      "duration": 2
+      "start": 213.71,
+      "duration": 1.37
     },
     {
       "id": 53,
       "text": "Wake up!",
-      "start": 104,
-      "duration": 2
+      "start": 223.94,
+      "duration": 1.13
     },
     {
       "id": 54,
       "text": "It's Friday!",
-      "start": 106,
-      "duration": 2
+      "start": 225.07,
+      "duration": 1.13
     },
     {
       "id": 55,
       "text": "Sorry?",
-      "start": 108,
-      "duration": 2
+      "start": 227.66,
+      "duration": 0.94
     },
     {
       "id": 56,
       "text": "Friday!",
-      "start": 110,
-      "duration": 2
+      "start": 229.44,
+      "duration": 1.1
     },
     {
       "id": 57,
       "text": "It's Fri....",
-      "start": 112,
-      "duration": 2
+      "start": 230.535,
+      "duration": 2.19
     },
     {
       "id": 58,
       "text": "Wow!",
-      "start": 114,
-      "duration": 2
+      "start": 232.725,
+      "duration": 1.1
     },
     {
       "id": 59,
       "text": "I can fly!",
-      "start": 116,
-      "duration": 2
+      "start": 234.58,
+      "duration": 1.33
     },
     {
       "id": 60,
       "text": "I can fly!",
-      "start": 118,
-      "duration": 2
+      "start": 235.91000000000003,
+      "duration": 1.33
     },
     {
       "id": 61,
       "text": "Wow!",
-      "start": 120,
-      "duration": 2
+      "start": 238.2,
+      "duration": 1.28
     },
     {
       "id": 62,
       "text": "Beautiful!",
-      "start": 122,
-      "duration": 2
+      "start": 239.48,
+      "duration": 1.28
     }
   ],
   "fetchedAt": "2026-06-24T04:14:38Z",
   "videoId": "5cYMu3RTMJU",
   "formatted": true,
-  "formattedAt": "2026-07-30T13:13:59.586Z"
+  "formattedAt": "2026-07-30T11:50:56.347Z"
 }

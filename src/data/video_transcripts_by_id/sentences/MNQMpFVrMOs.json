@@ -3,99 +3,885 @@
   "segments": [
     {
       "id": 1,
-      "text": "English Sing Sing.",
-      "start": 0,
-      "duration": 2
+      "text": "English sing sing.",
+      "start": 1.76,
+      "duration": 1.38
     },
     {
       "id": 2,
-      "text": "Theme 18: Doing Dialogue.",
-      "start": 2,
-      "duration": 2
+      "text": "Theme 18 doing dialogue.",
+      "start": 3.36,
+      "duration": 4.1
     },
     {
       "id": 3,
       "text": "It's a beautiful park.",
-      "start": 4,
-      "duration": 2
+      "start": 16.21,
+      "duration": 1.86
     },
     {
       "id": 4,
       "text": "Look at the sky and trees.",
-      "start": 6,
-      "duration": 2
+      "start": 20.7,
+      "duration": 1.85
     },
     {
       "id": 5,
       "text": "What are you doing, Jinzu?",
-      "start": 8,
-      "duration": 2
+      "start": 31.03,
+      "duration": 1.62
     },
     {
       "id": 6,
       "text": "I'm drawing trees.",
-      "start": 10,
-      "duration": 2
+      "start": 33.75,
+      "duration": 1.38
     },
     {
       "id": 7,
       "text": "Trees are good.",
-      "start": 12,
-      "duration": 2
+      "start": 37.03,
+      "duration": 1.22
     },
     {
       "id": 8,
       "text": "Yes.",
-      "start": 14,
-      "duration": 2
+      "start": 39.48,
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "I like trees.",
-      "start": 16,
-      "duration": 2
+      "start": 40.45,
+      "duration": 1.14
     },
     {
       "id": 10,
       "text": "What are you doing, Sally?",
-      "start": 18,
-      "duration": 2
+      "start": 47.41,
+      "duration": 1.61
     },
     {
       "id": 11,
       "text": "I'm jumping.",
-      "start": 20,
-      "duration": 2
+      "start": 50.05,
+      "duration": 0.97
     },
     {
       "id": 12,
       "text": "Wow.",
-      "start": 22,
-      "duration": 2
+      "start": 53.52,
+      "duration": 0.5
     },
     {
       "id": 13,
       "text": "You're jumping high.",
-      "start": 24,
-      "duration": 2
+      "start": 54.32,
+      "duration": 1.3
     },
     {
       "id": 14,
       "text": "Wow.",
-      "start": 26,
-      "duration": 2
+      "start": 62.32,
+      "duration": 0.47
     },
     {
       "id": 15,
       "text": "A big fire.",
-      "start": 28,
-      "duration": 2
+      "start": 62.785000000000004,
+      "duration": 1.4
     },
     {
       "id": 16,
-      "text": "Now, come to",
-      "start": 30,
-      "duration": 2
+      "text": "Now, come to the fire, everyone.",
+      "start": 64.94,
+      "duration": 2.9
+    },
+    {
+      "id": 17,
+      "text": "What are they doing?",
+      "start": 71.67,
+      "duration": 1.3
+    },
+    {
+      "id": 18,
+      "text": "They are dancing.",
+      "start": 74.47,
+      "duration": 0.97
+    },
+    {
+      "id": 19,
+      "text": "They are good dancers.",
+      "start": 77.36,
+      "duration": 1.38
+    },
+    {
+      "id": 20,
+      "text": "That's right.",
+      "start": 80.48,
+      "duration": 0.82
+    },
+    {
+      "id": 21,
+      "text": "Let's dance together.",
+      "start": 81.6,
+      "duration": 1.38
+    },
+    {
+      "id": 22,
+      "text": "What is she doing?",
+      "start": 93.14,
+      "duration": 1.14
+    },
+    {
+      "id": 23,
+      "text": "She is sleeping.",
+      "start": 98.03,
+      "duration": 1.14
+    },
+    {
+      "id": 24,
+      "text": "Dial.",
+      "start": 102.27,
+      "duration": 0.5
+    },
+    {
+      "id": 25,
+      "text": "Where are you going?",
+      "start": 109.97,
+      "duration": 1.38
+    },
+    {
+      "id": 26,
+      "text": "I'm going to the library.",
+      "start": 113.57,
+      "duration": 1.62
+    },
+    {
+      "id": 27,
+      "text": "I'm bored.",
+      "start": 116.69,
+      "duration": 0.9
+    },
+    {
+      "id": 28,
+      "text": "Let's play outside.",
+      "start": 118.21,
+      "duration": 1.22
+    },
+    {
+      "id": 29,
+      "text": "Sorry, but I want to read books.",
+      "start": 121.33,
+      "duration": 2.17
+    },
+    {
+      "id": 30,
+      "text": "What are you doing, mom?",
+      "start": 128.69,
+      "duration": 1.62
+    },
+    {
+      "id": 31,
+      "text": "I'm writing an email.",
+      "start": 131.56,
+      "duration": 1.54
+    },
+    {
+      "id": 32,
+      "text": "I'm bored.",
+      "start": 135.35,
+      "duration": 0.9
+    },
+    {
+      "id": 33,
+      "text": "Let's play outside.",
+      "start": 136.95,
+      "duration": 1.3
+    },
+    {
+      "id": 34,
+      "text": "Sorry, but I'm busy.",
+      "start": 140.07,
+      "duration": 1.54
+    },
+    {
+      "id": 35,
+      "text": "Let's do it later.",
+      "start": 142.55,
+      "duration": 1.22
+    },
+    {
+      "id": 36,
+      "text": "What are you doing, dad?",
+      "start": 149.84,
+      "duration": 1.63
+    },
+    {
+      "id": 37,
+      "text": "I'm making cookies.",
+      "start": 154.97,
+      "duration": 1.22
+    },
+    {
+      "id": 38,
+      "text": "Wow.",
+      "start": 158.18,
+      "duration": 0.5
+    },
+    {
+      "id": 39,
+      "text": "I want to make cookies too.",
+      "start": 158.98,
+      "duration": 2.1
+    },
+    {
+      "id": 40,
+      "text": "Good.",
+      "start": 162.42,
+      "duration": 0.5
+    },
+    {
+      "id": 41,
+      "text": "Show me how to make these cookies, please.",
+      "start": 164.18,
+      "duration": 2.66
+    },
+    {
+      "id": 42,
+      "text": "Great idea.",
+      "start": 167.7,
+      "duration": 0.82
+    },
+    {
+      "id": 43,
+      "text": "Dial.",
+      "start": 174.59,
+      "duration": 0.5
+    },
+    {
+      "id": 44,
+      "text": "Look over there.",
+      "start": 184.84,
+      "duration": 1.06
+    },
+    {
+      "id": 45,
+      "text": "What's he doing?",
+      "start": 191.4,
+      "duration": 1.14
+    },
+    {
+      "id": 46,
+      "text": "He's dancing.",
+      "start": 194.12,
+      "duration": 0.98
+    },
+    {
+      "id": 47,
+      "text": "Oh, now he's jumping.",
+      "start": 200.81,
+      "duration": 1.86
+    },
+    {
+      "id": 48,
+      "text": "Wow.",
+      "start": 204.41,
+      "duration": 0.61
+    },
+    {
+      "id": 49,
+      "text": "Great.",
+      "start": 205.02,
+      "duration": 0.61
+    },
+    {
+      "id": 50,
+      "text": "What's she doing?",
+      "start": 214.66,
+      "duration": 1.13
+    },
+    {
+      "id": 51,
+      "text": "She's jogging.",
+      "start": 217.01,
+      "duration": 1.14
+    },
+    {
+      "id": 52,
+      "text": "Really?",
+      "start": 219.81,
+      "duration": 0.5
+    },
+    {
+      "id": 53,
+      "text": "Yes.",
+      "start": 221.09,
+      "duration": 0.5
+    },
+    {
+      "id": 54,
+      "text": "Song.",
+      "start": 227.25,
+      "duration": 0.5
+    },
+    {
+      "id": 55,
+      "text": "What are you doing?",
+      "start": 236.14,
+      "duration": 1.3
+    },
+    {
+      "id": 56,
+      "text": "I'm washing washing.",
+      "start": 238.29,
+      "duration": 1.63
+    },
+    {
+      "id": 57,
+      "text": "What are you doing?",
+      "start": 240.29,
+      "duration": 1.22
+    },
+    {
+      "id": 58,
+      "text": "I'm eating eating.",
+      "start": 242.46,
+      "duration": 1.54
+    },
+    {
+      "id": 59,
+      "text": "What are you doing?",
+      "start": 244.22,
+      "duration": 1.29
+    },
+    {
+      "id": 60,
+      "text": "I'm dancing dancing.",
+      "start": 246.46,
+      "duration": 1.75
+    },
+    {
+      "id": 61,
+      "text": "I'm dancing I'm dancing now.",
+      "start": 249.07,
+      "duration": 2.98
+    },
+    {
+      "id": 62,
+      "text": "What is he doing?",
+      "start": 254.11,
+      "duration": 1.38
+    },
+    {
+      "id": 63,
+      "text": "He's running running.",
+      "start": 256.27,
+      "duration": 1.62
+    },
+    {
+      "id": 64,
+      "text": "What is he doing?",
+      "start": 258.11,
+      "duration": 1.38
+    },
+    {
+      "id": 65,
+      "text": "He's drawing drawing.",
+      "start": 260.27,
+      "duration": 1.46
+    },
+    {
+      "id": 66,
+      "text": "What is she doing?",
+      "start": 262.1,
+      "duration": 1.46
+    },
+    {
+      "id": 67,
+      "text": "She's sleeping sleeping She's sleeping She's sleeping now.",
+      "start": 264.43,
+      "duration": 5.61
+    },
+    {
+      "id": 68,
+      "text": "Song.",
+      "start": 287.38,
+      "duration": 0.35
+    },
+    {
+      "id": 69,
+      "text": "What are you doing",
+      "start": 287.734,
+      "duration": 1.42
+    },
+    {
+      "id": 70,
+      "text": "Sue Ho?",
+      "start": 289.63,
+      "duration": 0.75
+    },
+    {
+      "id": 71,
+      "text": "I'm cleaning my room.",
+      "start": 290.6,
+      "duration": 2.41
+    },
+    {
+      "id": 72,
+      "text": "What are you doing, Hannah?",
+      "start": 293.95,
+      "duration": 2.11
+    },
+    {
+      "id": 73,
+      "text": "I'm playing basketball.",
+      "start": 296.68,
+      "duration": 1.61
+    },
+    {
+      "id": 74,
+      "text": "What are you doing, Suho?",
+      "start": 306.14,
+      "duration": 2.1
+    },
+    {
+      "id": 75,
+      "text": "I'm cleaning my room.",
+      "start": 308.86,
+      "duration": 2.42
+    },
+    {
+      "id": 76,
+      "text": "What are you doing, Hana?",
+      "start": 312.22,
+      "duration": 2.02
+    },
+    {
+      "id": 77,
+      "text": "I'm playing basketball.",
+      "start": 314.86,
+      "duration": 1.7
+    },
+    {
+      "id": 78,
+      "text": "What are you doing, Jenny?",
+      "start": 329.5,
+      "duration": 1.62
+    },
+    {
+      "id": 79,
+      "text": "What are you doing, Jenny?",
+      "start": 331.66,
+      "duration": 1.54
+    },
+    {
+      "id": 80,
+      "text": "I'm making a round butt.",
+      "start": 333.42,
+      "duration": 1.7
+    },
+    {
+      "id": 81,
+      "text": "Making a round butt.",
+      "start": 335.82,
+      "duration": 1.3
+    },
+    {
+      "id": 82,
+      "text": "What are you doing, mom?",
+      "start": 337.82,
+      "duration": 1.62
+    },
+    {
+      "id": 83,
+      "text": "What are you doing, mom?",
+      "start": 339.82,
+      "duration": 1.62
+    },
+    {
+      "id": 84,
+      "text": "I'm making salad.",
+      "start": 341.66,
+      "duration": 1.46
+    },
+    {
+      "id": 85,
+      "text": "Making salad.",
+      "start": 344.06,
+      "duration": 0.98
+    },
+    {
+      "id": 86,
+      "text": "Hey hey hey hey hey hey hey hey",
+      "start": 357.75,
+      "duration": 3.31
+    },
+    {
+      "id": 87,
+      "text": "What is he doing?",
+      "start": 362.32,
+      "duration": 1.38
+    },
+    {
+      "id": 88,
+      "text": "What is he doing?",
+      "start": 364.16,
+      "duration": 1.7
+    },
+    {
+      "id": 89,
+      "text": "Running running He is running.",
+      "start": 366.32,
+      "duration": 3.86
+    },
+    {
+      "id": 90,
+      "text": "Wow!",
+      "start": 370.88,
+      "duration": 0.5
+    },
+    {
+      "id": 91,
+      "text": "He's a great runner.",
+      "start": 372.96,
+      "duration": 1.54
+    },
+    {
+      "id": 92,
+      "text": "That's right.",
+      "start": 375.25,
+      "duration": 1.55
+    },
+    {
+      "id": 93,
+      "text": "That's right.",
+      "start": 377.34,
+      "duration": 1.03
+    },
+    {
+      "id": 94,
+      "text": "Yeah.",
+      "start": 378.3666666666666,
+      "duration": 0.51
+    },
+    {
+      "id": 95,
+      "text": "Hey hey hey",
+      "start": 383.98,
+      "duration": 1.38
+    },
+    {
+      "id": 96,
+      "text": "hey hey hey hey hey.",
+      "start": 385.9,
+      "duration": 1.61
+    },
+    {
+      "id": 97,
+      "text": "What are they doing?",
+      "start": 388.32,
+      "duration": 1.54
+    },
+    {
+      "id": 98,
+      "text": "What are they doing?",
+      "start": 390.32,
+      "duration": 1.78
+    },
+    {
+      "id": 99,
+      "text": "Dancing dancing they're dancing.",
+      "start": 392.56,
+      "duration": 3.22
+    },
+    {
+      "id": 100,
+      "text": "Wow.",
+      "start": 397.04,
+      "duration": 0.5
+    },
+    {
+      "id": 101,
+      "text": "They're wonderful dancers.",
+      "start": 399.12,
+      "duration": 1.62
+    },
+    {
+      "id": 102,
+      "text": "That's right.",
+      "start": 401.41,
+      "duration": 1.47
+    },
+    {
+      "id": 103,
+      "text": "That's right.",
+      "start": 403.65,
+      "duration": 0.92
+    },
+    {
+      "id": 104,
+      "text": "Yeah.",
+      "start": 404.57,
+      "duration": 0.46
+    },
+    {
+      "id": 105,
+      "text": "Story.",
+      "start": 412.85,
+      "duration": 0.5
+    },
+    {
+      "id": 106,
+      "text": "How beautiful.",
+      "start": 421.91,
+      "duration": 0.9
+    },
+    {
+      "id": 107,
+      "text": "I want those red shoes.",
+      "start": 423.35,
+      "duration": 1.86
+    },
+    {
+      "id": 108,
+      "text": "Grandma, please.",
+      "start": 426.07,
+      "duration": 1.38
+    },
+    {
+      "id": 109,
+      "text": "Okay.",
+      "start": 429.11,
+      "duration": 0.5
+    },
+    {
+      "id": 110,
+      "text": "How much?",
+      "start": 430.31,
+      "duration": 0.82
+    },
+    {
+      "id": 111,
+      "text": "$10.",
+      "start": 432.71,
+      "duration": 0.98
+    },
+    {
+      "id": 112,
+      "text": "Thank you, grandma.",
+      "start": 438.15,
+      "duration": 1.06
+    },
+    {
+      "id": 113,
+      "text": "Karen, what are you doing?",
+      "start": 449.4,
+      "duration": 2.42
+    },
+    {
+      "id": 114,
+      "text": "I'm dancing, grandma.",
+      "start": 452.52,
+      "duration": 1.46
+    },
+    {
+      "id": 115,
+      "text": "She is dancing here.",
+      "start": 470.5,
+      "duration": 1.54
+    },
+    {
+      "id": 116,
+      "text": "She is dancing there.",
+      "start": 472.42,
+      "duration": 1.54
+    },
+    {
+      "id": 117,
+      "text": "She is a good dancer.",
+      "start": 474.9,
+      "duration": 1.78
+    },
+    {
+      "id": 118,
+      "text": "That's right.",
+      "start": 477.21,
+      "duration": 0.91
+    },
+    {
+      "id": 119,
+      "text": "Your grandma is in the hospital.",
+      "start": 483.85,
+      "duration": 2.18
+    },
+    {
+      "id": 120,
+      "text": "Karen, go home, please.",
+      "start": 486.97,
+      "duration": 1.78
+    },
+    {
+      "id": 121,
+      "text": "Sorry.",
+      "start": 489.29,
+      "duration": 0.5
+    },
+    {
+      "id": 122,
+      "text": "I can't.",
+      "start": 490.25,
+      "duration": 0.74
+    },
+    {
+      "id": 123,
+      "text": "Oh, I'm sleepy.",
+      "start": 496.27,
+      "duration": 1.62
+    },
+    {
+      "id": 124,
+      "text": "Oh, Karen.",
+      "start": 504.19,
+      "duration": 0.9
+    },
+    {
+      "id": 125,
+      "text": "Don't dance.",
+      "start": 505.66,
+      "duration": 0.82
+    },
+    {
+      "id": 126,
+      "text": "Go to the hospital now.",
+      "start": 507.1,
+      "duration": 1.7
+    },
+    {
+      "id": 127,
+      "text": "Thank you very much.",
+      "start": 514.46,
+      "duration": 1.46
+    },
+    {
+      "id": 128,
+      "text": "I'm sorry, grandma.",
+      "start": 518.21,
+      "duration": 1.46
+    },
+    {
+      "id": 129,
+      "text": "Story.",
+      "start": 525.88,
+      "duration": 0.5
+    },
+    {
+      "id": 130,
+      "text": "Mom, where are you?",
+      "start": 537.34,
+      "duration": 2.02
+    },
+    {
+      "id": 131,
+      "text": "I'm in the kitchen.",
+      "start": 540.62,
+      "duration": 1.22
+    },
+    {
+      "id": 132,
+      "text": "What are you doing?",
+      "start": 543.63,
+      "duration": 1.54
+    },
+    {
+      "id": 133,
+      "text": "I'm making soup.",
+      "start": 545.79,
+      "duration": 1.31
+    },
+    {
+      "id": 134,
+      "text": "Can you help me?",
+      "start": 548.43,
+      "duration": 1.31
+    },
+    {
+      "id": 135,
+      "text": "Yes.",
+      "start": 550.75,
+      "duration": 0.46
+    },
+    {
+      "id": 136,
+      "text": "I can.",
+      "start": 551.21,
+      "duration": 0.92
+    },
+    {
+      "id": 137,
+      "text": "Don't run.",
+      "start": 553.39,
+      "duration": 0.9
+    },
+    {
+      "id": 138,
+      "text": "The soup is hot.",
+      "start": 554.51,
+      "duration": 1.47
+    },
+    {
+      "id": 139,
+      "text": "Where are you?",
+      "start": 559.22,
+      "duration": 1.3
+    },
+    {
+      "id": 140,
+      "text": "I'm in the bedroom.",
+      "start": 561.78,
+      "duration": 1.22
+    },
+    {
+      "id": 141,
+      "text": "This is for you.",
+      "start": 566.9,
+      "duration": 1.46
+    },
+    {
+      "id": 142,
+      "text": "Thank you.",
+      "start": 569.06,
+      "duration": 0.82
+    },
+    {
+      "id": 143,
+      "text": "It's too hot.",
+      "start": 571.3,
+      "duration": 1.22
+    },
+    {
+      "id": 144,
+      "text": "Are you okay?",
+      "start": 577.49,
+      "duration": 1.29
+    },
+    {
+      "id": 145,
+      "text": "Yes.",
+      "start": 579.8,
+      "duration": 0.46
+    },
+    {
+      "id": 146,
+      "text": "I'm okay.",
+      "start": 580.26,
+      "duration": 0.92
+    },
+    {
+      "id": 147,
+      "text": "Thank you.",
+      "start": 582.09,
+      "duration": 0.74
     }
   ],
   "fetchedAt": "2026-07-23T06:26:38.687101+00:00",
@@ -126,5 +912,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T13:16:49.974Z"
+  "formattedAt": "2026-07-30T11:50:56.360Z"
 }

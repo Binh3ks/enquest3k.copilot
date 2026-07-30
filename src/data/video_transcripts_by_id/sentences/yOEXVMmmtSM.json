@@ -4,474 +4,576 @@
     {
       "id": 1,
       "text": "Books.",
-      "start": 0,
-      "duration": 2
+      "start": 0.42,
+      "duration": 5.02
     },
     {
       "id": 2,
       "text": "It's a seashell day.",
-      "start": 2,
-      "duration": 2
+      "start": 15.98,
+      "duration": 4.26
     },
     {
       "id": 3,
       "text": "When the sun peeks up over the bay.",
-      "start": 4,
-      "duration": 2
+      "start": 24.26,
+      "duration": 8.94
     },
     {
       "id": 4,
       "text": "Mommy tells me it's a seashell day.",
-      "start": 6,
-      "duration": 2
+      "start": 33.2,
+      "duration": 5.52
     },
     {
       "id": 5,
       "text": "I rushed down the path over the Dune.",
-      "start": 8,
-      "duration": 2
+      "start": 41.18,
+      "duration": 5.4
     },
     {
       "id": 6,
-      "text": "Salty breeze blows.",
-      "start": 10,
-      "duration": 2
+      "text": "Salty breeze blows we'll be there soon.",
+      "start": 49.16,
+      "duration": 5.7
     },
     {
       "id": 7,
-      "text": "We'll be there soon.",
-      "start": 12,
-      "duration": 2
+      "text": "We reached the beach Herring goals flock.",
+      "start": 56,
+      "duration": 5.82
     },
     {
       "id": 8,
-      "text": "We reached the beach.",
-      "start": 14,
-      "duration": 2
+      "text": "Is this a seashell no it's a rock.",
+      "start": 62.42,
+      "duration": 8.52
     },
     {
       "id": 9,
-      "text": "Herring goals flock.",
-      "start": 16,
-      "duration": 2
+      "text": "Thank you.",
+      "start": 68,
+      "duration": 7.18
     },
     {
       "id": 10,
-      "text": "Is this a seashell?",
-      "start": 18,
-      "duration": 2
+      "text": "With pale and shovel in my hand my toes.",
+      "start": 70.94,
+      "duration": 9.12
     },
     {
       "id": 11,
-      "text": "No, it's a rock.",
-      "start": 20,
-      "duration": 2
+      "text": "Squish in cool wet sand.",
+      "start": 75.18,
+      "duration": 4.88
     },
     {
       "id": 12,
-      "text": "Thank you.",
-      "start": 22,
-      "duration": 2
+      "text": "A wave rolls in it's way too big go away.",
+      "start": 82.28,
+      "duration": 9.18
     },
     {
       "id": 13,
-      "text": "With pale and shovel in my hand.",
-      "start": 24,
-      "duration": 2
+      "text": "I can dig.",
+      "start": 87.6,
+      "duration": 3.86
     },
     {
       "id": 14,
-      "text": "My toes squish in cool wet sand.",
-      "start": 26,
-      "duration": 2
+      "text": "Bumpy.",
+      "start": 94.32,
+      "duration": 3.62
     },
     {
       "id": 15,
-      "text": "A wave rolls in.",
-      "start": 28,
-      "duration": 2
+      "text": "Out from the muck.",
+      "start": 96.24,
+      "duration": 4.34
     },
     {
       "id": 16,
-      "text": "It's way too big.",
-      "start": 30,
-      "duration": 2
+      "text": "Spiny shiny shells.",
+      "start": 100.58,
+      "duration": 7.2
     },
     {
       "id": 17,
-      "text": "Go away.",
-      "start": 32,
-      "duration": 2
+      "text": "A penny for luck.",
+      "start": 103.94,
+      "duration": 3.84
     },
     {
       "id": 18,
-      "text": "I can dig.",
-      "start": 34,
-      "duration": 2
+      "text": "Tiny a silvery Pearl.",
+      "start": 110.4,
+      "duration": 5.42
     },
     {
       "id": 19,
-      "text": "Bumpy.",
-      "start": 36,
-      "duration": 2
+      "text": "Mommy's is brown with a big.",
+      "start": 117.3,
+      "duration": 6.02
     },
     {
       "id": 20,
-      "text": "Out from the muck.",
-      "start": 38,
-      "duration": 2
+      "text": "Burly curl.",
+      "start": 120.42,
+      "duration": 2.9
     },
     {
       "id": 21,
-      "text": "Spiny, shiny shells.",
-      "start": 40,
-      "duration": 2
+      "text": "This shell is a home mommy tells me.",
+      "start": 124.02,
+      "duration": 5
     },
     {
       "id": 22,
-      "text": "A penny for luck.",
-      "start": 42,
-      "duration": 2
+      "text": "Let's put it back to live in the sea.",
+      "start": 129.84,
+      "duration": 7.16
     },
     {
       "id": 23,
-      "text": "Tiny, a silvery Pearl.",
-      "start": 44,
-      "duration": 2
+      "text": "This shell has a secret hold it up to.",
+      "start": 137,
+      "duration": 5.82
     },
     {
       "id": 24,
-      "text": "Mommy's is brown with a big, burly curl.",
-      "start": 46,
-      "duration": 2
+      "text": "Your ear.",
+      "start": 140.52,
+      "duration": 2.3
     },
     {
       "id": 25,
-      "text": "This shell is a home.",
-      "start": 48,
-      "duration": 2
+      "text": "My sin says mommy what do you hear.",
+      "start": 143.46,
+      "duration": 7.24
     },
     {
       "id": 26,
-      "text": "Mommy tells me, let's put it back to live in the sea.",
-      "start": 50,
-      "duration": 2
+      "text": "I hear the ocean.",
+      "start": 156.26,
+      "duration": 4.86
     },
     {
       "id": 27,
-      "text": "This shell has a secret.",
-      "start": 52,
-      "duration": 2
+      "text": "I count shells one two three four.",
+      "start": 163.08,
+      "duration": 11.05
     },
     {
       "id": 28,
-      "text": "Hold it up to your ear.",
-      "start": 54,
-      "duration": 2
+      "text": "Each one is different I have many more.",
+      "start": 170.12,
+      "duration": 7.46
     },
     {
       "id": 29,
-      "text": "My sin says mommy, what do you hear?",
-      "start": 56,
-      "duration": 2
+      "text": "I count other shells five six seven.",
+      "start": 177.66,
+      "duration": 7.04
     },
     {
       "id": 30,
-      "text": "I hear the ocean.",
-      "start": 58,
-      "duration": 2
+      "text": "Eight.",
+      "start": 182.34,
+      "duration": 7.7
     },
     {
       "id": 31,
-      "text": "I count shells, one, two, three, four.",
-      "start": 60,
-      "duration": 2
+      "text": "My shells are curvy never straight.",
+      "start": 184.7,
+      "duration": 5.34
     },
     {
       "id": 32,
-      "text": "Each one is different.",
-      "start": 62,
-      "duration": 2
+      "text": "Two more shells numbers nine then ten.",
+      "start": 191.84,
+      "duration": 6
     },
     {
       "id": 33,
-      "text": "I have many more.",
-      "start": 64,
-      "duration": 2
+      "text": "When we get home let's count them again.",
+      "start": 200.22,
+      "duration": 6.98
     },
     {
       "id": 34,
-      "text": "I count other shells, five, six, seven, eight.",
-      "start": 66,
-      "duration": 2
+      "text": "We are almost home it's been a fun day.",
+      "start": 207.2,
+      "duration": 5.82
     },
     {
       "id": 35,
-      "text": "My shells are curvy, never straight.",
-      "start": 68,
-      "duration": 2
+      "text": "So many shells oh make a display.",
+      "start": 214.16,
+      "duration": 5.4
     },
     {
       "id": 36,
-      "text": "Two more shells, numbers nine, then ten.",
-      "start": 70,
-      "duration": 2
+      "text": "One.",
+      "start": 221.6,
+      "duration": 3.66
     },
     {
       "id": 37,
-      "text": "When we get home, let's count them again.",
-      "start": 72,
-      "duration": 2
+      "text": "Two.",
+      "start": 223.58,
+      "duration": 7.46
     },
     {
       "id": 38,
-      "text": "We are almost home.",
-      "start": 74,
-      "duration": 2
+      "text": "Three four a pretend seashell store.",
+      "start": 225.26,
+      "duration": 8.86
     },
     {
       "id": 39,
-      "text": "It's been a fun day.",
-      "start": 76,
-      "duration": 2
+      "text": "Five six.",
+      "start": 234.12,
+      "duration": 3.26
     },
     {
       "id": 40,
-      "text": "So many shells.",
-      "start": 78,
-      "duration": 2
+      "text": "Seven.",
+      "start": 236.58,
+      "duration": 5.08
     },
     {
       "id": 41,
-      "text": "Oh, make a display.",
-      "start": 80,
-      "duration": 2
+      "text": "Eight oh my shells look really great.",
+      "start": 237.38,
+      "duration": 7.84
     },
     {
       "id": 42,
-      "text": "One, two, three, four, a pretend seashell store.",
-      "start": 82,
-      "duration": 2
+      "text": "Fine and nine and ten.",
+      "start": 245.22,
+      "duration": 6.12
     },
     {
       "id": 43,
-      "text": "Five, six, seven, eight.",
-      "start": 84,
-      "duration": 2
+      "text": "I brought the beach home.",
+      "start": 247.5,
+      "duration": 5.84
     },
     {
       "id": 44,
-      "text": "Oh, my shells look really great.",
-      "start": 86,
-      "duration": 2
+      "text": "With me.",
+      "start": 251.34,
+      "duration": 4.28
     },
     {
       "id": 45,
-      "text": "Fine and nine and ten.",
-      "start": 88,
-      "duration": 2
+      "text": "Mollusks are animals with soft bodies.",
+      "start": 255.62,
+      "duration": 5.14
     },
     {
       "id": 46,
-      "text": "I brought the beach home with me.",
-      "start": 90,
-      "duration": 2
+      "text": "That wear their skeletons on the outside.",
+      "start": 258.48,
+      "duration": 3.95
     },
     {
       "id": 47,
-      "text": "Mollusks are animals with soft bodies that wear their skeletons on the outside.",
-      "start": 92,
-      "duration": 2
+      "text": "Seashells.",
+      "start": 260.76,
+      "duration": 4.72
     },
     {
       "id": 48,
-      "text": "Seashells.",
-      "start": 94,
-      "duration": 2
+      "text": "Every empty seashell on the beach was.",
+      "start": 267.08,
+      "duration": 5.2
     },
     {
       "id": 49,
-      "text": "Every empty seashell on the beach was once a part of an animal from the mollusk family.",
-      "start": 96,
-      "duration": 2
+      "text": "Once a part of an animal from the.",
+      "start": 270.42,
+      "duration": 4.58
     },
     {
       "id": 50,
-      "text": "Seashells are mostly made of calcium.",
-      "start": 98,
-      "duration": 2
+      "text": "Mollusk family.",
+      "start": 272.28,
+      "duration": 2.72
     },
     {
       "id": 51,
-      "text": "So are our bones.",
-      "start": 100,
-      "duration": 2
+      "text": "Seashells are mostly made of calcium so.",
+      "start": 278.06,
+      "duration": 7.17
     },
     {
       "id": 52,
-      "text": "Foreign.",
-      "start": 102,
-      "duration": 2
+      "text": "Are our bones.",
+      "start": 281.88,
+      "duration": 5.64
     },
     {
       "id": 53,
-      "text": "The best time to find seashells on the beach is in the morning or evening at low tide.",
-      "start": 104,
-      "duration": 2
+      "text": "Foreign.",
+      "start": 287.52,
+      "duration": 4.62
     },
     {
       "id": 54,
-      "text": "Scallops have dozens of eyes to help predators coming from any direction.",
-      "start": 106,
-      "duration": 2
+      "text": "The best time to find seashells on the.",
+      "start": 289.1,
+      "duration": 5.68
     },
     {
       "id": 55,
-      "text": "Seashells can be as small as a grain of rice or as big as four feet across.",
-      "start": 108,
-      "duration": 2
+      "text": "Beach is in the morning or evening at.",
+      "start": 292.14,
+      "duration": 4.1
     },
     {
       "id": 56,
-      "text": "There are more than one hundred thousand species of mollusks worldwide.",
-      "start": 110,
-      "duration": 2
+      "text": "Low tide.",
+      "start": 294.78,
+      "duration": 6.2
     },
     {
       "id": 57,
-      "text": "About half of all mollusks live in the ocean.",
-      "start": 112,
-      "duration": 2
+      "text": "Scallops have dozens of eyes to help.",
+      "start": 300.98,
+      "duration": 5.2
     },
     {
       "id": 58,
-      "text": "A seashore wraps around a mollusk's body like a suit of armor.",
-      "start": 114,
-      "duration": 2
+      "text": "Predators coming from any.",
+      "start": 303.96,
+      "duration": 3.22
     },
     {
       "id": 59,
-      "text": "It protects the sea creature living inside from predators and strong ocean currents under sea.",
-      "start": 116,
-      "duration": 2
+      "text": "Direction.",
+      "start": 306.18,
+      "duration": 6
     },
     {
       "id": 60,
-      "text": "Foreign.",
-      "start": 118,
-      "duration": 2
+      "text": "Seashells can be as small as a grain of.",
+      "start": 312.18,
+      "duration": 8.48
     },
     {
       "id": 61,
-      "text": "Crabs crawl into empty seashells and call them home.",
-      "start": 120,
-      "duration": 2
+      "text": "Rice or as big as four feet across.",
+      "start": 315.36,
+      "duration": 5.3
     },
     {
       "id": 62,
-      "text": "As hermit crabs grow bigger, they have to find larger and larger shells.",
-      "start": 122,
-      "duration": 2
+      "text": "There are more than one hundred thousand.",
+      "start": 324.18,
+      "duration": 7.32
     },
     {
       "id": 63,
-      "text": "Mini clams breathe through a kind of snorkel, a body part called a siphon when they bury themselves in sand.",
-      "start": 124,
-      "duration": 2
+      "text": "Species of mollusks worldwide.",
+      "start": 327.72,
+      "duration": 7.38
     },
     {
       "id": 64,
-      "text": "Shells have been used throughout history for art, jewelry, money, tools, containers, and buttons.",
-      "start": 126,
-      "duration": 2
+      "text": "About half of all mollusks live in the.",
+      "start": 335.1,
+      "duration": 3.72
     },
     {
       "id": 65,
-      "text": "The end.",
-      "start": 128,
-      "duration": 2
+      "text": "Ocean.",
+      "start": 338.34,
+      "duration": 5.16
     },
     {
       "id": 66,
-      "text": "If you don't have books, then what are you waiting for?",
-      "start": 130,
-      "duration": 2
+      "text": "A seashore wraps around a mollusk's body.",
+      "start": 343.5,
+      "duration": 5.7
     },
     {
       "id": 67,
-      "text": "Looks his kids safe.",
-      "start": 132,
-      "duration": 2
+      "text": "Like a suit of armor.",
+      "start": 346.68,
+      "duration": 4.62
     },
     {
       "id": 68,
-      "text": "He has storybooks that are brought to life.",
-      "start": 134,
-      "duration": 2
+      "text": "It protects the sea creature living.",
+      "start": 351.3,
+      "duration": 5.88
     },
     {
       "id": 69,
-      "text": "And third, it's fun.",
-      "start": 136,
-      "duration": 2
+      "text": "Inside from predators and strong ocean.",
+      "start": 353.52,
+      "duration": 6.84
     },
     {
       "id": 70,
-      "text": "I like to read books about fantasy and love.",
-      "start": 138,
-      "duration": 2
+      "text": "Currents under sea.",
+      "start": 357.18,
+      "duration": 5.36
     },
     {
       "id": 71,
-      "text": "I tell other kids to get books because it's full of.",
-      "start": 140,
-      "duration": 2
+      "text": "Foreign.",
+      "start": 360.36,
+      "duration": 2.18
     },
     {
       "id": 72,
-      "text": "I'll read it on the go, in the car, in a plane, even on the.",
-      "start": 142,
-      "duration": 2
+      "text": "Crabs crawl into empty seashells and.",
+      "start": 363.74,
+      "duration": 6.42
     },
     {
       "id": 73,
-      "text": "I've never been on a train.",
-      "start": 144,
-      "duration": 2
+      "text": "Call them home.",
+      "start": 367.32,
+      "duration": 6.48
     },
     {
       "id": 74,
-      "text": "Don't wait around.",
-      "start": 146,
-      "duration": 2
+      "text": "As hermit crabs grow bigger they have to.",
+      "start": 370.16,
+      "duration": 7.92
     },
     {
       "id": 75,
-      "text": "Ask your grown-ups to download books now.",
-      "start": 148,
-      "duration": 2
+      "text": "Find larger and larger shells.",
+      "start": 373.8,
+      "duration": 4.28
     },
     {
       "id": 76,
-      "text": "You'll be glad you did.",
-      "start": 150,
-      "duration": 2
+      "text": "Mini clams breathe through a kind of.",
+      "start": 380.66,
+      "duration": 6.34
     },
     {
       "id": 77,
-      "text": "Thanks for watching.",
-      "start": 152,
-      "duration": 2
+      "text": "Snorkel a body part called a siphon when.",
+      "start": 383.76,
+      "duration": 6.86
     },
     {
       "id": 78,
-      "text": "For more stories, try the books app for free today.",
-      "start": 154,
-      "duration": 2
+      "text": "They bury themselves in sand.",
+      "start": 387,
+      "duration": 3.62
+    },
+    {
+      "id": 79,
+      "text": "Shells have been used throughout history.",
+      "start": 393.38,
+      "duration": 7
+    },
+    {
+      "id": 80,
+      "text": "For art jewelry money tools containers.",
+      "start": 396.24,
+      "duration": 5.66
+    },
+    {
+      "id": 81,
+      "text": "And buttons.",
+      "start": 400.38,
+      "duration": 12.26
+    },
+    {
+      "id": 82,
+      "text": "The end.",
+      "start": 412.64,
+      "duration": 7.48
+    },
+    {
+      "id": 83,
+      "text": "If you don't have books then what are.",
+      "start": 420.12,
+      "duration": 4.5
+    },
+    {
+      "id": 84,
+      "text": "You waiting for looks his kids safe he.",
+      "start": 422.28,
+      "duration": 3.9
+    },
+    {
+      "id": 85,
+      "text": "Has storybooks that are brought to life.",
+      "start": 424.62,
+      "duration": 5.22
+    },
+    {
+      "id": 86,
+      "text": "And third it's fun I like to read books.",
+      "start": 426.18,
+      "duration": 6.96
+    },
+    {
+      "id": 87,
+      "text": "About fantasy and love I tell other kids.",
+      "start": 429.84,
+      "duration": 5.1
+    },
+    {
+      "id": 88,
+      "text": "To get books because it's full of.",
+      "start": 433.14,
+      "duration": 5.04
+    },
+    {
+      "id": 89,
+      "text": "I'll read it on the.",
+      "start": 434.94,
+      "duration": 6.42
+    },
+    {
+      "id": 90,
+      "text": "Go in the car in a plane even on the.",
+      "start": 438.18,
+      "duration": 5.34
+    },
+    {
+      "id": 91,
+      "text": "I've never been on a train don't.",
+      "start": 441.36,
+      "duration": 4.08
+    },
+    {
+      "id": 92,
+      "text": "Wait around ask your grown-ups to.",
+      "start": 443.52,
+      "duration": 3.84
+    },
+    {
+      "id": 93,
+      "text": "Download books now you'll be glad you.",
+      "start": 445.44,
+      "duration": 5.04
+    },
+    {
+      "id": 94,
+      "text": "Did thanks for watching for more stories.",
+      "start": 447.36,
+      "duration": 8.06
+    },
+    {
+      "id": 95,
+      "text": "Try the books app for free today.",
+      "start": 450.48,
+      "duration": 4.94
     }
   ],
   "fetchedAt": "2026-06-22T02:05:32Z",
   "videoId": "yOEXVMmmtSM",
   "formatted": true,
-  "formattedAt": "2026-07-30T13:23:30.578Z"
+  "formattedAt": "2026-07-30T11:50:56.399Z"
 }
