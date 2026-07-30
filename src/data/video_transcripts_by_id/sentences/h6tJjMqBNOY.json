@@ -1,0 +1,97 @@
+{
+  "text": "Hi, good morning. My name is Tom. What's your name? Good morning, Tom. My name is Anna. Nice to meet you. Nice to meet you, too, Anna. Are you a new student here? Yes, I am. Today's my first day at this school. I feel very nervous. That's okay. I felt nervous on my first day, too. Really? I'm worried because I don't know anyone here. Don't worry. Everyone is friendly and the school is very fun. That's good to hear. I like the school, but everything feels new. You will get used to it soon. Which class are you in? I'm in class 2A. How about you? Me, too. We are in the same class. Wow, I'm. So happy to hear that. You're welcome. Let's be good friends. Yes, I'm not. So nervous anymore.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Hi, good morning.",
+      "start": 0.4,
+      "duration": 2.13
+    },
+    {
+      "id": 2,
+      "text": "My name is Tom. What's your name?",
+      "start": 2.53,
+      "duration": 5.87
+    },
+    {
+      "id": 3,
+      "text": "Good morning, Tom.",
+      "start": 6.08,
+      "duration": 1.5
+    },
+    {
+      "id": 4,
+      "text": "My name is Anna. Nice to meet you.",
+      "start": 7.58,
+      "duration": 5.38
+    },
+    {
+      "id": 5,
+      "text": "Nice to meet you, too, Anna. Are you a new student here? Yes, I am.",
+      "start": 10.08,
+      "duration": 6.88
+    },
+    {
+      "id": 6,
+      "text": "Today's my first day at this school.",
+      "start": 16.96,
+      "duration": 1.66
+    },
+    {
+      "id": 7,
+      "text": "I feel very nervous. That's okay.",
+      "start": 18.624000000000002,
+      "duration": 3.44
+    },
+    {
+      "id": 8,
+      "text": "I felt nervous on my first day, too. Really? I'm worried because I don't know anyone here. Don't worry.",
+      "start": 22.060000000000002,
+      "duration": 9.83
+    },
+    {
+      "id": 9,
+      "text": "Everyone is friendly and the school is very fun. That's good to hear.",
+      "start": 31.893333333333334,
+      "duration": 6.51
+    },
+    {
+      "id": 10,
+      "text": "I like the school, but everything feels new.",
+      "start": 38.400000000000006,
+      "duration": 6.08
+    },
+    {
+      "id": 11,
+      "text": "You will get used to it soon. Which class are you in? I'm in class 2A. How about you?",
+      "start": 40.96,
+      "duration": 13.68
+    },
+    {
+      "id": 12,
+      "text": "Me, too. We are in the same class. Wow, I'm.",
+      "start": 50.48,
+      "duration": 5.44
+    },
+    {
+      "id": 13,
+      "text": "So happy to hear that. You're welcome.",
+      "start": 55.92,
+      "duration": 6
+    },
+    {
+      "id": 14,
+      "text": "Let's be good friends. Yes, I'm not.",
+      "start": 59.12,
+      "duration": 5
+    },
+    {
+      "id": 15,
+      "text": "So nervous anymore.",
+      "start": 64.12,
+      "duration": 2.2
+    }
+  ],
+  "videoId": "h6tJjMqBNOY",
+  "source": "cleaned"
+}
