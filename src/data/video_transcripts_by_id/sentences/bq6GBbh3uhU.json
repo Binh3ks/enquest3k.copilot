@@ -4,244 +4,251 @@
     {
       "id": 1,
       "text": "Easy English Conversations. What do you do every day?",
-      "start": 2.48,
-      "duration": 6.52
+      "start": 2.72,
+      "duration": 7.92
     },
     {
       "id": 2,
       "text": "Hello, Sian. Hi, Buli.",
-      "start": 9.96,
-      "duration": 2.62
+      "start": 10.16,
+      "duration": 2.88
     },
     {
       "id": 3,
       "text": "How are you? well, thanks.",
-      "start": 12.584000000000001,
-      "duration": 2.74
+      "start": 12.8,
+      "duration": 2.91
     },
     {
       "id": 4,
       "text": "How are you? — I'm good too. I wake up.",
-      "start": 15.725,
-      "duration": 6.51
+      "start": 15.47,
+      "duration": 3.92
     },
     {
       "id": 5,
       "text": "I eat breakfast. I go jogging.",
-      "start": 24.16,
-      "duration": 4.6
+      "start": 24.11,
+      "duration": 7.04
     },
     {
       "id": 6,
       "text": "I get the bus to work. I read a book on the bus.",
-      "start": 30.84,
-      "duration": 6.64
+      "start": 30.91,
+      "duration": 9.52
     },
     {
       "id": 7,
       "text": "I eat lunch. After I finish work, I swim in the sea.",
-      "start": 40.08,
-      "duration": 7.4
+      "start": 40.11,
+      "duration": 9.86
     },
     {
       "id": 8,
       "text": "I eat dinner. I have a shower.",
-      "start": 49.64,
-      "duration": 4.6
+      "start": 49.65,
+      "duration": 7.1
     },
     {
       "id": 9,
       "text": "Then I go to sleep. How about you?",
-      "start": 55.92,
-      "duration": 5.33
+      "start": 56.25,
+      "duration": 5.28
     },
     {
       "id": 10,
       "text": "I drive to work. I listen to a podcast.",
-      "start": 73.16,
-      "duration": 4.76
+      "start": 73.31,
+      "duration": 5.27
     },
     {
       "id": 11,
       "text": "Welcome to Real Easy English. — I'm Beth. — And I'm Neil.",
-      "start": 78.04,
-      "duration": 5.04
+      "start": 78.11,
+      "duration": 5.6
     },
     {
       "id": 12,
       "text": "After work, I go to the park.",
-      "start": 85.88,
-      "duration": 2.52
+      "start": 86.17,
+      "duration": 4.48
     },
     {
       "id": 13,
       "text": "I go home and cook dinner.",
-      "start": 90.16,
-      "duration": 2.24
+      "start": 90.41,
+      "duration": 4.64
     },
     {
       "id": 14,
       "text": "After dinner, I play video games.",
-      "start": 94.36,
-      "duration": 2.84
+      "start": 94.57,
+      "duration": 5.25
     },
     {
       "id": 15,
       "text": "Lastly, I go to sleep.",
-      "start": 99.28,
-      "duration": 2.16
+      "start": 99.32,
+      "duration": 7.35
     },
     {
       "id": 16,
       "text": "Learn how to give directions in the next video.",
-      "start": 105.88,
-      "duration": 3.48
+      "start": 106.35,
+      "duration": 3.79
     },
     {
       "id": 17,
       "text": "Go straight.",
-      "start": 109.48,
-      "duration": 1.92
+      "start": 109.64,
+      "duration": 2.67
     },
     {
       "id": 18,
       "text": "Now, back to the lesson!",
-      "start": 113.36,
-      "duration": 2
+      "start": 113.49,
+      "duration": 3.3
     },
     {
       "id": 19,
       "text": "I walk to work.",
-      "start": 134.2,
-      "duration": 1.96
+      "start": 134.48,
+      "duration": 4.66
     },
     {
       "id": 20,
       "text": "I listen to music.",
-      "start": 138.56,
-      "duration": 2.36
+      "start": 138.9,
+      "duration": 5.38
     },
     {
       "id": 21,
       "text": "And watch a film.",
-      "start": 149.25714285714287,
-      "duration": 1.94
+      "start": 149.22,
+      "duration": 5.52
     },
     {
       "id": 22,
       "text": "I read a book and go to sleep.",
-      "start": 158.90222222222224,
-      "duration": 4.98
+      "start": 159.44,
+      "duration": 7.62
     },
     {
       "id": 23,
       "text": "Georgie?",
       "start": 166.56,
-      "duration": 0.61
+      "duration": 2.13
     },
     {
       "id": 24,
       "text": "You there?",
-      "start": 167.78000000000003,
-      "duration": 1.22
+      "start": 168.53,
+      "duration": 1.3
     },
     {
       "id": 25,
       "text": "I get the train to work.",
-      "start": 183.6,
-      "duration": 1.84
+      "start": 183.63,
+      "duration": 4.31
     },
     {
       "id": 26,
       "text": "I read the news on the train.",
-      "start": 187.68,
-      "duration": 1.96
+      "start": 187.71,
+      "duration": 4.56
     },
     {
       "id": 27,
       "text": "I do some exercise.",
-      "start": 197.36,
-      "duration": 1.52
+      "start": 197.65,
+      "duration": 4
     },
     {
       "id": 28,
       "text": "And then, What about you?",
-      "start": 204.52,
-      "duration": 4.55
+      "start": 206.05,
+      "duration": 3.78
     },
     {
       "id": 29,
       "text": "What do you do every day?",
-      "start": 209.06666666666666,
-      "duration": 2.21
+      "start": 209.5,
+      "duration": 5.44
     },
     {
       "id": 30,
       "text": "You eat for breakfast, Tim?",
-      "start": 245.90857142857143,
-      "duration": 1.57
+      "start": 245.83,
+      "duration": 3.06
     },
     {
       "id": 31,
       "text": "I eat toast for breakfast.",
-      "start": 248.36,
-      "duration": 3.4
+      "start": 248.39,
+      "duration": 3.7
     },
     {
       "id": 32,
       "text": "What about you, Georgie?",
-      "start": 251.88,
-      "duration": 2.36
+      "start": 251.93,
+      "duration": 2.64
     },
     {
       "id": 33,
       "text": "You eat for breakfast?",
-      "start": 254.9466666666667,
-      "duration": 1.17
+      "start": 254.81,
+      "duration": 2.32
     },
     {
       "id": 34,
       "text": "I eat cereal for breakfast.",
-      "start": 256.72,
-      "duration": 2.64
+      "start": 256.81,
+      "duration": 3.36
     },
     {
       "id": 35,
       "text": "You eat for breakfast, Sian?",
-      "start": 260.48,
-      "duration": 1.4
+      "start": 260.33,
+      "duration": 2.4
     },
     {
       "id": 36,
       "text": "I eat fruit and yoghurt for breakfast.",
-      "start": 262,
-      "duration": 3.32
+      "start": 262.41,
+      "duration": 3.36
     },
     {
       "id": 37,
       "text": "You eat for breakfast, Buli?",
-      "start": 266.0571428571429,
-      "duration": 1.54
+      "start": 265.85,
+      "duration": 2.25
     },
     {
       "id": 38,
       "text": "I eat porridge for breakfast.",
-      "start": 267.72,
-      "duration": 1.96
+      "start": 267.77,
+      "duration": 3.29
     },
     {
       "id": 39,
       "text": "Write your answer in the comments.",
-      "start": 282.8,
-      "duration": 2.44
+      "start": 283.01,
+      "duration": 3.04
     },
     {
       "id": 40,
       "text": "Click this subscribe button and see you in the next video.",
-      "start": 285.36,
-      "duration": 3.84
+      "start": 285.65,
+      "duration": 4.34
     }
   ],
   "videoId": "bq6GBbh3uhU",
-  "source": "cleaned"
+  "source": "cleaned",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-30T10:06:28.071Z",
+    "dgWordCount": 371,
+    "matchedSegments": 40,
+    "totalDuration": 291.35
+  }
 }

@@ -4,244 +4,251 @@
     {
       "id": 1,
       "text": "You guys going to Gus’s party on Saturday? Yes, Steve and I will be there.",
-      "start": 15.515555555555556,
-      "duration": 5.97
+      "start": 15.62,
+      "duration": 6.4
     },
     {
       "id": 2,
       "text": "But I think we’ll be late. Do you think that’ll be ok?",
-      "start": 21.48,
-      "duration": 4.11
+      "start": 21.78,
+      "duration": 4.08
     },
     {
       "id": 3,
       "text": "I think so. He told me that most people are going to show up around 7.",
-      "start": 25.59,
-      "duration": 6.25
+      "start": 25.7,
+      "duration": 5.59
     },
     {
       "id": 4,
       "text": "Great. We’re going out for dinner with Steve’s parents at 6, so we will probably arrive just after 9.",
-      "start": 34.085,
-      "duration": 8.01
+      "start": 33.99,
+      "duration": 7.46
     },
     {
       "id": 5,
       "text": "John, are you going to Gus’s party? No, I’m going to be studying for my midterm test on Saturday.",
-      "start": 42.09,
-      "duration": 7.42
+      "start": 42.75,
+      "duration": 7.12
     },
     {
       "id": 6,
       "text": "The test is on Monday. Who will be going?",
-      "start": 49.51,
-      "duration": 3.68
+      "start": 49.71,
+      "duration": 4.34
     },
     {
       "id": 7,
       "text": "Well, I would guess that around 10 people will be there. Cool.",
-      "start": 53.19,
-      "duration": 5.06
+      "start": 53.55,
+      "duration": 5.51
     },
     {
       "id": 8,
       "text": "Will Sally be there? Yes, she’s coming.",
-      "start": 58.254,
-      "duration": 3.22
+      "start": 58.74,
+      "duration": 3.52
     },
     {
       "id": 9,
       "text": "But she’s going to bring her new boyfriend. Boyfriend?",
-      "start": 61.470000000000006,
-      "duration": 4.1
+      "start": 61.94,
+      "duration": 4.98
     },
     {
       "id": 10,
       "text": "Oh well. Anyway… Marcus, are you still going to Australia next week?",
-      "start": 65.56666666666666,
-      "duration": 6.33
+      "start": 66.42,
+      "duration": 6.27
     },
     {
       "id": 11,
       "text": "I'm flying next Thursday, and I'm going to spend the first few days in Sydney and then I'm going to rent a caravan and tour around the country.",
-      "start": 72.44000000000001,
-      "duration": 9.27
+      "start": 72.91,
+      "duration": 9.54
     },
     {
       "id": 12,
       "text": "How long are you going to be gone? I just quit my job at the bank.",
-      "start": 82.08777777777777,
-      "duration": 5.38
+      "start": 82.76,
+      "duration": 4.57
     },
     {
       "id": 13,
       "text": "So I will have plenty of time to enjoy a long vacation.",
-      "start": 87.466,
-      "duration": 3.53
+      "start": 87.09,
+      "duration": 4.16
     },
     {
       "id": 14,
       "text": "I think it's going to be an incredible trip so I will stay as long as I can.",
-      "start": 91,
-      "duration": 4.84
+      "start": 91.09,
+      "duration": 5.2
     },
     {
       "id": 15,
       "text": "What about you, John? What are you going to do after you graduate?",
-      "start": 95.83,
-      "duration": 4.28
+      "start": 96.05,
+      "duration": 4.94
     },
     {
       "id": 16,
       "text": "Maybe I'll take a vacation too. I don't know.",
-      "start": 100.11,
-      "duration": 3.84
+      "start": 100.67,
+      "duration": 3.52
     },
     {
       "id": 17,
       "text": "I'll decide then. What are you guys doing tonight?",
-      "start": 103.9575,
-      "duration": 4.56
+      "start": 103.95,
+      "duration": 5.04
     },
     {
       "id": 18,
       "text": "Since Markus is leaving next week, he and I are going to a live show at the pub downtown for a little going away party.",
-      "start": 108.52,
-      "duration": 7.69
+      "start": 108.59,
+      "duration": 8.31
     },
     {
       "id": 19,
       "text": "Want to come? Who is playing?",
-      "start": 116.22,
-      "duration": 4.23
+      "start": 116.5,
+      "duration": 4.9
     },
     {
       "id": 20,
       "text": "Japanda Banda. I think it will be an awesome show.",
-      "start": 120.45,
-      "duration": 4.64
+      "start": 120.9,
+      "duration": 5.69
     },
     {
       "id": 21,
       "text": "Sounds fun but I can't. I'm going to work on my project tonight because I'm giving a presentation at noon tomorrow and I need to be ready.",
-      "start": 125.73,
-      "duration": 10.19
+      "start": 126.12,
+      "duration": 10.32
     },
     {
       "id": 22,
       "text": "But I'll call you if I finish early. Sure!",
-      "start": 135.92,
-      "duration": 3.45
+      "start": 136.11,
+      "duration": 4.25
     },
     {
       "id": 23,
       "text": "We will be there at 7 and the show starts at 8.",
-      "start": 139.36615384615385,
-      "duration": 4.15
+      "start": 140.12,
+      "duration": 3.3
     },
     {
       "id": 24,
       "text": "John, will you come? Maybe, I'll invite her… and her boyfriend.",
-      "start": 143.52,
-      "duration": 8.71
+      "start": 145.64,
+      "duration": 6.87
     },
     {
       "id": 25,
       "text": "Oh yeah, I forgot! Ok, I will come.",
-      "start": 152.24,
-      "duration": 3.96
+      "start": 153,
+      "duration": 3.84
     },
     {
       "id": 26,
       "text": "I will be a little late because I'm going to be in class until 7.",
-      "start": 156.1957894736842,
-      "duration": 4.78
+      "start": 156.6,
+      "duration": 4.26
     },
     {
       "id": 27,
       "text": "Will you get me an extra ticket and I'll pay you back when I get there?",
-      "start": 160.98,
-      "duration": 4.57
+      "start": 161.32,
+      "duration": 5.04
     },
     {
       "id": 28,
       "text": "No problem. Ok, If everyone is going, I will go too.",
-      "start": 165.54,
-      "duration": 5.68
+      "start": 166.04,
+      "duration": 5.36
     },
     {
       "id": 29,
       "text": "I will try to finish my project as quickly as I can.",
-      "start": 171.23,
-      "duration": 4.07
+      "start": 171.24,
+      "duration": 5.14
     },
     {
       "id": 30,
       "text": "It's going to be a fun night. I will miss you, guys when I'm in Australia.",
-      "start": 175.7025,
-      "duration": 5.62
+      "start": 176.76,
+      "duration": 5.09
     },
     {
       "id": 31,
       "text": "We'll miss you too!",
-      "start": 181.32,
-      "duration": 1.41
+      "start": 181.44,
+      "duration": 1.84
     },
     {
       "id": 32,
       "text": "I'm sure it's going to be the trip of a lifetime.",
-      "start": 182.73333333333332,
-      "duration": 3.89
+      "start": 183.05,
+      "duration": 5.37
     },
     {
       "id": 33,
       "text": "Hi guys!",
-      "start": 188.4466666666667,
-      "duration": 1.47
+      "start": 188.56,
+      "duration": 2.11
     },
     {
       "id": 34,
       "text": "Sally!",
-      "start": 189.92,
-      "duration": 0.48
+      "start": 190.17,
+      "duration": 1.6
     },
     {
       "id": 35,
       "text": "We were just making plans for tonight.",
-      "start": 190.40374999999997,
-      "duration": 3.39
+      "start": 191.44,
+      "duration": 2.95
     },
     {
       "id": 36,
       "text": "We are going to a concert.",
-      "start": 193.78,
-      "duration": 2.2
+      "start": 194.15,
+      "duration": 1.92
     },
     {
       "id": 37,
       "text": "Want to join us?",
-      "start": 195.976,
-      "duration": 1.46
+      "start": 195.83,
+      "duration": 2.5
     },
     {
       "id": 38,
       "text": "I would love to.",
-      "start": 197.996,
-      "duration": 2.22
+      "start": 198.55,
+      "duration": 2.08
     },
     {
       "id": 39,
       "text": "I just broke up with my boyfriend and it will be good to get out with friends.",
-      "start": 200.22,
-      "duration": 5.5
+      "start": 200.39,
+      "duration": 6.5
     },
     {
       "id": 40,
       "text": "You going?",
-      "start": 207.175,
-      "duration": 1.46
+      "start": 207.13,
+      "duration": 3.54
     }
   ],
   "videoId": "79Yxp84s0KI",
-  "source": "cleaned"
+  "source": "cleaned",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-30T10:06:09.828Z",
+    "dgWordCount": 485,
+    "matchedSegments": 40,
+    "totalDuration": 210.67
+  }
 }
