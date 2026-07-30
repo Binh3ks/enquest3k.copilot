@@ -150,7 +150,7 @@
   "source": "cleaned",
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-30T09:07:05.047Z",
+    "alignedAt": "2026-07-30T09:44:50.422Z",
     "dgWordCount": 396,
     "matchedSegments": 24,
     "totalDuration": 435.29
