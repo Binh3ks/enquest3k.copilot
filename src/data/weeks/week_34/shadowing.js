@@ -1,5 +1,7 @@
 export default {
-  videoId: "XPZXpuoIndo",  // The Ant and the Grasshopper fable (was: Lion and the Mouse)
+  title: "The Ant and the Grasshopper",
+  videoId: "XPZXpuoIndo",
+  content_en: "A very long time ago, there was a hard-working ant who lived in a small hill. There was also a lazy grasshopper who lived under a green leaf. In the warm summer sun, the ant went to the field every single day. She gathered seeds and stored food for the coming winter. Day after day, the ant worked very hard all summer long. The grasshopper just kept playing games and danced happily in the bright warm sunshine. He kept laughing and kept singing without stopping all day. One cold day in autumn, the first frost appeared on the ground. The grasshopper felt very cold and very hungry at the same time. He came to the ant's house and asked for food to eat. The ant gave the grasshopper some food from her winter store. All winter long, the two animals shared food together in the warm shelter. The grasshopper learned an important lesson: always work hard and prepare for the future. From that day on, both the ant and the grasshopper worked hard together for the rest of the year.",
   script: [
     { id: 1, text: "A very long time ago, there was a hard-working ant who lived in a small hill.", vi: "Rất lâu trước đây, có một con kiến chăm chỉ sống trên một gò đất nhỏ." },
     { id: 2, text: "There was also a lazy grasshopper who lived under a green leaf.", vi: "Cũng có một con châu chấu lười biếng sống dưới một chiếc lá xanh." },
