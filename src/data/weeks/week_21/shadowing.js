@@ -1,5 +1,5 @@
 export default {
-  videoId: "tGWiowdjnHk",
+  videoId: "mngiqrT44Pk",
   content_en: `Detective Max found his old diary from yesterday. He opened it carefully and started to read.
 
 Dear Diary, yesterday was a **wonderfully busy day**. I **woke up early**, **brushed my teeth**, and **packed my bag**. I **walked to school** with my **friend lily**, and we **talked all the way** about our science homework. It was a **cold morning**, but we **laughed together** and did not mind.

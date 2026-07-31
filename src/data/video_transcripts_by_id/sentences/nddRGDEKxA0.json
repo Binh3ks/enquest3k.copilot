@@ -1,0 +1,183 @@
+{
+  "text": "What do you like to do? I like dancing, but I don't like dancing with a bear I like swimming, but I don't like swimming in the air I like drawing, but I don't like drawing with a spoon I like cooking, but I don't like cooking on the moon I like riding a bike, but I don't like riding a shark I like petting a soft furry dog, but I don't like petting an aardvark I like running, but I don't like running with a bee I like painting, but I don't like painting in a tree I like reading, but I don't like reading upside down I like skiing, but I don't like skiing on a merry-go-round I like playing hide 'n seek, but I don't like playing hide 'n sleep I like singing with all my friends, but I don't like singing with a sheep Baaa What do you like to do? Baaa",
+  "segments": [
+    {
+      "id": 1,
+      "text": "What do you like to do?",
+      "start": 8.96,
+      "duration": 5.87
+    },
+    {
+      "id": 2,
+      "text": "I like dancing,",
+      "start": 14.33,
+      "duration": 4.48
+    },
+    {
+      "id": 3,
+      "text": "but I don't like dancing with a bear",
+      "start": 18.4,
+      "duration": 4.41
+    },
+    {
+      "id": 4,
+      "text": "I like swimming,",
+      "start": 22.4,
+      "duration": 3.29
+    },
+    {
+      "id": 5,
+      "text": "but I don't like swimming in the air",
+      "start": 25.45,
+      "duration": 4.27
+    },
+    {
+      "id": 6,
+      "text": "I like drawing,",
+      "start": 29.48,
+      "duration": 3.2
+    },
+    {
+      "id": 7,
+      "text": "but I don't like drawing with a spoon",
+      "start": 32.44,
+      "duration": 4.32
+    },
+    {
+      "id": 8,
+      "text": "I like cooking,",
+      "start": 36.44,
+      "duration": 3.21
+    },
+    {
+      "id": 9,
+      "text": "but I don't like cooking on the moon",
+      "start": 39.41,
+      "duration": 4.4
+    },
+    {
+      "id": 10,
+      "text": "I like riding a bike,",
+      "start": 43.33,
+      "duration": 3.28
+    },
+    {
+      "id": 11,
+      "text": "but I don't like riding a shark",
+      "start": 46.29,
+      "duration": 4.32
+    },
+    {
+      "id": 12,
+      "text": "I like petting a soft furry dog,",
+      "start": 50.29,
+      "duration": 3.28
+    },
+    {
+      "id": 13,
+      "text": "but I don't like petting an aardvark",
+      "start": 53.33,
+      "duration": 4.24
+    },
+    {
+      "id": 14,
+      "text": "I like running,",
+      "start": 57.25,
+      "duration": 3.28
+    },
+    {
+      "id": 15,
+      "text": "but I don't like running with a bee",
+      "start": 60.29,
+      "duration": 4.24
+    },
+    {
+      "id": 16,
+      "text": "I like painting,",
+      "start": 64.29,
+      "duration": 3.23
+    },
+    {
+      "id": 17,
+      "text": "but I don't like painting in a tree",
+      "start": 67.19,
+      "duration": 4.33
+    },
+    {
+      "id": 18,
+      "text": "I like reading,",
+      "start": 71.19,
+      "duration": 3.21
+    },
+    {
+      "id": 19,
+      "text": "but I don't like reading upside down",
+      "start": 74.16,
+      "duration": 4.31
+    },
+    {
+      "id": 20,
+      "text": "I like skiing,",
+      "start": 78.16,
+      "duration": 3.23
+    },
+    {
+      "id": 21,
+      "text": "but I don't like skiing on a merry-go-round",
+      "start": 81.15,
+      "duration": 6
+    },
+    {
+      "id": 22,
+      "text": "I like playing hide 'n seek,",
+      "start": 86.83,
+      "duration": 3.2
+    },
+    {
+      "id": 23,
+      "text": "but I don't like playing hide 'n sleep",
+      "start": 89.79,
+      "duration": 4.36
+    },
+    {
+      "id": 24,
+      "text": "I like singing with all my friends,",
+      "start": 93.83,
+      "duration": 3.2
+    },
+    {
+      "id": 25,
+      "text": "but I don't like singing with a sheep",
+      "start": 96.71,
+      "duration": 4.88
+    },
+    {
+      "id": 26,
+      "text": "Baaa",
+      "start": 101.1,
+      "duration": 1.29
+    },
+    {
+      "id": 27,
+      "text": "What do you like to do?",
+      "start": 101.99,
+      "duration": 2.58
+    },
+    {
+      "id": 28,
+      "text": "Baaa",
+      "start": 104.07,
+      "duration": 0.5
+    }
+  ],
+  "videoId": "nddRGDEKxA0",
+  "fetchedAt": "2026-07-31T12:13:51.182Z",
+  "source": "youtube-transcript-api",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-31T12:17:55.277Z",
+    "dgWordCount": 154,
+    "matchedSegments": 28,
+    "totalDuration": 104.57
+  }
+}

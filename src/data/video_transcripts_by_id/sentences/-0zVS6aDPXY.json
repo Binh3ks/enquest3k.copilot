@@ -1,0 +1,189 @@
+{
+  "text": "Billy was working as a paper boy delivering newspapers the number of houses he delivered the papers to Rose rapidly but every time he withdrew his money from the cash point he saw that his pay was still the same so he quit his job he swore never to be a paper boy again he found another job but he left that job too he swore never to do deliveries again what has just happened the number of houses Billy has delivered newspapers to has risen rapidly but whenever he has withdrawn money from the cash point he has seen that his pay has been the same so he has quit his job he has found another job but he has left that job too he has sworn never to do deliveries again foreign thanks for watching and I hope you learned some irregular verbs today and see you in the next video bye for now",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Billy was working as a paper boy",
+      "start": 11.92,
+      "duration": 3.49
+    },
+    {
+      "id": 2,
+      "text": "delivering newspapers",
+      "start": 15.04,
+      "duration": 14.79
+    },
+    {
+      "id": 3,
+      "text": "the number of houses he delivered the",
+      "start": 48.11,
+      "duration": 4.18
+    },
+    {
+      "id": 4,
+      "text": "papers to Rose rapidly",
+      "start": 68.83,
+      "duration": 2.66
+    },
+    {
+      "id": 5,
+      "text": "but every time he withdrew his money",
+      "start": 70.99,
+      "duration": 3.31
+    },
+    {
+      "id": 6,
+      "text": "from the cash point",
+      "start": 74.14,
+      "duration": 2.24
+    },
+    {
+      "id": 7,
+      "text": "he saw that his pay was still the same",
+      "start": 76.38,
+      "duration": 5.22
+    },
+    {
+      "id": 8,
+      "text": "so he quit his job he swore never to be",
+      "start": 82.06,
+      "duration": 5.72
+    },
+    {
+      "id": 9,
+      "text": "a paper boy again",
+      "start": 93.46,
+      "duration": 9.38
+    },
+    {
+      "id": 10,
+      "text": "he found another job",
+      "start": 107.48,
+      "duration": 1.51
+    },
+    {
+      "id": 11,
+      "text": "but he left that job too he swore never",
+      "start": 108.6,
+      "duration": 2.42
+    },
+    {
+      "id": 12,
+      "text": "to do deliveries again",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 13,
+      "text": "what has just happened",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 14,
+      "text": "the number of houses Billy has delivered",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 15,
+      "text": "newspapers to has risen rapidly",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 16,
+      "text": "but",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 17,
+      "text": "whenever he has withdrawn money from the",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 18,
+      "text": "cash point",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 19,
+      "text": "he has seen that his pay has been the",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 20,
+      "text": "same so he has quit his job he has found",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 21,
+      "text": "another job",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 22,
+      "text": "but he has left that job too",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 23,
+      "text": "he has sworn never to do deliveries",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 24,
+      "text": "again",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 25,
+      "text": "foreign",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 26,
+      "text": "thanks for watching and I hope you",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 27,
+      "text": "learned some irregular verbs today and",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 28,
+      "text": "see you in the next video",
+      "start": 110.52,
+      "duration": 0.5
+    },
+    {
+      "id": 29,
+      "text": "bye for now",
+      "start": 110.52,
+      "duration": 0.5
+    }
+  ],
+  "videoId": "-0zVS6aDPXY",
+  "fetchedAt": "2026-07-31T12:15:12.906Z",
+  "source": "youtube-transcript-api",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-31T12:21:21.640Z",
+    "dgWordCount": 141,
+    "matchedSegments": 29,
+    "totalDuration": 111.02
+  }
+}

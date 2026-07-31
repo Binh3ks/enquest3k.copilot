@@ -1,183 +1,189 @@
 {
-  "text": "Town. This is my town. Let’s look around. The first block is here. Here are a hospital and a bank. Hospital. Bank. The second block is here. Here are a post office and a fire station. Post office. Fire station. The third block is here. Here are a school, a library, a museum and a park. School. Library. Museum. Park. The fourth block is here. Here are a police office and a supermarket. Police office. Supermarket. The fifth block is here. Here are a bus stop, a theater, a bakery and a restaurant. Bus stop. Theater. Bakery. Restaurant. Isn’t it wonderful? Come and see me!",
+  "text": "Town This is my town. Let’s look around. The first block is here. Here are a hospital and a bank. hospital bank The second block is here. Here are a post office and a fire station. post office fire station The third block is here. Here are a school, a library, a museum and a park. school library museum park The fourth block is here. Here are a police office and a supermarket. police office supermarket The fifth block is here. Here are a bus stop, a theater, a bakery and a restaurant. bus stop theater bakery restaurant Isn’t it wonderful? Come and see me!",
   "segments": [
     {
       "id": 1,
-      "text": "Town.",
-      "start": 8.34,
-      "duration": 0.5
+      "text": "Town",
+      "start": 13.76,
+      "duration": 2.18
     },
     {
       "id": 2,
       "text": "This is my town.",
-      "start": 13.06,
-      "duration": 0.87
+      "start": 29.63,
+      "duration": 1.12
     },
     {
       "id": 3,
       "text": "Let’s look around.",
-      "start": 15.4,
-      "duration": 0.59
+      "start": 47.48,
+      "duration": 1.86
     },
     {
       "id": 4,
       "text": "The first block is here.",
-      "start": 17.4,
-      "duration": 1.25
+      "start": 76.44,
+      "duration": 3.92
     },
     {
       "id": 5,
       "text": "Here are a hospital and a bank.",
-      "start": 20.62,
-      "duration": 2.19
+      "start": 80.05,
+      "duration": 3.49
     },
     {
       "id": 6,
-      "text": "Hospital.",
-      "start": 24.4,
-      "duration": 0.5
+      "text": "hospital",
+      "start": 86.82,
+      "duration": 2.58
     },
     {
       "id": 7,
-      "text": "Bank.",
-      "start": 26.5,
-      "duration": 0.5
+      "text": "bank",
+      "start": 107.99,
+      "duration": 4.42
     },
     {
       "id": 8,
       "text": "The second block is here.",
-      "start": 29.26,
-      "duration": 1.24
+      "start": 126.25,
+      "duration": 8.29
     },
     {
       "id": 9,
       "text": "Here are a post office and a fire station.",
-      "start": 33.02,
-      "duration": 3
+      "start": 134.04,
+      "duration": 18.32
     },
     {
       "id": 10,
-      "text": "Post office.",
-      "start": 37.44,
+      "text": "post office",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 11,
-      "text": "Fire station.",
-      "start": 39.66,
+      "text": "fire station",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 12,
       "text": "The third block is here.",
-      "start": 42.8,
-      "duration": 1.28
+      "start": 151.86,
+      "duration": 0.5
     },
     {
       "id": 13,
       "text": "Here are a school, a library, a museum and a park.",
-      "start": 46.56,
-      "duration": 4.45
+      "start": 151.86,
+      "duration": 0.5
     },
     {
       "id": 14,
-      "text": "School.",
-      "start": 53.4,
+      "text": "school",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 15,
-      "text": "Library.",
-      "start": 55.6,
+      "text": "library",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 16,
-      "text": "Museum.",
-      "start": 57.4,
+      "text": "museum",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 17,
-      "text": "Park.",
-      "start": 59.6,
+      "text": "park",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 18,
       "text": "The fourth block is here.",
-      "start": 62.32,
-      "duration": 1.1
+      "start": 151.86,
+      "duration": 0.5
     },
     {
       "id": 19,
       "text": "Here are a police office and a supermarket.",
-      "start": 65.92,
-      "duration": 2.79
+      "start": 151.86,
+      "duration": 0.5
     },
     {
       "id": 20,
-      "text": "Police office.",
-      "start": 70.62,
+      "text": "police office",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 21,
-      "text": "Supermarket.",
-      "start": 73.2,
+      "text": "supermarket",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 22,
       "text": "The fifth block is here.",
-      "start": 76.36,
-      "duration": 1.36
+      "start": 151.86,
+      "duration": 0.5
     },
     {
       "id": 23,
       "text": "Here are a bus stop, a theater, a bakery and a restaurant.",
-      "start": 80,
-      "duration": 4.48
+      "start": 151.86,
+      "duration": 0.5
     },
     {
       "id": 24,
-      "text": "Bus stop.",
-      "start": 86.28,
+      "text": "bus stop",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 25,
-      "text": "Theater.",
-      "start": 88.6,
+      "text": "theater",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 26,
-      "text": "Bakery.",
-      "start": 90.44,
+      "text": "bakery",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 27,
-      "text": "Restaurant.",
-      "start": 92.62,
+      "text": "restaurant",
+      "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 28,
       "text": "Isn’t it wonderful?",
-      "start": 95.3,
-      "duration": 0.51
+      "start": 151.86,
+      "duration": 0.5
     },
     {
       "id": 29,
       "text": "Come and see me!",
-      "start": 97.08,
-      "duration": 0.96
+      "start": 151.86,
+      "duration": 0.5
     }
   ],
-  "fetchedAt": "2026-07-01T07:33:04.787Z",
   "videoId": "EfD2k9beP-4",
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:03:14.071Z"
+  "fetchedAt": "2026-07-31T12:14:06.449Z",
+  "source": "youtube-transcript-api",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-31T12:18:30.377Z",
+    "dgWordCount": 127,
+    "matchedSegments": 29,
+    "totalDuration": 152.36
+  }
 }
