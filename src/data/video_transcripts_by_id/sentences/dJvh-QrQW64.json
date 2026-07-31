@@ -1,0 +1,183 @@
+{
+  "text": "Hello, Mr. Rashid. Hi, how are you? Fine, thank you. How was your vacation? It was wonderful. I'm so happy to hear that. Was your flight okay? No, pretty bad actually. It was so bumpy. It was very scary. That's too bad. Did you have nice weather after you arrived? No, the weather was terrible. Very rainy. I actually never saw the sun. That's awful. So what did you do? I stayed inside the hotel. Was the hotel room nice? The room was fine, but it was right next to the cafe and the music was very loud. I didn't sleep much. I'll bet the food was great. No, it was too salty for me and the waiters were very unfriendly. Did you go shopping at all? A little bit, until someone stole my wallet. After that, I stayed in the hotel and read a book. Was the flight home okay? Actually, they cancelled my flight. I had to stay for two more days. That's terrible! But Mr. Rashid, you said that your vacation was wonderful? Ah yes, I did. And it was wonderful. I met a very nice person. A woman, actually. Her name is Basmar. She's from Lebanon, just like me. But she lives here. I'm seeing her tonight. So yes, it was a wonderful vacation. That's great, Mr. Rashid!",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Hello, Mr. Rashid.",
+      "start": 9.04,
+      "duration": 2.24
+    },
+    {
+      "id": 2,
+      "text": "Hi, how are you?",
+      "start": 10.88,
+      "duration": 1.52
+    },
+    {
+      "id": 3,
+      "text": "Fine, thank you. How was your vacation?",
+      "start": 12,
+      "duration": 2.39
+    },
+    {
+      "id": 4,
+      "text": "It was wonderful.",
+      "start": 14.14,
+      "duration": 1.21
+    },
+    {
+      "id": 5,
+      "text": "I'm so happy to hear that. Was your flight okay?",
+      "start": 15.18,
+      "duration": 3.37
+    },
+    {
+      "id": 6,
+      "text": "No, pretty bad actually. It was so bumpy. It was very scary.",
+      "start": 18.15,
+      "duration": 4.72
+    },
+    {
+      "id": 7,
+      "text": "That's too bad.",
+      "start": 22.55,
+      "duration": 1.83
+    },
+    {
+      "id": 8,
+      "text": "Did you have nice weather after you arrived?",
+      "start": 24.06,
+      "duration": 2.99
+    },
+    {
+      "id": 9,
+      "text": "No, the weather was terrible. Very rainy. I actually never saw the sun.",
+      "start": 26.55,
+      "duration": 5.98
+    },
+    {
+      "id": 10,
+      "text": "That's awful.",
+      "start": 32.03,
+      "duration": 1.92
+    },
+    {
+      "id": 11,
+      "text": "So what did you do?",
+      "start": 33.79,
+      "duration": 1.44
+    },
+    {
+      "id": 12,
+      "text": "I stayed inside the hotel.",
+      "start": 35.07,
+      "duration": 2.16
+    },
+    {
+      "id": 13,
+      "text": "Was the hotel room nice?",
+      "start": 36.99,
+      "duration": 2.16
+    },
+    {
+      "id": 14,
+      "text": "The room was fine, but it was right next to the cafe and the music was very loud.",
+      "start": 38.91,
+      "duration": 5.04
+    },
+    {
+      "id": 15,
+      "text": "I didn't sleep much.",
+      "start": 43.79,
+      "duration": 2.25
+    },
+    {
+      "id": 16,
+      "text": "I'll bet the food was great.",
+      "start": 45.8,
+      "duration": 2.4
+    },
+    {
+      "id": 17,
+      "text": "No, it was too salty for me and the waiters were very unfriendly.",
+      "start": 47.72,
+      "duration": 4.71
+    },
+    {
+      "id": 18,
+      "text": "Did you go shopping at all?",
+      "start": 52.2,
+      "duration": 2.08
+    },
+    {
+      "id": 19,
+      "text": "A little bit, until someone stole my wallet.",
+      "start": 54.04,
+      "duration": 3.2
+    },
+    {
+      "id": 20,
+      "text": "After that, I stayed in the hotel and read a book.",
+      "start": 56.84,
+      "duration": 3.72
+    },
+    {
+      "id": 21,
+      "text": "Was the flight home okay?",
+      "start": 60.16,
+      "duration": 2.58
+    },
+    {
+      "id": 22,
+      "text": "Actually, they cancelled my flight. I had to stay for two more days.",
+      "start": 62.24,
+      "duration": 5.46
+    },
+    {
+      "id": 23,
+      "text": "That's terrible! But Mr. Rashid, you said that your vacation was wonderful?",
+      "start": 67.2,
+      "duration": 7.38
+    },
+    {
+      "id": 24,
+      "text": "Ah yes, I did. And it was wonderful.",
+      "start": 74.27,
+      "duration": 2.72
+    },
+    {
+      "id": 25,
+      "text": "I met a very nice person. A woman, actually. Her name is Basmar.",
+      "start": 76.75,
+      "duration": 4.32
+    },
+    {
+      "id": 26,
+      "text": "She's from Lebanon, just like me. But she lives here.",
+      "start": 80.75,
+      "duration": 3.82
+    },
+    {
+      "id": 27,
+      "text": "I'm seeing her tonight. So yes, it was a wonderful vacation.",
+      "start": 84.33,
+      "duration": 4.64
+    },
+    {
+      "id": 28,
+      "text": "That's great, Mr. Rashid!",
+      "start": 88.65,
+      "duration": 1.7
+    }
+  ],
+  "videoId": "dJvh-QrQW64",
+  "fetchedAt": "2026-07-31T11:56:04.496Z",
+  "source": "youtube-transcript-api",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-31T11:58:47.811Z",
+    "dgWordCount": 221,
+    "matchedSegments": 28,
+    "totalDuration": 90.35
+  }
+}
