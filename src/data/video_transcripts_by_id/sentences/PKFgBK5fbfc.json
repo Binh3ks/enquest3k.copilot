@@ -1,0 +1,117 @@
+{
+  "text": "I am going to have a picnic! Where is my hat? It is under the chair! Where are my glasses? They are on the desk! Where is my jacket? It is in the closet! Where are my socks? They are behind the ball! Where is my bag? It is in front of the computer! Where is my sketchbook? It is between the dolls! Where are my colored pencils? They are beside the book! I found everything! Let us go have our picnic!",
+  "segments": [
+    {
+      "id": 1,
+      "text": "I am going to have a picnic!",
+      "start": 11.04,
+      "duration": 4.28
+    },
+    {
+      "id": 2,
+      "text": "Where is my hat?",
+      "start": 15,
+      "duration": 5.22
+    },
+    {
+      "id": 3,
+      "text": "It is under the chair!",
+      "start": 19.72,
+      "duration": 4.57
+    },
+    {
+      "id": 4,
+      "text": "Where are my glasses?",
+      "start": 27.47,
+      "duration": 4.35
+    },
+    {
+      "id": 5,
+      "text": "They are on the desk!",
+      "start": 31.5,
+      "duration": 4.18
+    },
+    {
+      "id": 6,
+      "text": "Where is my jacket?",
+      "start": 39.1,
+      "duration": 4.56
+    },
+    {
+      "id": 7,
+      "text": "It is in the closet!",
+      "start": 43.26,
+      "duration": 4.4
+    },
+    {
+      "id": 8,
+      "text": "Where are my socks?",
+      "start": 50.61,
+      "duration": 3.84
+    },
+    {
+      "id": 9,
+      "text": "They are behind the ball!",
+      "start": 54.05,
+      "duration": 4.97
+    },
+    {
+      "id": 10,
+      "text": "Where is my bag?",
+      "start": 62.12,
+      "duration": 3.78
+    },
+    {
+      "id": 11,
+      "text": "It is in front of the computer!",
+      "start": 65.4,
+      "duration": 4.96
+    },
+    {
+      "id": 12,
+      "text": "Where is my sketchbook?",
+      "start": 73.1,
+      "duration": 3.78
+    },
+    {
+      "id": 13,
+      "text": "It is between the dolls!",
+      "start": 76.38,
+      "duration": 4.59
+    },
+    {
+      "id": 14,
+      "text": "Where are my colored pencils?",
+      "start": 83.51,
+      "duration": 4.79
+    },
+    {
+      "id": 15,
+      "text": "They are beside the book!",
+      "start": 88.14,
+      "duration": 4.1
+    },
+    {
+      "id": 16,
+      "text": "I found everything!",
+      "start": 95.1,
+      "duration": 3.44
+    },
+    {
+      "id": 17,
+      "text": "Let us go have our picnic!",
+      "start": 98.14,
+      "duration": 6.65
+    }
+  ],
+  "fetchedAt": "2026-07-31T08:58:41.105Z",
+  "videoId": "PKFgBK5fbfc",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-31T09:06:35.437Z",
+    "dgWordCount": 102,
+    "matchedSegments": 17,
+    "totalDuration": 129.38
+  },
+  "source": "PKFgBK5fbfc"
+}
