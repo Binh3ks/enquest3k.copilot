@@ -117,3 +117,125 @@ cat .ai/knowledge/LESSONS.md  # → same file
 **Future enhancement** (TODO): thêm headless browser test (Playwright) vào hook để catch runtime errors trước khi commit.
 
 **Related**: commit `0e2c3a5a`, `useShadowingChallenge.js:180-244,665-672`, `Shadowing.jsx:799,668-677`.
+
+---
+
+## Lesson-008 — 2026-07-31: NEVER convert .claude/commands to .cjs
+
+**Rule**: DO NOT modify file extensions in `.claude/commands` or `.claude/skills`. They MUST remain `.md`. NEVER convert Claude Code native command files to `.cjs` or any other JavaScript module format.
+
+**Why**: Claude Code parser expects `.md` files with `# Custom Command: /name` header for commands, and `---` frontmatter with `name:` + `description:` for skills. Converting to `.cjs` with `module.exports` breaks the parser — commands become invisible.
+
+**How to apply**:
+- Commands: `.claude/commands/*.md` with `# Custom Command: /name` format
+- Skills: `.claude/skills/*/SKILL.md` with `---` frontmatter (name, description)
+- NEVER use `module.exports`, `exports.default`, or any JS module syntax
+- If you need JS logic, use a hook or script, not the command file itself
+
+**Related**: commit `13945b77` (converted .md → .cjs, broke commands), commit restoring .md format.
+
+---
+
+## Lesson-009 — 2026-07-31: NO TRUNCATION in mass production
+
+**Rule**: When generating or modifying content for mass production, generate the full content line-by-line. Never summarize or truncate outputs.
+
+**Why**: Truncated content breaks the app — incomplete JSON, missing fields, partial sentences. Users see broken UI or missing content.
+
+**How to apply**:
+- Generate complete file contents, not summaries
+- For JSON: include all fields, even if repetitive
+- For text content: write full sentences, not "..."
+- If content is too long for one response, split into multiple complete chunks
+
+---
+
+## Lesson-010 — 2026-07-23: Transcript pipeline must version-schema lock
+
+**Rule**: Khi thay đổi transcript processing pipeline, PHẢI freeze schema + rules trước khi batch processing.
+
+**Why**: Pipeline经历了 v1→v4 trong 2 tuần (Jul 9–23). Mỗi version thay đổi output format (segment count, word cap, merge logic). Không lock → batch output bị drift giữa các tuần.
+
+**How to apply**:
+- Freeze schema: commit `freeze(w11): lock pipeline schema + rules`
+- Document rules trong commit message (ví dụ: "15-word cap + forced clause splitting")
+- Chạy audit script trước khi batch: `Rule 4 audit passes 35/35`
+- Không thay đổi pipeline rules giữa batch run
+
+**Related**: commit `82ab2c9e`, `scripts/sync_timestamps.cjs`
+
+---
+
+## Lesson-011 — 2026-07-22: ADV/EASY split causes data drift
+
+**Rule**: Shadowing data PHẢI dùng unified structure, KHÔNG split ADV/EASY riêng.
+
+**Why**: W11 có 2 file shadowing (ADV/EASY) với timestamp khác nhau, dẫn đến karaoke desync. Khi merge transcript, ADV có 82 utterances nhưng EASY chỉ có 29 sentences — mismatched.
+
+**How to apply**:
+- Sử dụng 1 file shadowing per week (unified)
+- Nếu cần different scripts: dùng `mode` field, không tách file
+- Audit: `grep -c "ADV\|EASY" src/data/weeks/*/shadowing.js` → expect 0
+
+**Related**: commit `22d47e2a` (eradicate ADV/EASY split)
+
+---
+
+## Lesson-012 — 2026-07-10: Revert khi highlight changes break stable behavior
+
+**Rule**: Khi thay đổi karaoke/highlight logic, PHẢI test trên cả W4 (oldest) và W11 (newest). Nếu W4 break → revert ngay.
+
+**Why**: Thay đổi highlight timing trong commit `c152792a` broke W4 stable behavior. W4 dùng TTS-based timing, W11 dùng video-based timing — 2 hệ thống khác nhau.
+
+**How to apply**:
+- Test highlight trên W4 (TTS-based) TRƯỚC khi apply cho all weeks
+- Nếu W4 break → revert + fix root cause, không patch
+- Giữ backup transcriptUtils + transcriptAligner từ V18
+
+**Related**: commit `revert: restore transcriptUtils + transcriptAligner from V18 backup`
+
+---
+
+## Lesson-013 — 2026-07-09: Image pipeline cần audit tool trước batch
+
+**Rule**: Image generation pipeline PHẢI có audit tool để identify regen candidates TRƯỚC khi batch generate.
+
+**Why**: W32 có 7 images bị bad quality (blurry, wrong content). Không có audit → không biết images nào cần regenerate.
+
+**How to apply**:
+- Tạo `audit.mjs` trước khi batch: `node tools/image_pipeline/audit.mjs --week 32`
+- Audit check: file size, dimensions, format
+- Regenerate chỉ những images fail audit
+- Verified: `feat: W30-W31 covers uploaded to R2 + source URLs updated`
+
+**Related**: commit `fix(images): regenerate 7 bad W32 images using vetted reference prompts`
+
+---
+
+## Lesson-014 — 2026-07-30: JSON literal \n causes build failure
+
+**Rule**: JSON files KHÔNG được chứa literal `\n` trong strings — PHẢI dùng actual newline character.
+
+**Why**: `fix: literal \n in JSON files causing build failure` — JSON parser interpret `\n` as newline nhưng Vite build fail khi遇到 literal backslash-n trong content strings.
+
+**How to apply**:
+- Check JSON files: `grep -r '\\n' src/data/weeks/*/` → should find 0
+- Nếu có literal `\n`: dùng `JSON.stringify()` hoặc edit trực tiếp
+- Validation script: thêm check vào `bug_prevention_check.sh`
+
+**Related**: commit `eac9692a`
+
+---
+
+## Lesson-015 — 2026-07-31: Memory system cần auto-update, không manual
+
+**Rule**: Memory update PHẢI tự động sau mỗi commit/push, KHÔNG được manual.
+
+**Why**: Hệ thống memory bị skip cả tháng (Jul 6–31) vì không có auto-update. 161 commits không được ghi nhận → next agent không có context.
+
+**How to apply**:
+- Post-commit hook: `.git/hooks/post-commit` → `node scripts/update_memory.js`
+- Manual fallback: `node scripts/update_memory.js` sau push
+- Không phụ thuộc vào `/agent-finish` command — automation phải独立 với agent workflow
+
+**Related**: commit `eac9692a`, `scripts/update_memory.js`
