@@ -96,6 +96,8 @@ function findBestSpan(sentence, dgWords, searchStart) {
     }
   }
   if (best.startIdx >= dgWords.length) return null;
+  // Ensure endIdx is within bounds
+  best.endIdx = Math.min(best.endIdx, dgWords.length - 1);
   return best;
 }
 

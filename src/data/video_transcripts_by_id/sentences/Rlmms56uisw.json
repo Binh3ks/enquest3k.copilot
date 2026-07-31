@@ -1,0 +1,90 @@
+{
+  "text": "Last summer, my family and I went on a submarine adventure. We dove down 300 metres into the deep ocean. We saw magnificent coral reefs. Then we found something unexpected — an underwater cave! Our guide said it was called The Cave of Lost Ships. We rode into the dark cave. We saw old objects from ancient ships. The best find took our breath — a gold compass from the 1500s! It came from a Portuguese explorer. We gave all our findings to the museum. When we came back to the surface, we knew we had made an important discovery. We began to plan our next exciting dive.",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Last summer, my family and I went on a submarine adventure.",
+      "start": 0.32,
+      "duration": 11.76
+    },
+    {
+      "id": 2,
+      "text": "We dove down 300 metres into the deep ocean.",
+      "start": 22.86,
+      "duration": 8.03
+    },
+    {
+      "id": 3,
+      "text": "We saw magnificent coral reefs.",
+      "start": 30.73,
+      "duration": 1.68
+    },
+    {
+      "id": 4,
+      "text": "Then we found something unexpected — an underwater cave!",
+      "start": 63.19,
+      "duration": 6.08
+    },
+    {
+      "id": 5,
+      "text": "Our guide said it was called The Cave of Lost Ships.",
+      "start": 76.66,
+      "duration": 7.19
+    },
+    {
+      "id": 6,
+      "text": "We rode into the dark cave.",
+      "start": 83.53,
+      "duration": 8.33
+    },
+    {
+      "id": 7,
+      "text": "We saw old objects from ancient ships.",
+      "start": 112.07,
+      "duration": 6.47
+    },
+    {
+      "id": 8,
+      "text": "The best find took our breath — a gold compass from the 1500s!",
+      "start": 148.45,
+      "duration": 8.02
+    },
+    {
+      "id": 9,
+      "text": "It came from a Portuguese explorer.",
+      "start": 156.31,
+      "duration": 3.68
+    },
+    {
+      "id": 10,
+      "text": "We gave all our findings to the museum.",
+      "start": 167.76,
+      "duration": 7.6
+    },
+    {
+      "id": 11,
+      "text": "When we came back to the surface, we knew we had made an important discovery.",
+      "start": 176.24,
+      "duration": 10.79
+    },
+    {
+      "id": 12,
+      "text": "We began to plan our next exciting dive.",
+      "start": 186.53,
+      "duration": 0.5
+    }
+  ],
+  "fetchedAt": "2026-07-31T07:13:24.653Z",
+  "videoId": "Rlmms56uisw",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-07-31T07:18:48.658Z",
+    "dgWordCount": 206,
+    "matchedSegments": 12,
+    "totalDuration": 187.03
+  },
+  "repairedAt": "2026-07-31T07:13:24.654Z",
+  "repairInfo": "Created from W36 shadowing.js + Deepgram alignment",
+  "formatted": true,
+  "formattedAt": "2026-07-31T07:15:28.809Z"
+}
