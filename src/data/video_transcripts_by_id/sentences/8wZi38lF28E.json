@@ -1,89 +1,119 @@
 {
-  "text": "English sing sing. What's your favorite subject? What class is next? Math. I like math class. I don't like math. What's your favorite subject? My favorite subject is PE. I like playing sports. I like basketball. I play basketball every day. I like basketball too, but I can't play very well. Don't worry. I can help you. Really? How about playing basketball after school? That's a good idea. That was a great time. Thank you, Jinsoo. You're welcome. Listen. What class is next? Math. I like math class. I don't like math. What's your favorite subject? My favorite subject is PE. I like playing sports. I like basketball. I play basketball every day. I like basketball too, but I can't play very well. Don't worry. I can help you. Really? How about playing basketball after school? That's a good idea. That was a great time. Thank you, Jin Soo. You're welcome. Speak aloud. Your turn.",
+  "text": "What's your favorite subject? What class is next? Math. I like Math class. Emm... I don't like Math. What's your favorite subject? My favorite subject is P.E. I like playing sports. I like basketball. I play basketball every day. I like basketball too, but I can't play very well. Don't worry. I can help you. Really? How about playing basketball after school? That's a good idea. That was a great time. Thank you, jinsu. You're welcome.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.68,
-      "duration": 0.5
+      "text": "What's your favorite subject?",
+      "start": 1.84,
+      "duration": 7.28
     },
     {
       "id": 2,
-      "text": "What's your favorite subject?",
-      "start": 5.92,
-      "duration": 0.72
+      "text": "What class is next?",
+      "start": 9.12,
+      "duration": 6.05
     },
     {
       "id": 3,
-      "text": "What class is next?",
-      "start": 12.26,
-      "duration": 0.58
+      "text": "Math.",
+      "start": 15.17,
+      "duration": 0.95
     },
     {
       "id": 4,
-      "text": "Math.",
-      "start": 16.02,
-      "duration": 0.5
+      "text": "I like Math class.",
+      "start": 16.12,
+      "duration": 4.2
     },
     {
       "id": 5,
-      "text": "I like math class.",
-      "start": 16.82,
-      "duration": 0.68
+      "text": "Emm... I don't like Math.",
+      "start": 20.32,
+      "duration": 5.04
     },
     {
       "id": 6,
-      "text": "I don't like math.",
-      "start": 21.3,
-      "duration": 0.59
+      "text": "What's your favorite subject?",
+      "start": 25.36,
+      "duration": 2.27
     },
     {
       "id": 7,
-      "text": "What's your favorite subject?",
-      "start": 23.7,
-      "duration": 0.75
+      "text": "My favorite subject is P.E.",
+      "start": 27.63,
+      "duration": 3.35
     },
     {
       "id": 8,
-      "text": "My favorite subject is PE.",
-      "start": 27.07,
-      "duration": 0.99
+      "text": "I like playing sports.",
+      "start": 30.98,
+      "duration": 4.75
     },
     {
       "id": 9,
-      "text": "I like playing sports.",
-      "start": 30.19,
-      "duration": 0.5
+      "text": "I like basketball.",
+      "start": 35.73,
+      "duration": 2.56
     },
     {
       "id": 10,
-      "text": "I like basketball.",
-      "start": 32.43,
-      "duration": 0.5
+      "text": "I play basketball every day.",
+      "start": 38.29,
+      "duration": 2.6
     },
     {
       "id": 11,
-      "text": "I play basketball every day.",
-      "start": 34.35,
-      "duration": 1.04
+      "text": "I like basketball too, but I can't play very well.",
+      "start": 40.89,
+      "duration": 8.79
     },
     {
       "id": 12,
-      "text": "I like basketball too, but I can't play very well.",
-      "start": 37.47,
-      "duration": 3.04
+      "text": "Don't worry.",
+      "start": 49.68,
+      "duration": 1.38
     },
     {
       "id": 13,
-      "text": "Don't worry.",
-      "start": 42.73,
-      "duration": 0.5
+      "text": "I can help you.",
+      "start": 51.06,
+      "duration": 3.78
     },
     {
       "id": 14,
-      "text": "I can help you.",
-      "start": 44.01,
-      "duration": 0.5
+      "text": "Really?",
+      "start": 54.84,
+      "duration": 12.9
+    },
+    {
+      "id": 15,
+      "text": "How about playing basketball after school?",
+      "start": 67.74,
+      "duration": 4.82
+    },
+    {
+      "id": 16,
+      "text": "That's a good idea.",
+      "start": 72.56,
+      "duration": 15.64
+    },
+    {
+      "id": 17,
+      "text": "That was a great time.",
+      "start": 88.2,
+      "duration": 2.64
+    },
+    {
+      "id": 18,
+      "text": "Thank you, jinsu.",
+      "start": 90.84,
+      "duration": 5.24
+    },
+    {
+      "id": 19,
+      "text": "You're welcome.",
+      "start": 96.08,
+      "duration": 2.8
     }
   ],
   "fetchedAt": "2026-07-23T06:23:25.082096+00:00",
@@ -111,5 +141,7 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T16:02:37.251Z"
+  "formattedAt": "2026-07-30T16:02:37.251Z",
+  "fixedAt": "2026-07-31T09:31:15.964Z",
+  "fixedReason": "Remove intro"
 }

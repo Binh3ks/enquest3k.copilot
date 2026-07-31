@@ -1,104 +1,80 @@
 {
-  "text": "English sing sing. Theme four. Weather. Dialogue. Let's play outside. Sorry, I can't. It's cold and windy. Look, it's snowing. It's all white. Do you like snow? Yes, I do. Let's go. Can you make a snowman? Sure, I can. A snowman? You're good. Thank you. What's that? His nose. Wow, a nose. Song. How's the weather? How's the weather? It's sunny. It's sunny. How's the weather? How's the weather? It's cloudy. It's cloudy. How's the weather? How's the weather? It's raining. It's raining. How's the weather? How's the weather? It's snowing. It's snowing. Song. How's the weather? It's rainy. It's rainy. Is this yours? Yes, it's mine. How's the weather? It's sunny. It's sunny. Is this yours? No, it's not mine. How's the weather? It's windy. It's windy. Is this yours? Yes, it's mine. How's the weather? Cloudy, cloudy, it's cloudy. How's the weather? Raining, raining, it's raining. How's the weather? Snowing, snowing, it's snowing. How's the weather? Sunny, it's sunny. How's the weather here? How's the weather here? It's windy and snowy. It's windy and snowy. Put on this hat. Yes. Put on these gloves. Gloves. Yes. How's the weather outside? How's the weather outside? It's rainy and cold. It's rainy and cold. Bring this umbrella. Yes. Bring this umbrella. Yes. Story. How's the weather? It's raining. Oh, no. How's the weather? It's sunny. Oh, no. Look. It's raining. Okay. Sounds good. It's sunny now. That's good. Story. Grumpy, happy, dopey. Coming. Let's play outside. Sorry. We can't. It's raining. It's not raining. It's snowing. Snow? Look. It's snowing. It's all white. A nice hat. What's that? It's an apple. Oh, no. No apples. Can you help me? Sure. Please. You can eat this apple. Oh.",
+  "text": "Let's play outside. Sorry, I can't. It's cold and windy. Look, it's snowing! It's all white. Do you like snow? Yes, I do. Let's go. Can you make a snowman? Sure, I can. A snowman? You're good. Thank you.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
-      "text": "Theme four.",
-      "start": 3.6,
-      "duration": 0.5
-    },
-    {
-      "id": 3,
-      "text": "Weather.",
-      "start": 4.68,
-      "duration": 0.5
-    },
-    {
-      "id": 4,
-      "text": "Dialogue.",
-      "start": 10.96,
-      "duration": 0.5
-    },
-    {
-      "id": 5,
       "text": "Let's play outside.",
       "start": 15.2,
       "duration": 0.5
     },
     {
-      "id": 6,
+      "id": 2,
       "text": "Sorry, I can't.",
       "start": 18.32,
       "duration": 0.5
     },
     {
-      "id": 7,
+      "id": 3,
       "text": "It's cold and windy.",
       "start": 19.99,
       "duration": 0.59
     },
     {
-      "id": 8,
+      "id": 4,
       "text": "Look, it's snowing!",
       "start": 27.52,
       "duration": 0.5
     },
     {
-      "id": 9,
+      "id": 5,
       "text": "It's all white.",
       "start": 31.43,
       "duration": 0.5
     },
     {
-      "id": 10,
+      "id": 6,
       "text": "Do you like snow?",
       "start": 35.19,
       "duration": 0.51
     },
     {
-      "id": 11,
+      "id": 7,
       "text": "Yes, I do.",
       "start": 37.35,
       "duration": 0.5
     },
     {
-      "id": 12,
+      "id": 8,
       "text": "Let's go.",
       "start": 39.51,
       "duration": 0.5
     },
     {
-      "id": 13,
+      "id": 9,
       "text": "Can you make a snowman?",
       "start": 45.66,
       "duration": 0.71
     },
     {
-      "id": 14,
+      "id": 10,
       "text": "Sure, I can.",
       "start": 48.3,
       "duration": 0.5
     },
     {
-      "id": 15,
+      "id": 11,
       "text": "A snowman?",
       "start": 58.4,
       "duration": 0.5
     },
     {
-      "id": 16,
+      "id": 12,
       "text": "You're good.",
       "start": 59.6,
       "duration": 0.5
     },
     {
-      "id": 17,
+      "id": 13,
       "text": "Thank you.",
       "start": 61.6,
       "duration": 0.5
@@ -129,5 +105,7 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T16:05:02.347Z"
+  "formattedAt": "2026-07-30T16:05:02.347Z",
+  "fixedAt": "2026-07-31T09:32:28.185Z",
+  "fixedReason": "Removed intro text"
 }
