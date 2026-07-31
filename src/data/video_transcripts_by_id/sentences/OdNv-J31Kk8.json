@@ -3,213 +3,93 @@
   "segments": [
     {
       "id": 1,
-      "text": "The Carter Family Episode four A Camping Trip Yay, said Harry.",
+      "text": "The Carter Family.",
       "start": 5.6,
-      "duration": 15.76
+      "duration": 1.27
     },
     {
       "id": 2,
-      "text": "We're going camping.",
-      "start": 22.14,
-      "duration": 1.22
-    },
-    {
-      "id": 3,
-      "text": "Mom put the tent and food in the car.",
-      "start": 31.94,
-      "duration": 2.26
-    },
-    {
-      "id": 4,
-      "text": "Dad put the sleeping bags in the car.",
-      "start": 35.46,
-      "duration": 2.18
-    },
-    {
-      "id": 5,
-      "text": "The kids played in the yard.",
-      "start": 42.38,
-      "duration": 1.71
-    },
-    {
-      "id": 6,
-      "text": "Harry threw a stick.",
-      "start": 45.59,
-      "duration": 1.37
-    },
-    {
-      "id": 7,
-      "text": "Rover ran after it.",
-      "start": 51.98,
-      "duration": 1.54
-    },
-    {
-      "id": 8,
-      "text": "Everybody in the car, dad said.",
-      "start": 55.53,
-      "duration": 2.58
-    },
-    {
-      "id": 9,
-      "text": "Rover looked for the stick.",
-      "start": 58.65,
-      "duration": 1.54
-    },
-    {
-      "id": 10,
-      "text": "It's time to go camping, Rover, said Harry.",
-      "start": 63.93,
-      "duration": 2.65
-    },
-    {
-      "id": 11,
-      "text": "Rover was still looking for the stick.",
-      "start": 67.78,
-      "duration": 2.27
-    },
-    {
-      "id": 12,
-      "text": "Everybody pulled Rover into the car.",
-      "start": 77.7,
-      "duration": 2.27
-    },
-    {
-      "id": 13,
-      "text": "Here we go.",
-      "start": 85.34,
-      "duration": 1.26
-    },
-    {
-      "id": 14,
-      "text": "Said dad.",
-      "start": 86.60000000000001,
-      "duration": 0.84
-    },
-    {
-      "id": 15,
-      "text": "Dad drove, and Rover barked loudly.",
-      "start": 88.54,
-      "duration": 2.58
-    },
-    {
-      "id": 16,
-      "text": "Soon, they were in the woods.",
-      "start": 101.34,
-      "duration": 1.46
-    },
-    {
-      "id": 17,
-      "text": "Mom and Harry set up the tent.",
-      "start": 110.67,
-      "duration": 1.86
-    },
-    {
-      "id": 18,
-      "text": "Dad and Emmy made a campfire.",
-      "start": 115.63,
-      "duration": 1.62
-    },
-    {
-      "id": 19,
-      "text": "Oliver found bugs.",
-      "start": 122.35,
-      "duration": 1.38
-    },
-    {
-      "id": 20,
-      "text": "Grover sniffed all around.",
-      "start": 126.88,
-      "duration": 1.69
-    },
-    {
-      "id": 21,
-      "text": "Dad cooked dinner over the fire.",
-      "start": 132.16,
-      "duration": 1.85
-    },
-    {
-      "id": 22,
-      "text": "everybody ate it's getting dark said dad we need to tie up our food there",
-      "start": 136.71,
-      "duration": 14
-    },
-    {
-      "id": 23,
-      "text": "are bears in the woods",
-      "start": 150.71,
-      "duration": 1.38
-    },
-    {
-      "id": 24,
-      "text": "Bears?",
-      "start": 154.84,
+      "text": "Episode four.",
+      "start": 9.9,
       "duration": 0.5
     },
     {
-      "id": 25,
-      "text": "Harry looked around.",
-      "start": 155.79,
+      "id": 3,
+      "text": "A Camping Trip.",
+      "start": 12.76,
+      "duration": 1.27
+    },
+    {
+      "id": 4,
+      "text": "Yay!",
+      "start": 17.06,
+      "duration": 0.5
+    },
+    {
+      "id": 5,
+      "text": "Said Harry.",
+      "start": 18.49,
+      "duration": 0.5
+    },
+    {
+      "id": 6,
+      "text": "We're going camping.",
+      "start": 22.14,
+      "duration": 0.5
+    },
+    {
+      "id": 7,
+      "text": "Mom put the tent and food in the car.",
+      "start": 31.94,
+      "duration": 1.59
+    },
+    {
+      "id": 8,
+      "text": "Dad put the sleeping bags in the car.",
+      "start": 35.46,
+      "duration": 1.46
+    },
+    {
+      "id": 9,
+      "text": "The kids played in the yard.",
+      "start": 42.38,
+      "duration": 0.98
+    },
+    {
+      "id": 10,
+      "text": "Harry threw a stick.",
+      "start": 45.59,
+      "duration": 0.58
+    },
+    {
+      "id": 11,
+      "text": "Rover ran after it.",
+      "start": 51.98,
+      "duration": 0.65
+    },
+    {
+      "id": 12,
+      "text": "Everybody in the car!",
+      "start": 55.53,
+      "duration": 0.73
+    },
+    {
+      "id": 13,
+      "text": "Dad said.",
+      "start": 57.25,
+      "duration": 0.5
+    },
+    {
+      "id": 14,
+      "text": "Rover looked for the stick.",
+      "start": 58.65,
+      "duration": 0.78
+    },
+    {
+      "id": 15,
+      "text": "It's time to go camping, Rover.",
+      "start": 63.93,
       "duration": 1.15
-    },
-    {
-      "id": 26,
-      "text": "Bears?",
-      "start": 157.79,
-      "duration": 0.47
-    },
-    {
-      "id": 27,
-      "text": "Emmy looked around.",
-      "start": 158.2575,
-      "duration": 1.4
-    },
-    {
-      "id": 28,
-      "text": "I like bears, said Oliver.",
-      "start": 161.08,
-      "duration": 2.26
-    },
-    {
-      "id": 29,
-      "text": "Suddenly, the bushes moved.",
-      "start": 165.93,
-      "duration": 1.7
-    },
-    {
-      "id": 30,
-      "text": "Is it a bear?",
-      "start": 168.41,
-      "duration": 1.06
-    },
-    {
-      "id": 31,
-      "text": "Asked Emmy.",
-      "start": 169.61,
-      "duration": 0.82
-    },
-    {
-      "id": 32,
-      "text": "A sound came from the bushes.",
-      "start": 174.81,
-      "duration": 1.7
-    },
-    {
-      "id": 33,
-      "text": "It must be a bear, said Harry.",
-      "start": 177.61,
-      "duration": 2.26
-    },
-    {
-      "id": 34,
-      "text": "Woof woof, Rover jumped out.",
-      "start": 187.6,
-      "duration": 2.5
-    },
-    {
-      "id": 35,
-      "text": "Rover had a new stick.",
-      "start": 190.97,
-      "duration": 1.78
     }
   ],
   "fetchedAt": "2026-07-23T06:27:52.542724+00:00",
@@ -236,5 +116,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.361Z"
+  "formattedAt": "2026-07-30T16:04:52.721Z"
 }

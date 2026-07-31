@@ -5,149 +5,83 @@
       "id": 1,
       "text": "Long ago and now.",
       "start": 7.92,
-      "duration": 7.44
+      "duration": 3.14
     },
     {
       "id": 2,
       "text": "Long ago.",
       "start": 15.36,
-      "duration": 4.08
+      "duration": 0.51
     },
     {
       "id": 3,
       "text": "Life was different.",
       "start": 16.48,
-      "duration": 2.96
+      "duration": 0.87
     },
     {
       "id": 4,
       "text": "Long ago people rode horses to work.",
       "start": 23.2,
-      "duration": 6.48
+      "duration": 4.08
     },
     {
       "id": 5,
       "text": "Now we ride in cars.",
       "start": 29.68,
-      "duration": 5.8
+      "duration": 2.97
     },
     {
       "id": 6,
-      "text": "Long ago people sent someone to deliver.",
+      "text": "Long ago people sent someone to deliver letters.",
       "start": 36.8,
-      "duration": 4.48
+      "duration": 2.14
     },
     {
       "id": 7,
-      "text": "Letters.",
-      "start": 39.6,
-      "duration": 4.16
+      "text": "Now we send emails on our computers.",
+      "start": 43.76,
+      "duration": 3.02
     },
     {
       "id": 8,
-      "text": "Now we send emails on our computers.",
-      "start": 43.76,
-      "duration": 4.8
+      "text": "Long ago people used lanterns and candles.",
+      "start": 51.04,
+      "duration": 1.88
     },
     {
       "id": 9,
-      "text": "Long ago people used lanterns and.",
-      "start": 51.04,
-      "duration": 3.69
+      "text": "Now we use electric lights.",
+      "start": 57.84,
+      "duration": 3.24
     },
     {
       "id": 10,
-      "text": "Candles.",
-      "start": 53.6,
-      "duration": 4.24
+      "text": "Long ago people got water with buckets.",
+      "start": 64.16,
+      "duration": 4.84
     },
     {
       "id": 11,
-      "text": "Now we use electric lights.",
-      "start": 57.84,
-      "duration": 6.32
+      "text": "Now we get water from faucets.",
+      "start": 73.12,
+      "duration": 3.33
     },
     {
       "id": 12,
-      "text": "Long ago people got water with buckets.",
-      "start": 64.16,
-      "duration": 7.69
+      "text": "Long ago people cooked on fires.",
+      "start": 78.88,
+      "duration": 2.85
     },
     {
       "id": 13,
-      "text": "Now we get water from faucets.",
-      "start": 73.12,
-      "duration": 5.76
-    },
-    {
-      "id": 14,
-      "text": "Long ago people cooked on fires.",
-      "start": 78.88,
-      "duration": 4.92
-    },
-    {
-      "id": 15,
-      "text": "Now we cook on stoves.",
+      "text": "Now we ride in cars.",
       "start": 87.04,
-      "duration": 3.6
-    },
-    {
-      "id": 16,
-      "text": "Long ago people cleaned with brooms.",
-      "start": 92.72,
-      "duration": 6.64
-    },
-    {
-      "id": 17,
-      "text": "Now we clean with vacuum cleaners.",
-      "start": 99.36,
-      "duration": 4.16
-    },
-    {
-      "id": 18,
-      "text": "Long ago people washed clothes by hand.",
-      "start": 104.08,
-      "duration": 6.8
-    },
-    {
-      "id": 19,
-      "text": "Now we wash clothes with washing.",
-      "start": 110.88,
-      "duration": 4.7
-    },
-    {
-      "id": 20,
-      "text": "Machines.",
-      "start": 112.88,
-      "duration": 4.32
-    },
-    {
-      "id": 21,
-      "text": "Long ago people drew pictures by hand.",
-      "start": 117.2,
-      "duration": 4.72
-    },
-    {
-      "id": 22,
-      "text": "Now we use cameras to take pictures.",
-      "start": 122.8,
-      "duration": 5.76
-    },
-    {
-      "id": 23,
-      "text": "Long ago life was different.",
-      "start": 128.56,
-      "duration": 4.52
-    },
-    {
-      "id": 24,
-      "text": "You.",
-      "start": 142.64,
-      "duration": 2.08
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-06-22T02:05:23Z",
   "videoId": "U-r-xHln6nE",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.365Z"
-}
+  "formattedAt": "2026-07-30T16:05:24.877Z"
+}\n

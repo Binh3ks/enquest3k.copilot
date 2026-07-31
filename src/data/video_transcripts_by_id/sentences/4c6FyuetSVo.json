@@ -5,155 +5,113 @@
       "id": 1,
       "text": "Walk.",
       "start": 7.52,
-      "duration": 0.68
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "You can walk.",
       "start": 8.2,
-      "duration": 6.68
+      "duration": 1.98
     },
     {
       "id": 3,
       "text": "You can walk like a cat.",
       "start": 14.88,
-      "duration": 5.8
+      "duration": 3.36
     },
     {
       "id": 4,
       "text": "Stomp.",
       "start": 20.68,
-      "duration": 2.22
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "You can stomp.",
       "start": 22.9,
-      "duration": 6.72
+      "duration": 1.99
     },
     {
       "id": 6,
       "text": "You can stomp like an elephant.",
       "start": 29.62,
-      "duration": 4.74
+      "duration": 2.74
     },
     {
       "id": 7,
       "text": "Waddle.",
       "start": 34.36,
-      "duration": 0.46
+      "duration": 0.5
     },
     {
       "id": 8,
       "text": "You can waddle.",
       "start": 34.82,
-      "duration": 8.13
+      "duration": 2.41
     },
     {
       "id": 9,
       "text": "You can waddle like a duck.",
       "start": 42.94,
-      "duration": 5.54
+      "duration": 3.21
     },
     {
       "id": 10,
       "text": "Dance.",
       "start": 48.48,
-      "duration": 0.43
+      "duration": 0.5
     },
     {
       "id": 11,
       "text": "You can dance.",
       "start": 48.91,
-      "duration": 5.33
+      "duration": 1.58
     },
     {
       "id": 12,
       "text": "You can dance like a ballerina.",
       "start": 54.24,
-      "duration": 8.3
+      "duration": 4.81
     },
     {
       "id": 13,
       "text": "March.",
       "start": 62.54,
-      "duration": 0.46
+      "duration": 0.5
     },
     {
       "id": 14,
       "text": "You can march.",
       "start": 63,
-      "duration": 3.5
+      "duration": 1.03
     },
     {
       "id": 15,
       "text": "You can march like a soldier.",
       "start": 66.5,
-      "duration": 9.98
+      "duration": 5.78
     },
     {
       "id": 16,
       "text": "Skip.",
       "start": 76.48,
-      "duration": 0.44
+      "duration": 0.5
     },
     {
       "id": 17,
       "text": "You can skip.",
       "start": 76.92,
-      "duration": 1.32
+      "duration": 0.5
     },
     {
       "id": 18,
       "text": "You can skip like a child.",
       "start": 78.24,
-      "duration": 10.39
-    },
-    {
-      "id": 19,
-      "text": "Sing.",
-      "start": 88.64,
-      "duration": 0.7
-    },
-    {
-      "id": 20,
-      "text": "I can sing!",
-      "start": 89.34,
-      "duration": 2.87
-    },
-    {
-      "id": 21,
-      "text": "Jump!",
-      "start": 92.21,
-      "duration": 0.52
-    },
-    {
-      "id": 22,
-      "text": "I can jump!",
-      "start": 92.73,
-      "duration": 2.37
-    },
-    {
-      "id": 23,
-      "text": "Wow!",
-      "start": 95.1,
-      "duration": 2.66
-    },
-    {
-      "id": 24,
-      "text": "Look at the children!",
-      "start": 97.76,
-      "duration": 6.18
-    },
-    {
-      "id": 25,
-      "text": "They can do many things!",
-      "start": 103.94,
-      "duration": 3.78
+      "duration": 6.02
     }
   ],
   "videoId": "4c6FyuetSVo",
   "source": "cleaned",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.346Z"
+  "formattedAt": "2026-07-30T16:02:03.864Z"
 }

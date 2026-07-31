@@ -3,183 +3,87 @@
   "segments": [
     {
       "id": 1,
-      "text": "Hi, good morning.",
+      "text": "Hi.",
       "start": 0.4,
-      "duration": 1.84
+      "duration": 0.5
     },
     {
       "id": 2,
-      "text": "My name is Tom.",
-      "start": 2,
-      "duration": 2.38
+      "text": "Good morning.",
+      "start": 1.01,
+      "duration": 0.5
     },
     {
       "id": 3,
-      "text": "What's your name?",
-      "start": 4.377142857142857,
-      "duration": 1.78
+      "text": "My name is Tom.",
+      "start": 2,
+      "duration": 1
     },
     {
       "id": 4,
-      "text": "Good morning, Tom.",
-      "start": 5.92,
-      "duration": 1.28
+      "text": "What's your name?",
+      "start": 4.38,
+      "duration": 0.53
     },
     {
       "id": 5,
-      "text": "My name is Anna.",
-      "start": 7.04,
-      "duration": 1.64
+      "text": "Good morning, Tom.",
+      "start": 5.92,
+      "duration": 0.5
     },
     {
       "id": 6,
-      "text": "Nice to meet you.",
-      "start": 8.68,
-      "duration": 1.64
+      "text": "My name is Anna.",
+      "start": 7.04,
+      "duration": 0.69
     },
     {
       "id": 7,
-      "text": "Nice to meet you, too, Anna.",
-      "start": 10,
-      "duration": 2.54
+      "text": "Nice to meet you.",
+      "start": 8.68,
+      "duration": 0.69
     },
     {
       "id": 8,
-      "text": "Are you a new student here?",
-      "start": 12.54,
-      "duration": 2.54
+      "text": "Nice to meet you, too, Anna.",
+      "start": 10,
+      "duration": 1.47
     },
     {
       "id": 9,
-      "text": "Yes, I am.",
-      "start": 15.079999999999998,
-      "duration": 1.27
+      "text": "Are you a new student here?",
+      "start": 12.54,
+      "duration": 1.47
     },
     {
       "id": 10,
-      "text": "Today's my first day at this school.",
-      "start": 16.02,
-      "duration": 2.09
+      "text": "Yes, I am.",
+      "start": 15.08,
+      "duration": 0.5
     },
     {
       "id": 11,
-      "text": "I feel very nervous.",
-      "start": 17.86,
-      "duration": 2.83
+      "text": "Today's my first day at this school.",
+      "start": 16.02,
+      "duration": 1.31
     },
     {
       "id": 12,
-      "text": "That's okay.",
-      "start": 20.69333333333333,
-      "duration": 1.42
-    },
-    {
-      "id": 13,
-      "text": "I felt nervous on my first day, too.",
-      "start": 21.95,
-      "duration": 4.07
-    },
-    {
-      "id": 14,
-      "text": "Really?",
-      "start": 26.01736842105263,
-      "duration": 0.51
-    },
-    {
-      "id": 15,
-      "text": "I'm worried because I don't know anyone here.",
-      "start": 26.52578947368421,
-      "duration": 4.07
-    },
-    {
-      "id": 16,
-      "text": "Don't worry.",
-      "start": 30.59315789473684,
-      "duration": 1.02
-    },
-    {
-      "id": 17,
-      "text": "Everyone is friendly and the school is very fun.",
-      "start": 31.13,
-      "duration": 4.21
-    },
-    {
-      "id": 18,
-      "text": "That's good to hear.",
-      "start": 35.33923076923077,
-      "duration": 1.87
-    },
-    {
-      "id": 19,
-      "text": "I like the school, but everything feels new.",
-      "start": 36.97,
-      "duration": 4.16
-    },
-    {
-      "id": 20,
-      "text": "You will get used to it soon.",
-      "start": 40.89,
-      "duration": 3.68
-    },
-    {
-      "id": 21,
-      "text": "Which class are you in?",
-      "start": 44.57052631578947,
-      "duration": 2.63
-    },
-    {
-      "id": 22,
-      "text": "I'm in class 2A.",
-      "start": 47.199473684210524,
-      "duration": 2.1
-    },
-    {
-      "id": 23,
-      "text": "How about you?",
-      "start": 49.30263157894736,
-      "duration": 1.58
-    },
-    {
-      "id": 24,
-      "text": "Me, too.",
-      "start": 50.39,
-      "duration": 1.02
-    },
-    {
-      "id": 25,
-      "text": "We are in the same class.",
-      "start": 51.406,
-      "duration": 3.05
-    },
-    {
-      "id": 26,
-      "text": "Wow, I'm So happy to hear that.",
-      "start": 54.454,
-      "duration": 3.75
-    },
-    {
-      "id": 27,
-      "text": "You're welcome.",
-      "start": 58.201428571428565,
+      "text": "I feel very nervous.",
+      "start": 17.86,
       "duration": 1.19
     },
     {
-      "id": 28,
-      "text": "Let's be good friends.",
-      "start": 59.07,
-      "duration": 2.38
+      "id": 13,
+      "text": "That's okay.",
+      "start": 20.69,
+      "duration": 0.5
     },
     {
-      "id": 29,
-      "text": "Yes, I'm not.",
-      "start": 61.44714285714286,
-      "duration": 1.78
-    },
-    {
-      "id": 30,
-      "text": "So nervous anymore.",
-      "start": 62.99,
-      "duration": 1.22
+      "id": 14,
+      "text": "I felt nervous on my first day, too.",
+      "start": 21.95,
+      "duration": 2.72
     }
   ],
   "videoId": "h6tJjMqBNOY",
@@ -192,5 +96,5 @@
     "totalDuration": 64.21
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.379Z"
+  "formattedAt": "2026-07-30T16:07:58.615Z"
 }

@@ -5,367 +5,91 @@
       "id": 1,
       "text": "Easy English Conversations.",
       "start": 3.68,
-      "duration": 3.5
+      "duration": 1.03
     },
     {
       "id": 2,
       "text": "What do you like?",
-      "start": 7.177142857142857,
-      "duration": 4.66
+      "start": 7.18,
+      "duration": 1.97
     },
     {
       "id": 3,
       "text": "Mmm, let's talk about food today!",
       "start": 11.36,
-      "duration": 4.59
+      "duration": 2.65
     },
     {
       "id": 4,
       "text": "I like pasta.",
-      "start": 15.946666666666665,
-      "duration": 2.29
+      "start": 15.95,
+      "duration": 0.68
     },
     {
       "id": 5,
       "text": "What food do you like, Sian?",
       "start": 17.76,
-      "duration": 3.57
+      "duration": 2.07
     },
     {
       "id": 6,
       "text": "I like fish.",
-      "start": 21.333333333333336,
-      "duration": 1.79
+      "start": 21.33,
+      "duration": 0.53
     },
     {
       "id": 7,
       "text": "You like, Buli?",
       "start": 23.6,
-      "duration": 1.27
+      "duration": 0.5
     },
     {
       "id": 8,
       "text": "I like pizza.",
-      "start": 24.875,
-      "duration": 1.27
+      "start": 24.88,
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "You like, Georgie?",
       "start": 26.72,
-      "duration": 1.77
+      "duration": 0.53
     },
     {
       "id": 10,
       "text": "I like chocolate and fruit.",
       "start": 28.49,
-      "duration": 2.95
+      "duration": 1.51
     },
     {
       "id": 11,
-      "text": "What fruit do I like apples. you like, Tim?",
+      "text": "What fruit do I like?",
       "start": 35.76,
-      "duration": 3.76
+      "duration": 1.07
     },
     {
       "id": 12,
-      "text": "I like grapes.",
-      "start": 43.04,
-      "duration": 1.76
+      "text": "Apples.",
+      "start": 37.85,
+      "duration": 0.5
     },
     {
       "id": 13,
-      "text": "I like bananas.",
-      "start": 44.8,
-      "duration": 1.76
+      "text": "You like, Tim?",
+      "start": 38.27,
+      "duration": 0.5
     },
     {
       "id": 14,
-      "text": "I like oranges.",
-      "start": 48.56,
-      "duration": 2.34
+      "text": "I like grapes.",
+      "start": 43.04,
+      "duration": 0.52
     },
     {
       "id": 15,
-      "text": "Learn how to talk about the weather in the next video.",
-      "start": 50.89571428571429,
-      "duration": 8.56
-    },
-    {
-      "id": 16,
-      "text": "It's raining.",
-      "start": 58.98,
-      "duration": 1.79
-    },
-    {
-      "id": 17,
-      "text": "It's windy and cold.",
-      "start": 60.766666666666666,
-      "duration": 3.57
-    },
-    {
-      "id": 18,
-      "text": "It's hot and sunny.",
-      "start": 63.86,
-      "duration": 2.85
-    },
-    {
-      "id": 19,
-      "text": "What food don't you like, Sian?",
-      "start": 66.708,
-      "duration": 4.27
-    },
-    {
-      "id": 20,
-      "text": "I don't like rice.",
-      "start": 70.74,
-      "duration": 2.51
-    },
-    {
-      "id": 21,
-      "text": "What food don't you like, Georgie?",
-      "start": 73.252,
-      "duration": 3.77
-    },
-    {
-      "id": 22,
-      "text": "I don't like nuts.",
-      "start": 76.62,
-      "duration": 2.27
-    },
-    {
-      "id": 23,
-      "text": "What food don't you like, Buli?",
-      "start": 78.89200000000001,
-      "duration": 3.41
-    },
-    {
-      "id": 24,
-      "text": "I don't like steak.",
-      "start": 82.14,
-      "duration": 2.1
-    },
-    {
-      "id": 25,
-      "text": "What food don't you like, Tim?",
-      "start": 84.24,
-      "duration": 3.15
-    },
-    {
-      "id": 26,
-      "text": "I don't like jelly.",
-      "start": 86.99,
-      "duration": 5.48
-    },
-    {
-      "id": 27,
-      "text": "What food do you like?",
-      "start": 92.46555555555555,
-      "duration": 6.84
-    },
-    {
-      "id": 28,
-      "text": "What food don't you like?",
-      "start": 104.1,
-      "duration": 5.18
-    },
-    {
-      "id": 29,
-      "text": "Great! — Have you got that?",
-      "start": 109.28181818181818,
-      "duration": 6.22
-    },
-    {
-      "id": 30,
-      "text": "Learn more English\nat BBC Learning English dot com.",
-      "start": 115.1,
-      "duration": 5.43
-    },
-    {
-      "id": 31,
-      "text": "Let's continue.",
-      "start": 120.53272727272727,
-      "duration": 1.21
-    },
-    {
-      "id": 32,
-      "text": "You like doing, Sian?",
-      "start": 121.58,
-      "duration": 3.07
-    },
-    {
-      "id": 33,
-      "text": "I like dancing.",
-      "start": 124.6542857142857,
-      "duration": 2.31
-    },
-    {
-      "id": 34,
-      "text": "You like doing, Buli?",
-      "start": 127.2,
-      "duration": 1.99
-    },
-    {
-      "id": 35,
-      "text": "I like playing video games.",
-      "start": 129.19111111111113,
-      "duration": 2.49
-    },
-    {
-      "id": 36,
-      "text": "You like doing, Tim?",
-      "start": 131.84,
-      "duration": 2.83
-    },
-    {
-      "id": 37,
-      "text": "I like hiking.",
-      "start": 134.66857142857143,
-      "duration": 2.12
-    },
-    {
-      "id": 38,
-      "text": "You like doing, Georgie?",
-      "start": 136.96,
-      "duration": 1.88
-    },
-    {
-      "id": 39,
-      "text": "I like swimming in the sea.",
-      "start": 138.836,
-      "duration": 2.81
-    },
-    {
-      "id": 40,
-      "text": "You like doing?",
-      "start": 141.89,
-      "duration": 4.97
-    },
-    {
-      "id": 41,
-      "text": "I like singing.",
-      "start": 146.85999999999999,
-      "duration": 4.97
-    },
-    {
-      "id": 42,
-      "text": "Nice!",
-      "start": 151.33,
-      "duration": 1.12
-    },
-    {
-      "id": 43,
-      "text": "What food does Sian like?",
-      "start": 152.45333333333335,
-      "duration": 5.62
-    },
-    {
-      "id": 44,
-      "text": "She likes fish.",
-      "start": 157.57,
-      "duration": 4.87
-    },
-    {
-      "id": 45,
-      "text": "What food does Buli like?",
-      "start": 162.04,
-      "duration": 3.47
-    },
-    {
-      "id": 46,
-      "text": "He likes pizza.",
-      "start": 165.27,
-      "duration": 3.84
-    },
-    {
-      "id": 47,
-      "text": "What food does Georgie like?",
-      "start": 168.71,
-      "duration": 8.48
-    },
-    {
-      "id": 48,
-      "text": "She likes chocolate.",
-      "start": 176.95,
-      "duration": 2.89
-    },
-    {
-      "id": 49,
-      "text": "That's right!",
-      "start": 179.52,
-      "duration": 1.36
-    },
-    {
-      "id": 50,
-      "text": "What food does Tim like?",
-      "start": 182.48,
-      "duration": 7.92
-    },
-    {
-      "id": 51,
-      "text": "He likes pasta.",
-      "start": 190.08,
-      "duration": 3.12
-    },
-    {
-      "id": 52,
-      "text": "Correct!",
-      "start": 192.7,
-      "duration": 1.84
-    },
-    {
-      "id": 53,
-      "text": "What does Sian like doing?",
-      "start": 197.26,
-      "duration": 3.06
-    },
-    {
-      "id": 54,
-      "text": "She likes dancing.",
-      "start": 199.82,
-      "duration": 3.68
-    },
-    {
-      "id": 55,
-      "text": "What does Buli like doing?",
-      "start": 203.1,
-      "duration": 3.7
-    },
-    {
-      "id": 56,
-      "text": "He likes playing video games.",
-      "start": 206.47,
-      "duration": 4.41
-    },
-    {
-      "id": 57,
-      "text": "What does Georgie like doing?",
-      "start": 210.56,
-      "duration": 8.54
-    },
-    {
-      "id": 58,
-      "text": "She likes swimming in the sea.",
-      "start": 218.78,
-      "duration": 2.64
-    },
-    {
-      "id": 59,
-      "text": "What does Tim like doing?",
-      "start": 224.3,
-      "duration": 7.76
-    },
-    {
-      "id": 60,
-      "text": "He likes hiking.",
-      "start": 231.82,
-      "duration": 3.1
-    },
-    {
-      "id": 61,
-      "text": "Let us know in the comments.",
-      "start": 243.38,
-      "duration": 3.54
+      "text": "I like bananas.",
+      "start": 44.8,
+      "duration": 0.52
     }
   ],
   "videoId": "wUF33157hYI",
@@ -378,5 +102,5 @@
     "totalDuration": 246.92
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.397Z"
+  "formattedAt": "2026-07-30T16:10:04.637Z"
 }

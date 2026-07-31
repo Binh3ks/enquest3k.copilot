@@ -5,61 +5,61 @@
       "id": 1,
       "text": "Easy English conversations.",
       "start": 2.64,
-      "duration": 1.54
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "What did you do at the weekend?",
       "start": 6.96,
-      "duration": 2.02
+      "duration": 1.27
     },
     {
       "id": 3,
       "text": "Hi, Billy.",
       "start": 10.72,
-      "duration": 0.82
+      "duration": 0.5
     },
     {
       "id": 4,
       "text": "Hi, Tim.",
       "start": 11.92,
-      "duration": 1.06
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "Where are you?",
       "start": 13.81,
-      "duration": 1.07
+      "duration": 0.5
     },
     {
       "id": 6,
       "text": "I'm at work.",
       "start": 15.34,
-      "duration": 1.05
+      "duration": 0.5
     },
     {
       "id": 7,
       "text": "What did you do at the weekend?",
       "start": 17.18,
-      "duration": 1.77
+      "duration": 1.11
     },
     {
       "id": 8,
       "text": "The weekend.",
       "start": 20.77,
-      "duration": 0.82
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "I went hiking.",
       "start": 22.77,
-      "duration": 1.3
+      "duration": 0.5
     },
     {
       "id": 10,
       "text": "Do you usually go hiking?",
       "start": 26.82,
-      "duration": 2.1
+      "duration": 1.07
     },
     {
       "id": 11,
@@ -71,475 +71,31 @@
       "id": 12,
       "text": "I often go hiking.",
       "start": 30.66,
-      "duration": 1.46
+      "duration": 0.61
     },
     {
       "id": 13,
       "text": "What else did you do?",
       "start": 32.5,
-      "duration": 1.94
+      "duration": 0.99
     },
     {
       "id": 14,
       "text": "I ate dinner with my friends.",
       "start": 34.82,
-      "duration": 2.26
+      "duration": 1.31
     },
     {
       "id": 15,
       "text": "What did you eat?",
       "start": 39.27,
-      "duration": 1.38
+      "duration": 0.58
     },
     {
       "id": 16,
       "text": "We ate pasta.",
       "start": 40.95,
-      "duration": 1.85
-    },
-    {
-      "id": 17,
-      "text": "I also watched a film at home.",
-      "start": 45.19,
-      "duration": 3.22
-    },
-    {
-      "id": 18,
-      "text": "What film did you watch?",
-      "start": 49.18,
-      "duration": 1.82
-    },
-    {
-      "id": 19,
-      "text": "I watched a horror film.",
-      "start": 51.48,
-      "duration": 2.42
-    },
-    {
-      "id": 20,
-      "text": "How was your weekend, Bully?",
-      "start": 55.32,
-      "duration": 2.02
-    },
-    {
-      "id": 21,
-      "text": "It was great.",
-      "start": 57.88,
-      "duration": 1.34
-    },
-    {
-      "id": 22,
-      "text": "Thanks.",
-      "start": 59.215,
-      "duration": 0.45
-    },
-    {
-      "id": 23,
-      "text": "What did you do?",
-      "start": 60.12,
-      "duration": 1.14
-    },
-    {
-      "id": 24,
-      "text": "I went to the beach.",
-      "start": 61.96,
-      "duration": 1.46
-    },
-    {
-      "id": 25,
-      "text": "Do you usually go to the beach?",
-      "start": 64.19,
-      "duration": 2.41
-    },
-    {
-      "id": 26,
-      "text": "No.",
-      "start": 67.14,
-      "duration": 0.5
-    },
-    {
-      "id": 27,
-      "text": "It's usually too cold.",
-      "start": 68.03,
-      "duration": 1.94
-    },
-    {
-      "id": 28,
-      "text": "What did you do at the beach?",
-      "start": 70.67,
-      "duration": 2.1
-    },
-    {
-      "id": 29,
-      "text": "I had an ice cream.",
-      "start": 73.22,
-      "duration": 2.42
-    },
-    {
-      "id": 30,
-      "text": "Oh.",
-      "start": 76.03,
-      "duration": 0.5
-    },
-    {
-      "id": 31,
-      "text": "What flavor ice cream did you have?",
-      "start": 76.74,
-      "duration": 2.59
-    },
-    {
-      "id": 32,
-      "text": "I had a strawberry ice cream.",
-      "start": 79.93,
-      "duration": 2.34
-    },
-    {
-      "id": 33,
-      "text": "Sean, are you there?",
-      "start": 84.01,
-      "duration": 1.38
-    },
-    {
-      "id": 34,
-      "text": "Yes.",
-      "start": 86.01,
-      "duration": 0.32
-    },
-    {
-      "id": 35,
-      "text": "I am.",
-      "start": 86.33,
-      "duration": 0.72
-    },
-    {
-      "id": 36,
-      "text": "How was your weekend?",
-      "start": 87.05,
-      "duration": 1.38
-    },
-    {
-      "id": 37,
-      "text": "It was fun.",
-      "start": 88.97,
-      "duration": 1.03
-    },
-    {
-      "id": 38,
-      "text": "Thanks.",
-      "start": 90.005,
-      "duration": 0.35
-    },
-    {
-      "id": 39,
-      "text": "What did you do?",
-      "start": 91.05,
-      "duration": 1.22
-    },
-    {
-      "id": 40,
-      "text": "I made a cake.",
-      "start": 92.65,
-      "duration": 1.62
-    },
-    {
-      "id": 41,
-      "text": "What kind of cake did you make?",
-      "start": 95.33,
-      "duration": 2.42
-    },
-    {
-      "id": 42,
-      "text": "I made a chocolate cake.",
-      "start": 98.45,
-      "duration": 2.02
-    },
-    {
-      "id": 43,
-      "text": "Sounds delicious.",
-      "start": 101.09,
-      "duration": 0.99
-    },
-    {
-      "id": 44,
-      "text": "Can I have some?",
-      "start": 102.94,
-      "duration": 1.14
-    },
-    {
-      "id": 45,
-      "text": "Sorry, Tim.",
-      "start": 104.38,
-      "duration": 1.06
-    },
-    {
-      "id": 46,
-      "text": "My family ate it all.",
-      "start": 105.58,
-      "duration": 1.86
-    },
-    {
-      "id": 47,
-      "text": "What else did you do?",
-      "start": 108.38,
-      "duration": 1.85
-    },
-    {
-      "id": 48,
-      "text": "I went to the park and played Frisbee.",
-      "start": 111.81,
-      "duration": 2.66
-    },
-    {
-      "id": 49,
-      "text": "Hello.",
-      "start": 115.65,
-      "duration": 0.5
-    },
-    {
-      "id": 50,
-      "text": "Hi, Georgie.",
-      "start": 116.45,
-      "duration": 0.82
-    },
-    {
-      "id": 51,
-      "text": "What did you do at the weekend?",
-      "start": 117.57,
-      "duration": 1.78
-    },
-    {
-      "id": 52,
-      "text": "I went swimming.",
-      "start": 120.13,
-      "duration": 1.78
-    },
-    {
-      "id": 53,
-      "text": "Where did you go swimming?",
-      "start": 122.85,
-      "duration": 1.54
-    },
-    {
-      "id": 54,
-      "text": "I went swimming at the swimming pool.",
-      "start": 124.95,
-      "duration": 2.58
-    },
-    {
-      "id": 55,
-      "text": "What else did you do?",
-      "start": 128.24,
-      "duration": 1.45
-    },
-    {
-      "id": 56,
-      "text": "I read a book.",
-      "start": 130.07,
-      "duration": 1.55
-    },
-    {
-      "id": 57,
-      "text": "What book did you read?",
-      "start": 131.91,
-      "duration": 1.71
-    },
-    {
-      "id": 58,
-      "text": "I read a detective story.",
-      "start": 134.72,
-      "duration": 2.34
-    },
-    {
-      "id": 59,
-      "text": "Click on the link to download a free worksheet.",
-      "start": 138.24,
-      "duration": 3.43
-    },
-    {
-      "id": 60,
-      "text": "Now back to the lesson.",
-      "start": 144.21,
-      "duration": 1.46
-    },
-    {
-      "id": 61,
-      "text": "How was your weekend?",
-      "start": 146.61,
-      "duration": 1.3
-    },
-    {
-      "id": 62,
-      "text": "What did you do?",
-      "start": 148.37,
-      "duration": 1.38
-    },
-    {
-      "id": 63,
-      "text": "I went to the cinema.",
-      "start": 157.15,
-      "duration": 1.78
-    },
-    {
-      "id": 64,
-      "text": "What else did you do?",
-      "start": 160.1,
-      "duration": 1.79
-    },
-    {
-      "id": 65,
-      "text": "I had lunch with my friends.",
-      "start": 168.1,
-      "duration": 2.3
-    },
-    {
-      "id": 66,
-      "text": "What did you eat?",
-      "start": 171.92,
-      "duration": 1.54
-    },
-    {
-      "id": 67,
-      "text": "We ate pasta.",
-      "start": 180.08,
-      "duration": 1.38
-    },
-    {
-      "id": 68,
-      "text": "What else did you do?",
-      "start": 183.38,
-      "duration": 1.45
-    },
-    {
-      "id": 69,
-      "text": "I made a cake.",
-      "start": 191.78,
-      "duration": 1.53
-    },
-    {
-      "id": 70,
-      "text": "How is Georgie feeling?",
-      "start": 198.09,
-      "duration": 2
-    },
-    {
-      "id": 71,
-      "text": "Find out in the next episode.",
-      "start": 203.67,
-      "duration": 2.18
-    },
-    {
-      "id": 72,
-      "text": "Now back to the lesson.",
-      "start": 206.87,
-      "duration": 1.94
-    },
-    {
-      "id": 73,
-      "text": "What did Tim do at the weekend?",
-      "start": 212.95,
-      "duration": 2.99
-    },
-    {
-      "id": 74,
-      "text": "He went hiking.",
-      "start": 224.39,
-      "duration": 1.39
-    },
-    {
-      "id": 75,
-      "text": "That's right.",
-      "start": 227.02,
-      "duration": 0.82
-    },
-    {
-      "id": 76,
-      "text": "What did Sian do at the weekend?",
-      "start": 228.22,
-      "duration": 2.98
-    },
-    {
-      "id": 77,
-      "text": "She made a chocolate cake.",
-      "start": 238.46,
-      "duration": 1.94
-    },
-    {
-      "id": 78,
-      "text": "Correct.",
-      "start": 242.19,
-      "duration": 0.5
-    },
-    {
-      "id": 79,
-      "text": "What did Bunni do at the weekend?",
-      "start": 242.98,
-      "duration": 1.78
-    },
-    {
-      "id": 80,
-      "text": "He went to the beach.",
-      "start": 252.03,
-      "duration": 1.61
-    },
-    {
-      "id": 81,
-      "text": "That's right.",
-      "start": 255.54,
-      "duration": 0.83
-    },
-    {
-      "id": 82,
-      "text": "What did Georgie do at the weekend?",
-      "start": 256.91,
-      "duration": 2.34
-    },
-    {
-      "id": 83,
-      "text": "She read a book.",
-      "start": 266.03,
-      "duration": 1.38
-    },
-    {
-      "id": 84,
-      "text": "Correct.",
-      "start": 269.64,
-      "duration": 0.5
-    },
-    {
-      "id": 85,
-      "text": "What did you do at the weekend?",
-      "start": 270.76,
-      "duration": 2.35
-    },
-    {
-      "id": 86,
-      "text": "Let us know in the comments.",
-      "start": 273.73,
-      "duration": 1.62
-    },
-    {
-      "id": 87,
-      "text": "Click here to find out what we do every day.",
-      "start": 276.12,
-      "duration": 4.11
-    },
-    {
-      "id": 88,
-      "text": "And click here to subscribe to our channel.",
-      "start": 280.37,
-      "duration": 2.98
-    },
-    {
-      "id": 89,
-      "text": "See you in the next video.",
-      "start": 283.78,
-      "duration": 1.54
-    },
-    {
-      "id": 90,
-      "text": "Goodbye.",
-      "start": 286.58,
-      "duration": 0.5
+      "duration": 0.55
     }
   ],
   "speakerMap": {
@@ -571,5 +127,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.384Z"
+  "formattedAt": "2026-07-30T16:08:31.556Z"
 }

@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 /**
- * split_with_llm.cjs — Split unpunctuated sentences at natural boundaries
+ * split_with_llm.cjs — LLM-powered sentence splitting for unpunctuated text
  *
- * Does NOT change timestamps. Only splits text at punctuation and
- * natural dialogue boundaries. Preserves original Deepgram timing.
+ * Flow:
+ *   1. Combine ALL text from segments into one string
+ *   2. Send to LLM once to add sentence boundaries
+ *   3. Split LLM output at new punctuation marks
+ *   4. Map back to original timestamps proportionally
  *
  * Usage:
  *   node scripts/split_with_llm.cjs <videoId>
@@ -16,96 +19,30 @@ const path = require('path');
 
 const BASE = '/Users/binhnguyen/projects/Engquest3k';
 const SENTENCES_DIR = path.join(BASE, 'src/data/video_transcripts_by_id/sentences');
+const { callLLM } = require('./llmClient.cjs');
 
 function log(msg) { console.log(`[split] ${msg}`); }
 
-const TURN_WORDS = /^(hi|hello|hey|bye|goodbye|okay|ok|yes|no|nice|great|wow|really|so|well|thank|thanks)\b/i;
-const WH_QUESTIONS = /^(how|what|where|when|why|who)\b/i;
-const SUBJECT_PRONOUNS = /^(i|you|he|she|it|we|they)\b/i;
-const CLAUSE_ENDERS = /^(is|are|was|were|do|does|did|have|has|had|can|could|will|would|shall|should|may|might|must|go|goes|went|come|comes|came|like|likes|liked|live|lives|lived|work|works|worked|study|studies|studied|want|wants|wanted|need|needs|needed|love|loves|loved|say|says|said|tell|tells|told|give|gives|gave|take|takes|took|make|makes|made|see|sees|saw|get|gets|got|eat|eats|ate|drink|drinks|drank|walk|walks|walked|run|runs|ran|play|plays|played|happy|sad|good|bad|great|fine|okay|ok|well|here|there|now|then|today|tomorrow|yesterday|morning|afternoon|evening|night)\b/i;
+const SYSTEM_PROMPT = `You are a punctuation editor for ESL transcripts. Your ONLY job is to add sentence boundaries to unpunctuated or poorly-punctuated text.
 
-async function splitAtPunctuation(segments) {
-  const { callLLM } = require('./llmClient.cjs');
-  const result = [];
-  let splitCount = 0;
+RULES:
+1. Insert periods (. ), question marks (? ), and exclamation marks (! ) at logical sentence boundaries.
+2. Fix capitalization: first letter of each sentence must be uppercase.
+3. NEVER change any words — only add/fix punctuation and capitalization.
+4. Each sentence must be a complete thought (5-20 words).
+5. Split at dialogue turns: greetings, questions, answers, exclamations.
+6. Return ONLY the corrected text. No explanations, no JSON, no markdown.`;
 
-  for (const seg of segments) {
-    const text = seg.text.trim();
-    if (!text || text.length < 3) { result.push(seg); continue; }
+async function addPunctuation(text) {
+  const prompt = `Add sentence boundaries to this text. Insert periods, question marks, and exclamation marks at logical sentence boundaries. Fix capitalization. Do NOT change any words.
 
-    // Step 1: Split at existing punctuation
-    let parts = text.split(/(?<=[.!?])\s+(?=[a-zA-Z])/);
+TEXT:
+${text}`;
 
-    // Step 2: If no punctuation AND text >10 words, call LLM to add sentence boundaries
-    if (parts.length <= 1 && text.split(/\s+/).length > 10) {
-      try {
-        const prompt = `Add sentence boundaries to this unpunctuated text. ONLY insert periods, question marks, and exclamation marks. Do NOT change any words. Return ONLY the corrected text, nothing else.\n\n${text}`;
-        const cleaned = await callLLM(prompt, 'You are a punctuation editor. Insert sentence boundaries into unpunctuated text. Return ONLY the corrected text.');
-        parts = cleaned.split(/(?<=[.!?])\s+(?=[A-Za-z])/);
-        log(`    LLM split: ${parts.length} parts`);
-      } catch (e) {
-        log(`    LLM failed: ${e.message}`);
-        // Fall back to regex split
-        const words = text.split(/\s+/);
-        const splitPoints = [];
-        for (let w = 1; w < words.length; w++) {
-          const word = words[w].toLowerCase().replace(/[^a-z]/g, '');
-          const prevWord = words[w - 1].toLowerCase().replace(/[^a-z]/g, '');
-          if (WH_QUESTIONS.test(word)) { splitPoints.push(w); continue; }
-          if (SUBJECT_PRONOUNS.test(word) && CLAUSE_ENDERS.test(prevWord)) { splitPoints.push(w); continue; }
-          if (/^(but|because|so|and)$/i.test(word) && w >= 4) { splitPoints.push(w); continue; }
-        }
-        if (splitPoints.length > 0) {
-          parts = [];
-          let prev = 0;
-          for (const sp of splitPoints) { if (sp > prev) parts.push(words.slice(prev, sp).join(' ')); prev = sp; }
-          if (prev < words.length) parts.push(words.slice(prev).join(' '));
-        }
-      }
-    }
-
-    if (parts.length <= 1) { result.push(seg); continue; }
-
-    // Split: keep original start time for first part, distribute remaining time proportionally
-    const totalWords = text.split(/\s+/).length;
-    let cursor = seg.start;
-    for (const part of parts) {
-      const partWords = part.trim().split(/\s+/).length;
-      const proportion = partWords / totalWords;
-      const partDuration = seg.duration * proportion;
-      result.push({
-        id: 0,
-        text: part.trim(),
-        start: cursor,
-        duration: Math.round(partDuration * 100) / 100
-      });
-      cursor += partDuration;
-    }
-    splitCount++;
-  }
-
-  if (splitCount > 0) log(`  Split ${splitCount} segments`);
-  return result;
+  return await callLLM(prompt, SYSTEM_PROMPT);
 }
 
-function renumberAndSave(segments, outputPath) {
-  const numbered = segments.map((seg, i) => ({
-    id: i + 1,
-    text: seg.text.trim(),
-    start: seg.start,
-    duration: seg.duration
-  }));
-
-  const existing = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
-  existing.segments = numbered;
-  existing.formatted = true;
-  existing.formattedAt = new Date().toISOString();
-
-  fs.writeFileSync(outputPath, JSON.stringify(existing, null, 2) + '\n');
-  return numbered.length;
-}
-
-function processWeek(videoId) {
+async function processWeek(videoId) {
   const sentencesPath = path.join(SENTENCES_DIR, `${videoId}.json`);
   if (!fs.existsSync(sentencesPath)) { log(`ERROR: ${sentencesPath} not found`); return false; }
 
@@ -118,10 +55,56 @@ function processWeek(videoId) {
 
   if (unpunctuatedCount === 0) { log(`  ${videoId}: All punctuated — skipping`); return false; }
 
-  log(`  ${videoId}: ${unpunctuatedCount}/${data.segments.length} unpunctuated — splitting`);
-  const segments = splitAtPunctuation(data.segments);
-  const finalCount = renumberAndSave(segments, sentencesPath);
-  log(`  ${videoId}: ${finalCount} sentences`);
+  log(`  ${videoId}: ${unpunctuatedCount}/${data.segments.length} unpunctuated — sending to LLM`);
+
+  // Step 1: Combine ALL text into one string
+  const combinedText = data.segments.map(s => s.text.trim()).filter(t => t.length > 0).join(' ');
+
+  // Step 2: Send entire text to LLM ONCE
+  const cleanedText = await addPunctuation(combinedText);
+  log(`  LLM output: ${cleanedText.slice(0, 100)}...`);
+
+  // Step 3: Split at new punctuation boundaries
+  const sentences = cleanedText.split(/(?<=[.!?])\s+(?=[A-Za-z])/).filter(s => s.trim().length > 0);
+  log(`  Split into ${sentences.length} sentences`);
+
+  // Step 4: Map back to timestamps using word-position → time mapping
+  const wordToTime = [];
+  for (const seg of data.segments) {
+    const words = seg.text.split(/\s+/);
+    for (let w = 0; w < words.length; w++) {
+      wordToTime.push(seg.start + (w / words.length) * seg.duration);
+    }
+  }
+
+  let wordCursor = 0;
+  const alignedSegments = [];
+
+  for (let i = 0; i < sentences.length; i++) {
+    const sentence = sentences[i].trim();
+    const sentenceWords = sentence.split(/\s+/).length;
+    const startIdx = Math.min(wordCursor, wordToTime.length - 1);
+    const start = wordToTime[startIdx] || 0;
+    const endIdx = Math.min(wordCursor + sentenceWords - 1, wordToTime.length - 1);
+    const end = wordToTime[endIdx] || start + 2;
+    const duration = Math.round((end - start) * 100) / 100;
+
+    alignedSegments.push({
+      id: i + 1,
+      text: sentence,
+      start: Math.round(start * 100) / 100,
+      duration: Math.max(duration, 0.5)
+    });
+    wordCursor += sentenceWords;
+  }
+
+  // Save
+  data.segments = alignedSegments;
+  data.formatted = true;
+  data.formattedAt = new Date().toISOString();
+  fs.writeFileSync(sentencesPath, JSON.stringify(data, null, 2) + '\n');
+  log(`  ${videoId}: ${alignedSegments.length} sentences`);
+
   return true;
 }
 
@@ -134,11 +117,11 @@ async function main() {
     log(`Processing ${files.length} files...`);
     let processed = 0;
     for (const file of files) {
-      if (processWeek(file.replace('.json', ''))) processed++;
+      if (await processWeek(file.replace('.json', ''))) processed++;
     }
     log(`Done: ${processed}/${files.length}`);
   } else {
-    processWeek(target);
+    await processWeek(target);
   }
 }
 

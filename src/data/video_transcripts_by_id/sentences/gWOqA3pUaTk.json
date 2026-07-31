@@ -17,73 +17,73 @@
       "id": 3,
       "text": "May I speak to Kate, please?",
       "start": 7.2,
-      "duration": 1.86
+      "duration": 1.08
     },
     {
       "id": 4,
       "text": "Sorry.",
       "start": 10.16,
-      "duration": 0.41
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "She's not here.",
-      "start": 10.565,
-      "duration": 1.22
+      "start": 10.57,
+      "duration": 0.5
     },
     {
       "id": 6,
       "text": "Who's calling, please?",
       "start": 12.49,
-      "duration": 1.22
+      "duration": 0.5
     },
     {
       "id": 7,
       "text": "This is Mike, Kate's friend.",
       "start": 14.82,
-      "duration": 2.09
+      "duration": 1.07
     },
     {
       "id": 8,
       "text": "Hi, Mike.",
       "start": 17.86,
-      "duration": 0.82
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "Can I take a message?",
       "start": 19.14,
-      "duration": 1.29
+      "duration": 0.66
     },
     {
       "id": 10,
       "text": "No.",
       "start": 21.78,
-      "duration": 0.35
+      "duration": 0.5
     },
     {
       "id": 11,
       "text": "Thank you.",
-      "start": 22.133333333333333,
-      "duration": 0.71
+      "start": 22.13,
+      "duration": 0.5
     },
     {
       "id": 12,
       "text": "I'll call back later.",
       "start": 23.14,
-      "duration": 1.38
+      "duration": 0.59
     },
     {
       "id": 13,
       "text": "Okay.",
       "start": 25.81,
-      "duration": 0.53
+      "duration": 0.5
     },
     {
       "id": 14,
       "text": "Bye.",
       "start": 26.34,
-      "duration": 0.53
+      "duration": 0.5
     },
     {
       "id": 15,
@@ -107,7 +107,7 @@
       "id": 18,
       "text": "Can I speak to Kate?",
       "start": 36.61,
-      "duration": 1.62
+      "duration": 0.83
     },
     {
       "id": 19,
@@ -119,49 +119,49 @@
       "id": 20,
       "text": "Hi, Kate.",
       "start": 40.7,
-      "duration": 0.87
+      "duration": 0.5
     },
     {
       "id": 21,
       "text": "This is Mike.",
-      "start": 41.572,
-      "duration": 1.31
+      "start": 41.57,
+      "duration": 0.5
     },
     {
       "id": 22,
       "text": "Hi, Mike.",
       "start": 43.49,
-      "duration": 0.93
+      "duration": 0.5
     },
     {
       "id": 23,
       "text": "What's up?",
       "start": 44.42,
-      "duration": 0.93
+      "duration": 0.5
     },
     {
       "id": 24,
       "text": "Let's play badminton at the park.",
       "start": 45.81,
-      "duration": 2.35
+      "duration": 1.36
     },
     {
       "id": 25,
       "text": "Sounds good.",
       "start": 49.09,
-      "duration": 0.9
+      "duration": 0.5
     },
     {
       "id": 26,
       "text": "What time?",
       "start": 50.38,
-      "duration": 0.82
+      "duration": 0.5
     },
     {
       "id": 27,
       "text": "How about at two?",
       "start": 52.23,
-      "duration": 1.46
+      "duration": 0.62
     },
     {
       "id": 28,
@@ -173,7 +173,7 @@
       "id": 29,
       "text": "See you at two.",
       "start": 55.43,
-      "duration": 1.14
+      "duration": 0.5
     },
     {
       "id": 30,
@@ -185,7 +185,7 @@
       "id": 31,
       "text": "Let's role play.",
       "start": 62.87,
-      "duration": 1.22
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-07-23T06:28:49.909218+00:00",
@@ -212,5 +212,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.379Z"
+  "formattedAt": "2026-07-30T16:07:44.859Z"
 }

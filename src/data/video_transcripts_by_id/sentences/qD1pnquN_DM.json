@@ -5,157 +5,133 @@
       "id": 1,
       "text": "English Sing Sing.",
       "start": 1.76,
-      "duration": 1.38
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "My day.",
       "start": 7.36,
-      "duration": 0.82
+      "duration": 0.5
     },
     {
       "id": 3,
       "text": "Wake up.",
       "start": 13.12,
-      "duration": 0.74
+      "duration": 0.5
     },
     {
       "id": 4,
       "text": "Get up.",
       "start": 15.43,
-      "duration": 0.75
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "Get up.",
       "start": 18.31,
-      "duration": 0.74
+      "duration": 0.5
     },
     {
       "id": 6,
       "text": "I get up at seven.",
       "start": 21.84,
-      "duration": 1.86
+      "duration": 0.95
     },
     {
       "id": 7,
-      "text": "have breakfast have breakfast i have breakfast brush my teeth brush my teeth i brush",
+      "text": "Have breakfast.",
       "start": 29.9,
-      "duration": 21.83
-    },
-    {
-      "id": 8,
-      "text": "my teeth Wash my face.",
-      "start": 51.73,
-      "duration": 5.54
-    },
-    {
-      "id": 9,
-      "text": "Wash my face.",
-      "start": 59.73,
-      "duration": 1.14
-    },
-    {
-      "id": 10,
-      "text": "I wash my face.",
-      "start": 63.41,
-      "duration": 1.46
-    },
-    {
-      "id": 11,
-      "text": "Duck dressed duck dressed I get dressed.",
-      "start": 71.83,
-      "duration": 8.01
-    },
-    {
-      "id": 12,
-      "text": "Hurry up.",
-      "start": 80.78,
-      "duration": 0.88
-    },
-    {
-      "id": 13,
-      "text": "Go to school go to school",
-      "start": 86.38,
-      "duration": 4.34
-    },
-    {
-      "id": 14,
-      "text": "I go to school.",
-      "start": 93.02,
-      "duration": 1.3
-    },
-    {
-      "id": 15,
-      "text": "Take classes.",
-      "start": 101.67,
-      "duration": 0.74
-    },
-    {
-      "id": 16,
-      "text": "Take classes.",
-      "start": 104.86,
-      "duration": 0.74
-    },
-    {
-      "id": 17,
-      "text": "I take classes at school.",
-      "start": 107.75,
-      "duration": 2.17
-    },
-    {
-      "id": 18,
-      "text": "Have lunch have lunch I have lunch at the cafeteria.",
-      "start": 115.16,
-      "duration": 9.46
-    },
-    {
-      "id": 19,
-      "text": "Play with friends play with friends I play with my friends.",
-      "start": 129.75,
-      "duration": 10.01
-    },
-    {
-      "id": 20,
-      "text": "Come home I come home come home do my homework do my homework I do my homework.",
-      "start": 147.08,
-      "duration": 18.67
-    },
-    {
-      "id": 21,
-      "text": "have dinner have dinner i have dinner take a shower take a shower i take",
-      "start": 170.66,
-      "duration": 21.9
-    },
-    {
-      "id": 22,
-      "text": "a shower Go to bed go to bed I go to bed.",
-      "start": 192.56,
-      "duration": 10.59
-    },
-    {
-      "id": 23,
-      "text": "Goodnight.",
-      "start": 205.29,
       "duration": 0.5
     },
     {
-      "id": 24,
-      "text": "Review get up have breakfast brush my teeth wash my face get dressed go to school",
-      "start": 209.29,
-      "duration": 21.83
+      "id": 8,
+      "text": "Have breakfast.",
+      "start": 32.81,
+      "duration": 0.5
     },
     {
-      "id": 25,
-      "text": "take classes have lunch play with friends come home do my homework have dinner take",
-      "start": 233.42,
-      "duration": 22.04
+      "id": 9,
+      "text": "I have breakfast.",
+      "start": 35.72,
+      "duration": 1.29
     },
     {
-      "id": 26,
-      "text": "a shower go to bed",
-      "start": 255.46,
-      "duration": 5.14
+      "id": 10,
+      "text": "Brush my teeth.",
+      "start": 40.09,
+      "duration": 1.29
+    },
+    {
+      "id": 11,
+      "text": "Brush my teeth.",
+      "start": 44.45,
+      "duration": 1.29
+    },
+    {
+      "id": 12,
+      "text": "I brush my teeth.",
+      "start": 48.82,
+      "duration": 2.27
+    },
+    {
+      "id": 13,
+      "text": "Wash my face.",
+      "start": 53.95,
+      "duration": 0.99
+    },
+    {
+      "id": 14,
+      "text": "Wash my face.",
+      "start": 59.73,
+      "duration": 0.5
+    },
+    {
+      "id": 15,
+      "text": "I wash my face.",
+      "start": 63.41,
+      "duration": 0.61
+    },
+    {
+      "id": 16,
+      "text": "Duck dressed.",
+      "start": 71.83,
+      "duration": 0.5
+    },
+    {
+      "id": 17,
+      "text": "Duck dressed.",
+      "start": 74.12,
+      "duration": 0.5
+    },
+    {
+      "id": 18,
+      "text": "I get dressed.",
+      "start": 76.41,
+      "duration": 1.02
+    },
+    {
+      "id": 19,
+      "text": "Hurry up.",
+      "start": 80.78,
+      "duration": 0.5
+    },
+    {
+      "id": 20,
+      "text": "Go to school.",
+      "start": 86.38,
+      "duration": 0.65
+    },
+    {
+      "id": 21,
+      "text": "Go to school.",
+      "start": 88.55,
+      "duration": 0.65
+    },
+    {
+      "id": 22,
+      "text": "I go.",
+      "start": 93.02,
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-07-23T06:28:42.859159+00:00",
@@ -183,5 +159,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.388Z"
+  "formattedAt": "2026-07-30T16:09:13.642Z"
 }

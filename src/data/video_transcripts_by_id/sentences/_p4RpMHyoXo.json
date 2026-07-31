@@ -3,289 +3,343 @@
   "segments": [
     {
       "id": 1,
-      "text": "Can you swim.",
+      "text": "Can you swim?",
       "start": 5.6,
-      "duration": 7.44
+      "duration": 2.21
     },
     {
       "id": 2,
-      "text": "Happy birthday.",
+      "text": "Happy birthday!",
       "start": 13.04,
-      "duration": 4.96
+      "duration": 0.62
     },
     {
       "id": 3,
       "text": "This is for you.",
       "start": 15.28,
-      "duration": 5.28
+      "duration": 2.23
     },
     {
       "id": 4,
       "text": "Thank you.",
       "start": 18,
-      "duration": 2.56
+      "duration": 0.5
     },
     {
       "id": 5,
-      "text": "Can you fly.",
+      "text": "Can you fly?",
       "start": 26.4,
-      "duration": 5.44
+      "duration": 1.61
     },
     {
       "id": 6,
-      "text": "No i can't.",
+      "text": "No.",
       "start": 28.32,
-      "duration": 3.52
+      "duration": 0.5
     },
     {
       "id": 7,
-      "text": "Can you dance.",
-      "start": 34.88,
-      "duration": 5.2
+      "text": "I can't.",
+      "start": 29.49,
+      "duration": 0.5
     },
     {
       "id": 8,
-      "text": "Sorry i can't.",
-      "start": 36.72,
-      "duration": 3.36
+      "text": "Can you dance?",
+      "start": 34.88,
+      "duration": 1.54
     },
     {
       "id": 9,
-      "text": "Can you jump.",
-      "start": 41.92,
-      "duration": 2.64
+      "text": "Sorry.",
+      "start": 36.72,
+      "duration": 0.5
     },
     {
       "id": 10,
-      "text": "No.",
-      "start": 43.76,
-      "duration": 3.44
+      "text": "I can't.",
+      "start": 37.84,
+      "duration": 0.5
     },
     {
       "id": 11,
-      "text": "I can't.",
-      "start": 44.56,
-      "duration": 5.68
+      "text": "Can you jump?",
+      "start": 41.92,
+      "duration": 0.78
     },
     {
       "id": 12,
-      "text": "Can you swim.",
-      "start": 47.2,
-      "duration": 3.04
+      "text": "No.",
+      "start": 43.76,
+      "duration": 0.5
     },
     {
       "id": 13,
-      "text": "Yes i can.",
-      "start": 50.48,
-      "duration": 3.28
+      "text": "I can't.",
+      "start": 44.56,
+      "duration": 0.71
     },
     {
       "id": 14,
-      "text": "Good.",
-      "start": 52.72,
-      "duration": 4.84
+      "text": "Can you swim?",
+      "start": 47.2,
+      "duration": 0.9
     },
     {
       "id": 15,
-      "text": "Let's swim together.",
-      "start": 53.76,
-      "duration": 3.8
+      "text": "Yes.",
+      "start": 50.48,
+      "duration": 0.5
     },
     {
       "id": 16,
-      "text": "Let's swim.",
-      "start": 58.08,
-      "duration": 2.88
+      "text": "I can.",
+      "start": 51.57,
+      "duration": 0.5
     },
     {
       "id": 17,
-      "text": "Okay.",
-      "start": 61.84,
-      "duration": 2.4
+      "text": "Good.",
+      "start": 52.72,
+      "duration": 0.5
     },
     {
       "id": 18,
-      "text": "Oh no.",
-      "start": 66.72,
-      "duration": 3.56
+      "text": "Let's swim together.",
+      "start": 53.76,
+      "duration": 1.13
     },
     {
       "id": 19,
-      "text": "Oh.",
-      "start": 72.4,
-      "duration": 2.13
+      "text": "Let's swim.",
+      "start": 58.08,
+      "duration": 0.5
     },
     {
       "id": 20,
-      "text": "I can swim.",
-      "start": 73.28,
-      "duration": 10.16
+      "text": "Okay.",
+      "start": 61.84,
+      "duration": 0.5
     },
     {
       "id": 21,
-      "text": "Listen.",
-      "start": 83.44,
-      "duration": 6
+      "text": "Oh no!",
+      "start": 66.72,
+      "duration": 0.5
     },
     {
       "id": 22,
-      "text": "Happy birthday.",
-      "start": 89.44,
-      "duration": 5.04
+      "text": "Oh!",
+      "start": 72.4,
+      "duration": 0.5
     },
     {
       "id": 23,
-      "text": "This is for you.",
-      "start": 91.68,
-      "duration": 6.2
+      "text": "I can swim.",
+      "start": 73.28,
+      "duration": 3.01
     },
     {
       "id": 24,
-      "text": "Thank you.",
-      "start": 94.48,
-      "duration": 3.4
+      "text": "Listen.",
+      "start": 83.44,
+      "duration": 0.5
     },
     {
       "id": 25,
-      "text": "Can you fly.",
-      "start": 102.88,
-      "duration": 5.28
+      "text": "Happy birthday!",
+      "start": 89.44,
+      "duration": 0.63
     },
     {
       "id": 26,
-      "text": "No i can't.",
-      "start": 104.8,
-      "duration": 3.36
+      "text": "This is for you.",
+      "start": 91.68,
+      "duration": 2.62
     },
     {
       "id": 27,
-      "text": "Can you dance.",
-      "start": 111.36,
-      "duration": 5.28
+      "text": "Thank you.",
+      "start": 94.48,
+      "duration": 0.5
     },
     {
       "id": 28,
-      "text": "Sorry i can't.",
-      "start": 113.2,
-      "duration": 3.44
+      "text": "Can you fly?",
+      "start": 102.88,
+      "duration": 1.57
     },
     {
       "id": 29,
-      "text": "Can you jump.",
-      "start": 118.4,
-      "duration": 5.28
+      "text": "No.",
+      "start": 104.8,
+      "duration": 0.5
     },
     {
       "id": 30,
-      "text": "No i can't.",
-      "start": 120.32,
-      "duration": 6.4
+      "text": "I can't.",
+      "start": 105.92,
+      "duration": 0.5
     },
     {
       "id": 31,
-      "text": "Can you swim.",
-      "start": 123.68,
-      "duration": 3.04
+      "text": "Can you dance?",
+      "start": 111.36,
+      "duration": 1.57
     },
     {
       "id": 32,
-      "text": "Yes i can.",
-      "start": 126.96,
-      "duration": 3.36
+      "text": "Sorry.",
+      "start": 113.2,
+      "duration": 0.5
     },
     {
       "id": 33,
-      "text": "Good.",
-      "start": 129.28,
-      "duration": 4.4
+      "text": "I can't.",
+      "start": 114.35,
+      "duration": 0.5
     },
     {
       "id": 34,
-      "text": "Let's swim together.",
-      "start": 130.32,
-      "duration": 3.36
+      "text": "Can you jump?",
+      "start": 118.4,
+      "duration": 1.57
     },
     {
       "id": 35,
-      "text": "Let's swim.",
-      "start": 134.56,
-      "duration": 2.88
+      "text": "No.",
+      "start": 120.32,
+      "duration": 0.5
     },
     {
       "id": 36,
-      "text": "Okay.",
-      "start": 138.32,
-      "duration": 3
+      "text": "I can't.",
+      "start": 122.45,
+      "duration": 0.53
     },
     {
       "id": 37,
-      "text": "Oh no.",
-      "start": 143.2,
-      "duration": 2.88
+      "text": "Can you swim?",
+      "start": 123.68,
+      "duration": 0.9
     },
     {
       "id": 38,
-      "text": "Oh.",
-      "start": 148.96,
-      "duration": 4.36
+      "text": "Yes.",
+      "start": 126.96,
+      "duration": 0.5
     },
     {
       "id": 39,
-      "text": "I can swim.",
-      "start": 149.76,
-      "duration": 3.56
+      "text": "I can.",
+      "start": 128.08,
+      "duration": 0.5
     },
     {
       "id": 40,
-      "text": "Speak aloud.",
-      "start": 160.48,
-      "duration": 6.43
+      "text": "Good.",
+      "start": 129.28,
+      "duration": 0.5
     },
     {
       "id": 41,
-      "text": "Hmm.",
-      "start": 170.16,
-      "duration": 3
+      "text": "Let's swim together.",
+      "start": 130.32,
+      "duration": 0.99
     },
     {
       "id": 42,
-      "text": "Foreign.",
-      "start": 192.48,
-      "duration": 3
+      "text": "Let's swim.",
+      "start": 134.56,
+      "duration": 0.5
     },
     {
       "id": 43,
-      "text": "Hmm.",
-      "start": 201.92,
-      "duration": 3
+      "text": "Okay.",
+      "start": 138.32,
+      "duration": 0.5
     },
     {
       "id": 44,
-      "text": "Your turn.",
-      "start": 236.88,
-      "duration": 6.62
+      "text": "Oh no!",
+      "start": 143.2,
+      "duration": 0.5
     },
     {
       "id": 45,
-      "text": "Hmm.",
-      "start": 246.8,
-      "duration": 3
+      "text": "Oh!",
+      "start": 148.96,
+      "duration": 0.5
     },
     {
       "id": 46,
-      "text": "What Hmm.",
-      "start": 255.44,
-      "duration": 26.04
+      "text": "I can swim.",
+      "start": 149.76,
+      "duration": 1.05
     },
     {
       "id": 47,
-      "text": "So Bye.",
+      "text": "Speak aloud.",
+      "start": 160.48,
+      "duration": 0.81
+    },
+    {
+      "id": 48,
+      "text": "Hmm.",
+      "start": 170.16,
+      "duration": 0.5
+    },
+    {
+      "id": 49,
+      "text": "Foreign.",
+      "start": 192.48,
+      "duration": 0.5
+    },
+    {
+      "id": 50,
+      "text": "Hmm.",
+      "start": 201.92,
+      "duration": 0.5
+    },
+    {
+      "id": 51,
+      "text": "Your turn.",
+      "start": 236.88,
+      "duration": 0.83
+    },
+    {
+      "id": 52,
+      "text": "Hmm.",
+      "start": 246.8,
+      "duration": 0.5
+    },
+    {
+      "id": 53,
+      "text": "What?",
+      "start": 255.44,
+      "duration": 0.5
+    },
+    {
+      "id": 54,
+      "text": "Hmm.",
+      "start": 268.46,
+      "duration": 0.5
+    },
+    {
+      "id": 55,
+      "text": "So.",
       "start": 291.2,
-      "duration": 25.84
+      "duration": 0.5
+    },
+    {
+      "id": 56,
+      "text": "Bye.",
+      "start": 304.12,
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-06-24T03:42:34Z",
   "videoId": "_p4RpMHyoXo",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.371Z"
+  "formattedAt": "2026-07-30T16:06:26.320Z"
 }

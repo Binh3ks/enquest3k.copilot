@@ -3,91 +3,127 @@
   "segments": [
     {
       "id": 1,
-      "text": "Hey there kids.",
+      "text": "Hey there, kids.",
       "start": 5.88,
-      "duration": 2.18
+      "duration": 0.65
     },
     {
       "id": 2,
-      "text": "Everybody listen carefully and repeat after me Here we go.",
-      "start": 8.06076923076923,
-      "duration": 7.27
+      "text": "Everybody listen carefully and repeat after me.",
+      "start": 8.06,
+      "duration": 3.21
     },
     {
       "id": 3,
-      "text": "Duck Duck Cow Cow.",
-      "start": 18.12,
-      "duration": 11.55
+      "text": "Here we go.",
+      "start": 13.15,
+      "duration": 0.65
     },
     {
       "id": 4,
-      "text": "Pig Pig Horse Horse.",
-      "start": 30.91,
-      "duration": 11.58
+      "text": "Duck Duck.",
+      "start": 18.12,
+      "duration": 0.73
     },
     {
       "id": 5,
-      "text": "Chicken Chicken Dog Dog.",
-      "start": 43.63,
-      "duration": 11.67
+      "text": "Cow Cow.",
+      "start": 23.9,
+      "duration": 0.73
     },
     {
       "id": 6,
-      "text": "Cat Cat Rabbit Rabbit.",
-      "start": 56.52,
-      "duration": 11.08
+      "text": "Pig Pig.",
+      "start": 30.91,
+      "duration": 0.72
     },
     {
       "id": 7,
-      "text": "Sheep Sheep Goat Goat.",
-      "start": 69.13,
-      "duration": 11.71
+      "text": "Horse Horse.",
+      "start": 36.7,
+      "duration": 0.73
     },
     {
       "id": 8,
-      "text": "Well done, kids.",
-      "start": 83.1,
-      "duration": 1.61
+      "text": "Chicken Chicken.",
+      "start": 43.63,
+      "duration": 0.73
     },
     {
       "id": 9,
-      "text": "That was great Now it's your turn In a big voice, repeat after me.",
-      "start": 84.70588235294117,
-      "duration": 7.49
+      "text": "Dog Dog.",
+      "start": 49.47,
+      "duration": 0.73
     },
     {
       "id": 10,
-      "text": "Here we go Duck Cow.",
-      "start": 93.13,
-      "duration": 10.12
+      "text": "Cat Cat.",
+      "start": 56.52,
+      "duration": 0.69
     },
     {
       "id": 11,
-      "text": "Pig Horse Chicken.",
-      "start": 107.68,
-      "duration": 14.73
+      "text": "Rabbit Rabbit.",
+      "start": 62.06,
+      "duration": 0.69
     },
     {
       "id": 12,
-      "text": "Dog Cat Rabbit.",
-      "start": 126.86,
-      "duration": 14.82
+      "text": "Sheep Sheep.",
+      "start": 69.13,
+      "duration": 0.73
     },
     {
       "id": 13,
-      "text": "Sheep Goat That was great, kids.",
-      "start": 145.92,
-      "duration": 15.95
+      "text": "Goat Goat.",
+      "start": 74.99,
+      "duration": 0.73
     },
     {
       "id": 14,
-      "text": "Good job.",
-      "start": 162.92,
-      "duration": 1.88
+      "text": "Well done, kids.",
+      "start": 83.1,
+      "duration": 0.5
+    },
+    {
+      "id": 15,
+      "text": "That was great.",
+      "start": 84.71,
+      "duration": 0.5
+    },
+    {
+      "id": 16,
+      "text": "Now it's your turn.",
+      "start": 86.31,
+      "duration": 0.9
+    },
+    {
+      "id": 17,
+      "text": "In a big voice, repeat after me.",
+      "start": 88.45,
+      "duration": 2.36
+    },
+    {
+      "id": 18,
+      "text": "Here we go.",
+      "start": 93.13,
+      "duration": 1.8
+    },
+    {
+      "id": 19,
+      "text": "Duck Cow.",
+      "start": 99.2,
+      "duration": 0.5
+    },
+    {
+      "id": 20,
+      "text": "Pig Horse.",
+      "start": 107.68,
+      "duration": 1.22
     }
   ],
   "videoId": "t1tSx5cI9eg",
   "source": "cleaned",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.388Z"
+  "formattedAt": "2026-07-30T16:09:21.228Z"
 }

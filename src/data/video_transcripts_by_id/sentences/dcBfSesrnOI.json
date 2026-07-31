@@ -3,547 +3,97 @@
   "segments": [
     {
       "id": 1,
-      "text": "Letter teams episode one a cake for Kate.",
+      "text": "Letter teams episode one.",
       "start": 7.7,
-      "duration": 18.01
+      "duration": 3.8
     },
     {
       "id": 2,
-      "text": "Do your magic on me.",
-      "start": 40.64,
-      "duration": 4.44
+      "text": "A cake for Kate.",
+      "start": 16.71,
+      "duration": 3.8
     },
     {
       "id": 3,
-      "text": "Race race.",
-      "start": 51.26,
-      "duration": 11.77
+      "text": "Do your magic on me.",
+      "start": 40.64,
+      "duration": 2.27
     },
     {
       "id": 4,
-      "text": "Thank you.",
-      "start": 65.36,
-      "duration": 5.64
+      "text": "Race, race!",
+      "start": 51.26,
+      "duration": 1.47
     },
     {
       "id": 5,
-      "text": "Green had a cake.",
-      "start": 68.36,
-      "duration": 5.8
+      "text": "Thank you.",
+      "start": 65.36,
+      "duration": 0.7
     },
     {
       "id": 6,
-      "text": "I will give it to Kate.",
-      "start": 71,
-      "duration": 9.3
+      "text": "Green had a cake.",
+      "start": 68.36,
+      "duration": 2.44
     },
     {
       "id": 7,
-      "text": "Can we go too yes let's go.",
-      "start": 74.16,
-      "duration": 6.14
+      "text": "I will give it to Kate.",
+      "start": 71,
+      "duration": 5.38
     },
     {
       "id": 8,
-      "text": "The pals went out.",
-      "start": 82.62,
-      "duration": 3.44
+      "text": "Can we go too?",
+      "start": 74.16,
+      "duration": 1.48
     },
     {
       "id": 9,
-      "text": "Let's have a race.",
-      "start": 86.42,
-      "duration": 5.16
+      "text": "Yes, let's go.",
+      "start": 77.67,
+      "duration": 0.78
     },
     {
       "id": 10,
-      "text": "Let's Race to Kate.",
-      "start": 89.34,
-      "duration": 8.55
+      "text": "The pals went out.",
+      "start": 82.62,
+      "duration": 1.45
     },
     {
       "id": 11,
-      "text": "Oh no the pals ran into a maze.",
-      "start": 98.3,
-      "duration": 8.22
+      "text": "Let's have a race.",
+      "start": 86.42,
+      "duration": 2.17
     },
     {
       "id": 12,
-      "text": "Let's go there.",
-      "start": 106.52,
-      "duration": 3.54
+      "text": "Let's race to Kate.",
+      "start": 89.34,
+      "duration": 3.61
     },
     {
       "id": 13,
-      "text": "They did not see Kate.",
-      "start": 112.32,
-      "duration": 7.04
+      "text": "Oh no!",
+      "start": 98.3,
+      "duration": 0.5
     },
     {
       "id": 14,
-      "text": "They saw a cave.",
-      "start": 115.8,
-      "duration": 3.56
+      "text": "The pals ran into a maze.",
+      "start": 100.36,
+      "duration": 3.57
     },
     {
       "id": 15,
       "text": "Let's go there.",
-      "start": 126.5,
-      "duration": 3.72
-    },
-    {
-      "id": 16,
-      "text": "They saw a lake.",
-      "start": 131.34,
-      "duration": 10.02
-    },
-    {
-      "id": 17,
-      "text": "The Maze.",
-      "start": 141.36,
-      "duration": 8.1
-    },
-    {
-      "id": 18,
-      "text": "The pals ran to her Kate.",
-      "start": 144.26,
-      "duration": 5.2
-    },
-    {
-      "id": 19,
-      "text": "This cake is for you.",
-      "start": 151.92,
-      "duration": 4.2
-    },
-    {
-      "id": 20,
-      "text": "Thank you.",
-      "start": 154.8,
-      "duration": 23.33
-    },
-    {
-      "id": 21,
-      "text": "Link.",
-      "start": 180.54,
-      "duration": 3
-    },
-    {
-      "id": 22,
-      "text": "Ace race.",
-      "start": 193.04,
-      "duration": 7.78
-    },
-    {
-      "id": 23,
-      "text": "Ace face.",
-      "start": 196.98,
-      "duration": 3.84
-    },
-    {
-      "id": 24,
-      "text": "Letter teams episode 2 where did they.",
-      "start": 212.6,
-      "duration": 5.38
-    },
-    {
-      "id": 25,
-      "text": "Hide.",
-      "start": 216.54,
-      "duration": 4.44
-    },
-    {
-      "id": 26,
-      "text": "Foreign.",
-      "start": 217.98,
-      "duration": 3
-    },
-    {
-      "id": 27,
-      "text": "I say my name.",
-      "start": 252.12,
-      "duration": 3.92
-    },
-    {
-      "id": 28,
-      "text": "The pals are at the pine.",
-      "start": 270,
-      "duration": 5.66
-    },
-    {
-      "id": 29,
-      "text": "They play a game.",
-      "start": 273.84,
-      "duration": 7.82
-    },
-    {
-      "id": 30,
-      "text": "Let's hide.",
-      "start": 281.66,
-      "duration": 3.6
-    },
-    {
-      "id": 31,
-      "text": "One two three.",
-      "start": 285.26,
-      "duration": 7.2
-    },
-    {
-      "id": 32,
-      "text": "Foreign.",
-      "start": 289.62,
-      "duration": 2.84
-    },
-    {
-      "id": 33,
-      "text": "Looks for the pals.",
-      "start": 300.86,
-      "duration": 5.27
-    },
-    {
-      "id": 34,
-      "text": "Where did they hide.",
-      "start": 303.8,
-      "duration": 7.26
-    },
-    {
-      "id": 35,
-      "text": "Did blue hide at the hive.",
-      "start": 311.1,
-      "duration": 5.42
-    },
-    {
-      "id": 36,
-      "text": "No yellow is at the hive.",
-      "start": 316.52,
-      "duration": 6.06
-    },
-    {
-      "id": 37,
-      "text": "Green hide on the bike.",
-      "start": 324.98,
-      "duration": 4.38
-    },
-    {
-      "id": 38,
-      "text": "No blue is on the bike.",
-      "start": 330.8,
-      "duration": 5.63
-    },
-    {
-      "id": 39,
-      "text": "Pink hide in the Vine.",
-      "start": 338.6,
-      "duration": 4.2
-    },
-    {
-      "id": 40,
-      "text": "No green is in the Vine.",
-      "start": 344.36,
-      "duration": 12.78
-    },
-    {
-      "id": 41,
-      "text": "Pink where are you.",
-      "start": 357.14,
-      "duration": 6.94
-    },
-    {
-      "id": 42,
-      "text": "Pink is on the kite.",
-      "start": 365.66,
-      "duration": 4.08
-    },
-    {
-      "id": 43,
-      "text": "Um.",
-      "start": 375.12,
-      "duration": 2.06
-    },
-    {
-      "id": 44,
-      "text": "Kite.",
-      "start": 393.54,
-      "duration": 9.2
-    },
-    {
-      "id": 45,
-      "text": "Letter teams episode 3 in the hole.",
-      "start": 405.08,
-      "duration": 13.2
-    },
-    {
-      "id": 46,
-      "text": "I'm alone.",
-      "start": 418.28,
-      "duration": 5.45
-    },
-    {
-      "id": 47,
-      "text": "Do your magic on me.",
-      "start": 438.2,
-      "duration": 4.56
-    },
-    {
-      "id": 48,
-      "text": "I say my name.",
-      "start": 443.94,
-      "duration": 4.04
-    },
-    {
-      "id": 49,
-      "text": "The pals saw a hole.",
-      "start": 469.5,
-      "duration": 3.98
-    },
-    {
-      "id": 50,
-      "text": "Come on.",
-      "start": 473.48,
-      "duration": 3.16
-    },
-    {
-      "id": 51,
-      "text": "What is in it.",
-      "start": 476.64,
-      "duration": 3.44
-    },
-    {
-      "id": 52,
-      "text": "Green got a rope.",
-      "start": 485.66,
-      "duration": 3.84
-    },
-    {
-      "id": 53,
-      "text": "He put it in the hole.",
-      "start": 491.34,
-      "duration": 3.44
-    },
-    {
-      "id": 54,
-      "text": "The pals went down the Rope.",
-      "start": 495.18,
-      "duration": 8.21
-    },
-    {
-      "id": 55,
-      "text": "Pink saw a cone.",
-      "start": 504.06,
-      "duration": 4.26
-    },
-    {
-      "id": 56,
-      "text": "I like this cone.",
-      "start": 508.32,
-      "duration": 7.16
-    },
-    {
-      "id": 57,
-      "text": "Yellow saw a rose.",
-      "start": 511.98,
-      "duration": 3.5
-    },
-    {
-      "id": 58,
-      "text": "Rose.",
-      "start": 515.72,
-      "duration": 4.32
-    },
-    {
-      "id": 59,
-      "text": "Oh no here comes a mole.",
-      "start": 528.42,
-      "duration": 4.76
-    },
-    {
-      "id": 60,
-      "text": "This is my home.",
-      "start": 533.82,
-      "duration": 3.14
-    },
-    {
-      "id": 61,
-      "text": "The mole was mad.",
-      "start": 540.8,
-      "duration": 3.9
-    },
-    {
-      "id": 62,
-      "text": "In my comb.",
-      "start": 545.76,
-      "duration": 3.84
-    },
-    {
-      "id": 63,
-      "text": "OS.",
-      "start": 548.76,
-      "duration": 4.62
-    },
-    {
-      "id": 64,
-      "text": "Let's go home.",
-      "start": 553.38,
-      "duration": 3.2
-    },
-    {
-      "id": 65,
-      "text": "The pals went up the road.",
-      "start": 558.98,
-      "duration": 5.35
-    },
-    {
-      "id": 66,
-      "text": "Thank you.",
-      "start": 564.78,
-      "duration": 2.78
-    },
-    {
-      "id": 67,
-      "text": "Letter teams episode 4 stop the tune.",
-      "start": 605.18,
-      "duration": 15.7
-    },
-    {
-      "id": 68,
-      "text": "Luke.",
-      "start": 648.3,
-      "duration": 11.48
-    },
-    {
-      "id": 69,
-      "text": "Luke.",
-      "start": 664.46,
-      "duration": 7.8
-    },
-    {
-      "id": 70,
-      "text": "He sat on the mule.",
-      "start": 668.4,
-      "duration": 3.86
-    },
-    {
-      "id": 71,
-      "text": "It's so cute can I sit on the mule.",
-      "start": 672.38,
-      "duration": 8.74
-    },
-    {
-      "id": 72,
-      "text": "No.",
-      "start": 678.12,
-      "duration": 3
-    },
-    {
-      "id": 73,
-      "text": "Pink was sad.",
-      "start": 681.18,
-      "duration": 8.9
-    },
-    {
-      "id": 74,
-      "text": "I see a cube.",
-      "start": 690.08,
-      "duration": 4.38
-    },
-    {
-      "id": 75,
-      "text": "There is a tube.",
-      "start": 694.62,
-      "duration": 3.32
-    },
-    {
-      "id": 76,
-      "text": "I see.",
-      "start": 697.98,
-      "duration": 2.78
-    },
-    {
-      "id": 77,
-      "text": "I see pots and lids.",
-      "start": 701.76,
-      "duration": 4.76
-    },
-    {
-      "id": 78,
-      "text": "Hmm.",
-      "start": 707.82,
-      "duration": 3
-    },
-    {
-      "id": 79,
-      "text": "Let's play a tune.",
-      "start": 711.66,
-      "duration": 3.6
-    },
-    {
-      "id": 80,
-      "text": "Oh.",
-      "start": 715.26,
-      "duration": 5.45
-    },
-    {
-      "id": 81,
-      "text": "The pals played a tune.",
-      "start": 717.02,
-      "duration": 11.17
-    },
-    {
-      "id": 82,
-      "text": "But the tune was not good.",
-      "start": 728.42,
-      "duration": 5.46
-    },
-    {
-      "id": 83,
-      "text": "Stop that's a bad.",
-      "start": 733.88,
-      "duration": 5.4
-    },
-    {
-      "id": 84,
-      "text": "Tune.",
-      "start": 737.04,
-      "duration": 6.38
-    },
-    {
-      "id": 85,
-      "text": "Luke hid in the cube.",
-      "start": 739.28,
-      "duration": 4.14
-    },
-    {
-      "id": 86,
-      "text": "Let's play again.",
-      "start": 750.72,
-      "duration": 7.19
-    },
-    {
-      "id": 87,
-      "text": "That's a nice tune.",
-      "start": 773,
-      "duration": 4.44
-    },
-    {
-      "id": 88,
-      "text": "Cute.",
-      "start": 783.36,
-      "duration": 2.54
-    },
-    {
-      "id": 89,
-      "text": "Um.",
-      "start": 786,
-      "duration": 2.18
-    },
-    {
-      "id": 90,
-      "text": "Luke.",
-      "start": 800.34,
-      "duration": 14.36
+      "start": 106.52,
+      "duration": 1.05
     }
   ],
   "fetchedAt": "2026-06-15T04:02:57.278Z",
   "videoId": "dcBfSesrnOI",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.376Z"
+  "formattedAt": "2026-07-30T16:07:05.127Z"
 }

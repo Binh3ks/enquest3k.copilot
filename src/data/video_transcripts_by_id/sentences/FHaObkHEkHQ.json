@@ -5,139 +5,151 @@
       "id": 1,
       "text": "English sing sing.",
       "start": 1.76,
-      "duration": 4.74
+      "duration": 1.41
     },
     {
       "id": 2,
-      "text": "Family Hello.",
+      "text": "Family.",
       "start": 8.12,
-      "duration": 2.62
+      "duration": 0.5
     },
     {
       "id": 3,
-      "text": "Let me introduce my family.",
-      "start": 11.92,
-      "duration": 2.1
+      "text": "Hello.",
+      "start": 9.43,
+      "duration": 0.5
     },
     {
       "id": 4,
-      "text": "It's me.",
-      "start": 15.01,
-      "duration": 0.89
+      "text": "Let me introduce my family.",
+      "start": 11.92,
+      "duration": 1.07
     },
     {
       "id": 5,
-      "text": "Me He is my father.",
-      "start": 17,
-      "duration": 4.11
+      "text": "It's me.",
+      "start": 15.01,
+      "duration": 0.5
     },
     {
       "id": 6,
-      "text": "She is my mother.",
-      "start": 23.16,
-      "duration": 1.46
+      "text": "Me.",
+      "start": 17,
+      "duration": 0.5
     },
     {
       "id": 7,
-      "text": "Father father mother mother They are my parents.",
-      "start": 25.88,
-      "duration": 8.65
+      "text": "He is my father.",
+      "start": 17.82,
+      "duration": 1.39
     },
     {
       "id": 8,
-      "text": "Parents parents He is my brother.",
-      "start": 36.11,
-      "duration": 6.77
+      "text": "She is my mother.",
+      "start": 23.16,
+      "duration": 0.61
     },
     {
       "id": 9,
-      "text": "She is my sister.",
-      "start": 44.7,
-      "duration": 1.53
+      "text": "Father.",
+      "start": 25.88,
+      "duration": 0.5
     },
     {
       "id": 10,
+      "text": "Father.",
+      "start": 26.96,
+      "duration": 0.5
+    },
+    {
+      "id": 11,
+      "text": "Mother.",
+      "start": 28.04,
+      "duration": 0.5
+    },
+    {
+      "id": 12,
+      "text": "Mother.",
+      "start": 29.12,
+      "duration": 0.5
+    },
+    {
+      "id": 13,
+      "text": "They are my parents.",
+      "start": 30.21,
+      "duration": 1.82
+    },
+    {
+      "id": 14,
+      "text": "Parents.",
+      "start": 36.11,
+      "duration": 0.5
+    },
+    {
+      "id": 15,
+      "text": "Parents.",
+      "start": 37.24,
+      "duration": 0.5
+    },
+    {
+      "id": 16,
+      "text": "He is my brother.",
+      "start": 38.37,
+      "duration": 1.91
+    },
+    {
+      "id": 17,
+      "text": "She is my sister.",
+      "start": 44.7,
+      "duration": 0.65
+    },
+    {
+      "id": 18,
       "text": "Brother.",
       "start": 48.05,
       "duration": 0.5
     },
     {
-      "id": 11,
+      "id": 19,
       "text": "Brother.",
       "start": 49.98,
       "duration": 0.5
     },
     {
-      "id": 12,
+      "id": 20,
       "text": "Sister.",
       "start": 51.73,
       "duration": 0.5
     },
     {
-      "id": 13,
-      "text": "Sister He is my grandfather.",
-      "start": 53.82,
-      "duration": 4.9
-    },
-    {
-      "id": 14,
-      "text": "He is my grandmother.",
-      "start": 60.7,
-      "duration": 1.46
-    },
-    {
-      "id": 15,
-      "text": "Grandfather Grandfather Grandmother Grandmother They are my grandparents.",
-      "start": 64.3,
-      "duration": 9.43
-    },
-    {
-      "id": 16,
-      "text": "Grandparents Grandparents He is my uncle.",
-      "start": 75.31,
-      "duration": 6.91
-    },
-    {
-      "id": 17,
-      "text": "Oh, he is my uncle too.",
-      "start": 84.38,
-      "duration": 2.58
-    },
-    {
-      "id": 18,
-      "text": "Uncle Uncle She is my aunt.",
-      "start": 88.62,
-      "duration": 6.5
-    },
-    {
-      "id": 19,
-      "text": "Aunt aunt She is my cousin.",
-      "start": 97.61,
-      "duration": 6.09
-    },
-    {
-      "id": 20,
-      "text": "Cousin cousin my family They are my family members.",
-      "start": 105.77,
-      "duration": 7.77
-    },
-    {
       "id": 21,
-      "text": "I love them.",
-      "start": 114.24,
-      "duration": 1.22
-    },
-    {
-      "id": 22,
-      "text": "Review.",
-      "start": 116.88,
+      "text": "Sister.",
+      "start": 53.82,
       "duration": 0.5
     },
     {
+      "id": 22,
+      "text": "He is my grandfather.",
+      "start": 54.8,
+      "duration": 1.65
+    },
+    {
       "id": 23,
-      "text": "Grandfather grandmother grandparents father mother parents uncle uncle aunt brother me sister cousin my family",
-      "start": 123.04,
-      "duration": 46.77
+      "text": "He is my grandmother.",
+      "start": 60.7,
+      "duration": 0.62
+    },
+    {
+      "id": 24,
+      "text": "Grandfather.",
+      "start": 64.3,
+      "duration": 0.5
+    },
+    {
+      "id": 25,
+      "text": "Grand.",
+      "start": 65.48,
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-07-23T06:23:33.174399+00:00",
@@ -164,5 +176,5 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.353Z"
-}
+  "formattedAt": "2026-07-30T16:03:22.500Z"
+}\n

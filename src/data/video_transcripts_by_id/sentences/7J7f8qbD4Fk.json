@@ -6,97 +6,97 @@
       "id": 1,
       "text": "English together.",
       "start": 0.56,
-      "duration": 1.38
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "Conversation one.",
       "start": 4.4,
-      "duration": 1.38
+      "duration": 0.5
     },
     {
       "id": 3,
       "text": "Hey.",
       "start": 12.49,
-      "duration": 0.48
+      "duration": 0.5
     },
     {
       "id": 4,
       "text": "What did you do yesterday?",
       "start": 12.97,
-      "duration": 1.31
+      "duration": 0.67
     },
     {
       "id": 5,
       "text": "I played football with my friends.",
       "start": 16.26,
-      "duration": 2.01
+      "duration": 1.17
     },
     {
       "id": 6,
       "text": "Was it fun?",
       "start": 21.38,
-      "duration": 1.06
+      "duration": 0.5
     },
     {
       "id": 7,
       "text": "Yes.",
       "start": 24.99,
-      "duration": 0.37
+      "duration": 0.5
     },
     {
       "id": 8,
       "text": "It was really enjoyable.",
-      "start": 25.362,
-      "duration": 1.49
+      "start": 25.36,
+      "duration": 0.63
     },
     {
       "id": 9,
       "text": "We had a great time kicking the ball around and having a good laugh.",
       "start": 29.63,
-      "duration": 3.38
+      "duration": 2.71
     },
     {
       "id": 10,
       "text": "That sounds cool.",
       "start": 37.39,
-      "duration": 1.21
+      "duration": 0.5
     },
     {
       "id": 11,
       "text": "What about you?",
       "start": 41.47,
-      "duration": 1.05
+      "duration": 0.5
     },
     {
       "id": 12,
       "text": "What did you do yesterday?",
       "start": 43.7,
-      "duration": 1.22
+      "duration": 0.62
     },
     {
       "id": 13,
       "text": "I cooked dinner for my family.",
       "start": 47.62,
-      "duration": 1.86
+      "duration": 1.08
     },
     {
       "id": 14,
       "text": "What did you cook?",
       "start": 52.09,
-      "duration": 1.14
+      "duration": 0.5
     },
     {
       "id": 15,
       "text": "I made sushi.",
       "start": 56.73,
-      "duration": 1.22
+      "duration": 0.5
     },
     {
       "id": 16,
       "text": "It was simple but tasty.",
       "start": 60.09,
-      "duration": 1.78
+      "duration": 0.91
     },
     {
       "id": 17,
@@ -108,49 +108,49 @@
       "id": 18,
       "text": "Conversation two.",
       "start": 68.66,
-      "duration": 1.37
+      "duration": 0.5
     },
     {
       "id": 19,
       "text": "Hey.",
       "start": 77.44,
-      "duration": 0.48
+      "duration": 0.5
     },
     {
       "id": 20,
       "text": "What did you do yesterday?",
       "start": 77.92,
-      "duration": 1.22
+      "duration": 0.62
     },
     {
       "id": 21,
       "text": "I play games with my friends.",
       "start": 82.24,
-      "duration": 1.94
+      "duration": 1.13
     },
     {
       "id": 22,
       "text": "Sounds cool.",
       "start": 89.06,
-      "duration": 1.06
+      "duration": 0.5
     },
     {
       "id": 23,
       "text": "What games did you play?",
       "start": 92.81,
-      "duration": 1.63
+      "duration": 0.83
     },
     {
       "id": 24,
       "text": "We played Uno.",
       "start": 96.73,
-      "duration": 1.3
+      "duration": 0.5
     },
     {
       "id": 25,
       "text": "It was really fun.",
       "start": 100.73,
-      "duration": 1.46
+      "duration": 0.61
     },
     {
       "id": 26,
@@ -162,127 +162,127 @@
       "id": 27,
       "text": "Did you win any games?",
       "start": 105.97,
-      "duration": 1.38
+      "duration": 0.7
     },
     {
       "id": 28,
       "text": "I won a few rounds.",
       "start": 109.89,
-      "duration": 1.46
+      "duration": 0.75
     },
     {
       "id": 29,
       "text": "That's great.",
       "start": 114.29,
-      "duration": 0.98
+      "duration": 0.5
     },
     {
       "id": 30,
       "text": "So what about you?",
       "start": 118.33,
-      "duration": 1.39
+      "duration": 0.58
     },
     {
       "id": 31,
       "text": "What did you do?",
       "start": 122.17,
-      "duration": 1.22
+      "duration": 0.52
     },
     {
       "id": 32,
       "text": "I went to a painting class and made a pretty picture.",
       "start": 125.85,
-      "duration": 2.66
+      "duration": 2
     },
     {
       "id": 33,
       "text": "That's awesome.",
       "start": 132.55,
-      "duration": 1.14
+      "duration": 0.5
     },
     {
       "id": 34,
       "text": "What did you paint?",
       "start": 135.59,
-      "duration": 1.22
+      "duration": 0.51
     },
     {
       "id": 35,
       "text": "I painted a nice sunset by a calm lake.",
       "start": 139.03,
-      "duration": 2.58
+      "duration": 1.81
     },
     {
       "id": 36,
       "text": "It was fun to be creative.",
       "start": 144.32,
-      "duration": 1.71
+      "duration": 0.99
     },
     {
       "id": 37,
       "text": "Sounds amazing.",
       "start": 147.93,
-      "duration": 1.06
+      "duration": 0.5
     },
     {
       "id": 38,
       "text": "I'm sure it looked great.",
       "start": 150.97,
-      "duration": 1.85
+      "duration": 0.94
     },
     {
       "id": 39,
       "text": "Thank you.",
       "start": 154.81,
-      "duration": 0.9
+      "duration": 0.5
     },
     {
       "id": 40,
       "text": "Don't forget to like and subscribe.",
       "start": 157.76,
-      "duration": 1.86
+      "duration": 1.07
     },
     {
       "id": 41,
       "text": "Conversation three.",
       "start": 161.6,
-      "duration": 1.3
+      "duration": 0.5
     },
     {
       "id": 42,
       "text": "What did you do yesterday?",
       "start": 169.69,
-      "duration": 1.31
+      "duration": 0.67
     },
     {
       "id": 43,
       "text": "I went to a cool museum.",
       "start": 173.46,
-      "duration": 1.54
+      "duration": 0.89
     },
     {
       "id": 44,
       "text": "Oh, what kind of museum was it?",
       "start": 177.46,
-      "duration": 2.01
+      "duration": 1.26
     },
     {
       "id": 45,
       "text": "It was an art museum with paintings and sculptures.",
       "start": 181.71,
-      "duration": 3.14
+      "duration": 2.2
     },
     {
       "id": 46,
       "text": "That sounds fun.",
       "start": 189.47,
-      "duration": 1.3
+      "duration": 0.5
     },
     {
       "id": 47,
       "text": "Did you have a favorite painting or sculpture?",
       "start": 192.75,
-      "duration": 2.1
+      "duration": 1.41
     },
     {
       "id": 48,
@@ -294,49 +294,49 @@
       "id": 49,
       "text": "I really liked the pretty paintings by famous artists.",
       "start": 198.78,
-      "duration": 3.38
+      "duration": 2.37
     },
     {
       "id": 50,
       "text": "That's nice.",
       "start": 204.69,
-      "duration": 0.9
+      "duration": 0.5
     },
     {
       "id": 51,
       "text": "So what about you?",
       "start": 207.34,
-      "duration": 1.78
+      "duration": 0.75
     },
     {
       "id": 52,
       "text": "How did you spend your day?",
       "start": 209.75,
-      "duration": 1.7
+      "duration": 0.98
     },
     {
       "id": 53,
       "text": "I went for a hike in a beautiful nature area.",
       "start": 213.11,
-      "duration": 2.74
+      "duration": 2
     },
     {
       "id": 54,
       "text": "That sounds nice.",
       "start": 218.39,
-      "duration": 1.14
+      "duration": 0.5
     },
     {
       "id": 55,
       "text": "Which trail did you walk on?",
       "start": 221.53,
-      "duration": 1.78
+      "duration": 1.03
     },
     {
       "id": 56,
       "text": "I walked on a trail that led to a big waterfall.",
       "start": 225.53,
-      "duration": 2.66
+      "duration": 2
     },
     {
       "id": 57,
@@ -348,13 +348,13 @@
       "id": 58,
       "text": "That must have been amazing.",
       "start": 232.65,
-      "duration": 1.54
+      "duration": 0.78
     },
     {
       "id": 59,
       "text": "Did you take any pictures?",
       "start": 236.49,
-      "duration": 1.38
+      "duration": 0.7
     },
     {
       "id": 60,
@@ -366,19 +366,19 @@
       "id": 61,
       "text": "I took some nice photos of the waterfall and nature around it.",
       "start": 241.61,
-      "duration": 3.78
+      "duration": 2.91
     },
     {
       "id": 62,
       "text": "That's great.",
       "start": 250.47,
-      "duration": 1.06
+      "duration": 0.5
     },
     {
       "id": 63,
       "text": "It sounds like you had a fun day exploring nature.",
       "start": 252.62,
-      "duration": 2.98
+      "duration": 2.17
     },
     {
       "id": 64,
@@ -390,37 +390,37 @@
       "id": 65,
       "text": "It was a relaxing and enjoyable day.",
       "start": 259.35,
-      "duration": 2.41
+      "duration": 1.52
     },
     {
       "id": 66,
       "text": "And that's all.",
       "start": 264.51,
-      "duration": 1.14
+      "duration": 0.5
     },
     {
       "id": 67,
       "text": "Remember to watch this video again because repetition can help you in learning English.",
       "start": 266.91,
-      "duration": 4.5
+      "duration": 3.6
     },
     {
       "id": 68,
       "text": "If you like our video, remember to like it and share it with your friends.",
       "start": 272.67,
-      "duration": 3.62
+      "duration": 2.94
     },
     {
       "id": 69,
-      "text": "Also, go to go to subscribe to our channel for more videos like this.",
+      "text": "Also, go to subscribe to our channel for more videos like this.",
       "start": 278.21,
-      "duration": 4.1
+      "duration": 2.7
     },
     {
       "id": 70,
       "text": "See you next time.",
-      "start": 282.85,
-      "duration": 2.02
+      "start": 281.72,
+      "duration": 0.92
     }
   ],
   "speakerMap": {
@@ -446,5 +446,5 @@
     "afterSegments": 69
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.349Z"
+  "formattedAt": "2026-07-30T16:02:34.058Z"
 }

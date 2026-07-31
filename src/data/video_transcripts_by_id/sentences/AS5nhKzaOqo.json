@@ -5,371 +5,125 @@
       "id": 1,
       "text": "School supplies.",
       "start": 7.8,
-      "duration": 2
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "What's in your backpack?",
       "start": 11.32,
-      "duration": 2.04
+      "duration": 0.86
     },
     {
       "id": 3,
       "text": "It's my book.",
       "start": 14.34,
-      "duration": 1.54
+      "duration": 0.5
     },
     {
       "id": 4,
       "text": "I can read.",
-      "start": 15.879999999999999,
-      "duration": 1.54
+      "start": 15.88,
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "Book.",
       "start": 18.7,
-      "duration": 1.2
+      "duration": 0.5
     },
     {
       "id": 6,
       "text": "Book.",
       "start": 20.58,
-      "duration": 1.16
+      "duration": 0.5
     },
     {
       "id": 7,
       "text": "It's my notebook.",
       "start": 23.78,
-      "duration": 1.42
+      "duration": 0.5
     },
     {
       "id": 8,
       "text": "I can write on it.",
-      "start": 25.1975,
-      "duration": 2.36
+      "start": 25.2,
+      "duration": 1.21
     },
     {
       "id": 9,
       "text": "Notebook.",
       "start": 28.94,
-      "duration": 2
+      "duration": 0.5
     },
     {
       "id": 10,
       "text": "Notebook.",
       "start": 32.44,
-      "duration": 1.36
+      "duration": 0.5
     },
     {
       "id": 11,
       "text": "These are my scissors.",
       "start": 36.12,
-      "duration": 1.97
+      "duration": 0.83
     },
     {
       "id": 12,
       "text": "I can cut the paper.",
-      "start": 38.093333333333334,
-      "duration": 2.47
+      "start": 38.09,
+      "duration": 1.26
     },
     {
       "id": 13,
       "text": "Scissors.",
       "start": 43.98,
-      "duration": 2
+      "duration": 0.5
     },
     {
       "id": 14,
       "text": "Scissors.",
       "start": 46.48,
-      "duration": 2
+      "duration": 0.5
     },
     {
       "id": 15,
       "text": "It's my glue.",
       "start": 48.76,
-      "duration": 1.33
+      "duration": 0.5
     },
     {
       "id": 16,
       "text": "I can stick them with it.",
-      "start": 50.086666666666666,
-      "duration": 2.65
+      "start": 50.09,
+      "duration": 1.53
     },
     {
       "id": 17,
       "text": "Glue.",
       "start": 56.35,
-      "duration": 2
+      "duration": 0.5
     },
     {
       "id": 18,
       "text": "Glue.",
       "start": 58.5,
-      "duration": 1.24
+      "duration": 0.5
     },
     {
       "id": 19,
       "text": "It's my tape.",
       "start": 60.58,
-      "duration": 1.39
+      "duration": 0.5
     },
     {
       "id": 20,
-      "text": "I can put them with it.",
-      "start": 61.97333333333333,
-      "duration": 2.79
-    },
-    {
-      "id": 21,
-      "text": "Tape.",
-      "start": 65.84,
-      "duration": 1.28
-    },
-    {
-      "id": 22,
-      "text": "Tape.",
-      "start": 67.74,
-      "duration": 1.22
-    },
-    {
-      "id": 23,
-      "text": "Is this your pencil case?",
-      "start": 71.52,
-      "duration": 2.46
-    },
-    {
-      "id": 24,
-      "text": "Yes, it is.",
-      "start": 75.06,
-      "duration": 2
-    },
-    {
-      "id": 25,
-      "text": "Pencil case.",
-      "start": 77.72,
-      "duration": 2
-    },
-    {
-      "id": 26,
-      "text": "Pencil case.",
-      "start": 80.3,
-      "duration": 2
-    },
-    {
-      "id": 27,
-      "text": "What's in your pencil case?",
-      "start": 82.62,
-      "duration": 2.26
-    },
-    {
-      "id": 28,
-      "text": "These are my pencils and pens.",
-      "start": 86,
-      "duration": 2.82
-    },
-    {
-      "id": 29,
-      "text": "I like to write.",
-      "start": 88.82,
-      "duration": 1.88
-    },
-    {
-      "id": 30,
-      "text": "Pencil.",
-      "start": 92.56,
-      "duration": 2.7
-    },
-    {
-      "id": 31,
-      "text": "Pen.",
-      "start": 96.4,
-      "duration": 2.72
-    },
-    {
-      "id": 32,
-      "text": "It's my eraser.",
-      "start": 100.52,
-      "duration": 1.97
-    },
-    {
-      "id": 33,
-      "text": "I can erase and write again.",
-      "start": 102.49333333333333,
-      "duration": 3.95
-    },
-    {
-      "id": 34,
-      "text": "Eraser.",
-      "start": 107.66,
-      "duration": 1.2
-    },
-    {
-      "id": 35,
-      "text": "Eraser.",
-      "start": 109.62,
-      "duration": 1.52
-    },
-    {
-      "id": 36,
-      "text": "It's my highlighter.",
-      "start": 113.88,
-      "duration": 1.63
-    },
-    {
-      "id": 37,
-      "text": "I can mark with it.",
-      "start": 115.5075,
-      "duration": 2.71
-    },
-    {
-      "id": 38,
-      "text": "Highlighter.",
-      "start": 119.66,
-      "duration": 2
-    },
-    {
-      "id": 39,
-      "text": "Highlighter.",
-      "start": 122.12,
-      "duration": 1.58
-    },
-    {
-      "id": 40,
-      "text": "It is my ruler.",
-      "start": 125.84,
-      "duration": 2.23
-    },
-    {
-      "id": 41,
-      "text": "I like to measure.",
-      "start": 128.07,
-      "duration": 2.23
-    },
-    {
-      "id": 42,
-      "text": "Ruler.",
-      "start": 131.6,
-      "duration": 2
-    },
-    {
-      "id": 43,
-      "text": "Ruler.",
-      "start": 133.86,
-      "duration": 1.28
-    },
-    {
-      "id": 44,
-      "text": "These are my color pencils.",
-      "start": 137.7,
-      "duration": 2.99
-    },
-    {
-      "id": 45,
-      "text": "I can draw a rainbow.",
-      "start": 140.69,
-      "duration": 2.99
-    },
-    {
-      "id": 46,
-      "text": "Color pencil.",
-      "start": 145.26,
-      "duration": 2
-    },
-    {
-      "id": 47,
-      "text": "Color pencil.",
-      "start": 148.12,
-      "duration": 2
-    },
-    {
-      "id": 48,
-      "text": "There are things for school in my backpack.",
-      "start": 151.02,
-      "duration": 2.96
-    },
-    {
-      "id": 49,
-      "text": "Review.",
-      "start": 157.82,
-      "duration": 2
-    },
-    {
-      "id": 50,
-      "text": "Book.",
-      "start": 161.11,
-      "duration": 2
-    },
-    {
-      "id": 51,
-      "text": "Notebook.",
-      "start": 164.59,
-      "duration": 2
-    },
-    {
-      "id": 52,
-      "text": "Scissors.",
-      "start": 168.43,
-      "duration": 2
-    },
-    {
-      "id": 53,
-      "text": "Glue.",
-      "start": 171.64,
-      "duration": 2
-    },
-    {
-      "id": 54,
-      "text": "Tape.",
-      "start": 175.45,
-      "duration": 2
-    },
-    {
-      "id": 55,
-      "text": "Pencil case.",
-      "start": 178.78,
-      "duration": 2
-    },
-    {
-      "id": 56,
-      "text": "Pencil.",
-      "start": 182.89,
-      "duration": 2
-    },
-    {
-      "id": 57,
-      "text": "Pen.",
-      "start": 186.19,
-      "duration": 2
-    },
-    {
-      "id": 58,
-      "text": "Eraser.",
-      "start": 190.06,
-      "duration": 2
-    },
-    {
-      "id": 59,
-      "text": "Highlighter.",
-      "start": 193.87,
-      "duration": 2
-    },
-    {
-      "id": 60,
-      "text": "Ruler.",
-      "start": 197.5,
-      "duration": 2
-    },
-    {
-      "id": 61,
-      "text": "Color pencil.",
-      "start": 200.86,
-      "duration": 2
+      "text": "I",
+      "start": 61.97,
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-06-22T02:05:05Z",
   "videoId": "AS5nhKzaOqo",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.351Z"
+  "formattedAt": "2026-07-30T16:02:47.893Z"
 }

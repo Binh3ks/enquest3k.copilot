@@ -6,559 +6,85 @@
       "id": 1,
       "text": "Today, learn about English conversation.",
       "start": 0.24,
-      "duration": 3.94
+      "duration": 2.02
     },
     {
       "id": 2,
       "text": "Can you fly a kite?",
       "start": 6.48,
-      "duration": 1.54
+      "duration": 0.78
     },
     {
       "id": 3,
       "text": "Yes, I can.",
       "start": 9.76,
-      "duration": 1.54
+      "duration": 0.5
     },
     {
       "id": 4,
       "text": "Can you play baseball?",
       "start": 16.09,
-      "duration": 1.71
+      "duration": 0.72
     },
     {
       "id": 5,
       "text": "No, I can't.",
       "start": 20.26,
-      "duration": 1.29
+      "duration": 0.5
     },
     {
       "id": 6,
       "text": "I can't play baseball.",
       "start": 24.1,
-      "duration": 1.78
+      "duration": 0.75
     },
     {
       "id": 7,
       "text": "Can you swim?",
       "start": 31.51,
-      "duration": 1.38
+      "duration": 0.5
     },
     {
       "id": 8,
       "text": "Yes, I can.",
       "start": 35.59,
-      "duration": 1.38
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "I can swim.",
       "start": 39.19,
-      "duration": 1.38
+      "duration": 0.5
     },
     {
       "id": 10,
       "text": "Can you play the piano?",
       "start": 48.88,
-      "duration": 1.62
+      "duration": 0.83
     },
     {
       "id": 11,
       "text": "Yes, I can.",
       "start": 53.6,
-      "duration": 1.31
+      "duration": 0.5
     },
     {
       "id": 12,
       "text": "I can play the piano.",
       "start": 57.28,
-      "duration": 1.38
+      "duration": 0.7
     },
     {
       "id": 13,
       "text": "Can you play the drums?",
       "start": 65.18,
-      "duration": 1.46
+      "duration": 0.75
     },
     {
       "id": 14,
       "text": "No, I can't.",
       "start": 69.82,
-      "duration": 1.38
-    },
-    {
-      "id": 15,
-      "text": "I can't play the drums.",
-      "start": 73.6,
-      "duration": 1.54
-    },
-    {
-      "id": 16,
-      "text": "Can you play the violin?",
-      "start": 81.12,
-      "duration": 1.46
-    },
-    {
-      "id": 17,
-      "text": "Yes, I can.",
-      "start": 86.14,
-      "duration": 1.3
-    },
-    {
-      "id": 18,
-      "text": "I can play the violin.",
-      "start": 90.3,
-      "duration": 1.46
-    },
-    {
-      "id": 19,
-      "text": "Can you cook?",
-      "start": 98.46,
-      "duration": 1.38
-    },
-    {
-      "id": 20,
-      "text": "No, I can't.",
-      "start": 102.84,
-      "duration": 1.47
-    },
-    {
-      "id": 21,
-      "text": "I can't cook.",
-      "start": 107.01,
-      "duration": 1.61
-    },
-    {
-      "id": 22,
-      "text": "Can you play the flute?",
-      "start": 114.53,
-      "duration": 1.38
-    },
-    {
-      "id": 23,
-      "text": "Yes, I can.",
-      "start": 118.78,
-      "duration": 1.62
-    },
-    {
-      "id": 24,
-      "text": "I can play the flute.",
-      "start": 122.22,
-      "duration": 1.7
-    },
-    {
-      "id": 25,
-      "text": "Can you ride a roller coaster?",
-      "start": 131.04,
-      "duration": 2.27
-    },
-    {
-      "id": 26,
-      "text": "No, I can't.",
-      "start": 136.16,
-      "duration": 1.31
-    },
-    {
-      "id": 27,
-      "text": "I can't ride a roller coaster.",
-      "start": 140.56,
-      "duration": 2.26
-    },
-    {
-      "id": 28,
-      "text": "Can you play badminton?",
-      "start": 147.48,
-      "duration": 1.54
-    },
-    {
-      "id": 29,
-      "text": "Yes, I can.",
-      "start": 152.84,
-      "duration": 1.3
-    },
-    {
-      "id": 30,
-      "text": "I can play badminton.",
-      "start": 156.99,
-      "duration": 1.29
-    },
-    {
-      "id": 31,
-      "text": "Can you dive?",
-      "start": 164.67,
-      "duration": 1.05
-    },
-    {
-      "id": 32,
-      "text": "Yes, I can.",
-      "start": 169.4,
-      "duration": 1.38
-    },
-    {
-      "id": 33,
-      "text": "I can dive.",
-      "start": 173.4,
-      "duration": 0.98
-    },
-    {
-      "id": 34,
-      "text": "Can you play soccer?",
-      "start": 181.48,
-      "duration": 1.38
-    },
-    {
-      "id": 35,
-      "text": "Yes, I can.",
-      "start": 186.38,
-      "duration": 1.22
-    },
-    {
-      "id": 36,
-      "text": "I can play soccer.",
-      "start": 190.47,
-      "duration": 1.29
-    },
-    {
-      "id": 37,
-      "text": "Can you drive?",
-      "start": 197.76,
-      "duration": 0.98
-    },
-    {
-      "id": 38,
-      "text": "No, I can't.",
-      "start": 203.2,
-      "duration": 1.38
-    },
-    {
-      "id": 39,
-      "text": "I can't drive.",
-      "start": 207.44,
-      "duration": 1.54
-    },
-    {
-      "id": 40,
-      "text": "Can you ride a bicycle?",
-      "start": 214.69,
-      "duration": 1.47
-    },
-    {
-      "id": 41,
-      "text": "Yes, I can.",
-      "start": 218.94,
-      "duration": 1.37
-    },
-    {
-      "id": 42,
-      "text": "I can ride a bicycle.",
-      "start": 222.78,
-      "duration": 1.46
-    },
-    {
-      "id": 43,
-      "text": "Can you play the guitar?",
-      "start": 231.5,
-      "duration": 1.38
-    },
-    {
-      "id": 44,
-      "text": "No, I can't.",
-      "start": 236.3,
-      "duration": 1.3
-    },
-    {
-      "id": 45,
-      "text": "Can you dance?",
-      "start": 240.43,
-      "duration": 1.06
-    },
-    {
-      "id": 46,
-      "text": "Yes, I can.",
-      "start": 245.39,
-      "duration": 1.37
-    },
-    {
-      "id": 47,
-      "text": "I can dance.",
-      "start": 249.39,
-      "duration": 0.89
-    },
-    {
-      "id": 48,
-      "text": "Can you ride a horse?",
-      "start": 256.52,
-      "duration": 1.46
-    },
-    {
-      "id": 49,
-      "text": "No, I can't.",
-      "start": 261.24,
-      "duration": 1.3
-    },
-    {
-      "id": 50,
-      "text": "I can't ride a horse.",
-      "start": 265.32,
-      "duration": 1.46
-    },
-    {
-      "id": 51,
-      "text": "Can you jump?",
-      "start": 273,
-      "duration": 1.06
-    },
-    {
-      "id": 52,
-      "text": "Yes, I can.",
-      "start": 278.12,
-      "duration": 1.55
-    },
-    {
-      "id": 53,
-      "text": "I can jump.",
-      "start": 282.94,
-      "duration": 1.06
-    },
-    {
-      "id": 54,
-      "text": "Can you fly?",
-      "start": 290.06,
-      "duration": 1.06
-    },
-    {
-      "id": 55,
-      "text": "No, I can't.",
-      "start": 295.04,
-      "duration": 1.37
-    },
-    {
-      "id": 56,
-      "text": "I can't fly.",
-      "start": 299.27,
-      "duration": 1.14
-    },
-    {
-      "id": 57,
-      "text": "Can you stop?",
-      "start": 307.19,
-      "duration": 1.06
-    },
-    {
-      "id": 58,
-      "text": "Yes, I can.",
-      "start": 311.34,
-      "duration": 1.46
-    },
-    {
-      "id": 59,
-      "text": "I can stomp.",
-      "start": 315.02,
-      "duration": 0.98
-    },
-    {
-      "id": 60,
-      "text": "Can you play computer games?",
-      "start": 323.38,
-      "duration": 1.93
-    },
-    {
-      "id": 61,
-      "text": "Yes, I can.",
-      "start": 327.86,
-      "duration": 1.38
-    },
-    {
-      "id": 62,
-      "text": "I can play computer games.",
-      "start": 332.42,
-      "duration": 1.77
-    },
-    {
-      "id": 63,
-      "text": "Can you go surfing?",
-      "start": 340.24,
-      "duration": 1.3
-    },
-    {
-      "id": 64,
-      "text": "Yes, I can.",
-      "start": 344.88,
-      "duration": 1.22
-    },
-    {
-      "id": 65,
-      "text": "I can go surfing.",
-      "start": 348.65,
-      "duration": 1.31
-    },
-    {
-      "id": 66,
-      "text": "Can you play basketball?",
-      "start": 356.25,
-      "duration": 1.38
-    },
-    {
-      "id": 67,
-      "text": "No, I can't.",
-      "start": 360.03,
-      "duration": 2.66
-    },
-    {
-      "id": 68,
-      "text": "Can you sing?",
-      "start": 365.95,
-      "duration": 0.98
-    },
-    {
-      "id": 69,
-      "text": "Yes, I can.",
-      "start": 370.83,
-      "duration": 1.38
-    },
-    {
-      "id": 70,
-      "text": "Can you climb?",
-      "start": 375.4,
-      "duration": 1.14
-    },
-    {
-      "id": 71,
-      "text": "No, I can't.",
-      "start": 379.96,
-      "duration": 1.3
-    },
-    {
-      "id": 72,
-      "text": "I can't climb.",
-      "start": 385,
-      "duration": 1.14
-    },
-    {
-      "id": 73,
-      "text": "Can you run?",
-      "start": 392.74,
-      "duration": 1.14
-    },
-    {
-      "id": 74,
-      "text": "Yes, I can.",
-      "start": 397.14,
-      "duration": 1.3
-    },
-    {
-      "id": 75,
-      "text": "I can run.",
-      "start": 400.26,
-      "duration": 0.98
-    },
-    {
-      "id": 76,
-      "text": "Can you paint?",
-      "start": 408.45,
-      "duration": 1.15
-    },
-    {
-      "id": 77,
-      "text": "No, I can't.",
-      "start": 413.1,
-      "duration": 1.29
-    },
-    {
-      "id": 78,
-      "text": "I can't paint.",
-      "start": 417.4,
-      "duration": 1.7
-    },
-    {
-      "id": 79,
-      "text": "Can you take a photo?",
-      "start": 425.08,
-      "duration": 1.38
-    },
-    {
-      "id": 80,
-      "text": "Yes.",
-      "start": 429.85,
-      "duration": 0.51
-    },
-    {
-      "id": 81,
-      "text": "I can.",
-      "start": 430.36,
-      "duration": 1.02
-    },
-    {
-      "id": 82,
-      "text": "Can you play volleyball?",
-      "start": 433.6,
-      "duration": 1.46
-    },
-    {
-      "id": 83,
-      "text": "No.",
-      "start": 437.85,
-      "duration": 0.4
-    },
-    {
-      "id": 84,
-      "text": "I can't.",
-      "start": 438.25333333333333,
-      "duration": 0.81
-    },
-    {
-      "id": 85,
-      "text": "I can't play volleyball.",
-      "start": 441.85,
-      "duration": 1.38
-    },
-    {
-      "id": 86,
-      "text": "Can you read?",
-      "start": 449.69,
-      "duration": 1.06
-    },
-    {
-      "id": 87,
-      "text": "Yes, I can.",
-      "start": 454.4,
-      "duration": 1.46
-    },
-    {
-      "id": 88,
-      "text": "I can read.",
-      "start": 458.15,
-      "duration": 1.06
-    },
-    {
-      "id": 89,
-      "text": "Can you play boxing?",
-      "start": 466.09,
-      "duration": 1.38
-    },
-    {
-      "id": 90,
-      "text": "Yes, I can.",
-      "start": 470.89,
-      "duration": 1.3
-    },
-    {
-      "id": 91,
-      "text": "I can play boxing.",
-      "start": 474.89,
-      "duration": 1.22
-    },
-    {
-      "id": 92,
-      "text": "Thanks for watching.",
-      "start": 482.67,
-      "duration": 1.29
-    },
-    {
-      "id": 93,
-      "text": "Please like, share, and subscribe to my YouTube channel.",
-      "start": 484.35,
-      "duration": 4.34
+      "duration": 0.5
     }
   ],
   "speakerMap": {
@@ -580,5 +106,5 @@
     "afterSegments": 91
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.369Z"
+  "formattedAt": "2026-07-30T16:05:48.223Z"
 }

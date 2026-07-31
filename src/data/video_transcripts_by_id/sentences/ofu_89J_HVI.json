@@ -6,43 +6,43 @@
       "id": 1,
       "text": "Hi, Jerry.",
       "start": 16.88,
-      "duration": 0.98
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "Hi, Mike.",
       "start": 18.55,
-      "duration": 0.83
+      "duration": 0.5
     },
     {
       "id": 3,
       "text": "Did you just get back from a trip?",
       "start": 20.16,
-      "duration": 1.86
+      "duration": 1.25
     },
     {
       "id": 4,
       "text": "Yeah.",
       "start": 23.11,
-      "duration": 0.48
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "We went camping.",
       "start": 23.59,
-      "duration": 0.98
+      "duration": 0.5
     },
     {
       "id": 6,
-      "text": "What a trip.",
+      "text": "What a trip!",
       "start": 24.8,
-      "duration": 0.9
+      "duration": 0.5
     },
     {
       "id": 7,
       "text": "Was it fun?",
       "start": 26.64,
-      "duration": 0.97
+      "duration": 0.5
     },
     {
       "id": 8,
@@ -54,589 +54,517 @@
       "id": 9,
       "text": "That's not exactly what I'd call it.",
       "start": 29.57,
-      "duration": 2
+      "duration": 1.26
     },
     {
       "id": 10,
       "text": "We had a lot of problems.",
       "start": 31.57,
-      "duration": 1.54
+      "duration": 0.89
     },
     {
       "id": 11,
       "text": "That's too bad.",
       "start": 34.21,
-      "duration": 1.16
+      "duration": 0.5
     },
     {
       "id": 12,
       "text": "What happened?",
-      "start": 35.374,
-      "duration": 0.78
+      "start": 35.37,
+      "duration": 0.5
     },
     {
       "id": 13,
       "text": "It all began when we got to the campsite on Friday evening.",
       "start": 37.33,
-      "duration": 2.98
+      "duration": 2.29
     },
     {
       "id": 14,
-      "text": "We unloaded the car then sat down and drink some juice.",
+      "text": "We unloaded the car, then sat down and drank some juice.",
       "start": 42.24,
-      "duration": 3.31
+      "duration": 2.49
     },
     {
       "id": 15,
       "text": "We were happy that we had chosen such a beautiful camping spot.",
       "start": 47.05,
-      "duration": 3.22
+      "duration": 2.48
     },
     {
       "id": 16,
       "text": "After a while, my wife said I should go park the car.",
       "start": 51.77,
-      "duration": 3.14
+      "duration": 2.42
     },
     {
       "id": 17,
       "text": "I felt in my pocket for the keys, but they weren't there.",
       "start": 55.95,
-      "duration": 3.3
+      "duration": 2.54
     },
     {
       "id": 18,
       "text": "I couldn't remember where I had put them.",
       "start": 60.43,
-      "duration": 2.18
+      "duration": 1.46
     },
     {
       "id": 19,
       "text": "So what did you do?",
       "start": 66.27,
-      "duration": 1.38
+      "duration": 0.7
     },
     {
       "id": 20,
       "text": "I must have spent an hour or so looking for my keys.",
       "start": 68.2,
-      "duration": 2.83
+      "duration": 2.17
     },
     {
       "id": 21,
       "text": "Everyone lent me a hand, but the keys were nowhere to be found.",
       "start": 72.69,
-      "duration": 3.69
+      "duration": 2.91
     },
     {
       "id": 22,
       "text": "We really thought they were lost for good.",
       "start": 78.05,
-      "duration": 2.26
+      "duration": 1.51
     },
     {
       "id": 23,
-      "text": "finally i looked in the car",
+      "text": "Finally, I looked in the car and saw that my keys were still in the ignition.",
       "start": 82.58,
-      "duration": 1.68
+      "duration": 3.14
     },
     {
       "id": 24,
-      "text": "and saw that my keys were still in the ignition",
-      "start": 84.26,
-      "duration": 2.1
-    },
-    {
-      "id": 25,
-      "text": "Yay.",
+      "text": "Yay!",
       "start": 87.86,
       "duration": 0.5
     },
     {
-      "id": 26,
-      "text": "By that time, it was dark and we still hadn't pitched the tent.",
+      "id": 25,
+      "text": "By that time, it was dark, and we still hadn't pitched the tent.",
       "start": 91.86,
-      "duration": 3.54
+      "duration": 2.79
+    },
+    {
+      "id": 26,
+      "text": "We had never set up a tent before, so we read the instructions quickly, but we understood nothing of what was written there.",
+      "start": 96.47,
+      "duration": 6.93
     },
     {
       "id": 27,
-      "text": "We had never set up a tent before, so we read the instructions quickly,",
-      "start": 96.47,
-      "duration": 3.61
+      "text": "I think we were too tired.",
+      "start": 106.06,
+      "duration": 0.94
     },
     {
       "id": 28,
-      "text": "but we understood nothing of what was written there.",
-      "start": 101.75,
-      "duration": 2.58
+      "text": "Luckily, someone camping nearby came to help us.",
+      "start": 110.1,
+      "duration": 2.21
     },
     {
       "id": 29,
-      "text": "I think we were too tired.",
-      "start": 106.06,
-      "duration": 1.63
+      "text": "Did the rest of the trip go okay?",
+      "start": 120.5,
+      "duration": 1.3
     },
     {
       "id": 30,
-      "text": "Luckily, someone camping nearby came to help us.",
-      "start": 110.1,
-      "duration": 3.3
-    },
-    {
-      "id": 31,
-      "text": "Did the rest of the trip go okay?",
-      "start": 120.5,
-      "duration": 1.94
-    },
-    {
-      "id": 32,
       "text": "Not exactly.",
       "start": 123.59,
-      "duration": 0.89
-    },
-    {
-      "id": 33,
-      "text": "I had brought some newspaper and matches,",
-      "start": 126.39,
-      "duration": 2.02
-    },
-    {
-      "id": 34,
-      "text": "so I lit the fire to cook our food,",
-      "start": 129.43,
-      "duration": 2.18
-    },
-    {
-      "id": 35,
-      "text": "but the flames kept shooting up too high.",
-      "start": 132.78,
-      "duration": 2.34
-    },
-    {
-      "id": 36,
-      "text": "We tried to cook some hot dogs over it, but they all burnt.",
-      "start": 136.64,
-      "duration": 3.06
-    },
-    {
-      "id": 37,
-      "text": "When the flame died down, we cooked some more hot dogs and ate every bite.",
-      "start": 141.92,
-      "duration": 5.54
-    },
-    {
-      "id": 38,
-      "text": "We had been so hungry.",
-      "start": 147.68,
-      "duration": 1.54
-    },
-    {
-      "id": 39,
-      "text": "Were you able to sleep in the tent?",
-      "start": 153.41,
-      "duration": 1.78
-    },
-    {
-      "id": 40,
-      "text": "We hardly slept all night because we got bitten by mosquitoes.",
-      "start": 157.17,
-      "duration": 3.22
-    },
-    {
-      "id": 41,
-      "text": "When we woke up in the morning, our bodies were really itchy.",
-      "start": 163.3,
-      "duration": 3.38
-    },
-    {
-      "id": 42,
-      "text": "Did you do anything fun with your family in the campsite?",
-      "start": 168.58,
-      "duration": 2.58
-    },
-    {
-      "id": 43,
-      "text": "Yes.",
-      "start": 172.82,
-      "duration": 0.38
-    },
-    {
-      "id": 44,
-      "text": "We did.",
-      "start": 173.2,
-      "duration": 0.76
-    },
-    {
-      "id": 45,
-      "text": "On Saturday, we swam in the lake.",
-      "start": 174.34,
-      "duration": 2.18
-    },
-    {
-      "id": 46,
-      "text": "My son hadn't swum before, so I taught him how to swim.",
-      "start": 177.46,
-      "duration": 3.37
-    },
-    {
-      "id": 47,
-      "text": "We had so much fun.",
-      "start": 182.74,
-      "duration": 1.54
-    },
-    {
-      "id": 48,
-      "text": "later that day i went out in a canoe on the lake with my daughter",
-      "start": 189.38,
-      "duration": 3.23
-    },
-    {
-      "id": 49,
-      "text": "to catch some fish",
-      "start": 192.61,
-      "duration": 1.14
-    },
-    {
-      "id": 50,
-      "text": "After a little while, she felt a big tug on the line.",
-      "start": 196.29,
-      "duration": 3.14
-    },
-    {
-      "id": 51,
-      "text": "She stood up to reel her line in,",
-      "start": 201.09,
-      "duration": 2.02
-    },
-    {
-      "id": 52,
-      "text": "but she fell out of the canoe.",
-      "start": 204.09,
-      "duration": 1.54
-    },
-    {
-      "id": 53,
-      "text": "I hope she knew how to swim.",
-      "start": 208.41,
-      "duration": 1.54
-    },
-    {
-      "id": 54,
-      "text": "Yes.",
-      "start": 211.29,
-      "duration": 0.42
-    },
-    {
-      "id": 55,
-      "text": "She's a strong swimmer.",
-      "start": 211.70999999999998,
-      "duration": 1.68
-    },
-    {
-      "id": 56,
-      "text": "She got back in the boat and caught a huge fish.",
-      "start": 214.09,
-      "duration": 2.54
-    },
-    {
-      "id": 57,
-      "text": "We cooked it for dinner that night.",
-      "start": 221.11,
-      "duration": 1.78
-    },
-    {
-      "id": 58,
-      "text": "It was delicious.",
-      "start": 223.11,
-      "duration": 1.14
-    },
-    {
-      "id": 59,
-      "text": "You won't believe what happened next.",
-      "start": 227.35,
-      "duration": 2.02
-    },
-    {
-      "id": 60,
-      "text": "Not long after we had gone to bed, I thought I heard something growling outside.",
-      "start": 230.88,
-      "duration": 4.18
-    },
-    {
-      "id": 61,
-      "text": "It sounded like a bear.",
-      "start": 237.04,
-      "duration": 1.71
-    },
-    {
-      "id": 62,
-      "text": "I told my family to stay in the tent while I crept outside.",
-      "start": 239.93,
-      "duration": 6.17
-    },
-    {
-      "id": 63,
-      "text": "Through the dark, I saw something very large and hairy.",
-      "start": 246.64,
-      "duration": 3.46
-    },
-    {
-      "id": 64,
-      "text": "It was a big bear.",
-      "start": 251.68,
-      "duration": 1.78
-    },
-    {
-      "id": 65,
-      "text": "he had eaten the burnt hot dogs we had left left out",
-      "start": 254.88,
-      "duration": 2.36
-    },
-    {
-      "id": 66,
-      "text": "and he was wandering around our campsite",
-      "start": 257.24,
-      "duration": 2.06
-    },
-    {
-      "id": 67,
-      "text": "We had made a mistake by leaving the burnt hot dogs there.",
-      "start": 261.04,
-      "duration": 2.9
-    },
-    {
-      "id": 68,
-      "text": "We had meant to put them away in a safe place,",
-      "start": 265.44,
-      "duration": 2.42
-    },
-    {
-      "id": 69,
-      "text": "but we completely forgot about that.",
-      "start": 269.61,
-      "duration": 2.1
-    },
-    {
-      "id": 70,
-      "text": "The bear had been drawn to the camp by the smell.",
-      "start": 273.21,
-      "duration": 2.66
-    },
-    {
-      "id": 71,
-      "text": "I thought the bear saw me standing there, so I froze in place.",
-      "start": 278.01,
-      "duration": 3.54
-    },
-    {
-      "id": 72,
-      "text": "Oh, no.",
-      "start": 283.9,
-      "duration": 0.72
-    },
-    {
-      "id": 73,
-      "text": "That sounds scary.",
-      "start": 284.62,
-      "duration": 1.14
-    },
-    {
-      "id": 74,
-      "text": "Did the bear go away?",
-      "start": 286.06,
-      "duration": 1.31
-    },
-    {
-      "id": 75,
-      "text": "i was afraid the bear would come towards the tent",
-      "start": 288.54,
-      "duration": 2.33
-    },
-    {
-      "id": 76,
-      "text": "and i didn't want him to hurt my family",
-      "start": 290.87,
-      "duration": 2.01
-    },
-    {
-      "id": 77,
-      "text": "i ran away from the tent",
-      "start": 294.48,
-      "duration": 1.2
-    },
-    {
-      "id": 78,
-      "text": "and into the woods hoping the bear would follow me",
-      "start": 295.68,
-      "duration": 2.98
-    },
-    {
-      "id": 79,
-      "text": "What happened next?",
-      "start": 304.64,
-      "duration": 1.14
-    },
-    {
-      "id": 80,
-      "text": "I'm guessing the bear didn't hurt you because you seem fine.",
-      "start": 306.08,
-      "duration": 2.98
-    },
-    {
-      "id": 81,
-      "text": "No.",
-      "start": 311.09,
       "duration": 0.5
     },
     {
-      "id": 82,
-      "text": "He didn't hurt me, and he never caught me.",
-      "start": 311.81,
-      "duration": 2.34
+      "id": 31,
+      "text": "I had brought some newspaper and matches, so I lit the fire to cook our food, but the flames kept shooting up too high.",
+      "start": 126.39,
+      "duration": 7.75
     },
     {
-      "id": 83,
-      "text": "But believe me, I ran for my life.",
-      "start": 315.18,
-      "duration": 2.5
+      "id": 32,
+      "text": "We tried to cook some hot dogs over it, but they all burnt.",
+      "start": 136.64,
+      "duration": 2.4
     },
     {
-      "id": 84,
-      "text": "I hid behind the first big tree I found.",
-      "start": 318.77,
-      "duration": 2.58
+      "id": 33,
+      "text": "When the flame died down, we cooked some more hot dogs and ate every bite.",
+      "start": 141.92,
+      "duration": 4.51
     },
     {
-      "id": 85,
-      "text": "The bear passed right by me, but he didn't see me.",
-      "start": 323.68,
-      "duration": 3.06
+      "id": 34,
+      "text": "We had been so hungry.",
+      "start": 147.68,
+      "duration": 0.78
     },
     {
-      "id": 86,
-      "text": "I felt very relieved.",
-      "start": 329.68,
-      "duration": 1.54
+      "id": 35,
+      "text": "Were you able to sleep in the tent?",
+      "start": 153.41,
+      "duration": 1.2
     },
     {
-      "id": 87,
-      "text": "It took me a while to calm down.",
-      "start": 331.6,
-      "duration": 1.94
+      "id": 36,
+      "text": "We hardly slept all night because we got bitten by mosquitoes.",
+      "start": 157.17,
+      "duration": 2.42
     },
     {
-      "id": 88,
-      "text": "I'm glad none of you got hurt.",
-      "start": 335.6,
-      "duration": 1.86
+      "id": 37,
+      "text": "When we woke up in the morning, our bodies were really itchy.",
+      "start": 163.3,
+      "duration": 2.6
     },
     {
-      "id": 89,
-      "text": "Do you think you'll go camping with your family again?",
-      "start": 338.35,
-      "duration": 2.41
-    },
-    {
-      "id": 90,
-      "text": "Maybe, but not too soon.",
-      "start": 342.5,
-      "duration": 1.94
-    },
-    {
-      "id": 91,
-      "text": "For our next vacation, we'll probably book a nice hotel on the beach instead.",
-      "start": 345.23,
-      "duration": 4.5
-    },
-    {
-      "id": 92,
-      "text": "Yes.",
-      "start": 351.95,
-      "duration": 0.48
-    },
-    {
-      "id": 93,
-      "text": "That sounds like a good idea.",
-      "start": 352.43,
-      "duration": 1.62
-    },
-    {
-      "id": 94,
-      "text": "This experience taught me to always be prepared.",
-      "start": 354.99,
-      "duration": 2.58
-    },
-    {
-      "id": 95,
-      "text": "i could have saved myself a lot of trouble",
-      "start": 358.43,
-      "duration": 2.32
-    },
-    {
-      "id": 96,
-      "text": "if i had known more about camping",
-      "start": 360.75,
-      "duration": 1.7
-    },
-    {
-      "id": 97,
-      "text": "That's true.",
-      "start": 364.39,
-      "duration": 0.9
-    },
-    {
-      "id": 98,
-      "text": "You should always be prepared.",
-      "start": 365.36,
-      "duration": 1.38
-    },
-    {
-      "id": 99,
-      "text": "It was nice talking to you, Jerry, but I have to finish Max's walk.",
-      "start": 367.83,
-      "duration": 3.55
-    },
-    {
-      "id": 100,
-      "text": "He doesn't like it when I stand around.",
-      "start": 372.15,
+      "id": 38,
+      "text": "Did you do anything fun with your family in the campsite?",
+      "start": 168.58,
       "duration": 1.95
     },
     {
-      "id": 101,
+      "id": 39,
+      "text": "Yes.",
+      "start": 172.82,
+      "duration": 0.5
+    },
+    {
+      "id": 40,
+      "text": "We did.",
+      "start": 173.2,
+      "duration": 0.5
+    },
+    {
+      "id": 41,
+      "text": "On Saturday, we swam in the lake.",
+      "start": 174.34,
+      "duration": 1.37
+    },
+    {
+      "id": 42,
+      "text": "My son hadn't swum before, so I taught him how to swim.",
+      "start": 177.46,
+      "duration": 2.59
+    },
+    {
+      "id": 43,
+      "text": "We had so much fun.",
+      "start": 182.74,
+      "duration": 0.78
+    },
+    {
+      "id": 44,
+      "text": "Later that day, I went out in a canoe on the lake with my daughter to catch some fish.",
+      "start": 189.38,
+      "duration": 3.67
+    },
+    {
+      "id": 45,
+      "text": "After a little while, she felt a big tug on the line.",
+      "start": 196.29,
+      "duration": 2.42
+    },
+    {
+      "id": 46,
+      "text": "She stood up to reel her line in, but she fell out of the canoe.",
+      "start": 201.09,
+      "duration": 3.76
+    },
+    {
+      "id": 47,
+      "text": "I hope she knew how to swim.",
+      "start": 208.41,
+      "duration": 0.97
+    },
+    {
+      "id": 48,
+      "text": "Yes.",
+      "start": 211.29,
+      "duration": 0.5
+    },
+    {
+      "id": 49,
+      "text": "She's a strong swimmer.",
+      "start": 211.71,
+      "duration": 0.71
+    },
+    {
+      "id": 50,
+      "text": "She got back in the boat and caught a huge fish.",
+      "start": 214.09,
+      "duration": 1.91
+    },
+    {
+      "id": 51,
+      "text": "We cooked it for dinner that night.",
+      "start": 221.11,
+      "duration": 1.12
+    },
+    {
+      "id": 52,
+      "text": "It was delicious.",
+      "start": 223.11,
+      "duration": 0.5
+    },
+    {
+      "id": 53,
+      "text": "You won't believe what happened next.",
+      "start": 227.35,
+      "duration": 1.17
+    },
+    {
+      "id": 54,
+      "text": "Not long after we had gone to bed, I thought I heard something growling outside.",
+      "start": 230.88,
+      "duration": 3.4
+    },
+    {
+      "id": 55,
+      "text": "It sounded like a bear.",
+      "start": 237.04,
+      "duration": 0.88
+    },
+    {
+      "id": 56,
+      "text": "I told my family to stay in the tent while I crept outside.",
+      "start": 239.93,
+      "duration": 4.86
+    },
+    {
+      "id": 57,
+      "text": "Through the dark, I saw something very large and hairy.",
+      "start": 246.64,
+      "duration": 2.52
+    },
+    {
+      "id": 58,
+      "text": "It was a big bear.",
+      "start": 251.68,
+      "duration": 0.91
+    },
+    {
+      "id": 59,
+      "text": "He had eaten the burnt hot dogs we had left out, and he was wandering around our campsite.",
+      "start": 254.88,
+      "duration": 3.42
+    },
+    {
+      "id": 60,
+      "text": "We had made a mistake by leaving the burnt hot dogs there.",
+      "start": 259.01,
+      "duration": 3.74
+    },
+    {
+      "id": 61,
+      "text": "We had meant to put them away in a safe place, but we completely forgot about that.",
+      "start": 263.7,
+      "duration": 6.48
+    },
+    {
+      "id": 62,
+      "text": "The bear had been drawn to the camp by the smell.",
+      "start": 271.36,
+      "duration": 3.33
+    },
+    {
+      "id": 63,
+      "text": "I thought the bear saw me standing there, so I froze in place.",
+      "start": 275.63,
+      "duration": 4.59
+    },
+    {
+      "id": 64,
+      "text": "Oh, no.",
+      "start": 281.28,
+      "duration": 0.65
+    },
+    {
+      "id": 65,
+      "text": "That sounds scary.",
+      "start": 284.26,
+      "duration": 0.5
+    },
+    {
+      "id": 66,
+      "text": "Did the bear go away?",
+      "start": 285.38,
+      "duration": 0.94
+    },
+    {
+      "id": 67,
+      "text": "I was afraid the bear would come towards the tent, and I didn't want him to hurt my family.",
+      "start": 287.11,
+      "duration": 4.78
+    },
+    {
+      "id": 68,
+      "text": "I ran away from the tent and into the woods, hoping the bear would follow me.",
+      "start": 292.66,
+      "duration": 4.75
+    },
+    {
+      "id": 69,
+      "text": "What happened next?",
+      "start": 298.36,
+      "duration": 2.96
+    },
+    {
+      "id": 70,
+      "text": "I'm guessing the bear didn't hurt you because you seem fine.",
+      "start": 305.4,
+      "duration": 2.58
+    },
+    {
+      "id": 71,
+      "text": "No.",
+      "start": 308.79,
+      "duration": 0.5
+    },
+    {
+      "id": 72,
+      "text": "He didn't hurt me, and he never caught me.",
+      "start": 311.09,
+      "duration": 2.01
+    },
+    {
+      "id": 73,
+      "text": "But believe me, I ran for my life.",
+      "start": 313.89,
+      "duration": 2.42
+    },
+    {
+      "id": 74,
+      "text": "I hid behind the first big tree I found.",
+      "start": 317.37,
+      "duration": 2.69
+    },
+    {
+      "id": 75,
+      "text": "The bear passed right by me, but he didn't see me.",
+      "start": 321.06,
+      "duration": 4.23
+    },
+    {
+      "id": 76,
+      "text": "I felt very relieved.",
+      "start": 326.46,
+      "duration": 2.24
+    },
+    {
+      "id": 77,
+      "text": "It took me a while to calm down.",
+      "start": 330.84,
+      "duration": 1.7
+    },
+    {
+      "id": 78,
+      "text": "I'm glad none of you got hurt.",
+      "start": 333.3,
+      "duration": 2.67
+    },
+    {
+      "id": 79,
+      "text": "Do you think you'll go camping with your family again?",
+      "start": 337.19,
+      "duration": 2.49
+    },
+    {
+      "id": 80,
+      "text": "Maybe, but not too soon.",
+      "start": 340.52,
+      "duration": 2.01
+    },
+    {
+      "id": 81,
+      "text": "For our next vacation, we'll probably book a nice hotel on the beach instead.",
+      "start": 344.05,
+      "duration": 4.35
+    },
+    {
+      "id": 82,
+      "text": "Yes.",
+      "start": 349.41,
+      "duration": 0.5
+    },
+    {
+      "id": 83,
+      "text": "That sounds like a good idea.",
+      "start": 351.95,
+      "duration": 1.08
+    },
+    {
+      "id": 84,
+      "text": "This experience taught me to always be prepared.",
+      "start": 353.78,
+      "duration": 2.41
+    },
+    {
+      "id": 85,
+      "text": "I could have saved myself a lot of trouble if I had known more about camping.",
+      "start": 357.25,
+      "duration": 4.15
+    },
+    {
+      "id": 86,
+      "text": "That's true.",
+      "start": 362.21,
+      "duration": 0.55
+    },
+    {
+      "id": 87,
+      "text": "You should always be prepared.",
+      "start": 364.84,
+      "duration": 0.86
+    },
+    {
+      "id": 88,
+      "text": "It was nice talking to you, Jerry, but I have to finish Max's walk.",
+      "start": 366.46,
+      "duration": 3.81
+    },
+    {
+      "id": 89,
+      "text": "He doesn't like it when I stand around.",
+      "start": 371.13,
+      "duration": 1.91
+    },
+    {
+      "id": 90,
       "text": "No problem.",
-      "start": 376.08,
-      "duration": 0.82
+      "start": 373.86,
+      "duration": 0.56
     },
     {
-      "id": 102,
+      "id": 91,
       "text": "Nice talking to you too, Mike.",
-      "start": 377.36,
-      "duration": 1.86
+      "start": 376.49,
+      "duration": 1.47
     },
     {
-      "id": 103,
-      "text": "let me know if you ever go camping",
-      "start": 380.8,
-      "duration": 1.78
+      "id": 92,
+      "text": "Let me know if you ever go camping, and I'll tell you what not to do.",
+      "start": 378.91,
+      "duration": 4.56
     },
     {
-      "id": 104,
-      "text": "and i'll tell you what not to do",
-      "start": 382.64,
-      "duration": 1.94
-    },
-    {
-      "id": 105,
+      "id": 93,
       "text": "Thanks for watching.",
-      "start": 416.27,
-      "duration": 1.06
+      "start": 384.34,
+      "duration": 14.35
     },
     {
-      "id": 106,
+      "id": 94,
       "text": "If you like this video, please subscribe to our YouTube channel.",
-      "start": 417.79,
-      "duration": 3.3
+      "start": 416.98,
+      "duration": 2.9
     }
   ],
   "speakerMap": {
@@ -659,5 +587,5 @@
     "afterSegments": 103
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.386Z"
+  "formattedAt": "2026-07-30T16:09:04.888Z"
 }

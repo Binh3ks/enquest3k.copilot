@@ -3,157 +3,67 @@
   "segments": [
     {
       "id": 1,
-      "text": "Fashion (Fashion Talk)",
+      "text": "Fashion (Fashion Talk) Wow!",
       "start": 6.74,
-      "duration": 3.5
+      "duration": 5.99
     },
     {
       "id": 2,
-      "text": "Wow!",
-      "start": 17.38,
-      "duration": 0.52
+      "text": "Is this really your room?",
+      "start": 17.9,
+      "duration": 1.32
     },
     {
       "id": 3,
-      "text": "Is this really your room?",
-      "start": 17.896666666666665,
-      "duration": 2.58
+      "text": "It looks so charming!",
+      "start": 20.84,
+      "duration": 0.85
     },
     {
       "id": 4,
-      "text": "It looks so charming!",
-      "start": 20.84,
-      "duration": 2
+      "text": "Thanks for the compliment!",
+      "start": 24.82,
+      "duration": 0.96
     },
     {
       "id": 5,
-      "text": "Thanks for the compliment!",
-      "start": 24.82,
-      "duration": 2.28
+      "text": "This is awesome!",
+      "start": 32.24,
+      "duration": 0.61
     },
     {
       "id": 6,
-      "text": "This is awesome!",
-      "start": 32.24,
-      "duration": 2.06
+      "text": "It’s a dollhouse!",
+      "start": 34.3,
+      "duration": 0.59
     },
     {
       "id": 7,
-      "text": "It’s a dollhouse!",
-      "start": 34.3,
-      "duration": 2
+      "text": "I’ve been collecting dolls for a long time.",
+      "start": 37.3,
+      "duration": 2.68
     },
     {
       "id": 8,
-      "text": "I’ve been collecting dolls for a long time.",
-      "start": 37.3,
-      "duration": 4
+      "text": "This doll is wearing a blouse with shirring and an A-lined floral skirt.",
+      "start": 44.2,
+      "duration": 5.27
     },
     {
       "id": 9,
-      "text": "This doll is wearing a blouse with shirring and an A-lined floral skirt,",
-      "start": 44.2,
-      "duration": 6.71
+      "text": "And she’s carrying a pretty mini handbag!",
+      "start": 51.9,
+      "duration": 2.03
     },
     {
       "id": 10,
-      "text": "And she’s carrying a pretty mini handbag!",
-      "start": 51.9,
-      "duration": 3.22
-    },
-    {
-      "id": 11,
       "text": "It’s Olivia’s style!",
       "start": 55.72,
-      "duration": 2.18
-    },
-    {
-      "id": 12,
-      "text": "I dressed it up in my style.",
-      "start": 59.76,
-      "duration": 2.54
-    },
-    {
-      "id": 13,
-      "text": "How is it?",
-      "start": 62.3,
-      "duration": 2
-    },
-    {
-      "id": 14,
-      "text": "It is lovely!",
-      "start": 64.56,
-      "duration": 2
-    },
-    {
-      "id": 15,
-      "text": "This doll is wearing polka dot pajamas!",
-      "start": 66.9,
-      "duration": 3.24
-    },
-    {
-      "id": 16,
-      "text": "That's right, Anne.",
-      "start": 71.02,
-      "duration": 2.06
-    },
-    {
-      "id": 17,
-      "text": "Do you want to dress up a doll too?",
-      "start": 73.08,
-      "duration": 2.86
-    },
-    {
-      "id": 18,
-      "text": "Yes, yes!",
-      "start": 77.6,
-      "duration": 1.64
-    },
-    {
-      "id": 19,
-      "text": "Let me dress it up just like Girls girls’ Hera.",
-      "start": 79.76,
-      "duration": 4.42
-    },
-    {
-      "id": 20,
-      "text": "Tada~ Anne, your doll looks so vivid sharp and fancy!",
-      "start": 92.58,
-      "duration": 8.84
-    },
-    {
-      "id": 21,
-      "text": "I dressed it up with a checked sleeveless dress, and sneakers.",
-      "start": 101.88,
-      "duration": 4.8
-    },
-    {
-      "id": 22,
-      "text": "Wow, they go together so well.",
-      "start": 108.8,
-      "duration": 3.34
-    },
-    {
-      "id": 23,
-      "text": "It looks perfect!",
-      "start": 112.14,
-      "duration": 2.27
-    },
-    {
-      "id": 24,
-      "text": "Awesome!",
-      "start": 114.405,
-      "duration": 0.76
-    },
-    {
-      "id": 25,
-      "text": "Let's listen",
-      "start": 121.7,
-      "duration": 2
+      "duration": 0.65
     }
   ],
   "fetchedAt": "2026-07-01T07:32:57.413Z",
   "videoId": "U_cIEuJQqio",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.365Z"
+  "formattedAt": "2026-07-30T16:05:30.787Z"
 }

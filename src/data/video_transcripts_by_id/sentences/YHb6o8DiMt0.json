@@ -5,289 +5,85 @@
       "id": 1,
       "text": "Hi Jessica!",
       "start": 12.32,
-      "duration": 1.67
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "Welcome.",
-      "start": 13.986666666666666,
-      "duration": 0.83
+      "start": 13.99,
+      "duration": 0.5
     },
     {
       "id": 3,
       "text": "Please, come in.",
       "start": 14.32,
-      "duration": 2.54
+      "duration": 0.75
     },
     {
       "id": 4,
       "text": "Thank you!",
-      "start": 16.864,
-      "duration": 1.7
+      "start": 16.86,
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "Your house looks nice.",
       "start": 18.32,
-      "duration": 2.31
+      "duration": 0.98
     },
     {
       "id": 6,
       "text": "Who do you live with?",
-      "start": 20.63111111111111,
-      "duration": 2.89
+      "start": 20.63,
+      "duration": 1.48
     },
     {
       "id": 7,
       "text": "I live with my mom, my dad, and my brother, Tom.",
       "start": 23.2,
-      "duration": 6.39
+      "duration": 4.8
     },
     {
       "id": 8,
       "text": "Is Tom at home?",
-      "start": 29.594666666666665,
-      "duration": 2.33
+      "start": 29.59,
+      "duration": 0.98
     },
     {
       "id": 9,
       "text": "Yes, he is in his room.",
       "start": 31.42,
-      "duration": 3.27
+      "duration": 1.89
     },
     {
       "id": 10,
       "text": "This is the living room.",
-      "start": 34.692727272727275,
-      "duration": 2.73
+      "start": 34.69,
+      "duration": 1.39
     },
     {
       "id": 11,
-      "text": "My family spends a lot of time here. so cozy.",
+      "text": "My family spends a lot of time here.",
       "start": 37.18,
-      "duration": 5.28
+      "duration": 2.84
     },
     {
       "id": 12,
-      "text": "I like the sofa.",
-      "start": 42.22,
-      "duration": 2.93
+      "text": "So cozy.",
+      "start": 41.4,
+      "duration": 0.5
     },
     {
       "id": 13,
-      "text": "We watch TV on this sofa every evening.",
-      "start": 45.153333333333336,
-      "duration": 5.87
+      "text": "I like the sofa.",
+      "start": 42.22,
+      "duration": 1.24
     },
     {
       "id": 14,
-      "text": "And this is my father’s favorite armchair.",
-      "start": 50.7,
-      "duration": 4.37
-    },
-    {
-      "id": 15,
-      "text": "That is the bookshelf.",
-      "start": 55.07181818181819,
-      "duration": 2.5
-    },
-    {
-      "id": 16,
-      "text": "We keep books and photos there.",
-      "start": 57.25,
-      "duration": 3.98
-    },
-    {
-      "id": 17,
-      "text": "Here is the kitchen.",
-      "start": 61.234,
-      "duration": 2.66
-    },
-    {
-      "id": 18,
-      "text": "My mother cooks dinner here.",
-      "start": 63.57,
-      "duration": 3.44
-    },
-    {
-      "id": 19,
-      "text": "Is that a new fridge?",
-      "start": 66.77,
-      "duration": 2.94
-    },
-    {
-      "id": 20,
-      "text": "Yes, it is.",
-      "start": 69.21,
-      "duration": 2.8
-    },
-    {
-      "id": 21,
-      "text": "We also have a microwave and a small dining table.",
-      "start": 71.69,
-      "duration": 5.6
-    },
-    {
-      "id": 22,
-      "text": "You eat breakfast here?",
-      "start": 77.29,
-      "duration": 2.34
-    },
-    {
-      "id": 23,
-      "text": "Yes, we do.",
-      "start": 79.13,
-      "duration": 8.69
-    },
-    {
-      "id": 24,
-      "text": "This is my bedroom.",
-      "start": 87.42,
-      "duration": 2.08
-    },
-    {
-      "id": 25,
-      "text": "It is my favorite room.",
-      "start": 89.34,
-      "duration": 4
-    },
-    {
-      "id": 26,
-      "text": "Wow!It’s pretty!",
-      "start": 92.94,
-      "duration": 2.45
-    },
-    {
-      "id": 27,
-      "text": "Your bed looks very soft.",
-      "start": 95.15,
-      "duration": 2.72
-    },
-    {
-      "id": 28,
-      "text": "And you have a.",
-      "start": 97.47,
-      "duration": 1.44
-    },
-    {
-      "id": 29,
-      "text": "Nice desk for your homework.",
-      "start": 98.51,
-      "duration": 2.9
-    },
-    {
-      "id": 30,
-      "text": "I also have a wardrobe for my clothes.",
-      "start": 101.63,
-      "duration": 4
-    },
-    {
-      "id": 31,
-      "text": "I like your posters on it.",
-      "start": 105.31,
-      "duration": 4.49
-    },
-    {
-      "id": 32,
-      "text": "That is my brother Tom’s room.",
-      "start": 109.56,
-      "duration": 3.36
-    },
-    {
-      "id": 33,
-      "text": "We see Just quickly.",
-      "start": 112.92,
-      "duration": 2.96
-    },
-    {
-      "id": 34,
-      "text": "It is very messy!",
-      "start": 115.64,
-      "duration": 4.4
-    },
-    {
-      "id": 35,
-      "text": "Hi, Tom!",
-      "start": 119.64,
-      "duration": 1.12
-    },
-    {
-      "id": 36,
-      "text": "Nice to meet you!",
-      "start": 120.44,
-      "duration": 1.98
-    },
-    {
-      "id": 37,
-      "text": "Your room has a lot of games.",
-      "start": 122.17,
-      "duration": 3.55
-    },
-    {
-      "id": 38,
-      "text": "Yes, I love video games.",
-      "start": 125.22,
-      "duration": 4.34
-    },
-    {
-      "id": 39,
-      "text": "Finally, this is the backyard.",
-      "start": 129.06,
-      "duration": 4.26
-    },
-    {
-      "id": 40,
-      "text": "It is beautiful.",
-      "start": 133.61,
-      "duration": 3.55
-    },
-    {
-      "id": 41,
-      "text": "In the summer, we sit in the garden.",
-      "start": 136.84,
-      "duration": 3.68
-    },
-    {
-      "id": 42,
-      "text": "My dog likes to play here too.",
-      "start": 140.2,
-      "duration": 4.96
-    },
-    {
-      "id": 43,
-      "text": "You have a lovely home, Emma.",
-      "start": 144.92,
-      "duration": 2.48
-    },
-    {
-      "id": 44,
-      "text": "Thank you for showing me.",
-      "start": 147.16,
-      "duration": 2.62
-    },
-    {
-      "id": 45,
-      "text": "You are welcome, Jessica!",
-      "start": 149.47,
-      "duration": 2.56
-    },
-    {
-      "id": 46,
-      "text": "Let’s go back to the kitchen and have some juice.",
-      "start": 151.7,
-      "duration": 5.12
-    },
-    {
-      "id": 47,
-      "text": "Now, let's learn some useful vocabulary.",
-      "start": 156.34,
-      "duration": 5.05
-    },
-    {
-      "id": 48,
-      "text": "Living room Sofa Kitchen Fridge Bedroom Wardrobe Garden.",
-      "start": 160.91,
-      "duration": 17.55
+      "text": "We watch TV on this.",
+      "start": 45.15,
+      "duration": 1.88
     }
   ],
   "videoId": "YHb6o8DiMt0",
@@ -300,5 +96,5 @@
     "totalDuration": 186.32
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.371Z"
+  "formattedAt": "2026-07-30T16:06:12.452Z"
 }

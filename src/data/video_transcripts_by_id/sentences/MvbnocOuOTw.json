@@ -5,71 +5,71 @@
       "id": 1,
       "text": "Teddy's day.",
       "start": 7.12,
-      "duration": 2.88
+      "duration": 0.5
     },
     {
       "id": 2,
       "text": "Teddy is happy.",
       "start": 12.56,
-      "duration": 3.8
+      "duration": 1.13
     },
     {
       "id": 3,
       "text": "Teddy is angry.",
       "start": 18.8,
-      "duration": 5.12
+      "duration": 1.51
     },
     {
       "id": 4,
       "text": "Teddy is sad.",
       "start": 23.92,
-      "duration": 3.64
+      "duration": 1.08
     },
     {
       "id": 5,
       "text": "Teddy is thirsty.",
       "start": 32.16,
-      "duration": 5.21
+      "duration": 1.54
     },
     {
       "id": 6,
       "text": "I want water.",
       "start": 34.88,
-      "duration": 4.96
+      "duration": 1.47
     },
     {
       "id": 7,
       "text": "Teddy is tired.",
       "start": 39.84,
-      "duration": 6.64
+      "duration": 1.97
     },
     {
       "id": 8,
       "text": "Teddy is hungry.",
       "start": 43.04,
-      "duration": 3.44
+      "duration": 1.02
     },
     {
       "id": 9,
       "text": "Teddy is sleepy.",
       "start": 48.96,
-      "duration": 4.32
+      "duration": 1.28
     },
     {
       "id": 10,
       "text": "Good night.",
       "start": 53.28,
-      "duration": 11.68
+      "duration": 1.46
     },
     {
       "id": 11,
       "text": "You.",
       "start": 64.96,
-      "duration": 2.08
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-06-22T02:05:11Z",
   "videoId": "MvbnocOuOTw",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.360Z"
+  "formattedAt": "2026-07-30T16:04:31.524Z"
 }

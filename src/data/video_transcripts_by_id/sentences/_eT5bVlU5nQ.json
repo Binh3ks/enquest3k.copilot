@@ -5,175 +5,61 @@
       "id": 1,
       "text": "You ready to talk about our science project?",
       "start": 10.72,
-      "duration": 3.99
+      "duration": 2.67
     },
     {
       "id": 2,
       "text": "Yes, I am ready.",
       "start": 14.21,
-      "duration": 3.06
+      "duration": 1.29
     },
     {
       "id": 3,
       "text": "Yes, I am ready too.",
       "start": 16.77,
-      "duration": 2.96
+      "duration": 1.52
     },
     {
       "id": 4,
       "text": "Our teacher said we must make a project about plants.",
       "start": 19.33,
-      "duration": 5.12
+      "duration": 3.73
     },
     {
       "id": 5,
       "text": "That’s right.",
       "start": 23.97,
-      "duration": 1.43
+      "duration": 0.5
     },
     {
       "id": 6,
       "text": "She said we should show how plants grow.",
       "start": 25.24,
-      "duration": 4.04
+      "duration": 2.71
     },
     {
       "id": 7,
       "text": "Yes, she wants us to work together.",
       "start": 28.78,
-      "duration": 3.52
+      "duration": 2.22
     },
     {
       "id": 8,
       "text": "How do we start?",
       "start": 32.06,
-      "duration": 3.36
+      "duration": 1.42
     },
     {
       "id": 9,
       "text": "I think we can plant some seeds in a small pot.",
       "start": 35.18,
-      "duration": 4.48
+      "duration": 3.36
     },
     {
       "id": 10,
-      "text": "Then we can take pictures every day.",
+      "text": "Then we can take pictures every.",
       "start": 39.34,
-      "duration": 4.7
-    },
-    {
-      "id": 11,
-      "text": "Good idea.",
-      "start": 43.72,
-      "duration": 1.44
-    },
-    {
-      "id": 12,
-      "text": "We can make a chart to show the growth.",
-      "start": 45,
-      "duration": 4.02
-    },
-    {
-      "id": 13,
-      "text": "We can show Day 1, Day 2, and so on.",
-      "start": 49.24,
-      "duration": 5.04
-    },
-    {
-      "id": 14,
-      "text": "We can also write simple notes.",
-      "start": 54.12,
-      "duration": 2.91
-    },
-    {
-      "id": 15,
-      "text": "Like, “Today the seed is small.",
-      "start": 56.71,
-      "duration": 3.38
-    },
-    {
-      "id": 16,
-      "text": "Today the leaf is bigger.” Perfect.",
-      "start": 59.59,
-      "duration": 4.4
-    },
-    {
-      "id": 17,
-      "text": "Who will bring the seeds?",
-      "start": 63.75,
-      "duration": 2.8
-    },
-    {
-      "id": 18,
-      "text": "I can bring the seeds from my garden.",
-      "start": 66.39,
-      "duration": 3.81
-    },
-    {
-      "id": 19,
-      "text": "I can bring the pot and the soil.",
-      "start": 70.12,
-      "duration": 3.3
-    },
-    {
-      "id": 20,
-      "text": "Great!",
-      "start": 72.92,
-      "duration": 1.28
-    },
-    {
-      "id": 21,
-      "text": "I will make the chart.",
-      "start": 73.96,
-      "duration": 2.9
-    },
-    {
-      "id": 22,
-      "text": "Wonderful!",
-      "start": 76.36,
-      "duration": 1.44
-    },
-    {
-      "id": 23,
-      "text": "We all have jobs now.",
-      "start": 77.56,
-      "duration": 2.64
-    },
-    {
-      "id": 24,
-      "text": "Let’s meet again after school tomorrow to start.",
-      "start": 79.88,
-      "duration": 4.5
-    },
-    {
-      "id": 25,
-      "text": "Yes, let’s meet in the library.",
-      "start": 83.9,
-      "duration": 4.18
-    },
-    {
-      "id": 26,
-      "text": "Okay.",
-      "start": 93.98,
-      "duration": 0.8
-    },
-    {
-      "id": 27,
-      "text": "Thank you, friends.",
-      "start": 102.77,
-      "duration": 0.97
-    },
-    {
-      "id": 28,
-      "text": "Our project will be good.",
-      "start": 106.69,
-      "duration": 1.28
-    },
-    {
-      "id": 29,
-      "text": "Yes, we will do a great job!",
-      "start": 108.52,
-      "duration": 1.21
+      "duration": 2.4
     }
   ],
   "videoId": "_eT5bVlU5nQ",
@@ -186,5 +72,5 @@
     "totalDuration": 110.87
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.371Z"
+  "formattedAt": "2026-07-30T16:06:18.104Z"
 }

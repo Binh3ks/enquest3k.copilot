@@ -5,173 +5,83 @@
       "id": 1,
       "text": "Discipline.",
       "start": 7.04,
-      "duration": 0.93
+      "duration": 0.5
     },
     {
       "id": 2,
-      "text": "Giving Advice John, it looks like you never focus in class and fall asleep often these days.",
-      "start": 7.973333333333334,
-      "duration": 14.95
+      "text": "Giving Advice.",
+      "start": 7.97,
+      "duration": 0.5
     },
     {
       "id": 3,
-      "text": "What's going on?",
-      "start": 23.02,
-      "duration": 1.88
+      "text": "John, it looks like you never focus in class and fall asleep often these days.",
+      "start": 9.73,
+      "duration": 10.72
     },
     {
       "id": 4,
-      "text": "I’m sorry, Mrs.",
-      "start": 25.28,
-      "duration": 1.77
+      "text": "What's going on?",
+      "start": 23.02,
+      "duration": 0.55
     },
     {
       "id": 5,
-      "text": "Smith.",
-      "start": 27.05,
-      "duration": 0.59
+      "text": "I’m sorry, Mrs.",
+      "start": 25.28,
+      "duration": 0.53
     },
     {
       "id": 6,
-      "text": "What time did you go to bed last night?",
-      "start": 28.3,
-      "duration": 2.76
+      "text": "Smith.",
+      "start": 27.05,
+      "duration": 0.5
     },
     {
       "id": 7,
-      "text": "12 at midnight.",
-      "start": 31.66,
-      "duration": 2.36
+      "text": "What time did you go to bed last night? 12 at midnight.",
+      "start": 28.3,
+      "duration": 4.14
     },
     {
       "id": 8,
       "text": "Oh, no.",
       "start": 35.94,
-      "duration": 0.99
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "What were you doing?",
-      "start": 36.93333333333333,
-      "duration": 1.99
+      "start": 36.93,
+      "duration": 0.84
     },
     {
       "id": 10,
       "text": "I was playing a computer game.",
       "start": 39.22,
-      "duration": 2.9
+      "duration": 1.68
     },
     {
       "id": 11,
-      "text": "John… Do you play computer games that late everyday?",
+      "text": "John.",
       "start": 43,
-      "duration": 5.02
+      "duration": 0.5
     },
     {
       "id": 12,
-      "text": "Almost everyday.",
-      "start": 49.4,
-      "duration": 1.88
+      "text": "Do you play computer games that late everyday?",
+      "start": 43.5,
+      "duration": 3.04
     },
     {
       "id": 13,
-      "text": "I play computer games.",
-      "start": 51.28,
-      "duration": 3.2
-    },
-    {
-      "id": 14,
-      "text": "I do?",
-      "start": 54.48,
-      "duration": 2
-    },
-    {
-      "id": 15,
-      "text": "Hm… Why don't you try this?",
-      "start": 58.3,
-      "duration": 2.82
-    },
-    {
-      "id": 16,
-      "text": "First, set your game time, and then set the alarm to go off when the time is up.",
-      "start": 61.3,
-      "duration": 6.04
-    },
-    {
-      "id": 17,
-      "text": "I set the end time on my alarm clock when I start playing the game?",
-      "start": 68.84,
-      "duration": 6.32
-    },
-    {
-      "id": 18,
-      "text": "Yes, that’s right.",
-      "start": 75.56,
-      "duration": 1.78
-    },
-    {
-      "id": 19,
-      "text": "I think using your watch or phone would be best.",
-      "start": 77.5,
-      "duration": 3.06
-    },
-    {
-      "id": 20,
-      "text": "That’s a good idea.",
-      "start": 80.96,
-      "duration": 2
-    },
-    {
-      "id": 21,
-      "text": "Do you have any other hobbies besides playing computer games?",
-      "start": 84.11,
-      "duration": 4.01
-    },
-    {
-      "id": 22,
-      "text": "I like soccer, basketball, and skateboarding.",
-      "start": 89.78,
-      "duration": 4.24
-    },
-    {
-      "id": 23,
-      "text": "I heard that you were good at skateboarding.",
-      "start": 94.66,
-      "duration": 3.76
-    },
-    {
-      "id": 24,
-      "text": "Yep… Of course!",
-      "start": 99.74,
-      "duration": 1.6
-    },
-    {
-      "id": 25,
-      "text": "I can hop while skateboarding!",
-      "start": 101.33749999999999,
-      "duration": 2.66
-    },
-    {
-      "id": 26,
-      "text": "That’s awesome!",
-      "start": 107.1,
-      "duration": 1.66
-    },
-    {
-      "id": 27,
-      "text": "I hope to see positive changes soon!",
-      "start": 108.76,
-      "duration": 2.94
-    },
-    {
-      "id": 28,
-      "text": "Let's listen",
-      "start": 117.14,
-      "duration": 2
+      "text": "Almost.",
+      "start": 49.4,
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-06-24T03:42:52Z",
   "videoId": "5hP9Zx2Q4sU",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.348Z"
+  "formattedAt": "2026-07-30T16:02:26.086Z"
 }

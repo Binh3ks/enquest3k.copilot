@@ -5,83 +5,83 @@
       "id": 1,
       "text": "Do you have a pet?",
       "start": 2.06,
-      "duration": 2.08
+      "duration": 1.06
     },
     {
       "id": 2,
       "text": "Sue.",
       "start": 18.86,
-      "duration": 1.46
+      "duration": 0.5
     },
     {
       "id": 3,
       "text": "What's that?",
       "start": 22.24,
-      "duration": 1.68
+      "duration": 0.5
     },
     {
       "id": 4,
       "text": "It's my frog.",
       "start": 25.68,
-      "duration": 1.56
+      "duration": 0.5
     },
     {
       "id": 5,
       "text": "Do you have a pet, Sue?",
       "start": 31.38,
-      "duration": 2.42
+      "duration": 1.4
     },
     {
       "id": 6,
       "text": "I do.",
       "start": 34.42,
-      "duration": 1
+      "duration": 0.5
     },
     {
       "id": 7,
       "text": "I have a bird.",
       "start": 35.42,
-      "duration": 2
+      "duration": 0.85
     },
     {
       "id": 8,
       "text": "Hi.",
       "start": 46.02,
-      "duration": 0.9
+      "duration": 0.5
     },
     {
       "id": 9,
       "text": "Hi.",
       "start": 47.58,
-      "duration": 0.86
+      "duration": 0.5
     },
     {
       "id": 10,
       "text": "Do you have a pet, Paul?",
       "start": 55.14,
-      "duration": 2.38
+      "duration": 1.38
     },
     {
       "id": 11,
       "text": "Sure!",
       "start": 58.62,
-      "duration": 1
+      "duration": 0.5
     },
     {
       "id": 12,
       "text": "I have a snake.",
       "start": 66.12,
-      "duration": 2.02
+      "duration": 0.86
     },
     {
       "id": 13,
-      "text": "Ahhh~",
+      "text": "Ahhh!",
       "start": 71.2,
-      "duration": 3.32
+      "duration": 0.5
     }
   ],
   "fetchedAt": "2026-07-01T07:33:10.197Z",
   "videoId": "dQgo02FCiqk",
   "formatted": true,
-  "formattedAt": "2026-07-30T11:50:56.376Z"
+  "formattedAt": "2026-07-30T16:07:02.366Z"
 }
