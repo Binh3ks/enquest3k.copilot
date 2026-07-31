@@ -3,43 +3,249 @@
   "segments": [
     {
       "id": 1,
-      "text": "The Ant and the Grasshopper.",
+      "text": "The Ant and the Grasshopper. Once upon a time, there lived ants and a grasshopper in a grassy meadow.",
       "start": 2.48,
-      "duration": 1.61
+      "duration": 11.92
     },
     {
       "id": 2,
-      "text": "Once upon a time, there lived ants and a grasshopper in a grassy meadow.",
-      "start": 5.62,
-      "duration": 7.03
+      "text": "All day long, the ants would work hard collecting grains of wheat from the farmer's field far away.",
+      "start": 14.4,
+      "duration": 7.62
     },
     {
       "id": 3,
-      "text": "All day long, the ants would work hard collecting grains of wheat from the farmer's field far away.",
-      "start": 14.4,
-      "duration": 6.42
+      "text": "They used to work in much disciplined manner. They would hurry to the field every morning as soon as it was light enough to see by and toil back with heavy grains of wheat balanced on their head.",
+      "start": 22.02,
+      "duration": 14.49
     },
     {
       "id": 4,
-      "text": "They used to work in a much disciplined manner.",
-      "start": 22.02,
-      "duration": 2.41
+      "text": "They would put the grains of wheat carefully away in their lardland and then hurry back to the field for more.",
+      "start": 36.51,
+      "duration": 8.21
     },
     {
       "id": 5,
-      "text": "They would hurry to the field every morning as soon as it was light enough to see by.",
-      "start": 25.45,
-      "duration": 5.78
+      "text": "On the other hand, the grasshopper was lazy and would rest all day in the shade, singing songs to himself and eating tasty treats.",
+      "start": 44.72,
+      "duration": 10.71
     },
     {
       "id": 6,
-      "text": "They would toil back with heavy.",
-      "start": 32.32,
-      "duration": 1.48
+      "text": "Would enjoy his life to the fullest hardly cared what comes next.",
+      "start": 53.6,
+      "duration": 6.86
+    },
+    {
+      "id": 7,
+      "text": "He always used to pity the poor ants who worked hard all day.",
+      "start": 60.46,
+      "duration": 4.36
+    },
+    {
+      "id": 8,
+      "text": "Days went by and Grasshopper hopped around lazily in the grass, warm, happy, and well-fed, chirping and singing to himself because life was good.",
+      "start": 64.82,
+      "duration": 13.29
+    },
+    {
+      "id": 9,
+      "text": "While ants were carrying grains and taking them to their nest with the great toil.",
+      "start": 78.11,
+      "duration": 6.65
+    },
+    {
+      "id": 10,
+      "text": "One day when the ants were carrying the grains, one of the ants fell down due to the heavy weight of the grain.",
+      "start": 84.76,
+      "duration": 9
+    },
+    {
+      "id": 11,
+      "text": "He was tired and hurt. Instead of helping the ant, grasshopper looked at him and laughed.",
+      "start": 93.76,
+      "duration": 10.48
+    },
+    {
+      "id": 12,
+      "text": "The ant asked, \"Mr. grasshopper, will you please help me with lifting this grain till my nest?",
+      "start": 100.24,
+      "duration": 9.76
+    },
+    {
+      "id": 13,
+      "text": "I will be really thankful to you.\" But the grasshopper ignored him and continued playing his music.",
+      "start": 110,
+      "duration": 6.85
+    },
+    {
+      "id": 14,
+      "text": "With many efforts, the ant alone lifted the grain. \"Why do you work.",
+      "start": 116.85,
+      "duration": 8.95
+    },
+    {
+      "id": 15,
+      "text": "So hard, dear ant?\" said the grasshopper. \"Come rest a while Listen to my song.",
+      "start": 125.8,
+      "duration": 7.1
+    },
+    {
+      "id": 16,
+      "text": "Summer is here and the days are long and bright. waste the sunshine and labor and toil?",
+      "start": 132.9,
+      "duration": 9.9
+    },
+    {
+      "id": 17,
+      "text": "The ant would ignore him and headbent would just hurry to the field a little faster.",
+      "start": 139.2,
+      "duration": 6.97
+    },
+    {
+      "id": 18,
+      "text": "This would make the grasshopper laugh even louder. What a silly little ant you are.",
+      "start": 146.17,
+      "duration": 10.26
+    },
+    {
+      "id": 19,
+      "text": "Would call after her. Come, come and dance with me.",
+      "start": 154.16,
+      "duration": 5.44
+    },
+    {
+      "id": 20,
+      "text": "Forget about work. Enjoy the summer, live a little.",
+      "start": 159.6,
+      "duration": 3.93
+    },
+    {
+      "id": 21,
+      "text": "I am helping to lay up food for the winter, said the And recommend you do the same.",
+      "start": 163.53,
+      "duration": 9.43
+    },
+    {
+      "id": 22,
+      "text": "Why bother about winter, said the grasshopper. We've got plenty of food at present, there's still plenty of time to prepare for winter.",
+      "start": 170.8,
+      "duration": 9.35
+    },
+    {
+      "id": 23,
+      "text": "But the ant knew what he was doing and went on his way and continued his toil.",
+      "start": 180.15,
+      "duration": 6.47
+    },
+    {
+      "id": 24,
+      "text": "As the grasshopper hopped away across the meadow, singing and dancing merrily.",
+      "start": 186.62,
+      "duration": 7.94
+    },
+    {
+      "id": 25,
+      "text": "This continued for the rest of the days to come. Instead of working and preparing for winter, the grasshopper preferred to dance, sing, and play at his leisure.",
+      "start": 192.56,
+      "duration": 11.34
+    },
+    {
+      "id": 26,
+      "text": "He did not realize that the wonderful summer days will not last forever, and soon cold and rainy days will be near.",
+      "start": 203.9,
+      "duration": 10.91
+    },
+    {
+      "id": 27,
+      "text": "Summer faded into autumn, and autumn turned into winter. The sun was hardly seen, and the days were short and gray.",
+      "start": 214.81,
+      "duration": 9.5
+    },
+    {
+      "id": 28,
+      "text": "The nights long and dark. became freezing cold and snow began to fall.",
+      "start": 224.32,
+      "duration": 7.39
+    },
+    {
+      "id": 29,
+      "text": "The grasshopper shivered through the cold breeze. He tried to cover himself with the dry leaves around, the strong wind even blew those away.",
+      "start": 231.71,
+      "duration": 13.3
+    },
+    {
+      "id": 30,
+      "text": "Felt hungry and could not find anything to eat. He was sure that if he would not eat, he will soon die.",
+      "start": 242.96,
+      "duration": 10.4
+    },
+    {
+      "id": 31,
+      "text": "He felt weak and soon grasshopper realized that the ant was right and he should have been prepared.",
+      "start": 253.36,
+      "duration": 6.94
+    },
+    {
+      "id": 32,
+      "text": "The grasshopper didn't feel like singing anymore. He was cold and hungry.",
+      "start": 260.3,
+      "duration": 6.02
+    },
+    {
+      "id": 33,
+      "text": "He had nowhere to shelter from the snow and nothing to eat.",
+      "start": 266.32,
+      "duration": 6.92
+    },
+    {
+      "id": 34,
+      "text": "The meadow and the farmer's field were covered in snow. There was no food to be had. \"Oh, what shall I do?",
+      "start": 273.24,
+      "duration": 13.88
+    },
+    {
+      "id": 35,
+      "text": "Where shall I go?\" wailed the He hadn't thought that this winter might be worse than usual.",
+      "start": 284.32,
+      "duration": 9.81
+    },
+    {
+      "id": 36,
+      "text": "Because he hadn't stored food for himself or helped anyone else to do he would not live to see another summer.",
+      "start": 292.88,
+      "duration": 11.2
+    },
+    {
+      "id": 37,
+      "text": "He had nowhere to shelter from the snow and found himself dying of hunger while he saw the ants enjoying the food stored and collected in the summer.",
+      "start": 301.28,
+      "duration": 14.05
+    },
+    {
+      "id": 38,
+      "text": "Ah, I shall go to the ant and ask her for food shelter, declared the grasshopper, perking up.",
+      "start": 315.33,
+      "duration": 7.24
+    },
+    {
+      "id": 39,
+      "text": "So he staggered to the ant's hill and knocked at their door.",
+      "start": 322.57,
+      "duration": 5.79
+    },
+    {
+      "id": 40,
+      "text": "Hello and he cried cheerfully here I am to sing for you as I warm myself by your fire while you get me some food from your from that larder of yours.",
+      "start": 328.72,
+      "duration": 23.68
     }
   ],
   "videoId": "XPZXpuoIndo",
   "source": "cleaned",
   "formatted": true,
-  "formattedAt": "2026-07-30T16:05:58.261Z"
+  "formattedAt": "2026-07-30T16:05:58.261Z",
+  "fixedAt": "2026-07-31T12:54:01.415Z",
+  "fixedReason": "Rebuilt from cleaned transcript — 40 raw segments merged into complete sentences"
 }
