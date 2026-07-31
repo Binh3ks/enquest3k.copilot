@@ -1,152 +1,146 @@
 {
-  "text": "English sing sing. Family Hello. Let me introduce my family. It's me. Me He is my father. She is my mother. Father father mother mother They are my parents. Parents parents He is my brother. She is my sister. Brother. Brother. Sister. Sister He is my grandfather. He is my grandmother. Grandfather Grandfather Grandmother Grandmother They are my grandparents. Grandparents Grandparents He is my uncle. Oh, he is my uncle too. Uncle Uncle She is my aunt. Aunt aunt She is my cousin. Cousin cousin my family They are my family members. I love them. Review. Grandfather grandmother grandparents father mother parents uncle uncle aunt brother me sister cousin my family",
+  "text": "Family. Hello. Let me introduce my family. It's me. Me. He is my father. She is my mother. Father. Father. Mother. Mother. They are my parents. Parents. Parents. He is my brother. She is my sister. Brother. Brother. Sister. Sister. He is my grandfather. He is my grandmother. Grandfather. Grand.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 1.41
-    },
-    {
-      "id": 2,
       "text": "Family.",
       "start": 8.12,
       "duration": 0.5
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "Hello.",
       "start": 9.43,
       "duration": 0.5
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "Let me introduce my family.",
       "start": 11.92,
       "duration": 1.07
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "It's me.",
       "start": 15.01,
       "duration": 0.5
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "Me.",
       "start": 17,
       "duration": 0.5
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "He is my father.",
       "start": 17.82,
       "duration": 1.39
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "She is my mother.",
       "start": 23.16,
       "duration": 0.61
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "Father.",
       "start": 25.88,
       "duration": 0.5
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "Father.",
       "start": 26.96,
       "duration": 0.5
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Mother.",
       "start": 28.04,
       "duration": 0.5
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "Mother.",
       "start": 29.12,
       "duration": 0.5
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "They are my parents.",
       "start": 30.21,
       "duration": 1.82
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Parents.",
       "start": 36.11,
       "duration": 0.5
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "Parents.",
       "start": 37.24,
       "duration": 0.5
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "He is my brother.",
       "start": 38.37,
       "duration": 1.91
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "She is my sister.",
       "start": 44.7,
       "duration": 0.65
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "Brother.",
       "start": 48.05,
       "duration": 0.5
     },
     {
-      "id": 19,
+      "id": 18,
       "text": "Brother.",
       "start": 49.98,
       "duration": 0.5
     },
     {
-      "id": 20,
+      "id": 19,
       "text": "Sister.",
       "start": 51.73,
       "duration": 0.5
     },
     {
-      "id": 21,
+      "id": 20,
       "text": "Sister.",
       "start": 53.82,
       "duration": 0.5
     },
     {
-      "id": 22,
+      "id": 21,
       "text": "He is my grandfather.",
       "start": 54.8,
       "duration": 1.65
     },
     {
-      "id": 23,
+      "id": 22,
       "text": "He is my grandmother.",
       "start": 60.7,
       "duration": 0.62
     },
     {
-      "id": 24,
+      "id": 23,
       "text": "Grandfather.",
       "start": 64.3,
       "duration": 0.5
     },
     {
-      "id": 25,
+      "id": 24,
       "text": "Grand.",
       "start": 65.48,
       "duration": 0.5

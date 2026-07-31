@@ -1,92 +1,86 @@
 {
-  "text": "English sing sing. How was your summer vacation? How are you? I'm good. How was your summer vacation? It was great. I went to Jeju Do with my family. Really? What did you do there? We looked around Jeju Do. Sounds great. We rode horses and walked along Jeju Ole. Jeju Ole? What's that? It's a walking path. You can see beautiful beaches and fields from there. Wow, I want to go there too. How about your vacation? What did you do? I took Taekwondo lessons. Great. What color belt do you have? White. I want to get my blue belt soon. Good luck. Listen. How are you? I'm good. How was your summer vacation? It was great. I went to Jeju Do with my family. Really? What did you do there? We looked around Jeju Do. Sounds great. We rode horses and walked along Jeju Ole. Jeju Ole? What's that? It's a walking path. You can see beautiful beaches and fields from there. Wow, I want to go there too. How about your vacation? What did you do? I took Taekwondo lessons. Great. What color belt do you have? White. I want to get my blue belt soon. Good luck. Speak aloud. Your turn.",
+  "text": "How was your summer vacation? How are you? I'm good. How was your summer vacation? It was great. I went to Jeju Do with my family. Really? What did you do there? We looked around Jeju Do. Sounds great. We rode horses and walked along Jeju Ole. Jeju Ole? What's that? It's a walking path.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.68,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "How was your summer vacation?",
       "start": 5.84,
       "duration": 0.99
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "How are you?",
       "start": 17.74,
       "duration": 0.5
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "I'm good.",
       "start": 20.14,
       "duration": 0.5
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "How was your summer vacation?",
       "start": 21.59,
       "duration": 0.87
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "It was great.",
       "start": 24.62,
       "duration": 0.5
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "I went to Jeju Do with my family.",
       "start": 26.72,
       "duration": 1.51
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "Really?",
       "start": 31.28,
       "duration": 0.5
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "What did you do there?",
       "start": 32.8,
       "duration": 0.75
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "We looked around Jeju Do.",
       "start": 35.36,
       "duration": 1.04
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Sounds great.",
       "start": 38.41,
       "duration": 0.5
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "We rode horses and walked along Jeju Ole.",
       "start": 40.66,
       "duration": 1.99
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Jeju Ole?",
       "start": 44.9,
       "duration": 0.5
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "What's that?",
       "start": 46.66,
       "duration": 0.5
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "It's a walking path.",
       "start": 48.66,
       "duration": 0.68

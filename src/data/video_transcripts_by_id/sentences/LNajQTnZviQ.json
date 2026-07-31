@@ -1,92 +1,86 @@
 {
-  "text": "English sing sing. Five zzz's. I can see. I can see with my eyes. see see eyes eyes i can hear i can hear with my ears hear ear ears ears i can smell I can smell with my nose. Smell smell nose nose I can feel. Oh, it's too cold. Feel feel skin skin I can taste. I can taste with my tongue. Yummy. Taste taste tongue tongue Review. Ears, hear, eyes, see, nose smell skin feel tongue taste.",
+  "text": "Five zzz's. I can see. I can see with my eyes. See see eyes eyes. I can hear. I can hear with my ears. Hear ear ears ears. I can smell. I can smell with my nose. Smell smell nose nose. I can feel. Oh, it's too cold! Feel feel skin skin. I can taste.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "Five zzz's.",
       "start": 8.24,
       "duration": 0.5
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "I can see.",
       "start": 13.6,
       "duration": 0.5
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "I can see with my eyes.",
       "start": 18.34,
       "duration": 1.17
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "See see eyes eyes.",
       "start": 24.57,
       "duration": 3.67
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "I can hear.",
       "start": 33.27,
       "duration": 1.93
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "I can hear with my ears.",
       "start": 39.79,
       "duration": 7.55
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "Hear ear ears ears.",
       "start": 52.84,
       "duration": 3.95
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "I can smell.",
       "start": 62.54,
       "duration": 2.38
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "I can smell with my nose.",
       "start": 73.33,
       "duration": 1.54
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Smell smell nose nose.",
       "start": 79.5,
       "duration": 4.56
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "I can feel.",
       "start": 90.31,
       "duration": 2.41
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Oh, it's too cold!",
       "start": 100.44,
       "duration": 0.79
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Feel feel skin skin.",
       "start": 102.6,
       "duration": 4.78
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "I can taste.",
       "start": 113.94,
       "duration": 2.52

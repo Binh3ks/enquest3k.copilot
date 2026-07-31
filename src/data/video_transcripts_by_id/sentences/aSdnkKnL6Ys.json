@@ -1,110 +1,104 @@
 {
-  "text": "English Sing Sing. Fairy tale. Once upon a time, there was a palace in a beautiful country. Palace. Palace. There lived a very handsome king. King. King. And a beautiful queen. Queen. Queen. They had a pretty princess. Princess. Princess. One day, the witch took a princess. Witch. Witch. With her magic, the princess was trapped in the dark forest. Forest. Magic. Magic. Many knights tried to save the princess. Knight. Night. But they failed because the forest was guarded by a scary monster. Monster. Monster. The king and queen were so sad. One day, a prince from a neighboring country came to save her. Prince. Prince. Prince. I'll save the Princess, said the Prince. Suddenly, a fairy showed up. Fairy. With this dragon, you'll be able to save the princess. Dragon. Dragon. Oh, thanks. The friends could beat the scary monster. Thank you my hero. You're welcome. Hero. Hero. The prince and princess got married and lived happily ever after. Review. Dragon, fairy, hero, king, knight, magic, monster, palace, prince, princess, queen, witch. Replay. Fairy tale. Once upon a time, there was a palace in a beautiful country. There lived a very handsome king and a beautiful queen. They had a pretty princess. One day, the witch took the princess. With her magic, the princess was trapped in the dark forest. Many knights tried to save the princess. But they failed because the forest was guarded by a scary monster. The king and queen were so sad. One day, a prince from a neighboring country came to save her. I'll save the princess, said the prince. Suddenly, a fairy showed up. With this dragon, you'll be able to save the princess. Oh, thanks. The prince could beat the scary monster. Thank you, my hero. You're welcome. The prince and princess got married and lived happily ever after.",
+  "text": "Fairy tale. Once upon a time, there was a palace in a beautiful country. Palace. Palace. There lived a very handsome king. King. King. And a beautiful queen. Queen. Queen. They had a pretty princess. Princess. Princess. One day, the witch took a princess. Witch. Witch. With her magic, the princess was trapped in the dark forest.",
   "segments": [
     {
       "id": 1,
-      "text": "English Sing Sing.",
-      "start": 1.76,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "Fairy tale.",
       "start": 9.04,
       "duration": 0.5
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "Once upon a time, there was a palace in a beautiful country.",
       "start": 12.34,
       "duration": 3.47
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "Palace.",
       "start": 19.54,
       "duration": 0.5
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "Palace.",
       "start": 23.61,
       "duration": 0.5
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "There lived a very handsome king.",
       "start": 28.57,
       "duration": 1.36
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "King.",
       "start": 33.13,
       "duration": 0.5
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "King.",
       "start": 34.41,
       "duration": 0.5
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "And a beautiful queen.",
       "start": 39.95,
       "duration": 0.62
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "Queen.",
       "start": 43.46,
       "duration": 0.5
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Queen.",
       "start": 46.59,
       "duration": 0.5
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "They had a pretty princess.",
       "start": 49.14,
       "duration": 0.87
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Princess.",
       "start": 53.02,
       "duration": 0.5
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Princess.",
       "start": 55.98,
       "duration": 0.5
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "One day, the witch took a princess.",
       "start": 60.3,
       "duration": 1.72
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "Witch.",
       "start": 66.38,
       "duration": 0.5
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "Witch.",
       "start": 69.66,
       "duration": 0.5
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "With her magic, the princess was trapped in the dark forest.",
       "start": 73.1,
       "duration": 3.14

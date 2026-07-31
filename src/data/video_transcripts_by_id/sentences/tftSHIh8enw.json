@@ -1,98 +1,92 @@
 {
-  "text": "English Sing Sing. Fairy tale song. Who will win? It a race. hoo i can win you i can win you slow but the steady winner it's not over until the end Let's have a race. I'm so fast and I'm the best. La la la. Enjoy your race, enjoy your race, la la la. I can win you, I can win you fast. And the best winner, it's not over until the end. Let's enjoy a race. Let's listen. And go slow and fast. Run or race, run or race, walk. hurrah who will win who will win slow will win or fast will win it's not all until the end Let's run or race. I'm so slow but I'm so steady. Hoo Have a race, have a race. hoo i can win you i can win you slow but the steady winner it's not over until the end Let's have a race. I'm so fast and I'm the best. La la la. Enjoy a race, enjoy a race. La la la. I can win you, I can win you fast. And the best winner, it's not over until the end. Let's enjoy a race. Sing along. Let's sing.",
+  "text": "Fairy tale song. Who will win? It a race. Hoo! I can win you. I can win you slow. But the steady winner. It's not over until the end. Let's have a race. I'm so fast and I'm the best. La la la. Enjoy your race. Enjoy your race. La la la. I can win you.",
   "segments": [
     {
       "id": 1,
-      "text": "English Sing Sing.",
-      "start": 5.28,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "Fairy tale song.",
       "start": 10.4,
       "duration": 0.5
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "Who will win?",
       "start": 12.48,
       "duration": 0.5
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "It a race.",
       "start": 29.01,
       "duration": 4.81
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "Hoo!",
       "start": 45.7,
       "duration": 0.5
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "I can win you.",
       "start": 46.07,
       "duration": 0.62
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "I can win you slow.",
       "start": 47.55,
       "duration": 0.94
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "But the steady winner.",
       "start": 49.39,
       "duration": 0.81
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "It's not over until the end.",
       "start": 51.31,
       "duration": 1.67
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "Let's have a race.",
       "start": 54.59,
       "duration": 0.65
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "I'm so fast and I'm the best.",
       "start": 60.42,
       "duration": 1.22
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "La la la.",
       "start": 62.9,
       "duration": 0.5
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Enjoy your race.",
       "start": 64.18,
       "duration": 0.5
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Enjoy your race.",
       "start": 65.33,
       "duration": 0.5
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "La la la.",
       "start": 66.49,
       "duration": 0.5
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "I can win you.",
       "start": 68.18,
       "duration": 0.5

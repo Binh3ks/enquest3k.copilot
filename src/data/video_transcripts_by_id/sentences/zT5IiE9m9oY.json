@@ -1,218 +1,212 @@
 {
-  "text": "English sing sing. What does she look like? Where is Rora? I don't know. Oh, no. Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? Her name is Aurora. She's six years old. What does she look like? She has short curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Listen. Where is Rora? I don't know. Oh, no. Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? Her name is Aurora. She's six years old. What does she look like? She has short curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Rora. Speak aloud. Your turn.",
+  "text": "What does she look like? Where is Rora? I don't know. Oh, no! Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? Her name is Aurora. She's six years old. What does she look like? She has short curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Listen! Where is Rora? I don't know. Oh, no! Excuse me. I'm looking for my little sister. Okay. Don't worry. What's her name? Her name is Aurora. She's six years old. What does she look like? She has short curly hair. What is she wearing? She's wearing a pink shirt and blue pants. And she's wearing a white cap. Rora! Speak aloud. Your turn.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.68,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "What does she look like?",
       "start": 5.92,
       "duration": 0.87
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "Where is Rora?",
       "start": 18.43,
       "duration": 0.5
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "I don't know.",
       "start": 20.76,
       "duration": 0.5
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "Oh, no!",
       "start": 22.68,
       "duration": 0.5
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "Excuse me.",
       "start": 28.27,
       "duration": 0.5
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "I'm looking for my little sister.",
       "start": 30.03,
       "duration": 1.22
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "Okay.",
       "start": 33.63,
       "duration": 0.5
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "Don't worry.",
       "start": 34.91,
       "duration": 0.5
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "What's her name?",
       "start": 35.78,
       "duration": 0.5
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Her name is Aurora.",
       "start": 38.19,
       "duration": 0.55
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "She's six years old.",
       "start": 40.27,
       "duration": 0.65
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "What does she look like?",
       "start": 42.84,
       "duration": 0.75
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "She has short curly hair.",
       "start": 45.16,
       "duration": 0.95
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "What is she wearing?",
       "start": 47.96,
       "duration": 0.5
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "She's wearing a pink shirt and blue pants.",
       "start": 50.05,
       "duration": 1.88
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "And she's wearing a white cap.",
       "start": 53.96,
       "duration": 1.22
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "Listen!",
       "start": 76.05,
       "duration": 0.5
     },
     {
-      "id": 19,
+      "id": 18,
       "text": "Where is Rora?",
       "start": 87.43,
       "duration": 0.5
     },
     {
-      "id": 20,
+      "id": 19,
       "text": "I don't know.",
       "start": 89.83,
       "duration": 0.5
     },
     {
-      "id": 21,
+      "id": 20,
       "text": "Oh, no!",
       "start": 91.67,
       "duration": 0.5
     },
     {
-      "id": 22,
+      "id": 21,
       "text": "Excuse me.",
       "start": 97.43,
       "duration": 0.5
     },
     {
-      "id": 23,
+      "id": 22,
       "text": "I'm looking for my little sister.",
       "start": 99.05,
       "duration": 1.22
     },
     {
-      "id": 24,
+      "id": 23,
       "text": "Okay.",
       "start": 102.73,
       "duration": 0.5
     },
     {
-      "id": 25,
+      "id": 24,
       "text": "Don't worry.",
       "start": 103.92,
       "duration": 0.5
     },
     {
-      "id": 26,
+      "id": 25,
       "text": "What's her name?",
       "start": 105.05,
       "duration": 0.5
     },
     {
-      "id": 27,
+      "id": 26,
       "text": "Her name is Aurora.",
       "start": 107.2,
       "duration": 0.55
     },
     {
-      "id": 28,
+      "id": 27,
       "text": "She's six years old.",
       "start": 109.28,
       "duration": 0.65
     },
     {
-      "id": 29,
+      "id": 28,
       "text": "What does she look like?",
       "start": 111.81,
       "duration": 0.78
     },
     {
-      "id": 30,
+      "id": 29,
       "text": "She has short curly hair.",
       "start": 114.21,
       "duration": 0.95
     },
     {
-      "id": 31,
+      "id": 30,
       "text": "What is she wearing?",
       "start": 116.93,
       "duration": 0.52
     },
     {
-      "id": 32,
+      "id": 31,
       "text": "She's wearing a pink shirt and blue pants.",
       "start": 119.09,
       "duration": 1.89
     },
     {
-      "id": 33,
+      "id": 32,
       "text": "And she's wearing a white cap.",
       "start": 123.01,
       "duration": 1.17
     },
     {
-      "id": 34,
+      "id": 33,
       "text": "Rora!",
       "start": 134.47,
       "duration": 0.5
     },
     {
-      "id": 35,
+      "id": 34,
       "text": "Speak aloud.",
       "start": 145.65,
       "duration": 0.5
     },
     {
-      "id": 36,
+      "id": 35,
       "text": "Your turn.",
       "start": 214.35,
       "duration": 0.5

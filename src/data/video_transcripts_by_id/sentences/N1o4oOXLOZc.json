@@ -1,278 +1,272 @@
 {
-  "text": "English sing sing. Hobbies and interests. What do you like doing? Playing the guitar I like playing the guitar in music class. Playing the guitar reading books I like reading books in the library. Reading books sh drawing. I love drawing with crayons. Drawing, watching TV. I like watching TV on the weekend. Watching TV. Cooking. I love cooking for my parents. Cooking singing I love singing in front of people. Singing dancing I love dancing to hip hop music. Dancing listening to music I love listening to music before I go to sleep. Listening to music. Playing games I love playing games with my brother. Playing games swimming I enjoy swimming in the ocean. Swimming hiking I like going hiking in the mountains. Hiking taking photographs I love taking photos of my pet. Taking photographs. Playing basketball. I love playing basketball after school. Playing basketball riding a bicycle I enjoy riding a bicycle at the park. Riding a bicycle. Review. Cooking. dancing drawing hiking listening to music playing basketball playing games playing the guitar reading books riding a bicycle singing swimming taking photographs watching TV",
+  "text": "Hobbies and interests. What do you like doing? Playing the guitar. I like playing the guitar in music class. Playing the guitar. Reading books. I like reading books in the library. Reading books. Sh. Drawing. I love drawing with crayons. Drawing. Watching TV. I like watching TV on the weekend. Watching TV. Cooking. I love cooking for my parents. Cooking. Singing. I love singing in front of people. Singing. Dancing. I love dancing to hip hop music. Dancing. Listening to music. I love listening to music before I go to sleep. Listening to music. Playing games. I love playing games with my brother. Playing games. Swimming. I enjoy swimming in the ocean. Swimming. Hiking. I like going hiking in the mountains. Hiking. Taking photographs. I love taking photos of my pet. Taking photographs. Playing basketball. I love playing basketball after school. Playing basketball. Riding a bicycle. I enjoy riding a bicycle at the park. Riding a bicycle.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.68,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "Hobbies and interests.",
       "start": 7.44,
       "duration": 0.5
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "What do you like doing?",
       "start": 11.68,
       "duration": 0.83
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "Playing the guitar.",
       "start": 17.55,
       "duration": 0.65
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "I like playing the guitar in music class.",
       "start": 19.74,
       "duration": 3.9
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "Playing the guitar.",
       "start": 27.32,
       "duration": 0.83
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "Reading books.",
       "start": 30.13,
       "duration": 0.5
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "I like reading books in the library.",
       "start": 32,
       "duration": 4.12
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "Reading books.",
       "start": 40.2,
       "duration": 0.5
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "Sh.",
       "start": 43.43,
       "duration": 0.5
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Drawing.",
       "start": 45.05,
       "duration": 0.5
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "I love drawing with crayons.",
       "start": 48.73,
       "duration": 1.24
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Drawing.",
       "start": 52.97,
       "duration": 0.5
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Watching TV.",
       "start": 54.81,
       "duration": 0.5
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "I like watching TV on the weekend.",
       "start": 61.1,
       "duration": 1.83
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "Watching TV.",
       "start": 65.74,
       "duration": 0.5
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "Cooking.",
       "start": 68.46,
       "duration": 0.5
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "I love cooking for my parents.",
       "start": 70.83,
       "duration": 1.02
     },
     {
-      "id": 19,
+      "id": 18,
       "text": "Cooking.",
       "start": 72.59,
       "duration": 0.5
     },
     {
-      "id": 20,
+      "id": 19,
       "text": "Singing.",
       "start": 74.17,
       "duration": 0.5
     },
     {
-      "id": 21,
+      "id": 20,
       "text": "I love singing in front of people.",
       "start": 75.75,
       "duration": 6.96
     },
     {
-      "id": 22,
+      "id": 21,
       "text": "Singing.",
       "start": 89.25,
       "duration": 0.5
     },
     {
-      "id": 23,
+      "id": 22,
       "text": "Dancing.",
       "start": 90.31,
       "duration": 0.5
     },
     {
-      "id": 24,
+      "id": 23,
       "text": "I love dancing to hip hop music.",
       "start": 91.36,
       "duration": 4.65
     },
     {
-      "id": 25,
+      "id": 24,
       "text": "Dancing.",
       "start": 100.66,
       "duration": 0.5
     },
     {
-      "id": 26,
+      "id": 25,
       "text": "Listening to music.",
       "start": 101.67,
       "duration": 0.9
     },
     {
-      "id": 27,
+      "id": 26,
       "text": "I love listening to music before I go to sleep.",
       "start": 104.71,
       "duration": 7.39
     },
     {
-      "id": 28,
+      "id": 27,
       "text": "Listening to music.",
       "start": 116.58,
       "duration": 0.5
     },
     {
-      "id": 29,
+      "id": 28,
       "text": "Playing games.",
       "start": 122.02,
       "duration": 0.5
     },
     {
-      "id": 30,
+      "id": 29,
       "text": "I love playing games with my brother.",
       "start": 123.2,
       "duration": 2.6
     },
     {
-      "id": 31,
+      "id": 30,
       "text": "Playing games.",
       "start": 128.97,
       "duration": 0.5
     },
     {
-      "id": 32,
+      "id": 31,
       "text": "Swimming.",
       "start": 131.23,
       "duration": 0.5
     },
     {
-      "id": 33,
+      "id": 32,
       "text": "I enjoy swimming in the ocean.",
       "start": 132.37,
       "duration": 3.93
     },
     {
-      "id": 34,
+      "id": 33,
       "text": "Swimming.",
       "start": 141.19,
       "duration": 0.5
     },
     {
-      "id": 35,
+      "id": 34,
       "text": "Hiking.",
       "start": 142.28,
       "duration": 0.5
     },
     {
-      "id": 36,
+      "id": 35,
       "text": "I like going hiking in the mountains.",
       "start": 143.36,
       "duration": 4.79
     },
     {
-      "id": 37,
+      "id": 36,
       "text": "Hiking.",
       "start": 152.88,
       "duration": 0.5
     },
     {
-      "id": 38,
+      "id": 37,
       "text": "Taking photographs.",
       "start": 154.19,
       "duration": 0.5
     },
     {
-      "id": 39,
+      "id": 38,
       "text": "I love taking photos of my pet.",
       "start": 156.81,
       "duration": 5.79
     },
     {
-      "id": 40,
+      "id": 39,
       "text": "Taking photographs.",
       "start": 167.83,
       "duration": 0.5
     },
     {
-      "id": 41,
+      "id": 40,
       "text": "Playing basketball.",
       "start": 174.15,
       "duration": 0.5
     },
     {
-      "id": 42,
+      "id": 41,
       "text": "I love playing basketball after school.",
       "start": 177.51,
       "duration": 1.78
     },
     {
-      "id": 43,
+      "id": 42,
       "text": "Playing basketball.",
       "start": 182.83,
       "duration": 0.5
     },
     {
-      "id": 44,
+      "id": 43,
       "text": "Riding a bicycle.",
       "start": 185.02,
       "duration": 0.97
     },
     {
-      "id": 45,
+      "id": 44,
       "text": "I enjoy riding a bicycle at the park.",
       "start": 188.3,
       "duration": 5.85
     },
     {
-      "id": 46,
+      "id": 45,
       "text": "Riding a bicycle.",
       "start": 198.86,
       "duration": 0.5

@@ -1,92 +1,86 @@
 {
-  "text": "English sing sing. Theme 11, where. Mom, I want some ice cream. Okay. Where is the cafeteria? It's next to the flower shop. Let's go. Mom, where's the restroom? I don't know. Let's ask that woman. Excuse me. Where is the restroom? Go straight and turn left. It's on your right. Thank you. Dial. I have science homework. Me too. Let's go to the science museum. Good idea. Where is it? I don't know. Excuse me. Where's the science museum? Go straight and turn right at the bank. Thank you very much. You're welcome. Dial. Sally, can you help me, please? Okay, mom. Go to the post office, please. Where is the post office? It's on Sejeong Street. Excuse me. Where is the post office? Go straight. It's over there. Thank you very much. Song. Excuse me. Where is the restaurant? Where is the restaurant? Go straight and turn right, go straight and turn right. It's on your left, it's on your left. Thank you very much. Excuse me. Where is the restaurant, where is the restaurant? go straight and turn right go straight and turn right it's on your left it's on your left thank you very much Excuse me. Excuse me. Where's the bank? Where's the bank? Go straight and turn right. Go straight and turn right. Oh, thanks. Thanks. Excuse me. Excuse me. Where is the school? Where is the school? Go straight and turn left. Go straight and turn left. Oh, thanks. Thanks. Wow. Great. Annika, Tommy, look. How nice. Where is this doll? In the museum. Let's go to the museum. Excuse me. Where is the museum? It's next to Pam Pam Hospital. Thank you. Here. This is Pam Pam Hospital. Where's the museum? Excuse me. Where's the museum? Over there. Thank you. Wow. How nice. Excuse me. Where is this doll? Go straight and turn right. Thank you. Let's go. Oh. I'm sorry. Oh no.",
+  "text": "Theme 11. Where? Mom, I want some ice cream. Okay. Where is the cafeteria? It's next to the flower shop. Let's go. Mom, where's the restroom? I don't know. Let's ask that woman. Excuse me. Where is the restroom? Go straight and turn left. It's on.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "Theme 11.",
       "start": 3.52,
       "duration": 0.5
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "Where?",
       "start": 4.42,
       "duration": 0.5
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "Mom, I want some ice cream.",
       "start": 11.76,
       "duration": 1.63
     },
     {
-      "id": 5,
+      "id": 4,
       "text": "Okay.",
       "start": 15.95,
       "duration": 0.5
     },
     {
-      "id": 6,
+      "id": 5,
       "text": "Where is the cafeteria?",
       "start": 21.62,
       "duration": 0.51
     },
     {
-      "id": 7,
+      "id": 6,
       "text": "It's next to the flower shop.",
       "start": 25.86,
       "duration": 1.13
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "Let's go.",
       "start": 28.61,
       "duration": 0.5
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "Mom, where's the restroom?",
       "start": 33.33,
       "duration": 0.85
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "I don't know.",
       "start": 37.09,
       "duration": 0.5
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "Let's ask that woman.",
       "start": 42.7,
       "duration": 0.65
     },
     {
-      "id": 12,
+      "id": 11,
       "text": "Excuse me.",
       "start": 46.78,
       "duration": 0.5
     },
     {
-      "id": 13,
+      "id": 12,
       "text": "Where is the restroom?",
       "start": 48.3,
       "duration": 0.51
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "Go straight and turn left.",
       "start": 51.27,
       "duration": 0.94
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "It's on.",
       "start": 53.18,
       "duration": 0.5

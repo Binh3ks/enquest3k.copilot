@@ -1,92 +1,80 @@
 {
-  "text": "English sing sing. Theme 19, did. Dialogue. Good morning, Sally. How are you? I'm great. What did you do yesterday? We went to the park. What did you do in the park? We flew kites. His kites flew high. Wow, you're good. What did you do yesterday, Sally? I read books. Let's go to the classroom. What did you do yesterday? I watched a science movie. What did you do yesterday, Mike? I made bulgogi with my dad. How was it? It was very delicious. We had a bulgogi party. I made cookies yesterday. I brought cookies for you. Thanks. Delicious. What did you do? What what did you do? I went to the zoo. I went to the zoo. What did you do? What what did you do? I went to the museum. I went to the museum. What did you do? What what did you do? I went to the zoo. I went to the zoo. What did you do? What what did you do? I went to the museum. I went to the museum. Song. What did you do yesterday? I went fishing with Quinn. How was it? It was fun. How was the party yesterday? It was fun. Happy New Year, everyone. Happy New Year, everyone. What, what, what did you do? Did you go swimming? No no no. Did you go camping? No no no. Then what what what did you do? I went fishing. I went fishing yesterday. What did you do there? I went to the zoo. Went to the zoo. Went to the zoo with my uncle. How was it? How was it? How was it? It was fun. It was fun. It was fun. See you. See you. See you. Take care. Take care. Take care. Story. Don't play outside. It's snowing. Okay. What did you do? I went outside. I met my friends. Oh, no. Please listen to your mom. Are you okay, mom? No. I'm not. I'm sorry, mom. What did you do? I saw mom. She looked sad. I cooked for mom. Thank you. Story. Good morning, Ariel. How are you? Great. Good morning, grandma. How are you? I'm fine. What did you do yesterday? I went to the park. Wow. She went to the park. What did you do there? I met a prince. He was very kind. How nice. We flew kites. My kite flew high. Great. We made cookies for his friends. How were they? They were very delicious. We had a party. Dad is coming. Good morning. Ariel went to the park yesterday. She met a prince there. Did you? I'm 16 years old. Alright. You can go to the park.",
+  "text": "Theme 19, did. Good morning, Sally. How are you? I'm great. What did you do yesterday? We went to the park. What did you do in the park? We flew kites. His kites flew high. Wow, you're good! What did you do yesterday, Sally? I read books. Let's go.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 0.5
-    },
-    {
-      "id": 2,
       "text": "Theme 19, did.",
       "start": 3.44,
       "duration": 0.65
     },
     {
-      "id": 3,
-      "text": "Dialogue.",
-      "start": 6.88,
-      "duration": 0.5
-    },
-    {
-      "id": 4,
+      "id": 2,
       "text": "Good morning, Sally.",
       "start": 14.24,
       "duration": 0.5
     },
     {
-      "id": 5,
+      "id": 3,
       "text": "How are you?",
       "start": 16.23,
       "duration": 0.5
     },
     {
-      "id": 6,
+      "id": 4,
       "text": "I'm great.",
       "start": 18.07,
       "duration": 0.5
     },
     {
-      "id": 7,
+      "id": 5,
       "text": "What did you do yesterday?",
       "start": 19.52,
       "duration": 0.75
     },
     {
-      "id": 8,
+      "id": 6,
       "text": "We went to the park.",
       "start": 22.23,
       "duration": 0.78
     },
     {
-      "id": 9,
+      "id": 7,
       "text": "What did you do in the park?",
       "start": 24.95,
       "duration": 1.12
     },
     {
-      "id": 10,
+      "id": 8,
       "text": "We flew kites.",
       "start": 27.43,
       "duration": 0.5
     },
     {
-      "id": 11,
+      "id": 9,
       "text": "His kites flew high.",
       "start": 30.03,
       "duration": 0.65
     },
     {
-      "id": 12,
+      "id": 10,
       "text": "Wow, you're good!",
       "start": 33.15,
       "duration": 0.5
     },
     {
-      "id": 13,
+      "id": 11,
       "text": "What did you do yesterday, Sally?",
       "start": 35.87,
       "duration": 1.36
     },
     {
-      "id": 14,
+      "id": 12,
       "text": "I read books.",
       "start": 39.47,
       "duration": 0.5
     },
     {
-      "id": 15,
+      "id": 13,
       "text": "Let's go.",
       "start": 44.52,
       "duration": 0.5
