@@ -1,31 +1,22 @@
 export default {
   title: "Leo's Comic Strip Adventure",
   videoId: "OdNv-J31Kk8",  // Carter family camping - weekend adventure (was: 50-min Speaking Story)
-  content_en: `It was Sunday afternoon when Leo sat down with his pencils, paper, and a big smile. He had decided to create a **comic strip** about his adventure-filled weekend.
-
-First, Leo wrote the title across the top of the paper: 'My Weekend Adventure — by Leo.' He felt very proud just looking at those words.
-
-In Panel One, he sketched the scene where he and his dog Max had visited the park on Saturday morning. Leo wrote a caption underneath: 'Saturday morning. Max and I walked to the park. It was sunny and warm.'
-
-In Panel Two, Leo drew Max chasing a red ball across the green grass. In the **speech bubble** above Max, Leo wrote: 'I played all day!' Leo added a caption at the bottom: 'Max played with his ball for one hour. He was so happy.'
-
-In Panel Three, Leo drew the moment a street musician arrived and everyone stopped to watch. The character in the panel looked amazed. Leo carefully described the moment in the caption: 'We watched a street performance. It was brilliant! We smiled and clapped.'
-
-In Panel Four, Leo drew himself and Max walking home — both looking tired but happy. The caption read: 'Finally, we returned home. We were tired but very happy. It was a perfect day!'
-
-Mia looked over Leo's shoulder and smiled. 'You used Past Simple so perfectly in every caption!' she said. 'Visited, played, watched, returned — these are all Regular Verbs with -ed!'
-
-'And look,' said Leo proudly, 'I even used Was and Were! It was sunny. He was happy. We were tired.'
-
-'Your weekend **comic strip** expresses a complete story,' said Mia. 'Now anyone can create their own!'`,
+  content_en: "The Carter Family. Episode four. A Camping Trip. Yay! Said Harry. We're going camping. Mom put the tent and food in the car. Dad put the sleeping bags in the car. The kids played in the yard. Harry threw a stick. Rover ran after it. Everybody in the car! Dad said. Rover looked for the stick. It's time to go camping, Rover.",
   script: [
-    { id: 1, text: "Leo decided to create a comic strip about his weekend adventure.", vi: null },
-    { id: 2, text: "He walked to the park with his dog Max on Saturday morning.", vi: null },
-    { id: 3, text: "Max played with his ball for one hour.", vi: null },
-    { id: 4, text: "They watched a street performance and clapped.", vi: null },
-    { id: 5, text: "Finally, they returned home tired but very happy.", vi: null },
-    { id: 6, text: "It was a sunny and warm day at the park.", vi: null },
-    { id: 7, text: "We were tired but very happy after the adventure.", vi: null },
-    { id: 8, text: "Leo created a comic strip using Past Simple sentences in every caption.", vi: null },
+    { id: 1, text: "The Carter Family.", vi: null, start: 5.6, duration: 1.27 },
+    { id: 2, text: "Episode four.", vi: null, start: 9.9, duration: 0.5 },
+    { id: 3, text: "A Camping Trip.", vi: null, start: 12.76, duration: 1.27 },
+    { id: 4, text: "Yay!", vi: null, start: 17.06, duration: 0.5 },
+    { id: 5, text: "Said Harry.", vi: null, start: 18.49, duration: 0.5 },
+    { id: 6, text: "We're going camping.", vi: null, start: 22.14, duration: 0.5 },
+    { id: 7, text: "Mom put the tent and food in the car.", vi: null, start: 31.94, duration: 1.59 },
+    { id: 8, text: "Dad put the sleeping bags in the car.", vi: null, start: 35.46, duration: 1.46 },
+    { id: 9, text: "The kids played in the yard.", vi: null, start: 42.38, duration: 0.98 },
+    { id: 10, text: "Harry threw a stick.", vi: null, start: 45.59, duration: 0.58 },
+    { id: 11, text: "Rover ran after it.", vi: null, start: 51.98, duration: 0.65 },
+    { id: 12, text: "Everybody in the car!", vi: null, start: 55.53, duration: 0.73 },
+    { id: 13, text: "Dad said.", vi: null, start: 57.25, duration: 0.5 },
+    { id: 14, text: "Rover looked for the stick.", vi: null, start: 58.65, duration: 0.78 },
+    { id: 15, text: "It's time to go camping, Rover.", vi: null, start: 63.93, duration: 1.15 }
   ]
 };

@@ -2,24 +2,14 @@ export default {
   videoId: "qwjfQNQsRRI",  // Whispering Woods mystery (was: "Where is it?" reused from W09)
   content_en: "I live in a town. My town has changed! Look at this old photo. **There was** a market near my house. **There were** big trees on the road. **There was** a bridge over the river. **There was** a temple next to the market. **There were** small buildings near the road. Now my town is different. **There is** a new road. **There are** new buildings. **There is** a new bridge. But the old temple is still there. My grandmother says, \\",
   script: [
-    { id: 1, text: "I live in a town.", vi: "Tôi sống ở một thị trấn." },
-    { id: 2, text: "My town has changed!", vi: "Thị trấn của tôi đã thay đổi!" },
-    { id: 3, text: "Look at this old photo.", vi: "Nhìn ảnh cũ này." },
-    { id: 4, text: "There was a market near my house.", vi: "Có một chợ gần nhà tôi." },
-    { id: 5, text: "There were big trees on the road.", vi: "Có nhiều cây lớn trên đường." },
-    { id: 6, text: "There was a bridge over the river.", vi: "Có một cầu bắc qua sông." },
-    { id: 7, text: "There was a temple next to the market.", vi: "Có một ngôi đền bên cạnh chợ." },
-    { id: 8, text: "There were small buildings near the road.", vi: "Có nhiều tòa nhà nhỏ gần đường." },
-    { id: 9, text: "Now my town is different.", vi: "Bây giờ thị trấn của tôi khác rồi." },
-    { id: 10, text: "There is a new road.", vi: "Có một đường mới." },
-    { id: 11, text: "There are new buildings.", vi: "Có nhiều tòa nhà mới." },
-    { id: 12, text: "There is a new bridge.", vi: "Có một cầu mới." },
-    { id: 13, text: "But the old temple is still.", vi: "Nhưng ngôi đền cũ vẫn còn." },
-    { id: 14, text: "My grandmother says, 'There was a village here before.' Now it is a big town.", vi: "Bà tôi nói, 'Có một làng ở đây trước kia.' Bây giờ là một thị trấn lớn." },
-    { id: 15, text: "The new buildings are tall and bright.", vi: "Nhưng ngôi đền vẫn đẹp." },
-    { id: 16, text: "The old market is gone.", vi: "Đó là lịch sử cũ của chúng tôi." },
-    { id: 17, text: "But the temple is still beautiful.", vi: "Tôi yêu thị trấn của tôi!" },
-    { id: 18, text: "It is our old history.", vi: null },
-    { id: 19, text: "I love my town!", vi: null },
+    { id: 1, text: "Hello, young adventurers.", vi: null, start: 0.24, duration: 0.57 },
+    { id: 2, text: "Tonight, I have a mystery for you.", vi: null, start: 2.64, duration: 1.93 },
+    { id: 3, text: "Shh!", vi: null, start: 5.76, duration: 0.5 },
+    { id: 4, text: "Can you hear that?", vi: null, start: 6.24, duration: 0.55 },
+    { id: 5, text: "The forest is whispering a secret.", vi: null, start: 7.76, duration: 1.49 },
+    { id: 6, text: "Welcome to the case of the whispering woods.", vi: null, start: 10.72, duration: 2.06 },
+    { id: 7, text: "Stay till the end.", vi: null, start: 14.08, duration: 0.87 },
+    { id: 8, text: "You'll be the detective helping us solve this curious case.", vi: null, start: 15.63, duration: 3.14 },
+    { id: 9, text: "Once upon a time, two curious siblings, Emma and Jack, went camping with their parents at the edge of an.", vi: null, start: 19.51, duration: 8.35 }
   ]
 };

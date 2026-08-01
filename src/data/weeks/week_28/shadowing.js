@@ -1,25 +1,22 @@
 export default {
   title: "The Great Transport Race",
   videoId: "tftSHIh8enw",
-  content_en: `Once upon a time, the **slow hare** was very proud of being the fastest. He always bragged about **winning every race** and looked at the slow tortoise with loud laughter, shouting that the slow tortoise would never finish first before him. The slow tortoise smiled calmly and said, '**Slow and steady wins the race**.'
-
-The animals all got into their vehicles. The slow hare jumped on his **old bicycle** and rode down the hill fast. The rabbit ran to the **bus stop**. The fox got into a **yellow taxi**. The elephant went to the **train station**. The tiger started his **big motorbike**. The bear drove a **large car**. The slow tortoise got on his small boat. BANG — the race began suddenly.
-
-The slow hare got ahead of everyone quickly. But then he got tired and **fell asleep** under a tree. Meanwhile, the slow tortoise kept on sailing steadily while the taxi **got stuck in traffic**, the bus **stopped at every station**, the motorbike ran out of petrol, and the car **got a flat tyre**.
-
-The slow tortoise **won the race** and all the animals **cheered loudly**. The slow hare woke up and looked for the slow tortoise. 'How did you win the race?' he asked. The slow tortoise smiled and replied, 'You got tired and fell asleep, but I kept on going.' **slow and steady wins the race**.`,
+  content_en: "Fairy tale song. Who will win? It a race. Hoo! I can win you. I can win you slow. But the steady winner. It's not over until the end. Let's have a race. I'm so fast and I'm the best. La la la. Enjoy your race. Enjoy your race. La la la. I can win you.",
   script: [
-    { id: 1, text: "Once upon a time, the slow hare was very proud of being the fastest.", vi: null },
-    { id: 2, text: "The slow tortoise smiled calmly and said, '**Slow and steady wins the race**.'", vi: null },
-    { id: 3, text: "The slow hare jumped on his old bicycle and rode down the hill fast.", vi: null },
-    { id: 4, text: "The rabbit ran to the bus stop.", vi: null },
-    { id: 5, text: "The fox got into a yellow taxi.", vi: null },
-    { id: 6, text: "The elephant went to the train station.", vi: null },
-    { id: 7, text: "The bear drove a large car.", vi: null },
-    { id: 8, text: "BANG — the race began suddenly.", vi: null },
-    { id: 9, text: "The slow hare got ahead of everyone quickly.", vi: null },
-    { id: 10, text: "But then he got tired and fell asleep under a tree.", vi: null },
-    { id: 11, text: "The slow tortoise won the race and all the animals cheered loudly.", vi: null },
-    { id: 12, text: "Slow and steady wins the race.", vi: null },
+    { id: 1, text: "Fairy tale song.", vi: null, start: 10.4, duration: 0.5 },
+    { id: 2, text: "Who will win?", vi: null, start: 12.48, duration: 0.5 },
+    { id: 3, text: "It a race.", vi: null, start: 29.01, duration: 4.81 },
+    { id: 4, text: "Hoo!", vi: null, start: 45.7, duration: 0.5 },
+    { id: 5, text: "I can win you.", vi: null, start: 46.07, duration: 0.62 },
+    { id: 6, text: "I can win you slow.", vi: null, start: 47.55, duration: 0.94 },
+    { id: 7, text: "But the steady winner.", vi: null, start: 49.39, duration: 0.81 },
+    { id: 8, text: "It's not over until the end.", vi: null, start: 51.31, duration: 1.67 },
+    { id: 9, text: "Let's have a race.", vi: null, start: 54.59, duration: 0.65 },
+    { id: 10, text: "I'm so fast and I'm the best.", vi: null, start: 60.42, duration: 1.22 },
+    { id: 11, text: "La la la.", vi: null, start: 62.9, duration: 0.5 },
+    { id: 12, text: "Enjoy your race.", vi: null, start: 64.18, duration: 0.5 },
+    { id: 13, text: "Enjoy your race.", vi: null, start: 65.33, duration: 0.5 },
+    { id: 14, text: "La la la.", vi: null, start: 66.49, duration: 0.5 },
+    { id: 15, text: "I can win you.", vi: null, start: 68.18, duration: 0.5 }
   ]
 };
