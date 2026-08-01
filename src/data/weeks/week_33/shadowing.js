@@ -1,37 +1,28 @@
 export default {
   videoId: "gWOqA3pUaTk",
-  content_en: "Hello? Hello. May I speak to Kate, please? Sorry. She's not here. Who's calling, please? This is Mike, Kate's friend. Hi, Mike. Can I take a message? No. Thank you. I'll call back later. Okay. Bye. Bye. Hello? Hello? Can I speak to Kate? Speaking. Hi, Kate. This is Mike. Hi, Mike. What's up? Let's play badminton at the park. Sounds good. What time? How about at two? Okay. See you at two. Bye. Let's role play.",
+  content_en: `Something terrible happened at school last Monday. Jake was running in the corridor because he was late for class. He forgot to **walk carefully**.
+
+Suddenly, Jake hit his knee on the corner of a table. He **fell down** hard and broke the glass cup that another student was holding. His arm hurt when he tried to catch the falling cup.
+
+Jake bit his tongue when he **fell down**, and his hand hit the floor. He began to cry because everything hurt at once. His teacher came quickly and called the school nurse.
+
+The nurse put a cold pack on Jake's knee and arm. She told Jake it was an important lesson — everyone must **walk carefully** in the corridor. Jake understood that running in the corridor was dangerous.
+
+At home, Jake recovered quickly. He learned one very important lesson: always **walk carefully**, even when you are late.`,
   script: [
-    { id: 1, text: "Hello?", vi: null, start: 4.72, duration: 0.5 },
-    { id: 2, text: "Hello.", vi: null, start: 6.08, duration: 0.5 },
-    { id: 3, text: "May I speak to Kate, please?", vi: null, start: 7.2, duration: 1.08 },
-    { id: 4, text: "Sorry.", vi: null, start: 10.16, duration: 0.5 },
-    { id: 5, text: "She's not here.", vi: null, start: 10.57, duration: 0.5 },
-    { id: 6, text: "Who's calling, please?", vi: null, start: 12.49, duration: 0.5 },
-    { id: 7, text: "This is Mike, Kate's friend.", vi: null, start: 14.82, duration: 1.07 },
-    { id: 8, text: "Hi, Mike.", vi: null, start: 17.86, duration: 0.5 },
-    { id: 9, text: "Can I take a message?", vi: null, start: 19.14, duration: 0.66 },
-    { id: 10, text: "No.", vi: null, start: 21.78, duration: 0.5 },
-    { id: 11, text: "Thank you.", vi: null, start: 22.13, duration: 0.5 },
-    { id: 12, text: "I'll call back later.", vi: null, start: 23.14, duration: 0.59 },
-    { id: 13, text: "Okay.", vi: null, start: 25.81, duration: 0.5 },
-    { id: 14, text: "Bye.", vi: null, start: 26.34, duration: 0.5 },
-    { id: 15, text: "Bye.", vi: null, start: 27.73, duration: 0.5 },
-    { id: 16, text: "Hello?", vi: null, start: 34.37, duration: 0.5 },
-    { id: 17, text: "Hello?", vi: null, start: 35.65, duration: 0.5 },
-    { id: 18, text: "Can I speak to Kate?", vi: null, start: 36.61, duration: 0.83 },
-    { id: 19, text: "Speaking.", vi: null, start: 39.17, duration: 0.5 },
-    { id: 20, text: "Hi, Kate.", vi: null, start: 40.7, duration: 0.5 },
-    { id: 21, text: "This is Mike.", vi: null, start: 41.57, duration: 0.5 },
-    { id: 22, text: "Hi, Mike.", vi: null, start: 43.49, duration: 0.5 },
-    { id: 23, text: "What's up?", vi: null, start: 44.42, duration: 0.5 },
-    { id: 24, text: "Let's play badminton at the park.", vi: null, start: 45.81, duration: 1.36 },
-    { id: 25, text: "Sounds good.", vi: null, start: 49.09, duration: 0.5 },
-    { id: 26, text: "What time?", vi: null, start: 50.38, duration: 0.5 },
-    { id: 27, text: "How about at two?", vi: null, start: 52.23, duration: 0.62 },
-    { id: 28, text: "Okay.", vi: null, start: 54.55, duration: 0.5 },
-    { id: 29, text: "See you at two.", vi: null, start: 55.43, duration: 0.5 },
-    { id: 30, text: "Bye.", vi: null, start: 57.11, duration: 0.5 },
-    { id: 31, text: "Let's role play.", vi: null, start: 62.87, duration: 0.5 }
+    { id: 1, text: "Something terrible happened at school last Monday.", vi: "Một điều kinh khủng đã xảy ra ở trường Thứ Hai." },
+    { id: 2, text: "Jake was running in the corridor because he was late for class.", vi: "Jake đang chạy trong hành lang vì cậu bị muộn." },
+    { id: 3, text: "He forgot to walk carefully.", vi: "Cậu quên đi cẩn thận." },
+    { id: 4, text: "Suddenly, Jake hit his knee on the corner of a table.", vi: "Đột nhiên, Jake đập đầu gối vào góc bàn." },
+    { id: 5, text: "He fell down hard and broke the glass cup that another student was holding.", vi: "Cậu ngã mạnh xuống và làm vỡ chiếc cốc thủy tinh mà một học sinh khác đang cầm." },
+    { id: 6, text: "His arm was hurt when he tried to catch the falling cup.", vi: "Cánh tay cậu bị đau khi cậu cố bắt chiếc cốc đang rơi." },
+    { id: 7, text: "Jake bit his tongue when he fell, and his hand hit the floor.", vi: "Jake cắn lưỡi khi ngã, và bàn tay cậu đập xuống sàn." },
+    { id: 8, text: "He began to cry because everything hurt at once.", vi: "Cậu bắt đầu khóc vì mọi thứ đau cùng một lúc." },
+    { id: 9, text: "His teacher came quickly and called the school nurse.", vi: "Giáo viên đến nhanh và gọi y tá trường." },
+    { id: 10, text: "The nurse put a cold pack on Jake's knee and arm.", vi: "Y tá đặt túi chườm lạnh lên đầu gối và cánh tay của Jake." },
+    { id: 11, text: "She told Jake it was an important lesson — everyone must walk carefully in the corridor.", vi: "Cô ấy nói với Jake đó là một bài học quan trọng — mọi người phải đi cẩn thận trong hành lang." },
+    { id: 12, text: "Jake understood that running in the corridor was dangerous.", vi: "Jake hiểu rằng chạy trong hành lang rất nguy hiểm." },
+    { id: 13, text: "At home, Jake recovered quickly.", vi: "Ở nhà, Jake hồi phục nhanh." },
+    { id: 14, text: "He learned one very important lesson: always walk carefully, even when you are late.", vi: "Cậu học được một bài học quan trọng: luôn đi cẩn thận, kể cả khi bị muộn." },
   ]
 };

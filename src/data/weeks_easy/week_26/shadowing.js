@@ -13,20 +13,13 @@ In Panel Four, Leo sketched himself and Max walking home. The caption said: 'Fin
 
 Leo created something beautiful. His **comic strip** helped him express his happy **weekend adventure**!`,
   script: [
-    { id: 1, text: "The Carter Family.", vi: null, start: 5.6, duration: 1.27 },
-    { id: 2, text: "Episode four.", vi: null, start: 9.9, duration: 0.5 },
-    { id: 3, text: "A Camping Trip.", vi: null, start: 12.76, duration: 1.27 },
-    { id: 4, text: "Yay!", vi: null, start: 17.06, duration: 0.5 },
-    { id: 5, text: "Said Harry.", vi: null, start: 18.49, duration: 0.5 },
-    { id: 6, text: "We're going camping.", vi: null, start: 22.14, duration: 0.5 },
-    { id: 7, text: "Mom put the tent and food in the car.", vi: null, start: 31.94, duration: 1.59 },
-    { id: 8, text: "Dad put the sleeping bags in the car.", vi: null, start: 35.46, duration: 1.46 },
-    { id: 9, text: "The kids played in the yard.", vi: null, start: 42.38, duration: 0.98 },
-    { id: 10, text: "Harry threw a stick.", vi: null, start: 45.59, duration: 0.58 },
-    { id: 11, text: "Rover ran after it.", vi: null, start: 51.98, duration: 0.65 },
-    { id: 12, text: "Everybody in the car!", vi: null, start: 55.53, duration: 0.73 },
-    { id: 13, text: "Dad said.", vi: null, start: 57.25, duration: 0.5 },
-    { id: 14, text: "Rover looked for the stick.", vi: null, start: 58.65, duration: 0.78 },
-    { id: 15, text: "It's time to go camping, Rover.", vi: null, start: 63.93, duration: 1.15 }
+    { id: 1, text: "Leo visited the park on Saturday morning.", vi: null },
+    { id: 2, text: "It was sunny and warm.", vi: null },
+    { id: 3, text: "Max played with his ball for one hour.", vi: null },
+    { id: 4, text: "Max was very happy.", vi: null },
+    { id: 5, text: "They watched a street performance.", vi: null },
+    { id: 6, text: "It was brilliant and they clapped.", vi: null },
+    { id: 7, text: "Finally, Leo and Max returned home.", vi: null },
+    { id: 8, text: "They were tired but very happy.", vi: null },
   ]
 };

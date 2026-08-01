@@ -1,17 +1,37 @@
 export default {
   title: "Maya's Growing Plant",
   videoId: "_eT5bVlU5nQ",  // Plant growth conversation (was: D3h-1mBjYdY)
-  content_en: "You ready to talk about our science project? Yes, I am ready. Yes, I am ready too. Our teacher said we must make a project about plants. That’s right. She said we should show how plants grow. Yes, she wants us to work together. How do we start? I think we can plant some seeds in a small pot. Then we can take pictures every.",
+  content_en: `It was Monday morning. Maya arrived at school with a small pot of dark soil, a packet of bean seeds, and a notebook ready to observe.
+
+'Today we begin our Plant Growth Project,' said Mr. Chen. 'Observe your seed every day and record what you see.'
+
+First, Maya pressed one seed into the soil. She added water. 'A seed needs water and warmth to germinate,' he said. 'Plants need three things: water, sunlight, and nutrients from the soil.'
+
+On Day Three, Maya saw a tiny crack in the soil. By Day Five, a green sprout pushed through! She wrote: 'The seed has germinated. A sprout appears. It grows towards the light.'
+
+Next, the sprout became a stem. It grew taller every day, reaching for sunlight. 'The root absorbs water and nutrients. The stem carries them up,' said Mr. Chen.
+
+After that, two leaves opened. 'A leaf uses sunlight to make food — this is called photosynthesis,' he explained.
+
+Finally, a small yellow flower appeared at the top. Maya had observed the complete life cycle: seed → sprout → stem → leaf → flower.`,
   script: [
-    { id: 1, text: "You ready to talk about our science project?", vi: null, start: 10.72, duration: 2.67 },
-    { id: 2, text: "Yes, I am ready.", vi: null, start: 14.21, duration: 1.29 },
-    { id: 3, text: "Yes, I am ready too.", vi: null, start: 16.77, duration: 1.52 },
-    { id: 4, text: "Our teacher said we must make a project about plants.", vi: null, start: 19.33, duration: 3.73 },
-    { id: 5, text: "That’s right.", vi: null, start: 23.97, duration: 0.5 },
-    { id: 6, text: "She said we should show how plants grow.", vi: null, start: 25.24, duration: 2.71 },
-    { id: 7, text: "Yes, she wants us to work together.", vi: null, start: 28.78, duration: 2.22 },
-    { id: 8, text: "How do we start?", vi: null, start: 32.06, duration: 1.42 },
-    { id: 9, text: "I think we can plant some seeds in a small pot.", vi: null, start: 35.18, duration: 3.36 },
-    { id: 10, text: "Then we can take pictures every.", vi: null, start: 39.34, duration: 2.4 }
+    { id: 1, text: "It was Monday morning.", vi: null },
+    { id: 2, text: "Maya arrived at school with a small pot of dark soil, a packet of bean seeds, and a notebook ready to observe.", vi: null },
+    { id: 3, text: "'Today we begin our Plant Growth Project,' said Mr. Chen.", vi: null },
+    { id: 4, text: "'Observe your seed every day and record what you see.'", vi: null },
+    { id: 5, text: "First, Maya pressed one seed into the soil.", vi: null },
+    { id: 6, text: "She added water.", vi: null },
+    { id: 7, text: "'A seed needs water and warmth to germinate,' he said.", vi: null },
+    { id: 8, text: "'Plants need three things: water, sunlight, and nutrients from the soil.'", vi: null },
+    { id: 9, text: "On Day Three, Maya saw a tiny crack in the soil.", vi: null },
+    { id: 10, text: "By Day Five, a green sprout pushed through!", vi: null },
+    { id: 11, text: "She wrote: 'The seed has germinated. A sprout appears. It grows towards the light.'", vi: null },
+    { id: 12, text: "Next, the sprout became a stem.", vi: null },
+    { id: 13, text: "It grew taller every day, reaching for sunlight.", vi: null },
+    { id: 14, text: "'The root absorbs water and nutrients. The stem carries them up,' said Mr. Chen.", vi: null },
+    { id: 15, text: "After that, two leaves opened.", vi: null },
+    { id: 16, text: "'A leaf uses sunlight to make food — this is called photosynthesis,' he explained.", vi: null },
+    { id: 17, text: "Finally, a small yellow flower appeared at the top.", vi: null },
+    { id: 18, text: "Maya had observed the complete life cycle: seed, sprout, stem, leaf, flower.", vi: null },
   ]
 };
