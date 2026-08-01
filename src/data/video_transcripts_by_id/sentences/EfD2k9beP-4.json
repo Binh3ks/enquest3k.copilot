@@ -1,9 +1,9 @@
 {
-  "text": "Town This is my town. Let’s look around. The first block is here. Here are a hospital and a bank. hospital bank The second block is here. Here are a post office and a fire station. post office fire station The third block is here. Here are a school, a library, a museum and a park. school library museum park The fourth block is here. Here are a police office and a supermarket. police office supermarket The fifth block is here. Here are a bus stop, a theater, a bakery and a restaurant. bus stop theater bakery restaurant Isn’t it wonderful? Come and see me!",
+  "text": "Town. This is my town. Let’s look around. The first block is here. Here are a hospital and a bank. Hospital. Bank. The second block is here. Here are a post office and a fire station. Post office. Fire station. The third block is here. Here are a school, a library, a museum and a park. School. Library. Museum. Park. The fourth block is here. Here are a police office and a supermarket. Police office. Supermarket. The fifth block is here. Here are a bus stop, a theater, a bakery and a restaurant. Bus stop. Theater. Bakery. Restaurant. Isn’t it wonderful? Come and see me!",
   "segments": [
     {
       "id": 1,
-      "text": "Town",
+      "text": "Town.",
       "start": 13.76,
       "duration": 2.18
     },
@@ -33,13 +33,13 @@
     },
     {
       "id": 6,
-      "text": "hospital",
+      "text": "Hospital.",
       "start": 86.82,
       "duration": 2.58
     },
     {
       "id": 7,
-      "text": "bank",
+      "text": "Bank.",
       "start": 107.99,
       "duration": 4.42
     },
@@ -57,13 +57,13 @@
     },
     {
       "id": 10,
-      "text": "post office",
+      "text": "Post office.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 11,
-      "text": "fire station",
+      "text": "Fire station.",
       "start": 151.86,
       "duration": 0.5
     },
@@ -81,25 +81,25 @@
     },
     {
       "id": 14,
-      "text": "school",
+      "text": "School.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 15,
-      "text": "library",
+      "text": "Library.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 16,
-      "text": "museum",
+      "text": "Museum.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 17,
-      "text": "park",
+      "text": "Park.",
       "start": 151.86,
       "duration": 0.5
     },
@@ -117,13 +117,13 @@
     },
     {
       "id": 20,
-      "text": "police office",
+      "text": "Police office.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 21,
-      "text": "supermarket",
+      "text": "Supermarket.",
       "start": 151.86,
       "duration": 0.5
     },
@@ -141,25 +141,25 @@
     },
     {
       "id": 24,
-      "text": "bus stop",
+      "text": "Bus stop.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 25,
-      "text": "theater",
+      "text": "Theater.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 26,
-      "text": "bakery",
+      "text": "Bakery.",
       "start": 151.86,
       "duration": 0.5
     },
     {
       "id": 27,
-      "text": "restaurant",
+      "text": "Restaurant.",
       "start": 151.86,
       "duration": 0.5
     },
@@ -185,5 +185,6 @@
     "dgWordCount": 127,
     "matchedSegments": 29,
     "totalDuration": 152.36
-  }
+  },
+  "cleanedAt": "2026-08-01T19:00:00.000Z"
 }

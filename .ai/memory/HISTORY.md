@@ -214,3 +214,11 @@ Created W36 as the new production standard for W36+ (dual-tab, social quiz, evol
 2026-07-05 | transcriptUtils.js refactor: removed MONO_* imports + fallback chains
 2026-07-05 | Multi-Agent Adapter created
 2026-07-03 | session boot only (no work)
+2026-07-31 | main | fix(memory): backfill 161 commits (Jul 6-31) + restore .md commands + auto-update hook
+2026-07-31 | main | fix(shadowing): W36 transcript — 12 sentences with Deepgram timestamps
+2026-07-31 | main | fix(shadowing): W06 replace video — English Singsing prepositions dialogue
+2026-07-31 | main | fix(shadowing): remove intro text from W01, W17 sentence files
+2026-07-31 | main | fix(shadowing): remove intro text from all sentence files
+2026-07-31 | main | fix(shadowing): replace W19, W22, W32 with syllabus-matched videos
+2026-07-31 | main | fix(shadowing): replace W04, W09, W12, W14, W21, W31 with syllabus-matched videos
+2026-07-31 | main | fix(shadowing): W34 rebuild transcript — 6 → 40 sentences

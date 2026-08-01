@@ -1,9 +1,9 @@
 {
-  "text": "Little bird, little bird Can you clap? No, I can't No, I can't I can't clap Little bird, little bird Can you fly? Yes, I can Yes, I can I can fly Elephant, elephant Can you fly? No, I can't No, I can't I can't fly Elephant, elephant Can you stomp? Yes, I can Yes, I can I can stomp Little fish, little fish Can you stomp? No, I can't No, I can't I can't stomp Little fish, little fish Can you swim? Yes, I can Yes, I can I can swim Gorilla, gorilla Can you swim? No, I can't No, I can't I can't swim Gorilla, gorilla Can you climb? Yes, I can Yes, I can I can climb Buffalo, buffalo Can you climb? No, I can't No, I can't I can't climb Buffalo, buffalo Can you run? Yes, I can Yes, I can I can run Boys and girls, boys and girls Can you sing? Yes, we can Yes, we can We can sing Boys and girls, boys and girls Can you dance? Yes, we can Yes, we can We can dance We can sing, we can dance Yes, we can We can sing, we can dance Yes, we can Yes, we can Yes, we can Yes, we can Yes, we can Yes, we can Yes, we can Yes, we can Yes, we can Yes, we can",
+  "text": "Little bird, little bird. Can you clap? No, I can't. No, I can't. I can't clap. Little bird, little bird. Can you fly? Yes, I can. Yes, I can. I can fly. Elephant, elephant. Can you fly? No, I can't. No, I can't. I can't fly. Elephant, elephant. Can you stomp? Yes, I can. Yes, I can. I can stomp. Little fish, little fish. Can you stomp? No, I can't. No, I can't. I can't stomp. Little fish, little fish. Can you swim? Yes, I can. Yes, I can. I can swim. Gorilla, gorilla. Can you swim? No, I can't. No, I can't. I can't swim. Gorilla, gorilla. Can you climb? Yes, I can. Yes, I can. I can climb. Buffalo, buffalo. Can you climb? No, I can't. No, I can't. I can't climb. Buffalo, buffalo. Can you run? Yes, I can. Yes, I can. I can run. Boys and girls, boys and girls. Can you sing? Yes, we can. Yes, we can. We can sing. Boys and girls, boys and girls. Can you dance? Yes, we can. Yes, we can. We can dance. We can sing, we can dance. Yes, we can. We can sing, we can dance. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can.",
   "segments": [
     {
       "id": 1,
-      "text": "Little bird, little bird",
+      "text": "Little bird, little bird.",
       "start": 3.84,
       "duration": 3.6
     },
@@ -15,25 +15,25 @@
     },
     {
       "id": 3,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 9.76,
       "duration": 1.92
     },
     {
       "id": 4,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 11.36,
       "duration": 2.21
     },
     {
       "id": 5,
-      "text": "I can't clap",
+      "text": "I can't clap.",
       "start": 13.09,
       "duration": 3.54
     },
     {
       "id": 6,
-      "text": "Little bird, little bird",
+      "text": "Little bird, little bird.",
       "start": 16.13,
       "duration": 3.62
     },
@@ -45,25 +45,25 @@
     },
     {
       "id": 8,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 22.13,
       "duration": 2.02
     },
     {
       "id": 9,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 23.65,
       "duration": 2.64
     },
     {
       "id": 10,
-      "text": "I can fly",
+      "text": "I can fly.",
       "start": 26.05,
       "duration": 6.24
     },
     {
       "id": 11,
-      "text": "Elephant, elephant",
+      "text": "Elephant, elephant.",
       "start": 31.79,
       "duration": 3.38
     },
@@ -75,25 +75,25 @@
     },
     {
       "id": 13,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 37.71,
       "duration": 2.08
     },
     {
       "id": 14,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 39.31,
       "duration": 2.02
     },
     {
       "id": 15,
-      "text": "I can't fly",
+      "text": "I can't fly.",
       "start": 40.83,
       "duration": 3.84
     },
     {
       "id": 16,
-      "text": "Elephant, elephant",
+      "text": "Elephant, elephant.",
       "start": 44.17,
       "duration": 3.36
     },
@@ -105,25 +105,25 @@
     },
     {
       "id": 18,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 50.09,
       "duration": 2
     },
     {
       "id": 19,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 51.69,
       "duration": 2.42
     },
     {
       "id": 20,
-      "text": "I can stomp",
+      "text": "I can stomp.",
       "start": 53.61,
       "duration": 6.43
     },
     {
       "id": 21,
-      "text": "Little fish, little fish",
+      "text": "Little fish, little fish.",
       "start": 59.56,
       "duration": 3.38
     },
@@ -135,25 +135,25 @@
     },
     {
       "id": 23,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 65.56,
       "duration": 1.92
     },
     {
       "id": 24,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 67.08,
       "duration": 2.3
     },
     {
       "id": 25,
-      "text": "I can't stomp",
+      "text": "I can't stomp.",
       "start": 68.9,
       "duration": 3.52
     },
     {
       "id": 26,
-      "text": "Little fish, little fish",
+      "text": "Little fish, little fish.",
       "start": 71.94,
       "duration": 3.46
     },
@@ -165,25 +165,25 @@
     },
     {
       "id": 28,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 77.94,
       "duration": 2
     },
     {
       "id": 29,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 79.46,
       "duration": 2.5
     },
     {
       "id": 30,
-      "text": "I can swim",
+      "text": "I can swim.",
       "start": 81.46,
       "duration": 6.18
     },
     {
       "id": 31,
-      "text": "Gorilla, gorilla",
+      "text": "Gorilla, gorilla.",
       "start": 87.14,
       "duration": 3.46
     },
@@ -195,25 +195,25 @@
     },
     {
       "id": 33,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 93.38,
       "duration": 2
     },
     {
       "id": 34,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 94.98,
       "duration": 2.3
     },
     {
       "id": 35,
-      "text": "I can't swim",
+      "text": "I can't swim.",
       "start": 96.78,
       "duration": 3.3
     },
     {
       "id": 36,
-      "text": "Gorilla, gorilla",
+      "text": "Gorilla, gorilla.",
       "start": 99.58,
       "duration": 3.62
     },
@@ -225,25 +225,25 @@
     },
     {
       "id": 38,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 105.82,
       "duration": 2
     },
     {
       "id": 39,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 107.42,
       "duration": 2.42
     },
     {
       "id": 40,
-      "text": "I can climb",
+      "text": "I can climb.",
       "start": 109.34,
       "duration": 6.26
     },
     {
       "id": 41,
-      "text": "Buffalo, buffalo",
+      "text": "Buffalo, buffalo.",
       "start": 115.1,
       "duration": 3.7
     },
@@ -255,25 +255,25 @@
     },
     {
       "id": 43,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 121.26,
       "duration": 1.92
     },
     {
       "id": 44,
-      "text": "No, I can't",
+      "text": "No, I can't.",
       "start": 122.78,
       "duration": 2.25
     },
     {
       "id": 45,
-      "text": "I can't climb",
+      "text": "I can't climb.",
       "start": 124.53,
       "duration": 3.54
     },
     {
       "id": 46,
-      "text": "Buffalo, buffalo",
+      "text": "Buffalo, buffalo.",
       "start": 127.58,
       "duration": 3.61
     },
@@ -285,25 +285,25 @@
     },
     {
       "id": 48,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 133.66,
       "duration": 2.08
     },
     {
       "id": 49,
-      "text": "Yes, I can",
+      "text": "Yes, I can.",
       "start": 135.25,
       "duration": 2.5
     },
     {
       "id": 50,
-      "text": "I can run",
+      "text": "I can run.",
       "start": 137.25,
       "duration": 6.21
     },
     {
       "id": 51,
-      "text": "Boys and girls, boys and girls",
+      "text": "Boys and girls, boys and girls.",
       "start": 143.06,
       "duration": 3.54
     },
@@ -315,25 +315,25 @@
     },
     {
       "id": 53,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 149.14,
       "duration": 1.92
     },
     {
       "id": 54,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 150.66,
       "duration": 2.42
     },
     {
       "id": 55,
-      "text": "We can sing",
+      "text": "We can sing.",
       "start": 152.58,
       "duration": 3.25
     },
     {
       "id": 56,
-      "text": "Boys and girls, boys and girls",
+      "text": "Boys and girls, boys and girls.",
       "start": 155.51,
       "duration": 3.55
     },
@@ -345,97 +345,97 @@
     },
     {
       "id": 58,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 161.51,
       "duration": 1.93
     },
     {
       "id": 59,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 163.03,
       "duration": 2.5
     },
     {
       "id": 60,
-      "text": "We can dance",
+      "text": "We can dance.",
       "start": 165.03,
       "duration": 2.16
     },
     {
       "id": 61,
-      "text": "We can sing, we can dance",
+      "text": "We can sing, we can dance.",
       "start": 166.88,
       "duration": 4.53
     },
     {
       "id": 62,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 170.91,
       "duration": 2.4
     },
     {
       "id": 63,
-      "text": "We can sing, we can dance",
+      "text": "We can sing, we can dance.",
       "start": 173.07,
       "duration": 4.42
     },
     {
       "id": 64,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 176.99,
       "duration": 3.52
     },
     {
       "id": 65,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 180.03,
       "duration": 2
     },
     {
       "id": 66,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 181.63,
       "duration": 1.99
     },
     {
       "id": 67,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 183.15,
       "duration": 3.59
     },
     {
       "id": 68,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 186.34,
       "duration": 1.92
     },
     {
       "id": 69,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 187.78,
       "duration": 2.1
     },
     {
       "id": 70,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 189.38,
       "duration": 3.52
     },
     {
       "id": 71,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 192.58,
       "duration": 1.84
     },
     {
       "id": 72,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 194.02,
       "duration": 2.02
     },
     {
       "id": 73,
-      "text": "Yes, we can",
+      "text": "Yes, we can.",
       "start": 195.54,
       "duration": 5.81
     }
@@ -449,5 +449,6 @@
     "dgWordCount": 255,
     "matchedSegments": 73,
     "totalDuration": 216.41
-  }
+  },
+  "cleanedAt": "2026-08-01T19:00:00.000Z"
 }

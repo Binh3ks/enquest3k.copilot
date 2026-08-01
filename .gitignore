@@ -109,6 +109,8 @@ _update_*.py
 .ai/implementation/
 
 # ====== DEV TOOLS (not production code) ======
+# Keep frozen pipeline spec
+!production_kit/workflow/SHADOWING_PIPELINE_FROZEN.md
 .devin/
 .cocoindex_code/
 repair_log/
