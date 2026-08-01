@@ -1,5 +1,5 @@
 export default {
-  videoId: "XPZXpuoIndo",  // The Ant and the Grasshopper fable (was: Lion and the Mouse)
+  videoId: "XbMrw3cwVUc",  // The Ant and the Grasshopper | PINKFONG Story Time
   script: [
     { id: 1, text: "A very long time ago, there was a hard-working ant.", vi: "Rất lâu trước đây, có một con kiến chăm chỉ." },
     { id: 2, text: "There was also a lazy grasshopper who lived under a green leaf.", vi: "Cũng có một con châu chấu lười biếng sống dưới một chiếc lá xanh." },
