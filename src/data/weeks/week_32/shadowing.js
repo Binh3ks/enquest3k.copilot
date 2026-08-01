@@ -1,33 +1,18 @@
 export default {
   title: "Shadowing: Tom's Very Busy Saturday",
   videoId: "pPeaILXdwl0",  // Daily routine conversation (was: qD1pnquN_DM)
-  content_en: `Last **Saturday morning**, Tom **woke up early** before the birds had begun to sing. The house was quiet and the morning air was cool. He **got dressed quickly** and **made his bed** with clean white sheets.
-
-Tom **sat at** his old **wooden desk** and **wrote a long letter** to his **lovely grandmother**. He told her **about school**, his football team, and the **little birdhouse** he had promised to **build with Dad**. He **put the letter** in an envelope and **stuck a stamp** on it.
-
-After breakfast, Tom **helped dad** **cut the long grass** **in the garden**. The **long grass** had grown **very tall** during the rainy week. Three sparrows **sat on the fence** and **watched them work**.
-
-After that, Tom and **his dad** **built a small birdhouse** together. Tom had to **choose the smoothest** plank of wood for the **little roof**. They **hammered the nails** carefully and **put the birdhouse** on the tall **oak tree** near the fence.
-
-In the afternoon, Tom and his mum **walked to** the **local cafe**. Tom **chose a cheese** and tomato sandwich from the board and **paid for it** with his saved **pocket money**. He **kept the house tidy** and **put all his tools** away **before dinner**.
-
-By evening, Tom **sat on his bed** and **fell asleep** **early before** half past eight — the proudest and most contented boy **in the world**.`,
+  content_en: "It was Jilly's grandfather's birthday. And she woke up early to buy him a birthday cake. She went to a bakery. And chose his favorite chocolate cake. When her grandfather came downstairs for breakfast, he was surprised. I forgot it was my birthday, he said. And they all laughed. What has just happened? Jilly has woken up early to buy her grandfather a birthday cake. She has been to a bakery and chosen his favorite chocolate cake. Her grandfather has come downstairs and he has forgotten it's his birthday.",
   script: [
-    { id: 1, text: "Last Saturday morning, Tom woke up early before the birds had begun to sing.", vi: null },
-    { id: 2, text: "The house was quiet and the morning air was cool.", vi: null },
-    { id: 3, text: "He got dressed quickly and made his bed with clean white sheets.", vi: null },
-    { id: 4, text: "Tom sat at his old wooden desk and wrote a long letter to his lovely grandmother.", vi: null },
-    { id: 5, text: "He told her about school, his football team, and the little birdhouse he had promised to build with Dad.", vi: null },
-    { id: 6, text: "He put the letter in an envelope and stuck a stamp on it.", vi: null },
-    { id: 7, text: "After breakfast, Tom helped dad cut the long grass in the garden.", vi: null },
-    { id: 8, text: "The long grass had grown very tall during the rainy week.", vi: null },
-    { id: 9, text: "Three sparrows sat on the fence and watched them work.", vi: null },
-    { id: 10, text: "After that, Tom and his dad built a small birdhouse together.", vi: null },
-    { id: 11, text: "Tom had to choose the smoothest plank of wood for the little roof.", vi: null },
-    { id: 12, text: "They hammered the nails carefully and put the birdhouse on the tall oak tree near the fence.", vi: null },
-    { id: 13, text: "In the afternoon, Tom and his mum walked to the local cafe.", vi: null },
-    { id: 14, text: "Tom chose a cheese and tomato sandwich from the board and paid for it with his saved pocket money.", vi: null },
-    { id: 15, text: "He kept the house tidy and put all his tools away before dinner.", vi: null },
-    { id: 16, text: "By evening, Tom sat on his bed and fell asleep early before half past eight — the proudest and most contented boy in the world.", vi: null },
+    { id: 1, text: "It was Jilly's grandfather's birthday.", vi: null, start: 9.92, duration: 4.08 },
+    { id: 2, text: "And she woke up early to buy him a birthday cake.", vi: null, start: 13.68, duration: 6.4 },
+    { id: 3, text: "She went to a bakery.", vi: null, start: 19.84, duration: 3.68 },
+    { id: 4, text: "And chose his favorite chocolate cake.", vi: null, start: 23.2, duration: 4.08 },
+    { id: 5, text: "When her grandfather came downstairs for breakfast, he was surprised.", vi: null, start: 27.04, duration: 5.61 },
+    { id: 6, text: "I forgot it was my birthday, he said.", vi: null, start: 32.33, duration: 4 },
+    { id: 7, text: "And they all laughed.", vi: null, start: 36.01, duration: 10.62 },
+    { id: 8, text: "What has just happened?", vi: null, start: 46.31, duration: 3.44 },
+    { id: 9, text: "Jilly has woken up early to buy her grandfather a birthday cake.", vi: null, start: 49.35, duration: 6.08 },
+    { id: 10, text: "She has been to a bakery and chosen his favorite chocolate cake.", vi: null, start: 55.11, duration: 6.69 },
+    { id: 11, text: "Her grandfather has come downstairs and he has forgotten it's his birthday.", vi: null, start: 61.56, duration: 14.99 }
   ]
 };

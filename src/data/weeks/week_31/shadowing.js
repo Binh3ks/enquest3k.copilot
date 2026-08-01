@@ -1,25 +1,36 @@
 export default {
   title: "Shadowing: A Day at the Market",
   videoId: "-0zVS6aDPXY",
-  content_en: `Last Saturday, Luna went to a **local market** with her mum. The old town market was colourful and busy. Luna **looked around** and could see many different stalls.
-
-First, she could see a craft stall with rows of smooth glass jars. The light **shone through** the glass and made little rainbows. A friendly seller smiled at Luna and showed her a beautiful wooden sculpture.
-
-Luna **picked up** a heavy stone bowl. The stone felt cool and smooth. She touched a wooden shelf carved with leaf patterns. The wood felt rough and warm. Nearby, she felt soft cotton scarves and cold metal railings — so many different textures!
-
-Luna smelt sweet strawberries and tasted a piece of mango. It was juicy and sweet. At the stall entrance, she heard the seller call out prices. A plastic bag broke with a loud noise!
-
-'I smelt, touched, could see, and tasted so many things!' Luna said. 'A **local market** is the best place for all five senses!'`,
+  content_en: "Billy was working as a paper boy delivering newspapers the number of houses he delivered the papers to Rose rapidly but every time he withdrew his money from the cash point he saw that his pay was still the same so he quit his job he swore never to be a paper boy again he found another job but he left that job too he swore never to do deliveries again what has just happened the number of houses Billy has delivered newspapers to has risen rapidly but whenever he has withdrawn money from the cash point he has seen that his pay has been the same so he has quit his job he has found another job but he has left that job too he has sworn never to do deliveries again foreign thanks for watching and I hope you learned some irregular verbs today and see you in the next video bye for now",
   script: [
-    { id: 1, text: "Last Saturday, Luna went to a local market with her mum.", vi: null },
-    { id: 2, text: "The old town market was colourful and busy.", vi: null },
-    { id: 3, text: "Luna looked around and could see many different stalls.", vi: null },
-    { id: 4, text: "The light shone through the glass and made little rainbows.", vi: null },
-    { id: 5, text: "Luna picked up a heavy stone bowl. The stone felt cool and smooth.", vi: null },
-    { id: 6, text: "She touched a wooden shelf carved with leaf patterns. The wood felt rough and warm.", vi: null },
-    { id: 7, text: "Nearby, she felt soft cotton scarves and cold metal railings — so many different textures!", vi: null },
-    { id: 8, text: "Luna smelt sweet strawberries and tasted a piece of mango.", vi: null },
-    { id: 9, text: "At the stall entrance, she heard the seller call out prices. A plastic bag broke with a loud noise!", vi: null },
-    { id: 10, text: "'A local market is the best place for all five senses!'", vi: null },
+    { id: 1, text: "Billy was working as a paper boy", vi: null, start: 11.92, duration: 3.49 },
+    { id: 2, text: "delivering newspapers", vi: null, start: 15.04, duration: 14.79 },
+    { id: 3, text: "the number of houses he delivered the", vi: null, start: 48.11, duration: 4.18 },
+    { id: 4, text: "papers to Rose rapidly", vi: null, start: 68.83, duration: 2.66 },
+    { id: 5, text: "but every time he withdrew his money", vi: null, start: 70.99, duration: 3.31 },
+    { id: 6, text: "from the cash point", vi: null, start: 74.14, duration: 2.24 },
+    { id: 7, text: "he saw that his pay was still the same", vi: null, start: 76.38, duration: 5.22 },
+    { id: 8, text: "so he quit his job he swore never to be", vi: null, start: 82.06, duration: 5.72 },
+    { id: 9, text: "a paper boy again", vi: null, start: 93.46, duration: 9.38 },
+    { id: 10, text: "he found another job", vi: null, start: 107.48, duration: 1.51 },
+    { id: 11, text: "but he left that job too he swore never", vi: null, start: 108.6, duration: 2.42 },
+    { id: 12, text: "to do deliveries again", vi: null, start: 110.52, duration: 0.5 },
+    { id: 13, text: "what has just happened", vi: null, start: 110.52, duration: 0.5 },
+    { id: 14, text: "the number of houses Billy has delivered", vi: null, start: 110.52, duration: 0.5 },
+    { id: 15, text: "newspapers to has risen rapidly", vi: null, start: 110.52, duration: 0.5 },
+    { id: 16, text: "but", vi: null, start: 110.52, duration: 0.5 },
+    { id: 17, text: "whenever he has withdrawn money from the", vi: null, start: 110.52, duration: 0.5 },
+    { id: 18, text: "cash point", vi: null, start: 110.52, duration: 0.5 },
+    { id: 19, text: "he has seen that his pay has been the", vi: null, start: 110.52, duration: 0.5 },
+    { id: 20, text: "same so he has quit his job he has found", vi: null, start: 110.52, duration: 0.5 },
+    { id: 21, text: "another job", vi: null, start: 110.52, duration: 0.5 },
+    { id: 22, text: "but he has left that job too", vi: null, start: 110.52, duration: 0.5 },
+    { id: 23, text: "he has sworn never to do deliveries", vi: null, start: 110.52, duration: 0.5 },
+    { id: 24, text: "again", vi: null, start: 110.52, duration: 0.5 },
+    { id: 25, text: "foreign", vi: null, start: 110.52, duration: 0.5 },
+    { id: 26, text: "thanks for watching and I hope you", vi: null, start: 110.52, duration: 0.5 },
+    { id: 27, text: "learned some irregular verbs today and", vi: null, start: 110.52, duration: 0.5 },
+    { id: 28, text: "see you in the next video", vi: null, start: 110.52, duration: 0.5 },
+    { id: 29, text: "bye for now", vi: null, start: 110.52, duration: 0.5 }
   ]
 };
