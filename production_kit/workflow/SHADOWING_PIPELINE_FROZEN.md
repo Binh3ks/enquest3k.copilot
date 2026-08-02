@@ -67,17 +67,19 @@ items = YouTubeTranscriptApi().fetch(video_id)
 ### Step 2: Manual sentence splitting by meaning (MANDATORY)
 **NO LLM splitting.** Split manually based on:
 
-**Split rules:**
-1. **Split at clause boundaries**: "while", "but", "and then", "so", "because" often start new sentences
-2. **Split at dialogue turns**: Each speaker's new thought = new sentence
-3. **Split at scene changes**: "In no time, ..." = new scene = new sentence
-4. **Split at subject changes**: Different subjects = different sentences
-5. **NEVER force-merge fragments** just because they're adjacent
-6. **Preserve exact words** from auto-caption — do NOT fabricate, add, or remove
-7. **Title/scene-setting** ("The ant and the grasshopper") = separate segment, NOT merged with dialogue
-8. **"while under the tree"** is a sentence STARTER, not a continuation of previous sentence
+**Split rules (FROZEN — do not change):**
+1. **ALWAYS split at sentence-ending punctuation**: . ? ! → next segment = new sentence. **NEVER merge a question with its answer.**
+2. **Split at dialogue turns**: Each speaker's new thought = new sentence. After a question (?), the answer is ALWAYS a new sentence from a different speaker.
+3. **Split at clause boundaries**: "while", "but", "and then", "so", "because" often start new sentences
+4. **Split at scene changes**: "In no time, ..." = new scene = new sentence
+5. **Split at subject changes**: Different subjects = different sentences
+6. **NEVER force-merge fragments** just because they're adjacent
+7. **Preserve exact words** from auto-caption — do NOT fabricate, add, or remove
+8. **Title/scene-setting** ("The ant and the grasshopper") = separate segment, NOT merged with dialogue
+9. **"while under the tree"** is a sentence STARTER, not a continuation of previous sentence
+10. **Single-sentence rule**: Each segment = one complete thought. "I like fish." = 1 sentence. "What food do you like?" = 1 sentence. NEVER: "What food do you like? I like fish." as ONE segment.
 
-**Pattern:** If fragment A ends mid-thought and fragment B starts with a subordinating conjunction (while, when, because, but, and), B is the START of a new sentence.
+**Pattern:** If fragment A ends with . ? ! and fragment B starts, B is ALWAYS a new sentence regardless of word count.
 
 ### Step 3: Format sentence file
 **Output:** `src/data/video_transcripts_by_id/sentences/<videoId>.json`
