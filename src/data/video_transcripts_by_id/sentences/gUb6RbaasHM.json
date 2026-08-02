@@ -1,5 +1,5 @@
 {
-  "text": "Today we talk about our names. Yay! Yes. Hello, my name is Omar. Hello. Hello, my name is Lena. We are glad you are here. >> [music] >> What is your name? My name is Omar. My name is Lena. Do you like your name? Yes, I like my name. Yes, I love my name. >> [music] >> Is your name easy? Yes, it is easy. Yes, it is easy to say. Say your names. >> [music] >> My name is Omar. My name is Lena. Wonderful. My name is Omar. My name is Lena. >> [music] >> Our names are special and we can say them in English. Hi, I'm Omar. And I'm Lena. Bye. See you next time. Bye. >> [screaming]",
+  "text": "Today we talk about our names. Yay! Yes. Hello, my name is Omar. Hello. Hello, my name is Lena. We are glad you are here. What is your name? My name is Omar. My name is Lena. Do you like your name? Yes, I like my name. Yes, I love my name. Is your name easy? Yes, it is easy. Yes, it is easy to say. Say your names. My name is Omar. My name is Lena. Wonderful. My name is Omar. My name is Lena. Our names are special and we can say them in English. Hi, I'm Omar. And I'm Lena. Bye. See you next time. Bye.",
   "segments": [
     {
       "id": 1,
@@ -33,141 +33,111 @@
     },
     {
       "id": 6,
-      "text": ">> [music]",
-      "start": 16.38,
-      "duration": 1.82
-    },
-    {
-      "id": 7,
-      "text": ">> What is your name?",
+      "text": "What is your name?",
       "start": 16.56,
       "duration": 7.56
     },
     {
-      "id": 8,
+      "id": 7,
       "text": "My name is Omar. My name is Lena.",
       "start": 18.2,
       "duration": 5.92
     },
     {
-      "id": 9,
+      "id": 8,
       "text": "Do you like your name?",
       "start": 24.68,
       "duration": 5.36
     },
     {
-      "id": 10,
+      "id": 9,
       "text": "Yes, I like my name. Yes, I love my",
       "start": 26.84,
       "duration": 4.6
     },
     {
-      "id": 11,
+      "id": 10,
       "text": "name.",
       "start": 30.04,
       "duration": 2.68
     },
     {
-      "id": 12,
-      "text": ">> [music]",
-      "start": 31.44,
-      "duration": 3.2
-    },
-    {
-      "id": 13,
-      "text": ">> Is your name easy?",
+      "id": 11,
+      "text": "Is your name easy?",
       "start": 32.72,
       "duration": 7.8
     },
     {
-      "id": 14,
+      "id": 12,
       "text": "Yes, it is easy. Yes, it is easy to say.",
       "start": 34.64,
       "duration": 7.28
     },
     {
-      "id": 15,
+      "id": 13,
       "text": "Say your names.",
       "start": 40.52,
       "duration": 2.12
     },
     {
-      "id": 16,
-      "text": ">> [music]",
-      "start": 41.92,
-      "duration": 4.64
-    },
-    {
-      "id": 17,
-      "text": ">> My name is Omar. My name is Lena.",
+      "id": 14,
+      "text": "My name is Omar. My name is Lena.",
       "start": 42.64,
       "duration": 6.2
     },
     {
-      "id": 18,
+      "id": 15,
       "text": "Wonderful.",
       "start": 46.56,
       "duration": 4.4
     },
     {
-      "id": 19,
+      "id": 16,
       "text": "My name is Omar.",
       "start": 48.84,
       "duration": 4.87
     },
     {
-      "id": 20,
+      "id": 17,
       "text": "My name is Lena.",
       "start": 50.96,
       "duration": 4.77
     },
     {
-      "id": 21,
-      "text": ">> [music]",
-      "start": 53.71,
-      "duration": 2.02
-    },
-    {
-      "id": 22,
-      "text": ">> Our names are special and we can say",
+      "id": 18,
+      "text": "Our names are special and we can say",
       "start": 56.48,
       "duration": 6.64
     },
     {
-      "id": 23,
+      "id": 19,
       "text": "them in English. Hi, I'm Omar. And I'm",
       "start": 58.96,
       "duration": 5.56
     },
     {
-      "id": 24,
+      "id": 20,
       "text": "Lena.",
       "start": 63.12,
       "duration": 2.8
     },
     {
-      "id": 25,
+      "id": 21,
       "text": "Bye.",
       "start": 64.52,
       "duration": 3.52
     },
     {
-      "id": 26,
+      "id": 22,
       "text": "See you next time.",
       "start": 65.92,
       "duration": 2.85
     },
     {
-      "id": 27,
+      "id": 23,
       "text": "Bye.",
       "start": 68.04,
       "duration": 2.75
-    },
-    {
-      "id": 28,
-      "text": ">> [screaming]",
-      "start": 68.78,
-      "duration": 2.02
     }
   ],
   "videoId": "gUb6RbaasHM",
