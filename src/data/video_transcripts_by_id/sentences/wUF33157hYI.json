@@ -1,37 +1,445 @@
 {
-  "text": "Easy English Conversations. What do you like? Mmm, let's talk about food today! I like pasta. What food do you like, Sian? I like fish. What food do you like, Buli? I like pizza. What food do you like, Georgie? I like chocolate and fruit. What food do you like, Tim? I like grapes. I like bananas. I like oranges. What food don't you like, Sian? I don't like rice. What food don't you like, Georgie? I don't like nuts. What food don't you like, Buli? I don't like steak. What food don't you like, Tim? I don't like jelly.",
+  "text": "Easy English Conversations. What do you like? Mmm, let's talk about food today! I like pasta. What food do you like, Sian? I like fish. What food do you like, Buli? I like pizza. What food do you like, Georgie? I like chocolate and fruit. What fruit do you like, Sian? I like apples. What fruit do you like, Tim? I like grapes. What fruit do you like, Buli? I like bananas. What fruit do you like, Georgie? I like oranges. Learn how to talk about the weather\nin the next video. It's raining. It's windy and cold. It's hot and sunny. What food don't you like, Sian? I don't like rice. What food don't you like, Georgie? I don't like nuts. What food don't you like, Buli? I don't like steak. What food don't you like, Tim? I don't like jelly. Hmm. What food do you like? I like pizza. What food don't you like? I don't like jelly. \u2014 Great!\n\u2014 Have you got that? Learn more English\nat BBC Learning English dot com. Let's continue. What do you like doing, Sian? I like dancing. What do you like doing, Buli? I like playing video games. What do you like doing, Tim? I like hiking. What do you like doing, Georgie? I like swimming in the sea. What do you like doing? I like singing. Nice! Hmm... What food does Sian like? She likes fish. What food does Buli like? He likes pizza. What food does Georgie like? She likes chocolate. That's right! She likes chocolate. What food does Tim like? He likes pasta. Correct! He likes pasta. Hmm... What does Sian like doing? She likes dancing. What does Buli like doing? He likes playing video games. What does Georgie like doing? She likes swimming in the sea. That's right. She likes swimming in the sea. What does Tim like doing? He likes hiking. Correct! He likes hiking. What food do you like? And what do you like doing? Let us know in the comments. Bye!",
   "segments": [
-    { "id": 1, "text": "Easy English Conversations.", "start": 3.68, "duration": 1.03 },
-    { "id": 2, "text": "What do you like?", "start": 7.18, "duration": 1.97 },
-    { "id": 3, "text": "Mmm, let's talk about food today!", "start": 11.36, "duration": 2.65 },
-    { "id": 4, "text": "I like pasta.", "start": 15.95, "duration": 0.68 },
-    { "id": 5, "text": "What food do you like, Sian?", "start": 17.76, "duration": 2.07 },
-    { "id": 6, "text": "I like fish.", "start": 21.33, "duration": 0.53 },
-    { "id": 7, "text": "What food do you like, Buli?", "start": 23.6, "duration": 2.0 },
-    { "id": 8, "text": "I like pizza.", "start": 24.88, "duration": 0.5 },
-    { "id": 9, "text": "What food do you like, Georgie?", "start": 26.72, "duration": 2.0 },
-    { "id": 10, "text": "I like chocolate and fruit.", "start": 28.49, "duration": 1.51 },
-    { "id": 11, "text": "What food do you like, Tim?", "start": 38.27, "duration": 2.0 },
-    { "id": 12, "text": "I like grapes.", "start": 43.04, "duration": 0.52 },
-    { "id": 13, "text": "I like bananas.", "start": 44.8, "duration": 0.52 },
-    { "id": 14, "text": "I like oranges.", "start": 46.0, "duration": 0.52 },
-    { "id": 15, "text": "What food don't you like, Sian?", "start": 55.0, "duration": 2.0 },
-    { "id": 16, "text": "I don't like rice.", "start": 57.5, "duration": 0.52 },
-    { "id": 17, "text": "What food don't you like, Georgie?", "start": 60.0, "duration": 2.0 },
-    { "id": 18, "text": "I don't like nuts.", "start": 62.5, "duration": 0.52 },
-    { "id": 19, "text": "What food don't you like, Buli?", "start": 65.0, "duration": 2.0 },
-    { "id": 20, "text": "I don't like steak.", "start": 67.5, "duration": 0.52 },
-    { "id": 21, "text": "What food don't you like, Tim?", "start": 70.0, "duration": 2.0 },
-    { "id": 22, "text": "I don't like jelly.", "start": 72.5, "duration": 0.52 },
-    { "id": 23, "text": "What food does Sian like?", "start": 120.0, "duration": 2.0 },
-    { "id": 24, "text": "She likes fish.", "start": 122.5, "duration": 1.0 },
-    { "id": 25, "text": "What food does Buli like?", "start": 125.0, "duration": 2.0 },
-    { "id": 26, "text": "He likes pizza.", "start": 127.5, "duration": 1.0 },
-    { "id": 27, "text": "What food does Georgie like?", "start": 130.0, "duration": 2.0 },
-    { "id": 28, "text": "She likes chocolate.", "start": 132.5, "duration": 1.0 },
-    { "id": 29, "text": "What food does Tim like?", "start": 135.0, "duration": 2.0 },
-    { "id": 30, "text": "He likes pasta.", "start": 137.5, "duration": 1.0 }
+    {
+      "id": 1,
+      "text": "Easy English Conversations.",
+      "start": 3.44,
+      "duration": 2.32
+    },
+    {
+      "id": 2,
+      "text": "What do you like?",
+      "start": 7.32,
+      "duration": 1.32
+    },
+    {
+      "id": 3,
+      "text": "Mmm, let's talk about food today!",
+      "start": 10.0,
+      "duration": 4.16
+    },
+    {
+      "id": 4,
+      "text": "I like pasta.",
+      "start": 14.28,
+      "duration": 2.32
+    },
+    {
+      "id": 5,
+      "text": "What food do you like, Sian?",
+      "start": 17.48,
+      "duration": 3.0
+    },
+    {
+      "id": 6,
+      "text": "I like fish.",
+      "start": 20.6,
+      "duration": 2.16
+    },
+    {
+      "id": 7,
+      "text": "What food do you like, Buli?",
+      "start": 22.88,
+      "duration": 1.16
+    },
+    {
+      "id": 8,
+      "text": "I like pizza.",
+      "start": 24.16,
+      "duration": 1.88
+    },
+    {
+      "id": 9,
+      "text": "What food do you like, Georgie?",
+      "start": 26.16,
+      "duration": 1.68
+    },
+    {
+      "id": 10,
+      "text": "I like chocolate and fruit.",
+      "start": 27.96,
+      "duration": 2.64
+    },
+    {
+      "id": 11,
+      "text": "What fruit do you like, Sian?",
+      "start": 30.72,
+      "duration": 2.28
+    },
+    {
+      "id": 12,
+      "text": "I like apples.",
+      "start": 33.12,
+      "duration": 2.0
+    },
+    {
+      "id": 13,
+      "text": "What fruit do you like, Tim?",
+      "start": 35.24,
+      "duration": 2.68
+    },
+    {
+      "id": 14,
+      "text": "I like grapes.",
+      "start": 39.0,
+      "duration": 2.0
+    },
+    {
+      "id": 15,
+      "text": "What fruit do you like, Buli?",
+      "start": 41.12,
+      "duration": 2.92
+    },
+    {
+      "id": 16,
+      "text": "I like bananas.",
+      "start": 44.16,
+      "duration": 1.88
+    },
+    {
+      "id": 17,
+      "text": "What fruit do you like, Georgie?",
+      "start": 46.16,
+      "duration": 2.0
+    },
+    {
+      "id": 18,
+      "text": "I like oranges.",
+      "start": 48.28,
+      "duration": 1.96
+    },
+    {
+      "id": 19,
+      "text": "Learn how to talk about the weather\nin the next video.",
+      "start": 54.48,
+      "duration": 3.88
+    },
+    {
+      "id": 20,
+      "text": "It's raining.",
+      "start": 58.48,
+      "duration": 1.48
+    },
+    {
+      "id": 21,
+      "text": "It's windy and cold.",
+      "start": 60.92,
+      "duration": 2.76
+    },
+    {
+      "id": 22,
+      "text": "It's hot and sunny.",
+      "start": 63.8,
+      "duration": 1.68
+    },
+    {
+      "id": 23,
+      "text": "What food don't you like, Sian?",
+      "start": 68.48,
+      "duration": 1.88
+    },
+    {
+      "id": 24,
+      "text": "I don't like rice.",
+      "start": 70.48,
+      "duration": 2.8
+    },
+    {
+      "id": 25,
+      "text": "What food don't you like, Georgie?",
+      "start": 73.4,
+      "duration": 2.32
+    },
+    {
+      "id": 26,
+      "text": "I don't like nuts.",
+      "start": 76.64,
+      "duration": 2.2
+    },
+    {
+      "id": 27,
+      "text": "What food don't you like, Buli?",
+      "start": 78.96,
+      "duration": 1.88
+    },
+    {
+      "id": 28,
+      "text": "I don't like steak.",
+      "start": 81.8,
+      "duration": 2.0
+    },
+    {
+      "id": 29,
+      "text": "What food don't you like, Tim?",
+      "start": 83.92,
+      "duration": 2.2
+    },
+    {
+      "id": 30,
+      "text": "I don't like jelly.",
+      "start": 86.84,
+      "duration": 1.8
+    },
+    {
+      "id": 31,
+      "text": "Hmm. What food do you like?",
+      "start": 89.6,
+      "duration": 4.08
+    },
+    {
+      "id": 32,
+      "text": "I like pizza.",
+      "start": 98.8,
+      "duration": 1.48
+    },
+    {
+      "id": 33,
+      "text": "What food don't you like?",
+      "start": 101.48,
+      "duration": 3.28
+    },
+    {
+      "id": 34,
+      "text": "I don't like jelly.",
+      "start": 109.92,
+      "duration": 2.52
+    },
+    {
+      "id": 35,
+      "text": "\u2014 Great!\n\u2014 Have you got that?",
+      "start": 112.56,
+      "duration": 2.12
+    },
+    {
+      "id": 36,
+      "text": "Learn more English\nat BBC Learning English dot com.",
+      "start": 114.8,
+      "duration": 4.44
+    },
+    {
+      "id": 37,
+      "text": "Let's continue.",
+      "start": 119.36,
+      "duration": 1.48
+    },
+    {
+      "id": 38,
+      "text": "What do you like doing, Sian?",
+      "start": 120.96,
+      "duration": 3.04
+    },
+    {
+      "id": 39,
+      "text": "I like dancing.",
+      "start": 124.12,
+      "duration": 1.8
+    },
+    {
+      "id": 40,
+      "text": "What do you like doing, Buli?",
+      "start": 126.72,
+      "duration": 1.84
+    },
+    {
+      "id": 41,
+      "text": "I like playing video games.",
+      "start": 128.68,
+      "duration": 2.36
+    },
+    {
+      "id": 42,
+      "text": "What do you like doing, Tim?",
+      "start": 131.16,
+      "duration": 1.84
+    },
+    {
+      "id": 43,
+      "text": "I like hiking.",
+      "start": 133.84,
+      "duration": 2.6
+    },
+    {
+      "id": 44,
+      "text": "What do you like doing, Georgie?",
+      "start": 136.56,
+      "duration": 2.44
+    },
+    {
+      "id": 45,
+      "text": "I like swimming in the sea.",
+      "start": 139.12,
+      "duration": 2.12
+    },
+    {
+      "id": 46,
+      "text": "What do you like doing?",
+      "start": 141.36,
+      "duration": 1.64
+    },
+    {
+      "id": 47,
+      "text": "I like singing.",
+      "start": 149.0,
+      "duration": 1.16
+    },
+    {
+      "id": 48,
+      "text": "Nice!",
+      "start": 151.28,
+      "duration": 1.2
+    },
+    {
+      "id": 49,
+      "text": "Hmm... What food does Sian like?",
+      "start": 152.6,
+      "duration": 3.6
+    },
+    {
+      "id": 50,
+      "text": "She likes fish.",
+      "start": 157.32,
+      "duration": 3.44
+    },
+    {
+      "id": 51,
+      "text": "What food does Buli like?",
+      "start": 161.88,
+      "duration": 2.88
+    },
+    {
+      "id": 52,
+      "text": "He likes pizza.",
+      "start": 164.88,
+      "duration": 2.32
+    },
+    {
+      "id": 53,
+      "text": "What food does Georgie like?",
+      "start": 168.28,
+      "duration": 2.96
+    },
+    {
+      "id": 54,
+      "text": "She likes chocolate.",
+      "start": 176.6,
+      "duration": 1.64
+    },
+    {
+      "id": 55,
+      "text": "That's right!",
+      "start": 179.28,
+      "duration": 1.16
+    },
+    {
+      "id": 56,
+      "text": "She likes chocolate.",
+      "start": 180.56,
+      "duration": 1.48
+    },
+    {
+      "id": 57,
+      "text": "What food does Tim like?",
+      "start": 182.16,
+      "duration": 2.36
+    },
+    {
+      "id": 58,
+      "text": "He likes pasta.",
+      "start": 189.84,
+      "duration": 1.56
+    },
+    {
+      "id": 59,
+      "text": "Correct! He likes pasta.",
+      "start": 192.48,
+      "duration": 2.76
+    },
+    {
+      "id": 60,
+      "text": "Hmm... What does Sian like doing?",
+      "start": 195.36,
+      "duration": 3.84
+    },
+    {
+      "id": 61,
+      "text": "She likes dancing.",
+      "start": 199.32,
+      "duration": 3.48
+    },
+    {
+      "id": 62,
+      "text": "What does Buli like doing?",
+      "start": 202.92,
+      "duration": 3.04
+    },
+    {
+      "id": 63,
+      "text": "He likes playing video games.",
+      "start": 206.08,
+      "duration": 3.4
+    },
+    {
+      "id": 64,
+      "text": "What does Georgie like doing?",
+      "start": 210.44,
+      "duration": 2.92
+    },
+    {
+      "id": 65,
+      "text": "She likes swimming in the sea.",
+      "start": 218.44,
+      "duration": 2.24
+    },
+    {
+      "id": 66,
+      "text": "That's right. She likes swimming in the sea.",
+      "start": 220.8,
+      "duration": 3.12
+    },
+    {
+      "id": 67,
+      "text": "What does Tim like doing?",
+      "start": 224.04,
+      "duration": 1.8
+    },
+    {
+      "id": 68,
+      "text": "He likes hiking.",
+      "start": 231.72,
+      "duration": 1.44
+    },
+    {
+      "id": 69,
+      "text": "Correct! He likes hiking.",
+      "start": 234.36,
+      "duration": 2.76
+    },
+    {
+      "id": 70,
+      "text": "What food do you like?",
+      "start": 237.24,
+      "duration": 3.4
+    },
+    {
+      "id": 71,
+      "text": "And what do you like doing?",
+      "start": 240.76,
+      "duration": 2.4
+    },
+    {
+      "id": 72,
+      "text": "Let us know in the comments.",
+      "start": 243.28,
+      "duration": 2.0
+    },
+    {
+      "id": 73,
+      "text": "Bye!",
+      "start": 245.92,
+      "duration": 1.0
+    }
   ],
   "videoId": "wUF33157hYI",
-  "source": "youtube-subtitles-manual"
+  "source": "youtube-transcript-api"
 }
