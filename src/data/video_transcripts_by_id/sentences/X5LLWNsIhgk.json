@@ -1,0 +1,55 @@
+{
+  "text": "hello hello i'm sam i'm sam i'm sam what's your name what's your name what's your name my name is pam nice to meet you pam nice to meet you pam nice to meet you too",
+  "segments": [
+    {
+      "id": 1,
+      "text": "hello",
+      "start": 1.59,
+      "duration": 0.01
+    },
+    {
+      "id": 2,
+      "text": "hello i'm sam",
+      "start": 1.6,
+      "duration": 1.11
+    },
+    {
+      "id": 3,
+      "text": "i'm sam",
+      "start": 2.71,
+      "duration": 0.01
+    },
+    {
+      "id": 4,
+      "text": "i'm sam what's your name",
+      "start": 2.72,
+      "duration": 1.67
+    },
+    {
+      "id": 5,
+      "text": "what's your name",
+      "start": 4.39,
+      "duration": 0.01
+    },
+    {
+      "id": 6,
+      "text": "what's your name my name is pam",
+      "start": 4.4,
+      "duration": 5.19
+    },
+    {
+      "id": 7,
+      "text": "nice to meet you pam",
+      "start": 12.31,
+      "duration": 0.01
+    },
+    {
+      "id": 8,
+      "text": "nice to meet you pam nice to meet you too",
+      "start": 12.32,
+      "duration": 5.43
+    }
+  ],
+  "videoId": "X5LLWNsIhgk",
+  "source": "yt-dlp-vtt"
+}
