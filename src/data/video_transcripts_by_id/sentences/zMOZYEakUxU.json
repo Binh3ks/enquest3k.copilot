@@ -1,0 +1,482 @@
+{
+  "videoId": "zMOZYEakUxU",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Ask and answer.",
+      "speaker": "Speaker0",
+      "start": 7.36,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "ask",
+          "start": 7.36,
+          "end": 7.86,
+          "confidence": 0.998
+        },
+        {
+          "word": "and",
+          "start": 8.0,
+          "end": 8.48,
+          "confidence": 0.967
+        },
+        {
+          "word": "answer",
+          "start": 8.48,
+          "end": 8.98,
+          "confidence": 0.894
+        }
+      ],
+      "confidence": 0.953
+    },
+    {
+      "id": 2,
+      "text": "Where is the animal?",
+      "speaker": "Speaker0",
+      "start": 10.0,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "where",
+          "start": 10.0,
+          "end": 10.5,
+          "confidence": 0.998
+        },
+        {
+          "word": "is",
+          "start": 10.56,
+          "end": 10.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 10.88,
+          "end": 11.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "animal",
+          "start": 11.2,
+          "end": 11.7,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 3,
+      "text": "The pig is in the mud.",
+      "speaker": "Speaker0",
+      "start": 15.39,
+      "duration": 2.75,
+      "words": [
+        {
+          "word": "the",
+          "start": 15.39,
+          "end": 15.71,
+          "confidence": 0.9
+        },
+        {
+          "word": "pig",
+          "start": 15.71,
+          "end": 16.21,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 16.68,
+          "end": 17.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "in",
+          "start": 17.07,
+          "end": 17.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 17.47,
+          "end": 17.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "mud",
+          "start": 17.64,
+          "end": 18.14,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 4,
+      "text": "The cow is on the grass.",
+      "speaker": "Speaker0",
+      "start": 22.11,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "the",
+          "start": 22.11,
+          "end": 22.52,
+          "confidence": 0.954
+        },
+        {
+          "word": "cow",
+          "start": 22.52,
+          "end": 23.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 23.55,
+          "end": 23.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "on",
+          "start": 23.88,
+          "end": 24.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 24.2,
+          "end": 24.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "grass",
+          "start": 24.59,
+          "end": 25.09,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.977
+    },
+    {
+      "id": 5,
+      "text": "Ask and answer.",
+      "speaker": "Speaker0",
+      "start": 32.57,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "ask",
+          "start": 32.57,
+          "end": 33.07,
+          "confidence": 0.992
+        },
+        {
+          "word": "and",
+          "start": 33.13,
+          "end": 33.63,
+          "confidence": 0.999
+        },
+        {
+          "word": "answer",
+          "start": 33.69,
+          "end": 34.19,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.987
+    },
+    {
+      "id": 6,
+      "text": "Is it fast?",
+      "speaker": "Speaker0",
+      "start": 35.21,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "is",
+          "start": 35.21,
+          "end": 35.53,
+          "confidence": 0.955
+        },
+        {
+          "word": "it",
+          "start": 35.53,
+          "end": 36.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "fast",
+          "start": 36.01,
+          "end": 36.51,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 7,
+      "text": "Yes, it is.",
+      "speaker": "Speaker0",
+      "start": 39.29,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "yes",
+          "start": 39.29,
+          "end": 39.79,
+          "confidence": 0.903
+        },
+        {
+          "word": "it",
+          "start": 40.01,
+          "end": 40.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 40.33,
+          "end": 40.83,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 8,
+      "text": "Is it fast?",
+      "speaker": "Speaker0",
+      "start": 44.48,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "is",
+          "start": 44.48,
+          "end": 44.8,
+          "confidence": 0.983
+        },
+        {
+          "word": "it",
+          "start": 44.8,
+          "end": 45.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "fast",
+          "start": 45.2,
+          "end": 45.7,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 9,
+      "text": "No, it is not.",
+      "speaker": "Speaker0",
+      "start": 49.03,
+      "duration": 2.27,
+      "words": [
+        {
+          "word": "no",
+          "start": 49.03,
+          "end": 49.53,
+          "confidence": 0.952
+        },
+        {
+          "word": "it",
+          "start": 50.16,
+          "end": 50.48,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 50.48,
+          "end": 50.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "not",
+          "start": 50.8,
+          "end": 51.3,
+          "confidence": 0.968
+        }
+      ],
+      "confidence": 0.952
+    },
+    {
+      "id": 10,
+      "text": "It is slow.",
+      "speaker": "Speaker0",
+      "start": 51.91,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "it",
+          "start": 51.91,
+          "end": 52.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 52.23,
+          "end": 52.72,
+          "confidence": 0.997
+        },
+        {
+          "word": "slow",
+          "start": 52.72,
+          "end": 53.22,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 11,
+      "text": "Classroom English.",
+      "speaker": "Speaker0",
+      "start": 60.93,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "classroom",
+          "start": 60.93,
+          "end": 61.43,
+          "confidence": 0.983
+        },
+        {
+          "word": "english",
+          "start": 61.73,
+          "end": 62.23,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 12,
+      "text": "Be nice to the chicken.",
+      "speaker": "Speaker1",
+      "start": 63.57,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "be",
+          "start": 63.57,
+          "end": 63.89,
+          "confidence": 0.955
+        },
+        {
+          "word": "nice",
+          "start": 63.89,
+          "end": 64.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 64.21,
+          "end": 64.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 64.37,
+          "end": 64.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "chicken",
+          "start": 64.53,
+          "end": 65.03,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 13,
+      "text": "Okay.",
+      "speaker": "Speaker1",
+      "start": 68.21,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "okay",
+          "start": 68.21,
+          "end": 68.71,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 14,
+      "text": "Be nice to your friend.",
+      "speaker": "Speaker1",
+      "start": 71.49,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "be",
+          "start": 71.49,
+          "end": 71.81,
+          "confidence": 0.507
+        },
+        {
+          "word": "nice",
+          "start": 71.81,
+          "end": 72.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 72.05,
+          "end": 72.29,
+          "confidence": 0.999
+        },
+        {
+          "word": "your",
+          "start": 72.29,
+          "end": 72.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "friend",
+          "start": 72.61,
+          "end": 73.11,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.901
+    },
+    {
+      "id": 15,
+      "text": "Okay.",
+      "speaker": "Speaker0",
+      "start": 76.61,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "okay",
+          "start": 76.61,
+          "end": 77.11,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.994
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1"
+  },
+  "fetchedAt": "2026-08-03T14:25:17.636844+00:00",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T14:25:17.636878+00:00",
+    "dgWordCount": 52,
+    "dgUtteranceCount": 18,
+    "matchedSegments": 18,
+    "totalDuration": 77.11
+  },
+  "text": "Ask and answer. Where is the animal? The pig is in the mud. The cow is on the grass. Ask and answer. Is it fast? Yes, it is. Is it fast? No, it is not. It is slow. Classroom English. Be nice to the chicken. Okay. Be nice to your friend. Okay.",
+  "mergedAt": "2026-08-03T07:00:00.000Z"
+}

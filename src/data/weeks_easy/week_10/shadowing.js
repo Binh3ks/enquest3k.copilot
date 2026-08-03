@@ -1,6 +1,6 @@
 export default {
   title: "My Farm Visit",
-  videoId: "t1tSx5cI9eg",  // Farm Animals Vocabulary Chant (was: Zoo)
+  videoId: "zMOZYEakUxU",  // Farm Animals Dialogue — Where is the animal? (replaced chant)
   content_en: "Today I visit a farm. The farm is quiet. I am happy! I see a **big brown cow**. The animal **eats grass** in the field. I see a **small white chicken**. The bird **runs fast**! The farm is clean. The field is green. I see **tall trees**. The countryside is peaceful. I see **farm animals**. My uncle says the farm is nice. I agree!",
   script: [
     { id: 1, text: "Today I visit a farm.", vi: "Hôm nay tôi đến thăm trang trại." },

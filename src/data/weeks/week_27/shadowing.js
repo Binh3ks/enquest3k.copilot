@@ -1,6 +1,6 @@
 export default {
   title: "Maya's Growing Plant",
-  videoId: "D3h-1mBjYdY",  // Unified with Easy — Maya's Growing Plant
+  videoId: "LeiZGYUwOYQ",  // Growing a Tree — How Plants Grow (replaced moon video)
   content_en: `It was Monday morning. Maya arrived at school with a small pot of dark soil, a packet of bean seeds, and a notebook ready to observe.
 
 'Today we begin our Plant Growth Project,' said Mr. Chen. 'Observe your seed every day and record what you see.'

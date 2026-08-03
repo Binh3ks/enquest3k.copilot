@@ -1,129 +1,1285 @@
 {
-  "text": "School supplies. What's in your backpack? It's my book. I can read. Book. Book. It's my notebook. I can write on it. Notebook. Notebook. These are my scissors. I can cut the paper. Scissors. Scissors. It's my glue. I can stick them with it. Glue. Glue. It's my tape. I can put them with it. Tape. Tape. Is this your pencil case? Yes, it is. Pencil case. Pencil case. What's in your pencil case? These are my pencils and pens. I like to write. Pencil. Pen. It's my eraser. I can erase and write again. Eraser. Eraser. It's my highlighter. I can mark with it. Highlighter. Highlighter. It is my ruler. I like to measure. Ruler. Ruler. These are my color pencils. I can draw a rainbow. Color pencil. Color pencil. There are things for school in my backpack. Review. Book. Notebook. Scissors. Glue. Tape. Pencil case. Pencil. Pen. Eraser. Highlighter. Ruler. Color pencil.",
+  "text": "English sing sing. School supplies. What's in your backpack? It's my book. I can read. Book book It's my notebook. I can write on it. Notebook notebook These are my scissors. I can cut the paper. Scissors scissors It's my glue. I can stick them with it. Glue glue It's my tape. I can put them with it. Tape tape Is this your pencil case? Yes, it is. Pencil case pencil case What's in your pencil case? These are my pencils and pens. I like to write. Pencil pencil pen pen It's my eraser. I can erase and write again. Eraser eraser It's my highlighter. I can mark with it. Highlighter highlighter It is my ruler. I like to measure. Ruler ruler These are my color pencils. I can draw a rainbow. Color pencil color pencil There are things for school in my backpack. Review book notebook, scissors, glue, tape, pencil case, pencil, pen, eraser, highlighter, ruler, color pencil.",
   "segments": [
     {
       "id": 1,
-      "text": "School supplies.",
-      "start": 7.8,
-      "duration": 0.5
+      "text": "English sing sing.",
+      "speaker": "Speaker0",
+      "start": 1.68,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.68,
+          "end": 2.18,
+          "confidence": 0.771
+        },
+        {
+          "word": "sing",
+          "start": 2.4,
+          "end": 2.64,
+          "confidence": 0.676
+        },
+        {
+          "word": "sing",
+          "start": 2.64,
+          "end": 3.14,
+          "confidence": 0.957
+        }
+      ],
+      "confidence": 0.802
     },
     {
       "id": 2,
-      "text": "What's in your backpack?",
-      "start": 11.32,
-      "duration": 0.86
+      "text": "School supplies.",
+      "speaker": "Speaker0",
+      "start": 8.0,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "school",
+          "start": 8.0,
+          "end": 8.48,
+          "confidence": 0.5
+        },
+        {
+          "word": "supplies",
+          "start": 8.48,
+          "end": 8.98,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.742
     },
     {
       "id": 3,
-      "text": "It's my book.",
-      "start": 14.34,
-      "duration": 0.5
+      "text": "What's in your backpack?",
+      "speaker": "Speaker0",
+      "start": 11.6,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "what's",
+          "start": 11.6,
+          "end": 11.92,
+          "confidence": 0.972
+        },
+        {
+          "word": "in",
+          "start": 11.92,
+          "end": 12.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "your",
+          "start": 12.16,
+          "end": 12.48,
+          "confidence": 0.998
+        },
+        {
+          "word": "backpack",
+          "start": 12.48,
+          "end": 12.98,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 4,
-      "text": "I can read.",
-      "start": 15.88,
-      "duration": 0.5
+      "text": "It's my book.",
+      "speaker": "Speaker0",
+      "start": 14.4,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "it's",
+          "start": 14.4,
+          "end": 14.8,
+          "confidence": 0.996
+        },
+        {
+          "word": "my",
+          "start": 14.8,
+          "end": 15.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "book",
+          "start": 15.12,
+          "end": 15.62,
+          "confidence": 0.959
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 5,
-      "text": "Book.",
-      "start": 18.7,
-      "duration": 0.5
+      "text": "I can read.",
+      "speaker": "Speaker0",
+      "start": 16.12,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "i",
+          "start": 16.12,
+          "end": 16.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 16.36,
+          "end": 16.68,
+          "confidence": 0.999
+        },
+        {
+          "word": "read",
+          "start": 16.68,
+          "end": 17.18,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
       "id": 6,
-      "text": "Book.",
-      "start": 20.58,
-      "duration": 0.5
+      "text": "Book book It's my notebook.",
+      "speaker": "Speaker0",
+      "start": 19.01,
+      "duration": 5.94,
+      "words": [
+        {
+          "word": "book",
+          "start": 19.01,
+          "end": 19.51,
+          "confidence": 0.994
+        },
+        {
+          "word": "book",
+          "start": 20.61,
+          "end": 21.11,
+          "confidence": 0.994
+        },
+        {
+          "word": "it's",
+          "start": 23.73,
+          "end": 24.12,
+          "confidence": 0.912
+        },
+        {
+          "word": "my",
+          "start": 24.12,
+          "end": 24.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "notebook",
+          "start": 24.45,
+          "end": 24.95,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 7,
-      "text": "It's my notebook.",
-      "start": 23.78,
-      "duration": 0.5
+      "text": "I can write on it.",
+      "speaker": "Speaker0",
+      "start": 25.8,
+      "duration": 1.63,
+      "words": [
+        {
+          "word": "i",
+          "start": 25.8,
+          "end": 26.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 26.05,
+          "end": 26.36,
+          "confidence": 0.995
+        },
+        {
+          "word": "write",
+          "start": 26.36,
+          "end": 26.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 26.77,
+          "end": 26.93,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 26.93,
+          "end": 27.43,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 8,
-      "text": "I can write on it.",
-      "start": 25.2,
-      "duration": 1.21
+      "text": "Notebook notebook These are my scissors.",
+      "speaker": "Speaker0",
+      "start": 29.24,
+      "duration": 8.6,
+      "words": [
+        {
+          "word": "notebook",
+          "start": 29.24,
+          "end": 29.74,
+          "confidence": 0.995
+        },
+        {
+          "word": "notebook",
+          "start": 32.54,
+          "end": 33.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "these",
+          "start": 36.46,
+          "end": 36.78,
+          "confidence": 0.998
+        },
+        {
+          "word": "are",
+          "start": 36.78,
+          "end": 37.02,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 37.02,
+          "end": 37.34,
+          "confidence": 0.994
+        },
+        {
+          "word": "scissors",
+          "start": 37.34,
+          "end": 37.84,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 9,
-      "text": "Notebook.",
-      "start": 28.94,
-      "duration": 0.5
+      "text": "I can cut the paper.",
+      "speaker": "Speaker0",
+      "start": 38.62,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 38.62,
+          "end": 38.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 38.86,
+          "end": 39.18,
+          "confidence": 0.99
+        },
+        {
+          "word": "cut",
+          "start": 39.18,
+          "end": 39.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 39.5,
+          "end": 39.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "paper",
+          "start": 39.74,
+          "end": 40.24,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 10,
-      "text": "Notebook.",
-      "start": 32.44,
-      "duration": 0.5
+      "text": "Scissors scissors It's my glue.",
+      "speaker": "Speaker0",
+      "start": 44.09,
+      "duration": 6.11,
+      "words": [
+        {
+          "word": "scissors",
+          "start": 44.09,
+          "end": 44.59,
+          "confidence": 0.978
+        },
+        {
+          "word": "scissors",
+          "start": 46.73,
+          "end": 47.23,
+          "confidence": 0.998
+        },
+        {
+          "word": "it's",
+          "start": 49.05,
+          "end": 49.45,
+          "confidence": 0.742
+        },
+        {
+          "word": "my",
+          "start": 49.45,
+          "end": 49.7,
+          "confidence": 0.992
+        },
+        {
+          "word": "glue",
+          "start": 49.7,
+          "end": 50.2,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 11,
-      "text": "These are my scissors.",
-      "start": 36.12,
-      "duration": 0.83
+      "text": "I can stick them with it.",
+      "speaker": "Speaker0",
+      "start": 50.98,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "i",
+          "start": 50.98,
+          "end": 51.13,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 51.13,
+          "end": 51.53,
+          "confidence": 0.997
+        },
+        {
+          "word": "stick",
+          "start": 51.53,
+          "end": 51.93,
+          "confidence": 0.995
+        },
+        {
+          "word": "them",
+          "start": 51.93,
+          "end": 52.25,
+          "confidence": 0.993
+        },
+        {
+          "word": "with",
+          "start": 52.25,
+          "end": 52.57,
+          "confidence": 0.996
+        },
+        {
+          "word": "it",
+          "start": 52.57,
+          "end": 53.07,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 12,
-      "text": "I can cut the paper.",
-      "start": 38.09,
-      "duration": 1.26
+      "text": "Glue glue It's my tape.",
+      "speaker": "Speaker0",
+      "start": 56.65,
+      "duration": 5.46,
+      "words": [
+        {
+          "word": "glue",
+          "start": 56.65,
+          "end": 57.15,
+          "confidence": 0.929
+        },
+        {
+          "word": "glue",
+          "start": 58.65,
+          "end": 59.15,
+          "confidence": 0.996
+        },
+        {
+          "word": "it's",
+          "start": 60.89,
+          "end": 61.29,
+          "confidence": 0.942
+        },
+        {
+          "word": "my",
+          "start": 61.29,
+          "end": 61.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "tape",
+          "start": 61.61,
+          "end": 62.11,
+          "confidence": 0.905
+        }
+      ],
+      "confidence": 0.929
     },
     {
       "id": 13,
-      "text": "Scissors.",
-      "start": 43.98,
-      "duration": 0.5
+      "text": "I can put them with it.",
+      "speaker": "Speaker0",
+      "start": 62.73,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "i",
+          "start": 62.73,
+          "end": 62.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 62.97,
+          "end": 63.29,
+          "confidence": 0.997
+        },
+        {
+          "word": "put",
+          "start": 63.29,
+          "end": 63.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "them",
+          "start": 63.61,
+          "end": 63.93,
+          "confidence": 0.997
+        },
+        {
+          "word": "with",
+          "start": 63.93,
+          "end": 64.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 64.17,
+          "end": 64.67,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 14,
-      "text": "Scissors.",
-      "start": 46.48,
-      "duration": 0.5
+      "text": "Tape tape Is this your pencil case?",
+      "speaker": "Speaker0",
+      "start": 66.33,
+      "duration": 7.58,
+      "words": [
+        {
+          "word": "tape",
+          "start": 66.33,
+          "end": 66.83,
+          "confidence": 0.984
+        },
+        {
+          "word": "tape",
+          "start": 68.28,
+          "end": 68.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 71.89,
+          "end": 72.2,
+          "confidence": 0.926
+        },
+        {
+          "word": "this",
+          "start": 72.2,
+          "end": 72.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "your",
+          "start": 72.53,
+          "end": 72.92,
+          "confidence": 0.99
+        },
+        {
+          "word": "pencil",
+          "start": 72.92,
+          "end": 73.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "case",
+          "start": 73.41,
+          "end": 73.91,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 15,
-      "text": "It's my glue.",
-      "start": 48.76,
-      "duration": 0.5
+      "text": "Yes, it is.",
+      "speaker": "Speaker0",
+      "start": 75.33,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "yes",
+          "start": 75.33,
+          "end": 75.83,
+          "confidence": 0.866
+        },
+        {
+          "word": "it",
+          "start": 75.89,
+          "end": 76.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 76.12,
+          "end": 76.62,
+          "confidence": 0.825
+        }
+      ],
+      "confidence": 0.897
     },
     {
       "id": 16,
-      "text": "I can stick them with it.",
-      "start": 50.09,
-      "duration": 1.53
+      "text": "Pencil case pencil case",
+      "speaker": "Speaker0",
+      "start": 77.81,
+      "duration": 3.53,
+      "words": [
+        {
+          "word": "pencil",
+          "start": 77.81,
+          "end": 78.28,
+          "confidence": 0.884
+        },
+        {
+          "word": "case",
+          "start": 78.28,
+          "end": 78.78,
+          "confidence": 0.996
+        },
+        {
+          "word": "pencil",
+          "start": 80.36,
+          "end": 80.84,
+          "confidence": 0.998
+        },
+        {
+          "word": "case",
+          "start": 80.84,
+          "end": 81.34,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.94
     },
     {
       "id": 17,
-      "text": "Glue.",
-      "start": 56.35,
-      "duration": 0.5
+      "text": "What's in your pencil case?",
+      "speaker": "Speaker0",
+      "start": 82.87,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "what's",
+          "start": 82.87,
+          "end": 83.27,
+          "confidence": 0.992
+        },
+        {
+          "word": "in",
+          "start": 83.27,
+          "end": 83.51,
+          "confidence": 0.998
+        },
+        {
+          "word": "your",
+          "start": 83.51,
+          "end": 83.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "pencil",
+          "start": 83.83,
+          "end": 84.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "case",
+          "start": 84.31,
+          "end": 84.81,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 18,
-      "text": "Glue.",
-      "start": 58.5,
-      "duration": 0.5
+      "text": "These are my pencils and pens.",
+      "speaker": "Speaker0",
+      "start": 86.31,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "these",
+          "start": 86.31,
+          "end": 86.63,
+          "confidence": 0.959
+        },
+        {
+          "word": "are",
+          "start": 86.63,
+          "end": 86.95,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 86.95,
+          "end": 87.35,
+          "confidence": 0.996
+        },
+        {
+          "word": "pencils",
+          "start": 87.35,
+          "end": 87.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 87.99,
+          "end": 88.31,
+          "confidence": 0.998
+        },
+        {
+          "word": "pens",
+          "start": 88.31,
+          "end": 88.81,
+          "confidence": 0.947
+        }
+      ],
+      "confidence": 0.983
     },
     {
       "id": 19,
-      "text": "It's my tape.",
-      "start": 60.58,
-      "duration": 0.5
+      "text": "I like to write.",
+      "speaker": "Speaker0",
+      "start": 89.43,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "i",
+          "start": 89.43,
+          "end": 89.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "like",
+          "start": 89.91,
+          "end": 90.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 90.31,
+          "end": 90.47,
+          "confidence": 0.999
+        },
+        {
+          "word": "write",
+          "start": 90.47,
+          "end": 90.97,
+          "confidence": 0.976
+        }
+      ],
+      "confidence": 0.993
     },
     {
       "id": 20,
-      "text": "I",
-      "start": 61.97,
-      "duration": 0.5
+      "text": "Pencil pencil pen pen",
+      "speaker": "Speaker0",
+      "start": 92.87,
+      "duration": 6.16,
+      "words": [
+        {
+          "word": "pencil",
+          "start": 92.87,
+          "end": 93.37,
+          "confidence": 0.936
+        },
+        {
+          "word": "pencil",
+          "start": 94.79,
+          "end": 95.29,
+          "confidence": 0.793
+        },
+        {
+          "word": "pen",
+          "start": 97.42,
+          "end": 97.92,
+          "confidence": 0.995
+        },
+        {
+          "word": "pen",
+          "start": 98.53,
+          "end": 99.03,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.936
+    },
+    {
+      "id": 21,
+      "text": "It's my eraser.",
+      "speaker": "Speaker0",
+      "start": 100.94,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "it's",
+          "start": 100.94,
+          "end": 101.25,
+          "confidence": 0.778
+        },
+        {
+          "word": "my",
+          "start": 101.25,
+          "end": 101.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "eraser",
+          "start": 101.81,
+          "end": 102.31,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.919
+    },
+    {
+      "id": 22,
+      "text": "I can erase and write again.",
+      "speaker": "Speaker0",
+      "start": 103.17,
+      "duration": 2.99,
+      "words": [
+        {
+          "word": "i",
+          "start": 103.17,
+          "end": 103.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 103.58,
+          "end": 104.06,
+          "confidence": 0.994
+        },
+        {
+          "word": "erase",
+          "start": 104.06,
+          "end": 104.56,
+          "confidence": 0.99
+        },
+        {
+          "word": "and",
+          "start": 104.94,
+          "end": 105.25,
+          "confidence": 0.996
+        },
+        {
+          "word": "write",
+          "start": 105.25,
+          "end": 105.66,
+          "confidence": 0.998
+        },
+        {
+          "word": "again",
+          "start": 105.66,
+          "end": 106.16,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 23,
+      "text": "Eraser eraser It's my highlighter.",
+      "speaker": "Speaker0",
+      "start": 108.13,
+      "duration": 7.38,
+      "words": [
+        {
+          "word": "eraser",
+          "start": 108.13,
+          "end": 108.63,
+          "confidence": 0.98
+        },
+        {
+          "word": "eraser",
+          "start": 110.22,
+          "end": 110.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "it's",
+          "start": 114.21,
+          "end": 114.61,
+          "confidence": 0.895
+        },
+        {
+          "word": "my",
+          "start": 114.61,
+          "end": 115.01,
+          "confidence": 0.999
+        },
+        {
+          "word": "highlighter",
+          "start": 115.01,
+          "end": 115.51,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 24,
+      "text": "I can mark with it.",
+      "speaker": "Speaker0",
+      "start": 116.37,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 116.37,
+          "end": 116.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 116.61,
+          "end": 116.93,
+          "confidence": 0.998
+        },
+        {
+          "word": "mark",
+          "start": 116.93,
+          "end": 117.33,
+          "confidence": 0.998
+        },
+        {
+          "word": "with",
+          "start": 117.33,
+          "end": 117.57,
+          "confidence": 0.998
+        },
+        {
+          "word": "it",
+          "start": 117.57,
+          "end": 118.07,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 25,
+      "text": "Highlighter highlighter It is my ruler.",
+      "speaker": "Speaker0",
+      "start": 119.81,
+      "duration": 7.96,
+      "words": [
+        {
+          "word": "highlighter",
+          "start": 119.81,
+          "end": 120.31,
+          "confidence": 0.993
+        },
+        {
+          "word": "highlighter",
+          "start": 122.45,
+          "end": 122.95,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 126.22,
+          "end": 126.7,
+          "confidence": 0.874
+        },
+        {
+          "word": "is",
+          "start": 126.7,
+          "end": 126.94,
+          "confidence": 0.988
+        },
+        {
+          "word": "my",
+          "start": 126.94,
+          "end": 127.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "ruler",
+          "start": 127.27,
+          "end": 127.77,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 26,
+      "text": "I like to measure.",
+      "speaker": "Speaker0",
+      "start": 128.54,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 128.54,
+          "end": 128.87,
+          "confidence": 0.997
+        },
+        {
+          "word": "like",
+          "start": 128.87,
+          "end": 129.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 129.19,
+          "end": 129.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "measure",
+          "start": 129.5,
+          "end": 130.0,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 27,
+      "text": "Ruler ruler These are my color pencils.",
+      "speaker": "Speaker0",
+      "start": 131.82,
+      "duration": 8.41,
+      "words": [
+        {
+          "word": "ruler",
+          "start": 131.82,
+          "end": 132.32,
+          "confidence": 0.969
+        },
+        {
+          "word": "ruler",
+          "start": 134.22,
+          "end": 134.72,
+          "confidence": 0.946
+        },
+        {
+          "word": "these",
+          "start": 138.21,
+          "end": 138.61,
+          "confidence": 0.996
+        },
+        {
+          "word": "are",
+          "start": 138.61,
+          "end": 138.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 138.85,
+          "end": 139.17,
+          "confidence": 0.994
+        },
+        {
+          "word": "color",
+          "start": 139.17,
+          "end": 139.67,
+          "confidence": 0.942
+        },
+        {
+          "word": "pencils",
+          "start": 139.73,
+          "end": 140.23,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.969
+    },
+    {
+      "id": 28,
+      "text": "I can draw a rainbow.",
+      "speaker": "Speaker0",
+      "start": 141.17,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "i",
+          "start": 141.17,
+          "end": 141.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 141.49,
+          "end": 141.81,
+          "confidence": 0.998
+        },
+        {
+          "word": "draw",
+          "start": 141.81,
+          "end": 142.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 142.37,
+          "end": 142.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "rainbow",
+          "start": 142.61,
+          "end": 143.11,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 29,
+      "text": "Color pencil color pencil",
+      "speaker": "Speaker0",
+      "start": 145.65,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "color",
+          "start": 145.65,
+          "end": 146.05,
+          "confidence": 0.97
+        },
+        {
+          "word": "pencil",
+          "start": 146.05,
+          "end": 146.55,
+          "confidence": 0.995
+        },
+        {
+          "word": "color",
+          "start": 148.45,
+          "end": 148.93,
+          "confidence": 0.995
+        },
+        {
+          "word": "pencil",
+          "start": 148.93,
+          "end": 149.43,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 30,
+      "text": "There are things for school in my backpack.",
+      "speaker": "Speaker0",
+      "start": 151.33,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "there",
+          "start": 151.33,
+          "end": 151.66,
+          "confidence": 0.967
+        },
+        {
+          "word": "are",
+          "start": 151.66,
+          "end": 151.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "things",
+          "start": 151.89,
+          "end": 152.29,
+          "confidence": 0.998
+        },
+        {
+          "word": "for",
+          "start": 152.29,
+          "end": 152.61,
+          "confidence": 0.998
+        },
+        {
+          "word": "school",
+          "start": 152.61,
+          "end": 153.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 153.25,
+          "end": 153.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 153.5,
+          "end": 153.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "backpack",
+          "start": 153.81,
+          "end": 154.31,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 31,
+      "text": "Review book notebook, scissors, glue, tape, pencil case, pencil, pen, eraser, highlighter, ruler, color pencil.",
+      "speaker": "Speaker0",
+      "start": 157.97,
+      "duration": 44.12,
+      "words": [
+        {
+          "word": "review",
+          "start": 157.97,
+          "end": 158.47,
+          "confidence": 0.989
+        },
+        {
+          "word": "book",
+          "start": 161.41,
+          "end": 161.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "notebook",
+          "start": 164.97,
+          "end": 165.47,
+          "confidence": 0.998
+        },
+        {
+          "word": "scissors",
+          "start": 168.49,
+          "end": 168.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "glue",
+          "start": 171.93,
+          "end": 172.43,
+          "confidence": 0.998
+        },
+        {
+          "word": "tape",
+          "start": 175.77,
+          "end": 176.27,
+          "confidence": 0.998
+        },
+        {
+          "word": "pencil",
+          "start": 179.25,
+          "end": 179.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "case",
+          "start": 179.66,
+          "end": 180.16,
+          "confidence": 0.977
+        },
+        {
+          "word": "pencil",
+          "start": 183.02,
+          "end": 183.52,
+          "confidence": 0.953
+        },
+        {
+          "word": "pen",
+          "start": 186.46,
+          "end": 186.96,
+          "confidence": 0.994
+        },
+        {
+          "word": "eraser",
+          "start": 190.38,
+          "end": 190.88,
+          "confidence": 0.997
+        },
+        {
+          "word": "highlighter",
+          "start": 193.99,
+          "end": 194.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "ruler",
+          "start": 197.59,
+          "end": 198.09,
+          "confidence": 0.994
+        },
+        {
+          "word": "color",
+          "start": 201.19,
+          "end": 201.59,
+          "confidence": 0.967
+        },
+        {
+          "word": "pencil",
+          "start": 201.59,
+          "end": 202.09,
+          "confidence": 0.91
+        }
+      ],
+      "confidence": 0.989
     }
   ],
-  "fetchedAt": "2026-06-22T02:05:05Z",
+  "fetchedAt": "2026-08-03T13:51:40.335979+00:00",
   "videoId": "AS5nhKzaOqo",
   "formatted": true,
-  "formattedAt": "2026-07-30T16:02:47.893Z"
+  "formattedAt": "2026-07-30T16:02:47.893Z",
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T13:51:40.335988+00:00",
+    "dgWordCount": 159,
+    "dgUtteranceCount": 65,
+    "matchedSegments": 65,
+    "totalDuration": 202.09
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

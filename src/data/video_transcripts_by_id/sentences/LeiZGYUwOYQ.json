@@ -1,0 +1,845 @@
+{
+  "videoId": "LeiZGYUwOYQ",
+  "segments": [
+    {
+      "id": 1,
+      "text": "English sing sing.",
+      "speaker": "Speaker0",
+      "start": 1.68,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.68,
+          "end": 2.18,
+          "confidence": 0.779
+        },
+        {
+          "word": "sing",
+          "start": 2.32,
+          "end": 2.64,
+          "confidence": 0.902
+        },
+        {
+          "word": "sing",
+          "start": 2.64,
+          "end": 3.14,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.888
+    },
+    {
+      "id": 2,
+      "text": "Growing a tree.",
+      "speaker": "Speaker0",
+      "start": 4.8,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "growing",
+          "start": 4.8,
+          "end": 5.3,
+          "confidence": 0.511
+        },
+        {
+          "word": "a",
+          "start": 5.36,
+          "end": 5.68,
+          "confidence": 0.995
+        },
+        {
+          "word": "tree",
+          "start": 5.68,
+          "end": 6.18,
+          "confidence": 0.828
+        }
+      ],
+      "confidence": 0.778
+    },
+    {
+      "id": 3,
+      "text": "This is an apple tree.",
+      "speaker": "Speaker0",
+      "start": 9.6,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "this",
+          "start": 9.6,
+          "end": 10.1,
+          "confidence": 0.696
+        },
+        {
+          "word": "is",
+          "start": 10.32,
+          "end": 10.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "an",
+          "start": 10.56,
+          "end": 10.88,
+          "confidence": 0.997
+        },
+        {
+          "word": "apple",
+          "start": 10.88,
+          "end": 11.36,
+          "confidence": 0.996
+        },
+        {
+          "word": "tree",
+          "start": 11.36,
+          "end": 11.86,
+          "confidence": 0.963
+        }
+      ],
+      "confidence": 0.93
+    },
+    {
+      "id": 4,
+      "text": "Tree tree This is a seed.",
+      "speaker": "Speaker0",
+      "start": 12.56,
+      "duration": 13.55,
+      "words": [
+        {
+          "word": "tree",
+          "start": 12.56,
+          "end": 13.06,
+          "confidence": 0.773
+        },
+        {
+          "word": "tree",
+          "start": 14.82,
+          "end": 15.32,
+          "confidence": 0.912
+        },
+        {
+          "word": "this",
+          "start": 24.1,
+          "end": 24.6,
+          "confidence": 0.828
+        },
+        {
+          "word": "is",
+          "start": 24.89,
+          "end": 25.14,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 25.14,
+          "end": 25.61,
+          "confidence": 0.996
+        },
+        {
+          "word": "seed",
+          "start": 25.61,
+          "end": 26.11,
+          "confidence": 0.766
+        }
+      ],
+      "confidence": 0.773
+    },
+    {
+      "id": 5,
+      "text": "Seed.",
+      "speaker": "Speaker0",
+      "start": 26.7,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "seed",
+          "start": 26.7,
+          "end": 27.2,
+          "confidence": 0.875
+        }
+      ],
+      "confidence": 0.875
+    },
+    {
+      "id": 6,
+      "text": "Seed.",
+      "speaker": "Speaker0",
+      "start": 29.18,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "seed",
+          "start": 29.18,
+          "end": 29.68,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 7,
+      "text": "First, we plant the seed.",
+      "speaker": "Speaker0",
+      "start": 35.5,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "first",
+          "start": 35.5,
+          "end": 36.0,
+          "confidence": 0.935
+        },
+        {
+          "word": "we",
+          "start": 36.54,
+          "end": 36.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "plant",
+          "start": 36.94,
+          "end": 37.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 37.34,
+          "end": 37.66,
+          "confidence": 0.993
+        },
+        {
+          "word": "seed",
+          "start": 37.66,
+          "end": 38.16,
+          "confidence": 0.823
+        }
+      ],
+      "confidence": 0.935
+    },
+    {
+      "id": 8,
+      "text": "Then, the seed sprouts.",
+      "speaker": "Speaker0",
+      "start": 39.1,
+      "duration": 2.37,
+      "words": [
+        {
+          "word": "then",
+          "start": 39.1,
+          "end": 39.6,
+          "confidence": 0.893
+        },
+        {
+          "word": "the",
+          "start": 40.09,
+          "end": 40.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "seed",
+          "start": 40.41,
+          "end": 40.91,
+          "confidence": 0.97
+        },
+        {
+          "word": "sprouts",
+          "start": 40.97,
+          "end": 41.47,
+          "confidence": 0.904
+        }
+      ],
+      "confidence": 0.893
+    },
+    {
+      "id": 9,
+      "text": "Sprout Sprout A tree absorbs water through its roots.",
+      "speaker": "Speaker0",
+      "start": 42.57,
+      "duration": 13.2,
+      "words": [
+        {
+          "word": "sprout",
+          "start": 42.57,
+          "end": 43.07,
+          "confidence": 0.833
+        },
+        {
+          "word": "sprout",
+          "start": 45.05,
+          "end": 45.55,
+          "confidence": 0.788
+        },
+        {
+          "word": "a",
+          "start": 52.41,
+          "end": 52.57,
+          "confidence": 0.941
+        },
+        {
+          "word": "tree",
+          "start": 52.57,
+          "end": 52.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "absorbs",
+          "start": 52.97,
+          "end": 53.47,
+          "confidence": 0.997
+        },
+        {
+          "word": "water",
+          "start": 53.69,
+          "end": 54.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "through",
+          "start": 54.57,
+          "end": 55.05,
+          "confidence": 0.995
+        },
+        {
+          "word": "its",
+          "start": 55.05,
+          "end": 55.37,
+          "confidence": 0.993
+        },
+        {
+          "word": "roots",
+          "start": 55.37,
+          "end": 55.77,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.833
+    },
+    {
+      "id": 10,
+      "text": "Root root As the tree grows, the trunk becomes thicker and harder.",
+      "speaker": "Speaker0",
+      "start": 56.97,
+      "duration": 11.22,
+      "words": [
+        {
+          "word": "root",
+          "start": 56.97,
+          "end": 57.47,
+          "confidence": 0.758
+        },
+        {
+          "word": "root",
+          "start": 59.05,
+          "end": 59.55,
+          "confidence": 0.809
+        },
+        {
+          "word": "as",
+          "start": 62.41,
+          "end": 62.81,
+          "confidence": 0.966
+        },
+        {
+          "word": "the",
+          "start": 62.81,
+          "end": 63.05,
+          "confidence": 0.998
+        },
+        {
+          "word": "tree",
+          "start": 63.05,
+          "end": 63.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "grows",
+          "start": 63.53,
+          "end": 64.03,
+          "confidence": 0.983
+        },
+        {
+          "word": "the",
+          "start": 64.57,
+          "end": 64.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "trunk",
+          "start": 64.81,
+          "end": 65.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "becomes",
+          "start": 65.69,
+          "end": 66.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "thicker",
+          "start": 66.41,
+          "end": 66.91,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 67.29,
+          "end": 67.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "harder",
+          "start": 67.69,
+          "end": 68.19,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.758
+    },
+    {
+      "id": 11,
+      "text": "Trunk trunk This tree has many branches.",
+      "speaker": "Speaker0",
+      "start": 69.12,
+      "duration": 7.22,
+      "words": [
+        {
+          "word": "trunk",
+          "start": 69.12,
+          "end": 69.62,
+          "confidence": 0.773
+        },
+        {
+          "word": "trunk",
+          "start": 71.28,
+          "end": 71.78,
+          "confidence": 0.923
+        },
+        {
+          "word": "this",
+          "start": 73.77,
+          "end": 74.08,
+          "confidence": 0.959
+        },
+        {
+          "word": "tree",
+          "start": 74.08,
+          "end": 74.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "has",
+          "start": 74.56,
+          "end": 75.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "many",
+          "start": 75.12,
+          "end": 75.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "branches",
+          "start": 75.84,
+          "end": 76.34,
+          "confidence": 0.978
+        }
+      ],
+      "confidence": 0.773
+    },
+    {
+      "id": 12,
+      "text": "Branch branch Leaves grow on the branches.",
+      "speaker": "Speaker0",
+      "start": 77.84,
+      "duration": 7.63,
+      "words": [
+        {
+          "word": "branch",
+          "start": 77.84,
+          "end": 78.34,
+          "confidence": 0.932
+        },
+        {
+          "word": "branch",
+          "start": 80.33,
+          "end": 80.83,
+          "confidence": 0.988
+        },
+        {
+          "word": "leaves",
+          "start": 83.45,
+          "end": 83.95,
+          "confidence": 0.872
+        },
+        {
+          "word": "grow",
+          "start": 84.01,
+          "end": 84.49,
+          "confidence": 0.996
+        },
+        {
+          "word": "on",
+          "start": 84.49,
+          "end": 84.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 84.73,
+          "end": 84.97,
+          "confidence": 0.979
+        },
+        {
+          "word": "branches",
+          "start": 84.97,
+          "end": 85.47,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.932
+    },
+    {
+      "id": 13,
+      "text": "Leaf leaf Wow, the flowers have bloomed.",
+      "speaker": "Speaker0",
+      "start": 86.73,
+      "duration": 7.62,
+      "words": [
+        {
+          "word": "leaf",
+          "start": 86.73,
+          "end": 87.23,
+          "confidence": 0.734
+        },
+        {
+          "word": "leaf",
+          "start": 88.81,
+          "end": 89.31,
+          "confidence": 0.985
+        },
+        {
+          "word": "wow",
+          "start": 91.29,
+          "end": 91.79,
+          "confidence": 0.833
+        },
+        {
+          "word": "the",
+          "start": 92.65,
+          "end": 92.89,
+          "confidence": 0.993
+        },
+        {
+          "word": "flowers",
+          "start": 92.89,
+          "end": 93.39,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 93.53,
+          "end": 93.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "bloomed",
+          "start": 93.85,
+          "end": 94.35,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.734
+    },
+    {
+      "id": 14,
+      "text": "Flower Flower The petals have fallen from the tree.",
+      "speaker": "Speaker0",
+      "start": 95.47,
+      "duration": 7.94,
+      "words": [
+        {
+          "word": "flower",
+          "start": 95.47,
+          "end": 95.97,
+          "confidence": 0.787
+        },
+        {
+          "word": "flower",
+          "start": 98.03,
+          "end": 98.53,
+          "confidence": 0.269
+        },
+        {
+          "word": "the",
+          "start": 100.67,
+          "end": 100.91,
+          "confidence": 0.99
+        },
+        {
+          "word": "petals",
+          "start": 100.91,
+          "end": 101.41,
+          "confidence": 0.992
+        },
+        {
+          "word": "have",
+          "start": 101.47,
+          "end": 101.78,
+          "confidence": 0.998
+        },
+        {
+          "word": "fallen",
+          "start": 101.78,
+          "end": 102.28,
+          "confidence": 0.998
+        },
+        {
+          "word": "from",
+          "start": 102.34,
+          "end": 102.67,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 102.67,
+          "end": 102.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "tree",
+          "start": 102.91,
+          "end": 103.41,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.787
+    },
+    {
+      "id": 15,
+      "text": "Petal Petal This tree bears good fruit.",
+      "speaker": "Speaker0",
+      "start": 104.42,
+      "duration": 9.71,
+      "words": [
+        {
+          "word": "petal",
+          "start": 104.42,
+          "end": 104.92,
+          "confidence": 0.921
+        },
+        {
+          "word": "petal",
+          "start": 106.74,
+          "end": 107.24,
+          "confidence": 0.925
+        },
+        {
+          "word": "this",
+          "start": 111.63,
+          "end": 112.11,
+          "confidence": 0.994
+        },
+        {
+          "word": "tree",
+          "start": 112.11,
+          "end": 112.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "bears",
+          "start": 112.51,
+          "end": 113.01,
+          "confidence": 0.963
+        },
+        {
+          "word": "good",
+          "start": 113.15,
+          "end": 113.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "fruit",
+          "start": 113.63,
+          "end": 114.13,
+          "confidence": 0.871
+        }
+      ],
+      "confidence": 0.921
+    },
+    {
+      "id": 16,
+      "text": "Fruit, fruit.",
+      "speaker": "Speaker0",
+      "start": 114.99,
+      "duration": 2.74,
+      "words": [
+        {
+          "word": "fruit",
+          "start": 114.99,
+          "end": 115.49,
+          "confidence": 0.864
+        },
+        {
+          "word": "fruit",
+          "start": 117.23,
+          "end": 117.73,
+          "confidence": 0.854
+        }
+      ],
+      "confidence": 0.864
+    },
+    {
+      "id": 17,
+      "text": "Can that apple become a tree, too?",
+      "speaker": "Speaker0",
+      "start": 121.7,
+      "duration": 2.99,
+      "words": [
+        {
+          "word": "can",
+          "start": 121.7,
+          "end": 122.03,
+          "confidence": 0.992
+        },
+        {
+          "word": "that",
+          "start": 122.03,
+          "end": 122.42,
+          "confidence": 0.996
+        },
+        {
+          "word": "apple",
+          "start": 122.42,
+          "end": 122.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "become",
+          "start": 123.06,
+          "end": 123.55,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 123.55,
+          "end": 123.7,
+          "confidence": 0.998
+        },
+        {
+          "word": "tree",
+          "start": 123.7,
+          "end": 124.19,
+          "confidence": 0.975
+        },
+        {
+          "word": "too",
+          "start": 124.19,
+          "end": 124.69,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 18,
+      "text": "Review.",
+      "speaker": "Speaker0",
+      "start": 127.15,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "review",
+          "start": 127.15,
+          "end": 127.65,
+          "confidence": 0.84
+        }
+      ],
+      "confidence": 0.84
+    },
+    {
+      "id": 19,
+      "text": "Branch flower fruit leaf petal root seed sprout tree trunk",
+      "speaker": "Speaker0",
+      "start": 130.5,
+      "duration": 29.5,
+      "words": [
+        {
+          "word": "branch",
+          "start": 130.5,
+          "end": 131.0,
+          "confidence": 0.774
+        },
+        {
+          "word": "flower",
+          "start": 133.87,
+          "end": 134.37,
+          "confidence": 0.995
+        },
+        {
+          "word": "fruit",
+          "start": 137.16,
+          "end": 137.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "leaf",
+          "start": 140.2,
+          "end": 140.7,
+          "confidence": 0.997
+        },
+        {
+          "word": "petal",
+          "start": 143.4,
+          "end": 143.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "root",
+          "start": 146.76,
+          "end": 147.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "seed",
+          "start": 153.19,
+          "end": 153.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "sprout",
+          "start": 153.26,
+          "end": 153.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "tree",
+          "start": 156.31,
+          "end": 156.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "trunk",
+          "start": 159.5,
+          "end": 160.0,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.774
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "fetchedAt": "2026-08-03T13:52:00.302683+00:00",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T13:52:00.302707+00:00",
+    "dgWordCount": 106,
+    "dgUtteranceCount": 51,
+    "matchedSegments": 51,
+    "totalDuration": 160.0
+  },
+  "text": "English sing sing. Growing a tree. This is an apple tree. Tree tree This is a seed. Seed. Seed. First, we plant the seed. Then, the seed sprouts. Sprout Sprout A tree absorbs water through its roots. Root root As the tree grows, the trunk becomes thicker and harder. Trunk trunk This tree has many branches. Branch branch Leaves grow on the branches. Leaf leaf Wow, the flowers have bloomed. Flower Flower The petals have fallen from the tree. Petal Petal This tree bears good fruit. Fruit, fruit. Can that apple become a tree, too? Review. Branch flower fruit leaf petal root seed sprout tree trunk",
+  "mergedAt": "2026-08-03T07:00:00.000Z"
+}
