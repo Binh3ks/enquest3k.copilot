@@ -1,0 +1,1856 @@
+[
+  {
+    "word": "the",
+    "start": 0.32,
+    "end": 0.56,
+    "confidence": 0.9667969,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "The"
+  },
+  {
+    "word": "carter",
+    "start": 0.56,
+    "end": 1.04,
+    "confidence": 0.98828125,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "Carter"
+  },
+  {
+    "word": "family",
+    "start": 1.04,
+    "end": 1.54,
+    "confidence": 0.77612305,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "Family,"
+  },
+  {
+    "word": "episode",
+    "start": 2.08,
+    "end": 2.58,
+    "confidence": 0.9375,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "episode"
+  },
+  {
+    "word": "37",
+    "start": 2.6399999,
+    "end": 3.46,
+    "confidence": 0.98205566,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "37,"
+  },
+  {
+    "word": "the",
+    "start": 3.84,
+    "end": 4,
+    "confidence": 0.7270508,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "The"
+  },
+  {
+    "word": "airplane",
+    "start": 4,
+    "end": 4.5,
+    "confidence": 0.9748535,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "Airplane"
+  },
+  {
+    "word": "trip",
+    "start": 4.56,
+    "end": 5.06,
+    "confidence": 0.99560547,
+    "speaker": 0,
+    "speaker_confidence": 0.66007656,
+    "punctuated_word": "Trip."
+  },
+  {
+    "word": "i",
+    "start": 11.759999,
+    "end": 12.08,
+    "confidence": 0.7011719,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "I"
+  },
+  {
+    "word": "can't",
+    "start": 12.08,
+    "end": 12.4,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "can't"
+  },
+  {
+    "word": "wait",
+    "start": 12.4,
+    "end": 12.719999,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "wait"
+  },
+  {
+    "word": "to",
+    "start": 12.719999,
+    "end": 12.96,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "to"
+  },
+  {
+    "word": "fly",
+    "start": 12.96,
+    "end": 13.2,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "fly"
+  },
+  {
+    "word": "in",
+    "start": 13.2,
+    "end": 13.36,
+    "confidence": 0.99609375,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "in"
+  },
+  {
+    "word": "an",
+    "start": 13.36,
+    "end": 13.5199995,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "an"
+  },
+  {
+    "word": "airplane",
+    "start": 13.5199995,
+    "end": 14.0199995,
+    "confidence": 0.9094238,
+    "speaker": 0,
+    "speaker_confidence": 0.22065127,
+    "punctuated_word": "airplane,"
+  },
+  {
+    "word": "harry",
+    "start": 14.4,
+    "end": 14.799999,
+    "confidence": 0.99121094,
+    "speaker": 0,
+    "speaker_confidence": 0.7659267,
+    "punctuated_word": "Harry"
+  },
+  {
+    "word": "said",
+    "start": 14.799999,
+    "end": 15.299999,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.7659267,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "flying",
+    "start": 16.455,
+    "end": 16.775,
+    "confidence": 0.84472656,
+    "speaker": 0,
+    "speaker_confidence": 0.7659267,
+    "punctuated_word": "Flying"
+  },
+  {
+    "word": "sounds",
+    "start": 16.775,
+    "end": 17.275,
+    "confidence": 0.9941406,
+    "speaker": 0,
+    "speaker_confidence": 0.7659267,
+    "punctuated_word": "sounds"
+  },
+  {
+    "word": "scary",
+    "start": 17.335,
+    "end": 17.835,
+    "confidence": 0.99658203,
+    "speaker": 0,
+    "speaker_confidence": 0.7659267,
+    "punctuated_word": "scary,"
+  },
+  {
+    "word": "oliver",
+    "start": 18.535,
+    "end": 19.015,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.7659267,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "said",
+    "start": 19.015,
+    "end": 19.515,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.7659267,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "it",
+    "start": 20.855,
+    "end": 21.015,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0,
+    "punctuated_word": "It"
+  },
+  {
+    "word": "will",
+    "start": 21.015,
+    "end": 21.255,
+    "confidence": 0.9970703,
+    "speaker": 0,
+    "speaker_confidence": 0,
+    "punctuated_word": "will"
+  },
+  {
+    "word": "be",
+    "start": 21.255,
+    "end": 21.494999,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0,
+    "punctuated_word": "be"
+  },
+  {
+    "word": "fun",
+    "start": 21.494999,
+    "end": 21.994999,
+    "confidence": 0.9951172,
+    "speaker": 0,
+    "speaker_confidence": 0,
+    "punctuated_word": "fun,"
+  },
+  {
+    "word": "dad",
+    "start": 22.535,
+    "end": 22.855,
+    "confidence": 0.8984375,
+    "speaker": 0,
+    "speaker_confidence": 0.3214212,
+    "punctuated_word": "dad"
+  },
+  {
+    "word": "said",
+    "start": 22.855,
+    "end": 23.355,
+    "confidence": 0.9975586,
+    "speaker": 0,
+    "speaker_confidence": 0.3214212,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "lots",
+    "start": 24.695,
+    "end": 25.015,
+    "confidence": 0.97802734,
+    "speaker": 0,
+    "speaker_confidence": 0.49822497,
+    "punctuated_word": "Lots"
+  },
+  {
+    "word": "of",
+    "start": 25.015,
+    "end": 25.255001,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.49822497,
+    "punctuated_word": "of"
+  },
+  {
+    "word": "people",
+    "start": 25.255001,
+    "end": 25.654999,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.49822497,
+    "punctuated_word": "people"
+  },
+  {
+    "word": "got",
+    "start": 25.654999,
+    "end": 25.895,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.49822497,
+    "punctuated_word": "got"
+  },
+  {
+    "word": "on",
+    "start": 25.895,
+    "end": 26.055,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.49822497,
+    "punctuated_word": "on"
+  },
+  {
+    "word": "the",
+    "start": 26.055,
+    "end": 26.215,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.49822497,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "plane",
+    "start": 26.215,
+    "end": 26.715,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.49822497,
+    "punctuated_word": "plane."
+  },
+  {
+    "word": "we",
+    "start": 30.73,
+    "end": 30.89,
+    "confidence": 0.9580078,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "We"
+  },
+  {
+    "word": "might",
+    "start": 30.89,
+    "end": 31.210001,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "might"
+  },
+  {
+    "word": "be",
+    "start": 31.210001,
+    "end": 31.45,
+    "confidence": 0.9970703,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "be"
+  },
+  {
+    "word": "too",
+    "start": 31.45,
+    "end": 31.77,
+    "confidence": 0.9970703,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "too"
+  },
+  {
+    "word": "heavy",
+    "start": 31.77,
+    "end": 32.170002,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "heavy"
+  },
+  {
+    "word": "for",
+    "start": 32.170002,
+    "end": 32.41,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "for"
+  },
+  {
+    "word": "the",
+    "start": 32.41,
+    "end": 32.57,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "plane",
+    "start": 32.57,
+    "end": 33.07,
+    "confidence": 0.9511719,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "plane,"
+  },
+  {
+    "word": "oliver",
+    "start": 33.77,
+    "end": 34.25,
+    "confidence": 0.9921875,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "said",
+    "start": 34.25,
+    "end": 34.75,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.71786904,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "we're",
+    "start": 36.97,
+    "end": 37.45,
+    "confidence": 0.74731445,
+    "speaker": 0,
+    "speaker_confidence": 0.45409966,
+    "punctuated_word": "We're"
+  },
+  {
+    "word": "not",
+    "start": 37.45,
+    "end": 37.77,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.45409966,
+    "punctuated_word": "not"
+  },
+  {
+    "word": "too",
+    "start": 37.77,
+    "end": 38.010002,
+    "confidence": 0.9951172,
+    "speaker": 0,
+    "speaker_confidence": 0.45409966,
+    "punctuated_word": "too"
+  },
+  {
+    "word": "heavy",
+    "start": 38.010002,
+    "end": 38.510002,
+    "confidence": 0.9941406,
+    "speaker": 0,
+    "speaker_confidence": 0.45409966,
+    "punctuated_word": "heavy,"
+  },
+  {
+    "word": "mom",
+    "start": 38.89,
+    "end": 39.21,
+    "confidence": 0.96777344,
+    "speaker": 0,
+    "speaker_confidence": 0.45409966,
+    "punctuated_word": "mom"
+  },
+  {
+    "word": "said",
+    "start": 39.21,
+    "end": 39.71,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.45409966,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "the",
+    "start": 41.45,
+    "end": 41.690002,
+    "confidence": 0.9526367,
+    "speaker": 0,
+    "speaker_confidence": 0.3328861,
+    "punctuated_word": "The"
+  },
+  {
+    "word": "plane",
+    "start": 41.690002,
+    "end": 42.010002,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.3328861,
+    "punctuated_word": "plane"
+  },
+  {
+    "word": "took",
+    "start": 42.010002,
+    "end": 42.33,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.3328861,
+    "punctuated_word": "took"
+  },
+  {
+    "word": "off",
+    "start": 42.33,
+    "end": 42.83,
+    "confidence": 0.9916992,
+    "speaker": 0,
+    "speaker_confidence": 0.3328861,
+    "punctuated_word": "off."
+  },
+  {
+    "word": "the",
+    "start": 46.165,
+    "end": 46.405,
+    "confidence": 0.9970703,
+    "speaker": 0,
+    "speaker_confidence": 0.38231033,
+    "punctuated_word": "The"
+  },
+  {
+    "word": "carter",
+    "start": 46.405,
+    "end": 46.885,
+    "confidence": 0.9892578,
+    "speaker": 0,
+    "speaker_confidence": 0.38231033,
+    "punctuated_word": "Carter"
+  },
+  {
+    "word": "family",
+    "start": 46.885,
+    "end": 47.364998,
+    "confidence": 0.97509766,
+    "speaker": 0,
+    "speaker_confidence": 0.38231033,
+    "punctuated_word": "family"
+  },
+  {
+    "word": "was",
+    "start": 47.364998,
+    "end": 47.685,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.38231033,
+    "punctuated_word": "was"
+  },
+  {
+    "word": "flying",
+    "start": 47.685,
+    "end": 48.185,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.38231033,
+    "punctuated_word": "flying."
+  },
+  {
+    "word": "my",
+    "start": 52.725,
+    "end": 52.965,
+    "confidence": 0.86328125,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "My"
+  },
+  {
+    "word": "ears",
+    "start": 52.965,
+    "end": 53.445,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "ears"
+  },
+  {
+    "word": "hurt",
+    "start": 53.445,
+    "end": 53.945,
+    "confidence": 0.98657227,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "hurt,"
+  },
+  {
+    "word": "oliver",
+    "start": 54.245,
+    "end": 54.725,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "said",
+    "start": 54.725,
+    "end": 55.225,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "mom",
+    "start": 56.405,
+    "end": 56.805,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "Mom"
+  },
+  {
+    "word": "gave",
+    "start": 56.805,
+    "end": 57.045,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "gave"
+  },
+  {
+    "word": "oliver",
+    "start": 57.045,
+    "end": 57.445,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "a",
+    "start": 57.445,
+    "end": 57.605,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "a"
+  },
+  {
+    "word": "piece",
+    "start": 57.605,
+    "end": 57.845,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "piece"
+  },
+  {
+    "word": "of",
+    "start": 57.845,
+    "end": 58.005,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "of"
+  },
+  {
+    "word": "gum",
+    "start": 58.005,
+    "end": 58.505,
+    "confidence": 0.99853516,
+    "speaker": 0,
+    "speaker_confidence": 0.7447892,
+    "punctuated_word": "gum."
+  },
+  {
+    "word": "chewing",
+    "start": 62.79,
+    "end": 63.190002,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "Chewing"
+  },
+  {
+    "word": "the",
+    "start": 63.190002,
+    "end": 63.350002,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "gum",
+    "start": 63.350002,
+    "end": 63.75,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "gum"
+  },
+  {
+    "word": "made",
+    "start": 63.75,
+    "end": 63.91,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "made"
+  },
+  {
+    "word": "his",
+    "start": 63.91,
+    "end": 64.07,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "his"
+  },
+  {
+    "word": "ears",
+    "start": 64.07,
+    "end": 64.47,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "ears"
+  },
+  {
+    "word": "feel",
+    "start": 64.47,
+    "end": 64.71,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "feel"
+  },
+  {
+    "word": "better",
+    "start": 64.71,
+    "end": 65.21,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.4979806,
+    "punctuated_word": "better."
+  },
+  {
+    "word": "oliver",
+    "start": 68.39,
+    "end": 68.89,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.44570625,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "looked",
+    "start": 69.03,
+    "end": 69.270004,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.44570625,
+    "punctuated_word": "looked"
+  },
+  {
+    "word": "out",
+    "start": 69.270004,
+    "end": 69.51,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.44570625,
+    "punctuated_word": "out"
+  },
+  {
+    "word": "the",
+    "start": 69.51,
+    "end": 69.67,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.44570625,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "window",
+    "start": 69.67,
+    "end": 70.17,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.44570625,
+    "punctuated_word": "window."
+  },
+  {
+    "word": "we",
+    "start": 74.975,
+    "end": 75.215,
+    "confidence": 0.99609375,
+    "speaker": 0,
+    "speaker_confidence": 0.35453588,
+    "punctuated_word": "We"
+  },
+  {
+    "word": "are",
+    "start": 75.215,
+    "end": 75.715,
+    "confidence": 0.9970703,
+    "speaker": 0,
+    "speaker_confidence": 0.35453588,
+    "punctuated_word": "are"
+  },
+  {
+    "word": "very",
+    "start": 75.774994,
+    "end": 76.255,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.35453588,
+    "punctuated_word": "very"
+  },
+  {
+    "word": "high",
+    "start": 76.255,
+    "end": 76.655,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.35453588,
+    "punctuated_word": "high"
+  },
+  {
+    "word": "up",
+    "start": 76.655,
+    "end": 77.155,
+    "confidence": 0.9411621,
+    "speaker": 0,
+    "speaker_confidence": 0.35453588,
+    "punctuated_word": "up,"
+  },
+  {
+    "word": "he",
+    "start": 77.454994,
+    "end": 77.774994,
+    "confidence": 0.8886719,
+    "speaker": 0,
+    "speaker_confidence": 0.5353476,
+    "punctuated_word": "he"
+  },
+  {
+    "word": "said",
+    "start": 77.774994,
+    "end": 78.274994,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.5353476,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "what",
+    "start": 79.134995,
+    "end": 79.454994,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5353476,
+    "punctuated_word": "What"
+  },
+  {
+    "word": "if",
+    "start": 79.454994,
+    "end": 79.695,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5353476,
+    "punctuated_word": "if"
+  },
+  {
+    "word": "we",
+    "start": 79.695,
+    "end": 80.015,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5353476,
+    "punctuated_word": "we"
+  },
+  {
+    "word": "fall",
+    "start": 80.015,
+    "end": 80.515,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.5353476,
+    "punctuated_word": "fall?"
+  },
+  {
+    "word": "harry",
+    "start": 82.255,
+    "end": 82.73499,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.42148155,
+    "punctuated_word": "Harry"
+  },
+  {
+    "word": "said",
+    "start": 82.73499,
+    "end": 83.23499,
+    "confidence": 0.77856445,
+    "speaker": 0,
+    "speaker_confidence": 0.42148155,
+    "punctuated_word": "said,"
+  },
+  {
+    "word": "we",
+    "start": 83.534996,
+    "end": 83.854996,
+    "confidence": 0.9375,
+    "speaker": 0,
+    "speaker_confidence": 0.14748871,
+    "punctuated_word": "We"
+  },
+  {
+    "word": "will",
+    "start": 83.854996,
+    "end": 84.174995,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.14748871,
+    "punctuated_word": "will"
+  },
+  {
+    "word": "not",
+    "start": 84.174995,
+    "end": 84.575,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.14748871,
+    "punctuated_word": "not"
+  },
+  {
+    "word": "fall",
+    "start": 84.575,
+    "end": 85.075,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.14748871,
+    "punctuated_word": "fall."
+  },
+  {
+    "word": "mom",
+    "start": 91.14,
+    "end": 91.54,
+    "confidence": 0.9506836,
+    "speaker": 0,
+    "speaker_confidence": 0.47890925,
+    "punctuated_word": "Mom"
+  },
+  {
+    "word": "gave",
+    "start": 91.54,
+    "end": 91.78,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.47890925,
+    "punctuated_word": "gave"
+  },
+  {
+    "word": "the",
+    "start": 91.78,
+    "end": 91.86,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.47890925,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "kids",
+    "start": 91.86,
+    "end": 92.26,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.47890925,
+    "punctuated_word": "kids"
+  },
+  {
+    "word": "a",
+    "start": 92.26,
+    "end": 92.420006,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.47890925,
+    "punctuated_word": "a"
+  },
+  {
+    "word": "card",
+    "start": 92.420006,
+    "end": 92.740005,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.47890925,
+    "punctuated_word": "card"
+  },
+  {
+    "word": "game",
+    "start": 92.740005,
+    "end": 93.240005,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.47890925,
+    "punctuated_word": "game."
+  },
+  {
+    "word": "oliver",
+    "start": 102.225,
+    "end": 102.725,
+    "confidence": 0.9536133,
+    "speaker": 0,
+    "speaker_confidence": 0.29797816,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "can",
+    "start": 102.784996,
+    "end": 103.025,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.29797816,
+    "punctuated_word": "can"
+  },
+  {
+    "word": "go",
+    "start": 103.025,
+    "end": 103.265,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.29797816,
+    "punctuated_word": "go"
+  },
+  {
+    "word": "first",
+    "start": 103.265,
+    "end": 103.765,
+    "confidence": 0.9802246,
+    "speaker": 0,
+    "speaker_confidence": 0.29797816,
+    "punctuated_word": "first,"
+  },
+  {
+    "word": "emmy",
+    "start": 103.985,
+    "end": 104.385,
+    "confidence": 0.7792969,
+    "speaker": 0,
+    "speaker_confidence": 0.35278833,
+    "punctuated_word": "Emmy"
+  },
+  {
+    "word": "said",
+    "start": 104.385,
+    "end": 104.885,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.35278833,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "oliver",
+    "start": 111.104996,
+    "end": 111.604996,
+    "confidence": 0.96777344,
+    "speaker": 0,
+    "speaker_confidence": 0.44739443,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "won",
+    "start": 111.825,
+    "end": 112.065,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.44739443,
+    "punctuated_word": "won"
+  },
+  {
+    "word": "the",
+    "start": 112.065,
+    "end": 112.225,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.44739443,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "game",
+    "start": 112.225,
+    "end": 112.725,
+    "confidence": 0.99658203,
+    "speaker": 0,
+    "speaker_confidence": 0.44739443,
+    "punctuated_word": "game."
+  },
+  {
+    "word": "that",
+    "start": 114.54,
+    "end": 114.78,
+    "confidence": 0.97314453,
+    "speaker": 0,
+    "speaker_confidence": 0.3313133,
+    "punctuated_word": "That"
+  },
+  {
+    "word": "was",
+    "start": 114.78,
+    "end": 115.1,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.3313133,
+    "punctuated_word": "was"
+  },
+  {
+    "word": "fun",
+    "start": 115.1,
+    "end": 115.6,
+    "confidence": 0.9313965,
+    "speaker": 0,
+    "speaker_confidence": 0.3313133,
+    "punctuated_word": "fun,"
+  },
+  {
+    "word": "he",
+    "start": 115.98,
+    "end": 116.14,
+    "confidence": 0.9892578,
+    "speaker": 0,
+    "speaker_confidence": 0.39746308,
+    "punctuated_word": "he"
+  },
+  {
+    "word": "said",
+    "start": 116.14,
+    "end": 116.64,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.39746308,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "a",
+    "start": 118.380005,
+    "end": 118.54,
+    "confidence": 0.9970703,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "A"
+  },
+  {
+    "word": "flight",
+    "start": 118.54,
+    "end": 118.94,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "flight"
+  },
+  {
+    "word": "attendant",
+    "start": 118.94,
+    "end": 119.42,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "attendant"
+  },
+  {
+    "word": "brought",
+    "start": 119.42,
+    "end": 119.740005,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "brought"
+  },
+  {
+    "word": "drinks",
+    "start": 119.740005,
+    "end": 120.14,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "drinks"
+  },
+  {
+    "word": "and",
+    "start": 120.14,
+    "end": 120.3,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "and"
+  },
+  {
+    "word": "a",
+    "start": 120.3,
+    "end": 120.46,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "a"
+  },
+  {
+    "word": "snack",
+    "start": 120.46,
+    "end": 120.96,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.57726336,
+    "punctuated_word": "snack."
+  },
+  {
+    "word": "yum",
+    "start": 125.020004,
+    "end": 125.520004,
+    "confidence": 0.97721356,
+    "speaker": 0,
+    "speaker_confidence": 0.5183608,
+    "punctuated_word": "Yum,"
+  },
+  {
+    "word": "said",
+    "start": 126.06,
+    "end": 126.3,
+    "confidence": 0.9951172,
+    "speaker": 0,
+    "speaker_confidence": 0.5183608,
+    "punctuated_word": "said"
+  },
+  {
+    "word": "oliver",
+    "start": 126.3,
+    "end": 126.8,
+    "confidence": 0.9946289,
+    "speaker": 0,
+    "speaker_confidence": 0.5183608,
+    "punctuated_word": "Oliver."
+  },
+  {
+    "word": "i",
+    "start": 129.205,
+    "end": 129.60501,
+    "confidence": 0.96777344,
+    "speaker": 0,
+    "speaker_confidence": 0.33307403,
+    "punctuated_word": "I"
+  },
+  {
+    "word": "love",
+    "start": 129.60501,
+    "end": 129.925,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.33307403,
+    "punctuated_word": "love"
+  },
+  {
+    "word": "pretzels",
+    "start": 129.925,
+    "end": 130.405,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.33307403,
+    "punctuated_word": "pretzels"
+  },
+  {
+    "word": "and",
+    "start": 130.405,
+    "end": 130.645,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.33307403,
+    "punctuated_word": "and"
+  },
+  {
+    "word": "juice",
+    "start": 130.645,
+    "end": 131.145,
+    "confidence": 0.99853516,
+    "speaker": 0,
+    "speaker_confidence": 0.33307403,
+    "punctuated_word": "juice."
+  },
+  {
+    "word": "the",
+    "start": 133.685,
+    "end": 133.925,
+    "confidence": 0.9199219,
+    "speaker": 0,
+    "speaker_confidence": 0.36224544,
+    "punctuated_word": "The"
+  },
+  {
+    "word": "plane",
+    "start": 133.925,
+    "end": 134.325,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.36224544,
+    "punctuated_word": "plane"
+  },
+  {
+    "word": "landed",
+    "start": 134.325,
+    "end": 134.825,
+    "confidence": 0.99560547,
+    "speaker": 0,
+    "speaker_confidence": 0.36224544,
+    "punctuated_word": "landed."
+  },
+  {
+    "word": "everyone",
+    "start": 137.365,
+    "end": 137.865,
+    "confidence": 0.98828125,
+    "speaker": 0,
+    "speaker_confidence": 0.46605968,
+    "punctuated_word": "Everyone"
+  },
+  {
+    "word": "got",
+    "start": 137.925,
+    "end": 138.16501,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.46605968,
+    "punctuated_word": "got"
+  },
+  {
+    "word": "their",
+    "start": 138.16501,
+    "end": 138.485,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.46605968,
+    "punctuated_word": "their"
+  },
+  {
+    "word": "luggage",
+    "start": 138.485,
+    "end": 138.985,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.46605968,
+    "punctuated_word": "luggage."
+  },
+  {
+    "word": "the",
+    "start": 141.89001,
+    "end": 142.13,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.51005113,
+    "punctuated_word": "The"
+  },
+  {
+    "word": "flight",
+    "start": 142.13,
+    "end": 142.53001,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.51005113,
+    "punctuated_word": "flight"
+  },
+  {
+    "word": "attendant",
+    "start": 142.53001,
+    "end": 143.03001,
+    "confidence": 0.6958008,
+    "speaker": 0,
+    "speaker_confidence": 0.51005113,
+    "punctuated_word": "attendant"
+  },
+  {
+    "word": "smiled",
+    "start": 143.09001,
+    "end": 143.57,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.51005113,
+    "punctuated_word": "smiled"
+  },
+  {
+    "word": "at",
+    "start": 143.57,
+    "end": 143.73001,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.51005113,
+    "punctuated_word": "at"
+  },
+  {
+    "word": "oliver",
+    "start": 143.73001,
+    "end": 144.23001,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.51005113,
+    "punctuated_word": "Oliver."
+  },
+  {
+    "word": "would",
+    "start": 147.81001,
+    "end": 148.13,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.37953818,
+    "punctuated_word": "Would"
+  },
+  {
+    "word": "you",
+    "start": 148.13,
+    "end": 148.29001,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.37953818,
+    "punctuated_word": "you"
+  },
+  {
+    "word": "like",
+    "start": 148.29001,
+    "end": 148.45001,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.37953818,
+    "punctuated_word": "like"
+  },
+  {
+    "word": "to",
+    "start": 148.45001,
+    "end": 148.53001,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.37953818,
+    "punctuated_word": "to"
+  },
+  {
+    "word": "meet",
+    "start": 148.53001,
+    "end": 148.77,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.37953818,
+    "punctuated_word": "meet"
+  },
+  {
+    "word": "the",
+    "start": 148.77,
+    "end": 148.93001,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.37953818,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "pilot",
+    "start": 148.93001,
+    "end": 149.43001,
+    "confidence": 0.9746094,
+    "speaker": 0,
+    "speaker_confidence": 0.37953818,
+    "punctuated_word": "pilot?"
+  },
+  {
+    "word": "she",
+    "start": 149.65001,
+    "end": 149.97,
+    "confidence": 0.9921875,
+    "speaker": 0,
+    "speaker_confidence": 0.33568358,
+    "punctuated_word": "She"
+  },
+  {
+    "word": "asked",
+    "start": 149.97,
+    "end": 150.47,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.33568358,
+    "punctuated_word": "asked."
+  },
+  {
+    "word": "yes",
+    "start": 151.65001,
+    "end": 152.15001,
+    "confidence": 0.86499023,
+    "speaker": 0,
+    "speaker_confidence": 0.17442882,
+    "punctuated_word": "Yes."
+  },
+  {
+    "word": "oliver",
+    "start": 152.69,
+    "end": 153.19,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.45358956,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "said",
+    "start": 153.33,
+    "end": 153.83,
+    "confidence": 0.9975586,
+    "speaker": 0,
+    "speaker_confidence": 0.45358956,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "the",
+    "start": 155.58499,
+    "end": 155.905,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "The"
+  },
+  {
+    "word": "pilot",
+    "start": 155.905,
+    "end": 156.305,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "pilot"
+  },
+  {
+    "word": "had",
+    "start": 156.305,
+    "end": 156.465,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "had"
+  },
+  {
+    "word": "a",
+    "start": 156.465,
+    "end": 156.625,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "a"
+  },
+  {
+    "word": "cool",
+    "start": 156.625,
+    "end": 157.025,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "cool"
+  },
+  {
+    "word": "uniform",
+    "start": 157.025,
+    "end": 157.525,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "uniform."
+  },
+  {
+    "word": "he",
+    "start": 159.025,
+    "end": 159.345,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "He"
+  },
+  {
+    "word": "showed",
+    "start": 159.345,
+    "end": 159.58499,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "showed"
+  },
+  {
+    "word": "oliver",
+    "start": 159.58499,
+    "end": 159.985,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "the",
+    "start": 159.985,
+    "end": 160.145,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "the"
+  },
+  {
+    "word": "cockpit",
+    "start": 160.145,
+    "end": 160.645,
+    "confidence": 0.9995117,
+    "speaker": 0,
+    "speaker_confidence": 0.5587687,
+    "punctuated_word": "cockpit."
+  },
+  {
+    "word": "oliver",
+    "start": 162.785,
+    "end": 163.285,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.6504762,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "saw",
+    "start": 163.425,
+    "end": 163.825,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.6504762,
+    "punctuated_word": "saw"
+  },
+  {
+    "word": "buttons",
+    "start": 163.825,
+    "end": 164.305,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.6504762,
+    "punctuated_word": "buttons"
+  },
+  {
+    "word": "and",
+    "start": 164.305,
+    "end": 164.625,
+    "confidence": 0.89501953,
+    "speaker": 0,
+    "speaker_confidence": 0.6504762,
+    "punctuated_word": "and"
+  },
+  {
+    "word": "lights",
+    "start": 164.625,
+    "end": 165.025,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.6504762,
+    "punctuated_word": "lights"
+  },
+  {
+    "word": "and",
+    "start": 165.025,
+    "end": 165.345,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.6504762,
+    "punctuated_word": "and"
+  },
+  {
+    "word": "maps",
+    "start": 165.345,
+    "end": 165.845,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.6504762,
+    "punctuated_word": "maps."
+  },
+  {
+    "word": "wow",
+    "start": 167.76001,
+    "end": 168.26001,
+    "confidence": 0.7980957,
+    "speaker": 0,
+    "speaker_confidence": 0.13796437,
+    "punctuated_word": "Wow,"
+  },
+  {
+    "word": "oliver",
+    "start": 169.36,
+    "end": 169.84,
+    "confidence": 0.9873047,
+    "speaker": 0,
+    "speaker_confidence": 0.41522872,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "said",
+    "start": 169.84,
+    "end": 170.34,
+    "confidence": 0.99853516,
+    "speaker": 0,
+    "speaker_confidence": 0.41522872,
+    "punctuated_word": "said."
+  },
+  {
+    "word": "does",
+    "start": 173.36,
+    "end": 173.76001,
+    "confidence": 0.9819336,
+    "speaker": 0,
+    "speaker_confidence": 0.017719984,
+    "punctuated_word": "Does"
+  },
+  {
+    "word": "flying",
+    "start": 173.76001,
+    "end": 174.16,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.017719984,
+    "punctuated_word": "flying"
+  },
+  {
+    "word": "still",
+    "start": 174.16,
+    "end": 174.56,
+    "confidence": 0.9980469,
+    "speaker": 0,
+    "speaker_confidence": 0.017719984,
+    "punctuated_word": "still"
+  },
+  {
+    "word": "seem",
+    "start": 174.56,
+    "end": 174.88,
+    "confidence": 0.98095703,
+    "speaker": 0,
+    "speaker_confidence": 0.017719984,
+    "punctuated_word": "seem"
+  },
+  {
+    "word": "scary",
+    "start": 174.88,
+    "end": 175.36,
+    "confidence": 0.91625977,
+    "speaker": 0,
+    "speaker_confidence": 0.017719984,
+    "punctuated_word": "scary,"
+  },
+  {
+    "word": "oliver",
+    "start": 175.36,
+    "end": 175.86,
+    "confidence": 0.97265625,
+    "speaker": 0,
+    "speaker_confidence": 0.017719984,
+    "punctuated_word": "Oliver?"
+  },
+  {
+    "word": "dad",
+    "start": 176.24,
+    "end": 176.56,
+    "confidence": 0.9941406,
+    "speaker": 0,
+    "speaker_confidence": 0.46196628,
+    "punctuated_word": "Dad"
+  },
+  {
+    "word": "asked",
+    "start": 176.56,
+    "end": 177.06,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.46196628,
+    "punctuated_word": "asked."
+  },
+  {
+    "word": "scary",
+    "start": 178.72,
+    "end": 179.22,
+    "confidence": 0.9082031,
+    "speaker": 0,
+    "speaker_confidence": 0.46196628,
+    "punctuated_word": "Scary?"
+  },
+  {
+    "word": "oliver",
+    "start": 180,
+    "end": 180.5,
+    "confidence": 0.8676758,
+    "speaker": 0,
+    "speaker_confidence": 0.46196628,
+    "punctuated_word": "Oliver"
+  },
+  {
+    "word": "laughed",
+    "start": 180.64,
+    "end": 181.14,
+    "confidence": 0.99609375,
+    "speaker": 0,
+    "speaker_confidence": 0.46196628,
+    "punctuated_word": "laughed."
+  },
+  {
+    "word": "flying",
+    "start": 182.295,
+    "end": 182.53499,
+    "confidence": 0.9604492,
+    "speaker": 0,
+    "speaker_confidence": 0.3725043,
+    "punctuated_word": "Flying"
+  },
+  {
+    "word": "is",
+    "start": 182.53499,
+    "end": 182.855,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.3725043,
+    "punctuated_word": "is"
+  },
+  {
+    "word": "not",
+    "start": 182.855,
+    "end": 183.25499,
+    "confidence": 1,
+    "speaker": 0,
+    "speaker_confidence": 0.3725043,
+    "punctuated_word": "not"
+  },
+  {
+    "word": "scary",
+    "start": 183.25499,
+    "end": 183.75499,
+    "confidence": 0.89282227,
+    "speaker": 0,
+    "speaker_confidence": 0.3725043,
+    "punctuated_word": "scary,"
+  },
+  {
+    "word": "dad",
+    "start": 183.81499,
+    "end": 184.31499,
+    "confidence": 0.7919922,
+    "speaker": 0,
+    "speaker_confidence": 0.44725972,
+    "punctuated_word": "Dad."
+  },
+  {
+    "word": "flying",
+    "start": 185.97499,
+    "end": 186.215,
+    "confidence": 0.9951172,
+    "speaker": 0,
+    "speaker_confidence": 0.44725972,
+    "punctuated_word": "Flying"
+  },
+  {
+    "word": "is",
+    "start": 186.215,
+    "end": 186.53499,
+    "confidence": 0.99902344,
+    "speaker": 0,
+    "speaker_confidence": 0.44725972,
+    "punctuated_word": "is"
+  },
+  {
+    "word": "awesome",
+    "start": 186.53499,
+    "end": 187.03499,
+    "confidence": 0.9421387,
+    "speaker": 0,
+    "speaker_confidence": 0.44725972,
+    "punctuated_word": "awesome."
+  }
+]

@@ -11,21 +11,24 @@
 Phase 1: Find Video        Phase 2: Transcript         Phase 3: Validate
 ─────────────────          ──────────────────          ──────────────────
 YouTube Data API           youtube-transcript-api      audit_transcript_match.cjs
-LLM evaluation             Manual sentence splitting   node -c (syntax)
-Video selection            Deepgram alignment          npm run build
-                           fix_sentence_formatting     fix_sentence_formatting
+LLM evaluation             Clean captions              node -c (syntax)
+Video selection            Manual sentence splitting   npm run build
+                           (FROZEN rules)
 ```
 
 **Data flow:**
 ```
 YouTube video
   → youtube_transcript_api (raw captions)
-  → Manual sentence splitting by meaning
-  → sentences/<videoId>.json
-  → Deepgram alignment (optional)
-  → shadowing.js (TTS mode)
+  → raw/<videoId>.json
+  → Clean captions → cleaned/<videoId>.json
+  → Manual sentence splitting by meaning (FROZEN)
+  → sentences/<videoId>.json  (preferred at runtime)
   → App renders Transcript panel
 ```
+
+> **Timestamps source of truth:** YouTube auto-caption timestamps.
+> NEVER re-align with Deepgram or any other tool — it breaks timestamps.
 
 ---
 
@@ -110,17 +113,14 @@ items = YouTubeTranscriptApi().fetch(video_id)
 - Each segment = one complete thought / sentence
 - NO segments with only 1-2 words unless they're complete sentences ("Oh, I'm so hungry.")
 
-### Step 4: Deepgram alignment (optional, for precision)
-**Tool:** `scripts/sync_timestamps.cjs`
-**API:** Deepgram Nova-2
-**Command:** `DEEPGRAM_API_KEY=xxx node scripts/sync_timestamps.cjs <weekNum>`
-**Purpose:** Re-align timestamps using actual audio, not just YouTube caption timings
+### ~~Step 4: Deepgram alignment~~ — REMOVED (Aug 2, 2026)
+> YouTube timestamps are sufficient for shadowing. Deepgram alignment
+> broke timestamps in W10, W31 and provided no measurable improvement.
+> See audit report for details.
 
-### Step 5: Safe formatting cleanup (optional)
-**Tool:** `scripts/fix_sentence_formatting.cjs`
-**Command:** `node scripts/fix_sentence_formatting.cjs <weekNum>`
-**Purpose:** Fix dangling prepositions, merge short fragments
-**CAUTION:** This tool is conservative — it may over-merge. Use only when needed.
+### ~~Step 5: Safe formatting cleanup~~ — REMOVED (Aug 2, 2026)
+> Conflicts with FROZEN rules (c automated merge). Manual splitting
+> is the final step. If split is wrong, fix manually — not with tools.
 
 ---
 
@@ -153,8 +153,8 @@ node scripts/audit_transcript_match.cjs
 **File:** `src/modules/shadowing/transcriptUtils.js`
 
 **Priority order:**
-1. `sentences/<videoId>.json` (Deepgram-aligned, preferred)
-2. `cleaned/<videoId>.json` (older cleaned transcripts)
+1. `sentences/<videoId>.json` (manually split, preferred)
+2. `cleaned/<videoId>.json` (cleaned YouTube auto-captions)
 3. `raw/<videoId>.json` (raw auto-captions)
 
 **Key functions:**
@@ -187,9 +187,11 @@ node scripts/audit_transcript_match.cjs
 4. ❌ Merge title text with dialogue
 5. ❌ Split sentences mid-thought (check grammar meaning)
 6. ❌ Use `fix_sentence_formatting.cjs` without manual review first
+7. ❌ Use Deepgram or any alignment tool on transcript — YouTube timestamps are source of truth
 
 ---
 
 **Frozen:** 2026-08-01T18:30:00+07:00
+**Updated:** 2026-08-02 — Removed Deepgram alignment (Step 4) and fix_sentence_formatting (Step 5). YouTube timestamps are now the sole source of truth. See audit report for rationale.
 **Reason:** W34 transcript debugging revealed need for strict sentence splitting rules
 **Author:** Claude (with user corrections)
