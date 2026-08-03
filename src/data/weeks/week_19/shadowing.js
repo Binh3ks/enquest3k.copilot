@@ -1,6 +1,6 @@
 export default {
   title: "How Was Your Vacation?",
-  videoId: "dJvh-QrQW64",
+  videoId: "wy398w9QcB4",  // Unified with Easy — "When I Was Small" (was/were)
   content_en: "Hello, Mr. Rashid. Hi, how are you? Fine, thank you. How was your vacation? It was wonderful. I'm so happy to hear that. Was your flight okay? No, pretty bad actually. It was so bumpy. It was very scary. That's too bad. Did you have nice weather after you arrived? No, the weather was terrible. Very rainy. I actually never saw the sun. That's awful. So what did you do? I stayed inside the hotel. Was the hotel room nice? The room was fine, but it was right next to the cafe and the music was very loud. I didn't sleep much. I'll bet the food was great. No, it was too salty for me and the waiters were very unfriendly. Did you go shopping at all? A little bit, until someone stole my wallet. After that, I stayed in the hotel and read a book. Was the flight home okay? Actually, they cancelled my flight. I had to stay for two more days. That's terrible! But Mr. Rashid, you said that your vacation was wonderful? Ah yes, I did. And it was wonderful. I met a very nice person. A woman, actually. Her name is Basmar. She's from Lebanon, just like me. But she lives here. I'm seeing her tonight. So yes, it was a wonderful vacation. That's great, Mr. Rashid!",
   script: [
     { id: 1, text: "Hello, Mr. Rashid.", vi: null, start: 9.04, duration: 2.24 },
