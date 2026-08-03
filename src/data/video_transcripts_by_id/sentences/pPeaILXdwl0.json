@@ -1,81 +1,796 @@
 {
-  "text": "It was Jilly's grandfather's birthday. And she woke up early to buy him a birthday cake. She went to a bakery. And chose his favorite chocolate cake. When her grandfather came downstairs for breakfast, he was surprised. I forgot it was my birthday, he said. And they all laughed. What has just happened? Jilly has woken up early to buy her grandfather a birthday cake. She has been to a bakery and chosen his favorite chocolate cake. Her grandfather has come downstairs and he has forgotten it's his birthday.",
+  "text": "It was Jillie's grandfather's birthday, and she woke up early to buy him a birthday cake. She went to a bakery and chose his favourite chocolate cake. When her father came downstairs for breakfast, he was surprised. I forgot it was my birthday, he said. And they all laughed. What has just happened? Jilly has woken up early to buy her grandfather a birthday cake. She has been to a bakery and chosen his favorite chocolate cake. Her grandfather has come downstairs and he has forgotten it's his birthday. Thanks for watching, and I hope you learned some irregular verbs today. And see you in the next video. Bye for now.",
   "segments": [
     {
       "id": 1,
-      "text": "It was Jilly's grandfather's birthday.",
+      "text": "It was Jillie's grandfather's birthday, and she woke up early to buy him a birthday cake.",
+      "speaker": "Speaker0",
       "start": 9.92,
-      "duration": 4.08
+      "duration": 7.69,
+      "words": [
+        {
+          "word": "it",
+          "start": 9.92,
+          "end": 10.16,
+          "confidence": 0.892
+        },
+        {
+          "word": "was",
+          "start": 10.16,
+          "end": 10.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "jillie's",
+          "start": 10.48,
+          "end": 10.98,
+          "confidence": 0.723
+        },
+        {
+          "word": "grandfather's",
+          "start": 11.28,
+          "end": 11.78,
+          "confidence": 0.996
+        },
+        {
+          "word": "birthday",
+          "start": 12.32,
+          "end": 12.82,
+          "confidence": 0.8
+        },
+        {
+          "word": "and",
+          "start": 13.68,
+          "end": 14.0,
+          "confidence": 0.995
+        },
+        {
+          "word": "she",
+          "start": 14.0,
+          "end": 14.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "woke",
+          "start": 14.32,
+          "end": 14.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 14.56,
+          "end": 14.88,
+          "confidence": 0.996
+        },
+        {
+          "word": "early",
+          "start": 14.88,
+          "end": 15.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 15.76,
+          "end": 15.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "buy",
+          "start": 15.91,
+          "end": 16.16,
+          "confidence": 0.998
+        },
+        {
+          "word": "him",
+          "start": 16.16,
+          "end": 16.39,
+          "confidence": 0.985
+        },
+        {
+          "word": "a",
+          "start": 16.39,
+          "end": 16.64,
+          "confidence": 0.988
+        },
+        {
+          "word": "birthday",
+          "start": 16.64,
+          "end": 17.11,
+          "confidence": 0.998
+        },
+        {
+          "word": "cake",
+          "start": 17.11,
+          "end": 17.61,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.872
     },
     {
       "id": 2,
-      "text": "And she woke up early to buy him a birthday cake.",
-      "start": 13.68,
-      "duration": 6.4
+      "text": "She went to a bakery and chose his favourite chocolate cake.",
+      "speaker": "Speaker0",
+      "start": 19.76,
+      "duration": 6.58,
+      "words": [
+        {
+          "word": "she",
+          "start": 19.76,
+          "end": 20.07,
+          "confidence": 0.71
+        },
+        {
+          "word": "went",
+          "start": 20.07,
+          "end": 20.39,
+          "confidence": 0.995
+        },
+        {
+          "word": "to",
+          "start": 20.39,
+          "end": 20.55,
+          "confidence": 0.991
+        },
+        {
+          "word": "a",
+          "start": 20.55,
+          "end": 20.71,
+          "confidence": 0.984
+        },
+        {
+          "word": "bakery",
+          "start": 20.71,
+          "end": 21.21,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 23.11,
+          "end": 23.43,
+          "confidence": 0.577
+        },
+        {
+          "word": "chose",
+          "start": 23.43,
+          "end": 23.93,
+          "confidence": 0.994
+        },
+        {
+          "word": "his",
+          "start": 24.07,
+          "end": 24.57,
+          "confidence": 0.978
+        },
+        {
+          "word": "favourite",
+          "start": 24.64,
+          "end": 25.14,
+          "confidence": 0.795
+        },
+        {
+          "word": "chocolate",
+          "start": 25.27,
+          "end": 25.77,
+          "confidence": 0.996
+        },
+        {
+          "word": "cake",
+          "start": 25.84,
+          "end": 26.34,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.936
     },
     {
       "id": 3,
-      "text": "She went to a bakery.",
-      "start": 19.84,
-      "duration": 3.68
+      "text": "When her father came downstairs for breakfast, he was surprised.",
+      "speaker": "Speaker0",
+      "start": 26.95,
+      "duration": 4.6,
+      "words": [
+        {
+          "word": "when",
+          "start": 26.95,
+          "end": 27.27,
+          "confidence": 0.905
+        },
+        {
+          "word": "her",
+          "start": 27.27,
+          "end": 27.69,
+          "confidence": 0.818
+        },
+        {
+          "word": "father",
+          "start": 28.09,
+          "end": 28.25,
+          "confidence": 0.647
+        },
+        {
+          "word": "came",
+          "start": 28.25,
+          "end": 28.57,
+          "confidence": 0.993
+        },
+        {
+          "word": "downstairs",
+          "start": 28.57,
+          "end": 29.07,
+          "confidence": 0.998
+        },
+        {
+          "word": "for",
+          "start": 29.21,
+          "end": 29.45,
+          "confidence": 0.997
+        },
+        {
+          "word": "breakfast",
+          "start": 29.45,
+          "end": 29.95,
+          "confidence": 0.994
+        },
+        {
+          "word": "he",
+          "start": 30.49,
+          "end": 30.73,
+          "confidence": 0.995
+        },
+        {
+          "word": "was",
+          "start": 30.73,
+          "end": 31.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "surprised",
+          "start": 31.05,
+          "end": 31.55,
+          "confidence": 0.957
+        }
+      ],
+      "confidence": 0.862
     },
     {
       "id": 4,
-      "text": "And chose his favorite chocolate cake.",
-      "start": 23.2,
-      "duration": 4.08
+      "text": "I forgot it was my birthday, he said.",
+      "speaker": "Speaker0",
+      "start": 32.33,
+      "duration": 3.14,
+      "words": [
+        {
+          "word": "i",
+          "start": 32.33,
+          "end": 32.65,
+          "confidence": 0.962
+        },
+        {
+          "word": "forgot",
+          "start": 32.65,
+          "end": 33.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 33.05,
+          "end": 33.29,
+          "confidence": 0.977
+        },
+        {
+          "word": "was",
+          "start": 33.29,
+          "end": 33.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 33.53,
+          "end": 33.77,
+          "confidence": 0.998
+        },
+        {
+          "word": "birthday",
+          "start": 33.77,
+          "end": 34.27,
+          "confidence": 0.915
+        },
+        {
+          "word": "he",
+          "start": 34.73,
+          "end": 34.97,
+          "confidence": 0.988
+        },
+        {
+          "word": "said",
+          "start": 34.97,
+          "end": 35.47,
+          "confidence": 0.815
+        }
+      ],
+      "confidence": 0.975
     },
     {
       "id": 5,
-      "text": "When her grandfather came downstairs for breakfast, he was surprised.",
-      "start": 27.04,
-      "duration": 5.61
+      "text": "And they all laughed.",
+      "speaker": "Speaker0",
+      "start": 36.01,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "and",
+          "start": 36.01,
+          "end": 36.25,
+          "confidence": 0.986
+        },
+        {
+          "word": "they",
+          "start": 36.25,
+          "end": 36.65,
+          "confidence": 0.957
+        },
+        {
+          "word": "all",
+          "start": 36.65,
+          "end": 37.13,
+          "confidence": 0.998
+        },
+        {
+          "word": "laughed",
+          "start": 37.13,
+          "end": 37.63,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 6,
-      "text": "I forgot it was my birthday, he said.",
-      "start": 32.33,
-      "duration": 4
+      "text": "What has just happened?",
+      "speaker": "Speaker0",
+      "start": 46.14,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "what",
+          "start": 46.14,
+          "end": 46.53,
+          "confidence": 0.878
+        },
+        {
+          "word": "has",
+          "start": 46.53,
+          "end": 46.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "just",
+          "start": 46.94,
+          "end": 47.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "happened",
+          "start": 47.34,
+          "end": 47.84,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.966
     },
     {
       "id": 7,
-      "text": "And they all laughed.",
-      "start": 36.01,
-      "duration": 10.62
+      "text": "Jilly has woken up early to buy her grandfather a birthday cake.",
+      "speaker": "Speaker0",
+      "start": 49.26,
+      "duration": 5.14,
+      "words": [
+        {
+          "word": "jilly",
+          "start": 49.26,
+          "end": 49.73,
+          "confidence": 0.642
+        },
+        {
+          "word": "has",
+          "start": 49.73,
+          "end": 49.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "woken",
+          "start": 49.98,
+          "end": 50.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "up",
+          "start": 50.38,
+          "end": 50.61,
+          "confidence": 0.99
+        },
+        {
+          "word": "early",
+          "start": 50.61,
+          "end": 51.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 51.58,
+          "end": 51.81,
+          "confidence": 0.995
+        },
+        {
+          "word": "buy",
+          "start": 51.81,
+          "end": 52.05,
+          "confidence": 0.998
+        },
+        {
+          "word": "her",
+          "start": 52.05,
+          "end": 52.3,
+          "confidence": 0.999
+        },
+        {
+          "word": "grandfather",
+          "start": 52.3,
+          "end": 52.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 53.17,
+          "end": 53.41,
+          "confidence": 0.996
+        },
+        {
+          "word": "birthday",
+          "start": 53.41,
+          "end": 53.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "cake",
+          "start": 53.9,
+          "end": 54.4,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.926
     },
     {
       "id": 8,
-      "text": "What has just happened?",
-      "start": 46.31,
-      "duration": 3.44
+      "text": "She has been to a bakery and chosen his favorite chocolate cake.",
+      "speaker": "Speaker0",
+      "start": 55.1,
+      "duration": 5.94,
+      "words": [
+        {
+          "word": "she",
+          "start": 55.1,
+          "end": 55.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "has",
+          "start": 55.34,
+          "end": 55.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "been",
+          "start": 55.66,
+          "end": 55.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 55.98,
+          "end": 56.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 56.22,
+          "end": 56.38,
+          "confidence": 0.998
+        },
+        {
+          "word": "bakery",
+          "start": 56.38,
+          "end": 56.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 57.58,
+          "end": 57.9,
+          "confidence": 0.934
+        },
+        {
+          "word": "chosen",
+          "start": 57.9,
+          "end": 58.4,
+          "confidence": 0.979
+        },
+        {
+          "word": "his",
+          "start": 58.78,
+          "end": 59.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "favorite",
+          "start": 59.34,
+          "end": 59.84,
+          "confidence": 0.782
+        },
+        {
+          "word": "chocolate",
+          "start": 59.98,
+          "end": 60.48,
+          "confidence": 0.999
+        },
+        {
+          "word": "cake",
+          "start": 60.54,
+          "end": 61.04,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 9,
-      "text": "Jilly has woken up early to buy her grandfather a birthday cake.",
-      "start": 49.35,
-      "duration": 6.08
+      "text": "Her grandfather has come downstairs and he has forgotten it's his birthday.",
+      "speaker": "Speaker0",
+      "start": 61.5,
+      "duration": 6.19,
+      "words": [
+        {
+          "word": "her",
+          "start": 61.5,
+          "end": 61.82,
+          "confidence": 0.998
+        },
+        {
+          "word": "grandfather",
+          "start": 61.82,
+          "end": 62.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "has",
+          "start": 63.02,
+          "end": 63.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "come",
+          "start": 63.26,
+          "end": 63.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "downstairs",
+          "start": 63.5,
+          "end": 64.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 65.18,
+          "end": 65.5,
+          "confidence": 0.484
+        },
+        {
+          "word": "he",
+          "start": 65.5,
+          "end": 65.74,
+          "confidence": 0.983
+        },
+        {
+          "word": "has",
+          "start": 65.74,
+          "end": 66.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "forgotten",
+          "start": 66.06,
+          "end": 66.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "it's",
+          "start": 66.78,
+          "end": 67.02,
+          "confidence": 0.931
+        },
+        {
+          "word": "his",
+          "start": 67.02,
+          "end": 67.26,
+          "confidence": 0.998
+        },
+        {
+          "word": "birthday",
+          "start": 67.26,
+          "end": 67.69,
+          "confidence": 0.976
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 10,
-      "text": "She has been to a bakery and chosen his favorite chocolate cake.",
-      "start": 55.11,
-      "duration": 6.69
+      "text": "Thanks for watching, and I hope you learned some irregular verbs today. And see you in the next video.",
+      "speaker": "Speaker0",
+      "start": 76.25,
+      "duration": 7.06,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 76.25,
+          "end": 76.66,
+          "confidence": 0.93
+        },
+        {
+          "word": "for",
+          "start": 76.66,
+          "end": 76.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "watching",
+          "start": 76.89,
+          "end": 77.39,
+          "confidence": 0.683
+        },
+        {
+          "word": "and",
+          "start": 77.53,
+          "end": 77.85,
+          "confidence": 0.996
+        },
+        {
+          "word": "i",
+          "start": 77.85,
+          "end": 78.02,
+          "confidence": 0.997
+        },
+        {
+          "word": "hope",
+          "start": 78.02,
+          "end": 78.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 78.42,
+          "end": 78.66,
+          "confidence": 0.993
+        },
+        {
+          "word": "learned",
+          "start": 78.66,
+          "end": 78.97,
+          "confidence": 0.951
+        },
+        {
+          "word": "some",
+          "start": 78.97,
+          "end": 79.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "irregular",
+          "start": 79.22,
+          "end": 79.72,
+          "confidence": 0.978
+        },
+        {
+          "word": "verbs",
+          "start": 79.85,
+          "end": 80.25,
+          "confidence": 0.998
+        },
+        {
+          "word": "today",
+          "start": 80.25,
+          "end": 80.75,
+          "confidence": 0.772
+        },
+        {
+          "word": "and",
+          "start": 81.05,
+          "end": 81.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "see",
+          "start": 81.37,
+          "end": 81.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 81.69,
+          "end": 82.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 82.01,
+          "end": 82.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 82.17,
+          "end": 82.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 82.41,
+          "end": 82.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "video",
+          "start": 82.81,
+          "end": 83.31,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.963
     },
     {
       "id": 11,
-      "text": "Her grandfather has come downstairs and he has forgotten it's his birthday.",
-      "start": 61.56,
-      "duration": 14.99
+      "text": "Bye for now.",
+      "speaker": "Speaker0",
+      "start": 83.93,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "bye",
+          "start": 83.93,
+          "end": 84.17,
+          "confidence": 0.996
+        },
+        {
+          "word": "for",
+          "start": 84.17,
+          "end": 84.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "now",
+          "start": 84.33,
+          "end": 84.83,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.996
     }
   ],
   "videoId": "pPeaILXdwl0",
-  "fetchedAt": "2026-07-31T11:56:11.356Z",
+  "fetchedAt": "2026-08-03T11:05:45.179456+00:00",
   "source": "youtube-transcript-api",
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-31T11:59:47.725Z",
+    "alignedAt": "2026-08-03T11:05:45.179478+00:00",
     "dgWordCount": 111,
-    "matchedSegments": 11,
-    "totalDuration": 84.89
-  }
+    "dgUtteranceCount": 25,
+    "matchedSegments": 25,
+    "totalDuration": 84.83
+  },
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

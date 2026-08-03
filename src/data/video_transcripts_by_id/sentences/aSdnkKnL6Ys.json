@@ -1,185 +1,2505 @@
 {
-  "text": "Once upon a time, there was a palace in a beautiful country. palace palace There lived a very handsome king. king king And a beautiful queen. queen queen They had a pretty princess. princess princess One day, the witch took the princess. witch witch With her magic, the princess was trapped in the dark forest. magic magic Many knights tried to save the princess. knight knight But, they failed because the forest was guarded by a scary monster. monster monster The king and queen were so sad. One day, a prince from a neighboring country came to save her. prince prince \"I'll save the princess!\", said the prince. Suddenly, a fairy showed up. fairy fairy \"With this dragon, you'll be able to save the princess!\" dragon dragon \"Oh, thanks!\" The prince could beat the scary monster. \"Thank you. My hero!\" \"You’re welcome.\" hero hero The prince and princess got married and lived happily ever after. Once upon a time, there was a palace in a beautiful country. There lived a very handsome king, and a beautiful queen. They had a pretty princess. One day, the witch took the princess. With her magic, the princess was trapped in the dark forest. Many knights tried to save the princess. But, they failed because the forest was guarded by a scary monster. The king and queen were so sad. One day, a prince from a neighboring country came to save her. \"I'll save the princess!\", said the prince. Suddenly, a fairy showed up. \"With this dragon, you'll be able to save the princess!\" \"Oh, thanks!\" The prince could beat the scary monster. \"Thank you. My hero!\" \"You're welcome.\" The prince and princess got married and lived happily ever after.",
+  "text": "English Sing Sing. Fairy tale. Once upon a time, there was a palace in a beautiful country. Palace. Palace. There lived a very handsome king. King. King. And a beautiful queen. Queen. Queen. They had a pretty princess. Princess. Princess. One day, the witch took a princess. Witch. Witch. With her magic, the princess was trapped in the dark forest. Forest. Magic. Magic. Many knights tried to save the princess. Knight. Night. But they failed because the forest was guarded by a scary monster. Monster. Monster. The king and queen were so sad. One day, a prince from a neighboring country came to save her. Prince. Prince. Prince. I'll save the Princess, said the Prince. Suddenly, a fairy showed up. Fairy. With this dragon, you'll be able to save the princess. Dragon. Dragon. Oh, thanks. The friends could beat the scary monster. Thank you my hero. You're welcome. Hero. Hero. The prince and princess got married and lived happily ever after. Review. Dragon, fairy, hero, king, knight, magic, monster, palace, prince, princess, queen, witch. Replay. Fairy tale. Once upon a time, there was a palace in a beautiful country. There lived a very handsome king and a beautiful queen. They had a pretty princess. One day, the witch took the princess. With her magic, the princess was trapped in the dark forest. Many knights tried to save the princess. But they failed because the forest was guarded by a scary monster. The king and queen were so sad. One day, a prince from a neighboring country came to save her. I'll save the princess, said the prince. Suddenly, a fairy showed up. With this dragon, you'll be able to save the princess. Oh, thanks. The prince could beat the scary monster. Thank you, my hero. You're welcome. The prince and princess got married and lived happily ever after.",
   "segments": [
     {
       "id": 1,
-      "text": "Once upon a time, there was a palace in a beautiful country.",
-      "start": 12.12,
-      "duration": 7.32
+      "text": "English Sing Sing.",
+      "speaker": "Speaker0",
+      "start": 1.76,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.76,
+          "end": 2.26,
+          "confidence": 0.934
+        },
+        {
+          "word": "sing",
+          "start": 2.32,
+          "end": 2.64,
+          "confidence": 0.626
+        },
+        {
+          "word": "sing",
+          "start": 2.64,
+          "end": 3.14,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.848
     },
     {
       "id": 2,
-      "text": "palace palace There lived a very handsome king.",
-      "start": 19.44,
-      "duration": 13.56
+      "text": "Fairy tale.",
+      "speaker": "Speaker1",
+      "start": 9.04,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "fairy",
+          "start": 9.04,
+          "end": 9.52,
+          "confidence": 0.68
+        },
+        {
+          "word": "tale",
+          "start": 9.52,
+          "end": 10.02,
+          "confidence": 0.714
+        }
+      ],
+      "confidence": 0.697
     },
     {
       "id": 3,
-      "text": "king king And a beautiful queen.",
-      "start": 33.0,
-      "duration": 10.36
+      "text": "Once upon a time, there was a palace in a beautiful country.",
+      "speaker": "Speaker1",
+      "start": 12.34,
+      "duration": 4.5,
+      "words": [
+        {
+          "word": "once",
+          "start": 12.34,
+          "end": 12.66,
+          "confidence": 0.997
+        },
+        {
+          "word": "upon",
+          "start": 12.66,
+          "end": 12.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 12.97,
+          "end": 13.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 13.13,
+          "end": 13.63,
+          "confidence": 0.8
+        },
+        {
+          "word": "there",
+          "start": 14.1,
+          "end": 14.41,
+          "confidence": 0.989
+        },
+        {
+          "word": "was",
+          "start": 14.41,
+          "end": 14.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 14.66,
+          "end": 14.89,
+          "confidence": 0.998
+        },
+        {
+          "word": "palace",
+          "start": 14.89,
+          "end": 15.39,
+          "confidence": 0.975
+        },
+        {
+          "word": "in",
+          "start": 15.46,
+          "end": 15.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 15.62,
+          "end": 15.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "beautiful",
+          "start": 15.86,
+          "end": 16.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "country",
+          "start": 16.34,
+          "end": 16.84,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.949
     },
     {
       "id": 4,
-      "text": "queen queen They had a pretty princess.",
-      "start": 43.36,
-      "duration": 9.36
+      "text": "Palace.",
+      "speaker": "Speaker2",
+      "start": 19.54,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "palace",
+          "start": 19.54,
+          "end": 20.04,
+          "confidence": 0.972
+        }
+      ],
+      "confidence": 0.972
     },
     {
       "id": 5,
-      "text": "princess princess One day, the witch took the princess.",
-      "start": 52.72,
-      "duration": 13.46
+      "text": "Palace.",
+      "speaker": "Speaker2",
+      "start": 23.61,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "palace",
+          "start": 23.61,
+          "end": 24.11,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 6,
-      "text": "witch witch With her magic, the princess was trapped in the dark forest.",
-      "start": 66.18,
-      "duration": 14.54
+      "text": "There lived a very handsome king.",
+      "speaker": "Speaker1",
+      "start": 28.57,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "there",
+          "start": 28.57,
+          "end": 28.89,
+          "confidence": 0.998
+        },
+        {
+          "word": "lived",
+          "start": 28.89,
+          "end": 29.29,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 29.29,
+          "end": 29.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "very",
+          "start": 29.53,
+          "end": 29.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "handsome",
+          "start": 29.85,
+          "end": 30.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "king",
+          "start": 30.41,
+          "end": 30.91,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 7,
-      "text": "magic magic Many knights tried to save the princess.",
-      "start": 80.72,
-      "duration": 13.04
+      "text": "King.",
+      "speaker": "Speaker1",
+      "start": 33.13,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "king",
+          "start": 33.13,
+          "end": 33.63,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 8,
-      "text": "knight knight But, they failed because the forest was guarded by a scary monster.",
-      "start": 93.76,
-      "duration": 15.32
+      "text": "King.",
+      "speaker": "Speaker3",
+      "start": 36.41,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "king",
+          "start": 36.41,
+          "end": 36.91,
+          "confidence": 0.976
+        }
+      ],
+      "confidence": 0.976
     },
     {
       "id": 9,
-      "text": "monster monster The king and queen were so sad.",
-      "start": 109.08,
-      "duration": 14.32
+      "text": "And a beautiful queen.",
+      "speaker": "Speaker1",
+      "start": 39.95,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "and",
+          "start": 39.95,
+          "end": 40.18,
+          "confidence": 0.961
+        },
+        {
+          "word": "a",
+          "start": 40.18,
+          "end": 40.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "beautiful",
+          "start": 40.42,
+          "end": 40.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "queen",
+          "start": 40.91,
+          "end": 41.41,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.988
     },
     {
       "id": 10,
-      "text": "One day, a prince from a neighboring country came to save her.",
-      "start": 123.4,
-      "duration": 6.28
+      "text": "Queen.",
+      "speaker": "Speaker1",
+      "start": 43.46,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "queen",
+          "start": 43.46,
+          "end": 43.96,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.971
     },
     {
       "id": 11,
-      "text": "prince prince \"I'll save the princess!\", said the prince.",
-      "start": 129.68,
-      "duration": 10.3
+      "text": "Queen.",
+      "speaker": "Speaker1",
+      "start": 46.59,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "queen",
+          "start": 46.59,
+          "end": 47.09,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.969
     },
     {
       "id": 12,
-      "text": "Suddenly, a fairy showed up.",
-      "start": 139.98,
-      "duration": 3.86
+      "text": "They had a pretty princess.",
+      "speaker": "Speaker1",
+      "start": 49.14,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "they",
+          "start": 49.14,
+          "end": 49.38,
+          "confidence": 0.993
+        },
+        {
+          "word": "had",
+          "start": 49.38,
+          "end": 49.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 49.7,
+          "end": 49.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "pretty",
+          "start": 49.86,
+          "end": 50.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "princess",
+          "start": 50.34,
+          "end": 50.84,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 13,
-      "text": "fairy fairy \"With this dragon, you'll be able to save the princess!\" dragon dragon \"Oh, thanks!\" The prince could beat the scary monster.",
-      "start": 143.84,
-      "duration": 37.72
+      "text": "Princess.",
+      "speaker": "Speaker1",
+      "start": 53.02,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "princess",
+          "start": 53.02,
+          "end": 53.52,
+          "confidence": 0.868
+        }
+      ],
+      "confidence": 0.868
     },
     {
       "id": 14,
-      "text": "\"Thank you.",
-      "start": 181.56,
-      "duration": 1.09
+      "text": "Princess.",
+      "speaker": "Speaker3",
+      "start": 55.98,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "princess",
+          "start": 55.98,
+          "end": 56.48,
+          "confidence": 0.947
+        }
+      ],
+      "confidence": 0.947
     },
     {
       "id": 15,
-      "text": "My hero!\" \"You’re welcome.\" hero hero The prince and princess got married and lived happily ever after.",
-      "start": 182.65,
-      "duration": 77.93
+      "text": "One day, the witch took a princess.",
+      "speaker": "Speaker3",
+      "start": 60.3,
+      "duration": 2.74,
+      "words": [
+        {
+          "word": "one",
+          "start": 60.3,
+          "end": 60.7,
+          "confidence": 0.931
+        },
+        {
+          "word": "day",
+          "start": 60.7,
+          "end": 61.2,
+          "confidence": 0.989
+        },
+        {
+          "word": "the",
+          "start": 61.34,
+          "end": 61.58,
+          "confidence": 0.963
+        },
+        {
+          "word": "witch",
+          "start": 61.58,
+          "end": 62.08,
+          "confidence": 0.977
+        },
+        {
+          "word": "took",
+          "start": 62.14,
+          "end": 62.46,
+          "confidence": 0.594
+        },
+        {
+          "word": "a",
+          "start": 62.46,
+          "end": 62.54,
+          "confidence": 0.605
+        },
+        {
+          "word": "princess",
+          "start": 62.54,
+          "end": 63.04,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.865
     },
     {
       "id": 16,
-      "text": "Once upon a time, there was a palace in a beautiful country.",
-      "start": 260.58,
-      "duration": 7.22
+      "text": "Witch.",
+      "speaker": "Speaker1",
+      "start": 66.38,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "witch",
+          "start": 66.38,
+          "end": 66.88,
+          "confidence": 0.863
+        }
+      ],
+      "confidence": 0.863
     },
     {
       "id": 17,
-      "text": "There lived a very handsome king, and a beautiful queen.",
-      "start": 267.8,
-      "duration": 5.78
+      "text": "Witch.",
+      "speaker": "Speaker1",
+      "start": 69.66,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "witch",
+          "start": 69.66,
+          "end": 70.16,
+          "confidence": 0.716
+        }
+      ],
+      "confidence": 0.716
     },
     {
       "id": 18,
-      "text": "They had a pretty princess.",
-      "start": 273.58,
-      "duration": 5.18
+      "text": "With her magic, the princess was trapped in the dark forest.",
+      "speaker": "Speaker1",
+      "start": 73.1,
+      "duration": 4.18,
+      "words": [
+        {
+          "word": "with",
+          "start": 73.1,
+          "end": 73.42,
+          "confidence": 0.954
+        },
+        {
+          "word": "her",
+          "start": 73.42,
+          "end": 73.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "magic",
+          "start": 73.66,
+          "end": 74.16,
+          "confidence": 0.927
+        },
+        {
+          "word": "the",
+          "start": 74.62,
+          "end": 74.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "princess",
+          "start": 74.86,
+          "end": 75.34,
+          "confidence": 0.997
+        },
+        {
+          "word": "was",
+          "start": 75.34,
+          "end": 75.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "trapped",
+          "start": 75.66,
+          "end": 76.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 76.14,
+          "end": 76.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 76.31,
+          "end": 76.47,
+          "confidence": 0.994
+        },
+        {
+          "word": "dark",
+          "start": 76.47,
+          "end": 76.78,
+          "confidence": 0.981
+        },
+        {
+          "word": "forest",
+          "start": 76.78,
+          "end": 77.28,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.96
     },
     {
       "id": 19,
-      "text": "One day, the witch took the princess.",
-      "start": 278.76,
-      "duration": 6.1
+      "text": "Forest.",
+      "speaker": "Speaker1",
+      "start": 81.06,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "forest",
+          "start": 81.06,
+          "end": 81.56,
+          "confidence": 0.609
+        }
+      ],
+      "confidence": 0.609
     },
     {
       "id": 20,
-      "text": "With her magic, the princess was trapped in the dark forest.",
-      "start": 284.86,
-      "duration": 7.28
+      "text": "Magic.",
+      "speaker": "Speaker3",
+      "start": 84.1,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "magic",
+          "start": 84.1,
+          "end": 84.6,
+          "confidence": 0.766
+        }
+      ],
+      "confidence": 0.766
     },
     {
       "id": 21,
-      "text": "Many knights tried to save the princess.",
-      "start": 292.14,
-      "duration": 5.1
+      "text": "Magic. Many knights tried to save the princess.",
+      "speaker": "Speaker1",
+      "start": 87.78,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "magic",
+          "start": 87.78,
+          "end": 88.1,
+          "confidence": 0.878
+        },
+        {
+          "word": "many",
+          "start": 88.1,
+          "end": 88.58,
+          "confidence": 0.994
+        },
+        {
+          "word": "knights",
+          "start": 88.58,
+          "end": 89.08,
+          "confidence": 0.982
+        },
+        {
+          "word": "tried",
+          "start": 89.14,
+          "end": 89.54,
+          "confidence": 0.982
+        },
+        {
+          "word": "to",
+          "start": 89.54,
+          "end": 89.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "save",
+          "start": 89.78,
+          "end": 90.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 90.18,
+          "end": 90.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "princess",
+          "start": 90.34,
+          "end": 90.84,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.977
     },
     {
       "id": 22,
-      "text": "But, they failed because the forest was guarded by a scary monster.",
-      "start": 297.24,
-      "duration": 9.74
+      "text": "Knight.",
+      "speaker": "Speaker1",
+      "start": 94.02,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "knight",
+          "start": 94.02,
+          "end": 94.52,
+          "confidence": 0.852
+        }
+      ],
+      "confidence": 0.852
     },
     {
       "id": 23,
-      "text": "The king and queen were so sad.",
-      "start": 306.98,
-      "duration": 6.22
+      "text": "Night. But they failed because the forest was guarded by a scary monster.",
+      "speaker": "Speaker1",
+      "start": 101.08,
+      "duration": 5.31,
+      "words": [
+        {
+          "word": "night",
+          "start": 101.08,
+          "end": 101.33,
+          "confidence": 0.949
+        },
+        {
+          "word": "but",
+          "start": 101.33,
+          "end": 101.72,
+          "confidence": 0.988
+        },
+        {
+          "word": "they",
+          "start": 101.72,
+          "end": 102.05,
+          "confidence": 0.995
+        },
+        {
+          "word": "failed",
+          "start": 102.05,
+          "end": 102.55,
+          "confidence": 0.999
+        },
+        {
+          "word": "because",
+          "start": 102.84,
+          "end": 103.24,
+          "confidence": 0.814
+        },
+        {
+          "word": "the",
+          "start": 103.24,
+          "end": 103.48,
+          "confidence": 0.999
+        },
+        {
+          "word": "forest",
+          "start": 103.48,
+          "end": 103.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 104.05,
+          "end": 104.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "guarded",
+          "start": 104.28,
+          "end": 104.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "by",
+          "start": 104.77,
+          "end": 105.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 105.0,
+          "end": 105.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "scary",
+          "start": 105.33,
+          "end": 105.83,
+          "confidence": 0.992
+        },
+        {
+          "word": "monster",
+          "start": 105.89,
+          "end": 106.39,
+          "confidence": 0.96
+        }
+      ],
+      "confidence": 0.983
     },
     {
       "id": 24,
-      "text": "One day, a prince from a neighboring country came to save her.",
-      "start": 313.2,
-      "duration": 6.8
+      "text": "Monster.",
+      "speaker": "Speaker2",
+      "start": 109.21,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "monster",
+          "start": 109.21,
+          "end": 109.71,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 25,
-      "text": "\"I'll save the princess!\", said the prince.",
-      "start": 320.0,
-      "duration": 5.9
+      "text": "Monster. The king and queen were so sad.",
+      "speaker": "Speaker1",
+      "start": 117.85,
+      "duration": 3.14,
+      "words": [
+        {
+          "word": "monster",
+          "start": 117.85,
+          "end": 118.35,
+          "confidence": 0.978
+        },
+        {
+          "word": "the",
+          "start": 118.49,
+          "end": 118.81,
+          "confidence": 0.989
+        },
+        {
+          "word": "king",
+          "start": 118.81,
+          "end": 119.05,
+          "confidence": 0.973
+        },
+        {
+          "word": "and",
+          "start": 119.05,
+          "end": 119.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "queen",
+          "start": 119.37,
+          "end": 119.77,
+          "confidence": 0.998
+        },
+        {
+          "word": "were",
+          "start": 119.77,
+          "end": 120.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "so",
+          "start": 120.09,
+          "end": 120.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "sad",
+          "start": 120.49,
+          "end": 120.99,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 26,
-      "text": "Suddenly, a fairy showed up.",
-      "start": 325.9,
-      "duration": 7.04
+      "text": "One day, a prince from a neighboring country came to save her.",
+      "speaker": "Speaker1",
+      "start": 123.6,
+      "duration": 4.59,
+      "words": [
+        {
+          "word": "one",
+          "start": 123.6,
+          "end": 123.84,
+          "confidence": 0.964
+        },
+        {
+          "word": "day",
+          "start": 123.84,
+          "end": 124.34,
+          "confidence": 0.879
+        },
+        {
+          "word": "a",
+          "start": 124.56,
+          "end": 124.88,
+          "confidence": 0.989
+        },
+        {
+          "word": "prince",
+          "start": 124.88,
+          "end": 125.36,
+          "confidence": 0.985
+        },
+        {
+          "word": "from",
+          "start": 125.36,
+          "end": 125.6,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 125.6,
+          "end": 125.77,
+          "confidence": 0.992
+        },
+        {
+          "word": "neighboring",
+          "start": 125.77,
+          "end": 126.24,
+          "confidence": 0.947
+        },
+        {
+          "word": "country",
+          "start": 126.24,
+          "end": 126.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "came",
+          "start": 126.88,
+          "end": 127.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 127.2,
+          "end": 127.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "save",
+          "start": 127.36,
+          "end": 127.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "her",
+          "start": 127.69,
+          "end": 128.19,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.979
     },
     {
       "id": 27,
-      "text": "\"With this dragon, you'll be able to save the princess!\" \"Oh, thanks!\" The prince could beat the scary monster.",
-      "start": 332.94,
-      "duration": 23.5
+      "text": "Prince.",
+      "speaker": "Speaker1",
+      "start": 129.69,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "prince",
+          "start": 129.69,
+          "end": 130.19,
+          "confidence": 0.956
+        }
+      ],
+      "confidence": 0.956
     },
     {
       "id": 28,
-      "text": "\"Thank you.",
-      "start": 356.44,
-      "duration": 1.12
+      "text": "Prince.",
+      "speaker": "Speaker3",
+      "start": 131.28,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "prince",
+          "start": 131.28,
+          "end": 131.78,
+          "confidence": 0.799
+        }
+      ],
+      "confidence": 0.799
     },
     {
       "id": 29,
-      "text": "My hero!\" \"You're welcome.\" The prince and princess got married and lived happily ever after.",
-      "start": 357.56,
-      "duration": 3.0
+      "text": "Prince.",
+      "speaker": "Speaker1",
+      "start": 133.28,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "prince",
+          "start": 133.28,
+          "end": 133.78,
+          "confidence": 0.796
+        }
+      ],
+      "confidence": 0.796
+    },
+    {
+      "id": 30,
+      "text": "I'll save the Princess, said the Prince.",
+      "speaker": "Speaker2",
+      "start": 136.26,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 136.26,
+          "end": 136.76,
+          "confidence": 0.948
+        },
+        {
+          "word": "save",
+          "start": 136.82,
+          "end": 137.14,
+          "confidence": 0.997
+        },
+        {
+          "word": "the",
+          "start": 137.14,
+          "end": 137.38,
+          "confidence": 0.998
+        },
+        {
+          "word": "princess",
+          "start": 137.38,
+          "end": 137.88,
+          "confidence": 0.826
+        },
+        {
+          "word": "said",
+          "start": 138.42,
+          "end": 138.74,
+          "confidence": 0.993
+        },
+        {
+          "word": "the",
+          "start": 138.74,
+          "end": 138.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "prince",
+          "start": 138.98,
+          "end": 139.48,
+          "confidence": 0.937
+        }
+      ],
+      "confidence": 0.942
+    },
+    {
+      "id": 31,
+      "text": "Suddenly, a fairy showed up.",
+      "speaker": "Speaker2",
+      "start": 140.26,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "suddenly",
+          "start": 140.26,
+          "end": 140.76,
+          "confidence": 0.951
+        },
+        {
+          "word": "a",
+          "start": 141.14,
+          "end": 141.38,
+          "confidence": 0.998
+        },
+        {
+          "word": "fairy",
+          "start": 141.38,
+          "end": 141.86,
+          "confidence": 0.992
+        },
+        {
+          "word": "showed",
+          "start": 141.86,
+          "end": 142.1,
+          "confidence": 0.999
+        },
+        {
+          "word": "up",
+          "start": 142.1,
+          "end": 142.6,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.951
+    },
+    {
+      "id": 32,
+      "text": "Fairy.",
+      "speaker": "Speaker1",
+      "start": 144.02,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "fairy",
+          "start": 144.02,
+          "end": 144.52,
+          "confidence": 0.856
+        }
+      ],
+      "confidence": 0.856
+    },
+    {
+      "id": 33,
+      "text": "With this dragon, you'll be able to save the princess.",
+      "speaker": "Speaker0",
+      "start": 150.56,
+      "duration": 3.69,
+      "words": [
+        {
+          "word": "with",
+          "start": 150.56,
+          "end": 150.96,
+          "confidence": 0.844
+        },
+        {
+          "word": "this",
+          "start": 150.96,
+          "end": 151.28,
+          "confidence": 0.998
+        },
+        {
+          "word": "dragon",
+          "start": 151.28,
+          "end": 151.78,
+          "confidence": 0.921
+        },
+        {
+          "word": "you'll",
+          "start": 152.24,
+          "end": 152.56,
+          "confidence": 0.994
+        },
+        {
+          "word": "be",
+          "start": 152.56,
+          "end": 152.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "able",
+          "start": 152.72,
+          "end": 153.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 153.03,
+          "end": 153.28,
+          "confidence": 0.998
+        },
+        {
+          "word": "save",
+          "start": 153.28,
+          "end": 153.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 153.59,
+          "end": 153.75,
+          "confidence": 0.998
+        },
+        {
+          "word": "princess",
+          "start": 153.75,
+          "end": 154.25,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.921
+    },
+    {
+      "id": 34,
+      "text": "Dragon.",
+      "speaker": "Speaker3",
+      "start": 157.28,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "dragon",
+          "start": 157.28,
+          "end": 157.78,
+          "confidence": 0.966
+        }
+      ],
+      "confidence": 0.966
+    },
+    {
+      "id": 35,
+      "text": "Dragon.",
+      "speaker": "Speaker3",
+      "start": 160.72,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "dragon",
+          "start": 160.72,
+          "end": 161.22,
+          "confidence": 0.96
+        }
+      ],
+      "confidence": 0.96
+    },
+    {
+      "id": 36,
+      "text": "Oh, thanks.",
+      "speaker": "Speaker2",
+      "start": 164.19,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "oh",
+          "start": 164.19,
+          "end": 164.69,
+          "confidence": 0.928
+        },
+        {
+          "word": "thanks",
+          "start": 164.83,
+          "end": 165.33,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.957
+    },
+    {
+      "id": 37,
+      "text": "The friends could beat the scary monster.",
+      "speaker": "Speaker1",
+      "start": 170.99,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "the",
+          "start": 170.99,
+          "end": 171.23,
+          "confidence": 0.803
+        },
+        {
+          "word": "friends",
+          "start": 171.23,
+          "end": 171.73,
+          "confidence": 0.885
+        },
+        {
+          "word": "could",
+          "start": 171.79,
+          "end": 172.03,
+          "confidence": 0.997
+        },
+        {
+          "word": "beat",
+          "start": 172.03,
+          "end": 172.35,
+          "confidence": 0.989
+        },
+        {
+          "word": "the",
+          "start": 172.35,
+          "end": 172.51,
+          "confidence": 0.937
+        },
+        {
+          "word": "scary",
+          "start": 172.51,
+          "end": 173.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "monster",
+          "start": 173.07,
+          "end": 173.57,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.944
+    },
+    {
+      "id": 38,
+      "text": "Thank you my hero.",
+      "speaker": "Speaker4",
+      "start": 181.75,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "thank",
+          "start": 181.75,
+          "end": 181.99,
+          "confidence": 0.919
+        },
+        {
+          "word": "you",
+          "start": 181.99,
+          "end": 182.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 182.31,
+          "end": 182.62,
+          "confidence": 0.812
+        },
+        {
+          "word": "hero",
+          "start": 182.62,
+          "end": 183.12,
+          "confidence": 0.961
+        }
+      ],
+      "confidence": 0.923
+    },
+    {
+      "id": 39,
+      "text": "You're welcome.",
+      "speaker": "Speaker1",
+      "start": 185.5,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "you're",
+          "start": 185.5,
+          "end": 185.91,
+          "confidence": 0.973
+        },
+        {
+          "word": "welcome",
+          "start": 185.91,
+          "end": 186.41,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.983
+    },
+    {
+      "id": 40,
+      "text": "Hero.",
+      "speaker": "Speaker3",
+      "start": 190.06,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hero",
+          "start": 190.06,
+          "end": 190.56,
+          "confidence": 0.797
+        }
+      ],
+      "confidence": 0.797
+    },
+    {
+      "id": 41,
+      "text": "Hero.",
+      "speaker": "Speaker1",
+      "start": 192.78,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hero",
+          "start": 192.78,
+          "end": 193.28,
+          "confidence": 0.965
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 42,
+      "text": "The prince and princess got married and lived happily ever after.",
+      "speaker": "Speaker1",
+      "start": 198.27,
+      "duration": 4.58,
+      "words": [
+        {
+          "word": "the",
+          "start": 198.27,
+          "end": 198.59,
+          "confidence": 0.94
+        },
+        {
+          "word": "prince",
+          "start": 198.59,
+          "end": 198.99,
+          "confidence": 0.885
+        },
+        {
+          "word": "and",
+          "start": 198.99,
+          "end": 199.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "princess",
+          "start": 199.23,
+          "end": 199.73,
+          "confidence": 0.998
+        },
+        {
+          "word": "got",
+          "start": 199.87,
+          "end": 200.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "married",
+          "start": 200.19,
+          "end": 200.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 200.75,
+          "end": 201.15,
+          "confidence": 0.938
+        },
+        {
+          "word": "lived",
+          "start": 201.15,
+          "end": 201.55,
+          "confidence": 0.997
+        },
+        {
+          "word": "happily",
+          "start": 201.55,
+          "end": 202.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "ever",
+          "start": 202.11,
+          "end": 202.35,
+          "confidence": 0.998
+        },
+        {
+          "word": "after",
+          "start": 202.35,
+          "end": 202.85,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 43,
+      "text": "Review.",
+      "speaker": "Speaker1",
+      "start": 206.91,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "review",
+          "start": 206.91,
+          "end": 207.41,
+          "confidence": 0.862
+        }
+      ],
+      "confidence": 0.862
+    },
+    {
+      "id": 44,
+      "text": "Dragon, fairy, hero, king, knight, magic, monster, palace, prince, princess, queen, witch.",
+      "speaker": "Speaker1",
+      "start": 210.56,
+      "duration": 34.73,
+      "words": [
+        {
+          "word": "dragon",
+          "start": 210.56,
+          "end": 211.06,
+          "confidence": 0.952
+        },
+        {
+          "word": "fairy",
+          "start": 213.44,
+          "end": 213.94,
+          "confidence": 0.985
+        },
+        {
+          "word": "hero",
+          "start": 216.25,
+          "end": 216.75,
+          "confidence": 0.994
+        },
+        {
+          "word": "king",
+          "start": 219.28,
+          "end": 219.78,
+          "confidence": 0.998
+        },
+        {
+          "word": "knight",
+          "start": 222.78,
+          "end": 223.28,
+          "confidence": 0.99
+        },
+        {
+          "word": "magic",
+          "start": 225.74,
+          "end": 226.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "monster",
+          "start": 228.62,
+          "end": 229.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "palace",
+          "start": 231.66,
+          "end": 232.16,
+          "confidence": 0.996
+        },
+        {
+          "word": "prince",
+          "start": 234.79,
+          "end": 235.29,
+          "confidence": 0.985
+        },
+        {
+          "word": "princess",
+          "start": 241.12,
+          "end": 241.36,
+          "confidence": 0.998
+        },
+        {
+          "word": "queen",
+          "start": 241.36,
+          "end": 241.86,
+          "confidence": 0.995
+        },
+        {
+          "word": "witch",
+          "start": 244.79,
+          "end": 245.29,
+          "confidence": 0.968
+        }
+      ],
+      "confidence": 0.952
+    },
+    {
+      "id": 45,
+      "text": "Replay.",
+      "speaker": "Speaker4",
+      "start": 247.99,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "replay",
+          "start": 247.99,
+          "end": 248.49,
+          "confidence": 0.866
+        }
+      ],
+      "confidence": 0.866
+    },
+    {
+      "id": 46,
+      "text": "Fairy tale.",
+      "speaker": "Speaker1",
+      "start": 258.23,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "fairy",
+          "start": 258.23,
+          "end": 258.55,
+          "confidence": 0.631
+        },
+        {
+          "word": "tale",
+          "start": 258.55,
+          "end": 259.05,
+          "confidence": 0.766
+        }
+      ],
+      "confidence": 0.699
+    },
+    {
+      "id": 47,
+      "text": "Once upon a time, there was a palace in a beautiful country.",
+      "speaker": "Speaker1",
+      "start": 261.25,
+      "duration": 4.65,
+      "words": [
+        {
+          "word": "once",
+          "start": 261.25,
+          "end": 261.56,
+          "confidence": 0.995
+        },
+        {
+          "word": "upon",
+          "start": 261.56,
+          "end": 261.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 261.81,
+          "end": 262.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 262.04,
+          "end": 262.54,
+          "confidence": 0.978
+        },
+        {
+          "word": "there",
+          "start": 263.25,
+          "end": 263.56,
+          "confidence": 0.991
+        },
+        {
+          "word": "was",
+          "start": 263.56,
+          "end": 263.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 263.81,
+          "end": 264.04,
+          "confidence": 0.999
+        },
+        {
+          "word": "palace",
+          "start": 264.04,
+          "end": 264.52,
+          "confidence": 0.984
+        },
+        {
+          "word": "in",
+          "start": 264.52,
+          "end": 264.76,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 264.76,
+          "end": 264.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "beautiful",
+          "start": 264.93,
+          "end": 265.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "country",
+          "start": 265.4,
+          "end": 265.9,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 48,
+      "text": "There lived a very handsome king and a beautiful queen.",
+      "speaker": "Speaker1",
+      "start": 268.12,
+      "duration": 3.87,
+      "words": [
+        {
+          "word": "there",
+          "start": 268.12,
+          "end": 268.44,
+          "confidence": 0.987
+        },
+        {
+          "word": "lived",
+          "start": 268.44,
+          "end": 268.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 268.85,
+          "end": 269.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "very",
+          "start": 269.0,
+          "end": 269.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "handsome",
+          "start": 269.49,
+          "end": 269.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "king",
+          "start": 269.96,
+          "end": 270.44,
+          "confidence": 0.974
+        },
+        {
+          "word": "and",
+          "start": 270.44,
+          "end": 270.69,
+          "confidence": 0.994
+        },
+        {
+          "word": "a",
+          "start": 270.69,
+          "end": 270.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "beautiful",
+          "start": 270.93,
+          "end": 271.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "queen",
+          "start": 271.49,
+          "end": 271.99,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 49,
+      "text": "They had a pretty princess.",
+      "speaker": "Speaker1",
+      "start": 273.7,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "they",
+          "start": 273.7,
+          "end": 273.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "had",
+          "start": 273.94,
+          "end": 274.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 274.26,
+          "end": 274.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "pretty",
+          "start": 274.5,
+          "end": 274.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "princess",
+          "start": 274.9,
+          "end": 275.4,
+          "confidence": 0.964
+        }
+      ],
+      "confidence": 0.992
+    },
+    {
+      "id": 50,
+      "text": "One day, the witch took the princess.",
+      "speaker": "Speaker3",
+      "start": 279.22,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "one",
+          "start": 279.22,
+          "end": 279.46,
+          "confidence": 0.984
+        },
+        {
+          "word": "day",
+          "start": 279.46,
+          "end": 279.96,
+          "confidence": 0.946
+        },
+        {
+          "word": "the",
+          "start": 280.1,
+          "end": 280.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "witch",
+          "start": 280.34,
+          "end": 280.82,
+          "confidence": 0.996
+        },
+        {
+          "word": "took",
+          "start": 280.82,
+          "end": 281.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 281.22,
+          "end": 281.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "princess",
+          "start": 281.38,
+          "end": 281.88,
+          "confidence": 0.974
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 51,
+      "text": "With her magic, the princess was trapped in the dark forest.",
+      "speaker": "Speaker1",
+      "start": 285.06,
+      "duration": 4.1,
+      "words": [
+        {
+          "word": "with",
+          "start": 285.06,
+          "end": 285.3,
+          "confidence": 0.958
+        },
+        {
+          "word": "her",
+          "start": 285.3,
+          "end": 285.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "magic",
+          "start": 285.54,
+          "end": 286.04,
+          "confidence": 0.987
+        },
+        {
+          "word": "the",
+          "start": 286.5,
+          "end": 286.66,
+          "confidence": 0.998
+        },
+        {
+          "word": "princess",
+          "start": 286.66,
+          "end": 287.16,
+          "confidence": 0.964
+        },
+        {
+          "word": "was",
+          "start": 287.22,
+          "end": 287.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "trapped",
+          "start": 287.46,
+          "end": 287.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 287.94,
+          "end": 288.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 288.18,
+          "end": 288.34,
+          "confidence": 0.991
+        },
+        {
+          "word": "dark",
+          "start": 288.34,
+          "end": 288.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "forest",
+          "start": 288.66,
+          "end": 289.16,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 52,
+      "text": "Many knights tried to save the princess.",
+      "speaker": "Speaker1",
+      "start": 292.48,
+      "duration": 2.73,
+      "words": [
+        {
+          "word": "many",
+          "start": 292.48,
+          "end": 292.88,
+          "confidence": 0.929
+        },
+        {
+          "word": "knights",
+          "start": 292.88,
+          "end": 293.38,
+          "confidence": 0.978
+        },
+        {
+          "word": "tried",
+          "start": 293.44,
+          "end": 293.83,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 293.83,
+          "end": 294.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "save",
+          "start": 294.15,
+          "end": 294.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 294.48,
+          "end": 294.71,
+          "confidence": 0.999
+        },
+        {
+          "word": "princess",
+          "start": 294.71,
+          "end": 295.21,
+          "confidence": 0.902
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 53,
+      "text": "But they failed because the forest was guarded by a scary monster.",
+      "speaker": "Speaker1",
+      "start": 297.91,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "but",
+          "start": 297.91,
+          "end": 298.24,
+          "confidence": 0.914
+        },
+        {
+          "word": "they",
+          "start": 298.24,
+          "end": 298.56,
+          "confidence": 0.986
+        },
+        {
+          "word": "failed",
+          "start": 298.56,
+          "end": 299.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "because",
+          "start": 299.35,
+          "end": 299.75,
+          "confidence": 0.708
+        },
+        {
+          "word": "the",
+          "start": 299.75,
+          "end": 300.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "forest",
+          "start": 300.0,
+          "end": 300.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "was",
+          "start": 300.48,
+          "end": 300.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "guarded",
+          "start": 300.79,
+          "end": 301.29,
+          "confidence": 1.0
+        },
+        {
+          "word": "by",
+          "start": 301.35,
+          "end": 301.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 301.6,
+          "end": 301.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "scary",
+          "start": 301.83,
+          "end": 302.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "monster",
+          "start": 302.39,
+          "end": 302.89,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 54,
+      "text": "The king and queen were so sad.",
+      "speaker": "Speaker1",
+      "start": 307.03,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "the",
+          "start": 307.03,
+          "end": 307.35,
+          "confidence": 0.991
+        },
+        {
+          "word": "king",
+          "start": 307.35,
+          "end": 307.59,
+          "confidence": 0.802
+        },
+        {
+          "word": "and",
+          "start": 307.59,
+          "end": 307.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "queen",
+          "start": 307.91,
+          "end": 308.31,
+          "confidence": 0.998
+        },
+        {
+          "word": "were",
+          "start": 308.31,
+          "end": 308.63,
+          "confidence": 0.999
+        },
+        {
+          "word": "so",
+          "start": 308.63,
+          "end": 309.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "sad",
+          "start": 309.03,
+          "end": 309.53,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 55,
+      "text": "One day, a prince from a neighboring country came to save her.",
+      "speaker": "Speaker1",
+      "start": 313.51,
+      "duration": 4.58,
+      "words": [
+        {
+          "word": "one",
+          "start": 313.51,
+          "end": 313.75,
+          "confidence": 0.966
+        },
+        {
+          "word": "day",
+          "start": 313.75,
+          "end": 314.25,
+          "confidence": 0.94
+        },
+        {
+          "word": "a",
+          "start": 314.55,
+          "end": 314.79,
+          "confidence": 0.983
+        },
+        {
+          "word": "prince",
+          "start": 314.79,
+          "end": 315.19,
+          "confidence": 0.757
+        },
+        {
+          "word": "from",
+          "start": 315.19,
+          "end": 315.51,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 315.51,
+          "end": 315.67,
+          "confidence": 0.992
+        },
+        {
+          "word": "neighboring",
+          "start": 315.67,
+          "end": 316.17,
+          "confidence": 0.86
+        },
+        {
+          "word": "country",
+          "start": 316.23,
+          "end": 316.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "came",
+          "start": 316.79,
+          "end": 317.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 317.03,
+          "end": 317.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "save",
+          "start": 317.27,
+          "end": 317.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "her",
+          "start": 317.59,
+          "end": 318.09,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.958
+    },
+    {
+      "id": 56,
+      "text": "I'll save the princess, said the prince.",
+      "speaker": "Speaker2",
+      "start": 320.11,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 320.11,
+          "end": 320.5,
+          "confidence": 0.991
+        },
+        {
+          "word": "save",
+          "start": 320.5,
+          "end": 320.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 320.9,
+          "end": 321.14,
+          "confidence": 0.998
+        },
+        {
+          "word": "princess",
+          "start": 321.14,
+          "end": 321.64,
+          "confidence": 0.912
+        },
+        {
+          "word": "said",
+          "start": 322.19,
+          "end": 322.5,
+          "confidence": 0.994
+        },
+        {
+          "word": "the",
+          "start": 322.5,
+          "end": 322.67,
+          "confidence": 0.998
+        },
+        {
+          "word": "prince",
+          "start": 322.67,
+          "end": 323.17,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.975
+    },
+    {
+      "id": 57,
+      "text": "Suddenly, a fairy showed up.",
+      "speaker": "Speaker1",
+      "start": 325.87,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "suddenly",
+          "start": 325.87,
+          "end": 326.37,
+          "confidence": 0.965
+        },
+        {
+          "word": "a",
+          "start": 326.9,
+          "end": 327.06,
+          "confidence": 0.998
+        },
+        {
+          "word": "fairy",
+          "start": 327.06,
+          "end": 327.55,
+          "confidence": 0.995
+        },
+        {
+          "word": "showed",
+          "start": 327.55,
+          "end": 327.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 327.79,
+          "end": 328.29,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.965
+    },
+    {
+      "id": 58,
+      "text": "With this dragon, you'll be able to save the princess.",
+      "speaker": "Speaker0",
+      "start": 333.19,
+      "duration": 3.62,
+      "words": [
+        {
+          "word": "with",
+          "start": 333.19,
+          "end": 333.51,
+          "confidence": 0.984
+        },
+        {
+          "word": "this",
+          "start": 333.51,
+          "end": 333.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "dragon",
+          "start": 333.83,
+          "end": 334.33,
+          "confidence": 0.926
+        },
+        {
+          "word": "you'll",
+          "start": 334.71,
+          "end": 335.11,
+          "confidence": 0.993
+        },
+        {
+          "word": "be",
+          "start": 335.11,
+          "end": 335.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "able",
+          "start": 335.27,
+          "end": 335.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 335.59,
+          "end": 335.75,
+          "confidence": 0.998
+        },
+        {
+          "word": "save",
+          "start": 335.75,
+          "end": 336.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 336.07,
+          "end": 336.31,
+          "confidence": 0.994
+        },
+        {
+          "word": "princess",
+          "start": 336.31,
+          "end": 336.81,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 59,
+      "text": "Oh, thanks.",
+      "speaker": "Speaker2",
+      "start": 339.43,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "oh",
+          "start": 339.43,
+          "end": 339.91,
+          "confidence": 0.909
+        },
+        {
+          "word": "thanks",
+          "start": 339.91,
+          "end": 340.41,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.946
+    },
+    {
+      "id": 60,
+      "text": "The prince could beat the scary monster.",
+      "speaker": "Speaker1",
+      "start": 344.29,
+      "duration": 2.59,
+      "words": [
+        {
+          "word": "the",
+          "start": 344.29,
+          "end": 344.69,
+          "confidence": 0.973
+        },
+        {
+          "word": "prince",
+          "start": 344.69,
+          "end": 345.1,
+          "confidence": 0.844
+        },
+        {
+          "word": "could",
+          "start": 345.1,
+          "end": 345.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "beat",
+          "start": 345.41,
+          "end": 345.74,
+          "confidence": 0.993
+        },
+        {
+          "word": "the",
+          "start": 345.74,
+          "end": 345.98,
+          "confidence": 0.978
+        },
+        {
+          "word": "scary",
+          "start": 345.98,
+          "end": 346.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "monster",
+          "start": 346.38,
+          "end": 346.88,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 61,
+      "text": "Thank you, my hero.",
+      "speaker": "Speaker4",
+      "start": 356.62,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "thank",
+          "start": 356.62,
+          "end": 357.01,
+          "confidence": 0.951
+        },
+        {
+          "word": "you",
+          "start": 357.01,
+          "end": 357.33,
+          "confidence": 0.834
+        },
+        {
+          "word": "my",
+          "start": 357.33,
+          "end": 357.57,
+          "confidence": 0.996
+        },
+        {
+          "word": "hero",
+          "start": 357.57,
+          "end": 358.07,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.941
+    },
+    {
+      "id": 62,
+      "text": "You're welcome.",
+      "speaker": "Speaker1",
+      "start": 360.36,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "you're",
+          "start": 360.36,
+          "end": 360.76,
+          "confidence": 0.957
+        },
+        {
+          "word": "welcome",
+          "start": 360.76,
+          "end": 361.26,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.977
+    },
+    {
+      "id": 63,
+      "text": "The prince and princess got married and lived happily ever after.",
+      "speaker": "Speaker1",
+      "start": 365.16,
+      "duration": 4.66,
+      "words": [
+        {
+          "word": "the",
+          "start": 365.16,
+          "end": 365.48,
+          "confidence": 0.909
+        },
+        {
+          "word": "prince",
+          "start": 365.48,
+          "end": 365.88,
+          "confidence": 0.784
+        },
+        {
+          "word": "and",
+          "start": 365.88,
+          "end": 366.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "princess",
+          "start": 366.2,
+          "end": 366.7,
+          "confidence": 0.997
+        },
+        {
+          "word": "got",
+          "start": 366.84,
+          "end": 367.08,
+          "confidence": 0.998
+        },
+        {
+          "word": "married",
+          "start": 367.08,
+          "end": 367.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 367.72,
+          "end": 368.04,
+          "confidence": 0.932
+        },
+        {
+          "word": "lived",
+          "start": 368.04,
+          "end": 368.44,
+          "confidence": 0.995
+        },
+        {
+          "word": "happily",
+          "start": 368.44,
+          "end": 368.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "ever",
+          "start": 369.08,
+          "end": 369.32,
+          "confidence": 0.998
+        },
+        {
+          "word": "after",
+          "start": 369.32,
+          "end": 369.82,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.965
     }
   ],
   "videoId": "aSdnkKnL6Ys",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:12.438099+00:00",
+  "fetchedAt": "2026-08-03T11:05:04.174328+00:00",
   "rawCaptionCount": 60,
   "splitAt": "2026-08-03T05:15:00.311147+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2",
+    "3": "Speaker3",
+    "4": "Speaker4"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:05:04.174354+00:00",
+    "dgWordCount": 308,
+    "dgUtteranceCount": 84,
+    "matchedSegments": 84,
+    "totalDuration": 369.82
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

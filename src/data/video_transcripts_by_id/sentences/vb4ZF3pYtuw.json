@@ -1,629 +1,3114 @@
 {
-  "text": "Learn English with Sun English Center. >> My school things. Hi Quan. Do you have a pencil? >> Yes, I do. It's new. >> Great. Do you have an eraser? >> No, I don't. It's at home. >> That's okay. I have one. Here you are. >> Thank you. Numb. >> Does Lynn have a notebook? Yes, she does. It's pink. >> Look, I have a blue pencil case. >> Wow, it's so nice. I have a yellow highlighter and a crayon. >> Cool. I have a green pen. Does Jack have a calculator? >> Yes, he does. He has it every day. >> Do you have a compass? >> No, I don't have it today. Listen and repeat. Hi Quan, do you have a pencil? Hi Quan, do you have a pencil? Hi Quan, do you have a pencil? Yes, I do. [music] It's new. Yes, I do. It's new. Yes, I do. It's new. Great. Do you have an eraser? Great. Do you have ven eraser? Great. Do you have ven eraser? No, I don't. It's at home. No, I don't. It's [music] at home. No, I don't. It's at home. [music] That's okay. I have one. Here you are. That's okay. I have one. Here you are. That's okay. I have one. Here you are. Thank you, Num. Thank you, Num. Thank you, Num. Does Lynn have a notebook? [music] Does Lynn have a notebook? Does Lynn have a notebook? [music] Yes, she does. It's pink. Yes, she does. It's pink. Yes, she does. It's pink. Look, I have a blue pencil case. Look, I have a blue pencil case. Look, I have a blue pencil case. Wow, it's so nice. Wow, it's so nice. Wow, it's so nice. I have a yellow highlighter and a crayon. [music] I have a yellow highlighter and a [music] crayon. I have a yellow highlighter and a crayon. Cool. I have a green pen. Cool. I have a green pen. Cool. I have a green pen. Does Jack have a calculator? Does Jack have a calculator? Does Jack have a calculator? Yes, he does. He has it every day. Yes, he does. He has it every day. Yes, he does. He has it every day. Do you have a compass? Do you have a compass? Do you have a compass? No, I don't have it today. No, I don't have it today. No, I don't have it today. Thank you for watching. See you next time.",
+  "text": "Learn English with SunEnglish Center. My school things. Hi, Kwan. Do you have a pencil? Yes, I do. It's new. Great. Do you have an eraser? No. I don't. It's at home. That's okay. I have one. Here you are. Thank you, Nam. Does Lynn have a notebook? Yes, she does. It's pink. Look, I have a blue pencil case. Wow, it's so nice. I have a yellow highlighter and a crayon. Cool. I have a green pen. Does Jack have a calculator? Yes. He does. He has it every day. Do you have a compass? No, I don't have it today. Listen and repeat. Hi, Quan. Do you have a pencil? Hi, Kwan. Do you have a pencil? Hi, Kwan. Do you have a pencil? Yes, I do. It's new. Yes, I do. It's new. Yes, I do. It's new. Great. Do you have an eraser? Great. Do you have Ven Eraser? Great. Do you have Ven Eraser? No, I don't. It's at home. No, I don't, it's at home. No, I don't, it's at home. That's okay, I have one, here you are. That's okay, I have one, here you are. That's okay, I have one, here you are. Thank you, numb. Thank you, numb. Thank you, numb. Does Lynn have a notebook? Does Lynn have a notebook? Does Lynn have a notebook? Yes, she does. It's pink. Yes, she does, it's pink. Yes, she does, it's pink. Look. I have a blue pencil case. Look. I have a blue pencil case. Look, I have a blue pencil case. Wow. It's so nice. Wow. It's so nice. Wow. It's so nice. I have a yellow highlighter and a crayon. I have a yellow highlighter and a crayon. I have a yellow highlighter and a crayon. Cool. I have a green pen. Cool. I have a green pen. Cool. I have a green pen. Does Jack have a calculator? Does Jack have a calculator? Does Jack have a calculator? Yes, he does. He has it every day. Yes, he does. He has it every day. Yes, he does. He has it every day. Do you have a compass? Do you have a compass? Do you have a compass? No, I don't have it today. No, I don't have it today. No, I don't have it today. Thank you for watching. See you next time.",
   "segments": [
     {
       "id": 1,
-      "text": "Learn English with Sun English Center.",
-      "start": 1.28,
-      "duration": 4.16
+      "text": "Learn English with SunEnglish Center.",
+      "speaker": "Speaker0",
+      "start": 0.96,
+      "duration": 2.82,
+      "words": [
+        {
+          "word": "learn",
+          "start": 0.96,
+          "end": 1.46,
+          "confidence": 0.98
+        },
+        {
+          "word": "english",
+          "start": 1.68,
+          "end": 2.18,
+          "confidence": 0.996
+        },
+        {
+          "word": "with",
+          "start": 2.24,
+          "end": 2.56,
+          "confidence": 0.977
+        },
+        {
+          "word": "sunenglish",
+          "start": 2.56,
+          "end": 3.06,
+          "confidence": 0.745
+        },
+        {
+          "word": "center",
+          "start": 3.28,
+          "end": 3.78,
+          "confidence": 0.96
+        }
+      ],
+      "confidence": 0.932
     },
     {
       "id": 2,
-      "text": ">> My school things.",
-      "start": 5.44,
-      "duration": 2.96
+      "text": "My school things.",
+      "speaker": "Speaker1",
+      "start": 5.36,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "my",
+          "start": 5.36,
+          "end": 5.84,
+          "confidence": 0.997
+        },
+        {
+          "word": "school",
+          "start": 5.84,
+          "end": 6.24,
+          "confidence": 0.974
+        },
+        {
+          "word": "things",
+          "start": 6.24,
+          "end": 6.74,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 3,
-      "text": "Hi Quan.",
-      "start": 8.4,
-      "duration": 1.92
+      "text": "Hi, Kwan. Do you have a pencil?",
+      "speaker": "Speaker1",
+      "start": 8.24,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "hi",
+          "start": 8.24,
+          "end": 8.64,
+          "confidence": 0.892
+        },
+        {
+          "word": "kwan",
+          "start": 8.64,
+          "end": 9.14,
+          "confidence": 0.715
+        },
+        {
+          "word": "do",
+          "start": 9.36,
+          "end": 9.52,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 9.52,
+          "end": 9.68,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 9.68,
+          "end": 9.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 9.84,
+          "end": 10.0,
+          "confidence": 0.998
+        },
+        {
+          "word": "pencil",
+          "start": 10.0,
+          "end": 10.5,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.943
     },
     {
       "id": 4,
-      "text": "Do you have a pencil?",
-      "start": 10.32,
-      "duration": 1.44
+      "text": "Yes, I do. It's new.",
+      "speaker": "Speaker2",
+      "start": 11.76,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "yes",
+          "start": 11.76,
+          "end": 12.16,
+          "confidence": 0.845
+        },
+        {
+          "word": "i",
+          "start": 12.16,
+          "end": 12.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 12.4,
+          "end": 12.9,
+          "confidence": 0.979
+        },
+        {
+          "word": "it's",
+          "start": 12.96,
+          "end": 13.36,
+          "confidence": 0.998
+        },
+        {
+          "word": "new",
+          "start": 13.36,
+          "end": 13.86,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.964
     },
     {
       "id": 5,
-      "text": ">> Yes, I do.",
-      "start": 11.76,
-      "duration": 4.43
+      "text": "Great. Do you have an eraser?",
+      "speaker": "Speaker3",
+      "start": 15.07,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "great",
+          "start": 15.07,
+          "end": 15.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "do",
+          "start": 15.87,
+          "end": 16.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 16.11,
+          "end": 16.18,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 16.18,
+          "end": 16.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "an",
+          "start": 16.43,
+          "end": 16.66,
+          "confidence": 0.989
+        },
+        {
+          "word": "eraser",
+          "start": 16.66,
+          "end": 17.16,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 6,
-      "text": "It's new.",
-      "start": 16.19,
-      "duration": 0.5
+      "text": "No. I don't. It's at home.",
+      "speaker": "Speaker4",
+      "start": 18.27,
+      "duration": 2.25,
+      "words": [
+        {
+          "word": "no",
+          "start": 18.27,
+          "end": 18.77,
+          "confidence": 0.898
+        },
+        {
+          "word": "i",
+          "start": 18.82,
+          "end": 18.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "don't",
+          "start": 18.98,
+          "end": 19.48,
+          "confidence": 0.982
+        },
+        {
+          "word": "it's",
+          "start": 19.55,
+          "end": 19.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "at",
+          "start": 19.86,
+          "end": 20.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "home",
+          "start": 20.02,
+          "end": 20.52,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 7,
-      "text": ">> Great.",
-      "start": 15.12,
-      "duration": 1.85
+      "text": "That's okay. I have one. Here you are.",
+      "speaker": "Speaker5",
+      "start": 21.46,
+      "duration": 3.07,
+      "words": [
+        {
+          "word": "that's",
+          "start": 21.46,
+          "end": 21.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "okay",
+          "start": 21.86,
+          "end": 22.36,
+          "confidence": 0.995
+        },
+        {
+          "word": "i",
+          "start": 22.59,
+          "end": 22.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 22.82,
+          "end": 23.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "one",
+          "start": 23.07,
+          "end": 23.57,
+          "confidence": 0.992
+        },
+        {
+          "word": "here",
+          "start": 23.62,
+          "end": 23.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 23.79,
+          "end": 24.03,
+          "confidence": 0.997
+        },
+        {
+          "word": "are",
+          "start": 24.03,
+          "end": 24.53,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 8,
-      "text": "Do you have an eraser?",
-      "start": 16.97,
-      "duration": 1.43
+      "text": "Thank you, Nam.",
+      "speaker": "Speaker6",
+      "start": 25.3,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "thank",
+          "start": 25.3,
+          "end": 25.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 25.55,
+          "end": 25.86,
+          "confidence": 0.985
+        },
+        {
+          "word": "nam",
+          "start": 25.86,
+          "end": 26.36,
+          "confidence": 0.895
+        }
+      ],
+      "confidence": 0.96
     },
     {
       "id": 9,
-      "text": ">> No, I don't.",
-      "start": 18.4,
-      "duration": 4.02
+      "text": "Does Lynn have a notebook?",
+      "speaker": "Speaker7",
+      "start": 26.98,
+      "duration": 1.47,
+      "words": [
+        {
+          "word": "does",
+          "start": 26.98,
+          "end": 27.3,
+          "confidence": 0.997
+        },
+        {
+          "word": "lynn",
+          "start": 27.3,
+          "end": 27.62,
+          "confidence": 0.892
+        },
+        {
+          "word": "have",
+          "start": 27.62,
+          "end": 27.79,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 27.79,
+          "end": 27.95,
+          "confidence": 0.998
+        },
+        {
+          "word": "notebook",
+          "start": 27.95,
+          "end": 28.45,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.976
     },
     {
       "id": 10,
-      "text": "It's at home.",
-      "start": 22.42,
-      "duration": 0.5
+      "text": "Yes, she does. It's pink.",
+      "speaker": "Speaker6",
+      "start": 29.43,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "yes",
+          "start": 29.43,
+          "end": 29.93,
+          "confidence": 0.75
+        },
+        {
+          "word": "she",
+          "start": 29.99,
+          "end": 30.23,
+          "confidence": 0.997
+        },
+        {
+          "word": "does",
+          "start": 30.23,
+          "end": 30.73,
+          "confidence": 0.949
+        },
+        {
+          "word": "it's",
+          "start": 30.87,
+          "end": 31.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "pink",
+          "start": 31.19,
+          "end": 31.69,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.939
     },
     {
       "id": 11,
-      "text": ">> That's okay.",
-      "start": 21.6,
-      "duration": 1.84
+      "text": "Look, I have a blue pencil case.",
+      "speaker": "Speaker8",
+      "start": 33.27,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "look",
+          "start": 33.27,
+          "end": 33.51,
+          "confidence": 0.757
+        },
+        {
+          "word": "i",
+          "start": 33.51,
+          "end": 33.67,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 33.67,
+          "end": 33.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 33.91,
+          "end": 33.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "blue",
+          "start": 33.99,
+          "end": 34.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "pencil",
+          "start": 34.39,
+          "end": 34.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "case",
+          "start": 34.79,
+          "end": 35.29,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.965
     },
     {
       "id": 12,
-      "text": "I have one.",
-      "start": 23.44,
-      "duration": 1.84
+      "text": "Wow, it's so nice.",
+      "speaker": "Speaker9",
+      "start": 36.31,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "wow",
+          "start": 36.31,
+          "end": 36.81,
+          "confidence": 0.799
+        },
+        {
+          "word": "it's",
+          "start": 36.95,
+          "end": 37.35,
+          "confidence": 0.984
+        },
+        {
+          "word": "so",
+          "start": 37.35,
+          "end": 37.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "nice",
+          "start": 37.59,
+          "end": 38.09,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.946
     },
     {
       "id": 13,
-      "text": "Here you are.",
-      "start": 25.28,
-      "duration": 0.5
+      "text": "I have a yellow highlighter and a crayon.",
+      "speaker": "Speaker9",
+      "start": 39.59,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "i",
+          "start": 39.59,
+          "end": 39.83,
+          "confidence": 0.847
+        },
+        {
+          "word": "have",
+          "start": 39.83,
+          "end": 40.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 40.07,
+          "end": 40.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "yellow",
+          "start": 40.23,
+          "end": 40.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "highlighter",
+          "start": 40.71,
+          "end": 41.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 41.35,
+          "end": 41.59,
+          "confidence": 0.975
+        },
+        {
+          "word": "a",
+          "start": 41.59,
+          "end": 41.67,
+          "confidence": 0.994
+        },
+        {
+          "word": "crayon",
+          "start": 41.67,
+          "end": 42.17,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.977
     },
     {
       "id": 14,
-      "text": ">> Thank you.",
-      "start": 25.44,
-      "duration": 3.18
+      "text": "Cool.",
+      "speaker": "Speaker0",
+      "start": 43.45,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "cool",
+          "start": 43.45,
+          "end": 43.95,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 15,
-      "text": "Numb.",
-      "start": 28.62,
-      "duration": 0.5
+      "text": "I have a green pen.",
+      "speaker": "Speaker0",
+      "start": 44.33,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "i",
+          "start": 44.33,
+          "end": 44.48,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 44.48,
+          "end": 44.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 44.65,
+          "end": 44.89,
+          "confidence": 0.999
+        },
+        {
+          "word": "green",
+          "start": 44.89,
+          "end": 45.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "pen",
+          "start": 45.2,
+          "end": 45.7,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
       "id": 16,
-      "text": ">> Does Lynn have a notebook?",
-      "start": 27.12,
-      "duration": 2.56
+      "text": "Does Jack have a calculator?",
+      "speaker": "Speaker0",
+      "start": 47.28,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "does",
+          "start": 47.28,
+          "end": 47.52,
+          "confidence": 0.94
+        },
+        {
+          "word": "jack",
+          "start": 47.52,
+          "end": 47.77,
+          "confidence": 0.833
+        },
+        {
+          "word": "have",
+          "start": 47.77,
+          "end": 48.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 48.01,
+          "end": 48.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "calculator",
+          "start": 48.16,
+          "end": 48.66,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.954
     },
     {
       "id": 17,
-      "text": "Yes, she does.",
-      "start": 29.68,
-      "duration": 3.98
+      "text": "Yes. He does. He has it every day.",
+      "speaker": "Speaker10",
+      "start": 49.69,
+      "duration": 2.82,
+      "words": [
+        {
+          "word": "yes",
+          "start": 49.69,
+          "end": 50.09,
+          "confidence": 0.768
+        },
+        {
+          "word": "he",
+          "start": 50.09,
+          "end": 50.41,
+          "confidence": 0.998
+        },
+        {
+          "word": "does",
+          "start": 50.41,
+          "end": 50.91,
+          "confidence": 0.983
+        },
+        {
+          "word": "he",
+          "start": 51.05,
+          "end": 51.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "has",
+          "start": 51.28,
+          "end": 51.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 51.52,
+          "end": 51.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "every",
+          "start": 51.77,
+          "end": 52.01,
+          "confidence": 0.78
+        },
+        {
+          "word": "day",
+          "start": 52.01,
+          "end": 52.51,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.941
     },
     {
       "id": 18,
-      "text": "It's pink.",
-      "start": 33.66,
-      "duration": 0.5
+      "text": "Do you have a compass?",
+      "speaker": "Speaker0",
+      "start": 53.69,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "do",
+          "start": 53.69,
+          "end": 53.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 53.92,
+          "end": 54.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 54.09,
+          "end": 54.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 54.33,
+          "end": 54.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "compass",
+          "start": 54.48,
+          "end": 54.98,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 19,
-      "text": ">> Look, I have a blue pencil case.",
-      "start": 32.8,
-      "duration": 3.52
+      "text": "No, I don't have it today.",
+      "speaker": "Speaker11",
+      "start": 56.34,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "no",
+          "start": 56.34,
+          "end": 56.74,
+          "confidence": 0.794
+        },
+        {
+          "word": "i",
+          "start": 56.74,
+          "end": 56.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "don't",
+          "start": 56.9,
+          "end": 57.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 57.14,
+          "end": 57.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 57.3,
+          "end": 57.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "today",
+          "start": 57.54,
+          "end": 58.04,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.966
     },
     {
       "id": 20,
-      "text": ">> Wow, it's so nice.",
-      "start": 36.32,
-      "duration": 3.36
+      "text": "Listen and repeat.",
+      "speaker": "Speaker7",
+      "start": 59.62,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "listen",
+          "start": 59.62,
+          "end": 60.12,
+          "confidence": 0.998
+        },
+        {
+          "word": "and",
+          "start": 60.5,
+          "end": 60.9,
+          "confidence": 0.971
+        },
+        {
+          "word": "repeat",
+          "start": 60.9,
+          "end": 61.4,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 21,
-      "text": "I have a yellow highlighter and a crayon.",
-      "start": 39.68,
-      "duration": 3.84
+      "text": "Hi, Quan. Do you have a pencil?",
+      "speaker": "Speaker1",
+      "start": 63.38,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "hi",
+          "start": 63.38,
+          "end": 63.86,
+          "confidence": 0.973
+        },
+        {
+          "word": "quan",
+          "start": 63.86,
+          "end": 64.36,
+          "confidence": 0.721
+        },
+        {
+          "word": "do",
+          "start": 64.42,
+          "end": 64.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 64.66,
+          "end": 64.82,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 64.82,
+          "end": 64.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 64.98,
+          "end": 65.06,
+          "confidence": 0.998
+        },
+        {
+          "word": "pencil",
+          "start": 65.06,
+          "end": 65.56,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.956
     },
     {
       "id": 22,
-      "text": ">> Cool.",
-      "start": 43.52,
-      "duration": 1.81
+      "text": "Hi, Kwan. Do you have a pencil?",
+      "speaker": "Speaker1",
+      "start": 70.91,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "hi",
+          "start": 70.91,
+          "end": 71.14,
+          "confidence": 0.903
+        },
+        {
+          "word": "kwan",
+          "start": 71.14,
+          "end": 71.64,
+          "confidence": 0.774
+        },
+        {
+          "word": "do",
+          "start": 71.86,
+          "end": 72.1,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 72.1,
+          "end": 72.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 72.19,
+          "end": 72.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 72.34,
+          "end": 72.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "pencil",
+          "start": 72.5,
+          "end": 73.0,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.953
     },
     {
       "id": 23,
-      "text": "I have a green pen.",
-      "start": 45.33,
-      "duration": 1.95
+      "text": "Hi, Kwan. Do you have a pencil?",
+      "speaker": "Speaker1",
+      "start": 77.22,
+      "duration": 2.19,
+      "words": [
+        {
+          "word": "hi",
+          "start": 77.22,
+          "end": 77.62,
+          "confidence": 0.971
+        },
+        {
+          "word": "kwan",
+          "start": 77.62,
+          "end": 78.12,
+          "confidence": 0.993
+        },
+        {
+          "word": "do",
+          "start": 78.27,
+          "end": 78.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 78.5,
+          "end": 78.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 78.66,
+          "end": 78.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 78.83,
+          "end": 78.91,
+          "confidence": 0.999
+        },
+        {
+          "word": "pencil",
+          "start": 78.91,
+          "end": 79.41,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 24,
-      "text": "Does Jack have a calculator?",
-      "start": 47.28,
-      "duration": 2.56
+      "text": "Yes, I do. It's new.",
+      "speaker": "Speaker2",
+      "start": 84.88,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "yes",
+          "start": 84.88,
+          "end": 85.36,
+          "confidence": 0.772
+        },
+        {
+          "word": "i",
+          "start": 85.36,
+          "end": 85.68,
+          "confidence": 0.998
+        },
+        {
+          "word": "do",
+          "start": 85.68,
+          "end": 86.18,
+          "confidence": 0.924
+        },
+        {
+          "word": "it's",
+          "start": 86.24,
+          "end": 86.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "new",
+          "start": 86.56,
+          "end": 87.06,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.939
     },
     {
       "id": 25,
-      "text": ">> Yes, he does.",
-      "start": 49.84,
-      "duration": 2.88
+      "text": "Yes, I do. It's new.",
+      "speaker": "Speaker2",
+      "start": 92.64,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "yes",
+          "start": 92.64,
+          "end": 93.12,
+          "confidence": 0.996
+        },
+        {
+          "word": "i",
+          "start": 93.12,
+          "end": 93.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 93.36,
+          "end": 93.86,
+          "confidence": 0.995
+        },
+        {
+          "word": "it's",
+          "start": 93.92,
+          "end": 94.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "new",
+          "start": 94.32,
+          "end": 94.82,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 26,
-      "text": "He has it every day.",
-      "start": 52.72,
-      "duration": 1.12
+      "text": "Yes, I do. It's new.",
+      "speaker": "Speaker2",
+      "start": 99.67,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "yes",
+          "start": 99.67,
+          "end": 100.08,
+          "confidence": 0.955
+        },
+        {
+          "word": "i",
+          "start": 100.08,
+          "end": 100.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 100.39,
+          "end": 100.89,
+          "confidence": 0.996
+        },
+        {
+          "word": "it's",
+          "start": 101.03,
+          "end": 101.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "new",
+          "start": 101.35,
+          "end": 101.85,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 27,
-      "text": ">> Do you have a compass?",
-      "start": 53.84,
-      "duration": 2.48
+      "text": "Great. Do you have an eraser?",
+      "speaker": "Speaker3",
+      "start": 107.99,
+      "duration": 2.03,
+      "words": [
+        {
+          "word": "great",
+          "start": 107.99,
+          "end": 108.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "do",
+          "start": 108.72,
+          "end": 108.95,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 108.95,
+          "end": 109.11,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 109.11,
+          "end": 109.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "an",
+          "start": 109.35,
+          "end": 109.52,
+          "confidence": 0.986
+        },
+        {
+          "word": "eraser",
+          "start": 109.52,
+          "end": 110.02,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 28,
-      "text": ">> No, I don't have it today.",
-      "start": 56.32,
-      "duration": 3.52
+      "text": "Great. Do you have Ven Eraser?",
+      "speaker": "Speaker3",
+      "start": 116.45,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "great",
+          "start": 116.45,
+          "end": 116.95,
+          "confidence": 0.998
+        },
+        {
+          "word": "do",
+          "start": 117.25,
+          "end": 117.49,
+          "confidence": 0.988
+        },
+        {
+          "word": "you",
+          "start": 117.49,
+          "end": 117.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 117.57,
+          "end": 117.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "ven",
+          "start": 117.89,
+          "end": 118.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "eraser",
+          "start": 118.05,
+          "end": 118.55,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 29,
-      "text": "Listen and repeat.",
-      "start": 59.84,
-      "duration": 3.68
+      "text": "Great.",
+      "speaker": "Speaker3",
+      "start": 123.89,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "great",
+          "start": 123.89,
+          "end": 124.39,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 30,
-      "text": "Hi Quan, do you have a pencil?",
-      "start": 63.52,
-      "duration": 7.44
+      "text": "Do you have Ven Eraser?",
+      "speaker": "Speaker3",
+      "start": 124.69,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "do",
+          "start": 124.69,
+          "end": 124.85,
+          "confidence": 0.986
+        },
+        {
+          "word": "you",
+          "start": 124.85,
+          "end": 125.01,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 125.01,
+          "end": 125.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "ven",
+          "start": 125.33,
+          "end": 125.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "eraser",
+          "start": 125.49,
+          "end": 125.99,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 31,
-      "text": "Hi Quan, do you have a pencil?",
-      "start": 70.96,
-      "duration": 6.4
+      "text": "No, I don't. It's at home.",
+      "speaker": "Speaker4",
+      "start": 131.26,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "no",
+          "start": 131.26,
+          "end": 131.75,
+          "confidence": 0.911
+        },
+        {
+          "word": "i",
+          "start": 131.75,
+          "end": 131.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "don't",
+          "start": 131.99,
+          "end": 132.49,
+          "confidence": 0.889
+        },
+        {
+          "word": "it's",
+          "start": 132.54,
+          "end": 132.87,
+          "confidence": 0.999
+        },
+        {
+          "word": "at",
+          "start": 132.87,
+          "end": 132.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "home",
+          "start": 132.94,
+          "end": 133.44,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.966
     },
     {
       "id": 32,
-      "text": "Hi Quan, do you have a pencil?",
-      "start": 77.36,
-      "duration": 7.68
+      "text": "No, I don't, it's at home.",
+      "speaker": "Speaker4",
+      "start": 139.34,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "no",
+          "start": 139.34,
+          "end": 139.74,
+          "confidence": 0.853
+        },
+        {
+          "word": "i",
+          "start": 139.74,
+          "end": 139.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "don't",
+          "start": 139.98,
+          "end": 140.48,
+          "confidence": 0.863
+        },
+        {
+          "word": "it's",
+          "start": 140.54,
+          "end": 140.78,
+          "confidence": 0.997
+        },
+        {
+          "word": "at",
+          "start": 140.78,
+          "end": 141.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "home",
+          "start": 141.02,
+          "end": 141.52,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.952
     },
     {
       "id": 33,
-      "text": "Yes, I do.",
-      "start": 85.04,
-      "duration": 2.2
+      "text": "No, I don't, it's at home.",
+      "speaker": "Speaker4",
+      "start": 147.74,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "no",
+          "start": 147.74,
+          "end": 148.14,
+          "confidence": 0.998
+        },
+        {
+          "word": "i",
+          "start": 148.14,
+          "end": 148.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "don't",
+          "start": 148.3,
+          "end": 148.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "it's",
+          "start": 148.86,
+          "end": 149.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "at",
+          "start": 149.18,
+          "end": 149.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "home",
+          "start": 149.34,
+          "end": 149.84,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 34,
-      "text": "[music] It's new.",
-      "start": 87.24,
-      "duration": 5.48
+      "text": "That's okay, I have one, here you are.",
+      "speaker": "Speaker5",
+      "start": 155.63,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "that's",
+          "start": 155.63,
+          "end": 155.95,
+          "confidence": 0.997
+        },
+        {
+          "word": "okay",
+          "start": 155.95,
+          "end": 156.45,
+          "confidence": 0.958
+        },
+        {
+          "word": "i",
+          "start": 156.75,
+          "end": 156.91,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 156.91,
+          "end": 157.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "one",
+          "start": 157.16,
+          "end": 157.66,
+          "confidence": 0.976
+        },
+        {
+          "word": "here",
+          "start": 157.79,
+          "end": 158.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "you",
+          "start": 158.03,
+          "end": 158.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "are",
+          "start": 158.19,
+          "end": 158.69,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 35,
-      "text": "Yes, I do.",
-      "start": 92.72,
-      "duration": 2.76
+      "text": "That's okay, I have one, here you are.",
+      "speaker": "Speaker5",
+      "start": 165.45,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "that's",
+          "start": 165.45,
+          "end": 165.69,
+          "confidence": 0.985
+        },
+        {
+          "word": "okay",
+          "start": 165.69,
+          "end": 166.19,
+          "confidence": 0.982
+        },
+        {
+          "word": "i",
+          "start": 166.49,
+          "end": 166.65,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 166.65,
+          "end": 166.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "one",
+          "start": 166.97,
+          "end": 167.45,
+          "confidence": 0.994
+        },
+        {
+          "word": "here",
+          "start": 167.45,
+          "end": 167.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 167.69,
+          "end": 167.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "are",
+          "start": 167.93,
+          "end": 168.43,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 36,
-      "text": "It's new.",
-      "start": 95.48,
-      "duration": 4.28
+      "text": "That's okay, I have one, here you are.",
+      "speaker": "Speaker5",
+      "start": 175.13,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "that's",
+          "start": 175.13,
+          "end": 175.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "okay",
+          "start": 175.53,
+          "end": 176.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 176.33,
+          "end": 176.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 176.49,
+          "end": 176.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "one",
+          "start": 176.73,
+          "end": 177.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "here",
+          "start": 177.29,
+          "end": 177.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 177.53,
+          "end": 177.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "are",
+          "start": 177.69,
+          "end": 178.19,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 37,
-      "text": "Yes, I do.",
-      "start": 99.76,
-      "duration": 2.81
+      "text": "Thank you, numb.",
+      "speaker": "Speaker6",
+      "start": 183.28,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "thank",
+          "start": 183.28,
+          "end": 183.59,
+          "confidence": 0.99
+        },
+        {
+          "word": "you",
+          "start": 183.59,
+          "end": 183.84,
+          "confidence": 0.982
+        },
+        {
+          "word": "numb",
+          "start": 183.84,
+          "end": 184.34,
+          "confidence": 0.846
+        }
+      ],
+      "confidence": 0.939
     },
     {
       "id": 38,
-      "text": "It's new.",
-      "start": 102.57,
-      "duration": 5.51
+      "text": "Thank you, numb.",
+      "speaker": "Speaker6",
+      "start": 188.64,
+      "duration": 1.05,
+      "words": [
+        {
+          "word": "thank",
+          "start": 188.64,
+          "end": 188.96,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 188.96,
+          "end": 189.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "numb",
+          "start": 189.19,
+          "end": 189.69,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 39,
-      "text": "Great.",
-      "start": 108.08,
-      "duration": 0.78
+      "text": "Thank you, numb.",
+      "speaker": "Speaker6",
+      "start": 193.86,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "thank",
+          "start": 193.86,
+          "end": 194.1,
+          "confidence": 0.992
+        },
+        {
+          "word": "you",
+          "start": 194.1,
+          "end": 194.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "numb",
+          "start": 194.34,
+          "end": 194.84,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 40,
-      "text": "Do you have an eraser?",
-      "start": 108.86,
-      "duration": 7.62
+      "text": "Does Lynn have a notebook?",
+      "speaker": "Speaker7",
+      "start": 198.1,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "does",
+          "start": 198.1,
+          "end": 198.58,
+          "confidence": 0.753
+        },
+        {
+          "word": "lynn",
+          "start": 198.58,
+          "end": 198.82,
+          "confidence": 0.961
+        },
+        {
+          "word": "have",
+          "start": 198.82,
+          "end": 199.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 199.06,
+          "end": 199.14,
+          "confidence": 0.999
+        },
+        {
+          "word": "notebook",
+          "start": 199.14,
+          "end": 199.64,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.943
     },
     {
       "id": 41,
-      "text": "Great.",
-      "start": 116.48,
-      "duration": 0.78
+      "text": "Does Lynn have a notebook?",
+      "speaker": "Speaker7",
+      "start": 205.06,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "does",
+          "start": 205.06,
+          "end": 205.38,
+          "confidence": 0.761
+        },
+        {
+          "word": "lynn",
+          "start": 205.38,
+          "end": 205.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 205.62,
+          "end": 205.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 205.78,
+          "end": 205.94,
+          "confidence": 0.999
+        },
+        {
+          "word": "notebook",
+          "start": 205.94,
+          "end": 206.44,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.952
     },
     {
       "id": 42,
-      "text": "Do you have ven eraser?",
-      "start": 117.26,
-      "duration": 6.66
+      "text": "Does Lynn have a notebook?",
+      "speaker": "Speaker7",
+      "start": 210.51,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "does",
+          "start": 210.51,
+          "end": 210.83,
+          "confidence": 0.994
+        },
+        {
+          "word": "lynn",
+          "start": 210.83,
+          "end": 211.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 211.16,
+          "end": 211.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 211.31,
+          "end": 211.39,
+          "confidence": 0.998
+        },
+        {
+          "word": "notebook",
+          "start": 211.39,
+          "end": 211.89,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 43,
-      "text": "Great.",
-      "start": 123.92,
-      "duration": 0.78
+      "text": "Yes, she does. It's pink.",
+      "speaker": "Speaker6",
+      "start": 216.44,
+      "duration": 2.01,
+      "words": [
+        {
+          "word": "yes",
+          "start": 216.44,
+          "end": 216.75,
+          "confidence": 0.783
+        },
+        {
+          "word": "she",
+          "start": 216.75,
+          "end": 217.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "does",
+          "start": 217.0,
+          "end": 217.5,
+          "confidence": 0.949
+        },
+        {
+          "word": "it's",
+          "start": 217.63,
+          "end": 217.95,
+          "confidence": 0.998
+        },
+        {
+          "word": "pink",
+          "start": 217.95,
+          "end": 218.45,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.946
     },
     {
       "id": 44,
-      "text": "Do you have ven eraser?",
-      "start": 124.7,
-      "duration": 6.66
+      "text": "Yes, she does, it's pink.",
+      "speaker": "Speaker6",
+      "start": 224.38,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "yes",
+          "start": 224.38,
+          "end": 224.7,
+          "confidence": 0.981
+        },
+        {
+          "word": "she",
+          "start": 224.7,
+          "end": 224.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "does",
+          "start": 224.94,
+          "end": 225.44,
+          "confidence": 0.992
+        },
+        {
+          "word": "it's",
+          "start": 225.66,
+          "end": 225.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "pink",
+          "start": 225.9,
+          "end": 226.4,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 45,
-      "text": "No, I don't.",
-      "start": 131.36,
-      "duration": 2.38
+      "text": "Yes, she does, it's pink.",
+      "speaker": "Speaker6",
+      "start": 231.18,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "yes",
+          "start": 231.18,
+          "end": 231.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "she",
+          "start": 231.58,
+          "end": 231.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "does",
+          "start": 231.9,
+          "end": 232.4,
+          "confidence": 0.997
+        },
+        {
+          "word": "it's",
+          "start": 232.46,
+          "end": 232.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "pink",
+          "start": 232.86,
+          "end": 233.36,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 46,
-      "text": "It's at home.",
-      "start": 133.74,
-      "duration": 5.62
+      "text": "Look. I have a blue pencil case.",
+      "speaker": "Speaker8",
+      "start": 238.19,
+      "duration": 2.41,
+      "words": [
+        {
+          "word": "look",
+          "start": 238.19,
+          "end": 238.69,
+          "confidence": 0.701
+        },
+        {
+          "word": "i",
+          "start": 238.82,
+          "end": 239.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 239.06,
+          "end": 239.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 239.22,
+          "end": 239.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "blue",
+          "start": 239.38,
+          "end": 239.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "pencil",
+          "start": 239.7,
+          "end": 240.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "case",
+          "start": 240.1,
+          "end": 240.6,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.957
     },
     {
       "id": 47,
-      "text": "No, I don't.",
-      "start": 139.36,
-      "duration": 2.02
+      "text": "Look. I have a blue pencil case.",
+      "speaker": "Speaker8",
+      "start": 247.47,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 247.47,
+          "end": 247.97,
+          "confidence": 0.963
+        },
+        {
+          "word": "i",
+          "start": 248.19,
+          "end": 248.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 248.34,
+          "end": 248.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 248.58,
+          "end": 248.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "blue",
+          "start": 248.75,
+          "end": 249.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "pencil",
+          "start": 249.14,
+          "end": 249.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "case",
+          "start": 249.47,
+          "end": 249.97,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 48,
-      "text": "It's [music] at home.",
-      "start": 141.38,
-      "duration": 6.38
+      "text": "Look, I have a blue pencil case.",
+      "speaker": "Speaker8",
+      "start": 256.75,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 256.75,
+          "end": 257.25,
+          "confidence": 0.978
+        },
+        {
+          "word": "i",
+          "start": 257.47,
+          "end": 257.63,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 257.63,
+          "end": 257.87,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 257.87,
+          "end": 258.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "blue",
+          "start": 258.03,
+          "end": 258.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "pencil",
+          "start": 258.35,
+          "end": 258.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "case",
+          "start": 258.75,
+          "end": 259.25,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 49,
-      "text": "No, I don't.",
-      "start": 147.76,
-      "duration": 2.38
+      "text": "Wow. It's so nice.",
+      "speaker": "Speaker9",
+      "start": 265.13,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "wow",
+          "start": 265.13,
+          "end": 265.63,
+          "confidence": 0.781
+        },
+        {
+          "word": "it's",
+          "start": 265.85,
+          "end": 266.18,
+          "confidence": 0.997
+        },
+        {
+          "word": "so",
+          "start": 266.18,
+          "end": 266.57,
+          "confidence": 1.0
+        },
+        {
+          "word": "nice",
+          "start": 266.57,
+          "end": 267.07,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.944
     },
     {
       "id": 50,
-      "text": "It's at home.",
-      "start": 150.14,
-      "duration": 3.79
+      "text": "Wow. It's so nice.",
+      "speaker": "Speaker9",
+      "start": 273.94,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "wow",
+          "start": 273.94,
+          "end": 274.33,
+          "confidence": 0.992
+        },
+        {
+          "word": "it's",
+          "start": 274.33,
+          "end": 274.65,
+          "confidence": 0.999
+        },
+        {
+          "word": "so",
+          "start": 274.65,
+          "end": 275.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "nice",
+          "start": 275.06,
+          "end": 275.56,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 51,
-      "text": "[music] That's okay.",
-      "start": 153.93,
-      "duration": 3.22
+      "text": "Wow. It's so nice.",
+      "speaker": "Speaker9",
+      "start": 281.57,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "wow",
+          "start": 281.57,
+          "end": 282.05,
+          "confidence": 0.981
+        },
+        {
+          "word": "it's",
+          "start": 282.05,
+          "end": 282.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "so",
+          "start": 282.45,
+          "end": 282.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "nice",
+          "start": 282.77,
+          "end": 283.27,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 52,
-      "text": "I have one.",
-      "start": 157.15,
-      "duration": 2.09
+      "text": "I have a yellow highlighter and a crayon.",
+      "speaker": "Speaker9",
+      "start": 288.93,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "i",
+          "start": 288.93,
+          "end": 289.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 289.17,
+          "end": 289.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 289.41,
+          "end": 289.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "yellow",
+          "start": 289.65,
+          "end": 290.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "highlighter",
+          "start": 290.13,
+          "end": 290.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 290.69,
+          "end": 290.93,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 290.93,
+          "end": 291.09,
+          "confidence": 0.993
+        },
+        {
+          "word": "crayon",
+          "start": 291.09,
+          "end": 291.59,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 53,
-      "text": "Here you are.",
-      "start": 159.23,
-      "duration": 6.21
+      "text": "I have a yellow highlighter and a crayon.",
+      "speaker": "Speaker9",
+      "start": 298.49,
+      "duration": 2.65,
+      "words": [
+        {
+          "word": "i",
+          "start": 298.49,
+          "end": 298.73,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 298.73,
+          "end": 298.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 298.96,
+          "end": 299.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "yellow",
+          "start": 299.12,
+          "end": 299.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "highlighter",
+          "start": 299.61,
+          "end": 300.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 300.25,
+          "end": 300.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 300.49,
+          "end": 300.64,
+          "confidence": 0.986
+        },
+        {
+          "word": "crayon",
+          "start": 300.64,
+          "end": 301.14,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 54,
-      "text": "That's okay.",
-      "start": 165.44,
-      "duration": 1.39
+      "text": "I have a yellow highlighter and a crayon.",
+      "speaker": "Speaker9",
+      "start": 307.95,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "i",
+          "start": 307.95,
+          "end": 308.19,
+          "confidence": 0.979
+        },
+        {
+          "word": "have",
+          "start": 308.19,
+          "end": 308.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 308.35,
+          "end": 308.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "yellow",
+          "start": 308.59,
+          "end": 309.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "highlighter",
+          "start": 309.07,
+          "end": 309.57,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 309.71,
+          "end": 309.95,
+          "confidence": 0.993
+        },
+        {
+          "word": "a",
+          "start": 309.95,
+          "end": 310.11,
+          "confidence": 0.975
+        },
+        {
+          "word": "crayon",
+          "start": 310.11,
+          "end": 310.61,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.993
     },
     {
       "id": 55,
-      "text": "I have one.",
-      "start": 166.83,
-      "duration": 2.09
+      "text": "Cool.",
+      "speaker": "Speaker0",
+      "start": 317.31,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "cool",
+          "start": 317.31,
+          "end": 317.81,
+          "confidence": 0.977
+        }
+      ],
+      "confidence": 0.977
     },
     {
       "id": 56,
-      "text": "Here you are.",
-      "start": 168.91,
-      "duration": 6.37
+      "text": "I have a green pen.",
+      "speaker": "Speaker0",
+      "start": 318.19,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 318.19,
+          "end": 318.43,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 318.43,
+          "end": 318.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 318.59,
+          "end": 318.83,
+          "confidence": 0.999
+        },
+        {
+          "word": "green",
+          "start": 318.83,
+          "end": 319.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "pen",
+          "start": 319.15,
+          "end": 319.65,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
       "id": 57,
-      "text": "That's okay.",
-      "start": 175.28,
-      "duration": 1.39
+      "text": "Cool. I have a green pen.",
+      "speaker": "Speaker0",
+      "start": 326.54,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "cool",
+          "start": 326.54,
+          "end": 327.04,
+          "confidence": 0.952
+        },
+        {
+          "word": "i",
+          "start": 327.33,
+          "end": 327.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 327.65,
+          "end": 327.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 327.81,
+          "end": 327.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "green",
+          "start": 327.98,
+          "end": 328.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "pen",
+          "start": 328.38,
+          "end": 328.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 58,
-      "text": "I have one.",
-      "start": 176.67,
-      "duration": 2.09
+      "text": "Cool.",
+      "speaker": "Speaker0",
+      "start": 334.96,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "cool",
+          "start": 334.96,
+          "end": 335.46,
+          "confidence": 0.925
+        }
+      ],
+      "confidence": 0.925
     },
     {
       "id": 59,
-      "text": "Here you are.",
-      "start": 178.75,
-      "duration": 4.61
+      "text": "I have a green pen.",
+      "speaker": "Speaker0",
+      "start": 335.84,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 335.84,
+          "end": 336.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 336.0,
+          "end": 336.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 336.24,
+          "end": 336.4,
+          "confidence": 0.999
+        },
+        {
+          "word": "green",
+          "start": 336.4,
+          "end": 336.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "pen",
+          "start": 336.8,
+          "end": 337.3,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 60,
-      "text": "Thank you, Num.",
-      "start": 183.36,
-      "duration": 5.36
+      "text": "Does Jack have a calculator?",
+      "speaker": "Speaker0",
+      "start": 343.84,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "does",
+          "start": 343.84,
+          "end": 344.16,
+          "confidence": 0.664
+        },
+        {
+          "word": "jack",
+          "start": 344.16,
+          "end": 344.48,
+          "confidence": 0.923
+        },
+        {
+          "word": "have",
+          "start": 344.48,
+          "end": 344.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 344.64,
+          "end": 344.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "calculator",
+          "start": 344.8,
+          "end": 345.3,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.917
     },
     {
       "id": 61,
-      "text": "Thank you, Num.",
-      "start": 188.72,
-      "duration": 5.2
+      "text": "Does Jack have a calculator?",
+      "speaker": "Speaker0",
+      "start": 350.35,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "does",
+          "start": 350.35,
+          "end": 350.67,
+          "confidence": 0.996
+        },
+        {
+          "word": "jack",
+          "start": 350.67,
+          "end": 350.9,
+          "confidence": 0.976
+        },
+        {
+          "word": "have",
+          "start": 350.9,
+          "end": 351.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 351.15,
+          "end": 351.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "calculator",
+          "start": 351.31,
+          "end": 351.81,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 62,
-      "text": "Thank you, Num.",
-      "start": 193.92,
-      "duration": 4.4
+      "text": "Does Jack have a calculator?",
+      "speaker": "Speaker0",
+      "start": 357.15,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "does",
+          "start": 357.15,
+          "end": 357.46,
+          "confidence": 0.984
+        },
+        {
+          "word": "jack",
+          "start": 357.46,
+          "end": 357.79,
+          "confidence": 0.978
+        },
+        {
+          "word": "have",
+          "start": 357.79,
+          "end": 357.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 357.94,
+          "end": 358.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "calculator",
+          "start": 358.11,
+          "end": 358.61,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 63,
-      "text": "Does Lynn have a notebook?",
-      "start": 198.32,
-      "duration": 4.08
+      "text": "Yes, he does. He has it every day.",
+      "speaker": "Speaker10",
+      "start": 363.99,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "yes",
+          "start": 363.99,
+          "end": 364.39,
+          "confidence": 0.826
+        },
+        {
+          "word": "he",
+          "start": 364.39,
+          "end": 364.71,
+          "confidence": 0.997
+        },
+        {
+          "word": "does",
+          "start": 364.71,
+          "end": 365.21,
+          "confidence": 0.99
+        },
+        {
+          "word": "he",
+          "start": 365.35,
+          "end": 365.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "has",
+          "start": 365.59,
+          "end": 365.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 365.83,
+          "end": 366.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "every",
+          "start": 366.07,
+          "end": 366.39,
+          "confidence": 0.867
+        },
+        {
+          "word": "day",
+          "start": 366.39,
+          "end": 366.89,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.96
     },
     {
       "id": 64,
-      "text": "[music] Does Lynn have a notebook?",
-      "start": 202.4,
-      "duration": 8.16
+      "text": "Yes, he does. He has it every day. Yes, he does. He has it every day.",
+      "speaker": "Speaker10",
+      "start": 373.88,
+      "duration": 12.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 373.88,
+          "end": 374.29,
+          "confidence": 0.805
+        },
+        {
+          "word": "he",
+          "start": 374.29,
+          "end": 374.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "does",
+          "start": 374.53,
+          "end": 375.03,
+          "confidence": 0.787
+        },
+        {
+          "word": "he",
+          "start": 375.25,
+          "end": 375.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "has",
+          "start": 375.49,
+          "end": 375.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 375.65,
+          "end": 375.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "every",
+          "start": 375.88,
+          "end": 376.38,
+          "confidence": 0.956
+        },
+        {
+          "word": "day",
+          "start": 383.17,
+          "end": 383.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "yes",
+          "start": 383.56,
+          "end": 383.97,
+          "confidence": 0.972
+        },
+        {
+          "word": "he",
+          "start": 383.97,
+          "end": 384.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "does",
+          "start": 384.12,
+          "end": 384.62,
+          "confidence": 0.99
+        },
+        {
+          "word": "he",
+          "start": 384.85,
+          "end": 385.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "has",
+          "start": 385.09,
+          "end": 385.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 385.32,
+          "end": 385.56,
+          "confidence": 0.998
+        },
+        {
+          "word": "every",
+          "start": 385.56,
+          "end": 385.88,
+          "confidence": 0.995
+        },
+        {
+          "word": "day",
+          "start": 385.88,
+          "end": 386.38,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.935
     },
     {
       "id": 65,
-      "text": "Does Lynn have a notebook?",
-      "start": 210.56,
-      "duration": 4.28
+      "text": "Do you have a compass?",
+      "speaker": "Speaker0",
+      "start": 391.92,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "do",
+          "start": 391.92,
+          "end": 392.24,
+          "confidence": 0.917
+        },
+        {
+          "word": "you",
+          "start": 392.24,
+          "end": 392.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 392.4,
+          "end": 392.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 392.52,
+          "end": 392.64,
+          "confidence": 0.998
+        },
+        {
+          "word": "compass",
+          "start": 392.64,
+          "end": 393.14,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.979
     },
     {
       "id": 66,
-      "text": "[music] Yes, she does.",
-      "start": 214.84,
-      "duration": 4.37
+      "text": "Do you have a compass?",
+      "speaker": "Speaker0",
+      "start": 397.52,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "do",
+          "start": 397.52,
+          "end": 397.76,
+          "confidence": 0.854
+        },
+        {
+          "word": "you",
+          "start": 397.76,
+          "end": 397.84,
+          "confidence": 0.999
+        },
+        {
+          "word": "have",
+          "start": 397.84,
+          "end": 398.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 398.0,
+          "end": 398.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "compass",
+          "start": 398.16,
+          "end": 398.66,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.97
     },
     {
       "id": 67,
-      "text": "It's pink.",
-      "start": 219.21,
-      "duration": 5.11
+      "text": "Do you have a compass?",
+      "speaker": "Speaker0",
+      "start": 403.29,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "do",
+          "start": 403.29,
+          "end": 403.62,
+          "confidence": 0.795
+        },
+        {
+          "word": "you",
+          "start": 403.62,
+          "end": 403.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 403.69,
+          "end": 403.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 403.94,
+          "end": 404.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "compass",
+          "start": 404.1,
+          "end": 404.6,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.959
     },
     {
       "id": 68,
-      "text": "Yes, she does.",
-      "start": 224.32,
-      "duration": 2.81
+      "text": "No, I don't have it today.",
+      "speaker": "Speaker11",
+      "start": 409.94,
+      "duration": 1.77,
+      "words": [
+        {
+          "word": "no",
+          "start": 409.94,
+          "end": 410.41,
+          "confidence": 0.857
+        },
+        {
+          "word": "i",
+          "start": 410.41,
+          "end": 410.57,
+          "confidence": 0.998
+        },
+        {
+          "word": "don't",
+          "start": 410.57,
+          "end": 410.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 410.89,
+          "end": 411.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 411.06,
+          "end": 411.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "today",
+          "start": 411.21,
+          "end": 411.71,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.976
     },
     {
       "id": 69,
-      "text": "It's pink.",
-      "start": 227.13,
-      "duration": 4.15
+      "text": "No, I don't have it today.",
+      "speaker": "Speaker11",
+      "start": 417.73,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "no",
+          "start": 417.73,
+          "end": 418.21,
+          "confidence": 0.914
+        },
+        {
+          "word": "i",
+          "start": 418.21,
+          "end": 418.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "don't",
+          "start": 418.45,
+          "end": 418.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 418.61,
+          "end": 418.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 418.77,
+          "end": 419.01,
+          "confidence": 0.999
+        },
+        {
+          "word": "today",
+          "start": 419.01,
+          "end": 419.51,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.985
     },
     {
       "id": 70,
-      "text": "Yes, she does.",
-      "start": 231.28,
-      "duration": 2.76
+      "text": "No, I don't have it today.",
+      "speaker": "Speaker11",
+      "start": 424.61,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "no",
+          "start": 424.61,
+          "end": 425.09,
+          "confidence": 0.991
+        },
+        {
+          "word": "i",
+          "start": 425.09,
+          "end": 425.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "don't",
+          "start": 425.25,
+          "end": 425.57,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 425.57,
+          "end": 425.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 425.73,
+          "end": 425.89,
+          "confidence": 0.999
+        },
+        {
+          "word": "today",
+          "start": 425.89,
+          "end": 426.39,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 71,
-      "text": "It's pink.",
-      "start": 234.04,
-      "duration": 4.12
-    },
-    {
-      "id": 72,
-      "text": "Look, I have a blue pencil case.",
-      "start": 238.16,
-      "duration": 9.36
-    },
-    {
-      "id": 73,
-      "text": "Look, I have a blue pencil case.",
-      "start": 247.52,
-      "duration": 9.28
-    },
-    {
-      "id": 74,
-      "text": "Look, I have a blue pencil case.",
-      "start": 256.8,
-      "duration": 8.48
-    },
-    {
-      "id": 75,
-      "text": "Wow, it's so nice.",
-      "start": 265.28,
-      "duration": 8.4
-    },
-    {
-      "id": 76,
-      "text": "Wow, it's so nice.",
-      "start": 273.68,
-      "duration": 7.76
-    },
-    {
-      "id": 77,
-      "text": "Wow, it's so nice.",
-      "start": 281.44,
-      "duration": 7.6
-    },
-    {
-      "id": 78,
-      "text": "I have a yellow highlighter and a crayon.",
-      "start": 289.04,
-      "duration": 6.37
-    },
-    {
-      "id": 79,
-      "text": "[music] I have a yellow highlighter and a [music] crayon.",
-      "start": 295.41,
-      "duration": 12.59
-    },
-    {
-      "id": 80,
-      "text": "I have a yellow highlighter and a crayon.",
-      "start": 308.0,
-      "duration": 9.44
-    },
-    {
-      "id": 81,
-      "text": "Cool.",
-      "start": 317.44,
-      "duration": 0.79
-    },
-    {
-      "id": 82,
-      "text": "I have a green pen.",
-      "start": 318.23,
-      "duration": 8.33
-    },
-    {
-      "id": 83,
-      "text": "Cool.",
-      "start": 326.56,
-      "duration": 0.81
-    },
-    {
-      "id": 84,
-      "text": "I have a green pen.",
-      "start": 327.37,
-      "duration": 4.07
-    },
-    {
-      "id": 85,
-      "text": "Cool.",
-      "start": 331.44,
-      "duration": 4.48
-    },
-    {
-      "id": 86,
-      "text": "I have a green pen.",
-      "start": 335.92,
-      "duration": 8.0
-    },
-    {
-      "id": 87,
-      "text": "Does Jack have a calculator?",
-      "start": 343.92,
-      "duration": 6.48
-    },
-    {
-      "id": 88,
-      "text": "Does Jack have a calculator?",
-      "start": 350.4,
-      "duration": 6.88
-    },
-    {
-      "id": 89,
-      "text": "Does Jack have a calculator?",
-      "start": 357.28,
-      "duration": 6.8
-    },
-    {
-      "id": 90,
-      "text": "Yes, he does.",
-      "start": 364.08,
-      "duration": 2.02
-    },
-    {
-      "id": 91,
-      "text": "He has it every day.",
-      "start": 366.1,
-      "duration": 7.9
-    },
-    {
-      "id": 92,
-      "text": "Yes, he does.",
-      "start": 374.0,
-      "duration": 2.0
-    },
-    {
-      "id": 93,
-      "text": "He has it every day.",
-      "start": 376.0,
-      "duration": 7.61
-    },
-    {
-      "id": 94,
-      "text": "Yes, he does.",
-      "start": 383.6,
-      "duration": 2.0
-    },
-    {
-      "id": 95,
-      "text": "He has it every day.",
-      "start": 385.6,
-      "duration": 6.48
-    },
-    {
-      "id": 96,
-      "text": "Do you have a compass?",
-      "start": 392.08,
-      "duration": 5.52
-    },
-    {
-      "id": 97,
-      "text": "Do you have a compass?",
-      "start": 397.6,
-      "duration": 5.84
-    },
-    {
-      "id": 98,
-      "text": "Do you have a compass?",
-      "start": 403.44,
-      "duration": 6.64
-    },
-    {
-      "id": 99,
-      "text": "No, I don't have it today.",
-      "start": 410.08,
-      "duration": 7.76
-    },
-    {
-      "id": 100,
-      "text": "No, I don't have it today.",
-      "start": 417.84,
-      "duration": 6.88
-    },
-    {
-      "id": 101,
-      "text": "No, I don't have it today.",
-      "start": 424.72,
-      "duration": 7.68
-    },
-    {
-      "id": 102,
-      "text": "Thank you for watching.",
-      "start": 432.4,
-      "duration": 3.09
-    },
-    {
-      "id": 103,
-      "text": "See you next time.",
-      "start": 435.49,
-      "duration": 3.0
+      "text": "Thank you for watching. See you next time.",
+      "speaker": "Speaker7",
+      "start": 432.25,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "thank",
+          "start": 432.25,
+          "end": 432.56,
+          "confidence": 0.933
+        },
+        {
+          "word": "you",
+          "start": 432.56,
+          "end": 432.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 432.73,
+          "end": 432.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "watching",
+          "start": 432.96,
+          "end": 433.46,
+          "confidence": 0.914
+        },
+        {
+          "word": "see",
+          "start": 433.76,
+          "end": 434.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 434.08,
+          "end": 434.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 434.4,
+          "end": 434.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "time",
+          "start": 434.81,
+          "end": 435.31,
+          "confidence": 0.891
+        }
+      ],
+      "confidence": 0.967
     }
   ],
   "videoId": "vb4ZF3pYtuw",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:36.040574+00:00",
+  "fetchedAt": "2026-08-03T11:06:18.135507+00:00",
   "rawCaptionCount": 78,
   "splitAt": "2026-08-03T05:15:00.336019+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2",
+    "3": "Speaker3",
+    "4": "Speaker4",
+    "5": "Speaker5",
+    "6": "Speaker6",
+    "7": "Speaker7",
+    "8": "Speaker8",
+    "9": "Speaker9",
+    "10": "Speaker10",
+    "11": "Speaker11"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:06:18.135535+00:00",
+    "dgWordCount": 395,
+    "dgUtteranceCount": 76,
+    "matchedSegments": 76,
+    "totalDuration": 435.31
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

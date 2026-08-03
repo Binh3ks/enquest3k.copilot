@@ -1,113 +1,949 @@
 {
-  "text": "Family Hello! Let me introduce my family. It’s me. me He is my father. She is my mother. father father mother mother They are my parents. parents parents He is my brother. She is my sister. brother brother sister sister He is my grandfather. She is my grandmother. grandfather grandfather grandmother grandmother They are my grandparents. grandparents grandparents He is my uncle. Oh, He is my uncle, too. uncle uncle She is my aunt. aunt aunt She is my cousin. cousin cousin my family They are my family members. I love them!",
+  "text": "English sing sing. Family Hello. Let me introduce my family. It's me. Me He is my father. She is my mother. Father father mother mother They are my parents. Parents parents He is my brother. She is my sister. Brother. Brother. Sister. Sister He is my grandfather. He is my grandmother. Grandfather Grandfather Grandmother Grandmother They are my grandparents. Grandparents Grandparents He is my uncle. Oh, he is my uncle too. Uncle Uncle She is my aunt. Aunt aunt She is my cousin. Cousin cousin my family They are my family members. I love them. Review. Grandfather grandmother grandparents father mother parents uncle uncle aunt brother me sister cousin my family",
   "segments": [
     {
       "id": 1,
-      "text": "Family Hello!",
-      "start": 6.68,
-      "duration": 4.32
+      "text": "English sing sing.",
+      "speaker": "Speaker0",
+      "start": 1.76,
+      "duration": 4.74,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.76,
+          "end": 2.26,
+          "confidence": 0.846
+        },
+        {
+          "word": "sing",
+          "start": 3.88,
+          "end": 4.38,
+          "confidence": 0.902
+        },
+        {
+          "word": "sing",
+          "start": 6.0,
+          "end": 6.5,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.846
     },
     {
       "id": 2,
-      "text": "Let me introduce my family.",
-      "start": 11.0,
-      "duration": 3.98
+      "text": "Family Hello.",
+      "speaker": "Speaker0",
+      "start": 8.12,
+      "duration": 2.62,
+      "words": [
+        {
+          "word": "family",
+          "start": 8.12,
+          "end": 8.62,
+          "confidence": 0.44
+        },
+        {
+          "word": "hello",
+          "start": 10.24,
+          "end": 10.74,
+          "confidence": 0.787
+        }
+      ],
+      "confidence": 0.44
     },
     {
       "id": 3,
-      "text": "It’s me.",
-      "start": 14.98,
-      "duration": 1.96
+      "text": "Let me introduce my family.",
+      "speaker": "Speaker0",
+      "start": 11.92,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "let",
+          "start": 11.92,
+          "end": 12.16,
+          "confidence": 0.997
+        },
+        {
+          "word": "me",
+          "start": 12.16,
+          "end": 12.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "introduce",
+          "start": 12.4,
+          "end": 12.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 13.28,
+          "end": 13.52,
+          "confidence": 0.998
+        },
+        {
+          "word": "family",
+          "start": 13.52,
+          "end": 14.02,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 4,
-      "text": "me He is my father.",
-      "start": 16.94,
-      "duration": 6.02
+      "text": "It's me.",
+      "speaker": "Speaker0",
+      "start": 15.01,
+      "duration": 0.89,
+      "words": [
+        {
+          "word": "it's",
+          "start": 15.01,
+          "end": 15.4,
+          "confidence": 0.995
+        },
+        {
+          "word": "me",
+          "start": 15.4,
+          "end": 15.9,
+          "confidence": 0.949
+        }
+      ],
+      "confidence": 0.972
     },
     {
       "id": 5,
-      "text": "She is my mother.",
-      "start": 22.96,
-      "duration": 2.9
+      "text": "Me He is my father.",
+      "speaker": "Speaker0",
+      "start": 17.0,
+      "duration": 4.11,
+      "words": [
+        {
+          "word": "me",
+          "start": 17.0,
+          "end": 17.5,
+          "confidence": 0.588
+        },
+        {
+          "word": "he",
+          "start": 19.56,
+          "end": 19.89,
+          "confidence": 0.855
+        },
+        {
+          "word": "is",
+          "start": 19.89,
+          "end": 20.29,
+          "confidence": 0.998
+        },
+        {
+          "word": "my",
+          "start": 20.29,
+          "end": 20.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "father",
+          "start": 20.61,
+          "end": 21.11,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.588
     },
     {
       "id": 6,
-      "text": "father father mother mother They are my parents.",
-      "start": 25.86,
-      "duration": 10.08
+      "text": "She is my mother.",
+      "speaker": "Speaker0",
+      "start": 23.16,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "she",
+          "start": 23.16,
+          "end": 23.48,
+          "confidence": 0.897
+        },
+        {
+          "word": "is",
+          "start": 23.48,
+          "end": 23.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 23.8,
+          "end": 24.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "mother",
+          "start": 24.12,
+          "end": 24.62,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 7,
-      "text": "parents parents He is my brother.",
-      "start": 35.94,
-      "duration": 8.36
+      "text": "Father father mother mother",
+      "speaker": "Speaker0",
+      "start": 25.88,
+      "duration": 6.47,
+      "words": [
+        {
+          "word": "father",
+          "start": 25.88,
+          "end": 26.38,
+          "confidence": 0.9
+        },
+        {
+          "word": "father",
+          "start": 27.55,
+          "end": 28.05,
+          "confidence": 0.64
+        },
+        {
+          "word": "mother",
+          "start": 30.05,
+          "end": 30.55,
+          "confidence": 0.994
+        },
+        {
+          "word": "mother",
+          "start": 31.85,
+          "end": 32.35,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.9
     },
     {
       "id": 8,
-      "text": "She is my sister.",
-      "start": 44.3,
-      "duration": 3.72
+      "text": "They are my parents.",
+      "speaker": "Speaker0",
+      "start": 32.91,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "they",
+          "start": 32.91,
+          "end": 33.31,
+          "confidence": 0.665
+        },
+        {
+          "word": "are",
+          "start": 33.31,
+          "end": 33.71,
+          "confidence": 0.998
+        },
+        {
+          "word": "my",
+          "start": 33.71,
+          "end": 34.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "parents",
+          "start": 34.03,
+          "end": 34.53,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.913
     },
     {
       "id": 9,
-      "text": "brother brother sister sister He is my grandfather.",
-      "start": 48.02,
-      "duration": 12.42
+      "text": "Parents parents He is my brother.",
+      "speaker": "Speaker0",
+      "start": 36.11,
+      "duration": 6.77,
+      "words": [
+        {
+          "word": "parents",
+          "start": 36.11,
+          "end": 36.61,
+          "confidence": 0.521
+        },
+        {
+          "word": "parents",
+          "start": 37.55,
+          "end": 38.05,
+          "confidence": 0.984
+        },
+        {
+          "word": "he",
+          "start": 41.41,
+          "end": 41.66,
+          "confidence": 0.994
+        },
+        {
+          "word": "is",
+          "start": 41.66,
+          "end": 41.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 41.98,
+          "end": 42.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "brother",
+          "start": 42.38,
+          "end": 42.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.521
     },
     {
       "id": 10,
-      "text": "She is my grandmother.",
-      "start": 60.44,
-      "duration": 3.6
+      "text": "She is my sister.",
+      "speaker": "Speaker0",
+      "start": 44.7,
+      "duration": 1.53,
+      "words": [
+        {
+          "word": "she",
+          "start": 44.7,
+          "end": 45.02,
+          "confidence": 0.495
+        },
+        {
+          "word": "is",
+          "start": 45.02,
+          "end": 45.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 45.34,
+          "end": 45.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "sister",
+          "start": 45.73,
+          "end": 46.23,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.874
     },
     {
       "id": 11,
-      "text": "grandfather grandfather grandmother grandmother They are my grandparents.",
-      "start": 64.04,
-      "duration": 11.18
+      "text": "Brother.",
+      "speaker": "Speaker0",
+      "start": 48.05,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "brother",
+          "start": 48.05,
+          "end": 48.55,
+          "confidence": 0.95
+        }
+      ],
+      "confidence": 0.95
     },
     {
       "id": 12,
-      "text": "grandparents grandparents He is my uncle.",
-      "start": 75.22,
-      "duration": 9.3
+      "text": "Brother.",
+      "speaker": "Speaker0",
+      "start": 49.98,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "brother",
+          "start": 49.98,
+          "end": 50.48,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 13,
-      "text": "Oh, He is my uncle, too.",
-      "start": 84.52,
-      "duration": 3.86
+      "text": "Sister.",
+      "speaker": "Speaker0",
+      "start": 51.73,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "sister",
+          "start": 51.73,
+          "end": 52.23,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 14,
-      "text": "uncle uncle She is my aunt.",
-      "start": 88.38,
-      "duration": 8.96
+      "text": "Sister He is my grandfather.",
+      "speaker": "Speaker0",
+      "start": 53.82,
+      "duration": 4.9,
+      "words": [
+        {
+          "word": "sister",
+          "start": 53.82,
+          "end": 54.32,
+          "confidence": 0.996
+        },
+        {
+          "word": "he",
+          "start": 57.18,
+          "end": 57.5,
+          "confidence": 0.997
+        },
+        {
+          "word": "is",
+          "start": 57.5,
+          "end": 57.82,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 57.82,
+          "end": 58.22,
+          "confidence": 0.998
+        },
+        {
+          "word": "grandfather",
+          "start": 58.22,
+          "end": 58.72,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 15,
-      "text": "aunt aunt She is my cousin.",
-      "start": 97.34,
-      "duration": 8.28
+      "text": "He is my grandmother.",
+      "speaker": "Speaker0",
+      "start": 60.7,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "he",
+          "start": 60.7,
+          "end": 61.02,
+          "confidence": 0.674
+        },
+        {
+          "word": "is",
+          "start": 61.02,
+          "end": 61.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "my",
+          "start": 61.34,
+          "end": 61.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "grandmother",
+          "start": 61.66,
+          "end": 62.16,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.917
     },
     {
       "id": 16,
-      "text": "cousin cousin my family They are my family members.",
-      "start": 105.62,
-      "duration": 8.44
+      "text": "Grandfather Grandfather Grandmother",
+      "speaker": "Speaker0",
+      "start": 64.3,
+      "duration": 4.32,
+      "words": [
+        {
+          "word": "grandfather",
+          "start": 64.3,
+          "end": 64.8,
+          "confidence": 0.885
+        },
+        {
+          "word": "grandfather",
+          "start": 66.22,
+          "end": 66.72,
+          "confidence": 0.934
+        },
+        {
+          "word": "grandmother",
+          "start": 68.12,
+          "end": 68.62,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.885
     },
     {
       "id": 17,
-      "text": "I love them!",
-      "start": 114.06,
-      "duration": 3.0
+      "text": "Grandmother They are my grandparents.",
+      "speaker": "Speaker0",
+      "start": 70.12,
+      "duration": 3.61,
+      "words": [
+        {
+          "word": "grandmother",
+          "start": 70.12,
+          "end": 70.62,
+          "confidence": 0.996
+        },
+        {
+          "word": "they",
+          "start": 72.19,
+          "end": 72.52,
+          "confidence": 0.978
+        },
+        {
+          "word": "are",
+          "start": 72.52,
+          "end": 72.83,
+          "confidence": 0.991
+        },
+        {
+          "word": "my",
+          "start": 72.83,
+          "end": 73.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "grandparents",
+          "start": 73.23,
+          "end": 73.73,
+          "confidence": 0.958
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 18,
+      "text": "Grandparents Grandparents He is my uncle.",
+      "speaker": "Speaker0",
+      "start": 75.31,
+      "duration": 6.99,
+      "words": [
+        {
+          "word": "grandparents",
+          "start": 75.31,
+          "end": 75.81,
+          "confidence": 0.929
+        },
+        {
+          "word": "grandparents",
+          "start": 77.72,
+          "end": 78.22,
+          "confidence": 0.827
+        },
+        {
+          "word": "he",
+          "start": 80.83,
+          "end": 81.0,
+          "confidence": 0.965
+        },
+        {
+          "word": "is",
+          "start": 81.0,
+          "end": 81.4,
+          "confidence": 0.997
+        },
+        {
+          "word": "my",
+          "start": 81.4,
+          "end": 81.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "uncle",
+          "start": 81.8,
+          "end": 82.3,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.929
+    },
+    {
+      "id": 19,
+      "text": "Oh, he is my uncle too.",
+      "speaker": "Speaker0",
+      "start": 84.38,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "oh",
+          "start": 84.38,
+          "end": 84.88,
+          "confidence": 0.814
+        },
+        {
+          "word": "he",
+          "start": 85.18,
+          "end": 85.5,
+          "confidence": 0.959
+        },
+        {
+          "word": "is",
+          "start": 85.5,
+          "end": 85.74,
+          "confidence": 0.981
+        },
+        {
+          "word": "my",
+          "start": 85.74,
+          "end": 85.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "uncle",
+          "start": 85.98,
+          "end": 86.46,
+          "confidence": 0.994
+        },
+        {
+          "word": "too",
+          "start": 86.46,
+          "end": 86.96,
+          "confidence": 0.872
+        }
+      ],
+      "confidence": 0.937
+    },
+    {
+      "id": 20,
+      "text": "Uncle Uncle She is my aunt.",
+      "speaker": "Speaker0",
+      "start": 88.62,
+      "duration": 6.5,
+      "words": [
+        {
+          "word": "uncle",
+          "start": 88.62,
+          "end": 89.12,
+          "confidence": 0.782
+        },
+        {
+          "word": "uncle",
+          "start": 90.62,
+          "end": 91.12,
+          "confidence": 0.483
+        },
+        {
+          "word": "she",
+          "start": 93.66,
+          "end": 93.9,
+          "confidence": 0.958
+        },
+        {
+          "word": "is",
+          "start": 93.9,
+          "end": 94.22,
+          "confidence": 0.992
+        },
+        {
+          "word": "my",
+          "start": 94.22,
+          "end": 94.62,
+          "confidence": 0.998
+        },
+        {
+          "word": "aunt",
+          "start": 94.62,
+          "end": 95.12,
+          "confidence": 0.903
+        }
+      ],
+      "confidence": 0.782
+    },
+    {
+      "id": 21,
+      "text": "Aunt aunt She is my cousin.",
+      "speaker": "Speaker0",
+      "start": 97.61,
+      "duration": 6.09,
+      "words": [
+        {
+          "word": "aunt",
+          "start": 97.61,
+          "end": 98.11,
+          "confidence": 0.705
+        },
+        {
+          "word": "aunt",
+          "start": 98.89,
+          "end": 99.39,
+          "confidence": 0.919
+        },
+        {
+          "word": "she",
+          "start": 102.08,
+          "end": 102.48,
+          "confidence": 0.951
+        },
+        {
+          "word": "is",
+          "start": 102.48,
+          "end": 102.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 102.89,
+          "end": 103.2,
+          "confidence": 0.997
+        },
+        {
+          "word": "cousin",
+          "start": 103.2,
+          "end": 103.7,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.705
+    },
+    {
+      "id": 22,
+      "text": "Cousin cousin my family",
+      "speaker": "Speaker0",
+      "start": 105.77,
+      "duration": 4.33,
+      "words": [
+        {
+          "word": "cousin",
+          "start": 105.77,
+          "end": 106.27,
+          "confidence": 0.947
+        },
+        {
+          "word": "cousin",
+          "start": 107.2,
+          "end": 107.7,
+          "confidence": 0.996
+        },
+        {
+          "word": "my",
+          "start": 109.28,
+          "end": 109.6,
+          "confidence": 0.733
+        },
+        {
+          "word": "family",
+          "start": 109.6,
+          "end": 110.1,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.947
+    },
+    {
+      "id": 23,
+      "text": "They are my family members.",
+      "speaker": "Speaker0",
+      "start": 111.68,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "they",
+          "start": 111.68,
+          "end": 111.92,
+          "confidence": 0.988
+        },
+        {
+          "word": "are",
+          "start": 111.92,
+          "end": 112.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "my",
+          "start": 112.24,
+          "end": 112.48,
+          "confidence": 0.996
+        },
+        {
+          "word": "family",
+          "start": 112.48,
+          "end": 112.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "members",
+          "start": 113.04,
+          "end": 113.54,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 24,
+      "text": "I love them.",
+      "speaker": "Speaker0",
+      "start": 114.24,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "i",
+          "start": 114.24,
+          "end": 114.56,
+          "confidence": 0.986
+        },
+        {
+          "word": "love",
+          "start": 114.56,
+          "end": 114.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "them",
+          "start": 114.96,
+          "end": 115.46,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 25,
+      "text": "Review.",
+      "speaker": "Speaker0",
+      "start": 116.88,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "review",
+          "start": 116.88,
+          "end": 117.38,
+          "confidence": 0.895
+        }
+      ],
+      "confidence": 0.895
+    },
+    {
+      "id": 26,
+      "text": "Grandfather grandmother grandparents father mother parents uncle uncle aunt brother me sister cousin my family",
+      "speaker": "Speaker0",
+      "start": 123.04,
+      "duration": 46.77,
+      "words": [
+        {
+          "word": "grandfather",
+          "start": 123.04,
+          "end": 123.54,
+          "confidence": 0.91
+        },
+        {
+          "word": "grandmother",
+          "start": 126.47,
+          "end": 126.97,
+          "confidence": 0.984
+        },
+        {
+          "word": "grandparents",
+          "start": 130.07,
+          "end": 130.57,
+          "confidence": 0.99
+        },
+        {
+          "word": "father",
+          "start": 133.51,
+          "end": 134.01,
+          "confidence": 0.996
+        },
+        {
+          "word": "mother",
+          "start": 137.11,
+          "end": 137.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "parents",
+          "start": 138.3,
+          "end": 138.8,
+          "confidence": 0.995
+        },
+        {
+          "word": "uncle",
+          "start": 147.33,
+          "end": 147.58,
+          "confidence": 0.997
+        },
+        {
+          "word": "uncle",
+          "start": 147.58,
+          "end": 148.08,
+          "confidence": 0.998
+        },
+        {
+          "word": "aunt",
+          "start": 151.18,
+          "end": 151.68,
+          "confidence": 0.996
+        },
+        {
+          "word": "brother",
+          "start": 154.78,
+          "end": 155.28,
+          "confidence": 0.994
+        },
+        {
+          "word": "me",
+          "start": 158.47,
+          "end": 158.97,
+          "confidence": 0.999
+        },
+        {
+          "word": "sister",
+          "start": 161.82,
+          "end": 162.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "cousin",
+          "start": 165.26,
+          "end": 165.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 168.99,
+          "end": 169.31,
+          "confidence": 0.993
+        },
+        {
+          "word": "family",
+          "start": 169.31,
+          "end": 169.81,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.91
     }
   ],
   "videoId": "FHaObkHEkHQ",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:04.718697+00:00",
+  "fetchedAt": "2026-08-03T11:04:15.555203+00:00",
   "rawCaptionCount": 41,
   "splitAt": "2026-08-03T05:15:00.298743+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:04:15.555221+00:00",
+    "dgWordCount": 111,
+    "dgUtteranceCount": 60,
+    "matchedSegments": 60,
+    "totalDuration": 169.81
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

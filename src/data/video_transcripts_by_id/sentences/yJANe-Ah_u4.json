@@ -1,129 +1,885 @@
 {
-  "text": "did I walk in Paris last week no I didn't I walked in New York last week did you like the movie last night yes I did I liked it a lot did he work at home yesterday no he didn't he worked at the office yesterday did she make pasta last night no she didn't she made pizza last night did they look to the left this morning no they didn't they looked to the right did we really cry last night yes we did did you work out last night yes we did did they cook last weekend no they didn't they watched a movie on TV [Music] [Music] [Music] [Music] [Music]",
+  "text": "Did I walk in Paris last week? No. I didn't. I walked in New York last week. Did you like the movie last night? Yes. I did. I liked it a lot. Did he work at home yesterday? No. He didn't. He worked at the office yesterday. Did she make pasta last night? No. She didn't. She made pizza last night. Did they look to the left this morning? No. They didn't. They looked to the right. Did we really cry last night? Yes. We did. Did you work out last night? Yes. We did. Did they cook last weekend? No. They didn't. They watched a movie on TV.",
   "segments": [
     {
-      "start": 8.57,
-      "duration": 4.55,
-      "text": "did I walk in Paris last week"
+      "id": 1,
+      "text": "Did I walk in Paris last week?",
+      "speaker": "Speaker0",
+      "start": 9.2,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "did",
+          "start": 9.2,
+          "end": 9.44,
+          "confidence": 0.959
+        },
+        {
+          "word": "i",
+          "start": 9.44,
+          "end": 9.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "walk",
+          "start": 9.68,
+          "end": 9.92,
+          "confidence": 0.751
+        },
+        {
+          "word": "in",
+          "start": 9.92,
+          "end": 10.24,
+          "confidence": 0.987
+        },
+        {
+          "word": "paris",
+          "start": 10.24,
+          "end": 10.64,
+          "confidence": 0.995
+        },
+        {
+          "word": "last",
+          "start": 10.64,
+          "end": 10.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "week",
+          "start": 10.96,
+          "end": 11.46,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.956
     },
     {
-      "start": 15.12,
-      "duration": 5.69,
-      "text": "no I didn't I walked in New York last"
+      "id": 2,
+      "text": "No. I didn't.",
+      "speaker": "Speaker0",
+      "start": 15.62,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "no",
+          "start": 15.62,
+          "end": 16.02,
+          "confidence": 0.885
+        },
+        {
+          "word": "i",
+          "start": 16.02,
+          "end": 16.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "didn't",
+          "start": 16.18,
+          "end": 16.68,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.961
     },
     {
-      "start": 18.6,
-      "duration": 2.21,
-      "text": "week"
-    },
-    {
-      "start": 22.82,
-      "duration": 4.01,
-      "text": "did you like the movie last night"
-    },
-    {
-      "start": 30.11,
-      "duration": 5.6,
-      "text": "yes I did I liked it a lot"
-    },
-    {
-      "start": 38.46,
-      "duration": 4.07,
-      "text": "did he work at home yesterday"
-    },
-    {
-      "start": 45.86,
-      "duration": 6.3,
-      "text": "no he didn't he worked at the office"
-    },
-    {
-      "start": 49.62,
-      "duration": 2.54,
-      "text": "yesterday"
-    },
-    {
-      "start": 54.88,
-      "duration": 4.62,
-      "text": "did she make pasta last night"
-    },
-    {
-      "start": 61.24,
-      "duration": 6.33,
-      "text": "no she didn't she made pizza last night"
-    },
-    {
-      "start": 72.23,
-      "duration": 4.77,
-      "text": "did they look to the left this morning"
-    },
-    {
-      "start": 79.99,
-      "duration": 6.42,
-      "text": "no they didn't they looked to the right"
-    },
-    {
-      "start": 90.86,
-      "duration": 4.53,
-      "text": "did we really cry last night"
-    },
-    {
-      "start": 96.77,
-      "duration": 3.66,
-      "text": "yes we did"
-    },
-    {
-      "start": 102.85,
-      "duration": 4.38,
-      "text": "did you work out last night"
-    },
-    {
-      "start": 109.2,
-      "duration": 3.9,
-      "text": "yes we did"
-    },
-    {
-      "start": 115.88,
-      "duration": 4.41,
-      "text": "did they cook last weekend"
-    },
-    {
-      "start": 124.7,
-      "duration": 5.97,
-      "text": "no they didn't they watched a movie on"
-    },
-    {
-      "start": 128.4,
+      "id": 3,
+      "text": "I walked in New York last week.",
+      "speaker": "Speaker0",
+      "start": 17.05,
       "duration": 2.27,
-      "text": "TV"
+      "words": [
+        {
+          "word": "i",
+          "start": 17.05,
+          "end": 17.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "walked",
+          "start": 17.38,
+          "end": 17.7,
+          "confidence": 0.996
+        },
+        {
+          "word": "in",
+          "start": 17.7,
+          "end": 17.94,
+          "confidence": 0.994
+        },
+        {
+          "word": "new",
+          "start": 17.94,
+          "end": 18.1,
+          "confidence": 0.599
+        },
+        {
+          "word": "york",
+          "start": 18.1,
+          "end": 18.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "last",
+          "start": 18.5,
+          "end": 18.82,
+          "confidence": 0.997
+        },
+        {
+          "word": "week",
+          "start": 18.82,
+          "end": 19.32,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.941
     },
     {
-      "start": 132.82,
-      "duration": 21.49,
-      "text": "[Music]"
+      "id": 4,
+      "text": "Did you like the movie last night?",
+      "speaker": "Speaker0",
+      "start": 23.14,
+      "duration": 2.01,
+      "words": [
+        {
+          "word": "did",
+          "start": 23.14,
+          "end": 23.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 23.38,
+          "end": 23.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 23.61,
+          "end": 23.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 23.86,
+          "end": 24.02,
+          "confidence": 0.999
+        },
+        {
+          "word": "movie",
+          "start": 24.02,
+          "end": 24.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "last",
+          "start": 24.41,
+          "end": 24.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "night",
+          "start": 24.65,
+          "end": 25.15,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
-      "start": 156.32,
-      "duration": 11.48,
-      "text": "[Music]"
+      "id": 5,
+      "text": "Yes. I did.",
+      "speaker": "Speaker0",
+      "start": 30.52,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "yes",
+          "start": 30.52,
+          "end": 31.0,
+          "confidence": 0.917
+        },
+        {
+          "word": "i",
+          "start": 31.0,
+          "end": 31.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "did",
+          "start": 31.24,
+          "end": 31.74,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.972
     },
     {
-      "start": 170.26,
-      "duration": 19.74,
-      "text": "[Music]"
+      "id": 6,
+      "text": "I liked it a lot.",
+      "speaker": "Speaker0",
+      "start": 32.6,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 32.6,
+          "end": 32.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "liked",
+          "start": 32.92,
+          "end": 33.16,
+          "confidence": 0.998
+        },
+        {
+          "word": "it",
+          "start": 33.16,
+          "end": 33.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 33.48,
+          "end": 33.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "lot",
+          "start": 33.56,
+          "end": 34.06,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
-      "start": 192.38,
-      "duration": 12.26,
-      "text": "[Music]"
+      "id": 7,
+      "text": "Did he work at home yesterday?",
+      "speaker": "Speaker0",
+      "start": 39.09,
+      "duration": 1.79,
+      "words": [
+        {
+          "word": "did",
+          "start": 39.09,
+          "end": 39.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "he",
+          "start": 39.34,
+          "end": 39.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "work",
+          "start": 39.49,
+          "end": 39.9,
+          "confidence": 0.997
+        },
+        {
+          "word": "at",
+          "start": 39.9,
+          "end": 40.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "home",
+          "start": 40.05,
+          "end": 40.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "yesterday",
+          "start": 40.38,
+          "end": 40.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 207.14,
-      "duration": 4.94,
-      "text": "[Music]"
+      "id": 8,
+      "text": "No. He didn't.",
+      "speaker": "Speaker0",
+      "start": 46.61,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "no",
+          "start": 46.61,
+          "end": 46.93,
+          "confidence": 0.851
+        },
+        {
+          "word": "he",
+          "start": 46.93,
+          "end": 47.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "didn't",
+          "start": 47.17,
+          "end": 47.67,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.95
+    },
+    {
+      "id": 9,
+      "text": "He worked at the office yesterday.",
+      "speaker": "Speaker0",
+      "start": 48.61,
+      "duration": 1.87,
+      "words": [
+        {
+          "word": "he",
+          "start": 48.61,
+          "end": 48.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "worked",
+          "start": 48.93,
+          "end": 49.25,
+          "confidence": 0.997
+        },
+        {
+          "word": "at",
+          "start": 49.25,
+          "end": 49.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 49.49,
+          "end": 49.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "office",
+          "start": 49.57,
+          "end": 49.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "yesterday",
+          "start": 49.98,
+          "end": 50.48,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 10,
+      "text": "Did she make pasta last night?",
+      "speaker": "Speaker0",
+      "start": 55.62,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "did",
+          "start": 55.62,
+          "end": 55.94,
+          "confidence": 0.993
+        },
+        {
+          "word": "she",
+          "start": 55.94,
+          "end": 56.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "make",
+          "start": 56.18,
+          "end": 56.58,
+          "confidence": 0.997
+        },
+        {
+          "word": "pasta",
+          "start": 56.58,
+          "end": 57.06,
+          "confidence": 0.996
+        },
+        {
+          "word": "last",
+          "start": 57.06,
+          "end": 57.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "night",
+          "start": 57.38,
+          "end": 57.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 11,
+      "text": "No. She didn't.",
+      "speaker": "Speaker0",
+      "start": 62.18,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "no",
+          "start": 62.18,
+          "end": 62.58,
+          "confidence": 0.991
+        },
+        {
+          "word": "she",
+          "start": 62.58,
+          "end": 62.82,
+          "confidence": 0.999
+        },
+        {
+          "word": "didn't",
+          "start": 62.82,
+          "end": 63.32,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 12,
+      "text": "She made pizza last night. Did they look to the left this morning?",
+      "speaker": "Speaker0",
+      "start": 64.2,
+      "duration": 11.07,
+      "words": [
+        {
+          "word": "she",
+          "start": 64.2,
+          "end": 64.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "made",
+          "start": 64.36,
+          "end": 64.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "pizza",
+          "start": 64.77,
+          "end": 65.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "last",
+          "start": 65.24,
+          "end": 65.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "night",
+          "start": 72.92,
+          "end": 73.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "did",
+          "start": 73.0,
+          "end": 73.41,
+          "confidence": 0.995
+        },
+        {
+          "word": "they",
+          "start": 73.41,
+          "end": 73.64,
+          "confidence": 0.997
+        },
+        {
+          "word": "look",
+          "start": 73.64,
+          "end": 73.88,
+          "confidence": 0.993
+        },
+        {
+          "word": "to",
+          "start": 73.88,
+          "end": 74.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 74.05,
+          "end": 74.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "left",
+          "start": 74.2,
+          "end": 74.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "this",
+          "start": 74.6,
+          "end": 74.77,
+          "confidence": 0.895
+        },
+        {
+          "word": "morning",
+          "start": 74.77,
+          "end": 75.27,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 13,
+      "text": "No. They didn't.",
+      "speaker": "Speaker0",
+      "start": 80.78,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "no",
+          "start": 80.78,
+          "end": 81.28,
+          "confidence": 0.948
+        },
+        {
+          "word": "they",
+          "start": 81.34,
+          "end": 81.58,
+          "confidence": 0.998
+        },
+        {
+          "word": "didn't",
+          "start": 81.58,
+          "end": 82.08,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 14,
+      "text": "They looked to the right.",
+      "speaker": "Speaker0",
+      "start": 83.26,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "they",
+          "start": 83.26,
+          "end": 83.5,
+          "confidence": 0.999
+        },
+        {
+          "word": "looked",
+          "start": 83.5,
+          "end": 83.9,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 83.9,
+          "end": 84.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 84.14,
+          "end": 84.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "right",
+          "start": 84.3,
+          "end": 84.8,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 15,
+      "text": "Did we really cry last night?",
+      "speaker": "Speaker0",
+      "start": 91.67,
+      "duration": 2.11,
+      "words": [
+        {
+          "word": "did",
+          "start": 91.67,
+          "end": 91.92,
+          "confidence": 0.992
+        },
+        {
+          "word": "we",
+          "start": 91.92,
+          "end": 92.16,
+          "confidence": 0.919
+        },
+        {
+          "word": "really",
+          "start": 92.16,
+          "end": 92.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "cry",
+          "start": 92.56,
+          "end": 93.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "last",
+          "start": 93.03,
+          "end": 93.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "night",
+          "start": 93.28,
+          "end": 93.78,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.985
+    },
+    {
+      "id": 16,
+      "text": "Yes. We did.",
+      "speaker": "Speaker0",
+      "start": 97.52,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "yes",
+          "start": 97.52,
+          "end": 98.0,
+          "confidence": 0.987
+        },
+        {
+          "word": "we",
+          "start": 98.0,
+          "end": 98.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "did",
+          "start": 98.23,
+          "end": 98.73,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 17,
+      "text": "Did you work out last night?",
+      "speaker": "Speaker0",
+      "start": 103.69,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "did",
+          "start": 103.69,
+          "end": 103.93,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 103.93,
+          "end": 104.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "work",
+          "start": 104.17,
+          "end": 104.41,
+          "confidence": 0.98
+        },
+        {
+          "word": "out",
+          "start": 104.41,
+          "end": 104.81,
+          "confidence": 0.997
+        },
+        {
+          "word": "last",
+          "start": 104.81,
+          "end": 105.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "night",
+          "start": 105.13,
+          "end": 105.63,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 18,
+      "text": "Yes. We did.",
+      "speaker": "Speaker0",
+      "start": 109.93,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "yes",
+          "start": 109.93,
+          "end": 110.43,
+          "confidence": 0.997
+        },
+        {
+          "word": "we",
+          "start": 110.65,
+          "end": 110.89,
+          "confidence": 0.999
+        },
+        {
+          "word": "did",
+          "start": 110.89,
+          "end": 111.39,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 19,
+      "text": "Did they cook last weekend?",
+      "speaker": "Speaker0",
+      "start": 116.67,
+      "duration": 1.69,
+      "words": [
+        {
+          "word": "did",
+          "start": 116.67,
+          "end": 116.98,
+          "confidence": 0.985
+        },
+        {
+          "word": "they",
+          "start": 116.98,
+          "end": 117.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "cook",
+          "start": 117.22,
+          "end": 117.62,
+          "confidence": 0.995
+        },
+        {
+          "word": "last",
+          "start": 117.62,
+          "end": 117.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "weekend",
+          "start": 117.86,
+          "end": 118.36,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 20,
+      "text": "No. They didn't.",
+      "speaker": "Speaker0",
+      "start": 125.62,
+      "duration": 1.07,
+      "words": [
+        {
+          "word": "no",
+          "start": 125.62,
+          "end": 125.94,
+          "confidence": 0.948
+        },
+        {
+          "word": "they",
+          "start": 125.94,
+          "end": 126.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "didn't",
+          "start": 126.19,
+          "end": 126.69,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 21,
+      "text": "They watched a movie on TV.",
+      "speaker": "Speaker0",
+      "start": 127.29,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "they",
+          "start": 127.29,
+          "end": 127.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "watched",
+          "start": 127.45,
+          "end": 127.77,
+          "confidence": 0.993
+        },
+        {
+          "word": "a",
+          "start": 127.77,
+          "end": 127.93,
+          "confidence": 0.993
+        },
+        {
+          "word": "movie",
+          "start": 127.93,
+          "end": 128.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 128.33,
+          "end": 128.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "tv",
+          "start": 128.57,
+          "end": 129.07,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.994
     }
   ],
   "videoId": "yJANe-Ah_u4",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:37.949793+00:00",
-  "rawCaptionCount": 24
+  "fetchedAt": "2026-08-03T11:06:28.669937+00:00",
+  "rawCaptionCount": 24,
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:06:28.669985+00:00",
+    "dgWordCount": 109,
+    "dgUtteranceCount": 22,
+    "matchedSegments": 22,
+    "totalDuration": 129.07
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

@@ -1,548 +1,2616 @@
 {
-  "text": "English sing sing. Theme 13, how many? Dialogue. Wow. The zoo. How many bears? One, two, two bears. No. That's a baby bear. How many bears? Three bears. Look. Tigers. How many tigers? One, two, three, four, five. Five tigers. Six six tigers. It's a lion. On Wiki Song. Look, apples, how many apples? One apple, two apples, three apples. Three apples, wow! Look, bananas, how many bananas? One banana, two bananas, three bananas. Three bananas, wow! Look, oranges, how many oranges? One orange, two oranges, three oranges. Three oranges, wow! Song. Look tigers, look tigers, how many tigers? One, two, three, four, five, six. One, two, three, four, five, six. Six tigers, six tigers, six, six, six tigers. Look, lions, look, lions, how many lions? Five, six, seven, eight, nine, ten. Five, six, six, seven, eight, nine, ten. 10 lions, 10 lions, ten, ten, 10 lions. Rock. Look. Look, look, look. Look, bears. Look, look, look, look, look. Look, monkeys. How many bears? Three bears. How many monkeys? Six monkeys. Look, look, look, look, look, look, look, look. Rock. Look, tomatoes, look, tomatoes. How many, how many, how many tomatoes? One, two, three, four. Four tomatoes. Look, bananas, look, bananas. How many, how many, how many bananas? One, two, three, four, five. Five bananas. Story. Look, a bear. A baby bear. Thank you. You're welcome. I'm Hansel. I'm Gretel. I'm here. Wow. Look. Many cakes. How many cakes? One, two, three, four. Five, six, seven. Eight, nine, 10. 10 cakes. Oh, no. They are my cakes. How many cakes? One, two, three. Story. Good morning. How many eggs? One, two, three. Three eggs. Thank you. How many eggs? One, two, three, four, five. Five eggs. Wow. Look. Very good. Oh, no. How many eggs? Look. Oh, no.",
+  "text": "English sing sing. Theme 13, how many? Dialogue. Wow. The zoo. How many bears? One, two, two bears. No. That's a baby bear. How many bears? Three bears. Look. Tigers. How many tigers? One, two, three, four, five. Five tigers. Six six tigers It's a lion. On Wiki Song. Look, apples, how many apples? One apple, two apples, three apples. Three apples, wow! Look, bananas, how many bananas? One banana, two bananas, three bananas, three bananas, wow! Look, oranges, how many oranges? One orange, two oranges, three oranges, three oranges, wow! Song. Look tigers, look tigers, how many tigers? One, two, three, four, five, six. One, two, three, four, five, six. Six tigers, six tigers, six, six, six tigers. Look, lions, look, lions, how many lions? Five, six, seven, eight, nine, ten Five, six, six, seven, eight, nine, ten. 10 lions, 10 lions, ten, ten, 10 lions. Rock. Look. Look, look, look. Look, bears. Look, look, look, look, look. Look, monkeys. How many bears? Three bears. How many monkeys? Six monkeys. Look, look, look, look, look, look, look, look, Rock. Look, tomatoes, look, tomatoes. How many, how many, how many tomatoes? One, two, three, four. Four tomatoes. Look, bananas, look, bananas. How many, how many, how many bananas? One, two, three, four, five. Five bananas. Story. Look, a bear. A baby bear. Thank you. You're welcome. I'm Hansel. I'm Gretel. I'm here. Wow. Look. Many cakes. How many cakes? One, two, three, four. Five, six, seven. Eight, nine, 10. 10 cakes. Oh, no. They are my cakes. How many cakes? One, two, three. Story. Good morning. How many eggs? One, two, three. Three eggs. Thank you. How many eggs? One, two, three, four, five. Five eggs. Wow. Look. Very good. Oh, no. How many eggs? Look. Oh, no.",
   "segments": [
     {
       "id": 1,
-      "text": "English sing sing.",
+      "text": "English sing sing. Theme 13, how many?",
+      "speaker": "Speaker0",
       "start": 1.76,
-      "duration": 1.68
+      "duration": 4.02,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.76,
+          "end": 2.26,
+          "confidence": 0.941
+        },
+        {
+          "word": "sing",
+          "start": 2.4,
+          "end": 2.64,
+          "confidence": 0.813
+        },
+        {
+          "word": "sing",
+          "start": 2.64,
+          "end": 3.14,
+          "confidence": 0.983
+        },
+        {
+          "word": "theme",
+          "start": 3.44,
+          "end": 3.84,
+          "confidence": 0.834
+        },
+        {
+          "word": "13",
+          "start": 3.84,
+          "end": 4.34,
+          "confidence": 0.788
+        },
+        {
+          "word": "how",
+          "start": 4.96,
+          "end": 5.28,
+          "confidence": 0.968
+        },
+        {
+          "word": "many",
+          "start": 5.28,
+          "end": 5.78,
+          "confidence": 0.808
+        }
+      ],
+      "confidence": 0.872
     },
     {
       "id": 2,
-      "text": "Theme 13, how many?",
-      "start": 3.44,
-      "duration": 6.56
+      "text": "Dialogue.",
+      "speaker": "Speaker2",
+      "start": 10.0,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "dialogue",
+          "start": 10.0,
+          "end": 10.5,
+          "confidence": 0.694
+        }
+      ],
+      "confidence": 0.694
     },
     {
       "id": 3,
-      "text": "Dialogue.",
-      "start": 10.0,
-      "duration": 3.04
+      "text": "Wow. The zoo.",
+      "speaker": "Speaker0",
+      "start": 13.04,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "wow",
+          "start": 13.04,
+          "end": 13.52,
+          "confidence": 0.78
+        },
+        {
+          "word": "the",
+          "start": 13.52,
+          "end": 13.84,
+          "confidence": 0.994
+        },
+        {
+          "word": "zoo",
+          "start": 13.84,
+          "end": 14.34,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.923
     },
     {
       "id": 4,
-      "text": "Wow.",
-      "start": 13.04,
-      "duration": 0.5
+      "text": "How many bears?",
+      "speaker": "Speaker0",
+      "start": 23.97,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "how",
+          "start": 23.97,
+          "end": 24.29,
+          "confidence": 0.84
+        },
+        {
+          "word": "many",
+          "start": 24.29,
+          "end": 24.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "bears",
+          "start": 24.77,
+          "end": 25.27,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.945
     },
     {
       "id": 5,
-      "text": "The zoo.",
-      "start": 13.47,
-      "duration": 10.5
+      "text": "One, two, two bears.",
+      "speaker": "Speaker0",
+      "start": 26.21,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "one",
+          "start": 26.21,
+          "end": 26.71,
+          "confidence": 0.865
+        },
+        {
+          "word": "two",
+          "start": 26.93,
+          "end": 27.43,
+          "confidence": 0.97
+        },
+        {
+          "word": "two",
+          "start": 27.89,
+          "end": 28.29,
+          "confidence": 0.994
+        },
+        {
+          "word": "bears",
+          "start": 28.29,
+          "end": 28.79,
+          "confidence": 0.953
+        }
+      ],
+      "confidence": 0.918
     },
     {
       "id": 6,
-      "text": "How many bears?",
-      "start": 23.97,
-      "duration": 2.24
+      "text": "No. That's a baby bear.",
+      "speaker": "Speaker0",
+      "start": 32.42,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "no",
+          "start": 32.42,
+          "end": 32.92,
+          "confidence": 0.837
+        },
+        {
+          "word": "that's",
+          "start": 33.06,
+          "end": 33.46,
+          "confidence": 0.997
+        },
+        {
+          "word": "a",
+          "start": 33.46,
+          "end": 33.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "baby",
+          "start": 33.7,
+          "end": 34.18,
+          "confidence": 1.0
+        },
+        {
+          "word": "bear",
+          "start": 34.18,
+          "end": 34.68,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.965
     },
     {
       "id": 7,
-      "text": "One, two, two bears.",
-      "start": 26.21,
-      "duration": 6.21
+      "text": "How many bears?",
+      "speaker": "Speaker1",
+      "start": 38.98,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "how",
+          "start": 38.98,
+          "end": 39.3,
+          "confidence": 0.845
+        },
+        {
+          "word": "many",
+          "start": 39.3,
+          "end": 39.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "bears",
+          "start": 39.7,
+          "end": 40.2,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.948
     },
     {
       "id": 8,
-      "text": "No. That's a baby bear.",
-      "start": 32.42,
-      "duration": 6.56
+      "text": "Three bears.",
+      "speaker": "Speaker1",
+      "start": 41.88,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "three",
+          "start": 41.88,
+          "end": 42.38,
+          "confidence": 0.979
+        },
+        {
+          "word": "bears",
+          "start": 42.52,
+          "end": 43.02,
+          "confidence": 0.976
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 9,
-      "text": "How many bears?",
-      "start": 38.98,
-      "duration": 2.9
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 55.08,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 55.08,
+          "end": 55.58,
+          "confidence": 0.761
+        }
+      ],
+      "confidence": 0.761
     },
     {
       "id": 10,
-      "text": "Three bears.",
-      "start": 41.88,
-      "duration": 13.2
+      "text": "Tigers.",
+      "speaker": "Speaker0",
+      "start": 55.95,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "tigers",
+          "start": 55.95,
+          "end": 56.45,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 11,
-      "text": "Look.",
-      "start": 55.08,
-      "duration": 0.87
+      "text": "How many tigers?",
+      "speaker": "Speaker0",
+      "start": 59.59,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "how",
+          "start": 59.59,
+          "end": 59.83,
+          "confidence": 0.849
+        },
+        {
+          "word": "many",
+          "start": 59.83,
+          "end": 60.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "tigers",
+          "start": 60.23,
+          "end": 60.73,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.948
     },
     {
       "id": 12,
-      "text": "Tigers.",
-      "start": 55.95,
-      "duration": 3.64
+      "text": "One, two, three, four, five.",
+      "speaker": "Speaker3",
+      "start": 63.11,
+      "duration": 3.3,
+      "words": [
+        {
+          "word": "one",
+          "start": 63.11,
+          "end": 63.27,
+          "confidence": 0.818
+        },
+        {
+          "word": "two",
+          "start": 63.27,
+          "end": 63.77,
+          "confidence": 0.996
+        },
+        {
+          "word": "three",
+          "start": 64.23,
+          "end": 64.73,
+          "confidence": 0.995
+        },
+        {
+          "word": "four",
+          "start": 65.03,
+          "end": 65.53,
+          "confidence": 0.992
+        },
+        {
+          "word": "five",
+          "start": 65.91,
+          "end": 66.41,
+          "confidence": 0.91
+        }
+      ],
+      "confidence": 0.907
     },
     {
       "id": 13,
-      "text": "How many tigers?",
-      "start": 59.59,
-      "duration": 3.52
+      "text": "Five tigers.",
+      "speaker": "Speaker3",
+      "start": 66.87,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "five",
+          "start": 66.87,
+          "end": 67.37,
+          "confidence": 0.978
+        },
+        {
+          "word": "tigers",
+          "start": 67.43,
+          "end": 67.93,
+          "confidence": 0.963
+        }
+      ],
+      "confidence": 0.97
     },
     {
       "id": 14,
-      "text": "One, two, three, four, five.",
-      "start": 63.11,
-      "duration": 3.76
+      "text": "Six six tigers",
+      "speaker": "Speaker0",
+      "start": 70.67,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "six",
+          "start": 70.67,
+          "end": 71.17,
+          "confidence": 0.974
+        },
+        {
+          "word": "six",
+          "start": 71.7,
+          "end": 72.19,
+          "confidence": 0.992
+        },
+        {
+          "word": "tigers",
+          "start": 72.19,
+          "end": 72.69,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 15,
-      "text": "Five tigers.",
-      "start": 66.87,
-      "duration": 3.8
+      "text": "It's a lion.",
+      "speaker": "Speaker4",
+      "start": 76.67,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "it's",
+          "start": 76.67,
+          "end": 77.06,
+          "confidence": 0.79
+        },
+        {
+          "word": "a",
+          "start": 77.06,
+          "end": 77.31,
+          "confidence": 0.998
+        },
+        {
+          "word": "lion",
+          "start": 77.31,
+          "end": 77.81,
+          "confidence": 0.687
+        }
+      ],
+      "confidence": 0.825
     },
     {
       "id": 16,
-      "text": "Six six tigers.",
-      "start": 70.67,
-      "duration": 6.0
+      "text": "On Wiki Song.",
+      "speaker": "Speaker0",
+      "start": 79.86,
+      "duration": 7.9,
+      "words": [
+        {
+          "word": "on",
+          "start": 79.86,
+          "end": 80.1,
+          "confidence": 0.506
+        },
+        {
+          "word": "wiki",
+          "start": 80.1,
+          "end": 80.6,
+          "confidence": 0.608
+        },
+        {
+          "word": "song",
+          "start": 87.26,
+          "end": 87.76,
+          "confidence": 0.559
+        }
+      ],
+      "confidence": 0.557
     },
     {
       "id": 17,
-      "text": "It's a lion.",
-      "start": 76.67,
-      "duration": 3.19
+      "text": "Look, apples, how many apples?",
+      "speaker": "Speaker1",
+      "start": 96.3,
+      "duration": 3.3,
+      "words": [
+        {
+          "word": "look",
+          "start": 96.3,
+          "end": 96.8,
+          "confidence": 0.606
+        },
+        {
+          "word": "apples",
+          "start": 97.34,
+          "end": 97.84,
+          "confidence": 0.763
+        },
+        {
+          "word": "how",
+          "start": 98.3,
+          "end": 98.7,
+          "confidence": 0.984
+        },
+        {
+          "word": "many",
+          "start": 98.7,
+          "end": 99.1,
+          "confidence": 0.995
+        },
+        {
+          "word": "apples",
+          "start": 99.1,
+          "end": 99.6,
+          "confidence": 0.966
+        }
+      ],
+      "confidence": 0.606
     },
     {
       "id": 18,
-      "text": "On Wiki Song.",
-      "start": 79.86,
-      "duration": 16.44
+      "text": "One apple, two apples, three apples.",
+      "speaker": "Speaker5",
+      "start": 99.98,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "one",
+          "start": 99.98,
+          "end": 100.38,
+          "confidence": 0.967
+        },
+        {
+          "word": "apple",
+          "start": 100.38,
+          "end": 100.86,
+          "confidence": 0.977
+        },
+        {
+          "word": "two",
+          "start": 100.86,
+          "end": 101.36,
+          "confidence": 0.938
+        },
+        {
+          "word": "apples",
+          "start": 101.67,
+          "end": 102.17,
+          "confidence": 0.926
+        },
+        {
+          "word": "three",
+          "start": 102.31,
+          "end": 102.7,
+          "confidence": 0.973
+        },
+        {
+          "word": "apples",
+          "start": 102.7,
+          "end": 103.2,
+          "confidence": 0.814
+        }
+      ],
+      "confidence": 0.961
     },
     {
       "id": 19,
-      "text": "Look, apples, how many apples?",
-      "start": 96.3,
-      "duration": 3.68
+      "text": "Three apples, wow! Look, bananas, how many bananas?",
+      "speaker": "Speaker5",
+      "start": 103.58,
+      "duration": 6.66,
+      "words": [
+        {
+          "word": "three",
+          "start": 103.58,
+          "end": 104.06,
+          "confidence": 0.929
+        },
+        {
+          "word": "apples",
+          "start": 104.06,
+          "end": 104.56,
+          "confidence": 0.781
+        },
+        {
+          "word": "wow",
+          "start": 106.86,
+          "end": 107.19,
+          "confidence": 0.829
+        },
+        {
+          "word": "look",
+          "start": 107.19,
+          "end": 107.69,
+          "confidence": 0.737
+        },
+        {
+          "word": "bananas",
+          "start": 107.91,
+          "end": 108.41,
+          "confidence": 0.769
+        },
+        {
+          "word": "how",
+          "start": 109.19,
+          "end": 109.42,
+          "confidence": 0.99
+        },
+        {
+          "word": "many",
+          "start": 109.42,
+          "end": 109.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "bananas",
+          "start": 109.74,
+          "end": 110.24,
+          "confidence": 0.88
+        }
+      ],
+      "confidence": 0.855
     },
     {
       "id": 20,
-      "text": "One apple, two apples, three apples.",
-      "start": 99.98,
-      "duration": 3.6
+      "text": "One banana, two bananas, three bananas, three bananas, wow!",
+      "speaker": "Speaker5",
+      "start": 110.78,
+      "duration": 5.07,
+      "words": [
+        {
+          "word": "one",
+          "start": 110.78,
+          "end": 111.19,
+          "confidence": 0.986
+        },
+        {
+          "word": "banana",
+          "start": 111.19,
+          "end": 111.69,
+          "confidence": 0.996
+        },
+        {
+          "word": "two",
+          "start": 111.83,
+          "end": 112.06,
+          "confidence": 0.998
+        },
+        {
+          "word": "bananas",
+          "start": 112.06,
+          "end": 112.56,
+          "confidence": 0.996
+        },
+        {
+          "word": "three",
+          "start": 113.02,
+          "end": 113.34,
+          "confidence": 0.995
+        },
+        {
+          "word": "bananas",
+          "start": 113.34,
+          "end": 113.84,
+          "confidence": 0.955
+        },
+        {
+          "word": "three",
+          "start": 114.78,
+          "end": 115.1,
+          "confidence": 0.984
+        },
+        {
+          "word": "bananas",
+          "start": 115.1,
+          "end": 115.35,
+          "confidence": 0.848
+        },
+        {
+          "word": "wow",
+          "start": 115.35,
+          "end": 115.85,
+          "confidence": 0.854
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 21,
-      "text": "Three apples, wow!",
-      "start": 103.58,
-      "duration": 3.61
+      "text": "Look, oranges, how many oranges?",
+      "speaker": "Speaker1",
+      "start": 117.99,
+      "duration": 3.3,
+      "words": [
+        {
+          "word": "look",
+          "start": 117.99,
+          "end": 118.49,
+          "confidence": 0.84
+        },
+        {
+          "word": "oranges",
+          "start": 118.95,
+          "end": 119.45,
+          "confidence": 0.845
+        },
+        {
+          "word": "how",
+          "start": 120.07,
+          "end": 120.31,
+          "confidence": 0.987
+        },
+        {
+          "word": "many",
+          "start": 120.31,
+          "end": 120.79,
+          "confidence": 0.998
+        },
+        {
+          "word": "oranges",
+          "start": 120.79,
+          "end": 121.29,
+          "confidence": 0.967
+        }
+      ],
+      "confidence": 0.84
     },
     {
       "id": 22,
-      "text": "Look, bananas, how many bananas?",
-      "start": 107.19,
-      "duration": 3.59
+      "text": "One orange, two oranges, three oranges, three oranges, wow!",
+      "speaker": "Speaker5",
+      "start": 121.83,
+      "duration": 6.02,
+      "words": [
+        {
+          "word": "one",
+          "start": 121.83,
+          "end": 122.07,
+          "confidence": 0.983
+        },
+        {
+          "word": "orange",
+          "start": 122.07,
+          "end": 122.55,
+          "confidence": 0.986
+        },
+        {
+          "word": "two",
+          "start": 122.55,
+          "end": 123.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "oranges",
+          "start": 123.03,
+          "end": 123.53,
+          "confidence": 0.987
+        },
+        {
+          "word": "three",
+          "start": 123.91,
+          "end": 124.39,
+          "confidence": 0.997
+        },
+        {
+          "word": "oranges",
+          "start": 124.39,
+          "end": 124.89,
+          "confidence": 0.969
+        },
+        {
+          "word": "three",
+          "start": 125.59,
+          "end": 126.09,
+          "confidence": 0.989
+        },
+        {
+          "word": "oranges",
+          "start": 126.23,
+          "end": 126.73,
+          "confidence": 0.905
+        },
+        {
+          "word": "wow",
+          "start": 127.35,
+          "end": 127.85,
+          "confidence": 0.957
+        }
+      ],
+      "confidence": 0.988
     },
     {
       "id": 23,
-      "text": "One banana, two bananas, three bananas.",
-      "start": 110.78,
-      "duration": 3.38
+      "text": "Song.",
+      "speaker": "Speaker1",
+      "start": 139.88,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "song",
+          "start": 139.88,
+          "end": 140.38,
+          "confidence": 0.661
+        }
+      ],
+      "confidence": 0.661
     },
     {
       "id": 24,
-      "text": "Three bananas, wow!",
-      "start": 114.16,
-      "duration": 3.83
+      "text": "Look tigers, look tigers, how many tigers?",
+      "speaker": "Speaker1",
+      "start": 140.76,
+      "duration": 4.68,
+      "words": [
+        {
+          "word": "look",
+          "start": 140.76,
+          "end": 141.08,
+          "confidence": 0.6
+        },
+        {
+          "word": "tigers",
+          "start": 141.08,
+          "end": 141.58,
+          "confidence": 0.828
+        },
+        {
+          "word": "look",
+          "start": 142.2,
+          "end": 142.53,
+          "confidence": 0.972
+        },
+        {
+          "word": "tigers",
+          "start": 142.53,
+          "end": 143.03,
+          "confidence": 0.873
+        },
+        {
+          "word": "how",
+          "start": 143.41,
+          "end": 143.91,
+          "confidence": 0.958
+        },
+        {
+          "word": "many",
+          "start": 144.46,
+          "end": 144.94,
+          "confidence": 0.999
+        },
+        {
+          "word": "tigers",
+          "start": 144.94,
+          "end": 145.44,
+          "confidence": 0.924
+        }
+      ],
+      "confidence": 0.714
     },
     {
       "id": 25,
-      "text": "Look, oranges, how many oranges?",
-      "start": 117.99,
-      "duration": 3.84
+      "text": "One, two, three, four, five, six.",
+      "speaker": "Speaker4",
+      "start": 147.5,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "one",
+          "start": 147.5,
+          "end": 147.82,
+          "confidence": 0.91
+        },
+        {
+          "word": "two",
+          "start": 147.82,
+          "end": 148.06,
+          "confidence": 0.997
+        },
+        {
+          "word": "three",
+          "start": 148.06,
+          "end": 148.54,
+          "confidence": 0.996
+        },
+        {
+          "word": "four",
+          "start": 148.54,
+          "end": 148.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "five",
+          "start": 148.94,
+          "end": 149.42,
+          "confidence": 0.991
+        },
+        {
+          "word": "six",
+          "start": 149.42,
+          "end": 149.92,
+          "confidence": 0.784
+        }
+      ],
+      "confidence": 0.946
     },
     {
       "id": 26,
-      "text": "One orange, two oranges, three oranges.",
-      "start": 121.83,
-      "duration": 4.01
+      "text": "One, two, three, four, five, six.",
+      "speaker": "Speaker4",
+      "start": 150.38,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "one",
+          "start": 150.38,
+          "end": 150.7,
+          "confidence": 0.996
+        },
+        {
+          "word": "two",
+          "start": 150.7,
+          "end": 150.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "three",
+          "start": 150.94,
+          "end": 151.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "four",
+          "start": 151.42,
+          "end": 151.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "five",
+          "start": 151.74,
+          "end": 152.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "six",
+          "start": 152.3,
+          "end": 152.8,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 27,
-      "text": "Three oranges, wow!",
-      "start": 125.84,
-      "duration": 14.04
+      "text": "Six tigers, six tigers, six, six, six tigers.",
+      "speaker": "Speaker4",
+      "start": 154.62,
+      "duration": 5.95,
+      "words": [
+        {
+          "word": "six",
+          "start": 154.62,
+          "end": 155.1,
+          "confidence": 0.987
+        },
+        {
+          "word": "tigers",
+          "start": 155.1,
+          "end": 155.6,
+          "confidence": 0.99
+        },
+        {
+          "word": "six",
+          "start": 156.06,
+          "end": 156.54,
+          "confidence": 0.995
+        },
+        {
+          "word": "tigers",
+          "start": 156.54,
+          "end": 157.04,
+          "confidence": 0.968
+        },
+        {
+          "word": "six",
+          "start": 157.42,
+          "end": 157.82,
+          "confidence": 0.941
+        },
+        {
+          "word": "six",
+          "start": 157.82,
+          "end": 158.24,
+          "confidence": 0.926
+        },
+        {
+          "word": "six",
+          "start": 159.19,
+          "end": 159.69,
+          "confidence": 0.901
+        },
+        {
+          "word": "tigers",
+          "start": 160.07,
+          "end": 160.57,
+          "confidence": 0.923
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 28,
-      "text": "Song.",
-      "start": 139.88,
-      "duration": 0.88
+      "text": "Look, lions, look, lions, how many lions?",
+      "speaker": "Speaker4",
+      "start": 163.12,
+      "duration": 4.57,
+      "words": [
+        {
+          "word": "look",
+          "start": 163.12,
+          "end": 163.59,
+          "confidence": 0.752
+        },
+        {
+          "word": "lions",
+          "start": 163.59,
+          "end": 164.09,
+          "confidence": 0.952
+        },
+        {
+          "word": "look",
+          "start": 164.4,
+          "end": 164.9,
+          "confidence": 0.92
+        },
+        {
+          "word": "lions",
+          "start": 165.03,
+          "end": 165.53,
+          "confidence": 0.768
+        },
+        {
+          "word": "how",
+          "start": 166.07,
+          "end": 166.16,
+          "confidence": 0.873
+        },
+        {
+          "word": "many",
+          "start": 166.16,
+          "end": 166.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "lions",
+          "start": 167.19,
+          "end": 167.69,
+          "confidence": 0.947
+        }
+      ],
+      "confidence": 0.852
     },
     {
       "id": 29,
-      "text": "Look tigers, look tigers, how many tigers?",
-      "start": 140.76,
-      "duration": 6.74
+      "text": "Five, six, seven, eight, nine, ten",
+      "speaker": "Speaker0",
+      "start": 170.07,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "five",
+          "start": 170.07,
+          "end": 170.31,
+          "confidence": 0.929
+        },
+        {
+          "word": "six",
+          "start": 170.31,
+          "end": 170.63,
+          "confidence": 0.996
+        },
+        {
+          "word": "seven",
+          "start": 170.63,
+          "end": 171.13,
+          "confidence": 0.991
+        },
+        {
+          "word": "eight",
+          "start": 171.19,
+          "end": 171.59,
+          "confidence": 0.992
+        },
+        {
+          "word": "nine",
+          "start": 171.59,
+          "end": 171.91,
+          "confidence": 0.992
+        },
+        {
+          "word": "ten",
+          "start": 171.91,
+          "end": 172.41,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.983
     },
     {
       "id": 30,
-      "text": "One, two, three, four, five, six.",
-      "start": 147.5,
-      "duration": 2.88
+      "text": "Five, six, six, seven, eight, nine, ten.",
+      "speaker": "Speaker0",
+      "start": 172.79,
+      "duration": 2.67,
+      "words": [
+        {
+          "word": "five",
+          "start": 172.79,
+          "end": 173.03,
+          "confidence": 0.713
+        },
+        {
+          "word": "six",
+          "start": 173.03,
+          "end": 173.28,
+          "confidence": 0.958
+        },
+        {
+          "word": "six",
+          "start": 173.44,
+          "end": 173.6,
+          "confidence": 0.966
+        },
+        {
+          "word": "seven",
+          "start": 173.6,
+          "end": 173.64,
+          "confidence": 0.988
+        },
+        {
+          "word": "eight",
+          "start": 173.64,
+          "end": 173.68,
+          "confidence": 0.997
+        },
+        {
+          "word": "nine",
+          "start": 173.68,
+          "end": 174.18,
+          "confidence": 0.998
+        },
+        {
+          "word": "ten",
+          "start": 174.96,
+          "end": 175.46,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.937
     },
     {
       "id": 31,
-      "text": "One, two, three, four, five, six.",
-      "start": 150.38,
-      "duration": 4.24
+      "text": "10 lions, 10 lions, ten, ten, 10 lions.",
+      "speaker": "Speaker1",
+      "start": 177.2,
+      "duration": 5.86,
+      "words": [
+        {
+          "word": "10",
+          "start": 177.2,
+          "end": 177.52,
+          "confidence": 0.906
+        },
+        {
+          "word": "lions",
+          "start": 177.52,
+          "end": 178.02,
+          "confidence": 0.907
+        },
+        {
+          "word": "10",
+          "start": 178.64,
+          "end": 178.96,
+          "confidence": 0.987
+        },
+        {
+          "word": "lions",
+          "start": 178.96,
+          "end": 179.46,
+          "confidence": 0.852
+        },
+        {
+          "word": "ten",
+          "start": 180.0,
+          "end": 180.48,
+          "confidence": 0.882
+        },
+        {
+          "word": "ten",
+          "start": 180.48,
+          "end": 180.98,
+          "confidence": 0.848
+        },
+        {
+          "word": "10",
+          "start": 181.52,
+          "end": 182.02,
+          "confidence": 0.964
+        },
+        {
+          "word": "lions",
+          "start": 182.56,
+          "end": 183.06,
+          "confidence": 0.954
+        }
+      ],
+      "confidence": 0.907
     },
     {
       "id": 32,
-      "text": "Six tigers, six tigers, six, six, six tigers.",
-      "start": 154.62,
-      "duration": 8.5
+      "text": "Rock.",
+      "speaker": "Speaker0",
+      "start": 187.69,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "rock",
+          "start": 187.69,
+          "end": 188.19,
+          "confidence": 0.636
+        }
+      ],
+      "confidence": 0.636
     },
     {
       "id": 33,
-      "text": "Look, lions, look, lions, how many lions?",
-      "start": 163.12,
-      "duration": 6.95
+      "text": "Look.",
+      "speaker": "Speaker2",
+      "start": 201.13,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 201.13,
+          "end": 201.63,
+          "confidence": 0.736
+        }
+      ],
+      "confidence": 0.736
     },
     {
       "id": 34,
-      "text": "Five, six, seven, eight, nine, ten.",
-      "start": 170.07,
-      "duration": 2.72
+      "text": "Look, look, look. Look, bears.",
+      "speaker": "Speaker2",
+      "start": 202.28,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "look",
+          "start": 202.28,
+          "end": 202.52,
+          "confidence": 0.984
+        },
+        {
+          "word": "look",
+          "start": 202.52,
+          "end": 203.02,
+          "confidence": 0.876
+        },
+        {
+          "word": "look",
+          "start": 203.64,
+          "end": 203.68,
+          "confidence": 0.796
+        },
+        {
+          "word": "look",
+          "start": 203.68,
+          "end": 203.72,
+          "confidence": 0.906
+        },
+        {
+          "word": "bears",
+          "start": 203.72,
+          "end": 204.22,
+          "confidence": 0.902
+        }
+      ],
+      "confidence": 0.93
     },
     {
       "id": 35,
-      "text": "Five, six, six, seven, eight, nine, ten.",
-      "start": 172.79,
-      "duration": 3.88
+      "text": "Look, look, look, look, look.",
+      "speaker": "Speaker2",
+      "start": 207.32,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "look",
+          "start": 207.32,
+          "end": 207.82,
+          "confidence": 0.926
+        },
+        {
+          "word": "look",
+          "start": 208.04,
+          "end": 208.54,
+          "confidence": 0.816
+        },
+        {
+          "word": "look",
+          "start": 208.76,
+          "end": 209.26,
+          "confidence": 0.912
+        },
+        {
+          "word": "look",
+          "start": 209.56,
+          "end": 209.72,
+          "confidence": 0.945
+        },
+        {
+          "word": "look",
+          "start": 209.72,
+          "end": 210.22,
+          "confidence": 0.86
+        }
+      ],
+      "confidence": 0.885
     },
     {
       "id": 36,
-      "text": "10 lions, 10 lions, ten, ten, 10 lions.",
-      "start": 176.67,
-      "duration": 11.02
+      "text": "Look, monkeys.",
+      "speaker": "Speaker2",
+      "start": 210.52,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "look",
+          "start": 210.52,
+          "end": 211.02,
+          "confidence": 0.977
+        },
+        {
+          "word": "monkeys",
+          "start": 211.08,
+          "end": 211.58,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 37,
-      "text": "Rock.",
-      "start": 187.69,
-      "duration": 13.44
+      "text": "How many bears?",
+      "speaker": "Speaker0",
+      "start": 214.04,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "how",
+          "start": 214.04,
+          "end": 214.36,
+          "confidence": 0.975
+        },
+        {
+          "word": "many",
+          "start": 214.36,
+          "end": 214.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "bears",
+          "start": 214.76,
+          "end": 215.26,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 38,
-      "text": "Look.",
-      "start": 201.13,
-      "duration": 1.15
+      "text": "Three bears. How many monkeys?",
+      "speaker": "Speaker0",
+      "start": 215.81,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "three",
+          "start": 215.81,
+          "end": 216.31,
+          "confidence": 0.946
+        },
+        {
+          "word": "bears",
+          "start": 216.76,
+          "end": 217.26,
+          "confidence": 0.99
+        },
+        {
+          "word": "how",
+          "start": 217.41,
+          "end": 217.72,
+          "confidence": 0.986
+        },
+        {
+          "word": "many",
+          "start": 217.72,
+          "end": 218.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "monkeys",
+          "start": 218.21,
+          "end": 218.71,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.946
     },
     {
       "id": 39,
-      "text": "Look, look, look.",
-      "start": 202.28,
-      "duration": 1.16
+      "text": "Six monkeys.",
+      "speaker": "Speaker0",
+      "start": 219.0,
+      "duration": 0.99,
+      "words": [
+        {
+          "word": "six",
+          "start": 219.0,
+          "end": 219.49,
+          "confidence": 0.991
+        },
+        {
+          "word": "monkeys",
+          "start": 219.49,
+          "end": 219.99,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 40,
-      "text": "Look, bears.",
-      "start": 203.44,
-      "duration": 3.88
+      "text": "Look, look, look, look, look, look, look, look, Rock.",
+      "speaker": "Speaker2",
+      "start": 221.32,
+      "duration": 10.53,
+      "words": [
+        {
+          "word": "look",
+          "start": 221.32,
+          "end": 221.65,
+          "confidence": 0.752
+        },
+        {
+          "word": "look",
+          "start": 221.65,
+          "end": 222.15,
+          "confidence": 0.752
+        },
+        {
+          "word": "look",
+          "start": 222.6,
+          "end": 223.1,
+          "confidence": 0.96
+        },
+        {
+          "word": "look",
+          "start": 223.32,
+          "end": 223.72,
+          "confidence": 0.851
+        },
+        {
+          "word": "look",
+          "start": 223.72,
+          "end": 223.81,
+          "confidence": 0.798
+        },
+        {
+          "word": "look",
+          "start": 223.81,
+          "end": 224.31,
+          "confidence": 0.8
+        },
+        {
+          "word": "look",
+          "start": 224.6,
+          "end": 224.85,
+          "confidence": 0.75
+        },
+        {
+          "word": "look",
+          "start": 224.85,
+          "end": 225.35,
+          "confidence": 0.71
+        },
+        {
+          "word": "rock",
+          "start": 231.35,
+          "end": 231.85,
+          "confidence": 0.414
+        }
+      ],
+      "confidence": 0.752
     },
     {
       "id": 41,
-      "text": "Look, look, look, look, look.",
-      "start": 207.32,
-      "duration": 3.2
+      "text": "Look, tomatoes, look, tomatoes.",
+      "speaker": "Speaker1",
+      "start": 249.5,
+      "duration": 3.15,
+      "words": [
+        {
+          "word": "look",
+          "start": 249.5,
+          "end": 250.0,
+          "confidence": 0.616
+        },
+        {
+          "word": "tomatoes",
+          "start": 250.22,
+          "end": 250.72,
+          "confidence": 0.813
+        },
+        {
+          "word": "look",
+          "start": 251.34,
+          "end": 251.84,
+          "confidence": 0.972
+        },
+        {
+          "word": "tomatoes",
+          "start": 252.15,
+          "end": 252.65,
+          "confidence": 0.786
+        }
+      ],
+      "confidence": 0.715
     },
     {
       "id": 42,
-      "text": "Look, monkeys.",
-      "start": 210.52,
-      "duration": 3.52
+      "text": "How many, how many, how many tomatoes?",
+      "speaker": "Speaker1",
+      "start": 253.34,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "how",
+          "start": 253.34,
+          "end": 253.67,
+          "confidence": 0.994
+        },
+        {
+          "word": "many",
+          "start": 253.67,
+          "end": 254.17,
+          "confidence": 0.97
+        },
+        {
+          "word": "how",
+          "start": 254.22,
+          "end": 254.54,
+          "confidence": 0.998
+        },
+        {
+          "word": "many",
+          "start": 254.54,
+          "end": 255.04,
+          "confidence": 0.999
+        },
+        {
+          "word": "how",
+          "start": 255.11,
+          "end": 255.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "many",
+          "start": 255.26,
+          "end": 255.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "tomatoes",
+          "start": 255.82,
+          "end": 256.32,
+          "confidence": 0.973
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 43,
-      "text": "How many bears?",
-      "start": 214.04,
-      "duration": 1.77
+      "text": "One, two, three, four.",
+      "speaker": "Speaker1",
+      "start": 257.02,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "one",
+          "start": 257.02,
+          "end": 257.5,
+          "confidence": 0.971
+        },
+        {
+          "word": "two",
+          "start": 257.5,
+          "end": 257.9,
+          "confidence": 0.996
+        },
+        {
+          "word": "three",
+          "start": 257.9,
+          "end": 258.38,
+          "confidence": 0.99
+        },
+        {
+          "word": "four",
+          "start": 258.38,
+          "end": 258.88,
+          "confidence": 0.968
+        }
+      ],
+      "confidence": 0.981
     },
     {
       "id": 44,
-      "text": "Three bears.",
-      "start": 215.81,
-      "duration": 1.16
+      "text": "Four tomatoes.",
+      "speaker": "Speaker0",
+      "start": 260.72,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "four",
+          "start": 260.72,
+          "end": 261.22,
+          "confidence": 0.994
+        },
+        {
+          "word": "tomatoes",
+          "start": 261.44,
+          "end": 261.94,
+          "confidence": 0.867
+        }
+      ],
+      "confidence": 0.931
     },
     {
       "id": 45,
-      "text": "How many monkeys?",
-      "start": 216.97,
-      "duration": 2.03
+      "text": "Look, bananas, look, bananas.",
+      "speaker": "Speaker0",
+      "start": 264.32,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "look",
+          "start": 264.32,
+          "end": 264.82,
+          "confidence": 0.896
+        },
+        {
+          "word": "bananas",
+          "start": 265.12,
+          "end": 265.62,
+          "confidence": 0.795
+        },
+        {
+          "word": "look",
+          "start": 266.16,
+          "end": 266.66,
+          "confidence": 0.967
+        },
+        {
+          "word": "bananas",
+          "start": 267.04,
+          "end": 267.54,
+          "confidence": 0.888
+        }
+      ],
+      "confidence": 0.896
     },
     {
       "id": 46,
-      "text": "Six monkeys.",
-      "start": 219.0,
-      "duration": 2.32
+      "text": "How many, how many, how many bananas?",
+      "speaker": "Speaker0",
+      "start": 268.16,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "how",
+          "start": 268.16,
+          "end": 268.48,
+          "confidence": 0.994
+        },
+        {
+          "word": "many",
+          "start": 268.48,
+          "end": 268.98,
+          "confidence": 0.992
+        },
+        {
+          "word": "how",
+          "start": 269.04,
+          "end": 269.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "many",
+          "start": 269.36,
+          "end": 269.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "how",
+          "start": 269.92,
+          "end": 270.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "many",
+          "start": 270.16,
+          "end": 270.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "bananas",
+          "start": 270.64,
+          "end": 271.14,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 47,
-      "text": "Look, look, look, look, look, look, look, look.",
-      "start": 221.32,
-      "duration": 9.36
+      "text": "One, two, three, four, five.",
+      "speaker": "Speaker0",
+      "start": 271.74,
+      "duration": 2.33,
+      "words": [
+        {
+          "word": "one",
+          "start": 271.74,
+          "end": 272.21,
+          "confidence": 0.958
+        },
+        {
+          "word": "two",
+          "start": 272.21,
+          "end": 272.62,
+          "confidence": 0.997
+        },
+        {
+          "word": "three",
+          "start": 272.62,
+          "end": 273.12,
+          "confidence": 0.997
+        },
+        {
+          "word": "four",
+          "start": 273.18,
+          "end": 273.57,
+          "confidence": 0.994
+        },
+        {
+          "word": "five",
+          "start": 273.57,
+          "end": 274.07,
+          "confidence": 0.923
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 48,
-      "text": "Rock.",
-      "start": 230.68,
-      "duration": 18.82
+      "text": "Five bananas.",
+      "speaker": "Speaker0",
+      "start": 275.41,
+      "duration": 1.07,
+      "words": [
+        {
+          "word": "five",
+          "start": 275.41,
+          "end": 275.91,
+          "confidence": 0.992
+        },
+        {
+          "word": "bananas",
+          "start": 275.98,
+          "end": 276.48,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.988
     },
     {
       "id": 49,
-      "text": "Look, tomatoes, look, tomatoes.",
-      "start": 249.5,
-      "duration": 3.84
+      "text": "Story.",
+      "speaker": "Speaker2",
+      "start": 281.33,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "story",
+          "start": 281.33,
+          "end": 281.83,
+          "confidence": 0.909
+        }
+      ],
+      "confidence": 0.909
     },
     {
       "id": 50,
-      "text": "How many, how many, how many tomatoes?",
-      "start": 253.34,
-      "duration": 3.68
+      "text": "Look, a bear.",
+      "speaker": "Speaker0",
+      "start": 291.97,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "look",
+          "start": 291.97,
+          "end": 292.47,
+          "confidence": 0.74
+        },
+        {
+          "word": "a",
+          "start": 292.69,
+          "end": 292.93,
+          "confidence": 0.997
+        },
+        {
+          "word": "bear",
+          "start": 292.93,
+          "end": 293.43,
+          "confidence": 0.745
+        }
+      ],
+      "confidence": 0.828
     },
     {
       "id": 51,
-      "text": "One, two, three, four.",
-      "start": 257.02,
-      "duration": 3.7
+      "text": "A baby bear.",
+      "speaker": "Speaker0",
+      "start": 294.37,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "a",
+          "start": 294.37,
+          "end": 294.61,
+          "confidence": 0.984
+        },
+        {
+          "word": "baby",
+          "start": 294.61,
+          "end": 295.11,
+          "confidence": 0.998
+        },
+        {
+          "word": "bear",
+          "start": 295.17,
+          "end": 295.67,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 52,
-      "text": "Four tomatoes.",
-      "start": 260.72,
-      "duration": 3.6
+      "text": "Thank you.",
+      "speaker": "Speaker0",
+      "start": 300.26,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "thank",
+          "start": 300.26,
+          "end": 300.67,
+          "confidence": 0.945
+        },
+        {
+          "word": "you",
+          "start": 300.67,
+          "end": 301.17,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.972
     },
     {
       "id": 53,
-      "text": "Look, bananas, look, bananas.",
-      "start": 264.32,
-      "duration": 3.84
+      "text": "You're welcome.",
+      "speaker": "Speaker0",
+      "start": 302.82,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "you're",
+          "start": 302.82,
+          "end": 303.14,
+          "confidence": 0.973
+        },
+        {
+          "word": "welcome",
+          "start": 303.14,
+          "end": 303.64,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.986
     },
     {
       "id": 54,
-      "text": "How many, how many, how many bananas?",
-      "start": 268.16,
-      "duration": 3.58
+      "text": "I'm Hansel.",
+      "speaker": "Speaker0",
+      "start": 306.26,
+      "duration": 0.99,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 306.26,
+          "end": 306.75,
+          "confidence": 0.993
+        },
+        {
+          "word": "hansel",
+          "start": 306.75,
+          "end": 307.25,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 55,
-      "text": "One, two, three, four, five.",
-      "start": 271.74,
-      "duration": 3.67
+      "text": "I'm Gretel.",
+      "speaker": "Speaker0",
+      "start": 308.5,
+      "duration": 0.99,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 308.5,
+          "end": 308.99,
+          "confidence": 0.998
+        },
+        {
+          "word": "gretel",
+          "start": 308.99,
+          "end": 309.49,
+          "confidence": 0.959
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 56,
-      "text": "Five bananas.",
-      "start": 275.41,
-      "duration": 5.92
+      "text": "I'm here. Wow.",
+      "speaker": "Speaker0",
+      "start": 310.82,
+      "duration": 11.45,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 310.82,
+          "end": 311.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "here",
+          "start": 321.69,
+          "end": 321.77,
+          "confidence": 0.812
+        },
+        {
+          "word": "wow",
+          "start": 321.77,
+          "end": 322.27,
+          "confidence": 0.883
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 57,
-      "text": "Story.",
-      "start": 281.33,
-      "duration": 10.64
+      "text": "Look. Many cakes.",
+      "speaker": "Speaker3",
+      "start": 328.62,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "look",
+          "start": 328.62,
+          "end": 328.94,
+          "confidence": 0.661
+        },
+        {
+          "word": "many",
+          "start": 328.94,
+          "end": 329.44,
+          "confidence": 0.983
+        },
+        {
+          "word": "cakes",
+          "start": 329.5,
+          "end": 330.0,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.879
     },
     {
       "id": 58,
-      "text": "Look, a bear.",
-      "start": 291.97,
-      "duration": 2.4
+      "text": "How many cakes?",
+      "speaker": "Speaker0",
+      "start": 331.57,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "how",
+          "start": 331.57,
+          "end": 331.98,
+          "confidence": 0.973
+        },
+        {
+          "word": "many",
+          "start": 331.98,
+          "end": 332.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "cakes",
+          "start": 332.45,
+          "end": 332.95,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 59,
-      "text": "A baby bear.",
-      "start": 294.37,
-      "duration": 5.89
+      "text": "One, two, three, four.",
+      "speaker": "Speaker3",
+      "start": 334.21,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "one",
+          "start": 334.21,
+          "end": 334.71,
+          "confidence": 0.945
+        },
+        {
+          "word": "two",
+          "start": 335.01,
+          "end": 335.51,
+          "confidence": 0.998
+        },
+        {
+          "word": "three",
+          "start": 335.89,
+          "end": 336.39,
+          "confidence": 0.994
+        },
+        {
+          "word": "four",
+          "start": 336.69,
+          "end": 337.19,
+          "confidence": 0.806
+        }
+      ],
+      "confidence": 0.972
     },
     {
       "id": 60,
-      "text": "Thank you.",
-      "start": 300.26,
-      "duration": 2.56
+      "text": "Five, six, seven.",
+      "speaker": "Speaker3",
+      "start": 338.38,
+      "duration": 2.25,
+      "words": [
+        {
+          "word": "five",
+          "start": 338.38,
+          "end": 338.88,
+          "confidence": 0.932
+        },
+        {
+          "word": "six",
+          "start": 339.25,
+          "end": 339.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "seven",
+          "start": 340.13,
+          "end": 340.63,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.932
     },
     {
       "id": 61,
-      "text": "You're welcome.",
-      "start": 302.82,
-      "duration": 3.44
+      "text": "Eight, nine, 10.",
+      "speaker": "Speaker1",
+      "start": 342.96,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "eight",
+          "start": 342.96,
+          "end": 343.46,
+          "confidence": 0.995
+        },
+        {
+          "word": "nine",
+          "start": 344.0,
+          "end": 344.5,
+          "confidence": 0.995
+        },
+        {
+          "word": "10",
+          "start": 344.96,
+          "end": 345.46,
+          "confidence": 0.873
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 62,
-      "text": "I'm Hansel.",
-      "start": 306.26,
-      "duration": 2.24
+      "text": "10 cakes.",
+      "speaker": "Speaker1",
+      "start": 345.84,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "10",
+          "start": 345.84,
+          "end": 346.32,
+          "confidence": 0.995
+        },
+        {
+          "word": "cakes",
+          "start": 346.32,
+          "end": 346.82,
+          "confidence": 0.927
+        }
+      ],
+      "confidence": 0.961
     },
     {
       "id": 63,
-      "text": "I'm Gretel.",
-      "start": 308.5,
-      "duration": 2.32
+      "text": "Oh, no.",
+      "speaker": "Speaker0",
+      "start": 358.69,
+      "duration": 0.89,
+      "words": [
+        {
+          "word": "oh",
+          "start": 358.69,
+          "end": 359.08,
+          "confidence": 0.547
+        },
+        {
+          "word": "no",
+          "start": 359.08,
+          "end": 359.58,
+          "confidence": 0.835
+        }
+      ],
+      "confidence": 0.691
     },
     {
       "id": 64,
-      "text": "I'm here.",
-      "start": 310.82,
-      "duration": 11.16
+      "text": "They are my cakes.",
+      "speaker": "Speaker0",
+      "start": 360.12,
+      "duration": 1.63,
+      "words": [
+        {
+          "word": "they",
+          "start": 360.12,
+          "end": 360.52,
+          "confidence": 0.988
+        },
+        {
+          "word": "are",
+          "start": 360.52,
+          "end": 360.76,
+          "confidence": 0.963
+        },
+        {
+          "word": "my",
+          "start": 360.76,
+          "end": 361.25,
+          "confidence": 0.996
+        },
+        {
+          "word": "cakes",
+          "start": 361.25,
+          "end": 361.75,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.986
     },
     {
       "id": 65,
-      "text": "Wow.",
-      "start": 321.98,
-      "duration": 6.64
+      "text": "How many cakes?",
+      "speaker": "Speaker3",
+      "start": 366.12,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "how",
+          "start": 366.12,
+          "end": 366.44,
+          "confidence": 0.574
+        },
+        {
+          "word": "many",
+          "start": 366.44,
+          "end": 366.93,
+          "confidence": 0.999
+        },
+        {
+          "word": "cakes",
+          "start": 366.93,
+          "end": 367.43,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.857
     },
     {
       "id": 66,
-      "text": "Look.",
-      "start": 328.62,
-      "duration": 0.5
+      "text": "One, two, three.",
+      "speaker": "Speaker0",
+      "start": 369.66,
+      "duration": 2.34,
+      "words": [
+        {
+          "word": "one",
+          "start": 369.66,
+          "end": 370.16,
+          "confidence": 0.7
+        },
+        {
+          "word": "two",
+          "start": 370.62,
+          "end": 371.12,
+          "confidence": 0.99
+        },
+        {
+          "word": "three",
+          "start": 371.5,
+          "end": 372.0,
+          "confidence": 0.889
+        }
+      ],
+      "confidence": 0.7
     },
     {
       "id": 67,
-      "text": "Many cakes.",
-      "start": 329.08,
-      "duration": 2.49
+      "text": "Story.",
+      "speaker": "Speaker2",
+      "start": 378.3,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "story",
+          "start": 378.3,
+          "end": 378.8,
+          "confidence": 0.807
+        }
+      ],
+      "confidence": 0.807
     },
     {
       "id": 68,
-      "text": "How many cakes?",
-      "start": 331.57,
-      "duration": 2.64
+      "text": "Good morning.",
+      "speaker": "Speaker1",
+      "start": 384.68,
+      "duration": 0.89,
+      "words": [
+        {
+          "word": "good",
+          "start": 384.68,
+          "end": 385.07,
+          "confidence": 0.899
+        },
+        {
+          "word": "morning",
+          "start": 385.07,
+          "end": 385.57,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.947
     },
     {
       "id": 69,
-      "text": "One, two, three, four.",
-      "start": 334.21,
-      "duration": 4.17
+      "text": "How many eggs?",
+      "speaker": "Speaker1",
+      "start": 386.27,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "how",
+          "start": 386.27,
+          "end": 386.6,
+          "confidence": 0.976
+        },
+        {
+          "word": "many",
+          "start": 386.6,
+          "end": 387.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "eggs",
+          "start": 387.07,
+          "end": 387.57,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 70,
-      "text": "Five, six, seven.",
-      "start": 338.38,
-      "duration": 4.58
+      "text": "One, two, three.",
+      "speaker": "Speaker0",
+      "start": 389.0,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "one",
+          "start": 389.0,
+          "end": 389.5,
+          "confidence": 0.946
+        },
+        {
+          "word": "two",
+          "start": 390.04,
+          "end": 390.54,
+          "confidence": 0.992
+        },
+        {
+          "word": "three",
+          "start": 390.92,
+          "end": 391.42,
+          "confidence": 0.958
+        }
+      ],
+      "confidence": 0.946
     },
     {
       "id": 71,
-      "text": "Eight, nine, 10.",
-      "start": 342.96,
-      "duration": 1.3
+      "text": "Three eggs.",
+      "speaker": "Speaker0",
+      "start": 392.27,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "three",
+          "start": 392.27,
+          "end": 392.77,
+          "confidence": 0.992
+        },
+        {
+          "word": "eggs",
+          "start": 392.83,
+          "end": 393.33,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 72,
-      "text": "10 cakes.",
-      "start": 344.26,
-      "duration": 14.43
+      "text": "Thank you.",
+      "speaker": "Speaker0",
+      "start": 394.53,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "thank",
+          "start": 394.53,
+          "end": 394.93,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 394.93,
+          "end": 395.43,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 73,
-      "text": "Oh, no. They are my cakes.",
-      "start": 358.69,
-      "duration": 7.43
+      "text": "How many eggs?",
+      "speaker": "Speaker0",
+      "start": 399.33,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "how",
+          "start": 399.33,
+          "end": 399.65,
+          "confidence": 0.849
+        },
+        {
+          "word": "many",
+          "start": 399.65,
+          "end": 400.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "eggs",
+          "start": 400.13,
+          "end": 400.63,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.948
     },
     {
       "id": 74,
-      "text": "How many cakes?",
-      "start": 366.12,
-      "duration": 3.54
+      "text": "One, two, three, four, five.",
+      "speaker": "Speaker0",
+      "start": 401.57,
+      "duration": 4.34,
+      "words": [
+        {
+          "word": "one",
+          "start": 401.57,
+          "end": 402.07,
+          "confidence": 0.986
+        },
+        {
+          "word": "two",
+          "start": 402.61,
+          "end": 403.11,
+          "confidence": 0.996
+        },
+        {
+          "word": "three",
+          "start": 403.57,
+          "end": 404.07,
+          "confidence": 0.994
+        },
+        {
+          "word": "four",
+          "start": 404.61,
+          "end": 405.11,
+          "confidence": 0.994
+        },
+        {
+          "word": "five",
+          "start": 405.41,
+          "end": 405.91,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.986
     },
     {
       "id": 75,
-      "text": "One, two, three.",
-      "start": 369.66,
-      "duration": 8.64
+      "text": "Five eggs.",
+      "speaker": "Speaker0",
+      "start": 406.87,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "five",
+          "start": 406.87,
+          "end": 407.35,
+          "confidence": 0.979
+        },
+        {
+          "word": "eggs",
+          "start": 407.35,
+          "end": 407.85,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.987
     },
     {
       "id": 76,
-      "text": "Story.",
-      "start": 378.3,
-      "duration": 6.38
+      "text": "Wow.",
+      "speaker": "Speaker1",
+      "start": 409.19,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "wow",
+          "start": 409.19,
+          "end": 409.69,
+          "confidence": 0.944
+        }
+      ],
+      "confidence": 0.944
     },
     {
       "id": 77,
-      "text": "Good morning.",
-      "start": 384.68,
-      "duration": 1.59
+      "text": "Look.",
+      "speaker": "Speaker1",
+      "start": 410.06,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 410.06,
+          "end": 410.56,
+          "confidence": 0.944
+        }
+      ],
+      "confidence": 0.944
     },
     {
       "id": 78,
-      "text": "How many eggs?",
-      "start": 386.27,
-      "duration": 2.73
+      "text": "Very good.",
+      "speaker": "Speaker0",
+      "start": 415.82,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "very",
+          "start": 415.82,
+          "end": 416.23,
+          "confidence": 0.865
+        },
+        {
+          "word": "good",
+          "start": 416.23,
+          "end": 416.73,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.932
     },
     {
       "id": 79,
-      "text": "One, two, three.",
-      "start": 389.0,
-      "duration": 3.27
+      "text": "Oh, no.",
+      "speaker": "Speaker1",
+      "start": 419.11,
+      "duration": 0.89,
+      "words": [
+        {
+          "word": "oh",
+          "start": 419.11,
+          "end": 419.5,
+          "confidence": 0.668
+        },
+        {
+          "word": "no",
+          "start": 419.5,
+          "end": 420.0,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.83
     },
     {
       "id": 80,
-      "text": "Three eggs.",
-      "start": 392.27,
-      "duration": 2.26
+      "text": "How many eggs?",
+      "speaker": "Speaker1",
+      "start": 426.72,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "how",
+          "start": 426.72,
+          "end": 427.04,
+          "confidence": 0.782
+        },
+        {
+          "word": "many",
+          "start": 427.04,
+          "end": 427.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "eggs",
+          "start": 427.52,
+          "end": 428.02,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.927
     },
     {
       "id": 81,
-      "text": "Thank you.",
-      "start": 394.53,
-      "duration": 4.8
+      "text": "Look.",
+      "speaker": "Speaker0",
+      "start": 428.64,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "look",
+          "start": 428.64,
+          "end": 429.14,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 82,
-      "text": "How many eggs?",
-      "start": 399.33,
-      "duration": 2.24
-    },
-    {
-      "id": 83,
-      "text": "One, two, three, four, five.",
-      "start": 401.57,
-      "duration": 5.3
-    },
-    {
-      "id": 84,
-      "text": "Five eggs.",
-      "start": 406.87,
-      "duration": 2.32
-    },
-    {
-      "id": 85,
-      "text": "Wow.",
-      "start": 409.19,
-      "duration": 0.87
-    },
-    {
-      "id": 86,
-      "text": "Look.",
-      "start": 410.06,
-      "duration": 5.76
-    },
-    {
-      "id": 87,
-      "text": "Very good.",
-      "start": 415.82,
-      "duration": 3.29
-    },
-    {
-      "id": 88,
-      "text": "Oh, no. How many eggs?",
-      "start": 419.11,
-      "duration": 9.53
-    },
-    {
-      "id": 89,
-      "text": "Look.",
-      "start": 428.64,
-      "duration": 0.96
-    },
-    {
-      "id": 90,
       "text": "Oh, no.",
+      "speaker": "Speaker0",
       "start": 429.6,
-      "duration": 3.0
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "oh",
+          "start": 429.6,
+          "end": 430.08,
+          "confidence": 0.997
+        },
+        {
+          "word": "no",
+          "start": 430.08,
+          "end": 430.58,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     }
   ],
-  "fetchedAt": "2026-07-23T06:24:25.299328+00:00",
+  "fetchedAt": "2026-08-03T11:05:20.832415+00:00",
   "videoId": "d7hYjIV4AF0",
   "speakerMap": {
     "0": "Speaker0",
@@ -554,7 +2622,7 @@
   },
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:24:25.299363+00:00",
+    "alignedAt": "2026-08-03T11:05:20.832438+00:00",
     "dgWordCount": 298,
     "dgUtteranceCount": 140,
     "matchedSegments": 140,
@@ -573,5 +2641,6 @@
   "formatted": true,
   "formattedAt": "2026-07-30T16:06:57.447Z",
   "splitAt": "2026-08-03T05:15:00.313775+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

@@ -2,363 +2,1736 @@
   "text": "[Music] english sing-sing [Music] what did you do [Music] good morning sally how are you i'm great what did you do yesterday we went to the park what did you do in the park we flew kites his kites flew high wow you're good what did you do yesterday sally i read bucks let's go to the classroom [Music] what did you do yesterday i watched a science movie what did you do yesterday mike i made frugal ghee with my dad how was it it was very delicious we had a bulgogi party i made cookies yesterday i brought cookies for you thanks mmm delicious [Music] listen [Music] good morning sally how are you i'm great what did you do yesterday we went to the park what did you do in the park we flew kites his kites flew high wow you're good what did you do yesterday sally i read books let's go to the classroom what did you do yesterday i watched a science movie what did you do yesterday mike i made progogy with my dad how was it it was very delicious we had a bulgogi party i made cookies yesterday i brought cookies for you thanks mmm delicious [Music] speak aloud [Music] wow [Music] down [Music] your turn [Music] wow [Music] down [Music] you",
   "segments": [
     {
-      "start": 0.07,
-      "duration": 3.41,
-      "text": "[Music]"
+      "id": 1,
+      "text": "English sing sing.",
+      "speaker": "Speaker0",
+      "start": 1.68,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.68,
+          "end": 2.18,
+          "confidence": 0.716
+        },
+        {
+          "word": "sing",
+          "start": 2.4,
+          "end": 2.64,
+          "confidence": 0.765
+        },
+        {
+          "word": "sing",
+          "start": 2.64,
+          "end": 3.14,
+          "confidence": 0.937
+        }
+      ],
+      "confidence": 0.806
     },
     {
-      "start": 1.84,
-      "duration": 4.08,
-      "text": "english sing-sing"
-    },
-    {
-      "start": 3.48,
-      "duration": 3.64,
-      "text": "[Music]"
-    },
-    {
+      "id": 2,
+      "text": "What did you do?",
+      "speaker": "Speaker0",
       "start": 5.92,
-      "duration": 6.6,
-      "text": "what did you do"
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "what",
+          "start": 5.92,
+          "end": 6.16,
+          "confidence": 0.518
+        },
+        {
+          "word": "did",
+          "start": 6.16,
+          "end": 6.48,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 6.48,
+          "end": 6.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 6.72,
+          "end": 7.22,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.879
     },
     {
-      "start": 7.12,
-      "duration": 5.4,
-      "text": "[Music]"
+      "id": 3,
+      "text": "Good morning, Sally.",
+      "speaker": "Speaker1",
+      "start": 13.04,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "good",
+          "start": 13.04,
+          "end": 13.28,
+          "confidence": 0.68
+        },
+        {
+          "word": "morning",
+          "start": 13.28,
+          "end": 13.76,
+          "confidence": 0.983
+        },
+        {
+          "word": "sally",
+          "start": 13.76,
+          "end": 14.26,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.886
     },
     {
-      "start": 12.96,
-      "duration": 3.76,
-      "text": "good morning sally"
+      "id": 4,
+      "text": "How are you?",
+      "speaker": "Speaker1",
+      "start": 14.95,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "how",
+          "start": 14.95,
+          "end": 15.11,
+          "confidence": 0.993
+        },
+        {
+          "word": "are",
+          "start": 15.11,
+          "end": 15.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 15.35,
+          "end": 15.85,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
-      "start": 14.88,
-      "duration": 3.28,
-      "text": "how are you"
+      "id": 5,
+      "text": "I'm great.",
+      "speaker": "Speaker0",
+      "start": 16.79,
+      "duration": 0.89,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 16.79,
+          "end": 17.18,
+          "confidence": 0.991
+        },
+        {
+          "word": "great",
+          "start": 17.18,
+          "end": 17.68,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.995
     },
     {
-      "start": 16.72,
-      "duration": 4.08,
-      "text": "i'm great"
+      "id": 6,
+      "text": "What did you do yesterday?",
+      "speaker": "Speaker0",
+      "start": 18.23,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "what",
+          "start": 18.23,
+          "end": 18.55,
+          "confidence": 0.971
+        },
+        {
+          "word": "did",
+          "start": 18.55,
+          "end": 18.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 18.7,
+          "end": 18.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 18.95,
+          "end": 19.18,
+          "confidence": 0.999
+        },
+        {
+          "word": "yesterday",
+          "start": 19.18,
+          "end": 19.68,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.994
     },
     {
-      "start": 18.16,
-      "duration": 5.44,
-      "text": "what did you do yesterday"
+      "id": 7,
+      "text": "We went to the park.",
+      "speaker": "Speaker0",
+      "start": 20.95,
+      "duration": 1.53,
+      "words": [
+        {
+          "word": "we",
+          "start": 20.95,
+          "end": 21.27,
+          "confidence": 0.998
+        },
+        {
+          "word": "went",
+          "start": 21.27,
+          "end": 21.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 21.5,
+          "end": 21.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 21.74,
+          "end": 21.98,
+          "confidence": 0.998
+        },
+        {
+          "word": "park",
+          "start": 21.98,
+          "end": 22.48,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 20.8,
-      "duration": 5.2,
-      "text": "we went to the park"
+      "id": 8,
+      "text": "What did you do in the park?",
+      "speaker": "Speaker0",
+      "start": 23.66,
+      "duration": 1.79,
+      "words": [
+        {
+          "word": "what",
+          "start": 23.66,
+          "end": 23.98,
+          "confidence": 0.994
+        },
+        {
+          "word": "did",
+          "start": 23.98,
+          "end": 24.14,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 24.14,
+          "end": 24.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 24.39,
+          "end": 24.55,
+          "confidence": 0.995
+        },
+        {
+          "word": "in",
+          "start": 24.55,
+          "end": 24.79,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 24.79,
+          "end": 24.95,
+          "confidence": 0.995
+        },
+        {
+          "word": "park",
+          "start": 24.95,
+          "end": 25.45,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
     },
     {
-      "start": 23.6,
-      "duration": 4.88,
-      "text": "what did you do in the park"
+      "id": 9,
+      "text": "We flew kites.",
+      "speaker": "Speaker0",
+      "start": 26.14,
+      "duration": 1.31,
+      "words": [
+        {
+          "word": "we",
+          "start": 26.14,
+          "end": 26.46,
+          "confidence": 0.996
+        },
+        {
+          "word": "flew",
+          "start": 26.46,
+          "end": 26.95,
+          "confidence": 0.998
+        },
+        {
+          "word": "kites",
+          "start": 26.95,
+          "end": 27.45,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.997
     },
     {
-      "start": 26.0,
-      "duration": 5.68,
-      "text": "we flew kites"
+      "id": 10,
+      "text": "His kites flew high.",
+      "speaker": "Speaker2",
+      "start": 28.62,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "his",
+          "start": 28.62,
+          "end": 28.95,
+          "confidence": 0.605
+        },
+        {
+          "word": "kites",
+          "start": 28.95,
+          "end": 29.43,
+          "confidence": 0.995
+        },
+        {
+          "word": "flew",
+          "start": 29.43,
+          "end": 29.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "high",
+          "start": 29.82,
+          "end": 30.32,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.9
     },
     {
-      "start": 28.48,
-      "duration": 6.08,
-      "text": "his kites flew high"
+      "id": 11,
+      "text": "Wow, you're good.",
+      "speaker": "Speaker0",
+      "start": 32.21,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "wow",
+          "start": 32.21,
+          "end": 32.53,
+          "confidence": 0.781
+        },
+        {
+          "word": "you're",
+          "start": 32.53,
+          "end": 33.01,
+          "confidence": 0.886
+        },
+        {
+          "word": "good",
+          "start": 33.01,
+          "end": 33.51,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.887
     },
     {
-      "start": 31.68,
-      "duration": 6.4,
-      "text": "wow you're good"
+      "id": 12,
+      "text": "What did you do yesterday, Sally?",
+      "speaker": "Speaker0",
+      "start": 34.53,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "what",
+          "start": 34.53,
+          "end": 34.93,
+          "confidence": 0.747
+        },
+        {
+          "word": "did",
+          "start": 34.93,
+          "end": 35.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 35.17,
+          "end": 35.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 35.41,
+          "end": 35.73,
+          "confidence": 0.994
+        },
+        {
+          "word": "yesterday",
+          "start": 35.73,
+          "end": 36.23,
+          "confidence": 0.952
+        },
+        {
+          "word": "sally",
+          "start": 36.45,
+          "end": 36.95,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.948
     },
     {
-      "start": 34.56,
-      "duration": 6.72,
-      "text": "what did you do yesterday sally"
+      "id": 13,
+      "text": "I read books.",
+      "speaker": "Speaker0",
+      "start": 38.21,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "i",
+          "start": 38.21,
+          "end": 38.61,
+          "confidence": 0.972
+        },
+        {
+          "word": "read",
+          "start": 38.61,
+          "end": 38.93,
+          "confidence": 0.999
+        },
+        {
+          "word": "books",
+          "start": 38.93,
+          "end": 39.43,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.989
     },
     {
-      "start": 38.08,
-      "duration": 3.2,
-      "text": "i read bucks"
+      "id": 14,
+      "text": "Let's go to the classroom.",
+      "speaker": "Speaker3",
+      "start": 43.25,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "let's",
+          "start": 43.25,
+          "end": 43.48,
+          "confidence": 0.987
+        },
+        {
+          "word": "go",
+          "start": 43.48,
+          "end": 43.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 43.97,
+          "end": 44.12,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 44.12,
+          "end": 44.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "classroom",
+          "start": 44.45,
+          "end": 44.95,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.996
     },
     {
-      "start": 43.12,
-      "duration": 6.8,
-      "text": "let's go to the classroom"
+      "id": 15,
+      "text": "What did you do yesterday?",
+      "speaker": "Speaker4",
+      "start": 49.97,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "what",
+          "start": 49.97,
+          "end": 50.28,
+          "confidence": 0.625
+        },
+        {
+          "word": "did",
+          "start": 50.28,
+          "end": 50.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 50.52,
+          "end": 50.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 50.69,
+          "end": 51.01,
+          "confidence": 0.996
+        },
+        {
+          "word": "yesterday",
+          "start": 51.01,
+          "end": 51.51,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.924
     },
     {
-      "start": 45.15,
-      "duration": 7.73,
-      "text": "[Music]"
+      "id": 16,
+      "text": "I watched a science movie.",
+      "speaker": "Speaker5",
+      "start": 52.93,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "i",
+          "start": 52.93,
+          "end": 53.33,
+          "confidence": 0.998
+        },
+        {
+          "word": "watched",
+          "start": 53.33,
+          "end": 53.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 53.8,
+          "end": 54.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "science",
+          "start": 54.05,
+          "end": 54.52,
+          "confidence": 0.996
+        },
+        {
+          "word": "movie",
+          "start": 54.52,
+          "end": 55.02,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 49.92,
-      "duration": 6.88,
-      "text": "what did you do yesterday"
+      "id": 17,
+      "text": "What did you do yesterday, Mike?",
+      "speaker": "Speaker4",
+      "start": 56.84,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "what",
+          "start": 56.84,
+          "end": 57.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "did",
+          "start": 57.16,
+          "end": 57.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 57.32,
+          "end": 57.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 57.56,
+          "end": 57.88,
+          "confidence": 0.998
+        },
+        {
+          "word": "yesterday",
+          "start": 57.88,
+          "end": 58.38,
+          "confidence": 0.992
+        },
+        {
+          "word": "mike",
+          "start": 58.52,
+          "end": 59.02,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
     },
     {
-      "start": 52.88,
-      "duration": 6.88,
-      "text": "i watched a science movie"
+      "id": 18,
+      "text": "I made bulgogi with my dad.",
+      "speaker": "Speaker6",
+      "start": 59.8,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "i",
+          "start": 59.8,
+          "end": 60.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "made",
+          "start": 60.04,
+          "end": 60.36,
+          "confidence": 0.998
+        },
+        {
+          "word": "bulgogi",
+          "start": 60.36,
+          "end": 60.86,
+          "confidence": 0.93
+        },
+        {
+          "word": "with",
+          "start": 61.08,
+          "end": 61.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 61.32,
+          "end": 61.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "dad",
+          "start": 61.48,
+          "end": 61.98,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.988
     },
     {
-      "start": 56.8,
-      "duration": 5.92,
-      "text": "what did you do yesterday mike"
+      "id": 19,
+      "text": "How was it?",
+      "speaker": "Speaker7",
+      "start": 62.76,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "how",
+          "start": 62.76,
+          "end": 63.08,
+          "confidence": 0.819
+        },
+        {
+          "word": "was",
+          "start": 63.08,
+          "end": 63.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 63.4,
+          "end": 63.9,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.94
     },
     {
-      "start": 59.76,
-      "duration": 4.56,
-      "text": "i made frugal ghee with my dad"
+      "id": 20,
+      "text": "It was very delicious.",
+      "speaker": "Speaker7",
+      "start": 64.36,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "it",
+          "start": 64.36,
+          "end": 64.52,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 64.52,
+          "end": 64.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "very",
+          "start": 64.84,
+          "end": 65.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "delicious",
+          "start": 65.24,
+          "end": 65.74,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 62.72,
-      "duration": 3.92,
-      "text": "how was it"
+      "id": 21,
+      "text": "We had a bulgogi party.",
+      "speaker": "Speaker7",
+      "start": 66.68,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "we",
+          "start": 66.68,
+          "end": 67.0,
+          "confidence": 0.959
+        },
+        {
+          "word": "had",
+          "start": 67.0,
+          "end": 67.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 67.24,
+          "end": 67.4,
+          "confidence": 0.992
+        },
+        {
+          "word": "bulgogi",
+          "start": 67.4,
+          "end": 67.9,
+          "confidence": 0.982
+        },
+        {
+          "word": "party",
+          "start": 68.12,
+          "end": 68.62,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.987
     },
     {
-      "start": 64.32,
-      "duration": 6.24,
-      "text": "it was very delicious"
+      "id": 22,
+      "text": "I made cookies yesterday.",
+      "speaker": "Speaker4",
+      "start": 71.59,
+      "duration": 1.69,
+      "words": [
+        {
+          "word": "i",
+          "start": 71.59,
+          "end": 71.75,
+          "confidence": 0.995
+        },
+        {
+          "word": "made",
+          "start": 71.75,
+          "end": 72.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "cookies",
+          "start": 72.06,
+          "end": 72.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "yesterday",
+          "start": 72.78,
+          "end": 73.28,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.995
     },
     {
-      "start": 66.64,
-      "duration": 3.92,
-      "text": "we had a bulgogi party"
+      "id": 23,
+      "text": "I brought cookies for you.",
+      "speaker": "Speaker4",
+      "start": 73.83,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "i",
+          "start": 73.83,
+          "end": 74.15,
+          "confidence": 0.998
+        },
+        {
+          "word": "brought",
+          "start": 74.15,
+          "end": 74.55,
+          "confidence": 0.997
+        },
+        {
+          "word": "cookies",
+          "start": 74.55,
+          "end": 75.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "for",
+          "start": 75.03,
+          "end": 75.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 75.27,
+          "end": 75.77,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 71.44,
-      "duration": 4.72,
-      "text": "i made cookies yesterday i brought"
+      "id": 24,
+      "text": "Thanks.",
+      "speaker": "Speaker7",
+      "start": 76.23,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 76.23,
+          "end": 76.73,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.993
     },
     {
-      "start": 74.4,
-      "duration": 2.88,
-      "text": "cookies for you"
+      "id": 25,
+      "text": "Delicious.",
+      "speaker": "Speaker7",
+      "start": 78.23,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "delicious",
+          "start": 78.23,
+          "end": 78.73,
+          "confidence": 0.698
+        }
+      ],
+      "confidence": 0.698
     },
     {
-      "start": 76.16,
-      "duration": 2.08,
-      "text": "thanks"
+      "id": 26,
+      "text": "Good morning, Sally.",
+      "speaker": "Speaker1",
+      "start": 93.62,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "good",
+          "start": 93.62,
+          "end": 93.94,
+          "confidence": 0.713
+        },
+        {
+          "word": "morning",
+          "start": 93.94,
+          "end": 94.42,
+          "confidence": 0.96
+        },
+        {
+          "word": "sally",
+          "start": 94.42,
+          "end": 94.92,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.889
     },
     {
-      "start": 77.28,
-      "duration": 2.27,
-      "text": "mmm"
+      "id": 27,
+      "text": "How are you?",
+      "speaker": "Speaker1",
+      "start": 95.58,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "how",
+          "start": 95.58,
+          "end": 95.75,
+          "confidence": 0.994
+        },
+        {
+          "word": "are",
+          "start": 95.75,
+          "end": 95.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 95.98,
+          "end": 96.48,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
-      "start": 78.24,
-      "duration": 9.28,
-      "text": "delicious"
+      "id": 28,
+      "text": "I'm great.",
+      "speaker": "Speaker0",
+      "start": 97.42,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 97.42,
+          "end": 97.83,
+          "confidence": 0.993
+        },
+        {
+          "word": "great",
+          "start": 97.83,
+          "end": 98.33,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.996
     },
     {
-      "start": 79.55,
-      "duration": 9.33,
-      "text": "[Music]"
+      "id": 29,
+      "text": "What did you do yesterday?",
+      "speaker": "Speaker0",
+      "start": 98.86,
+      "duration": 1.47,
+      "words": [
+        {
+          "word": "what",
+          "start": 98.86,
+          "end": 99.1,
+          "confidence": 0.977
+        },
+        {
+          "word": "did",
+          "start": 99.1,
+          "end": 99.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 99.34,
+          "end": 99.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 99.58,
+          "end": 99.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "yesterday",
+          "start": 99.83,
+          "end": 100.33,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
     },
     {
-      "start": 87.52,
-      "duration": 5.63,
-      "text": "listen"
+      "id": 30,
+      "text": "We went to the park.",
+      "speaker": "Speaker0",
+      "start": 101.58,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "we",
+          "start": 101.58,
+          "end": 101.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "went",
+          "start": 101.91,
+          "end": 102.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 102.14,
+          "end": 102.39,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 102.39,
+          "end": 102.62,
+          "confidence": 0.998
+        },
+        {
+          "word": "park",
+          "start": 102.62,
+          "end": 103.12,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 88.88,
-      "duration": 4.27,
-      "text": "[Music]"
+      "id": 31,
+      "text": "What did you do in the park?",
+      "speaker": "Speaker0",
+      "start": 104.31,
+      "duration": 1.77,
+      "words": [
+        {
+          "word": "what",
+          "start": 104.31,
+          "end": 104.55,
+          "confidence": 0.993
+        },
+        {
+          "word": "did",
+          "start": 104.55,
+          "end": 104.78,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 104.78,
+          "end": 104.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 104.94,
+          "end": 105.19,
+          "confidence": 0.995
+        },
+        {
+          "word": "in",
+          "start": 105.19,
+          "end": 105.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 105.42,
+          "end": 105.58,
+          "confidence": 0.995
+        },
+        {
+          "word": "park",
+          "start": 105.58,
+          "end": 106.08,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
     },
     {
-      "start": 93.52,
-      "duration": 3.84,
-      "text": "good morning sally"
+      "id": 32,
+      "text": "We flew kites.",
+      "speaker": "Speaker0",
+      "start": 106.78,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "we",
+          "start": 106.78,
+          "end": 107.1,
+          "confidence": 0.998
+        },
+        {
+          "word": "flew",
+          "start": 107.1,
+          "end": 107.58,
+          "confidence": 0.996
+        },
+        {
+          "word": "kites",
+          "start": 107.58,
+          "end": 108.08,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.996
     },
     {
-      "start": 95.44,
-      "duration": 3.36,
-      "text": "how are you"
+      "id": 33,
+      "text": "His kites flew high.",
+      "speaker": "Speaker2",
+      "start": 109.38,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "his",
+          "start": 109.38,
+          "end": 109.62,
+          "confidence": 0.963
+        },
+        {
+          "word": "kites",
+          "start": 109.62,
+          "end": 110.1,
+          "confidence": 0.996
+        },
+        {
+          "word": "flew",
+          "start": 110.1,
+          "end": 110.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "high",
+          "start": 110.5,
+          "end": 111.0,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.989
     },
     {
-      "start": 97.36,
-      "duration": 4.08,
-      "text": "i'm great"
+      "id": 34,
+      "text": "Wow, you're good.",
+      "speaker": "Speaker0",
+      "start": 112.5,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "wow",
+          "start": 112.5,
+          "end": 113.0,
+          "confidence": 0.745
+        },
+        {
+          "word": "you're",
+          "start": 113.22,
+          "end": 113.62,
+          "confidence": 0.911
+        },
+        {
+          "word": "good",
+          "start": 113.62,
+          "end": 114.12,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.883
     },
     {
-      "start": 98.8,
-      "duration": 5.44,
-      "text": "what did you do yesterday"
-    },
-    {
-      "start": 101.44,
-      "duration": 5.2,
-      "text": "we went to the park"
-    },
-    {
-      "start": 104.24,
-      "duration": 4.88,
-      "text": "what did you do in the park"
-    },
-    {
-      "start": 106.64,
-      "duration": 5.68,
-      "text": "we flew kites"
-    },
-    {
-      "start": 109.12,
-      "duration": 6.08,
-      "text": "his kites flew high"
-    },
-    {
-      "start": 112.32,
-      "duration": 6.4,
-      "text": "wow you're good"
-    },
-    {
-      "start": 115.2,
-      "duration": 6.72,
-      "text": "what did you do yesterday sally"
-    },
-    {
-      "start": 118.72,
-      "duration": 3.2,
-      "text": "i read books"
-    },
-    {
-      "start": 123.76,
-      "duration": 4.12,
-      "text": "let's go to the classroom"
-    },
-    {
-      "start": 130.56,
-      "duration": 6.8,
-      "text": "what did you do yesterday"
-    },
-    {
-      "start": 133.52,
-      "duration": 6.88,
-      "text": "i watched a science movie"
-    },
-    {
-      "start": 137.36,
-      "duration": 6.0,
-      "text": "what did you do yesterday mike"
-    },
-    {
-      "start": 140.4,
-      "duration": 4.56,
-      "text": "i made progogy with my dad"
-    },
-    {
-      "start": 143.36,
-      "duration": 3.92,
-      "text": "how was it"
-    },
-    {
-      "start": 144.96,
-      "duration": 6.16,
-      "text": "it was very delicious"
-    },
-    {
-      "start": 147.28,
-      "duration": 3.84,
-      "text": "we had a bulgogi party"
-    },
-    {
-      "start": 152.08,
-      "duration": 4.72,
-      "text": "i made cookies yesterday i brought"
-    },
-    {
-      "start": 155.04,
-      "duration": 2.88,
-      "text": "cookies for you"
-    },
-    {
-      "start": 156.8,
-      "duration": 2.08,
-      "text": "thanks"
-    },
-    {
-      "start": 157.92,
+      "id": 35,
+      "text": "What did you do yesterday, Sally?",
+      "speaker": "Speaker0",
+      "start": 115.3,
       "duration": 2.26,
-      "text": "mmm"
+      "words": [
+        {
+          "word": "what",
+          "start": 115.3,
+          "end": 115.54,
+          "confidence": 0.978
+        },
+        {
+          "word": "did",
+          "start": 115.54,
+          "end": 115.78,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 115.78,
+          "end": 116.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 116.02,
+          "end": 116.34,
+          "confidence": 0.996
+        },
+        {
+          "word": "yesterday",
+          "start": 116.34,
+          "end": 116.84,
+          "confidence": 0.979
+        },
+        {
+          "word": "sally",
+          "start": 117.06,
+          "end": 117.56,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.991
     },
     {
-      "start": 158.88,
-      "duration": 8.58,
-      "text": "delicious"
+      "id": 36,
+      "text": "I read books.",
+      "speaker": "Speaker0",
+      "start": 118.82,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "i",
+          "start": 118.82,
+          "end": 119.22,
+          "confidence": 0.997
+        },
+        {
+          "word": "read",
+          "start": 119.22,
+          "end": 119.54,
+          "confidence": 0.998
+        },
+        {
+          "word": "books",
+          "start": 119.54,
+          "end": 120.04,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.994
     },
     {
-      "start": 160.18,
-      "duration": 7.28,
-      "text": "[Music]"
+      "id": 37,
+      "text": "Let's go to the classroom.",
+      "speaker": "Speaker3",
+      "start": 123.8,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "let's",
+          "start": 123.8,
+          "end": 124.19,
+          "confidence": 0.867
+        },
+        {
+          "word": "go",
+          "start": 124.19,
+          "end": 124.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 124.59,
+          "end": 124.75,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 124.75,
+          "end": 125.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "classroom",
+          "start": 125.0,
+          "end": 125.5,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.973
     },
     {
-      "start": 168.64,
-      "duration": 4.98,
-      "text": "speak aloud"
+      "id": 38,
+      "text": "What did you do yesterday?",
+      "speaker": "Speaker4",
+      "start": 130.59,
+      "duration": 1.63,
+      "words": [
+        {
+          "word": "what",
+          "start": 130.59,
+          "end": 130.91,
+          "confidence": 0.911
+        },
+        {
+          "word": "did",
+          "start": 130.91,
+          "end": 131.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 131.16,
+          "end": 131.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 131.31,
+          "end": 131.72,
+          "confidence": 0.996
+        },
+        {
+          "word": "yesterday",
+          "start": 131.72,
+          "end": 132.22,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.981
     },
     {
-      "start": 170.52,
-      "duration": 3.1,
-      "text": "[Music]"
+      "id": 39,
+      "text": "I watched a science movie.",
+      "speaker": "Speaker5",
+      "start": 133.56,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "i",
+          "start": 133.56,
+          "end": 133.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "watched",
+          "start": 133.96,
+          "end": 134.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 134.44,
+          "end": 134.68,
+          "confidence": 0.999
+        },
+        {
+          "word": "science",
+          "start": 134.68,
+          "end": 135.16,
+          "confidence": 0.997
+        },
+        {
+          "word": "movie",
+          "start": 135.16,
+          "end": 135.66,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 191.52,
-      "duration": 3.0,
-      "text": "wow"
+      "id": 40,
+      "text": "What did you do yesterday, Mike?",
+      "speaker": "Speaker4",
+      "start": 137.48,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "what",
+          "start": 137.48,
+          "end": 137.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "did",
+          "start": 137.8,
+          "end": 137.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 137.96,
+          "end": 138.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 138.2,
+          "end": 138.52,
+          "confidence": 0.998
+        },
+        {
+          "word": "yesterday",
+          "start": 138.52,
+          "end": 139.02,
+          "confidence": 0.993
+        },
+        {
+          "word": "mike",
+          "start": 139.16,
+          "end": 139.66,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
     },
     {
-      "start": 206.27,
-      "duration": 5.69,
-      "text": "[Music]"
+      "id": 41,
+      "text": "I made bulgogi with my dad.",
+      "speaker": "Speaker6",
+      "start": 140.44,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "i",
+          "start": 140.44,
+          "end": 140.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "made",
+          "start": 140.68,
+          "end": 141.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "bulgogi",
+          "start": 141.0,
+          "end": 141.5,
+          "confidence": 0.935
+        },
+        {
+          "word": "with",
+          "start": 141.72,
+          "end": 141.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 141.96,
+          "end": 142.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "dad",
+          "start": 142.12,
+          "end": 142.62,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.989
     },
     {
-      "start": 238.32,
-      "duration": 10.72,
-      "text": "down"
+      "id": 42,
+      "text": "How was it?",
+      "speaker": "Speaker6",
+      "start": 143.4,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "how",
+          "start": 143.4,
+          "end": 143.72,
+          "confidence": 0.708
+        },
+        {
+          "word": "was",
+          "start": 143.72,
+          "end": 144.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 144.04,
+          "end": 144.54,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.903
     },
     {
-      "start": 240.65,
-      "duration": 10.5,
-      "text": "[Music]"
+      "id": 43,
+      "text": "It was very delicious.",
+      "speaker": "Speaker7",
+      "start": 145.0,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "it",
+          "start": 145.0,
+          "end": 145.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 145.16,
+          "end": 145.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "very",
+          "start": 145.48,
+          "end": 145.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "delicious",
+          "start": 145.88,
+          "end": 146.38,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 249.04,
-      "duration": 5.21,
-      "text": "your turn"
+      "id": 44,
+      "text": "We had a bulgogi party.",
+      "speaker": "Speaker7",
+      "start": 147.32,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "we",
+          "start": 147.32,
+          "end": 147.64,
+          "confidence": 0.973
+        },
+        {
+          "word": "had",
+          "start": 147.64,
+          "end": 147.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 147.88,
+          "end": 148.04,
+          "confidence": 0.995
+        },
+        {
+          "word": "bulgogi",
+          "start": 148.04,
+          "end": 148.54,
+          "confidence": 0.986
+        },
+        {
+          "word": "party",
+          "start": 148.76,
+          "end": 149.26,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.991
     },
     {
-      "start": 251.15,
-      "duration": 3.1,
-      "text": "[Music]"
+      "id": 45,
+      "text": "I made cookies yesterday.",
+      "speaker": "Speaker4",
+      "start": 152.22,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 152.22,
+          "end": 152.38,
+          "confidence": 0.993
+        },
+        {
+          "word": "made",
+          "start": 152.38,
+          "end": 152.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "cookies",
+          "start": 152.71,
+          "end": 153.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "yesterday",
+          "start": 153.42,
+          "end": 153.92,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.995
     },
     {
-      "start": 272.16,
-      "duration": 3.0,
-      "text": "wow"
+      "id": 46,
+      "text": "I brought cookies for you.",
+      "speaker": "Speaker4",
+      "start": 154.47,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "i",
+          "start": 154.47,
+          "end": 154.78,
+          "confidence": 0.998
+        },
+        {
+          "word": "brought",
+          "start": 154.78,
+          "end": 155.1,
+          "confidence": 0.998
+        },
+        {
+          "word": "cookies",
+          "start": 155.1,
+          "end": 155.6,
+          "confidence": 0.999
+        },
+        {
+          "word": "for",
+          "start": 155.66,
+          "end": 155.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 155.91,
+          "end": 156.41,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
-      "start": 286.9,
-      "duration": 5.69,
-      "text": "[Music]"
+      "id": 47,
+      "text": "Thanks.",
+      "speaker": "Speaker7",
+      "start": 156.86,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 156.86,
+          "end": 157.36,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.991
     },
     {
-      "start": 318.96,
-      "duration": 5.38,
-      "text": "down"
+      "id": 48,
+      "text": "Delicious.",
+      "speaker": "Speaker7",
+      "start": 158.86,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "delicious",
+          "start": 158.86,
+          "end": 159.36,
+          "confidence": 0.697
+        }
+      ],
+      "confidence": 0.697
     },
     {
-      "start": 321.28,
-      "duration": 3.06,
-      "text": "[Music]"
+      "id": 49,
+      "text": "Your turn.",
+      "speaker": "Speaker0",
+      "start": 249.16,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "your",
+          "start": 249.16,
+          "end": 249.48,
+          "confidence": 0.586
+        },
+        {
+          "word": "turn",
+          "start": 249.48,
+          "end": 249.98,
+          "confidence": 0.983
+        }
+      ],
+      "confidence": 0.785
     },
     {
-      "start": 331.28,
-      "duration": 2.08,
-      "text": "you"
+      "id": 50,
+      "text": "Turn.",
+      "speaker": "Speaker3",
+      "start": 253.03,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "turn",
+          "start": 253.03,
+          "end": 253.53,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 51,
+      "text": "Down yum.",
+      "speaker": "Speaker6",
+      "start": 319.1,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "down",
+          "start": 319.1,
+          "end": 319.5,
+          "confidence": 0.602
+        },
+        {
+          "word": "yum",
+          "start": 319.5,
+          "end": 320.0,
+          "confidence": 0.744
+        }
+      ],
+      "confidence": 0.673
     }
   ],
   "videoId": "pcWBtzTnpb8",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:17.925108+00:00",
-  "rawCaptionCount": 71
+  "fetchedAt": "2026-08-03T11:05:48.335143+00:00",
+  "rawCaptionCount": 71,
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2",
+    "3": "Speaker3",
+    "4": "Speaker4",
+    "5": "Speaker5",
+    "6": "Speaker6",
+    "7": "Speaker7"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:05:48.335176+00:00",
+    "dgWordCount": 200,
+    "dgUtteranceCount": 51,
+    "matchedSegments": 51,
+    "totalDuration": 320.0
+  }
 }

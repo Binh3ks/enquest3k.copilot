@@ -1,232 +1,1955 @@
 {
-  "text": "Chirp chirp! I love summer! Chirp cheer! I love singing! Saying grasshopper resting on a tree on a hot summer day. While under the tree, ant was sweating and slaving away. Hey ant! Life is too short to work so hard. Grasshopper said to ant because ant was working all summer long. Listen grasshopper, if you don't prepare for winter now, you're going to starve. Oh, there's plenty of time! Why worry? I'm going to go back to my singing now. In no time, summer went and the freezing winter came. The wind howled and howled, and buckets of snow fell from the winter sky. Oh, I'm so hungry. I'm so cold. What if ant is right? Then I'll starve to death! Grasshopper went to look for food. But instead of finding food, he got lost in the snow. And he could barely move his legs anymore. Luckily, grasshopper found aunt's house. He mustered up enough energy to knock on the door. Please aunt, will you give me some food? Or even just a crumb, please. Don't worry grasshopper, I have plenty of food. Come on in! Grasshopper went inside. He sat next to the fire and ate until he couldn't eat anymore. This is delicious! And I'm really sorry for making fun of you before. That was wrong of me. That's okay. You can help me next year. It was then that grasshopper finally understood why ant had worked so hard in the summer. And he was thankful that he had such a good friend.",
+  "text": "The ant and the grasshopper. Chirp, chirp, I love summer. Chirp, chirp, I love singing. Sang Grasshopper, resting on a tree on a hot summer day. While under the tree, Ant was sweating and slaving away. Hey, Ant. Life is too short to work so hard. Grasshopper said to Ant because Ant was working all summer long. Listen, Grasshopper. If you don't prepare for winter now, you're going to starve. Oh, there's plenty of time. Why worry? I'm going to go back to my singing now. Chirp, chirp. In no time, summer went and the freezing winter came. The wind howled and howled, and buckets of snow fell from the winter sky. Oh, oh, I'm so hungry. Oh, I'm so cold. What if Ant is right? Then I starve to death. Grasshopper went to look for food. But instead of finding food, he got lost in the snow. And he could barely move his legs anymore. Luckily, Grasshopper found Ant's house. He mustered up enough energy to knock on the door. Please, Ant. Will you give me some food or even just a crumb, please? Don't worry, Grasshopper. I have plenty of food. Come on in. Grasshopper went inside. He sat next to the fire and ate until he couldn't eat anymore. This is delicious. Ant, I'm really sorry for making fun of you before. That was wrong of me. That's okay. You can help me next year. It was then that Grasshopper finally understood why Ant had worked so hard in the summer. And he was thankful that he had such a good friend.",
   "segments": [
     {
       "id": 1,
-      "text": "Chirp chirp!",
-      "start": 18.0,
-      "duration": 2.05
+      "text": "The ant and the grasshopper.",
+      "speaker": "Speaker0",
+      "start": 9.92,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "the",
+          "start": 9.92,
+          "end": 10.16,
+          "confidence": 0.589
+        },
+        {
+          "word": "ant",
+          "start": 10.16,
+          "end": 10.56,
+          "confidence": 0.901
+        },
+        {
+          "word": "and",
+          "start": 10.56,
+          "end": 10.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 10.8,
+          "end": 11.04,
+          "confidence": 0.996
+        },
+        {
+          "word": "grasshopper",
+          "start": 11.04,
+          "end": 11.54,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.896
     },
     {
       "id": 2,
-      "text": "I love summer!",
-      "start": 20.05,
-      "duration": 3.07
+      "text": "Chirp, chirp, I love summer.",
+      "speaker": "Speaker1",
+      "start": 18.05,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "chirp",
+          "start": 18.05,
+          "end": 18.55,
+          "confidence": 0.807
+        },
+        {
+          "word": "chirp",
+          "start": 18.93,
+          "end": 19.43,
+          "confidence": 0.932
+        },
+        {
+          "word": "i",
+          "start": 19.89,
+          "end": 20.05,
+          "confidence": 0.998
+        },
+        {
+          "word": "love",
+          "start": 20.05,
+          "end": 20.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "summer",
+          "start": 20.45,
+          "end": 20.95,
+          "confidence": 0.946
+        }
+      ],
+      "confidence": 0.807
     },
     {
       "id": 3,
-      "text": "Chirp cheer!",
-      "start": 23.12,
-      "duration": 1.92
+      "text": "Chirp, chirp, I love singing.",
+      "speaker": "Speaker1",
+      "start": 21.41,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "chirp",
+          "start": 21.41,
+          "end": 21.91,
+          "confidence": 0.999
+        },
+        {
+          "word": "chirp",
+          "start": 22.38,
+          "end": 22.88,
+          "confidence": 0.986
+        },
+        {
+          "word": "i",
+          "start": 23.26,
+          "end": 23.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "love",
+          "start": 23.49,
+          "end": 23.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "singing",
+          "start": 23.89,
+          "end": 24.39,
+          "confidence": 0.76
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 4,
-      "text": "I love singing!",
-      "start": 25.04,
-      "duration": 0.5
+      "text": "Sang Grasshopper, resting on a tree on a hot summer day.",
+      "speaker": "Speaker0",
+      "start": 25.02,
+      "duration": 4.25,
+      "words": [
+        {
+          "word": "sang",
+          "start": 25.02,
+          "end": 25.41,
+          "confidence": 0.841
+        },
+        {
+          "word": "grasshopper",
+          "start": 25.41,
+          "end": 25.91,
+          "confidence": 0.875
+        },
+        {
+          "word": "resting",
+          "start": 26.61,
+          "end": 27.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 27.02,
+          "end": 27.18,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 27.18,
+          "end": 27.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "tree",
+          "start": 27.34,
+          "end": 27.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 27.73,
+          "end": 27.97,
+          "confidence": 0.993
+        },
+        {
+          "word": "a",
+          "start": 27.97,
+          "end": 28.14,
+          "confidence": 0.999
+        },
+        {
+          "word": "hot",
+          "start": 28.14,
+          "end": 28.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "summer",
+          "start": 28.38,
+          "end": 28.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "day",
+          "start": 28.77,
+          "end": 29.27,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.858
     },
     {
       "id": 5,
-      "text": "Saying grasshopper resting on a tree on a hot summer day.",
-      "start": 24.88,
-      "duration": 7.04
+      "text": "While under the tree, Ant was sweating and slaving away.",
+      "speaker": "Speaker0",
+      "start": 30.27,
+      "duration": 4.5,
+      "words": [
+        {
+          "word": "while",
+          "start": 30.27,
+          "end": 30.51,
+          "confidence": 0.987
+        },
+        {
+          "word": "under",
+          "start": 30.51,
+          "end": 30.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 30.91,
+          "end": 30.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "tree",
+          "start": 30.99,
+          "end": 31.49,
+          "confidence": 0.985
+        },
+        {
+          "word": "ant",
+          "start": 32.03,
+          "end": 32.51,
+          "confidence": 0.702
+        },
+        {
+          "word": "was",
+          "start": 32.51,
+          "end": 32.83,
+          "confidence": 0.999
+        },
+        {
+          "word": "sweating",
+          "start": 32.83,
+          "end": 33.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 33.39,
+          "end": 33.71,
+          "confidence": 0.997
+        },
+        {
+          "word": "slaving",
+          "start": 33.71,
+          "end": 34.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "away",
+          "start": 34.27,
+          "end": 34.77,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 6,
-      "text": "While under the tree, ant was sweating and slaving away.",
-      "start": 31.92,
-      "duration": 10.32
+      "text": "Hey, Ant. Life is too short to work so hard.",
+      "speaker": "Speaker2",
+      "start": 42.28,
+      "duration": 4.18,
+      "words": [
+        {
+          "word": "hey",
+          "start": 42.28,
+          "end": 42.78,
+          "confidence": 0.925
+        },
+        {
+          "word": "ant",
+          "start": 42.92,
+          "end": 43.42,
+          "confidence": 0.539
+        },
+        {
+          "word": "life",
+          "start": 43.73,
+          "end": 44.12,
+          "confidence": 0.992
+        },
+        {
+          "word": "is",
+          "start": 44.12,
+          "end": 44.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "too",
+          "start": 44.36,
+          "end": 44.77,
+          "confidence": 0.998
+        },
+        {
+          "word": "short",
+          "start": 44.77,
+          "end": 45.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 45.09,
+          "end": 45.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "work",
+          "start": 45.32,
+          "end": 45.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "so",
+          "start": 45.64,
+          "end": 45.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "hard",
+          "start": 45.96,
+          "end": 46.46,
+          "confidence": 0.882
+        }
+      ],
+      "confidence": 0.933
     },
     {
       "id": 7,
-      "text": "Hey ant!",
-      "start": 42.24,
-      "duration": 1.44
+      "text": "Grasshopper said to Ant because Ant was working all summer long.",
+      "speaker": "Speaker0",
+      "start": 49.0,
+      "duration": 4.91,
+      "words": [
+        {
+          "word": "grasshopper",
+          "start": 49.0,
+          "end": 49.5,
+          "confidence": 0.874
+        },
+        {
+          "word": "said",
+          "start": 49.96,
+          "end": 50.2,
+          "confidence": 0.998
+        },
+        {
+          "word": "to",
+          "start": 50.2,
+          "end": 50.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "ant",
+          "start": 50.36,
+          "end": 50.86,
+          "confidence": 0.948
+        },
+        {
+          "word": "because",
+          "start": 51.09,
+          "end": 51.48,
+          "confidence": 0.881
+        },
+        {
+          "word": "ant",
+          "start": 51.48,
+          "end": 51.8,
+          "confidence": 0.973
+        },
+        {
+          "word": "was",
+          "start": 51.8,
+          "end": 52.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "working",
+          "start": 52.05,
+          "end": 52.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "all",
+          "start": 52.77,
+          "end": 53.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "summer",
+          "start": 53.0,
+          "end": 53.41,
+          "confidence": 0.998
+        },
+        {
+          "word": "long",
+          "start": 53.41,
+          "end": 53.91,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.874
     },
     {
       "id": 8,
-      "text": "Life is too short to work so hard.",
-      "start": 43.68,
-      "duration": 5.2
+      "text": "Listen, Grasshopper.",
+      "speaker": "Speaker1",
+      "start": 54.86,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "listen",
+          "start": 54.86,
+          "end": 55.26,
+          "confidence": 0.78
+        },
+        {
+          "word": "grasshopper",
+          "start": 55.26,
+          "end": 55.76,
+          "confidence": 0.85
+        }
+      ],
+      "confidence": 0.815
     },
     {
       "id": 9,
-      "text": "Grasshopper said to ant because ant was working all summer long.",
-      "start": 48.88,
-      "duration": 5.76
+      "text": "If you don't prepare for winter now, you're going to starve. Oh, there's plenty of time.",
+      "speaker": "Speaker1",
+      "start": 56.46,
+      "duration": 10.66,
+      "words": [
+        {
+          "word": "if",
+          "start": 56.46,
+          "end": 56.62,
+          "confidence": 0.994
+        },
+        {
+          "word": "you",
+          "start": 56.62,
+          "end": 56.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "don't",
+          "start": 56.86,
+          "end": 57.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "prepare",
+          "start": 57.26,
+          "end": 57.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "for",
+          "start": 57.74,
+          "end": 58.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "winter",
+          "start": 58.06,
+          "end": 58.46,
+          "confidence": 0.973
+        },
+        {
+          "word": "now",
+          "start": 58.46,
+          "end": 58.96,
+          "confidence": 0.982
+        },
+        {
+          "word": "you're",
+          "start": 59.1,
+          "end": 59.58,
+          "confidence": 0.99
+        },
+        {
+          "word": "going",
+          "start": 59.58,
+          "end": 59.9,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 59.9,
+          "end": 60.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "starve",
+          "start": 60.14,
+          "end": 60.46,
+          "confidence": 0.974
+        },
+        {
+          "word": "oh",
+          "start": 60.46,
+          "end": 60.96,
+          "confidence": 0.8
+        },
+        {
+          "word": "there's",
+          "start": 65.42,
+          "end": 65.9,
+          "confidence": 0.973
+        },
+        {
+          "word": "plenty",
+          "start": 65.9,
+          "end": 66.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 66.38,
+          "end": 66.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "time",
+          "start": 66.62,
+          "end": 67.12,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.976
     },
     {
       "id": 10,
-      "text": "Listen grasshopper, if you don't prepare for winter now, you're going to starve.",
-      "start": 54.64,
-      "duration": 10.0
+      "text": "Why worry?",
+      "speaker": "Speaker2",
+      "start": 67.5,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "why",
+          "start": 67.5,
+          "end": 67.9,
+          "confidence": 0.999
+        },
+        {
+          "word": "worry",
+          "start": 67.9,
+          "end": 68.4,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 11,
-      "text": "Oh, there's plenty of time!",
-      "start": 64.64,
-      "duration": 3.09
+      "text": "I'm going to go back to my singing now.",
+      "speaker": "Speaker2",
+      "start": 69.11,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 69.11,
+          "end": 69.44,
+          "confidence": 0.982
+        },
+        {
+          "word": "going",
+          "start": 69.44,
+          "end": 69.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 69.75,
+          "end": 69.91,
+          "confidence": 0.997
+        },
+        {
+          "word": "go",
+          "start": 69.91,
+          "end": 70.08,
+          "confidence": 0.998
+        },
+        {
+          "word": "back",
+          "start": 70.08,
+          "end": 70.39,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 70.39,
+          "end": 70.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 70.55,
+          "end": 70.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "singing",
+          "start": 70.8,
+          "end": 71.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "now",
+          "start": 71.11,
+          "end": 71.61,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 12,
-      "text": "Why worry?",
-      "start": 67.73,
-      "duration": 1.23
+      "text": "Chirp, chirp.",
+      "speaker": "Speaker1",
+      "start": 72.31,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "chirp",
+          "start": 72.31,
+          "end": 72.81,
+          "confidence": 0.801
+        },
+        {
+          "word": "chirp",
+          "start": 73.35,
+          "end": 73.85,
+          "confidence": 0.959
+        }
+      ],
+      "confidence": 0.801
     },
     {
       "id": 13,
-      "text": "I'm going to go back to my singing now.",
-      "start": 68.96,
-      "duration": 5.68
+      "text": "In no time, summer went and the freezing winter came.",
+      "speaker": "Speaker0",
+      "start": 74.72,
+      "duration": 3.86,
+      "words": [
+        {
+          "word": "in",
+          "start": 74.72,
+          "end": 75.03,
+          "confidence": 0.992
+        },
+        {
+          "word": "no",
+          "start": 75.03,
+          "end": 75.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 75.27,
+          "end": 75.77,
+          "confidence": 0.852
+        },
+        {
+          "word": "summer",
+          "start": 75.83,
+          "end": 76.23,
+          "confidence": 0.984
+        },
+        {
+          "word": "went",
+          "start": 76.23,
+          "end": 76.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 76.72,
+          "end": 76.95,
+          "confidence": 0.649
+        },
+        {
+          "word": "the",
+          "start": 76.95,
+          "end": 77.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "freezing",
+          "start": 77.19,
+          "end": 77.67,
+          "confidence": 0.999
+        },
+        {
+          "word": "winter",
+          "start": 77.67,
+          "end": 78.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "came",
+          "start": 78.08,
+          "end": 78.58,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.947
     },
     {
       "id": 14,
-      "text": "In no time, summer went and the freezing winter came.",
-      "start": 74.64,
-      "duration": 4.64
+      "text": "The wind howled and howled, and buckets of snow fell from the winter sky.",
+      "speaker": "Speaker0",
+      "start": 79.35,
+      "duration": 5.56,
+      "words": [
+        {
+          "word": "the",
+          "start": 79.35,
+          "end": 79.67,
+          "confidence": 0.994
+        },
+        {
+          "word": "wind",
+          "start": 79.67,
+          "end": 80.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "howled",
+          "start": 80.08,
+          "end": 80.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 80.55,
+          "end": 80.88,
+          "confidence": 0.985
+        },
+        {
+          "word": "howled",
+          "start": 80.88,
+          "end": 81.38,
+          "confidence": 0.871
+        },
+        {
+          "word": "and",
+          "start": 81.69,
+          "end": 81.93,
+          "confidence": 0.999
+        },
+        {
+          "word": "buckets",
+          "start": 81.93,
+          "end": 82.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "of",
+          "start": 82.41,
+          "end": 82.65,
+          "confidence": 0.999
+        },
+        {
+          "word": "snow",
+          "start": 82.65,
+          "end": 83.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "fell",
+          "start": 83.21,
+          "end": 83.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "from",
+          "start": 83.61,
+          "end": 83.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 83.85,
+          "end": 84.01,
+          "confidence": 0.998
+        },
+        {
+          "word": "winter",
+          "start": 84.01,
+          "end": 84.41,
+          "confidence": 0.998
+        },
+        {
+          "word": "sky",
+          "start": 84.41,
+          "end": 84.91,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.97
     },
     {
       "id": 15,
-      "text": "The wind howled and howled, and buckets of snow fell from the winter sky.",
-      "start": 79.28,
-      "duration": 8.8
+      "text": "Oh, oh, I'm so hungry.",
+      "speaker": "Speaker0",
+      "start": 86.25,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "oh",
+          "start": 86.25,
+          "end": 86.75,
+          "confidence": 0.695
+        },
+        {
+          "word": "oh",
+          "start": 87.21,
+          "end": 87.71,
+          "confidence": 0.731
+        },
+        {
+          "word": "i'm",
+          "start": 88.49,
+          "end": 88.97,
+          "confidence": 0.941
+        },
+        {
+          "word": "so",
+          "start": 88.97,
+          "end": 89.47,
+          "confidence": 0.999
+        },
+        {
+          "word": "hungry",
+          "start": 89.53,
+          "end": 90.03,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.695
     },
     {
       "id": 16,
-      "text": "Oh, I'm so hungry.",
-      "start": 88.08,
-      "duration": 3.92
+      "text": "Oh, I'm so cold.",
+      "speaker": "Speaker2",
+      "start": 91.21,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "oh",
+          "start": 91.21,
+          "end": 91.71,
+          "confidence": 0.699
+        },
+        {
+          "word": "i'm",
+          "start": 92.33,
+          "end": 92.81,
+          "confidence": 0.989
+        },
+        {
+          "word": "so",
+          "start": 92.81,
+          "end": 93.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "cold",
+          "start": 93.37,
+          "end": 93.87,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.699
     },
     {
       "id": 17,
-      "text": "I'm so cold.",
-      "start": 92.0,
-      "duration": 4.16
+      "text": "What if Ant is right? Then I starve to death.",
+      "speaker": "Speaker2",
+      "start": 96.37,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "what",
+          "start": 96.37,
+          "end": 96.61,
+          "confidence": 0.872
+        },
+        {
+          "word": "if",
+          "start": 96.61,
+          "end": 96.84,
+          "confidence": 0.995
+        },
+        {
+          "word": "ant",
+          "start": 96.84,
+          "end": 97.08,
+          "confidence": 0.854
+        },
+        {
+          "word": "is",
+          "start": 97.08,
+          "end": 97.41,
+          "confidence": 0.986
+        },
+        {
+          "word": "right",
+          "start": 97.41,
+          "end": 97.91,
+          "confidence": 0.933
+        },
+        {
+          "word": "then",
+          "start": 98.05,
+          "end": 98.37,
+          "confidence": 0.984
+        },
+        {
+          "word": "i",
+          "start": 98.37,
+          "end": 98.77,
+          "confidence": 0.984
+        },
+        {
+          "word": "starve",
+          "start": 98.77,
+          "end": 99.27,
+          "confidence": 0.88
+        },
+        {
+          "word": "to",
+          "start": 99.41,
+          "end": 99.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "death",
+          "start": 99.65,
+          "end": 100.15,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.948
     },
     {
       "id": 18,
-      "text": "What if ant is right?",
-      "start": 96.16,
-      "duration": 5.24
+      "text": "Grasshopper went to look for food.",
+      "speaker": "Speaker0",
+      "start": 101.56,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "grasshopper",
+          "start": 101.56,
+          "end": 102.06,
+          "confidence": 0.957
+        },
+        {
+          "word": "went",
+          "start": 102.44,
+          "end": 102.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 102.84,
+          "end": 103.01,
+          "confidence": 0.999
+        },
+        {
+          "word": "look",
+          "start": 103.01,
+          "end": 103.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 103.25,
+          "end": 103.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "food",
+          "start": 103.48,
+          "end": 103.98,
+          "confidence": 0.946
+        }
+      ],
+      "confidence": 0.957
     },
     {
       "id": 19,
-      "text": "Then I'll starve to death!",
-      "start": 101.4,
-      "duration": 0.5
+      "text": "But instead of finding food, he got lost in the snow.",
+      "speaker": "Speaker0",
+      "start": 104.77,
+      "duration": 3.93,
+      "words": [
+        {
+          "word": "but",
+          "start": 104.77,
+          "end": 105.17,
+          "confidence": 0.927
+        },
+        {
+          "word": "instead",
+          "start": 105.17,
+          "end": 105.56,
+          "confidence": 0.984
+        },
+        {
+          "word": "of",
+          "start": 105.56,
+          "end": 105.73,
+          "confidence": 0.999
+        },
+        {
+          "word": "finding",
+          "start": 105.73,
+          "end": 106.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "food",
+          "start": 106.2,
+          "end": 106.7,
+          "confidence": 0.946
+        },
+        {
+          "word": "he",
+          "start": 106.92,
+          "end": 107.25,
+          "confidence": 0.997
+        },
+        {
+          "word": "got",
+          "start": 107.25,
+          "end": 107.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "lost",
+          "start": 107.48,
+          "end": 107.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 107.89,
+          "end": 108.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 108.05,
+          "end": 108.2,
+          "confidence": 0.989
+        },
+        {
+          "word": "snow",
+          "start": 108.2,
+          "end": 108.7,
+          "confidence": 0.818
+        }
+      ],
+      "confidence": 0.969
     },
     {
       "id": 20,
-      "text": "Grasshopper went to look for food.",
-      "start": 101.44,
-      "duration": 3.28
+      "text": "And he could barely move his legs anymore.",
+      "speaker": "Speaker0",
+      "start": 109.46,
+      "duration": 2.74,
+      "words": [
+        {
+          "word": "and",
+          "start": 109.46,
+          "end": 109.78,
+          "confidence": 0.999
+        },
+        {
+          "word": "he",
+          "start": 109.78,
+          "end": 109.86,
+          "confidence": 0.997
+        },
+        {
+          "word": "could",
+          "start": 109.86,
+          "end": 110.1,
+          "confidence": 0.999
+        },
+        {
+          "word": "barely",
+          "start": 110.1,
+          "end": 110.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "move",
+          "start": 110.66,
+          "end": 110.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "his",
+          "start": 110.9,
+          "end": 111.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "legs",
+          "start": 111.22,
+          "end": 111.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "anymore",
+          "start": 111.7,
+          "end": 112.2,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 21,
-      "text": "But instead of finding food, he got lost in the snow.",
-      "start": 104.72,
-      "duration": 4.64
+      "text": "Luckily, Grasshopper found Ant's house.",
+      "speaker": "Speaker0",
+      "start": 113.54,
+      "duration": 2.74,
+      "words": [
+        {
+          "word": "luckily",
+          "start": 113.54,
+          "end": 114.04,
+          "confidence": 0.994
+        },
+        {
+          "word": "grasshopper",
+          "start": 114.26,
+          "end": 114.76,
+          "confidence": 0.998
+        },
+        {
+          "word": "found",
+          "start": 114.98,
+          "end": 115.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "ant's",
+          "start": 115.38,
+          "end": 115.78,
+          "confidence": 0.933
+        },
+        {
+          "word": "house",
+          "start": 115.78,
+          "end": 116.28,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.979
     },
     {
       "id": 22,
-      "text": "And he could barely move his legs anymore.",
-      "start": 109.36,
-      "duration": 4.08
+      "text": "He mustered up enough energy to knock on the door.",
+      "speaker": "Speaker0",
+      "start": 117.14,
+      "duration": 3.38,
+      "words": [
+        {
+          "word": "he",
+          "start": 117.14,
+          "end": 117.46,
+          "confidence": 0.996
+        },
+        {
+          "word": "mustered",
+          "start": 117.46,
+          "end": 117.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 117.94,
+          "end": 118.1,
+          "confidence": 0.998
+        },
+        {
+          "word": "enough",
+          "start": 118.1,
+          "end": 118.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "energy",
+          "start": 118.5,
+          "end": 119.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 119.14,
+          "end": 119.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "knock",
+          "start": 119.38,
+          "end": 119.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 119.7,
+          "end": 119.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 119.86,
+          "end": 120.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "door",
+          "start": 120.02,
+          "end": 120.52,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 23,
-      "text": "Luckily, grasshopper found aunt's house.",
-      "start": 113.44,
-      "duration": 3.68
+      "text": "Please, Ant.",
+      "speaker": "Speaker2",
+      "start": 122.39,
+      "duration": 0.97,
+      "words": [
+        {
+          "word": "please",
+          "start": 122.39,
+          "end": 122.86,
+          "confidence": 0.919
+        },
+        {
+          "word": "ant",
+          "start": 122.86,
+          "end": 123.36,
+          "confidence": 0.531
+        }
+      ],
+      "confidence": 0.725
     },
     {
       "id": 24,
-      "text": "He mustered up enough energy to knock on the door.",
-      "start": 117.12,
-      "duration": 4.96
+      "text": "Will you give me some food or even just a crumb, please?",
+      "speaker": "Speaker2",
+      "start": 123.98,
+      "duration": 6.27,
+      "words": [
+        {
+          "word": "will",
+          "start": 123.98,
+          "end": 124.31,
+          "confidence": 0.996
+        },
+        {
+          "word": "you",
+          "start": 124.31,
+          "end": 124.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "give",
+          "start": 124.55,
+          "end": 124.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "me",
+          "start": 124.78,
+          "end": 125.1,
+          "confidence": 0.999
+        },
+        {
+          "word": "some",
+          "start": 125.1,
+          "end": 125.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "food",
+          "start": 125.58,
+          "end": 126.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "or",
+          "start": 126.62,
+          "end": 127.12,
+          "confidence": 0.523
+        },
+        {
+          "word": "even",
+          "start": 127.27,
+          "end": 127.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "just",
+          "start": 127.74,
+          "end": 128.15,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 128.15,
+          "end": 128.47,
+          "confidence": 0.998
+        },
+        {
+          "word": "crumb",
+          "start": 128.47,
+          "end": 128.97,
+          "confidence": 0.895
+        },
+        {
+          "word": "please",
+          "start": 129.75,
+          "end": 130.25,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 25,
-      "text": "Please aunt, will you give me some food?",
-      "start": 122.08,
-      "duration": 4.56
+      "text": "Don't worry, Grasshopper.",
+      "speaker": "Speaker1",
+      "start": 133.03,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "don't",
+          "start": 133.03,
+          "end": 133.26,
+          "confidence": 0.99
+        },
+        {
+          "word": "worry",
+          "start": 133.26,
+          "end": 133.75,
+          "confidence": 0.866
+        },
+        {
+          "word": "grasshopper",
+          "start": 133.75,
+          "end": 134.25,
+          "confidence": 0.906
+        }
+      ],
+      "confidence": 0.92
     },
     {
       "id": 26,
-      "text": "Or even just a crumb, please.",
-      "start": 126.64,
-      "duration": 6.24
+      "text": "I have plenty of food. Come on in.",
+      "speaker": "Speaker1",
+      "start": 134.99,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "i",
+          "start": 134.99,
+          "end": 135.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 135.23,
+          "end": 135.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "plenty",
+          "start": 135.55,
+          "end": 136.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 136.03,
+          "end": 136.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "food",
+          "start": 136.27,
+          "end": 136.77,
+          "confidence": 0.985
+        },
+        {
+          "word": "come",
+          "start": 136.99,
+          "end": 137.31,
+          "confidence": 0.998
+        },
+        {
+          "word": "on",
+          "start": 137.31,
+          "end": 137.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 137.47,
+          "end": 137.97,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 27,
-      "text": "Don't worry grasshopper, I have plenty of food.",
-      "start": 132.88,
-      "duration": 4.95
+      "text": "Grasshopper went inside.",
+      "speaker": "Speaker0",
+      "start": 139.87,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "grasshopper",
+          "start": 139.87,
+          "end": 140.37,
+          "confidence": 0.936
+        },
+        {
+          "word": "went",
+          "start": 140.75,
+          "end": 140.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "inside",
+          "start": 140.99,
+          "end": 141.49,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.936
     },
     {
       "id": 28,
-      "text": "Come on in!",
-      "start": 137.83,
-      "duration": 1.93
+      "text": "He sat next to the fire and ate until he couldn't eat anymore.",
+      "speaker": "Speaker0",
+      "start": 142.35,
+      "duration": 4.34,
+      "words": [
+        {
+          "word": "he",
+          "start": 142.35,
+          "end": 142.59,
+          "confidence": 0.99
+        },
+        {
+          "word": "sat",
+          "start": 142.59,
+          "end": 142.83,
+          "confidence": 0.999
+        },
+        {
+          "word": "next",
+          "start": 142.83,
+          "end": 143.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 143.07,
+          "end": 143.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 143.31,
+          "end": 143.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "fire",
+          "start": 143.47,
+          "end": 143.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 144.03,
+          "end": 144.43,
+          "confidence": 0.902
+        },
+        {
+          "word": "ate",
+          "start": 144.43,
+          "end": 144.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "until",
+          "start": 144.75,
+          "end": 145.15,
+          "confidence": 0.999
+        },
+        {
+          "word": "he",
+          "start": 145.15,
+          "end": 145.31,
+          "confidence": 0.95
+        },
+        {
+          "word": "couldn't",
+          "start": 145.31,
+          "end": 145.79,
+          "confidence": 0.995
+        },
+        {
+          "word": "eat",
+          "start": 145.79,
+          "end": 146.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "anymore",
+          "start": 146.19,
+          "end": 146.69,
+          "confidence": 0.977
+        }
+      ],
+      "confidence": 0.985
     },
     {
       "id": 29,
-      "text": "Grasshopper went inside.",
-      "start": 139.76,
-      "duration": 3.36
+      "text": "This is delicious.",
+      "speaker": "Speaker2",
+      "start": 147.07,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "this",
+          "start": 147.07,
+          "end": 147.31,
+          "confidence": 0.988
+        },
+        {
+          "word": "is",
+          "start": 147.31,
+          "end": 147.63,
+          "confidence": 0.999
+        },
+        {
+          "word": "delicious",
+          "start": 147.63,
+          "end": 148.13,
+          "confidence": 0.804
+        }
+      ],
+      "confidence": 0.931
     },
     {
       "id": 30,
-      "text": "He sat next to the fire and ate until he couldn't eat anymore.",
-      "start": 143.12,
-      "duration": 3.04
+      "text": "Ant, I'm really sorry for making fun of you before.",
+      "speaker": "Speaker2",
+      "start": 149.34,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "ant",
+          "start": 149.34,
+          "end": 149.84,
+          "confidence": 0.783
+        },
+        {
+          "word": "i'm",
+          "start": 149.91,
+          "end": 150.41,
+          "confidence": 0.99
+        },
+        {
+          "word": "really",
+          "start": 150.47,
+          "end": 150.87,
+          "confidence": 0.999
+        },
+        {
+          "word": "sorry",
+          "start": 150.87,
+          "end": 151.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 151.26,
+          "end": 151.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "making",
+          "start": 151.59,
+          "end": 151.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "fun",
+          "start": 151.91,
+          "end": 152.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 152.15,
+          "end": 152.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 152.31,
+          "end": 152.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "before",
+          "start": 152.62,
+          "end": 153.12,
+          "confidence": 0.923
+        }
+      ],
+      "confidence": 0.97
     },
     {
       "id": 31,
-      "text": "This is delicious!",
-      "start": 146.16,
-      "duration": 2.96
+      "text": "That was wrong of me. That's okay.",
+      "speaker": "Speaker2",
+      "start": 153.82,
+      "duration": 2.67,
+      "words": [
+        {
+          "word": "that",
+          "start": 153.82,
+          "end": 154.06,
+          "confidence": 0.998
+        },
+        {
+          "word": "was",
+          "start": 154.06,
+          "end": 154.47,
+          "confidence": 0.999
+        },
+        {
+          "word": "wrong",
+          "start": 154.47,
+          "end": 154.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 154.78,
+          "end": 154.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "me",
+          "start": 154.94,
+          "end": 155.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "that's",
+          "start": 155.59,
+          "end": 155.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "okay",
+          "start": 155.99,
+          "end": 156.49,
+          "confidence": 0.899
+        }
+      ],
+      "confidence": 0.985
     },
     {
       "id": 32,
-      "text": "And I'm really sorry for making fun of you before.",
-      "start": 149.12,
-      "duration": 4.56
+      "text": "You can help me next year.",
+      "speaker": "Speaker1",
+      "start": 157.11,
+      "duration": 1.93,
+      "words": [
+        {
+          "word": "you",
+          "start": 157.11,
+          "end": 157.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 157.34,
+          "end": 157.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "help",
+          "start": 157.59,
+          "end": 157.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "me",
+          "start": 157.91,
+          "end": 158.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 158.22,
+          "end": 158.54,
+          "confidence": 0.999
+        },
+        {
+          "word": "year",
+          "start": 158.54,
+          "end": 159.04,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 33,
-      "text": "That was wrong of me.",
-      "start": 153.68,
-      "duration": 2.4
+      "text": "It was then that Grasshopper finally understood why Ant had worked so hard in the summer.",
+      "speaker": "Speaker0",
+      "start": 162.31,
+      "duration": 6.41,
+      "words": [
+        {
+          "word": "it",
+          "start": 162.31,
+          "end": 162.54,
+          "confidence": 0.966
+        },
+        {
+          "word": "was",
+          "start": 162.54,
+          "end": 162.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "then",
+          "start": 162.78,
+          "end": 163.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "that",
+          "start": 163.19,
+          "end": 163.5,
+          "confidence": 0.964
+        },
+        {
+          "word": "grasshopper",
+          "start": 163.5,
+          "end": 164.0,
+          "confidence": 0.989
+        },
+        {
+          "word": "finally",
+          "start": 164.7,
+          "end": 165.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "understood",
+          "start": 165.02,
+          "end": 165.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "why",
+          "start": 166.06,
+          "end": 166.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "ant",
+          "start": 166.38,
+          "end": 166.7,
+          "confidence": 0.865
+        },
+        {
+          "word": "had",
+          "start": 166.7,
+          "end": 166.94,
+          "confidence": 0.997
+        },
+        {
+          "word": "worked",
+          "start": 166.94,
+          "end": 167.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "so",
+          "start": 167.34,
+          "end": 167.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "hard",
+          "start": 167.58,
+          "end": 167.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 167.98,
+          "end": 168.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 168.14,
+          "end": 168.22,
+          "confidence": 0.997
+        },
+        {
+          "word": "summer",
+          "start": 168.22,
+          "end": 168.72,
+          "confidence": 0.859
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 34,
-      "text": "That's okay.",
-      "start": 156.08,
-      "duration": 0.96
-    },
-    {
-      "id": 35,
-      "text": "You can help me next year.",
-      "start": 157.04,
-      "duration": 5.12
-    },
-    {
-      "id": 36,
-      "text": "It was then that grasshopper finally understood why ant had worked so hard in the summer.",
-      "start": 162.16,
-      "duration": 7.36
-    },
-    {
-      "id": 37,
       "text": "And he was thankful that he had such a good friend.",
-      "start": 169.52,
-      "duration": 3.0
+      "speaker": "Speaker0",
+      "start": 169.58,
+      "duration": 3.46,
+      "words": [
+        {
+          "word": "and",
+          "start": 169.58,
+          "end": 169.74,
+          "confidence": 0.995
+        },
+        {
+          "word": "he",
+          "start": 169.74,
+          "end": 169.98,
+          "confidence": 0.993
+        },
+        {
+          "word": "was",
+          "start": 169.98,
+          "end": 170.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "thankful",
+          "start": 170.22,
+          "end": 170.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "that",
+          "start": 170.94,
+          "end": 171.1,
+          "confidence": 0.997
+        },
+        {
+          "word": "he",
+          "start": 171.1,
+          "end": 171.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "had",
+          "start": 171.34,
+          "end": 171.66,
+          "confidence": 0.998
+        },
+        {
+          "word": "such",
+          "start": 171.66,
+          "end": 171.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 171.98,
+          "end": 172.14,
+          "confidence": 0.999
+        },
+        {
+          "word": "good",
+          "start": 172.14,
+          "end": 172.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "friend",
+          "start": 172.54,
+          "end": 173.04,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.997
     }
   ],
   "videoId": "XbMrw3cwVUc",
   "source": "youtube-transcript-api",
   "formattedAt": "2026-08-01T18:00:00.000Z",
   "splitAt": "2026-08-03T05:15:00.309344+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2"
+  },
+  "fetchedAt": "2026-08-03T11:04:51.402578+00:00",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:04:51.402617+00:00",
+    "dgWordCount": 265,
+    "dgUtteranceCount": 53,
+    "matchedSegments": 53,
+    "totalDuration": 173.04
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

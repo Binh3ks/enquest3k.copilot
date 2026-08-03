@@ -1,24 +1,1097 @@
 {
-  "text": "What do you like to do? I like dancing, but I don't like dancing with a bear. I like swimming, but I don't like swimming in the air. I like drawing, but I don't like drawing with a spoon. I like cooking, but I don't like cooking on the moon. I like riding a bike, but I don't like riding a shark. I like petting a soft furry dog, but I don't like petting an aardvark. I like running, but I don't like running with a bee. I like painting, but I don't like painting in a tree. I like reading, but I don't like reading upside down. I like skiing, but I don't like skiing on a merry-go-round. I like playing hide 'n seek, but I don't like playing hide 'n sleep. I like singing with all my friends, but I don't like singing with a sheep. Baaa. What do you like to do? Baaa.",
+  "text": "What do you like to do? I like dancing, but I don't like dancing with a bear. I like swimming, but I don't like swimming in the air. I like drawing, but I don't like drawing with a spoon. I like cooking, but I don't like cooking on the moon. I like riding a bike, but I don't like riding a shark. I like petting a soft furry dog, but I don't like petting an or fart I like running, but I don't like running with a b I like painting, but I don't like like painting in a tree. I like reading, but I don't like reading upside down. I like skiing, but I don't like skiing on a merry-go-round. I like playing hide and seek, but I don't like playing hide and sleep. I like singing with all my friends, but I don't like singing with the sheep. What do you like to do?",
   "segments": [
-    { "id": 1, "text": "What do you like to do?", "start": 8.96, "duration": 5.87 },
-    { "id": 2, "text": "I like dancing, but I don't like dancing with a bear.", "start": 14.33, "duration": 8.48 },
-    { "id": 3, "text": "I like swimming, but I don't like swimming in the air.", "start": 22.4, "duration": 7.35 },
-    { "id": 4, "text": "I like drawing, but I don't like drawing with a spoon.", "start": 29.48, "duration": 7.17 },
-    { "id": 5, "text": "I like cooking, but I don't like cooking on the moon.", "start": 36.44, "duration": 7.38 },
-    { "id": 6, "text": "I like riding a bike, but I don't like riding a shark.", "start": 43.33, "duration": 7.24 },
-    { "id": 7, "text": "I like petting a soft furry dog, but I don't like petting an aardvark.", "start": 50.29, "duration": 7.26 },
-    { "id": 8, "text": "I like running, but I don't like running with a bee.", "start": 57.25, "duration": 7.28 },
-    { "id": 9, "text": "I like painting, but I don't like painting in a tree.", "start": 64.29, "duration": 7.23 },
-    { "id": 10, "text": "I like reading, but I don't like reading upside down.", "start": 71.19, "duration": 7.28 },
-    { "id": 11, "text": "I like skiing, but I don't like skiing on a merry-go-round.", "start": 78.16, "duration": 8.67 },
-    { "id": 12, "text": "I like playing hide 'n seek, but I don't like playing hide 'n sleep.", "start": 86.83, "duration": 7.33 },
-    { "id": 13, "text": "I like singing with all my friends, but I don't like singing with a sheep.", "start": 93.83, "duration": 7.76 },
-    { "id": 14, "text": "Baaa.", "start": 101.1, "duration": 1.29 },
-    { "id": 15, "text": "What do you like to do?", "start": 101.99, "duration": 2.58 },
-    { "id": 16, "text": "Baaa.", "start": 104.07, "duration": 0.5 }
+    {
+      "id": 1,
+      "text": "What do you like to do?",
+      "speaker": "Speaker0",
+      "start": 8.96,
+      "duration": 3.46,
+      "words": [
+        {
+          "word": "what",
+          "start": 8.96,
+          "end": 9.28,
+          "confidence": 0.492
+        },
+        {
+          "word": "do",
+          "start": 9.28,
+          "end": 9.68,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 9.68,
+          "end": 10.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 10.16,
+          "end": 10.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 11.04,
+          "end": 11.54,
+          "confidence": 0.997
+        },
+        {
+          "word": "do",
+          "start": 11.92,
+          "end": 12.42,
+          "confidence": 0.977
+        }
+      ],
+      "confidence": 0.872
+    },
+    {
+      "id": 2,
+      "text": "I like dancing, but I don't like dancing with a bear.",
+      "speaker": "Speaker0",
+      "start": 15.43,
+      "duration": 5.69,
+      "words": [
+        {
+          "word": "i",
+          "start": 15.43,
+          "end": 15.82,
+          "confidence": 0.947
+        },
+        {
+          "word": "like",
+          "start": 15.82,
+          "end": 16.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "dancing",
+          "start": 16.3,
+          "end": 16.8,
+          "confidence": 0.884
+        },
+        {
+          "word": "but",
+          "start": 18.46,
+          "end": 18.7,
+          "confidence": 0.985
+        },
+        {
+          "word": "i",
+          "start": 18.7,
+          "end": 18.86,
+          "confidence": 0.996
+        },
+        {
+          "word": "don't",
+          "start": 18.86,
+          "end": 19.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 19.27,
+          "end": 19.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "dancing",
+          "start": 19.66,
+          "end": 20.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 20.14,
+          "end": 20.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 20.46,
+          "end": 20.62,
+          "confidence": 0.961
+        },
+        {
+          "word": "bear",
+          "start": 20.62,
+          "end": 21.12,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.944
+    },
+    {
+      "id": 3,
+      "text": "I like swimming, but I don't like swimming in the air.",
+      "speaker": "Speaker0",
+      "start": 22.39,
+      "duration": 5.81,
+      "words": [
+        {
+          "word": "i",
+          "start": 22.39,
+          "end": 22.79,
+          "confidence": 0.982
+        },
+        {
+          "word": "like",
+          "start": 22.79,
+          "end": 23.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "swimming",
+          "start": 23.27,
+          "end": 23.77,
+          "confidence": 0.998
+        },
+        {
+          "word": "but",
+          "start": 25.43,
+          "end": 25.66,
+          "confidence": 0.996
+        },
+        {
+          "word": "i",
+          "start": 25.66,
+          "end": 25.82,
+          "confidence": 0.998
+        },
+        {
+          "word": "don't",
+          "start": 25.82,
+          "end": 26.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 26.23,
+          "end": 26.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "swimming",
+          "start": 26.82,
+          "end": 27.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 27.14,
+          "end": 27.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 27.46,
+          "end": 27.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "air",
+          "start": 27.7,
+          "end": 28.2,
+          "confidence": 0.949
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 4,
+      "text": "I like drawing, but I don't like drawing with a spoon.",
+      "speaker": "Speaker0",
+      "start": 29.38,
+      "duration": 5.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 29.38,
+          "end": 29.78,
+          "confidence": 0.945
+        },
+        {
+          "word": "like",
+          "start": 29.78,
+          "end": 30.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "drawing",
+          "start": 30.26,
+          "end": 30.76,
+          "confidence": 0.997
+        },
+        {
+          "word": "but",
+          "start": 32.42,
+          "end": 32.66,
+          "confidence": 0.995
+        },
+        {
+          "word": "i",
+          "start": 32.66,
+          "end": 32.82,
+          "confidence": 0.997
+        },
+        {
+          "word": "don't",
+          "start": 32.82,
+          "end": 33.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 33.22,
+          "end": 33.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "drawing",
+          "start": 33.62,
+          "end": 34.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 34.1,
+          "end": 34.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 34.34,
+          "end": 34.5,
+          "confidence": 0.994
+        },
+        {
+          "word": "spoon",
+          "start": 34.5,
+          "end": 35.0,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 5,
+      "text": "I like cooking, but I don't like cooking on the moon.",
+      "speaker": "Speaker0",
+      "start": 36.42,
+      "duration": 5.63,
+      "words": [
+        {
+          "word": "i",
+          "start": 36.42,
+          "end": 36.74,
+          "confidence": 0.973
+        },
+        {
+          "word": "like",
+          "start": 36.74,
+          "end": 37.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "cooking",
+          "start": 37.14,
+          "end": 37.64,
+          "confidence": 0.986
+        },
+        {
+          "word": "but",
+          "start": 39.4,
+          "end": 39.64,
+          "confidence": 0.993
+        },
+        {
+          "word": "i",
+          "start": 39.64,
+          "end": 39.8,
+          "confidence": 0.995
+        },
+        {
+          "word": "don't",
+          "start": 39.8,
+          "end": 40.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 40.2,
+          "end": 40.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "cooking",
+          "start": 40.59,
+          "end": 41.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 41.16,
+          "end": 41.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 41.4,
+          "end": 41.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "moon",
+          "start": 41.55,
+          "end": 42.05,
+          "confidence": 0.802
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 6,
+      "text": "I like riding a bike, but I don't like riding a shark.",
+      "speaker": "Speaker0",
+      "start": 43.32,
+      "duration": 5.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 43.32,
+          "end": 43.72,
+          "confidence": 0.985
+        },
+        {
+          "word": "like",
+          "start": 43.72,
+          "end": 44.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "riding",
+          "start": 44.12,
+          "end": 44.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 44.76,
+          "end": 45.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "bike",
+          "start": 45.0,
+          "end": 45.5,
+          "confidence": 0.996
+        },
+        {
+          "word": "but",
+          "start": 46.27,
+          "end": 46.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 46.59,
+          "end": 46.76,
+          "confidence": 0.998
+        },
+        {
+          "word": "don't",
+          "start": 46.76,
+          "end": 47.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 47.16,
+          "end": 47.55,
+          "confidence": 0.999
+        },
+        {
+          "word": "riding",
+          "start": 47.55,
+          "end": 48.05,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 48.2,
+          "end": 48.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "shark",
+          "start": 48.44,
+          "end": 48.94,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 7,
+      "text": "I like petting a soft furry dog, but I don't like petting an or fart",
+      "speaker": "Speaker0",
+      "start": 50.27,
+      "duration": 5.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 50.27,
+          "end": 50.68,
+          "confidence": 0.988
+        },
+        {
+          "word": "like",
+          "start": 50.68,
+          "end": 51.08,
+          "confidence": 0.998
+        },
+        {
+          "word": "petting",
+          "start": 51.08,
+          "end": 51.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 51.8,
+          "end": 51.95,
+          "confidence": 0.998
+        },
+        {
+          "word": "soft",
+          "start": 51.95,
+          "end": 52.27,
+          "confidence": 0.953
+        },
+        {
+          "word": "furry",
+          "start": 52.27,
+          "end": 52.76,
+          "confidence": 0.992
+        },
+        {
+          "word": "dog",
+          "start": 52.76,
+          "end": 53.26,
+          "confidence": 0.99
+        },
+        {
+          "word": "but",
+          "start": 53.32,
+          "end": 53.55,
+          "confidence": 0.998
+        },
+        {
+          "word": "i",
+          "start": 53.55,
+          "end": 53.72,
+          "confidence": 0.995
+        },
+        {
+          "word": "don't",
+          "start": 53.72,
+          "end": 54.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 54.03,
+          "end": 54.27,
+          "confidence": 0.984
+        },
+        {
+          "word": "petting",
+          "start": 54.51,
+          "end": 55.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "an",
+          "start": 55.07,
+          "end": 55.23,
+          "confidence": 0.732
+        },
+        {
+          "word": "or",
+          "start": 55.23,
+          "end": 55.47,
+          "confidence": 0.555
+        },
+        {
+          "word": "fart",
+          "start": 55.47,
+          "end": 55.97,
+          "confidence": 0.453
+        }
+      ],
+      "confidence": 0.909
+    },
+    {
+      "id": 8,
+      "text": "I like running, but I don't like running with a b",
+      "speaker": "Speaker0",
+      "start": 57.31,
+      "duration": 5.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 57.31,
+          "end": 57.63,
+          "confidence": 0.765
+        },
+        {
+          "word": "like",
+          "start": 57.63,
+          "end": 58.11,
+          "confidence": 0.997
+        },
+        {
+          "word": "running",
+          "start": 58.11,
+          "end": 58.61,
+          "confidence": 0.98
+        },
+        {
+          "word": "but",
+          "start": 60.19,
+          "end": 60.51,
+          "confidence": 0.995
+        },
+        {
+          "word": "i",
+          "start": 60.51,
+          "end": 60.67,
+          "confidence": 0.996
+        },
+        {
+          "word": "don't",
+          "start": 60.67,
+          "end": 61.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 61.07,
+          "end": 61.47,
+          "confidence": 0.994
+        },
+        {
+          "word": "running",
+          "start": 61.47,
+          "end": 61.95,
+          "confidence": 0.992
+        },
+        {
+          "word": "with",
+          "start": 61.95,
+          "end": 62.19,
+          "confidence": 0.97
+        },
+        {
+          "word": "a",
+          "start": 62.19,
+          "end": 62.43,
+          "confidence": 0.988
+        },
+        {
+          "word": "b",
+          "start": 62.43,
+          "end": 62.93,
+          "confidence": 0.62
+        }
+      ],
+      "confidence": 0.914
+    },
+    {
+      "id": 9,
+      "text": "I like painting, but I don't like like painting in a tree.",
+      "speaker": "Speaker0",
+      "start": 64.27,
+      "duration": 5.65,
+      "words": [
+        {
+          "word": "i",
+          "start": 64.27,
+          "end": 64.51,
+          "confidence": 0.931
+        },
+        {
+          "word": "like",
+          "start": 64.51,
+          "end": 65.01,
+          "confidence": 0.998
+        },
+        {
+          "word": "painting",
+          "start": 65.07,
+          "end": 65.57,
+          "confidence": 0.988
+        },
+        {
+          "word": "but",
+          "start": 67.07,
+          "end": 67.39,
+          "confidence": 0.987
+        },
+        {
+          "word": "i",
+          "start": 67.39,
+          "end": 67.55,
+          "confidence": 0.984
+        },
+        {
+          "word": "don't",
+          "start": 67.55,
+          "end": 67.95,
+          "confidence": 0.997
+        },
+        {
+          "word": "like",
+          "start": 67.95,
+          "end": 68.14,
+          "confidence": 0.696
+        },
+        {
+          "word": "like",
+          "start": 68.31,
+          "end": 68.55,
+          "confidence": 0.879
+        },
+        {
+          "word": "painting",
+          "start": 68.55,
+          "end": 68.94,
+          "confidence": 0.998
+        },
+        {
+          "word": "in",
+          "start": 68.94,
+          "end": 69.1,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 69.1,
+          "end": 69.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "tree",
+          "start": 69.42,
+          "end": 69.92,
+          "confidence": 0.756
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 10,
+      "text": "I like reading, but I don't like reading upside down.",
+      "speaker": "Speaker0",
+      "start": 71.19,
+      "duration": 5.69,
+      "words": [
+        {
+          "word": "i",
+          "start": 71.19,
+          "end": 71.5,
+          "confidence": 0.935
+        },
+        {
+          "word": "like",
+          "start": 71.5,
+          "end": 72.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "reading",
+          "start": 72.06,
+          "end": 72.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "but",
+          "start": 74.06,
+          "end": 74.38,
+          "confidence": 0.995
+        },
+        {
+          "word": "i",
+          "start": 74.38,
+          "end": 74.55,
+          "confidence": 0.999
+        },
+        {
+          "word": "don't",
+          "start": 74.55,
+          "end": 74.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 74.94,
+          "end": 75.42,
+          "confidence": 0.998
+        },
+        {
+          "word": "reading",
+          "start": 75.42,
+          "end": 75.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "upside",
+          "start": 75.91,
+          "end": 76.38,
+          "confidence": 0.994
+        },
+        {
+          "word": "down",
+          "start": 76.38,
+          "end": 76.88,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 11,
+      "text": "I like skiing, but I don't like skiing on a merry-go-round.",
+      "speaker": "Speaker0",
+      "start": 78.14,
+      "duration": 5.67,
+      "words": [
+        {
+          "word": "i",
+          "start": 78.14,
+          "end": 78.47,
+          "confidence": 0.987
+        },
+        {
+          "word": "like",
+          "start": 78.47,
+          "end": 78.94,
+          "confidence": 0.999
+        },
+        {
+          "word": "skiing",
+          "start": 78.94,
+          "end": 79.44,
+          "confidence": 0.994
+        },
+        {
+          "word": "but",
+          "start": 81.07,
+          "end": 81.39,
+          "confidence": 0.99
+        },
+        {
+          "word": "i",
+          "start": 81.39,
+          "end": 81.55,
+          "confidence": 0.997
+        },
+        {
+          "word": "don't",
+          "start": 81.55,
+          "end": 81.87,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 81.87,
+          "end": 82.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "skiing",
+          "start": 82.27,
+          "end": 82.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "on",
+          "start": 82.83,
+          "end": 83.15,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 83.15,
+          "end": 83.31,
+          "confidence": 0.994
+        },
+        {
+          "word": "merry-go-round",
+          "start": 83.31,
+          "end": 83.81,
+          "confidence": 0.967
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 12,
+      "text": "I like playing hide and seek, but I don't like playing hide and sleep.",
+      "speaker": "Speaker0",
+      "start": 86.83,
+      "duration": 5.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 86.83,
+          "end": 87.15,
+          "confidence": 0.924
+        },
+        {
+          "word": "like",
+          "start": 87.15,
+          "end": 87.55,
+          "confidence": 0.999
+        },
+        {
+          "word": "playing",
+          "start": 87.55,
+          "end": 88.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "hide",
+          "start": 88.03,
+          "end": 88.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 88.27,
+          "end": 88.51,
+          "confidence": 0.998
+        },
+        {
+          "word": "seek",
+          "start": 88.51,
+          "end": 89.01,
+          "confidence": 0.996
+        },
+        {
+          "word": "but",
+          "start": 89.79,
+          "end": 90.03,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 90.03,
+          "end": 90.19,
+          "confidence": 0.998
+        },
+        {
+          "word": "don't",
+          "start": 90.19,
+          "end": 90.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 90.59,
+          "end": 90.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "playing",
+          "start": 90.99,
+          "end": 91.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "hide",
+          "start": 91.47,
+          "end": 91.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 91.71,
+          "end": 91.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "sleep",
+          "start": 91.95,
+          "end": 92.45,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 13,
+      "text": "I like singing with all my friends, but I don't like singing with the sheep.",
+      "speaker": "Speaker0",
+      "start": 93.8,
+      "duration": 5.53,
+      "words": [
+        {
+          "word": "i",
+          "start": 93.8,
+          "end": 94.11,
+          "confidence": 0.968
+        },
+        {
+          "word": "like",
+          "start": 94.11,
+          "end": 94.52,
+          "confidence": 0.999
+        },
+        {
+          "word": "singing",
+          "start": 94.52,
+          "end": 95.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 95.23,
+          "end": 95.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "all",
+          "start": 95.56,
+          "end": 95.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 95.8,
+          "end": 96.11,
+          "confidence": 0.994
+        },
+        {
+          "word": "friends",
+          "start": 96.11,
+          "end": 96.61,
+          "confidence": 0.951
+        },
+        {
+          "word": "but",
+          "start": 96.76,
+          "end": 97.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 97.08,
+          "end": 97.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "don't",
+          "start": 97.23,
+          "end": 97.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 97.56,
+          "end": 97.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "singing",
+          "start": 97.95,
+          "end": 98.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "with",
+          "start": 98.44,
+          "end": 98.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 98.67,
+          "end": 98.83,
+          "confidence": 0.936
+        },
+        {
+          "word": "sheep",
+          "start": 98.83,
+          "end": 99.33,
+          "confidence": 0.97
+        }
+      ],
+      "confidence": 0.988
+    },
+    {
+      "id": 14,
+      "text": "What do you like to do?",
+      "speaker": "Speaker0",
+      "start": 101.16,
+      "duration": 3.37,
+      "words": [
+        {
+          "word": "what",
+          "start": 101.16,
+          "end": 101.56,
+          "confidence": 0.797
+        },
+        {
+          "word": "do",
+          "start": 101.56,
+          "end": 101.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 101.95,
+          "end": 102.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 102.36,
+          "end": 102.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 103.4,
+          "end": 103.9,
+          "confidence": 0.996
+        },
+        {
+          "word": "do",
+          "start": 104.03,
+          "end": 104.53,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.949
+    }
   ],
   "videoId": "nddRGDEKxA0",
   "source": "youtube-transcript-api",
-  "note": "Fixed over-split compound sentences. Original had 28 segments splitting 'I like X, but I don't like X with Y' into 2 segments each. Merged into 16 segments (1 complete thought = 1 segment per FROZEN rules). Fixed double-comma punctuation. Aug 2, 2026."
+  "note": "Fixed over-split compound sentences. Original had 28 segments splitting 'I like X, but I don't like X with Y' into 2 segments each. Merged into 16 segments (1 complete thought = 1 segment per FROZEN rules). Fixed double-comma punctuation. Aug 2, 2026.",
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "fetchedAt": "2026-08-03T11:05:39.112775+00:00",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:05:39.112789+00:00",
+    "dgWordCount": 156,
+    "dgUtteranceCount": 27,
+    "matchedSegments": 27,
+    "totalDuration": 104.53
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

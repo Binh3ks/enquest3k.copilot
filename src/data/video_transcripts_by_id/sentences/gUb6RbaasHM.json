@@ -1,141 +1,930 @@
 {
-  "text": "Today we talk about our names! Yay! Hello, my name is Omar. Hello, my name is Lena. We are glad you are here. What is your name? My name is Omar. My name is Lena. Do you like your name? Yes, I like my name. Yes, I love my name. Is your name easy? Yes, it is easy. Yes, it is easy to say. Say your names. My name is Omar. My name is Lena. Wonderful. Our names are special and we can say them in English. Hi, I'm Omar. And I'm Lena. See you next time!",
+  "text": "Today we talk about our names. Yay! Yes! Hello, my name is Omar. Hello. Hello. My name is Lena. We are glad you are here. What is your name? My name is Omar. My name is Lena. Do you like your name? Yes, I like my name. Yes, I love my name. Is your name easy? Yes, it is easy. Yes, it is easy to say. Say your names. My name is Omar. My name is Leena. Wonderful. My name is Omar. My name is Leena. Our names are special and we can say them in English. Hi, I'm Omar. And I'm Leena. Bye. See you next time!",
   "segments": [
     {
       "id": 1,
-      "text": "Today we talk about our names!",
+      "text": "Today we talk about our names.",
+      "speaker": "Speaker0",
       "start": 0.4,
-      "duration": 4.39
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "today",
+          "start": 0.4,
+          "end": 0.8,
+          "confidence": 0.757
+        },
+        {
+          "word": "we",
+          "start": 0.8,
+          "end": 1.04,
+          "confidence": 0.819
+        },
+        {
+          "word": "talk",
+          "start": 1.04,
+          "end": 1.28,
+          "confidence": 0.992
+        },
+        {
+          "word": "about",
+          "start": 1.28,
+          "end": 1.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "our",
+          "start": 1.68,
+          "end": 1.92,
+          "confidence": 0.998
+        },
+        {
+          "word": "names",
+          "start": 1.92,
+          "end": 2.42,
+          "confidence": 0.93
+        }
+      ],
+      "confidence": 0.916
     },
     {
       "id": 2,
       "text": "Yay!",
-      "start": 4.79,
-      "duration": 3.69
+      "speaker": "Speaker0",
+      "start": 2.88,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yay",
+          "start": 2.88,
+          "end": 3.38,
+          "confidence": 0.844
+        }
+      ],
+      "confidence": 0.844
     },
     {
       "id": 3,
-      "text": "Hello, my name is Omar.",
-      "start": 8.48,
-      "duration": 2.56
+      "text": "Yes!",
+      "speaker": "Speaker0",
+      "start": 5.28,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 5.28,
+          "end": 5.78,
+          "confidence": 0.649
+        }
+      ],
+      "confidence": 0.649
     },
     {
       "id": 4,
-      "text": "Hello, my name is Lena.",
-      "start": 11.04,
-      "duration": 3.48
+      "text": "Hello, my name is Omar.",
+      "speaker": "Speaker0",
+      "start": 8.48,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "hello",
+          "start": 8.48,
+          "end": 8.98,
+          "confidence": 0.717
+        },
+        {
+          "word": "my",
+          "start": 9.12,
+          "end": 9.28,
+          "confidence": 0.979
+        },
+        {
+          "word": "name",
+          "start": 9.28,
+          "end": 9.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 9.52,
+          "end": 9.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "omar",
+          "start": 9.76,
+          "end": 10.26,
+          "confidence": 0.983
+        }
+      ],
+      "confidence": 0.936
     },
     {
       "id": 5,
-      "text": "We are glad you are here.",
-      "start": 14.52,
-      "duration": 2.04
+      "text": "Hello.",
+      "speaker": "Speaker0",
+      "start": 11.04,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "hello",
+          "start": 11.04,
+          "end": 11.54,
+          "confidence": 0.581
+        }
+      ],
+      "confidence": 0.581
     },
     {
       "id": 6,
-      "text": "What is your name?",
-      "start": 16.56,
-      "duration": 1.64
+      "text": "Hello. My name is Lena.",
+      "speaker": "Speaker0",
+      "start": 12.23,
+      "duration": 1.63,
+      "words": [
+        {
+          "word": "hello",
+          "start": 12.23,
+          "end": 12.73,
+          "confidence": 0.986
+        },
+        {
+          "word": "my",
+          "start": 12.79,
+          "end": 12.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "name",
+          "start": 12.96,
+          "end": 13.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 13.2,
+          "end": 13.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "lena",
+          "start": 13.36,
+          "end": 13.86,
+          "confidence": 0.862
+        }
+      ],
+      "confidence": 0.969
     },
     {
       "id": 7,
-      "text": "My name is Omar.",
-      "start": 18.2,
-      "duration": 3.0
+      "text": "We are glad you are here.",
+      "speaker": "Speaker0",
+      "start": 14.55,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "we",
+          "start": 14.55,
+          "end": 14.71,
+          "confidence": 0.882
+        },
+        {
+          "word": "are",
+          "start": 14.71,
+          "end": 14.88,
+          "confidence": 0.993
+        },
+        {
+          "word": "glad",
+          "start": 14.88,
+          "end": 15.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 15.2,
+          "end": 15.43,
+          "confidence": 0.996
+        },
+        {
+          "word": "are",
+          "start": 15.43,
+          "end": 15.59,
+          "confidence": 0.993
+        },
+        {
+          "word": "here",
+          "start": 15.59,
+          "end": 16.09,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.977
     },
     {
       "id": 8,
-      "text": "My name is Lena.",
-      "start": 21.2,
-      "duration": 3.48
+      "text": "What is your name?",
+      "speaker": "Speaker0",
+      "start": 16.48,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "what",
+          "start": 16.48,
+          "end": 16.8,
+          "confidence": 0.928
+        },
+        {
+          "word": "is",
+          "start": 16.8,
+          "end": 16.95,
+          "confidence": 0.999
+        },
+        {
+          "word": "your",
+          "start": 16.95,
+          "end": 17.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "name",
+          "start": 17.2,
+          "end": 17.7,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.981
     },
     {
       "id": 9,
-      "text": "Do you like your name?",
-      "start": 24.68,
-      "duration": 2.16
+      "text": "My name is Omar.",
+      "speaker": "Speaker0",
+      "start": 18.39,
+      "duration": 1.79,
+      "words": [
+        {
+          "word": "my",
+          "start": 18.39,
+          "end": 18.64,
+          "confidence": 0.998
+        },
+        {
+          "word": "name",
+          "start": 18.64,
+          "end": 19.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 19.27,
+          "end": 19.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "omar",
+          "start": 19.68,
+          "end": 20.18,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 10,
-      "text": "Yes, I like my name.",
-      "start": 26.84,
-      "duration": 2.6
+      "text": "My name is Lena.",
+      "speaker": "Speaker0",
+      "start": 20.8,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "my",
+          "start": 20.8,
+          "end": 21.04,
+          "confidence": 0.997
+        },
+        {
+          "word": "name",
+          "start": 21.04,
+          "end": 21.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 21.27,
+          "end": 21.52,
+          "confidence": 0.999
+        },
+        {
+          "word": "lena",
+          "start": 21.52,
+          "end": 22.02,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 11,
-      "text": "Yes, I love my name.",
-      "start": 29.44,
-      "duration": 3.28
+      "text": "Do you like your name?",
+      "speaker": "Speaker0",
+      "start": 24.63,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "do",
+          "start": 24.63,
+          "end": 24.88,
+          "confidence": 0.867
+        },
+        {
+          "word": "you",
+          "start": 24.88,
+          "end": 25.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 25.04,
+          "end": 25.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "your",
+          "start": 25.36,
+          "end": 25.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "name",
+          "start": 25.59,
+          "end": 26.09,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.973
     },
     {
       "id": 12,
-      "text": "Is your name easy?",
-      "start": 32.72,
-      "duration": 1.92
+      "text": "Yes, I like my name. Yes, I love my name.",
+      "speaker": "Speaker0",
+      "start": 26.91,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "yes",
+          "start": 26.91,
+          "end": 27.39,
+          "confidence": 0.759
+        },
+        {
+          "word": "i",
+          "start": 27.39,
+          "end": 27.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 27.71,
+          "end": 27.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 27.95,
+          "end": 28.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "name",
+          "start": 28.19,
+          "end": 28.69,
+          "confidence": 0.997
+        },
+        {
+          "word": "yes",
+          "start": 28.91,
+          "end": 29.39,
+          "confidence": 0.996
+        },
+        {
+          "word": "i",
+          "start": 29.39,
+          "end": 29.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "love",
+          "start": 29.63,
+          "end": 29.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 29.95,
+          "end": 30.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "name",
+          "start": 30.19,
+          "end": 30.69,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.975
     },
     {
       "id": 13,
-      "text": "Yes, it is easy.",
-      "start": 34.64,
-      "duration": 3.0
+      "text": "Is your name easy?",
+      "speaker": "Speaker0",
+      "start": 32.75,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "is",
+          "start": 32.75,
+          "end": 32.99,
+          "confidence": 0.99
+        },
+        {
+          "word": "your",
+          "start": 32.99,
+          "end": 33.15,
+          "confidence": 0.999
+        },
+        {
+          "word": "name",
+          "start": 33.15,
+          "end": 33.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "easy",
+          "start": 33.55,
+          "end": 34.05,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 14,
-      "text": "Yes, it is easy to say.",
-      "start": 37.64,
-      "duration": 2.88
+      "text": "Yes, it is easy.",
+      "speaker": "Speaker0",
+      "start": 34.83,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "yes",
+          "start": 34.83,
+          "end": 35.23,
+          "confidence": 0.987
+        },
+        {
+          "word": "it",
+          "start": 35.23,
+          "end": 35.47,
+          "confidence": 0.995
+        },
+        {
+          "word": "is",
+          "start": 35.47,
+          "end": 35.79,
+          "confidence": 0.999
+        },
+        {
+          "word": "easy",
+          "start": 35.79,
+          "end": 36.29,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 15,
-      "text": "Say your names.",
-      "start": 40.52,
-      "duration": 2.12
+      "text": "Yes, it is easy to say.",
+      "speaker": "Speaker0",
+      "start": 36.75,
+      "duration": 1.87,
+      "words": [
+        {
+          "word": "yes",
+          "start": 36.75,
+          "end": 37.23,
+          "confidence": 0.995
+        },
+        {
+          "word": "it",
+          "start": 37.23,
+          "end": 37.39,
+          "confidence": 0.996
+        },
+        {
+          "word": "is",
+          "start": 37.39,
+          "end": 37.63,
+          "confidence": 0.997
+        },
+        {
+          "word": "easy",
+          "start": 37.63,
+          "end": 37.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 37.95,
+          "end": 38.27,
+          "confidence": 0.997
+        },
+        {
+          "word": "say",
+          "start": 38.27,
+          "end": 38.62,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 16,
-      "text": "My name is Omar.",
-      "start": 42.64,
-      "duration": 3.0
+      "text": "Say your names.",
+      "speaker": "Speaker0",
+      "start": 40.47,
+      "duration": 1.05,
+      "words": [
+        {
+          "word": "say",
+          "start": 40.47,
+          "end": 40.7,
+          "confidence": 0.764
+        },
+        {
+          "word": "your",
+          "start": 40.7,
+          "end": 41.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "names",
+          "start": 41.02,
+          "end": 41.52,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.916
     },
     {
       "id": 17,
-      "text": "My name is Lena.",
-      "start": 45.64,
-      "duration": 0.92
+      "text": "My name is Omar.",
+      "speaker": "Speaker0",
+      "start": 42.62,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "my",
+          "start": 42.62,
+          "end": 42.86,
+          "confidence": 0.743
+        },
+        {
+          "word": "name",
+          "start": 42.86,
+          "end": 43.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 43.19,
+          "end": 43.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "omar",
+          "start": 43.51,
+          "end": 44.01,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.932
     },
     {
       "id": 18,
-      "text": "Wonderful.",
-      "start": 46.56,
-      "duration": 9.92
+      "text": "My name is Leena.",
+      "speaker": "Speaker0",
+      "start": 44.55,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "my",
+          "start": 44.55,
+          "end": 44.78,
+          "confidence": 0.823
+        },
+        {
+          "word": "name",
+          "start": 44.78,
+          "end": 45.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 45.1,
+          "end": 45.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "leena",
+          "start": 45.42,
+          "end": 45.92,
+          "confidence": 0.858
+        }
+      ],
+      "confidence": 0.92
     },
     {
       "id": 19,
-      "text": "Our names are special and we can say them in English.",
-      "start": 56.48,
-      "duration": 4.72
+      "text": "Wonderful.",
+      "speaker": "Speaker0",
+      "start": 46.78,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "wonderful",
+          "start": 46.78,
+          "end": 47.28,
+          "confidence": 0.91
+        }
+      ],
+      "confidence": 0.91
     },
     {
       "id": 20,
-      "text": "Hi, I'm Omar.",
-      "start": 61.2,
-      "duration": 1.92
+      "text": "My name is Omar.",
+      "speaker": "Speaker0",
+      "start": 48.95,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "my",
+          "start": 48.95,
+          "end": 49.18,
+          "confidence": 0.908
+        },
+        {
+          "word": "name",
+          "start": 49.18,
+          "end": 49.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "is",
+          "start": 49.42,
+          "end": 49.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "omar",
+          "start": 49.74,
+          "end": 50.24,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.976
     },
     {
       "id": 21,
-      "text": "And I'm Lena.",
-      "start": 63.12,
-      "duration": 2.8
+      "text": "My name is Leena.",
+      "speaker": "Speaker0",
+      "start": 51.15,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "my",
+          "start": 51.15,
+          "end": 51.31,
+          "confidence": 0.991
+        },
+        {
+          "word": "name",
+          "start": 51.31,
+          "end": 51.39,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 51.39,
+          "end": 51.89,
+          "confidence": 0.999
+        },
+        {
+          "word": "leena",
+          "start": 51.95,
+          "end": 52.45,
+          "confidence": 0.917
+        }
+      ],
+      "confidence": 0.977
     },
     {
       "id": 22,
+      "text": "Our names are special and we can say them in English.",
+      "speaker": "Speaker0",
+      "start": 56.51,
+      "duration": 3.54,
+      "words": [
+        {
+          "word": "our",
+          "start": 56.51,
+          "end": 56.75,
+          "confidence": 0.916
+        },
+        {
+          "word": "names",
+          "start": 56.75,
+          "end": 57.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 57.07,
+          "end": 57.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "special",
+          "start": 57.31,
+          "end": 57.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 58.11,
+          "end": 58.43,
+          "confidence": 0.72
+        },
+        {
+          "word": "we",
+          "start": 58.43,
+          "end": 58.59,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 58.59,
+          "end": 58.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "say",
+          "start": 58.83,
+          "end": 58.99,
+          "confidence": 0.994
+        },
+        {
+          "word": "them",
+          "start": 58.99,
+          "end": 59.23,
+          "confidence": 0.996
+        },
+        {
+          "word": "in",
+          "start": 59.23,
+          "end": 59.55,
+          "confidence": 0.996
+        },
+        {
+          "word": "english",
+          "start": 59.55,
+          "end": 60.05,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 23,
+      "text": "Hi, I'm Omar.",
+      "speaker": "Speaker0",
+      "start": 60.59,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "hi",
+          "start": 60.59,
+          "end": 61.07,
+          "confidence": 0.84
+        },
+        {
+          "word": "i'm",
+          "start": 61.07,
+          "end": 61.55,
+          "confidence": 0.994
+        },
+        {
+          "word": "omar",
+          "start": 61.55,
+          "end": 62.05,
+          "confidence": 0.853
+        }
+      ],
+      "confidence": 0.896
+    },
+    {
+      "id": 24,
+      "text": "And I'm Leena.",
+      "speaker": "Speaker0",
+      "start": 62.59,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "and",
+          "start": 62.59,
+          "end": 62.83,
+          "confidence": 0.965
+        },
+        {
+          "word": "i'm",
+          "start": 62.83,
+          "end": 63.15,
+          "confidence": 0.979
+        },
+        {
+          "word": "leena",
+          "start": 63.15,
+          "end": 63.65,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 25,
+      "text": "Bye.",
+      "speaker": "Speaker0",
+      "start": 64.59,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "bye",
+          "start": 64.59,
+          "end": 65.09,
+          "confidence": 0.974
+        }
+      ],
+      "confidence": 0.974
+    },
+    {
+      "id": 26,
       "text": "See you next time!",
-      "start": 65.92,
-      "duration": 3.0
+      "speaker": "Speaker0",
+      "start": 65.87,
+      "duration": 4.27,
+      "words": [
+        {
+          "word": "see",
+          "start": 65.87,
+          "end": 66.11,
+          "confidence": 0.555
+        },
+        {
+          "word": "you",
+          "start": 66.11,
+          "end": 66.39,
+          "confidence": 0.983
+        },
+        {
+          "word": "next",
+          "start": 66.39,
+          "end": 66.89,
+          "confidence": 0.998
+        },
+        {
+          "word": "time",
+          "start": 69.64,
+          "end": 70.14,
+          "confidence": 0.775
+        }
+      ],
+      "confidence": 0.845
     }
   ],
   "videoId": "gUb6RbaasHM",
   "source": "youtube-transcript-api",
   "splitAt": "2026-08-03T05:15:00.316427+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "fetchedAt": "2026-08-03T11:05:26.528881+00:00",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:05:26.528903+00:00",
+    "dgWordCount": 108,
+    "dgUtteranceCount": 28,
+    "matchedSegments": 28,
+    "totalDuration": 70.14
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

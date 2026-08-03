@@ -1,617 +1,2772 @@
 {
-  "text": "theme 4  Weather Let's play outside. Sorry, I can't. It's cold and windy. Look! It's snowing. It's all white. Do you like snow? Yes, I do. Let's go! Can you make a snowman? Sure, I can. A snowman! You're good. Thank you. What's that? His nose. Wow, a nose. How's the weather? How's the weather? It's sunny. It's sunny. How's the weather? How's the weather? It's cloudy. It's cloudy. How's the weather? How's the weather? It's raining. It's raining. How's the weather? How's the weather? It's snowing. It's snowing. How's the weather? It's rainy. It's rainy. Is this yours? Yes, it's mine. How's the weather? It's sunny. It's sunny. Is this yours? No, it's not mine. How's the weather? It's windy. It's windy. Is this yours? Yes, it's mine. How's the weather? Cloudy, cloudy, it's cloudy. How's the weather? Raining, raining, it's raining. How's the weather? Snowing, snowing, it's snowing. How's the weather? Sunny, sunny, it's sunny. How's the weather here? How's the weather here? It's windy and snowy. It's windy and snowy. Put on this hat. Yes! Put on this gloves. Yes! How's the weather outside? How's the weather outside? It's rainy and cold. It's rainy and cold. Bring this umbrella. Yes! Bring this umbrella. Yes! How’s the weather? It’s raining. Oh, no. How’s the weather? It’s sunny. Oh, no. Look, it’s raining. Okay, sounds good. It’s sunny now. That’s good. Grumpy, Happy, Dopey. Coming. Let's play outside! Sorry, we can't. It's raining. It's not raining. It's snowing. Snow? Look! It's snowing. It's all white. A nice hat! What's that? It's an apple. Oh, no! No apples! Can you help me? Sure. Please. You can eat this apple. Oh~",
+  "text": "English sing sing. Theme four, weather. Dialogue. Let's play outside. Sorry, I can't. It's cold and windy. Look, it's snowing. It's all white. Do you like snow? Yes, I do. Let's go. Can you make a snowman? Sure, I can. A snowman? You're good. Thank you. What's that? His nose. Wow, a nose. Song. How's the weather? How's the weather? It's sunny. It's sunny. How's the weather? How's the weather? It's cloudy. It's cloudy. How's the weather? How's the weather? It's raining. It's raining. How's the weather? How's the weather? It's snowing. It's snowing. Song. How's the weather? It's rainy. It's rainy. Is this yours? Yes, it's mine. How's the weather? It's sunny. It's sunny. Is this yours? No, it's not mine. How's the weather? It's windy. It's windy. Is this yours? Yes, it's mine. How's the weather? Cloudy, cloudy, it's cloudy. How's the weather? Raining, raining, it's raining. How's the weather? Snowing, snowing, it's snowing. How's the weather? Sunny, it's sunny. How's the weather here? How's the weather here? It's windy and snowy. It's windy and snowy. Put on this hat. Yes. Put on these gloves. Gloves. Yes. How's the weather outside? How's the weather outside? It's rainy and cold. It's rainy and cold. Bring this umbrella. Yes. Bring this umbrella. Yes. Story. How's the weather? It's raining. Oh, no. How's the weather? It's sunny. Oh, no. Look. It's raining. Okay. Sounds good. It's sunny now. That's good. Story. Grumpy, happy, dopey. Coming. Let's play outside. Sorry. We can't. It's raining. It's not raining. It's snowing. Snow? Look. It's snowing. It's all white. A nice hat. What's that? It's an apple. Oh, no. No apples. Can you help me? Sure. Please. You can eat this apple. Oh.",
   "segments": [
     {
       "id": 1,
-      "text": "theme 4  Weather Let's play outside.",
-      "start": 3.36,
-      "duration": 14.9
+      "text": "English sing sing.",
+      "speaker": "Speaker0",
+      "start": 1.76,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "english",
+          "start": 1.76,
+          "end": 2.26,
+          "confidence": 0.881
+        },
+        {
+          "word": "sing",
+          "start": 2.4,
+          "end": 2.64,
+          "confidence": 0.718
+        },
+        {
+          "word": "sing",
+          "start": 2.64,
+          "end": 3.14,
+          "confidence": 0.796
+        }
+      ],
+      "confidence": 0.798
     },
     {
       "id": 2,
-      "text": "Sorry, I can't.",
-      "start": 18.26,
-      "duration": 1.8
+      "text": "Theme four, weather.",
+      "speaker": "Speaker0",
+      "start": 3.6,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "theme",
+          "start": 3.6,
+          "end": 3.92,
+          "confidence": 0.795
+        },
+        {
+          "word": "four",
+          "start": 3.92,
+          "end": 4.42,
+          "confidence": 0.67
+        },
+        {
+          "word": "weather",
+          "start": 4.72,
+          "end": 5.22,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.819
     },
     {
       "id": 3,
-      "text": "It's cold and windy.",
-      "start": 20.06,
-      "duration": 7.34
+      "text": "Dialogue.",
+      "speaker": "Speaker0",
+      "start": 6.88,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "dialogue",
+          "start": 6.88,
+          "end": 7.38,
+          "confidence": 0.777
+        }
+      ],
+      "confidence": 0.777
     },
     {
       "id": 4,
-      "text": "Look!",
-      "start": 27.4,
-      "duration": 0.51
+      "text": "Let's play outside.",
+      "speaker": "Speaker0",
+      "start": 15.2,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "let's",
+          "start": 15.2,
+          "end": 15.6,
+          "confidence": 0.785
+        },
+        {
+          "word": "play",
+          "start": 15.6,
+          "end": 15.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "outside",
+          "start": 15.91,
+          "end": 16.41,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.925
     },
     {
       "id": 5,
-      "text": "It's snowing.",
-      "start": 27.91,
-      "duration": 3.59
+      "text": "Sorry, I can't. It's cold and windy.",
+      "speaker": "Speaker1",
+      "start": 18.32,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "sorry",
+          "start": 18.32,
+          "end": 18.82,
+          "confidence": 0.731
+        },
+        {
+          "word": "i",
+          "start": 19.04,
+          "end": 19.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 19.27,
+          "end": 19.77,
+          "confidence": 0.954
+        },
+        {
+          "word": "it's",
+          "start": 19.99,
+          "end": 20.39,
+          "confidence": 0.998
+        },
+        {
+          "word": "cold",
+          "start": 20.39,
+          "end": 20.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 20.64,
+          "end": 20.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "windy",
+          "start": 20.88,
+          "end": 21.38,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.955
     },
     {
       "id": 6,
-      "text": "It's all white.",
-      "start": 31.5,
-      "duration": 3.56
+      "text": "Look, it's snowing.",
+      "speaker": "Speaker0",
+      "start": 27.52,
+      "duration": 1.21,
+      "words": [
+        {
+          "word": "look",
+          "start": 27.52,
+          "end": 27.91,
+          "confidence": 0.798
+        },
+        {
+          "word": "it's",
+          "start": 27.91,
+          "end": 28.23,
+          "confidence": 0.997
+        },
+        {
+          "word": "snowing",
+          "start": 28.23,
+          "end": 28.73,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.931
     },
     {
       "id": 7,
-      "text": "Do you like snow?",
-      "start": 35.06,
-      "duration": 2.34
+      "text": "It's all white.",
+      "speaker": "Speaker1",
+      "start": 31.43,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "it's",
+          "start": 31.43,
+          "end": 31.83,
+          "confidence": 0.918
+        },
+        {
+          "word": "all",
+          "start": 31.83,
+          "end": 32.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "white",
+          "start": 32.23,
+          "end": 32.73,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.971
     },
     {
       "id": 8,
-      "text": "Yes, I do.",
-      "start": 37.4,
-      "duration": 2.26
+      "text": "Do you like snow?",
+      "speaker": "Speaker0",
+      "start": 35.19,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "do",
+          "start": 35.19,
+          "end": 35.35,
+          "confidence": 0.598
+        },
+        {
+          "word": "you",
+          "start": 35.35,
+          "end": 35.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 35.59,
+          "end": 35.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "snow",
+          "start": 35.99,
+          "end": 36.49,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.899
     },
     {
       "id": 9,
-      "text": "Let's go!",
-      "start": 39.66,
-      "duration": 6.12
+      "text": "Yes, I do.",
+      "speaker": "Speaker1",
+      "start": 37.35,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "yes",
+          "start": 37.35,
+          "end": 37.83,
+          "confidence": 0.973
+        },
+        {
+          "word": "i",
+          "start": 37.83,
+          "end": 37.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 37.99,
+          "end": 38.49,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.985
     },
     {
       "id": 10,
-      "text": "Can you make a snowman?",
-      "start": 45.78,
-      "duration": 2.4
+      "text": "Let's go.",
+      "speaker": "Speaker0",
+      "start": 39.59,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "let's",
+          "start": 39.59,
+          "end": 40.07,
+          "confidence": 0.983
+        },
+        {
+          "word": "go",
+          "start": 40.07,
+          "end": 40.57,
+          "confidence": 0.967
+        }
+      ],
+      "confidence": 0.975
     },
     {
       "id": 11,
-      "text": "Sure, I can.",
-      "start": 48.18,
-      "duration": 10.18
+      "text": "Can you make a snowman?",
+      "speaker": "Speaker1",
+      "start": 45.66,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "can",
+          "start": 45.66,
+          "end": 45.98,
+          "confidence": 0.72
+        },
+        {
+          "word": "you",
+          "start": 45.98,
+          "end": 46.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "make",
+          "start": 46.06,
+          "end": 46.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 46.38,
+          "end": 46.55,
+          "confidence": 0.997
+        },
+        {
+          "word": "snowman",
+          "start": 46.55,
+          "end": 47.05,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.943
     },
     {
       "id": 12,
-      "text": "A snowman!",
-      "start": 58.36,
-      "duration": 1.31
+      "text": "Sure, I can.",
+      "speaker": "Speaker1",
+      "start": 48.3,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "sure",
+          "start": 48.3,
+          "end": 48.62,
+          "confidence": 0.615
+        },
+        {
+          "word": "i",
+          "start": 48.62,
+          "end": 48.86,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 48.86,
+          "end": 49.36,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.87
     },
     {
       "id": 13,
-      "text": "You're good.",
-      "start": 59.67,
-      "duration": 1.99
+      "text": "A snowman?",
+      "speaker": "Speaker1",
+      "start": 58.4,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "a",
+          "start": 58.4,
+          "end": 58.72,
+          "confidence": 0.891
+        },
+        {
+          "word": "snowman",
+          "start": 58.72,
+          "end": 59.22,
+          "confidence": 0.955
+        }
+      ],
+      "confidence": 0.923
     },
     {
       "id": 14,
-      "text": "Thank you.",
-      "start": 61.66,
-      "duration": 4.68
+      "text": "You're good.",
+      "speaker": "Speaker1",
+      "start": 59.6,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "you're",
+          "start": 59.6,
+          "end": 60.08,
+          "confidence": 0.985
+        },
+        {
+          "word": "good",
+          "start": 60.08,
+          "end": 60.58,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.988
     },
     {
       "id": 15,
-      "text": "What's that?",
-      "start": 66.34,
-      "duration": 1.72
+      "text": "Thank you.",
+      "speaker": "Speaker1",
+      "start": 61.6,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "thank",
+          "start": 61.6,
+          "end": 61.92,
+          "confidence": 0.542
+        },
+        {
+          "word": "you",
+          "start": 61.92,
+          "end": 62.42,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.77
     },
     {
       "id": 16,
-      "text": "His nose.",
-      "start": 68.06,
-      "duration": 5.5
+      "text": "What's that?",
+      "speaker": "Speaker1",
+      "start": 66.24,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "what's",
+          "start": 66.24,
+          "end": 66.72,
+          "confidence": 0.89
+        },
+        {
+          "word": "that",
+          "start": 66.72,
+          "end": 67.22,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.944
     },
     {
       "id": 17,
-      "text": "Wow, a nose.",
-      "start": 73.56,
-      "duration": 20.38
+      "text": "His nose.",
+      "speaker": "Speaker1",
+      "start": 68.02,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "his",
+          "start": 68.02,
+          "end": 68.5,
+          "confidence": 0.996
+        },
+        {
+          "word": "nose",
+          "start": 68.5,
+          "end": 69.0,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 18,
-      "text": "How's the weather?",
-      "start": 93.94,
-      "duration": 1.78
+      "text": "Wow, a nose.",
+      "speaker": "Speaker1",
+      "start": 73.53,
+      "duration": 1.63,
+      "words": [
+        {
+          "word": "wow",
+          "start": 73.53,
+          "end": 74.03,
+          "confidence": 0.826
+        },
+        {
+          "word": "a",
+          "start": 74.33,
+          "end": 74.66,
+          "confidence": 0.997
+        },
+        {
+          "word": "nose",
+          "start": 74.66,
+          "end": 75.16,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.934
     },
     {
       "id": 19,
-      "text": "How's the weather?",
-      "start": 95.72,
-      "duration": 1.82
+      "text": "Song.",
+      "speaker": "Speaker0",
+      "start": 81.86,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "song",
+          "start": 81.86,
+          "end": 82.36,
+          "confidence": 0.771
+        }
+      ],
+      "confidence": 0.771
     },
     {
       "id": 20,
-      "text": "It's sunny.",
-      "start": 97.54,
-      "duration": 1.54
+      "text": "How's the weather?",
+      "speaker": "Speaker0",
+      "start": 94.02,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "how's",
+          "start": 94.02,
+          "end": 94.5,
+          "confidence": 0.926
+        },
+        {
+          "word": "the",
+          "start": 94.5,
+          "end": 94.82,
+          "confidence": 0.922
+        },
+        {
+          "word": "weather",
+          "start": 94.82,
+          "end": 95.32,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.94
     },
     {
       "id": 21,
-      "text": "It's sunny.",
-      "start": 99.08,
-      "duration": 2.06
+      "text": "How's the weather? It's sunny.",
+      "speaker": "Speaker0",
+      "start": 95.73,
+      "duration": 2.83,
+      "words": [
+        {
+          "word": "how's",
+          "start": 95.73,
+          "end": 96.23,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 96.38,
+          "end": 96.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 96.69,
+          "end": 97.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "it's",
+          "start": 97.42,
+          "end": 97.92,
+          "confidence": 0.994
+        },
+        {
+          "word": "sunny",
+          "start": 98.06,
+          "end": 98.56,
+          "confidence": 0.864
+        }
+      ],
+      "confidence": 0.971
     },
     {
       "id": 22,
-      "text": "How's the weather?",
-      "start": 101.14,
-      "duration": 1.8
+      "text": "It's sunny.",
+      "speaker": "Speaker0",
+      "start": 99.25,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "it's",
+          "start": 99.25,
+          "end": 99.75,
+          "confidence": 0.994
+        },
+        {
+          "word": "sunny",
+          "start": 99.81,
+          "end": 100.31,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 23,
       "text": "How's the weather?",
-      "start": 102.94,
-      "duration": 1.88
+      "speaker": "Speaker0",
+      "start": 101.25,
+      "duration": 1.39,
+      "words": [
+        {
+          "word": "how's",
+          "start": 101.25,
+          "end": 101.75,
+          "confidence": 0.993
+        },
+        {
+          "word": "the",
+          "start": 101.81,
+          "end": 102.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 102.14,
+          "end": 102.64,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 24,
-      "text": "It's cloudy.",
-      "start": 104.82,
-      "duration": 1.53
+      "text": "How's the weather?",
+      "speaker": "Speaker0",
+      "start": 103.02,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "how's",
+          "start": 103.02,
+          "end": 103.52,
+          "confidence": 0.973
+        },
+        {
+          "word": "the",
+          "start": 103.58,
+          "end": 103.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 103.97,
+          "end": 104.47,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 25,
       "text": "It's cloudy.",
-      "start": 106.35,
-      "duration": 2.05
+      "speaker": "Speaker0",
+      "start": 104.78,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "it's",
+          "start": 104.78,
+          "end": 105.26,
+          "confidence": 0.998
+        },
+        {
+          "word": "cloudy",
+          "start": 105.26,
+          "end": 105.76,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 26,
-      "text": "How's the weather?",
-      "start": 108.4,
-      "duration": 1.77
+      "text": "It's cloudy.",
+      "speaker": "Speaker0",
+      "start": 106.61,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "it's",
+          "start": 106.61,
+          "end": 107.02,
+          "confidence": 0.991
+        },
+        {
+          "word": "cloudy",
+          "start": 107.02,
+          "end": 107.52,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 27,
       "text": "How's the weather?",
-      "start": 110.17,
-      "duration": 1.79
+      "speaker": "Speaker0",
+      "start": 108.45,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "how's",
+          "start": 108.45,
+          "end": 108.94,
+          "confidence": 0.99
+        },
+        {
+          "word": "the",
+          "start": 108.94,
+          "end": 109.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 109.33,
+          "end": 109.83,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 28,
-      "text": "It's raining.",
-      "start": 111.96,
-      "duration": 1.57
+      "text": "How's the weather?",
+      "speaker": "Speaker0",
+      "start": 110.14,
+      "duration": 1.25,
+      "words": [
+        {
+          "word": "how's",
+          "start": 110.14,
+          "end": 110.64,
+          "confidence": 0.979
+        },
+        {
+          "word": "the",
+          "start": 110.69,
+          "end": 111.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "weather",
+          "start": 111.02,
+          "end": 111.39,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 29,
       "text": "It's raining.",
-      "start": 113.53,
-      "duration": 2.05
+      "speaker": "Speaker0",
+      "start": 112.27,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "it's",
+          "start": 112.27,
+          "end": 112.59,
+          "confidence": 0.995
+        },
+        {
+          "word": "raining",
+          "start": 112.59,
+          "end": 113.09,
+          "confidence": 0.768
+        }
+      ],
+      "confidence": 0.881
     },
     {
       "id": 30,
-      "text": "How's the weather?",
-      "start": 115.58,
-      "duration": 1.77
+      "text": "It's raining.",
+      "speaker": "Speaker0",
+      "start": 114.03,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "it's",
+          "start": 114.03,
+          "end": 114.43,
+          "confidence": 0.979
+        },
+        {
+          "word": "raining",
+          "start": 114.43,
+          "end": 114.93,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 31,
       "text": "How's the weather?",
-      "start": 117.35,
-      "duration": 1.89
+      "speaker": "Speaker0",
+      "start": 115.95,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "how's",
+          "start": 115.95,
+          "end": 116.27,
+          "confidence": 0.995
+        },
+        {
+          "word": "the",
+          "start": 116.27,
+          "end": 116.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "weather",
+          "start": 116.59,
+          "end": 117.09,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 32,
-      "text": "It's snowing.",
-      "start": 119.24,
-      "duration": 1.38
+      "text": "How's the weather?",
+      "speaker": "Speaker0",
+      "start": 117.47,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "how's",
+          "start": 117.47,
+          "end": 117.95,
+          "confidence": 0.995
+        },
+        {
+          "word": "the",
+          "start": 117.95,
+          "end": 118.43,
+          "confidence": 0.999
+        },
+        {
+          "word": "weather",
+          "start": 118.43,
+          "end": 118.93,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 33,
-      "text": "It's snowing.",
-      "start": 120.62,
-      "duration": 16.38
+      "text": "It's snowing. It's snowing.",
+      "speaker": "Speaker0",
+      "start": 119.31,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "it's",
+          "start": 119.31,
+          "end": 119.71,
+          "confidence": 0.996
+        },
+        {
+          "word": "snowing",
+          "start": 119.71,
+          "end": 120.21,
+          "confidence": 0.958
+        },
+        {
+          "word": "it's",
+          "start": 120.27,
+          "end": 120.67,
+          "confidence": 0.969
+        },
+        {
+          "word": "snowing",
+          "start": 120.67,
+          "end": 121.17,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 34,
-      "text": "How's the weather?",
-      "start": 137.0,
-      "duration": 2.08
+      "text": "Song.",
+      "speaker": "Speaker0",
+      "start": 127.17,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "song",
+          "start": 127.17,
+          "end": 127.67,
+          "confidence": 0.73
+        }
+      ],
+      "confidence": 0.73
     },
     {
       "id": 35,
-      "text": "It's rainy.",
-      "start": 139.08,
-      "duration": 1.68
+      "text": "How's the weather?",
+      "speaker": "Speaker0",
+      "start": 137.09,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "how's",
+          "start": 137.09,
+          "end": 137.59,
+          "confidence": 0.808
+        },
+        {
+          "word": "the",
+          "start": 137.72,
+          "end": 138.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 138.04,
+          "end": 138.54,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.93
     },
     {
       "id": 36,
-      "text": "It's rainy.",
-      "start": 140.76,
-      "duration": 2.3
+      "text": "It's rainy. It's rainy.",
+      "speaker": "Speaker0",
+      "start": 139.13,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "it's",
+          "start": 139.13,
+          "end": 139.63,
+          "confidence": 0.998
+        },
+        {
+          "word": "rainy",
+          "start": 139.69,
+          "end": 140.19,
+          "confidence": 0.673
+        },
+        {
+          "word": "it's",
+          "start": 140.33,
+          "end": 140.83,
+          "confidence": 0.997
+        },
+        {
+          "word": "rainy",
+          "start": 141.61,
+          "end": 142.11,
+          "confidence": 0.968
+        }
+      ],
+      "confidence": 0.889
     },
     {
       "id": 37,
       "text": "Is this yours?",
-      "start": 143.06,
-      "duration": 2.02
+      "speaker": "Speaker0",
+      "start": 143.21,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "is",
+          "start": 143.21,
+          "end": 143.61,
+          "confidence": 0.996
+        },
+        {
+          "word": "this",
+          "start": 143.61,
+          "end": 144.11,
+          "confidence": 0.999
+        },
+        {
+          "word": "yours",
+          "start": 144.17,
+          "end": 144.67,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 38,
       "text": "Yes, it's mine.",
-      "start": 145.08,
-      "duration": 3.98
+      "speaker": "Speaker0",
+      "start": 145.05,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "yes",
+          "start": 145.05,
+          "end": 145.55,
+          "confidence": 0.926
+        },
+        {
+          "word": "it's",
+          "start": 145.61,
+          "end": 146.11,
+          "confidence": 0.994
+        },
+        {
+          "word": "mine",
+          "start": 146.17,
+          "end": 146.67,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.97
     },
     {
       "id": 39,
       "text": "How's the weather?",
-      "start": 149.06,
-      "duration": 2.08
+      "speaker": "Speaker0",
+      "start": 149.13,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "how's",
+          "start": 149.13,
+          "end": 149.61,
+          "confidence": 0.971
+        },
+        {
+          "word": "the",
+          "start": 149.61,
+          "end": 150.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 150.01,
+          "end": 150.51,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 40,
       "text": "It's sunny.",
-      "start": 151.14,
-      "duration": 1.67
+      "speaker": "Speaker0",
+      "start": 151.16,
+      "duration": 0.97,
+      "words": [
+        {
+          "word": "it's",
+          "start": 151.16,
+          "end": 151.63,
+          "confidence": 0.986
+        },
+        {
+          "word": "sunny",
+          "start": 151.63,
+          "end": 152.13,
+          "confidence": 0.954
+        }
+      ],
+      "confidence": 0.97
     },
     {
       "id": 41,
       "text": "It's sunny.",
-      "start": 152.81,
-      "duration": 2.27
+      "speaker": "Speaker0",
+      "start": 153.07,
+      "duration": 0.99,
+      "words": [
+        {
+          "word": "it's",
+          "start": 153.07,
+          "end": 153.56,
+          "confidence": 0.998
+        },
+        {
+          "word": "sunny",
+          "start": 153.56,
+          "end": 154.06,
+          "confidence": 0.95
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 42,
       "text": "Is this yours?",
-      "start": 155.08,
-      "duration": 2.0
+      "speaker": "Speaker1",
+      "start": 155.16,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "is",
+          "start": 155.16,
+          "end": 155.63,
+          "confidence": 0.94
+        },
+        {
+          "word": "this",
+          "start": 155.63,
+          "end": 156.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "yours",
+          "start": 156.11,
+          "end": 156.61,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.979
     },
     {
       "id": 43,
       "text": "No, it's not mine.",
-      "start": 157.08,
-      "duration": 3.88
+      "speaker": "Speaker0",
+      "start": 157.07,
+      "duration": 1.71,
+      "words": [
+        {
+          "word": "no",
+          "start": 157.07,
+          "end": 157.57,
+          "confidence": 0.843
+        },
+        {
+          "word": "it's",
+          "start": 157.63,
+          "end": 157.95,
+          "confidence": 0.996
+        },
+        {
+          "word": "not",
+          "start": 157.95,
+          "end": 158.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "mine",
+          "start": 158.28,
+          "end": 158.78,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.959
     },
     {
       "id": 44,
       "text": "How's the weather?",
-      "start": 160.96,
-      "duration": 2.1
+      "speaker": "Speaker0",
+      "start": 161.16,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "how's",
+          "start": 161.16,
+          "end": 161.63,
+          "confidence": 0.97
+        },
+        {
+          "word": "the",
+          "start": 161.63,
+          "end": 162.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 162.11,
+          "end": 162.61,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 45,
       "text": "It's windy.",
-      "start": 163.06,
-      "duration": 1.79
+      "speaker": "Speaker0",
+      "start": 163.23,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "it's",
+          "start": 163.23,
+          "end": 163.63,
+          "confidence": 0.996
+        },
+        {
+          "word": "windy",
+          "start": 163.63,
+          "end": 164.13,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 46,
       "text": "It's windy.",
-      "start": 164.85,
-      "duration": 2.15
+      "speaker": "Speaker0",
+      "start": 165.23,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "it's",
+          "start": 165.23,
+          "end": 165.63,
+          "confidence": 0.991
+        },
+        {
+          "word": "windy",
+          "start": 165.63,
+          "end": 166.13,
+          "confidence": 0.97
+        }
+      ],
+      "confidence": 0.981
     },
     {
       "id": 47,
       "text": "Is this yours?",
-      "start": 167.0,
-      "duration": 2.08
+      "speaker": "Speaker0",
+      "start": 167.39,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "is",
+          "start": 167.39,
+          "end": 167.63,
+          "confidence": 0.992
+        },
+        {
+          "word": "this",
+          "start": 167.63,
+          "end": 168.13,
+          "confidence": 0.999
+        },
+        {
+          "word": "yours",
+          "start": 168.19,
+          "end": 168.69,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 48,
       "text": "Yes, it's mine.",
-      "start": 169.08,
-      "duration": 16.8
+      "speaker": "Speaker0",
+      "start": 169.15,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "yes",
+          "start": 169.15,
+          "end": 169.65,
+          "confidence": 0.948
+        },
+        {
+          "word": "it's",
+          "start": 169.79,
+          "end": 170.19,
+          "confidence": 0.993
+        },
+        {
+          "word": "mine",
+          "start": 170.19,
+          "end": 170.69,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 49,
       "text": "How's the weather?",
-      "start": 185.88,
-      "duration": 2.26
+      "speaker": "Speaker0",
+      "start": 185.91,
+      "duration": 1.13,
+      "words": [
+        {
+          "word": "how's",
+          "start": 185.91,
+          "end": 186.31,
+          "confidence": 0.827
+        },
+        {
+          "word": "the",
+          "start": 186.31,
+          "end": 186.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 186.54,
+          "end": 187.04,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.942
     },
     {
       "id": 50,
       "text": "Cloudy, cloudy, it's cloudy.",
-      "start": 188.14,
-      "duration": 4.46
+      "speaker": "Speaker0",
+      "start": 188.06,
+      "duration": 2.35,
+      "words": [
+        {
+          "word": "cloudy",
+          "start": 188.06,
+          "end": 188.56,
+          "confidence": 0.879
+        },
+        {
+          "word": "cloudy",
+          "start": 188.71,
+          "end": 189.21,
+          "confidence": 0.972
+        },
+        {
+          "word": "it's",
+          "start": 189.34,
+          "end": 189.84,
+          "confidence": 0.993
+        },
+        {
+          "word": "cloudy",
+          "start": 189.91,
+          "end": 190.41,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.958
     },
     {
       "id": 51,
       "text": "How's the weather?",
-      "start": 192.6,
-      "duration": 2.2
+      "speaker": "Speaker0",
+      "start": 192.54,
+      "duration": 1.15,
+      "words": [
+        {
+          "word": "how's",
+          "start": 192.54,
+          "end": 193.03,
+          "confidence": 0.996
+        },
+        {
+          "word": "the",
+          "start": 193.03,
+          "end": 193.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 193.19,
+          "end": 193.69,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 52,
-      "text": "Raining, raining, it's raining.",
-      "start": 194.8,
-      "duration": 4.46
+      "text": "Raining, raining, it's raining. How's the weather?",
+      "speaker": "Speaker0",
+      "start": 194.86,
+      "duration": 5.52,
+      "words": [
+        {
+          "word": "raining",
+          "start": 194.86,
+          "end": 195.36,
+          "confidence": 0.998
+        },
+        {
+          "word": "raining",
+          "start": 195.43,
+          "end": 195.93,
+          "confidence": 0.966
+        },
+        {
+          "word": "it's",
+          "start": 195.99,
+          "end": 196.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "raining",
+          "start": 198.76,
+          "end": 199.26,
+          "confidence": 0.995
+        },
+        {
+          "word": "how's",
+          "start": 199.48,
+          "end": 199.72,
+          "confidence": 0.992
+        },
+        {
+          "word": "the",
+          "start": 199.72,
+          "end": 199.88,
+          "confidence": 0.993
+        },
+        {
+          "word": "weather",
+          "start": 199.88,
+          "end": 200.38,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.988
     },
     {
       "id": 53,
-      "text": "How's the weather?",
-      "start": 199.26,
-      "duration": 2.2
+      "text": "Snowing, snowing, it's snowing.",
+      "speaker": "Speaker0",
+      "start": 201.56,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "snowing",
+          "start": 201.56,
+          "end": 202.06,
+          "confidence": 0.995
+        },
+        {
+          "word": "snowing",
+          "start": 202.12,
+          "end": 202.62,
+          "confidence": 0.993
+        },
+        {
+          "word": "it's",
+          "start": 202.76,
+          "end": 203.24,
+          "confidence": 0.961
+        },
+        {
+          "word": "snowing",
+          "start": 203.24,
+          "end": 203.74,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.987
     },
     {
       "id": 54,
-      "text": "Snowing, snowing, it's snowing.",
-      "start": 201.46,
-      "duration": 4.5
+      "text": "How's the weather?",
+      "speaker": "Speaker0",
+      "start": 205.96,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "how's",
+          "start": 205.96,
+          "end": 206.36,
+          "confidence": 0.98
+        },
+        {
+          "word": "the",
+          "start": 206.36,
+          "end": 206.6,
+          "confidence": 0.986
+        },
+        {
+          "word": "weather",
+          "start": 206.6,
+          "end": 207.1,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.987
     },
     {
       "id": 55,
-      "text": "How's the weather?",
-      "start": 205.96,
-      "duration": 2.02
+      "text": "Sunny, it's sunny.",
+      "speaker": "Speaker0",
+      "start": 208.44,
+      "duration": 1.64,
+      "words": [
+        {
+          "word": "sunny",
+          "start": 208.44,
+          "end": 208.94,
+          "confidence": 0.857
+        },
+        {
+          "word": "it's",
+          "start": 209.1,
+          "end": 209.58,
+          "confidence": 0.734
+        },
+        {
+          "word": "sunny",
+          "start": 209.58,
+          "end": 210.08,
+          "confidence": 0.967
+        }
+      ],
+      "confidence": 0.853
     },
     {
       "id": 56,
-      "text": "Sunny, sunny, it's sunny.",
-      "start": 207.98,
-      "duration": 18.58
+      "text": "How's the weather here?",
+      "speaker": "Speaker1",
+      "start": 226.73,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "how's",
+          "start": 226.73,
+          "end": 227.13,
+          "confidence": 0.815
+        },
+        {
+          "word": "the",
+          "start": 227.13,
+          "end": 227.29,
+          "confidence": 0.996
+        },
+        {
+          "word": "weather",
+          "start": 227.29,
+          "end": 227.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 227.77,
+          "end": 228.27,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.952
     },
     {
       "id": 57,
-      "text": "How's the weather here?",
-      "start": 226.56,
-      "duration": 2.02
+      "text": "How's the weather here? It's windy and snowy.",
+      "speaker": "Speaker1",
+      "start": 228.57,
+      "duration": 3.38,
+      "words": [
+        {
+          "word": "how's",
+          "start": 228.57,
+          "end": 228.97,
+          "confidence": 0.988
+        },
+        {
+          "word": "the",
+          "start": 228.97,
+          "end": 229.21,
+          "confidence": 0.999
+        },
+        {
+          "word": "weather",
+          "start": 229.21,
+          "end": 229.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 229.61,
+          "end": 230.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "it's",
+          "start": 230.41,
+          "end": 230.89,
+          "confidence": 0.996
+        },
+        {
+          "word": "windy",
+          "start": 230.89,
+          "end": 231.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 231.21,
+          "end": 231.45,
+          "confidence": 1.0
+        },
+        {
+          "word": "snowy",
+          "start": 231.45,
+          "end": 231.95,
+          "confidence": 0.974
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 58,
-      "text": "How's the weather here?",
-      "start": 228.58,
-      "duration": 1.98
+      "text": "It's windy and snowy.",
+      "speaker": "Speaker1",
+      "start": 232.25,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "it's",
+          "start": 232.25,
+          "end": 232.65,
+          "confidence": 0.983
+        },
+        {
+          "word": "windy",
+          "start": 232.65,
+          "end": 232.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 232.97,
+          "end": 233.21,
+          "confidence": 0.999
+        },
+        {
+          "word": "snowy",
+          "start": 233.21,
+          "end": 233.71,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 59,
-      "text": "It's windy and snowy.",
-      "start": 230.56,
-      "duration": 1.66
+      "text": "Put on this hat.",
+      "speaker": "Speaker1",
+      "start": 234.25,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "put",
+          "start": 234.25,
+          "end": 234.65,
+          "confidence": 0.984
+        },
+        {
+          "word": "on",
+          "start": 234.65,
+          "end": 234.81,
+          "confidence": 0.992
+        },
+        {
+          "word": "this",
+          "start": 234.81,
+          "end": 235.13,
+          "confidence": 0.978
+        },
+        {
+          "word": "hat",
+          "start": 235.13,
+          "end": 235.63,
+          "confidence": 0.944
+        }
+      ],
+      "confidence": 0.975
     },
     {
       "id": 60,
-      "text": "It's windy and snowy.",
-      "start": 232.22,
-      "duration": 1.94
+      "text": "Yes.",
+      "speaker": "Speaker1",
+      "start": 235.93,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 235.93,
+          "end": 236.43,
+          "confidence": 0.944
+        }
+      ],
+      "confidence": 0.944
     },
     {
       "id": 61,
-      "text": "Put on this hat.",
-      "start": 234.16,
-      "duration": 1.78
+      "text": "Put on these gloves. Gloves. Yes.",
+      "speaker": "Speaker1",
+      "start": 237.93,
+      "duration": 2.14,
+      "words": [
+        {
+          "word": "put",
+          "start": 237.93,
+          "end": 238.33,
+          "confidence": 0.995
+        },
+        {
+          "word": "on",
+          "start": 238.33,
+          "end": 238.49,
+          "confidence": 0.991
+        },
+        {
+          "word": "these",
+          "start": 238.49,
+          "end": 238.73,
+          "confidence": 0.897
+        },
+        {
+          "word": "gloves",
+          "start": 238.73,
+          "end": 238.94,
+          "confidence": 0.802
+        },
+        {
+          "word": "gloves",
+          "start": 238.94,
+          "end": 239.44,
+          "confidence": 0.992
+        },
+        {
+          "word": "yes",
+          "start": 239.57,
+          "end": 240.07,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.945
     },
     {
       "id": 62,
-      "text": "Yes!",
-      "start": 235.94,
-      "duration": 1.9
+      "text": "How's the weather outside?",
+      "speaker": "Speaker1",
+      "start": 248.78,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "how's",
+          "start": 248.78,
+          "end": 249.18,
+          "confidence": 0.776
+        },
+        {
+          "word": "the",
+          "start": 249.18,
+          "end": 249.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 249.41,
+          "end": 249.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "outside",
+          "start": 249.74,
+          "end": 250.24,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.943
     },
     {
       "id": 63,
-      "text": "Put on this gloves.",
-      "start": 237.84,
-      "duration": 1.94
+      "text": "How's the weather outside?",
+      "speaker": "Speaker1",
+      "start": 250.61,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "how's",
+          "start": 250.61,
+          "end": 251.01,
+          "confidence": 0.958
+        },
+        {
+          "word": "the",
+          "start": 251.01,
+          "end": 251.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "weather",
+          "start": 251.25,
+          "end": 251.57,
+          "confidence": 1.0
+        },
+        {
+          "word": "outside",
+          "start": 251.57,
+          "end": 252.07,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 64,
-      "text": "Yes!",
-      "start": 239.78,
-      "duration": 9.08
+      "text": "It's rainy and cold.",
+      "speaker": "Speaker1",
+      "start": 252.61,
+      "duration": 2.35,
+      "words": [
+        {
+          "word": "it's",
+          "start": 252.61,
+          "end": 253.11,
+          "confidence": 0.997
+        },
+        {
+          "word": "rainy",
+          "start": 253.18,
+          "end": 253.68,
+          "confidence": 0.931
+        },
+        {
+          "word": "and",
+          "start": 254.22,
+          "end": 254.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "cold",
+          "start": 254.46,
+          "end": 254.96,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.964
     },
     {
       "id": 65,
-      "text": "How's the weather outside?",
-      "start": 248.86,
-      "duration": 1.84
+      "text": "It's rainy and cold.",
+      "speaker": "Speaker1",
+      "start": 256.3,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "it's",
+          "start": 256.3,
+          "end": 256.8,
+          "confidence": 0.958
+        },
+        {
+          "word": "rainy",
+          "start": 256.86,
+          "end": 257.36,
+          "confidence": 0.971
+        },
+        {
+          "word": "and",
+          "start": 257.74,
+          "end": 258.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "cold",
+          "start": 258.22,
+          "end": 258.72,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.964
     },
     {
       "id": 66,
-      "text": "How's the weather outside?",
-      "start": 250.7,
-      "duration": 1.92
+      "text": "Bring this umbrella.",
+      "speaker": "Speaker1",
+      "start": 259.9,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "bring",
+          "start": 259.9,
+          "end": 260.4,
+          "confidence": 0.995
+        },
+        {
+          "word": "this",
+          "start": 260.46,
+          "end": 260.78,
+          "confidence": 0.999
+        },
+        {
+          "word": "umbrella",
+          "start": 260.78,
+          "end": 261.28,
+          "confidence": 0.755
+        }
+      ],
+      "confidence": 0.916
     },
     {
       "id": 67,
-      "text": "It's rainy and cold.",
-      "start": 252.62,
-      "duration": 3.66
+      "text": "Yes.",
+      "speaker": "Speaker1",
+      "start": 261.74,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 261.74,
+          "end": 262.24,
+          "confidence": 0.97
+        }
+      ],
+      "confidence": 0.97
     },
     {
       "id": 68,
-      "text": "It's rainy and cold.",
-      "start": 256.28,
-      "duration": 3.7
+      "text": "Bring this umbrella.",
+      "speaker": "Speaker1",
+      "start": 263.66,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "bring",
+          "start": 263.66,
+          "end": 264.14,
+          "confidence": 0.997
+        },
+        {
+          "word": "this",
+          "start": 264.14,
+          "end": 264.46,
+          "confidence": 0.999
+        },
+        {
+          "word": "umbrella",
+          "start": 264.46,
+          "end": 264.96,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 69,
-      "text": "Bring this umbrella.",
-      "start": 259.98,
-      "duration": 1.78
+      "text": "Yes.",
+      "speaker": "Speaker1",
+      "start": 265.66,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 265.66,
+          "end": 266.16,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 70,
-      "text": "Yes!",
-      "start": 261.76,
-      "duration": 1.96
+      "text": "Story.",
+      "speaker": "Speaker0",
+      "start": 277.11,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "story",
+          "start": 277.11,
+          "end": 277.61,
+          "confidence": 0.897
+        }
+      ],
+      "confidence": 0.897
     },
     {
       "id": 71,
-      "text": "Bring this umbrella.",
-      "start": 263.72,
-      "duration": 1.74
+      "text": "How's the weather?",
+      "speaker": "Speaker1",
+      "start": 285.68,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "how's",
+          "start": 285.68,
+          "end": 286.18,
+          "confidence": 0.902
+        },
+        {
+          "word": "the",
+          "start": 286.24,
+          "end": 286.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "weather",
+          "start": 286.56,
+          "end": 287.06,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.967
     },
     {
       "id": 72,
-      "text": "Yes!",
-      "start": 265.46,
-      "duration": 20.26
+      "text": "It's raining.",
+      "speaker": "Speaker1",
+      "start": 291.12,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "it's",
+          "start": 291.12,
+          "end": 291.6,
+          "confidence": 0.875
+        },
+        {
+          "word": "raining",
+          "start": 291.6,
+          "end": 292.1,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.936
     },
     {
       "id": 73,
-      "text": "How’s the weather?",
-      "start": 285.72,
-      "duration": 4.62
+      "text": "Oh, no.",
+      "speaker": "Speaker0",
+      "start": 293.89,
+      "duration": 1.23,
+      "words": [
+        {
+          "word": "oh",
+          "start": 293.89,
+          "end": 294.39,
+          "confidence": 0.983
+        },
+        {
+          "word": "no",
+          "start": 294.62,
+          "end": 295.12,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 74,
-      "text": "It’s raining.",
-      "start": 290.34,
-      "duration": 3.28
+      "text": "How's the weather?",
+      "speaker": "Speaker1",
+      "start": 300.94,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "how's",
+          "start": 300.94,
+          "end": 301.44,
+          "confidence": 0.989
+        },
+        {
+          "word": "the",
+          "start": 301.57,
+          "end": 301.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "weather",
+          "start": 301.81,
+          "end": 302.31,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 75,
-      "text": "Oh, no. How’s the weather?",
-      "start": 293.62,
-      "duration": 9.94
+      "text": "It's sunny.",
+      "speaker": "Speaker1",
+      "start": 303.57,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "it's",
+          "start": 303.57,
+          "end": 303.98,
+          "confidence": 0.998
+        },
+        {
+          "word": "sunny",
+          "start": 303.98,
+          "end": 304.48,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 76,
-      "text": "It’s sunny.",
-      "start": 303.56,
-      "duration": 2.78
+      "text": "Oh, no.",
+      "speaker": "Speaker1",
+      "start": 306.39,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "oh",
+          "start": 306.39,
+          "end": 306.89,
+          "confidence": 0.985
+        },
+        {
+          "word": "no",
+          "start": 307.19,
+          "end": 307.69,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 77,
-      "text": "Oh, no. Look, it’s raining.",
-      "start": 306.34,
-      "duration": 10.38
+      "text": "Look. It's raining.",
+      "speaker": "Speaker1",
+      "start": 313.51,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "look",
+          "start": 313.51,
+          "end": 313.99,
+          "confidence": 0.704
+        },
+        {
+          "word": "it's",
+          "start": 313.99,
+          "end": 314.39,
+          "confidence": 0.999
+        },
+        {
+          "word": "raining",
+          "start": 314.39,
+          "end": 314.89,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.901
     },
     {
       "id": 78,
-      "text": "Okay, sounds good.",
-      "start": 316.72,
-      "duration": 7.78
+      "text": "Okay.",
+      "speaker": "Speaker1",
+      "start": 316.79,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "okay",
+          "start": 316.79,
+          "end": 317.29,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 79,
-      "text": "It’s sunny now.",
-      "start": 324.5,
-      "duration": 3.66
+      "text": "Sounds good.",
+      "speaker": "Speaker1",
+      "start": 318.07,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "sounds",
+          "start": 318.07,
+          "end": 318.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "good",
+          "start": 318.71,
+          "end": 319.21,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
       "id": 80,
-      "text": "That’s good.",
-      "start": 328.16,
-      "duration": 13.76
+      "text": "It's sunny now.",
+      "speaker": "Speaker1",
+      "start": 324.44,
+      "duration": 1.13,
+      "words": [
+        {
+          "word": "it's",
+          "start": 324.44,
+          "end": 324.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "sunny",
+          "start": 324.75,
+          "end": 325.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "now",
+          "start": 325.07,
+          "end": 325.57,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
       "id": 81,
-      "text": "Grumpy, Happy, Dopey.",
-      "start": 341.92,
-      "duration": 3.66
+      "text": "That's good.",
+      "speaker": "Speaker1",
+      "start": 328.27,
+      "duration": 1.23,
+      "words": [
+        {
+          "word": "that's",
+          "start": 328.27,
+          "end": 328.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "good",
+          "start": 329.0,
+          "end": 329.5,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
       "id": 82,
-      "text": "Coming.",
-      "start": 345.58,
-      "duration": 1.68
+      "text": "Story.",
+      "speaker": "Speaker0",
+      "start": 334.71,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "story",
+          "start": 334.71,
+          "end": 335.21,
+          "confidence": 0.927
+        }
+      ],
+      "confidence": 0.927
     },
     {
       "id": 83,
-      "text": "Let's play outside!",
-      "start": 347.26,
-      "duration": 2.28
+      "text": "Grumpy, happy, dopey.",
+      "speaker": "Speaker1",
+      "start": 341.91,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "grumpy",
+          "start": 341.91,
+          "end": 342.41,
+          "confidence": 0.855
+        },
+        {
+          "word": "happy",
+          "start": 343.03,
+          "end": 343.53,
+          "confidence": 0.989
+        },
+        {
+          "word": "dopey",
+          "start": 343.99,
+          "end": 344.49,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.855
     },
     {
       "id": 84,
-      "text": "Sorry, we can't.",
-      "start": 349.54,
-      "duration": 5.24
+      "text": "Coming.",
+      "speaker": "Speaker1",
+      "start": 345.6,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "coming",
+          "start": 345.6,
+          "end": 346.1,
+          "confidence": 0.978
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 85,
-      "text": "It's raining.",
-      "start": 354.78,
-      "duration": 2.48
+      "text": "Let's play outside.",
+      "speaker": "Speaker1",
+      "start": 347.44,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "let's",
+          "start": 347.44,
+          "end": 347.76,
+          "confidence": 0.999
+        },
+        {
+          "word": "play",
+          "start": 347.76,
+          "end": 348.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "outside",
+          "start": 348.0,
+          "end": 348.5,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 86,
-      "text": "It's not raining.",
-      "start": 357.26,
-      "duration": 1.81
+      "text": "Sorry. We can't.",
+      "speaker": "Speaker0",
+      "start": 350.0,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "sorry",
+          "start": 350.0,
+          "end": 350.5,
+          "confidence": 0.804
+        },
+        {
+          "word": "we",
+          "start": 350.64,
+          "end": 350.96,
+          "confidence": 0.984
+        },
+        {
+          "word": "can't",
+          "start": 350.96,
+          "end": 351.46,
+          "confidence": 0.98
+        }
+      ],
+      "confidence": 0.923
     },
     {
       "id": 87,
-      "text": "It's snowing.",
-      "start": 359.07,
-      "duration": 1.91
+      "text": "It's raining.",
+      "speaker": "Speaker1",
+      "start": 355.04,
+      "duration": 0.83,
+      "words": [
+        {
+          "word": "it's",
+          "start": 355.04,
+          "end": 355.37,
+          "confidence": 0.809
+        },
+        {
+          "word": "raining",
+          "start": 355.37,
+          "end": 355.87,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.905
     },
     {
       "id": 88,
-      "text": "Snow?",
-      "start": 360.98,
-      "duration": 2.26
+      "text": "It's not raining.",
+      "speaker": "Speaker1",
+      "start": 357.33,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "it's",
+          "start": 357.33,
+          "end": 357.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "not",
+          "start": 357.57,
+          "end": 358.05,
+          "confidence": 0.998
+        },
+        {
+          "word": "raining",
+          "start": 358.05,
+          "end": 358.55,
+          "confidence": 0.905
+        }
+      ],
+      "confidence": 0.967
     },
     {
       "id": 89,
-      "text": "Look!",
-      "start": 363.24,
-      "duration": 0.59
+      "text": "It's snowing.",
+      "speaker": "Speaker1",
+      "start": 358.85,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "it's",
+          "start": 358.85,
+          "end": 359.35,
+          "confidence": 0.994
+        },
+        {
+          "word": "snowing",
+          "start": 359.49,
+          "end": 359.99,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 90,
-      "text": "It's snowing.",
-      "start": 363.83,
-      "duration": 1.51
+      "text": "Snow?",
+      "speaker": "Speaker0",
+      "start": 361.09,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "snow",
+          "start": 361.09,
+          "end": 361.59,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 91,
-      "text": "It's all white.",
-      "start": 365.34,
-      "duration": 6.74
+      "text": "Look. It's snowing.",
+      "speaker": "Speaker0",
+      "start": 363.25,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "look",
+          "start": 363.25,
+          "end": 363.75,
+          "confidence": 0.739
+        },
+        {
+          "word": "it's",
+          "start": 363.89,
+          "end": 364.21,
+          "confidence": 0.997
+        },
+        {
+          "word": "snowing",
+          "start": 364.21,
+          "end": 364.71,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.912
     },
     {
       "id": 92,
-      "text": "A nice hat!",
-      "start": 372.08,
-      "duration": 4.7
+      "text": "It's all white.",
+      "speaker": "Speaker0",
+      "start": 365.41,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "it's",
+          "start": 365.41,
+          "end": 365.73,
+          "confidence": 0.999
+        },
+        {
+          "word": "all",
+          "start": 365.73,
+          "end": 366.05,
+          "confidence": 0.9
+        },
+        {
+          "word": "white",
+          "start": 366.05,
+          "end": 366.55,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.966
     },
     {
       "id": 93,
-      "text": "What's that?",
-      "start": 376.78,
-      "duration": 1.36
+      "text": "A nice hat.",
+      "speaker": "Speaker1",
+      "start": 372.14,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "a",
+          "start": 372.14,
+          "end": 372.38,
+          "confidence": 0.788
+        },
+        {
+          "word": "nice",
+          "start": 372.38,
+          "end": 372.78,
+          "confidence": 0.996
+        },
+        {
+          "word": "hat",
+          "start": 372.78,
+          "end": 373.28,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.927
     },
     {
       "id": 94,
-      "text": "It's an apple.",
-      "start": 378.14,
-      "duration": 1.6
+      "text": "What's that?",
+      "speaker": "Speaker0",
+      "start": 376.78,
+      "duration": 0.91,
+      "words": [
+        {
+          "word": "what's",
+          "start": 376.78,
+          "end": 377.19,
+          "confidence": 0.979
+        },
+        {
+          "word": "that",
+          "start": 377.19,
+          "end": 377.69,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 95,
-      "text": "Oh, no!",
-      "start": 379.74,
-      "duration": 1.26
+      "text": "It's an apple.",
+      "speaker": "Speaker1",
+      "start": 378.14,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "it's",
+          "start": 378.14,
+          "end": 378.46,
+          "confidence": 0.999
+        },
+        {
+          "word": "an",
+          "start": 378.46,
+          "end": 378.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "apple",
+          "start": 378.7,
+          "end": 379.2,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 96,
-      "text": "No apples!",
-      "start": 381.0,
-      "duration": 4.6
+      "text": "Oh, no.",
+      "speaker": "Speaker1",
+      "start": 379.75,
+      "duration": 0.89,
+      "words": [
+        {
+          "word": "oh",
+          "start": 379.75,
+          "end": 380.14,
+          "confidence": 0.963
+        },
+        {
+          "word": "no",
+          "start": 380.14,
+          "end": 380.64,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 97,
-      "text": "Can you help me?",
-      "start": 385.6,
-      "duration": 1.72
+      "text": "No apples.",
+      "speaker": "Speaker1",
+      "start": 381.1,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "no",
+          "start": 381.1,
+          "end": 381.58,
+          "confidence": 0.587
+        },
+        {
+          "word": "apples",
+          "start": 381.58,
+          "end": 382.08,
+          "confidence": 0.963
+        }
+      ],
+      "confidence": 0.775
     },
     {
       "id": 98,
-      "text": "Sure.",
-      "start": 387.32,
-      "duration": 1.37
+      "text": "Can you help me?",
+      "speaker": "Speaker1",
+      "start": 385.75,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "can",
+          "start": 385.75,
+          "end": 385.99,
+          "confidence": 0.996
+        },
+        {
+          "word": "you",
+          "start": 385.99,
+          "end": 386.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "help",
+          "start": 386.31,
+          "end": 386.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "me",
+          "start": 386.62,
+          "end": 387.12,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 99,
-      "text": "Please.",
-      "start": 388.69,
-      "duration": 1.79
+      "text": "Sure.",
+      "speaker": "Speaker0",
+      "start": 387.56,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "sure",
+          "start": 387.56,
+          "end": 388.06,
+          "confidence": 0.774
+        }
+      ],
+      "confidence": 0.774
     },
     {
       "id": 100,
-      "text": "You can eat this apple.",
-      "start": 390.48,
-      "duration": 3.16
+      "text": "Please.",
+      "speaker": "Speaker0",
+      "start": 388.44,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "please",
+          "start": 388.44,
+          "end": 388.94,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.982
     },
     {
       "id": 101,
-      "text": "Oh~",
-      "start": 393.64,
-      "duration": 3.0
+      "text": "You can eat this apple.",
+      "speaker": "Speaker0",
+      "start": 390.52,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "you",
+          "start": 390.52,
+          "end": 390.76,
+          "confidence": 0.865
+        },
+        {
+          "word": "can",
+          "start": 390.76,
+          "end": 391.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "eat",
+          "start": 391.0,
+          "end": 391.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "this",
+          "start": 391.24,
+          "end": 391.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "apple",
+          "start": 391.48,
+          "end": 391.98,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.973
+    },
+    {
+      "id": 102,
+      "text": "Oh.",
+      "speaker": "Speaker1",
+      "start": 393.8,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "oh",
+          "start": 393.8,
+          "end": 394.3,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.986
     }
   ],
   "videoId": "P9abGg_gF1s",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:11.522443+00:00",
+  "fetchedAt": "2026-08-03T11:04:32.830349+00:00",
   "rawCaptionCount": 88,
   "splitAt": "2026-08-03T05:15:00.303344+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:04:32.830369+00:00",
+    "dgWordCount": 288,
+    "dgUtteranceCount": 108,
+    "matchedSegments": 108,
+    "totalDuration": 394.3
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

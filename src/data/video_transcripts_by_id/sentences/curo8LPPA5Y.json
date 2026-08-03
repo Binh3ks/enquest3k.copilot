@@ -1,821 +1,4435 @@
 {
-  "text": "Welcome to Intelligent Kids Channel. Hi Anna, how are you today? Hi John, I'm good. Thank you. How about you? I'm great. Thanks. It's such a nice day, isn't it? Yes, it's sunny and warm. Perfect for a walk in the park. Do you come here often? Not really. I usually stay at home. What about you? I come here every weekend. I like walking and watching the ducks. Oh, that sounds fun. I love ducks. Do you feed them? Yes, sometimes, but I only give them bread once in a while. That's nice. Bread isn't always good for ducks, though. Really? What should I give them? Seeds or small pieces of vegetables are better for them. Oh, I didn't know that. Thanks for telling me. No problem. So, what else do you like to do here? I also like reading under the trees. It's so relaxing. That sounds wonderful. I should try that sometime. You should. It's a great way to enjoy the park. Thanks John. Maybe I'll join you next weekend. That would be fun. See you then, Anna. See you, John. So, Anna, do you have any plans for next weekend? Not yet. What about you? I was thinking of coming to the park again. Maybe we can meet here. That's a great idea. What time should we meet? How about 10:00 in the morning? 10:00 a.m. works for me. Should I bring anything? Maybe a book or some snacks. We can read and have a small picnic. A picnic sounds fun. I'll bring some fruit and sandwiches. Perfect. I'll bring juice and a blanket to sit on. Great. Do you think we'll have time to play any games? Sure. Do you like badminton? Yes, I do. I'll bring my racket. Do you have one? Yes, I do. This is going to be so much fun. I'm excited already. I love spending time outdoors. Me, too. And this park is the best place for it. It really is. Okay. So, we'll meet here at 10:00 a.m. next Saturday. Got it. I'll text you to remind you on Friday. Thanks, John. See you next weekend. Hi, John. Good morning. Hi, Anna. Good morning. You're right on time. Of course. It's such a lovely day for a picnic. It really is. Look, I found a nice spot under that big tree. Oh, that's perfect. Let's set everything up. Here's the blanket. I'll spread it out. Great. I brought sandwiches, apples, and some cookies. Yum. I brought orange juice and some cups. Everything looks so good. Thank you for bringing the juice. You're welcome. Let's sit down and enjoy. Okay. Oh, look, there's a squirrel over there. It's so cute. It's probably looking for food. Do squirrels eat fruit? Yes, they do. But, we shouldn't feed wild animals too much. That's true. Let's just watch it from here. Good idea. After we eat, do you want to play badminton? Yes, I've been waiting for that. Did you bring your racket? I sure did. Let's eat first, then we'll start the game. Sounds like a plan. These sandwiches are delicious. Thank you. I made them this morning. You made them? Wow, you're a good cook, John. Thanks, Anna. I enjoy cooking sometimes. That's a great skill to have. I should learn from you. I can teach you. Maybe we can cook together next time. I'd love that. But first, let's win this badminton game. Hi, you think you can beat me? I'll try my best. Let's finish eating and start the match. Oh, okay. Thanks for watching. For watching more educational videos, subscribe Intelligent Kids Channel. Don't forget to like and share the video.",
+  "text": "Welcome to intelligent kids channel. Hi, Anna. How are you today? Hi, John. I'm good. Thank you. How about you? I'm great. Thanks. It's such a nice day. Isn't it? Yes. It's sunny and warm. Perfect for a walk in the park. Do you come here often? Not really. I usually stay at home. What about you? I come here every weekend. I like walking and watching the ducks. Oh, that sounds fun. I love ducks. Do you feed them? Yes. Sometimes. But I only give them bread once in a while. That's nice. Bread isn't always good for ducks though. Really? What should I give them? Seeds or small pieces of vegetables are better for them. Oh, I didn't know that. Thanks for telling me. No problem. So what else do you like to do here? I also like reading under the trees. It's so relaxing. That sounds wonderful. I should try that sometime. You should. It's a great way to enjoy the park. Thanks, John. Maybe I'll join you next weekend. That would be fun. See you then, Anna. See you, John. So, Anna, do you have any plans for next weekend? Not yet. What about you? I was thinking of coming to the park again. Maybe we can meet here. That's a great idea. What time should we meet? How about ten in the morning? 10:00AM works for me. Should I bring anything? Maybe a book or some snacks we can read and have a small picnic. A picnic sounds fun. I'll bring some fruit and sandwiches. Perfect. I'll bring juice and a blanket to sit on. Great. Do you think we'll have time to play any games? Sure. Do you like badminton? Yes. I do. I'll bring my racket. Do you have one? Yes. I do. This is going to be so much fun. I'm excited already. I love spending time outdoors. Me too. And this park is the best place for it. It really is. Okay. So we'll meet here at 10AM next Saturday. Got it. I'll text you to remind you on Friday. Thanks, John. See you next weekend. Hi, John. Good morning. Hi, Anna. Good morning. You're right on time. Of course. It's such a lovely day for a picnic. It really is. Look, I found a nice spot under that big tree. Oh, that's perfect. Let's set everything up. Here's the blanket. I'll spread it out. Great. I brought sandwiches, apples, and some cookies. Yum. I brought orange juice and some cups. Everything looks so good. Thank you for bringing the juice. You're welcome. Let's sit down and enjoy. Okay. Oh, look. There's a squirrel over there. It's so cute. It's probably looking for food. Do squirrels eat fruit? Yes, they do. But we shouldn't feed wild animals too much. That's true. Let's just watch it from here. Good idea. After we eat, do you want to play badminton? Yes. I've been waiting for that. Did you bring your racket? I sure did. Let's eat first, then we'll start the game. Sounds like a plan. These sandwiches are delicious. Thank you. I made them this morning. You made them? Wow. You're a good cook, John. Thanks, Anna. I enjoy cooking sometimes. That's a great skill to have. I should learn from you. I can teach you. Maybe we can cook together next time. I'd love that. But first, let's win this badminton game. You think you can beat me? I'll try my best. Let's finish heating and start the match. Oh, okay. Thanks for watching. For watching more educational videos, subscribe intelligent kids channel. Don't forget to like and share the video.",
   "segments": [
     {
       "id": 1,
-      "text": "Welcome to Intelligent Kids Channel.",
-      "start": 2.96,
-      "duration": 4.68
+      "text": "Welcome to intelligent kids channel.",
+      "speaker": "Speaker0",
+      "start": 3.04,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "welcome",
+          "start": 3.04,
+          "end": 3.52,
+          "confidence": 0.933
+        },
+        {
+          "word": "to",
+          "start": 3.52,
+          "end": 3.92,
+          "confidence": 0.999
+        },
+        {
+          "word": "intelligent",
+          "start": 3.92,
+          "end": 4.42,
+          "confidence": 0.799
+        },
+        {
+          "word": "kids",
+          "start": 4.72,
+          "end": 5.12,
+          "confidence": 0.961
+        },
+        {
+          "word": "channel",
+          "start": 5.12,
+          "end": 5.62,
+          "confidence": 0.955
+        }
+      ],
+      "confidence": 0.929
     },
     {
       "id": 2,
-      "text": "Hi Anna, how are you today?",
-      "start": 7.64,
-      "duration": 2.88
+      "text": "Hi, Anna. How are you today?",
+      "speaker": "Speaker1",
+      "start": 7.6,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "hi",
+          "start": 7.6,
+          "end": 8.0,
+          "confidence": 0.913
+        },
+        {
+          "word": "anna",
+          "start": 8.0,
+          "end": 8.5,
+          "confidence": 0.973
+        },
+        {
+          "word": "how",
+          "start": 8.56,
+          "end": 8.8,
+          "confidence": 0.997
+        },
+        {
+          "word": "are",
+          "start": 8.8,
+          "end": 8.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 8.96,
+          "end": 9.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "today",
+          "start": 9.12,
+          "end": 9.62,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 3,
-      "text": "Hi John, I'm good.",
-      "start": 10.52,
-      "duration": 2.64
+      "text": "Hi, John. I'm good. Thank you. How about you?",
+      "speaker": "Speaker0",
+      "start": 10.56,
+      "duration": 3.38,
+      "words": [
+        {
+          "word": "hi",
+          "start": 10.56,
+          "end": 10.88,
+          "confidence": 0.943
+        },
+        {
+          "word": "john",
+          "start": 10.88,
+          "end": 11.38,
+          "confidence": 0.991
+        },
+        {
+          "word": "i'm",
+          "start": 11.44,
+          "end": 11.76,
+          "confidence": 0.998
+        },
+        {
+          "word": "good",
+          "start": 11.76,
+          "end": 12.08,
+          "confidence": 0.922
+        },
+        {
+          "word": "thank",
+          "start": 12.08,
+          "end": 12.4,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 12.4,
+          "end": 12.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "how",
+          "start": 12.8,
+          "end": 13.12,
+          "confidence": 0.996
+        },
+        {
+          "word": "about",
+          "start": 13.12,
+          "end": 13.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 13.44,
+          "end": 13.94,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.983
     },
     {
       "id": 4,
-      "text": "Thank you.",
-      "start": 13.16,
-      "duration": 1.32
+      "text": "I'm great. Thanks. It's such a nice day. Isn't it?",
+      "speaker": "Speaker1",
+      "start": 16.3,
+      "duration": 3.31,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 16.3,
+          "end": 16.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "great",
+          "start": 16.7,
+          "end": 17.11,
+          "confidence": 0.982
+        },
+        {
+          "word": "thanks",
+          "start": 17.11,
+          "end": 17.59,
+          "confidence": 0.996
+        },
+        {
+          "word": "it's",
+          "start": 17.59,
+          "end": 17.82,
+          "confidence": 0.998
+        },
+        {
+          "word": "such",
+          "start": 17.82,
+          "end": 18.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 18.07,
+          "end": 18.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "nice",
+          "start": 18.14,
+          "end": 18.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "day",
+          "start": 18.46,
+          "end": 18.79,
+          "confidence": 0.798
+        },
+        {
+          "word": "isn't",
+          "start": 18.79,
+          "end": 19.11,
+          "confidence": 0.999
+        },
+        {
+          "word": "it",
+          "start": 19.11,
+          "end": 19.61,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.977
     },
     {
       "id": 5,
-      "text": "How about you?",
-      "start": 14.48,
-      "duration": 1.88
+      "text": "Yes. It's sunny and warm. Perfect for a walk in the park.",
+      "speaker": "Speaker0",
+      "start": 20.46,
+      "duration": 4.34,
+      "words": [
+        {
+          "word": "yes",
+          "start": 20.46,
+          "end": 20.96,
+          "confidence": 0.994
+        },
+        {
+          "word": "it's",
+          "start": 21.19,
+          "end": 21.51,
+          "confidence": 0.997
+        },
+        {
+          "word": "sunny",
+          "start": 21.51,
+          "end": 21.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 21.82,
+          "end": 22.14,
+          "confidence": 0.997
+        },
+        {
+          "word": "warm",
+          "start": 22.14,
+          "end": 22.62,
+          "confidence": 0.934
+        },
+        {
+          "word": "perfect",
+          "start": 22.62,
+          "end": 23.03,
+          "confidence": 0.996
+        },
+        {
+          "word": "for",
+          "start": 23.03,
+          "end": 23.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 23.27,
+          "end": 23.66,
+          "confidence": 0.958
+        },
+        {
+          "word": "walk",
+          "start": 23.66,
+          "end": 23.98,
+          "confidence": 0.997
+        },
+        {
+          "word": "in",
+          "start": 23.98,
+          "end": 24.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 24.14,
+          "end": 24.3,
+          "confidence": 0.999
+        },
+        {
+          "word": "park",
+          "start": 24.3,
+          "end": 24.8,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 6,
-      "text": "I'm great.",
-      "start": 16.36,
-      "duration": 1.02
+      "text": "Do you come here often?",
+      "speaker": "Speaker1",
+      "start": 27.27,
+      "duration": 1.37,
+      "words": [
+        {
+          "word": "do",
+          "start": 27.27,
+          "end": 27.43,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 27.43,
+          "end": 27.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "come",
+          "start": 27.59,
+          "end": 27.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 27.82,
+          "end": 28.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "often",
+          "start": 28.14,
+          "end": 28.64,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 7,
-      "text": "Thanks.",
-      "start": 17.38,
-      "duration": 0.51
+      "text": "Not really. I usually stay at home. What about you?",
+      "speaker": "Speaker0",
+      "start": 29.79,
+      "duration": 3.62,
+      "words": [
+        {
+          "word": "not",
+          "start": 29.79,
+          "end": 30.03,
+          "confidence": 0.99
+        },
+        {
+          "word": "really",
+          "start": 30.03,
+          "end": 30.53,
+          "confidence": 0.968
+        },
+        {
+          "word": "i",
+          "start": 30.67,
+          "end": 30.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "usually",
+          "start": 30.91,
+          "end": 31.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "stay",
+          "start": 31.47,
+          "end": 31.71,
+          "confidence": 0.998
+        },
+        {
+          "word": "at",
+          "start": 31.71,
+          "end": 31.87,
+          "confidence": 0.999
+        },
+        {
+          "word": "home",
+          "start": 31.87,
+          "end": 32.37,
+          "confidence": 0.996
+        },
+        {
+          "word": "what",
+          "start": 32.43,
+          "end": 32.67,
+          "confidence": 0.959
+        },
+        {
+          "word": "about",
+          "start": 32.67,
+          "end": 32.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 32.91,
+          "end": 33.41,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 8,
-      "text": "It's such a nice day, isn't it?",
-      "start": 17.89,
-      "duration": 2.55
+      "text": "I come here every weekend.",
+      "speaker": "Speaker1",
+      "start": 35.39,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 35.39,
+          "end": 35.63,
+          "confidence": 0.984
+        },
+        {
+          "word": "come",
+          "start": 35.63,
+          "end": 35.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 35.79,
+          "end": 36.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "every",
+          "start": 36.11,
+          "end": 36.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "weekend",
+          "start": 36.51,
+          "end": 37.01,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 9,
-      "text": "Yes, it's sunny and warm.",
-      "start": 20.44,
-      "duration": 3.93
+      "text": "I like walking and watching the ducks.",
+      "speaker": "Speaker1",
+      "start": 37.47,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "i",
+          "start": 37.47,
+          "end": 37.63,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 37.63,
+          "end": 37.87,
+          "confidence": 1.0
+        },
+        {
+          "word": "walking",
+          "start": 37.87,
+          "end": 38.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 38.43,
+          "end": 38.75,
+          "confidence": 0.981
+        },
+        {
+          "word": "watching",
+          "start": 38.75,
+          "end": 39.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 39.07,
+          "end": 39.23,
+          "confidence": 0.996
+        },
+        {
+          "word": "ducks",
+          "start": 39.23,
+          "end": 39.73,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 10,
-      "text": "Perfect for a walk in the park.",
-      "start": 24.37,
-      "duration": 2.95
+      "text": "Oh, that sounds fun. I love ducks. Do you feed them?",
+      "speaker": "Speaker0",
+      "start": 40.67,
+      "duration": 4.74,
+      "words": [
+        {
+          "word": "oh",
+          "start": 40.67,
+          "end": 41.17,
+          "confidence": 0.854
+        },
+        {
+          "word": "that",
+          "start": 41.55,
+          "end": 41.87,
+          "confidence": 0.985
+        },
+        {
+          "word": "sounds",
+          "start": 41.87,
+          "end": 42.27,
+          "confidence": 0.985
+        },
+        {
+          "word": "fun",
+          "start": 42.27,
+          "end": 42.77,
+          "confidence": 0.995
+        },
+        {
+          "word": "i",
+          "start": 42.91,
+          "end": 43.15,
+          "confidence": 0.994
+        },
+        {
+          "word": "love",
+          "start": 43.15,
+          "end": 43.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "ducks",
+          "start": 43.39,
+          "end": 43.89,
+          "confidence": 0.981
+        },
+        {
+          "word": "do",
+          "start": 44.11,
+          "end": 44.35,
+          "confidence": 0.993
+        },
+        {
+          "word": "you",
+          "start": 44.35,
+          "end": 44.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "feed",
+          "start": 44.59,
+          "end": 44.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "them",
+          "start": 44.91,
+          "end": 45.41,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.854
     },
     {
       "id": 11,
-      "text": "Do you come here often?",
-      "start": 27.32,
-      "duration": 2.4
+      "text": "Yes. Sometimes.",
+      "speaker": "Speaker1",
+      "start": 47.45,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "yes",
+          "start": 47.45,
+          "end": 47.93,
+          "confidence": 0.768
+        },
+        {
+          "word": "sometimes",
+          "start": 47.93,
+          "end": 48.43,
+          "confidence": 0.86
+        }
+      ],
+      "confidence": 0.814
     },
     {
       "id": 12,
-      "text": "Not really.",
-      "start": 29.72,
-      "duration": 1.39
+      "text": "But I only give them bread once in a while.",
+      "speaker": "Speaker1",
+      "start": 48.89,
+      "duration": 2.89,
+      "words": [
+        {
+          "word": "but",
+          "start": 48.89,
+          "end": 49.37,
+          "confidence": 0.994
+        },
+        {
+          "word": "i",
+          "start": 49.37,
+          "end": 49.52,
+          "confidence": 0.634
+        },
+        {
+          "word": "only",
+          "start": 49.52,
+          "end": 49.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "give",
+          "start": 49.77,
+          "end": 49.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "them",
+          "start": 49.93,
+          "end": 50.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "bread",
+          "start": 50.16,
+          "end": 50.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "once",
+          "start": 50.65,
+          "end": 51.05,
+          "confidence": 0.984
+        },
+        {
+          "word": "in",
+          "start": 51.05,
+          "end": 51.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 51.2,
+          "end": 51.28,
+          "confidence": 0.991
+        },
+        {
+          "word": "while",
+          "start": 51.28,
+          "end": 51.78,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.96
     },
     {
       "id": 13,
-      "text": "I usually stay at home.",
-      "start": 31.11,
-      "duration": 3.48
+      "text": "That's nice. Bread isn't always good for ducks though.",
+      "speaker": "Speaker0",
+      "start": 52.73,
+      "duration": 3.86,
+      "words": [
+        {
+          "word": "that's",
+          "start": 52.73,
+          "end": 53.05,
+          "confidence": 0.998
+        },
+        {
+          "word": "nice",
+          "start": 53.05,
+          "end": 53.55,
+          "confidence": 0.993
+        },
+        {
+          "word": "bread",
+          "start": 53.69,
+          "end": 54.19,
+          "confidence": 0.996
+        },
+        {
+          "word": "isn't",
+          "start": 54.48,
+          "end": 54.8,
+          "confidence": 0.997
+        },
+        {
+          "word": "always",
+          "start": 54.8,
+          "end": 55.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "good",
+          "start": 55.2,
+          "end": 55.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 55.52,
+          "end": 55.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "ducks",
+          "start": 55.77,
+          "end": 56.09,
+          "confidence": 0.999
+        },
+        {
+          "word": "though",
+          "start": 56.09,
+          "end": 56.59,
+          "confidence": 0.841
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 14,
-      "text": "What about you?",
-      "start": 34.59,
-      "duration": 0.85
+      "text": "Really? What should I give them?",
+      "speaker": "Speaker1",
+      "start": 58.57,
+      "duration": 2.15,
+      "words": [
+        {
+          "word": "really",
+          "start": 58.57,
+          "end": 59.07,
+          "confidence": 0.767
+        },
+        {
+          "word": "what",
+          "start": 59.12,
+          "end": 59.37,
+          "confidence": 0.986
+        },
+        {
+          "word": "should",
+          "start": 59.37,
+          "end": 59.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "i",
+          "start": 59.84,
+          "end": 60.01,
+          "confidence": 0.992
+        },
+        {
+          "word": "give",
+          "start": 60.01,
+          "end": 60.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "them",
+          "start": 60.25,
+          "end": 60.72,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.957
     },
     {
       "id": 15,
-      "text": "I come here every weekend.",
-      "start": 35.44,
-      "duration": 3.69
+      "text": "Seeds or small pieces of vegetables are better for them.",
+      "speaker": "Speaker0",
+      "start": 61.6,
+      "duration": 4.1,
+      "words": [
+        {
+          "word": "seeds",
+          "start": 61.6,
+          "end": 61.92,
+          "confidence": 0.991
+        },
+        {
+          "word": "or",
+          "start": 61.92,
+          "end": 62.24,
+          "confidence": 0.99
+        },
+        {
+          "word": "small",
+          "start": 62.24,
+          "end": 62.56,
+          "confidence": 0.986
+        },
+        {
+          "word": "pieces",
+          "start": 62.56,
+          "end": 63.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 63.52,
+          "end": 63.84,
+          "confidence": 0.999
+        },
+        {
+          "word": "vegetables",
+          "start": 63.84,
+          "end": 64.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "are",
+          "start": 64.4,
+          "end": 64.72,
+          "confidence": 0.998
+        },
+        {
+          "word": "better",
+          "start": 64.72,
+          "end": 64.96,
+          "confidence": 0.998
+        },
+        {
+          "word": "for",
+          "start": 64.96,
+          "end": 65.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "them",
+          "start": 65.2,
+          "end": 65.7,
+          "confidence": 0.966
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 16,
-      "text": "I like walking and watching the ducks.",
-      "start": 39.13,
-      "duration": 1.47
+      "text": "Oh, I didn't know that. Thanks for telling me.",
+      "speaker": "Speaker1",
+      "start": 67.76,
+      "duration": 3.54,
+      "words": [
+        {
+          "word": "oh",
+          "start": 67.76,
+          "end": 68.24,
+          "confidence": 0.905
+        },
+        {
+          "word": "i",
+          "start": 68.24,
+          "end": 68.48,
+          "confidence": 0.997
+        },
+        {
+          "word": "didn't",
+          "start": 68.48,
+          "end": 68.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "know",
+          "start": 68.8,
+          "end": 69.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "that",
+          "start": 69.2,
+          "end": 69.68,
+          "confidence": 0.911
+        },
+        {
+          "word": "thanks",
+          "start": 69.68,
+          "end": 69.92,
+          "confidence": 0.988
+        },
+        {
+          "word": "for",
+          "start": 69.92,
+          "end": 70.32,
+          "confidence": 1.0
+        },
+        {
+          "word": "telling",
+          "start": 70.32,
+          "end": 70.8,
+          "confidence": 0.999
+        },
+        {
+          "word": "me",
+          "start": 70.8,
+          "end": 71.3,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 17,
-      "text": "Oh, that sounds fun.",
-      "start": 40.6,
-      "duration": 3.32
+      "text": "No problem. So what else do you like to do here?",
+      "speaker": "Speaker0",
+      "start": 72.08,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "no",
+          "start": 72.08,
+          "end": 72.4,
+          "confidence": 0.999
+        },
+        {
+          "word": "problem",
+          "start": 72.4,
+          "end": 72.9,
+          "confidence": 0.995
+        },
+        {
+          "word": "so",
+          "start": 73.04,
+          "end": 73.54,
+          "confidence": 0.995
+        },
+        {
+          "word": "what",
+          "start": 74.08,
+          "end": 74.32,
+          "confidence": 0.729
+        },
+        {
+          "word": "else",
+          "start": 74.32,
+          "end": 74.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 74.56,
+          "end": 74.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 74.72,
+          "end": 74.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 74.8,
+          "end": 75.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 75.04,
+          "end": 75.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "do",
+          "start": 75.2,
+          "end": 75.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 75.36,
+          "end": 75.86,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 18,
-      "text": "I love ducks.",
-      "start": 43.92,
-      "duration": 2.49
+      "text": "I also like reading under the trees. It's so relaxing.",
+      "speaker": "Speaker1",
+      "start": 77.72,
+      "duration": 3.7,
+      "words": [
+        {
+          "word": "i",
+          "start": 77.72,
+          "end": 77.95,
+          "confidence": 0.983
+        },
+        {
+          "word": "also",
+          "start": 77.95,
+          "end": 78.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 78.36,
+          "end": 78.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "reading",
+          "start": 78.59,
+          "end": 79.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "under",
+          "start": 79.16,
+          "end": 79.4,
+          "confidence": 0.985
+        },
+        {
+          "word": "the",
+          "start": 79.4,
+          "end": 79.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "trees",
+          "start": 79.64,
+          "end": 80.11,
+          "confidence": 0.866
+        },
+        {
+          "word": "it's",
+          "start": 80.11,
+          "end": 80.59,
+          "confidence": 0.974
+        },
+        {
+          "word": "so",
+          "start": 80.59,
+          "end": 80.92,
+          "confidence": 0.99
+        },
+        {
+          "word": "relaxing",
+          "start": 80.92,
+          "end": 81.42,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.979
     },
     {
       "id": 19,
-      "text": "Do you feed them?",
-      "start": 46.41,
-      "duration": 0.99
+      "text": "That sounds wonderful. I should try that sometime.",
+      "speaker": "Speaker0",
+      "start": 82.67,
+      "duration": 2.91,
+      "words": [
+        {
+          "word": "that",
+          "start": 82.67,
+          "end": 83.0,
+          "confidence": 0.975
+        },
+        {
+          "word": "sounds",
+          "start": 83.0,
+          "end": 83.4,
+          "confidence": 0.993
+        },
+        {
+          "word": "wonderful",
+          "start": 83.4,
+          "end": 83.9,
+          "confidence": 0.978
+        },
+        {
+          "word": "i",
+          "start": 84.19,
+          "end": 84.28,
+          "confidence": 0.997
+        },
+        {
+          "word": "should",
+          "start": 84.28,
+          "end": 84.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "try",
+          "start": 84.59,
+          "end": 84.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "that",
+          "start": 84.83,
+          "end": 85.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "sometime",
+          "start": 85.08,
+          "end": 85.58,
+          "confidence": 0.964
+        }
+      ],
+      "confidence": 0.988
     },
     {
       "id": 20,
-      "text": "Yes, sometimes, but I only give them bread once in a while.",
-      "start": 47.4,
-      "duration": 5.24
+      "text": "You should. It's a great way to enjoy the park.",
+      "speaker": "Speaker1",
+      "start": 88.03,
+      "duration": 3.14,
+      "words": [
+        {
+          "word": "you",
+          "start": 88.03,
+          "end": 88.28,
+          "confidence": 0.983
+        },
+        {
+          "word": "should",
+          "start": 88.28,
+          "end": 88.59,
+          "confidence": 0.948
+        },
+        {
+          "word": "it's",
+          "start": 88.59,
+          "end": 88.83,
+          "confidence": 0.989
+        },
+        {
+          "word": "a",
+          "start": 88.83,
+          "end": 89.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "great",
+          "start": 89.23,
+          "end": 89.47,
+          "confidence": 0.998
+        },
+        {
+          "word": "way",
+          "start": 89.47,
+          "end": 89.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 89.72,
+          "end": 89.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "enjoy",
+          "start": 89.88,
+          "end": 90.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 90.44,
+          "end": 90.67,
+          "confidence": 0.999
+        },
+        {
+          "word": "park",
+          "start": 90.67,
+          "end": 91.17,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 21,
-      "text": "That's nice.",
-      "start": 52.64,
-      "duration": 1.63
+      "text": "Thanks, John. Maybe",
+      "speaker": "Speaker0",
+      "start": 92.06,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 92.06,
+          "end": 92.46,
+          "confidence": 0.885
+        },
+        {
+          "word": "john",
+          "start": 92.46,
+          "end": 92.96,
+          "confidence": 0.993
+        },
+        {
+          "word": "maybe",
+          "start": 93.02,
+          "end": 93.52,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.959
     },
     {
       "id": 22,
-      "text": "Bread isn't always good for ducks, though.",
-      "start": 54.27,
-      "duration": 4.09
+      "text": "I'll join you next weekend.",
+      "speaker": "Speaker0",
+      "start": 94.06,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 94.06,
+          "end": 94.3,
+          "confidence": 0.792
+        },
+        {
+          "word": "join",
+          "start": 94.3,
+          "end": 94.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 94.54,
+          "end": 94.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 94.7,
+          "end": 95.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "weekend",
+          "start": 95.02,
+          "end": 95.52,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.958
     },
     {
       "id": 23,
-      "text": "Really?",
-      "start": 58.36,
-      "duration": 1.04
+      "text": "That would be fun. See you then, Anna.",
+      "speaker": "Speaker1",
+      "start": 97.74,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "that",
+          "start": 97.74,
+          "end": 97.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "would",
+          "start": 97.9,
+          "end": 98.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "be",
+          "start": 98.14,
+          "end": 98.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "fun",
+          "start": 98.3,
+          "end": 98.78,
+          "confidence": 0.996
+        },
+        {
+          "word": "see",
+          "start": 98.78,
+          "end": 98.94,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 98.94,
+          "end": 99.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "then",
+          "start": 99.1,
+          "end": 99.6,
+          "confidence": 0.955
+        },
+        {
+          "word": "anna",
+          "start": 99.82,
+          "end": 100.32,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.993
     },
     {
       "id": 24,
-      "text": "What should I give them?",
-      "start": 59.4,
-      "duration": 2.0
+      "text": "See you, John.",
+      "speaker": "Speaker0",
+      "start": 101.18,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "see",
+          "start": 101.18,
+          "end": 101.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 101.5,
+          "end": 101.82,
+          "confidence": 0.975
+        },
+        {
+          "word": "john",
+          "start": 101.82,
+          "end": 102.32,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 25,
-      "text": "Seeds or small pieces of vegetables are better for them.",
-      "start": 61.4,
-      "duration": 6.36
+      "text": "So, Anna, do you have any plans for next weekend?",
+      "speaker": "Speaker1",
+      "start": 104.11,
+      "duration": 3.95,
+      "words": [
+        {
+          "word": "so",
+          "start": 104.11,
+          "end": 104.61,
+          "confidence": 0.954
+        },
+        {
+          "word": "anna",
+          "start": 104.75,
+          "end": 105.25,
+          "confidence": 0.994
+        },
+        {
+          "word": "do",
+          "start": 105.31,
+          "end": 105.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 105.64,
+          "end": 105.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 105.95,
+          "end": 106.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "any",
+          "start": 106.19,
+          "end": 106.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "plans",
+          "start": 106.44,
+          "end": 106.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 106.83,
+          "end": 107.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 107.16,
+          "end": 107.56,
+          "confidence": 0.999
+        },
+        {
+          "word": "weekend",
+          "start": 107.56,
+          "end": 108.06,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 26,
-      "text": "Oh, I didn't know that.",
-      "start": 67.76,
-      "duration": 3.03
+      "text": "Not yet. What about you?",
+      "speaker": "Speaker0",
+      "start": 109.16,
+      "duration": 2.01,
+      "words": [
+        {
+          "word": "not",
+          "start": 109.16,
+          "end": 109.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "yet",
+          "start": 109.56,
+          "end": 110.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "what",
+          "start": 110.03,
+          "end": 110.36,
+          "confidence": 0.999
+        },
+        {
+          "word": "about",
+          "start": 110.36,
+          "end": 110.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 110.67,
+          "end": 111.17,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
     },
     {
       "id": 27,
-      "text": "Thanks for telling me.",
-      "start": 70.79,
-      "duration": 1.21
+      "text": "I was thinking of coming to the park again. Maybe we can meet here.",
+      "speaker": "Speaker1",
+      "start": 113.16,
+      "duration": 4.5,
+      "words": [
+        {
+          "word": "i",
+          "start": 113.16,
+          "end": 113.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "was",
+          "start": 113.31,
+          "end": 113.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "thinking",
+          "start": 113.56,
+          "end": 113.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 113.95,
+          "end": 114.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "coming",
+          "start": 114.11,
+          "end": 114.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 114.59,
+          "end": 114.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 114.75,
+          "end": 114.83,
+          "confidence": 1.0
+        },
+        {
+          "word": "park",
+          "start": 114.83,
+          "end": 115.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "again",
+          "start": 115.16,
+          "end": 115.66,
+          "confidence": 0.955
+        },
+        {
+          "word": "maybe",
+          "start": 115.88,
+          "end": 116.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "we",
+          "start": 116.52,
+          "end": 116.67,
+          "confidence": 0.852
+        },
+        {
+          "word": "can",
+          "start": 116.67,
+          "end": 116.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "meet",
+          "start": 116.92,
+          "end": 117.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 117.16,
+          "end": 117.66,
+          "confidence": 0.953
+        }
+      ],
+      "confidence": 0.983
     },
     {
       "id": 28,
-      "text": "No problem.",
-      "start": 72.0,
-      "duration": 3.84
+      "text": "That's a great idea. What time should we meet?",
+      "speaker": "Speaker0",
+      "start": 118.39,
+      "duration": 3.62,
+      "words": [
+        {
+          "word": "that's",
+          "start": 118.39,
+          "end": 118.71,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 118.71,
+          "end": 118.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "great",
+          "start": 118.79,
+          "end": 119.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "idea",
+          "start": 119.19,
+          "end": 119.69,
+          "confidence": 0.996
+        },
+        {
+          "word": "what",
+          "start": 119.91,
+          "end": 120.23,
+          "confidence": 0.981
+        },
+        {
+          "word": "time",
+          "start": 120.23,
+          "end": 120.55,
+          "confidence": 0.998
+        },
+        {
+          "word": "should",
+          "start": 120.55,
+          "end": 121.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "we",
+          "start": 121.27,
+          "end": 121.51,
+          "confidence": 0.997
+        },
+        {
+          "word": "meet",
+          "start": 121.51,
+          "end": 122.01,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 29,
-      "text": "So, what else do you like to do here?",
-      "start": 75.84,
-      "duration": 1.92
+      "text": "How about ten in the morning?",
+      "speaker": "Speaker1",
+      "start": 124.23,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "how",
+          "start": 124.23,
+          "end": 124.47,
+          "confidence": 0.942
+        },
+        {
+          "word": "about",
+          "start": 124.47,
+          "end": 124.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "ten",
+          "start": 124.71,
+          "end": 124.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 124.95,
+          "end": 125.35,
+          "confidence": 0.996
+        },
+        {
+          "word": "the",
+          "start": 125.35,
+          "end": 125.51,
+          "confidence": 0.997
+        },
+        {
+          "word": "morning",
+          "start": 125.51,
+          "end": 126.01,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.986
     },
     {
       "id": 30,
-      "text": "I also like reading under the trees.",
-      "start": 77.76,
-      "duration": 2.4
+      "text": "10:00AM works for me. Should I bring anything?",
+      "speaker": "Speaker0",
+      "start": 126.71,
+      "duration": 3.3,
+      "words": [
+        {
+          "word": "10:00am",
+          "start": 126.71,
+          "end": 127.91,
+          "confidence": 0.938
+        },
+        {
+          "word": "works",
+          "start": 127.91,
+          "end": 128.15,
+          "confidence": 0.998
+        },
+        {
+          "word": "for",
+          "start": 128.15,
+          "end": 128.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "me",
+          "start": 128.39,
+          "end": 128.71,
+          "confidence": 0.99
+        },
+        {
+          "word": "should",
+          "start": 128.71,
+          "end": 128.95,
+          "confidence": 0.999
+        },
+        {
+          "word": "i",
+          "start": 128.95,
+          "end": 129.19,
+          "confidence": 0.995
+        },
+        {
+          "word": "bring",
+          "start": 129.19,
+          "end": 129.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "anything",
+          "start": 129.51,
+          "end": 130.01,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.938
     },
     {
       "id": 31,
-      "text": "It's so relaxing.",
-      "start": 80.16,
-      "duration": 2.44
+      "text": "Maybe a book or some snacks we can read and have a small picnic.",
+      "speaker": "Speaker1",
+      "start": 132.32,
+      "duration": 4.02,
+      "words": [
+        {
+          "word": "maybe",
+          "start": 132.32,
+          "end": 132.72,
+          "confidence": 0.994
+        },
+        {
+          "word": "a",
+          "start": 132.72,
+          "end": 132.81,
+          "confidence": 0.997
+        },
+        {
+          "word": "book",
+          "start": 132.81,
+          "end": 133.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "or",
+          "start": 133.12,
+          "end": 133.28,
+          "confidence": 0.993
+        },
+        {
+          "word": "some",
+          "start": 133.28,
+          "end": 133.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "snacks",
+          "start": 133.76,
+          "end": 134.26,
+          "confidence": 0.818
+        },
+        {
+          "word": "we",
+          "start": 134.32,
+          "end": 134.49,
+          "confidence": 0.391
+        },
+        {
+          "word": "can",
+          "start": 134.49,
+          "end": 134.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "read",
+          "start": 134.72,
+          "end": 135.04,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 135.04,
+          "end": 135.28,
+          "confidence": 0.957
+        },
+        {
+          "word": "have",
+          "start": 135.28,
+          "end": 135.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 135.44,
+          "end": 135.6,
+          "confidence": 0.998
+        },
+        {
+          "word": "small",
+          "start": 135.6,
+          "end": 135.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "picnic",
+          "start": 135.84,
+          "end": 136.34,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.938
     },
     {
       "id": 32,
-      "text": "That sounds wonderful.",
-      "start": 82.6,
-      "duration": 2.18
+      "text": "A picnic sounds fun. I'll bring some fruit and sandwiches.",
+      "speaker": "Speaker0",
+      "start": 137.28,
+      "duration": 3.31,
+      "words": [
+        {
+          "word": "a",
+          "start": 137.28,
+          "end": 137.53,
+          "confidence": 0.996
+        },
+        {
+          "word": "picnic",
+          "start": 137.53,
+          "end": 138.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "sounds",
+          "start": 138.09,
+          "end": 138.41,
+          "confidence": 0.995
+        },
+        {
+          "word": "fun",
+          "start": 138.41,
+          "end": 138.91,
+          "confidence": 0.98
+        },
+        {
+          "word": "i'll",
+          "start": 138.97,
+          "end": 139.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "bring",
+          "start": 139.12,
+          "end": 139.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "some",
+          "start": 139.37,
+          "end": 139.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "fruit",
+          "start": 139.53,
+          "end": 139.84,
+          "confidence": 0.967
+        },
+        {
+          "word": "and",
+          "start": 139.84,
+          "end": 140.09,
+          "confidence": 0.997
+        },
+        {
+          "word": "sandwiches",
+          "start": 140.09,
+          "end": 140.59,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 33,
-      "text": "I should try that sometime.",
-      "start": 84.78,
-      "duration": 3.3
+      "text": "Perfect. I'll bring juice and a blanket to sit on.",
+      "speaker": "Speaker1",
+      "start": 142.97,
+      "duration": 3.53,
+      "words": [
+        {
+          "word": "perfect",
+          "start": 142.97,
+          "end": 143.47,
+          "confidence": 0.99
+        },
+        {
+          "word": "i'll",
+          "start": 143.6,
+          "end": 143.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "bring",
+          "start": 143.84,
+          "end": 144.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "juice",
+          "start": 144.41,
+          "end": 144.72,
+          "confidence": 0.997
+        },
+        {
+          "word": "and",
+          "start": 144.72,
+          "end": 144.89,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 144.89,
+          "end": 145.04,
+          "confidence": 0.997
+        },
+        {
+          "word": "blanket",
+          "start": 145.04,
+          "end": 145.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 145.6,
+          "end": 145.84,
+          "confidence": 0.992
+        },
+        {
+          "word": "sit",
+          "start": 145.84,
+          "end": 146.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 146.0,
+          "end": 146.5,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 34,
-      "text": "You should.",
-      "start": 88.08,
-      "duration": 0.97
+      "text": "Great. Do you think we'll have time to play any games?",
+      "speaker": "Speaker0",
+      "start": 147.54,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "great",
+          "start": 147.54,
+          "end": 147.94,
+          "confidence": 0.995
+        },
+        {
+          "word": "do",
+          "start": 147.94,
+          "end": 148.18,
+          "confidence": 0.992
+        },
+        {
+          "word": "you",
+          "start": 148.18,
+          "end": 148.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "think",
+          "start": 148.26,
+          "end": 148.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "we'll",
+          "start": 148.5,
+          "end": 148.74,
+          "confidence": 0.998
+        },
+        {
+          "word": "have",
+          "start": 148.74,
+          "end": 148.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 148.9,
+          "end": 149.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 149.14,
+          "end": 149.64,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 149.7,
+          "end": 149.94,
+          "confidence": 0.997
+        },
+        {
+          "word": "any",
+          "start": 149.94,
+          "end": 150.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "games",
+          "start": 150.26,
+          "end": 150.76,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 35,
-      "text": "It's a great way to enjoy the park.",
-      "start": 89.05,
-      "duration": 2.91
+      "text": "Sure. Do you like badminton?",
+      "speaker": "Speaker1",
+      "start": 153.06,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "sure",
+          "start": 153.06,
+          "end": 153.56,
+          "confidence": 0.988
+        },
+        {
+          "word": "do",
+          "start": 153.62,
+          "end": 153.78,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 153.78,
+          "end": 153.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "like",
+          "start": 153.94,
+          "end": 154.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "badminton",
+          "start": 154.26,
+          "end": 154.76,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 36,
-      "text": "Thanks John.",
-      "start": 91.96,
-      "duration": 3.79
+      "text": "Yes.",
+      "speaker": "Speaker0",
+      "start": 155.94,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 155.94,
+          "end": 156.44,
+          "confidence": 0.964
+        }
+      ],
+      "confidence": 0.964
     },
     {
       "id": 37,
-      "text": "Maybe I'll join you next weekend.",
-      "start": 95.75,
-      "duration": 1.97
+      "text": "I do. I'll bring my racket. Do you have one?",
+      "speaker": "Speaker0",
+      "start": 157.06,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "i",
+          "start": 157.06,
+          "end": 157.3,
+          "confidence": 0.986
+        },
+        {
+          "word": "do",
+          "start": 157.3,
+          "end": 157.78,
+          "confidence": 0.998
+        },
+        {
+          "word": "i'll",
+          "start": 157.78,
+          "end": 157.94,
+          "confidence": 0.995
+        },
+        {
+          "word": "bring",
+          "start": 157.94,
+          "end": 158.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 158.26,
+          "end": 158.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "racket",
+          "start": 158.5,
+          "end": 159.0,
+          "confidence": 0.98
+        },
+        {
+          "word": "do",
+          "start": 159.14,
+          "end": 159.38,
+          "confidence": 0.987
+        },
+        {
+          "word": "you",
+          "start": 159.38,
+          "end": 159.54,
+          "confidence": 1.0
+        },
+        {
+          "word": "have",
+          "start": 159.54,
+          "end": 159.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "one",
+          "start": 159.78,
+          "end": 160.28,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.995
     },
     {
       "id": 38,
-      "text": "That would be fun.",
-      "start": 97.72,
-      "duration": 3.22
+      "text": "Yes. I do. This is going to be so much fun.",
+      "speaker": "Speaker1",
+      "start": 162.44,
+      "duration": 3.62,
+      "words": [
+        {
+          "word": "yes",
+          "start": 162.44,
+          "end": 162.94,
+          "confidence": 0.834
+        },
+        {
+          "word": "i",
+          "start": 163.0,
+          "end": 163.17,
+          "confidence": 0.998
+        },
+        {
+          "word": "do",
+          "start": 163.17,
+          "end": 163.67,
+          "confidence": 0.997
+        },
+        {
+          "word": "this",
+          "start": 163.89,
+          "end": 164.05,
+          "confidence": 0.992
+        },
+        {
+          "word": "is",
+          "start": 164.05,
+          "end": 164.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "going",
+          "start": 164.28,
+          "end": 164.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 164.69,
+          "end": 164.93,
+          "confidence": 0.998
+        },
+        {
+          "word": "be",
+          "start": 164.93,
+          "end": 165.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "so",
+          "start": 165.17,
+          "end": 165.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "much",
+          "start": 165.25,
+          "end": 165.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "fun",
+          "start": 165.56,
+          "end": 166.06,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.983
     },
     {
       "id": 39,
-      "text": "See you then, Anna.",
-      "start": 100.94,
-      "duration": 0.5
+      "text": "I'm excited already. I love spending time outdoors.",
+      "speaker": "Speaker0",
+      "start": 166.69,
+      "duration": 3.3,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 166.69,
+          "end": 167.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "excited",
+          "start": 167.0,
+          "end": 167.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "already",
+          "start": 167.56,
+          "end": 168.06,
+          "confidence": 0.995
+        },
+        {
+          "word": "i",
+          "start": 168.28,
+          "end": 168.44,
+          "confidence": 0.998
+        },
+        {
+          "word": "love",
+          "start": 168.44,
+          "end": 168.76,
+          "confidence": 0.998
+        },
+        {
+          "word": "spending",
+          "start": 168.76,
+          "end": 169.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 169.17,
+          "end": 169.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "outdoors",
+          "start": 169.49,
+          "end": 169.99,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 40,
-      "text": "See you, John.",
-      "start": 101.12,
-      "duration": 3.08
+      "text": "Me too.",
+      "speaker": "Speaker1",
+      "start": 172.21,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "me",
+          "start": 172.21,
+          "end": 172.53,
+          "confidence": 0.993
+        },
+        {
+          "word": "too",
+          "start": 172.53,
+          "end": 173.03,
+          "confidence": 0.956
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 41,
-      "text": "So, Anna, do you have any plans for next weekend?",
-      "start": 104.2,
-      "duration": 4.88
+      "text": "And this park is the best place for it.",
+      "speaker": "Speaker1",
+      "start": 173.33,
+      "duration": 2.73,
+      "words": [
+        {
+          "word": "and",
+          "start": 173.33,
+          "end": 173.56,
+          "confidence": 0.993
+        },
+        {
+          "word": "this",
+          "start": 173.56,
+          "end": 173.89,
+          "confidence": 0.996
+        },
+        {
+          "word": "park",
+          "start": 173.89,
+          "end": 174.28,
+          "confidence": 0.995
+        },
+        {
+          "word": "is",
+          "start": 174.28,
+          "end": 174.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 174.44,
+          "end": 174.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "best",
+          "start": 174.61,
+          "end": 175.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "place",
+          "start": 175.0,
+          "end": 175.33,
+          "confidence": 0.999
+        },
+        {
+          "word": "for",
+          "start": 175.33,
+          "end": 175.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 175.56,
+          "end": 176.06,
+          "confidence": 0.979
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 42,
-      "text": "Not yet.",
-      "start": 109.08,
-      "duration": 1.55
+      "text": "It really is. Okay.",
+      "speaker": "Speaker0",
+      "start": 176.76,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "it",
+          "start": 176.76,
+          "end": 177.0,
+          "confidence": 0.995
+        },
+        {
+          "word": "really",
+          "start": 177.0,
+          "end": 177.48,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 177.48,
+          "end": 177.98,
+          "confidence": 0.99
+        },
+        {
+          "word": "okay",
+          "start": 178.04,
+          "end": 178.54,
+          "confidence": 0.972
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 43,
-      "text": "What about you?",
-      "start": 110.63,
-      "duration": 2.57
+      "text": "So we'll meet here at 10AM next Saturday.",
+      "speaker": "Speaker0",
+      "start": 178.84,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "so",
+          "start": 178.84,
+          "end": 179.08,
+          "confidence": 0.997
+        },
+        {
+          "word": "we'll",
+          "start": 179.08,
+          "end": 179.32,
+          "confidence": 0.984
+        },
+        {
+          "word": "meet",
+          "start": 179.32,
+          "end": 179.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 179.56,
+          "end": 179.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "at",
+          "start": 179.72,
+          "end": 179.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "10am",
+          "start": 179.88,
+          "end": 180.44,
+          "confidence": 0.884
+        },
+        {
+          "word": "next",
+          "start": 180.44,
+          "end": 180.76,
+          "confidence": 0.996
+        },
+        {
+          "word": "saturday",
+          "start": 180.76,
+          "end": 181.26,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.981
     },
     {
       "id": 44,
-      "text": "I was thinking of coming to the park again.",
-      "start": 113.2,
-      "duration": 2.94
+      "text": "Got it. I'll text you to remind you on Friday.",
+      "speaker": "Speaker1",
+      "start": 183.4,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "got",
+          "start": 183.4,
+          "end": 183.64,
+          "confidence": 0.998
+        },
+        {
+          "word": "it",
+          "start": 183.64,
+          "end": 184.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "i'll",
+          "start": 184.12,
+          "end": 184.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "text",
+          "start": 184.28,
+          "end": 184.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 184.68,
+          "end": 185.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "to",
+          "start": 185.0,
+          "end": 185.24,
+          "confidence": 0.981
+        },
+        {
+          "word": "remind",
+          "start": 185.24,
+          "end": 185.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 185.56,
+          "end": 185.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 185.8,
+          "end": 186.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "friday",
+          "start": 186.12,
+          "end": 186.62,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 45,
-      "text": "Maybe we can meet here.",
-      "start": 116.14,
-      "duration": 2.26
+      "text": "Thanks, John. See you next weekend.",
+      "speaker": "Speaker0",
+      "start": 187.72,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 187.72,
+          "end": 188.2,
+          "confidence": 0.952
+        },
+        {
+          "word": "john",
+          "start": 188.2,
+          "end": 188.7,
+          "confidence": 0.995
+        },
+        {
+          "word": "see",
+          "start": 188.76,
+          "end": 188.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 188.92,
+          "end": 189.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "next",
+          "start": 189.08,
+          "end": 189.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "weekend",
+          "start": 189.4,
+          "end": 189.9,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 46,
-      "text": "That's a great idea.",
-      "start": 118.4,
-      "duration": 2.8
+      "text": "Hi, John. Good morning.",
+      "speaker": "Speaker0",
+      "start": 191.82,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "hi",
+          "start": 191.82,
+          "end": 192.14,
+          "confidence": 0.968
+        },
+        {
+          "word": "john",
+          "start": 192.14,
+          "end": 192.64,
+          "confidence": 0.993
+        },
+        {
+          "word": "good",
+          "start": 192.78,
+          "end": 193.1,
+          "confidence": 0.984
+        },
+        {
+          "word": "morning",
+          "start": 193.1,
+          "end": 193.6,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.985
     },
     {
       "id": 47,
-      "text": "What time should we meet?",
-      "start": 121.2,
-      "duration": 3.12
+      "text": "Hi, Anna. Good morning. You're right on time.",
+      "speaker": "Speaker1",
+      "start": 194.7,
+      "duration": 3.38,
+      "words": [
+        {
+          "word": "hi",
+          "start": 194.7,
+          "end": 195.2,
+          "confidence": 0.985
+        },
+        {
+          "word": "anna",
+          "start": 195.42,
+          "end": 195.92,
+          "confidence": 0.991
+        },
+        {
+          "word": "good",
+          "start": 195.99,
+          "end": 196.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "morning",
+          "start": 196.31,
+          "end": 196.81,
+          "confidence": 0.995
+        },
+        {
+          "word": "you're",
+          "start": 196.86,
+          "end": 197.1,
+          "confidence": 0.996
+        },
+        {
+          "word": "right",
+          "start": 197.1,
+          "end": 197.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 197.34,
+          "end": 197.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 197.58,
+          "end": 198.08,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 48,
-      "text": "How about 10:00 in the morning?",
-      "start": 124.32,
-      "duration": 2.56
+      "text": "Of course. It's such a lovely day for a picnic.",
+      "speaker": "Speaker0",
+      "start": 199.91,
+      "duration": 2.97,
+      "words": [
+        {
+          "word": "of",
+          "start": 199.91,
+          "end": 200.06,
+          "confidence": 0.992
+        },
+        {
+          "word": "course",
+          "start": 200.06,
+          "end": 200.56,
+          "confidence": 0.988
+        },
+        {
+          "word": "it's",
+          "start": 200.7,
+          "end": 201.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "such",
+          "start": 201.03,
+          "end": 201.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 201.26,
+          "end": 201.42,
+          "confidence": 1.0
+        },
+        {
+          "word": "lovely",
+          "start": 201.42,
+          "end": 201.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "day",
+          "start": 201.91,
+          "end": 202.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 202.06,
+          "end": 202.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 202.31,
+          "end": 202.38,
+          "confidence": 0.999
+        },
+        {
+          "word": "picnic",
+          "start": 202.38,
+          "end": 202.88,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 49,
-      "text": "10:00 a.m.",
-      "start": 126.88,
-      "duration": 1.31
+      "text": "It really is. Look, I found a nice spot under that big tree.",
+      "speaker": "Speaker1",
+      "start": 204.21,
+      "duration": 4.1,
+      "words": [
+        {
+          "word": "it",
+          "start": 204.21,
+          "end": 204.37,
+          "confidence": 0.997
+        },
+        {
+          "word": "really",
+          "start": 204.37,
+          "end": 204.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 204.85,
+          "end": 205.35,
+          "confidence": 0.997
+        },
+        {
+          "word": "look",
+          "start": 205.49,
+          "end": 205.97,
+          "confidence": 0.864
+        },
+        {
+          "word": "i",
+          "start": 205.97,
+          "end": 206.13,
+          "confidence": 0.999
+        },
+        {
+          "word": "found",
+          "start": 206.13,
+          "end": 206.37,
+          "confidence": 0.993
+        },
+        {
+          "word": "a",
+          "start": 206.37,
+          "end": 206.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "nice",
+          "start": 206.53,
+          "end": 206.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "spot",
+          "start": 206.77,
+          "end": 207.09,
+          "confidence": 1.0
+        },
+        {
+          "word": "under",
+          "start": 207.09,
+          "end": 207.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "that",
+          "start": 207.41,
+          "end": 207.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "big",
+          "start": 207.57,
+          "end": 207.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "tree",
+          "start": 207.81,
+          "end": 208.31,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.988
     },
     {
       "id": 50,
-      "text": "works for me.",
-      "start": 128.19,
-      "duration": 1.97
+      "text": "Oh, that's perfect. Let's set everything up.",
+      "speaker": "Speaker0",
+      "start": 210.05,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "oh",
+          "start": 210.05,
+          "end": 210.55,
+          "confidence": 0.85
+        },
+        {
+          "word": "that's",
+          "start": 210.77,
+          "end": 211.09,
+          "confidence": 0.994
+        },
+        {
+          "word": "perfect",
+          "start": 211.09,
+          "end": 211.59,
+          "confidence": 0.996
+        },
+        {
+          "word": "let's",
+          "start": 211.81,
+          "end": 212.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "set",
+          "start": 212.13,
+          "end": 212.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "everything",
+          "start": 212.37,
+          "end": 212.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 212.77,
+          "end": 213.27,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.977
     },
     {
       "id": 51,
-      "text": "Should I bring anything?",
-      "start": 130.16,
-      "duration": 2.28
+      "text": "Here's the blanket. I'll spread it out.",
+      "speaker": "Speaker1",
+      "start": 214.29,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "here's",
+          "start": 214.29,
+          "end": 214.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 214.61,
+          "end": 214.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "blanket",
+          "start": 214.85,
+          "end": 215.35,
+          "confidence": 0.932
+        },
+        {
+          "word": "i'll",
+          "start": 215.49,
+          "end": 215.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "spread",
+          "start": 215.73,
+          "end": 216.05,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 216.05,
+          "end": 216.21,
+          "confidence": 1.0
+        },
+        {
+          "word": "out",
+          "start": 216.21,
+          "end": 216.71,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 52,
-      "text": "Maybe a book or some snacks.",
-      "start": 132.44,
-      "duration": 3.28
+      "text": "Great. I brought sandwiches, apples, and some cookies.",
+      "speaker": "Speaker0",
+      "start": 218.33,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "great",
+          "start": 218.33,
+          "end": 218.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "i",
+          "start": 218.89,
+          "end": 219.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "brought",
+          "start": 219.05,
+          "end": 219.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "sandwiches",
+          "start": 219.44,
+          "end": 219.94,
+          "confidence": 0.978
+        },
+        {
+          "word": "apples",
+          "start": 220.09,
+          "end": 220.49,
+          "confidence": 0.922
+        },
+        {
+          "word": "and",
+          "start": 220.49,
+          "end": 220.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "some",
+          "start": 220.65,
+          "end": 220.89,
+          "confidence": 0.999
+        },
+        {
+          "word": "cookies",
+          "start": 220.89,
+          "end": 221.39,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.987
     },
     {
       "id": 53,
-      "text": "We can read and have a small picnic.",
-      "start": 135.72,
-      "duration": 1.64
+      "text": "Yum. I brought orange juice and some cups.",
+      "speaker": "Speaker1",
+      "start": 222.72,
+      "duration": 3.15,
+      "words": [
+        {
+          "word": "yum",
+          "start": 222.72,
+          "end": 223.22,
+          "confidence": 0.991
+        },
+        {
+          "word": "i",
+          "start": 223.28,
+          "end": 223.44,
+          "confidence": 0.997
+        },
+        {
+          "word": "brought",
+          "start": 223.44,
+          "end": 223.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "orange",
+          "start": 223.84,
+          "end": 224.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "juice",
+          "start": 224.41,
+          "end": 224.72,
+          "confidence": 0.932
+        },
+        {
+          "word": "and",
+          "start": 224.72,
+          "end": 224.97,
+          "confidence": 0.887
+        },
+        {
+          "word": "some",
+          "start": 224.97,
+          "end": 225.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "cups",
+          "start": 225.37,
+          "end": 225.87,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.975
     },
     {
       "id": 54,
-      "text": "A picnic sounds fun.",
-      "start": 137.36,
-      "duration": 3.09
+      "text": "Everything looks so good. Thank you for bringing the juice.",
+      "speaker": "Speaker0",
+      "start": 227.61,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "everything",
+          "start": 227.61,
+          "end": 228.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "looks",
+          "start": 228.17,
+          "end": 228.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "so",
+          "start": 228.41,
+          "end": 228.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "good",
+          "start": 228.72,
+          "end": 229.21,
+          "confidence": 0.999
+        },
+        {
+          "word": "thank",
+          "start": 229.21,
+          "end": 229.44,
+          "confidence": 0.946
+        },
+        {
+          "word": "you",
+          "start": 229.44,
+          "end": 229.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 229.69,
+          "end": 229.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "bringing",
+          "start": 229.84,
+          "end": 230.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 230.17,
+          "end": 230.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "juice",
+          "start": 230.33,
+          "end": 230.83,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 55,
-      "text": "I'll bring some fruit and sandwiches.",
-      "start": 140.45,
-      "duration": 2.47
+      "text": "You're welcome. Let's sit down and enjoy.",
+      "speaker": "Speaker1",
+      "start": 232.0,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "you're",
+          "start": 232.0,
+          "end": 232.24,
+          "confidence": 0.985
+        },
+        {
+          "word": "welcome",
+          "start": 232.24,
+          "end": 232.74,
+          "confidence": 0.973
+        },
+        {
+          "word": "let's",
+          "start": 232.8,
+          "end": 233.3,
+          "confidence": 0.997
+        },
+        {
+          "word": "sit",
+          "start": 233.44,
+          "end": 233.68,
+          "confidence": 0.998
+        },
+        {
+          "word": "down",
+          "start": 233.68,
+          "end": 233.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 233.92,
+          "end": 234.16,
+          "confidence": 0.991
+        },
+        {
+          "word": "enjoy",
+          "start": 234.16,
+          "end": 234.66,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 56,
-      "text": "Perfect.",
-      "start": 142.92,
-      "duration": 0.63
+      "text": "Okay. Oh, look. There's a squirrel over there.",
+      "speaker": "Speaker0",
+      "start": 236.48,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "okay",
+          "start": 236.48,
+          "end": 236.98,
+          "confidence": 0.974
+        },
+        {
+          "word": "oh",
+          "start": 237.04,
+          "end": 237.54,
+          "confidence": 0.797
+        },
+        {
+          "word": "look",
+          "start": 237.76,
+          "end": 238.26,
+          "confidence": 0.927
+        },
+        {
+          "word": "there's",
+          "start": 238.48,
+          "end": 238.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "a",
+          "start": 238.8,
+          "end": 238.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "squirrel",
+          "start": 238.96,
+          "end": 239.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "over",
+          "start": 239.52,
+          "end": 239.76,
+          "confidence": 1.0
+        },
+        {
+          "word": "there",
+          "start": 239.76,
+          "end": 240.26,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.962
     },
     {
       "id": 57,
-      "text": "I'll bring juice and a blanket to sit on.",
-      "start": 143.55,
-      "duration": 3.77
+      "text": "It's so cute. It's probably looking for food.",
+      "speaker": "Speaker1",
+      "start": 241.28,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "it's",
+          "start": 241.28,
+          "end": 241.52,
+          "confidence": 0.994
+        },
+        {
+          "word": "so",
+          "start": 241.52,
+          "end": 241.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "cute",
+          "start": 241.84,
+          "end": 242.24,
+          "confidence": 0.983
+        },
+        {
+          "word": "it's",
+          "start": 242.24,
+          "end": 242.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "probably",
+          "start": 242.72,
+          "end": 243.22,
+          "confidence": 0.992
+        },
+        {
+          "word": "looking",
+          "start": 243.28,
+          "end": 243.76,
+          "confidence": 0.999
+        },
+        {
+          "word": "for",
+          "start": 243.76,
+          "end": 244.0,
+          "confidence": 0.999
+        },
+        {
+          "word": "food",
+          "start": 244.0,
+          "end": 244.5,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 58,
-      "text": "Great.",
-      "start": 147.32,
-      "duration": 0.68
+      "text": "Do squirrels eat fruit?",
+      "speaker": "Speaker0",
+      "start": 246.26,
+      "duration": 1.71,
+      "words": [
+        {
+          "word": "do",
+          "start": 246.26,
+          "end": 246.67,
+          "confidence": 0.926
+        },
+        {
+          "word": "squirrels",
+          "start": 246.67,
+          "end": 247.17,
+          "confidence": 0.999
+        },
+        {
+          "word": "eat",
+          "start": 247.22,
+          "end": 247.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "fruit",
+          "start": 247.47,
+          "end": 247.97,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 59,
-      "text": "Do you think we'll have time to play any games?",
-      "start": 148.0,
-      "duration": 5.04
+      "text": "Yes, they do. But we shouldn't feed wild animals too much.",
+      "speaker": "Speaker1",
+      "start": 249.31,
+      "duration": 4.41,
+      "words": [
+        {
+          "word": "yes",
+          "start": 249.31,
+          "end": 249.71,
+          "confidence": 0.848
+        },
+        {
+          "word": "they",
+          "start": 249.71,
+          "end": 249.87,
+          "confidence": 0.994
+        },
+        {
+          "word": "do",
+          "start": 249.87,
+          "end": 250.37,
+          "confidence": 0.836
+        },
+        {
+          "word": "but",
+          "start": 250.59,
+          "end": 250.83,
+          "confidence": 0.99
+        },
+        {
+          "word": "we",
+          "start": 250.83,
+          "end": 251.22,
+          "confidence": 0.913
+        },
+        {
+          "word": "shouldn't",
+          "start": 251.22,
+          "end": 251.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "feed",
+          "start": 251.62,
+          "end": 251.94,
+          "confidence": 0.999
+        },
+        {
+          "word": "wild",
+          "start": 251.94,
+          "end": 252.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "animals",
+          "start": 252.5,
+          "end": 253.0,
+          "confidence": 0.993
+        },
+        {
+          "word": "too",
+          "start": 253.06,
+          "end": 253.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "much",
+          "start": 253.22,
+          "end": 253.72,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.96
     },
     {
       "id": 60,
-      "text": "Sure.",
-      "start": 153.04,
-      "duration": 0.79
+      "text": "That's true. Let's just watch it from here.",
+      "speaker": "Speaker0",
+      "start": 255.71,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "that's",
+          "start": 255.71,
+          "end": 256.02,
+          "confidence": 0.99
+        },
+        {
+          "word": "true",
+          "start": 256.02,
+          "end": 256.52,
+          "confidence": 0.985
+        },
+        {
+          "word": "let's",
+          "start": 256.67,
+          "end": 256.9,
+          "confidence": 0.997
+        },
+        {
+          "word": "just",
+          "start": 256.9,
+          "end": 257.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "watch",
+          "start": 257.23,
+          "end": 257.46,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 257.46,
+          "end": 257.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "from",
+          "start": 257.62,
+          "end": 257.87,
+          "confidence": 1.0
+        },
+        {
+          "word": "here",
+          "start": 257.87,
+          "end": 258.37,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 61,
-      "text": "Do you like badminton?",
-      "start": 153.83,
-      "duration": 2.05
+      "text": "Good idea. After we eat, do you want to play badminton?",
+      "speaker": "Speaker1",
+      "start": 259.42,
+      "duration": 3.22,
+      "words": [
+        {
+          "word": "good",
+          "start": 259.42,
+          "end": 259.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "idea",
+          "start": 259.74,
+          "end": 260.24,
+          "confidence": 0.986
+        },
+        {
+          "word": "after",
+          "start": 260.46,
+          "end": 260.78,
+          "confidence": 0.996
+        },
+        {
+          "word": "we",
+          "start": 260.78,
+          "end": 261.02,
+          "confidence": 0.999
+        },
+        {
+          "word": "eat",
+          "start": 261.02,
+          "end": 261.34,
+          "confidence": 0.979
+        },
+        {
+          "word": "do",
+          "start": 261.34,
+          "end": 261.58,
+          "confidence": 0.995
+        },
+        {
+          "word": "you",
+          "start": 261.58,
+          "end": 261.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "want",
+          "start": 261.66,
+          "end": 261.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 261.82,
+          "end": 261.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "play",
+          "start": 261.9,
+          "end": 262.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "badminton",
+          "start": 262.14,
+          "end": 262.64,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 62,
-      "text": "Yes, I do.",
-      "start": 155.88,
-      "duration": 2.25
+      "text": "Yes. I've been waiting for that. Did you bring your racket?",
+      "speaker": "Speaker0",
+      "start": 264.94,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "yes",
+          "start": 264.94,
+          "end": 265.42,
+          "confidence": 0.882
+        },
+        {
+          "word": "i've",
+          "start": 265.42,
+          "end": 265.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "been",
+          "start": 265.66,
+          "end": 265.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "waiting",
+          "start": 265.82,
+          "end": 266.14,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 266.14,
+          "end": 266.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "that",
+          "start": 266.3,
+          "end": 266.78,
+          "confidence": 0.999
+        },
+        {
+          "word": "did",
+          "start": 266.78,
+          "end": 266.94,
+          "confidence": 0.892
+        },
+        {
+          "word": "you",
+          "start": 266.94,
+          "end": 267.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "bring",
+          "start": 267.1,
+          "end": 267.34,
+          "confidence": 1.0
+        },
+        {
+          "word": "your",
+          "start": 267.34,
+          "end": 267.5,
+          "confidence": 1.0
+        },
+        {
+          "word": "racket",
+          "start": 267.5,
+          "end": 268.0,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.979
     },
     {
       "id": 63,
-      "text": "I'll bring my racket.",
-      "start": 158.13,
-      "duration": 2.26
+      "text": "I sure did. Let's eat first, then we'll start the game.",
+      "speaker": "Speaker1",
+      "start": 269.34,
+      "duration": 3.78,
+      "words": [
+        {
+          "word": "i",
+          "start": 269.34,
+          "end": 269.58,
+          "confidence": 0.995
+        },
+        {
+          "word": "sure",
+          "start": 269.58,
+          "end": 269.9,
+          "confidence": 1.0
+        },
+        {
+          "word": "did",
+          "start": 269.9,
+          "end": 270.38,
+          "confidence": 0.996
+        },
+        {
+          "word": "let's",
+          "start": 270.38,
+          "end": 270.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "eat",
+          "start": 270.7,
+          "end": 270.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "first",
+          "start": 270.94,
+          "end": 271.44,
+          "confidence": 0.899
+        },
+        {
+          "word": "then",
+          "start": 271.58,
+          "end": 271.9,
+          "confidence": 0.996
+        },
+        {
+          "word": "we'll",
+          "start": 271.9,
+          "end": 272.14,
+          "confidence": 0.995
+        },
+        {
+          "word": "start",
+          "start": 272.14,
+          "end": 272.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 272.38,
+          "end": 272.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "game",
+          "start": 272.62,
+          "end": 273.12,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 64,
-      "text": "Do you have one?",
-      "start": 160.39,
-      "duration": 2.09
+      "text": "Sounds like a plan. These sandwiches are delicious.",
+      "speaker": "Speaker0",
+      "start": 274.88,
+      "duration": 2.99,
+      "words": [
+        {
+          "word": "sounds",
+          "start": 274.88,
+          "end": 275.21,
+          "confidence": 0.992
+        },
+        {
+          "word": "like",
+          "start": 275.21,
+          "end": 275.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 275.37,
+          "end": 275.52,
+          "confidence": 1.0
+        },
+        {
+          "word": "plan",
+          "start": 275.52,
+          "end": 276.02,
+          "confidence": 0.985
+        },
+        {
+          "word": "these",
+          "start": 276.08,
+          "end": 276.49,
+          "confidence": 0.994
+        },
+        {
+          "word": "sandwiches",
+          "start": 276.49,
+          "end": 276.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "are",
+          "start": 277.12,
+          "end": 277.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "delicious",
+          "start": 277.37,
+          "end": 277.87,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 65,
-      "text": "Yes, I do.",
-      "start": 162.48,
-      "duration": 1.28
+      "text": "Thank you. I made them this morning.",
+      "speaker": "Speaker1",
+      "start": 279.37,
+      "duration": 2.09,
+      "words": [
+        {
+          "word": "thank",
+          "start": 279.37,
+          "end": 279.61,
+          "confidence": 0.991
+        },
+        {
+          "word": "you",
+          "start": 279.61,
+          "end": 280.08,
+          "confidence": 0.943
+        },
+        {
+          "word": "i",
+          "start": 280.08,
+          "end": 280.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "made",
+          "start": 280.32,
+          "end": 280.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "them",
+          "start": 280.56,
+          "end": 280.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "this",
+          "start": 280.81,
+          "end": 280.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "morning",
+          "start": 280.96,
+          "end": 281.46,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.99
     },
     {
       "id": 66,
-      "text": "This is going to be so much fun.",
-      "start": 163.76,
-      "duration": 3.0
+      "text": "You made them? Wow.",
+      "speaker": "Speaker0",
+      "start": 283.21,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "you",
+          "start": 283.21,
+          "end": 283.44,
+          "confidence": 0.994
+        },
+        {
+          "word": "made",
+          "start": 283.44,
+          "end": 283.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "them",
+          "start": 283.69,
+          "end": 284.19,
+          "confidence": 0.99
+        },
+        {
+          "word": "wow",
+          "start": 284.25,
+          "end": 284.75,
+          "confidence": 0.768
+        }
+      ],
+      "confidence": 0.938
     },
     {
       "id": 67,
-      "text": "I'm excited already.",
-      "start": 166.76,
-      "duration": 2.68
+      "text": "You're a good cook, John.",
+      "speaker": "Speaker0",
+      "start": 285.05,
+      "duration": 1.45,
+      "words": [
+        {
+          "word": "you're",
+          "start": 285.05,
+          "end": 285.29,
+          "confidence": 0.996
+        },
+        {
+          "word": "a",
+          "start": 285.29,
+          "end": 285.44,
+          "confidence": 0.968
+        },
+        {
+          "word": "good",
+          "start": 285.44,
+          "end": 285.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "cook",
+          "start": 285.69,
+          "end": 286.0,
+          "confidence": 0.913
+        },
+        {
+          "word": "john",
+          "start": 286.0,
+          "end": 286.5,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 68,
-      "text": "I love spending time outdoors.",
-      "start": 169.44,
-      "duration": 2.76
+      "text": "Thanks, Anna.",
+      "speaker": "Speaker1",
+      "start": 287.61,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "thanks",
+          "start": 287.61,
+          "end": 288.11,
+          "confidence": 0.952
+        },
+        {
+          "word": "anna",
+          "start": 288.25,
+          "end": 288.75,
+          "confidence": 0.982
+        }
+      ],
+      "confidence": 0.967
     },
     {
       "id": 69,
-      "text": "Me, too.",
-      "start": 172.2,
-      "duration": 1.12
+      "text": "I enjoy cooking sometimes.",
+      "speaker": "Speaker1",
+      "start": 289.05,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "i",
+          "start": 289.05,
+          "end": 289.29,
+          "confidence": 0.999
+        },
+        {
+          "word": "enjoy",
+          "start": 289.29,
+          "end": 289.79,
+          "confidence": 0.999
+        },
+        {
+          "word": "cooking",
+          "start": 290.01,
+          "end": 290.49,
+          "confidence": 0.987
+        },
+        {
+          "word": "sometimes",
+          "start": 290.49,
+          "end": 290.99,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 70,
-      "text": "And this park is the best place for it.",
-      "start": 173.32,
-      "duration": 3.44
+      "text": "That's a great skill to have. I should learn from you.",
+      "speaker": "Speaker0",
+      "start": 293.13,
+      "duration": 3.3,
+      "words": [
+        {
+          "word": "that's",
+          "start": 293.13,
+          "end": 293.37,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 293.37,
+          "end": 293.53,
+          "confidence": 0.999
+        },
+        {
+          "word": "great",
+          "start": 293.53,
+          "end": 293.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "skill",
+          "start": 293.85,
+          "end": 294.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 294.25,
+          "end": 294.49,
+          "confidence": 0.997
+        },
+        {
+          "word": "have",
+          "start": 294.49,
+          "end": 294.97,
+          "confidence": 0.989
+        },
+        {
+          "word": "i",
+          "start": 294.97,
+          "end": 295.13,
+          "confidence": 0.901
+        },
+        {
+          "word": "should",
+          "start": 295.13,
+          "end": 295.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "learn",
+          "start": 295.37,
+          "end": 295.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "from",
+          "start": 295.69,
+          "end": 295.93,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 295.93,
+          "end": 296.43,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.989
     },
     {
       "id": 71,
-      "text": "It really is.",
-      "start": 176.76,
-      "duration": 2.41
+      "text": "I can teach you. Maybe we can cook together next time.",
+      "speaker": "Speaker1",
+      "start": 297.45,
+      "duration": 3.62,
+      "words": [
+        {
+          "word": "i",
+          "start": 297.45,
+          "end": 297.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 297.61,
+          "end": 297.85,
+          "confidence": 1.0
+        },
+        {
+          "word": "teach",
+          "start": 297.85,
+          "end": 298.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 298.17,
+          "end": 298.57,
+          "confidence": 0.905
+        },
+        {
+          "word": "maybe",
+          "start": 298.57,
+          "end": 298.89,
+          "confidence": 0.998
+        },
+        {
+          "word": "we",
+          "start": 298.89,
+          "end": 299.05,
+          "confidence": 0.973
+        },
+        {
+          "word": "can",
+          "start": 299.05,
+          "end": 299.29,
+          "confidence": 0.999
+        },
+        {
+          "word": "cook",
+          "start": 299.29,
+          "end": 299.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "together",
+          "start": 299.77,
+          "end": 300.25,
+          "confidence": 0.988
+        },
+        {
+          "word": "next",
+          "start": 300.25,
+          "end": 300.57,
+          "confidence": 0.996
+        },
+        {
+          "word": "time",
+          "start": 300.57,
+          "end": 301.07,
+          "confidence": 0.972
+        }
+      ],
+      "confidence": 0.985
     },
     {
       "id": 72,
-      "text": "Okay.",
-      "start": 179.17,
-      "duration": 0.81
+      "text": "I'd love that. But first, let's win this badminton game.",
+      "speaker": "Speaker0",
+      "start": 302.75,
+      "duration": 4.34,
+      "words": [
+        {
+          "word": "i'd",
+          "start": 302.75,
+          "end": 303.06,
+          "confidence": 0.992
+        },
+        {
+          "word": "love",
+          "start": 303.06,
+          "end": 303.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "that",
+          "start": 303.31,
+          "end": 303.79,
+          "confidence": 0.849
+        },
+        {
+          "word": "but",
+          "start": 303.79,
+          "end": 304.11,
+          "confidence": 0.989
+        },
+        {
+          "word": "first",
+          "start": 304.11,
+          "end": 304.61,
+          "confidence": 0.917
+        },
+        {
+          "word": "let's",
+          "start": 305.06,
+          "end": 305.38,
+          "confidence": 0.988
+        },
+        {
+          "word": "win",
+          "start": 305.38,
+          "end": 305.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "this",
+          "start": 305.55,
+          "end": 305.87,
+          "confidence": 0.999
+        },
+        {
+          "word": "badminton",
+          "start": 305.87,
+          "end": 306.37,
+          "confidence": 0.998
+        },
+        {
+          "word": "game",
+          "start": 306.59,
+          "end": 307.09,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.95
     },
     {
       "id": 73,
-      "text": "So, we'll meet here at 10:00 a.m.",
-      "start": 179.98,
-      "duration": 1.81
+      "text": "You think you can beat me?",
+      "speaker": "Speaker1",
+      "start": 308.59,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "you",
+          "start": 308.59,
+          "end": 308.9,
+          "confidence": 0.454
+        },
+        {
+          "word": "think",
+          "start": 308.9,
+          "end": 309.15,
+          "confidence": 1.0
+        },
+        {
+          "word": "you",
+          "start": 309.15,
+          "end": 309.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 309.31,
+          "end": 309.47,
+          "confidence": 0.998
+        },
+        {
+          "word": "beat",
+          "start": 309.47,
+          "end": 309.71,
+          "confidence": 1.0
+        },
+        {
+          "word": "me",
+          "start": 309.71,
+          "end": 310.21,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.908
     },
     {
       "id": 74,
-      "text": "next Saturday.",
-      "start": 181.79,
-      "duration": 1.65
+      "text": "I'll try my best. Let's finish heating and start the match.",
+      "speaker": "Speaker0",
+      "start": 311.62,
+      "duration": 3.55,
+      "words": [
+        {
+          "word": "i'll",
+          "start": 311.62,
+          "end": 311.87,
+          "confidence": 0.997
+        },
+        {
+          "word": "try",
+          "start": 311.87,
+          "end": 312.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "my",
+          "start": 312.19,
+          "end": 312.35,
+          "confidence": 1.0
+        },
+        {
+          "word": "best",
+          "start": 312.35,
+          "end": 312.85,
+          "confidence": 0.99
+        },
+        {
+          "word": "let's",
+          "start": 312.9,
+          "end": 313.31,
+          "confidence": 0.997
+        },
+        {
+          "word": "finish",
+          "start": 313.31,
+          "end": 313.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "heating",
+          "start": 313.62,
+          "end": 313.94,
+          "confidence": 0.988
+        },
+        {
+          "word": "and",
+          "start": 313.94,
+          "end": 314.19,
+          "confidence": 0.984
+        },
+        {
+          "word": "start",
+          "start": 314.19,
+          "end": 314.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 314.43,
+          "end": 314.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "match",
+          "start": 314.67,
+          "end": 315.17,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 75,
-      "text": "Got it.",
-      "start": 183.44,
-      "duration": 0.94
-    },
-    {
-      "id": 76,
-      "text": "I'll text you to remind you on Friday.",
-      "start": 184.38,
-      "duration": 3.3
-    },
-    {
-      "id": 77,
-      "text": "Thanks, John.",
-      "start": 187.68,
-      "duration": 2.37
-    },
-    {
-      "id": 78,
-      "text": "See you next weekend.",
-      "start": 190.05,
-      "duration": 1.71
-    },
-    {
-      "id": 79,
-      "text": "Hi, John.",
-      "start": 191.76,
-      "duration": 2.84
-    },
-    {
-      "id": 80,
-      "text": "Good morning.",
-      "start": 194.6,
-      "duration": 0.5
-    },
-    {
-      "id": 81,
-      "text": "Hi, Anna.",
-      "start": 194.8,
-      "duration": 1.41
-    },
-    {
-      "id": 82,
-      "text": "Good morning.",
-      "start": 196.21,
-      "duration": 1.41
-    },
-    {
-      "id": 83,
-      "text": "You're right on time.",
-      "start": 197.61,
-      "duration": 2.11
-    },
-    {
-      "id": 84,
-      "text": "Of course.",
-      "start": 199.72,
-      "duration": 1.0
-    },
-    {
-      "id": 85,
-      "text": "It's such a lovely day for a picnic.",
-      "start": 200.72,
-      "duration": 3.48
-    },
-    {
-      "id": 86,
-      "text": "It really is.",
-      "start": 204.2,
-      "duration": 1.93
-    },
-    {
-      "id": 87,
-      "text": "Look, I found a nice spot under that big tree.",
-      "start": 206.13,
-      "duration": 3.87
-    },
-    {
-      "id": 88,
-      "text": "Oh, that's perfect.",
-      "start": 210.0,
-      "duration": 2.14
-    },
-    {
-      "id": 89,
-      "text": "Let's set everything up.",
-      "start": 212.14,
-      "duration": 2.14
-    },
-    {
-      "id": 90,
-      "text": "Here's the blanket.",
-      "start": 214.28,
-      "duration": 2.71
-    },
-    {
-      "id": 91,
-      "text": "I'll spread it out.",
-      "start": 216.99,
-      "duration": 1.17
-    },
-    {
-      "id": 92,
-      "text": "Great.",
-      "start": 218.16,
-      "duration": 0.75
-    },
-    {
-      "id": 93,
-      "text": "I brought sandwiches, apples, and some cookies.",
-      "start": 218.91,
-      "duration": 3.77
-    },
-    {
-      "id": 94,
-      "text": "Yum.",
-      "start": 222.68,
-      "duration": 0.71
-    },
-    {
-      "id": 95,
-      "text": "I brought orange juice and some cups.",
-      "start": 223.39,
-      "duration": 4.29
-    },
-    {
-      "id": 96,
-      "text": "Everything looks so good.",
-      "start": 227.68,
-      "duration": 2.51
-    },
-    {
-      "id": 97,
-      "text": "Thank you for bringing the juice.",
-      "start": 230.19,
-      "duration": 1.89
-    },
-    {
-      "id": 98,
-      "text": "You're welcome.",
-      "start": 232.08,
-      "duration": 1.45
-    },
-    {
-      "id": 99,
-      "text": "Let's sit down and enjoy.",
-      "start": 233.53,
-      "duration": 2.91
-    },
-    {
-      "id": 100,
-      "text": "Okay.",
-      "start": 236.44,
-      "duration": 0.69
-    },
-    {
-      "id": 101,
-      "text": "Oh, look, there's a squirrel over there.",
-      "start": 237.13,
-      "duration": 4.15
-    },
-    {
-      "id": 102,
-      "text": "It's so cute.",
-      "start": 241.28,
-      "duration": 2.19
-    },
-    {
-      "id": 103,
-      "text": "It's probably looking for food.",
-      "start": 243.47,
-      "duration": 2.93
-    },
-    {
-      "id": 104,
-      "text": "Do squirrels eat fruit?",
-      "start": 246.4,
-      "duration": 2.84
-    },
-    {
-      "id": 105,
-      "text": "Yes, they do.",
-      "start": 249.24,
-      "duration": 2.74
-    },
-    {
-      "id": 106,
-      "text": "But, we shouldn't feed wild animals too much.",
-      "start": 251.98,
-      "duration": 3.74
-    },
-    {
-      "id": 107,
-      "text": "That's true.",
-      "start": 255.72,
-      "duration": 1.07
-    },
-    {
-      "id": 108,
-      "text": "Let's just watch it from here.",
-      "start": 256.79,
-      "duration": 2.69
-    },
-    {
-      "id": 109,
-      "text": "Good idea.",
-      "start": 259.48,
-      "duration": 1.17
-    },
-    {
-      "id": 110,
-      "text": "After we eat, do you want to play badminton?",
-      "start": 260.65,
-      "duration": 4.15
-    },
-    {
-      "id": 111,
-      "text": "Yes, I've been waiting for that.",
-      "start": 264.8,
-      "duration": 3.45
-    },
-    {
-      "id": 112,
-      "text": "Did you bring your racket?",
-      "start": 268.25,
-      "duration": 1.15
-    },
-    {
-      "id": 113,
-      "text": "I sure did.",
-      "start": 269.4,
-      "duration": 2.0
-    },
-    {
-      "id": 114,
-      "text": "Let's eat first, then we'll start the game.",
-      "start": 271.39,
-      "duration": 3.33
-    },
-    {
-      "id": 115,
-      "text": "Sounds like a plan.",
-      "start": 274.72,
-      "duration": 2.67
-    },
-    {
-      "id": 116,
-      "text": "These sandwiches are delicious.",
-      "start": 277.39,
-      "duration": 2.01
-    },
-    {
-      "id": 117,
-      "text": "Thank you.",
-      "start": 279.4,
-      "duration": 1.86
-    },
-    {
-      "id": 118,
-      "text": "I made them this morning.",
-      "start": 281.26,
-      "duration": 1.98
-    },
-    {
-      "id": 119,
-      "text": "You made them?",
-      "start": 283.24,
-      "duration": 1.67
-    },
-    {
-      "id": 120,
-      "text": "Wow, you're a good cook, John.",
-      "start": 284.91,
-      "duration": 2.77
-    },
-    {
-      "id": 121,
-      "text": "Thanks, Anna.",
-      "start": 287.68,
-      "duration": 2.53
-    },
-    {
-      "id": 122,
-      "text": "I enjoy cooking sometimes.",
-      "start": 290.21,
-      "duration": 2.95
-    },
-    {
-      "id": 123,
-      "text": "That's a great skill to have.",
-      "start": 293.16,
-      "duration": 3.3
-    },
-    {
-      "id": 124,
-      "text": "I should learn from you.",
-      "start": 296.46,
-      "duration": 1.1
-    },
-    {
-      "id": 125,
-      "text": "I can teach you.",
-      "start": 297.56,
-      "duration": 2.62
-    },
-    {
-      "id": 126,
-      "text": "Maybe we can cook together next time.",
-      "start": 300.18,
-      "duration": 2.62
-    },
-    {
-      "id": 127,
-      "text": "I'd love that.",
-      "start": 302.8,
-      "duration": 2.04
-    },
-    {
-      "id": 128,
-      "text": "But first, let's win this badminton game.",
-      "start": 304.84,
-      "duration": 3.4
-    },
-    {
-      "id": 129,
-      "text": "Hi, you think you can beat me?",
-      "start": 308.24,
-      "duration": 3.4
-    },
-    {
-      "id": 130,
-      "text": "I'll try my best.",
-      "start": 311.64,
-      "duration": 2.63
-    },
-    {
-      "id": 131,
-      "text": "Let's finish eating and start the match.",
-      "start": 314.27,
-      "duration": 1.97
-    },
-    {
-      "id": 132,
-      "text": "Oh, okay.",
+      "text": "Oh, okay. Thanks for watching. For watching more educational videos, subscribe intelligent kids channel. Don't forget to like and share the video.",
+      "speaker": "Speaker1",
       "start": 316.24,
-      "duration": 2.8
-    },
-    {
-      "id": 133,
-      "text": "Thanks for watching.",
-      "start": 319.04,
-      "duration": 2.1
-    },
-    {
-      "id": 134,
-      "text": "For watching more educational videos, subscribe Intelligent Kids Channel.",
-      "start": 321.14,
-      "duration": 5.82
-    },
-    {
-      "id": 135,
-      "text": "Don't forget to like and share the video.",
-      "start": 326.96,
-      "duration": 3.0
+      "duration": 11.22,
+      "words": [
+        {
+          "word": "oh",
+          "start": 316.24,
+          "end": 316.74,
+          "confidence": 0.516
+        },
+        {
+          "word": "okay",
+          "start": 318.72,
+          "end": 319.04,
+          "confidence": 0.954
+        },
+        {
+          "word": "thanks",
+          "start": 319.04,
+          "end": 319.36,
+          "confidence": 0.812
+        },
+        {
+          "word": "for",
+          "start": 319.36,
+          "end": 319.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "watching",
+          "start": 319.6,
+          "end": 320.1,
+          "confidence": 0.743
+        },
+        {
+          "word": "for",
+          "start": 320.16,
+          "end": 320.4,
+          "confidence": 0.98
+        },
+        {
+          "word": "watching",
+          "start": 320.4,
+          "end": 320.8,
+          "confidence": 1.0
+        },
+        {
+          "word": "more",
+          "start": 320.8,
+          "end": 321.12,
+          "confidence": 0.997
+        },
+        {
+          "word": "educational",
+          "start": 321.12,
+          "end": 321.62,
+          "confidence": 0.995
+        },
+        {
+          "word": "videos",
+          "start": 321.92,
+          "end": 322.42,
+          "confidence": 0.759
+        },
+        {
+          "word": "subscribe",
+          "start": 322.72,
+          "end": 323.22,
+          "confidence": 0.981
+        },
+        {
+          "word": "intelligent",
+          "start": 323.28,
+          "end": 323.78,
+          "confidence": 0.945
+        },
+        {
+          "word": "kids",
+          "start": 324.0,
+          "end": 324.32,
+          "confidence": 0.952
+        },
+        {
+          "word": "channel",
+          "start": 324.32,
+          "end": 324.82,
+          "confidence": 0.959
+        },
+        {
+          "word": "don't",
+          "start": 324.96,
+          "end": 325.2,
+          "confidence": 0.988
+        },
+        {
+          "word": "forget",
+          "start": 325.2,
+          "end": 325.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 325.6,
+          "end": 325.76,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 325.76,
+          "end": 326.08,
+          "confidence": 0.983
+        },
+        {
+          "word": "and",
+          "start": 326.08,
+          "end": 326.48,
+          "confidence": 0.956
+        },
+        {
+          "word": "share",
+          "start": 326.48,
+          "end": 326.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 326.72,
+          "end": 326.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "video",
+          "start": 326.96,
+          "end": 327.46,
+          "confidence": 0.881
+        }
+      ],
+      "confidence": 0.516
     }
   ],
   "videoId": "curo8LPPA5Y",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:14.713960+00:00",
+  "fetchedAt": "2026-08-03T11:05:11.520741+00:00",
   "rawCaptionCount": 122,
   "splitAt": "2026-08-03T05:15:00.312759+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:05:11.520783+00:00",
+    "dgWordCount": 610,
+    "dgUtteranceCount": 82,
+    "matchedSegments": 82,
+    "totalDuration": 327.46
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

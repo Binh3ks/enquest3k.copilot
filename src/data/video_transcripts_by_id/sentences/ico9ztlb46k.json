@@ -1,65 +1,988 @@
 {
-  "text": "Hey there kids! Listen carefully and repeat. wake up wake up go to the toilet go to the toilet wash my face wash my face eat breakfast eat breakfast brush my teeth brush my teeth brush my hair brush my hair get dressed get dressed sing sing dance dance go to school go to school That was great kids. Let's do it one more time. In a big voice, repeat after me. Here we go. wake up go to the toilet wash my face eat breakfast brush my teeth brush my hair get dressed sing dance go to school Well done, kids. That was great. See ya!",
+  "text": "Hey there, kids. Listen carefully and repeat. Wake up. Wake up. Go to the toilet. Go to the toilet. Wash my face. Wash my face. Eat breakfast. Eat breakfast, brush my teeth, brush my teeth, brush my hair, Brush my hair. Get dressed. Get dressed. Sing. Sing. Dance. Dance. Go to school. Go to school. That was great, kids. Let's do it one more time. In a big voice, repeat after me. Here we go. Wake up. Go to the toilet. Wash my face. Eat breakfast, brush my teeth. Brush my hair. Get dressed. Sing. Dance. Go to school. Well done, kids. That was great. See you.",
   "segments": [
     {
       "id": 1,
-      "text": "Hey there kids!",
-      "start": 5.79,
-      "duration": 2.28
+      "text": "Hey there, kids.",
+      "speaker": "Speaker0",
+      "start": 5.92,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "hey",
+          "start": 5.92,
+          "end": 6.16,
+          "confidence": 0.836
+        },
+        {
+          "word": "there",
+          "start": 6.16,
+          "end": 6.48,
+          "confidence": 0.898
+        },
+        {
+          "word": "kids",
+          "start": 6.48,
+          "end": 6.98,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.911
     },
     {
       "id": 2,
       "text": "Listen carefully and repeat.",
-      "start": 8.07,
-      "duration": 4.33
+      "speaker": "Speaker0",
+      "start": 7.84,
+      "duration": 2.82,
+      "words": [
+        {
+          "word": "listen",
+          "start": 7.84,
+          "end": 8.32,
+          "confidence": 0.998
+        },
+        {
+          "word": "carefully",
+          "start": 8.32,
+          "end": 8.82,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 9.68,
+          "end": 10.16,
+          "confidence": 0.795
+        },
+        {
+          "word": "repeat",
+          "start": 10.16,
+          "end": 10.66,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 3,
-      "text": "wake up wake up go to the toilet go to the toilet wash my face wash my face eat breakfast eat breakfast brush my teeth brush my teeth brush my hair brush my hair get dressed get dressed sing sing dance dance go to school go to school That was great kids.",
-      "start": 12.4,
-      "duration": 83.42
+      "text": "Wake up. Wake up.",
+      "speaker": "Speaker0",
+      "start": 12.43,
+      "duration": 4.73,
+      "words": [
+        {
+          "word": "wake",
+          "start": 12.43,
+          "end": 12.93,
+          "confidence": 0.978
+        },
+        {
+          "word": "up",
+          "start": 16.11,
+          "end": 16.27,
+          "confidence": 0.974
+        },
+        {
+          "word": "wake",
+          "start": 16.27,
+          "end": 16.66,
+          "confidence": 0.989
+        },
+        {
+          "word": "up",
+          "start": 16.66,
+          "end": 17.16,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 4,
-      "text": "Let's do it one more time.",
-      "start": 95.82,
-      "duration": 3.66
+      "text": "Go to the toilet.",
+      "speaker": "Speaker0",
+      "start": 20.59,
+      "duration": 1.53,
+      "words": [
+        {
+          "word": "go",
+          "start": 20.59,
+          "end": 21.07,
+          "confidence": 0.942
+        },
+        {
+          "word": "to",
+          "start": 21.07,
+          "end": 21.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 21.39,
+          "end": 21.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "toilet",
+          "start": 21.62,
+          "end": 22.12,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 5,
-      "text": "In a big voice, repeat after me.",
-      "start": 99.48,
-      "duration": 4.46
+      "text": "Go to the toilet.",
+      "speaker": "Speaker0",
+      "start": 24.66,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "go",
+          "start": 24.66,
+          "end": 25.06,
+          "confidence": 0.991
+        },
+        {
+          "word": "to",
+          "start": 25.06,
+          "end": 25.3,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 25.3,
+          "end": 25.62,
+          "confidence": 1.0
+        },
+        {
+          "word": "toilet",
+          "start": 25.62,
+          "end": 26.12,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 6,
-      "text": "Here we go.",
-      "start": 103.94,
-      "duration": 4.37
+      "text": "Wash my face.",
+      "speaker": "Speaker1",
+      "start": 28.69,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "wash",
+          "start": 28.69,
+          "end": 29.01,
+          "confidence": 0.974
+        },
+        {
+          "word": "my",
+          "start": 29.01,
+          "end": 29.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "face",
+          "start": 29.41,
+          "end": 29.91,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.991
     },
     {
       "id": 7,
-      "text": "wake up go to the toilet wash my face eat breakfast brush my teeth brush my hair get dressed sing dance go to school Well done, kids.",
-      "start": 108.31,
-      "duration": 83.31
+      "text": "Wash my face.",
+      "speaker": "Speaker1",
+      "start": 32.69,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "wash",
+          "start": 32.69,
+          "end": 33.09,
+          "confidence": 0.944
+        },
+        {
+          "word": "my",
+          "start": 33.09,
+          "end": 33.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "face",
+          "start": 33.33,
+          "end": 33.83,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.981
     },
     {
       "id": 8,
-      "text": "That was great.",
-      "start": 191.62,
-      "duration": 2.46
+      "text": "Eat breakfast.",
+      "speaker": "Speaker0",
+      "start": 36.37,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "eat",
+          "start": 36.37,
+          "end": 36.69,
+          "confidence": 0.988
+        },
+        {
+          "word": "breakfast",
+          "start": 36.69,
+          "end": 37.19,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
     },
     {
       "id": 9,
-      "text": "See ya!",
-      "start": 194.07,
-      "duration": 3.0
+      "text": "Eat breakfast, brush my teeth, brush my teeth, brush my hair, Brush my hair.",
+      "speaker": "Speaker0",
+      "start": 40.47,
+      "duration": 17.36,
+      "words": [
+        {
+          "word": "eat",
+          "start": 40.47,
+          "end": 40.7,
+          "confidence": 0.938
+        },
+        {
+          "word": "breakfast",
+          "start": 40.7,
+          "end": 41.2,
+          "confidence": 0.972
+        },
+        {
+          "word": "brush",
+          "start": 44.55,
+          "end": 45.02,
+          "confidence": 0.763
+        },
+        {
+          "word": "my",
+          "start": 45.02,
+          "end": 45.27,
+          "confidence": 0.998
+        },
+        {
+          "word": "teeth",
+          "start": 45.27,
+          "end": 45.77,
+          "confidence": 0.993
+        },
+        {
+          "word": "brush",
+          "start": 48.62,
+          "end": 49.02,
+          "confidence": 0.983
+        },
+        {
+          "word": "my",
+          "start": 49.02,
+          "end": 49.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "teeth",
+          "start": 49.27,
+          "end": 49.77,
+          "confidence": 0.992
+        },
+        {
+          "word": "brush",
+          "start": 52.55,
+          "end": 53.02,
+          "confidence": 0.981
+        },
+        {
+          "word": "my",
+          "start": 53.02,
+          "end": 53.27,
+          "confidence": 0.999
+        },
+        {
+          "word": "hair",
+          "start": 53.27,
+          "end": 53.77,
+          "confidence": 0.991
+        },
+        {
+          "word": "brush",
+          "start": 56.69,
+          "end": 57.09,
+          "confidence": 0.983
+        },
+        {
+          "word": "my",
+          "start": 57.09,
+          "end": 57.33,
+          "confidence": 1.0
+        },
+        {
+          "word": "hair",
+          "start": 57.33,
+          "end": 57.83,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 10,
+      "text": "Get dressed.",
+      "speaker": "Speaker0",
+      "start": 60.37,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "get",
+          "start": 60.37,
+          "end": 60.69,
+          "confidence": 0.966
+        },
+        {
+          "word": "dressed",
+          "start": 60.69,
+          "end": 61.19,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 11,
+      "text": "Get dressed.",
+      "speaker": "Speaker0",
+      "start": 64.37,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "get",
+          "start": 64.37,
+          "end": 64.69,
+          "confidence": 0.889
+        },
+        {
+          "word": "dressed",
+          "start": 64.69,
+          "end": 65.19,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.944
+    },
+    {
+      "id": 12,
+      "text": "Sing.",
+      "speaker": "Speaker2",
+      "start": 68.53,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "sing",
+          "start": 68.53,
+          "end": 69.03,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.971
+    },
+    {
+      "id": 13,
+      "text": "Sing.",
+      "speaker": "Speaker0",
+      "start": 72.53,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "sing",
+          "start": 72.53,
+          "end": 73.03,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 14,
+      "text": "Dance.",
+      "speaker": "Speaker0",
+      "start": 76.6,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "dance",
+          "start": 76.6,
+          "end": 77.1,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 15,
+      "text": "Dance.",
+      "speaker": "Speaker0",
+      "start": 80.6,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "dance",
+          "start": 80.6,
+          "end": 81.1,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 16,
+      "text": "Go to school.",
+      "speaker": "Speaker0",
+      "start": 84.67,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "go",
+          "start": 84.67,
+          "end": 84.99,
+          "confidence": 0.958
+        },
+        {
+          "word": "to",
+          "start": 84.99,
+          "end": 85.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "school",
+          "start": 85.23,
+          "end": 85.73,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 17,
+      "text": "Go to school.",
+      "speaker": "Speaker0",
+      "start": 88.59,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "go",
+          "start": 88.59,
+          "end": 88.99,
+          "confidence": 0.902
+        },
+        {
+          "word": "to",
+          "start": 88.99,
+          "end": 89.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "school",
+          "start": 89.23,
+          "end": 89.73,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.967
+    },
+    {
+      "id": 18,
+      "text": "That was great, kids.",
+      "speaker": "Speaker0",
+      "start": 93.79,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "that",
+          "start": 93.79,
+          "end": 94.11,
+          "confidence": 0.598
+        },
+        {
+          "word": "was",
+          "start": 94.11,
+          "end": 94.43,
+          "confidence": 0.999
+        },
+        {
+          "word": "great",
+          "start": 94.43,
+          "end": 94.75,
+          "confidence": 0.885
+        },
+        {
+          "word": "kids",
+          "start": 94.75,
+          "end": 95.25,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.869
+    },
+    {
+      "id": 19,
+      "text": "Let's do it one more time.",
+      "speaker": "Speaker0",
+      "start": 96.35,
+      "duration": 2.04,
+      "words": [
+        {
+          "word": "let's",
+          "start": 96.35,
+          "end": 96.75,
+          "confidence": 0.997
+        },
+        {
+          "word": "do",
+          "start": 96.75,
+          "end": 96.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 96.99,
+          "end": 97.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "one",
+          "start": 97.31,
+          "end": 97.63,
+          "confidence": 0.998
+        },
+        {
+          "word": "more",
+          "start": 97.63,
+          "end": 97.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "time",
+          "start": 97.95,
+          "end": 98.39,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 20,
+      "text": "In a big voice, repeat after me.",
+      "speaker": "Speaker0",
+      "start": 99.42,
+      "duration": 4.02,
+      "words": [
+        {
+          "word": "in",
+          "start": 99.42,
+          "end": 99.58,
+          "confidence": 0.953
+        },
+        {
+          "word": "a",
+          "start": 99.58,
+          "end": 99.75,
+          "confidence": 0.996
+        },
+        {
+          "word": "big",
+          "start": 99.75,
+          "end": 100.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "voice",
+          "start": 100.06,
+          "end": 100.56,
+          "confidence": 0.975
+        },
+        {
+          "word": "repeat",
+          "start": 101.58,
+          "end": 102.08,
+          "confidence": 0.99
+        },
+        {
+          "word": "after",
+          "start": 102.47,
+          "end": 102.94,
+          "confidence": 0.997
+        },
+        {
+          "word": "me",
+          "start": 102.94,
+          "end": 103.44,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.981
+    },
+    {
+      "id": 21,
+      "text": "Here we go.",
+      "speaker": "Speaker0",
+      "start": 104.55,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "here",
+          "start": 104.55,
+          "end": 104.78,
+          "confidence": 0.985
+        },
+        {
+          "word": "we",
+          "start": 104.78,
+          "end": 105.03,
+          "confidence": 0.999
+        },
+        {
+          "word": "go",
+          "start": 105.03,
+          "end": 105.53,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 22,
+      "text": "Wake up.",
+      "speaker": "Speaker0",
+      "start": 108.39,
+      "duration": 0.81,
+      "words": [
+        {
+          "word": "wake",
+          "start": 108.39,
+          "end": 108.7,
+          "confidence": 0.943
+        },
+        {
+          "word": "up",
+          "start": 108.7,
+          "end": 109.2,
+          "confidence": 0.912
+        }
+      ],
+      "confidence": 0.927
+    },
+    {
+      "id": 23,
+      "text": "Go to the toilet.",
+      "speaker": "Speaker0",
+      "start": 116.66,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "go",
+          "start": 116.66,
+          "end": 117.06,
+          "confidence": 0.965
+        },
+        {
+          "word": "to",
+          "start": 117.06,
+          "end": 117.46,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 117.46,
+          "end": 117.7,
+          "confidence": 0.999
+        },
+        {
+          "word": "toilet",
+          "start": 117.7,
+          "end": 118.2,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 24,
+      "text": "Wash my face.",
+      "speaker": "Speaker1",
+      "start": 124.66,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "wash",
+          "start": 124.66,
+          "end": 124.98,
+          "confidence": 0.82
+        },
+        {
+          "word": "my",
+          "start": 124.98,
+          "end": 125.3,
+          "confidence": 0.999
+        },
+        {
+          "word": "face",
+          "start": 125.3,
+          "end": 125.8,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.939
+    },
+    {
+      "id": 25,
+      "text": "Eat breakfast, brush my teeth.",
+      "speaker": "Speaker0",
+      "start": 132.4,
+      "duration": 15.06,
+      "words": [
+        {
+          "word": "eat",
+          "start": 132.4,
+          "end": 132.63,
+          "confidence": 0.992
+        },
+        {
+          "word": "breakfast",
+          "start": 132.63,
+          "end": 133.13,
+          "confidence": 0.998
+        },
+        {
+          "word": "brush",
+          "start": 140.63,
+          "end": 140.96,
+          "confidence": 0.983
+        },
+        {
+          "word": "my",
+          "start": 140.96,
+          "end": 141.36,
+          "confidence": 0.996
+        },
+        {
+          "word": "teeth",
+          "start": 146.96,
+          "end": 147.46,
+          "confidence": 0.921
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 26,
+      "text": "Brush my hair.",
+      "speaker": "Speaker3",
+      "start": 148.64,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "brush",
+          "start": 148.64,
+          "end": 148.96,
+          "confidence": 0.994
+        },
+        {
+          "word": "my",
+          "start": 148.96,
+          "end": 149.28,
+          "confidence": 1.0
+        },
+        {
+          "word": "hair",
+          "start": 149.28,
+          "end": 149.78,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 27,
+      "text": "Get dressed.",
+      "speaker": "Speaker0",
+      "start": 156.37,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "get",
+          "start": 156.37,
+          "end": 156.69,
+          "confidence": 0.678
+        },
+        {
+          "word": "dressed",
+          "start": 156.69,
+          "end": 157.19,
+          "confidence": 0.847
+        }
+      ],
+      "confidence": 0.763
+    },
+    {
+      "id": 28,
+      "text": "Sing.",
+      "speaker": "Speaker0",
+      "start": 164.53,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "sing",
+          "start": 164.53,
+          "end": 165.03,
+          "confidence": 0.954
+        }
+      ],
+      "confidence": 0.954
+    },
+    {
+      "id": 29,
+      "text": "Dance. Go to school.",
+      "speaker": "Speaker0",
+      "start": 179.92,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "dance",
+          "start": 179.92,
+          "end": 180.42,
+          "confidence": 0.998
+        },
+        {
+          "word": "go",
+          "start": 180.64,
+          "end": 180.96,
+          "confidence": 0.99
+        },
+        {
+          "word": "to",
+          "start": 180.96,
+          "end": 181.2,
+          "confidence": 1.0
+        },
+        {
+          "word": "school",
+          "start": 181.2,
+          "end": 181.7,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 30,
+      "text": "Well done, kids.",
+      "speaker": "Speaker0",
+      "start": 189.29,
+      "duration": 1.15,
+      "words": [
+        {
+          "word": "well",
+          "start": 189.29,
+          "end": 189.62,
+          "confidence": 0.756
+        },
+        {
+          "word": "done",
+          "start": 189.62,
+          "end": 189.94,
+          "confidence": 0.896
+        },
+        {
+          "word": "kids",
+          "start": 189.94,
+          "end": 190.44,
+          "confidence": 0.928
+        }
+      ],
+      "confidence": 0.86
+    },
+    {
+      "id": 31,
+      "text": "That was great.",
+      "speaker": "Speaker0",
+      "start": 191.46,
+      "duration": 1.05,
+      "words": [
+        {
+          "word": "that",
+          "start": 191.46,
+          "end": 191.78,
+          "confidence": 0.993
+        },
+        {
+          "word": "was",
+          "start": 191.78,
+          "end": 192.01,
+          "confidence": 0.999
+        },
+        {
+          "word": "great",
+          "start": 192.01,
+          "end": 192.51,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 32,
+      "text": "See you.",
+      "speaker": "Speaker0",
+      "start": 193.53,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "see",
+          "start": 193.53,
+          "end": 193.85,
+          "confidence": 0.983
+        },
+        {
+          "word": "you",
+          "start": 193.85,
+          "end": 194.35,
+          "confidence": 0.779
+        }
+      ],
+      "confidence": 0.881
     }
   ],
   "videoId": "ico9ztlb46k",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-08-03T04:59:16.870568+00:00",
+  "fetchedAt": "2026-08-03T11:05:32.362823+00:00",
   "rawCaptionCount": 34,
   "splitAt": "2026-08-03T05:15:00.317811+00:00",
-  "splitMethod": "frozen-rules-v1"
+  "splitMethod": "frozen-rules-v1",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2",
+    "3": "Speaker3"
+  },
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-03T11:05:32.362846+00:00",
+    "dgWordCount": 107,
+    "dgUtteranceCount": 42,
+    "matchedSegments": 42,
+    "totalDuration": 194.35
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

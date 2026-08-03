@@ -1,90 +1,1672 @@
 {
-  "text": "Last summer, my family and I went on a submarine adventure. We dove down 300 metres into the deep ocean. We saw magnificent coral reefs. Then we found something unexpected — an underwater cave! Our guide said it was called The Cave of Lost Ships. We rode into the dark cave. We saw old objects from ancient ships. The best find took our breath — a gold compass from the 1500s! It came from a Portuguese explorer. We gave all our findings to the museum. When we came back to the surface, we knew we had made an important discovery. We began to plan our next exciting dive.",
+  "text": "The Carter Family, episode 37, The Airplane Trip. I can't wait to fly in an airplane, Harry said. Flying sounds scary, Oliver said. It will be fun, dad said. Lots of people got on the plane. We might be too heavy for the plane, Oliver said. We're not too heavy, mom said. The plane took off. The Carter family was flying. My ears hurt, Oliver said. Mom gave Oliver a piece of gum. Chewing the gum made his ears feel better. Oliver looked out the window. We are very high up, he said. What if we fall? Harry said, We will not fall. Mom gave the kids a card game. Oliver can go first, Emmy said. Oliver won the game. That was fun, he said. A flight attendant brought drinks and a snack. Yum, said Oliver. I love pretzels and juice. The plane landed. Everyone got their luggage. The flight attendant smiled at Oliver. Would you like to meet the pilot? She asked. Yes. Oliver said. The pilot had a cool uniform. He showed Oliver the cockpit. Oliver saw buttons and lights and maps. Wow. Oliver said. Does flying still seem scary, Oliver? Dad asked. Scary? Oliver laughed. Flying is not scary, Dad. Flying is awesome.",
   "segments": [
     {
       "id": 1,
-      "text": "Last summer, my family and I went on a submarine adventure.",
-      "start": 0.32,
-      "duration": 11.76
+      "text": "The Carter Family, episode 37, The Airplane Trip.",
+      "speaker": "Speaker0",
+      "start": 0.24,
+      "duration": 4.82,
+      "words": [
+        {
+          "word": "the",
+          "start": 0.24,
+          "end": 0.48,
+          "confidence": 0.961
+        },
+        {
+          "word": "carter",
+          "start": 0.48,
+          "end": 0.98,
+          "confidence": 0.99
+        },
+        {
+          "word": "family",
+          "start": 1.04,
+          "end": 1.54,
+          "confidence": 0.758
+        },
+        {
+          "word": "episode",
+          "start": 2.08,
+          "end": 2.58,
+          "confidence": 0.928
+        },
+        {
+          "word": "37",
+          "start": 2.64,
+          "end": 3.46,
+          "confidence": 0.979
+        },
+        {
+          "word": "the",
+          "start": 3.84,
+          "end": 4.0,
+          "confidence": 0.737
+        },
+        {
+          "word": "airplane",
+          "start": 4.0,
+          "end": 4.5,
+          "confidence": 0.975
+        },
+        {
+          "word": "trip",
+          "start": 4.56,
+          "end": 5.06,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.903
     },
     {
       "id": 2,
-      "text": "We dove down 300 metres into the deep ocean.",
-      "start": 22.86,
-      "duration": 8.03
+      "text": "I can't wait to fly in an airplane, Harry said.",
+      "speaker": "Speaker1",
+      "start": 11.76,
+      "duration": 3.54,
+      "words": [
+        {
+          "word": "i",
+          "start": 11.76,
+          "end": 12.0,
+          "confidence": 0.739
+        },
+        {
+          "word": "can't",
+          "start": 12.0,
+          "end": 12.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "wait",
+          "start": 12.4,
+          "end": 12.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 12.72,
+          "end": 12.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "fly",
+          "start": 12.88,
+          "end": 13.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "in",
+          "start": 13.12,
+          "end": 13.36,
+          "confidence": 0.997
+        },
+        {
+          "word": "an",
+          "start": 13.36,
+          "end": 13.52,
+          "confidence": 0.998
+        },
+        {
+          "word": "airplane",
+          "start": 13.52,
+          "end": 14.02,
+          "confidence": 0.909
+        },
+        {
+          "word": "harry",
+          "start": 14.32,
+          "end": 14.8,
+          "confidence": 0.989
+        },
+        {
+          "word": "said",
+          "start": 14.8,
+          "end": 15.3,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.955
     },
     {
       "id": 3,
-      "text": "We saw magnificent coral reefs.",
-      "start": 30.73,
-      "duration": 1.68
+      "text": "Flying sounds scary, Oliver said.",
+      "speaker": "Speaker0",
+      "start": 16.38,
+      "duration": 3.14,
+      "words": [
+        {
+          "word": "flying",
+          "start": 16.38,
+          "end": 16.77,
+          "confidence": 0.646
+        },
+        {
+          "word": "sounds",
+          "start": 16.77,
+          "end": 17.27,
+          "confidence": 0.993
+        },
+        {
+          "word": "scary",
+          "start": 17.34,
+          "end": 17.84,
+          "confidence": 0.992
+        },
+        {
+          "word": "oliver",
+          "start": 18.45,
+          "end": 18.95,
+          "confidence": 0.999
+        },
+        {
+          "word": "said",
+          "start": 19.02,
+          "end": 19.52,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.877
     },
     {
       "id": 4,
-      "text": "Then we found something unexpected — an underwater cave!",
-      "start": 63.19,
-      "duration": 6.08
+      "text": "It will be fun, dad said.",
+      "speaker": "Speaker1",
+      "start": 20.86,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "it",
+          "start": 20.86,
+          "end": 21.02,
+          "confidence": 0.515
+        },
+        {
+          "word": "will",
+          "start": 21.02,
+          "end": 21.25,
+          "confidence": 0.997
+        },
+        {
+          "word": "be",
+          "start": 21.25,
+          "end": 21.49,
+          "confidence": 0.999
+        },
+        {
+          "word": "fun",
+          "start": 21.49,
+          "end": 21.99,
+          "confidence": 0.993
+        },
+        {
+          "word": "dad",
+          "start": 22.54,
+          "end": 22.86,
+          "confidence": 0.878
+        },
+        {
+          "word": "said",
+          "start": 22.86,
+          "end": 23.36,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.876
     },
     {
       "id": 5,
-      "text": "Our guide said it was called The Cave of Lost Ships.",
-      "start": 76.66,
-      "duration": 7.19
+      "text": "Lots of people got on the plane.",
+      "speaker": "Speaker0",
+      "start": 24.77,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "lots",
+          "start": 24.77,
+          "end": 25.02,
+          "confidence": 0.997
+        },
+        {
+          "word": "of",
+          "start": 25.02,
+          "end": 25.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "people",
+          "start": 25.26,
+          "end": 25.65,
+          "confidence": 1.0
+        },
+        {
+          "word": "got",
+          "start": 25.65,
+          "end": 25.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "on",
+          "start": 25.89,
+          "end": 26.05,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 26.05,
+          "end": 26.13,
+          "confidence": 1.0
+        },
+        {
+          "word": "plane",
+          "start": 26.13,
+          "end": 26.63,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 6,
-      "text": "We rode into the dark cave.",
-      "start": 83.53,
-      "duration": 8.33
+      "text": "We might be too heavy for the plane, Oliver said.",
+      "speaker": "Speaker0",
+      "start": 30.57,
+      "duration": 4.18,
+      "words": [
+        {
+          "word": "we",
+          "start": 30.57,
+          "end": 30.97,
+          "confidence": 0.917
+        },
+        {
+          "word": "might",
+          "start": 30.97,
+          "end": 31.21,
+          "confidence": 0.998
+        },
+        {
+          "word": "be",
+          "start": 31.21,
+          "end": 31.37,
+          "confidence": 0.995
+        },
+        {
+          "word": "too",
+          "start": 31.37,
+          "end": 31.77,
+          "confidence": 0.984
+        },
+        {
+          "word": "heavy",
+          "start": 31.77,
+          "end": 32.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "for",
+          "start": 32.17,
+          "end": 32.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 32.41,
+          "end": 32.57,
+          "confidence": 0.999
+        },
+        {
+          "word": "plane",
+          "start": 32.57,
+          "end": 33.07,
+          "confidence": 0.948
+        },
+        {
+          "word": "oliver",
+          "start": 33.69,
+          "end": 34.19,
+          "confidence": 0.98
+        },
+        {
+          "word": "said",
+          "start": 34.25,
+          "end": 34.75,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.98
     },
     {
       "id": 7,
-      "text": "We saw old objects from ancient ships.",
-      "start": 112.07,
-      "duration": 6.47
+      "text": "We're not too heavy, mom said.",
+      "speaker": "Speaker2",
+      "start": 37.05,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "we're",
+          "start": 37.05,
+          "end": 37.45,
+          "confidence": 0.76
+        },
+        {
+          "word": "not",
+          "start": 37.45,
+          "end": 37.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "too",
+          "start": 37.77,
+          "end": 38.01,
+          "confidence": 0.986
+        },
+        {
+          "word": "heavy",
+          "start": 38.01,
+          "end": 38.51,
+          "confidence": 0.991
+        },
+        {
+          "word": "mom",
+          "start": 38.81,
+          "end": 39.21,
+          "confidence": 0.938
+        },
+        {
+          "word": "said",
+          "start": 39.21,
+          "end": 39.71,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.945
     },
     {
       "id": 8,
-      "text": "The best find took our breath — a gold compass from the 1500s!",
-      "start": 148.45,
-      "duration": 8.02
+      "text": "The plane took off.",
+      "speaker": "Speaker0",
+      "start": 41.55,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "the",
+          "start": 41.55,
+          "end": 41.7,
+          "confidence": 0.994
+        },
+        {
+          "word": "plane",
+          "start": 41.7,
+          "end": 42.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "took",
+          "start": 42.02,
+          "end": 42.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "off",
+          "start": 42.34,
+          "end": 42.84,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.997
     },
     {
       "id": 9,
-      "text": "It came from a Portuguese explorer.",
-      "start": 156.31,
-      "duration": 3.68
+      "text": "The Carter family was flying.",
+      "speaker": "Speaker0",
+      "start": 46.02,
+      "duration": 2.18,
+      "words": [
+        {
+          "word": "the",
+          "start": 46.02,
+          "end": 46.42,
+          "confidence": 0.988
+        },
+        {
+          "word": "carter",
+          "start": 46.42,
+          "end": 46.91,
+          "confidence": 0.993
+        },
+        {
+          "word": "family",
+          "start": 46.91,
+          "end": 47.39,
+          "confidence": 0.979
+        },
+        {
+          "word": "was",
+          "start": 47.39,
+          "end": 47.7,
+          "confidence": 1.0
+        },
+        {
+          "word": "flying",
+          "start": 47.7,
+          "end": 48.2,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.992
     },
     {
       "id": 10,
-      "text": "We gave all our findings to the museum.",
-      "start": 167.76,
-      "duration": 7.6
+      "text": "My ears hurt, Oliver said.",
+      "speaker": "Speaker0",
+      "start": 52.66,
+      "duration": 2.59,
+      "words": [
+        {
+          "word": "my",
+          "start": 52.66,
+          "end": 52.98,
+          "confidence": 0.926
+        },
+        {
+          "word": "ears",
+          "start": 52.98,
+          "end": 53.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "hurt",
+          "start": 53.39,
+          "end": 53.89,
+          "confidence": 0.996
+        },
+        {
+          "word": "oliver",
+          "start": 54.19,
+          "end": 54.69,
+          "confidence": 0.999
+        },
+        {
+          "word": "said",
+          "start": 54.75,
+          "end": 55.25,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 11,
-      "text": "When we came back to the surface, we knew we had made an important discovery.",
-      "start": 176.24,
-      "duration": 10.79
+      "text": "Mom gave Oliver a piece of gum.",
+      "speaker": "Speaker0",
+      "start": 56.44,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "mom",
+          "start": 56.44,
+          "end": 56.76,
+          "confidence": 0.999
+        },
+        {
+          "word": "gave",
+          "start": 56.76,
+          "end": 57.08,
+          "confidence": 1.0
+        },
+        {
+          "word": "oliver",
+          "start": 57.08,
+          "end": 57.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 57.48,
+          "end": 57.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "piece",
+          "start": 57.64,
+          "end": 57.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 57.88,
+          "end": 58.04,
+          "confidence": 0.999
+        },
+        {
+          "word": "gum",
+          "start": 58.04,
+          "end": 58.54,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.999
     },
     {
       "id": 12,
-      "text": "We began to plan our next exciting dive.",
-      "start": 186.53,
-      "duration": 0.5
+      "text": "Chewing the gum made his ears feel better.",
+      "speaker": "Speaker0",
+      "start": 62.76,
+      "duration": 2.42,
+      "words": [
+        {
+          "word": "chewing",
+          "start": 62.76,
+          "end": 63.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 63.16,
+          "end": 63.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "gum",
+          "start": 63.32,
+          "end": 63.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "made",
+          "start": 63.72,
+          "end": 63.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "his",
+          "start": 63.96,
+          "end": 64.12,
+          "confidence": 1.0
+        },
+        {
+          "word": "ears",
+          "start": 64.12,
+          "end": 64.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "feel",
+          "start": 64.44,
+          "end": 64.68,
+          "confidence": 0.999
+        },
+        {
+          "word": "better",
+          "start": 64.68,
+          "end": 65.18,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 13,
+      "text": "Oliver looked out the window.",
+      "speaker": "Speaker0",
+      "start": 68.36,
+      "duration": 1.78,
+      "words": [
+        {
+          "word": "oliver",
+          "start": 68.36,
+          "end": 68.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "looked",
+          "start": 69.0,
+          "end": 69.24,
+          "confidence": 1.0
+        },
+        {
+          "word": "out",
+          "start": 69.24,
+          "end": 69.48,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 69.48,
+          "end": 69.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "window",
+          "start": 69.64,
+          "end": 70.14,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 14,
+      "text": "We are very high up, he said.",
+      "speaker": "Speaker3",
+      "start": 74.91,
+      "duration": 3.39,
+      "words": [
+        {
+          "word": "we",
+          "start": 74.91,
+          "end": 75.31,
+          "confidence": 0.993
+        },
+        {
+          "word": "are",
+          "start": 75.31,
+          "end": 75.72,
+          "confidence": 0.998
+        },
+        {
+          "word": "very",
+          "start": 75.72,
+          "end": 76.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "high",
+          "start": 76.27,
+          "end": 76.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 76.59,
+          "end": 77.09,
+          "confidence": 0.956
+        },
+        {
+          "word": "he",
+          "start": 77.55,
+          "end": 77.8,
+          "confidence": 0.907
+        },
+        {
+          "word": "said",
+          "start": 77.8,
+          "end": 78.3,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 15,
+      "text": "What if we fall?",
+      "speaker": "Speaker0",
+      "start": 79.16,
+      "duration": 1.29,
+      "words": [
+        {
+          "word": "what",
+          "start": 79.16,
+          "end": 79.39,
+          "confidence": 0.998
+        },
+        {
+          "word": "if",
+          "start": 79.39,
+          "end": 79.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "we",
+          "start": 79.72,
+          "end": 79.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "fall",
+          "start": 79.95,
+          "end": 80.45,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 16,
+      "text": "Harry said, We will not fall.",
+      "speaker": "Speaker1",
+      "start": 82.19,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "harry",
+          "start": 82.19,
+          "end": 82.69,
+          "confidence": 0.997
+        },
+        {
+          "word": "said",
+          "start": 82.75,
+          "end": 83.25,
+          "confidence": 0.786
+        },
+        {
+          "word": "we",
+          "start": 83.55,
+          "end": 83.8,
+          "confidence": 0.945
+        },
+        {
+          "word": "will",
+          "start": 83.8,
+          "end": 84.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "not",
+          "start": 84.19,
+          "end": 84.59,
+          "confidence": 1.0
+        },
+        {
+          "word": "fall",
+          "start": 84.59,
+          "end": 85.09,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.955
+    },
+    {
+      "id": 17,
+      "text": "Mom gave the kids a card game.",
+      "speaker": "Speaker0",
+      "start": 91.14,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "mom",
+          "start": 91.14,
+          "end": 91.54,
+          "confidence": 0.974
+        },
+        {
+          "word": "gave",
+          "start": 91.54,
+          "end": 91.78,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 91.78,
+          "end": 91.86,
+          "confidence": 1.0
+        },
+        {
+          "word": "kids",
+          "start": 91.86,
+          "end": 92.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 92.26,
+          "end": 92.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "card",
+          "start": 92.42,
+          "end": 92.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "game",
+          "start": 92.66,
+          "end": 93.16,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 18,
+      "text": "Oliver can go first, Emmy said.",
+      "speaker": "Speaker2",
+      "start": 102.27,
+      "duration": 2.57,
+      "words": [
+        {
+          "word": "oliver",
+          "start": 102.27,
+          "end": 102.77,
+          "confidence": 0.58
+        },
+        {
+          "word": "can",
+          "start": 102.83,
+          "end": 102.98,
+          "confidence": 0.996
+        },
+        {
+          "word": "go",
+          "start": 102.98,
+          "end": 103.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "first",
+          "start": 103.22,
+          "end": 103.72,
+          "confidence": 0.948
+        },
+        {
+          "word": "emmy",
+          "start": 103.94,
+          "end": 104.34,
+          "confidence": 0.694
+        },
+        {
+          "word": "said",
+          "start": 104.34,
+          "end": 104.84,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.868
+    },
+    {
+      "id": 19,
+      "text": "Oliver won the game.",
+      "speaker": "Speaker0",
+      "start": 111.22,
+      "duration": 1.55,
+      "words": [
+        {
+          "word": "oliver",
+          "start": 111.22,
+          "end": 111.72,
+          "confidence": 0.929
+        },
+        {
+          "word": "won",
+          "start": 111.86,
+          "end": 112.1,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 112.1,
+          "end": 112.27,
+          "confidence": 1.0
+        },
+        {
+          "word": "game",
+          "start": 112.27,
+          "end": 112.77,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 20,
+      "text": "That was fun, he said.",
+      "speaker": "Speaker3",
+      "start": 114.5,
+      "duration": 2.19,
+      "words": [
+        {
+          "word": "that",
+          "start": 114.5,
+          "end": 114.74,
+          "confidence": 0.765
+        },
+        {
+          "word": "was",
+          "start": 114.74,
+          "end": 115.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "fun",
+          "start": 115.06,
+          "end": 115.56,
+          "confidence": 0.969
+        },
+        {
+          "word": "he",
+          "start": 115.94,
+          "end": 116.19,
+          "confidence": 0.986
+        },
+        {
+          "word": "said",
+          "start": 116.19,
+          "end": 116.69,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.911
+    },
+    {
+      "id": 21,
+      "text": "A flight attendant brought drinks and a snack.",
+      "speaker": "Speaker0",
+      "start": 118.4,
+      "duration": 2.58,
+      "words": [
+        {
+          "word": "a",
+          "start": 118.4,
+          "end": 118.64,
+          "confidence": 0.996
+        },
+        {
+          "word": "flight",
+          "start": 118.64,
+          "end": 118.96,
+          "confidence": 0.999
+        },
+        {
+          "word": "attendant",
+          "start": 118.96,
+          "end": 119.44,
+          "confidence": 1.0
+        },
+        {
+          "word": "brought",
+          "start": 119.44,
+          "end": 119.76,
+          "confidence": 0.999
+        },
+        {
+          "word": "drinks",
+          "start": 119.76,
+          "end": 120.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 120.16,
+          "end": 120.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 120.32,
+          "end": 120.48,
+          "confidence": 0.999
+        },
+        {
+          "word": "snack",
+          "start": 120.48,
+          "end": 120.98,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 22,
+      "text": "Yum, said Oliver.",
+      "speaker": "Speaker0",
+      "start": 124.96,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "yum",
+          "start": 124.96,
+          "end": 125.46,
+          "confidence": 0.975
+        },
+        {
+          "word": "said",
+          "start": 126.0,
+          "end": 126.32,
+          "confidence": 0.997
+        },
+        {
+          "word": "oliver",
+          "start": 126.32,
+          "end": 126.82,
+          "confidence": 0.986
+        }
+      ],
+      "confidence": 0.975
+    },
+    {
+      "id": 23,
+      "text": "I love pretzels and juice.",
+      "speaker": "Speaker3",
+      "start": 129.2,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "i",
+          "start": 129.2,
+          "end": 129.6,
+          "confidence": 0.995
+        },
+        {
+          "word": "love",
+          "start": 129.6,
+          "end": 129.92,
+          "confidence": 0.997
+        },
+        {
+          "word": "pretzels",
+          "start": 129.92,
+          "end": 130.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 130.4,
+          "end": 130.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "juice",
+          "start": 130.64,
+          "end": 131.14,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 24,
+      "text": "The plane landed.",
+      "speaker": "Speaker0",
+      "start": 133.69,
+      "duration": 1.13,
+      "words": [
+        {
+          "word": "the",
+          "start": 133.69,
+          "end": 133.93,
+          "confidence": 0.66
+        },
+        {
+          "word": "plane",
+          "start": 133.93,
+          "end": 134.32,
+          "confidence": 0.999
+        },
+        {
+          "word": "landed",
+          "start": 134.32,
+          "end": 134.82,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.884
+    },
+    {
+      "id": 25,
+      "text": "Everyone got their luggage.",
+      "speaker": "Speaker0",
+      "start": 137.37,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "everyone",
+          "start": 137.37,
+          "end": 137.87,
+          "confidence": 0.915
+        },
+        {
+          "word": "got",
+          "start": 137.93,
+          "end": 138.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "their",
+          "start": 138.17,
+          "end": 138.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "luggage",
+          "start": 138.49,
+          "end": 138.99,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.978
+    },
+    {
+      "id": 26,
+      "text": "The flight attendant smiled at Oliver.",
+      "speaker": "Speaker0",
+      "start": 141.93,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "the",
+          "start": 141.93,
+          "end": 142.09,
+          "confidence": 0.99
+        },
+        {
+          "word": "flight",
+          "start": 142.09,
+          "end": 142.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "attendant",
+          "start": 142.41,
+          "end": 142.91,
+          "confidence": 0.679
+        },
+        {
+          "word": "smiled",
+          "start": 143.04,
+          "end": 143.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "at",
+          "start": 143.53,
+          "end": 143.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "oliver",
+          "start": 143.69,
+          "end": 144.19,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.945
+    },
+    {
+      "id": 27,
+      "text": "Would you like to meet the pilot?",
+      "speaker": "Speaker2",
+      "start": 147.84,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "would",
+          "start": 147.84,
+          "end": 148.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 148.08,
+          "end": 148.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "like",
+          "start": 148.24,
+          "end": 148.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 148.4,
+          "end": 148.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "meet",
+          "start": 148.56,
+          "end": 148.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 148.72,
+          "end": 148.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "pilot",
+          "start": 148.88,
+          "end": 149.38,
+          "confidence": 0.976
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 28,
+      "text": "She asked.",
+      "speaker": "Speaker0",
+      "start": 149.76,
+      "duration": 0.74,
+      "words": [
+        {
+          "word": "she",
+          "start": 149.76,
+          "end": 150.0,
+          "confidence": 0.99
+        },
+        {
+          "word": "asked",
+          "start": 150.0,
+          "end": 150.5,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.995
+    },
+    {
+      "id": 29,
+      "text": "Yes.",
+      "speaker": "Speaker0",
+      "start": 151.68,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "yes",
+          "start": 151.68,
+          "end": 152.18,
+          "confidence": 0.823
+        }
+      ],
+      "confidence": 0.823
+    },
+    {
+      "id": 30,
+      "text": "Oliver said.",
+      "speaker": "Speaker0",
+      "start": 152.72,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "oliver",
+          "start": 152.72,
+          "end": 153.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "said",
+          "start": 153.28,
+          "end": 153.78,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 31,
+      "text": "The pilot had a cool uniform.",
+      "speaker": "Speaker0",
+      "start": 155.52,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "the",
+          "start": 155.52,
+          "end": 155.76,
+          "confidence": 0.952
+        },
+        {
+          "word": "pilot",
+          "start": 155.76,
+          "end": 156.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "had",
+          "start": 156.24,
+          "end": 156.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 156.48,
+          "end": 156.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "cool",
+          "start": 156.64,
+          "end": 157.04,
+          "confidence": 1.0
+        },
+        {
+          "word": "uniform",
+          "start": 157.04,
+          "end": 157.54,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.991
+    },
+    {
+      "id": 32,
+      "text": "He showed Oliver the cockpit.",
+      "speaker": "Speaker0",
+      "start": 159.04,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "he",
+          "start": 159.04,
+          "end": 159.28,
+          "confidence": 0.985
+        },
+        {
+          "word": "showed",
+          "start": 159.28,
+          "end": 159.6,
+          "confidence": 1.0
+        },
+        {
+          "word": "oliver",
+          "start": 159.6,
+          "end": 160.0,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 160.0,
+          "end": 160.16,
+          "confidence": 1.0
+        },
+        {
+          "word": "cockpit",
+          "start": 160.16,
+          "end": 160.66,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.996
+    },
+    {
+      "id": 33,
+      "text": "Oliver saw buttons and lights and maps.",
+      "speaker": "Speaker0",
+      "start": 162.91,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "oliver",
+          "start": 162.91,
+          "end": 163.41,
+          "confidence": 0.998
+        },
+        {
+          "word": "saw",
+          "start": 163.47,
+          "end": 163.78,
+          "confidence": 0.997
+        },
+        {
+          "word": "buttons",
+          "start": 163.78,
+          "end": 164.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 164.34,
+          "end": 164.67,
+          "confidence": 0.874
+        },
+        {
+          "word": "lights",
+          "start": 164.67,
+          "end": 165.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "and",
+          "start": 165.06,
+          "end": 165.39,
+          "confidence": 0.996
+        },
+        {
+          "word": "maps",
+          "start": 165.39,
+          "end": 165.89,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.98
+    },
+    {
+      "id": 34,
+      "text": "Wow.",
+      "speaker": "Speaker3",
+      "start": 167.94,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "wow",
+          "start": 167.94,
+          "end": 168.44,
+          "confidence": 0.808
+        }
+      ],
+      "confidence": 0.808
+    },
+    {
+      "id": 35,
+      "text": "Oliver said.",
+      "speaker": "Speaker0",
+      "start": 169.22,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "oliver",
+          "start": 169.22,
+          "end": 169.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "said",
+          "start": 169.78,
+          "end": 170.28,
+          "confidence": 0.987
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 36,
+      "text": "Does flying still seem scary, Oliver?",
+      "speaker": "Speaker1",
+      "start": 173.31,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "does",
+          "start": 173.31,
+          "end": 173.71,
+          "confidence": 0.979
+        },
+        {
+          "word": "flying",
+          "start": 173.71,
+          "end": 174.19,
+          "confidence": 0.999
+        },
+        {
+          "word": "still",
+          "start": 174.19,
+          "end": 174.59,
+          "confidence": 0.999
+        },
+        {
+          "word": "seem",
+          "start": 174.59,
+          "end": 174.82,
+          "confidence": 0.974
+        },
+        {
+          "word": "scary",
+          "start": 174.82,
+          "end": 175.31,
+          "confidence": 0.95
+        },
+        {
+          "word": "oliver",
+          "start": 175.31,
+          "end": 175.81,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 37,
+      "text": "Dad asked.",
+      "speaker": "Speaker0",
+      "start": 176.19,
+      "duration": 0.81,
+      "words": [
+        {
+          "word": "dad",
+          "start": 176.19,
+          "end": 176.5,
+          "confidence": 0.998
+        },
+        {
+          "word": "asked",
+          "start": 176.5,
+          "end": 177.0,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 38,
+      "text": "Scary?",
+      "speaker": "Speaker0",
+      "start": 178.69,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "scary",
+          "start": 178.69,
+          "end": 179.19,
+          "confidence": 0.924
+        }
+      ],
+      "confidence": 0.924
+    },
+    {
+      "id": 39,
+      "text": "Oliver laughed.",
+      "speaker": "Speaker0",
+      "start": 180.05,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "oliver",
+          "start": 180.05,
+          "end": 180.55,
+          "confidence": 0.981
+        },
+        {
+          "word": "laughed",
+          "start": 180.69,
+          "end": 181.19,
+          "confidence": 0.991
+        }
+      ],
+      "confidence": 0.986
+    },
+    {
+      "id": 40,
+      "text": "Flying is not scary, Dad.",
+      "speaker": "Speaker3",
+      "start": 182.21,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "flying",
+          "start": 182.21,
+          "end": 182.61,
+          "confidence": 0.933
+        },
+        {
+          "word": "is",
+          "start": 182.61,
+          "end": 182.85,
+          "confidence": 0.999
+        },
+        {
+          "word": "not",
+          "start": 182.85,
+          "end": 183.25,
+          "confidence": 0.999
+        },
+        {
+          "word": "scary",
+          "start": 183.25,
+          "end": 183.75,
+          "confidence": 0.931
+        },
+        {
+          "word": "dad",
+          "start": 183.81,
+          "end": 184.31,
+          "confidence": 0.739
+        }
+      ],
+      "confidence": 0.92
+    },
+    {
+      "id": 41,
+      "text": "Flying is awesome.",
+      "speaker": "Speaker3",
+      "start": 185.81,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "flying",
+          "start": 185.81,
+          "end": 186.21,
+          "confidence": 0.991
+        },
+        {
+          "word": "is",
+          "start": 186.21,
+          "end": 186.45,
+          "confidence": 0.999
+        },
+        {
+          "word": "awesome",
+          "start": 186.45,
+          "end": 186.95,
+          "confidence": 0.988
+        }
+      ],
+      "confidence": 0.993
     }
   ],
-  "fetchedAt": "2026-07-31T07:13:24.653Z",
+  "fetchedAt": "2026-08-03T11:04:39.727236+00:00",
   "videoId": "Rlmms56uisw",
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-31T07:18:48.658Z",
+    "alignedAt": "2026-08-03T11:04:39.727258+00:00",
     "dgWordCount": 206,
-    "matchedSegments": 12,
-    "totalDuration": 187.03
+    "dgUtteranceCount": 50,
+    "matchedSegments": 50,
+    "totalDuration": 186.95
   },
   "repairedAt": "2026-07-31T07:13:24.654Z",
   "repairInfo": "Created from W36 shadowing.js + Deepgram alignment",
   "formatted": true,
-  "formattedAt": "2026-07-31T07:15:28.809Z"
+  "formattedAt": "2026-07-31T07:15:28.809Z",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2",
+    "3": "Speaker3"
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }

@@ -1,454 +1,1914 @@
 {
-  "text": "Little bird, little bird. Can you clap? No, I can't. No, I can't. I can't clap. Little bird, little bird. Can you fly? Yes, I can. Yes, I can. I can fly. Elephant, elephant. Can you fly? No, I can't. No, I can't. I can't fly. Elephant, elephant. Can you stomp? Yes, I can. Yes, I can. I can stomp. Little fish, little fish. Can you stomp? No, I can't. No, I can't. I can't stomp. Little fish, little fish. Can you swim? Yes, I can. Yes, I can. I can swim. Gorilla, gorilla. Can you swim? No, I can't. No, I can't. I can't swim. Gorilla, gorilla. Can you climb? Yes, I can. Yes, I can. I can climb. Buffalo, buffalo. Can you climb? No, I can't. No, I can't. I can't climb. Buffalo, buffalo. Can you run? Yes, I can. Yes, I can. I can run. Boys and girls, boys and girls. Can you sing? Yes, we can. Yes, we can. We can sing. Boys and girls, boys and girls. Can you dance? Yes, we can. Yes, we can. We can dance. We can sing, we can dance. Yes, we can. We can sing, we can dance. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes, we can.",
+  "text": "Little bird little bird can you clap? No, I can't no, I can't I can't clap. Little bird, little bird, can you fly? Yes, I can, yes, I can, I can fly? Elephant, elephant, can you fly? No, I can't, no, I can't, I can't fly. Elephant, elephant, can you stomp? Yes, I can, yes, I can, I can stomp? Little fish, little fish, can you stomp? No, I can't, no, I can't, I can't stomp. Little fish, little fish, can you swim? Yes, I can. Yes, I can. I can swim. Gorilla, gorilla, can you swim? No, I can't, no, I can't, I can't swim. Gorilla, gorilla, can you climb? Yes, I can. Yes, I can. I can climb. Buffalo, buffalo, can you climb? No, I can't, no, I can't, I can't climb. Buffalo, buffalo, can you run? Yes, I can, yes, I can, I can run? Boys and girls, boys and girls, can you sing? Yes, we can, yes, we can, we can sing. Boys and girls, boys and girls, can you dance? Yes, we can, yes, we can. We can dance, we can sing, we can dance. Yes, we can, we can sing, we can dance. Yes, we can. Yes, we can. Yes, we can. Yes, we can. Yes we can, yes we can, yes we can, yes we can, yes we can, yes we can. Walking in the jungle, walking in the jungle, we're not afraid. The mouse went down. Hickory dickory dock, tick tock, tick tock, tick tock, tick tock.",
   "segments": [
     {
       "id": 1,
-      "text": "Little bird, little bird.",
+      "text": "Little bird little bird can you clap?",
+      "speaker": "Speaker0",
       "start": 3.84,
-      "duration": 3.6
+      "duration": 4.74,
+      "words": [
+        {
+          "word": "little",
+          "start": 3.84,
+          "end": 4.24,
+          "confidence": 0.869
+        },
+        {
+          "word": "bird",
+          "start": 4.24,
+          "end": 4.74,
+          "confidence": 0.998
+        },
+        {
+          "word": "little",
+          "start": 5.28,
+          "end": 5.76,
+          "confidence": 0.868
+        },
+        {
+          "word": "bird",
+          "start": 5.76,
+          "end": 6.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 6.96,
+          "end": 7.36,
+          "confidence": 0.679
+        },
+        {
+          "word": "you",
+          "start": 7.36,
+          "end": 7.86,
+          "confidence": 0.999
+        },
+        {
+          "word": "clap",
+          "start": 8.08,
+          "end": 8.58,
+          "confidence": 0.989
+        }
+      ],
+      "confidence": 0.934
     },
     {
       "id": 2,
-      "text": "Can you clap?",
-      "start": 6.96,
-      "duration": 3.2
+      "text": "No, I can't no, I can't",
+      "speaker": "Speaker1",
+      "start": 9.76,
+      "duration": 2.66,
+      "words": [
+        {
+          "word": "no",
+          "start": 9.76,
+          "end": 10.16,
+          "confidence": 0.728
+        },
+        {
+          "word": "i",
+          "start": 10.16,
+          "end": 10.48,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 10.48,
+          "end": 10.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "no",
+          "start": 11.36,
+          "end": 11.76,
+          "confidence": 0.802
+        },
+        {
+          "word": "i",
+          "start": 11.76,
+          "end": 11.92,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 11.92,
+          "end": 12.42,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.909
     },
     {
       "id": 3,
-      "text": "No, I can't.",
-      "start": 9.76,
-      "duration": 1.92
+      "text": "I can't clap. Little bird, little bird, can you fly?",
+      "speaker": "Speaker1",
+      "start": 12.88,
+      "duration": 8.13,
+      "words": [
+        {
+          "word": "i",
+          "start": 12.88,
+          "end": 13.38,
+          "confidence": 0.932
+        },
+        {
+          "word": "can't",
+          "start": 13.52,
+          "end": 14.02,
+          "confidence": 1.0
+        },
+        {
+          "word": "clap",
+          "start": 16.02,
+          "end": 16.11,
+          "confidence": 0.994
+        },
+        {
+          "word": "little",
+          "start": 16.11,
+          "end": 16.61,
+          "confidence": 0.86
+        },
+        {
+          "word": "bird",
+          "start": 16.66,
+          "end": 17.16,
+          "confidence": 0.89
+        },
+        {
+          "word": "little",
+          "start": 17.62,
+          "end": 18.12,
+          "confidence": 0.999
+        },
+        {
+          "word": "bird",
+          "start": 18.27,
+          "end": 18.77,
+          "confidence": 0.993
+        },
+        {
+          "word": "can",
+          "start": 19.39,
+          "end": 19.79,
+          "confidence": 0.984
+        },
+        {
+          "word": "you",
+          "start": 19.79,
+          "end": 20.29,
+          "confidence": 1.0
+        },
+        {
+          "word": "fly",
+          "start": 20.51,
+          "end": 21.01,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.966
     },
     {
       "id": 4,
-      "text": "No, I can't.",
-      "start": 11.36,
-      "duration": 2.21
+      "text": "Yes, I can, yes, I can, I can fly?",
+      "speaker": "Speaker1",
+      "start": 22.11,
+      "duration": 5.05,
+      "words": [
+        {
+          "word": "yes",
+          "start": 22.11,
+          "end": 22.61,
+          "confidence": 0.763
+        },
+        {
+          "word": "i",
+          "start": 22.66,
+          "end": 22.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 22.98,
+          "end": 23.48,
+          "confidence": 0.965
+        },
+        {
+          "word": "yes",
+          "start": 23.7,
+          "end": 24.19,
+          "confidence": 0.89
+        },
+        {
+          "word": "i",
+          "start": 24.19,
+          "end": 24.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 24.51,
+          "end": 25.01,
+          "confidence": 0.981
+        },
+        {
+          "word": "i",
+          "start": 25.7,
+          "end": 26.2,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 26.27,
+          "end": 26.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "fly",
+          "start": 26.66,
+          "end": 27.16,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.933
     },
     {
       "id": 5,
-      "text": "I can't clap.",
-      "start": 13.09,
-      "duration": 3.54
+      "text": "Elephant, elephant, can you fly?",
+      "speaker": "Speaker2",
+      "start": 31.72,
+      "duration": 4.82,
+      "words": [
+        {
+          "word": "elephant",
+          "start": 31.72,
+          "end": 32.22,
+          "confidence": 0.955
+        },
+        {
+          "word": "elephant",
+          "start": 33.08,
+          "end": 33.58,
+          "confidence": 0.936
+        },
+        {
+          "word": "can",
+          "start": 34.68,
+          "end": 35.18,
+          "confidence": 0.988
+        },
+        {
+          "word": "you",
+          "start": 35.24,
+          "end": 35.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "fly",
+          "start": 36.04,
+          "end": 36.54,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.955
     },
     {
       "id": 6,
-      "text": "Little bird, little bird.",
-      "start": 16.13,
-      "duration": 3.62
+      "text": "No, I can't, no, I can't, I can't fly.",
+      "speaker": "Speaker0",
+      "start": 37.72,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "no",
+          "start": 37.72,
+          "end": 38.12,
+          "confidence": 0.89
+        },
+        {
+          "word": "i",
+          "start": 38.12,
+          "end": 38.36,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 38.36,
+          "end": 38.86,
+          "confidence": 0.953
+        },
+        {
+          "word": "no",
+          "start": 39.32,
+          "end": 39.72,
+          "confidence": 0.928
+        },
+        {
+          "word": "i",
+          "start": 39.72,
+          "end": 39.96,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 39.96,
+          "end": 40.46,
+          "confidence": 0.989
+        },
+        {
+          "word": "i",
+          "start": 40.92,
+          "end": 41.42,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 41.56,
+          "end": 42.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "fly",
+          "start": 42.2,
+          "end": 42.7,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.948
     },
     {
       "id": 7,
-      "text": "Can you fly?",
-      "start": 19.25,
-      "duration": 3.38
+      "text": "Elephant, elephant, can you stomp?",
+      "speaker": "Speaker2",
+      "start": 44.13,
+      "duration": 4.82,
+      "words": [
+        {
+          "word": "elephant",
+          "start": 44.13,
+          "end": 44.63,
+          "confidence": 0.944
+        },
+        {
+          "word": "elephant",
+          "start": 45.49,
+          "end": 45.99,
+          "confidence": 0.863
+        },
+        {
+          "word": "can",
+          "start": 47.25,
+          "end": 47.57,
+          "confidence": 0.993
+        },
+        {
+          "word": "you",
+          "start": 47.57,
+          "end": 48.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "stomp",
+          "start": 48.45,
+          "end": 48.95,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.944
     },
     {
       "id": 8,
-      "text": "Yes, I can.",
-      "start": 22.13,
-      "duration": 2.02
+      "text": "Yes, I can, yes, I can, I can stomp?",
+      "speaker": "Speaker0",
+      "start": 50.05,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "yes",
+          "start": 50.05,
+          "end": 50.53,
+          "confidence": 0.841
+        },
+        {
+          "word": "i",
+          "start": 50.53,
+          "end": 50.77,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 50.77,
+          "end": 51.27,
+          "confidence": 0.886
+        },
+        {
+          "word": "yes",
+          "start": 51.66,
+          "end": 52.13,
+          "confidence": 0.906
+        },
+        {
+          "word": "i",
+          "start": 52.13,
+          "end": 52.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 52.38,
+          "end": 52.88,
+          "confidence": 0.966
+        },
+        {
+          "word": "i",
+          "start": 53.57,
+          "end": 54.07,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 54.13,
+          "end": 54.53,
+          "confidence": 1.0
+        },
+        {
+          "word": "stomp",
+          "start": 54.53,
+          "end": 55.03,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.909
     },
     {
       "id": 9,
-      "text": "Yes, I can.",
-      "start": 23.65,
-      "duration": 2.64
+      "text": "Little fish, little fish, can you stomp?",
+      "speaker": "Speaker0",
+      "start": 59.61,
+      "duration": 4.74,
+      "words": [
+        {
+          "word": "little",
+          "start": 59.61,
+          "end": 60.01,
+          "confidence": 0.938
+        },
+        {
+          "word": "fish",
+          "start": 60.01,
+          "end": 60.51,
+          "confidence": 0.96
+        },
+        {
+          "word": "little",
+          "start": 60.97,
+          "end": 61.47,
+          "confidence": 0.999
+        },
+        {
+          "word": "fish",
+          "start": 61.53,
+          "end": 62.03,
+          "confidence": 0.985
+        },
+        {
+          "word": "can",
+          "start": 62.49,
+          "end": 62.99,
+          "confidence": 0.996
+        },
+        {
+          "word": "you",
+          "start": 63.13,
+          "end": 63.63,
+          "confidence": 1.0
+        },
+        {
+          "word": "stomp",
+          "start": 63.85,
+          "end": 64.35,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.949
     },
     {
       "id": 10,
-      "text": "I can fly.",
-      "start": 26.05,
-      "duration": 6.24
+      "text": "No, I can't, no, I can't, I can't stomp.",
+      "speaker": "Speaker1",
+      "start": 65.53,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "no",
+          "start": 65.53,
+          "end": 66.01,
+          "confidence": 0.762
+        },
+        {
+          "word": "i",
+          "start": 66.01,
+          "end": 66.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 66.17,
+          "end": 66.67,
+          "confidence": 0.93
+        },
+        {
+          "word": "no",
+          "start": 67.13,
+          "end": 67.53,
+          "confidence": 0.918
+        },
+        {
+          "word": "i",
+          "start": 67.53,
+          "end": 67.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 67.69,
+          "end": 68.19,
+          "confidence": 0.987
+        },
+        {
+          "word": "i",
+          "start": 68.73,
+          "end": 69.23,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 69.29,
+          "end": 69.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "stomp",
+          "start": 70.01,
+          "end": 70.51,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.897
     },
     {
       "id": 11,
-      "text": "Elephant, elephant.",
-      "start": 31.79,
-      "duration": 3.38
+      "text": "Little fish, little fish, can you swim?",
+      "speaker": "Speaker0",
+      "start": 72.02,
+      "duration": 4.73,
+      "words": [
+        {
+          "word": "little",
+          "start": 72.02,
+          "end": 72.41,
+          "confidence": 0.969
+        },
+        {
+          "word": "fish",
+          "start": 72.41,
+          "end": 72.91,
+          "confidence": 0.917
+        },
+        {
+          "word": "little",
+          "start": 73.38,
+          "end": 73.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "fish",
+          "start": 74.02,
+          "end": 74.52,
+          "confidence": 0.983
+        },
+        {
+          "word": "can",
+          "start": 74.97,
+          "end": 75.45,
+          "confidence": 0.982
+        },
+        {
+          "word": "you",
+          "start": 75.45,
+          "end": 75.95,
+          "confidence": 0.999
+        },
+        {
+          "word": "swim",
+          "start": 76.25,
+          "end": 76.75,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.943
     },
     {
       "id": 12,
-      "text": "Can you fly?",
-      "start": 34.67,
-      "duration": 3.52
+      "text": "Yes, I can. Yes, I can.",
+      "speaker": "Speaker1",
+      "start": 77.85,
+      "duration": 2.9,
+      "words": [
+        {
+          "word": "yes",
+          "start": 77.85,
+          "end": 78.33,
+          "confidence": 0.982
+        },
+        {
+          "word": "i",
+          "start": 78.33,
+          "end": 78.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 78.73,
+          "end": 79.23,
+          "confidence": 0.856
+        },
+        {
+          "word": "yes",
+          "start": 79.53,
+          "end": 79.94,
+          "confidence": 0.996
+        },
+        {
+          "word": "i",
+          "start": 79.94,
+          "end": 80.25,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 80.25,
+          "end": 80.75,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.971
     },
     {
       "id": 13,
-      "text": "No, I can't.",
-      "start": 37.71,
-      "duration": 2.08
+      "text": "I can swim.",
+      "speaker": "Speaker1",
+      "start": 81.45,
+      "duration": 1.46,
+      "words": [
+        {
+          "word": "i",
+          "start": 81.45,
+          "end": 81.95,
+          "confidence": 0.997
+        },
+        {
+          "word": "can",
+          "start": 82.02,
+          "end": 82.41,
+          "confidence": 0.999
+        },
+        {
+          "word": "swim",
+          "start": 82.41,
+          "end": 82.91,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 14,
-      "text": "No, I can't.",
-      "start": 39.31,
-      "duration": 2.02
+      "text": "Gorilla, gorilla, can you swim?",
+      "speaker": "Speaker2",
+      "start": 87.22,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "gorilla",
+          "start": 87.22,
+          "end": 87.72,
+          "confidence": 0.892
+        },
+        {
+          "word": "gorilla",
+          "start": 88.58,
+          "end": 89.08,
+          "confidence": 0.966
+        },
+        {
+          "word": "can",
+          "start": 90.42,
+          "end": 90.92,
+          "confidence": 0.982
+        },
+        {
+          "word": "you",
+          "start": 90.98,
+          "end": 91.48,
+          "confidence": 0.998
+        },
+        {
+          "word": "swim",
+          "start": 91.7,
+          "end": 92.2,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.892
     },
     {
       "id": 15,
-      "text": "I can't fly.",
-      "start": 40.83,
-      "duration": 3.84
+      "text": "No, I can't, no, I can't, I can't swim.",
+      "speaker": "Speaker0",
+      "start": 93.46,
+      "duration": 4.9,
+      "words": [
+        {
+          "word": "no",
+          "start": 93.46,
+          "end": 93.86,
+          "confidence": 0.825
+        },
+        {
+          "word": "i",
+          "start": 93.86,
+          "end": 94.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 94.1,
+          "end": 94.6,
+          "confidence": 0.903
+        },
+        {
+          "word": "no",
+          "start": 94.98,
+          "end": 95.46,
+          "confidence": 0.918
+        },
+        {
+          "word": "i",
+          "start": 95.46,
+          "end": 95.62,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 95.62,
+          "end": 96.12,
+          "confidence": 0.968
+        },
+        {
+          "word": "i",
+          "start": 96.58,
+          "end": 97.08,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 97.3,
+          "end": 97.8,
+          "confidence": 0.982
+        },
+        {
+          "word": "swim",
+          "start": 97.86,
+          "end": 98.36,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.909
     },
     {
       "id": 16,
-      "text": "Elephant, elephant.",
-      "start": 44.17,
-      "duration": 3.36
+      "text": "Gorilla, gorilla, can you climb?",
+      "speaker": "Speaker0",
+      "start": 99.59,
+      "duration": 5.14,
+      "words": [
+        {
+          "word": "gorilla",
+          "start": 99.59,
+          "end": 100.09,
+          "confidence": 0.859
+        },
+        {
+          "word": "gorilla",
+          "start": 101.11,
+          "end": 101.61,
+          "confidence": 0.884
+        },
+        {
+          "word": "can",
+          "start": 102.94,
+          "end": 103.27,
+          "confidence": 0.945
+        },
+        {
+          "word": "you",
+          "start": 103.27,
+          "end": 103.77,
+          "confidence": 0.999
+        },
+        {
+          "word": "climb",
+          "start": 104.23,
+          "end": 104.73,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.859
     },
     {
       "id": 17,
-      "text": "Can you stomp?",
-      "start": 47.21,
-      "duration": 3.36
+      "text": "Yes, I can. Yes, I can.",
+      "speaker": "Speaker0",
+      "start": 105.75,
+      "duration": 2.81,
+      "words": [
+        {
+          "word": "yes",
+          "start": 105.75,
+          "end": 106.23,
+          "confidence": 0.778
+        },
+        {
+          "word": "i",
+          "start": 106.23,
+          "end": 106.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 106.55,
+          "end": 107.05,
+          "confidence": 0.923
+        },
+        {
+          "word": "yes",
+          "start": 107.34,
+          "end": 107.83,
+          "confidence": 0.992
+        },
+        {
+          "word": "i",
+          "start": 107.83,
+          "end": 108.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 108.06,
+          "end": 108.56,
+          "confidence": 0.983
+        }
+      ],
+      "confidence": 0.946
     },
     {
       "id": 18,
-      "text": "Yes, I can.",
-      "start": 50.09,
-      "duration": 2
+      "text": "I can climb.",
+      "speaker": "Speaker0",
+      "start": 109.34,
+      "duration": 1.47,
+      "words": [
+        {
+          "word": "i",
+          "start": 109.34,
+          "end": 109.84,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 109.91,
+          "end": 110.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "climb",
+          "start": 110.31,
+          "end": 110.81,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.998
     },
     {
       "id": 19,
-      "text": "Yes, I can.",
-      "start": 51.69,
-      "duration": 2.42
+      "text": "Buffalo, buffalo, can you climb?",
+      "speaker": "Speaker0",
+      "start": 115.59,
+      "duration": 4.5,
+      "words": [
+        {
+          "word": "buffalo",
+          "start": 115.59,
+          "end": 116.09,
+          "confidence": 0.943
+        },
+        {
+          "word": "buffalo",
+          "start": 116.71,
+          "end": 117.21,
+          "confidence": 0.933
+        },
+        {
+          "word": "can",
+          "start": 118.31,
+          "end": 118.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 118.87,
+          "end": 119.37,
+          "confidence": 1.0
+        },
+        {
+          "word": "climb",
+          "start": 119.59,
+          "end": 120.09,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.943
     },
     {
       "id": 20,
-      "text": "I can stomp.",
-      "start": 53.61,
-      "duration": 6.43
+      "text": "No, I can't, no, I can't, I can't climb.",
+      "speaker": "Speaker1",
+      "start": 121.27,
+      "duration": 5.01,
+      "words": [
+        {
+          "word": "no",
+          "start": 121.27,
+          "end": 121.67,
+          "confidence": 0.92
+        },
+        {
+          "word": "i",
+          "start": 121.67,
+          "end": 121.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 121.91,
+          "end": 122.41,
+          "confidence": 0.97
+        },
+        {
+          "word": "no",
+          "start": 122.79,
+          "end": 123.19,
+          "confidence": 0.942
+        },
+        {
+          "word": "i",
+          "start": 123.19,
+          "end": 123.43,
+          "confidence": 0.999
+        },
+        {
+          "word": "can't",
+          "start": 123.43,
+          "end": 123.93,
+          "confidence": 0.994
+        },
+        {
+          "word": "i",
+          "start": 124.5,
+          "end": 125.0,
+          "confidence": 1.0
+        },
+        {
+          "word": "can't",
+          "start": 125.06,
+          "end": 125.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "climb",
+          "start": 125.78,
+          "end": 126.28,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.963
     },
     {
       "id": 21,
-      "text": "Little fish, little fish.",
-      "start": 59.56,
-      "duration": 3.38
+      "text": "Buffalo, buffalo, can you run?",
+      "speaker": "Speaker0",
+      "start": 127.55,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "buffalo",
+          "start": 127.55,
+          "end": 128.04,
+          "confidence": 0.971
+        },
+        {
+          "word": "buffalo",
+          "start": 128.99,
+          "end": 129.49,
+          "confidence": 0.904
+        },
+        {
+          "word": "can",
+          "start": 130.66,
+          "end": 131.16,
+          "confidence": 0.995
+        },
+        {
+          "word": "you",
+          "start": 131.22,
+          "end": 131.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "run",
+          "start": 132.03,
+          "end": 132.53,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.971
     },
     {
       "id": 22,
-      "text": "Can you stomp?",
-      "start": 62.44,
-      "duration": 3.52
+      "text": "Yes, I can, yes, I can, I can run?",
+      "speaker": "Speaker1",
+      "start": 133.62,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "yes",
+          "start": 133.62,
+          "end": 134.1,
+          "confidence": 0.988
+        },
+        {
+          "word": "i",
+          "start": 134.1,
+          "end": 134.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 134.43,
+          "end": 134.93,
+          "confidence": 0.941
+        },
+        {
+          "word": "yes",
+          "start": 135.22,
+          "end": 135.71,
+          "confidence": 0.987
+        },
+        {
+          "word": "i",
+          "start": 135.71,
+          "end": 135.94,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 135.94,
+          "end": 136.44,
+          "confidence": 0.956
+        },
+        {
+          "word": "i",
+          "start": 137.22,
+          "end": 137.72,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 137.78,
+          "end": 138.1,
+          "confidence": 1.0
+        },
+        {
+          "word": "run",
+          "start": 138.1,
+          "end": 138.6,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 23,
-      "text": "No, I can't.",
-      "start": 65.56,
-      "duration": 1.92
+      "text": "Boys and girls, boys and girls, can you sing?",
+      "speaker": "Speaker2",
+      "start": 143.08,
+      "duration": 4.9,
+      "words": [
+        {
+          "word": "boys",
+          "start": 143.08,
+          "end": 143.4,
+          "confidence": 0.921
+        },
+        {
+          "word": "and",
+          "start": 143.4,
+          "end": 143.72,
+          "confidence": 1.0
+        },
+        {
+          "word": "girls",
+          "start": 143.72,
+          "end": 144.22,
+          "confidence": 0.998
+        },
+        {
+          "word": "boys",
+          "start": 144.52,
+          "end": 144.92,
+          "confidence": 0.956
+        },
+        {
+          "word": "and",
+          "start": 144.92,
+          "end": 145.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "girls",
+          "start": 145.24,
+          "end": 145.74,
+          "confidence": 0.974
+        },
+        {
+          "word": "can",
+          "start": 146.04,
+          "end": 146.54,
+          "confidence": 0.894
+        },
+        {
+          "word": "you",
+          "start": 146.76,
+          "end": 147.26,
+          "confidence": 0.999
+        },
+        {
+          "word": "sing",
+          "start": 147.48,
+          "end": 147.98,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.973
     },
     {
       "id": 24,
-      "text": "No, I can't.",
-      "start": 67.08,
-      "duration": 2.3
+      "text": "Yes, we can, yes, we can, we can sing.",
+      "speaker": "Speaker3",
+      "start": 149.08,
+      "duration": 5.06,
+      "words": [
+        {
+          "word": "yes",
+          "start": 149.08,
+          "end": 149.56,
+          "confidence": 0.884
+        },
+        {
+          "word": "we",
+          "start": 149.56,
+          "end": 149.88,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 149.88,
+          "end": 150.38,
+          "confidence": 0.922
+        },
+        {
+          "word": "yes",
+          "start": 150.68,
+          "end": 151.0,
+          "confidence": 0.811
+        },
+        {
+          "word": "we",
+          "start": 151.0,
+          "end": 151.4,
+          "confidence": 0.997
+        },
+        {
+          "word": "can",
+          "start": 151.4,
+          "end": 151.9,
+          "confidence": 0.959
+        },
+        {
+          "word": "we",
+          "start": 152.76,
+          "end": 153.16,
+          "confidence": 0.994
+        },
+        {
+          "word": "can",
+          "start": 153.16,
+          "end": 153.64,
+          "confidence": 0.999
+        },
+        {
+          "word": "sing",
+          "start": 153.64,
+          "end": 154.14,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.935
     },
     {
       "id": 25,
-      "text": "I can't stomp.",
-      "start": 68.9,
-      "duration": 3.52
+      "text": "Boys and girls, boys and girls, can you dance?",
+      "speaker": "Speaker2",
+      "start": 155.5,
+      "duration": 4.97,
+      "words": [
+        {
+          "word": "boys",
+          "start": 155.5,
+          "end": 155.9,
+          "confidence": 0.961
+        },
+        {
+          "word": "and",
+          "start": 155.9,
+          "end": 156.22,
+          "confidence": 1.0
+        },
+        {
+          "word": "girls",
+          "start": 156.22,
+          "end": 156.72,
+          "confidence": 0.992
+        },
+        {
+          "word": "boys",
+          "start": 156.94,
+          "end": 157.41,
+          "confidence": 0.992
+        },
+        {
+          "word": "and",
+          "start": 157.41,
+          "end": 157.66,
+          "confidence": 1.0
+        },
+        {
+          "word": "girls",
+          "start": 157.66,
+          "end": 158.16,
+          "confidence": 0.95
+        },
+        {
+          "word": "can",
+          "start": 158.53,
+          "end": 159.03,
+          "confidence": 0.973
+        },
+        {
+          "word": "you",
+          "start": 159.18,
+          "end": 159.68,
+          "confidence": 0.999
+        },
+        {
+          "word": "dance",
+          "start": 159.97,
+          "end": 160.47,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.983
     },
     {
       "id": 26,
-      "text": "Little fish, little fish.",
-      "start": 71.94,
-      "duration": 3.46
+      "text": "Yes, we can, yes, we can.",
+      "speaker": "Speaker3",
+      "start": 161.5,
+      "duration": 2.81,
+      "words": [
+        {
+          "word": "yes",
+          "start": 161.5,
+          "end": 161.9,
+          "confidence": 0.785
+        },
+        {
+          "word": "we",
+          "start": 161.9,
+          "end": 162.22,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 162.22,
+          "end": 162.72,
+          "confidence": 0.939
+        },
+        {
+          "word": "yes",
+          "start": 163.01,
+          "end": 163.41,
+          "confidence": 0.816
+        },
+        {
+          "word": "we",
+          "start": 163.41,
+          "end": 163.81,
+          "confidence": 1.0
+        },
+        {
+          "word": "can",
+          "start": 163.81,
+          "end": 164.31,
+          "confidence": 0.858
+        }
+      ],
+      "confidence": 0.908
     },
     {
       "id": 27,
-      "text": "Can you swim?",
-      "start": 74.9,
-      "duration": 3.52
+      "text": "We can dance, we can sing, we can dance.",
+      "speaker": "Speaker3",
+      "start": 165.01,
+      "duration": 4.5,
+      "words": [
+        {
+          "word": "we",
+          "start": 165.01,
+          "end": 165.51,
+          "confidence": 0.996
+        },
+        {
+          "word": "can",
+          "start": 165.66,
+          "end": 165.97,
+          "confidence": 0.994
+        },
+        {
+          "word": "dance",
+          "start": 165.97,
+          "end": 166.47,
+          "confidence": 0.998
+        },
+        {
+          "word": "we",
+          "start": 166.85,
+          "end": 167.18,
+          "confidence": 0.995
+        },
+        {
+          "word": "can",
+          "start": 167.18,
+          "end": 167.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "sing",
+          "start": 167.66,
+          "end": 168.16,
+          "confidence": 0.999
+        },
+        {
+          "word": "we",
+          "start": 168.46,
+          "end": 168.69,
+          "confidence": 0.976
+        },
+        {
+          "word": "can",
+          "start": 168.69,
+          "end": 169.01,
+          "confidence": 0.998
+        },
+        {
+          "word": "dance",
+          "start": 169.01,
+          "end": 169.51,
+          "confidence": 0.795
+        }
+      ],
+      "confidence": 0.996
     },
     {
       "id": 28,
-      "text": "Yes, I can.",
-      "start": 77.94,
-      "duration": 2
+      "text": "Yes, we can, we can sing, we can dance.",
+      "speaker": "Speaker3",
+      "start": 170.91,
+      "duration": 4.98,
+      "words": [
+        {
+          "word": "yes",
+          "start": 170.91,
+          "end": 171.41,
+          "confidence": 0.829
+        },
+        {
+          "word": "we",
+          "start": 171.87,
+          "end": 172.27,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 172.27,
+          "end": 172.77,
+          "confidence": 0.863
+        },
+        {
+          "word": "we",
+          "start": 173.07,
+          "end": 173.31,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 173.31,
+          "end": 173.71,
+          "confidence": 0.999
+        },
+        {
+          "word": "sing",
+          "start": 173.71,
+          "end": 174.21,
+          "confidence": 0.989
+        },
+        {
+          "word": "we",
+          "start": 174.67,
+          "end": 174.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 174.99,
+          "end": 175.39,
+          "confidence": 1.0
+        },
+        {
+          "word": "dance",
+          "start": 175.39,
+          "end": 175.89,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.829
     },
     {
       "id": 29,
-      "text": "Yes, I can.",
-      "start": 79.46,
-      "duration": 2.5
+      "text": "Yes, we can.",
+      "speaker": "Speaker3",
+      "start": 176.99,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "yes",
+          "start": 176.99,
+          "end": 177.49,
+          "confidence": 0.974
+        },
+        {
+          "word": "we",
+          "start": 177.87,
+          "end": 178.37,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 178.43,
+          "end": 178.93,
+          "confidence": 0.881
+        }
+      ],
+      "confidence": 0.974
     },
     {
       "id": 30,
-      "text": "I can swim.",
-      "start": 81.46,
-      "duration": 6.18
+      "text": "Yes, we can.",
+      "speaker": "Speaker3",
+      "start": 180.11,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "yes",
+          "start": 180.11,
+          "end": 180.51,
+          "confidence": 0.953
+        },
+        {
+          "word": "we",
+          "start": 180.51,
+          "end": 180.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 180.75,
+          "end": 181.25,
+          "confidence": 0.821
+        }
+      ],
+      "confidence": 0.924
     },
     {
       "id": 31,
-      "text": "Gorilla, gorilla.",
-      "start": 87.14,
-      "duration": 3.46
+      "text": "Yes, we can.",
+      "speaker": "Speaker3",
+      "start": 181.63,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "yes",
+          "start": 181.63,
+          "end": 182.03,
+          "confidence": 0.982
+        },
+        {
+          "word": "we",
+          "start": 182.03,
+          "end": 182.35,
+          "confidence": 0.999
+        },
+        {
+          "word": "can",
+          "start": 182.35,
+          "end": 182.85,
+          "confidence": 0.939
+        }
+      ],
+      "confidence": 0.973
     },
     {
       "id": 32,
-      "text": "Can you swim?",
-      "start": 90.1,
-      "duration": 3.76
+      "text": "Yes, we can.",
+      "speaker": "Speaker3",
+      "start": 183.15,
+      "duration": 1.94,
+      "words": [
+        {
+          "word": "yes",
+          "start": 183.15,
+          "end": 183.65,
+          "confidence": 0.941
+        },
+        {
+          "word": "we",
+          "start": 183.87,
+          "end": 184.37,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 184.59,
+          "end": 185.09,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 33,
-      "text": "No, I can't.",
-      "start": 93.38,
-      "duration": 2
+      "text": "Yes we can, yes we can, yes we can, yes we can, yes we can, yes we can.",
+      "speaker": "Speaker3",
+      "start": 186.32,
+      "duration": 11.15,
+      "words": [
+        {
+          "word": "yes",
+          "start": 186.32,
+          "end": 186.65,
+          "confidence": 0.994
+        },
+        {
+          "word": "we",
+          "start": 186.65,
+          "end": 187.04,
+          "confidence": 0.953
+        },
+        {
+          "word": "can",
+          "start": 187.04,
+          "end": 187.54,
+          "confidence": 0.988
+        },
+        {
+          "word": "yes",
+          "start": 187.84,
+          "end": 188.25,
+          "confidence": 0.998
+        },
+        {
+          "word": "we",
+          "start": 188.25,
+          "end": 188.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "can",
+          "start": 188.49,
+          "end": 188.99,
+          "confidence": 0.99
+        },
+        {
+          "word": "yes",
+          "start": 189.84,
+          "end": 190.09,
+          "confidence": 0.998
+        },
+        {
+          "word": "we",
+          "start": 190.09,
+          "end": 190.59,
+          "confidence": 0.997
+        },
+        {
+          "word": "can",
+          "start": 190.81,
+          "end": 191.31,
+          "confidence": 0.85
+        },
+        {
+          "word": "yes",
+          "start": 192.49,
+          "end": 192.89,
+          "confidence": 0.997
+        },
+        {
+          "word": "we",
+          "start": 192.89,
+          "end": 193.21,
+          "confidence": 0.997
+        },
+        {
+          "word": "can",
+          "start": 193.21,
+          "end": 193.71,
+          "confidence": 0.864
+        },
+        {
+          "word": "yes",
+          "start": 194.09,
+          "end": 194.59,
+          "confidence": 0.996
+        },
+        {
+          "word": "we",
+          "start": 194.65,
+          "end": 195.15,
+          "confidence": 0.996
+        },
+        {
+          "word": "can",
+          "start": 195.21,
+          "end": 195.71,
+          "confidence": 0.802
+        },
+        {
+          "word": "yes",
+          "start": 195.76,
+          "end": 196.26,
+          "confidence": 0.981
+        },
+        {
+          "word": "we",
+          "start": 196.32,
+          "end": 196.82,
+          "confidence": 0.992
+        },
+        {
+          "word": "can",
+          "start": 196.97,
+          "end": 197.47,
+          "confidence": 0.981
+        }
+      ],
+      "confidence": 0.978
     },
     {
       "id": 34,
-      "text": "No, I can't.",
-      "start": 94.98,
-      "duration": 2.3
+      "text": "Walking in the jungle, walking in the jungle, we're not afraid.",
+      "speaker": "Speaker0",
+      "start": 200.95,
+      "duration": 5.38,
+      "words": [
+        {
+          "word": "walking",
+          "start": 200.95,
+          "end": 201.35,
+          "confidence": 0.982
+        },
+        {
+          "word": "in",
+          "start": 201.35,
+          "end": 201.67,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 201.67,
+          "end": 201.99,
+          "confidence": 0.994
+        },
+        {
+          "word": "jungle",
+          "start": 201.99,
+          "end": 202.49,
+          "confidence": 0.963
+        },
+        {
+          "word": "walking",
+          "start": 202.95,
+          "end": 203.43,
+          "confidence": 0.981
+        },
+        {
+          "word": "in",
+          "start": 203.43,
+          "end": 203.67,
+          "confidence": 0.997
+        },
+        {
+          "word": "the",
+          "start": 203.67,
+          "end": 203.91,
+          "confidence": 0.996
+        },
+        {
+          "word": "jungle",
+          "start": 203.91,
+          "end": 204.41,
+          "confidence": 0.912
+        },
+        {
+          "word": "we're",
+          "start": 205.03,
+          "end": 205.35,
+          "confidence": 0.768
+        },
+        {
+          "word": "not",
+          "start": 205.35,
+          "end": 205.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "afraid",
+          "start": 205.83,
+          "end": 206.33,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.984
     },
     {
       "id": 35,
-      "text": "I can't swim.",
-      "start": 96.78,
-      "duration": 3.3
+      "text": "The mouse went down.",
+      "speaker": "Speaker0",
+      "start": 207.26,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "the",
+          "start": 207.26,
+          "end": 207.66,
+          "confidence": 0.992
+        },
+        {
+          "word": "mouse",
+          "start": 207.66,
+          "end": 208.06,
+          "confidence": 0.999
+        },
+        {
+          "word": "went",
+          "start": 208.06,
+          "end": 208.38,
+          "confidence": 1.0
+        },
+        {
+          "word": "down",
+          "start": 208.38,
+          "end": 208.88,
+          "confidence": 0.799
+        }
+      ],
+      "confidence": 0.948
     },
     {
       "id": 36,
-      "text": "Gorilla, gorilla.",
-      "start": 99.58,
-      "duration": 3.62
-    },
-    {
-      "id": 37,
-      "text": "Can you climb?",
-      "start": 102.7,
-      "duration": 3.6
-    },
-    {
-      "id": 38,
-      "text": "Yes, I can.",
-      "start": 105.82,
-      "duration": 2
-    },
-    {
-      "id": 39,
-      "text": "Yes, I can.",
-      "start": 107.42,
-      "duration": 2.42
-    },
-    {
-      "id": 40,
-      "text": "I can climb.",
-      "start": 109.34,
-      "duration": 6.26
-    },
-    {
-      "id": 41,
-      "text": "Buffalo, buffalo.",
-      "start": 115.1,
-      "duration": 3.7
-    },
-    {
-      "id": 42,
-      "text": "Can you climb?",
-      "start": 118.3,
-      "duration": 3.36
-    },
-    {
-      "id": 43,
-      "text": "No, I can't.",
-      "start": 121.26,
-      "duration": 1.92
-    },
-    {
-      "id": 44,
-      "text": "No, I can't.",
-      "start": 122.78,
-      "duration": 2.25
-    },
-    {
-      "id": 45,
-      "text": "I can't climb.",
-      "start": 124.53,
-      "duration": 3.54
-    },
-    {
-      "id": 46,
-      "text": "Buffalo, buffalo.",
-      "start": 127.58,
-      "duration": 3.61
-    },
-    {
-      "id": 47,
-      "text": "Can you run?",
-      "start": 130.69,
-      "duration": 3.45
-    },
-    {
-      "id": 48,
-      "text": "Yes, I can.",
-      "start": 133.66,
-      "duration": 2.08
-    },
-    {
-      "id": 49,
-      "text": "Yes, I can.",
-      "start": 135.25,
-      "duration": 2.5
-    },
-    {
-      "id": 50,
-      "text": "I can run.",
-      "start": 137.25,
-      "duration": 6.21
-    },
-    {
-      "id": 51,
-      "text": "Boys and girls, boys and girls.",
-      "start": 143.06,
-      "duration": 3.54
-    },
-    {
-      "id": 52,
-      "text": "Can you sing?",
-      "start": 146.1,
-      "duration": 3.44
-    },
-    {
-      "id": 53,
-      "text": "Yes, we can.",
-      "start": 149.14,
-      "duration": 1.92
-    },
-    {
-      "id": 54,
-      "text": "Yes, we can.",
-      "start": 150.66,
-      "duration": 2.42
-    },
-    {
-      "id": 55,
-      "text": "We can sing.",
-      "start": 152.58,
-      "duration": 3.25
-    },
-    {
-      "id": 56,
-      "text": "Boys and girls, boys and girls.",
-      "start": 155.51,
-      "duration": 3.55
-    },
-    {
-      "id": 57,
-      "text": "Can you dance?",
-      "start": 158.56,
-      "duration": 3.36
-    },
-    {
-      "id": 58,
-      "text": "Yes, we can.",
-      "start": 161.51,
-      "duration": 1.93
-    },
-    {
-      "id": 59,
-      "text": "Yes, we can.",
-      "start": 163.03,
-      "duration": 2.5
-    },
-    {
-      "id": 60,
-      "text": "We can dance.",
-      "start": 165.03,
-      "duration": 2.16
-    },
-    {
-      "id": 61,
-      "text": "We can sing, we can dance.",
-      "start": 166.88,
-      "duration": 4.53
-    },
-    {
-      "id": 62,
-      "text": "Yes, we can.",
-      "start": 170.91,
-      "duration": 2.4
-    },
-    {
-      "id": 63,
-      "text": "We can sing, we can dance.",
-      "start": 173.07,
-      "duration": 4.42
-    },
-    {
-      "id": 64,
-      "text": "Yes, we can.",
-      "start": 176.99,
-      "duration": 3.52
-    },
-    {
-      "id": 65,
-      "text": "Yes, we can.",
-      "start": 180.03,
-      "duration": 2
-    },
-    {
-      "id": 66,
-      "text": "Yes, we can.",
-      "start": 181.63,
-      "duration": 1.99
-    },
-    {
-      "id": 67,
-      "text": "Yes, we can.",
-      "start": 183.15,
-      "duration": 3.59
-    },
-    {
-      "id": 68,
-      "text": "Yes, we can.",
-      "start": 186.34,
-      "duration": 1.92
-    },
-    {
-      "id": 69,
-      "text": "Yes, we can.",
-      "start": 187.78,
-      "duration": 2.1
-    },
-    {
-      "id": 70,
-      "text": "Yes, we can.",
-      "start": 189.38,
-      "duration": 3.52
-    },
-    {
-      "id": 71,
-      "text": "Yes, we can.",
-      "start": 192.58,
-      "duration": 1.84
-    },
-    {
-      "id": 72,
-      "text": "Yes, we can.",
-      "start": 194.02,
-      "duration": 2.02
-    },
-    {
-      "id": 73,
-      "text": "Yes, we can.",
-      "start": 195.54,
-      "duration": 5.81
+      "text": "Hickory dickory dock, tick tock, tick tock, tick tock, tick tock.",
+      "speaker": "Speaker0",
+      "start": 210.22,
+      "duration": 6.19,
+      "words": [
+        {
+          "word": "hickory",
+          "start": 210.22,
+          "end": 210.72,
+          "confidence": 0.994
+        },
+        {
+          "word": "dickory",
+          "start": 210.78,
+          "end": 211.28,
+          "confidence": 0.987
+        },
+        {
+          "word": "dock",
+          "start": 211.5,
+          "end": 212.0,
+          "confidence": 0.881
+        },
+        {
+          "word": "tick",
+          "start": 212.38,
+          "end": 212.54,
+          "confidence": 0.991
+        },
+        {
+          "word": "tock",
+          "start": 212.54,
+          "end": 213.04,
+          "confidence": 0.923
+        },
+        {
+          "word": "tick",
+          "start": 213.26,
+          "end": 213.74,
+          "confidence": 0.999
+        },
+        {
+          "word": "tock",
+          "start": 213.74,
+          "end": 214.24,
+          "confidence": 0.986
+        },
+        {
+          "word": "tick",
+          "start": 214.54,
+          "end": 215.02,
+          "confidence": 0.998
+        },
+        {
+          "word": "tock",
+          "start": 215.02,
+          "end": 215.52,
+          "confidence": 0.977
+        },
+        {
+          "word": "tick",
+          "start": 215.66,
+          "end": 215.91,
+          "confidence": 0.994
+        },
+        {
+          "word": "tock",
+          "start": 215.91,
+          "end": 216.41,
+          "confidence": 0.971
+        }
+      ],
+      "confidence": 0.954
     }
   ],
   "videoId": "_Ir0Mc6Qilo",
-  "fetchedAt": "2026-07-31T12:14:24.871Z",
+  "fetchedAt": "2026-08-03T11:05:00.025018+00:00",
   "source": "youtube-transcript-api",
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-31T12:19:00.646Z",
+    "alignedAt": "2026-08-03T11:05:00.025039+00:00",
     "dgWordCount": 255,
-    "matchedSegments": 73,
+    "dgUtteranceCount": 94,
+    "matchedSegments": 94,
     "totalDuration": 216.41
   },
-  "cleanedAt": "2026-08-01T19:00:00.000Z"
+  "cleanedAt": "2026-08-01T19:00:00.000Z",
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1",
+    "2": "Speaker2",
+    "3": "Speaker3"
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }
