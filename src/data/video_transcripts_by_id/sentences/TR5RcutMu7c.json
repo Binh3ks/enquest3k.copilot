@@ -1,5 +1,5 @@
 {
-  "text": "It's a beautiful park. Look at the sky and trees. What are you doing, Jino? I'm drawing trees. Trees are good. Yes, I like trees. What are you doing, Sally? I'm jumping. Wow, you're jumping high! Wow, a big fire! Come to the fire, everyone. What are they doing? They are dancing. They are good dancers. That's right. Let's dance together. What is she doing? Shh, she is sleeping. Let's role play.",
+  "text": "It's a beautiful park. Look at the sky and trees. What are you doing, Jino? I'm drawing trees. Trees are good. Yes. I like trees. What are you doing, Sally? I'm jumping. Wow. You're jumping high. Wow. A big fire. Now, come to the fire, everyone. What are they doing? They are dancing. They are good dancers. That's right. Let's dance together. What is she doing? Shh. She is sleeping. Let's role play.",
   "segments": [
     {
       "id": 1,
@@ -113,7 +113,7 @@
           "confidence": 0.995
         },
         {
-          "word": "jino",
+          "word": "jinzu",
           "start": 21.51,
           "end": 22.01,
           "confidence": 0.901
@@ -353,27 +353,17 @@
     },
     {
       "id": 12,
-      "text": "Now,",
+      "text": "Now, come to the fire, everyone.",
       "speaker": "Speaker0",
       "start": 54.28,
-      "duration": 0.5,
+      "duration": 2.82,
       "words": [
         {
           "word": "now",
           "start": 54.28,
           "end": 54.78,
           "confidence": 0.791
-        }
-      ],
-      "confidence": 0.791
-    },
-    {
-      "id": 13,
-      "text": "come to the fire, everyone.",
-      "speaker": "Speaker0",
-      "start": 55.56,
-      "duration": 1.54,
-      "words": [
+        },
         {
           "word": "come",
           "start": 55.56,
@@ -405,10 +395,10 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.959
+      "confidence": 0.791
     },
     {
-      "id": 14,
+      "id": 13,
       "text": "What are they doing?",
       "speaker": "Speaker0",
       "start": 60.92,
@@ -418,7 +408,7 @@
           "word": "what",
           "start": 60.92,
           "end": 61.32,
-          "confidence": 0.9
+          "confidence": 0.899
         },
         {
           "word": "are",
@@ -442,7 +432,7 @@
       "confidence": 0.974
     },
     {
-      "id": 15,
+      "id": 14,
       "text": "They are dancing.",
       "speaker": "Speaker0",
       "start": 63.72,
@@ -470,7 +460,7 @@
       "confidence": 0.999
     },
     {
-      "id": 16,
+      "id": 15,
       "text": "They are good dancers.",
       "speaker": "Speaker0",
       "start": 66.69,
@@ -504,7 +494,7 @@
       "confidence": 0.997
     },
     {
-      "id": 17,
+      "id": 16,
       "text": "That's right.",
       "speaker": "Speaker0",
       "start": 69.81,
@@ -526,7 +516,7 @@
       "confidence": 0.997
     },
     {
-      "id": 18,
+      "id": 17,
       "text": "Let's dance together.",
       "speaker": "Speaker0",
       "start": 70.94,
@@ -554,7 +544,7 @@
       "confidence": 0.999
     },
     {
-      "id": 19,
+      "id": 18,
       "text": "What is she doing?",
       "speaker": "Speaker0",
       "start": 82.45,
@@ -588,28 +578,18 @@
       "confidence": 0.916
     },
     {
-      "id": 20,
-      "text": "Shh.",
+      "id": 19,
+      "text": "Shh. She is sleeping.",
       "speaker": "Speaker0",
       "start": 86.29,
-      "duration": 0.5,
+      "duration": 2.18,
       "words": [
         {
           "word": "shh",
           "start": 86.29,
           "end": 86.79,
           "confidence": 0.79
-        }
-      ],
-      "confidence": 0.79
-    },
-    {
-      "id": 21,
-      "text": "She is sleeping.",
-      "speaker": "Speaker0",
-      "start": 87.33,
-      "duration": 1.14,
-      "words": [
+        },
         {
           "word": "she",
           "start": 87.33,
@@ -629,10 +609,10 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.79
     },
     {
-      "id": 22,
+      "id": 20,
       "text": "Let's role play.",
       "speaker": "Speaker0",
       "start": 93.65,
@@ -667,13 +647,14 @@
   "speakerMap": {
     "0": "Speaker0"
   },
-  "fetchedAt": "2026-08-03T06:05:52.967355+00:00",
+  "fetchedAt": "2026-08-03T06:39:29.980821+00:00",
   "alignment": {
     "engine": "deepgram-nova-2",
-    "alignedAt": "2026-08-03T06:05:52.967378+00:00",
+    "alignedAt": "2026-08-03T06:39:29.980846+00:00",
     "dgWordCount": 73,
     "dgUtteranceCount": 22,
     "matchedSegments": 22,
     "totalDuration": 94.79
-  }
+  },
+  "mergedAt": "2026-08-03T07:00:00.000Z"
 }
