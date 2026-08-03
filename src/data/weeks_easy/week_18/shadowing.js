@@ -1,5 +1,5 @@
 export default {
-  videoId: "MNQMpFVrMOs",
+  videoId: "TR5RcutMu7c",  // Present continuous dialogue, 3:08 (replaced MNQMpFVrMOs 9:51)
   content_en: "Alex loves the news. Today he has a toy microphone and a toy camera. He wants to be a reporter! He stands in the living room. He says: \\",
   script: [
     { id: 1, text: "Alex loves the news.", vi: "Alex rất thích xem tin tức." },
