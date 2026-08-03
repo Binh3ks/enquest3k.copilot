@@ -1,144 +1,254 @@
 {
-  "text": "Angry angry. Are you angry? I'm angry. Bored bored. Are you bored? I'm bored. Excited excited. Are you excited? I'm excited. Happy happy. Are you happy? I'm happy. Hungry hungry. Are you hungry? I'm hungry. Sad sad. Are you sad? I'm sad. Scared scared.",
+  "text": "Feel angry angry Are you angry? I’m angry. bored bored Are you bored? I’m bored. excited excited Are you excited? I’m excited. happy happy Are you happy? I’m happy. hungry hungry Are you hungry? I’m hungry. sad sad Are you sad? I’m sad. scared scared Are you scared? I’m scared. shy shy Are you shy? I’m shy. sleepy sleepy Are you sleepy? I’m sleepy. thirsty thirsty Are you thirsty? I’m thirsty. tired tired Are you tired? I’m tired. worried worried Are you worried? I’m worried.",
   "segments": [
     {
-      "id": 1,
-      "text": "Angry angry.",
-      "start": 16.5,
-      "duration": 0.5
+      "start": 5.66,
+      "duration": 1.2,
+      "text": "Feel"
     },
     {
-      "id": 2,
-      "text": "Are you angry?",
-      "start": 18.43,
-      "duration": 0.86
+      "start": 16.2,
+      "duration": 1.54,
+      "text": "angry"
     },
     {
-      "id": 3,
-      "text": "I'm angry.",
-      "start": 22.49,
-      "duration": 0.5
+      "start": 18.16,
+      "duration": 1.42,
+      "text": "angry"
     },
     {
-      "id": 4,
-      "text": "Bored bored.",
-      "start": 31.23,
-      "duration": 0.5
+      "start": 19.72,
+      "duration": 2.18,
+      "text": "Are you angry?"
     },
     {
-      "id": 5,
-      "text": "Are you bored?",
-      "start": 33,
-      "duration": 0.79
+      "start": 22.18,
+      "duration": 2.2,
+      "text": "I’m angry."
     },
     {
-      "id": 6,
-      "text": "I'm bored.",
-      "start": 36.99,
-      "duration": 0.5
+      "start": 30.98,
+      "duration": 1.24,
+      "text": "bored"
     },
     {
-      "id": 7,
-      "text": "Excited excited.",
-      "start": 45.27,
-      "duration": 0.5
+      "start": 32.82,
+      "duration": 1.22,
+      "text": "bored"
     },
     {
-      "id": 8,
-      "text": "Are you excited?",
-      "start": 47.33,
-      "duration": 0.91
+      "start": 34.28,
+      "duration": 1.82,
+      "text": "Are you bored?"
     },
     {
-      "id": 9,
-      "text": "I'm excited.",
-      "start": 51.34,
-      "duration": 0.5
+      "start": 36.58,
+      "duration": 2.02,
+      "text": "I’m bored."
     },
     {
-      "id": 10,
-      "text": "Happy happy.",
-      "start": 59.07,
-      "duration": 0.5
+      "start": 44.76,
+      "duration": 1.72,
+      "text": "excited"
     },
     {
-      "id": 11,
-      "text": "Are you happy?",
-      "start": 61,
-      "duration": 0.86
+      "start": 46.92,
+      "duration": 1.7,
+      "text": "excited"
     },
     {
-      "id": 12,
-      "text": "I'm happy.",
-      "start": 65.17,
-      "duration": 0.5
+      "start": 48.8,
+      "duration": 2.24,
+      "text": "Are you excited?"
     },
     {
-      "id": 13,
-      "text": "Hungry hungry.",
-      "start": 71.72,
-      "duration": 0.5
+      "start": 51.12,
+      "duration": 2.28,
+      "text": "I’m excited."
     },
     {
-      "id": 14,
-      "text": "Are you hungry?",
-      "start": 73.56,
-      "duration": 0.82
+      "start": 58.62,
+      "duration": 1.38,
+      "text": "happy"
     },
     {
-      "id": 15,
-      "text": "I'm hungry.",
-      "start": 77.56,
-      "duration": 0.5
+      "start": 60.64,
+      "duration": 1.34,
+      "text": "happy"
     },
     {
-      "id": 16,
-      "text": "Sad sad.",
-      "start": 87.38,
-      "duration": 0.5
+      "start": 62.32,
+      "duration": 2.06,
+      "text": "Are you happy?"
     },
     {
-      "id": 17,
-      "text": "Are you sad?",
-      "start": 88.92,
-      "duration": 0.69
+      "start": 64.7,
+      "duration": 1.78,
+      "text": "I’m happy."
     },
     {
-      "id": 18,
-      "text": "I'm sad.",
-      "start": 92.58,
-      "duration": 0.5
+      "start": 71.4,
+      "duration": 1.48,
+      "text": "hungry"
     },
     {
-      "id": 19,
-      "text": "Scared scared.",
-      "start": 100.47,
-      "duration": 0.5
+      "start": 73.3,
+      "duration": 1.32,
+      "text": "hungry"
+    },
+    {
+      "start": 74.86,
+      "duration": 1.98,
+      "text": "Are you hungry?"
+    },
+    {
+      "start": 77.3,
+      "duration": 2.06,
+      "text": "I’m hungry."
+    },
+    {
+      "start": 86.56,
+      "duration": 1.04,
+      "text": "sad"
+    },
+    {
+      "start": 88.34,
+      "duration": 1.2,
+      "text": "sad"
+    },
+    {
+      "start": 89.76,
+      "duration": 1.92,
+      "text": "Are you sad?"
+    },
+    {
+      "start": 92.42,
+      "duration": 1.66,
+      "text": "I’m sad."
+    },
+    {
+      "start": 98.96,
+      "duration": 1.24,
+      "text": "scared"
+    },
+    {
+      "start": 101.0,
+      "duration": 1.2,
+      "text": "scared"
+    },
+    {
+      "start": 102.42,
+      "duration": 1.92,
+      "text": "Are you scared?"
+    },
+    {
+      "start": 105.0,
+      "duration": 1.92,
+      "text": "I’m scared."
+    },
+    {
+      "start": 111.44,
+      "duration": 1.3,
+      "text": "shy"
+    },
+    {
+      "start": 113.38,
+      "duration": 1.08,
+      "text": "shy"
+    },
+    {
+      "start": 114.82,
+      "duration": 1.96,
+      "text": "Are you shy?"
+    },
+    {
+      "start": 117.28,
+      "duration": 1.7,
+      "text": "I’m shy."
+    },
+    {
+      "start": 132.52,
+      "duration": 1.5,
+      "text": "sleepy"
+    },
+    {
+      "start": 134.64,
+      "duration": 1.38,
+      "text": "sleepy"
+    },
+    {
+      "start": 136.02,
+      "duration": 2.04,
+      "text": "Are you sleepy?"
+    },
+    {
+      "start": 138.44,
+      "duration": 2.32,
+      "text": "I’m sleepy."
+    },
+    {
+      "start": 144.88,
+      "duration": 1.42,
+      "text": "thirsty"
+    },
+    {
+      "start": 147.14,
+      "duration": 1.34,
+      "text": "thirsty"
+    },
+    {
+      "start": 148.96,
+      "duration": 2.34,
+      "text": "Are you thirsty?"
+    },
+    {
+      "start": 151.62,
+      "duration": 2.36,
+      "text": "I’m thirsty."
+    },
+    {
+      "start": 160.16,
+      "duration": 1.44,
+      "text": "tired"
+    },
+    {
+      "start": 162.16,
+      "duration": 1.26,
+      "text": "tired"
+    },
+    {
+      "start": 163.8,
+      "duration": 2.22,
+      "text": "Are you tired?"
+    },
+    {
+      "start": 166.18,
+      "duration": 1.96,
+      "text": "I’m tired."
+    },
+    {
+      "start": 176.64,
+      "duration": 1.4,
+      "text": "worried"
+    },
+    {
+      "start": 178.64,
+      "duration": 1.38,
+      "text": "worried"
+    },
+    {
+      "start": 180.02,
+      "duration": 2.22,
+      "text": "Are you worried?"
+    },
+    {
+      "start": 182.32,
+      "duration": 2.48,
+      "text": "I’m worried."
     }
   ],
-  "fetchedAt": "2026-07-23T06:23:51.581246+00:00",
   "videoId": "BXWNhq-lPD8",
-  "speakerMap": {
-    "0": "Speaker0"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:23:51.581275+00:00",
-    "dgWordCount": 100,
-    "dgUtteranceCount": 61,
-    "matchedSegments": 61,
-    "totalDuration": 230.83
-  },
-  "repairedAt": "2026-07-23T07:58:35.753208Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 31,
-    "afterSegments": 31,
-    "beforeAvgWords": 3.2,
-    "afterAvgWords": 3.2,
-    "merged": 0,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:02:59.567Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:01.423491+00:00",
+  "rawCaptionCount": 49
 }

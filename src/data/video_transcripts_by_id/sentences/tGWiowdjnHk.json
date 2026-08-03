@@ -1,111 +1,414 @@
 {
-  "text": "Theme 19, did. Good morning, Sally. How are you? I'm great. What did you do yesterday? We went to the park. What did you do in the park? We flew kites. His kites flew high. Wow, you're good! What did you do yesterday, Sally? I read books. Let's go.",
+  "text": "Theme 19  Did Good morning, Sally. How are you? I'm great. What did you do yesterday? We went to the park. What did you do in the park? We flew kites. His kites flew high. Wow! You're good. What did you do yesterday, Sally? I read books. Let's go to the classroom. What did you do yesterday? I watched a science movie. What did you do yesterday, Mike? I made bulgogi with my dad. How was it? It was very delicious. We had a bulgogi party. I made cookies yesterday. I brought cookies for you. Thanks! Mm, delicious! What did you do? What? What did you do? I went to the zoo. I went to the zoo. What did you do? What? What did you do? I went to the museum. I went to the museum. What did you do? What? What did you do? I went to the zoo. I went to the zoo. What did you do? What? What did you do? I went to the museum. I went to the museum. What did you do yesterday? I went fishing with Klin. How was it? It was fun. How was the party yesterday? It's was fun. Happy new year, everyone! Happy new year, everyone! What, what, what did you do? Did you go swimming? No, no, no. Did you go camping? No, no, no. Then, what, what, what did you do? I went fishing! I went fishing yesterday. What did you do there? I went to the zoo, went to the zoo, went to the zoo with my uncle. How was it? How was it? How was it? It was fun. It was fun. It was fun. See you. See you. See you. Take care. Take care. Take care. Don’t play outside. It’s snowing. Okay. What did you do? I went outside. I met my friends. Oh, no! Please listen to your Mom. Are you okay, Mom? No, I’m not. I’m sorry, Mom. What did you do? I saw Mom. She looked sad. I cooked for Mom. Thank you! Good morning, Ariel. How are you? Great. Good morning, Grandma. How are you? I’m fine. What did you do yesterday? I went to the park. Wow! She went to the park. What did you do there? I met a prince. He was very kind. How nice! We flew kites. My kite flew high. Great! We made cookies for his friends. How were they? They were very delicious. We had a party. Dad is coming. Good morning. Ariel went to the park yesterday. She met a prince there. Did you...? I ’m 16 years old. All right. You can go to the park.",
   "segments": [
     {
-      "id": 1,
-      "text": "Theme 19, did.",
-      "start": 3.44,
-      "duration": 0.65
+      "start": 3.42,
+      "duration": 2.46,
+      "text": "Theme 19  Did"
     },
     {
-      "id": 2,
-      "text": "Good morning, Sally.",
-      "start": 14.24,
-      "duration": 0.5
+      "start": 13.6,
+      "duration": 2.16,
+      "text": "Good morning, Sally."
     },
     {
-      "id": 3,
-      "text": "How are you?",
-      "start": 16.23,
-      "duration": 0.5
+      "start": 16.04,
+      "duration": 1.48,
+      "text": "How are you?"
     },
     {
-      "id": 4,
-      "text": "I'm great.",
-      "start": 18.07,
-      "duration": 0.5
+      "start": 17.94,
+      "duration": 1.4,
+      "text": "I'm great."
     },
     {
-      "id": 5,
-      "text": "What did you do yesterday?",
-      "start": 19.52,
-      "duration": 0.75
+      "start": 19.48,
+      "duration": 2.2,
+      "text": "What did you do yesterday?"
     },
     {
-      "id": 6,
-      "text": "We went to the park.",
-      "start": 22.23,
-      "duration": 0.78
+      "start": 21.94,
+      "duration": 2.24,
+      "text": "We went to the park."
     },
     {
-      "id": 7,
-      "text": "What did you do in the park?",
-      "start": 24.95,
-      "duration": 1.12
+      "start": 24.84,
+      "duration": 2.14,
+      "text": "What did you do in the park?"
     },
     {
-      "id": 8,
-      "text": "We flew kites.",
-      "start": 27.43,
-      "duration": 0.5
+      "start": 27.26,
+      "duration": 1.8,
+      "text": "We flew kites."
     },
     {
-      "id": 9,
-      "text": "His kites flew high.",
-      "start": 30.03,
-      "duration": 0.65
+      "start": 29.72,
+      "duration": 2.04,
+      "text": "His kites flew high."
     },
     {
-      "id": 10,
-      "text": "Wow, you're good!",
-      "start": 33.15,
-      "duration": 0.5
+      "start": 32.9,
+      "duration": 2.26,
+      "text": "Wow! You're good."
     },
     {
-      "id": 11,
-      "text": "What did you do yesterday, Sally?",
-      "start": 35.87,
-      "duration": 1.36
+      "start": 35.76,
+      "duration": 2.88,
+      "text": "What did you do yesterday, Sally?"
     },
     {
-      "id": 12,
-      "text": "I read books.",
-      "start": 39.47,
-      "duration": 0.5
+      "start": 39.38,
+      "duration": 1.46,
+      "text": "I read books."
     },
     {
-      "id": 13,
-      "text": "Let's go.",
-      "start": 44.52,
-      "duration": 0.5
+      "start": 44.42,
+      "duration": 2.4,
+      "text": "Let's go to the classroom."
+    },
+    {
+      "start": 50.58,
+      "duration": 2.86,
+      "text": "What did you do yesterday?"
+    },
+    {
+      "start": 54.2,
+      "duration": 2.64,
+      "text": "I watched a science movie."
+    },
+    {
+      "start": 57.86,
+      "duration": 2.9,
+      "text": "What did you do yesterday, Mike?"
+    },
+    {
+      "start": 61.02,
+      "duration": 2.66,
+      "text": "I made bulgogi with my dad."
+    },
+    {
+      "start": 64.0,
+      "duration": 1.38,
+      "text": "How was it?"
+    },
+    {
+      "start": 65.66,
+      "duration": 2.02,
+      "text": "It was very delicious."
+    },
+    {
+      "start": 67.9,
+      "duration": 2.5,
+      "text": "We had a bulgogi party."
+    },
+    {
+      "start": 72.54,
+      "duration": 2.46,
+      "text": "I made cookies yesterday."
+    },
+    {
+      "start": 75.06,
+      "duration": 2.2,
+      "text": "I brought cookies for you."
+    },
+    {
+      "start": 77.26,
+      "duration": 4.02,
+      "text": "Thanks! Mm, delicious!"
+    },
+    {
+      "start": 96.08,
+      "duration": 6.74,
+      "text": "What did you do? What? What did you do?"
+    },
+    {
+      "start": 102.82,
+      "duration": 6.3,
+      "text": "I went to the zoo. I went to the zoo."
+    },
+    {
+      "start": 109.84,
+      "duration": 3.28,
+      "text": "What did you do? What? What did you do?"
+    },
+    {
+      "start": 113.12,
+      "duration": 3.92,
+      "text": "I went to the museum. I went to the museum."
+    },
+    {
+      "start": 123.4,
+      "duration": 6.68,
+      "text": "What did you do? What? What did you do?"
+    },
+    {
+      "start": 130.26,
+      "duration": 6.4,
+      "text": "I went to the zoo. I went to the zoo."
+    },
+    {
+      "start": 137.18,
+      "duration": 3.22,
+      "text": "What did you do? What? What did you do?"
+    },
+    {
+      "start": 140.4,
+      "duration": 4.2,
+      "text": "I went to the museum. I went to the museum."
+    },
+    {
+      "start": 157.76,
+      "duration": 3.08,
+      "text": "What did you do yesterday?"
+    },
+    {
+      "start": 161.0,
+      "duration": 2.8,
+      "text": "I went fishing with Klin."
+    },
+    {
+      "start": 163.8,
+      "duration": 1.94,
+      "text": "How was it?"
+    },
+    {
+      "start": 168.1,
+      "duration": 2.46,
+      "text": "It was fun."
+    },
+    {
+      "start": 170.7,
+      "duration": 3.22,
+      "text": "How was the party yesterday?"
+    },
+    {
+      "start": 173.94,
+      "duration": 2.94,
+      "text": "It's was fun."
+    },
+    {
+      "start": 176.88,
+      "duration": 3.36,
+      "text": "Happy new year, everyone!"
+    },
+    {
+      "start": 180.24,
+      "duration": 3.42,
+      "text": "Happy new year, everyone!"
+    },
+    {
+      "start": 197.98,
+      "duration": 2.8,
+      "text": "What, what, what did you do?"
+    },
+    {
+      "start": 202.22,
+      "duration": 4.56,
+      "text": "Did you go swimming? No, no, no."
+    },
+    {
+      "start": 206.78,
+      "duration": 4.38,
+      "text": "Did you go camping? No, no, no."
+    },
+    {
+      "start": 211.34,
+      "duration": 2.08,
+      "text": "Then, what, what, what did you do?"
+    },
+    {
+      "start": 213.42,
+      "duration": 4.46,
+      "text": "I went fishing! I went fishing yesterday."
+    },
+    {
+      "start": 230.94,
+      "duration": 1.9,
+      "text": "What did you do there?"
+    },
+    {
+      "start": 232.84,
+      "duration": 6.66,
+      "text": "I went to the zoo, went to the zoo, went to the zoo with my uncle."
+    },
+    {
+      "start": 239.92,
+      "duration": 3.32,
+      "text": "How was it? How was it? How was it?"
+    },
+    {
+      "start": 243.78,
+      "duration": 3.6,
+      "text": "It was fun. It was fun. It was fun."
+    },
+    {
+      "start": 247.6,
+      "duration": 3.2,
+      "text": "See you. See you. See you."
+    },
+    {
+      "start": 251.02,
+      "duration": 3.32,
+      "text": "Take care. Take care. Take care."
+    },
+    {
+      "start": 272.64,
+      "duration": 3.68,
+      "text": "Don’t play outside. It’s snowing."
+    },
+    {
+      "start": 276.62,
+      "duration": 1.16,
+      "text": "Okay."
+    },
+    {
+      "start": 282.6,
+      "duration": 1.66,
+      "text": "What did you do?"
+    },
+    {
+      "start": 285.26,
+      "duration": 3.9,
+      "text": "I went outside. I met my friends."
+    },
+    {
+      "start": 289.88,
+      "duration": 4.36,
+      "text": "Oh, no! Please listen to your Mom."
+    },
+    {
+      "start": 297.32,
+      "duration": 1.9,
+      "text": "Are you okay, Mom?"
+    },
+    {
+      "start": 299.34,
+      "duration": 2.44,
+      "text": "No, I’m not."
+    },
+    {
+      "start": 303.68,
+      "duration": 1.78,
+      "text": "I’m sorry, Mom."
+    },
+    {
+      "start": 307.12,
+      "duration": 1.84,
+      "text": "What did you do?"
+    },
+    {
+      "start": 309.14,
+      "duration": 5.06,
+      "text": "I saw Mom. She looked sad. I cooked for Mom."
+    },
+    {
+      "start": 315.64,
+      "duration": 1.42,
+      "text": "Thank you!"
+    },
+    {
+      "start": 332.74,
+      "duration": 3.34,
+      "text": "Good morning, Ariel. How are you?"
+    },
+    {
+      "start": 336.26,
+      "duration": 4.02,
+      "text": "Great. Good morning, Grandma. How are you?"
+    },
+    {
+      "start": 340.28,
+      "duration": 3.58,
+      "text": "I’m fine. What did you do yesterday?"
+    },
+    {
+      "start": 344.44,
+      "duration": 1.76,
+      "text": "I went to the park."
+    },
+    {
+      "start": 346.88,
+      "duration": 2.96,
+      "text": "Wow! She went to the park."
+    },
+    {
+      "start": 350.3,
+      "duration": 1.94,
+      "text": "What did you do there?"
+    },
+    {
+      "start": 355.48,
+      "duration": 4.0,
+      "text": "I met a prince. He was very kind."
+    },
+    {
+      "start": 359.7,
+      "duration": 1.6,
+      "text": "How nice!"
+    },
+    {
+      "start": 363.6,
+      "duration": 4.34,
+      "text": "We flew kites. My kite flew high."
+    },
+    {
+      "start": 369.26,
+      "duration": 1.44,
+      "text": "Great!"
+    },
+    {
+      "start": 370.92,
+      "duration": 3.02,
+      "text": "We made cookies for his friends."
+    },
+    {
+      "start": 374.48,
+      "duration": 1.54,
+      "text": "How were they?"
+    },
+    {
+      "start": 376.42,
+      "duration": 4.0,
+      "text": "They were very delicious. We had a party."
+    },
+    {
+      "start": 382.26,
+      "duration": 2.08,
+      "text": "Dad is coming."
+    },
+    {
+      "start": 384.88,
+      "duration": 1.8,
+      "text": "Good morning."
+    },
+    {
+      "start": 387.04,
+      "duration": 3.04,
+      "text": "Ariel went to the park yesterday."
+    },
+    {
+      "start": 390.26,
+      "duration": 1.88,
+      "text": "She met a prince there."
+    },
+    {
+      "start": 393.08,
+      "duration": 1.36,
+      "text": "Did you...?"
+    },
+    {
+      "start": 394.44,
+      "duration": 2.52,
+      "text": "I ’m 16 years old."
+    },
+    {
+      "start": 398.86,
+      "duration": 3.66,
+      "text": "All right. You can go to the park."
     }
   ],
-  "fetchedAt": "2026-07-23T06:27:17.274553+00:00",
   "videoId": "tGWiowdjnHk",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1",
-    "2": "Speaker2",
-    "3": "Speaker3"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:27:17.274583+00:00",
-    "dgWordCount": 447,
-    "dgUtteranceCount": 112,
-    "matchedSegments": 112,
-    "totalDuration": 401.82
-  },
-  "repairedAt": "2026-07-23T07:58:35.810865Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 121,
-    "afterSegments": 122,
-    "beforeAvgWords": 3.7,
-    "afterAvgWords": 3.7,
-    "merged": -1,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:09:24.803Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:33.061687+00:00",
+  "rawCaptionCount": 81
 }

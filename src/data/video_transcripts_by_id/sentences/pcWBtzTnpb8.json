@@ -1,121 +1,364 @@
 {
-  "text": "What did you do? Good morning, Sally. How are you? I'm great. What did you do yesterday? We went to the park. What did you do in the park? We flew kites. His kites flew high. Wow, you're good! What did you do yesterday, Sally? I read books. Let's go to the classroom. What did you do?",
+  "text": "[Music] english sing-sing [Music] what did you do [Music] good morning sally how are you i'm great what did you do yesterday we went to the park what did you do in the park we flew kites his kites flew high wow you're good what did you do yesterday sally i read bucks let's go to the classroom [Music] what did you do yesterday i watched a science movie what did you do yesterday mike i made frugal ghee with my dad how was it it was very delicious we had a bulgogi party i made cookies yesterday i brought cookies for you thanks mmm delicious [Music] listen [Music] good morning sally how are you i'm great what did you do yesterday we went to the park what did you do in the park we flew kites his kites flew high wow you're good what did you do yesterday sally i read books let's go to the classroom what did you do yesterday i watched a science movie what did you do yesterday mike i made progogy with my dad how was it it was very delicious we had a bulgogi party i made cookies yesterday i brought cookies for you thanks mmm delicious [Music] speak aloud [Music] wow [Music] down [Music] your turn [Music] wow [Music] down [Music] you",
   "segments": [
     {
-      "id": 1,
-      "text": "What did you do?",
+      "start": 0.07,
+      "duration": 3.41,
+      "text": "[Music]"
+    },
+    {
+      "start": 1.84,
+      "duration": 4.08,
+      "text": "english sing-sing"
+    },
+    {
+      "start": 3.48,
+      "duration": 3.64,
+      "text": "[Music]"
+    },
+    {
       "start": 5.92,
-      "duration": 0.55
+      "duration": 6.6,
+      "text": "what did you do"
     },
     {
-      "id": 2,
-      "text": "Good morning, Sally.",
-      "start": 13.04,
-      "duration": 0.5
+      "start": 7.12,
+      "duration": 5.4,
+      "text": "[Music]"
     },
     {
-      "id": 3,
-      "text": "How are you?",
-      "start": 14.95,
-      "duration": 0.5
+      "start": 12.96,
+      "duration": 3.76,
+      "text": "good morning sally"
     },
     {
-      "id": 4,
-      "text": "I'm great.",
-      "start": 16.79,
-      "duration": 0.5
+      "start": 14.88,
+      "duration": 3.28,
+      "text": "how are you"
     },
     {
-      "id": 5,
-      "text": "What did you do yesterday?",
-      "start": 18.23,
-      "duration": 0.74
+      "start": 16.72,
+      "duration": 4.08,
+      "text": "i'm great"
     },
     {
-      "id": 6,
-      "text": "We went to the park.",
-      "start": 20.95,
-      "duration": 0.78
+      "start": 18.16,
+      "duration": 5.44,
+      "text": "what did you do yesterday"
     },
     {
-      "id": 7,
-      "text": "What did you do in the park?",
-      "start": 23.66,
-      "duration": 1.12
+      "start": 20.8,
+      "duration": 5.2,
+      "text": "we went to the park"
     },
     {
-      "id": 8,
-      "text": "We flew kites.",
-      "start": 26.14,
-      "duration": 0.5
+      "start": 23.6,
+      "duration": 4.88,
+      "text": "what did you do in the park"
     },
     {
-      "id": 9,
-      "text": "His kites flew high.",
-      "start": 28.62,
-      "duration": 0.71
+      "start": 26.0,
+      "duration": 5.68,
+      "text": "we flew kites"
     },
     {
-      "id": 10,
-      "text": "Wow, you're good!",
-      "start": 32.21,
-      "duration": 0.5
+      "start": 28.48,
+      "duration": 6.08,
+      "text": "his kites flew high"
     },
     {
-      "id": 11,
-      "text": "What did you do yesterday, Sally?",
-      "start": 34.53,
-      "duration": 1.4
+      "start": 31.68,
+      "duration": 6.4,
+      "text": "wow you're good"
     },
     {
-      "id": 12,
-      "text": "I read books.",
-      "start": 38.21,
-      "duration": 0.5
+      "start": 34.56,
+      "duration": 6.72,
+      "text": "what did you do yesterday sally"
     },
     {
-      "id": 13,
-      "text": "Let's go to the classroom.",
-      "start": 43.25,
-      "duration": 0.87
+      "start": 38.08,
+      "duration": 3.2,
+      "text": "i read bucks"
     },
     {
-      "id": 14,
-      "text": "What did you do?",
-      "start": 49.97,
-      "duration": 0.5
+      "start": 43.12,
+      "duration": 6.8,
+      "text": "let's go to the classroom"
+    },
+    {
+      "start": 45.15,
+      "duration": 7.73,
+      "text": "[Music]"
+    },
+    {
+      "start": 49.92,
+      "duration": 6.88,
+      "text": "what did you do yesterday"
+    },
+    {
+      "start": 52.88,
+      "duration": 6.88,
+      "text": "i watched a science movie"
+    },
+    {
+      "start": 56.8,
+      "duration": 5.92,
+      "text": "what did you do yesterday mike"
+    },
+    {
+      "start": 59.76,
+      "duration": 4.56,
+      "text": "i made frugal ghee with my dad"
+    },
+    {
+      "start": 62.72,
+      "duration": 3.92,
+      "text": "how was it"
+    },
+    {
+      "start": 64.32,
+      "duration": 6.24,
+      "text": "it was very delicious"
+    },
+    {
+      "start": 66.64,
+      "duration": 3.92,
+      "text": "we had a bulgogi party"
+    },
+    {
+      "start": 71.44,
+      "duration": 4.72,
+      "text": "i made cookies yesterday i brought"
+    },
+    {
+      "start": 74.4,
+      "duration": 2.88,
+      "text": "cookies for you"
+    },
+    {
+      "start": 76.16,
+      "duration": 2.08,
+      "text": "thanks"
+    },
+    {
+      "start": 77.28,
+      "duration": 2.27,
+      "text": "mmm"
+    },
+    {
+      "start": 78.24,
+      "duration": 9.28,
+      "text": "delicious"
+    },
+    {
+      "start": 79.55,
+      "duration": 9.33,
+      "text": "[Music]"
+    },
+    {
+      "start": 87.52,
+      "duration": 5.63,
+      "text": "listen"
+    },
+    {
+      "start": 88.88,
+      "duration": 4.27,
+      "text": "[Music]"
+    },
+    {
+      "start": 93.52,
+      "duration": 3.84,
+      "text": "good morning sally"
+    },
+    {
+      "start": 95.44,
+      "duration": 3.36,
+      "text": "how are you"
+    },
+    {
+      "start": 97.36,
+      "duration": 4.08,
+      "text": "i'm great"
+    },
+    {
+      "start": 98.8,
+      "duration": 5.44,
+      "text": "what did you do yesterday"
+    },
+    {
+      "start": 101.44,
+      "duration": 5.2,
+      "text": "we went to the park"
+    },
+    {
+      "start": 104.24,
+      "duration": 4.88,
+      "text": "what did you do in the park"
+    },
+    {
+      "start": 106.64,
+      "duration": 5.68,
+      "text": "we flew kites"
+    },
+    {
+      "start": 109.12,
+      "duration": 6.08,
+      "text": "his kites flew high"
+    },
+    {
+      "start": 112.32,
+      "duration": 6.4,
+      "text": "wow you're good"
+    },
+    {
+      "start": 115.2,
+      "duration": 6.72,
+      "text": "what did you do yesterday sally"
+    },
+    {
+      "start": 118.72,
+      "duration": 3.2,
+      "text": "i read books"
+    },
+    {
+      "start": 123.76,
+      "duration": 4.12,
+      "text": "let's go to the classroom"
+    },
+    {
+      "start": 130.56,
+      "duration": 6.8,
+      "text": "what did you do yesterday"
+    },
+    {
+      "start": 133.52,
+      "duration": 6.88,
+      "text": "i watched a science movie"
+    },
+    {
+      "start": 137.36,
+      "duration": 6.0,
+      "text": "what did you do yesterday mike"
+    },
+    {
+      "start": 140.4,
+      "duration": 4.56,
+      "text": "i made progogy with my dad"
+    },
+    {
+      "start": 143.36,
+      "duration": 3.92,
+      "text": "how was it"
+    },
+    {
+      "start": 144.96,
+      "duration": 6.16,
+      "text": "it was very delicious"
+    },
+    {
+      "start": 147.28,
+      "duration": 3.84,
+      "text": "we had a bulgogi party"
+    },
+    {
+      "start": 152.08,
+      "duration": 4.72,
+      "text": "i made cookies yesterday i brought"
+    },
+    {
+      "start": 155.04,
+      "duration": 2.88,
+      "text": "cookies for you"
+    },
+    {
+      "start": 156.8,
+      "duration": 2.08,
+      "text": "thanks"
+    },
+    {
+      "start": 157.92,
+      "duration": 2.26,
+      "text": "mmm"
+    },
+    {
+      "start": 158.88,
+      "duration": 8.58,
+      "text": "delicious"
+    },
+    {
+      "start": 160.18,
+      "duration": 7.28,
+      "text": "[Music]"
+    },
+    {
+      "start": 168.64,
+      "duration": 4.98,
+      "text": "speak aloud"
+    },
+    {
+      "start": 170.52,
+      "duration": 3.1,
+      "text": "[Music]"
+    },
+    {
+      "start": 191.52,
+      "duration": 3.0,
+      "text": "wow"
+    },
+    {
+      "start": 206.27,
+      "duration": 5.69,
+      "text": "[Music]"
+    },
+    {
+      "start": 238.32,
+      "duration": 10.72,
+      "text": "down"
+    },
+    {
+      "start": 240.65,
+      "duration": 10.5,
+      "text": "[Music]"
+    },
+    {
+      "start": 249.04,
+      "duration": 5.21,
+      "text": "your turn"
+    },
+    {
+      "start": 251.15,
+      "duration": 3.1,
+      "text": "[Music]"
+    },
+    {
+      "start": 272.16,
+      "duration": 3.0,
+      "text": "wow"
+    },
+    {
+      "start": 286.9,
+      "duration": 5.69,
+      "text": "[Music]"
+    },
+    {
+      "start": 318.96,
+      "duration": 5.38,
+      "text": "down"
+    },
+    {
+      "start": 321.28,
+      "duration": 3.06,
+      "text": "[Music]"
+    },
+    {
+      "start": 331.28,
+      "duration": 2.08,
+      "text": "you"
     }
   ],
-  "fetchedAt": "2026-07-23T06:27:32.167933+00:00",
   "videoId": "pcWBtzTnpb8",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1",
-    "2": "Speaker2",
-    "3": "Speaker3",
-    "4": "Speaker4",
-    "5": "Speaker5",
-    "6": "Speaker6",
-    "7": "Speaker7"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:27:32.167956+00:00",
-    "dgWordCount": 200,
-    "dgUtteranceCount": 51,
-    "matchedSegments": 51,
-    "totalDuration": 320
-  },
-  "repairedAt": "2026-07-23T07:58:35.818803Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 51,
-    "afterSegments": 51,
-    "beforeAvgWords": 3.9,
-    "afterAvgWords": 3.9,
-    "merged": 0,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:09:09.547Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:17.925108+00:00",
+  "rawCaptionCount": 71
 }

@@ -1,267 +1,139 @@
 {
-  "text": "What do you like? What do you like? What do you like? Baseball, baseball. I like baseball. Basketball, basketball. I like basketball. Volleyball, volleyball. I like volleyball. Soccer, soccer. I like soccer. Baseball, basketball, volleyball, soccer. I like sports! Hurray! What do you like? What do you like? What do you like? Diving, diving. I like diving. Swimming, swimming. I like swimming. Skiing, skiing. I like skiing. Skating, skating. I like skating. Diving, swimming, skiing, skating. I like sports! Hurray! What do you like? What do you like? What do you like? Tennis, tennis. I like tennis. Badminton, badminton. I like badminton. Fencing, fencing. I like fencing. Boxing, boxing. I like boxing. Tennis, badminton, fencing, boxing. I like sports! Hurray! Hurray!",
+  "text": "Sports Song What do you like? What do you like? What do you like? Baseball, baseball. I like baseball. Basketball, basketball. I like basketball. Volleyball, volleyball. I like volleyball. Soccer, soccer. I like soccer. Baseball, basketball, volleyball, soccer. I like sports! Hurray! What do you like? What do you like? What do you like? Diving, diving. I like diving. Swimming, swimming. I like swimming. Skiing, skiing. I like skiing. Skating, skating. I like skating. Diving, swimming, skiing, skating. I like sports! Hurray! What do you like? What do you like? What do you like? Tennis, tennis. I like tennis. Badminton, badminton. I like badminton. Fencing, fencing. I like fencing. Boxing, boxing. I like boxing. Tennis, badminton, fencing, boxing. I like sports! Hurray! Hurray!",
   "segments": [
     {
-      "id": 1,
-      "text": "What do you like?",
+      "start": 0.58,
+      "duration": 2.06,
+      "text": "Sports Song"
+    },
+    {
       "start": 5.3,
-      "duration": 0.71
+      "duration": 3.36,
+      "text": "What do you like? What do you like?"
     },
     {
-      "id": 2,
-      "text": "What do you like?",
-      "start": 6.98,
-      "duration": 0.71
-    },
-    {
-      "id": 3,
-      "text": "What do you like?",
       "start": 10.56,
-      "duration": 0.71
+      "duration": 1.68,
+      "text": "What do you like?"
     },
     {
-      "id": 4,
-      "text": "Baseball, baseball.",
       "start": 12.24,
-      "duration": 0.5
+      "duration": 3.38,
+      "text": "Baseball, baseball. I like baseball."
     },
     {
-      "id": 5,
-      "text": "I like baseball.",
-      "start": 13.59,
-      "duration": 0.6
-    },
-    {
-      "id": 6,
-      "text": "Basketball, basketball.",
       "start": 15.62,
-      "duration": 0.5
+      "duration": 3.44,
+      "text": "Basketball, basketball. I like basketball."
     },
     {
-      "id": 7,
-      "text": "I like basketball.",
-      "start": 17,
-      "duration": 0.61
-    },
-    {
-      "id": 8,
-      "text": "Volleyball, volleyball.",
       "start": 19.06,
-      "duration": 0.5
+      "duration": 3.24,
+      "text": "Volleyball, volleyball. I like volleyball."
     },
     {
-      "id": 9,
-      "text": "I like volleyball.",
-      "start": 20.36,
-      "duration": 0.57
-    },
-    {
-      "id": 10,
-      "text": "Soccer, soccer.",
       "start": 22.3,
-      "duration": 0.5
+      "duration": 3.6,
+      "text": "Soccer, soccer. I like soccer."
     },
     {
-      "id": 11,
-      "text": "I like soccer.",
-      "start": 23.74,
-      "duration": 0.64
-    },
-    {
-      "id": 12,
-      "text": "Baseball, basketball, volleyball, soccer.",
       "start": 26.02,
-      "duration": 1.51
+      "duration": 3.58,
+      "text": "Baseball, basketball, volleyball, soccer."
     },
     {
-      "id": 13,
-      "text": "I like sports!",
       "start": 29.62,
-      "duration": 0.71
+      "duration": 3.18,
+      "text": "I like sports! Hurray!"
     },
     {
-      "id": 14,
-      "text": "Hurray!",
-      "start": 32.01,
-      "duration": 0.5
-    },
-    {
-      "id": 15,
-      "text": "What do you like?",
       "start": 33.92,
-      "duration": 0.7
+      "duration": 3.32,
+      "text": "What do you like? What do you like?"
     },
     {
-      "id": 16,
-      "text": "What do you like?",
-      "start": 35.58,
-      "duration": 0.7
-    },
-    {
-      "id": 17,
-      "text": "What do you like?",
       "start": 39.1,
-      "duration": 0.66
+      "duration": 1.56,
+      "text": "What do you like?"
     },
     {
-      "id": 18,
-      "text": "Diving, diving.",
       "start": 40.94,
-      "duration": 0.5
+      "duration": 3.22,
+      "text": "Diving, diving. I like diving."
     },
     {
-      "id": 19,
-      "text": "I like diving.",
-      "start": 42.23,
-      "duration": 0.57
-    },
-    {
-      "id": 20,
-      "text": "Swimming, swimming.",
       "start": 44.16,
-      "duration": 0.5
+      "duration": 3.48,
+      "text": "Swimming, swimming. I like swimming."
     },
     {
-      "id": 21,
-      "text": "I like swimming.",
-      "start": 45.55,
-      "duration": 0.62
-    },
-    {
-      "id": 22,
-      "text": "Skiing, skiing.",
       "start": 47.64,
-      "duration": 0.5
+      "duration": 3.4,
+      "text": "Skiing, skiing. I like skiing."
     },
     {
-      "id": 23,
-      "text": "I like skiing.",
-      "start": 49,
-      "duration": 0.61
-    },
-    {
-      "id": 24,
-      "text": "Skating, skating.",
       "start": 51.04,
-      "duration": 0.5
+      "duration": 3.7,
+      "text": "Skating, skating. I like skating."
     },
     {
-      "id": 25,
-      "text": "I like skating.",
-      "start": 52.52,
-      "duration": 0.66
-    },
-    {
-      "id": 26,
-      "text": "Diving, swimming, skiing, skating.",
       "start": 54.74,
-      "duration": 1.43
+      "duration": 3.38,
+      "text": "Diving, swimming, skiing, skating."
     },
     {
-      "id": 27,
-      "text": "I like sports!",
       "start": 58.14,
-      "duration": 0.73
+      "duration": 3.3,
+      "text": "I like sports! Hurray!"
     },
     {
-      "id": 28,
-      "text": "Hurray!",
-      "start": 60.62,
-      "duration": 0.5
-    },
-    {
-      "id": 29,
-      "text": "What do you like?",
       "start": 62.58,
-      "duration": 0.71
+      "duration": 3.4,
+      "text": "What do you like? What do you like?"
     },
     {
-      "id": 30,
-      "text": "What do you like?",
-      "start": 64.28,
-      "duration": 0.72
-    },
-    {
-      "id": 31,
-      "text": "What do you like?",
       "start": 67.8,
-      "duration": 0.61
+      "duration": 1.46,
+      "text": "What do you like?"
     },
     {
-      "id": 32,
-      "text": "Tennis, tennis.",
       "start": 69.28,
-      "duration": 0.5
+      "duration": 3.48,
+      "text": "Tennis, tennis. I like tennis."
     },
     {
-      "id": 33,
-      "text": "I like tennis.",
-      "start": 70.67,
-      "duration": 0.62
-    },
-    {
-      "id": 34,
-      "text": "Badminton, badminton.",
       "start": 72.76,
-      "duration": 0.5
+      "duration": 3.72,
+      "text": "Badminton, badminton. I like badminton."
     },
     {
-      "id": 35,
-      "text": "I like badminton.",
-      "start": 74.25,
-      "duration": 0.66
-    },
-    {
-      "id": 36,
-      "text": "Fencing, fencing.",
       "start": 76.48,
-      "duration": 0.5
+      "duration": 3.44,
+      "text": "Fencing, fencing. I like fencing."
     },
     {
-      "id": 37,
-      "text": "I like fencing.",
-      "start": 77.86,
-      "duration": 0.61
-    },
-    {
-      "id": 38,
-      "text": "Boxing, boxing.",
       "start": 79.92,
-      "duration": 0.5
+      "duration": 3.5,
+      "text": "Boxing, boxing. I like boxing."
     },
     {
-      "id": 39,
-      "text": "I like boxing.",
-      "start": 81.32,
-      "duration": 0.62
-    },
-    {
-      "id": 40,
-      "text": "Tennis, badminton, fencing, boxing.",
       "start": 83.42,
-      "duration": 1.42
+      "duration": 3.36,
+      "text": "Tennis, badminton, fencing, boxing."
     },
     {
-      "id": 41,
-      "text": "I like sports!",
       "start": 86.8,
-      "duration": 0.77
+      "duration": 3.46,
+      "text": "I like sports! Hurray!"
     },
     {
-      "id": 42,
-      "text": "Hurray!",
-      "start": 89.4,
-      "duration": 0.5
-    },
-    {
-      "id": 43,
-      "text": "Hurray!",
       "start": 90.26,
-      "duration": 0.5
+      "duration": 0.9,
+      "text": "Hurray!"
     }
   ],
   "videoId": "tgUSHk6JaTY",
-  "source": "cleaned",
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:09:40.337Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:35.155473+00:00",
+  "rawCaptionCount": 26
 }

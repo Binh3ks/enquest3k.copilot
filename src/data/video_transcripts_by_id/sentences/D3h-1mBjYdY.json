@@ -1,159 +1,179 @@
 {
-  "text": "Hey there kids! Listen carefully and repeat. The moon, the moon. The sun, the sun. Star, star. Tree, tree. Mountain, mountain. River, river. The sea, the sea. Rainbow, rainbow. The sky, the sky. Flower, flower. That was great, kids. Let's do it one more time. In a big voice, repeat after me. Here we go. The moon. The sun. Star. Tree. Mountain. River. The sea. Rainbow. The sky. Flower. Well done, kids. That was great. See you!",
+  "text": "Hey there kids! Listen carefully and repeat. the moon the moon the sun the sun star star tree tree mountain mountain river river the sea the sea rainbow rainbow the sky the sky flower flower That was great kids, let's do it one more time. In a big voice, repeat after me. Here we go. the moon the sun star tree mountain river the sea rainbow the sky flower Well done kids, that was great. See you!",
   "segments": [
     {
-      "id": 1,
-      "text": "Hey there kids!",
       "start": 5.93,
-      "duration": 0.67
+      "duration": 5.31,
+      "text": "Hey there kids! Listen carefully and repeat."
     },
     {
-      "id": 2,
-      "text": "Listen carefully and repeat.",
-      "start": 8.2,
-      "duration": 1.28
+      "start": 12.49,
+      "duration": 2.48,
+      "text": "the moon"
     },
     {
-      "id": 3,
-      "text": "The moon.",
-      "start": 11.24,
-      "duration": 0.73
+      "start": 16.38,
+      "duration": 2.68,
+      "text": "the moon"
     },
     {
-      "id": 4,
-      "text": "The moon.",
-      "start": 14.18,
-      "duration": 0.73
+      "start": 20.47,
+      "duration": 1.72,
+      "text": "the sun"
     },
     {
-      "id": 5,
-      "text": "The sun.",
-      "start": 19.06,
-      "duration": 0.67
+      "start": 24.32,
+      "duration": 1.9,
+      "text": "the sun"
     },
     {
-      "id": 6,
-      "text": "The sun.",
-      "start": 21.74,
-      "duration": 0.67
+      "start": 28.63,
+      "duration": 2.02,
+      "text": "star"
     },
     {
-      "id": 7,
-      "text": "Star.",
-      "start": 26.22,
-      "duration": 0.5
+      "start": 32.46,
+      "duration": 1.96,
+      "text": "star"
     },
     {
-      "id": 8,
-      "text": "Star.",
-      "start": 28.27,
-      "duration": 0.5
+      "start": 36.55,
+      "duration": 2.26,
+      "text": "tree"
     },
     {
-      "id": 9,
-      "text": "Tree.",
-      "start": 34.42,
-      "duration": 0.5
+      "start": 40.37,
+      "duration": 2.22,
+      "text": "tree"
     },
     {
-      "id": 10,
-      "text": "Tree.",
-      "start": 36.46,
-      "duration": 0.5
+      "start": 44.39,
+      "duration": 2.22,
+      "text": "mountain"
     },
     {
-      "id": 11,
-      "text": "Mountain.",
-      "start": 42.59,
-      "duration": 0.5
+      "start": 48.41,
+      "duration": 2.24,
+      "text": "mountain"
     },
     {
-      "id": 12,
-      "text": "Mountain.",
-      "start": 44.61,
-      "duration": 0.5
+      "start": 52.41,
+      "duration": 2.22,
+      "text": "river"
     },
     {
-      "id": 13,
-      "text": "River.",
-      "start": 50.65,
-      "duration": 0.5
+      "start": 56.49,
+      "duration": 2.22,
+      "text": "river"
     },
     {
-      "id": 14,
-      "text": "River.",
-      "start": 52.67,
-      "duration": 0.5
+      "start": 60.5,
+      "duration": 2.38,
+      "text": "the sea"
     },
     {
-      "id": 15,
-      "text": "The sea.",
-      "start": 58.71,
-      "duration": 0.8
+      "start": 64.43,
+      "duration": 2.8,
+      "text": "the sea"
     },
     {
-      "id": 16,
-      "text": "The sea.",
-      "start": 61.91,
-      "duration": 0.8
+      "start": 68.36,
+      "duration": 2.36,
+      "text": "rainbow"
     },
     {
-      "id": 17,
-      "text": "Rainbow.",
-      "start": 67.23,
-      "duration": 0.5
+      "start": 72.49,
+      "duration": 2.58,
+      "text": "rainbow"
     },
     {
-      "id": 18,
-      "text": "Rainbow.",
-      "start": 69.19,
-      "duration": 0.5
+      "start": 76.41,
+      "duration": 2.3,
+      "text": "the sky"
     },
     {
-      "id": 19,
-      "text": "The sky.",
-      "start": 75.07,
-      "duration": 0.71
+      "start": 80.3,
+      "duration": 2.32,
+      "text": "the sky"
     },
     {
-      "id": 20,
-      "text": "The sky.",
-      "start": 77.9,
-      "duration": 0.71
+      "start": 84.56,
+      "duration": 2.66,
+      "text": "flower"
     },
     {
-      "id": 21,
-      "text": "Flower.",
-      "start": 82.62,
-      "duration": 0.5
+      "start": 88.64,
+      "duration": 2.94,
+      "text": "flower"
     },
     {
-      "id": 22,
-      "text": "Flower.",
-      "start": 84.86,
-      "duration": 0.5
+      "start": 93.88,
+      "duration": 5.37,
+      "text": "That was great kids, let's do it one more time."
     },
     {
-      "id": 23,
-      "text": "That was great, kids.",
-      "start": 91.58,
-      "duration": 1.88
-    },
-    {
-      "id": 24,
-      "text": "Let's do it one more time.",
-      "start": 96.03,
-      "duration": 1.86
-    },
-    {
-      "id": 25,
-      "text": "In a big voice, repeat after me.",
       "start": 99.25,
-      "duration": 2.8
+      "duration": 6.37,
+      "text": "In a big voice, repeat after me. Here we go."
+    },
+    {
+      "start": 108.49,
+      "duration": 2.13,
+      "text": "the moon"
+    },
+    {
+      "start": 116.38,
+      "duration": 2.26,
+      "text": "the sun"
+    },
+    {
+      "start": 124.42,
+      "duration": 2.42,
+      "text": "star"
+    },
+    {
+      "start": 132.57,
+      "duration": 2.88,
+      "text": "tree"
+    },
+    {
+      "start": 140.54,
+      "duration": 2.98,
+      "text": "mountain"
+    },
+    {
+      "start": 148.42,
+      "duration": 2.74,
+      "text": "river"
+    },
+    {
+      "start": 156.41,
+      "duration": 2.8,
+      "text": "the sea"
+    },
+    {
+      "start": 164.57,
+      "duration": 3.02,
+      "text": "rainbow"
+    },
+    {
+      "start": 172.46,
+      "duration": 2.78,
+      "text": "the sky"
+    },
+    {
+      "start": 180.38,
+      "duration": 2.88,
+      "text": "flower"
+    },
+    {
+      "start": 189.17,
+      "duration": 6.55,
+      "text": "Well done kids, that was great. See you!"
     }
   ],
   "videoId": "D3h-1mBjYdY",
-  "source": "cleaned",
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:03:09.912Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:02.475275+00:00",
+  "rawCaptionCount": 34
 }

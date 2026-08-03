@@ -1,24 +1,154 @@
 {
-  "text": "This is my town. Let's look around. The first block is here. Here are a hospital and a bank. The second block is here. Here are a post office and a fire station. The third block is here. Here are a school, a library, a museum, and a park. The fourth block is here. Here are a police office and a supermarket. The fifth block is here. Here are a bus stop, a theater, a bakery, and a restaurant. Isn't it wonderful? Come and see me!",
+  "text": "Town This is my town. Let’s look around. The first block is here. Here are a hospital and a bank. hospital bank The second block is here. Here are a post office and a fire station. post office fire station The third block is here. Here are a school, a library, a museum and a park. school library museum park The fourth block is here. Here are a police office and a supermarket. police office supermarket The fifth block is here. Here are a bus stop, a theater, a bakery and a restaurant. bus stop theater bakery restaurant Isn’t it wonderful? Come and see me!",
   "segments": [
-    { "id": 1, "text": "This is my town.", "start": 8.34, "duration": 6.27 },
-    { "id": 2, "text": "Let's look around.", "start": 14.61, "duration": 2.13 },
-    { "id": 3, "text": "The first block is here.", "start": 16.73, "duration": 3.11 },
-    { "id": 4, "text": "Here are a hospital and a bank.", "start": 19.84, "duration": 4.26 },
-    { "id": 5, "text": "The second block is here.", "start": 24.1, "duration": 6.61 },
-    { "id": 6, "text": "Here are a post office and a fire station.", "start": 30.71, "duration": 6.09 },
-    { "id": 7, "text": "The third block is here.", "start": 36.81, "duration": 6.49 },
-    { "id": 8, "text": "Here are a school, a library, a museum, and a park.", "start": 43.3, "duration": 7.03 },
-    { "id": 9, "text": "The fourth block is here.", "start": 50.33, "duration": 4.35 },
-    { "id": 10, "text": "Here are a police office and a supermarket.", "start": 54.68, "duration": 9.78 },
-    { "id": 11, "text": "The fifth block is here.", "start": 64.46, "duration": 4.06 },
-    { "id": 12, "text": "Here are a bus stop, a theater, a bakery, and a restaurant.", "start": 68.52, "duration": 11.97 },
-    { "id": 13, "text": "Isn't it wonderful?", "start": 80.49, "duration": 1.45 },
-    { "id": 14, "text": "Come and see me!", "start": 81.94, "duration": 1.94 }
+    {
+      "start": 8.34,
+      "duration": 1.28,
+      "text": "Town"
+    },
+    {
+      "start": 13.06,
+      "duration": 2.06,
+      "text": "This is my town."
+    },
+    {
+      "start": 15.4,
+      "duration": 2.0,
+      "text": "Let’s look around."
+    },
+    {
+      "start": 17.4,
+      "duration": 2.44,
+      "text": "The first block is here."
+    },
+    {
+      "start": 20.62,
+      "duration": 3.48,
+      "text": "Here are a hospital and a bank."
+    },
+    {
+      "start": 24.4,
+      "duration": 1.62,
+      "text": "hospital"
+    },
+    {
+      "start": 26.5,
+      "duration": 1.3,
+      "text": "bank"
+    },
+    {
+      "start": 29.26,
+      "duration": 2.42,
+      "text": "The second block is here."
+    },
+    {
+      "start": 33.02,
+      "duration": 4.26,
+      "text": "Here are a post office and a fire station."
+    },
+    {
+      "start": 37.44,
+      "duration": 1.8,
+      "text": "post office"
+    },
+    {
+      "start": 39.66,
+      "duration": 1.88,
+      "text": "fire station"
+    },
+    {
+      "start": 42.8,
+      "duration": 2.5,
+      "text": "The third block is here."
+    },
+    {
+      "start": 46.56,
+      "duration": 5.92,
+      "text": "Here are a school, a library, a museum and a park."
+    },
+    {
+      "start": 53.4,
+      "duration": 1.28,
+      "text": "school"
+    },
+    {
+      "start": 55.6,
+      "duration": 1.5,
+      "text": "library"
+    },
+    {
+      "start": 57.4,
+      "duration": 1.5,
+      "text": "museum"
+    },
+    {
+      "start": 59.6,
+      "duration": 1.32,
+      "text": "park"
+    },
+    {
+      "start": 62.32,
+      "duration": 2.14,
+      "text": "The fourth block is here."
+    },
+    {
+      "start": 65.92,
+      "duration": 4.16,
+      "text": "Here are a police office and a supermarket."
+    },
+    {
+      "start": 70.62,
+      "duration": 1.84,
+      "text": "police office"
+    },
+    {
+      "start": 73.2,
+      "duration": 2.06,
+      "text": "supermarket"
+    },
+    {
+      "start": 76.36,
+      "duration": 2.66,
+      "text": "The fifth block is here."
+    },
+    {
+      "start": 80.0,
+      "duration": 5.82,
+      "text": "Here are a bus stop, a theater, a bakery and a restaurant."
+    },
+    {
+      "start": 86.28,
+      "duration": 1.66,
+      "text": "bus stop"
+    },
+    {
+      "start": 88.6,
+      "duration": 1.44,
+      "text": "theater"
+    },
+    {
+      "start": 90.44,
+      "duration": 1.82,
+      "text": "bakery"
+    },
+    {
+      "start": 92.62,
+      "duration": 1.8,
+      "text": "restaurant"
+    },
+    {
+      "start": 95.3,
+      "duration": 1.72,
+      "text": "Isn’t it wonderful?"
+    },
+    {
+      "start": 97.08,
+      "duration": 2.28,
+      "text": "Come and see me!"
+    }
   ],
   "videoId": "EfD2k9beP-4",
   "source": "youtube-transcript-api",
-  "fetchedAt": "2026-07-31T12:14:06.449Z",
-  "cleanedAt": "2026-08-01T19:00:00.000Z",
-  "note": "Replaced broken Deepgram-aligned version (29 segs, 20 broken timestamps) with cleaned YouTube captions (14 segs, all real timestamps). Aug 2, 2026."
+  "fetchedAt": "2026-08-03T04:59:03.580628+00:00",
+  "rawCaptionCount": 29
 }

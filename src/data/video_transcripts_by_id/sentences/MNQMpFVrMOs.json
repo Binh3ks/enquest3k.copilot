@@ -1,130 +1,574 @@
 {
-  "text": "English sing sing. Theme 18 doing dialogue. It's a beautiful park. Look at the sky and trees. What are you doing, Jinzu? I'm drawing trees. Trees are good. Yes. I like trees. What are you doing, Sally? I'm jumping. Wow. You're jumping high. Wow. A big fire. Now, come to the fire, everyone. What are they doing? They are dancing. They are good dancers. That's right. Let's dance together. What is she doing? She is sleeping. Dial. Where are you going? I'm going to the library. I'm bored. Let's play outside. Sorry, but I want to read books. What are you doing, mom? I'm writing an email. I'm bored. Let's play outside. Sorry, but I'm busy. Let's do it later. What are you doing, dad? I'm making cookies. Wow. I want to make cookies too. Good. Show me how to make these cookies, please. Great idea. Dial. Look over there. What's he doing? He's dancing. Oh, now he's jumping. Wow. Great. What's she doing? She's jogging. Really? Yes. Song. What are you doing? I'm washing washing. What are you doing? I'm eating eating. What are you doing? I'm dancing dancing. I'm dancing I'm dancing now. What is he doing? He's running running. What is he doing? He's drawing drawing. What is she doing? She's sleeping sleeping She's sleeping She's sleeping now. Song. What are you doing Sue Ho? I'm cleaning my room. What are you doing, Hannah? I'm playing basketball. What are you doing, Suho? I'm cleaning my room. What are you doing, Hana? I'm playing basketball. What are you doing, Jenny? What are you doing, Jenny? I'm making a round butt. Making a round butt. What are you doing, mom? What are you doing, mom? I'm making salad. Making salad. Hey hey hey hey hey hey hey hey What is he doing? What is he doing? Running running He is running. Wow! He's a great runner. That's right. That's right. Yeah. Hey hey hey hey hey hey hey hey. What are they doing? What are they doing? Dancing dancing they're dancing. Wow. They're wonderful dancers. That's right. That's right. Yeah. Story. How beautiful. I want those red shoes. Grandma, please. Okay. How much? $10. Thank you, grandma. Karen, what are you doing? I'm dancing, grandma. She is dancing here. She is dancing there. She is a good dancer. That's right. Your grandma is in the hospital. Karen, go home, please. Sorry. I can't. Oh, I'm sleepy. Oh, Karen. Don't dance. Go to the hospital now. Thank you very much. I'm sorry, grandma. Story. Mom, where are you? I'm in the kitchen. What are you doing? I'm making soup. Can you help me? Yes. I can. Don't run. The soup is hot. Where are you? I'm in the bedroom. This is for you. Thank you. It's too hot. Are you okay? Yes. I'm okay. Thank you.",
+  "text": "Theme 18  Doing It's a beautiful park! Look at the sky and trees. What are you doing, Jinsu? I’m drawing trees. Trees are good. Yes. I like trees. What are you doing, Sally? I'm jumping. Wow, you’re jumping high. Wow! A big fire! Now, come to the fire, everyone! What are they doing? They are dancing. They are good dancers. That’s right. Let’s dance together. Hahaha. What is she doing? Hahaha. Shhh! She is sleeping. Where are you going? I’m going to the library. I’m bored. Let’s play outside. Sorry, but I want to read books. What are you doing, Mom? I’m writing an e-mail. I’m bored. Let’s play outside. Sorry, but I’m busy. Let’s do it later. What are you doing, Dad? I’m making cookies. Wow, I want to make cookies, too. Good! Show me how to make these cookies, please. Great idea! Look over there. What's he doing? He's dancing. Oh! Now he's jumping. Wow. Great. What's she doing? She's jogging. Really? Yes. What are you doing? I'm washing, washing. What are you doing? I'm eating, eating. What are you doing? I'm daincing, dancing. I'm dancing. I'm dancing now. What is he doing? He's running, running. What is he doing? He's drawing, drawing. What is she doing? She's sleeping, sleeping. She's sleeping. She's sleeping now. Shh! What are you doing, Suho? I'm cleaning my room. What are you doing, Hana? I'm playing basketball. What are you doing, Suho? I'm cleaning my room. What are you doing, Hana? I'm playing basketball. What are you doing, Jenny? What are you doing, Jenny? I'm making a robot, making a robot. What are you doing, Mom? What are you doing, Mom? I'm making salad, making salad. Hey, hey, hey! Hey, hey, hey! What is he doing? What is he doing? Running. Running. He is running. Wow! He's a great runner. That's right. That's right. Yeah! Hey, hey, hey! Hey, hey, hey! What are they doing? What are they doing? Dancing. Dancing. They're dancing. Wow! They're wonderful dancers. That's right. That's right. Yeah! How beautiful! I want those red shoes. Grandma, please! Okay. How much? Ten dollars. Thank you, Grandma. Karen, what are you doing? I’m dancing, Grandma. She is dancing here. She is dancing there. She is a good dancer. That’s right. Your grandma is in the hospital. Karen, go home, please. Sorry, I can’t. Oh, I’m sleepy. Oh, Karen! Don’t dance! Go to the hospital, now! Thank you very much. I’m sorry, Grandma. Mom, where are you? I’m in the kitchen. What are you doing? I’m making soup. Can you help me? Yes, I can. Don’t run. The soup is hot. Where are you? I’m in the bedroom. This is for you. Thank you. It’s too hot. Are you okay? Yes, I’m okay. Thank you.",
   "segments": [
     {
-      "id": 1,
-      "text": "English sing sing.",
-      "start": 1.76,
-      "duration": 0.5
+      "start": 3.32,
+      "duration": 2.56,
+      "text": "Theme 18  Doing"
     },
     {
-      "id": 2,
-      "text": "Theme 18 doing dialogue.",
-      "start": 3.36,
-      "duration": 1.73
+      "start": 16.14,
+      "duration": 2.14,
+      "text": "It's a beautiful park!"
     },
     {
-      "id": 3,
-      "text": "It's a beautiful park.",
-      "start": 16.21,
-      "duration": 0.78
+      "start": 20.54,
+      "duration": 2.44,
+      "text": "Look at the sky and trees."
     },
     {
-      "id": 4,
-      "text": "Look at the sky and trees.",
-      "start": 20.7,
-      "duration": 1.07
+      "start": 30.82,
+      "duration": 2.44,
+      "text": "What are you doing, Jinsu?"
     },
     {
-      "id": 5,
-      "text": "What are you doing, Jinzu?",
-      "start": 31.03,
-      "duration": 0.83
+      "start": 33.6,
+      "duration": 2.0,
+      "text": "I’m drawing trees."
     },
     {
-      "id": 6,
-      "text": "I'm drawing trees.",
-      "start": 33.75,
-      "duration": 0.5
+      "start": 36.92,
+      "duration": 1.64,
+      "text": "Trees are good."
     },
     {
-      "id": 7,
-      "text": "Trees are good.",
-      "start": 37.03,
-      "duration": 0.5
+      "start": 39.16,
+      "duration": 3.02,
+      "text": "Yes. I like trees."
     },
     {
-      "id": 8,
-      "text": "Yes.",
-      "start": 39.48,
-      "duration": 0.5
+      "start": 47.34,
+      "duration": 2.22,
+      "text": "What are you doing, Sally?"
     },
     {
-      "id": 9,
-      "text": "I like trees.",
-      "start": 40.45,
-      "duration": 0.5
+      "start": 49.9,
+      "duration": 1.72,
+      "text": "I'm jumping."
     },
     {
-      "id": 10,
-      "text": "What are you doing, Sally?",
-      "start": 47.41,
-      "duration": 0.82
+      "start": 53.16,
+      "duration": 2.76,
+      "text": "Wow, you’re jumping high."
     },
     {
-      "id": 11,
-      "text": "I'm jumping.",
-      "start": 50.05,
-      "duration": 0.5
+      "start": 62.02,
+      "duration": 2.86,
+      "text": "Wow! A big fire!"
     },
     {
-      "id": 12,
-      "text": "Wow!",
-      "start": 53.52,
-      "duration": 0.5
+      "start": 65.5,
+      "duration": 2.96,
+      "text": "Now, come to the fire, everyone!"
     },
     {
-      "id": 13,
-      "text": "You're jumping high.",
-      "start": 54.32,
-      "duration": 0.5
+      "start": 71.68,
+      "duration": 1.86,
+      "text": "What are they doing?"
     },
     {
-      "id": 14,
-      "text": "Wow!",
-      "start": 62.32,
-      "duration": 0.5
+      "start": 74.26,
+      "duration": 1.98,
+      "text": "They are dancing."
     },
     {
-      "id": 15,
-      "text": "A big fire!",
-      "start": 62.79,
-      "duration": 0.5
+      "start": 77.2,
+      "duration": 2.28,
+      "text": "They are good dancers."
     },
     {
-      "id": 16,
-      "text": "Now, come to.",
-      "start": 64.94,
-      "duration": 0.5
+      "start": 80.18,
+      "duration": 3.5,
+      "text": "That’s right. Let’s dance together."
+    },
+    {
+      "start": 91.62,
+      "duration": 3.18,
+      "text": "Hahaha. What is she doing?"
+    },
+    {
+      "start": 94.8,
+      "duration": 2.02,
+      "text": "Hahaha."
+    },
+    {
+      "start": 96.82,
+      "duration": 3.56,
+      "text": "Shhh! She is sleeping."
+    },
+    {
+      "start": 109.78,
+      "duration": 2.04,
+      "text": "Where are you going?"
+    },
+    {
+      "start": 113.6,
+      "duration": 2.36,
+      "text": "I’m going to the library."
+    },
+    {
+      "start": 116.46,
+      "duration": 3.78,
+      "text": "I’m bored. Let’s play outside."
+    },
+    {
+      "start": 121.02,
+      "duration": 3.08,
+      "text": "Sorry, but I want to read books."
+    },
+    {
+      "start": 128.52,
+      "duration": 2.24,
+      "text": "What are you doing, Mom?"
+    },
+    {
+      "start": 131.44,
+      "duration": 2.4,
+      "text": "I’m writing an e-mail."
+    },
+    {
+      "start": 135.16,
+      "duration": 4.12,
+      "text": "I’m bored. Let’s play outside."
+    },
+    {
+      "start": 139.76,
+      "duration": 2.34,
+      "text": "Sorry, but I’m busy."
+    },
+    {
+      "start": 142.36,
+      "duration": 2.02,
+      "text": "Let’s do it later."
+    },
+    {
+      "start": 149.08,
+      "duration": 2.76,
+      "text": "What are you doing, Dad?"
+    },
+    {
+      "start": 154.84,
+      "duration": 2.18,
+      "text": "I’m making cookies."
+    },
+    {
+      "start": 157.86,
+      "duration": 3.82,
+      "text": "Wow, I want to make cookies, too."
+    },
+    {
+      "start": 162.22,
+      "duration": 1.04,
+      "text": "Good!"
+    },
+    {
+      "start": 163.9,
+      "duration": 3.34,
+      "text": "Show me how to make these cookies, please."
+    },
+    {
+      "start": 167.32,
+      "duration": 2.02,
+      "text": "Great idea!"
+    },
+    {
+      "start": 184.56,
+      "duration": 1.76,
+      "text": "Look over there."
+    },
+    {
+      "start": 190.82,
+      "duration": 2.16,
+      "text": "What's he doing?"
+    },
+    {
+      "start": 194.0,
+      "duration": 1.52,
+      "text": "He's dancing."
+    },
+    {
+      "start": 200.7,
+      "duration": 2.68,
+      "text": "Oh! Now he's jumping."
+    },
+    {
+      "start": 204.12,
+      "duration": 2.24,
+      "text": "Wow. Great."
+    },
+    {
+      "start": 214.54,
+      "duration": 1.64,
+      "text": "What's she doing?"
+    },
+    {
+      "start": 216.72,
+      "duration": 2.1,
+      "text": "She's jogging."
+    },
+    {
+      "start": 219.5,
+      "duration": 1.42,
+      "text": "Really?"
+    },
+    {
+      "start": 220.92,
+      "duration": 1.0,
+      "text": "Yes."
+    },
+    {
+      "start": 235.8,
+      "duration": 2.06,
+      "text": "What are you doing?"
+    },
+    {
+      "start": 238.28,
+      "duration": 1.92,
+      "text": "I'm washing, washing."
+    },
+    {
+      "start": 240.2,
+      "duration": 1.6,
+      "text": "What are you doing?"
+    },
+    {
+      "start": 242.34,
+      "duration": 1.86,
+      "text": "I'm eating, eating."
+    },
+    {
+      "start": 244.2,
+      "duration": 1.8,
+      "text": "What are you doing?"
+    },
+    {
+      "start": 246.32,
+      "duration": 2.5,
+      "text": "I'm daincing, dancing."
+    },
+    {
+      "start": 248.82,
+      "duration": 4.0,
+      "text": "I'm dancing. I'm dancing now."
+    },
+    {
+      "start": 254.2,
+      "duration": 1.5,
+      "text": "What is he doing?"
+    },
+    {
+      "start": 256.12,
+      "duration": 1.92,
+      "text": "He's running, running."
+    },
+    {
+      "start": 258.22,
+      "duration": 1.68,
+      "text": "What is he doing?"
+    },
+    {
+      "start": 260.22,
+      "duration": 1.92,
+      "text": "He's drawing, drawing."
+    },
+    {
+      "start": 262.14,
+      "duration": 1.82,
+      "text": "What is she doing?"
+    },
+    {
+      "start": 263.96,
+      "duration": 2.84,
+      "text": "She's sleeping, sleeping."
+    },
+    {
+      "start": 266.8,
+      "duration": 5.98,
+      "text": "She's sleeping. She's sleeping now. Shh!"
+    },
+    {
+      "start": 287.82,
+      "duration": 2.72,
+      "text": "What are you doing, Suho?"
+    },
+    {
+      "start": 290.54,
+      "duration": 3.02,
+      "text": "I'm cleaning my room."
+    },
+    {
+      "start": 293.9,
+      "duration": 2.72,
+      "text": "What are you doing, Hana?"
+    },
+    {
+      "start": 296.62,
+      "duration": 3.14,
+      "text": "I'm playing basketball."
+    },
+    {
+      "start": 305.96,
+      "duration": 2.8,
+      "text": "What are you doing, Suho?"
+    },
+    {
+      "start": 308.76,
+      "duration": 3.0,
+      "text": "I'm cleaning my room."
+    },
+    {
+      "start": 312.1,
+      "duration": 2.72,
+      "text": "What are you doing, Hana?"
+    },
+    {
+      "start": 314.82,
+      "duration": 3.36,
+      "text": "I'm playing basketball."
+    },
+    {
+      "start": 329.34,
+      "duration": 2.18,
+      "text": "What are you doing, Jenny?"
+    },
+    {
+      "start": 331.52,
+      "duration": 1.98,
+      "text": "What are you doing, Jenny?"
+    },
+    {
+      "start": 333.5,
+      "duration": 4.2,
+      "text": "I'm making a robot, making a robot."
+    },
+    {
+      "start": 337.7,
+      "duration": 2.06,
+      "text": "What are you doing, Mom?"
+    },
+    {
+      "start": 339.76,
+      "duration": 1.98,
+      "text": "What are you doing, Mom?"
+    },
+    {
+      "start": 341.74,
+      "duration": 4.34,
+      "text": "I'm making salad, making salad."
+    },
+    {
+      "start": 357.26,
+      "duration": 4.42,
+      "text": "Hey, hey, hey! Hey, hey, hey!"
+    },
+    {
+      "start": 361.84,
+      "duration": 4.42,
+      "text": "What is he doing? What is he doing?"
+    },
+    {
+      "start": 366.26,
+      "duration": 4.42,
+      "text": "Running. Running. He is running."
+    },
+    {
+      "start": 370.68,
+      "duration": 4.22,
+      "text": "Wow! He's a great runner."
+    },
+    {
+      "start": 374.9,
+      "duration": 4.4,
+      "text": "That's right. That's right. Yeah!"
+    },
+    {
+      "start": 383.48,
+      "duration": 4.46,
+      "text": "Hey, hey, hey! Hey, hey, hey!"
+    },
+    {
+      "start": 387.94,
+      "duration": 4.48,
+      "text": "What are they doing? What are they doing?"
+    },
+    {
+      "start": 392.42,
+      "duration": 3.86,
+      "text": "Dancing. Dancing. They're dancing."
+    },
+    {
+      "start": 396.46,
+      "duration": 4.84,
+      "text": "Wow! They're wonderful dancers."
+    },
+    {
+      "start": 401.3,
+      "duration": 4.36,
+      "text": "That's right. That's right. Yeah!"
+    },
+    {
+      "start": 421.82,
+      "duration": 1.48,
+      "text": "How beautiful!"
+    },
+    {
+      "start": 423.3,
+      "duration": 4.62,
+      "text": "I want those red shoes. Grandma, please!"
+    },
+    {
+      "start": 428.9,
+      "duration": 2.7,
+      "text": "Okay. How much?"
+    },
+    {
+      "start": 432.26,
+      "duration": 2.34,
+      "text": "Ten dollars."
+    },
+    {
+      "start": 438.16,
+      "duration": 1.58,
+      "text": "Thank you, Grandma."
+    },
+    {
+      "start": 449.16,
+      "duration": 3.06,
+      "text": "Karen, what are you doing?"
+    },
+    {
+      "start": 452.34,
+      "duration": 2.34,
+      "text": "I’m dancing, Grandma."
+    },
+    {
+      "start": 470.42,
+      "duration": 1.76,
+      "text": "She is dancing here."
+    },
+    {
+      "start": 472.34,
+      "duration": 1.86,
+      "text": "She is dancing there."
+    },
+    {
+      "start": 474.68,
+      "duration": 2.3,
+      "text": "She is a good dancer."
+    },
+    {
+      "start": 477.14,
+      "duration": 1.3,
+      "text": "That’s right."
+    },
+    {
+      "start": 483.82,
+      "duration": 2.76,
+      "text": "Your grandma is in the hospital."
+    },
+    {
+      "start": 486.78,
+      "duration": 2.18,
+      "text": "Karen, go home, please."
+    },
+    {
+      "start": 489.24,
+      "duration": 2.42,
+      "text": "Sorry, I can’t."
+    },
+    {
+      "start": 496.16,
+      "duration": 2.7,
+      "text": "Oh, I’m sleepy."
+    },
+    {
+      "start": 504.02,
+      "duration": 2.84,
+      "text": "Oh, Karen! Don’t dance!"
+    },
+    {
+      "start": 506.94,
+      "duration": 2.4,
+      "text": "Go to the hospital, now!"
+    },
+    {
+      "start": 514.38,
+      "duration": 2.1,
+      "text": "Thank you very much."
+    },
+    {
+      "start": 518.14,
+      "duration": 2.08,
+      "text": "I’m sorry, Grandma."
+    },
+    {
+      "start": 537.04,
+      "duration": 2.88,
+      "text": "Mom, where are you?"
+    },
+    {
+      "start": 540.52,
+      "duration": 2.04,
+      "text": "I’m in the kitchen."
+    },
+    {
+      "start": 543.34,
+      "duration": 2.34,
+      "text": "What are you doing?"
+    },
+    {
+      "start": 545.68,
+      "duration": 1.9,
+      "text": "I’m making soup."
+    },
+    {
+      "start": 548.34,
+      "duration": 1.68,
+      "text": "Can you help me?"
+    },
+    {
+      "start": 550.54,
+      "duration": 2.22,
+      "text": "Yes, I can."
+    },
+    {
+      "start": 553.12,
+      "duration": 3.48,
+      "text": "Don’t run. The soup is hot."
+    },
+    {
+      "start": 558.98,
+      "duration": 1.98,
+      "text": "Where are you?"
+    },
+    {
+      "start": 561.62,
+      "duration": 2.06,
+      "text": "I’m in the bedroom."
+    },
+    {
+      "start": 566.74,
+      "duration": 2.14,
+      "text": "This is for you."
+    },
+    {
+      "start": 568.98,
+      "duration": 3.78,
+      "text": "Thank you. It’s too hot."
+    },
+    {
+      "start": 577.34,
+      "duration": 2.18,
+      "text": "Are you okay?"
+    },
+    {
+      "start": 579.52,
+      "duration": 3.54,
+      "text": "Yes, I’m okay. Thank you."
     }
   ],
-  "fetchedAt": "2026-07-23T06:26:38.687101+00:00",
   "videoId": "MNQMpFVrMOs",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1",
-    "2": "Speaker2",
-    "3": "Speaker3",
-    "4": "Speaker4"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:26:38.687132+00:00",
-    "dgWordCount": 476,
-    "dgUtteranceCount": 150,
-    "matchedSegments": 150,
-    "totalDuration": 582.83
-  },
-  "repairedAt": "2026-07-23T07:58:35.800076Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 139,
-    "afterSegments": 141,
-    "beforeAvgWords": 3.4,
-    "afterAvgWords": 3.4,
-    "merged": -2,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:04:28.047Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:06.913377+00:00",
+  "rawCaptionCount": 113
 }

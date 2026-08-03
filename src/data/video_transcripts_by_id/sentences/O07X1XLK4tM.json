@@ -1,116 +1,274 @@
 {
-  "text": "Welcome to my house. Anne, you have a nice garden. Flowers and trees are so beautiful. Thank you. My family planted them in last spring. Let's go inside. Oh, this is the living room. Yes. My family usually watch TV and talk in here. What about your room? Where is it? Here. Come in. Oh, it looks so much neater than I thought. So I guess you sleep and study here. That's right. Why don't you take a look around? Are these only books you have? Nope. There is a study room on the opposite of this room. Wow. Can I see it? Sure thing. Follow me. I'm hungry. And do you have something to eat? Alright. My mom made some cupcakes. Let's go to the kitchen. Yay. Hooray. Oh, Anne, where's the bathroom? It's right next to my room. Okay. Gotcha. Let's role play.",
+  "text": "[Music] welcome to my house and you have a nice garden flowers and trees are so beautiful thank you my family planted them in last spring let's go inside [Music] oh this is the living room yes my family usually watch tv and talk in here what about your room where is it here come in oh it looks so much neater than i thought so i guess you sleep and study here that's right why don't you take a look around are these only books you have nope there is a study room on the opposite of this room wow can i see it sure thing follow me [Music] i'm hungry and do you have something to eat all right my mom made some cupcakes let's go to the kitchen yay hooray [Music] oh and where's the bathroom it's right next to my room okay gotcha [Music] let's role play [Music] [Music] what hmm hmm [Music] hmm [Music] uh bye [Music]",
   "segments": [
     {
-      "id": 1,
-      "text": "Welcome to my house.",
+      "start": 0.0,
+      "duration": 13.47,
+      "text": "[Music]"
+    },
+    {
       "start": 13.6,
-      "duration": 0.62
+      "duration": 6.96,
+      "text": "welcome to my house"
     },
     {
-      "id": 2,
-      "text": "Anne, you have a nice garden.",
-      "start": 16.91,
-      "duration": 1.17
+      "start": 16.8,
+      "duration": 8.32,
+      "text": "and you have a nice garden"
     },
     {
-      "id": 3,
-      "text": "Flowers and trees are so beautiful.",
-      "start": 20.66,
-      "duration": 1.44
+      "start": 20.56,
+      "duration": 6.48,
+      "text": "flowers and trees are so beautiful"
     },
     {
-      "id": 4,
-      "text": "Thank you.",
-      "start": 25.22,
-      "duration": 0.5
+      "start": 25.12,
+      "duration": 6.72,
+      "text": "thank you"
     },
     {
-      "id": 5,
-      "text": "My family planted them in last spring.",
-      "start": 27.06,
-      "duration": 1.77
+      "start": 27.04,
+      "duration": 4.8,
+      "text": "my family planted them in last spring"
     },
     {
-      "id": 6,
-      "text": "Let's go inside.",
-      "start": 32.71,
-      "duration": 0.5
+      "start": 32.56,
+      "duration": 6.56,
+      "text": "let's go inside"
     },
     {
-      "id": 7,
-      "text": "Oh, this is the living room.",
-      "start": 39.19,
-      "duration": 1.17
+      "start": 35.59,
+      "duration": 6.89,
+      "text": "[Music]"
     },
     {
-      "id": 8,
-      "text": "Yes.",
-      "start": 42.65,
-      "duration": 0.5
+      "start": 39.12,
+      "duration": 4.4,
+      "text": "oh this is the living room"
     },
     {
-      "id": 9,
-      "text": "My family usually watch TV and talk in here.",
-      "start": 43.6,
-      "duration": 2.67
+      "start": 42.48,
+      "duration": 4.24,
+      "text": "yes"
     },
     {
-      "id": 10,
-      "text": "What about your room?",
-      "start": 48.73,
-      "duration": 0.54
+      "start": 43.52,
+      "duration": 5.04,
+      "text": "my family usually watch tv and talk in"
     },
     {
-      "id": 11,
-      "text": "Where is it?",
-      "start": 50.01,
-      "duration": 0.5
+      "start": 46.72,
+      "duration": 6.0,
+      "text": "here"
     },
     {
-      "id": 12,
-      "text": "Here.",
-      "start": 55.54,
-      "duration": 0.5
+      "start": 48.56,
+      "duration": 4.16,
+      "text": "what about your room where is it"
     },
     {
-      "id": 13,
-      "text": "Come in.",
-      "start": 56,
-      "duration": 0.5
+      "start": 55.36,
+      "duration": 3.96,
+      "text": "here come in"
     },
     {
-      "id": 14,
-      "text": "Oh, it looks so much neater than I thought!",
-      "start": 60.98,
-      "duration": 2.15
+      "start": 60.96,
+      "duration": 4.8,
+      "text": "oh it looks so much neater than i"
+    },
+    {
+      "start": 63.36,
+      "duration": 2.4,
+      "text": "thought"
+    },
+    {
+      "start": 65.92,
+      "duration": 5.44,
+      "text": "so i guess you sleep and study here"
+    },
+    {
+      "start": 69.76,
+      "duration": 5.36,
+      "text": "that's right"
+    },
+    {
+      "start": 71.36,
+      "duration": 3.76,
+      "text": "why don't you take a look around"
+    },
+    {
+      "start": 78.56,
+      "duration": 3.76,
+      "text": "are these only books you have"
+    },
+    {
+      "start": 82.72,
+      "duration": 4.0,
+      "text": "nope"
+    },
+    {
+      "start": 84.16,
+      "duration": 4.88,
+      "text": "there is a study room on the opposite of"
+    },
+    {
+      "start": 86.72,
+      "duration": 3.36,
+      "text": "this room"
+    },
+    {
+      "start": 89.04,
+      "duration": 2.72,
+      "text": "wow"
+    },
+    {
+      "start": 90.08,
+      "duration": 3.6,
+      "text": "can i see it"
+    },
+    {
+      "start": 91.76,
+      "duration": 3.9,
+      "text": "sure thing"
+    },
+    {
+      "start": 93.68,
+      "duration": 5.08,
+      "text": "follow me"
+    },
+    {
+      "start": 95.66,
+      "duration": 3.1,
+      "text": "[Music]"
+    },
+    {
+      "start": 100.88,
+      "duration": 4.4,
+      "text": "i'm hungry"
+    },
+    {
+      "start": 102.8,
+      "duration": 5.12,
+      "text": "and do you have something to eat"
+    },
+    {
+      "start": 105.28,
+      "duration": 2.64,
+      "text": "all right"
+    },
+    {
+      "start": 108.24,
+      "duration": 5.28,
+      "text": "my mom made some cupcakes let's go to"
+    },
+    {
+      "start": 111.2,
+      "duration": 3.28,
+      "text": "the kitchen"
+    },
+    {
+      "start": 113.52,
+      "duration": 3.96,
+      "text": "yay"
+    },
+    {
+      "start": 114.48,
+      "duration": 3.0,
+      "text": "hooray"
+    },
+    {
+      "start": 128.12,
+      "duration": 3.96,
+      "text": "[Music]"
+    },
+    {
+      "start": 131.2,
+      "duration": 4.4,
+      "text": "oh"
+    },
+    {
+      "start": 132.08,
+      "duration": 6.56,
+      "text": "and where's the bathroom"
+    },
+    {
+      "start": 135.6,
+      "duration": 5.4,
+      "text": "it's right next to my room"
+    },
+    {
+      "start": 138.64,
+      "duration": 5.48,
+      "text": "okay gotcha"
+    },
+    {
+      "start": 141.0,
+      "duration": 3.12,
+      "text": "[Music]"
+    },
+    {
+      "start": 144.16,
+      "duration": 9.51,
+      "text": "let's role play"
+    },
+    {
+      "start": 147.43,
+      "duration": 6.24,
+      "text": "[Music]"
+    },
+    {
+      "start": 175.79,
+      "duration": 6.01,
+      "text": "[Music]"
+    },
+    {
+      "start": 178.8,
+      "duration": 3.0,
+      "text": "what"
+    },
+    {
+      "start": 221.6,
+      "duration": 3.0,
+      "text": "hmm"
+    },
+    {
+      "start": 226.16,
+      "duration": 3.0,
+      "text": "hmm"
+    },
+    {
+      "start": 235.86,
+      "duration": 3.1,
+      "text": "[Music]"
+    },
+    {
+      "start": 255.84,
+      "duration": 3.0,
+      "text": "hmm"
+    },
+    {
+      "start": 268.32,
+      "duration": 3.13,
+      "text": "[Music]"
+    },
+    {
+      "start": 274.64,
+      "duration": 3.0,
+      "text": "uh"
+    },
+    {
+      "start": 283.36,
+      "duration": 7.76,
+      "text": "bye"
+    },
+    {
+      "start": 284.37,
+      "duration": 6.75,
+      "text": "[Music]"
     }
   ],
-  "fetchedAt": "2026-07-23T06:23:59.248828+00:00",
   "videoId": "O07X1XLK4tM",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1",
-    "2": "Speaker2"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:23:59.248855+00:00",
-    "dgWordCount": 145,
-    "dgUtteranceCount": 34,
-    "matchedSegments": 34,
-    "totalDuration": 145.43
-  },
-  "repairedAt": "2026-07-23T07:58:35.754603Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 34,
-    "afterSegments": 34,
-    "beforeAvgWords": 4.3,
-    "afterAvgWords": 4.3,
-    "merged": 0,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:04:44.825Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:09.292229+00:00",
+  "rawCaptionCount": 53
 }

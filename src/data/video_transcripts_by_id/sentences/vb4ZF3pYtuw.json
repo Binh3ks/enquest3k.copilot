@@ -1,160 +1,399 @@
 {
-  "text": "Learn English with Sun English Center. My school things. Hi Quan. Do you have a pencil? Yes, I do. It's new. Great. Do you have an eraser? No, I don't. It's at home. That's okay. I have one. Here you are. Thank you. Do you have a notebook? Yes, I do. Do you have a pencil case? Yes, I do. Do you have a ruler? Yes, I do. Do you have a school bag? Yes, I do. Thank you for the chat! You're welcome!",
+  "text": "Learn English with Sun English Center. >> My school things. Hi Quan. Do you have a pencil? >> Yes, I do. It's new. >> Great. Do you have an eraser? >> No, I don't. It's at home. >> That's okay. I have one. Here you are. >> Thank you. Numb. >> Does Lynn have a notebook? Yes, she does. It's pink. >> Look, I have a blue pencil case. >> Wow, it's so nice. I have a yellow highlighter and a crayon. >> Cool. I have a green pen. Does Jack have a calculator? >> Yes, he does. He has it every day. >> Do you have a compass? >> No, I don't have it today. Listen and repeat. Hi Quan, do you have a pencil? Hi Quan, do you have a pencil? Hi Quan, do you have a pencil? Yes, I do. [music] It's new. Yes, I do. It's new. Yes, I do. It's new. Great. Do you have an eraser? Great. Do you have ven eraser? Great. Do you have ven eraser? No, I don't. It's at home. No, I don't. It's [music] at home. No, I don't. It's at home. [music] That's okay. I have one. Here you are. That's okay. I have one. Here you are. That's okay. I have one. Here you are. Thank you, Num. Thank you, Num. Thank you, Num. Does Lynn have a notebook? [music] Does Lynn have a notebook? Does Lynn have a notebook? [music] Yes, she does. It's pink. Yes, she does. It's pink. Yes, she does. It's pink. Look, I have a blue pencil case. Look, I have a blue pencil case. Look, I have a blue pencil case. Wow, it's so nice. Wow, it's so nice. Wow, it's so nice. I have a yellow highlighter and a crayon. [music] I have a yellow highlighter and a [music] crayon. I have a yellow highlighter and a crayon. Cool. I have a green pen. Cool. I have a green pen. Cool. I have a green pen. Does Jack have a calculator? Does Jack have a calculator? Does Jack have a calculator? Yes, he does. He has it every day. Yes, he does. He has it every day. Yes, he does. He has it every day. Do you have a compass? Do you have a compass? Do you have a compass? No, I don't have it today. No, I don't have it today. No, I don't have it today. Thank you for watching. See you next time.",
   "segments": [
     {
-      "id": 1,
-      "text": "Learn English with Sun English Center.",
-      "start": 0.96,
-      "duration": 2.79
+      "start": 1.28,
+      "duration": 7.12,
+      "text": "Learn English with Sun English Center."
     },
     {
-      "id": 2,
-      "text": "My school things.",
-      "start": 5.28,
-      "duration": 1.02
+      "start": 5.44,
+      "duration": 6.32,
+      "text": ">> My school things."
     },
     {
-      "id": 3,
-      "text": "Hi Quan.",
-      "start": 8.24,
-      "duration": 0.5
+      "start": 8.4,
+      "duration": 6.72,
+      "text": "Hi Quan. Do you have a pencil?"
     },
     {
-      "id": 4,
-      "text": "Do you have a pencil?",
-      "start": 9.36,
-      "duration": 1.43
-    },
-    {
-      "id": 5,
-      "text": "Yes, I do.",
       "start": 11.76,
-      "duration": 0.5
+      "duration": 6.64,
+      "text": ">> Yes, I do. It's new."
     },
     {
-      "id": 6,
-      "text": "It's new.",
-      "start": 13.04,
-      "duration": 0.5
+      "start": 15.12,
+      "duration": 6.48,
+      "text": ">> Great. Do you have an eraser?"
     },
     {
-      "id": 7,
-      "text": "Great.",
-      "start": 15.07,
-      "duration": 0.5
+      "start": 18.4,
+      "duration": 7.04,
+      "text": ">> No, I don't. It's at home."
     },
     {
-      "id": 8,
-      "text": "Do you have an eraser?",
-      "start": 16.11,
-      "duration": 1.36
+      "start": 21.6,
+      "duration": 5.52,
+      "text": ">> That's okay. I have one. Here you are."
     },
     {
-      "id": 9,
-      "text": "No, I don't.",
-      "start": 18.27,
-      "duration": 0.5
+      "start": 25.44,
+      "duration": 4.24,
+      "text": ">> Thank you. Numb."
     },
     {
-      "id": 10,
-      "text": "It's at home.",
-      "start": 19.55,
-      "duration": 0.69
+      "start": 27.12,
+      "duration": 5.68,
+      "text": ">> Does Lynn have a notebook?"
     },
     {
-      "id": 11,
-      "text": "That's okay.",
-      "start": 21.55,
-      "duration": 0.5
+      "start": 29.68,
+      "duration": 6.64,
+      "text": "Yes, she does. It's pink."
     },
     {
-      "id": 12,
-      "text": "I have one.",
-      "start": 22.59,
-      "duration": 0.5
+      "start": 32.8,
+      "duration": 6.88,
+      "text": ">> Look, I have a blue pencil case."
     },
     {
-      "id": 13,
-      "text": "Here you are.",
-      "start": 23.63,
-      "duration": 0.59
+      "start": 36.32,
+      "duration": 5.52,
+      "text": ">> Wow, it's so nice."
     },
     {
-      "id": 14,
-      "text": "Thank you.",
-      "start": 25.31,
-      "duration": 0.5
+      "start": 39.68,
+      "duration": 3.84,
+      "text": "I have a yellow highlighter and a"
     },
     {
-      "id": 15,
-      "text": "Do you have a notebook?",
-      "start": 26.99,
-      "duration": 1.54
+      "start": 41.84,
+      "duration": 5.44,
+      "text": "crayon."
     },
     {
-      "id": 16,
-      "text": "Yes, I do.",
-      "start": 49.75,
-      "duration": 0.5
+      "start": 43.52,
+      "duration": 6.32,
+      "text": ">> Cool. I have a green pen."
     },
     {
-      "id": 17,
-      "text": "Do you have a pencil case?",
-      "start": 78.3,
-      "duration": 4.25
+      "start": 47.28,
+      "duration": 6.56,
+      "text": "Does Jack have a calculator?"
     },
     {
-      "id": 18,
-      "text": "Yes, I do.",
-      "start": 92.68,
-      "duration": 0.5
+      "start": 49.84,
+      "duration": 6.48,
+      "text": ">> Yes, he does. He has it every day."
     },
     {
-      "id": 19,
-      "text": "Do you have a ruler?",
-      "start": 108.76,
-      "duration": 4.17
+      "start": 53.84,
+      "duration": 6.0,
+      "text": ">> Do you have a compass?"
     },
     {
-      "id": 20,
-      "text": "Yes, I do.",
-      "start": 116.4,
-      "duration": 0.5
+      "start": 56.32,
+      "duration": 7.2,
+      "text": ">> No, I don't have it today."
     },
     {
-      "id": 21,
-      "text": "Do you have a school bag?",
-      "start": 124.64,
-      "duration": 4.27
+      "start": 59.84,
+      "duration": 8.44,
+      "text": "Listen and repeat."
     },
     {
-      "id": 22,
-      "text": "Yes, I do.",
-      "start": 139.31,
-      "duration": 0.5
+      "start": 63.52,
+      "duration": 4.76,
+      "text": "Hi Quan, do you have a pencil?"
     },
     {
-      "id": 23,
-      "text": "Thank you for the chat!",
-      "start": 183.33,
-      "duration": 3.03
+      "start": 70.96,
+      "duration": 4.68,
+      "text": "Hi Quan, do you have a pencil?"
     },
     {
-      "id": 24,
-      "text": "You're welcome!",
-      "start": 194.05,
-      "duration": 0.6
+      "start": 77.36,
+      "duration": 4.68,
+      "text": "Hi Quan, do you have a pencil?"
+    },
+    {
+      "start": 85.04,
+      "duration": 4.4,
+      "text": "Yes, I do. [music] It's new."
+    },
+    {
+      "start": 92.72,
+      "duration": 4.6,
+      "text": "Yes, I do. It's new."
+    },
+    {
+      "start": 99.76,
+      "duration": 4.68,
+      "text": "Yes, I do. It's new."
+    },
+    {
+      "start": 108.08,
+      "duration": 4.68,
+      "text": "Great. Do you have an eraser?"
+    },
+    {
+      "start": 116.48,
+      "duration": 4.68,
+      "text": "Great. Do you have ven eraser?"
+    },
+    {
+      "start": 123.92,
+      "duration": 4.68,
+      "text": "Great. Do you have ven eraser?"
+    },
+    {
+      "start": 131.36,
+      "duration": 4.76,
+      "text": "No, I don't. It's at home."
+    },
+    {
+      "start": 139.36,
+      "duration": 4.72,
+      "text": "No, I don't. It's [music] at home."
+    },
+    {
+      "start": 147.76,
+      "duration": 4.76,
+      "text": "No, I don't. It's at home."
+    },
+    {
+      "start": 153.93,
+      "duration": 7.39,
+      "text": "[music]"
+    },
+    {
+      "start": 155.76,
+      "duration": 5.56,
+      "text": "That's okay. I have one. Here you are."
+    },
+    {
+      "start": 165.44,
+      "duration": 5.56,
+      "text": "That's okay. I have one. Here you are."
+    },
+    {
+      "start": 175.28,
+      "duration": 5.56,
+      "text": "That's okay. I have one. Here you are."
+    },
+    {
+      "start": 183.36,
+      "duration": 3.48,
+      "text": "Thank you, Num."
+    },
+    {
+      "start": 188.72,
+      "duration": 3.48,
+      "text": "Thank you, Num."
+    },
+    {
+      "start": 193.92,
+      "duration": 3.48,
+      "text": "Thank you, Num."
+    },
+    {
+      "start": 198.32,
+      "duration": 3.96,
+      "text": "Does Lynn have a notebook?"
+    },
+    {
+      "start": 202.4,
+      "duration": 2.02,
+      "text": "[music]"
+    },
+    {
+      "start": 205.12,
+      "duration": 3.96,
+      "text": "Does Lynn have a notebook?"
+    },
+    {
+      "start": 210.56,
+      "duration": 3.96,
+      "text": "Does Lynn have a notebook?"
+    },
+    {
+      "start": 214.84,
+      "duration": 6.24,
+      "text": "[music]"
+    },
+    {
+      "start": 216.4,
+      "duration": 4.68,
+      "text": "Yes, she does. It's pink."
+    },
+    {
+      "start": 224.32,
+      "duration": 4.68,
+      "text": "Yes, she does. It's pink."
+    },
+    {
+      "start": 231.28,
+      "duration": 4.6,
+      "text": "Yes, she does. It's pink."
+    },
+    {
+      "start": 238.16,
+      "duration": 5.08,
+      "text": "Look, I have a blue pencil case."
+    },
+    {
+      "start": 247.52,
+      "duration": 5.08,
+      "text": "Look, I have a blue pencil case."
+    },
+    {
+      "start": 256.8,
+      "duration": 5.08,
+      "text": "Look, I have a blue pencil case."
+    },
+    {
+      "start": 265.28,
+      "duration": 4.36,
+      "text": "Wow, it's so nice."
+    },
+    {
+      "start": 273.68,
+      "duration": 4.44,
+      "text": "Wow, it's so nice."
+    },
+    {
+      "start": 281.44,
+      "duration": 4.44,
+      "text": "Wow, it's so nice."
+    },
+    {
+      "start": 289.04,
+      "duration": 5.16,
+      "text": "I have a yellow highlighter and a"
+    },
+    {
+      "start": 291.2,
+      "duration": 3.0,
+      "text": "crayon."
+    },
+    {
+      "start": 295.41,
+      "duration": 2.02,
+      "text": "[music]"
+    },
+    {
+      "start": 298.56,
+      "duration": 5.16,
+      "text": "I have a yellow highlighter and a"
+    },
+    {
+      "start": 300.65,
+      "duration": 3.07,
+      "text": "[music] crayon."
+    },
+    {
+      "start": 308.0,
+      "duration": 5.16,
+      "text": "I have a yellow highlighter and a"
+    },
+    {
+      "start": 310.16,
+      "duration": 3.0,
+      "text": "crayon."
+    },
+    {
+      "start": 317.44,
+      "duration": 4.76,
+      "text": "Cool. I have a green pen."
+    },
+    {
+      "start": 326.56,
+      "duration": 4.84,
+      "text": "Cool. I have a green pen."
+    },
+    {
+      "start": 331.44,
+      "duration": 3.0,
+      "text": "Cool."
+    },
+    {
+      "start": 335.92,
+      "duration": 3.96,
+      "text": "I have a green pen."
+    },
+    {
+      "start": 343.92,
+      "duration": 4.04,
+      "text": "Does Jack have a calculator?"
+    },
+    {
+      "start": 350.4,
+      "duration": 4.04,
+      "text": "Does Jack have a calculator?"
+    },
+    {
+      "start": 357.28,
+      "duration": 3.96,
+      "text": "Does Jack have a calculator?"
+    },
+    {
+      "start": 364.08,
+      "duration": 5.4,
+      "text": "Yes, he does. He has it every day."
+    },
+    {
+      "start": 374.0,
+      "duration": 5.32,
+      "text": "Yes, he does. He has it every day."
+    },
+    {
+      "start": 383.6,
+      "duration": 5.32,
+      "text": "Yes, he does. He has it every day."
+    },
+    {
+      "start": 392.08,
+      "duration": 3.72,
+      "text": "Do you have a compass?"
+    },
+    {
+      "start": 397.6,
+      "duration": 3.64,
+      "text": "Do you have a compass?"
+    },
+    {
+      "start": 403.44,
+      "duration": 3.72,
+      "text": "Do you have a compass?"
+    },
+    {
+      "start": 410.08,
+      "duration": 4.28,
+      "text": "No, I don't have it today."
+    },
+    {
+      "start": 417.84,
+      "duration": 4.28,
+      "text": "No, I don't have it today."
+    },
+    {
+      "start": 424.72,
+      "duration": 4.28,
+      "text": "No, I don't have it today."
+    },
+    {
+      "start": 432.4,
+      "duration": 5.4,
+      "text": "Thank you for watching. See you next"
+    },
+    {
+      "start": 434.8,
+      "duration": 3.0,
+      "text": "time."
     }
   ],
   "videoId": "vb4ZF3pYtuw",
-  "source": "cleaned",
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-30T09:44:50.422Z",
-    "dgWordCount": 396,
-    "matchedSegments": 24,
-    "totalDuration": 435.29
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:10:00.131Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:36.040574+00:00",
+  "rawCaptionCount": 78
 }

@@ -1,216 +1,99 @@
 {
-  "text": "Hello? Hello. May I speak to Kate, please? Sorry. She's not here. Who's calling, please? This is Mike, Kate's friend. Hi, Mike. Can I take a message? No. Thank you. I'll call back later. Okay. Bye. Bye. Hello? Hello? Can I speak to Kate? Speaking. Hi, Kate. This is Mike. Hi, Mike. What's up? Let's play badminton at the park. Sounds good. What time? How about at two? Okay. See you at two. Bye. Let's role play.",
+  "text": "[Music] hello hello may I speak to Kate please sorry she's not here who's calling please this is Mike Kate's friend hi Mike can I take a message no thank you I'll call back later okay bye bye hello hello can I speak to Kate speaking hi Kate this is Mike hi Mike what's up let's play badminton at the park sounds good what time how about at 2 okay see you at two bye [Music] let's role play [Music] what [Music]",
   "segments": [
     {
-      "id": 1,
-      "text": "Hello?",
-      "start": 4.72,
-      "duration": 0.5
+      "start": 1.64,
+      "duration": 7.48,
+      "text": "[Music]"
     },
     {
-      "id": 2,
-      "text": "Hello.",
-      "start": 6.08,
-      "duration": 0.5
+      "start": 5.28,
+      "duration": 7.48,
+      "text": "hello hello may I speak to Kate"
     },
     {
-      "id": 3,
-      "text": "May I speak to Kate, please?",
-      "start": 7.2,
-      "duration": 1.08
+      "start": 9.12,
+      "duration": 4.76,
+      "text": "please sorry she's not here who's"
     },
     {
-      "id": 4,
-      "text": "Sorry.",
-      "start": 10.16,
-      "duration": 0.5
+      "start": 12.76,
+      "duration": 4.28,
+      "text": "calling"
     },
     {
-      "id": 5,
-      "text": "She's not here.",
-      "start": 10.57,
-      "duration": 0.5
+      "start": 13.88,
+      "duration": 6.92,
+      "text": "please this is Mike Kate's"
     },
     {
-      "id": 6,
-      "text": "Who's calling, please?",
-      "start": 12.49,
-      "duration": 0.5
+      "start": 17.04,
+      "duration": 7.8,
+      "text": "friend hi Mike can I take a"
     },
     {
-      "id": 7,
-      "text": "This is Mike, Kate's friend.",
-      "start": 14.82,
-      "duration": 1.07
+      "start": 20.8,
+      "duration": 10.0,
+      "text": "message no thank you I'll call back"
     },
     {
-      "id": 8,
-      "text": "Hi, Mike.",
-      "start": 17.86,
-      "duration": 0.5
+      "start": 24.84,
+      "duration": 5.96,
+      "text": "later okay bye bye"
     },
     {
-      "id": 9,
-      "text": "Can I take a message?",
-      "start": 19.14,
-      "duration": 0.66
+      "start": 34.68,
+      "duration": 9.96,
+      "text": "hello hello can I speak to Kate"
     },
     {
-      "id": 10,
-      "text": "No.",
-      "start": 21.78,
-      "duration": 0.5
+      "start": 39.76,
+      "duration": 8.28,
+      "text": "speaking hi Kate this is Mike hi Mike"
     },
     {
-      "id": 11,
-      "text": "Thank you.",
-      "start": 22.13,
-      "duration": 0.5
+      "start": 44.64,
+      "duration": 9.12,
+      "text": "what's up let's play badminton at the"
     },
     {
-      "id": 12,
-      "text": "I'll call back later.",
-      "start": 23.14,
-      "duration": 0.59
+      "start": 48.04,
+      "duration": 11.57,
+      "text": "park sounds good what time how about at"
     },
     {
-      "id": 13,
-      "text": "Okay.",
-      "start": 25.81,
-      "duration": 0.5
+      "start": 53.76,
+      "duration": 9.16,
+      "text": "2 okay see you at two bye"
     },
     {
-      "id": 14,
-      "text": "Bye.",
-      "start": 26.34,
-      "duration": 0.5
+      "start": 59.61,
+      "duration": 6.99,
+      "text": "[Music]"
     },
     {
-      "id": 15,
-      "text": "Bye.",
-      "start": 27.73,
-      "duration": 0.5
+      "start": 62.92,
+      "duration": 3.68,
+      "text": "let's role play"
     },
     {
-      "id": 16,
-      "text": "Hello?",
-      "start": 34.37,
-      "duration": 0.5
+      "start": 67.06,
+      "duration": 3.04,
+      "text": "[Music]"
     },
     {
-      "id": 17,
-      "text": "Hello?",
-      "start": 35.65,
-      "duration": 0.5
+      "start": 98.96,
+      "duration": 3.0,
+      "text": "what"
     },
     {
-      "id": 18,
-      "text": "Can I speak to Kate?",
-      "start": 36.61,
-      "duration": 0.83
-    },
-    {
-      "id": 19,
-      "text": "Speaking.",
-      "start": 39.17,
-      "duration": 0.5
-    },
-    {
-      "id": 20,
-      "text": "Hi, Kate.",
-      "start": 40.7,
-      "duration": 0.5
-    },
-    {
-      "id": 21,
-      "text": "This is Mike.",
-      "start": 41.57,
-      "duration": 0.5
-    },
-    {
-      "id": 22,
-      "text": "Hi, Mike.",
-      "start": 43.49,
-      "duration": 0.5
-    },
-    {
-      "id": 23,
-      "text": "What's up?",
-      "start": 44.42,
-      "duration": 0.5
-    },
-    {
-      "id": 24,
-      "text": "Let's play badminton at the park.",
-      "start": 45.81,
-      "duration": 1.36
-    },
-    {
-      "id": 25,
-      "text": "Sounds good.",
-      "start": 49.09,
-      "duration": 0.5
-    },
-    {
-      "id": 26,
-      "text": "What time?",
-      "start": 50.38,
-      "duration": 0.5
-    },
-    {
-      "id": 27,
-      "text": "How about at two?",
-      "start": 52.23,
-      "duration": 0.62
-    },
-    {
-      "id": 28,
-      "text": "Okay.",
-      "start": 54.55,
-      "duration": 0.5
-    },
-    {
-      "id": 29,
-      "text": "See you at two.",
-      "start": 55.43,
-      "duration": 0.5
-    },
-    {
-      "id": 30,
-      "text": "Bye.",
-      "start": 57.11,
-      "duration": 0.5
-    },
-    {
-      "id": 31,
-      "text": "Let's role play.",
-      "start": 62.87,
-      "duration": 0.5
+      "start": 125.03,
+      "duration": 2.66,
+      "text": "[Music]"
     }
   ],
-  "fetchedAt": "2026-07-23T06:28:49.909218+00:00",
   "videoId": "gWOqA3pUaTk",
-  "speakerMap": {
-    "0": "Speaker0"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:28:49.909248+00:00",
-    "dgWordCount": 77,
-    "dgUtteranceCount": 26,
-    "matchedSegments": 26,
-    "totalDuration": 64.09
-  },
-  "repairedAt": "2026-07-23T07:58:35.838494Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 26,
-    "afterSegments": 26,
-    "beforeAvgWords": 3,
-    "afterAvgWords": 3,
-    "merged": 0,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:07:44.859Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:15.774104+00:00",
+  "rawCaptionCount": 18
 }

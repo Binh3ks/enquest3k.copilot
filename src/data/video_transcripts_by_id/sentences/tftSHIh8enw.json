@@ -1,123 +1,319 @@
 {
-  "text": "Fairy tale song. Who will win? It a race. Hoo! I can win you. I can win you slow. But the steady winner. It's not over until the end. Let's have a race. I'm so fast and I'm the best. La la la. Enjoy your race. Enjoy your race. La la la. I can win you.",
+  "text": "[Music] English sing sing [Music] fairy tale song who will win [Music] a race have a race I can win you I can win you slow but the steady winner it's not over until the end let's have a race [Music] enjoy your race enjoy a race [Music] [Music] twinkle twinkle little [Music] [Music] let's listen [Music] let's run a race a race have a race I can win you I can win you slow but the steady winner it's not over until the end let's have a race [Music] enjoy your race enjoy a race [Music] and the best winner it's not over until the end let's enjoy a race [Music] [Music] let's finish a race [Music] sing along [Music] foreign [Music] [Music] [Music] [Music] foreign [Music] [Music] [Music] [Music] foreign [Music] [Music] [Music] thank you [Music] [Music] [Music] [Music] thank you foreign [Music] [Music] [Music] good morning [Music]",
   "segments": [
     {
-      "id": 1,
-      "text": "Fairy tale song.",
-      "start": 10.4,
-      "duration": 0.5
+      "start": 0.93,
+      "duration": 3.06,
+      "text": "[Music]"
     },
     {
-      "id": 2,
-      "text": "Who will win?",
-      "start": 12.48,
-      "duration": 0.5
+      "start": 4.82,
+      "duration": 5.34,
+      "text": "English sing sing"
     },
     {
-      "id": 3,
-      "text": "It a race.",
-      "start": 29.01,
-      "duration": 4.81
+      "start": 7.44,
+      "duration": 4.92,
+      "text": "[Music]"
     },
     {
-      "id": 4,
-      "text": "Hoo!",
-      "start": 45.7,
-      "duration": 0.5
+      "start": 10.16,
+      "duration": 5.28,
+      "text": "fairy tale song"
     },
     {
-      "id": 5,
-      "text": "I can win you.",
-      "start": 46.07,
-      "duration": 0.62
+      "start": 12.36,
+      "duration": 3.08,
+      "text": "who will win"
     },
     {
-      "id": 6,
-      "text": "I can win you slow.",
-      "start": 47.55,
-      "duration": 0.94
+      "start": 16.49,
+      "duration": 3.06,
+      "text": "[Music]"
     },
     {
-      "id": 7,
-      "text": "But the steady winner.",
-      "start": 49.39,
-      "duration": 0.81
+      "start": 21.8,
+      "duration": 3.24,
+      "text": "a race"
     },
     {
-      "id": 8,
-      "text": "It's not over until the end.",
-      "start": 51.31,
-      "duration": 1.67
+      "start": 42.68,
+      "duration": 3.48,
+      "text": "have a race"
     },
     {
-      "id": 9,
-      "text": "Let's have a race.",
-      "start": 54.59,
-      "duration": 0.65
+      "start": 46.46,
+      "duration": 7.54,
+      "text": "I can win you I can win you slow but the"
     },
     {
-      "id": 10,
-      "text": "I'm so fast and I'm the best.",
-      "start": 60.42,
-      "duration": 1.22
+      "start": 50.1,
+      "duration": 6.15,
+      "text": "steady winner it's not over until the"
     },
     {
-      "id": 11,
-      "text": "La la la.",
-      "start": 62.9,
-      "duration": 0.5
+      "start": 54.0,
+      "duration": 5.37,
+      "text": "end let's have a race"
     },
     {
-      "id": 12,
-      "text": "Enjoy your race.",
-      "start": 64.18,
-      "duration": 0.5
+      "start": 56.25,
+      "duration": 3.12,
+      "text": "[Music]"
     },
     {
-      "id": 13,
-      "text": "Enjoy your race.",
-      "start": 65.33,
-      "duration": 0.5
+      "start": 63.74,
+      "duration": 4.5,
+      "text": "enjoy your race enjoy a race"
     },
     {
-      "id": 14,
-      "text": "La la la.",
-      "start": 66.49,
-      "duration": 0.5
+      "start": 68.29,
+      "duration": 3.03,
+      "text": "[Music]"
     },
     {
-      "id": 15,
-      "text": "I can win you.",
-      "start": 68.18,
-      "duration": 0.5
+      "start": 77.4,
+      "duration": 3.09,
+      "text": "[Music]"
+    },
+    {
+      "start": 88.88,
+      "duration": 4.06,
+      "text": "twinkle twinkle little"
+    },
+    {
+      "start": 93.26,
+      "duration": 4.54,
+      "text": "[Music]"
+    },
+    {
+      "start": 100.04,
+      "duration": 12.96,
+      "text": "[Music]"
+    },
+    {
+      "start": 109.76,
+      "duration": 3.24,
+      "text": "let's listen"
+    },
+    {
+      "start": 114.03,
+      "duration": 3.05,
+      "text": "[Music]"
+    },
+    {
+      "start": 130.7,
+      "duration": 3.84,
+      "text": "let's run a race"
+    },
+    {
+      "start": 140.88,
+      "duration": 6.78,
+      "text": "a race have a race"
+    },
+    {
+      "start": 144.08,
+      "duration": 7.48,
+      "text": "I can win you I can win you slow but the"
+    },
+    {
+      "start": 147.66,
+      "duration": 6.13,
+      "text": "steady winner it's not over until the"
+    },
+    {
+      "start": 151.56,
+      "duration": 5.36,
+      "text": "end let's have a race"
+    },
+    {
+      "start": 153.79,
+      "duration": 3.13,
+      "text": "[Music]"
+    },
+    {
+      "start": 161.36,
+      "duration": 6.24,
+      "text": "enjoy your race enjoy a race"
+    },
+    {
+      "start": 165.79,
+      "duration": 6.01,
+      "text": "[Music]"
+    },
+    {
+      "start": 167.6,
+      "duration": 7.34,
+      "text": "and the best winner it's not over until"
+    },
+    {
+      "start": 171.8,
+      "duration": 6.23,
+      "text": "the end let's enjoy a race"
+    },
+    {
+      "start": 174.94,
+      "duration": 3.09,
+      "text": "[Music]"
+    },
+    {
+      "start": 190.79,
+      "duration": 6.78,
+      "text": "[Music]"
+    },
+    {
+      "start": 194.06,
+      "duration": 13.26,
+      "text": "let's finish a race"
+    },
+    {
+      "start": 197.57,
+      "duration": 12.99,
+      "text": "[Music]"
+    },
+    {
+      "start": 207.32,
+      "duration": 3.24,
+      "text": "sing along"
+    },
+    {
+      "start": 213.55,
+      "duration": 9.59,
+      "text": "[Music]"
+    },
+    {
+      "start": 220.14,
+      "duration": 3.0,
+      "text": "foreign"
+    },
+    {
+      "start": 223.43,
+      "duration": 4.62,
+      "text": "[Music]"
+    },
+    {
+      "start": 230.67,
+      "duration": 3.15,
+      "text": "[Music]"
+    },
+    {
+      "start": 236.87,
+      "duration": 3.23,
+      "text": "[Music]"
+    },
+    {
+      "start": 245.56,
+      "duration": 9.88,
+      "text": "[Music]"
+    },
+    {
+      "start": 256.32,
+      "duration": 5.9,
+      "text": "foreign"
+    },
+    {
+      "start": 259.13,
+      "duration": 3.09,
+      "text": "[Music]"
+    },
+    {
+      "start": 267.54,
+      "duration": 3.05,
+      "text": "[Music]"
+    },
+    {
+      "start": 277.36,
+      "duration": 3.33,
+      "text": "[Music]"
+    },
+    {
+      "start": 284.19,
+      "duration": 6.67,
+      "text": "[Music]"
+    },
+    {
+      "start": 294.66,
+      "duration": 11.89,
+      "text": "foreign"
+    },
+    {
+      "start": 295.99,
+      "duration": 10.56,
+      "text": "[Music]"
+    },
+    {
+      "start": 311.05,
+      "duration": 6.89,
+      "text": "[Music]"
+    },
+    {
+      "start": 320.93,
+      "duration": 4.62,
+      "text": "[Music]"
+    },
+    {
+      "start": 326.0,
+      "duration": 5.32,
+      "text": "thank you"
+    },
+    {
+      "start": 328.17,
+      "duration": 3.15,
+      "text": "[Music]"
+    },
+    {
+      "start": 333.81,
+      "duration": 3.79,
+      "text": "[Music]"
+    },
+    {
+      "start": 343.06,
+      "duration": 9.88,
+      "text": "[Music]"
+    },
+    {
+      "start": 356.63,
+      "duration": 3.09,
+      "text": "[Music]"
+    },
+    {
+      "start": 364.7,
+      "duration": 3.06,
+      "text": "thank you"
+    },
+    {
+      "start": 368.04,
+      "duration": 2.42,
+      "text": "foreign"
+    },
+    {
+      "start": 374.87,
+      "duration": 3.32,
+      "text": "[Music]"
+    },
+    {
+      "start": 381.69,
+      "duration": 6.67,
+      "text": "[Music]"
+    },
+    {
+      "start": 393.49,
+      "duration": 5.54,
+      "text": "[Music]"
+    },
+    {
+      "start": 398.16,
+      "duration": 8.97,
+      "text": "good morning"
+    },
+    {
+      "start": 399.03,
+      "duration": 8.1,
+      "text": "[Music]"
     }
   ],
-  "fetchedAt": "2026-07-23T06:28:10.723026+00:00",
   "videoId": "tftSHIh8enw",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1",
-    "2": "Speaker2",
-    "3": "Speaker3"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:28:10.723060+00:00",
-    "dgWordCount": 200,
-    "dgUtteranceCount": 36,
-    "matchedSegments": 36,
-    "totalDuration": 305.53
-  },
-  "repairedAt": "2026-07-23T07:58:35.828953Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 31,
-    "afterSegments": 36,
-    "beforeAvgWords": 6.5,
-    "afterAvgWords": 5.6,
-    "merged": -5,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:09:33.710Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:34.102854+00:00",
+  "rawCaptionCount": 62
 }

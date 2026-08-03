@@ -1,116 +1,329 @@
 {
-  "text": "How was your summer vacation? How are you? I'm good. How was your summer vacation? It was great. I went to Jeju Do with my family. Really? What did you do there? We looked around Jeju Do. Sounds great. We rode horses and walked along Jeju Ole. Jeju Ole? What's that? It's a walking path.",
+  "text": "[Music] english sing-sing [Music] how was your summer vacation [Music] how are you i'm good how was your summer vacation it was great i went to jeju-do with my family really what did you do there we looked around jejudo sounds great we rode horses and walked along jejuole what's that it's a walking path you can see beautiful beaches and fields from there wow i want to go there too how about your vacation what did you do i took taekwondo lessons great what color belt do you have white i want to get my blue belt soon good luck [Music] listen [Music] how are you i'm good how was your summer vacation it was great i went to jeju-do with my family really what did you do there we looked around trejo sounds great we rode horses and walked along jeju ole what's that it's a walking path you can see beautiful beaches and fields from there wow i want to go there too how about your vacation what did you do i took taekwondo lessons great what color belt do you have white i want to get my blue belt soon good luck [Music] speak aloud [Music] bye [Music] me [Music] your turn [Music] [Music] you",
   "segments": [
     {
-      "id": 1,
-      "text": "How was your summer vacation?",
+      "start": 0.07,
+      "duration": 3.41,
+      "text": "[Music]"
+    },
+    {
+      "start": 1.84,
+      "duration": 4.0,
+      "text": "english sing-sing"
+    },
+    {
+      "start": 3.48,
+      "duration": 6.16,
+      "text": "[Music]"
+    },
+    {
       "start": 5.84,
-      "duration": 0.99
+      "duration": 11.34,
+      "text": "how was your summer vacation"
     },
     {
-      "id": 2,
-      "text": "How are you?",
-      "start": 17.74,
-      "duration": 0.5
+      "start": 9.64,
+      "duration": 7.54,
+      "text": "[Music]"
     },
     {
-      "id": 3,
-      "text": "I'm good.",
-      "start": 20.14,
-      "duration": 0.5
+      "start": 17.68,
+      "duration": 3.92,
+      "text": "how are you"
     },
     {
-      "id": 4,
-      "text": "How was your summer vacation?",
-      "start": 21.59,
-      "duration": 0.87
+      "start": 20.16,
+      "duration": 4.32,
+      "text": "i'm good"
     },
     {
-      "id": 5,
-      "text": "It was great.",
-      "start": 24.62,
-      "duration": 0.5
+      "start": 21.6,
+      "duration": 4.96,
+      "text": "how was your summer vacation"
     },
     {
-      "id": 6,
-      "text": "I went to Jeju Do with my family.",
-      "start": 26.72,
-      "duration": 1.51
+      "start": 24.48,
+      "duration": 6.72,
+      "text": "it was great"
     },
     {
-      "id": 7,
-      "text": "Really?",
-      "start": 31.28,
-      "duration": 0.5
+      "start": 26.56,
+      "duration": 6.24,
+      "text": "i went to jeju-do with my family"
     },
     {
-      "id": 8,
-      "text": "What did you do there?",
+      "start": 31.2,
+      "duration": 4.08,
+      "text": "really"
+    },
+    {
       "start": 32.8,
-      "duration": 0.75
+      "duration": 5.44,
+      "text": "what did you do there"
     },
     {
-      "id": 9,
-      "text": "We looked around Jeju Do.",
-      "start": 35.36,
-      "duration": 1.04
+      "start": 35.28,
+      "duration": 5.36,
+      "text": "we looked around jejudo"
     },
     {
-      "id": 10,
-      "text": "Sounds great.",
-      "start": 38.41,
-      "duration": 0.5
+      "start": 38.24,
+      "duration": 7.32,
+      "text": "sounds great"
     },
     {
-      "id": 11,
-      "text": "We rode horses and walked along Jeju Ole.",
-      "start": 40.66,
-      "duration": 1.99
+      "start": 40.64,
+      "duration": 4.92,
+      "text": "we rode horses and walked along jejuole"
     },
     {
-      "id": 12,
-      "text": "Jeju Ole?",
-      "start": 44.9,
-      "duration": 0.5
+      "start": 46.56,
+      "duration": 5.04,
+      "text": "what's that"
     },
     {
-      "id": 13,
-      "text": "What's that?",
-      "start": 46.66,
-      "duration": 0.5
+      "start": 48.72,
+      "duration": 5.12,
+      "text": "it's a walking path"
     },
     {
-      "id": 14,
-      "text": "It's a walking path.",
-      "start": 48.66,
-      "duration": 0.68
+      "start": 51.6,
+      "duration": 4.24,
+      "text": "you can see beautiful beaches and fields"
+    },
+    {
+      "start": 53.84,
+      "duration": 5.68,
+      "text": "from there"
+    },
+    {
+      "start": 55.84,
+      "duration": 6.16,
+      "text": "wow i want to go there too"
+    },
+    {
+      "start": 59.52,
+      "duration": 5.36,
+      "text": "how about your vacation"
+    },
+    {
+      "start": 62.0,
+      "duration": 2.88,
+      "text": "what did you do"
+    },
+    {
+      "start": 65.28,
+      "duration": 4.24,
+      "text": "i took taekwondo lessons"
+    },
+    {
+      "start": 68.4,
+      "duration": 4.56,
+      "text": "great"
+    },
+    {
+      "start": 69.52,
+      "duration": 6.8,
+      "text": "what color belt do you have"
+    },
+    {
+      "start": 72.96,
+      "duration": 4.48,
+      "text": "white i want to get my blue belt soon"
+    },
+    {
+      "start": 76.32,
+      "duration": 8.48,
+      "text": "good luck"
+    },
+    {
+      "start": 77.44,
+      "duration": 8.78,
+      "text": "[Music]"
+    },
+    {
+      "start": 84.8,
+      "duration": 10.35,
+      "text": "listen"
+    },
+    {
+      "start": 86.22,
+      "duration": 8.93,
+      "text": "[Music]"
+    },
+    {
+      "start": 95.6,
+      "duration": 3.92,
+      "text": "how are you"
+    },
+    {
+      "start": 98.08,
+      "duration": 4.4,
+      "text": "i'm good"
+    },
+    {
+      "start": 99.52,
+      "duration": 5.04,
+      "text": "how was your summer vacation"
+    },
+    {
+      "start": 102.48,
+      "duration": 6.4,
+      "text": "it was great"
+    },
+    {
+      "start": 104.56,
+      "duration": 4.32,
+      "text": "i went to jeju-do with my family"
+    },
+    {
+      "start": 109.2,
+      "duration": 4.08,
+      "text": "really"
+    },
+    {
+      "start": 110.72,
+      "duration": 5.52,
+      "text": "what did you do there"
+    },
+    {
+      "start": 113.28,
+      "duration": 5.28,
+      "text": "we looked around trejo"
+    },
+    {
+      "start": 116.24,
+      "duration": 6.16,
+      "text": "sounds great"
+    },
+    {
+      "start": 118.56,
+      "duration": 3.84,
+      "text": "we rode horses and walked along"
+    },
+    {
+      "start": 122.8,
+      "duration": 3.84,
+      "text": "jeju ole"
+    },
+    {
+      "start": 124.56,
+      "duration": 4.96,
+      "text": "what's that"
+    },
+    {
+      "start": 126.64,
+      "duration": 5.12,
+      "text": "it's a walking path"
+    },
+    {
+      "start": 129.52,
+      "duration": 4.24,
+      "text": "you can see beautiful beaches and fields"
+    },
+    {
+      "start": 131.76,
+      "duration": 5.68,
+      "text": "from there"
+    },
+    {
+      "start": 133.76,
+      "duration": 6.24,
+      "text": "wow i want to go there too"
+    },
+    {
+      "start": 137.44,
+      "duration": 5.76,
+      "text": "how about your vacation"
+    },
+    {
+      "start": 140.0,
+      "duration": 6.32,
+      "text": "what did you do"
+    },
+    {
+      "start": 143.2,
+      "duration": 4.24,
+      "text": "i took taekwondo lessons"
+    },
+    {
+      "start": 146.32,
+      "duration": 4.56,
+      "text": "great"
+    },
+    {
+      "start": 147.44,
+      "duration": 6.88,
+      "text": "what color belt do you have"
+    },
+    {
+      "start": 150.88,
+      "duration": 5.88,
+      "text": "white i want to get my blue belt soon"
+    },
+    {
+      "start": 154.32,
+      "duration": 7.81,
+      "text": "good luck"
+    },
+    {
+      "start": 156.76,
+      "duration": 5.37,
+      "text": "[Music]"
+    },
+    {
+      "start": 163.28,
+      "duration": 9.66,
+      "text": "speak aloud"
+    },
+    {
+      "start": 165.69,
+      "duration": 7.25,
+      "text": "[Music]"
+    },
+    {
+      "start": 196.0,
+      "duration": 3.0,
+      "text": "bye"
+    },
+    {
+      "start": 233.2,
+      "duration": 6.32,
+      "text": "[Music]"
+    },
+    {
+      "start": 238.32,
+      "duration": 2.72,
+      "text": "me"
+    },
+    {
+      "start": 239.52,
+      "duration": 3.85,
+      "text": "[Music]"
+    },
+    {
+      "start": 241.04,
+      "duration": 9.88,
+      "text": "your turn"
+    },
+    {
+      "start": 243.37,
+      "duration": 7.55,
+      "text": "[Music]"
+    },
+    {
+      "start": 311.17,
+      "duration": 5.18,
+      "text": "[Music]"
+    },
+    {
+      "start": 320.64,
+      "duration": 2.08,
+      "text": "you"
     }
   ],
-  "fetchedAt": "2026-07-23T06:26:57.846275+00:00",
   "videoId": "wy398w9QcB4",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1",
-    "2": "Speaker2"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:26:57.846311+00:00",
-    "dgWordCount": 205,
-    "dgUtteranceCount": 53,
-    "matchedSegments": 53,
-    "totalDuration": 242.07
-  },
-  "repairedAt": "2026-07-23T07:58:35.804490Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 53,
-    "afterSegments": 53,
-    "beforeAvgWords": 3.9,
-    "afterAvgWords": 3.9,
-    "merged": 0,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:10:07.749Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:37.061293+00:00",
+  "rawCaptionCount": 64
 }

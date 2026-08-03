@@ -1,172 +1,179 @@
 {
-  "text": "Hey there, kids. Listen carefully and repeat. Wake up. Wake up. Go to the toilet. Go to the toilet. Wash my face. Wash my face. Eat breakfast. Eat breakfast, brush my teeth, brush my teeth, brush my hair, Brush my hair. Get dressed. Get dressed. Sing. Sing. Dance. Dance. Go to school. Go to school. That was great, kids. Let's do it one more time. In a big voice, repeat after me. Here we go. Wake up. Go to the toilet. Wash my face. Eat breakfast, brush my teeth. Brush my hair. Get dressed. Sing. Dance. Go to school. Well done, kids. That was great. See you.",
+  "text": "Hey there kids! Listen carefully and repeat. wake up wake up go to the toilet go to the toilet wash my face wash my face eat breakfast eat breakfast brush my teeth brush my teeth brush my hair brush my hair get dressed get dressed sing sing dance dance go to school go to school That was great kids. Let's do it one more time. In a big voice, repeat after me. Here we go. wake up go to the toilet wash my face eat breakfast brush my teeth brush my hair get dressed sing dance go to school Well done, kids. That was great. See ya!",
   "segments": [
     {
-      "id": 1,
-      "text": "Hey there, kids!",
-      "start": 5.92,
-      "duration": 0.5
+      "start": 5.79,
+      "duration": 5.31,
+      "text": "Hey there kids! Listen carefully and repeat."
     },
     {
-      "id": 2,
-      "text": "Listen carefully and repeat.",
-      "start": 7.84,
-      "duration": 1.19
+      "start": 12.4,
+      "duration": 2.48,
+      "text": "wake up"
     },
     {
-      "id": 3,
-      "text": "Wake up.",
-      "start": 12.43,
-      "duration": 0.5
+      "start": 16.4,
+      "duration": 2.68,
+      "text": "wake up"
     },
     {
-      "id": 4,
-      "text": "Wake up.",
-      "start": 14.8,
-      "duration": 0.5
+      "start": 20.68,
+      "duration": 1.72,
+      "text": "go to the toilet"
     },
     {
-      "id": 5,
-      "text": "Go to the toilet.",
-      "start": 20.59,
-      "duration": 0.64
+      "start": 24.5,
+      "duration": 1.9,
+      "text": "go to the toilet"
     },
     {
-      "id": 6,
-      "text": "Go to the toilet.",
-      "start": 24.66,
-      "duration": 0.61
+      "start": 28.55,
+      "duration": 2.02,
+      "text": "wash my face"
     },
     {
-      "id": 7,
-      "text": "Wash my face.",
-      "start": 28.69,
-      "duration": 0.5
+      "start": 32.57,
+      "duration": 1.96,
+      "text": "wash my face"
     },
     {
-      "id": 8,
-      "text": "Wash my face.",
-      "start": 32.69,
-      "duration": 0.5
+      "start": 36.42,
+      "duration": 2.26,
+      "text": "eat breakfast"
     },
     {
-      "id": 9,
-      "text": "Eat breakfast.",
-      "start": 36.37,
-      "duration": 0.5
-    },
-    {
-      "id": 10,
-      "text": "Eat breakfast.",
       "start": 40.47,
-      "duration": 0.5
+      "duration": 2.22,
+      "text": "eat breakfast"
     },
     {
-      "id": 11,
-      "text": "Brush my teeth.",
-      "start": 42.95,
-      "duration": 1.1
+      "start": 44.5,
+      "duration": 2.22,
+      "text": "brush my teeth"
     },
     {
-      "id": 12,
-      "text": "Brush my teeth.",
-      "start": 46.67,
-      "duration": 1.1
+      "start": 48.59,
+      "duration": 2.24,
+      "text": "brush my teeth"
     },
     {
-      "id": 13,
-      "text": "Brush my hair.",
-      "start": 50.39,
-      "duration": 1.1
+      "start": 52.38,
+      "duration": 2.22,
+      "text": "brush my hair"
     },
     {
-      "id": 14,
-      "text": "Brush my hair.",
-      "start": 54.11,
-      "duration": 1.1
+      "start": 56.56,
+      "duration": 2.22,
+      "text": "brush my hair"
     },
     {
-      "id": 15,
-      "text": "Get dressed.",
-      "start": 60.37,
-      "duration": 0.5
+      "start": 60.4,
+      "duration": 2.38,
+      "text": "get dressed"
     },
     {
-      "id": 16,
-      "text": "Get dressed.",
-      "start": 64.37,
-      "duration": 0.5
+      "start": 64.34,
+      "duration": 2.8,
+      "text": "get dressed"
     },
     {
-      "id": 17,
-      "text": "Sing.",
-      "start": 68.53,
-      "duration": 0.5
+      "start": 68.47,
+      "duration": 2.36,
+      "text": "sing"
     },
     {
-      "id": 18,
-      "text": "Sing.",
-      "start": 69.41,
-      "duration": 0.5
+      "start": 72.44,
+      "duration": 2.58,
+      "text": "sing"
     },
     {
-      "id": 19,
-      "text": "Dance.",
-      "start": 70.02,
-      "duration": 0.5
+      "start": 76.41,
+      "duration": 2.3,
+      "text": "dance"
     },
     {
-      "id": 20,
-      "text": "Dance.",
       "start": 80.53,
-      "duration": 0.5
+      "duration": 2.32,
+      "text": "dance"
     },
     {
-      "id": 21,
-      "text": "Go to school.",
-      "start": 84.67,
-      "duration": 0.5
+      "start": 84.45,
+      "duration": 2.66,
+      "text": "go to school"
     },
     {
-      "id": 22,
-      "text": "Go to school.",
-      "start": 88.59,
-      "duration": 0.5
+      "start": 88.54,
+      "duration": 2.94,
+      "text": "go to school"
     },
     {
-      "id": 23,
-      "text": "That was.",
-      "start": 93.79,
-      "duration": 0.5
+      "start": 93.67,
+      "duration": 5.37,
+      "text": "That was great kids. Let's do it one more time."
+    },
+    {
+      "start": 99.48,
+      "duration": 6.37,
+      "text": "In a big voice, repeat after me. Here we go."
+    },
+    {
+      "start": 108.31,
+      "duration": 2.13,
+      "text": "wake up"
+    },
+    {
+      "start": 116.45,
+      "duration": 2.26,
+      "text": "go to the toilet"
+    },
+    {
+      "start": 124.52,
+      "duration": 2.42,
+      "text": "wash my face"
+    },
+    {
+      "start": 132.3,
+      "duration": 2.88,
+      "text": "eat breakfast"
+    },
+    {
+      "start": 140.48,
+      "duration": 2.98,
+      "text": "brush my teeth"
+    },
+    {
+      "start": 148.42,
+      "duration": 2.74,
+      "text": "brush my hair"
+    },
+    {
+      "start": 156.21,
+      "duration": 2.8,
+      "text": "get dressed"
+    },
+    {
+      "start": 164.38,
+      "duration": 3.02,
+      "text": "sing"
+    },
+    {
+      "start": 172.47,
+      "duration": 2.78,
+      "text": "dance"
+    },
+    {
+      "start": 180.37,
+      "duration": 2.88,
+      "text": "go to school"
+    },
+    {
+      "start": 189.16,
+      "duration": 6.55,
+      "text": "Well done, kids. That was great. See ya!"
     }
   ],
-  "fetchedAt": "2026-07-23T06:25:01.179778+00:00",
   "videoId": "ico9ztlb46k",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1",
-    "2": "Speaker2",
-    "3": "Speaker3",
-    "4": "Speaker4"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:25:01.179808+00:00",
-    "dgWordCount": 107,
-    "dgUtteranceCount": 42,
-    "matchedSegments": 42,
-    "totalDuration": 194.28
-  },
-  "repairedAt": "2026-07-23T07:58:35.771674Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 32,
-    "afterSegments": 31,
-    "beforeAvgWords": 3.3,
-    "afterAvgWords": 3.5,
-    "merged": 1,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:08:08.516Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:16.870568+00:00",
+  "rawCaptionCount": 34
 }

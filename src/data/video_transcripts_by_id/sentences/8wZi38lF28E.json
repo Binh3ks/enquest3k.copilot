@@ -1,147 +1,314 @@
 {
-  "text": "What's your favorite subject? What class is next? Math. I like Math class. Emm... I don't like Math. What's your favorite subject? My favorite subject is P.E. I like playing sports. I like basketball. I play basketball every day. I like basketball too, but I can't play very well. Don't worry. I can help you. Really? How about playing basketball after school? That's a good idea. That was a great time. Thank you, jinsu. You're welcome.",
+  "text": "[Music] english sing-sing [Music] what's your favorite subject [Music] what class is next i like math class i don't like math what's your favorite subject my favorite subject is p e i like playing sports i like basketball i play basketball every day i like basketball too but i can't play very well don't worry i can help you really how about playing basketball after school that's a good idea [Music] that was a great time thank you jinsu you're welcome [Music] listen [Music] what class is next math i like math class i don't like math what's your favorite subject my favorite subject is pe i like playing sports i like basketball i play basketball every day i like basketball too but i can't play very well don't worry i can help you really how about playing basketball after school that's a good idea [Music] that was a great time thank you jinsu you're welcome [Music] speak aloud [Music] uh oh [Music] [Music] your turn [Music] uh bye [Music] [Music]",
   "segments": [
     {
-      "id": 1,
-      "text": "What's your favorite subject?",
+      "start": 0.07,
+      "duration": 3.41,
+      "text": "[Music]"
+    },
+    {
       "start": 1.84,
-      "duration": 7.28
+      "duration": 4.08,
+      "text": "english sing-sing"
     },
     {
-      "id": 2,
-      "text": "What class is next?",
-      "start": 9.12,
-      "duration": 6.05
+      "start": 3.48,
+      "duration": 6.01,
+      "text": "[Music]"
     },
     {
-      "id": 3,
-      "text": "Math.",
-      "start": 15.17,
-      "duration": 0.95
+      "start": 5.92,
+      "duration": 6.4,
+      "text": "what's your favorite subject"
     },
     {
-      "id": 4,
-      "text": "I like Math class.",
-      "start": 16.12,
-      "duration": 4.2
+      "start": 9.49,
+      "duration": 6.63,
+      "text": "[Music]"
     },
     {
-      "id": 5,
-      "text": "Emm... I don't like Math.",
-      "start": 20.32,
-      "duration": 5.04
+      "start": 12.32,
+      "duration": 3.8,
+      "text": "what class is next"
     },
     {
-      "id": 6,
-      "text": "What's your favorite subject?",
-      "start": 25.36,
-      "duration": 2.27
+      "start": 16.72,
+      "duration": 3.6,
+      "text": "i like math class"
     },
     {
-      "id": 7,
-      "text": "My favorite subject is P.E.",
-      "start": 27.63,
-      "duration": 3.35
+      "start": 21.28,
+      "duration": 5.68,
+      "text": "i don't like math"
     },
     {
-      "id": 8,
-      "text": "I like playing sports.",
-      "start": 30.98,
-      "duration": 4.75
+      "start": 23.68,
+      "duration": 6.72,
+      "text": "what's your favorite subject"
     },
     {
-      "id": 9,
-      "text": "I like basketball.",
-      "start": 35.73,
-      "duration": 2.56
+      "start": 26.96,
+      "duration": 5.36,
+      "text": "my favorite subject is p e i like"
     },
     {
-      "id": 10,
-      "text": "I play basketball every day.",
-      "start": 38.29,
-      "duration": 2.6
+      "start": 30.4,
+      "duration": 3.92,
+      "text": "playing sports"
     },
     {
-      "id": 11,
-      "text": "I like basketball too, but I can't play very well.",
-      "start": 40.89,
-      "duration": 8.79
+      "start": 32.32,
+      "duration": 5.12,
+      "text": "i like basketball"
     },
     {
-      "id": 12,
-      "text": "Don't worry.",
+      "start": 34.32,
+      "duration": 6.4,
+      "text": "i play basketball every day"
+    },
+    {
+      "start": 37.44,
+      "duration": 5.2,
+      "text": "i like basketball too but i can't play"
+    },
+    {
+      "start": 40.72,
+      "duration": 3.04,
+      "text": "very well"
+    },
+    {
+      "start": 42.64,
+      "duration": 3.12,
+      "text": "don't worry"
+    },
+    {
+      "start": 43.76,
+      "duration": 3.92,
+      "text": "i can help you"
+    },
+    {
+      "start": 45.76,
+      "duration": 3.92,
+      "text": "really"
+    },
+    {
+      "start": 47.68,
+      "duration": 3.44,
+      "text": "how about playing basketball after"
+    },
+    {
       "start": 49.68,
-      "duration": 1.38
+      "duration": 5.16,
+      "text": "school"
     },
     {
-      "id": 13,
-      "text": "I can help you.",
-      "start": 51.06,
-      "duration": 3.78
+      "start": 51.12,
+      "duration": 3.72,
+      "text": "that's a good idea"
     },
     {
-      "id": 14,
-      "text": "Really?",
-      "start": 54.84,
-      "duration": 12.9
+      "start": 55.2,
+      "duration": 13.68,
+      "text": "[Music]"
     },
     {
-      "id": 15,
-      "text": "How about playing basketball after school?",
-      "start": 67.74,
-      "duration": 4.82
+      "start": 66.96,
+      "duration": 3.92,
+      "text": "that was a great time"
     },
     {
-      "id": 16,
-      "text": "That's a good idea.",
+      "start": 68.88,
+      "duration": 3.68,
+      "text": "thank you jinsu"
+    },
+    {
+      "start": 70.88,
+      "duration": 7.92,
+      "text": "you're welcome"
+    },
+    {
       "start": 72.56,
-      "duration": 15.64
+      "duration": 7.66,
+      "text": "[Music]"
     },
     {
-      "id": 17,
-      "text": "That was a great time.",
-      "start": 88.2,
-      "duration": 2.64
+      "start": 78.8,
+      "duration": 5.36,
+      "text": "listen"
     },
     {
-      "id": 18,
-      "text": "Thank you, jinsu.",
-      "start": 90.84,
-      "duration": 5.24
+      "start": 80.22,
+      "duration": 7.62,
+      "text": "[Music]"
     },
     {
-      "id": 19,
-      "text": "You're welcome.",
-      "start": 96.08,
-      "duration": 2.8
+      "start": 84.16,
+      "duration": 8.08,
+      "text": "what class is next"
+    },
+    {
+      "start": 87.84,
+      "duration": 4.4,
+      "text": "math i like math class"
+    },
+    {
+      "start": 93.28,
+      "duration": 5.6,
+      "text": "i don't like math"
+    },
+    {
+      "start": 95.6,
+      "duration": 6.32,
+      "text": "what's your favorite subject"
+    },
+    {
+      "start": 98.88,
+      "duration": 5.44,
+      "text": "my favorite subject is pe"
+    },
+    {
+      "start": 101.92,
+      "duration": 4.4,
+      "text": "i like playing sports"
+    },
+    {
+      "start": 104.32,
+      "duration": 5.04,
+      "text": "i like basketball"
+    },
+    {
+      "start": 106.32,
+      "duration": 6.4,
+      "text": "i play basketball every day"
+    },
+    {
+      "start": 109.36,
+      "duration": 5.28,
+      "text": "i like basketball too but i can't play"
+    },
+    {
+      "start": 112.72,
+      "duration": 3.04,
+      "text": "very well"
+    },
+    {
+      "start": 114.64,
+      "duration": 3.04,
+      "text": "don't worry"
+    },
+    {
+      "start": 115.76,
+      "duration": 3.84,
+      "text": "i can help you"
+    },
+    {
+      "start": 117.68,
+      "duration": 4.0,
+      "text": "really"
+    },
+    {
+      "start": 119.6,
+      "duration": 3.52,
+      "text": "how about playing basketball after"
+    },
+    {
+      "start": 121.68,
+      "duration": 5.16,
+      "text": "school"
+    },
+    {
+      "start": 123.12,
+      "duration": 3.72,
+      "text": "that's a good idea"
+    },
+    {
+      "start": 127.19,
+      "duration": 13.69,
+      "text": "[Music]"
+    },
+    {
+      "start": 138.88,
+      "duration": 3.92,
+      "text": "that was a great time"
+    },
+    {
+      "start": 140.88,
+      "duration": 3.65,
+      "text": "thank you jinsu"
+    },
+    {
+      "start": 142.8,
+      "duration": 7.33,
+      "text": "you're welcome"
+    },
+    {
+      "start": 144.53,
+      "duration": 5.6,
+      "text": "[Music]"
+    },
+    {
+      "start": 151.28,
+      "duration": 5.27,
+      "text": "speak aloud"
+    },
+    {
+      "start": 153.26,
+      "duration": 3.29,
+      "text": "[Music]"
+    },
+    {
+      "start": 175.68,
+      "duration": 3.0,
+      "text": "uh"
+    },
+    {
+      "start": 197.6,
+      "duration": 13.41,
+      "text": "oh"
+    },
+    {
+      "start": 198.99,
+      "duration": 12.02,
+      "text": "[Music]"
+    },
+    {
+      "start": 216.37,
+      "duration": 8.86,
+      "text": "[Music]"
+    },
+    {
+      "start": 223.04,
+      "duration": 5.47,
+      "text": "your turn"
+    },
+    {
+      "start": 225.23,
+      "duration": 3.28,
+      "text": "[Music]"
+    },
+    {
+      "start": 247.6,
+      "duration": 3.0,
+      "text": "uh"
+    },
+    {
+      "start": 269.6,
+      "duration": 3.0,
+      "text": "bye"
+    },
+    {
+      "start": 275.2,
+      "duration": 7.78,
+      "text": "[Music]"
+    },
+    {
+      "start": 288.34,
+      "duration": 10.31,
+      "text": "[Music]"
     }
   ],
-  "fetchedAt": "2026-07-23T06:23:25.082096+00:00",
   "videoId": "8wZi38lF28E",
-  "speakerMap": {
-    "0": "Speaker0",
-    "1": "Speaker1"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:23:25.082131+00:00",
-    "dgWordCount": 155,
-    "dgUtteranceCount": 42,
-    "matchedSegments": 42,
-    "totalDuration": 224.08
-  },
-  "repairedAt": "2026-07-23T07:58:35.747462Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 41,
-    "afterSegments": 41,
-    "beforeAvgWords": 3.8,
-    "afterAvgWords": 3.8,
-    "merged": 0,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:02:37.251Z",
-  "fixedAt": "2026-07-31T09:31:15.964Z",
-  "fixedReason": "Remove intro"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:00.353116+00:00",
+  "rawCaptionCount": 61
 }

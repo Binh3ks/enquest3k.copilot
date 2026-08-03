@@ -1,114 +1,129 @@
 {
-  "text": "Five zzz's. I can see. I can see with my eyes. See see eyes eyes. I can hear. I can hear with my ears. Hear ear ears ears. I can smell. I can smell with my nose. Smell smell nose nose. I can feel. Oh, it's too cold! Feel feel skin skin. I can taste.",
+  "text": "English Singsing Five Senses I can see! I can see with my eyes! see eyes I can hear! I can hear with my ears! hear ears I can smell! I can smell with my nose! smell nose I can feel! Oh! It’s too cold! feel skin I can taste! I can taste with my tongue! Yummy! taste tongue Review",
   "segments": [
     {
-      "id": 1,
-      "text": "Five zzz's.",
-      "start": 8.24,
-      "duration": 0.5
+      "start": 1.74,
+      "duration": 1.66,
+      "text": "English Singsing"
     },
     {
-      "id": 2,
-      "text": "I can see.",
-      "start": 13.6,
-      "duration": 0.5
+      "start": 8.14,
+      "duration": 2.0,
+      "text": "Five Senses"
     },
     {
-      "id": 3,
-      "text": "I can see with my eyes.",
-      "start": 18.34,
-      "duration": 1.17
+      "start": 13.5,
+      "duration": 1.74,
+      "text": "I can see!"
     },
     {
-      "id": 4,
-      "text": "See see eyes eyes.",
-      "start": 24.57,
-      "duration": 3.67
+      "start": 17.98,
+      "duration": 3.08,
+      "text": "I can see with my eyes!"
     },
     {
-      "id": 5,
-      "text": "I can hear.",
-      "start": 33.27,
-      "duration": 1.93
+      "start": 23.8,
+      "duration": 1.56,
+      "text": "see"
     },
     {
-      "id": 6,
-      "text": "I can hear with my ears.",
-      "start": 39.79,
-      "duration": 7.55
+      "start": 30.38,
+      "duration": 1.72,
+      "text": "eyes"
     },
     {
-      "id": 7,
-      "text": "Hear ear ears ears.",
-      "start": 52.84,
-      "duration": 3.95
+      "start": 37.56,
+      "duration": 1.5,
+      "text": "I can hear!"
     },
     {
-      "id": 8,
-      "text": "I can smell.",
-      "start": 62.54,
-      "duration": 2.38
+      "start": 40.62,
+      "duration": 2.62,
+      "text": "I can hear with my ears!"
     },
     {
-      "id": 9,
-      "text": "I can smell with my nose.",
-      "start": 73.33,
-      "duration": 1.54
+      "start": 52.28,
+      "duration": 1.4,
+      "text": "hear"
     },
     {
-      "id": 10,
-      "text": "Smell smell nose nose.",
-      "start": 79.5,
-      "duration": 4.56
+      "start": 59.88,
+      "duration": 2.0,
+      "text": "ears"
     },
     {
-      "id": 11,
-      "text": "I can feel.",
-      "start": 90.31,
-      "duration": 2.41
+      "start": 69.32,
+      "duration": 1.96,
+      "text": "I can smell!"
     },
     {
-      "id": 12,
-      "text": "Oh, it's too cold!",
-      "start": 100.44,
-      "duration": 0.79
+      "start": 73.34,
+      "duration": 2.98,
+      "text": "I can smell with my nose!"
     },
     {
-      "id": 13,
-      "text": "Feel feel skin skin.",
-      "start": 102.6,
-      "duration": 4.78
+      "start": 79.06,
+      "duration": 2.0,
+      "text": "smell"
     },
     {
-      "id": 14,
-      "text": "I can taste.",
-      "start": 113.94,
-      "duration": 2.52
+      "start": 85.58,
+      "duration": 2.0,
+      "text": "nose"
+    },
+    {
+      "start": 97.3,
+      "duration": 1.98,
+      "text": "I can feel!"
+    },
+    {
+      "start": 100.34,
+      "duration": 2.4,
+      "text": "Oh! It’s too cold!"
+    },
+    {
+      "start": 104.18,
+      "duration": 1.12,
+      "text": "feel"
+    },
+    {
+      "start": 111.12,
+      "duration": 1.44,
+      "text": "skin"
+    },
+    {
+      "start": 121.16,
+      "duration": 2.18,
+      "text": "I can taste!"
+    },
+    {
+      "start": 124.5,
+      "duration": 2.78,
+      "text": "I can taste with my tongue!"
+    },
+    {
+      "start": 129.08,
+      "duration": 2.0,
+      "text": "Yummy!"
+    },
+    {
+      "start": 131.32,
+      "duration": 1.3,
+      "text": "taste"
+    },
+    {
+      "start": 137.18,
+      "duration": 2.0,
+      "text": "tongue"
+    },
+    {
+      "start": 143.4,
+      "duration": 2.6,
+      "text": "Review"
     }
   ],
-  "fetchedAt": "2026-07-23T06:28:35.940505+00:00",
   "videoId": "LNajQTnZviQ",
-  "speakerMap": {
-    "0": "Speaker0"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:28:35.940537+00:00",
-    "dgWordCount": 80,
-    "dgUtteranceCount": 39,
-    "matchedSegments": 39,
-    "totalDuration": 175.04
-  },
-  "repairedAt": "2026-07-23T07:58:35.835445Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 11,
-    "afterSegments": 14,
-    "beforeAvgWords": 7.3,
-    "afterAvgWords": 5.7,
-    "merged": -3,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:04:17.906Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:05.868368+00:00",
+  "rawCaptionCount": 24
 }

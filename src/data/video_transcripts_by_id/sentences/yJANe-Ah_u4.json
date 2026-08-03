@@ -1,111 +1,129 @@
 {
-  "text": "Did I walk in Paris last week? No, I didn't. I walked in New York last week. Did you like the movie last night? Yes, I did. I liked it a lot. Did he work at home yesterday? No, he didn't. He worked at the office yesterday. Did she make pasta last night? No, she didn't. She made pizza last night. Did they look to the left this morning? No, they didn't. They looked to the right. Did we really cry last night? Yes, we did. Did you work out last night? Yes, we did. Did they cook last weekend? No, they didn't. They watched a movie on TV.",
+  "text": "did I walk in Paris last week no I didn't I walked in New York last week did you like the movie last night yes I did I liked it a lot did he work at home yesterday no he didn't he worked at the office yesterday did she make pasta last night no she didn't she made pizza last night did they look to the left this morning no they didn't they looked to the right did we really cry last night yes we did did you work out last night yes we did did they cook last weekend no they didn't they watched a movie on TV [Music] [Music] [Music] [Music] [Music]",
   "segments": [
     {
-      "id": 1,
-      "text": "Did I walk in Paris last week?",
-      "start": 9.2,
-      "duration": 6.82
+      "start": 8.57,
+      "duration": 4.55,
+      "text": "did I walk in Paris last week"
     },
     {
-      "id": 2,
-      "text": "No, I didn't. I walked in New York last week.",
-      "start": 15.62,
-      "duration": 7.84
+      "start": 15.12,
+      "duration": 5.69,
+      "text": "no I didn't I walked in New York last"
     },
     {
-      "id": 3,
-      "text": "Did you like the movie last night?",
-      "start": 23.14,
-      "duration": 7.88
+      "start": 18.6,
+      "duration": 2.21,
+      "text": "week"
     },
     {
-      "id": 4,
-      "text": "Yes, I did. I liked it a lot.",
-      "start": 30.54,
-      "duration": 8.74
+      "start": 22.82,
+      "duration": 4.01,
+      "text": "did you like the movie last night"
     },
     {
-      "id": 5,
-      "text": "Did he work at home yesterday?",
-      "start": 38.96,
-      "duration": 8
+      "start": 30.11,
+      "duration": 5.6,
+      "text": "yes I did I liked it a lot"
     },
     {
-      "id": 6,
-      "text": "No, he didn't. He worked at the office yesterday.",
-      "start": 46.64,
-      "duration": 9.28
+      "start": 38.46,
+      "duration": 4.07,
+      "text": "did he work at home yesterday"
     },
     {
-      "id": 7,
-      "text": "Did she make pasta last night?",
-      "start": 55.6,
-      "duration": 6.96
+      "start": 45.86,
+      "duration": 6.3,
+      "text": "no he didn't he worked at the office"
     },
     {
-      "id": 8,
-      "text": "No, she didn't. She made pizza last night.",
-      "start": 62.08,
-      "duration": 11.28
+      "start": 49.62,
+      "duration": 2.54,
+      "text": "yesterday"
     },
     {
-      "id": 9,
-      "text": "Did they look to the left this morning?",
-      "start": 72.97,
-      "duration": 8.41
+      "start": 54.88,
+      "duration": 4.62,
+      "text": "did she make pasta last night"
     },
     {
-      "id": 10,
-      "text": "No, they didn't. They looked to the right.",
-      "start": 81.14,
-      "duration": 10.74
+      "start": 61.24,
+      "duration": 6.33,
+      "text": "no she didn't she made pizza last night"
     },
     {
-      "id": 11,
-      "text": "Did we really cry last night?",
-      "start": 91.56,
-      "duration": 6.4
+      "start": 72.23,
+      "duration": 4.77,
+      "text": "did they look to the left this morning"
     },
     {
-      "id": 12,
-      "text": "Yes, we did.",
-      "start": 97.56,
-      "duration": 6.33
+      "start": 79.99,
+      "duration": 6.42,
+      "text": "no they didn't they looked to the right"
     },
     {
-      "id": 13,
-      "text": "Did you work out last night?",
-      "start": 103.57,
-      "duration": 6.9
+      "start": 90.86,
+      "duration": 4.53,
+      "text": "did we really cry last night"
     },
     {
-      "id": 14,
-      "text": "Yes, we did.",
-      "start": 109.97,
-      "duration": 6.98
+      "start": 96.77,
+      "duration": 3.66,
+      "text": "yes we did"
     },
     {
-      "id": 15,
-      "text": "Did they cook last weekend?",
-      "start": 116.78,
-      "duration": 9.21
+      "start": 102.85,
+      "duration": 4.38,
+      "text": "did you work out last night"
     },
     {
-      "id": 16,
-      "text": "No, they didn't. They watched a movie on TV.",
-      "start": 125.59,
-      "duration": 3.38
+      "start": 109.2,
+      "duration": 3.9,
+      "text": "yes we did"
+    },
+    {
+      "start": 115.88,
+      "duration": 4.41,
+      "text": "did they cook last weekend"
+    },
+    {
+      "start": 124.7,
+      "duration": 5.97,
+      "text": "no they didn't they watched a movie on"
+    },
+    {
+      "start": 128.4,
+      "duration": 2.27,
+      "text": "TV"
+    },
+    {
+      "start": 132.82,
+      "duration": 21.49,
+      "text": "[Music]"
+    },
+    {
+      "start": 156.32,
+      "duration": 11.48,
+      "text": "[Music]"
+    },
+    {
+      "start": 170.26,
+      "duration": 19.74,
+      "text": "[Music]"
+    },
+    {
+      "start": 192.38,
+      "duration": 12.26,
+      "text": "[Music]"
+    },
+    {
+      "start": 207.14,
+      "duration": 4.94,
+      "text": "[Music]"
     }
   ],
   "videoId": "yJANe-Ah_u4",
-  "fetchedAt": "2026-07-31T11:56:07.198Z",
   "source": "youtube-transcript-api",
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-31T11:59:47.731Z",
-    "dgWordCount": 109,
-    "matchedSegments": 16,
-    "totalDuration": 128.97
-  }
+  "fetchedAt": "2026-08-03T04:59:37.949793+00:00",
+  "rawCaptionCount": 24
 }

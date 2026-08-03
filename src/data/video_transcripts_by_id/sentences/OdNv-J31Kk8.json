@@ -1,120 +1,224 @@
 {
-  "text": "The Carter Family Episode four A Camping Trip Yay, said Harry. We're going camping. Mom put the tent and food in the car. Dad put the sleeping bags in the car. The kids played in the yard. Harry threw a stick. Rover ran after it. Everybody in the car, dad said. Rover looked for the stick. It's time to go camping, Rover, said Harry. Rover was still looking for the stick. Everybody pulled Rover into the car. Here we go. Said dad. Dad drove, and Rover barked loudly. Soon, they were in the woods. Mom and Harry set up the tent. Dad and Emmy made a campfire. Oliver found bugs. Grover sniffed all around. Dad cooked dinner over the fire. everybody ate it's getting dark said dad we need to tie up our food there are bears in the woods Bears? Harry looked around. Bears? Emmy looked around. I like bears, said Oliver. Suddenly, the bushes moved. Is it a bear? Asked Emmy. A sound came from the bushes. It must be a bear, said Harry. Woof woof, Rover jumped out. Rover had a new stick.",
+  "text": "Little Fox The Carter family, episode 4, a camping trip. \"Yay!\" said Harry. \"We're going camping.\" Mom put the tent and food in the car. Dad put the sleeping bags in the car. The kids played in the yard. Harry threw a stick. Rover ran after it. \"Everybody in the car.\" Dad said. Rover looked for the stick. \"It's time to go camping, Rover.\" said Harry. Rover was still looking for the stick. Everybody pulled Rover into the car. \"Here we go.\" said Dad. Dad drove and Rover barked loudly. Soon they were in the woods. Mom and Harry set up the tent. Dad and Emmy made a campfire. Oliver found bugs. Rover sniffed all around. Dad cooked dinner over the fire. Everybody ate. It's getting dark. said Dad. We need to tie up our food. There are bears in the woods. Bears? Harry looked around. Bears? Emmy looked around. I like bears. said Oliver. Suddenly, the bushes moved. Is it a bear? asked Emmy. Sound came from the bushes. It must be a bear. said Harry. Woof, woof. Rover jumped out. Rover had a new stick.",
   "segments": [
     {
-      "id": 1,
-      "text": "The Carter Family.",
-      "start": 5.6,
-      "duration": 1.27
+      "start": 2.12,
+      "duration": 3.28,
+      "text": "Little Fox"
     },
     {
-      "id": 2,
-      "text": "Episode four.",
-      "start": 9.9,
-      "duration": 0.5
+      "start": 5.76,
+      "duration": 6.08,
+      "text": "The Carter family, episode 4, a camping"
     },
     {
-      "id": 3,
-      "text": "A Camping Trip.",
-      "start": 12.76,
-      "duration": 1.27
+      "start": 9.24,
+      "duration": 2.6,
+      "text": "trip."
     },
     {
-      "id": 4,
-      "text": "Yay!",
-      "start": 17.06,
-      "duration": 0.5
+      "start": 19.56,
+      "duration": 5.92,
+      "text": "\"Yay!\" said Harry."
     },
     {
-      "id": 5,
-      "text": "Said Harry.",
-      "start": 18.49,
-      "duration": 0.5
+      "start": 22.24,
+      "duration": 3.24,
+      "text": "\"We're going camping.\""
     },
     {
-      "id": 6,
-      "text": "We're going camping.",
-      "start": 22.14,
-      "duration": 0.5
+      "start": 31.88,
+      "duration": 7.6,
+      "text": "Mom put the tent and food in the car."
     },
     {
-      "id": 7,
-      "text": "Mom put the tent and food in the car.",
-      "start": 31.94,
-      "duration": 1.59
+      "start": 35.44,
+      "duration": 4.04,
+      "text": "Dad put the sleeping bags in the car."
     },
     {
-      "id": 8,
-      "text": "Dad put the sleeping bags in the car.",
-      "start": 35.46,
-      "duration": 1.46
+      "start": 42.44,
+      "duration": 6.4,
+      "text": "The kids played in the yard."
     },
     {
-      "id": 9,
-      "text": "The kids played in the yard.",
-      "start": 42.38,
-      "duration": 0.98
+      "start": 45.64,
+      "duration": 3.2,
+      "text": "Harry threw a stick."
     },
     {
-      "id": 10,
-      "text": "Harry threw a stick.",
-      "start": 45.59,
-      "duration": 0.58
+      "start": 51.92,
+      "duration": 3.48,
+      "text": "Rover ran after it."
     },
     {
-      "id": 11,
-      "text": "Rover ran after it.",
-      "start": 51.98,
-      "duration": 0.65
+      "start": 55.6,
+      "duration": 3.12,
+      "text": "\"Everybody in the car.\""
     },
     {
-      "id": 12,
-      "text": "Everybody in the car!",
-      "start": 55.53,
-      "duration": 0.73
+      "start": 57.16,
+      "duration": 4.92,
+      "text": "Dad said."
     },
     {
-      "id": 13,
-      "text": "Dad said.",
-      "start": 57.25,
-      "duration": 0.5
+      "start": 58.72,
+      "duration": 3.36,
+      "text": "Rover looked for the stick."
     },
     {
-      "id": 14,
-      "text": "Rover looked for the stick.",
-      "start": 58.65,
-      "duration": 0.78
+      "start": 64.0,
+      "duration": 3.8,
+      "text": "\"It's time to go camping, Rover.\""
     },
     {
-      "id": 15,
-      "text": "It's time to go camping, Rover.",
-      "start": 63.93,
-      "duration": 1.15
+      "start": 65.88,
+      "duration": 6.12,
+      "text": "said Harry."
+    },
+    {
+      "start": 67.8,
+      "duration": 4.2,
+      "text": "Rover was still looking for the stick."
+    },
+    {
+      "start": 77.64,
+      "duration": 4.2,
+      "text": "Everybody pulled Rover into the car."
+    },
+    {
+      "start": 85.4,
+      "duration": 3.16,
+      "text": "\"Here we go.\""
+    },
+    {
+      "start": 86.56,
+      "duration": 6.68,
+      "text": "said Dad."
+    },
+    {
+      "start": 88.56,
+      "duration": 4.68,
+      "text": "Dad drove and Rover barked loudly."
+    },
+    {
+      "start": 101.36,
+      "duration": 3.44,
+      "text": "Soon they were in the woods."
+    },
+    {
+      "start": 110.64,
+      "duration": 3.8,
+      "text": "Mom and Harry set up the tent."
+    },
+    {
+      "start": 115.64,
+      "duration": 3.8,
+      "text": "Dad and Emmy made a campfire."
+    },
+    {
+      "start": 122.36,
+      "duration": 3.4,
+      "text": "Oliver found bugs."
+    },
+    {
+      "start": 126.88,
+      "duration": 3.84,
+      "text": "Rover sniffed all around."
+    },
+    {
+      "start": 132.2,
+      "duration": 3.76,
+      "text": "Dad cooked dinner over the fire."
+    },
+    {
+      "start": 136.48,
+      "duration": 3.12,
+      "text": "Everybody ate."
+    },
+    {
+      "start": 144.04,
+      "duration": 2.84,
+      "text": "It's getting dark."
+    },
+    {
+      "start": 145.24,
+      "duration": 5.12,
+      "text": "said Dad."
+    },
+    {
+      "start": 146.88,
+      "duration": 3.48,
+      "text": "We need to tie up our food."
+    },
+    {
+      "start": 150.52,
+      "duration": 3.64,
+      "text": "There are bears in the woods."
+    },
+    {
+      "start": 154.76,
+      "duration": 3.0,
+      "text": "Bears?"
+    },
+    {
+      "start": 155.76,
+      "duration": 5.28,
+      "text": "Harry looked around."
+    },
+    {
+      "start": 157.76,
+      "duration": 4.88,
+      "text": "Bears? Emmy looked around."
+    },
+    {
+      "start": 161.04,
+      "duration": 4.32,
+      "text": "I like bears."
+    },
+    {
+      "start": 162.64,
+      "duration": 2.72,
+      "text": "said Oliver."
+    },
+    {
+      "start": 165.96,
+      "duration": 6.36,
+      "text": "Suddenly, the bushes moved."
+    },
+    {
+      "start": 168.52,
+      "duration": 3.8,
+      "text": "Is it a bear? asked Emmy."
+    },
+    {
+      "start": 175.0,
+      "duration": 4.08,
+      "text": "Sound came from the bushes."
+    },
+    {
+      "start": 177.6,
+      "duration": 4.24,
+      "text": "It must be a bear."
+    },
+    {
+      "start": 179.08,
+      "duration": 2.76,
+      "text": "said Harry."
+    },
+    {
+      "start": 187.56,
+      "duration": 7.12,
+      "text": "Woof, woof. Rover jumped out."
+    },
+    {
+      "start": 191.08,
+      "duration": 3.6,
+      "text": "Rover had a new stick."
     }
   ],
-  "fetchedAt": "2026-07-23T06:27:52.542724+00:00",
   "videoId": "OdNv-J31Kk8",
-  "speakerMap": {
-    "0": "Speaker0"
-  },
-  "alignment": {
-    "engine": "deepgram-nova-2",
-    "alignedAt": "2026-07-23T06:27:52.542757+00:00",
-    "dgWordCount": 186,
-    "dgUtteranceCount": 37,
-    "matchedSegments": 37,
-    "totalDuration": 192.75
-  },
-  "repairedAt": "2026-07-23T07:58:35.825937Z",
-  "repairInfo": {
-    "version": 3,
-    "beforeSegments": 32,
-    "afterSegments": 33,
-    "beforeAvgWords": 5.8,
-    "afterAvgWords": 5.6,
-    "merged": -1,
-    "danglingFragments": 0
-  },
-  "formatted": true,
-  "formattedAt": "2026-07-30T16:04:52.721Z"
+  "source": "youtube-transcript-api",
+  "fetchedAt": "2026-08-03T04:59:10.606679+00:00",
+  "rawCaptionCount": 43
 }
