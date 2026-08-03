@@ -1,15 +1,23 @@
 {
-  "text": "(happy chiming music). (fun upbeat music). ♪ This is a happy face ♪. ♪ This is a happy face ♪. ♪ This is a happy face ♪. ♪ This is my happy face ♪. ♪ This is a sleepy face ♪. ♪ This is a sleepy face ♪. ♪ This is a sleepy face ♪. ♪ This is my sleepy face ♪. ♪ This is an angry face ♪. ♪ This is an angry face ♪. ♪ This is an angry face ♪. ♪ This is my angry face ♪. ♪ This is a surprised face ♪. ♪ This is us surprised face ♪. ♪ This is a surprised face ♪. ♪ This is my surprised face ♪. ♪ Happy ♪. ♪ Sleepy ♪. ♪ Angry ♪. ♪ Surprised ♪. ♪ Happy ♪. ♪ Sleepy ♪. ♪ Angry ♪. ♪ Surprised ♪. ♪ This is an excited face ♪. ♪ This is an excited face ♪. ♪ This is an excited face ♪. ♪ This is my excited face ♪. ♪ This is a sad face ♪. ♪ This is a sad face ♪. ♪ This is a sad face ♪. ♪ This is my sad face ♪. ♪ This is a nervous face ♪. ♪ This is a nervous face ♪. ♪ This is a nervous face ♪. ♪ This is my nervous face ♪. ♪ This is a silly face. ♪. ♪ This is a silly face ♪. ♪ This is a silly face ♪. ♪ This is my silly face ♪. ♪ Excited ♪. ♪ Sad ♪. ♪ Nervous ♪. ♪ Silly ♪. ♪ Excited ♪. ♪ Sad ♪. ♪ Nervous ♪. ♪ Silly ♪. ♪ Now let me see those faces ♪. ♪ Show me your happy face ♪. ♪ Show me your sleepy face ♪. ♪ Show me your angry face ♪. ♪ Show me your surprised face ♪. ♪ Show me your excited face ♪. ♪ Show me your sad face ♪. ♪ Show me your nervous face ♪. ♪ Show me your silly face ♪. ♪ This is a happy face ♪. ♪ This is a happy face ♪. ♪ This is a happy face ♪. ♪ This is my happy face ♪.",
+  "text": "Happy chiming music. Fun upbeat music.",
   "segments": [
     {
       "id": 1,
-      "text": "Happy chiming music. Fun upbeat music.",
+      "text": "Happy chiming music.",
       "start": 0.64,
-      "duration": 63.11
+      "duration": 31.55
+    },
+    {
+      "id": 2,
+      "text": "Fun upbeat music.",
+      "start": 32.2,
+      "duration": 3.0
     }
   ],
   "fetchedAt": "2026-06-22T02:05:44Z",
   "videoId": "lQZX1IIAnLw",
   "formatted": true,
-  "formattedAt": "2026-07-30T16:09:00.524Z"
+  "formattedAt": "2026-07-30T16:09:00.524Z",
+  "splitAt": "2026-08-03T05:15:00.324639+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

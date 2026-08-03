@@ -1,39 +1,47 @@
 {
-  "text": "In a forest lived a rabbit. Wandering all day long all he did was. Jump hop and admire himself he loved. Talking about how much faster he was. Than the other. Animals i'm the fastest animal in the. Forest would anyone like to race with me. He sure did run fast with his very big. Feet. The other animals hated the way he would. Show off in saying that they never ever. Won a race. Yes i win again why because i'm fast. Everywhere he went he would say i'm so. Fast no one could ever pass me his words. Had began to disturb all the other. Animals in the forest okay he might be. The fastest but the fact that he says. And shows up about it's not nice. So what should teach my lesson to. Smarten up. All that was said amongst all the. Animals in the forest managed to go to. The turtle. The turtle walked very slow. It would take him a day to reach the. Distance the rabbit could make in a. Minute. The turtle wished he would come across. The rabbit one of these days. He went to the other animals and told. Them that he would like to race with the. Rabbit. You want to raise him. Not even the fastest animals have won. Against a rabbit. How can you. You leave that part up to me. The turtle went next to the rabbit. Good day mr rabbit. I have been searching for you. Curiously the rabbit asked. And why might you be looking for me. I hear that you are the fastest animal. In the forest. Well. Actually that's what you think. But to be sure. I would like to race with you. Let's see. Who is faster. As soon as the turtle had finished what. He had to say the rabbit began to laugh. So hard that all the other animals in. The forest heard him. Are you joking me it's impossible for. You to pass me by the time you take a. Step i would finish the race. Well unless we race we will never know. Will we okay be ready then tomorrow. Morning will rise. As the turtle began walking away the. Rabbit continued on laughing. The following morning the animals. Arrived at the racecourse they noticed. The turtle waiting at the starting line. All ready to go very sure of himself. The turtle was smiling. Please tell me how you're going to beat. The rabbit. If he really is so proud and the big. Show off as you all say he is. Then this race isn't going to be hard at. All. Soon after with his very stuck-up. Attitude. Holding a carrot the rabbit arrived at. The racecourse. Let's race and finish this i still. Haven't had breakfast. Finishing their last preparations they. Arrived at the starting point. The first one that allows it to redline. Up the united forest wets. With the mark of the mole the race. Started. Just like an arrow the rabbit flew by. The turtle on the other hand began to. Walk. Slowly. Whoa the rabbit was nowhere to be seen. The animals watching the race thought. That the turtle was going to get beaten. After running a while the rabbit stopped. And had a look behind him. There was nothing to be seen. By the looks of it the turtle will. Finish the race tonight i better sit and. Finish my carrot. The rabbit finished eating his carrot. Looked up the road and from afar he saw. The turtle coming. With a cheeky grin he stood up and. Continued on running. The rabbit had nearly reached the. Finishing point. I'm a bit sleepy after breakfast. I might sit under this tree and take a. Nap. As confident as he was about winning the. Race the rabbit drifted off to sleep. The turtle continued on walking very. Very slowly but with great confidence. At last he arrived next to the rabbit he. Saw that the rabbit was in a deep sleep. Without stopping he continued on his way. A while later the rabbit woke up. When he looked and could not see the. Turtle. The turtle is nowhere to be seen maybe. He doesn't want to race anymore. I should finish my race now. As the rabbit was slowly making his way. To the finishing point. What does he see. The turtle had passed him. In fact he was about to finish the race. Using all the energy he had left over he. Tried to pass the turtle. But the turtle had already finished the. Race. Some of the animals waiting at the. Finish line were extremely happy. All the animals were throwing the turtle. Up in the air with great excitement. While the rabbits stood in the corner. With great sadness. Turtle the winner of the race walk. Towards the rabbit. Mr rabbit. The important thing is being consistent. About everything that you do. To brag with nonsense and love yourself. Is weakness. I beat you not because i was faster. But i was wiser. And did what i did seriously. You're right from now on i will stop. Bragging about being the fastest amongst. Everyone i should return now my home is. A long journey away. The turtle smiled and continued on his. Way the rabbit learnt a good lesson and. Noticed his mistake. After that day on he never ever bragged. About himself. Nor did he ever race again. You.",
+  "text": "In a forest lived a rabbit. Wandering all day long, all he did was jump, hop, and admire himself. He loved talking about how much faster he was than the other animals. \"I'm the fastest animal in the forest. Would anyone like to race with me?\" He sure did run fast with his very big feet. The other animals hated the way he would show off.",
   "segments": [
     {
       "id": 1,
       "text": "In a forest lived a rabbit.",
       "start": 3.28,
-      "duration": 3.01
+      "duration": 2.48
     },
     {
       "id": 2,
       "text": "Wandering all day long, all he did was jump, hop, and admire himself.",
       "start": 5.76,
-      "duration": 4.47
+      "duration": 6.03
     },
     {
       "id": 3,
-      "text": "He loved talking about how much faster he was than the other animals. \"I'm the fastest animal in the forest.",
+      "text": "He loved talking about how much faster he was than the other animals.",
       "start": 11.79,
-      "duration": 5.24
+      "duration": 3.41
     },
     {
       "id": 4,
-      "text": "Would anyone like to race with me?\" He sure did run fast with his very big feet.",
-      "start": 18.12,
-      "duration": 6.34
+      "text": "\"I'm the fastest animal in the forest.",
+      "start": 15.2,
+      "duration": 2.92
     },
     {
       "id": 5,
+      "text": "Would anyone like to race with me?\" He sure did run fast with his very big feet.",
+      "start": 18.12,
+      "duration": 8.2
+    },
+    {
+      "id": 6,
       "text": "The other animals hated the way he would show off.",
       "start": 26.32,
-      "duration": 2.33
+      "duration": 3.0
     }
   ],
   "fetchedAt": "2026-06-22T02:05:51Z",
   "videoId": "gfbSIdwL0FE",
   "formatted": true,
-  "formattedAt": "2026-07-30T16:07:53.767Z"
+  "formattedAt": "2026-07-30T16:07:53.767Z",
+  "splitAt": "2026-08-03T05:15:00.317018+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

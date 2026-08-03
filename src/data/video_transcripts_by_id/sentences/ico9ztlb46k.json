@@ -2,178 +2,64 @@
   "text": "Hey there kids! Listen carefully and repeat. wake up wake up go to the toilet go to the toilet wash my face wash my face eat breakfast eat breakfast brush my teeth brush my teeth brush my hair brush my hair get dressed get dressed sing sing dance dance go to school go to school That was great kids. Let's do it one more time. In a big voice, repeat after me. Here we go. wake up go to the toilet wash my face eat breakfast brush my teeth brush my hair get dressed sing dance go to school Well done, kids. That was great. See ya!",
   "segments": [
     {
+      "id": 1,
+      "text": "Hey there kids!",
       "start": 5.79,
-      "duration": 5.31,
-      "text": "Hey there kids! Listen carefully and repeat."
+      "duration": 2.28
     },
     {
+      "id": 2,
+      "text": "Listen carefully and repeat.",
+      "start": 8.07,
+      "duration": 4.33
+    },
+    {
+      "id": 3,
+      "text": "wake up wake up go to the toilet go to the toilet wash my face wash my face eat breakfast eat breakfast brush my teeth brush my teeth brush my hair brush my hair get dressed get dressed sing sing dance dance go to school go to school That was great kids.",
       "start": 12.4,
-      "duration": 2.48,
-      "text": "wake up"
+      "duration": 83.42
     },
     {
-      "start": 16.4,
-      "duration": 2.68,
-      "text": "wake up"
+      "id": 4,
+      "text": "Let's do it one more time.",
+      "start": 95.82,
+      "duration": 3.66
     },
     {
-      "start": 20.68,
-      "duration": 1.72,
-      "text": "go to the toilet"
-    },
-    {
-      "start": 24.5,
-      "duration": 1.9,
-      "text": "go to the toilet"
-    },
-    {
-      "start": 28.55,
-      "duration": 2.02,
-      "text": "wash my face"
-    },
-    {
-      "start": 32.57,
-      "duration": 1.96,
-      "text": "wash my face"
-    },
-    {
-      "start": 36.42,
-      "duration": 2.26,
-      "text": "eat breakfast"
-    },
-    {
-      "start": 40.47,
-      "duration": 2.22,
-      "text": "eat breakfast"
-    },
-    {
-      "start": 44.5,
-      "duration": 2.22,
-      "text": "brush my teeth"
-    },
-    {
-      "start": 48.59,
-      "duration": 2.24,
-      "text": "brush my teeth"
-    },
-    {
-      "start": 52.38,
-      "duration": 2.22,
-      "text": "brush my hair"
-    },
-    {
-      "start": 56.56,
-      "duration": 2.22,
-      "text": "brush my hair"
-    },
-    {
-      "start": 60.4,
-      "duration": 2.38,
-      "text": "get dressed"
-    },
-    {
-      "start": 64.34,
-      "duration": 2.8,
-      "text": "get dressed"
-    },
-    {
-      "start": 68.47,
-      "duration": 2.36,
-      "text": "sing"
-    },
-    {
-      "start": 72.44,
-      "duration": 2.58,
-      "text": "sing"
-    },
-    {
-      "start": 76.41,
-      "duration": 2.3,
-      "text": "dance"
-    },
-    {
-      "start": 80.53,
-      "duration": 2.32,
-      "text": "dance"
-    },
-    {
-      "start": 84.45,
-      "duration": 2.66,
-      "text": "go to school"
-    },
-    {
-      "start": 88.54,
-      "duration": 2.94,
-      "text": "go to school"
-    },
-    {
-      "start": 93.67,
-      "duration": 5.37,
-      "text": "That was great kids. Let's do it one more time."
-    },
-    {
+      "id": 5,
+      "text": "In a big voice, repeat after me.",
       "start": 99.48,
-      "duration": 6.37,
-      "text": "In a big voice, repeat after me. Here we go."
+      "duration": 4.46
     },
     {
+      "id": 6,
+      "text": "Here we go.",
+      "start": 103.94,
+      "duration": 4.37
+    },
+    {
+      "id": 7,
+      "text": "wake up go to the toilet wash my face eat breakfast brush my teeth brush my hair get dressed sing dance go to school Well done, kids.",
       "start": 108.31,
-      "duration": 2.13,
-      "text": "wake up"
+      "duration": 83.31
     },
     {
-      "start": 116.45,
-      "duration": 2.26,
-      "text": "go to the toilet"
+      "id": 8,
+      "text": "That was great.",
+      "start": 191.62,
+      "duration": 2.46
     },
     {
-      "start": 124.52,
-      "duration": 2.42,
-      "text": "wash my face"
-    },
-    {
-      "start": 132.3,
-      "duration": 2.88,
-      "text": "eat breakfast"
-    },
-    {
-      "start": 140.48,
-      "duration": 2.98,
-      "text": "brush my teeth"
-    },
-    {
-      "start": 148.42,
-      "duration": 2.74,
-      "text": "brush my hair"
-    },
-    {
-      "start": 156.21,
-      "duration": 2.8,
-      "text": "get dressed"
-    },
-    {
-      "start": 164.38,
-      "duration": 3.02,
-      "text": "sing"
-    },
-    {
-      "start": 172.47,
-      "duration": 2.78,
-      "text": "dance"
-    },
-    {
-      "start": 180.37,
-      "duration": 2.88,
-      "text": "go to school"
-    },
-    {
-      "start": 189.16,
-      "duration": 6.55,
-      "text": "Well done, kids. That was great. See ya!"
+      "id": 9,
+      "text": "See ya!",
+      "start": 194.07,
+      "duration": 3.0
     }
   ],
   "videoId": "ico9ztlb46k",
   "source": "youtube-transcript-api",
   "fetchedAt": "2026-08-03T04:59:16.870568+00:00",
-  "rawCaptionCount": 34
+  "rawCaptionCount": 34,
+  "splitAt": "2026-08-03T05:15:00.317811+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

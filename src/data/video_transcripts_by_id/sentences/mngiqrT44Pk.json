@@ -1,35 +1,178 @@
 {
   "text": "How was your trip? It was really fun! How was the weather? The weather was beautiful. It was warm and sunny every day. How were the people? The people were very friendly and helpful. What did you do? I had some meetings. I ate at some delicious restaurants. And I did some sightseeing. How was the hotel? The hotel was very nice. The service was great. How was the food? The food was amazing. I ate many different kinds of food. Was it expensive? I think it was reasonable. I didn't spend too much money. Sounds like you had a wonderful vacation. Yes, just one bad thing happened. Really? What happened? I got sick. I got food poisoning. Wow, that's awful. I thought you said the food was delicious.",
   "segments": [
-    { "id": 1, "text": "How was your trip?", "start": 6.24, "duration": 2.0 },
-    { "id": 2, "text": "It was really fun!", "start": 8.5, "duration": 1.5 },
-    { "id": 3, "text": "How was the weather?", "start": 10.5, "duration": 2.0 },
-    { "id": 4, "text": "The weather was beautiful.", "start": 13.0, "duration": 2.0 },
-    { "id": 5, "text": "It was warm and sunny every day.", "start": 15.5, "duration": 2.5 },
-    { "id": 6, "text": "How were the people?", "start": 18.5, "duration": 2.0 },
-    { "id": 7, "text": "The people were very friendly and helpful.", "start": 21.0, "duration": 2.5 },
-    { "id": 8, "text": "What did you do?", "start": 24.0, "duration": 1.5 },
-    { "id": 9, "text": "I had some meetings.", "start": 26.0, "duration": 2.0 },
-    { "id": 10, "text": "I ate at some delicious restaurants.", "start": 28.5, "duration": 2.5 },
-    { "id": 11, "text": "And I did some sightseeing.", "start": 31.5, "duration": 2.0 },
-    { "id": 12, "text": "How was the hotel?", "start": 34.0, "duration": 1.5 },
-    { "id": 13, "text": "The hotel was very nice.", "start": 36.0, "duration": 2.0 },
-    { "id": 14, "text": "The service was great.", "start": 38.5, "duration": 1.5 },
-    { "id": 15, "text": "How was the food?", "start": 40.5, "duration": 1.5 },
-    { "id": 16, "text": "The food was amazing.", "start": 42.5, "duration": 2.0 },
-    { "id": 17, "text": "I ate many different kinds of food.", "start": 45.0, "duration": 2.5 },
-    { "id": 18, "text": "Was it expensive?", "start": 48.0, "duration": 1.5 },
-    { "id": 19, "text": "I think it was reasonable.", "start": 50.0, "duration": 2.0 },
-    { "id": 20, "text": "I didn't spend too much money.", "start": 52.5, "duration": 2.0 },
-    { "id": 21, "text": "Sounds like you had a wonderful vacation.", "start": 55.0, "duration": 2.5 },
-    { "id": 22, "text": "Yes, just one bad thing happened.", "start": 58.0, "duration": 2.0 },
-    { "id": 23, "text": "Really? What happened?", "start": 60.5, "duration": 1.5 },
-    { "id": 24, "text": "I got sick.", "start": 62.5, "duration": 1.5 },
-    { "id": 25, "text": "I got food poisoning.", "start": 64.5, "duration": 1.5 },
-    { "id": 26, "text": "Wow, that's awful.", "start": 66.5, "duration": 1.5 },
-    { "id": 27, "text": "I thought you said the food was delicious.", "start": 68.5, "duration": 2.5 }
+    {
+      "id": 1,
+      "text": "How was your trip?",
+      "start": 6.24,
+      "duration": 2.26
+    },
+    {
+      "id": 2,
+      "text": "It was really fun!",
+      "start": 8.5,
+      "duration": 2.0
+    },
+    {
+      "id": 3,
+      "text": "How was the weather?",
+      "start": 10.5,
+      "duration": 2.5
+    },
+    {
+      "id": 4,
+      "text": "The weather was beautiful.",
+      "start": 13.0,
+      "duration": 2.5
+    },
+    {
+      "id": 5,
+      "text": "It was warm and sunny every day.",
+      "start": 15.5,
+      "duration": 3.0
+    },
+    {
+      "id": 6,
+      "text": "How were the people?",
+      "start": 18.5,
+      "duration": 2.5
+    },
+    {
+      "id": 7,
+      "text": "The people were very friendly and helpful.",
+      "start": 21.0,
+      "duration": 3.0
+    },
+    {
+      "id": 8,
+      "text": "What did you do?",
+      "start": 24.0,
+      "duration": 2.0
+    },
+    {
+      "id": 9,
+      "text": "I had some meetings.",
+      "start": 26.0,
+      "duration": 2.5
+    },
+    {
+      "id": 10,
+      "text": "I ate at some delicious restaurants.",
+      "start": 28.5,
+      "duration": 3.0
+    },
+    {
+      "id": 11,
+      "text": "And I did some sightseeing.",
+      "start": 31.5,
+      "duration": 2.5
+    },
+    {
+      "id": 12,
+      "text": "How was the hotel?",
+      "start": 34.0,
+      "duration": 2.0
+    },
+    {
+      "id": 13,
+      "text": "The hotel was very nice.",
+      "start": 36.0,
+      "duration": 2.5
+    },
+    {
+      "id": 14,
+      "text": "The service was great.",
+      "start": 38.5,
+      "duration": 2.0
+    },
+    {
+      "id": 15,
+      "text": "How was the food?",
+      "start": 40.5,
+      "duration": 2.0
+    },
+    {
+      "id": 16,
+      "text": "The food was amazing.",
+      "start": 42.5,
+      "duration": 2.5
+    },
+    {
+      "id": 17,
+      "text": "I ate many different kinds of food.",
+      "start": 45.0,
+      "duration": 3.0
+    },
+    {
+      "id": 18,
+      "text": "Was it expensive?",
+      "start": 48.0,
+      "duration": 2.0
+    },
+    {
+      "id": 19,
+      "text": "I think it was reasonable.",
+      "start": 50.0,
+      "duration": 2.5
+    },
+    {
+      "id": 20,
+      "text": "I didn't spend too much money.",
+      "start": 52.5,
+      "duration": 2.5
+    },
+    {
+      "id": 21,
+      "text": "Sounds like you had a wonderful vacation.",
+      "start": 55.0,
+      "duration": 3.0
+    },
+    {
+      "id": 22,
+      "text": "Yes, just one bad thing happened.",
+      "start": 58.0,
+      "duration": 2.5
+    },
+    {
+      "id": 23,
+      "text": "Really?",
+      "start": 60.5,
+      "duration": 0.5
+    },
+    {
+      "id": 24,
+      "text": "What happened?",
+      "start": 61.0,
+      "duration": 1.5
+    },
+    {
+      "id": 25,
+      "text": "I got sick.",
+      "start": 62.5,
+      "duration": 2.0
+    },
+    {
+      "id": 26,
+      "text": "I got food poisoning.",
+      "start": 64.5,
+      "duration": 2.0
+    },
+    {
+      "id": 27,
+      "text": "Wow, that's awful.",
+      "start": 66.5,
+      "duration": 2.0
+    },
+    {
+      "id": 28,
+      "text": "I thought you said the food was delicious.",
+      "start": 68.5,
+      "duration": 3.0
+    }
   ],
   "videoId": "mngiqrT44Pk",
   "source": "youtube-transcript-api",
-  "note": "Fixed auto-caption fragments. Original had 19 segments with merged sentences across speaker turns. Split into 27 segments following FROZEN rules (1 complete thought = 1 segment). Estimated timestamps based on 70s video. Aug 2, 2026."
+  "note": "Fixed auto-caption fragments. Original had 19 segments with merged sentences across speaker turns. Split into 27 segments following FROZEN rules (1 complete thought = 1 segment). Estimated timestamps based on 70s video. Aug 2, 2026.",
+  "splitAt": "2026-08-03T05:15:00.325040+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

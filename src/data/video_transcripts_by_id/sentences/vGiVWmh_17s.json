@@ -5,2563 +5,2527 @@
       "id": 1,
       "text": "Hello, everyone, and welcome back to Smart Learning English Channel.",
       "start": 1.04,
-      "duration": 2.87
+      "duration": 4.24
     },
     {
       "id": 2,
       "text": "Dave, where is your phone?",
       "start": 5.28,
-      "duration": 1.24
+      "duration": 2.64
     },
     {
       "id": 3,
       "text": "My phone?",
       "start": 7.92,
-      "duration": 0.5
+      "duration": 0.96
     },
     {
       "id": 4,
       "text": "Yes.",
       "start": 8.88,
-      "duration": 0.5
+      "duration": 0.8
     },
     {
       "id": 5,
       "text": "Why?",
       "start": 9.68,
-      "duration": 0.5
+      "duration": 0.96
     },
     {
       "id": 6,
       "text": "Just answer the question.",
       "start": 10.64,
-      "duration": 0.64
+      "duration": 3.23
     },
     {
       "id": 7,
       "text": "I don't know.",
       "start": 13.87,
-      "duration": 0.5
+      "duration": 1.19
     },
     {
       "id": 8,
       "text": "Really?",
       "start": 15.06,
-      "duration": 0.5
+      "duration": 0.81
     },
     {
       "id": 9,
       "text": "Wait.",
       "start": 15.87,
-      "duration": 0.5
+      "duration": 0.79
     },
     {
       "id": 10,
       "text": "Don't panic.",
       "start": 16.66,
-      "duration": 0.5
+      "duration": 0.96
     },
     {
       "id": 11,
       "text": "I'm not panicking.",
       "start": 17.62,
-      "duration": 0.5
+      "duration": 1.36
     },
     {
       "id": 12,
       "text": "I'm panicking.",
       "start": 18.98,
-      "duration": 0.5
+      "duration": 2.48
     },
     {
       "id": 13,
       "text": "Seriously, where is it?",
       "start": 21.46,
-      "duration": 0.78
+      "duration": 2.16
     },
     {
       "id": 14,
       "text": "Look at your hand.",
       "start": 23.62,
-      "duration": 0.61
+      "duration": 1.92
     },
     {
       "id": 15,
       "text": "Oh, there it is.",
       "start": 25.54,
-      "duration": 0.98
+      "duration": 2.3
     },
     {
       "id": 16,
       "text": "Exactly.",
       "start": 27.84,
-      "duration": 0.5
+      "duration": 1.27
     },
     {
       "id": 17,
       "text": "That was embarrassing.",
       "start": 29.11,
-      "duration": 0.5
+      "duration": 1.36
     },
     {
       "id": 18,
       "text": "A little.",
       "start": 30.47,
-      "duration": 0.5
+      "duration": 0.96
     },
     {
       "id": 19,
       "text": "Okay.",
       "start": 31.43,
-      "duration": 0.5
+      "duration": 0.64
     },
     {
       "id": 20,
       "text": "Can we pretend that didn't happen?",
       "start": 32.07,
-      "duration": 1.02
+      "duration": 2.08
     },
     {
       "id": 21,
-      "text": "No.",
+      "text": "No. Fair enough.",
       "start": 34.15,
-      "duration": 0.5
+      "duration": 2.08
     },
     {
       "id": 22,
-      "text": "Fair enough.",
-      "start": 35.03,
-      "duration": 0.5
+      "text": "Today's topic is perfect for you.",
+      "start": 36.23,
+      "duration": 2.88
     },
     {
       "id": 23,
-      "text": "Today's topic is perfect for you.",
-      "start": 36.23,
-      "duration": 1.54
-    },
-    {
-      "id": 24,
       "text": "Why?",
       "start": 39.11,
-      "duration": 0.5
-    },
-    {
-      "id": 25,
-      "text": "Because you can't live without your phone.",
-      "start": 40.05,
-      "duration": 1.57
-    },
-    {
-      "id": 26,
-      "text": "That's not true.",
-      "start": 42.84,
-      "duration": 0.5
-    },
-    {
-      "id": 27,
-      "text": "Really?",
-      "start": 44.37,
-      "duration": 0.5
-    },
-    {
-      "id": 28,
-      "text": "Okay.",
-      "start": 45.33,
-      "duration": 0.5
-    },
-    {
-      "id": 29,
-      "text": "Maybe a little.",
-      "start": 46.2,
-      "duration": 0.5
-    },
-    {
-      "id": 30,
-      "text": "A little.",
-      "start": 47.27,
-      "duration": 0.5
-    },
-    {
-      "id": 31,
-      "text": "Fine.",
-      "start": 48.45,
-      "duration": 0.5
-    },
-    {
-      "id": 32,
-      "text": "A lot.",
-      "start": 49.33,
-      "duration": 0.5
-    },
-    {
-      "id": 33,
-      "text": "I knew it.",
-      "start": 50.36,
-      "duration": 0.5
-    },
-    {
-      "id": 34,
-      "text": "What about you?",
-      "start": 51.33,
-      "duration": 0.5
-    },
-    {
-      "id": 35,
-      "text": "I use my phone every day.",
-      "start": 52.45,
-      "duration": 0.98
-    },
-    {
-      "id": 36,
-      "text": "Everyone does.",
-      "start": 54.28,
-      "duration": 0.5
-    },
-    {
-      "id": 37,
-      "text": "That's true.",
-      "start": 55.64,
-      "duration": 0.5
-    },
-    {
-      "id": 38,
-      "text": "My phone is my alarm clock.",
-      "start": 56.76,
       "duration": 0.94
     },
     {
-      "id": 39,
-      "text": "Mine too.",
-      "start": 58.6,
-      "duration": 0.5
+      "id": 24,
+      "text": "Because you can't live without your phone.",
+      "start": 40.05,
+      "duration": 2.79
     },
     {
-      "id": 40,
-      "text": "It's my camera.",
-      "start": 59.48,
-      "duration": 0.5
+      "id": 25,
+      "text": "That's not true.",
+      "start": 42.84,
+      "duration": 1.53
     },
     {
-      "id": 41,
-      "text": "Mine too.",
-      "start": 60.84,
-      "duration": 0.5
-    },
-    {
-      "id": 42,
-      "text": "It's my map.",
-      "start": 61.58,
-      "duration": 0.5
-    },
-    {
-      "id": 43,
-      "text": "Mine too.",
-      "start": 63.08,
-      "duration": 0.5
-    },
-    {
-      "id": 44,
-      "text": "It's my music player.",
-      "start": 64.04,
-      "duration": 0.65
-    },
-    {
-      "id": 45,
-      "text": "Mine too.",
-      "start": 65.88,
-      "duration": 0.5
-    },
-    {
-      "id": 46,
-      "text": "Wow.",
-      "start": 66.92,
-      "duration": 0.5
-    },
-    {
-      "id": 47,
-      "text": "We're the same person.",
-      "start": 67.64,
-      "duration": 0.52
-    },
-    {
-      "id": 48,
-      "text": "That's a scary thought.",
-      "start": 69.32,
-      "duration": 0.77
-    },
-    {
-      "id": 49,
-      "text": "Very scary.",
-      "start": 71.55,
-      "duration": 0.5
-    },
-    {
-      "id": 50,
-      "text": "How often do you check your phone?",
-      "start": 73.06,
-      "duration": 1.77
-    },
-    {
-      "id": 51,
-      "text": "Honestly?",
-      "start": 76.27,
-      "duration": 0.5
-    },
-    {
-      "id": 52,
-      "text": "Yes.",
-      "start": 77.14,
-      "duration": 0.5
-    },
-    {
-      "id": 53,
-      "text": "Too often.",
-      "start": 78.19,
-      "duration": 0.5
-    },
-    {
-      "id": 54,
+      "id": 26,
       "text": "Really?",
-      "start": 79.21,
-      "duration": 0.5
+      "start": 44.37,
+      "duration": 0.96
     },
     {
-      "id": 55,
-      "text": "Sometimes I check my phone.",
-      "start": 80.34,
-      "duration": 0.83
-    },
-    {
-      "id": 56,
-      "text": "And?",
-      "start": 82.27,
-      "duration": 0.5
-    },
-    {
-      "id": 57,
-      "text": "Then I forget why I picked it up.",
-      "start": 83.06,
-      "duration": 1.3
-    },
-    {
-      "id": 58,
-      "text": "Me too.",
-      "start": 86.55,
-      "duration": 0.5
-    },
-    {
-      "id": 59,
-      "text": "I'm glad it's not just me.",
-      "start": 87.75,
-      "duration": 0.89
-    },
-    {
-      "id": 60,
-      "text": "Definitely not.",
-      "start": 89.51,
-      "duration": 0.5
-    },
-    {
-      "id": 61,
-      "text": "Have you ever left your phone at home?",
-      "start": 90.87,
-      "duration": 1.36
-    },
-    {
-      "id": 62,
-      "text": "Yes.",
-      "start": 93.11,
-      "duration": 0.5
-    },
-    {
-      "id": 63,
-      "text": "Once.",
-      "start": 94.07,
-      "duration": 0.5
-    },
-    {
-      "id": 64,
-      "text": "Only once?",
-      "start": 95.03,
-      "duration": 0.5
-    },
-    {
-      "id": 65,
-      "text": "Only once.",
-      "start": 96.31,
-      "duration": 0.5
-    },
-    {
-      "id": 66,
-      "text": "What happened?",
-      "start": 97.43,
-      "duration": 0.5
-    },
-    {
-      "id": 67,
-      "text": "I felt strange all day.",
-      "start": 98.47,
-      "duration": 0.83
-    },
-    {
-      "id": 68,
-      "text": "Exactly.",
-      "start": 100.5,
-      "duration": 0.5
-    },
-    {
-      "id": 69,
-      "text": "I kept checking my pocket.",
-      "start": 101.94,
-      "duration": 0.75
-    },
-    {
-      "id": 70,
-      "text": "Me too.",
-      "start": 103.78,
-      "duration": 0.5
-    },
-    {
-      "id": 71,
-      "text": "Even though I knew my phone wasn't there.",
-      "start": 104.97,
-      "duration": 1.31
-    },
-    {
-      "id": 72,
-      "text": "That's funny.",
-      "start": 107.38,
-      "duration": 0.5
-    },
-    {
-      "id": 73,
-      "text": "It's also a little sad.",
-      "start": 108.66,
-      "duration": 0.83
-    },
-    {
-      "id": 74,
-      "text": "Maybe.",
-      "start": 110.66,
-      "duration": 0.5
-    },
-    {
-      "id": 75,
-      "text": "Do you think people use phones too much?",
-      "start": 111.53,
-      "duration": 1.95
-    },
-    {
-      "id": 76,
-      "text": "That's a dangerous question.",
-      "start": 114.88,
-      "duration": 0.61
-    },
-    {
-      "id": 77,
-      "text": "Why?",
-      "start": 116.8,
-      "duration": 0.5
-    },
-    {
-      "id": 78,
-      "text": "Because the answer is yes.",
-      "start": 117.6,
-      "duration": 0.78
-    },
-    {
-      "id": 79,
-      "text": "I agree.",
-      "start": 119.44,
-      "duration": 0.5
-    },
-    {
-      "id": 80,
-      "text": "Including me.",
-      "start": 120.56,
-      "duration": 0.5
-    },
-    {
-      "id": 81,
-      "text": "Including me too.",
-      "start": 121.84,
-      "duration": 0.5
-    },
-    {
-      "id": 82,
-      "text": "At least we're honest.",
-      "start": 123.52,
-      "duration": 0.52
-    },
-    {
-      "id": 83,
-      "text": "That's true.",
-      "start": 125.12,
-      "duration": 0.5
-    },
-    {
-      "id": 84,
-      "text": "You know what's funny?",
-      "start": 126,
-      "duration": 0.5
-    },
-    {
-      "id": 85,
-      "text": "What?",
-      "start": 127.28,
-      "duration": 0.5
-    },
-    {
-      "id": 86,
-      "text": "Sometimes I spend ten minutes looking for my phone.",
-      "start": 128.16,
-      "duration": 1.97
-    },
-    {
-      "id": 87,
-      "text": "No way.",
-      "start": 131.28,
-      "duration": 0.5
-    },
-    {
-      "id": 88,
-      "text": "Seriously.",
-      "start": 132.4,
-      "duration": 0.5
-    },
-    {
-      "id": 89,
-      "text": "Where do you usually find it?",
-      "start": 133.51,
-      "duration": 1.22
-    },
-    {
-      "id": 90,
-      "text": "In my hand.",
-      "start": 135.75,
-      "duration": 0.5
-    },
-    {
-      "id": 91,
-      "text": "That's happened to me too.",
-      "start": 138.39,
+      "id": 27,
+      "text": "Okay.",
+      "start": 45.33,
       "duration": 0.87
     },
     {
-      "id": 92,
-      "text": "Really?",
-      "start": 140.39,
-      "duration": 0.5
-    },
-    {
-      "id": 93,
-      "text": "More than once.",
-      "start": 141.35,
-      "duration": 0.5
-    },
-    {
-      "id": 94,
-      "text": "I feel better now.",
-      "start": 142.73,
-      "duration": 0.58
-    },
-    {
-      "id": 95,
-      "text": "You're welcome.",
-      "start": 144.33,
-      "duration": 0.5
-    },
-    {
-      "id": 96,
-      "text": "So today's topic is basically about us.",
-      "start": 145.53,
-      "duration": 1.67
-    },
-    {
-      "id": 97,
-      "text": "And probably everyone listening.",
-      "start": 148.57,
-      "duration": 0.98
-    },
-    {
-      "id": 98,
-      "text": "That's true.",
-      "start": 151.29,
-      "duration": 0.5
-    },
-    {
-      "id": 99,
-      "text": "Because let's be honest.",
-      "start": 152.33,
-      "duration": 0.58
-    },
-    {
-      "id": 100,
-      "text": "What?",
-      "start": 154.09,
-      "duration": 0.5
-    },
-    {
-      "id": 101,
-      "text": "Most people can't live without their phones.",
-      "start": 155.05,
-      "duration": 1.52
-    },
-    {
-      "id": 102,
-      "text": "Including us.",
-      "start": 157.85,
-      "duration": 0.5
-    },
-    {
-      "id": 103,
-      "text": "Especially us.",
-      "start": 159.38,
-      "duration": 0.5
-    },
-    {
-      "id": 104,
-      "text": "You're right.",
-      "start": 161.69,
-      "duration": 0.5
-    },
-    {
-      "id": 105,
-      "text": "Have you ever lost your phone?",
-      "start": 162.66,
-      "duration": 0.98
-    },
-    {
-      "id": 106,
-      "text": "Unfortunately, yes.",
-      "start": 164.74,
-      "duration": 0.5
-    },
-    {
-      "id": 107,
-      "text": "Really?",
-      "start": 166.5,
-      "duration": 0.5
-    },
-    {
-      "id": 108,
-      "text": "It was terrible.",
-      "start": 167.29,
-      "duration": 0.5
-    },
-    {
-      "id": 109,
-      "text": "What happened?",
-      "start": 168.74,
-      "duration": 0.5
-    },
-    {
-      "id": 110,
-      "text": "I couldn't find my phone one morning.",
-      "start": 169.69,
-      "duration": 1.22
-    },
-    {
-      "id": 111,
-      "text": "Where was it?",
-      "start": 171.78,
-      "duration": 0.5
-    },
-    {
-      "id": 112,
-      "text": "I had no idea.",
-      "start": 172.84,
-      "duration": 0.51
-    },
-    {
-      "id": 113,
-      "text": "Were you worried?",
-      "start": 174.28,
-      "duration": 0.5
-    },
-    {
-      "id": 114,
-      "text": "Very worried.",
-      "start": 175.56,
-      "duration": 0.5
-    },
-    {
-      "id": 115,
-      "text": "Why?",
-      "start": 176.76,
-      "duration": 0.5
-    },
-    {
-      "id": 116,
-      "text": "Because everything is on my phone.",
-      "start": 177.64,
+      "id": 28,
+      "text": "Maybe a little.",
+      "start": 46.2,
       "duration": 1.07
     },
     {
-      "id": 117,
+      "id": 29,
+      "text": "A little.",
+      "start": 47.27,
+      "duration": 1.18
+    },
+    {
+      "id": 30,
+      "text": "Fine.",
+      "start": 48.45,
+      "duration": 0.88
+    },
+    {
+      "id": 31,
+      "text": "A lot.",
+      "start": 49.33,
+      "duration": 1.03
+    },
+    {
+      "id": 32,
+      "text": "I knew it.",
+      "start": 50.36,
+      "duration": 0.97
+    },
+    {
+      "id": 33,
+      "text": "What about you?",
+      "start": 51.33,
+      "duration": 1.12
+    },
+    {
+      "id": 34,
+      "text": "I use my phone every day.",
+      "start": 52.45,
+      "duration": 1.83
+    },
+    {
+      "id": 35,
+      "text": "Everyone does.",
+      "start": 54.28,
+      "duration": 1.36
+    },
+    {
+      "id": 36,
       "text": "That's true.",
-      "start": 179.72,
-      "duration": 0.5
+      "start": 55.64,
+      "duration": 1.12
     },
     {
-      "id": 118,
-      "text": "My messages.",
-      "start": 180.84,
-      "duration": 0.5
+      "id": 37,
+      "text": "My phone is my alarm clock.",
+      "start": 56.76,
+      "duration": 1.84
     },
     {
-      "id": 119,
-      "text": "My photos.",
-      "start": 182.04,
-      "duration": 0.5
+      "id": 38,
+      "text": "Mine too.",
+      "start": 58.6,
+      "duration": 0.88
     },
     {
-      "id": 120,
-      "text": "My contacts.",
-      "start": 183.32,
-      "duration": 0.5
+      "id": 39,
+      "text": "It's my camera.",
+      "start": 59.48,
+      "duration": 1.36
     },
     {
-      "id": 121,
-      "text": "Exactly.",
-      "start": 184.84,
-      "duration": 0.5
+      "id": 40,
+      "text": "Mine too.",
+      "start": 60.84,
+      "duration": 0.74
     },
     {
-      "id": 122,
-      "text": "I searched everywhere.",
-      "start": 186.08,
-      "duration": 0.5
+      "id": 41,
+      "text": "It's my map.",
+      "start": 61.58,
+      "duration": 1.5
     },
     {
-      "id": 123,
-      "text": "Did you find it?",
-      "start": 187.75,
-      "duration": 0.58
+      "id": 42,
+      "text": "Mine too.",
+      "start": 63.08,
+      "duration": 0.96
     },
     {
-      "id": 124,
-      "text": "Eventually.",
-      "start": 189.12,
-      "duration": 0.5
+      "id": 43,
+      "text": "It's my music player.",
+      "start": 64.04,
+      "duration": 1.84
     },
     {
-      "id": 125,
-      "text": "Where was it?",
-      "start": 189.92,
-      "duration": 0.5
+      "id": 44,
+      "text": "Mine too.",
+      "start": 65.88,
+      "duration": 1.04
     },
     {
-      "id": 126,
-      "text": "In the refrigerator.",
-      "start": 190.96,
-      "duration": 0.5
+      "id": 45,
+      "text": "Wow.",
+      "start": 66.92,
+      "duration": 0.72
     },
     {
-      "id": 127,
-      "text": "No way.",
-      "start": 192.64,
-      "duration": 0.5
+      "id": 46,
+      "text": "We're the same person.",
+      "start": 67.64,
+      "duration": 1.68
     },
     {
-      "id": 128,
+      "id": 47,
+      "text": "That's a scary thought.",
+      "start": 69.32,
+      "duration": 2.23
+    },
+    {
+      "id": 48,
+      "text": "Very scary.",
+      "start": 71.55,
+      "duration": 1.51
+    },
+    {
+      "id": 49,
+      "text": "How often do you check your phone?",
+      "start": 73.06,
+      "duration": 3.21
+    },
+    {
+      "id": 50,
+      "text": "Honestly?",
+      "start": 76.27,
+      "duration": 0.87
+    },
+    {
+      "id": 51,
       "text": "Yes.",
-      "start": 194,
-      "duration": 0.5
+      "start": 77.14,
+      "duration": 1.05
     },
     {
-      "id": 129,
-      "text": "Why was your phone in the refrigerator?",
-      "start": 195.03,
-      "duration": 1.28
+      "id": 52,
+      "text": "Too often.",
+      "start": 78.19,
+      "duration": 1.02
     },
     {
-      "id": 130,
-      "text": "That's an excellent question.",
-      "start": 197.75,
-      "duration": 0.59
+      "id": 53,
+      "text": "Really?",
+      "start": 79.21,
+      "duration": 1.13
     },
     {
-      "id": 131,
-      "text": "Do you have an answer?",
-      "start": 199.44,
-      "duration": 0.58
+      "id": 54,
+      "text": "Sometimes I check my phone.",
+      "start": 80.34,
+      "duration": 1.93
     },
     {
-      "id": 132,
-      "text": "No.",
-      "start": 200.94,
-      "duration": 0.5
+      "id": 55,
+      "text": "And?",
+      "start": 82.27,
+      "duration": 0.79
     },
     {
-      "id": 133,
-      "text": "That's funny.",
-      "start": 202.94,
-      "duration": 0.5
+      "id": 56,
+      "text": "Then I forget why I picked it up.",
+      "start": 83.06,
+      "duration": 3.49
     },
     {
-      "id": 134,
-      "text": "I think I was holding my phone and a bottle of water.",
-      "start": 204.14,
+      "id": 57,
+      "text": "Me too.",
+      "start": 86.55,
+      "duration": 1.2
+    },
+    {
+      "id": 58,
+      "text": "I'm glad it's not just me.",
+      "start": 87.75,
+      "duration": 1.76
+    },
+    {
+      "id": 59,
+      "text": "Definitely not.",
+      "start": 89.51,
+      "duration": 1.36
+    },
+    {
+      "id": 60,
+      "text": "Have you ever left your phone at home?",
+      "start": 90.87,
       "duration": 2.24
     },
     {
-      "id": 135,
+      "id": 61,
+      "text": "Yes.",
+      "start": 93.11,
+      "duration": 0.96
+    },
+    {
+      "id": 62,
+      "text": "Once.",
+      "start": 94.07,
+      "duration": 0.96
+    },
+    {
+      "id": 63,
+      "text": "Only once?",
+      "start": 95.03,
+      "duration": 1.28
+    },
+    {
+      "id": 64,
+      "text": "Only once.",
+      "start": 96.31,
+      "duration": 1.12
+    },
+    {
+      "id": 65,
+      "text": "What happened?",
+      "start": 97.43,
+      "duration": 1.04
+    },
+    {
+      "id": 66,
+      "text": "I felt strange all day.",
+      "start": 98.47,
+      "duration": 2.03
+    },
+    {
+      "id": 67,
+      "text": "Exactly.",
+      "start": 100.5,
+      "duration": 1.44
+    },
+    {
+      "id": 68,
+      "text": "I kept checking my pocket.",
+      "start": 101.94,
+      "duration": 1.84
+    },
+    {
+      "id": 69,
+      "text": "Me too.",
+      "start": 103.78,
+      "duration": 1.19
+    },
+    {
+      "id": 70,
+      "text": "Even though I knew my phone wasn't there.",
+      "start": 104.97,
+      "duration": 2.41
+    },
+    {
+      "id": 71,
+      "text": "That's funny.",
+      "start": 107.38,
+      "duration": 1.28
+    },
+    {
+      "id": 72,
+      "text": "It's also a little sad.",
+      "start": 108.66,
+      "duration": 2.0
+    },
+    {
+      "id": 73,
+      "text": "Maybe.",
+      "start": 110.66,
+      "duration": 0.87
+    },
+    {
+      "id": 74,
+      "text": "Do you think people use phones too much?",
+      "start": 111.53,
+      "duration": 3.35
+    },
+    {
+      "id": 75,
+      "text": "That's a dangerous question.",
+      "start": 114.88,
+      "duration": 1.92
+    },
+    {
+      "id": 76,
+      "text": "Why?",
+      "start": 116.8,
+      "duration": 0.8
+    },
+    {
+      "id": 77,
+      "text": "Because the answer is yes.",
+      "start": 117.6,
+      "duration": 1.84
+    },
+    {
+      "id": 78,
+      "text": "I agree.",
+      "start": 119.44,
+      "duration": 1.12
+    },
+    {
+      "id": 79,
+      "text": "Including me.",
+      "start": 120.56,
+      "duration": 1.28
+    },
+    {
+      "id": 80,
+      "text": "Including me too.",
+      "start": 121.84,
+      "duration": 1.68
+    },
+    {
+      "id": 81,
+      "text": "At least we're honest.",
+      "start": 123.52,
+      "duration": 1.6
+    },
+    {
+      "id": 82,
+      "text": "That's true.",
+      "start": 125.12,
+      "duration": 0.88
+    },
+    {
+      "id": 83,
+      "text": "You know what's funny?",
+      "start": 126.0,
+      "duration": 1.28
+    },
+    {
+      "id": 84,
+      "text": "What?",
+      "start": 127.28,
+      "duration": 0.88
+    },
+    {
+      "id": 85,
+      "text": "Sometimes I spend ten minutes looking for my phone.",
+      "start": 128.16,
+      "duration": 3.12
+    },
+    {
+      "id": 86,
+      "text": "No way.",
+      "start": 131.28,
+      "duration": 1.12
+    },
+    {
+      "id": 87,
+      "text": "Seriously.",
+      "start": 132.4,
+      "duration": 1.11
+    },
+    {
+      "id": 88,
+      "text": "Where do you usually find it?",
+      "start": 133.51,
+      "duration": 2.24
+    },
+    {
+      "id": 89,
+      "text": "In my hand.",
+      "start": 135.75,
+      "duration": 2.64
+    },
+    {
+      "id": 90,
+      "text": "That's happened to me too.",
+      "start": 138.39,
+      "duration": 2.0
+    },
+    {
+      "id": 91,
+      "text": "Really?",
+      "start": 140.39,
+      "duration": 0.96
+    },
+    {
+      "id": 92,
+      "text": "More than once.",
+      "start": 141.35,
+      "duration": 1.38
+    },
+    {
+      "id": 93,
+      "text": "I feel better now.",
+      "start": 142.73,
+      "duration": 1.6
+    },
+    {
+      "id": 94,
+      "text": "You're welcome.",
+      "start": 144.33,
+      "duration": 1.2
+    },
+    {
+      "id": 95,
+      "text": "So today's topic is basically about us.",
+      "start": 145.53,
+      "duration": 3.04
+    },
+    {
+      "id": 96,
+      "text": "And probably everyone listening.",
+      "start": 148.57,
+      "duration": 2.72
+    },
+    {
+      "id": 97,
+      "text": "That's true.",
+      "start": 151.29,
+      "duration": 1.04
+    },
+    {
+      "id": 98,
+      "text": "Because let's be honest.",
+      "start": 152.33,
+      "duration": 1.76
+    },
+    {
+      "id": 99,
+      "text": "What?",
+      "start": 154.09,
+      "duration": 0.96
+    },
+    {
+      "id": 100,
+      "text": "Most people can't live without their phones.",
+      "start": 155.05,
+      "duration": 2.8
+    },
+    {
+      "id": 101,
+      "text": "Including us.",
+      "start": 157.85,
+      "duration": 1.53
+    },
+    {
+      "id": 102,
+      "text": "Especially us.",
+      "start": 159.38,
+      "duration": 2.31
+    },
+    {
+      "id": 103,
+      "text": "You're right.",
+      "start": 161.69,
+      "duration": 0.97
+    },
+    {
+      "id": 104,
+      "text": "Have you ever lost your phone?",
+      "start": 162.66,
+      "duration": 2.08
+    },
+    {
+      "id": 105,
+      "text": "Unfortunately, yes.",
+      "start": 164.74,
+      "duration": 1.76
+    },
+    {
+      "id": 106,
+      "text": "Really?",
+      "start": 166.5,
+      "duration": 0.79
+    },
+    {
+      "id": 107,
+      "text": "It was terrible.",
+      "start": 167.29,
+      "duration": 1.45
+    },
+    {
+      "id": 108,
+      "text": "What happened?",
+      "start": 168.74,
+      "duration": 0.95
+    },
+    {
+      "id": 109,
+      "text": "I couldn't find my phone one morning.",
+      "start": 169.69,
+      "duration": 2.09
+    },
+    {
+      "id": 110,
+      "text": "Where was it?",
+      "start": 171.78,
+      "duration": 1.06
+    },
+    {
+      "id": 111,
+      "text": "I had no idea.",
+      "start": 172.84,
+      "duration": 1.44
+    },
+    {
+      "id": 112,
+      "text": "Were you worried?",
+      "start": 174.28,
+      "duration": 1.28
+    },
+    {
+      "id": 113,
+      "text": "Very worried.",
+      "start": 175.56,
+      "duration": 1.2
+    },
+    {
+      "id": 114,
+      "text": "Why?",
+      "start": 176.76,
+      "duration": 0.88
+    },
+    {
+      "id": 115,
+      "text": "Because everything is on my phone.",
+      "start": 177.64,
+      "duration": 2.08
+    },
+    {
+      "id": 116,
+      "text": "That's true.",
+      "start": 179.72,
+      "duration": 1.12
+    },
+    {
+      "id": 117,
+      "text": "My messages.",
+      "start": 180.84,
+      "duration": 1.2
+    },
+    {
+      "id": 118,
+      "text": "My photos.",
+      "start": 182.04,
+      "duration": 1.28
+    },
+    {
+      "id": 119,
+      "text": "My contacts.",
+      "start": 183.32,
+      "duration": 1.52
+    },
+    {
+      "id": 120,
+      "text": "Exactly.",
+      "start": 184.84,
+      "duration": 1.24
+    },
+    {
+      "id": 121,
+      "text": "I searched everywhere.",
+      "start": 186.08,
+      "duration": 1.67
+    },
+    {
+      "id": 122,
+      "text": "Did you find it?",
+      "start": 187.75,
+      "duration": 1.37
+    },
+    {
+      "id": 123,
+      "text": "Eventually.",
+      "start": 189.12,
+      "duration": 0.8
+    },
+    {
+      "id": 124,
+      "text": "Where was it?",
+      "start": 189.92,
+      "duration": 1.04
+    },
+    {
+      "id": 125,
+      "text": "In the refrigerator.",
+      "start": 190.96,
+      "duration": 1.68
+    },
+    {
+      "id": 126,
+      "text": "No way.",
+      "start": 192.64,
+      "duration": 1.36
+    },
+    {
+      "id": 127,
+      "text": "Yes.",
+      "start": 194.0,
+      "duration": 1.03
+    },
+    {
+      "id": 128,
+      "text": "Why was your phone in the refrigerator?",
+      "start": 195.03,
+      "duration": 2.72
+    },
+    {
+      "id": 129,
+      "text": "That's an excellent question.",
+      "start": 197.75,
+      "duration": 1.69
+    },
+    {
+      "id": 130,
+      "text": "Do you have an answer?",
+      "start": 199.44,
+      "duration": 1.5
+    },
+    {
+      "id": 131,
+      "text": "No. That's funny.",
+      "start": 200.94,
+      "duration": 3.2
+    },
+    {
+      "id": 132,
+      "text": "I think I was holding my phone and a bottle of water.",
+      "start": 204.14,
+      "duration": 3.28
+    },
+    {
+      "id": 133,
       "text": "And?",
       "start": 207.42,
-      "duration": 0.5
+      "duration": 1.12
+    },
+    {
+      "id": 134,
+      "text": "I put the wrong thing away.",
+      "start": 208.54,
+      "duration": 2.0
+    },
+    {
+      "id": 135,
+      "text": "That's amazing.",
+      "start": 210.54,
+      "duration": 1.76
     },
     {
       "id": 136,
-      "text": "I put the wrong thing away.",
-      "start": 208.54,
-      "duration": 0.98
+      "text": "Not my proudest moment.",
+      "start": 212.3,
+      "duration": 1.87
     },
     {
       "id": 137,
-      "text": "That's amazing.",
-      "start": 210.54,
-      "duration": 0.5
+      "text": "I can imagine.",
+      "start": 214.17,
+      "duration": 1.11
     },
     {
       "id": 138,
-      "text": "Not my proudest moment.",
-      "start": 212.3,
-      "duration": 0.65
+      "text": "What about you?",
+      "start": 215.28,
+      "duration": 1.05
     },
     {
       "id": 139,
-      "text": "I can imagine.",
-      "start": 214.17,
-      "duration": 0.5
+      "text": "Have you ever lost your phone?",
+      "start": 216.33,
+      "duration": 1.76
     },
     {
       "id": 140,
-      "text": "What about you?",
-      "start": 215.28,
-      "duration": 0.5
+      "text": "Not exactly.",
+      "start": 218.09,
+      "duration": 1.84
     },
     {
       "id": 141,
-      "text": "Have you ever lost your phone?",
-      "start": 216.33,
-      "duration": 0.89
+      "text": "What does that mean?",
+      "start": 219.93,
+      "duration": 1.11
     },
     {
       "id": 142,
-      "text": "Not exactly.",
-      "start": 218.09,
-      "duration": 0.5
+      "text": "I left it in a taxi once.",
+      "start": 221.04,
+      "duration": 2.33
     },
     {
       "id": 143,
-      "text": "What does that mean?",
-      "start": 219.93,
-      "duration": 0.5
+      "text": "Oh, wow.",
+      "start": 223.37,
+      "duration": 0.89
     },
     {
       "id": 144,
-      "text": "I left it in a taxi once.",
-      "start": 221.04,
+      "text": "That's worse.",
+      "start": 224.26,
       "duration": 1.27
     },
     {
       "id": 145,
-      "text": "Oh, wow.",
-      "start": 223.37,
-      "duration": 0.5
+      "text": "I know.",
+      "start": 225.53,
+      "duration": 0.8
     },
     {
       "id": 146,
-      "text": "That's worse.",
-      "start": 224.26,
-      "duration": 0.5
+      "text": "Did you get it back?",
+      "start": 226.33,
+      "duration": 1.36
     },
     {
       "id": 147,
-      "text": "I know.",
-      "start": 225.53,
-      "duration": 0.5
+      "text": "Thankfully, yes.",
+      "start": 227.69,
+      "duration": 1.68
     },
     {
       "id": 148,
-      "text": "Did you get it back?",
-      "start": 226.33,
-      "duration": 0.58
+      "text": "Really?",
+      "start": 229.37,
+      "duration": 0.77
     },
     {
       "id": 149,
-      "text": "Thankfully, yes.",
-      "start": 227.69,
-      "duration": 0.5
+      "text": "The driver was very kind.",
+      "start": 230.14,
+      "duration": 2.0
     },
     {
       "id": 150,
-      "text": "Really?",
-      "start": 229.37,
-      "duration": 0.5
+      "text": "That's great.",
+      "start": 232.14,
+      "duration": 1.2
     },
     {
       "id": 151,
-      "text": "The driver was very kind.",
-      "start": 230.14,
-      "duration": 0.95
+      "text": "I was so happy.",
+      "start": 233.34,
+      "duration": 1.68
     },
     {
       "id": 152,
-      "text": "That's great.",
-      "start": 232.14,
-      "duration": 0.5
+      "text": "I would be too.",
+      "start": 235.02,
+      "duration": 1.2
     },
     {
       "id": 153,
-      "text": "I was so happy.",
-      "start": 233.34,
-      "duration": 0.55
+      "text": "For a few hours, I felt completely disconnected.",
+      "start": 236.22,
+      "duration": 3.36
     },
     {
       "id": 154,
-      "text": "I would be too.",
-      "start": 235.02,
-      "duration": 0.5
+      "text": "Exactly.",
+      "start": 239.58,
+      "duration": 0.96
     },
     {
       "id": 155,
-      "text": "For a few hours, I felt completely disconnected.",
-      "start": 236.22,
-      "duration": 1.89
+      "text": "It's a strange feeling.",
+      "start": 240.54,
+      "duration": 1.92
     },
     {
       "id": 156,
-      "text": "Exactly.",
-      "start": 239.58,
-      "duration": 0.5
+      "text": "Very strange.",
+      "start": 242.46,
+      "duration": 1.3
     },
     {
       "id": 157,
-      "text": "It's a strange feeling.",
-      "start": 240.54,
-      "duration": 0.58
+      "text": "Have you ever sent a message to the wrong person?",
+      "start": 243.76,
+      "duration": 2.88
     },
     {
       "id": 158,
-      "text": "Very strange.",
-      "start": 242.46,
-      "duration": 0.5
+      "text": "Oh, no. Don't remind me.",
+      "start": 246.64,
+      "duration": 2.4
     },
     {
       "id": 159,
-      "text": "Have you ever sent a message to the wrong person?",
-      "start": 243.76,
-      "duration": 1.77
+      "text": "Uh-huh.",
+      "start": 249.04,
+      "duration": 0.8
     },
     {
       "id": 160,
-      "text": "Oh, no.",
-      "start": 246.64,
-      "duration": 0.5
+      "text": "You have?",
+      "start": 249.84,
+      "duration": 1.04
     },
     {
       "id": 161,
-      "text": "Don't remind me.",
-      "start": 247.69,
-      "duration": 0.5
+      "text": "Yes.",
+      "start": 250.88,
+      "duration": 0.81
     },
     {
       "id": 162,
-      "text": "Uh-huh.",
-      "start": 249.04,
-      "duration": 0.5
+      "text": "Tell me.",
+      "start": 251.69,
+      "duration": 0.97
     },
     {
       "id": 163,
-      "text": "You have?",
-      "start": 249.84,
-      "duration": 0.5
+      "text": "No. Come on.",
+      "start": 252.66,
+      "duration": 2.15
     },
     {
       "id": 164,
-      "text": "Yes.",
-      "start": 250.88,
-      "duration": 0.5
+      "text": "It's embarrassing.",
+      "start": 254.81,
+      "duration": 1.68
     },
     {
       "id": 165,
-      "text": "Tell me.",
-      "start": 251.69,
-      "duration": 0.5
+      "text": "That's why it's interesting.",
+      "start": 256.49,
+      "duration": 1.82
     },
     {
       "id": 166,
-      "text": "No.",
-      "start": 252.66,
-      "duration": 0.5
+      "text": "Fine.",
+      "start": 258.31,
+      "duration": 0.96
     },
     {
       "id": 167,
-      "text": "Come on.",
-      "start": 253.69,
-      "duration": 0.5
+      "text": "I'm listening.",
+      "start": 259.27,
+      "duration": 1.2
     },
     {
       "id": 168,
-      "text": "It's embarrassing.",
-      "start": 254.81,
-      "duration": 0.5
+      "text": "I once complained about my brother in a message.",
+      "start": 260.47,
+      "duration": 2.96
     },
     {
       "id": 169,
-      "text": "That's why it's interesting.",
-      "start": 256.49,
-      "duration": 0.51
+      "text": "Uh-oh.",
+      "start": 263.43,
+      "duration": 0.96
     },
     {
       "id": 170,
-      "text": "Fine.",
-      "start": 258.31,
-      "duration": 0.5
+      "text": "And accidentally sent it to my brother.",
+      "start": 264.39,
+      "duration": 3.36
     },
     {
       "id": 171,
-      "text": "I'm listening.",
-      "start": 259.27,
-      "duration": 0.5
+      "text": "No way.",
+      "start": 267.75,
+      "duration": 1.52
     },
     {
       "id": 172,
-      "text": "I once complained about my brother in a message.",
-      "start": 260.47,
-      "duration": 1.87
+      "text": "Yes.",
+      "start": 269.27,
+      "duration": 0.98
     },
     {
       "id": 173,
-      "text": "Uh-oh.",
-      "start": 263.43,
-      "duration": 0.5
-    },
-    {
-      "id": 174,
-      "text": "And accidentally sent it to my brother.",
-      "start": 264.39,
-      "duration": 1.67
-    },
-    {
-      "id": 175,
-      "text": "No way.",
-      "start": 267.75,
-      "duration": 0.5
-    },
-    {
-      "id": 176,
-      "text": "Yes.",
-      "start": 269.27,
-      "duration": 0.5
-    },
-    {
-      "id": 177,
       "text": "What happened?",
       "start": 270.25,
-      "duration": 0.5
-    },
-    {
-      "id": 178,
-      "text": "He replied immediately.",
-      "start": 271.37,
-      "duration": 0.5
-    },
-    {
-      "id": 179,
-      "text": "What did he say?",
-      "start": 273.37,
-      "duration": 0.5
-    },
-    {
-      "id": 180,
-      "text": "Thank you for your honesty.",
-      "start": 274.72,
-      "duration": 0.7
-    },
-    {
-      "id": 181,
-      "text": "That's hilarious.",
-      "start": 279.04,
-      "duration": 0.5
-    },
-    {
-      "id": 182,
-      "text": "I wanted to disappear.",
-      "start": 280.72,
-      "duration": 0.69
-    },
-    {
-      "id": 183,
-      "text": "I don't blame you.",
-      "start": 282.88,
-      "duration": 0.51
-    },
-    {
-      "id": 184,
-      "text": "Have you ever done something like that?",
-      "start": 284.08,
       "duration": 1.12
     },
     {
-      "id": 185,
+      "id": 174,
+      "text": "He replied immediately.",
+      "start": 271.37,
+      "duration": 2.0
+    },
+    {
+      "id": 175,
+      "text": "What did he say?",
+      "start": 273.37,
+      "duration": 1.35
+    },
+    {
+      "id": 176,
+      "text": "Thank you for your honesty.",
+      "start": 274.72,
+      "duration": 4.32
+    },
+    {
+      "id": 177,
+      "text": "That's hilarious.",
+      "start": 279.04,
+      "duration": 1.68
+    },
+    {
+      "id": 178,
+      "text": "I wanted to disappear.",
+      "start": 280.72,
+      "duration": 2.16
+    },
+    {
+      "id": 179,
+      "text": "I don't blame you.",
+      "start": 282.88,
+      "duration": 1.2
+    },
+    {
+      "id": 180,
+      "text": "Have you ever done something like that?",
+      "start": 284.08,
+      "duration": 2.06
+    },
+    {
+      "id": 181,
       "text": "Absolutely.",
       "start": 286.14,
-      "duration": 0.5
+      "duration": 1.04
     },
     {
-      "id": 186,
+      "id": 182,
       "text": "Really?",
       "start": 287.18,
-      "duration": 0.5
+      "duration": 0.8
     },
     {
-      "id": 187,
+      "id": 183,
       "text": "I once sent a work message to my friend.",
       "start": 287.98,
-      "duration": 1.81
+      "duration": 2.96
     },
     {
-      "id": 188,
+      "id": 184,
       "text": "That's not too bad.",
       "start": 290.94,
-      "duration": 0.52
+      "duration": 1.52
     },
     {
-      "id": 189,
+      "id": 185,
       "text": "Wait.",
       "start": 292.46,
       "duration": 0.5
     },
     {
-      "id": 190,
+      "id": 186,
       "text": "There's more.",
       "start": 292.94,
-      "duration": 0.5
+      "duration": 1.12
+    },
+    {
+      "id": 187,
+      "text": "Oh, no. Then I sent a personal message to my boss.",
+      "start": 294.06,
+      "duration": 4.8
+    },
+    {
+      "id": 188,
+      "text": "No way.",
+      "start": 298.86,
+      "duration": 1.03
+    },
+    {
+      "id": 189,
+      "text": "Yes.",
+      "start": 299.89,
+      "duration": 0.97
+    },
+    {
+      "id": 190,
+      "text": "What did you do?",
+      "start": 300.86,
+      "duration": 1.46
     },
     {
       "id": 191,
-      "text": "Oh, no.",
-      "start": 294.06,
-      "duration": 0.5
+      "text": "Nothing.",
+      "start": 302.32,
+      "duration": 0.75
     },
     {
       "id": 192,
-      "text": "Then I sent a personal message to my boss.",
-      "start": 295.34,
-      "duration": 2.15
+      "text": "Nothing?",
+      "start": 303.07,
+      "duration": 0.88
     },
     {
       "id": 193,
-      "text": "No way.",
-      "start": 298.86,
-      "duration": 0.5
+      "text": "I stared at the screen.",
+      "start": 303.95,
+      "duration": 2.88
     },
     {
       "id": 194,
-      "text": "Yes.",
-      "start": 299.89,
-      "duration": 0.5
+      "text": "That's not a solution.",
+      "start": 306.83,
+      "duration": 1.61
     },
     {
       "id": 195,
-      "text": "What did you do?",
-      "start": 300.86,
-      "duration": 0.62
+      "text": "It was the only solution I had.",
+      "start": 308.44,
+      "duration": 2.16
     },
     {
       "id": 196,
-      "text": "Nothing.",
-      "start": 302.32,
-      "duration": 0.5
+      "text": "What did your boss say?",
+      "start": 310.6,
+      "duration": 1.44
     },
     {
       "id": 197,
-      "text": "Nothing?",
-      "start": 303.07,
-      "duration": 0.5
+      "text": "Thankfully, he laughed.",
+      "start": 312.04,
+      "duration": 1.91
     },
     {
       "id": 198,
-      "text": "I stared at the screen.",
-      "start": 303.95,
-      "duration": 0.7
+      "text": "You got lucky.",
+      "start": 313.95,
+      "duration": 1.29
     },
     {
       "id": 199,
-      "text": "That's not a solution.",
-      "start": 306.83,
-      "duration": 0.56
-    },
-    {
-      "id": 200,
-      "text": "It was the only solution I had.",
-      "start": 308.44,
-      "duration": 1.26
-    },
-    {
-      "id": 201,
-      "text": "What did your boss say?",
-      "start": 310.6,
-      "duration": 0.7
-    },
-    {
-      "id": 202,
-      "text": "Thankfully, he laughed.",
-      "start": 312.04,
-      "duration": 0.5
-    },
-    {
-      "id": 203,
-      "text": "You got lucky.",
-      "start": 313.95,
-      "duration": 0.5
-    },
-    {
-      "id": 204,
       "text": "Very lucky.",
       "start": 315.24,
-      "duration": 0.5
-    },
-    {
-      "id": 205,
-      "text": "You know what's funny?",
-      "start": 316.41,
-      "duration": 0.5
-    },
-    {
-      "id": 206,
-      "text": "What?",
-      "start": 317.61,
-      "duration": 0.5
-    },
-    {
-      "id": 207,
-      "text": "Phones make life easier.",
-      "start": 318.33,
-      "duration": 0.62
-    },
-    {
-      "id": 208,
-      "text": "Definitely.",
-      "start": 320.09,
-      "duration": 0.5
-    },
-    {
-      "id": 209,
-      "text": "But they also create new problems.",
-      "start": 321.21,
       "duration": 1.17
     },
     {
-      "id": 210,
+      "id": 200,
+      "text": "You know what's funny?",
+      "start": 316.41,
+      "duration": 1.2
+    },
+    {
+      "id": 201,
+      "text": "What?",
+      "start": 317.61,
+      "duration": 0.72
+    },
+    {
+      "id": 202,
+      "text": "Phones make life easier.",
+      "start": 318.33,
+      "duration": 1.76
+    },
+    {
+      "id": 203,
+      "text": "Definitely.",
+      "start": 320.09,
+      "duration": 1.12
+    },
+    {
+      "id": 204,
+      "text": "But they also create new problems.",
+      "start": 321.21,
+      "duration": 2.4
+    },
+    {
+      "id": 205,
       "text": "That's true.",
       "start": 323.61,
-      "duration": 0.5
+      "duration": 1.01
+    },
+    {
+      "id": 206,
+      "text": "Wrong messages.",
+      "start": 324.62,
+      "duration": 1.71
+    },
+    {
+      "id": 207,
+      "text": "Low battery.",
+      "start": 326.33,
+      "duration": 1.2
+    },
+    {
+      "id": 208,
+      "text": "No Internet.",
+      "start": 327.53,
+      "duration": 1.28
+    },
+    {
+      "id": 209,
+      "text": "Lost phones.",
+      "start": 328.81,
+      "duration": 1.32
+    },
+    {
+      "id": 210,
+      "text": "Too many notifications.",
+      "start": 330.13,
+      "duration": 2.0
     },
     {
       "id": 211,
-      "text": "Wrong messages.",
-      "start": 324.62,
-      "duration": 0.5
+      "text": "Exactly.",
+      "start": 332.13,
+      "duration": 1.12
     },
     {
       "id": 212,
-      "text": "Low battery.",
-      "start": 326.33,
-      "duration": 0.5
+      "text": "What's your biggest phone problem?",
+      "start": 333.25,
+      "duration": 2.4
     },
     {
       "id": 213,
-      "text": "No Internet.",
-      "start": 327.53,
-      "duration": 0.5
+      "text": "Battery life.",
+      "start": 335.65,
+      "duration": 1.12
     },
     {
       "id": 214,
-      "text": "Lost phones.",
-      "start": 328.81,
-      "duration": 0.5
+      "text": "Really?",
+      "start": 336.77,
+      "duration": 0.88
     },
     {
       "id": 215,
-      "text": "Too many notifications.",
-      "start": 330.13,
-      "duration": 0.5
+      "text": "My battery is always low.",
+      "start": 337.65,
+      "duration": 2.24
     },
     {
       "id": 216,
-      "text": "Exactly.",
-      "start": 332.13,
-      "duration": 0.5
-    },
-    {
-      "id": 217,
-      "text": "What's your biggest phone problem?",
-      "start": 333.25,
+      "text": "Mine too.",
+      "start": 339.89,
       "duration": 0.96
     },
     {
+      "id": 217,
+      "text": "It's stressful.",
+      "start": 340.85,
+      "duration": 1.46
+    },
+    {
       "id": 218,
-      "text": "Battery life.",
-      "start": 335.65,
-      "duration": 0.5
+      "text": "Very stressful.",
+      "start": 342.31,
+      "duration": 0.69
     },
     {
       "id": 219,
-      "text": "Really?",
-      "start": 336.77,
-      "duration": 0.5
+      "text": "5% battery feels like an emergency.",
+      "start": 343.0,
+      "duration": 5.07
     },
     {
       "id": 220,
-      "text": "My battery is always low.",
-      "start": 337.65,
-      "duration": 1.04
+      "text": "That's so true.",
+      "start": 348.07,
+      "duration": 1.52
     },
     {
       "id": 221,
-      "text": "Mine too.",
-      "start": 339.89,
-      "duration": 0.5
+      "text": "Especially when you're outside.",
+      "start": 349.59,
+      "duration": 1.84
     },
     {
       "id": 222,
-      "text": "It's stressful.",
-      "start": 340.85,
-      "duration": 0.5
+      "text": "Exactly.",
+      "start": 351.43,
+      "duration": 1.28
     },
     {
       "id": 223,
-      "text": "Very stressful. 5% battery feels like an emergency.",
-      "start": 342.31,
-      "duration": 2.75
+      "text": "Modern life is funny.",
+      "start": 352.71,
+      "duration": 1.63
     },
     {
       "id": 224,
-      "text": "That's so true.",
-      "start": 348.07,
-      "duration": 0.5
+      "text": "Why?",
+      "start": 354.34,
+      "duration": 0.72
     },
     {
       "id": 225,
-      "text": "Especially when you're outside.",
-      "start": 349.59,
-      "duration": 0.58
+      "text": "A low battery can ruin an entire day.",
+      "start": 355.06,
+      "duration": 3.28
     },
     {
       "id": 226,
-      "text": "Exactly.",
-      "start": 351.43,
-      "duration": 0.5
+      "text": "You're right.",
+      "start": 358.34,
+      "duration": 1.04
     },
     {
       "id": 227,
-      "text": "Modern life is funny.",
-      "start": 352.71,
-      "duration": 0.56
+      "text": "And somehow, we all understand that.",
+      "start": 359.38,
+      "duration": 2.8
     },
     {
       "id": 228,
-      "text": "Why?",
-      "start": 354.34,
-      "duration": 0.5
+      "text": "We really do.",
+      "start": 362.18,
+      "duration": 1.36
     },
     {
       "id": 229,
-      "text": "A low battery can ruin an entire day.",
-      "start": 355.06,
-      "duration": 2.06
+      "text": "That's funny.",
+      "start": 363.54,
+      "duration": 1.12
     },
     {
       "id": 230,
-      "text": "You're right.",
-      "start": 358.34,
-      "duration": 0.5
+      "text": "And a little scary.",
+      "start": 364.66,
+      "duration": 2.0
     },
     {
       "id": 231,
-      "text": "And somehow, we all understand that.",
-      "start": 359.38,
-      "duration": 1.49
+      "text": "A little?",
+      "start": 366.66,
+      "duration": 0.95
     },
     {
       "id": 232,
-      "text": "We really do.",
-      "start": 362.18,
-      "duration": 0.5
+      "text": "Okay.",
+      "start": 367.61,
+      "duration": 0.64
     },
     {
       "id": 233,
-      "text": "That's funny.",
-      "start": 363.54,
-      "duration": 0.5
+      "text": "Very scary.",
+      "start": 368.25,
+      "duration": 1.04
     },
     {
       "id": 234,
-      "text": "And a little scary.",
-      "start": 364.66,
-      "duration": 0.68
+      "text": "You know what?",
+      "start": 369.29,
+      "duration": 0.96
     },
     {
       "id": 235,
-      "text": "A little?",
-      "start": 366.66,
-      "duration": 0.5
+      "text": "What?",
+      "start": 370.25,
+      "duration": 0.64
     },
     {
       "id": 236,
-      "text": "Okay.",
-      "start": 367.61,
-      "duration": 0.5
+      "text": "Phones were very different when I was a child.",
+      "start": 370.89,
+      "duration": 2.48
     },
     {
       "id": 237,
-      "text": "Very scary.",
-      "start": 368.25,
-      "duration": 0.5
+      "text": "Really?",
+      "start": 373.37,
+      "duration": 0.8
     },
     {
       "id": 238,
-      "text": "You know what?",
-      "start": 369.29,
-      "duration": 0.5
+      "text": "Very different.",
+      "start": 374.17,
+      "duration": 0.88
     },
     {
       "id": 239,
-      "text": "What?",
-      "start": 370.25,
-      "duration": 0.5
+      "text": "Tell me.",
+      "start": 375.05,
+      "duration": 0.64
     },
     {
       "id": 240,
-      "text": "Phones were very different when I was a child.",
-      "start": 370.89,
-      "duration": 1.7
+      "text": "My first phone was tiny.",
+      "start": 375.69,
+      "duration": 1.92
     },
     {
       "id": 241,
-      "text": "Really?",
-      "start": 373.37,
-      "duration": 0.5
+      "text": "Tiny?",
+      "start": 377.61,
+      "duration": 0.72
     },
     {
       "id": 242,
-      "text": "Very different.",
-      "start": 374.17,
-      "duration": 0.5
+      "text": "Well, it felt amazing at the time.",
+      "start": 378.33,
+      "duration": 2.32
     },
     {
       "id": 243,
-      "text": "Tell me.",
-      "start": 375.05,
-      "duration": 0.5
+      "text": "What could it do?",
+      "start": 380.65,
+      "duration": 1.12
     },
     {
       "id": 244,
-      "text": "My first phone was tiny.",
-      "start": 375.69,
-      "duration": 0.83
+      "text": "Call people, send messages.",
+      "start": 381.77,
+      "duration": 2.59
     },
     {
       "id": 245,
-      "text": "Tiny?",
-      "start": 377.61,
-      "duration": 0.5
-    },
-    {
-      "id": 246,
-      "text": "Well, it felt amazing at the time.",
-      "start": 378.33,
-      "duration": 1.47
-    },
-    {
-      "id": 247,
-      "text": "What could it do?",
-      "start": 380.65,
-      "duration": 0.5
-    },
-    {
-      "id": 248,
-      "text": "Call people, send messages.",
-      "start": 381.77,
-      "duration": 1.23
-    },
-    {
-      "id": 249,
       "text": "That's it.",
       "start": 384.36,
       "duration": 0.5
     },
     {
-      "id": 250,
+      "id": 246,
       "text": "That's all?",
       "start": 384.83,
-      "duration": 0.5
+      "duration": 0.73
+    },
+    {
+      "id": 247,
+      "text": "That's all.",
+      "start": 385.56,
+      "duration": 0.8
+    },
+    {
+      "id": 248,
+      "text": "No social media?",
+      "start": 386.36,
+      "duration": 1.35
+    },
+    {
+      "id": 249,
+      "text": "No. No videos?",
+      "start": 387.71,
+      "duration": 1.92
+    },
+    {
+      "id": 250,
+      "text": "No. No games?",
+      "start": 389.63,
+      "duration": 1.52
     },
     {
       "id": 251,
-      "text": "That's all.",
-      "start": 385.56,
-      "duration": 0.5
+      "text": "A few simple games.",
+      "start": 391.15,
+      "duration": 1.77
     },
     {
       "id": 252,
-      "text": "No social media?",
-      "start": 386.36,
-      "duration": 0.5
-    },
-    {
-      "id": 253,
-      "text": "No.",
-      "start": 387.71,
-      "duration": 0.5
-    },
-    {
-      "id": 254,
-      "text": "No videos?",
-      "start": 388.44,
-      "duration": 0.5
-    },
-    {
-      "id": 255,
-      "text": "No.",
-      "start": 389.63,
-      "duration": 0.5
-    },
-    {
-      "id": 256,
-      "text": "No games?",
-      "start": 390.19,
-      "duration": 0.5
-    },
-    {
-      "id": 257,
-      "text": "A few simple games.",
-      "start": 391.15,
-      "duration": 0.62
-    },
-    {
-      "id": 258,
       "text": "Wow.",
       "start": 392.92,
       "duration": 0.5
     },
     {
-      "id": 259,
+      "id": 253,
       "text": "You lived in a difficult time.",
       "start": 393.4,
-      "duration": 0.98
+      "duration": 2.64
     },
     {
-      "id": 260,
+      "id": 254,
       "text": "It wasn't that bad.",
       "start": 396.04,
-      "duration": 0.51
+      "duration": 1.2
     },
     {
-      "id": 261,
+      "id": 255,
       "text": "What was your favorite thing about your first phone?",
       "start": 397.24,
-      "duration": 1.64
+      "duration": 2.48
     },
     {
-      "id": 262,
+      "id": 256,
       "text": "Sending messages to my friends.",
       "start": 399.72,
-      "duration": 0.91
+      "duration": 2.0
     },
     {
-      "id": 263,
+      "id": 257,
       "text": "Really?",
       "start": 401.72,
-      "duration": 0.5
+      "duration": 0.72
     },
     {
-      "id": 264,
+      "id": 258,
       "text": "Yes.",
       "start": 402.44,
-      "duration": 0.5
-    },
-    {
-      "id": 265,
-      "text": "Every message felt important.",
-      "start": 403.24,
-      "duration": 0.71
-    },
-    {
-      "id": 266,
-      "text": "That's true.",
-      "start": 405.16,
-      "duration": 0.5
-    },
-    {
-      "id": 267,
-      "text": "What about your first phone?",
-      "start": 405.96,
-      "duration": 0.78
-    },
-    {
-      "id": 268,
-      "text": "It was old.",
-      "start": 407.56,
-      "duration": 0.5
-    },
-    {
-      "id": 269,
-      "text": "Very old.",
-      "start": 408.76,
-      "duration": 0.5
-    },
-    {
-      "id": 270,
-      "text": "How old?",
-      "start": 410.12,
-      "duration": 0.5
-    },
-    {
-      "id": 271,
-      "text": "Let's just say, it wasn't smart.",
-      "start": 411,
-      "duration": 1.4
-    },
-    {
-      "id": 272,
-      "text": "A phone that wasn't smart.",
-      "start": 414.85,
-      "duration": 0.94
-    },
-    {
-      "id": 273,
-      "text": "Exactly.",
-      "start": 416.85,
-      "duration": 0.5
-    },
-    {
-      "id": 274,
-      "text": "Did you like it?",
-      "start": 417.56,
-      "duration": 0.5
-    },
-    {
-      "id": 275,
-      "text": "I loved it.",
-      "start": 418.44,
-      "duration": 0.5
-    },
-    {
-      "id": 276,
-      "text": "Really.",
-      "start": 419.56,
-      "duration": 0.5
-    },
-    {
-      "id": 277,
-      "text": "It made me feel grown up.",
-      "start": 420.12,
-      "duration": 0.88
-    },
-    {
-      "id": 278,
-      "text": "I understand that.",
-      "start": 421.64,
-      "duration": 0.5
-    },
-    {
-      "id": 279,
-      "text": "I carried it everywhere.",
-      "start": 422.85,
-      "duration": 0.7
-    },
-    {
-      "id": 280,
-      "text": "Even though it couldn't do much?",
-      "start": 424.81,
-      "duration": 0.94
-    },
-    {
-      "id": 281,
-      "text": "Yes.",
-      "start": 426.65,
-      "duration": 0.5
-    },
-    {
-      "id": 282,
-      "text": "I was proud of it.",
-      "start": 427.29,
-      "duration": 0.62
-    },
-    {
-      "id": 283,
-      "text": "That's actually cute.",
-      "start": 428.57,
-      "duration": 0.5
-    },
-    {
-      "id": 284,
-      "text": "Thank you.",
-      "start": 429.93,
-      "duration": 0.5
-    },
-    {
-      "id": 285,
-      "text": "Did your family have rules about phones?",
-      "start": 430.57,
-      "duration": 1.27
-    },
-    {
-      "id": 286,
-      "text": "Definitely.",
-      "start": 432.89,
-      "duration": 0.5
-    },
-    {
-      "id": 287,
-      "text": "Like what?",
-      "start": 433.69,
-      "duration": 0.5
-    },
-    {
-      "id": 288,
-      "text": "No phones at the dinner table.",
-      "start": 434.41,
-      "duration": 1.17
-    },
-    {
-      "id": 289,
-      "text": "My family had the same rule.",
-      "start": 436.65,
-      "duration": 0.98
-    },
-    {
-      "id": 290,
-      "text": "Really?",
-      "start": 438.49,
-      "duration": 0.5
-    },
-    {
-      "id": 291,
-      "text": "Yes.",
-      "start": 439.21,
-      "duration": 0.5
-    },
-    {
-      "id": 292,
-      "text": "Family time was family time.",
-      "start": 439.96,
-      "duration": 0.98
-    },
-    {
-      "id": 293,
-      "text": "I think that's a good rule.",
-      "start": 441.88,
-      "duration": 0.75
-    },
-    {
-      "id": 294,
-      "text": "Me too.",
-      "start": 443.31,
-      "duration": 0.5
-    },
-    {
-      "id": 295,
-      "text": "Nowadays, it's harder.",
-      "start": 444.12,
-      "duration": 0.5
-    },
-    {
-      "id": 296,
-      "text": "Why?",
-      "start": 445.48,
-      "duration": 0.5
-    },
-    {
-      "id": 297,
-      "text": "Because phones do everything.",
-      "start": 446.12,
-      "duration": 0.58
-    },
-    {
-      "id": 298,
-      "text": "That's true.",
-      "start": 447.8,
-      "duration": 0.5
-    },
-    {
-      "id": 299,
-      "text": "Work, messages, photos, maps, music.",
-      "start": 448.6,
-      "duration": 2
-    },
-    {
-      "id": 300,
-      "text": "Exactly.",
-      "start": 452.8,
-      "duration": 0.5
-    },
-    {
-      "id": 301,
-      "text": "It's difficult to ignore them.",
-      "start": 453.68,
-      "duration": 0.74
-    },
-    {
-      "id": 302,
-      "text": "Do you think children use phones too much?",
-      "start": 455.12,
-      "duration": 1.46
-    },
-    {
-      "id": 303,
-      "text": "Sometimes.",
-      "start": 457.44,
-      "duration": 0.5
-    },
-    {
-      "id": 304,
-      "text": "I agree.",
-      "start": 458.24,
-      "duration": 0.5
-    },
-    {
-      "id": 305,
-      "text": "When I was younger, I spent more time outside.",
-      "start": 459.04,
-      "duration": 1.64
-    },
-    {
-      "id": 306,
-      "text": "Me too.",
-      "start": 461.68,
-      "duration": 0.5
-    },
-    {
-      "id": 307,
-      "text": "I played with friends.",
-      "start": 462.4,
-      "duration": 0.5
-    },
-    {
-      "id": 308,
-      "text": "Same here.",
-      "start": 463.93,
-      "duration": 0.5
-    },
-    {
-      "id": 309,
-      "text": "Now many people stay home and look at screens.",
-      "start": 464.88,
-      "duration": 1.71
-    },
-    {
-      "id": 310,
-      "text": "That's true.",
-      "start": 467.69,
-      "duration": 0.5
-    },
-    {
-      "id": 311,
-      "text": "Do you miss the old days?",
-      "start": 468.49,
       "duration": 0.8
     },
     {
-      "id": 312,
-      "text": "Sometimes.",
-      "start": 470,
-      "duration": 0.5
+      "id": 259,
+      "text": "Every message felt important.",
+      "start": 403.24,
+      "duration": 1.92
     },
     {
-      "id": 313,
-      "text": "Really?",
-      "start": 470.96,
-      "duration": 0.5
+      "id": 260,
+      "text": "That's true.",
+      "start": 405.16,
+      "duration": 0.8
     },
     {
-      "id": 314,
-      "text": "Yes.",
-      "start": 471.51,
-      "duration": 0.5
+      "id": 261,
+      "text": "What about your first phone?",
+      "start": 405.96,
+      "duration": 1.6
     },
     {
-      "id": 315,
-      "text": "Life felt simpler.",
-      "start": 472.06,
-      "duration": 0.5
+      "id": 262,
+      "text": "It was old.",
+      "start": 407.56,
+      "duration": 1.2
     },
     {
-      "id": 316,
-      "text": "I understand that.",
-      "start": 474,
-      "duration": 0.5
+      "id": 263,
+      "text": "Very old.",
+      "start": 408.76,
+      "duration": 1.36
     },
     {
-      "id": 317,
-      "text": "But I also love modern technology.",
-      "start": 475.05,
-      "duration": 1.13
+      "id": 264,
+      "text": "How old?",
+      "start": 410.12,
+      "duration": 0.88
     },
     {
-      "id": 318,
-      "text": "Me too.",
-      "start": 477.29,
-      "duration": 0.5
+      "id": 265,
+      "text": "Let's just say, it wasn't smart.",
+      "start": 411.0,
+      "duration": 3.85
     },
     {
-      "id": 319,
-      "text": "Imagine traveling without a phone.",
-      "start": 478.17,
-      "duration": 1.02
+      "id": 266,
+      "text": "A phone that wasn't smart.",
+      "start": 414.85,
+      "duration": 2.0
     },
     {
-      "id": 320,
-      "text": "That sounds difficult.",
-      "start": 480.17,
-      "duration": 0.5
-    },
-    {
-      "id": 321,
-      "text": "Very difficult.",
-      "start": 481.77,
-      "duration": 0.5
-    },
-    {
-      "id": 322,
-      "text": "I'd get lost immediately.",
-      "start": 482.97,
-      "duration": 0.58
-    },
-    {
-      "id": 323,
-      "text": "I believe that.",
-      "start": 485.77,
-      "duration": 0.5
-    },
-    {
-      "id": 324,
-      "text": "Thank you for your confidence.",
-      "start": 486.81,
-      "duration": 0.62
-    },
-    {
-      "id": 325,
-      "text": "You're welcome.",
-      "start": 488.33,
-      "duration": 0.5
-    },
-    {
-      "id": 326,
-      "text": "Do you remember phone numbers?",
-      "start": 489.29,
-      "duration": 0.78
-    },
-    {
-      "id": 327,
-      "text": "A few.",
-      "start": 490.97,
-      "duration": 0.5
-    },
-    {
-      "id": 328,
-      "text": "Really?",
-      "start": 492.06,
-      "duration": 0.5
-    },
-    {
-      "id": 329,
-      "text": "Yes.",
-      "start": 492.77,
-      "duration": 0.5
-    },
-    {
-      "id": 330,
-      "text": "My parents' numbers, a few friends.",
-      "start": 493.33,
-      "duration": 1.27
-    },
-    {
-      "id": 331,
-      "text": "I'm impressed.",
-      "start": 495.81,
-      "duration": 0.5
-    },
-    {
-      "id": 332,
-      "text": "What about you?",
-      "start": 496.94,
-      "duration": 0.5
-    },
-    {
-      "id": 333,
-      "text": "Honestly?",
-      "start": 498.09,
-      "duration": 0.5
-    },
-    {
-      "id": 334,
-      "text": "Yes.",
-      "start": 499.01,
-      "duration": 0.5
-    },
-    {
-      "id": 335,
-      "text": "I barely remember my own number.",
-      "start": 499.65,
-      "duration": 1.31
-    },
-    {
-      "id": 336,
-      "text": "No way.",
-      "start": 502.06,
-      "duration": 0.5
-    },
-    {
-      "id": 337,
-      "text": "Seriously.",
-      "start": 503.01,
-      "duration": 0.5
-    },
-    {
-      "id": 338,
-      "text": "That's funny.",
-      "start": 504.58,
-      "duration": 0.5
-    },
-    {
-      "id": 339,
-      "text": "My phone remembers everything for me.",
-      "start": 505.62,
-      "duration": 1.31
-    },
-    {
-      "id": 340,
-      "text": "That's the problem.",
-      "start": 507.94,
-      "duration": 0.5
-    },
-    {
-      "id": 341,
-      "text": "Maybe.",
-      "start": 509.14,
-      "duration": 0.5
-    },
-    {
-      "id": 342,
-      "text": "We're becoming too dependent.",
-      "start": 509.78,
-      "duration": 0.68
-    },
-    {
-      "id": 343,
-      "text": "You're probably right.",
-      "start": 511.7,
-      "duration": 0.5
-    },
-    {
-      "id": 344,
-      "text": "If your phone disappeared forever, what would you miss most?",
-      "start": 512.9,
-      "duration": 2.52
-    },
-    {
-      "id": 345,
-      "text": "The photos.",
-      "start": 516.5,
-      "duration": 0.5
-    },
-    {
-      "id": 346,
-      "text": "Really?",
-      "start": 517.46,
-      "duration": 0.5
-    },
-    {
-      "id": 347,
-      "text": "Definitely.",
-      "start": 518.18,
-      "duration": 0.5
-    },
-    {
-      "id": 348,
-      "text": "Photos hold memories.",
-      "start": 519.35,
-      "duration": 0.5
-    },
-    {
-      "id": 349,
-      "text": "That's a beautiful answer.",
-      "start": 520.87,
-      "duration": 0.62
-    },
-    {
-      "id": 350,
-      "text": "Thank you.",
-      "start": 522.46,
-      "duration": 0.5
-    },
-    {
-      "id": 351,
-      "text": "What about you?",
-      "start": 523.26,
-      "duration": 0.5
-    },
-    {
-      "id": 352,
-      "text": "The messages.",
-      "start": 524.23,
-      "duration": 0.5
-    },
-    {
-      "id": 353,
-      "text": "Why?",
-      "start": 525.26,
-      "duration": 0.5
-    },
-    {
-      "id": 354,
-      "text": "Because they remind me of people I care about.",
-      "start": 525.9,
-      "duration": 1.81
-    },
-    {
-      "id": 355,
-      "text": "I like that answer.",
-      "start": 528.54,
-      "duration": 0.5
-    },
-    {
-      "id": 356,
-      "text": "Phones aren't just technology.",
-      "start": 529.82,
+      "id": 267,
+      "text": "Exactly.",
+      "start": 416.85,
       "duration": 0.71
     },
     {
-      "id": 357,
-      "text": "They're connected to our lives.",
-      "start": 532.03,
-      "duration": 0.91
+      "id": 268,
+      "text": "Did you like it?",
+      "start": 417.56,
+      "duration": 0.88
     },
     {
-      "id": 358,
-      "text": "Exactly.",
-      "start": 534.11,
-      "duration": 0.5
+      "id": 269,
+      "text": "I loved it.",
+      "start": 418.44,
+      "duration": 1.12
     },
     {
-      "id": 359,
-      "text": "Wow.",
-      "start": 535.07,
-      "duration": 0.5
+      "id": 270,
+      "text": "Really.",
+      "start": 419.56,
+      "duration": 0.56
     },
     {
-      "id": 360,
-      "text": "This conversation became deep.",
-      "start": 535.71,
+      "id": 271,
+      "text": "It made me feel grown up.",
+      "start": 420.12,
+      "duration": 1.52
+    },
+    {
+      "id": 272,
+      "text": "I understand that.",
+      "start": 421.64,
+      "duration": 1.21
+    },
+    {
+      "id": 273,
+      "text": "I carried it everywhere.",
+      "start": 422.85,
+      "duration": 1.96
+    },
+    {
+      "id": 274,
+      "text": "Even though it couldn't do much?",
+      "start": 424.81,
+      "duration": 1.84
+    },
+    {
+      "id": 275,
+      "text": "Yes.",
+      "start": 426.65,
+      "duration": 0.64
+    },
+    {
+      "id": 276,
+      "text": "I was proud of it.",
+      "start": 427.29,
+      "duration": 1.28
+    },
+    {
+      "id": 277,
+      "text": "That's actually cute.",
+      "start": 428.57,
+      "duration": 1.36
+    },
+    {
+      "id": 278,
+      "text": "Thank you.",
+      "start": 429.93,
+      "duration": 0.64
+    },
+    {
+      "id": 279,
+      "text": "Did your family have rules about phones?",
+      "start": 430.57,
+      "duration": 2.32
+    },
+    {
+      "id": 280,
+      "text": "Definitely.",
+      "start": 432.89,
+      "duration": 0.8
+    },
+    {
+      "id": 281,
+      "text": "Like what?",
+      "start": 433.69,
+      "duration": 0.72
+    },
+    {
+      "id": 282,
+      "text": "No phones at the dinner table.",
+      "start": 434.41,
+      "duration": 2.24
+    },
+    {
+      "id": 283,
+      "text": "My family had the same rule.",
+      "start": 436.65,
+      "duration": 1.84
+    },
+    {
+      "id": 284,
+      "text": "Really?",
+      "start": 438.49,
+      "duration": 0.72
+    },
+    {
+      "id": 285,
+      "text": "Yes.",
+      "start": 439.21,
       "duration": 0.75
     },
     {
-      "id": 361,
-      "text": "A little.",
-      "start": 537.71,
-      "duration": 0.5
+      "id": 286,
+      "text": "Family time was family time.",
+      "start": 439.96,
+      "duration": 1.92
     },
     {
-      "id": 362,
-      "text": "Quick.",
-      "start": 538.51,
-      "duration": 0.5
+      "id": 287,
+      "text": "I think that's a good rule.",
+      "start": 441.88,
+      "duration": 1.43
     },
     {
-      "id": 363,
-      "text": "Say something funny.",
-      "start": 539.07,
-      "duration": 0.5
+      "id": 288,
+      "text": "Me too.",
+      "start": 443.31,
+      "duration": 0.81
     },
     {
-      "id": 364,
+      "id": 289,
+      "text": "Nowadays, it's harder.",
+      "start": 444.12,
+      "duration": 1.36
+    },
+    {
+      "id": 290,
       "text": "Why?",
-      "start": 540.19,
-      "duration": 0.5
+      "start": 445.48,
+      "duration": 0.64
     },
     {
-      "id": 365,
-      "text": "Before everyone starts crying over their phones.",
-      "start": 540.83,
+      "id": 291,
+      "text": "Because phones do everything.",
+      "start": 446.12,
+      "duration": 1.68
+    },
+    {
+      "id": 292,
+      "text": "That's true.",
+      "start": 447.8,
+      "duration": 0.8
+    },
+    {
+      "id": 293,
+      "text": "Work, messages, photos, maps, music.",
+      "start": 448.6,
+      "duration": 4.2
+    },
+    {
+      "id": 294,
+      "text": "Exactly.",
+      "start": 452.8,
+      "duration": 0.88
+    },
+    {
+      "id": 295,
+      "text": "It's difficult to ignore them.",
+      "start": 453.68,
+      "duration": 1.44
+    },
+    {
+      "id": 296,
+      "text": "Do you think children use phones too much?",
+      "start": 455.12,
+      "duration": 2.32
+    },
+    {
+      "id": 297,
+      "text": "Sometimes.",
+      "start": 457.44,
+      "duration": 0.8
+    },
+    {
+      "id": 298,
+      "text": "I agree.",
+      "start": 458.24,
+      "duration": 0.8
+    },
+    {
+      "id": 299,
+      "text": "When I was younger, I spent more time outside.",
+      "start": 459.04,
+      "duration": 2.64
+    },
+    {
+      "id": 300,
+      "text": "Me too.",
+      "start": 461.68,
+      "duration": 0.72
+    },
+    {
+      "id": 301,
+      "text": "I played with friends.",
+      "start": 462.4,
+      "duration": 1.53
+    },
+    {
+      "id": 302,
+      "text": "Same here.",
+      "start": 463.93,
+      "duration": 0.95
+    },
+    {
+      "id": 303,
+      "text": "Now many people stay home and look at screens.",
+      "start": 464.88,
+      "duration": 2.81
+    },
+    {
+      "id": 304,
+      "text": "That's true.",
+      "start": 467.69,
+      "duration": 0.8
+    },
+    {
+      "id": 305,
+      "text": "Do you miss the old days?",
+      "start": 468.49,
+      "duration": 1.51
+    },
+    {
+      "id": 306,
+      "text": "Sometimes.",
+      "start": 470.0,
+      "duration": 0.96
+    },
+    {
+      "id": 307,
+      "text": "Really?",
+      "start": 470.96,
+      "duration": 0.55
+    },
+    {
+      "id": 308,
+      "text": "Yes.",
+      "start": 471.51,
+      "duration": 0.55
+    },
+    {
+      "id": 309,
+      "text": "Life felt simpler.",
+      "start": 472.06,
+      "duration": 1.94
+    },
+    {
+      "id": 310,
+      "text": "I understand that.",
+      "start": 474.0,
+      "duration": 1.05
+    },
+    {
+      "id": 311,
+      "text": "But I also love modern technology.",
+      "start": 475.05,
+      "duration": 2.24
+    },
+    {
+      "id": 312,
+      "text": "Me too.",
+      "start": 477.29,
+      "duration": 0.88
+    },
+    {
+      "id": 313,
+      "text": "Imagine traveling without a phone.",
+      "start": 478.17,
+      "duration": 2.0
+    },
+    {
+      "id": 314,
+      "text": "That sounds difficult.",
+      "start": 480.17,
+      "duration": 1.6
+    },
+    {
+      "id": 315,
+      "text": "Very difficult.",
+      "start": 481.77,
+      "duration": 1.2
+    },
+    {
+      "id": 316,
+      "text": "I'd get lost immediately.",
+      "start": 482.97,
+      "duration": 2.8
+    },
+    {
+      "id": 317,
+      "text": "I believe that.",
+      "start": 485.77,
+      "duration": 1.04
+    },
+    {
+      "id": 318,
+      "text": "Thank you for your confidence.",
+      "start": 486.81,
+      "duration": 1.52
+    },
+    {
+      "id": 319,
+      "text": "You're welcome.",
+      "start": 488.33,
+      "duration": 0.96
+    },
+    {
+      "id": 320,
+      "text": "Do you remember phone numbers?",
+      "start": 489.29,
+      "duration": 1.68
+    },
+    {
+      "id": 321,
+      "text": "A few.",
+      "start": 490.97,
+      "duration": 1.09
+    },
+    {
+      "id": 322,
+      "text": "Really?",
+      "start": 492.06,
+      "duration": 0.71
+    },
+    {
+      "id": 323,
+      "text": "Yes.",
+      "start": 492.77,
+      "duration": 0.56
+    },
+    {
+      "id": 324,
+      "text": "My parents' numbers, a few friends.",
+      "start": 493.33,
+      "duration": 2.48
+    },
+    {
+      "id": 325,
+      "text": "I'm impressed.",
+      "start": 495.81,
+      "duration": 1.13
+    },
+    {
+      "id": 326,
+      "text": "What about you?",
+      "start": 496.94,
+      "duration": 1.15
+    },
+    {
+      "id": 327,
+      "text": "Honestly?",
+      "start": 498.09,
+      "duration": 0.92
+    },
+    {
+      "id": 328,
+      "text": "Yes.",
+      "start": 499.01,
+      "duration": 0.64
+    },
+    {
+      "id": 329,
+      "text": "I barely remember my own number.",
+      "start": 499.65,
+      "duration": 2.41
+    },
+    {
+      "id": 330,
+      "text": "No way.",
+      "start": 502.06,
+      "duration": 0.95
+    },
+    {
+      "id": 331,
+      "text": "Seriously.",
+      "start": 503.01,
       "duration": 1.57
     },
     {
-      "id": 366,
+      "id": 332,
+      "text": "That's funny.",
+      "start": 504.58,
+      "duration": 1.04
+    },
+    {
+      "id": 333,
+      "text": "My phone remembers everything for me.",
+      "start": 505.62,
+      "duration": 2.32
+    },
+    {
+      "id": 334,
+      "text": "That's the problem.",
+      "start": 507.94,
+      "duration": 1.2
+    },
+    {
+      "id": 335,
+      "text": "Maybe.",
+      "start": 509.14,
+      "duration": 0.64
+    },
+    {
+      "id": 336,
+      "text": "We're becoming too dependent.",
+      "start": 509.78,
+      "duration": 1.92
+    },
+    {
+      "id": 337,
+      "text": "You're probably right.",
+      "start": 511.7,
+      "duration": 1.2
+    },
+    {
+      "id": 338,
+      "text": "If your phone disappeared forever, what would you miss most?",
+      "start": 512.9,
+      "duration": 3.6
+    },
+    {
+      "id": 339,
+      "text": "The photos.",
+      "start": 516.5,
+      "duration": 0.96
+    },
+    {
+      "id": 340,
+      "text": "Really?",
+      "start": 517.46,
+      "duration": 0.72
+    },
+    {
+      "id": 341,
+      "text": "Definitely.",
+      "start": 518.18,
+      "duration": 1.17
+    },
+    {
+      "id": 342,
+      "text": "Photos hold memories.",
+      "start": 519.35,
+      "duration": 1.52
+    },
+    {
+      "id": 343,
+      "text": "That's a beautiful answer.",
+      "start": 520.87,
+      "duration": 1.59
+    },
+    {
+      "id": 344,
+      "text": "Thank you.",
+      "start": 522.46,
+      "duration": 0.8
+    },
+    {
+      "id": 345,
+      "text": "What about you?",
+      "start": 523.26,
+      "duration": 0.97
+    },
+    {
+      "id": 346,
+      "text": "The messages.",
+      "start": 524.23,
+      "duration": 1.03
+    },
+    {
+      "id": 347,
+      "text": "Why?",
+      "start": 525.26,
+      "duration": 0.64
+    },
+    {
+      "id": 348,
+      "text": "Because they remind me of people I care about.",
+      "start": 525.9,
+      "duration": 2.64
+    },
+    {
+      "id": 349,
+      "text": "I like that answer.",
+      "start": 528.54,
+      "duration": 1.28
+    },
+    {
+      "id": 350,
+      "text": "Phones aren't just technology.",
+      "start": 529.82,
+      "duration": 2.21
+    },
+    {
+      "id": 351,
+      "text": "They're connected to our lives.",
+      "start": 532.03,
+      "duration": 2.08
+    },
+    {
+      "id": 352,
+      "text": "Exactly.",
+      "start": 534.11,
+      "duration": 0.96
+    },
+    {
+      "id": 353,
+      "text": "Wow.",
+      "start": 535.07,
+      "duration": 0.64
+    },
+    {
+      "id": 354,
+      "text": "This conversation became deep.",
+      "start": 535.71,
+      "duration": 2.0
+    },
+    {
+      "id": 355,
+      "text": "A little.",
+      "start": 537.71,
+      "duration": 0.8
+    },
+    {
+      "id": 356,
+      "text": "Quick.",
+      "start": 538.51,
+      "duration": 0.56
+    },
+    {
+      "id": 357,
+      "text": "Say something funny.",
+      "start": 539.07,
+      "duration": 1.12
+    },
+    {
+      "id": 358,
+      "text": "Why?",
+      "start": 540.19,
+      "duration": 0.64
+    },
+    {
+      "id": 359,
+      "text": "Before everyone starts crying over their phones.",
+      "start": 540.83,
+      "duration": 3.52
+    },
+    {
+      "id": 360,
       "text": "Good idea.",
       "start": 544.35,
-      "duration": 0.5
+      "duration": 0.96
+    },
+    {
+      "id": 361,
+      "text": "That's what I'm here for.",
+      "start": 545.31,
+      "duration": 1.52
+    },
+    {
+      "id": 362,
+      "text": "Making jokes.",
+      "start": 546.83,
+      "duration": 0.96
+    },
+    {
+      "id": 363,
+      "text": "And keeping conversations balanced.",
+      "start": 547.79,
+      "duration": 2.32
+    },
+    {
+      "id": 364,
+      "text": "Mostly making jokes.",
+      "start": 550.11,
+      "duration": 1.51
+    },
+    {
+      "id": 365,
+      "text": "Fair enough.",
+      "start": 551.62,
+      "duration": 0.81
+    },
+    {
+      "id": 366,
+      "text": "You know, this conversation made me think.",
+      "start": 552.43,
+      "duration": 2.07
     },
     {
       "id": 367,
-      "text": "That's what I'm here for.",
-      "start": 545.31,
-      "duration": 0.66
+      "text": "Uh-oh.",
+      "start": 554.5,
+      "duration": 1.37
     },
     {
       "id": 368,
-      "text": "Making jokes.",
-      "start": 546.83,
-      "duration": 0.5
+      "text": "That's always dangerous.",
+      "start": 555.87,
+      "duration": 2.08
     },
     {
       "id": 369,
-      "text": "And keeping conversations balanced.",
-      "start": 547.79,
-      "duration": 0.83
+      "text": "Not this time.",
+      "start": 557.95,
+      "duration": 1.09
     },
     {
       "id": 370,
-      "text": "Mostly making jokes.",
-      "start": 550.11,
-      "duration": 0.5
+      "text": "Good.",
+      "start": 559.04,
+      "duration": 1.12
     },
     {
       "id": 371,
-      "text": "Fair enough.",
-      "start": 551.62,
-      "duration": 0.5
+      "text": "What were you thinking about?",
+      "start": 560.16,
+      "duration": 1.12
     },
     {
       "id": 372,
-      "text": "You know, this conversation made me think.",
-      "start": 552.43,
-      "duration": 1.27
+      "text": "How much phones have changed our lives?",
+      "start": 561.28,
+      "duration": 2.48
     },
     {
       "id": 373,
-      "text": "Uh-oh.",
-      "start": 554.5,
-      "duration": 0.5
-    },
-    {
-      "id": 374,
-      "text": "That's always dangerous.",
-      "start": 555.87,
-      "duration": 0.5
-    },
-    {
-      "id": 375,
-      "text": "Not this time.",
-      "start": 557.95,
-      "duration": 0.5
-    },
-    {
-      "id": 376,
-      "text": "Good.",
-      "start": 559.04,
-      "duration": 0.5
-    },
-    {
-      "id": 377,
-      "text": "What were you thinking about?",
-      "start": 560.16,
-      "duration": 0.58
-    },
-    {
-      "id": 378,
-      "text": "How much phones have changed our lives?",
-      "start": 561.28,
-      "duration": 1.47
-    },
-    {
-      "id": 379,
       "text": "That's true.",
       "start": 563.76,
       "duration": 0.5
     },
     {
-      "id": 380,
+      "id": 374,
       "text": "Sometimes I forget how much I use mine.",
       "start": 564.24,
-      "duration": 1.34
+      "duration": 2.0
+    },
+    {
+      "id": 375,
+      "text": "Same here.",
+      "start": 566.24,
+      "duration": 0.64
+    },
+    {
+      "id": 376,
+      "text": "From the moment I wake up to the moment I go to sleep.",
+      "start": 566.88,
+      "duration": 2.72
+    },
+    {
+      "id": 377,
+      "text": "Exactly.",
+      "start": 569.6,
+      "duration": 0.8
+    },
+    {
+      "id": 378,
+      "text": "My phone is basically my assistant.",
+      "start": 570.4,
+      "duration": 2.0
+    },
+    {
+      "id": 379,
+      "text": "Mine too.",
+      "start": 572.4,
+      "duration": 0.64
+    },
+    {
+      "id": 380,
+      "text": "It reminds me of meetings.",
+      "start": 573.04,
+      "duration": 1.36
     },
     {
       "id": 381,
-      "text": "Same here.",
-      "start": 566.24,
-      "duration": 0.5
+      "text": "Mine reminds me of birthdays.",
+      "start": 574.4,
+      "duration": 1.13
     },
     {
       "id": 382,
-      "text": "From the moment I wake up to the moment I go to sleep.",
-      "start": 566.88,
-      "duration": 2.14
+      "text": "Mine reminds me to drink water.",
+      "start": 575.53,
+      "duration": 1.81
     },
     {
       "id": 383,
-      "text": "Exactly.",
-      "start": 569.6,
-      "duration": 0.5
-    },
-    {
-      "id": 384,
-      "text": "My phone is basically my assistant.",
-      "start": 570.4,
-      "duration": 1.16
-    },
-    {
-      "id": 385,
-      "text": "Mine too.",
-      "start": 572.4,
-      "duration": 0.5
-    },
-    {
-      "id": 386,
-      "text": "It reminds me of meetings.",
-      "start": 573.04,
-      "duration": 0.62
-    },
-    {
-      "id": 387,
-      "text": "Mine reminds me of birthdays.",
-      "start": 574.4,
-      "duration": 0.58
-    },
-    {
-      "id": 388,
-      "text": "Mine reminds me to drink water.",
-      "start": 575.53,
-      "duration": 1.04
-    },
-    {
-      "id": 389,
       "text": "Really?",
       "start": 577.34,
       "duration": 0.5
     },
     {
-      "id": 390,
+      "id": 384,
       "text": "And I still ignore it.",
       "start": 577.66,
-      "duration": 0.98
+      "duration": 1.95
     },
     {
-      "id": 391,
+      "id": 385,
       "text": "That's funny.",
       "start": 579.61,
-      "duration": 0.5
+      "duration": 1.34
     },
     {
-      "id": 392,
+      "id": 386,
       "text": "Do you think you could live without your phone for one week?",
       "start": 580.95,
-      "duration": 2.27
+      "duration": 2.94
     },
     {
-      "id": 393,
+      "id": 387,
       "text": "One week?",
       "start": 583.89,
-      "duration": 0.5
+      "duration": 0.78
     },
     {
-      "id": 394,
+      "id": 388,
       "text": "Yes.",
       "start": 584.67,
       "duration": 0.5
     },
     {
-      "id": 395,
+      "id": 389,
       "text": "Honestly?",
       "start": 585.07,
-      "duration": 0.5
+      "duration": 0.55
     },
     {
-      "id": 396,
+      "id": 390,
       "text": "Yes.",
       "start": 585.62,
-      "duration": 0.5
+      "duration": 0.73
     },
     {
-      "id": 397,
+      "id": 391,
       "text": "It would be difficult.",
       "start": 586.35,
-      "duration": 0.5
+      "duration": 1.11
     },
     {
-      "id": 398,
+      "id": 392,
       "text": "Me too.",
       "start": 587.46,
-      "duration": 0.5
+      "duration": 0.64
     },
     {
-      "id": 399,
+      "id": 393,
       "text": "But I think I could do it.",
       "start": 588.1,
-      "duration": 1.16
+      "duration": 1.83
     },
     {
-      "id": 400,
+      "id": 394,
       "text": "Really?",
       "start": 589.93,
       "duration": 0.5
     },
     {
-      "id": 401,
+      "id": 395,
       "text": "Maybe?",
       "start": 590.18,
-      "duration": 0.5
+      "duration": 0.56
+    },
+    {
+      "id": 396,
+      "text": "That doesn't sound confident.",
+      "start": 590.74,
+      "duration": 1.62
+    },
+    {
+      "id": 397,
+      "text": "Because I'm not confident.",
+      "start": 592.36,
+      "duration": 1.36
+    },
+    {
+      "id": 398,
+      "text": "Fair enough.",
+      "start": 593.72,
+      "duration": 1.86
+    },
+    {
+      "id": 399,
+      "text": "What about you?",
+      "start": 595.58,
+      "duration": 0.89
+    },
+    {
+      "id": 400,
+      "text": "One week without my phone sounds impossible.",
+      "start": 596.47,
+      "duration": 2.55
+    },
+    {
+      "id": 401,
+      "text": "Impossible?",
+      "start": 599.02,
+      "duration": 0.68
     },
     {
       "id": 402,
-      "text": "That doesn't sound confident.",
-      "start": 590.74,
-      "duration": 0.73
+      "text": "Almost.",
+      "start": 599.7,
+      "duration": 0.88
     },
     {
       "id": 403,
-      "text": "Because I'm not confident.",
-      "start": 592.36,
-      "duration": 0.58
+      "text": "Why?",
+      "start": 600.58,
+      "duration": 0.79
     },
     {
       "id": 404,
-      "text": "Fair enough.",
-      "start": 593.72,
-      "duration": 0.5
+      "text": "Because everything is on my phone.",
+      "start": 601.37,
+      "duration": 1.91
     },
     {
       "id": 405,
-      "text": "What about you?",
-      "start": 595.58,
-      "duration": 0.5
+      "text": "That's true.",
+      "start": 603.28,
+      "duration": 0.69
     },
     {
       "id": 406,
-      "text": "One week without my phone sounds impossible.",
-      "start": 596.47,
-      "duration": 1.59
+      "text": "Messages, photos, work, maps, music.",
+      "start": 603.97,
+      "duration": 3.96
     },
     {
       "id": 407,
-      "text": "Impossible?",
-      "start": 599.02,
-      "duration": 0.5
+      "text": "I understand.",
+      "start": 607.93,
+      "duration": 1.32
     },
     {
       "id": 408,
-      "text": "Almost.",
-      "start": 599.7,
-      "duration": 0.5
+      "text": "But maybe that's a problem.",
+      "start": 609.25,
+      "duration": 1.78
     },
     {
       "id": 409,
-      "text": "Why?",
-      "start": 600.58,
-      "duration": 0.5
+      "text": "What do you mean?",
+      "start": 611.03,
+      "duration": 1.0
     },
     {
       "id": 410,
-      "text": "Because everything is on my phone.",
-      "start": 601.37,
-      "duration": 1.09
+      "text": "Maybe we're a little too dependent on our phones.",
+      "start": 612.03,
+      "duration": 2.58
     },
     {
       "id": 411,
-      "text": "That's true.",
-      "start": 603.28,
-      "duration": 0.5
+      "text": "I think many people would agree.",
+      "start": 614.61,
+      "duration": 1.85
     },
     {
       "id": 412,
-      "text": "Messages, photos, work, maps, music.",
-      "start": 603.97,
-      "duration": 1.96
+      "text": "Including us.",
+      "start": 616.46,
+      "duration": 0.78
     },
     {
       "id": 413,
-      "text": "I understand.",
-      "start": 607.93,
-      "duration": 0.5
+      "text": "Especially us.",
+      "start": 617.24,
+      "duration": 1.2
     },
     {
       "id": 414,
-      "text": "But maybe that's a problem.",
-      "start": 609.25,
-      "duration": 0.92
+      "text": "You're right.",
+      "start": 618.44,
+      "duration": 2.27
     },
     {
       "id": 415,
-      "text": "What do you mean?",
-      "start": 611.03,
-      "duration": 0.5
+      "text": "Do you think phones make life better?",
+      "start": 620.71,
+      "duration": 1.86
     },
     {
       "id": 416,
-      "text": "Maybe we're a little too dependent on our phones.",
-      "start": 612.03,
-      "duration": 1.8
-    },
-    {
-      "id": 417,
-      "text": "I think many people would agree.",
-      "start": 614.61,
-      "duration": 1.08
-    },
-    {
-      "id": 418,
-      "text": "Including us.",
-      "start": 616.46,
-      "duration": 0.5
-    },
-    {
-      "id": 419,
-      "text": "Especially us.",
-      "start": 617.24,
-      "duration": 0.5
-    },
-    {
-      "id": 420,
-      "text": "You're right.",
-      "start": 618.44,
-      "duration": 0.5
-    },
-    {
-      "id": 421,
-      "text": "Do you think phones make life better?",
-      "start": 620.71,
-      "duration": 1.17
-    },
-    {
-      "id": 422,
       "text": "Overall?",
       "start": 622.57,
       "duration": 0.5
     },
     {
-      "id": 423,
+      "id": 417,
       "text": "Yes.",
       "start": 622.83,
-      "duration": 0.5
+      "duration": 0.64
     },
     {
-      "id": 424,
+      "id": 418,
       "text": "Definitely.",
       "start": 623.47,
       "duration": 0.5
     },
     {
-      "id": 425,
+      "id": 419,
       "text": "I agree.",
       "start": 623.87,
-      "duration": 0.5
+      "duration": 0.92
     },
     {
-      "id": 426,
+      "id": 420,
       "text": "We can talk to friends anywhere.",
       "start": 624.79,
-      "duration": 0.91
+      "duration": 1.56
     },
     {
-      "id": 427,
+      "id": 421,
       "text": "Stay connected with family.",
       "start": 626.35,
-      "duration": 0.57
+      "duration": 3.0
     }
   ],
   "speakerMap": {
@@ -2569,7 +2533,7 @@
     "1": "Speaker1"
   },
   "fetchedAt": "2026-07-23T06:25:19.474524+00:00",
-  "text": "Hello, everyone, and welcome back to Smart Learning English Channel. Dave, where is your phone? My phone? Yes. Why? Just answer the question. I don't know. Really? Wait. Don't panic. I'm not panicking. I'm panicking. Seriously, where is it? Look at your hand. Oh, there it is. Exactly. That was embarrassing. A little. Okay. Can we pretend that didn't happen? No. Fair enough. Today's topic is perfect for you. Why? Because you can't live without your phone. That's not true. Really? Okay. Maybe a little. A little. Fine. A lot. I knew it. What about you? I use my phone every day. Everyone does. That's true. My phone is my alarm clock. Mine too. It's my camera. Mine too. It's my map. Mine too. It's my music player. Mine too. Wow. We're the same person. That's a scary thought. Very scary. How often do you check your phone? Honestly? Yes. Too often. Really? Sometimes I check my phone. And? Then I forget why I picked it up. Me too. I'm glad it's not just me. Definitely not. Have you ever left your phone at home? Yes. Once. Only once? Only once. What happened? I felt strange all day. Exactly. I kept checking my pocket. Me too. Even though I knew my phone wasn't there. That's funny. It's also a little sad. Maybe. Do you think people use phones too much? That's a dangerous question. Why? Because the answer is yes. I agree. Including me. Including me too. At least we're honest. That's true. You know what's funny? What? Sometimes I spend ten minutes looking for my phone. No way. Seriously. Where do you usually find it? In my hand. That's happened to me too. Really? More than once. I feel better now. You're welcome. So today's topic is basically about us. And probably everyone listening. That's true. Because let's be honest. What? Most people can't live without their phones. Including us. Especially us. You're right. Have you ever lost your phone? Unfortunately, yes. Really? It was terrible. What happened? I couldn't find my phone one morning. Where was it? I had no idea. Were you worried? Very worried. Why? Because everything is on my phone. That's true. My messages. My photos. My contacts. Exactly. I searched everywhere. Did you find it? Eventually. Where was it? In the refrigerator. No way. Yes. Why was your phone in the refrigerator? That's an excellent question. Do you have an answer? No. That's funny. I think I was holding my phone and a bottle of water. And? I put the wrong thing away. That's amazing. Not my proudest moment. I can imagine. What about you? Have you ever lost your phone? Not exactly. What does that mean? I left it in a taxi once. Oh, wow. That's worse. I know. Did you get it back? Thankfully, yes. Really? The driver was very kind. That's great. I was so happy. I would be too. For a few hours, I felt completely disconnected. Exactly. It's a strange feeling. Very strange. Have you ever sent a message to the wrong person? Oh, no. Don't remind me. Uh-huh. You have? Yes. Tell me. No. Come on. It's embarrassing. That's why it's interesting. Fine. I'm listening. I once complained about my brother in a message. Uh-oh. And accidentally sent it to my brother. No way. Yes. What happened? He replied immediately. What did he say? Thank you for your honesty. That's hilarious. I wanted to disappear. I don't blame you. Have you ever done something like that? Absolutely. Really? I once sent a work message to my friend. That's not too bad. Wait. There's more. Oh, no. Then I sent a personal message to my boss. No way. Yes. What did you do? Nothing. Nothing? I stared at the screen. That's not a solution. It was the only solution I had. What did your boss say? Thankfully, he laughed. You got lucky. Very lucky. You know what's funny? What? Phones make life easier. Definitely. But they also create new problems. That's true. Wrong messages. Low battery. No Internet. Lost phones. Too many notifications. Exactly. What's your biggest phone problem? Battery life. Really? My battery is always low. Mine too. It's stressful. Very stressful. 5% battery feels like an emergency. That's so true. Especially when you're outside. Exactly. Modern life is funny. Why? A low battery can ruin an entire day. You're right. And somehow, we all understand that. We really do. That's funny. And a little scary. A little? Okay. Very scary. You know what? What? Phones were very different when I was a child. Really? Very different. Tell me. My first phone was tiny. Tiny? Well, it felt amazing at the time. What could it do? Call people, send messages. That's it. That's all? That's all. No social media? No. No videos? No. No games? A few simple games. Wow. You lived in a difficult time. It wasn't that bad. What was your favorite thing about your first phone? Sending messages to my friends. Really? Yes. Every message felt important. That's true. What about your first phone? It was old. Very old. How old? Let's just say, it wasn't smart. A phone that wasn't smart. Exactly. Did you like it? I loved it. Really. It made me feel grown up. I understand that. I carried it everywhere. Even though it couldn't do much? Yes. I was proud of it. That's actually cute. Thank you. Did your family have rules about phones? Definitely. Like what? No phones at the dinner table. My family had the same rule. Really? Yes. Family time was family time. I think that's a good rule. Me too. Nowadays, it's harder. Why? Because phones do everything. That's true. Work, messages, photos, maps, music. Exactly. It's difficult to ignore them. Do you think children use phones too much? Sometimes. I agree. When I was younger, I spent more time outside. Me too. I played with friends. Same here. Now many people stay home and look at screens. That's true. Do you miss the old days? Sometimes. Really? Yes. Life felt simpler. I understand that. But I also love modern technology. Me too. Imagine traveling without a phone. That sounds difficult. Very difficult. I'd get lost immediately. I believe that. Thank you for your confidence. You're welcome. Do you remember phone numbers? A few. Really? Yes. My parents' numbers, a few friends. I'm impressed. What about you? Honestly? Yes. I barely remember my own number. No way. Seriously. That's funny. My phone remembers everything for me. That's the problem. Maybe. We're becoming too dependent. You're probably right. If your phone disappeared forever, what would you miss most? The photos. Really? Definitely. Photos hold memories. That's a beautiful answer. Thank you. What about you? The messages. Why? Because they remind me of people I care about. I like that answer. Phones aren't just technology. They're connected to our lives. Exactly. Wow. This conversation became deep. A little. Quick. Say something funny. Why? Before everyone starts crying over their phones. Good idea. That's what I'm here for. Making jokes. And keeping conversations balanced. Mostly making jokes. Fair enough. You know, this conversation made me think. Uh-oh. That's always dangerous. Not this time. Good. What were you thinking about? How much phones have changed our lives? That's true. Sometimes I forget how much I use mine. Same here. From the moment I wake up To the moment I go to sleep. Exactly. My phone is basically my assistant. Mine too. It reminds me of meetings. Mine reminds me of birth days. Mine reminds me to drink water. Really? And I still ignore it. That's funny. Do you think you could live without your phone for one week? One week? Yes. Honestly? Yes. It would be difficult. Me too. But I think I could do it. Really? Maybe? That doesn't sound confident. Because I'm not confident. Fair enough. What about you? One week without my phone sounds impossible. Impossible? Almost. Why? Because everything is on my phone. That's true. Messages, photos, work, maps, music. I understand. But maybe that's a problem. What do you mean? Maybe we're a little too dependent on our phones. I think many people would agree. Including us. Especially us. You're right. Do you think phones make life better? Overall? Yes. Definitely. I agree. We can talk to friends anywhere. Stay connected with family. Learn new things. Take photos. Travel more easily. There are many benefits. Absolutely. But balance is important. Very important. Sometimes we need to put our phones down. And enjoy real life. Exactly. Spend time with friends. Talk to family. Go outside. Take a walk. Or eat pizza. Dave. What? You always find a way to mention food. It's a gift. A very strange gift. Thank you. That wasn't a compliment. I know. If you had one piece of advice, what would it be? Use your phone. Don't let your phone use you. Wow. That's actually very good. I'm surprised too. What about this? What? Enjoy technology, but don't forget real life. I love that. Thank you. You know what's funny? What? We spent an entire conversation talking about phones. And we probably checked our phones during the conversation. Probably. Actually What? I checked mine twice. Only twice? Yes. I'm proud of you. Thank you. How many times did you check yours? Let's not talk about that. That's what I thought. Some secrets should remain secret. Fair enough. Well, this was fun. It really was. And now I suddenly want to check my phone. Me too. We're hopeless. A little. Thank you everyone for listening. Thank you so much for listening today. Keep practicing your English every day. Don't forget to subscribe, like, and comment. See you in the next lesson.",
+  "text": "Hello, everyone, and welcome back to Smart Learning English Channel. Dave, where is your phone? My phone? Yes. Why? Just answer the question. I don't know. Really? Wait. Don't panic. I'm not panicking. I'm panicking. Seriously, where is it? Look at your hand. Oh, there it is. Exactly. That was embarrassing. A little. Okay. Can we pretend that didn't happen? No. Fair enough. Today's topic is perfect for you. Why? Because you can't live without your phone. That's not true. Really? Okay. Maybe a little. A little. Fine. A lot. I knew it. What about you? I use my phone every day. Everyone does. That's true. My phone is my alarm clock. Mine too. It's my camera. Mine too. It's my map. Mine too. It's my music player. Mine too. Wow. We're the same person. That's a scary thought. Very scary. How often do you check your phone? Honestly? Yes. Too often. Really? Sometimes I check my phone. And? Then I forget why I picked it up. Me too. I'm glad it's not just me. Definitely not. Have you ever left your phone at home? Yes. Once. Only once? Only once. What happened? I felt strange all day. Exactly. I kept checking my pocket. Me too. Even though I knew my phone wasn't there. That's funny. It's also a little sad. Maybe. Do you think people use phones too much? That's a dangerous question. Why? Because the answer is yes. I agree. Including me. Including me too. At least we're honest. That's true. You know what's funny? What? Sometimes I spend ten minutes looking for my phone. No way. Seriously. Where do you usually find it? In my hand. That's happened to me too. Really? More than once. I feel better now. You're welcome. So today's topic is basically about us. And probably everyone listening. That's true. Because let's be honest. What? Most people can't live without their phones. Including us. Especially us. You're right. Have you ever lost your phone? Unfortunately, yes. Really? It was terrible. What happened? I couldn't find my phone one morning. Where was it? I had no idea. Were you worried? Very worried. Why? Because everything is on my phone. That's true. My messages. My photos. My contacts. Exactly. I searched everywhere. Did you find it? Eventually. Where was it? In the refrigerator. No way. Yes. Why was your phone in the refrigerator? That's an excellent question. Do you have an answer? No. That's funny. I think I was holding my phone and a bottle of water. And? I put the wrong thing away. That's amazing. Not my proudest moment. I can imagine. What about you? Have you ever lost your phone? Not exactly. What does that mean? I left it in a taxi once. Oh, wow. That's worse. I know. Did you get it back? Thankfully, yes. Really? The driver was very kind. That's great. I was so happy. I would be too. For a few hours, I felt completely disconnected. Exactly. It's a strange feeling. Very strange. Have you ever sent a message to the wrong person? Oh, no. Don't remind me. Uh-huh. You have? Yes. Tell me. No. Come on. It's embarrassing. That's why it's interesting. Fine. I'm listening. I once complained about my brother in a message. Uh-oh. And accidentally sent it to my brother. No way. Yes. What happened? He replied immediately. What did he say? Thank you for your honesty. That's hilarious. I wanted to disappear. I don't blame you. Have you ever done something like that? Absolutely. Really? I once sent a work message to my friend. That's not too bad. Wait. There's more. Oh, no. Then I sent a personal message to my boss. No way. Yes. What did you do? Nothing. Nothing? I stared at the screen. That's not a solution. It was the only solution I had. What did your boss say? Thankfully, he laughed. You got lucky. Very lucky. You know what's funny? What? Phones make life easier. Definitely. But they also create new problems. That's true. Wrong messages. Low battery. No Internet. Lost phones. Too many notifications. Exactly. What's your biggest phone problem? Battery life. Really? My battery is always low. Mine too. It's stressful. Very stressful. 5% battery feels like an emergency. That's so true. Especially when you're outside. Exactly. Modern life is funny. Why? A low battery can ruin an entire day. You're right. And somehow, we all understand that. We really do. That's funny. And a little scary. A little? Okay. Very scary. You know what? What? Phones were very different when I was a child. Really? Very different. Tell me. My first phone was tiny. Tiny? Well, it felt amazing at the time. What could it do? Call people, send messages. That's it. That's all? That's all. No social media? No. No videos? No. No games? A few simple games. Wow. You lived in a difficult time. It wasn't that bad. What was your favorite thing about your first phone? Sending messages to my friends. Really? Yes. Every message felt important. That's true. What about your first phone? It was old. Very old. How old? Let's just say, it wasn't smart. A phone that wasn't smart. Exactly. Did you like it? I loved it. Really. It made me feel grown up. I understand that. I carried it everywhere. Even though it couldn't do much? Yes. I was proud of it. That's actually cute. Thank you. Did your family have rules about phones? Definitely. Like what? No phones at the dinner table. My family had the same rule. Really? Yes. Family time was family time. I think that's a good rule. Me too. Nowadays, it's harder. Why? Because phones do everything. That's true. Work, messages, photos, maps, music. Exactly. It's difficult to ignore them. Do you think children use phones too much? Sometimes. I agree. When I was younger, I spent more time outside. Me too. I played with friends. Same here. Now many people stay home and look at screens. That's true. Do you miss the old days? Sometimes. Really? Yes. Life felt simpler. I understand that. But I also love modern technology. Me too. Imagine traveling without a phone. That sounds difficult. Very difficult. I'd get lost immediately. I believe that. Thank you for your confidence. You're welcome. Do you remember phone numbers? A few. Really? Yes. My parents' numbers, a few friends. I'm impressed. What about you? Honestly? Yes. I barely remember my own number. No way. Seriously. That's funny. My phone remembers everything for me. That's the problem. Maybe. We're becoming too dependent. You're probably right. If your phone disappeared forever, what would you miss most? The photos. Really? Definitely. Photos hold memories. That's a beautiful answer. Thank you. What about you? The messages. Why? Because they remind me of people I care about. I like that answer. Phones aren't just technology. They're connected to our lives. Exactly. Wow. This conversation became deep. A little. Quick. Say something funny. Why? Before everyone starts crying over their phones. Good idea. That's what I'm here for. Making jokes. And keeping conversations balanced. Mostly making jokes. Fair enough. You know, this conversation made me think. Uh-oh. That's always dangerous. Not this time. Good. What were you thinking about? How much phones have changed our lives? That's true. Sometimes I forget how much I use mine. Same here. From the moment I wake up to the moment I go to sleep. Exactly. My phone is basically my assistant. Mine too. It reminds me of meetings. Mine reminds me of birthdays. Mine reminds me to drink water. Really? And I still ignore it. That's funny. Do you think you could live without your phone for one week? One week? Yes. Honestly? Yes. It would be difficult. Me too. But I think I could do it. Really? Maybe? That doesn't sound confident. Because I'm not confident. Fair enough. What about you? One week without my phone sounds impossible. Impossible? Almost. Why? Because everything is on my phone. That's true. Messages, photos, work, maps, music. I understand. But maybe that's a problem. What do you mean? Maybe we're a little too dependent on our phones. I think many people would agree. Including us. Especially us. You're right. Do you think phones make life better? Overall? Yes. Definitely. I agree. We can talk to friends anywhere. Stay connected with family.",
   "alignment": {
     "engine": "deepgram-nova-2",
     "alignedAt": "2026-07-23T06:25:19.474555+00:00",
@@ -2589,5 +2553,7 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T16:09:57.097Z"
+  "formattedAt": "2026-07-30T16:09:57.097Z",
+  "splitAt": "2026-08-03T05:15:00.333846+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

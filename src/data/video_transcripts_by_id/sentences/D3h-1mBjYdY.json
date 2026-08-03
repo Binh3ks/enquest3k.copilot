@@ -2,178 +2,52 @@
   "text": "Hey there kids! Listen carefully and repeat. the moon the moon the sun the sun star star tree tree mountain mountain river river the sea the sea rainbow rainbow the sky the sky flower flower That was great kids, let's do it one more time. In a big voice, repeat after me. Here we go. the moon the sun star tree mountain river the sea rainbow the sky flower Well done kids, that was great. See you!",
   "segments": [
     {
+      "id": 1,
+      "text": "Hey there kids!",
       "start": 5.93,
-      "duration": 5.31,
-      "text": "Hey there kids! Listen carefully and repeat."
+      "duration": 2.28
     },
     {
+      "id": 2,
+      "text": "Listen carefully and repeat.",
+      "start": 8.21,
+      "duration": 4.28
+    },
+    {
+      "id": 3,
+      "text": "the moon the moon the sun the sun star star tree tree mountain mountain river river the sea the sea rainbow rainbow the sky the sky flower flower That was great kids, let's do it one more time.",
       "start": 12.49,
-      "duration": 2.48,
-      "text": "the moon"
+      "duration": 86.76
     },
     {
-      "start": 16.38,
-      "duration": 2.68,
-      "text": "the moon"
-    },
-    {
-      "start": 20.47,
-      "duration": 1.72,
-      "text": "the sun"
-    },
-    {
-      "start": 24.32,
-      "duration": 1.9,
-      "text": "the sun"
-    },
-    {
-      "start": 28.63,
-      "duration": 2.02,
-      "text": "star"
-    },
-    {
-      "start": 32.46,
-      "duration": 1.96,
-      "text": "star"
-    },
-    {
-      "start": 36.55,
-      "duration": 2.26,
-      "text": "tree"
-    },
-    {
-      "start": 40.37,
-      "duration": 2.22,
-      "text": "tree"
-    },
-    {
-      "start": 44.39,
-      "duration": 2.22,
-      "text": "mountain"
-    },
-    {
-      "start": 48.41,
-      "duration": 2.24,
-      "text": "mountain"
-    },
-    {
-      "start": 52.41,
-      "duration": 2.22,
-      "text": "river"
-    },
-    {
-      "start": 56.49,
-      "duration": 2.22,
-      "text": "river"
-    },
-    {
-      "start": 60.5,
-      "duration": 2.38,
-      "text": "the sea"
-    },
-    {
-      "start": 64.43,
-      "duration": 2.8,
-      "text": "the sea"
-    },
-    {
-      "start": 68.36,
-      "duration": 2.36,
-      "text": "rainbow"
-    },
-    {
-      "start": 72.49,
-      "duration": 2.58,
-      "text": "rainbow"
-    },
-    {
-      "start": 76.41,
-      "duration": 2.3,
-      "text": "the sky"
-    },
-    {
-      "start": 80.3,
-      "duration": 2.32,
-      "text": "the sky"
-    },
-    {
-      "start": 84.56,
-      "duration": 2.66,
-      "text": "flower"
-    },
-    {
-      "start": 88.64,
-      "duration": 2.94,
-      "text": "flower"
-    },
-    {
-      "start": 93.88,
-      "duration": 5.37,
-      "text": "That was great kids, let's do it one more time."
-    },
-    {
+      "id": 4,
+      "text": "In a big voice, repeat after me.",
       "start": 99.25,
-      "duration": 6.37,
-      "text": "In a big voice, repeat after me. Here we go."
+      "duration": 4.46
     },
     {
+      "id": 5,
+      "text": "Here we go.",
+      "start": 103.71,
+      "duration": 4.78
+    },
+    {
+      "id": 6,
+      "text": "the moon the sun star tree mountain river the sea rainbow the sky flower Well done kids, that was great.",
       "start": 108.49,
-      "duration": 2.13,
-      "text": "the moon"
+      "duration": 85.59
     },
     {
-      "start": 116.38,
-      "duration": 2.26,
-      "text": "the sun"
-    },
-    {
-      "start": 124.42,
-      "duration": 2.42,
-      "text": "star"
-    },
-    {
-      "start": 132.57,
-      "duration": 2.88,
-      "text": "tree"
-    },
-    {
-      "start": 140.54,
-      "duration": 2.98,
-      "text": "mountain"
-    },
-    {
-      "start": 148.42,
-      "duration": 2.74,
-      "text": "river"
-    },
-    {
-      "start": 156.41,
-      "duration": 2.8,
-      "text": "the sea"
-    },
-    {
-      "start": 164.57,
-      "duration": 3.02,
-      "text": "rainbow"
-    },
-    {
-      "start": 172.46,
-      "duration": 2.78,
-      "text": "the sky"
-    },
-    {
-      "start": 180.38,
-      "duration": 2.88,
-      "text": "flower"
-    },
-    {
-      "start": 189.17,
-      "duration": 6.55,
-      "text": "Well done kids, that was great. See you!"
+      "id": 7,
+      "text": "See you!",
+      "start": 194.08,
+      "duration": 3.0
     }
   ],
   "videoId": "D3h-1mBjYdY",
   "source": "youtube-transcript-api",
   "fetchedAt": "2026-08-03T04:59:02.475275+00:00",
-  "rawCaptionCount": 34
+  "rawCaptionCount": 34,
+  "splitAt": "2026-08-03T05:15:00.298192+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

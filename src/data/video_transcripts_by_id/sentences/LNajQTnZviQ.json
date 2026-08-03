@@ -2,128 +2,88 @@
   "text": "English Singsing Five Senses I can see! I can see with my eyes! see eyes I can hear! I can hear with my ears! hear ears I can smell! I can smell with my nose! smell nose I can feel! Oh! It’s too cold! feel skin I can taste! I can taste with my tongue! Yummy! taste tongue Review",
   "segments": [
     {
+      "id": 1,
+      "text": "English Singsing Five Senses I can see!",
       "start": 1.74,
-      "duration": 1.66,
-      "text": "English Singsing"
+      "duration": 16.24
     },
     {
-      "start": 8.14,
-      "duration": 2.0,
-      "text": "Five Senses"
-    },
-    {
-      "start": 13.5,
-      "duration": 1.74,
-      "text": "I can see!"
-    },
-    {
+      "id": 2,
+      "text": "I can see with my eyes!",
       "start": 17.98,
-      "duration": 3.08,
-      "text": "I can see with my eyes!"
+      "duration": 5.82
     },
     {
+      "id": 3,
+      "text": "see eyes I can hear!",
       "start": 23.8,
-      "duration": 1.56,
-      "text": "see"
+      "duration": 16.82
     },
     {
-      "start": 30.38,
-      "duration": 1.72,
-      "text": "eyes"
-    },
-    {
-      "start": 37.56,
-      "duration": 1.5,
-      "text": "I can hear!"
-    },
-    {
+      "id": 4,
+      "text": "I can hear with my ears!",
       "start": 40.62,
-      "duration": 2.62,
-      "text": "I can hear with my ears!"
+      "duration": 11.66
     },
     {
+      "id": 5,
+      "text": "hear ears I can smell!",
       "start": 52.28,
-      "duration": 1.4,
-      "text": "hear"
+      "duration": 21.06
     },
     {
-      "start": 59.88,
-      "duration": 2.0,
-      "text": "ears"
-    },
-    {
-      "start": 69.32,
-      "duration": 1.96,
-      "text": "I can smell!"
-    },
-    {
+      "id": 6,
+      "text": "I can smell with my nose!",
       "start": 73.34,
-      "duration": 2.98,
-      "text": "I can smell with my nose!"
+      "duration": 5.72
     },
     {
+      "id": 7,
+      "text": "smell nose I can feel!",
       "start": 79.06,
-      "duration": 2.0,
-      "text": "smell"
+      "duration": 21.28
     },
     {
-      "start": 85.58,
-      "duration": 2.0,
-      "text": "nose"
-    },
-    {
-      "start": 97.3,
-      "duration": 1.98,
-      "text": "I can feel!"
-    },
-    {
+      "id": 8,
+      "text": "Oh!",
       "start": 100.34,
-      "duration": 2.4,
-      "text": "Oh! It’s too cold!"
+      "duration": 0.6
     },
     {
+      "id": 9,
+      "text": "It’s too cold!",
+      "start": 100.94,
+      "duration": 3.24
+    },
+    {
+      "id": 10,
+      "text": "feel skin I can taste!",
       "start": 104.18,
-      "duration": 1.12,
-      "text": "feel"
+      "duration": 20.32
     },
     {
-      "start": 111.12,
-      "duration": 1.44,
-      "text": "skin"
-    },
-    {
-      "start": 121.16,
-      "duration": 2.18,
-      "text": "I can taste!"
-    },
-    {
+      "id": 11,
+      "text": "I can taste with my tongue!",
       "start": 124.5,
-      "duration": 2.78,
-      "text": "I can taste with my tongue!"
+      "duration": 4.58
     },
     {
+      "id": 12,
+      "text": "Yummy!",
       "start": 129.08,
-      "duration": 2.0,
-      "text": "Yummy!"
+      "duration": 2.24
     },
     {
+      "id": 13,
+      "text": "taste tongue Review",
       "start": 131.32,
-      "duration": 1.3,
-      "text": "taste"
-    },
-    {
-      "start": 137.18,
-      "duration": 2.0,
-      "text": "tongue"
-    },
-    {
-      "start": 143.4,
-      "duration": 2.6,
-      "text": "Review"
+      "duration": 3.0
     }
   ],
   "videoId": "LNajQTnZviQ",
   "source": "youtube-transcript-api",
   "fetchedAt": "2026-08-03T04:59:05.868368+00:00",
-  "rawCaptionCount": 24
+  "rawCaptionCount": 24,
+  "splitAt": "2026-08-03T05:15:00.300085+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

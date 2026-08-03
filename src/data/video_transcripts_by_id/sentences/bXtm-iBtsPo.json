@@ -1,63 +1,65 @@
 {
-  "text": "Funny kid central episode one welcome. Nina watched the other second graders. Run outside. Their parents were picking them up. But nina's mom worked late. So nina was going to kid central. Nina walked into the gym. She wished she could go home and play in. Her backyard. A big banner over the windows read after. School fun and games at kid central. Nina didn't see anyone she knew. She felt nervous. Oh there's my name. Nina spotted a name tag with her name on. It and sat down. Izzy was excited to be a kid central. But her name tag was wrong. Isabelle. Is he red i'm izzy not isabelle. Izzy looked at the boy next to her. You must be jason. Welcome everyone please find your seat. Miss shelley called. Miss shelley was the kid's central. Teacher. Nina thought she had a nice smile. Today we're going to decorate name tags. Miss shelley said. A tall boy sat down next to nina. He didn't say hello. But his name tag said bobby. Look through the magazines on your table. Cut out pictures of things you like miss. Shelley said. For example nina what do you like miss. Shelley asked. Nina smiled i like the color purple and. I like my rain boots she answered shyly. Nice. Jason what do you like. Michelle waited. Jason. Izzy poke jason's arm. He likes video games she said. Jason we don't play video games at kid. Central please put that away michelle. Sounded serious. Besides video games what do you like. Jason looked up cheeseburgers. Great start cutting michelle pointed to. The magazines. Please pass me that magazine nina said. Please pass me those scissors. Bobby said. Izzy waved her hand in the air. Michelle i need a new name tag. Only my grandma calls me isabelle. Everyone calls me izzy. I'm sorry you can make a new name tag. Michelle handed her some stiff paper. Punch two holes in the top izzy punched. Then write your name in big beautiful. Letters. Now take all the pictures you cut out. Glue them onto your name tag. You can glue them on the front on the. Back or on both sides. When you're done choose a piece of yarn. Thread it through the holes on your tag. Your name tag becomes a necklace. Michelle tied her name tag around her. Neck. You could also hang it on your bedroom. Doorknob. Nina your mom's here miss shelley called. Nina looked surprised. Is kids central over already. Yup time to go home sweetie her mom said. Bye miss shelley. Nina ran to her mom. Look what i made. You.",
+  "text": "Funny Kid Central, Episode One. Welcome. Nina watched the other second graders run outside. Their parents were picking them up. But Nina's mom worked late. So Nina was going to Kid Central. Nina walked into the gym. She wished she could go home and play in her backyard. A big banner over the windows read, \"After School Fun and Games at Kid Central.\" Nina didn't.",
   "segments": [
     {
       "id": 1,
       "text": "Funny Kid Central, Episode One.",
       "start": 9.44,
-      "duration": 2.61
+      "duration": 5.1
     },
     {
       "id": 2,
       "text": "Welcome.",
       "start": 14.54,
-      "duration": 0.5
+      "duration": 10.18
     },
     {
       "id": 3,
       "text": "Nina watched the other second graders run outside.",
       "start": 24.72,
-      "duration": 2.55
+      "duration": 4.96
     },
     {
       "id": 4,
       "text": "Their parents were picking them up.",
       "start": 29.68,
-      "duration": 3.02
+      "duration": 3.36
     },
     {
       "id": 5,
       "text": "But Nina's mom worked late.",
       "start": 33.04,
-      "duration": 1.01
+      "duration": 4.4
     },
     {
       "id": 6,
       "text": "So Nina was going to Kid Central.",
       "start": 37.44,
-      "duration": 2.47
+      "duration": 4.16
     },
     {
       "id": 7,
       "text": "Nina walked into the gym.",
       "start": 41.6,
-      "duration": 2.86
+      "duration": 3.92
     },
     {
       "id": 8,
       "text": "She wished she could go home and play in her backyard.",
       "start": 45.52,
-      "duration": 3.54
+      "duration": 4.08
     },
     {
       "id": 9,
       "text": "A big banner over the windows read, \"After School Fun and Games at Kid Central.\" Nina didn't.",
       "start": 49.6,
-      "duration": 7.56
+      "duration": 3.0
     }
   ],
   "fetchedAt": "2026-06-22T02:05:30Z",
   "videoId": "bXtm-iBtsPo",
   "formatted": true,
-  "formattedAt": "2026-07-30T16:06:39.910Z"
+  "formattedAt": "2026-07-30T16:06:39.910Z",
+  "splitAt": "2026-08-03T05:15:00.311647+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

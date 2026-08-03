@@ -1,28 +1,141 @@
 {
-  "text": "Today we talk about our names! Yay! Hello, my name is Omar. Hello, my name is Lena. We are glad you are here. What is your name? My name is Omar. My name is Lena. Do you like your name? Yes, I like my name. Yes, I love my name. Is your name easy? Yes, it is easy. Yes, it is easy to say. Say your names. My name is Omar. My name is Lena. Wonderful. My name is Omar. My name is Lena. Our names are special and we can say them in English. Hi, I'm Omar. And I'm Lena. Bye. See you next time.",
+  "text": "Today we talk about our names! Yay! Hello, my name is Omar. Hello, my name is Lena. We are glad you are here. What is your name? My name is Omar. My name is Lena. Do you like your name? Yes, I like my name. Yes, I love my name. Is your name easy? Yes, it is easy. Yes, it is easy to say. Say your names. My name is Omar. My name is Lena. Wonderful. Our names are special and we can say them in English. Hi, I'm Omar. And I'm Lena. See you next time!",
   "segments": [
-    { "id": 1, "text": "Today we talk about our names! Yay!", "start": 0.4, "duration": 5.12 },
-    { "id": 2, "text": "Hello, my name is Omar.", "start": 8.48, "duration": 6.04 },
-    { "id": 3, "text": "Hello, my name is Lena.", "start": 11.04, "duration": 5.33 },
-    { "id": 4, "text": "We are glad you are here.", "start": 14.52, "duration": 2.04 },
-    { "id": 5, "text": "What is your name?", "start": 16.56, "duration": 7.56 },
-    { "id": 6, "text": "My name is Omar.", "start": 18.2, "duration": 3.0 },
-    { "id": 7, "text": "My name is Lena.", "start": 21.2, "duration": 2.92 },
-    { "id": 8, "text": "Do you like your name?", "start": 24.68, "duration": 5.36 },
-    { "id": 9, "text": "Yes, I like my name.", "start": 26.84, "duration": 2.6 },
-    { "id": 10, "text": "Yes, I love my name.", "start": 29.44, "duration": 3.28 },
-    { "id": 11, "text": "Is your name easy?", "start": 32.72, "duration": 7.8 },
-    { "id": 12, "text": "Yes, it is easy.", "start": 34.64, "duration": 3.0 },
-    { "id": 13, "text": "Yes, it is easy to say.", "start": 37.64, "duration": 3.28 },
-    { "id": 14, "text": "Say your names.", "start": 40.52, "duration": 2.12 },
-    { "id": 15, "text": "My name is Omar.", "start": 42.64, "duration": 3.0 },
-    { "id": 16, "text": "My name is Lena.", "start": 45.64, "duration": 3.2 },
-    { "id": 17, "text": "Wonderful.", "start": 46.56, "duration": 4.4 },
-    { "id": 18, "text": "Our names are special and we can say them in English.", "start": 56.48, "duration": 8.12 },
-    { "id": 19, "text": "Hi, I'm Omar.", "start": 61.2, "duration": 2.0 },
-    { "id": 20, "text": "And I'm Lena.", "start": 63.12, "duration": 2.8 },
-    { "id": 21, "text": "See you next time!", "start": 65.92, "duration": 4.87 }
+    {
+      "id": 1,
+      "text": "Today we talk about our names!",
+      "start": 0.4,
+      "duration": 4.39
+    },
+    {
+      "id": 2,
+      "text": "Yay!",
+      "start": 4.79,
+      "duration": 3.69
+    },
+    {
+      "id": 3,
+      "text": "Hello, my name is Omar.",
+      "start": 8.48,
+      "duration": 2.56
+    },
+    {
+      "id": 4,
+      "text": "Hello, my name is Lena.",
+      "start": 11.04,
+      "duration": 3.48
+    },
+    {
+      "id": 5,
+      "text": "We are glad you are here.",
+      "start": 14.52,
+      "duration": 2.04
+    },
+    {
+      "id": 6,
+      "text": "What is your name?",
+      "start": 16.56,
+      "duration": 1.64
+    },
+    {
+      "id": 7,
+      "text": "My name is Omar.",
+      "start": 18.2,
+      "duration": 3.0
+    },
+    {
+      "id": 8,
+      "text": "My name is Lena.",
+      "start": 21.2,
+      "duration": 3.48
+    },
+    {
+      "id": 9,
+      "text": "Do you like your name?",
+      "start": 24.68,
+      "duration": 2.16
+    },
+    {
+      "id": 10,
+      "text": "Yes, I like my name.",
+      "start": 26.84,
+      "duration": 2.6
+    },
+    {
+      "id": 11,
+      "text": "Yes, I love my name.",
+      "start": 29.44,
+      "duration": 3.28
+    },
+    {
+      "id": 12,
+      "text": "Is your name easy?",
+      "start": 32.72,
+      "duration": 1.92
+    },
+    {
+      "id": 13,
+      "text": "Yes, it is easy.",
+      "start": 34.64,
+      "duration": 3.0
+    },
+    {
+      "id": 14,
+      "text": "Yes, it is easy to say.",
+      "start": 37.64,
+      "duration": 2.88
+    },
+    {
+      "id": 15,
+      "text": "Say your names.",
+      "start": 40.52,
+      "duration": 2.12
+    },
+    {
+      "id": 16,
+      "text": "My name is Omar.",
+      "start": 42.64,
+      "duration": 3.0
+    },
+    {
+      "id": 17,
+      "text": "My name is Lena.",
+      "start": 45.64,
+      "duration": 0.92
+    },
+    {
+      "id": 18,
+      "text": "Wonderful.",
+      "start": 46.56,
+      "duration": 9.92
+    },
+    {
+      "id": 19,
+      "text": "Our names are special and we can say them in English.",
+      "start": 56.48,
+      "duration": 4.72
+    },
+    {
+      "id": 20,
+      "text": "Hi, I'm Omar.",
+      "start": 61.2,
+      "duration": 1.92
+    },
+    {
+      "id": 21,
+      "text": "And I'm Lena.",
+      "start": 63.12,
+      "duration": 2.8
+    },
+    {
+      "id": 22,
+      "text": "See you next time!",
+      "start": 65.92,
+      "duration": 3.0
+    }
   ],
   "videoId": "gUb6RbaasHM",
-  "source": "youtube-transcript-api"
+  "source": "youtube-transcript-api",
+  "splitAt": "2026-08-03T05:15:00.316427+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

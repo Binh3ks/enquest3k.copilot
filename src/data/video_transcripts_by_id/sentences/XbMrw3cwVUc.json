@@ -1,39 +1,232 @@
 {
   "text": "Chirp chirp! I love summer! Chirp cheer! I love singing! Saying grasshopper resting on a tree on a hot summer day. While under the tree, ant was sweating and slaving away. Hey ant! Life is too short to work so hard. Grasshopper said to ant because ant was working all summer long. Listen grasshopper, if you don't prepare for winter now, you're going to starve. Oh, there's plenty of time! Why worry? I'm going to go back to my singing now. In no time, summer went and the freezing winter came. The wind howled and howled, and buckets of snow fell from the winter sky. Oh, I'm so hungry. I'm so cold. What if ant is right? Then I'll starve to death! Grasshopper went to look for food. But instead of finding food, he got lost in the snow. And he could barely move his legs anymore. Luckily, grasshopper found aunt's house. He mustered up enough energy to knock on the door. Please aunt, will you give me some food? Or even just a crumb, please. Don't worry grasshopper, I have plenty of food. Come on in! Grasshopper went inside. He sat next to the fire and ate until he couldn't eat anymore. This is delicious! And I'm really sorry for making fun of you before. That was wrong of me. That's okay. You can help me next year. It was then that grasshopper finally understood why ant had worked so hard in the summer. And he was thankful that he had such a good friend.",
   "segments": [
-    { "id": 1, "text": "Chirp chirp! I love summer!", "start": 18.0, "duration": 5.12 },
-    { "id": 2, "text": "Chirp cheer! I love singing!", "start": 23.12, "duration": 4.8 },
-    { "id": 3, "text": "Saying grasshopper resting on a tree on a hot summer day.", "start": 24.88, "duration": 7.04 },
-    { "id": 4, "text": "While under the tree, ant was sweating and slaving away.", "start": 31.92, "duration": 4.56 },
-    { "id": 5, "text": "Hey ant!", "start": 42.24, "duration": 1.44 },
-    { "id": 6, "text": "Life is too short to work so hard.", "start": 43.68, "duration": 5.2 },
-    { "id": 7, "text": "Grasshopper said to ant because ant was working all summer long.", "start": 48.88, "duration": 8.76 },
-    { "id": 8, "text": "Listen grasshopper, if you don't prepare for winter now, you're going to starve.", "start": 54.64, "duration": 9.42 },
-    { "id": 9, "text": "Oh, there's plenty of time! Why worry?", "start": 64.64, "duration": 4.32 },
-    { "id": 10, "text": "I'm going to go back to my singing now.", "start": 68.96, "duration": 4.88 },
-    { "id": 11, "text": "In no time, summer went and the freezing winter came.", "start": 74.64, "duration": 7.76 },
-    { "id": 12, "text": "The wind howled and howled, and buckets of snow fell from the winter sky.", "start": 79.28, "duration": 8.88 },
-    { "id": 13, "text": "Oh, I'm so hungry.", "start": 88.08, "duration": 3.92 },
-    { "id": 14, "text": "I'm so cold.", "start": 92.0, "duration": 3.92 },
-    { "id": 15, "text": "What if ant is right? Then I'll starve to death!", "start": 96.16, "duration": 10.48 },
-    { "id": 16, "text": "Grasshopper went to look for food.", "start": 101.44, "duration": 3.28 },
-    { "id": 17, "text": "But instead of finding food, he got lost in the snow.", "start": 104.72, "duration": 6.88 },
-    { "id": 18, "text": "And he could barely move his legs anymore.", "start": 109.36, "duration": 7.76 },
-    { "id": 19, "text": "Luckily, grasshopper found aunt's house.", "start": 113.44, "duration": 3.68 },
-    { "id": 20, "text": "He mustered up enough energy to knock on the door.", "start": 117.12, "duration": 6.8 },
-    { "id": 21, "text": "Please aunt, will you give me some food?", "start": 122.08, "duration": 7.44 },
-    { "id": 22, "text": "Or even just a crumb, please.", "start": 126.64, "duration": 5.52 },
-    { "id": 23, "text": "Don't worry grasshopper, I have plenty of food. Come on in!", "start": 132.88, "duration": 6.8 },
-    { "id": 24, "text": "Grasshopper went inside.", "start": 139.76, "duration": 3.36 },
-    { "id": 25, "text": "He sat next to the fire and ate until he couldn't eat anymore.", "start": 143.12, "duration": 3.04 },
-    { "id": 26, "text": "This is delicious!", "start": 146.16, "duration": 2.96 },
-    { "id": 27, "text": "And I'm really sorry for making fun of you before.", "start": 149.12, "duration": 5.56 },
-    { "id": 28, "text": "That was wrong of me. That's okay.", "start": 153.68, "duration": 3.36 },
-    { "id": 29, "text": "You can help me next year.", "start": 157.04, "duration": 5.12 },
-    { "id": 30, "text": "It was then that grasshopper finally understood why ant had worked so hard in the summer.", "start": 162.16, "duration": 9.92 },
-    { "id": 31, "text": "And he was thankful that he had such a good friend.", "start": 169.52, "duration": 5.88 }
+    {
+      "id": 1,
+      "text": "Chirp chirp!",
+      "start": 18.0,
+      "duration": 2.05
+    },
+    {
+      "id": 2,
+      "text": "I love summer!",
+      "start": 20.05,
+      "duration": 3.07
+    },
+    {
+      "id": 3,
+      "text": "Chirp cheer!",
+      "start": 23.12,
+      "duration": 1.92
+    },
+    {
+      "id": 4,
+      "text": "I love singing!",
+      "start": 25.04,
+      "duration": 0.5
+    },
+    {
+      "id": 5,
+      "text": "Saying grasshopper resting on a tree on a hot summer day.",
+      "start": 24.88,
+      "duration": 7.04
+    },
+    {
+      "id": 6,
+      "text": "While under the tree, ant was sweating and slaving away.",
+      "start": 31.92,
+      "duration": 10.32
+    },
+    {
+      "id": 7,
+      "text": "Hey ant!",
+      "start": 42.24,
+      "duration": 1.44
+    },
+    {
+      "id": 8,
+      "text": "Life is too short to work so hard.",
+      "start": 43.68,
+      "duration": 5.2
+    },
+    {
+      "id": 9,
+      "text": "Grasshopper said to ant because ant was working all summer long.",
+      "start": 48.88,
+      "duration": 5.76
+    },
+    {
+      "id": 10,
+      "text": "Listen grasshopper, if you don't prepare for winter now, you're going to starve.",
+      "start": 54.64,
+      "duration": 10.0
+    },
+    {
+      "id": 11,
+      "text": "Oh, there's plenty of time!",
+      "start": 64.64,
+      "duration": 3.09
+    },
+    {
+      "id": 12,
+      "text": "Why worry?",
+      "start": 67.73,
+      "duration": 1.23
+    },
+    {
+      "id": 13,
+      "text": "I'm going to go back to my singing now.",
+      "start": 68.96,
+      "duration": 5.68
+    },
+    {
+      "id": 14,
+      "text": "In no time, summer went and the freezing winter came.",
+      "start": 74.64,
+      "duration": 4.64
+    },
+    {
+      "id": 15,
+      "text": "The wind howled and howled, and buckets of snow fell from the winter sky.",
+      "start": 79.28,
+      "duration": 8.8
+    },
+    {
+      "id": 16,
+      "text": "Oh, I'm so hungry.",
+      "start": 88.08,
+      "duration": 3.92
+    },
+    {
+      "id": 17,
+      "text": "I'm so cold.",
+      "start": 92.0,
+      "duration": 4.16
+    },
+    {
+      "id": 18,
+      "text": "What if ant is right?",
+      "start": 96.16,
+      "duration": 5.24
+    },
+    {
+      "id": 19,
+      "text": "Then I'll starve to death!",
+      "start": 101.4,
+      "duration": 0.5
+    },
+    {
+      "id": 20,
+      "text": "Grasshopper went to look for food.",
+      "start": 101.44,
+      "duration": 3.28
+    },
+    {
+      "id": 21,
+      "text": "But instead of finding food, he got lost in the snow.",
+      "start": 104.72,
+      "duration": 4.64
+    },
+    {
+      "id": 22,
+      "text": "And he could barely move his legs anymore.",
+      "start": 109.36,
+      "duration": 4.08
+    },
+    {
+      "id": 23,
+      "text": "Luckily, grasshopper found aunt's house.",
+      "start": 113.44,
+      "duration": 3.68
+    },
+    {
+      "id": 24,
+      "text": "He mustered up enough energy to knock on the door.",
+      "start": 117.12,
+      "duration": 4.96
+    },
+    {
+      "id": 25,
+      "text": "Please aunt, will you give me some food?",
+      "start": 122.08,
+      "duration": 4.56
+    },
+    {
+      "id": 26,
+      "text": "Or even just a crumb, please.",
+      "start": 126.64,
+      "duration": 6.24
+    },
+    {
+      "id": 27,
+      "text": "Don't worry grasshopper, I have plenty of food.",
+      "start": 132.88,
+      "duration": 4.95
+    },
+    {
+      "id": 28,
+      "text": "Come on in!",
+      "start": 137.83,
+      "duration": 1.93
+    },
+    {
+      "id": 29,
+      "text": "Grasshopper went inside.",
+      "start": 139.76,
+      "duration": 3.36
+    },
+    {
+      "id": 30,
+      "text": "He sat next to the fire and ate until he couldn't eat anymore.",
+      "start": 143.12,
+      "duration": 3.04
+    },
+    {
+      "id": 31,
+      "text": "This is delicious!",
+      "start": 146.16,
+      "duration": 2.96
+    },
+    {
+      "id": 32,
+      "text": "And I'm really sorry for making fun of you before.",
+      "start": 149.12,
+      "duration": 4.56
+    },
+    {
+      "id": 33,
+      "text": "That was wrong of me.",
+      "start": 153.68,
+      "duration": 2.4
+    },
+    {
+      "id": 34,
+      "text": "That's okay.",
+      "start": 156.08,
+      "duration": 0.96
+    },
+    {
+      "id": 35,
+      "text": "You can help me next year.",
+      "start": 157.04,
+      "duration": 5.12
+    },
+    {
+      "id": 36,
+      "text": "It was then that grasshopper finally understood why ant had worked so hard in the summer.",
+      "start": 162.16,
+      "duration": 7.36
+    },
+    {
+      "id": 37,
+      "text": "And he was thankful that he had such a good friend.",
+      "start": 169.52,
+      "duration": 3.0
+    }
   ],
   "videoId": "XbMrw3cwVUc",
   "source": "youtube-transcript-api",
-  "formattedAt": "2026-08-01T18:00:00.000Z"
+  "formattedAt": "2026-08-01T18:00:00.000Z",
+  "splitAt": "2026-08-03T05:15:00.309344+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

@@ -2,618 +2,820 @@
   "text": "Welcome to Intelligent Kids Channel. Hi Anna, how are you today? Hi John, I'm good. Thank you. How about you? I'm great. Thanks. It's such a nice day, isn't it? Yes, it's sunny and warm. Perfect for a walk in the park. Do you come here often? Not really. I usually stay at home. What about you? I come here every weekend. I like walking and watching the ducks. Oh, that sounds fun. I love ducks. Do you feed them? Yes, sometimes, but I only give them bread once in a while. That's nice. Bread isn't always good for ducks, though. Really? What should I give them? Seeds or small pieces of vegetables are better for them. Oh, I didn't know that. Thanks for telling me. No problem. So, what else do you like to do here? I also like reading under the trees. It's so relaxing. That sounds wonderful. I should try that sometime. You should. It's a great way to enjoy the park. Thanks John. Maybe I'll join you next weekend. That would be fun. See you then, Anna. See you, John. So, Anna, do you have any plans for next weekend? Not yet. What about you? I was thinking of coming to the park again. Maybe we can meet here. That's a great idea. What time should we meet? How about 10:00 in the morning? 10:00 a.m. works for me. Should I bring anything? Maybe a book or some snacks. We can read and have a small picnic. A picnic sounds fun. I'll bring some fruit and sandwiches. Perfect. I'll bring juice and a blanket to sit on. Great. Do you think we'll have time to play any games? Sure. Do you like badminton? Yes, I do. I'll bring my racket. Do you have one? Yes, I do. This is going to be so much fun. I'm excited already. I love spending time outdoors. Me, too. And this park is the best place for it. It really is. Okay. So, we'll meet here at 10:00 a.m. next Saturday. Got it. I'll text you to remind you on Friday. Thanks, John. See you next weekend. Hi, John. Good morning. Hi, Anna. Good morning. You're right on time. Of course. It's such a lovely day for a picnic. It really is. Look, I found a nice spot under that big tree. Oh, that's perfect. Let's set everything up. Here's the blanket. I'll spread it out. Great. I brought sandwiches, apples, and some cookies. Yum. I brought orange juice and some cups. Everything looks so good. Thank you for bringing the juice. You're welcome. Let's sit down and enjoy. Okay. Oh, look, there's a squirrel over there. It's so cute. It's probably looking for food. Do squirrels eat fruit? Yes, they do. But, we shouldn't feed wild animals too much. That's true. Let's just watch it from here. Good idea. After we eat, do you want to play badminton? Yes, I've been waiting for that. Did you bring your racket? I sure did. Let's eat first, then we'll start the game. Sounds like a plan. These sandwiches are delicious. Thank you. I made them this morning. You made them? Wow, you're a good cook, John. Thanks, Anna. I enjoy cooking sometimes. That's a great skill to have. I should learn from you. I can teach you. Maybe we can cook together next time. I'd love that. But first, let's win this badminton game. Hi, you think you can beat me? I'll try my best. Let's finish eating and start the match. Oh, okay. Thanks for watching. For watching more educational videos, subscribe Intelligent Kids Channel. Don't forget to like and share the video.",
   "segments": [
     {
+      "id": 1,
+      "text": "Welcome to Intelligent Kids Channel.",
       "start": 2.96,
-      "duration": 7.56,
-      "text": "Welcome to Intelligent Kids Channel."
+      "duration": 4.68
     },
     {
+      "id": 2,
+      "text": "Hi Anna, how are you today?",
       "start": 7.64,
-      "duration": 5.8,
-      "text": "Hi Anna, how are you today?"
+      "duration": 2.88
     },
     {
+      "id": 3,
+      "text": "Hi John, I'm good.",
       "start": 10.52,
-      "duration": 5.28,
-      "text": "Hi John, I'm good. Thank you. How about"
+      "duration": 2.64
     },
     {
-      "start": 13.44,
-      "duration": 2.36,
-      "text": "you?"
+      "id": 4,
+      "text": "Thank you.",
+      "start": 13.16,
+      "duration": 1.32
     },
     {
+      "id": 5,
+      "text": "How about you?",
+      "start": 14.48,
+      "duration": 1.88
+    },
+    {
+      "id": 6,
+      "text": "I'm great.",
       "start": 16.36,
-      "duration": 4.08,
-      "text": "I'm great. Thanks. It's such a nice day,"
+      "duration": 1.02
     },
     {
-      "start": 18.8,
-      "duration": 4.84,
-      "text": "isn't it?"
+      "id": 7,
+      "text": "Thanks.",
+      "start": 17.38,
+      "duration": 0.51
     },
     {
+      "id": 8,
+      "text": "It's such a nice day, isn't it?",
+      "start": 17.89,
+      "duration": 2.55
+    },
+    {
+      "id": 9,
+      "text": "Yes, it's sunny and warm.",
       "start": 20.44,
-      "duration": 6.28,
-      "text": "Yes, it's sunny and warm. Perfect for a"
+      "duration": 3.93
     },
     {
-      "start": 23.64,
-      "duration": 3.08,
-      "text": "walk in the park."
+      "id": 10,
+      "text": "Perfect for a walk in the park.",
+      "start": 24.37,
+      "duration": 2.95
     },
     {
+      "id": 11,
+      "text": "Do you come here often?",
       "start": 27.32,
-      "duration": 5.2,
-      "text": "Do you come here often?"
+      "duration": 2.4
     },
     {
+      "id": 12,
+      "text": "Not really.",
       "start": 29.72,
-      "duration": 5.56,
-      "text": "Not really. I usually stay at home. What"
+      "duration": 1.39
     },
     {
-      "start": 32.52,
-      "duration": 2.76,
-      "text": "about you?"
+      "id": 13,
+      "text": "I usually stay at home.",
+      "start": 31.11,
+      "duration": 3.48
     },
     {
+      "id": 14,
+      "text": "What about you?",
+      "start": 34.59,
+      "duration": 0.85
+    },
+    {
+      "id": 15,
+      "text": "I come here every weekend.",
       "start": 35.44,
-      "duration": 5.16,
-      "text": "I come here every weekend. I like"
+      "duration": 3.69
     },
     {
-      "start": 37.84,
-      "duration": 6.4,
-      "text": "walking and watching the ducks."
+      "id": 16,
+      "text": "I like walking and watching the ducks.",
+      "start": 39.13,
+      "duration": 1.47
     },
     {
+      "id": 17,
+      "text": "Oh, that sounds fun.",
       "start": 40.6,
-      "duration": 6.64,
-      "text": "Oh, that sounds fun. I love ducks. Do"
+      "duration": 3.32
     },
     {
-      "start": 44.24,
-      "duration": 3.0,
-      "text": "you feed them?"
+      "id": 18,
+      "text": "I love ducks.",
+      "start": 43.92,
+      "duration": 2.49
     },
     {
+      "id": 19,
+      "text": "Do you feed them?",
+      "start": 46.41,
+      "duration": 0.99
+    },
+    {
+      "id": 20,
+      "text": "Yes, sometimes, but I only give them bread once in a while.",
       "start": 47.4,
-      "duration": 5.24,
-      "text": "Yes, sometimes, but I only give them"
+      "duration": 5.24
     },
     {
-      "start": 50.08,
-      "duration": 5.56,
-      "text": "bread once in a while."
-    },
-    {
+      "id": 21,
+      "text": "That's nice.",
       "start": 52.64,
-      "duration": 5.72,
-      "text": "That's nice. Bread isn't always good for"
+      "duration": 1.63
     },
     {
-      "start": 55.64,
-      "duration": 5.76,
-      "text": "ducks, though."
+      "id": 22,
+      "text": "Bread isn't always good for ducks, though.",
+      "start": 54.27,
+      "duration": 4.09
     },
     {
+      "id": 23,
+      "text": "Really?",
       "start": 58.36,
-      "duration": 6.24,
-      "text": "Really? What should I give them?"
+      "duration": 1.04
     },
     {
+      "id": 24,
+      "text": "What should I give them?",
+      "start": 59.4,
+      "duration": 2.0
+    },
+    {
+      "id": 25,
+      "text": "Seeds or small pieces of vegetables are better for them.",
       "start": 61.4,
-      "duration": 6.12,
-      "text": "Seeds or small pieces of vegetables are"
+      "duration": 6.36
     },
     {
-      "start": 64.6,
-      "duration": 2.92,
-      "text": "better for them."
-    },
-    {
+      "id": 26,
+      "text": "Oh, I didn't know that.",
       "start": 67.76,
-      "duration": 4.24,
-      "text": "Oh, I didn't know that. Thanks for"
+      "duration": 3.03
     },
     {
-      "start": 70.36,
-      "duration": 3.72,
-      "text": "telling me."
+      "id": 27,
+      "text": "Thanks for telling me.",
+      "start": 70.79,
+      "duration": 1.21
     },
     {
+      "id": 28,
+      "text": "No problem.",
       "start": 72.0,
-      "duration": 5.76,
-      "text": "No problem. So,"
+      "duration": 3.84
     },
     {
-      "start": 74.08,
-      "duration": 6.08,
-      "text": "what else do you like to do here?"
+      "id": 29,
+      "text": "So, what else do you like to do here?",
+      "start": 75.84,
+      "duration": 1.92
     },
     {
+      "id": 30,
+      "text": "I also like reading under the trees.",
       "start": 77.76,
-      "duration": 4.84,
-      "text": "I also like reading under the trees."
+      "duration": 2.4
     },
     {
+      "id": 31,
+      "text": "It's so relaxing.",
       "start": 80.16,
-      "duration": 4.88,
-      "text": "It's so relaxing."
+      "duration": 2.44
     },
     {
+      "id": 32,
+      "text": "That sounds wonderful.",
       "start": 82.6,
-      "duration": 5.08,
-      "text": "That sounds wonderful. I should try that"
+      "duration": 2.18
     },
     {
-      "start": 85.04,
-      "duration": 2.64,
-      "text": "sometime."
+      "id": 33,
+      "text": "I should try that sometime.",
+      "start": 84.78,
+      "duration": 3.3
     },
     {
+      "id": 34,
+      "text": "You should.",
       "start": 88.08,
-      "duration": 3.88,
-      "text": "You should. It's a great way to enjoy"
+      "duration": 0.97
     },
     {
-      "start": 90.48,
-      "duration": 3.64,
-      "text": "the park."
+      "id": 35,
+      "text": "It's a great way to enjoy the park.",
+      "start": 89.05,
+      "duration": 2.91
     },
     {
+      "id": 36,
+      "text": "Thanks John.",
       "start": 91.96,
-      "duration": 5.68,
-      "text": "Thanks John. Maybe"
+      "duration": 3.79
     },
     {
-      "start": 94.12,
-      "duration": 3.52,
-      "text": "I'll join you next weekend."
+      "id": 37,
+      "text": "Maybe I'll join you next weekend.",
+      "start": 95.75,
+      "duration": 1.97
     },
     {
+      "id": 38,
+      "text": "That would be fun.",
       "start": 97.72,
-      "duration": 6.44,
-      "text": "That would be fun. See you then, Anna."
+      "duration": 3.22
     },
     {
+      "id": 39,
+      "text": "See you then, Anna.",
+      "start": 100.94,
+      "duration": 0.5
+    },
+    {
+      "id": 40,
+      "text": "See you, John.",
       "start": 101.12,
-      "duration": 3.04,
-      "text": "See you, John."
+      "duration": 3.08
     },
     {
+      "id": 41,
+      "text": "So, Anna, do you have any plans for next weekend?",
       "start": 104.2,
-      "duration": 4.88,
-      "text": "So, Anna, do you have any plans for next"
+      "duration": 4.88
     },
     {
-      "start": 107.48,
-      "duration": 5.48,
-      "text": "weekend?"
-    },
-    {
+      "id": 42,
+      "text": "Not yet.",
       "start": 109.08,
-      "duration": 3.88,
-      "text": "Not yet. What about you?"
+      "duration": 1.55
     },
     {
+      "id": 43,
+      "text": "What about you?",
+      "start": 110.63,
+      "duration": 2.57
+    },
+    {
+      "id": 44,
+      "text": "I was thinking of coming to the park again.",
       "start": 113.2,
-      "duration": 5.2,
-      "text": "I was thinking of coming to the park"
+      "duration": 2.94
     },
     {
-      "start": 115.08,
-      "duration": 6.36,
-      "text": "again. Maybe we can meet here."
+      "id": 45,
+      "text": "Maybe we can meet here.",
+      "start": 116.14,
+      "duration": 2.26
     },
     {
+      "id": 46,
+      "text": "That's a great idea.",
       "start": 118.4,
-      "duration": 5.6,
-      "text": "That's a great idea. What time should we"
+      "duration": 2.8
     },
     {
-      "start": 121.44,
-      "duration": 2.56,
-      "text": "meet?"
+      "id": 47,
+      "text": "What time should we meet?",
+      "start": 121.2,
+      "duration": 3.12
     },
     {
+      "id": 48,
+      "text": "How about 10:00 in the morning?",
       "start": 124.32,
-      "duration": 5.16,
-      "text": "How about 10:00 in the morning?"
+      "duration": 2.56
     },
     {
+      "id": 49,
+      "text": "10:00 a.m.",
       "start": 126.88,
-      "duration": 5.24,
-      "text": "10:00 a.m. works for me. Should I bring"
+      "duration": 1.31
     },
     {
-      "start": 129.48,
-      "duration": 2.64,
-      "text": "anything?"
+      "id": 50,
+      "text": "works for me.",
+      "start": 128.19,
+      "duration": 1.97
     },
     {
+      "id": 51,
+      "text": "Should I bring anything?",
+      "start": 130.16,
+      "duration": 2.28
+    },
+    {
+      "id": 52,
+      "text": "Maybe a book or some snacks.",
       "start": 132.44,
-      "duration": 4.92,
-      "text": "Maybe a book or some snacks. We can read"
+      "duration": 3.28
     },
     {
-      "start": 135.04,
-      "duration": 4.44,
-      "text": "and have a small picnic."
+      "id": 53,
+      "text": "We can read and have a small picnic.",
+      "start": 135.72,
+      "duration": 1.64
     },
     {
+      "id": 54,
+      "text": "A picnic sounds fun.",
       "start": 137.36,
-      "duration": 5.4,
-      "text": "A picnic sounds fun. I'll bring some"
+      "duration": 3.09
     },
     {
-      "start": 139.48,
-      "duration": 3.28,
-      "text": "fruit and sandwiches."
+      "id": 55,
+      "text": "I'll bring some fruit and sandwiches.",
+      "start": 140.45,
+      "duration": 2.47
     },
     {
+      "id": 56,
+      "text": "Perfect.",
       "start": 142.92,
-      "duration": 4.4,
-      "text": "Perfect. I'll bring juice and a blanket"
+      "duration": 0.63
     },
     {
-      "start": 145.64,
-      "duration": 4.0,
-      "text": "to sit on."
+      "id": 57,
+      "text": "I'll bring juice and a blanket to sit on.",
+      "start": 143.55,
+      "duration": 3.77
     },
     {
+      "id": 58,
+      "text": "Great.",
       "start": 147.32,
-      "duration": 5.4,
-      "text": "Great. Do you think we'll have time to"
+      "duration": 0.68
     },
     {
-      "start": 149.64,
-      "duration": 3.08,
-      "text": "play any games?"
+      "id": 59,
+      "text": "Do you think we'll have time to play any games?",
+      "start": 148.0,
+      "duration": 5.04
     },
     {
+      "id": 60,
+      "text": "Sure.",
       "start": 153.04,
-      "duration": 3.96,
-      "text": "Sure. Do you like badminton?"
+      "duration": 0.79
     },
     {
+      "id": 61,
+      "text": "Do you like badminton?",
+      "start": 153.83,
+      "duration": 2.05
+    },
+    {
+      "id": 62,
+      "text": "Yes, I do.",
       "start": 155.88,
-      "duration": 3.84,
-      "text": "Yes,"
+      "duration": 2.25
     },
     {
-      "start": 157.0,
-      "duration": 5.08,
-      "text": "I do. I'll bring my racket. Do you have"
+      "id": 63,
+      "text": "I'll bring my racket.",
+      "start": 158.13,
+      "duration": 2.26
     },
     {
-      "start": 159.72,
-      "duration": 2.36,
-      "text": "one?"
+      "id": 64,
+      "text": "Do you have one?",
+      "start": 160.39,
+      "duration": 2.09
     },
     {
+      "id": 65,
+      "text": "Yes, I do.",
       "start": 162.48,
-      "duration": 4.28,
-      "text": "Yes, I do. This is going to be so much"
+      "duration": 1.28
     },
     {
-      "start": 165.48,
-      "duration": 3.6,
-      "text": "fun."
+      "id": 66,
+      "text": "This is going to be so much fun.",
+      "start": 163.76,
+      "duration": 3.0
     },
     {
+      "id": 67,
+      "text": "I'm excited already.",
       "start": 166.76,
-      "duration": 5.36,
-      "text": "I'm excited already. I love spending"
+      "duration": 2.68
     },
     {
-      "start": 169.08,
-      "duration": 3.04,
-      "text": "time outdoors."
+      "id": 68,
+      "text": "I love spending time outdoors.",
+      "start": 169.44,
+      "duration": 2.76
     },
     {
+      "id": 69,
+      "text": "Me, too.",
       "start": 172.2,
-      "duration": 4.56,
-      "text": "Me, too."
+      "duration": 1.12
     },
     {
+      "id": 70,
+      "text": "And this park is the best place for it.",
       "start": 173.32,
-      "duration": 6.36,
-      "text": "And this park is the best place for it."
+      "duration": 3.44
     },
     {
+      "id": 71,
+      "text": "It really is.",
       "start": 176.76,
-      "duration": 6.44,
-      "text": "It really is. Okay. So, we'll meet here"
+      "duration": 2.41
     },
     {
-      "start": 179.68,
-      "duration": 3.52,
-      "text": "at 10:00 a.m. next Saturday."
+      "id": 72,
+      "text": "Okay.",
+      "start": 179.17,
+      "duration": 0.81
     },
     {
+      "id": 73,
+      "text": "So, we'll meet here at 10:00 a.m.",
+      "start": 179.98,
+      "duration": 1.81
+    },
+    {
+      "id": 74,
+      "text": "next Saturday.",
+      "start": 181.79,
+      "duration": 1.65
+    },
+    {
+      "id": 75,
+      "text": "Got it.",
       "start": 183.44,
-      "duration": 4.24,
-      "text": "Got it. I'll text you to remind you on"
+      "duration": 0.94
     },
     {
-      "start": 186.08,
-      "duration": 5.68,
-      "text": "Friday."
+      "id": 76,
+      "text": "I'll text you to remind you on Friday.",
+      "start": 184.38,
+      "duration": 3.3
     },
     {
+      "id": 77,
+      "text": "Thanks, John.",
       "start": 187.68,
-      "duration": 7.12,
-      "text": "Thanks, John. See you next weekend."
+      "duration": 2.37
     },
     {
+      "id": 78,
+      "text": "See you next weekend.",
+      "start": 190.05,
+      "duration": 1.71
+    },
+    {
+      "id": 79,
+      "text": "Hi, John.",
       "start": 191.76,
-      "duration": 5.68,
-      "text": "Hi, John. Good morning."
+      "duration": 2.84
     },
     {
+      "id": 80,
+      "text": "Good morning.",
+      "start": 194.6,
+      "duration": 0.5
+    },
+    {
+      "id": 81,
+      "text": "Hi, Anna.",
       "start": 194.8,
-      "duration": 4.92,
-      "text": "Hi, Anna. Good morning. You're right on"
+      "duration": 1.41
     },
     {
-      "start": 197.44,
-      "duration": 4.88,
-      "text": "time."
+      "id": 82,
+      "text": "Good morning.",
+      "start": 196.21,
+      "duration": 1.41
     },
     {
+      "id": 83,
+      "text": "You're right on time.",
+      "start": 197.61,
+      "duration": 2.11
+    },
+    {
+      "id": 84,
+      "text": "Of course.",
       "start": 199.72,
-      "duration": 4.48,
-      "text": "Of course. It's such a lovely day for a"
+      "duration": 1.0
     },
     {
-      "start": 202.32,
-      "duration": 4.76,
-      "text": "picnic."
+      "id": 85,
+      "text": "It's such a lovely day for a picnic.",
+      "start": 200.72,
+      "duration": 3.48
     },
     {
+      "id": 86,
+      "text": "It really is.",
       "start": 204.2,
-      "duration": 5.8,
-      "text": "It really is. Look, I found a nice spot"
+      "duration": 1.93
     },
     {
-      "start": 207.08,
-      "duration": 5.68,
-      "text": "under that big tree."
+      "id": 87,
+      "text": "Look, I found a nice spot under that big tree.",
+      "start": 206.13,
+      "duration": 3.87
     },
     {
+      "id": 88,
+      "text": "Oh, that's perfect.",
       "start": 210.0,
-      "duration": 4.28,
-      "text": "Oh, that's perfect. Let's set everything"
+      "duration": 2.14
     },
     {
-      "start": 212.76,
-      "duration": 5.4,
-      "text": "up."
+      "id": 89,
+      "text": "Let's set everything up.",
+      "start": 212.14,
+      "duration": 2.14
     },
     {
+      "id": 90,
+      "text": "Here's the blanket.",
       "start": 214.28,
-      "duration": 6.32,
-      "text": "Here's the blanket. I'll spread it out."
+      "duration": 2.71
     },
     {
+      "id": 91,
+      "text": "I'll spread it out.",
+      "start": 216.99,
+      "duration": 1.17
+    },
+    {
+      "id": 92,
+      "text": "Great.",
       "start": 218.16,
-      "duration": 4.52,
-      "text": "Great. I brought sandwiches, apples, and"
+      "duration": 0.75
     },
     {
-      "start": 220.6,
-      "duration": 4.76,
-      "text": "some cookies."
+      "id": 93,
+      "text": "I brought sandwiches, apples, and some cookies.",
+      "start": 218.91,
+      "duration": 3.77
     },
     {
+      "id": 94,
+      "text": "Yum.",
       "start": 222.68,
-      "duration": 5.0,
-      "text": "Yum. I brought orange juice and some"
+      "duration": 0.71
     },
     {
-      "start": 225.36,
-      "duration": 4.44,
-      "text": "cups."
+      "id": 95,
+      "text": "I brought orange juice and some cups.",
+      "start": 223.39,
+      "duration": 4.29
     },
     {
+      "id": 96,
+      "text": "Everything looks so good.",
       "start": 227.68,
-      "duration": 4.4,
-      "text": "Everything looks so good. Thank you for"
+      "duration": 2.51
     },
     {
-      "start": 229.8,
-      "duration": 4.36,
-      "text": "bringing the juice."
+      "id": 97,
+      "text": "Thank you for bringing the juice.",
+      "start": 230.19,
+      "duration": 1.89
     },
     {
+      "id": 98,
+      "text": "You're welcome.",
       "start": 232.08,
-      "duration": 4.36,
-      "text": "You're welcome. Let's sit down and"
+      "duration": 1.45
     },
     {
-      "start": 234.16,
-      "duration": 5.52,
-      "text": "enjoy."
+      "id": 99,
+      "text": "Let's sit down and enjoy.",
+      "start": 233.53,
+      "duration": 2.91
     },
     {
+      "id": 100,
+      "text": "Okay.",
       "start": 236.44,
-      "duration": 4.84,
-      "text": "Okay. Oh, look, there's a squirrel over"
+      "duration": 0.69
     },
     {
-      "start": 239.68,
-      "duration": 4.28,
-      "text": "there."
+      "id": 101,
+      "text": "Oh, look, there's a squirrel over there.",
+      "start": 237.13,
+      "duration": 4.15
     },
     {
+      "id": 102,
+      "text": "It's so cute.",
       "start": 241.28,
-      "duration": 5.12,
-      "text": "It's so cute. It's probably looking for"
+      "duration": 2.19
     },
     {
-      "start": 243.96,
-      "duration": 5.28,
-      "text": "food."
+      "id": 103,
+      "text": "It's probably looking for food.",
+      "start": 243.47,
+      "duration": 2.93
     },
     {
+      "id": 104,
+      "text": "Do squirrels eat fruit?",
       "start": 246.4,
-      "duration": 5.44,
-      "text": "Do squirrels eat fruit?"
+      "duration": 2.84
     },
     {
+      "id": 105,
+      "text": "Yes, they do.",
       "start": 249.24,
-      "duration": 6.4,
-      "text": "Yes, they do. But, we shouldn't feed"
+      "duration": 2.74
     },
     {
-      "start": 251.84,
-      "duration": 3.8,
-      "text": "wild animals too much."
+      "id": 106,
+      "text": "But, we shouldn't feed wild animals too much.",
+      "start": 251.98,
+      "duration": 3.74
     },
     {
+      "id": 107,
+      "text": "That's true.",
       "start": 255.72,
-      "duration": 3.76,
-      "text": "That's true. Let's just watch it from"
+      "duration": 1.07
     },
     {
-      "start": 257.76,
-      "duration": 4.08,
-      "text": "here."
+      "id": 108,
+      "text": "Let's just watch it from here.",
+      "start": 256.79,
+      "duration": 2.69
     },
     {
+      "id": 109,
+      "text": "Good idea.",
       "start": 259.48,
-      "duration": 5.28,
-      "text": "Good idea. After we eat, do you want to"
+      "duration": 1.17
     },
     {
-      "start": 261.84,
-      "duration": 2.92,
-      "text": "play badminton?"
+      "id": 110,
+      "text": "After we eat, do you want to play badminton?",
+      "start": 260.65,
+      "duration": 4.15
     },
     {
+      "id": 111,
+      "text": "Yes, I've been waiting for that.",
       "start": 264.8,
-      "duration": 4.6,
-      "text": "Yes, I've been waiting for that. Did you"
+      "duration": 3.45
     },
     {
-      "start": 267.08,
-      "duration": 4.96,
-      "text": "bring your racket?"
+      "id": 112,
+      "text": "Did you bring your racket?",
+      "start": 268.25,
+      "duration": 1.15
     },
     {
+      "id": 113,
+      "text": "I sure did.",
       "start": 269.4,
-      "duration": 5.32,
-      "text": "I sure did. Let's eat first, then we'll"
+      "duration": 2.0
     },
     {
-      "start": 272.04,
-      "duration": 5.16,
-      "text": "start the game."
+      "id": 114,
+      "text": "Let's eat first, then we'll start the game.",
+      "start": 271.39,
+      "duration": 3.33
     },
     {
+      "id": 115,
+      "text": "Sounds like a plan.",
       "start": 274.72,
-      "duration": 4.68,
-      "text": "Sounds like a plan. These sandwiches are"
+      "duration": 2.67
     },
     {
-      "start": 277.2,
-      "duration": 6.04,
-      "text": "delicious."
+      "id": 116,
+      "text": "These sandwiches are delicious.",
+      "start": 277.39,
+      "duration": 2.01
     },
     {
+      "id": 117,
+      "text": "Thank you.",
       "start": 279.4,
-      "duration": 6.52,
-      "text": "Thank you. I made them this morning."
+      "duration": 1.86
     },
     {
+      "id": 118,
+      "text": "I made them this morning.",
+      "start": 281.26,
+      "duration": 1.98
+    },
+    {
+      "id": 119,
+      "text": "You made them?",
       "start": 283.24,
-      "duration": 4.44,
-      "text": "You made them? Wow, you're a good cook,"
+      "duration": 1.67
     },
     {
-      "start": 285.92,
-      "duration": 7.24,
-      "text": "John."
+      "id": 120,
+      "text": "Wow, you're a good cook, John.",
+      "start": 284.91,
+      "duration": 2.77
     },
     {
+      "id": 121,
+      "text": "Thanks, Anna.",
       "start": 287.68,
-      "duration": 7.6,
-      "text": "Thanks, Anna. I enjoy cooking sometimes."
+      "duration": 2.53
     },
     {
+      "id": 122,
+      "text": "I enjoy cooking sometimes.",
+      "start": 290.21,
+      "duration": 2.95
+    },
+    {
+      "id": 123,
+      "text": "That's a great skill to have.",
       "start": 293.16,
-      "duration": 4.4,
-      "text": "That's a great skill to have. I should"
+      "duration": 3.3
     },
     {
-      "start": 295.28,
-      "duration": 4.48,
-      "text": "learn from you."
+      "id": 124,
+      "text": "I should learn from you.",
+      "start": 296.46,
+      "duration": 1.1
     },
     {
+      "id": 125,
+      "text": "I can teach you.",
       "start": 297.56,
-      "duration": 5.24,
-      "text": "I can teach you. Maybe we can cook"
+      "duration": 2.62
     },
     {
-      "start": 299.76,
-      "duration": 6.04,
-      "text": "together next time."
+      "id": 126,
+      "text": "Maybe we can cook together next time.",
+      "start": 300.18,
+      "duration": 2.62
     },
     {
+      "id": 127,
+      "text": "I'd love that.",
       "start": 302.8,
-      "duration": 5.44,
-      "text": "I'd love that. But first, let's win this"
+      "duration": 2.04
     },
     {
-      "start": 305.8,
-      "duration": 5.84,
-      "text": "badminton game."
+      "id": 128,
+      "text": "But first, let's win this badminton game.",
+      "start": 304.84,
+      "duration": 3.4
     },
     {
+      "id": 129,
+      "text": "Hi, you think you can beat me?",
       "start": 308.24,
-      "duration": 5.72,
-      "text": "Hi, you think you can beat me?"
+      "duration": 3.4
     },
     {
+      "id": 130,
+      "text": "I'll try my best.",
       "start": 311.64,
-      "duration": 4.6,
-      "text": "I'll try my best. Let's finish eating"
+      "duration": 2.63
     },
     {
-      "start": 313.96,
-      "duration": 5.08,
-      "text": "and start the match."
+      "id": 131,
+      "text": "Let's finish eating and start the match.",
+      "start": 314.27,
+      "duration": 1.97
     },
     {
+      "id": 132,
+      "text": "Oh, okay.",
       "start": 316.24,
-      "duration": 4.8,
-      "text": "Oh, okay."
+      "duration": 2.8
     },
     {
+      "id": 133,
+      "text": "Thanks for watching.",
       "start": 319.04,
-      "duration": 4.2,
-      "text": "Thanks for watching. For watching more"
+      "duration": 2.1
     },
     {
-      "start": 321.04,
-      "duration": 4.48,
-      "text": "educational videos, subscribe"
+      "id": 134,
+      "text": "For watching more educational videos, subscribe Intelligent Kids Channel.",
+      "start": 321.14,
+      "duration": 5.82
     },
     {
-      "start": 323.24,
-      "duration": 6.2,
-      "text": "Intelligent Kids Channel. Don't forget"
-    },
-    {
-      "start": 325.52,
-      "duration": 3.92,
-      "text": "to like and share the video."
+      "id": 135,
+      "text": "Don't forget to like and share the video.",
+      "start": 326.96,
+      "duration": 3.0
     }
   ],
   "videoId": "curo8LPPA5Y",
   "source": "youtube-transcript-api",
   "fetchedAt": "2026-08-03T04:59:14.713960+00:00",
-  "rawCaptionCount": 122
+  "rawCaptionCount": 122,
+  "splitAt": "2026-08-03T05:15:00.312759+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

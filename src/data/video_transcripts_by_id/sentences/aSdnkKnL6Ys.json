@@ -2,308 +2,184 @@
   "text": "Once upon a time, there was a palace in a beautiful country. palace palace There lived a very handsome king. king king And a beautiful queen. queen queen They had a pretty princess. princess princess One day, the witch took the princess. witch witch With her magic, the princess was trapped in the dark forest. magic magic Many knights tried to save the princess. knight knight But, they failed because the forest was guarded by a scary monster. monster monster The king and queen were so sad. One day, a prince from a neighboring country came to save her. prince prince \"I'll save the princess!\", said the prince. Suddenly, a fairy showed up. fairy fairy \"With this dragon, you'll be able to save the princess!\" dragon dragon \"Oh, thanks!\" The prince could beat the scary monster. \"Thank you. My hero!\" \"You’re welcome.\" hero hero The prince and princess got married and lived happily ever after. Once upon a time, there was a palace in a beautiful country. There lived a very handsome king, and a beautiful queen. They had a pretty princess. One day, the witch took the princess. With her magic, the princess was trapped in the dark forest. Many knights tried to save the princess. But, they failed because the forest was guarded by a scary monster. The king and queen were so sad. One day, a prince from a neighboring country came to save her. \"I'll save the princess!\", said the prince. Suddenly, a fairy showed up. \"With this dragon, you'll be able to save the princess!\" \"Oh, thanks!\" The prince could beat the scary monster. \"Thank you. My hero!\" \"You're welcome.\" The prince and princess got married and lived happily ever after.",
   "segments": [
     {
+      "id": 1,
+      "text": "Once upon a time, there was a palace in a beautiful country.",
       "start": 12.12,
-      "duration": 1.58,
-      "text": "Once upon a time,"
+      "duration": 7.32
     },
     {
-      "start": 14.0,
-      "duration": 3.24,
-      "text": "there was a palace in a beautiful country."
-    },
-    {
+      "id": 2,
+      "text": "palace palace There lived a very handsome king.",
       "start": 19.44,
-      "duration": 1.04,
-      "text": "palace"
+      "duration": 13.56
     },
     {
-      "start": 23.24,
-      "duration": 1.28,
-      "text": "palace"
-    },
-    {
-      "start": 28.5,
-      "duration": 2.78,
-      "text": "There lived a very handsome king."
-    },
-    {
+      "id": 3,
+      "text": "king king And a beautiful queen.",
       "start": 33.0,
-      "duration": 1.04,
-      "text": "king"
+      "duration": 10.36
     },
     {
-      "start": 36.14,
-      "duration": 1.08,
-      "text": "king"
-    },
-    {
-      "start": 39.66,
-      "duration": 2.08,
-      "text": "And a beautiful queen."
-    },
-    {
+      "id": 4,
+      "text": "queen queen They had a pretty princess.",
       "start": 43.36,
-      "duration": 1.12,
-      "text": "queen"
+      "duration": 9.36
     },
     {
-      "start": 46.32,
-      "duration": 1.18,
-      "text": "queen"
-    },
-    {
-      "start": 48.96,
-      "duration": 2.46,
-      "text": "They had a pretty princess."
-    },
-    {
+      "id": 5,
+      "text": "princess princess One day, the witch took the princess.",
       "start": 52.72,
-      "duration": 1.22,
-      "text": "princess"
+      "duration": 13.46
     },
     {
-      "start": 55.88,
-      "duration": 1.32,
-      "text": "princess"
-    },
-    {
-      "start": 60.2,
-      "duration": 3.48,
-      "text": "One day, the witch took the princess."
-    },
-    {
+      "id": 6,
+      "text": "witch witch With her magic, the princess was trapped in the dark forest.",
       "start": 66.18,
-      "duration": 1.38,
-      "text": "witch"
+      "duration": 14.54
     },
     {
-      "start": 69.62,
-      "duration": 1.32,
-      "text": "witch"
-    },
-    {
-      "start": 73.04,
-      "duration": 4.88,
-      "text": "With her magic, the princess was trapped in the dark forest."
-    },
-    {
+      "id": 7,
+      "text": "magic magic Many knights tried to save the princess.",
       "start": 80.72,
-      "duration": 1.2,
-      "text": "magic"
+      "duration": 13.04
     },
     {
-      "start": 84.4,
-      "duration": 1.34,
-      "text": "magic"
-    },
-    {
-      "start": 87.74,
-      "duration": 3.66,
-      "text": "Many knights tried to save the princess."
-    },
-    {
+      "id": 8,
+      "text": "knight knight But, they failed because the forest was guarded by a scary monster.",
       "start": 93.76,
-      "duration": 1.1,
-      "text": "knight"
+      "duration": 15.32
     },
     {
-      "start": 97.0,
-      "duration": 1.12,
-      "text": "knight"
-    },
-    {
-      "start": 101.16,
-      "duration": 5.56,
-      "text": "But, they failed because the forest was guarded by a scary monster."
-    },
-    {
+      "id": 9,
+      "text": "monster monster The king and queen were so sad.",
       "start": 109.08,
-      "duration": 1.24,
-      "text": "monster"
+      "duration": 14.32
     },
     {
-      "start": 114.84,
-      "duration": 1.34,
-      "text": "monster"
-    },
-    {
-      "start": 118.42,
-      "duration": 2.86,
-      "text": "The king and queen were so sad."
-    },
-    {
+      "id": 10,
+      "text": "One day, a prince from a neighboring country came to save her.",
       "start": 123.4,
-      "duration": 5.02,
-      "text": "One day, a prince from a neighboring country came to save her."
+      "duration": 6.28
     },
     {
+      "id": 11,
+      "text": "prince prince \"I'll save the princess!\", said the prince.",
       "start": 129.68,
-      "duration": 0.98,
-      "text": "prince"
+      "duration": 10.3
     },
     {
-      "start": 133.18,
-      "duration": 1.04,
-      "text": "prince"
-    },
-    {
-      "start": 136.24,
-      "duration": 3.64,
-      "text": "\"I'll save the princess!\", said the prince."
-    },
-    {
+      "id": 12,
+      "text": "Suddenly, a fairy showed up.",
       "start": 139.98,
-      "duration": 2.96,
-      "text": "Suddenly, a fairy showed up."
+      "duration": 3.86
     },
     {
+      "id": 13,
+      "text": "fairy fairy \"With this dragon, you'll be able to save the princess!\" dragon dragon \"Oh, thanks!\" The prince could beat the scary monster.",
       "start": 143.84,
-      "duration": 1.24,
-      "text": "fairy"
+      "duration": 37.72
     },
     {
-      "start": 147.04,
-      "duration": 1.18,
-      "text": "fairy"
-    },
-    {
-      "start": 150.14,
-      "duration": 4.72,
-      "text": "\"With this dragon, you'll be able to save the princess!\""
-    },
-    {
-      "start": 157.02,
-      "duration": 1.22,
-      "text": "dragon"
-    },
-    {
-      "start": 160.56,
-      "duration": 1.12,
-      "text": "dragon"
-    },
-    {
-      "start": 164.08,
-      "duration": 1.72,
-      "text": "\"Oh, thanks!\""
-    },
-    {
-      "start": 170.62,
-      "duration": 3.44,
-      "text": "The prince could beat the scary monster."
-    },
-    {
+      "id": 14,
+      "text": "\"Thank you.",
       "start": 181.56,
-      "duration": 2.18,
-      "text": "\"Thank you. My hero!\""
+      "duration": 1.09
     },
     {
-      "start": 185.34,
-      "duration": 1.52,
-      "text": "\"You’re welcome.\""
+      "id": 15,
+      "text": "My hero!\" \"You’re welcome.\" hero hero The prince and princess got married and lived happily ever after.",
+      "start": 182.65,
+      "duration": 77.93
     },
     {
-      "start": 189.84,
-      "duration": 1.12,
-      "text": "hero"
-    },
-    {
-      "start": 192.78,
-      "duration": 1.02,
-      "text": "hero"
-    },
-    {
-      "start": 198.12,
-      "duration": 5.1,
-      "text": "The prince and princess got married and lived happily ever after."
-    },
-    {
+      "id": 16,
+      "text": "Once upon a time, there was a palace in a beautiful country.",
       "start": 260.58,
-      "duration": 5.46,
-      "text": "Once upon a time, there was a palace in a beautiful country."
+      "duration": 7.22
     },
     {
+      "id": 17,
+      "text": "There lived a very handsome king, and a beautiful queen.",
       "start": 267.8,
-      "duration": 4.46,
-      "text": "There lived a very handsome king, and a beautiful queen."
+      "duration": 5.78
     },
     {
+      "id": 18,
+      "text": "They had a pretty princess.",
       "start": 273.58,
-      "duration": 2.34,
-      "text": "They had a pretty princess."
+      "duration": 5.18
     },
     {
+      "id": 19,
+      "text": "One day, the witch took the princess.",
       "start": 278.76,
-      "duration": 3.72,
-      "text": "One day, the witch took the princess."
+      "duration": 6.1
     },
     {
+      "id": 20,
+      "text": "With her magic, the princess was trapped in the dark forest.",
       "start": 284.86,
-      "duration": 4.62,
-      "text": "With her magic, the princess was trapped in the dark forest."
+      "duration": 7.28
     },
     {
+      "id": 21,
+      "text": "Many knights tried to save the princess.",
       "start": 292.14,
-      "duration": 3.54,
-      "text": "Many knights tried to save the princess."
+      "duration": 5.1
     },
     {
+      "id": 22,
+      "text": "But, they failed because the forest was guarded by a scary monster.",
       "start": 297.24,
-      "duration": 5.98,
-      "text": "But, they failed because the forest was guarded by a scary monster."
+      "duration": 9.74
     },
     {
+      "id": 23,
+      "text": "The king and queen were so sad.",
       "start": 306.98,
-      "duration": 2.88,
-      "text": "The king and queen were so sad."
+      "duration": 6.22
     },
     {
+      "id": 24,
+      "text": "One day, a prince from a neighboring country came to save her.",
       "start": 313.2,
-      "duration": 5.08,
-      "text": "One day, a prince from a neighboring country came to save her."
+      "duration": 6.8
     },
     {
+      "id": 25,
+      "text": "\"I'll save the princess!\", said the prince.",
       "start": 320.0,
-      "duration": 3.52,
-      "text": "\"I'll save the princess!\", said the prince."
+      "duration": 5.9
     },
     {
+      "id": 26,
+      "text": "Suddenly, a fairy showed up.",
       "start": 325.9,
-      "duration": 2.58,
-      "text": "Suddenly, a fairy showed up."
+      "duration": 7.04
     },
     {
+      "id": 27,
+      "text": "\"With this dragon, you'll be able to save the princess!\" \"Oh, thanks!\" The prince could beat the scary monster.",
       "start": 332.94,
-      "duration": 4.44,
-      "text": "\"With this dragon, you'll be able to save the princess!\""
+      "duration": 23.5
     },
     {
-      "start": 338.82,
-      "duration": 2.2,
-      "text": "\"Oh, thanks!\""
-    },
-    {
-      "start": 344.22,
-      "duration": 3.24,
-      "text": "The prince could beat the scary monster."
-    },
-    {
+      "id": 28,
+      "text": "\"Thank you.",
       "start": 356.44,
-      "duration": 2.24,
-      "text": "\"Thank you. My hero!\""
+      "duration": 1.12
     },
     {
-      "start": 360.36,
-      "duration": 1.36,
-      "text": "\"You're welcome.\""
-    },
-    {
-      "start": 364.66,
-      "duration": 5.4,
-      "text": "The prince and princess got married and lived happily ever after."
+      "id": 29,
+      "text": "My hero!\" \"You're welcome.\" The prince and princess got married and lived happily ever after.",
+      "start": 357.56,
+      "duration": 3.0
     }
   ],
   "videoId": "aSdnkKnL6Ys",
   "source": "youtube-transcript-api",
   "fetchedAt": "2026-08-03T04:59:12.438099+00:00",
-  "rawCaptionCount": 60
+  "rawCaptionCount": 60,
+  "splitAt": "2026-08-03T05:15:00.311147+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

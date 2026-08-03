@@ -1,23 +1,23 @@
 {
-  "text": "English sing sing. Theme 13, how many? Dialogue. Wow. The zoo. How many bears? One, two, two bears. No. That's a baby bear. How many bears? Three bears. Look. Tigers. How many tigers? One, two, three, four, five. Five tigers. Six six tigers It's a lion. On Wiki Song. Look, apples, how many apples? One apple, two apples, three apples. Three apples, wow! Look, bananas, how many bananas? One banana, two bananas, three bananas, three bananas, wow! Look, oranges, how many oranges? One orange, two oranges, three oranges, three oranges, wow! Song. Look tigers, look tigers, how many tigers? One, two, three, four, five, six. One, two, three, four, five, six. Six tigers, six tigers, six, six, six tigers. Look, lions, look, lions, how many lions? Five, six, seven, eight, nine, ten Five, six, six, seven, eight, nine, ten. 10 lions, 10 lions, ten, ten, 10 lions. Rock. Look. Look, look, look. Look, bears. Look, look, look, look, look. Look, monkeys. How many bears? Three bears. How many monkeys? Six monkeys. Look, look, look, look, look, look, look, look, Rock. Look, tomatoes, look, tomatoes. How many, how many, how many tomatoes? One, two, three, four. Four tomatoes. Look, bananas, look, bananas. How many, how many, how many bananas? One, two, three, four, five. Five bananas. Story. Look, a bear. A baby bear. Thank you. You're welcome. I'm Hansel. I'm Gretel. I'm here. Wow. Look. Many cakes. How many cakes? One, two, three, four. Five, six, seven. Eight, nine, 10. 10 cakes. Oh, no. They are my cakes. How many cakes? One, two, three. Story. Good morning. How many eggs? One, two, three. Three eggs. Thank you. How many eggs? One, two, three, four, five. Five eggs. Wow. Look. Very good. Oh, no. How many eggs? Look. Oh, no.",
+  "text": "English sing sing. Theme 13, how many? Dialogue. Wow. The zoo. How many bears? One, two, two bears. No. That's a baby bear. How many bears? Three bears. Look. Tigers. How many tigers? One, two, three, four, five. Five tigers. Six six tigers. It's a lion. On Wiki Song. Look, apples, how many apples? One apple, two apples, three apples. Three apples, wow! Look, bananas, how many bananas? One banana, two bananas, three bananas. Three bananas, wow! Look, oranges, how many oranges? One orange, two oranges, three oranges. Three oranges, wow! Song. Look tigers, look tigers, how many tigers? One, two, three, four, five, six. One, two, three, four, five, six. Six tigers, six tigers, six, six, six tigers. Look, lions, look, lions, how many lions? Five, six, seven, eight, nine, ten. Five, six, six, seven, eight, nine, ten. 10 lions, 10 lions, ten, ten, 10 lions. Rock. Look. Look, look, look. Look, bears. Look, look, look, look, look. Look, monkeys. How many bears? Three bears. How many monkeys? Six monkeys. Look, look, look, look, look, look, look, look. Rock. Look, tomatoes, look, tomatoes. How many, how many, how many tomatoes? One, two, three, four. Four tomatoes. Look, bananas, look, bananas. How many, how many, how many bananas? One, two, three, four, five. Five bananas. Story. Look, a bear. A baby bear. Thank you. You're welcome. I'm Hansel. I'm Gretel. I'm here. Wow. Look. Many cakes. How many cakes? One, two, three, four. Five, six, seven. Eight, nine, 10. 10 cakes. Oh, no. They are my cakes. How many cakes? One, two, three. Story. Good morning. How many eggs? One, two, three. Three eggs. Thank you. How many eggs? One, two, three, four, five. Five eggs. Wow. Look. Very good. Oh, no. How many eggs? Look. Oh, no.",
   "segments": [
     {
       "id": 1,
       "text": "English sing sing.",
       "start": 1.76,
-      "duration": 0.5
+      "duration": 1.68
     },
     {
       "id": 2,
       "text": "Theme 13, how many?",
       "start": 3.44,
-      "duration": 0.99
+      "duration": 6.56
     },
     {
       "id": 3,
       "text": "Dialogue.",
-      "start": 10,
-      "duration": 0.5
+      "start": 10.0,
+      "duration": 3.04
     },
     {
       "id": 4,
@@ -29,367 +29,367 @@
       "id": 5,
       "text": "The zoo.",
       "start": 13.47,
-      "duration": 0.5
+      "duration": 10.5
     },
     {
       "id": 6,
       "text": "How many bears?",
       "start": 23.97,
-      "duration": 0.5
+      "duration": 2.24
     },
     {
       "id": 7,
       "text": "One, two, two bears.",
       "start": 26.21,
-      "duration": 1.09
+      "duration": 6.21
     },
     {
       "id": 8,
-      "text": "No.",
+      "text": "No. That's a baby bear.",
       "start": 32.42,
-      "duration": 0.5
+      "duration": 6.56
     },
     {
       "id": 9,
-      "text": "That's a baby bear.",
-      "start": 32.87,
-      "duration": 0.77
+      "text": "How many bears?",
+      "start": 38.98,
+      "duration": 2.9
     },
     {
       "id": 10,
-      "text": "How many bears?",
-      "start": 38.98,
-      "duration": 0.5
+      "text": "Three bears.",
+      "start": 41.88,
+      "duration": 13.2
     },
     {
       "id": 11,
-      "text": "Three bears.",
-      "start": 41.88,
-      "duration": 0.5
+      "text": "Look.",
+      "start": 55.08,
+      "duration": 0.87
     },
     {
       "id": 12,
-      "text": "Look.",
-      "start": 55.08,
-      "duration": 0.5
+      "text": "Tigers.",
+      "start": 55.95,
+      "duration": 3.64
     },
     {
       "id": 13,
-      "text": "Tigers.",
-      "start": 55.95,
-      "duration": 0.5
+      "text": "How many tigers?",
+      "start": 59.59,
+      "duration": 3.52
     },
     {
       "id": 14,
-      "text": "How many tigers?",
-      "start": 59.59,
-      "duration": 0.5
+      "text": "One, two, three, four, five.",
+      "start": 63.11,
+      "duration": 3.76
     },
     {
       "id": 15,
-      "text": "One, two, three, four, five.",
-      "start": 63.11,
-      "duration": 1.69
+      "text": "Five tigers.",
+      "start": 66.87,
+      "duration": 3.8
     },
     {
       "id": 16,
-      "text": "Five tigers.",
-      "start": 66.87,
-      "duration": 0.5
+      "text": "Six six tigers.",
+      "start": 70.67,
+      "duration": 6.0
     },
     {
       "id": 17,
-      "text": "Six six tigers.",
-      "start": 70.67,
-      "duration": 0.6
+      "text": "It's a lion.",
+      "start": 76.67,
+      "duration": 3.19
     },
     {
       "id": 18,
-      "text": "It's a lion.",
-      "start": 76.67,
-      "duration": 0.5
+      "text": "On Wiki Song.",
+      "start": 79.86,
+      "duration": 16.44
     },
     {
       "id": 19,
-      "text": "On Wiki Song.",
-      "start": 79.86,
-      "duration": 2.34
+      "text": "Look, apples, how many apples?",
+      "start": 96.3,
+      "duration": 3.68
     },
     {
       "id": 20,
-      "text": "Look, apples, how many apples?",
-      "start": 96.3,
-      "duration": 1.69
+      "text": "One apple, two apples, three apples.",
+      "start": 99.98,
+      "duration": 3.6
     },
     {
       "id": 21,
-      "text": "One apple, two apples, three apples.",
-      "start": 99.98,
-      "duration": 1.86
+      "text": "Three apples, wow!",
+      "start": 103.58,
+      "duration": 3.61
     },
     {
       "id": 22,
-      "text": "Three apples, wow!",
-      "start": 103.58,
-      "duration": 1.07
+      "text": "Look, bananas, how many bananas?",
+      "start": 107.19,
+      "duration": 3.59
     },
     {
       "id": 23,
-      "text": "Look, bananas, how many bananas?",
-      "start": 107.19,
-      "duration": 1.56
+      "text": "One banana, two bananas, three bananas.",
+      "start": 110.78,
+      "duration": 3.38
     },
     {
       "id": 24,
-      "text": "One banana, two bananas, three bananas.",
-      "start": 110.78,
-      "duration": 1.96
+      "text": "Three bananas, wow!",
+      "start": 114.16,
+      "duration": 3.83
     },
     {
       "id": 25,
-      "text": "Three bananas, wow!",
-      "start": 114.16,
-      "duration": 0.5
+      "text": "Look, oranges, how many oranges?",
+      "start": 117.99,
+      "duration": 3.84
     },
     {
       "id": 26,
-      "text": "Look, oranges, how many oranges?",
-      "start": 117.99,
-      "duration": 1.69
+      "text": "One orange, two oranges, three oranges.",
+      "start": 121.83,
+      "duration": 4.01
     },
     {
       "id": 27,
-      "text": "One orange, two oranges, three oranges.",
-      "start": 121.83,
-      "duration": 2.32
+      "text": "Three oranges, wow!",
+      "start": 125.84,
+      "duration": 14.04
     },
     {
       "id": 28,
-      "text": "Three oranges, wow!",
-      "start": 125.84,
-      "duration": 0.59
+      "text": "Song.",
+      "start": 139.88,
+      "duration": 0.88
     },
     {
       "id": 29,
-      "text": "Song.",
-      "start": 139.88,
-      "duration": 0.5
+      "text": "Look tigers, look tigers, how many tigers?",
+      "start": 140.76,
+      "duration": 6.74
     },
     {
       "id": 30,
-      "text": "Look tigers, look tigers, how many tigers?",
-      "start": 140.76,
-      "duration": 2.95
+      "text": "One, two, three, four, five, six.",
+      "start": 147.5,
+      "duration": 2.88
     },
     {
       "id": 31,
       "text": "One, two, three, four, five, six.",
-      "start": 147.5,
-      "duration": 1.4
+      "start": 150.38,
+      "duration": 4.24
     },
     {
       "id": 32,
-      "text": "One, two, three, four, five, six.",
-      "start": 150.38,
-      "duration": 1.4
+      "text": "Six tigers, six tigers, six, six, six tigers.",
+      "start": 154.62,
+      "duration": 8.5
     },
     {
       "id": 33,
-      "text": "Six tigers, six tigers, six, six, six tigers.",
-      "start": 154.62,
-      "duration": 3.99
+      "text": "Look, lions, look, lions, how many lions?",
+      "start": 163.12,
+      "duration": 6.95
     },
     {
       "id": 34,
-      "text": "Look, lions, look, lions, how many lions?",
-      "start": 163.12,
-      "duration": 2.88
+      "text": "Five, six, seven, eight, nine, ten.",
+      "start": 170.07,
+      "duration": 2.72
     },
     {
       "id": 35,
-      "text": "Five, six, seven, eight, nine, ten.",
-      "start": 170.07,
-      "duration": 1.36
+      "text": "Five, six, six, seven, eight, nine, ten.",
+      "start": 172.79,
+      "duration": 3.88
     },
     {
       "id": 36,
-      "text": "Five, six, six, seven, eight, nine, ten. 10 lions, 10 lions, ten, ten, 10 lions.",
-      "start": 172.79,
-      "duration": 8.31
+      "text": "10 lions, 10 lions, ten, ten, 10 lions.",
+      "start": 176.67,
+      "duration": 11.02
     },
     {
       "id": 37,
       "text": "Rock.",
       "start": 187.69,
-      "duration": 0.5
+      "duration": 13.44
     },
     {
       "id": 38,
       "text": "Look.",
       "start": 201.13,
-      "duration": 0.5
+      "duration": 1.15
     },
     {
       "id": 39,
       "text": "Look, look, look.",
       "start": 202.28,
-      "duration": 0.5
+      "duration": 1.16
     },
     {
       "id": 40,
       "text": "Look, bears.",
       "start": 203.44,
-      "duration": 0.5
+      "duration": 3.88
     },
     {
       "id": 41,
       "text": "Look, look, look, look, look.",
       "start": 207.32,
-      "duration": 1.49
+      "duration": 3.2
     },
     {
       "id": 42,
       "text": "Look, monkeys.",
       "start": 210.52,
-      "duration": 0.5
+      "duration": 3.52
     },
     {
       "id": 43,
       "text": "How many bears?",
       "start": 214.04,
-      "duration": 0.5
+      "duration": 1.77
     },
     {
       "id": 44,
       "text": "Three bears.",
       "start": 215.81,
-      "duration": 0.5
+      "duration": 1.16
     },
     {
       "id": 45,
       "text": "How many monkeys?",
       "start": 216.97,
-      "duration": 0.51
+      "duration": 2.03
     },
     {
       "id": 46,
       "text": "Six monkeys.",
-      "start": 219,
-      "duration": 0.5
+      "start": 219.0,
+      "duration": 2.32
     },
     {
       "id": 47,
       "text": "Look, look, look, look, look, look, look, look.",
       "start": 221.32,
-      "duration": 6.27
+      "duration": 9.36
     },
     {
       "id": 48,
       "text": "Rock.",
       "start": 230.68,
-      "duration": 0.5
+      "duration": 18.82
     },
     {
       "id": 49,
       "text": "Look, tomatoes, look, tomatoes.",
       "start": 249.5,
-      "duration": 1.33
+      "duration": 3.84
     },
     {
       "id": 50,
       "text": "How many, how many, how many tomatoes?",
       "start": 253.34,
-      "duration": 1.88
+      "duration": 3.68
     },
     {
       "id": 51,
       "text": "One, two, three, four.",
       "start": 257.02,
-      "duration": 0.78
+      "duration": 3.7
     },
     {
       "id": 52,
       "text": "Four tomatoes.",
       "start": 260.72,
-      "duration": 0.5
+      "duration": 3.6
     },
     {
       "id": 53,
       "text": "Look, bananas, look, bananas.",
       "start": 264.32,
-      "duration": 1.36
+      "duration": 3.84
     },
     {
       "id": 54,
       "text": "How many, how many, how many bananas?",
       "start": 268.16,
-      "duration": 1.88
+      "duration": 3.58
     },
     {
       "id": 55,
       "text": "One, two, three, four, five.",
       "start": 271.74,
-      "duration": 1.19
+      "duration": 3.67
     },
     {
       "id": 56,
       "text": "Five bananas.",
       "start": 275.41,
-      "duration": 0.5
+      "duration": 5.92
     },
     {
       "id": 57,
       "text": "Story.",
       "start": 281.33,
-      "duration": 0.5
+      "duration": 10.64
     },
     {
       "id": 58,
       "text": "Look, a bear.",
       "start": 291.97,
-      "duration": 0.5
+      "duration": 2.4
     },
     {
       "id": 59,
       "text": "A baby bear.",
       "start": 294.37,
-      "duration": 0.5
+      "duration": 5.89
     },
     {
       "id": 60,
       "text": "Thank you.",
       "start": 300.26,
-      "duration": 0.5
+      "duration": 2.56
     },
     {
       "id": 61,
       "text": "You're welcome.",
       "start": 302.82,
-      "duration": 0.5
+      "duration": 3.44
     },
     {
       "id": 62,
       "text": "I'm Hansel.",
       "start": 306.26,
-      "duration": 0.5
+      "duration": 2.24
     },
     {
       "id": 63,
       "text": "I'm Gretel.",
       "start": 308.5,
-      "duration": 0.5
+      "duration": 2.32
     },
     {
       "id": 64,
       "text": "I'm here.",
       "start": 310.82,
-      "duration": 1.39
+      "duration": 11.16
     },
     {
       "id": 65,
       "text": "Wow.",
       "start": 321.98,
-      "duration": 0.5
+      "duration": 6.64
     },
     {
       "id": 66,
@@ -401,151 +401,145 @@
       "id": 67,
       "text": "Many cakes.",
       "start": 329.08,
-      "duration": 0.5
+      "duration": 2.49
     },
     {
       "id": 68,
       "text": "How many cakes?",
       "start": 331.57,
-      "duration": 0.5
+      "duration": 2.64
     },
     {
       "id": 69,
       "text": "One, two, three, four.",
       "start": 334.21,
-      "duration": 1.26
+      "duration": 4.17
     },
     {
       "id": 70,
       "text": "Five, six, seven.",
       "start": 338.38,
-      "duration": 0.67
+      "duration": 4.58
     },
     {
       "id": 71,
-      "text": "Eight, nine, 10. 10 cakes.",
+      "text": "Eight, nine, 10.",
       "start": 342.96,
-      "duration": 2.16
+      "duration": 1.3
     },
     {
       "id": 72,
-      "text": "Oh, no.",
-      "start": 358.69,
-      "duration": 0.5
+      "text": "10 cakes.",
+      "start": 344.26,
+      "duration": 14.43
     },
     {
       "id": 73,
-      "text": "They are my cakes.",
-      "start": 360.12,
-      "duration": 0.69
+      "text": "Oh, no. They are my cakes.",
+      "start": 358.69,
+      "duration": 7.43
     },
     {
       "id": 74,
       "text": "How many cakes?",
       "start": 366.12,
-      "duration": 0.5
+      "duration": 3.54
     },
     {
       "id": 75,
       "text": "One, two, three.",
       "start": 369.66,
-      "duration": 0.69
+      "duration": 8.64
     },
     {
       "id": 76,
       "text": "Story.",
       "start": 378.3,
-      "duration": 0.5
+      "duration": 6.38
     },
     {
       "id": 77,
       "text": "Good morning.",
       "start": 384.68,
-      "duration": 0.5
+      "duration": 1.59
     },
     {
       "id": 78,
       "text": "How many eggs?",
       "start": 386.27,
-      "duration": 0.5
+      "duration": 2.73
     },
     {
       "id": 79,
       "text": "One, two, three.",
-      "start": 389,
-      "duration": 0.71
+      "start": 389.0,
+      "duration": 3.27
     },
     {
       "id": 80,
       "text": "Three eggs.",
       "start": 392.27,
-      "duration": 0.5
+      "duration": 2.26
     },
     {
       "id": 81,
       "text": "Thank you.",
       "start": 394.53,
-      "duration": 0.5
+      "duration": 4.8
     },
     {
       "id": 82,
       "text": "How many eggs?",
       "start": 399.33,
-      "duration": 0.5
+      "duration": 2.24
     },
     {
       "id": 83,
       "text": "One, two, three, four, five.",
       "start": 401.57,
-      "duration": 2.22
+      "duration": 5.3
     },
     {
       "id": 84,
       "text": "Five eggs.",
       "start": 406.87,
-      "duration": 0.5
+      "duration": 2.32
     },
     {
       "id": 85,
       "text": "Wow.",
       "start": 409.19,
-      "duration": 0.5
+      "duration": 0.87
     },
     {
       "id": 86,
       "text": "Look.",
       "start": 410.06,
-      "duration": 0.5
+      "duration": 5.76
     },
     {
       "id": 87,
       "text": "Very good.",
       "start": 415.82,
-      "duration": 0.5
+      "duration": 3.29
     },
     {
       "id": 88,
-      "text": "Oh, no.",
+      "text": "Oh, no. How many eggs?",
       "start": 419.11,
-      "duration": 0.5
+      "duration": 9.53
     },
     {
       "id": 89,
-      "text": "How many eggs?",
-      "start": 426.72,
-      "duration": 0.5
+      "text": "Look.",
+      "start": 428.64,
+      "duration": 0.96
     },
     {
       "id": 90,
-      "text": "Look.",
-      "start": 428.64,
-      "duration": 0.5
-    },
-    {
-      "id": 91,
       "text": "Oh, no.",
       "start": 429.6,
-      "duration": 0.5
+      "duration": 3.0
     }
   ],
   "fetchedAt": "2026-07-23T06:24:25.299328+00:00",
@@ -577,5 +571,7 @@
     "danglingFragments": 0
   },
   "formatted": true,
-  "formattedAt": "2026-07-30T16:06:57.447Z"
+  "formattedAt": "2026-07-30T16:06:57.447Z",
+  "splitAt": "2026-08-03T05:15:00.313775+00:00",
+  "splitMethod": "frozen-rules-v1"
 }

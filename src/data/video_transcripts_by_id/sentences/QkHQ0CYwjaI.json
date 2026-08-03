@@ -1,99 +1,101 @@
 {
-  "text": "Mouth, ears, chin Arms, hands, fingers Legs, feet, toes This...is...ME! GO! My head, my eyes, my nose ME! My mouth, my ears, my chin ME! ME! ME! This...is...ME! Arms, hands, fingers Legs, feet, toes My arms, my hands, my fingers Count with me! (clap!) 1,2,3,4,5,6,7,8,9,10! My legs, my feet, my toes Count with me! (stomp!) 1,2,3,4,5,6,7,8,9,10! This...is...ME! GO! ME! This is ME! This is ME! ME! ME! This is ME! This...is...ME! ME! This is ME! This is ME! ME! ME! This is ME! This...is...ME!",
+  "text": "Mouth, ears, chin. Arms, hands, fingers. Legs, feet, toes. This...is...ME! Go! My head, my eyes, my nose. Me! My mouth, my ears, my chin. Me! Me! Me! This...is...ME! Arms, hands, fingers. Legs, feet, toes. My arms, my hands, my fingers.",
   "segments": [
     {
       "id": 1,
       "text": "Mouth, ears, chin.",
       "start": 19.13,
-      "duration": 1.38
+      "duration": 4.65
     },
     {
       "id": 2,
       "text": "Arms, hands, fingers.",
       "start": 23.78,
-      "duration": 1.38
+      "duration": 4.64
     },
     {
       "id": 3,
       "text": "Legs, feet, toes.",
       "start": 28.42,
-      "duration": 1.38
+      "duration": 4.65
     },
     {
       "id": 4,
       "text": "This...is...ME!",
       "start": 33.07,
-      "duration": 0.5
+      "duration": 1.55
     },
     {
       "id": 5,
       "text": "Go!",
       "start": 34.62,
-      "duration": 0.5
+      "duration": 3.2
     },
     {
       "id": 6,
       "text": "My head, my eyes, my nose.",
       "start": 37.82,
-      "duration": 3.08
+      "duration": 5.33
     },
     {
       "id": 7,
       "text": "Me!",
       "start": 43.15,
-      "duration": 0.5
+      "duration": 0.89
     },
     {
       "id": 8,
       "text": "My mouth, my ears, my chin.",
       "start": 44.04,
-      "duration": 3.06
+      "duration": 5.29
     },
     {
       "id": 9,
       "text": "Me!",
       "start": 49.33,
-      "duration": 0.5
+      "duration": 0.88
     },
     {
       "id": 10,
       "text": "Me!",
       "start": 50.21,
-      "duration": 0.5
+      "duration": 1.54
     },
     {
       "id": 11,
       "text": "Me!",
       "start": 51.75,
-      "duration": 0.5
+      "duration": 1.56
     },
     {
       "id": 12,
       "text": "This...is...ME!",
       "start": 53.31,
-      "duration": 0.5
+      "duration": 2.97
     },
     {
       "id": 13,
       "text": "Arms, hands, fingers.",
       "start": 56.28,
-      "duration": 0.81
+      "duration": 2.73
     },
     {
       "id": 14,
       "text": "Legs, feet, toes.",
       "start": 59.01,
-      "duration": 0.81
+      "duration": 2.73
     },
     {
       "id": 15,
       "text": "My arms, my hands, my fingers.",
       "start": 61.74,
-      "duration": 3.16
+      "duration": 3.0
     }
   ],
   "fetchedAt": "2026-06-22T02:05:59Z",
   "videoId": "QkHQ0CYwjaI",
   "formatted": true,
-  "formattedAt": "2026-07-30T16:05:08.728Z"
+  "formattedAt": "2026-07-30T16:05:08.728Z",
+  "splitAt": "2026-08-03T05:15:00.305101+00:00",
+  "splitMethod": "frozen-rules-v1"
 }
