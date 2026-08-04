@@ -49,6 +49,89 @@ def should_merge_backward(seg):
         return True
     return False
 
+def split_repeated_words(segments):
+    """Split segments where repeated words are followed by a sentence.
+    E.g. 'Book book It's my notebook.' → 'Book book.' + 'It's my notebook.'
+    Uses word-level timestamps if available."""
+    result = []
+    for seg in segments:
+        text = seg['text'].strip()
+        words = text.split()
+
+        # Check for repeated word pattern: word word followed by different word(s)
+        if len(words) >= 3:
+            # Find where repetition ends
+            split_idx = None
+            for i in range(1, len(words)):
+                if words[i].lower().rstrip('.,!?') == words[i-1].lower().rstrip('.,!?'):
+                    split_idx = i + 1
+                else:
+                    break
+
+            if split_idx and split_idx < len(words):
+                # Split into "Repeated words." + "Rest of sentence"
+                part1_words = words[:split_idx]
+                part2_words = words[split_idx:]
+
+                part1_text = ' '.join(part1_words) + '.'
+                part2_text = ' '.join(part2_words)
+                # Capitalize first letter of part2
+                if part2_text and part2_text[0].islower():
+                    part2_text = part2_text[0].upper() + part2_text[1:]
+
+                # Compute timestamps from word-level data if available
+                word_data = seg.get('words', [])
+                if word_data and split_idx <= len(word_data):
+                    # Split word data
+                    words1 = word_data[:split_idx]
+                    words2 = word_data[split_idx:]
+
+                    dur1 = words1[-1]['end'] - words1[0]['start'] if words1 else 0.5
+                    dur2 = words2[-1]['end'] - words2[0]['start'] if words2 else 0.5
+
+                    seg1 = {
+                        'id': 0,  # will be renumbered
+                        'text': part1_text,
+                        'start': words1[0]['start'],
+                        'duration': round(dur1, 2),
+                        'words': words1,
+                    }
+                    seg2 = {
+                        'id': 0,
+                        'text': part2_text,
+                        'start': words2[0]['start'],
+                        'duration': round(dur2, 2),
+                        'words': words2,
+                    }
+                else:
+                    # No word data — estimate split
+                    mid_time = seg['start'] + seg['duration'] * split_idx / len(words)
+                    seg1 = {
+                        'id': 0,
+                        'text': part1_text,
+                        'start': seg['start'],
+                        'duration': round(mid_time - seg['start'], 2),
+                    }
+                    seg2 = {
+                        'id': 0,
+                        'text': part2_text,
+                        'start': round(mid_time, 2),
+                        'duration': round(seg['start'] + seg['duration'] - mid_time, 2),
+                    }
+
+                result.append(seg1)
+                result.append(seg2)
+                continue
+
+        result.append(seg)
+
+    # Re-assign IDs
+    for i, seg in enumerate(result):
+        seg['id'] = i + 1
+
+    return result
+
+
 def merge_fragments(segments):
     """Merge incomplete fragments into complete sentences."""
     if not segments:
@@ -98,7 +181,12 @@ def process_file(video_id):
         return False, "no word timestamps (not Deepgram)"
 
     original_count = len(segments)
-    merged = merge_fragments(segments)
+
+    # Step 1: Split repeated word patterns ("Book book It's my notebook.")
+    split_segs = split_repeated_words(segments)
+
+    # Step 2: Merge incomplete fragments
+    merged = merge_fragments(split_segs)
 
     if len(merged) == original_count:
         return False, "no merges needed"
