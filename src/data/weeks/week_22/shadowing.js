@@ -1,23 +1,27 @@
 export default {
-  title: "Did I Walk in Paris?",
-  videoId: "yJANe-Ah_u4",
-  content_en: "Did I walk in Paris last week? No, I didn't. I walked in New York last week. Did you like the movie last night? Yes, I did. I liked it a lot. Did he work at home yesterday? No, he didn't. He worked at the office yesterday. Did she make pasta last night? No, she didn't. She made pizza last night. Did they look to the left this morning? No, they didn't. They looked to the right. Did we really cry last night? Yes, we did. Did you work out last night? Yes, we did. Did they cook last weekend? No, they didn't. They watched a movie on TV.",
+  videoId: "yJANe-Ah_u4",  // Whispering Woods mystery - past tense (was: asking the way)
+  content_en: `Nova was working on a difficult case in the old town of **Hoi An**, Vietnam. She was very careful. She arrived at the scene and opened her notebook immediately. The narrow lantern-lit streets were quiet, but someone had reported a mystery **last night**.
+
+Nova began the interview calmly. She had three questions for the suspect. "Where were you **yesterday morning**?" she asked. The suspect **answered clearly** and **without hesitation**. Nova **wrote every answer** as a new clue **in her notebook**.
+
+She asked next: "What did you do **last night** and **last week**?" Again, the suspect **answered clearly** every question. Nova studied each clue carefully in the warm lantern light.
+
+Finally, Nova organized the case file and wrote her final report. She handed the report to the local police team **in Hoi An**. Every clue in her notebook had helped. Detective Nova **had solved the case** once again.`,
   script: [
-    { id: 1, text: "Did I walk in Paris last week?", vi: null, start: 9.2, duration: 6.82 },
-    { id: 2, text: "No, I didn't. I walked in New York last week.", vi: null, start: 15.62, duration: 7.84 },
-    { id: 3, text: "Did you like the movie last night?", vi: null, start: 23.14, duration: 7.88 },
-    { id: 4, text: "Yes, I did. I liked it a lot.", vi: null, start: 30.54, duration: 8.74 },
-    { id: 5, text: "Did he work at home yesterday?", vi: null, start: 38.96, duration: 8 },
-    { id: 6, text: "No, he didn't. He worked at the office yesterday.", vi: null, start: 46.64, duration: 9.28 },
-    { id: 7, text: "Did she make pasta last night?", vi: null, start: 55.6, duration: 6.96 },
-    { id: 8, text: "No, she didn't. She made pizza last night.", vi: null, start: 62.08, duration: 11.28 },
-    { id: 9, text: "Did they look to the left this morning?", vi: null, start: 72.97, duration: 8.41 },
-    { id: 10, text: "No, they didn't. They looked to the right.", vi: null, start: 81.14, duration: 10.74 },
-    { id: 11, text: "Did we really cry last night?", vi: null, start: 91.56, duration: 6.4 },
-    { id: 12, text: "Yes, we did.", vi: null, start: 97.56, duration: 6.33 },
-    { id: 13, text: "Did you work out last night?", vi: null, start: 103.57, duration: 6.9 },
-    { id: 14, text: "Yes, we did.", vi: null, start: 109.97, duration: 6.98 },
-    { id: 15, text: "Did they cook last weekend?", vi: null, start: 116.78, duration: 9.21 },
-    { id: 16, text: "No, they didn't. They watched a movie on TV.", vi: null, start: 125.59, duration: 3.38 },
+    { id: 1, text: "Was working on a difficult case in the old town of Hoi An, Vietnam.", vi: "Detective Nova dang lam viec voi mot case kho o pho co Hoi An, Viet Nam." },
+    { id: 2, text: "Nova was very careful.", vi: "Co ay den hien truong va lap tuc mo notebook." },
+    { id: 3, text: "She arrived at the scene and opened her notebook immediately.", vi: "Nhung con pho vang ve voi den long dep, nhung ai do da bao cao mot bi an last night." },
+    { id: 4, text: "The narrow lantern-lit streets were quiet, but someone had reported a mystery last night.", vi: "Nova bat dau interview mot cach binh tinh." },
+    { id: 5, text: "Nova began the interview calmly.", vi: "Co ay co ba question quan trong cho suspect." },
+    { id: 6, text: "She had three questions for the suspect.", vi: "'Ban o dau vao sang yesterday?' co ay hoi clearly." },
+    { id: 7, text: "\"Where were you yesterday morning?\" she asked clearly.", vi: "Suspect da tra loi clearly va khong do du." },
+    { id: 8, text: "The suspect answered clearly and without hesitation.", vi: "Nova da ghi moi answer nhu la mot clue moi vao notebook." },
+    { id: 9, text: "Nova wrote every answer as a new clue in her notebook.", vi: "Co ay tiep tuc: 'Ban da lam gi last night va last week?' Mot lan nua, suspect da tra loi moi question mot cach clearly." },
+    { id: 10, text: "She continued: \"What did you do last night and last week?\" Again, the suspect answered every question clearly.", vi: "Nova da xem xet tung clue can than duoi anh den long." },
+    { id: 11, text: "Nova studied each clue carefully in the warm lantern light.", vi: "Cuoi cung, Nova sap xep ho so case va viet report cuoi cung." },
+    { id: 12, text: "Finally, Nova organized the case file and wrote her final report.", vi: "Co ay da trao answer cho doi canh sat dia phuong o Hoi An." },
+    { id: 13, text: "She handed the answer to the local police team in Hoi An.", vi: "Moi clue trong notebook da giup co." },
+    { id: 14, text: "Every clue in her notebook had helped.", vi: "Detective Nova da giai quyet case them mot lan nua." },
+    { id: 15, text: "Detective Nova had solved the case once again.", vi: null },
   ]
 };

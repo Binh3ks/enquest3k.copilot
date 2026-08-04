@@ -1,25 +1,28 @@
 export default {
-  videoId: "tGWiowdjnHk",  // Unified with Easy — "Yesterday's Diary" (past tense)
-  content_en: "how was your trip it was really fun how was the weather the weather was beautiful it was warm and sunny every day how were the people the people were very friendly and helpful what did you do I had some meetings I ate at some delicious restaurants and I did some sightseeing how was the hotel the hotel was very nice the service was great I see how was the food the food was amazing I ate many different kinds of food was it expensive I think it was reasonable I didn't spend too much money sounds like you had a wonderful vacation yes just one bad thing happened really what happened I got sick I got food poisoning wow that's awful I thought you said the food was delicious",
+  videoId: "mngiqrT44Pk",
+  content_en: `Detective Max found his old diary from yesterday. He opened it carefully and started to read.
+
+Dear Diary, yesterday was a **wonderfully busy day**. I **woke up early**, **brushed my teeth**, and **packed my bag**. I **walked to school** with my **friend lily**, and we **talked all the way** about our science homework. It was a **cold morning**, but we **laughed together** and did not mind.
+
+At school, I listened carefully to the teacher during every lesson. **At break time**, I **played soccer** with my classmates and we **shouted with excitement** when our team scored a goal.
+
+After school, I **helped my mother** prepare dinner. Then I **cleaned my room** and **organised my books**. I **washed my hands** **before dinner** and watched **my favorite** TV program for thirty minutes.
+
+In the evening, I **looked at the stars** through my bedroom window and **counted ten** of them. I was very tired, so I finished writing my diary and started to **fall asleep** at nine o'clock. What a busy and **beautiful day**!`,
   script: [
-    { id: 1, text: "how was your trip it was really fun how", vi: null, start: 6.24, duration: 5.04 },
-    { id: 2, text: "was the weather the weather was", vi: null, start: 10.96, duration: 3.9 },
-    { id: 3, text: "beautiful it was warm and sunny every", vi: null, start: 14.36, duration: 3.61 },
-    { id: 4, text: "day how were the people the people were", vi: null, start: 17.47, duration: 4.73 },
-    { id: 5, text: "very friendly and helpful what did you", vi: null, start: 21.79, duration: 3.39 },
-    { id: 6, text: "do I had some meetings I ate at some", vi: null, start: 24.68, duration: 3.65 },
-    { id: 7, text: "delicious restaurants and I did some", vi: null, start: 27.83, duration: 2.74 },
-    { id: 8, text: "sightseeing how was the hotel the hotel", vi: null, start: 30.07, duration: 4.88 },
-    { id: 9, text: "was very nice the service was great", vi: null, start: 34.55, duration: 3.76 },
-    { id: 10, text: "I see how was the food the food was", vi: null, start: 38.07, duration: 5.19 },
-    { id: 11, text: "amazing", vi: null, start: 42.76, duration: 1.6 },
-    { id: 12, text: "I ate many different kinds of food was", vi: null, start: 43.96, duration: 2.88 },
-    { id: 13, text: "it expensive I think it was reasonable I", vi: null, start: 46.6, duration: 4.56 },
-    { id: 14, text: "didn't spend too much money sounds like", vi: null, start: 50.76, duration: 3.24 },
-    { id: 15, text: "you had a wonderful vacation yes just", vi: null, start: 53.84, duration: 4.32 },
-    { id: 16, text: "one bad thing happened really what", vi: null, start: 57.76, duration: 3.94 },
-    { id: 17, text: "happened I got sick I got food poisoning", vi: null, start: 61.2, duration: 4.66 },
-    { id: 18, text: "wow that's awful I thought you said the", vi: null, start: 65.36, duration: 3.82 },
-    { id: 19, text: "food was delicious", vi: null, start: 68.86, duration: 1.22 }
+    { id: 1, text: "Detective Max found his old diary from yesterday.", vi: "Thám tử Max tìm thấy cuốn nhật ký cũ của hôm qua." },
+    { id: 2, text: "He opened it carefully and started to read.", vi: "Cậu ấy mở nó ra và bắt đầu đọc." },
+    { id: 3, text: "Dear Diary, yesterday was a wonderfully busy day.", vi: "Nhật ký thân mến, hôm qua là một ngày thật bận rộn và đẹp." },
+    { id: 4, text: "I woke up early, brushed my teeth, and packed my bag.", vi: "Tôi dậy sớm, đánh răng và xếp đồ vào túi." },
+    { id: 5, text: "I walked to school with my friend lily, and we talked all the way about our science homework.", vi: "Tôi đã đi bộ đến trường với bạn Lily, và chúng tôi đã nói chuyện suốt đường về bài tập khoa học." },
+    { id: 6, text: "It was a cold morning, but we laughed together and did not mind.", vi: "Buổi sáng lạnh nhưng chúng tôi đã cười cùng nhau và không cảm thấy gì." },
+    { id: 7, text: "At school, I listened carefully to the teacher during every lesson.", vi: "Ở trường, tôi đã lắng nghe cẩn thận giáo viên trong mỗi tiết học." },
+    { id: 8, text: "At break time, I played soccer with my classmates and we shouted with excitement when our team scored a goal.", vi: "Giờ ra chơi, tôi đã chơi bóng đá với các bạn và chúng tôi đã hét với hào hứng khi đội mình ghi bàn." },
+    { id: 9, text: "After school, I helped my mother prepare dinner.", vi: "Sau giờ học, tôi đã giúp mẹ chuẩn bị bữa tối." },
+    { id: 10, text: "Then I cleaned my room and organised my books.", vi: "Sau đó tôi đã dọn phòng và sắp xếp sách vở." },
+    { id: 11, text: "I washed my hands before dinner and watched my favorite TV program for thirty minutes.", vi: "Tôi đã rửa tay trước bữa ăn và đã xem chương trình yêu thích trong ba mươi phút." },
+    { id: 12, text: "In the evening, I looked at the stars through my bedroom window and counted ten of them.", vi: "Buổi tối, tôi đã nhìn lên những vì sao qua cửa sổ phòng ngủ và đếm nhẹ mười ngôi." },
+    { id: 13, text: "I was very tired, so I finished writing my diary and started to fall asleep at nine o'clock.", vi: "Tôi rất mệt, vì vậy tôi đã hoàn thành viết nhật ký và đã bắt đầu chìm vào giấc ngủ lúc chín giờ." },
+    { id: 14, text: "What a busy and beautiful day!", vi: "Thật là một ngày bận rộn và đẹp!" },
   ]
 };
