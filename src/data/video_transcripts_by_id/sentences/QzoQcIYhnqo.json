@@ -1,0 +1,1522 @@
+{
+  "videoId": "QzoQcIYhnqo",
+  "segments": [
+    {
+      "id": 1,
+      "text": "The Tortoise and the Hare",
+      "speaker": "Speaker0",
+      "start": 10.8,
+      "duration": 1.86,
+      "words": [
+        {
+          "word": "the",
+          "start": 10.8,
+          "end": 10.96,
+          "confidence": 0.28
+        },
+        {
+          "word": "tortoise",
+          "start": 10.96,
+          "end": 11.46,
+          "confidence": 0.96
+        },
+        {
+          "word": "and",
+          "start": 11.68,
+          "end": 12.0,
+          "confidence": 0.99
+        },
+        {
+          "word": "the",
+          "start": 12.0,
+          "end": 12.16,
+          "confidence": 0.987
+        },
+        {
+          "word": "hare",
+          "start": 12.16,
+          "end": 12.66,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.84
+    },
+    {
+      "id": 2,
+      "text": "There was once a tortoise that slowly crawled through a forest.",
+      "speaker": "Speaker0",
+      "start": 14.79,
+      "duration": 4.42,
+      "words": [
+        {
+          "word": "there",
+          "start": 14.79,
+          "end": 14.96,
+          "confidence": 0.998
+        },
+        {
+          "word": "was",
+          "start": 14.96,
+          "end": 15.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "once",
+          "start": 15.28,
+          "end": 15.78,
+          "confidence": 0.997
+        },
+        {
+          "word": "a",
+          "start": 15.83,
+          "end": 15.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "tortoise",
+          "start": 15.99,
+          "end": 16.49,
+          "confidence": 0.998
+        },
+        {
+          "word": "that",
+          "start": 16.71,
+          "end": 17.11,
+          "confidence": 0.988
+        },
+        {
+          "word": "slowly",
+          "start": 17.11,
+          "end": 17.61,
+          "confidence": 0.999
+        },
+        {
+          "word": "crawled",
+          "start": 17.75,
+          "end": 18.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "through",
+          "start": 18.23,
+          "end": 18.47,
+          "confidence": 0.997
+        },
+        {
+          "word": "a",
+          "start": 18.47,
+          "end": 18.71,
+          "confidence": 0.994
+        },
+        {
+          "word": "forest",
+          "start": 18.71,
+          "end": 19.21,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.997
+    },
+    {
+      "id": 3,
+      "text": "Bling bling A bouncing hare saw the tortoise and made fun of him.",
+      "speaker": "Speaker0",
+      "start": 19.91,
+      "duration": 6.43,
+      "words": [
+        {
+          "word": "bling",
+          "start": 19.91,
+          "end": 20.41,
+          "confidence": 0.89
+        },
+        {
+          "word": "bling",
+          "start": 20.63,
+          "end": 21.13,
+          "confidence": 0.74
+        },
+        {
+          "word": "a",
+          "start": 21.99,
+          "end": 22.15,
+          "confidence": 0.481
+        },
+        {
+          "word": "bouncing",
+          "start": 22.15,
+          "end": 22.65,
+          "confidence": 0.996
+        },
+        {
+          "word": "hare",
+          "start": 22.79,
+          "end": 23.29,
+          "confidence": 0.999
+        },
+        {
+          "word": "saw",
+          "start": 23.52,
+          "end": 23.75,
+          "confidence": 0.994
+        },
+        {
+          "word": "the",
+          "start": 23.75,
+          "end": 23.99,
+          "confidence": 1.0
+        },
+        {
+          "word": "tortoise",
+          "start": 23.99,
+          "end": 24.49,
+          "confidence": 0.996
+        },
+        {
+          "word": "and",
+          "start": 24.88,
+          "end": 25.11,
+          "confidence": 0.973
+        },
+        {
+          "word": "made",
+          "start": 25.11,
+          "end": 25.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "fun",
+          "start": 25.43,
+          "end": 25.68,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 25.68,
+          "end": 25.84,
+          "confidence": 1.0
+        },
+        {
+          "word": "him",
+          "start": 25.84,
+          "end": 26.34,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.815
+    },
+    {
+      "id": 4,
+      "text": "Make way, make way, I'm bouncing through.",
+      "speaker": "Speaker1",
+      "start": 27.84,
+      "duration": 3.86,
+      "words": [
+        {
+          "word": "make",
+          "start": 27.84,
+          "end": 28.16,
+          "confidence": 0.97
+        },
+        {
+          "word": "way",
+          "start": 28.16,
+          "end": 28.66,
+          "confidence": 0.845
+        },
+        {
+          "word": "make",
+          "start": 28.96,
+          "end": 29.28,
+          "confidence": 0.993
+        },
+        {
+          "word": "way",
+          "start": 29.28,
+          "end": 29.78,
+          "confidence": 0.76
+        },
+        {
+          "word": "i'm",
+          "start": 30.08,
+          "end": 30.48,
+          "confidence": 0.957
+        },
+        {
+          "word": "bouncing",
+          "start": 30.48,
+          "end": 30.98,
+          "confidence": 1.0
+        },
+        {
+          "word": "through",
+          "start": 31.2,
+          "end": 31.7,
+          "confidence": 0.972
+        }
+      ],
+      "confidence": 0.892
+    },
+    {
+      "id": 5,
+      "text": "Hey, Slowpoke, didn't you hear me? Move out of the way.",
+      "speaker": "Speaker1",
+      "start": 32.96,
+      "duration": 4.34,
+      "words": [
+        {
+          "word": "hey",
+          "start": 32.96,
+          "end": 33.44,
+          "confidence": 0.918
+        },
+        {
+          "word": "slowpoke",
+          "start": 33.44,
+          "end": 33.94,
+          "confidence": 0.865
+        },
+        {
+          "word": "didn't",
+          "start": 34.32,
+          "end": 34.72,
+          "confidence": 0.997
+        },
+        {
+          "word": "you",
+          "start": 34.72,
+          "end": 34.88,
+          "confidence": 1.0
+        },
+        {
+          "word": "hear",
+          "start": 34.88,
+          "end": 35.2,
+          "confidence": 0.999
+        },
+        {
+          "word": "me",
+          "start": 35.2,
+          "end": 35.7,
+          "confidence": 0.982
+        },
+        {
+          "word": "move",
+          "start": 35.92,
+          "end": 36.24,
+          "confidence": 0.999
+        },
+        {
+          "word": "out",
+          "start": 36.24,
+          "end": 36.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "of",
+          "start": 36.56,
+          "end": 36.64,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 36.64,
+          "end": 36.8,
+          "confidence": 0.998
+        },
+        {
+          "word": "way",
+          "start": 36.8,
+          "end": 37.3,
+          "confidence": 0.974
+        }
+      ],
+      "confidence": 0.892
+    },
+    {
+      "id": 6,
+      "text": "The angered tortoise stopped walking and said, Hey, let's race to the top of the mountain and see who gets there faster.",
+      "speaker": "Speaker0",
+      "start": 38.0,
+      "duration": 9.28,
+      "words": [
+        {
+          "word": "the",
+          "start": 38.0,
+          "end": 38.24,
+          "confidence": 0.923
+        },
+        {
+          "word": "angered",
+          "start": 38.24,
+          "end": 38.74,
+          "confidence": 1.0
+        },
+        {
+          "word": "tortoise",
+          "start": 38.8,
+          "end": 39.3,
+          "confidence": 0.984
+        },
+        {
+          "word": "stopped",
+          "start": 39.52,
+          "end": 39.92,
+          "confidence": 0.999
+        },
+        {
+          "word": "walking",
+          "start": 39.92,
+          "end": 40.4,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 40.4,
+          "end": 40.72,
+          "confidence": 0.99
+        },
+        {
+          "word": "said",
+          "start": 40.72,
+          "end": 41.22,
+          "confidence": 0.907
+        },
+        {
+          "word": "hey",
+          "start": 41.66,
+          "end": 42.16,
+          "confidence": 0.877
+        },
+        {
+          "word": "let's",
+          "start": 42.62,
+          "end": 43.02,
+          "confidence": 0.995
+        },
+        {
+          "word": "race",
+          "start": 43.02,
+          "end": 43.34,
+          "confidence": 0.995
+        },
+        {
+          "word": "to",
+          "start": 43.34,
+          "end": 43.51,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 43.51,
+          "end": 43.66,
+          "confidence": 0.999
+        },
+        {
+          "word": "top",
+          "start": 43.66,
+          "end": 43.98,
+          "confidence": 0.999
+        },
+        {
+          "word": "of",
+          "start": 43.98,
+          "end": 44.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "the",
+          "start": 44.07,
+          "end": 44.23,
+          "confidence": 0.997
+        },
+        {
+          "word": "mountain",
+          "start": 44.23,
+          "end": 44.73,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 45.27,
+          "end": 45.51,
+          "confidence": 0.763
+        },
+        {
+          "word": "see",
+          "start": 45.51,
+          "end": 45.75,
+          "confidence": 1.0
+        },
+        {
+          "word": "who",
+          "start": 45.75,
+          "end": 46.07,
+          "confidence": 1.0
+        },
+        {
+          "word": "gets",
+          "start": 46.07,
+          "end": 46.3,
+          "confidence": 0.996
+        },
+        {
+          "word": "there",
+          "start": 46.3,
+          "end": 46.78,
+          "confidence": 0.995
+        },
+        {
+          "word": "faster",
+          "start": 46.78,
+          "end": 47.28,
+          "confidence": 0.997
+        }
+      ],
+      "confidence": 0.972
+    },
+    {
+      "id": 7,
+      "text": "You think you can beat me?",
+      "speaker": "Speaker1",
+      "start": 48.87,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "you",
+          "start": 48.87,
+          "end": 49.19,
+          "confidence": 0.866
+        },
+        {
+          "word": "think",
+          "start": 49.19,
+          "end": 49.51,
+          "confidence": 0.999
+        },
+        {
+          "word": "you",
+          "start": 49.51,
+          "end": 49.75,
+          "confidence": 0.996
+        },
+        {
+          "word": "can",
+          "start": 49.75,
+          "end": 50.07,
+          "confidence": 0.997
+        },
+        {
+          "word": "beat",
+          "start": 50.07,
+          "end": 50.39,
+          "confidence": 0.999
+        },
+        {
+          "word": "me",
+          "start": 50.39,
+          "end": 50.89,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.976
+    },
+    {
+      "id": 8,
+      "text": "Fine, let's do it.",
+      "speaker": "Speaker1",
+      "start": 51.59,
+      "duration": 2.1,
+      "words": [
+        {
+          "word": "fine",
+          "start": 51.59,
+          "end": 52.09,
+          "confidence": 0.833
+        },
+        {
+          "word": "let's",
+          "start": 52.39,
+          "end": 52.87,
+          "confidence": 0.995
+        },
+        {
+          "word": "do",
+          "start": 52.87,
+          "end": 53.19,
+          "confidence": 1.0
+        },
+        {
+          "word": "it",
+          "start": 53.19,
+          "end": 53.69,
+          "confidence": 0.968
+        }
+      ],
+      "confidence": 0.833
+    },
+    {
+      "id": 9,
+      "text": "Ready, set, go!",
+      "speaker": "Speaker1",
+      "start": 54.09,
+      "duration": 2.26,
+      "words": [
+        {
+          "word": "ready",
+          "start": 54.09,
+          "end": 54.59,
+          "confidence": 0.961
+        },
+        {
+          "word": "set",
+          "start": 54.97,
+          "end": 55.47,
+          "confidence": 0.867
+        },
+        {
+          "word": "go",
+          "start": 55.85,
+          "end": 56.35,
+          "confidence": 0.806
+        }
+      ],
+      "confidence": 0.961
+    },
+    {
+      "id": 10,
+      "text": "So Hare bounced away and Tortoise slowly crawled.",
+      "speaker": "Speaker0",
+      "start": 56.97,
+      "duration": 4.42,
+      "words": [
+        {
+          "word": "so",
+          "start": 56.97,
+          "end": 57.21,
+          "confidence": 0.969
+        },
+        {
+          "word": "hare",
+          "start": 57.21,
+          "end": 57.71,
+          "confidence": 0.906
+        },
+        {
+          "word": "bounced",
+          "start": 57.77,
+          "end": 58.17,
+          "confidence": 1.0
+        },
+        {
+          "word": "away",
+          "start": 58.17,
+          "end": 58.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "and",
+          "start": 59.13,
+          "end": 59.37,
+          "confidence": 0.859
+        },
+        {
+          "word": "tortoise",
+          "start": 59.37,
+          "end": 59.87,
+          "confidence": 1.0
+        },
+        {
+          "word": "slowly",
+          "start": 60.17,
+          "end": 60.67,
+          "confidence": 1.0
+        },
+        {
+          "word": "crawled",
+          "start": 60.89,
+          "end": 61.39,
+          "confidence": 0.945
+        }
+      ],
+      "confidence": 0.969
+    },
+    {
+      "id": 11,
+      "text": "Boing, boing, and away went Hare.",
+      "speaker": "Speaker0",
+      "start": 62.09,
+      "duration": 4.26,
+      "words": [
+        {
+          "word": "boing",
+          "start": 62.09,
+          "end": 62.59,
+          "confidence": 0.934
+        },
+        {
+          "word": "boing",
+          "start": 63.05,
+          "end": 63.55,
+          "confidence": 0.801
+        },
+        {
+          "word": "and",
+          "start": 64.25,
+          "end": 64.65,
+          "confidence": 0.977
+        },
+        {
+          "word": "away",
+          "start": 64.65,
+          "end": 65.15,
+          "confidence": 0.995
+        },
+        {
+          "word": "went",
+          "start": 65.45,
+          "end": 65.85,
+          "confidence": 0.973
+        },
+        {
+          "word": "hare",
+          "start": 65.85,
+          "end": 66.35,
+          "confidence": 0.891
+        }
+      ],
+      "confidence": 0.934
+    },
+    {
+      "id": 12,
+      "text": "While slow poke Tortoise crept and crawled",
+      "speaker": "Speaker0",
+      "start": 67.38,
+      "duration": 3.7,
+      "words": [
+        {
+          "word": "while",
+          "start": 67.38,
+          "end": 67.85,
+          "confidence": 0.741
+        },
+        {
+          "word": "slow",
+          "start": 67.85,
+          "end": 68.25,
+          "confidence": 0.633
+        },
+        {
+          "word": "poke",
+          "start": 68.25,
+          "end": 68.66,
+          "confidence": 0.548
+        },
+        {
+          "word": "tortoise",
+          "start": 68.66,
+          "end": 69.16,
+          "confidence": 0.997
+        },
+        {
+          "word": "crept",
+          "start": 69.85,
+          "end": 70.25,
+          "confidence": 0.976
+        },
+        {
+          "word": "and",
+          "start": 70.25,
+          "end": 70.58,
+          "confidence": 0.999
+        },
+        {
+          "word": "crawled",
+          "start": 70.58,
+          "end": 71.08,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.73
+    },
+    {
+      "id": 13,
+      "text": "With bullets of sweat dripping down.",
+      "speaker": "Speaker0",
+      "start": 71.53,
+      "duration": 2.5,
+      "words": [
+        {
+          "word": "with",
+          "start": 71.53,
+          "end": 71.85,
+          "confidence": 0.485
+        },
+        {
+          "word": "bullets",
+          "start": 71.85,
+          "end": 72.33,
+          "confidence": 0.985
+        },
+        {
+          "word": "of",
+          "start": 72.33,
+          "end": 72.58,
+          "confidence": 1.0
+        },
+        {
+          "word": "sweat",
+          "start": 72.58,
+          "end": 73.08,
+          "confidence": 0.998
+        },
+        {
+          "word": "dripping",
+          "start": 73.13,
+          "end": 73.53,
+          "confidence": 0.995
+        },
+        {
+          "word": "down",
+          "start": 73.53,
+          "end": 74.03,
+          "confidence": 0.908
+        }
+      ],
+      "confidence": 0.895
+    },
+    {
+      "id": 14,
+      "text": "Now where is Tortoise?",
+      "speaker": "Speaker1",
+      "start": 75.61,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "now",
+          "start": 75.61,
+          "end": 76.02,
+          "confidence": 0.942
+        },
+        {
+          "word": "where",
+          "start": 76.02,
+          "end": 76.49,
+          "confidence": 0.949
+        },
+        {
+          "word": "is",
+          "start": 76.49,
+          "end": 76.81,
+          "confidence": 0.999
+        },
+        {
+          "word": "tortoise",
+          "start": 76.81,
+          "end": 77.31,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 15,
+      "text": "Wow, he is so far behind.",
+      "speaker": "Speaker1",
+      "start": 77.85,
+      "duration": 3.0,
+      "words": [
+        {
+          "word": "wow",
+          "start": 77.85,
+          "end": 78.35,
+          "confidence": 0.721
+        },
+        {
+          "word": "he",
+          "start": 78.73,
+          "end": 78.89,
+          "confidence": 0.983
+        },
+        {
+          "word": "is",
+          "start": 78.89,
+          "end": 79.23,
+          "confidence": 0.944
+        },
+        {
+          "word": "so",
+          "start": 79.55,
+          "end": 79.79,
+          "confidence": 0.998
+        },
+        {
+          "word": "far",
+          "start": 79.79,
+          "end": 80.29,
+          "confidence": 1.0
+        },
+        {
+          "word": "behind",
+          "start": 80.35,
+          "end": 80.85,
+          "confidence": 0.97
+        }
+      ],
+      "confidence": 0.721
+    },
+    {
+      "id": 16,
+      "text": "It'll take him forever to catch up.",
+      "speaker": "Speaker1",
+      "start": 81.31,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "it'll",
+          "start": 81.31,
+          "end": 81.79,
+          "confidence": 0.887
+        },
+        {
+          "word": "take",
+          "start": 81.79,
+          "end": 82.03,
+          "confidence": 0.998
+        },
+        {
+          "word": "him",
+          "start": 82.03,
+          "end": 82.51,
+          "confidence": 0.998
+        },
+        {
+          "word": "forever",
+          "start": 82.51,
+          "end": 83.01,
+          "confidence": 0.995
+        },
+        {
+          "word": "to",
+          "start": 83.23,
+          "end": 83.47,
+          "confidence": 1.0
+        },
+        {
+          "word": "catch",
+          "start": 83.47,
+          "end": 83.79,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 83.79,
+          "end": 84.29,
+          "confidence": 0.785
+        }
+      ],
+      "confidence": 0.952
+    },
+    {
+      "id": 17,
+      "text": "So I think I'll take a nap.",
+      "speaker": "Speaker1",
+      "start": 84.83,
+      "duration": 3.06,
+      "words": [
+        {
+          "word": "so",
+          "start": 84.83,
+          "end": 85.33,
+          "confidence": 0.989
+        },
+        {
+          "word": "i",
+          "start": 85.71,
+          "end": 85.95,
+          "confidence": 0.74
+        },
+        {
+          "word": "think",
+          "start": 85.95,
+          "end": 86.35,
+          "confidence": 0.996
+        },
+        {
+          "word": "i'll",
+          "start": 86.35,
+          "end": 86.67,
+          "confidence": 0.983
+        },
+        {
+          "word": "take",
+          "start": 86.67,
+          "end": 87.15,
+          "confidence": 0.999
+        },
+        {
+          "word": "a",
+          "start": 87.15,
+          "end": 87.39,
+          "confidence": 0.999
+        },
+        {
+          "word": "nap",
+          "start": 87.39,
+          "end": 87.89,
+          "confidence": 0.994
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 18,
+      "text": "While Hare slept, Tortoise never stopped walking.",
+      "speaker": "Speaker0",
+      "start": 92.42,
+      "duration": 3.7,
+      "words": [
+        {
+          "word": "while",
+          "start": 92.42,
+          "end": 92.75,
+          "confidence": 0.905
+        },
+        {
+          "word": "hare",
+          "start": 92.75,
+          "end": 93.15,
+          "confidence": 0.943
+        },
+        {
+          "word": "slept",
+          "start": 93.15,
+          "end": 93.65,
+          "confidence": 0.982
+        },
+        {
+          "word": "tortoise",
+          "start": 94.11,
+          "end": 94.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "never",
+          "start": 94.83,
+          "end": 95.23,
+          "confidence": 1.0
+        },
+        {
+          "word": "stopped",
+          "start": 95.23,
+          "end": 95.62,
+          "confidence": 0.996
+        },
+        {
+          "word": "walking",
+          "start": 95.62,
+          "end": 96.12,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.943
+    },
+    {
+      "id": 19,
+      "text": "Blump, blump.",
+      "speaker": "Speaker0",
+      "start": 97.15,
+      "duration": 1.69,
+      "words": [
+        {
+          "word": "blump",
+          "start": 97.15,
+          "end": 97.65,
+          "confidence": 0.63
+        },
+        {
+          "word": "blump",
+          "start": 98.34,
+          "end": 98.84,
+          "confidence": 0.911
+        }
+      ],
+      "confidence": 0.63
+    },
+    {
+      "id": 20,
+      "text": "Sure enough, Tortoise crawled past sleepyhead",
+      "speaker": "Speaker0",
+      "start": 100.19,
+      "duration": 3.46,
+      "words": [
+        {
+          "word": "sure",
+          "start": 100.19,
+          "end": 100.51,
+          "confidence": 0.996
+        },
+        {
+          "word": "enough",
+          "start": 100.51,
+          "end": 101.01,
+          "confidence": 0.971
+        },
+        {
+          "word": "tortoise",
+          "start": 101.47,
+          "end": 101.97,
+          "confidence": 1.0
+        },
+        {
+          "word": "crawled",
+          "start": 102.03,
+          "end": 102.53,
+          "confidence": 0.998
+        },
+        {
+          "word": "past",
+          "start": 102.59,
+          "end": 103.09,
+          "confidence": 0.946
+        },
+        {
+          "word": "sleepyhead",
+          "start": 103.15,
+          "end": 103.65,
+          "confidence": 0.545
+        }
+      ],
+      "confidence": 0.984
+    },
+    {
+      "id": 21,
+      "text": "Hare, and he crawled to the top of the hill.",
+      "speaker": "Speaker0",
+      "start": 104.11,
+      "duration": 3.54,
+      "words": [
+        {
+          "word": "hare",
+          "start": 104.11,
+          "end": 104.61,
+          "confidence": 0.703
+        },
+        {
+          "word": "and",
+          "start": 104.83,
+          "end": 105.15,
+          "confidence": 0.992
+        },
+        {
+          "word": "he",
+          "start": 105.15,
+          "end": 105.47,
+          "confidence": 0.997
+        },
+        {
+          "word": "crawled",
+          "start": 105.47,
+          "end": 105.95,
+          "confidence": 1.0
+        },
+        {
+          "word": "to",
+          "start": 105.95,
+          "end": 106.19,
+          "confidence": 0.997
+        },
+        {
+          "word": "the",
+          "start": 106.19,
+          "end": 106.34,
+          "confidence": 0.998
+        },
+        {
+          "word": "top",
+          "start": 106.34,
+          "end": 106.83,
+          "confidence": 0.998
+        },
+        {
+          "word": "of",
+          "start": 106.83,
+          "end": 106.98,
+          "confidence": 0.997
+        },
+        {
+          "word": "the",
+          "start": 106.98,
+          "end": 107.15,
+          "confidence": 0.997
+        },
+        {
+          "word": "hill",
+          "start": 107.15,
+          "end": 107.65,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.968
+    },
+    {
+      "id": 22,
+      "text": "Hey, hare.",
+      "speaker": "Speaker1",
+      "start": 110.29,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "hey",
+          "start": 110.29,
+          "end": 110.79,
+          "confidence": 0.972
+        },
+        {
+          "word": "hare",
+          "start": 110.85,
+          "end": 111.35,
+          "confidence": 0.628
+        }
+      ],
+      "confidence": 0.8
+    },
+    {
+      "id": 23,
+      "text": "I beat you.",
+      "speaker": "Speaker1",
+      "start": 111.97,
+      "duration": 1.3,
+      "words": [
+        {
+          "word": "i",
+          "start": 111.97,
+          "end": 112.37,
+          "confidence": 0.999
+        },
+        {
+          "word": "beat",
+          "start": 112.37,
+          "end": 112.77,
+          "confidence": 0.906
+        },
+        {
+          "word": "you",
+          "start": 112.77,
+          "end": 113.27,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.958
+    },
+    {
+      "id": 24,
+      "text": "What? What's going on?",
+      "speaker": "Speaker1",
+      "start": 116.69,
+      "duration": 2.02,
+      "words": [
+        {
+          "word": "what",
+          "start": 116.69,
+          "end": 117.19,
+          "confidence": 0.677
+        },
+        {
+          "word": "what's",
+          "start": 117.41,
+          "end": 117.81,
+          "confidence": 0.984
+        },
+        {
+          "word": "going",
+          "start": 117.81,
+          "end": 118.21,
+          "confidence": 0.998
+        },
+        {
+          "word": "on",
+          "start": 118.21,
+          "end": 118.71,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.914
+    },
+    {
+      "id": 25,
+      "text": "Hare woke up and scurried up the hill.",
+      "speaker": "Speaker0",
+      "start": 119.25,
+      "duration": 2.98,
+      "words": [
+        {
+          "word": "hare",
+          "start": 119.25,
+          "end": 119.65,
+          "confidence": 0.986
+        },
+        {
+          "word": "woke",
+          "start": 119.65,
+          "end": 119.89,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 119.89,
+          "end": 120.39,
+          "confidence": 0.989
+        },
+        {
+          "word": "and",
+          "start": 120.53,
+          "end": 120.93,
+          "confidence": 0.976
+        },
+        {
+          "word": "scurried",
+          "start": 120.93,
+          "end": 121.41,
+          "confidence": 1.0
+        },
+        {
+          "word": "up",
+          "start": 121.41,
+          "end": 121.65,
+          "confidence": 0.999
+        },
+        {
+          "word": "the",
+          "start": 121.65,
+          "end": 121.73,
+          "confidence": 0.997
+        },
+        {
+          "word": "hill",
+          "start": 121.73,
+          "end": 122.23,
+          "confidence": 0.884
+        }
+      ],
+      "confidence": 0.979
+    },
+    {
+      "id": 26,
+      "text": "But it was too late.",
+      "speaker": "Speaker0",
+      "start": 122.93,
+      "duration": 2.63,
+      "words": [
+        {
+          "word": "but",
+          "start": 122.93,
+          "end": 123.43,
+          "confidence": 0.994
+        },
+        {
+          "word": "it",
+          "start": 123.87,
+          "end": 124.11,
+          "confidence": 0.994
+        },
+        {
+          "word": "was",
+          "start": 124.11,
+          "end": 124.61,
+          "confidence": 1.0
+        },
+        {
+          "word": "too",
+          "start": 124.67,
+          "end": 125.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "late",
+          "start": 125.06,
+          "end": 125.56,
+          "confidence": 0.985
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 27,
+      "text": "Tortoise was already resting under a tree at the top of the mountain.",
+      "speaker": "Speaker0",
+      "start": 126.19,
+      "duration": 5.46,
+      "words": [
+        {
+          "word": "tortoise",
+          "start": 126.19,
+          "end": 126.69,
+          "confidence": 1.0
+        },
+        {
+          "word": "was",
+          "start": 126.75,
+          "end": 127.06,
+          "confidence": 1.0
+        },
+        {
+          "word": "already",
+          "start": 127.06,
+          "end": 127.56,
+          "confidence": 1.0
+        },
+        {
+          "word": "resting",
+          "start": 127.78,
+          "end": 128.28,
+          "confidence": 0.999
+        },
+        {
+          "word": "under",
+          "start": 128.5,
+          "end": 128.91,
+          "confidence": 1.0
+        },
+        {
+          "word": "a",
+          "start": 128.91,
+          "end": 128.99,
+          "confidence": 0.993
+        },
+        {
+          "word": "tree",
+          "start": 128.99,
+          "end": 129.49,
+          "confidence": 1.0
+        },
+        {
+          "word": "at",
+          "start": 129.87,
+          "end": 130.1,
+          "confidence": 0.983
+        },
+        {
+          "word": "the",
+          "start": 130.1,
+          "end": 130.34,
+          "confidence": 0.999
+        },
+        {
+          "word": "top",
+          "start": 130.34,
+          "end": 130.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "of",
+          "start": 130.75,
+          "end": 130.91,
+          "confidence": 0.998
+        },
+        {
+          "word": "the",
+          "start": 130.91,
+          "end": 131.15,
+          "confidence": 0.995
+        },
+        {
+          "word": "mountain",
+          "start": 131.15,
+          "end": 131.65,
+          "confidence": 0.995
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 28,
+      "text": "No, this can't be.",
+      "speaker": "Speaker1",
+      "start": 132.75,
+      "duration": 2.01,
+      "words": [
+        {
+          "word": "no",
+          "start": 132.75,
+          "end": 133.25,
+          "confidence": 0.849
+        },
+        {
+          "word": "this",
+          "start": 133.54,
+          "end": 133.87,
+          "confidence": 0.985
+        },
+        {
+          "word": "can't",
+          "start": 133.87,
+          "end": 134.26,
+          "confidence": 1.0
+        },
+        {
+          "word": "be",
+          "start": 134.26,
+          "end": 134.76,
+          "confidence": 0.969
+        }
+      ],
+      "confidence": 0.849
+    },
+    {
+      "id": 29,
+      "text": "I lost a slowpoke tortoise.",
+      "speaker": "Speaker1",
+      "start": 135.15,
+      "duration": 2.64,
+      "words": [
+        {
+          "word": "i",
+          "start": 135.15,
+          "end": 135.54,
+          "confidence": 0.998
+        },
+        {
+          "word": "lost",
+          "start": 135.54,
+          "end": 135.94,
+          "confidence": 0.989
+        },
+        {
+          "word": "a",
+          "start": 135.94,
+          "end": 136.19,
+          "confidence": 0.98
+        },
+        {
+          "word": "slowpoke",
+          "start": 136.19,
+          "end": 136.69,
+          "confidence": 0.726
+        },
+        {
+          "word": "tortoise",
+          "start": 137.29,
+          "end": 137.79,
+          "confidence": 0.948
+        }
+      ],
+      "confidence": 0.923
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0",
+    "1": "Speaker1"
+  },
+  "fetchedAt": "2026-08-04T02:30:37.246399+00:00",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-04T02:30:37.246420+00:00",
+    "dgWordCount": 215,
+    "dgUtteranceCount": 55,
+    "matchedSegments": 55,
+    "totalDuration": 156.59
+  },
+  "text": "The Tortoise and the Hare There was once a tortoise that slowly crawled through a forest. Bling bling A bouncing hare saw the tortoise and made fun of him. Make way, make way, I'm bouncing through. Hey, Slowpoke, didn't you hear me? Move out of the way. The angered tortoise stopped walking and said, Hey, let's race to the top of the mountain and see who gets there faster. You think you can beat me? Fine, let's do it. Ready, set, go! So Hare bounced away and Tortoise slowly crawled. Boing, boing, and away went Hare. While slow poke Tortoise crept and crawled With bullets of sweat dripping down. Now where is Tortoise? Wow, he is so far behind. It'll take him forever to catch up. So I think I'll take a nap. While Hare slept, Tortoise never stopped walking. Blump, blump. Sure enough, Tortoise crawled past sleepyhead Hare, and he crawled to the top of the hill. Hey, hare. I beat you. What? What's going on? Hare woke up and scurried up the hill. But it was too late. Tortoise was already resting under a tree at the top of the mountain. No, this can't be. I lost a slowpoke tortoise.",
+  "mergedAt": "2026-08-03T07:00:00.000Z"
+}

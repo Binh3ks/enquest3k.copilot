@@ -1,0 +1,415 @@
+{
+  "videoId": "xS8VobaOc44",
+  "segments": [
+    {
+      "id": 1,
+      "text": "Good morning, Toto.",
+      "speaker": "Speaker0",
+      "start": 2.56,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "good",
+          "start": 2.56,
+          "end": 2.88,
+          "confidence": 0.981
+        },
+        {
+          "word": "morning",
+          "start": 2.88,
+          "end": 3.38,
+          "confidence": 0.998
+        },
+        {
+          "word": "toto",
+          "start": 3.6,
+          "end": 4.1,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.993
+    },
+    {
+      "id": 2,
+      "text": "Good morning, Bunny.",
+      "speaker": "Speaker0",
+      "start": 5.04,
+      "duration": 1.38,
+      "words": [
+        {
+          "word": "good",
+          "start": 5.04,
+          "end": 5.44,
+          "confidence": 0.999
+        },
+        {
+          "word": "morning",
+          "start": 5.44,
+          "end": 5.92,
+          "confidence": 0.999
+        },
+        {
+          "word": "bunny",
+          "start": 5.92,
+          "end": 6.42,
+          "confidence": 0.816
+        }
+      ],
+      "confidence": 0.938
+    },
+    {
+      "id": 3,
+      "text": "Okay.",
+      "speaker": "Speaker0",
+      "start": 17.79,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "okay",
+          "start": 17.79,
+          "end": 18.29,
+          "confidence": 0.99
+        }
+      ],
+      "confidence": 0.99
+    },
+    {
+      "id": 4,
+      "text": "Hi. I'm Kiki.",
+      "speaker": "Speaker0",
+      "start": 26.35,
+      "duration": 1.7,
+      "words": [
+        {
+          "word": "hi",
+          "start": 26.35,
+          "end": 26.85,
+          "confidence": 0.974
+        },
+        {
+          "word": "i'm",
+          "start": 27.07,
+          "end": 27.55,
+          "confidence": 0.999
+        },
+        {
+          "word": "kiki",
+          "start": 27.55,
+          "end": 28.05,
+          "confidence": 0.993
+        }
+      ],
+      "confidence": 0.989
+    },
+    {
+      "id": 5,
+      "text": "Hello, Kiki.",
+      "speaker": "Speaker0",
+      "start": 29.11,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "hello",
+          "start": 29.11,
+          "end": 29.59,
+          "confidence": 0.996
+        },
+        {
+          "word": "kiki",
+          "start": 29.59,
+          "end": 30.09,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 6,
+      "text": "I'm Toto.",
+      "speaker": "Speaker0",
+      "start": 30.63,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 30.63,
+          "end": 31.11,
+          "confidence": 1.0
+        },
+        {
+          "word": "toto",
+          "start": 31.11,
+          "end": 31.61,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 7,
+      "text": "Good morning, Foxy.",
+      "speaker": "Speaker0",
+      "start": 33.43,
+      "duration": 1.54,
+      "words": [
+        {
+          "word": "good",
+          "start": 33.43,
+          "end": 33.75,
+          "confidence": 0.999
+        },
+        {
+          "word": "morning",
+          "start": 33.75,
+          "end": 34.25,
+          "confidence": 0.999
+        },
+        {
+          "word": "foxy",
+          "start": 34.47,
+          "end": 34.97,
+          "confidence": 0.996
+        }
+      ],
+      "confidence": 0.998
+    },
+    {
+      "id": 8,
+      "text": "This is Toto.",
+      "speaker": "Speaker0",
+      "start": 35.59,
+      "duration": 1.22,
+      "words": [
+        {
+          "word": "this",
+          "start": 35.59,
+          "end": 35.99,
+          "confidence": 0.999
+        },
+        {
+          "word": "is",
+          "start": 35.99,
+          "end": 36.31,
+          "confidence": 1.0
+        },
+        {
+          "word": "toto",
+          "start": 36.31,
+          "end": 36.81,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 9,
+      "text": "Hello, Toto.",
+      "speaker": "Speaker0",
+      "start": 37.51,
+      "duration": 1.06,
+      "words": [
+        {
+          "word": "hello",
+          "start": 37.51,
+          "end": 38.01,
+          "confidence": 1.0
+        },
+        {
+          "word": "toto",
+          "start": 38.07,
+          "end": 38.57,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": 10,
+      "text": "I'm Foxy.",
+      "speaker": "Speaker0",
+      "start": 39.03,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "i'm",
+          "start": 39.03,
+          "end": 39.43,
+          "confidence": 1.0
+        },
+        {
+          "word": "foxy",
+          "start": 39.43,
+          "end": 39.93,
+          "confidence": 0.998
+        }
+      ],
+      "confidence": 0.999
+    },
+    {
+      "id": 11,
+      "text": "This is Bunny.",
+      "speaker": "Speaker0",
+      "start": 48.91,
+      "duration": 1.14,
+      "words": [
+        {
+          "word": "this",
+          "start": 48.91,
+          "end": 49.3,
+          "confidence": 0.963
+        },
+        {
+          "word": "is",
+          "start": 49.3,
+          "end": 49.55,
+          "confidence": 1.0
+        },
+        {
+          "word": "bunny",
+          "start": 49.55,
+          "end": 50.05,
+          "confidence": 0.984
+        }
+      ],
+      "confidence": 0.982
+    },
+    {
+      "id": 12,
+      "text": "Good afternoon, Bunny.",
+      "speaker": "Speaker0",
+      "start": 51.3,
+      "duration": 1.62,
+      "words": [
+        {
+          "word": "good",
+          "start": 51.3,
+          "end": 51.7,
+          "confidence": 0.92
+        },
+        {
+          "word": "afternoon",
+          "start": 51.7,
+          "end": 52.2,
+          "confidence": 0.997
+        },
+        {
+          "word": "bunny",
+          "start": 52.42,
+          "end": 52.92,
+          "confidence": 0.992
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "id": 13,
+      "text": "Good afternoon.",
+      "speaker": "Speaker0",
+      "start": 54.98,
+      "duration": 0.82,
+      "words": [
+        {
+          "word": "good",
+          "start": 54.98,
+          "end": 55.3,
+          "confidence": 0.967
+        },
+        {
+          "word": "afternoon",
+          "start": 55.3,
+          "end": 55.8,
+          "confidence": 1.0
+        }
+      ],
+      "confidence": 0.983
+    },
+    {
+      "id": 14,
+      "text": "Good evening.",
+      "speaker": "Speaker0",
+      "start": 66.1,
+      "duration": 0.9,
+      "words": [
+        {
+          "word": "good",
+          "start": 66.1,
+          "end": 66.5,
+          "confidence": 0.823
+        },
+        {
+          "word": "evening",
+          "start": 66.5,
+          "end": 67.0,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.911
+    },
+    {
+      "id": 15,
+      "text": "Good evening.",
+      "speaker": "Speaker0",
+      "start": 67.78,
+      "duration": 0.98,
+      "words": [
+        {
+          "word": "good",
+          "start": 67.78,
+          "end": 68.26,
+          "confidence": 0.989
+        },
+        {
+          "word": "evening",
+          "start": 68.26,
+          "end": 68.76,
+          "confidence": 0.999
+        }
+      ],
+      "confidence": 0.994
+    },
+    {
+      "id": 16,
+      "text": "Goodbye.",
+      "speaker": "Speaker0",
+      "start": 69.46,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "goodbye",
+          "start": 69.46,
+          "end": 69.96,
+          "confidence": 0.973
+        }
+      ],
+      "confidence": 0.973
+    },
+    {
+      "id": 17,
+      "text": "Bye.",
+      "speaker": "Speaker0",
+      "start": 71.18,
+      "duration": 0.5,
+      "words": [
+        {
+          "word": "bye",
+          "start": 71.18,
+          "end": 71.68,
+          "confidence": 0.975
+        }
+      ],
+      "confidence": 0.975
+    }
+  ],
+  "speakerMap": {
+    "0": "Speaker0"
+  },
+  "fetchedAt": "2026-08-04T02:19:42.434895+00:00",
+  "alignment": {
+    "engine": "deepgram-nova-2",
+    "alignedAt": "2026-08-04T02:19:42.434905+00:00",
+    "dgWordCount": 38,
+    "dgUtteranceCount": 17,
+    "matchedSegments": 17,
+    "totalDuration": 71.68
+  }
+}

@@ -1,6 +1,6 @@
 export default {
   title: "Shadowing: The Transport Race",
-  videoId: "tftSHIh8enw",
+  videoId: "QzoQcIYhnqo",  // Tortoise & the Hare fable (replaced song)
   content_en: `Once upon a time, a **slow hare** was very proud and fast. He always bragged about **winning the race** and laughed at the slow tortoise. one day, the slow tortoise smiled calmly and said, '**Slow and steady wins the race**.' The slow hare got on his **fast bicycle** while the slow tortoise got on his **small boat**. BANG — the race began suddenly!
 
 The slow hare got ahead of everyone, but then he got tired and **fell asleep** under a big shady tree. Meanwhile, the slow tortoise kept on sailing slowly but never stopped and never gave up. He **crossed the river** and kept going to the **finish line**.
