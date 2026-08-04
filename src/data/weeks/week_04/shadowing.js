@@ -14,3 +14,4 @@ export default {
     { id: 9, text: "It helps me remember all the good moments in my life.", vi: "Nó giúp tôi nhớ lại tất cả những khoảnh khắc tốt đẹp trong cuộc sống của mình." },
     { id: 10, text: "My jar is now full of happy things!", vi: "Bây giờ hũ của tôi đầy những thứ hạnh phúc!" },
   ]
+};
