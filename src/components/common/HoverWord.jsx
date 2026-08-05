@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { Volume2, BookOpen, Book, Mic, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
+import dictionaryData from '../../data/dictionary.json';
 
 // Levenshtein distance for pronunciation scoring
 function levenshtein(a, b) {
@@ -16,6 +17,21 @@ function levenshtein(a, b) {
   return matrix[b.length][a.length];
 }
 
+// Build dictionary lookup map (shared across all HoverWord instances)
+const dictMap = Object.fromEntries(
+  (Array.isArray(dictionaryData) ? dictionaryData : []).map(e => [(e.word || '').toLowerCase(), e])
+);
+
+// Look up a word/phrase in dictionary (handles plurals + past tense)
+const lookupDict = (raw) => {
+  if (!raw) return null;
+  const t = raw.toLowerCase().trim();
+  if (dictMap[t]) return dictMap[t];
+  if (t.endsWith('s') && dictMap[t.slice(0, -1)]) return dictMap[t.slice(0, -1)];
+  if (t.endsWith('ed') && dictMap[t.slice(0, -2)]) return dictMap[t.slice(0, -2)];
+  return null;
+};
+
 /**
  * HoverWord — Từ trong đọc hiểu với hover dictionary 3 tầng.
  *
@@ -27,6 +43,8 @@ function levenshtein(a, b) {
  * Tầng 2 (click): Popup đầy đủ qua Portal — từ + IPA + 🔊 + nghĩa + 🎤 + links
  */
 const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) => {
+  // Auto-lookup in dictionary when entry is not provided by parent
+  const resolvedEntry = useMemo(() => entry || lookupDict(word), [entry, word]);
   const [mode, setMode] = useState('idle'); // idle | hover | open
   const isPhrase = word.trim().includes(' ');
   const [popupPos, setPopupPos] = useState({ top: 0, left: 0 });
@@ -100,7 +118,7 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
       const transcript = event.results[0][0].transcript.toLowerCase().trim();
       const target = word.toLowerCase();
       const distance = levenshtein(transcript, target);
-      
+
       let score;
       if (transcript === target) {
         score = 'perfect';
@@ -178,33 +196,33 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
               </div>
 
               {/* IPA */}
-              {entry?.pronounce && (
-                <p className="text-xs text-slate-400 font-mono mb-3">{entry.pronounce}</p>
+              {resolvedEntry?.pronounce && (
+                <p className="text-xs text-slate-400 font-mono mb-3">{resolvedEntry.pronounce}</p>
               )}
 
               <div className={`h-px bg-${themeColor}-50 mb-3`} />
 
               {/* Vietnamese meaning — main content */}
-              {entry?.meaning ? (
-                <p className="text-base font-bold text-slate-800 leading-snug">{entry.meaning}</p>
+              {resolvedEntry?.meaning ? (
+                <p className="text-base font-bold text-slate-800 leading-snug">{resolvedEntry.meaning}</p>
               ) : (
                 <p className="text-sm italic text-slate-400">Chưa có trong từ điển</p>
               )}
 
               {/* Example sentence (preferred) or Definition (fallback) */}
-              {entry?.example ? (
+              {resolvedEntry?.example ? (
                 <div className="mt-2 pt-2 border-t border-slate-50">
                   <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Example:</p>
                   <p className="text-xs text-slate-600 leading-relaxed italic">
-                    "{entry.example}"
+                    &ldquo;{resolvedEntry.example}&rdquo;
                   </p>
                 </div>
-              ) : entry?.definition_en ? (
+              ) : resolvedEntry?.definition_en ? (
                 <div className="mt-2 pt-2 border-t border-slate-50">
                   <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Definition:</p>
                   <p className="text-xs text-slate-500 leading-relaxed italic">
-                    {entry.definition_en.split(' ').slice(0, 12).join(' ')}
-                    {entry.definition_en.split(' ').length > 12 ? '…' : ''}
+                    {resolvedEntry.definition_en.split(' ').slice(0, 12).join(' ')}
+                    {resolvedEntry.definition_en.split(' ').length > 12 ? '…' : ''}
                   </p>
                 </div>
               ) : null}
@@ -288,8 +306,8 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
             <div className={`bg-${themeColor}-700 text-white px-3 py-1.5 rounded-xl shadow-lg whitespace-nowrap flex items-center gap-2`}>
               <Volume2 size={12} className="opacity-70" />
               <span className="font-bold text-sm">{word}</span>
-              {entry?.pronounce && (
-                <span className="text-[11px] font-mono opacity-70">{entry.pronounce}</span>
+              {resolvedEntry?.pronounce && (
+                <span className="text-[11px] font-mono opacity-70">{resolvedEntry.pronounce}</span>
               )}
               <span className="text-[10px] opacity-60 border-l border-white/30 pl-2">
                 👆 Click to learn

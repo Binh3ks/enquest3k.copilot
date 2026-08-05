@@ -1,4 +1,4 @@
-// WEEK 36: Environmental Issues
+// WEEK 36: Adventure Stories
 // Week Index — Advanced Mode
 
 import read from './read.js';

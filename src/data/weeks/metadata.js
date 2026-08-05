@@ -36,6 +36,7 @@ export const weekTitles = {
   33: { title_en: "The Mistake (Irregular Verbs 5)", title_vi: "Sai Lầm (Động Từ Bất Quy Tắc 5)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   34: { title_en: "The Ant and the Grasshopper (Fable)", title_vi: "Kiến và Châu Chấu (Truyện Ngụ Ngôn)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   35: { title_en: "Environmental Issues", title_vi: "Các Vấn Đề Môi Trường", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
+  36: { title_en: "Adventure Stories", title_vi: "Những Câu Chuyện Phiêu Lưu", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
 };
 
 // Helper to get title with fallback

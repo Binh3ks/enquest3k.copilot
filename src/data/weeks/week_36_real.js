@@ -49,6 +49,15 @@ const week_36RealData = {
     v28_format_notes: "W36 follows V28 schema. Theme: adventure_stories. Grammar: Irregular Verbs (went/saw/took/came/found). IMPORTANT: Never say Great! after a student describes a scary or negative experience. Use Oh no! or That sounds scary! or I am sorry to hear that."
   },
 
+  knowledge_base: [
+    "Irregular past tense verbs: go→went, see→saw, take→took, come→came, find→found, write→wrote, give→gave, ride→rode, speak→spoke, make→made",
+    "IMPORTANT — Use these chunks in conversation: 'went on an adventure', 'dove down into', 'saw magnificent', 'found something unexpected', 'wrote down everything', 'came back to the surface', 'gave our findings to', 'made an important discovery'",
+    "IMPORTANT — Empathetic responses required. When a student describes a scary or negative experience, say 'I am sorry to hear that' or 'That sounds scary'. NEVER say 'Great!' after a student describes injury, fear, or negative events.",
+    "Adventure vocabulary: submarine, coral reef, compass, museum, discovery, Silk Road, merchant, explorer",
+    "Marco Polo traveled from Venice to China along the Silk Road. He saw amazing things, met merchants, and wrote about his journey.",
+    "Everyone can be an explorer — even in your own town, you can discover new things every day"
+  ],
+
   story_character: {
     name: "Nova - Adventure Guide",
     personality: "Excited about adventures, patient, uses irregular verbs naturally, empathetic about scary experiences",

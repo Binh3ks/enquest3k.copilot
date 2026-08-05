@@ -6,7 +6,7 @@ export default {
   title: 'Irregular Verbs — Adventure Stories',
   theme: 'adventure_stories',
   rule: {
-    en: 'Irregular verbs do NOT follow the normal -ed pattern. Group 1: go→went, come→came. Group 2: see→saw, speak→spoke. Group 3: take→took, give→gave. Group 4: find→found, ride→rode. Group 5: write→wrote, make→made. Example: Marco Polo WENT to China. He SAW amazing things. He TOOKE the job seriously.',
+    en: 'Irregular verbs do NOT follow the normal -ed pattern. Group 1: go→went, come→came. Group 2: see→saw, speak→spoke. Group 3: take→took, give→gave. Group 4: find→found, ride→rode. Group 5: write→wrote, make→made. Example: Marco Polo WENT to China. He SAW amazing things. He took the job seriously.',
     vi: 'Động từ bất quy tắc KHÔNG theo quy tắc thêm -ed. Nhóm 1: go→went, come→came. Nhóm 2: see→saw, speak→spoke. Nhóm 3: take→took, give→gave. Nhóm 4: find→found, ride→rode. Nhóm 5: write→wrote, make→made.'
   },
   exercises: [
