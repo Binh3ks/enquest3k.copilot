@@ -79,6 +79,7 @@ export function getCleanedTranscriptSentences(videoId) {
       text: (s.text || '').trim(),
       start: s.start,
       duration: s.duration,
+      vi: s.vi || null,
       _isTranscript: true,
     }))
     .filter((s) => {
