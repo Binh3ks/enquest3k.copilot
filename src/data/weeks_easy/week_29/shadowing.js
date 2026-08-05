@@ -13,13 +13,13 @@ Below, the doctor and the nurse waved at a big hospital near the beach. They wer
 
 At last, the carpet flew home. A **taxi driver** in a yellow taxi stopped the taxi and helped carry the carpet inside. 'I went to a farm! I flew over the sea! The dolphins came to swim with me!' Lily told her mum happily. 'That was the **best trip** ever!'`,
   script: [
-    { id: 1, text: "One night, Lily found the magic carpet under her bed.", vi: null },
-    { id: 2, text: "She sat on it and it flew up into the dark blue sky!", vi: null },
-    { id: 3, text: "'What a **wonderful trip**!' she said with a big smile.", vi: null },
-    { id: 4, text: "Then the carpet flew to a school.", vi: null },
-    { id: 5, text: "The pilot in a red plane flew past high in the sky.", vi: null },
-    { id: 6, text: "Below, the doctor and the nurse waved at a big hospital near the beach.", vi: null },
-    { id: 7, text: "A **taxi driver** in a yellow taxi stopped the taxi and helped carry the carpet inside.", vi: null },
-    { id: 8, text: "'That was the **best trip** ever!'", vi: null },
+    { id: 1, text: "One night, Lily found the magic carpet under her bed.", vi: "Một đêm, Lily tìm thấy tấm thảm bay dưới giường." },
+    { id: 2, text: "She sat on it and it flew up into the dark blue sky!", vi: "Cô ngồi lên và nó bay lên bầu trời xanh đậm!" },
+    { id: 3, text: "'What a wonderful trip!' she said with a big smile.", vi: "'Chuyến đi tuyệt vời quá!' cô nói với nụ cười lớn." },
+    { id: 4, text: "Then the carpet flew to a school.", vi: "Sau đó thảm bay đến một trường học." },
+    { id: 5, text: "The pilot in a red plane flew past high in the sky.", vi: "Phi công trong máy bay đỏ bay qua cao trên bầu trời." },
+    { id: 6, text: "Below, the doctor and the nurse waved at a big hospital near the beach.", vi: "Phía dưới, bác sĩ và y tá vẫy tay tại một bệnh viện lớn gần bãi biển." },
+    { id: 7, text: "A taxi driver in a yellow taxi stopped the taxi and helped carry the carpet inside.", vi: "Tài xế taxi trong chiếc taxi vàng dừng xe và giúp mang thảm vào." },
+    { id: 8, text: "'That was the best trip ever!'", vi: "'Đó là chuyến đi tuyệt nhất ever!'" },
   ]
 };

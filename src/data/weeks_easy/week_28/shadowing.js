@@ -11,13 +11,13 @@ When the slow hare woke up, the slow tortoise had already **won the race**. All 
 
 Slow and steady wins the race.`,
   script: [
-    { id: 1, text: "Once upon a time, a slow hare was very proud and fast.", vi: null },
-    { id: 2, text: "He always bragged about winning the race and laughed at the slow tortoise.", vi: null },
-    { id: 3, text: "The slow hare got on his fast bicycle while the slow tortoise got on his small boat.", vi: null },
-    { id: 4, text: "but then he **got tired** and **fell asleep** under a big **shady tree**.", vi: null },
-    { id: 5, text: "He crossed the river and kept going to the finish line.", vi: null },
-    { id: 6, text: "They could not believe the slow tortoise was winning the race!", vi: null },
-    { id: 7, text: "When the slow hare woke up, the slow tortoise had already won the race.", vi: null },
-    { id: 8, text: "Slow and steady wins the race.", vi: null },
+    { id: 1, text: "Once upon a time, a slow hare was very proud and fast.", vi: "Ngày xửa ngày xưa, thỏ chậm rất tự hào và nhanh." },
+    { id: 2, text: "He always bragged about winning the race and laughed at the slow tortoise.", vi: "Cậu luôn khoe khoang về việc thắng cuộc đua và cười nhạo rùa chậm." },
+    { id: 3, text: "The slow hare got on his fast bicycle while the slow tortoise got on his small boat.", vi: "Thỏ chậm lên xe đạp nhanh còn rùa chậm lên thuyền nhỏ." },
+    { id: 4, text: "But then he got tired and fell asleep under a big shady tree.", vi: "Nhưng sau đó cậu mệt và ngủ gật dưới gốc cây lớn râm mát." },
+    { id: 5, text: "He crossed the river and kept going to the finish line.", vi: "Cậu băng qua sông và tiếp tục đến vạch đích." },
+    { id: 6, text: "They could not believe the slow tortoise was winning the race!", vi: "Họ không tin được rùa chậm đang thắng cuộc đua!" },
+    { id: 7, text: "When the slow hare woke up, the slow tortoise had already won the race.", vi: "Khi thỏ chậm thức dậy, rùa chậm đã thắng cuộc đua." },
+    { id: 8, text: "Slow and steady wins the race.", vi: "Chậm và chắc chắn sẽ thắng cuộc đua." },
   ]
 };

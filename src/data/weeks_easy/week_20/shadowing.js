@@ -1,6 +1,6 @@
 export default {
   videoId: "qwjfQNQsRRI",  // Whispering Woods mystery (was: "Where is it?" reused from W09)
-  content_en: "I live in a town. My town has changed! Look at this old photo. **There was** a market near my house. **There were** big trees on the road. **There was** a bridge over the river. **There was** a temple next to the market. **There were** small buildings near the road. Now my town is different. **There is** a new road. **There are** new buildings. **There is** a new bridge. But the old temple is still there. My grandmother says, \\",
+  content_en: "I live in a town. My town has changed! Look at this old photo. **There was** a market near my house. **There were** big trees on the road. **There was** a bridge over the river. **There was** a temple next to the market. **There were** small buildings near the road. Now my town is different. **There is** a new road. **There are** new buildings. **There is** a new bridge. But the old temple is still there. My grandmother says, 'There was a village here before.' Now it is a big town. The new buildings are tall and bright. The old market is gone. But the temple is still beautiful. It is our old history. I love my town!",
   script: [
     { id: 1, text: "I live in a town.", vi: "Tôi sống ở một thị trấn." },
     { id: 2, text: "My town has changed!", vi: "Thị trấn của tôi đã thay đổi!" },
@@ -16,10 +16,10 @@ export default {
     { id: 12, text: "There is a new bridge.", vi: "Có một cầu mới." },
     { id: 13, text: "But the old temple is still.", vi: "Nhưng ngôi đền cũ vẫn còn." },
     { id: 14, text: "My grandmother says, 'There was a village here before.' Now it is a big town.", vi: "Bà tôi nói, 'Có một làng ở đây trước kia.' Bây giờ là một thị trấn lớn." },
-    { id: 15, text: "The new buildings are tall and bright.", vi: "Nhưng ngôi đền vẫn đẹp." },
-    { id: 16, text: "The old market is gone.", vi: "Đó là lịch sử cũ của chúng tôi." },
-    { id: 17, text: "But the temple is still beautiful.", vi: "Tôi yêu thị trấn của tôi!" },
-    { id: 18, text: "It is our old history.", vi: null },
-    { id: 19, text: "I love my town!", vi: null },
+    { id: 15, text: "The new buildings are tall and bright.", vi: "Các tòa nhà mới cao và sáng." },
+    { id: 16, text: "The old market is gone.", vi: "Chợ cũ đã biến mất." },
+    { id: 17, text: "But the temple is still beautiful.", vi: "Nhưng ngôi đền vẫn đẹp." },
+    { id: 18, text: "It is our old history.", vi: "Đó là lịch sử cũ của chúng tôi." },
+    { id: 19, text: "I love my town!", vi: "Tôi yêu thị trấn của tôi!" },
   ]
 };

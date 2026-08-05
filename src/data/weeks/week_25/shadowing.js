@@ -1,6 +1,6 @@
 export default {
   title: "Leo's Sandwich Disaster",
-  videoId: "curo8LPPA5Y",  // A Fun Day At The Park (has first/next/then, was: In/On/Under)
+  videoId: "LeiZGYUwOYQ",  // Growing a Tree — sequence words (first/then) match W25 grammar
   content_en: `It was Saturday morning and Leo decided to make a jam sandwich for breakfast — all by himself. First, he grabbed two slices of bread from the bag. Next, he picked up the knife and used it to spread strawberry jam on one slice. Then, he pressed the two slices together carefully. Finally, he cut the sandwich in half and put it on a plate.
 
 Mia watched from the doorway and smiled. 'That was a perfect sequence!' she said. 'You followed every step in the right order.'
@@ -13,13 +13,13 @@ Mia nodded. 'Exactly. Think about brushing your teeth too. First, you squeeze so
 
 'Well done!' said Mia. 'You are a sequence champion!'`,
   script: [
-    { id: 1, text: "First, Leo grabbed two slices of bread from the bag.", vi: null },
-    { id: 2, text: "Next, he used the knife to spread jam on one slice.", vi: null },
-    { id: 3, text: "Then, he pressed the two slices together carefully.", vi: null },
-    { id: 4, text: "Finally, he cut the sandwich in half and put it on a plate.", vi: null },
-    { id: 5, text: "First, you squeeze some toothpaste onto your brush.", vi: null },
-    { id: 6, text: "Next, you brush your teeth carefully for two minutes.", vi: null },
-    { id: 7, text: "Then, you rinse your mouth with clean water.", vi: null },
-    { id: 8, text: "Finally, Leo poured himself a glass of juice without spilling a drop.", vi: null },
+    { id: 1, text: "First, Leo grabbed two slices of bread from the bag.", vi: "Đầu tiên, Leo lấy hai lát bánh mì từ túi." },
+    { id: 2, text: "Next, he used the knife to spread jam on one slice.", vi: "Tiếp theo, cậu dùng dao phết mứt lên một lát." },
+    { id: 3, text: "Then, he pressed the two slices together carefully.", vi: "Sau đó, cậu ép hai lát lại với nhau cẩn thận." },
+    { id: 4, text: "Finally, he cut the sandwich in half and put it on a plate.", vi: "Cuối cùng, cậu cắt đôi bánh sandwich và bày lên đĩa." },
+    { id: 5, text: "First, you squeeze some toothpaste onto your brush.", vi: "Đầu tiên, bạn bóp một ít kem đánh răng lên bàn chải." },
+    { id: 6, text: "Next, you brush your teeth carefully for two minutes.", vi: "Tiếp theo, bạn chải răng cẩn thận trong hai phút." },
+    { id: 7, text: "Then, you rinse your mouth with clean water.", vi: "Sau đó, bạn súc miệng bằng nước sạch." },
+    { id: 8, text: "Finally, Leo poured himself a glass of juice without spilling a drop.", vi: "Cuối cùng, Leo rót cho mình một cốc nước trái cây mà không đổ một giọt nào." },
   ]
 };

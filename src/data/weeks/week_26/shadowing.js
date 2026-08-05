@@ -19,13 +19,13 @@ Mia looked over Leo's shoulder and smiled. 'You used Past Simple so perfectly in
 
 'Your weekend **comic strip** expresses a complete story,' said Mia. 'Now anyone can create their own!'`,
   script: [
-    { id: 1, text: "Leo decided to create a comic strip about his weekend adventure.", vi: null },
-    { id: 2, text: "He walked to the park with his dog Max on Saturday morning.", vi: null },
-    { id: 3, text: "Max played with his ball for one hour.", vi: null },
-    { id: 4, text: "They watched a street performance and clapped.", vi: null },
-    { id: 5, text: "Finally, they returned home tired but very happy.", vi: null },
-    { id: 6, text: "It was a sunny and warm day at the park.", vi: null },
-    { id: 7, text: "We were tired but very happy after the adventure.", vi: null },
-    { id: 8, text: "Leo created a comic strip using Past Simple sentences in every caption.", vi: null },
+    { id: 1, text: "Leo decided to create a comic strip about his weekend adventure.", vi: "Leo quyết định tạo một truyện tranh về cuộc phiêu lưu cuối tuần." },
+    { id: 2, text: "He walked to the park with his dog Max on Saturday morning.", vi: "Cậu đi bộ đến công viên với chó Max vào sáng thứ Bảy." },
+    { id: 3, text: "Max played with his ball for one hour.", vi: "Max chơi với bóng một giờ." },
+    { id: 4, text: "They watched a street performance and clapped.", vi: "Họ xem biểu diễn đường phố và vỗ tay." },
+    { id: 5, text: "Finally, they returned home tired but very happy.", vi: "Cuối cùng, họ về nhà mệt nhưng rất vui." },
+    { id: 6, text: "It was a sunny and warm day at the park.", vi: "Đó là một ngày nắng ấm ở công viên." },
+    { id: 7, text: "We were tired but very happy after the adventure.", vi: "Chúng tôi mệt nhưng rất vui sau cuộc phiêu lưu." },
+    { id: 8, text: "Leo created a comic strip using Past Simple sentences in every caption.", vi: "Leo tạo truyện tranh bằng câu Past Simple trong mỗi đoạn chú thích." },
   ]
 };

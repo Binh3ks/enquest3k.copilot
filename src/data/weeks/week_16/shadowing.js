@@ -15,7 +15,7 @@ export default {
     { id: 11, text: "I am catching it with my foot.", vi: "Tôi đang bắt nó bằng chân." },
     { id: 12, text: "Now I am passing it to another friend.", vi: "Bây giờ tôi đang chuyền nó cho bạn khác." },
     { id: 13, text: "He is running to the goal.", vi: "Bạn ấy đang chạy về phía khung thành." },
-    { id: 14, text: "Wow!", vi: null },
+    { id: 14, text: "Wow!", vi: "Tuyệt vời!" },
     { id: 15, text: "The ball has energy.", vi: "Quả bóng có năng lượng." },
     { id: 16, text: "It is in motion.", vi: "Nó đang ở trong chuyển động." },
     { id: 17, text: "The ball is moving fast through the air.", vi: "Bóng đang di chuyển nhanh trong không khí." },

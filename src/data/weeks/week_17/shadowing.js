@@ -1,6 +1,6 @@
 export default {
   videoId: "P9abGg_gF1s",
-  content_en: "Today the weather is changing! This morning, **it is raining** very hard. Big drops of water are **falling from the sky**. I **look outside the window**. The streets are wet. My teacher says: \\",
+  content_en: "Today the weather is changing! This morning, **it is raining** very hard. Big drops of water are **falling from the sky**. I **look outside the window**. The streets are wet. My teacher says: 'It is raining, so please be careful!' I am wearing my **blue coat** today. It keeps me dry and warm. My friend Linh is wearing her **red hat**. She looks so funny! My classmate Nam is carrying a **big umbrella**. He opens it every time we go outside. It is very cold today. The **wind is blowing** strong. Our science teacher explains why it rains. She says water goes through evaporation. The sun heats water in rivers and lakes. Water becomes vapor and floats up into the atmosphere. When vapor cools down, it forms clouds. Then it falls back as precipitation. Rain and snow are both types of precipitation! After school, the sky becomes sunny. The rain stops. Everything looks clean and bright. I take off my coat because it is warm outside now. Linh takes off her hat too. Nam closes his umbrella. We love learning about weather!",
   script: [
     { id: 1, text: "Today the weather is changing!", vi: "Hôm nay thời tiết đang thay đổi!" },
     { id: 2, text: "This morning, it is raining very hard.", vi: "Sáng nay, trời đang mưa rất to." },

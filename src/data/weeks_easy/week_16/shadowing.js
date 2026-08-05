@@ -1,6 +1,6 @@
 export default {
   videoId: "tgUSHk6JaTY",  // Sports Song (was: Do you have a pet?)
-  content_en: "Today is my first soccer game! I am very excited. Look! I am **running very fast**. My legs are moving. This is fun! My friend is **kicking the ball**. I am **catching it**. Now I am **passing it**. The ball has energy. It is in motion. The ball is moving! Our team is **playing soccer**. Everyone is **cheering loudly**. \\",
+  content_en: "Today is my first soccer game! I am very excited. Look! I am **running very fast**. My legs are moving. This is fun! My friend is **kicking the ball**. I am **catching it**. Now I am **passing it**. The ball has energy. It is in motion. The ball is moving! Our team is **playing soccer**. Everyone is **cheering loudly**. \"Go, go!\" they shout. Oh no! I throw the ball. That is wrong! I can only use my feet. The other team is scoring a goal. They are jumping up. They are happy. I want to score a goal too! I love soccer! My mom watches me. The grass is green. My dad takes photos. I drink water after the game.",
   script: [
     { id: 1, text: "Today is my first soccer game!", vi: "Hôm nay là trận bóng đầu tiên của tôi!" },
     { id: 2, text: "I am very excited.", vi: "Tôi rất phấn khích." },
@@ -26,9 +26,9 @@ export default {
     { id: 22, text: "They are happy.", vi: "Họ vui." },
     { id: 23, text: "I want to score a goal too!", vi: "Tôi muốn ghi bàn thắng nữa!" },
     { id: 24, text: "I love soccer!", vi: "Tôi yêu bóng đá!" },
-    { id: 25, text: "My mom watches me.", vi: null },
-    { id: 26, text: "The grass is green.", vi: null },
-    { id: 27, text: "My dad takes photos.", vi: null },
-    { id: 28, text: "I drink water after the game.", vi: null },
+    { id: 25, text: "My mom watches me.", vi: "Mẹ tôi xem tôi chơi." },
+    { id: 26, text: "The grass is green.", vi: "Cỏ màu xanh." },
+    { id: 27, text: "My dad takes photos.", vi: "Bố tôi chụp ảnh." },
+    { id: 28, text: "I drink water after the game.", vi: "Tôi uống nước sau trận đấu." },
   ]
 };
