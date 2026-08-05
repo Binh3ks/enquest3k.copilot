@@ -1,6 +1,6 @@
 export default {
   title: "Sam's Sandwich Steps",
-  videoId: "x39KwsXxl_0",  // Town tour — first/second/third/fourth/fifth blocks (ordinal sequence)
+  videoId: "mWxahMeRMrA",  // ESL Making Pizza — First, then, finally (sequence connectors)
   content_en: "It was Saturday morning. Sam wanted to make a jam sandwich for breakfast. He learned to follow the steps in order. First, he got two slices of bread from the bag. Next, he picked up the knife and spread some jam on one slice. Then, he pressed the two slices together. Finally, he cut the sandwich in half. Sam smiled. 'The sequence is the secret!' he said. He ate the perfect sandwich and felt very happy.",
   script: [
     { id: 1, text: "First, Sam got two slices of bread from the bag.", vi: "Đầu tiên, Sam lấy hai lát bánh mì từ túi." },
