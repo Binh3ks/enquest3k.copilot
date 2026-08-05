@@ -1,6 +1,6 @@
 export default {
   title: "My Weekend",
-  videoId: "Fw0rdSHzWFY",  // Easy English — daily routine, present tense, places (park, home)
+  videoId: "PKFgBK5fbfc",  // Picnic prep — prepositions (under, on, in, behind, in front of, between, beside)
   content_en: "Today is Saturday! I am happy. I **go to** the park. I **play at** the park. It is fun! Then I **go to** the library. I **read a book** **at the library**. I like books! My mom and I **go to** the store. We buy food **at the store**. I **help mom**! We **go to** the playground. I **play at** the playground. I **slide down**! **On Sunday**, I **go to** the zoo. I see a big lion **at the zoo**! Then I **eat lunch** **at home**. The food is good! I **go to** school **on Monday**. I like my weekend!",
   script: [
     { id: 1, text: "Today is Saturday!", vi: "Hôm nay là thứ Bảy!" },
