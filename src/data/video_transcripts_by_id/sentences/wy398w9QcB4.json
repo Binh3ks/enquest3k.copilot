@@ -27,7 +27,8 @@
           "confidence": 0.965
         }
       ],
-      "confidence": 0.737
+      "confidence": 0.737,
+      "vi": "Tiếng Anh sing sing."
     },
     {
       "id": 2,
@@ -46,7 +47,7 @@
           "word": "was",
           "start": 6.16,
           "end": 6.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "your",
@@ -64,10 +65,11 @@
           "word": "vacation",
           "start": 7.28,
           "end": 7.78,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.929
+      "confidence": 0.929,
+      "vi": "Kỳ nghỉ hè của bạn thế nào?"
     },
     {
       "id": 3,
@@ -86,16 +88,17 @@
           "word": "are",
           "start": 17.98,
           "end": 18.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 18.22,
           "end": 18.72,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Bạn khỏe không?"
     },
     {
       "id": 4,
@@ -114,10 +117,11 @@
           "word": "good",
           "start": 20.46,
           "end": 20.96,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tui khỏe."
     },
     {
       "id": 5,
@@ -142,7 +146,7 @@
           "word": "your",
           "start": 22.14,
           "end": 22.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "summer",
@@ -154,10 +158,11 @@
           "word": "vacation",
           "start": 22.79,
           "end": 23.29,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.946
+      "confidence": 0.946,
+      "vi": "Kỳ nghỉ hè của bạn thế nào?"
     },
     {
       "id": 6,
@@ -176,7 +181,7 @@
           "word": "was",
           "start": 24.79,
           "end": 25.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "great",
@@ -185,7 +190,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Nó tuyệt lắm."
     },
     {
       "id": 7,
@@ -198,13 +204,13 @@
           "word": "i",
           "start": 26.72,
           "end": 26.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "went",
           "start": 26.88,
           "end": 27.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -221,12 +227,12 @@
         {
           "word": "do",
           "start": 27.76,
-          "end": 28.0,
+          "end": 28,
           "confidence": 0.84
         },
         {
           "word": "with",
-          "start": 28.0,
+          "start": 28,
           "end": 28.24,
           "confidence": 0.986
         },
@@ -243,7 +249,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.963,
+      "vi": "Tui đi Jeju với gia đình."
     },
     {
       "id": 8,
@@ -259,7 +266,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Thật à? Bạn đã làm gì ở đó?"
     },
     {
       "id": 9,
@@ -284,7 +292,7 @@
           "word": "you",
           "start": 33.36,
           "end": 33.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -296,10 +304,11 @@
           "word": "there",
           "start": 33.76,
           "end": 34.26,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Chúng tui tham quan Jeju."
     },
     {
       "id": 10,
@@ -324,13 +333,13 @@
           "word": "around",
           "start": 35.92,
           "end": 36.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "jeju",
           "start": 36.24,
           "end": 36.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -339,7 +348,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Nghe hay quá."
     },
     {
       "id": 11,
@@ -361,7 +371,8 @@
           "confidence": 0.876
         }
       ],
-      "confidence": 0.934
+      "confidence": 0.934,
+      "vi": "Chúng tui cưỡi ngựa và đi bộ dọc Jeju Olle."
     },
     {
       "id": 12,
@@ -380,7 +391,7 @@
           "word": "rode",
           "start": 40.82,
           "end": 41.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "horses",
@@ -419,7 +430,8 @@
           "confidence": 0.837
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Jeju Olle? Nó là gì?"
     },
     {
       "id": 13,
@@ -441,7 +453,8 @@
           "confidence": 0.976
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Đó là một con đường đi bộ."
     },
     {
       "id": 14,
@@ -460,10 +473,11 @@
           "word": "that",
           "start": 46.98,
           "end": 47.48,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Bạn có thể thấy bãi biển và cánh đồng đẹp từ đó."
     },
     {
       "id": 15,
@@ -482,13 +496,13 @@
           "word": "a",
           "start": 48.98,
           "end": 49.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "walking",
           "start": 49.22,
           "end": 49.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "path",
@@ -497,7 +511,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Wow, tui cũng muốn đi đó."
     },
     {
       "id": 16,
@@ -516,7 +531,7 @@
           "word": "can",
           "start": 51.85,
           "end": 52.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "see",
@@ -534,13 +549,13 @@
           "word": "beaches",
           "start": 52.89,
           "end": 53.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
           "start": 53.29,
           "end": 53.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fields",
@@ -561,7 +576,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Kỳ nghỉ của bạn thì sao?"
     },
     {
       "id": 17,
@@ -580,7 +596,7 @@
           "word": "i",
           "start": 56.57,
           "end": 56.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "want",
@@ -598,13 +614,13 @@
           "word": "go",
           "start": 57.29,
           "end": 57.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "there",
           "start": 57.45,
           "end": 57.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "too",
@@ -613,7 +629,8 @@
           "confidence": 0.838
         }
       ],
-      "confidence": 0.939
+      "confidence": 0.939,
+      "vi": "Bạn đã làm gì?"
     },
     {
       "id": 18,
@@ -632,7 +649,7 @@
           "word": "about",
           "start": 59.77,
           "end": 60.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "your",
@@ -647,7 +664,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Tui học taekwondo."
     },
     {
       "id": 19,
@@ -672,16 +690,17 @@
           "word": "you",
           "start": 62.57,
           "end": 62.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
           "start": 62.73,
           "end": 63.23,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Hay quá."
     },
     {
       "id": 20,
@@ -700,7 +719,7 @@
           "word": "took",
           "start": 65.53,
           "end": 65.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "taekwondo",
@@ -715,7 +734,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.954,
+      "vi": "Bạn có đai màu gì?"
     },
     {
       "id": 21,
@@ -731,7 +751,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Trắng."
     },
     {
       "id": 22,
@@ -774,10 +795,11 @@
           "word": "have",
           "start": 70.97,
           "end": 71.47,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tui muốn lấy đai xanh sớm."
     },
     {
       "id": 23,
@@ -802,7 +824,7 @@
           "word": "want",
           "start": 74.01,
           "end": 74.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -814,19 +836,19 @@
           "word": "get",
           "start": 74.41,
           "end": 74.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 74.56,
           "end": 74.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "blue",
           "start": 74.81,
           "end": 75.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "belt",
@@ -838,10 +860,11 @@
           "word": "soon",
           "start": 75.37,
           "end": 75.87,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Chúc may mắn."
     },
     {
       "id": 24,
@@ -863,7 +886,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Nghe nào."
     },
     {
       "id": 25,
@@ -879,7 +903,8 @@
           "confidence": 0.977
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Bạn khỏe không?"
     },
     {
       "id": 26,
@@ -898,16 +923,17 @@
           "word": "are",
           "start": 95.94,
           "end": 96.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 96.09,
           "end": 96.59,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Tui khỏe."
     },
     {
       "id": 27,
@@ -926,10 +952,11 @@
           "word": "good",
           "start": 98.49,
           "end": 98.99,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Kỳ nghỉ hè của bạn thế nào?"
     },
     {
       "id": 28,
@@ -954,7 +981,7 @@
           "word": "your",
           "start": 100.09,
           "end": 100.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "summer",
@@ -966,10 +993,11 @@
           "word": "vacation",
           "start": 100.73,
           "end": 101.23,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Nó tuyệt lắm."
     },
     {
       "id": 29,
@@ -988,7 +1016,7 @@
           "word": "was",
           "start": 102.73,
           "end": 103.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "great",
@@ -997,7 +1025,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tui đi Jeju với gia đình."
     },
     {
       "id": 30,
@@ -1010,13 +1039,13 @@
           "word": "i",
           "start": 104.67,
           "end": 104.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "went",
           "start": 104.83,
           "end": 105.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1055,7 +1084,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Thật à? Bạn đã làm gì ở đó?"
     },
     {
       "id": 31,
@@ -1071,7 +1101,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Chúng tui tham quan Jeju."
     },
     {
       "id": 32,
@@ -1096,7 +1127,7 @@
           "word": "you",
           "start": 111.31,
           "end": 111.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -1108,10 +1139,11 @@
           "word": "there",
           "start": 111.71,
           "end": 112.21,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Nghe hay quá."
     },
     {
       "id": 33,
@@ -1136,13 +1168,13 @@
           "word": "around",
           "start": 113.87,
           "end": 114.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "jeju",
           "start": 114.19,
           "end": 114.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -1151,7 +1183,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Chúng tui cưỡi ngựa và đi bộ dọc Jeju Olle."
     },
     {
       "id": 34,
@@ -1173,7 +1206,8 @@
           "confidence": 0.83
         }
       ],
-      "confidence": 0.911
+      "confidence": 0.911,
+      "vi": "Jeju Olle? Nó là gì?"
     },
     {
       "id": 35,
@@ -1192,13 +1226,13 @@
           "word": "rode",
           "start": 118.84,
           "end": 119.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "horses",
           "start": 119.16,
           "end": 119.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1231,7 +1265,8 @@
           "confidence": 0.829
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Đó là một con đường đi bộ."
     },
     {
       "id": 36,
@@ -1253,7 +1288,8 @@
           "confidence": 0.976
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Bạn có thể thấy bãi biển và cánh đồng đẹp từ đó."
     },
     {
       "id": 37,
@@ -1265,17 +1301,18 @@
         {
           "word": "what's",
           "start": 124.6,
-          "end": 125.0,
+          "end": 125,
           "confidence": 0.997
         },
         {
           "word": "that",
-          "start": 125.0,
+          "start": 125,
           "end": 125.5,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Wow, tui cũng muốn đi đó."
     },
     {
       "id": 38,
@@ -1287,20 +1324,20 @@
         {
           "word": "it's",
           "start": 126.69,
-          "end": 127.0,
+          "end": 127,
           "confidence": 0.998
         },
         {
           "word": "a",
-          "start": 127.0,
+          "start": 127,
           "end": 127.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "walking",
           "start": 127.16,
           "end": 127.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "path",
@@ -1309,7 +1346,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Kỳ nghỉ của bạn thì sao?"
     },
     {
       "id": 39,
@@ -1328,7 +1366,7 @@
           "word": "can",
           "start": 129.82,
           "end": 130.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "see",
@@ -1346,13 +1384,13 @@
           "word": "beaches",
           "start": 130.86,
           "end": 131.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
           "start": 131.26,
           "end": 131.5,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fields",
@@ -1373,7 +1411,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Bạn đã làm gì?"
     },
     {
       "id": 40,
@@ -1392,7 +1431,7 @@
           "word": "i",
           "start": 134.54,
           "end": 134.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "want",
@@ -1410,13 +1449,13 @@
           "word": "go",
           "start": 135.26,
           "end": 135.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "there",
           "start": 135.42,
           "end": 135.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "too",
@@ -1425,7 +1464,8 @@
           "confidence": 0.834
         }
       ],
-      "confidence": 0.939
+      "confidence": 0.939,
+      "vi": "Tui học taekwondo."
     },
     {
       "id": 41,
@@ -1444,7 +1484,7 @@
           "word": "about",
           "start": 137.74,
           "end": 138.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "your",
@@ -1459,7 +1499,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Hay quá."
     },
     {
       "id": 42,
@@ -1478,22 +1519,23 @@
           "word": "did",
           "start": 140.3,
           "end": 140.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 140.54,
           "end": 140.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
           "start": 140.7,
           "end": 141.2,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Bạn có đai màu gì?"
     },
     {
       "id": 43,
@@ -1512,7 +1554,7 @@
           "word": "took",
           "start": 143.47,
           "end": 143.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "taekwondo",
@@ -1527,7 +1569,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Trắng."
     },
     {
       "id": 44,
@@ -1543,7 +1586,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Tui muốn lấy đai xanh sớm."
     },
     {
       "id": 45,
@@ -1586,10 +1630,11 @@
           "word": "have",
           "start": 148.91,
           "end": 149.41,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Chúc may mắn."
     },
     {
       "id": 46,
@@ -1605,7 +1650,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Đọc to nào."
     },
     {
       "id": 47,
@@ -1624,31 +1670,31 @@
           "word": "want",
           "start": 151.94,
           "end": 152.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 152.26,
           "end": 152.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "get",
           "start": 152.34,
           "end": 152.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 152.58,
           "end": 152.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "blue",
           "start": 152.75,
           "end": 153.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "belt",
@@ -1660,10 +1706,11 @@
           "word": "soon",
           "start": 153.38,
           "end": 153.88,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Đến lượt bạn."
     },
     {
       "id": 48,
@@ -1685,7 +1732,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tui cũng thích bóng rổ, nhưng tui chơi không giỏi lắm."
     },
     {
       "id": 49,
@@ -1707,7 +1755,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.853
+      "confidence": 0.853,
+      "vi": "Nghe nào."
     },
     {
       "id": 50,
@@ -1729,7 +1778,8 @@
           "confidence": 0.979
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Đến lượt bạn."
     }
   ],
   "videoId": "wy398w9QcB4",

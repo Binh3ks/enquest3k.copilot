@@ -27,7 +27,8 @@
           "confidence": 0.97
         }
       ],
-      "confidence": 0.834
+      "confidence": 0.834,
+      "vi": "English sing sing."
     },
     {
       "id": 2,
@@ -39,7 +40,7 @@
         {
           "word": "angry",
           "start": 16.5,
-          "end": 17.0,
+          "end": 17,
           "confidence": 0.79
         },
         {
@@ -67,7 +68,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.79
+      "confidence": 0.79,
+      "vi": "Giận dữ, giận dữ. Bạn đang giận dữ à?"
     },
     {
       "id": 3,
@@ -89,7 +91,8 @@
           "confidence": 0.979
         }
       ],
-      "confidence": 0.968
+      "confidence": 0.968,
+      "vi": "Tôi đang giận dữ."
     },
     {
       "id": 4,
@@ -129,7 +132,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.768
+      "confidence": 0.768,
+      "vi": "Chán, chán. Bạn đang chán à?"
     },
     {
       "id": 5,
@@ -151,7 +155,8 @@
           "confidence": 0.982
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Tôi đang chán."
     },
     {
       "id": 6,
@@ -188,10 +193,11 @@
           "word": "excited",
           "start": 49.91,
           "end": 50.41,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Hào hứng, hào hứng. Bạn đang hào hứng à?"
     },
     {
       "id": 7,
@@ -213,7 +219,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Tôi đang hào hứng."
     },
     {
       "id": 8,
@@ -244,16 +251,17 @@
           "word": "you",
           "start": 62.99,
           "end": 63.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "happy",
           "start": 63.39,
           "end": 63.89,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Vui, vui. Bạn đang vui à?"
     },
     {
       "id": 9,
@@ -272,10 +280,11 @@
           "word": "happy",
           "start": 65.48,
           "end": 65.98,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Tôi đang vui."
     },
     {
       "id": 10,
@@ -294,7 +303,7 @@
           "word": "hungry",
           "start": 73.56,
           "end": 74.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "are",
@@ -306,16 +315,17 @@
           "word": "you",
           "start": 75.41,
           "end": 75.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hungry",
           "start": 75.81,
           "end": 76.31,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Đói, đói. Bạn đang đói à?"
     },
     {
       "id": 11,
@@ -337,7 +347,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tôi đang đói."
     },
     {
       "id": 12,
@@ -356,7 +367,7 @@
           "word": "sad",
           "start": 88.42,
           "end": 88.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "are",
@@ -368,16 +379,17 @@
           "word": "you",
           "start": 90.42,
           "end": 90.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sad",
           "start": 90.74,
           "end": 91.24,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Buồn, buồn. Bạn đang buồn à?"
     },
     {
       "id": 13,
@@ -399,7 +411,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tôi đang buồn."
     },
     {
       "id": 14,
@@ -436,10 +449,11 @@
           "word": "scared",
           "start": 103.35,
           "end": 103.85,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Sợ, sợ. Bạn đang sợ à?"
     },
     {
       "id": 15,
@@ -461,7 +475,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Tôi đang sợ."
     },
     {
       "id": 16,
@@ -501,7 +516,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.792
+      "confidence": 0.792,
+      "vi": "Nhút nhát, nhút nhát. Bạn đang nhút nhát à?"
     },
     {
       "id": 17,
@@ -523,7 +539,8 @@
           "confidence": 0.973
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Tôi đang nhút nhát."
     },
     {
       "id": 18,
@@ -554,7 +571,7 @@
           "word": "you",
           "start": 136.69,
           "end": 137.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sleepy",
@@ -563,7 +580,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.788
+      "confidence": 0.788,
+      "vi": "Buồn ngủ, buồn ngủ. Bạn đang buồn ngủ à?"
     },
     {
       "id": 19,
@@ -585,7 +603,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tôi đang buồn ngủ."
     },
     {
       "id": 20,
@@ -616,16 +635,17 @@
           "word": "you",
           "start": 149.66,
           "end": 150.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "thirsty",
           "start": 150.06,
           "end": 150.56,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.9
+      "confidence": 0.9,
+      "vi": "Khát, khát. Bạn đang khát à?"
     },
     {
       "id": 21,
@@ -644,10 +664,11 @@
           "word": "thirsty",
           "start": 152.53,
           "end": 153.03,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tôi đang khát."
     },
     {
       "id": 22,
@@ -672,22 +693,23 @@
           "word": "are",
           "start": 164.14,
           "end": 164.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 164.54,
           "end": 164.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tired",
           "start": 164.78,
           "end": 165.28,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.773
+      "confidence": 0.773,
+      "vi": "Mệt, mệt. Bạn đang mệt à?"
     },
     {
       "id": 23,
@@ -700,16 +722,17 @@
           "word": "i'm",
           "start": 166.46,
           "end": 166.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tired",
           "start": 166.94,
           "end": 167.44,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Tôi đang mệt."
     },
     {
       "id": 24,
@@ -740,16 +763,17 @@
           "word": "you",
           "start": 180.74,
           "end": 181.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "worried",
           "start": 181.06,
           "end": 181.56,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.888
+      "confidence": 0.888,
+      "vi": "Lo lắng, lo lắng. Bạn đang lo lắng à?"
     },
     {
       "id": 25,
@@ -768,10 +792,11 @@
           "word": "worried",
           "start": 183.13,
           "end": 183.63,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tôi đang lo lắng."
     },
     {
       "id": 26,
@@ -787,7 +812,8 @@
           "confidence": 0.923
         }
       ],
-      "confidence": 0.923
+      "confidence": 0.923,
+      "vi": "Ôn tập."
     },
     {
       "id": 27,
@@ -803,7 +829,8 @@
           "confidence": 0.963
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.963,
+      "vi": "Giận dữ."
     },
     {
       "id": 28,
@@ -819,7 +846,8 @@
           "confidence": 0.953
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.953,
+      "vi": "Chán."
     },
     {
       "id": 29,
@@ -835,7 +863,8 @@
           "confidence": 0.979
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Hào hứng."
     },
     {
       "id": 30,
@@ -848,10 +877,11 @@
           "word": "happy",
           "start": 200.95,
           "end": 201.45,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Vui."
     },
     {
       "id": 31,
@@ -870,7 +900,7 @@
           "word": "sad",
           "start": 208.58,
           "end": 209.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "scared",
@@ -888,13 +918,13 @@
           "word": "sleepy",
           "start": 219.13,
           "end": 219.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "thirsty",
           "start": 222.73,
           "end": 223.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tired",
@@ -906,10 +936,11 @@
           "word": "worried",
           "start": 230.33,
           "end": 230.83,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Đói, buồn, sợ, nhút nhát, buồn ngủ, khát, mệt, lo lắng."
     }
   ],
   "videoId": "BXWNhq-lPD8",

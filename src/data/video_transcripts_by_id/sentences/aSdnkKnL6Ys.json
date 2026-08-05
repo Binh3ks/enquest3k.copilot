@@ -27,7 +27,8 @@
           "confidence": 0.984
         }
       ],
-      "confidence": 0.848
+      "confidence": 0.848,
+      "vi": "English Sing Sing."
     },
     {
       "id": 2,
@@ -49,7 +50,8 @@
           "confidence": 0.714
         }
       ],
-      "confidence": 0.697
+      "confidence": 0.697,
+      "vi": "Truyện cổ tích."
     },
     {
       "id": 3,
@@ -68,13 +70,13 @@
           "word": "upon",
           "start": 12.66,
           "end": 12.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 12.97,
           "end": 13.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
@@ -92,7 +94,7 @@
           "word": "was",
           "start": 14.41,
           "end": 14.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -122,7 +124,7 @@
           "word": "beautiful",
           "start": 15.86,
           "end": 16.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "country",
@@ -131,7 +133,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.949
+      "confidence": 0.949,
+      "vi": "Ngày xưa, ở một đất nước xinh đẹp có một cung điện."
     },
     {
       "id": 4,
@@ -147,7 +150,8 @@
           "confidence": 0.972
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Cung điện."
     },
     {
       "id": 5,
@@ -163,7 +167,8 @@
           "confidence": 0.984
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Cung điện."
     },
     {
       "id": 6,
@@ -194,13 +199,13 @@
           "word": "very",
           "start": 29.53,
           "end": 29.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "handsome",
           "start": 29.85,
           "end": 30.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "king",
@@ -209,7 +214,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Ở đó có một vị vua rất đẹp trai."
     },
     {
       "id": 7,
@@ -225,7 +231,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Vua."
     },
     {
       "id": 8,
@@ -241,7 +248,8 @@
           "confidence": 0.976
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Vua."
     },
     {
       "id": 9,
@@ -260,13 +268,13 @@
           "word": "a",
           "start": 40.18,
           "end": 40.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "beautiful",
           "start": 40.42,
           "end": 40.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "queen",
@@ -275,7 +283,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Và một nữ hoàng rất xinh đẹp."
     },
     {
       "id": 10,
@@ -291,7 +300,8 @@
           "confidence": 0.971
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.971,
+      "vi": "Nữ hoàng."
     },
     {
       "id": 11,
@@ -307,7 +317,8 @@
           "confidence": 0.969
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.969,
+      "vi": "Nữ hoàng."
     },
     {
       "id": 12,
@@ -338,7 +349,7 @@
           "word": "pretty",
           "start": 49.86,
           "end": 50.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "princess",
@@ -347,7 +358,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Họ có một nàng công chúa xinh đẹp."
     },
     {
       "id": 13,
@@ -363,7 +375,8 @@
           "confidence": 0.868
         }
       ],
-      "confidence": 0.868
+      "confidence": 0.868,
+      "vi": "Công chúa."
     },
     {
       "id": 14,
@@ -379,7 +392,8 @@
           "confidence": 0.947
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.947,
+      "vi": "Công chúa."
     },
     {
       "id": 15,
@@ -431,7 +445,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.865
+      "confidence": 0.865,
+      "vi": "Một hôm, phù thủy đã bắt cóc công chúa."
     },
     {
       "id": 16,
@@ -447,7 +462,8 @@
           "confidence": 0.863
         }
       ],
-      "confidence": 0.863
+      "confidence": 0.863,
+      "vi": "Phù thủy."
     },
     {
       "id": 17,
@@ -463,7 +479,8 @@
           "confidence": 0.716
         }
       ],
-      "confidence": 0.716
+      "confidence": 0.716,
+      "vi": "Phù thủy."
     },
     {
       "id": 18,
@@ -482,7 +499,7 @@
           "word": "her",
           "start": 73.42,
           "end": 73.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "magic",
@@ -494,7 +511,7 @@
           "word": "the",
           "start": 74.62,
           "end": 74.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "princess",
@@ -512,13 +529,13 @@
           "word": "trapped",
           "start": 75.66,
           "end": 76.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 76.14,
           "end": 76.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -539,7 +556,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.96
+      "confidence": 0.96,
+      "vi": "Bằng phép thuật của mình, phù thủy đã giam công chúa trong khu rừng tối tăm."
     },
     {
       "id": 19,
@@ -555,7 +573,8 @@
           "confidence": 0.609
         }
       ],
-      "confidence": 0.609
+      "confidence": 0.609,
+      "vi": "Rừng."
     },
     {
       "id": 20,
@@ -571,7 +590,8 @@
           "confidence": 0.766
         }
       ],
-      "confidence": 0.766
+      "confidence": 0.766,
+      "vi": "Phép thuật."
     },
     {
       "id": 21,
@@ -608,13 +628,13 @@
           "word": "to",
           "start": 89.54,
           "end": 89.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "save",
           "start": 89.78,
           "end": 90.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -629,7 +649,8 @@
           "confidence": 0.982
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Phép thuật. Nhiều hiệp sĩ đã cố gắng giải cứu công chúa."
     },
     {
       "id": 22,
@@ -645,7 +666,8 @@
           "confidence": 0.852
         }
       ],
-      "confidence": 0.852
+      "confidence": 0.852,
+      "vi": "Hiệp sĩ."
     },
     {
       "id": 23,
@@ -706,17 +728,17 @@
           "word": "guarded",
           "start": 104.28,
           "end": 104.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "by",
           "start": 104.77,
-          "end": 105.0,
-          "confidence": 1.0
+          "end": 105,
+          "confidence": 1
         },
         {
           "word": "a",
-          "start": 105.0,
+          "start": 105,
           "end": 105.33,
           "confidence": 0.999
         },
@@ -733,7 +755,8 @@
           "confidence": 0.96
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Đêm. Nhưng họ đều thất bại vì khu rừng bị canh giữ bởi một con quái vật đáng sợ."
     },
     {
       "id": 24,
@@ -749,7 +772,8 @@
           "confidence": 0.98
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Quái vật."
     },
     {
       "id": 25,
@@ -780,7 +804,7 @@
           "word": "and",
           "start": 119.05,
           "end": 119.37,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "queen",
@@ -804,10 +828,11 @@
           "word": "sad",
           "start": 120.49,
           "end": 120.99,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Quái vật. Nhà vua và nữ hoàng rất đau buồn."
     },
     {
       "id": 26,
@@ -862,7 +887,7 @@
           "word": "country",
           "start": 126.24,
           "end": 126.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "came",
@@ -880,7 +905,7 @@
           "word": "save",
           "start": 127.36,
           "end": 127.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "her",
@@ -889,7 +914,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Một hôm, một hoàng tử từ đất nước láng giềng đến để giải cứu cô."
     },
     {
       "id": 27,
@@ -905,7 +931,8 @@
           "confidence": 0.956
         }
       ],
-      "confidence": 0.956
+      "confidence": 0.956,
+      "vi": "Hoàng tử."
     },
     {
       "id": 28,
@@ -921,7 +948,8 @@
           "confidence": 0.799
         }
       ],
-      "confidence": 0.799
+      "confidence": 0.799,
+      "vi": "Hoàng tử."
     },
     {
       "id": 29,
@@ -937,7 +965,8 @@
           "confidence": 0.796
         }
       ],
-      "confidence": 0.796
+      "confidence": 0.796,
+      "vi": "Hoàng tử."
     },
     {
       "id": 30,
@@ -989,7 +1018,8 @@
           "confidence": 0.937
         }
       ],
-      "confidence": 0.942
+      "confidence": 0.942,
+      "vi": "Ta sẽ giải cứu công chúa, hoàng tử nói."
     },
     {
       "id": 31,
@@ -1029,7 +1059,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.951
+      "confidence": 0.951,
+      "vi": "Bỗng nhiên, một nàng tiên xuất hiện."
     },
     {
       "id": 32,
@@ -1045,7 +1076,8 @@
           "confidence": 0.856
         }
       ],
-      "confidence": 0.856
+      "confidence": 0.856,
+      "vi": "Nàng tiên."
     },
     {
       "id": 33,
@@ -1088,7 +1120,7 @@
           "word": "able",
           "start": 152.72,
           "end": 153.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1115,7 +1147,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.921
+      "confidence": 0.921,
+      "vi": "Với chú rồng này, con sẽ có thể giải cứu công chúa."
     },
     {
       "id": 34,
@@ -1131,7 +1164,8 @@
           "confidence": 0.966
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Rồng."
     },
     {
       "id": 35,
@@ -1147,7 +1181,8 @@
           "confidence": 0.96
         }
       ],
-      "confidence": 0.96
+      "confidence": 0.96,
+      "vi": "Rồng."
     },
     {
       "id": 36,
@@ -1169,7 +1204,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Ồ, cảm ơn ạ."
     },
     {
       "id": 37,
@@ -1212,16 +1248,17 @@
           "word": "scary",
           "start": 172.51,
           "end": 173.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "monster",
           "start": 173.07,
           "end": 173.57,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Họ đã đánh bại được con quái vật đáng sợ."
     },
     {
       "id": 38,
@@ -1255,7 +1292,8 @@
           "confidence": 0.961
         }
       ],
-      "confidence": 0.923
+      "confidence": 0.923,
+      "vi": "Cảm ơn anh hùng của em."
     },
     {
       "id": 39,
@@ -1277,7 +1315,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Không có gì."
     },
     {
       "id": 40,
@@ -1293,7 +1332,8 @@
           "confidence": 0.797
         }
       ],
-      "confidence": 0.797
+      "confidence": 0.797,
+      "vi": "Anh hùng."
     },
     {
       "id": 41,
@@ -1309,7 +1349,8 @@
           "confidence": 0.965
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Anh hùng."
     },
     {
       "id": 42,
@@ -1334,7 +1375,7 @@
           "word": "and",
           "start": 198.99,
           "end": 199.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "princess",
@@ -1352,7 +1393,7 @@
           "word": "married",
           "start": 200.19,
           "end": 200.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1370,7 +1411,7 @@
           "word": "happily",
           "start": 201.55,
           "end": 202.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ever",
@@ -1385,7 +1426,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Hoàng tử và công chúa đã kết hôn và sống hạnh phúc mãi mãi."
     },
     {
       "id": 43,
@@ -1401,7 +1443,8 @@
           "confidence": 0.862
         }
       ],
-      "confidence": 0.862
+      "confidence": 0.862,
+      "vi": "Ôn tập."
     },
     {
       "id": 44,
@@ -1450,7 +1493,7 @@
           "word": "monster",
           "start": 228.62,
           "end": 229.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "palace",
@@ -1483,7 +1526,8 @@
           "confidence": 0.968
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.952,
+      "vi": "Rồng, nàng tiên, anh hùng, vua, hiệp sĩ, phép thuật, quái vật, cung điện, hoàng tử, công chúa, nữ hoàng, phù thủy."
     },
     {
       "id": 45,
@@ -1499,7 +1543,8 @@
           "confidence": 0.866
         }
       ],
-      "confidence": 0.866
+      "confidence": 0.866,
+      "vi": "Xem lại."
     },
     {
       "id": 46,
@@ -1521,7 +1566,8 @@
           "confidence": 0.766
         }
       ],
-      "confidence": 0.699
+      "confidence": 0.699,
+      "vi": "Truyện cổ tích."
     },
     {
       "id": 47,
@@ -1540,13 +1586,13 @@
           "word": "upon",
           "start": 261.56,
           "end": 261.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 261.81,
           "end": 262.04,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
@@ -1564,7 +1610,7 @@
           "word": "was",
           "start": 263.56,
           "end": 263.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1588,13 +1634,13 @@
           "word": "a",
           "start": 264.76,
           "end": 264.93,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "beautiful",
           "start": 264.93,
           "end": 265.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "country",
@@ -1603,7 +1649,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Ngày xưa, ở một đất nước xinh đẹp có một cung điện."
     },
     {
       "id": 48,
@@ -1622,25 +1669,25 @@
           "word": "lived",
           "start": 268.44,
           "end": 268.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 268.85,
-          "end": 269.0,
-          "confidence": 1.0
+          "end": 269,
+          "confidence": 1
         },
         {
           "word": "very",
-          "start": 269.0,
+          "start": 269,
           "end": 269.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "handsome",
           "start": 269.49,
           "end": 269.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "king",
@@ -1658,13 +1705,13 @@
           "word": "a",
           "start": 270.69,
           "end": 270.93,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "beautiful",
           "start": 270.93,
           "end": 271.43,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "queen",
@@ -1673,7 +1720,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Ở đó có một vị vua rất đẹp trai và một nữ hoàng rất xinh đẹp."
     },
     {
       "id": 49,
@@ -1692,19 +1740,19 @@
           "word": "had",
           "start": 273.94,
           "end": 274.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 274.26,
           "end": 274.5,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pretty",
           "start": 274.5,
           "end": 274.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "princess",
@@ -1713,7 +1761,8 @@
           "confidence": 0.964
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Họ có một nàng công chúa xinh đẹp."
     },
     {
       "id": 50,
@@ -1765,7 +1814,8 @@
           "confidence": 0.974
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Một hôm, phù thủy đã bắt cóc công chúa."
     },
     {
       "id": 51,
@@ -1784,7 +1834,7 @@
           "word": "her",
           "start": 285.3,
           "end": 285.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "magic",
@@ -1808,19 +1858,19 @@
           "word": "was",
           "start": 287.22,
           "end": 287.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "trapped",
           "start": 287.46,
           "end": 287.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 287.94,
           "end": 288.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -1832,16 +1882,17 @@
           "word": "dark",
           "start": 288.34,
           "end": 288.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "forest",
           "start": 288.66,
           "end": 289.16,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Bằng phép thuật của mình, phù thủy đã giam công chúa trong khu rừng tối tăm."
     },
     {
       "id": 52,
@@ -1872,13 +1923,13 @@
           "word": "to",
           "start": 293.83,
           "end": 294.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "save",
           "start": 294.15,
           "end": 294.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -1893,7 +1944,8 @@
           "confidence": 0.902
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Nhiều hiệp sĩ đã cố gắng giải cứu công chúa."
     },
     {
       "id": 53,
@@ -1918,7 +1970,7 @@
           "word": "failed",
           "start": 298.56,
           "end": 299.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "because",
@@ -1929,53 +1981,54 @@
         {
           "word": "the",
           "start": 299.75,
-          "end": 300.0,
-          "confidence": 1.0
+          "end": 300,
+          "confidence": 1
         },
         {
           "word": "forest",
-          "start": 300.0,
+          "start": 300,
           "end": 300.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "was",
           "start": 300.48,
           "end": 300.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "guarded",
           "start": 300.79,
           "end": 301.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "by",
           "start": 301.35,
           "end": 301.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 301.6,
           "end": 301.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "scary",
           "start": 301.83,
           "end": 302.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "monster",
           "start": 302.39,
           "end": 302.89,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.967
+      "confidence": 0.967,
+      "vi": "Nhưng họ đều thất bại vì khu rừng bị canh giữ bởi một con quái vật đáng sợ."
     },
     {
       "id": 54,
@@ -2000,7 +2053,7 @@
           "word": "and",
           "start": 307.59,
           "end": 307.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "queen",
@@ -2024,10 +2077,11 @@
           "word": "sad",
           "start": 309.03,
           "end": 309.53,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Nhà vua và nữ hoàng rất đau buồn."
     },
     {
       "id": 55,
@@ -2082,7 +2136,7 @@
           "word": "country",
           "start": 316.23,
           "end": 316.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "came",
@@ -2106,10 +2160,11 @@
           "word": "her",
           "start": 317.59,
           "end": 318.09,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.958
+      "confidence": 0.958,
+      "vi": "Một hôm, một hoàng tử từ đất nước láng giềng đến để giải cứu cô."
     },
     {
       "id": 56,
@@ -2128,7 +2183,7 @@
           "word": "save",
           "start": 320.5,
           "end": 320.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -2161,7 +2216,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Ta sẽ giải cứu công chúa, hoàng tử nói."
     },
     {
       "id": 57,
@@ -2192,16 +2248,17 @@
           "word": "showed",
           "start": 327.55,
           "end": 327.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "up",
           "start": 327.79,
           "end": 328.29,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Bỗng nhiên, một nàng tiên xuất hiện."
     },
     {
       "id": 58,
@@ -2220,7 +2277,7 @@
           "word": "this",
           "start": 333.51,
           "end": 333.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "dragon",
@@ -2244,7 +2301,7 @@
           "word": "able",
           "start": 335.27,
           "end": 335.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -2271,7 +2328,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Với chú rồng này, con sẽ có thể giải cứu công chúa."
     },
     {
       "id": 59,
@@ -2293,7 +2351,8 @@
           "confidence": 0.982
         }
       ],
-      "confidence": 0.946
+      "confidence": 0.946,
+      "vi": "Ồ, cảm ơn ạ."
     },
     {
       "id": 60,
@@ -2318,7 +2377,7 @@
           "word": "could",
           "start": 345.1,
           "end": 345.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "beat",
@@ -2345,7 +2404,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.968
+      "confidence": 0.968,
+      "vi": "Hoàng tử đã đánh bại được con quái vật đáng sợ."
     },
     {
       "id": 61,
@@ -2379,7 +2439,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.941
+      "confidence": 0.941,
+      "vi": "Cảm ơn anh hùng của em."
     },
     {
       "id": 62,
@@ -2401,7 +2462,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Không có gì."
     },
     {
       "id": 63,
@@ -2426,7 +2488,7 @@
           "word": "and",
           "start": 365.88,
           "end": 366.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "princess",
@@ -2444,7 +2506,7 @@
           "word": "married",
           "start": 367.08,
           "end": 367.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -2462,7 +2524,7 @@
           "word": "happily",
           "start": 368.44,
           "end": 368.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ever",
@@ -2477,7 +2539,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Hoàng tử và công chúa đã kết hôn và sống hạnh phúc mãi mãi."
     }
   ],
   "videoId": "aSdnkKnL6Ys",

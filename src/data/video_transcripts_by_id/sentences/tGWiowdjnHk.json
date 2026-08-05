@@ -45,7 +45,8 @@
           "confidence": 0.895
         }
       ],
-      "confidence": 0.687
+      "confidence": 0.687,
+      "vi": "English Sing Sing. Chủ đề 19, Did."
     },
     {
       "id": 2,
@@ -61,7 +62,8 @@
           "confidence": 0.755
         }
       ],
-      "confidence": 0.755
+      "confidence": 0.755,
+      "vi": "Hội thoại."
     },
     {
       "id": 3,
@@ -89,7 +91,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.838
+      "confidence": 0.838,
+      "vi": "Chào buổi sáng, Sally."
     },
     {
       "id": 4,
@@ -117,7 +120,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Con khỏe không?"
     },
     {
       "id": 5,
@@ -139,7 +143,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Con rất khỏe."
     },
     {
       "id": 6,
@@ -179,7 +184,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Hôm qua con đã làm gì?"
     },
     {
       "id": 7,
@@ -219,7 +225,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Chúng con đã đi đến công viên."
     },
     {
       "id": 8,
@@ -271,7 +278,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Con đã làm gì ở công viên?"
     },
     {
       "id": 9,
@@ -299,7 +307,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Chúng con đã thả diều."
     },
     {
       "id": 10,
@@ -333,7 +342,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Diều của cậu ấy bay cao."
     },
     {
       "id": 11,
@@ -361,7 +371,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.876
+      "confidence": 0.876,
+      "vi": "Wow, con giỏi lắm."
     },
     {
       "id": 12,
@@ -407,7 +418,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Hôm qua con đã làm gì, Sally?"
     },
     {
       "id": 13,
@@ -435,7 +447,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Con đã đọc sách."
     },
     {
       "id": 14,
@@ -475,7 +488,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Chúng ta đi đến lớp thôi."
     },
     {
       "id": 15,
@@ -515,7 +529,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.947,
+      "vi": "Hôm qua con đã làm gì?"
     },
     {
       "id": 16,
@@ -555,7 +570,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Con đã xem phim khoa học."
     },
     {
       "id": 17,
@@ -601,7 +617,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Hôm qua con đã làm gì, Mike?"
     },
     {
       "id": 18,
@@ -647,7 +664,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Con đã làm bulgogi với bố."
     },
     {
       "id": 19,
@@ -675,7 +693,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.961,
+      "vi": "Nó ngon không?"
     },
     {
       "id": 20,
@@ -709,7 +728,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Ngon lắm."
     },
     {
       "id": 21,
@@ -749,7 +769,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Chúng con đã có bữa tiệc bulgogi."
     },
     {
       "id": 22,
@@ -783,7 +804,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Hôm qua con đã làm bánh quy."
     },
     {
       "id": 23,
@@ -823,7 +845,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Con đã mang bánh quy cho mọi người."
     },
     {
       "id": 24,
@@ -839,7 +862,8 @@
           "confidence": 0.952
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.952,
+      "vi": "Cảm ơn."
     },
     {
       "id": 25,
@@ -855,7 +879,8 @@
           "confidence": 0.725
         }
       ],
-      "confidence": 0.725
+      "confidence": 0.725,
+      "vi": "Ngon quá."
     },
     {
       "id": 26,
@@ -889,7 +914,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.969,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 27,
@@ -929,7 +955,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.961,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 28,
@@ -969,7 +996,8 @@
           "confidence": 0.926
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Con đã đi sở thú."
     },
     {
       "id": 29,
@@ -1009,7 +1037,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Con đã đi sở thú."
     },
     {
       "id": 30,
@@ -1133,7 +1162,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.967
+      "confidence": 0.967,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 31,
@@ -1167,7 +1197,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.856
+      "confidence": 0.856,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 32,
@@ -1207,7 +1238,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.89
+      "confidence": 0.89,
+      "vi": "Con đã đi bảo tàng."
     },
     {
       "id": 33,
@@ -1247,7 +1279,8 @@
           "confidence": 0.925
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Con đã đi bảo tàng."
     },
     {
       "id": 34,
@@ -1287,7 +1320,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 35,
@@ -1381,7 +1415,8 @@
           "confidence": 0.838
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 36,
@@ -1421,7 +1456,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Con đã đi sở thú."
     },
     {
       "id": 37,
@@ -1437,7 +1473,8 @@
           "confidence": 0.798
         }
       ],
-      "confidence": 0.798
+      "confidence": 0.798,
+      "vi": "Con đã đi sở thú."
     },
     {
       "id": 38,
@@ -1477,7 +1514,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 39,
@@ -1517,7 +1555,8 @@
           "confidence": 0.868
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 40,
@@ -1545,7 +1584,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Con đã đi bảo tàng."
     },
     {
       "id": 41,
@@ -1573,7 +1613,8 @@
           "confidence": 0.946
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Con đã đi bảo tàng."
     },
     {
       "id": 42,
@@ -1613,7 +1654,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Bài hát."
     },
     {
       "id": 43,
@@ -1641,7 +1683,8 @@
           "confidence": 0.919
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Hôm qua con đã làm gì?"
     },
     {
       "id": 44,
@@ -1675,7 +1718,8 @@
           "confidence": 0.966
         }
       ],
-      "confidence": 0.906
+      "confidence": 0.906,
+      "vi": "Con đã đi câu cá với Quinn."
     },
     {
       "id": 45,
@@ -1709,7 +1753,8 @@
           "confidence": 0.98
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Nó vui không?"
     },
     {
       "id": 46,
@@ -1755,7 +1800,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.907
+      "confidence": 0.907,
+      "vi": "Vui lắm."
     },
     {
       "id": 47,
@@ -1789,7 +1835,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Hôm qua bữa tiệc thế nào?"
     },
     {
       "id": 48,
@@ -1817,7 +1864,8 @@
           "confidence": 0.953
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.947,
+      "vi": "Vui lắm."
     },
     {
       "id": 49,
@@ -1851,7 +1899,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Chúc mừng năm mới mọi người."
     },
     {
       "id": 50,
@@ -1879,7 +1928,8 @@
           "confidence": 0.979
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Chúc mừng năm mới mọi người."
     },
     {
       "id": 51,
@@ -1949,7 +1999,8 @@
           "confidence": 0.838
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 52,
@@ -1983,7 +2034,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.922
+      "confidence": 0.922,
+      "vi": "Con có đi bơi không?"
     },
     {
       "id": 53,
@@ -2053,7 +2105,8 @@
           "confidence": 0.756
         }
       ],
-      "confidence": 0.933
+      "confidence": 0.933,
+      "vi": "Không, không."
     },
     {
       "id": 54,
@@ -2087,7 +2140,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Con có đi cắm trại không?"
     },
     {
       "id": 55,
@@ -2139,7 +2193,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Không, không."
     },
     {
       "id": 56,
@@ -2203,7 +2258,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Vậy con đã làm gì?"
     },
     {
       "id": 57,
@@ -2267,7 +2323,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Con đã đi câu cá."
     },
     {
       "id": 58,
@@ -2313,7 +2370,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.951
+      "confidence": 0.951,
+      "vi": "Hôm qua con đã đi câu cá."
     },
     {
       "id": 59,
@@ -2359,7 +2417,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Con đã làm gì ở đó?"
     },
     {
       "id": 60,
@@ -2375,7 +2434,8 @@
           "confidence": 0.91
         }
       ],
-      "confidence": 0.91
+      "confidence": 0.91,
+      "vi": "Con đã đi sở thú."
     },
     {
       "id": 61,
@@ -2403,7 +2463,8 @@
           "confidence": 0.94
         }
       ],
-      "confidence": 0.958
+      "confidence": 0.958,
+      "vi": "Đi sở thú."
     },
     {
       "id": 62,
@@ -2425,7 +2486,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 1.0,
+      "vi": "Đi sở thú với chú con."
     },
     {
       "id": 63,
@@ -2441,7 +2503,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Nó vui không?"
     },
     {
       "id": 64,
@@ -2475,7 +2538,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Nó vui không?"
     },
     {
       "id": 65,
@@ -2503,7 +2567,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Nó vui không?"
     },
     {
       "id": 66,
@@ -2537,7 +2602,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Vui lắm."
     },
     {
       "id": 67,
@@ -2559,7 +2625,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Vui lắm."
     },
     {
       "id": 68,
@@ -2599,7 +2666,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Vui lắm."
     },
     {
       "id": 69,
@@ -2633,7 +2701,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Tạm biệt."
     },
     {
       "id": 70,
@@ -2661,7 +2730,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tạm biệt."
     },
     {
       "id": 71,
@@ -2689,7 +2759,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.954,
+      "vi": "Tạm biệt."
     },
     {
       "id": 72,
@@ -2723,7 +2794,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Chăm sóc tốt nhé."
     },
     {
       "id": 73,
@@ -2769,7 +2841,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Chăm sóc tốt nhé."
     },
     {
       "id": 74,
@@ -2803,7 +2876,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Chăm sóc tốt nhé."
     },
     {
       "id": 75,
@@ -2825,7 +2899,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Truyện."
     },
     {
       "id": 76,
@@ -2841,7 +2916,8 @@
           "confidence": 0.972
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Đừng ra ngoài chơi."
     },
     {
       "id": 77,
@@ -2869,7 +2945,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.94
+      "confidence": 0.94,
+      "vi": "Trời đang tuyết."
     },
     {
       "id": 78,
@@ -2897,7 +2974,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.91
+      "confidence": 0.91,
+      "vi": "Được rồi."
     },
     {
       "id": 79,
@@ -2913,7 +2991,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 80,
@@ -2941,7 +3020,8 @@
           "confidence": 0.954
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Con đã ra ngoài."
     },
     {
       "id": 81,
@@ -2969,7 +3049,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Con đã gặp bạn con."
     },
     {
       "id": 82,
@@ -2991,7 +3072,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Ôi không."
     },
     {
       "id": 83,
@@ -3031,7 +3113,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Xin hãy nghe lời mẹ."
     },
     {
       "id": 84,
@@ -3071,7 +3154,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Mẹ có khỏe không?"
     },
     {
       "id": 85,
@@ -3117,7 +3201,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Không, mẹ không khỏe."
     },
     {
       "id": 86,
@@ -3157,7 +3242,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Con xin lỗi, mẹ ơi."
     },
     {
       "id": 87,
@@ -3191,7 +3277,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.937
+      "confidence": 0.937,
+      "vi": "Con đã làm gì?"
     },
     {
       "id": 88,
@@ -3225,7 +3312,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Con đã thấy mẹ."
     },
     {
       "id": 89,
@@ -3247,7 +3335,8 @@
           "confidence": 0.972
         }
       ],
-      "confidence": 0.962
+      "confidence": 0.962,
+      "vi": "Mẹ trông buồn."
     },
     {
       "id": 90,
@@ -3275,7 +3364,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.932
+      "confidence": 0.932,
+      "vi": "Con đã nấu ăn cho mẹ."
     },
     {
       "id": 91,
@@ -3309,7 +3399,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Cảm ơn con."
     },
     {
       "id": 92,
@@ -3325,7 +3416,8 @@
           "confidence": 0.963
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.963,
+      "vi": "Truyện."
     },
     {
       "id": 93,
@@ -3371,7 +3463,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Chào buổi sáng, Ariel."
     },
     {
       "id": 94,
@@ -3399,7 +3492,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Con khỏe không?"
     },
     {
       "id": 95,
@@ -3433,7 +3527,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Khỏe."
     },
     {
       "id": 96,
@@ -3467,7 +3562,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Chào buổi sáng, bà ơi."
     },
     {
       "id": 97,
@@ -3495,7 +3591,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.956
+      "confidence": 0.956,
+      "vi": "Bà có khỏe không?"
     },
     {
       "id": 98,
@@ -3517,7 +3614,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Bà khỏe."
     },
     {
       "id": 99,
@@ -3563,7 +3661,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Hôm qua con đã làm gì?"
     },
     {
       "id": 100,
@@ -3603,7 +3702,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Con đã đi công viên."
     },
     {
       "id": 101,
@@ -3625,7 +3725,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Wow."
     },
     {
       "id": 102,
@@ -3659,7 +3760,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Cô ấy đã đi công viên."
     },
     {
       "id": 103,
@@ -3675,7 +3777,8 @@
           "confidence": 0.974
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Con đã làm gì ở đó?"
     },
     {
       "id": 104,
@@ -3721,7 +3824,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Con đã gặp một hoàng tử."
     }
   ],
   "videoId": "tGWiowdjnHk",

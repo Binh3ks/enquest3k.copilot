@@ -5,247 +5,288 @@
       "id": 1,
       "text": "Hello, Mr. Rashid.",
       "start": 9.04,
-      "duration": 1.84
+      "duration": 1.84,
+      "vi": "Chào ông Rashid."
     },
     {
       "id": 2,
       "text": "Hi, how are you?",
       "start": 10.88,
-      "duration": 1.12
+      "duration": 1.12,
+      "vi": "Chào, bạn khỏe không?"
     },
     {
       "id": 3,
       "text": "Fine, thank you.",
-      "start": 12.0,
-      "duration": 1.02
+      "start": 12,
+      "duration": 1.02,
+      "vi": "Khỏe, cảm ơn."
     },
     {
       "id": 4,
       "text": "How was your vacation?",
       "start": 13.02,
-      "duration": 1.12
+      "duration": 1.12,
+      "vi": "Kỳ nghỉ của bạn thế nào?"
     },
     {
       "id": 5,
       "text": "It was wonderful.",
       "start": 14.14,
-      "duration": 1.04
+      "duration": 1.04,
+      "vi": "Nó tuyệt vời."
     },
     {
       "id": 6,
       "text": "I'm so happy to hear that.",
       "start": 15.18,
-      "duration": 2.02
+      "duration": 2.02,
+      "vi": "Tôi rất vui khi nghe vậy."
     },
     {
       "id": 7,
       "text": "Was your flight okay?",
       "start": 17.2,
-      "duration": 0.95
+      "duration": 0.95,
+      "vi": "Chuyến bay của bạn có ổn không?"
     },
     {
       "id": 8,
       "text": "No, pretty bad actually.",
       "start": 18.15,
-      "duration": 1.57
+      "duration": 1.57,
+      "vi": "Không, khá tệ thực sự."
     },
     {
       "id": 9,
       "text": "It was so bumpy.",
       "start": 19.72,
-      "duration": 1.57
+      "duration": 1.57,
+      "vi": "Chuyến bay bị xóc lắm."
     },
     {
       "id": 10,
       "text": "It was very scary.",
       "start": 21.3,
-      "duration": 1.25
+      "duration": 1.25,
+      "vi": "Nó rất đáng sợ."
     },
     {
       "id": 11,
       "text": "That's too bad.",
       "start": 22.55,
-      "duration": 1.51
+      "duration": 1.51,
+      "vi": "Thật tệ quá."
     },
     {
       "id": 12,
       "text": "Did you have nice weather after you arrived?",
       "start": 24.06,
-      "duration": 2.49
+      "duration": 2.49,
+      "vi": "Bạn có thời tiết đẹp sau khi đến không?"
     },
     {
       "id": 13,
       "text": "No, the weather was terrible.",
       "start": 26.55,
-      "duration": 2.3
+      "duration": 2.3,
+      "vi": "Không, thời tiết tệ lắm."
     },
     {
       "id": 14,
       "text": "Very rainy.",
       "start": 28.85,
-      "duration": 0.92
+      "duration": 0.92,
+      "vi": "Mưa nhiều lắm."
     },
     {
       "id": 15,
       "text": "I actually never saw the sun.",
       "start": 29.77,
-      "duration": 2.26
+      "duration": 2.26,
+      "vi": "Thực ra tôi chưa bao giờ thấy mặt trời."
     },
     {
       "id": 16,
       "text": "That's awful.",
       "start": 32.03,
-      "duration": 1.76
+      "duration": 1.76,
+      "vi": "Tệ quá."
     },
     {
       "id": 17,
       "text": "So what did you do?",
       "start": 33.79,
-      "duration": 1.28
+      "duration": 1.28,
+      "vi": "Vậy bạn đã làm gì?"
     },
     {
       "id": 18,
       "text": "I stayed inside the hotel.",
       "start": 35.07,
-      "duration": 1.92
+      "duration": 1.92,
+      "vi": "Tôi ở trong khách sạn."
     },
     {
       "id": 19,
       "text": "Was the hotel room nice?",
       "start": 36.99,
-      "duration": 1.92
+      "duration": 1.92,
+      "vi": "Phòng khách sạn có đẹp không?"
     },
     {
       "id": 20,
       "text": "The room was fine, but it was right next to the cafe and the music was very loud.",
       "start": 38.91,
-      "duration": 4.88
+      "duration": 4.88,
+      "vi": "Phòng cũng được, nhưng nó ở ngay bên cạnh quán cà phê và nhạc rất ồn."
     },
     {
       "id": 21,
       "text": "I didn't sleep much.",
       "start": 43.79,
-      "duration": 2.01
+      "duration": 2.01,
+      "vi": "Tôi không ngủ được nhiều."
     },
     {
       "id": 22,
       "text": "I'll bet the food was great.",
       "start": 45.8,
-      "duration": 1.92
+      "duration": 1.92,
+      "vi": "Tôi chắc đồ ăn ngon lắm."
     },
     {
       "id": 23,
       "text": "No, it was too salty for me and the waiters were very unfriendly.",
       "start": 47.72,
-      "duration": 4.48
+      "duration": 4.48,
+      "vi": "Không, nó quá mặn với tôi và nhân viên phục vụ rất không thân thiện."
     },
     {
       "id": 24,
       "text": "Did you go shopping at all?",
       "start": 52.2,
-      "duration": 1.84
+      "duration": 1.84,
+      "vi": "Bạn có đi mua sắm không?"
     },
     {
       "id": 25,
       "text": "A little bit, until someone stole my wallet.",
       "start": 54.04,
-      "duration": 2.8
+      "duration": 2.8,
+      "vi": "Một chút, cho đến khi có người lấy trộm ví của tôi."
     },
     {
       "id": 26,
       "text": "After that, I stayed in the hotel and read a book.",
       "start": 56.84,
-      "duration": 3.32
+      "duration": 3.32,
+      "vi": "Sau đó, tôi ở trong khách sạn và đọc sách."
     },
     {
       "id": 27,
       "text": "Was the flight home okay?",
       "start": 60.16,
-      "duration": 2.08
+      "duration": 2.08,
+      "vi": "Chuyến bay về nhà có ổn không?"
     },
     {
       "id": 28,
       "text": "Actually, they cancelled my flight.",
       "start": 62.24,
-      "duration": 2.1
+      "duration": 2.1,
+      "vi": "Thực ra, họ hủy chuyến bay của tôi."
     },
     {
       "id": 29,
       "text": "I had to stay for two more days.",
       "start": 64.34,
-      "duration": 2.86
+      "duration": 2.86,
+      "vi": "Tôi phải ở lại thêm hai ngày."
     },
     {
       "id": 30,
       "text": "That's terrible!",
       "start": 67.2,
-      "duration": 1.23
+      "duration": 1.23,
+      "vi": "Tệ quá!"
     },
     {
       "id": 31,
       "text": "But Mr. Rashid, you said that your vacation was wonderful?",
       "start": 68.43,
-      "duration": 5.84
+      "duration": 5.84,
+      "vi": "Nhưng ông Rashid, ông nói rằng kỳ nghỉ tuyệt vời cơ mà?"
     },
     {
       "id": 32,
       "text": "Ah yes, I did.",
       "start": 74.27,
-      "duration": 1.36
+      "duration": 1.36,
+      "vi": "Ồ vâng, tôi nói vậy."
     },
     {
       "id": 33,
       "text": "And it was wonderful.",
       "start": 75.63,
-      "duration": 1.12
+      "duration": 1.12,
+      "vi": "Và nó thật tuyệt vời."
     },
     {
       "id": 34,
       "text": "I met a very nice person.",
       "start": 76.75,
-      "duration": 1.99
+      "duration": 1.99,
+      "vi": "Tôi đã gặp một người rất tốt."
     },
     {
       "id": 35,
       "text": "A woman, actually.",
       "start": 78.74,
-      "duration": 1.0
+      "duration": 1,
+      "vi": "Là một người phụ nữ."
     },
     {
       "id": 36,
       "text": "Her name is Basmar.",
       "start": 79.74,
-      "duration": 1.01
+      "duration": 1.01,
+      "vi": "Tên cô ấy là Basmar."
     },
     {
       "id": 37,
       "text": "She's from Lebanon, just like me.",
       "start": 80.75,
-      "duration": 2.29
+      "duration": 2.29,
+      "vi": "Cô ấy đến từ Lebanon, giống như tôi."
     },
     {
       "id": 38,
       "text": "But she lives here.",
       "start": 83.04,
-      "duration": 1.29
+      "duration": 1.29,
+      "vi": "Nhưng cô ấy sống ở đây."
     },
     {
       "id": 39,
       "text": "I'm seeing her tonight.",
       "start": 84.33,
-      "duration": 1.69
+      "duration": 1.69,
+      "vi": "Tôi sẽ gặp cô ấy tối nay."
     },
     {
       "id": 40,
       "text": "So yes, it was a wonderful vacation.",
       "start": 86.02,
-      "duration": 2.63
+      "duration": 2.63,
+      "vi": "Vậy nên vâng, đó là một kỳ nghỉ tuyệt vời."
     },
     {
       "id": 41,
       "text": "That's great, Mr. Rashid!",
       "start": 88.65,
-      "duration": 3.0
+      "duration": 3,
+      "vi": "Tuyệt vời quá, ông Rashid!"
     }
   ],
   "videoId": "dJvh-QrQW64",

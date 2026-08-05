@@ -27,7 +27,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.911
+      "confidence": 0.911,
+      "vi": "Chào buổi sáng, Sally."
     },
     {
       "id": 2,
@@ -45,17 +46,18 @@
         {
           "word": "are",
           "start": 5.76,
-          "end": 6.0,
-          "confidence": 1.0
+          "end": 6,
+          "confidence": 1
         },
         {
           "word": "you",
-          "start": 6.0,
+          "start": 6,
           "end": 6.5,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Bạn khỏe không?"
     },
     {
       "id": 3,
@@ -74,10 +76,11 @@
           "word": "great",
           "start": 7.84,
           "end": 8.34,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tôi rất khỏe."
     },
     {
       "id": 4,
@@ -96,13 +99,13 @@
           "word": "did",
           "start": 9.2,
           "end": 9.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 9.36,
           "end": 9.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -114,10 +117,11 @@
           "word": "yesterday",
           "start": 9.84,
           "end": 10.34,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Hôm qua bạn đã làm gì?"
     },
     {
       "id": 5,
@@ -136,7 +140,7 @@
           "word": "went",
           "start": 11.84,
           "end": 12.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -157,7 +161,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Chúng tôi đã đến công viên."
     },
     {
       "id": 6,
@@ -170,23 +175,23 @@
           "word": "what",
           "start": 14.28,
           "end": 14.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "did",
           "start": 14.6,
           "end": 14.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 14.84,
-          "end": 15.0,
-          "confidence": 1.0
+          "end": 15,
+          "confidence": 1
         },
         {
           "word": "do",
-          "start": 15.0,
+          "start": 15,
           "end": 15.24,
           "confidence": 0.995
         },
@@ -209,7 +214,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Bạn đã làm gì ở trong công viên?"
     },
     {
       "id": 7,
@@ -237,7 +243,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Chúng tôi đã thả diều."
     },
     {
       "id": 8,
@@ -262,7 +269,7 @@
           "word": "flew",
           "start": 20.04,
           "end": 20.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "high",
@@ -271,7 +278,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.916
+      "confidence": 0.916,
+      "vi": "Những chiếc diều của bạn ấy bay cao."
     },
     {
       "id": 9,
@@ -296,10 +304,11 @@
           "word": "good",
           "start": 23.64,
           "end": 24.14,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.937
+      "confidence": 0.937,
+      "vi": "Ồ, bạn giỏi quá."
     },
     {
       "id": 10,
@@ -312,19 +321,19 @@
           "word": "what",
           "start": 25.23,
           "end": 25.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "did",
           "start": 25.48,
           "end": 25.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 25.8,
           "end": 25.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -345,7 +354,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Hôm qua bạn đã làm gì, Sally?"
     },
     {
       "id": 11,
@@ -364,7 +374,7 @@
           "word": "read",
           "start": 29.2,
           "end": 29.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "books",
@@ -373,7 +383,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tôi đã đọc sách."
     },
     {
       "id": 12,
@@ -392,7 +403,7 @@
           "word": "go",
           "start": 34.24,
           "end": 34.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -413,7 +424,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Chúng ta hãy đến lớp học nào."
     },
     {
       "id": 13,
@@ -432,13 +444,13 @@
           "word": "did",
           "start": 40.88,
           "end": 41.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 41.12,
           "end": 41.28,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -450,10 +462,11 @@
           "word": "yesterday",
           "start": 41.6,
           "end": 42.1,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Hôm qua bạn đã làm gì?"
     },
     {
       "id": 14,
@@ -493,7 +506,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tôi đã xem phim khoa học."
     },
     {
       "id": 15,
@@ -512,13 +526,13 @@
           "word": "did",
           "start": 47.7,
           "end": 47.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 47.95,
           "end": 48.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -539,7 +553,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Hôm qua bạn đã làm gì, Mike?"
     },
     {
       "id": 16,
@@ -570,13 +585,13 @@
           "word": "with",
           "start": 51.7,
           "end": 51.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 51.95,
           "end": 52.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "dad",
@@ -585,7 +600,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Tôi đã nấu bulgogi với bố tôi."
     },
     {
       "id": 17,
@@ -604,7 +620,7 @@
           "word": "was",
           "start": 53.7,
           "end": 53.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -613,18 +629,19 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.872
+      "confidence": 0.872,
+      "vi": "Nó thế nào?"
     },
     {
       "id": 18,
       "text": "It was very delicious.",
       "speaker": "Speaker0",
-      "start": 55.0,
+      "start": 55,
       "duration": 1.46,
       "words": [
         {
           "word": "it",
-          "start": 55.0,
+          "start": 55,
           "end": 55.24,
           "confidence": 0.876
         },
@@ -647,7 +664,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Nó ngon lắm."
     },
     {
       "id": 19,
@@ -666,7 +684,7 @@
           "word": "had",
           "start": 57.64,
           "end": 57.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -687,7 +705,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Chúng tôi đã có bữa tiệc bulgogi."
     },
     {
       "id": 20,
@@ -712,7 +731,7 @@
           "word": "cookies",
           "start": 62.76,
           "end": 63.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "yesterday",
@@ -721,7 +740,8 @@
           "confidence": 0.977
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Hôm qua tôi đã làm bánh quy."
     },
     {
       "id": 21,
@@ -752,7 +772,7 @@
           "word": "for",
           "start": 65.64,
           "end": 65.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -761,7 +781,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tôi đã mang bánh quy cho bạn."
     },
     {
       "id": 22,
@@ -777,7 +798,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Cảm ơn bạn."
     },
     {
       "id": 23,
@@ -793,7 +815,8 @@
           "confidence": 0.711
         }
       ],
-      "confidence": 0.711
+      "confidence": 0.711,
+      "vi": "Ngon quá."
     },
     {
       "id": 24,
@@ -821,7 +844,8 @@
           "confidence": 0.963
         }
       ],
-      "confidence": 0.937
+      "confidence": 0.937,
+      "vi": "Chúng ta hãy đóng vai nhé."
     }
   ],
   "videoId": "aqMpREQdnCY",

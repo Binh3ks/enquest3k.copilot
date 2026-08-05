@@ -18,13 +18,13 @@
           "word": "to",
           "start": 14.16,
           "end": 14.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 14.32,
           "end": 14.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "house",
@@ -33,7 +33,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Chào mừng đến nhà mình."
     },
     {
       "id": 2,
@@ -58,7 +59,7 @@
           "word": "have",
           "start": 17.62,
           "end": 17.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -70,7 +71,7 @@
           "word": "nice",
           "start": 17.95,
           "end": 18.43,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "garden",
@@ -79,7 +80,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Anne, vườn của bạn đẹp quá."
     },
     {
       "id": 3,
@@ -110,7 +112,7 @@
           "word": "are",
           "start": 21.86,
           "end": 22.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "so",
@@ -125,7 +127,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Hoa và cây cối đẹp quá."
     },
     {
       "id": 4,
@@ -147,7 +150,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Cảm ơn bạn."
     },
     {
       "id": 5,
@@ -160,25 +164,25 @@
           "word": "my",
           "start": 27.06,
           "end": 27.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "family",
           "start": 27.38,
           "end": 27.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "planted",
           "start": 27.95,
           "end": 28.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "them",
           "start": 28.34,
           "end": 28.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
@@ -199,7 +203,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Gia đình mình trồng chúng vào mùa xuân năm ngoái."
     },
     {
       "id": 6,
@@ -218,7 +223,7 @@
           "word": "go",
           "start": 33.03,
           "end": 33.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "inside",
@@ -227,7 +232,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Mình vào trong nhé."
     },
     {
       "id": 7,
@@ -264,7 +270,7 @@
           "word": "living",
           "start": 40.31,
           "end": 40.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "room",
@@ -273,7 +279,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.963,
+      "vi": "Ồ, đây là phòng khách."
     },
     {
       "id": 8,
@@ -289,7 +296,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Vâng."
     },
     {
       "id": 9,
@@ -302,13 +310,13 @@
           "word": "my",
           "start": 43.6,
           "end": 43.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "family",
           "start": 43.92,
           "end": 44.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "usually",
@@ -353,7 +361,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Gia đình mình thường xem TV và nói chuyện ở đây."
     },
     {
       "id": 10,
@@ -372,7 +381,7 @@
           "word": "about",
           "start": 48.97,
           "end": 49.28,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "your",
@@ -396,16 +405,17 @@
           "word": "is",
           "start": 50.41,
           "end": 50.57,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
           "start": 50.57,
           "end": 51.07,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Còn phòng bạn thì sao? Ở đâu vậy?"
     },
     {
       "id": 11,
@@ -430,10 +440,11 @@
           "word": "in",
           "start": 56.42,
           "end": 56.92,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.921
+      "confidence": 0.921,
+      "vi": "Đây. Vào đi."
     },
     {
       "id": 12,
@@ -476,7 +487,7 @@
           "word": "neater",
           "start": 62.66,
           "end": 63.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "than",
@@ -494,10 +505,11 @@
           "word": "thought",
           "start": 63.54,
           "end": 64.04,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Ồ, trông gọn gàng hơn mình tưởng nhiều."
     },
     {
       "id": 13,
@@ -522,7 +534,7 @@
           "word": "guess",
           "start": 66.82,
           "end": 67.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -534,19 +546,19 @@
           "word": "sleep",
           "start": 67.38,
           "end": 67.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
           "start": 67.62,
           "end": 67.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "study",
           "start": 67.86,
           "end": 68.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "here",
@@ -555,7 +567,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Vậy bạn ngủ và học ở đây."
     },
     {
       "id": 14,
@@ -568,7 +581,7 @@
           "word": "that's",
           "start": 69.92,
           "end": 70.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "right",
@@ -577,7 +590,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Đúng rồi."
     },
     {
       "id": 15,
@@ -596,31 +610,31 @@
           "word": "don't",
           "start": 71.67,
           "end": 71.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 71.92,
           "end": 72.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "take",
           "start": 72.08,
           "end": 72.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 72.31,
           "end": 72.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "look",
           "start": 72.4,
           "end": 72.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "around",
@@ -629,7 +643,8 @@
           "confidence": 0.818
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Sao bạn không xem quanh một chút?"
     },
     {
       "id": 16,
@@ -648,7 +663,7 @@
           "word": "these",
           "start": 78.88,
           "end": 79.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "only",
@@ -666,16 +681,17 @@
           "word": "you",
           "start": 79.83,
           "end": 80.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 80.08,
           "end": 80.58,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Những cuốn sách này là của bạn thôi à?"
     },
     {
       "id": 17,
@@ -691,7 +707,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Không."
     },
     {
       "id": 18,
@@ -722,7 +739,7 @@
           "word": "study",
           "start": 84.97,
           "end": 85.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "room",
@@ -734,7 +751,7 @@
           "word": "on",
           "start": 85.69,
           "end": 85.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -746,28 +763,29 @@
           "word": "opposite",
           "start": 86.01,
           "end": 86.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 86.57,
           "end": 86.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "this",
           "start": 86.81,
           "end": 87.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "room",
           "start": 87.13,
           "end": 87.63,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Có một phòng học ở phía đối diện phòng này."
     },
     {
       "id": 19,
@@ -783,7 +801,8 @@
           "confidence": 0.962
         }
       ],
-      "confidence": 0.962
+      "confidence": 0.962,
+      "vi": "Wow."
     },
     {
       "id": 20,
@@ -808,7 +827,7 @@
           "word": "see",
           "start": 90.57,
           "end": 90.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -817,7 +836,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Mình xem được không?"
     },
     {
       "id": 21,
@@ -830,7 +850,7 @@
           "word": "sure",
           "start": 91.85,
           "end": 92.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "thing",
@@ -839,7 +859,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Được chứ."
     },
     {
       "id": 22,
@@ -861,7 +882,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Theo mình."
     },
     {
       "id": 23,
@@ -883,7 +905,8 @@
           "confidence": 0.959
         }
       ],
-      "confidence": 0.86
+      "confidence": 0.86,
+      "vi": "Mình đói rồi."
     },
     {
       "id": 24,
@@ -908,7 +931,7 @@
           "word": "you",
           "start": 103.65,
           "end": 103.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
@@ -920,22 +943,23 @@
           "word": "something",
           "start": 103.97,
           "end": 104.28,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 104.28,
           "end": 104.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "eat",
           "start": 104.44,
           "end": 104.94,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.93
+      "confidence": 0.93,
+      "vi": "Và bạn có gì ăn không?"
     },
     {
       "id": 25,
@@ -951,7 +975,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Được thôi."
     },
     {
       "id": 26,
@@ -991,7 +1016,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Mẹ mình làm vài cái bánh cupcake."
     },
     {
       "id": 27,
@@ -1004,13 +1030,13 @@
           "word": "let's",
           "start": 110.69,
           "end": 111.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "go",
           "start": 111.01,
           "end": 111.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1028,10 +1054,11 @@
           "word": "kitchen",
           "start": 111.48,
           "end": 111.98,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Mình đến nhà bếp nhé."
     },
     {
       "id": 28,
@@ -1053,7 +1080,8 @@
           "confidence": 0.93
         }
       ],
-      "confidence": 0.931
+      "confidence": 0.931,
+      "vi": "Yay. Hurray."
     },
     {
       "id": 29,
@@ -1093,7 +1121,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.889
+      "confidence": 0.889,
+      "vi": "Ồ, Anne, nhà vệ sinh ở đâu?"
     },
     {
       "id": 30,
@@ -1112,25 +1141,25 @@
           "word": "right",
           "start": 136.06,
           "end": 136.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "next",
           "start": 136.31,
           "end": 136.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 136.54,
           "end": 136.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 136.78,
           "end": 137.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "room",
@@ -1139,7 +1168,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Nó ở ngay bên cạnh phòng mình."
     },
     {
       "id": 31,
@@ -1155,7 +1185,8 @@
           "confidence": 0.735
         }
       ],
-      "confidence": 0.735
+      "confidence": 0.735,
+      "vi": "Được."
     },
     {
       "id": 32,
@@ -1171,7 +1202,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Hiểu rồi."
     },
     {
       "id": 33,
@@ -1199,7 +1231,8 @@
           "confidence": 0.955
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.961,
+      "vi": "Mình đóng vai nhé."
     }
   ],
   "videoId": "O07X1XLK4tM",

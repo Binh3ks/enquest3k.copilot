@@ -27,7 +27,8 @@
           "confidence": 0.927
         }
       ],
-      "confidence": 0.768
+      "confidence": 0.768,
+      "vi": "English sing sing."
     },
     {
       "id": 2,
@@ -49,7 +50,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.768
+      "confidence": 0.768,
+      "vi": "Ngày của tôi."
     },
     {
       "id": 3,
@@ -71,7 +73,8 @@
           "confidence": 0.983
         }
       ],
-      "confidence": 0.922
+      "confidence": 0.922,
+      "vi": "Dậy nào."
     },
     {
       "id": 4,
@@ -93,7 +96,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.969,
+      "vi": "Dậy đi."
     },
     {
       "id": 5,
@@ -115,7 +119,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Dậy đi."
     },
     {
       "id": 6,
@@ -146,7 +151,7 @@
           "word": "at",
           "start": 22.8,
           "end": 23.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "seven",
@@ -155,7 +160,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tôi dậy lúc bảy giờ."
     },
     {
       "id": 7,
@@ -186,10 +192,11 @@
           "word": "breakfast",
           "start": 33.42,
           "end": 33.92,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.945
+      "confidence": 0.945,
+      "vi": "Ăn sáng, ăn sáng."
     },
     {
       "id": 8,
@@ -253,7 +260,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Tôi ăn sáng, đánh răng, đánh răng."
     },
     {
       "id": 9,
@@ -272,13 +280,13 @@
           "word": "brush",
           "start": 51.34,
           "end": 51.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 51.73,
           "end": 51.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "teeth",
@@ -287,7 +295,8 @@
           "confidence": 0.784
         }
       ],
-      "confidence": 0.915
+      "confidence": 0.915,
+      "vi": "Tôi đánh răng."
     },
     {
       "id": 10,
@@ -315,7 +324,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.953,
+      "vi": "Rửa mặt."
     },
     {
       "id": 11,
@@ -334,16 +344,17 @@
           "word": "my",
           "start": 60.13,
           "end": 60.37,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "face",
           "start": 60.37,
           "end": 60.87,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Rửa mặt."
     },
     {
       "id": 12,
@@ -368,16 +379,17 @@
           "word": "my",
           "start": 64.05,
           "end": 64.37,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "face",
           "start": 64.37,
           "end": 64.87,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tôi rửa mặt."
     },
     {
       "id": 13,
@@ -411,7 +423,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Mặc quần áo, mặc quần áo."
     },
     {
       "id": 14,
@@ -439,7 +452,8 @@
           "confidence": 0.946
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Tôi mặc quần áo."
     },
     {
       "id": 15,
@@ -461,7 +475,8 @@
           "confidence": 0.844
         }
       ],
-      "confidence": 0.921
+      "confidence": 0.921,
+      "vi": "Nhanh lên."
     },
     {
       "id": 16,
@@ -486,7 +501,7 @@
           "word": "school",
           "start": 86.86,
           "end": 87.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "go",
@@ -504,10 +519,11 @@
           "word": "school",
           "start": 90.22,
           "end": 90.72,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Đi học, đi học."
     },
     {
       "id": 17,
@@ -541,7 +557,8 @@
           "confidence": 0.925
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Tôi đi học."
     },
     {
       "id": 18,
@@ -563,7 +580,8 @@
           "confidence": 0.77
         }
       ],
-      "confidence": 0.802
+      "confidence": 0.802,
+      "vi": "Học bài."
     },
     {
       "id": 19,
@@ -585,7 +603,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Học bài."
     },
     {
       "id": 20,
@@ -622,10 +641,11 @@
           "word": "school",
           "start": 109.42,
           "end": 109.92,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tôi học bài ở trường."
     },
     {
       "id": 21,
@@ -656,10 +676,11 @@
           "word": "lunch",
           "start": 119.16,
           "end": 119.66,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.805
+      "confidence": 0.805,
+      "vi": "Ăn trưa, ăn trưa."
     },
     {
       "id": 22,
@@ -705,7 +726,8 @@
           "confidence": 0.943
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Tôi ăn trưa ở căng tin."
     },
     {
       "id": 23,
@@ -751,7 +773,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.941
+      "confidence": 0.941,
+      "vi": "Chơi với bạn, chơi với bạn."
     },
     {
       "id": 24,
@@ -776,7 +799,7 @@
           "word": "with",
           "start": 138.71,
           "end": 138.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -791,7 +814,8 @@
           "confidence": 0.915
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Tôi chơi với bạn bè."
     },
     {
       "id": 25,
@@ -810,7 +834,7 @@
           "word": "home",
           "start": 147.24,
           "end": 147.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "i",
@@ -870,16 +894,17 @@
           "word": "my",
           "start": 161.18,
           "end": 161.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "homework",
           "start": 161.42,
           "end": 161.92,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.924
+      "confidence": 0.924,
+      "vi": "Về nhà, tôi về nhà, về nhà. Làm bài tập, làm bài tập."
     },
     {
       "id": 26,
@@ -913,7 +938,8 @@
           "confidence": 0.856
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Tôi làm bài tập."
     },
     {
       "id": 27,
@@ -932,7 +958,7 @@
           "word": "dinner",
           "start": 170.98,
           "end": 171.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
@@ -944,10 +970,11 @@
           "word": "dinner",
           "start": 174.74,
           "end": 175.24,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Ăn tối, ăn tối."
     },
     {
       "id": 28,
@@ -990,7 +1017,7 @@
           "word": "shower",
           "start": 186.63,
           "end": 187.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "take",
@@ -1002,16 +1029,17 @@
           "word": "a",
           "start": 189.35,
           "end": 189.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shower",
           "start": 189.51,
           "end": 190.01,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Tôi ăn tối. Tắm, tắm."
     },
     {
       "id": 29,
@@ -1036,7 +1064,7 @@
           "word": "a",
           "start": 192.56,
           "end": 192.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shower",
@@ -1045,7 +1073,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Tôi tắm."
     },
     {
       "id": 30,
@@ -1070,7 +1099,7 @@
           "word": "bed",
           "start": 196.33,
           "end": 196.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "go",
@@ -1082,16 +1111,17 @@
           "word": "to",
           "start": 199.69,
           "end": 199.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "bed",
           "start": 199.85,
           "end": 200.35,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.963,
+      "vi": "Đi ngủ, đi ngủ."
     },
     {
       "id": 31,
@@ -1125,7 +1155,8 @@
           "confidence": 0.947
         }
       ],
-      "confidence": 0.956
+      "confidence": 0.956,
+      "vi": "Tôi đi ngủ."
     },
     {
       "id": 32,
@@ -1141,7 +1172,8 @@
           "confidence": 0.878
         }
       ],
-      "confidence": 0.878
+      "confidence": 0.878,
+      "vi": "Chúc ngủ ngon."
     },
     {
       "id": 33,
@@ -1208,19 +1240,19 @@
           "word": "my",
           "start": 223.5,
           "end": 223.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "face",
           "start": 223.82,
           "end": 224.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "get",
           "start": 226.54,
           "end": 226.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "dressed",
@@ -1232,61 +1264,61 @@
           "word": "go",
           "start": 230.06,
           "end": 230.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 230.38,
           "end": 230.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "school",
           "start": 230.62,
           "end": 231.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "take",
           "start": 233.42,
           "end": 233.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "classes",
           "start": 233.82,
           "end": 234.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 237.01,
           "end": 237.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "lunch",
           "start": 237.42,
           "end": 237.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "play",
           "start": 240.53,
           "end": 240.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
           "start": 240.94,
           "end": 241.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "friends",
           "start": 241.25,
           "end": 241.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "come",
@@ -1304,43 +1336,43 @@
           "word": "do",
           "start": 247.66,
           "end": 247.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 247.97,
           "end": 248.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "homework",
           "start": 248.22,
           "end": 248.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 251.06,
           "end": 251.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "dinner",
           "start": 251.38,
           "end": 251.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "take",
           "start": 255.14,
           "end": 255.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 255.46,
           "end": 255.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shower",
@@ -1352,13 +1384,13 @@
           "word": "go",
           "start": 259.54,
           "end": 259.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 259.86,
           "end": 260.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "bed",
@@ -1367,7 +1399,8 @@
           "confidence": 0.982
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.953,
+      "vi": "Ôn tập: dậy, ăn sáng, đánh răng, rửa mặt, mặc quần áo, đi học, học bài, ăn trưa, chơi với bạn, về nhà, làm bài tập, ăn tối, tắm, đi ngủ."
     }
   ],
   "videoId": "qD1pnquN_DM",

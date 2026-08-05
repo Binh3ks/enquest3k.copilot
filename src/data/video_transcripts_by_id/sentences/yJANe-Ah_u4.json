@@ -18,7 +18,7 @@
           "word": "i",
           "start": 9.44,
           "end": 9.68,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "walk",
@@ -42,16 +42,17 @@
           "word": "last",
           "start": 10.64,
           "end": 10.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "week",
           "start": 10.96,
           "end": 11.46,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.956
+      "confidence": 0.956,
+      "vi": "Tuần trước bạn có đi dạo ở Paris không?"
     },
     {
       "id": 2,
@@ -70,7 +71,7 @@
           "word": "i",
           "start": 16.02,
           "end": 16.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "didn't",
@@ -79,7 +80,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.961,
+      "vi": "Không, tôi không có."
     },
     {
       "id": 3,
@@ -92,7 +94,7 @@
           "word": "i",
           "start": 17.05,
           "end": 17.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "walked",
@@ -116,7 +118,7 @@
           "word": "york",
           "start": 18.1,
           "end": 18.5,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "last",
@@ -131,7 +133,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.941
+      "confidence": 0.941,
+      "vi": "Tuần trước tôi đã đi dạo ở New York."
     },
     {
       "id": 4,
@@ -144,13 +147,13 @@
           "word": "did",
           "start": 23.14,
           "end": 23.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 23.38,
           "end": 23.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -168,22 +171,23 @@
           "word": "movie",
           "start": 24.02,
           "end": 24.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "last",
           "start": 24.41,
           "end": 24.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "night",
           "start": 24.65,
           "end": 25.15,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Bạn có thích bộ phim tối qua không?"
     },
     {
       "id": 5,
@@ -195,23 +199,24 @@
         {
           "word": "yes",
           "start": 30.52,
-          "end": 31.0,
+          "end": 31,
           "confidence": 0.917
         },
         {
           "word": "i",
-          "start": 31.0,
+          "start": 31,
           "end": 31.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "did",
           "start": 31.24,
           "end": 31.74,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Có, tôi thích."
     },
     {
       "id": 6,
@@ -224,7 +229,7 @@
           "word": "i",
           "start": 32.6,
           "end": 32.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "liked",
@@ -236,22 +241,23 @@
           "word": "it",
           "start": 33.16,
           "end": 33.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 33.48,
           "end": 33.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "lot",
           "start": 33.56,
           "end": 34.06,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Tôi thích nó rất nhiều."
     },
     {
       "id": 7,
@@ -270,7 +276,7 @@
           "word": "he",
           "start": 39.34,
           "end": 39.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "work",
@@ -288,16 +294,17 @@
           "word": "home",
           "start": 40.05,
           "end": 40.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "yesterday",
           "start": 40.38,
           "end": 40.88,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Anh ấy có làm việc ở nhà hôm qua không?"
     },
     {
       "id": 8,
@@ -325,7 +332,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "vi": "Không, anh ấy không có."
     },
     {
       "id": 9,
@@ -338,7 +346,7 @@
           "word": "he",
           "start": 48.61,
           "end": 48.93,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "worked",
@@ -350,7 +358,7 @@
           "word": "at",
           "start": 49.25,
           "end": 49.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -362,16 +370,17 @@
           "word": "office",
           "start": 49.57,
           "end": 49.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "yesterday",
           "start": 49.98,
           "end": 50.48,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Hôm qua anh ấy đã làm việc ở văn phòng."
     },
     {
       "id": 10,
@@ -390,7 +399,7 @@
           "word": "she",
           "start": 55.94,
           "end": 56.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "make",
@@ -408,16 +417,17 @@
           "word": "last",
           "start": 57.06,
           "end": 57.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "night",
           "start": 57.38,
           "end": 57.88,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Cô ấy có làm mì pasta tối qua không?"
     },
     {
       "id": 11,
@@ -442,10 +452,11 @@
           "word": "didn't",
           "start": 62.82,
           "end": 63.32,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Không, cô ấy không có."
     },
     {
       "id": 12,
@@ -458,35 +469,35 @@
           "word": "she",
           "start": 64.2,
           "end": 64.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "made",
           "start": 64.36,
           "end": 64.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pizza",
           "start": 64.77,
           "end": 65.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "last",
           "start": 65.24,
           "end": 65.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "night",
           "start": 72.92,
-          "end": 73.0,
-          "confidence": 1.0
+          "end": 73,
+          "confidence": 1
         },
         {
           "word": "did",
-          "start": 73.0,
+          "start": 73,
           "end": 73.41,
           "confidence": 0.995
         },
@@ -518,7 +529,7 @@
           "word": "left",
           "start": 74.2,
           "end": 74.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "this",
@@ -530,10 +541,11 @@
           "word": "morning",
           "start": 74.77,
           "end": 75.27,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Cô ấy đã làm bánh pizza tối qua. Họ có nhìn sang trái sáng nay không?"
     },
     {
       "id": 13,
@@ -558,10 +570,11 @@
           "word": "didn't",
           "start": 81.58,
           "end": 82.08,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Không, họ không có."
     },
     {
       "id": 14,
@@ -586,22 +599,23 @@
           "word": "to",
           "start": 83.9,
           "end": 84.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 84.14,
           "end": 84.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "right",
           "start": 84.3,
           "end": 84.8,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Họ đã nhìn sang phải."
     },
     {
       "id": 15,
@@ -626,7 +640,7 @@
           "word": "really",
           "start": 92.16,
           "end": 92.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "cry",
@@ -638,16 +652,17 @@
           "word": "last",
           "start": 93.03,
           "end": 93.28,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "night",
           "start": 93.28,
           "end": 93.78,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Chúng ta có thực sự khóc tối qua không?"
     },
     {
       "id": 16,
@@ -659,23 +674,24 @@
         {
           "word": "yes",
           "start": 97.52,
-          "end": 98.0,
+          "end": 98,
           "confidence": 0.987
         },
         {
           "word": "we",
-          "start": 98.0,
+          "start": 98,
           "end": 98.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "did",
           "start": 98.23,
           "end": 98.73,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Có, chúng ta đã khóc."
     },
     {
       "id": 17,
@@ -712,16 +728,17 @@
           "word": "last",
           "start": 104.81,
           "end": 105.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "night",
           "start": 105.13,
           "end": 105.63,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Bạn có tập thể dục tối qua không?"
     },
     {
       "id": 18,
@@ -746,10 +763,11 @@
           "word": "did",
           "start": 110.89,
           "end": 111.39,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Có, chúng ta đã tập."
     },
     {
       "id": 19,
@@ -780,7 +798,7 @@
           "word": "last",
           "start": 117.62,
           "end": 117.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "weekend",
@@ -789,7 +807,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Họ có nấu ăn cuối tuần trước không?"
     },
     {
       "id": 20,
@@ -817,7 +836,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Không, họ không có."
     },
     {
       "id": 21,
@@ -848,7 +868,7 @@
           "word": "movie",
           "start": 127.93,
           "end": 128.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
@@ -863,7 +883,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Họ đã xem phim trên ti vi."
     }
   ],
   "videoId": "yJANe-Ah_u4",

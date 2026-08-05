@@ -2,41 +2,257 @@
   "videoId": "LeiZGYUwOYQ",
   "source": "deepgram-nova-2",
   "segments": [
-    { "id": 1, "text": "English sing sing.", "start": 1.68, "duration": 1.46 },
-    { "id": 2, "text": "Growing a tree.", "start": 4.8, "duration": 1.38 },
-    { "id": 3, "text": "This is an apple tree.", "start": 9.6, "duration": 2.26 },
-    { "id": 4, "text": "Tree tree.", "start": 12.56, "duration": 2.76 },
-    { "id": 5, "text": "This is a seed.", "start": 24.1, "duration": 2.01 },
-    { "id": 6, "text": "Seed.", "start": 26.7, "duration": 0.5 },
-    { "id": 7, "text": "Seed.", "start": 29.18, "duration": 0.5 },
-    { "id": 8, "text": "First, we plant the seed.", "start": 35.5, "duration": 2.66 },
-    { "id": 9, "text": "Then, the seed sprouts.", "start": 39.1, "duration": 2.37 },
-    { "id": 10, "text": "Sprout sprout.", "start": 42.57, "duration": 2.98 },
-    { "id": 11, "text": "A tree absorbs water through its roots.", "start": 52.41, "duration": 3.36 },
-    { "id": 12, "text": "Root root.", "start": 56.97, "duration": 2.58 },
-    { "id": 13, "text": "As the tree grows, the trunk becomes thicker and harder.", "start": 62.41, "duration": 5.78 },
-    { "id": 14, "text": "Trunk trunk.", "start": 69.12, "duration": 2.66 },
-    { "id": 15, "text": "This tree has many branches.", "start": 73.77, "duration": 2.57 },
-    { "id": 16, "text": "Branch branch.", "start": 77.84, "duration": 2.99 },
-    { "id": 17, "text": "Leaves grow on the branches.", "start": 83.45, "duration": 2.02 },
-    { "id": 18, "text": "Leaf leaf.", "start": 86.73, "duration": 2.58 },
-    { "id": 19, "text": "Wow, the flowers have bloomed.", "start": 91.29, "duration": 3.06 },
-    { "id": 20, "text": "Flower flower.", "start": 95.47, "duration": 3.06 },
-    { "id": 21, "text": "The petals have fallen from the tree.", "start": 100.67, "duration": 2.74 },
-    { "id": 22, "text": "Petal petal.", "start": 104.42, "duration": 2.82 },
-    { "id": 23, "text": "This tree bears good fruit.", "start": 111.63, "duration": 2.5 },
-    { "id": 24, "text": "Fruit, fruit.", "start": 114.99, "duration": 2.74 },
-    { "id": 25, "text": "Can that apple become a tree, too?", "start": 121.7, "duration": 2.99 },
-    { "id": 26, "text": "Review.", "start": 127.15, "duration": 0.5 },
-    { "id": 27, "text": "Branch.", "start": 130.5, "duration": 0.5 },
-    { "id": 28, "text": "Flower.", "start": 133.87, "duration": 0.5 },
-    { "id": 29, "text": "Fruit.", "start": 137.16, "duration": 0.5 },
-    { "id": 30, "text": "Leaf.", "start": 140.2, "duration": 0.5 },
-    { "id": 31, "text": "Petal.", "start": 143.4, "duration": 0.5 },
-    { "id": 32, "text": "Root.", "start": 146.76, "duration": 0.5 },
-    { "id": 33, "text": "Seed.", "start": 153.19, "duration": 0.57 },
-    { "id": 34, "text": "Sprout.", "start": 153.26, "duration": 0.5 },
-    { "id": 35, "text": "Tree.", "start": 156.31, "duration": 0.5 },
-    { "id": 36, "text": "Trunk.", "start": 159.5, "duration": 0.5 }
+    {
+      "id": 1,
+      "text": "English sing sing.",
+      "start": 1.68,
+      "duration": 1.46,
+      "vi": "Tiếng Anh sing sing."
+    },
+    {
+      "id": 2,
+      "text": "Growing a tree.",
+      "start": 4.8,
+      "duration": 1.38,
+      "vi": "Trồng một cái cây."
+    },
+    {
+      "id": 3,
+      "text": "This is an apple tree.",
+      "start": 9.6,
+      "duration": 2.26,
+      "vi": "Đây là một cây táo."
+    },
+    {
+      "id": 4,
+      "text": "Tree tree.",
+      "start": 12.56,
+      "duration": 2.76,
+      "vi": "Cây, cây."
+    },
+    {
+      "id": 5,
+      "text": "This is a seed.",
+      "start": 24.1,
+      "duration": 2.01,
+      "vi": "Đây là một hạt giống."
+    },
+    {
+      "id": 6,
+      "text": "Seed.",
+      "start": 26.7,
+      "duration": 0.5,
+      "vi": "Hạt giống."
+    },
+    {
+      "id": 7,
+      "text": "Seed.",
+      "start": 29.18,
+      "duration": 0.5,
+      "vi": "Hạt giống."
+    },
+    {
+      "id": 8,
+      "text": "First, we plant the seed.",
+      "start": 35.5,
+      "duration": 2.66,
+      "vi": "Đầu tiên, chúng ta trồng hạt giống."
+    },
+    {
+      "id": 9,
+      "text": "Then, the seed sprouts.",
+      "start": 39.1,
+      "duration": 2.37,
+      "vi": "Sau đó, hạt giống nảy mầm."
+    },
+    {
+      "id": 10,
+      "text": "Sprout sprout.",
+      "start": 42.57,
+      "duration": 2.98,
+      "vi": "Mầm, mầm."
+    },
+    {
+      "id": 11,
+      "text": "A tree absorbs water through its roots.",
+      "start": 52.41,
+      "duration": 3.36,
+      "vi": "Cây hấp thụ nước qua rễ."
+    },
+    {
+      "id": 12,
+      "text": "Root root.",
+      "start": 56.97,
+      "duration": 2.58,
+      "vi": "Rễ, rễ."
+    },
+    {
+      "id": 13,
+      "text": "As the tree grows, the trunk becomes thicker and harder.",
+      "start": 62.41,
+      "duration": 5.78,
+      "vi": "Khi cây lớn lên, thân cây trở nên dày và cứng hơn."
+    },
+    {
+      "id": 14,
+      "text": "Trunk trunk.",
+      "start": 69.12,
+      "duration": 2.66,
+      "vi": "Thân, thân."
+    },
+    {
+      "id": 15,
+      "text": "This tree has many branches.",
+      "start": 73.77,
+      "duration": 2.57,
+      "vi": "Cây này có nhiều cành."
+    },
+    {
+      "id": 16,
+      "text": "Branch branch.",
+      "start": 77.84,
+      "duration": 2.99,
+      "vi": "Cành, cành."
+    },
+    {
+      "id": 17,
+      "text": "Leaves grow on the branches.",
+      "start": 83.45,
+      "duration": 2.02,
+      "vi": "Lá mọc trên cành."
+    },
+    {
+      "id": 18,
+      "text": "Leaf leaf.",
+      "start": 86.73,
+      "duration": 2.58,
+      "vi": "Lá, lá."
+    },
+    {
+      "id": 19,
+      "text": "Wow, the flowers have bloomed.",
+      "start": 91.29,
+      "duration": 3.06,
+      "vi": "Ồ, hoa đã nở rồi."
+    },
+    {
+      "id": 20,
+      "text": "Flower flower.",
+      "start": 95.47,
+      "duration": 3.06,
+      "vi": "Hoa, hoa."
+    },
+    {
+      "id": 21,
+      "text": "The petals have fallen from the tree.",
+      "start": 100.67,
+      "duration": 2.74,
+      "vi": "Những cánh hoa đã rụng khỏi cây."
+    },
+    {
+      "id": 22,
+      "text": "Petal petal.",
+      "start": 104.42,
+      "duration": 2.82,
+      "vi": "Cánh hoa, cánh hoa."
+    },
+    {
+      "id": 23,
+      "text": "This tree bears good fruit.",
+      "start": 111.63,
+      "duration": 2.5,
+      "vi": "Cây này cho trái ngon."
+    },
+    {
+      "id": 24,
+      "text": "Fruit, fruit.",
+      "start": 114.99,
+      "duration": 2.74,
+      "vi": "Trái, trái."
+    },
+    {
+      "id": 25,
+      "text": "Can that apple become a tree, too?",
+      "start": 121.7,
+      "duration": 2.99,
+      "vi": "Quả táo đó có thể trở thành một cái cây được không?"
+    },
+    {
+      "id": 26,
+      "text": "Review.",
+      "start": 127.15,
+      "duration": 0.5,
+      "vi": "Ôn tập."
+    },
+    {
+      "id": 27,
+      "text": "Branch.",
+      "start": 130.5,
+      "duration": 0.5,
+      "vi": "Cành."
+    },
+    {
+      "id": 28,
+      "text": "Flower.",
+      "start": 133.87,
+      "duration": 0.5,
+      "vi": "Hoa."
+    },
+    {
+      "id": 29,
+      "text": "Fruit.",
+      "start": 137.16,
+      "duration": 0.5,
+      "vi": "Trái."
+    },
+    {
+      "id": 30,
+      "text": "Leaf.",
+      "start": 140.2,
+      "duration": 0.5,
+      "vi": "Lá."
+    },
+    {
+      "id": 31,
+      "text": "Petal.",
+      "start": 143.4,
+      "duration": 0.5,
+      "vi": "Cánh hoa."
+    },
+    {
+      "id": 32,
+      "text": "Root.",
+      "start": 146.76,
+      "duration": 0.5,
+      "vi": "Rễ."
+    },
+    {
+      "id": 33,
+      "text": "Seed.",
+      "start": 153.19,
+      "duration": 0.57,
+      "vi": "Hạt giống."
+    },
+    {
+      "id": 34,
+      "text": "Sprout.",
+      "start": 153.26,
+      "duration": 0.5,
+      "vi": "Mầm."
+    },
+    {
+      "id": 35,
+      "text": "Tree.",
+      "start": 156.31,
+      "duration": 0.5,
+      "vi": "Cây."
+    },
+    {
+      "id": 36,
+      "text": "Trunk.",
+      "start": 159.5,
+      "duration": 0.5,
+      "vi": "Thân."
+    }
   ]
 }

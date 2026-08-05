@@ -22,12 +22,13 @@
         },
         {
           "word": "sing",
-          "start": 6.0,
+          "start": 6,
           "end": 6.5,
           "confidence": 0.987
         }
       ],
-      "confidence": 0.846
+      "confidence": 0.846,
+      "vi": "English sing sing."
     },
     {
       "id": 2,
@@ -49,7 +50,8 @@
           "confidence": 0.787
         }
       ],
-      "confidence": 0.44
+      "confidence": 0.44,
+      "vi": "Gia đình. Xin chào."
     },
     {
       "id": 3,
@@ -68,13 +70,13 @@
           "word": "me",
           "start": 12.16,
           "end": 12.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "introduce",
           "start": 12.4,
           "end": 12.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -89,7 +91,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Hãy để tôi giới thiệu gia đình tôi."
     },
     {
       "id": 4,
@@ -111,18 +114,19 @@
           "confidence": 0.949
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Đây là tôi."
     },
     {
       "id": 5,
       "text": "Me He is my father.",
       "speaker": "Speaker0",
-      "start": 17.0,
+      "start": 17,
       "duration": 4.11,
       "words": [
         {
           "word": "me",
-          "start": 17.0,
+          "start": 17,
           "end": 17.5,
           "confidence": 0.588
         },
@@ -142,7 +146,7 @@
           "word": "my",
           "start": 20.29,
           "end": 20.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "father",
@@ -151,7 +155,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.588
+      "confidence": 0.588,
+      "vi": "Đây là tôi. Ông ấy là bố tôi."
     },
     {
       "id": 6,
@@ -170,7 +175,7 @@
           "word": "is",
           "start": 23.48,
           "end": 23.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -185,7 +190,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Bà ấy là mẹ tôi."
     },
     {
       "id": 7,
@@ -219,7 +225,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.9
+      "confidence": 0.9,
+      "vi": "Bố, bố. Mẹ, mẹ."
     },
     {
       "id": 8,
@@ -253,7 +260,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.913
+      "confidence": 0.913,
+      "vi": "Họ là bố mẹ tôi."
     },
     {
       "id": 9,
@@ -284,22 +292,23 @@
           "word": "is",
           "start": 41.66,
           "end": 41.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 41.98,
           "end": 42.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "brother",
           "start": 42.38,
           "end": 42.88,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.521
+      "confidence": 0.521,
+      "vi": "Bố mẹ, bố mẹ. Ông ấy là anh trai tôi."
     },
     {
       "id": 10,
@@ -318,22 +327,23 @@
           "word": "is",
           "start": 45.02,
           "end": 45.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 45.34,
           "end": 45.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sister",
           "start": 45.73,
           "end": 46.23,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.874
+      "confidence": 0.874,
+      "vi": "Cô ấy là chị gái tôi."
     },
     {
       "id": 11,
@@ -349,7 +359,8 @@
           "confidence": 0.95
         }
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "vi": "Anh trai."
     },
     {
       "id": 12,
@@ -365,7 +376,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Anh trai."
     },
     {
       "id": 13,
@@ -381,7 +393,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Chị gái."
     },
     {
       "id": 14,
@@ -421,7 +434,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Chị gái. Ông ấy là ông tôi."
     },
     {
       "id": 15,
@@ -455,7 +469,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.917
+      "confidence": 0.917,
+      "vi": "Bà ấy là bà tôi."
     },
     {
       "id": 16,
@@ -483,7 +498,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.885
+      "confidence": 0.885,
+      "vi": "Ông, ông. Bà, bà."
     },
     {
       "id": 17,
@@ -523,7 +539,8 @@
           "confidence": 0.958
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Bà, bà. Họ là ông bà tôi."
     },
     {
       "id": 18,
@@ -547,12 +564,12 @@
         {
           "word": "he",
           "start": 80.83,
-          "end": 81.0,
+          "end": 81,
           "confidence": 0.965
         },
         {
           "word": "is",
-          "start": 81.0,
+          "start": 81,
           "end": 81.4,
           "confidence": 0.997
         },
@@ -569,7 +586,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.929
+      "confidence": 0.929,
+      "vi": "Ông bà, ông bà. Ông ấy là chú tôi."
     },
     {
       "id": 19,
@@ -615,7 +633,8 @@
           "confidence": 0.872
         }
       ],
-      "confidence": 0.937
+      "confidence": 0.937,
+      "vi": "Ồ, ông ấy cũng là chú tôi nữa."
     },
     {
       "id": 20,
@@ -661,7 +680,8 @@
           "confidence": 0.903
         }
       ],
-      "confidence": 0.782
+      "confidence": 0.782,
+      "vi": "Chú, chú. Bà ấy là cô tôi."
     },
     {
       "id": 21,
@@ -692,7 +712,7 @@
           "word": "is",
           "start": 102.48,
           "end": 102.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -707,7 +727,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.705
+      "confidence": 0.705,
+      "vi": "Cô, cô. Cô ấy là em họ tôi."
     },
     {
       "id": 22,
@@ -741,7 +762,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.947,
+      "vi": "Em họ, em họ. Gia đình tôi."
     },
     {
       "id": 23,
@@ -772,7 +794,7 @@
           "word": "family",
           "start": 112.48,
           "end": 112.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "members",
@@ -781,7 +803,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Họ là các thành viên gia đình tôi."
     },
     {
       "id": 24,
@@ -800,7 +823,7 @@
           "word": "love",
           "start": 114.56,
           "end": 114.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "them",
@@ -809,7 +832,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Tôi yêu họ."
     },
     {
       "id": 25,
@@ -825,7 +849,8 @@
           "confidence": 0.895
         }
       ],
-      "confidence": 0.895
+      "confidence": 0.895,
+      "vi": "Ôn tập."
     },
     {
       "id": 26,
@@ -862,7 +887,7 @@
           "word": "mother",
           "start": 137.11,
           "end": 137.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "parents",
@@ -910,7 +935,7 @@
           "word": "cousin",
           "start": 165.26,
           "end": 165.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -922,10 +947,11 @@
           "word": "family",
           "start": 169.31,
           "end": 169.81,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.91
+      "confidence": 0.91,
+      "vi": "Ông, bà, ông bà, bố, mẹ, bố mẹ, chú, chú, cô, anh trai, tôi, chị gái, em họ, gia đình tôi."
     }
   ],
   "videoId": "FHaObkHEkHQ",

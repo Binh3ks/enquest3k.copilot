@@ -17,17 +17,18 @@
         {
           "word": "and",
           "start": 3.76,
-          "end": 4.0,
+          "end": 4,
           "confidence": 0.991
         },
         {
           "word": "learn",
-          "start": 4.0,
+          "start": 4,
           "end": 4.5,
           "confidence": 0.935
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Mỉm cười và học nhé."
     },
     {
       "id": 2,
@@ -64,25 +65,25 @@
           "word": "have",
           "start": 7.6,
           "end": 7.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 7.84,
-          "end": 8.0,
+          "end": 8,
           "confidence": 0.999
         },
         {
           "word": "very",
-          "start": 8.0,
+          "start": 8,
           "end": 8.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "important",
           "start": 8.48,
           "end": 8.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "mission",
@@ -100,13 +101,13 @@
           "word": "look",
           "start": 10.24,
           "end": 10.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "after",
           "start": 10.48,
           "end": 10.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -123,12 +124,12 @@
         {
           "word": "and",
           "start": 11.76,
-          "end": 12.0,
+          "end": 12,
           "confidence": 0.965
         },
         {
           "word": "help",
-          "start": 12.0,
+          "start": 12,
           "end": 12.5,
           "confidence": 0.999
         },
@@ -196,19 +197,19 @@
           "word": "which",
           "start": 15.3,
           "end": 15.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 15.54,
           "end": 15.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "vital",
           "start": 15.71,
           "end": 16.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
@@ -225,11 +226,12 @@
         {
           "word": "planet",
           "start": 16.5,
-          "end": 17.0,
+          "end": 17,
           "confidence": 0.993
         }
       ],
-      "confidence": 0.933
+      "confidence": 0.933,
+      "vi": "Xin chào các bạn. Tôi có một sứ mệnh rất quan trọng, đó là chăm sóc môi trường và giúp các bạn nhỏ tham gia cùng, điều này rất quan trọng cho hành tinh của chúng ta."
     },
     {
       "id": 3,
@@ -296,7 +298,7 @@
           "word": "environment",
           "start": 20.34,
           "end": 20.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "are",
@@ -323,7 +325,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Có thể các bạn đã biết, con người và môi trường liên kết chặt chẽ với nhau."
     },
     {
       "id": 4,
@@ -342,7 +345,7 @@
           "word": "time",
           "start": 23.86,
           "end": 24.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "people",
@@ -354,7 +357,7 @@
           "word": "harm",
           "start": 24.59,
           "end": 24.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "nature",
@@ -384,10 +387,11 @@
           "word": "problems",
           "start": 27.14,
           "end": 27.64,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Mỗi khi con người gây hại thiên nhiên, họ gây ra các vấn đề môi trường."
     },
     {
       "id": 5,
@@ -507,12 +511,12 @@
         {
           "word": "health",
           "start": 35.68,
-          "end": 36.0,
-          "confidence": 1.0
+          "end": 36,
+          "confidence": 1
         },
         {
           "word": "of",
-          "start": 36.0,
+          "start": 36,
           "end": 36.24,
           "confidence": 0.999
         },
@@ -559,7 +563,8 @@
           "confidence": 0.792
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Những vấn đề này bao gồm những thay đổi có hại trong môi trường, nhiều thay đổi sẽ không thể đảo ngược và ảnh hưởng đến sức khỏe của tất cả mọi người."
     },
     {
       "id": 6,
@@ -571,12 +576,12 @@
         {
           "word": "people",
           "start": 39.68,
-          "end": 40.0,
+          "end": 40,
           "confidence": 0.989
         },
         {
           "word": "have",
-          "start": 40.0,
+          "start": 40,
           "end": 40.24,
           "confidence": 0.993
         },
@@ -614,7 +619,7 @@
           "word": "water",
           "start": 41.88,
           "end": 42.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "has",
@@ -626,7 +631,7 @@
           "word": "been",
           "start": 42.35,
           "end": 42.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "contaminated",
@@ -662,7 +667,7 @@
           "word": "drink",
           "start": 44.43,
           "end": 44.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -683,7 +688,8 @@
           "confidence": 0.949
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.954,
+      "vi": "Con người đã đổ rác xuống sông. Nước đã bị ô nhiễm, và bây giờ không ai có thể uống được nữa. Ôi không."
     },
     {
       "id": 7,
@@ -720,7 +726,7 @@
           "word": "animals",
           "start": 47.48,
           "end": 47.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -732,7 +738,7 @@
           "word": "living",
           "start": 48.11,
           "end": 48.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "beings",
@@ -756,7 +762,7 @@
           "word": "die",
           "start": 49.23,
           "end": 49.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "because",
@@ -777,7 +783,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Cũng có nhiều loài động vật và sinh vật sẽ chết vì ô nhiễm."
     },
     {
       "id": 8,
@@ -808,7 +815,7 @@
           "word": "our",
           "start": 52.52,
           "end": 52.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hands",
@@ -838,7 +845,7 @@
           "word": "and",
           "start": 54.55,
           "end": 54.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "look",
@@ -865,7 +872,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "May mắn thay, chúng ta có thể bảo vệ thiên nhiên và chăm sóc môi trường."
     },
     {
       "id": 9,
@@ -908,7 +916,7 @@
           "word": "share",
           "start": 57.75,
           "end": 57.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
@@ -950,13 +958,13 @@
           "word": "to",
           "start": 60.55,
           "end": 60.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "look",
           "start": 60.71,
           "end": 61.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "after",
@@ -977,7 +985,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Đó là lý do tôi muốn chia sẻ với các bạn 10 cách đơn giản để bảo vệ môi trường."
     },
     {
       "id": 10,
@@ -996,7 +1005,7 @@
           "word": "take",
           "start": 63.19,
           "end": 63.43,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1011,7 +1020,8 @@
           "confidence": 0.982
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Hãy cùng xem nhé."
     },
     {
       "id": 11,
@@ -1084,7 +1094,7 @@
           "word": "using",
           "start": 68.23,
           "end": 68.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1096,7 +1106,7 @@
           "word": "save",
           "start": 68.87,
           "end": 69.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "energy",
@@ -1105,7 +1115,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Tắt đèn và các thiết bị điện không sử dụng để tiết kiệm năng lượng."
     },
     {
       "id": 12,
@@ -1130,13 +1141,13 @@
           "word": "bags",
           "start": 73.25,
           "end": 73.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
           "start": 73.56,
           "end": 73.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "reusable",
@@ -1178,7 +1189,7 @@
           "word": "bags",
           "start": 76.77,
           "end": 77.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "years",
@@ -1190,7 +1201,7 @@
           "word": "to",
           "start": 77.56,
           "end": 77.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "decompose",
@@ -1202,19 +1213,19 @@
           "word": "and",
           "start": 78.44,
           "end": 78.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "making",
           "start": 78.77,
-          "end": 79.0,
-          "confidence": 1.0
+          "end": 79,
+          "confidence": 1
         },
         {
           "word": "them",
-          "start": 79.0,
+          "start": 79,
           "end": 79.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
@@ -1232,7 +1243,7 @@
           "word": "very",
           "start": 79.56,
           "end": 79.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "contaminating",
@@ -1244,10 +1255,11 @@
           "word": "process",
           "start": 80.92,
           "end": 81.42,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.968
+      "confidence": 0.968,
+      "vi": "Thay túi nilon bằng túi vải có thể tái sử dụng. Túi nilon mất nhiều năm để phân hủy, và việc sản xuất chúng gây ô nhiễm rất nhiều."
     },
     {
       "id": 13,
@@ -1284,19 +1296,19 @@
           "word": "different",
           "start": 85.77,
           "end": 86.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "types",
           "start": 86.17,
           "end": 86.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 86.49,
           "end": 86.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "waste",
@@ -1320,7 +1332,7 @@
           "word": "containers",
           "start": 89.45,
           "end": 89.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "glass",
@@ -1332,13 +1344,13 @@
           "word": "or",
           "start": 90.81,
           "end": 91.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "paper",
           "start": 91.05,
           "end": 91.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1353,7 +1365,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.962
+      "confidence": 0.962,
+      "vi": "Tách riêng và tái chế các loại rác khác nhau. Hữu cơ, vô cơ, hộp, giấy hoặc bìa cứng."
     },
     {
       "id": 14,
@@ -1366,13 +1379,13 @@
           "word": "to",
           "start": 94.67,
           "end": 94.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "avoid",
           "start": 94.91,
           "end": 95.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "wasting",
@@ -1390,13 +1403,13 @@
           "word": "make",
           "start": 96.5,
           "end": 96.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sure",
           "start": 96.74,
           "end": 97.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "taps",
@@ -1408,28 +1421,29 @@
           "word": "are",
           "start": 97.55,
           "end": 97.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "completely",
           "start": 97.78,
           "end": 98.28,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "turned",
           "start": 98.42,
           "end": 98.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "off",
           "start": 98.74,
           "end": 99.24,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Để tránh lãng phí nước, hãy đảm bảo vòi nước được khóa hoàn toàn."
     },
     {
       "id": 15,
@@ -1448,31 +1462,31 @@
           "word": "toilet",
           "start": 101.7,
           "end": 102.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 102.19,
           "end": 102.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "not",
           "start": 102.42,
           "end": 102.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 102.66,
           "end": 102.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "rubbish",
           "start": 102.83,
           "end": 103.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "bin",
@@ -1481,7 +1495,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Nhà vệ sinh không phải là thùng rác."
     },
     {
       "id": 16,
@@ -1494,19 +1509,19 @@
           "word": "did",
           "start": 104.1,
           "end": 104.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 104.42,
           "end": 104.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "know",
           "start": 104.58,
           "end": 104.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "that",
@@ -1518,19 +1533,19 @@
           "word": "we",
           "start": 105.06,
           "end": 105.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "waste",
           "start": 105.31,
           "end": 105.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "10",
           "start": 105.78,
           "end": 106.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "liters",
@@ -1548,25 +1563,25 @@
           "word": "water",
           "start": 106.74,
           "end": 107.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "every",
           "start": 107.31,
           "end": 107.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
           "start": 107.62,
           "end": 107.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "we",
           "start": 107.86,
           "end": 108.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "flush",
@@ -1578,7 +1593,7 @@
           "word": "the",
           "start": 108.5,
           "end": 108.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "toilet",
@@ -1587,7 +1602,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Bạn có biết rằng chúng ta lãng phí 10 lít nước mỗi lần xả bồn cầu không?"
     },
     {
       "id": 17,
@@ -1599,20 +1615,20 @@
         {
           "word": "have",
           "start": 111.76,
-          "end": 112.0,
+          "end": 112,
           "confidence": 0.981
         },
         {
           "word": "a",
-          "start": 112.0,
+          "start": 112,
           "end": 112.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shower",
           "start": 112.16,
           "end": 112.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "instead",
@@ -1624,7 +1640,7 @@
           "word": "of",
           "start": 112.96,
           "end": 113.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1639,7 +1655,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Nên tắm vòi sen thay vì tắm bồn."
     },
     {
       "id": 18,
@@ -1658,7 +1675,7 @@
           "word": "five",
           "start": 114.4,
           "end": 114.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "minute",
@@ -1676,7 +1693,7 @@
           "word": "uses",
           "start": 115.52,
           "end": 115.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "about",
@@ -1688,7 +1705,7 @@
           "word": "100",
           "start": 116.32,
           "end": 117.04,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "liters",
@@ -1700,7 +1717,7 @@
           "word": "of",
           "start": 117.36,
           "end": 117.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "water",
@@ -1724,13 +1741,13 @@
           "word": "full",
           "start": 118.56,
           "end": 118.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "bath",
           "start": 118.88,
           "end": 119.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "would",
@@ -1742,23 +1759,23 @@
           "word": "use",
           "start": 119.36,
           "end": 119.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "up",
           "start": 119.6,
           "end": 119.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 119.76,
-          "end": 120.0,
+          "end": 120,
           "confidence": 0.998
         },
         {
           "word": "250",
-          "start": 120.0,
+          "start": 120,
           "end": 121.12,
           "confidence": 0.941
         },
@@ -1769,7 +1786,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Tắm vòi sen năm phút sử dụng khoảng 100 lít nước, trong khi tắm bồn đầy có thể dùng tới 250 lít."
     },
     {
       "id": 19,
@@ -1794,13 +1812,13 @@
           "word": "the",
           "start": 124.61,
           "end": 124.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "water",
           "start": 124.78,
           "end": 125.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tap",
@@ -1818,7 +1836,7 @@
           "word": "brushing",
           "start": 125.66,
           "end": 126.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "your",
@@ -1842,13 +1860,13 @@
           "word": "you",
           "start": 126.94,
           "end": 127.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "didn't",
           "start": 127.09,
           "end": 127.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shut",
@@ -1866,7 +1884,7 @@
           "word": "the",
           "start": 127.81,
           "end": 128.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "faucet",
@@ -1878,7 +1896,7 @@
           "word": "you",
           "start": 128.69,
           "end": 128.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "would",
@@ -1902,7 +1920,7 @@
           "word": "average",
           "start": 129.57,
           "end": 129.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
@@ -1914,7 +1932,7 @@
           "word": "20",
           "start": 130.13,
           "end": 130.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "liters",
@@ -1932,7 +1950,7 @@
           "word": "time",
           "start": 131.5,
           "end": 131.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -1959,7 +1977,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tắt vòi nước khi đánh răng. Nếu bạn không tắt vòi, bạn sẽ lãng phí trung bình 20 lít mỗi lần đánh răng."
     },
     {
       "id": 20,
@@ -1981,7 +2000,8 @@
           "confidence": 0.969
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Tái sử dụng giấy."
     },
     {
       "id": 21,
@@ -2006,7 +2026,7 @@
           "word": "remember",
           "start": 137.67,
           "end": 138.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "that",
@@ -2018,7 +2038,7 @@
           "word": "you",
           "start": 138.23,
           "end": 138.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -2036,13 +2056,13 @@
           "word": "on",
           "start": 138.95,
           "end": 139.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "both",
           "start": 139.19,
           "end": 139.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sides",
@@ -2054,7 +2074,7 @@
           "word": "of",
           "start": 139.83,
           "end": 139.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -2093,7 +2113,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Ví dụ, hãy nhớ rằng bạn có thể viết ở cả hai mặt tờ giấy để tận dụng tối đa."
     },
     {
       "id": 22,
@@ -2118,13 +2139,13 @@
           "word": "your",
           "start": 144.79,
           "end": 144.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "litter",
           "start": 144.95,
           "end": 145.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "every",
@@ -2136,19 +2157,19 @@
           "word": "time",
           "start": 145.59,
           "end": 145.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 145.83,
           "end": 145.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "go",
           "start": 145.99,
           "end": 146.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -2166,7 +2187,7 @@
           "word": "beach",
           "start": 146.47,
           "end": 146.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "or",
@@ -2184,10 +2205,11 @@
           "word": "mountains",
           "start": 147.11,
           "end": 147.61,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Hãy nhặt rác mỗi lần đi biển hoặc lên núi."
     },
     {
       "id": 23,
@@ -2205,12 +2227,12 @@
         {
           "word": "and",
           "start": 150.75,
-          "end": 151.0,
+          "end": 151,
           "confidence": 0.996
         },
         {
           "word": "look",
-          "start": 151.0,
+          "start": 151,
           "end": 151.24,
           "confidence": 0.999
         },
@@ -2218,7 +2240,7 @@
           "word": "after",
           "start": 151.24,
           "end": 151.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -2241,12 +2263,12 @@
         {
           "word": "and",
           "start": 152.75,
-          "end": 153.0,
+          "end": 153,
           "confidence": 0.999
         },
         {
           "word": "trees",
-          "start": 153.0,
+          "start": 153,
           "end": 153.31,
           "confidence": 0.997
         },
@@ -2254,7 +2276,7 @@
           "word": "around",
           "start": 153.31,
           "end": 153.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -2263,7 +2285,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Hãy tôn trọng và chăm sóc các loài động vật, hoa và cây cối xung quanh bạn."
     },
     {
       "id": 24,
@@ -2288,19 +2311,19 @@
           "word": "to",
           "start": 157.72,
           "end": 157.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "look",
           "start": 157.88,
           "end": 158.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "after",
           "start": 158.12,
           "end": 158.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -2330,7 +2353,7 @@
           "word": "sure",
           "start": 160.12,
           "end": 160.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -2348,7 +2371,7 @@
           "word": "know",
           "start": 160.91,
           "end": 161.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "about",
@@ -2360,7 +2383,7 @@
           "word": "them",
           "start": 161.4,
           "end": 161.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -2372,19 +2395,19 @@
           "word": "do",
           "start": 161.88,
           "end": 162.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "most",
           "start": 162.12,
           "end": 162.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 162.44,
           "end": 162.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "them",
@@ -2393,7 +2416,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Những cách đơn giản để bảo vệ môi trường, đúng không? Tôi tin rằng các bạn đã biết và thực hiện hầu hết chúng rồi."
     },
     {
       "id": 25,
@@ -2412,7 +2436,7 @@
           "word": "simple",
           "start": 163.62,
           "end": 164.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "actions",
@@ -2442,7 +2466,7 @@
           "word": "energy",
           "start": 166.18,
           "end": 166.5,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -2466,13 +2490,13 @@
           "word": "looking",
           "start": 167.62,
           "end": 167.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "after",
           "start": 167.94,
           "end": 168.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "all",
@@ -2514,7 +2538,7 @@
           "word": "a",
           "start": 170.58,
           "end": 170.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "more",
@@ -2526,7 +2550,7 @@
           "word": "sustainable",
           "start": 170.98,
           "end": 171.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "planet",
@@ -2535,7 +2559,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Với những hành động đơn giản như tái chế, tiết kiệm năng lượng và nước, và chăm sóc tất cả sinh vật sống, chúng ta đóng góp vào một hành tinh bền vững hơn."
     },
     {
       "id": 26,
@@ -2554,7 +2579,7 @@
           "word": "you",
           "start": 172.98,
           "end": 173.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "know",
@@ -2575,7 +2600,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Bạn có biết từ này không?"
     },
     {
       "id": 27,
@@ -2600,7 +2626,7 @@
           "word": "planet",
           "start": 175.22,
           "end": 175.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "or",
@@ -2624,25 +2650,25 @@
           "word": "those",
           "start": 176.74,
           "end": 176.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "that",
           "start": 176.89,
           "end": 177.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "provide",
           "start": 177.22,
           "end": 177.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "people",
           "start": 177.69,
           "end": 178.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
@@ -2660,25 +2686,25 @@
           "word": "good",
           "start": 178.41,
           "end": 178.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "quality",
           "start": 178.74,
           "end": 179.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 179.13,
           "end": 179.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "life",
           "start": 179.29,
           "end": 179.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "without",
@@ -2696,7 +2722,7 @@
           "word": "natural",
           "start": 180.81,
           "end": 181.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "resources",
@@ -2705,7 +2731,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Hành tinh hoặc thành phố bền vững là nơi cung cấp cho mọi người một chất lượng sống tốt mà không gây nguy hiểm cho tài nguyên thiên nhiên."
     },
     {
       "id": 28,
@@ -2730,43 +2757,43 @@
           "word": "future",
           "start": 183.53,
           "end": 183.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "generations",
           "start": 183.94,
           "end": 184.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "will",
           "start": 184.5,
           "end": 184.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "enjoy",
           "start": 184.66,
           "end": 185.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 185.06,
           "end": 185.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "wonderful",
           "start": 185.22,
           "end": 185.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "planet",
           "start": 185.78,
           "end": 186.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "where",
@@ -2777,8 +2804,8 @@
         {
           "word": "economic",
           "start": 186.5,
-          "end": 187.0,
-          "confidence": 1.0
+          "end": 187,
+          "confidence": 1
         },
         {
           "word": "growth",
@@ -2802,19 +2829,19 @@
           "word": "and",
           "start": 188.73,
           "end": 188.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "social",
           "start": 188.97,
           "end": 189.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "well-being",
           "start": 189.38,
           "end": 189.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "are",
@@ -2831,11 +2858,12 @@
         {
           "word": "balance",
           "start": 190.5,
-          "end": 191.0,
+          "end": 191,
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Như vậy, các thế hệ tương lai sẽ được hưởng một hành tinh tuyệt vời nơi tăng trưởng kinh tế, bảo vệ môi trường và phúc lợi xã hội cân bằng với nhau."
     },
     {
       "id": 29,
@@ -2866,7 +2894,7 @@
           "word": "your",
           "start": 192.75,
           "end": 192.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hands",
@@ -2875,7 +2903,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Hãy nhớ, điều đó nằm trong tay bạn."
     },
     {
       "id": 30,
@@ -2921,7 +2950,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Bạn muốn tham gia sứ mệnh của chúng tôi không?"
     },
     {
       "id": 31,
@@ -2991,7 +3021,8 @@
           "confidence": 0.976
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Bạn có thích video này không? Chúng tôi còn rất nhiều video hay nữa."
     },
     {
       "id": 32,
@@ -3010,13 +3041,13 @@
           "word": "by",
           "start": 206.16,
           "end": 206.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "clicking",
           "start": 206.24,
           "end": 206.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
@@ -3037,7 +3068,8 @@
           "confidence": 0.973
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Đăng ký bằng cách bấm vào hình hải cẩu."
     },
     {
       "id": 33,
@@ -3080,19 +3112,19 @@
           "word": "keep",
           "start": 209.28,
           "end": 209.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "watching",
           "start": 209.59,
           "end": 209.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "more",
           "start": 209.92,
           "end": 210.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "videos",
@@ -3116,7 +3148,7 @@
           "word": "the",
           "start": 211.12,
           "end": 211.28,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "boxes",
@@ -3125,7 +3157,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Và nếu bạn muốn xem thêm nhiều video nữa, hãy bấm vào các ô bên cạnh."
     }
   ],
   "fetchedAt": "2026-08-03T11:04:43.714384+00:00",

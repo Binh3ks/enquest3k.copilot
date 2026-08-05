@@ -1,24 +1,132 @@
 {
   "text": "Today's video, making a pizza. First, let's look at the ingredients. Mushrooms. Onion. Peppers. Cheese. Ham. Pepperoni. Pizza base. Tomato sauce. Next, let's learn how to make a pizza. First, chop the mushrooms, onions, and peppers. Then, grate the cheese. Next, heat oil in the pan. Then, cook for one minute. After that, add the tomato sauce and cheese to the base. Then, put the vegetables, ham, and pepperoni on top. Finally, cook the pizza in the oven for 15 minutes.",
   "segments": [
-    { "id": 1, "text": "Today's video, making a pizza.", "start": 20.3, "duration": 6.4 },
-    { "id": 2, "text": "First, let's look at the ingredients.", "start": 28.4, "duration": 6.0 },
-    { "id": 3, "text": "Mushrooms.", "start": 36.0, "duration": 3.0 },
-    { "id": 4, "text": "Onion.", "start": 40.4, "duration": 3.0 },
-    { "id": 5, "text": "Peppers.", "start": 44.6, "duration": 3.0 },
-    { "id": 6, "text": "Cheese.", "start": 50.6, "duration": 2.8 },
-    { "id": 7, "text": "Ham.", "start": 54.5, "duration": 2.8 },
-    { "id": 8, "text": "Pepperoni.", "start": 58.0, "duration": 3.0 },
-    { "id": 9, "text": "Pizza base.", "start": 64.9, "duration": 3.8 },
-    { "id": 10, "text": "Tomato sauce.", "start": 69.5, "duration": 3.7 },
-    { "id": 11, "text": "Next, let's learn how to make a pizza.", "start": 76.8, "duration": 7.6 },
-    { "id": 12, "text": "First, chop the mushrooms, onions, and peppers.", "start": 88.9, "duration": 12.2 },
-    { "id": 13, "text": "Then, grate the cheese.", "start": 107.3, "duration": 7.2 },
-    { "id": 14, "text": "Next, heat oil in the pan.", "start": 120.4, "duration": 7.9 },
-    { "id": 15, "text": "Then, cook for one minute.", "start": 132.7, "duration": 6.5 },
-    { "id": 16, "text": "After that, add the tomato sauce and cheese to the base.", "start": 145.3, "duration": 13.2 },
-    { "id": 17, "text": "Then, put the vegetables, ham, and pepperoni on top.", "start": 164.3, "duration": 11.9 },
-    { "id": 18, "text": "Finally, cook the pizza in the oven for 15 minutes.", "start": 182.5, "duration": 11.4 }
+    {
+      "id": 1,
+      "text": "Today's video, making a pizza.",
+      "start": 20.3,
+      "duration": 6.4,
+      "vi": "Video hôm nay: làm bánh pizza."
+    },
+    {
+      "id": 2,
+      "text": "First, let's look at the ingredients.",
+      "start": 28.4,
+      "duration": 6,
+      "vi": "Trước tiên, cùng xem các nguyên liệu nhé."
+    },
+    {
+      "id": 3,
+      "text": "Mushrooms.",
+      "start": 36,
+      "duration": 3,
+      "vi": "Nấm."
+    },
+    {
+      "id": 4,
+      "text": "Onion.",
+      "start": 40.4,
+      "duration": 3,
+      "vi": "Hành tây."
+    },
+    {
+      "id": 5,
+      "text": "Peppers.",
+      "start": 44.6,
+      "duration": 3,
+      "vi": "Ớt chuông."
+    },
+    {
+      "id": 6,
+      "text": "Cheese.",
+      "start": 50.6,
+      "duration": 2.8,
+      "vi": "Phô mai."
+    },
+    {
+      "id": 7,
+      "text": "Ham.",
+      "start": 54.5,
+      "duration": 2.8,
+      "vi": "Thịt xông khói."
+    },
+    {
+      "id": 8,
+      "text": "Pepperoni.",
+      "start": 58,
+      "duration": 3,
+      "vi": "Xúc xích pepperoni."
+    },
+    {
+      "id": 9,
+      "text": "Pizza base.",
+      "start": 64.9,
+      "duration": 3.8,
+      "vi": "Đế bánh pizza."
+    },
+    {
+      "id": 10,
+      "text": "Tomato sauce.",
+      "start": 69.5,
+      "duration": 3.7,
+      "vi": "Sốt cà chua."
+    },
+    {
+      "id": 11,
+      "text": "Next, let's learn how to make a pizza.",
+      "start": 76.8,
+      "duration": 7.6,
+      "vi": "Tiếp theo, cùng học cách làm bánh pizza nhé."
+    },
+    {
+      "id": 12,
+      "text": "First, chop the mushrooms, onions, and peppers.",
+      "start": 88.9,
+      "duration": 12.2,
+      "vi": "Đầu tiên, thái nhỏ nấm, hành tây và ớt chuông."
+    },
+    {
+      "id": 13,
+      "text": "Then, grate the cheese.",
+      "start": 107.3,
+      "duration": 7.2,
+      "vi": "Sau đó, bào phô mai."
+    },
+    {
+      "id": 14,
+      "text": "Next, heat oil in the pan.",
+      "start": 120.4,
+      "duration": 7.9,
+      "vi": "Tiếp theo, đun nóng dầu trong chảo."
+    },
+    {
+      "id": 15,
+      "text": "Then, cook for one minute.",
+      "start": 132.7,
+      "duration": 6.5,
+      "vi": "Sau đó, nấu trong một phút."
+    },
+    {
+      "id": 16,
+      "text": "After that, add the tomato sauce and cheese to the base.",
+      "start": 145.3,
+      "duration": 13.2,
+      "vi": "Sau đó, thêm sốt cà chua và phô mai lên đế bánh."
+    },
+    {
+      "id": 17,
+      "text": "Then, put the vegetables, ham, and pepperoni on top.",
+      "start": 164.3,
+      "duration": 11.9,
+      "vi": "Sau đó, xếp rau, thịt xông khói và xúc xích lên trên."
+    },
+    {
+      "id": 18,
+      "text": "Finally, cook the pizza in the oven for 15 minutes.",
+      "start": 182.5,
+      "duration": 11.4,
+      "vi": "Cuối cùng, nướng bánh pizza trong lò 15 phút."
+    }
   ],
   "videoId": "mWxahMeRMrA",
   "source": "youtube-transcript-api",

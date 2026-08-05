@@ -27,7 +27,8 @@
           "confidence": 0.921
         }
       ],
-      "confidence": 0.82
+      "confidence": 0.82,
+      "vi": "English sing sing."
     },
     {
       "id": 2,
@@ -55,7 +56,8 @@
           "confidence": 0.915
         }
       ],
-      "confidence": 0.919
+      "confidence": 0.919,
+      "vi": "Sở thích và niềm đam mê."
     },
     {
       "id": 3,
@@ -67,12 +69,12 @@
         {
           "word": "what",
           "start": 11.68,
-          "end": 12.0,
+          "end": 12,
           "confidence": 0.96
         },
         {
           "word": "do",
-          "start": 12.0,
+          "start": 12,
           "end": 12.24,
           "confidence": 0.999
         },
@@ -86,7 +88,7 @@
           "word": "like",
           "start": 12.48,
           "end": 12.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "doing",
@@ -95,7 +97,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Bạn thích làm gì?"
     },
     {
       "id": 4,
@@ -123,7 +126,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.896
+      "confidence": 0.896,
+      "vi": "Chơi ghi-ta"
     },
     {
       "id": 5,
@@ -160,7 +164,7 @@
           "word": "guitar",
           "start": 23.64,
           "end": 24.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
@@ -181,7 +185,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Tôi thích chơi ghi-ta trong lớp âm nhạc."
     },
     {
       "id": 6,
@@ -206,7 +211,7 @@
           "word": "guitar",
           "start": 27.96,
           "end": 28.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "reading",
@@ -221,7 +226,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Chơi ghi-ta, đọc sách"
     },
     {
       "id": 7,
@@ -246,7 +252,7 @@
           "word": "reading",
           "start": 36.28,
           "end": 36.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "books",
@@ -273,7 +279,8 @@
           "confidence": 0.914
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Tôi thích đọc sách trong thư viện."
     },
     {
       "id": 8,
@@ -307,7 +314,8 @@
           "confidence": 0.56
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Đọc sách, vẽ tranh."
     },
     {
       "id": 9,
@@ -347,7 +355,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Tôi thích vẽ tranh bằng bút sáp màu."
     },
     {
       "id": 10,
@@ -375,7 +384,8 @@
           "confidence": 0.942
         }
       ],
-      "confidence": 0.919
+      "confidence": 0.919,
+      "vi": "Vẽ tranh, xem tivi."
     },
     {
       "id": 11,
@@ -423,11 +433,12 @@
         {
           "word": "weekend",
           "start": 63.5,
-          "end": 64.0,
+          "end": 64,
           "confidence": 0.993
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Tôi thích xem tivi vào cuối tuần."
     },
     {
       "id": 12,
@@ -449,7 +460,8 @@
           "confidence": 0.744
         }
       ],
-      "confidence": 0.87
+      "confidence": 0.87,
+      "vi": "Xem tivi."
     },
     {
       "id": 13,
@@ -465,7 +477,8 @@
           "confidence": 0.957
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Nấu ăn."
     },
     {
       "id": 14,
@@ -511,7 +524,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tôi thích nấu ăn cho bố mẹ."
     },
     {
       "id": 15,
@@ -560,7 +574,7 @@
           "word": "front",
           "start": 85.73,
           "end": 86.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
@@ -575,7 +589,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Nấu ăn, hát. Tôi thích hát trước mặt mọi người."
     },
     {
       "id": 16,
@@ -639,7 +654,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Hát, nhảy. Tôi thích nhảy theo nhạc hip hop."
     },
     {
       "id": 17,
@@ -670,10 +686,11 @@
           "word": "music",
           "start": 107.14,
           "end": 107.64,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Nhảy, nghe nhạc"
     },
     {
       "id": 18,
@@ -740,10 +757,11 @@
           "word": "sleep",
           "start": 114.34,
           "end": 114.84,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Tôi thích nghe nhạc trước khi đi ngủ."
     },
     {
       "id": 19,
@@ -771,7 +789,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Nghe nhạc."
     },
     {
       "id": 20,
@@ -789,7 +808,7 @@
         {
           "word": "games",
           "start": 122.5,
-          "end": 123.0,
+          "end": 123,
           "confidence": 0.999
         },
         {
@@ -820,7 +839,7 @@
           "word": "with",
           "start": 126.25,
           "end": 126.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -835,7 +854,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Chơi game. Tôi thích chơi game với anh trai."
     },
     {
       "id": 21,
@@ -854,7 +874,7 @@
           "word": "games",
           "start": 129.46,
           "end": 129.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "swimming",
@@ -863,7 +883,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Chơi game, bơi lội"
     },
     {
       "id": 22,
@@ -882,7 +903,7 @@
           "word": "enjoy",
           "start": 136.97,
           "end": 137.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "swimming",
@@ -894,13 +915,13 @@
           "word": "in",
           "start": 138.18,
           "end": 138.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 138.41,
           "end": 138.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ocean",
@@ -909,7 +930,8 @@
           "confidence": 0.928
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Tôi thích bơi ở ngoài biển."
     },
     {
       "id": 23,
@@ -973,7 +995,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.854
+      "confidence": 0.854,
+      "vi": "Bơi lội, đi bộ. Tôi thích đi bộ trên núi."
     },
     {
       "id": 24,
@@ -1001,7 +1024,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.609
+      "confidence": 0.609,
+      "vi": "Đi bộ, chụp ảnh"
     },
     {
       "id": 25,
@@ -1024,7 +1048,7 @@
         },
         {
           "word": "taking",
-          "start": 164.0,
+          "start": 164,
           "end": 164.49,
           "confidence": 0.997
         },
@@ -1053,7 +1077,8 @@
           "confidence": 0.979
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Tôi thích chụp ảnh thú cưng."
     },
     {
       "id": 26,
@@ -1075,7 +1100,8 @@
           "confidence": 0.709
         }
       ],
-      "confidence": 0.772
+      "confidence": 0.772,
+      "vi": "Chụp ảnh."
     },
     {
       "id": 27,
@@ -1097,7 +1123,8 @@
           "confidence": 0.791
         }
       ],
-      "confidence": 0.852
+      "confidence": 0.852,
+      "vi": "Chơi bóng rổ."
     },
     {
       "id": 28,
@@ -1143,7 +1170,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Tôi thích chơi bóng rổ sau giờ học."
     },
     {
       "id": 29,
@@ -1183,7 +1211,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.904
+      "confidence": 0.904,
+      "vi": "Chơi bóng rổ, đạp xe"
     },
     {
       "id": 30,
@@ -1220,13 +1249,13 @@
           "word": "bicycle",
           "start": 195.34,
           "end": 195.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "at",
           "start": 196.14,
           "end": 196.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -1241,7 +1270,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Tôi thích đạp xe ở công viên."
     },
     {
       "id": 31,
@@ -1269,7 +1299,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.843
+      "confidence": 0.843,
+      "vi": "Đạp xe."
     },
     {
       "id": 32,
@@ -1285,7 +1316,8 @@
           "confidence": 0.773
         }
       ],
-      "confidence": 0.773
+      "confidence": 0.773,
+      "vi": "Ôn tập."
     },
     {
       "id": 33,
@@ -1301,7 +1333,8 @@
           "confidence": 0.614
         }
       ],
-      "confidence": 0.614
+      "confidence": 0.614,
+      "vi": "Nấu ăn."
     },
     {
       "id": 34,
@@ -1332,7 +1365,7 @@
           "word": "listening",
           "start": 221.64,
           "end": 222.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1344,7 +1377,7 @@
           "word": "music",
           "start": 222.52,
           "end": 223.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "playing",
@@ -1386,7 +1419,7 @@
           "word": "guitar",
           "start": 234.36,
           "end": 234.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "reading",
@@ -1428,7 +1461,7 @@
           "word": "swimming",
           "start": 250.25,
           "end": 250.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "taking",
@@ -1455,7 +1488,8 @@
           "confidence": 0.936
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Nhảy, vẽ tranh, đi bộ, nghe nhạc, chơi bóng rổ, chơi game, chơi ghi-ta, đọc sách, đạp xe, hát, bơi lội, chụp ảnh, xem tivi"
     }
   ],
   "videoId": "N1o4oOXLOZc",

@@ -39,7 +39,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.896
+      "confidence": 0.896,
+      "vi": "Con kiến và con châu chấu."
     },
     {
       "id": 2,
@@ -70,7 +71,7 @@
           "word": "love",
           "start": 20.05,
           "end": 20.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "summer",
@@ -79,7 +80,8 @@
           "confidence": 0.946
         }
       ],
-      "confidence": 0.807
+      "confidence": 0.807,
+      "vi": "Chirp, chirp, tui yêu mùa hè."
     },
     {
       "id": 3,
@@ -110,7 +112,7 @@
           "word": "love",
           "start": 23.49,
           "end": 23.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "singing",
@@ -119,7 +121,8 @@
           "confidence": 0.76
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Chirp, chirp, tui yêu ca hát."
     },
     {
       "id": 4,
@@ -144,7 +147,7 @@
           "word": "resting",
           "start": 26.61,
           "end": 27.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
@@ -162,7 +165,7 @@
           "word": "tree",
           "start": 27.34,
           "end": 27.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
@@ -180,7 +183,7 @@
           "word": "hot",
           "start": 28.14,
           "end": 28.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "summer",
@@ -195,7 +198,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.858
+      "confidence": 0.858,
+      "vi": "Con châu chấu đang nghỉ ngơi trên một cái cây vào ngày hè nóng nực."
     },
     {
       "id": 5,
@@ -256,7 +260,7 @@
           "word": "slaving",
           "start": 33.71,
           "end": 34.21,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "away",
@@ -265,7 +269,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Bên dưới cái cây, con kiến đang đổ mồ hôi làm việc vất vả."
     },
     {
       "id": 6,
@@ -308,19 +313,19 @@
           "word": "short",
           "start": 44.77,
           "end": 45.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 45.09,
           "end": 45.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "work",
           "start": 45.32,
           "end": 45.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "so",
@@ -335,18 +340,19 @@
           "confidence": 0.882
         }
       ],
-      "confidence": 0.933
+      "confidence": 0.933,
+      "vi": "Nè, kiến ơi. Đời ngắn lắm, đừng có làm việc cực vậy."
     },
     {
       "id": 7,
       "text": "Grasshopper said to Ant because Ant was working all summer long.",
       "speaker": "Speaker0",
-      "start": 49.0,
+      "start": 49,
       "duration": 4.91,
       "words": [
         {
           "word": "grasshopper",
-          "start": 49.0,
+          "start": 49,
           "end": 49.5,
           "confidence": 0.874
         },
@@ -360,7 +366,7 @@
           "word": "to",
           "start": 50.2,
           "end": 50.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ant",
@@ -384,23 +390,23 @@
           "word": "was",
           "start": 51.8,
           "end": 52.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "working",
           "start": 52.05,
           "end": 52.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "all",
           "start": 52.77,
-          "end": 53.0,
-          "confidence": 1.0
+          "end": 53,
+          "confidence": 1
         },
         {
           "word": "summer",
-          "start": 53.0,
+          "start": 53,
           "end": 53.41,
           "confidence": 0.998
         },
@@ -411,7 +417,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.874
+      "confidence": 0.874,
+      "vi": "Châu chấu nói với kiến vì kiến đã làm việc suốt cả mùa hè."
     },
     {
       "id": 8,
@@ -433,7 +440,8 @@
           "confidence": 0.85
         }
       ],
-      "confidence": 0.815
+      "confidence": 0.815,
+      "vi": "Nè, châu chấu. Nếu bây giờ bạn không chuẩn bị cho mùa đông, bạn sẽ bị đói đấy."
     },
     {
       "id": 9,
@@ -458,7 +466,7 @@
           "word": "don't",
           "start": 56.86,
           "end": 57.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "prepare",
@@ -500,7 +508,7 @@
           "word": "to",
           "start": 59.9,
           "end": 60.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "starve",
@@ -524,7 +532,7 @@
           "word": "plenty",
           "start": 65.9,
           "end": 66.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
@@ -539,7 +547,8 @@
           "confidence": 0.969
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Ồ, còn nhiều thời gian mà. Lo gì? Tui sẽ quay lại hát đây."
     },
     {
       "id": 10,
@@ -561,7 +570,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Tại sao phải lo?"
     },
     {
       "id": 11,
@@ -580,7 +590,7 @@
           "word": "going",
           "start": 69.44,
           "end": 69.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -604,7 +614,7 @@
           "word": "to",
           "start": 70.39,
           "end": 70.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -616,7 +626,7 @@
           "word": "singing",
           "start": 70.8,
           "end": 71.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "now",
@@ -625,7 +635,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tui sẽ quay lại hát đây."
     },
     {
       "id": 12,
@@ -647,7 +658,8 @@
           "confidence": 0.959
         }
       ],
-      "confidence": 0.801
+      "confidence": 0.801,
+      "vi": "Tít, tít."
     },
     {
       "id": 13,
@@ -666,7 +678,7 @@
           "word": "no",
           "start": 75.03,
           "end": 75.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
@@ -708,7 +720,7 @@
           "word": "winter",
           "start": 77.67,
           "end": 78.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "came",
@@ -717,7 +729,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.947
+      "confidence": 0.947,
+      "vi": "Chớp mắt, mùa hè đã qua và mùa đông lạnh giá đã đến."
     },
     {
       "id": 14,
@@ -736,13 +749,13 @@
           "word": "wind",
           "start": 79.67,
           "end": 80.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "howled",
           "start": 80.08,
           "end": 80.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -778,7 +791,7 @@
           "word": "snow",
           "start": 82.65,
           "end": 83.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fell",
@@ -811,7 +824,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Gió thổi ù ù, và những xô tuyết rơi từ bầu trời mùa đông."
     },
     {
       "id": 15,
@@ -851,7 +865,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.695
+      "confidence": 0.695,
+      "vi": "Ồ, ồ, tui đói quá."
     },
     {
       "id": 16,
@@ -885,7 +900,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.699
+      "confidence": 0.699,
+      "vi": "Ồ, tui lạnh quá."
     },
     {
       "id": 17,
@@ -946,7 +962,7 @@
           "word": "to",
           "start": 99.41,
           "end": 99.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "death",
@@ -955,7 +971,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.948
+      "confidence": 0.948,
+      "vi": "Nếu kiến nói đúng thì sao?"
     },
     {
       "id": 18,
@@ -974,7 +991,7 @@
           "word": "went",
           "start": 102.44,
           "end": 102.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -986,13 +1003,13 @@
           "word": "look",
           "start": 103.01,
           "end": 103.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 103.25,
           "end": 103.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "food",
@@ -1001,7 +1018,8 @@
           "confidence": 0.946
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Lúc đó tui chết đói mất."
     },
     {
       "id": 19,
@@ -1032,7 +1050,7 @@
           "word": "finding",
           "start": 105.73,
           "end": 106.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "food",
@@ -1050,19 +1068,19 @@
           "word": "got",
           "start": 107.25,
           "end": 107.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "lost",
           "start": 107.48,
           "end": 107.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 107.89,
           "end": 108.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -1077,7 +1095,8 @@
           "confidence": 0.818
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.969,
+      "vi": "Châu chấu đi tìm thức ăn."
     },
     {
       "id": 20,
@@ -1108,25 +1127,25 @@
           "word": "barely",
           "start": 110.1,
           "end": 110.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "move",
           "start": 110.66,
           "end": 110.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "his",
           "start": 110.9,
           "end": 111.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "legs",
           "start": 111.22,
           "end": 111.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "anymore",
@@ -1135,7 +1154,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Nhưng thay vì tìm được thức ăn, nó bị lạc trong tuyết."
     },
     {
       "id": 21,
@@ -1160,7 +1180,7 @@
           "word": "found",
           "start": 114.98,
           "end": 115.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ant's",
@@ -1175,7 +1195,8 @@
           "confidence": 0.971
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Và nó gần như không thể cử động chân nữa."
     },
     {
       "id": 22,
@@ -1194,7 +1215,7 @@
           "word": "mustered",
           "start": 117.46,
           "end": 117.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "up",
@@ -1206,46 +1227,47 @@
           "word": "enough",
           "start": 118.1,
           "end": 118.5,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "energy",
           "start": 118.5,
-          "end": 119.0,
-          "confidence": 1.0
+          "end": 119,
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 119.14,
           "end": 119.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "knock",
           "start": 119.38,
           "end": 119.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
           "start": 119.7,
           "end": 119.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 119.86,
           "end": 120.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "door",
           "start": 120.02,
           "end": 120.52,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "May mắn thay, châu chấu tìm thấy nhà của kiến."
     },
     {
       "id": 23,
@@ -1267,7 +1289,8 @@
           "confidence": 0.531
         }
       ],
-      "confidence": 0.725
+      "confidence": 0.725,
+      "vi": "Nó cố hết sức gõ cửa."
     },
     {
       "id": 24,
@@ -1286,13 +1309,13 @@
           "word": "you",
           "start": 124.31,
           "end": 124.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "give",
           "start": 124.55,
           "end": 124.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "me",
@@ -1304,13 +1327,13 @@
           "word": "some",
           "start": 125.1,
           "end": 125.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "food",
           "start": 125.58,
           "end": 126.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "or",
@@ -1349,7 +1372,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Xin lỗi, kiến ơi. Cho tui xin ít thức ăn hoặc chỉ một mẩu bánh thôi, làm ơn."
     },
     {
       "id": 25,
@@ -1377,7 +1401,8 @@
           "confidence": 0.906
         }
       ],
-      "confidence": 0.92
+      "confidence": 0.92,
+      "vi": "Đừng lo, châu chấu. Tui có rất nhiều thức ăn. Vào đi."
     },
     {
       "id": 26,
@@ -1390,25 +1415,25 @@
           "word": "i",
           "start": 134.99,
           "end": 135.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 135.23,
           "end": 135.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "plenty",
           "start": 135.55,
           "end": 136.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 136.03,
           "end": 136.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "food",
@@ -1426,16 +1451,17 @@
           "word": "on",
           "start": 137.31,
           "end": 137.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 137.47,
           "end": 137.97,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Châu chấu bước vào."
     },
     {
       "id": 27,
@@ -1454,7 +1480,7 @@
           "word": "went",
           "start": 140.75,
           "end": 140.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "inside",
@@ -1463,7 +1489,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.936
+      "confidence": 0.936,
+      "vi": "Nó ngồi bên lửa và ăn cho đến khi không ăn được nữa."
     },
     {
       "id": 28,
@@ -1488,7 +1515,7 @@
           "word": "next",
           "start": 142.83,
           "end": 143.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1500,13 +1527,13 @@
           "word": "the",
           "start": 143.31,
           "end": 143.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fire",
           "start": 143.47,
           "end": 143.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1551,7 +1578,8 @@
           "confidence": 0.977
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Ngon quá."
     },
     {
       "id": 29,
@@ -1579,7 +1607,8 @@
           "confidence": 0.804
         }
       ],
-      "confidence": 0.931
+      "confidence": 0.931,
+      "vi": "Kiến ơi, tui thật sự xin lỗi vì đã chọc bạn trước đó."
     },
     {
       "id": 30,
@@ -1610,37 +1639,37 @@
           "word": "sorry",
           "start": 150.87,
           "end": 151.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 151.26,
           "end": 151.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "making",
           "start": 151.59,
           "end": 151.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fun",
           "start": 151.91,
           "end": 152.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 152.15,
           "end": 152.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 152.31,
           "end": 152.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "before",
@@ -1649,7 +1678,8 @@
           "confidence": 0.923
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Đó là lỗi của tui."
     },
     {
       "id": 31,
@@ -1674,13 +1704,13 @@
           "word": "wrong",
           "start": 154.47,
           "end": 154.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 154.78,
           "end": 154.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "me",
@@ -1701,7 +1731,8 @@
           "confidence": 0.899
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Không sao. Năm sau bạn giúp tui lại nhé."
     },
     {
       "id": 32,
@@ -1714,7 +1745,7 @@
           "word": "you",
           "start": 157.11,
           "end": 157.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -1726,13 +1757,13 @@
           "word": "help",
           "start": 157.59,
           "end": 157.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "me",
           "start": 157.91,
           "end": 158.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "next",
@@ -1747,7 +1778,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Đúng lúc đó, châu chấu cuối cùng đã hiểu tại sao kiến đã làm việc vất vả trong mùa hè."
     },
     {
       "id": 33,
@@ -1766,7 +1798,7 @@
           "word": "was",
           "start": 162.54,
           "end": 162.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "then",
@@ -1783,20 +1815,20 @@
         {
           "word": "grasshopper",
           "start": 163.5,
-          "end": 164.0,
+          "end": 164,
           "confidence": 0.989
         },
         {
           "word": "finally",
           "start": 164.7,
           "end": 165.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "understood",
           "start": 165.02,
           "end": 165.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "why",
@@ -1820,7 +1852,7 @@
           "word": "worked",
           "start": 166.94,
           "end": 167.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "so",
@@ -1832,13 +1864,13 @@
           "word": "hard",
           "start": 167.58,
           "end": 167.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 167.98,
           "end": 168.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -1853,7 +1885,8 @@
           "confidence": 0.859
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Và nó biết ơn vì có một người bạn tốt như vậy."
     },
     {
       "id": 34,
@@ -1878,7 +1911,7 @@
           "word": "was",
           "start": 169.98,
           "end": 170.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "thankful",
@@ -1920,7 +1953,7 @@
           "word": "good",
           "start": 172.14,
           "end": 172.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "friend",
@@ -1929,7 +1962,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Và nó biết ơn vì có một người bạn tốt như vậy."
     }
   ],
   "videoId": "XbMrw3cwVUc",

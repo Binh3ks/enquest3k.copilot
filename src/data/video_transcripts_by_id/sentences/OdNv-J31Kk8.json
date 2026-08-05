@@ -27,7 +27,8 @@
           "confidence": 0.934
         }
       ],
-      "confidence": 0.866
+      "confidence": 0.866,
+      "vi": "Gia đình Carter"
     },
     {
       "id": 2,
@@ -67,7 +68,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.854
+      "confidence": 0.854,
+      "vi": "Tập bốn: Chuyến đi cắm trại"
     },
     {
       "id": 3,
@@ -95,7 +97,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.915
+      "confidence": 0.915,
+      "vi": "Hoan hô, Harry nói."
     },
     {
       "id": 4,
@@ -123,7 +126,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Chúng ta sẽ đi cắm trại."
     },
     {
       "id": 5,
@@ -172,13 +176,13 @@
           "word": "in",
           "start": 33.38,
           "end": 33.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 33.54,
           "end": 33.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "car",
@@ -187,7 +191,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Mẹ để lều và thức ăn vào xe."
     },
     {
       "id": 6,
@@ -218,25 +223,25 @@
           "word": "sleeping",
           "start": 36.1,
           "end": 36.5,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "bags",
           "start": 36.5,
           "end": 36.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 36.82,
           "end": 36.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 36.98,
           "end": 37.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "car",
@@ -245,7 +250,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Bố để túi ngủ vào xe."
     },
     {
       "id": 7,
@@ -276,7 +282,7 @@
           "word": "in",
           "start": 43.27,
           "end": 43.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -291,7 +297,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Bọn trẻ chơi trong sân."
     },
     {
       "id": 8,
@@ -316,7 +323,7 @@
           "word": "a",
           "start": 46.23,
           "end": 46.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stick",
@@ -325,7 +332,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Harry ném một cái gậy."
     },
     {
       "id": 9,
@@ -359,7 +367,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Rover chạy theo."
     },
     {
       "id": 10,
@@ -378,7 +387,7 @@
           "word": "in",
           "start": 56.17,
           "end": 56.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -405,7 +414,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.909
+      "confidence": 0.909,
+      "vi": "Mọi người lên xe đi, bố nói."
     },
     {
       "id": 11,
@@ -430,7 +440,7 @@
           "word": "for",
           "start": 59.29,
           "end": 59.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -445,7 +455,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.96
+      "confidence": 0.96,
+      "vi": "Rover tìm cái gậy."
     },
     {
       "id": 12,
@@ -464,7 +475,7 @@
           "word": "time",
           "start": 64.25,
           "end": 64.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -476,7 +487,7 @@
           "word": "go",
           "start": 64.57,
           "end": 64.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "camping",
@@ -503,7 +514,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.939
+      "confidence": 0.939,
+      "vi": "Đã đến lúc đi cắm trại rồi Rover, Harry nói."
     },
     {
       "id": 13,
@@ -528,25 +540,25 @@
           "word": "still",
           "start": 68.5,
           "end": 68.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "looking",
           "start": 68.83,
           "end": 69.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 69.22,
           "end": 69.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 69.39,
           "end": 69.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stick",
@@ -555,7 +567,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Rover vẫn đang tìm cái gậy."
     },
     {
       "id": 14,
@@ -574,7 +587,7 @@
           "word": "pulled",
           "start": 78.34,
           "end": 78.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "rover",
@@ -592,7 +605,7 @@
           "word": "the",
           "start": 79.31,
           "end": 79.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "car",
@@ -601,7 +614,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Mọi người kéo Rover lên xe."
     },
     {
       "id": 15,
@@ -641,7 +655,8 @@
           "confidence": 0.956
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.954,
+      "vi": "Đi thôi nào, bố nói."
     },
     {
       "id": 16,
@@ -666,7 +681,7 @@
           "word": "and",
           "start": 89.58,
           "end": 89.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "rover",
@@ -687,7 +702,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.923
+      "confidence": 0.923,
+      "vi": "Bố lái xe, và Rover sủa to."
     },
     {
       "id": 17,
@@ -712,19 +728,19 @@
           "word": "were",
           "start": 101.81,
           "end": 102.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 102.06,
           "end": 102.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 102.22,
           "end": 102.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "woods",
@@ -733,7 +749,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.946
+      "confidence": 0.946,
+      "vi": "Chẳng bao lâu, họ đã ở trong rừng."
     },
     {
       "id": 18,
@@ -752,7 +769,7 @@
           "word": "and",
           "start": 110.91,
           "end": 111.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "harry",
@@ -770,7 +787,7 @@
           "word": "up",
           "start": 111.71,
           "end": 111.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -785,7 +802,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Mẹ và Harry dựng lều."
     },
     {
       "id": 19,
@@ -816,7 +834,7 @@
           "word": "made",
           "start": 116.43,
           "end": 116.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -831,7 +849,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Bố và Emmy đốt lửa trại."
     },
     {
       "id": 20,
@@ -850,7 +869,7 @@
           "word": "found",
           "start": 122.91,
           "end": 123.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "bugs",
@@ -859,7 +878,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Oliver tìm được bọ."
     },
     {
       "id": 21,
@@ -884,7 +904,7 @@
           "word": "all",
           "start": 127.92,
           "end": 128.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "around",
@@ -893,7 +913,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Grover ngửi khắp nơi."
     },
     {
       "id": 22,
@@ -918,19 +939,19 @@
           "word": "dinner",
           "start": 132.79,
           "end": 133.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "over",
           "start": 133.12,
           "end": 133.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 133.35,
           "end": 133.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fire",
@@ -939,7 +960,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "B bố nấu bữa tối trên lửa."
     },
     {
       "id": 23,
@@ -1033,7 +1055,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.917
+      "confidence": 0.917,
+      "vi": "Mọi người ăn xong. Trời tối rồi, bố nói, chúng ta cần buộc thức ăn lên."
     },
     {
       "id": 24,
@@ -1079,7 +1102,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.94
+      "confidence": 0.94,
+      "vi": "Có gấu trong rừng."
     },
     {
       "id": 25,
@@ -1095,7 +1119,8 @@
           "confidence": 0.977
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Gấu ư?"
     },
     {
       "id": 26,
@@ -1114,7 +1139,7 @@
           "word": "looked",
           "start": 156.12,
           "end": 156.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "around",
@@ -1123,7 +1148,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Harry nhìn xung quanh."
     },
     {
       "id": 27,
@@ -1148,7 +1174,7 @@
           "word": "looked",
           "start": 158.92,
           "end": 159.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "around",
@@ -1157,7 +1183,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.937
+      "confidence": 0.937,
+      "vi": "Gấu ư? Emmy nhìn xung quanh."
     },
     {
       "id": 28,
@@ -1197,7 +1224,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.962
+      "confidence": 0.962,
+      "vi": "Tôi thích gấu, Oliver nói."
     },
     {
       "id": 29,
@@ -1231,7 +1259,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Đột nhiên, bụi cây chuyển động."
     },
     {
       "id": 30,
@@ -1250,7 +1279,7 @@
           "word": "it",
           "start": 168.65,
           "end": 168.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1277,7 +1306,8 @@
           "confidence": 0.917
         }
       ],
-      "confidence": 0.897
+      "confidence": 0.897,
+      "vi": "Có phải là gấu không? Emmy hỏi."
     },
     {
       "id": 31,
@@ -1302,13 +1332,13 @@
           "word": "came",
           "start": 175.45,
           "end": 175.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "from",
           "start": 175.69,
           "end": 175.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -1320,10 +1350,11 @@
           "word": "bushes",
           "start": 176.01,
           "end": 176.51,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Một âm thanh phát ra từ bụi cây."
     },
     {
       "id": 32,
@@ -1342,13 +1373,13 @@
           "word": "must",
           "start": 177.77,
           "end": 178.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "be",
           "start": 178.09,
           "end": 178.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1375,7 +1406,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.967
+      "confidence": 0.967,
+      "vi": "Chắc chắn là gấu rồi, Harry nói."
     },
     {
       "id": 33,
@@ -1406,7 +1438,7 @@
           "word": "jumped",
           "start": 189.28,
           "end": 189.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "out",
@@ -1415,7 +1447,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.816
+      "confidence": 0.816,
+      "vi": "Sủa sủa, Rover nhảy ra."
     },
     {
       "id": 34,
@@ -1446,7 +1479,7 @@
           "word": "new",
           "start": 191.84,
           "end": 192.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stick",
@@ -1455,7 +1488,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Rover có một cái gậy mới."
     }
   ],
   "videoId": "OdNv-J31Kk8",

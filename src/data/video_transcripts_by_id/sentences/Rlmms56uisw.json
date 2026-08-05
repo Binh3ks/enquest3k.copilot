@@ -41,12 +41,12 @@
         {
           "word": "the",
           "start": 3.84,
-          "end": 4.0,
+          "end": 4,
           "confidence": 0.737
         },
         {
           "word": "airplane",
-          "start": 4.0,
+          "start": 4,
           "end": 4.5,
           "confidence": 0.975
         },
@@ -57,7 +57,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.903
+      "confidence": 0.903,
+      "vi": "Gia đình Carter, tập 37, Chuyến đi bằng máy bay."
     },
     {
       "id": 2,
@@ -69,32 +70,32 @@
         {
           "word": "i",
           "start": 11.76,
-          "end": 12.0,
+          "end": 12,
           "confidence": 0.739
         },
         {
           "word": "can't",
-          "start": 12.0,
+          "start": 12,
           "end": 12.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "wait",
           "start": 12.4,
           "end": 12.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 12.72,
           "end": 12.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fly",
           "start": 12.88,
           "end": 13.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
@@ -124,10 +125,11 @@
           "word": "said",
           "start": 14.8,
           "end": 15.3,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Con không thể chờ được để được bay bằng máy bay, Harry nói."
     },
     {
       "id": 3,
@@ -164,10 +166,11 @@
           "word": "said",
           "start": 19.02,
           "end": 19.52,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.877
+      "confidence": 0.877,
+      "vi": "Bay nghe có vẻ đáng sợ, Oliver nói."
     },
     {
       "id": 4,
@@ -213,7 +216,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.876
+      "confidence": 0.876,
+      "vi": "Sẽ rất vui, bố nói."
     },
     {
       "id": 5,
@@ -232,19 +236,19 @@
           "word": "of",
           "start": 25.02,
           "end": 25.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "people",
           "start": 25.26,
           "end": 25.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "got",
           "start": 25.65,
           "end": 25.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
@@ -256,7 +260,7 @@
           "word": "the",
           "start": 26.05,
           "end": 26.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "plane",
@@ -265,7 +269,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Rất nhiều người lên máy bay."
     },
     {
       "id": 6,
@@ -302,13 +307,13 @@
           "word": "heavy",
           "start": 31.77,
           "end": 32.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 32.17,
           "end": 32.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -335,7 +340,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Có lẽ chúng ta quá nặng cho máy bay, Oliver nói."
     },
     {
       "id": 7,
@@ -381,7 +387,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.945
+      "confidence": 0.945,
+      "vi": "Chúng ta không quá nặng, mẹ nói."
     },
     {
       "id": 8,
@@ -415,7 +422,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Máy bay cất cánh."
     },
     {
       "id": 9,
@@ -446,16 +454,17 @@
           "word": "was",
           "start": 47.39,
           "end": 47.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "flying",
           "start": 47.7,
           "end": 48.2,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Gia đình Carter đang bay."
     },
     {
       "id": 10,
@@ -474,7 +483,7 @@
           "word": "ears",
           "start": 52.98,
           "end": 53.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hurt",
@@ -492,10 +501,11 @@
           "word": "said",
           "start": 54.75,
           "end": 55.25,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Tai con đau, Oliver nói."
     },
     {
       "id": 11,
@@ -514,13 +524,13 @@
           "word": "gave",
           "start": 56.76,
           "end": 57.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "oliver",
           "start": 57.08,
           "end": 57.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -532,7 +542,7 @@
           "word": "piece",
           "start": 57.64,
           "end": 57.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
@@ -547,7 +557,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Mẹ cho Oliver một miếng kẹo cao su."
     },
     {
       "id": 12,
@@ -560,7 +571,7 @@
           "word": "chewing",
           "start": 62.76,
           "end": 63.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -578,19 +589,19 @@
           "word": "made",
           "start": 63.72,
           "end": 63.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "his",
           "start": 63.96,
           "end": 64.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ears",
           "start": 64.12,
           "end": 64.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "feel",
@@ -602,10 +613,11 @@
           "word": "better",
           "start": 64.68,
           "end": 65.18,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Nhai kẹo cao su làm tai cậu ấy bớt đau."
     },
     {
       "id": 13,
@@ -622,9 +634,9 @@
         },
         {
           "word": "looked",
-          "start": 69.0,
+          "start": 69,
           "end": 69.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "out",
@@ -642,10 +654,11 @@
           "word": "window",
           "start": 69.64,
           "end": 70.14,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Oliver nhìn ra cửa sổ."
     },
     {
       "id": 14,
@@ -670,13 +683,13 @@
           "word": "very",
           "start": 75.72,
           "end": 76.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "high",
           "start": 76.27,
           "end": 76.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "up",
@@ -697,7 +710,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Chúng ta đang ở rất cao, cậu ấy nói."
     },
     {
       "id": 15,
@@ -716,13 +730,13 @@
           "word": "if",
           "start": 79.39,
           "end": 79.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "we",
           "start": 79.72,
           "end": 79.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fall",
@@ -731,7 +745,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Nếu chúng ta rơi thì sao?"
     },
     {
       "id": 16,
@@ -762,22 +777,23 @@
           "word": "will",
           "start": 83.8,
           "end": 84.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "not",
           "start": 84.19,
           "end": 84.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fall",
           "start": 84.59,
           "end": 85.09,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Harry nói, Chúng ta sẽ không rơi đâu."
     },
     {
       "id": 17,
@@ -796,13 +812,13 @@
           "word": "gave",
           "start": 91.54,
           "end": 91.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 91.78,
           "end": 91.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "kids",
@@ -820,16 +836,17 @@
           "word": "card",
           "start": 92.42,
           "end": 92.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "game",
           "start": 92.66,
           "end": 93.16,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Mẹ cho bọn trẻ một trò chơi bài."
     },
     {
       "id": 18,
@@ -854,7 +871,7 @@
           "word": "go",
           "start": 102.98,
           "end": 103.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "first",
@@ -875,7 +892,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.868
+      "confidence": 0.868,
+      "vi": "Oliver được đi trước, Emmy nói."
     },
     {
       "id": 19,
@@ -900,7 +918,7 @@
           "word": "the",
           "start": 112.1,
           "end": 112.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "game",
@@ -909,7 +927,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Oliver thắng trò chơi."
     },
     {
       "id": 20,
@@ -949,7 +968,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.911
+      "confidence": 0.911,
+      "vi": "Thật vui, cậu ấy nói."
     },
     {
       "id": 21,
@@ -974,7 +994,7 @@
           "word": "attendant",
           "start": 118.96,
           "end": 119.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "brought",
@@ -986,7 +1006,7 @@
           "word": "drinks",
           "start": 119.76,
           "end": 120.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1007,7 +1027,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Một nữ tiếp viên hàng không mang đồ uống và đồ ăn nhẹ."
     },
     {
       "id": 22,
@@ -1024,7 +1045,7 @@
         },
         {
           "word": "said",
-          "start": 126.0,
+          "start": 126,
           "end": 126.32,
           "confidence": 0.997
         },
@@ -1035,7 +1056,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Ngon quá, Oliver nói."
     },
     {
       "id": 23,
@@ -1060,7 +1082,7 @@
           "word": "pretzels",
           "start": 129.92,
           "end": 130.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1075,7 +1097,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Con thích bánh que và nước trái cây."
     },
     {
       "id": 24,
@@ -1103,7 +1126,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.884
+      "confidence": 0.884,
+      "vi": "Máy bay hạ cánh."
     },
     {
       "id": 25,
@@ -1122,7 +1146,7 @@
           "word": "got",
           "start": 137.93,
           "end": 138.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "their",
@@ -1137,7 +1161,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Mọi người lấy hành lý."
     },
     {
       "id": 26,
@@ -1156,7 +1181,7 @@
           "word": "flight",
           "start": 142.09,
           "end": 142.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "attendant",
@@ -1168,13 +1193,13 @@
           "word": "smiled",
           "start": 143.04,
           "end": 143.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "at",
           "start": 143.53,
           "end": 143.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "oliver",
@@ -1183,7 +1208,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.945
+      "confidence": 0.945,
+      "vi": "Nữ tiếp viên hàng không mỉm cười với Oliver."
     },
     {
       "id": 27,
@@ -1208,25 +1234,25 @@
           "word": "like",
           "start": 148.24,
           "end": 148.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 148.4,
           "end": 148.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "meet",
           "start": 148.56,
           "end": 148.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 148.72,
           "end": 148.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pilot",
@@ -1235,7 +1261,8 @@
           "confidence": 0.976
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Em có muốn gặp phi công không? Cô ấy hỏi."
     },
     {
       "id": 28,
@@ -1247,17 +1274,18 @@
         {
           "word": "she",
           "start": 149.76,
-          "end": 150.0,
+          "end": 150,
           "confidence": 0.99
         },
         {
           "word": "asked",
-          "start": 150.0,
+          "start": 150,
           "end": 150.5,
           "confidence": 0.999
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Cô ấy hỏi."
     },
     {
       "id": 29,
@@ -1273,7 +1301,8 @@
           "confidence": 0.823
         }
       ],
-      "confidence": 0.823
+      "confidence": 0.823,
+      "vi": "Vâng."
     },
     {
       "id": 30,
@@ -1286,7 +1315,7 @@
           "word": "oliver",
           "start": 152.72,
           "end": 153.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "said",
@@ -1295,7 +1324,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Oliver nói."
     },
     {
       "id": 31,
@@ -1320,7 +1350,7 @@
           "word": "had",
           "start": 156.24,
           "end": 156.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1332,7 +1362,7 @@
           "word": "cool",
           "start": 156.64,
           "end": 157.04,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "uniform",
@@ -1341,7 +1371,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Phi công có bộ quân phục rất ngầu."
     },
     {
       "id": 32,
@@ -1360,19 +1391,19 @@
           "word": "showed",
           "start": 159.28,
           "end": 159.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "oliver",
           "start": 159.6,
-          "end": 160.0,
+          "end": 160,
           "confidence": 0.998
         },
         {
           "word": "the",
-          "start": 160.0,
+          "start": 160,
           "end": 160.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "cockpit",
@@ -1381,7 +1412,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Ông ấy cho Oliver xem buồng lái."
     },
     {
       "id": 33,
@@ -1433,7 +1465,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Oliver nhìn thấy nút bấm và đèn và bản đồ."
     },
     {
       "id": 34,
@@ -1449,7 +1482,8 @@
           "confidence": 0.808
         }
       ],
-      "confidence": 0.808
+      "confidence": 0.808,
+      "vi": "Wow."
     },
     {
       "id": 35,
@@ -1462,7 +1496,7 @@
           "word": "oliver",
           "start": 169.22,
           "end": 169.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "said",
@@ -1471,7 +1505,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Oliver nói."
     },
     {
       "id": 36,
@@ -1517,7 +1552,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Bay vẫn có vẻ đáng sợ không, Oliver?"
     },
     {
       "id": 37,
@@ -1535,11 +1571,12 @@
         {
           "word": "asked",
           "start": 176.5,
-          "end": 177.0,
+          "end": 177,
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Bố hỏi."
     },
     {
       "id": 38,
@@ -1555,7 +1592,8 @@
           "confidence": 0.924
         }
       ],
-      "confidence": 0.924
+      "confidence": 0.924,
+      "vi": "Đáng sợ?"
     },
     {
       "id": 39,
@@ -1577,7 +1615,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Oliver cười."
     },
     {
       "id": 40,
@@ -1617,7 +1656,8 @@
           "confidence": 0.739
         }
       ],
-      "confidence": 0.92
+      "confidence": 0.92,
+      "vi": "Bay không đáng sợ đâu, bố."
     },
     {
       "id": 41,
@@ -1645,7 +1685,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Bay tuyệt vời lắm."
     }
   ],
   "fetchedAt": "2026-08-03T11:04:39.727236+00:00",

@@ -5,103 +5,120 @@
       "id": 1,
       "text": "I am going to have a picnic!",
       "start": 11.04,
-      "duration": 4.28
+      "duration": 4.28,
+      "vi": "Tôi sắp đi dã ngoại!"
     },
     {
       "id": 2,
       "text": "Where is my hat?",
       "start": 15,
-      "duration": 5.22
+      "duration": 5.22,
+      "vi": "Mũ của tôi ở đâu?"
     },
     {
       "id": 3,
       "text": "It is under the chair!",
       "start": 19.72,
-      "duration": 4.57
+      "duration": 4.57,
+      "vi": "Nó ở dưới ghế!"
     },
     {
       "id": 4,
       "text": "Where are my glasses?",
       "start": 27.47,
-      "duration": 4.35
+      "duration": 4.35,
+      "vi": "Kính của tôi ở đâu?"
     },
     {
       "id": 5,
       "text": "They are on the desk!",
       "start": 31.5,
-      "duration": 4.18
+      "duration": 4.18,
+      "vi": "Chúng ở trên bàn!"
     },
     {
       "id": 6,
       "text": "Where is my jacket?",
       "start": 39.1,
-      "duration": 4.56
+      "duration": 4.56,
+      "vi": "Áo khoác của tôi ở đâu?"
     },
     {
       "id": 7,
       "text": "It is in the closet!",
       "start": 43.26,
-      "duration": 4.4
+      "duration": 4.4,
+      "vi": "Nó ở trong tủ!"
     },
     {
       "id": 8,
       "text": "Where are my socks?",
       "start": 50.61,
-      "duration": 3.84
+      "duration": 3.84,
+      "vi": "Tất của tôi ở đâu?"
     },
     {
       "id": 9,
       "text": "They are behind the ball!",
       "start": 54.05,
-      "duration": 4.97
+      "duration": 4.97,
+      "vi": "Chúng ở phía sau quả bóng!"
     },
     {
       "id": 10,
       "text": "Where is my bag?",
       "start": 62.12,
-      "duration": 3.78
+      "duration": 3.78,
+      "vi": "Túi của tôi ở đâu?"
     },
     {
       "id": 11,
       "text": "It is in front of the computer!",
       "start": 65.4,
-      "duration": 4.96
+      "duration": 4.96,
+      "vi": "Nó ở phía trước máy tính!"
     },
     {
       "id": 12,
       "text": "Where is my sketchbook?",
       "start": 73.1,
-      "duration": 3.78
+      "duration": 3.78,
+      "vi": "Sổ phác thảo của tôi ở đâu?"
     },
     {
       "id": 13,
       "text": "It is between the dolls!",
       "start": 76.38,
-      "duration": 4.59
+      "duration": 4.59,
+      "vi": "Nó ở giữa búp bê!"
     },
     {
       "id": 14,
       "text": "Where are my colored pencils?",
       "start": 83.51,
-      "duration": 4.79
+      "duration": 4.79,
+      "vi": "Bút màu của tôi ở đâu?"
     },
     {
       "id": 15,
       "text": "They are beside the book!",
       "start": 88.14,
-      "duration": 4.1
+      "duration": 4.1,
+      "vi": "Chúng ở bên cạnh cuốn sách!"
     },
     {
       "id": 16,
       "text": "I found everything!",
       "start": 95.1,
-      "duration": 3.44
+      "duration": 3.44,
+      "vi": "Tôi đã tìm thấy mọi thứ!"
     },
     {
       "id": 17,
       "text": "Let us go have our picnic!",
       "start": 98.14,
-      "duration": 6.65
+      "duration": 6.65,
+      "vi": "Đi nào, đi dã ngoại thôi!"
     }
   ],
   "fetchedAt": "2026-07-31T08:58:41.105Z",

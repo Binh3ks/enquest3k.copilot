@@ -1,27 +1,153 @@
 {
   "text": "Billy was working as a paper boy. Delivering newspapers. The number of houses he delivered the papers to rose rapidly. But every time he withdrew his money from the cash point, he saw that his pay was still the same. So he quit his job. He swore never to be a paper boy again. He found another job. But he left that job too. He swore never to do deliveries again. What has just happened? The number of houses Billy has delivered newspapers to has risen rapidly. But whenever he has withdrawn money from the cash point, he has seen that his pay has been the same. So he has quit his job. He has found another job. But he has left that job too. He has sworn never to do deliveries again. Thanks for watching and I hope you learned some irregular verbs today. See you in the next video. Bye for now.",
   "segments": [
-    { "id": 1, "text": "Billy was working as a paper boy.", "start": 11.92, "duration": 3.49 },
-    { "id": 2, "text": "Delivering newspapers.", "start": 15.04, "duration": 14.79 },
-    { "id": 3, "text": "The number of houses he delivered the papers to rose rapidly.", "start": 48.11, "duration": 4.18 },
-    { "id": 4, "text": "But every time he withdrew his money from the cash point,", "start": 52.5, "duration": 3.5 },
-    { "id": 5, "text": "he saw that his pay was still the same.", "start": 56.5, "duration": 3.0 },
-    { "id": 6, "text": "So he quit his job.", "start": 60.0, "duration": 2.5 },
-    { "id": 7, "text": "He swore never to be a paper boy again.", "start": 63.0, "duration": 3.5 },
-    { "id": 8, "text": "He found another job.", "start": 67.0, "duration": 2.0 },
-    { "id": 9, "text": "But he left that job too.", "start": 69.5, "duration": 2.5 },
-    { "id": 10, "text": "He swore never to do deliveries again.", "start": 72.5, "duration": 3.0 },
-    { "id": 11, "text": "What has just happened?", "start": 78.0, "duration": 3.0 },
-    { "id": 12, "text": "The number of houses Billy has delivered newspapers to has risen rapidly.", "start": 82.0, "duration": 5.0 },
-    { "id": 13, "text": "But whenever he has withdrawn money from the cash point,", "start": 88.0, "duration": 4.0 },
-    { "id": 14, "text": "he has seen that his pay has been the same.", "start": 93.0, "duration": 3.5 },
-    { "id": 15, "text": "So he has quit his job.", "start": 97.0, "duration": 2.5 },
-    { "id": 16, "text": "He has found another job.", "start": 100.0, "duration": 2.5 },
-    { "id": 17, "text": "But he has left that job too.", "start": 103.0, "duration": 2.5 },
-    { "id": 18, "text": "He has sworn never to do deliveries again.", "start": 106.0, "duration": 3.5 },
-    { "id": 19, "text": "Thanks for watching and I hope you learned some irregular verbs today.", "start": 140.0, "duration": 5.0 },
-    { "id": 20, "text": "See you in the next video.", "start": 146.0, "duration": 3.0 },
-    { "id": 21, "text": "Bye for now.", "start": 150.0, "duration": 2.0 }
+    {
+      "id": 1,
+      "text": "Billy was working as a paper boy.",
+      "start": 11.92,
+      "duration": 3.49,
+      "vi": "Billy làm việc ở vị trí phát báo."
+    },
+    {
+      "id": 2,
+      "text": "Delivering newspapers.",
+      "start": 15.04,
+      "duration": 14.79,
+      "vi": "Phát báo cho mọi nhà."
+    },
+    {
+      "id": 3,
+      "text": "The number of houses he delivered the papers to rose rapidly.",
+      "start": 48.11,
+      "duration": 4.18,
+      "vi": "Số nhà mà cậu ấy phát báo đến tăng lên nhanh chóng."
+    },
+    {
+      "id": 4,
+      "text": "But every time he withdrew his money from the cash point,",
+      "start": 52.5,
+      "duration": 3.5,
+      "vi": "Nhưng mỗi lần cậu ấy rút tiền từ máy rút tiền tự động,"
+    },
+    {
+      "id": 5,
+      "text": "he saw that his pay was still the same.",
+      "start": 56.5,
+      "duration": 3,
+      "vi": "cậu ấy thấy lương vẫn y như cũ."
+    },
+    {
+      "id": 6,
+      "text": "So he quit his job.",
+      "start": 60,
+      "duration": 2.5,
+      "vi": "Vậy nên cậu ấy nghỉ việc."
+    },
+    {
+      "id": 7,
+      "text": "He swore never to be a paper boy again.",
+      "start": 63,
+      "duration": 3.5,
+      "vi": "Cậu ấy thề sẽ không bao giờ làm phát báo nữa."
+    },
+    {
+      "id": 8,
+      "text": "He found another job.",
+      "start": 67,
+      "duration": 2,
+      "vi": "Cậu ấy tìm được việc khác."
+    },
+    {
+      "id": 9,
+      "text": "But he left that job too.",
+      "start": 69.5,
+      "duration": 2.5,
+      "vi": "Nhưng cậu ấy cũng nghỉ việc đó luôn."
+    },
+    {
+      "id": 10,
+      "text": "He swore never to do deliveries again.",
+      "start": 72.5,
+      "duration": 3,
+      "vi": "Cậu ấy thề sẽ không bao giờ đi giao hàng nữa."
+    },
+    {
+      "id": 11,
+      "text": "What has just happened?",
+      "start": 78,
+      "duration": 3,
+      "vi": "Chuyện gì vừa xảy ra?"
+    },
+    {
+      "id": 12,
+      "text": "The number of houses Billy has delivered newspapers to has risen rapidly.",
+      "start": 82,
+      "duration": 5,
+      "vi": "Số nhà mà Billy đã phát báo đến đã tăng lên nhanh chóng."
+    },
+    {
+      "id": 13,
+      "text": "But whenever he has withdrawn money from the cash point,",
+      "start": 88,
+      "duration": 4,
+      "vi": "Nhưng mỗi lần cậu ấy rút tiền từ máy rút tiền tự động,"
+    },
+    {
+      "id": 14,
+      "text": "he has seen that his pay has been the same.",
+      "start": 93,
+      "duration": 3.5,
+      "vi": "cậu ấy đã thấy lương vẫn giữ nguyên."
+    },
+    {
+      "id": 15,
+      "text": "So he has quit his job.",
+      "start": 97,
+      "duration": 2.5,
+      "vi": "Vậy nên cậu ấy đã nghỉ việc."
+    },
+    {
+      "id": 16,
+      "text": "He has found another job.",
+      "start": 100,
+      "duration": 2.5,
+      "vi": "Cậu ấy đã tìm được việc khác."
+    },
+    {
+      "id": 17,
+      "text": "But he has left that job too.",
+      "start": 103,
+      "duration": 2.5,
+      "vi": "Nhưng cậu ấy cũng đã nghỉ việc đó luôn."
+    },
+    {
+      "id": 18,
+      "text": "He has sworn never to do deliveries again.",
+      "start": 106,
+      "duration": 3.5,
+      "vi": "Cậu ấy đã thề sẽ không bao giờ đi giao hàng nữa."
+    },
+    {
+      "id": 19,
+      "text": "Thanks for watching and I hope you learned some irregular verbs today.",
+      "start": 140,
+      "duration": 5,
+      "vi": "Cảm ơn bạn đã xem, và tôi hy vọng bạn đã học được một số động từ bất规则 hôm nay."
+    },
+    {
+      "id": 20,
+      "text": "See you in the next video.",
+      "start": 146,
+      "duration": 3,
+      "vi": "Hẹn gặp lại bạn ở video tiếp theo."
+    },
+    {
+      "id": 21,
+      "text": "Bye for now.",
+      "start": 150,
+      "duration": 2,
+      "vi": "Tạm biệt nhé."
+    }
   ],
   "videoId": "-0zVS6aDPXY",
   "source": "youtube-transcript-api",

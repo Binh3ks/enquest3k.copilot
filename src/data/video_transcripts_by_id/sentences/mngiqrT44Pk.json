@@ -5,169 +5,197 @@
       "id": 1,
       "text": "How was your trip?",
       "start": 6.24,
-      "duration": 2.26
+      "duration": 2.26,
+      "vi": "Chuyến đi của bạn thế nào?"
     },
     {
       "id": 2,
       "text": "It was really fun!",
       "start": 8.5,
-      "duration": 2.0
+      "duration": 2,
+      "vi": "Thật là vui!"
     },
     {
       "id": 3,
       "text": "How was the weather?",
       "start": 10.5,
-      "duration": 2.5
+      "duration": 2.5,
+      "vi": "Thời tiết thế nào?"
     },
     {
       "id": 4,
       "text": "The weather was beautiful.",
-      "start": 13.0,
-      "duration": 2.5
+      "start": 13,
+      "duration": 2.5,
+      "vi": "Thời tiết rất đẹp."
     },
     {
       "id": 5,
       "text": "It was warm and sunny every day.",
       "start": 15.5,
-      "duration": 3.0
+      "duration": 3,
+      "vi": "Trời ấm áp và có nắng mỗi ngày."
     },
     {
       "id": 6,
       "text": "How were the people?",
       "start": 18.5,
-      "duration": 2.5
+      "duration": 2.5,
+      "vi": "Mọi người thế nào?"
     },
     {
       "id": 7,
       "text": "The people were very friendly and helpful.",
-      "start": 21.0,
-      "duration": 3.0
+      "start": 21,
+      "duration": 3,
+      "vi": "Mọi người rất thân thiện và hay giúp đỡ."
     },
     {
       "id": 8,
       "text": "What did you do?",
-      "start": 24.0,
-      "duration": 2.0
+      "start": 24,
+      "duration": 2,
+      "vi": "Bạn đã làm gì?"
     },
     {
       "id": 9,
       "text": "I had some meetings.",
-      "start": 26.0,
-      "duration": 2.5
+      "start": 26,
+      "duration": 2.5,
+      "vi": "Tôi có vài cuộc họp."
     },
     {
       "id": 10,
       "text": "I ate at some delicious restaurants.",
       "start": 28.5,
-      "duration": 3.0
+      "duration": 3,
+      "vi": "Tôi đã ăn ở vài nhà hàng ngon."
     },
     {
       "id": 11,
       "text": "And I did some sightseeing.",
       "start": 31.5,
-      "duration": 2.5
+      "duration": 2.5,
+      "vi": "Và tôi đi tham quan một chút."
     },
     {
       "id": 12,
       "text": "How was the hotel?",
-      "start": 34.0,
-      "duration": 2.0
+      "start": 34,
+      "duration": 2,
+      "vi": "Khách sạn thế nào?"
     },
     {
       "id": 13,
       "text": "The hotel was very nice.",
-      "start": 36.0,
-      "duration": 2.5
+      "start": 36,
+      "duration": 2.5,
+      "vi": "Khách sạn rất đẹp."
     },
     {
       "id": 14,
       "text": "The service was great.",
       "start": 38.5,
-      "duration": 2.0
+      "duration": 2,
+      "vi": "Dịch vụ rất tuyệt."
     },
     {
       "id": 15,
       "text": "How was the food?",
       "start": 40.5,
-      "duration": 2.0
+      "duration": 2,
+      "vi": "Đồ ăn thế nào?"
     },
     {
       "id": 16,
       "text": "The food was amazing.",
       "start": 42.5,
-      "duration": 2.5
+      "duration": 2.5,
+      "vi": "Đồ ăn ngon tuyệt."
     },
     {
       "id": 17,
       "text": "I ate many different kinds of food.",
-      "start": 45.0,
-      "duration": 3.0
+      "start": 45,
+      "duration": 3,
+      "vi": "Tôi đã ăn rất nhiều món ăn khác nhau."
     },
     {
       "id": 18,
       "text": "Was it expensive?",
-      "start": 48.0,
-      "duration": 2.0
+      "start": 48,
+      "duration": 2,
+      "vi": "Nó có đắt không?"
     },
     {
       "id": 19,
       "text": "I think it was reasonable.",
-      "start": 50.0,
-      "duration": 2.5
+      "start": 50,
+      "duration": 2.5,
+      "vi": "Tôi nghĩ nó hợp lý."
     },
     {
       "id": 20,
       "text": "I didn't spend too much money.",
       "start": 52.5,
-      "duration": 2.5
+      "duration": 2.5,
+      "vi": "Tôi không tiêu quá nhiều tiền."
     },
     {
       "id": 21,
       "text": "Sounds like you had a wonderful vacation.",
-      "start": 55.0,
-      "duration": 3.0
+      "start": 55,
+      "duration": 3,
+      "vi": "Nghe có vẻ bạn đã có một kỳ nghỉ tuyệt vời."
     },
     {
       "id": 22,
       "text": "Yes, just one bad thing happened.",
-      "start": 58.0,
-      "duration": 2.5
+      "start": 58,
+      "duration": 2.5,
+      "vi": "Vâng, chỉ có một điều xấu xảy ra."
     },
     {
       "id": 23,
       "text": "Really?",
       "start": 60.5,
-      "duration": 0.5
+      "duration": 0.5,
+      "vi": "Thật sao?"
     },
     {
       "id": 24,
       "text": "What happened?",
-      "start": 61.0,
-      "duration": 1.5
+      "start": 61,
+      "duration": 1.5,
+      "vi": "Điều gì đã xảy ra?"
     },
     {
       "id": 25,
       "text": "I got sick.",
       "start": 62.5,
-      "duration": 2.0
+      "duration": 2,
+      "vi": "Tôi bị ốm."
     },
     {
       "id": 26,
       "text": "I got food poisoning.",
       "start": 64.5,
-      "duration": 2.0
+      "duration": 2,
+      "vi": "Tôi bị ngộ độc thực phẩm."
     },
     {
       "id": 27,
       "text": "Wow, that's awful.",
       "start": 66.5,
-      "duration": 2.0
+      "duration": 2,
+      "vi": "Ồ, thật tệ."
     },
     {
       "id": 28,
       "text": "I thought you said the food was delicious.",
       "start": 68.5,
-      "duration": 3.0
+      "duration": 3,
+      "vi": "Tôi tưởng bạn nói đồ ăn ngon mà."
     }
   ],
   "videoId": "mngiqrT44Pk",

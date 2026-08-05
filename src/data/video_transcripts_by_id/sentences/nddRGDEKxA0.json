@@ -45,7 +45,8 @@
           "confidence": 0.977
         }
       ],
-      "confidence": 0.872
+      "confidence": 0.872,
+      "vi": "Bạn thích làm gì?"
     },
     {
       "id": 2,
@@ -64,7 +65,7 @@
           "word": "like",
           "start": 15.82,
           "end": 16.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "dancing",
@@ -88,7 +89,7 @@
           "word": "don't",
           "start": 18.86,
           "end": 19.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -100,13 +101,13 @@
           "word": "dancing",
           "start": 19.66,
           "end": 20.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
           "start": 20.14,
           "end": 20.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -121,7 +122,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Tôi thích nhảy múa, nhưng tôi không thích nhảy với gấu."
     },
     {
       "id": 3,
@@ -140,7 +142,7 @@
           "word": "like",
           "start": 22.79,
           "end": 23.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "swimming",
@@ -164,31 +166,31 @@
           "word": "don't",
           "start": 25.82,
           "end": 26.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 26.23,
           "end": 26.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "swimming",
           "start": 26.82,
           "end": 27.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 27.14,
           "end": 27.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 27.46,
           "end": 27.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "air",
@@ -197,7 +199,8 @@
           "confidence": 0.949
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Tôi thích bơi lội, nhưng tôi không thích bơi trên trời."
     },
     {
       "id": 4,
@@ -240,19 +243,19 @@
           "word": "don't",
           "start": 32.82,
           "end": 33.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 33.22,
           "end": 33.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "drawing",
           "start": 33.62,
           "end": 34.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
@@ -269,11 +272,12 @@
         {
           "word": "spoon",
           "start": 34.5,
-          "end": 35.0,
+          "end": 35,
           "confidence": 0.995
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Tôi thích vẽ, nhưng tôi không thích vẽ bằng thìa."
     },
     {
       "id": 5,
@@ -292,7 +296,7 @@
           "word": "like",
           "start": 36.74,
           "end": 37.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "cooking",
@@ -316,7 +320,7 @@
           "word": "don't",
           "start": 39.8,
           "end": 40.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -328,19 +332,19 @@
           "word": "cooking",
           "start": 40.59,
           "end": 41.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
           "start": 41.16,
           "end": 41.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 41.4,
           "end": 41.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "moon",
@@ -349,7 +353,8 @@
           "confidence": 0.802
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Tôi thích nấu ăn, nhưng tôi không thích nấu ăn trên mặt trăng."
     },
     {
       "id": 6,
@@ -379,12 +384,12 @@
         {
           "word": "a",
           "start": 44.76,
-          "end": 45.0,
+          "end": 45,
           "confidence": 0.999
         },
         {
           "word": "bike",
-          "start": 45.0,
+          "start": 45,
           "end": 45.5,
           "confidence": 0.996
         },
@@ -392,7 +397,7 @@
           "word": "but",
           "start": 46.27,
           "end": 46.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "i",
@@ -404,7 +409,7 @@
           "word": "don't",
           "start": 46.76,
           "end": 47.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -431,7 +436,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Tôi thích đạp xe, nhưng tôi không thích cưỡi cá mập."
     },
     {
       "id": 7,
@@ -498,7 +504,7 @@
           "word": "don't",
           "start": 53.72,
           "end": 54.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -510,7 +516,7 @@
           "word": "petting",
           "start": 54.51,
           "end": 55.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "an",
@@ -531,7 +537,8 @@
           "confidence": 0.453
         }
       ],
-      "confidence": 0.909
+      "confidence": 0.909,
+      "vi": "Tôi thích vuốt chú chó lông mềm mại, nhưng tôi không thích vuốt... (âm thanh không rõ)."
     },
     {
       "id": 8,
@@ -607,7 +614,8 @@
           "confidence": 0.62
         }
       ],
-      "confidence": 0.914
+      "confidence": 0.914,
+      "vi": "Tôi thích chạy bộ, nhưng tôi không thích chạy với... (âm thanh không rõ)."
     },
     {
       "id": 9,
@@ -680,7 +688,7 @@
           "word": "a",
           "start": 69.1,
           "end": 69.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tree",
@@ -689,7 +697,8 @@
           "confidence": 0.756
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Tôi thích vẽ tranh, nhưng tôi không thích vẽ tranh trên cây."
     },
     {
       "id": 10,
@@ -707,7 +716,7 @@
         {
           "word": "like",
           "start": 71.5,
-          "end": 72.0,
+          "end": 72,
           "confidence": 0.999
         },
         {
@@ -732,7 +741,7 @@
           "word": "don't",
           "start": 74.55,
           "end": 74.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -744,7 +753,7 @@
           "word": "reading",
           "start": 75.42,
           "end": 75.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "upside",
@@ -759,7 +768,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Tôi thích đọc sách, nhưng tôi không thích đọc sách ngược."
     },
     {
       "id": 11,
@@ -802,13 +812,13 @@
           "word": "don't",
           "start": 81.55,
           "end": 81.87,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 81.87,
           "end": 82.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "skiing",
@@ -835,7 +845,8 @@
           "confidence": 0.967
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Tôi thích trượt tuyết, nhưng tôi không thích trượt trên tàu lượn."
     },
     {
       "id": 12,
@@ -860,7 +871,7 @@
           "word": "playing",
           "start": 87.55,
           "end": 88.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hide",
@@ -884,7 +895,7 @@
           "word": "but",
           "start": 89.79,
           "end": 90.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "i",
@@ -896,31 +907,31 @@
           "word": "don't",
           "start": 90.19,
           "end": 90.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 90.59,
           "end": 90.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "playing",
           "start": 90.99,
           "end": 91.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hide",
           "start": 91.47,
           "end": 91.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
           "start": 91.71,
           "end": 91.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sleep",
@@ -929,7 +940,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Tôi thích chơi trốn tìm, nhưng tôi không thích chơi trốn và ngủ."
     },
     {
       "id": 13,
@@ -954,19 +966,19 @@
           "word": "singing",
           "start": 94.52,
           "end": 95.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
           "start": 95.23,
           "end": 95.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "all",
           "start": 95.56,
           "end": 95.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
@@ -996,25 +1008,25 @@
           "word": "don't",
           "start": 97.23,
           "end": 97.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 97.56,
           "end": 97.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "singing",
           "start": 97.95,
           "end": 98.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
           "start": 98.44,
           "end": 98.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -1029,7 +1041,8 @@
           "confidence": 0.97
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Tôi thích hát với tất cả bạn bè, nhưng tôi không thích hát với cừu."
     },
     {
       "id": 14,
@@ -1048,19 +1061,19 @@
           "word": "do",
           "start": 101.56,
           "end": 101.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 101.95,
           "end": 102.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 102.36,
           "end": 102.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1075,7 +1088,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.949
+      "confidence": 0.949,
+      "vi": "Bạn thích làm gì?"
     }
   ],
   "videoId": "nddRGDEKxA0",

@@ -27,7 +27,8 @@
           "confidence": 0.962
         }
       ],
-      "confidence": 0.804
+      "confidence": 0.804,
+      "vi": "Tiếng Anh sing sing."
     },
     {
       "id": 2,
@@ -61,7 +62,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Môn yêu thích của bạn là gì?"
     },
     {
       "id": 3,
@@ -86,16 +88,17 @@
           "word": "is",
           "start": 12.97,
           "end": 13.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "next",
           "start": 13.13,
           "end": 13.63,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Tiết tiếp theo là tiết nào?"
     },
     {
       "id": 4,
@@ -111,7 +114,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Toán."
     },
     {
       "id": 5,
@@ -130,7 +134,7 @@
           "word": "like",
           "start": 17.14,
           "end": 17.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "math",
@@ -145,7 +149,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Tui thích tiết toán."
     },
     {
       "id": 6,
@@ -164,22 +169,23 @@
           "word": "don't",
           "start": 21.54,
           "end": 21.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 21.86,
           "end": 22.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "math",
           "start": 22.18,
           "end": 22.68,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.872
+      "confidence": 0.872,
+      "vi": "Tui không thích toán."
     },
     {
       "id": 7,
@@ -213,7 +219,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Môn yêu thích của bạn là gì?"
     },
     {
       "id": 8,
@@ -226,25 +233,25 @@
           "word": "my",
           "start": 27.07,
           "end": 27.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "favorite",
           "start": 27.31,
           "end": 27.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "subject",
           "start": 27.71,
           "end": 28.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 28.19,
           "end": 28.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pe",
@@ -253,7 +260,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Môn yêu thích của tui là thể dục."
     },
     {
       "id": 9,
@@ -272,22 +280,23 @@
           "word": "like",
           "start": 30.27,
           "end": 30.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "playing",
           "start": 30.51,
           "end": 30.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sports",
           "start": 30.83,
           "end": 31.33,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Tui thích chơi thể thao."
     },
     {
       "id": 10,
@@ -315,7 +324,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Tui thích bóng rổ."
     },
     {
       "id": 11,
@@ -340,7 +350,7 @@
           "word": "basketball",
           "start": 34.99,
           "end": 35.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "every",
@@ -355,7 +365,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.847
+      "confidence": 0.847,
+      "vi": "Tui chơi bóng rổ mỗi ngày."
     },
     {
       "id": 12,
@@ -374,7 +385,7 @@
           "word": "like",
           "start": 37.71,
           "end": 38.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "basketball",
@@ -392,40 +403,41 @@
           "word": "but",
           "start": 39.63,
           "end": 39.87,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "i",
           "start": 39.87,
           "end": 40.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
           "start": 40.03,
           "end": 40.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "play",
           "start": 40.51,
           "end": 40.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "very",
           "start": 40.83,
           "end": 41.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "well",
           "start": 41.15,
           "end": 41.65,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Tui cũng thích bóng rổ, nhưng tui chơi không giỏi lắm."
     },
     {
       "id": 13,
@@ -438,7 +450,7 @@
           "word": "don't",
           "start": 42.73,
           "end": 43.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "worry",
@@ -447,7 +459,8 @@
           "confidence": 0.971
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Đừng lo."
     },
     {
       "id": 14,
@@ -466,7 +479,7 @@
           "word": "can",
           "start": 44.09,
           "end": 44.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "help",
@@ -478,10 +491,11 @@
           "word": "you",
           "start": 44.57,
           "end": 45.07,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Tui có thể giúp bạn."
     },
     {
       "id": 15,
@@ -494,10 +508,11 @@
           "word": "really",
           "start": 45.77,
           "end": 46.27,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Thật à?"
     },
     {
       "id": 16,
@@ -510,31 +525,31 @@
           "word": "how",
           "start": 47.69,
           "end": 48.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "about",
           "start": 48.01,
           "end": 48.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "playing",
           "start": 48.33,
           "end": 48.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "basketball",
           "start": 48.73,
           "end": 49.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "after",
           "start": 49.45,
           "end": 49.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "school",
@@ -543,7 +558,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Sao không chơi bóng rổ sau giờ học nhỉ?"
     },
     {
       "id": 17,
@@ -556,28 +572,29 @@
           "word": "that's",
           "start": 51.2,
           "end": 51.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 51.52,
           "end": 51.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "good",
           "start": 51.69,
           "end": 52.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "idea",
           "start": 52.01,
           "end": 52.51,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Ý hay quá."
     },
     {
       "id": 18,
@@ -596,7 +613,7 @@
           "word": "was",
           "start": 67.23,
           "end": 67.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -608,7 +625,7 @@
           "word": "great",
           "start": 67.72,
           "end": 68.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
@@ -617,7 +634,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.962
+      "confidence": 0.962,
+      "vi": "Thật là vui."
     },
     {
       "id": 19,
@@ -645,7 +663,8 @@
           "confidence": 0.739
         }
       ],
-      "confidence": 0.907
+      "confidence": 0.907,
+      "vi": "Cảm ơn Jinsoo."
     },
     {
       "id": 20,
@@ -664,10 +683,11 @@
           "word": "welcome",
           "start": 71.23,
           "end": 71.73,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Không có gì."
     },
     {
       "id": 21,
@@ -683,7 +703,8 @@
           "confidence": 0.814
         }
       ],
-      "confidence": 0.814
+      "confidence": 0.814,
+      "vi": "Nghe nào."
     },
     {
       "id": 22,
@@ -708,16 +729,17 @@
           "word": "is",
           "start": 84.89,
           "end": 85.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "next",
           "start": 85.13,
           "end": 85.63,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Tiết tiếp theo là tiết nào?"
     },
     {
       "id": 23,
@@ -733,7 +755,8 @@
           "confidence": 0.984
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Toán."
     },
     {
       "id": 24,
@@ -752,7 +775,7 @@
           "word": "like",
           "start": 89.13,
           "end": 89.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "math",
@@ -767,7 +790,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Tui thích tiết toán."
     },
     {
       "id": 25,
@@ -786,13 +810,13 @@
           "word": "don't",
           "start": 93.53,
           "end": 93.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 93.85,
           "end": 94.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "math",
@@ -801,7 +825,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.91
+      "confidence": 0.91,
+      "vi": "Tui không thích toán."
     },
     {
       "id": 26,
@@ -832,10 +857,11 @@
           "word": "subject",
           "start": 97.01,
           "end": 97.51,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Môn yêu thích của bạn là gì?"
     },
     {
       "id": 27,
@@ -854,7 +880,7 @@
           "word": "favorite",
           "start": 99.25,
           "end": 99.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "subject",
@@ -866,7 +892,7 @@
           "word": "is",
           "start": 100.12,
           "end": 100.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pe",
@@ -875,7 +901,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Môn yêu thích của tui là thể dục."
     },
     {
       "id": 28,
@@ -894,22 +921,23 @@
           "word": "like",
           "start": 102.28,
           "end": 102.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "playing",
           "start": 102.53,
           "end": 102.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sports",
           "start": 102.84,
           "end": 103.34,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Tui thích chơi thể thao."
     },
     {
       "id": 29,
@@ -928,7 +956,7 @@
           "word": "like",
           "start": 104.61,
           "end": 104.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "basketball",
@@ -937,7 +965,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Tui thích bóng rổ."
     },
     {
       "id": 30,
@@ -962,7 +991,7 @@
           "word": "basketball",
           "start": 106.92,
           "end": 107.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "every",
@@ -974,10 +1003,11 @@
           "word": "day",
           "start": 107.81,
           "end": 108.31,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.849
+      "confidence": 0.849,
+      "vi": "Tui chơi bóng rổ mỗi ngày."
     },
     {
       "id": 31,
@@ -990,13 +1020,13 @@
           "word": "i",
           "start": 109.52,
           "end": 109.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 109.76,
           "end": 110.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "basketball",
@@ -1014,40 +1044,41 @@
           "word": "but",
           "start": 111.68,
           "end": 111.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "i",
           "start": 111.84,
-          "end": 112.0,
-          "confidence": 1.0
+          "end": 112,
+          "confidence": 1
         },
         {
           "word": "can't",
-          "start": 112.0,
+          "start": 112,
           "end": 112.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "play",
           "start": 112.48,
           "end": 112.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "very",
           "start": 112.8,
           "end": 113.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "well",
           "start": 113.12,
           "end": 113.62,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tui cũng thích bóng rổ, nhưng tui chơi không giỏi lắm."
     },
     {
       "id": 32,
@@ -1060,7 +1091,7 @@
           "word": "don't",
           "start": 114.64,
           "end": 114.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "worry",
@@ -1069,7 +1100,8 @@
           "confidence": 0.947
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Đừng lo."
     },
     {
       "id": 33,
@@ -1088,7 +1120,7 @@
           "word": "can",
           "start": 116.08,
           "end": 116.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "help",
@@ -1100,10 +1132,11 @@
           "word": "you",
           "start": 116.56,
           "end": 117.06,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tui có thể giúp bạn."
     },
     {
       "id": 34,
@@ -1116,10 +1149,11 @@
           "word": "really",
           "start": 117.76,
           "end": 118.26,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Thật à?"
     },
     {
       "id": 35,
@@ -1132,31 +1166,31 @@
           "word": "how",
           "start": 119.68,
           "end": 119.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "about",
           "start": 119.92,
           "end": 120.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "playing",
           "start": 120.32,
           "end": 120.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "basketball",
           "start": 120.64,
           "end": 121.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "after",
           "start": 121.36,
           "end": 121.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "school",
@@ -1165,7 +1199,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Sao không chơi bóng rổ sau giờ học nhỉ?"
     },
     {
       "id": 36,
@@ -1184,13 +1219,13 @@
           "word": "a",
           "start": 123.5,
           "end": 123.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "good",
           "start": 123.75,
           "end": 123.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "idea",
@@ -1199,7 +1234,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Ý hay quá."
     },
     {
       "id": 37,
@@ -1218,7 +1254,7 @@
           "word": "was",
           "start": 139.25,
           "end": 139.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1230,7 +1266,7 @@
           "word": "great",
           "start": 139.65,
           "end": 140.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
@@ -1239,7 +1275,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.967
+      "confidence": 0.967,
+      "vi": "Thật là vui."
     },
     {
       "id": 38,
@@ -1273,7 +1310,8 @@
           "confidence": 0.824
         }
       ],
-      "confidence": 0.919
+      "confidence": 0.919,
+      "vi": "Cảm ơn Jin Soo."
     },
     {
       "id": 39,
@@ -1295,7 +1333,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Không có gì."
     },
     {
       "id": 40,
@@ -1317,7 +1356,8 @@
           "confidence": 0.975
         }
       ],
-      "confidence": 0.89
+      "confidence": 0.89,
+      "vi": "Đọc to nào."
     },
     {
       "id": 41,
@@ -1339,7 +1379,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.938
+      "confidence": 0.938,
+      "vi": "Đến lượt bạn."
     }
   ],
   "videoId": "8wZi38lF28E",

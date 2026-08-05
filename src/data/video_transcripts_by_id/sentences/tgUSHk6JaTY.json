@@ -17,14 +17,14 @@
         {
           "word": "do",
           "start": 5.6,
-          "end": 6.0,
+          "end": 6,
           "confidence": 0.995
         },
         {
           "word": "you",
-          "start": 6.0,
+          "start": 6,
           "end": 6.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -33,7 +33,8 @@
           "confidence": 0.974
         }
       ],
-      "confidence": 0.87
+      "confidence": 0.87,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 2,
@@ -58,16 +59,17 @@
           "word": "you",
           "start": 7.68,
           "end": 7.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 7.84,
           "end": 8.34,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 3,
@@ -92,16 +94,17 @@
           "word": "you",
           "start": 11.12,
           "end": 11.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 11.36,
           "end": 11.86,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 4,
@@ -124,7 +127,7 @@
         },
         {
           "word": "i",
-          "start": 14.0,
+          "start": 14,
           "end": 14.32,
           "confidence": 0.996
         },
@@ -141,7 +144,8 @@
           "confidence": 0.963
         }
       ],
-      "confidence": 0.599
+      "confidence": 0.599,
+      "vi": "Bóng chày, bóng chày, tôi thích bóng chày."
     },
     {
       "id": 5,
@@ -157,7 +161,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Bóng rổ."
     },
     {
       "id": 6,
@@ -173,7 +178,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Bóng rổ."
     },
     {
       "id": 7,
@@ -207,7 +213,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.971,
+      "vi": "Tôi thích bóng rổ. Bóng chuyền."
     },
     {
       "id": 8,
@@ -220,10 +227,11 @@
           "word": "volleyball",
           "start": 20.05,
           "end": 20.55,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Bóng chuyền."
     },
     {
       "id": 9,
@@ -263,7 +271,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Tôi thích bóng chuyền. Bóng đá, bóng đá."
     },
     {
       "id": 10,
@@ -291,7 +300,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Tôi thích bóng đá."
     },
     {
       "id": 11,
@@ -307,7 +317,8 @@
           "confidence": 0.944
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Bóng chày."
     },
     {
       "id": 12,
@@ -323,7 +334,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Bóng rổ."
     },
     {
       "id": 13,
@@ -339,7 +351,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Bóng chuyền."
     },
     {
       "id": 14,
@@ -355,7 +368,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Bóng đá."
     },
     {
       "id": 15,
@@ -383,7 +397,8 @@
           "confidence": 0.641
         }
       ],
-      "confidence": 0.82
+      "confidence": 0.82,
+      "vi": "Tôi thích thể thao."
     },
     {
       "id": 16,
@@ -405,7 +420,8 @@
           "confidence": 0.789
         }
       ],
-      "confidence": 0.426
+      "confidence": 0.426,
+      "vi": "Thể thao, hành lang."
     },
     {
       "id": 17,
@@ -430,7 +446,7 @@
           "word": "you",
           "start": 34.74,
           "end": 34.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -439,7 +455,8 @@
           "confidence": 0.904
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.961,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 18,
@@ -458,22 +475,23 @@
           "word": "do",
           "start": 36.18,
           "end": 36.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 36.42,
           "end": 36.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 36.58,
           "end": 37.08,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 19,
@@ -492,22 +510,23 @@
           "word": "do",
           "start": 39.62,
           "end": 39.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 39.78,
           "end": 40.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 40.02,
           "end": 40.52,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 20,
@@ -529,7 +548,8 @@
           "confidence": 0.777
         }
       ],
-      "confidence": 0.78
+      "confidence": 0.78,
+      "vi": "Lặn, lặn."
     },
     {
       "id": 21,
@@ -548,7 +568,7 @@
           "word": "like",
           "start": 43.06,
           "end": 43.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "diving",
@@ -569,7 +589,8 @@
           "confidence": 0.958
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Tôi thích lặn, bơi, bơi."
     },
     {
       "id": 22,
@@ -609,7 +630,8 @@
           "confidence": 0.954
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Tôi thích bơi, trượt tuyết, trượt tuyết."
     },
     {
       "id": 23,
@@ -633,7 +655,7 @@
         {
           "word": "skiing",
           "start": 50.5,
-          "end": 51.0,
+          "end": 51,
           "confidence": 0.962
         },
         {
@@ -649,7 +671,8 @@
           "confidence": 0.954
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Tôi thích trượt tuyết, trượt băng, trượt băng."
     },
     {
       "id": 24,
@@ -713,7 +736,8 @@
           "confidence": 0.809
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Tôi thích trượt băng, lặn, bơi, tôi thích trượt. Hoan hô!"
     },
     {
       "id": 25,
@@ -738,7 +762,7 @@
           "word": "you",
           "start": 63.42,
           "end": 63.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -762,16 +786,17 @@
           "word": "you",
           "start": 65.1,
           "end": 65.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 65.26,
           "end": 65.76,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Bạn thích gì? Bạn thích gì?"
     },
     {
       "id": 26,
@@ -796,16 +821,17 @@
           "word": "you",
           "start": 68.54,
           "end": 68.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 68.7,
           "end": 69.2,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 27,
@@ -836,7 +862,7 @@
           "word": "like",
           "start": 71.66,
           "end": 72.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tennis",
@@ -852,12 +878,13 @@
         },
         {
           "word": "badminton",
-          "start": 74.0,
+          "start": 74,
           "end": 74.5,
           "confidence": 0.926
         }
       ],
-      "confidence": 0.688
+      "confidence": 0.688,
+      "vi": "Quần vợt, quần vợt, tôi thích quần vợt. Cầu lông, cầu lông."
     },
     {
       "id": 28,
@@ -885,7 +912,8 @@
           "confidence": 0.908
         }
       ],
-      "confidence": 0.968
+      "confidence": 0.968,
+      "vi": "Tôi thích cầu lông."
     },
     {
       "id": 29,
@@ -907,7 +935,8 @@
           "confidence": 0.95
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Đấu kiếm, đấu kiếm."
     },
     {
       "id": 30,
@@ -936,7 +965,7 @@
         },
         {
           "word": "boxing",
-          "start": 80.0,
+          "start": 80,
           "end": 80.5,
           "confidence": 0.993
         },
@@ -947,7 +976,8 @@
           "confidence": 0.808
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Tôi thích đấu kiếm. Boxing, boxing."
     },
     {
       "id": 31,
@@ -975,7 +1005,8 @@
           "confidence": 0.978
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Tôi thích boxing."
     },
     {
       "id": 32,
@@ -1015,7 +1046,8 @@
           "confidence": 0.948
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Quần vợt, cầu lông, đấu kiếm, đấu kiếm. Tôi"
     },
     {
       "id": 33,
@@ -1037,7 +1069,8 @@
           "confidence": 0.962
         }
       ],
-      "confidence": 0.792
+      "confidence": 0.792,
+      "vi": "Chúng ta nghe nào."
     },
     {
       "id": 34,
@@ -1071,7 +1104,8 @@
           "confidence": 0.976
         }
       ],
-      "confidence": 0.742
+      "confidence": 0.742,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 35,
@@ -1083,12 +1117,12 @@
         {
           "word": "what",
           "start": 103.67,
-          "end": 104.0,
+          "end": 104,
           "confidence": 0.935
         },
         {
           "word": "do",
-          "start": 104.0,
+          "start": 104,
           "end": 104.31,
           "confidence": 0.994
         },
@@ -1105,7 +1139,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 36,
@@ -1129,17 +1164,18 @@
         {
           "word": "you",
           "start": 107.75,
-          "end": 108.0,
+          "end": 108,
           "confidence": 0.995
         },
         {
           "word": "like",
-          "start": 108.0,
+          "start": 108,
           "end": 108.5,
           "confidence": 0.997
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 37,
@@ -1179,7 +1215,8 @@
           "confidence": 0.685
         }
       ],
-      "confidence": 0.532
+      "confidence": 0.532,
+      "vi": "Bóng chày, bóng chày, tôi thích bóng chày."
     },
     {
       "id": 38,
@@ -1237,7 +1274,8 @@
           "confidence": 0.917
         }
       ],
-      "confidence": 0.945
+      "confidence": 0.945,
+      "vi": "Bóng rổ, bóng rổ, tôi thích bóng rổ, bóng rổ, bóng chuyền, bóng chuyền."
     },
     {
       "id": 39,
@@ -1277,7 +1315,8 @@
           "confidence": 0.89
         }
       ],
-      "confidence": 0.895
+      "confidence": 0.895,
+      "vi": "Tôi thích bóng chuyền. Bóng đá, bóng đá."
     },
     {
       "id": 40,
@@ -1305,7 +1344,8 @@
           "confidence": 0.931
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Tôi thích bóng đá."
     },
     {
       "id": 41,
@@ -1329,7 +1369,7 @@
         {
           "word": "volleyball",
           "start": 124.5,
-          "end": 125.0,
+          "end": 125,
           "confidence": 0.973
         },
         {
@@ -1339,7 +1379,8 @@
           "confidence": 0.948
         }
       ],
-      "confidence": 0.932
+      "confidence": 0.932,
+      "vi": "Bóng chày, bóng rổ, bóng chuyền, bóng đá."
     },
     {
       "id": 42,
@@ -1367,7 +1408,8 @@
           "confidence": 0.736
         }
       ],
-      "confidence": 0.832
+      "confidence": 0.832,
+      "vi": "Tôi thích thể thao."
     },
     {
       "id": 43,
@@ -1401,7 +1443,8 @@
           "confidence": 0.908
         }
       ],
-      "confidence": 0.756
+      "confidence": 0.756,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 44,
@@ -1419,14 +1462,14 @@
         {
           "word": "do",
           "start": 132.84,
-          "end": 133.0,
+          "end": 133,
           "confidence": 0.998
         },
         {
           "word": "you",
-          "start": 133.0,
+          "start": 133,
           "end": 133.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -1435,7 +1478,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 45,
@@ -1454,19 +1498,19 @@
           "word": "do",
           "start": 136.01,
           "end": 136.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 136.06,
           "end": 136.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 136.11,
           "end": 136.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "what",
@@ -1484,16 +1528,17 @@
           "word": "you",
           "start": 136.49,
           "end": 136.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 136.76,
           "end": 137.26,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Bạn thích gì? Bạn thích gì?"
     },
     {
       "id": 46,
@@ -1515,7 +1560,8 @@
           "confidence": 0.793
         }
       ],
-      "confidence": 0.795
+      "confidence": 0.795,
+      "vi": "Lặn, lặn."
     },
     {
       "id": 47,
@@ -1544,7 +1590,7 @@
         },
         {
           "word": "swimming",
-          "start": 141.0,
+          "start": 141,
           "end": 141.5,
           "confidence": 0.987
         },
@@ -1555,7 +1601,8 @@
           "confidence": 0.957
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Tôi thích lặn, bơi, bơi."
     },
     {
       "id": 48,
@@ -1625,7 +1672,8 @@
           "confidence": 0.917
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Tôi thích bơi, trượt tuyết, trượt tuyết. Tôi thích trượt tuyết, trượt băng, trượt băng."
     },
     {
       "id": 49,
@@ -1677,7 +1725,8 @@
           "confidence": 0.952
         }
       ],
-      "confidence": 0.945
+      "confidence": 0.945,
+      "vi": "Tôi thích trượt băng, lặn, bơi, trượt tuyết, trượt băng."
     },
     {
       "id": 50,
@@ -1705,7 +1754,8 @@
           "confidence": 0.719
         }
       ],
-      "confidence": 0.889
+      "confidence": 0.889,
+      "vi": "Tôi thích trượt."
     },
     {
       "id": 51,
@@ -1721,7 +1771,8 @@
           "confidence": 0.825
         }
       ],
-      "confidence": 0.825
+      "confidence": 0.825,
+      "vi": "Hoan hô."
     },
     {
       "id": 52,
@@ -1755,7 +1806,8 @@
           "confidence": 0.95
         }
       ],
-      "confidence": 0.826
+      "confidence": 0.826,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 53,
@@ -1780,16 +1832,17 @@
           "word": "you",
           "start": 161.71,
           "end": 162.21,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 162.56,
           "end": 163.06,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Bạn thích gì?"
     },
     {
       "id": 54,
@@ -1814,13 +1867,13 @@
           "word": "you",
           "start": 165.15,
           "end": 165.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 165.39,
           "end": 165.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tennis",
@@ -1853,7 +1906,8 @@
           "confidence": 0.797
         }
       ],
-      "confidence": 0.845
+      "confidence": 0.845,
+      "vi": "Bạn thích gì? Quần vợt, quần vợt, tôi thích quần vợt."
     },
     {
       "id": 55,
@@ -1884,7 +1938,7 @@
           "word": "like",
           "start": 171.87,
           "end": 172.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "badminton",
@@ -1893,7 +1947,8 @@
           "confidence": 0.909
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Cầu lông, cầu lông, tôi thích cầu lông."
     },
     {
       "id": 56,
@@ -1915,7 +1970,8 @@
           "confidence": 0.897
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Đấu kiếm, đấu kiếm."
     },
     {
       "id": 57,
@@ -1943,7 +1999,8 @@
           "confidence": 0.898
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Tôi thích đấu kiếm."
     },
     {
       "id": 58,
@@ -1983,7 +2040,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Boxing, boxing, tôi thích boxing."
     },
     {
       "id": 59,
@@ -2017,7 +2075,8 @@
           "confidence": 0.828
         }
       ],
-      "confidence": 0.853
+      "confidence": 0.853,
+      "vi": "Quần vợt, cầu lông, đấu kiếm, đấu kiếm."
     },
     {
       "id": 60,
@@ -2045,7 +2104,8 @@
           "confidence": 0.94
         }
       ],
-      "confidence": 0.95
+      "confidence": 0.95,
+      "vi": "Tôi thích thể thao."
     },
     {
       "id": 61,
@@ -2067,7 +2127,8 @@
           "confidence": 0.888
         }
       ],
-      "confidence": 0.819
+      "confidence": 0.819,
+      "vi": "Hoan hô, hoan hô."
     },
     {
       "id": 62,
@@ -2089,7 +2150,8 @@
           "confidence": 0.72
         }
       ],
-      "confidence": 0.759
+      "confidence": 0.759,
+      "vi": "Chúng ta hát nào."
     }
   ],
   "videoId": "tgUSHk6JaTY",

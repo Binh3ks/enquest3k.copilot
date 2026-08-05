@@ -30,7 +30,7 @@
           "word": "about",
           "start": 1.28,
           "end": 1.68,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "our",
@@ -45,7 +45,8 @@
           "confidence": 0.93
         }
       ],
-      "confidence": 0.916
+      "confidence": 0.916,
+      "vi": "Hôm nay chúng ta nói về tên của chúng ta."
     },
     {
       "id": 2,
@@ -61,7 +62,8 @@
           "confidence": 0.844
         }
       ],
-      "confidence": 0.844
+      "confidence": 0.844,
+      "vi": "Hoan hô!"
     },
     {
       "id": 3,
@@ -77,7 +79,8 @@
           "confidence": 0.649
         }
       ],
-      "confidence": 0.649
+      "confidence": 0.649,
+      "vi": "Vâng!"
     },
     {
       "id": 4,
@@ -102,13 +105,13 @@
           "word": "name",
           "start": 9.28,
           "end": 9.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 9.52,
           "end": 9.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "omar",
@@ -117,7 +120,8 @@
           "confidence": 0.983
         }
       ],
-      "confidence": 0.936
+      "confidence": 0.936,
+      "vi": "Xin chào, tôi tên là Omar."
     },
     {
       "id": 5,
@@ -133,7 +137,8 @@
           "confidence": 0.581
         }
       ],
-      "confidence": 0.581
+      "confidence": 0.581,
+      "vi": "Xin chào."
     },
     {
       "id": 6,
@@ -158,7 +163,7 @@
           "word": "name",
           "start": 12.96,
           "end": 13.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
@@ -173,7 +178,8 @@
           "confidence": 0.862
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.969,
+      "vi": "Xin chào. Tôi tên là Lena."
     },
     {
       "id": 7,
@@ -198,7 +204,7 @@
           "word": "glad",
           "start": 14.88,
           "end": 15.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -216,10 +222,11 @@
           "word": "here",
           "start": 15.59,
           "end": 16.09,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Chúng tôi rất vui khi bạn ở đây."
     },
     {
       "id": 8,
@@ -250,10 +257,11 @@
           "word": "name",
           "start": 17.2,
           "end": 17.7,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Tên bạn là gì?"
     },
     {
       "id": 9,
@@ -272,22 +280,23 @@
           "word": "name",
           "start": 18.64,
           "end": 19.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 19.27,
           "end": 19.68,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "omar",
           "start": 19.68,
           "end": 20.18,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tên tôi là Omar."
     },
     {
       "id": 10,
@@ -306,7 +315,7 @@
           "word": "name",
           "start": 21.04,
           "end": 21.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
@@ -321,7 +330,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Tên tôi là Lena."
     },
     {
       "id": 11,
@@ -340,19 +350,19 @@
           "word": "you",
           "start": 24.88,
           "end": 25.04,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 25.04,
           "end": 25.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "your",
           "start": 25.36,
           "end": 25.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "name",
@@ -361,7 +371,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Bạn có thích tên mình không?"
     },
     {
       "id": 12,
@@ -380,19 +391,19 @@
           "word": "i",
           "start": 27.39,
           "end": 27.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 27.71,
           "end": 27.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 27.95,
           "end": 28.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "name",
@@ -410,19 +421,19 @@
           "word": "i",
           "start": 29.39,
           "end": 29.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "love",
           "start": 29.63,
           "end": 29.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 29.95,
           "end": 30.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "name",
@@ -431,7 +442,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Vâng, tôi thích tên tôi. Vâng, tôi yêu tên tôi."
     },
     {
       "id": 13,
@@ -456,16 +468,17 @@
           "word": "name",
           "start": 33.15,
           "end": 33.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "easy",
           "start": 33.55,
           "end": 34.05,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tên bạn có dễ không?"
     },
     {
       "id": 14,
@@ -499,7 +512,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Vâng, tên rất dễ."
     },
     {
       "id": 15,
@@ -530,7 +544,7 @@
           "word": "easy",
           "start": 37.63,
           "end": 37.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -545,7 +559,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Vâng, tên dễ đọc."
     },
     {
       "id": 16,
@@ -573,7 +588,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.916
+      "confidence": 0.916,
+      "vi": "Hãy đọc tên các bạn đi."
     },
     {
       "id": 17,
@@ -592,13 +608,13 @@
           "word": "name",
           "start": 42.86,
           "end": 43.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 43.19,
           "end": 43.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "omar",
@@ -607,7 +623,8 @@
           "confidence": 0.984
         }
       ],
-      "confidence": 0.932
+      "confidence": 0.932,
+      "vi": "Tên tôi là Omar."
     },
     {
       "id": 18,
@@ -626,7 +643,7 @@
           "word": "name",
           "start": 44.78,
           "end": 45.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
@@ -641,7 +658,8 @@
           "confidence": 0.858
         }
       ],
-      "confidence": 0.92
+      "confidence": 0.92,
+      "vi": "Tên tôi là Lena."
     },
     {
       "id": 19,
@@ -657,7 +675,8 @@
           "confidence": 0.91
         }
       ],
-      "confidence": 0.91
+      "confidence": 0.91,
+      "vi": "Tuyệt vời."
     },
     {
       "id": 20,
@@ -676,13 +695,13 @@
           "word": "name",
           "start": 49.18,
           "end": 49.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 49.42,
           "end": 49.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "omar",
@@ -691,7 +710,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Tên tôi là Omar."
     },
     {
       "id": 21,
@@ -725,7 +745,8 @@
           "confidence": 0.917
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Tên tôi là Lena."
     },
     {
       "id": 22,
@@ -756,7 +777,7 @@
           "word": "special",
           "start": 57.31,
           "end": 57.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -801,7 +822,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Tên chúng ta rất đặc biệt và chúng ta có thể nói chúng bằng tiếng Anh."
     },
     {
       "id": 23,
@@ -829,7 +851,8 @@
           "confidence": 0.853
         }
       ],
-      "confidence": 0.896
+      "confidence": 0.896,
+      "vi": "Xin chào, tôi là Omar."
     },
     {
       "id": 24,
@@ -857,7 +880,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Và tôi là Lena."
     },
     {
       "id": 25,
@@ -873,7 +897,8 @@
           "confidence": 0.974
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Tạm biệt."
     },
     {
       "id": 26,
@@ -907,7 +932,8 @@
           "confidence": 0.775
         }
       ],
-      "confidence": 0.845
+      "confidence": 0.845,
+      "vi": "Hẹn gặp lại lần sau!"
     }
   ],
   "videoId": "gUb6RbaasHM",

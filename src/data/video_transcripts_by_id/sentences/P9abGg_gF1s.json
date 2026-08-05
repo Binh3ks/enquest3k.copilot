@@ -27,7 +27,8 @@
           "confidence": 0.796
         }
       ],
-      "confidence": 0.798
+      "confidence": 0.798,
+      "vi": "English Sing Sing."
     },
     {
       "id": 2,
@@ -55,7 +56,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.819
+      "confidence": 0.819,
+      "vi": "Chủ đề bốn, thời tiết."
     },
     {
       "id": 3,
@@ -71,7 +73,8 @@
           "confidence": 0.777
         }
       ],
-      "confidence": 0.777
+      "confidence": 0.777,
+      "vi": "Hội thoại."
     },
     {
       "id": 4,
@@ -99,7 +102,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.925
+      "confidence": 0.925,
+      "vi": "Chúng ta ra ngoài chơi nhé."
     },
     {
       "id": 5,
@@ -151,7 +155,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Xin lỗi, mình không đi được. Trời lạnh và gió."
     },
     {
       "id": 6,
@@ -179,7 +184,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.931
+      "confidence": 0.931,
+      "vi": "Này, tuyết rơi kìa."
     },
     {
       "id": 7,
@@ -207,7 +213,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.971,
+      "vi": "Trắng xoá luôn."
     },
     {
       "id": 8,
@@ -241,7 +248,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.899
+      "confidence": 0.899,
+      "vi": "Con có thích tuyết không?"
     },
     {
       "id": 9,
@@ -269,7 +277,8 @@
           "confidence": 0.98
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Dạ, con thích."
     },
     {
       "id": 10,
@@ -291,7 +300,8 @@
           "confidence": 0.967
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Đi nào."
     },
     {
       "id": 11,
@@ -331,7 +341,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.943
+      "confidence": 0.943,
+      "vi": "Con có thể làm tuyết nhân được không?"
     },
     {
       "id": 12,
@@ -359,7 +370,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.87
+      "confidence": 0.87,
+      "vi": "Được chứ."
     },
     {
       "id": 13,
@@ -381,7 +393,8 @@
           "confidence": 0.955
         }
       ],
-      "confidence": 0.923
+      "confidence": 0.923,
+      "vi": "Tuyết nhân á?"
     },
     {
       "id": 14,
@@ -403,7 +416,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Con làm giỏi lắm."
     },
     {
       "id": 15,
@@ -425,7 +439,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.77
+      "confidence": 0.77,
+      "vi": "Cảm ơn."
     },
     {
       "id": 16,
@@ -447,7 +462,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Cái gì vậy?"
     },
     {
       "id": 17,
@@ -469,7 +485,8 @@
           "confidence": 0.984
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Mũi của nó."
     },
     {
       "id": 18,
@@ -497,7 +514,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.934
+      "confidence": 0.934,
+      "vi": "Wow, cái mũi."
     },
     {
       "id": 19,
@@ -513,7 +531,8 @@
           "confidence": 0.771
         }
       ],
-      "confidence": 0.771
+      "confidence": 0.771,
+      "vi": "Bài hát."
     },
     {
       "id": 20,
@@ -541,7 +560,8 @@
           "confidence": 0.971
         }
       ],
-      "confidence": 0.94
+      "confidence": 0.94,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 21,
@@ -581,7 +601,8 @@
           "confidence": 0.864
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.971,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 22,
@@ -603,7 +624,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Trời nắng."
     },
     {
       "id": 23,
@@ -631,7 +653,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Trời nắng."
     },
     {
       "id": 24,
@@ -659,7 +682,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 25,
@@ -681,7 +705,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 26,
@@ -703,7 +728,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Trời nhiều mây."
     },
     {
       "id": 27,
@@ -731,7 +757,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Trời nhiều mây."
     },
     {
       "id": 28,
@@ -759,7 +786,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 29,
@@ -781,7 +809,8 @@
           "confidence": 0.768
         }
       ],
-      "confidence": 0.881
+      "confidence": 0.881,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 30,
@@ -803,7 +832,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Trời đang mưa."
     },
     {
       "id": 31,
@@ -831,7 +861,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Trời đang mưa."
     },
     {
       "id": 32,
@@ -859,7 +890,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 33,
@@ -893,7 +925,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 34,
@@ -909,7 +942,8 @@
           "confidence": 0.73
         }
       ],
-      "confidence": 0.73
+      "confidence": 0.73,
+      "vi": "Trời đang tuyết."
     },
     {
       "id": 35,
@@ -937,7 +971,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.93
+      "confidence": 0.93,
+      "vi": "Trời đang tuyết."
     },
     {
       "id": 36,
@@ -971,7 +1006,8 @@
           "confidence": 0.968
         }
       ],
-      "confidence": 0.889
+      "confidence": 0.889,
+      "vi": "Bài hát."
     },
     {
       "id": 37,
@@ -999,7 +1035,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 38,
@@ -1027,7 +1064,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Trời mưa."
     },
     {
       "id": 39,
@@ -1055,7 +1093,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Trời mưa."
     },
     {
       "id": 40,
@@ -1077,7 +1116,8 @@
           "confidence": 0.954
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Cái này của con à?"
     },
     {
       "id": 41,
@@ -1099,7 +1139,8 @@
           "confidence": 0.95
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Vâng, của con."
     },
     {
       "id": 42,
@@ -1127,7 +1168,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 43,
@@ -1161,7 +1203,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.959
+      "confidence": 0.959,
+      "vi": "Trời nắng."
     },
     {
       "id": 44,
@@ -1189,7 +1232,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Trời nắng."
     },
     {
       "id": 45,
@@ -1211,7 +1255,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Cái này của con à?"
     },
     {
       "id": 46,
@@ -1233,7 +1278,8 @@
           "confidence": 0.97
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Không, không phải của con."
     },
     {
       "id": 47,
@@ -1261,7 +1307,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 48,
@@ -1289,7 +1336,8 @@
           "confidence": 0.982
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Trời gió."
     },
     {
       "id": 49,
@@ -1317,7 +1365,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.942
+      "confidence": 0.942,
+      "vi": "Trời gió."
     },
     {
       "id": 50,
@@ -1351,7 +1400,8 @@
           "confidence": 0.987
         }
       ],
-      "confidence": 0.958
+      "confidence": 0.958,
+      "vi": "Cái này của con à?"
     },
     {
       "id": 51,
@@ -1379,7 +1429,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Vâng, của con."
     },
     {
       "id": 52,
@@ -1431,7 +1482,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.988
+      "confidence": 0.988,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 53,
@@ -1465,7 +1517,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Nhiều mây, nhiều mây, trời nhiều mây."
     },
     {
       "id": 54,
@@ -1493,7 +1546,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 55,
@@ -1521,7 +1575,8 @@
           "confidence": 0.967
         }
       ],
-      "confidence": 0.853
+      "confidence": 0.853,
+      "vi": "Mưa, mưa, trời đang mưa."
     },
     {
       "id": 56,
@@ -1555,7 +1610,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.952,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 57,
@@ -1613,7 +1669,8 @@
           "confidence": 0.974
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Tuyết rơi, tuyết rơi, trời đang tuyết."
     },
     {
       "id": 58,
@@ -1647,7 +1704,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 59,
@@ -1681,7 +1739,8 @@
           "confidence": 0.944
         }
       ],
-      "confidence": 0.975
+      "confidence": 0.975,
+      "vi": "Nắng, trời nắng."
     },
     {
       "id": 60,
@@ -1697,7 +1756,8 @@
           "confidence": 0.944
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Thời tiết ở đây thế nào?"
     },
     {
       "id": 61,
@@ -1743,7 +1803,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.945
+      "confidence": 0.945,
+      "vi": "Thời tiết ở đây thế nào?"
     },
     {
       "id": 62,
@@ -1777,7 +1838,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.943
+      "confidence": 0.943,
+      "vi": "Trời gió và có tuyết."
     },
     {
       "id": 63,
@@ -1811,7 +1873,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Trời gió và có tuyết."
     },
     {
       "id": 64,
@@ -1845,7 +1908,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Đội mũ này lên."
     },
     {
       "id": 65,
@@ -1879,7 +1943,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Vâng."
     },
     {
       "id": 66,
@@ -1907,7 +1972,8 @@
           "confidence": 0.755
         }
       ],
-      "confidence": 0.916
+      "confidence": 0.916,
+      "vi": "Đeo găng tay này."
     },
     {
       "id": 67,
@@ -1923,7 +1989,8 @@
           "confidence": 0.97
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Găng tay."
     },
     {
       "id": 68,
@@ -1951,7 +2018,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Vâng."
     },
     {
       "id": 69,
@@ -1967,7 +2035,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Thời tiết bên ngoài thế nào?"
     },
     {
       "id": 70,
@@ -1983,7 +2052,8 @@
           "confidence": 0.897
         }
       ],
-      "confidence": 0.897
+      "confidence": 0.897,
+      "vi": "Thời tiết bên ngoài thế nào?"
     },
     {
       "id": 71,
@@ -2011,7 +2081,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.967
+      "confidence": 0.967,
+      "vi": "Trời mưa và lạnh."
     },
     {
       "id": 72,
@@ -2033,7 +2104,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.936
+      "confidence": 0.936,
+      "vi": "Trời mưa và lạnh."
     },
     {
       "id": 73,
@@ -2055,7 +2127,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Mang cái ô này."
     },
     {
       "id": 74,
@@ -2083,7 +2156,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Vâng."
     },
     {
       "id": 75,
@@ -2105,7 +2179,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Mang cái ô này."
     },
     {
       "id": 76,
@@ -2127,7 +2202,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Vâng."
     },
     {
       "id": 77,
@@ -2155,7 +2231,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.901
+      "confidence": 0.901,
+      "vi": "Truyện."
     },
     {
       "id": 78,
@@ -2171,7 +2248,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 79,
@@ -2193,7 +2271,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 1.0,
+      "vi": "Trời đang mưa."
     },
     {
       "id": 80,
@@ -2221,7 +2300,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 1.0,
+      "vi": "Ôi không."
     },
     {
       "id": 81,
@@ -2243,7 +2323,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 1.0
+      "confidence": 1.0,
+      "vi": "Thời tiết hôm nay thế nào?"
     },
     {
       "id": 82,
@@ -2259,7 +2340,8 @@
           "confidence": 0.927
         }
       ],
-      "confidence": 0.927
+      "confidence": 0.927,
+      "vi": "Trời nắng."
     },
     {
       "id": 83,
@@ -2287,7 +2369,8 @@
           "confidence": 0.969
         }
       ],
-      "confidence": 0.855
+      "confidence": 0.855,
+      "vi": "Ôi không."
     },
     {
       "id": 84,
@@ -2303,7 +2386,8 @@
           "confidence": 0.978
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Nhìn nè."
     },
     {
       "id": 85,
@@ -2331,7 +2415,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Trời đang mưa."
     },
     {
       "id": 86,
@@ -2359,7 +2444,8 @@
           "confidence": 0.98
         }
       ],
-      "confidence": 0.923
+      "confidence": 0.923,
+      "vi": "Được rồi."
     },
     {
       "id": 87,
@@ -2381,7 +2467,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.905
+      "confidence": 0.905,
+      "vi": "Nghe hay đấy."
     },
     {
       "id": 88,
@@ -2409,7 +2496,8 @@
           "confidence": 0.905
         }
       ],
-      "confidence": 0.967
+      "confidence": 0.967,
+      "vi": "Bây giờ trời nắng rồi."
     },
     {
       "id": 89,
@@ -2431,7 +2519,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tốt quá."
     },
     {
       "id": 90,
@@ -2447,7 +2536,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Truyện."
     },
     {
       "id": 91,
@@ -2475,7 +2565,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.912
+      "confidence": 0.912,
+      "vi": "Grumpy, Happy, Dopey."
     },
     {
       "id": 92,
@@ -2503,7 +2594,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Tớ đến đây."
     },
     {
       "id": 93,
@@ -2531,7 +2623,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.927
+      "confidence": 0.927,
+      "vi": "Chúng ta ra ngoài chơi nào."
     },
     {
       "id": 94,
@@ -2553,7 +2646,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Xin lỗi."
     },
     {
       "id": 95,
@@ -2581,7 +2675,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Chúng mình không đi được."
     },
     {
       "id": 96,
@@ -2603,7 +2698,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Trời đang mưa."
     },
     {
       "id": 97,
@@ -2625,7 +2721,8 @@
           "confidence": 0.963
         }
       ],
-      "confidence": 0.775
+      "confidence": 0.775,
+      "vi": "Trời không mưa."
     },
     {
       "id": 98,
@@ -2659,7 +2756,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Trời đang tuyết."
     },
     {
       "id": 99,
@@ -2675,7 +2773,8 @@
           "confidence": 0.774
         }
       ],
-      "confidence": 0.774
+      "confidence": 0.774,
+      "vi": "Tuyết à?"
     },
     {
       "id": 100,
@@ -2691,7 +2790,8 @@
           "confidence": 0.982
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Nhìn nè."
     },
     {
       "id": 101,
@@ -2731,7 +2831,8 @@
           "confidence": 1.0
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Trời đang tuyết."
     },
     {
       "id": 102,
@@ -2747,7 +2848,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.986
+      "confidence": 0.986,
+      "vi": "Trắng xoá luôn."
     }
   ],
   "videoId": "P9abGg_gF1s",

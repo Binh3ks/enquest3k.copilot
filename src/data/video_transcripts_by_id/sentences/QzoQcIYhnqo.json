@@ -23,12 +23,12 @@
         {
           "word": "and",
           "start": 11.68,
-          "end": 12.0,
+          "end": 12,
           "confidence": 0.99
         },
         {
           "word": "the",
-          "start": 12.0,
+          "start": 12,
           "end": 12.16,
           "confidence": 0.987
         },
@@ -39,7 +39,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.84
+      "confidence": 0.84,
+      "vi": "Rùa và Thỏ"
     },
     {
       "id": 2,
@@ -70,7 +71,7 @@
           "word": "a",
           "start": 15.83,
           "end": 15.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tortoise",
@@ -94,7 +95,7 @@
           "word": "crawled",
           "start": 17.75,
           "end": 18.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "through",
@@ -115,7 +116,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Ngày xửa ngày xưa, có một con rùa bò chậm rãi qua khu rừng."
     },
     {
       "id": 3,
@@ -164,7 +166,7 @@
           "word": "the",
           "start": 23.75,
           "end": 23.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tortoise",
@@ -182,19 +184,19 @@
           "word": "made",
           "start": 25.11,
           "end": 25.43,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fun",
           "start": 25.43,
           "end": 25.68,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 25.68,
           "end": 25.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "him",
@@ -203,7 +205,8 @@
           "confidence": 0.984
         }
       ],
-      "confidence": 0.815
+      "confidence": 0.815,
+      "vi": "Bùm bùm, một con thỏ nhảy loi choi nhìn thấy con rùa và chọc ghẹo nó."
     },
     {
       "id": 4,
@@ -246,7 +249,7 @@
           "word": "bouncing",
           "start": 30.48,
           "end": 30.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "through",
@@ -255,7 +258,8 @@
           "confidence": 0.972
         }
       ],
-      "confidence": 0.892
+      "confidence": 0.892,
+      "vi": "Tránh đường, tránh đường, ta đang nhảy đây."
     },
     {
       "id": 5,
@@ -286,7 +290,7 @@
           "word": "you",
           "start": 34.72,
           "end": 34.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hear",
@@ -310,7 +314,7 @@
           "word": "out",
           "start": 36.24,
           "end": 36.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
@@ -331,18 +335,19 @@
           "confidence": 0.974
         }
       ],
-      "confidence": 0.892
+      "confidence": 0.892,
+      "vi": "Này, đồ chậm chạp, cậu không nghe thấy tôi à? Tránh đường ra."
     },
     {
       "id": 6,
       "text": "The angered tortoise stopped walking and said,",
       "speaker": "Speaker0",
-      "start": 38.0,
+      "start": 38,
       "duration": 3.66,
       "words": [
         {
           "word": "the",
-          "start": 38.0,
+          "start": 38,
           "end": 38.24,
           "confidence": 0.923
         },
@@ -350,7 +355,7 @@
           "word": "angered",
           "start": 38.24,
           "end": 38.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "tortoise",
@@ -368,7 +373,7 @@
           "word": "walking",
           "start": 39.92,
           "end": 40.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -386,9 +391,10 @@
           "word": ",",
           "start": 41.22,
           "end": 41.66,
-          "confidence": 1.0
+          "confidence": 1
         }
-      ]
+      ],
+      "vi": "Con rùa bực mình dừng bước và nói:"
     },
     {
       "id": 7,
@@ -399,7 +405,7 @@
       "words": [
         {
           "word": "the",
-          "start": 38.0,
+          "start": 38,
           "end": 38.24,
           "confidence": 0.923
         },
@@ -431,7 +437,7 @@
           "word": "to",
           "start": 43.34,
           "end": 43.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -449,7 +455,7 @@
           "word": "of",
           "start": 43.98,
           "end": 44.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -461,7 +467,7 @@
           "word": "mountain",
           "start": 44.23,
           "end": 44.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -473,13 +479,13 @@
           "word": "see",
           "start": 45.51,
           "end": 45.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "who",
           "start": 45.75,
           "end": 46.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "gets",
@@ -499,7 +505,8 @@
           "end": 47.28,
           "confidence": 0.997
         }
-      ]
+      ],
+      "vi": "Này, chúng ta hãy chạy đua lên đỉnh núi xem ai đến trước nhé."
     },
     {
       "id": 8,
@@ -545,7 +552,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Cậu nghĩ cậu thắng được tôi à?"
     },
     {
       "id": 9,
@@ -570,7 +578,7 @@
           "word": "do",
           "start": 52.87,
           "end": 53.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -579,7 +587,8 @@
           "confidence": 0.968
         }
       ],
-      "confidence": 0.833
+      "confidence": 0.833,
+      "vi": "Được rồi, cứ thử đi."
     },
     {
       "id": 10,
@@ -607,7 +616,8 @@
           "confidence": 0.806
         }
       ],
-      "confidence": 0.961
+      "confidence": 0.961,
+      "vi": "Sẵn sàng, bắt đầu!"
     },
     {
       "id": 11,
@@ -632,13 +642,13 @@
           "word": "bounced",
           "start": 57.77,
           "end": 58.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "away",
           "start": 58.17,
           "end": 58.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -650,13 +660,13 @@
           "word": "tortoise",
           "start": 59.37,
           "end": 59.87,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "slowly",
           "start": 60.17,
           "end": 60.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "crawled",
@@ -665,7 +675,8 @@
           "confidence": 0.945
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.969,
+      "vi": "Thế là Thỏ nhảy vọt đi còn Rùa từ từ bò."
     },
     {
       "id": 12,
@@ -711,7 +722,8 @@
           "confidence": 0.891
         }
       ],
-      "confidence": 0.934
+      "confidence": 0.934,
+      "vi": "Bật bật, và Thỏ đã đi mất."
     },
     {
       "id": 13,
@@ -760,10 +772,11 @@
           "word": "crawled",
           "start": 70.58,
           "end": 71.08,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.73
+      "confidence": 0.73,
+      "vi": "Trong khi Rùa chậm chạp lết từng bước"
     },
     {
       "id": 14,
@@ -788,7 +801,7 @@
           "word": "of",
           "start": 72.33,
           "end": 72.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sweat",
@@ -809,7 +822,8 @@
           "confidence": 0.908
         }
       ],
-      "confidence": 0.895
+      "confidence": 0.895,
+      "vi": "Với những giọt mồ hôi rơi lã chã."
     },
     {
       "id": 15,
@@ -843,14 +857,15 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Giờ Rùa ở đâu rồi?"
     },
     {
       "id": 16,
       "text": "Wow, he is so far behind.",
       "speaker": "Speaker1",
       "start": 77.85,
-      "duration": 3.0,
+      "duration": 3,
       "words": [
         {
           "word": "wow",
@@ -880,7 +895,7 @@
           "word": "far",
           "start": 79.79,
           "end": 80.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "behind",
@@ -889,7 +904,8 @@
           "confidence": 0.97
         }
       ],
-      "confidence": 0.721
+      "confidence": 0.721,
+      "vi": "Wow, nó tụt lại phía sau quá xa."
     },
     {
       "id": 17,
@@ -926,13 +942,13 @@
           "word": "to",
           "start": 83.23,
           "end": 83.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "catch",
           "start": 83.47,
           "end": 83.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "up",
@@ -941,7 +957,8 @@
           "confidence": 0.785
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.952,
+      "vi": "Nó sẽ mất cả đời mới đuổi kịp."
     },
     {
       "id": 18,
@@ -993,7 +1010,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Vậy nên tôi nghĩ tôi sẽ chợp mắt một chút."
     },
     {
       "id": 19,
@@ -1024,13 +1042,13 @@
           "word": "tortoise",
           "start": 94.11,
           "end": 94.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "never",
           "start": 94.83,
           "end": 95.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stopped",
@@ -1045,7 +1063,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.943
+      "confidence": 0.943,
+      "vi": "Khi Thỏ ngủ, Rùa không bao giờ dừng bước."
     },
     {
       "id": 20,
@@ -1067,7 +1086,8 @@
           "confidence": 0.911
         }
       ],
-      "confidence": 0.63
+      "confidence": 0.63,
+      "vi": "Bịch bịch."
     },
     {
       "id": 21,
@@ -1092,7 +1112,7 @@
           "word": "tortoise",
           "start": 101.47,
           "end": 101.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "crawled",
@@ -1134,7 +1154,7 @@
           "word": "crawled",
           "start": 105.47,
           "end": 105.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
@@ -1172,7 +1192,8 @@
           "end": 107.65,
           "confidence": 0.999
         }
-      ]
+      ],
+      "vi": "Đúng như dự đoán, Rùa bò qua Thỏ đang ngủ say, và nó bò lên đến đỉnh đồi."
     },
     {
       "id": 22,
@@ -1194,7 +1215,8 @@
           "confidence": 0.628
         }
       ],
-      "confidence": 0.8
+      "confidence": 0.8,
+      "vi": "Này, Thỏ."
     },
     {
       "id": 23,
@@ -1222,7 +1244,8 @@
           "confidence": 0.969
         }
       ],
-      "confidence": 0.958
+      "confidence": 0.958,
+      "vi": "Tôi thắng rồi."
     },
     {
       "id": 24,
@@ -1256,7 +1279,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.914
+      "confidence": 0.914,
+      "vi": "Cái gì? Chuyện gì đang xảy ra vậy?"
     },
     {
       "id": 25,
@@ -1275,7 +1299,7 @@
           "word": "woke",
           "start": 119.65,
           "end": 119.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "up",
@@ -1293,7 +1317,7 @@
           "word": "scurried",
           "start": 120.93,
           "end": 121.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "up",
@@ -1314,7 +1338,8 @@
           "confidence": 0.884
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Thỏ tỉnh dậy và vội vã chạy lên đồi."
     },
     {
       "id": 26,
@@ -1339,13 +1364,13 @@
           "word": "was",
           "start": 124.11,
           "end": 124.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "too",
           "start": 124.67,
           "end": 125.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "late",
@@ -1354,7 +1379,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Nhưng đã quá muộn."
     },
     {
       "id": 27,
@@ -1367,19 +1393,19 @@
           "word": "tortoise",
           "start": 126.19,
           "end": 126.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "was",
           "start": 126.75,
           "end": 127.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "already",
           "start": 127.06,
           "end": 127.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "resting",
@@ -1391,7 +1417,7 @@
           "word": "under",
           "start": 128.5,
           "end": 128.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1403,7 +1429,7 @@
           "word": "tree",
           "start": 128.99,
           "end": 129.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "at",
@@ -1442,7 +1468,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Rùa đã nghỉ ngơi dưới một cái cây ở trên đỉnh núi."
     },
     {
       "id": 28,
@@ -1467,7 +1494,7 @@
           "word": "can't",
           "start": 133.87,
           "end": 134.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "be",
@@ -1476,7 +1503,8 @@
           "confidence": 0.969
         }
       ],
-      "confidence": 0.849
+      "confidence": 0.849,
+      "vi": "Không, không thể nào."
     },
     {
       "id": 29,
@@ -1516,7 +1544,8 @@
           "confidence": 0.948
         }
       ],
-      "confidence": 0.923
+      "confidence": 0.923,
+      "vi": "Tôi thua một con rùa chậm chạp."
     }
   ],
   "speakerMap": {

@@ -27,7 +27,8 @@
           "confidence": 0.968
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Xin chào, các nhà thám hiểm nhỏ."
     },
     {
       "id": 2,
@@ -46,37 +47,37 @@
           "word": "i",
           "start": 3.68,
           "end": 3.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 3.92,
           "end": 4.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 4.16,
           "end": 4.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "mystery",
           "start": 4.32,
           "end": 4.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 4.96,
           "end": 5.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 5.2,
           "end": 5.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shh",
@@ -100,13 +101,13 @@
           "word": "hear",
           "start": 6.8,
           "end": 7.04,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "that",
           "start": 7.04,
           "end": 7.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -124,19 +125,19 @@
           "word": "is",
           "start": 8.64,
           "end": 8.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "whispering",
           "start": 8.96,
           "end": 9.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 9.6,
           "end": 9.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "secret",
@@ -145,7 +146,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Tối nay, tôi có một bí ẩn cho các bạn. Shh. Bạn có nghe thấy không? Rừng đang thì thầm một bí mật."
     },
     {
       "id": 3,
@@ -164,7 +166,7 @@
           "word": "to",
           "start": 11.36,
           "end": 11.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -182,7 +184,7 @@
           "word": "of",
           "start": 12.08,
           "end": 12.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -203,7 +205,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.972
+      "confidence": 0.972,
+      "vi": "Chào mừng bạn đến với vụ rừng thì thầm."
     },
     {
       "id": 4,
@@ -216,19 +219,19 @@
           "word": "stay",
           "start": 14.08,
           "end": 14.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "till",
           "start": 14.4,
           "end": 14.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 14.72,
           "end": 14.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "end",
@@ -240,31 +243,31 @@
           "word": "because",
           "start": 15.82,
           "end": 16.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you'll",
           "start": 16.07,
           "end": 16.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "be",
           "start": 16.55,
           "end": 16.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 16.7,
           "end": 17.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "detective",
           "start": 17.02,
           "end": 17.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "helping",
@@ -276,34 +279,35 @@
           "word": "us",
           "start": 18.23,
           "end": 18.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "solve",
           "start": 18.55,
           "end": 18.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "this",
           "start": 18.86,
           "end": 19.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "curious",
           "start": 19.27,
           "end": 19.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "case",
           "start": 19.82,
           "end": 20.32,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Hãy ở lại đến cuối, vì bạn sẽ là thám tử giúp chúng ta giải quyết vụ bí ẩn này."
     },
     {
       "id": 5,
@@ -316,43 +320,43 @@
           "word": "once",
           "start": 20.86,
           "end": 21.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "upon",
           "start": 21.27,
           "end": 21.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 21.66,
           "end": 21.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
           "start": 21.82,
           "end": 22.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "two",
           "start": 22.79,
           "end": 23.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "curious",
           "start": 23.11,
           "end": 23.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "siblings",
           "start": 23.82,
           "end": 24.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "emma",
@@ -376,76 +380,77 @@
           "word": "went",
           "start": 26.39,
           "end": 26.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "camping",
           "start": 26.7,
           "end": 27.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
           "start": 27.18,
           "end": 27.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "their",
           "start": 27.51,
           "end": 27.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "parents",
           "start": 27.74,
           "end": 28.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "at",
           "start": 28.3,
           "end": 28.46,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 28.46,
           "end": 28.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "edge",
           "start": 28.62,
           "end": 29.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 29.02,
           "end": 29.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "an",
           "start": 29.18,
           "end": 29.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "old",
           "start": 29.51,
           "end": 29.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "forest",
           "start": 29.82,
           "end": 30.32,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Ngày xưa, hai anh em tò mò, Emma và Jack, đi cắm trại với bố mẹ ở rìa một khu rừng cổ."
     },
     {
       "id": 6,
@@ -458,7 +463,7 @@
           "word": "as",
           "start": 30.79,
           "end": 31.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -476,7 +481,7 @@
           "word": "crackled",
           "start": 32.23,
           "end": 32.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -488,7 +493,7 @@
           "word": "the",
           "start": 33.11,
           "end": 33.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stars",
@@ -500,7 +505,7 @@
           "word": "sparkled",
           "start": 33.91,
           "end": 34.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "above",
@@ -542,13 +547,13 @@
           "word": "hear",
           "start": 37.51,
           "end": 37.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "that",
           "start": 37.83,
           "end": 38.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -560,25 +565,25 @@
           "word": "soft",
           "start": 38.71,
           "end": 39.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "whisper",
           "start": 39.19,
           "end": 39.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "drifted",
           "start": 39.75,
           "end": 40.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "through",
           "start": 40.31,
           "end": 40.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -617,7 +622,8 @@
           "confidence": 0.859
         }
       ],
-      "confidence": 0.887
+      "confidence": 0.887,
+      "vi": "Khi lửa trại cháy và những ngôi sao lấp lánh trên bầu trời, Emma giật mình."
     },
     {
       "id": 7,
@@ -642,7 +648,7 @@
           "word": "grew",
           "start": 44.9,
           "end": 45.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "wide",
@@ -660,7 +666,7 @@
           "word": "said",
           "start": 46.34,
           "end": 46.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "that",
@@ -678,13 +684,13 @@
           "word": "when",
           "start": 47.53,
           "end": 47.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "they",
           "start": 47.77,
           "end": 48.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "looked",
@@ -708,13 +714,13 @@
           "word": "one",
           "start": 49.86,
           "end": 50.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "was",
           "start": 50.18,
           "end": 50.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "there",
@@ -738,19 +744,19 @@
           "word": "quiet",
           "start": 51.7,
           "end": 52.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "forest",
           "start": 52.26,
           "end": 52.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
           "start": 52.9,
           "end": 53.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -762,13 +768,13 @@
           "word": "flickering",
           "start": 53.38,
           "end": 53.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fire",
           "start": 54.18,
           "end": 54.68,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "that",
@@ -786,55 +792,55 @@
           "word": "while",
           "start": 55.94,
           "end": 56.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "their",
           "start": 56.34,
           "end": 56.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "parents",
           "start": 56.58,
           "end": 57.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "slept",
           "start": 57.14,
           "end": 57.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "emma",
           "start": 58.17,
           "end": 58.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
           "start": 58.41,
           "end": 58.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "jack",
           "start": 58.73,
           "end": 59.21,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "spotted",
           "start": 59.21,
           "end": 59.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 59.69,
           "end": 59.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "trail",
@@ -846,13 +852,13 @@
           "word": "of",
           "start": 60.25,
           "end": 60.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "glowing",
           "start": 60.49,
           "end": 60.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fireflies",
@@ -861,7 +867,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Jack, cậu có nghe thấy không?"
     },
     {
       "id": 8,
@@ -874,7 +881,7 @@
           "word": "they",
           "start": 62.25,
           "end": 62.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "twinkled",
@@ -892,7 +899,7 @@
           "word": "tiny",
           "start": 63.53,
           "end": 64.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "lanterns",
@@ -910,25 +917,25 @@
           "word": "deeper",
           "start": 65.77,
           "end": 66.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "into",
           "start": 66.25,
           "end": 66.57,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 66.57,
           "end": 66.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "woods",
           "start": 66.73,
           "end": 67.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -940,13 +947,13 @@
           "word": "you",
           "start": 67.53,
           "end": 67.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "think",
           "start": 67.69,
           "end": 68.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "they're",
@@ -958,7 +965,7 @@
           "word": "showing",
           "start": 68.73,
           "end": 69.21,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "us",
@@ -976,7 +983,7 @@
           "word": "emma",
           "start": 70.17,
           "end": 70.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "asked",
@@ -988,13 +995,13 @@
           "word": "jack",
           "start": 71.37,
           "end": 71.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "gulped",
           "start": 71.77,
           "end": 72.27,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "but",
@@ -1009,7 +1016,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Một lời thì thầm nhẹ nhàng trôi qua những tán cây: Hãy tìm viên đá phát sáng."
     },
     {
       "id": 9,
@@ -1034,19 +1042,19 @@
           "word": "way",
           "start": 74.38,
           "end": 74.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 74.69,
           "end": 74.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "find",
           "start": 74.94,
           "end": 75.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "out",
@@ -1055,7 +1063,8 @@
           "confidence": 0.888
         }
       ],
-      "confidence": 0.981
+      "confidence": 0.981,
+      "vi": "Mắt Jack mở to. Ai nói vậy?"
     },
     {
       "id": 10,
@@ -1068,13 +1077,13 @@
           "word": "step",
           "start": 76.38,
           "end": 76.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "by",
           "start": 76.69,
           "end": 76.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "step",
@@ -1092,7 +1101,7 @@
           "word": "children",
           "start": 78.14,
           "end": 78.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "followed",
@@ -1110,31 +1119,31 @@
           "word": "glowing",
           "start": 79.49,
           "end": 79.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "trail",
           "start": 80.14,
           "end": 80.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 80.78,
           "end": 81.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "whispers",
           "start": 81.02,
           "end": 81.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "grew",
           "start": 81.66,
           "end": 82.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "louder",
@@ -1143,7 +1152,8 @@
           "confidence": 0.779
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Nhưng khi họ nhìn quanh, không có ai ở đó."
     },
     {
       "id": 11,
@@ -1171,7 +1181,8 @@
           "confidence": 0.852
         }
       ],
-      "confidence": 0.877
+      "confidence": 0.877,
+      "vi": "Chỉ có khu rừng yên tĩnh và ngọn lửa nhấp nháy."
     },
     {
       "id": 12,
@@ -1193,7 +1204,8 @@
           "confidence": 0.765
         }
       ],
-      "confidence": 0.882
+      "confidence": 0.882,
+      "vi": "Đêm đó, trong khi bố mẹ ngủ, Emma và Jack phát hiện một đường mòn đom đóm phát sáng."
     },
     {
       "id": 13,
@@ -1206,25 +1218,25 @@
           "word": "the",
           "start": 86.04,
           "end": 86.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "forest",
           "start": 86.2,
           "end": 86.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "seemed",
           "start": 86.76,
           "end": 87.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "alive",
           "start": 87.32,
           "end": 87.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "holding",
@@ -1236,7 +1248,7 @@
           "word": "its",
           "start": 88.52,
           "end": 88.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "breath",
@@ -1254,19 +1266,19 @@
           "word": "for",
           "start": 90.12,
           "end": 90.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "them",
           "start": 90.36,
           "end": 90.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "at",
-          "start": 91.0,
+          "start": 91,
           "end": 91.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "last",
@@ -1284,28 +1296,29 @@
           "word": "reached",
           "start": 92.44,
           "end": 92.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 92.92,
-          "end": 93.0,
-          "confidence": 1.0
+          "end": 93,
+          "confidence": 1
         },
         {
           "word": "small",
-          "start": 93.0,
+          "start": 93,
           "end": 93.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "clearing",
           "start": 93.48,
           "end": 93.98,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Chúng lấp lánh như những chiếc đèn lồng nhỏ, dẫn sâu hơn vào rừng."
     },
     {
       "id": 14,
@@ -1318,82 +1331,83 @@
           "word": "there",
           "start": 94.36,
           "end": 94.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "half",
           "start": 95.08,
           "end": 95.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hidden",
           "start": 95.48,
           "end": 95.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "under",
           "start": 95.96,
           "end": 96.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "moss",
           "start": 96.36,
           "end": 96.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stood",
           "start": 97.32,
           "end": 97.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 97.56,
           "end": 97.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "giant",
           "start": 97.72,
           "end": 98.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stone",
           "start": 98.28,
           "end": 98.76,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "covered",
           "start": 98.76,
           "end": 99.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 99.24,
           "end": 99.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "strange",
           "start": 99.56,
           "end": 100.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "carvings",
           "start": 100.12,
           "end": 100.62,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Bạn có nghĩ chúng đang chỉ cho chúng ta thứ gì đó không? Emma hỏi."
     },
     {
       "id": 15,
@@ -1406,7 +1420,7 @@
           "word": "as",
           "start": 101.05,
           "end": 101.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "emma",
@@ -1417,44 +1431,44 @@
         {
           "word": "touched",
           "start": 101.69,
-          "end": 102.0,
-          "confidence": 1.0
+          "end": 102,
+          "confidence": 1
         },
         {
           "word": "it",
-          "start": 102.0,
+          "start": 102,
           "end": 102.5,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 102.81,
           "end": 103.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "carvings",
           "start": 103.12,
           "end": 103.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "began",
           "start": 103.84,
           "end": 104.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 104.24,
           "end": 104.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "glow",
           "start": 104.48,
           "end": 104.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
@@ -1478,7 +1492,7 @@
           "word": "golden",
           "start": 106.08,
           "end": 106.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "light",
@@ -1490,7 +1504,7 @@
           "word": "the",
           "start": 107.2,
           "end": 107.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "whispers",
@@ -1502,13 +1516,13 @@
           "word": "surrounded",
           "start": 108.24,
           "end": 108.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "them",
           "start": 108.88,
           "end": 109.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "but",
@@ -1520,7 +1534,7 @@
           "word": "then",
           "start": 109.44,
           "end": 109.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "jack",
@@ -1532,7 +1546,7 @@
           "word": "noticed",
           "start": 110.24,
           "end": 110.74,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "something",
@@ -1589,7 +1603,8 @@
           "confidence": 0.934
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Jack nuốt nước bọt nhưng gật đầu. Chỉ có một cách để biết thôi."
     },
     {
       "id": 16,
@@ -1626,13 +1641,13 @@
           "word": "in",
           "start": 117.46,
           "end": 117.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 117.7,
           "end": 117.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stone",
@@ -1650,19 +1665,19 @@
           "word": "the",
           "start": 118.66,
           "end": 118.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "air",
           "start": 118.82,
           "end": 119.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "whistle",
           "start": 119.22,
           "end": 119.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1680,28 +1695,29 @@
           "word": "just",
           "start": 121.46,
           "end": 121.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 121.94,
           "end": 122.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 122.1,
           "end": 122.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "voice",
           "start": 122.34,
           "end": 122.84,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Từng bước, hai đứa trẻ theo con đường phát sáng."
     },
     {
       "id": 17,
@@ -1732,19 +1748,19 @@
           "word": "weren't",
           "start": 124.82,
           "end": 125.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "haunted",
           "start": 125.3,
           "end": 125.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "at",
           "start": 125.86,
           "end": 126.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "all",
@@ -1762,7 +1778,7 @@
           "word": "was",
           "start": 126.66,
           "end": 126.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "nature's",
@@ -1786,13 +1802,13 @@
           "word": "to",
           "start": 129.07,
           "end": 129.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "be",
           "start": 129.4,
           "end": 129.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "discovered",
@@ -1801,7 +1817,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Những lời thì thầm ngày càng to hơn. Hãy tìm viên đá! Viên đá phát sáng!"
     },
     {
       "id": 18,
@@ -1813,17 +1830,18 @@
         {
           "word": "emma",
           "start": 130.51,
-          "end": 131.0,
+          "end": 131,
           "confidence": 0.984
         },
         {
           "word": "smiled",
-          "start": 131.0,
+          "start": 131,
           "end": 131.5,
           "confidence": 0.965
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Khu rừng dường như sống động, nín thở, chờ đợi họ."
     },
     {
       "id": 19,
@@ -1852,27 +1870,27 @@
         },
         {
           "word": "wasn't",
-          "start": 133.0,
+          "start": 133,
           "end": 133.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "trying",
           "start": 133.47,
           "end": 133.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 133.96,
           "end": 134.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "scare",
           "start": 134.19,
           "end": 134.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "us",
@@ -1890,25 +1908,25 @@
           "word": "was",
           "start": 135.31,
           "end": 135.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "inviting",
           "start": 135.79,
           "end": 136.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "us",
           "start": 136.35,
           "end": 136.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 136.59,
           "end": 136.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "listen",
@@ -1917,7 +1935,8 @@
           "confidence": 0.973
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Cuối cùng, họ đến một khoảng rừng nhỏ."
     },
     {
       "id": 20,
@@ -1936,7 +1955,7 @@
           "word": "children",
           "start": 138.12,
           "end": 138.62,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "hurried",
@@ -1948,13 +1967,13 @@
           "word": "back",
           "start": 139.31,
           "end": 139.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 139.63,
           "end": 139.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "their",
@@ -1984,10 +2003,11 @@
           "word": "excited",
           "start": 141.79,
           "end": 142.29,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Ở đó, nửa ẩn dưới rêu, đứng một tảng đá khổng lồ phủ đầy hình vẽ kỳ lạ."
     },
     {
       "id": 21,
@@ -2006,7 +2026,7 @@
           "word": "then",
           "start": 142.93,
           "end": 143.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "on",
@@ -2018,7 +2038,7 @@
           "word": "they",
           "start": 143.89,
           "end": 144.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "learned",
@@ -2030,7 +2050,7 @@
           "word": "that",
           "start": 144.45,
           "end": 144.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "mysteries",
@@ -2090,7 +2110,7 @@
           "word": "of",
           "start": 149.65,
           "end": 149.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "nature",
@@ -2108,7 +2128,7 @@
           "word": "for",
           "start": 150.93,
           "end": 151.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "brave",
@@ -2126,7 +2146,7 @@
           "word": "to",
           "start": 152.05,
           "end": 152.37,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "explore",
@@ -2135,7 +2155,8 @@
           "confidence": 0.751
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Khi Emma chạm vào nó, những hình vẽ bắt đầu phát sáng với ánh sáng vàng dịu."
     },
     {
       "id": 22,
@@ -2184,13 +2205,13 @@
           "word": "case",
           "start": 155.81,
           "end": 156.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 156.13,
           "end": 156.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -2214,13 +2235,13 @@
           "word": "did",
           "start": 157.94,
           "end": 158.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 158.09,
           "end": 158.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "solve",
@@ -2232,19 +2253,19 @@
           "word": "the",
           "start": 158.74,
           "end": 158.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "mystery",
           "start": 158.97,
           "end": 159.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "before",
           "start": 159.62,
           "end": 160.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "emma",
@@ -2256,7 +2277,7 @@
           "word": "and",
           "start": 160.42,
           "end": 160.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "jack",
@@ -2268,25 +2289,25 @@
           "word": "tell",
           "start": 161.38,
           "end": 161.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "me",
           "start": 161.53,
           "end": 161.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "in",
           "start": 161.86,
           "end": 162.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
           "start": 162.02,
           "end": 162.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "comments",
@@ -2301,7 +2322,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.867
+      "confidence": 0.867,
+      "vi": "Những lời thì thầm bao quanh họ, nhưng rồi Jack nhận ra điều gì đó."
     },
     {
       "id": 23,
@@ -2314,19 +2336,19 @@
           "word": "don't",
           "start": 163.62,
           "end": 163.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "forget",
           "start": 163.94,
           "end": 164.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 164.42,
           "end": 164.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
@@ -2338,7 +2360,7 @@
           "word": "this",
           "start": 164.97,
           "end": 165.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "video",
@@ -2350,25 +2372,25 @@
           "word": "share",
           "start": 166.34,
           "end": 166.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
           "start": 166.66,
           "end": 166.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "with",
           "start": 166.81,
           "end": 167.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "your",
           "start": 167.06,
           "end": 167.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "friends",
@@ -2380,37 +2402,37 @@
           "word": "and",
           "start": 167.94,
           "end": 168.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "subscribe",
           "start": 168.34,
           "end": 168.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 169.06,
           "end": 169.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "more",
           "start": 169.38,
           "end": 169.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "curious",
           "start": 169.69,
           "end": 170.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "adventures",
           "start": 170.58,
           "end": 171.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "every",
@@ -2422,7 +2444,7 @@
           "word": "week",
           "start": 171.62,
           "end": 172.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "until",
@@ -2434,13 +2456,13 @@
           "word": "next",
           "start": 172.63,
           "end": 173.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "time",
           "start": 173.03,
           "end": 173.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stay",
@@ -2458,13 +2480,13 @@
           "word": "and",
           "start": 174.71,
           "end": 175.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "keep",
           "start": 175.03,
           "end": 175.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "listening",
@@ -2473,7 +2495,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Khoan đã. Đó không phải ma. Đó là gió."
     },
     {
       "id": 24,
@@ -2492,31 +2515,31 @@
           "word": "the",
           "start": 176.71,
           "end": 176.95,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "world",
           "start": 176.95,
           "end": 177.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 177.35,
           "end": 177.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "full",
           "start": 177.59,
           "end": 177.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "of",
           "start": 177.91,
           "end": 178.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "secrets",
@@ -2525,7 +2548,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Đúng vậy, những lỗ nhỏ trên đá khiến không khí huýt sá, nghe giống giọng nói."
     }
   ],
   "videoId": "qwjfQNQsRRI",

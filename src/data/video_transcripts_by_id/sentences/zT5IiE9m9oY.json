@@ -27,7 +27,8 @@
           "confidence": 0.91
         }
       ],
-      "confidence": 0.759
+      "confidence": 0.759,
+      "vi": "Tiếng Anh sing sing."
     },
     {
       "id": 2,
@@ -67,7 +68,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Cô ấy trông như thế nào?"
     },
     {
       "id": 3,
@@ -95,7 +97,8 @@
           "confidence": 0.86
         }
       ],
-      "confidence": 0.941
+      "confidence": 0.941,
+      "vi": "Rora ở đâu?"
     },
     {
       "id": 4,
@@ -114,7 +117,7 @@
           "word": "don't",
           "start": 20.91,
           "end": 21.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "know",
@@ -123,7 +126,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Tui không biết."
     },
     {
       "id": 5,
@@ -145,7 +149,8 @@
           "confidence": 0.988
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.953,
+      "vi": "Ồ, không."
     },
     {
       "id": 6,
@@ -167,7 +172,8 @@
           "confidence": 0.899
         }
       ],
-      "confidence": 0.901
+      "confidence": 0.901,
+      "vi": "Xin lỗi."
     },
     {
       "id": 7,
@@ -186,34 +192,35 @@
           "word": "looking",
           "start": 30.35,
           "end": 30.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 30.67,
           "end": 30.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 30.99,
           "end": 31.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "little",
           "start": 31.23,
           "end": 31.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sister",
           "start": 31.63,
           "end": 32.13,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Tui đang tìm em gái tui."
     },
     {
       "id": 8,
@@ -229,7 +236,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Được rồi."
     },
     {
       "id": 9,
@@ -254,7 +262,7 @@
           "word": "what's",
           "start": 36.03,
           "end": 36.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "her",
@@ -266,10 +274,11 @@
           "word": "name",
           "start": 36.59,
           "end": 37.09,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Đừng lo. Tên bạn ấy là gì?"
     },
     {
       "id": 10,
@@ -282,19 +291,19 @@
           "word": "her",
           "start": 38.19,
           "end": 38.43,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "name",
           "start": 38.43,
           "end": 38.67,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 38.67,
           "end": 38.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "aurora",
@@ -303,7 +312,8 @@
           "confidence": 0.793
         }
       ],
-      "confidence": 0.948
+      "confidence": 0.948,
+      "vi": "Tên bạn ấy là Aurora."
     },
     {
       "id": 11,
@@ -322,22 +332,23 @@
           "word": "six",
           "start": 40.67,
           "end": 40.99,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "years",
           "start": 40.99,
           "end": 41.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "old",
           "start": 41.31,
           "end": 41.81,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Bạn ấy sáu tuổi."
     },
     {
       "id": 12,
@@ -349,35 +360,36 @@
         {
           "word": "what",
           "start": 42.84,
-          "end": 43.0,
-          "confidence": 1.0
+          "end": 43,
+          "confidence": 1
         },
         {
           "word": "does",
-          "start": 43.0,
+          "start": 43,
           "end": 43.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "she",
           "start": 43.24,
           "end": 43.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "look",
           "start": 43.56,
           "end": 43.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 43.8,
           "end": 44.3,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Cô ấy trông như thế nào?"
     },
     {
       "id": 13,
@@ -390,19 +402,19 @@
           "word": "she",
           "start": 45.16,
           "end": 45.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "has",
           "start": 45.48,
           "end": 45.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "short",
           "start": 45.73,
           "end": 46.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "curly",
@@ -414,10 +426,11 @@
           "word": "hair",
           "start": 46.52,
           "end": 47.02,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Cô ấy có tóc ngắn xoăn."
     },
     {
       "id": 14,
@@ -430,28 +443,29 @@
           "word": "what",
           "start": 47.96,
           "end": 48.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 48.2,
           "end": 48.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "she",
           "start": 48.45,
           "end": 48.6,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "wearing",
           "start": 48.6,
           "end": 49.1,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Cô ấy đang mặc gì?"
     },
     {
       "id": 15,
@@ -470,25 +484,25 @@
           "word": "wearing",
           "start": 50.45,
           "end": 50.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 50.77,
           "end": 50.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pink",
           "start": 50.92,
           "end": 51.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shirt",
           "start": 51.24,
           "end": 51.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -500,7 +514,7 @@
           "word": "blue",
           "start": 51.96,
           "end": 52.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pants",
@@ -509,7 +523,8 @@
           "confidence": 0.792
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Cô ấy đang mặc áo hồng và quần xanh."
     },
     {
       "id": 16,
@@ -534,7 +549,7 @@
           "word": "wearing",
           "start": 54.52,
           "end": 54.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -546,7 +561,7 @@
           "word": "white",
           "start": 55.16,
           "end": 55.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "cap",
@@ -555,7 +570,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Và cô ấy đang đội mũ trắng."
     },
     {
       "id": 17,
@@ -571,7 +587,8 @@
           "confidence": 0.77
         }
       ],
-      "confidence": 0.77
+      "confidence": 0.77,
+      "vi": "Nghe nào."
     },
     {
       "id": 18,
@@ -599,7 +616,8 @@
           "confidence": 0.893
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.953,
+      "vi": "Rora ở đâu?"
     },
     {
       "id": 19,
@@ -618,7 +636,7 @@
           "word": "don't",
           "start": 89.99,
           "end": 90.23,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "know",
@@ -627,7 +645,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Tui không biết."
     },
     {
       "id": 20,
@@ -649,7 +668,8 @@
           "confidence": 0.986
         }
       ],
-      "confidence": 0.945
+      "confidence": 0.945,
+      "vi": "Ồ, không."
     },
     {
       "id": 21,
@@ -671,7 +691,8 @@
           "confidence": 0.896
         }
       ],
-      "confidence": 0.896
+      "confidence": 0.896,
+      "vi": "Xin lỗi."
     },
     {
       "id": 22,
@@ -690,34 +711,35 @@
           "word": "looking",
           "start": 99.37,
           "end": 99.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 99.77,
           "end": 100.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "my",
           "start": 100.01,
           "end": 100.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "little",
           "start": 100.25,
           "end": 100.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sister",
           "start": 100.65,
           "end": 101.15,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Tui đang tìm em gái tui."
     },
     {
       "id": 23,
@@ -733,7 +755,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Được rồi."
     },
     {
       "id": 24,
@@ -755,7 +778,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Đừng lo."
     },
     {
       "id": 25,
@@ -768,7 +792,7 @@
           "word": "what's",
           "start": 105.05,
           "end": 105.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "her",
@@ -780,10 +804,11 @@
           "word": "name",
           "start": 105.61,
           "end": 106.11,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tên bạn ấy là gì?"
     },
     {
       "id": 26,
@@ -796,19 +821,19 @@
           "word": "her",
           "start": 107.2,
           "end": 107.44,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "name",
           "start": 107.44,
           "end": 107.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 107.77,
           "end": 108.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "aurora",
@@ -817,7 +842,8 @@
           "confidence": 0.811
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.953,
+      "vi": "Tên bạn ấy là Aurora."
     },
     {
       "id": 27,
@@ -836,22 +862,23 @@
           "word": "six",
           "start": 109.69,
           "end": 110.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "years",
           "start": 110.01,
           "end": 110.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "old",
           "start": 110.33,
           "end": 110.83,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Bạn ấy sáu tuổi."
     },
     {
       "id": 28,
@@ -864,34 +891,35 @@
           "word": "what",
           "start": 111.81,
           "end": 112.05,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "does",
           "start": 112.05,
           "end": 112.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "she",
           "start": 112.29,
           "end": 112.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "look",
           "start": 112.61,
           "end": 112.85,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 112.85,
           "end": 113.35,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Cô ấy trông như thế nào?"
     },
     {
       "id": 29,
@@ -904,19 +932,19 @@
           "word": "she",
           "start": 114.21,
           "end": 114.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "has",
           "start": 114.45,
           "end": 114.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "short",
           "start": 114.77,
           "end": 115.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "curly",
@@ -928,10 +956,11 @@
           "word": "hair",
           "start": 115.57,
           "end": 116.07,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Cô ấy có tóc ngắn xoăn."
     },
     {
       "id": 30,
@@ -944,28 +973,29 @@
           "word": "what",
           "start": 116.93,
           "end": 117.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "is",
           "start": 117.25,
           "end": 117.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "she",
           "start": 117.41,
           "end": 117.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "wearing",
           "start": 117.65,
           "end": 118.15,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Cô ấy đang mặc gì?"
     },
     {
       "id": 31,
@@ -984,25 +1014,25 @@
           "word": "wearing",
           "start": 119.49,
           "end": 119.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 119.81,
           "end": 119.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pink",
           "start": 119.97,
           "end": 120.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "shirt",
           "start": 120.29,
           "end": 120.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -1014,7 +1044,7 @@
           "word": "blue",
           "start": 121.01,
           "end": 121.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pants",
@@ -1023,7 +1053,8 @@
           "confidence": 0.764
         }
       ],
-      "confidence": 0.969
+      "confidence": 0.969,
+      "vi": "Cô ấy đang mặc áo hồng và quần xanh."
     },
     {
       "id": 32,
@@ -1048,7 +1079,7 @@
           "word": "wearing",
           "start": 123.57,
           "end": 123.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1060,7 +1091,7 @@
           "word": "white",
           "start": 124.21,
           "end": 124.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "cap",
@@ -1069,7 +1100,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Và cô ấy đang đội mũ trắng."
     },
     {
       "id": 33,
@@ -1085,7 +1117,8 @@
           "confidence": 0.591
         }
       ],
-      "confidence": 0.591
+      "confidence": 0.591,
+      "vi": "Rora."
     },
     {
       "id": 34,
@@ -1107,7 +1140,8 @@
           "confidence": 0.963
         }
       ],
-      "confidence": 0.782
+      "confidence": 0.782,
+      "vi": "Đọc to nào."
     },
     {
       "id": 35,
@@ -1129,7 +1163,8 @@
           "confidence": 0.961
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.971,
+      "vi": "Đến lượt bạn."
     }
   ],
   "videoId": "zT5IiE9m9oY",

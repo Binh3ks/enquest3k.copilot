@@ -30,7 +30,7 @@
           "word": "bird",
           "start": 5.76,
           "end": 6.26,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -51,7 +51,8 @@
           "confidence": 0.989
         }
       ],
-      "confidence": 0.934
+      "confidence": 0.934,
+      "vi": "Chú chim nhỏ, chú chim nhỏ, bạn có thể vỗ tay không?"
     },
     {
       "id": 2,
@@ -70,13 +71,13 @@
           "word": "i",
           "start": 10.16,
           "end": 10.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
           "start": 10.48,
           "end": 10.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "no",
@@ -88,16 +89,17 @@
           "word": "i",
           "start": 11.76,
           "end": 11.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
           "start": 11.92,
           "end": 12.42,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.909
+      "confidence": 0.909,
+      "vi": "Không, tui không thể, không, tui không thể."
     },
     {
       "id": 3,
@@ -116,7 +118,7 @@
           "word": "can't",
           "start": 13.52,
           "end": 14.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "clap",
@@ -158,16 +160,17 @@
           "word": "you",
           "start": 19.79,
           "end": 20.29,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fly",
           "start": 20.51,
           "end": 21.01,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Tui không thể vỗ tay. Chú chim nhỏ, chú chim nhỏ, bạn có thể bay không?"
     },
     {
       "id": 4,
@@ -186,7 +189,7 @@
           "word": "i",
           "start": 22.66,
           "end": 22.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -204,7 +207,7 @@
           "word": "i",
           "start": 24.19,
           "end": 24.51,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -222,7 +225,7 @@
           "word": "can",
           "start": 26.27,
           "end": 26.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fly",
@@ -231,7 +234,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.933
+      "confidence": 0.933,
+      "vi": "Ừ, tui có thể, ừ, tui có thể, tui có thể bay?"
     },
     {
       "id": 5,
@@ -271,7 +275,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.955
+      "confidence": 0.955,
+      "vi": "Voi, voi, bạn có thể bay không?"
     },
     {
       "id": 6,
@@ -290,7 +295,7 @@
           "word": "i",
           "start": 38.12,
           "end": 38.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
@@ -308,7 +313,7 @@
           "word": "i",
           "start": 39.72,
           "end": 39.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
@@ -326,7 +331,7 @@
           "word": "can't",
           "start": 41.56,
           "end": 42.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fly",
@@ -335,7 +340,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.948
+      "confidence": 0.948,
+      "vi": "Không, tui không thể, không, tui không thể, tui không thể bay."
     },
     {
       "id": 7,
@@ -366,7 +372,7 @@
           "word": "you",
           "start": 47.57,
           "end": 48.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stomp",
@@ -375,7 +381,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Voi, voi, bạn có thể giậm chân không?"
     },
     {
       "id": 8,
@@ -394,7 +401,7 @@
           "word": "i",
           "start": 50.53,
           "end": 50.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -412,7 +419,7 @@
           "word": "i",
           "start": 52.13,
           "end": 52.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -430,7 +437,7 @@
           "word": "can",
           "start": 54.13,
           "end": 54.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stomp",
@@ -439,7 +446,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.909
+      "confidence": 0.909,
+      "vi": "Ừ, tui có thể, ừ, tui có thể, tui có thể giậm chân?"
     },
     {
       "id": 9,
@@ -482,7 +490,7 @@
           "word": "you",
           "start": 63.13,
           "end": 63.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stomp",
@@ -491,7 +499,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.949
+      "confidence": 0.949,
+      "vi": "Cá nhỏ, cá nhỏ, bạn có thể giậm chân không?"
     },
     {
       "id": 10,
@@ -510,7 +519,7 @@
           "word": "i",
           "start": 66.01,
           "end": 66.17,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
@@ -528,7 +537,7 @@
           "word": "i",
           "start": 67.53,
           "end": 67.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
@@ -546,7 +555,7 @@
           "word": "can't",
           "start": 69.29,
           "end": 69.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "stomp",
@@ -555,7 +564,8 @@
           "confidence": 0.985
         }
       ],
-      "confidence": 0.897
+      "confidence": 0.897,
+      "vi": "Không, tui không thể, không, tui không thể, tui không thể giậm chân."
     },
     {
       "id": 11,
@@ -604,10 +614,11 @@
           "word": "swim",
           "start": 76.25,
           "end": 76.75,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.943
+      "confidence": 0.943,
+      "vi": "Cá nhỏ, cá nhỏ, bạn có thể bơi không?"
     },
     {
       "id": 12,
@@ -626,7 +637,7 @@
           "word": "i",
           "start": 78.33,
           "end": 78.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -644,7 +655,7 @@
           "word": "i",
           "start": 79.94,
           "end": 80.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -653,7 +664,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.971,
+      "vi": "Ừ, tui có thể. Ừ, tui có thể."
     },
     {
       "id": 13,
@@ -681,7 +693,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tui có thể bơi."
     },
     {
       "id": 14,
@@ -721,7 +734,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.892
+      "confidence": 0.892,
+      "vi": "Khỉ đột, khỉ đột, bạn có thể bơi không?"
     },
     {
       "id": 15,
@@ -740,7 +754,7 @@
           "word": "i",
           "start": 93.86,
           "end": 94.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
@@ -785,7 +799,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.909
+      "confidence": 0.909,
+      "vi": "Không, tui không thể, không, tui không thể, tui không thể bơi."
     },
     {
       "id": 16,
@@ -825,7 +840,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.859
+      "confidence": 0.859,
+      "vi": "Khỉ đột, khỉ đột, bạn có thể leo trèo không?"
     },
     {
       "id": 17,
@@ -844,7 +860,7 @@
           "word": "i",
           "start": 106.23,
           "end": 106.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -862,7 +878,7 @@
           "word": "i",
           "start": 107.83,
           "end": 108.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -871,7 +887,8 @@
           "confidence": 0.983
         }
       ],
-      "confidence": 0.946
+      "confidence": 0.946,
+      "vi": "Ừ, tui có thể. Ừ, tui có thể."
     },
     {
       "id": 18,
@@ -890,7 +907,7 @@
           "word": "can",
           "start": 109.91,
           "end": 110.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "climb",
@@ -899,7 +916,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tui có thể leo trèo."
     },
     {
       "id": 19,
@@ -930,7 +948,7 @@
           "word": "you",
           "start": 118.87,
           "end": 119.37,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "climb",
@@ -939,7 +957,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.943
+      "confidence": 0.943,
+      "vi": "Trâu, trâu, bạn có thể leo trèo không?"
     },
     {
       "id": 20,
@@ -958,7 +977,7 @@
           "word": "i",
           "start": 121.67,
           "end": 121.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can't",
@@ -987,14 +1006,14 @@
         {
           "word": "i",
           "start": 124.5,
-          "end": 125.0,
-          "confidence": 1.0
+          "end": 125,
+          "confidence": 1
         },
         {
           "word": "can't",
           "start": 125.06,
           "end": 125.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "climb",
@@ -1003,7 +1022,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.963
+      "confidence": 0.963,
+      "vi": "Không, tui không thể, không, tui không thể, tui không thể leo trèo."
     },
     {
       "id": 21,
@@ -1034,16 +1054,17 @@
           "word": "you",
           "start": 131.22,
           "end": 131.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "run",
           "start": 132.03,
           "end": 132.53,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.971
+      "confidence": 0.971,
+      "vi": "Trâu, trâu, bạn có thể chạy không?"
     },
     {
       "id": 22,
@@ -1062,7 +1083,7 @@
           "word": "i",
           "start": 134.1,
           "end": 134.43,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -1080,7 +1101,7 @@
           "word": "i",
           "start": 135.71,
           "end": 135.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -1098,7 +1119,7 @@
           "word": "can",
           "start": 137.78,
           "end": 138.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "run",
@@ -1107,7 +1128,8 @@
           "confidence": 0.99
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Ừ, tui có thể, ừ, tui có thể, tui có thể chạy?"
     },
     {
       "id": 23,
@@ -1126,7 +1148,7 @@
           "word": "and",
           "start": 143.4,
           "end": 143.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "girls",
@@ -1171,7 +1193,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Các bạn trai và gái, các bạn trai và gái, các bạn có thể hát không?"
     },
     {
       "id": 24,
@@ -1201,12 +1224,12 @@
         {
           "word": "yes",
           "start": 150.68,
-          "end": 151.0,
+          "end": 151,
           "confidence": 0.811
         },
         {
           "word": "we",
-          "start": 151.0,
+          "start": 151,
           "end": 151.4,
           "confidence": 0.997
         },
@@ -1235,7 +1258,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.935
+      "confidence": 0.935,
+      "vi": "Ừ, chúng tui có thể, ừ, chúng tui có thể, chúng tui có thể hát."
     },
     {
       "id": 25,
@@ -1254,7 +1278,7 @@
           "word": "and",
           "start": 155.9,
           "end": 156.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "girls",
@@ -1272,7 +1296,7 @@
           "word": "and",
           "start": 157.41,
           "end": 157.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "girls",
@@ -1299,7 +1323,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.983
+      "confidence": 0.983,
+      "vi": "Các bạn trai và gái, các bạn trai và gái, các bạn có thể nhảy không?"
     },
     {
       "id": 26,
@@ -1336,7 +1361,7 @@
           "word": "we",
           "start": 163.41,
           "end": 163.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "can",
@@ -1345,7 +1370,8 @@
           "confidence": 0.858
         }
       ],
-      "confidence": 0.908
+      "confidence": 0.908,
+      "vi": "Ừ, chúng tui có thể, ừ, chúng tui có thể."
     },
     {
       "id": 27,
@@ -1409,7 +1435,8 @@
           "confidence": 0.795
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Chúng tui có thể nhảy, chúng tui có thể hát, chúng tui có thể nhảy."
     },
     {
       "id": 28,
@@ -1464,7 +1491,7 @@
           "word": "can",
           "start": 174.99,
           "end": 175.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "dance",
@@ -1473,7 +1500,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.829
+      "confidence": 0.829,
+      "vi": "Ừ, chúng tui có thể, chúng tui có thể hát, chúng tui có thể nhảy."
     },
     {
       "id": 29,
@@ -1501,7 +1529,8 @@
           "confidence": 0.881
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Ừ, chúng tui có thể."
     },
     {
       "id": 30,
@@ -1529,7 +1558,8 @@
           "confidence": 0.821
         }
       ],
-      "confidence": 0.924
+      "confidence": 0.924,
+      "vi": "Ừ, chúng tui có thể."
     },
     {
       "id": 31,
@@ -1557,7 +1587,8 @@
           "confidence": 0.939
         }
       ],
-      "confidence": 0.973
+      "confidence": 0.973,
+      "vi": "Ừ, chúng tui có thể."
     },
     {
       "id": 32,
@@ -1585,7 +1616,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Ừ, chúng tui có thể."
     },
     {
       "id": 33,
@@ -1703,7 +1735,8 @@
           "confidence": 0.981
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Ừ chúng tui có thể, ừ chúng tui có thể, ừ chúng tui có thể, ừ chúng tui có thể, ừ chúng tui có thể, ừ chúng tui có thể."
     },
     {
       "id": 34,
@@ -1779,7 +1812,8 @@
           "confidence": 0.992
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Đi trong rừng rậm, đi trong rừng rậm, chúng tui không sợ."
     },
     {
       "id": 35,
@@ -1804,7 +1838,7 @@
           "word": "went",
           "start": 208.06,
           "end": 208.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "down",
@@ -1813,7 +1847,8 @@
           "confidence": 0.799
         }
       ],
-      "confidence": 0.948
+      "confidence": 0.948,
+      "vi": "Con chuột chui xuống."
     },
     {
       "id": 36,
@@ -1837,7 +1872,7 @@
         {
           "word": "dock",
           "start": 211.5,
-          "end": 212.0,
+          "end": 212,
           "confidence": 0.881
         },
         {
@@ -1889,7 +1924,8 @@
           "confidence": 0.971
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.954,
+      "vi": "Hickory dickory dock, tách tắc, tách tắc, tách tắc, tách tắc."
     }
   ],
   "videoId": "_Ir0Mc6Qilo",

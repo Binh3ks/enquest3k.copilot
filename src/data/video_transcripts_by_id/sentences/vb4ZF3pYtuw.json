@@ -39,7 +39,8 @@
           "confidence": 0.96
         }
       ],
-      "confidence": 0.932
+      "confidence": 0.932,
+      "vi": "Học tiếng Anh với SunEnglish Center."
     },
     {
       "id": 2,
@@ -67,7 +68,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Đồ dùng học tập của tôi."
     },
     {
       "id": 3,
@@ -104,22 +106,23 @@
           "word": "have",
           "start": 9.68,
           "end": 9.84,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 9.84,
-          "end": 10.0,
+          "end": 10,
           "confidence": 0.998
         },
         {
           "word": "pencil",
-          "start": 10.0,
+          "start": 10,
           "end": 10.5,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.943
+      "confidence": 0.943,
+      "vi": "Chào Kwan. Bạn có bút chì không?"
     },
     {
       "id": 4,
@@ -138,7 +141,7 @@
           "word": "i",
           "start": 12.16,
           "end": 12.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -156,10 +159,11 @@
           "word": "new",
           "start": 13.36,
           "end": 13.86,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.964
+      "confidence": 0.964,
+      "vi": "Có, tôi có. Nó mới."
     },
     {
       "id": 5,
@@ -178,7 +182,7 @@
           "word": "do",
           "start": 15.87,
           "end": 16.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -190,7 +194,7 @@
           "word": "have",
           "start": 16.18,
           "end": 16.43,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "an",
@@ -205,7 +209,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tuyệt. Bạn có cục tẩy không?"
     },
     {
       "id": 6,
@@ -224,7 +229,7 @@
           "word": "i",
           "start": 18.82,
           "end": 18.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "don't",
@@ -242,16 +247,17 @@
           "word": "at",
           "start": 19.86,
           "end": 20.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "home",
           "start": 20.02,
           "end": 20.52,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.98
+      "confidence": 0.98,
+      "vi": "Không, tôi không có. Nó ở nhà."
     },
     {
       "id": 7,
@@ -264,7 +270,7 @@
           "word": "that's",
           "start": 21.46,
           "end": 21.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "okay",
@@ -276,13 +282,13 @@
           "word": "i",
           "start": 22.59,
           "end": 22.82,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 22.82,
           "end": 23.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "one",
@@ -294,7 +300,7 @@
           "word": "here",
           "start": 23.62,
           "end": 23.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -306,10 +312,11 @@
           "word": "are",
           "start": 24.03,
           "end": 24.53,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Không sao. Tôi có một cái. Đây cho bạn."
     },
     {
       "id": 8,
@@ -322,7 +329,7 @@
           "word": "thank",
           "start": 25.3,
           "end": 25.55,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -337,7 +344,8 @@
           "confidence": 0.895
         }
       ],
-      "confidence": 0.96
+      "confidence": 0.96,
+      "vi": "Cảm ơn, Nam."
     },
     {
       "id": 9,
@@ -377,7 +385,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Lynn có quyển vở không?"
     },
     {
       "id": 10,
@@ -414,10 +423,11 @@
           "word": "pink",
           "start": 31.19,
           "end": 31.69,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.939
+      "confidence": 0.939,
+      "vi": "Có, cô ấy có. Nó màu hồng."
     },
     {
       "id": 11,
@@ -442,7 +452,7 @@
           "word": "have",
           "start": 33.67,
           "end": 33.91,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -454,13 +464,13 @@
           "word": "blue",
           "start": 33.99,
           "end": 34.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pencil",
           "start": 34.39,
           "end": 34.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "case",
@@ -469,7 +479,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.965
+      "confidence": 0.965,
+      "vi": "Nhìn này, tôi có hộp bút màu xanh."
     },
     {
       "id": 12,
@@ -494,7 +505,7 @@
           "word": "so",
           "start": 37.35,
           "end": 37.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "nice",
@@ -503,7 +514,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.946
+      "confidence": 0.946,
+      "vi": "Wow, đẹp quá."
     },
     {
       "id": 13,
@@ -522,7 +534,7 @@
           "word": "have",
           "start": 39.83,
           "end": 40.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -534,13 +546,13 @@
           "word": "yellow",
           "start": 40.23,
           "end": 40.71,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "highlighter",
           "start": 40.71,
           "end": 41.21,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -558,10 +570,11 @@
           "word": "crayon",
           "start": 41.67,
           "end": 42.17,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
     },
     {
       "id": 14,
@@ -577,7 +590,8 @@
           "confidence": 0.995
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Tuyệt."
     },
     {
       "id": 15,
@@ -596,7 +610,7 @@
           "word": "have",
           "start": 44.48,
           "end": 44.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -608,16 +622,17 @@
           "word": "green",
           "start": 44.89,
           "end": 45.2,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pen",
           "start": 45.2,
           "end": 45.7,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Tôi có bút mực màu xanh lá."
     },
     {
       "id": 16,
@@ -642,13 +657,13 @@
           "word": "have",
           "start": 47.77,
           "end": 48.01,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 48.01,
           "end": 48.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "calculator",
@@ -657,7 +672,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.954,
+      "vi": "Jack có máy tính bỏ túi không?"
     },
     {
       "id": 17,
@@ -694,7 +710,7 @@
           "word": "has",
           "start": 51.28,
           "end": 51.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -712,10 +728,11 @@
           "word": "day",
           "start": 52.01,
           "end": 52.51,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.941
+      "confidence": 0.941,
+      "vi": "Có, cậu ấy có. Cậu ấy có nó mỗi ngày."
     },
     {
       "id": 18,
@@ -728,25 +745,25 @@
           "word": "do",
           "start": 53.69,
           "end": 53.92,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 53.92,
           "end": 54.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 54.09,
           "end": 54.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 54.33,
           "end": 54.48,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "compass",
@@ -755,7 +772,8 @@
           "confidence": 0.991
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Bạn có compa không?"
     },
     {
       "id": 19,
@@ -774,34 +792,35 @@
           "word": "i",
           "start": 56.74,
           "end": 56.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "don't",
           "start": 56.9,
           "end": 57.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 57.14,
           "end": 57.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
           "start": 57.3,
           "end": 57.54,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "today",
           "start": 57.54,
           "end": 58.04,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Không, hôm nay tôi không có nó."
     },
     {
       "id": 20,
@@ -829,7 +848,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Nghe và lặp lại."
     },
     {
       "id": 21,
@@ -854,7 +874,7 @@
           "word": "do",
           "start": 64.42,
           "end": 64.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -866,7 +886,7 @@
           "word": "have",
           "start": 64.82,
           "end": 64.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -881,7 +901,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.956
+      "confidence": 0.956,
+      "vi": "Chào Kwan. Bạn có bút chì không?"
     },
     {
       "id": 22,
@@ -912,13 +933,13 @@
           "word": "you",
           "start": 72.1,
           "end": 72.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 72.19,
           "end": 72.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -929,11 +950,12 @@
         {
           "word": "pencil",
           "start": 72.5,
-          "end": 73.0,
-          "confidence": 1.0
+          "end": 73,
+          "confidence": 1
         }
       ],
-      "confidence": 0.953
+      "confidence": 0.953,
+      "vi": "Chào Kwan. Bạn có bút chì không?"
     },
     {
       "id": 23,
@@ -964,13 +986,13 @@
           "word": "you",
           "start": 78.5,
           "end": 78.66,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 78.66,
           "end": 78.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -982,10 +1004,11 @@
           "word": "pencil",
           "start": 78.91,
           "end": 79.41,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Chào Kwan. Bạn có bút chì không?"
     },
     {
       "id": 24,
@@ -1022,10 +1045,11 @@
           "word": "new",
           "start": 86.56,
           "end": 87.06,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.939
+      "confidence": 0.939,
+      "vi": "Có, tôi có. Nó mới."
     },
     {
       "id": 25,
@@ -1044,7 +1068,7 @@
           "word": "i",
           "start": 93.12,
           "end": 93.36,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -1056,16 +1080,17 @@
           "word": "it's",
           "start": 93.92,
           "end": 94.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "new",
           "start": 94.32,
           "end": 94.82,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Có, tôi có. Nó mới."
     },
     {
       "id": 26,
@@ -1084,7 +1109,7 @@
           "word": "i",
           "start": 100.08,
           "end": 100.39,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "do",
@@ -1096,16 +1121,17 @@
           "word": "it's",
           "start": 101.03,
           "end": 101.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "new",
           "start": 101.35,
           "end": 101.85,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.99
+      "confidence": 0.99,
+      "vi": "Có, tôi có. Nó mới."
     },
     {
       "id": 27,
@@ -1136,7 +1162,7 @@
           "word": "have",
           "start": 109.11,
           "end": 109.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "an",
@@ -1151,7 +1177,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tuyệt. Bạn có cục tẩy không?"
     },
     {
       "id": 28,
@@ -1182,7 +1209,7 @@
           "word": "have",
           "start": 117.57,
           "end": 117.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ven",
@@ -1197,7 +1224,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Tuyệt. Bạn có cục tẩy không?"
     },
     {
       "id": 29,
@@ -1213,7 +1241,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tuyệt."
     },
     {
       "id": 30,
@@ -1238,7 +1267,7 @@
           "word": "have",
           "start": 125.01,
           "end": 125.33,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "ven",
@@ -1253,7 +1282,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.996
+      "confidence": 0.996,
+      "vi": "Bạn có cục tẩy không?"
     },
     {
       "id": 31,
@@ -1290,16 +1320,17 @@
           "word": "at",
           "start": 132.87,
           "end": 132.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "home",
           "start": 132.94,
           "end": 133.44,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.966
+      "confidence": 0.966,
+      "vi": "Không, tôi không có. Nó ở nhà."
     },
     {
       "id": 32,
@@ -1336,7 +1367,7 @@
           "word": "at",
           "start": 140.78,
           "end": 141.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "home",
@@ -1345,7 +1376,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.952,
+      "vi": "Không, tôi không có. Nó ở nhà."
     },
     {
       "id": 33,
@@ -1364,7 +1396,7 @@
           "word": "i",
           "start": 148.14,
           "end": 148.3,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "don't",
@@ -1376,22 +1408,23 @@
           "word": "it's",
           "start": 148.86,
           "end": 149.18,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "at",
           "start": 149.18,
           "end": 149.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "home",
           "start": 149.34,
           "end": 149.84,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Không, tôi không có. Nó ở nhà."
     },
     {
       "id": 34,
@@ -1422,7 +1455,7 @@
           "word": "have",
           "start": 156.91,
           "end": 157.16,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "one",
@@ -1440,16 +1473,17 @@
           "word": "you",
           "start": 158.03,
           "end": 158.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "are",
           "start": 158.19,
           "end": 158.69,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.978
+      "confidence": 0.978,
+      "vi": "Không sao, tôi có một cái. Đây cho bạn."
     },
     {
       "id": 35,
@@ -1480,7 +1514,7 @@
           "word": "have",
           "start": 166.65,
           "end": 166.97,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "one",
@@ -1498,7 +1532,7 @@
           "word": "you",
           "start": 167.69,
           "end": 167.93,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "are",
@@ -1507,7 +1541,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.984
+      "confidence": 0.984,
+      "vi": "Không sao, tôi có một cái. Đây cho bạn."
     },
     {
       "id": 36,
@@ -1532,13 +1567,13 @@
           "word": "i",
           "start": 176.33,
           "end": 176.49,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 176.49,
           "end": 176.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "one",
@@ -1550,22 +1585,23 @@
           "word": "here",
           "start": 177.29,
           "end": 177.53,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
           "start": 177.53,
           "end": 177.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "are",
           "start": 177.69,
           "end": 178.19,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Không sao, tôi có một cái. Đây cho bạn."
     },
     {
       "id": 37,
@@ -1593,7 +1629,8 @@
           "confidence": 0.846
         }
       ],
-      "confidence": 0.939
+      "confidence": 0.939,
+      "vi": "Cảm ơn, Nam."
     },
     {
       "id": 38,
@@ -1612,7 +1649,7 @@
           "word": "you",
           "start": 188.96,
           "end": 189.19,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "numb",
@@ -1621,7 +1658,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Cảm ơn, Nam."
     },
     {
       "id": 39,
@@ -1640,7 +1678,7 @@
           "word": "you",
           "start": 194.1,
           "end": 194.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "numb",
@@ -1649,7 +1687,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Cảm ơn, Nam."
     },
     {
       "id": 40,
@@ -1674,7 +1713,7 @@
           "word": "have",
           "start": 198.82,
           "end": 199.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1689,7 +1728,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.943
+      "confidence": 0.943,
+      "vi": "Lynn có quyển vở không?"
     },
     {
       "id": 41,
@@ -1714,7 +1754,7 @@
           "word": "have",
           "start": 205.62,
           "end": 205.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1726,10 +1766,11 @@
           "word": "notebook",
           "start": 205.94,
           "end": 206.44,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.952
+      "confidence": 0.952,
+      "vi": "Lynn có quyển vở không?"
     },
     {
       "id": 42,
@@ -1754,7 +1795,7 @@
           "word": "have",
           "start": 211.16,
           "end": 211.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -1766,10 +1807,11 @@
           "word": "notebook",
           "start": 211.39,
           "end": 211.89,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Lynn có quyển vở không?"
     },
     {
       "id": 43,
@@ -1787,12 +1829,12 @@
         {
           "word": "she",
           "start": 216.75,
-          "end": 217.0,
+          "end": 217,
           "confidence": 0.999
         },
         {
           "word": "does",
-          "start": 217.0,
+          "start": 217,
           "end": 217.5,
           "confidence": 0.949
         },
@@ -1806,10 +1848,11 @@
           "word": "pink",
           "start": 217.95,
           "end": 218.45,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.946
+      "confidence": 0.946,
+      "vi": "Có, cô ấy có. Nó màu hồng."
     },
     {
       "id": 44,
@@ -1828,7 +1871,7 @@
           "word": "she",
           "start": 224.7,
           "end": 224.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "does",
@@ -1840,16 +1883,17 @@
           "word": "it's",
           "start": 225.66,
           "end": 225.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pink",
           "start": 225.9,
           "end": 226.4,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Có, cô ấy có. Nó màu hồng."
     },
     {
       "id": 45,
@@ -1868,7 +1912,7 @@
           "word": "she",
           "start": 231.58,
           "end": 231.9,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "does",
@@ -1880,16 +1924,17 @@
           "word": "it's",
           "start": 232.46,
           "end": 232.86,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pink",
           "start": 232.86,
           "end": 233.36,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Có, cô ấy có. Nó màu hồng."
     },
     {
       "id": 46,
@@ -1908,40 +1953,41 @@
           "word": "i",
           "start": 238.82,
           "end": 239.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 239.06,
           "end": 239.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 239.22,
           "end": 239.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "blue",
           "start": 239.38,
           "end": 239.7,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pencil",
           "start": 239.7,
           "end": 240.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "case",
           "start": 240.1,
           "end": 240.6,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.957
+      "confidence": 0.957,
+      "vi": "Nhìn này, tôi có hộp bút màu xanh."
     },
     {
       "id": 47,
@@ -1960,40 +2006,41 @@
           "word": "i",
           "start": 248.19,
           "end": 248.34,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 248.34,
           "end": 248.58,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 248.58,
           "end": 248.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "blue",
           "start": 248.75,
           "end": 249.14,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pencil",
           "start": 249.14,
           "end": 249.47,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "case",
           "start": 249.47,
           "end": 249.97,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Nhìn này, tôi có hộp bút màu xanh."
     },
     {
       "id": 48,
@@ -2018,25 +2065,25 @@
           "word": "have",
           "start": 257.63,
           "end": 257.87,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 257.87,
           "end": 258.03,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "blue",
           "start": 258.03,
           "end": 258.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pencil",
           "start": 258.35,
           "end": 258.75,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "case",
@@ -2045,7 +2092,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Nhìn này, tôi có hộp bút màu xanh."
     },
     {
       "id": 49,
@@ -2070,7 +2118,7 @@
           "word": "so",
           "start": 266.18,
           "end": 266.57,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "nice",
@@ -2079,7 +2127,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.944
+      "confidence": 0.944,
+      "vi": "Wow, đẹp quá."
     },
     {
       "id": 50,
@@ -2110,10 +2159,11 @@
           "word": "nice",
           "start": 275.06,
           "end": 275.56,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Wow, đẹp quá."
     },
     {
       "id": 51,
@@ -2132,22 +2182,23 @@
           "word": "it's",
           "start": 282.05,
           "end": 282.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "so",
           "start": 282.45,
           "end": 282.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "nice",
           "start": 282.77,
           "end": 283.27,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.995
+      "confidence": 0.995,
+      "vi": "Wow, đẹp quá."
     },
     {
       "id": 52,
@@ -2166,25 +2217,25 @@
           "word": "have",
           "start": 289.17,
           "end": 289.41,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 289.41,
           "end": 289.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "yellow",
           "start": 289.65,
           "end": 290.13,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "highlighter",
           "start": 290.13,
           "end": 290.63,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -2205,7 +2256,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
     },
     {
       "id": 53,
@@ -2224,25 +2276,25 @@
           "word": "have",
           "start": 298.73,
           "end": 298.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 298.96,
           "end": 299.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "yellow",
           "start": 299.12,
           "end": 299.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "highlighter",
           "start": 299.61,
           "end": 300.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -2260,10 +2312,11 @@
           "word": "crayon",
           "start": 300.64,
           "end": 301.14,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
     },
     {
       "id": 54,
@@ -2282,7 +2335,7 @@
           "word": "have",
           "start": 308.19,
           "end": 308.35,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -2294,13 +2347,13 @@
           "word": "yellow",
           "start": 308.59,
           "end": 309.07,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "highlighter",
           "start": 309.07,
           "end": 309.57,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "and",
@@ -2318,10 +2371,11 @@
           "word": "crayon",
           "start": 310.11,
           "end": 310.61,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
     },
     {
       "id": 55,
@@ -2337,7 +2391,8 @@
           "confidence": 0.977
         }
       ],
-      "confidence": 0.977
+      "confidence": 0.977,
+      "vi": "Tuyệt."
     },
     {
       "id": 56,
@@ -2356,7 +2411,7 @@
           "word": "have",
           "start": 318.43,
           "end": 318.59,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -2368,16 +2423,17 @@
           "word": "green",
           "start": 318.83,
           "end": 319.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pen",
           "start": 319.15,
           "end": 319.65,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Tôi có bút mực màu xanh lá."
     },
     {
       "id": 57,
@@ -2396,34 +2452,35 @@
           "word": "i",
           "start": 327.33,
           "end": 327.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 327.65,
           "end": 327.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 327.81,
           "end": 327.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "green",
           "start": 327.98,
           "end": 328.38,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "pen",
           "start": 328.38,
           "end": 328.88,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Tuyệt. Tôi có bút mực màu xanh lá."
     },
     {
       "id": 58,
@@ -2439,7 +2496,8 @@
           "confidence": 0.925
         }
       ],
-      "confidence": 0.925
+      "confidence": 0.925,
+      "vi": "Tuyệt."
     },
     {
       "id": 59,
@@ -2451,14 +2509,14 @@
         {
           "word": "i",
           "start": 335.84,
-          "end": 336.0,
-          "confidence": 1.0
+          "end": 336,
+          "confidence": 1
         },
         {
           "word": "have",
-          "start": 336.0,
+          "start": 336,
           "end": 336.24,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -2479,7 +2537,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Tôi có bút mực màu xanh lá."
     },
     {
       "id": 60,
@@ -2504,13 +2563,13 @@
           "word": "have",
           "start": 344.48,
           "end": 344.64,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 344.64,
           "end": 344.8,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "calculator",
@@ -2519,7 +2578,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.917
+      "confidence": 0.917,
+      "vi": "Jack có máy tính bỏ túi không?"
     },
     {
       "id": 61,
@@ -2544,13 +2604,13 @@
           "word": "have",
           "start": 350.9,
           "end": 351.15,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 351.15,
           "end": 351.31,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "calculator",
@@ -2559,7 +2619,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.994
+      "confidence": 0.994,
+      "vi": "Jack có máy tính bỏ túi không?"
     },
     {
       "id": 62,
@@ -2584,13 +2645,13 @@
           "word": "have",
           "start": 357.79,
           "end": 357.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 357.94,
           "end": 358.11,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "calculator",
@@ -2599,7 +2660,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.992
+      "confidence": 0.992,
+      "vi": "Jack có máy tính bỏ túi không?"
     },
     {
       "id": 63,
@@ -2636,7 +2698,7 @@
           "word": "has",
           "start": 365.59,
           "end": 365.83,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -2654,10 +2716,11 @@
           "word": "day",
           "start": 366.39,
           "end": 366.89,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.96
+      "confidence": 0.96,
+      "vi": "Có, cậu ấy có. Cậu ấy có nó mỗi ngày."
     },
     {
       "id": 64,
@@ -2694,13 +2757,13 @@
           "word": "has",
           "start": 375.49,
           "end": 375.65,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
           "start": 375.65,
           "end": 375.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "every",
@@ -2712,7 +2775,7 @@
           "word": "day",
           "start": 383.17,
           "end": 383.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "yes",
@@ -2724,7 +2787,7 @@
           "word": "he",
           "start": 383.97,
           "end": 384.12,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "does",
@@ -2736,13 +2799,13 @@
           "word": "he",
           "start": 384.85,
           "end": 385.09,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "has",
           "start": 385.09,
           "end": 385.32,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -2760,10 +2823,11 @@
           "word": "day",
           "start": 385.88,
           "end": 386.38,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.935
+      "confidence": 0.935,
+      "vi": "Có, cậu ấy có. Cậu ấy có nó mỗi ngày. Có, cậu ấy có. Cậu ấy có nó mỗi ngày."
     },
     {
       "id": 65,
@@ -2782,13 +2846,13 @@
           "word": "you",
           "start": 392.24,
           "end": 392.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 392.4,
           "end": 392.52,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
@@ -2803,7 +2867,8 @@
           "confidence": 0.98
         }
       ],
-      "confidence": 0.979
+      "confidence": 0.979,
+      "vi": "Bạn có compa không?"
     },
     {
       "id": 66,
@@ -2827,12 +2892,12 @@
         {
           "word": "have",
           "start": 397.84,
-          "end": 398.0,
-          "confidence": 1.0
+          "end": 398,
+          "confidence": 1
         },
         {
           "word": "a",
-          "start": 398.0,
+          "start": 398,
           "end": 398.16,
           "confidence": 0.999
         },
@@ -2843,7 +2908,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Bạn có compa không?"
     },
     {
       "id": 67,
@@ -2862,28 +2928,29 @@
           "word": "you",
           "start": 403.62,
           "end": 403.69,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 403.69,
           "end": 403.94,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "a",
           "start": 403.94,
           "end": 404.1,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "compass",
           "start": 404.1,
           "end": 404.6,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.959
+      "confidence": 0.959,
+      "vi": "Bạn có compa không?"
     },
     {
       "id": 68,
@@ -2908,28 +2975,29 @@
           "word": "don't",
           "start": 410.57,
           "end": 410.89,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 410.89,
           "end": 411.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
           "start": 411.06,
           "end": 411.21,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "today",
           "start": 411.21,
           "end": 411.71,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.976
+      "confidence": 0.976,
+      "vi": "Không, hôm nay tôi không có nó."
     },
     {
       "id": 69,
@@ -2948,19 +3016,19 @@
           "word": "i",
           "start": 418.21,
           "end": 418.45,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "don't",
           "start": 418.45,
           "end": 418.61,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 418.61,
           "end": 418.77,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -2972,10 +3040,11 @@
           "word": "today",
           "start": 419.01,
           "end": 419.51,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.985
+      "confidence": 0.985,
+      "vi": "Không, hôm nay tôi không có nó."
     },
     {
       "id": 70,
@@ -2994,19 +3063,19 @@
           "word": "i",
           "start": 425.09,
           "end": 425.25,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "don't",
           "start": 425.25,
           "end": 425.57,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "have",
           "start": 425.57,
           "end": 425.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "it",
@@ -3018,10 +3087,11 @@
           "word": "today",
           "start": 425.89,
           "end": 426.39,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.998
+      "confidence": 0.998,
+      "vi": "Không, hôm nay tôi không có nó."
     },
     {
       "id": 71,
@@ -3040,13 +3110,13 @@
           "word": "you",
           "start": 432.56,
           "end": 432.73,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "for",
           "start": 432.73,
           "end": 432.96,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "watching",
@@ -3064,7 +3134,7 @@
           "word": "you",
           "start": 434.08,
           "end": 434.4,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "next",
@@ -3079,7 +3149,8 @@
           "confidence": 0.891
         }
       ],
-      "confidence": 0.967
+      "confidence": 0.967,
+      "vi": "Cảm ơn các bạn đã xem. Hẹn gặp lại."
     }
   ],
   "videoId": "vb4ZF3pYtuw",

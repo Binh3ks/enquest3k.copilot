@@ -18,7 +18,7 @@
           "word": "a",
           "start": 5.92,
           "end": 6.08,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "beautiful",
@@ -33,18 +33,19 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.982
+      "confidence": 0.982,
+      "vi": "Đây là một công viên tuyệt đẹp."
     },
     {
       "id": 2,
       "text": "Look at the sky and trees.",
       "speaker": "Speaker0",
-      "start": 10.0,
+      "start": 10,
       "duration": 1.86,
       "words": [
         {
           "word": "look",
-          "start": 10.0,
+          "start": 10,
           "end": 10.32,
           "confidence": 0.964
         },
@@ -52,7 +53,7 @@
           "word": "at",
           "start": 10.32,
           "end": 10.56,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -79,7 +80,8 @@
           "confidence": 0.994
         }
       ],
-      "confidence": 0.987
+      "confidence": 0.987,
+      "vi": "Nhìn bầu trời và những cái cây."
     },
     {
       "id": 3,
@@ -98,7 +100,7 @@
           "word": "are",
           "start": 20.62,
           "end": 20.79,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -119,7 +121,8 @@
           "confidence": 0.901
         }
       ],
-      "confidence": 0.97
+      "confidence": 0.97,
+      "vi": "Jino, con đang làm gì vậy?"
     },
     {
       "id": 4,
@@ -138,7 +141,7 @@
           "word": "drawing",
           "start": 23.43,
           "end": 23.93,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "trees",
@@ -147,7 +150,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Con đang vẽ cây."
     },
     {
       "id": 5,
@@ -166,16 +170,17 @@
           "word": "are",
           "start": 26.82,
           "end": 27.06,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "good",
           "start": 27.06,
           "end": 27.56,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Cây đẹp lắm."
     },
     {
       "id": 6,
@@ -191,7 +196,8 @@
           "confidence": 0.993
         }
       ],
-      "confidence": 0.993
+      "confidence": 0.993,
+      "vi": "Vâng."
     },
     {
       "id": 7,
@@ -204,13 +210,13 @@
           "word": "i",
           "start": 29.7,
           "end": 30.02,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "like",
           "start": 30.02,
           "end": 30.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "trees",
@@ -219,7 +225,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Con thích cây."
     },
     {
       "id": 8,
@@ -238,7 +245,7 @@
           "word": "are",
           "start": 37.06,
           "end": 37.22,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "you",
@@ -250,16 +257,17 @@
           "word": "doing",
           "start": 37.46,
           "end": 37.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "sally",
           "start": 37.78,
           "end": 38.28,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Sally, con đang làm gì vậy?"
     },
     {
       "id": 9,
@@ -272,16 +280,17 @@
           "word": "i'm",
           "start": 39.3,
           "end": 39.78,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "jumping",
           "start": 39.78,
           "end": 40.28,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 1.0
+      "confidence": 1,
+      "vi": "Con đang nhảy."
     },
     {
       "id": 10,
@@ -306,7 +315,7 @@
           "word": "jumping",
           "start": 43.95,
           "end": 44.42,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "high",
@@ -315,7 +324,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.991
+      "confidence": 0.991,
+      "vi": "Wow. Con nhảy cao quá."
     },
     {
       "id": 11,
@@ -340,7 +350,7 @@
           "word": "big",
           "start": 52.59,
           "end": 52.98,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "fire",
@@ -349,7 +359,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.989
+      "confidence": 0.989,
+      "vi": "Wow. Một ngọn lửa lớn."
     },
     {
       "id": 12,
@@ -368,13 +379,13 @@
           "word": "come",
           "start": 55.56,
           "end": 55.88,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "to",
           "start": 55.88,
           "end": 56.04,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "the",
@@ -395,7 +406,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.791
+      "confidence": 0.791,
+      "vi": "Giờ mọi người hãy đến bên lửa nào."
     },
     {
       "id": 13,
@@ -420,16 +432,17 @@
           "word": "they",
           "start": 61.48,
           "end": 61.72,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "doing",
           "start": 61.72,
           "end": 62.22,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.974
+      "confidence": 0.974,
+      "vi": "Họ đang làm gì?"
     },
     {
       "id": 14,
@@ -454,10 +467,11 @@
           "word": "dancing",
           "start": 64.28,
           "end": 64.78,
-          "confidence": 1.0
+          "confidence": 1
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Họ đang nhảy múa."
     },
     {
       "id": 15,
@@ -491,7 +505,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Họ nhảy giỏi lắm."
     },
     {
       "id": 16,
@@ -513,7 +528,8 @@
           "confidence": 0.996
         }
       ],
-      "confidence": 0.997
+      "confidence": 0.997,
+      "vi": "Đúng vậy."
     },
     {
       "id": 17,
@@ -532,7 +548,7 @@
           "word": "dance",
           "start": 71.41,
           "end": 71.81,
-          "confidence": 1.0
+          "confidence": 1
         },
         {
           "word": "together",
@@ -541,7 +557,8 @@
           "confidence": 0.999
         }
       ],
-      "confidence": 0.999
+      "confidence": 0.999,
+      "vi": "Chúng ta cùng nhảy nào."
     },
     {
       "id": 18,
@@ -575,7 +592,8 @@
           "confidence": 0.998
         }
       ],
-      "confidence": 0.916
+      "confidence": 0.916,
+      "vi": "Cô ấy đang làm gì?"
     },
     {
       "id": 19,
@@ -609,7 +627,8 @@
           "confidence": 0.997
         }
       ],
-      "confidence": 0.79
+      "confidence": 0.79,
+      "vi": "Suỵt. Cô ấy đang ngủ."
     },
     {
       "id": 20,
@@ -637,7 +656,8 @@
           "confidence": 0.904
         }
       ],
-      "confidence": 0.954
+      "confidence": 0.954,
+      "vi": "Hãy đóng vai nào."
     }
   ],
   "videoId": "TR5RcutMu7c",
