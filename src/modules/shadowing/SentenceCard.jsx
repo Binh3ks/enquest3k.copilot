@@ -122,6 +122,13 @@ export default function SentenceCard({
             </p>
           )}
 
+          {/* Vietnamese translation */}
+          {sentence.vi && (
+            <p className="text-[12px] text-slate-400 mt-0.5 italic">
+              {sentence.vi}
+            </p>
+          )}
+
           {/* IPA word-by-word */}
           {ipaWords && ipaWords.length > 0 && (
             <div className="flex flex-wrap gap-x-1.5 gap-y-0.5 mt-1.5">
