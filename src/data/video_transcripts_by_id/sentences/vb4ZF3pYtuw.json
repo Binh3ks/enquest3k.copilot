@@ -345,7 +345,7 @@
         }
       ],
       "confidence": 0.96,
-      "vi": "Cảm ơn, Nam."
+      "vi": "Cảm ơn nhé, Nam."
     },
     {
       "id": 9,
@@ -427,7 +427,7 @@
         }
       ],
       "confidence": 0.939,
-      "vi": "Có, cô ấy có. Nó màu hồng."
+      "vi": "Có, bạn ấy có. Nó màu hồng."
     },
     {
       "id": 11,
@@ -480,7 +480,7 @@
         }
       ],
       "confidence": 0.965,
-      "vi": "Nhìn này, tôi có hộp bút màu xanh."
+      "vi": "Nhìn này, tôi có một cái bút chì màu xanh dương."
     },
     {
       "id": 12,
@@ -515,7 +515,7 @@
         }
       ],
       "confidence": 0.946,
-      "vi": "Wow, đẹp quá."
+      "vi": "Oa, nó đẹp quá."
     },
     {
       "id": 13,
@@ -574,7 +574,7 @@
         }
       ],
       "confidence": 0.977,
-      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
+      "vi": "Tôi có một bút dạ quang màu vàng và một crayon."
     },
     {
       "id": 14,
@@ -591,7 +591,7 @@
         }
       ],
       "confidence": 0.995,
-      "vi": "Tuyệt."
+      "vi": "Hay quá."
     },
     {
       "id": 15,
@@ -632,7 +632,7 @@
         }
       ],
       "confidence": 1,
-      "vi": "Tôi có bút mực màu xanh lá."
+      "vi": "Tôi có một bút mực màu xanh lá."
     },
     {
       "id": 16,
@@ -732,7 +732,7 @@
         }
       ],
       "confidence": 0.941,
-      "vi": "Có, cậu ấy có. Cậu ấy có nó mỗi ngày."
+      "vi": "Có, bạn ấy có. Bạn ấy có nó mỗi ngày."
     },
     {
       "id": 18,
@@ -820,7 +820,7 @@
         }
       ],
       "confidence": 0.966,
-      "vi": "Không, hôm nay tôi không có nó."
+      "vi": "Không, hôm nay tôi không có."
     },
     {
       "id": 20,
@@ -902,7 +902,7 @@
         }
       ],
       "confidence": 0.956,
-      "vi": "Chào Kwan. Bạn có bút chì không?"
+      "vi": "Chào Quan. Bạn có bút chì không?"
     },
     {
       "id": 22,
@@ -1630,7 +1630,7 @@
         }
       ],
       "confidence": 0.939,
-      "vi": "Cảm ơn, Nam."
+      "vi": "Cảm ơn nhé."
     },
     {
       "id": 38,
@@ -1659,7 +1659,7 @@
         }
       ],
       "confidence": 0.998,
-      "vi": "Cảm ơn, Nam."
+      "vi": "Cảm ơn nhé."
     },
     {
       "id": 39,
@@ -1688,7 +1688,7 @@
         }
       ],
       "confidence": 0.997,
-      "vi": "Cảm ơn, Nam."
+      "vi": "Cảm ơn nhé."
     },
     {
       "id": 40,
@@ -1852,7 +1852,7 @@
         }
       ],
       "confidence": 0.946,
-      "vi": "Có, cô ấy có. Nó màu hồng."
+      "vi": "Có, bạn ấy có. Nó màu hồng."
     },
     {
       "id": 44,
@@ -1893,7 +1893,7 @@
         }
       ],
       "confidence": 0.995,
-      "vi": "Có, cô ấy có. Nó màu hồng."
+      "vi": "Có, bạn ấy có. Nó màu hồng."
     },
     {
       "id": 45,
@@ -1934,7 +1934,7 @@
         }
       ],
       "confidence": 0.999,
-      "vi": "Có, cô ấy có. Nó màu hồng."
+      "vi": "Có, bạn ấy có. Nó màu hồng."
     },
     {
       "id": 46,
@@ -1987,7 +1987,7 @@
         }
       ],
       "confidence": 0.957,
-      "vi": "Nhìn này, tôi có hộp bút màu xanh."
+      "vi": "Nhìn này. Tôi có một cái bút chì màu xanh dương."
     },
     {
       "id": 47,
@@ -2040,7 +2040,7 @@
         }
       ],
       "confidence": 0.995,
-      "vi": "Nhìn này, tôi có hộp bút màu xanh."
+      "vi": "Nhìn này. Tôi có một cái bút chì màu xanh dương."
     },
     {
       "id": 48,
@@ -2093,7 +2093,7 @@
         }
       ],
       "confidence": 0.997,
-      "vi": "Nhìn này, tôi có hộp bút màu xanh."
+      "vi": "Nhìn này, tôi có một cái bút chì màu xanh dương."
     },
     {
       "id": 49,
@@ -2128,7 +2128,7 @@
         }
       ],
       "confidence": 0.944,
-      "vi": "Wow, đẹp quá."
+      "vi": "Oa. Nó đẹp quá."
     },
     {
       "id": 50,
@@ -2163,7 +2163,7 @@
         }
       ],
       "confidence": 0.997,
-      "vi": "Wow, đẹp quá."
+      "vi": "Oa. Nó đẹp quá."
     },
     {
       "id": 51,
@@ -2198,7 +2198,7 @@
         }
       ],
       "confidence": 0.995,
-      "vi": "Wow, đẹp quá."
+      "vi": "Oa. Nó đẹp quá."
     },
     {
       "id": 52,
@@ -2257,7 +2257,7 @@
         }
       ],
       "confidence": 0.999,
-      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
+      "vi": "Tôi có một bút dạ quang màu vàng và một crayon."
     },
     {
       "id": 53,
@@ -2316,7 +2316,7 @@
         }
       ],
       "confidence": 0.998,
-      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
+      "vi": "Tôi có một bút dạ quang màu vàng và một crayon."
     },
     {
       "id": 54,
@@ -2375,7 +2375,7 @@
         }
       ],
       "confidence": 0.993,
-      "vi": "Tôi có bút dạ quang màu vàng và bút sáp màu."
+      "vi": "Tôi có một bút dạ quang màu vàng và một crayon."
     },
     {
       "id": 55,
@@ -2392,7 +2392,7 @@
         }
       ],
       "confidence": 0.977,
-      "vi": "Tuyệt."
+      "vi": "Hay quá."
     },
     {
       "id": 56,
@@ -2433,7 +2433,7 @@
         }
       ],
       "confidence": 1,
-      "vi": "Tôi có bút mực màu xanh lá."
+      "vi": "Tôi có một bút mực màu xanh lá."
     },
     {
       "id": 57,
@@ -2480,7 +2480,7 @@
         }
       ],
       "confidence": 0.992,
-      "vi": "Tuyệt. Tôi có bút mực màu xanh lá."
+      "vi": "Hay quá. Tôi có một bút mực màu xanh lá."
     },
     {
       "id": 58,
@@ -2497,7 +2497,7 @@
         }
       ],
       "confidence": 0.925,
-      "vi": "Tuyệt."
+      "vi": "Hay quá."
     },
     {
       "id": 59,
@@ -2538,7 +2538,7 @@
         }
       ],
       "confidence": 0.999,
-      "vi": "Tôi có bút mực màu xanh lá."
+      "vi": "Tôi có một bút mực màu xanh lá."
     },
     {
       "id": 60,
@@ -2720,7 +2720,7 @@
         }
       ],
       "confidence": 0.96,
-      "vi": "Có, cậu ấy có. Cậu ấy có nó mỗi ngày."
+      "vi": "Có, bạn ấy có. Bạn ấy có nó mỗi ngày."
     },
     {
       "id": 64,
@@ -2827,7 +2827,7 @@
         }
       ],
       "confidence": 0.935,
-      "vi": "Có, cậu ấy có. Cậu ấy có nó mỗi ngày. Có, cậu ấy có. Cậu ấy có nó mỗi ngày."
+      "vi": "Có, bạn ấy có. Bạn ấy có nó mỗi ngày. Có, bạn ấy có. Bạn ấy có nó mỗi ngày."
     },
     {
       "id": 65,
@@ -2997,7 +2997,7 @@
         }
       ],
       "confidence": 0.976,
-      "vi": "Không, hôm nay tôi không có nó."
+      "vi": "Không, hôm nay tôi không có."
     },
     {
       "id": 69,
@@ -3044,7 +3044,7 @@
         }
       ],
       "confidence": 0.985,
-      "vi": "Không, hôm nay tôi không có nó."
+      "vi": "Không, hôm nay tôi không có."
     },
     {
       "id": 70,
@@ -3091,7 +3091,7 @@
         }
       ],
       "confidence": 0.998,
-      "vi": "Không, hôm nay tôi không có nó."
+      "vi": "Không, hôm nay tôi không có."
     },
     {
       "id": 71,
@@ -3150,7 +3150,7 @@
         }
       ],
       "confidence": 0.967,
-      "vi": "Cảm ơn các bạn đã xem. Hẹn gặp lại."
+      "vi": "Cảm ơn bạn đã xem. Hẹn gặp lại lần sau."
     }
   ],
   "videoId": "vb4ZF3pYtuw",

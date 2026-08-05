@@ -1102,7 +1102,7 @@
         }
       ],
       "confidence": 0.988,
-      "vi": "Chúng tui tham quan Jeju."
+      "vi": "Thật sao?"
     },
     {
       "id": 32,
@@ -1143,7 +1143,7 @@
         }
       ],
       "confidence": 0.999,
-      "vi": "Nghe hay quá."
+      "vi": "Bạn đã làm gì ở đó?"
     },
     {
       "id": 33,
@@ -1756,7 +1756,7 @@
         }
       ],
       "confidence": 0.853,
-      "vi": "Nghe nào."
+      "vi": "Đọc thành tiếng."
     },
     {
       "id": 50,
