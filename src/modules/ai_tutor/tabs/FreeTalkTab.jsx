@@ -834,8 +834,9 @@ const FreeTalkTab = () => {
             if (f.frame !== undefined && f.prompt_en) {
               return {
                 template: f.prompt_en,
-                follow_up_q: null,
-                hints: [],
+                follow_up_q: f.prompt_en,
+                prompt_en: f.prompt_en,
+                hints: f.target_vocab || [],
                 hint_en: f.hint_en || null,
               };
             }
@@ -988,13 +989,14 @@ const FreeTalkTab = () => {
                 || cyclingFrame?.prompt_en
                 || generateFollowUpFromTemplate(cyclingFrame?.template || sparkData.seed_question || '');
             }
+          } else if (currentFrame?.prompt_en) {
+            question = currentFrame.prompt_en;
           } else if (currentFrame?.follow_up_q) {
             question = currentFrame.follow_up_q;
-          } else if (currentFrame?.prompt_en) {
-            // W27+ frames use prompt_en instead of follow_up_q
-            question = currentFrame.prompt_en;
+          } else if (currentFrame?.template) {
+            question = currentFrame.template;
           } else {
-            question = generateFollowUpFromTemplate(currentFrame?.template || '');
+            question = generateFollowUpFromTemplate('');
           }
 
           const recast = buildRecast(userMessage);
