@@ -161,7 +161,7 @@ const week26RealData = {
       ],
 
       minimum_turns: 8,
-      maximum_turns: 12,
+      maximum_turns: 10,
 
       story_text: "It was Sunday afternoon when Leo sat down with his pencils, paper, and a big smile. He had decided to create a comic strip about his adventure-filled weekend. First, Leo wrote the title: 'My Weekend Adventure — by Leo.' In Panel One, he sketched the scene where he and Max visited the park on Saturday morning. The caption read: 'Saturday morning. Max and I walked to the park. It was sunny and warm.' In Panel Two, Leo drew Max chasing a red ball across the green grass. The speech bubble above Max said: 'I played all day!' In Panel Three, Leo drew the moment a street musician arrived and everyone stopped to watch. The caption described the scene: 'We watched a street performance. It was brilliant! We smiled and clapped.' In Panel Four, Leo drew himself and Max walking home — both tired but happy. The caption read: 'Finally, we returned home. We were tired but very happy. It was a perfect day!'",
       story_text_vi: "Do la chieu Chu Nhat khi Leo ngoi xuong voi but chi, giay va mot nu cuoi lon. Cau da quyet dinh tao ra mot bo truyen tranh ve cai tuan cuoi day phieu luu cua minh. Dau tien, Leo viet tieu de: 'Cuoc Phieu Luu Cuoi Tuan Cua Toi — boi Leo.' O Khung 1, cau phac thao canh noi cau va Max da den cong vien vao sang thu Bay. Chu thich viet: 'Sang thu Bay. Max va toi di bo den cong vien. Thoi tiet nang am.' O Khung 2, Leo ve Max dang duoi qua bong do tren bai co xanh. Bong bong loi thoai phia tren Max noi: 'Toi da choi suot ngay!' O Khung 3, Leo ve khoang khac mot nhac si duong pho xuat hien va moi nguoi dung lai xem. O Khung 4, Leo ve minh va Max di bo ve nha — ca hai met nhung hanh phuc. Chu thich viet: 'Cuoi cung, chung toi da tro ve nha. Chung toi met nhung rat hanh phuc. Do la mot ngay hoan hao!'",
@@ -259,8 +259,8 @@ const week26RealData = {
         }
       ],
 
-      minimum_turns: 10,
-      maximum_turns: 12,
+      minimum_turns: 8,
+      maximum_turns: 10,
 
       story_text: "Mia had a wonderfully busy Sunday. In the morning, she visited the library near her house. She borrowed three books about drawing and comics. The library was quiet and peaceful. In the afternoon, Mia sat at her desk and created a colourful poster about ocean animals. She sketched each creature carefully and expressed her love of nature through every drawing. She was very pleased with the result! In the evening, Mia watched a nature documentary about coral reefs on television. The colours were incredible and she learned many new things. When bedtime came, she closed her notebook and smiled. It was a Sunday full of learning, creating, and exploring!",
       story_text_vi: "Mia co mot ngay Chu Nhat tuyet voi ban ron. Vao buoi sang, co den thu vien gan nha. Co muon ba cuon sach ve ve tranh va truyen tranh. Thu vien rat yen tinh va thanh binh. Vao buoi chieu, Mia ngoi o ban lam viec va tao ra mot to poster day mau sac ve dong vat bien. Co phac thao tung sinh vat can than va bieu dat tinh yeu thien nhien qua tung net ve. Co rat hai long voi ket qua! Vao buoi toi, Mia xem mot phim tai lieu ve thien nhien ve ran san ho tren truyen hinh. Mau sac that tuyet dep va co hoc duoc nhieu dieu moi. Khi gio di ngu den, co dong quyen so tay lai va mim cuoi. Do la mot ngay Chu Nhat day hoc hoi, sang tao va kham pha!",
@@ -369,8 +369,8 @@ const week26RealData = {
         }
       ],
 
-      minimum_turns: 12,
-      maximum_turns: 12,
+      minimum_turns: 10,
+      maximum_turns: 10,
 
       story_text: "It is time for the big Comic Strip Challenge! Each student becomes a comic strip artist and tells the story of their own weekend — but in words! Think of four moments from your Saturday or Sunday. Describe each moment like a panel in a comic: What happened? What was it like? Who was there? How did you feel? Leo described his park adventure. Mia described her library, poster, and documentary. Now it is YOUR turn. Use Past Simple verbs — visited, played, watched, created, was, were — and sequence words like First, Then, After that, Finally. Make your weekend come alive through your four panels!",
       story_text_vi: "Da den luc cho Thu Thach Truyen Tranh lon! Moi hoc sinh tro thanh mot hoa si truyen tranh va ke cau chuyen ve cuoi tuan cua chinh minh — nhung bang loi! Hay nghi den bon khoang khac tu thu Bay hoac Chu Nhat cua ban. Mo ta tung khoang khac nhu mot khung trong truyen tranh: Dieu gi da xay ra? No nhu the nao? Ai o do? Ban cam thay ra sao? Leo mo ta cuoc phieu luu o cong vien. Mia mo ta thu vien, poster va phim tai lieu cua minh. Bay gio la LUOT CUA BAN. Dung dong tu Qua Khu Don — visited, played, watched, created, was, were — va cac tu trinh tu nhu First, Then, After that, Finally. Hay lam cho cuoi tuan cua ban song dong qua bon khung tranh!",

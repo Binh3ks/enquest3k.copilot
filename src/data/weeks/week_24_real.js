@@ -140,7 +140,7 @@ const week24RealData = {
       ],
 
       minimum_turns: 8,
-      maximum_turns: 12
+      maximum_turns: 10
     },
 
     {
@@ -211,8 +211,8 @@ const week24RealData = {
         }
       ],
 
-      minimum_turns: 10,
-      maximum_turns: 12
+      minimum_turns: 8,
+      maximum_turns: 10
     },
 
     {
@@ -283,8 +283,8 @@ const week24RealData = {
         }
       ],
 
-      minimum_turns: 12,
-      maximum_turns: 12
+      minimum_turns: 10,
+      maximum_turns: 10
     }
   ],
 

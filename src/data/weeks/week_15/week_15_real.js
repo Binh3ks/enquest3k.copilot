@@ -335,7 +335,7 @@ const week15RealData = {
       
       
       minimum_turns: 8,
-      maximum_turns: 12,
+      maximum_turns: 10,
       expected_duration: "15+ minutes"
     },
     {
@@ -441,8 +441,8 @@ const week15RealData = {
         }
       ],
       
-      minimum_turns: 10,
-      maximum_turns: 12,
+      minimum_turns: 8,
+      maximum_turns: 10,
       expected_duration: "12+ minutes"
     },
     {
@@ -548,8 +548,8 @@ const week15RealData = {
         }
       ],
       
-      minimum_turns: 12,
-      maximum_turns: 12,
+      minimum_turns: 10,
+      maximum_turns: 10,
       expected_duration: "12+ minutes"
     }
   ],

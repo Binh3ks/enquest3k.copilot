@@ -118,9 +118,6 @@ const StoryMissionTab = () => {
 
   const getMaxTurnsForMission = (mission, weekNum) => {
     if (!mission) return 8;
-    const turnsInMission = mission.turns || (mission.maximum_turns < 20 ? mission.maximum_turns : null);
-    if (turnsInMission) return turnsInMission;
-    
     const isRetell = mission.type === 'retell' || mission.mission_id === 1 || mission.mission_id === 2;
     const w = Number(weekNum) || 1;
     if (isRetell) {

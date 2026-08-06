@@ -140,7 +140,7 @@ const week25RealData = {
       ],
 
       minimum_turns: 8,
-      maximum_turns: 12,
+      maximum_turns: 10,
 
       story_text: "It was Saturday morning. Leo wanted to make a jam sandwich for breakfast. He grabbed the bread and immediately tried to eat it. 'Wait!' said Mia. 'You have to follow the steps in order!' Leo looked confused. 'Why does the ORDER matter?' he asked. Mia smiled and said, 'Watch me. FIRST, I take two slices of bread. NEXT, I use the knife to spread jam on one slice. THEN, I press the two slices together. FINALLY, I cut it in half and put it on the plate.' Leo tried again, following every step. His sandwich turned out perfect! 'The sequence is the secret!' he said, taking a big happy bite.",
       story_text_vi: "Do la sang thu Bay. Leo muon lam banh mi mit de an sang. Anh lay banh mi va lien tuc co an ngay. 'Khoan da!' Mia noi. 'Anh phai lam theo thu tu!' Leo co ve boi roi. 'Tai sao THU TU lai quan trong?' anh hoi. Mia mim cuoi va noi, 'Nhin em nay. Thu nhat (FIRST), em lay hai lat banh mi. Tiep theo (NEXT), em dung dao phet mit len mot lat. Sau do (THEN), em up hai lat lai voi nhau. Cuoi cung (FINALLY), em cat doi va dat len dia.' Leo thu lai, lam theo tung buoc. Cai banh mi cua anh ra rat ngon! 'Trinh tu chinh la bi mat!' anh noi, ca n mot cai that lon.",
@@ -227,8 +227,8 @@ const week25RealData = {
         }
       ],
 
-      minimum_turns: 10,
-      maximum_turns: 12,
+      minimum_turns: 8,
+      maximum_turns: 10,
 
       story_text: "Every morning, Mia has a very organised routine for brushing her teeth. First, she squeezes a little toothpaste onto her brush. Next, she brushes all her teeth carefully for two minutes. Then, she rinses her mouth with clean water. Finally, she tidies up the bathroom and washes her hands. She says the secret is doing every step in the right sequence. Now Nova wants YOU to describe YOUR morning routine using the same connectors!",
       story_text_vi: "Moi buoi sang, Mia co mot quy trinh danh rang rat co to chuc. Dau tien, co bop mot it kem danh rang len ban chai. Tiep theo, co danh tat ca rang can than trong hai phut. Sau do, co suc mieng bang nuoc sach. Cuoi cung, co don dep phong tam va rua tay. Co noi bi mat la lam tung buoc theo dung trinh tu. Bay gio Nova muon BAN mo ta quy trinh buoi sang cua BAN dung nhung tu noi tuong tu!",
@@ -326,8 +326,8 @@ const week25RealData = {
         }
       ],
 
-      minimum_turns: 12,
-      maximum_turns: 12,
+      minimum_turns: 10,
+      maximum_turns: 10,
 
       story_text: "It is time for the big Sequence Challenge! Each student must explain how to make their favourite simple food or do their favourite daily task using all four connectors: First, Next, Then, Finally. Mia chose to explain how to pour and drink a glass of juice: 'First, I take a clean cup. Next, I pour the juice from the bottle. Then, I stir it gently with a spoon. Finally, I drink and tidy up!' Can you create YOUR own step-by-step explanation? Make it clear so your partner can follow the steps exactly!",
       story_text_vi: "Da den luc Thu Thach Trinh Tu lon! Moi hoc sinh phai giai thich cach lam mon an don gian yeu thich hoac cach thuc hien mot nhiem vu hang ngay yeu thich, dung ca bon tu noi: First, Next, Then, Finally. Mia chon giai thich cach rot va uong mot ly nuoc ep: 'Thu nhat, toi lay mot coc sach. Tiep theo, toi rot nuoc ep tu chai ra. Sau do, toi khuy nhe voi muong. Cuoi cung, toi uong va don dep!' Ban co the tao ra loi giai thich tung buoc cua CHINH BAN khong? Lam cho ro rang de ban cung co the lam theo tung buoc!",

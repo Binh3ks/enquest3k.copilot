@@ -171,7 +171,7 @@ const week28RealData = {
       ],
 
       minimum_turns: 8,
-      maximum_turns: 12,
+      maximum_turns: 10,
 
       story_text: "Once upon a time in a green forest, a Hare loved to boast. Every day he ran through the trees shouting: I am the fastest animal in the world! Nobody can overtake me! The other animals were tired of his boasting. One quiet morning, a Tortoise heard the Hare. Slowly, the Tortoise walked forward. 'I challenge you to a race,' he said. The Hare laughed until his ears shook. 'A race? You are so slow — this will be easy!' But the Tortoise was determined. The next day, all the forest animals came to cheer. BANG! The race began. The Hare ran at full speed — he was gone in seconds. The Tortoise walked slowly but steadily, one step at a time. The confident Hare looked back and smiled. 'The Tortoise is so far behind! I have time for a nap.' He lay down under a shady tree and slept. The Tortoise kept walking. Slow. Steady. Step by step. He walked right past the sleeping Hare! The animals began to cheer loudly. The Tortoise was nearly at the finish line! The noise woke the Hare. He jumped up and ran as fast as he could — but it was too late. The Tortoise crossed the finish line and won the race! The moral of this fable was clear: slow and steady wins the race. A determined tortoise who chooses to persevere will always beat an overconfident hare who does not.",
       story_text_vi: "Ngay xua trong khu rung xanh, mot con Tho rat hay khoe khoang. Moi ngay no chay qua cac goc cay va reo to: Toi la con vat nhanh nhat the gioi! Khong ai co the vuot qua toi! Cac con vat khac that su chan nghe no khoe. Mot buoi sang yen tinh, con Rua nghe thay. No di cham cham ve phia Tho. 'Toi thach mi cuoc dua,' no noi. Con Tho cuoi den run ca tai. 'Cuoc dua a? Mi cham nhu vay — cai nay qua de!' Nhung con Rua rat quyet tam. Ngay hom sau, tat ca cac con vat trong rung den co vu. BANG! Cuoc dua bat dau. Con Tho chay het toc do — no bien mat chi trong vai giay. Con Rua di cham ma deu, tung buoc mot. Con Tho tu tin ngoai lai va cuoi. 'Rua con xa lam! Tao co the ngu mot chut.' No nam xuong duoi bong cay mat va ngu. Con Rua tiep tuc di. Cham. Deu. Tung buoc mot. No di qua con Tho dang ngu! Cac con vat bat dau co vu om. Con Rua suyt toi dich roi! Tieng on danh thuc con Tho day. No nhay len va chay het suc — nhung da muon mat roi. Con Rua vuot qua duong dich va thang cuoc dua! Bai hoc cua truyen ngu ngon nay that ro rang: cham ma deu thi cuoi cung cung se thang. Mot con Rua quyet tam va kien tri se luon thang mot con Tho qua tu tin.",
@@ -268,8 +268,8 @@ const week28RealData = {
         }
       ],
 
-      minimum_turns: 10,
-      maximum_turns: 12,
+      minimum_turns: 8,
+      maximum_turns: 10,
 
       story_text: "Ben stood up in class. 'I will retell the Tortoise and the Hare story!' he said. 'Once upon a time, the Hare runned — I mean RAN — everywhere in the forest. He always boasted: I am the fastest! One day the Tortoise challenged him. The Hare laughed. They started the race. The Hare ran — yes, RAN — very fast! But then he stopped for a nap. He sleeped — no wait, he SLEPT — under a big tree. Meanwhile, the Tortoise walked. Slow and steady. He never gave up. He kept going. The Hare woke up and ran again — but it was too late! The Tortoise won — W - O - N — won! The animals all cheered!' Ben grinned. 'The moral? Slow and steady wins the race. Perseverance beats speed every time!' His teacher smiled: 'Well done, Ben! You used the irregular verbs correctly this time — ran, slept, won!'",
       story_text_vi: "Ben dung len trong lop. 'Toi se ke lai cau chuyen Rua va Tho!' cau noi. 'Ngay xua, con Tho chay — ran — khap rung. No luc nao cung khoe khoang: Toi la nhanh nhat! Mot ngay con Rua thach no. Con Tho chi cuoi. Ho bat dau cuoc dua. Con Tho chay — ran — rat nhanh! Nhung sau do no dung lai de ngu. No ngu — slept — duoi goc cay lon. Trong khi do, con Rua di. Cham va deu. No khong bao gio bo cuoc. No tiep tuc di. Con Tho thuc day va chay lai — nhung da muon mat roi! Con Rua da thang — won! Cac con vat deu co vu!' Ben mim cuoi. 'Bai hoc? Cham ma deu thi cuoi cung cung thang. Kien tri danh bai toc do moi khi!' Thay giao mim cuoi: 'Lam tot lam, Ben! Em da dung dung cac dong tu bat quy tac lan nay — ran, slept, won!'",
@@ -365,8 +365,8 @@ const week28RealData = {
         }
       ],
 
-      minimum_turns: 12,
-      maximum_turns: 12,
+      minimum_turns: 10,
+      maximum_turns: 10,
 
       story_text: "Now it is your turn to be the storyteller! Think about a time when you had a challenge — it could be a real race at school, a swimming competition, a maths test, finishing a book report, or even a video game level that was very hard to beat. Use the lesson from the Tortoise and the Hare to tell your story. Use Past Simple to retell what happened: I ran... I tried... I felt... I kept going... I won / I lost / I finished... Tell me about a time when you were like the determined Tortoise! Or even a time when you were a little bit like the overconfident Hare. What happened? What did you learn? Apply the moral: slow and steady wins the race — perseverance is the real winner.",
       story_text_vi: "Bay gio la luot ban ke chuyen! Hay nghi ve mot lan you co mot thu thach — co the la mot cuoc dua o truong, mot cuoc thi boi loi, mot bai kiem tra toan, hoan thanh mot bai bao cao, hoac tham chi mot cot moc game kho vuot. Dung bai hoc tu cau chuyen Rua va Tho de ke lai. Dung Qua Khu Don de ke lai nhung gi da xay ra: I ran... I tried... I felt... I kept going... I won / I lost / I finished... Ke cho toi nghe ve mot lan ban nhu con Rua quyet tam! Hoac tham chi mot lan ban hoi giong con Tho qua tu tin. Dieu gi da xay ra? Ban da hoc duoc gi? Ap dung bai hoc: cham ma deu thi cuoi cung cung thang — kien tri moi la nguoi chien thang that su.",
