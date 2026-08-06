@@ -284,25 +284,38 @@ Any future modification to `force_align_transcript.py` or the transcript JSON th
 
 ---
 
-## Rule 11: AI TUTOR CONTENT & PEDAGOGY STANDARDS (MANDATORY)
+## Rule 11: AI TUTOR GOLDEN STANDARD (WEEK 36 MODEL - FROZEN 🧊)
 
-**All AI Tutor content across all weeks MUST strictly follow these pedagogical & structural rules:**
+**All AI Tutor modules across all 52 weeks MUST strictly adopt Week 36 as the immutable Golden Standard:**
 
-### 11a. Story Mission 1 & 2: Reading Passage Retell & Memory Recall
-- **Core Objective**: Help students **recall, summarize, and retell the key events from the 2 Reading Station passages (`read_stem` and `read_social`)** using the week's target grammar focus.
-- **NO Repeated Intros**: Turn 2 MUST NEVER re-recite the opening narrative. After student's opening reply (e.g. "yes"), Nova/Character MUST immediately jump to Question 1 of the story arc.
-- **NO Childish / Silly Questions**: Banned trivial A0 questions like *"Is it blue, red or yellow?"*, *"Is it a boat, car or plane?"*, or looping *"What is my job?"*. Scaffolding must use meaningful full-sentence options (`Say: We dove 300 metres into the ocean, or We dove into a deep cave`).
-- **Target Grammar Enforcement**: Scaffolding templates and hints MUST enforce the week's exact target grammar (e.g. Irregular Past Tense: `went`, `dove`, `saw`, `found`, `took`, `came`, `gave`, `rode`, `met`, `wrote`).
-- **End with Personal Connection**: The final turn of Story Mission 1 & 2 should naturally bridge the story to the student (e.g. *"Would you like to explore an underwater cave?"*).
+### 11a. The 3-Station Pedagogical Framework
+- **Story Mission 1**: Passage Retell for Reading Passage 1 (`read_stem` - e.g. *The Underwater Cave*).
+- **Story Mission 2**: Passage Retell for Reading Passage 2 (`read_social` - e.g. *Marco Polo Journey*).
+- **Story Mission 3 & Free Talk**: 100% Student Personal Application (e.g. *Your Adventure Story*, *My Greatest Adventure*, *Places to Explore*).
 
-### 11b. Free Talk & Creative Missions: Student Personal Application
-- **Core Objective**: Shift focus **100% to the student's own life, personal experiences, and imagination**.
-- **Week-Specific Topics**: `spark_talk` in `week_XX_real.js` MUST provide topics inspired by the week's theme (e.g. "My Greatest Adventure", "If I Met an Explorer"), NOT generic fallback topics.
+### 11b. Standardized Question & Hint Format (`Say: ...`)
+- **Explicit Scaffolding**: EVERY single question prompt in `story_arc` and `spark_talk` MUST end with full-sentence suggestions formatted as:  
+  `[Question text]? Say: [Option A], or [Option B]`
+- **TTS & UI Sync**: The TTS voice speaks the question AND options. The UI automatically parses `extractSayOptions` to display `[Option A]` and `[Option B]` as 2 clickable hint chips below the chat box.
 
-### 11c. Turn Scaffolding Tiers by Week Level (MANDATORY)
-To match students' growing English proficiency over the 1-year journey, the turn length for AI Tutor conversations (Story Missions & Free Talk) MUST strictly scale by week tier:
+### 11c. Pronoun-Switch Recast Engine
+- AI MUST ALWAYS shift pronouns naturally when echoing student answers:  
+  - `I` $\rightarrow$ `You`
+  - `we` $\rightarrow$ `You`
+  - `my` $\rightarrow$ `your`
+  - `our` $\rightarrow$ `your`
+- *Example*: Student: `"we went camping in the mountains"` $\rightarrow$ AI: `"You went camping in the mountains! That sounds exciting! How did you travel on your trip?"`
+
+### 11d. Zero-Delay 0ms Opening Narrative
+- Opening turns (Turn 1 greeting) MUST return the pre-computed `opening_narrative` instantly with 0ms network latency, bypassing LLM API roundtrips.
+
+### 11e. Turn Scaffolding Tiers by Week Level
+Turn length for Story Missions & Free Talk MUST strictly follow these progression tiers:
 - **Weeks 01–14**: 4 turns (A0 entry phase)
 - **Weeks 15–28**: 6 turns (A1 building phase)
-- **Weeks 29–42**: 8 turns (A1+ expanding phase - Week 36 MUST have 8 full turns!)
+- **Weeks 29–42**: 8 turns (A1+ expanding phase - Week 36 Golden Standard = 8 turns)
 - **Weeks 43+**: 10 turns (A2 mastery phase)
+
+### 11f. Free Talk Card Limit
+- Free Talk (`spark_talk`) MUST contain EXACTLY 2 cards per week inspired by the week's theme.
 
