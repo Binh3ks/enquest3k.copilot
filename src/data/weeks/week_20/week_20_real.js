@@ -22,7 +22,12 @@ const week20RealData = {
     "there was",
     "old temple",
     "wooden bridge",
-    "over the river"
+    "over the river",
+    "Long ago",
+    "small villages",
+    "Over time",
+    "came to",
+    "live together"
   ],
   theme: "Old town, history, changes over time",
 

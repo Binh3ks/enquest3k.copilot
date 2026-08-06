@@ -22,7 +22,12 @@ const week19RealData = {
     "was little",
     "began to grow",
     "grow bigger",
-    "every year"
+    "every year",
+    "look at",
+    "old photos",
+    "were a baby",
+    "As time passed",
+    "help your body grow"
   ],
   theme: "Childhood memories and past states",
 

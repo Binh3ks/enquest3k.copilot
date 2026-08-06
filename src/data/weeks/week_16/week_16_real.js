@@ -22,7 +22,12 @@ const week16RealData = {
     "in motion",
     "moving fast through",
     "playing soccer together",
-    "working together"
+    "working together",
+    "what happens",
+    "run fast",
+    "uses energy",
+    "kick a ball",
+    "goes into motion"
   ],
   theme: "Sports actions and Present Continuous commentary",
 

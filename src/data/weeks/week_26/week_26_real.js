@@ -35,7 +35,12 @@ const week26RealData = {
     "walked to",
     "saturday morning",
     "wrote a caption",
-    "was sunny and warm"
+    "was sunny and warm",
+    "comic strip",
+    "wonderful way",
+    "tell a story",
+    "made of",
+    "write a caption"
   ],
   target_vocab: [
     { word: "comic strip", pronunciation: "/ˈkɒmɪk strɪp/", definition_vi: "truyện tranh khung", definition_en: "a series of drawn panels that tell a story with captions and speech bubbles" },

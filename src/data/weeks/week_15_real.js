@@ -13,6 +13,29 @@ const week15RealData = {
   
   topic: "Observing people in a park - describing actions happening now",
   topic_vi: "Quan sát mọi người trong công viên - miêu tả hành động đang diễn ra",
+
+  chunk_focus: [
+    "Central Park",
+    "flying kites",
+    "having picnics",
+    "Hyde Park",
+    "every morning",
+    "Ueno Park",
+    "cherry blossoms",
+    "Royal Botanic Gardens",
+    "Opera House",
+    "Luxembourg Gardens",
+    "fresh air",
+    "right now",
+    "going to the park",
+    "my house",
+    "favorite place",
+    "my family",
+    "My dad",
+    "My mom",
+    "sitting on a bench",
+    "with my friends"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Describe what is happening right now using Present Continuous",

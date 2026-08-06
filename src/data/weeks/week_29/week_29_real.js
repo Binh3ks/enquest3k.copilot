@@ -35,7 +35,12 @@ const week29RealData = {
     "came to",
     "help them",
     "picked up",
-    "gave it"
+    "gave it",
+    "learn about",
+    "in the world",
+    "there are",
+    "carry passengers",
+    "On the ground"
   ],
   target_vocab: [
     { word: "journey", pronunciation: "/ˈdʒɜːni/", definition_vi: "hành trình", definition_en: "a long trip from one place to another by plane, train, or car" },

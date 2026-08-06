@@ -42,7 +42,11 @@ export const week3RealData = {
     "very nice",
     "smart and caring",
     "gentle and kind",
-    "very happy"
+    "very happy",
+    "can hear",
+    "every day",
+    "work together",
+    "take care"
   ],
   
   // === KEY LEARNING OUTCOME ===

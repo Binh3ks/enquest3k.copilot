@@ -42,7 +42,12 @@ const week2RealData = {
     "little sister",
     "funny and sweet",
     "each other",
-    "Our home"
+    "Our home",
+    "in the world",
+    "help each other",
+    "take care",
+    "Brothers and sisters",
+    "play together"
   ],
   
   // === KEY LEARNING OUTCOME ===

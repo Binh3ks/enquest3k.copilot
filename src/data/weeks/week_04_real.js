@@ -13,6 +13,12 @@ const week4RealData = {
   
   topic: "Personality - Emotions and Likes",
   topic_vi: "Tính cách - Cảm xúc và Sở thích",
+
+  chunk_focus: [
+    "feel happy",
+    "magic trick",
+    "every day"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Express emotions and preferences using 'I like + V-ing' naturally.",

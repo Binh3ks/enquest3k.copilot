@@ -29,7 +29,12 @@ const week6RealData = {
     "in the room",
     "under the desk",
     "look under",
-    "big desk"
+    "big desk",
+    "hide and seek",
+    "one person",
+    "Some children",
+    "on the floor",
+    "a little"
   ],
   
   // === KEY LEARNING OUTCOME ===

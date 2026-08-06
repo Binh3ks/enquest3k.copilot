@@ -22,7 +22,12 @@ const week24RealData = {
     "At school",
     "excited because",
     "there was",
-    "special visitor"
+    "special visitor",
+    "Every day",
+    "many different",
+    "hearing a loud noise",
+    "at night",
+    "heart beats fast"
   ],
   theme: "Emotions, feelings, was/were + adjective, scared, excited, tired, relieved, cheerful",
 

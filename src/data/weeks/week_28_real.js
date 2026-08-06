@@ -21,12 +21,26 @@ const week28RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-        "fell asleep",
+    "fell asleep",
     "kept going",
     "was proud",
     "in the end",
     "every step",
-    "waved back"
+    "waved back",
+    "There are",
+    "one place",
+    "every day",
+    "at once",
+    "popular vehicle",
+    "every morning",
+    "longer journeys",
+    "carry hundreds of passengers",
+    "high-speed trains",
+    "kilometres per hour",
+    "without your own vehicle",
+    "perfect choice",
+    "Slow and steady wins the race",
+    "just like"
   ],
   target_vocab: [
     { word: "tortoise", pronunciation: "/ˈtɔːtəs/", definition_vi: "con rùa", definition_en: "a slow-moving reptile with a hard shell that lives on land" },

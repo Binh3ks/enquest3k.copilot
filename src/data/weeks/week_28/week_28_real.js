@@ -35,7 +35,12 @@ const week28RealData = {
     "got into",
     "old bicycle",
     "bus stop",
-    "yellow taxi"
+    "yellow taxi",
+    "There are",
+    "one place",
+    "every day",
+    "at once",
+    "popular vehicle"
   ],
   target_vocab: [
     { word: "tortoise", pronunciation: "/ˈtɔːtəs/", definition_vi: "con rùa", definition_en: "a slow-moving reptile with a hard shell that lives on land" },

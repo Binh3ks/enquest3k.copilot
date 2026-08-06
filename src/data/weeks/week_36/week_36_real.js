@@ -34,7 +34,12 @@ const week_36RealData = {
     "sea plants",
     "came from",
     "ancient ships",
-    "hundreds of years ago"
+    "hundreds of years ago",
+    "changed the world",
+    "went on",
+    "find new",
+    "saw amazing",
+    "made great"
   ],
 
   target_vocab: [

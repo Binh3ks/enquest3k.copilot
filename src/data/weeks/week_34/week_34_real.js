@@ -35,7 +35,12 @@ const week34RealData = {
     "ant went",
     "every day",
     "gathered seeds",
-    "stored food"
+    "stored food",
+    "Ant and the Grasshopper",
+    "in the world",
+    "animal characters",
+    "hard-working insects",
+    "ancient Greece"
   ],
 
   target_vocab: [

@@ -22,7 +22,12 @@ const week18RealData = {
     "writing on the board",
     "eating a carrot",
     "turns to the camera",
-    "what is happening"
+    "what is happening",
+    "tv screen",
+    "in the world",
+    "in front of",
+    "live broadcast",
+    "so far"
   ],
   theme: "Being a live reporter and describing scenes using am/is/are + verb-ing",
 

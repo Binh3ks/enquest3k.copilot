@@ -13,6 +13,25 @@ const week8RealData = {
   
   topic: "Classroom items — Counting and stating what exists (plural)",
   topic_vi: "Đồ dùng lớp học — Đếm và nêu sự tồn tại (số nhiều)",
+
+  chunk_focus: [
+    "There are",
+    "there are",
+    "30 students",
+    "soft lighting",
+    "neat rows",
+    "at the front",
+    "one thing",
+    "to learn",
+    "many things",
+    "sit on",
+    "There is",
+    "on the wall",
+    "writes on",
+    "On the wall",
+    "on the shelves",
+    "in the world"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Count and state what exists using 'There are...' for plural items",

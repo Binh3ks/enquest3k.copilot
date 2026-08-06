@@ -22,7 +22,12 @@ const week23RealData = {
     "green paper",
     "glued the leaves",
     "pressed down",
-    "held up"
+    "held up",
+    "The answer lies in",
+    "chemical substance",
+    "red pigment",
+    "ground up",
+    "cave walls"
   ],
   theme: "Art class activities, painting, folding, cutting, creating masterpieces",
 

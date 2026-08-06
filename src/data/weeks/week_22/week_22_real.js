@@ -22,7 +22,12 @@ const week22RealData = {
     "wrote her final report",
     "in Hoi An",
     "Every clue",
-    "solved the case"
+    "solved the case",
+    "solve a case",
+    "step by step",
+    "look for",
+    "every clue",
+    "at a time"
   ],
   theme: "Time detective interviews, past clues, yesterday actions",
 

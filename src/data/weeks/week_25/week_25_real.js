@@ -34,7 +34,12 @@ const week25RealData = {
     "At the very end",
     "cut the sandwich",
     "put it on",
-    "dinner plate"
+    "dinner plate",
+    "followed the steps",
+    "make a sandwich",
+    "every single day",
+    "a set of",
+    "specific order"
   ],
   target_vocab: [
     { word: "bread", pronunciation: "/brɛd/", definition_vi: "bánh mì", definition_en: "a food made from flour, water and yeast, baked in an oven" },

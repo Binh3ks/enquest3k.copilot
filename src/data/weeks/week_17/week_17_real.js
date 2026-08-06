@@ -22,7 +22,12 @@ const week17RealData = {
     "cools down",
     "After school",
     "take off my coat",
-    "takes off her hat"
+    "takes off her hat",
+    "Some children",
+    "water cycle",
+    "turns into",
+    "invisible vapor",
+    "it is very cold"
   ],
   theme: "Weather conditions and appropriate clothing choices",
 

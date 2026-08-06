@@ -41,7 +41,12 @@ const week33RealData = {
     "everyone must",
     "At home",
     "follow safety rules",
-    "Every year"
+    "Every year",
+    "get hurt",
+    "paying attention",
+    "what to do",
+    "Stay calm",
+    "Take a deep breath"
   ],
 
   target_vocab: [

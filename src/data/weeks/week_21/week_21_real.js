@@ -22,7 +22,12 @@ const week21RealData = {
     "shouted with excitement",
     "helped my mother",
     "cleaned my room",
-    "organised my books"
+    "organised my books",
+    "simple tool",
+    "field journals",
+    "hundreds of years",
+    "young scientist",
+    "looked at"
   ],
   theme: "Daily diary, yesterday activities, time detective agency",
 

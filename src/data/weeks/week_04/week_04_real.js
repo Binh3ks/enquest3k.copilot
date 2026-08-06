@@ -29,7 +29,9 @@ const week4RealData = {
     "feel creative",
     "My mom",
     "friendly and funny",
-    "makes me laugh"
+    "makes me laugh",
+    "magic trick",
+    "every day"
   ],
   
   // === KEY LEARNING OUTCOME ===

@@ -29,7 +29,12 @@ const week7RealData = {
     "pencil case",
     "for everyone",
     "very happy",
-    "school supplies"
+    "school supplies",
+    "around the world",
+    "yellow pencil",
+    "School supplies",
+    "draw pictures",
+    "cut shapes"
   ],
   
   // === KEY LEARNING OUTCOME ===

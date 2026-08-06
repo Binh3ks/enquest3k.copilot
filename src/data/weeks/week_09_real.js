@@ -13,6 +13,22 @@ const week9RealData = {
   
   topic: "Sensory description of a city",
   topic_vi: "Miêu tả cảm giác về thành phố",
+
+  chunk_focus: [
+    "Around the world",
+    "lots of",
+    "tall buildings",
+    "very high",
+    "Modern cities",
+    "busy streets",
+    "carry passengers",
+    "during rush hour",
+    "many people",
+    "go to work",
+    "busy city",
+    "Car horns",
+    "tallest buildings"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Use adjectives before nouns to describe city features",

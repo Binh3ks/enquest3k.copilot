@@ -29,7 +29,12 @@ const week8RealData = {
     "on each desk",
     "on the wall",
     "so many",
-    "big classroom"
+    "big classroom",
+    "there are",
+    "soft lighting",
+    "neat rows",
+    "at the front",
+    "one thing"
   ],
   
   // === KEY LEARNING OUTCOME ===

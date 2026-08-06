@@ -31,7 +31,15 @@ const week_36RealData = {
     "began to plan",
     "took our breath away",
     "spoke many languages",
-    "inspired many adventurers"
+    "inspired many adventurers",
+    "changed the world",
+    "went on",
+    "find new",
+    "saw amazing",
+    "made great",
+    "rode across",
+    "met merchants",
+    "spoke to"
   ],
 
   target_vocab: [

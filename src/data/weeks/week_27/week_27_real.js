@@ -35,7 +35,12 @@ const week27RealData = {
     "warm sunlight",
     "germinate into",
     "plants need",
-    "three things"
+    "three things",
+    "grow from",
+    "tiny seed",
+    "good soil",
+    "tiny sprout",
+    "absorbs water"
   ],
   target_vocab: [
     { word: "seed", pronunciation: "/siːd/", definition_vi: "hạt giống", definition_en: "a small part of a plant from which a new plant grows when placed in soil" },

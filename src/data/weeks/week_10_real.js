@@ -13,6 +13,20 @@ const week10RealData = {
   
   topic: "Contrast between City and Farm",
   topic_vi: "Đối lập giữa Thành phố và Nông trại",
+
+  chunk_focus: [
+    "look different",
+    "green fields",
+    "Farm life",
+    "wake up early",
+    "feed the animals",
+    "collect eggs",
+    "in the countryside",
+    "clean and fresh",
+    "work hard",
+    "grow food",
+    "for everyone"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Make contrasting statements using 'but'",

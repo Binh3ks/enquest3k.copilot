@@ -29,7 +29,12 @@ const week5RealData = {
     "There is",
     "big sofa",
     "shelves with books",
-    "In the kitchen"
+    "In the kitchen",
+    "around the world",
+    "in the living room",
+    "whole family",
+    "at night",
+    "sit on"
   ],
   
   // === KEY LEARNING OUTCOME ===

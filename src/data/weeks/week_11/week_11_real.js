@@ -31,7 +31,12 @@ export const week11RealData = {
     "buy food",
     "slide down",
     "On Sunday",
-    "many animals"
+    "many animals",
+    "around the world",
+    "on weekends",
+    "favorite place",
+    "have fun",
+    "green grass"
   ],
   
   learning_outcome: "Identify and talk about fun weekend places using 'at the park'.",

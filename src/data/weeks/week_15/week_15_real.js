@@ -29,7 +29,12 @@ const week15RealData = {
     "jogging around the path",
     "some children",
     "playing with water",
-    "laughing loudly"
+    "laughing loudly",
+    "Central Park",
+    "flying kites",
+    "having picnics",
+    "Hyde Park",
+    "every morning"
   ],
   
   // === KEY LEARNING OUTCOME ===

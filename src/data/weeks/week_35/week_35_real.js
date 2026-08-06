@@ -35,7 +35,12 @@ const week35RealData = {
     "animal homes",
     "Throwing away plastic",
     "Climate change",
-    "serious problem"
+    "serious problem",
+    "for thousands of years",
+    "Greenhouse gases",
+    "burn fossil fuels",
+    "every day",
+    "As a result"
   ],
 
   target_vocab: [

@@ -29,7 +29,12 @@ const week9RealData = {
     "bus stop",
     "yellow bus",
     "stops near",
-    "Many people get"
+    "Many people get",
+    "Around the world",
+    "lots of",
+    "tall buildings",
+    "Modern cities",
+    "busy streets"
   ],
   
   // === KEY LEARNING OUTCOME ===

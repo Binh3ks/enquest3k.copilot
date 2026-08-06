@@ -35,7 +35,12 @@ const week32RealData = {
     "put the letter",
     "stuck a stamp",
     "helped dad",
-    "cut the long grass"
+    "cut the long grass",
+    "around the world",
+    "special day",
+    "work together",
+    "at home",
+    "wake up"
   ],
   target_vocab: [
     { word: "tidy", pronunciation: "/ˈtaɪdi/", definition_vi: "gọn gàng, ngăn nắp", definition_en: "neat and in good order; arranged carefully" },

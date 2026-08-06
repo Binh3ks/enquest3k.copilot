@@ -35,7 +35,12 @@ const week30RealData = {
     "wooden bridge",
     "crossed the river",
     "build this bridge",
-    "having lunch"
+    "having lunch",
+    "many people",
+    "natural world",
+    "saying a single word",
+    "cares for",
+    "makes sure"
   ],
   target_vocab: [
     { word: "picnic", pronunciation: "/ˈpɪknɪk/", definition_vi: "buổi dã ngoại", definition_en: "a meal eaten outdoors, usually in a park or countryside" },

@@ -31,7 +31,12 @@ export const week1RealData = {
     "My teacher",
     "very kind and patient",
     "learning new things",
-    "studying every day"
+    "studying every day",
+    "learn about",
+    "look at",
+    "tiny insects",
+    "observe very small things",
+    "write down"
   ],
   
   learning_outcome: "Say and write sentences introducing name/age naturally.",

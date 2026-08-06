@@ -29,7 +29,12 @@ const week10RealData = {
     "very busy",
     "countryside is peaceful",
     "Next time",
-    "best place"
+    "best place",
+    "look different",
+    "green fields",
+    "Farm life",
+    "wake up early",
+    "feed the animals"
   ],
   
   // === KEY LEARNING OUTCOME ===
