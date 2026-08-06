@@ -433,10 +433,9 @@ export class NovaEngine {
         const studentMsgCount = studentMessages.length;
         const lastStudentMsg = studentMessages[studentMessages.length - 1]?.content || '';
 
-        // Opening narrative already contains phase_questions[0], so:
-        // studentMsgCount=1 → Q index 1 (first ANSWER → next question is phase_questions[1])
-        // studentMsgCount=2 → Q index 2, etc.
-        const targetIndex = Math.max(0, studentMsgCount);
+        // studentMsgCount=1 (first reply to opening greeting) → targetIndex = 0 (phase_questions[0])
+        // studentMsgCount=2 (reply to question 1) → targetIndex = 1 (phase_questions[1]), etc.
+        const targetIndex = Math.max(0, studentMsgCount - 1);
 
         let cumulative = 0;
         let nextQuestion = null;
@@ -470,8 +469,9 @@ export class NovaEngine {
         const msgLower = lastStudentMsg.toLowerCase();
         const hintWords = nextHints || [];
         const hasHintWord = hintWords.some(w => msgLower.includes(String(w).toLowerCase()));
-        // If student asks question back OR answer has no hint word and is short+generic → off-topic
-        const isVagueAnswer = lastStudentMsg.length < 15 && !hasHintWord;
+        const isAffirmative = /^(yes|yeah|sure|ok|yep|ready|i want|let's go|course|please|okay)\b/i.test(msgLower.trim());
+        // If student asks question back OR answer is not affirmative, has no hint word, and is short+generic → off-topic
+        const isVagueAnswer = !isAffirmative && lastStudentMsg.length < 15 && !hasHintWord;
         const studentAskedBack = isStudentQuestion(lastStudentMsg);
         const isOffTopic = studentAskedBack || isVagueAnswer;
         if (isOffTopic) {
