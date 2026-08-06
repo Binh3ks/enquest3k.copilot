@@ -232,14 +232,13 @@ const FreeTalkTab = () => {
   // Initialize NovaEngine when component mounts or week changes
   useEffect(() => {
     const initNovaEngine = async () => {
-      const weekData = await getCurrentWeekData(currentWeek || 'week-1');
       const userProfile = {
         name: user?.display_name || user?.name || user?.username || 'Student',
         age: user?.age || 8
       };
       
-      novaEngineRef.current = new NovaEngine(weekData, userProfile);
-      console.log('🧠 NovaEngine initialized for FreeTalkTab, weekNumber:', weekNumberRef.current);
+      novaEngineRef.current = new NovaEngine(weekRealData, userProfile);
+      console.log('🧠 NovaEngine initialized for FreeTalkTab with weekRealData:', weekRealData?.title);
       
       // 🔥 AFTER NovaEngine is ready, initialize conversation
       if (!initialized && !initializingRef.current) {

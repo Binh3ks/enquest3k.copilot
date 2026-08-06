@@ -156,18 +156,17 @@ const StoryMissionTab = () => {
   // Initialize NovaEngine when component mounts or week changes
   useEffect(() => {
     const initNovaEngine = async () => {
-      const weekData = await getCurrentWeekData(currentWeek || 'week-1');
       const userProfile = {
-        name: user?.name || 'Student',
+        name: user?.display_name || user?.name || user?.username || 'Student',
         age: user?.age || 8
       };
       
-      novaEngineRef.current = new NovaEngine(weekData, userProfile);
-      console.log('🧠 NovaEngine initialized for StoryMissionTab');
+      novaEngineRef.current = new NovaEngine(weekRealData, userProfile);
+      console.log('🧠 NovaEngine initialized for StoryMissionTab with weekRealData:', weekRealData?.title);
     };
     
     initNovaEngine();
-  }, [currentWeek, user]);
+  }, [currentWeek, user, weekRealData]);
 
   // Auto-scroll to bottom
   useEffect(() => {
