@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
+  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
+  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Comparison Bar Model: Journey Duration</text>
+  
+  <!-- Bar 1: Marco Polo (24 years) -->
+  <text x="140" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="end">Marco Polo:</text>
+  <rect x="150" y="50" width="400" height="45" fill="#3b82f6" rx="6" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="350" y="78" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">24 years</text>
+
+  <!-- Bar 2: Marco Jr (8 years) -->
+  <text x="140" y="130" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="end">Marco Jr:</text>
+  <rect x="150" y="110" width="133" height="45" fill="#10b981" rx="6" stroke="#047857" stroke-width="2"/>
+  <text x="216" y="138" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">8 years</text>
+
+  <!-- Difference Bracket -->
+  <rect x="285" y="110" width="265" height="45" fill="none" rx="6" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="417" y="138" font-family="sans-serif" font-size="16" font-weight="extrabold" fill="#ef4444" text-anchor="middle">? years more</text>
+
+  <!-- Equation Hint Bottom -->
+  <text x="300" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 24 - 8 = ?</text>
+</svg>

@@ -143,7 +143,17 @@ Every forced split MUST result in a syntactically digestible chunk:
 
 **To prevent stale dynamic import 404s and browser HTTP cache sticking across redeployments:**
 1. **Strict Chunk Regex**: `chunkFileNames` in `vite.config.js` MUST use strict regex matching (`/\/week_(\d+)\/index\.js$/i`) so backup folders (e.g. `week_16_BACKUP/`) do not cause chunk name collisions.
-2. **Content Hash Preservation**: Dynamic week chunks MUST include `-[hash].js` in their output filename (`assets/week_XX_index-[hash].js`). This forces Cloudflare Edge CDN and browser caches to invalidate instantly whenever week content is updated.
+---
+
+## Rule 10: SINGAPORE MATH BAR MODEL STANDARDS (MANDATORY)
+
+**All problems in `singapore_math.js` MUST include visual Bar Model representations:**
+1. **Mandatory Bar Model Image (`bar_model`)**: Every problem MUST have a corresponding SVG diagram in `public/images/weekXX/barmodel_wXX_adv_pY_v1.svg` (or `.png`).
+2. **Standard Model Types**:
+   - **Part-Whole Model (`type: "part_whole"`)**: Top total bracket bar + partitioned lower bars showing parts and unknown `?`.
+   - **Comparison Model (`type: "comparison"`)**: Two stacked horizontal bars comparing quantities with a red dashed difference bracket `?`.
+   - **Equal Groups Model (`type: "groups"`)**: Multiple equal-sized block bars representing multiplication/division groups.
+3. **Graceful Fallback**: If an image is missing, `SingaporeMathDisplay.jsx` MUST reset `imgFailed` on problem switches and render step-by-step mathematical reasoning.
 
 ---
 

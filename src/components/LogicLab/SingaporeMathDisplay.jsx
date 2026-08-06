@@ -49,7 +49,8 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningM
     setShowHint(false);
     setAttemptCount(0);
     setErrorCount(0);
-  }, [weekNumber, learningMode]);
+    setImgFailed(false);
+  }, [weekNumber, learningMode, currentProblem]);
 
   useEffect(() => {
     // Update parent progress
