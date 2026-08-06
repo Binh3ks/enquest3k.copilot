@@ -22,6 +22,7 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningM
   const [completed, setCompleted] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [imgFailed, setImgFailed] = useState(false);
+  const [imgSrc, setImgSrc] = useState(null);
   // Retry / error tracking per question
   const [attemptCount, setAttemptCount] = useState(0);
   const [errorCount, setErrorCount] = useState(0);
@@ -50,6 +51,7 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningM
     setAttemptCount(0);
     setErrorCount(0);
     setImgFailed(false);
+    setImgSrc(null);
   }, [weekNumber, learningMode, currentProblem]);
 
   useEffect(() => {
@@ -271,10 +273,16 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningM
             <>
               {!imgFailed ? (
                 <img
-                  src={getImageUrl(problem.bar_model)}
+                  src={imgSrc || getImageUrl(problem.bar_model)}
                   alt="Bar Model Diagram"
-                  className="w-full max-w-md mx-auto"
-                  onError={() => setImgFailed(true)}
+                  className="w-full max-w-md mx-auto rounded-lg shadow-sm border border-blue-100"
+                  onError={() => {
+                    if (!imgSrc && problem.bar_model) {
+                      setImgSrc(problem.bar_model);
+                    } else {
+                      setImgFailed(true);
+                    }
+                  }}
                 />
               ) : (
                 <div className="text-center text-gray-500 text-sm mt-2">
