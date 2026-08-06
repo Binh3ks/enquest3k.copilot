@@ -433,6 +433,26 @@ export class NovaEngine {
         const studentMsgCount = studentMessages.length;
         const lastStudentMsg = studentMessages[studentMessages.length - 1]?.content || '';
 
+        // ⚡ 0ms INSTANT OPENING: Return opening_narrative immediately without LLM network call
+        if (studentMsgCount === 0 || contextParams.isOpeningTurn || !lastStudentMsg) {
+          const openingText = currentMission.opening_narrative || currentMission.nova_greeting;
+          if (openingText) {
+            console.log('⚡ 0ms INSTANT OPENING NARRATIVE:', openingText);
+            return {
+              skipAI: true,
+              directResponse: {
+                ai_response: openingText,
+                suggested_hints: currentMission.default_hints || ['yes'],
+                hints: currentMission.default_hints || ['yes'],
+                mission_status: 'started',
+                ack: '',
+                recast: '',
+                question: openingText
+              }
+            };
+          }
+        }
+
         // studentMsgCount=1 (first reply to opening greeting) → targetIndex = 0 (phase_questions[0])
         // studentMsgCount=2 (reply to question 1) → targetIndex = 1 (phase_questions[1]), etc.
         const targetIndex = Math.max(0, studentMsgCount - 1);
@@ -461,23 +481,16 @@ export class NovaEngine {
         context.nextQuestionHints = nextHints;
         console.log(`🎯 Pre-computed nextQuestion (student turn ${studentMsgCount}):`, nextQuestion?.slice(0, 90));
 
-        // 🃏 OFF-TOPIC DETECTION: Student asked question back or went off-topic?
+        // 🃏 OFF-TOPIC DETECTION: Student asked question back?
         // → Don't use Card Mode; let LLM handle naturally with soft bridge prompt.
-        // Detects: student asks AI a question, or answer is vague/off-topic.
+        // NOTE: Short 1-3 word student answers ("the captain", "camping") are 100% ON-TOPIC for kids!
         const isStudentQuestion = (msg) => /[^.!?]\?$/.test(msg.trim());
-        const topicHintWords = (nextHints || []).join(' ').toLowerCase();
-        const msgLower = lastStudentMsg.toLowerCase();
-        const hintWords = nextHints || [];
-        const hasHintWord = hintWords.some(w => msgLower.includes(String(w).toLowerCase()));
-        const isAffirmative = /^(yes|yeah|sure|ok|yep|ready|i want|let's go|course|please|okay)\b/i.test(msgLower.trim());
-        // If student asks question back OR answer is not affirmative, has no hint word, and is short+generic → off-topic
-        const isVagueAnswer = !isAffirmative && lastStudentMsg.length < 15 && !hasHintWord;
         const studentAskedBack = isStudentQuestion(lastStudentMsg);
-        const isOffTopic = studentAskedBack || isVagueAnswer;
+        const isOffTopic = studentAskedBack;
         if (isOffTopic) {
           context.storySoftPrompt = true;
           context.storyTargetQuestion = nextQuestion;
-          console.log(`🌉 Soft Prompt: studentAskedBack=${studentAskedBack}, vague=${isVagueAnswer}`);
+          console.log(`🌉 Soft Prompt: studentAskedBack=${studentAskedBack}`);
         }
 
         // 🃏 CARD MODE: Skip AI entirely — deliver pre-computed question + JS-generated ACK
