@@ -118,8 +118,15 @@ function isSparkOffTopic(message, card) {
 
 }
 
-function getMaxTurnsForWeek(weekNum) {
+function getMaxTurnsForWeek(weekNum, isRetell = false) {
   const w = Number(weekNum) || 1;
+  if (isRetell) {
+    if (w <= 14) return 8;
+    if (w <= 28) return 10;
+    if (w <= 42) return 12;
+    return 14;
+  }
+  // Personal Application (Mission 3 & Free Talk)
   if (w <= 14) return 4;
   if (w <= 28) return 6;
   if (w <= 42) return 8;
