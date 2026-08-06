@@ -108,11 +108,11 @@ const week35RealData = {
           focus: "Describing what makes our planet beautiful using modal verbs",
           goal: "Student describes Earth's features using must/should/can",
           phase_questions: [
-            "What does our planet look like? That sounds wonderful! Say: Our planet has blue oceans, or Our planet has green forests, or Our planet has high mountains",
-            "Why must we protect our planet? That is so important! Say: We must protect it because it is beautiful, or We must protect it because it gives us life",
-            "What should we do to keep oceans clean? Brilliant idea! Say: We should not throw plastic in oceans, or We should keep water clean",
+            "What does our planet look like? Say: Our planet has blue oceans, or Our planet has green forests, or Our planet has high mountains",
+            "Why must we protect our planet? Say: We must protect it because it is beautiful, or We must protect it because it gives us life",
+            "What should we do to keep oceans clean? Say: We should not throw plastic in oceans, or We should keep water clean",
             "Use MUST to talk about protecting forests! Say: We must protect our forests, or We must not cut down all trees",
-            "What can we do to help mountains stay beautiful? Excellent thinking! Say: We can plant more trees, or We can not litter"
+            "What can we do to help mountains stay beautiful? Say: We can plant more trees, or We can not litter"
           ]
         },
         {
@@ -122,9 +122,9 @@ const week35RealData = {
           focus: "Understanding pollution and climate change with empathy",
           goal: "Student describes threats using modal verbs with concern",
           phase_questions: [
-            "What is happening to our planet? That sounds worrying! Say: The planet is getting warmer, or Climate change is happening, or Pollution is increasing",
-            "What are factories doing? That is not good! Say: Factories produce harmful gases, or Factories pollute the air",
-            "What happens when we cut down trees? Poor animals! Say: Animals lose their homes, or Forests disappear",
+            "What is happening to our planet? Say: The planet is getting warmer, or Climate change is happening, or Pollution is increasing",
+            "What are factories doing? Say: Factories produce harmful gases, or Factories pollute the air",
+            "What happens when we cut down trees? Say: Animals lose their homes, or Forests disappear",
             "Use SHOULD to talk about stopping pollution! Say: We should stop producing harmful gases, or We should reduce pollution"
           ]
         },
@@ -135,10 +135,10 @@ const week35RealData = {
           focus: "Empowerment through actions using modal verbs",
           goal: "Student suggests solutions using must/should/can",
           phase_questions: [
-            "What can we do to make a difference? That is brilliant! Say: We can reduce, reuse, and recycle, or We can plant more trees",
-            "What must countries do together? Yes! Cooperation is key! Say: Countries must work together, or Countries must act now",
-            "How can solar power help? Smart thinking! Say: Solar power can replace fossil fuels, or Solar power is clean energy",
-            "What should you do at home? Personal action matters! Say: I should turn off lights, or I should recycle paper",
+            "What can we do to make a difference? Say: We can reduce, reuse, and recycle, or We can plant more trees",
+            "What must countries do together? Say: Countries must work together, or Countries must act now",
+            "How can solar power help? Say: Solar power can replace fossil fuels, or Solar power is clean energy",
+            "What should you do at home? Say: I should turn off lights, or I should recycle paper",
             "Finish this sentence: Together we can ___! Say: Together we can save our planet, or Together we can make a difference"
           ]
         }
@@ -169,9 +169,9 @@ const week35RealData = {
           focus: "Temperature rise and its effects",
           goal: "Student describes warming using modal verbs",
           phase_questions: [
-            "Why is Earth getting warmer? That is an important question! Say: Because of pollution, or Because factories produce harmful gases",
-            "What must we do about warming? Yes! Action is needed! Say: We must reduce emissions, or We must stop using fossil fuels",
-            "What can renewable energy do? Brilliant! Say: Renewable energy can replace fossil fuels, or Solar power can help",
+            "Why is Earth getting warmer? Say: Because of pollution, or Because factories produce harmful gases",
+            "What must we do about warming? Say: We must reduce emissions, or We must stop using fossil fuels",
+            "What can renewable energy do? Say: Renewable energy can replace fossil fuels, or Solar power can help",
             "Use SHOULD to give advice about warming! Say: We should use less energy, or We should turn off lights"
           ]
         },
@@ -184,7 +184,7 @@ const week35RealData = {
           phase_questions: [
             "What is happening to polar ice? That is worrying! Say: Polar ice is melting, or Ice is disappearing",
             "What happens when ice melts? Yes! Sea levels rise! Say: Sea levels are rising, or Oceans are getting higher",
-            "What must coastal cities do? Important thinking! Say: Cities must prepare for rising seas, or Cities must build walls",
+            "What must coastal cities do? Say: Cities must prepare for rising seas, or Cities must build walls",
             "Use CAN to talk about helping polar animals! Say: We can protect polar bears, or We can reduce warming to help animals"
           ]
         }
@@ -265,7 +265,7 @@ const week35RealData = {
       frames: [
         {
           template: 'I always ___ to help the planet.',
-          follow_up_q: 'That is brilliant! Why do you do that? 🌱',
+          follow_up_q: 'Why do you do that? 🌱',
           hints: ['recycle', 'save water', 'plant trees', 'use less plastic', 'turn off lights']
         },
         {

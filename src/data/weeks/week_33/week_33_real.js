@@ -159,7 +159,7 @@ const week33RealData = {
           focus: "Accident verbs in context: ran, fell, hurt, bit",
           goal: "Student uses correct past forms to describe Sam's playground accident with empathy",
           phase_questions: [
-            "What happened when Sam ran on the playground? That sounds worrying! Say: Sam fell off the swings, or She ran too fast and fell down",
+            "What happened when Sam ran on the playground? Say: Sam fell off the swings, or She ran too fast and fell down",
             "What part of Sam's body hurt? Poor Sam! That must have been very painful! Say: Her elbow hurt a lot, or Sam hurt her elbow when she fell",
             "Did Sam bite her tongue too? Oh dear — more than one injury! Say: Yes, she bit her tongue when she fell, or No, Sam only hurt her elbow",
             "What did Sam do first when she fell? That is such a natural reaction! Say: She began crying, or Sam began to cry because it hurt",
