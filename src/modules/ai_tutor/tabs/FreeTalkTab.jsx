@@ -808,8 +808,9 @@ const FreeTalkTab = () => {
           // 💬 SPARK TALK OPENING: Use bridge + seed directly — no AI call needed.
           // Calling AI here caused Nova to interpret [SPARK_TALK_START] as a student message
           // and respond to it instead of asking the seed question.
-          const question = spark.seed_question || spark.text_en || spark.prompt_en || '';
-          const sparkOpeningText = spark.bridge ? `${spark.bridge} ${question}` : question;
+          const firstFramePrompt = (spark.frames && spark.frames.length > 0) ? spark.frames[0].prompt_en : null;
+          const seedQ = spark.seed_question || spark.text_en || spark.prompt_en || '';
+          const sparkOpeningText = firstFramePrompt || (spark.bridge ? `${spark.bridge} ${seedQ}` : seedQ);
 
           addMessage('freetalk', { role: 'assistant', content: sparkOpeningText, timestamp: Date.now() });
 
