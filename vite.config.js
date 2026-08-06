@@ -46,11 +46,14 @@ export default defineConfig({
         chunkFileNames: (chunkInfo) => {
           const facade = chunkInfo.facadeModuleId || '';
           if (facade.includes('weeks')) {
-            const match = facade.match(/week_(\d+)/i);
+            const match = facade.match(/\/week_(\d+)\/index\.js$/i);
             if (match) {
               const isEasy = facade.includes('weeks_easy');
-              const isReal = facade.includes('_real');
-              return `assets/week_${match[1]}${isEasy ? '_easy' : ''}${isReal ? '_real' : '_index'}-[hash].js`;
+              return `assets/week_${match[1].padStart(2, '0')}${isEasy ? '_easy' : ''}_index-[hash].js`;
+            }
+            const matchReal = facade.match(/\/week_(\d+)_real\.js$/i);
+            if (matchReal) {
+              return `assets/week_${matchReal[1].padStart(2, '0')}_real-[hash].js`;
             }
           }
           return 'assets/[name]-[hash].js';
