@@ -50,7 +50,7 @@ export default defineConfig({
             if (match) {
               const isEasy = facade.includes('weeks_easy');
               const isReal = facade.includes('_real');
-              return `assets/week_${match[1]}${isEasy ? '_easy' : ''}${isReal ? '_real' : '_index'}.js`;
+              return `assets/week_${match[1]}${isEasy ? '_easy' : ''}${isReal ? '_real' : '_index'}-[hash].js`;
             }
           }
           return 'assets/[name]-[hash].js';
