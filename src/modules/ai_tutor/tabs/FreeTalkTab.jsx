@@ -45,7 +45,7 @@ import week32RealData from '../../../data/weeks/week_32/week_32_real'; // Week 3
 import week33RealData from '../../../data/weeks/week_33/week_33_real'; // Week 33 syllabus - The Mistake Irregular Verbs 5 - The Busy Day Irregular Verbs 4
 import week34RealData from '../../../data/weeks/week_34/week_34_real'; // Week 34 syllabus - Storytelling Fable
 import week35RealData from '../../../data/weeks/week_35/week_35_real'; // Week 35 syllabus - Environmental Issues
-import week36RealData from '../../../data/weeks/week_36_real'; // Week 36 syllabus - Adventure Stories
+import week36RealData from '../../../data/weeks/week_36_real?v=10'; // Week 36 syllabus - Adventure Stories (CACHE BUST)
 import { useStationProgress } from '../../../hooks/useStationProgress'; // 🔥 Universal Progress System
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import { FREE_TALK_ACTIONS } from '../../../config/freeTalkConfig'; // 💬 CHAT ACTIONS
