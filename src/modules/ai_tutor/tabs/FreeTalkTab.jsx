@@ -140,7 +140,7 @@ function generateFollowUpFromTemplate(template) {
   if (theyCan) return `What amazing things can they do? 💪`;
   const iAdmire = t.match(/^I admire/i);
   if (iAdmire) return `Why do you admire them? Tell me! ⭐`;
-  return `Finish this sentence: "${template}" 😊`;
+  return `Tell me more! What else did you see or do on your adventure? 😊`;
 }
 
 // Strip emoji characters before sending to TTS engine

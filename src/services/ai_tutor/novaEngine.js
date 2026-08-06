@@ -505,6 +505,17 @@ export class NovaEngine {
             return '';
           }
           t = t.replace(/^yes,?\s+i can\b/gi, 'You can');  // "Yes, I can X" → "You can X"
+          t = t.replace(/\bwe drove\b/gi, 'You drove');
+          t = t.replace(/\bwe went\b/gi, 'You went');
+          t = t.replace(/\bwe saw\b/gi, 'You saw');
+          t = t.replace(/\bwe found\b/gi, 'You found');
+          t = t.replace(/\bwe took\b/gi, 'You took');
+          t = t.replace(/\bwe came\b/gi, 'You came');
+          t = t.replace(/\bwe gave\b/gi, 'You gave');
+          t = t.replace(/\bwe made\b/gi, 'You made');
+          t = t.replace(/\bwe rode\b/gi, 'You rode');
+          t = t.replace(/\bwe\b/gi, 'You');
+          t = t.replace(/\bour\b/gi, 'your');
           t = t.replace(/\bI can\b/gi, 'You can');
           t = t.replace(/\bI am\b/gi, 'You are');
           t = t.replace(/\bI'm\b/gi, "You're");

@@ -267,7 +267,7 @@ const week_36RealData = {
         name: "Nova - Adventure Guide",
         role: "A guide who encourages students to tell their own adventure stories"
       },
-      opening_narrative: "Now it is YOUR turn! Tell me about an adventure YOU went on. Where did you go? What did you see? What did you find? Use irregular verbs: went, saw, found, took, came, gave, made. I cannot wait to hear your story!",
+      opening_narrative: "Now it is YOUR turn! Tell me about an adventure YOU went on. Where did you go? What did you see? Say: I went on a trip to the beach, or We went on a camping trip",
       story_arc: [
         {
           phase: "where_you_went",
@@ -357,21 +357,63 @@ const week_36RealData = {
       id: 1,
       title: "My Greatest Adventure",
       emoji: "🌋",
-      seed_question: "What adventures have you had in your life?",
+      seed_question: "Tell me about an adventure or trip you went on in your life! Where did you go?",
       text_en: "What adventures have you had?",
       text_vi: "Bạn đã có những cuộc phiêu lưu nào?",
-      hint_en: "I went on... I saw...",
-      hint_vi: "Tôi đi... Tôi thấy..."
+      hint_en: "I went on a trip to the beach... I went camping in the mountains...",
+      hint_vi: "Tôi đi bãi biển... Tôi đi cắm trại ở núi...",
+      bridge: "That sounds awesome!",
+      frames: [
+        {
+          frame: 1,
+          prompt_en: "That sounds exciting! How did you travel on your trip? Say: We went by car, or We rode bicycles",
+          hint_en: "We went by car... We rode bicycles...",
+          target_vocab: ["went", "by car", "rode", "bicycles"]
+        },
+        {
+          frame: 2,
+          prompt_en: "Fun way to travel! What amazing things did you see or do there? Say: I saw beautiful mountains, or We found a campfire",
+          hint_en: "I saw beautiful mountains... We found a campfire...",
+          target_vocab: ["saw", "beautiful", "mountains", "found", "campfire"]
+        },
+        {
+          frame: 3,
+          prompt_en: "What great memories! Who did you share this trip with? Say: I went with my family, or I went with my best friends",
+          hint_en: "I went with my family... I went with my best friends...",
+          target_vocab: ["went", "family", "friends"]
+        }
+      ]
     },
     {
       id: 2,
       title: "Places to Explore",
       emoji: "🧭",
-      seed_question: "Where would you like to explore in the world?",
+      seed_question: "If you could explore anywhere in the world, where would you go?",
       text_en: "Where would you like to explore?",
       text_vi: "Bạn muốn khám phá ở đâu?",
-      hint_en: "I would go to... I would find...",
-      hint_vi: "Tôi sẽ đến... Tôi sẽ tìm..."
+      hint_en: "I would explore the deep ocean... I would explore the jungle...",
+      hint_vi: "Tôi muốn khám phá đại dương... Tôi muốn khám phá rừng rậm...",
+      bridge: "Fascinating choice!",
+      frames: [
+        {
+          frame: 1,
+          prompt_en: "Great destination! Why would you like to explore there? Say: Because I want to find hidden treasure, or Because I want to see wild animals",
+          hint_en: "Because I want to find hidden treasure... Because I want to see wild animals...",
+          target_vocab: ["find", "hidden", "treasure", "wild", "animals"]
+        },
+        {
+          frame: 2,
+          prompt_en: "Awesome! What special gear would you take with you? Say: I would take a camera and compass, or I would take a flashlight and backpack",
+          hint_en: "I would take a camera and compass... I would take a flashlight...",
+          target_vocab: ["take", "camera", "compass", "flashlight", "backpack"]
+        },
+        {
+          frame: 3,
+          prompt_en: "Exciting! Who would you bring as your exploration partner? Say: I would bring my best friend, or I would go with a guide",
+          hint_en: "I would bring my best friend... I would go with a guide...",
+          target_vocab: ["bring", "best friend", "go", "guide"]
+        }
+      ]
     }
   ]
 };
