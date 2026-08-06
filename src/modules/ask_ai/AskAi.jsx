@@ -124,27 +124,37 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
     // Track response time (reflex — seconds from prompt shown to first submission)
     const responseTimeSec = Number(((Date.now() - promptShownRef.current) / 1000).toFixed(1));
 
-    const result = analyzeAnswer(inputVal, currentPrompt.answer, 'strict'); 
+    // Construct target answer fallback if currentPrompt.answer is missing
+    let targetAnswer = currentPrompt.answer;
+    if (!targetAnswer && currentPrompt.question_frame && (currentPrompt.correctWord || selectedWord)) {
+      targetAnswer = currentPrompt.question_frame.replace('___', currentPrompt.correctWord || selectedWord);
+    }
+    if (!targetAnswer) {
+      targetAnswer = inputVal;
+    }
+
+    // Evaluate answer against target
+    const result = analyzeAnswer(inputVal, targetAnswer, 'speech'); 
     
     let msg = "";
     let isPass = false;
 
-    if (result.status === 'perfect') {
+    if (result.isCorrect || result.status === 'perfect' || result.status === 'good') {
         msg = isVi ? "Tuyệt vời! Chính xác." : "Perfect!";
         isPass = true;
     } else if (result.status === 'warning') {
         msg = result.message;
         isPass = false; 
     } else {
-        msg = isVi ? "Chưa đúng mẫu câu." : "Incorrect structure.";
+        msg = isVi ? "Chưa đúng mẫu câu. Hãy kiểm tra lại!" : "Incorrect structure or spelling.";
         isPass = false;
     }
 
     setFeedback({ ...result, message: msg, isPass });
     
     if (isPass) {
-        speakText("Excellent!");
-        const newHistory = [...history, { q: currentPrompt.context_en, a: inputVal, responseTime: responseTimeSec }];
+        speakText(isVi ? "Giỏi lắm!" : "Excellent!");
+        const newHistory = [...history, { q: currentPrompt.context_en || currentPrompt.nova_says, a: inputVal, responseTime: responseTimeSec }];
         setHistory(newHistory);
         setResponseTimes(prev => [...prev, responseTimeSec]);
 

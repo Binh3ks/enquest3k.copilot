@@ -1,6 +1,6 @@
 // WEEK 36: Adventure Stories (Irregular Verbs)
 // Ask AI Station — Advanced Mode
-// 100% Interactive Inquiry: Nova gives a scenario cue inviting the student to ask a Wh-question
+// 100% Interactive Inquiry with target answer validation
 
 export default {
   prompts: [
@@ -10,7 +10,8 @@ export default {
       context_en: "Ask Nova about Marco Polo's journey destination.",
       question_word_bank: ["Where did", "How long did", "When did", "Why did"],
       question_frame: "___ Marco Polo go on his journey?",
-      correctWord: "Where did"
+      correctWord: "Where did",
+      answer: "Where did Marco Polo go on his journey?"
     },
     {
       nova_says: "The ocean explorers discovered an ancient underwater secret inside the deep cave. Ask me what they found!",
@@ -18,7 +19,8 @@ export default {
       context_en: "Ask Nova what the explorers discovered in the cave.",
       question_word_bank: ["What did", "Where did", "Who did", "How did"],
       question_frame: "___ the explorers find in the cave?",
-      correctWord: "What did"
+      correctWord: "What did",
+      answer: "What did the explorers find in the cave?"
     },
     {
       nova_says: "Traders carried very valuable goods across the Silk Road between Asia and Europe. Ask me what they carried!",
@@ -26,7 +28,8 @@ export default {
       context_en: "Ask Nova what goods traders carried on the Silk Road.",
       question_word_bank: ["What did", "Where did", "When did", "Why did"],
       question_frame: "___ traders carry on the Silk Road?",
-      correctWord: "What did"
+      correctWord: "What did",
+      answer: "What did traders carry on the Silk Road?"
     },
     {
       nova_says: "Marco Polo encountered a famous, powerful ruler when he arrived in China. Ask me who he met!",
@@ -34,7 +37,8 @@ export default {
       context_en: "Ask Nova who Marco Polo met in China.",
       question_word_bank: ["Who did", "What did", "Where did", "When did"],
       question_frame: "___ Marco Polo meet in China?",
-      correctWord: "Who did"
+      correctWord: "Who did",
+      answer: "Who did Marco Polo meet in China?"
     },
     {
       nova_says: "Explorers did something special when they finally returned home from their journeys. Ask me what they did!",
@@ -42,7 +46,8 @@ export default {
       context_en: "Ask Nova what explorers did upon returning home.",
       question_word_bank: ["What did", "When did", "Why did", "How did"],
       question_frame: "___ explorers do when they came back?",
-      correctWord: "What did"
+      correctWord: "What did",
+      answer: "What did explorers do when they came back?"
     }
   ]
 };

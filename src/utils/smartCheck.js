@@ -27,7 +27,13 @@ export const analyzeAnswer = (userInput, correctAnswers, mode = 'strict', unit =
   let inputOriginal = userInput.toString().trim();
   inputOriginal = inputOriginal.replace(/\s+/g, ' '); 
 
-  let targets = Array.isArray(correctAnswers) ? correctAnswers.map(t => t.toString().trim()) : [correctAnswers.toString().trim()];
+  if (!correctAnswers) {
+    return { isCorrect: true, status: 'perfect', message: 'Chính xác!' };
+  }
+
+  let targets = Array.isArray(correctAnswers)
+    ? correctAnswers.filter(Boolean).map(t => t.toString().trim())
+    : [correctAnswers.toString().trim()];
 
   // --- MODE SPEECH (SpeechRecognition input — tolerant but word-accurate) ---
   // Philosophy: STT noise in short function words is OK. Wrong CONTENT words must fail.
