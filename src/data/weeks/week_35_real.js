@@ -40,7 +40,12 @@ const week35RealData = {
     "for thousands of years",
     "Greenhouse gases",
     "burn fossil fuels",
-    "every day"
+    "every day",
+    "Our planet",
+    "in danger",
+    "Many things",
+    "because of",
+    "a lot of"
   ],
 
   target_vocab: [

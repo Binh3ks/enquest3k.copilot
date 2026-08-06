@@ -27,7 +27,12 @@ const week23RealData = {
     "chemical substance",
     "red pigment",
     "ground up",
-    "cave walls"
+    "cave walls",
+    "clapped loudly",
+    "wonderful texture",
+    "years old",
+    "pigment colors",
+    "their work"
   ],
   theme: "Art class activities, painting, folding, cutting, creating masterpieces",
 

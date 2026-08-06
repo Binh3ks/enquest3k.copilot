@@ -34,7 +34,12 @@ const week15RealData = {
     "My dad",
     "My mom",
     "sitting on a bench",
-    "with my friends"
+    "with my friends",
+    "our class",
+    "beautiful park",
+    "very busy",
+    "Many people",
+    "enjoying their day"
   ],
   
   // === KEY LEARNING OUTCOME ===

@@ -27,7 +27,12 @@ const week16RealData = {
     "in motion",
     "Because of",
     "catch a ball",
-    "work together"
+    "work together",
+    "first soccer game",
+    "My mom",
+    "coming to watch",
+    "My dad",
+    "Look at"
   ],
   theme: "Sports actions and Present Continuous commentary",
 

@@ -32,7 +32,16 @@ export const week1RealData = {
     "microscope is more",
     "write in notebooks",
     "use rulers to",
-    "use thermometers to"
+    "use thermometers to",
+    "My name",
+    "new student",
+    "elementary school",
+    "Every morning",
+    "wake up early",
+    "get ready for school",
+    "story book",
+    "small notebook",
+    "my classroom"
   ],
   
   learning_outcome: "Say and write sentences introducing name/age naturally.",

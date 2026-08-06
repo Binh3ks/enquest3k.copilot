@@ -27,7 +27,12 @@ const week18RealData = {
     "right now",
     "At home",
     "listen to",
-    "It is so exciting"
+    "It is so exciting",
+    "his class",
+    "tv show",
+    "picks up",
+    "toy microphone",
+    "next to"
   ],
   theme: "Being a live reporter and describing scenes using am/is/are + verb-ing",
 

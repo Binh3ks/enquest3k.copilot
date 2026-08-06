@@ -27,7 +27,12 @@ const week23RealData = {
     "paint a picture",
     "give it color",
     "make new colors",
-    "smooth lines"
+    "smooth lines",
+    "art class",
+    "picked up her brush",
+    "dipped her brush",
+    "painted a picture",
+    "colored in"
   ],
   theme: "Art class activities, painting, folding, cutting, creating masterpieces",
 

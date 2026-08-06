@@ -24,7 +24,15 @@ const week19RealData = {
     "helps you grow",
     "slept a lot",
     "learned to read",
-    "grow strong"
+    "grow strong",
+    "cute baby",
+    "mom says",
+    "was round and",
+    "were very big",
+    "one year old",
+    "fast asleep",
+    "grandma says",
+    "years old"
   ],
   theme: "Childhood memories and past states",
 

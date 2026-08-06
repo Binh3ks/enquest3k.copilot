@@ -39,7 +39,12 @@ const week_36RealData = {
     "went on",
     "find new",
     "saw amazing",
-    "made great"
+    "made great",
+    "shone brightly",
+    "wrote down",
+    "took our breath away",
+    "gold compass",
+    "got lost at sea"
   ],
 
   target_vocab: [

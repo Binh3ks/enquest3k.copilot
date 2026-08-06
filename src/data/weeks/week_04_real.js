@@ -17,7 +17,29 @@ const week4RealData = {
   chunk_focus: [
     "feel happy",
     "magic trick",
-    "every day"
+    "every day",
+    "My name",
+    "happy jar",
+    "at home",
+    "Every day",
+    "happy things",
+    "playing with my dog",
+    "feel excited",
+    "reading a good book",
+    "feel calm",
+    "drawing colorful pictures",
+    "feel creative",
+    "My mom",
+    "friendly and funny",
+    "makes me laugh",
+    "remember all the happy moments",
+    "play with",
+    "every afternoon",
+    "draw pictures",
+    "read books",
+    "before bed",
+    "When I play",
+    "When I draw"
   ],
   
   // === KEY LEARNING OUTCOME ===

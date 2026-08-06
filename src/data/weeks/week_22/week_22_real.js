@@ -27,7 +27,12 @@ const week22RealData = {
     "step by step",
     "look for",
     "every clue",
-    "at a time"
+    "at a time",
+    "every answer",
+    "What happened",
+    "Little by little",
+    "full story",
+    "beautiful city"
   ],
   theme: "Time detective interviews, past clues, yesterday actions",
 

@@ -40,7 +40,12 @@ const week31RealData = {
     "made of",
     "made from",
     "for thousands of years",
-    "wooden shelf"
+    "wooden shelf",
+    "wood felt rough",
+    "soft cotton",
+    "cold metal",
+    "smelt sweet strawberries",
+    "a piece of"
   ],
   target_vocab: [
     { word: "forest", pronunciation: "/\u02c8f\u0252r\u026ast/", definition_vi: "khu rung", definition_en: "a large area of land covered with many trees" },

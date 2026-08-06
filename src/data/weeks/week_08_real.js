@@ -30,7 +30,16 @@ const week8RealData = {
     "writes on",
     "On the wall",
     "on the shelves",
-    "in the world"
+    "in the world",
+    "monday morning",
+    "at school",
+    "our class",
+    "on the floor",
+    "on the hooks",
+    "in neat rows",
+    "next to",
+    "pencil case",
+    "on each desk"
   ],
   
   // === KEY LEARNING OUTCOME ===

@@ -40,7 +40,12 @@ const week27RealData = {
     "tiny seed",
     "good soil",
     "tiny sprout",
-    "absorbs water"
+    "absorbs water",
+    "rich nutrients",
+    "Day Three",
+    "tiny crack",
+    "dark soil",
+    "Day Five"
   ],
   target_vocab: [
     { word: "seed", pronunciation: "/siːd/", definition_vi: "hạt giống", definition_en: "a small part of a plant from which a new plant grows when placed in soil" },

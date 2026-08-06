@@ -39,7 +39,12 @@ const week25RealData = {
     "grows up",
     "makes food",
     "exact order",
-    "jump ahead"
+    "jump ahead",
+    "saturday morning",
+    "make a jam sandwich",
+    "First of all",
+    "grabbed two slices",
+    "soft bread"
   ],
   target_vocab: [
     { word: "bread", pronunciation: "/brɛd/", definition_vi: "bánh mì", definition_en: "a food made from flour, water and yeast, baked in an oven" },

@@ -40,7 +40,12 @@ const week30RealData = {
     "natural world",
     "saying a single word",
     "cares for",
-    "makes sure"
+    "makes sure",
+    "big red",
+    "waved at",
+    "waved back",
+    "At the market",
+    "dad bought"
   ],
   target_vocab: [
     { word: "picnic", pronunciation: "/ˈpɪknɪk/", definition_vi: "buổi dã ngoại", definition_en: "a meal eaten outdoors, usually in a park or countryside" },

@@ -27,7 +27,12 @@ const week24RealData = {
     "a big part of",
     "every day",
     "feel excited",
-    "come from"
+    "come from",
+    "emotional day",
+    "her friends",
+    "In the morning",
+    "felt very worried",
+    "Her brother"
   ],
   theme: "Emotions, feelings, was/were + adjective, scared, excited, tired, relieved, cheerful",
 

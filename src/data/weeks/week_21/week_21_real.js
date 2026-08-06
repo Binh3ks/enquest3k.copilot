@@ -27,7 +27,12 @@ const week21RealData = {
     "field journals",
     "hundreds of years",
     "young scientist",
-    "looked at"
+    "looked at",
+    "washed my hands",
+    "before dinner",
+    "my favorite",
+    "looked at the stars",
+    "counted ten"
   ],
   theme: "Daily diary, yesterday activities, time detective agency",
 

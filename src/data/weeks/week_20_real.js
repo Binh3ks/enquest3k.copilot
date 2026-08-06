@@ -27,7 +27,12 @@ const week20RealData = {
     "old town",
     "went to the market",
     "buy food",
-    "There were"
+    "There were",
+    "Detective luna",
+    "One day",
+    "old map",
+    "years ago",
+    "There was"
   ],
   theme: "Old town, history, changes over time",
 

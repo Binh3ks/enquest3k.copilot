@@ -36,7 +36,12 @@ export const week1RealData = {
     "look at",
     "tiny insects",
     "observe very small things",
-    "write down"
+    "write down",
+    "After school",
+    "go to the library",
+    "young scientist",
+    "tools help scientists",
+    "make new discoveries"
   ],
   
   learning_outcome: "Say and write sentences introducing name/age naturally.",

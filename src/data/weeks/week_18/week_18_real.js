@@ -27,7 +27,12 @@ const week18RealData = {
     "in the world",
     "in front of",
     "live broadcast",
-    "so far"
+    "so far",
+    "right now",
+    "walks to his friend",
+    "asks if he can interview her",
+    "turns back to the camera",
+    "live report from"
   ],
   theme: "Being a live reporter and describing scenes using am/is/are + verb-ing",
 

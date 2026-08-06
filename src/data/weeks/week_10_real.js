@@ -25,7 +25,21 @@ const week10RealData = {
     "clean and fresh",
     "work hard",
     "grow food",
-    "for everyone"
+    "for everyone",
+    "In the city",
+    "there are",
+    "many animals",
+    "run very fast",
+    "run quickly",
+    "walk in",
+    "big green field",
+    "There are",
+    "many trees",
+    "very tall",
+    "very busy",
+    "countryside is peaceful",
+    "Next time",
+    "best place"
   ],
   
   // === KEY LEARNING OUTCOME ===

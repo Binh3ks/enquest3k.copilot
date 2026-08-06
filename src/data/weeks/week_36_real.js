@@ -39,7 +39,12 @@ const week_36RealData = {
     "made great",
     "rode across",
     "met merchants",
-    "spoke to"
+    "spoke to",
+    "swam around",
+    "hid in",
+    "underwater cave",
+    "a wall of",
+    "crashed inside"
   ],
 
   target_vocab: [

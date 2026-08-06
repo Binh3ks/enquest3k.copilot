@@ -46,7 +46,12 @@ const week33RealData = {
     "paying attention",
     "what to do",
     "Stay calm",
-    "Take a deep breath"
+    "Take a deep breath",
+    "Call for help",
+    "tell a teacher",
+    "immediate danger",
+    "Apply first aid",
+    "cold pack"
   ],
 
   target_vocab: [

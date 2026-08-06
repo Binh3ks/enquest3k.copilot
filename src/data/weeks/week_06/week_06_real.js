@@ -34,7 +34,12 @@ const week6RealData = {
     "one person",
     "Some children",
     "on the floor",
-    "a little"
+    "a little",
+    "find it",
+    "Hide and seek",
+    "work together",
+    "Next time",
+    "best place"
   ],
   
   // === KEY LEARNING OUTCOME ===

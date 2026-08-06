@@ -27,7 +27,19 @@ const week9RealData = {
     "go to work",
     "busy city",
     "Car horns",
-    "tallest buildings"
+    "tallest buildings",
+    "visit the city",
+    "walk on",
+    "busy street",
+    "There are",
+    "people and cars",
+    "noisy place",
+    "hear car horns",
+    "people talking",
+    "tall building",
+    "next to",
+    "bus stop",
+    "yellow bus"
   ],
   
   // === KEY LEARNING OUTCOME ===

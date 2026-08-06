@@ -34,7 +34,12 @@ const week15RealData = {
     "flying kites",
     "having picnics",
     "Hyde Park",
-    "every morning"
+    "every morning",
+    "having a picnic",
+    "is spreading a blanket",
+    "is unpacking the food basket",
+    "little girl",
+    "walking her puppy"
   ],
   
   // === KEY LEARNING OUTCOME ===

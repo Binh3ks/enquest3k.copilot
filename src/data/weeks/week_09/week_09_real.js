@@ -34,7 +34,12 @@ const week9RealData = {
     "lots of",
     "tall buildings",
     "Modern cities",
-    "busy streets"
+    "busy streets",
+    "There is",
+    "vehicles move slowly",
+    "see another",
+    "quiet street",
+    "less busy"
   ],
   
   // === KEY LEARNING OUTCOME ===

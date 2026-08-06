@@ -39,7 +39,12 @@ const week25RealData = {
     "make a sandwich",
     "every single day",
     "a set of",
-    "specific order"
+    "specific order",
+    "right sequence",
+    "right step",
+    "in the right order",
+    "looked very pleased",
+    "eat first"
   ],
   target_vocab: [
     { word: "bread", pronunciation: "/brɛd/", definition_vi: "bánh mì", definition_en: "a food made from flour, water and yeast, baked in an oven" },

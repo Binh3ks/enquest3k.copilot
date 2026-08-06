@@ -40,7 +40,12 @@ const week34RealData = {
     "in the world",
     "animal characters",
     "hard-working insects",
-    "ancient Greece"
+    "ancient Greece",
+    "coming winter",
+    "jumped around",
+    "sang songs",
+    "all day",
+    "never worked"
   ],
 
   target_vocab: [

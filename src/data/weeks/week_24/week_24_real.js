@@ -27,7 +27,12 @@ const week24RealData = {
     "many different",
     "hearing a loud noise",
     "at night",
-    "heart beats fast"
+    "heart beats fast",
+    "walked in",
+    "looked surprised",
+    "famous author",
+    "long talk",
+    "felt bored"
   ],
   theme: "Emotions, feelings, was/were + adjective, scared, excited, tired, relieved, cheerful",
 

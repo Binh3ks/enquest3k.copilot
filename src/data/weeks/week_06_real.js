@@ -28,7 +28,18 @@ const week6RealData = {
     "fun game",
     "One person",
     "look in the box",
-    "look under"
+    "look under",
+    "My friends",
+    "look for",
+    "hidden treasure",
+    "look on the floor",
+    "My friend",
+    "There is",
+    "another clue",
+    "on the wall",
+    "in the room",
+    "big desk",
+    "find it"
   ],
   
   // === KEY LEARNING OUTCOME ===

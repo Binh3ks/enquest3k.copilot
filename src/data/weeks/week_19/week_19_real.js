@@ -27,7 +27,12 @@ const week19RealData = {
     "old photos",
     "were a baby",
     "As time passed",
-    "help your body grow"
+    "help your body grow",
+    "gets taller",
+    "special memories",
+    "help me",
+    "so much",
+    "in my heart"
   ],
   theme: "Childhood memories and past states",
 

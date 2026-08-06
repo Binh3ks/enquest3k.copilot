@@ -34,7 +34,12 @@ const week10RealData = {
     "green fields",
     "Farm life",
     "wake up early",
-    "feed the animals"
+    "feed the animals",
+    "collect eggs",
+    "clean and fresh",
+    "work hard",
+    "grow food",
+    "for everyone"
   ],
   
   // === KEY LEARNING OUTCOME ===

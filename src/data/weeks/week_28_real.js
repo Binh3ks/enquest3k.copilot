@@ -40,7 +40,12 @@ const week28RealData = {
     "without your own vehicle",
     "perfect choice",
     "Slow and steady wins the race",
-    "just like"
+    "just like",
+    "Once upon a time",
+    "slow hare",
+    "very proud",
+    "bragged about",
+    "winning every race"
   ],
   target_vocab: [
     { word: "tortoise", pronunciation: "/ˈtɔːtəs/", definition_vi: "con rùa", definition_en: "a slow-moving reptile with a hard shell that lives on land" },

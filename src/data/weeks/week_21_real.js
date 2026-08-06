@@ -27,7 +27,12 @@ const week21RealData = {
     "at a time",
     "famous scientists",
     "tell us",
-    "amazing things"
+    "amazing things",
+    "wonderfully busy day",
+    "woke up early",
+    "brushed my teeth",
+    "packed my bag",
+    "walked to school"
   ],
   theme: "Daily diary, yesterday activities, time detective agency",
 

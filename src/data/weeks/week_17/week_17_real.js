@@ -27,7 +27,12 @@ const week17RealData = {
     "water cycle",
     "turns into",
     "invisible vapor",
-    "it is very cold"
+    "it is very cold",
+    "learning about weather",
+    "water droplets",
+    "stick together",
+    "falls back down",
+    "help us"
   ],
   theme: "Weather conditions and appropriate clothing choices",
 

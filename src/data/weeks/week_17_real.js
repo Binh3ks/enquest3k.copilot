@@ -27,7 +27,12 @@ const week17RealData = {
     "lots of water",
     "instead of",
     "light clothes",
-    "dress for the weather"
+    "dress for the weather",
+    "This morning",
+    "falling from the sky",
+    "look outside the window",
+    "teacher says",
+    "keeps me dry"
   ],
   theme: "Weather conditions and appropriate clothing choices",
 

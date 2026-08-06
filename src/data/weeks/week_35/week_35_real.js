@@ -40,7 +40,12 @@ const week35RealData = {
     "Greenhouse gases",
     "burn fossil fuels",
     "every day",
-    "As a result"
+    "As a result",
+    "getting warmer",
+    "Polar ice",
+    "Sea levels",
+    "make a difference",
+    "must protect"
   ],
 
   target_vocab: [

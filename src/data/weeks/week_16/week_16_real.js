@@ -27,7 +27,12 @@ const week16RealData = {
     "run fast",
     "uses energy",
     "kick a ball",
-    "goes into motion"
+    "goes into motion",
+    "throw the ball",
+    "use my feet",
+    "scoring a goal",
+    "jumping up and down",
+    "score a goal"
   ],
   theme: "Sports actions and Present Continuous commentary",
 

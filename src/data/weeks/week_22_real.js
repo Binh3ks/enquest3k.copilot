@@ -27,7 +27,12 @@ const week22RealData = {
     "what happened",
     "one question",
     "listen to",
-    "piece of the puzzle"
+    "piece of the puzzle",
+    "difficult case",
+    "old town",
+    "Hoi An",
+    "yesterday morning",
+    "answered clearly"
   ],
   theme: "Time detective interviews, past clues, yesterday actions",
 

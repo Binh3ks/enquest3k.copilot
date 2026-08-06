@@ -46,7 +46,13 @@ export const week3RealData = {
     "can hear",
     "every day",
     "work together",
-    "take care"
+    "take care",
+    "her class",
+    "look in",
+    "round face",
+    "brown eyes",
+    "long brown hair",
+    "for my age"
   ],
   
   // === KEY LEARNING OUTCOME ===

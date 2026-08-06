@@ -27,7 +27,12 @@ const week20RealData = {
     "small villages",
     "Over time",
     "came to",
-    "live together"
+    "live together",
+    "small buildings",
+    "around the market",
+    "walked to",
+    "place today",
+    "there are"
   ],
   theme: "Old town, history, changes over time",
 

@@ -27,7 +27,19 @@ const week7RealData = {
     "water bottle",
     "school bag",
     "help us",
-    "every day"
+    "every day",
+    "school today",
+    "There is",
+    "on his chair",
+    "in the pencil case",
+    "next to",
+    "book on the desk",
+    "At school",
+    "in the classroom",
+    "near the whiteboard",
+    "teacher says",
+    "for everyone",
+    "very happy"
   ],
   
   // === KEY LEARNING OUTCOME ===

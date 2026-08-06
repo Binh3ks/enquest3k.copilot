@@ -47,7 +47,12 @@ const week2RealData = {
     "loves each other",
     "spends time together",
     "At home",
-    "Families work together"
+    "Families work together",
+    "My name",
+    "my family",
+    "are like a team",
+    "my mother",
+    "our family"
   ],
   
   // === KEY LEARNING OUTCOME ===

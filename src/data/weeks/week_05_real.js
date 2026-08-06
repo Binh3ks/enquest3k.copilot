@@ -24,7 +24,22 @@ const week5RealData = {
     "sit on",
     "at the table",
     "living room",
-    "watch tv"
+    "watch tv",
+    "On the hill",
+    "there is",
+    "big house",
+    "mystery house",
+    "One day",
+    "open the door",
+    "a nice bedroom",
+    "on the table",
+    "on the wall",
+    "on the floor",
+    "the living room",
+    "There is",
+    "shelves with books",
+    "open the cabinet carefully",
+    "look in"
   ],
   
   // === KEY LEARNING OUTCOME ===
