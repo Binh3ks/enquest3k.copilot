@@ -24,11 +24,16 @@ for d in OUT.values():
 
 total = 0
 for kind, path in INPUTS.items():
+    if not os.path.exists(path):
+        print(f'{kind}: SKIPPED (file not found: {os.path.basename(path)})')
+        continue
     with open(path) as f:
         data = json.load(f)
     out_dir = OUT[kind]
-    for video_id, entry in data.items():
-        entry['videoId'] = video_id  # inject for runtime lookup map
+    items = data.items() if isinstance(data, dict) else enumerate(data)
+    for video_id, entry in items:
+        if isinstance(entry, dict):
+            entry['videoId'] = video_id  # inject for runtime lookup map
         out_path = os.path.join(out_dir, f'{video_id}.json')
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(entry, f, ensure_ascii=False, separators=(',', ':'))
