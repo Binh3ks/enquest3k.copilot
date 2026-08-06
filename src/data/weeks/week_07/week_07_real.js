@@ -13,6 +13,24 @@ const week7RealData = {
   
   topic: "School supplies - Stating what exists (singular)",
   topic_vi: "Đồ dùng học tập - Nêu sự tồn tại (số ít)",
+
+  chunk_focus: [
+    "school today",
+    "There is",
+    "on his chair",
+    "in the pencil case",
+    "next to",
+    "book on the desk",
+    "At school",
+    "there is",
+    "in the classroom",
+    "near the whiteboard",
+    "teacher says",
+    "pencil case",
+    "for everyone",
+    "very happy",
+    "school supplies"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "State what exists using 'There is a...' for singular items",

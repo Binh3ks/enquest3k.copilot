@@ -21,15 +21,21 @@ const week34RealData = {
 
   // Chunks/collocations AI must reinforce — from read.js bold chunks
   chunk_focus: [
-    "hard-working ant",       // core character — appears in opening
-    "lazy grasshopper",       // core character — opposite of ant
-    "gathered seeds",         // key action verb phrase
-    "stored food",            // key preparation verb phrase
-    "learned a lesson",       // moral focus
-    "prepare for the future", // key moral chunk
-    "worked hard together",   // resolution
-    "bright warm sunshine",  // summer imagery
-    "was very cold and very hungry", // grasshopper's suffering — NEVER say "Great!" here
+    "Long ago",
+    "there was",
+    "working ant",
+    "who lived",
+    "small hill",
+    "There was",
+    "lazy grasshopper",
+    "green leaf",
+    "always busy",
+    "always playing",
+    "In the summer sun",
+    "ant went",
+    "every day",
+    "gathered seeds",
+    "stored food"
   ],
 
   target_vocab: [

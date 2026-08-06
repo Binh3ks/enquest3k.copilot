@@ -21,12 +21,21 @@ const week29RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-        "At last",
-    "magic",
-    "wonderful",
-    "was kind",
-    "was nice",
-    "looked happy"
+    "Last week",
+    "went on",
+    "magic trip",
+    "wonderful place",
+    "got on",
+    "magic carpet",
+    "flew to",
+    "tiny green island",
+    "in the sea",
+    "On the island",
+    "friendly pilot",
+    "came to",
+    "help them",
+    "picked up",
+    "gave it"
   ],
   target_vocab: [
     { word: "journey", pronunciation: "/ˈdʒɜːni/", definition_vi: "hành trình", definition_en: "a long trip from one place to another by plane, train, or car" },

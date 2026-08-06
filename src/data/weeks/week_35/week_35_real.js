@@ -21,21 +21,21 @@ const week35RealData = {
 
   // Chunks/collocations AI must reinforce — from read.js bold chunks
   chunk_focus: [
-    "blue oceans",           // core environmental feature
-    "green forests",         // core environmental feature
-    "high mountains",        // core environmental feature
-    "our planet",            // what we protect
-    "are changing",          // environmental change
-    "produce harmful gases", // pollution cause
-    "cutting down trees",    // deforestation action
-    "throwing away plastic", // pollution action
-    "climate change",        // main problem
-    "is getting warmer",     // climate effect
-    "polar ice",             // melting ice
-    "sea levels",            // rising levels
-    "can make a difference", // empowerment
-    "must protect",          // obligation
-    "reduce, reuse, and recycle" // solution chunk
+    "Our planet",
+    "blue oceans",
+    "green forests",
+    "high mountains",
+    "our planet",
+    "in danger",
+    "Many things",
+    "because of",
+    "a lot of",
+    "harmful gases",
+    "Cutting down trees",
+    "animal homes",
+    "Throwing away plastic",
+    "Climate change",
+    "serious problem"
   ],
 
   target_vocab: [

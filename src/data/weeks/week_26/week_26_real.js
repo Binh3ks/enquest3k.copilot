@@ -21,12 +21,21 @@ const week26RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-        "Last Saturday",
-    "had a great time",
-    "First",
-    "After that",
-    "finally",
-    "comic strip"
+    "sunday afternoon",
+    "sat down with",
+    "big smile",
+    "create a comic strip",
+    "great adventure",
+    "fun weekend",
+    "First of all",
+    "wrote the title",
+    "Weekend Adventure",
+    "felt very proud",
+    "sketched the scene",
+    "walked to",
+    "saturday morning",
+    "wrote a caption",
+    "was sunny and warm"
   ],
   target_vocab: [
     { word: "comic strip", pronunciation: "/ˈkɒmɪk strɪp/", definition_vi: "truyện tranh khung", definition_en: "a series of drawn panels that tell a story with captions and speech bubbles" },

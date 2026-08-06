@@ -6,6 +6,24 @@ const week24RealData = {
   weekTitle_vi: "Cam Xuc Trong Qua Khu",
   topic: "Describing past feelings using Was/Were + Adjective",
   topic_vi: "Mieu ta cam xuc trong qua khu dung Was/Were + Tinh tu",
+
+  chunk_focus: [
+    "emotional day",
+    "her friends",
+    "In the morning",
+    "felt very worried",
+    "Her brother",
+    "looked angry",
+    "because someone took",
+    "stayed calm",
+    "felt relieved",
+    "homework inside",
+    "school bag",
+    "At school",
+    "excited because",
+    "there was",
+    "special visitor"
+  ],
   theme: "Emotions, feelings, was/were + adjective, scared, excited, tired, relieved, cheerful",
 
   grammar_focus: "Was / Were + Adjective (Past Simple)",

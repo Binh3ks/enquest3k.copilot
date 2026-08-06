@@ -15,6 +15,24 @@ export const week11RealData = {
   
   topic: "Weekend Fun Spots (Places)",
   topic_vi: "Địa Điểm Vui Chơi Cuối Tuần",
+
+  chunk_focus: [
+    "fun weekend",
+    "go to the park",
+    "play at the park",
+    "with my friends",
+    "go to the library",
+    "read a story book",
+    "at the library",
+    "about animals",
+    "After that",
+    "my mom",
+    "go to",
+    "buy food",
+    "slide down",
+    "On Sunday",
+    "many animals"
+  ],
   
   learning_outcome: "Identify and talk about fun weekend places using 'at the park'.",
   learning_outcome_vi: "Nhận biết và nói về các địa điểm vui chơi cuối tuần dùng 'at the park'.",

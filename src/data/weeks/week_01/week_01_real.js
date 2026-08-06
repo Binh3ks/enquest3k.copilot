@@ -15,6 +15,24 @@ export const week1RealData = {
   
   topic: "Introduction & Superheroes (Creating a 'Hero Identity')",
   topic_vi: "Giới thiệu & Siêu anh hùng (Tạo 'Danh tính Anh hùng')",
+
+  chunk_focus: [
+    "My name",
+    "new student",
+    "elementary school",
+    "Every morning",
+    "wake up early",
+    "get ready for school",
+    "story book",
+    "small notebook",
+    "every day",
+    "my classroom",
+    "there are",
+    "My teacher",
+    "very kind and patient",
+    "learning new things",
+    "studying every day"
+  ],
   
   learning_outcome: "Say and write sentences introducing name/age naturally.",
   learning_outcome_vi: "Nói và viết câu giới thiệu tên/tuổi một cách tự nhiên.",

@@ -13,6 +13,24 @@ const week4RealData = {
   
   topic: "Personality - Emotions and Likes",
   topic_vi: "Tính cách - Cảm xúc và Sở thích",
+
+  chunk_focus: [
+    "My name",
+    "happy jar",
+    "at home",
+    "Every day",
+    "happy things",
+    "playing with my dog",
+    "feel excited",
+    "reading a good book",
+    "feel calm",
+    "feel happy",
+    "drawing colorful pictures",
+    "feel creative",
+    "My mom",
+    "friendly and funny",
+    "makes me laugh"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Express emotions and preferences using 'I like + V-ing' naturally.",

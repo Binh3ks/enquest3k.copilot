@@ -13,6 +13,24 @@ const week6RealData = {
   
   topic: "Prepositions - Hiding and finding objects",
   topic_vi: "Giới từ - Ẩn và tìm đồ vật",
+
+  chunk_focus: [
+    "treasure hunt",
+    "My friends",
+    "look for",
+    "hidden treasure",
+    "look on the floor",
+    "look in the box",
+    "My friend",
+    "next to",
+    "There is",
+    "another clue",
+    "on the wall",
+    "in the room",
+    "under the desk",
+    "look under",
+    "big desk"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Describe location using prepositions In, On, Under, Next to.",

@@ -6,6 +6,24 @@ const week20RealData = {
   weekTitle_vi: "Bí Ẩn Thị Trấn Cũ",
   topic: "Talking about past existence using there was/there were",
   topic_vi: "Nói về sự tồn tại trong quá khứ sử dụng there was/there were",
+
+  chunk_focus: [
+    "Detective luna",
+    "One day",
+    "old map",
+    "years ago",
+    "There was",
+    "local market",
+    "There were",
+    "tall trees",
+    "on the road",
+    "At the end",
+    "main road",
+    "there was",
+    "old temple",
+    "wooden bridge",
+    "over the river"
+  ],
   theme: "Old town, history, changes over time",
 
   grammar_focus: "There was / There were (Past Existence)",

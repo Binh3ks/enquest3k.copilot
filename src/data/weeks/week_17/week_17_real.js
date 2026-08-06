@@ -6,6 +6,24 @@ const week17RealData = {
   weekTitle_vi: "Thời tiết & Trang phục",
   topic: "Dressing for the weather using cause and effect",
   topic_vi: "Mặc đồ theo thời tiết dùng quan hệ nhân quả",
+
+  chunk_focus: [
+    "This morning",
+    "it is raining",
+    "falling from the sky",
+    "look outside the window",
+    "teacher says",
+    "keeps me dry",
+    "My friend",
+    "every time",
+    "It is very cold",
+    "heats water in",
+    "up into",
+    "cools down",
+    "After school",
+    "take off my coat",
+    "takes off her hat"
+  ],
   theme: "Weather conditions and appropriate clothing choices",
 
   grammar_focus: "Cause and Effect: It is [weather], so I am wearing [clothes].",

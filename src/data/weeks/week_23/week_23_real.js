@@ -6,6 +6,24 @@ const week23RealData = {
   weekTitle_vi: "Lop Hoc My Thuat",
   topic: "Describing art class activities using regular past tense verbs",
   topic_vi: "Mieu ta cac hoat dong lop my thuat dung dong tu co quy tac thi qua khu",
+
+  chunk_focus: [
+    "art class",
+    "picked up her brush",
+    "dipped her brush",
+    "painted a picture",
+    "colored in",
+    "using blue",
+    "paper into",
+    "butterfly shape",
+    "perfect symmetry",
+    "used the scissors",
+    "cut out shapes",
+    "green paper",
+    "glued the leaves",
+    "pressed down",
+    "held up"
+  ],
   theme: "Art class activities, painting, folding, cutting, creating masterpieces",
 
   grammar_focus: "Regular Past Tense Verbs (-ed)",

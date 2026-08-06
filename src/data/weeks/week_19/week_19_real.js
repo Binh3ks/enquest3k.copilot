@@ -6,6 +6,24 @@ const week19RealData = {
   weekTitle_vi: "Khi Tôi Còn Nhỏ",
   topic: "Talking about the past using was/were",
   topic_vi: "Nói về quá khứ sử dụng was/were",
+
+  chunk_focus: [
+    "Look at",
+    "cute baby",
+    "mom says",
+    "was round and",
+    "were very big",
+    "one year old",
+    "fast asleep",
+    "grandma says",
+    "kindergarten",
+    "years old",
+    "was young",
+    "was little",
+    "began to grow",
+    "grow bigger",
+    "every year"
+  ],
   theme: "Childhood memories and past states",
 
   grammar_focus: "Past Simple: was/were (Past State)",

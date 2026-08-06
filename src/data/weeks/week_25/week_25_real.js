@@ -20,12 +20,21 @@ const week25RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-        "picked up",
-    "rinsed",
-    "tidied",
-    "squeezed",
-    "brushed",
-    "brush"
+    "saturday morning",
+    "make a jam sandwich",
+    "First of all",
+    "grabbed two slices",
+    "soft bread",
+    "After that",
+    "picked up",
+    "sharp knife",
+    "spread strawberry jam",
+    "top slice",
+    "top slices",
+    "At the very end",
+    "cut the sandwich",
+    "put it on",
+    "dinner plate"
   ],
   target_vocab: [
     { word: "bread", pronunciation: "/brɛd/", definition_vi: "bánh mì", definition_en: "a food made from flour, water and yeast, baked in an oven" },

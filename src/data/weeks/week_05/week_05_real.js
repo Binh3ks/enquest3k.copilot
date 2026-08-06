@@ -13,6 +13,24 @@ const week5RealData = {
   
   topic: "Nouns - Exploring rooms and furniture",
   topic_vi: "Danh từ - Khám phá phòng và đồ đạc",
+
+  chunk_focus: [
+    "On the hill",
+    "there is",
+    "big house",
+    "mystery house",
+    "One day",
+    "open the door",
+    "a nice bedroom",
+    "on the table",
+    "on the wall",
+    "on the floor",
+    "the living room",
+    "There is",
+    "big sofa",
+    "shelves with books",
+    "In the kitchen"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Label parts of a house correctly using articles A/An.",

@@ -6,6 +6,24 @@ const week18RealData = {
   weekTitle_vi: "Phóng Viên Trực Tiếp",
   topic: "Describing what is happening using Present Continuous",
   topic_vi: "Mô tả những gì đang xảy ra bằng thì Hiện tại tiếp diễn",
+
+  chunk_focus: [
+    "his class",
+    "tv show",
+    "picks up",
+    "toy microphone",
+    "next to",
+    "toy camera",
+    "speaks warmly into",
+    "live morning news",
+    "describe the scene",
+    "drawing a rocket",
+    "reading quietly at",
+    "writing on the board",
+    "eating a carrot",
+    "turns to the camera",
+    "what is happening"
+  ],
   theme: "Being a live reporter and describing scenes using am/is/are + verb-ing",
 
   grammar_focus: "Present Continuous: I am + verb-ing / She is + verb-ing / They are + verb-ing.",

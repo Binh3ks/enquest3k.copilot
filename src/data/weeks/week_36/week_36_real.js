@@ -23,15 +23,18 @@ const week_36RealData = {
     "went on an adventure",
     "dove down into",
     "magnificent coral reefs",
+    "swam around",
+    "hid in",
     "found something unexpected",
-    "wrote down",
-    "came back",
-    "gave all our findings",
-    "made an important discovery",
-    "began to plan",
-    "took our breath away",
-    "spoke many languages",
-    "inspired many adventurers"
+    "underwater cave",
+    "a wall of",
+    "crashed inside",
+    "rode into",
+    "old objects",
+    "sea plants",
+    "came from",
+    "ancient ships",
+    "hundreds of years ago"
   ],
 
   target_vocab: [

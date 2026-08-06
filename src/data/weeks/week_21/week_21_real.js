@@ -6,6 +6,24 @@ const week21RealData = {
   weekTitle_vi: "Nhat Ky Hom Qua",
   topic: "Talking about past actions using Past Simple Regular Verbs (-ed)",
   topic_vi: "Noi ve cac hanh dong trong qua khu su dung Dong tu Qua khu Don co quy tac (-ed)",
+
+  chunk_focus: [
+    "wonderfully busy day",
+    "woke up early",
+    "brushed my teeth",
+    "packed my bag",
+    "walked to school",
+    "friend lily",
+    "talked all the way",
+    "cold morning",
+    "laughed together",
+    "At break time",
+    "played soccer",
+    "shouted with excitement",
+    "helped my mother",
+    "cleaned my room",
+    "organised my books"
+  ],
   theme: "Daily diary, yesterday activities, time detective agency",
 
   grammar_focus: "Past Simple Regular Verbs (-ed)",

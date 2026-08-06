@@ -21,11 +21,21 @@ const week30RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-        "had a picnic",
-    "waved back",
-    "looked happy",
+    "Last sunday",
+    "had a picnic",
     "in the park",
-    "was sunny"
+    "good cook",
+    "cheese sandwiches",
+    "cold lemonade",
+    "put everything",
+    "picnic basket",
+    "best food",
+    "mum brought",
+    "fresh strawberries",
+    "wooden bridge",
+    "crossed the river",
+    "build this bridge",
+    "having lunch"
   ],
   target_vocab: [
     { word: "picnic", pronunciation: "/ˈpɪknɪk/", definition_vi: "buổi dã ngoại", definition_en: "a meal eaten outdoors, usually in a park or countryside" },

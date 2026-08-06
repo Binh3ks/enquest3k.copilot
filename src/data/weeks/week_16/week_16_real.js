@@ -6,6 +6,24 @@ const week16RealData = {
   weekTitle_vi: "Bình luận Thể thao",
   topic: "Describing sports actions happening right now",
   topic_vi: "Mô tả các hành động thể thao đang diễn ra",
+
+  chunk_focus: [
+    "first soccer game",
+    "My mom",
+    "coming to watch",
+    "My dad",
+    "Look at",
+    "running very fast",
+    "My friend",
+    "kicking the ball",
+    "catching the ball",
+    "passing the ball",
+    "running to the goal",
+    "in motion",
+    "moving fast through",
+    "playing soccer together",
+    "working together"
+  ],
   theme: "Sports actions and Present Continuous commentary",
 
   grammar_focus: "Present Continuous (is/are + verb-ing)",

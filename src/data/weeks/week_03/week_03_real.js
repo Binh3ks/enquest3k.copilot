@@ -26,6 +26,24 @@ export const week3RealData = {
   
   topic: "Physical appearance and descriptions",
   topic_vi: "Miêu tả ngoại hình và đặc điểm vật lý",
+
+  chunk_focus: [
+    "My teacher",
+    "very tall",
+    "lovely personality",
+    "long black hair",
+    "big brown eyes",
+    "wears glasses",
+    "to see the board clearly",
+    "kind face",
+    "warm smile",
+    "her students",
+    "my teacher",
+    "very nice",
+    "smart and caring",
+    "gentle and kind",
+    "very happy"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Describe physical appearance using 'is' for qualities (tall, short) and 'has' for possessions (long hair, blue eyes).",

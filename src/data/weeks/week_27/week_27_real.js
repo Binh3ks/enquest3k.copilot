@@ -21,12 +21,21 @@ const week27RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-        "First",
-    "Next",
-    "After that",
-    "Finally",
-    "began to grow",
-    "need water"
+    "monday morning",
+    "at school",
+    "rich soil",
+    "bean seeds",
+    "watch carefully",
+    "Watch the seed",
+    "every day",
+    "First of all",
+    "bean seed",
+    "added water",
+    "warm water",
+    "warm sunlight",
+    "germinate into",
+    "plants need",
+    "three things"
   ],
   target_vocab: [
     { word: "seed", pronunciation: "/siːd/", definition_vi: "hạt giống", definition_en: "a small part of a plant from which a new plant grows when placed in soil" },

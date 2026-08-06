@@ -21,12 +21,21 @@ const week31RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-    "heard a",           // perception verb collocation
-    "felt smooth",       // sensory adjective collocation
-    "felt rough",        // sensory adjective collocation
-    "looked beautiful",   // appearance collocation
-    "smelt fragrant",    // perception verb collocation
-    "saw a butterfly"    // discovery collocation
+    "Last saturday",
+    "luna went",
+    "local market",
+    "old town",
+    "looked around",
+    "could see",
+    "many different",
+    "shone through",
+    "made little rainbows",
+    "smiled at",
+    "showed her",
+    "wooden sculpture",
+    "picked up",
+    "stone bowl",
+    "stone felt cool"
   ],
   target_vocab: [
     { word: "forest", pronunciation: "/\u02c8f\u0252r\u026ast/", definition_vi: "khu rung", definition_en: "a large area of land covered with many trees" },

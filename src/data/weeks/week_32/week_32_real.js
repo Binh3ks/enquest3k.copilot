@@ -21,11 +21,21 @@ const week32RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — multi-word phrases and high-value vocabulary
   chunk_focus: [
-        "fell asleep",
-    "early in the morning",
-    "woke up",
-    "looked out",
-    "went outside"
+    "Saturday morning",
+    "woke up early",
+    "got dressed quickly",
+    "made his bed",
+    "sat at",
+    "wooden desk",
+    "wrote a long letter",
+    "lovely grandmother",
+    "about school",
+    "little birdhouse",
+    "build with Dad",
+    "put the letter",
+    "stuck a stamp",
+    "helped dad",
+    "cut the long grass"
   ],
   target_vocab: [
     { word: "tidy", pronunciation: "/ˈtaɪdi/", definition_vi: "gọn gàng, ngăn nắp", definition_en: "neat and in good order; arranged carefully" },

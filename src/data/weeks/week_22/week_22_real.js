@@ -6,6 +6,24 @@ const week22RealData = {
   weekTitle_vi: "Tham Tu Thoi Gian",
   topic: "Asking and answering past yes/no questions in detective interviews",
   topic_vi: "Dat va tra loi cau hoi yes/no trong qua khu theo boi canh tham tu",
+
+  chunk_focus: [
+    "difficult case",
+    "old town",
+    "Hoi An",
+    "last night",
+    "yesterday morning",
+    "answered clearly",
+    "without hesitation",
+    "wrote every answer",
+    "in her notebook",
+    "last week",
+    "studied each clue carefully",
+    "wrote her final report",
+    "in Hoi An",
+    "Every clue",
+    "solved the case"
+  ],
   theme: "Time detective interviews, past clues, yesterday actions",
 
   grammar_focus: "Past Simple Questions with Did",

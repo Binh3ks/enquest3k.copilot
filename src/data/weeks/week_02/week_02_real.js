@@ -26,6 +26,24 @@ const week2RealData = {
   
   topic: "Family members and relationships",
   topic_vi: "Các thành viên gia đình và mối quan hệ",
+
+  chunk_focus: [
+    "My name",
+    "my family",
+    "are like a team",
+    "my mother",
+    "our family",
+    "every day",
+    "my father",
+    "strong and kind",
+    "works hard",
+    "big brother",
+    "helps me with",
+    "little sister",
+    "funny and sweet",
+    "each other",
+    "Our home"
+  ],
   
   // === KEY LEARNING OUTCOME ===
   learning_outcome: "Describe family members using possessive adjectives (my, your) and simple present tense.",

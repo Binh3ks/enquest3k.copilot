@@ -27,10 +27,21 @@ const week33RealData = {
   // Chunks/collocations AI must use in story_text narrative
   // Source: read.js bold chunks — only multi-word phrases + high-value single-word verbs
   chunk_focus: [
-    "walk carefully",    // core safety chunk — appears 3x in read.js
-    "fell down",         // key accident verb phrase
-    "in the corridor",   // prepositional phrase — location of accident
-    "was hurt",          // passive injury — W33 grammar collocation
+    "at school",
+    "walk carefully",
+    "hit his knee",
+    "fell down",
+    "glass cup",
+    "at once",
+    "His teacher",
+    "came quickly",
+    "The nurse",
+    "put a cold pack",
+    "important lesson",
+    "everyone must",
+    "At home",
+    "follow safety rules",
+    "Every year"
   ],
 
   target_vocab: [
