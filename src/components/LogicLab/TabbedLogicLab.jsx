@@ -165,7 +165,7 @@ const TabbedLogicLab = ({ weekNumber, weekData, learningMode = 'advanced' }) => 
         {activeTab === 'logic' && (
           <LogicScienceDisplay
             weekNumber={weekNumber}
-            questions={weekData?.logic_science?.questions || []}
+            questions={weekData?.logic_science?.questions || weekData?.logic_lab?.logic_lab?.questions || weekData?.logic_lab?.questions || []}
             onProgress={handleLogicProgress}
             learningMode={learningMode}
           />

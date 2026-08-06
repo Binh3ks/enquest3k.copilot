@@ -54,4 +54,7 @@ const week36RealData = {
   knowledge_base: "Students will describe an adventure story using irregular past tense verbs. The AI should encourage students to use irregular verbs: went, saw, took, came, found, wrote, gave, made. NEVER force verbs — only encourage. When a student describes a negative event, NEVER say 'Great!' — instead say 'That sounds scary!' or 'I am sorry to hear that.'"
 };
 
-module.exports = week36RealData;
+export default week36RealData;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = week36RealData;
+}
