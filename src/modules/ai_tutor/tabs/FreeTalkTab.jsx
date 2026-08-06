@@ -116,8 +116,17 @@ function isSparkOffTopic(message, card) {
   // Any content word match → on-topic
   if (msgWords.some(w => topicWords.has(w))) return false;
 
-  return true;
 }
+
+const extractSayOptions = (text) => {
+  if (!text) return [];
+  const sayMatch = text.match(/\bSay:\s*([^.]+)/i);
+  if (!sayMatch) return [];
+  const optionsStr = sayMatch[1].trim();
+  const parts = optionsStr.split(/\b,\s*or\s+|\bor\s+/i);
+  return parts.map(p => p.trim().replace(/^['"]|['"]$/g, '')).filter(Boolean);
+};
+
 
 /**
  * Generate a contextual follow-up question from a scaffold frame template.
@@ -847,10 +856,14 @@ const FreeTalkTab = () => {
             if (wordHints.length > 0) { setHints(wordHints); setShowHints(true); }
             else { setShowHints(false); }
           } else {
-            // W21+: Show hint_en sentence chip if available, else no hints
-            const h = normalizedFrames[0]?.hint_en;
-            if (h) { setHints([h]); setShowHints(true); }
-            else { setHints([]); setShowHints(false); }
+            const sayOptions = extractSayOptions(sparkOpeningText);
+            if (sayOptions.length > 0) {
+              setHints(sayOptions); setShowHints(true);
+            } else {
+              const h = normalizedFrames[0]?.hint_en;
+              if (h) { setHints([h]); setShowHints(true); }
+              else { setHints([]); setShowHints(false); }
+            }
           }
 
           if (autoPlayEnabled) {
@@ -1018,24 +1031,11 @@ const FreeTalkTab = () => {
           setActiveSparkFrame(currentFrame || null);
 
           // Hints: 3-phase scaffolding by week
-          const wkFollow = weekNumberRef.current;
-          if (wkFollow >= 21 || hasCycled) {
-            // W21+: Show hint_en sentence chip if available, else no hints
-            if (!hasCycled && currentFrame?.hint_en) {
-              setHints([currentFrame.hint_en]); setShowHints(true);
-            } else {
-              setHints([]); setShowHints(false);
-            }
-          } else if (!hasCycled && currentFrame) {
-            if (wkFollow <= 10) {
-              // W1-10: Raw hint words — render layer converts to full sentences + makes them clickable
-              const rawHints = currentFrame.hints?.length > 0 ? currentFrame.hints : (currentFrame.template ? [currentFrame.template] : []);
-              setHints(rawHints); setShowHints(rawHints.length > 0);
-            } else {
-              // W11-20: Word hints only
-              const wordHints = currentFrame.hints?.length > 0 ? currentFrame.hints : [];
-              setHints(wordHints); setShowHints(wordHints.length > 0);
-            }
+          const sayFollowOptions = extractSayOptions(deterministicResponse);
+          if (sayFollowOptions.length > 0) {
+            setHints(sayFollowOptions); setShowHints(true);
+          } else if (!hasCycled && currentFrame?.hint_en) {
+            setHints([currentFrame.hint_en]); setShowHints(true);
           } else {
             setHints([]); setShowHints(false);
           }

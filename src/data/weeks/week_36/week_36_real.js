@@ -362,7 +362,6 @@ const week_36RealData = {
       text_vi: "Bạn đã có những cuộc phiêu lưu nào?",
       hint_en: "I went to the beach... We went camping in the mountains...",
       hint_vi: "Tôi đi bãi biển... Tôi đi cắm trại ở núi...",
-      bridge: "That sounds awesome!",
       frames: [
         {
           frame: 1,
@@ -399,7 +398,6 @@ const week_36RealData = {
       text_vi: "Bạn muốn khám phá ở đâu?",
       hint_en: "I would explore the deep ocean... I would explore the jungle...",
       hint_vi: "Tôi muốn khám phá đại dương... Tôi muốn khám phá rừng rậm...",
-      bridge: "Fascinating choice!",
       frames: [
         {
           frame: 1,
