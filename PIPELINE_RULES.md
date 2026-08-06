@@ -116,7 +116,34 @@ Every forced split MUST result in a syntactically digestible chunk:
   - ❌ `sank many` (MUST BE: `sank hundreds of years ago`)
   - ❌ `took our` (MUST BE: `took our breath away`)
   - ❌ `said it`, `knew we`, `made an`, `held many`, `began to`
-- **Every created chunk MUST exist in `src/data/dictionary.json` with a full Vietnamese translation (`meaning`), pronunciation (`pronounce`), and example (`example`).**
+---
+
+## Rule 7: LOGIC & SCIENCE STATION STANDARDS (MANDATORY)
+
+**All questions in `logic_science.js` MUST adhere to these strict curriculum rules:**
+1. **100% Story-Bound (Context-Bound)**: Questions MUST be based directly on the week's 2 reading passages (`read_stem` and `read_social`).
+2. **Context Clue Box**: Every question MUST include a `clue_statement` or `passage_en` that displays on screen as a reference context for the student to read and reason from.
+3. **Interactive MCQ (4 Options)**: 100% of questions must use Multiple Choice (4 options) with instant explanation feedback (`explanation_en`). Open-ended essay textareas are strictly forbidden for Logic & Science.
+4. **Age-Appropriate (A1+ Level)**: Puzzles must focus on basic science reasoning (e.g. darkness in deep ocean, compass magnetism) and simple logical deduction/arithmetic (e.g. depth calculations, time differences).
+
+---
+
+## Rule 8: ASK AI STATION STANDARDS (MANDATORY)
+
+**All prompts in `ask_ai.js` MUST follow this inquiry scaffolding structure:**
+1. **Nova Situation (`nova_says`)**: Nova presents a clear story situation or piece of knowledge.
+2. **Scaffolded Question Frame (`question_frame`)**: Contains a blank `___` at the start (e.g. `"___ Marco Polo go on his journey?"`).
+3. **Starter Bank (`question_word_bank`)**: A list of 4 Wh-starters (e.g. `["Where did", "How long did", "When did", "Why did"]`).
+4. **Target Starter (`correctWord`)**: MUST be grammatically aligned with `question_frame` to form a 100% natural, correct Wh-question (e.g. `"Where did"` + `"___ Marco Polo go on his journey?"` = *"Where did Marco Polo go on his journey?"*).
+5. **Mic Speaking**: After selecting the correct starter pill, the student speaks the full question aloud to Nova via Microphone.
+
+---
+
+## Rule 9: VITE BUILD & CACHE INVALIDATION STANDARDS (MANDATORY)
+
+**To prevent stale dynamic import 404s and browser HTTP cache sticking across redeployments:**
+1. **Strict Chunk Regex**: `chunkFileNames` in `vite.config.js` MUST use strict regex matching (`/\/week_(\d+)\/index\.js$/i`) so backup folders (e.g. `week_16_BACKUP/`) do not cause chunk name collisions.
+2. **Content Hash Preservation**: Dynamic week chunks MUST include `-[hash].js` in their output filename (`assets/week_XX_index-[hash].js`). This forces Cloudflare Edge CDN and browser caches to invalidate instantly whenever week content is updated.
 
 ---
 

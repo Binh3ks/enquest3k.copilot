@@ -1,44 +1,45 @@
 // WEEK 36: Adventure Stories (Irregular Verbs)
 // Ask AI Station — Advanced Mode
+// 100% Story-bound, clear Wh-question scaffolding for student inquiry
 
 export default {
   prompts: [
     {
-      nova_says: "Marco Polo was a famous explorer from Venice, Italy. He went to China on the Silk Road and came back after 24 years.",
-      nova_says_vi: "Marco Polo la mot nha tham hiem noi tieng tu Venice, Y. Ong di den Trung Quoc tren Con duong To lua va tro ve sau 24 nam.",
-      context_en: "Marco Polo is the main character of our story. Student asks about his journey.",
-      question_word_bank: ["When did", "How long did", "Where did", "Why did"],
-      question_frame: "___ Marco Polo go?",
-      correctWord: "When did"
+      nova_says: "Marco Polo was a famous explorer from Venice, Italy. He travelled to China on the Silk Road and came back after 24 years.",
+      nova_says_vi: "Marco Polo là một nhà thám hiểm nổi tiếng từ Venice, Ý. Ông đã du hành đến Trung Quốc trên Con đường Tơ lụa và trở về sau 24 năm.",
+      context_en: "Marco Polo went on an epic journey. Student asks where he travelled.",
+      question_word_bank: ["Where did", "How long did", "When did", "Why did"],
+      question_frame: "___ Marco Polo go on his journey?",
+      correctWord: "Where did"
     },
     {
-      nova_says: "Marco Polo went on an adventure on the Silk Road. He saw amazing things and met many interesting people from different countries.",
-      nova_says_vi: "Marco Polo di phieu luu tren Con duong To lua. Ong nhin thay nhung thu tuyet voi va gap rat nhieu nguoi thu vi.",
-      context_en: "Marco Polo met many people. Student asks about who he met.",
-      question_word_bank: ["Who did", "What did", "How did", "Where did"],
-      question_frame: "___ Marco Polo meet?",
+      nova_says: "Explorers in our story dove deep into the ocean. They found an ancient underwater cave filled with treasures.",
+      nova_says_vi: "Các nhà thám hiểm lặn sâu xuống đại dương. Họ tìm thấy một hang động ngầm cổ đại chứa đầy kho báu.",
+      context_en: "Explorers found something inside the cave. Student asks what they found.",
+      question_word_bank: ["What did", "Where did", "Who did", "How did"],
+      question_frame: "___ the explorers find in the cave?",
+      correctWord: "What did"
+    },
+    {
+      nova_says: "The Silk Road connected Asia and Europe for over 1,400 years. Traders carried silk, spices, and tea along this route.",
+      nova_says_vi: "Con đường Tơ lụa kết nối Châu Á và Châu Âu trong hơn 1.400 năm. Thương nhân mang lụa, gia vị và trà theo tuyến đường này.",
+      context_en: "Traders carried valuable goods on the Silk Road. Student asks what they carried.",
+      question_word_bank: ["What did", "Where did", "When did", "Why did"],
+      question_frame: "___ traders carry on the Silk Road?",
+      correctWord: "What did"
+    },
+    {
+      nova_says: "Marco Polo met many merchants, artists, and powerful rulers like Kublai Khan during his long travels.",
+      nova_says_vi: "Marco Polo đã gặp nhiều thương nhân, nghệ sĩ và các vị vua quyền lực như Hốt Tất Liệt trong chuyến đi dài.",
+      context_en: "Marco Polo encountered famous people. Student asks who he met.",
+      question_word_bank: ["Who did", "What did", "Where did", "When did"],
+      question_frame: "___ Marco Polo meet in China?",
       correctWord: "Who did"
     },
     {
-      nova_says: "The Silk Road connected Asia and Europe. Traders carried silk, spices, and other goods along this route for many centuries.",
-      nova_says_vi: "Con duong To lua ket noi Chau A va Chau Au. Thuong nhan mang lua, gia vi va hang hoa khac theo tuyen duong nay trong nhieu the ky.",
-      context_en: "The Silk Road was very important. Student asks about this famous trade route.",
-      question_word_bank: ["What did", "When was", "How was", "Where is"],
-      question_frame: "___ the Silk Road?",
-      correctWord: "What did"
-    },
-    {
-      nova_says: "Explorers went on dangerous journeys to find new places. They met new people and wrote about everything they saw.",
-      nova_says_vi: "Cac nha tham hiem di nhung hanh trinh nguy hiem de tim noi moi. Ho gap nguoi moi va viet ve moi thu ho nhin thay.",
-      context_en: "Explorers are brave people. Student asks about the adventures of explorers.",
-      question_word_bank: ["What did", "Why did", "How did", "Who did"],
-      question_frame: "___ explorers find?",
-      correctWord: "What did"
-    },
-    {
-      nova_says: "When explorers came back home, they told people about the amazing places they had seen. Their stories inspired other people to start their own adventures.",
-      nova_says_vi: "Khi cac nha tham hiem tro ve nha, ho ke cho moi nguoi ve nhung noi tuyet voi ho da thay. Cau chuyen cua ho truyen cam hung cho nguoi khac bat dau cuoc phieu luu rieng cua ho.",
-      context_en: "Explorers shared their experiences. Student asks what explorers did after their journeys.",
+      nova_says: "When explorers returned home from their journeys, they wrote books and gave their findings to museums on shore.",
+      nova_says_vi: "Khi các nhà thám hiểm trở về nhà, họ viết sách và trao lại phát hiện cho các bảo tàng trên bờ.",
+      context_en: "Explorers completed their journey. Student asks what they did after returning.",
       question_word_bank: ["What did", "When did", "Why did", "How did"],
       question_frame: "___ explorers do when they came back?",
       correctWord: "What did"
