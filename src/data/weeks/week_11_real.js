@@ -16,11 +16,11 @@ export const week11RealData = {
   topic: "Weekend Fun Spots (Places)",
   topic_vi: "Địa Điểm Vui Chơi Cuối Tuần",
   
-  learning_outcome: "Identify and talk about fun weekend places using 'at [place]'.",
-  learning_outcome_vi: "Nhận biết và nói về các địa điểm vui chơi cuối tuần dùng 'at [place]'.",
+  learning_outcome: "Identify and talk about fun weekend places using 'at the park'.",
+  learning_outcome_vi: "Nhận biết và nói về các địa điểm vui chơi cuối tuần dùng 'at the park'.",
   
   grammar_focus: "Pattern 'I go to / I play at...'",
-  grammar_pattern: "I go to [place] / I play at [place]",
+  grammar_pattern: "I go to the park / I play at the park",
   
   target_vocab: [
     { word: "park", pronunciation: "/pɑːrk/", definition_vi: "Công viên" },
