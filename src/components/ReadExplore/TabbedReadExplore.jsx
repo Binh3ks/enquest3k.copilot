@@ -3,6 +3,8 @@ import { BookOpen, Microscope, Globe, Volume2 } from 'lucide-react';
 import { getImageUrl } from '../../utils/imageUrl';
 import HoverWord from '../common/HoverWord';
 import dictionaryData from '../../data/dictionary.json';
+import { speakText } from '../../utils/AudioHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
 /**
  * TabbedReadExplore - Dual Tab Component for W35+ Structure
@@ -14,6 +16,7 @@ import dictionaryData from '../../data/dictionary.json';
  * Enhanced learning through content-based language acquisition
  */
 const TabbedReadExplore = ({ weekNumber, weekData }) => {
+  const { learningMode } = useUserStore();
   const [activeTab, setActiveTab] = useState('stem');
   const [isPlaying, setIsPlaying] = useState(false);
   const [answers, setAnswers] = useState({});
@@ -28,33 +31,89 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
     return Object.fromEntries(arr.map(e => [(e.word || '').toLowerCase(), e]));
   }, []);
 
+  const lookupDict = (raw) => {
+    if (!raw) return null;
+    const t = raw.toLowerCase().trim();
+    if (dictionary[t]) return dictionary[t];
+    if (t.endsWith('s') && dictionary[t.slice(0, -1)]) return dictionary[t.slice(0, -1)];
+    if (t.endsWith('ed') && dictionary[t.slice(0, -2)]) return dictionary[t.slice(0, -2)];
+    return null;
+  };
+
   const renderStyledText = (text) => {
     if (!text) return null;
-    return text.split(/(\*\*[^*]+\*\*)/).map((part, i) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        const phrase = part.slice(2, -2);
-        return (
-          <HoverWord key={i} word={phrase} className="font-semibold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded hover:bg-indigo-100 cursor-pointer transition-colors inline-block my-0.5">
-            {phrase}
-          </HoverWord>
+    let key = 0;
+    const parts = [];
+    const segments = text.split(/(\*\*.*?\*\*)/);
+
+    for (const segment of segments) {
+      if (segment.startsWith('**') && segment.endsWith('**')) {
+        const word = segment.slice(2, -2).trim();
+        parts.push(
+          <HoverWord
+            key={key++}
+            word={word}
+            themeColor={activeTab === 'stem' ? 'indigo' : 'amber'}
+            onSpeak={(w) => speakText(w, null, 1.0, null, 'new_word', weekNumber, learningMode)}
+            entry={lookupDict(word)}
+            tier={1}
+          />
         );
-      }
-      return part.split(/(\s+)/).map((word, j) => {
-        if (/^\s+$/.test(word)) {
-          return word;
+      } else {
+        let currentWord = '';
+        let currentNonWord = '';
+
+        for (let i = 0; i < segment.length; i++) {
+          const char = segment[i];
+          const isWordChar = /[\w'-]/.test(char);
+
+          if (isWordChar) {
+            if (currentNonWord) {
+              parts.push(<span key={key++} className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800">{currentNonWord}</span>);
+              currentNonWord = '';
+            }
+            currentWord += char;
+          } else {
+            if (currentWord) {
+              const entry = lookupDict(currentWord);
+              let tier = (entry && entry.meaning) ? 2 : 3;
+              parts.push(
+                <HoverWord
+                  key={key++}
+                  word={currentWord}
+                  themeColor={activeTab === 'stem' ? 'indigo' : 'amber'}
+                  onSpeak={(w) => speakText(w, null, 1.0, null, 'new_word', weekNumber, learningMode)}
+                  entry={entry}
+                  tier={tier}
+                />
+              );
+              currentWord = '';
+            }
+            currentNonWord += char;
+          }
         }
-        const cleaned = word.replace(/[^a-zA-Z']/g, '').toLowerCase();
-        const dictEntry = cleaned && dictionary[cleaned];
-        if (dictEntry && cleaned.length > 1) {
-          return (
-            <HoverWord key={`${i}-${j}`} word={dictEntry.word || word} className="hover:text-indigo-600 cursor-pointer transition-colors">
-              {word}
-            </HoverWord>
+
+        if (currentWord) {
+          const entry = lookupDict(currentWord);
+          let tier = (entry && entry.meaning) ? 2 : 3;
+          parts.push(
+            <HoverWord
+              key={key++}
+              word={currentWord}
+              themeColor={activeTab === 'stem' ? 'indigo' : 'amber'}
+              onSpeak={(w) => speakText(w, null, 1.0, null, 'new_word', weekNumber, learningMode)}
+              entry={entry}
+              tier={tier}
+            />
           );
         }
-        return word;
-      });
-    });
+        if (currentNonWord) {
+          parts.push(<span key={key++} className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800">{currentNonWord}</span>);
+        }
+      }
+    }
+
+    return parts;
   };
 
   const tabs = [
@@ -181,17 +240,17 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
             )}
 
             {/* Story Content */}
-            <div className="bg-white rounded-xl shadow-lg p-8 space-y-4">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 space-y-6 border border-slate-100">
               {currentContent.paragraphs?.map((paragraph, idx) => (
-                <p key={idx} className="text-lg leading-relaxed text-gray-700">
+                <p key={idx} className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800 font-medium">
                   {renderStyledText(paragraph)}
                 </p>
               ))}
 
               {!currentContent.paragraphs && currentContent.content_en && (
-                <div className="text-lg leading-relaxed text-gray-700 whitespace-pre-line">
+                <div className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800 font-medium whitespace-pre-line">
                   {currentContent.content_en.split(/\n/).filter(s => s.trim()).map((para, idx) => (
-                    <p key={idx} className="mb-4">{renderStyledText(para)}</p>
+                    <p key={idx} className="mb-6">{renderStyledText(para)}</p>
                   ))}
                 </div>
               )}
