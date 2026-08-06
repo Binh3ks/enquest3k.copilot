@@ -79,55 +79,38 @@ const SocialQuizDisplay = ({ weekNumber, questions = [], onProgress, learningMod
   };
 
   const checkAnswer = (option) => {
-    // Just select the MCQ option — student still needs to write a sentence explanation
     setSelectedAnswer(option);
-    setExplanation('');
-    setExplanationSubmitted(false);
-    setFeedback(null);
-  };
-
-  const submitExplanation = () => {
-    const trimmed = explanation.trim();
-    if (!trimmed) {
-      setFeedback({ type: 'error', message: 'Please write a sentence to explain your answer!' });
-      return;
-    }
-    const wordCount = trimmed.split(/\s+/).length;
-    if (wordCount < 5) {
-      setFeedback({ type: 'error', message: 'Please write a complete sentence (at least 5 words). For example: "I chose this because Rome was a great empire."' });
-      return;
-    }
-
-    setExplanationSubmitted(true);
-    const isCorrect = selectedAnswer === question.correct_answer;
+    const targetCorrect = question.correct || question.correct_answer;
+    const isCorrect = option === targetCorrect;
 
     // Update attempt record for this question
-    const prev = attemptRecords[question.id] || { attempts: 0, errors: 0 };
+    const qId = question.id || currentQuestion + 1;
+    const prev = attemptRecords[qId] || { attempts: 0, errors: 0 };
     const newRecord = {
       attempts: prev.attempts + 1,
       errors: isCorrect ? prev.errors : prev.errors + 1,
       finalCorrect: isCorrect,
     };
-    const newAttemptRecords = { ...attemptRecords, [question.id]: newRecord };
+    const newAttemptRecords = { ...attemptRecords, [qId]: newRecord };
     setAttemptRecords(newAttemptRecords);
 
     if (isCorrect) {
       setFeedback({
         type: 'success',
-        message: question.explanation_en || 'Correct! Well done! 🎉'
+        message: question.explanation || question.explanation_en || 'Correct! Well done! 🎉'
       });
+      if (!completed.includes(qId)) {
+        const newCompleted = [...completed, qId];
+        setCompleted(newCompleted);
+        saveProgress(newCompleted, currentQuestion, newAttemptRecords);
+      } else {
+        saveProgress(completed, currentQuestion, newAttemptRecords);
+      }
     } else {
       setFeedback({
         type: 'error',
-        message: `Not quite. The correct answer is: ${question.correct_answer}`
+        message: `Not quite. The correct answer is: ${targetCorrect}. ${question.explanation || question.explanation_en || ''}`
       });
-    }
-
-    if (!completed.includes(question.id)) {
-      const newCompleted = [...completed, question.id];
-      setCompleted(newCompleted);
-      saveProgress(newCompleted, currentQuestion, newAttemptRecords);
-    } else {
       saveProgress(completed, currentQuestion, newAttemptRecords);
     }
   };
@@ -226,68 +209,47 @@ const SocialQuizDisplay = ({ weekNumber, questions = [], onProgress, learningMod
         {/* Answer Options */}
         <div className="space-y-3">
           {question.options?.map((option, idx) => {
+            const letter = String.fromCharCode(65 + idx);
+            const targetCorrect = question.correct || question.correct_answer;
             const isSelected = selectedAnswer === option;
-            const isCorrect = option === question.correct_answer;
-            const showResult = explanationSubmitted;
-            
-            let buttonStyle = 'border-2 border-gray-300 hover:border-green-400 hover:bg-green-50';
+            const isCorrectAnswer = option === targetCorrect;
+            let buttonStyle = 'border-2 border-gray-200 hover:border-green-400 hover:bg-green-50 text-gray-800 bg-gray-50';
 
-            if (isSelected && !showResult) {
-              buttonStyle = 'border-2 border-blue-500 bg-blue-50';
-            } else if (showResult && isSelected) {
-              buttonStyle = isCorrect 
-                ? 'border-2 border-green-500 bg-green-100' 
-                : 'border-2 border-red-500 bg-red-100';
-            } else if (showResult && isCorrect) {
-              buttonStyle = 'border-2 border-green-500 bg-green-50';
+            if (feedback) {
+              if (isCorrectAnswer) {
+                buttonStyle = 'border-2 border-green-500 bg-green-100 text-green-900 font-bold';
+              } else if (isSelected && !isCorrectAnswer) {
+                buttonStyle = 'border-2 border-red-500 bg-red-100 text-red-900 line-through';
+              }
+            } else if (isSelected) {
+              buttonStyle = 'border-2 border-green-500 bg-green-50 text-green-900 font-bold';
             }
             
             return (
               <button
                 key={idx}
-                onClick={() => selectedAnswer === null && checkAnswer(option)}
-                disabled={selectedAnswer !== null}
+                onClick={() => (!feedback || !completed.includes(question.id || currentQuestion + 1)) && checkAnswer(option)}
                 className={`
-                  w-full text-left px-6 py-4 rounded-xl font-medium text-gray-800
-                  transition-all duration-200 ${buttonStyle}
+                  w-full text-left px-6 py-4 rounded-xl font-medium
+                  transition-all duration-200 flex items-center space-x-3 ${buttonStyle}
                 `}
               >
-                <div className="flex items-center justify-between">
-                  <span>{option}</span>
-                  {showResult && isCorrect && (
-                    <CheckCircle size={20} className="text-green-600" />
-                  )}
-                  {showResult && isSelected && !isCorrect && (
-                    <XCircle size={20} className="text-red-600" />
-                  )}
-                </div>
+                <span className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-xs font-bold shadow-sm flex-shrink-0">
+                  {letter}
+                </span>
+                <span className="flex-1 leading-snug">{option}</span>
+                {feedback && isCorrectAnswer && (
+                  <CheckCircle size={20} className="text-green-600 flex-shrink-0" />
+                )}
+                {feedback && isSelected && !isCorrectAnswer && (
+                  <XCircle size={20} className="text-red-600 flex-shrink-0" />
+                )}
               </button>
             );
           })}
         </div>
 
-        {/* Explanation textarea — required after MCQ selection */}
-        {selectedAnswer !== null && !explanationSubmitted && (
-          <div className="space-y-2 pt-2">
-            <label className="block text-sm font-semibold text-gray-700">
-              Now explain your answer in a complete sentence:
-              <span className="text-gray-500 font-normal ml-1">(at least 5 words)</span>
-            </label>
-            <textarea
-              value={explanation}
-              onChange={(e) => setExplanation(e.target.value)}
-              rows={3}
-              placeholder="e.g., I chose this answer because I know that ancient Rome had a powerful army."
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none text-base resize-none"
-            />
-            <button
-              onClick={submitExplanation}
-              className="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-semibold"
-            >
-              Submit Answer
-            </button>
-          </div>
-        )}
+
 
         {/* Feedback */}
         {feedback && (
