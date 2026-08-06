@@ -34,3 +34,10 @@ self.addEventListener('notificationclick', (event) => {
 // Basic install/activate — no caching needed (app is on Cloudflare Pages CDN)
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => e.waitUntil(clients.claim()));
+
+// Always fetch JS assets directly from network, bypass SW cache
+self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes('/assets/') || event.request.destination === 'script') {
+    event.respondWith(fetch(event.request));
+  }
+});

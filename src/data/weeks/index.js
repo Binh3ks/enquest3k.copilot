@@ -58,6 +58,16 @@ export const loadWeekData = async (weekId, isEasy = false) => {
     return data;
   } catch (error) {
     console.error(`[LazyLoad] Failed to load Week ${weekId} (${isEasy ? 'Easy' : 'Adv'}):`, error);
+    // Auto-recover from stale Service Worker / browser module cache
+    if (typeof window !== 'undefined' && !window._swCleanedUp) {
+      window._swCleanedUp = true;
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((regs) => {
+          for (let reg of regs) reg.unregister();
+          window.location.reload();
+        });
+      }
+    }
     return null;
   }
 };
