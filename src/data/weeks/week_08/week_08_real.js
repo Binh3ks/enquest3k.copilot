@@ -20,7 +20,7 @@ const week8RealData = {
   
   // === GRAMMAR FOCUS ===
   grammar_focus: "There are... (Plural)",
-  grammar_pattern: "There are [number] [plural nouns] in the [place]",
+  grammar_pattern: "There are [number] [plural nouns] in the the park",
   grammar_examples: [
     "There are 20 desks in the classroom.",
     "There are 3 markers on the board.",
@@ -225,7 +225,7 @@ const week8RealData = {
       },
       
       // 🎬 OPENING NARRATIVE
-      opening_narrative: "Hi! I'm Nova! Every Monday I count everything in our classroom! Let's count together! What is your name? Say: My name is [your name]",
+      opening_narrative: "Hi! I'm Nova! Every Monday I count everything in our classroom! Let's count together! What is your name? Say: My name is Alex",
       
       nova_greeting: "Hi! Let's count everything in our classroom!", // DEPRECATED
       

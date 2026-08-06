@@ -227,7 +227,7 @@ const week5RealData = {
       },
       
       // 🎬 OPENING NARRATIVE (replaces nova_greeting)
-      opening_narrative: "Hi! I'm Nova! I travel around the world looking at cool houses. Today I'm visiting YOUR house! I'm so excited! What do I call you? Say: My name is [your name] or I am [your name]",
+      opening_narrative: "Hi! I'm Nova! I travel around the world looking at cool houses. Today I'm visiting YOUR house! I'm so excited! What do I call you? Say: My name is Alex or I am Alex",
       
       nova_greeting: "Hi! Let's explore your house together!", // DEPRECATED - use opening_narrative
       

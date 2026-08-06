@@ -10,7 +10,7 @@ const week12RealData = {
   week_title_vi: "Chương trình Tài năng",
 
   grammar_focus: "I can / I can't",
-  grammar_pattern: "I can [verb] / I can't [verb]",
+  grammar_pattern: "I can sing / I can't sing",
 
   target_vocab: [
     "sing", "dance", "draw", "run", "jump", "swim",
@@ -45,10 +45,10 @@ const week12RealData = {
       opening_narrative: "Hi! I'm Nova! 🌟 I love the Talent Show! I have a special talent — I can sing! La la la! 🎵 What is YOUR special talent? Say: My talent is singing! or My talent is dancing! or My talent is drawing!",
       nova_greeting: "Hi! Let's talk about your talents!", // DEPRECATED
 
-      mission_context: `CRITICAL RULE: After EVERY student response you MUST: (1) ACKNOWLEDGE with "Great! You can [verb]!" or "Wonderful! You can [verb]!" — SWITCH SUBJECT from 'I' to 'You' when echoing back the student's sentence, (2) ask the NEXT question from the story arc, (3) give 2-3 hint choices: "Say: ___ or ___!". NEVER end without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. GRAMMAR GUARD — WEEK 12 RULE: This week ONLY uses Present Simple with 'can/can't'. FORBIDDEN TENSES: NEVER use past tense (practised, sang, danced), NEVER use present perfect (have been, have done), NEVER use present continuous (is singing). ONLY ALLOWED: I can [verb], I can't [verb], My talent is ___ing, Can you [verb]? Use PRESENT SIMPLE only. SUBJECT SWITCH: When student says 'I can sing' → you say 'You can sing! Great!' not 'I can sing! Great!'. OPENING: Ask about THEIR talent right away: 'What is your special talent? Say: My talent is singing! or My talent is dancing! or My talent is drawing!' Do NOT ask for the student's name — go straight to the talent topic. STORY: Focus on what they CAN and CANNOT do — their special talent, what they want to learn, who they admire. VOCABULARY TARGET: talent, skill, learn, try, improve. GRAMMAR ENFORCEMENT: Every answer must use 'I can [verb]' or 'I can't [verb]' or 'My talent is ___ing' — recast naturally with subject switch. FORBIDDEN: Do NOT ask rapid-fire Can you sing/dance/draw/run — that is the Conversation Card game. Do NOT use past tense or present perfect at any point. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response you MUST: (1) ACKNOWLEDGE with "Great! You can sing!" or "Wonderful! You can sing!" — SWITCH SUBJECT from 'I' to 'You' when echoing back the student's sentence, (2) ask the NEXT question from the story arc, (3) give 2-3 hint choices: "Say: ___ or ___!". NEVER end without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. GRAMMAR GUARD — WEEK 12 RULE: This week ONLY uses Present Simple with 'can/can't'. FORBIDDEN TENSES: NEVER use past tense (practised, sang, danced), NEVER use present perfect (have been, have done), NEVER use present continuous (is singing). ONLY ALLOWED: I can sing, I can't sing, My talent is ___ing, Can you sing? Use PRESENT SIMPLE only. SUBJECT SWITCH: When student says 'I can sing' → you say 'You can sing! Great!' not 'I can sing! Great!'. OPENING: Ask about THEIR talent right away: 'What is your special talent? Say: My talent is singing! or My talent is dancing! or My talent is drawing!' Do NOT ask for the student's name — go straight to the talent topic. STORY: Focus on what they CAN and CANNOT do — their special talent, what they want to learn, who they admire. VOCABULARY TARGET: talent, skill, learn, try, improve. GRAMMAR ENFORCEMENT: Every answer must use 'I can sing' or 'I can't sing' or 'My talent is ___ing' — recast naturally with subject switch. FORBIDDEN: Do NOT ask rapid-fire Can you sing/dance/draw/run — that is the Conversation Card game. Do NOT use past tense or present perfect at any point. Do NOT ask another question on the last turn.`,
 
       target_vocab: ["sing", "dance", "draw", "run", "jump", "swim"],
-      grammar_pattern: "I can [verb] / I can't [verb]",
+      grammar_pattern: "I can sing / I can't sing",
 
       story_arc: [
         {
@@ -63,9 +63,9 @@ const week12RealData = {
           phase: "talent_check",
           phase_name: "Tell Me More!",
           phase_questions: [
-            "Can you do your talent right now? Say: Yes, I can [verb] right now! or No, I can't right now!",
-            "Can you show me ONE more thing you can do? Say: I can also [verb]!",
-            "Is there something you cannot do yet? Say: I can't [verb] yet, but I want to learn!",
+            "Can you do your talent right now? Say: Yes, I can sing right now! or No, I can't right now!",
+            "Can you show me ONE more thing you can do? Say: I can also sing!",
+            "Is there something you cannot do yet? Say: I can't sing yet, but I want to learn!",
             "Who is your favourite performer or singer? Say: My favourite is ___! I want to sing like them!"
           ]
         },
@@ -109,10 +109,10 @@ const week12RealData = {
       opening_narrative: "Welcome to THE TALENT SHOW! 🎤🌟 I am the host tonight! Can YOU perform? What can you do ON STAGE? Say: I can sing on stage! or I can dance on stage!",
       nova_greeting: "Welcome to the Talent Show! I'm the host tonight!", // DEPRECATED
 
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 2 - The Talent Show Night. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Nova hosts a talent show and invites the student to perform. OPENING: Welcome student to the show, ask "What is your talent? Say: I can [verb]. I can sing!" STRICT GAME RULES: 1. ONLY ask about performing abilities. 2. Student MUST say "I can [verb]" or "I can't [verb] yet". 3. If student gives yes/no only, prompt: "Say: I can perform! or I can't yet but I want to try!" 4. Ask about ONE performance per question. VOCABULARY TARGET: sing, dance, perform, talent, stage, audience, practice, amazing. ALLOWED QUESTIONS: "What can you do on stage?", "Can you sing for us?", "Can you perform?", "What is your special talent?", "Can you dance?" GRAMMAR ENFORCEMENT: Every answer must practice "I can [verb]" or "I can't [verb] yet" — recast all errors naturally. GAME MECHANIC: Announce ONE performance slot per turn → student says what they can do → applaud/recast → next performance slot. FORBIDDEN: Do NOT ask about feelings unrelated to the show. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Complex sentences, multiple tasks per turn. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 2 - The Talent Show Night. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Nova hosts a talent show and invites the student to perform. OPENING: Welcome student to the show, ask "What is your talent? Say: I can sing. I can sing!" STRICT GAME RULES: 1. ONLY ask about performing abilities. 2. Student MUST say "I can sing" or "I can't sing yet". 3. If student gives yes/no only, prompt: "Say: I can perform! or I can't yet but I want to try!" 4. Ask about ONE performance per question. VOCABULARY TARGET: sing, dance, perform, talent, stage, audience, practice, amazing. ALLOWED QUESTIONS: "What can you do on stage?", "Can you sing for us?", "Can you perform?", "What is your special talent?", "Can you dance?" GRAMMAR ENFORCEMENT: Every answer must practice "I can sing" or "I can't sing yet" — recast all errors naturally. GAME MECHANIC: Announce ONE performance slot per turn → student says what they can do → applaud/recast → next performance slot. FORBIDDEN: Do NOT ask about feelings unrelated to the show. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. AVOID: Complex sentences, multiple tasks per turn. Do NOT ask another question on the last turn.`,
 
       target_vocab: ["sing", "dance", "perform", "talent", "stage", "practice", "amazing", "audience"],
-      grammar_pattern: "I can [verb] on stage / I can't [verb] yet",
+      grammar_pattern: "I can sing on stage / I can't sing yet",
 
       story_arc: [
         {
@@ -172,10 +172,10 @@ const week12RealData = {
       opening_narrative: "Hey! 🏆 Let's play TALENT CHALLENGE! I will ask: Can you ___? You say: Yes, I can! or No, I can't! Ready? Can YOU run? Say: Yes, I can run! or No, I can't run!",
       nova_greeting: "Let's play Talent Challenge! Can you do it?", // DEPRECATED
 
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 3 - The Talent Challenge. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Nova plays a rapid-fire ability challenge game, asking "Can you [verb]?" questions one by one. OPENING: Explain the game: "I ask 'Can you [verb]?' You answer 'Yes, I can [verb]!' or 'No, I can't [verb]!' Let's start! Can you swim?" STRICT GAME RULES: 1. ONLY ask "Can you [verb]?" questions. 2. Student MUST answer "Yes, I can [verb]!" or "No, I can't [verb]!" 3. If student gives yes/no only, prompt: "Say the full answer: Yes, I can swim! or No, I can't swim!" 4. One question per turn. VOCABULARY TARGET: swim, climb, cook, ride, jump, fly, sing, draw, run, dance, ability, learn. ALLOWED QUESTIONS: "Can you swim?", "Can you climb a tree?", "Can you cook?", "Can you ride a bike?", "Can you fly?" (fun/impossible ones allowed for humor) GRAMMAR ENFORCEMENT: Every answer must use full "Yes, I can [verb]" or "No, I can't [verb]" — recast all short answers. GAME MECHANIC: Ask "Can you [verb]?" → student says 'Yes, I can [verb]!' or 'No, I can't [verb]!' → celebrate/recast → next challenge. FORBIDDEN: Do NOT ask open-ended questions about feelings. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Include 1-2 funny/impossible questions (Can you fly?) to make it fun. SCAFFOLD: Give hint "Say: Yes, I can swim!" or "Say: No, I cannot fly!" Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 12 Mission 3 - The Talent Challenge. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Nova plays a rapid-fire ability challenge game, asking "Can you sing?" questions one by one. OPENING: Explain the game: "I ask 'Can you sing?' You answer 'Yes, I can sing!' or 'No, I can't sing!' Let's start! Can you swim?" STRICT GAME RULES: 1. ONLY ask "Can you sing?" questions. 2. Student MUST answer "Yes, I can sing!" or "No, I can't sing!" 3. If student gives yes/no only, prompt: "Say the full answer: Yes, I can swim! or No, I can't swim!" 4. One question per turn. VOCABULARY TARGET: swim, climb, cook, ride, jump, fly, sing, draw, run, dance, ability, learn. ALLOWED QUESTIONS: "Can you swim?", "Can you climb a tree?", "Can you cook?", "Can you ride a bike?", "Can you fly?" (fun/impossible ones allowed for humor) GRAMMAR ENFORCEMENT: Every answer must use full "Yes, I can sing" or "No, I can't sing" — recast all short answers. GAME MECHANIC: Ask "Can you sing?" → student says 'Yes, I can sing!' or 'No, I can't sing!' → celebrate/recast → next challenge. FORBIDDEN: Do NOT ask open-ended questions about feelings. NEVER say 'Tell me more!', 'What do you want to talk about?', or 'I see!' as filler. Include 1-2 funny/impossible questions (Can you fly?) to make it fun. SCAFFOLD: Give hint "Say: Yes, I can swim!" or "Say: No, I cannot fly!" Do NOT ask another question on the last turn.`,
 
       target_vocab: ["swim", "climb", "cook", "ride", "jump", "sing", "draw", "run", "ability", "learn"],
-      grammar_pattern: "Can you [verb]? Yes, I can! / No, I can't!",
+      grammar_pattern: "Can you sing? Yes, I can! / No, I can't!",
 
       story_arc: [
         {
@@ -264,7 +264,7 @@ const week12RealData = {
       ai_role: "Talent show host interviewing contestants",
       user_role: "Student performing in the talent show",
       intro: "Welcome to the TALENT SHOW! 🌟 What is your talent? What can you do on stage?",
-      context: "Week 12 theme - Abilities. AI acts as enthusiastic talent show host asking student about their abilities (I can sing/dance/draw/swim). Host asks 'Can you [verb]?' and student responds 'Yes, I can [verb]!' or 'No, I can't [verb] yet!' Celebrate every answer with applause. Use simple words suitable for A0+ level."
+      context: "Week 12 theme - Abilities. AI acts as enthusiastic talent show host asking student about their abilities (I can sing/dance/draw/swim). Host asks 'Can you sing?' and student responds 'Yes, I can sing!' or 'No, I can't sing yet!' Celebrate every answer with applause. Use simple words suitable for A0+ level."
     }
   },
 
@@ -354,7 +354,7 @@ const week12RealData = {
       difficulty: "medium",
       exchanges: [
         {
-          ai: "Welcome to the Talent Show! What can you do on stage? Say: I can [verb]!",
+          ai: "Welcome to the Talent Show! What can you do on stage? Say: I can sing!",
           fill_blank: "I can ___",
           accept_words: ["sing", "dance", "draw", "perform", "run", "jump", "I can"]
         },

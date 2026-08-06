@@ -20,7 +20,7 @@ const week6RealData = {
   
   // === GRAMMAR FOCUS (IMPLICIT) ===
   grammar_focus: "Prepositions of Place",
-  grammar_pattern: "[Object] is [in/on/under/next to] the [place]",
+  grammar_pattern: "[Object] is [in/on/under/next to] the the park",
   grammar_examples: [
     "The box is on the desk.",
     "The cat is under the table.",
@@ -146,8 +146,8 @@ const week6RealData = {
       "Where is the treasure?",
       "Is the box on the desk or under the desk?",
       "What is next to the window?",
-      "Where is the [item]?",
-      "Is it in, on, or under the [place]?"
+      "Where is the book?",
+      "Is it in, on, or under the the park?"
     ],
     must_use_vocab: ["box", "desk", "floor", "wall", "window", "door", "in", "on", "under", "next to"],
     must_avoid: [
@@ -233,7 +233,7 @@ const week6RealData = {
       
       target_vocab: ["box", "desk", "floor", "wall", "window", "door"],
       
-      grammar_pattern: "[Object] is [in/on/under/next to] the [place]",
+      grammar_pattern: "[Object] is [in/on/under/next to] the the park",
       
       // 📖 STORY ARC (phases with turn ranges)
       story_arc: [
@@ -372,7 +372,7 @@ const week6RealData = {
       
       target_vocab: ["box", "desk", "floor", "wall", "window", "door", "hide", "seek", "treasure", "hunt"],
       
-      grammar_pattern: "The treasure is [preposition] the [place]",
+      grammar_pattern: "The treasure is [preposition] the the park",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
@@ -474,7 +474,7 @@ const week6RealData = {
       
       target_vocab: ["box", "desk", "floor", "wall", "window", "door", "hide", "seek", "treasure", "hunt"],
       
-      grammar_pattern: "The treasure is [preposition] the [place]",
+      grammar_pattern: "The treasure is [preposition] the the park",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
@@ -582,7 +582,7 @@ const week6RealData = {
       "Prepositions of place: IN, ON, UNDER, NEXT TO",
       "Objects we can hide: box, treasure, toy, ball, book",
       "Places in a house: desk, floor, wall, window, door",
-      "Grammar: [Object] is [IN/ON/UNDER/NEXT TO] the [place]",
+      "Grammar: [Object] is [IN/ON/UNDER/NEXT TO] the the park",
       "IN means inside something (IN the box)",
       "ON means on top of a surface (ON the desk, ON the floor, ON the wall)",
       "UNDER means below something (UNDER the desk, UNDER the box)",
@@ -616,7 +616,7 @@ const week6RealData = {
       ai_role: "Treasure hunt organizer teaching location descriptions",
       user_role: "New treasure hunter learning to describe locations",
       intro: "Ahoy! Welcome to Treasure Hunt Training! I'll teach you how to describe WHERE treasures are hidden!",
-      context: "Week 6 theme - Location & Prepositions. AI acts as experienced treasure hunter teaching beginner how to describe locations using IN, ON, UNDER, NEXT TO. Asks questions like 'Where should we hide this treasure?' or 'Where do you see treasures?' Uses pattern '[Object] is [preposition] the [place]'. Should be enthusiastic, encouraging, and use simple words for A0+ level."
+      context: "Week 6 theme - Location & Prepositions. AI acts as experienced treasure hunter teaching beginner how to describe locations using IN, ON, UNDER, NEXT TO. Asks questions like 'Where should we hide this treasure?' or 'Where do you see treasures?' Uses pattern '[Object] is [preposition] the the park'. Should be enthusiastic, encouraging, and use simple words for A0+ level."
     }
   },
 

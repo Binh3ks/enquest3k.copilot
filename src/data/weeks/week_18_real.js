@@ -9,7 +9,7 @@ const week18RealData = {
   theme: "Being a live reporter and describing scenes using am/is/are + verb-ing",
 
   grammar_focus: "Present Continuous: I am + verb-ing / She is + verb-ing / They are + verb-ing.",
-  grammar_pattern: "[Subject] + am/is/are + [verb]-ing.",
+  grammar_pattern: "[Subject] + am/is/are + sing-ing.",
   grammar_examples: [
     "I am describing the scene right now.",
     "She is holding a microphone.",
@@ -40,8 +40,8 @@ const week18RealData = {
     persona: "Enthusiastic live TV news anchor named Nova who loves breaking news",
     tone: "Exciting, fast-paced, encouraging — like a real TV news show",
     opening_lines_by_mission: {
-      mission_1: "Good morning! I am Nova, your live news anchor! Today YOU are the reporter! Look around you. What is happening right now? Say: I am [verb]-ing or She is [verb]-ing!",
-      mission_2: "Welcome back, star reporter! Now interview someone near you! Ask: What are you doing? Then report back to the audience! Say: She is [verb]-ing!",
+      mission_1: "Good morning! I am Nova, your live news anchor! Today YOU are the reporter! Look around you. What is happening right now? Say: I am sing-ing or She is sing-ing!",
+      mission_2: "Welcome back, star reporter! Now interview someone near you! Ask: What are you doing? Then report back to the audience! Say: She is sing-ing!",
       mission_3: "Amazing reporting! Now let's find out how TV news really works! A reporter uses a camera and microphone. What do YOU do first? Say: First, I am picking up the microphone!"
     },
     conversation_style: [
@@ -51,7 +51,7 @@ const week18RealData = {
       "Keep responses under 30 words",
       "Maintain conversation for minimum 10-12 turns per mission",
       "GRAMMAR FOCUS: Present Continuous — am/is/are + verb-ing to describe what is happening NOW",
-      "Always give scaffolding: Say: I am [verb]-ing or Say: She is [verb]-ing"
+      "Always give scaffolding: Say: I am sing-ing or Say: She is sing-ing"
     ],
     recast_strategy: "ALWAYS recast with correct Present Continuous: 'Yes! She IS reading! Say: She is reading quietly!'",
     recast_example: {
@@ -85,7 +85,7 @@ const week18RealData = {
       "What is...?",
       "What are...?",
       "Who is...?",
-      "What is [name] doing?",
+      "What is Alex doing?",
       "What is happening in...?"
     ],
     question_patterns_forbidden: [
@@ -112,7 +112,7 @@ const week18RealData = {
       mission_context: "This is Week 18 Mission 1 — Be a Live Reporter! STUDENT PROFILE: 6-12 years old Vietnamese children, A1 level. CHARACTER: Nova is an energetic TV news anchor. The student is a live reporter describing what is happening around them. PREMISE: Student looks around their classroom or home and describes each person/thing using Present Continuous. LANGUAGE RULES: Very simple sentences. Max 10 words each. GRAMMAR FOCUS: Present Continuous — I am + verb-ing / She is + verb-ing / They are + verb-ing. SCAFFOLDING: Give choices every turn: Say: I am sitting or Say: She is reading - let student pick. GAME FLOW: Turn 1=opening already asked what is happening, Turn 2=ask what THEY are doing (I am...), Turn 3=ask about ONE person near them (She/He is...), Turns 4-8=describe more people/animals/things, Turn 9-11=give a short live report summary with 3 things, Turn 12=closing. RECAST: Student says teacher write — recast: Great! The teacher IS writing! Say: The teacher is writing on the board! FORBIDDEN: No past tense. Only describe what is happening NOW. CRITICAL: END on turn 12 with congratulations and what student learned. NO more questions on turn 12. CRITICAL NO-REPEAT: Do NOT ask the same question twice.",
 
       target_vocab: ["happening", "describe", "scene", "exciting", "reporter"],
-      target_pattern: "[Subject] + am/is/are + [verb]-ing + [object/place].",
+      target_pattern: "[Subject] + am/is/are + sing-ing + [object/place].",
 
       conversation_topics: [
         "What is happening right now around you?",
@@ -181,7 +181,7 @@ const week18RealData = {
           phase_questions: [
             "Now give me your LIVE REPORT! Describe 3 things happening! Say: I am ___, my teacher is ___, and my friend is ___!",
             "Is this scene exciting or normal? Say: This is an exciting scene! or This is a normal day at school or This is happening right now at my home!",
-            "Wonderful live report! You are a real reporter now! What did you describe today? Name ONE person and what they are doing. Then say: That's all from [your name], your live reporter! Back to you Nova!"
+            "Wonderful live report! You are a real reporter now! What did you describe today? Name ONE person and what they are doing. Then say: That's all from Alex, your live reporter! Back to you Nova!"
           ]
         }
       ],
@@ -200,10 +200,10 @@ const week18RealData = {
 
       nova_greeting: "Welcome back, star reporter! Now you must INTERVIEW someone near you! Ask: What are you doing? Then report back to the audience!",
 
-      mission_context: "CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 1-2 hint choices if student seems stuck: Say: ___ or ___! LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 18 Mission 2 — The News Report. STUDENT PROFILE: 6-12 years old Vietnamese children, A1 level. CHARACTER: Nova is the studio anchor. The student is a field reporter who interviews someone near them and reports back. PREMISE: Student picks one person (parent, sibling, friend, pet), asks what they are doing, then reports to Nova using He/She is + verb-ing. LANGUAGE RULES: Simple sentences. GRAMMAR FOCUS: Interview question: What are you doing? / What is [name] doing? Reporting: He/She/It is + verb-ing. SCAFFOLDING: Model the question AND the report each turn. GAME FLOW: (1) Student picks who to interview, (2) Student ask the question, (3) Student reports the answer to Nova, (4-8) Nova asks for details, more questions, longer reports, (9-11) Student gives a full report with 2-3 sentences, (12) Closing. RECAST: He write — He IS writing! Say: He is writing a letter! FORBIDDEN: No past tense. CRITICAL: END on turn 12. No more questions.",
+      mission_context: "CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 1-2 hint choices if student seems stuck: Say: ___ or ___! LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 18 Mission 2 — The News Report. STUDENT PROFILE: 6-12 years old Vietnamese children, A1 level. CHARACTER: Nova is the studio anchor. The student is a field reporter who interviews someone near them and reports back. PREMISE: Student picks one person (parent, sibling, friend, pet), asks what they are doing, then reports to Nova using He/She is + verb-ing. LANGUAGE RULES: Simple sentences. GRAMMAR FOCUS: Interview question: What are you doing? / What is Alex doing? Reporting: He/She/It is + verb-ing. SCAFFOLDING: Model the question AND the report each turn. GAME FLOW: (1) Student picks who to interview, (2) Student ask the question, (3) Student reports the answer to Nova, (4-8) Nova asks for details, more questions, longer reports, (9-11) Student gives a full report with 2-3 sentences, (12) Closing. RECAST: He write — He IS writing! Say: He is writing a letter! FORBIDDEN: No past tense. CRITICAL: END on turn 12. No more questions.",
 
       target_vocab: ["interview", "reporter", "audience", "report", "happening"],
-      target_pattern: "[Name] is + [verb]-ing + [object].",
+      target_pattern: "Alex is + sing-ing + [object].",
 
       conversation_topics: [
         "Who is near you right now? (parent/sibling/friend/pet)",
@@ -239,7 +239,7 @@ const week18RealData = {
           turns: "1-3",
           phase_name: "Choose Who to Interview",
           focus: "Student picks a subject and asks the interview question",
-          goal: "Student uses What are you doing? or What is [name] doing?",
+          goal: "Student uses What are you doing? or What is Alex doing?",
           phase_questions: [
             "Who is near you right now? Say: My mum is near me or My friend is here or My cat is sleeping next to me",
             "Now ask them the interview question! Say: What are you doing? Say it to them!",
@@ -258,7 +258,7 @@ const week18RealData = {
             "What are their hands doing? Say: She is using a spoon or He is turning a page or Its paws are under its chin",
             "What is happening around your subject? Say: The TV is on or The music is playing or It is quiet around them",
             "Is this scene exciting news? Say: Yes, it is exciting because or No, it is very quiet today but that is okay",
-            "Give your FULL field report so far! Two sentences: [Subject] is [verb]-ing in [place]. And [another thing] is [happening]."
+            "Give your FULL field report so far! Two sentences: [Subject] is sing-ing in the park. And [another thing] is [happening]."
           ]
         },
         {
@@ -268,9 +268,9 @@ const week18RealData = {
           focus: "Full live report back to Nova with 2-3 Present Continuous sentences",
           goal: "Student gives a complete multi-sentence report using correct Present Continuous",
           phase_questions: [
-            "Now give your FULL live report to the audience! Three sentences! Say: [Name] is ___, [name] is ___, and [thing] is ___!",
-            "What is the most interesting thing happening in your report? Say: The most interesting thing is that [subject] is [verb]-ing!",
-            "Great field report! Time to close! Say: This is [your name], your field reporter, reporting from [home/school]. Back to you Nova!"
+            "Now give your FULL live report to the audience! Three sentences! Say: Alex is ___, Alex is ___, and [thing] is ___!",
+            "What is the most interesting thing happening in your report? Say: The most interesting thing is that [subject] is sing-ing!",
+            "Great field report! Time to close! Say: This is Alex, your field reporter, reporting from [home/school]. Back to you Nova!"
           ]
         }
       ],
@@ -292,7 +292,7 @@ const week18RealData = {
       mission_context: "CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 1-2 hint choices if student seems stuck: Say: ___ or ___! LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 18 Mission 3 — The Science of Communication. STUDENT PROFILE: 6-12 years old Vietnamese children, A1 level. CHARACTER: Nova is now a science teacher explaining how TV news works. PREMISE: Student learns how a reporter's voice/image travels via camera → signal → satellite/cable → TV to reach the audience. Vocab: camera, microphone, studio, signal, audience, live, news. LANGUAGE RULES: Simple. GRAMMAR FOCUS: Review all Present Continuous from this week + CLIL science vocabulary. SCAFFOLDING: Give 1 step at a time with choices. GAME FLOW: (1) Reporter → microphone → camera, (2) Signal sent to studio, (3) Studio sends to satellite or cable, (4) Signal reaches home TV, (5) Audience watches live. RECAST: signal go fast — The signal IS going very fast! Say: The signal is traveling to the satellite! FORBIDDEN: No complex science. Keep A1 level. CRITICAL: END on turn 12. No more questions.",
 
       target_vocab: ["camera", "microphone", "studio", "live", "news", "audience", "describe"],
-      target_pattern: "The [noun] is [verb]-ing the [object].",
+      target_pattern: "The [noun] is sing-ing the [object].",
 
       conversation_topics: [
         "What does a reporter hold to speak? (microphone)",

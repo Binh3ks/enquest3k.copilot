@@ -223,7 +223,7 @@ const week9RealData = {
       },
       
       // 🎬 OPENING NARRATIVE
-      opening_narrative: "Hi! I'm Nova! I am a city tour guide! Let's walk through the city together! What is your name? Say: My name is [your name]",
+      opening_narrative: "Hi! I'm Nova! I am a city tour guide! Let's walk through the city together! What is your name? Say: My name is Alex",
       
       nova_greeting: "Hi! Let's explore the city!", // DEPRECATED
       

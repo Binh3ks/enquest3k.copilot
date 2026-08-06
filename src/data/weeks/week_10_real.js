@@ -20,7 +20,7 @@ const week10RealData = {
   
   // === GRAMMAR FOCUS ===
   grammar_focus: "Contrast with 'but'",
-  grammar_pattern: "The [place] is [adjective], but the [place] is [adjective]",
+  grammar_pattern: "The the park is [adjective], but the the park is [adjective]",
   grammar_examples: [
     "The city is noisy, but the farm is quiet.",
     "The city is busy, but the farm is peaceful.",
@@ -130,7 +130,7 @@ const week10RealData = {
       "NO emojis - text-to-speech will read them aloud",
       "Keep responses under 30 words",
       "Maintain conversation for minimum 10-15 turns per mission",
-      "FOCUS on contrast patterns: The [place] is [adj], but the [place] is [adj]"
+      "FOCUS on contrast patterns: The the park is [adj], but the the park is [adj]"
     ],
     recast_strategy: "ALWAYS recast student errors by modeling correct contrast form naturally",
     recast_example: {
@@ -223,7 +223,7 @@ const week10RealData = {
       },
       
       // 🎬 OPENING NARRATIVE
-      opening_narrative: "Hi! I'm Nova! Let's compare the city and the farm! They are very different! What is your name? Say: My name is [your name]",
+      opening_narrative: "Hi! I'm Nova! Let's compare the city and the farm! They are very different! What is your name? Say: My name is Alex",
       
       nova_greeting: "Hi! Let's visit the city and the farm!", // DEPRECATED
       
@@ -231,7 +231,7 @@ const week10RealData = {
       
       target_vocab: ["city", "farm", "quiet", "noisy", "busy", "peaceful", "clean"],
       
-      grammar_pattern: "The [place] is [adjective], but the [place] is [adjective]",
+      grammar_pattern: "The the park is [adjective], but the the park is [adjective]",
       
       // 📖 STORY ARC
       story_arc: [
@@ -315,11 +315,11 @@ const week10RealData = {
       nova_greeting: "Welcome to my farm! Let's meet my animal friends!", // DEPRECATED
       default_hints: ["I", "see", "a", "cow"],
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 10 Mission 2 - Farm Animal Friends. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. FOCUS on farm animals and environment. GRAMMAR: Descriptive sentences with adjectives: "The farm is [adj]" and "I see [animal]". VOCABULARY: farm, animals, cow, chicken, field, tree, quiet, clean, peaceful. STRICT FOCUS: FARM ENVIRONMENT AND ANIMALS - Every question about what student sees or how farm is. FORBIDDEN: Do NOT ask complex questions. Keep it simple: "What do you see?", "Is the farm quiet?", "Do you like the cow?" GAME MECHANIC: Show animal/place → student identifies or describes → confirm/recast → next item. NEVER say 'Tell me more!' as filler. Focus on simple descriptions of farm. SCAFFOLD: Give hint "Say: I see a cow!" or "Say: The farm is big and green!" Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 10 Mission 2 - Farm Animal Friends. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 8 words per sentence. FOCUS on farm animals and environment. GRAMMAR: Descriptive sentences with adjectives: "The farm is [adj]" and "I see lion". VOCABULARY: farm, animals, cow, chicken, field, tree, quiet, clean, peaceful. STRICT FOCUS: FARM ENVIRONMENT AND ANIMALS - Every question about what student sees or how farm is. FORBIDDEN: Do NOT ask complex questions. Keep it simple: "What do you see?", "Is the farm quiet?", "Do you like the cow?" GAME MECHANIC: Show animal/place → student identifies or describes → confirm/recast → next item. NEVER say 'Tell me more!' as filler. Focus on simple descriptions of farm. SCAFFOLD: Give hint "Say: I see a cow!" or "Say: The farm is big and green!" Do NOT ask another question on the last turn.`,
       
       target_vocab: ["farm", "animals", "cow", "chicken", "field", "tree", "quiet", "peaceful", "clean"],
       
-      grammar_pattern: "I see [animal]. The farm is [adjective].",
+      grammar_pattern: "I see lion. The farm is [adjective].",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
@@ -446,11 +446,11 @@ const week10RealData = {
       nova_greeting: "Let's talk about your favorite place!", // DEPRECATED
       default_hints: ["I", "like", "the", "farm"],
       
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 10 Mission 3 - My Favorite Place. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 10 words per sentence. FOCUS on preference and reasoning with contrast. GRAMMAR: "I like [place]" and contrast with 'but': "The farm is quiet, but the city is noisy." VOCABULARY: All Week 10 vocab - city, farm, countryside, quiet, noisy, peaceful, busy, clean, animals, trees. STRICT FOCUS: PREFERENCE AND REASONING - Ask which place student likes, then ask WHY using contrast sentences. ALLOWED QUESTIONS: "Do you like the city or the farm?", "Why do you like it?", "What do you see there?" GAME MECHANIC: Recap both places → ask preference → ask for reason with contrast → ask what they see there. Student must give full sentences with reasoning. NEVER say 'Tell me more!' as filler. Focus on complete contrast explanations. SCAFFOLD: Give hint "Say: I like the park!" or "Say: The farm is quiet but the city is loud!" Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 10 Mission 3 - My Favorite Place. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. LANGUAGE RULES: Use VERY SIMPLE words. Max 10 words per sentence. FOCUS on preference and reasoning with contrast. GRAMMAR: "I like the park" and contrast with 'but': "The farm is quiet, but the city is noisy." VOCABULARY: All Week 10 vocab - city, farm, countryside, quiet, noisy, peaceful, busy, clean, animals, trees. STRICT FOCUS: PREFERENCE AND REASONING - Ask which place student likes, then ask WHY using contrast sentences. ALLOWED QUESTIONS: "Do you like the city or the farm?", "Why do you like it?", "What do you see there?" GAME MECHANIC: Recap both places → ask preference → ask for reason with contrast → ask what they see there. Student must give full sentences with reasoning. NEVER say 'Tell me more!' as filler. Focus on complete contrast explanations. SCAFFOLD: Give hint "Say: I like the park!" or "Say: The farm is quiet but the city is loud!" Do NOT ask another question on the last turn.`,
       
       target_vocab: ["city", "farm", "countryside", "quiet", "noisy", "peaceful", "busy", "clean", "animals"],
       
-      grammar_pattern: "I like the [place]. The [place] is [adjective], but the [place] is [adjective].",
+      grammar_pattern: "I like the the park. The the park is [adjective], but the the park is [adjective].",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
@@ -579,7 +579,7 @@ const week10RealData = {
     knowledge_base: [
       "Farm vocabulary: countryside, farm, quiet, clean, peaceful, animals, cow, chicken, field, tree",
       "City vocabulary (review): city, noisy, busy, dirty (opposite of clean)",
-      "Grammar: The [place] is [adjective], but the [place] is [adjective] (Contrast with 'but')",
+      "Grammar: The the park is [adjective], but the the park is [adjective] (Contrast with 'but')",
       "The city is noisy, but the farm is quiet",
       "The city is busy, but the farm is peaceful",
       "The farm is clean, but the city is dirty",

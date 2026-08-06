@@ -223,7 +223,7 @@ const week15RealData = {
       
       target_vocab: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing"],
       
-      grammar_pattern: "He/She is [verb]-ing",
+      grammar_pattern: "He/She is sing-ing",
       
       // 📖 STORY ARC
       story_arc: [
@@ -351,7 +351,7 @@ const week15RealData = {
       
       target_vocab: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing"],
       
-      grammar_pattern: "He/She is [verb]-ing",
+      grammar_pattern: "He/She is sing-ing",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {
@@ -458,7 +458,7 @@ const week15RealData = {
       
       target_vocab: ["running", "walking", "sitting", "eating", "flying", "playing", "jogging", "relaxing", "picnic", "fountain"],
       
-      grammar_pattern: "They are [verb]-ing / A [person] is [verb]-ing",
+      grammar_pattern: "They are sing-ing / A [person] is sing-ing",
 
       // === STORY MODE CONFIGURATION ===
       story_character: {

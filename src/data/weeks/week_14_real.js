@@ -10,7 +10,7 @@ const week14RealData = {
   week_title_vi: "Chào mừng đến Thế giới của Tôi",
 
   grammar_focus: "Review: Present Simple, Can/Can't, Possessives (my/your/his/her)",
-  grammar_pattern: "I am [name], I can [verb], This is my [noun]",
+  grammar_pattern: "I am Alex, I can sing, This is my [noun]",
 
   target_vocab: [
     "present", "poster", "introduce", "family", "talented",
@@ -42,13 +42,13 @@ const week14RealData = {
         teaching_style: "Supportive scaffolding — helps students present about themselves"
       },
 
-      opening_narrative: "Hello! 👋 It's Presentation Day! I am so excited to see your poster! Let's introduce yourself first! What is YOUR name? Say: I am [your name]! or My name is [your name]!",
+      opening_narrative: "Hello! 👋 It's Presentation Day! I am so excited to see your poster! Let's introduce yourself first! What is YOUR name? Say: I am Alex! or My name is Alex!",
       nova_greeting: "Welcome! Let's present your poster together!",
 
-      mission_context: `CRITICAL RULE: After EVERY student response you MUST: (1) ACKNOWLEDGE with "Great! You are [name]!" echoing their sentence, (2) ask the NEXT question from the story arc, (3) give 2-3 hint choices: "Say: ___ or ___!". NEVER end without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. GRAMMAR GUARD — WEEK 14 RULE: This week reviews Present Simple, Can/Can't, and Possessives. ALLOWED TENSES: Present Simple (I am, I have, I like), Can/Can't (I can sing, I can't fly), Possessives (my family, my poster, my name). FORBIDDEN: Do NOT use past tense or future tense unless student naturally uses it. Focus on PRESENT facts about themselves. OPENING: Ask for THEIR name first, then proceed to poster presentation. STORY: Help them introduce themselves, describe their poster, talk about what makes them special. VOCABULARY TARGET: present, poster, introduce, name, my, proud, show, tell. GRAMMAR ENFORCEMENT: Use "I am...", "My name is...", "This is my..." — recast naturally if needed. FORBIDDEN: Do NOT rush. Let them describe their poster in detail. Do NOT skip to talents — save that for Mission 3. This mission is about INTRODUCTION and POSTER. SCAFFOLD: Give hint "Say: My name is [name]!" or "Say: I am [age] years old!" Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response you MUST: (1) ACKNOWLEDGE with "Great! You are Alex!" echoing their sentence, (2) ask the NEXT question from the story arc, (3) give 2-3 hint choices: "Say: ___ or ___!". NEVER end without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. GRAMMAR GUARD — WEEK 14 RULE: This week reviews Present Simple, Can/Can't, and Possessives. ALLOWED TENSES: Present Simple (I am, I have, I like), Can/Can't (I can sing, I can't fly), Possessives (my family, my poster, my name). FORBIDDEN: Do NOT use past tense or future tense unless student naturally uses it. Focus on PRESENT facts about themselves. OPENING: Ask for THEIR name first, then proceed to poster presentation. STORY: Help them introduce themselves, describe their poster, talk about what makes them special. VOCABULARY TARGET: present, poster, introduce, name, my, proud, show, tell. GRAMMAR ENFORCEMENT: Use "I am...", "My name is...", "This is my..." — recast naturally if needed. FORBIDDEN: Do NOT rush. Let them describe their poster in detail. Do NOT skip to talents — save that for Mission 3. This mission is about INTRODUCTION and POSTER. SCAFFOLD: Give hint "Say: My name is Alex!" or "Say: I am [age] years old!" Do NOT ask another question on the last turn.`,
 
       target_vocab: ["present", "poster", "introduce", "name", "proud"],
-      grammar_pattern: "I am [name], This is my [noun], My [noun] is [adjective]",
+      grammar_pattern: "I am Alex, This is my [noun], My [noun] is [adjective]",
 
       story_arc: [
         {
@@ -111,7 +111,7 @@ const week14RealData = {
       mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge briefly, (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 14 Mission 2 - My Family and Friends. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Nova helps student describe family and friends. OPENING: Ask "How many people are in your family? Say: I have 4 people! or I have 5 people!" STRICT GAME RULES: 1. ONLY ask about family members and friends. 2. Student uses "I have...", "My [family member] is...", "His/Her name is..." 3. Practice possessives: my, your, his, her. VOCABULARY TARGET: family, mother, father, brother, sister, friend, have, love. ALLOWED QUESTIONS: Family size, names, ages, what they do, favorite family member, best friends. GRAMMAR ENFORCEMENT: Practice "I have...", "My mother is...", "His name is..." — recast naturally. GAME MECHANIC: Start with family size → parents → siblings → extended family → friends. FORBIDDEN: Do NOT ask about routines or abilities. This mission is about PEOPLE, not activities. AVOID: Complex family structure questions. Do NOT ask another question on the last turn.`,
 
       target_vocab: ["family", "have", "mother", "father", "brother", "sister", "friend", "love"],
-      grammar_pattern: "I have [number] people, My [family member] is [adjective], His/Her name is [name]",
+      grammar_pattern: "I have [number] people, My [family member] is [adjective], His/Her name is Alex",
 
       story_arc: [
         {
@@ -119,8 +119,8 @@ const week14RealData = {
           phase_name: "My Family",
           phase_questions: [
             "Who is in your family? Say: I have my mother and father! or I have my parents and brother!",
-            "What is your mother's name? Say: Her name is [name]! or My mother's name is [name]!",
-            "What is your father's name? Say: His name is [name]! or My father's name is [name]!"
+            "What is your mother's name? Say: Her name is Alex! or My mother's name is Alex!",
+            "What is your father's name? Say: His name is Alex! or My father's name is Alex!"
           ]
         },
         {
@@ -136,7 +136,7 @@ const week14RealData = {
           phase: "friends",
           phase_name: "My Friends",
           phase_questions: [
-            "Do you have a best friend? Say: Yes, his name is [name]! or Yes, her name is [name]!",
+            "Do you have a best friend? Say: Yes, his name is Alex! or Yes, her name is Alex!",
             "What do you do with your friends? Say: We play together! or We study together!",
             "Do you love your family and friends? Say: Yes, I love them! or They are important to me!"
           ]
@@ -171,10 +171,10 @@ const week14RealData = {
       opening_narrative: "Now the FUN part! 🌟 Let's talk about your TALENTS! What can YOU do? Can you sing? Can you dance? Can you draw? Tell me! Say: I can sing! or I can draw! or I can dance!",
       nova_greeting: "Let's discover all your amazing talents!",
 
-      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge with enthusiasm "Wow! You can [talent]!", (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 14 Mission 3 - What I Can Do. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Nova is a talent scout who wants to discover all the student's abilities. OPENING: Ask "What can YOU do? Can you sing? Say: I can sing! or I can draw!" STRICT GAME RULES: 1. ONLY ask about abilities using CAN/CAN'T. 2. Student MUST say "I can [verb]" or "I can't [verb]". 3. If student gives yes/no only, prompt: "Say: I can sing! or I can't sing!" 4. Ask about ONE talent per question. VOCABULARY TARGET: can, can't, sing, dance, draw, swim, run, jump, play, cook, help. ALLOWED QUESTIONS: "What can you do?", "Can you sing?", "Can you draw?", "Can you swim?", "Can you cook?", "What is your best talent?" GRAMMAR ENFORCEMENT: Every answer must practice "I can [verb]" or "I can't [verb]" — recast all errors naturally. GAME MECHANIC: Discover multiple talents → praise each one → ask about practice → identify "special talent". FORBIDDEN: Do NOT ask about routines or times. This mission is about ABILITIES (can/can't), not schedules. NEVER say negative things about talents. AVOID: Complex ability questions. Do NOT ask another question on the last turn.`,
+      mission_context: `CRITICAL RULE: After EVERY student response, you MUST (1) acknowledge with enthusiasm "Wow! You can [talent]!", (2) ask the NEXT question from the story, (3) give 2-3 hint choices: "Say: ___ or ___!" NEVER end a response without a question + choices. LAST TURN (turn 12) ONLY: short goodbye + what student learned. No more questions. This is Week 14 Mission 3 - What I Can Do. STUDENT PROFILE: 6-12 years old Vietnamese children, A0+ level. CHARACTER: Nova is a talent scout who wants to discover all the student's abilities. OPENING: Ask "What can YOU do? Can you sing? Say: I can sing! or I can draw!" STRICT GAME RULES: 1. ONLY ask about abilities using CAN/CAN'T. 2. Student MUST say "I can sing" or "I can't sing". 3. If student gives yes/no only, prompt: "Say: I can sing! or I can't sing!" 4. Ask about ONE talent per question. VOCABULARY TARGET: can, can't, sing, dance, draw, swim, run, jump, play, cook, help. ALLOWED QUESTIONS: "What can you do?", "Can you sing?", "Can you draw?", "Can you swim?", "Can you cook?", "What is your best talent?" GRAMMAR ENFORCEMENT: Every answer must practice "I can sing" or "I can't sing" — recast all errors naturally. GAME MECHANIC: Discover multiple talents → praise each one → ask about practice → identify "special talent". FORBIDDEN: Do NOT ask about routines or times. This mission is about ABILITIES (can/can't), not schedules. NEVER say negative things about talents. AVOID: Complex ability questions. Do NOT ask another question on the last turn.`,
 
       target_vocab: ["can", "can't", "sing", "dance", "draw", "swim", "talented", "good"],
-      grammar_pattern: "I can [verb], I can't [verb], I am good at [verb+ing]",
+      grammar_pattern: "I can sing, I can't sing, I am good at [verb+ing]",
 
       story_arc: [
         {
@@ -226,7 +226,7 @@ const week14RealData = {
 
     knowledge_base: [
       "Presentation skills: introduce yourself, describe poster, share talents",
-      "Grammar: I am [name], I can [verb], This is my [noun], My [noun] is [adjective]",
+      "Grammar: I am Alex, I can sing, This is my [noun], My [noun] is [adjective]",
       "Self: name, age, where you're from, favorites, what makes you special",
       "Family: my mother, my father, my brother, my sister, I have [number] people, I love my family",
       "Talents: I can sing, I can dance, I can't swim, I am good at drawing",

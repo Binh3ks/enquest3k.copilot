@@ -390,7 +390,7 @@ const week16RealData = {
 
     knowledge_base: [
       "Sports vocabulary: kick, throw, catch, run, jump, score, hit, pass, cheer, goal, energy, motion, team",
-      "Grammar: Present Continuous — I am [verb]-ing, He/She is [verb]-ing, They are [verb]-ing",
+      "Grammar: Present Continuous — I am sing-ing, He/She is sing-ing, They are sing-ing",
       "Players use kick and pass to move the ball in soccer",
       "A goal is scored when the ball goes into the net",
       "The crowd cheers and celebrates when their team scores",
