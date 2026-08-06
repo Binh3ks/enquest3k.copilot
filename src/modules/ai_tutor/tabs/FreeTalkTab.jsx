@@ -118,6 +118,14 @@ function isSparkOffTopic(message, card) {
 
 }
 
+function getMaxTurnsForWeek(weekNum) {
+  const w = Number(weekNum) || 1;
+  if (w <= 14) return 4;
+  if (w <= 28) return 6;
+  if (w <= 42) return 8;
+  return 10;
+}
+
 const extractSayOptions = (text) => {
   if (!text) return [];
   const sayMatch = text.match(/\bSay:\s*([^.]+)/i);
@@ -887,7 +895,7 @@ const FreeTalkTab = () => {
         const newSparkTurn = (activeSpark.sparkTurnCount || 0) + 1;
         setActiveSpark(prev => ({ ...prev, sparkTurnCount: newSparkTurn }));
 
-        const targetTurns = sparkData.turns || 8;
+        const targetTurns = sparkData.turns || getMaxTurnsForWeek(weekNumberRef.current);
 
         // ✅ DETERMINISTIC SPARK FOLLOW-UP: All weeks — skip AI, use scaffold frame directly
         if (true) { // deterministic for all weeks
@@ -1219,7 +1227,7 @@ const FreeTalkTab = () => {
       if (mode === 'in_spark' && activeSpark) {
         const rawFrames = activeSpark.card?.frames
           || (activeSpark.card?.scaffold_frames || []).map(f => ({ template: f, follow_up_q: null, hints: [] }));
-        const targetTurns = activeSpark.card?.turns || 8;
+        const targetTurns = activeSpark.card?.turns || getMaxTurnsForWeek(weekNumberRef.current);
         const turnIdx = (activeSpark.sparkTurnCount || 0) + 1;
         const isClosingTurn = turnIdx >= targetTurns;
 

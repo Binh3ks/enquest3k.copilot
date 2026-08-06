@@ -299,3 +299,10 @@ Any future modification to `force_align_transcript.py` or the transcript JSON th
 - **Core Objective**: Shift focus **100% to the student's own life, personal experiences, and imagination**.
 - **Week-Specific Topics**: `spark_talk` in `week_XX_real.js` MUST provide topics inspired by the week's theme (e.g. "My Greatest Adventure", "If I Met an Explorer"), NOT generic fallback topics.
 
+### 11c. Turn Scaffolding Tiers by Week Level (MANDATORY)
+To match students' growing English proficiency over the 1-year journey, the turn length for AI Tutor conversations (Story Missions & Free Talk) MUST strictly scale by week tier:
+- **Weeks 01–14**: 4 turns (A0 entry phase)
+- **Weeks 15–28**: 6 turns (A1 building phase)
+- **Weeks 29–42**: 8 turns (A1+ expanding phase - Week 36 MUST have 8 full turns!)
+- **Weeks 43+**: 10 turns (A2 mastery phase)
+

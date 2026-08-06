@@ -362,6 +362,7 @@ const week_36RealData = {
       text_vi: "Bạn đã có những cuộc phiêu lưu nào?",
       hint_en: "I went to the beach... We went camping in the mountains...",
       hint_vi: "Tôi đi bãi biển... Tôi đi cắm trại ở núi...",
+      turns: 8,
       frames: [
         {
           frame: 1,
@@ -377,15 +378,39 @@ const week_36RealData = {
         },
         {
           frame: 3,
-          prompt_en: "Fun way to travel! What amazing things did you see or do there? Say: I saw beautiful mountains, or We found a campfire",
-          hint_en: "I saw beautiful mountains... We found a campfire...",
-          target_vocab: ["saw", "beautiful", "mountains", "found", "campfire"]
+          prompt_en: "Fun way to travel! What amazing things did you see or do there? Say: I saw beautiful mountains, or We played in the streams",
+          hint_en: "I saw beautiful mountains... We played in the streams...",
+          target_vocab: ["saw", "beautiful", "mountains", "played", "streams"]
         },
         {
           frame: 4,
+          prompt_en: "Great discovery! Did you find anything special or unexpected? Say: I found a colourful shell, or We found a campfire spot",
+          hint_en: "I found a colourful shell... We found a campfire spot...",
+          target_vocab: ["found", "colourful", "shell", "campfire"]
+        },
+        {
+          frame: 5,
+          prompt_en: "What a find! Did you take photos or write about your adventure? Say: I took many photos, or I wrote down everything in my journal",
+          hint_en: "I took many photos... I wrote down everything...",
+          target_vocab: ["took", "photos", "wrote", "journal"]
+        },
+        {
+          frame: 6,
           prompt_en: "What great memories! Who did you share this trip with? Say: I went with my family, or I went with my best friends",
           hint_en: "I went with my family... I went with my best friends...",
           target_vocab: ["went", "family", "friends"]
+        },
+        {
+          frame: 7,
+          prompt_en: "Wonderful! What did you bring back or give to your friends when you came home? Say: I gave souvenirs to my friends, or I gave photos to my family",
+          hint_en: "I gave souvenirs to my friends... I gave photos to my family...",
+          target_vocab: ["gave", "souvenirs", "photos", "family"]
+        },
+        {
+          frame: 8,
+          prompt_en: "That was an unforgettable trip! What adventure would you like to plan next? Say: I want to plan a mountain hike, or I want to visit an island",
+          hint_en: "I want to plan a mountain hike... I want to visit an island...",
+          target_vocab: ["plan", "hike", "visit", "island"]
         }
       ]
     },
@@ -398,6 +423,7 @@ const week_36RealData = {
       text_vi: "Bạn muốn khám phá ở đâu?",
       hint_en: "I would explore the deep ocean... I would explore the jungle...",
       hint_vi: "Tôi muốn khám phá đại dương... Tôi muốn khám phá rừng rậm...",
+      turns: 8,
       frames: [
         {
           frame: 1,
@@ -407,21 +433,45 @@ const week_36RealData = {
         },
         {
           frame: 2,
-          prompt_en: "Great destination! Why would you like to explore there? Say: Because I want to find hidden treasure, or Because I want to see wild animals",
+          prompt_en: "Fascinating choice! Why would you like to explore there? Say: Because I want to find hidden treasure, or Because I want to see wild animals",
           hint_en: "Because I want to find hidden treasure... Because I want to see wild animals...",
           target_vocab: ["find", "hidden", "treasure", "wild", "animals"]
         },
         {
           frame: 3,
-          prompt_en: "Awesome! What special gear would you take with you? Say: I would take a camera and compass, or I would take a flashlight and backpack",
+          prompt_en: "Great destination! What special gear would you take with you? Say: I would take a camera and compass, or I would take a flashlight and backpack",
           hint_en: "I would take a camera and compass... I would take a flashlight...",
           target_vocab: ["take", "camera", "compass", "flashlight", "backpack"]
         },
         {
           frame: 4,
-          prompt_en: "Exciting! Who would you bring as your exploration partner? Say: I would bring my best friend, or I would go with a guide",
-          hint_en: "I would bring my best friend... I would go with a guide...",
+          prompt_en: "Smart packing! How would you travel to that place? Say: I would go by airplane, or We would ride a submarine",
+          hint_en: "I would go by airplane... We would ride a submarine...",
+          target_vocab: ["go", "airplane", "ride", "submarine"]
+        },
+        {
+          frame: 5,
+          prompt_en: "Exciting journey! What do you think you would see first when you arrive? Say: I would see ancient trees, or I would see colourful sea creatures",
+          hint_en: "I would see ancient trees... I would see colourful sea creatures...",
+          target_vocab: ["see", "ancient", "trees", "colourful", "creatures"]
+        },
+        {
+          frame: 6,
+          prompt_en: "Amazing vision! Who would you bring as your exploration partner? Say: I would bring my best friend, or I would go with an expert guide",
+          hint_en: "I would bring my best friend... I would go with an expert guide...",
           target_vocab: ["bring", "best friend", "go", "guide"]
+        },
+        {
+          frame: 7,
+          prompt_en: "Great team! What challenge would you overcome on your journey? Say: We would climb steep rocks, or We would swim across deep rivers",
+          hint_en: "We would climb steep rocks... We would swim across deep rivers...",
+          target_vocab: ["climb", "steep", "rocks", "swim", "rivers"]
+        },
+        {
+          frame: 8,
+          prompt_en: "What a brave explorer! How would you share your adventure when you come home? Say: I would write a book about it, or I would share photos with everyone",
+          hint_en: "I would write a book about it... I would share photos...",
+          target_vocab: ["write", "book", "share", "photos"]
         }
       ]
     }
