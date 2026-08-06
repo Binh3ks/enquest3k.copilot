@@ -58,6 +58,13 @@ export const loadWeekData = async (weekId, isEasy = false) => {
     return data;
   } catch (error) {
     console.error(`[LazyLoad] Failed to load Week ${weekId} (${isEasy ? 'Easy' : 'Adv'}):`, error);
+    if (typeof window !== 'undefined') {
+      const reloadKey = `chunk_retry_${weekId}`;
+      if (!sessionStorage.getItem(reloadKey)) {
+        sessionStorage.setItem(reloadKey, '1');
+        window.location.reload();
+      }
+    }
     return null;
   }
 };
