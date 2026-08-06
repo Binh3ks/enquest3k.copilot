@@ -116,6 +116,26 @@ const StoryMissionTab = () => {
     return m[1].includes('___') ? stripSayScaffold(text) : text;
   };
 
+  const getMaxTurnsForMission = (mission, weekNum) => {
+    if (!mission) return 8;
+    const turnsInMission = mission.turns || (mission.maximum_turns < 20 ? mission.maximum_turns : null);
+    if (turnsInMission) return turnsInMission;
+    
+    const isRetell = mission.type === 'retell' || mission.mission_id === 1 || mission.mission_id === 2;
+    const w = Number(weekNum) || 1;
+    if (isRetell) {
+      if (w <= 14) return 8;
+      if (w <= 28) return 10;
+      if (w <= 42) return 12;
+      return 14;
+    } else {
+      if (w <= 14) return 4;
+      if (w <= 28) return 6;
+      if (w <= 42) return 8;
+      return 10;
+    }
+  };
+
   // Restore state from Universal Progress System
   // 🔥 FIX: Always start from mission 0 to avoid showing cached missions from other weeks
   const [currentMissionIndex, setCurrentMissionIndex] = useState(0);
@@ -677,8 +697,8 @@ const StoryMissionTab = () => {
           ? sayHints
           : (guardedResponse.hints || guardedResponse.suggested_hints || []);
         
-        // 🔥 CHECK MAXIMUM TURNS (enforce 20-turn limit)
-        const maxTurns = currentMission.maximum_turns || 20;
+        // 🔥 CHECK MAXIMUM TURNS (enforce week tier turn limit)
+        const maxTurns = getMaxTurnsForMission(currentMission, weekNumber);
         const nextTurn = turnCount + 1;
         const isPastMax = nextTurn >= maxTurns;
         
@@ -1349,7 +1369,7 @@ const StoryMissionTab = () => {
                 <div className="flex items-center space-x-1.5">
                   <Target size={14} className="text-purple-600" />
                   <span className="text-xs font-medium text-gray-700">
-                    Turn {turnCount}/{currentMission?.maximum_turns || 20}
+                    Turn {turnCount}/{getMaxTurnsForMission(currentMission, weekNumber)}
                   </span>
                   
                   {/* 🔥 NEW: 15-turn warning for objective mode */}
