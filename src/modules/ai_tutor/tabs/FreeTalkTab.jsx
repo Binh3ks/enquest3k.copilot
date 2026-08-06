@@ -1544,9 +1544,11 @@ const FreeTalkTab = () => {
                     onClick={() => handleSparkSelect(spark.id)}
                     className="bg-gradient-to-br from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 rounded-xl p-4 shadow-md hover:shadow-lg transition-all transform hover:scale-105 text-center border-2 border-purple-300"
                   >
-                    <div className="text-3xl mb-2">{spark.emoji}</div>
-                    <div className="text-sm font-bold text-purple-800">{spark.title}</div>
-                    <div className="text-xs text-purple-600 mt-1 leading-tight">{spark.seed_question.slice(0, 40)}...</div>
+                    <div className="text-3xl mb-2">{spark.emoji || '✨'}</div>
+                    <div className="text-sm font-bold text-purple-800">{spark.title || spark.title_en || spark.text_en || 'Topic'}</div>
+                    <div className="text-xs text-purple-600 mt-1 leading-tight">
+                      {(spark.seed_question || spark.text_en || spark.prompt_en || '')?.slice(0, 40)}...
+                    </div>
                   </button>
                 ))}
               </div>

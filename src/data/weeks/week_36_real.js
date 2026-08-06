@@ -379,6 +379,9 @@ const week_36RealData = {
   spark_talk: [
     {
       id: 1,
+      title: "My Greatest Adventure",
+      emoji: "🌋",
+      seed_question: "What adventures have you had in your life?",
       text_en: "What adventures have you had?",
       text_vi: "Bạn đã có những cuộc phiêu lưu nào?",
       hint_en: "I went on... I saw...",
@@ -386,6 +389,9 @@ const week_36RealData = {
     },
     {
       id: 2,
+      title: "Places to Explore",
+      emoji: "🧭",
+      seed_question: "Where would you like to explore in the world?",
       text_en: "Where would you like to explore?",
       text_vi: "Bạn muốn khám phá ở đâu?",
       hint_en: "I would go to... I would find...",
@@ -393,6 +399,9 @@ const week_36RealData = {
     },
     {
       id: 3,
+      title: "Exciting Discoveries",
+      emoji: "🌊",
+      seed_question: "What is the most exciting place you have seen?",
       text_en: "What is the most exciting place you have seen?",
       text_vi: "Nơi thú vị nhất bạn đã thấy là ở đâu?",
       hint_en: "I saw... It was amazing because...",
@@ -400,6 +409,9 @@ const week_36RealData = {
     },
     {
       id: 4,
+      title: "Special Treasures",
+      emoji: "💎",
+      seed_question: "Tell me about a time you found something special.",
       text_en: "Tell me about a time you found something special.",
       text_vi: "Hãy kể cho tôi nghe về lần bạn tìm thấy điều gì đặc biệt.",
       hint_en: "I found... I took photos...",
@@ -407,6 +419,9 @@ const week_36RealData = {
     },
     {
       id: 5,
+      title: "Dream Journey",
+      emoji: "⛵",
+      seed_question: "If you could travel anywhere, where would you go?",
       text_en: "If you could travel anywhere, where would you go?",
       text_vi: "Nếu bạn có thể đi bất cứ đâu, bạn sẽ đến đâu?",
       hint_en: "I would go to... I would see...",
