@@ -140,7 +140,7 @@ const week31RealData = {
         }
       ],
 
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
 
       story_text: "Last Saturday, Luna's class went on a field trip to the forest. The teacher said: Today we will use all five senses! They walked quietly along the damp path. First, Luna heard a soft rustling sound in the tall grass beside the path. She stopped and felt a cool breeze brush across her face. Then she saw a vivid red butterfly with orange spots land on a green leaf — the most beautiful creature she had ever seen in the wild! A little further on, she reached out and felt the rough bark of an enormous old oak tree. The texture under her fingers was dry and uneven, like cracked rock. But when she touched the damp green moss beside it, the sensation was wonderfully cool and soft. The distant sound of a waterfall drifted through the valley and made a gentle echo between the hills. Luna heard every note clearly. Finally, she smelt something fragrant near the bushes — wild roses growing in a patch of sunlight. The sweet scent floated towards her on the warm breeze, and she felt a rush of pure joy. Suddenly, a sharp knock from a woodpecker made everyone startled. Then they heard its wings whisper softly as it flew away over the treetops. I never knew the forest spoke to every single sense! said Luna.",
@@ -288,7 +288,7 @@ const week31RealData = {
         }
       ],
 
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
 
       story_text: "Luna imagined the perfect Sensory Trail — five stations, one for each sense. She told the story as if she walked it yesterday. Station One: Sight. Luna walked into a grove of tall silver trees. She saw vivid glowing fireflies floating in the dusk air — each one lit up in a different vivid color. It was the most beautiful thing she ever saw! Station Two: Sound. She stepped onto a bridge over a small stream. She heard the distant echo of a waterfall through the valley — cool and clear and musical. She also heard the gentle rustling of reeds in the breeze. Station Three: Touch. Luna touched the bark of a silver birch tree — the texture felt smooth and cool like paper. Then she pressed her hand into a patch of damp green moss. The sensation felt soft, cool, and wonderfully alive. Station Four: Smell. She walked into a garden of wildflowers. She smelt fragrant lavender on the warm breeze. Then she smelt the damp earth after rain — a clean, fresh sensation. Station Five: Mystery! Suddenly, a vivid blue-winged creature flew past her face. Luna felt startled! Then she heard its wings whisper softly in the air. She stood still and felt a rush of wonder — pure and joyful. At the end, Luna said: I designed the most sensory experience in the world!",

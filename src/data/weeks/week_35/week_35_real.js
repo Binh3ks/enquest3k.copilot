@@ -144,7 +144,7 @@ const week35RealData = {
         }
       ],
       minimum_turns: 10,
-      maximum_turns: 15,
+      maximum_turns: 12,
       story_text: "Our planet Earth is beautiful with blue oceans, green forests, and high mountains. But our planet is in danger. Factories produce harmful gases that pollute the air. People are cutting down trees and throwing away plastic. Climate change is making the Earth warmer. Polar ice is melting and sea levels are rising. But we can make a difference! We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees and use renewable energy like solar power and wind power. Small actions can make a big difference. Together, we must act now to save our planet.",
       story_text_vi: "Hành tinh Trái Đất của chúng ta rất đẹp với đại dương xanh, rừng xanh và núi cao. Nhưng hành tinh của chúng ta đang gặp nguy hiểm. Các nhà máy sản xuất khí độc hại gây ô nhiễm không khí. Mọi người đang đốn cây và vứt rác thải nhựa. Biến đổi khí hậu đang làm Trái Đất nóng lên. Băng ở hai cực đang tan và mực nước biển đang dâng. Nhưng chúng ta có thể tạo ra sự khác biệt! Chúng ta phải bảo vệ hành tinh. Chúng ta nên giảm thiểu, tái sử dụng và tái chế. Chúng ta có thể trồng thêm cây và sử dụng năng lượng tái tạo như năng lượng mặt trời và gió. Những hành động nhỏ có thể tạo ra sự khác biệt lớn. Cùng nhau, chúng ta phải hành động ngay bây giờ để cứu hành tinh."
     },
@@ -189,7 +189,7 @@ const week35RealData = {
           ]
         }
       ],
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
       story_text: "Climate change is making Earth warmer. Factories and cars produce harmful gases. These gases trap heat in the atmosphere. Polar ice is melting because of warmer temperatures. When ice melts, sea levels rise. This is dangerous for coastal cities. But we can help! We must reduce emissions. We should use renewable energy. We can plant trees to absorb carbon dioxide.",
       discussion_prompts: [
@@ -248,7 +248,7 @@ const week35RealData = {
           ]
         }
       ],
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
       story_text: "Environmental heroes take action every day. They MUST recycle and reduce waste. They SHOULD use renewable energy and save water. They CAN plant trees and teach others about climate change. Everyone can make a difference if they act now. The planet needs our help!"
     }

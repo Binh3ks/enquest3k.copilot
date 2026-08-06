@@ -168,7 +168,7 @@ const week29RealData = {
         }
       ],
 
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
 
       story_text: "Lily woke up very early one morning. Mum said: 'Today we fly to Da Nang!' They packed their luggage the night before. Dad called a taxi and they went to Noi Bai Airport before sunrise. The airport was huge and full of passengers. Lily ran to the big window to look at the planes on the runway. 'Look at that big one!' she said. Dad came back with three tickets and boarding passes. 'Gate 7!' he called. They walked through the departure hall and showed their tickets at the gate. Soon, an announcement came over the speakers: 'Flight VN214 to Da Nang — now boarding.' They went down the air bridge and stepped onto the plane. Lily sat by the window. The plane taxied along the route and then — whoosh! — it flew up into the blue sky. Lily pressed her face against the glass. Below, she saw white clouds and then, far away, the shining sea. 'Our destination!' said Mum. One hour later, the plane landed smoothly. There was no delay. They came out of Da Nang Airport into warm sunshine and a big blue sky. 'We flew here!' said Lily. 'This is our adventure!' ",
@@ -465,8 +465,8 @@ const week29RealData = {
         { ai: "The plane came down and landed at Da Nang. Who ran first when they came out? Say: ___ ran to ___ or When they came out, ___", options: ["Grandma ran from the arrivals hall and came straight to hug Lily!", "Lily ran to the big windows to see the Da Nang beach in the distance.", "When they came out, everyone came together and Dad ran to get the luggage."] },
         { ai: "Now bring it all together! Tell the whole window story in 2 sentences using went, flew, saw, came.", options: ["Lily went to the window, the plane flew above the clouds, she saw tiny cars below, then Grandma came to hug her at the end.", "They went up high, flew above white clouds, Lily saw a tiny city below, and finally Grandma came running to meet them."] }
       ],
-      minimum_turns: 12,
-      maximum_turns: 14,
+      minimum_turns: 10,
+      maximum_turns: 12,
 
       completion_message: "Beautiful storytelling! You brought Lily's window adventure to life in perfect Past Simple! ✈️🪟"
     }

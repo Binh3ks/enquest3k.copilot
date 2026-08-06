@@ -132,7 +132,7 @@ const week32RealData = {
         }
       ],
 
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
 
       story_text: "Tom had a very busy Saturday. He woke up early, before the sun had fully risen. First, he made his bed — smoothing every corner until it looked neat and tidy. Then he sat at his desk and did his homework: three pages of maths and a science worksheet. After that, he wrote a long letter to his grandmother in the countryside. He told her about school and his pet cat. Outside, Tom cut the long grass with his dad while birds watched from the fence. Together, they built a small wooden birdhouse and put it on the tall oak tree in the garden. Back inside, Tom kept the whole room perfectly tidy. He chose his favourite blue shirt for the afternoon. At the local café, he paid for a cheese sandwich with his own saved pocket money. By evening, he closed his eyes and fell asleep before half past eight. Mum smiled and said: What a wonderful, busy boy you are!",
@@ -271,7 +271,7 @@ const week32RealData = {
         }
       ],
 
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
 
       story_text: "Imagine your perfect busy day! You woke up at six before anyone else. You made a healthy breakfast and put everything on the table. You did your favourite science project and wrote three pages about volcanoes. Outside, you cut the hedges and built a wooden flower box. You put it on the window ledge and kept it perfectly tidy. In the afternoon, you chose the best book from the shelf — a mystery story — and paid for a smoothie at the café. You put away everything in its right place, kept your room spotless, and fell asleep with the mystery book half-finished on your pillow.",

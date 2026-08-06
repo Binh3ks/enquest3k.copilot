@@ -140,7 +140,7 @@ const week30RealData = {
         }
       ],
 
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
 
       story_text: "Last Sunday, Luna had an outdoor picnic with her friends Tom and Mia. First, Mum went to the market. She bought bread, fresh fruits, juice, and some cookies. Luna packed everything into a big blanket and a cheerful picnic basket. The three friends went to the park under a big tree. Tom looked at the basket and said: I am hungry! They spread the blanket on the green grass. First, they ate sandwiches. Luna ate one big sandwich with cheese. The sandwiches were delicious! Then, they drank juice. Luna drank apple juice — it was refreshing and sweet. Tom drank orange juice and smiled. Next, Luna opened the cookie box. She gave some cookies to Tom. She gave some to Mia too. Thank you! they said. They shared everything. Sharing is caring! After eating, they felt thirsty again — so they drank more lemonade. Then, they ate fruits — apples, bananas, and sweet watermelon. I love picnics! said Luna. Me too! said everyone. It was a perfect outdoor day!",
@@ -436,8 +436,8 @@ const week30RealData = {
         { ai: "Luna bought fresh fruit and gave some to everyone. Which fruit do you think they ate? Say: They ate ___ which was ___ or Luna gave them ___ and it tasted ___", options: ["They ate watermelon which was cool, sweet, and juicy on a hot day.", "Luna gave them apples and oranges and everyone said they tasted great.", "They ate bananas and grapes — easy to eat at a picnic and very tasty."] },
         { ai: "At the end, Tom said sorry and gave his chips to the birds. What lesson did he learn? Say: Tom learned that ___ or He understood that eating ___ was better because ___", options: ["Tom learned that eating fresh food gives you more energy and makes you feel good.", "He understood that buying healthy snacks was better for a picnic in the sun.", "Tom learned that sharing healthy food made the picnic much more special for everyone."] }
       ],
-      minimum_turns: 12,
-      maximum_turns: 14,
+      minimum_turns: 10,
+      maximum_turns: 12,
 
       completion_message: "Brilliant debate! You used ate, drank, bought, and gave to talk about food choices like a real English speaker! 🍎🌟"
     }

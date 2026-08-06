@@ -127,7 +127,7 @@ const week34RealData = {
         }
       ],
       minimum_turns: 10,
-      maximum_turns: 15,
+      maximum_turns: 12,
       story_text: "A very long time ago, there was a hard-working ant who lived in a small hill. There was also a lazy grasshopper who lived under a big green leaf. In the warm summer sun, the ant went to the field every day. She gathered seeds and stored food for the coming winter. The grasshopper jumped around and sang songs all day long. He never worked and never worried about tomorrow. Day after day, the ant worked very hard all summer long. She carried heavy seeds and built a warm shelter in the hill. The grasshopper just kept playing and danced happily in the beautiful warm sunshine. Then one cold day in autumn, the first frost appeared. The grasshopper felt very cold and very hungry. He came to the ant's house and asked for food. The ant gave the grasshopper some food and invited him inside, saying he should work with her next summer. All winter long, the two animals shared food together. The grasshopper learned an important lesson: always work hard and prepare for the future. From that day on, both the ant and the grasshopper worked hard together and stayed happy and healthy for the rest of the year.",
       story_text_vi: "Rất lâu trước đây, có một con kiến chăm chỉ sống trên một gò đất nhỏ. Cũng có một con châu chấu lười biếng sống dưới một chiếc lá xanh lớn. Dưới ánh nắng mùa hè ấm áp, con kiến đi ra đồng mỗi ngày. Cô ấy nhặt hạt và dự trữ thức ăn cho mùa đông sắp tới. Con châu chấu nhảy tung tăng và hát ríu rít cả ngày. Nó không bao giờ làm việc và không bao giờ lo lắng về ngày mai. Ngày này qua ngày khác, con kiến làm việc rất chăm chỉ cả mùa hè. Cô ấy mang những hạt nặng và xây một ngôi nhà ấm trong gò đất. Con châu chấu chỉ tiếp tục chơi và nhảy múa vui vẻ dưới ánh nắng ấm đẹp. Rồi một ngày lạnh vào mùa thu, sương giá đầu tiên xuất hiện. Con châu chấu cảm thấy rất lạnh và rất đói. Nó đến nhà con kiến và xin thức ăn. Con kiến cho châu chấu một ít thức ăn và mời nó vào trong, nói rằng nó nên làm việc cùng cô mùa hè tới. Suốt mùa đông, hai con vật chia sẻ thức ăn cùng nhau. Con châu chấu học được một bài học quan trọng: luôn làm việc chăm chỉ và chuẩn bị cho tương lai. Từ ngày đó, cả kiến và châu chấu làm việc chăm chỉ cùng nhau và sống vui vẻ khỏe mạnh suốt phần còn lại của năm."
     },
@@ -172,7 +172,7 @@ const week34RealData = {
           ]
         }
       ],
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
       story_text: "The Ant and the Grasshopper is a famous fable WHICH teaches an important lesson. The ant WHO worked very hard was always ready for winter. The grasshopper WHO only played had nothing to eat. The winter THAT came was very cold. The lesson WHICH we learned is to always prepare for the future.",
       discussion_prompts: [
@@ -240,7 +240,7 @@ const week34RealData = {
           ]
         }
       ],
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
       story_text: "Fables are wonderful stories WHICH teach us important lessons. The Ant and the Grasshopper is a famous example of a fable THAT shows us why we should prepare for the future. Characters WHO work hard are usually ready for challenges. Characters WHO only play may have problems later. But the best fables teach us that we can always learn and change. The lesson WHICH every fable teaches is to be wise, kind, and prepared!",
       discussion_prompts: [

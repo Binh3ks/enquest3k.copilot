@@ -125,7 +125,7 @@ const week33RealData = {
           ]
         }
       ],
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
       story_text: "Jake had a terrible day at school last Monday. He was running in the corridor because he was late for class. He forgot to walk carefully. Suddenly, Jake hit his knee on the corner of a table. He fell down hard and broke the glass cup that another student was holding. His arm hurt when he tried to catch the falling cup. Jake bit his tongue when he fell, and his hand hit the floor. He began to cry because everything hurt at once. His teacher came quickly and called the school nurse. The nurse put a cold pack on Jake's knee and his arm. She told Jake it was an important lesson — everyone must walk carefully in the corridor. Jake understood that running in the corridor was dangerous. At home, Jake recovered quickly. He learned one very important lesson: always walk carefully, even when you are late.",
       story_text_vi: "Jake có một ngày tồi tệ ở trường vào thứ Hai. Cậu đang chạy trong hành lang vì muộn. Cậu quên đi cẩn thận. Đột nhiên, Jake đập đầu gối vào góc bàn. Cậu ngã xuống và làm vỡ chiếc cốc thủy tinh của một học sinh khác. Cánh tay cậu đau khi cố bắt chiếc cốc đang rơi. Jake cắn lưỡi khi ngã, và bàn tay cậu đập xuống sàn. Cậu bắt đầu khóc vì mọi thứ đau cùng một lúc. Giáo viên nhanh chóng gọi y tá. Y tá đặt túi chườm lạnh lên đầu gối và cánh tay của Jake. Cô ấy bảo đó là một bài học quan trọng — mọi người phải đi cẩn thận trong hành lang. Jake hiểu rằng chạy trong hành lang là nguy hiểm. Ở nhà, Jake hồi phục nhanh. Cậu học được một bài học rất quan trọng: luôn đi cẩn thận, kể cả khi muộn."
@@ -181,7 +181,7 @@ const week33RealData = {
           ]
         }
       ],
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
       story_text: "Sam was also a careful student — until one afternoon on the playground. She was running to the swings because she wanted to be first in line. She forgot to look where she was going. Sam fell off the swings and hurt her elbow badly. She bit her tongue when she hit the ground. She began crying immediately. The playground teacher ran to Sam and put a cold pack on her elbow. Sam told the truth about running too fast. The teacher explained that walking carefully is important on the playground too. Sam understood the lesson. She recovered at home over the weekend and promised to always walk carefully, even when she wanted to be first.",
       discussion_prompts: [
@@ -246,7 +246,7 @@ const week33RealData = {
           ]
         }
       ],
-      minimum_turns: 8,
+      minimum_turns: 10,
       maximum_turns: 12,
       story_text: "Walking carefully at school is one of the most important rules we can follow. When we are in a hurry, it is easy to forget and run. But running in corridors or on playgrounds can cause accidents. Jake hit his knee and fell. Sam fell off the swings and hurt her elbow. Both of them learned the same important lesson: always walk carefully, even when you are late or excited. We can all be safety heroes by following the rules, looking where we are going, and telling the truth when accidents happen. A few extra seconds of walking carefully can prevent hours of pain and weeks of recovery!",
       discussion_prompts: [
