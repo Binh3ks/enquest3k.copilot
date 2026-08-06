@@ -14,6 +14,140 @@ import { getImageUrl } from '../../utils/imageUrl';
  * - Audio support for questions
  * - Hint system
  */
+const DynamicBarModel = ({ problem }) => {
+  if (!problem) return null;
+  const pId = problem.id;
+
+  if (pId === 1) {
+    return (
+      <svg viewBox="0 0 600 210" className="w-full max-w-lg mx-auto drop-shadow-sm">
+        <rect width="600" height="210" fill="#f8fafc" rx="12" stroke="#e2e8f0" strokeWidth="1"/>
+        <text x="300" y="28" fontFamily="sans-serif" fontSize="15" fontWeight="bold" fill="#1e293b" textAnchor="middle">Part-Whole Model: Gold Coins</text>
+        <path d="M 50 60 L 50 50 L 550 50 L 550 60 M 300 50 L 300 40" stroke="#2563eb" strokeWidth="2.5" fill="none"/>
+        <text x="300" y="35" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#2563eb" textAnchor="middle">Total = 100 coins</text>
+
+        <rect x="50" y="65" width="200" height="55" fill="#f59e0b" rx="6" stroke="#d97706" strokeWidth="1.5"/>
+        <text x="150" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">Food</text>
+        <text x="150" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">40 coins</text>
+
+        <rect x="254" y="65" width="125" height="55" fill="#8b5cf6" rx="6" stroke="#7c3aed" strokeWidth="1.5"/>
+        <text x="316" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">Supplies</text>
+        <text x="316" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">25 coins</text>
+
+        <rect x="383" y="65" width="167" height="55" fill="#10b981" rx="6" stroke="#059669" strokeWidth="1.5" strokeDasharray="5,4"/>
+        <text x="466" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">Coins Left</text>
+        <text x="466" y="112" fontFamily="sans-serif" fontSize="16" fontWeight="900" fill="#ffffff" textAnchor="middle">?</text>
+
+        <text x="300" y="175" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#475569" textAnchor="middle">Equation: 100 - 40 - 25 = ?</text>
+      </svg>
+    );
+  }
+
+  if (pId === 2) {
+    return (
+      <svg viewBox="0 0 600 220" className="w-full max-w-lg mx-auto drop-shadow-sm">
+        <rect width="600" height="220" fill="#f8fafc" rx="12" stroke="#e2e8f0" strokeWidth="1"/>
+        <text x="300" y="28" fontFamily="sans-serif" fontSize="15" fontWeight="bold" fill="#1e293b" textAnchor="middle">Comparison Model: Journey Duration</text>
+        <text x="135" y="68" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#1e293b" textAnchor="end">Marco Polo:</text>
+        <rect x="145" y="48" width="400" height="42" fill="#3b82f6" rx="6" stroke="#1d4ed8" strokeWidth="1.5"/>
+        <text x="345" y="74" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">24 years</text>
+
+        <text x="135" y="128" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#1e293b" textAnchor="end">Marco Jr:</text>
+        <rect x="145" y="108" width="133" height="42" fill="#10b981" rx="6" stroke="#047857" strokeWidth="1.5"/>
+        <text x="211" y="134" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">8 years</text>
+
+        <rect x="282" y="108" width="263" height="42" fill="none" rx="6" stroke="#ef4444" strokeWidth="2" strokeDasharray="5,4"/>
+        <text x="413" y="134" fontFamily="sans-serif" fontSize="15" fontWeight="900" fill="#ef4444" textAnchor="middle">? years more</text>
+
+        <text x="300" y="190" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#475569" textAnchor="middle">Equation: 24 - 8 = ?</text>
+      </svg>
+    );
+  }
+
+  if (pId === 3) {
+    return (
+      <svg viewBox="0 0 600 210" className="w-full max-w-lg mx-auto drop-shadow-sm">
+        <rect width="600" height="210" fill="#f8fafc" rx="12" stroke="#e2e8f0" strokeWidth="1"/>
+        <text x="300" y="28" fontFamily="sans-serif" fontSize="15" fontWeight="bold" fill="#1e293b" textAnchor="middle">Part-Whole Model: Submarine Depth</text>
+        <path d="M 50 60 L 50 50 L 550 50 L 550 60 M 300 50 L 300 40" stroke="#2563eb" strokeWidth="2.5" fill="none"/>
+        <text x="300" y="35" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#2563eb" textAnchor="middle">Total Initial Depth = 300 metres</text>
+
+        <rect x="50" y="65" width="250" height="55" fill="#8b5cf6" rx="6" stroke="#6d28d9" strokeWidth="1.5"/>
+        <text x="175" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">Ascended (Came Up)</text>
+        <text x="175" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">150 metres</text>
+
+        <rect x="304" y="65" width="246" height="55" fill="#0284c7" rx="6" stroke="#0369a1" strokeWidth="1.5" strokeDasharray="5,4"/>
+        <text x="427" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">Current Depth</text>
+        <text x="427" y="112" fontFamily="sans-serif" fontSize="16" fontWeight="900" fill="#ffffff" textAnchor="middle">? metres</text>
+
+        <text x="300" y="175" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#475569" textAnchor="middle">Equation: 300 - 150 = ?</text>
+      </svg>
+    );
+  }
+
+  if (pId === 4) {
+    return (
+      <svg viewBox="0 0 600 210" className="w-full max-w-lg mx-auto drop-shadow-sm">
+        <rect width="600" height="210" fill="#f8fafc" rx="12" stroke="#e2e8f0" strokeWidth="1"/>
+        <text x="300" y="28" fontFamily="sans-serif" fontSize="15" fontWeight="bold" fill="#1e293b" textAnchor="middle">Part-Whole Model: Artifact Distribution</text>
+        <path d="M 50 60 L 50 50 L 550 50 L 550 60 M 300 50 L 300 40" stroke="#2563eb" strokeWidth="2.5" fill="none"/>
+        <text x="300" y="35" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#2563eb" textAnchor="middle">Total Artifacts = 120</text>
+
+        <rect x="50" y="65" width="187" height="55" fill="#3b82f6" rx="6" stroke="#1d4ed8" strokeWidth="1.5"/>
+        <text x="143" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">Museum</text>
+        <text x="143" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">45 artifacts</text>
+
+        <rect x="241" y="65" width="125" height="55" fill="#ec4899" rx="6" stroke="#be185d" strokeWidth="1.5"/>
+        <text x="303" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">Friends</text>
+        <text x="303" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" textAnchor="middle">30 artifacts</text>
+
+        <rect x="370" y="65" width="180" height="55" fill="#10b981" rx="6" stroke="#047857" strokeWidth="1.5" strokeDasharray="5,4"/>
+        <text x="460" y="93" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" text-anchor="middle">Kept</text>
+        <text x="460" y="112" fontFamily="sans-serif" fontSize="16" fontWeight="900" fill="#ffffff" text-anchor="middle">?</text>
+
+        <text x="300" y="175" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#475569" text-anchor="middle">Equation: 120 - 45 - 30 = ?</text>
+      </svg>
+    );
+  }
+
+  if (pId === 5) {
+    return (
+      <svg viewBox="0 0 600 210" className="w-full max-w-lg mx-auto drop-shadow-sm">
+        <rect width="600" height="210" fill="#f8fafc" rx="12" stroke="#e2e8f0" strokeWidth="1"/>
+        <text x="300" y="28" fontFamily="sans-serif" fontSize="15" fontWeight="bold" fill="#1e293b" textAnchor="middle">Equal Groups Model: Explorers on 5 Boats</text>
+        <path d="M 50 60 L 50 50 L 550 50 L 550 60 M 300 50 L 300 40" stroke="#2563eb" strokeWidth="2.5" fill="none"/>
+        <text x="300" y="35" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#2563eb" text-anchor="middle">Total Explorers = ?</text>
+
+        <g>
+          <rect x="50" y="65" width="96" height="55" fill="#6366f1" rx="6" stroke="#4f46e5" strokeWidth="1.5"/>
+          <text x="98" y="93" fontFamily="sans-serif" fontSize="12" fontWeight="bold" fill="#ffffff" text-anchor="middle">Boat 1</text>
+          <text x="98" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" text-anchor="middle">8</text>
+
+          <rect x="151" y="65" width="96" height="55" fill="#6366f1" rx="6" stroke="#4f46e5" strokeWidth="1.5"/>
+          <text x="199" y="93" fontFamily="sans-serif" fontSize="12" fontWeight="bold" fill="#ffffff" text-anchor="middle">Boat 2</text>
+          <text x="199" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" text-anchor="middle">8</text>
+
+          <rect x="252" y="65" width="96" height="55" fill="#6366f1" rx="6" stroke="#4f46e5" strokeWidth="1.5"/>
+          <text x="300" y="93" fontFamily="sans-serif" fontSize="12" fontWeight="bold" fill="#ffffff" text-anchor="middle">Boat 3</text>
+          <text x="300" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" text-anchor="middle">8</text>
+
+          <rect x="353" y="65" width="96" height="55" fill="#6366f1" rx="6" stroke="#4f46e5" strokeWidth="1.5"/>
+          <text x="401" y="93" fontFamily="sans-serif" fontSize="12" fontWeight="bold" fill="#ffffff" text-anchor="middle">Boat 4</text>
+          <text x="401" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" text-anchor="middle">8</text>
+
+          <rect x="454" y="65" width="96" height="55" fill="#6366f1" rx="6" stroke="#4f46e5" strokeWidth="1.5"/>
+          <text x="502" y="93" fontFamily="sans-serif" fontSize="12" fontWeight="bold" fill="#ffffff" text-anchor="middle">Boat 5</text>
+          <text x="502" y="111" fontFamily="sans-serif" fontSize="13" fontWeight="bold" fill="#ffffff" text-anchor="middle">8</text>
+        </g>
+
+        <text x="300" y="175" fontFamily="sans-serif" fontSize="14" fontWeight="bold" fill="#475569" text-anchor="middle">Equation: 5 x 8 = ?</text>
+      </svg>
+    );
+  }
+
+  return null;
+};
+
 const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningMode = 'advanced' }) => {
   const [currentProblem, setCurrentProblem] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
@@ -266,43 +400,10 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningM
           </div>
         )}
 
-        {/* Bar Model Image */}
-        <div className="bg-blue-50 rounded-lg p-4">
-          <p className="text-sm text-blue-800 font-semibold mb-2">Bar Model:</p>
-          {problem.bar_model ? (
-            <>
-              {!imgFailed ? (
-                <img
-                  src={imgSrc || getImageUrl(problem.bar_model)}
-                  alt="Bar Model Diagram"
-                  className="w-full max-w-md mx-auto rounded-lg shadow-sm border border-blue-100"
-                  onError={() => {
-                    if (!imgSrc && problem.bar_model) {
-                      setImgSrc(problem.bar_model);
-                    } else {
-                      setImgFailed(true);
-                    }
-                  }}
-                />
-              ) : (
-                <div className="text-center text-gray-500 text-sm mt-2">
-                  [Bar model image unavailable — it may still be generating]
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="text-sm text-slate-700 space-y-3">
-              <p className="font-semibold text-blue-700">Visual model unavailable.</p>
-              <p>Use the steps below to imagine the bar model structure:</p>
-              <ul className="list-disc list-inside space-y-1">
-                {problem.solution_steps?.map((step, idx) => (
-                  <li key={idx} className="rounded-md bg-white p-3 border border-slate-200">
-                    {step}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+        {/* Bar Model Visualizer (Dynamic SVG) */}
+        <div className="bg-blue-50/70 rounded-2xl p-4 border border-blue-100 shadow-sm">
+          <p className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-3">📊 Singapore Math Bar Model:</p>
+          <DynamicBarModel problem={problem} />
         </div>
 
         {/* Hint Section */}
