@@ -90,10 +90,14 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
   // with Deepgram using answer text, not context_en).
   // Use: python3 tools/generate_audio_deepgram.py <week> --station ask_ai --upload
   if (weekData.stations?.ask_ai?.prompts) {
-      weekData.stations.ask_ai.prompts = weekData.stations.ask_ai.prompts.map(p => ({
+      weekData.stations.ask_ai.prompts = weekData.stations.ask_ai.prompts.map((p, idx) => {
+        const id = p.id || (idx + 1);
+        return {
           ...p,
-          audio_url: mkUrl(`ask_ai_${p.id}.mp3`)
-      }));
+          id,
+          audio_url: mkUrl(`ask_ai_${id}.mp3`)
+        };
+      });
   }
 
   // 8. MindMap Speaking - Add audio_url mappings WITHOUT changing data structure
