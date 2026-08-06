@@ -131,7 +131,7 @@ Every forced split MUST result in a syntactically digestible chunk:
 ## Rule 8: ASK AI STATION STANDARDS (MANDATORY)
 
 **All prompts in `ask_ai.js` MUST follow this inquiry scaffolding structure:**
-1. **Nova Situation (`nova_says`)**: Nova presents a clear story situation or piece of knowledge.
+1. **Nova Inquiry Cue (`nova_says`)**: Nova MUST present a scenario cue inviting the student to ask a question (e.g. *"I know where Marco Polo travelled on his famous journey. Ask me!"*). Plain statements of answers are forbidden.
 2. **Scaffolded Question Frame (`question_frame`)**: Contains a blank `___` at the start (e.g. `"___ Marco Polo go on his journey?"`).
 3. **Starter Bank (`question_word_bank`)**: A list of 4 Wh-starters (e.g. `["Where did", "How long did", "When did", "Why did"]`).
 4. **Target Starter (`correctWord`)**: MUST be grammatically aligned with `question_frame` to form a 100% natural, correct Wh-question (e.g. `"Where did"` + `"___ Marco Polo go on his journey?"` = *"Where did Marco Polo go on his journey?"*).

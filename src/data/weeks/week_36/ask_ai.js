@@ -1,45 +1,45 @@
 // WEEK 36: Adventure Stories (Irregular Verbs)
 // Ask AI Station — Advanced Mode
-// 100% Story-bound, clear Wh-question scaffolding for student inquiry
+// 100% Interactive Inquiry: Nova gives a scenario cue inviting the student to ask a Wh-question
 
 export default {
   prompts: [
     {
-      nova_says: "Marco Polo was a famous explorer from Venice, Italy. He travelled to China on the Silk Road and came back after 24 years.",
-      nova_says_vi: "Marco Polo là một nhà thám hiểm nổi tiếng từ Venice, Ý. Ông đã du hành đến Trung Quốc trên Con đường Tơ lụa và trở về sau 24 năm.",
-      context_en: "Marco Polo went on an epic journey. Student asks where he travelled.",
+      nova_says: "I know where Marco Polo travelled on his famous journey. Ask me!",
+      nova_says_vi: "Nova biết Marco Polo đã du hành đến đâu trong chuyến đi nổi tiếng. Hãy hỏi Nova đi!",
+      context_en: "Ask Nova about Marco Polo's journey destination.",
       question_word_bank: ["Where did", "How long did", "When did", "Why did"],
       question_frame: "___ Marco Polo go on his journey?",
       correctWord: "Where did"
     },
     {
-      nova_says: "Explorers in our story dove deep into the ocean. They found an ancient underwater cave filled with treasures.",
-      nova_says_vi: "Các nhà thám hiểm lặn sâu xuống đại dương. Họ tìm thấy một hang động ngầm cổ đại chứa đầy kho báu.",
-      context_en: "Explorers found something inside the cave. Student asks what they found.",
+      nova_says: "The ocean explorers discovered an ancient underwater secret inside the deep cave. Ask me what they found!",
+      nova_says_vi: "Các nhà thám hiểm đại dương đã phát hiện ra một bí mật cổ đại bên trong hang động sâu. Hãy hỏi Nova xem họ tìm thấy gì!",
+      context_en: "Ask Nova what the explorers discovered in the cave.",
       question_word_bank: ["What did", "Where did", "Who did", "How did"],
       question_frame: "___ the explorers find in the cave?",
       correctWord: "What did"
     },
     {
-      nova_says: "The Silk Road connected Asia and Europe for over 1,400 years. Traders carried silk, spices, and tea along this route.",
-      nova_says_vi: "Con đường Tơ lụa kết nối Châu Á và Châu Âu trong hơn 1.400 năm. Thương nhân mang lụa, gia vị và trà theo tuyến đường này.",
-      context_en: "Traders carried valuable goods on the Silk Road. Student asks what they carried.",
+      nova_says: "Traders carried very valuable goods across the Silk Road between Asia and Europe. Ask me what they carried!",
+      nova_says_vi: "Các thương nhân đã mang theo những hàng hóa rất giá trị trên Con đường Tơ lụa. Hãy hỏi Nova xem họ đã mang gì!",
+      context_en: "Ask Nova what goods traders carried on the Silk Road.",
       question_word_bank: ["What did", "Where did", "When did", "Why did"],
       question_frame: "___ traders carry on the Silk Road?",
       correctWord: "What did"
     },
     {
-      nova_says: "Marco Polo met many merchants, artists, and powerful rulers like Kublai Khan during his long travels.",
-      nova_says_vi: "Marco Polo đã gặp nhiều thương nhân, nghệ sĩ và các vị vua quyền lực như Hốt Tất Liệt trong chuyến đi dài.",
-      context_en: "Marco Polo encountered famous people. Student asks who he met.",
+      nova_says: "Marco Polo encountered a famous, powerful ruler when he arrived in China. Ask me who he met!",
+      nova_says_vi: "Marco Polo đã gặp một vị vua quyền lực nổi tiếng khi ông tới Trung Quốc. Hãy hỏi Nova xem ông đã gặp ai!",
+      context_en: "Ask Nova who Marco Polo met in China.",
       question_word_bank: ["Who did", "What did", "Where did", "When did"],
       question_frame: "___ Marco Polo meet in China?",
       correctWord: "Who did"
     },
     {
-      nova_says: "When explorers returned home from their journeys, they wrote books and gave their findings to museums on shore.",
-      nova_says_vi: "Khi các nhà thám hiểm trở về nhà, họ viết sách và trao lại phát hiện cho các bảo tàng trên bờ.",
-      context_en: "Explorers completed their journey. Student asks what they did after returning.",
+      nova_says: "Explorers did something special when they finally returned home from their journeys. Ask me what they did!",
+      nova_says_vi: "Các nhà thám hiểm đã làm điều đặc biệt khi cuối cùng trở về nhà. Hãy hỏi Nova xem họ đã làm gì!",
+      context_en: "Ask Nova what explorers did upon returning home.",
       question_word_bank: ["What did", "When did", "Why did", "How did"],
       question_frame: "___ explorers do when they came back?",
       correctWord: "What did"
