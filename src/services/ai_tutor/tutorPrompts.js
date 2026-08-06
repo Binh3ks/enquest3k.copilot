@@ -284,7 +284,8 @@ ${context.chatHistory ? context.chatHistory
 
 🎯 NEXT QUESTION TO ASK:
 ${(() => {
-  const studentTurns = Math.floor((context.chatHistory?.length || 0) / 2);
+  const userMessageCount = context.chatHistory ? context.chatHistory.filter(m => m.role === 'user').length : 0;
+  const studentTurns = Math.max(0, userMessageCount - 1);
   const questionsInPhase = currentPhase?.phase_questions?.length || 0;
   
   if (studentTurns < questionsInPhase) {
