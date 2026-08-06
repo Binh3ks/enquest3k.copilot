@@ -29,26 +29,30 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
   }, []);
 
   const renderStyledText = (text) => {
+    if (!text) return null;
     return text.split(/(\*\*[^*]+\*\*)/).map((part, i) => {
       if (part.startsWith('**') && part.endsWith('**')) {
         const phrase = part.slice(2, -2);
         return (
-          <HoverWord key={i} word={phrase} className="font-semibold text-indigo-700 bg-indigo-50 px-1 rounded hover:bg-indigo-100 cursor-pointer transition-colors">
+          <HoverWord key={i} word={phrase} className="font-semibold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded hover:bg-indigo-100 cursor-pointer transition-colors inline-block my-0.5">
             {phrase}
           </HoverWord>
         );
       }
-      return part.split(/\s+/).map((word, j) => {
+      return part.split(/(\s+)/).map((word, j) => {
+        if (/^\s+$/.test(word)) {
+          return word;
+        }
         const cleaned = word.replace(/[^a-zA-Z']/g, '').toLowerCase();
         const dictEntry = cleaned && dictionary[cleaned];
         if (dictEntry && cleaned.length > 1) {
           return (
             <HoverWord key={`${i}-${j}`} word={dictEntry.word || word} className="hover:text-indigo-600 cursor-pointer transition-colors">
-              {' '}{word}
+              {word}
             </HoverWord>
           );
         }
-        return ' ' + word;
+        return word;
       });
     });
   };
