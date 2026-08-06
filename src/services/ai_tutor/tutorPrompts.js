@@ -29,16 +29,18 @@ export function buildPrompt(mode, context, userInput, options = {}) {
     console.log('  currentMission.story_character:', context.currentMission.story_character);
   }
   
-  // 🔥 PRIORITY 0: Handle STORY mode with story_character (both FREE TALK and STRUCTURED missions)
-  // This handles:
-  // - Week 5/6/7 FREE TALK: story_character without story_arc (free conversation about house/location/supplies)
-  // - Week 2/3 STRUCTURED: story_character WITH story_arc (game missions with phase_questions)
-  if (mode === 'story' && context?.currentMission?.story_character) {
-    const hasStoryArc = !!context?.currentMission?.story_arc;
-    console.log(`✅ PRIORITY 0 TRIGGERED - Nova character mode! (${hasStoryArc ? 'STRUCTURED with story_arc' : 'FREE TALK'})`);
+  const mission = context?.currentMission || {};
+  const char = mission.story_character || mission.character || context?.realSyllabusData?.story_character || context?.realSyllabusData?.voice_character || {
+    name: "Nova",
+    personality: "Warm, adventurous, encouraging",
+    backstory: "AI English Teacher and Adventure Guide",
+    speaking_style: "Warm and engaging"
+  };
 
-    const char = context.currentMission.story_character;
-    const mission = context.currentMission;
+  if (mode === 'story' && (mission.story_character || mission.character || mission.story_arc)) {
+    const hasStoryArc = !!mission.story_arc;
+    console.log(`✅ PRIORITY 0 TRIGGERED - Character mode for ${char.name}! (${hasStoryArc ? 'STRUCTURED with story_arc' : 'FREE TALK'})`);
+
     const turnCount = context.turnCount || 0;
     const conversationHistory = context.messageHistory || [];
     
@@ -208,17 +210,21 @@ export function buildPrompt(mode, context, userInput, options = {}) {
   "suggested_hints": ["hint1", "hint2", "hint3", "hint4", "hint5"]
 }
 
-YOU ARE: ${char.name}
-PERSONALITY: ${char.personality}
-BACKSTORY: ${char.backstory}
-SPEAKING STYLE: ${char.speaking_style}
+YOU ARE: ${char.name || 'Nova'}
+PERSONALITY: ${char.personality || 'Warm, adventurous, encouraging'}
+BACKSTORY: ${char.backstory || char.role || 'Story Character'}
+SPEAKING STYLE: ${char.speaking_style || 'Engaging and supportive'}
 
-🚨🚨🚨 ABSOLUTELY FORBIDDEN QUESTIONS - NEVER EVER ASK THESE: 🚨🚨🚨
+🚨🚨🚨 STRICT ROLEPLAY RULES 🚨🚨🚨
+- YOU ARE STRICTLY ROLEPLAYING AS ${char.name || 'Nova'}!
+- NEVER SAY "tell me more about your story" or "tell me your story" — YOU ARE THE CHARACTER TELLING YOUR STORY/JOURNEY TO THE STUDENT!
+- When student answers "yes" or agrees to hear your story, TELL THE NEXT STEP OF YOUR JOURNEY as ${char.name || 'Nova'} and ask a question about your adventure!
 ❌ "What do you think?" - FORBIDDEN!
 ❌ "How do you feel?" - FORBIDDEN!
 ❌ "Do you like...?" (without options) - FORBIDDEN!
 ❌ "What can I do for you?" - FORBIDDEN!
 ❌ "What can I help you with?" - FORBIDDEN!
+❌ "Tell me more about your story" - STRICTLY FORBIDDEN!
 ❌ Personal opinion/feeling questions - FORBIDDEN!
 ❌ Breaking game character - FORBIDDEN!
 
