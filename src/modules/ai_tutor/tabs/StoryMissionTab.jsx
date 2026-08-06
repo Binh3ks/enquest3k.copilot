@@ -124,15 +124,17 @@ const StoryMissionTab = () => {
     const isRetell = mission.type === 'retell' || mission.mission_id === 1 || mission.mission_id === 2;
     const w = Number(weekNum) || 1;
     if (isRetell) {
+      if (w <= 5) return 6;
       if (w <= 14) return 8;
       if (w <= 28) return 10;
       if (w <= 42) return 12;
       return 14;
     } else {
-      if (w <= 14) return 4;
-      if (w <= 28) return 6;
-      if (w <= 42) return 8;
-      return 10;
+      if (w <= 5) return 4;
+      if (w <= 14) return 6;
+      if (w <= 28) return 8;
+      if (w <= 42) return 10;
+      return 12;
     }
   };
 

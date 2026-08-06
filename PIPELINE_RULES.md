@@ -309,18 +309,23 @@ Any future modification to `force_align_transcript.py` or the transcript JSON th
 ### 11d. Zero-Delay 0ms Opening Narrative
 - Opening turns (Turn 1 greeting) MUST return the pre-computed `opening_narrative` instantly with 0ms network latency, bypassing LLM API roundtrips.
 
-### 11e. Differentiated Turn Scaffolding Tiers by Week Level
-Turn length for AI Tutor conversations MUST strictly scale by stage and mission type:
-- **Story Mission 1 & 2 (Reading Passage Retell / Memory Recall)**:
-  - **Weeks 01–14**: **8 turns**
-  - **Weeks 15–28**: **10 turns**
-  - **Weeks 29–42**: **12 turns**
-  - **Weeks 43+**: **14 turns**
-- **Story Mission 3 & Free Talk (Student Personal Application)**:
-  - **Weeks 01–14**: **4 turns**
-  - **Weeks 15–28**: **6 turns**
-  - **Weeks 29–42**: **8 turns** (Week 36 Golden Standard)
-  - **Weeks 43+**: **10 turns**
+### 11e. Differentiated 5-Tier Turn Scaffolding Matrix
+Turn length for AI Tutor conversations MUST strictly scale by week tier and mission type:
+- **Weeks 01–05 (Warm-up Entry Phase)**:
+  - Story Mission 1 & 2 (Reading Retell): **6 turns**
+  - Story Mission 3 & Free Talk (Personal Application): **4 turns**
+- **Weeks 06–14 (Building Fluency Phase)**:
+  - Story Mission 1 & 2 (Reading Retell): **8 turns**
+  - Story Mission 3 & Free Talk (Personal Application): **6 turns**
+- **Weeks 15–28 (Expanding Fluency Phase)**:
+  - Story Mission 1 & 2 (Reading Retell): **10 turns**
+  - Story Mission 3 & Free Talk (Personal Application): **8 turns**
+- **Weeks 29–42 (Deep Reflection Phase)**:
+  - Story Mission 1 & 2 (Reading Retell): **12 turns** (Week 36 Model)
+  - Story Mission 3 & Free Talk (Personal Application): **10 turns**
+- **Weeks 43+ (Mastery Phase)**:
+  - Story Mission 1 & 2 (Reading Retell): **14 turns**
+  - Story Mission 3 & Free Talk (Personal Application): **12 turns**
 
 ### 11f. Free Talk Card Limit
 - Free Talk (`spark_talk`) MUST contain EXACTLY 2 cards per week inspired by the week's theme.
