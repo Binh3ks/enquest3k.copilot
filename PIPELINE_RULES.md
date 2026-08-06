@@ -281,3 +281,21 @@ Any future modification to `force_align_transcript.py` or the transcript JSON th
 - Changes Deepgram API parameters
 
 ...is a **pipeline violation** and MUST be reverted.
+
+---
+
+## Rule 11: AI TUTOR CONTENT & PEDAGOGY STANDARDS (MANDATORY)
+
+**All AI Tutor content across all weeks MUST strictly follow these pedagogical & structural rules:**
+
+### 11a. Story Mission 1 & 2: Reading Passage Retell & Memory Recall
+- **Core Objective**: Help students **recall, summarize, and retell the key events from the 2 Reading Station passages (`read_stem` and `read_social`)** using the week's target grammar focus.
+- **NO Repeated Intros**: Turn 2 MUST NEVER re-recite the opening narrative. After student's opening reply (e.g. "yes"), Nova/Character MUST immediately jump to Question 1 of the story arc.
+- **NO Childish / Silly Questions**: Banned trivial A0 questions like *"Is it blue, red or yellow?"*, *"Is it a boat, car or plane?"*, or looping *"What is my job?"*. Scaffolding must use meaningful full-sentence options (`Say: We dove 300 metres into the ocean, or We dove into a deep cave`).
+- **Target Grammar Enforcement**: Scaffolding templates and hints MUST enforce the week's exact target grammar (e.g. Irregular Past Tense: `went`, `dove`, `saw`, `found`, `took`, `came`, `gave`, `rode`, `met`, `wrote`).
+- **End with Personal Connection**: The final turn of Story Mission 1 & 2 should naturally bridge the story to the student (e.g. *"Would you like to explore an underwater cave?"*).
+
+### 11b. Free Talk & Creative Missions: Student Personal Application
+- **Core Objective**: Shift focus **100% to the student's own life, personal experiences, and imagination**.
+- **Week-Specific Topics**: `spark_talk` in `week_XX_real.js` MUST provide topics inspired by the week's theme (e.g. "My Greatest Adventure", "If I Met an Explorer"), NOT generic fallback topics.
+
