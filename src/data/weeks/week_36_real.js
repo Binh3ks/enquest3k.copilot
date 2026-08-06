@@ -396,36 +396,6 @@ const week_36RealData = {
       text_vi: "Bạn muốn khám phá ở đâu?",
       hint_en: "I would go to... I would find...",
       hint_vi: "Tôi sẽ đến... Tôi sẽ tìm..."
-    },
-    {
-      id: 3,
-      title: "Exciting Discoveries",
-      emoji: "🌊",
-      seed_question: "What is the most exciting place you have seen?",
-      text_en: "What is the most exciting place you have seen?",
-      text_vi: "Nơi thú vị nhất bạn đã thấy là ở đâu?",
-      hint_en: "I saw... It was amazing because...",
-      hint_vi: "Tôi thấy... Nó tuyệt vời vì..."
-    },
-    {
-      id: 4,
-      title: "Special Treasures",
-      emoji: "💎",
-      seed_question: "Tell me about a time you found something special.",
-      text_en: "Tell me about a time you found something special.",
-      text_vi: "Hãy kể cho tôi nghe về lần bạn tìm thấy điều gì đặc biệt.",
-      hint_en: "I found... I took photos...",
-      hint_vi: "Tôi tìm thấy... Tôi chụp ảnh..."
-    },
-    {
-      id: 5,
-      title: "Dream Journey",
-      emoji: "⛵",
-      seed_question: "If you could travel anywhere, where would you go?",
-      text_en: "If you could travel anywhere, where would you go?",
-      text_vi: "Nếu bạn có thể đi bất cứ đâu, bạn sẽ đến đâu?",
-      hint_en: "I would go to... I would see...",
-      hint_vi: "Tôi sẽ đến... Tôi sẽ thấy..."
     }
   ]
 };

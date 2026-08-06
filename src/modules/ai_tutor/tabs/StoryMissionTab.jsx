@@ -660,8 +660,8 @@ const StoryMissionTab = () => {
         hints: guardedResponse.suggested_hints
       });
 
-      // 🔥 STORY CHARACTER MODE: Skip all objective logic, use AI response as-is!
-      if (currentMission.story_character) {
+      // 🔥 STORY CHARACTER / STORY ARC MODE: Skip all objective logic, use AI response as-is!
+      if (currentMission.story_character || currentMission.character || currentMission.story_arc) {
         console.log('🎭 Story character mode: Using AI response directly (no override)');
         
         // 🃏 CARD MODE: Use pre-computed response directly — guard may have mangled it with "Nice!"
@@ -943,7 +943,7 @@ const StoryMissionTab = () => {
             
             responseText = ackRecast ? `${ackRecast} ${targetQuestion}` : targetQuestion;
             console.log('✅ Cleaned to single question:', responseText);
-          } else if (!responseText.includes(targetQuestion) && !currentMission.story_character) {
+          } else if (!responseText.includes(targetQuestion) && !(currentMission.story_character || currentMission.character || currentMission.story_arc)) {
             // 🔥 ONLY override if NOT using story_character (old objective system)
             // Story character mode: Trust AI completely, no override!
             console.warn('⚠️ AI improvised question! Overriding with target:', targetQuestion);
@@ -1369,8 +1369,8 @@ const StoryMissionTab = () => {
                 
                 {/* 🔥 NEW: Objective progress indicator (HIDDEN for story_character mode) */}
                 {(() => {
-                  // Don't show objectives counter if story_character exists
-                  if (currentMission?.story_character) {
+                  // Don't show objectives counter if story_character or story_arc exists
+                  if (currentMission?.story_character || currentMission?.character || currentMission?.story_arc) {
                     return null;
                   }
                   
