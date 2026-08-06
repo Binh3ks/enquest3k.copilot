@@ -95,24 +95,24 @@ const week_36RealData = {
           goal: "Student retells the dive using irregular past tense",
           phase_questions: [
             {
-              template: "Where did we go on our submarine trip? That sounds amazing! Say: We went to the deep ocean, or We went on a submarine trip",
-              hints: ["went", "submarine", "trip", "deep ocean", "adventure"]
-            },
-            {
-              template: "How deep did we dive? Wow! Say: We dove down 300 metres, or We dove deep into the ocean",
+              template: "Awesome! First, do you remember how deep our submarine dove into the ocean? Say: We dove down 300 metres, or We dove deep into the ocean",
               hints: ["dove", "down", "300 metres", "deep", "ocean"]
             },
             {
-              template: "What did we see underwater? That sounds beautiful! Say: We saw magnificent coral reefs, or We saw colourful fish",
+              template: "That was a deep dive! What magnificent things did we see underwater? Say: We saw colourful fish, or We saw magnificent coral reefs",
               hints: ["saw", "coral reefs", "colourful", "fish", "magnificent"]
             },
             {
-              template: "Did we find anything unexpected inside the ocean? That is exciting! Say: We found an underwater cave, or We found an ancient secret",
+              template: "It was beautiful! What unexpected place did we find inside the ocean? Say: We found an underwater cave, or We found a hidden passage",
               hints: ["found", "underwater", "cave", "unexpected", "secret"]
             },
             {
-              template: "What did we write in our notebook? Say: We wrote down everything we saw, or We wrote down our findings",
-              hints: ["wrote", "wrote down", "everything", "saw", "findings"]
+              template: "Exciting! What special treasure did we find inside the cave? Say: We found a gold compass, or We found ancient objects",
+              hints: ["found", "gold", "compass", "ancient", "objects"]
+            },
+            {
+              template: "What an incredible discovery! What did we take of the compass and cave? Say: We took many photos, or We took pictures of everything",
+              hints: ["took", "photos", "pictures", "compass", "discovery"]
             }
           ]
         },
@@ -124,20 +124,20 @@ const week_36RealData = {
           goal: "Student describes treasures using irregular past tense",
           phase_questions: [
             {
-              template: "What did we find inside the underwater cave? That sounds incredible! Say: We found a gold compass, or We found ancient objects",
-              hints: ["found", "gold", "compass", "ancient", "objects"]
-            },
-            {
-              template: "Where did those old objects come from? Fascinating! Say: They came from ancient ships, or They came from sunken ships",
+              template: "Where did those old objects come from? Say: They came from ancient ships, or They came from sunken ships",
               hints: ["came", "from", "ancient", "ships", "sunken"]
             },
             {
-              template: "What did we take of everything in the cave? That is a great discovery! Say: We took many photos, or We took pictures of the compass",
-              hints: ["took", "photos", "pictures", "compass", "discovery"]
+              template: "What happened when we came back to the surface? Say: We came back safely, or We came back to the surface",
+              hints: ["came", "came back", "safely", "surface"]
             },
             {
-              template: "Finish this sentence: The best find ___ our breath away! Say: took our breath away, or took our breath",
-              hints: ["took", "our", "breath", "away", "find"]
+              template: "What did we give to the museum when we returned? Say: We gave our findings to the museum, or We gave the gold compass to the museum",
+              hints: ["gave", "findings", "museum", "gold compass"]
+            },
+            {
+              template: "What did we make from our ocean trip? Say: We made an important discovery, or We made great memories",
+              hints: ["made", "important", "discovery", "memories"]
             }
           ]
         },
@@ -149,23 +149,11 @@ const week_36RealData = {
           goal: "Student describes returning home and giving findings to museum",
           phase_questions: [
             {
-              template: "What happened when we came back to the surface? That is wonderful! Say: We came back safely, or We came back to the surface",
-              hints: ["came", "came back", "safely", "surface"]
-            },
-            {
-              template: "What did we give to the museum? That is generous! Say: We gave our findings to the museum, or We gave the gold compass to the museum",
-              hints: ["gave", "findings", "museum", "gold compass"]
-            },
-            {
-              template: "What did we make from our ocean trip? What a great adventure! Say: We made an important discovery, or We made great memories",
-              hints: ["made", "important", "discovery", "memories"]
-            },
-            {
-              template: "What did we begin to plan next? Say: We began to plan our next dive, or We began to plan another adventure",
+              template: "I love exploring with you! What do you want to plan for our next adventure? Say: I want to plan another dive, or I want to explore a new island",
               hints: ["began", "plan", "next", "dive", "adventure"]
             },
             {
-              template: "Finish: I ___ on an adventure I will never forget! Say: went on, or had",
+              template: "Finish this sentence: I ___ on an adventure I will never forget! Say: went on, or had",
               hints: ["went", "went on", "adventure", "never forget"]
             }
           ]
@@ -198,23 +186,23 @@ const week_36RealData = {
           goal: "Student retells journey using irregular past tense",
           phase_questions: [
             {
-              template: "Where did I go on my long journey? That sounds long! Say: You went from Italy to China, or You went on the Silk Road",
+              template: "Fantastic! Where did I go on my long journey in the 1200s? Say: You went from Italy to China, or You went on the Silk Road",
               hints: ["went", "from Italy", "to China", "Silk Road"]
             },
             {
-              template: "How did I travel across mountains and deserts? Say: You rode horses across mountains, or You rode across hot deserts",
+              template: "That was a long trip! How many years did my journey take? Say: Your journey took almost 24 years, or It took 24 years",
+              hints: ["took", "24 years", "almost"]
+            },
+            {
+              template: "Indeed! How did I travel across high mountains and hot deserts? Say: You rode horses across mountains, or You rode across deserts",
               hints: ["rode", "horses", "across", "mountains", "deserts"]
             },
             {
-              template: "What did I see on the Silk Road? Amazing! Say: You saw magnificent markets, or You saw amazing cities",
-              hints: ["saw", "magnificent", "markets", "cities", "Silk Road"]
-            },
-            {
-              template: "Who did I meet during my 24-year journey? Say: You met merchants and kings, or You met famous artists",
+              template: "It was a challenging ride! Who did I meet along the Silk Road? Say: You met merchants and kings, or You met famous artists",
               hints: ["met", "merchants", "kings", "artists"]
             },
             {
-              template: "What did I write after I saw everything? Say: You wrote about everything you saw, or You wrote a famous book",
+              template: "Fascinating people! What did I do after seeing all those amazing places? Say: You wrote about everything you saw, or You wrote a famous book",
               hints: ["wrote", "book", "everything", "saw"]
             }
           ]
@@ -227,7 +215,7 @@ const week_36RealData = {
           goal: "Student describes Marco Polo in China using irregular verbs",
           phase_questions: [
             {
-              template: "What did the emperor in China give me? That is important! Say: He gave you an important job, or He gave you a special mission",
+              template: "What did the emperor in China give me? Say: He gave you an important job, or He gave you a special mission",
               hints: ["gave", "important", "job", "special", "mission"]
             },
             {
@@ -235,12 +223,8 @@ const week_36RealData = {
               hints: ["took", "job", "seriously", "government", "official"]
             },
             {
-              template: "What did I become in China? Excellent! Say: You became a trusted messenger, or You became an official",
+              template: "What did I become in China? Say: You became a trusted messenger, or You became an official",
               hints: ["became", "trusted", "messenger", "official"]
-            },
-            {
-              template: "Use WON to describe my trust! Say: You won the emperor trust, or You won his trust completely",
-              hints: ["won", "emperor", "trust", "completely"]
             }
           ]
         },
@@ -256,20 +240,12 @@ const week_36RealData = {
               hints: ["came", "came back", "Venice", "24 years", "safely"]
             },
             {
-              template: "Did people believe my stories at first? Say: Nobody believed you at first, or People thought you made up stories",
-              hints: ["believed", "stories", "made up", "at first"]
-            },
-            {
-              template: "What happened when people found my writings later? Say: They found your writings and knew everything was true",
+              template: "What happened when people found my writings years later? Say: They found your writings and knew it was true, or Your book inspired many explorers",
               hints: ["found", "writings", "knew", "everything", "true"]
             },
             {
-              template: "What did my book do for future explorers? Say: Your book inspired many explorers, or Your book told people about Asia",
+              template: "I am glad my journey inspired so many! If you met me back then, what would you ask me? Say: I would ask about China, or I would ask about your horses",
               hints: ["inspired", "explorers", "book", "Asia", "told"]
-            },
-            {
-              template: "Finish this sentence: Marco Polo ___ on to become one of history most famous explorers! Say: went on, or continued",
-              hints: ["went", "went on", "famous", "explorers"]
             }
           ]
         }

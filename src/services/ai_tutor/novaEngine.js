@@ -500,6 +500,10 @@ export class NovaEngine {
         const recastStudent = (text) => {
           if (!text) return '';
           let t = text.trim().replace(/[!?.]+$/, '').trim();
+          // DO NOT prefix "Yes! " when student simply answers "yes" or "ok"
+          if (/^(yes|yeah|sure|ok|okay|yep|ready|let's go|i want|please)\b/i.test(t)) {
+            return '';
+          }
           t = t.replace(/^yes,?\s+i can\b/gi, 'You can');  // "Yes, I can X" → "You can X"
           t = t.replace(/\bI can\b/gi, 'You can');
           t = t.replace(/\bI am\b/gi, 'You are');
