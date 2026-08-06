@@ -11,17 +11,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      // When a JS module chunk 404s (stale index.html after new deploy),
-      // auto-reload once to pick up the fresh index.html and new asset hashes.
-      // sessionStorage guard prevents infinite reload loops.
-      window.addEventListener('error', function(e) {
-        if (e.target && e.target.tagName === 'SCRIPT' && !sessionStorage.getItem('_chunkReload')) {
-          sessionStorage.setItem('_chunkReload', '1');
-          location.reload(true);
-        }
-      }, true);
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

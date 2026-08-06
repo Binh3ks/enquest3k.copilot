@@ -43,6 +43,18 @@ export default defineConfig({
         // the same filename — eliminates MIME errors caused by stale index.html
         // referencing an old hashed chunk that no longer exists after a new deploy.
         entryFileNames: 'assets/index.js',
+        chunkFileNames: (chunkInfo) => {
+          const facade = chunkInfo.facadeModuleId || '';
+          if (facade.includes('weeks')) {
+            const match = facade.match(/week_(\d+)/i);
+            if (match) {
+              const isEasy = facade.includes('weeks_easy');
+              const isReal = facade.includes('_real');
+              return `assets/week_${match[1]}${isEasy ? '_easy' : ''}${isReal ? '_real' : '_index'}.js`;
+            }
+          }
+          return 'assets/[name]-[hash].js';
+        }
       }
     }
   }

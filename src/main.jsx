@@ -29,10 +29,6 @@ if (typeof window !== 'undefined') {
       event.preventDefault();
     }
   });
-  window.addEventListener('vite:preloadError', () => {
-    console.warn('[Main] Stale bundle chunk detected post-deploy. Reloading...');
-    window.location.reload();
-  });
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
