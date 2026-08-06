@@ -97,7 +97,26 @@ Every forced split MUST result in a syntactically digestible chunk:
 - Auxiliary verbs: "is", "are", "was", "have", "can"
 - Prepositions: "in", "on", "at", "to", "for", "with"
 - Conjunctions: "and", "but", "so", "because"
-- Determiners: "the", "a", "an", "my", "this"
+---
+
+## Rule 6: LEXICAL CHUNK CREATION RULES (MANDATORY)
+
+**All highlighted chunks in reading, vocabulary, and grammar stations MUST be syntactically & semantically complete ESL phrasal units:**
+
+### 6a. Allowed Chunk Types
+- **Phrasal Verbs & Verb-Preposition Combinations**: `went on an adventure`, `dove down into`, `crashed inside`, `wrote down`, `came back`, `got lost`
+- **Verb + Noun Phrase (Collocations)**: `made an important discovery`, `took our breath away`, `gave all our findings`, `spoke many languages`, `saw magnificent coral reefs`
+- **Noun Phrases & Terminology**: `underwater cave`, `gold compass`, `coral reef`, `Silk Road`, `government official`
+- **Fixed Prepositional & Temporal Expressions**: `a wall of`, `hundreds of years ago`, `on the Silk Road`
+
+### 6b. Strictly Forbidden (BANNED CHUNKS)
+- **NEVER pair a Verb with an isolated Adjective/Determiner/Pronoun**:
+  - ❌ `saw magnificent` (MUST BE: `saw magnificent coral reefs` or `magnificent coral reefs`)
+  - ❌ `saw old` (MUST BE: `saw old objects` or `old objects`)
+  - ❌ `sank many` (MUST BE: `sank hundreds of years ago`)
+  - ❌ `took our` (MUST BE: `took our breath away`)
+  - ❌ `said it`, `knew we`, `made an`, `held many`, `began to`
+- **Every created chunk MUST exist in `src/data/dictionary.json` with a full Vietnamese translation (`meaning`), pronunciation (`pronounce`), and example (`example`).**
 
 ---
 

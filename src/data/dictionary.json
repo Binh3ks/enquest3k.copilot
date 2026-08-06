@@ -32681,12 +32681,12 @@
     "example": "The discovery of the cave was exciting."
   },
   {
-    "word": "silk road",
-    "meaning": "Con đường Tơ lụa",
+    "word": "Silk Road",
+    "meaning": "Con đường Tơ lụa cổ đại",
     "pronounce": "/sɪlk roʊd/",
-    "definition_en": "an ancient trade route connecting East and West",
+    "definition_en": "ancient trade route between Europe and Asia",
     "first_taught_week": 36,
-    "example": "Merchants traveled along the Silk Road."
+    "example": "Merchants traded silk on the Silk Road."
   },
   {
     "word": "merchant",
@@ -32707,10 +32707,10 @@
   {
     "word": "government official",
     "meaning": "quan chức chính phủ",
-    "pronounce": "/ˈɡʌvərnmənt əˈfɪʃəl/",
-    "definition_en": "a person who works for the government in an important position",
+    "pronounce": "/ˈgʌvnmənt əˈfɪʃəl/",
+    "definition_en": "a person holding public office",
     "first_taught_week": 36,
-    "example": "The government official gave Marco Polo an important job."
+    "example": "Marco Polo became a high government official."
   },
   {
     "word": "inspired",
@@ -32719,5 +32719,389 @@
     "definition_en": "made someone feel motivated or creative",
     "first_taught_week": 36,
     "example": "His book inspired many people to explore."
+  },
+  {
+    "word": "went on an adventure",
+    "meaning": "đã tham gia một cuộc phiêu lưu",
+    "pronounce": "/wɛnt ɒn ən ədˈvɛnʧə/",
+    "definition_en": "participated in an exciting and daring trip",
+    "first_taught_week": 36,
+    "example": "Last summer, my family went on an adventure in a submarine."
+  },
+  {
+    "word": "dove down into",
+    "meaning": "lặn xuống",
+    "pronounce": "/dʌv daʊn ˈɪntuː/",
+    "definition_en": "plunged deep under water",
+    "first_taught_week": 36,
+    "example": "We dove down into the deep ocean."
+  },
+  {
+    "word": "magnificent coral reefs",
+    "meaning": "những rặng san hô tuyệt đẹp",
+    "pronounce": "/mæɡˈnɪfɪsənt ˈkɒrəl riːfs/",
+    "definition_en": "spectacular underwater coral structures",
+    "first_taught_week": 36,
+    "example": "We saw magnificent coral reefs in the ocean."
+  },
+  {
+    "word": "swam around",
+    "meaning": "bơi xung quanh",
+    "pronounce": "/swæm əˈraʊnd/",
+    "definition_en": "moved in circles in water",
+    "first_taught_week": 36,
+    "example": "Thousands of colourful fish swam around us."
+  },
+  {
+    "word": "hid in",
+    "meaning": "ẩn nấp trong",
+    "pronounce": "/hɪd ɪn/",
+    "definition_en": "concealed themselves inside a place",
+    "first_taught_week": 36,
+    "example": "Tiny crabs hid in the rocks between the corals."
+  },
+  {
+    "word": "found something unexpected",
+    "meaning": "tìm thấy điều bất ngờ",
+    "pronounce": "/faʊnd ˈsʌmθɪŋ ˌʌnɪkˈspɛktɪd/",
+    "definition_en": "discovered a surprising object or place",
+    "first_taught_week": 36,
+    "example": "We found something unexpected — an underwater cave!"
+  },
+  {
+    "word": "underwater cave",
+    "meaning": "hang động dưới nước",
+    "pronounce": "/ˌʌndəˈwɔːtə keɪv/",
+    "definition_en": "a cave located beneath the sea level",
+    "first_taught_week": 36,
+    "example": "They explored a dark underwater cave."
+  },
+  {
+    "word": "a wall of",
+    "meaning": "một bức tường (tảo/cây...)",
+    "pronounce": "/ə wɔːl ɒv/",
+    "definition_en": "a dense barrier formed by objects",
+    "first_taught_week": 36,
+    "example": "The cave was hidden behind a wall of seaweed."
+  },
+  {
+    "word": "crashed inside",
+    "meaning": "đâm sầm vào bên trong",
+    "pronounce": "/kræʃt ɪnˈsaɪd/",
+    "definition_en": "collided violently inside a space",
+    "first_taught_week": 36,
+    "example": "Ancient ships crashed inside the cave long ago."
+  },
+  {
+    "word": "rode into",
+    "meaning": "đi vào trong (bằng tàu/xe)",
+    "pronounce": "/roʊd ˈɪntuː/",
+    "definition_en": "traveled into a dark or enclosed space",
+    "first_taught_week": 36,
+    "example": "We carefully rode into the dark cave."
+  },
+  {
+    "word": "old objects",
+    "meaning": "những đồ vật cổ",
+    "pronounce": "/oʊld ˈɒbʤɛkts/",
+    "definition_en": "items from ancient times",
+    "first_taught_week": 36,
+    "example": "We saw old objects on the sandy floor."
+  },
+  {
+    "word": "sea plants",
+    "meaning": "thực vật biển",
+    "pronounce": "/siː plɑːnts/",
+    "definition_en": "vegetation growing in the ocean",
+    "first_taught_week": 36,
+    "example": "The artifacts were covered in sea plants."
+  },
+  {
+    "word": "came from",
+    "meaning": "đến từ / có nguồn gốc từ",
+    "pronounce": "/keɪm frɒm/",
+    "definition_en": "originated from a particular source or time",
+    "first_taught_week": 36,
+    "example": "These treasures came from ancient Portuguese ships."
+  },
+  {
+    "word": "ancient ships",
+    "meaning": "những con tàu cổ đại",
+    "pronounce": "/ˈeɪnʃənt ʃɪps/",
+    "definition_en": "very old vessels from past centuries",
+    "first_taught_week": 36,
+    "example": "Ancient ships sank near the island long ago."
+  },
+  {
+    "word": "hundreds of years ago",
+    "meaning": "hàng trăm năm trước",
+    "pronounce": "/ˈhʌndrədz ɒv jɪəz əˈgoʊ/",
+    "definition_en": "a time long ago in history",
+    "first_taught_week": 36,
+    "example": "The vessel sank hundreds of years ago."
+  },
+  {
+    "word": "shone brightly",
+    "meaning": "tỏa sáng rực rỡ",
+    "pronounce": "/ʃɒn ˈbraɪtli/",
+    "definition_en": "emitted intense light",
+    "first_taught_week": 36,
+    "example": "The gold compass shone brightly in our spotlights."
+  },
+  {
+    "word": "wrote down",
+    "meaning": "ghi chép lại",
+    "pronounce": "/roʊt daʊn/",
+    "definition_en": "recorded information in writing",
+    "first_taught_week": 36,
+    "example": "We wrote down everything we found in our notebook."
+  },
+  {
+    "word": "took our breath away",
+    "meaning": "làm chúng tôi sững sờ vì kinh ngạc",
+    "pronounce": "/tʊk ɑː brɛθ əˈweɪ/",
+    "definition_en": "astonished us with its amazing beauty",
+    "first_taught_week": 36,
+    "example": "The discovery of the gold compass took our breath away."
+  },
+  {
+    "word": "gold compass",
+    "meaning": "la bàn bằng vàng",
+    "pronounce": "/goʊld ˈkʌmpəs/",
+    "definition_en": "a direction tool made of gold",
+    "first_taught_week": 36,
+    "example": "He found a precious 16th-century gold compass."
+  },
+  {
+    "word": "got lost at sea",
+    "meaning": "bị lạc ngoài biển",
+    "pronounce": "/gɒt lɒst æt siː/",
+    "definition_en": "lost orientation while sailing on the ocean",
+    "first_taught_week": 36,
+    "example": "The explorer got lost at sea centuries ago."
+  },
+  {
+    "word": "gave all our findings",
+    "meaning": "bàn giao toàn bộ phát hiện",
+    "pronounce": "/geɪv ɔːl ɑː ˈfaɪndɪŋz/",
+    "definition_en": "donated discovered items to an authority",
+    "first_taught_week": 36,
+    "example": "We gave all our findings to the museum."
+  },
+  {
+    "word": "on shore",
+    "meaning": "trên bờ biển",
+    "pronounce": "/ɒn ʃɔː/",
+    "definition_en": "on the land near the ocean",
+    "first_taught_week": 36,
+    "example": "They visited the museum on shore."
+  },
+  {
+    "word": "museum director",
+    "meaning": "giám đốc bảo tàng",
+    "pronounce": "/mjuːˈzɪəm dɪˈrɛktə/",
+    "definition_en": "the person in charge of a museum",
+    "first_taught_week": 36,
+    "example": "The museum director thanked us warmly."
+  },
+  {
+    "word": "came back",
+    "meaning": "trở về",
+    "pronounce": "/keɪm bæk/",
+    "definition_en": "returned from a place",
+    "first_taught_week": 36,
+    "example": "When we came back to the surface, we were happy."
+  },
+  {
+    "word": "made an important discovery",
+    "meaning": "tạo ra một phát hiện quan trọng",
+    "pronounce": "/meɪd ən ɪmˈpɔːtənt dɪsˈkʌvəri/",
+    "definition_en": "found something very significant",
+    "first_taught_week": 36,
+    "example": "The explorers made an important discovery."
+  },
+  {
+    "word": "be found",
+    "meaning": "được phát hiện",
+    "pronounce": "/biː faʊnd/",
+    "definition_en": "to be discovered or located",
+    "first_taught_week": 36,
+    "example": "Many secrets are waiting to be found in the deep ocean."
+  },
+  {
+    "word": "began to plan",
+    "meaning": "bắt đầu lên kế hoạch",
+    "pronounce": "/bɪˈgæn tuː plæn/",
+    "definition_en": "started making preparations for something",
+    "first_taught_week": 36,
+    "example": "We began to plan our next exciting dive."
+  },
+  {
+    "word": "went from",
+    "meaning": "đi từ (đâu đến đâu)",
+    "pronounce": "/wɛnt frɒm/",
+    "definition_en": "traveled starting from a place",
+    "first_taught_week": 36,
+    "example": "Marco Polo went from Italy to China."
+  },
+  {
+    "word": "took almost 24 years",
+    "meaning": "kéo dài gần 24 năm",
+    "pronounce": "/tʊk ˈɔːlmoʊst ˈtwɛnti fɔː jɪəz/",
+    "definition_en": "spanned nearly a quarter century",
+    "first_taught_week": 36,
+    "example": "His epic journey took almost 24 years!"
+  },
+  {
+    "word": "left Venice",
+    "meaning": "rời khỏi thành phố Venice",
+    "pronounce": "/lɛft ˈvɛnɪs/",
+    "definition_en": "departed from Venice",
+    "first_taught_week": 36,
+    "example": "He left Venice when he was only 17 years old."
+  },
+  {
+    "word": "rode across",
+    "meaning": "cưỡi ngựa băng qua",
+    "pronounce": "/roʊd əˈkrɒs/",
+    "definition_en": "traveled across land on animals or transport",
+    "first_taught_week": 36,
+    "example": "He rode across high mountains and deserts."
+  },
+  {
+    "word": "saw amazing things",
+    "meaning": "nhìn thấy những điều kỳ diệu",
+    "pronounce": "/sɔː əˈmeɪzɪŋ θɪŋz/",
+    "definition_en": "witnessed extraordinary sights",
+    "first_taught_week": 36,
+    "example": "He saw amazing things during his travels."
+  },
+  {
+    "word": "met merchants",
+    "meaning": "gặp gỡ các thương gia",
+    "pronounce": "/mɛt ˈmɜːʧənts/",
+    "definition_en": "encountered trade businesspeople",
+    "first_taught_week": 36,
+    "example": "He met merchants from many countries."
+  },
+  {
+    "word": "spoke many languages",
+    "meaning": "nói nhiều ngôn ngữ",
+    "pronounce": "/spoʊk ˈmɛni ˈlæŋgwɪʤɪz/",
+    "definition_en": "could communicate in several tongues",
+    "first_taught_week": 36,
+    "example": "Marco Polo spoke many languages fluently."
+  },
+  {
+    "word": "wrote about",
+    "meaning": "viết về",
+    "pronounce": "/roʊt əˈbaʊt/",
+    "definition_en": "documented in writing",
+    "first_taught_week": 36,
+    "example": "He wrote about everything he saw."
+  },
+  {
+    "word": "famous book",
+    "meaning": "cuốn sách nổi tiếng",
+    "pronounce": "/ˈfeɪməs bʊk/",
+    "definition_en": "a well-known literary work",
+    "first_taught_week": 36,
+    "example": "His famous book described eastern lands."
+  },
+  {
+    "word": "gave an important job",
+    "meaning": "giao cho một công việc quan trọng",
+    "pronounce": "/geɪv ən ɪmˈpɔːtənt ʤɒb/",
+    "definition_en": "assigned a significant duty",
+    "first_taught_week": 36,
+    "example": "The ruler gave an important job to Marco."
+  },
+  {
+    "word": "took the job seriously",
+    "meaning": "làm việc rất nghiêm túc",
+    "pronounce": "/tʊk ðə ʤɒb ˈsɪərɪəsli/",
+    "definition_en": "handled responsibilities with great care",
+    "first_taught_week": 36,
+    "example": "Marco took the job seriously and worked hard."
+  },
+  {
+    "word": "became a messenger",
+    "meaning": "trở thành sứ giả",
+    "pronounce": "/bɪˈkeɪm ə ˈmɛsɪnʤə/",
+    "definition_en": "became an official envoy carrying messages",
+    "first_taught_week": 36,
+    "example": "He became a messenger for the emperor."
+  },
+  {
+    "word": "won the trust",
+    "meaning": "giành được sự tin tưởng",
+    "pronounce": "/wʌn ðə trʌst/",
+    "definition_en": "gained confidence and loyalty",
+    "first_taught_week": 36,
+    "example": "He won the trust of Kublai Khan."
+  },
+  {
+    "word": "spoke for him",
+    "meaning": "đại diện phát ngôn cho ông ấy",
+    "pronounce": "/spoʊk fɔː hɪm/",
+    "definition_en": "represented someone in discussions",
+    "first_taught_week": 36,
+    "example": "He spoke for the emperor in distant regions."
+  },
+  {
+    "word": "made up stories",
+    "meaning": "bịa đặt ra các câu chuyện",
+    "pronounce": "/meɪd ʌp ˈstɔːriz/",
+    "definition_en": "invented fictitious tales",
+    "first_taught_week": 36,
+    "example": "Some thought he made up stories about Asia."
+  },
+  {
+    "word": "found his writings",
+    "meaning": "tìm thấy những ghi chép của ông",
+    "pronounce": "/faʊnd hɪz ˈraɪtɪŋz/",
+    "definition_en": "discovered documented manuscripts",
+    "first_taught_week": 36,
+    "example": "Scholars later found his writings."
+  },
+  {
+    "word": "everything was true",
+    "meaning": "mọi thứ đều là sự thật",
+    "pronounce": "/ˈɛvrɪθɪŋ wɒz truː/",
+    "definition_en": "all statements were accurate",
+    "first_taught_week": 36,
+    "example": "They realized that everything was true."
+  },
+  {
+    "word": "told people about",
+    "meaning": "kể cho mọi người nghe về",
+    "pronounce": "/toʊld ˈpiːpl əˈbaʊt/",
+    "definition_en": "informed others regarding a subject",
+    "first_taught_week": 36,
+    "example": "His book told people about China and India."
+  },
+  {
+    "word": "famous explorers",
+    "meaning": "những nhà tham hiểm nổi tiếng",
+    "pronounce": "/ˈfeɪməs ɪksˈplɔːrəz/",
+    "definition_en": "renowned discoverers in history",
+    "first_taught_week": 36,
+    "example": "He became one of history most famous explorers."
+  },
+  {
+    "word": "inspired many adventurers",
+    "meaning": "truyền cảm hứng cho nhiều nhà phiêu lưu",
+    "pronounce": "/ɪnˈspaɪəd ˈmɛni ədˈvɛnʧərəz/",
+    "definition_en": "motivated many people to go on journeys",
+    "first_taught_week": 36,
+    "example": "His courage inspired many adventurers."
+  },
+  {
+    "word": "dream of exploring",
+    "meaning": "mơ ước được đi khám phá",
+    "pronounce": "/driːm ɒv ɪksˈplɔːrɪŋ/",
+    "definition_en": "desire to travel and discover new places",
+    "first_taught_week": 36,
+    "example": "Children read his book and dream of exploring the world."
   }
 ]

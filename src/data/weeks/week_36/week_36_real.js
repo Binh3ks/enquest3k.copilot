@@ -20,16 +20,16 @@ const week36RealData = {
   chunk_focus: [
     "went on an adventure",
     "dove down into",
-    "saw magnificent",
+    "magnificent coral reefs",
     "found something unexpected",
-    "wrote down everything",
-    "came back to the surface",
-    "gave our findings to",
+    "wrote down",
+    "came back",
+    "gave all our findings",
     "made an important discovery",
     "began to plan",
     "took our breath away",
     "spoke many languages",
-    "inspired many other adventurers"
+    "inspired many adventurers"
   ],
   target_vocab: [
     { word: "submarine", pronunciation: "/ˈsʌbməriːn/", definition_vi: "tau ngam", definition_en: "a ship that can travel underwater" },
