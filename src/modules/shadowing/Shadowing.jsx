@@ -102,24 +102,10 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'a
   });
   // TTS worker base — used for corrections endpoint (KV API).
   // Mirrors voiceService.js: same env var as /tts endpoint so domain can flip via .env.
-  const CORRECTIONS_API_BASE = import.meta.env.VITE_TTS_WORKER_URL || '';
-  // Fetch corrections from server on mount (if video exists + worker URL configured)
+  // Disable stale server KV corrections fetch to prevent legacy text overrides
   useEffect(() => {
-    if (!data?.videoId || !CORRECTIONS_API_BASE || !correctionKey) return;
-    (async () => {
-    try {
-      const res = await fetch(`${CORRECTIONS_API_BASE}/api/corrections/${data.videoId}?week=${currentWeek}&mode=${isEasyMode ? 'easy' : 'adv'}`);
-      if (!res.ok) return;
-      const serverCorrections = await res.json();
-      if (!serverCorrections || Object.keys(serverCorrections).length === 0) return;
-      setCorrections(prev => {
-        const merged = { ...serverCorrections, ...prev }; // localStorage takes precedence
-        try { localStorage.setItem(correctionKey, JSON.stringify(merged)); } catch { /* ignore */ }
-        return merged;
-      });
-    } catch (e) { console.warn('[Shadowing] corrections fetch failed:', e?.message); }
-    })();
-  }, [data?.videoId, CORRECTIONS_API_BASE, correctionKey, currentWeek, isEasyMode]);
+    // Legacy server corrections disabled to preserve pure lesson script
+  }, []);
   const handleSaveCorrection = useCallback((sentenceId, newText) => {
     setCorrections(prev => {
       const next = { ...prev, [sentenceId]: newText };
@@ -917,7 +903,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'a
             ytPlayer={youTube.ytPlayer}
             useTranscriptSource={useTranscriptSource}
             videoTranscriptSegments={useTranscriptSource ? effectiveScript : null}
-            transcriptIpa={transcriptIpa}
+            transcriptIpa={useTranscriptSource ? transcriptIpa : null}
             themeColor={themeColor}
             isVi={isVi}
             // Inline button must reflect challenge playback too. During
