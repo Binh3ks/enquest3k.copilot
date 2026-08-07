@@ -164,7 +164,8 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
         () => setIsPlaying(false),
         'read_explore',
         weekNumber,
-        learningMode
+        learningMode,
+        true // instant = true: immediate browser speech (<50ms) with background prefetch
       );
     } catch (err) {
       console.error('Story audio play failed:', err);

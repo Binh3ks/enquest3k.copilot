@@ -25,6 +25,9 @@ const weekData = {
   weekTitle_vi: "Những Câu Chuyện Phiêu Lưu",
   grammar_focus: "Irregular Verbs (5 groups)",
 
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore.dictionary || {}) },
+
   global_vocab: vocab.vocab,
 
   voiceConfig: {

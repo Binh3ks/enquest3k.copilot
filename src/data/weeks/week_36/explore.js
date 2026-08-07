@@ -34,3 +34,57 @@ Exploration is **not just** about going somewhere new. It is **about learning** 
     hint_vi: "Toi di... Toi thay... Toi tim... Toi chup... Toi trao... Toi tro lai..."
   }
 };
+
+export const chunk_focus = [
+  "changed the world",
+  "went on",
+  "find new",
+  "saw amazing",
+  "made great",
+  "rode across",
+  "met merchants",
+  "spoke to",
+  "wrote about",
+  "saw",
+  "inspired other",
+  "begin their",
+  "use technology",
+  "help them",
+  "dive down",
+  "give us",
+  "discover new",
+  "not just",
+  "about learning",
+  "about meeting",
+  "came back",
+  "told their",
+  "inspired us",
+  "dream of"
+];
+
+export const dictionary = {
+    'changed the world': { word: 'changed the world', pronunciation: '/tʃeɪndʒd ðə wɜːrld/', definition_vi: 'thay đổi thế giới', definition_en: 'made a profound impact on earth', example: 'Their discoveries changed the world.' },
+    'went on': { word: 'went on', pronunciation: '/went on/', definition_vi: 'đi (một chuyến đi)', definition_en: 'meaning of went on', example: 'Last summer, we went on a trip to the mountains with our class.' },
+    'find new': { word: 'find new', pronunciation: '/faɪnd njuː/', definition_vi: 'tìm kiếm điều mới', definition_en: 'discover new objects or places', example: 'Scientists find new sea life.' },
+    'saw amazing': { word: 'saw amazing', pronunciation: '/sɔː əˈmeɪzɪŋ/', definition_vi: 'nhìn thấy những điều tuyệt vời', definition_en: 'spotted wonderful things', example: 'We saw amazing sights.' },
+    'made great': { word: 'made great', pronunciation: '/meɪd ɡreɪt/', definition_vi: 'tạo ra những điều tuyệt vời', definition_en: 'achieved great accomplishments', example: 'They made great discoveries.' },
+    'rode across': { word: 'rode across', pronunciation: '/rode across/', definition_vi: 'cưỡi ngựa băng qua', definition_en: 'traveled across land on animals or transport', example: 'He rode across high mountains and deserts.' },
+    'met merchants': { word: 'met merchants', pronunciation: '/met merchants/', definition_vi: 'gặp gỡ các thương gia', definition_en: 'encountered trade businesspeople', example: 'He met merchants from many countries.' },
+    'spoke to': { word: 'spoke to', pronunciation: '/spoke to/', definition_vi: 'nói chuyện với', definition_en: 'meaning of spoke to', example: 'The headmaster spoke to the whole school about being kind to each other.' },
+    'wrote about': { word: 'wrote about', pronunciation: '/wrote about/', definition_vi: 'viết về', definition_en: 'documented in writing', example: 'He wrote about everything he saw.' },
+    'saw': { word: 'saw', pronunciation: '/saw/', definition_vi: 'đã thấy', definition_en: 'meaning of saw', example: 'This involves saw in some way.' },
+    'inspired other': { word: 'inspired other', pronunciation: '/ɪnˈspaɪərd ˈʌðər/', definition_vi: 'truyền cảm hứng cho người khác', definition_en: 'motivated other travelers', example: 'His story inspired other explorers.' },
+    'begin their': { word: 'begin their', pronunciation: '/bɪˈɡɪn ðeər/', definition_vi: 'bắt đầu hành trình của họ', definition_en: 'start their own journey', example: 'Adventurers begin their journey.' },
+    'use technology': { word: 'use technology', pronunciation: '/juːz tekˈnɒlədʒi/', definition_vi: 'sử dụng công nghệ', definition_en: 'employ modern devices', example: 'Explorers use technology underwater.' },
+    'help them': { word: 'help them', pronunciation: '/help them/', definition_vi: '(cụm từ: help them)', definition_en: 'Multi-word phrase: help them', example: 'Use of \'help them\' in natural context.' },
+    'dive down': { word: 'dive down', pronunciation: '/daɪv daʊn/', definition_vi: 'lặn sâu xuống', definition_en: 'plunge underwater', example: 'Divers dive down deep.' },
+    'give us': { word: 'give us', pronunciation: '/ɡɪv ʌs/', definition_vi: 'mang lại cho chúng ta', definition_en: 'provide us with insights', example: 'Discoveries give us knowledge.' },
+    'discover new': { word: 'discover new', pronunciation: '/dɪˈskʌvər njuː/', definition_vi: 'khám phá điều mới', definition_en: 'find new lands or facts', example: 'Scientists discover new sea species.' },
+    'not just': { word: 'not just', pronunciation: '/nɒt dʒʌst/', definition_vi: 'không chỉ là', definition_en: 'more than simply', example: 'Exploration is not just traveling.' },
+    'about learning': { word: 'about learning', pronunciation: '/əˈbaʊt ˈlɜːrnɪŋ/', definition_vi: 'về việc học hỏi', definition_en: 'concerning the acquisition of knowledge', example: 'It is about learning new cultures.' },
+    'about meeting': { word: 'about meeting', pronunciation: '/əˈbaʊt ˈmiːtɪŋ/', definition_vi: 'về việc gặp gỡ', definition_en: 'concerning encountering new people', example: 'It is about meeting people.' },
+    'came back': { word: 'came back', pronunciation: '/came back/', definition_vi: 'trở về', definition_en: 'returned from a place', example: 'When we came back to the surface, we were happy.' },
+    'told their': { word: 'told their', pronunciation: '/toʊld ðeər/', definition_vi: 'kể những câu chuyện của họ', definition_en: 'narrated their experiences', example: 'Explorers told their stories.' },
+    'inspired us': { word: 'inspired us', pronunciation: '/ɪnˈspaɪərd ʌs/', definition_vi: 'truyền cảm hứng cho chúng tôi', definition_en: 'motivated us to learn', example: 'Their courage inspired us.' },
+    'dream of': { word: 'dream of', pronunciation: '/driːm ɒv/', definition_vi: 'mơ về', definition_en: 'aspire to or imagine something', example: 'Many dream of exploring the ocean.' }
+};
