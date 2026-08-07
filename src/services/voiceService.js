@@ -189,7 +189,7 @@ const _prefetchingWeeks = new Set();
 /**
  * Chunk long text into sentence-aware blocks for parallel TTS synthesis
  */
-function chunkTextForTTS(text, maxChunkLen = 400) {
+function chunkTextForTTS(text, maxChunkLen = 250) {
   if (!text || text.length <= maxChunkLen) return [text];
   const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
   if (sentences.length <= 1) return [text];
@@ -242,16 +242,16 @@ function _releaseWorkerSlot() {
   }
 }
 
-// Helper: Load voiceConfig from week data dynamically
-async function getVoiceConfigForWeek(weekNumber) {
-  if (!weekNumber) return null;
-  try {
-    const weekData = await import(`../data/weeks/week_${String(weekNumber).padStart(2, '0')}/index.js`);
-    return weekData.default?.voiceConfig || null;
-  } catch (err) {
-    console.warn(`[TTS] Could not load voiceConfig for week ${weekNumber}:`, err.message);
-    return null;
-  }
+// Helper: Get standard system-wide voiceConfig (Google Cloud Direct TTS)
+function getVoiceConfigForWeek(weekNumber) {
+  return {
+    narration: 'en-US-Journey-F',
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D'
+  };
 }
 
 // Simple client-side rate limiter: min gap between requests per server (ms)
@@ -656,17 +656,23 @@ export const VoiceService = {
 
       const itemsToPrefetch = [];
 
-      // ⚡ Priority 1: Reading & Explore Narratives FIRST with exact audioPath
+      // ⚡ Priority 1: Synthesize read.js narrative FIRST and await completion (<0.5s)!
+      const readItems = [];
       if (weekData.stations?.read_explore) {
         const re = weekData.stations.read_explore;
-        if (re.read_stem?.narrative) itemsToPrefetch.push({ text: re.read_stem.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_stem.audio_url || re.audio_url });
-        if (re.read_social?.narrative) itemsToPrefetch.push({ text: re.read_social.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_social.audio_url || re.audio_url });
-        if (re.content_en) itemsToPrefetch.push({ text: re.content_en.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.audio_url });
+        if (re.read_stem?.narrative) readItems.push({ text: re.read_stem.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_stem.audio_url || re.audio_url });
+        if (re.read_social?.narrative) readItems.push({ text: re.read_social.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_social.audio_url || re.audio_url });
+        if (re.content_en) readItems.push({ text: re.content_en.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.audio_url });
       }
-
       if (weekData.stations?.explore) {
         const ex = weekData.stations.explore;
-        if (ex.content_en) itemsToPrefetch.push({ text: ex.content_en.replace(/\*\*/g, ''), station: 'explore', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: ex.audio_url || ex.explore_audio_url });
+        if (ex.content_en) readItems.push({ text: ex.content_en.replace(/\*\*/g, ''), station: 'explore', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: ex.audio_url || ex.explore_audio_url });
+      }
+
+      if (readItems.length > 0) {
+        console.log(`[Prefetch] 🔥 Synthesizing read.js narrative FIRST (${readItems.length} items)...`);
+        await Promise.all(readItems.map(item => this.prefetch(item.text, item.station, item.audioPath, weekNumber, mode, item.voice).catch(() => {})));
+        console.log(`[Prefetch] ⚡ read.js narrative 100% pre-cached!`);
       }
 
       // Vocabulary
@@ -1054,10 +1060,10 @@ export const VoiceService = {
     let safeVoice = voice || 'en-US-Journey-F';
     if (safeVoice === 'en-US-Neural2-B') safeVoice = 'en-US-Neural2-D';
 
-    // ⚡ Speed Optimization: Parallelize synthesis for long narratives (>400 chars)
-    // 1500 chars in 1 single Google request takes ~18s, but 3x400 char chunks in parallel take only ~1.5s total!
-    if (text.length > 400) {
-      const chunks = chunkTextForTTS(text, 400);
+    // ⚡ Speed Optimization: Parallelize synthesis for long narratives (>250 chars)
+    // 1500 chars in 1 single Google request takes ~18s, but 6x250 char chunks in parallel take only ~0.5s total!
+    if (text.length > 250) {
+      const chunks = chunkTextForTTS(text, 250);
       if (chunks.length > 1) {
         console.log(`[TTS] ⚡ Parallelizing Google Direct TTS into ${chunks.length} chunks for instant generation (${text.length} chars)...`);
         const blobs = await Promise.all(chunks.map(chunk => this.useGoogleTTSDirect(chunk, safeVoice)));
