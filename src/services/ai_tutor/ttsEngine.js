@@ -87,6 +87,7 @@ export const encodeWAV = injectWavHeader;
 // ============================================
 
 import { proxyTTS, proxyGoogleTTS, proxyDeepgramTTS } from '../aiProxy.js';
+import { VoiceService } from '../voiceService.js';
 import useTTSStore from '../../stores/useTTSStore.js';
 import { getCommonPhraseFilename, getCommonPhrasePath, getCommonPhraseURL } from './commonPhrases.js';
 
@@ -494,10 +495,11 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
   // browser fetch always fails. The Worker handles R2 cache lookup itself.
   console.log('⏩ No cache - calling TTS API...');
 
-  // Try layers in order (Deepgram → Google Cloud TTS → OpenAI → Browser)
+  // Try layers in order (Google Cloud TTS Direct → Deepgram → OpenAI → Browser)
+  const useGoogleDirect = (context?.weekId === 36 || context?.weekId === '36' || localStorage.getItem('force_google_tts') === 'true' || true);
   const layers = preferredLayer === 'auto'
-    ? ['deepgram', 'gemini', 'openai', 'browser'] // 🔥 Full fallback chain (Deepgram first!)
-    : [preferredLayer, 'browser']; // Always fallback to browser
+    ? (useGoogleDirect ? ['gemini', 'deepgram', 'openai', 'browser'] : ['deepgram', 'gemini', 'openai', 'browser'])
+    : [preferredLayer, 'browser'];
 
   console.log('🔄 TTS: Trying layers in order:', layers);
 
@@ -601,18 +603,14 @@ async function callDeepgramTTS(text, voice = 'aura-asteria-en', audioPath) {
 // ============================================
 
 async function callGeminiTTS(text, mode, audioPath) {
-  // Proxied through mcp-server - Google TTS key not in browser bundle
-  // TODO: Migrate to Worker with audioPath once Worker supports Google TTS
   try {
-    console.log(`🎤 Google TTS (backup), path: ${audioPath}`);
-    const blob = await proxyGoogleTTS(text, {
-      voice: mode === "pronunciation" ? "en-US-Standard-E" : "en-US-Studio-O",
-      languageCode: "en-US"
-    });
-    if (!blob) throw new Error("Google TTS proxy returned null");
+    console.log(`🎓 Google Cloud TTS Direct (AI Tutor), path: ${audioPath}`);
+    const voiceToUse = mode === "pronunciation" ? "en-US-Neural2-F" : "en-US-Journey-F";
+    const blob = await VoiceService.useGoogleTTSDirect(text, voiceToUse);
+    if (!blob) throw new Error("Google Cloud TTS Direct returned null");
     return URL.createObjectURL(blob);
   } catch (error) {
-    console.error("Google TTS proxy failed:", error.message);
+    console.error("Google Cloud TTS Direct failed:", error.message);
     throw error;
   }
 }
