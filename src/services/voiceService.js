@@ -374,7 +374,7 @@ export const VoiceService = {
       try {
         audioBlob = await Promise.race([
           workerPromise,
-          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 12000))
+          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 1500))
         ]);
       } catch (err) {
         workerErr = err;
