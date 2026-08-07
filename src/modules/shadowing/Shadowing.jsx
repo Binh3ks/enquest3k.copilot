@@ -82,17 +82,21 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'a
   // click "Open Floating Video". They can still pop out to floating mode.
   const [videoInline, setVideoInline] = useState(true);
 
+  const isEasyMode = Boolean(data?.isEasy || String(window.location.pathname).includes('_easy'));
+  const correctionKey = data?.videoId ? `shadowing_corrections_v4_w${currentWeek}_${isEasyMode ? 'easy' : 'adv'}_${data.videoId}` : null;
+
   const [corrections, setCorrections] = useState(() => {
-    if (!data?.videoId) return {};
+    if (!correctionKey) return {};
     try {
-      // v2 (Jul 1, 2026): previous key shadowing_corrections_<videoId> held stale
-      // edits from the old "My teacher is Nova" / Easy mode mirror-script (e.g.
-      // sentence 2 = "I see my round face"). Those edits referred to sentence ids
-      // that no longer exist after the W3 dialogue rewrite, so they appear as
-      // ghost "edited" badges on the wrong text. Bumping to v2 gives a clean
-      // slate per video; old data is left in place under the legacy key and
-      // can be cleared from localStorage by users manually.
-      const raw = localStorage.getItem('shadowing_corrections_v2_' + data.videoId);
+      // Purge legacy v2 / v3 keys that collided across modes
+      if (data?.videoId) {
+        try {
+          localStorage.removeItem('shadowing_corrections_v2_' + data.videoId);
+          localStorage.removeItem('shadowing_corrections_v3_' + data.videoId);
+        } catch (_) {}
+      }
+
+      const raw = localStorage.getItem(correctionKey);
       return raw ? JSON.parse(raw) : {};
     } catch { return {}; }
   });
@@ -101,41 +105,43 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'a
   const CORRECTIONS_API_BASE = import.meta.env.VITE_TTS_WORKER_URL || '';
   // Fetch corrections from server on mount (if video exists + worker URL configured)
   useEffect(() => {
-    if (!data?.videoId || !CORRECTIONS_API_BASE) return;
+    if (!data?.videoId || !CORRECTIONS_API_BASE || !correctionKey) return;
     (async () => {
     try {
-      const res = await fetch(CORRECTIONS_API_BASE + '/api/corrections/' + data.videoId);
+      const res = await fetch(`${CORRECTIONS_API_BASE}/api/corrections/${data.videoId}?week=${currentWeek}&mode=${isEasyMode ? 'easy' : 'adv'}`);
       if (!res.ok) return;
       const serverCorrections = await res.json();
       if (!serverCorrections || Object.keys(serverCorrections).length === 0) return;
       setCorrections(prev => {
         const merged = { ...serverCorrections, ...prev }; // localStorage takes precedence
-        try { localStorage.setItem('shadowing_corrections_v2_' + data.videoId, JSON.stringify(merged)); } catch { /* ignore */ }
+        try { localStorage.setItem(correctionKey, JSON.stringify(merged)); } catch { /* ignore */ }
         return merged;
       });
     } catch (e) { console.warn('[Shadowing] corrections fetch failed:', e?.message); }
     })();
-  }, [data?.videoId, CORRECTIONS_API_BASE]);
+  }, [data?.videoId, CORRECTIONS_API_BASE, correctionKey, currentWeek, isEasyMode]);
   const handleSaveCorrection = useCallback((sentenceId, newText) => {
     setCorrections(prev => {
       const next = { ...prev, [sentenceId]: newText };
-      try { localStorage.setItem('shadowing_corrections_v2_' + data.videoId, JSON.stringify(next)); } catch { /* ignore */ }
+      if (correctionKey) {
+        try { localStorage.setItem(correctionKey, JSON.stringify(next)); } catch { /* ignore */ }
+      }
       // Clear cached IPA so it gets regenerated from new text
       setTranscriptIpa(prev => {
         const { [sentenceId]: _, ...rest } = prev;
         return rest;
       });
       // Also save to server (fire-and-forget)
-      if (CORRECTIONS_API_BASE) {
-        fetch(CORRECTIONS_API_BASE + '/api/corrections/' + data.videoId, {
+      if (CORRECTIONS_API_BASE && data?.videoId) {
+        fetch(`${CORRECTIONS_API_BASE}/api/corrections/${data.videoId}?week=${currentWeek}&mode=${isEasyMode ? 'easy' : 'adv'}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: sentenceId, text: newText }),
+          body: JSON.stringify({ id: sentenceId, text: newText, week: currentWeek, mode: isEasyMode ? 'easy' : 'adv' }),
         }).catch(() => {});
       }
       return next;
     });
-  }, [data?.videoId, CORRECTIONS_API_BASE]);
+  }, [data?.videoId, CORRECTIONS_API_BASE, correctionKey, currentWeek, isEasyMode]);
 
   // (Transcript IPA useEffect moved to bottom of component for proper TDZ ordering)
 
