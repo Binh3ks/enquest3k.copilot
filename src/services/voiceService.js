@@ -1051,46 +1051,49 @@ export const VoiceService = {
     }
 
     const synth = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(text);
+    
+    // Ensure clean text with proper trailing padding to prevent ending sound truncation on single words (e.g. "cave.", "made.")
+    let cleanText = (text || '').trim();
+    if (cleanText && !/[.!?]$/.test(cleanText)) {
+      cleanText += '.';
+    }
+    
+    const wordCount = cleanText.split(/\s+/).length;
+    const isSingleWord = wordCount <= 2;
+
+    const utterance = new SpeechSynthesisUtterance(cleanText);
     
     // Ensure voices are loaded
     const voices = synth.getVoices();
     if (voices.length === 0) {
-      // If voices are not loaded, wait for the event
       synth.onvoiceschanged = () => this.webFallback(text);
       return;
     }
     
     // --- NEW VOICE SELECTION LOGIC ---
-    // We want a clear, young, female voice. "Google US English" is often a great choice.
-    
-    // Priority 1: Google's standard high-quality female voice
     let preferredVoice = voices.find(v => v.name === 'Google US English' && v.lang === 'en-US');
 
-    // Priority 2: Other high-quality browser voices if Google's isn't available
     if (!preferredVoice) {
       preferredVoice = voices.find(v => 
         v.lang.startsWith('en-') && 
-        (v.name.includes('Aria') || v.name.includes('Jenny') || v.name.includes('Michelle') || v.name.includes('Samantha'))
+        (v.name.includes('Aria') || v.name.includes('Jenny') || v.name.includes('Michelle') || v.name.includes('Samantha') || v.name.includes('Karen'))
       );
     }
     
-    // Priority 3: Any available female voice
     if (!preferredVoice) {
       preferredVoice = voices.find(v => v.lang.startsWith('en-') && v.name.includes('Female'));
     }
     
-    // Final Fallback: Any English voice
     if (!preferredVoice) {
       preferredVoice = voices.find(v => v.lang.startsWith('en-')) || voices[0];
     }
     
     utterance.voice = preferredVoice;
-    utterance.rate = 1.0; // Normal rate for clarity
-    utterance.pitch = 1.1; // Slightly higher pitch for a younger feel
+    utterance.rate = isSingleWord ? 0.85 : 0.95; // Slower, articulated rate for single words so ending sounds (cave, made, gave) are crystal clear
+    utterance.pitch = 1.05; // Natural pitch
     utterance.volume = 1.0;
     
-    console.log(`[TTS] 🎙️ Using voice: ${preferredVoice?.name || 'default'}`);
+    console.log(`[TTS] 🎙️ Using voice: ${preferredVoice?.name || 'default'} (rate: ${utterance.rate}, text: "${cleanText}")`);
     synth.speak(utterance);
   }
 
