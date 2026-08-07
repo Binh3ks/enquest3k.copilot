@@ -3,14 +3,14 @@ import path from 'path';
 
 console.log('===========================================================');
 console.log('🚀 ENGQUEST3K — WEEK 37 PRODUCTION DRY-RUN AUDIT');
-console.log('Golden Standard Reference: Week 36 (A1-A2 Linear Thinking)');
+console.log('Golden Standard Reference: Week 36 (A1-A2 Linear Thinking - 19 Files per Mode)');
 console.log('===========================================================\n');
 
 const BASE = '.';
 const GOLDEN_ADV = path.join(BASE, 'src/data/weeks/week_36');
 const GOLDEN_EASY = path.join(BASE, 'src/data/weeks_easy/week_36');
 
-// 1. Verify Golden Standard Week 36 Structure
+// 1. Verify Golden Standard Week 36 Structure (19 Files per Mode)
 console.log('📋 STEP 1: Verifying Golden Standard (Week 36) Files...');
 let goldenOk = true;
 
@@ -24,27 +24,41 @@ const REQUIRED_FILES = [
   'word_match.js',
   'dictation.js',
   'shadowing.js',
+  'shadowing_ipa.js',
   'mindmap.js',
-  'writing.js'
+  'writing.js',
+  'word_power.js',
+  'logic_science.js',
+  'social_quiz.js',
+  'ask_ai.js',
+  'daily_watch.js',
+  'games.js'
 ];
 
-[ { label: 'Advanced', dir: GOLDEN_ADV }, { label: 'Easy', dir: GOLDEN_EASY } ].forEach(({ label, dir }) => {
+[ 
+  { label: 'Advanced', dir: GOLDEN_ADV, realFile: 'week_36_real.js' }, 
+  { label: 'Easy', dir: GOLDEN_EASY, realFile: 'week_36_easy_real.js' } 
+].forEach(({ label, dir, realFile }) => {
   if (!fs.existsSync(dir)) {
     console.error(`  ❌ Golden directory missing: ${dir}`);
     goldenOk = false;
     return;
   }
   const files = fs.readdirSync(dir);
-  REQUIRED_FILES.forEach(f => {
+  const modeFiles = [...REQUIRED_FILES, realFile];
+  console.log(`  🔍 Checking ${label} mode directory (${files.length} total files found):`);
+  modeFiles.forEach(f => {
     if (!files.includes(f)) {
-      console.error(`  ❌ ${label} Week 36 missing standard file: ${f}`);
+      console.error(`    ❌ ${label} Week 36 missing file: ${f}`);
       goldenOk = false;
+    } else {
+      console.log(`    ✔ ${f}`);
     }
   });
 });
 
 if (goldenOk) {
-  console.log('  ✔ Week 36 Golden Standard structure verified: All 11 core files present in both Advanced & Easy modes!\n');
+  console.log('\n  ✔ Week 36 Golden Standard structure verified: All 19 standard files present in BOTH Advanced & Easy modes (Total 38 files)!\n');
 }
 
 // 2. Mock Week 37 Content (Dry-Run Data Model)
@@ -134,7 +148,7 @@ if (dictErrors.length === 0) {
 console.log('===========================================================');
 console.log('🎉 WEEK 37 PRODUCTION DRY-RUN AUDIT RESULT: PASSED (100% CLEAN)');
 console.log('===========================================================');
-console.log('• Golden Standard: Week 36 validated');
+console.log('• Golden Standard: Week 36 (19 files per mode = 38 total files) validated');
 console.log('• Pedagogical Rules: 4-Category Linear Thinking ESL applied');
 console.log('• Quality Gate: 0 orphaned prepositions, 100% dictionary coverage');
 console.log('• Next Step: Ready for full Week 37 content production!');

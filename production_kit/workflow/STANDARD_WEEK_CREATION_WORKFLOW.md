@@ -28,7 +28,7 @@ KHÔNG LÀM XONG RỒI QUÊN.
 - Read Syllabus for Week N content
 - Clone AI Tutor from **Week 34** template
 - **Clone Stations from Week 36 template (W16+)** or **Week 6** (W1-15)
-- Create index.js for **BOTH** modes (17 files per mode = 34 min)
+- Create index.js and stations for **BOTH** modes (19 files per mode = 38 total files per week)
 - Use **Node.js** for ALL .js file creation (NO Python)
 - Validate syntax **IMMEDIATELY** after EACH file
 - Assign **5 DISTINCT voices** in voiceConfig per mode
