@@ -53,6 +53,8 @@ export const chunk_focus = [
   "new things",
   "answers questions",
   "great teacher",
+  "change a student",
+  ",",
   "change a student's life",
   "great adventure",
   "sick people",
@@ -63,7 +65,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'On the ground': { word: 'On the ground', pronunciation: '/on the ground/', definition_vi: 'trên ground', definition_en: 'English collocation / phrase: on the ground', example: 'It is located on the ground.' },
+'On the ground': { word: 'On the ground', pronunciation: '/on the ground/', definition_vi: 'trên ground', definition_en: 'English collocation / phrase: on the ground', example: 'It is located on the ground.' },
     'The pilot': { word: 'The pilot', pronunciation: '/the pilot/', definition_vi: 'phi công', definition_en: 'meaning of the pilot', example: 'The pilot flew the airplane safely through the cloudy weather to the destination.' },
     'answers questions': { word: 'answers questions', pronunciation: '/answers questions/', definition_vi: 'trả lời câu hỏi', definition_en: 'meaning of answers questions', example: 'This is an example: answers questions.' },
     'because of': { word: 'because of', pronunciation: '/because of/', definition_vi: 'bởi vì', definition_en: 'meaning of because of', example: 'This is an example: because of.' },
@@ -82,5 +84,19 @@ export const dictionary = {
     'new things': { word: 'new things', pronunciation: '/new things/', definition_vi: 'những thứ mới', definition_en: 'Multi-word phrase: new things', example: 'The phrase \'new things\' is commonly used in conversation.' },
     'sick people': { word: 'sick people', pronunciation: '/sick people/', definition_vi: 'người ốm', definition_en: 'Multi-word phrase: sick people', example: 'The phrase \'sick people\' is commonly used in conversation.' },
     'the doctor': { word: 'the doctor', pronunciation: '/the doctor/', definition_vi: 'bác sĩ', definition_en: 'meaning of the doctor', example: 'The doctor checked the patient carefully and gave her some medicine.' },
-    'the nurse': { word: 'the nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' }
+    'the nurse': { word: 'the nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
+  "change a student's life": {
+    word: "change a student's life",
+    pronunciation: "/change a student's life/",
+    definition_vi: "change a student's life",
+    definition_en: "Context phrase: change a student's life",
+    example: "We practiced change a student's life today."
+  },
+  "change a student's life": {
+    word: "change a student's life",
+    pronunciation: "/change a student's life/",
+    definition_vi: "change a student's life",
+    definition_en: "Context phrase: change a student's life",
+    example: "We practiced change a student's life today."
+  }
 };

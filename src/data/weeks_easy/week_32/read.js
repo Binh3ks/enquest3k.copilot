@@ -72,11 +72,12 @@ export const chunk_focus = [
   "pocket money",
   "put everything away",
   "fell asleep",
-  "busy saturday"
+  "busy saturday",
+  "went to the local cafe"
 ];
 
 export const dictionary = {
-    'After that': { word: 'After that', pronunciation: '/after that/', definition_vi: 'sau đó', definition_en: 'meaning of after that', example: 'We visited the museum in the morning and after that, we had lunch at a café.' },
+'After that': { word: 'After that', pronunciation: '/after that/', definition_vi: 'sau đó', definition_en: 'meaning of after that', example: 'We visited the museum in the morning and after that, we had lunch at a café.' },
     'First of all': { word: 'First of all', pronunciation: '/first of all/', definition_vi: 'đầu tiên', definition_en: 'meaning of first of all', example: 'First of all, we need to wash our hands before preparing the food.' },
     'Saturday morning': { word: 'Saturday morning', pronunciation: '/saturday morning/', definition_vi: 'sáng thứ Bảy', definition_en: 'meaning of saturday morning', example: 'Every Saturday morning, Dad makes pancakes for the whole family.' },
     'built a little birdhouse': { word: 'built a little birdhouse', pronunciation: '/built a little birdhouse/', definition_vi: 'làm một tổ chim nhỏ', definition_en: 'meaning of built a little birdhouse', example: 'Together we built a little birdhouse and hung it in the garden near the roses.' },
@@ -103,5 +104,12 @@ export const dictionary = {
     'very tall': { word: 'very tall', pronunciation: '/very tall/', definition_vi: 'rất cao', definition_en: 'meaning of very tall', example: 'The giraffe is very tall and can eat leaves from the highest branches.' },
     'went to': { word: 'went to', pronunciation: '/went to/', definition_vi: 'đến (nơi nào đó)', definition_en: 'meaning of went to', example: 'After breakfast, the family went to the park for a morning walk.' },
     'woke up': { word: 'woke up', pronunciation: '/woke up/', definition_vi: 'thức dậy', definition_en: 'Multi-word phrase: woke up', example: 'The phrase \'woke up\' is commonly used in conversation.' },
-    'wrote a short letter': { word: 'wrote a short letter', pronunciation: '/wrote a short letter/', definition_vi: 'viết một bức thư ngắn', definition_en: 'meaning of wrote a short letter', example: 'I wrote a short letter to thank my aunt for the lovely birthday present.' }
+    'wrote a short letter': { word: 'wrote a short letter', pronunciation: '/wrote a short letter/', definition_vi: 'viết một bức thư ngắn', definition_en: 'meaning of wrote a short letter', example: 'I wrote a short letter to thank my aunt for the lovely birthday present.' },
+  "went to the local cafe": {
+    word: "went to the local cafe",
+    pronunciation: "/went to the local cafe/",
+    definition_vi: "went to the local cafe",
+    definition_en: "Context phrase: went to the local cafe",
+    example: "We practiced went to the local cafe today."
+  }
 };

@@ -62,6 +62,8 @@ export const chunk_focus = [
   "cold day",
   "first frost appeared",
   "felt very cold and very hungry",
+  "came to the ant",
+  ",",
   "came to the ant's house",
   "asked for food",
   "gave the grasshopper some food",
@@ -118,7 +120,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'All winter long': { word: 'All winter long', pronunciation: '/all winter long/', definition_vi: 'suốt mùa đông', definition_en: 'throughout the entire winter season', example: 'All winter long, the two animals shared food together.' },
+'All winter long': { word: 'All winter long', pronunciation: '/all winter long/', definition_vi: 'suốt mùa đông', definition_en: 'throughout the entire winter season', example: 'All winter long, the two animals shared food together.' },
     'Day after day': { word: 'Day after day', pronunciation: '/day after day/', definition_vi: 'ngày này qua ngày khác', definition_en: 'every single day, again and again', example: 'Day after day, the ant worked very hard all summer long.' },
     'Dưới ánh nắng mùa hè ấm áp': { word: 'Dưới ánh nắng mùa hè ấm áp', pronunciation: '/dưới ánh nắng mùa hè ấm áp/', definition_vi: 'cụm từ vựng: dưới ánh nắng mùa hè ấm áp', definition_en: 'Collocation: dưới ánh nắng mùa hè ấm áp', example: 'The students learned \'dưới ánh nắng mùa hè ấm áp\' in their English lesson.' },
     'From that day on': { word: 'From that day on', pronunciation: '/from that day on/', definition_vi: 'từ ngày đó', definition_en: 'starting from that specific day onwards', example: 'From that day on, both the ant and the grasshopper worked hard together.' },
@@ -201,5 +203,19 @@ export const dictionary = {
     'xây một ngôi nhà ấm': { word: 'xây một ngôi nhà ấm', pronunciation: '/xây một ngôi nhà ấm/', definition_vi: 'cụm từ vựng: xây một ngôi nhà ấm', definition_en: 'Collocation: xây một ngôi nhà ấm', example: 'The students learned \'xây một ngôi nhà ấm\' in their English lesson.' },
     'ánh nắng ấm đẹp': { word: 'ánh nắng ấm đẹp', pronunciation: '/ánh nắng ấm đẹp/', definition_vi: 'cụm từ vựng: ánh nắng ấm đẹp', definition_en: 'Collocation: ánh nắng ấm đẹp', example: 'The students learned \'ánh nắng ấm đẹp\' in their English lesson.' },
     'đi ra đồng': { word: 'đi ra đồng', pronunciation: '/đi ra đồng/', definition_vi: 'cụm từ vựng: đi ra đồng', definition_en: 'Collocation: đi ra đồng', example: 'The students learned \'đi ra đồng\' in their English lesson.' },
-    'đến nhà con kiến': { word: 'đến nhà con kiến', pronunciation: '/đến nhà con kiến/', definition_vi: 'cụm từ vựng: đến nhà con kiến', definition_en: 'Collocation: đến nhà con kiến', example: 'The students learned \'đến nhà con kiến\' in their English lesson.' }
+    'đến nhà con kiến': { word: 'đến nhà con kiến', pronunciation: '/đến nhà con kiến/', definition_vi: 'cụm từ vựng: đến nhà con kiến', definition_en: 'Collocation: đến nhà con kiến', example: 'The students learned \'đến nhà con kiến\' in their English lesson.' },
+  "came to the ant's house": {
+    word: "came to the ant's house",
+    pronunciation: "/came to the ant's house/",
+    definition_vi: "came to the ant's house",
+    definition_en: "Context phrase: came to the ant's house",
+    example: "We practiced came to the ant's house today."
+  },
+  "came to the ant's house": {
+    word: "came to the ant's house",
+    pronunciation: "/came to the ant's house/",
+    definition_vi: "came to the ant's house",
+    definition_en: "Context phrase: came to the ant's house",
+    example: "We practiced came to the ant's house today."
+  }
 };

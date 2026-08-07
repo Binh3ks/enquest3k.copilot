@@ -98,11 +98,13 @@ export const chunk_focus = [
   "The dolphins",
   "came to swim",
   "told her mum",
-  "best trip"
+  "best trip",
+  "went to a farm",
+  "smiled at Lily"
 ];
 
 export const dictionary = {
-    'At last': { word: 'At last', pronunciation: '/at last/', definition_vi: 'cuối cùng', definition_en: 'meaning of at last', example: 'At last, the carpet flew home.' },
+'At last': { word: 'At last', pronunciation: '/at last/', definition_vi: 'cuối cùng', definition_en: 'meaning of at last', example: 'At last, the carpet flew home.' },
     'One night': { word: 'One night', pronunciation: '/one night/', definition_vi: 'cụm từ vựng: one night', definition_en: 'Collocation: one night', example: 'The students learned \'one night\' in their English lesson.' },
     'The dolphins': { word: 'The dolphins', pronunciation: '/the dolphins/', definition_vi: 'những con cá heo', definition_en: 'meaning of the dolphins', example: 'The dolphins swam alongside the boat and jumped happily in the blue sea.' },
     'The pilot': { word: 'The pilot', pronunciation: '/the pilot/', definition_vi: 'phi công', definition_en: 'meaning of the pilot', example: 'The pilot flew the airplane safely through the cloudy weather to the destination.' },
@@ -141,5 +143,19 @@ export const dictionary = {
     'waved at': { word: 'waved at', pronunciation: '/waved at/', definition_vi: 'vẫy tay chào', definition_en: 'meaning of waved at', example: 'The children waved at their teacher as the bus drove away from school.' },
     'went to': { word: 'went to', pronunciation: '/went to/', definition_vi: 'đến (nơi nào đó)', definition_en: 'meaning of went to', example: 'After breakfast, the family went to the park for a morning walk.' },
     'wonderful trip': { word: 'wonderful trip', pronunciation: '/wonderful trip/', definition_vi: 'chuyến đi tuyệt vời', definition_en: 'meaning of wonderful trip', example: 'What a wonderful trip! We saw so many amazing things together.' },
-    'yellow taxi': { word: 'yellow taxi', pronunciation: '/yellow taxi/', definition_vi: 'taxi màu vàng', definition_en: 'meaning of yellow taxi', example: 'We caught a yellow taxi to go to the airport on a rainy day.' }
+    'yellow taxi': { word: 'yellow taxi', pronunciation: '/yellow taxi/', definition_vi: 'taxi màu vàng', definition_en: 'meaning of yellow taxi', example: 'We caught a yellow taxi to go to the airport on a rainy day.' },
+  "went to a farm": {
+    word: "went to a farm",
+    pronunciation: "/went to a farm/",
+    definition_vi: "went to a farm",
+    definition_en: "Context phrase: went to a farm",
+    example: "We practiced went to a farm today."
+  },
+  "smiled at Lily": {
+    word: "smiled at Lily",
+    pronunciation: "/smiled at lily/",
+    definition_vi: "smiled at Lily",
+    definition_en: "Context phrase: smiled at Lily",
+    example: "We practiced smiled at Lily today."
+  }
 };

@@ -74,11 +74,13 @@ export const chunk_focus = [
   "were tired",
   "great story",
   "said mia",
-  "create their own"
+  "create their own",
+  "In Panel Four",
+  "looked at the comic strip"
 ];
 
 export const dictionary = {
-    'At the very end': { word: 'At the very end', pronunciation: '/æt ðə ˈveri end/', definition_vi: 'ở đoạn cuối cùng', definition_en: 'At the final moment or conclusion', example: 'At the very end of the story, we returned home.' },
+'At the very end': { word: 'At the very end', pronunciation: '/æt ðə ˈveri end/', definition_vi: 'ở đoạn cuối cùng', definition_en: 'At the final moment or conclusion', example: 'At the very end of the story, we returned home.' },
     'First of all': { word: 'First of all', pronunciation: '/fɜːst əv ɔːl/', definition_vi: 'trước hết / đầu tiên', definition_en: 'Before anything else; firstly', example: 'First of all, Leo wrote the title.' },
     'In Panel One': { word: 'In Panel One', pronunciation: '/ɪn ˈpænl wʌn/', definition_vi: 'ở khung thứ nhất', definition_en: 'In the first box of a comic strip', example: 'In Panel One, Leo sketched the park.' },
     'In Panel Three': { word: 'In Panel Three', pronunciation: '/ɪn ˈpænl θriː/', definition_vi: 'ở khung thứ ba', definition_en: 'In the third box of a comic strip', example: 'In Panel Three, Leo drew a street musician.' },
@@ -115,5 +117,12 @@ export const dictionary = {
     'watched carefully': { word: 'watched carefully', pronunciation: '/wɒtʃt ˈkeəfəli/', definition_vi: 'quan sát cẩn thận', definition_en: 'Observed attentively', example: 'Leo watched carefully as Mia reviewed his work.' },
     'were tired but happy': { word: 'were tired but happy', pronunciation: '/wɜː ˈtaɪəd bət ˈhæpi/', definition_vi: 'mệt nhưng rất vui', definition_en: 'Exhausted physically yet pleased emotionally', example: 'At the end of the day, we were tired but happy.' },
     'wrote a first caption': { word: 'wrote a first caption', pronunciation: '/rəʊt ə fɜːst ˈkæpʃn/', definition_vi: 'viết dòng chú thích đầu tiên', definition_en: 'Composed the initial text label for a panel', example: 'Leo wrote a first caption under Panel One.' },
-    'wrote the title': { word: 'wrote the title', pronunciation: '/rəʊt ðə ˈtaɪtl/', definition_vi: 'viết tiêu đề', definition_en: 'Penned the main heading of the work', example: 'Leo wrote the title at the top of the page.' }
+    'wrote the title': { word: 'wrote the title', pronunciation: '/rəʊt ðə ˈtaɪtl/', definition_vi: 'viết tiêu đề', definition_en: 'Penned the main heading of the work', example: 'Leo wrote the title at the top of the page.' },
+  "In Panel Four": {
+    word: "In Panel Four",
+    pronunciation: "/in panel four/",
+    definition_vi: "In Panel Four",
+    definition_en: "Context phrase: In Panel Four",
+    example: "We practiced In Panel Four today."
+  }
 };

@@ -43,11 +43,13 @@ export const chunk_focus = [
   "new town",
   "grew into",
   "big city",
-  "Luna said"
+  "Luna said",
+  "walked to the same place",
+  "looked at the old map"
 ];
 
 export const dictionary = {
-    'At the end': { word: 'At the end', pronunciation: '/at the end/', definition_vi: 'vào cuối', definition_en: 'at the final part of something', example: 'At the end of the day, you may feel tired.' },
+'At the end': { word: 'At the end', pronunciation: '/at the end/', definition_vi: 'vào cuối', definition_en: 'at the final part of something', example: 'At the end of the day, you may feel tired.' },
     'Detective luna': { word: 'Detective luna', pronunciation: '/detective luna/', definition_vi: 'thám tử Luna', definition_en: 'Multi-word phrase: detective luna', example: 'The phrase \'detective luna\' is commonly used in conversation.' },
     'Luna said': { word: 'Luna said', pronunciation: '/luna said/', definition_vi: 'Luna nói', definition_en: 'meaning of luna said', example: 'Luna said she would meet us at the park entrance at four o\'clock.' },
     'One day': { word: 'One day', pronunciation: '/one day/', definition_vi: 'một ngày', definition_en: 'on a particular day in the past or future', example: 'One day, I will travel to the moon.' },
@@ -78,5 +80,19 @@ export const dictionary = {
     'there was': { word: 'there was', pronunciation: '/there was/', definition_vi: 'có (nghĩa tồn tại)', definition_en: 'meaning of there was', example: 'There was a big market near the river.' },
     'walked to': { word: 'walked to', pronunciation: '/walked to/', definition_vi: 'đi đến', definition_en: 'meaning of walked to', example: 'After breakfast, we walked to the park to meet our friends.' },
     'wooden bridge': { word: 'wooden bridge', pronunciation: '/wooden bridge/', definition_vi: 'cầu gỗ', definition_en: 'meaning of wooden bridge', example: 'Children love to run across the wooden bridge that hangs over the stream.' },
-    'years ago': { word: 'years ago', pronunciation: '/years ago/', definition_vi: 'nhiều năm trước', definition_en: 'Multi-word phrase: years ago', example: 'The phrase \'years ago\' is commonly used in conversation.' }
+    'years ago': { word: 'years ago', pronunciation: '/years ago/', definition_vi: 'nhiều năm trước', definition_en: 'Multi-word phrase: years ago', example: 'The phrase \'years ago\' is commonly used in conversation.' },
+  "walked to the same place": {
+    word: "walked to the same place",
+    pronunciation: "/walked to the same place/",
+    definition_vi: "walked to the same place",
+    definition_en: "Context phrase: walked to the same place",
+    example: "We practiced walked to the same place today."
+  },
+  "looked at the old map": {
+    word: "looked at the old map",
+    pronunciation: "/looked at the old map/",
+    definition_vi: "looked at the old map",
+    definition_en: "Context phrase: looked at the old map",
+    example: "We practiced looked at the old map today."
+  }
 };

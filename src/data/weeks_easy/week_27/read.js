@@ -78,11 +78,12 @@ export const chunk_focus = [
   "pretty flower",
   "at the top",
   "life cycle",
-  "tiny bean seed"
+  "tiny bean seed",
+  "came to school"
 ];
 
 export const dictionary = {
-    'After that': { word: 'After that', pronunciation: '/after that/', definition_vi: 'sau đó', definition_en: 'meaning of after that', example: 'We visited the museum in the morning and after that, we had lunch at a café.' },
+'After that': { word: 'After that', pronunciation: '/after that/', definition_vi: 'sau đó', definition_en: 'meaning of after that', example: 'We visited the museum in the morning and after that, we had lunch at a café.' },
     'At the very end': { word: 'At the very end', pronunciation: '/at the very end/', definition_vi: 'cuối cùng', definition_en: 'meaning of at the very end', example: 'At the very end of the concert, everyone stood up and applauded.' },
     'Day Five': { word: 'Day Five', pronunciation: '/day five/', definition_vi: 'Ngày thứ năm', definition_en: 'meaning of day five', example: 'Day Five was the final day of the adventure when they finally reached the treasure.' },
     'Day Three': { word: 'Day Three', pronunciation: '/day three/', definition_vi: 'Ngày thứ ba', definition_en: 'meaning of day three', example: 'Day Three of our science experiment brought the most exciting results yet.' },
@@ -115,5 +116,12 @@ export const dictionary = {
     'tiny green': { word: 'tiny green', pronunciation: '/tiny green/', definition_vi: 'xanh nhỏ', definition_en: 'Multi-word phrase: tiny green', example: 'The phrase \'tiny green\' is commonly used in conversation.' },
     'tiny sprout': { word: 'tiny sprout', pronunciation: '/tiny sprout/', definition_vi: 'mầm nhỏ', definition_en: 'meaning of tiny sprout', example: 'After a few days, a tiny sprout appeared above the dark soil.' },
     'warm sun': { word: 'warm sun', pronunciation: '/warm sun/', definition_vi: 'mặt trời ấm', definition_en: 'meaning of warm sun', example: 'Under the warm sun, the children played happily until dinner time.' },
-    'warm water': { word: 'warm water', pronunciation: '/warm water/', definition_vi: 'nước ấm', definition_en: 'meaning of warm water', example: 'Add warm water to the flour and mix it slowly.' }
+    'warm water': { word: 'warm water', pronunciation: '/warm water/', definition_vi: 'nước ấm', definition_en: 'meaning of warm water', example: 'Add warm water to the flour and mix it slowly.' },
+  "came to school": {
+    word: "came to school",
+    pronunciation: "/came to school/",
+    definition_vi: "came to school",
+    definition_en: "Context phrase: came to school",
+    example: "We practiced came to school today."
+  }
 };

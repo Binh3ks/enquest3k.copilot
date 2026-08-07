@@ -88,11 +88,13 @@ export const chunk_focus = [
   "new page",
   "natural world",
   "careful observation",
-  "at a time"
+  "at a time",
+  "looked at animals",
+  "listened to tropical birds"
 ];
 
 export const dictionary = {
-    'Every evening': { word: 'Every evening', pronunciation: '/every evening/', definition_vi: 'mỗi buổi tối', definition_en: 'meaning of every evening', example: 'We have dinner together every evening and talk about our day.' },
+'Every evening': { word: 'Every evening', pronunciation: '/every evening/', definition_vi: 'mỗi buổi tối', definition_en: 'meaning of every evening', example: 'We have dinner together every evening and talk about our day.' },
     'across the world': { word: 'across the world', pronunciation: '/across the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of across the world', example: 'This is an example: across the world.' },
     'at a time': { word: 'at a time', pronunciation: '/at a time/', definition_vi: 'mỗi lần', definition_en: 'meaning of at a time', example: 'This is an example: at a time.' },
     'careful observation': { word: 'careful observation', pronunciation: '/careful observation/', definition_vi: 'quan sát cẩn thận', definition_en: 'Multi-word phrase: careful observation', example: 'The phrase \'careful observation\' is commonly used in conversation.' },
@@ -108,5 +110,19 @@ export const dictionary = {
     'simple tool': { word: 'simple tool', pronunciation: '/simple tool/', definition_vi: 'công cụ đơn giản', definition_en: 'Multi-word phrase: simple tool', example: 'The phrase \'simple tool\' is commonly used in conversation.' },
     'theory of evolution': { word: 'theory of evolution', pronunciation: '/theory of evolution/', definition_vi: 'theory của evolution', definition_en: 'Key collocation: theory of evolution', example: 'Natural usage of \'theory of evolution\' in sentence context.' },
     'wild chimpanzees': { word: 'wild chimpanzees', pronunciation: '/wild chimpanzees/', definition_vi: 'tinh tinh hoang dã', definition_en: 'meaning of wild chimpanzees', example: 'This is an example: wild chimpanzees.' },
-    'young scientist': { word: 'young scientist', pronunciation: '/young scientist/', definition_vi: 'nhà khoa học trẻ', definition_en: 'meaning of young scientist', example: 'The young scientist worked late in the laboratory to finish her experiment.' }
+    'young scientist': { word: 'young scientist', pronunciation: '/young scientist/', definition_vi: 'nhà khoa học trẻ', definition_en: 'meaning of young scientist', example: 'The young scientist worked late in the laboratory to finish her experiment.' },
+  "looked at animals": {
+    word: "looked at animals",
+    pronunciation: "/looked at animals/",
+    definition_vi: "looked at animals",
+    definition_en: "Context phrase: looked at animals",
+    example: "We practiced looked at animals today."
+  },
+  "listened to tropical birds": {
+    word: "listened to tropical birds",
+    pronunciation: "/listened to tropical birds/",
+    definition_vi: "listened to tropical birds",
+    definition_en: "Context phrase: listened to tropical birds",
+    example: "We practiced listened to tropical birds today."
+  }
 };

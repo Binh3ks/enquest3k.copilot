@@ -64,11 +64,12 @@ export const chunk_focus = [
   "so many",
   "luna said",
   "best place",
-  "five senses"
+  "five senses",
+  "smiled at Luna"
 ];
 
 export const dictionary = {
-    'Last saturday': { word: 'Last saturday', pronunciation: '/last saturday/', definition_vi: 'thứ bảy tuần trước', definition_en: 'Multi-word phrase: last saturday', example: 'The phrase \'last saturday\' is commonly used in conversation.' },
+'Last saturday': { word: 'Last saturday', pronunciation: '/last saturday/', definition_vi: 'thứ bảy tuần trước', definition_en: 'Multi-word phrase: last saturday', example: 'The phrase \'last saturday\' is commonly used in conversation.' },
     'a piece of': { word: 'a piece of', pronunciation: '/ə piːs əv/', definition_vi: 'một mảnh / một mẩu', definition_en: 'English collocation / phrase: a piece of', example: 'He gave me a piece of paper.' },
     'best place': { word: 'best place', pronunciation: '/best place/', definition_vi: 'nơi tốt nhất', definition_en: 'Multi-word phrase: best place', example: 'The phrase \'best place\' is commonly used in conversation.' },
     'cold metal': { word: 'cold metal', pronunciation: '/cold metal/', definition_vi: 'kim loại lạnh', definition_en: 'meaning of cold metal', example: 'The cold metal railing felt freezing when we touched it in winter.' },
@@ -96,5 +97,12 @@ export const dictionary = {
     'stone felt cool': { word: 'stone felt cool', pronunciation: '/stone felt cool/', definition_vi: 'đá cảm thấy mát', definition_en: 'Multi-word phrase: stone felt cool', example: 'The phrase \'stone felt cool\' is commonly used in conversation.' },
     'wood felt rough': { word: 'wood felt rough', pronunciation: '/wood felt rough/', definition_vi: 'gỗ cảm thấy thô ráp', definition_en: 'Multi-word phrase: wood felt rough', example: 'The phrase \'wood felt rough\' is commonly used in conversation.' },
     'wooden sculpture': { word: 'wooden sculpture', pronunciation: '/wooden sculpture/', definition_vi: 'tác phẩm điêu khắc gỗ', definition_en: 'Multi-word phrase: wooden sculpture', example: 'The phrase \'wooden sculpture\' is commonly used in conversation.' },
-    'wooden shelf': { word: 'wooden shelf', pronunciation: '/wooden shelf/', definition_vi: 'giá gỗ', definition_en: 'meaning of wooden shelf', example: 'Dad put the books neatly on the wooden shelf in the study room.' }
+    'wooden shelf': { word: 'wooden shelf', pronunciation: '/wooden shelf/', definition_vi: 'giá gỗ', definition_en: 'meaning of wooden shelf', example: 'Dad put the books neatly on the wooden shelf in the study room.' },
+  "smiled at Luna": {
+    word: "smiled at Luna",
+    pronunciation: "/smiled at luna/",
+    definition_vi: "smiled at Luna",
+    definition_en: "Context phrase: smiled at Luna",
+    example: "We practiced smiled at Luna today."
+  }
 };

@@ -83,11 +83,12 @@ export const chunk_focus = [
   "sat on his bed",
   "fell asleep",
   "early before",
-  "in the world"
+  "in the world",
+  "walked to the local cafe"
 ];
 
 export const dictionary = {
-    'Saturday morning': { word: 'Saturday morning', pronunciation: '/saturday morning/', definition_vi: 'sáng thứ Bảy', definition_en: 'meaning of saturday morning', example: 'Every Saturday morning, Dad makes pancakes for the whole family.' },
+'Saturday morning': { word: 'Saturday morning', pronunciation: '/saturday morning/', definition_vi: 'sáng thứ Bảy', definition_en: 'meaning of saturday morning', example: 'Every Saturday morning, Dad makes pancakes for the whole family.' },
     'about school': { word: 'about school', pronunciation: '/about school/', definition_vi: 'về trường học', definition_en: 'Multi-word phrase: about school', example: 'The phrase \'about school\' is commonly used in conversation.' },
     'before dinner': { word: 'before dinner', pronunciation: '/before dinner/', definition_vi: 'trước bữa tối', definition_en: 'meaning of before dinner', example: 'We always wash our hands before dinner so the food is clean and safe.' },
     'build with Dad': { word: 'build with Dad', pronunciation: '/build with dad/', definition_vi: 'làm cùng bố', definition_en: 'meaning of build with dad', example: 'I promised to build with Dad a new treehouse in our garden this summer.' },
@@ -125,5 +126,12 @@ export const dictionary = {
     'watched them work': { word: 'watched them work', pronunciation: '/watched them work/', definition_vi: 'quan sát họ làm việc', definition_en: 'meaning of watched them work', example: 'The children sat under the tree and watched them work in the garden.' },
     'woke up early': { word: 'woke up early', pronunciation: '/woke up early/', definition_vi: 'thức dậy sớm', definition_en: 'meaning of woke up early', example: 'I woke up early, brushed my teeth, and packed my bag.' },
     'wooden desk': { word: 'wooden desk', pronunciation: '/wooden desk/', definition_vi: 'bàn gỗ', definition_en: 'Multi-word phrase: wooden desk', example: 'The phrase \'wooden desk\' is commonly used in conversation.' },
-    'wrote a long letter': { word: 'wrote a long letter', pronunciation: '/wrote a long letter/', definition_vi: 'viết một bức thư dài', definition_en: 'meaning of wrote a long letter', example: 'Tom wrote a long letter to his pen pal in Japan about his school life.' }
+    'wrote a long letter': { word: 'wrote a long letter', pronunciation: '/wrote a long letter/', definition_vi: 'viết một bức thư dài', definition_en: 'meaning of wrote a long letter', example: 'Tom wrote a long letter to his pen pal in Japan about his school life.' },
+  "walked to the local cafe": {
+    word: "walked to the local cafe",
+    pronunciation: "/walked to the local cafe/",
+    definition_vi: "walked to the local cafe",
+    definition_en: "Context phrase: walked to the local cafe",
+    example: "We practiced walked to the local cafe today."
+  }
 };

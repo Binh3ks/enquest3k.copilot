@@ -73,11 +73,12 @@ export const chunk_focus = [
   "still standing",
   "important to us",
   "old temple",
-  "part of our history"
+  "part of our history",
+  "went to the temple"
 ];
 
 export const dictionary = {
-    'Long ago': { word: 'Long ago', pronunciation: '/long ago/', definition_vi: 'lâu rồi', definition_en: 'meaning of long ago', example: 'This is an example: long ago.' },
+'Long ago': { word: 'Long ago', pronunciation: '/long ago/', definition_vi: 'lâu rồi', definition_en: 'meaning of long ago', example: 'This is an example: long ago.' },
     'Look at': { word: 'Look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
     'There are': { word: 'There are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
@@ -95,5 +96,12 @@ export const dictionary = {
     'part of our history': { word: 'part of our history', pronunciation: '/part of our history/', definition_vi: 'một phần lịch sử của chúng ta', definition_en: 'something that belongs to our shared past', example: 'Old buildings are part of our history.' },
     'still standing': { word: 'still standing', pronunciation: '/still standing/', definition_vi: 'cụm từ vựng: still standing', definition_en: 'Collocation: still standing', example: 'The students learned \'still standing\' in their English lesson.' },
     'went to': { word: 'went to', pronunciation: '/went to/', definition_vi: 'đến (nơi nào đó)', definition_en: 'meaning of went to', example: 'After breakfast, the family went to the park for a morning walk.' },
-    'went to the market': { word: 'went to the market', pronunciation: '/went to the market/', definition_vi: 'đã đi đến chợ', definition_en: 'went to a market to buy things', example: 'Long ago, people went to the market to buy food.' }
+    'went to the market': { word: 'went to the market', pronunciation: '/went to the market/', definition_vi: 'đã đi đến chợ', definition_en: 'went to a market to buy things', example: 'Long ago, people went to the market to buy food.' },
+  "went to the temple": {
+    word: "went to the temple",
+    pronunciation: "/went to the temple/",
+    definition_vi: "went to the temple",
+    definition_en: "Context phrase: went to the temple",
+    example: "We practiced went to the temple today."
+  }
 };

@@ -31,11 +31,12 @@ export const chunk_focus = [
   "sat down for dinner",
   "After dinner",
   "board game",
-  "best day ever"
+  "best day ever",
+  "listened to the birds sing"
 ];
 
 export const dictionary = {
-    'After dinner': { word: 'After dinner', pronunciation: '/ˈɑːftə ˈdɪnə/', definition_vi: 'sau bữa tối', definition_en: 'In the time following the evening meal', example: 'After dinner, I finished my homework.' },
+'After dinner': { word: 'After dinner', pronunciation: '/ˈɑːftə ˈdɪnə/', definition_vi: 'sau bữa tối', definition_en: 'In the time following the evening meal', example: 'After dinner, I finished my homework.' },
     'In the morning': { word: 'In the morning', pronunciation: '/ɪn ðə ˈmɔːnɪŋ/', definition_vi: 'vào buổi sáng', definition_en: 'During the early part of the day', example: 'In the morning, I walked to school.' },
     'best day ever': { word: 'best day ever', pronunciation: '/best deɪ ˈevə/', definition_vi: 'ngày tuyệt vời nhất từng có', definition_en: 'The most wonderful day experienced', example: 'Yesterday was the best day ever.' },
     'board game': { word: 'board game', pronunciation: '/bɔːd ɡeɪm/', definition_vi: 'trò chơi cờ / trò chơi bàn', definition_en: 'A tabletop game played with counters or pieces', example: 'We played a board game together.' },
@@ -53,5 +54,12 @@ export const dictionary = {
     'walked to school': { word: 'walked to school', pronunciation: '/wɔːkt tuː skuːl/', definition_vi: 'đi bộ đến trường', definition_en: 'Traveled to school on foot', example: 'In the morning, I walked to school.' },
     'was bright and warm': { word: 'was bright and warm', pronunciation: '/wəz braɪt ənd wɔːm/', definition_vi: 'sáng và ấm áp', definition_en: 'Sunny and pleasant in temperature', example: 'The sun was bright and warm.' },
     'washed my hands': { word: 'washed my hands', pronunciation: '/wɒʃt maɪ hændz/', definition_vi: 'rửa tay', definition_en: 'Cleaned one\'s hands with soap and water', example: 'I washed my hands before dinner.' },
-    'wonderfully busy day': { word: 'wonderfully busy day', pronunciation: '/ˈwʌndəfəli ˈbɪzi deɪ/', definition_vi: 'một ngày bận rộn tuyệt vời', definition_en: 'A delightful day filled with engaging activities', example: 'Yesterday was a wonderfully busy day.' }
+    'wonderfully busy day': { word: 'wonderfully busy day', pronunciation: '/ˈwʌndəfəli ˈbɪzi deɪ/', definition_vi: 'một ngày bận rộn tuyệt vời', definition_en: 'A delightful day filled with engaging activities', example: 'Yesterday was a wonderfully busy day.' },
+  "listened to the birds sing": {
+    word: "listened to the birds sing",
+    pronunciation: "/listened to the birds sing/",
+    definition_vi: "listened to the birds sing",
+    definition_en: "Context phrase: listened to the birds sing",
+    example: "We practiced listened to the birds sing today."
+  }
 };

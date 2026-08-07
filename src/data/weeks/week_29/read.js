@@ -89,11 +89,18 @@ export const chunk_focus = [
   "went home happy",
   "wonderful trip",
   "said together",
-  "always remember"
+  "always remember",
+  "flew to a tiny green island",
+  "came to help them",
+  "looked at the bright fruit",
+  "looked at an old map",
+  "look at this",
+  "looked at the tiny point of light",
+  "came to help"
 ];
 
 export const dictionary = {
-    'Last week': { word: 'Last week', pronunciation: '/last week/', definition_vi: 'tuần trước', definition_en: 'the week before this week', example: 'Last week our class went on a trip to the park.' },
+'Last week': { word: 'Last week', pronunciation: '/last week/', definition_vi: 'tuần trước', definition_en: 'the week before this week', example: 'Last week our class went on a trip to the park.' },
     'On the island': { word: 'On the island', pronunciation: '/on the island/', definition_vi: 'trên island', definition_en: 'English collocation / phrase: on the island', example: 'It is located on the island.' },
     'On the way': { word: 'On the way', pronunciation: '/on the way/', definition_vi: 'trên way', definition_en: 'English collocation / phrase: on the way', example: 'It is located on the way.' },
     'always remember': { word: 'always remember', pronunciation: '/always remember/', definition_vi: 'luôn nhớ', definition_en: 'Multi-word phrase: always remember', example: 'The phrase \'always remember\' is commonly used in conversation.' },
@@ -126,5 +133,54 @@ export const dictionary = {
     'went on': { word: 'went on', pronunciation: '/went ɒn/', definition_vi: 'đi / tham gia vào', definition_en: 'English collocation / phrase: went on', example: 'They went on an exciting trip.' },
     'went to the field': { word: 'went to the field', pronunciation: '/went to the field/', definition_vi: 'đi ra đồng', definition_en: 'left home to go to the field or farmland', example: 'In the warm summer sun, the ant went to the field every day.' },
     'wonderful place': { word: 'wonderful place', pronunciation: '/wonderful place/', definition_vi: 'nơi tuyệt vời', definition_en: 'meaning of wonderful place', example: 'Grandma lives in a wonderful place near the beach where the sun sets beautifully.' },
-    'wonderful trip': { word: 'wonderful trip', pronunciation: '/wonderful trip/', definition_vi: 'chuyến đi tuyệt vời', definition_en: 'meaning of wonderful trip', example: 'What a wonderful trip! We saw so many amazing things together.' }
+    'wonderful trip': { word: 'wonderful trip', pronunciation: '/wonderful trip/', definition_vi: 'chuyến đi tuyệt vời', definition_en: 'meaning of wonderful trip', example: 'What a wonderful trip! We saw so many amazing things together.' },
+  "flew to a tiny green island": {
+    word: "flew to a tiny green island",
+    pronunciation: "/flew to a tiny green island/",
+    definition_vi: "flew to a tiny green island",
+    definition_en: "Context phrase: flew to a tiny green island",
+    example: "We practiced flew to a tiny green island today."
+  },
+  "came to help them": {
+    word: "came to help them",
+    pronunciation: "/came to help them/",
+    definition_vi: "came to help them",
+    definition_en: "Context phrase: came to help them",
+    example: "We practiced came to help them today."
+  },
+  "looked at the bright fruit": {
+    word: "looked at the bright fruit",
+    pronunciation: "/looked at the bright fruit/",
+    definition_vi: "looked at the bright fruit",
+    definition_en: "Context phrase: looked at the bright fruit",
+    example: "We practiced looked at the bright fruit today."
+  },
+  "looked at an old map": {
+    word: "looked at an old map",
+    pronunciation: "/looked at an old map/",
+    definition_vi: "looked at an old map",
+    definition_en: "Context phrase: looked at an old map",
+    example: "We practiced looked at an old map today."
+  },
+  "look at this": {
+    word: "look at this",
+    pronunciation: "/look at this/",
+    definition_vi: "look at this",
+    definition_en: "Context phrase: look at this",
+    example: "We practiced look at this today."
+  },
+  "looked at the tiny point of light": {
+    word: "looked at the tiny point of light",
+    pronunciation: "/looked at the tiny point of light/",
+    definition_vi: "looked at the tiny point of light",
+    definition_en: "Context phrase: looked at the tiny point of light",
+    example: "We practiced looked at the tiny point of light today."
+  },
+  "came to help": {
+    word: "came to help",
+    pronunciation: "/came to help/",
+    definition_vi: "came to help",
+    definition_en: "Context phrase: came to help",
+    example: "We practiced came to help today."
+  }
 };

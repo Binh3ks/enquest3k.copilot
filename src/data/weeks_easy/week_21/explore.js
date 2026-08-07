@@ -88,11 +88,13 @@ export const chunk_focus = [
   "every evening",
   "never missed a day",
   "so much",
-  "in the future"
+  "in the future",
+  "looked at animals",
+  "listened to their calls"
 ];
 
 export const dictionary = {
-    'At night': { word: 'At night', pronunciation: '/æt naɪt/', definition_vi: 'vào ban đêm', definition_en: 'English collocation / phrase: at night', example: 'Stars shine brightly at night.' },
+'At night': { word: 'At night', pronunciation: '/æt naɪt/', definition_vi: 'vào ban đêm', definition_en: 'English collocation / phrase: at night', example: 'Stars shine brightly at night.' },
     'Every day': { word: 'Every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
     'amazing things': { word: 'amazing things', pronunciation: '/əˈmeɪzɪŋ θɪŋz/', definition_vi: 'những điều kỳ diệu', definition_en: 'English collocation / phrase: amazing things', example: 'We saw amazing things underwater.' },
     'every evening': { word: 'every evening', pronunciation: '/every evening/', definition_vi: 'mỗi buổi tối', definition_en: 'meaning of every evening', example: 'We have dinner together every evening and talk about our day.' },
@@ -105,5 +107,19 @@ export const dictionary = {
     'so much': { word: 'so much', pronunciation: '/so much/', definition_vi: 'rất much', definition_en: 'Collocation: so much', example: 'The students learned \'so much\' in their English lesson.' },
     'tell us': { word: 'tell us', pronunciation: '/tell us/', definition_vi: 'kể us', definition_en: 'English phrase: tell us', example: 'The phrase \'tell us\' means kể us.' },
     'wild chimpanzees': { word: 'wild chimpanzees', pronunciation: '/wild chimpanzees/', definition_vi: 'tinh tinh hoang dã', definition_en: 'meaning of wild chimpanzees', example: 'This is an example: wild chimpanzees.' },
-    'years ago': { word: 'years ago', pronunciation: '/years ago/', definition_vi: 'nhiều năm trước', definition_en: 'Multi-word phrase: years ago', example: 'The phrase \'years ago\' is commonly used in conversation.' }
+    'years ago': { word: 'years ago', pronunciation: '/years ago/', definition_vi: 'nhiều năm trước', definition_en: 'Multi-word phrase: years ago', example: 'The phrase \'years ago\' is commonly used in conversation.' },
+  "looked at animals": {
+    word: "looked at animals",
+    pronunciation: "/looked at animals/",
+    definition_vi: "looked at animals",
+    definition_en: "Context phrase: looked at animals",
+    example: "We practiced looked at animals today."
+  },
+  "listened to their calls": {
+    word: "listened to their calls",
+    pronunciation: "/listened to their calls/",
+    definition_vi: "listened to their calls",
+    definition_en: "Context phrase: listened to their calls",
+    example: "We practiced listened to their calls today."
+  }
 };

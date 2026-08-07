@@ -57,11 +57,13 @@ export const chunk_focus = [
   "very happy",
   "painted carefully",
   "glued carefully",
-  "beautiful piece"
+  "beautiful piece",
+  "went to art class",
+  "looked at the symmetry"
 ];
 
 export const dictionary = {
-    'art class': { word: 'art class', pronunciation: '/ɑːt klɑːs/', definition_vi: 'lớp mỹ thuật', definition_en: 'A class where students learn drawing and painting', example: 'We have art class every Friday afternoon.' },
+'art class': { word: 'art class', pronunciation: '/ɑːt klɑːs/', definition_vi: 'lớp mỹ thuật', definition_en: 'A class where students learn drawing and painting', example: 'We have art class every Friday afternoon.' },
     'beautiful piece': { word: 'beautiful piece', pronunciation: '/ˈbjuːtɪfl piːs/', definition_vi: 'tác phẩm đẹp', definition_en: 'A beautiful work of art or craft', example: 'She created a beautiful piece of art.' },
     'bright pigment colors': { word: 'bright pigment colors', pronunciation: '/braɪt ˈpɪɡmənt ˈkʌləz/', definition_vi: 'màu sơn tươi sáng', definition_en: 'Vibrant colors made from paint pigments', example: 'The painting uses bright pigment colors.' },
     'butterfly shape': { word: 'butterfly shape', pronunciation: '/ˈbʌtəflaɪ ʃeɪp/', definition_vi: 'hình con bướm', definition_en: 'A shape that looks like a butterfly', example: 'I cut the paper into a butterfly shape.' },
@@ -82,5 +84,19 @@ export const dictionary = {
     'red pigment': { word: 'red pigment', pronunciation: '/red ˈpɪɡmənt/', definition_vi: 'màu nhuộm đỏ', definition_en: 'Red coloring substance used in paint', example: 'The red pigment made the flowers stand out.' },
     'very happy': { word: 'very happy', pronunciation: '/ˈveri ˈhæpi/', definition_vi: 'rất vui', definition_en: 'Feeling great pleasure or joy', example: 'I was very happy with my final painting.' },
     'went to': { word: 'went to', pronunciation: '/went tuː/', definition_vi: 'đã đến (nơi nào đó)', definition_en: 'Traveled or attended a place in the past', example: 'Yesterday I went to art class.' },
-    'worked very carefully': { word: 'worked very carefully', pronunciation: '/wɜːkt ˈveri ˈkeəfəli/', definition_vi: 'làm việc rất cẩn thận', definition_en: 'To perform tasks with great care and attention', example: 'The artist worked very carefully on the detail.' }
+    'worked very carefully': { word: 'worked very carefully', pronunciation: '/wɜːkt ˈveri ˈkeəfəli/', definition_vi: 'làm việc rất cẩn thận', definition_en: 'To perform tasks with great care and attention', example: 'The artist worked very carefully on the detail.' },
+  "went to art class": {
+    word: "went to art class",
+    pronunciation: "/went to art class/",
+    definition_vi: "went to art class",
+    definition_en: "Context phrase: went to art class",
+    example: "We practiced went to art class today."
+  },
+  "looked at the symmetry": {
+    word: "looked at the symmetry",
+    pronunciation: "/looked at the symmetry/",
+    definition_vi: "looked at the symmetry",
+    definition_en: "Context phrase: looked at the symmetry",
+    example: "We practiced looked at the symmetry today."
+  }
 };

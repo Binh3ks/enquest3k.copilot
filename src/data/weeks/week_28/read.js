@@ -71,11 +71,13 @@ export const chunk_focus = [
   "cheered loudly",
   "woke up",
   "win the race",
-  "slow and steady wins the race"
+  "slow and steady wins the race",
+  "looked at the slow tortoise",
+  "went to the train station"
 ];
 
 export const dictionary = {
-    'Once upon a time': { word: 'Once upon a time', pronunciation: '/once upon a time/', definition_vi: 'once upon một thời gian', definition_en: 'Key collocation: once upon a time', example: 'Natural usage of \'once upon a time\' in sentence context.' },
+'Once upon a time': { word: 'Once upon a time', pronunciation: '/once upon a time/', definition_vi: 'once upon một thời gian', definition_en: 'Key collocation: once upon a time', example: 'Natural usage of \'once upon a time\' in sentence context.' },
     'Slow and steady wins the race': { word: 'Slow and steady wins the race', pronunciation: '/slow and steady wins the race/', definition_vi: 'chậm và chắc chắn thì thắng cuộc đua', definition_en: 'working carefully and patiently leads to success; a proverb', example: 'Slow and steady wins the race.' },
     'big motorbike': { word: 'big motorbike', pronunciation: '/big motorbike/', definition_vi: 'xe máy lớn', definition_en: 'meaning of big motorbike', example: 'Dad rides his big motorbike to work every day through the city.' },
     'bragged about': { word: 'bragged about', pronunciation: '/bragged about/', definition_vi: 'khoe khoang về', definition_en: 'talked proudly about something', example: 'The ant never bragged about its hard work.' },
@@ -109,5 +111,19 @@ export const dictionary = {
     'winning every race': { word: 'winning every race', pronunciation: '/winning every race/', definition_vi: 'thắng mọi cuộc đua', definition_en: 'meaning of winning every race', example: 'The champion was proud of winning every race in the competition.' },
     'woke up': { word: 'woke up', pronunciation: '/woke up/', definition_vi: 'thức dậy', definition_en: 'Multi-word phrase: woke up', example: 'The phrase \'woke up\' is commonly used in conversation.' },
     'won the race': { word: 'won the race', pronunciation: '/won the race/', definition_vi: 'thắng cuộc đua', definition_en: 'meaning of won the race', example: 'We won the race together whenever we can.' },
-    'yellow taxi': { word: 'yellow taxi', pronunciation: '/yellow taxi/', definition_vi: 'taxi màu vàng', definition_en: 'meaning of yellow taxi', example: 'We caught a yellow taxi to go to the airport on a rainy day.' }
+    'yellow taxi': { word: 'yellow taxi', pronunciation: '/yellow taxi/', definition_vi: 'taxi màu vàng', definition_en: 'meaning of yellow taxi', example: 'We caught a yellow taxi to go to the airport on a rainy day.' },
+  "looked at the slow tortoise": {
+    word: "looked at the slow tortoise",
+    pronunciation: "/looked at the slow tortoise/",
+    definition_vi: "looked at the slow tortoise",
+    definition_en: "Context phrase: looked at the slow tortoise",
+    example: "We practiced looked at the slow tortoise today."
+  },
+  "went to the train station": {
+    word: "went to the train station",
+    pronunciation: "/went to the train station/",
+    definition_vi: "went to the train station",
+    definition_en: "Context phrase: went to the train station",
+    example: "We practiced went to the train station today."
+  }
 };
