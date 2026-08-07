@@ -101,7 +101,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'a
     } catch { return {}; }
   });
   // TTS worker base — used for corrections endpoint (KV API).
-  // Mirrors voiceService.js: same env var as /tts endpoint so domain can flip via .env.
+  const CORRECTIONS_API_BASE = import.meta.env.VITE_TTS_WORKER_URL || '';
   // Disable stale server KV corrections fetch to prevent legacy text overrides
   useEffect(() => {
     // Legacy server corrections disabled to preserve pure lesson script
