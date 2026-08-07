@@ -1016,6 +1016,32 @@ export const VoiceService = {
     return await proxyGoogleTTS(text, { voice: GOOGLE_TTS_VOICE, languageCode: 'en-US' });
   },
 
+/**
+ * Chunk long text into sentence-aware blocks for parallel TTS synthesis
+ */
+function chunkTextForTTS(text, maxChunkLen = 400) {
+  if (!text || text.length <= maxChunkLen) return [text];
+  const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+  if (sentences.length <= 1) return [text];
+
+  const chunks = [];
+  let currentChunk = '';
+
+  for (const sentence of sentences) {
+    if ((currentChunk + ' ' + sentence).length > maxChunkLen && currentChunk) {
+      chunks.push(currentChunk.trim());
+      currentChunk = sentence;
+    } else {
+      currentChunk = currentChunk ? `${currentChunk} ${sentence}` : sentence;
+    }
+  }
+  if (currentChunk.trim()) {
+    chunks.push(currentChunk.trim());
+  }
+
+  return chunks.length > 0 ? chunks : [text];
+}
+
   /**
    * Direct Google Cloud TTS API call using VITE_GOOGLE_TTS_API_KEY
    * (Used for Week 36 testing with en-US-Journey-F & en-US-Neural2-F)
@@ -1027,6 +1053,17 @@ export const VoiceService = {
     // Normalize invalid voice names for Google Cloud TTS (e.g. Neural2-B -> Neural2-D)
     let safeVoice = voice || 'en-US-Journey-F';
     if (safeVoice === 'en-US-Neural2-B') safeVoice = 'en-US-Neural2-D';
+
+    // ⚡ Speed Optimization: Parallelize synthesis for long narratives (>400 chars)
+    // 1500 chars in 1 single Google request takes ~18s, but 3x400 char chunks in parallel take only ~1.5s total!
+    if (text.length > 400) {
+      const chunks = chunkTextForTTS(text, 400);
+      if (chunks.length > 1) {
+        console.log(`[TTS] ⚡ Parallelizing Google Direct TTS into ${chunks.length} chunks for instant generation (${text.length} chars)...`);
+        const blobs = await Promise.all(chunks.map(chunk => this.useGoogleTTSDirect(chunk, safeVoice)));
+        return new Blob(blobs, { type: 'audio/mp3' });
+      }
+    }
 
     const dedupKey = `${safeVoice}::${text}`;
     if (_pendingDirectFetches.has(dedupKey)) {
