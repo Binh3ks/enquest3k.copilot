@@ -11,7 +11,7 @@ export default {
 
 **But there is hope**. **Renewable energy** sources **such as** **solar power** and **wind power** can **help us** reduce **carbon emissions**. Solar panels, which convert sunlight into electricity, are becoming more affordable. Wind turbines, which use wind to generate power, are now common in many countries.
 
-**What can we do?** We must **reduce, reuse, and recycle**. We should **plant more trees**, which help absorb carbon dioxide. We can **use less** energy and choose products that are environmentally friendly. Together, we can **make a difference** and protect our beautiful planet for future generations.`,
+What can we do? We must **reduce, reuse, and recycle**. We should **plant more trees**, which help absorb carbon dioxide. We can **use less** energy and choose products that are environmentally friendly. Together, we can **make a difference** and protect our beautiful planet for future generations.`,
   content_vi: `Biến đổi khí hậu là một trong những thách thức lớn nhất mà hành tinh của chúng ta đang đối mặt. Khí hậu Trái Đất, vốn ổn định trong hàng nghìn năm, nay đang thay đổi nhanh hơn bao giờ hết. Sự nóng lên này, chủ yếu do hoạt động của con người gây ra, đang dẫn đến những vấn đề nghiêm trọng.
 
 Các khí nhà kính, bao gồm carbon dioxide và methane, giữ nhiệt trong khí quyển. Nhà máy và ô tô, đốt nhiên liệu hóa thạch, thải ra lượng lớn khí mỗi ngày. Kết quả là, nhiệt độ toàn cầu đang tăng, băng ở hai cực đang tan, và mực nước biển đang dâng cao.

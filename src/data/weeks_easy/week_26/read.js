@@ -1,8 +1,8 @@
 export default {
   title: "Leo's Weekend Comic Strip",
   image_url: "/images/week26/read_cover_w26.jpg",
-  content_en: "It was **Sunday afternoon**. Leo **sat down with** his pencils and paper. He wanted to **create a comic strip** about his **fun weekend**.\n\n**First of all**, Leo **wrote the title**: 'My Fun **Weekend Adventure** — by Leo.' He **felt very happy**.\n\nIn Panel One, Leo **sketched the park**. He **wrote a first caption**: '**saturday morning**. Max and I **walked to** the park. It **was sunny and warm**.'\n\nIn **panel two**, Leo drew Max with his red ball. In the **speech bubble**, Max said: 'I **played all day**!' Leo added a **second caption**: 'Max **played all day** with his ball. He **was happy**.'\n\nIn **panel three**, Leo drew a **street musician**. Everyone **watched and clapped**. The **third caption said**: 'We **watched a street musician**. It **was brilliant**!'\n\nIn Panel Four, Leo drew himself and Max **walking home**. The **last caption** read: '**At the very end**, we **returned home**. We **were tired but happy**.'\n\nMia **looked at** the **comic strip** and smiled. 'You used **Past Simple** perfectly!' she said. '**Walked slowly**, **played happily**, **watched carefully**, **returned home** — all -ed verbs!'\n\n'And I used **was happy** and **were tired** too!' said Leo proudly.\n\n'Your **comic strip** tells a **great story**,' **said mia**. 'Now anyone can **create their own** comic!'",
-  content_vi: "Do la chieu Chu Nhat. Leo ngoi xuong voi but chi va giay. Leo muon tao ra mot bo truyen tranh ve cuoi tuan cua minh.\n\nDau tien, Leo viet tieu de: 'Cuoc Phieu Luu Cuoi Tuan Cua Toi — boi Leo.' Leo cam thay rat vui.\n\nO Khung 1, Leo phac thao cong vien. Leo viet mot chu thich: 'Sang thu Bay. Max va toi di den cong vien. Thoi tiet nang am.\n\nO Khung 2, Leo ve Max voi qua bong. Trong bong bong loi thoai, Max noi: 'Toi da choi suot ngay!' Leo them mot chu thich: 'Max choi voi qua bong. Max vui.'\n\nO Khung 3, Leo ve mot nhac si duong pho. Moi nguoi xem va vo tay. Chu thich viet: 'Chung toi xem buoi bieu dien. No tuyet voi!'\n\nO Khung 4, Leo ve minh va Max di ve nha. Chu thich viet: 'Cuoi cung, chung toi ve nha. Chung toi met nhung rat vui.'\n\nMia nhin bo truyen tranh va mim cuoi. 'Em dung Qua Khu Don rat hoan hao!' co noi. 'Walked, played, watched, returned — tat ca dong tu -ed!'\n\n'Va em dung ca was va were nua!' Leo noi tu hao.\n\n'Bo truyen tranh cua em ke mot cau chuyen hay,' Mia noi. 'Bay gio ai cung co the tao ra cau chuyen cua ho!'",
+  content_en: "It was **Sunday afternoon**. Leo **sat down with** his pencils and paper. He wanted to **create a comic strip** about his **fun weekend**.\n\n**First of all**, Leo **wrote the title**: 'My Fun **Weekend Adventure** — by Leo.' He **felt very happy**.\n\nIn Panel One, Leo **sketched the park**. He **wrote a first caption**: '**saturday morning**. Max and I **walked to** the park. It **was sunny and warm**.'\n\nIn **panel two**, Leo drew Max with his red ball. In the **speech bubble**, Max said: 'I **played all day**!' Leo added a **second caption**: 'Max **played all day** with his ball. He was happy.'\n\nIn **panel three**, Leo drew a **street musician**. Everyone **watched and clapped**. The **third caption said**: 'We **watched a street musician**. It **was brilliant**!'\n\nIn Panel Four, Leo drew himself and Max **walking home**. The **last caption** read: '**At the very end**, we **returned home**. We **were tired but happy**.'\n\nMia **looked at** the **comic strip** and smiled. 'You used **Past Simple** perfectly!' she said. '**Walked slowly**, **played happily**, **watched carefully**, **returned home** — all -ed verbs!'\n\n'And I used was happy and were tired too!' said Leo proudly.\n\n'Your **comic strip** tells a **great story**,' **said mia**. 'Now anyone can **create their own** comic!'",
+  content_vi: "Đó là chiều Chủ Nhật. Leo ngồi xuống với bút chì và giấy. Leo muốn tạo ra một bộ truyện tranh về cuối tuần của mình.\n\nĐầu tiên, Leo viết tiêu đề: 'Cuộc Phiêu Lưu Cuối Tuần Của Tôi — bởi Leo.' Leo cảm thấy rất vui.\n\nỞ Khung 1, Leo phác thảo công viên. Leo viết một chú thích: 'Sáng thứ Bảy. Max và tôi đi đến công viên. Thời tiết nắng ấm.'\n\nỞ Khung 2, Leo vẽ Max với quả bóng. Trong bóng bóng lời thoại, Max nói: 'Tôi đã chơi suốt ngày!' Leo thêm một chú thích: 'Max chơi với quả bóng. Max vui.'\n\nỞ Khung 3, Leo vẽ một nhạc sĩ đường phố. Mọi người xem và vỗ tay. Chú thích viết: 'Chúng tôi xem buổi biểu diễn. Nó tuyệt vời!'\n\nỞ Khung 4, Leo vẽ mình và Max đi về nhà. Chú thích viết: 'Cuối cùng, chúng tôi về nhà. Chúng tôi mệt nhưng rất vui.'\n\nMia nhìn bộ truyện tranh và mỉm cười. 'Em dùng Quá Khứ Đơn rất hoàn hảo!' cô nói. 'Walked, played, watched, returned — tất cả động từ -ed!'\n\n'Và em dùng cả was và were nữa!' Leo nói tự hào.\n\n'Bộ truyện tranh của em kể một câu chuyện hay,' Mia nói. 'Bây giờ ai cũng có thể tạo ra câu chuyện của họ!'",
   audio_url: "/audio/week26_easy/read_main.mp3",
   comprehension_questions: [
     {
@@ -11,7 +11,7 @@ export default {
       answer: ["A comic strip", "A comic strip about his weekend"],
       clue_statement: "Leo decided to create a comic strip about his weekend on Sunday afternoon.",
       hint_en: "Leo decided to create a...",
-      hint_vi: "Leo quyet dinh tao ra mot...",
+      hint_vi: "Leo quyết định tạo ra một...",
       audio_url: "/audio/week26_easy/read_q1.mp3"
     },
     {
@@ -20,7 +20,7 @@ export default {
       answer: ["Max played with his ball", "He played with his ball"],
       clue_statement: "Max played with his ball in Panel Two.",
       hint_en: "Max played with his...",
-      hint_vi: "Max choi voi...",
+      hint_vi: "Max chơi với...",
       audio_url: "/audio/week26_easy/read_q2.mp3"
     },
     {
@@ -29,7 +29,7 @@ export default {
       answer: ["Tired but happy", "They were tired but happy"],
       clue_statement: "They were tired but happy.",
       hint_en: "They were tired but very...",
-      hint_vi: "Ho met nhung rat...",
+      hint_vi: "Họ mệt nhưng rất...",
       audio_url: "/audio/week26_easy/read_q3_easy.mp3"
     }
   ]
@@ -53,7 +53,6 @@ export const chunk_focus = [
   "speech bubble",
   "played all day",
   "second caption",
-  "was happy",
   "panel three",
   "street musician",
   "watched and clapped",
