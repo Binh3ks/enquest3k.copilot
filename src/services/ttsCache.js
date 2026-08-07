@@ -102,17 +102,19 @@ class TTSCacheService {
     }, 0);
 
     // Add voice to cache key for voice-specific caching
-    // Extract last part of voice ID (e.g., 'Neural2-J' → 'J', 'aura-zeus-en' → 'zeus')
+    // Extract voice suffix (e.g., 'Neural2-F' -> '_f', 'Journey-F' -> '_f', 'aura-zeus-en' -> '_zeus')
     let voiceSuffix = '';
     if (voice) {
-      const voiceMatch = voice.match(/Neural2-([A-Z])|aura-(\w+)-/i);
-      voiceSuffix = voiceMatch ? `_${(voiceMatch[1] || voiceMatch[2]).toLowerCase()}` : `_${voice.substring(0, 5)}`;
+      const voiceMatch = voice.match(/(?:Neural2|Journey)-([A-Z])|aura-(\w+)-/i);
+      voiceSuffix = voiceMatch ? `_${(voiceMatch[1] || voiceMatch[2]).toLowerCase()}` : `_${voice.substring(0, 8)}`;
     }
 
     // Add audioUrl path to key so audio file path changes invalidate stale blobs
+    // Strip protocol + domain so relative (/audio/...) and absolute (https://cdn/audio/...) match 100%!
     let pathSuffix = '';
     if (audioUrl) {
-      const pathStr = typeof audioUrl === 'string' ? audioUrl : '';
+      let pathStr = typeof audioUrl === 'string' ? audioUrl : '';
+      pathStr = pathStr.replace(/^https?:\/\/[^\/]+/, '');
       const pathHash = pathStr.split('').reduce((acc, char) => ((acc << 5) - acc) + char.charCodeAt(0), 0);
       pathSuffix = `_p${Math.abs(pathHash).toString(36)}`;
     }
