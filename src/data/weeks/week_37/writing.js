@@ -1,1 +1,1 @@
-export default { title: "My Favourite Outdoor Sport", prompt: "Write about a sport you like playing with friends." };
+export default { title: "My Sport", prompt: "Write about your favourite sport." };

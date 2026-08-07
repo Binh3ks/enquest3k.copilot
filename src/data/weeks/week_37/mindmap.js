@@ -1,1 +1,1 @@
-export default { title: "Outdoor Sports Mindmap", nodes: [{ id: "root", label: "Sports" }] };
+export default { title: "Sports Mindmap", nodes: [{ id: "root", label: "Sports" }] };

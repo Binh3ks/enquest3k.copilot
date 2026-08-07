@@ -1,1 +1,1 @@
-export default { title: "Heart Rate & Exercise", concept: "Exercise makes our heart beat faster to pump oxygen." };
+export default { title: "Heart & Sports", concept: "Sports keep our heart strong." };

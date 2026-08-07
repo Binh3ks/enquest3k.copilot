@@ -1,6 +1,3 @@
-// WEEK 37: The Sports Day Challenge
-// Week Index — Advanced Mode
-
 import read from './read.js';
 import explore from './explore.js';
 import vocab from './vocab.js';
@@ -16,7 +13,7 @@ import word_power from './word_power.js';
 import mindmap from './mindmap.js';
 import daily_watch from './daily_watch.js';
 import word_match from './word_match.js';
-import games from './games.js';
+import { week_37GamesAdvanced as games } from './games.js';
 
 const weekData = {
   weekId: 37,
@@ -28,9 +25,7 @@ const weekData = {
   chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore.chunk_focus || [])])],
   dictionary: { ...(read.dictionary || {}), ...(explore.dictionary || {}) },
 
-  global_vocab: vocab,
-  read: read,
-  explore: explore,
+  global_vocab: vocab.vocab,
 
   voiceConfig: {
     narration: 'en-US-Journey-F',
@@ -43,9 +38,7 @@ const weekData = {
   },
 
   stations: {
-    read: read,
-    explore: explore,
-    read_explore: { read, explore },
+    read_explore: { read_stem: read.read_stem, read_social: read.read_social },
     new_words: vocab,
     word_match: word_match,
     grammar: grammar,
@@ -55,6 +48,7 @@ const weekData = {
     dictation: dictation,
     shadowing: shadowing,
     writing: writing,
+    explore: explore,
     mindmap_speaking: mindmap,
     daily_watch: daily_watch,
     game_hub: games

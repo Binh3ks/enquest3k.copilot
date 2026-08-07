@@ -1,1 +1,1 @@
-export default { title: "Sports Collocations", words: ["pass the baton", "win a medal"] };
+export default { title: "Sports Power Words", words: ["passed the baton", "ran fast"] };

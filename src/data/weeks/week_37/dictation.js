@@ -1,1 +1,1 @@
-export default { title: "Sports Day Dictation", sentences: ["Leo ran very fast along the track."] };
+export default { title: "Sports Dictation", sentences: ["Leo ran very fast."] };

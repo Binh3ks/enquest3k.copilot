@@ -1,1 +1,1 @@
-export default { title: "Easy Science", concept: "Running keeps us healthy." };
+export default { title: "Easy Science", concept: "Running is healthy." };

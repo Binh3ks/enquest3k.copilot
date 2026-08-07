@@ -35857,6 +35857,22 @@
     "type": "phrase"
   },
   {
+    "word": "are super fun",
+    "ipa": "/are super fun/",
+    "meaning": "are super fun",
+    "example": "We learned are super fun.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "cheer and smile",
+    "ipa": "/cheer and smile/",
+    "meaning": "cheer and smile",
+    "example": "We learned cheer and smile.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "Làm việc cùng tôi vào mùa hè tới",
     "ipa": "/làm việc cùng tôi vào mùa hè tới/",
     "meaning": "cụm từ vựng: làm việc cùng tôi vào mùa hè tới",
@@ -35909,6 +35925,54 @@
     "ipa": "/2,500 years ago/",
     "meaning": "2.500 năm trước",
     "example": "This is an example: 2,500 years ago.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "is even more important",
+    "ipa": "/is even more important/",
+    "meaning": "is even more important",
+    "example": "We learned is even more important.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "finish the race",
+    "ipa": "/finish the race/",
+    "meaning": "finish the race",
+    "example": "We learned finish the race.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "shake hands with opponents",
+    "ipa": "/shake hands with opponents/",
+    "meaning": "shake hands with opponents",
+    "example": "We learned shake hands with opponents.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "say kind words",
+    "ipa": "/say kind words/",
+    "meaning": "say kind words",
+    "example": "We learned say kind words.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "stood together with smiles",
+    "ipa": "/stood together with smiles/",
+    "meaning": "stood together with smiles",
+    "example": "We learned stood together with smiles.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "win or lose",
+    "ipa": "/win or lose/",
+    "meaning": "win or lose",
+    "example": "We learned win or lose.",
     "part_of_speech": "phrase",
     "type": "phrase"
   }
