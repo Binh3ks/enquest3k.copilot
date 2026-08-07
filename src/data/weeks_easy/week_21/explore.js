@@ -7,10 +7,10 @@ export default {
  Did you know that **famous scientists** kept diaries too?
  They are called **field journals**, and they **tell us** **amazing things** about the world.
 
- Charles Darwin was a scientist 200 **years ago**.
- He walked onto a ship and traveled to many islands.
- **Every day**, he **looked at** animals and plants.
- He watched birds and **listened to** their calls.
+  Charles Darwin was a scientist 200 **years ago**.
+  He walked onto a ship and traveled to many islands.
+  **Every day**, he **looked at animals** and plants.
+  He watched birds and **listened to** their calls.
  **At night**, he opened his journal and wrote what he saw.
  He finished one diary, then started a new one!
 

@@ -6,7 +6,9 @@ const BAD_WORDS = new Set(['i', 'he', 'she', 'it', 'we', 'they', 'you', 'my', 'h
 function isBadChunk(chunk) {
   const clean = chunk.toLowerCase().trim();
   if (BAD_WORDS.has(clean)) return true;
-  if (clean === 'cut small' || clean === 'using blue' || clean === 'wings were' || clean === 'my teacher' || clean === 'was happy') return true;
+  if (clean === 'cut small' || clean === 'using blue' || clean === 'wings were' || clean === 'my teacher' || clean === 'was happy' || clean === 'said mia') return true;
+  // Orphaned prepositions without object
+  if (clean === 'walked to' || clean === 'looked at' || clean === 'sat down with' || clean === 'panel two' || clean === 'panel three') return true;
   return false;
 }
 

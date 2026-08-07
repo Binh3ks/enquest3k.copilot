@@ -14,11 +14,13 @@ Source: `.devin/workflows/start.md` §3.
 ## AI Tutor & Vocab Quality Standard — 2026-08-07
 - **No Premature Praise**: AI question templates MUST NOT contain hardcoded reactions like "That sounds wonderful!". Questions must strictly end with `[Question]? Say: [Option A], or [Option B]`.
 - **Vietnamese Diacritics**: All `definition_vi` entries in `vocab.js`, `word_match`, and `dictionary` MUST have full Vietnamese diacritic accents (e.g., `đã trao`, `lớp mỹ thuật`).
-- **Explore & Reading Chunking Standard**:
-  1. All `**bolded phrases**` in Reading and Explore stations for BOTH Easy Mode and Advanced Mode MUST be registered in `chunk_focus` and `dictionary` with IPA, definition, and example sentence.
-  2. Bold markers `**...**` MUST only target meaningful collocations (e.g., `art class`), verb phrases (e.g., `picked up a brush`), or key academic terms. NEVER bold single pronouns (`I`, `she`), auxiliary verbs (`was`, `had`), connectors (`Then I`), or incomplete phrases (`using blue`, `cut small`).
-  3. Terminal punctuation (`.`, `,`, `!`, `?`) MUST strictly stay OUTSIDE bold tags `**...**`.
-  4. Run `npm run audit:chunks` (`node scripts/audit_chunks.js`) before committing new week content to ensure 0 chunking errors across all 36 weeks.
+- **Explore & Reading Chunking Standard (Linear Thinking ESL)**:
+  1. **Category 1: Verb Phrase Complete (Verb + Prep + Noun Phrase)**: DO NOT orphan prepositions (e.g., NEVER chunk `walked to`, `looked at`, `sat down with` without target objects). MUST chunk complete action units: `walked to the park`, `looked at the comic strip`, `sat down with his pencils and paper`.
+  2. **Category 2: Prepositional Phrase (Time/Place)**: Keep prepositional setting context intact: `In Panel One`, `In Panel Two`, `At the very end`, `In the morning`.
+  3. **Category 3: Target Grammar Focus (Past Simple + Complement/Adverb)**: `was sunny and warm`, `were tired but happy`, `walked slowly`, `played happily`.
+  4. **Category 4: Collocations & Compound Nouns**: `Sunday afternoon`, `Saturday morning`, `comic strip`, `speech bubble`, `street musician`.
+  5. **Formatting Rules**: Capitalize day names/proper nouns (`Saturday morning`). Terminal punctuation (`.`, `,`, `!`, `?`) MUST strictly stay OUTSIDE bold tags `**...**`.
+  6. **Automated Audit**: Run `npm run audit:chunks` (`node scripts/audit_chunks.js`) before committing to guarantee 0 chunking errors.
 - **Audio & TTS Fallback**: `audio_word` paths MUST handle missing MP3 files gracefully with browser TTS fallback so card flip audio never hangs or crashes.
 
 ## Google Cloud TTS & Shadowing Standard — 2026-08-07
