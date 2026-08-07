@@ -17,11 +17,11 @@
   },
   {
     "word": "2,500 years ago",
+    "ipa": "/2,500 years ago/",
     "meaning": "2.500 năm trước",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 28,
-    "example": "This is an example: 2,500 years ago."
+    "example": "This is an example: 2,500 years ago.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "30 students",
@@ -23158,14 +23158,11 @@
   },
   {
     "word": "reduce, reuse, and recycle",
+    "ipa": "/reduce, reuse, and recycle/",
     "meaning": "reduce reuse and recycle",
-    "pronounce": "",
-    "definition_en": "Key collocation: reduce, reuse, and recycle",
-    "first_taught_week": 28,
-    "example": "Natural usage of 'reduce, reuse, and recycle' in sentence context.",
-    "definition_vi": "reduce reuse and recycle",
-    "phonetic": "/reduce, reuse, and recycle/",
-    "pronunciation": "/reduce, reuse, and recycle/"
+    "example": "Natural usage of \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "reflects",
@@ -34628,124 +34625,91 @@
   },
   {
     "word": "chuẩn bị cho tương lai",
-    "phonetic": "/chuẩn bị cho tương lai/",
-    "pronunciation": "/chuẩn bị cho tương lai/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: chuẩn bị cho tương lai",
-    "definition_en": "Collocation: chuẩn bị cho tương lai",
+    "ipa": "/chuẩn bị cho tương lai/",
     "meaning": "cụm từ vựng: chuẩn bị cho tương lai",
-    "example": "The students learned 'chuẩn bị cho tương lai' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "giúp",
-    "phonetic": "/giúp/",
-    "pronunciation": "/giúp/",
-    "type": "word",
-    "definition_vi": "cụm từ vựng: giúp",
-    "definition_en": "Collocation: giúp",
+    "ipa": "/giúp/",
     "meaning": "cụm từ vựng: giúp",
-    "example": "The students learned 'giúp' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "luôn chơi trò chơi",
-    "phonetic": "/luôn chơi trò chơi/",
-    "pronunciation": "/luôn chơi trò chơi/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: luôn chơi trò chơi",
-    "definition_en": "Collocation: luôn chơi trò chơi",
+    "ipa": "/luôn chơi trò chơi/",
     "meaning": "cụm từ vựng: luôn chơi trò chơi",
-    "example": "The students learned 'luôn chơi trò chơi' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "rất lâu trước đây",
-    "phonetic": "/rất lâu trước đây/",
-    "pronunciation": "/rất lâu trước đây/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: rất lâu trước đây",
-    "definition_en": "Collocation: rất lâu trước đây",
+    "word": "Rất lâu trước đây",
+    "ipa": "/rất lâu trước đây/",
     "meaning": "cụm từ vựng: rất lâu trước đây",
-    "example": "The students learned 'rất lâu trước đây' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "dự trữ thức ăn",
-    "phonetic": "/dự trữ thức ăn/",
-    "pronunciation": "/dự trữ thức ăn/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: dự trữ thức ăn",
-    "definition_en": "Collocation: dự trữ thức ăn",
+    "ipa": "/dự trữ thức ăn/",
     "meaning": "cụm từ vựng: dự trữ thức ăn",
-    "example": "The students learned 'dự trữ thức ăn' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "làm việc rất chăm chỉ cả mùa hè",
-    "phonetic": "/làm việc rất chăm chỉ cả mùa hè/",
-    "pronunciation": "/làm việc rất chăm chỉ cả mùa hè/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: làm việc rất chăm chỉ cả mùa hè",
-    "definition_en": "Collocation: làm việc rất chăm chỉ cả mùa hè",
+    "ipa": "/làm việc rất chăm chỉ cả mùa hè/",
     "meaning": "cụm từ vựng: làm việc rất chăm chỉ cả mùa hè",
-    "example": "The students learned 'làm việc rất chăm chỉ cả mùa hè' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "cứ cười",
-    "phonetic": "/cứ cười/",
-    "pronunciation": "/cứ cười/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: cứ cười",
-    "definition_en": "Collocation: cứ cười",
+    "ipa": "/cứ cười/",
     "meaning": "cụm từ vựng: cứ cười",
-    "example": "The students learned 'cứ cười' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "làm việc cùng cô mùa hè tới",
-    "phonetic": "/làm việc cùng cô mùa hè tới/",
-    "pronunciation": "/làm việc cùng cô mùa hè tới/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: làm việc cùng cô mùa hè tới",
-    "definition_en": "Collocation: làm việc cùng cô mùa hè tới",
+    "ipa": "/làm việc cùng cô mùa hè tới/",
     "meaning": "cụm từ vựng: làm việc cùng cô mùa hè tới",
-    "example": "The students learned 'làm việc cùng cô mùa hè tới' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "đến nhà con kiến",
-    "phonetic": "/đến nhà con kiến/",
-    "pronunciation": "/đến nhà con kiến/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: đến nhà con kiến",
-    "definition_en": "Collocation: đến nhà con kiến",
+    "ipa": "/đến nhà con kiến/",
     "meaning": "cụm từ vựng: đến nhà con kiến",
-    "example": "The students learned 'đến nhà con kiến' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "không bao giờ lo lắng",
-    "phonetic": "/không bao giờ lo lắng/",
-    "pronunciation": "/không bao giờ lo lắng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: không bao giờ lo lắng",
-    "definition_en": "Collocation: không bao giờ lo lắng",
+    "ipa": "/không bao giờ lo lắng/",
     "meaning": "cụm từ vựng: không bao giờ lo lắng",
-    "example": "The students learned 'không bao giờ lo lắng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "nhảy tung tăng",
-    "phonetic": "/nhảy tung tăng/",
-    "pronunciation": "/nhảy tung tăng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: nhảy tung tăng",
-    "definition_en": "Collocation: nhảy tung tăng",
+    "ipa": "/nhảy tung tăng/",
     "meaning": "cụm từ vựng: nhảy tung tăng",
-    "example": "The students learned 'nhảy tung tăng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "1.1°c warmer",
@@ -34760,14 +34724,11 @@
   },
   {
     "word": "một con kiến chăm chỉ",
-    "phonetic": "/một con kiến chăm chỉ/",
-    "pronunciation": "/một con kiến chăm chỉ/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: một con kiến chăm chỉ",
-    "definition_en": "Collocation: một con kiến chăm chỉ",
+    "ipa": "/một con kiến chăm chỉ/",
     "meaning": "cụm từ vựng: một con kiến chăm chỉ",
-    "example": "The students learned 'một con kiến chăm chỉ' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "what can we do?",
@@ -34782,410 +34743,299 @@
   },
   {
     "word": "nhặt hạt",
-    "phonetic": "/nhặt hạt/",
-    "pronunciation": "/nhặt hạt/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: nhặt hạt",
-    "definition_en": "Collocation: nhặt hạt",
+    "ipa": "/nhặt hạt/",
     "meaning": "cụm từ vựng: nhặt hạt",
-    "example": "The students learned 'nhặt hạt' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
-    "phonetic": "/làm việc chăm chỉ cùng nhau suốt phần còn lại của năm/",
-    "pronunciation": "/làm việc chăm chỉ cùng nhau suốt phần còn lại của năm/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
-    "definition_en": "Collocation: làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
+    "ipa": "/làm việc chăm chỉ cùng nhau suốt phần còn lại của năm/",
     "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
-    "example": "The students learned 'làm việc chăm chỉ cùng nhau suốt phần còn lại của năm' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "luôn làm việc chăm chỉ",
-    "phonetic": "/luôn làm việc chăm chỉ/",
-    "pronunciation": "/luôn làm việc chăm chỉ/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: luôn làm việc chăm chỉ",
-    "definition_en": "Collocation: luôn làm việc chăm chỉ",
+    "ipa": "/luôn làm việc chăm chỉ/",
     "meaning": "cụm từ vựng: luôn làm việc chăm chỉ",
-    "example": "The students learned 'luôn làm việc chăm chỉ' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "cho châu chấu một ít thức ăn",
-    "phonetic": "/cho châu chấu một ít thức ăn/",
-    "pronunciation": "/cho châu chấu một ít thức ăn/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: cho châu chấu một ít thức ăn",
-    "definition_en": "Collocation: cho châu chấu một ít thức ăn",
+    "ipa": "/cho châu chấu một ít thức ăn/",
     "meaning": "cụm từ vựng: cho châu chấu một ít thức ăn",
-    "example": "The students learned 'cho châu chấu một ít thức ăn' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "sự chăm chỉ luôn được đền bù cuối cùng",
-    "phonetic": "/sự chăm chỉ luôn được đền bù cuối cùng/",
-    "pronunciation": "/sự chăm chỉ luôn được đền bù cuối cùng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: sự chăm chỉ luôn được đền bù cuối cùng",
-    "definition_en": "Collocation: sự chăm chỉ luôn được đền bù cuối cùng",
+    "ipa": "/sự chăm chỉ luôn được đền bù cuối cùng/",
     "meaning": "cụm từ vựng: sự chăm chỉ luôn được đền bù cuối cùng",
-    "example": "The students learned 'sự chăm chỉ luôn được đền bù cuối cùng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "suốt mùa đông",
-    "phonetic": "/suốt mùa đông/",
-    "pronunciation": "/suốt mùa đông/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: suốt mùa đông",
-    "definition_en": "Collocation: suốt mùa đông",
+    "word": "Suốt mùa đông",
+    "ipa": "/suốt mùa đông/",
     "meaning": "cụm từ vựng: suốt mùa đông",
-    "example": "The students learned 'suốt mùa đông' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "anh chị em",
-    "phonetic": "/anh chị em/",
-    "pronunciation": "/anh chị em/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: anh chị em",
-    "definition_en": "Collocation: anh chị em",
+    "word": "Anh chị em",
+    "ipa": "/anh chị em/",
     "meaning": "cụm từ vựng: anh chị em",
-    "example": "The students learned 'anh chị em' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "đi ra đồng",
-    "phonetic": "/đi ra đồng/",
-    "pronunciation": "/đi ra đồng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: đi ra đồng",
-    "definition_en": "Collocation: đi ra đồng",
+    "ipa": "/đi ra đồng/",
     "meaning": "cụm từ vựng: đi ra đồng",
-    "example": "The students learned 'đi ra đồng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "mùa hè qua mùa hè",
-    "phonetic": "/mùa hè qua mùa hè/",
-    "pronunciation": "/mùa hè qua mùa hè/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: mùa hè qua mùa hè",
-    "definition_en": "Collocation: mùa hè qua mùa hè",
+    "word": "Mùa hè qua mùa hè",
+    "ipa": "/mùa hè qua mùa hè/",
     "meaning": "cụm từ vựng: mùa hè qua mùa hè",
-    "example": "The students learned 'mùa hè qua mùa hè' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "làm việc chăm chỉ cùng nhau",
-    "phonetic": "/làm việc chăm chỉ cùng nhau/",
-    "pronunciation": "/làm việc chăm chỉ cùng nhau/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: làm việc chăm chỉ cùng nhau",
-    "definition_en": "Collocation: làm việc chăm chỉ cùng nhau",
+    "ipa": "/làm việc chăm chỉ cùng nhau/",
     "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau",
-    "example": "The students learned 'làm việc chăm chỉ cùng nhau' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "nhà",
-    "phonetic": "/nhà/",
-    "pronunciation": "/nhà/",
-    "type": "word",
-    "definition_vi": "cụm từ vựng: nhà",
-    "definition_en": "Collocation: nhà",
+    "ipa": "/nhà/",
     "meaning": "cụm từ vựng: nhà",
-    "example": "The students learned 'nhà' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "học được một bài học quan trọng",
-    "phonetic": "/học được một bài học quan trọng/",
-    "pronunciation": "/học được một bài học quan trọng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: học được một bài học quan trọng",
-    "definition_en": "Collocation: học được một bài học quan trọng",
+    "ipa": "/học được một bài học quan trọng/",
     "meaning": "cụm từ vựng: học được một bài học quan trọng",
-    "example": "The students learned 'học được một bài học quan trọng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "xây một ngôi nhà ấm",
-    "phonetic": "/xây một ngôi nhà ấm/",
-    "pronunciation": "/xây một ngôi nhà ấm/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: xây một ngôi nhà ấm",
-    "definition_en": "Collocation: xây một ngôi nhà ấm",
+    "ipa": "/xây một ngôi nhà ấm/",
     "meaning": "cụm từ vựng: xây một ngôi nhà ấm",
-    "example": "The students learned 'xây một ngôi nhà ấm' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "tiếp tục chơi",
-    "phonetic": "/tiếp tục chơi/",
-    "pronunciation": "/tiếp tục chơi/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: tiếp tục chơi",
-    "definition_en": "Collocation: tiếp tục chơi",
+    "ipa": "/tiếp tục chơi/",
     "meaning": "cụm từ vựng: tiếp tục chơi",
-    "example": "The students learned 'tiếp tục chơi' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "từ ngày đó",
-    "phonetic": "/từ ngày đó/",
-    "pronunciation": "/từ ngày đó/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: từ ngày đó",
-    "definition_en": "Collocation: từ ngày đó",
+    "word": "Từ ngày đó",
+    "ipa": "/từ ngày đó/",
     "meaning": "cụm từ vựng: từ ngày đó",
-    "example": "The students learned 'từ ngày đó' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "ánh nắng ấm đẹp",
-    "phonetic": "/ánh nắng ấm đẹp/",
-    "pronunciation": "/ánh nắng ấm đẹp/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: ánh nắng ấm đẹp",
-    "definition_en": "Collocation: ánh nắng ấm đẹp",
+    "ipa": "/ánh nắng ấm đẹp/",
     "meaning": "cụm từ vựng: ánh nắng ấm đẹp",
-    "example": "The students learned 'ánh nắng ấm đẹp' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "không bao giờ làm việc",
-    "phonetic": "/không bao giờ làm việc/",
-    "pronunciation": "/không bao giờ làm việc/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: không bao giờ làm việc",
-    "definition_en": "Collocation: không bao giờ làm việc",
+    "ipa": "/không bao giờ làm việc/",
     "meaning": "cụm từ vựng: không bao giờ làm việc",
-    "example": "The students learned 'không bao giờ làm việc' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "cảm thấy rất lạnh và rất đói",
-    "phonetic": "/cảm thấy rất lạnh và rất đói/",
-    "pronunciation": "/cảm thấy rất lạnh và rất đói/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: cảm thấy rất lạnh và rất đói",
-    "definition_en": "Collocation: cảm thấy rất lạnh và rất đói",
+    "ipa": "/cảm thấy rất lạnh và rất đói/",
     "meaning": "cụm từ vựng: cảm thấy rất lạnh và rất đói",
-    "example": "The students learned 'cảm thấy rất lạnh và rất đói' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "vui vẻ khỏe mạnh suốt phần còn lại của năm",
-    "phonetic": "/vui vẻ khỏe mạnh suốt phần còn lại của năm/",
-    "pronunciation": "/vui vẻ khỏe mạnh suốt phần còn lại của năm/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: vui vẻ khỏe mạnh suốt phần còn lại của năm",
-    "definition_en": "Collocation: vui vẻ khỏe mạnh suốt phần còn lại của năm",
+    "ipa": "/vui vẻ khỏe mạnh suốt phần còn lại của năm/",
     "meaning": "cụm từ vựng: vui vẻ khỏe mạnh suốt phần còn lại của năm",
-    "example": "The students learned 'vui vẻ khỏe mạnh suốt phần còn lại của năm' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "hát ríu rít",
-    "phonetic": "/hát ríu rít/",
-    "pronunciation": "/hát ríu rít/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: hát ríu rít",
-    "definition_en": "Collocation: hát ríu rít",
+    "ipa": "/hát ríu rít/",
     "meaning": "cụm từ vựng: hát ríu rít",
-    "example": "The students learned 'hát ríu rít' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "mỉm cười đồng ý",
-    "phonetic": "/mỉm cười đồng ý/",
-    "pronunciation": "/mỉm cười đồng ý/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: mỉm cười đồng ý",
-    "definition_en": "Collocation: mỉm cười đồng ý",
+    "ipa": "/mỉm cười đồng ý/",
     "meaning": "cụm từ vựng: mỉm cười đồng ý",
-    "example": "The students learned 'mỉm cười đồng ý' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "làm việc cùng tôi vào mùa hè tới",
-    "phonetic": "/làm việc cùng tôi vào mùa hè tới/",
-    "pronunciation": "/làm việc cùng tôi vào mùa hè tới/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: làm việc cùng tôi vào mùa hè tới",
-    "definition_en": "Collocation: làm việc cùng tôi vào mùa hè tới",
+    "word": "Làm việc cùng tôi vào mùa hè tới",
+    "ipa": "/làm việc cùng tôi vào mùa hè tới/",
     "meaning": "cụm từ vựng: làm việc cùng tôi vào mùa hè tới",
-    "example": "The students learned 'làm việc cùng tôi vào mùa hè tới' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "luôn bận rộn",
-    "phonetic": "/luôn bận rộn/",
-    "pronunciation": "/luôn bận rộn/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: luôn bận rộn",
-    "definition_en": "Collocation: luôn bận rộn",
+    "ipa": "/luôn bận rộn/",
     "meaning": "cụm từ vựng: luôn bận rộn",
-    "example": "The students learned 'luôn bận rộn' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "một con châu chấu lười biếng",
-    "phonetic": "/một con châu chấu lười biếng/",
-    "pronunciation": "/một con châu chấu lười biếng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: một con châu chấu lười biếng",
-    "definition_en": "Collocation: một con châu chấu lười biếng",
+    "ipa": "/một con châu chấu lười biếng/",
     "meaning": "cụm từ vựng: một con châu chấu lười biếng",
-    "example": "The students learned 'một con châu chấu lười biếng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "một ngày lạnh vào mùa thu",
-    "phonetic": "/một ngày lạnh vào mùa thu/",
-    "pronunciation": "/một ngày lạnh vào mùa thu/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: một ngày lạnh vào mùa thu",
-    "definition_en": "Collocation: một ngày lạnh vào mùa thu",
+    "ipa": "/một ngày lạnh vào mùa thu/",
     "meaning": "cụm từ vựng: một ngày lạnh vào mùa thu",
-    "example": "The students learned 'một ngày lạnh vào mùa thu' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "xin thức ăn",
-    "phonetic": "/xin thức ăn/",
-    "pronunciation": "/xin thức ăn/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: xin thức ăn",
-    "definition_en": "Collocation: xin thức ăn",
+    "ipa": "/xin thức ăn/",
     "meaning": "cụm từ vựng: xin thức ăn",
-    "example": "The students learned 'xin thức ăn' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "nhảy múa vui vẻ",
-    "phonetic": "/nhảy múa vui vẻ/",
-    "pronunciation": "/nhảy múa vui vẻ/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: nhảy múa vui vẻ",
-    "definition_en": "Collocation: nhảy múa vui vẻ",
+    "ipa": "/nhảy múa vui vẻ/",
     "meaning": "cụm từ vựng: nhảy múa vui vẻ",
-    "example": "The students learned 'nhảy múa vui vẻ' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "ánh nắng ấm sáng",
-    "phonetic": "/ánh nắng ấm sáng/",
-    "pronunciation": "/ánh nắng ấm sáng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: ánh nắng ấm sáng",
-    "definition_en": "Collocation: ánh nắng ấm sáng",
+    "ipa": "/ánh nắng ấm sáng/",
     "meaning": "cụm từ vựng: ánh nắng ấm sáng",
-    "example": "The students learned 'ánh nắng ấm sáng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "chia sẻ thức ăn cùng nhau",
-    "phonetic": "/chia sẻ thức ăn cùng nhau/",
-    "pronunciation": "/chia sẻ thức ăn cùng nhau/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: chia sẻ thức ăn cùng nhau",
-    "definition_en": "Collocation: chia sẻ thức ăn cùng nhau",
+    "ipa": "/chia sẻ thức ăn cùng nhau/",
     "meaning": "cụm từ vựng: chia sẻ thức ăn cùng nhau",
-    "example": "The students learned 'chia sẻ thức ăn cùng nhau' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "ngày này qua ngày khác",
-    "phonetic": "/ngày này qua ngày khác/",
-    "pronunciation": "/ngày này qua ngày khác/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: ngày này qua ngày khác",
-    "definition_en": "Collocation: ngày này qua ngày khác",
+    "word": "Ngày này qua ngày khác",
+    "ipa": "/ngày này qua ngày khác/",
     "meaning": "cụm từ vựng: ngày này qua ngày khác",
-    "example": "The students learned 'ngày này qua ngày khác' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "yêu thương",
-    "phonetic": "/yêu thương/",
-    "pronunciation": "/yêu thương/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: yêu thương",
-    "definition_en": "Collocation: yêu thương",
+    "ipa": "/yêu thương/",
     "meaning": "cụm từ vựng: yêu thương",
-    "example": "The students learned 'yêu thương' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "cứ hát",
-    "phonetic": "/cứ hát/",
-    "pronunciation": "/cứ hát/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: cứ hát",
-    "definition_en": "Collocation: cứ hát",
+    "ipa": "/cứ hát/",
     "meaning": "cụm từ vựng: cứ hát",
-    "example": "The students learned 'cứ hát' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "mang những hạt nặng",
-    "phonetic": "/mang những hạt nặng/",
-    "pronunciation": "/mang những hạt nặng/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: mang những hạt nặng",
-    "definition_en": "Collocation: mang những hạt nặng",
+    "ipa": "/mang những hạt nặng/",
     "meaning": "cụm từ vựng: mang những hạt nặng",
-    "example": "The students learned 'mang những hạt nặng' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "tiếp tục chơi trò chơi",
-    "phonetic": "/tiếp tục chơi trò chơi/",
-    "pronunciation": "/tiếp tục chơi trò chơi/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: tiếp tục chơi trò chơi",
-    "definition_en": "Collocation: tiếp tục chơi trò chơi",
+    "ipa": "/tiếp tục chơi trò chơi/",
     "meaning": "cụm từ vựng: tiếp tục chơi trò chơi",
-    "example": "The students learned 'tiếp tục chơi trò chơi' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "dưới ánh nắng mùa hè ấm áp",
-    "phonetic": "/dưới ánh nắng mùa hè ấm áp/",
-    "pronunciation": "/dưới ánh nắng mùa hè ấm áp/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: dưới ánh nắng mùa hè ấm áp",
-    "definition_en": "Collocation: dưới ánh nắng mùa hè ấm áp",
+    "word": "Dưới ánh nắng mùa hè ấm áp",
+    "ipa": "/dưới ánh nắng mùa hè ấm áp/",
     "meaning": "cụm từ vựng: dưới ánh nắng mùa hè ấm áp",
-    "example": "The students learned 'dưới ánh nắng mùa hè ấm áp' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
-    "word": "mẹ",
-    "phonetic": "/mẹ/",
-    "pronunciation": "/mẹ/",
-    "type": "word",
-    "definition_vi": "cụm từ vựng: mẹ",
-    "definition_en": "Collocation: mẹ",
+    "word": "Mẹ",
+    "ipa": "/mẹ/",
     "meaning": "cụm từ vựng: mẹ",
-    "example": "The students learned 'mẹ' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "luôn chơi đùa",
-    "phonetic": "/luôn chơi đùa/",
-    "pronunciation": "/luôn chơi đùa/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: luôn chơi đùa",
-    "definition_en": "Collocation: luôn chơi đùa",
+    "ipa": "/luôn chơi đùa/",
     "meaning": "cụm từ vựng: luôn chơi đùa",
-    "example": "The students learned 'luôn chơi đùa' in their English lesson.",
-    "level": "A1+"
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "đội",
@@ -35200,30 +35050,8 @@
   },
   {
     "word": "bố",
-    "phonetic": "/bố/",
-    "pronunciation": "/bố/",
-    "type": "word",
-    "definition_vi": "cụm từ vựng: bố",
-    "definition_en": "Collocation: bố",
+    "ipa": "/bố/",
     "meaning": "cụm từ vựng: bố",
-    "example": "The students learned 'bố' in their English lesson.",
-    "level": "A1+"
-  },
-  {
-    "word": "gia đình",
-    "phonetic": "/gia đình/",
-    "pronunciation": "/gia đình/",
-    "type": "phrase",
-    "definition_vi": "cụm từ vựng: gia đình",
-    "definition_en": "Collocation: gia đình",
-    "meaning": "cụm từ vựng: gia đình",
-    "example": "The students learned 'gia đình' in their English lesson.",
-    "level": "A1+"
-  },
-  {
-    "word": "Anh chị em",
-    "ipa": "/anh chị em/",
-    "meaning": "cụm từ vựng: anh chị em",
     "example": "The students learned \\",
     "part_of_speech": "phrase",
     "type": "phrase"
@@ -35232,46 +35060,6 @@
     "word": "Gia đình",
     "ipa": "/gia đình/",
     "meaning": "cụm từ vựng: gia đình",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Mẹ",
-    "ipa": "/mẹ/",
-    "meaning": "cụm từ vựng: mẹ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "bố",
-    "ipa": "/bố/",
-    "meaning": "cụm từ vựng: bố",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "giúp",
-    "ipa": "/giúp/",
-    "meaning": "cụm từ vựng: giúp",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhà",
-    "ipa": "/nhà/",
-    "meaning": "cụm từ vựng: nhà",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "yêu thương",
-    "ipa": "/yêu thương/",
-    "meaning": "cụm từ vựng: yêu thương",
     "example": "The students learned \\",
     "part_of_speech": "phrase",
     "type": "phrase"
@@ -35393,6 +35181,190 @@
     "ipa": "/smiled at lily/",
     "meaning": "smiled at Lily",
     "example": "We practiced smiled at Lily today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "change a student\\",
+    "ipa": "/change a student\\",
+    "meaning": "thay đổi cuộc đời của một học sinh",
+    "example": "The students practiced using \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to the ant\\",
+    "ipa": "/came to the ant\\",
+    "meaning": "đến nhà con kiến",
+    "example": "He came to the ant\\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "walked to the same place",
+    "ipa": "/walked to the same place/",
+    "meaning": "walked to the same place",
+    "example": "We practiced walked to the same place today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the old map",
+    "ipa": "/looked at the old map/",
+    "meaning": "looked at the old map",
+    "example": "We practiced looked at the old map today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to live together",
+    "ipa": "/came to live together/",
+    "meaning": "came to live together",
+    "example": "We practiced came to live together today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "listened to tropical birds",
+    "ipa": "/listened to tropical birds/",
+    "meaning": "listened to tropical birds",
+    "example": "We practiced listened to tropical birds today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the slow tortoise",
+    "ipa": "/looked at the slow tortoise/",
+    "meaning": "looked at the slow tortoise",
+    "example": "We practiced looked at the slow tortoise today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to the train station",
+    "ipa": "/went to the train station/",
+    "meaning": "went to the train station",
+    "example": "We practiced went to the train station today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "flew to a tiny green island",
+    "ipa": "/flew to a tiny green island/",
+    "meaning": "flew to a tiny green island",
+    "example": "We practiced flew to a tiny green island today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to help them",
+    "ipa": "/came to help them/",
+    "meaning": "came to help them",
+    "example": "We practiced came to help them today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the bright fruit",
+    "ipa": "/looked at the bright fruit/",
+    "meaning": "looked at the bright fruit",
+    "example": "We practiced looked at the bright fruit today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at an old map",
+    "ipa": "/looked at an old map/",
+    "meaning": "looked at an old map",
+    "example": "We practiced looked at an old map today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "look at this",
+    "ipa": "/look at this/",
+    "meaning": "look at this",
+    "example": "We practiced look at this today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the tiny point of light",
+    "ipa": "/looked at the tiny point of light/",
+    "meaning": "looked at the tiny point of light",
+    "example": "We practiced looked at the tiny point of light today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to help",
+    "ipa": "/came to help/",
+    "meaning": "came to help",
+    "example": "We practiced came to help today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "smiled at Luna",
+    "ipa": "/smiled at luna/",
+    "meaning": "smiled at Luna",
+    "example": "We practiced smiled at Luna today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Anh chị em",
+    "ipa": "/anh chị em/",
+    "meaning": "cụm từ vựng: anh chị em",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Gia đình",
+    "ipa": "/gia đình/",
+    "meaning": "cụm từ vựng: gia đình",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Mẹ",
+    "ipa": "/mẹ/",
+    "meaning": "cụm từ vựng: mẹ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "bố",
+    "ipa": "/bố/",
+    "meaning": "cụm từ vựng: bố",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "giúp",
+    "ipa": "/giúp/",
+    "meaning": "cụm từ vựng: giúp",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhà",
+    "ipa": "/nhà/",
+    "meaning": "cụm từ vựng: nhà",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "yêu thương",
+    "ipa": "/yêu thương/",
+    "meaning": "cụm từ vựng: yêu thương",
+    "example": "The students learned \\",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
@@ -35725,114 +35697,50 @@
     "type": "phrase"
   },
   {
-    "word": "walked to the same place",
-    "ipa": "/walked to the same place/",
-    "meaning": "walked to the same place",
-    "example": "We practiced walked to the same place today.",
+    "word": "went to the park",
+    "ipa": "/went tuː ðə pɑːk/",
+    "meaning": "đã đến công viên",
+    "example": "Leo went to the park.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
   {
-    "word": "looked at the old map",
-    "ipa": "/looked at the old map/",
-    "meaning": "looked at the old map",
-    "example": "We practiced looked at the old map today.",
+    "word": "was warm and bright",
+    "ipa": "/wəz wɔːm ənd braɪt/",
+    "meaning": "trời ấm và sáng",
+    "example": "The day was warm and bright.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
   {
-    "word": "came to live together",
-    "ipa": "/came to live together/",
-    "meaning": "came to live together",
-    "example": "We practiced came to live together today.",
+    "word": "ran very fast",
+    "ipa": "/ræn ˈveri fɑːst/",
+    "meaning": "chạy rất nhanh",
+    "example": "Leo ran very fast.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
   {
-    "word": "listened to tropical birds",
-    "ipa": "/listened to tropical birds/",
-    "meaning": "listened to tropical birds",
-    "example": "We practiced listened to tropical birds today.",
+    "word": "passed the baton",
+    "ipa": "/pɑːst ðə bəˈtɒn/",
+    "meaning": "truyền gậy tiếp sức",
+    "example": "He passed the baton.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
   {
-    "word": "looked at the slow tortoise",
-    "ipa": "/looked at the slow tortoise/",
-    "meaning": "looked at the slow tortoise",
-    "example": "We practiced looked at the slow tortoise today.",
+    "word": "ran across the grass",
+    "ipa": "/ræn əˈkrɒs ðə ɡrɑːs/",
+    "meaning": "chạy qua bãi cỏ",
+    "example": "Maya ran across the grass.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
   {
-    "word": "went to the train station",
-    "ipa": "/went to the train station/",
-    "meaning": "went to the train station",
-    "example": "We practiced went to the train station today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "flew to a tiny green island",
-    "ipa": "/flew to a tiny green island/",
-    "meaning": "flew to a tiny green island",
-    "example": "We practiced flew to a tiny green island today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to help them",
-    "ipa": "/came to help them/",
-    "meaning": "came to help them",
-    "example": "We practiced came to help them today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the bright fruit",
-    "ipa": "/looked at the bright fruit/",
-    "meaning": "looked at the bright fruit",
-    "example": "We practiced looked at the bright fruit today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at an old map",
-    "ipa": "/looked at an old map/",
-    "meaning": "looked at an old map",
-    "example": "We practiced looked at an old map today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "look at this",
-    "ipa": "/look at this/",
-    "meaning": "look at this",
-    "example": "We practiced look at this today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the tiny point of light",
-    "ipa": "/looked at the tiny point of light/",
-    "meaning": "looked at the tiny point of light",
-    "example": "We practiced looked at the tiny point of light today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to help",
-    "ipa": "/came to help/",
-    "meaning": "came to help",
-    "example": "We practiced came to help today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "smiled at Luna",
-    "ipa": "/smiled at luna/",
-    "meaning": "smiled at Luna",
-    "example": "We practiced smiled at Luna today.",
+    "word": "are good for us",
+    "ipa": "/ɑːr ɡʊd fɔːr ʌs/",
+    "meaning": "tốt cho chúng ta",
+    "example": "Sports are good for us.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
@@ -35889,6 +35797,118 @@
     "ipa": "/2,500 years ago/",
     "meaning": "2.500 năm trước",
     "example": "This is an example: 2,500 years ago.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to the sports stadium",
+    "ipa": "/went tuː ðə spɔːts ˈsteɪdiəm/",
+    "meaning": "đã đến sân vận động thể thao",
+    "example": "Leo went to the sports stadium.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sat down with his coach",
+    "ipa": "/sæt daʊn wɪð hɪz kəʊtʃ/",
+    "meaning": "ngồi xuống với huấn luyện viên",
+    "example": "He sat down with his coach.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "caught the baton",
+    "ipa": "/kɔːt ðə bəˈtɒn/",
+    "meaning": "bắt lấy gậy tiếp sức",
+    "example": "Max caught the baton.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "teamwork brought victory",
+    "ipa": "/ˈtiːmwɜːk brɔːt ˈvɪktəri/",
+    "meaning": "tinh thần đồng đội mang lại chiến thắng",
+    "example": "Their teamwork brought victory.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "smiled with pride",
+    "ipa": "/smaɪld wɪð praɪd/",
+    "meaning": "mỉm cười tự hào",
+    "example": "Leo smiled with pride.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "is great for our body",
+    "ipa": "/ɪz ɡreɪt fɔːr aʊə ˈbɒdi/",
+    "meaning": "thật tuyệt vời cho cơ thể",
+    "example": "Playing sports is great for our body.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "run in the park",
+    "ipa": "/rʌn ɪn ðə pɑːk/",
+    "meaning": "chạy trong công viên",
+    "example": "We run in the park every morning.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "bright sunlight",
+    "ipa": "/braɪt ˈsʌnlaɪt/",
+    "meaning": "ánh nắng sáng",
+    "example": "The bright sunlight warms the field.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "help us feel happy",
+    "ipa": "/help ʌs fiːl ˈhæpi/",
+    "meaning": "giúp chúng ta cảm thấy vui vẻ",
+    "example": "Fresh air helps us feel happy.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "important social skills",
+    "ipa": "/ɪmˈpɔːtnt ˈsəʊʃl skɪlz/",
+    "meaning": "kỹ năng xã hội quan trọng",
+    "example": "Sports teach important social skills.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "learn to cooperate",
+    "ipa": "/lɜːn tuː kəʊˈɒpəreɪt/",
+    "meaning": "học cách hợp tác",
+    "example": "Players learn to cooperate.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "listen to our teammates",
+    "ipa": "/ˈlɪsn tuː aʊə ˈtiːmmeɪts/",
+    "meaning": "lắng nghe đồng đội",
+    "example": "We listen to our teammates.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "30 minutes of exercise",
+    "ipa": "/ˈθɜːti ˈmɪnɪts əv ˈeksəsaɪz/",
+    "meaning": "30 phút tập thể dục",
+    "example": "We need 30 minutes of exercise daily.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "enjoy outdoor sports",
+    "ipa": "/ɪnˈdʒɔɪ ˈaʊtdɔː spɔːts/",
+    "meaning": "tận hưởng thể thao ngoài trời",
+    "example": "Kids enjoy outdoor sports.",
     "part_of_speech": "phrase",
     "type": "phrase"
   }
