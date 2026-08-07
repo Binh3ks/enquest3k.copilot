@@ -510,6 +510,29 @@ export const VoiceService = {
   async prefetch(text, station = 'read', audioPath = null, weekNumber = null, mode = 'advanced', voice = null) {
     const cleanedText = this.cleanTextForTTS(text);
 
+    // 🎓 GOOGLE CLOUD TTS DIRECT PREFETCH OVERRIDE (For Week 36 testing or when force_google_tts enabled)
+    const useGoogleDirect = (weekNumber === 36 || weekNumber === '36' || localStorage.getItem('force_google_tts') === 'true');
+    if (useGoogleDirect) {
+      const voiceConfig = await getVoiceConfigForWeek(weekNumber);
+      const voiceKey = STATION_VOICE_KEY[station];
+      const targetVoice = voice || voiceConfig?.[voiceKey] || (station === 'narration' || station === 'read' || station === 'explore' || station === 'shadowing' ? 'en-US-Journey-F' : 'en-US-Neural2-F');
+      
+      const cached = await TTSCache.get(cleanedText, station, targetVoice, audioPath);
+      if (cached) return;
+      
+      try {
+        console.log(`[Prefetch] 🎓 Google Cloud TTS Direct Prefetching (Week 36 / ${station}) [Voice: ${targetVoice}]`);
+        const blob = await this.useGoogleTTSDirect(cleanedText, targetVoice);
+        if (blob) {
+          await TTSCache.set(cleanedText, station, blob, targetVoice, audioPath);
+          console.log(`[Prefetch] 🎓 Google Cloud TTS Direct Cached: ${cleanedText.substring(0, 30)}... [Voice: ${targetVoice}]`);
+        }
+      } catch (err) {
+        console.warn(`[Prefetch] Google Cloud TTS Direct prefetch failed: ${err.message}`);
+      }
+      return;
+    }
+
     // If voice not provided, auto-detect: Aura-2 rotation first, then legacy voiceConfig
     if (!voice && weekNumber) {
       const voiceKey = STATION_VOICE_KEY[station];
@@ -881,7 +904,7 @@ export const VoiceService = {
    * (Used for Week 36 testing with en-US-Journey-F & en-US-Neural2-F)
    */
   async useGoogleTTSDirect(text, voice = 'en-US-Journey-F') {
-    const apiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY || import.meta.env.GOOGLE_TTS_API_KEY;
+    const apiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY || import.meta.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
     if (!apiKey) throw new Error('Missing VITE_GOOGLE_TTS_API_KEY');
 
     const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
