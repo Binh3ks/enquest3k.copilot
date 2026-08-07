@@ -58,14 +58,14 @@ export const loadWeekData = async (weekId, isEasy = false) => {
     return data;
   } catch (error) {
     console.error(`[LazyLoad] Failed to load Week ${weekId} (${isEasy ? 'Easy' : 'Adv'}):`, error);
-    // Auto-recover from stale Service Worker / browser module cache
-    if (typeof window !== 'undefined' && !window._swCleanedUp) {
-      window._swCleanedUp = true;
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then((regs) => {
-          for (let reg of regs) reg.unregister();
-          window.location.reload();
-        });
+    // Auto-recover from stale browser module / CDN chunk hash mismatch
+    if (typeof window !== 'undefined') {
+      const reloadKey = `chunk_reload_${weekId}_${isEasy ? 'easy' : 'adv'}`;
+      if (!sessionStorage.getItem(reloadKey)) {
+        sessionStorage.setItem(reloadKey, '1');
+        console.warn('[LazyLoad] Stale chunk detected. Reloading page to fetch latest build...');
+        window.location.reload();
+        return new Promise(() => {}); // pause execution while browser reloads
       }
     }
     return null;
