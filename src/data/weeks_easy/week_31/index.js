@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "My Forest Walk (The Senses)",
   weekTitle_vi: "Chuyến Đi Rừng Của Tôi (Các Giác Quan)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Irregular Verbs 3: see→saw, hear→heard, feel→felt, smell→smelt",
 
   global_vocab: vocab.vocab,

@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "My Happy Jar (Easy)",
   weekTitle_vi: "Lọ Hạnh Phúc của Tôi (Dễ)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "I like + V-ing",
   global_vocab: vocab.vocab,
   

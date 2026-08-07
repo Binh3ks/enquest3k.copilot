@@ -55,3 +55,39 @@ Cuối cùng, Nova sắp xếp hồ sơ vụ án và viết báo cáo cuối cù
     }
   ]
 };
+
+export const chunk_focus = [
+  "difficult case",
+  "old town",
+  "Hoi An",
+  "last night",
+  "yesterday morning",
+  "answered clearly",
+  "without hesitation",
+  "wrote every answer",
+  "in her notebook",
+  "last week",
+  "studied each clue carefully",
+  "wrote her final report",
+  "in Hoi An",
+  "Every clue",
+  "solved the case"
+];
+
+export const dictionary = {
+    'Every clue': { word: 'Every clue', pronunciation: '/every clue/', definition_vi: 'mỗi manh mối', definition_en: 'Multi-word phrase: every clue', example: 'The phrase \'every clue\' is commonly used in conversation.' },
+    'Hoi An': { word: 'Hoi An', pronunciation: '/hoi an/', definition_vi: 'Hội An', definition_en: 'meaning of hoi an', example: 'Nova was working on a difficult case in the old town of Hoi An, Vietnam.' },
+    'answered clearly': { word: 'answered clearly', pronunciation: '/answered clearly/', definition_vi: 'trả lời rõ ràng', definition_en: 'meaning of answered clearly', example: 'The suspect answered clearly and without hesitation.' },
+    'difficult case': { word: 'difficult case', pronunciation: '/difficult case/', definition_vi: 'trường hợp khó', definition_en: 'Multi-word phrase: difficult case', example: 'The phrase \'difficult case\' is commonly used in conversation.' },
+    'in Hoi An': { word: 'in Hoi An', pronunciation: '/in hoi an/', definition_vi: 'ở Hội An', definition_en: 'meaning of in hoi an', example: 'She handed the report to the local police team in Hoi An.' },
+    'in her notebook': { word: 'in her notebook', pronunciation: '/in her notebook/', definition_vi: 'trong sổ tay', definition_en: 'meaning of in her notebook', example: 'Nova wrote every answer as a new clue in her notebook.' },
+    'last night': { word: 'last night', pronunciation: '/last night/', definition_vi: 'tối qua', definition_en: 'the night before this morning', example: 'Last night I read a book before going to sleep.' },
+    'last week': { word: 'last week', pronunciation: '/last week/', definition_vi: 'tuần trước', definition_en: 'the week before this week', example: 'Last week our class went on a trip to the park.' },
+    'old town': { word: 'old town', pronunciation: '/old town/', definition_vi: 'thị trấn cổ', definition_en: 'Multi-word phrase: old town', example: 'The phrase \'old town\' is commonly used in conversation.' },
+    'solved the case': { word: 'solved the case', pronunciation: '/solved the case/', definition_vi: 'giải quyết vụ án', definition_en: 'meaning of solved the case', example: 'Detective Nova had solved the case once again.' },
+    'studied each clue carefully': { word: 'studied each clue carefully', pronunciation: '/studied each clue carefully/', definition_vi: 'nghiên cứu từng manh mối cẩn thận', definition_en: 'meaning of studied each clue carefully', example: 'The scientist studied each clue carefully before drawing her conclusion.' },
+    'without hesitation': { word: 'without hesitation', pronunciation: '/without hesitation/', definition_vi: 'không do dự', definition_en: 'meaning of without hesitation', example: 'The suspect answered clearly and without hesitation.' },
+    'wrote every answer': { word: 'wrote every answer', pronunciation: '/wrote every answer/', definition_vi: 'viết mọi câu trả lời', definition_en: 'meaning of wrote every answer', example: 'Nova wrote every answer as a new clue in her notebook.' },
+    'wrote her final report': { word: 'wrote her final report', pronunciation: '/wrote her final report/', definition_vi: 'viết báo cáo cuối cùng của cô ấy', definition_en: 'meaning of wrote her final report', example: 'At the end of the trip, she wrote her final report about everything she saw.' },
+    'yesterday morning': { word: 'yesterday morning', pronunciation: '/yesterday morning/', definition_vi: 'sáng hôm qua', definition_en: 'meaning of yesterday morning', example: '"Where were you yesterday morning?" she asked.' }
+};

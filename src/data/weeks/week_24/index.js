@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "Feelings in the Past",
   weekTitle_vi: "Cam Xuc Trong Qua Khu",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Was/Were + Adjectives: I was scared/tired/excited because...",
 
   global_vocab: vocab.vocab,

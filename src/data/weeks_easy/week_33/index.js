@@ -22,6 +22,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "The Mistake (Irregular Verbs 5)",
   weekTitle_vi: "Sai Lầm (Động Từ Bất Quy Tắc 5)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Irregular Verbs 5: hit-hit, fell-fell, broke-broke, hurt-hurt, bit-bit, began-began, lost-lost, forgot-forgot",
 
   global_vocab: vocab.vocab,

@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "Live from the School Festival",
   weekTitle_vi: "Tường Trực Từ Ngày Hội Trường",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Present Continuous: I am reporting / She is filming / They are watching.",
   global_vocab: vocab.vocab,
 

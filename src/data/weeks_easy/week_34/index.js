@@ -22,6 +22,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "Storytelling Practice 1 — The Ant and the Grasshopper",
   weekTitle_vi: "Luyện Kể Chuyện 1 — Kiến và Châu Chấu",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Relative Clauses WHO / WHICH / THAT",
 
   global_vocab: vocab.vocab,

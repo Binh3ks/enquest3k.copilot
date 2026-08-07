@@ -20,6 +20,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "Weekend Fun Spots (Places)",
   weekTitle_vi: "Các Địa Điểm Vui Chơi Cuối Tuần",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Preposition 'at' (I play at the park)",
   global_vocab: vocab.vocab,
 

@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "The Young Scholar",
   weekTitle_vi: "Học Sinh Trẻ",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Subject Pronouns & Verb to be",
   global_vocab: vocab.vocab,
   // ⚠️ MANDATORY: voiceConfig for unique voices per week

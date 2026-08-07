@@ -18,6 +18,8 @@ const weekData = {
   weekId: 16,
   weekTitle_en: "Sports Commentary",
   weekTitle_vi: "Bình luận thể thao",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Present Continuous (am/is/are + verb-ing)",
   isEasy: true,
   

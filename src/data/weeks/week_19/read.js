@@ -18,3 +18,51 @@ export default {
     }
   ]
 };
+
+export const chunk_focus = [
+  "Look at",
+  "cute baby",
+  "mom says",
+  "was round and",
+  "were very big",
+  "one year old",
+  "fast asleep",
+  "grandma says",
+  "kindergarten",
+  "years old",
+  "was young",
+  "was little",
+  "began to grow",
+  "grow bigger",
+  "every year",
+  "gets taller",
+  "special memories",
+  "help me",
+  "so much",
+  "in my heart",
+  "The past was different"
+];
+
+export const dictionary = {
+    'Look at': { word: 'Look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
+    'The past was different': { word: 'The past was different', pronunciation: '/the past was different/', definition_vi: 'Quá khứ khác rồi', definition_en: 'meaning of the past was different', example: 'The past was different.' },
+    'began to grow': { word: 'began to grow', pronunciation: '/began to grow/', definition_vi: 'bắt đầu mọc lên', definition_en: 'started to grow', example: 'The seeds began to grow after the rain.' },
+    'cute baby': { word: 'cute baby', pronunciation: '/cute baby/', definition_vi: 'em bé dễ thương', definition_en: 'Multi-word phrase: cute baby', example: 'The phrase \'cute baby\' is commonly used in conversation.' },
+    'every year': { word: 'every year', pronunciation: '/every year/', definition_vi: 'mỗi năm', definition_en: 'meaning of every year', example: 'This is an example: every year.' },
+    'fast asleep': { word: 'fast asleep', pronunciation: '/fast asleep/', definition_vi: 'ngủ say', definition_en: 'meaning of fast asleep', example: 'This is an example: fast asleep.' },
+    'gets taller': { word: 'gets taller', pronunciation: '/gets taller/', definition_vi: 'cao hơn', definition_en: 'meaning of gets taller', example: 'My body gets taller and stronger.' },
+    'grandma says': { word: 'grandma says', pronunciation: '/grandma says/', definition_vi: 'bà nói', definition_en: 'Multi-word phrase: grandma says', example: 'The phrase \'grandma says\' is commonly used in conversation.' },
+    'grow bigger': { word: 'grow bigger', pronunciation: '/grow bigger/', definition_vi: 'lớn hơn', definition_en: 'meaning of grow bigger', example: 'I grow bigger every year.' },
+    'help me': { word: 'help me', pronunciation: '/help me/', definition_vi: '(cụm từ: help me)', definition_en: 'Multi-word phrase: help me', example: 'Use of \'help me\' in natural context.' },
+    'in my heart': { word: 'in my heart', pronunciation: '/in my heart/', definition_vi: '(cụm từ: in my heart)', definition_en: 'Multi-word phrase: in my heart', example: 'Use of \'in my heart\' in natural context.' },
+    'kindergarten': { word: 'kindergarten', pronunciation: '/kindergarten/', definition_vi: 'mẫu giáo', definition_en: 'a school for young children ages 3-5', example: 'My little sister started kindergarten this week.' },
+    'mom says': { word: 'mom says', pronunciation: '/mom says/', definition_vi: 'mẹ nói', definition_en: 'Multi-word phrase: mom says', example: 'The phrase \'mom says\' is commonly used in conversation.' },
+    'one year old': { word: 'one year old', pronunciation: '/one year old/', definition_vi: 'một tuổi', definition_en: 'Multi-word phrase: one year old', example: 'The phrase \'one year old\' is commonly used in conversation.' },
+    'so much': { word: 'so much', pronunciation: '/so much/', definition_vi: '(cụm từ: so much)', definition_en: 'Multi-word phrase: so much', example: 'Use of \'so much\' in natural context.' },
+    'special memories': { word: 'special memories', pronunciation: '/special memories/', definition_vi: 'kỷ niệm đặc biệt', definition_en: 'meaning of special memories', example: 'These photos are special memories.' },
+    'was little': { word: 'was little', pronunciation: '/was little/', definition_vi: 'nhỏ bé', definition_en: 'meaning of was little', example: 'I was little!' },
+    'was round and': { word: 'was round and', pronunciation: '/was round and/', definition_vi: 'tròn và', definition_en: 'meaning of was round and', example: 'The word was round and is used in everyday English conversation.' },
+    'was young': { word: 'was young', pronunciation: '/was young/', definition_vi: 'còn trẻ', definition_en: 'meaning of was young', example: 'I was young.' },
+    'were very big': { word: 'were very big', pronunciation: '/were very big/', definition_vi: 'rất to', definition_en: 'meaning of were very big', example: 'When dinosaurs walked on Earth, some animals were very big indeed.' },
+    'years old': { word: 'years old', pronunciation: '/years old/', definition_vi: 'tuổi', definition_en: 'Multi-word phrase: years old', example: 'The phrase \'years old\' is commonly used in conversation.' }
+};

@@ -18,3 +18,33 @@ export default {
     hint_vi: "Gia đình tôi đặc biệt vì..."
   }
 };
+
+export const chunk_focus = [
+  "in the world",
+  "help each other",
+  "take care",
+  "Brothers and sisters",
+  "play together",
+  "family is like",
+  "work together",
+  "their home",
+  "live together",
+  "big house",
+  "important thing",
+  "What makes"
+];
+
+export const dictionary = {
+    'Brothers and sisters': { word: 'Brothers and sisters', pronunciation: '/brothers and sisters/', definition_vi: 'brothers and sisters', definition_en: 'meaning of brothers and sisters', example: 'This is an example: brothers and sisters.' },
+    'What makes': { word: 'What makes', pronunciation: '/what makes/', definition_vi: 'điều gì tạo nên', definition_en: 'Multi-word phrase: what makes', example: 'The phrase \'what makes\' is commonly used in conversation.' },
+    'big house': { word: 'big house', pronunciation: '/big house/', definition_vi: 'ngôi nhà lớn', definition_en: 'Multi-word phrase: big house', example: 'The phrase \'big house\' is commonly used in conversation.' },
+    'family is like': { word: 'family is like', pronunciation: '/family is like/', definition_vi: 'family is like', definition_en: 'meaning of family is like', example: 'This is an example: family is like.' },
+    'help each other': { word: 'help each other', pronunciation: '/help each other/', definition_vi: 'giúp đỡ lẫn nhau', definition_en: 'meaning of help each other', example: 'This is an example: help each other.' },
+    'important thing': { word: 'important thing', pronunciation: '/important thing/', definition_vi: 'điều quan trọng', definition_en: 'Multi-word phrase: important thing', example: 'The phrase \'important thing\' is commonly used in conversation.' },
+    'in the world': { word: 'in the world', pronunciation: '/in the world/', definition_vi: '(cụm từ: in the world)', definition_en: 'Multi-word phrase: in the world', example: 'Use of \'in the world\' in natural context.' },
+    'live together': { word: 'live together', pronunciation: '/live together/', definition_vi: 'sống cùng nhau', definition_en: 'meaning of live together', example: 'This is an example: live together.' },
+    'play together': { word: 'play together', pronunciation: '/play together/', definition_vi: 'chơi cùng nhau', definition_en: 'Multi-word phrase: play together', example: 'Use of \'play together\' in natural context.' },
+    'take care': { word: 'take care', pronunciation: '/take care/', definition_vi: 'chăm sóc', definition_en: 'Multi-word phrase: take care', example: 'The phrase \'take care\' is commonly used in conversation.' },
+    'their home': { word: 'their home', pronunciation: '/their home/', definition_vi: '(cụm từ: their home)', definition_en: 'Multi-word phrase: their home', example: 'Use of \'their home\' in natural context.' },
+    'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' }
+};

@@ -38,3 +38,49 @@ export default {
     hint_vi: "Phi công lái máy bay và chở hành khách. Công việc này quan trọng vì... Nông dân trồng lương thực. Không có nông dân..."
   }
 };
+
+export const chunk_focus = [
+  "many people",
+  "magic trip",
+  "The pilot",
+  "On the ground",
+  "every single day",
+  "grows food",
+  "for us",
+  "eat food",
+  "every day",
+  "because of",
+  "new things",
+  "answers questions",
+  "great teacher",
+  "change a student's life",
+  "great adventure",
+  "sick people",
+  "get better",
+  "the doctor",
+  "looks after",
+  "the nurse"
+];
+
+export const dictionary = {
+    'On the ground': { word: 'On the ground', pronunciation: '/on the ground/', definition_vi: '(cụm từ: on the ground)', definition_en: 'Multi-word phrase: on the ground', example: 'Use of \'on the ground\' in natural context.' },
+    'The pilot': { word: 'The pilot', pronunciation: '/the pilot/', definition_vi: 'phi công', definition_en: 'meaning of the pilot', example: 'The pilot flew the airplane safely through the cloudy weather to the destination.' },
+    'answers questions': { word: 'answers questions', pronunciation: '/answers questions/', definition_vi: 'trả lời câu hỏi', definition_en: 'meaning of answers questions', example: 'This is an example: answers questions.' },
+    'because of': { word: 'because of', pronunciation: '/because of/', definition_vi: 'bởi vì', definition_en: 'meaning of because of', example: 'This is an example: because of.' },
+    'change a student\'s life': { word: 'change a student\'s life', pronunciation: '/change a student\'s life/', definition_vi: 'change a student\'s life', definition_en: 'meaning of change a student\'s life', example: 'This is an example: change a student\'s life.' },
+    'eat food': { word: 'eat food', pronunciation: '/eat food/', definition_vi: '(cụm từ: eat food)', definition_en: 'Multi-word phrase: eat food', example: 'Use of \'eat food\' in natural context.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'every single day': { word: 'every single day', pronunciation: '/every single day/', definition_vi: 'từng ngày một', definition_en: 'meaning of every single day', example: 'This is an example: every single day.' },
+    'for us': { word: 'for us', pronunciation: '/for us/', definition_vi: 'cho chúng tôi', definition_en: 'meaning of for us', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'get better': { word: 'get better', pronunciation: '/get better/', definition_vi: 'khá hơn', definition_en: 'meaning of get better', example: 'This is an example: get better.' },
+    'great adventure': { word: 'great adventure', pronunciation: '/great adventure/', definition_vi: 'cuộc phiêu lưu tuyệt vời', definition_en: 'meaning of great adventure', example: 'The journey to the hidden island was a great adventure for the explorers.' },
+    'great teacher': { word: 'great teacher', pronunciation: '/great teacher/', definition_vi: 'giáo viên tuyệt vời', definition_en: 'Multi-word phrase: great teacher', example: 'The phrase \'great teacher\' is commonly used in conversation.' },
+    'grows food': { word: 'grows food', pronunciation: '/grows food/', definition_vi: 'grows food', definition_en: 'meaning of grows food', example: 'This is an example: grows food.' },
+    'looks after': { word: 'looks after', pronunciation: '/looks after/', definition_vi: 'chăm sóc', definition_en: 'takes care of someone or something', example: 'She looks after her little brother at home.' },
+    'magic trip': { word: 'magic trip', pronunciation: '/magic trip/', definition_vi: 'chuyến đi kỳ diệu', definition_en: 'meaning of magic trip', example: 'The magic trip took us to a beautiful island surrounded by blue sea.' },
+    'many people': { word: 'many people', pronunciation: '/many people/', definition_vi: 'nhiều người', definition_en: 'Multi-word phrase: many people', example: 'The phrase \'many people\' is commonly used in conversation.' },
+    'new things': { word: 'new things', pronunciation: '/new things/', definition_vi: 'những thứ mới', definition_en: 'Multi-word phrase: new things', example: 'The phrase \'new things\' is commonly used in conversation.' },
+    'sick people': { word: 'sick people', pronunciation: '/sick people/', definition_vi: 'người ốm', definition_en: 'Multi-word phrase: sick people', example: 'The phrase \'sick people\' is commonly used in conversation.' },
+    'the doctor': { word: 'the doctor', pronunciation: '/the doctor/', definition_vi: 'bác sĩ', definition_en: 'meaning of the doctor', example: 'The doctor checked the patient carefully and gave her some medicine.' },
+    'the nurse': { word: 'the nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' }
+};

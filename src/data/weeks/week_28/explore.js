@@ -38,3 +38,43 @@ export default {
     hint_vi: "Ô tô được dùng để... Tôi sẽ chọn vì... Xe đạp tốt để... vì..."
   }
 };
+
+export const chunk_focus = [
+  "There are",
+  "one place",
+  "every day",
+  "at once",
+  "popular vehicle",
+  "every morning",
+  "longer journeys",
+  "carry hundreds of passengers",
+  "high-speed trains",
+  "kilometres per hour",
+  "without your own vehicle",
+  "perfect choice",
+  "Slow and steady wins the race",
+  "just like",
+  "carry thousands of passengers",
+  "tonnes of goods",
+  "Just like"
+];
+
+export const dictionary = {
+    'Just like': { word: 'Just like', pronunciation: '/just like/', definition_vi: 'giống như', definition_en: 'in the same way as', example: 'A bicycle is slow and steady, just like the tortoise.' },
+    'Slow and steady wins the race': { word: 'Slow and steady wins the race', pronunciation: '/slow and steady wins the race/', definition_vi: 'chậm và chắc chắn thì thắng cuộc đua', definition_en: 'working carefully and patiently leads to success; a proverb', example: 'Slow and steady wins the race.' },
+    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'at once': { word: 'at once', pronunciation: '/at once/', definition_vi: 'ngay lập tức', definition_en: 'meaning of at once', example: 'This is an example: at once.' },
+    'carry hundreds of passengers': { word: 'carry hundreds of passengers', pronunciation: '/carry hundreds of passengers/', definition_vi: 'chở hàng trăm hành khách', definition_en: 'transport a few hundred people', example: 'A train can carry hundreds of passengers.' },
+    'carry thousands of passengers': { word: 'carry thousands of passengers', pronunciation: '/carry thousands of passengers/', definition_vi: 'chở hàng nghìn hành khách', definition_en: 'transport a few thousand people', example: 'A big ship can carry thousands of passengers.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'every morning': { word: 'every morning', pronunciation: '/every morning/', definition_vi: 'mỗi sáng', definition_en: 'each morning', example: 'He walks to school every morning.' },
+    'high-speed trains': { word: 'high-speed trains', pronunciation: '/high-speed trains/', definition_vi: 'tàu cao tốc', definition_en: 'meaning of high-speed trains', example: 'This is an example: high-speed trains.' },
+    'just like': { word: 'just like', pronunciation: '/just like/', definition_vi: 'giống như', definition_en: 'in the same way as', example: 'A bicycle is slow and steady, just like the tortoise.' },
+    'kilometres per hour': { word: 'kilometres per hour', pronunciation: '/kilometres per hour/', definition_vi: 'kilômét mỗi giờ', definition_en: 'distance measured in kilometres covered in one hour', example: 'Some trains travel at over 300 kilometres per hour.' },
+    'longer journeys': { word: 'longer journeys', pronunciation: '/longer journeys/', definition_vi: 'longer journeys', definition_en: 'meaning of longer journeys', example: 'This is an example: longer journeys.' },
+    'one place': { word: 'one place', pronunciation: '/one place/', definition_vi: '(cụm từ: one place)', definition_en: 'Multi-word phrase: one place', example: 'Use of \'one place\' in natural context.' },
+    'perfect choice': { word: 'perfect choice', pronunciation: '/perfect choice/', definition_vi: 'lựa chọn hoàn hảo', definition_en: 'meaning of perfect choice', example: 'This is an example: perfect choice.' },
+    'popular vehicle': { word: 'popular vehicle', pronunciation: '/popular vehicle/', definition_vi: 'phương tiện phổ biến', definition_en: 'meaning of popular vehicle', example: 'This is an example: popular vehicle.' },
+    'tonnes of goods': { word: 'tonnes of goods', pronunciation: '/tonnes of goods/', definition_vi: 'hàng tấn hàng hóa', definition_en: 'meaning of tonnes of goods', example: 'This is an example: tonnes of goods.' },
+    'without your own vehicle': { word: 'without your own vehicle', pronunciation: '/without your own vehicle/', definition_vi: 'không có phương tiện của riêng bạn', definition_en: 'without a personal vehicle', example: 'If you need to travel without your own vehicle, you can take a taxi.' }
+};

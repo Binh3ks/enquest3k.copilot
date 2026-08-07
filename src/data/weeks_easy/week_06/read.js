@@ -18,3 +18,39 @@ export default {
     hint_vi: "Nói về nơi ẩn nấp yêu thích của bạn..."
   }
 };
+
+export const chunk_focus = [
+  "play a game",
+  "look for",
+  "toy car",
+  "look on",
+  "look in",
+  "My friend",
+  "looks under",
+  "under the desk",
+  "next to",
+  "hide and seek",
+  "hide my ball",
+  "in the box",
+  "hides his toy",
+  "seek them",
+  "so much"
+];
+
+export const dictionary = {
+    'My friend': { word: 'My friend', pronunciation: '/my friend/', definition_vi: '(cụm từ: my friend)', definition_en: 'Multi-word phrase: my friend', example: 'Use of \'my friend\' in natural context.' },
+    'hide and seek': { word: 'hide and seek', pronunciation: '/hide and seek/', definition_vi: 'trốn tìm', definition_en: 'meaning of hide and seek', example: 'She hide and seek with her friends after school.' },
+    'hide my ball': { word: 'hide my ball', pronunciation: '/hide my ball/', definition_vi: 'giấu bóng', definition_en: 'meaning of hide my ball', example: 'I hide my ball in the box.' },
+    'hides his toy': { word: 'hides his toy', pronunciation: '/hides his toy/', definition_vi: 'giấu đồ chơi', definition_en: 'meaning of hides his toy', example: 'My friend hides his toy next to the window.' },
+    'in the box': { word: 'in the box', pronunciation: '/in the box/', definition_vi: 'trong hộp', definition_en: 'meaning of in the box', example: 'I look in the box.' },
+    'look for': { word: 'look for', pronunciation: '/look for/', definition_vi: 'tìm kiếm', definition_en: 'meaning of look for', example: 'My friends and I look for hidden treasure.' },
+    'look in': { word: 'look in', pronunciation: '/look in/', definition_vi: 'nhìn vào', definition_en: 'meaning of look in', example: 'In the kitchen, I open the cabinet and look in the fridge.' },
+    'look on': { word: 'look on', pronunciation: '/look on/', definition_vi: 'nhìn, xem', definition_en: 'meaning of look on', example: 'I look on the floor.' },
+    'looks under': { word: 'looks under', pronunciation: '/looks under/', definition_vi: 'nhìn dưới', definition_en: 'meaning of looks under', example: 'He looks under the desk.' },
+    'next to': { word: 'next to', pronunciation: '/next to/', definition_vi: 'bên cạnh', definition_en: 'meaning of next to', example: 'There is a ruler next to the pen.' },
+    'play a game': { word: 'play a game', pronunciation: '/play a game/', definition_vi: '(cụm từ: play a game)', definition_en: 'Multi-word phrase: play a game', example: 'Use of \'play a game\' in natural context.' },
+    'seek them': { word: 'seek them', pronunciation: '/seek them/', definition_vi: 'tìm chúng', definition_en: 'meaning of seek them', example: 'She seek them with her friends after school.' },
+    'so much': { word: 'so much', pronunciation: '/so much/', definition_vi: '(cụm từ: so much)', definition_en: 'Multi-word phrase: so much', example: 'Use of \'so much\' in natural context.' },
+    'toy car': { word: 'toy car', pronunciation: '/toy car/', definition_vi: 'xe đồ chơi', definition_en: 'Multi-word phrase: toy car', example: 'The phrase \'toy car\' is commonly used in conversation.' },
+    'under the desk': { word: 'under the desk', pronunciation: '/under the desk/', definition_vi: 'dưới bàn', definition_en: 'meaning of under the desk', example: 'The toy car is under the desk!' }
+};

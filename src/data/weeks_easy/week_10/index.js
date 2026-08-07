@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "The Farm Adventure (Easy)",
   weekTitle_vi: "Chuyến phiêu lưu nông trại (Dễ)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Contrast with 'but'",
   global_vocab: vocab.vocab,
   

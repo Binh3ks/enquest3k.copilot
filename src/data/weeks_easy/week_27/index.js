@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "Maya's Growing Plant",
   weekTitle_vi: "Cay Trong Cua Maya",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Present Simple for Facts: a seed needs, the root absorbs, a leaf uses sunlight (sequence: First, Next, After that, Finally)",
 
   global_vocab: vocab.vocab,

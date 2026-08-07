@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "Off We Go! (Irregular Verbs 1)",
   weekTitle_vi: "Xuất Phát Thôi! (Động Từ Bất Quy Tắc 1)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Irregular Verbs 1: go→went, run→ran, come→came, fly→flew",
   global_vocab: vocab.vocab,
   voiceConfig: {

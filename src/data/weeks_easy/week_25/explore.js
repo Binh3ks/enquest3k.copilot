@@ -38,3 +38,31 @@ export default {
     hint_vi: "Dau tien toi... Tiep theo toi... Sau do toi... Cuoi cung toi..."
   }
 };
+
+export const chunk_focus = [
+  "follow steps",
+  "just like",
+  "make a sandwich",
+  "in order",
+  "think for themselves",
+  "gets confused",
+  "in the right order",
+  "every day",
+  "brush your teeth",
+  "put on",
+  "rinse your mouth"
+];
+
+export const dictionary = {
+    'brush your teeth': { word: 'brush your teeth', pronunciation: '/brush your teeth/', definition_vi: 'chải răng', definition_en: 'meaning of brush your teeth', example: 'Remember to brush your teeth twice a day, morning and night.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'follow steps': { word: 'follow steps', pronunciation: '/follow steps/', definition_vi: 'làm theo các bước', definition_en: 'meaning of follow steps', example: 'This is an example: follow steps.' },
+    'gets confused': { word: 'gets confused', pronunciation: '/gets confused/', definition_vi: 'gets confused', definition_en: 'meaning of gets confused', example: 'This is an example: gets confused.' },
+    'in order': { word: 'in order', pronunciation: '/in order/', definition_vi: 'in order', definition_en: 'meaning of in order', example: 'This is an example: in order.' },
+    'in the right order': { word: 'in the right order', pronunciation: '/in the right order/', definition_vi: 'in the right order', definition_en: 'meaning of in the right order', example: 'This is an example: in the right order.' },
+    'just like': { word: 'just like', pronunciation: '/just like/', definition_vi: 'giống như', definition_en: 'in the same way as', example: 'A bicycle is slow and steady, just like the tortoise.' },
+    'make a sandwich': { word: 'make a sandwich', pronunciation: '/make a sandwich/', definition_vi: 'làm bánh sandwich', definition_en: 'meaning of make a sandwich', example: 'This is an example: make a sandwich.' },
+    'put on': { word: 'put on', pronunciation: '/put on/', definition_vi: 'mặc', definition_en: 'meaning of put on', example: 'This is an example: put on.' },
+    'rinse your mouth': { word: 'rinse your mouth', pronunciation: '/rinse your mouth/', definition_vi: 'súc miệng', definition_en: 'meaning of rinse your mouth', example: 'After brushing, rinse your mouth with clean water.' },
+    'think for themselves': { word: 'think for themselves', pronunciation: '/think for themselves/', definition_vi: 'think for themselves', definition_en: 'meaning of think for themselves', example: 'This is an example: think for themselves.' }
+};

@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "My World (Easy)",
   weekTitle_vi: "Thế Giới Của Tôi (Dễ)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "I can, My name is, I have",
   global_vocab: vocab.vocab,
   

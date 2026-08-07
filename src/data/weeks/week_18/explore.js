@@ -45,3 +45,33 @@ Nhờ công nghệ hiện đại, một phóng viên có thể mô tả một kh
     }
   ]
 };
+
+export const chunk_focus = [
+  "tv screen",
+  "in the world",
+  "in front of",
+  "live broadcast",
+  "so far",
+  "sends a signal",
+  "TV station",
+  "at home",
+  "Thanks to",
+  "modern technology",
+  "at the same moment",
+  "around the world"
+];
+
+export const dictionary = {
+    'TV station': { word: 'TV station', pronunciation: '/tv station/', definition_vi: 'tv station', definition_en: 'meaning of tv station', example: 'This is an example: tv station.' },
+    'Thanks to': { word: 'Thanks to', pronunciation: '/thanks to/', definition_vi: 'nhờ vào', definition_en: 'meaning of thanks to', example: 'This is an example: thanks to.' },
+    'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
+    'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'at the same moment': { word: 'at the same moment', pronunciation: '/at the same moment/', definition_vi: 'cùng một lúc', definition_en: 'meaning of at the same moment', example: 'This is an example: at the same moment.' },
+    'in front of': { word: 'in front of', pronunciation: '/in front of/', definition_vi: 'phía trước', definition_en: 'meaning of in front of', example: 'This is an example: in front of.' },
+    'in the world': { word: 'in the world', pronunciation: '/in the world/', definition_vi: '(cụm từ: in the world)', definition_en: 'Multi-word phrase: in the world', example: 'Use of \'in the world\' in natural context.' },
+    'live broadcast': { word: 'live broadcast', pronunciation: '/live broadcast/', definition_vi: 'phát sóng trực tiếp', definition_en: 'meaning of live broadcast', example: 'This is an example: live broadcast.' },
+    'modern technology': { word: 'modern technology', pronunciation: '/modern technology/', definition_vi: 'công nghệ hiện đại', definition_en: 'meaning of modern technology', example: 'This is an example: modern technology.' },
+    'sends a signal': { word: 'sends a signal', pronunciation: '/sends a signal/', definition_vi: 'gửi tín hiệu', definition_en: 'transmits a signal', example: 'The camera sends a signal to the satellite.' },
+    'so far': { word: 'so far', pronunciation: '/so far/', definition_vi: '(cụm từ: so far)', definition_en: 'Multi-word phrase: so far', example: 'Use of \'so far\' in natural context.' },
+    'tv screen': { word: 'tv screen', pronunciation: '/tv screen/', definition_vi: 'màn hình TV', definition_en: 'Multi-word phrase: tv screen', example: 'The phrase \'tv screen\' is commonly used in conversation.' }
+};

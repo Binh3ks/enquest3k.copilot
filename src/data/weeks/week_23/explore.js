@@ -103,3 +103,41 @@ export default {
     hint_vi: "Hom qua toi da ve... Sau do toi gap... Toi cung cat va dan... Cuoi cung toi tao ra..."
   }
 };
+
+export const chunk_focus = [
+  "The answer lies in",
+  "chemical substance",
+  "red pigment",
+  "ground up",
+  "cave walls",
+  "years old",
+  "pigment colors",
+  "their work",
+  "matters greatly",
+  "smooth surface",
+  "rough texture",
+  "exactly the same",
+  "beautiful picture",
+  "Next time",
+  "pick up",
+  "year old"
+];
+
+export const dictionary = {
+    'Next time': { word: 'Next time', pronunciation: '/next time/', definition_vi: 'Lần sau', definition_en: 'meaning of next time', example: 'Next time, I will hide the treasure next to the door!' },
+    'The answer lies in': { word: 'The answer lies in', pronunciation: '/the answer lies in/', definition_vi: 'câu trả lời nằm ở', definition_en: 'meaning of the answer lies in', example: 'This is an example: the answer lies in.' },
+    'beautiful picture': { word: 'beautiful picture', pronunciation: '/beautiful picture/', definition_vi: 'bức tranh đẹp', definition_en: 'Multi-word phrase: beautiful picture', example: 'The phrase \'beautiful picture\' is commonly used in conversation.' },
+    'cave walls': { word: 'cave walls', pronunciation: '/cave walls/', definition_vi: 'vách hang', definition_en: 'meaning of cave walls', example: 'This is an example: cave walls.' },
+    'chemical substance': { word: 'chemical substance', pronunciation: '/chemical substance/', definition_vi: 'chất hóa học', definition_en: 'Multi-word phrase: chemical substance', example: 'The phrase \'chemical substance\' is commonly used in conversation.' },
+    'exactly the same': { word: 'exactly the same', pronunciation: '/exactly the same/', definition_vi: 'exactly the same', definition_en: 'meaning of exactly the same', example: 'This is an example: exactly the same.' },
+    'ground up': { word: 'ground up', pronunciation: '/ground up/', definition_vi: 'ground up', definition_en: 'meaning of ground up', example: 'This is an example: ground up.' },
+    'matters greatly': { word: 'matters greatly', pronunciation: '/matters greatly/', definition_vi: 'matters greatly', definition_en: 'meaning of matters greatly', example: 'This is an example: matters greatly.' },
+    'pick up': { word: 'pick up', pronunciation: '/pick up/', definition_vi: 'nhặt lên', definition_en: 'meaning of pick up', example: 'This is an example: pick up.' },
+    'pigment colors': { word: 'pigment colors', pronunciation: '/pigment colors/', definition_vi: 'màu sắc pigment', definition_en: 'Multi-word phrase: pigment colors', example: 'The phrase \'pigment colors\' is commonly used in conversation.' },
+    'red pigment': { word: 'red pigment', pronunciation: '/red pigment/', definition_vi: 'pigment đỏ', definition_en: 'Multi-word phrase: red pigment', example: 'The phrase \'red pigment\' is commonly used in conversation.' },
+    'rough texture': { word: 'rough texture', pronunciation: '/rough texture/', definition_vi: 'kết cấu thô ráp', definition_en: 'Multi-word phrase: rough texture', example: 'The phrase \'rough texture\' is commonly used in conversation.' },
+    'smooth surface': { word: 'smooth surface', pronunciation: '/smooth surface/', definition_vi: 'bề mặt mịn', definition_en: 'Multi-word phrase: smooth surface', example: 'The phrase \'smooth surface\' is commonly used in conversation.' },
+    'their work': { word: 'their work', pronunciation: '/their work/', definition_vi: '(cụm từ: their work)', definition_en: 'Multi-word phrase: their work', example: 'Use of \'their work\' in natural context.' },
+    'year old': { word: 'year old', pronunciation: '/year old/', definition_vi: 'tuổi', definition_en: 'Multi-word phrase: year old', example: 'The phrase \'year old\' is commonly used in conversation.' },
+    'years old': { word: 'years old', pronunciation: '/years old/', definition_vi: 'tuổi', definition_en: 'Multi-word phrase: years old', example: 'The phrase \'years old\' is commonly used in conversation.' }
+};

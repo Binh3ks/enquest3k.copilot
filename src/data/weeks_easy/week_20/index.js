@@ -18,6 +18,8 @@ const weekData = {
   weekId: 20,
   weekTitle_en: "The Old Town Mystery",
   weekTitle_vi: "Bí Ẩn Thị Trấn Cũ",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "There was / There were (Past Existence)",
   isEasy: true,
 

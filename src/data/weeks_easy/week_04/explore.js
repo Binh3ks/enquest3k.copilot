@@ -36,3 +36,13 @@ export default {
     hint_vi: "Hãy nghĩ về cảm giác của bạn..."
   }
 };
+
+export const chunk_focus = [
+  "feel happy",
+  "every day"
+];
+
+export const dictionary = {
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'feel happy': { word: 'feel happy', pronunciation: '/feel happy/', definition_vi: 'cảm thấy hạnh phúc', definition_en: 'meaning of feel happy', example: 'When I am reading a good book, I feel calm and feel happy.' }
+};

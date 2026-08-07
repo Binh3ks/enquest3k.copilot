@@ -39,3 +39,37 @@ export default {
     hint_vi: "Tôi cho thấy thế giới của mình bằng cách..."
   }
 };
+
+export const chunk_focus = [
+  "around the world",
+  "draw pictures",
+  "their family",
+  "tell stories",
+  "stand up",
+  "Every child",
+  "in different ways",
+  "Some children",
+  "sing songs",
+  "their parents",
+  "at home",
+  "their work",
+  "feel proud",
+  "At school"
+];
+
+export const dictionary = {
+    'At school': { word: 'At school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'Every child': { word: 'Every child', pronunciation: '/every child/', definition_vi: 'mỗi đứa trẻ', definition_en: 'Multi-word phrase: every child', example: 'The phrase \'every child\' is commonly used in conversation.' },
+    'Some children': { word: 'Some children', pronunciation: '/some children/', definition_vi: 'vài trẻ em', definition_en: 'Multi-word phrase: some children', example: 'The phrase \'some children\' is commonly used in conversation.' },
+    'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
+    'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'draw pictures': { word: 'draw pictures', pronunciation: '/draw pictures/', definition_vi: 'vẽ tranh', definition_en: 'meaning of draw pictures', example: 'I draw pictures of animals and flowers.' },
+    'feel proud': { word: 'feel proud', pronunciation: '/feel proud/', definition_vi: 'cảm thấy tự hào', definition_en: 'meaning of feel proud', example: 'This is an example: feel proud.' },
+    'in different ways': { word: 'in different ways', pronunciation: '/in different ways/', definition_vi: 'theo những cách khác nhau', definition_en: 'meaning of in different ways', example: 'This is an example: in different ways.' },
+    'sing songs': { word: 'sing songs', pronunciation: '/sing songs/', definition_vi: 'hát bài hát', definition_en: 'meaning of sing songs', example: 'At assembly, all the students sing songs together every Monday morning.' },
+    'stand up': { word: 'stand up', pronunciation: '/stand up/', definition_vi: 'đứng dậy', definition_en: 'meaning of stand up', example: 'This is an example: stand up.' },
+    'tell stories': { word: 'tell stories', pronunciation: '/tell stories/', definition_vi: 'kể chuyện', definition_en: 'meaning of tell stories', example: 'This is an example: tell stories.' },
+    'their family': { word: 'their family', pronunciation: '/their family/', definition_vi: '(cụm từ: their family)', definition_en: 'Multi-word phrase: their family', example: 'Use of \'their family\' in natural context.' },
+    'their parents': { word: 'their parents', pronunciation: '/their parents/', definition_vi: '(cụm từ: their parents)', definition_en: 'Multi-word phrase: their parents', example: 'Use of \'their parents\' in natural context.' },
+    'their work': { word: 'their work', pronunciation: '/their work/', definition_vi: '(cụm từ: their work)', definition_en: 'Multi-word phrase: their work', example: 'Use of \'their work\' in natural context.' }
+};

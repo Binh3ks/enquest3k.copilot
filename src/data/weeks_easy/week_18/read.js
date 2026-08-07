@@ -12,3 +12,45 @@ export default {
     { id: 5, question_en: "Where does he stand?", answer: ["living room", "in the living room"], clue_statement: "He stands in the living room.", hint_en: "A place...", hint_vi: "Một nơi..." }
   ]
 };
+
+export const chunk_focus = [
+  "toy microphone",
+  "toy camera",
+  "in the living room",
+  "live news from",
+  "describe the scene",
+  "My mom",
+  "making breakfast",
+  "little brother",
+  "playing with his toy",
+  "sleeping on the sofa",
+  "holds out the microphone",
+  "looks up",
+  "clap loudly",
+  "his audience",
+  "bows happily",
+  "It is so exciting",
+  "what is happening",
+  "at home"
+];
+
+export const dictionary = {
+    'It is so exciting': { word: 'It is so exciting', pronunciation: '/it is so exciting/', definition_vi: 'Thật là hào hứng', definition_en: 'meaning of it is so exciting', example: 'The fireworks are going to start! It is so exciting to watch them in the sky!' },
+    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
+    'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'bows happily': { word: 'bows happily', pronunciation: '/bows happily/', definition_vi: 'cúi chào vui vẻ', definition_en: 'meaning of bows happily', example: 'Every time the music plays, the dancing doll bows happily to the crowd.' },
+    'clap loudly': { word: 'clap loudly', pronunciation: '/clap loudly/', definition_vi: 'vỗ tay to', definition_en: 'meaning of clap loudly', example: 'When the show is over, we should clap loudly to show how much we enjoyed it.' },
+    'describe the scene': { word: 'describe the scene', pronunciation: '/describe the scene/', definition_vi: 'mô tả cảnh', definition_en: 'meaning of describe the scene', example: 'Can you describe the scene you can see in this picture right now?' },
+    'his audience': { word: 'his audience', pronunciation: '/his audience/', definition_vi: 'khán giả của anh ấy', definition_en: 'meaning of his audience', example: 'The magician bowed to his audience after every clever trick he performed.' },
+    'holds out the microphone': { word: 'holds out the microphone', pronunciation: '/holds out the microphone/', definition_vi: 'holds out the microphone', definition_en: 'meaning of holds out the microphone', example: 'This is an example: holds out the microphone.' },
+    'in the living room': { word: 'in the living room', pronunciation: '/in the living room/', definition_vi: 'trong phòng khách', definition_en: 'meaning of in the living room', example: 'We watch TV in the living room.' },
+    'little brother': { word: 'little brother', pronunciation: '/little brother/', definition_vi: 'em trai', definition_en: 'Multi-word phrase: little brother', example: 'The phrase \'little brother\' is commonly used in conversation.' },
+    'live news from': { word: 'live news from', pronunciation: '/live news from/', definition_vi: 'tin tức trực tiếp từ', definition_en: 'meaning of live news from', example: 'Good morning! This is live news from the town square where the festival has begun!' },
+    'looks up': { word: 'looks up', pronunciation: '/looks up/', definition_vi: 'looks up', definition_en: 'meaning of looks up', example: 'This is an example: looks up.' },
+    'making breakfast': { word: 'making breakfast', pronunciation: '/making breakfast/', definition_vi: 'đang làm bữa sáng', definition_en: 'meaning of making breakfast', example: 'He says: "My mom is making breakfast.' },
+    'playing with his toy': { word: 'playing with his toy', pronunciation: '/playing with his toy/', definition_vi: 'đang chơi với đồ chơi', definition_en: 'meaning of playing with his toy', example: 'My little brother is playing with his toy.' },
+    'sleeping on the sofa': { word: 'sleeping on the sofa', pronunciation: '/sleeping on the sofa/', definition_vi: 'đang ngủ trên ghế sofa', definition_en: 'meaning of sleeping on the sofa', example: 'My cat is sleeping on the sofa.' },
+    'toy camera': { word: 'toy camera', pronunciation: '/toy camera/', definition_vi: 'máy quay đồ chơi', definition_en: 'Multi-word phrase: toy camera', example: 'The phrase \'toy camera\' is commonly used in conversation.' },
+    'toy microphone': { word: 'toy microphone', pronunciation: '/toy microphone/', definition_vi: 'micrô đồ chơi', definition_en: 'Multi-word phrase: toy microphone', example: 'The phrase \'toy microphone\' is commonly used in conversation.' },
+    'what is happening': { word: 'what is happening', pronunciation: '/what is happening/', definition_vi: 'đang xảy ra gì', definition_en: 'meaning of what is happening', example: 'This is what is happening right now in Room 5!' }
+};

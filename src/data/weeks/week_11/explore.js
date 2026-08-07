@@ -50,3 +50,57 @@ export default {
     hint_vi: "Nói cho tôi về nơi yêu thích và bạn làm gì ở đó..."
   }
 };
+
+export const chunk_focus = [
+  "around the world",
+  "on weekends",
+  "go to",
+  "favorite place",
+  "play at the park",
+  "have fun",
+  "green grass",
+  "fun place",
+  "laugh together",
+  "quiet place",
+  "Many people",
+  "at the library",
+  "about animals",
+  "help us",
+  "learn new things",
+  "On weekends",
+  "buy food",
+  "many things",
+  "delicious food",
+  "At the zoo",
+  "all over the world",
+  "go to school",
+  "to learn",
+  "play with friends"
+];
+
+export const dictionary = {
+    'At the zoo': { word: 'At the zoo', pronunciation: '/at the zoo/', definition_vi: 'ở sở thú', definition_en: 'meaning of at the zoo', example: 'We saw many animals at the zoo on Sunday.' },
+    'Many people': { word: 'Many people', pronunciation: '/many people/', definition_vi: 'nhiều người', definition_en: 'Multi-word phrase: many people', example: 'The phrase \'many people\' is commonly used in conversation.' },
+    'On weekends': { word: 'On weekends', pronunciation: '/on weekends/', definition_vi: 'vào cuối tuần', definition_en: 'meaning of on weekends', example: 'This is an example: on weekends.' },
+    'about animals': { word: 'about animals', pronunciation: '/about animals/', definition_vi: 'về động vật', definition_en: 'Multi-word phrase: about animals', example: 'The phrase \'about animals\' is commonly used in conversation.' },
+    'all over the world': { word: 'all over the world', pronunciation: '/all over the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of all over the world', example: 'This is an example: all over the world.' },
+    'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
+    'at the library': { word: 'at the library', pronunciation: '/at the library/', definition_vi: 'ở thư viện', definition_en: 'meaning of at the library', example: 'I read a book at the library.' },
+    'buy food': { word: 'buy food', pronunciation: '/buy food/', definition_vi: 'mua đồ ăn', definition_en: 'meaning of buy food', example: 'We buy food at the supermarket.' },
+    'delicious food': { word: 'delicious food', pronunciation: '/delicious food/', definition_vi: 'đồ ăn ngon', definition_en: 'meaning of delicious food', example: 'This is an example: delicious food.' },
+    'favorite place': { word: 'favorite place', pronunciation: '/favorite place/', definition_vi: 'favorite place', definition_en: 'meaning of favorite place', example: 'This is an example: favorite place.' },
+    'fun place': { word: 'fun place', pronunciation: '/fun place/', definition_vi: 'nơi vui vẻ', definition_en: 'meaning of fun place', example: 'This is an example: fun place.' },
+    'go to': { word: 'go to', pronunciation: '/go to/', definition_vi: 'đến, đi đến', definition_en: 'meaning of go to', example: 'After school, I go to the library to read.' },
+    'go to school': { word: 'go to school', pronunciation: '/go to school/', definition_vi: 'đi học', definition_en: 'meaning of go to school', example: 'I also go to school on Monday to read and learn.' },
+    'green grass': { word: 'green grass', pronunciation: '/green grass/', definition_vi: 'cỏ xanh', definition_en: 'meaning of green grass', example: 'The garden was covered in soft green grass and bright yellow flowers.' },
+    'have fun': { word: 'have fun', pronunciation: '/have fun/', definition_vi: 'vui vẻ', definition_en: 'meaning of have fun', example: 'This is an example: have fun.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'laugh together': { word: 'laugh together', pronunciation: '/laugh together/', definition_vi: 'laugh together', definition_en: 'meaning of laugh together', example: 'This is an example: laugh together.' },
+    'learn new things': { word: 'learn new things', pronunciation: '/learn new things/', definition_vi: 'học những điều mới', definition_en: 'to discover or study something you did not know before', example: 'These tools help scientists learn new things every day.' },
+    'many things': { word: 'many things', pronunciation: '/many things/', definition_vi: 'nhiều thứ', definition_en: 'Multi-word phrase: many things', example: 'The phrase \'many things\' is commonly used in conversation.' },
+    'on weekends': { word: 'on weekends', pronunciation: '/on weekends/', definition_vi: 'vào cuối tuần', definition_en: 'meaning of on weekends', example: 'This is an example: on weekends.' },
+    'play at the park': { word: 'play at the park', pronunciation: '/play at the park/', definition_vi: 'chơi ở công viên', definition_en: 'meaning of play at the park', example: 'I play at the park with my friends.' },
+    'play with friends': { word: 'play with friends', pronunciation: '/play with friends/', definition_vi: 'chơi với bạn bè', definition_en: 'meaning of play with friends', example: 'This is an example: play with friends.' },
+    'quiet place': { word: 'quiet place', pronunciation: '/quiet place/', definition_vi: 'nơi yên tĩnh', definition_en: 'meaning of quiet place', example: 'This is an example: quiet place.' },
+    'to learn': { word: 'to learn', pronunciation: '/to learn/', definition_vi: 'để học', definition_en: 'meaning of to learn', example: 'I want to learn English every day.' }
+};

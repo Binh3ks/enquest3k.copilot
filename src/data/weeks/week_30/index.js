@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "The Perfect Picnic (Irregular Verbs 2)",
   weekTitle_vi: "Bữa Dã Ngoại Hoàn Hảo (Động Từ Bất Quy Tắc 2)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Irregular Verbs 2: eat→ate, drink→drank, buy→bought, give→gave",
   global_vocab: vocab.vocab,
   voiceConfig: {

@@ -36,3 +36,41 @@ export default {
     hint_vi: "Toi co the hat... Toi co the nhay... Toi co the..."
   }
 };
+
+export const chunk_focus = [
+  "my favorite",
+  "at home",
+  "every day",
+  "dance when",
+  "listen to",
+  "On weekends",
+  "ride my bike in",
+  "draw pictures of",
+  "my family",
+  "swim in the",
+  "cook simple food",
+  "my mom",
+  "in the kitchen",
+  "new things",
+  "practice every day",
+  "happy and healthy"
+];
+
+export const dictionary = {
+    'On weekends': { word: 'On weekends', pronunciation: '/on weekends/', definition_vi: 'vào cuối tuần', definition_en: 'meaning of on weekends', example: 'This is an example: on weekends.' },
+    'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'cook simple food': { word: 'cook simple food', pronunciation: '/cook simple food/', definition_vi: 'cook simple food', definition_en: 'meaning of cook simple food', example: 'This is an example: cook simple food.' },
+    'dance when': { word: 'dance when', pronunciation: '/dance when/', definition_vi: 'nhảy khi', definition_en: 'Multi-word phrase: dance when', example: 'The phrase \'dance when\' is commonly used in conversation.' },
+    'draw pictures of': { word: 'draw pictures of', pronunciation: '/draw pictures of/', definition_vi: 'draw pictures of', definition_en: 'meaning of draw pictures of', example: 'This is an example: draw pictures of.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'happy and healthy': { word: 'happy and healthy', pronunciation: '/happy and healthy/', definition_vi: 'vui vẻ và khỏe mạnh', definition_en: 'feeling good and in good health', example: 'They stayed happy and healthy all year long.' },
+    'in the kitchen': { word: 'in the kitchen', pronunciation: '/in the kitchen/', definition_vi: 'trong bếp', definition_en: 'meaning of in the kitchen', example: 'In the kitchen, I open the cabinet and look in the fridge.' },
+    'listen to': { word: 'listen to', pronunciation: '/listen to/', definition_vi: 'listen to', definition_en: 'meaning of listen to', example: 'This is an example: listen to.' },
+    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: '(cụm từ: my family)', definition_en: 'Multi-word phrase: my family', example: 'Use of \'my family\' in natural context.' },
+    'my favorite': { word: 'my favorite', pronunciation: '/my favorite/', definition_vi: '(cụm từ: my favorite)', definition_en: 'Multi-word phrase: my favorite', example: 'Use of \'my favorite\' in natural context.' },
+    'my mom': { word: 'my mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
+    'new things': { word: 'new things', pronunciation: '/new things/', definition_vi: 'những thứ mới', definition_en: 'Multi-word phrase: new things', example: 'The phrase \'new things\' is commonly used in conversation.' },
+    'practice every day': { word: 'practice every day', pronunciation: '/practice every day/', definition_vi: 'luyện tập mỗi ngày', definition_en: 'meaning of practice every day', example: 'This is an example: practice every day.' },
+    'ride my bike in': { word: 'ride my bike in', pronunciation: '/ride my bike in/', definition_vi: 'ride my bike in', definition_en: 'meaning of ride my bike in', example: 'This is an example: ride my bike in.' },
+    'swim in the': { word: 'swim in the', pronunciation: '/swim in the/', definition_vi: 'swim in the', definition_en: 'meaning of swim in the', example: 'This is an example: swim in the.' }
+};

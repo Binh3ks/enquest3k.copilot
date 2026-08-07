@@ -19,3 +19,45 @@ export default {
     hint_vi: "Nói về phòng ngủ, phòng khách, bếp của bạn..."
   }
 };
+
+export const chunk_focus = [
+  "On the hill",
+  "there is",
+  "big house",
+  "mystery house",
+  "One day",
+  "open the door",
+  "a nice bedroom",
+  "on the table",
+  "on the wall",
+  "on the floor",
+  "the living room",
+  "There is",
+  "big sofa",
+  "shelves with books",
+  "In the kitchen",
+  "open the cabinet carefully",
+  "look in",
+  "new home"
+];
+
+export const dictionary = {
+    'In the kitchen': { word: 'In the kitchen', pronunciation: '/in the kitchen/', definition_vi: 'trong bếp', definition_en: 'meaning of in the kitchen', example: 'In the kitchen, I open the cabinet and look in the fridge.' },
+    'On the hill': { word: 'On the hill', pronunciation: '/on the hill/', definition_vi: 'trên đồi', definition_en: 'located on a hill', example: 'There is a big house on the hill.' },
+    'One day': { word: 'One day', pronunciation: '/one day/', definition_vi: 'một ngày', definition_en: 'on a particular day in the past or future', example: 'One day, I will travel to the moon.' },
+    'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
+    'a nice bedroom': { word: 'a nice bedroom', pronunciation: '/a nice bedroom/', definition_vi: 'phòng ngủ đẹp', definition_en: 'meaning of a nice bedroom', example: 'Upstairs, there is a nice bedroom.' },
+    'big house': { word: 'big house', pronunciation: '/big house/', definition_vi: 'ngôi nhà lớn', definition_en: 'Multi-word phrase: big house', example: 'The phrase \'big house\' is commonly used in conversation.' },
+    'big sofa': { word: 'big sofa', pronunciation: '/big sofa/', definition_vi: 'sofa lớn', definition_en: 'meaning of big sofa', example: 'The family sat together on the big sofa to watch a film.' },
+    'look in': { word: 'look in', pronunciation: '/look in/', definition_vi: 'nhìn vào', definition_en: 'meaning of look in', example: 'In the kitchen, I open the cabinet and look in the fridge.' },
+    'mystery house': { word: 'mystery house', pronunciation: '/mystery house/', definition_vi: 'ngôi nhà bí ẩn', definition_en: 'meaning of mystery house', example: 'At the end of the road, there is an old mystery house that nobody visits.' },
+    'new home': { word: 'new home', pronunciation: '/new home/', definition_vi: 'nhà mới', definition_en: 'Multi-word phrase: new home', example: 'The phrase \'new home\' is commonly used in conversation.' },
+    'on the floor': { word: 'on the floor', pronunciation: '/on the floor/', definition_vi: 'trên sàn', definition_en: 'meaning of on the floor', example: 'The room has a rug on the floor.' },
+    'on the table': { word: 'on the table', pronunciation: '/on the table/', definition_vi: '(cụm từ: on the table)', definition_en: 'Multi-word phrase: on the table', example: 'Use of \'on the table\' in natural context.' },
+    'on the wall': { word: 'on the wall', pronunciation: '/on the wall/', definition_vi: 'trên tường', definition_en: 'meaning of on the wall', example: 'I see a lamp on the table and a mirror on the wall.' },
+    'open the cabinet carefully': { word: 'open the cabinet carefully', pronunciation: '/open the cabinet carefully/', definition_vi: 'mở tủ cẩn thận', definition_en: 'meaning of open the cabinet carefully', example: 'The nurse told Sam to open the cabinet carefully so nothing fell out.' },
+    'open the door': { word: 'open the door', pronunciation: '/open the door/', definition_vi: '(cụm từ: open the door)', definition_en: 'Multi-word phrase: open the door', example: 'Use of \'open the door\' in natural context.' },
+    'shelves with books': { word: 'shelves with books', pronunciation: '/shelves with books/', definition_vi: 'kệ sách', definition_en: 'meaning of shelves with books', example: 'The library has tall shelves with books arranged neatly by colour and size.' },
+    'the living room': { word: 'the living room', pronunciation: '/the living room/', definition_vi: 'phòng khách', definition_en: 'meaning of the living room', example: 'Downstairs, I find the living room.' },
+    'there is': { word: 'there is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' }
+};

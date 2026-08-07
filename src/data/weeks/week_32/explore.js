@@ -44,3 +44,39 @@ export default {
   writing_prompt_vi: "So sánh công việc nhà ở hai quốc gia khác nhau. Trẻ em làm gì? Công việc nào giống và khác nhau?",
   question: "What Saturday chores do families do in your country? Which chores do you enjoy most?"
 };
+
+export const chunk_focus = [
+  "around the world",
+  "special day",
+  "work together",
+  "at home",
+  "wake up",
+  "from childhood",
+  "their school",
+  "popular tradition",
+  "write a letter",
+  "elderly relative",
+  "far away",
+  "family bonds",
+  "busy saturday",
+  "fall asleep",
+  "good work"
+];
+
+export const dictionary = {
+    'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
+    'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'busy saturday': { word: 'busy saturday', pronunciation: '/busy saturday/', definition_vi: 'thứ bảy bận rộn', definition_en: 'Multi-word phrase: busy saturday', example: 'The phrase \'busy saturday\' is commonly used in conversation.' },
+    'elderly relative': { word: 'elderly relative', pronunciation: '/elderly relative/', definition_vi: 'họ hàng lớn tuổi', definition_en: 'Multi-word phrase: elderly relative', example: 'The phrase \'elderly relative\' is commonly used in conversation.' },
+    'fall asleep': { word: 'fall asleep', pronunciation: '/fall asleep/', definition_vi: 'chìm vào giấc ngủ', definition_en: 'meaning of fall asleep', example: 'I close my eyes and fall asleep.' },
+    'family bonds': { word: 'family bonds', pronunciation: '/family bonds/', definition_vi: 'family bonds', definition_en: 'meaning of family bonds', example: 'This is an example: family bonds.' },
+    'far away': { word: 'far away', pronunciation: '/far away/', definition_vi: '(cụm từ: far away)', definition_en: 'Multi-word phrase: far away', example: 'Use of \'far away\' in natural context.' },
+    'from childhood': { word: 'from childhood', pronunciation: '/from childhood/', definition_vi: 'từ thời thơ ấu', definition_en: 'since someone was a child', example: 'She loved music from childhood.' },
+    'good work': { word: 'good work', pronunciation: '/good work/', definition_vi: '(cụm từ: good work)', definition_en: 'Multi-word phrase: good work', example: 'Use of \'good work\' in natural context.' },
+    'popular tradition': { word: 'popular tradition', pronunciation: '/popular tradition/', definition_vi: 'popular tradition', definition_en: 'meaning of popular tradition', example: 'This is an example: popular tradition.' },
+    'special day': { word: 'special day', pronunciation: '/special day/', definition_vi: 'ngày đặc biệt', definition_en: 'Multi-word phrase: special day', example: 'The phrase \'special day\' is commonly used in conversation.' },
+    'their school': { word: 'their school', pronunciation: '/their school/', definition_vi: '(cụm từ: their school)', definition_en: 'Multi-word phrase: their school', example: 'Use of \'their school\' in natural context.' },
+    'wake up': { word: 'wake up', pronunciation: '/wake up/', definition_vi: 'thức dậy', definition_en: 'meaning of wake up', example: 'Every morning, I wake up early and get ready for school.' },
+    'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' },
+    'write a letter': { word: 'write a letter', pronunciation: '/write a letter/', definition_vi: 'viết thư', definition_en: 'meaning of write a letter', example: 'This is an example: write a letter.' }
+};

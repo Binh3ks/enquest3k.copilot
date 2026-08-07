@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "The Art Class",
   weekTitle_vi: "Lop Hoc My Thuat",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Regular Past Tense Verbs (-ed): painted, colored, glued, folded, created",
 
   global_vocab: vocab.vocab,

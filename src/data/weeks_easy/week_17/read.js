@@ -12,3 +12,31 @@ export default {
     { id: 5, question_en: "How is my body?", answer: ["warm", "My body is warm"], clue_statement: "My body is warm.", hint_en: "A describing word...", hint_vi: "Một từ miêu tả..." }
   ]
 };
+
+export const chunk_focus = [
+  "it is raining",
+  "look out the window",
+  "pick up",
+  "put on",
+  "am ready",
+  "walk to school",
+  "rainy days",
+  "jump in puddles",
+  "sound of rain",
+  "helps the trees grow",
+  "rainy weather"
+];
+
+export const dictionary = {
+    'am ready': { word: 'am ready', pronunciation: '/am ready/', definition_vi: 'đã sẵn sàng', definition_en: 'meaning of am ready', example: 'I have my backpack and my lunch — I am ready for school!' },
+    'helps the trees grow': { word: 'helps the trees grow', pronunciation: '/helps the trees grow/', definition_vi: 'helps the trees grow', definition_en: 'meaning of helps the trees grow', example: 'This is an example: helps the trees grow.' },
+    'it is raining': { word: 'it is raining', pronunciation: '/it is raining/', definition_vi: 'trời đang mưa', definition_en: 'meaning of it is raining', example: 'This morning, it is raining very hard.' },
+    'jump in puddles': { word: 'jump in puddles', pronunciation: '/jump in puddles/', definition_vi: 'nhảy trong vũng nước', definition_en: 'meaning of jump in puddles', example: 'I can jump in puddles.' },
+    'look out the window': { word: 'look out the window', pronunciation: '/look out the window/', definition_vi: 'nhìn ra cửa sổ', definition_en: 'meaning of look out the window', example: 'I like to look out the window and watch the clouds float by.' },
+    'pick up': { word: 'pick up', pronunciation: '/pick up/', definition_vi: 'nhặt lên', definition_en: 'meaning of pick up', example: 'This is an example: pick up.' },
+    'put on': { word: 'put on', pronunciation: '/put on/', definition_vi: 'mặc', definition_en: 'meaning of put on', example: 'This is an example: put on.' },
+    'rainy days': { word: 'rainy days', pronunciation: '/rainy days/', definition_vi: 'những ngày mưa', definition_en: 'meaning of rainy days', example: 'I love rainy days!' },
+    'rainy weather': { word: 'rainy weather', pronunciation: '/rainy weather/', definition_vi: 'thời tiết mưa', definition_en: 'meaning of rainy weather', example: 'Rainy weather makes me want to read books and drink hot chocolate.' },
+    'sound of rain': { word: 'sound of rain', pronunciation: '/sound of rain/', definition_vi: 'tiếng mưa', definition_en: 'meaning of sound of rain', example: 'The sound of rain on the roof helped me fall asleep at night.' },
+    'walk to school': { word: 'walk to school', pronunciation: '/walk to school/', definition_vi: 'đi bộ đến trường', definition_en: 'meaning of walk to school', example: 'Every morning, I walk to school with my best friend down the quiet street.' }
+};

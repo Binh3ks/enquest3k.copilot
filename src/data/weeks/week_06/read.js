@@ -19,3 +19,47 @@ export default {
     hint_vi: "Nói về nơi ẩn nấp yêu thích và trò chơi của bạn..."
   }
 };
+
+export const chunk_focus = [
+  "treasure hunt",
+  "My friends",
+  "look for",
+  "hidden treasure",
+  "look on the floor",
+  "look in the box",
+  "My friend",
+  "next to",
+  "There is",
+  "another clue",
+  "on the wall",
+  "in the room",
+  "under the desk",
+  "look under",
+  "big desk",
+  "find it",
+  "Hide and seek",
+  "work together",
+  "Next time"
+];
+
+export const dictionary = {
+    'Hide and seek': { word: 'Hide and seek', pronunciation: '/hide and seek/', definition_vi: 'trốn tìm', definition_en: 'meaning of hide and seek', example: 'She hide and seek with her friends after school.' },
+    'My friend': { word: 'My friend', pronunciation: '/my friend/', definition_vi: '(cụm từ: my friend)', definition_en: 'Multi-word phrase: my friend', example: 'Use of \'my friend\' in natural context.' },
+    'My friends': { word: 'My friends', pronunciation: '/my friends/', definition_vi: '(cụm từ: my friends)', definition_en: 'Multi-word phrase: my friends', example: 'Use of \'my friends\' in natural context.' },
+    'Next time': { word: 'Next time', pronunciation: '/next time/', definition_vi: 'Lần sau', definition_en: 'meaning of next time', example: 'Next time, I will hide the treasure next to the door!' },
+    'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
+    'another clue': { word: 'another clue', pronunciation: '/another clue/', definition_vi: 'một manh mối khác', definition_en: 'Multi-word phrase: another clue', example: 'The phrase \'another clue\' is commonly used in conversation.' },
+    'big desk': { word: 'big desk', pronunciation: '/big desk/', definition_vi: 'cái bàn lớn', definition_en: 'Multi-word phrase: big desk', example: 'The phrase \'big desk\' is commonly used in conversation.' },
+    'find it': { word: 'find it', pronunciation: '/find it/', definition_vi: 'tìm thấy nó', definition_en: 'meaning of find it', example: 'We find it!' },
+    'hidden treasure': { word: 'hidden treasure', pronunciation: '/hidden treasure/', definition_vi: 'kho báu giấu', definition_en: 'Multi-word phrase: hidden treasure', example: 'The phrase \'hidden treasure\' is commonly used in conversation.' },
+    'in the room': { word: 'in the room', pronunciation: '/in the room/', definition_vi: 'trong phòng', definition_en: 'meaning of in the room', example: 'It says: \'The treasure is in the room.' },
+    'look for': { word: 'look for', pronunciation: '/look for/', definition_vi: 'tìm kiếm', definition_en: 'meaning of look for', example: 'My friends and I look for hidden treasure.' },
+    'look in the box': { word: 'look in the box', pronunciation: '/look in the box/', definition_vi: 'nhìn trong hộp', definition_en: 'meaning of look in the box', example: 'I look in the box.' },
+    'look on the floor': { word: 'look on the floor', pronunciation: '/look on the floor/', definition_vi: 'nhìn trên sàn', definition_en: 'meaning of look on the floor', example: 'Today is treasure hunt day! My friends and I look for hidden treasure. I look on the floor. No treasure there! I look in the box. Nothing!' },
+    'look under': { word: 'look under', pronunciation: '/look under/', definition_vi: 'nhìn bên dưới', definition_en: 'meaning of look under', example: 'This is an example: look under.' },
+    'next to': { word: 'next to', pronunciation: '/next to/', definition_vi: 'bên cạnh', definition_en: 'meaning of next to', example: 'There is a ruler next to the pen.' },
+    'on the wall': { word: 'on the wall', pronunciation: '/on the wall/', definition_vi: 'trên tường', definition_en: 'meaning of on the wall', example: 'I see a lamp on the table and a mirror on the wall.' },
+    'treasure hunt': { word: 'treasure hunt', pronunciation: '/treasure hunt/', definition_vi: 'săn kho báu', definition_en: 'Multi-word phrase: treasure hunt', example: 'The phrase \'treasure hunt\' is commonly used in conversation.' },
+    'under the desk': { word: 'under the desk', pronunciation: '/under the desk/', definition_vi: 'dưới bàn', definition_en: 'meaning of under the desk', example: 'The toy car is under the desk!' },
+    'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' }
+};

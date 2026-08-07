@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "Welcome to My World",
   weekTitle_vi: "Chào Mừng Đến Với Thế Giới Của Tôi",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Review: Present Simple, Can/Can't, Possessives",
   global_vocab: vocab.vocab,
   

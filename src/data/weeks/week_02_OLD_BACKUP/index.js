@@ -17,6 +17,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "My Family Squad",
   weekTitle_vi: "Biệt Đội Gia Đình",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "This is my... (Possession)",
   global_vocab: vocab.vocab,
   // ⚠️ MANDATORY: voiceConfig for unique voices per week

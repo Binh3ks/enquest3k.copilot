@@ -37,3 +37,49 @@ export default {
     }
   ]
 };
+
+export const chunk_focus = [
+  "Last saturday",
+  "luna went",
+  "local market",
+  "looked around",
+  "see many",
+  "could see",
+  "shone through",
+  "made little rainbows",
+  "picked up",
+  "wooden shelf",
+  "wood felt rough",
+  "stone bowl",
+  "stone felt cool",
+  "luna felt",
+  "soft cotton",
+  "cold metal",
+  "smelt sweet strawberries",
+  "small piece",
+  "plastic bag broke",
+  "Luna felt"
+];
+
+export const dictionary = {
+    'Last saturday': { word: 'Last saturday', pronunciation: '/last saturday/', definition_vi: 'thứ bảy tuần trước', definition_en: 'Multi-word phrase: last saturday', example: 'The phrase \'last saturday\' is commonly used in conversation.' },
+    'Luna felt': { word: 'Luna felt', pronunciation: '/luna felt/', definition_vi: 'Luna cảm thấy', definition_en: 'Multi-word phrase: luna felt', example: 'The phrase \'luna felt\' is commonly used in conversation.' },
+    'cold metal': { word: 'cold metal', pronunciation: '/cold metal/', definition_vi: 'kim loại lạnh', definition_en: 'meaning of cold metal', example: 'The cold metal railing felt freezing when we touched it in winter.' },
+    'could see': { word: 'could see', pronunciation: '/could see/', definition_vi: 'có thể thấy', definition_en: 'meaning of could see', example: 'From the top of the hill, we could see the whole town spread out below.' },
+    'local market': { word: 'local market', pronunciation: '/local market/', definition_vi: 'chợ địa phương', definition_en: 'meaning of local market', example: 'Mum buys fresh vegetables at the local market every Saturday morning.' },
+    'looked around': { word: 'looked around', pronunciation: '/looked around/', definition_vi: 'nhìn xung quanh', definition_en: 'meaning of looked around', example: 'When we arrived at the museum, we looked around at all the wonderful paintings.' },
+    'luna felt': { word: 'luna felt', pronunciation: '/luna felt/', definition_vi: 'Luna cảm thấy', definition_en: 'Multi-word phrase: luna felt', example: 'The phrase \'luna felt\' is commonly used in conversation.' },
+    'luna went': { word: 'luna went', pronunciation: '/luna went/', definition_vi: 'Luna đã đi', definition_en: 'Multi-word phrase: luna went', example: 'The phrase \'luna went\' is commonly used in conversation.' },
+    'made little rainbows': { word: 'made little rainbows', pronunciation: '/made little rainbows/', definition_vi: 'tạo ra những cầu vồng nhỏ', definition_en: 'Multi-word phrase: made little rainbows', example: 'The phrase \'made little rainbows\' is commonly used in conversation.' },
+    'picked up': { word: 'picked up', pronunciation: '/picked up/', definition_vi: 'nhặt lên', definition_en: 'meaning of picked up', example: 'Yesterday, Mia arrived at art class and picked up her brush.' },
+    'plastic bag broke': { word: 'plastic bag broke', pronunciation: '/plastic bag broke/', definition_vi: 'túi nhựa bị vỡ', definition_en: 'Multi-word phrase: plastic bag broke', example: 'The phrase \'plastic bag broke\' is commonly used in conversation.' },
+    'see many': { word: 'see many', pronunciation: '/see many/', definition_vi: 'thấy nhiều', definition_en: 'Multi-word phrase: see many', example: 'The phrase \'see many\' is commonly used in conversation.' },
+    'shone through': { word: 'shone through', pronunciation: '/shone through/', definition_vi: 'chiếu qua', definition_en: 'meaning of shone through', example: 'The morning sunlight shone through the window and lit up the dark room.' },
+    'small piece': { word: 'small piece', pronunciation: '/small piece/', definition_vi: 'mảnh nhỏ', definition_en: 'Multi-word phrase: small piece', example: 'The phrase \'small piece\' is commonly used in conversation.' },
+    'smelt sweet strawberries': { word: 'smelt sweet strawberries', pronunciation: '/smelt sweet strawberries/', definition_vi: 'ngửi thấy dâu tây ngọt', definition_en: 'Multi-word phrase: smelt sweet strawberries', example: 'The phrase \'smelt sweet strawberries\' is commonly used in conversation.' },
+    'soft cotton': { word: 'soft cotton', pronunciation: '/soft cotton/', definition_vi: 'bông mềm', definition_en: 'meaning of soft cotton', example: 'The soft cotton scarf was light and gentle against her neck in the wind.' },
+    'stone bowl': { word: 'stone bowl', pronunciation: '/stone bowl/', definition_vi: 'bát đá', definition_en: 'meaning of stone bowl', example: 'The artisan carved a beautiful stone bowl from a piece of white marble.' },
+    'stone felt cool': { word: 'stone felt cool', pronunciation: '/stone felt cool/', definition_vi: 'đá cảm thấy mát', definition_en: 'Multi-word phrase: stone felt cool', example: 'The phrase \'stone felt cool\' is commonly used in conversation.' },
+    'wood felt rough': { word: 'wood felt rough', pronunciation: '/wood felt rough/', definition_vi: 'gỗ cảm thấy thô ráp', definition_en: 'Multi-word phrase: wood felt rough', example: 'The phrase \'wood felt rough\' is commonly used in conversation.' },
+    'wooden shelf': { word: 'wooden shelf', pronunciation: '/wooden shelf/', definition_vi: 'giá gỗ', definition_en: 'meaning of wooden shelf', example: 'Dad put the books neatly on the wooden shelf in the study room.' }
+};

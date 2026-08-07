@@ -18,6 +18,8 @@ const weekData = {
   weekId: 22,
   weekTitle_en: "The Time Detective",
   weekTitle_vi: "Tham Tu Thoi Gian",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Questions with Did",
   isEasy: true,
 

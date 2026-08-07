@@ -42,3 +42,33 @@ export default {
     hint_vi: "Thử: 'Tôi nghĩ công viên ... thú vị nhất vì... Mọi người đang thả diều / chạy bộ / cho vịt ăn ở đó.'"
   }
 };
+
+export const chunk_focus = [
+  "Central Park",
+  "flying kites",
+  "having picnics",
+  "Hyde Park",
+  "every morning",
+  "Ueno Park",
+  "cherry blossoms",
+  "Royal Botanic Gardens",
+  "Opera House",
+  "Luxembourg Gardens",
+  "fresh air",
+  "right now"
+];
+
+export const dictionary = {
+    'Central Park': { word: 'Central Park', pronunciation: '/central park/', definition_vi: 'a large public park in New York City', definition_en: 'meaning of central park', example: 'In New York\'s Central Park, families are flying kites and having picnics on sunny weekends.' },
+    'Hyde Park': { word: 'Hyde Park', pronunciation: '/hyde park/', definition_vi: 'a famous park in London, England', definition_en: 'meaning of hyde park', example: 'In London\'s Hyde Park, people are jogging every morning.' },
+    'Luxembourg Gardens': { word: 'Luxembourg Gardens', pronunciation: '/luxembourg gardens/', definition_vi: 'a famous public garden in Paris, France', definition_en: 'meaning of luxembourg gardens', example: 'In Paris, children play in Luxembourg Gardens while parents relax.' },
+    'Opera House': { word: 'Opera House', pronunciation: '/opera house/', definition_vi: 'a famous building where music and theatre performances are held', definition_en: 'meaning of opera house', example: 'In Sydney\'s Royal Botanic Gardens, kids play near the famous Opera House.' },
+    'Royal Botanic Gardens': { word: 'Royal Botanic Gardens', pronunciation: '/royal botanic gardens/', definition_vi: 'a large garden in Sydney, Australia, near the Opera House', definition_en: 'meaning of royal botanic gardens', example: 'In Sydney\'s Royal Botanic Gardens, kids play near the famous Opera House.' },
+    'Ueno Park': { word: 'Ueno Park', pronunciation: '/ueno park/', definition_vi: 'a famous park in Tokyo, Japan, known for cherry blossoms', definition_en: 'meaning of ueno park', example: 'In Tokyo\'s Ueno Park, children are enjoying the cherry blossoms in spring.' },
+    'cherry blossoms': { word: 'cherry blossoms', pronunciation: '/cherry blossoms/', definition_vi: 'the beautiful pink flowers of cherry trees', definition_en: 'meaning of cherry blossoms', example: 'In Tokyo\'s Ueno Park, children are enjoying the cherry blossoms in spring.' },
+    'every morning': { word: 'every morning', pronunciation: '/every morning/', definition_vi: 'mỗi sáng', definition_en: 'each morning', example: 'He walks to school every morning.' },
+    'flying kites': { word: 'flying kites', pronunciation: '/flying kites/', definition_vi: 'controlling a kite in the air using string', definition_en: 'meaning of flying kites', example: 'In New York\'s Central Park, families are flying kites and having picnics on sunny weekends.' },
+    'fresh air': { word: 'fresh air', pronunciation: '/fresh air/', definition_vi: 'không khí trong lành', definition_en: 'Multi-word phrase: fresh air', example: 'The phrase \'fresh air\' is commonly used in conversation.' },
+    'having picnics': { word: 'having picnics', pronunciation: '/having picnics/', definition_vi: 'having picnics', definition_en: 'meaning of having picnics', example: 'This is an example: having picnics.' },
+    'right now': { word: 'right now', pronunciation: '/right now/', definition_vi: 'ngay bây giờ', definition_en: 'meaning of right now', example: 'This is an example: right now.' }
+};

@@ -43,3 +43,43 @@ export default {
     }
   ]
 };
+
+export const chunk_focus = [
+  "art class",
+  "picked up her brush",
+  "dipped her brush",
+  "painted a picture",
+  "colored in",
+  "using blue",
+  "paper into",
+  "butterfly shape",
+  "perfect symmetry",
+  "used the scissors",
+  "cut out shapes",
+  "green paper",
+  "glued the leaves",
+  "pressed down",
+  "held up",
+  "clapped loudly",
+  "wonderful texture"
+];
+
+export const dictionary = {
+    'art class': { word: 'art class', pronunciation: '/art class/', definition_vi: 'lớp mỹ thuật', definition_en: 'Multi-word phrase: art class', example: 'The phrase \'art class\' is commonly used in conversation.' },
+    'butterfly shape': { word: 'butterfly shape', pronunciation: '/butterfly shape/', definition_vi: 'hình bướm', definition_en: 'Multi-word phrase: butterfly shape', example: 'The phrase \'butterfly shape\' is commonly used in conversation.' },
+    'clapped loudly': { word: 'clapped loudly', pronunciation: '/clapped loudly/', definition_vi: 'đã vỗ tay to', definition_en: 'meaning of clapped loudly', example: 'The children clapped loudly when the parade marched past their school.' },
+    'colored in': { word: 'colored in', pronunciation: '/colored in/', definition_vi: 'tô màu vào', definition_en: 'filled a shape or picture with colour', example: 'The children colored in the picture carefully.' },
+    'cut out shapes': { word: 'cut out shapes', pronunciation: '/cut out shapes/', definition_vi: 'cắt hình', definition_en: 'meaning of cut out shapes', example: 'This is an example: cut out shapes.' },
+    'dipped her brush': { word: 'dipped her brush', pronunciation: '/dipped her brush/', definition_vi: 'nhúng cọ của cô ấy', definition_en: 'meaning of dipped her brush', example: 'She dipped her brush in the blue paint and then in the yellow.' },
+    'glued the leaves': { word: 'glued the leaves', pronunciation: '/glued the leaves/', definition_vi: 'dán những chiếc lá', definition_en: 'meaning of glued the leaves', example: 'In art class, we collected autumn leaves and glued the leaves onto white paper.' },
+    'green paper': { word: 'green paper', pronunciation: '/green paper/', definition_vi: 'giấy xanh', definition_en: 'Multi-word phrase: green paper', example: 'The phrase \'green paper\' is commonly used in conversation.' },
+    'held up': { word: 'held up', pronunciation: '/held up/', definition_vi: 'giơ lên', definition_en: 'meaning of held up', example: 'Finally, Mia held up the picture she had worked so hard to create.' },
+    'painted a picture': { word: 'painted a picture', pronunciation: '/painted a picture/', definition_vi: 'vẽ một bức tranh', definition_en: 'meaning of painted a picture', example: 'In art class, everyone painted a picture of their favourite animal.' },
+    'paper into': { word: 'paper into', pronunciation: '/paper into/', definition_vi: 'giấy vào', definition_en: 'Multi-word phrase: paper into', example: 'The phrase \'paper into\' is commonly used in conversation.' },
+    'perfect symmetry': { word: 'perfect symmetry', pronunciation: '/perfect symmetry/', definition_vi: 'sự đối xứng hoàn hảo', definition_en: 'Multi-word phrase: perfect symmetry', example: 'The phrase \'perfect symmetry\' is commonly used in conversation.' },
+    'picked up her brush': { word: 'picked up her brush', pronunciation: '/picked up her brush/', definition_vi: 'nhặt cọ lên', definition_en: 'meaning of picked up her brush', example: 'Emma picked up her brush and began to paint a picture of her dog.' },
+    'pressed down': { word: 'pressed down', pronunciation: '/pressed down/', definition_vi: 'ấn xuống', definition_en: 'pushed something downward', example: 'He pressed down on the clay with his hand.' },
+    'used the scissors': { word: 'used the scissors', pronunciation: '/used the scissors/', definition_vi: 'dùng kéo', definition_en: 'meaning of used the scissors', example: 'Be careful when you used the scissors to cut the coloured ribbon.' },
+    'using blue': { word: 'using blue', pronunciation: '/using blue/', definition_vi: 'dùng màu xanh', definition_en: 'Multi-word phrase: using blue', example: 'The phrase \'using blue\' is commonly used in conversation.' },
+    'wonderful texture': { word: 'wonderful texture', pronunciation: '/wonderful texture/', definition_vi: 'kết cấu tuyệt vời', definition_en: 'Multi-word phrase: wonderful texture', example: 'The phrase \'wonderful texture\' is commonly used in conversation.' }
+};

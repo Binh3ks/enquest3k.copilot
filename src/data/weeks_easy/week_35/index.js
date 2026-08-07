@@ -22,6 +22,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "Environmental Issues",
   weekTitle_vi: "Các Vấn Đề Môi Trường",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Modal Verbs: Must, Should, Can",
 
   global_vocab: vocab.vocab,

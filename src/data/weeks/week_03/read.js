@@ -10,3 +10,41 @@ export default {
     { id: 3, question_en: "Is she tall or short?", answer: ["Tall", "She is tall", "Very tall"], clue_statement: "She is tall.", hint_en: "She is...", hint_vi: "Cô ấy..." }
   ]
 };
+
+export const chunk_focus = [
+  "My teacher",
+  "very tall",
+  "lovely personality",
+  "long black hair",
+  "big brown eyes",
+  "wears glasses",
+  "to see the board clearly",
+  "kind face",
+  "warm smile",
+  "her students",
+  "my teacher",
+  "very nice",
+  "smart and caring",
+  "gentle and kind",
+  "very happy",
+  "her class"
+];
+
+export const dictionary = {
+    'My teacher': { word: 'My teacher', pronunciation: '/my teacher/', definition_vi: '(cụm từ: my teacher)', definition_en: 'Multi-word phrase: my teacher', example: 'Use of \'my teacher\' in natural context.' },
+    'big brown eyes': { word: 'big brown eyes', pronunciation: '/big brown eyes/', definition_vi: 'mắt nâu to', definition_en: 'meaning of big brown eyes', example: 'She has big brown eyes that sparkle brightly when she smiles.' },
+    'gentle and kind': { word: 'gentle and kind', pronunciation: '/gentle and kind/', definition_vi: 'hiền lành và tốt bụng', definition_en: 'meaning of gentle and kind', example: 'The nurse was gentle and kind when she put the bandage on my knee.' },
+    'her class': { word: 'her class', pronunciation: '/her class/', definition_vi: '(cụm từ: her class)', definition_en: 'Multi-word phrase: her class', example: 'Use of \'her class\' in natural context.' },
+    'her students': { word: 'her students', pronunciation: '/her students/', definition_vi: 'học sinh của cô ấy', definition_en: 'meaning of her students', example: 'She has a warm smile for her students.' },
+    'kind face': { word: 'kind face', pronunciation: '/kind face/', definition_vi: 'khuôn mặt tử tế', definition_en: 'Multi-word phrase: kind face', example: 'The phrase \'kind face\' is commonly used in conversation.' },
+    'long black hair': { word: 'long black hair', pronunciation: '/long black hair/', definition_vi: 'tóc đen dài', definition_en: 'meaning of long black hair', example: 'She has long black hair that is always neat and tidy.' },
+    'lovely personality': { word: 'lovely personality', pronunciation: '/lovely personality/', definition_vi: 'tính cách dễ thương', definition_en: 'meaning of lovely personality', example: 'Her lovely personality makes her popular with all her classmates.' },
+    'my teacher': { word: 'my teacher', pronunciation: '/my teacher/', definition_vi: '(cụm từ: my teacher)', definition_en: 'Multi-word phrase: my teacher', example: 'Use of \'my teacher\' in natural context.' },
+    'smart and caring': { word: 'smart and caring', pronunciation: '/smart and caring/', definition_vi: 'thông minh và quan tâm', definition_en: 'meaning of smart and caring', example: 'My teacher is smart and caring and always helps students who are struggling.' },
+    'to see the board clearly': { word: 'to see the board clearly', pronunciation: '/to see the board clearly/', definition_vi: 'để nhìn bảng rõ ràng', definition_en: 'meaning of to see the board clearly', example: 'She moved closer to the front so she could see the board clearly.' },
+    'very happy': { word: 'very happy', pronunciation: '/very happy/', definition_vi: 'rất vui', definition_en: 'meaning of very happy', example: 'I was very happy when I found my lost puppy hiding under the bed.' },
+    'very nice': { word: 'very nice', pronunciation: '/very nice/', definition_vi: 'rất dễ thương', definition_en: 'meaning of very nice', example: 'It was very nice of you to share your crayons with the new student.' },
+    'very tall': { word: 'very tall', pronunciation: '/very tall/', definition_vi: 'rất cao', definition_en: 'meaning of very tall', example: 'The giraffe is very tall and can eat leaves from the highest branches.' },
+    'warm smile': { word: 'warm smile', pronunciation: '/warm smile/', definition_vi: 'nụ cười ấm áp', definition_en: 'meaning of warm smile', example: 'She has a warm smile for her students.' },
+    'wears glasses': { word: 'wears glasses', pronunciation: '/wears glasses/', definition_vi: 'đeo kính', definition_en: 'meaning of wears glasses', example: 'She wears glasses to see the board clearly.' }
+};

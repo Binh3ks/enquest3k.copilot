@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "Sequencing Actions",
   weekTitle_vi: "Sap Xep Trinh Tu Hanh Dong",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Sequence Connectors: First, I spread the jam. Next, I put it together. Then, I cut it. Finally, I ate it.",
 
   global_vocab: vocab.vocab,

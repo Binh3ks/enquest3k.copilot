@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "The Mirror Game",
   weekTitle_vi: "Trò chơi Soi gương",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "is vs has (describing appearance)",
   global_vocab: vocab.vocab,
   

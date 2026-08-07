@@ -59,3 +59,31 @@ export default {
     }
   ]
 };
+
+export const chunk_focus = [
+  "Some children",
+  "water cycle",
+  "turns into",
+  "invisible vapor",
+  "it is very cold",
+  "water droplets",
+  "stick together",
+  "falls back down",
+  "help us",
+  "it is raining",
+  "sunny days"
+];
+
+export const dictionary = {
+    'Some children': { word: 'Some children', pronunciation: '/some children/', definition_vi: 'vài trẻ em', definition_en: 'Multi-word phrase: some children', example: 'The phrase \'some children\' is commonly used in conversation.' },
+    'falls back down': { word: 'falls back down', pronunciation: '/falls back down/', definition_vi: 'falls back down', definition_en: 'meaning of falls back down', example: 'This is an example: falls back down.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'invisible vapor': { word: 'invisible vapor', pronunciation: '/invisible vapor/', definition_vi: 'hơi nước vô hình', definition_en: 'meaning of invisible vapor', example: 'This is an example: invisible vapor.' },
+    'it is raining': { word: 'it is raining', pronunciation: '/it is raining/', definition_vi: 'trời đang mưa', definition_en: 'meaning of it is raining', example: 'This morning, it is raining very hard.' },
+    'it is very cold': { word: 'it is very cold', pronunciation: '/it is very cold/', definition_vi: 'Trời rất lạnh', definition_en: 'meaning of it is very cold', example: 'It is very cold today.' },
+    'stick together': { word: 'stick together', pronunciation: '/stick together/', definition_vi: 'dính lại với nhau', definition_en: 'meaning of stick together', example: 'This is an example: stick together.' },
+    'sunny days': { word: 'sunny days', pronunciation: '/sunny days/', definition_vi: 'những ngày nắng', definition_en: 'meaning of sunny days', example: 'This is an example: sunny days.' },
+    'turns into': { word: 'turns into', pronunciation: '/turns into/', definition_vi: 'turns into', definition_en: 'meaning of turns into', example: 'This is an example: turns into.' },
+    'water cycle': { word: 'water cycle', pronunciation: '/water cycle/', definition_vi: 'chu trình nước', definition_en: 'meaning of water cycle', example: 'This is an example: water cycle.' },
+    'water droplets': { word: 'water droplets', pronunciation: '/water droplets/', definition_vi: 'giọt nước', definition_en: 'meaning of water droplets', example: 'This is an example: water droplets.' }
+};

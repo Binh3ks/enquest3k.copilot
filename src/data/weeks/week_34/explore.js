@@ -72,3 +72,47 @@ Thông điệp của ngụ ngôn, áp dụng cho cả động vật và con ngư
     hint_vi: "Ngụ ngôn yêu thích của tôi là... Nó dạy chúng ta rằng... Tôi nghĩ bài học này quan trọng vì..."
   }
 };
+
+export const chunk_focus = [
+  "Ant and the Grasshopper",
+  "in the world",
+  "animal characters",
+  "hard-working insects",
+  "who lived",
+  "ancient Greece",
+  "2,500 years ago",
+  "around the world",
+  "ant and the grasshopper",
+  "prepare for the future",
+  "In real life",
+  "incredibly hard-working",
+  "ant colony",
+  "work together",
+  "on every continent",
+  "much heavier",
+  "super strength",
+  "remarkable ability",
+  "hard work"
+];
+
+export const dictionary = {
+    '2,500 years ago': { word: '2,500 years ago', pronunciation: '/2,500 years ago/', definition_vi: '2.500 năm trước', definition_en: 'meaning of 2,500 years ago', example: 'This is an example: 2,500 years ago.' },
+    'Ant and the Grasshopper': { word: 'Ant and the Grasshopper', pronunciation: '/ant and the grasshopper/', definition_vi: 'ant and the grasshopper', definition_en: 'meaning of ant and the grasshopper', example: 'This is an example: ant and the grasshopper.' },
+    'In real life': { word: 'In real life', pronunciation: '/in real life/', definition_vi: 'trong đời thực', definition_en: 'meaning of in real life', example: 'This is an example: in real life.' },
+    'ancient Greece': { word: 'ancient Greece', pronunciation: '/ancient greece/', definition_vi: 'Hy Lạp cổ đại', definition_en: 'meaning of ancient greece', example: 'This is an example: ancient greece.' },
+    'animal characters': { word: 'animal characters', pronunciation: '/animal characters/', definition_vi: 'nhân vật động vật', definition_en: 'meaning of animal characters', example: 'This is an example: animal characters.' },
+    'ant and the grasshopper': { word: 'ant and the grasshopper', pronunciation: '/ant and the grasshopper/', definition_vi: 'ant and the grasshopper', definition_en: 'meaning of ant and the grasshopper', example: 'This is an example: ant and the grasshopper.' },
+    'ant colony': { word: 'ant colony', pronunciation: '/ant colony/', definition_vi: 'tổ kiến', definition_en: 'Multi-word phrase: ant colony', example: 'The phrase \'ant colony\' is commonly used in conversation.' },
+    'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
+    'hard work': { word: 'hard work', pronunciation: '/hard work/', definition_vi: 'làm việc chăm chỉ', definition_en: 'Multi-word phrase: hard work', example: 'The phrase \'hard work\' is commonly used in conversation.' },
+    'hard-working insects': { word: 'hard-working insects', pronunciation: '/hard-working insects/', definition_vi: 'những côn trùng chăm chỉ', definition_en: 'insects that work very hard', example: 'Ants are hard-working insects in real life.' },
+    'in the world': { word: 'in the world', pronunciation: '/in the world/', definition_vi: '(cụm từ: in the world)', definition_en: 'Multi-word phrase: in the world', example: 'Use of \'in the world\' in natural context.' },
+    'incredibly hard-working': { word: 'incredibly hard-working', pronunciation: '/incredibly hard-working/', definition_vi: 'incredibly hard-working', definition_en: 'meaning of incredibly hard-working', example: 'This is an example: incredibly hard-working.' },
+    'much heavier': { word: 'much heavier', pronunciation: '/much heavier/', definition_vi: 'nặng hơn nhiều', definition_en: 'far more heavy in comparison', example: 'The box is much heavier than it looks.' },
+    'on every continent': { word: 'on every continent', pronunciation: '/on every continent/', definition_vi: 'trên mọi châu lục', definition_en: 'in all continents', example: 'Some animals live on every continent except Antarctica.' },
+    'prepare for the future': { word: 'prepare for the future', pronunciation: '/prepare for the future/', definition_vi: 'chuẩn bị cho tương lai', definition_en: 'get ready for what comes next', example: 'Always work hard and prepare for the future.' },
+    'remarkable ability': { word: 'remarkable ability', pronunciation: '/remarkable ability/', definition_vi: 'khả năng đáng chú ý', definition_en: 'Multi-word phrase: remarkable ability', example: 'The phrase \'remarkable ability\' is commonly used in conversation.' },
+    'super strength': { word: 'super strength', pronunciation: '/super strength/', definition_vi: 'sức mạnh siêu phàm', definition_en: 'meaning of super strength', example: 'This is an example: super strength.' },
+    'who lived': { word: 'who lived', pronunciation: '/who lived/', definition_vi: 'người đã sống', definition_en: 'Multi-word phrase: who lived', example: 'The phrase \'who lived\' is commonly used in conversation.' },
+    'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' }
+};

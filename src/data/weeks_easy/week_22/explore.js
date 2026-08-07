@@ -59,3 +59,43 @@ export default {
     hint_vi: "Tôi tìm thấy manh mối: ... Sau đó tôi hỏi nghi phạm: Bạn có...hôm qua không?"
   }
 };
+
+export const chunk_focus = [
+  "solve cases",
+  "all over the world",
+  "looks for",
+  "every clue",
+  "official report",
+  "last night",
+  "do interviews",
+  "what happened",
+  "one question",
+  "at a time",
+  "listen to",
+  "every answer",
+  "last week",
+  "piece of the puzzle",
+  "Because of",
+  "forensic science",
+  "innocent people"
+];
+
+export const dictionary = {
+    'Because of': { word: 'Because of', pronunciation: '/because of/', definition_vi: 'bởi vì', definition_en: 'meaning of because of', example: 'This is an example: because of.' },
+    'all over the world': { word: 'all over the world', pronunciation: '/all over the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of all over the world', example: 'This is an example: all over the world.' },
+    'at a time': { word: 'at a time', pronunciation: '/at a time/', definition_vi: 'mỗi lần', definition_en: 'meaning of at a time', example: 'This is an example: at a time.' },
+    'do interviews': { word: 'do interviews', pronunciation: '/do interviews/', definition_vi: 'do interviews', definition_en: 'meaning of do interviews', example: 'This is an example: do interviews.' },
+    'every answer': { word: 'every answer', pronunciation: '/every answer/', definition_vi: 'mỗi câu trả lời', definition_en: 'Multi-word phrase: every answer', example: 'The phrase \'every answer\' is commonly used in conversation.' },
+    'every clue': { word: 'every clue', pronunciation: '/every clue/', definition_vi: 'mỗi manh mối', definition_en: 'Multi-word phrase: every clue', example: 'The phrase \'every clue\' is commonly used in conversation.' },
+    'forensic science': { word: 'forensic science', pronunciation: '/forensic science/', definition_vi: 'forensic science', definition_en: 'meaning of forensic science', example: 'This is an example: forensic science.' },
+    'innocent people': { word: 'innocent people', pronunciation: '/innocent people/', definition_vi: 'người vô tội', definition_en: 'Multi-word phrase: innocent people', example: 'The phrase \'innocent people\' is commonly used in conversation.' },
+    'last night': { word: 'last night', pronunciation: '/last night/', definition_vi: 'tối qua', definition_en: 'the night before this morning', example: 'Last night I read a book before going to sleep.' },
+    'last week': { word: 'last week', pronunciation: '/last week/', definition_vi: 'tuần trước', definition_en: 'the week before this week', example: 'Last week our class went on a trip to the park.' },
+    'listen to': { word: 'listen to', pronunciation: '/listen to/', definition_vi: 'listen to', definition_en: 'meaning of listen to', example: 'This is an example: listen to.' },
+    'looks for': { word: 'looks for', pronunciation: '/looks for/', definition_vi: 'tìm kiếm', definition_en: 'tries to find something', example: 'A detective looks for clues at the scene.' },
+    'official report': { word: 'official report', pronunciation: '/official report/', definition_vi: 'official report', definition_en: 'meaning of official report', example: 'This is an example: official report.' },
+    'one question': { word: 'one question', pronunciation: '/one question/', definition_vi: 'một câu hỏi', definition_en: 'a single question', example: 'The detective asks one question at a time.' },
+    'piece of the puzzle': { word: 'piece of the puzzle', pronunciation: '/piece of the puzzle/', definition_vi: 'piece of the puzzle', definition_en: 'meaning of piece of the puzzle', example: 'This is an example: piece of the puzzle.' },
+    'solve cases': { word: 'solve cases', pronunciation: '/solve cases/', definition_vi: 'solve cases', definition_en: 'meaning of solve cases', example: 'This is an example: solve cases.' },
+    'what happened': { word: 'what happened', pronunciation: '/what happened/', definition_vi: 'chuyện gì đã xảy ra', definition_en: 'Multi-word phrase: what happened', example: 'The phrase \'what happened\' is commonly used in conversation.' }
+};

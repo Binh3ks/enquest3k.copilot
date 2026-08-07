@@ -11,3 +11,53 @@ export default {
     { id: 4, question_en: "What time did Max start to sleep?", answer: ["At nine o'clock", "At nine o clock", "At 9 o clock", "He slept at nine", "nine o'clock"], clue_statement: "He started to fall asleep at nine o'clock.", hint_en: "At ... o clock", hint_vi: "Lúc ... giờ", audio_url: "/audio/week21/read_q4.mp3" }
   ]
 };
+
+export const chunk_focus = [
+  "wonderfully busy day",
+  "woke up early",
+  "brushed my teeth",
+  "packed my bag",
+  "walked to school",
+  "friend lily",
+  "talked all the way",
+  "cold morning",
+  "laughed together",
+  "At break time",
+  "played soccer",
+  "shouted with excitement",
+  "helped my mother",
+  "cleaned my room",
+  "organised my books",
+  "washed my hands",
+  "before dinner",
+  "my favorite",
+  "looked at the stars",
+  "counted ten",
+  "fall asleep",
+  "beautiful day"
+];
+
+export const dictionary = {
+    'At break time': { word: 'At break time', pronunciation: '/at break time/', definition_vi: 'vào giờ ra chơi', definition_en: 'meaning of at break time', example: 'At break time, the children ran outside to play games in the sunshine.' },
+    'beautiful day': { word: 'beautiful day', pronunciation: '/beautiful day/', definition_vi: 'ngày đẹp', definition_en: 'Multi-word phrase: beautiful day', example: 'The phrase \'beautiful day\' is commonly used in conversation.' },
+    'before dinner': { word: 'before dinner', pronunciation: '/before dinner/', definition_vi: 'trước bữa tối', definition_en: 'meaning of before dinner', example: 'We always wash our hands before dinner so the food is clean and safe.' },
+    'brushed my teeth': { word: 'brushed my teeth', pronunciation: '/brushed my teeth/', definition_vi: 'đánh răng', definition_en: 'meaning of brushed my teeth', example: 'I woke up early, brushed my teeth, and packed my bag.' },
+    'cleaned my room': { word: 'cleaned my room', pronunciation: '/cleaned my room/', definition_vi: 'dọn phòng', definition_en: 'meaning of cleaned my room', example: 'Then I cleaned my room and organised my books.' },
+    'cold morning': { word: 'cold morning', pronunciation: '/cold morning/', definition_vi: 'buổi sáng lạnh', definition_en: 'Multi-word phrase: cold morning', example: 'The phrase \'cold morning\' is commonly used in conversation.' },
+    'counted ten': { word: 'counted ten', pronunciation: '/counted ten/', definition_vi: 'đếm mười', definition_en: 'meaning of counted ten', example: 'The children counted ten fingers and toes after washing their hands.' },
+    'fall asleep': { word: 'fall asleep', pronunciation: '/fall asleep/', definition_vi: 'chìm vào giấc ngủ', definition_en: 'meaning of fall asleep', example: 'I close my eyes and fall asleep.' },
+    'friend lily': { word: 'friend lily', pronunciation: '/friend lily/', definition_vi: 'bạn Lily', definition_en: 'Multi-word phrase: friend lily', example: 'The phrase \'friend lily\' is commonly used in conversation.' },
+    'helped my mother': { word: 'helped my mother', pronunciation: '/helped my mother/', definition_vi: 'giúp mẹ', definition_en: 'meaning of helped my mother', example: 'After school, I helped my mother set the table for dinner.' },
+    'laughed together': { word: 'laughed together', pronunciation: '/laughed together/', definition_vi: 'cười cùng nhau', definition_en: 'meaning of laughed together', example: 'The whole family laughed together at the funny story Dad told at dinner.' },
+    'looked at the stars': { word: 'looked at the stars', pronunciation: '/looked at the stars/', definition_vi: 'nhìn lên những vì sao', definition_en: 'meaning of looked at the stars', example: 'On a clear night, we looked at the stars and counted twelve bright ones.' },
+    'my favorite': { word: 'my favorite', pronunciation: '/my favorite/', definition_vi: '(cụm từ: my favorite)', definition_en: 'Multi-word phrase: my favorite', example: 'Use of \'my favorite\' in natural context.' },
+    'organised my books': { word: 'organised my books', pronunciation: '/organised my books/', definition_vi: 'sắp xếp sách', definition_en: 'meaning of organised my books', example: 'Then I cleaned my room and organised my books.' },
+    'packed my bag': { word: 'packed my bag', pronunciation: '/packed my bag/', definition_vi: 'xếp đồ vào túi', definition_en: 'meaning of packed my bag', example: 'I woke up early, brushed my teeth, and packed my bag.' },
+    'played soccer': { word: 'played soccer', pronunciation: '/played soccer/', definition_vi: 'đã chơi bóng đá', definition_en: 'meaning of played soccer', example: 'At break time, I played soccer with my classmates and we shouted with excitement when our team scored.' },
+    'shouted with excitement': { word: 'shouted with excitement', pronunciation: '/shouted with excitement/', definition_vi: 'hét với hào hứng', definition_en: 'meaning of shouted with excitement', example: 'The children shouted with excitement when the magician pulled a rabbit from his hat.' },
+    'talked all the way': { word: 'talked all the way', pronunciation: '/talked all the way/', definition_vi: 'nói chuyện suốt đường', definition_en: 'meaning of talked all the way', example: 'We talked all the way together whenever we can.' },
+    'walked to school': { word: 'walked to school', pronunciation: '/walked to school/', definition_vi: 'đi bộ đến trường', definition_en: 'meaning of walked to school', example: 'I walked to school with my friend Lily, and we talked all the way about our science homework.' },
+    'washed my hands': { word: 'washed my hands', pronunciation: '/washed my hands/', definition_vi: 'rửa tay', definition_en: 'meaning of washed my hands', example: 'I always washed my hands carefully before eating my lunch at school.' },
+    'woke up early': { word: 'woke up early', pronunciation: '/woke up early/', definition_vi: 'thức dậy sớm', definition_en: 'meaning of woke up early', example: 'I woke up early, brushed my teeth, and packed my bag.' },
+    'wonderfully busy day': { word: 'wonderfully busy day', pronunciation: '/wonderfully busy day/', definition_vi: 'ngày bận rộn tuyệt vời', definition_en: 'meaning of wonderfully busy day', example: 'Saturday was a wonderfully busy day full of markets, picnics and birthday parties.' }
+};

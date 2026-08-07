@@ -10,3 +10,47 @@ export default {
     { id: 3, question_en: "What does the ball have?", answer: ["Energy", "The ball has energy"], clue_statement: "The ball has energy.", hint_en: "The ball has...", hint_vi: "Bóng có..." }
   ]
 };
+
+export const chunk_focus = [
+  "first soccer game",
+  "running very fast",
+  "My friend",
+  "kicking the ball",
+  "catching it",
+  "passing it",
+  "in motion",
+  "playing soccer",
+  "cheering loudly",
+  "shout with excitement",
+  "throw the ball",
+  "use my feet",
+  "scoring a goal",
+  "jumping up and down",
+  "score a goal",
+  "My mom",
+  "comes to watch",
+  "My dad",
+  "takes photos"
+];
+
+export const dictionary = {
+    'My dad': { word: 'My dad', pronunciation: '/my dad/', definition_vi: '(cụm từ: my dad)', definition_en: 'Multi-word phrase: my dad', example: 'Use of \'my dad\' in natural context.' },
+    'My friend': { word: 'My friend', pronunciation: '/my friend/', definition_vi: '(cụm từ: my friend)', definition_en: 'Multi-word phrase: my friend', example: 'Use of \'my friend\' in natural context.' },
+    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
+    'catching it': { word: 'catching it', pronunciation: '/catching it/', definition_vi: 'bắt nó', definition_en: 'meaning of catching it', example: 'I am catching it with my foot.' },
+    'cheering loudly': { word: 'cheering loudly', pronunciation: '/cheering loudly/', definition_vi: 'cổ vũ lớn', definition_en: 'meaning of cheering loudly', example: 'We cheering loudly together whenever we can.' },
+    'comes to watch': { word: 'comes to watch', pronunciation: '/comes to watch/', definition_vi: 'đến xem', definition_en: 'meaning of comes to watch', example: 'My mom comes to watch.' },
+    'first soccer game': { word: 'first soccer game', pronunciation: '/first soccer game/', definition_vi: 'trận bóng đá đầu tiên', definition_en: 'Multi-word phrase: first soccer game', example: 'The phrase \'first soccer game\' is commonly used in conversation.' },
+    'in motion': { word: 'in motion', pronunciation: '/in motion/', definition_vi: 'in motion', definition_en: 'meaning of in motion', example: 'This is an example: in motion.' },
+    'jumping up and down': { word: 'jumping up and down', pronunciation: '/jumping up and down/', definition_vi: 'nhảy lên xuống', definition_en: 'meaning of jumping up and down', example: 'They are jumping up and down.' },
+    'kicking the ball': { word: 'kicking the ball', pronunciation: '/kicking the ball/', definition_vi: 'sút bóng', definition_en: 'meaning of kicking the ball', example: 'My friend is kicking the ball to me.' },
+    'passing it': { word: 'passing it', pronunciation: '/passing it/', definition_vi: 'đang chuyền', definition_en: 'meaning of passing it', example: 'Now I am passing it to another friend.' },
+    'playing soccer': { word: 'playing soccer', pronunciation: '/playing soccer/', definition_vi: 'đang chơi bóng đá', definition_en: 'meaning of playing soccer', example: 'We playing soccer together whenever we can.' },
+    'running very fast': { word: 'running very fast', pronunciation: '/running very fast/', definition_vi: 'chạy rất nhanh', definition_en: 'meaning of running very fast', example: 'I am running very fast.' },
+    'score a goal': { word: 'score a goal', pronunciation: '/score a goal/', definition_vi: 'score a goal', definition_en: 'meaning of score a goal', example: 'This is an example: score a goal.' },
+    'scoring a goal': { word: 'scoring a goal', pronunciation: '/scoring a goal/', definition_vi: 'ghi bàn thắng', definition_en: 'meaning of scoring a goal', example: 'The other team is scoring a goal.' },
+    'shout with excitement': { word: 'shout with excitement', pronunciation: '/shout with excitement/', definition_vi: 'hét với hào hứng', definition_en: 'meaning of shout with excitement', example: '"Go, go!" they shout with excitement.' },
+    'takes photos': { word: 'takes photos', pronunciation: '/takes photos/', definition_vi: 'chụp ảnh', definition_en: 'meaning of takes photos', example: 'My dad takes photos.' },
+    'throw the ball': { word: 'throw the ball', pronunciation: '/throw the ball/', definition_vi: 'ném bóng', definition_en: 'meaning of throw the ball', example: 'I throw the ball with my hands.' },
+    'use my feet': { word: 'use my feet', pronunciation: '/use my feet/', definition_vi: 'dùng chân', definition_en: 'meaning of use my feet', example: 'I use my feet to kick the ball.' }
+};

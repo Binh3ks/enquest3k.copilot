@@ -17,3 +17,59 @@ export default {
     hint_vi: "Nói về các hoạt động buổi sáng, chiều và tối của bạn..."
   }
   };
+
+export const chunk_focus = [
+  "school day",
+  "wake up",
+  "mom wakes",
+  "brush my teeth",
+  "eat breakfast",
+  "my family",
+  "eat rice",
+  "go to school",
+  "with my friends",
+  "have lunch",
+  "at school",
+  "After lunch",
+  "play with",
+  "my friends",
+  "go home",
+  "do homework",
+  "every afternoon",
+  "have dinner",
+  "After dinner",
+  "watch TV",
+  "watch cartoons",
+  "go to bed",
+  "mom says",
+  "fall asleep",
+  "perfect day"
+];
+
+export const dictionary = {
+    'After dinner': { word: 'After dinner', pronunciation: '/after dinner/', definition_vi: 'sau bữa tối', definition_en: 'Multi-word phrase: after dinner', example: 'The phrase \'after dinner\' is commonly used in conversation.' },
+    'After lunch': { word: 'After lunch', pronunciation: '/after lunch/', definition_vi: 'sau bữa trưa', definition_en: 'Multi-word phrase: after lunch', example: 'The phrase \'after lunch\' is commonly used in conversation.' },
+    'at school': { word: 'at school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'brush my teeth': { word: 'brush my teeth', pronunciation: '/brush my teeth/', definition_vi: 'đánh răng', definition_en: 'meaning of brush my teeth', example: 'I brush my teeth with my blue toothbrush.' },
+    'do homework': { word: 'do homework', pronunciation: '/do homework/', definition_vi: 'làm bài tập', definition_en: 'meaning of do homework', example: 'I do homework every evening after school.' },
+    'eat breakfast': { word: 'eat breakfast', pronunciation: '/eat breakfast/', definition_vi: 'ăn sáng', definition_en: 'meaning of eat breakfast', example: 'Then I eat breakfast with my family.' },
+    'eat rice': { word: 'eat rice', pronunciation: '/eat rice/', definition_vi: 'ăn cơm', definition_en: 'Multi-word phrase: eat rice', example: 'The phrase \'eat rice\' is commonly used in conversation.' },
+    'every afternoon': { word: 'every afternoon', pronunciation: '/every afternoon/', definition_vi: 'mỗi buổi chiều', definition_en: 'meaning of every afternoon', example: 'I read books every afternoon after school.' },
+    'fall asleep': { word: 'fall asleep', pronunciation: '/fall asleep/', definition_vi: 'chìm vào giấc ngủ', definition_en: 'meaning of fall asleep', example: 'I close my eyes and fall asleep.' },
+    'go home': { word: 'go home', pronunciation: '/go home/', definition_vi: 'về nhà', definition_en: 'Multi-word phrase: go home', example: 'The phrase \'go home\' is commonly used in conversation.' },
+    'go to bed': { word: 'go to bed', pronunciation: '/go to bed/', definition_vi: 'đi ngủ', definition_en: 'meaning of go to bed', example: 'I go to bed at nine oclock every night.' },
+    'go to school': { word: 'go to school', pronunciation: '/go to school/', definition_vi: 'đi học', definition_en: 'meaning of go to school', example: 'I also go to school on Monday to read and learn.' },
+    'have dinner': { word: 'have dinner', pronunciation: '/have dinner/', definition_vi: 'ăn tối', definition_en: 'meaning of have dinner', example: 'At 7 o\'clock, I have dinner with my family.' },
+    'have lunch': { word: 'have lunch', pronunciation: '/have lunch/', definition_vi: 'ăn trưa', definition_en: 'meaning of have lunch', example: 'Then we have lunch at a restaurant.' },
+    'mom says': { word: 'mom says', pronunciation: '/mom says/', definition_vi: 'mẹ nói', definition_en: 'Multi-word phrase: mom says', example: 'The phrase \'mom says\' is commonly used in conversation.' },
+    'mom wakes': { word: 'mom wakes', pronunciation: '/mom wakes/', definition_vi: 'mẹ đánh thức', definition_en: 'Multi-word phrase: mom wakes', example: 'The phrase \'mom wakes\' is commonly used in conversation.' },
+    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: '(cụm từ: my family)', definition_en: 'Multi-word phrase: my family', example: 'Use of \'my family\' in natural context.' },
+    'my friends': { word: 'my friends', pronunciation: '/my friends/', definition_vi: '(cụm từ: my friends)', definition_en: 'Multi-word phrase: my friends', example: 'Use of \'my friends\' in natural context.' },
+    'perfect day': { word: 'perfect day', pronunciation: '/perfect day/', definition_vi: 'ngày hoàn hảo', definition_en: 'Multi-word phrase: perfect day', example: 'The phrase \'perfect day\' is commonly used in conversation.' },
+    'play with': { word: 'play with', pronunciation: '/play with/', definition_vi: 'chơi với', definition_en: 'meaning of play with', example: 'After lunch, I play with my friends.' },
+    'school day': { word: 'school day', pronunciation: '/school day/', definition_vi: 'ngày đi học', definition_en: 'Multi-word phrase: school day', example: 'The phrase \'school day\' is commonly used in conversation.' },
+    'wake up': { word: 'wake up', pronunciation: '/wake up/', definition_vi: 'thức dậy', definition_en: 'meaning of wake up', example: 'Every morning, I wake up early and get ready for school.' },
+    'watch TV': { word: 'watch TV', pronunciation: '/watch tv/', definition_vi: 'xem ti vi', definition_en: 'meaning of watch tv', example: 'After dinner, I watch TV and watch cartoons.' },
+    'watch cartoons': { word: 'watch cartoons', pronunciation: '/watch cartoons/', definition_vi: 'xem phim hoạt hình', definition_en: 'Multi-word phrase: watch cartoons', example: 'The phrase \'watch cartoons\' is commonly used in conversation.' },
+    'with my friends': { word: 'with my friends', pronunciation: '/with my friends/', definition_vi: '(cụm từ: with my friends)', definition_en: 'Multi-word phrase: with my friends', example: 'Use of \'with my friends\' in natural context.' }
+};

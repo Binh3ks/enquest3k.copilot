@@ -69,3 +69,33 @@ export default {
     hint_vi: "Tôi đã... Bây giờ tôi... Tôi đã lớn lên..."
   }
 };
+
+export const chunk_focus = [
+  "look at",
+  "old photos",
+  "were a baby",
+  "As time passed",
+  "began to grow",
+  "help your body grow",
+  "kindergarten",
+  "memory you make",
+  "Every year",
+  "grow bigger",
+  "Look at",
+  "at their own pace"
+];
+
+export const dictionary = {
+    'As time passed': { word: 'As time passed', pronunciation: '/as time passed/', definition_vi: 'khi thời gian trôi qua', definition_en: 'meaning of as time passed', example: 'This is an example: as time passed.' },
+    'Every year': { word: 'Every year', pronunciation: '/every year/', definition_vi: 'mỗi năm', definition_en: 'meaning of every year', example: 'This is an example: every year.' },
+    'Look at': { word: 'Look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
+    'at their own pace': { word: 'at their own pace', pronunciation: '/at their own pace/', definition_vi: 'theo tốc độ của riêng họ', definition_en: 'at a speed that is comfortable for them', example: 'The students learn at their own pace.' },
+    'began to grow': { word: 'began to grow', pronunciation: '/began to grow/', definition_vi: 'bắt đầu mọc lên', definition_en: 'started to grow', example: 'The seeds began to grow after the rain.' },
+    'grow bigger': { word: 'grow bigger', pronunciation: '/grow bigger/', definition_vi: 'lớn hơn', definition_en: 'meaning of grow bigger', example: 'I grow bigger every year.' },
+    'help your body grow': { word: 'help your body grow', pronunciation: '/help your body grow/', definition_vi: 'giúp cơ thể bạn phát triển', definition_en: 'support healthy growth of your body', example: 'Eating fruit can help your body grow strong.' },
+    'kindergarten': { word: 'kindergarten', pronunciation: '/kindergarten/', definition_vi: 'mẫu giáo', definition_en: 'a school for young children ages 3-5', example: 'My little sister started kindergarten this week.' },
+    'look at': { word: 'look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
+    'memory you make': { word: 'memory you make', pronunciation: '/memory you make/', definition_vi: 'memory you make', definition_en: 'meaning of memory you make', example: 'This is an example: memory you make.' },
+    'old photos': { word: 'old photos', pronunciation: '/old photos/', definition_vi: 'ảnh cũ', definition_en: 'meaning of old photos', example: 'Looking through old photos, we saw what our town looked like long ago.' },
+    'were a baby': { word: 'were a baby', pronunciation: '/were a baby/', definition_vi: 'were a baby', definition_en: 'meaning of were a baby', example: 'This is an example: were a baby.' }
+};

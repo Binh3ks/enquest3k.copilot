@@ -20,6 +20,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "My Day at the Park",
   weekTitle_vi: "Một ngày của tôi ở công viên",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Present Continuous (S + am/is/are + V-ing)",
   global_vocab: vocab.vocab,
   

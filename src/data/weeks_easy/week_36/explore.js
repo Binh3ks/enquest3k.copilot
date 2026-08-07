@@ -43,17 +43,17 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'went on': { word: 'went on', pronunciation: '/went on/', definition_vi: 'đi (một chuyến đi)', definition_en: 'meaning of went on', example: 'Last summer, we went on a trip to the mountains with our class.' },
-    'amazing things': { word: 'amazing things', pronunciation: '/amazing things/', definition_vi: 'amazing things', definition_en: 'meaning of amazing things', example: 'This is an example: amazing things.' },
-    'wrote about': { word: 'wrote about', pronunciation: '/wrote about/', definition_vi: 'viết về', definition_en: 'documented in writing', example: 'He wrote about everything he saw.' },
-    'went from': { word: 'went from', pronunciation: '/went from/', definition_vi: 'đi từ (đâu đến đâu)', definition_en: 'traveled starting from a place', example: 'Marco Polo went from Italy to China.' },
-    'took 24 years': { word: 'took 24 years', pronunciation: '/tʊk ˈtwenti fɔːr jɪərz/', definition_vi: 'mất 24 năm', definition_en: 'lasted for twenty-four years', example: 'His epic journey took 24 years.' },
     'Silk Road': { word: 'Silk Road', pronunciation: '/silk road/', definition_vi: 'Con đường Tơ lụa cổ đại', definition_en: 'ancient trade route between Europe and Asia', example: 'Merchants traded silk on the Silk Road.' },
-    'met merchants': { word: 'met merchants', pronunciation: '/met merchants/', definition_vi: 'gặp gỡ các thương gia', definition_en: 'encountered trade businesspeople', example: 'He met merchants from many countries.' },
-    'go down': { word: 'go down', pronunciation: '/ɡoʊ daʊn/', definition_vi: 'đi xuống sâu', definition_en: 'descend deep underwater', example: 'Submarines go down deep.' },
-    'take photos': { word: 'take photos', pronunciation: '/teɪk ˈfoʊtoʊz/', definition_vi: 'chụp ảnh', definition_en: 'capture pictures', example: 'Divers take photos of corals.' },
-    'came back': { word: 'came back', pronunciation: '/came back/', definition_vi: 'trở về', definition_en: 'returned from a place', example: 'When we came back to the surface, we were happy.' },
-    'inspired people': { word: 'inspired people', pronunciation: '/ɪnˈspaɪərd ˈpiːpl/', definition_vi: 'truyền cảm hứng cho mọi người', definition_en: 'encouraged people to explore', example: 'His writings inspired people.' },
+    'amazing things': { word: 'amazing things', pronunciation: '/amazing things/', definition_vi: 'amazing things', definition_en: 'meaning of amazing things', example: 'This is an example: amazing things.' },
     'began to plan': { word: 'began to plan', pronunciation: '/began to plan/', definition_vi: 'bắt đầu lên kế hoạch', definition_en: 'started making preparations for something', example: 'We began to plan our next exciting dive.' },
-    'coral reefs': { word: 'coral reefs', pronunciation: '/coral reefs/', definition_vi: 'coral reefs', definition_en: 'meaning of coral reefs', example: 'Example sentence with coral reefs.' }
+    'came back': { word: 'came back', pronunciation: '/came back/', definition_vi: 'trở về', definition_en: 'returned from a place', example: 'When we came back to the surface, we were happy.' },
+    'coral reefs': { word: 'coral reefs', pronunciation: '/coral reefs/', definition_vi: 'coral reefs', definition_en: 'meaning of coral reefs', example: 'Example sentence with coral reefs.' },
+    'go down': { word: 'go down', pronunciation: '/ɡoʊ daʊn/', definition_vi: 'đi xuống sâu', definition_en: 'descend deep underwater', example: 'Submarines go down deep.' },
+    'inspired people': { word: 'inspired people', pronunciation: '/ɪnˈspaɪərd ˈpiːpl/', definition_vi: 'truyền cảm hứng cho mọi người', definition_en: 'encouraged people to explore', example: 'His writings inspired people.' },
+    'met merchants': { word: 'met merchants', pronunciation: '/met merchants/', definition_vi: 'gặp gỡ các thương gia', definition_en: 'encountered trade businesspeople', example: 'He met merchants from many countries.' },
+    'take photos': { word: 'take photos', pronunciation: '/teɪk ˈfoʊtoʊz/', definition_vi: 'chụp ảnh', definition_en: 'capture pictures', example: 'Divers take photos of corals.' },
+    'took 24 years': { word: 'took 24 years', pronunciation: '/tʊk ˈtwenti fɔːr jɪərz/', definition_vi: 'mất 24 năm', definition_en: 'lasted for twenty-four years', example: 'His epic journey took 24 years.' },
+    'went from': { word: 'went from', pronunciation: '/went from/', definition_vi: 'đi từ (đâu đến đâu)', definition_en: 'traveled starting from a place', example: 'Marco Polo went from Italy to China.' },
+    'went on': { word: 'went on', pronunciation: '/went on/', definition_vi: 'đi (một chuyến đi)', definition_en: 'meaning of went on', example: 'Last summer, we went on a trip to the mountains with our class.' },
+    'wrote about': { word: 'wrote about', pronunciation: '/wrote about/', definition_vi: 'viết về', definition_en: 'documented in writing', example: 'He wrote about everything he saw.' }
 };

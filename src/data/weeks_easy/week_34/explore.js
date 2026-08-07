@@ -86,3 +86,51 @@ Bài học: Làm việc chăm chỉ khi có thể, để sẵn sàng khi bạn c
     hint_vi: "Tôi cố gắng ___ vì... Con Kiến và Con Châu Chấu dạy tôi...",
   }
 };
+
+export const chunk_focus = [
+  "short story",
+  "teaches a lesson",
+  "come from",
+  "who lived",
+  "long time ago",
+  "ant and the grasshopper",
+  "Once upon a time",
+  "there was",
+  "working ant",
+  "lazy grasshopper",
+  "gathered seeds",
+  "every day",
+  "sang songs",
+  "all day",
+  "lots of",
+  "nowhere to go",
+  "nothing to eat",
+  "learned an important lesson",
+  "prepare for the future",
+  "Fable lesson",
+  "work hard"
+];
+
+export const dictionary = {
+    'Fable lesson': { word: 'Fable lesson', pronunciation: '/fable lesson/', definition_vi: 'fable lesson', definition_en: 'meaning of fable lesson', example: 'This is an example: fable lesson.' },
+    'Once upon a time': { word: 'Once upon a time', pronunciation: '/once upon a time/', definition_vi: 'once upon a time', definition_en: 'meaning of once upon a time', example: 'This is an example: once upon a time.' },
+    'all day': { word: 'all day', pronunciation: '/all day/', definition_vi: 'cả ngày', definition_en: 'Multi-word phrase: all day', example: 'The phrase \'all day\' is commonly used in conversation.' },
+    'ant and the grasshopper': { word: 'ant and the grasshopper', pronunciation: '/ant and the grasshopper/', definition_vi: 'ant and the grasshopper', definition_en: 'meaning of ant and the grasshopper', example: 'This is an example: ant and the grasshopper.' },
+    'come from': { word: 'come from', pronunciation: '/come from/', definition_vi: 'đến từ', definition_en: 'meaning of come from', example: 'This is an example: come from.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'gathered seeds': { word: 'gathered seeds', pronunciation: '/gathered seeds/', definition_vi: 'nhặt hạt', definition_en: 'collected seeds from the field', example: 'She gathered seeds and stored food for the coming winter.' },
+    'lazy grasshopper': { word: 'lazy grasshopper', pronunciation: '/lazy grasshopper/', definition_vi: 'con châu chấu lười biếng', definition_en: 'Multi-word phrase: lazy grasshopper', example: 'The phrase \'lazy grasshopper\' is commonly used in conversation.' },
+    'learned an important lesson': { word: 'learned an important lesson', pronunciation: '/learned an important lesson/', definition_vi: 'học được một bài học quan trọng', definition_en: 'gained understanding of something very important', example: 'The grasshopper learned an important lesson: always work hard.' },
+    'long time ago': { word: 'long time ago', pronunciation: '/long time ago/', definition_vi: 'cách đây lâu', definition_en: 'Multi-word phrase: long time ago', example: 'The phrase \'long time ago\' is commonly used in conversation.' },
+    'lots of': { word: 'lots of', pronunciation: '/lots of/', definition_vi: '(cụm từ: lots of)', definition_en: 'Multi-word phrase: lots of', example: 'Use of \'lots of\' in natural context.' },
+    'nothing to eat': { word: 'nothing to eat', pronunciation: '/nothing to eat/', definition_vi: 'nothing to eat', definition_en: 'meaning of nothing to eat', example: 'This is an example: nothing to eat.' },
+    'nowhere to go': { word: 'nowhere to go', pronunciation: '/nowhere to go/', definition_vi: 'nowhere to go', definition_en: 'meaning of nowhere to go', example: 'This is an example: nowhere to go.' },
+    'prepare for the future': { word: 'prepare for the future', pronunciation: '/prepare for the future/', definition_vi: 'chuẩn bị cho tương lai', definition_en: 'get ready for what comes next', example: 'Always work hard and prepare for the future.' },
+    'sang songs': { word: 'sang songs', pronunciation: '/sang songs/', definition_vi: 'hát ríu rít', definition_en: 'made music with the voice', example: 'The grasshopper jumped around and sang songs all day long.' },
+    'short story': { word: 'short story', pronunciation: '/short story/', definition_vi: 'truyện ngắn', definition_en: 'meaning of short story', example: 'This is an example: short story.' },
+    'teaches a lesson': { word: 'teaches a lesson', pronunciation: '/teaches a lesson/', definition_vi: 'teaches a lesson', definition_en: 'meaning of teaches a lesson', example: 'This is an example: teaches a lesson.' },
+    'there was': { word: 'there was', pronunciation: '/there was/', definition_vi: 'có (nghĩa tồn tại)', definition_en: 'meaning of there was', example: 'There was a big market near the river.' },
+    'who lived': { word: 'who lived', pronunciation: '/who lived/', definition_vi: 'người đã sống', definition_en: 'Multi-word phrase: who lived', example: 'The phrase \'who lived\' is commonly used in conversation.' },
+    'work hard': { word: 'work hard', pronunciation: '/work hard/', definition_vi: 'làm việc chăm chỉ', definition_en: 'meaning of work hard', example: 'This is an example: work hard.' },
+    'working ant': { word: 'working ant', pronunciation: '/working ant/', definition_vi: 'con kiến chăm chỉ', definition_en: 'Multi-word phrase: working ant', example: 'The phrase \'working ant\' is commonly used in conversation.' }
+};

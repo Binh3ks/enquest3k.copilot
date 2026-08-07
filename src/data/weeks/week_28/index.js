@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "The Tortoise and the Hare",
   weekTitle_vi: "Rua va Tho",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple with Irregular Verbs: ran, slept, won, lost (story retell: First, Then, After that, Finally)",
 
   global_vocab: vocab.vocab,

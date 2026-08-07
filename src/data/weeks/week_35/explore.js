@@ -70,3 +70,51 @@ Chúng ta có thể làm gì? Chúng ta phải giảm, tái sử dụng, và tá
     hint_vi: "Một vấn đề là... Chúng ta phải/nên/có thể... vì..."
   }
 };
+
+export const chunk_focus = [
+  "Climate change",
+  "our planet",
+  "for thousands of years",
+  "Greenhouse gases",
+  "burn fossil fuels",
+  "every day",
+  "As a result",
+  "polar ice",
+  "sea levels",
+  "But there is hope",
+  "Renewable energy",
+  "such as",
+  "solar power",
+  "wind power",
+  "help us",
+  "carbon emissions",
+  "What can we do?",
+  "reduce, reuse, and recycle",
+  "plant more trees",
+  "use less",
+  "make a difference"
+];
+
+export const dictionary = {
+    'As a result': { word: 'As a result', pronunciation: '/as a result/', definition_vi: '(cụm từ: as a result)', definition_en: 'Multi-word phrase: as a result', example: 'Use of \'as a result\' in natural context.' },
+    'But there is hope': { word: 'But there is hope', pronunciation: '/but there is hope/', definition_vi: 'but there is hope', definition_en: 'meaning of but there is hope', example: 'This is an example: but there is hope.' },
+    'Climate change': { word: 'Climate change', pronunciation: '/ˈklaɪmət tʃeɪndʒ/', definition_vi: 'biến đổi khí hậu', definition_en: 'meaning of climate change', example: 'Climate change is making the Earth warmer.' },
+    'Greenhouse gases': { word: 'Greenhouse gases', pronunciation: '/greenhouse gases/', definition_vi: 'khí nhà kính', definition_en: 'meaning of greenhouse gases', example: 'This is an example: greenhouse gases.' },
+    'Renewable energy': { word: 'Renewable energy', pronunciation: '/renewable energy/', definition_vi: 'năng lượng tái tạo', definition_en: 'meaning of renewable energy', example: 'This is an example: renewable energy.' },
+    'What can we do?': { word: 'What can we do?', pronunciation: '/what can we do?/', definition_vi: 'what can we do?', definition_en: 'key phrase: what can we do?', example: 'They used the phrase \'what can we do?\' in their reading.' },
+    'burn fossil fuels': { word: 'burn fossil fuels', pronunciation: '/burn fossil fuels/', definition_vi: 'đốt nhiên liệu hóa thạch', definition_en: 'meaning of burn fossil fuels', example: 'This is an example: burn fossil fuels.' },
+    'carbon emissions': { word: 'carbon emissions', pronunciation: '/carbon emissions/', definition_vi: 'lượng khí thải carbon', definition_en: 'meaning of carbon emissions', example: 'This is an example: carbon emissions.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'for thousands of years': { word: 'for thousands of years', pronunciation: '/for thousands of years/', definition_vi: 'hàng nghìn năm', definition_en: 'meaning of for thousands of years', example: 'This is an example: for thousands of years.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'make a difference': { word: 'make a difference', pronunciation: '/make a difference/', definition_vi: 'tạo ra sự khác biệt', definition_en: 'meaning of make a difference', example: 'This is an example: make a difference.' },
+    'our planet': { word: 'our planet', pronunciation: '/our planet/', definition_vi: 'hành tinh của chúng ta', definition_en: 'the Earth where we live', example: 'We must protect our planet every day.' },
+    'plant more trees': { word: 'plant more trees', pronunciation: '/plant more trees/', definition_vi: 'trồng thêm cây', definition_en: 'Multi-word phrase: plant more trees', example: 'The phrase \'plant more trees\' is commonly used in conversation.' },
+    'polar ice': { word: 'polar ice', pronunciation: '/ˈpoʊlər aɪs/', definition_vi: 'băng ở hai cực', definition_en: 'meaning of polar ice', example: 'Polar ice is melting because of climate change.' },
+    'reduce, reuse, and recycle': { word: 'reduce, reuse, and recycle', pronunciation: '/reduce, reuse, and recycle/', definition_vi: 'reduce, reuse, and recycle', definition_en: 'meaning of reduce, reuse, and recycle', example: 'This is an example: reduce, reuse, and recycle.' },
+    'sea levels': { word: 'sea levels', pronunciation: '/sea levels/', definition_vi: 'mực nước biển', definition_en: 'meaning of sea levels', example: 'This is an example: sea levels.' },
+    'solar power': { word: 'solar power', pronunciation: '/ˈsoʊlər ˈpaʊər/', definition_vi: 'năng lượng mặt trời', definition_en: 'meaning of solar power', example: 'Solar power can make our planet cleaner.' },
+    'such as': { word: 'such as', pronunciation: '/such as/', definition_vi: '(cụm từ: such as)', definition_en: 'Multi-word phrase: such as', example: 'Use of \'such as\' in natural context.' },
+    'use less': { word: 'use less', pronunciation: '/use less/', definition_vi: 'dùng ít hơn', definition_en: 'Multi-word phrase: use less', example: 'The phrase \'use less\' is commonly used in conversation.' },
+    'wind power': { word: 'wind power', pronunciation: '/wind power/', definition_vi: 'năng lượng gió', definition_en: 'meaning of wind power', example: 'This is an example: wind power.' }
+};

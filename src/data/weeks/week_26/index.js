@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "My Weekend Comic Strip",
   weekTitle_vi: "Bo Truyen Tranh Cuoi Tuan Cua Toi",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Review: was/were, regular -ed verbs, sequence words (First, Then, After that, Finally)",
 
   global_vocab: vocab.vocab,

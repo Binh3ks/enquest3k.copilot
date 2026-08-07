@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "Treasure Hunt at Home (Easy)",
   weekTitle_vi: "Truy tìm Kho báu (Dễ)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Prepositions (In, On, Under, Next to)",
   global_vocab: vocab.vocab,
   

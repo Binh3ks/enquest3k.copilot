@@ -18,6 +18,8 @@ const weekData = {
   weekId: 21,
   weekTitle_en: "Yesterday's Diary",
   weekTitle_vi: "Nhật Ký Hôm Qua",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Regular Verbs (verb-ed)",
   isEasy: true,
 

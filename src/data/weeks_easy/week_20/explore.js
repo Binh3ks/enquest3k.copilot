@@ -53,3 +53,47 @@ export default {
     }
   ]
 };
+
+export const chunk_focus = [
+  "Look at",
+  "old town",
+  "Long ago",
+  "went to the market",
+  "buy food",
+  "There were",
+  "There was",
+  "bridge over",
+  "cross the river",
+  "in the center of",
+  "went to",
+  "There are",
+  "new buildings",
+  "There is",
+  "new bridge",
+  "still standing",
+  "important to us",
+  "old temple",
+  "part of our history"
+];
+
+export const dictionary = {
+    'Long ago': { word: 'Long ago', pronunciation: '/long ago/', definition_vi: 'lâu rồi', definition_en: 'meaning of long ago', example: 'This is an example: long ago.' },
+    'Look at': { word: 'Look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
+    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
+    'There was': { word: 'There was', pronunciation: '/there was/', definition_vi: 'có (nghĩa tồn tại)', definition_en: 'meaning of there was', example: 'There was a big market near the river.' },
+    'There were': { word: 'There were', pronunciation: '/there were/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there were', example: 'There were tall trees along the road.' },
+    'bridge over': { word: 'bridge over', pronunciation: '/bridge over/', definition_vi: 'cầu bắc qua', definition_en: 'Multi-word phrase: bridge over', example: 'The phrase \'bridge over\' is commonly used in conversation.' },
+    'buy food': { word: 'buy food', pronunciation: '/buy food/', definition_vi: 'mua đồ ăn', definition_en: 'meaning of buy food', example: 'We buy food at the supermarket.' },
+    'cross the river': { word: 'cross the river', pronunciation: '/cross the river/', definition_vi: 'băng qua sông', definition_en: 'go from one side of the river to the other', example: 'People used the bridge to cross the river.' },
+    'important to us': { word: 'important to us', pronunciation: '/important to us/', definition_vi: 'important to us', definition_en: 'meaning of important to us', example: 'This is an example: important to us.' },
+    'in the center of': { word: 'in the center of', pronunciation: '/in the center of/', definition_vi: 'in the center of', definition_en: 'meaning of in the center of', example: 'This is an example: in the center of.' },
+    'new bridge': { word: 'new bridge', pronunciation: '/new bridge/', definition_vi: 'cây cầu mới', definition_en: 'Multi-word phrase: new bridge', example: 'The phrase \'new bridge\' is commonly used in conversation.' },
+    'new buildings': { word: 'new buildings', pronunciation: '/new buildings/', definition_vi: 'những tòa nhà mới', definition_en: 'Multi-word phrase: new buildings', example: 'The phrase \'new buildings\' is commonly used in conversation.' },
+    'old temple': { word: 'old temple', pronunciation: '/old temple/', definition_vi: 'đền cổ', definition_en: 'meaning of old temple', example: 'The old temple at the top of the hill was built over three hundred years ago.' },
+    'old town': { word: 'old town', pronunciation: '/old town/', definition_vi: 'thị trấn cổ', definition_en: 'Multi-word phrase: old town', example: 'The phrase \'old town\' is commonly used in conversation.' },
+    'part of our history': { word: 'part of our history', pronunciation: '/part of our history/', definition_vi: 'một phần lịch sử của chúng ta', definition_en: 'something that belongs to our shared past', example: 'Old buildings are part of our history.' },
+    'still standing': { word: 'still standing', pronunciation: '/still standing/', definition_vi: 'still standing', definition_en: 'meaning of still standing', example: 'This is an example: still standing.' },
+    'went to': { word: 'went to', pronunciation: '/went to/', definition_vi: 'đến (nơi nào đó)', definition_en: 'meaning of went to', example: 'After breakfast, the family went to the park for a morning walk.' },
+    'went to the market': { word: 'went to the market', pronunciation: '/went to the market/', definition_vi: 'đã đi đến chợ', definition_en: 'went to a market to buy things', example: 'Long ago, people went to the market to buy food.' }
+};

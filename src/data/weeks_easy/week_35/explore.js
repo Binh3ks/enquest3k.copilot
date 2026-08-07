@@ -87,3 +87,47 @@ Tin tốt: Tất cả chúng ta đều có thể giúp! Chúng ta phải bảo v
     hint_vi: "Tôi có thể ___ ở nhà vì nó giúp ___.",
   }
 };
+
+export const chunk_focus = [
+  "climate change",
+  "Climate change",
+  "getting warmer",
+  "1.1°C warmer",
+  "years ago",
+  "animals and people",
+  "burn fossil fuels",
+  "greenhouse gases",
+  "warm blanket",
+  "around the earth",
+  "greenhouse effect",
+  "warmer planet",
+  "What happens",
+  "polar ice",
+  "sea levels",
+  "animal homes",
+  "good news",
+  "must protect",
+  "our planet"
+];
+
+export const dictionary = {
+    '1.1°C warmer': { word: '1.1°C warmer', pronunciation: '/1.1°c warmer/', definition_vi: '1.1°c warmer', definition_en: 'key phrase: 1.1°c warmer', example: 'They used the phrase \'1.1°c warmer\' in their reading.' },
+    'Climate change': { word: 'Climate change', pronunciation: '/ˈklaɪmət tʃeɪndʒ/', definition_vi: 'biến đổi khí hậu', definition_en: 'meaning of climate change', example: 'Climate change is making the Earth warmer.' },
+    'What happens': { word: 'What happens', pronunciation: '/what happens/', definition_vi: 'điều gì xảy ra', definition_en: 'Multi-word phrase: what happens', example: 'The phrase \'what happens\' is commonly used in conversation.' },
+    'animal homes': { word: 'animal homes', pronunciation: '/animal homes/', definition_vi: 'nơi ở của động vật', definition_en: 'Multi-word phrase: animal homes', example: 'The phrase \'animal homes\' is commonly used in conversation.' },
+    'animals and people': { word: 'animals and people', pronunciation: '/animals and people/', definition_vi: 'động vật và con người', definition_en: 'meaning of animals and people', example: 'On the farm, animals and people live and work together every day.' },
+    'around the earth': { word: 'around the earth', pronunciation: '/around the earth/', definition_vi: 'xung quanh Trái Đất', definition_en: 'meaning of around the earth', example: 'This is an example: around the earth.' },
+    'burn fossil fuels': { word: 'burn fossil fuels', pronunciation: '/burn fossil fuels/', definition_vi: 'đốt nhiên liệu hóa thạch', definition_en: 'meaning of burn fossil fuels', example: 'This is an example: burn fossil fuels.' },
+    'climate change': { word: 'climate change', pronunciation: '/ˈklaɪmət tʃeɪndʒ/', definition_vi: 'biến đổi khí hậu', definition_en: 'meaning of climate change', example: 'Climate change is making the Earth warmer.' },
+    'getting warmer': { word: 'getting warmer', pronunciation: '/getting warmer/', definition_vi: 'đang ấm hơn', definition_en: 'Multi-word phrase: getting warmer', example: 'The phrase \'getting warmer\' is commonly used in conversation.' },
+    'good news': { word: 'good news', pronunciation: '/good news/', definition_vi: 'tin tốt', definition_en: 'Multi-word phrase: good news', example: 'The phrase \'good news\' is commonly used in conversation.' },
+    'greenhouse effect': { word: 'greenhouse effect', pronunciation: '/greenhouse effect/', definition_vi: 'hiệu ứng nhà kính', definition_en: 'meaning of greenhouse effect', example: 'This is an example: greenhouse effect.' },
+    'greenhouse gases': { word: 'greenhouse gases', pronunciation: '/greenhouse gases/', definition_vi: 'khí nhà kính', definition_en: 'meaning of greenhouse gases', example: 'This is an example: greenhouse gases.' },
+    'must protect': { word: 'must protect', pronunciation: '/must protect/', definition_vi: 'phải bảo vệ', definition_en: 'meaning of must protect', example: 'This is an example: must protect.' },
+    'our planet': { word: 'our planet', pronunciation: '/our planet/', definition_vi: 'hành tinh của chúng ta', definition_en: 'the Earth where we live', example: 'We must protect our planet every day.' },
+    'polar ice': { word: 'polar ice', pronunciation: '/ˈpoʊlər aɪs/', definition_vi: 'băng ở hai cực', definition_en: 'meaning of polar ice', example: 'Polar ice is melting because of climate change.' },
+    'sea levels': { word: 'sea levels', pronunciation: '/sea levels/', definition_vi: 'mực nước biển', definition_en: 'meaning of sea levels', example: 'This is an example: sea levels.' },
+    'warm blanket': { word: 'warm blanket', pronunciation: '/warm blanket/', definition_vi: 'chăn ấm', definition_en: 'meaning of warm blanket', example: 'This is an example: warm blanket.' },
+    'warmer planet': { word: 'warmer planet', pronunciation: '/warmer planet/', definition_vi: 'warmer planet', definition_en: 'meaning of warmer planet', example: 'This is an example: warmer planet.' },
+    'years ago': { word: 'years ago', pronunciation: '/years ago/', definition_vi: 'nhiều năm trước', definition_en: 'Multi-word phrase: years ago', example: 'The phrase \'years ago\' is commonly used in conversation.' }
+};

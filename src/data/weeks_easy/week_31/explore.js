@@ -47,3 +47,35 @@ export default {
     hint_vi: "Tôi dùng... nhiều nhất. Một lần tôi..."
   }
 };
+
+export const chunk_focus = [
+  "five senses",
+  "help us",
+  "learn about",
+  "world around us",
+  "travel through",
+  "heard the",
+  "loud call",
+  "sense of touch",
+  "luna smelt",
+  "fresh forest air",
+  "many different",
+  "work together",
+  "great place"
+];
+
+export const dictionary = {
+    'five senses': { word: 'five senses', pronunciation: '/five senses/', definition_vi: 'năm giác quan', definition_en: 'Multi-word phrase: five senses', example: 'The phrase \'five senses\' is commonly used in conversation.' },
+    'fresh forest air': { word: 'fresh forest air', pronunciation: '/fresh forest air/', definition_vi: 'fresh forest air', definition_en: 'meaning of fresh forest air', example: 'This is an example: fresh forest air.' },
+    'great place': { word: 'great place', pronunciation: '/great place/', definition_vi: 'nơi tuyệt vời', definition_en: 'meaning of great place', example: 'This is an example: great place.' },
+    'heard the': { word: 'heard the', pronunciation: '/heard the/', definition_vi: 'nghe thấy', definition_en: 'meaning of heard the', example: 'From the top of the hill, we heard the sound of the river below.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'learn about': { word: 'learn about', pronunciation: '/learn about/', definition_vi: 'học về', definition_en: 'meaning of learn about', example: 'This is an example: learn about.' },
+    'loud call': { word: 'loud call', pronunciation: '/loud call/', definition_vi: 'tiếng gọi to', definition_en: 'Multi-word phrase: loud call', example: 'The phrase \'loud call\' is commonly used in conversation.' },
+    'luna smelt': { word: 'luna smelt', pronunciation: '/luna smelt/', definition_vi: 'Luna đã ngửi', definition_en: 'Multi-word phrase: luna smelt', example: 'The phrase \'luna smelt\' is commonly used in conversation.' },
+    'many different': { word: 'many different', pronunciation: '/many different/', definition_vi: 'nhiều khác nhau', definition_en: 'Multi-word phrase: many different', example: 'The phrase \'many different\' is commonly used in conversation.' },
+    'sense of touch': { word: 'sense of touch', pronunciation: '/sense of touch/', definition_vi: 'giác quan xúc giác', definition_en: 'meaning of sense of touch', example: 'This is an example: sense of touch.' },
+    'travel through': { word: 'travel through', pronunciation: '/travel through/', definition_vi: 'đi xuyên qua', definition_en: 'meaning of travel through', example: 'This is an example: travel through.' },
+    'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' },
+    'world around us': { word: 'world around us', pronunciation: '/world around us/', definition_vi: 'thế giới xung quanh chúng ta', definition_en: 'meaning of world around us', example: 'This is an example: world around us.' }
+};

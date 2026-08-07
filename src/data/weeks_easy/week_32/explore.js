@@ -44,3 +44,47 @@ export default {
   writing_prompt_en: "Write about the chores you do at home. Use: I woke up, I made, I wrote, I helped, I chose, I put away.",
   writing_prompt_vi: "Viết về các công việc nhà bạn làm. Dùng: I woke up, I made, I wrote, I helped, I chose, I put away."
 };
+
+export const chunk_focus = [
+  "At home",
+  "my family",
+  "wake up early",
+  "my favourite",
+  "tv show",
+  "first job",
+  "make my bed",
+  "keep my room tidy",
+  "sit at",
+  "write a letter",
+  "draw a picture",
+  "dad cut",
+  "wooden birdhouse",
+  "dad built",
+  "last year",
+  "special treat",
+  "fall asleep",
+  "feel proud",
+  "happy home"
+];
+
+export const dictionary = {
+    'At home': { word: 'At home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'dad built': { word: 'dad built', pronunciation: '/dad built/', definition_vi: 'bố đã xây', definition_en: 'Multi-word phrase: dad built', example: 'The phrase \'dad built\' is commonly used in conversation.' },
+    'dad cut': { word: 'dad cut', pronunciation: '/dad cut/', definition_vi: 'bố đã cắt', definition_en: 'Multi-word phrase: dad cut', example: 'The phrase \'dad cut\' is commonly used in conversation.' },
+    'draw a picture': { word: 'draw a picture', pronunciation: '/draw a picture/', definition_vi: '(cụm từ: draw a picture)', definition_en: 'Multi-word phrase: draw a picture', example: 'Use of \'draw a picture\' in natural context.' },
+    'fall asleep': { word: 'fall asleep', pronunciation: '/fall asleep/', definition_vi: 'chìm vào giấc ngủ', definition_en: 'meaning of fall asleep', example: 'I close my eyes and fall asleep.' },
+    'feel proud': { word: 'feel proud', pronunciation: '/feel proud/', definition_vi: 'cảm thấy tự hào', definition_en: 'meaning of feel proud', example: 'This is an example: feel proud.' },
+    'first job': { word: 'first job', pronunciation: '/first job/', definition_vi: 'công việc đầu tiên', definition_en: 'Multi-word phrase: first job', example: 'The phrase \'first job\' is commonly used in conversation.' },
+    'happy home': { word: 'happy home', pronunciation: '/happy home/', definition_vi: 'nhà hạnh phúc', definition_en: 'Multi-word phrase: happy home', example: 'The phrase \'happy home\' is commonly used in conversation.' },
+    'keep my room tidy': { word: 'keep my room tidy', pronunciation: '/keep my room tidy/', definition_vi: 'giữ phòng của tôi gọn gàng', definition_en: 'keep my room neat and clean', example: 'I keep my room tidy by putting everything away.' },
+    'last year': { word: 'last year', pronunciation: '/last year/', definition_vi: 'năm ngoái', definition_en: 'Multi-word phrase: last year', example: 'The phrase \'last year\' is commonly used in conversation.' },
+    'make my bed': { word: 'make my bed', pronunciation: '/make my bed/', definition_vi: 'dọn giường của tôi', definition_en: 'arrange the blanket and sheets neatly on the bed', example: 'I make my bed every morning before school.' },
+    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: '(cụm từ: my family)', definition_en: 'Multi-word phrase: my family', example: 'Use of \'my family\' in natural context.' },
+    'my favourite': { word: 'my favourite', pronunciation: '/my favourite/', definition_vi: '(cụm từ: my favourite)', definition_en: 'Multi-word phrase: my favourite', example: 'Use of \'my favourite\' in natural context.' },
+    'sit at': { word: 'sit at', pronunciation: '/sit at/', definition_vi: 'sit at', definition_en: 'meaning of sit at', example: 'This is an example: sit at.' },
+    'special treat': { word: 'special treat', pronunciation: '/special treat/', definition_vi: 'điều trị đặc biệt', definition_en: 'Multi-word phrase: special treat', example: 'The phrase \'special treat\' is commonly used in conversation.' },
+    'tv show': { word: 'tv show', pronunciation: '/tv show/', definition_vi: 'chương trình TV', definition_en: 'Multi-word phrase: tv show', example: 'The phrase \'tv show\' is commonly used in conversation.' },
+    'wake up early': { word: 'wake up early', pronunciation: '/wake up early/', definition_vi: 'thức dậy sớm', definition_en: 'to stop sleeping early in the morning', example: 'Every morning, I wake up early for school.' },
+    'wooden birdhouse': { word: 'wooden birdhouse', pronunciation: '/wooden birdhouse/', definition_vi: 'nhà chim gỗ', definition_en: 'Multi-word phrase: wooden birdhouse', example: 'The phrase \'wooden birdhouse\' is commonly used in conversation.' },
+    'write a letter': { word: 'write a letter', pronunciation: '/write a letter/', definition_vi: 'viết thư', definition_en: 'meaning of write a letter', example: 'This is an example: write a letter.' }
+};

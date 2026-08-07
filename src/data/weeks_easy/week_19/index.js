@@ -18,6 +18,8 @@ const weekData = {
   weekId: 19,
   weekTitle_en: "When I Was Small",
   weekTitle_vi: "Khi Tôi Còn Nhỏ",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple: was/were (Past State)",
   isEasy: true,
   

@@ -13,3 +13,41 @@ export default {
     { id: 6, question_en: "What does Nam close?", answer: ["his umbrella", "his umbrella"], clue_statement: "Nam closes his umbrella.", hint_en: "Think about what Nam closes...", hint_vi: "Nghĩ về Nam..." }
   ]
 };
+
+export const chunk_focus = [
+  "This morning",
+  "it is raining",
+  "falling from the sky",
+  "look outside the window",
+  "teacher says",
+  "keeps me dry",
+  "My friend",
+  "every time",
+  "It is very cold",
+  "heats water in",
+  "up into",
+  "cools down",
+  "After school",
+  "take off my coat",
+  "takes off her hat",
+  "learning about weather"
+];
+
+export const dictionary = {
+    'After school': { word: 'After school', pronunciation: '/after school/', definition_vi: 'sau giờ học', definition_en: 'Multi-word phrase: after school', example: 'The phrase \'after school\' is commonly used in conversation.' },
+    'It is very cold': { word: 'It is very cold', pronunciation: '/it is very cold/', definition_vi: 'Trời rất lạnh', definition_en: 'meaning of it is very cold', example: 'It is very cold today.' },
+    'My friend': { word: 'My friend', pronunciation: '/my friend/', definition_vi: '(cụm từ: my friend)', definition_en: 'Multi-word phrase: my friend', example: 'Use of \'my friend\' in natural context.' },
+    'This morning': { word: 'This morning', pronunciation: '/this morning/', definition_vi: 'sáng nay', definition_en: 'Multi-word phrase: this morning', example: 'The phrase \'this morning\' is commonly used in conversation.' },
+    'cools down': { word: 'cools down', pronunciation: '/cools down/', definition_vi: 'hạ nhiệt', definition_en: 'Multi-word phrase: cools down', example: 'The phrase \'cools down\' is commonly used in conversation.' },
+    'every time': { word: 'every time', pronunciation: '/every time/', definition_vi: 'mỗi lần', definition_en: 'meaning of every time', example: 'She every time with her friends after school.' },
+    'falling from the sky': { word: 'falling from the sky', pronunciation: '/falling from the sky/', definition_vi: 'rơi từ bầu trời', definition_en: 'meaning of falling from the sky', example: 'Big drops of water are falling from the sky.' },
+    'heats water in': { word: 'heats water in', pronunciation: '/heats water in/', definition_vi: 'làm nóng nước trong', definition_en: 'meaning of heats water in', example: 'The kettle heats water in just a few minutes for a warm cup of tea.' },
+    'it is raining': { word: 'it is raining', pronunciation: '/it is raining/', definition_vi: 'trời đang mưa', definition_en: 'meaning of it is raining', example: 'This morning, it is raining very hard.' },
+    'keeps me dry': { word: 'keeps me dry', pronunciation: '/keeps me dry/', definition_vi: 'keeps me dry', definition_en: 'meaning of keeps me dry', example: 'This is an example: keeps me dry.' },
+    'learning about weather': { word: 'learning about weather', pronunciation: '/learning about weather/', definition_vi: 'tìm hiểu về thời tiết', definition_en: 'meaning of learning about weather', example: 'The children are learning about weather and how seasons change.' },
+    'look outside the window': { word: 'look outside the window', pronunciation: '/look outside the window/', definition_vi: 'nhìn ra ngoài cửa sổ', definition_en: 'meaning of look outside the window', example: 'We look outside the window together whenever we can.' },
+    'take off my coat': { word: 'take off my coat', pronunciation: '/take off my coat/', definition_vi: 'cởi áo khoác', definition_en: 'meaning of take off my coat', example: 'I take off my coat because it is warm outside now.' },
+    'takes off her hat': { word: 'takes off her hat', pronunciation: '/takes off her hat/', definition_vi: 'cởi mũ ra', definition_en: 'meaning of takes off her hat', example: 'Linh takes off her hat too.' },
+    'teacher says': { word: 'teacher says', pronunciation: '/teacher says/', definition_vi: 'giáo viên nói', definition_en: 'Multi-word phrase: teacher says', example: 'The phrase \'teacher says\' is commonly used in conversation.' },
+    'up into': { word: 'up into', pronunciation: '/up into/', definition_vi: 'lên trên', definition_en: 'Multi-word phrase: up into', example: 'The phrase \'up into\' is commonly used in conversation.' }
+};

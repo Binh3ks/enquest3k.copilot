@@ -68,3 +68,39 @@ export default {
     }
   ]
 };
+
+export const chunk_focus = [
+  "Long ago",
+  "small villages",
+  "Over time",
+  "came to",
+  "live together",
+  "grew into",
+  "New buildings",
+  "knocked down",
+  "work together",
+  "Some people",
+  "Look around",
+  "next to",
+  "new buildings",
+  "show the past",
+  "all around us"
+];
+
+export const dictionary = {
+    'Long ago': { word: 'Long ago', pronunciation: '/long ago/', definition_vi: 'lâu rồi', definition_en: 'meaning of long ago', example: 'This is an example: long ago.' },
+    'Look around': { word: 'Look around', pronunciation: '/look around/', definition_vi: 'nhìn xung quanh', definition_en: 'meaning of look around', example: 'I look around my classroom.' },
+    'New buildings': { word: 'New buildings', pronunciation: '/new buildings/', definition_vi: 'những tòa nhà mới', definition_en: 'Multi-word phrase: new buildings', example: 'The phrase \'new buildings\' is commonly used in conversation.' },
+    'Over time': { word: 'Over time', pronunciation: '/over time/', definition_vi: 'theo thời gian', definition_en: 'meaning of over time', example: 'This is an example: over time.' },
+    'Some people': { word: 'Some people', pronunciation: '/some people/', definition_vi: '(cụm từ: some people)', definition_en: 'Multi-word phrase: some people', example: 'Use of \'some people\' in natural context.' },
+    'all around us': { word: 'all around us', pronunciation: '/all around us/', definition_vi: 'khắp xung quanh chúng ta', definition_en: 'meaning of all around us', example: 'This is an example: all around us.' },
+    'came to': { word: 'came to', pronunciation: '/came to/', definition_vi: 'đến (gặp ai đó)', definition_en: 'meaning of came to', example: 'A kind man came to help the lost puppy sitting alone on the street.' },
+    'grew into': { word: 'grew into', pronunciation: '/grew into/', definition_vi: 'phát triển thành', definition_en: 'changed gradually into something bigger or different', example: 'The village grew into a busy town.' },
+    'knocked down': { word: 'knocked down', pronunciation: '/knocked down/', definition_vi: 'phá bỏ', definition_en: 'destroyed by hitting or pulling down', example: 'Some old buildings were knocked down.' },
+    'live together': { word: 'live together', pronunciation: '/live together/', definition_vi: 'sống cùng nhau', definition_en: 'meaning of live together', example: 'This is an example: live together.' },
+    'new buildings': { word: 'new buildings', pronunciation: '/new buildings/', definition_vi: 'những tòa nhà mới', definition_en: 'Multi-word phrase: new buildings', example: 'The phrase \'new buildings\' is commonly used in conversation.' },
+    'next to': { word: 'next to', pronunciation: '/next to/', definition_vi: 'bên cạnh', definition_en: 'meaning of next to', example: 'There is a ruler next to the pen.' },
+    'show the past': { word: 'show the past', pronunciation: '/show the past/', definition_vi: 'cho thấy quá khứ', definition_en: 'help people see or understand the past', example: 'Old places show the past to us.' },
+    'small villages': { word: 'small villages', pronunciation: '/small villages/', definition_vi: 'làng nhỏ', definition_en: 'meaning of small villages', example: 'This is an example: small villages.' },
+    'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' }
+};

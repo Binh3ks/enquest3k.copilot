@@ -48,3 +48,11 @@ export default {
     hint_vi: "Nói về mắt, tóc của bạn, hoặc bạn có thể làm gì."
   }
 };
+
+export const chunk_focus = [
+  "can hear"
+];
+
+export const dictionary = {
+    'can hear': { word: 'can hear', pronunciation: '/can hear/', definition_vi: 'có thể nghe', definition_en: 'meaning of can hear', example: 'Close your eyes and can hear all the different sounds around you.' }
+};

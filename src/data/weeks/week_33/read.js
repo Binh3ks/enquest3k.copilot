@@ -29,3 +29,35 @@ Y tá đặt túi chườm lạnh lên đầu gối và cánh tay của Jake. C�
     { id: 3, question_en: "What lesson did Jake learn?", answer: ["Always walk carefully in the corridor", "Walk carefully in the corridor", "Always be careful"], clue_statement: "Jake learned an important lesson: always walk carefully in the corridor.", hint_en: "Always ___ ___ in the ___.", hint_vi: "Luon ___ ___ trong ___.", audio_url: "/audio/week33/read_q3.mp3" }
   ]
 };
+
+export const chunk_focus = [
+  "at school",
+  "walk carefully",
+  "hit his knee",
+  "fell down",
+  "glass cup",
+  "at once",
+  "His teacher",
+  "came quickly",
+  "The nurse",
+  "put a cold pack",
+  "important lesson",
+  "everyone must",
+  "At home"
+];
+
+export const dictionary = {
+    'At home': { word: 'At home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'His teacher': { word: 'His teacher', pronunciation: '/his teacher/', definition_vi: '(cụm từ: his teacher)', definition_en: 'Multi-word phrase: his teacher', example: 'Use of \'his teacher\' in natural context.' },
+    'The nurse': { word: 'The nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
+    'at once': { word: 'at once', pronunciation: '/at once/', definition_vi: 'ngay lập tức', definition_en: 'meaning of at once', example: 'This is an example: at once.' },
+    'at school': { word: 'at school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'came quickly': { word: 'came quickly', pronunciation: '/came quickly/', definition_vi: 'đến nhanh', definition_en: 'meaning of came quickly', example: 'When the fire alarm rang, the firefighters came quickly with their trucks.' },
+    'everyone must': { word: 'everyone must', pronunciation: '/everyone must/', definition_vi: 'mọi người phải', definition_en: 'Multi-word phrase: everyone must', example: 'The phrase \'everyone must\' is commonly used in conversation.' },
+    'fell down': { word: 'fell down', pronunciation: '/fell down/', definition_vi: 'ngã xuống', definition_en: 'meaning of fell down', example: 'He fell down hard and broke the glass cup that another student was holding.' },
+    'glass cup': { word: 'glass cup', pronunciation: '/glass cup/', definition_vi: 'cốc thủy tinh', definition_en: 'Multi-word phrase: glass cup', example: 'The phrase \'glass cup\' is commonly used in conversation.' },
+    'hit his knee': { word: 'hit his knee', pronunciation: '/hit his knee/', definition_vi: 'đập đầu gối', definition_en: 'meaning of hit his knee', example: 'He fell off his bike and hit his knee hard on the ground.' },
+    'important lesson': { word: 'important lesson', pronunciation: '/important lesson/', definition_vi: 'bài học quan trọng', definition_en: 'Multi-word phrase: important lesson', example: 'The phrase \'important lesson\' is commonly used in conversation.' },
+    'put a cold pack': { word: 'put a cold pack', pronunciation: '/put a cold pack/', definition_vi: 'đặt túi chườm lạnh', definition_en: 'meaning of put a cold pack', example: 'The nurse put a cold pack on his swollen ankle to reduce the pain.' },
+    'walk carefully': { word: 'walk carefully', pronunciation: '/walk carefully/', definition_vi: 'đi cẩn thận', definition_en: 'meaning of walk carefully', example: 'He forgot to walk carefully.' }
+};

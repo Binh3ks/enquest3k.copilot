@@ -17,3 +17,33 @@ export default {
     hint_vi: "Tớ thích..."
   }
 };
+
+export const chunk_focus = [
+  "different",
+  "new",
+  "chair",
+  "old",
+  "dusty",
+  "broken",
+  "photos",
+  "past",
+  "Grandma",
+  "house",
+  "dirty",
+  "stories"
+];
+
+export const dictionary = {
+    'Grandma': { word: 'Grandma', pronunciation: '/grandma/', definition_vi: 'bà', definition_en: 'meaning of grandma', example: 'Grandma bakes the best cookies.' },
+    'broken': { word: 'broken', pronunciation: '/broken/', definition_vi: 'bị gãy, bị vỡ', definition_en: 'meaning of broken', example: 'They had courage to fix the broken parts and try again.' },
+    'chair': { word: 'chair', pronunciation: '/chair/', definition_vi: 'Ghế', definition_en: 'You sit on it.', example: 'Sit down on this chair.' },
+    'different': { word: 'different', pronunciation: '/different/', definition_vi: 'khác', definition_en: 'meaning of different', example: 'This involves different in some way.' },
+    'dirty': { word: 'dirty', pronunciation: '/dirty/', definition_vi: 'bẩn', definition_en: 'meaning of dirty', example: 'Your hands are very dirty.' },
+    'dusty': { word: 'dusty', pronunciation: '/dusty/', definition_vi: 'đầy bụi', definition_en: 'meaning of dusty', example: 'This involves dusty in some way.' },
+    'house': { word: 'house', pronunciation: '/house/', definition_vi: 'ngôi nhà', definition_en: 'a place where you live', example: 'I live in this house.' },
+    'new': { word: 'new', pronunciation: '/new/', definition_vi: 'mới', definition_en: 'having recently been made or built; not old', example: 'It was a very new experience for everyone.' },
+    'old': { word: 'old', pronunciation: '/old/', definition_vi: 'già', definition_en: 'having lived for a long time', example: 'I am ten years old.' },
+    'past': { word: 'past', pronunciation: '/past/', definition_vi: 'quá khứ', definition_en: 'the time before now', example: 'We walked past the school.' },
+    'photos': { word: 'photos', pronunciation: '/photos/', definition_vi: 'ảnh', definition_en: 'meaning of photos', example: 'We take photos on the last day of school.' },
+    'stories': { word: 'stories', pronunciation: '/stories/', definition_vi: 'câu chuyện', definition_en: 'meaning of stories', example: 'Grandma tells us bedtime stories.' }
+};

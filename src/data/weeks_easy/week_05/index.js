@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "My House",
   weekTitle_vi: "Ngôi nhà của Tôi",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Articles A/An",
   global_vocab: vocab.vocab,
   

@@ -84,3 +84,47 @@ Bài học quan trọng nhất: đi cẩn thận chỉ mất thêm vài giây, n
     hint_vi: "Trường tôi có quy tắc về... Tôi nghĩ quy tắc an toàn quan trọng vì..."
   }
 };
+
+export const chunk_focus = [
+  "follow safety rules",
+  "Every year",
+  "get hurt",
+  "paying attention",
+  "what to do",
+  "at school",
+  "Stay calm",
+  "Take a deep breath",
+  "Call for help",
+  "tell a teacher",
+  "immediate danger",
+  "Apply first aid",
+  "cold pack",
+  "reduce swelling",
+  "whole story",
+  "what happened",
+  "important lesson",
+  "a few",
+  "looking out for"
+];
+
+export const dictionary = {
+    'Apply first aid': { word: 'Apply first aid', pronunciation: '/apply first aid/', definition_vi: 'sơ cứu', definition_en: 'meaning of apply first aid', example: 'This is an example: apply first aid.' },
+    'Call for help': { word: 'Call for help', pronunciation: '/call for help/', definition_vi: 'call for help', definition_en: 'meaning of call for help', example: 'This is an example: call for help.' },
+    'Every year': { word: 'Every year', pronunciation: '/every year/', definition_vi: 'mỗi năm', definition_en: 'meaning of every year', example: 'This is an example: every year.' },
+    'Stay calm': { word: 'Stay calm', pronunciation: '/stay calm/', definition_vi: 'stay calm', definition_en: 'meaning of stay calm', example: 'This is an example: stay calm.' },
+    'Take a deep breath': { word: 'Take a deep breath', pronunciation: '/take a deep breath/', definition_vi: 'hít một hơi thật sâu', definition_en: 'meaning of take a deep breath', example: 'This is an example: take a deep breath.' },
+    'a few': { word: 'a few', pronunciation: '/a few/', definition_vi: '(cụm từ: a few)', definition_en: 'Multi-word phrase: a few', example: 'Use of \'a few\' in natural context.' },
+    'at school': { word: 'at school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'cold pack': { word: 'cold pack', pronunciation: '/cold pack/', definition_vi: 'túi chườm lạnh', definition_en: 'meaning of cold pack', example: 'The nurse put a cold pack on Jake\'s knee.' },
+    'follow safety rules': { word: 'follow safety rules', pronunciation: '/follow safety rules/', definition_vi: 'tuân theo quy tắc an toàn', definition_en: 'meaning of follow safety rules', example: 'This is an example: follow safety rules.' },
+    'get hurt': { word: 'get hurt', pronunciation: '/get hurt/', definition_vi: 'bị thương', definition_en: 'meaning of get hurt', example: 'This is an example: get hurt.' },
+    'immediate danger': { word: 'immediate danger', pronunciation: '/immediate danger/', definition_vi: 'immediate danger', definition_en: 'meaning of immediate danger', example: 'This is an example: immediate danger.' },
+    'important lesson': { word: 'important lesson', pronunciation: '/important lesson/', definition_vi: 'bài học quan trọng', definition_en: 'Multi-word phrase: important lesson', example: 'The phrase \'important lesson\' is commonly used in conversation.' },
+    'looking out for': { word: 'looking out for', pronunciation: '/looking out for/', definition_vi: 'looking out for', definition_en: 'meaning of looking out for', example: 'This is an example: looking out for.' },
+    'paying attention': { word: 'paying attention', pronunciation: '/paying attention/', definition_vi: 'paying attention', definition_en: 'meaning of paying attention', example: 'This is an example: paying attention.' },
+    'reduce swelling': { word: 'reduce swelling', pronunciation: '/reduce swelling/', definition_vi: 'giảm sưng', definition_en: 'meaning of reduce swelling', example: 'This is an example: reduce swelling.' },
+    'tell a teacher': { word: 'tell a teacher', pronunciation: '/tell a teacher/', definition_vi: 'tell a teacher', definition_en: 'meaning of tell a teacher', example: 'This is an example: tell a teacher.' },
+    'what happened': { word: 'what happened', pronunciation: '/what happened/', definition_vi: 'chuyện gì đã xảy ra', definition_en: 'Multi-word phrase: what happened', example: 'The phrase \'what happened\' is commonly used in conversation.' },
+    'what to do': { word: 'what to do', pronunciation: '/what to do/', definition_vi: 'what to do', definition_en: 'meaning of what to do', example: 'This is an example: what to do.' },
+    'whole story': { word: 'whole story', pronunciation: '/whole story/', definition_vi: 'toàn bộ câu chuyện', definition_en: 'Multi-word phrase: whole story', example: 'The phrase \'whole story\' is commonly used in conversation.' }
+};

@@ -29,3 +29,19 @@ export default {
     }
   ]
 };
+
+export const chunk_focus = [
+  "school supplies",
+  "around the world",
+  "there is",
+  "pencil case",
+  "yellow pencil"
+];
+
+export const dictionary = {
+    'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
+    'pencil case': { word: 'pencil case', pronunciation: '/pencil case/', definition_vi: 'hộp bút', definition_en: 'a bag or box for holding pens and pencils', example: 'I keep my pens and ruler in my pencil case.' },
+    'school supplies': { word: 'school supplies', pronunciation: '/school supplies/', definition_vi: 'đồ dùng học tập', definition_en: 'Multi-word phrase: school supplies', example: 'The phrase \'school supplies\' is commonly used in conversation.' },
+    'there is': { word: 'there is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
+    'yellow pencil': { word: 'yellow pencil', pronunciation: '/yellow pencil/', definition_vi: 'bút chì vàng', definition_en: 'meaning of yellow pencil', example: 'I wrote my name with a yellow pencil on the cover of my notebook.' }
+};

@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "My Very Busy Saturday (Task Verbs)",
   weekTitle_vi: "Ngày Thứ Bảy Bận Rộn Của Tôi (Động Từ Công Việc)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Past Simple Irregular Verbs 4: wake→woke, make→made, do→did, write→wrote, cut→cut, build→built, put→put, keep→kept, choose→chose, pay→paid",
 
   global_vocab: vocab.vocab,

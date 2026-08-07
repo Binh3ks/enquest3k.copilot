@@ -36,3 +36,35 @@ export default {
     hint_vi: "Nghĩ về gia đình, tài năng và điều gì làm bạn đặc biệt..."
   }
 };
+
+export const chunk_focus = [
+  "around the world",
+  "introduce themselves",
+  "feel confident",
+  "their family",
+  "share their culture",
+  "good at drawing",
+  "family traditions",
+  "talk about",
+  "learn new things",
+  "Some children",
+  "public speaking",
+  "express themselves",
+  "Every child"
+];
+
+export const dictionary = {
+    'Every child': { word: 'Every child', pronunciation: '/every child/', definition_vi: 'mỗi đứa trẻ', definition_en: 'Multi-word phrase: every child', example: 'The phrase \'every child\' is commonly used in conversation.' },
+    'Some children': { word: 'Some children', pronunciation: '/some children/', definition_vi: 'vài trẻ em', definition_en: 'Multi-word phrase: some children', example: 'The phrase \'some children\' is commonly used in conversation.' },
+    'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
+    'express themselves': { word: 'express themselves', pronunciation: '/express themselves/', definition_vi: 'express themselves', definition_en: 'meaning of express themselves', example: 'This is an example: express themselves.' },
+    'family traditions': { word: 'family traditions', pronunciation: '/family traditions/', definition_vi: 'family traditions', definition_en: 'meaning of family traditions', example: 'This is an example: family traditions.' },
+    'feel confident': { word: 'feel confident', pronunciation: '/feel confident/', definition_vi: 'cảm thấy tự tin', definition_en: 'meaning of feel confident', example: 'This is an example: feel confident.' },
+    'good at drawing': { word: 'good at drawing', pronunciation: '/good at drawing/', definition_vi: 'good at drawing', definition_en: 'meaning of good at drawing', example: 'This is an example: good at drawing.' },
+    'introduce themselves': { word: 'introduce themselves', pronunciation: '/introduce themselves/', definition_vi: 'tự giới thiệu (số nhiều)', definition_en: 'meaning of introduce themselves', example: 'This is an example: introduce themselves.' },
+    'learn new things': { word: 'learn new things', pronunciation: '/learn new things/', definition_vi: 'học những điều mới', definition_en: 'to discover or study something you did not know before', example: 'These tools help scientists learn new things every day.' },
+    'public speaking': { word: 'public speaking', pronunciation: '/public speaking/', definition_vi: 'nói trước công chúng', definition_en: 'meaning of public speaking', example: 'This is an example: public speaking.' },
+    'share their culture': { word: 'share their culture', pronunciation: '/share their culture/', definition_vi: 'chia sẻ văn hóa của họ', definition_en: 'show and explain their culture to others', example: 'Festivals let people share their culture with visitors.' },
+    'talk about': { word: 'talk about', pronunciation: '/talk about/', definition_vi: 'nói về', definition_en: 'meaning of talk about', example: 'We talk about our day together at dinner.' },
+    'their family': { word: 'their family', pronunciation: '/their family/', definition_vi: '(cụm từ: their family)', definition_en: 'Multi-word phrase: their family', example: 'Use of \'their family\' in natural context.' }
+};

@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "City Sounds & Sights",
   weekTitle_vi: "Âm thanh và Cảnh quan Thành phố",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "It is a [adjective] [noun]",
   global_vocab: vocab.vocab,
   

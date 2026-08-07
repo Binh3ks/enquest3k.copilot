@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "Daily Routines",
   weekTitle_vi: "Thói Quen Hàng Ngày",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Present Simple (I wake up, I go)",
   global_vocab: vocab.vocab,
   

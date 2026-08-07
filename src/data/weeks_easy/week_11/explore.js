@@ -50,3 +50,41 @@ export default {
     hint_vi: "Nói về nơi yêu thích..."
   }
 };
+
+export const chunk_focus = [
+  "go to",
+  "fun places",
+  "fun place",
+  "play at the park",
+  "quiet place",
+  "read books",
+  "at the library",
+  "go to the store",
+  "buy things",
+  "buy food",
+  "at the store",
+  "at the zoo",
+  "There are",
+  "Some people",
+  "go to school",
+  "to learn"
+];
+
+export const dictionary = {
+    'Some people': { word: 'Some people', pronunciation: '/some people/', definition_vi: '(cụm từ: some people)', definition_en: 'Multi-word phrase: some people', example: 'Use of \'some people\' in natural context.' },
+    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'at the library': { word: 'at the library', pronunciation: '/at the library/', definition_vi: 'ở thư viện', definition_en: 'meaning of at the library', example: 'I read a book at the library.' },
+    'at the store': { word: 'at the store', pronunciation: '/at the store/', definition_vi: 'ở cửa hàng', definition_en: 'meaning of at the store', example: 'We buy food at the store.' },
+    'at the zoo': { word: 'at the zoo', pronunciation: '/at the zoo/', definition_vi: 'ở sở thú', definition_en: 'meaning of at the zoo', example: 'We saw many animals at the zoo on Sunday.' },
+    'buy food': { word: 'buy food', pronunciation: '/buy food/', definition_vi: 'mua đồ ăn', definition_en: 'meaning of buy food', example: 'We buy food at the supermarket.' },
+    'buy things': { word: 'buy things', pronunciation: '/buy things/', definition_vi: 'buy things', definition_en: 'meaning of buy things', example: 'This is an example: buy things.' },
+    'fun place': { word: 'fun place', pronunciation: '/fun place/', definition_vi: 'nơi vui vẻ', definition_en: 'meaning of fun place', example: 'This is an example: fun place.' },
+    'fun places': { word: 'fun places', pronunciation: '/fun places/', definition_vi: 'những nơi vui vẻ', definition_en: 'enjoyable locations', example: 'Children like to go to fun places like the park and the playground.' },
+    'go to': { word: 'go to', pronunciation: '/go to/', definition_vi: 'đến, đi đến', definition_en: 'meaning of go to', example: 'After school, I go to the library to read.' },
+    'go to school': { word: 'go to school', pronunciation: '/go to school/', definition_vi: 'đi học', definition_en: 'meaning of go to school', example: 'I also go to school on Monday to read and learn.' },
+    'go to the store': { word: 'go to the store', pronunciation: '/go to the store/', definition_vi: 'đi đến cửa hàng', definition_en: 'meaning of go to the store', example: 'This is an example: go to the store.' },
+    'play at the park': { word: 'play at the park', pronunciation: '/play at the park/', definition_vi: 'chơi ở công viên', definition_en: 'meaning of play at the park', example: 'I play at the park with my friends.' },
+    'quiet place': { word: 'quiet place', pronunciation: '/quiet place/', definition_vi: 'nơi yên tĩnh', definition_en: 'meaning of quiet place', example: 'This is an example: quiet place.' },
+    'read books': { word: 'read books', pronunciation: '/read books/', definition_vi: 'đọc sách', definition_en: 'meaning of read books', example: 'I read books before bed.' },
+    'to learn': { word: 'to learn', pronunciation: '/to learn/', definition_vi: 'để học', definition_en: 'meaning of to learn', example: 'I want to learn English every day.' }
+};

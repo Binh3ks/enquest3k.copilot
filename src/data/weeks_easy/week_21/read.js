@@ -11,3 +11,49 @@ export default {
     { id: 4, question_en: "How was the sun?", answer: ["bright and warm", "Sun is bright and warm"], clue_statement: "The sun was bright and warm.", hint_en: "Two describing words...", hint_vi: "Hai từ miêu tả..." }
   ]
 };
+
+export const chunk_focus = [
+  "wonderfully busy day",
+  "In the morning",
+  "walked to school",
+  "was bright and warm",
+  "looked at",
+  "blue sky",
+  "my friends",
+  "outside the school gate",
+  "laughed together",
+  "helped my mother",
+  "cooked rice and vegetable soup",
+  "cleaned the table",
+  "played soccer",
+  "my friend",
+  "listened to",
+  "washed my hands",
+  "sat down for dinner",
+  "After dinner",
+  "board game",
+  "best day ever"
+];
+
+export const dictionary = {
+    'After dinner': { word: 'After dinner', pronunciation: '/after dinner/', definition_vi: 'sau bữa tối', definition_en: 'Multi-word phrase: after dinner', example: 'The phrase \'after dinner\' is commonly used in conversation.' },
+    'In the morning': { word: 'In the morning', pronunciation: '/in the morning/', definition_vi: '(cụm từ: in the morning)', definition_en: 'Multi-word phrase: in the morning', example: 'Use of \'in the morning\' in natural context.' },
+    'best day ever': { word: 'best day ever', pronunciation: '/best day ever/', definition_vi: 'ngày tuyệt nhất từ trước đến giờ', definition_en: 'meaning of best day ever', example: 'My birthday was the best day ever because all my friends came to my party.' },
+    'blue sky': { word: 'blue sky', pronunciation: '/blue sky/', definition_vi: 'bầu trời xanh', definition_en: 'Multi-word phrase: blue sky', example: 'The phrase \'blue sky\' is commonly used in conversation.' },
+    'board game': { word: 'board game', pronunciation: '/board game/', definition_vi: 'trò chơi cờ bàn', definition_en: 'Multi-word phrase: board game', example: 'The phrase \'board game\' is commonly used in conversation.' },
+    'cleaned the table': { word: 'cleaned the table', pronunciation: '/cleaned the table/', definition_vi: 'lau bàn', definition_en: 'meaning of cleaned the table', example: 'After dinner, my sister helped and cleaned the table while I washed the dishes.' },
+    'cooked rice and vegetable soup': { word: 'cooked rice and vegetable soup', pronunciation: '/cooked rice and vegetable soup/', definition_vi: 'nấu cơm và canh rau', definition_en: 'meaning of cooked rice and vegetable soup', example: 'Yesterday, I helped my mother cook rice and vegetable soup for dinner.' },
+    'helped my mother': { word: 'helped my mother', pronunciation: '/helped my mother/', definition_vi: 'giúp mẹ', definition_en: 'meaning of helped my mother', example: 'After school, I helped my mother set the table for dinner.' },
+    'laughed together': { word: 'laughed together', pronunciation: '/laughed together/', definition_vi: 'cười cùng nhau', definition_en: 'meaning of laughed together', example: 'The whole family laughed together at the funny story Dad told at dinner.' },
+    'listened to': { word: 'listened to', pronunciation: '/listened to/', definition_vi: 'listened to', definition_en: 'meaning of listened to', example: 'This is an example: listened to.' },
+    'looked at': { word: 'looked at', pronunciation: '/looked at/', definition_vi: 'nhìn (quan sát)', definition_en: 'meaning of looked at', example: 'The students looked at the map and found where the treasure was hidden.' },
+    'my friend': { word: 'my friend', pronunciation: '/my friend/', definition_vi: '(cụm từ: my friend)', definition_en: 'Multi-word phrase: my friend', example: 'Use of \'my friend\' in natural context.' },
+    'my friends': { word: 'my friends', pronunciation: '/my friends/', definition_vi: '(cụm từ: my friends)', definition_en: 'Multi-word phrase: my friends', example: 'Use of \'my friends\' in natural context.' },
+    'outside the school gate': { word: 'outside the school gate', pronunciation: '/outside the school gate/', definition_vi: 'bên ngoài cổng trường', definition_en: 'meaning of outside the school gate', example: 'My mum waits outside the school gate every afternoon to pick me up.' },
+    'played soccer': { word: 'played soccer', pronunciation: '/played soccer/', definition_vi: 'đã chơi bóng đá', definition_en: 'meaning of played soccer', example: 'At break time, I played soccer with my classmates and we shouted with excitement when our team scored.' },
+    'sat down for dinner': { word: 'sat down for dinner', pronunciation: '/sat down for dinner/', definition_vi: 'ngồi xuống ăn tối', definition_en: 'meaning of sat down for dinner', example: 'As soon as the clock struck six, the family sat down for dinner.' },
+    'walked to school': { word: 'walked to school', pronunciation: '/walked to school/', definition_vi: 'đi bộ đến trường', definition_en: 'meaning of walked to school', example: 'I walked to school with my friend Lily, and we talked all the way about our science homework.' },
+    'was bright and warm': { word: 'was bright and warm', pronunciation: '/was bright and warm/', definition_vi: 'sáng sủa và ấm áp', definition_en: 'meaning of was bright and warm', example: 'The room was bright and warm with sunlight coming through the curtains.' },
+    'washed my hands': { word: 'washed my hands', pronunciation: '/washed my hands/', definition_vi: 'rửa tay', definition_en: 'meaning of washed my hands', example: 'I always washed my hands carefully before eating my lunch at school.' },
+    'wonderfully busy day': { word: 'wonderfully busy day', pronunciation: '/wonderfully busy day/', definition_vi: 'ngày bận rộn tuyệt vời', definition_en: 'meaning of wonderfully busy day', example: 'Saturday was a wonderfully busy day full of markets, picnics and birthday parties.' }
+};

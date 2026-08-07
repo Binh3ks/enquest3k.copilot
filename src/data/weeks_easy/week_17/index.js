@@ -18,6 +18,8 @@ const weekData = {
   weekId: 17,
   weekTitle_en: "Weather & Clothes",
   weekTitle_vi: "Thời tiết & Trang phục",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Cause and Effect: It is [weather], so I am wearing [clothes].",
   isEasy: true,
 

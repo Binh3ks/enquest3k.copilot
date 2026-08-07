@@ -19,6 +19,8 @@ const weekData = {
   isEasy: true,
   weekTitle_en: "The Busy Classroom (Easy)",
   weekTitle_vi: "Lớp học Bận rộn (Dễ)",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "There are... (Plural)",
   global_vocab: vocab.vocab,
   

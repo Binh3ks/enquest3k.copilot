@@ -38,3 +38,39 @@ export default {
     hint_vi: "Toi da ___ vi ___. Sau do toi ___ khi ___."
   }
 };
+
+export const chunk_focus = [
+  "a big part of",
+  "every day",
+  "feel scared",
+  "feel excited",
+  "come from",
+  "sends a message",
+  "what to do",
+  "feel bored",
+  "there is",
+  "The best thing",
+  "feel calm",
+  "think clearly",
+  "feel relieved",
+  "feel cheerful",
+  "full of energy"
+];
+
+export const dictionary = {
+    'The best thing': { word: 'The best thing', pronunciation: '/the best thing/', definition_vi: 'điều tốt nhất', definition_en: 'the most helpful or suitable thing', example: 'The best thing is to name your feelings.' },
+    'a big part of': { word: 'a big part of', pronunciation: '/a big part of/', definition_vi: 'một phần lớn của', definition_en: 'meaning of a big part of', example: 'This is an example: a big part of.' },
+    'come from': { word: 'come from', pronunciation: '/come from/', definition_vi: 'đến từ', definition_en: 'meaning of come from', example: 'This is an example: come from.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'feel bored': { word: 'feel bored', pronunciation: '/feel bored/', definition_vi: 'feel bored', definition_en: 'meaning of feel bored', example: 'This is an example: feel bored.' },
+    'feel calm': { word: 'feel calm', pronunciation: '/feel calm/', definition_vi: 'cảm thấy bình tĩnh', definition_en: 'meaning of feel calm', example: 'When I am reading a good book, I feel calm and feel happy.' },
+    'feel cheerful': { word: 'feel cheerful', pronunciation: '/feel cheerful/', definition_vi: 'cảm thấy vui vẻ', definition_en: 'to feel happy and lively', example: 'When you feel cheerful, it means you are happy and full of energy.' },
+    'feel excited': { word: 'feel excited', pronunciation: '/feel excited/', definition_vi: 'cảm thấy hào hứng', definition_en: 'meaning of feel excited', example: 'When I am playing with my dog, I feel excited.' },
+    'feel relieved': { word: 'feel relieved', pronunciation: '/feel relieved/', definition_vi: 'feel relieved', definition_en: 'meaning of feel relieved', example: 'This is an example: feel relieved.' },
+    'feel scared': { word: 'feel scared', pronunciation: '/feel scared/', definition_vi: 'feel scared', definition_en: 'meaning of feel scared', example: 'This is an example: feel scared.' },
+    'full of energy': { word: 'full of energy', pronunciation: '/full of energy/', definition_vi: 'tràn đầy năng lượng', definition_en: 'meaning of full of energy', example: 'This is an example: full of energy.' },
+    'sends a message': { word: 'sends a message', pronunciation: '/sends a message/', definition_vi: 'sends a message', definition_en: 'meaning of sends a message', example: 'This is an example: sends a message.' },
+    'there is': { word: 'there is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
+    'think clearly': { word: 'think clearly', pronunciation: '/think clearly/', definition_vi: 'think clearly', definition_en: 'meaning of think clearly', example: 'This is an example: think clearly.' },
+    'what to do': { word: 'what to do', pronunciation: '/what to do/', definition_vi: 'what to do', definition_en: 'meaning of what to do', example: 'This is an example: what to do.' }
+};

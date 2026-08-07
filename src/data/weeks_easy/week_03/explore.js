@@ -48,3 +48,15 @@ export default {
     hint_vi: "Nói về bạn có thể làm gì với tay, chân, mắt."
   }
 };
+
+export const chunk_focus = [
+  "every day",
+  "work together",
+  "take care"
+];
+
+export const dictionary = {
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'take care': { word: 'take care', pronunciation: '/take care/', definition_vi: 'chăm sóc', definition_en: 'Multi-word phrase: take care', example: 'The phrase \'take care\' is commonly used in conversation.' },
+    'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' }
+};

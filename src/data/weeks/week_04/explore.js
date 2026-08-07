@@ -36,3 +36,15 @@ export default {
     hint_vi: "Hãy nghĩ về việc cười làm cho bạn cảm thấy thế nào..."
   }
 };
+
+export const chunk_focus = [
+  "feel happy",
+  "magic trick",
+  "every day"
+];
+
+export const dictionary = {
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'feel happy': { word: 'feel happy', pronunciation: '/feel happy/', definition_vi: 'cảm thấy hạnh phúc', definition_en: 'meaning of feel happy', example: 'When I am reading a good book, I feel calm and feel happy.' },
+    'magic trick': { word: 'magic trick', pronunciation: '/magic trick/', definition_vi: 'ảo thuật', definition_en: 'Multi-word phrase: magic trick', example: 'The phrase \'magic trick\' is commonly used in conversation.' }
+};

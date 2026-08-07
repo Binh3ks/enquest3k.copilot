@@ -19,6 +19,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "The Sequence Challenge",
   weekTitle_vi: "Thu Thach Trinh Tu",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "Sequence Connectors: First, I ___. Next, I ___. Then, I ___. Finally, I ___.",
 
   global_vocab: vocab.vocab,

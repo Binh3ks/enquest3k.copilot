@@ -16,3 +16,43 @@ export default {
     hint_vi: "Hãy nghĩ về những điều bạn thích làm..."
   }
 };
+
+export const chunk_focus = [
+  "My name",
+  "happy jar",
+  "at home",
+  "Every day",
+  "happy things",
+  "playing with my dog",
+  "feel excited",
+  "reading a good book",
+  "feel calm",
+  "feel happy",
+  "drawing colorful pictures",
+  "feel creative",
+  "My mom",
+  "friendly and funny",
+  "makes me laugh",
+  "every day",
+  "remember all the happy moments"
+];
+
+export const dictionary = {
+    'Every day': { word: 'Every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
+    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: '(cụm từ: my name)', definition_en: 'Multi-word phrase: my name', example: 'Use of \'my name\' in natural context.' },
+    'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
+    'drawing colorful pictures': { word: 'drawing colorful pictures', pronunciation: '/drawing colorful pictures/', definition_vi: 'vẽ tranh nhiều màu', definition_en: 'meaning of drawing colorful pictures', example: 'The artist sat on the grass, drawing colorful pictures of the garden.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'feel calm': { word: 'feel calm', pronunciation: '/feel calm/', definition_vi: 'cảm thấy bình tĩnh', definition_en: 'meaning of feel calm', example: 'When I am reading a good book, I feel calm and feel happy.' },
+    'feel creative': { word: 'feel creative', pronunciation: '/feel creative/', definition_vi: 'cảm thấy sáng tạo', definition_en: 'meaning of feel creative', example: 'I feel creative when I am drawing pictures.' },
+    'feel excited': { word: 'feel excited', pronunciation: '/feel excited/', definition_vi: 'cảm thấy hào hứng', definition_en: 'meaning of feel excited', example: 'When I am playing with my dog, I feel excited.' },
+    'feel happy': { word: 'feel happy', pronunciation: '/feel happy/', definition_vi: 'cảm thấy hạnh phúc', definition_en: 'meaning of feel happy', example: 'When I am reading a good book, I feel calm and feel happy.' },
+    'friendly and funny': { word: 'friendly and funny', pronunciation: '/friendly and funny/', definition_vi: 'thân thiện và vui nhộn', definition_en: 'meaning of friendly and funny', example: 'Our neighbour is friendly and funny — he always makes us laugh.' },
+    'happy jar': { word: 'happy jar', pronunciation: '/happy jar/', definition_vi: 'hũ hạnh phúc', definition_en: 'Multi-word phrase: happy jar', example: 'The phrase \'happy jar\' is commonly used in conversation.' },
+    'happy things': { word: 'happy things', pronunciation: '/happy things/', definition_vi: 'những thứ hạnh phúc', definition_en: 'Multi-word phrase: happy things', example: 'The phrase \'happy things\' is commonly used in conversation.' },
+    'makes me laugh': { word: 'makes me laugh', pronunciation: '/makes me laugh/', definition_vi: 'làm tôi cười', definition_en: 'meaning of makes me laugh', example: 'My little brother is so funny — his jokes always makes me laugh out loud.' },
+    'playing with my dog': { word: 'playing with my dog', pronunciation: '/playing with my dog/', definition_vi: 'chơi với chó của tôi', definition_en: 'meaning of playing with my dog', example: 'After school, I enjoy playing with my dog in the garden.' },
+    'reading a good book': { word: 'reading a good book', pronunciation: '/reading a good book/', definition_vi: 'đọc sách hay', definition_en: 'meaning of reading a good book', example: 'Spending an afternoon reading a good book is one of the best ways to relax.' },
+    'remember all the happy moments': { word: 'remember all the happy moments', pronunciation: '/remember all the happy moments/', definition_vi: 'nhớ những khoảnh khắc hạnh phúc', definition_en: 'meaning of remember all the happy moments', example: 'Photos help us remember all the happy moments from our summer holiday.' }
+};

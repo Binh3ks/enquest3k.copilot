@@ -38,3 +38,61 @@ export default {
     hint_vi: "Ô tô được dùng để... Tôi sẽ chọn vì... Xe đạp tốt để... vì..."
   }
 };
+
+export const chunk_focus = [
+  "from place to place",
+  "learn about",
+  "types of transport",
+  "travel by car",
+  "every day",
+  "many people",
+  "at once",
+  "lots of",
+  "ride a motorbike",
+  "every morning",
+  "longer journeys",
+  "great choice",
+  "steel rails",
+  "carry hundreds of passengers",
+  "kilometres per hour",
+  "without your own vehicle",
+  "take a taxi",
+  "taxi driver",
+  "good for the environment",
+  "Slow and steady wins the race",
+  "just like",
+  "travel on water",
+  "carry thousands of passengers",
+  "across the sea",
+  "Just like",
+  "mode of transport"
+];
+
+export const dictionary = {
+    'Just like': { word: 'Just like', pronunciation: '/just like/', definition_vi: 'giống như', definition_en: 'in the same way as', example: 'A bicycle is slow and steady, just like the tortoise.' },
+    'Slow and steady wins the race': { word: 'Slow and steady wins the race', pronunciation: '/slow and steady wins the race/', definition_vi: 'chậm và chắc chắn thì thắng cuộc đua', definition_en: 'working carefully and patiently leads to success; a proverb', example: 'Slow and steady wins the race.' },
+    'across the sea': { word: 'across the sea', pronunciation: '/across the sea/', definition_vi: '(cụm từ: across the sea)', definition_en: 'Multi-word phrase: across the sea', example: 'Use of \'across the sea\' in natural context.' },
+    'at once': { word: 'at once', pronunciation: '/at once/', definition_vi: 'ngay lập tức', definition_en: 'meaning of at once', example: 'This is an example: at once.' },
+    'carry hundreds of passengers': { word: 'carry hundreds of passengers', pronunciation: '/carry hundreds of passengers/', definition_vi: 'chở hàng trăm hành khách', definition_en: 'transport a few hundred people', example: 'A train can carry hundreds of passengers.' },
+    'carry thousands of passengers': { word: 'carry thousands of passengers', pronunciation: '/carry thousands of passengers/', definition_vi: 'chở hàng nghìn hành khách', definition_en: 'transport a few thousand people', example: 'A big ship can carry thousands of passengers.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'every morning': { word: 'every morning', pronunciation: '/every morning/', definition_vi: 'mỗi sáng', definition_en: 'each morning', example: 'He walks to school every morning.' },
+    'from place to place': { word: 'from place to place', pronunciation: '/from place to place/', definition_vi: 'từ nơi này sang nơi khác', definition_en: 'meaning of from place to place', example: 'This is an example: from place to place.' },
+    'good for the environment': { word: 'good for the environment', pronunciation: '/good for the environment/', definition_vi: 'tốt cho môi trường', definition_en: 'meaning of good for the environment', example: 'This is an example: good for the environment.' },
+    'great choice': { word: 'great choice', pronunciation: '/great choice/', definition_vi: 'lựa chọn tuyệt vời', definition_en: 'a very good option', example: 'A train is a great choice for long trips.' },
+    'just like': { word: 'just like', pronunciation: '/just like/', definition_vi: 'giống như', definition_en: 'in the same way as', example: 'A bicycle is slow and steady, just like the tortoise.' },
+    'kilometres per hour': { word: 'kilometres per hour', pronunciation: '/kilometres per hour/', definition_vi: 'kilômét mỗi giờ', definition_en: 'distance measured in kilometres covered in one hour', example: 'Some trains travel at over 300 kilometres per hour.' },
+    'learn about': { word: 'learn about', pronunciation: '/learn about/', definition_vi: 'học về', definition_en: 'meaning of learn about', example: 'This is an example: learn about.' },
+    'longer journeys': { word: 'longer journeys', pronunciation: '/longer journeys/', definition_vi: 'longer journeys', definition_en: 'meaning of longer journeys', example: 'This is an example: longer journeys.' },
+    'lots of': { word: 'lots of', pronunciation: '/lots of/', definition_vi: '(cụm từ: lots of)', definition_en: 'Multi-word phrase: lots of', example: 'Use of \'lots of\' in natural context.' },
+    'many people': { word: 'many people', pronunciation: '/many people/', definition_vi: 'nhiều người', definition_en: 'Multi-word phrase: many people', example: 'The phrase \'many people\' is commonly used in conversation.' },
+    'mode of transport': { word: 'mode of transport', pronunciation: '/mode of transport/', definition_vi: 'phương thức vận chuyển', definition_en: 'meaning of mode of transport', example: 'This is an example: mode of transport.' },
+    'ride a motorbike': { word: 'ride a motorbike', pronunciation: '/ride a motorbike/', definition_vi: 'đi xe máy', definition_en: 'meaning of ride a motorbike', example: 'This is an example: ride a motorbike.' },
+    'steel rails': { word: 'steel rails', pronunciation: '/steel rails/', definition_vi: 'đường ray thép', definition_en: 'metal tracks that trains run on', example: 'Trains travel on steel rails.' },
+    'take a taxi': { word: 'take a taxi', pronunciation: '/take a taxi/', definition_vi: 'đi taxi', definition_en: 'meaning of take a taxi', example: 'This is an example: take a taxi.' },
+    'taxi driver': { word: 'taxi driver', pronunciation: '/taxi driver/', definition_vi: 'tài xế taxi', definition_en: 'meaning of taxi driver', example: 'The friendly taxi driver knew every street in the busy city.' },
+    'travel by car': { word: 'travel by car', pronunciation: '/travel by car/', definition_vi: 'đi bằng ô tô', definition_en: 'meaning of travel by car', example: 'This is an example: travel by car.' },
+    'travel on water': { word: 'travel on water', pronunciation: '/travel on water/', definition_vi: 'di chuyển trên mặt nước', definition_en: 'move across water using a boat or ship', example: 'To travel on water, you use a boat or a ship.' },
+    'types of transport': { word: 'types of transport', pronunciation: '/types of transport/', definition_vi: 'các loại phương tiện', definition_en: 'meaning of types of transport', example: 'This is an example: types of transport.' },
+    'without your own vehicle': { word: 'without your own vehicle', pronunciation: '/without your own vehicle/', definition_vi: 'không có phương tiện của riêng bạn', definition_en: 'without a personal vehicle', example: 'If you need to travel without your own vehicle, you can take a taxi.' }
+};

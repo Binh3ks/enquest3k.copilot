@@ -10,3 +10,45 @@ export default {
     { id: 3, question_en: "What does Alex want to become?", answer: ["A scientist", "Scientist"], clue_statement: "Alex wants to become a scientist.", hint_en: "When I grow up...", hint_vi: "Khi lớn lên..." }
   ]
 };
+
+export const chunk_focus = [
+  "My name",
+  "new student",
+  "elementary school",
+  "Every morning",
+  "wake up early",
+  "get ready for school",
+  "story book",
+  "small notebook",
+  "every day",
+  "my classroom",
+  "there are",
+  "My teacher",
+  "very kind and patient",
+  "learning new things",
+  "studying every day",
+  "After school",
+  "go to the library",
+  "young scientist"
+];
+
+export const dictionary = {
+    'After school': { word: 'After school', pronunciation: '/after school/', definition_vi: 'sau giờ học', definition_en: 'Multi-word phrase: after school', example: 'The phrase \'after school\' is commonly used in conversation.' },
+    'Every morning': { word: 'Every morning', pronunciation: '/every morning/', definition_vi: 'mỗi sáng', definition_en: 'each morning', example: 'He walks to school every morning.' },
+    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: '(cụm từ: my name)', definition_en: 'Multi-word phrase: my name', example: 'Use of \'my name\' in natural context.' },
+    'My teacher': { word: 'My teacher', pronunciation: '/my teacher/', definition_vi: '(cụm từ: my teacher)', definition_en: 'Multi-word phrase: my teacher', example: 'Use of \'my teacher\' in natural context.' },
+    'elementary school': { word: 'elementary school', pronunciation: '/elementary school/', definition_vi: 'trường tiểu học', definition_en: 'Multi-word phrase: elementary school', example: 'The phrase \'elementary school\' is commonly used in conversation.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'get ready for school': { word: 'get ready for school', pronunciation: '/get ready for school/', definition_vi: 'chuẩn bị đi học', definition_en: 'to prepare yourself for going to school', example: 'Every morning, I get ready for school with my backpack and books.' },
+    'go to the library': { word: 'go to the library', pronunciation: '/go to the library/', definition_vi: 'đi đến thư viện', definition_en: 'to visit the library', example: 'After school, I go to the library to read books.' },
+    'learning new things': { word: 'learning new things', pronunciation: '/learning new things/', definition_vi: 'học những điều mới', definition_en: 'the activity of discovering or studying something new', example: 'I love learning new things every day.' },
+    'my classroom': { word: 'my classroom', pronunciation: '/my classroom/', definition_vi: '(cụm từ: my classroom)', definition_en: 'Multi-word phrase: my classroom', example: 'Use of \'my classroom\' in natural context.' },
+    'new student': { word: 'new student', pronunciation: '/new student/', definition_vi: 'học sinh mới', definition_en: 'meaning of new student', example: 'The new student sat quietly at the back of the classroom on her first day.' },
+    'small notebook': { word: 'small notebook', pronunciation: '/small notebook/', definition_vi: 'sổ tay nhỏ', definition_en: 'meaning of small notebook', example: 'In her small notebook, the scientist wrote down every observation she made.' },
+    'story book': { word: 'story book', pronunciation: '/story book/', definition_vi: 'sách truyện', definition_en: 'meaning of story book', example: 'The library has hundreds of story books for children of all ages.' },
+    'studying every day': { word: 'studying every day', pronunciation: '/studying every day/', definition_vi: 'học tập mỗi ngày', definition_en: 'meaning of studying every day', example: 'She is studying every day to prepare well for the important exam.' },
+    'there are': { word: 'there are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'very kind and patient': { word: 'very kind and patient', pronunciation: '/very kind and patient/', definition_vi: 'rất tốt bụng và kiên nhẫn', definition_en: 'gentle, helpful, and calm with other people', example: 'My teacher is very kind and patient.' },
+    'wake up early': { word: 'wake up early', pronunciation: '/wake up early/', definition_vi: 'thức dậy sớm', definition_en: 'to stop sleeping early in the morning', example: 'Every morning, I wake up early for school.' },
+    'young scientist': { word: 'young scientist', pronunciation: '/young scientist/', definition_vi: 'nhà khoa học trẻ', definition_en: 'meaning of young scientist', example: 'The young scientist worked late in the laboratory to finish her experiment.' }
+};

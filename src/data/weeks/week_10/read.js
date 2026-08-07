@@ -17,3 +17,39 @@ export default {
     hint_vi: "Nói về sự khác biệt giữa thành phố và nông thôn..."
   }
   };
+
+export const chunk_focus = [
+  "in the countryside",
+  "In the city",
+  "there are",
+  "many animals",
+  "run very fast",
+  "run quickly",
+  "walk in",
+  "big green field",
+  "There are",
+  "many trees",
+  "very tall",
+  "very busy",
+  "countryside is peaceful",
+  "Next time",
+  "best place"
+];
+
+export const dictionary = {
+    'In the city': { word: 'In the city', pronunciation: '/in the city/', definition_vi: 'ở thành phố', definition_en: 'meaning of in the city', example: 'In the city, there are many cars, but here there are many animals.' },
+    'Next time': { word: 'Next time', pronunciation: '/next time/', definition_vi: 'Lần sau', definition_en: 'meaning of next time', example: 'Next time, I will hide the treasure next to the door!' },
+    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'best place': { word: 'best place', pronunciation: '/best place/', definition_vi: 'nơi tốt nhất', definition_en: 'Multi-word phrase: best place', example: 'The phrase \'best place\' is commonly used in conversation.' },
+    'big green field': { word: 'big green field', pronunciation: '/big green field/', definition_vi: 'cánh đồng xanh lớn', definition_en: 'meaning of big green field', example: 'Children love to run and play in the big green field near the park.' },
+    'countryside is peaceful': { word: 'countryside is peaceful', pronunciation: '/countryside is peaceful/', definition_vi: 'đồng quê yên bình', definition_en: 'meaning of countryside is peaceful', example: 'The countryside is peaceful with green fields, singing birds and blue skies.' },
+    'in the countryside': { word: 'in the countryside', pronunciation: '/in the countryside/', definition_vi: 'ở nông thôn', definition_en: 'meaning of in the countryside', example: 'Today I visit my uncle\'s farm in the countryside.' },
+    'many animals': { word: 'many animals', pronunciation: '/many animals/', definition_vi: 'nhiều động vật', definition_en: 'meaning of many animals', example: 'In the city, there are many cars, but here there are many animals.' },
+    'many trees': { word: 'many trees', pronunciation: '/many trees/', definition_vi: 'nhiều cây', definition_en: 'meaning of many trees', example: 'There are many trees.' },
+    'run quickly': { word: 'run quickly', pronunciation: '/run quickly/', definition_vi: 'chạy nhanh chóng', definition_en: 'meaning of run quickly', example: 'When the bell rang, the children ran quickly to the playground.' },
+    'run very fast': { word: 'run very fast', pronunciation: '/run very fast/', definition_vi: 'chạy rất nhanh', definition_en: 'meaning of run very fast', example: 'The chicken run very fast!' },
+    'there are': { word: 'there are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'very busy': { word: 'very busy', pronunciation: '/very busy/', definition_vi: 'rất bận', definition_en: 'meaning of very busy', example: 'The kitchen was very busy with everyone cooking and preparing for the feast.' },
+    'very tall': { word: 'very tall', pronunciation: '/very tall/', definition_vi: 'rất cao', definition_en: 'meaning of very tall', example: 'The giraffe is very tall and can eat leaves from the highest branches.' },
+    'walk in': { word: 'walk in', pronunciation: '/walk in/', definition_vi: 'walk in', definition_en: 'meaning of walk in', example: 'This is an example: walk in.' }
+};

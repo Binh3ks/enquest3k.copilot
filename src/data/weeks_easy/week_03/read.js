@@ -12,3 +12,35 @@ export default {
     { id: 5, question_en: "What does my friend wear?", answer: ["glasses to read", "glasses"], clue_statement: "My friend wears glasses to read.", hint_en: "Think about what my friend wears...", hint_vi: "Nghĩ về những gì bạn tôi đeo..." }
   ]
 };
+
+export const chunk_focus = [
+  "look in",
+  "every day",
+  "round face",
+  "brown eyes",
+  "long brown hair",
+  "very tall",
+  "for my age",
+  "happy smile",
+  "My friend",
+  "wears glasses",
+  "good friends",
+  "look different",
+  "from each other"
+];
+
+export const dictionary = {
+    'My friend': { word: 'My friend', pronunciation: '/my friend/', definition_vi: '(cụm từ: my friend)', definition_en: 'Multi-word phrase: my friend', example: 'Use of \'my friend\' in natural context.' },
+    'brown eyes': { word: 'brown eyes', pronunciation: '/brown eyes/', definition_vi: 'mắt nâu', definition_en: 'meaning of brown eyes', example: 'Sarah has beautiful brown eyes and a warm smile.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'for my age': { word: 'for my age', pronunciation: '/for my age/', definition_vi: 'theo độ tuổi', definition_en: 'meaning of for my age', example: 'I am short for my age.' },
+    'from each other': { word: 'from each other', pronunciation: '/from each other/', definition_vi: 'từ nhau', definition_en: 'meaning of from each other', example: 'We look different from each other in my family.' },
+    'good friends': { word: 'good friends', pronunciation: '/good friends/', definition_vi: '(cụm từ: good friends)', definition_en: 'Multi-word phrase: good friends', example: 'Use of \'good friends\' in natural context.' },
+    'happy smile': { word: 'happy smile', pronunciation: '/happy smile/', definition_vi: 'nụ cười hạnh phúc', definition_en: 'meaning of happy smile', example: 'Her happy smile made everyone in the room feel cheerful.' },
+    'long brown hair': { word: 'long brown hair', pronunciation: '/long brown hair/', definition_vi: 'tóc nâu dài', definition_en: 'meaning of long brown hair', example: 'My sister has long brown hair that reaches her shoulders.' },
+    'look different': { word: 'look different', pronunciation: '/look different/', definition_vi: 'look different', definition_en: 'meaning of look different', example: 'This is an example: look different.' },
+    'look in': { word: 'look in', pronunciation: '/look in/', definition_vi: 'nhìn vào', definition_en: 'meaning of look in', example: 'In the kitchen, I open the cabinet and look in the fridge.' },
+    'round face': { word: 'round face', pronunciation: '/round face/', definition_vi: 'mặt tròn', definition_en: 'meaning of round face', example: 'The baby has a round face and bright blue eyes.' },
+    'very tall': { word: 'very tall', pronunciation: '/very tall/', definition_vi: 'rất cao', definition_en: 'meaning of very tall', example: 'The giraffe is very tall and can eat leaves from the highest branches.' },
+    'wears glasses': { word: 'wears glasses', pronunciation: '/wears glasses/', definition_vi: 'đeo kính', definition_en: 'meaning of wears glasses', example: 'She wears glasses to see the board clearly.' }
+};

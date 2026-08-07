@@ -20,6 +20,8 @@ const weekData = {
   isEasy: false,
   weekTitle_en: "Inside My Backpack",
   weekTitle_vi: "Trong Balo của tôi",
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
   grammar_focus: "There is a... (Singular)",
   global_vocab: vocab.vocab,
   voiceConfig: {

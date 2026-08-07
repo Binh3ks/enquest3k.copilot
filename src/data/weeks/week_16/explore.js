@@ -67,3 +67,39 @@ export default {
     hint_vi: "Trong môn thể thao yêu thích của tôi, tôi... Đội của tôi..."
   }
 };
+
+export const chunk_focus = [
+  "what happens",
+  "run fast",
+  "uses energy",
+  "kick a ball",
+  "goes into motion",
+  "throw a ball",
+  "flies through the air",
+  "lots of energy",
+  "team sport",
+  "pass the ball",
+  "each other",
+  "scores a goal",
+  "working as a team",
+  "having fun",
+  "every day"
+];
+
+export const dictionary = {
+    'each other': { word: 'each other', pronunciation: '/each other/', definition_vi: 'nhau, lẫn nhau', definition_en: 'meaning of each other', example: 'We love each other very much.' },
+    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
+    'flies through the air': { word: 'flies through the air', pronunciation: '/flies through the air/', definition_vi: 'bay qua không trung', definition_en: 'moves quickly through the air', example: 'The kite flies through the air on a windy day.' },
+    'goes into motion': { word: 'goes into motion', pronunciation: '/goes into motion/', definition_vi: 'bắt đầu chuyển động', definition_en: 'starts moving', example: 'The ball goes into motion after the kick.' },
+    'having fun': { word: 'having fun', pronunciation: '/having fun/', definition_vi: 'having fun', definition_en: 'meaning of having fun', example: 'This is an example: having fun.' },
+    'kick a ball': { word: 'kick a ball', pronunciation: '/kick a ball/', definition_vi: 'đá bóng', definition_en: 'meaning of kick a ball', example: 'This is an example: kick a ball.' },
+    'lots of energy': { word: 'lots of energy', pronunciation: '/lots of energy/', definition_vi: 'nhiều năng lượng', definition_en: 'Multi-word phrase: lots of energy', example: 'The phrase \'lots of energy\' is commonly used in conversation.' },
+    'pass the ball': { word: 'pass the ball', pronunciation: '/pass the ball/', definition_vi: 'chuyền bóng', definition_en: 'meaning of pass the ball', example: 'This is an example: pass the ball.' },
+    'run fast': { word: 'run fast', pronunciation: '/run fast/', definition_vi: 'chạy nhanh', definition_en: 'meaning of run fast', example: 'The fastest runner on the team can run fast and win every race.' },
+    'scores a goal': { word: 'scores a goal', pronunciation: '/scores a goal/', definition_vi: 'scores a goal', definition_en: 'meaning of scores a goal', example: 'This is an example: scores a goal.' },
+    'team sport': { word: 'team sport', pronunciation: '/team sport/', definition_vi: 'thể thao đồng đội', definition_en: 'meaning of team sport', example: 'This is an example: team sport.' },
+    'throw a ball': { word: 'throw a ball', pronunciation: '/throw a ball/', definition_vi: 'ném bóng', definition_en: 'meaning of throw a ball', example: 'This is an example: throw a ball.' },
+    'uses energy': { word: 'uses energy', pronunciation: '/uses energy/', definition_vi: 'uses energy', definition_en: 'meaning of uses energy', example: 'This is an example: uses energy.' },
+    'what happens': { word: 'what happens', pronunciation: '/what happens/', definition_vi: 'điều gì xảy ra', definition_en: 'Multi-word phrase: what happens', example: 'The phrase \'what happens\' is commonly used in conversation.' },
+    'working as a team': { word: 'working as a team', pronunciation: '/working as a team/', definition_vi: 'working as a team', definition_en: 'meaning of working as a team', example: 'This is an example: working as a team.' }
+};
