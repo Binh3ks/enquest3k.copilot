@@ -604,8 +604,12 @@ async function callDeepgramTTS(text, voice = 'aura-asteria-en', audioPath) {
 
 async function callGeminiTTS(text, mode, audioPath) {
   try {
-    console.log(`🎓 Google Cloud TTS Direct (AI Tutor), path: ${audioPath}`);
-    const voiceToUse = mode === "pronunciation" ? "en-US-Neural2-F" : "en-US-Journey-F";
+    const selectedVoice = localStorage.getItem('tts_voice') || 'en-US-Journey-F';
+    const voiceToUse = (selectedVoice && selectedVoice.startsWith('en-US-'))
+      ? selectedVoice
+      : (mode === "pronunciation" ? "en-US-Neural2-F" : "en-US-Journey-F");
+
+    console.log(`🎓 Google Cloud TTS Direct (AI Tutor) [Voice: ${voiceToUse}], path: ${audioPath}`);
     const blob = await VoiceService.useGoogleTTSDirect(text, voiceToUse);
     if (!blob) throw new Error("Google Cloud TTS Direct returned null");
     return URL.createObjectURL(blob);

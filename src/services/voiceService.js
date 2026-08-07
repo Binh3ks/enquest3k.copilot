@@ -325,18 +325,29 @@ export const VoiceService = {
     const cleanedText = this.cleanTextForTTS(text);
     this._lastText = cleanedText;
     
+    // Auto-detect weekNumber from URL or localStorage if not provided
+    if (!weekNumber && typeof window !== 'undefined') {
+      const match = window.location.pathname.match(/\/week\/(\d+)/i);
+      if (match && match[1]) {
+        weekNumber = parseInt(match[1], 10);
+      } else {
+        const storedWeek = localStorage.getItem('current_week');
+        if (storedWeek) weekNumber = parseInt(storedWeek, 10);
+      }
+    }
+
     // Load voiceConfig if not provided and weekNumber is available
     if (!voiceConfig && weekNumber) {
       voiceConfig = await getVoiceConfigForWeek(weekNumber);
     }
     
-    // Extract voice for this station (Aura-2 rotation → legacy voiceConfig fallback)
-    const voiceKey = STATION_VOICE_KEY[station];
+    // Extract voice for this station (Google voiceConfig priority)
+    const voiceKey = STATION_VOICE_KEY[station] || 'narration';
     const googleVoice = voiceConfig?.[voiceKey];
     const deepgramVoice =
       (voiceKey && weekNumber ? getAura2Voice(weekNumber, voiceKey) : null) ||
       (googleVoice ? (GOOGLE_TO_DEEPGRAM_VOICE[googleVoice] || googleVoice) : null);
-    const cacheVoice = deepgramVoice || googleVoice;
+    const cacheVoice = googleVoice || deepgramVoice;
 
     // Volume compensation: bass male voices are quieter than female voices
     this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
@@ -344,17 +355,17 @@ export const VoiceService = {
     // 🎓 GOOGLE CLOUD TTS DIRECT OVERRIDE (Enabled for all 36 weeks)
     const useGoogleDirect = true;
     if (useGoogleDirect) {
-      const targetVoice = googleVoice || (station === 'narration' || station === 'read' || station === 'explore' || station === 'shadowing' ? 'en-US-Journey-F' : 'en-US-Neural2-F');
+      const targetVoice = googleVoice || (station === 'narration' || station === 'read' || station === 'explore' || station === 'shadowing' ? 'en-US-Journey-F' : (station === 'mindmap_speaking' || station === 'questions' || station === 'logic_lab' ? 'en-US-Neural2-D' : 'en-US-Neural2-F'));
       
       // Check Client Cache first for Google Direct voice
       const googleCachedUrl = await TTSCache.get(cleanedText, station, targetVoice, audioUrl);
       if (googleCachedUrl) {
-        console.log(`[TTS] 🎓 Google Cloud TTS Direct Cache Hit (0ms) [voice: ${targetVoice}]`);
+        console.log(`[TTS] 🎓 Google Cloud TTS Direct Cache Hit (0ms) [voice: ${targetVoice}] [station: ${station}]`);
         return this.playAudio(googleCachedUrl, true);
       }
 
       try {
-        console.log(`[TTS] 🎓 Google Cloud TTS Direct Generating (Week 36 / ${station}) [Voice: ${targetVoice}]`);
+        console.log(`[TTS] 🎓 Google Cloud TTS Direct Generating (W${weekNumber || '?'} / ${station}) [Voice: ${targetVoice}]`);
         const audioBlob = await this.useGoogleTTSDirect(cleanedText, targetVoice);
         if (audioBlob) {
           await TTSCache.set(cleanedText, station, audioBlob, targetVoice, audioUrl);
@@ -595,6 +606,86 @@ export const VoiceService = {
     } catch (error) {
       console.warn(`[Prefetch] ⚠️ Failed to generate:`, error.message);
       // Prefetch is non-critical, don't throw
+    }
+  },
+
+  /**
+   * Pre-generate ALL TTS audio for an entire week across all stations
+   * Triggered on first opening a week page so all audio is pre-cached in 0ms IndexedDB!
+   */
+  async prefetchEntireWeek(weekNumber = 36, mode = 'advanced') {
+    if (!weekNumber) return;
+    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v20`;
+    if (sessionStorage.getItem(weekKey)) return; // Already done this session
+    sessionStorage.setItem(weekKey, 'true');
+
+    console.log(`[Prefetch] 🚀 Starting Full Week ${weekNumber} (${mode}) Google Cloud TTS Pre-generation...`);
+
+    try {
+      const weekData = await getWeekData(weekNumber, mode);
+      const voiceConfig = await getVoiceConfigForWeek(weekNumber);
+
+      if (!weekData) return;
+
+      const itemsToPrefetch = [];
+
+      // Reading & Explore
+      if (weekData.stations?.read_explore) {
+        const re = weekData.stations.read_explore;
+        if (re.read_stem?.narrative) itemsToPrefetch.push({ text: re.read_stem.narrative, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
+        if (re.read_social?.narrative) itemsToPrefetch.push({ text: re.read_social.narrative, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
+      }
+
+      // Vocabulary
+      if (weekData.stations?.new_words?.vocab) {
+        weekData.stations.new_words.vocab.forEach(v => {
+          if (v.word) itemsToPrefetch.push({ text: v.word, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F', audioPath: v.audio_word });
+          if (v.definition_en) itemsToPrefetch.push({ text: v.definition_en, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+          if (v.example_sentence) itemsToPrefetch.push({ text: v.example_sentence, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+        });
+      }
+
+      // Word Power
+      if (weekData.stations?.word_power?.phrases) {
+        weekData.stations.word_power.phrases.forEach(p => {
+          if (p.phrase) itemsToPrefetch.push({ text: p.phrase, station: 'word_power', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+          if (p.example) itemsToPrefetch.push({ text: p.example, station: 'word_power', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+        });
+      }
+
+      // Shadowing
+      if (weekData.stations?.shadowing?.sentences) {
+        weekData.stations.shadowing.sentences.forEach(s => {
+          if (s.text) itemsToPrefetch.push({ text: s.text, station: 'shadowing', voice: voiceConfig?.shadowing || 'en-US-Journey-F', audioPath: s.audio_url });
+        });
+      }
+
+      // Dictation
+      if (weekData.stations?.dictation?.sentences) {
+        weekData.stations.dictation.sentences.forEach(s => {
+          if (s.text_en) itemsToPrefetch.push({ text: s.text_en, station: 'dictation', voice: voiceConfig?.dictation || 'en-US-Neural2-F', audioPath: s.audio_url });
+        });
+      }
+
+      // Mindmap
+      if (weekData.stations?.mindmap?.prompts) {
+        weekData.stations.mindmap.prompts.forEach(mp => {
+          if (mp.question) itemsToPrefetch.push({ text: mp.question, station: 'mindmap_speaking', voice: voiceConfig?.mindmap || 'en-US-Neural2-D' });
+        });
+      }
+
+      console.log(`[Prefetch] 📦 Week ${weekNumber} queue created (${itemsToPrefetch.length} items). Processing in background...`);
+
+      for (const item of itemsToPrefetch) {
+        try {
+          await this.prefetch(item.text, item.station, item.audioPath, weekNumber, mode, item.voice);
+          await new Promise(r => setTimeout(r, 80));
+        } catch (_) {}
+      }
+
+      console.log(`[Prefetch] ✅ Week ${weekNumber} Full TTS Pre-generation Complete!`);
+    } catch (err) {
+      console.warn(`[Prefetch] Failed week ${weekNumber} prefetch:`, err.message);
     }
   },
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import weekIndex, { loadWeekData } from '../data/weeks/index'; 
+import { VoiceService } from '../services/voiceService';
 
 // FIX: Thêm tham số forceEasyMode để ép buộc đúng mode từ Hook
 const injectAudioUrls = (weekData, forceEasyMode = false) => {
@@ -164,6 +165,9 @@ export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
             // Inject audio URLs
             const processedData = injectAudioUrls(deepClonedData, isEasy);
             setData(processedData);
+
+            // 🚀 Automatically pre-generate ALL Google Cloud TTS cache for the entire week!
+            VoiceService.prefetchEntireWeek(weekId, learningMode).catch(() => {});
           } else {
             console.warn(`[DataHooks] Week ${weekId} data not found for ${learningMode} mode.`);
             setData(null);
