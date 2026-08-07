@@ -35,6 +35,7 @@
  */
 
 import { TTSCache } from './ttsCache';
+import { loadWeekData } from '../data/weeks/index';
 
 // CDN Base URL for pre-generated Deepgram audio files from Cloudflare R2
 const CDN_URL = import.meta.env.VITE_CDN_URL || 'https://pub-8f917d02000c4be2a7214afb8d12abd3.r2.dev';
@@ -617,15 +618,16 @@ export const VoiceService = {
    */
   async prefetchEntireWeek(weekNumber = 36, mode = 'advanced') {
     if (!weekNumber) return;
-    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v23`;
+    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v24`;
     if (sessionStorage.getItem(weekKey)) return; // Already done this session
     sessionStorage.setItem(weekKey, 'true');
 
     console.log(`[Prefetch] 🚀 Starting Full Week ${weekNumber} (${mode}) Google Cloud TTS Pre-generation...`);
 
     try {
-      const weekData = await getWeekData(weekNumber, mode);
-      const voiceConfig = await getVoiceConfigForWeek(weekNumber);
+      const isEasy = mode === 'easy';
+      const weekData = await loadWeekData(weekNumber, isEasy);
+      const voiceConfig = weekData?.voiceConfig || {};
 
       if (!weekData) return;
 
