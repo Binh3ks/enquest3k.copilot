@@ -600,9 +600,11 @@ export const VoiceService = {
     // That transition is complete; always pass audioPath for structured caching.
     const safePath = audioPath;
     try {
-      const blob = await this.useGoogleTTS(cleanedText, station, finalVoice, safePath);
-      await TTSCache.set(cleanedText, station, blob, finalVoice, safePath);
-      console.log(`[Prefetch] 💾 Generated & cached: ${safePath || 'dynamic'} [voice: ${finalVoice || 'default'}]`);
+      const blob = await this.useGoogleTTSDirect(cleanedText, finalVoice);
+      if (blob) {
+        await TTSCache.set(cleanedText, station, blob, finalVoice, safePath);
+        console.log(`[Prefetch] 💾 Google Direct Generated & cached (${(blob.size/1024).toFixed(1)}KB): ${cleanedText.substring(0, 30)}... [voice: ${finalVoice}]`);
+      }
     } catch (error) {
       console.warn(`[Prefetch] ⚠️ Failed to generate:`, error.message);
       // Prefetch is non-critical, don't throw
@@ -615,7 +617,7 @@ export const VoiceService = {
    */
   async prefetchEntireWeek(weekNumber = 36, mode = 'advanced') {
     if (!weekNumber) return;
-    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v20`;
+    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v22`;
     if (sessionStorage.getItem(weekKey)) return; // Already done this session
     sessionStorage.setItem(weekKey, 'true');
 
@@ -634,6 +636,7 @@ export const VoiceService = {
         const re = weekData.stations.read_explore;
         if (re.read_stem?.narrative) itemsToPrefetch.push({ text: re.read_stem.narrative, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
         if (re.read_social?.narrative) itemsToPrefetch.push({ text: re.read_social.narrative, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
+        if (re.content_en) itemsToPrefetch.push({ text: re.content_en, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
       }
 
       // Vocabulary
@@ -667,12 +670,20 @@ export const VoiceService = {
         if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'dictation', voice: voiceConfig?.dictation || 'en-US-Neural2-F', audioPath: s.audio_url });
       });
 
-      // AI Tutor Opening Narratives
+      // AI Tutor Opening Narratives & Prompts
       const missions = weekData.story_missions || weekData.missions || [];
       missions.forEach(m => {
         const txt = m.opening_narrative || m.nova_greeting;
         if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'ask_ai', voice: voiceConfig?.questions || 'en-US-Neural2-D' });
       });
+
+      // Ask AI prompts (Situations)
+      if (weekData.stations?.ask_ai?.prompts) {
+        weekData.stations.ask_ai.prompts.forEach(p => {
+          const txt = p.nova_says || p.context_en;
+          if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'ask_ai', voice: voiceConfig?.questions || 'en-US-Neural2-D' });
+        });
+      }
 
       // Mindmap
       if (weekData.stations?.mindmap?.prompts) {
@@ -681,16 +692,18 @@ export const VoiceService = {
         });
       }
 
-      console.log(`[Prefetch] 📦 Week ${weekNumber} queue created (${itemsToPrefetch.length} items). Processing in background...`);
+      console.log(`[Prefetch] 📦 Week ${weekNumber} queue created (${itemsToPrefetch.length} items). Synthesizing Google Direct in background...`);
 
-      for (const item of itemsToPrefetch) {
-        try {
-          await this.prefetch(item.text, item.station, item.audioPath, weekNumber, mode, item.voice);
-          await new Promise(r => setTimeout(r, 80));
-        } catch (_) {}
+      // Parallel batch synthesis (4 concurrent items per batch for speed)
+      const BATCH_SIZE = 4;
+      for (let i = 0; i < itemsToPrefetch.length; i += BATCH_SIZE) {
+        const batch = itemsToPrefetch.slice(i, i + BATCH_SIZE);
+        await Promise.all(batch.map(item =>
+          this.prefetch(item.text, item.station, item.audioPath, weekNumber, mode, item.voice).catch(() => {})
+        ));
       }
 
-      console.log(`[Prefetch] ✅ Week ${weekNumber} Full TTS Pre-generation Complete!`);
+      console.log(`[Prefetch] ✅ Week ${weekNumber} Full Google Direct TTS Pre-generation Complete!`);
     } catch (err) {
       console.warn(`[Prefetch] Failed week ${weekNumber} prefetch:`, err.message);
     }
