@@ -249,7 +249,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'a
 
   // The "effective" script — cleaned transcript segments if enabled, else script.js
   // When ttsScript is provided, TTS mode uses ttsScript for both playback and display
-  const baseScript = cleanedTranscriptSentences.length > 0
+  const baseScript = (useTranscriptSource && cleanedTranscriptSentences.length > 0)
     ? cleanedTranscriptSentences
     : (data?.ttsScript ? ttsScript : script);
   const effectiveScript = baseScript.map(s => ({
