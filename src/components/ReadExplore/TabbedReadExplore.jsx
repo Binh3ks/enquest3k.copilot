@@ -136,17 +136,38 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
   const currentContent = activeTab === 'stem' ? weekData?.read_stem : weekData?.read_social;
 
   const playAudio = async () => {
-    if (!currentContent?.audio_url) return;
+    if (!currentContent) return;
+    
+    if (isPlaying) {
+      setIsPlaying(false);
+      return;
+    }
     
     setIsPlaying(true);
-    const audio = new Audio(currentContent.audio_url);
-    audio.onended = () => setIsPlaying(false);
-    audio.onerror = () => setIsPlaying(false);
+    const textParts = [];
+    if (currentContent.title_en) textParts.push(currentContent.title_en + '.');
+    if (currentContent.subtitle_en) textParts.push(currentContent.subtitle_en + '.');
+    if (Array.isArray(currentContent.paragraphs)) {
+      currentContent.paragraphs.forEach(p => {
+        textParts.push(p.replace(/\*\*/g, ''));
+      });
+    } else if (currentContent.content_en) {
+      textParts.push(currentContent.content_en.replace(/\*\*/g, ''));
+    }
+    const fullText = textParts.join(' ');
     
     try {
-      await audio.play();
+      await speakText(
+        fullText,
+        currentContent.audio_url || null,
+        1.0,
+        () => setIsPlaying(false),
+        'read_explore',
+        weekNumber,
+        learningMode
+      );
     } catch (err) {
-      console.error('Audio play failed:', err);
+      console.error('Story audio play failed:', err);
       setIsPlaying(false);
     }
   };
