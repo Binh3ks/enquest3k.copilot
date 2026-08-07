@@ -1,0 +1,18 @@
+# EngQuest3K — Agent Memory
+
+## Output Discipline (token-saving) — 2026-07-03
+Khi xuất báo cáo hoặc sửa code trong session OpenHands/Devin:
+- Ưu tiên code cô đọng; bỏ phân tích lý thuyết thừa.
+- Báo cáo tiến độ: 3 mục — (a) đã xong, (b) đang dở, (c) cần user quyết.
+- Báo cáo bug: nhảy thẳng Root Cause + Code Fix; bỏ file-table/kiến trúc trừ khi user yêu cầu.
+- Code fix: block ≤30 dòng; comment tối thiểu.
+- KHÔNG viết "xem tiếp phần sau", "trình bày báo cáo đầy đủ" kiểu rerun.
+- Khi sắp hết output budget: dừng giải thích, chuyển ngay sang code patch ngắn nhất.
+
+Source: `.devin/workflows/start.md` §3.
+
+## AI Tutor & Vocab Quality Standard — 2026-08-07
+- **No Premature Praise**: AI question templates MUST NOT contain hardcoded reactions like "That sounds wonderful!". Questions must strictly end with `[Question]? Say: [Option A], or [Option B]`.
+- **Vietnamese Diacritics**: All `definition_vi` entries in `vocab.js` and `word_match` MUST have full Vietnamese diacritic accents (e.g., `đã trao`, not `da trao`).
+- **Explore & Reading Chunking**: All `**bolded phrases**` in Reading and Explore stations for BOTH Easy Mode and Advanced Mode MUST be registered in `chunk_focus` and the dictionary with IPA, definition, and example sentence.
+- **Audio & TTS Fallback**: `audio_word` paths MUST handle missing MP3 files gracefully with browser TTS fallback so card flip audio never hangs or crashes.

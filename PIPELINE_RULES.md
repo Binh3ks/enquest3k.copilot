@@ -330,3 +330,20 @@ Turn length for AI Tutor conversations MUST strictly scale by week tier and miss
 ### 11f. Free Talk Card Limit
 - Free Talk (`spark_talk`) MUST contain EXACTLY 2 cards per week inspired by the week's theme.
 
+### 11g. Clean Question Templates (No Premature AI Reactions)
+- Question prompts in `story_arc` phase questions MUST NEVER contain hardcoded AI emotional responses like `"That sounds wonderful!"`, `"That is so important!"`, or `"Brilliant idea!"` inside the question text.
+- Question prompts MUST be clean questions ending with explicit scaffold options: `[Question text]? Say: [Option A], or [Option B]`.
+
+---
+
+## Rule 12: VOCABULARY & DICTIONARY GOLDEN STANDARD (FROZEN 🧊)
+
+### 12a. Mandatory Vietnamese Diacritics
+- ALL Vietnamese definitions (`definition_vi`) in `vocab.js`, `grammar.js`, `week_XX_real.js`, and `word_match` MUST use proper Vietnamese diacritic accents (e.g., `đã trao`, `tàu ngầm`, `rạn san hô`, `la bàn`, `bảo tàng`, `phát hiện`, `nhà thám hiểm`).
+- Non-accented text (e.g., `da trao`, `tau ngam`) is STRICTLY FORBIDDEN across all weeks and modes.
+
+### 12b. 100% Bolded Chunk & Dictionary Integration
+- EVERY bolded chunk (`**chunk phrase**`) in Reading Station (`read.js`, `read_stem`, `read_social`) AND Explore Station (`explore.js`) for BOTH Easy Mode (`weeks_easy`) and Advanced Mode (`weeks`) MUST be extracted into the week's `chunk_focus` array and have a corresponding entry in the week's dictionary (`target_vocab` / `vocab.js`) with IPA pronunciation, Vietnamese definition, English definition, and example sentence.
+
+### 12c. Audio & TTS Fallback Integrity
+- `audio_word` paths MUST be valid or handle missing MP3 files gracefully by falling back to high-quality Web Speech API (`voiceService.speak(word, 'en-US')`) without freezing card flip or game interaction in New Words and Word Match.
