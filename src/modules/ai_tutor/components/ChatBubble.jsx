@@ -1,4 +1,4 @@
-import { User, Sparkles } from 'lucide-react';
+import { User, Sparkles, Volume2 } from 'lucide-react';
 
 /**
  * ChatBubble - Displays a single message in the chat
@@ -9,8 +9,9 @@ import { User, Sparkles } from 'lucide-react';
  * @param {string} props.pedagogyNote - Optional pedagogy note for debugging
  * @param {Array<string>} props.hints - Optional hints to display after AI message
  * @param {string} props.mode - Current mode (only show hints in roleplay)
+ * @param {Function} props.onPlay - Optional callback to play text via TTS
  */
-const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [], mode = '' }) => {
+const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [], mode = '', onPlay }) => {
   const isAssistant = role === 'assistant';
   
   // 🔥 Clean content extraction - prevent JSON garbage
@@ -57,10 +58,21 @@ const ChatBubble = ({ role, content, timestamp, pedagogyNote, hints = [], mode =
             : 'bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-tr-md shadow-blue-200'
           }
         `}>
-          {/* Message Text */}
-          <p className="text-base leading-relaxed whitespace-pre-wrap font-semibold">
-            {messageText}
-          </p>
+          {/* Message Text & Speaker Icon */}
+          <div className="flex items-start justify-between gap-2">
+            <p className="text-base leading-relaxed whitespace-pre-wrap font-semibold flex-1">
+              {messageText}
+            </p>
+            {isAssistant && (
+              <button
+                onClick={() => onPlay && onPlay(messageText)}
+                className="p-1 text-purple-500 hover:text-purple-700 hover:bg-purple-100 rounded-full transition-colors flex-shrink-0"
+                title="Nghe lại phát âm"
+              >
+                <Volume2 size={18} />
+              </button>
+            )}
+          </div>
           
           {/* Timestamp */}
           <p className={`

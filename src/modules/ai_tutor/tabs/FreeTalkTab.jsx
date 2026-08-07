@@ -1541,6 +1541,7 @@ const FreeTalkTab = () => {
             pedagogyNote={msg.pedagogyNote}
             hints={msg.role === 'assistant' && index === messages.length - 1 && showHints && storeHintsEnabled ? hints : []}
             mode={mode}
+            onPlay={(text) => textToSpeech(text, { autoPlay: true, mode: 'conversation' })}
           />
         ))}
         

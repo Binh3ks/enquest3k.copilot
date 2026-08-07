@@ -423,6 +423,7 @@ Keep it simple, short, and encouraging!`;
             content={msg.content}
             timestamp={msg.timestamp}
             pedagogyNote={msg.pedagogyNote}
+            onPlay={(text) => textToSpeech(text, { autoPlay: true, mode: 'conversation' })}
           />
         ))}
         

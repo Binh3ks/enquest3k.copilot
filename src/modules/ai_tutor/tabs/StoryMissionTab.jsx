@@ -1431,6 +1431,7 @@ const StoryMissionTab = () => {
                 content={msg.content}
                 timestamp={msg.timestamp}
                 pedagogyNote={msg.pedagogyNote}
+                onPlay={(text) => textToSpeech(cleanAIForTTS(text), { autoPlay: true, mode: 'conversation' })}
               />
             ))}
             
