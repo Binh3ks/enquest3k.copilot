@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache_v21';
+const DB_NAME = 'EngQuestTTSCache_v22';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;  // Fresh v21 store (Aug 7, 2026): Phonetic Vietnamese Proper Noun TTS cache
+const DB_VERSION = 1;  // Fresh v22 store (Aug 7, 2026): Dynamic Google Cloud Direct TTS for Reading Narratives
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
@@ -59,6 +59,7 @@ class TTSCacheService {
       indexedDB.deleteDatabase('EngQuestTTSCache_v17');
       indexedDB.deleteDatabase('EngQuestTTSCache_v18');
       indexedDB.deleteDatabase('EngQuestTTSCache_v20');
+      indexedDB.deleteDatabase('EngQuestTTSCache_v21');
     } catch {}
 
     return new Promise((resolve, reject) => {

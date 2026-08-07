@@ -656,17 +656,17 @@ export const VoiceService = {
 
       const itemsToPrefetch = [];
 
-      // ⚡ Priority 1: Synthesize read.js narrative FIRST and await completion (<0.5s)!
+      // ⚡ Priority 1: Synthesize read.js narrative FIRST with Google Direct TTS & phonetic rules (<0.5s)!
       const readItems = [];
       if (weekData.stations?.read_explore) {
         const re = weekData.stations.read_explore;
-        if (re.read_stem?.narrative) readItems.push({ text: re.read_stem.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_stem.audio_url || re.audio_url });
-        if (re.read_social?.narrative) readItems.push({ text: re.read_social.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_social.audio_url || re.audio_url });
-        if (re.content_en) readItems.push({ text: re.content_en.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.audio_url });
+        if (re.read_stem?.narrative) readItems.push({ text: re.read_stem.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: null });
+        if (re.read_social?.narrative) readItems.push({ text: re.read_social.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: null });
+        if (re.content_en) readItems.push({ text: re.content_en.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: null });
       }
       if (weekData.stations?.explore) {
         const ex = weekData.stations.explore;
-        if (ex.content_en) readItems.push({ text: ex.content_en.replace(/\*\*/g, ''), station: 'explore', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: ex.audio_url || ex.explore_audio_url });
+        if (ex.content_en) readItems.push({ text: ex.content_en.replace(/\*\*/g, ''), station: 'explore', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: null });
       }
 
       if (readItems.length > 0) {
