@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache';
+const DB_NAME = 'EngQuestTTSCache_v14';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 13;  // Bumped v13 (Aug 7, 2026): purge stale/corrupted IndexedDB audio blobs for single words like cave/wrote/came
+const DB_VERSION = 1;  // Fresh v14 store (Aug 7, 2026): 100% fresh clean cache, legacy stores purged
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
@@ -49,6 +49,13 @@ class TTSCacheService {
       return null;
     }
 
+    // Automatically purge old legacy databases (EngQuestTTSCache)
+    try {
+      indexedDB.deleteDatabase('EngQuestTTSCache');
+      indexedDB.deleteDatabase('EngQuestTTSCache_v12');
+      indexedDB.deleteDatabase('EngQuestTTSCache_v13');
+    } catch {}
+
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(DB_NAME, DB_VERSION);
       
@@ -59,21 +66,19 @@ class TTSCacheService {
       
       request.onsuccess = () => {
         this.db = request.result;
-        console.log('[TTSCache] ✅ IndexedDB ready');
+        console.log('[TTSCache] ✅ IndexedDB v14 fresh ready');
         resolve(this.db);
       };
       
       request.onupgradeneeded = (event) => {
         const db = event.target.result;
-        // Delete old store on version upgrade — clears stale Kokoro-cached audio
-        // so fresh Deepgram files from R2 are fetched on next play
         if (db.objectStoreNames.contains(STORE_NAME)) {
           db.deleteObjectStore(STORE_NAME);
-          console.log('[TTSCache] 🗑️ Old cache cleared (version upgrade)');
+          console.log('[TTSCache] 🗑️ Old cache cleared');
         }
         const store = db.createObjectStore(STORE_NAME, { keyPath: 'key' });
         store.createIndex('timestamp', 'timestamp', { unique: false });
-        console.log('[TTSCache] 🆕 Created object store');
+        console.log('[TTSCache] 🆕 Created fresh object store v14');
       };
     });
   }
