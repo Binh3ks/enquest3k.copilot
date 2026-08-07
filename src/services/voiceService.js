@@ -630,12 +630,17 @@ export const VoiceService = {
 
       const itemsToPrefetch = [];
 
-      // Reading & Explore
+      // ⚡ Priority 1: Reading & Explore Narratives FIRST with exact audioPath
       if (weekData.stations?.read_explore) {
         const re = weekData.stations.read_explore;
-        if (re.read_stem?.narrative) itemsToPrefetch.push({ text: re.read_stem.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F' });
-        if (re.read_social?.narrative) itemsToPrefetch.push({ text: re.read_social.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F' });
-        if (re.content_en) itemsToPrefetch.push({ text: re.content_en.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F' });
+        if (re.read_stem?.narrative) itemsToPrefetch.push({ text: re.read_stem.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_stem.audio_url || re.audio_url });
+        if (re.read_social?.narrative) itemsToPrefetch.push({ text: re.read_social.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.read_social.audio_url || re.audio_url });
+        if (re.content_en) itemsToPrefetch.push({ text: re.content_en.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: re.audio_url });
+      }
+
+      if (weekData.stations?.explore) {
+        const ex = weekData.stations.explore;
+        if (ex.content_en) itemsToPrefetch.push({ text: ex.content_en.replace(/\*\*/g, ''), station: 'explore', voice: voiceConfig?.narration || 'en-US-Journey-F', audioPath: ex.audio_url || ex.explore_audio_url });
       }
 
       // Vocabulary
