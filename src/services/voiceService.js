@@ -347,6 +347,23 @@ export const VoiceService = {
       console.log(`[TTS] ✅ Cache hit (0ms) [voice: ${cacheVoice || 'default'}]`);
       return this.playAudio(cachedUrl, true);
     }
+
+    // 🎓 GOOGLE CLOUD TTS DIRECT OVERRIDE (For Week 36 testing or when force_google_tts enabled)
+    const useGoogleDirect = (weekNumber === 36 || weekNumber === '36' || localStorage.getItem('force_google_tts') === 'true');
+    if (useGoogleDirect) {
+      try {
+        const targetVoice = googleVoice || (station === 'narration' || station === 'read' || station === 'explore' || station === 'shadowing' ? 'en-US-Journey-F' : 'en-US-Neural2-F');
+        console.log(`[TTS] 🎓 Google Cloud TTS Direct (Week 36 / ${station}) [Voice: ${targetVoice}]`);
+        const audioBlob = await this.useGoogleTTSDirect(cleanedText, targetVoice);
+        if (audioBlob) {
+          await TTSCache.set(cleanedText, station, audioBlob, targetVoice, audioUrl);
+          const blobUrl = URL.createObjectURL(audioBlob);
+          return this.playAudio(blobUrl, true);
+        }
+      } catch (gErr) {
+        console.warn(`[TTS] ⚠️ Google Cloud TTS Direct failed, falling back: ${gErr.message}`);
+      }
+    }
     
     // Determine if this station uses static CDN or needs dynamic generation
     const isStaticStation = STATIC_STATIONS.includes(station);
@@ -849,6 +866,40 @@ export const VoiceService = {
 
     // ── Route 2: Backend proxy fallback (dev/testing mode) ──
     return await proxyGoogleTTS(text, { voice: GOOGLE_TTS_VOICE, languageCode: 'en-US' });
+  },
+
+  /**
+   * Direct Google Cloud TTS API call using VITE_GOOGLE_TTS_API_KEY
+   * (Used for Week 36 testing with en-US-Journey-F & en-US-Neural2-F)
+   */
+  async useGoogleTTSDirect(text, voice = 'en-US-Journey-F') {
+    const apiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY || import.meta.env.GOOGLE_TTS_API_KEY;
+    if (!apiKey) throw new Error('Missing VITE_GOOGLE_TTS_API_KEY');
+
+    const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        input: { text },
+        voice: { languageCode: 'en-US', name: voice },
+        audioConfig: { audioEncoding: 'MP3' }
+      })
+    });
+
+    if (!res.ok) {
+      const errText = await res.text().catch(() => '');
+      throw new Error(`Google Cloud TTS API ${res.status}: ${errText}`);
+    }
+
+    const data = await res.json();
+    if (!data.audioContent) throw new Error('No audioContent returned by Google Cloud TTS');
+
+    const binaryString = window.atob(data.audioContent);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    return new Blob([bytes.buffer], { type: 'audio/mp3' });
   },
 
   /**

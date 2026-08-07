@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache_v17';
+const DB_NAME = 'EngQuestTTSCache_v18';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;  // Fresh v17 store (Aug 7, 2026): 100% fresh clean cache synced with R2 cache-busting _v16 hash
+const DB_VERSION = 1;  // Fresh v18 store (Aug 7, 2026): Google Cloud TTS test for Week 36
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
