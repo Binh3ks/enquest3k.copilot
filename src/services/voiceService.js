@@ -1007,7 +1007,7 @@ export const VoiceService = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         input: { text },
-        voice: { languageCode: 'en-US', name: voice },
+        voice: { languageCode: 'en-US', name: safeVoice },
         audioConfig: { audioEncoding: 'MP3' }
       })
     });

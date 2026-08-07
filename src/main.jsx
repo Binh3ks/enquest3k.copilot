@@ -24,9 +24,17 @@ if (typeof window !== 'undefined') {
     return false;
   };
   window.addEventListener('unhandledrejection', (event) => {
-    if (event.reason && event.reason.message && event.reason.message.includes("reading '1'")) {
+    const msg = String(event.reason?.message || event.reason || '');
+    if (msg.includes("reading '1'")) {
       console.warn('[Main] Suppressed known undefined-1 rejection (non-fatal)');
       event.preventDefault();
+    } else if (msg.includes("dynamically imported module") || msg.includes("MIME type")) {
+      const lastReload = parseInt(sessionStorage.getItem('global_chunk_reload') || '0', 10);
+      if (Date.now() - lastReload > 5000) {
+        sessionStorage.setItem('global_chunk_reload', String(Date.now()));
+        console.warn('[Main] Stale CDN chunk error detected. Auto-reloading to fetch latest build...');
+        window.location.reload();
+      }
     }
   });
 }

@@ -61,8 +61,9 @@ export const loadWeekData = async (weekId, isEasy = false) => {
     // Auto-recover from stale browser module / CDN chunk hash mismatch
     if (typeof window !== 'undefined') {
       const reloadKey = `chunk_reload_${weekId}_${isEasy ? 'easy' : 'adv'}`;
-      if (!sessionStorage.getItem(reloadKey)) {
-        sessionStorage.setItem(reloadKey, '1');
+      const lastReload = parseInt(sessionStorage.getItem(reloadKey) || '0', 10);
+      if (Date.now() - lastReload > 5000) {
+        sessionStorage.setItem(reloadKey, String(Date.now()));
         console.warn('[LazyLoad] Stale chunk detected. Reloading page to fetch latest build...');
         window.location.reload();
         return new Promise(() => {}); // pause execution while browser reloads
