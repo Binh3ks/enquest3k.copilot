@@ -2,7 +2,7 @@
 // Dictation Station — Easy Mode
 
 export default {
-  content_en: `Last summer, my family **went on** a submarine trip. We **dove down** into the deep ocean. We **saw beautiful** things everywhere. We **found an** amazing cave! Our guide **said it** was very old. We **took photos** of everything. We **wrote down** what we found. We **gave our** photos to the museum. The director **said we** were real explorers. We **came back** up safely. We **made great** memories!`,
+  content_en: `Last summer, my family **went on** a submarine trip. We **dove down** into the deep ocean. We saw **beautiful things** things everywhere. We found an **underwater cave** amazing cave! Our guide said it was very old. We **took photos** of everything. We **wrote down** what we found. We gave our photos to the museum. The director said we were real explorers. We **came back** up safely. We made **great memories** memories!`,
 
   sentences: [
   {
