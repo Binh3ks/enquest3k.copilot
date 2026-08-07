@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache_v15';
+const DB_NAME = 'EngQuestTTSCache_v16';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;  // Fresh v15 store (Aug 7, 2026): 100% fresh clean cache with Luna/Iris American voice rotation
+const DB_VERSION = 1;  // Fresh v16 store (Aug 7, 2026): 100% fresh clean cache with period-padded crisp final consonants (/t/, /d/, /er/)
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {

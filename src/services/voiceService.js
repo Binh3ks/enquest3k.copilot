@@ -602,10 +602,18 @@ export const VoiceService = {
     // 7. Fix homograph: "live" (verb /lɪv/) vs "live" (adj /laɪv/)
     //    "I live with" → should be /lɪv/ not /laɪv/
     //    Context: "live with", "live in", "I live", "you live", "we live", "they live"
-    cleaned = cleaned.replace(/\b(I|you|we|they|who do you)\s+live\b/gi, '$1 liv');
     cleaned = cleaned.replace(/\blive with\b/gi, 'liv with');
     cleaned = cleaned.replace(/\blive in\b/gi, 'liv in');
     
+    // 8. Enforce terminal punctuation for single words / short terms (<= 3 words)
+    //    Deepgram Aura-2 / Neural TTS requires terminal punctuation ('.') to trigger sentence-final
+    //    acoustic boundaries, ensuring 100% full plosive articulation for final consonants (/t/, /d/, /k/, /p/)
+    //    and suffix schwas (/ər/ in explorer, /ənt/ in merchant, /ənt/ in went, /aʊnd/ in found).
+    const words = cleaned.split(/\s+/);
+    if (words.length <= 3 && !/[.!?]$/.test(cleaned)) {
+      cleaned += '.';
+    }
+
     return cleaned;
   },
 
