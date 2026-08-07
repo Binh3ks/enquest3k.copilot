@@ -186,6 +186,32 @@ const _pendingFetches = new Map();
 const _pendingDirectFetches = new Map();
 const _prefetchingWeeks = new Set();
 
+/**
+ * Chunk long text into sentence-aware blocks for parallel TTS synthesis
+ */
+function chunkTextForTTS(text, maxChunkLen = 400) {
+  if (!text || text.length <= maxChunkLen) return [text];
+  const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+  if (sentences.length <= 1) return [text];
+
+  const chunks = [];
+  let currentChunk = '';
+
+  for (const sentence of sentences) {
+    if ((currentChunk + ' ' + sentence).length > maxChunkLen && currentChunk) {
+      chunks.push(currentChunk.trim());
+      currentChunk = sentence;
+    } else {
+      currentChunk = currentChunk ? `${currentChunk} ${sentence}` : sentence;
+    }
+  }
+  if (currentChunk.trim()) {
+    chunks.push(currentChunk.trim());
+  }
+
+  return chunks.length > 0 ? chunks : [text];
+}
+
 // ─── Worker Concurrency Limiter ──────────────────────────────────────────────
 // Only 1 Deepgram call at a time — prevents bandwidth contention on slow networks.
 // speak() (user action, highPriority=true) jumps to front of queue.
@@ -1015,32 +1041,6 @@ export const VoiceService = {
     // ── Route 2: Backend proxy fallback (dev/testing mode) ──
     return await proxyGoogleTTS(text, { voice: GOOGLE_TTS_VOICE, languageCode: 'en-US' });
   },
-
-/**
- * Chunk long text into sentence-aware blocks for parallel TTS synthesis
- */
-function chunkTextForTTS(text, maxChunkLen = 400) {
-  if (!text || text.length <= maxChunkLen) return [text];
-  const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
-  if (sentences.length <= 1) return [text];
-
-  const chunks = [];
-  let currentChunk = '';
-
-  for (const sentence of sentences) {
-    if ((currentChunk + ' ' + sentence).length > maxChunkLen && currentChunk) {
-      chunks.push(currentChunk.trim());
-      currentChunk = sentence;
-    } else {
-      currentChunk = currentChunk ? `${currentChunk} ${sentence}` : sentence;
-    }
-  }
-  if (currentChunk.trim()) {
-    chunks.push(currentChunk.trim());
-  }
-
-  return chunks.length > 0 ? chunks : [text];
-}
 
   /**
    * Direct Google Cloud TTS API call using VITE_GOOGLE_TTS_API_KEY
