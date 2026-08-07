@@ -1005,6 +1005,11 @@ export const VoiceService = {
         const source = ctx.createBufferSource();
         source.buffer = audioBuffer;
 
+        const savedRate = parseFloat(localStorage.getItem('shadowing_speed') || localStorage.getItem('tts_speed') || '1.0');
+        if (savedRate >= 0.5 && savedRate <= 2.0) {
+          source.playbackRate.value = savedRate;
+        }
+
         const gain = this._speakGain || 1.0;
         const gainNode = ctx.createGain();
         gainNode.gain.value = gain;

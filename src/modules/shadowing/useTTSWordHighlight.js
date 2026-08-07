@@ -25,15 +25,18 @@ import { VoiceService } from '../../services/voiceService';
 
 const FAST_RATE = 0.4; // 2.5 words/sec — base; reduced if audio shorter than this.
 
-function buildWordTimings(sentence, audioDuration) {
+function buildWordTimings(sentence, audioDuration, currentSpeed = 1.0) {
   if (!sentence) return [];
   const text = sentence.text || '';
   const words = text.match(/[A-Za-z']+/g) || [];
   if (!words.length) return [];
   const wordCount = words.length;
-  // Adaptive rate: shrink window to fit audio duration if needed.
-  const baseDur = FAST_RATE * wordCount;
-  const dur = audioDuration && audioDuration < baseDur ? audioDuration : baseDur;
+  // Scale word duration according to playback speed
+  const rate = (currentSpeed && currentSpeed > 0) ? currentSpeed : 1.0;
+  const baseDur = (FAST_RATE * wordCount) / rate;
+  const dur = (audioDuration && isFinite(audioDuration) && audioDuration > 0)
+    ? (audioDuration / rate)
+    : baseDur;
   const wordDur = dur / wordCount;
   return words.map((w, i) => ({
     word: w,
@@ -42,7 +45,7 @@ function buildWordTimings(sentence, audioDuration) {
   }));
 }
 
-export function useTTSWordHighlight(activeSentence, isAudioPlaying) {
+export function useTTSWordHighlight(activeSentence, isAudioPlaying, speed = 1.0) {
   const [state, setState] = useState({ currentWordIdx: -1, currentTime: 0, words: [] });
 
   const sentenceRef = useRef(activeSentence);
@@ -83,12 +86,16 @@ export function useTTSWordHighlight(activeSentence, isAudioPlaying) {
       const sentence = sentenceRef.current;
       if (!sentence) return;
 
+      const currentRate = (audio && audio.playbackRate && audio.playbackRate > 0)
+        ? audio.playbackRate
+        : (speed || 1.0);
+
       // audio.duration is sometimes Infinity right after play() resolves;
       // fall back to FAST_RATE × wordCount in that case.
       const audioDuration = (typeof audio.duration === 'number' && isFinite(audio.duration))
         ? audio.duration : null;
 
-      const words = buildWordTimings(sentence, audioDuration);
+      const words = buildWordTimings(sentence, audioDuration, currentRate);
       if (!words.length) {
         setState((prev) => (prev.words.length ? { currentWordIdx: -1, currentTime: 0, words: [] } : prev));
         return;

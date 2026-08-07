@@ -747,6 +747,7 @@ const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'a
   const ttsHighlight = useTTSWordHighlight(
     ttsHighlightActive ? effectiveScript.find((s) => s.id === activeId) : null,
     ttsHighlightActive,
+    player.speed
   );
   const currentWordIdx = useTranscriptSource ? videoHighlight.currentWordIdx : ttsHighlight.currentWordIdx;
   const wordTime = useTranscriptSource ? videoHighlight.currentTime : ttsHighlight.currentTime;
