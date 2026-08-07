@@ -323,6 +323,7 @@ export const VoiceService = {
   async speak(text, station = 'read', audioUrl = null, weekNumber = null, mode = 'advanced', instant = false, voiceConfig = null) {
     // Clean text for TTS (remove emojis, normalize abbreviations)
     const cleanedText = this.cleanTextForTTS(text);
+    this._lastText = cleanedText;
     
     // Load voiceConfig if not provided and weekNumber is available
     if (!voiceConfig && weekNumber) {
@@ -1012,9 +1013,17 @@ export const VoiceService = {
       audio.onerror = (err) => {
         if (this._currentAudio === audio) this._currentAudio = null;
         if (revokeAfter) URL.revokeObjectURL(audioUrl);
-        reject(err);
+        console.warn('[TTS] ⚠️ Audio playback error, triggering browser Web Speech fallback...');
+        this.webFallback(this._lastText || '');
+        resolve(); // Resolve cleanly after fallback trigger
       };
-      audio.play().catch(reject);
+      audio.play().catch((err) => {
+        if (this._currentAudio === audio) this._currentAudio = null;
+        if (revokeAfter) URL.revokeObjectURL(audioUrl);
+        console.warn('[TTS] ⚠️ Audio play() rejected, triggering browser Web Speech fallback...');
+        this.webFallback(this._lastText || '');
+        resolve();
+      });
     });
   },
 

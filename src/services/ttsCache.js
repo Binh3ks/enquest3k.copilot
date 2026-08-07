@@ -20,7 +20,7 @@
 
 const DB_NAME = 'EngQuestTTSCache';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 12;  // Bumped v12 (Jun 8, 2026): add audioUrl to cache key so audio path changes invalidate IndexedDB cache even when text is unchanged
+const DB_VERSION = 13;  // Bumped v13 (Aug 7, 2026): purge stale/corrupted IndexedDB audio blobs for single words like cave/wrote/came
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
@@ -154,7 +154,13 @@ class TTSCacheService {
             // Old cache format: already a blob URL
             blobUrl = record.blob;
           } else if (record.blob instanceof Blob) {
-            // New cache format: create URL from blob
+            // Validate blob size: reject empty/corrupted blobs (< 500 bytes)
+            if (record.blob.size < 500) {
+              console.warn(`[TTSCache] ⚠️ Corrupted/empty cached blob (${record.blob.size} bytes) for ${key}`);
+              this.delete(key);
+              resolve(null);
+              return;
+            }
             blobUrl = URL.createObjectURL(record.blob);
           } else {
             console.warn(`[TTSCache] ⚠️ Invalid cached data type for ${key}`);
