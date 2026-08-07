@@ -196,64 +196,9 @@ class TTSWeekPrefetchService {
    * @param {string} currentStation - Current active station
    */
   async prefetchWeek(weekId, isEasy = false, currentStation = 'read_explore') {
-    if (this.isRunning) {
-      console.log('[Week Prefetch] ⚠️ Already running, skipping...');
-      return this.stats;
-    }
-
-    this.isRunning = true;
-    this.isCancelled = false;
-    this.stats = { total: 0, cached: 0, failed: 0, skipped: 0 };
-
-    try {
-      console.log(`[Week Prefetch] 🚀 Loading Week ${weekId} (${isEasy ? 'EASY' : 'ADVANCED'})...`);
-      
-      // Load week data
-      const weekData = await loadWeekData(weekId, isEasy);
-      if (!weekData) {
-        console.warn(`[Week Prefetch] ❌ Week ${weekId} data not found`);
-        this.isRunning = false;
-        return this.stats;
-      }
-
-      // Extract with priority
-      const { priority1, priority2, priority3 } = this.extractPriorityTexts(weekData, currentStation);
-      this.stats.total = priority1.length + priority2.length + priority3.length;
-      
-      console.log(`[Week Prefetch] 📦 Priority plan: ${priority1.length} immediate, ${priority2.length} delayed 10s, ${priority3.length} delayed 30s`);
-
-      // PRIORITY 1: Current station (immediate, slow)
-      if (priority1.length > 0) {
-        console.log(`[Week Prefetch] 🔥 Caching current station (${currentStation})...`);
-        await this.cacheItems(priority1, 3000); // 3s delay between each
-      }
-
-      // PRIORITY 2: Other long-form stations (after 10s)
-      if (priority2.length > 0) {
-        setTimeout(async () => {
-          console.log(`[Week Prefetch] ⏳ Caching other stations (${priority2.length} items)...`);
-          await this.cacheItems(priority2, 3000);
-        }, 10000);
-      }
-
-      // PRIORITY 3: SKIPPED (vocab cached on-demand)
-      // Log completion after priority 2
-      setTimeout(() => {
-        console.log(`[Week Prefetch] ✅ All done: ${this.stats.cached} cached, ${this.stats.skipped} skipped, ${this.stats.failed} failed`);
-        console.log(`[Week Prefetch] 📊 Vocab items will be cached when user clicks speaker`);
-      }, 20000);
-
-      console.log(`[Week Prefetch] ✅ Priority 1 complete: ${this.stats.cached} cached so far`);
-    } catch (error) {
-      console.error('[Week Prefetch] ❌ Error:', error);
-    } finally {
-      // Keep running flag until all priorities complete
-      setTimeout(() => {
-        this.isRunning = false;
-      }, 60000); // Release after 60s
-    }
-
-    return this.stats;
+    const mode = isEasy ? 'easy' : 'advanced';
+    console.log(`[Week Prefetch] 🚀 Triggering Full Instant Google Direct TTS Pre-generation for Week ${weekId} (${mode})...`);
+    return VoiceService.prefetchEntireWeek(weekId, mode);
   }
 
   /**

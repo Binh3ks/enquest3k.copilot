@@ -697,8 +697,8 @@ export const VoiceService = {
 
       console.log(`[Prefetch] 📦 Week ${weekNumber} queue created (${itemsToPrefetch.length} items). Synthesizing Google Direct in background...`);
 
-      // Parallel batch synthesis (4 concurrent items per batch for speed)
-      const BATCH_SIZE = 4;
+      // Parallel batch synthesis (6 concurrent items per batch for maximum speed)
+      const BATCH_SIZE = 6;
       for (let i = 0; i < itemsToPrefetch.length; i += BATCH_SIZE) {
         const batch = itemsToPrefetch.slice(i, i + BATCH_SIZE);
         await Promise.all(batch.map(item =>
