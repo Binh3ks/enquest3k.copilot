@@ -33587,5 +33587,49 @@
     "meaning": "giành được",
     "example": "He won the emperor's trust.",
     "level": "A1+"
+  },
+  {
+    "word": "beautiful things",
+    "phonetic": "/ˈbjuːtɪfl θɪŋz/",
+    "pronunciation": "/ˈbjuːtɪfl θɪŋz/",
+    "type": "phrase",
+    "definition_vi": "những cảnh đẹp",
+    "definition_en": "lovely or attractive objects",
+    "meaning": "những cảnh đẹp",
+    "example": "We saw beautiful things underwater.",
+    "level": "A1+"
+  },
+  {
+    "word": "coral reefs",
+    "phonetic": "/coral reefs/",
+    "pronunciation": "/coral reefs/",
+    "type": "phrase",
+    "definition_vi": "coral reefs",
+    "definition_en": "meaning of coral reefs",
+    "meaning": "coral reefs",
+    "example": "Example sentence with coral reefs.",
+    "level": "A1+"
+  },
+  {
+    "word": "explorers",
+    "phonetic": "/ɪkˈsplɔːrərz/",
+    "pronunciation": "/ɪkˈsplɔːrərz/",
+    "type": "phrase",
+    "definition_vi": "các nhà thám hiểm",
+    "definition_en": "people who travel to discover new places",
+    "meaning": "các nhà thám hiểm",
+    "example": "They were brave explorers.",
+    "level": "A1+"
+  },
+  {
+    "word": "ancient objects",
+    "phonetic": "/ˈeɪnʃənt ˈɒbdʒɪkts/",
+    "pronunciation": "/ˈeɪnʃənt ˈɒbdʒɪkts/",
+    "type": "phrase",
+    "definition_vi": "những cổ vật",
+    "definition_en": "very old items from past history",
+    "meaning": "những cổ vật",
+    "example": "They found ancient objects in the cave.",
+    "level": "A1+"
   }
 ]
