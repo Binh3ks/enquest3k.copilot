@@ -24,13 +24,13 @@ const weekData = {
   grammar_focus: "Past Simple Irregular Verbs 2: eat→ate, drink→drank, buy→bought, give→gave",
   global_vocab: vocab.vocab,
   voiceConfig: {
-    narration: "nova",
-    vocabulary: "nova",
-    dictation: "echo",
-    shadowing: "nova",
-    questions: "nova",
-    mindmap: "nova",
-    logic_science: "nova"
+    narration: 'en-US-Journey-F',
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
   },
   stations: {
     read_explore: read,

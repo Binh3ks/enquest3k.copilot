@@ -9,30 +9,31 @@ const useTTSStore = create(
   persist(
     (set) => ({
       // Voice selection
-      voice: 'aura-asteria-en', // Default: Female, warm, friendly
+      // Voice selection
+      voice: 'en-US-Journey-F', // Default: Google Journey Female, warm & natural
       
       // Speed selection  
       speed: 'auto', // 'auto' uses mode-based speed, or custom: 0.7, 0.85, 1.0, 1.2
       
-      // Available voices
+      // Available voices (Google Cloud TTS)
       voices: [
         { 
-          id: 'aura-asteria-en', 
-          name: 'Nova (Warm)', 
+          id: 'en-US-Journey-F', 
+          name: 'Nova (Warm & Natural)', 
           type: 'female',
-          description: 'Warm & friendly female voice'
+          description: 'Warm, natural female voice (Google Journey)'
         },
         { 
-          id: 'aura-stella-en', 
-          name: 'Ms. Stella (Energetic)', 
+          id: 'en-US-Neural2-F', 
+          name: 'Ms. Sarah (Clear & Crisp)', 
           type: 'female',
-          description: 'Young & energetic female voice'
+          description: 'Clear, crisp female voice (Google Neural2)'
         },
         { 
-          id: 'aura-orion-en', 
-          name: 'Mr. Orion (Professional)', 
+          id: 'en-US-Neural2-D', 
+          name: 'Mr. David (Professional Male)', 
           type: 'male',
-          description: 'Professional male voice'
+          description: 'Professional male voice (Google Neural2)'
         }
       ],
       

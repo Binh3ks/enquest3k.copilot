@@ -20,11 +20,13 @@ const weekData = {
   global_vocab: vocab.vocab,
   // ⚠️ MANDATORY: voiceConfig for unique voices per week
   voiceConfig: {
-    narration: 'en-US-Neural2-D',    // Male, authoritative for stories
-    vocabulary: 'en-US-Neural2-F',   // Female, clear for vocab definitions
-    dictation: 'en-US-Neural2-E',    // Neutral for dictation exercises
-    questions: 'en-US-Neural2-D',    // Male for logic/ask_ai questions
-    mindmap: 'en-US-Neural2-F'       // Female for mindmap branches
+    narration: 'en-US-Journey-F',
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
   },
   stations: {
     read_explore: read,

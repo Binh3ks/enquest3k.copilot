@@ -24,11 +24,13 @@ const weekData = {
   // ⚠️ MANDATORY: voiceConfig for unique voices per week
   // Week 2: Introducing UK Female voice (scaffolding progression)
   voiceConfig: {
-    narration: 'en-GB-Neural2-A',    // UK Male, different from Week 1
-    vocabulary: 'en-GB-Neural2-C',   // UK Female, clear pronunciation
-    dictation: 'en-US-Neural2-F',    // US Female (familiar from Week 1)
-    questions: 'en-GB-Neural2-A',    // UK Male for questions
-    mindmap: 'en-GB-Neural2-C'       // UK Female for mindmap
+    narration: 'en-US-Journey-F',
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
   },
   stations: {
     read_explore: read,

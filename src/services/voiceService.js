@@ -341,8 +341,8 @@ export const VoiceService = {
     // Volume compensation: bass male voices are quieter than female voices
     this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
     
-    // 🎓 GOOGLE CLOUD TTS DIRECT OVERRIDE (For Week 36 testing or when force_google_tts enabled)
-    const useGoogleDirect = (weekNumber === 36 || weekNumber === '36' || localStorage.getItem('force_google_tts') === 'true');
+    // 🎓 GOOGLE CLOUD TTS DIRECT OVERRIDE (Enabled for all 36 weeks)
+    const useGoogleDirect = true;
     if (useGoogleDirect) {
       const targetVoice = googleVoice || (station === 'narration' || station === 'read' || station === 'explore' || station === 'shadowing' ? 'en-US-Journey-F' : 'en-US-Neural2-F');
       
@@ -510,8 +510,8 @@ export const VoiceService = {
   async prefetch(text, station = 'read', audioPath = null, weekNumber = null, mode = 'advanced', voice = null) {
     const cleanedText = this.cleanTextForTTS(text);
 
-    // 🎓 GOOGLE CLOUD TTS DIRECT PREFETCH OVERRIDE (For Week 36 testing or when force_google_tts enabled)
-    const useGoogleDirect = (weekNumber === 36 || weekNumber === '36' || localStorage.getItem('force_google_tts') === 'true');
+    // 🎓 GOOGLE CLOUD TTS DIRECT PREFETCH OVERRIDE (Enabled for all 36 weeks)
+    const useGoogleDirect = true;
     if (useGoogleDirect) {
       const voiceConfig = await getVoiceConfigForWeek(weekNumber);
       const voiceKey = STATION_VOICE_KEY[station];

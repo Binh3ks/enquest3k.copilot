@@ -26,11 +26,13 @@ const weekData = {
   // ⚠️ MANDATORY: voiceConfig for unique voices per week
   // Week 2 Advanced: US voices (continuing scaffolding for basic family vocabulary)
   voiceConfig: {
-    narration: 'en-US-Neural2-D',    // US Male, clear for family stories
-    vocabulary: 'en-US-Neural2-F',   // US Female, friendly for vocab
-    dictation: 'en-US-Neural2-F',    // US Female, neutral for dictation
-    questions: 'en-US-Neural2-D',    // US Male for logic/ask_ai
-    mindmap: 'en-US-Neural2-D'       // US Male for mindmap branches
+    narration: 'en-US-Journey-F',
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
   },
   stations: {
     read_explore: read,

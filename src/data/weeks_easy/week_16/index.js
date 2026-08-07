@@ -26,13 +26,13 @@ const weekData = {
   global_vocab: vocab.vocab,
 
   voiceConfig: {
-    narration: 'en-US-Neural2-H',  // → aura-stella-en (Female, bright, clear)
+    narration: 'en-US-Journey-F',
     vocabulary: 'en-US-Neural2-F',
-    dictation: 'en-US-Neural2-F',  // → aura-asteria-en (natural, expressive - matches advanced)
-    shadowing: 'en-US-Neural2-F',  // → aura-asteria-en (natural, expressive - matches advanced)
-    questions: 'en-US-Neural2-B',  // → aura-helios-en (Male, clean, clear - less deep than zeus)
-    mindmap: 'en-US-Neural2-B',    // → aura-helios-en (Male, clean, clear)
-    logic_science: 'en-US-Neural2-B'  // → aura-helios-en (Male, clean, clear)
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
   },
 
   stations: {

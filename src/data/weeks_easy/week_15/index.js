@@ -26,11 +26,13 @@ const weekData = {
   global_vocab: vocab.vocab,
   
   voiceConfig: {
-    narration: 'en-US-Neural2-D',
+    narration: 'en-US-Journey-F',
     vocabulary: 'en-US-Neural2-F',
     dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
     questions: 'en-US-Neural2-D',
-    mindmap: 'en-US-Neural2-D'
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
   },
   
   stations: {

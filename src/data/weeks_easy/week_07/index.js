@@ -25,12 +25,13 @@ const weekData = {
   grammar_focus: "There is a... (Singular)",
   global_vocab: vocab.vocab,
   voiceConfig: {
-    narration: "nova",
-    vocabulary: "nova",
-    dictation: "echo",
-    shadowing: "nova",
-    questions: "nova",
-    mindmap: "nova"
+    narration: 'en-US-Journey-F',
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
   },
 
   stations: {
