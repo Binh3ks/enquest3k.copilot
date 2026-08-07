@@ -178,9 +178,35 @@ function lintFile(filePath, fileType, label, weekNum, isEasy) {
   // [E1] Word count range
   const wc = wordCount(contentEn);
   if (wc < minW) {
-    errors.push(`[E1] ${label}: content_en too short — ${wc} words (need ${minW}–${maxW} for ${modeKey.toUpperCase()} Phase ${phase})\n       Expand the passage to reach target length.`);
+    errors.push(`[E1] Word count too short: ${wc}w (min ${minW}w for ${modeKey.toUpperCase()} P${phase} ${fileType})`);
   } else if (wc > maxW) {
-    errors.push(`[E1] ${label}: content_en too long — ${wc} words (need ${minW}–${maxW} for ${modeKey.toUpperCase()} Phase ${phase})\n       Trim the passage to fit the target range.`);
+    errors.push(`[E1] Word count too long: ${wc}w (max ${maxW}w for ${modeKey.toUpperCase()} P${phase} ${fileType})`);
+  }
+
+  // [E5] 4-Category Pedagogical Chunk Audit (Orphaned Prepositions, Bad Pronouns, Day Names, Punctuation)
+  const BAD_PRONOUNS_AUX = new Set(['i', 'he', 'she', 'it', 'we', 'they', 'you', 'my', 'his', 'her', 'their', 'our', 'was', 'were', 'had', 'have', 'has', 'did', 'do', 'does', 'then', 'then i', 'using', 'and', 'or', 'but', 'so', 'because', 'said mia', 'said leo']);
+  const ORPHANED_PREPS = new Set(['walked to', 'looked at', 'sat down with', 'went to', 'listened to', 'talked to', 'ran to', 'flew to', 'came to', 'pointed at', 'pointed to', 'shouted at', 'smiled at', 'drove to', 'returned to', 'belonged to']);
+
+  const bolds = Array.from(contentEn.matchAll(/\*\*(.*?)\*\*/g)).map(m => m[1]);
+  for (const b of bolds) {
+    const clean = b.trim();
+    const lower = clean.toLowerCase();
+
+    if (/[.,!?;:]$/.test(clean)) {
+      errors.push(`[E5] Punctuation inside bold tag: '**${clean}**'`);
+    }
+    if (BAD_PRONOUNS_AUX.has(lower)) {
+      errors.push(`[E5] Bad standalone pronoun/auxiliary chunk: '**${clean}**'`);
+    }
+    if (/^(saturday|sunday|monday|tuesday|wednesday|thursday|friday)/.test(clean)) {
+      errors.push(`[E5] Uncapitalized day name in chunk: '**${clean}**'`);
+    }
+    if (ORPHANED_PREPS.has(lower)) {
+      errors.push(`[E5] Orphaned preposition without target object: '**${clean}**'`);
+    }
+    if (/^panel (one|two|three|four|five|1|2|3|4|5)$/i.test(lower)) {
+      errors.push(`[E5] Isolated panel name without preposition 'In': '**${clean}**'`);
+    }
   }
 
   // [E2] Bold word count (target 10, error below 8)
