@@ -213,11 +213,13 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
             {/* Speaker button */}
             <button 
                 onClick={() => {
-                    const answers = Array.isArray(currentPrompt.answer) ? currentPrompt.answer.join(", or, ") : currentPrompt.answer;
-                    speakText(answers, currentPrompt.audio_url || null, 1.0, null, 'ask_ai', parseInt(weekId), learningMode || 'advanced');
+                    const textToSpeak = currentPrompt.nova_says || currentPrompt.context_en || (Array.isArray(currentPrompt.answer) ? currentPrompt.answer.join(", or, ") : currentPrompt.answer) || '';
+                    if (textToSpeak) {
+                        speakText(textToSpeak, currentPrompt.audio_url || null, 1.0, null, 'ask_ai', parseInt(weekId), learningMode || 'advanced');
+                    }
                 }}
                 className={`absolute top-4 left-4 w-10 h-10 rounded-full bg-${themeColor}-100 hover:bg-${themeColor}-200 flex items-center justify-center transition-colors`}
-                title={isVi ? "Nghe đáp án đúng" : "Listen to correct answers"}
+                title={isVi ? "Nghe câu tình huống" : "Listen to situation"}
             >
                 <Volume2 className={`w-5 h-5 text-${themeColor}-600`} />
             </button>
