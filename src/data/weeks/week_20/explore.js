@@ -6,7 +6,7 @@ export default {
 
   content_en: `**Long ago**, most people lived in **small villages**. People walked on dirt roads. They crossed rivers using simple wooden bridges.
 
-	 **Over time**, more people **came to** **live together**. The village **grew into** a town. **New buildings** were built. The bridge was replaced with stone.
+ 	 **Over time**, more people **came to live together**. The village **grew into** a town. **New buildings** were built. The bridge was replaced with stone.
 
 	 Cities change because people need more space. Old buildings are **knocked down**. But some buildings, like temples, are kept because they are important to history.
 
