@@ -183,6 +183,7 @@ const GOOGLE_TTS_VOICE = 'en-US-Journey-F'; // fallback: en-US-Neural2-F
 // Deduplication map: prevents identical Worker calls firing concurrently.
 // Key = Worker URL (unique per text+voice+path), Value = in-flight Promise<Blob>.
 const _pendingFetches = new Map();
+const _pendingDirectFetches = new Map();
 
 // ─── Worker Concurrency Limiter ──────────────────────────────────────────────
 // Only 1 Deepgram call at a time — prevents bandwidth contention on slow networks.
@@ -1024,30 +1025,45 @@ export const VoiceService = {
     let safeVoice = voice || 'en-US-Journey-F';
     if (safeVoice === 'en-US-Neural2-B') safeVoice = 'en-US-Neural2-D';
 
-    const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        input: { text },
-        voice: { languageCode: 'en-US', name: safeVoice },
-        audioConfig: { audioEncoding: 'MP3' }
-      })
-    });
-
-    if (!res.ok) {
-      const errText = await res.text().catch(() => '');
-      throw new Error(`Google Cloud TTS API ${res.status}: ${errText}`);
+    const dedupKey = `${safeVoice}::${text}`;
+    if (_pendingDirectFetches.has(dedupKey)) {
+      console.log(`[TTS] ♻️ Joining in-flight Google Direct TTS request for: ${text.substring(0, 30)}...`);
+      return _pendingDirectFetches.get(dedupKey);
     }
 
-    const data = await res.json();
-    if (!data.audioContent) throw new Error('No audioContent returned by Google Cloud TTS');
+    const fetchPromise = (async () => {
+      const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          input: { text },
+          voice: { languageCode: 'en-US', name: safeVoice },
+          audioConfig: { audioEncoding: 'MP3' }
+        })
+      });
 
-    const binaryString = window.atob(data.audioContent);
-    const bytes = new Uint8Array(binaryString.length);
-    for (let i = 0; i < binaryString.length; i++) {
-      bytes[i] = binaryString.charCodeAt(i);
+      if (!res.ok) {
+        const errText = await res.text().catch(() => '');
+        throw new Error(`Google Cloud TTS API ${res.status}: ${errText}`);
+      }
+
+      const data = await res.json();
+      if (!data.audioContent) throw new Error('No audioContent returned by Google Cloud TTS');
+
+      const binaryString = window.atob(data.audioContent);
+      const bytes = new Uint8Array(binaryString.length);
+      for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      return new Blob([bytes.buffer], { type: 'audio/mp3' });
+    })();
+
+    _pendingDirectFetches.set(dedupKey, fetchPromise);
+    try {
+      return await fetchPromise;
+    } finally {
+      _pendingDirectFetches.delete(dedupKey);
     }
-    return new Blob([bytes.buffer], { type: 'audio/mp3' });
   },
 
   /**
