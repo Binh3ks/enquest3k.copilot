@@ -36,14 +36,28 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
   // Support both legacy (check_questions) and new (comprehension_questions) field names
   const checkQs = data?.check_questions || data?.comprehension_questions || [];
 
-  const [dictionary] = useState(() => {
-    // Convert array to lookup object on mount
-    const dict = Array.isArray(dictionaryData)
+  const [dictionary, setDictionary] = useState({});
+
+  useEffect(() => {
+    const staticDict = Array.isArray(dictionaryData)
       ? Object.fromEntries(dictionaryData.map(e => [normalizeLookupKey(e.word), e]))
       : dictionaryData;
-    console.log('[Explore] Dictionary loaded:', Object.keys(dict).length, 'entries');
-    return dict;
-  });
+    
+    const localDict = {};
+    if (data && data.dictionary) {
+      Object.entries(data.dictionary).forEach(([k, v]) => {
+        const normKey = normalizeLookupKey(k);
+        localDict[normKey] = {
+          word: v.word || k,
+          ipa: v.pronunciation || v.ipa || '',
+          meaning: v.definition_vi || v.meaning || v.definition_en || '',
+          example: v.example || '',
+          ...v
+        };
+      });
+    }
+    setDictionary({ ...staticDict, ...localDict });
+  }, [data]);
   
   const [inputs, setInputs] = useState(savedData.inputs || {});
   const [feedback, setFeedback] = useState(savedData.feedback || {});

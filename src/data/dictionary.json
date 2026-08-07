@@ -1,11 +1,11 @@
 [
   {
-    "word": " countryside is peaceful",
+    "word": "countryside is peaceful",
     "meaning": "đồng quê yên bình",
     "pronounce": "",
     "definition_en": "",
-    "first_taught_week": 13,
-    "example": "The word  countryside is peaceful is used in everyday English conversation."
+    "first_taught_week": 10,
+    "example": "The countryside is peaceful with green fields, singing birds and blue skies."
   },
   {
     "word": "1 1 c warmer",
@@ -500,14 +500,6 @@
     "definition_en": "Multi-word phrase: after school",
     "first_taught_week": 1,
     "example": "The phrase 'after school' is commonly used in conversation."
-  },
-  {
-    "word": "After that",
-    "meaning": "Sau đó",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 10,
-    "example": "After that, mix the flour and the water together in the big bowl."
   },
   {
     "word": "after that",
@@ -1573,17 +1565,6 @@
     "example": "This is an example: at one's own pace."
   },
   {
-    "word": "at school",
-    "meaning": "ở trường học",
-    "pronounce": "",
-    "definition_en": "English collocation / phrase: at school",
-    "first_taught_week": 1,
-    "example": "Children learn many subjects at school.",
-    "definition_vi": "ở trường học",
-    "phonetic": "/æt skuːl/",
-    "pronunciation": "/æt skuːl/"
-  },
-  {
     "word": "At school",
     "meaning": "ở trường học",
     "pronounce": "",
@@ -1707,14 +1688,6 @@
     "definition_vi": "ở trên đỉnh",
     "phonetic": "/æt ðə tɒp/",
     "pronunciation": "/æt ðə tɒp/"
-  },
-  {
-    "word": "At the very end",
-    "meaning": "Cuối cùng",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 10,
-    "example": "At the very end of the story, the kind fairy rewarded the honest girl."
   },
   {
     "word": "at the very end",
@@ -2430,14 +2403,6 @@
     "example": "My birthday was the best day ever because all my friends came to my party."
   },
   {
-    "word": "best day ever",
-    "meaning": "ngày tuyệt nhất từ trước đến giờ",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 11,
-    "example": "My birthday was the best day ever because all my friends came to my party."
-  },
-  {
     "word": "best food",
     "meaning": "đồ ăn ngon nhất",
     "pronounce": "",
@@ -2570,14 +2535,6 @@
     "meaning": "cánh đồng xanh lớn",
     "pronounce": "",
     "definition_en": "",
-    "first_taught_week": 4,
-    "example": "Children love to run and play in the big green field near the park."
-  },
-  {
-    "word": "big green field",
-    "meaning": "cánh đồng xanh lớn",
-    "pronounce": "",
-    "definition_en": "",
     "first_taught_week": 11,
     "example": "Children love to run and play in the big green field near the park."
   },
@@ -2596,14 +2553,6 @@
     "definition_en": "",
     "first_taught_week": 4,
     "example": "The big lion lay in the shade of a tall tree."
-  },
-  {
-    "word": "big marker",
-    "meaning": "bút vẽ to",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 9,
-    "example": "The teacher wrote the new word on the board with a big marker."
   },
   {
     "word": "big marker",
@@ -5971,14 +5920,6 @@
     "example": "There are green fields in the countryside."
   },
   {
-    "word": "countryside is peaceful",
-    "meaning": "đồng quê yên bình",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 10,
-    "example": "The countryside is peaceful with green fields, singing birds and blue skies."
-  },
-  {
     "word": "counts",
     "meaning": "đếm",
     "pronounce": "",
@@ -8276,14 +8217,6 @@
     "example": "I study every single day."
   },
   {
-    "word": "every afternoon",
-    "meaning": "mỗi buổi chiều",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 4,
-    "example": "I do homework every afternoon."
-  },
-  {
     "word": "Every afternoon",
     "meaning": "mỗi buổi chiều",
     "pronounce": "",
@@ -8314,14 +8247,6 @@
     "definition_en": "Multi-word phrase: every clue",
     "first_taught_week": 1,
     "example": "The phrase 'every clue' is commonly used in conversation."
-  },
-  {
-    "word": "Every day",
-    "meaning": "mỗi ngày",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 1,
-    "example": "I go to school every day."
   },
   {
     "word": "every day",
@@ -9802,14 +9727,6 @@
     "definition_en": "Multi-word phrase: first job",
     "first_taught_week": 1,
     "example": "The phrase 'first job' is commonly used in conversation."
-  },
-  {
-    "word": "First of all",
-    "meaning": "Đầu tiên",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 10,
-    "example": "First of all, draw the head and the body of your cartoon character."
   },
   {
     "word": "first of all",
@@ -14219,14 +14136,6 @@
     "pronunciation": "/in the garden/"
   },
   {
-    "word": "in the kitchen",
-    "meaning": "trong bếp",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 5,
-    "example": "In the kitchen, I open the cabinet and look in the fridge."
-  },
-  {
     "word": "In the kitchen",
     "meaning": "trong bếp",
     "pronounce": "",
@@ -16727,14 +16636,6 @@
     "example": "This is an example: look under."
   },
   {
-    "word": "Look under the big desk",
-    "meaning": "nhìn dưới bàn lớn",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 6,
-    "example": "Look under the big desk.' We look under the big desk."
-  },
-  {
     "word": "look under the big desk",
     "meaning": "nhìn dưới bàn lớn",
     "pronounce": "",
@@ -18984,14 +18885,6 @@
     "example": "The old oak tree stands near the road and gives shade in summer."
   },
   {
-    "word": "near the road",
-    "meaning": "gần đường",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 13,
-    "example": "The old oak tree stands near the road and gives shade in summer."
-  },
-  {
     "word": "near the whiteboard",
     "meaning": "gần bảng trắng",
     "pronounce": "",
@@ -19978,17 +19871,6 @@
     "definition_vi": "trên table",
     "phonetic": "/on the table/",
     "pronunciation": "/on the table/"
-  },
-  {
-    "word": "on the wall",
-    "meaning": "trên tường",
-    "pronounce": "",
-    "definition_en": "English collocation / phrase: on the wall",
-    "first_taught_week": 1,
-    "example": "There is a beautiful picture on the wall.",
-    "definition_vi": "trên tường",
-    "phonetic": "/ɒn ðə wɔːl/",
-    "pronunciation": "/ɒn ðə wɔːl/"
   },
   {
     "word": "On the wall",
@@ -29535,14 +29417,6 @@
   },
   {
     "word": "tidied up",
-    "meaning": "đã dọn dẹp",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 11,
-    "example": "Before bedtime, the children tidied up and put everything back in its place."
-  },
-  {
-    "word": "tidied up",
     "meaning": "dọn dẹp",
     "pronounce": "",
     "definition_en": "",
@@ -29556,14 +29430,6 @@
     "definition_en": "to make a place clean and organized by putting things back in their right places",
     "first_taught_week": 25,
     "example": "I want to tidy more often."
-  },
-  {
-    "word": "tidy up",
-    "meaning": "dọn dẹp gọn gàng",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 5,
-    "example": "Before guests arrive, we always help tidy up the living room quickly."
   },
   {
     "word": "tidy up",
@@ -31676,14 +31542,6 @@
     "meaning": "năm tuổi",
     "pronounce": "",
     "definition_en": "",
-    "first_taught_week": 6,
-    "example": "She was five years old when she started learning to ride a bike."
-  },
-  {
-    "word": "was five years old",
-    "meaning": "năm tuổi",
-    "pronounce": "",
-    "definition_en": "",
     "first_taught_week": 14,
     "example": "She was five years old when she started learning to ride a bike."
   },
@@ -31734,14 +31592,6 @@
     "definition_en": "",
     "first_taught_week": 19,
     "example": "I was little!"
-  },
-  {
-    "word": "was little and cute",
-    "meaning": "nhỏ bé và dễ thương",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 6,
-    "example": "When I was little and cute, I used to follow my mother everywhere."
   },
   {
     "word": "was little and cute",
@@ -33540,14 +33390,6 @@
     "definition_en": "",
     "first_taught_week": 14,
     "example": "At the end of the trip, she wrote her final report about everything she saw."
-  },
-  {
-    "word": "wrote the title",
-    "meaning": "viết tiêu đề",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 10,
-    "example": "At the very top of the page, she wrote the title of her story."
   },
   {
     "word": "Wrote the title",
@@ -35377,5 +35219,677 @@
     "meaning": "cụm từ vựng: gia đình",
     "example": "The students learned 'gia đình' in their English lesson.",
     "level": "A1+"
+  },
+  {
+    "word": "Anh chị em",
+    "ipa": "/anh chị em/",
+    "meaning": "cụm từ vựng: anh chị em",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Gia đình",
+    "ipa": "/gia đình/",
+    "meaning": "cụm từ vựng: gia đình",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Mẹ",
+    "ipa": "/mẹ/",
+    "meaning": "cụm từ vựng: mẹ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "bố",
+    "ipa": "/bố/",
+    "meaning": "cụm từ vựng: bố",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "giúp",
+    "ipa": "/giúp/",
+    "meaning": "cụm từ vựng: giúp",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhà",
+    "ipa": "/nhà/",
+    "meaning": "cụm từ vựng: nhà",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "yêu thương",
+    "ipa": "/yêu thương/",
+    "meaning": "cụm từ vựng: yêu thương",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to the temple",
+    "ipa": "/went to the temple/",
+    "meaning": "went to the temple",
+    "example": "We practiced went to the temple today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at animals",
+    "ipa": "/looked at animals/",
+    "meaning": "looked at animals",
+    "example": "We practiced looked at animals today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "listened to their calls",
+    "ipa": "/listened to their calls/",
+    "meaning": "listened to their calls",
+    "example": "We practiced listened to their calls today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to art class",
+    "ipa": "/went to art class/",
+    "meaning": "went to art class",
+    "example": "We practiced went to art class today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the symmetry",
+    "ipa": "/looked at the symmetry/",
+    "meaning": "looked at the symmetry",
+    "example": "We practiced looked at the symmetry today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "In Panel One",
+    "ipa": "/ɪn ˈpænl wʌn/",
+    "meaning": "ở khung thứ nhất",
+    "example": "In Panel One, Leo sketched the park.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "In Panel Three",
+    "ipa": "/ɪn ˈpænl θriː/",
+    "meaning": "ở khung thứ ba",
+    "example": "In Panel Three, Leo drew a street musician.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "In Panel Two",
+    "ipa": "/ɪn ˈpænl tuː/",
+    "meaning": "ở khung thứ hai",
+    "example": "In Panel Two, Leo drew Max playing with his ball.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the comic strip",
+    "ipa": "/lʊkt æt ðə ˈkɒmɪk strɪp/",
+    "meaning": "nhìn vào bộ truyện tranh",
+    "example": "Mia looked at the comic strip and smiled.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sat down with his pencils and paper",
+    "ipa": "/sæt daʊn wɪð hɪz ˈpenslz ənd ˈpeɪpə/",
+    "meaning": "ngồi xuống với bút chì và giấy",
+    "example": "Leo sat down with his pencils and paper to draw.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "wanted to create a comic strip",
+    "ipa": "/ˈwɒntɪd tuː kriˈeɪt ə ˈkɒmɪk strɪp/",
+    "meaning": "muốn tạo ra một bộ truyện tranh",
+    "example": "Leo wanted to create a comic strip about his weekend.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "In Panel Four",
+    "ipa": "/in panel four/",
+    "meaning": "ở khung thứ tư",
+    "example": "We practiced In Panel Four today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to school",
+    "ipa": "/came to school/",
+    "meaning": "came to school",
+    "example": "We practiced came to school today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to a farm",
+    "ipa": "/went to a farm/",
+    "meaning": "went to a farm",
+    "example": "We practiced went to a farm today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "smiled at Lily",
+    "ipa": "/smiled at lily/",
+    "meaning": "smiled at Lily",
+    "example": "We practiced smiled at Lily today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "change a student\\",
+    "ipa": "/change a student\\",
+    "meaning": "thay đổi cuộc đời của một học sinh",
+    "example": "The students practiced using \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Dưới ánh nắng mùa hè ấm áp",
+    "ipa": "/dưới ánh nắng mùa hè ấm áp/",
+    "meaning": "cụm từ vựng: dưới ánh nắng mùa hè ấm áp",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Ngày này qua ngày khác",
+    "ipa": "/ngày này qua ngày khác/",
+    "meaning": "cụm từ vựng: ngày này qua ngày khác",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Rất lâu trước đây",
+    "ipa": "/rất lâu trước đây/",
+    "meaning": "cụm từ vựng: rất lâu trước đây",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Suốt mùa đông",
+    "ipa": "/suốt mùa đông/",
+    "meaning": "cụm từ vựng: suốt mùa đông",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Từ ngày đó",
+    "ipa": "/từ ngày đó/",
+    "meaning": "cụm từ vựng: từ ngày đó",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to the ant\\",
+    "ipa": "/came to the ant\\",
+    "meaning": "đến nhà con kiến",
+    "example": "He came to the ant\\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "chia sẻ thức ăn cùng nhau",
+    "ipa": "/chia sẻ thức ăn cùng nhau/",
+    "meaning": "cụm từ vựng: chia sẻ thức ăn cùng nhau",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "cho châu chấu một ít thức ăn",
+    "ipa": "/cho châu chấu một ít thức ăn/",
+    "meaning": "cụm từ vựng: cho châu chấu một ít thức ăn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "chuẩn bị cho tương lai",
+    "ipa": "/chuẩn bị cho tương lai/",
+    "meaning": "cụm từ vựng: chuẩn bị cho tương lai",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "cảm thấy rất lạnh và rất đói",
+    "ipa": "/cảm thấy rất lạnh và rất đói/",
+    "meaning": "cụm từ vựng: cảm thấy rất lạnh và rất đói",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "cứ cười",
+    "ipa": "/cứ cười/",
+    "meaning": "cụm từ vựng: cứ cười",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "cứ hát",
+    "ipa": "/cứ hát/",
+    "meaning": "cụm từ vựng: cứ hát",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "dự trữ thức ăn",
+    "ipa": "/dự trữ thức ăn/",
+    "meaning": "cụm từ vựng: dự trữ thức ăn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "hát ríu rít",
+    "ipa": "/hát ríu rít/",
+    "meaning": "cụm từ vựng: hát ríu rít",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "học được một bài học quan trọng",
+    "ipa": "/học được một bài học quan trọng/",
+    "meaning": "cụm từ vựng: học được một bài học quan trọng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "không bao giờ lo lắng",
+    "ipa": "/không bao giờ lo lắng/",
+    "meaning": "cụm từ vựng: không bao giờ lo lắng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "không bao giờ làm việc",
+    "ipa": "/không bao giờ làm việc/",
+    "meaning": "cụm từ vựng: không bao giờ làm việc",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "luôn bận rộn",
+    "ipa": "/luôn bận rộn/",
+    "meaning": "cụm từ vựng: luôn bận rộn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "luôn chơi trò chơi",
+    "ipa": "/luôn chơi trò chơi/",
+    "meaning": "cụm từ vựng: luôn chơi trò chơi",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "luôn làm việc chăm chỉ",
+    "ipa": "/luôn làm việc chăm chỉ/",
+    "meaning": "cụm từ vựng: luôn làm việc chăm chỉ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "làm việc chăm chỉ cùng nhau",
+    "ipa": "/làm việc chăm chỉ cùng nhau/",
+    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "làm việc cùng cô mùa hè tới",
+    "ipa": "/làm việc cùng cô mùa hè tới/",
+    "meaning": "cụm từ vựng: làm việc cùng cô mùa hè tới",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "làm việc rất chăm chỉ cả mùa hè",
+    "ipa": "/làm việc rất chăm chỉ cả mùa hè/",
+    "meaning": "cụm từ vựng: làm việc rất chăm chỉ cả mùa hè",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "mang những hạt nặng",
+    "ipa": "/mang những hạt nặng/",
+    "meaning": "cụm từ vựng: mang những hạt nặng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "mỉm cười đồng ý",
+    "ipa": "/mỉm cười đồng ý/",
+    "meaning": "cụm từ vựng: mỉm cười đồng ý",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "một con châu chấu lười biếng",
+    "ipa": "/một con châu chấu lười biếng/",
+    "meaning": "cụm từ vựng: một con châu chấu lười biếng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "một con kiến chăm chỉ",
+    "ipa": "/một con kiến chăm chỉ/",
+    "meaning": "cụm từ vựng: một con kiến chăm chỉ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "một ngày lạnh vào mùa thu",
+    "ipa": "/một ngày lạnh vào mùa thu/",
+    "meaning": "cụm từ vựng: một ngày lạnh vào mùa thu",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhảy múa vui vẻ",
+    "ipa": "/nhảy múa vui vẻ/",
+    "meaning": "cụm từ vựng: nhảy múa vui vẻ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhảy tung tăng",
+    "ipa": "/nhảy tung tăng/",
+    "meaning": "cụm từ vựng: nhảy tung tăng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhặt hạt",
+    "ipa": "/nhặt hạt/",
+    "meaning": "cụm từ vựng: nhặt hạt",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sự chăm chỉ luôn được đền bù cuối cùng",
+    "ipa": "/sự chăm chỉ luôn được đền bù cuối cùng/",
+    "meaning": "cụm từ vựng: sự chăm chỉ luôn được đền bù cuối cùng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "tiếp tục chơi",
+    "ipa": "/tiếp tục chơi/",
+    "meaning": "cụm từ vựng: tiếp tục chơi",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "vui vẻ khỏe mạnh suốt phần còn lại của năm",
+    "ipa": "/vui vẻ khỏe mạnh suốt phần còn lại của năm/",
+    "meaning": "cụm từ vựng: vui vẻ khỏe mạnh suốt phần còn lại của năm",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "xin thức ăn",
+    "ipa": "/xin thức ăn/",
+    "meaning": "cụm từ vựng: xin thức ăn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "xây một ngôi nhà ấm",
+    "ipa": "/xây một ngôi nhà ấm/",
+    "meaning": "cụm từ vựng: xây một ngôi nhà ấm",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "ánh nắng ấm đẹp",
+    "ipa": "/ánh nắng ấm đẹp/",
+    "meaning": "cụm từ vựng: ánh nắng ấm đẹp",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "đi ra đồng",
+    "ipa": "/đi ra đồng/",
+    "meaning": "cụm từ vựng: đi ra đồng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "đến nhà con kiến",
+    "ipa": "/đến nhà con kiến/",
+    "meaning": "cụm từ vựng: đến nhà con kiến",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "reduce, reuse, and recycle",
+    "ipa": "/reduce, reuse, and recycle/",
+    "meaning": "reduce reuse and recycle",
+    "example": "Natural usage of \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "walked to the same place",
+    "ipa": "/walked to the same place/",
+    "meaning": "walked to the same place",
+    "example": "We practiced walked to the same place today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the old map",
+    "ipa": "/looked at the old map/",
+    "meaning": "looked at the old map",
+    "example": "We practiced looked at the old map today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to live together",
+    "ipa": "/came to live together/",
+    "meaning": "came to live together",
+    "example": "We practiced came to live together today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "listened to tropical birds",
+    "ipa": "/listened to tropical birds/",
+    "meaning": "listened to tropical birds",
+    "example": "We practiced listened to tropical birds today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the slow tortoise",
+    "ipa": "/looked at the slow tortoise/",
+    "meaning": "looked at the slow tortoise",
+    "example": "We practiced looked at the slow tortoise today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to the train station",
+    "ipa": "/went to the train station/",
+    "meaning": "went to the train station",
+    "example": "We practiced went to the train station today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "flew to a tiny green island",
+    "ipa": "/flew to a tiny green island/",
+    "meaning": "flew to a tiny green island",
+    "example": "We practiced flew to a tiny green island today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to help them",
+    "ipa": "/came to help them/",
+    "meaning": "came to help them",
+    "example": "We practiced came to help them today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the bright fruit",
+    "ipa": "/looked at the bright fruit/",
+    "meaning": "looked at the bright fruit",
+    "example": "We practiced looked at the bright fruit today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at an old map",
+    "ipa": "/looked at an old map/",
+    "meaning": "looked at an old map",
+    "example": "We practiced looked at an old map today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "look at this",
+    "ipa": "/look at this/",
+    "meaning": "look at this",
+    "example": "We practiced look at this today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the tiny point of light",
+    "ipa": "/looked at the tiny point of light/",
+    "meaning": "looked at the tiny point of light",
+    "example": "We practiced looked at the tiny point of light today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to help",
+    "ipa": "/came to help/",
+    "meaning": "came to help",
+    "example": "We practiced came to help today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "smiled at Luna",
+    "ipa": "/smiled at luna/",
+    "meaning": "smiled at Luna",
+    "example": "We practiced smiled at Luna today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Làm việc cùng tôi vào mùa hè tới",
+    "ipa": "/làm việc cùng tôi vào mùa hè tới/",
+    "meaning": "cụm từ vựng: làm việc cùng tôi vào mùa hè tới",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Mùa hè qua mùa hè",
+    "ipa": "/mùa hè qua mùa hè/",
+    "meaning": "cụm từ vựng: mùa hè qua mùa hè",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "luôn chơi đùa",
+    "ipa": "/luôn chơi đùa/",
+    "meaning": "cụm từ vựng: luôn chơi đùa",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
+    "ipa": "/làm việc chăm chỉ cùng nhau suốt phần còn lại của năm/",
+    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "tiếp tục chơi trò chơi",
+    "ipa": "/tiếp tục chơi trò chơi/",
+    "meaning": "cụm từ vựng: tiếp tục chơi trò chơi",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "ánh nắng ấm sáng",
+    "ipa": "/ánh nắng ấm sáng/",
+    "meaning": "cụm từ vựng: ánh nắng ấm sáng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "2,500 years ago",
+    "ipa": "/2,500 years ago/",
+    "meaning": "2.500 năm trước",
+    "example": "This is an example: 2,500 years ago.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   }
 ]

@@ -33,19 +33,29 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   
   const [sentences, setSentences] = useState([]);
   const [isReady, setIsReady] = useState(false);
-  // Dictionary loaded from static import (bundled by Vite)
-  const [dictionary, setDictionary] = useState(() => {
-    // Convert array to lookup object on mount
-    const dict = Array.isArray(dictionaryData)
+  // Dictionary loaded from static import and merged with per-week data.dictionary
+  const [dictionary, setDictionary] = useState({});
+
+  useEffect(() => {
+    const staticDict = Array.isArray(dictionaryData)
       ? Object.fromEntries(dictionaryData.map(e => [normalizeLookupKey(e.word), e]))
       : dictionaryData;
-    console.log('[ReadingExplore] Dictionary loaded:', Object.keys(dict).length, 'entries');
-    // Debug: check some entries
-    if (dict.adventure) console.log('  ✓ adventure:', dict.adventure.meaning);
-    if (dict.vehicle) console.log('  ✓ vehicle:', dict.vehicle.meaning);
-    if (dict.family) console.log('  ✓ family:', dict.family.meaning);
-    return dict;
-  });
+    
+    const localDict = {};
+    if (data && data.dictionary) {
+      Object.entries(data.dictionary).forEach(([k, v]) => {
+        const normKey = normalizeLookupKey(k);
+        localDict[normKey] = {
+          word: v.word || k,
+          ipa: v.pronunciation || v.ipa || '',
+          meaning: v.definition_vi || v.meaning || v.definition_en || '',
+          example: v.example || '',
+          ...v
+        };
+      });
+    }
+    setDictionary({ ...staticDict, ...localDict });
+  }, [data]);
 
   // State initialized from savedData or defaults
   const [currentIdx, setCurrentIdx] = useState(() => savedData.lastPage || 0);
