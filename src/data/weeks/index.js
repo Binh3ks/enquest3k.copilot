@@ -65,7 +65,7 @@ export const loadWeekData = async (weekId, isEasy = false) => {
       if (Date.now() - lastReload > 5000) {
         sessionStorage.setItem(reloadKey, String(Date.now()));
         console.warn('[LazyLoad] Stale chunk detected. Reloading page to fetch latest build...');
-        window.location.reload();
+        window.location.href = window.location.pathname + '?r=' + Date.now();
         return new Promise(() => {}); // pause execution while browser reloads
       }
     }

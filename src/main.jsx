@@ -33,7 +33,7 @@ if (typeof window !== 'undefined') {
       if (Date.now() - lastReload > 5000) {
         sessionStorage.setItem('global_chunk_reload', String(Date.now()));
         console.warn('[Main] Stale CDN chunk error detected. Auto-reloading to fetch latest build...');
-        window.location.reload();
+        window.location.href = window.location.pathname + '?r=' + Date.now();
       }
     }
   });
