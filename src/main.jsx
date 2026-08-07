@@ -63,14 +63,11 @@ TTSPreload.initialize().catch(err => {
   console.warn('[Main] TTS preload failed:', err);
 });
 
-// Register service worker for Web Push notifications
+// Unregister legacy Service Workers to force fresh asset fetching
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js', { scope: '/' })
-    .then(reg => {
-      console.log('[SW] Registered, scope:', reg.scope);
-      reg.update().catch(() => {});
-    })
-    .catch(err => console.warn('[SW] Registration failed:', err));
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(reg => reg.unregister());
+  }).catch(() => {});
 }
 
 // --- Anti-copy enforcement: block copy/cut/paste/contextmenu on non-editable UI ---

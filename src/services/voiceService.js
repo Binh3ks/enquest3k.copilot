@@ -801,13 +801,13 @@ export const VoiceService = {
 
     // 8. Vietnamese Proper Nouns & Cultural Terms Phonetic Normalization for English TTS
     const VI_PROPER_NOUNS = [
-      [/\bHoi\s*An\b/gi, 'Hoi Ahn'],
-      [/\bHa\s*Noi\b/gi, 'Ha Noy'],
-      [/\bDa\s*Nang\b/gi, 'Da Nang'],
-      [/\bSaigon\b/gi, 'Sigh gon'],
+      [/\bHoi\s*An\b/gi, 'Hoyahn'],
+      [/\bHa\s*Noi\b/gi, 'Hahnoy'],
+      [/\bDa\s*Nang\b/gi, 'Danang'],
+      [/\bSaigon\b/gi, 'Saigon'],
       [/\bHo\s+Chi\s+Minh\b/gi, 'Ho Chi Minh'],
-      [/\bAo\s*Dai\b/gi, 'Ow Dye'],
-      [/\bBanh\s*Mi\b/gi, 'Bahn Mee'],
+      [/\bAo\s*Dai\b/gi, 'Owdye'],
+      [/\bBanh\s*Mi\b/gi, 'Bahnmee'],
       [/\bPho\b/gi, 'Fuh']
     ];
     for (const [regex, phonetic] of VI_PROPER_NOUNS) {
