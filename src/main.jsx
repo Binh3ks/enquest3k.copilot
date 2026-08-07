@@ -66,7 +66,10 @@ TTSPreload.initialize().catch(err => {
 // Register service worker for Web Push notifications
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js', { scope: '/' })
-    .then(reg => console.log('[SW] Registered, scope:', reg.scope))
+    .then(reg => {
+      console.log('[SW] Registered, scope:', reg.scope);
+      reg.update().catch(() => {});
+    })
     .catch(err => console.warn('[SW] Registration failed:', err));
 }
 

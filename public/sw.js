@@ -1,4 +1,5 @@
-// EngQuest Service Worker — handles push notifications
+// EngQuest Service Worker v2026-08-07-v22 — handles push notifications
+self.skipWaiting();
 
 self.addEventListener('push', (event) => {
   let data = {};
