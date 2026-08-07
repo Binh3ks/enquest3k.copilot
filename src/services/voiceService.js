@@ -907,6 +907,10 @@ export const VoiceService = {
     const apiKey = import.meta.env.VITE_GOOGLE_TTS_API_KEY || import.meta.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
     if (!apiKey) throw new Error('Missing VITE_GOOGLE_TTS_API_KEY');
 
+    // Normalize invalid voice names for Google Cloud TTS (e.g. Neural2-B -> Neural2-D)
+    let safeVoice = voice || 'en-US-Journey-F';
+    if (safeVoice === 'en-US-Neural2-B') safeVoice = 'en-US-Neural2-D';
+
     const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
