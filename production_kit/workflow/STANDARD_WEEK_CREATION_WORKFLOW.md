@@ -1,8 +1,8 @@
 # WEEK CREATION WORKFLOW - STANDARD OPERATING PROCEDURE
 
-> **Version:** 5.0 | **Date:** 2026-05-30 | **Status:** MANDATORY
-> **Golden Template:** Week 34 (W16+), Week 6 (W1-15)
-> **Source:** AGENT_SELF_CHECK_WORKFLOW.md + W30-35 Lessons Learned
+> **Version:** 6.0 | **Date:** 2026-08-07 | **Status:** MANDATORY
+> **Golden Template:** Week 36 (W16+), Week 6 (W1-15)
+> **Source:** AGENT_SELF_CHECK_WORKFLOW.md + W30-36 Lessons Learned
 
 ---
 
@@ -27,12 +27,20 @@ KHÔNG LÀM XONG RỒI QUÊN.
 ### MUST DO:
 - Read Syllabus for Week N content
 - Clone AI Tutor from **Week 34** template
-- Clone Stations from **Week 34** template (W16+) or **Week 6** (W1-15)
+- **Clone Stations from Week 36 template (W16+)** or **Week 6** (W1-15)
 - Create index.js for **BOTH** modes (17 files per mode = 34 min)
 - Use **Node.js** for ALL .js file creation (NO Python)
 - Validate syntax **IMMEDIATELY** after EACH file
 - Assign **5 DISTINCT voices** in voiceConfig per mode
 - Test **BOTH modes** separately (Advanced AND Easy)
+- **Pedagogical ESL Chunking Standard (Linear Thinking A1-A2)**:
+  1. Complete Verb Phrases: DO NOT orphan prepositions (e.g. `walked to the park`, `looked at the comic strip`).
+  2. Prepositional Setting Context: Keep context intact (`In Panel One`, `In Panel Two`).
+  3. Target Grammar Focus: Past simple + complement/adverb (`was sunny and warm`, `walked slowly`).
+  4. Collocations & Compound Nouns: `Saturday morning`, `comic strip`, `speech bubble`.
+- **Mandatory Quality Audit & Sync**:
+  - Run `npm run audit:chunks` to guarantee 0 chunking/dictionary errors.
+  - Run `node scripts/sync_all_dictionaries.js` & `node scripts/rebuild_central_dictionary.js` to ensure 100% dictionary alignment.
 - Run bug_prevention_check.sh N after each phase
 - Browser test BEFORE deploy
 - Use `problems: []` NOT `questions: []` in singapore_math.js
