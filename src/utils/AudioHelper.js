@@ -28,27 +28,42 @@ export const getVoicesList = () => voices;
 let selectedVoiceURI = null;
 export const setVoice = (uri) => { selectedVoiceURI = uri; };
 
+let _activeNativeUtterance = null;
+
 // Helper: Sử dụng Native TTS (Phòng hờ cho Chrome/Safari)
 const speakNativeTTS = (text, rate = 1.0, onEnd = null) => {
     return new Promise((resolve) => {
         if (!window.speechSynthesis) { resolve(false); return; }
+        const synth = window.speechSynthesis;
+        if (synth.paused) synth.resume();
+        try { synth.cancel(); } catch {}
 
-        const utterance = new SpeechSynthesisUtterance(text);
+        let cleanText = (text || '').trim();
+        if (!cleanText) { resolve(false); return; }
+        cleanText = cleanText.replace(/^["'\s]+|["'\s]+$/g, '');
+
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        // CRITICAL V8 GC FIX: Store utterance reference so V8 GC does not collect mid-speech
+        _activeNativeUtterance = utterance;
         
-        // Tìm giọng mặc định tốt nhất
-        const voice = voices.find(v => v.name === DEFAULT_TTS_VOICE_URI) || voices[0];
-        if(voice) utterance.voice = voice;
+        const voicesList = synth.getVoices();
+        const voice = voicesList.find(v => v.name === 'Google US English' || v.lang === 'en-US' || (v.lang.startsWith('en-') && (v.name.includes('Samantha') || v.name.includes('Karen') || v.name.includes('Female')))) || voicesList[0];
+        if (voice) utterance.voice = voice;
 
-        utterance.rate = rate;
+        utterance.rate = cleanText.split(/\s+/).length <= 2 ? 0.90 : rate;
+        utterance.pitch = 1.0;
+        
         utterance.onend = () => {
-            if(onEnd) onEnd();
+            _activeNativeUtterance = null;
+            if (onEnd) onEnd();
             resolve(true);
         };
         utterance.onerror = (event) => {
-            console.error("Native TTS Error:", event.error);
+            _activeNativeUtterance = null;
+            console.error("Native TTS Error:", event);
             resolve(false);
         };
-        window.speechSynthesis.speak(utterance);
+        synth.speak(utterance);
     });
 };
 
