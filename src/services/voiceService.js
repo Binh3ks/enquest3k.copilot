@@ -212,36 +212,6 @@ function chunkTextForTTS(text, maxChunkLen = 250) {
   return chunks.length > 0 ? chunks : [text];
 }
 
-/**
- * Convert text to SSML with native Vietnamese language tags for proper nouns
- */
-function convertTextToSSML(text) {
-  let ssml = text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
-
-  // Wrap Vietnamese proper nouns and cultural terms in SSML <lang xml:lang="vi-VN">
-  const VI_SSML_NOUNS = [
-    [/\bHoi\s*An\b/gi, '<lang xml:lang="vi-VN">Hội An</lang>'],
-    [/\bHa\s*Noi\b/gi, '<lang xml:lang="vi-VN">Hà Nội</lang>'],
-    [/\bDa\s*Nang\b/gi, '<lang xml:lang="vi-VN">Đà Nẵng</lang>'],
-    [/\bSaigon\b/gi, '<lang xml:lang="vi-VN">Sài Gòn</lang>'],
-    [/\bHo\s+Chi\s+Minh\b/gi, '<lang xml:lang="vi-VN">TP. Hồ Chí Minh</lang>'],
-    [/\bAo\s*Dai\b/gi, '<lang xml:lang="vi-VN">Áo Dài</lang>'],
-    [/\bBanh\s*Mi\b/gi, '<lang xml:lang="vi-VN">Bánh Mì</lang>'],
-    [/\bPho\b/gi, '<lang xml:lang="vi-VN">Phở</lang>']
-  ];
-
-  for (const [regex, ssmlTag] of VI_SSML_NOUNS) {
-    ssml = ssml.replace(regex, ssmlTag);
-  }
-
-  return `<speak>${ssml}</speak>`;
-}
-
 // ─── Worker Concurrency Limiter ──────────────────────────────────────────────
 // Only 1 Deepgram call at a time — prevents bandwidth contention on slow networks.
 // speak() (user action, highPriority=true) jumps to front of queue.
@@ -1123,12 +1093,11 @@ export const VoiceService = {
     }
 
     const fetchPromise = (async () => {
-      const ssmlContent = convertTextToSSML(text);
       const res = await fetch(`https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          input: { ssml: ssmlContent },
+          input: { text },
           voice: { languageCode: 'en-US', name: safeVoice },
           audioConfig: { audioEncoding: 'MP3' }
         })
