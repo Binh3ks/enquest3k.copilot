@@ -780,9 +780,9 @@ export const VoiceService = {
       const voiceToUse = voice || localStorage.getItem('tts_voice') || '';
 
       // Compute content hash for stale-detection (vh param).
-      // Worker compares this against stored contentHash in R2 metadata.
-      const contentHash = await this.computeContentHash(text);
-      let workerUrl = `${TTS_WORKER_URL}/tts?text=${encodeURIComponent(text)}&station=${encodeURIComponent(station)}&vh=${encodeURIComponent(contentHash)}`;
+      // Append version '_v16' to force Worker R2 to invalidate old un-punctuated audio blobs
+      const contentHash = await this.computeContentHash(text + '_v16');
+      let workerUrl = `${TTS_WORKER_URL}/tts?text=${encodeURIComponent(text)}&station=${encodeURIComponent(station)}&vh=${encodeURIComponent(contentHash)}&v=16`;
       if (voiceToUse) workerUrl += `&voice=${encodeURIComponent(voiceToUse)}`;
       
       // Pass audioPath for static content (so Worker saves to exact R2 path)
