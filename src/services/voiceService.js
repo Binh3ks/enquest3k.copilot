@@ -561,7 +561,7 @@ export const VoiceService = {
       if (cached) return;
       
       try {
-        console.log(`[Prefetch] 🎓 Google Cloud TTS Direct Prefetching (Week 36 / ${station}) [Voice: ${targetVoice}]`);
+        console.log(`[Prefetch] 🎓 Google Cloud TTS Direct Prefetching (W${weekNumber || '?'} / ${station}) [Voice: ${targetVoice}]`);
         const blob = await this.useGoogleTTSDirect(cleanedText, targetVoice);
         if (blob) {
           await TTSCache.set(cleanedText, station, blob, targetVoice, audioPath);
