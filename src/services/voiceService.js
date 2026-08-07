@@ -341,19 +341,20 @@ export const VoiceService = {
     // Volume compensation: bass male voices are quieter than female voices
     this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
     
-    // 🔍 TIER 1: Check Client Cache first (instant replay, 0ms)
-    const cachedUrl = await TTSCache.get(cleanedText, station, cacheVoice, audioUrl);
-    if (cachedUrl) {
-      console.log(`[TTS] ✅ Cache hit (0ms) [voice: ${cacheVoice || 'default'}]`);
-      return this.playAudio(cachedUrl, true);
-    }
-
     // 🎓 GOOGLE CLOUD TTS DIRECT OVERRIDE (For Week 36 testing or when force_google_tts enabled)
     const useGoogleDirect = (weekNumber === 36 || weekNumber === '36' || localStorage.getItem('force_google_tts') === 'true');
     if (useGoogleDirect) {
+      const targetVoice = googleVoice || (station === 'narration' || station === 'read' || station === 'explore' || station === 'shadowing' ? 'en-US-Journey-F' : 'en-US-Neural2-F');
+      
+      // Check Client Cache first for Google Direct voice
+      const googleCachedUrl = await TTSCache.get(cleanedText, station, targetVoice, audioUrl);
+      if (googleCachedUrl) {
+        console.log(`[TTS] 🎓 Google Cloud TTS Direct Cache Hit (0ms) [voice: ${targetVoice}]`);
+        return this.playAudio(googleCachedUrl, true);
+      }
+
       try {
-        const targetVoice = googleVoice || (station === 'narration' || station === 'read' || station === 'explore' || station === 'shadowing' ? 'en-US-Journey-F' : 'en-US-Neural2-F');
-        console.log(`[TTS] 🎓 Google Cloud TTS Direct (Week 36 / ${station}) [Voice: ${targetVoice}]`);
+        console.log(`[TTS] 🎓 Google Cloud TTS Direct Generating (Week 36 / ${station}) [Voice: ${targetVoice}]`);
         const audioBlob = await this.useGoogleTTSDirect(cleanedText, targetVoice);
         if (audioBlob) {
           await TTSCache.set(cleanedText, station, audioBlob, targetVoice, audioUrl);
@@ -363,6 +364,13 @@ export const VoiceService = {
       } catch (gErr) {
         console.warn(`[TTS] ⚠️ Google Cloud TTS Direct failed, falling back: ${gErr.message}`);
       }
+    }
+
+    // 🔍 TIER 1: Check Client Cache for standard voices (Aura-2 / legacy)
+    const cachedUrl = await TTSCache.get(cleanedText, station, cacheVoice, audioUrl);
+    if (cachedUrl) {
+      console.log(`[TTS] ✅ Cache hit (0ms) [voice: ${cacheVoice || 'default'}]`);
+      return this.playAudio(cachedUrl, true);
     }
     
     // Determine if this station uses static CDN or needs dynamic generation
@@ -1057,9 +1065,8 @@ export const VoiceService = {
         source.buffer = audioBuffer;
 
         const savedRate = parseFloat(localStorage.getItem('shadowing_speed') || localStorage.getItem('tts_speed') || '1.0');
-        if (savedRate >= 0.5 && savedRate <= 2.0) {
-          source.playbackRate.value = savedRate;
-        }
+        const rate = (savedRate >= 0.5 && savedRate <= 2.0) ? savedRate : 1.0;
+        source.playbackRate.value = rate;
 
         const gain = this._speakGain || 1.0;
         const gainNode = ctx.createGain();
