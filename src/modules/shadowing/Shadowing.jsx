@@ -21,7 +21,7 @@ import SavePracticeModal from './SavePracticeModal';
 import ChallengeBar from './ChallengeBar';
 import ShadowingErrorBoundary from './ShadowingErrorBoundary';
 import FloatingVideoWindow from './FloatingVideoWindow';
-import { generateText } from '../../services/aiProxy';
+const CORRECTIONS_API_BASE = import.meta.env.VITE_TTS_WORKER_URL || '';
 
 const Shadowing = ({ data, themeColor, isVi, onToggleLang, weekNumber, mode = 'advanced' }) => {
   const { weekId } = useParams();
