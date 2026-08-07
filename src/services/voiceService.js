@@ -184,6 +184,7 @@ const GOOGLE_TTS_VOICE = 'en-US-Journey-F'; // fallback: en-US-Neural2-F
 // Key = Worker URL (unique per text+voice+path), Value = in-flight Promise<Blob>.
 const _pendingFetches = new Map();
 const _pendingDirectFetches = new Map();
+const _prefetchingWeeks = new Set();
 
 // ─── Worker Concurrency Limiter ──────────────────────────────────────────────
 // Only 1 Deepgram call at a time — prevents bandwidth contention on slow networks.
@@ -565,12 +566,7 @@ export const VoiceService = {
       }
     }
 
-    // Convert legacy Google Neural2 format if still needed
     let finalVoice = voice;
-    if (finalVoice && finalVoice.includes('Neural2')) {
-      finalVoice = GOOGLE_TO_DEEPGRAM_VOICE[finalVoice] || finalVoice;
-      console.log(`[Prefetch] 🔄 Voice conversion: ${voice} → ${finalVoice}`);
-    }
 
     // Already cached? Nothing to do (check with voice-specific cache key)
     const cached = await TTSCache.get(cleanedText, station, finalVoice, audioPath);
@@ -619,9 +615,9 @@ export const VoiceService = {
    */
   async prefetchEntireWeek(weekNumber = 36, mode = 'advanced') {
     if (!weekNumber) return;
-    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v24`;
-    if (sessionStorage.getItem(weekKey)) return; // Already done this session
-    sessionStorage.setItem(weekKey, 'true');
+    const weekKey = `w${weekNumber}_${mode}`;
+    if (_prefetchingWeeks.has(weekKey)) return;
+    _prefetchingWeeks.add(weekKey);
 
     console.log(`[Prefetch] 🚀 Starting Full Week ${weekNumber} (${mode}) Google Cloud TTS Pre-generation...`);
 
@@ -709,6 +705,8 @@ export const VoiceService = {
       console.log(`[Prefetch] ✅ Week ${weekNumber} Full Google Direct TTS Pre-generation Complete!`);
     } catch (err) {
       console.warn(`[Prefetch] Failed week ${weekNumber} prefetch:`, err.message);
+    } finally {
+      _prefetchingWeeks.delete(weekKey);
     }
   },
 
