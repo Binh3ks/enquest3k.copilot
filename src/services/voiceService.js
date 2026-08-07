@@ -1057,18 +1057,14 @@ export const VoiceService = {
       synth.resume();
     }
     
-    // Ensure clean text with proper trailing padding to prevent ending sound truncation on single words (e.g. "cave.", "made.")
     let rawText = (text || '').trim();
     if (!rawText) return;
 
     const wordCount = rawText.split(/\s+/).length;
     const isSingleWord = wordCount <= 2;
     
-    // Pad trailing period with extra space to ensure audio engine articulates final consonants fully before closing stream
-    let cleanText = rawText;
-    if (!/[.!?]$/.test(cleanText)) {
-      cleanText += ' .';
-    }
+    // Clean text: strip any leading/trailing quotes or punctuation for pure speech synthesis
+    let cleanText = rawText.replace(/^["'\s]+|["'\s]+$/g, '');
 
     // Cancel any previous utterance to avoid queue buildup
     try { synth.cancel(); } catch {}
@@ -1097,13 +1093,13 @@ export const VoiceService = {
       return;
     }
     
-    // --- NEW VOICE SELECTION LOGIC ---
+    // --- HIGH QUALITY VOICE SELECTION LOGIC ---
     let preferredVoice = voices.find(v => v.name === 'Google US English' && v.lang === 'en-US');
 
     if (!preferredVoice) {
       preferredVoice = voices.find(v => 
         v.lang.startsWith('en-') && 
-        (v.name.includes('Aria') || v.name.includes('Jenny') || v.name.includes('Michelle') || v.name.includes('Samantha') || v.name.includes('Karen'))
+        (v.name.includes('Samantha') || v.name.includes('Karen') || v.name.includes('Victoria') || v.name.includes('Aria') || v.name.includes('Jenny') || v.name.includes('Michelle'))
       );
     }
     
@@ -1116,8 +1112,8 @@ export const VoiceService = {
     }
     
     utterance.voice = preferredVoice;
-    utterance.rate = isSingleWord ? 0.82 : 0.92; // Slightly slower pace for 1-2 word cards for crystal clear final consonants
-    utterance.pitch = 1.05; // Natural pitch
+    utterance.rate = isSingleWord ? 0.90 : 1.0; // Clear 0.90 pace for single word cards so ending consonants (cave, wrote, came, gave, made) are crystal clear
+    utterance.pitch = 1.0; // Natural pitch
     utterance.volume = 1.0;
     
     console.log(`[TTS] 🎙️ Using browser voice: ${preferredVoice?.name || 'default'} (rate: ${utterance.rate}, text: "${cleanText}")`);
