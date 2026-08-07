@@ -48,10 +48,10 @@ export const chunk_focus = [
 
 export const dictionary = {
     'At home': { word: 'At home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
-    'His teacher': { word: 'His teacher', pronunciation: '/his teacher/', definition_vi: '(cụm từ: his teacher)', definition_en: 'Multi-word phrase: his teacher', example: 'Use of \'his teacher\' in natural context.' },
+    'His teacher': { word: 'His teacher', pronunciation: '/his teacher/', definition_vi: 'của anh ấy giáo viên', definition_en: 'Collocation: his teacher', example: 'The students learned \'his teacher\' in their English lesson.' },
     'The nurse': { word: 'The nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
     'at once': { word: 'at once', pronunciation: '/at once/', definition_vi: 'ngay lập tức', definition_en: 'meaning of at once', example: 'This is an example: at once.' },
-    'at school': { word: 'at school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'at school': { word: 'at school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
     'came quickly': { word: 'came quickly', pronunciation: '/came quickly/', definition_vi: 'đến nhanh', definition_en: 'meaning of came quickly', example: 'When the fire alarm rang, the firefighters came quickly with their trucks.' },
     'everyone must': { word: 'everyone must', pronunciation: '/everyone must/', definition_vi: 'mọi người phải', definition_en: 'Multi-word phrase: everyone must', example: 'The phrase \'everyone must\' is commonly used in conversation.' },
     'fell down': { word: 'fell down', pronunciation: '/fell down/', definition_vi: 'ngã xuống', definition_en: 'meaning of fell down', example: 'He fell down hard and broke the glass cup that another student was holding.' },

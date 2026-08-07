@@ -92,10 +92,10 @@ export const dictionary = {
     'every year': { word: 'every year', pronunciation: '/every year/', definition_vi: 'mỗi năm', definition_en: 'meaning of every year', example: 'This is an example: every year.' },
     'grow bigger': { word: 'grow bigger', pronunciation: '/grow bigger/', definition_vi: 'lớn hơn', definition_en: 'meaning of grow bigger', example: 'I grow bigger every year.' },
     'grow strong': { word: 'grow strong', pronunciation: '/grow strong/', definition_vi: 'lớn lên khỏe mạnh', definition_en: 'meaning of grow strong', example: 'This is an example: grow strong.' },
-    'helps you grow': { word: 'helps you grow', pronunciation: '/helps you grow/', definition_vi: 'helps you grow', definition_en: 'meaning of helps you grow', example: 'This is an example: helps you grow.' },
+    'helps you grow': { word: 'helps you grow', pronunciation: '/helps you grow/', definition_vi: 'helps bạn phát triển', definition_en: 'Key collocation: helps you grow', example: 'Natural usage of \'helps you grow\' in sentence context.' },
     'kindergarten': { word: 'kindergarten', pronunciation: '/kindergarten/', definition_vi: 'mẫu giáo', definition_en: 'a school for young children ages 3-5', example: 'My little sister started kindergarten this week.' },
     'learned to read': { word: 'learned to read', pronunciation: '/learned to read/', definition_vi: 'học đọc', definition_en: 'gained the skill of reading', example: 'She learned to read when she was five.' },
     'old photos': { word: 'old photos', pronunciation: '/old photos/', definition_vi: 'ảnh cũ', definition_en: 'meaning of old photos', example: 'Looking through old photos, we saw what our town looked like long ago.' },
-    'slept a lot': { word: 'slept a lot', pronunciation: '/slept a lot/', definition_vi: 'slept a lot', definition_en: 'meaning of slept a lot', example: 'This is an example: slept a lot.' },
-    'were a baby': { word: 'were a baby', pronunciation: '/were a baby/', definition_vi: 'were a baby', definition_en: 'meaning of were a baby', example: 'This is an example: were a baby.' }
+    'slept a lot': { word: 'slept a lot', pronunciation: '/slept a lot/', definition_vi: 'slept một lot', definition_en: 'Key collocation: slept a lot', example: 'Natural usage of \'slept a lot\' in sentence context.' },
+    'were a baby': { word: 'were a baby', pronunciation: '/were a baby/', definition_vi: 'were một baby', definition_en: 'Key collocation: were a baby', example: 'Natural usage of \'were a baby\' in sentence context.' }
 };

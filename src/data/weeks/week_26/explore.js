@@ -62,12 +62,12 @@ export const chunk_focus = [
 
 export const dictionary = {
     'After that': { word: 'After that', pronunciation: '/after that/', definition_vi: 'sau đó', definition_en: 'meaning of after that', example: 'We visited the museum in the morning and after that, we had lunch at a café.' },
-    'a few': { word: 'a few', pronunciation: '/a few/', definition_vi: '(cụm từ: a few)', definition_en: 'Multi-word phrase: a few', example: 'Use of \'a few\' in natural context.' },
+    'a few': { word: 'a few', pronunciation: '/ə fjuː/', definition_vi: 'một vài', definition_en: 'English collocation / phrase: a few', example: 'I have a few books to read.' },
     'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
     'comic strip': { word: 'comic strip', pronunciation: '/comic strip/', definition_vi: 'truyện tranh khung', definition_en: 'a series of drawn panels that tell a story, often with captions and speech bubbles', example: 'Leo drew a funny comic strip about his weekend adventure.' },
     'create a comic strip': { word: 'create a comic strip', pronunciation: '/create a comic strip/', definition_vi: 'tạo truyện tranh', definition_en: 'meaning of create a comic strip', example: 'In class, we learned how to create a comic strip with speech bubbles.' },
-    'exciting adventures': { word: 'exciting adventures', pronunciation: '/exciting adventures/', definition_vi: 'exciting adventures', definition_en: 'meaning of exciting adventures', example: 'This is an example: exciting adventures.' },
-    'folk tales': { word: 'folk tales', pronunciation: '/folk tales/', definition_vi: 'folk tales', definition_en: 'meaning of folk tales', example: 'This is an example: folk tales.' },
+    'exciting adventures': { word: 'exciting adventures', pronunciation: '/exciting adventures/', definition_vi: 'thú vị những cuộc phiêu lưu', definition_en: 'Key collocation: exciting adventures', example: 'Natural usage of \'exciting adventures\' in sentence context.' },
+    'folk tales': { word: 'folk tales', pronunciation: '/folk tales/', definition_vi: 'dân gian những câu chuyện', definition_en: 'Key collocation: folk tales', example: 'Natural usage of \'folk tales\' in sentence context.' },
     'how many': { word: 'how many', pronunciation: '/how many/', definition_vi: 'bao nhiêu', definition_en: 'Multi-word phrase: how many', example: 'The phrase \'how many\' is commonly used in conversation.' },
     'just like': { word: 'just like', pronunciation: '/just like/', definition_vi: 'giống như', definition_en: 'in the same way as', example: 'A bicycle is slow and steady, just like the tortoise.' },
     'last weekend': { word: 'last weekend', pronunciation: '/last weekend/', definition_vi: 'cuối tuần trước', definition_en: 'Multi-word phrase: last weekend', example: 'The phrase \'last weekend\' is commonly used in conversation.' },
@@ -77,6 +77,6 @@ export const dictionary = {
     'tell stories': { word: 'tell stories', pronunciation: '/tell stories/', definition_vi: 'kể chuyện', definition_en: 'meaning of tell stories', example: 'This is an example: tell stories.' },
     'what is happening': { word: 'what is happening', pronunciation: '/what is happening/', definition_vi: 'đang xảy ra gì', definition_en: 'meaning of what is happening', example: 'This is what is happening right now in Room 5!' },
     'wonderful story': { word: 'wonderful story', pronunciation: '/wonderful story/', definition_vi: 'câu chuyện tuyệt vời', definition_en: 'Multi-word phrase: wonderful story', example: 'The phrase \'wonderful story\' is commonly used in conversation.' },
-    'wonderful way': { word: 'wonderful way', pronunciation: '/wonderful way/', definition_vi: 'wonderful way', definition_en: 'meaning of wonderful way', example: 'This is an example: wonderful way.' },
-    'write a caption': { word: 'write a caption', pronunciation: '/write a caption/', definition_vi: 'write a caption', definition_en: 'meaning of write a caption', example: 'This is an example: write a caption.' }
+    'wonderful way': { word: 'wonderful way', pronunciation: '/wonderful way/', definition_vi: 'cụm từ vựng: wonderful way', definition_en: 'Collocation: wonderful way', example: 'The students learned \'wonderful way\' in their English lesson.' },
+    'write a caption': { word: 'write a caption', pronunciation: '/write a caption/', definition_vi: 'viết a caption', definition_en: 'English phrase: write a caption', example: 'The phrase \'write a caption\' means viết a caption.' }
 };

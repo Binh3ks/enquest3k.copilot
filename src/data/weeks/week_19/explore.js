@@ -95,7 +95,7 @@ export const dictionary = {
     'help your body grow': { word: 'help your body grow', pronunciation: '/help your body grow/', definition_vi: 'giúp cơ thể bạn phát triển', definition_en: 'support healthy growth of your body', example: 'Eating fruit can help your body grow strong.' },
     'kindergarten': { word: 'kindergarten', pronunciation: '/kindergarten/', definition_vi: 'mẫu giáo', definition_en: 'a school for young children ages 3-5', example: 'My little sister started kindergarten this week.' },
     'look at': { word: 'look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
-    'memory you make': { word: 'memory you make', pronunciation: '/memory you make/', definition_vi: 'memory you make', definition_en: 'meaning of memory you make', example: 'This is an example: memory you make.' },
+    'memory you make': { word: 'memory you make', pronunciation: '/memory you make/', definition_vi: 'memory you làm', definition_en: 'English phrase: memory you make', example: 'The phrase \'memory you make\' means memory you làm.' },
     'old photos': { word: 'old photos', pronunciation: '/old photos/', definition_vi: 'ảnh cũ', definition_en: 'meaning of old photos', example: 'Looking through old photos, we saw what our town looked like long ago.' },
-    'were a baby': { word: 'were a baby', pronunciation: '/were a baby/', definition_vi: 'were a baby', definition_en: 'meaning of were a baby', example: 'This is an example: were a baby.' }
+    'were a baby': { word: 'were a baby', pronunciation: '/were a baby/', definition_vi: 'were một baby', definition_en: 'Key collocation: were a baby', example: 'Natural usage of \'were a baby\' in sentence context.' }
 };

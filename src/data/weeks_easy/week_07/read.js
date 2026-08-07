@@ -38,7 +38,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'There are': { word: 'There are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
     'am ready': { word: 'am ready', pronunciation: '/am ready/', definition_vi: 'đã sẵn sàng', definition_en: 'meaning of am ready', example: 'I have my backpack and my lunch — I am ready for school!' },
     'big marker': { word: 'big marker', pronunciation: '/big marker/', definition_vi: 'bút vẽ lớn', definition_en: 'meaning of big marker', example: 'The teacher wrote the new word on the board with a big marker.' },
@@ -48,7 +48,7 @@ export const dictionary = {
     'for school': { word: 'for school', pronunciation: '/for school/', definition_vi: 'cho trường', definition_en: 'meaning of for school', example: 'Now I am ready for school!' },
     'go to school': { word: 'go to school', pronunciation: '/go to school/', definition_vi: 'đi học', definition_en: 'meaning of go to school', example: 'I also go to school on Monday to read and learn.' },
     'in my bag': { word: 'in my bag', pronunciation: '/in my bag/', definition_vi: 'trong túi', definition_en: 'meaning of in my bag', example: 'I have a pen and a book in my bag.' },
-    'in my pencil case': { word: 'in my pencil case', pronunciation: '/in my pencil case/', definition_vi: 'trong hộp bút', definition_en: 'meaning of in my pencil case', example: 'There is glue in my pencil case.' },
+    'in my pencil case': { word: 'in my pencil case', pronunciation: '/ɪn maɪ ˈpensl keɪs/', definition_vi: 'trong hộp bút của tôi', definition_en: 'English collocation / phrase: in my pencil case', example: 'I have three markers in my pencil case.' },
     'lunch box': { word: 'lunch box', pronunciation: '/lunch box/', definition_vi: 'hộp cơm', definition_en: 'a box for carrying your food', example: 'I packed a sandwich and some fruit in my lunch box.' },
     'next to': { word: 'next to', pronunciation: '/next to/', definition_vi: 'bên cạnh', definition_en: 'meaning of next to', example: 'There is a ruler next to the pen.' },
     'on my bed': { word: 'on my bed', pronunciation: '/on my bed/', definition_vi: 'trên giường', definition_en: 'meaning of on my bed', example: 'There is a school bag on my bed.' },

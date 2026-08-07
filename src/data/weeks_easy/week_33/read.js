@@ -50,12 +50,12 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'His friends': { word: 'His friends', pronunciation: '/his friends/', definition_vi: '(cụm từ: his friends)', definition_en: 'Multi-word phrase: his friends', example: 'Use of \'his friends\' in natural context.' },
-    'His teacher': { word: 'His teacher', pronunciation: '/his teacher/', definition_vi: '(cụm từ: his teacher)', definition_en: 'Multi-word phrase: his teacher', example: 'Use of \'his teacher\' in natural context.' },
+    'His friends': { word: 'His friends', pronunciation: '/his friends/', definition_vi: 'his những người bạn', definition_en: 'Key collocation: his friends', example: 'Natural usage of \'his friends\' in sentence context.' },
+    'His teacher': { word: 'His teacher', pronunciation: '/his teacher/', definition_vi: 'của anh ấy giáo viên', definition_en: 'Collocation: his teacher', example: 'The students learned \'his teacher\' in their English lesson.' },
     'The nurse': { word: 'The nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
-    'a lot': { word: 'a lot', pronunciation: '/a lot/', definition_vi: '(cụm từ: a lot)', definition_en: 'Multi-word phrase: a lot', example: 'Use of \'a lot\' in natural context.' },
+    'a lot': { word: 'a lot', pronunciation: '/ə lɒt/', definition_vi: 'rất nhiều', definition_en: 'English collocation / phrase: a lot', example: 'Thank you a lot for your help.' },
     'asked Jake': { word: 'asked Jake', pronunciation: '/asked jake/', definition_vi: 'hỏi Jake', definition_en: 'meaning of asked jake', example: 'The teacher asked Jake to explain what had happened in the hallway.' },
-    'at school': { word: 'at school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'at school': { word: 'at school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
     'bad day': { word: 'bad day', pronunciation: '/bad day/', definition_vi: 'ngày tệ', definition_en: 'Multi-word phrase: bad day', example: 'The phrase \'bad day\' is commonly used in conversation.' },
     'broke a glass cup': { word: 'broke a glass cup', pronunciation: '/broke a glass cup/', definition_vi: 'làm vỡ một chiếc cốc thủy tinh', definition_en: 'meaning of broke a glass cup', example: 'She accidentally dropped the plate and broke a glass cup on the kitchen floor.' },
     'came quickly': { word: 'came quickly', pronunciation: '/came quickly/', definition_vi: 'đến nhanh', definition_en: 'meaning of came quickly', example: 'When the fire alarm rang, the firefighters came quickly with their trucks.' },
@@ -70,7 +70,7 @@ export const dictionary = {
     'important lesson': { word: 'important lesson', pronunciation: '/important lesson/', definition_vi: 'bài học quan trọng', definition_en: 'Multi-word phrase: important lesson', example: 'The phrase \'important lesson\' is commonly used in conversation.' },
     'learned a big lesson': { word: 'learned a big lesson', pronunciation: '/learned a big lesson/', definition_vi: 'học được một bài học lớn', definition_en: 'meaning of learned a big lesson', example: 'After the accident, he learned a big lesson about being careful always.' },
     'next day': { word: 'next day', pronunciation: '/next day/', definition_vi: 'ngày hôm sau', definition_en: 'Multi-word phrase: next day', example: 'The phrase \'next day\' is commonly used in conversation.' },
-    'on the table': { word: 'on the table', pronunciation: '/on the table/', definition_vi: '(cụm từ: on the table)', definition_en: 'Multi-word phrase: on the table', example: 'Use of \'on the table\' in natural context.' },
+    'on the table': { word: 'on the table', pronunciation: '/on the table/', definition_vi: 'trên table', definition_en: 'English collocation / phrase: on the table', example: 'It is located on the table.' },
     'pencil case': { word: 'pencil case', pronunciation: '/pencil case/', definition_vi: 'hộp bút', definition_en: 'a bag or box for holding pens and pencils', example: 'I keep my pens and ruler in my pencil case.' },
     'promised to be careful': { word: 'promised to be careful', pronunciation: '/promised to be careful/', definition_vi: 'hứa sẽ cẩn thận', definition_en: 'meaning of promised to be careful', example: 'The boy promised to be careful and walk slowly near the pond.' },
     'put a cold pack': { word: 'put a cold pack', pronunciation: '/put a cold pack/', definition_vi: 'đặt túi chườm lạnh', definition_en: 'meaning of put a cold pack', example: 'The nurse put a cold pack on his swollen ankle to reduce the pain.' },

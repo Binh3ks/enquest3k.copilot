@@ -114,21 +114,21 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Put it on': { word: 'Put it on', pronunciation: '/put it on/', definition_vi: 'đặt lên trên', definition_en: 'meaning of put it on', example: 'After you wash your hands, put it on the towel to dry them.' },
-    'Stay calm': { word: 'Stay calm', pronunciation: '/stay calm/', definition_vi: 'stay calm', definition_en: 'meaning of stay calm', example: 'This is an example: stay calm.' },
-    'Tell a teacher': { word: 'Tell a teacher', pronunciation: '/tell a teacher/', definition_vi: 'tell a teacher', definition_en: 'meaning of tell a teacher', example: 'This is an example: tell a teacher.' },
+    'Stay calm': { word: 'Stay calm', pronunciation: '/stay calm/', definition_vi: 'cụm từ vựng: stay calm', definition_en: 'Collocation: stay calm', example: 'The students learned \'stay calm\' in their English lesson.' },
+    'Tell a teacher': { word: 'Tell a teacher', pronunciation: '/tell a teacher/', definition_vi: 'kể a teacher', definition_en: 'English phrase: tell a teacher', example: 'The phrase \'tell a teacher\' means kể a teacher.' },
     'The nurse': { word: 'The nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
     'Walk carefully': { word: 'Walk carefully', pronunciation: '/walk carefully/', definition_vi: 'đi cẩn thận', definition_en: 'meaning of walk carefully', example: 'He forgot to walk carefully.' },
-    'What to do': { word: 'What to do', pronunciation: '/what to do/', definition_vi: 'what to do', definition_en: 'meaning of what to do', example: 'This is an example: what to do.' },
+    'What to do': { word: 'What to do', pronunciation: '/what to do/', definition_vi: 'what to thực hiện', definition_en: 'English phrase: what to do', example: 'The phrase \'what to do\' means what to thực hiện.' },
     'accidents happen': { word: 'accidents happen', pronunciation: '/accidents happen/', definition_vi: 'tai nạn xảy ra', definition_en: 'meaning of accidents happen', example: 'This is an example: accidents happen.' },
     'always walk': { word: 'always walk', pronunciation: '/always walk/', definition_vi: 'luôn đi bộ', definition_en: 'Multi-word phrase: always walk', example: 'The phrase \'always walk\' is commonly used in conversation.' },
-    'at school': { word: 'at school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'at school': { word: 'at school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
     'cold pack': { word: 'cold pack', pronunciation: '/cold pack/', definition_vi: 'túi chườm lạnh', definition_en: 'meaning of cold pack', example: 'The nurse put a cold pack on Jake\'s knee.' },
     'get hurt': { word: 'get hurt', pronunciation: '/get hurt/', definition_vi: 'bị thương', definition_en: 'meaning of get hurt', example: 'This is an example: get hurt.' },
     'have an accident': { word: 'have an accident', pronunciation: '/have an accident/', definition_vi: 'bị tai nạn', definition_en: 'meaning of have an accident', example: 'This is an example: have an accident.' },
     'in front of': { word: 'in front of', pronunciation: '/in front of/', definition_vi: 'phía trước', definition_en: 'meaning of in front of', example: 'This is an example: in front of.' },
     'ran in the corridor': { word: 'ran in the corridor', pronunciation: '/ran in the corridor/', definition_vi: 'chạy trong hành lang', definition_en: 'meaning of ran in the corridor', example: 'You should never run in the corridor because it is dangerous.' },
     'reduce swelling': { word: 'reduce swelling', pronunciation: '/reduce swelling/', definition_vi: 'giảm sưng', definition_en: 'meaning of reduce swelling', example: 'This is an example: reduce swelling.' },
-    'stay calm': { word: 'stay calm', pronunciation: '/stay calm/', definition_vi: 'stay calm', definition_en: 'meaning of stay calm', example: 'This is an example: stay calm.' },
+    'stay calm': { word: 'stay calm', pronunciation: '/stay calm/', definition_vi: 'cụm từ vựng: stay calm', definition_en: 'Collocation: stay calm', example: 'The students learned \'stay calm\' in their English lesson.' },
     'stay safe': { word: 'stay safe', pronunciation: '/stay safe/', definition_vi: 'giữ an toàn', definition_en: 'meaning of stay safe', example: 'This is an example: stay safe.' },
-    'tell a teacher': { word: 'tell a teacher', pronunciation: '/tell a teacher/', definition_vi: 'tell a teacher', definition_en: 'meaning of tell a teacher', example: 'This is an example: tell a teacher.' }
+    'tell a teacher': { word: 'tell a teacher', pronunciation: '/tell a teacher/', definition_vi: 'kể a teacher', definition_en: 'English phrase: tell a teacher', example: 'The phrase \'tell a teacher\' means kể a teacher.' }
 };

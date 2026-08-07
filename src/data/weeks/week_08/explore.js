@@ -50,11 +50,11 @@ export const chunk_focus = [
 
 export const dictionary = {
     '30 students': { word: '30 students', pronunciation: '/30 students/', definition_vi: '30 học sinh', definition_en: 'a group of thirty students', example: 'There are 30 students in our class.' },
-    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'There are': { word: 'There are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'at the front': { word: 'at the front', pronunciation: '/at the front/', definition_vi: 'ở phía trước', definition_en: 'meaning of at the front', example: 'I can see a colorful picture on the wall and a big door at the front.' },
     'neat rows': { word: 'neat rows', pronunciation: '/neat rows/', definition_vi: 'hàng ngay ngắn', definition_en: 'Multi-word phrase: neat rows', example: 'The phrase \'neat rows\' is commonly used in conversation.' },
-    'one thing': { word: 'one thing', pronunciation: '/one thing/', definition_vi: '(cụm từ: one thing)', definition_en: 'Multi-word phrase: one thing', example: 'Use of \'one thing\' in natural context.' },
+    'one thing': { word: 'one thing', pronunciation: '/one thing/', definition_vi: 'cụm từ vựng: one thing', definition_en: 'Collocation: one thing', example: 'The students learned \'one thing\' in their English lesson.' },
     'soft lighting': { word: 'soft lighting', pronunciation: '/soft lighting/', definition_vi: 'ánh sáng mềm', definition_en: 'Multi-word phrase: soft lighting', example: 'The phrase \'soft lighting\' is commonly used in conversation.' },
-    'there are': { word: 'there are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'there are': { word: 'there are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'to learn': { word: 'to learn', pronunciation: '/to learn/', definition_vi: 'để học', definition_en: 'meaning of to learn', example: 'I want to learn English every day.' }
 };

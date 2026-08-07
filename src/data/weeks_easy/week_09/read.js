@@ -45,7 +45,7 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Many people get': { word: 'Many people get', pronunciation: '/many people get/', definition_vi: 'nhiều người nhận được', definition_en: 'Multi-word phrase: many people get', example: 'The phrase \'many people get\' is commonly used in conversation.' },
-    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'There are': { word: 'There are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'busy street': { word: 'busy street', pronunciation: '/busy street/', definition_vi: 'đường phố đông đúc', definition_en: 'meaning of busy street', example: 'The busy street was full of shops, restaurants and lots of people.' },
     'busy streets': { word: 'busy streets', pronunciation: '/busy streets/', definition_vi: 'những đường phố đông đúc', definition_en: 'meaning of busy streets', example: 'Big cities have busy streets with thousands of cars and pedestrians.' },
     'exploring the city': { word: 'exploring the city', pronunciation: '/exploring the city/', definition_vi: 'khám phá thành phố', definition_en: 'meaning of exploring the city', example: 'She exploring the city with her friends after school.' },

@@ -92,18 +92,18 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'At night': { word: 'At night', pronunciation: '/at night/', definition_vi: '(cụm từ: at night)', definition_en: 'Multi-word phrase: at night', example: 'Use of \'at night\' in natural context.' },
+    'At night': { word: 'At night', pronunciation: '/æt naɪt/', definition_vi: 'vào ban đêm', definition_en: 'English collocation / phrase: at night', example: 'Stars shine brightly at night.' },
     'Every day': { word: 'Every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'amazing things': { word: 'amazing things', pronunciation: '/amazing things/', definition_vi: 'amazing things', definition_en: 'meaning of amazing things', example: 'This is an example: amazing things.' },
+    'amazing things': { word: 'amazing things', pronunciation: '/əˈmeɪzɪŋ θɪŋz/', definition_vi: 'những điều kỳ diệu', definition_en: 'English collocation / phrase: amazing things', example: 'We saw amazing things underwater.' },
     'every evening': { word: 'every evening', pronunciation: '/every evening/', definition_vi: 'mỗi buổi tối', definition_en: 'meaning of every evening', example: 'We have dinner together every evening and talk about our day.' },
-    'famous scientists': { word: 'famous scientists', pronunciation: '/famous scientists/', definition_vi: 'famous scientists', definition_en: 'meaning of famous scientists', example: 'This is an example: famous scientists.' },
-    'field journals': { word: 'field journals', pronunciation: '/field journals/', definition_vi: 'field journals', definition_en: 'meaning of field journals', example: 'This is an example: field journals.' },
+    'famous scientists': { word: 'famous scientists', pronunciation: '/famous scientists/', definition_vi: 'nổi tiếng các nhà khoa học', definition_en: 'Key collocation: famous scientists', example: 'Natural usage of \'famous scientists\' in sentence context.' },
+    'field journals': { word: 'field journals', pronunciation: '/field journals/', definition_vi: 'lĩnh vực / cánh đồng nhật ký', definition_en: 'Key collocation: field journals', example: 'Natural usage of \'field journals\' in sentence context.' },
     'in the future': { word: 'in the future', pronunciation: '/in the future/', definition_vi: 'trong tương lai', definition_en: 'meaning of in the future', example: 'This is an example: in the future.' },
-    'listened to': { word: 'listened to', pronunciation: '/listened to/', definition_vi: 'listened to', definition_en: 'meaning of listened to', example: 'This is an example: listened to.' },
+    'listened to': { word: 'listened to', pronunciation: '/listened to/', definition_vi: 'listened đến', definition_en: 'Key collocation: listened to', example: 'Natural usage of \'listened to\' in sentence context.' },
     'looked at': { word: 'looked at', pronunciation: '/looked at/', definition_vi: 'nhìn (quan sát)', definition_en: 'meaning of looked at', example: 'The students looked at the map and found where the treasure was hidden.' },
-    'never missed a day': { word: 'never missed a day', pronunciation: '/never missed a day/', definition_vi: 'never missed a day', definition_en: 'meaning of never missed a day', example: 'This is an example: never missed a day.' },
-    'so much': { word: 'so much', pronunciation: '/so much/', definition_vi: '(cụm từ: so much)', definition_en: 'Multi-word phrase: so much', example: 'Use of \'so much\' in natural context.' },
-    'tell us': { word: 'tell us', pronunciation: '/tell us/', definition_vi: '(cụm từ: tell us)', definition_en: 'Multi-word phrase: tell us', example: 'Use of \'tell us\' in natural context.' },
+    'never missed a day': { word: 'never missed a day', pronunciation: '/never missed a day/', definition_vi: 'never missed a ngày', definition_en: 'English phrase: never missed a day', example: 'The phrase \'never missed a day\' means never missed a ngày.' },
+    'so much': { word: 'so much', pronunciation: '/so much/', definition_vi: 'rất much', definition_en: 'Collocation: so much', example: 'The students learned \'so much\' in their English lesson.' },
+    'tell us': { word: 'tell us', pronunciation: '/tell us/', definition_vi: 'kể us', definition_en: 'English phrase: tell us', example: 'The phrase \'tell us\' means kể us.' },
     'wild chimpanzees': { word: 'wild chimpanzees', pronunciation: '/wild chimpanzees/', definition_vi: 'tinh tinh hoang dã', definition_en: 'meaning of wild chimpanzees', example: 'This is an example: wild chimpanzees.' },
     'years ago': { word: 'years ago', pronunciation: '/years ago/', definition_vi: 'nhiều năm trước', definition_en: 'Multi-word phrase: years ago', example: 'The phrase \'years ago\' is commonly used in conversation.' }
 };

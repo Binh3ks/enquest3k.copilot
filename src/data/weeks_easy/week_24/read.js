@@ -67,10 +67,10 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'At school': { word: 'At school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
-    'At the end of the day': { word: 'At the end of the day', pronunciation: '/at the end of the day/', definition_vi: '(cụm từ: at the end of the day)', definition_en: 'Multi-word phrase: at the end of the day', example: 'Use of \'at the end of the day\' in natural context.' },
-    'In the morning': { word: 'In the morning', pronunciation: '/in the morning/', definition_vi: '(cụm từ: in the morning)', definition_en: 'Multi-word phrase: in the morning', example: 'Use of \'in the morning\' in natural context.' },
-    'My brother': { word: 'My brother', pronunciation: '/my brother/', definition_vi: '(cụm từ: my brother)', definition_en: 'Multi-word phrase: my brother', example: 'Use of \'my brother\' in natural context.' },
+    'At school': { word: 'At school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
+    'At the end of the day': { word: 'At the end of the day', pronunciation: '/æt ði end əv ðə deɪ/', definition_vi: 'vào cuối ngày', definition_en: 'English collocation / phrase: at the end of the day', example: 'We relax at the end of the day.' },
+    'In the morning': { word: 'In the morning', pronunciation: '/in the morning/', definition_vi: 'trong morning', definition_en: 'ESL phrase: in the morning', example: 'The students practiced using \'in the morning\' in class.' },
+    'My brother': { word: 'My brother', pronunciation: '/my brother/', definition_vi: 'my anh/em trai', definition_en: 'Collocation: my brother', example: 'The students learned \'my brother\' in their English lesson.' },
     'author spoke': { word: 'author spoke', pronunciation: '/author spoke/', definition_vi: 'tác giả nói', definition_en: 'Multi-word phrase: author spoke', example: 'The phrase \'author spoke\' is commonly used in conversation.' },
     'because someone took': { word: 'because someone took', pronunciation: '/because someone took/', definition_vi: 'vì ai đó đã lấy', definition_en: 'Multi-word phrase: because someone took', example: 'The pencil is missing because someone took it.' },
     'emotional day': { word: 'emotional day', pronunciation: '/emotional day/', definition_vi: 'ngày đầy cảm xúc', definition_en: 'meaning of emotional day', example: 'The wedding was an emotional day with lots of happy tears and loud laughter.' },
@@ -88,7 +88,7 @@ export const dictionary = {
     'looked so surprised': { word: 'looked so surprised', pronunciation: '/looked so surprised/', definition_vi: 'trông rất ngạc nhiên', definition_en: 'meaning of looked so surprised', example: 'When the clown pulled the magic trick, everyone looked so surprised!' },
     'one found': { word: 'one found', pronunciation: '/one found/', definition_vi: 'một tìm thấy', definition_en: 'Multi-word phrase: one found', example: 'The phrase \'one found\' is commonly used in conversation.' },
     'school bag': { word: 'school bag', pronunciation: '/school bag/', definition_vi: 'cặp sách', definition_en: 'a bag for carrying school things', example: 'I put my books and water bottle in my school bag.' },
-    'so long': { word: 'so long', pronunciation: '/so long/', definition_vi: '(cụm từ: so long)', definition_en: 'Multi-word phrase: so long', example: 'Use of \'so long\' in natural context.' },
+    'so long': { word: 'so long', pronunciation: '/so long/', definition_vi: 'rất long', definition_en: 'Collocation: so long', example: 'The students learned \'so long\' in their English lesson.' },
     'special visitor': { word: 'special visitor', pronunciation: '/special visitor/', definition_vi: 'khách đặc biệt', definition_en: 'meaning of special visitor', example: 'Today, our school had a special visitor — a famous Olympic athlete!' },
     'stayed very calm': { word: 'stayed very calm', pronunciation: '/stayed very calm/', definition_vi: 'rất bình tĩnh', definition_en: 'meaning of stayed very calm', example: 'During the fire drill, everyone stayed very calm and walked out slowly.' },
     'there was': { word: 'there was', pronunciation: '/there was/', definition_vi: 'có (nghĩa tồn tại)', definition_en: 'meaning of there was', example: 'There was a big market near the river.' },

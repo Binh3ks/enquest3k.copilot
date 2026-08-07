@@ -51,7 +51,7 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Hide and seek': { word: 'Hide and seek', pronunciation: '/hide and seek/', definition_vi: 'trốn tìm', definition_en: 'meaning of hide and seek', example: 'She hide and seek with her friends after school.' },
-    'One person': { word: 'One person', pronunciation: '/one person/', definition_vi: 'một người', definition_en: 'Multi-word phrase: one person', example: 'Use of \'one person\' in natural context.' },
+    'One person': { word: 'One person', pronunciation: '/one person/', definition_vi: 'cụm từ vựng: one person', definition_en: 'Collocation: one person', example: 'The students learned \'one person\' in their English lesson.' },
     'fun game': { word: 'fun game', pronunciation: '/fun game/', definition_vi: 'trò chơi vui', definition_en: 'Multi-word phrase: fun game', example: 'The phrase \'fun game\' is commonly used in conversation.' },
     'hide and seek': { word: 'hide and seek', pronunciation: '/hide and seek/', definition_vi: 'trốn tìm', definition_en: 'meaning of hide and seek', example: 'She hide and seek with her friends after school.' },
     'look in the box': { word: 'look in the box', pronunciation: '/look in the box/', definition_vi: 'nhìn trong hộp', definition_en: 'meaning of look in the box', example: 'I look in the box.' },

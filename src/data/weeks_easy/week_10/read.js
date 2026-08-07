@@ -34,9 +34,9 @@ export const dictionary = {
     'big brown cow': { word: 'big brown cow', pronunciation: '/big brown cow/', definition_vi: 'con bò nâu to', definition_en: 'meaning of big brown cow', example: 'The farmer fed the big brown cow standing in the green meadow.' },
     'countryside is peaceful': { word: 'countryside is peaceful', pronunciation: '/countryside is peaceful/', definition_vi: 'đồng quê yên bình', definition_en: 'meaning of countryside is peaceful', example: 'The countryside is peaceful with green fields, singing birds and blue skies.' },
     'eats grass': { word: 'eats grass', pronunciation: '/eats grass/', definition_vi: 'ăn cỏ', definition_en: 'meaning of eats grass', example: 'The cow eats grass in the field.' },
-    'farm animals': { word: 'farm animals', pronunciation: '/farm animals/', definition_vi: 'farm animals', definition_en: 'meaning of farm animals', example: 'This is an example: farm animals.' },
+    'farm animals': { word: 'farm animals', pronunciation: '/farm animals/', definition_vi: 'nông trại động vật', definition_en: 'Key collocation: farm animals', example: 'Natural usage of \'farm animals\' in sentence context.' },
     'in the field': { word: 'in the field', pronunciation: '/in the field/', definition_vi: 'trong cánh đồng', definition_en: 'meaning of in the field', example: 'The cow eats grass in the field.' },
-    'runs fast': { word: 'runs fast', pronunciation: '/runs fast/', definition_vi: 'runs fast', definition_en: 'meaning of runs fast', example: 'This is an example: runs fast.' },
+    'runs fast': { word: 'runs fast', pronunciation: '/runs fast/', definition_vi: 'runs nhanh', definition_en: 'Key collocation: runs fast', example: 'Natural usage of \'runs fast\' in sentence context.' },
     'small white chicken': { word: 'small white chicken', pronunciation: '/small white chicken/', definition_vi: 'con gà trắng nhỏ', definition_en: 'meaning of small white chicken', example: 'A small white chicken pecked at the seeds in the farmyard.' },
     'tall trees': { word: 'tall trees', pronunciation: '/tall trees/', definition_vi: 'cây cao', definition_en: 'meaning of tall trees', example: 'Many tall trees grow along the riverbank.' }
 };

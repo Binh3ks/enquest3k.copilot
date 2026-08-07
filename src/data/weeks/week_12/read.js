@@ -53,6 +53,6 @@ export const dictionary = {
     'run fast': { word: 'run fast', pronunciation: '/run fast/', definition_vi: 'chạy nhanh', definition_en: 'meaning of run fast', example: 'The fastest runner on the team can run fast and win every race.' },
     'school talent show': { word: 'school talent show', pronunciation: '/school talent show/', definition_vi: 'buổi biểu diễn tài năng của trường', definition_en: 'Multi-word phrase: school talent show', example: 'The phrase \'school talent show\' is commonly used in conversation.' },
     'sing songs': { word: 'sing songs', pronunciation: '/sing songs/', definition_vi: 'hát bài hát', definition_en: 'meaning of sing songs', example: 'At assembly, all the students sing songs together every Monday morning.' },
-    'special talents': { word: 'special talents', pronunciation: '/special talents/', definition_vi: 'special talents', definition_en: 'meaning of special talents', example: 'This is an example: special talents.' },
+    'special talents': { word: 'special talents', pronunciation: '/special talents/', definition_vi: 'cụm từ vựng: special talents', definition_en: 'Collocation: special talents', example: 'The students learned \'special talents\' in their English lesson.' },
     'swim far': { word: 'swim far', pronunciation: '/swim far/', definition_vi: 'bơi xa', definition_en: 'meaning of swim far', example: 'This is an example: swim far.' }
 };

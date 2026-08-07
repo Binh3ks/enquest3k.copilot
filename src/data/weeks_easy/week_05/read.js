@@ -42,8 +42,8 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Every room': { word: 'Every room', pronunciation: '/every room/', definition_vi: 'mỗi phòng', definition_en: 'Multi-word phrase: every room', example: 'The phrase \'every room\' is commonly used in conversation.' },
-    'My house': { word: 'My house', pronunciation: '/my house/', definition_vi: '(cụm từ: my house)', definition_en: 'Multi-word phrase: my house', example: 'Use of \'my house\' in natural context.' },
-    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: '(cụm từ: my name)', definition_en: 'Multi-word phrase: my name', example: 'Use of \'my name\' in natural context.' },
+    'My house': { word: 'My house', pronunciation: '/my house/', definition_vi: 'cụm từ vựng: my house', definition_en: 'Collocation: my house', example: 'The students learned \'my house\' in their English lesson.' },
+    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: 'cụm từ vựng: my name', definition_en: 'Collocation: my name', example: 'The students learned \'my name\' in their English lesson.' },
     'at the table': { word: 'at the table', pronunciation: '/at the table/', definition_vi: 'ở bàn', definition_en: 'meaning of at the table', example: 'I sit on a chair at the table.' },
     'every evening': { word: 'every evening', pronunciation: '/every evening/', definition_vi: 'mỗi buổi tối', definition_en: 'meaning of every evening', example: 'We have dinner together every evening and talk about our day.' },
     'every room': { word: 'every room', pronunciation: '/every room/', definition_vi: 'mỗi phòng', definition_en: 'Multi-word phrase: every room', example: 'The phrase \'every room\' is commonly used in conversation.' },
@@ -51,8 +51,8 @@ export const dictionary = {
     'in the bathroom': { word: 'in the bathroom', pronunciation: '/in the bathroom/', definition_vi: 'trong phòng tắm', definition_en: 'meaning of in the bathroom', example: 'I wash my hands in the bathroom.' },
     'in the kitchen': { word: 'in the kitchen', pronunciation: '/in the kitchen/', definition_vi: 'trong bếp', definition_en: 'meaning of in the kitchen', example: 'In the kitchen, I open the cabinet and look in the fridge.' },
     'in the living room': { word: 'in the living room', pronunciation: '/in the living room/', definition_vi: 'trong phòng khách', definition_en: 'meaning of in the living room', example: 'We watch TV in the living room.' },
-    'my house': { word: 'my house', pronunciation: '/my house/', definition_vi: '(cụm từ: my house)', definition_en: 'Multi-word phrase: my house', example: 'Use of \'my house\' in natural context.' },
-    'sit on': { word: 'sit on', pronunciation: '/sit on/', definition_vi: 'ngồi trên', definition_en: 'meaning of sit on', example: 'I sit on a chair at the table.' },
+    'my house': { word: 'my house', pronunciation: '/my house/', definition_vi: 'cụm từ vựng: my house', definition_en: 'Collocation: my house', example: 'The students learned \'my house\' in their English lesson.' },
+    'sit on': { word: 'sit on', pronunciation: '/sɪt ɒn/', definition_vi: 'ngồi trên', definition_en: 'English collocation / phrase: sit on', example: 'I sit on a chair at my desk.' },
     'soft bed': { word: 'soft bed', pronunciation: '/soft bed/', definition_vi: 'giường mềm', definition_en: 'Multi-word phrase: soft bed', example: 'The phrase \'soft bed\' is commonly used in conversation.' },
     'to explore': { word: 'to explore', pronunciation: '/to explore/', definition_vi: 'để khám phá', definition_en: 'meaning of to explore', example: 'I like to explore every room.' },
     'wash my hands': { word: 'wash my hands', pronunciation: '/wash my hands/', definition_vi: 'rửa tay', definition_en: 'meaning of wash my hands', example: 'I wash my hands in the bathroom.' },

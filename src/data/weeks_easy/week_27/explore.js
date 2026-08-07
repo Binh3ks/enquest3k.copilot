@@ -57,16 +57,16 @@ export const chunk_focus = [
 
 export const dictionary = {
     'After that': { word: 'After that', pronunciation: '/after that/', definition_vi: 'sau đó', definition_en: 'meaning of after that', example: 'We visited the museum in the morning and after that, we had lunch at a café.' },
-    'at the top': { word: 'at the top', pronunciation: '/at the top/', definition_vi: 'at the top', definition_en: 'meaning of at the top', example: 'This is an example: at the top.' },
+    'at the top': { word: 'at the top', pronunciation: '/æt ðə tɒp/', definition_vi: 'ở trên đỉnh', definition_en: 'English collocation / phrase: at the top', example: 'The climber reached the flag at the top.' },
     'beautiful flower': { word: 'beautiful flower', pronunciation: '/beautiful flower/', definition_vi: 'hoa đẹp', definition_en: 'Multi-word phrase: beautiful flower', example: 'The phrase \'beautiful flower\' is commonly used in conversation.' },
-    'good soil': { word: 'good soil', pronunciation: '/good soil/', definition_vi: 'good soil', definition_en: 'meaning of good soil', example: 'This is an example: good soil.' },
-    'grow from': { word: 'grow from', pronunciation: '/grow from/', definition_vi: 'grow from', definition_en: 'meaning of grow from', example: 'This is an example: grow from.' },
-    'grows up': { word: 'grows up', pronunciation: '/grows up/', definition_vi: 'grows up', definition_en: 'meaning of grows up', example: 'This is an example: grows up.' },
+    'good soil': { word: 'good soil', pronunciation: '/good soil/', definition_vi: 'tốt soil', definition_en: 'Key collocation: good soil', example: 'Natural usage of \'good soil\' in sentence context.' },
+    'grow from': { word: 'grow from', pronunciation: '/grow from/', definition_vi: 'phát triển từ', definition_en: 'Key collocation: grow from', example: 'Natural usage of \'grow from\' in sentence context.' },
+    'grows up': { word: 'grows up', pronunciation: '/grows up/', definition_vi: 'grows lên', definition_en: 'Key collocation: grows up', example: 'Natural usage of \'grows up\' in sentence context.' },
     'leaf uses': { word: 'leaf uses', pronunciation: '/leaf uses/', definition_vi: 'lá cây sử dụng', definition_en: 'Multi-word phrase: leaf uses', example: 'The phrase \'leaf uses\' is commonly used in conversation.' },
     'lots of water': { word: 'lots of water', pronunciation: '/lots of water/', definition_vi: 'nhiều nước', definition_en: 'meaning of lots of water', example: 'This is an example: lots of water.' },
     'make food': { word: 'make food', pronunciation: '/make food/', definition_vi: 'nấu đồ ăn', definition_en: 'meaning of make food', example: 'My grandmother knows how to make food that tastes like heaven.' },
     'stem carries': { word: 'stem carries', pronunciation: '/stem carries/', definition_vi: 'thân cây mang', definition_en: 'Multi-word phrase: stem carries', example: 'The phrase \'stem carries\' is commonly used in conversation.' },
-    'sunny window': { word: 'sunny window', pronunciation: '/sunny window/', definition_vi: 'sunny window', definition_en: 'meaning of sunny window', example: 'This is an example: sunny window.' },
+    'sunny window': { word: 'sunny window', pronunciation: '/sunny window/', definition_vi: 'cụm từ vựng: sunny window', definition_en: 'Collocation: sunny window', example: 'The students learned \'sunny window\' in their English lesson.' },
     'three things': { word: 'three things', pronunciation: '/three things/', definition_vi: 'ba thứ', definition_en: 'Multi-word phrase: three things', example: 'The phrase \'three things\' is commonly used in conversation.' },
-    'tiny seed': { word: 'tiny seed', pronunciation: '/tiny seed/', definition_vi: 'tiny seed', definition_en: 'meaning of tiny seed', example: 'This is an example: tiny seed.' }
+    'tiny seed': { word: 'tiny seed', pronunciation: '/tiny seed/', definition_vi: 'cụm từ vựng: tiny seed', definition_en: 'Collocation: tiny seed', example: 'The students learned \'tiny seed\' in their English lesson.' }
 };

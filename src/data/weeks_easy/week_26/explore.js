@@ -54,15 +54,15 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'People of all ages': { word: 'People of all ages', pronunciation: '/people of all ages/', definition_vi: 'people of all ages', definition_en: 'meaning of people of all ages', example: 'This is an example: people of all ages.' },
+    'People of all ages': { word: 'People of all ages', pronunciation: '/people of all ages/', definition_vi: 'people của all ages', definition_en: 'Key collocation: people of all ages', example: 'Natural usage of \'people of all ages\' in sentence context.' },
     'about something': { word: 'about something', pronunciation: '/about something/', definition_vi: 'về cái gì đó', definition_en: 'Multi-word phrase: about something', example: 'The phrase \'about something\' is commonly used in conversation.' },
     'all over the world': { word: 'all over the world', pronunciation: '/all over the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of all over the world', example: 'This is an example: all over the world.' },
     'comic strip': { word: 'comic strip', pronunciation: '/comic strip/', definition_vi: 'truyện tranh khung', definition_en: 'a series of drawn panels that tell a story, often with captions and speech bubbles', example: 'Leo drew a funny comic strip about his weekend adventure.' },
-    'comic strips': { word: 'comic strips', pronunciation: '/comic strips/', definition_vi: 'comic strips', definition_en: 'meaning of comic strips', example: 'This is an example: comic strips.' },
+    'comic strips': { word: 'comic strips', pronunciation: '/comic strips/', definition_vi: 'truyện tranh ngắn', definition_en: 'English phrase: comic strips', example: 'The phrase \'comic strips\' means truyện tranh ngắn.' },
     'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'everyday life': { word: 'everyday life', pronunciation: '/everyday life/', definition_vi: 'everyday life', definition_en: 'meaning of everyday life', example: 'This is an example: everyday life.' },
+    'everyday life': { word: 'everyday life', pronunciation: '/everyday life/', definition_vi: 'cuộc sống hàng ngày', definition_en: 'English phrase: everyday life', example: 'The phrase \'everyday life\' means cuộc sống hàng ngày.' },
     'from right to left': { word: 'from right to left', pronunciation: '/from right to left/', definition_vi: 'từ phải sang trái', definition_en: 'meaning of from right to left', example: 'This is an example: from right to left.' },
-    'pencil and paper': { word: 'pencil and paper', pronunciation: '/pencil and paper/', definition_vi: 'pencil and paper', definition_en: 'meaning of pencil and paper', example: 'This is an example: pencil and paper.' },
-    'speech bubbles': { word: 'speech bubbles', pronunciation: '/speech bubbles/', definition_vi: 'speech bubbles', definition_en: 'meaning of speech bubbles', example: 'This is an example: speech bubbles.' },
+    'pencil and paper': { word: 'pencil and paper', pronunciation: '/pencil and paper/', definition_vi: 'cụm từ vựng: pencil and paper', definition_en: 'Collocation: pencil and paper', example: 'The students learned \'pencil and paper\' in their English lesson.' },
+    'speech bubbles': { word: 'speech bubbles', pronunciation: '/speech bubbles/', definition_vi: 'cụm từ vựng: speech bubbles', definition_en: 'Collocation: speech bubbles', example: 'The students learned \'speech bubbles\' in their English lesson.' },
     'tell stories': { word: 'tell stories', pronunciation: '/tell stories/', definition_vi: 'kể chuyện', definition_en: 'meaning of tell stories', example: 'This is an example: tell stories.' }
 };

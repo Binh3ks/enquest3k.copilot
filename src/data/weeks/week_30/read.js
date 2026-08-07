@@ -71,7 +71,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'At the market': { word: 'At the market', pronunciation: '/at the market/', definition_vi: '(cụm từ: at the market)', definition_en: 'Multi-word phrase: at the market', example: 'Use of \'at the market\' in natural context.' },
+    'At the market': { word: 'At the market', pronunciation: '/æt ðə ˈmɑːkɪt/', definition_vi: 'ở chợ', definition_en: 'English collocation / phrase: at the market', example: 'My mother buys vegetables at the market.' },
     'Last sunday': { word: 'Last sunday', pronunciation: '/last sunday/', definition_vi: 'chủ nhật tuần trước', definition_en: 'Multi-word phrase: last sunday', example: 'The phrase \'last sunday\' is commonly used in conversation.' },
     'Luna gave': { word: 'Luna gave', pronunciation: '/luna gave/', definition_vi: 'Luna đã cho', definition_en: 'Multi-word phrase: luna gave', example: 'The phrase \'luna gave\' is commonly used in conversation.' },
     'ate the food': { word: 'ate the food', pronunciation: '/ate the food/', definition_vi: 'ăn đồ ăn', definition_en: 'meaning of ate the food', example: 'The children ate the food from the picnic basket and drank cold lemonade.' },
@@ -79,14 +79,14 @@ export const dictionary = {
     'big red': { word: 'big red', pronunciation: '/big red/', definition_vi: 'đỏ lớn', definition_en: 'Multi-word phrase: big red', example: 'The phrase \'big red\' is commonly used in conversation.' },
     'big smile': { word: 'big smile', pronunciation: '/big smile/', definition_vi: 'nụ cười rộng', definition_en: 'Multi-word phrase: big smile', example: 'The phrase \'big smile\' is commonly used in conversation.' },
     'build this bridge': { word: 'build this bridge', pronunciation: '/build this bridge/', definition_vi: 'xây cây cầu này', definition_en: 'meaning of build this bridge', example: 'It took the workers two years to build this bridge across the wide river.' },
-    'by the lake': { word: 'by the lake', pronunciation: '/by the lake/', definition_vi: '(cụm từ: by the lake)', definition_en: 'Multi-word phrase: by the lake', example: 'Use of \'by the lake\' in natural context.' },
-    'cheese sandwiches': { word: 'cheese sandwiches', pronunciation: '/cheese sandwiches/', definition_vi: 'cheese sandwiches', definition_en: 'meaning of cheese sandwiches', example: 'This is an example: cheese sandwiches.' },
+    'by the lake': { word: 'by the lake', pronunciation: '/by the lake/', definition_vi: 'bên bờ hồ', definition_en: 'ESL phrase: by the lake', example: 'The students practiced using \'by the lake\' in class.' },
+    'cheese sandwiches': { word: 'cheese sandwiches', pronunciation: '/cheese sandwiches/', definition_vi: 'bánh mì kẹp phô mai', definition_en: 'ESL phrase: cheese sandwiches', example: 'The students practiced using \'cheese sandwiches\' in class.' },
     'cold lemonade': { word: 'cold lemonade', pronunciation: '/cold lemonade/', definition_vi: 'nước chanh lạnh', definition_en: 'Multi-word phrase: cold lemonade', example: 'The phrase \'cold lemonade\' is commonly used in conversation.' },
     'crossed the river': { word: 'crossed the river', pronunciation: '/crossed the river/', definition_vi: 'bơi qua sông', definition_en: 'meaning of crossed the river', example: 'The tortoise crossed the river slowly and steadily until it reached the other side.' },
     'dad bought': { word: 'dad bought', pronunciation: '/dad bought/', definition_vi: 'bố đã mua', definition_en: 'Multi-word phrase: dad bought', example: 'The phrase \'dad bought\' is commonly used in conversation.' },
     'drank lemonade': { word: 'drank lemonade', pronunciation: '/drank lemonade/', definition_vi: 'uống nước chanh', definition_en: 'Multi-word phrase: drank lemonade', example: 'The phrase \'drank lemonade\' is commonly used in conversation.' },
     'felt cheerful': { word: 'felt cheerful', pronunciation: '/felt cheerful/', definition_vi: 'cảm thấy vui vẻ', definition_en: 'Multi-word phrase: felt cheerful', example: 'The phrase \'felt cheerful\' is commonly used in conversation.' },
-    'fresh strawberries': { word: 'fresh strawberries', pronunciation: '/fresh strawberries/', definition_vi: 'fresh strawberries', definition_en: 'meaning of fresh strawberries', example: 'This is an example: fresh strawberries.' },
+    'fresh strawberries': { word: 'fresh strawberries', pronunciation: '/fresh strawberries/', definition_vi: 'tươi mát strawberries', definition_en: 'Key collocation: fresh strawberries', example: 'Natural usage of \'fresh strawberries\' in sentence context.' },
     'good cook': { word: 'good cook', pronunciation: '/good cook/', definition_vi: 'đầu bếp giỏi', definition_en: 'Multi-word phrase: good cook', example: 'The phrase \'good cook\' is commonly used in conversation.' },
     'green grass': { word: 'green grass', pronunciation: '/green grass/', definition_vi: 'cỏ xanh', definition_en: 'meaning of green grass', example: 'The garden was covered in soft green grass and bright yellow flowers.' },
     'had a picnic': { word: 'had a picnic', pronunciation: '/had a picnic/', definition_vi: 'dã ngoại', definition_en: 'meaning of had a picnic', example: 'Last Sunday, the children had a picnic in the park.' },

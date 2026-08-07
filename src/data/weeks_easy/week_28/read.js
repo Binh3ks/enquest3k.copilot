@@ -66,7 +66,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'Once upon a time': { word: 'Once upon a time', pronunciation: '/once upon a time/', definition_vi: 'once upon a time', definition_en: 'meaning of once upon a time', example: 'This is an example: once upon a time.' },
+    'Once upon a time': { word: 'Once upon a time', pronunciation: '/once upon a time/', definition_vi: 'once upon một thời gian', definition_en: 'Key collocation: once upon a time', example: 'Natural usage of \'once upon a time\' in sentence context.' },
     'One day': { word: 'One day', pronunciation: '/one day/', definition_vi: 'một ngày', definition_en: 'on a particular day in the past or future', example: 'One day, I will travel to the moon.' },
     'Slow and steady wins the race': { word: 'Slow and steady wins the race', pronunciation: '/slow and steady wins the race/', definition_vi: 'chậm và chắc chắn thì thắng cuộc đua', definition_en: 'working carefully and patiently leads to success; a proverb', example: 'Slow and steady wins the race.' },
     'animals watched': { word: 'animals watched', pronunciation: '/animals watched/', definition_vi: 'các con vật theo dõi', definition_en: 'meaning of animals watched', example: 'All the animals watched from the riverbank as the race continued.' },

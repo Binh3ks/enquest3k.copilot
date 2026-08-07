@@ -37,6 +37,6 @@ export const dictionary = {
     'make new discoveries': { word: 'make new discoveries', pronunciation: '/make new discoveries/', definition_vi: 'có những khám phá mới', definition_en: 'to find or learn something new', example: 'All these tools help scientists make new discoveries every day.' },
     'observe very small things': { word: 'observe very small things', pronunciation: '/observe very small things/', definition_vi: 'quan sát những thứ rất nhỏ', definition_en: 'to look at tiny things carefully', example: 'A microscope helps scientists observe very small things.' },
     'tiny insects': { word: 'tiny insects', pronunciation: '/tiny insects/', definition_vi: 'côn trùng nhỏ', definition_en: 'meaning of tiny insects', example: 'This is an example: tiny insects.' },
-    'tools help scientists': { word: 'tools help scientists', pronunciation: '/tools help scientists/', definition_vi: 'tools help scientists', definition_en: 'meaning of tools help scientists', example: 'This is an example: tools help scientists.' },
+    'tools help scientists': { word: 'tools help scientists', pronunciation: '/tools help scientists/', definition_vi: 'tools giúp đỡ scientists', definition_en: 'English phrase: tools help scientists', example: 'The phrase \'tools help scientists\' means tools giúp đỡ scientists.' },
     'write down': { word: 'write down', pronunciation: '/write down/', definition_vi: 'ghi lại', definition_en: 'to record something in writing', example: 'Scientists write down what they discover in their notebooks.' }
 };

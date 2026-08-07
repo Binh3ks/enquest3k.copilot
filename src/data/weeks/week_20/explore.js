@@ -89,10 +89,10 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Long ago': { word: 'Long ago', pronunciation: '/long ago/', definition_vi: 'lâu rồi', definition_en: 'meaning of long ago', example: 'This is an example: long ago.' },
-    'Look around': { word: 'Look around', pronunciation: '/look around/', definition_vi: 'nhìn xung quanh', definition_en: 'meaning of look around', example: 'I look around my classroom.' },
+    'Look around': { word: 'Look around', pronunciation: '/lʊk əˈraʊnd/', definition_vi: 'nhìn xung quanh', definition_en: 'English collocation / phrase: look around', example: 'Look around the room to find your pencil.' },
     'New buildings': { word: 'New buildings', pronunciation: '/new buildings/', definition_vi: 'những tòa nhà mới', definition_en: 'Multi-word phrase: new buildings', example: 'The phrase \'new buildings\' is commonly used in conversation.' },
     'Over time': { word: 'Over time', pronunciation: '/over time/', definition_vi: 'theo thời gian', definition_en: 'meaning of over time', example: 'This is an example: over time.' },
-    'Some people': { word: 'Some people', pronunciation: '/some people/', definition_vi: '(cụm từ: some people)', definition_en: 'Multi-word phrase: some people', example: 'Use of \'some people\' in natural context.' },
+    'Some people': { word: 'Some people', pronunciation: '/some people/', definition_vi: 'cụm từ vựng: some people', definition_en: 'Collocation: some people', example: 'The students learned \'some people\' in their English lesson.' },
     'all around us': { word: 'all around us', pronunciation: '/all around us/', definition_vi: 'khắp xung quanh chúng ta', definition_en: 'meaning of all around us', example: 'This is an example: all around us.' },
     'came to': { word: 'came to', pronunciation: '/came to/', definition_vi: 'đến (gặp ai đó)', definition_en: 'meaning of came to', example: 'A kind man came to help the lost puppy sitting alone on the street.' },
     'grew into': { word: 'grew into', pronunciation: '/grew into/', definition_vi: 'phát triển thành', definition_en: 'changed gradually into something bigger or different', example: 'The village grew into a busy town.' },

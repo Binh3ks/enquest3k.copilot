@@ -64,7 +64,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'My teacher': { word: 'My teacher', pronunciation: '/my teacher/', definition_vi: '(cụm từ: my teacher)', definition_en: 'Multi-word phrase: my teacher', example: 'Use of \'my teacher\' in natural context.' },
+    'My teacher': { word: 'My teacher', pronunciation: '/my teacher/', definition_vi: 'my giáo viên', definition_en: 'Collocation: my teacher', example: 'The students learned \'my teacher\' in their English lesson.' },
     'art class': { word: 'art class', pronunciation: '/art class/', definition_vi: 'lớp mỹ thuật', definition_en: 'Multi-word phrase: art class', example: 'The phrase \'art class\' is commonly used in conversation.' },
     'beautiful piece': { word: 'beautiful piece', pronunciation: '/beautiful piece/', definition_vi: 'mảnh đẹp', definition_en: 'Multi-word phrase: beautiful piece', example: 'The phrase \'beautiful piece\' is commonly used in conversation.' },
     'bright pigment colors': { word: 'bright pigment colors', pronunciation: '/bright pigment colors/', definition_vi: 'màu sắc pigment tươi sáng', definition_en: 'Multi-word phrase: bright pigment colors', example: 'The phrase \'bright pigment colors\' is commonly used in conversation.' },
@@ -82,7 +82,7 @@ export const dictionary = {
     'painted a picture': { word: 'painted a picture', pronunciation: '/painted a picture/', definition_vi: 'vẽ một bức tranh', definition_en: 'meaning of painted a picture', example: 'In art class, everyone painted a picture of their favourite animal.' },
     'painted carefully': { word: 'painted carefully', pronunciation: '/painted carefully/', definition_vi: 'tô màu cẩn thận', definition_en: 'meaning of painted carefully', example: 'Emily painted carefully so the colours stayed inside the lines.' },
     'picked up my brush': { word: 'picked up my brush', pronunciation: '/picked up my brush/', definition_vi: 'nhặt cọ của tôi', definition_en: 'meaning of picked up my brush', example: 'I picked up my brush and painted a bright rainbow on the white page.' },
-    'piece of paper': { word: 'piece of paper', pronunciation: '/piece of paper/', definition_vi: 'piece of paper', definition_en: 'meaning of piece of paper', example: 'This is an example: piece of paper.' },
+    'piece of paper': { word: 'piece of paper', pronunciation: '/piece of paper/', definition_vi: 'piece của paper', definition_en: 'Key collocation: piece of paper', example: 'Natural usage of \'piece of paper\' in sentence context.' },
     'red pigment': { word: 'red pigment', pronunciation: '/red pigment/', definition_vi: 'pigment đỏ', definition_en: 'Multi-word phrase: red pigment', example: 'The phrase \'red pigment\' is commonly used in conversation.' },
     'using blue': { word: 'using blue', pronunciation: '/using blue/', definition_vi: 'dùng màu xanh', definition_en: 'Multi-word phrase: using blue', example: 'The phrase \'using blue\' is commonly used in conversation.' },
     'very happy': { word: 'very happy', pronunciation: '/very happy/', definition_vi: 'rất vui', definition_en: 'meaning of very happy', example: 'I was very happy when I found my lost puppy hiding under the bed.' },

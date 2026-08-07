@@ -66,10 +66,10 @@ export const chunk_focus = [
 
 export const dictionary = {
     'five senses': { word: 'five senses', pronunciation: '/five senses/', definition_vi: 'năm giác quan', definition_en: 'Multi-word phrase: five senses', example: 'The phrase \'five senses\' is commonly used in conversation.' },
-    'fresh forest air': { word: 'fresh forest air', pronunciation: '/fresh forest air/', definition_vi: 'fresh forest air', definition_en: 'meaning of fresh forest air', example: 'This is an example: fresh forest air.' },
+    'fresh forest air': { word: 'fresh forest air', pronunciation: '/fresh forest air/', definition_vi: 'tươi mát forest không khí', definition_en: 'Key collocation: fresh forest air', example: 'Natural usage of \'fresh forest air\' in sentence context.' },
     'great place': { word: 'great place', pronunciation: '/great place/', definition_vi: 'nơi tuyệt vời', definition_en: 'meaning of great place', example: 'This is an example: great place.' },
     'heard the': { word: 'heard the', pronunciation: '/heard the/', definition_vi: 'nghe thấy', definition_en: 'meaning of heard the', example: 'From the top of the hill, we heard the sound of the river below.' },
-    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: 'giúp đỡ us', definition_en: 'English phrase: help us', example: 'The phrase \'help us\' means giúp đỡ us.' },
     'learn about': { word: 'learn about', pronunciation: '/learn about/', definition_vi: 'học về', definition_en: 'meaning of learn about', example: 'This is an example: learn about.' },
     'loud call': { word: 'loud call', pronunciation: '/loud call/', definition_vi: 'tiếng gọi to', definition_en: 'Multi-word phrase: loud call', example: 'The phrase \'loud call\' is commonly used in conversation.' },
     'luna smelt': { word: 'luna smelt', pronunciation: '/luna smelt/', definition_vi: 'Luna đã ngửi', definition_en: 'Multi-word phrase: luna smelt', example: 'The phrase \'luna smelt\' is commonly used in conversation.' },

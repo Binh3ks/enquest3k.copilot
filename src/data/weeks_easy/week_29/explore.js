@@ -63,19 +63,19 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'On the ground': { word: 'On the ground', pronunciation: '/on the ground/', definition_vi: '(cụm từ: on the ground)', definition_en: 'Multi-word phrase: on the ground', example: 'Use of \'on the ground\' in natural context.' },
+    'On the ground': { word: 'On the ground', pronunciation: '/on the ground/', definition_vi: 'trên ground', definition_en: 'English collocation / phrase: on the ground', example: 'It is located on the ground.' },
     'The pilot': { word: 'The pilot', pronunciation: '/the pilot/', definition_vi: 'phi công', definition_en: 'meaning of the pilot', example: 'The pilot flew the airplane safely through the cloudy weather to the destination.' },
     'answers questions': { word: 'answers questions', pronunciation: '/answers questions/', definition_vi: 'trả lời câu hỏi', definition_en: 'meaning of answers questions', example: 'This is an example: answers questions.' },
     'because of': { word: 'because of', pronunciation: '/because of/', definition_vi: 'bởi vì', definition_en: 'meaning of because of', example: 'This is an example: because of.' },
-    'change a student\'s life': { word: 'change a student\'s life', pronunciation: '/change a student\'s life/', definition_vi: 'change a student\'s life', definition_en: 'meaning of change a student\'s life', example: 'This is an example: change a student\'s life.' },
-    'eat food': { word: 'eat food', pronunciation: '/eat food/', definition_vi: '(cụm từ: eat food)', definition_en: 'Multi-word phrase: eat food', example: 'Use of \'eat food\' in natural context.' },
+    'change a student\'s life': { word: 'change a student\'s life', pronunciation: '/change a student\'s life/', definition_vi: 'thay đổi cuộc đời của một học sinh', definition_en: 'ESL phrase: change a student\'s life', example: 'The students practiced using \'change a student\'s life\' in class.' },
+    'eat food': { word: 'eat food', pronunciation: '/eat food/', definition_vi: 'ăn thức ăn', definition_en: 'English phrase: eat food', example: 'The phrase \'eat food\' means ăn thức ăn.' },
     'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
     'every single day': { word: 'every single day', pronunciation: '/every single day/', definition_vi: 'từng ngày một', definition_en: 'meaning of every single day', example: 'This is an example: every single day.' },
     'for us': { word: 'for us', pronunciation: '/for us/', definition_vi: 'cho chúng tôi', definition_en: 'meaning of for us', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
     'get better': { word: 'get better', pronunciation: '/get better/', definition_vi: 'khá hơn', definition_en: 'meaning of get better', example: 'This is an example: get better.' },
     'great adventure': { word: 'great adventure', pronunciation: '/great adventure/', definition_vi: 'cuộc phiêu lưu tuyệt vời', definition_en: 'meaning of great adventure', example: 'The journey to the hidden island was a great adventure for the explorers.' },
     'great teacher': { word: 'great teacher', pronunciation: '/great teacher/', definition_vi: 'giáo viên tuyệt vời', definition_en: 'Multi-word phrase: great teacher', example: 'The phrase \'great teacher\' is commonly used in conversation.' },
-    'grows food': { word: 'grows food', pronunciation: '/grows food/', definition_vi: 'grows food', definition_en: 'meaning of grows food', example: 'This is an example: grows food.' },
+    'grows food': { word: 'grows food', pronunciation: '/grows food/', definition_vi: 'grows thức ăn', definition_en: 'English phrase: grows food', example: 'The phrase \'grows food\' means grows thức ăn.' },
     'looks after': { word: 'looks after', pronunciation: '/looks after/', definition_vi: 'chăm sóc', definition_en: 'takes care of someone or something', example: 'She looks after her little brother at home.' },
     'magic trip': { word: 'magic trip', pronunciation: '/magic trip/', definition_vi: 'chuyến đi kỳ diệu', definition_en: 'meaning of magic trip', example: 'The magic trip took us to a beautiful island surrounded by blue sea.' },
     'many people': { word: 'many people', pronunciation: '/many people/', definition_vi: 'nhiều người', definition_en: 'Multi-word phrase: many people', example: 'The phrase \'many people\' is commonly used in conversation.' },

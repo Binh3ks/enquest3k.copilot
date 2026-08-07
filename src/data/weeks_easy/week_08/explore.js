@@ -52,15 +52,15 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'On the wall': { word: 'On the wall', pronunciation: '/on the wall/', definition_vi: 'trên tường', definition_en: 'meaning of on the wall', example: 'I see a lamp on the table and a mirror on the wall.' },
-    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'On the wall': { word: 'On the wall', pronunciation: '/ɒn ðə wɔːl/', definition_vi: 'trên tường', definition_en: 'English collocation / phrase: on the wall', example: 'There is a beautiful picture on the wall.' },
+    'There are': { word: 'There are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
-    'in the world': { word: 'in the world', pronunciation: '/in the world/', definition_vi: '(cụm từ: in the world)', definition_en: 'Multi-word phrase: in the world', example: 'Use of \'in the world\' in natural context.' },
+    'in the world': { word: 'in the world', pronunciation: '/in the world/', definition_vi: 'trong world', definition_en: 'ESL phrase: in the world', example: 'The students practiced using \'in the world\' in class.' },
     'many things': { word: 'many things', pronunciation: '/many things/', definition_vi: 'nhiều thứ', definition_en: 'Multi-word phrase: many things', example: 'The phrase \'many things\' is commonly used in conversation.' },
-    'on the shelves': { word: 'on the shelves', pronunciation: '/on the shelves/', definition_vi: 'trên kệ', definition_en: 'meaning of on the shelves', example: 'There are books on the shelves.' },
-    'on the wall': { word: 'on the wall', pronunciation: '/on the wall/', definition_vi: 'trên tường', definition_en: 'meaning of on the wall', example: 'I see a lamp on the table and a mirror on the wall.' },
-    'sit on': { word: 'sit on', pronunciation: '/sit on/', definition_vi: 'ngồi trên', definition_en: 'meaning of sit on', example: 'I sit on a chair at the table.' },
-    'there are': { word: 'there are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'on the shelves': { word: 'on the shelves', pronunciation: '/ɒn ðə ʃelvz/', definition_vi: 'trên kệ sách', definition_en: 'English collocation / phrase: on the shelves', example: 'Books are arranged neatly on the shelves.' },
+    'on the wall': { word: 'on the wall', pronunciation: '/ɒn ðə wɔːl/', definition_vi: 'trên tường', definition_en: 'English collocation / phrase: on the wall', example: 'There is a beautiful picture on the wall.' },
+    'sit on': { word: 'sit on', pronunciation: '/sɪt ɒn/', definition_vi: 'ngồi trên', definition_en: 'English collocation / phrase: sit on', example: 'I sit on a chair at my desk.' },
+    'there are': { word: 'there are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'to learn': { word: 'to learn', pronunciation: '/to learn/', definition_vi: 'để học', definition_en: 'meaning of to learn', example: 'I want to learn English every day.' },
-    'writes on': { word: 'writes on', pronunciation: '/writes on/', definition_vi: 'viết trên', definition_en: 'meaning of writes on', example: 'The teacher writes on the board.' }
+    'writes on': { word: 'writes on', pronunciation: '/raɪts ɒn/', definition_vi: 'viết lên', definition_en: 'English collocation / phrase: writes on', example: 'The teacher writes on the whiteboard.' }
 };

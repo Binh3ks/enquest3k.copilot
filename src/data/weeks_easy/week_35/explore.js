@@ -111,7 +111,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    '1.1°C warmer': { word: '1.1°C warmer', pronunciation: '/1.1°c warmer/', definition_vi: '1.1°c warmer', definition_en: 'key phrase: 1.1°c warmer', example: 'They used the phrase \'1.1°c warmer\' in their reading.' },
+    '1.1°C warmer': { word: '1.1°C warmer', pronunciation: '/1.1°c warmer/', definition_vi: '11c warmer', definition_en: 'Key collocation: 1.1°c warmer', example: 'Natural usage of \'1.1°c warmer\' in sentence context.' },
     'Climate change': { word: 'Climate change', pronunciation: '/ˈklaɪmət tʃeɪndʒ/', definition_vi: 'biến đổi khí hậu', definition_en: 'meaning of climate change', example: 'Climate change is making the Earth warmer.' },
     'What happens': { word: 'What happens', pronunciation: '/what happens/', definition_vi: 'điều gì xảy ra', definition_en: 'Multi-word phrase: what happens', example: 'The phrase \'what happens\' is commonly used in conversation.' },
     'animal homes': { word: 'animal homes', pronunciation: '/animal homes/', definition_vi: 'nơi ở của động vật', definition_en: 'Multi-word phrase: animal homes', example: 'The phrase \'animal homes\' is commonly used in conversation.' },
@@ -128,6 +128,6 @@ export const dictionary = {
     'polar ice': { word: 'polar ice', pronunciation: '/ˈpoʊlər aɪs/', definition_vi: 'băng ở hai cực', definition_en: 'meaning of polar ice', example: 'Polar ice is melting because of climate change.' },
     'sea levels': { word: 'sea levels', pronunciation: '/sea levels/', definition_vi: 'mực nước biển', definition_en: 'meaning of sea levels', example: 'This is an example: sea levels.' },
     'warm blanket': { word: 'warm blanket', pronunciation: '/warm blanket/', definition_vi: 'chăn ấm', definition_en: 'meaning of warm blanket', example: 'This is an example: warm blanket.' },
-    'warmer planet': { word: 'warmer planet', pronunciation: '/warmer planet/', definition_vi: 'warmer planet', definition_en: 'meaning of warmer planet', example: 'This is an example: warmer planet.' },
+    'warmer planet': { word: 'warmer planet', pronunciation: '/warmer planet/', definition_vi: 'warmer hành tinh', definition_en: 'Key collocation: warmer planet', example: 'Natural usage of \'warmer planet\' in sentence context.' },
     'years ago': { word: 'years ago', pronunciation: '/years ago/', definition_vi: 'nhiều năm trước', definition_en: 'Multi-word phrase: years ago', example: 'The phrase \'years ago\' is commonly used in conversation.' }
 };

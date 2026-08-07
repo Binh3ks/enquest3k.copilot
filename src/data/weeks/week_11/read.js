@@ -55,11 +55,11 @@ export const dictionary = {
     'go to the park': { word: 'go to the park', pronunciation: '/go to the park/', definition_vi: 'đi công viên', definition_en: 'meaning of go to the park', example: 'First, I go to the park.' },
     'have lunch': { word: 'have lunch', pronunciation: '/have lunch/', definition_vi: 'ăn trưa', definition_en: 'meaning of have lunch', example: 'Then we have lunch at a restaurant.' },
     'many animals': { word: 'many animals', pronunciation: '/many animals/', definition_vi: 'nhiều động vật', definition_en: 'meaning of many animals', example: 'In the city, there are many cars, but here there are many animals.' },
-    'my mom': { word: 'my mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
+    'my mom': { word: 'my mom', pronunciation: '/my mom/', definition_vi: 'cụm từ vựng: my mom', definition_en: 'Collocation: my mom', example: 'The students learned \'my mom\' in their English lesson.' },
     'on monday': { word: 'on monday', pronunciation: '/on monday/', definition_vi: 'vào thứ Hai', definition_en: 'meaning of on monday', example: 'I have art class on Monday every week.' },
     'play at the park': { word: 'play at the park', pronunciation: '/play at the park/', definition_vi: 'chơi ở công viên', definition_en: 'meaning of play at the park', example: 'I play at the park with my friends.' },
     'read a story book': { word: 'read a story book', pronunciation: '/read a story book/', definition_vi: 'đọc sách truyện', definition_en: 'meaning of read a story book', example: 'Before bed, I love to read a story book with my dad or my mum.' },
     'slide down': { word: 'slide down', pronunciation: '/slide down/', definition_vi: 'trượt xuống', definition_en: 'meaning of slide down', example: 'I slide down at the playground.' },
     'very delicious': { word: 'very delicious', pronunciation: '/very delicious/', definition_vi: 'rất ngon', definition_en: 'meaning of very delicious', example: 'Grandma\'s cooking is very delicious — everyone wants second helpings.' },
-    'with my friends': { word: 'with my friends', pronunciation: '/with my friends/', definition_vi: '(cụm từ: with my friends)', definition_en: 'Multi-word phrase: with my friends', example: 'Use of \'with my friends\' in natural context.' }
+    'with my friends': { word: 'with my friends', pronunciation: '/with my friends/', definition_vi: 'với friends của tôi', definition_en: 'ESL phrase: with my friends', example: 'The students practiced using \'with my friends\' in class.' }
 };

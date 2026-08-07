@@ -55,16 +55,16 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'burning buildings': { word: 'burning buildings', pronunciation: '/burning buildings/', definition_vi: 'burning buildings', definition_en: 'meaning of burning buildings', example: 'This is an example: burning buildings.' },
-    'cares for': { word: 'cares for', pronunciation: '/cares for/', definition_vi: 'cares for', definition_en: 'meaning of cares for', example: 'This is an example: cares for.' },
+    'burning buildings': { word: 'burning buildings', pronunciation: '/burning buildings/', definition_vi: 'những tòa nhà đang cháy', definition_en: 'ESL phrase: burning buildings', example: 'The students practiced using \'burning buildings\' in class.' },
+    'cares for': { word: 'cares for', pronunciation: '/cares for/', definition_vi: 'chăm sóc cho', definition_en: 'ESL phrase: cares for', example: 'The students practiced using \'cares for\' in class.' },
     'delicious food': { word: 'delicious food', pronunciation: '/delicious food/', definition_vi: 'đồ ăn ngon', definition_en: 'meaning of delicious food', example: 'This is an example: delicious food.' },
     'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: 'giúp đỡ us', definition_en: 'English phrase: help us', example: 'The phrase \'help us\' means giúp đỡ us.' },
     'makes sure': { word: 'makes sure', pronunciation: '/makes sure/', definition_vi: 'đảm bảo', definition_en: 'checks that something happens or is true', example: 'The nurse makes sure the patient is safe.' },
     'many people': { word: 'many people', pronunciation: '/many people/', definition_vi: 'nhiều người', definition_en: 'Multi-word phrase: many people', example: 'The phrase \'many people\' is commonly used in conversation.' },
     'natural world': { word: 'natural world', pronunciation: '/natural world/', definition_vi: 'thế giới tự nhiên', definition_en: 'meaning of natural world', example: 'This is an example: natural world.' },
     'put out': { word: 'put out', pronunciation: '/put out/', definition_vi: 'dập tắt', definition_en: 'meaning of put out', example: 'This is an example: put out.' },
     'saves lives': { word: 'saves lives', pronunciation: '/saves lives/', definition_vi: 'cứu sống', definition_en: 'helps people stay alive', example: 'Fast medical care saves lives.' },
-    'saying a single word': { word: 'saying a single word', pronunciation: '/saying a single word/', definition_vi: 'saying a single word', definition_en: 'meaning of saying a single word', example: 'This is an example: saying a single word.' },
+    'saying a single word': { word: 'saying a single word', pronunciation: '/saying a single word/', definition_vi: 'saying một single word', definition_en: 'Key collocation: saying a single word', example: 'Natural usage of \'saying a single word\' in sentence context.' },
     'stay healthy': { word: 'stay healthy', pronunciation: '/stay healthy/', definition_vi: 'giữ sức khỏe', definition_en: 'meaning of stay healthy', example: 'This is an example: stay healthy.' }
 };

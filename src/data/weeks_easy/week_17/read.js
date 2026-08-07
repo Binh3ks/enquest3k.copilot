@@ -29,7 +29,7 @@ export const chunk_focus = [
 
 export const dictionary = {
     'am ready': { word: 'am ready', pronunciation: '/am ready/', definition_vi: 'đã sẵn sàng', definition_en: 'meaning of am ready', example: 'I have my backpack and my lunch — I am ready for school!' },
-    'helps the trees grow': { word: 'helps the trees grow', pronunciation: '/helps the trees grow/', definition_vi: 'helps the trees grow', definition_en: 'meaning of helps the trees grow', example: 'This is an example: helps the trees grow.' },
+    'helps the trees grow': { word: 'helps the trees grow', pronunciation: '/helps the trees grow/', definition_vi: 'helps the trees phát triển', definition_en: 'Key collocation: helps the trees grow', example: 'Natural usage of \'helps the trees grow\' in sentence context.' },
     'it is raining': { word: 'it is raining', pronunciation: '/it is raining/', definition_vi: 'trời đang mưa', definition_en: 'meaning of it is raining', example: 'This morning, it is raining very hard.' },
     'jump in puddles': { word: 'jump in puddles', pronunciation: '/jump in puddles/', definition_vi: 'nhảy trong vũng nước', definition_en: 'meaning of jump in puddles', example: 'I can jump in puddles.' },
     'look out the window': { word: 'look out the window', pronunciation: '/look out the window/', definition_vi: 'nhìn ra cửa sổ', definition_en: 'meaning of look out the window', example: 'I like to look out the window and watch the clouds float by.' },

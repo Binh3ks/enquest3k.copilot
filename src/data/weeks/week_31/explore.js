@@ -59,9 +59,9 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'Look around': { word: 'Look around', pronunciation: '/look around/', definition_vi: 'nhìn xung quanh', definition_en: 'meaning of look around', example: 'I look around my classroom.' },
-    'at the market': { word: 'at the market', pronunciation: '/at the market/', definition_vi: '(cụm từ: at the market)', definition_en: 'Multi-word phrase: at the market', example: 'Use of \'at the market\' in natural context.' },
-    'break down': { word: 'break down', pronunciation: '/break down/', definition_vi: 'break down', definition_en: 'meaning of break down', example: 'This is an example: break down.' },
+    'Look around': { word: 'Look around', pronunciation: '/lʊk əˈraʊnd/', definition_vi: 'nhìn xung quanh', definition_en: 'English collocation / phrase: look around', example: 'Look around the room to find your pencil.' },
+    'at the market': { word: 'at the market', pronunciation: '/æt ðə ˈmɑːkɪt/', definition_vi: 'ở chợ', definition_en: 'English collocation / phrase: at the market', example: 'My mother buys vegetables at the market.' },
+    'break down': { word: 'break down', pronunciation: '/breɪk daʊn/', definition_vi: 'phân hủy / bị hỏng', definition_en: 'English collocation / phrase: break down', example: 'Organic waste will break down over time.' },
     'chemical reaction': { word: 'chemical reaction', pronunciation: '/chemical reaction/', definition_vi: 'phản ứng hóa học', definition_en: 'meaning of chemical reaction', example: 'This is an example: chemical reaction.' },
     'clear liquid': { word: 'clear liquid', pronunciation: '/clear liquid/', definition_vi: 'chất lỏng trong suốt', definition_en: 'Multi-word phrase: clear liquid', example: 'The phrase \'clear liquid\' is commonly used in conversation.' },
     'come from': { word: 'come from', pronunciation: '/come from/', definition_vi: 'đến từ', definition_en: 'meaning of come from', example: 'This is an example: come from.' },
@@ -71,8 +71,8 @@ export const dictionary = {
     'made of': { word: 'made of', pronunciation: '/made of/', definition_vi: 'được làm bằng', definition_en: 'constructed from a material', example: 'The chair is made of wood.' },
     'plastic bottle': { word: 'plastic bottle', pronunciation: '/plastic bottle/', definition_vi: 'chai nhựa', definition_en: 'Multi-word phrase: plastic bottle', example: 'The phrase \'plastic bottle\' is commonly used in conversation.' },
     'soft fabric': { word: 'soft fabric', pronunciation: '/soft fabric/', definition_vi: 'vải mềm', definition_en: 'Multi-word phrase: soft fabric', example: 'The phrase \'soft fabric\' is commonly used in conversation.' },
-    'still standing': { word: 'still standing', pronunciation: '/still standing/', definition_vi: 'still standing', definition_en: 'meaning of still standing', example: 'This is an example: still standing.' },
-    'their life': { word: 'their life', pronunciation: '/their life/', definition_vi: '(cụm từ: their life)', definition_en: 'Multi-word phrase: their life', example: 'Use of \'their life\' in natural context.' },
+    'still standing': { word: 'still standing', pronunciation: '/still standing/', definition_vi: 'cụm từ vựng: still standing', definition_en: 'Collocation: still standing', example: 'The students learned \'still standing\' in their English lesson.' },
+    'their life': { word: 'their life', pronunciation: '/their life/', definition_vi: 'their cuộc sống', definition_en: 'English phrase: their life', example: 'The phrase \'their life\' means their cuộc sống.' },
     'wooden shelf': { word: 'wooden shelf', pronunciation: '/wooden shelf/', definition_vi: 'giá gỗ', definition_en: 'meaning of wooden shelf', example: 'Dad put the books neatly on the wooden shelf in the study room.' },
-    'working hard': { word: 'working hard', pronunciation: '/working hard/', definition_vi: 'working hard', definition_en: 'meaning of working hard', example: 'This is an example: working hard.' }
+    'working hard': { word: 'working hard', pronunciation: '/working hard/', definition_vi: 'working chăm chỉ', definition_en: 'Key collocation: working hard', example: 'Natural usage of \'working hard\' in sentence context.' }
 };

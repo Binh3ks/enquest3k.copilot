@@ -55,19 +55,19 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'My dad': { word: 'My dad', pronunciation: '/my dad/', definition_vi: '(cụm từ: my dad)', definition_en: 'Multi-word phrase: my dad', example: 'Use of \'my dad\' in natural context.' },
-    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
-    'favorite place': { word: 'favorite place', pronunciation: '/favorite place/', definition_vi: 'favorite place', definition_en: 'meaning of favorite place', example: 'This is an example: favorite place.' },
+    'My dad': { word: 'My dad', pronunciation: '/my dad/', definition_vi: 'my bố', definition_en: 'Collocation: my dad', example: 'The students learned \'my dad\' in their English lesson.' },
+    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: 'cụm từ vựng: my mom', definition_en: 'Collocation: my mom', example: 'The students learned \'my mom\' in their English lesson.' },
+    'favorite place': { word: 'favorite place', pronunciation: '/favorite place/', definition_vi: 'yêu thích địa điểm', definition_en: 'Key collocation: favorite place', example: 'Natural usage of \'favorite place\' in sentence context.' },
     'flying his yellow kite': { word: 'flying his yellow kite', pronunciation: '/flying his yellow kite/', definition_vi: 'thả chiếc diều vàng của cậu ấy', definition_en: 'making his yellow kite move in the sky', example: 'The boy is flying his yellow kite in the park.' },
-    'going to the park': { word: 'going to the park', pronunciation: '/going to the park/', definition_vi: 'going to the park', definition_en: 'meaning of going to the park', example: 'This is an example: going to the park.' },
+    'going to the park': { word: 'going to the park', pronunciation: '/going to the park/', definition_vi: 'tiếp tục đến the park', definition_en: 'Key collocation: going to the park', example: 'Natural usage of \'going to the park\' in sentence context.' },
     'going very high': { word: 'going very high', pronunciation: '/going very high/', definition_vi: 'bay rất cao', definition_en: 'meaning of going very high', example: 'It is going very high!' },
-    'having picnics': { word: 'having picnics', pronunciation: '/having picnics/', definition_vi: 'having picnics', definition_en: 'meaning of having picnics', example: 'This is an example: having picnics.' },
-    'having so much fun': { word: 'having so much fun', pronunciation: '/having so much fun/', definition_vi: 'having so much fun', definition_en: 'meaning of having so much fun', example: 'This is an example: having so much fun.' },
+    'having picnics': { word: 'having picnics', pronunciation: '/having picnics/', definition_vi: 'thực hiện dã ngoại', definition_en: 'Collocation: having picnics', example: 'The students learned \'having picnics\' in their English lesson.' },
+    'having so much fun': { word: 'having so much fun', pronunciation: '/having so much fun/', definition_vi: 'having so much vui vẻ', definition_en: 'Key collocation: having so much fun', example: 'Natural usage of \'having so much fun\' in sentence context.' },
     'little brother': { word: 'little brother', pronunciation: '/little brother/', definition_vi: 'em trai', definition_en: 'Multi-word phrase: little brother', example: 'The phrase \'little brother\' is commonly used in conversation.' },
-    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: '(cụm từ: my family)', definition_en: 'Multi-word phrase: my family', example: 'Use of \'my family\' in natural context.' },
-    'my house': { word: 'my house', pronunciation: '/my house/', definition_vi: '(cụm từ: my house)', definition_en: 'Multi-word phrase: my house', example: 'Use of \'my house\' in natural context.' },
+    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: 'my gia đình', definition_en: 'Key collocation: my family', example: 'Natural usage of \'my family\' in sentence context.' },
+    'my house': { word: 'my house', pronunciation: '/my house/', definition_vi: 'cụm từ vựng: my house', definition_en: 'Collocation: my house', example: 'The students learned \'my house\' in their English lesson.' },
     'nice shade': { word: 'nice shade', pronunciation: '/nice shade/', definition_vi: 'bóng mát đẹp', definition_en: 'Multi-word phrase: nice shade', example: 'The phrase \'nice shade\' is commonly used in conversation.' },
     'sitting on a bench': { word: 'sitting on a bench', pronunciation: '/sitting on a bench/', definition_vi: 'ngồi trên ghế dài', definition_en: 'meaning of sitting on a bench', example: 'We sitting on a bench together whenever we can.' },
-    'under a big tree': { word: 'under a big tree', pronunciation: '/under a big tree/', definition_vi: 'under a big tree', definition_en: 'meaning of under a big tree', example: 'This is an example: under a big tree.' },
-    'with my friends': { word: 'with my friends', pronunciation: '/with my friends/', definition_vi: '(cụm từ: with my friends)', definition_en: 'Multi-word phrase: with my friends', example: 'Use of \'with my friends\' in natural context.' }
+    'under a big tree': { word: 'under a big tree', pronunciation: '/under a big tree/', definition_vi: 'under một big tree', definition_en: 'Key collocation: under a big tree', example: 'Natural usage of \'under a big tree\' in sentence context.' },
+    'with my friends': { word: 'with my friends', pronunciation: '/with my friends/', definition_vi: 'với friends của tôi', definition_en: 'ESL phrase: with my friends', example: 'The students practiced using \'with my friends\' in class.' }
 };

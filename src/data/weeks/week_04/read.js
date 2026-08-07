@@ -39,8 +39,8 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Every day': { word: 'Every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
-    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: '(cụm từ: my name)', definition_en: 'Multi-word phrase: my name', example: 'Use of \'my name\' in natural context.' },
+    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: 'cụm từ vựng: my mom', definition_en: 'Collocation: my mom', example: 'The students learned \'my mom\' in their English lesson.' },
+    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: 'cụm từ vựng: my name', definition_en: 'Collocation: my name', example: 'The students learned \'my name\' in their English lesson.' },
     'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
     'drawing colorful pictures': { word: 'drawing colorful pictures', pronunciation: '/drawing colorful pictures/', definition_vi: 'vẽ tranh nhiều màu', definition_en: 'meaning of drawing colorful pictures', example: 'The artist sat on the grass, drawing colorful pictures of the garden.' },
     'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },

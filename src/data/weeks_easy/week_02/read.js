@@ -37,7 +37,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'Our home': { word: 'Our home', pronunciation: '/our home/', definition_vi: '(cụm từ: our home)', definition_en: 'Multi-word phrase: our home', example: 'Use of \'our home\' in natural context.' },
+    'Our home': { word: 'Our home', pronunciation: '/our home/', definition_vi: 'our nhà', definition_en: 'English phrase: our home', example: 'The phrase \'our home\' means our nhà.' },
     'big brother': { word: 'big brother', pronunciation: '/big brother/', definition_vi: 'anh trai', definition_en: 'meaning of big brother', example: 'My big brother helps me with my homework every evening.' },
     'draws pictures': { word: 'draws pictures', pronunciation: '/draws pictures/', definition_vi: 'vẽ tranh', definition_en: 'meaning of draws pictures', example: 'My sister draws pictures every single day.' },
     'each other': { word: 'each other', pronunciation: '/each other/', definition_vi: 'nhau, lẫn nhau', definition_en: 'meaning of each other', example: 'We love each other very much.' },
@@ -51,7 +51,7 @@ export const dictionary = {
     'little sister': { word: 'little sister', pronunciation: '/little sister/', definition_vi: 'em gái', definition_en: 'meaning of little sister', example: 'My little sister always follows me around the house.' },
     'lovely mother': { word: 'lovely mother', pronunciation: '/lovely mother/', definition_vi: 'mẹ yêu dấu', definition_en: 'meaning of lovely mother', example: 'My lovely mother reads me a bedtime story every single night.' },
     'makes food': { word: 'makes food', pronunciation: '/makes food/', definition_vi: 'nấu đồ ăn', definition_en: 'meaning of makes food', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: '(cụm từ: my family)', definition_en: 'Multi-word phrase: my family', example: 'Use of \'my family\' in natural context.' },
+    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: 'my gia đình', definition_en: 'Key collocation: my family', example: 'Natural usage of \'my family\' in sentence context.' },
     'plays with me': { word: 'plays with me', pronunciation: '/plays with me/', definition_vi: 'chơi với tôi', definition_en: 'meaning of plays with me', example: 'He plays with me in the park.' },
     'talk about': { word: 'talk about', pronunciation: '/talk about/', definition_vi: 'nói về', definition_en: 'meaning of talk about', example: 'We talk about our day together at dinner.' },
     'to be with': { word: 'to be with', pronunciation: '/to be with/', definition_vi: 'được ở cùng với', definition_en: 'to stay together with someone', example: 'I am happy to be with my family.' },

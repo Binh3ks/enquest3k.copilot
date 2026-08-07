@@ -41,7 +41,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: '(cụm từ: my mom)', definition_en: 'Multi-word phrase: my mom', example: 'Use of \'my mom\' in natural context.' },
+    'My mom': { word: 'My mom', pronunciation: '/my mom/', definition_vi: 'cụm từ vựng: my mom', definition_en: 'Collocation: my mom', example: 'The students learned \'my mom\' in their English lesson.' },
     'On Sunday': { word: 'On Sunday', pronunciation: '/on sunday/', definition_vi: 'Vào Chủ Nhật', definition_en: 'meaning of on sunday', example: 'On Sunday, I go to the zoo.' },
     'at home': { word: 'at home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
     'at the library': { word: 'at the library', pronunciation: '/at the library/', definition_vi: 'ở thư viện', definition_en: 'meaning of at the library', example: 'I read a book at the library.' },

@@ -62,15 +62,15 @@ export const dictionary = {
     'a big part of': { word: 'a big part of', pronunciation: '/a big part of/', definition_vi: 'một phần lớn của', definition_en: 'meaning of a big part of', example: 'This is an example: a big part of.' },
     'come from': { word: 'come from', pronunciation: '/come from/', definition_vi: 'đến từ', definition_en: 'meaning of come from', example: 'This is an example: come from.' },
     'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'feel bored': { word: 'feel bored', pronunciation: '/feel bored/', definition_vi: 'feel bored', definition_en: 'meaning of feel bored', example: 'This is an example: feel bored.' },
+    'feel bored': { word: 'feel bored', pronunciation: '/feel bored/', definition_vi: 'cảm thấy bored', definition_en: 'English phrase: feel bored', example: 'The phrase \'feel bored\' means cảm thấy bored.' },
     'feel calm': { word: 'feel calm', pronunciation: '/feel calm/', definition_vi: 'cảm thấy bình tĩnh', definition_en: 'meaning of feel calm', example: 'When I am reading a good book, I feel calm and feel happy.' },
     'feel cheerful': { word: 'feel cheerful', pronunciation: '/feel cheerful/', definition_vi: 'cảm thấy vui vẻ', definition_en: 'to feel happy and lively', example: 'When you feel cheerful, it means you are happy and full of energy.' },
     'feel excited': { word: 'feel excited', pronunciation: '/feel excited/', definition_vi: 'cảm thấy hào hứng', definition_en: 'meaning of feel excited', example: 'When I am playing with my dog, I feel excited.' },
-    'feel relieved': { word: 'feel relieved', pronunciation: '/feel relieved/', definition_vi: 'feel relieved', definition_en: 'meaning of feel relieved', example: 'This is an example: feel relieved.' },
-    'feel scared': { word: 'feel scared', pronunciation: '/feel scared/', definition_vi: 'feel scared', definition_en: 'meaning of feel scared', example: 'This is an example: feel scared.' },
+    'feel relieved': { word: 'feel relieved', pronunciation: '/feel relieved/', definition_vi: 'cảm thấy relieved', definition_en: 'English phrase: feel relieved', example: 'The phrase \'feel relieved\' means cảm thấy relieved.' },
+    'feel scared': { word: 'feel scared', pronunciation: '/feel scared/', definition_vi: 'cảm thấy scared', definition_en: 'English phrase: feel scared', example: 'The phrase \'feel scared\' means cảm thấy scared.' },
     'full of energy': { word: 'full of energy', pronunciation: '/full of energy/', definition_vi: 'tràn đầy năng lượng', definition_en: 'meaning of full of energy', example: 'This is an example: full of energy.' },
-    'sends a message': { word: 'sends a message', pronunciation: '/sends a message/', definition_vi: 'sends a message', definition_en: 'meaning of sends a message', example: 'This is an example: sends a message.' },
+    'sends a message': { word: 'sends a message', pronunciation: '/sends a message/', definition_vi: 'sends một message', definition_en: 'Key collocation: sends a message', example: 'Natural usage of \'sends a message\' in sentence context.' },
     'there is': { word: 'there is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
-    'think clearly': { word: 'think clearly', pronunciation: '/think clearly/', definition_vi: 'think clearly', definition_en: 'meaning of think clearly', example: 'This is an example: think clearly.' },
-    'what to do': { word: 'what to do', pronunciation: '/what to do/', definition_vi: 'what to do', definition_en: 'meaning of what to do', example: 'This is an example: what to do.' }
+    'think clearly': { word: 'think clearly', pronunciation: '/think clearly/', definition_vi: 'nghĩ clearly', definition_en: 'English phrase: think clearly', example: 'The phrase \'think clearly\' means nghĩ clearly.' },
+    'what to do': { word: 'what to do', pronunciation: '/what to do/', definition_vi: 'what to thực hiện', definition_en: 'English phrase: what to do', example: 'The phrase \'what to do\' means what to thực hiện.' }
 };

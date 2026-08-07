@@ -58,7 +58,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'At school': { word: 'At school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'At school': { word: 'At school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
     'Every child': { word: 'Every child', pronunciation: '/every child/', definition_vi: 'mỗi đứa trẻ', definition_en: 'Multi-word phrase: every child', example: 'The phrase \'every child\' is commonly used in conversation.' },
     'Some children': { word: 'Some children', pronunciation: '/some children/', definition_vi: 'vài trẻ em', definition_en: 'Multi-word phrase: some children', example: 'The phrase \'some children\' is commonly used in conversation.' },
     'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
@@ -69,7 +69,7 @@ export const dictionary = {
     'sing songs': { word: 'sing songs', pronunciation: '/sing songs/', definition_vi: 'hát bài hát', definition_en: 'meaning of sing songs', example: 'At assembly, all the students sing songs together every Monday morning.' },
     'stand up': { word: 'stand up', pronunciation: '/stand up/', definition_vi: 'đứng dậy', definition_en: 'meaning of stand up', example: 'This is an example: stand up.' },
     'tell stories': { word: 'tell stories', pronunciation: '/tell stories/', definition_vi: 'kể chuyện', definition_en: 'meaning of tell stories', example: 'This is an example: tell stories.' },
-    'their family': { word: 'their family', pronunciation: '/their family/', definition_vi: '(cụm từ: their family)', definition_en: 'Multi-word phrase: their family', example: 'Use of \'their family\' in natural context.' },
-    'their parents': { word: 'their parents', pronunciation: '/their parents/', definition_vi: '(cụm từ: their parents)', definition_en: 'Multi-word phrase: their parents', example: 'Use of \'their parents\' in natural context.' },
-    'their work': { word: 'their work', pronunciation: '/their work/', definition_vi: '(cụm từ: their work)', definition_en: 'Multi-word phrase: their work', example: 'Use of \'their work\' in natural context.' }
+    'their family': { word: 'their family', pronunciation: '/their family/', definition_vi: 'their gia đình', definition_en: 'Key collocation: their family', example: 'Natural usage of \'their family\' in sentence context.' },
+    'their parents': { word: 'their parents', pronunciation: '/their parents/', definition_vi: 'cụm từ vựng: their parents', definition_en: 'Collocation: their parents', example: 'The students learned \'their parents\' in their English lesson.' },
+    'their work': { word: 'their work', pronunciation: '/their work/', definition_vi: 'their làm việc', definition_en: 'English phrase: their work', example: 'The phrase \'their work\' means their làm việc.' }
 };

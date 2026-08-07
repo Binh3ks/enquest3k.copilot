@@ -53,12 +53,12 @@ export const chunk_focus = [
 export const dictionary = {
     'Hide and seek': { word: 'Hide and seek', pronunciation: '/hide and seek/', definition_vi: 'trốn tìm', definition_en: 'meaning of hide and seek', example: 'She hide and seek with her friends after school.' },
     'Some children': { word: 'Some children', pronunciation: '/some children/', definition_vi: 'vài trẻ em', definition_en: 'Multi-word phrase: some children', example: 'The phrase \'some children\' is commonly used in conversation.' },
-    'a little': { word: 'a little', pronunciation: '/a little/', definition_vi: '(cụm từ: a little)', definition_en: 'Multi-word phrase: a little', example: 'Use of \'a little\' in natural context.' },
+    'a little': { word: 'a little', pronunciation: '/ə ˈlɪtl/', definition_vi: 'một chút', definition_en: 'English collocation / phrase: a little', example: 'Add a little sugar to the tea.' },
     'best place': { word: 'best place', pronunciation: '/best place/', definition_vi: 'nơi tốt nhất', definition_en: 'Multi-word phrase: best place', example: 'The phrase \'best place\' is commonly used in conversation.' },
     'hide and seek': { word: 'hide and seek', pronunciation: '/hide and seek/', definition_vi: 'trốn tìm', definition_en: 'meaning of hide and seek', example: 'She hide and seek with her friends after school.' },
     'next to': { word: 'next to', pronunciation: '/next to/', definition_vi: 'bên cạnh', definition_en: 'meaning of next to', example: 'There is a ruler next to the pen.' },
     'on the floor': { word: 'on the floor', pronunciation: '/on the floor/', definition_vi: 'trên sàn', definition_en: 'meaning of on the floor', example: 'The room has a rug on the floor.' },
-    'one person': { word: 'one person', pronunciation: '/one person/', definition_vi: 'một người', definition_en: 'Multi-word phrase: one person', example: 'Use of \'one person\' in natural context.' },
+    'one person': { word: 'one person', pronunciation: '/one person/', definition_vi: 'cụm từ vựng: one person', definition_en: 'Collocation: one person', example: 'The students learned \'one person\' in their English lesson.' },
     'treasure hunt': { word: 'treasure hunt', pronunciation: '/treasure hunt/', definition_vi: 'săn kho báu', definition_en: 'Multi-word phrase: treasure hunt', example: 'The phrase \'treasure hunt\' is commonly used in conversation.' },
     'under the desk': { word: 'under the desk', pronunciation: '/under the desk/', definition_vi: 'dưới bàn', definition_en: 'meaning of under the desk', example: 'The toy car is under the desk!' }
 };

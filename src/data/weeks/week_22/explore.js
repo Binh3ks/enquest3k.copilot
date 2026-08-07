@@ -84,7 +84,7 @@ export const dictionary = {
     'at a time': { word: 'at a time', pronunciation: '/at a time/', definition_vi: 'mỗi lần', definition_en: 'meaning of at a time', example: 'This is an example: at a time.' },
     'every answer': { word: 'every answer', pronunciation: '/every answer/', definition_vi: 'mỗi câu trả lời', definition_en: 'Multi-word phrase: every answer', example: 'The phrase \'every answer\' is commonly used in conversation.' },
     'every clue': { word: 'every clue', pronunciation: '/every clue/', definition_vi: 'mỗi manh mối', definition_en: 'Multi-word phrase: every clue', example: 'The phrase \'every clue\' is commonly used in conversation.' },
-    'full story': { word: 'full story', pronunciation: '/full story/', definition_vi: 'full story', definition_en: 'meaning of full story', example: 'This is an example: full story.' },
+    'full story': { word: 'full story', pronunciation: '/full story/', definition_vi: 'đầy story', definition_en: 'Key collocation: full story', example: 'Natural usage of \'full story\' in sentence context.' },
     'last night': { word: 'last night', pronunciation: '/last night/', definition_vi: 'tối qua', definition_en: 'the night before this morning', example: 'Last night I read a book before going to sleep.' },
     'last week': { word: 'last week', pronunciation: '/last week/', definition_vi: 'tuần trước', definition_en: 'the week before this week', example: 'Last week our class went on a trip to the park.' },
     'look for': { word: 'look for', pronunciation: '/look for/', definition_vi: 'tìm kiếm', definition_en: 'meaning of look for', example: 'My friends and I look for hidden treasure.' },

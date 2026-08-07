@@ -46,7 +46,7 @@ export const dictionary = {
     'cut shapes': { word: 'cut shapes', pronunciation: '/cut shapes/', definition_vi: 'cắt hình', definition_en: 'meaning of cut shapes', example: 'She used scissors to cut shapes from green paper.' },
     'draw pictures': { word: 'draw pictures', pronunciation: '/draw pictures/', definition_vi: 'vẽ tranh', definition_en: 'meaning of draw pictures', example: 'I draw pictures of animals and flowers.' },
     'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: 'giúp đỡ us', definition_en: 'English phrase: help us', example: 'The phrase \'help us\' means giúp đỡ us.' },
     'lunch box': { word: 'lunch box', pronunciation: '/lunch box/', definition_vi: 'hộp cơm', definition_en: 'a box for carrying your food', example: 'I packed a sandwich and some fruit in my lunch box.' },
     'school bag': { word: 'school bag', pronunciation: '/school bag/', definition_vi: 'cặp sách', definition_en: 'a bag for carrying school things', example: 'I put my books and water bottle in my school bag.' },
     'water bottle': { word: 'water bottle', pronunciation: '/water bottle/', definition_vi: 'bình nước', definition_en: 'a bottle for drinking water', example: 'Remember to fill your water bottle before the trip.' }

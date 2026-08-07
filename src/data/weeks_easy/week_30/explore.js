@@ -56,17 +56,17 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'at the park': { word: 'at the park', pronunciation: '/at the park/', definition_vi: '(cụm từ: at the park)', definition_en: 'Multi-word phrase: at the park', example: 'Use of \'at the park\' in natural context.' },
+    'at the park': { word: 'at the park', pronunciation: '/æt ðə pɑːk/', definition_vi: 'ở công viên', definition_en: 'English collocation / phrase: at the park', example: 'We played football at the park.' },
     'big red': { word: 'big red', pronunciation: '/big red/', definition_vi: 'đỏ lớn', definition_en: 'Multi-word phrase: big red', example: 'The phrase \'big red\' is commonly used in conversation.' },
-    'cooks delicious food': { word: 'cooks delicious food', pronunciation: '/cooks delicious food/', definition_vi: 'cooks delicious food', definition_en: 'meaning of cooks delicious food', example: 'This is an example: cooks delicious food.' },
+    'cooks delicious food': { word: 'cooks delicious food', pronunciation: '/cooks delicious food/', definition_vi: 'nấu món ăn thơm ngon', definition_en: 'English phrase: cooks delicious food', example: 'The phrase \'cooks delicious food\' means nấu món ăn thơm ngon.' },
     'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: '(cụm từ: help us)', definition_en: 'Multi-word phrase: help us', example: 'Use of \'help us\' in natural context.' },
+    'help us': { word: 'help us', pronunciation: '/help us/', definition_vi: 'giúp đỡ us', definition_en: 'English phrase: help us', example: 'The phrase \'help us\' means giúp đỡ us.' },
     'learn new things': { word: 'learn new things', pronunciation: '/learn new things/', definition_vi: 'học những điều mới', definition_en: 'to discover or study something you did not know before', example: 'These tools help scientists learn new things every day.' },
     'looks after': { word: 'looks after', pronunciation: '/looks after/', definition_vi: 'chăm sóc', definition_en: 'takes care of someone or something', example: 'She looks after her little brother at home.' },
     'makes food': { word: 'makes food', pronunciation: '/makes food/', definition_vi: 'nấu đồ ăn', definition_en: 'meaning of makes food', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
     'makes new discoveries': { word: 'makes new discoveries', pronunciation: '/makes new discoveries/', definition_vi: 'tạo ra những khám phá mới', definition_en: 'finds or uncovers something new', example: 'A scientist makes new discoveries through careful research.' },
     'many people': { word: 'many people', pronunciation: '/many people/', definition_vi: 'nhiều người', definition_en: 'Multi-word phrase: many people', example: 'The phrase \'many people\' is commonly used in conversation.' },
-    'people in danger': { word: 'people in danger', pronunciation: '/people in danger/', definition_vi: 'people in danger', definition_en: 'meaning of people in danger', example: 'This is an example: people in danger.' },
-    'put out fires': { word: 'put out fires', pronunciation: '/put out fires/', definition_vi: 'put out fires', definition_en: 'meaning of put out fires', example: 'This is an example: put out fires.' },
+    'people in danger': { word: 'people in danger', pronunciation: '/people in danger/', definition_vi: 'people trong danger', definition_en: 'Key collocation: people in danger', example: 'Natural usage of \'people in danger\' in sentence context.' },
+    'put out fires': { word: 'put out fires', pronunciation: '/put out fires/', definition_vi: 'put ra fires', definition_en: 'Collocation: put out fires', example: 'The students learned \'put out fires\' in their English lesson.' },
     'stay healthy': { word: 'stay healthy', pronunciation: '/stay healthy/', definition_vi: 'giữ sức khỏe', definition_en: 'meaning of stay healthy', example: 'This is an example: stay healthy.' }
 };

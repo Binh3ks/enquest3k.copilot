@@ -59,20 +59,20 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'absorbs water': { word: 'absorbs water', pronunciation: '/absorbs water/', definition_vi: 'absorbs water', definition_en: 'meaning of absorbs water', example: 'This is an example: absorbs water.' },
-    'at the top': { word: 'at the top', pronunciation: '/at the top/', definition_vi: 'at the top', definition_en: 'meaning of at the top', example: 'This is an example: at the top.' },
-    'good soil': { word: 'good soil', pronunciation: '/good soil/', definition_vi: 'good soil', definition_en: 'meaning of good soil', example: 'This is an example: good soil.' },
-    'grow from': { word: 'grow from', pronunciation: '/grow from/', definition_vi: 'grow from', definition_en: 'meaning of grow from', example: 'This is an example: grow from.' },
+    'absorbs water': { word: 'absorbs water', pronunciation: '/əbˈzɔːbz ˈwɔːtər/', definition_vi: 'hút nước', definition_en: 'English collocation / phrase: absorbs water', example: 'The dry sponge absorbs water quickly.' },
+    'at the top': { word: 'at the top', pronunciation: '/æt ðə tɒp/', definition_vi: 'ở trên đỉnh', definition_en: 'English collocation / phrase: at the top', example: 'The climber reached the flag at the top.' },
+    'good soil': { word: 'good soil', pronunciation: '/good soil/', definition_vi: 'tốt soil', definition_en: 'Key collocation: good soil', example: 'Natural usage of \'good soil\' in sentence context.' },
+    'grow from': { word: 'grow from', pronunciation: '/grow from/', definition_vi: 'phát triển từ', definition_en: 'Key collocation: grow from', example: 'Natural usage of \'grow from\' in sentence context.' },
     'grow strong': { word: 'grow strong', pronunciation: '/grow strong/', definition_vi: 'lớn lên khỏe mạnh', definition_en: 'meaning of grow strong', example: 'This is an example: grow strong.' },
     'life cycle': { word: 'life cycle', pronunciation: '/life cycle/', definition_vi: 'vòng đời', definition_en: 'meaning of life cycle', example: 'This is an example: life cycle.' },
     'lotus flower': { word: 'lotus flower', pronunciation: '/lotus flower/', definition_vi: 'hoa sen', definition_en: 'Multi-word phrase: lotus flower', example: 'The phrase \'lotus flower\' is commonly used in conversation.' },
     'make food': { word: 'make food', pronunciation: '/make food/', definition_vi: 'nấu đồ ăn', definition_en: 'meaning of make food', example: 'My grandmother knows how to make food that tastes like heaven.' },
-    'national flower': { word: 'national flower', pronunciation: '/national flower/', definition_vi: 'national flower', definition_en: 'meaning of national flower', example: 'This is an example: national flower.' },
-    'produce energy': { word: 'produce energy', pronunciation: '/produce energy/', definition_vi: 'produce energy', definition_en: 'meaning of produce energy', example: 'This is an example: produce energy.' },
-    'small beginnings': { word: 'small beginnings', pronunciation: '/small beginnings/', definition_vi: 'small beginnings', definition_en: 'meaning of small beginnings', example: 'This is an example: small beginnings.' },
+    'national flower': { word: 'national flower', pronunciation: '/national flower/', definition_vi: 'cụm từ vựng: national flower', definition_en: 'Collocation: national flower', example: 'The students learned \'national flower\' in their English lesson.' },
+    'produce energy': { word: 'produce energy', pronunciation: '/produce energy/', definition_vi: 'cụm từ vựng: produce energy', definition_en: 'Collocation: produce energy', example: 'The students learned \'produce energy\' in their English lesson.' },
+    'small beginnings': { word: 'small beginnings', pronunciation: '/small beginnings/', definition_vi: 'cụm từ vựng: small beginnings', definition_en: 'Collocation: small beginnings', example: 'The students learned \'small beginnings\' in their English lesson.' },
     'small flower': { word: 'small flower', pronunciation: '/small flower/', definition_vi: 'hoa nhỏ', definition_en: 'Multi-word phrase: small flower', example: 'The phrase \'small flower\' is commonly used in conversation.' },
     'stem carries': { word: 'stem carries', pronunciation: '/stem carries/', definition_vi: 'thân cây mang', definition_en: 'Multi-word phrase: stem carries', example: 'The phrase \'stem carries\' is commonly used in conversation.' },
     'three things': { word: 'three things', pronunciation: '/three things/', definition_vi: 'ba thứ', definition_en: 'Multi-word phrase: three things', example: 'The phrase \'three things\' is commonly used in conversation.' },
-    'tiny seed': { word: 'tiny seed', pronunciation: '/tiny seed/', definition_vi: 'tiny seed', definition_en: 'meaning of tiny seed', example: 'This is an example: tiny seed.' },
+    'tiny seed': { word: 'tiny seed', pronunciation: '/tiny seed/', definition_vi: 'cụm từ vựng: tiny seed', definition_en: 'Collocation: tiny seed', example: 'The students learned \'tiny seed\' in their English lesson.' },
     'tiny sprout': { word: 'tiny sprout', pronunciation: '/tiny sprout/', definition_vi: 'mầm nhỏ', definition_en: 'meaning of tiny sprout', example: 'After a few days, a tiny sprout appeared above the dark soil.' }
 };

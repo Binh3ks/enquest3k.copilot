@@ -33,8 +33,8 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: '(cụm từ: my name)', definition_en: 'Multi-word phrase: my name', example: 'Use of \'my name\' in natural context.' },
-    'Our home': { word: 'Our home', pronunciation: '/our home/', definition_vi: '(cụm từ: our home)', definition_en: 'Multi-word phrase: our home', example: 'Use of \'our home\' in natural context.' },
+    'My name': { word: 'My name', pronunciation: '/my name/', definition_vi: 'cụm từ vựng: my name', definition_en: 'Collocation: my name', example: 'The students learned \'my name\' in their English lesson.' },
+    'Our home': { word: 'Our home', pronunciation: '/our home/', definition_vi: 'our nhà', definition_en: 'English phrase: our home', example: 'The phrase \'our home\' means our nhà.' },
     'are like a team': { word: 'are like a team', pronunciation: '/are like a team/', definition_vi: 'như một đội', definition_en: 'meaning of are like a team', example: 'We are like a team!' },
     'big brother': { word: 'big brother', pronunciation: '/big brother/', definition_vi: 'anh trai', definition_en: 'meaning of big brother', example: 'My big brother helps me with my homework every evening.' },
     'each other': { word: 'each other', pronunciation: '/each other/', definition_vi: 'nhau, lẫn nhau', definition_en: 'meaning of each other', example: 'We love each other very much.' },
@@ -44,10 +44,10 @@ export const dictionary = {
     'funny and sweet': { word: 'funny and sweet', pronunciation: '/funny and sweet/', definition_vi: 'vui nhộn và ngọt ngào', definition_en: 'meaning of funny and sweet', example: 'The little puppy was funny and sweet, running around with its tail wagging.' },
     'helps me with': { word: 'helps me with', pronunciation: '/helps me with/', definition_vi: 'giúp tôi với', definition_en: 'meaning of helps me with', example: 'He helps me with homework.' },
     'little sister': { word: 'little sister', pronunciation: '/little sister/', definition_vi: 'em gái', definition_en: 'meaning of little sister', example: 'My little sister always follows me around the house.' },
-    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: '(cụm từ: my family)', definition_en: 'Multi-word phrase: my family', example: 'Use of \'my family\' in natural context.' },
-    'my father': { word: 'my father', pronunciation: '/my father/', definition_vi: '(cụm từ: my father)', definition_en: 'Multi-word phrase: my father', example: 'Use of \'my father\' in natural context.' },
-    'my mother': { word: 'my mother', pronunciation: '/my mother/', definition_vi: '(cụm từ: my mother)', definition_en: 'Multi-word phrase: my mother', example: 'Use of \'my mother\' in natural context.' },
-    'our family': { word: 'our family', pronunciation: '/our family/', definition_vi: '(cụm từ: our family)', definition_en: 'Multi-word phrase: our family', example: 'Use of \'our family\' in natural context.' },
+    'my family': { word: 'my family', pronunciation: '/my family/', definition_vi: 'my gia đình', definition_en: 'Key collocation: my family', example: 'Natural usage of \'my family\' in sentence context.' },
+    'my father': { word: 'my father', pronunciation: '/my father/', definition_vi: 'cụm từ vựng: my father', definition_en: 'Collocation: my father', example: 'The students learned \'my father\' in their English lesson.' },
+    'my mother': { word: 'my mother', pronunciation: '/my mother/', definition_vi: 'cụm từ vựng: my mother', definition_en: 'Collocation: my mother', example: 'The students learned \'my mother\' in their English lesson.' },
+    'our family': { word: 'our family', pronunciation: '/our family/', definition_vi: 'của chúng tôi gia đình', definition_en: 'Key collocation: our family', example: 'Natural usage of \'our family\' in sentence context.' },
     'strong and kind': { word: 'strong and kind', pronunciation: '/strong and kind/', definition_vi: 'mạnh mẽ và tốt bụng', definition_en: 'meaning of strong and kind', example: 'The superhero in the story was strong and kind, helping everyone in need.' },
     'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' },
     'works hard': { word: 'works hard', pronunciation: '/works hard/', definition_vi: 'làm việc chăm chỉ', definition_en: 'meaning of works hard', example: 'My mum works hard every day to provide for our family.' }

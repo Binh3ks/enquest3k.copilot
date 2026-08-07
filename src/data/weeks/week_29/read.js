@@ -94,8 +94,8 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Last week': { word: 'Last week', pronunciation: '/last week/', definition_vi: 'tuần trước', definition_en: 'the week before this week', example: 'Last week our class went on a trip to the park.' },
-    'On the island': { word: 'On the island', pronunciation: '/on the island/', definition_vi: '(cụm từ: on the island)', definition_en: 'Multi-word phrase: on the island', example: 'Use of \'on the island\' in natural context.' },
-    'On the way': { word: 'On the way', pronunciation: '/on the way/', definition_vi: '(cụm từ: on the way)', definition_en: 'Multi-word phrase: on the way', example: 'Use of \'on the way\' in natural context.' },
+    'On the island': { word: 'On the island', pronunciation: '/on the island/', definition_vi: 'trên island', definition_en: 'English collocation / phrase: on the island', example: 'It is located on the island.' },
+    'On the way': { word: 'On the way', pronunciation: '/on the way/', definition_vi: 'trên way', definition_en: 'English collocation / phrase: on the way', example: 'It is located on the way.' },
     'always remember': { word: 'always remember', pronunciation: '/always remember/', definition_vi: 'luôn nhớ', definition_en: 'Multi-word phrase: always remember', example: 'The phrase \'always remember\' is commonly used in conversation.' },
     'came to': { word: 'came to', pronunciation: '/came to/', definition_vi: 'đến (gặp ai đó)', definition_en: 'meaning of came to', example: 'A kind man came to help the lost puppy sitting alone on the street.' },
     'dolphins jumped out': { word: 'dolphins jumped out', pronunciation: '/dolphins jumped out/', definition_vi: 'cá heo nhảy ra', definition_en: 'Multi-word phrase: dolphins jumped out', example: 'The phrase \'dolphins jumped out\' is commonly used in conversation.' },
@@ -107,8 +107,8 @@ export const dictionary = {
     'gave it': { word: 'gave it', pronunciation: '/gave it/', definition_vi: 'trao nó', definition_en: 'meaning of gave it', example: 'She gave it to her best friend as a birthday present last week.' },
     'gave them': { word: 'gave them', pronunciation: '/gave them/', definition_vi: 'trao cho họ', definition_en: 'meaning of gave them', example: 'The teacher gave them new books to read for the weekend.' },
     'got on': { word: 'got on', pronunciation: '/got on/', definition_vi: 'lên (phương tiện)', definition_en: 'meaning of got on', example: 'The children got on the bus and found their seats quickly.' },
-    'help them': { word: 'help them', pronunciation: '/help them/', definition_vi: '(cụm từ: help them)', definition_en: 'Multi-word phrase: help them', example: 'Use of \'help them\' in natural context.' },
-    'in the sea': { word: 'in the sea', pronunciation: '/in the sea/', definition_vi: '(cụm từ: in the sea)', definition_en: 'Multi-word phrase: in the sea', example: 'Use of \'in the sea\' in natural context.' },
+    'help them': { word: 'help them', pronunciation: '/help them/', definition_vi: 'giúp đỡ them', definition_en: 'English phrase: help them', example: 'The phrase \'help them\' means giúp đỡ them.' },
+    'in the sea': { word: 'in the sea', pronunciation: '/in the sea/', definition_vi: 'trong sea', definition_en: 'ESL phrase: in the sea', example: 'The students practiced using \'in the sea\' in class.' },
     'kind farmer': { word: 'kind farmer', pronunciation: '/kind farmer/', definition_vi: 'nông dân tốt bụng', definition_en: 'meaning of kind farmer', example: 'The kind farmer gave us fresh apples from his sunny orchard.' },
     'look at': { word: 'look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
     'looked at': { word: 'looked at', pronunciation: '/looked at/', definition_vi: 'nhìn (quan sát)', definition_en: 'meaning of looked at', example: 'The students looked at the map and found where the treasure was hidden.' },
@@ -123,7 +123,7 @@ export const dictionary = {
     'swam alongside': { word: 'swam alongside', pronunciation: '/swam alongside/', definition_vi: 'bơi bên cạnh', definition_en: 'meaning of swam alongside', example: 'The little fish swam alongside the big whale in the deep ocean.' },
     'tiny green island': { word: 'tiny green island', pronunciation: '/tiny green island/', definition_vi: 'hòn đảo xanh nhỏ', definition_en: 'Multi-word phrase: tiny green island', example: 'The phrase \'tiny green island\' is commonly used in conversation.' },
     'went home happy': { word: 'went home happy', pronunciation: '/went home happy/', definition_vi: 'về nhà vui vẻ', definition_en: 'Multi-word phrase: went home happy', example: 'The phrase \'went home happy\' is commonly used in conversation.' },
-    'went on': { word: 'went on', pronunciation: '/went on/', definition_vi: 'đi (một chuyến đi)', definition_en: 'meaning of went on', example: 'Last summer, we went on a trip to the mountains with our class.' },
+    'went on': { word: 'went on', pronunciation: '/went ɒn/', definition_vi: 'đi / tham gia vào', definition_en: 'English collocation / phrase: went on', example: 'They went on an exciting trip.' },
     'went to the field': { word: 'went to the field', pronunciation: '/went to the field/', definition_vi: 'đi ra đồng', definition_en: 'left home to go to the field or farmland', example: 'In the warm summer sun, the ant went to the field every day.' },
     'wonderful place': { word: 'wonderful place', pronunciation: '/wonderful place/', definition_vi: 'nơi tuyệt vời', definition_en: 'meaning of wonderful place', example: 'Grandma lives in a wonderful place near the beach where the sun sets beautifully.' },
     'wonderful trip': { word: 'wonderful trip', pronunciation: '/wonderful trip/', definition_vi: 'chuyến đi tuyệt vời', definition_en: 'meaning of wonderful trip', example: 'What a wonderful trip! We saw so many amazing things together.' }

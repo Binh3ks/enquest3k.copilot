@@ -52,15 +52,15 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'Farm life': { word: 'Farm life', pronunciation: '/farm life/', definition_vi: 'farm life', definition_en: 'meaning of farm life', example: 'This is an example: farm life.' },
-    'clean and fresh': { word: 'clean and fresh', pronunciation: '/clean and fresh/', definition_vi: 'clean and fresh', definition_en: 'meaning of clean and fresh', example: 'This is an example: clean and fresh.' },
+    'Farm life': { word: 'Farm life', pronunciation: '/farm life/', definition_vi: 'farm cuộc sống', definition_en: 'English phrase: farm life', example: 'The phrase \'farm life\' means farm cuộc sống.' },
+    'clean and fresh': { word: 'clean and fresh', pronunciation: '/clean and fresh/', definition_vi: 'sạch sẽ và tươi mát', definition_en: 'ESL phrase: clean and fresh', example: 'The students practiced using \'clean and fresh\' in class.' },
     'collect eggs': { word: 'collect eggs', pronunciation: '/collect eggs/', definition_vi: 'thu gom trứng', definition_en: 'meaning of collect eggs', example: 'This is an example: collect eggs.' },
     'feed the animals': { word: 'feed the animals', pronunciation: '/feed the animals/', definition_vi: 'cho động vật ăn', definition_en: 'meaning of feed the animals', example: 'This is an example: feed the animals.' },
     'for everyone': { word: 'for everyone', pronunciation: '/for everyone/', definition_vi: 'cho mọi người', definition_en: 'meaning of for everyone', example: 'There is a pencil case for everyone!" Sam is happy.' },
     'green fields': { word: 'green fields', pronunciation: '/green fields/', definition_vi: 'cánh đồng xanh', definition_en: 'meaning of green fields', example: 'This is an example: green fields.' },
     'grow food': { word: 'grow food', pronunciation: '/grow food/', definition_vi: 'trồng thức ăn', definition_en: 'meaning of grow food', example: 'This is an example: grow food.' },
     'in the countryside': { word: 'in the countryside', pronunciation: '/in the countryside/', definition_vi: 'ở nông thôn', definition_en: 'meaning of in the countryside', example: 'Today I visit my uncle\'s farm in the countryside.' },
-    'look different': { word: 'look different', pronunciation: '/look different/', definition_vi: 'look different', definition_en: 'meaning of look different', example: 'This is an example: look different.' },
+    'look different': { word: 'look different', pronunciation: '/look different/', definition_vi: 'trông có vẻ khác biệt', definition_en: 'Collocation: look different', example: 'The students learned \'look different\' in their English lesson.' },
     'wake up early': { word: 'wake up early', pronunciation: '/wake up early/', definition_vi: 'thức dậy sớm', definition_en: 'to stop sleeping early in the morning', example: 'Every morning, I wake up early for school.' },
     'work hard': { word: 'work hard', pronunciation: '/work hard/', definition_vi: 'làm việc chăm chỉ', definition_en: 'meaning of work hard', example: 'This is an example: work hard.' }
 };

@@ -37,7 +37,7 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Look at': { word: 'Look at', pronunciation: '/look at/', definition_vi: 'nhìn xem', definition_en: 'meaning of look at', example: 'Look at that beautiful rainbow in the sky after the rain!' },
-    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'There are': { word: 'There are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
     'There was': { word: 'There was', pronunciation: '/there was/', definition_vi: 'có (nghĩa tồn tại)', definition_en: 'meaning of there was', example: 'There was a big market near the river.' },
     'There were': { word: 'There were', pronunciation: '/there were/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there were', example: 'There were tall trees along the road.' },
@@ -45,7 +45,7 @@ export const dictionary = {
     'bridge over': { word: 'bridge over', pronunciation: '/bridge over/', definition_vi: 'cầu bắc qua', definition_en: 'Multi-word phrase: bridge over', example: 'The phrase \'bridge over\' is commonly used in conversation.' },
     'local market': { word: 'local market', pronunciation: '/local market/', definition_vi: 'chợ địa phương', definition_en: 'meaning of local market', example: 'Mum buys fresh vegetables at the local market every Saturday morning.' },
     'love my town': { word: 'love my town', pronunciation: '/love my town/', definition_vi: 'yêu thị trấn của tôi', definition_en: 'meaning of love my town', example: 'I love my town because I know every street and every friendly face.' },
-    'my house': { word: 'my house', pronunciation: '/my house/', definition_vi: '(cụm từ: my house)', definition_en: 'Multi-word phrase: my house', example: 'Use of \'my house\' in natural context.' },
+    'my house': { word: 'my house', pronunciation: '/my house/', definition_vi: 'cụm từ vựng: my house', definition_en: 'Collocation: my house', example: 'The students learned \'my house\' in their English lesson.' },
     'near the road': { word: 'near the road', pronunciation: '/near the road/', definition_vi: 'gần đường', definition_en: 'meaning of near the road', example: 'The old oak tree stands near the road and gives shade in summer.' },
     'new bridge': { word: 'new bridge', pronunciation: '/new bridge/', definition_vi: 'cây cầu mới', definition_en: 'Multi-word phrase: new bridge', example: 'The phrase \'new bridge\' is commonly used in conversation.' },
     'new buildings': { word: 'new buildings', pronunciation: '/new buildings/', definition_vi: 'những tòa nhà mới', definition_en: 'Multi-word phrase: new buildings', example: 'The phrase \'new buildings\' is commonly used in conversation.' },

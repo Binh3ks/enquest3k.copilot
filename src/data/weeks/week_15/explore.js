@@ -69,6 +69,6 @@ export const dictionary = {
     'every morning': { word: 'every morning', pronunciation: '/every morning/', definition_vi: 'mỗi sáng', definition_en: 'each morning', example: 'He walks to school every morning.' },
     'flying kites': { word: 'flying kites', pronunciation: '/flying kites/', definition_vi: 'controlling a kite in the air using string', definition_en: 'meaning of flying kites', example: 'In New York\'s Central Park, families are flying kites and having picnics on sunny weekends.' },
     'fresh air': { word: 'fresh air', pronunciation: '/fresh air/', definition_vi: 'không khí trong lành', definition_en: 'Multi-word phrase: fresh air', example: 'The phrase \'fresh air\' is commonly used in conversation.' },
-    'having picnics': { word: 'having picnics', pronunciation: '/having picnics/', definition_vi: 'having picnics', definition_en: 'meaning of having picnics', example: 'This is an example: having picnics.' },
+    'having picnics': { word: 'having picnics', pronunciation: '/having picnics/', definition_vi: 'thực hiện dã ngoại', definition_en: 'Collocation: having picnics', example: 'The students learned \'having picnics\' in their English lesson.' },
     'right now': { word: 'right now', pronunciation: '/right now/', definition_vi: 'ngay bây giờ', definition_en: 'meaning of right now', example: 'This is an example: right now.' }
 };

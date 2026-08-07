@@ -49,7 +49,7 @@ export const chunk_focus = [
 export const dictionary = {
     'In the kitchen': { word: 'In the kitchen', pronunciation: '/in the kitchen/', definition_vi: 'trong bếp', definition_en: 'meaning of in the kitchen', example: 'In the kitchen, I open the cabinet and look in the fridge.' },
     'around the world': { word: 'around the world', pronunciation: '/around the world/', definition_vi: 'khắp thế giới', definition_en: 'meaning of around the world', example: 'This is an example: around the world.' },
-    'at night': { word: 'at night', pronunciation: '/at night/', definition_vi: '(cụm từ: at night)', definition_en: 'Multi-word phrase: at night', example: 'Use of \'at night\' in natural context.' },
+    'at night': { word: 'at night', pronunciation: '/æt naɪt/', definition_vi: 'vào ban đêm', definition_en: 'English collocation / phrase: at night', example: 'Stars shine brightly at night.' },
     'big sofa': { word: 'big sofa', pronunciation: '/big sofa/', definition_vi: 'sofa lớn', definition_en: 'meaning of big sofa', example: 'The family sat together on the big sofa to watch a film.' },
     'in the living room': { word: 'in the living room', pronunciation: '/in the living room/', definition_vi: 'trong phòng khách', definition_en: 'meaning of in the living room', example: 'We watch TV in the living room.' },
     'whole family': { word: 'whole family', pronunciation: '/whole family/', definition_vi: 'toàn bộ gia đình', definition_en: 'Multi-word phrase: whole family', example: 'The phrase \'whole family\' is commonly used in conversation.' }

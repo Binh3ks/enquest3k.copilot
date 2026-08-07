@@ -31,15 +31,15 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'My teacher': { word: 'My teacher', pronunciation: '/my teacher/', definition_vi: '(cụm từ: my teacher)', definition_en: 'Multi-word phrase: my teacher', example: 'Use of \'my teacher\' in natural context.' },
+    'My teacher': { word: 'My teacher', pronunciation: '/my teacher/', definition_vi: 'my giáo viên', definition_en: 'Collocation: my teacher', example: 'The students learned \'my teacher\' in their English lesson.' },
     'big brown eyes': { word: 'big brown eyes', pronunciation: '/big brown eyes/', definition_vi: 'mắt nâu to', definition_en: 'meaning of big brown eyes', example: 'She has big brown eyes that sparkle brightly when she smiles.' },
     'gentle and kind': { word: 'gentle and kind', pronunciation: '/gentle and kind/', definition_vi: 'hiền lành và tốt bụng', definition_en: 'meaning of gentle and kind', example: 'The nurse was gentle and kind when she put the bandage on my knee.' },
-    'her class': { word: 'her class', pronunciation: '/her class/', definition_vi: '(cụm từ: her class)', definition_en: 'Multi-word phrase: her class', example: 'Use of \'her class\' in natural context.' },
+    'her class': { word: 'her class', pronunciation: '/her class/', definition_vi: 'của cô ấy lớp học', definition_en: 'Collocation: her class', example: 'The students learned \'her class\' in their English lesson.' },
     'her students': { word: 'her students', pronunciation: '/her students/', definition_vi: 'học sinh của cô ấy', definition_en: 'meaning of her students', example: 'She has a warm smile for her students.' },
     'kind face': { word: 'kind face', pronunciation: '/kind face/', definition_vi: 'khuôn mặt tử tế', definition_en: 'Multi-word phrase: kind face', example: 'The phrase \'kind face\' is commonly used in conversation.' },
     'long black hair': { word: 'long black hair', pronunciation: '/long black hair/', definition_vi: 'tóc đen dài', definition_en: 'meaning of long black hair', example: 'She has long black hair that is always neat and tidy.' },
     'lovely personality': { word: 'lovely personality', pronunciation: '/lovely personality/', definition_vi: 'tính cách dễ thương', definition_en: 'meaning of lovely personality', example: 'Her lovely personality makes her popular with all her classmates.' },
-    'my teacher': { word: 'my teacher', pronunciation: '/my teacher/', definition_vi: '(cụm từ: my teacher)', definition_en: 'Multi-word phrase: my teacher', example: 'Use of \'my teacher\' in natural context.' },
+    'my teacher': { word: 'my teacher', pronunciation: '/my teacher/', definition_vi: 'my giáo viên', definition_en: 'Collocation: my teacher', example: 'The students learned \'my teacher\' in their English lesson.' },
     'smart and caring': { word: 'smart and caring', pronunciation: '/smart and caring/', definition_vi: 'thông minh và quan tâm', definition_en: 'meaning of smart and caring', example: 'My teacher is smart and caring and always helps students who are struggling.' },
     'to see the board clearly': { word: 'to see the board clearly', pronunciation: '/to see the board clearly/', definition_vi: 'để nhìn bảng rõ ràng', definition_en: 'meaning of to see the board clearly', example: 'She moved closer to the front so she could see the board clearly.' },
     'very happy': { word: 'very happy', pronunciation: '/very happy/', definition_vi: 'rất vui', definition_en: 'meaning of very happy', example: 'I was very happy when I found my lost puppy hiding under the bed.' },

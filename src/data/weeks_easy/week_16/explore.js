@@ -87,12 +87,12 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Because of': { word: 'Because of', pronunciation: '/because of/', definition_vi: 'bởi vì', definition_en: 'meaning of because of', example: 'This is an example: because of.' },
-    'catch a ball': { word: 'catch a ball', pronunciation: '/catch a ball/', definition_vi: 'catch a ball', definition_en: 'meaning of catch a ball', example: 'This is an example: catch a ball.' },
-    'in motion': { word: 'in motion', pronunciation: '/in motion/', definition_vi: 'in motion', definition_en: 'meaning of in motion', example: 'This is an example: in motion.' },
+    'catch a ball': { word: 'catch a ball', pronunciation: '/catch a ball/', definition_vi: 'bắt lấy quả bóng', definition_en: 'ESL phrase: catch a ball', example: 'The students practiced using \'catch a ball\' in class.' },
+    'in motion': { word: 'in motion', pronunciation: '/in motion/', definition_vi: 'trong motion', definition_en: 'Key collocation: in motion', example: 'Natural usage of \'in motion\' in sentence context.' },
     'kick a ball': { word: 'kick a ball', pronunciation: '/kick a ball/', definition_vi: 'đá bóng', definition_en: 'meaning of kick a ball', example: 'This is an example: kick a ball.' },
     'learn about': { word: 'learn about', pronunciation: '/learn about/', definition_vi: 'học về', definition_en: 'meaning of learn about', example: 'This is an example: learn about.' },
     'pass the ball': { word: 'pass the ball', pronunciation: '/pass the ball/', definition_vi: 'chuyền bóng', definition_en: 'meaning of pass the ball', example: 'This is an example: pass the ball.' },
-    'score a goal': { word: 'score a goal', pronunciation: '/score a goal/', definition_vi: 'score a goal', definition_en: 'meaning of score a goal', example: 'This is an example: score a goal.' },
+    'score a goal': { word: 'score a goal', pronunciation: '/score a goal/', definition_vi: 'score một goal', definition_en: 'Key collocation: score a goal', example: 'Natural usage of \'score a goal\' in sentence context.' },
     'team sport': { word: 'team sport', pronunciation: '/team sport/', definition_vi: 'thể thao đồng đội', definition_en: 'meaning of team sport', example: 'This is an example: team sport.' },
     'throw a ball': { word: 'throw a ball', pronunciation: '/throw a ball/', definition_vi: 'ném bóng', definition_en: 'meaning of throw a ball', example: 'This is an example: throw a ball.' },
     'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' }

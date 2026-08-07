@@ -75,7 +75,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'Once upon a time': { word: 'Once upon a time', pronunciation: '/once upon a time/', definition_vi: 'once upon a time', definition_en: 'meaning of once upon a time', example: 'This is an example: once upon a time.' },
+    'Once upon a time': { word: 'Once upon a time', pronunciation: '/once upon a time/', definition_vi: 'once upon một thời gian', definition_en: 'Key collocation: once upon a time', example: 'Natural usage of \'once upon a time\' in sentence context.' },
     'Slow and steady wins the race': { word: 'Slow and steady wins the race', pronunciation: '/slow and steady wins the race/', definition_vi: 'chậm và chắc chắn thì thắng cuộc đua', definition_en: 'working carefully and patiently leads to success; a proverb', example: 'Slow and steady wins the race.' },
     'big motorbike': { word: 'big motorbike', pronunciation: '/big motorbike/', definition_vi: 'xe máy lớn', definition_en: 'meaning of big motorbike', example: 'Dad rides his big motorbike to work every day through the city.' },
     'bragged about': { word: 'bragged about', pronunciation: '/bragged about/', definition_vi: 'khoe khoang về', definition_en: 'talked proudly about something', example: 'The ant never bragged about its hard work.' },

@@ -38,7 +38,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'My friend': { word: 'My friend', pronunciation: '/my friend/', definition_vi: '(cụm từ: my friend)', definition_en: 'Multi-word phrase: my friend', example: 'Use of \'my friend\' in natural context.' },
+    'My friend': { word: 'My friend', pronunciation: '/my friend/', definition_vi: 'cụm từ vựng: my friend', definition_en: 'Collocation: my friend', example: 'The students learned \'my friend\' in their English lesson.' },
     'hide and seek': { word: 'hide and seek', pronunciation: '/hide and seek/', definition_vi: 'trốn tìm', definition_en: 'meaning of hide and seek', example: 'She hide and seek with her friends after school.' },
     'hide my ball': { word: 'hide my ball', pronunciation: '/hide my ball/', definition_vi: 'giấu bóng', definition_en: 'meaning of hide my ball', example: 'I hide my ball in the box.' },
     'hides his toy': { word: 'hides his toy', pronunciation: '/hides his toy/', definition_vi: 'giấu đồ chơi', definition_en: 'meaning of hides his toy', example: 'My friend hides his toy next to the window.' },
@@ -48,9 +48,9 @@ export const dictionary = {
     'look on': { word: 'look on', pronunciation: '/look on/', definition_vi: 'nhìn, xem', definition_en: 'meaning of look on', example: 'I look on the floor.' },
     'looks under': { word: 'looks under', pronunciation: '/looks under/', definition_vi: 'nhìn dưới', definition_en: 'meaning of looks under', example: 'He looks under the desk.' },
     'next to': { word: 'next to', pronunciation: '/next to/', definition_vi: 'bên cạnh', definition_en: 'meaning of next to', example: 'There is a ruler next to the pen.' },
-    'play a game': { word: 'play a game', pronunciation: '/play a game/', definition_vi: '(cụm từ: play a game)', definition_en: 'Multi-word phrase: play a game', example: 'Use of \'play a game\' in natural context.' },
+    'play a game': { word: 'play a game', pronunciation: '/play a game/', definition_vi: 'chơi a game', definition_en: 'English phrase: play a game', example: 'The phrase \'play a game\' means chơi a game.' },
     'seek them': { word: 'seek them', pronunciation: '/seek them/', definition_vi: 'tìm chúng', definition_en: 'meaning of seek them', example: 'She seek them with her friends after school.' },
-    'so much': { word: 'so much', pronunciation: '/so much/', definition_vi: '(cụm từ: so much)', definition_en: 'Multi-word phrase: so much', example: 'Use of \'so much\' in natural context.' },
+    'so much': { word: 'so much', pronunciation: '/so much/', definition_vi: 'rất much', definition_en: 'Collocation: so much', example: 'The students learned \'so much\' in their English lesson.' },
     'toy car': { word: 'toy car', pronunciation: '/toy car/', definition_vi: 'xe đồ chơi', definition_en: 'Multi-word phrase: toy car', example: 'The phrase \'toy car\' is commonly used in conversation.' },
     'under the desk': { word: 'under the desk', pronunciation: '/under the desk/', definition_vi: 'dưới bàn', definition_en: 'meaning of under the desk', example: 'The toy car is under the desk!' }
 };

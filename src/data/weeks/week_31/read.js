@@ -69,7 +69,7 @@ export const chunk_focus = [
 
 export const dictionary = {
     'Last saturday': { word: 'Last saturday', pronunciation: '/last saturday/', definition_vi: 'thứ bảy tuần trước', definition_en: 'Multi-word phrase: last saturday', example: 'The phrase \'last saturday\' is commonly used in conversation.' },
-    'a piece of': { word: 'a piece of', pronunciation: '/a piece of/', definition_vi: '(cụm từ: a piece of)', definition_en: 'Multi-word phrase: a piece of', example: 'Use of \'a piece of\' in natural context.' },
+    'a piece of': { word: 'a piece of', pronunciation: '/ə piːs əv/', definition_vi: 'một mảnh / một mẩu', definition_en: 'English collocation / phrase: a piece of', example: 'He gave me a piece of paper.' },
     'best place': { word: 'best place', pronunciation: '/best place/', definition_vi: 'nơi tốt nhất', definition_en: 'Multi-word phrase: best place', example: 'The phrase \'best place\' is commonly used in conversation.' },
     'cold metal': { word: 'cold metal', pronunciation: '/cold metal/', definition_vi: 'kim loại lạnh', definition_en: 'meaning of cold metal', example: 'The cold metal railing felt freezing when we touched it in winter.' },
     'could see': { word: 'could see', pronunciation: '/could see/', definition_vi: 'có thể thấy', definition_en: 'meaning of could see', example: 'From the top of the hill, we could see the whole town spread out below.' },
@@ -90,7 +90,7 @@ export const dictionary = {
     'showed her': { word: 'showed her', pronunciation: '/showed her/', definition_vi: 'cho cô ấy xem', definition_en: 'meaning of showed her', example: 'The museum guide showed her the ancient statue in the centre of the hall.' },
     'smelt sweet strawberries': { word: 'smelt sweet strawberries', pronunciation: '/smelt sweet strawberries/', definition_vi: 'ngửi thấy dâu tây ngọt', definition_en: 'Multi-word phrase: smelt sweet strawberries', example: 'The phrase \'smelt sweet strawberries\' is commonly used in conversation.' },
     'smiled at': { word: 'smiled at', pronunciation: '/smiled at/', definition_vi: 'mỉm cười với', definition_en: 'meaning of smiled at', example: 'The librarian smiled at the children when they entered the reading room.' },
-    'so many': { word: 'so many', pronunciation: '/so many/', definition_vi: '(cụm từ: so many)', definition_en: 'Multi-word phrase: so many', example: 'Use of \'so many\' in natural context.' },
+    'so many': { word: 'so many', pronunciation: '/səʊ ˈmeni/', definition_vi: 'rất nhiều', definition_en: 'English collocation / phrase: so many', example: 'There are so many books in the library.' },
     'soft cotton': { word: 'soft cotton', pronunciation: '/soft cotton/', definition_vi: 'bông mềm', definition_en: 'meaning of soft cotton', example: 'The soft cotton scarf was light and gentle against her neck in the wind.' },
     'stone bowl': { word: 'stone bowl', pronunciation: '/stone bowl/', definition_vi: 'bát đá', definition_en: 'meaning of stone bowl', example: 'The artisan carved a beautiful stone bowl from a piece of white marble.' },
     'stone felt cool': { word: 'stone felt cool', pronunciation: '/stone felt cool/', definition_vi: 'đá cảm thấy mát', definition_en: 'Multi-word phrase: stone felt cool', example: 'The phrase \'stone felt cool\' is commonly used in conversation.' },

@@ -65,10 +65,10 @@ export const dictionary = {
     'describe the scene': { word: 'describe the scene', pronunciation: '/describe the scene/', definition_vi: 'mô tả cảnh', definition_en: 'meaning of describe the scene', example: 'Can you describe the scene you can see in this picture right now?' },
     'in front of': { word: 'in front of', pronunciation: '/in front of/', definition_vi: 'phía trước', definition_en: 'meaning of in front of', example: 'This is an example: in front of.' },
     'learn about': { word: 'learn about', pronunciation: '/learn about/', definition_vi: 'học về', definition_en: 'meaning of learn about', example: 'This is an example: learn about.' },
-    'listen to': { word: 'listen to', pronunciation: '/listen to/', definition_vi: 'listen to', definition_en: 'meaning of listen to', example: 'This is an example: listen to.' },
+    'listen to': { word: 'listen to', pronunciation: '/listen to/', definition_vi: 'listen đến', definition_en: 'Key collocation: listen to', example: 'Natural usage of \'listen to\' in sentence context.' },
     'picks up': { word: 'picks up', pronunciation: '/picks up/', definition_vi: 'nhặt lên', definition_en: 'lifts something from a surface', example: 'He picks up a toy microphone and starts reporting.' },
     'right now': { word: 'right now', pronunciation: '/right now/', definition_vi: 'ngay bây giờ', definition_en: 'meaning of right now', example: 'This is an example: right now.' },
-    'tell us': { word: 'tell us', pronunciation: '/tell us/', definition_vi: '(cụm từ: tell us)', definition_en: 'Multi-word phrase: tell us', example: 'Use of \'tell us\' in natural context.' },
+    'tell us': { word: 'tell us', pronunciation: '/tell us/', definition_vi: 'kể us', definition_en: 'English phrase: tell us', example: 'The phrase \'tell us\' means kể us.' },
     'toy microphone': { word: 'toy microphone', pronunciation: '/toy microphone/', definition_vi: 'micrô đồ chơi', definition_en: 'Multi-word phrase: toy microphone', example: 'The phrase \'toy microphone\' is commonly used in conversation.' },
     'watched the news': { word: 'watched the news', pronunciation: '/watched the news/', definition_vi: 'xem tin tức', definition_en: 'looked at a news program on TV', example: 'My parents watched the news after dinner.' },
     'what is happening': { word: 'what is happening', pronunciation: '/what is happening/', definition_vi: 'đang xảy ra gì', definition_en: 'meaning of what is happening', example: 'This is what is happening right now in Room 5!' }

@@ -47,6 +47,6 @@ export const chunk_focus = [
 export const dictionary = {
     'at the table': { word: 'at the table', pronunciation: '/at the table/', definition_vi: 'ở bàn', definition_en: 'meaning of at the table', example: 'I sit on a chair at the table.' },
     'living room': { word: 'living room', pronunciation: '/living room/', definition_vi: 'phòng khách', definition_en: 'a room where family sits together', example: 'My family watches TV together in the living room.' },
-    'sit on': { word: 'sit on', pronunciation: '/sit on/', definition_vi: 'ngồi trên', definition_en: 'meaning of sit on', example: 'I sit on a chair at the table.' },
+    'sit on': { word: 'sit on', pronunciation: '/sɪt ɒn/', definition_vi: 'ngồi trên', definition_en: 'English collocation / phrase: sit on', example: 'I sit on a chair at my desk.' },
     'watch tv': { word: 'watch tv', pronunciation: '/watch tv/', definition_vi: 'xem ti vi', definition_en: 'meaning of watch tv', example: 'After dinner, I watch TV and watch cartoons.' }
 };

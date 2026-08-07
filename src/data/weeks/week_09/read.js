@@ -52,7 +52,7 @@ export const chunk_focus = [
 export const dictionary = {
     'Many people get': { word: 'Many people get', pronunciation: '/many people get/', definition_vi: 'nhiều người nhận được', definition_en: 'Multi-word phrase: many people get', example: 'The phrase \'many people get\' is commonly used in conversation.' },
     'Next time': { word: 'Next time', pronunciation: '/next time/', definition_vi: 'Lần sau', definition_en: 'meaning of next time', example: 'Next time, I will hide the treasure next to the door!' },
-    'There are': { word: 'There are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'There are': { word: 'There are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
     'bus stop': { word: 'bus stop', pronunciation: '/bus stop/', definition_vi: 'trạm xe buýt', definition_en: 'meaning of bus stop', example: 'The children waited at the bus stop for the school bus to arrive.' },
     'busy street': { word: 'busy street', pronunciation: '/busy street/', definition_vi: 'đường phố đông đúc', definition_en: 'meaning of busy street', example: 'The busy street was full of shops, restaurants and lots of people.' },
@@ -60,7 +60,7 @@ export const dictionary = {
     'exploring the modern city': { word: 'exploring the modern city', pronunciation: '/exploring the modern city/', definition_vi: 'khám phá thành phố hiện đại', definition_en: 'meaning of exploring the modern city', example: 'Tourists enjoyed exploring the modern city with its bright lights and tall towers.' },
     'hear car horns': { word: 'hear car horns', pronunciation: '/hear car horns/', definition_vi: 'nghe còi xe', definition_en: 'meaning of hear car horns', example: 'I hear car horns and people talking.' },
     'less busy': { word: 'less busy', pronunciation: '/less busy/', definition_vi: 'ít đông hơn', definition_en: 'meaning of less busy', example: 'The small town is less busy than the big city, so it is very peaceful.' },
-    'lots of': { word: 'lots of', pronunciation: '/lots of/', definition_vi: '(cụm từ: lots of)', definition_en: 'Multi-word phrase: lots of', example: 'Use of \'lots of\' in natural context.' },
+    'lots of': { word: 'lots of', pronunciation: '/lots of/', definition_vi: 'lots của', definition_en: 'Key collocation: lots of', example: 'Natural usage of \'lots of\' in sentence context.' },
     'next to': { word: 'next to', pronunciation: '/next to/', definition_vi: 'bên cạnh', definition_en: 'meaning of next to', example: 'There is a ruler next to the pen.' },
     'noisy place': { word: 'noisy place', pronunciation: '/noisy place/', definition_vi: 'nơi ồn ào', definition_en: 'meaning of noisy place', example: 'The construction site is a noisy place with hammers and machines working.' },
     'people and cars': { word: 'people and cars', pronunciation: '/people and cars/', definition_vi: 'người và xe', definition_en: 'meaning of people and cars', example: 'The busy road was full of people and cars going in all directions.' },

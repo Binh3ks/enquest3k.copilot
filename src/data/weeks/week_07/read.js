@@ -31,7 +31,7 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'At school': { word: 'At school', pronunciation: '/at school/', definition_vi: 'ở trường', definition_en: 'meaning of at school', example: 'At school, there is a whiteboard in the classroom.' },
+    'At school': { word: 'At school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
     'There is': { word: 'There is', pronunciation: '/there is/', definition_vi: 'có (một)', definition_en: 'meaning of there is', example: 'There is a big house on the hill.' },
     'book on the desk': { word: 'book on the desk', pronunciation: '/book on the desk/', definition_vi: 'sách trên bàn', definition_en: 'meaning of book on the desk', example: 'I left my book on the desk where everyone could see my name on the cover.' },
     'for everyone': { word: 'for everyone', pronunciation: '/for everyone/', definition_vi: 'cho mọi người', definition_en: 'meaning of for everyone', example: 'There is a pencil case for everyone!" Sam is happy.' },

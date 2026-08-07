@@ -75,12 +75,12 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'bumpy texture': { word: 'bumpy texture', pronunciation: '/bumpy texture/', definition_vi: 'bumpy texture', definition_en: 'meaning of bumpy texture', example: 'This is an example: bumpy texture.' },
-    'give it color': { word: 'give it color', pronunciation: '/give it color/', definition_vi: 'give it color', definition_en: 'meaning of give it color', example: 'This is an example: give it color.' },
-    'look the same': { word: 'look the same', pronunciation: '/look the same/', definition_vi: 'look the same', definition_en: 'meaning of look the same', example: 'This is an example: look the same.' },
-    'make new colors': { word: 'make new colors', pronunciation: '/make new colors/', definition_vi: 'make new colors', definition_en: 'meaning of make new colors', example: 'This is an example: make new colors.' },
+    'bumpy texture': { word: 'bumpy texture', pronunciation: '/bumpy texture/', definition_vi: 'bề mặt gồ ghề', definition_en: 'ESL phrase: bumpy texture', example: 'The students practiced using \'bumpy texture\' in class.' },
+    'give it color': { word: 'give it color', pronunciation: '/give it color/', definition_vi: 'trao it color', definition_en: 'English phrase: give it color', example: 'The phrase \'give it color\' means trao it color.' },
+    'look the same': { word: 'look the same', pronunciation: '/look the same/', definition_vi: 'look the giống nhau', definition_en: 'Key collocation: look the same', example: 'Natural usage of \'look the same\' in sentence context.' },
+    'make new colors': { word: 'make new colors', pronunciation: '/make new colors/', definition_vi: 'làm new colors', definition_en: 'English phrase: make new colors', example: 'The phrase \'make new colors\' means làm new colors.' },
     'other side': { word: 'other side', pronunciation: '/other side/', definition_vi: 'phía bên kia', definition_en: 'Multi-word phrase: other side', example: 'The phrase \'other side\' is commonly used in conversation.' },
-    'paint a picture': { word: 'paint a picture', pronunciation: '/paint a picture/', definition_vi: 'paint a picture', definition_en: 'meaning of paint a picture', example: 'This is an example: paint a picture.' },
-    'piece of paper': { word: 'piece of paper', pronunciation: '/piece of paper/', definition_vi: 'piece of paper', definition_en: 'meaning of piece of paper', example: 'This is an example: piece of paper.' },
-    'smooth lines': { word: 'smooth lines', pronunciation: '/smooth lines/', definition_vi: 'smooth lines', definition_en: 'meaning of smooth lines', example: 'This is an example: smooth lines.' }
+    'paint a picture': { word: 'paint a picture', pronunciation: '/paint a picture/', definition_vi: 'paint a bức tranh', definition_en: 'English phrase: paint a picture', example: 'The phrase \'paint a picture\' means paint a bức tranh.' },
+    'piece of paper': { word: 'piece of paper', pronunciation: '/piece of paper/', definition_vi: 'piece của paper', definition_en: 'Key collocation: piece of paper', example: 'Natural usage of \'piece of paper\' in sentence context.' },
+    'smooth lines': { word: 'smooth lines', pronunciation: '/smooth lines/', definition_vi: 'cụm từ vựng: smooth lines', definition_en: 'Collocation: smooth lines', example: 'The students learned \'smooth lines\' in their English lesson.' }
 };

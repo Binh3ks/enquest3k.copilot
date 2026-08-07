@@ -61,14 +61,14 @@ export const chunk_focus = [
 ];
 
 export const dictionary = {
-    'On the ground': { word: 'On the ground', pronunciation: '/on the ground/', definition_vi: '(cụm từ: on the ground)', definition_en: 'Multi-word phrase: on the ground', example: 'Use of \'on the ground\' in natural context.' },
-    'cares for': { word: 'cares for', pronunciation: '/cares for/', definition_vi: 'cares for', definition_en: 'meaning of cares for', example: 'This is an example: cares for.' },
+    'On the ground': { word: 'On the ground', pronunciation: '/on the ground/', definition_vi: 'trên ground', definition_en: 'English collocation / phrase: on the ground', example: 'It is located on the ground.' },
+    'cares for': { word: 'cares for', pronunciation: '/cares for/', definition_vi: 'chăm sóc cho', definition_en: 'ESL phrase: cares for', example: 'The students practiced using \'cares for\' in class.' },
     'carry passengers': { word: 'carry passengers', pronunciation: '/carry passengers/', definition_vi: 'chở hành khách', definition_en: 'meaning of carry passengers', example: 'This is an example: carry passengers.' },
-    'change a student\'s life': { word: 'change a student\'s life', pronunciation: '/change a student\'s life/', definition_vi: 'change a student\'s life', definition_en: 'meaning of change a student\'s life', example: 'This is an example: change a student\'s life.' },
+    'change a student\'s life': { word: 'change a student\'s life', pronunciation: '/change a student\'s life/', definition_vi: 'thay đổi cuộc đời của một học sinh', definition_en: 'ESL phrase: change a student\'s life', example: 'The students practiced using \'change a student\'s life\' in class.' },
     'from place to place': { word: 'from place to place', pronunciation: '/from place to place/', definition_vi: 'từ nơi này sang nơi khác', definition_en: 'meaning of from place to place', example: 'This is an example: from place to place.' },
     'from sunrise to sunset': { word: 'from sunrise to sunset', pronunciation: '/from sunrise to sunset/', definition_vi: 'từ bình minh đến hoàng hôn', definition_en: 'meaning of from sunrise to sunset', example: 'This is an example: from sunrise to sunset.' },
     'great teacher': { word: 'great teacher', pronunciation: '/great teacher/', definition_vi: 'giáo viên tuyệt vời', definition_en: 'Multi-word phrase: great teacher', example: 'The phrase \'great teacher\' is commonly used in conversation.' },
-    'in the world': { word: 'in the world', pronunciation: '/in the world/', definition_vi: '(cụm từ: in the world)', definition_en: 'Multi-word phrase: in the world', example: 'Use of \'in the world\' in natural context.' },
+    'in the world': { word: 'in the world', pronunciation: '/in the world/', definition_vi: 'trong world', definition_en: 'ESL phrase: in the world', example: 'The students practiced using \'in the world\' in class.' },
     'learn about': { word: 'learn about', pronunciation: '/learn about/', definition_vi: 'học về', definition_en: 'meaning of learn about', example: 'This is an example: learn about.' },
     'magic carpet': { word: 'magic carpet', pronunciation: '/magic carpet/', definition_vi: 'tấm thảm thần kỳ', definition_en: 'meaning of magic carpet', example: 'The princess flew over the castle on her magic carpet at midnight.' },
     'magic trip': { word: 'magic trip', pronunciation: '/magic trip/', definition_vi: 'chuyến đi kỳ diệu', definition_en: 'meaning of magic trip', example: 'The magic trip took us to a beautiful island surrounded by blue sea.' },
@@ -76,7 +76,7 @@ export const dictionary = {
     'solve problems': { word: 'solve problems', pronunciation: '/solve problems/', definition_vi: 'giải quyết vấn đề', definition_en: 'meaning of solve problems', example: 'This is an example: solve problems.' },
     'the doctor': { word: 'the doctor', pronunciation: '/the doctor/', definition_vi: 'bác sĩ', definition_en: 'meaning of the doctor', example: 'The doctor checked the patient carefully and gave her some medicine.' },
     'the nurse': { word: 'the nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
-    'there are': { word: 'there are', pronunciation: '/there are/', definition_vi: 'có (nhiều)', definition_en: 'meaning of there are', example: 'In my classroom, there are twenty desks and one big whiteboard.' },
+    'there are': { word: 'there are', pronunciation: '/ðeər ɑːr/', definition_vi: 'có (nhiều)', definition_en: 'English collocation / phrase: there are', example: 'There are forty students in our class.' },
     'work together': { word: 'work together', pronunciation: '/work together/', definition_vi: 'làm việc cùng nhau', definition_en: 'meaning of work together', example: 'We work together.' },
     'works hard': { word: 'works hard', pronunciation: '/works hard/', definition_vi: 'làm việc chăm chỉ', definition_en: 'meaning of works hard', example: 'My mum works hard every day to provide for our family.' }
 };
