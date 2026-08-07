@@ -1044,6 +1044,8 @@ export const VoiceService = {
    * Fallback to Web Speech API (browser built-in)
    * @param {string} text - Text to speak
    */
+  _activeUtterance: null,
+
   webFallback(text) {
     if (!('speechSynthesis' in window)) {
       console.error('❌ Web Speech API not supported in this browser');
@@ -1051,18 +1053,43 @@ export const VoiceService = {
     }
 
     const synth = window.speechSynthesis;
-    
-    // Ensure clean text with proper trailing padding to prevent ending sound truncation on single words (e.g. "cave.", "made.")
-    let cleanText = (text || '').trim();
-    if (cleanText && !/[.!?]$/.test(cleanText)) {
-      cleanText += '.';
+    if (synth.paused) {
+      synth.resume();
     }
     
-    const wordCount = cleanText.split(/\s+/).length;
+    // Ensure clean text with proper trailing padding to prevent ending sound truncation on single words (e.g. "cave.", "made.")
+    let rawText = (text || '').trim();
+    if (!rawText) return;
+
+    const wordCount = rawText.split(/\s+/).length;
     const isSingleWord = wordCount <= 2;
+    
+    // Pad trailing period with extra space to ensure audio engine articulates final consonants fully before closing stream
+    let cleanText = rawText;
+    if (!/[.!?]$/.test(cleanText)) {
+      cleanText += ' .';
+    }
+
+    // Cancel any previous utterance to avoid queue buildup
+    try { synth.cancel(); } catch {}
 
     const utterance = new SpeechSynthesisUtterance(cleanText);
     
+    // CRITICAL FIX FOR CHROME V8 GARBAGE COLLECTION BUG:
+    // Store utterance in persistent instance property so V8 GC does NOT collect it mid-word
+    this._activeUtterance = utterance;
+    
+    utterance.onend = () => {
+      if (this._activeUtterance === utterance) {
+        this._activeUtterance = null;
+      }
+    };
+    utterance.onerror = () => {
+      if (this._activeUtterance === utterance) {
+        this._activeUtterance = null;
+      }
+    };
+
     // Ensure voices are loaded
     const voices = synth.getVoices();
     if (voices.length === 0) {
@@ -1089,11 +1116,11 @@ export const VoiceService = {
     }
     
     utterance.voice = preferredVoice;
-    utterance.rate = isSingleWord ? 0.85 : 0.95; // Slower, articulated rate for single words so ending sounds (cave, made, gave) are crystal clear
+    utterance.rate = isSingleWord ? 0.82 : 0.92; // Slightly slower pace for 1-2 word cards for crystal clear final consonants
     utterance.pitch = 1.05; // Natural pitch
     utterance.volume = 1.0;
     
-    console.log(`[TTS] 🎙️ Using voice: ${preferredVoice?.name || 'default'} (rate: ${utterance.rate}, text: "${cleanText}")`);
+    console.log(`[TTS] 🎙️ Using browser voice: ${preferredVoice?.name || 'default'} (rate: ${utterance.rate}, text: "${cleanText}")`);
     synth.speak(utterance);
   }
 
