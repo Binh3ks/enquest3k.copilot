@@ -617,7 +617,7 @@ export const VoiceService = {
    */
   async prefetchEntireWeek(weekNumber = 36, mode = 'advanced') {
     if (!weekNumber) return;
-    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v22`;
+    const weekKey = `prefetch_done_w${weekNumber}_${mode}_v23`;
     if (sessionStorage.getItem(weekKey)) return; // Already done this session
     sessionStorage.setItem(weekKey, 'true');
 
@@ -634,9 +634,9 @@ export const VoiceService = {
       // Reading & Explore
       if (weekData.stations?.read_explore) {
         const re = weekData.stations.read_explore;
-        if (re.read_stem?.narrative) itemsToPrefetch.push({ text: re.read_stem.narrative, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
-        if (re.read_social?.narrative) itemsToPrefetch.push({ text: re.read_social.narrative, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
-        if (re.content_en) itemsToPrefetch.push({ text: re.content_en, station: 'read_explore', voice: voiceConfig?.narration || 'en-US-Journey-F' });
+        if (re.read_stem?.narrative) itemsToPrefetch.push({ text: re.read_stem.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F' });
+        if (re.read_social?.narrative) itemsToPrefetch.push({ text: re.read_social.narrative.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F' });
+        if (re.content_en) itemsToPrefetch.push({ text: re.content_en.replace(/\*\*/g, ''), station: 'read', voice: voiceConfig?.narration || 'en-US-Journey-F' });
       }
 
       // Vocabulary
