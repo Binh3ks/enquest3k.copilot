@@ -1,5 +1,5 @@
-# Never cache the HTML entry point — ensures browser always gets latest JS chunk names
-/index.html
+# Never cache HTML pages or SPA routes (e.g. /week/*, /dashboard) — ensures latest JS bundle is fetched
+/*
   Cache-Control: no-cache, no-store, must-revalidate
   Pragma: no-cache
   CDN-Cache-Control: no-store

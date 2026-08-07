@@ -32,8 +32,16 @@ if (typeof window !== 'undefined') {
       const lastReload = parseInt(sessionStorage.getItem('global_chunk_reload') || '0', 10);
       if (Date.now() - lastReload > 5000) {
         sessionStorage.setItem('global_chunk_reload', String(Date.now()));
-        console.warn('[Main] Stale CDN chunk error detected. Auto-reloading to fetch latest build...');
-        window.location.href = window.location.pathname + '?r=' + Date.now();
+        console.warn('[Main] Stale CDN chunk error detected. Clearing SW cache & reloading...');
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
+        }
+        if ('caches' in window) {
+          caches.keys().then(keys => keys.forEach(k => caches.delete(k))).catch(() => {});
+        }
+        setTimeout(() => {
+          window.location.href = window.location.pathname + '?r=' + Date.now();
+        }, 150);
       }
     }
   });
