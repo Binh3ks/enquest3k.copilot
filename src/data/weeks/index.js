@@ -64,7 +64,7 @@ export const loadWeekData = async (weekId, isEasy = false) => {
       const lastReload = parseInt(sessionStorage.getItem(reloadKey) || '0', 10);
       if (Date.now() - lastReload > 3000) {
         sessionStorage.setItem(reloadKey, String(Date.now()));
-        console.warn('[LazyLoad] Stale chunk detected. Clearing SW cache & reloading page...');
+        console.warn('[LazyLoad] Stale chunk detected. Hard reloading page...');
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
         }
@@ -72,8 +72,7 @@ export const loadWeekData = async (weekId, isEasy = false) => {
           caches.keys().then(keys => keys.forEach(k => caches.delete(k))).catch(() => {});
         }
         setTimeout(() => {
-          // Hard reload cleanly without appending trailing query params loop
-          window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname;
+          window.location.reload();
         }, 100);
         return new Promise(() => {}); // pause execution while browser reloads
       }
