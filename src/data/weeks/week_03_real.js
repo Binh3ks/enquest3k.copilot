@@ -240,7 +240,6 @@ export const week3RealData = {
           turns: "1-5",
           goal: "Student describes basic appearance",
           phase_questions: [
-            "Great name! Now look in the mirror! Are you tall or short? Say: I am tall or I am short",
             "Good! Now look at your hair! Is your hair long or short? Say: My hair is long or My hair is short",
             "Nice! What about your hair style? Is your hair curly or straight? Say: My hair is curly or My hair is straight",
             "Perfect! Now look at your eyes! What color are your eyes? Say: My eyes are brown or My eyes are blue",

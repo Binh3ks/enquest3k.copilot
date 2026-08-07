@@ -654,18 +654,25 @@ export const VoiceService = {
       }
 
       // Shadowing
-      if (weekData.stations?.shadowing?.sentences) {
-        weekData.stations.shadowing.sentences.forEach(s => {
-          if (s.text) itemsToPrefetch.push({ text: s.text, station: 'shadowing', voice: voiceConfig?.shadowing || 'en-US-Journey-F', audioPath: s.audio_url });
-        });
-      }
+      const shadowingList = weekData.stations?.shadowing?.script || weekData.stations?.shadowing?.sentences || [];
+      shadowingList.forEach(s => {
+        const txt = s.text || s.text_en;
+        if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'shadowing', voice: voiceConfig?.shadowing || 'en-US-Journey-F', audioPath: s.audio_url });
+      });
 
       // Dictation
-      if (weekData.stations?.dictation?.sentences) {
-        weekData.stations.dictation.sentences.forEach(s => {
-          if (s.text_en) itemsToPrefetch.push({ text: s.text_en, station: 'dictation', voice: voiceConfig?.dictation || 'en-US-Neural2-F', audioPath: s.audio_url });
-        });
-      }
+      const dictationList = weekData.stations?.dictation?.sentences || weekData.stations?.dictation?.script || weekData.stations?.dictation?.items || [];
+      dictationList.forEach(s => {
+        const txt = s.text_en || s.text;
+        if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'dictation', voice: voiceConfig?.dictation || 'en-US-Neural2-F', audioPath: s.audio_url });
+      });
+
+      // AI Tutor Opening Narratives
+      const missions = weekData.story_missions || weekData.missions || [];
+      missions.forEach(m => {
+        const txt = m.opening_narrative || m.nova_greeting;
+        if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'ask_ai', voice: voiceConfig?.questions || 'en-US-Neural2-D' });
+      });
 
       // Mindmap
       if (weekData.stations?.mindmap?.prompts) {
