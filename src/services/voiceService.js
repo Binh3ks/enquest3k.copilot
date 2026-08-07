@@ -798,6 +798,21 @@ export const VoiceService = {
     // 7. Fix homograph: "live" (verb /lɪv/) vs "live" (adj /laɪv/)
     //    "I live with" → should be /lɪv/ not /laɪv/
     //    Context: "live with", "live in", "I live", "you live", "we live", "they live"
+
+    // 8. Vietnamese Proper Nouns & Cultural Terms Phonetic Normalization for English TTS
+    const VI_PROPER_NOUNS = [
+      [/\bHoi\s*An\b/gi, 'Hoi Ahn'],
+      [/\bHa\s*Noi\b/gi, 'Ha Noy'],
+      [/\bDa\s*Nang\b/gi, 'Da Nang'],
+      [/\bSaigon\b/gi, 'Sigh gon'],
+      [/\bHo\s+Chi\s+Minh\b/gi, 'Ho Chi Minh'],
+      [/\bAo\s*Dai\b/gi, 'Ow Dye'],
+      [/\bBanh\s*Mi\b/gi, 'Bahn Mee'],
+      [/\bPho\b/gi, 'Fuh']
+    ];
+    for (const [regex, phonetic] of VI_PROPER_NOUNS) {
+      cleaned = cleaned.replace(regex, phonetic);
+    }
     cleaned = cleaned.replace(/\blive with\b/gi, 'liv with');
     cleaned = cleaned.replace(/\blive in\b/gi, 'liv in');
     
