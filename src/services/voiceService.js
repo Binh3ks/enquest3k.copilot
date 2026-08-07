@@ -447,22 +447,21 @@ export const VoiceService = {
       try {
         audioBlob = await Promise.race([
           fetchPromise,
-          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 30000))
+          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 1500))
         ]);
       } catch (raceErr) {
         if (raceErr.message === 'timeout') {
-          // Network is slow but Deepgram is still processing — play cleanly when ready
-          console.warn('[TTS] ⏳ Slow network — audio will play when ready (no browser TTS)');
+          console.warn('[TTS] ⚡ Worker taking >1.5s — starting instant browser TTS while caching Deepgram audio in background...');
+          // Cache Deepgram blob in background when it finishes so replay is instant 0ms
           fetchPromise.then(async (blob) => {
             if (!blob) return;
             await TTSCache.set(cleanedText, station, blob, deepgramVoice || cacheVoice, audioUrl);
-            const blobUrl = URL.createObjectURL(blob);
-            console.log('[TTS] ✅ Late Deepgram audio arrived, playing...');
-            svc.playAudio(blobUrl, true);
+            console.log('[TTS] 💾 Background Deepgram audio cached successfully!');
           }).catch(() => {});
-          return; // skip browser TTS — no double voice
+          // Fall through to browser TTS below for 0s instant speech!
+          throw new Error('instant_fallback');
         }
-        throw raceErr; // genuine HTTP/network error → fall to browser TTS
+        throw raceErr;
       }
       if (audioBlob) {
         await TTSCache.set(cleanedText, station, audioBlob, deepgramVoice || cacheVoice, audioUrl);

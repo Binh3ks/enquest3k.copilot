@@ -455,7 +455,7 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
         
         <div className="p-8">
             <div className="flex justify-between items-start mb-6">
-               <button onClick={() => speakText(renderCleanText(data.content_en), data.audio_url || null, 1.0, null, 'read', parseInt(weekId), learningMode)} className={`p-3 bg-${themeColor}-600 text-white rounded-full shadow-lg hover:bg-${themeColor}-700 transition-transform hover:scale-110 flex-shrink-0`}>
+               <button onClick={() => speakText(renderCleanText(data.content_en), data.audio_url || null, 1.0, null, 'read', parseInt(weekId), learningMode, true)} className={`p-3 bg-${themeColor}-600 text-white rounded-full shadow-lg hover:bg-${themeColor}-700 transition-transform hover:scale-110 flex-shrink-0`}>
                   <Volume2 className="w-6 h-6" />
                </button>
                <button onClick={onToggleLang} className="text-xs font-bold text-slate-400 hover:text-slate-600 flex items-center bg-slate-100 px-3 py-1 rounded-lg transition-colors"><Globe className="w-3 h-3 mr-1"/> {isVi?'VI':'EN'}</button>
