@@ -76,23 +76,23 @@ export function useTTSWordHighlight(activeSentence, isAudioPlaying, speed = 1.0)
     let cancelled = false;
     let lastIdx = -2;
 
+    let startTimeMs = null;
+
     const tick = () => {
       if (cancelled) return;
       rafId = requestAnimationFrame(tick);
 
-      const audio = VoiceService._currentAudio;
-      if (!audio) return;
-
       const sentence = sentenceRef.current;
       if (!sentence) return;
 
+      const audio = VoiceService._currentAudio;
       const currentRate = (audio && audio.playbackRate && audio.playbackRate > 0)
         ? audio.playbackRate
         : (speed || 1.0);
 
       // audio.duration is sometimes Infinity right after play() resolves;
       // fall back to FAST_RATE × wordCount in that case.
-      const audioDuration = (typeof audio.duration === 'number' && isFinite(audio.duration))
+      const audioDuration = (audio && typeof audio.duration === 'number' && isFinite(audio.duration))
         ? audio.duration : null;
 
       const words = buildWordTimings(sentence, audioDuration, currentRate);
@@ -101,8 +101,16 @@ export function useTTSWordHighlight(activeSentence, isAudioPlaying, speed = 1.0)
         return;
       }
 
-      const t = audio.currentTime;
-      if (typeof t !== 'number') return;
+      if (startTimeMs === null) {
+        startTimeMs = performance.now();
+      }
+
+      let t = 0;
+      if (audio && typeof audio.currentTime === 'number' && !isNaN(audio.currentTime) && audio.currentTime >= 0) {
+        t = audio.currentTime;
+      } else {
+        t = ((performance.now() - startTimeMs) / 1000) * currentRate;
+      }
 
       let idx = -1;
       let found = false;

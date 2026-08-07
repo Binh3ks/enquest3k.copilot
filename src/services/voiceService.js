@@ -1018,12 +1018,26 @@ export const VoiceService = {
         gainNode.connect(ctx.destination);
 
         this._currentSourceNode = source;
+        const startTime = ctx.currentTime;
+        this._currentAudio = {
+          get currentTime() {
+            return (ctx.currentTime - startTime) * rate;
+          },
+          get duration() {
+            return audioBuffer.duration;
+          },
+          get playbackRate() {
+            return rate;
+          },
+          paused: false
+        };
 
-        console.log(`[TTS] ⚡ Playing Blob via Web Audio API 0ms latency engine (${audioBuffer.duration.toFixed(2)}s)`);
+        console.log(`[TTS] ⚡ Playing Blob via Web Audio API 0ms latency engine (${audioBuffer.duration.toFixed(2)}s, rate: ${rate}x)`);
 
         return new Promise((resolve) => {
           source.onended = () => {
             if (this._currentSourceNode === source) this._currentSourceNode = null;
+            this._currentAudio = null;
             if (revokeAfter) URL.revokeObjectURL(audioUrl);
             resolve();
           };
