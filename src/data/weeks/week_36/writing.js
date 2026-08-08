@@ -1,4 +1,6 @@
 export default {
+  title: "The Submarine Buoyancy Rescue & Silk Road Writing",
+  title_en: "The Submarine Buoyancy Rescue & Silk Road Writing",
   hints: {
     words: [
       { word: "submarine", meaning_vi: "tàu ngầm" },

@@ -23,6 +23,12 @@ export default {
       context_en: "Leo's team donated the preserved 16th-century gold compass to the museum.",
       nova_says: "Why is it important to present ancient deep-sea artifacts to public museums?",
       hints: ["Preserves historical knowledge", "Teaches future generations", "Honors ancient explorers"]
+    },
+    {
+      id: 5,
+      context_en: "Deep ocean submersibles explore hydrothermal vent ecosystems without sunlight.",
+      nova_says: "How do bioluminescent creatures and vent species thrive without sunlight?",
+      hints: ["Chemical energy synthesis", "Natural light production", "Extreme adaptation"]
     }
   ]
 };

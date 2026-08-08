@@ -50,7 +50,7 @@ const WriteAndSpeak = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
     }
   }, [visibleTabs, activeTab]);
 
-  if (!content || !content.title) {
+  if (!content || (!content.title && !content.story_prompts && !content.hints && !data?.writing && !data?.video)) {
     return <div className="p-10 text-center text-slate-400 font-black italic">No content.</div>;
   }
 

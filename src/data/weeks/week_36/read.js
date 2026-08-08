@@ -9,7 +9,9 @@ export default {
     { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề." },
     { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên." },
     { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn." },
-    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá." }
+    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá." },
+    { id: 7, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa." },
+    { id: 8, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn." }
   ],
   read_stem: {
     title_en: "The Submarine Buoyancy Rescue",

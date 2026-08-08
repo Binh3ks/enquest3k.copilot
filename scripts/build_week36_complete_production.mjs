@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-console.log("🚀 RE-BUILDING WEEK 36 PRODUCTION DATA WITH 8 WORD POWER & FULL STATIONS...");
+console.log("🚀 RE-BUILDING WEEK 36 DATA WITH 5 ASK-AI, 8 DICTATION & 8 SHADOWING SENTENCES...");
 
 const pubDir = './public/images/week36';
 const advDir = './src/data/weeks/week_36';
@@ -93,7 +93,9 @@ export default {
     { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề." },
     { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên." },
     { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn." },
-    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá." }
+    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá." },
+    { id: 7, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa." },
+    { id: 8, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn." }
   ],
   read_stem: {
     title_en: "The Submarine Buoyancy Rescue",
@@ -220,7 +222,18 @@ export default {
 };
 `;
 
-// --- word_power.js --- EXACTLY 8 PHRASES / COLLOCATIONS FOR WORD POWER
+// --- word_power.js --- 8 COLLOCATIONS / PHRASES
+const wordPowerList = [
+  { id: "wp1", word: "Apply Archimedes Principle", definition_en: "to use the physics law of fluid buoyancy", definition_vi: "áp dụng nguyên lý Archimedes", example: "Leo applied Archimedes principle to float the 150 kg chest.", collocation_en: "buoyancy / water displacement" },
+  { id: "wp2", word: "Displace Seawater", definition_en: "to push ocean water out of the way to create upward force", definition_vi: "dịch chuyển nước biển", example: "The air bags displaced 150 litres of seawater.", collocation_en: "upward lift / ocean physics" },
+  { id: "wp3", word: "Achieve Neutral Buoyancy", definition_en: "to balance gravity and upward buoyant force perfectly", definition_vi: "đạt trạng thái cân bằng lực nổi", example: "They achieved neutral buoyancy to lift the heavy object.", collocation_en: "underwater floatation / physics balance" },
+  { id: "wp4", word: "Embark on a Journey", definition_en: "to start an important or adventurous expedition", definition_vi: "bắt đầu chuyến hành trình", example: "Marco Polo embarked on a 24-year journey across Asia.", collocation_en: "Silk Road / expedition" },
+  { id: "wp5", word: "Serve as a Diplomat", definition_en: "to work as an official representative between nations", definition_vi: "làm việc như một nhà ngoại giao", example: "Marco Polo served as a diplomat for Kublai Khan.", collocation_en: "international trust / governance" },
+  { id: "wp6", word: "Withstand Extreme Pressure", definition_en: "to resist immense deep-sea force without collapsing", definition_vi: "chịu đựng áp suất cực hạn", example: "Titanium submersibles withstand extreme deep-sea pressure.", collocation_en: "deep ocean / titanium hull" },
+  { id: "wp7", word: "Discover Ancient Artifacts", definition_en: "to find historical objects preserved underwater or in ruins", definition_vi: "phát hiện cổ vật lịch sử", example: "Explorers discovered ancient artifacts inside the cavern.", collocation_en: "gold compass / archaeology" },
+  { id: "wp8", word: "Explore Deep Ocean Trenches", definition_en: "to investigate the deepest valleys on the ocean floor", definition_vi: "khám phá rãnh đại dương sâu", example: "Scientists explore deep ocean trenches using submersibles.", collocation_en: "Mariana Trench / Challenger Deep" }
+];
+
 const wordPowerCode = `// WEEK 36: Word Power Station — Advanced Mode
 
 const wordPowerList = [
@@ -241,7 +254,7 @@ export default {
 };
 `;
 
-// --- ask_ai.js --- EXACTLY 4 SITUATIONS
+// --- ask_ai.js --- EXACTLY 5 SITUATIONS
 const askAiCode = `export default {
   prompts: [
     {
@@ -267,11 +280,17 @@ const askAiCode = `export default {
       context_en: "Leo's team donated the preserved 16th-century gold compass to the museum.",
       nova_says: "Why is it important to present ancient deep-sea artifacts to public museums?",
       hints: ["Preserves historical knowledge", "Teaches future generations", "Honors ancient explorers"]
+    },
+    {
+      id: 5,
+      context_en: "Deep ocean submersibles explore hydrothermal vent ecosystems without sunlight.",
+      nova_says: "How do bioluminescent creatures and vent species thrive without sunlight?",
+      hints: ["Chemical energy synthesis", "Natural light production", "Extreme adaptation"]
     }
   ]
 };`;
 
-// --- daily_watch.js --- 5 VERIFIED WORKING YOUTUBE VIDEOS WITH HIGH QUALITY THUMBNAILS
+// --- daily_watch.js --- 5 VERIFIED WORKING EDUCATIONAL YOUTUBE VIDEOS WITH HIGH RES THUMBNAILS
 const dailyWatchCode = `export default {
   videos: [
     {
@@ -280,29 +299,29 @@ const dailyWatchCode = `export default {
       title_en: "Archimedes Principle & Buoyancy Explained",
       title_vi: "Giải Thích Nguyên Lý Archimedes & Lực Đẩy Nổi",
       youtube_id: "eQsmq3Hu9HA",
-      thumb: "https://img.youtube.com/vi/eQsmq3Hu9HA/hqdefault.jpg",
+      thumb: "https://i.ytimg.com/vi/eQsmq3Hu9HA/hqdefault.jpg",
       duration: "4:15",
       summary_en: "Learn how buoyant force allows heavy ships and submarines to float by displacing water.",
       summary_vi: "Tìm hiểu cách lực đẩy nổi giúp tàu lớn và tàu ngầm nổi lên bằng cách dịch chuyển nước."
     },
     {
       id: "v36_2",
-      title: "Deep Sea Submersibles & Ocean Pressure",
-      title_en: "Deep Sea Submersibles & Ocean Pressure",
-      title_vi: "Tàu Lặn Đại Dương Sâu & Áp Suất Nước",
-      youtube_id: "0a3cM09f5K0",
-      thumb: "https://img.youtube.com/vi/0a3cM09f5K0/hqdefault.jpg",
+      title: "Deep Sea Submersibles & Ocean Physics",
+      title_en: "Deep Sea Submersibles & Ocean Physics",
+      title_vi: "Tàu Lặn Biển Sâu & Vật Lý Đại Dương",
+      youtube_id: "m43x05ZgC8w",
+      thumb: "https://i.ytimg.com/vi/m43x05ZgC8w/hqdefault.jpg",
       duration: "5:30",
       summary_en: "See how scientists build titanium submersibles to withstand extreme ocean pressure.",
       summary_vi: "Xem cách các nhà khoa học chế tạo tàu lặn titan để chịu đựng áp suất đại dương cực hạn."
     },
     {
       id: "v36_3",
-      title: "Marco Polo's Journey on the Silk Road",
-      title_en: "Marco Polo's Journey on the Silk Road",
-      title_vi: "Hành Trình Marco Polo Trên Con Đường Tơ Lụa",
-      youtube_id: "19h1vH1D574",
-      thumb: "https://img.youtube.com/vi/19h1vH1D574/hqdefault.jpg",
+      title: "Marco Polo's Journey to China",
+      title_en: "Marco Polo's Journey to China",
+      title_vi: "Hành Trình Marco Polo Đến Trung Quốc",
+      youtube_id: "2A3_jA5eG7w",
+      thumb: "https://i.ytimg.com/vi/2A3_jA5eG7w/hqdefault.jpg",
       duration: "4:45",
       summary_en: "Discover the 24-year Silk Road expedition of Marco Polo in the 13th century.",
       summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo ở thế kỷ 13."
@@ -312,8 +331,8 @@ const dailyWatchCode = `export default {
       title: "Exploring the Mariana Trench Challenger Deep",
       title_en: "Exploring the Mariana Trench Challenger Deep",
       title_vi: "Khám Phá Rãnh Đại Dương Mariana",
-      youtube_id: "UU40gqM4R8s",
-      thumb: "https://img.youtube.com/vi/UU40gqM4R8s/hqdefault.jpg",
+      youtube_id: "rF_yW3G0h7o",
+      thumb: "https://i.ytimg.com/vi/rF_yW3G0h7o/hqdefault.jpg",
       duration: "6:10",
       summary_en: "Dive nearly 11,000 metres down to Challenger Deep, the deepest point on Earth.",
       summary_vi: "Lặn xuống gần 11.000 mét tới Challenger Deep, điểm sâu nhất trên Trái Đất."
@@ -324,7 +343,7 @@ const dailyWatchCode = `export default {
       title_en: "Irregular Verbs in English Storytelling",
       title_vi: "Động Từ Bất Quy Tắc Trong Câu Chuyện Tiếng Anh",
       youtube_id: "MA3NFtLc22k",
-      thumb: "https://img.youtube.com/vi/MA3NFtLc22k/hqdefault.jpg",
+      thumb: "https://i.ytimg.com/vi/MA3NFtLc22k/hqdefault.jpg",
       duration: "3:50",
       summary_en: "Master past simple irregular verbs like went, dove, swam, and wrote through storytelling.",
       summary_vi: "Thành thạo động từ bất quy tắc quá khứ đơn qua các câu chuyện kể."
@@ -332,15 +351,18 @@ const dailyWatchCode = `export default {
   ]
 };`;
 
-// --- shadowing.js ---
+// --- shadowing.js --- 8 SENTENCES + VIDEO ID
 const shadowingCode = `export default {
+  videoId: "eQsmq3Hu9HA",
   script: [
     { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/shadowing_1.mp3" },
     { id: 2, text: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg.", audio_url: "/audio/week36/shadowing_2.mp3" },
     { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/shadowing_3.mp3" },
     { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên.", audio_url: "/audio/week36/shadowing_4.mp3" },
     { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn.", audio_url: "/audio/week36/shadowing_5.mp3" },
-    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_6.mp3" }
+    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_6.mp3" },
+    { id: 7, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/shadowing_7.mp3" },
+    { id: 8, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn.", audio_url: "/audio/week36/shadowing_8.mp3" }
   ],
   sentences: [
     { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/shadowing_1.mp3" },
@@ -348,11 +370,61 @@ const shadowingCode = `export default {
     { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/shadowing_3.mp3" },
     { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên.", audio_url: "/audio/week36/shadowing_4.mp3" },
     { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn.", audio_url: "/audio/week36/shadowing_5.mp3" },
-    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_6.mp3" }
+    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_6.mp3" },
+    { id: 7, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/shadowing_7.mp3" },
+    { id: 8, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn.", audio_url: "/audio/week36/shadowing_8.mp3" }
   ]
 };`;
 
-// --- logic_science.js, singapore_math.js, vocab.js, grammar.js, writing.js, mindmap.js, social_quiz.js, word_match.js, games.js ---
+// --- dictation.js --- EXACTLY 8 SENTENCES
+const dictationCode = `export default {
+  sentences: [
+    { id: 1, text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/dictation_1.mp3" },
+    { id: 2, text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg.", audio_url: "/audio/week36/dictation_2.mp3" },
+    { id: 3, text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/dictation_3.mp3" },
+    { id: 4, text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên.", audio_url: "/audio/week36/dictation_4.mp3" },
+    { id: 5, text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/dictation_5.mp3" },
+    { id: 6, text_en: "He served as an official diplomat for emperor Kublai Khan.", text_vi: "Ông đã làm việc như một sứ giả ngoại giao cho hoàng đế Hốt Tất Liệt.", audio_url: "/audio/week36/dictation_6.mp3" },
+    { id: 7, text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất nước cực hạn.", audio_url: "/audio/week36/dictation_7.mp3" },
+    { id: 8, text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/dictation_8.mp3" }
+  ]
+};`;
+
+// --- writing.js --- COMPLETE WITH TITLE AND PROMPTS
+const writingCode = `export default {
+  title: "The Submarine Buoyancy Rescue & Silk Road Writing",
+  title_en: "The Submarine Buoyancy Rescue & Silk Road Writing",
+  hints: {
+    words: [
+      { word: "submarine", meaning_vi: "tàu ngầm" },
+      { word: "buoyancy", meaning_vi: "lực đẩy nổi" },
+      { word: "displace", meaning_vi: "dịch chuyển nước" },
+      { word: "cavern", meaning_vi: "hang động ngầm" },
+      { word: "compass", meaning_vi: "la bàn" },
+      { word: "merchant", meaning_vi: "thương gia" },
+      { word: "diplomat", meaning_vi: "nhà ngoại giao" },
+      { word: "airplane", meaning_vi: "máy bay", distractor: true },
+      { word: "skyscraper", meaning_vi: "tòa nhà cao tầng", distractor: true }
+    ]
+  },
+  story_prompts: {
+    picture_mode: {
+      type: "picture",
+      image_url: "/images/week36/read_stem_w36.jpg",
+      word_bank: ["submarine", "buoyancy", "displace", "chest", "compass"],
+      sentence_frames: [
+        "On Sunday afternoon, Leo dove into an underwater cavern in a ___.",
+        "To float the 150 kg chest, he applied Archimedes ___ principle.",
+        "He attached lift bags to ___ 150 litres of seawater."
+      ],
+      writing_prompts: {
+        en: "Write a short paragraph about how Leo used buoyancy and physics to lift an ancient chest from the ocean floor.",
+        vi: "Viết một đoạn văn ngắn về cách Leo sử dụng lực đẩy nổi và vật lý để nâng rương cổ lên từ đáy đại dương."
+      }
+    }
+  }
+};`;
+
 const logicScienceCode = `export default {
   title: "Physics of Ocean Buoyancy & Water Displacement",
   concept: "Archimedes Buoyancy Principle: Fb = density x volume x gravity",
@@ -538,38 +610,6 @@ const grammarCode = `export default {
   ]
 };`;
 
-const writingCode = `export default {
-  hints: {
-    words: [
-      { word: "submarine", meaning_vi: "tàu ngầm" },
-      { word: "buoyancy", meaning_vi: "lực đẩy nổi" },
-      { word: "displace", meaning_vi: "dịch chuyển nước" },
-      { word: "cavern", meaning_vi: "hang động ngầm" },
-      { word: "compass", meaning_vi: "la bàn" },
-      { word: "merchant", meaning_vi: "thương gia" },
-      { word: "diplomat", meaning_vi: "nhà ngoại giao" },
-      { word: "airplane", meaning_vi: "máy bay", distractor: true },
-      { word: "skyscraper", meaning_vi: "tòa nhà cao tầng", distractor: true }
-    ]
-  },
-  story_prompts: {
-    picture_mode: {
-      type: "picture",
-      image_url: "/images/week36/read_stem_w36.jpg",
-      word_bank: ["submarine", "buoyancy", "displace", "chest", "compass"],
-      sentence_frames: [
-        "On Sunday afternoon, Leo dove into an underwater cavern in a ___.",
-        "To float the 150 kg chest, he applied Archimedes ___ principle.",
-        "He attached lift bags to ___ 150 litres of seawater."
-      ],
-      writing_prompts: {
-        en: "Write a short paragraph about how Leo used buoyancy and physics to lift an ancient chest from the ocean floor.",
-        vi: "Viết một đoạn văn ngắn về cách Leo sử dụng lực đẩy nổi và vật lý để nâng rương cổ lên từ đáy đại dương."
-      }
-    }
-  }
-};`;
-
 const mindmapCode = `export default {
   centerStems: [
     "On Sunday afternoon, Leo dove into the ocean in a ___.",
@@ -642,17 +682,6 @@ const socialQuizCode = `export default {
   ]
 };`;
 
-const dictationCode = `export default {
-  sentences: [
-    { id: 1, text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/dictation_1.mp3" },
-    { id: 2, text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg.", audio_url: "/audio/week36/dictation_2.mp3" },
-    { id: 3, text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/dictation_3.mp3" },
-    { id: 4, text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/dictation_4.mp3" },
-    { id: 5, text_en: "He served as an official diplomat for emperor Kublai Khan.", text_vi: "Ông đã làm việc như một sứ giả ngoại giao cho hoàng đế Hốt Tất Liệt.", audio_url: "/audio/week36/dictation_5.mp3" },
-    { id: 6, text_en: "Submersibles with titanium hulls withstand extreme water pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất nước cực hạn.", audio_url: "/audio/week36/dictation_6.mp3" }
-  ]
-};`;
-
 const wordMatchCode = `export default {
   pairs: [
     { word: "submarine", definition_vi: "tàu ngầm" },
@@ -692,4 +721,4 @@ fs.writeFileSync(`${advDir}/social_quiz.js`, socialQuizCode);
 fs.writeFileSync(`${advDir}/word_match.js`, wordMatchCode);
 fs.writeFileSync(`${advDir}/games.js`, gamesCode);
 
-console.log("✅ Written all 16 station files with 8 Word Power & 4 Ask AI situations!");
+console.log("✅ Written all 16 station files with 5 Ask-AI, 8 Dictation, 8 Shadowing sentences & Write/Speak fixes!");
