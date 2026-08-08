@@ -16,22 +16,44 @@ import daily_watch from './daily_watch.js';
 import mindmap from './mindmap.js';
 import grammar from './grammar.js';
 
-export default {
-  read,
-  explore,
-  shadowing,
-  shadowing_ipa,
-  vocab,
-  word_power,
-  ask_ai,
-  dictation,
-  games,
-  logic_science,
-  singapore_math,
-  social_quiz,
-  word_match,
-  writing,
-  daily_watch,
-  mindmap,
-  grammar
+const weekData = {
+  weekId: 37,
+  isEasy: true,
+  weekTitle_en: "The Sports Day Challenge",
+  weekTitle_vi: "Thách Thức Ngày Hội Thể Thao",
+  grammar_focus: "Past Simple & Speed Science Concepts",
+
+  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore.chunk_focus || [])])],
+  dictionary: { ...(read.dictionary || {}), ...(explore.dictionary || {}) },
+
+  global_vocab: vocab,
+
+  voiceConfig: {
+    narration: 'en-US-Journey-F',
+    vocabulary: 'en-US-Neural2-F',
+    dictation: 'en-US-Neural2-F',
+    shadowing: 'en-US-Journey-F',
+    questions: 'en-US-Neural2-D',
+    mindmap: 'en-US-Neural2-D',
+    logic_lab: 'en-US-Neural2-D'
+  },
+
+  stations: {
+    read_explore: { read_stem: read.read_stem, read_social: read.read_social },
+    new_words: { vocab },
+    word_match: word_match,
+    grammar: grammar,
+    word_power: word_power,
+    ask_ai: ask_ai,
+    logic_lab: { logic_lab: logic_science, singapore_math, social_quiz },
+    dictation: dictation,
+    shadowing: shadowing,
+    writing: writing,
+    explore: explore,
+    mindmap_speaking: mindmap,
+    daily_watch: daily_watch,
+    game_hub: games
+  }
 };
+
+export default weekData;
