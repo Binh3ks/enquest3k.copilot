@@ -1,53 +1,70 @@
 export default {
-  title_en: "Why Outdoor Sports Keep Us Healthy",
-  title_vi: "Tại Sao Thể Thao Ngoài Trời Giúp Chúng Ta Khỏe Mạnh",
-  image_url: null,
-  audio_narration: "/audio/week37/explore_main.mp3",
-  content_en: `Participating in regular physical sports **is great for our body** in numerous scientific ways. When students **run in the park**, their leg muscles grow much stronger, their stamina improves, and their heart stays remarkably healthy. Absorbing fresh outdoor air and **bright sunlight** also **help us feel happy** while energizing our active brain for daily learning and studying.
-
-Furthermore, team sports teach active children **important social skills** that last a lifetime. When students engage in sports like football, basketball, or relay racing, they **learn to cooperate** effectively and **listen to our teammates** with respect and patience. **Working together** as a unified group helps everyone achieve ambitious goals that would be impossible to accomplish alone.
-
-Health experts strongly recommend completing **30 minutes of exercise** **every single day** to maintain high energy and boost academic focus. So lace up your running trainers and **enjoy outdoor sports** with your classmates today for a happier and healthier life!`,
-  content_vi: `Tham gia các hoạt động ngoài trời và thể thao thường xuyên rất tốt cho cơ thể chúng ta. Khi học sinh chạy trong công viên, cơ bắp chân phát triển khỏe mạnh hơn và tim luôn khỏe. Không khí trong lành và ánh nắng sáng giúp chúng ta cảm thấy vui vẻ. Thể thao dạy chúng ta các kỹ năng xã hội quan trọng. Chúng ta học cách hợp tác và lắng nghe đồng đội. Làm việc cùng nhau giúp mọi người đạt được mục tiêu lớn. 30 phút tập thể dục mỗi ngày cải thiện sự tập trung. Hãy tận hưởng thể thao ngoài trời hôm nay!`,
+  content_en: `Far away in East Africa, high in the Great Rift Valley of Kenya, lies a legendary town called Iten. It **is known as the Home of Champions** because world-record marathon runners train there every day. Young athletes run together on red dirt paths 2,400 metres above sea level. High up in the mountains, the thin air contains less oxygen, so the human body naturally adapts by building stronger lungs and heart muscles. For many Kenyan children, **running long distances to school** across rolling hills **is a normal part** of daily life. This daily endurance training turns young runners into world-class athletes who **win global marathon races**. Today, international runners from around the world **travel to Kenya to train** together in Iten. Athletes **share traditional meals** and **learn about different cultures** while running under the African sun. Outdoor running in Kenya **is a powerful bridge** that connects local communities to the global sports world. By pursuing athletic dreams, young runners **inspire children everywhere** to stay active and **achieve great goals**!`,
+  content_vi: `Xa xôi ở Đông Phi, cao trên Thung lũng Rift Lớn của Kenya, có một thị trấn huyền thoại tên là Iten. Nơi đây được biết đến như Quê hương của những Nhà vô địch vì các vận động viên marathon kỷ lục thế giới tập luyện ở đó mỗi ngày. Các vận động viên trẻ cùng nhau chạy trên những con đường đất đỏ cao 2.400 mét so với mực nước biển. Trên núi cao, không khí mỏng chứa ít oxy hơn, vì vậy cơ thể con người tự nhiên thích nghi bằng cách xây dựng lá phổi và cơ tim khỏe mạnh hơn. Đối với nhiều trẻ em Kenya, việc chạy quãng đường dài đến trường qua những ngọn đồi nhấp nhô là một phần bình thường của cuộc sống hàng ngày. Việc rèn luyện sức bền hàng ngày này biến các vận động viên trẻ thành những vận động viên đẳng cấp thế giới, những người giành chiến thắng trong các giải marathon toàn cầu. Ngày nay, các vận động viên quốc tế từ khắp nơi trên thế giới đến Kenya để cùng tập luyện ở Iten. Họ chia sẻ các bữa ăn truyền thống và tìm hiểu về các nền văn hóa khác nhau. Chạy bộ ở Kenya là chiếc cầu nối mạnh mẽ kết nối cộng đồng địa phương với thế giới thể thao toàn cầu!`,
   check_questions: [
-    { id: 1, question_en: "What grows stronger when children run in the park?", answer: ["Leg muscles", "Their leg muscles"], hint_en: "Leg...", hint_vi: "Cơ...", audio_url: "/audio/week37/explore_q1.mp3" },
-    { id: 2, question_en: "What vitamin does morning sunlight help synthesize?", answer: ["Vitamin D"], hint_en: "Vitamin...", hint_vi: "Vitamin...", audio_url: "/audio/week37/explore_q2.mp3" },
-    { id: 3, question_en: "How many minutes of exercise do experts recommend daily?", answer: ["30 minutes", "30"], hint_en: "30...", hint_vi: "30...", audio_url: "/audio/week37/explore_q3.mp3" },
-    { id: 99, type: "critical_thinking", question_en: "Explain why teamwork is important in relay races. How do teammates cooperate to achieve victory?", answer: ["Teamwork is essential in relay races because every runner depends on smooth baton passes. Working together with trust and strategy allows the team to cross the finish line faster."], hint_en: "Think about trust, passing baton, and speed.", hint_vi: "Suy nghĩ về sự tin tưởng, truyền gậy và tốc độ.", audio_url: "/audio/week37/explore_q4.mp3" }
+    {
+      id: 1,
+      question_en: "Where is the town of Iten located?",
+      question_vi: "Thị trấn Iten nằm ở đâu?",
+      options: [
+        "In the Great Rift Valley of Kenya, East Africa",
+        "In ancient Olympia, Greece",
+        "Near a sports stadium in London",
+        "On a tropical island in the Pacific Ocean"
+      ],
+      correct_answer: 0,
+      explanation_en: "Iten is located high in the Great Rift Valley of Kenya, East Africa.",
+      explanation_vi: "Iten nằm ở vùng cao trên Thung lũng Rift Lớn của Kenya, Đông Phi."
+    },
+    {
+      id: 2,
+      question_en: "Why does running high up in the mountains build stronger lungs and heart muscles?",
+      question_vi: "Tại sao chạy trên núi cao lại giúp phổi và cơ tim khỏe mạnh hơn?",
+      options: [
+        "Because thin mountain air has less oxygen, forcing the body to adapt",
+        "Because mountain tracks are made of synthetic rubber",
+        "Because athletes only run in cold rainy weather",
+        "Because children drink special juices in the mountains"
+      ],
+      correct_answer: 0,
+      explanation_en: "Thin mountain air contains less oxygen, so the human body adapts by strengthening lungs and heart muscles.",
+      explanation_vi: "Không khí mỏng trên núi chứa ít oxy hơn, khiến cơ thể thích nghi bằng cách làm lá phổi và cơ tim khỏe hơn."
+    },
+    {
+      id: 3,
+      question_en: "What do international runners do when they travel to Iten, Kenya?",
+      question_vi: "Các vận động viên quốc tế làm gì khi đến Iten, Kenya?",
+      options: [
+        "They train together, share traditional meals, and learn about different cultures",
+        "They build big sports stadiums with swimming pools",
+        "They stop running and rest at hotels all day",
+        "They only watch sports on television"
+      ],
+      correct_answer: 0,
+      explanation_en: "Runners from around the world train together, share traditional meals, and exchange cultures in Iten.",
+      explanation_vi: "Các vận động viên từ khắp nơi trên thế giới cùng tập luyện, chia sẻ bữa ăn truyền thống và giao lưu văn hóa tại Iten."
+    },
+    {
+      id: 4,
+      critical_thinking: true,
+      question_en: "How does running long distances every day help children build physical strength and achieve their future dreams?",
+      question_vi: "Chạy bộ quãng đường dài hàng ngày giúp trẻ em xây dựng thể lực và đạt được ước mơ tương lai như thế nào?",
+      options: [
+        "It builds strong cardiovascular endurance and determination to overcome challenges",
+        "It makes children stay inside their classrooms all day",
+        "It lets runners skip daily practice completely",
+        "It only helps people win gold trophies without hard work"
+      ],
+      correct_answer: 0,
+      explanation_en: "Daily endurance running develops strong heart endurance and mental resilience to achieve great life goals.",
+      explanation_vi: "Chạy bộ rèn luyện sức bền tim mạch và ý chí kiên cường để vượt qua khó khăn và đạt mục tiêu lớn."
+    }
   ],
-  writing_prompt_en: "Write 3 sentences about your favourite outdoor sport and how it keeps your heart and body healthy.",
-  writing_prompt_vi: "Viết 3 câu về môn thể thao ngoài trời yêu thích của bạn và cách nó giúp tim và cơ thể khỏe mạnh.",
   question: {
-    text_en: "What outdoor sport do you enjoy playing with your classmates?",
-    text_vi: "Môn thể thao ngoài trời nào bạn thích chơi cùng các bạn cùng lớp?",
-    min_words: 25,
-    hint_en: "I enjoy playing... It helps me... We learn to...",
-    hint_vi: "Tôi thích chơi... Nó giúp tôi... Chúng tôi học cách..."
-  },
-  chunk_focus: [
-    "is great for our body",
-    "run in the park",
-    "bright sunlight",
-    "help us feel happy",
-    "important social skills",
-    "learn to cooperate",
-    "listen to our teammates",
-    "Working together",
-    "30 minutes of exercise",
-    "every single day",
-    "enjoy outdoor sports"
-  ],
-  dictionary: {
-    'is great for our body': { word: 'is great for our body', pronunciation: '/ɪz ɡreɪt fɔːr aʊə ˈbɒdi/', definition_vi: 'thật tuyệt vời cho cơ thể', example: 'Playing sports is great for our body.' },
-    'run in the park': { word: 'run in the park', pronunciation: '/rʌn ɪn ðə pɑːk/', definition_vi: 'chạy trong công viên', example: 'We run in the park.' },
-    'bright sunlight': { word: 'bright sunlight', pronunciation: '/braɪt ˈsʌnlaɪt/', definition_vi: 'ánh nắng sáng', example: 'The bright sunlight warms the field.' },
-    'help us feel happy': { word: 'help us feel happy', pronunciation: '/help ʌs fiːl ˈhæpi/', definition_vi: 'giúp chúng ta cảm thấy vui vẻ', example: 'Sports help us feel happy.' },
-    'important social skills': { word: 'important social skills', pronunciation: '/ɪmˈpɔːtnt ˈsəʊʃl skɪlz/', definition_vi: 'kỹ năng xã hội quan trọng', example: 'Sports teach important social skills.' },
-    'learn to cooperate': { word: 'learn to cooperate', pronunciation: '/lɜːn tuː kəʊˈɒpəreɪt/', definition_vi: 'học cách hợp tác', example: 'We learn to cooperate.' },
-    'listen to our teammates': { word: 'listen to our teammates', pronunciation: '/ˈlɪsn tuː aʊə ˈtiːmmeɪts/', definition_vi: 'lắng nghe đồng đội', example: 'We listen to our teammates.' },
-    'Working together': { word: 'Working together', pronunciation: '/ˈwɜːkɪŋ təˈɡeðə/', definition_vi: 'làm việc cùng nhau', example: 'Working together brings success.' },
-    '30 minutes of exercise': { word: '30 minutes of exercise', pronunciation: '/ˈθɜːti ˈmɪnɪts əv ˈeksəsaɪz/', definition_vi: '30 phút tập thể dục', example: 'We need 30 minutes of exercise.' },
-    'every single day': { word: 'every single day', pronunciation: '/ˈevri ˈsɪŋɡl deɪ/', definition_vi: 'mỗi một ngày', example: 'Exercise every single day.' },
-    'enjoy outdoor sports': { word: 'enjoy outdoor sports', pronunciation: '/ɪnˈdʒɔɪ ˈaʊtdɔː spɔːts/', definition_vi: 'tận hưởng thể thao ngoài trời', example: 'We enjoy outdoor sports.' }
+    text_en: "Write a short paragraph about how high-altitude running in Kenya inspires children around the world to stay active and pursue their dreams.",
+    text_vi: "Viết một đoạn văn ngắn về việc chạy bộ trên vùng cao ở Kenya truyền cảm hứng cho trẻ em trên toàn thế giới giữ lối sống năng động và theo đuổi ước mơ.",
+    min_words: 15,
+    hint_en: "Mention Kenya, high altitude, thin air, strong lungs, and inspiring global children.",
+    hint_vi: "Nêu các ý: Kenya, độ cao lớn, không khí mỏng, lá phổi khỏe, và truyền cảm hứng cho trẻ em toàn cầu."
   }
 };

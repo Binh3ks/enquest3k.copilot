@@ -217,5 +217,12 @@ export const dictionary = {
     definition_vi: "change a student's life",
     definition_en: "Context phrase: change a student's life",
     example: "We practiced change a student's life today."
+  },
+  "change a student's life": {
+    word: "change a student's life",
+    pronunciation: "/change a student's life/",
+    definition_vi: "change a student's life",
+    definition_en: "Context phrase: change a student's life",
+    example: "We practiced change a student's life today."
   }
 };

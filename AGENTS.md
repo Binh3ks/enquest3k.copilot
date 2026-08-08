@@ -55,7 +55,11 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
    - KHÔNG tái sử dụng videoId đã dùng ở các tuần W01-W36. Bắt buộc có file transcript JSON Deepgram tại `src/data/video_transcripts_by_id/sentences/<videoId>.json`.
    - **Chế độ TTS**: Sử dụng 10-12 câu tóm tắt nội dung bài đọc của tuần (`content_en`), độc lập hoàn toàn với Video Mode.
 4. **Mindmap Speaking**: 6 `centerStems` $\times$ 6 `branchLabels` cho mỗi stem = **36 branches** tổng cộng per mode.
-5. **Explore Station (`explore.js`)**: Chứa `content_en`, `content_vi` (145-220w), `check_questions` (3 câu đọc hiểu + 1 câu `critical_thinking`), và đối tượng `question` (`text_en`, `text_vi`, `min_words`, `hint_en`, `hint_vi`).
+5. **Explore Station (`explore.js`) Global World Horizon Standard**:
+   - **Mục tiêu cốt lõi (Global Horizon)**: Phải mở rộng tầm nhìn ra thế giới (*Global Perspective*), đưa học sinh đi khám phá địa lý, văn hóa và cộng đồng độc đáo trên toàn cầu (ví dụ: các nhà vô địch marathon tại thung lũng Rift Valley - Kenya, bộ tộc Tarahumara ở Mexico, hành trình ngọn đuốc Olympic).
+   - **Cấm lặp lại nội dung trường học nội địa (No Repetitive Local School Advice)**: Không quay lại lối mòn khuyên nhủ cá nhân 30 phút thể dục/ngày hay lớp học quen thuộc. Phải tạo giá trị tri thức gia tăng về thế giới.
+   - **Cấu trúc dữ liệu**: Chứa `content_en`, `content_vi` (145-220w), `check_questions` (3 câu đọc hiểu + 1 câu `critical_thinking`), và đối tượng `question` (`text_en`, `text_vi`, `min_words`, `hint_en`, `hint_vi`).
+   - **Ngữ pháp & Văn phong**: Đảm bảo đúng Subject-Verb Agreement (Gerund + singular verb: `Absorbing... helps`), góc nhìn nhất quán (3rd person perspective), chunking 2-4 từ mượt mà.
 6. **Write & Speak (`writing.js`)**: Chứa `hints.words` (từ gợi ý + từ bẫy `distractor: true`), và `story_prompts.picture_mode` (`type: 'picture'`, `image_url`, `word_bank`, `sentence_frames`, `writing_prompts: {en, vi}`) để kích hoạt đầy đủ các sub-tab viết theo tranh.
 7. **AI Tutor V28 Format (`week_XX_real.js` & `week_XX_easy_real.js`)**: Bắt buộc tạo ở cả 2 vị trí (`src/data/weeks/week_XX_real.js` và `src/data/weeks/week_XX/week_XX_real.js`), xuất đủ `story_missions` (Mission 1 retell STEM, Mission 2 retell Social Studies, Mission 3 liên hệ bản thân), `spark_talk` ĐÚNG 2 THẺ BÀI (`spark_talk` array length = 2), `target_vocab` (20 từ) & `sentences` (câu shadowing).
 8. **Daily Watch (`daily_watch.js`)**: Bắt buộc 5 video giáo dục độc bản (không dùng video âm nhạc giải trí như Despacito, không trùng lặp video ID của các tuần W01-W36).

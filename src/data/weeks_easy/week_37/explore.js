@@ -1,53 +1,70 @@
 export default {
-  title_en: "Sports in the Sun",
-  title_vi: "Thể Thao Dưới Ánh Nắng",
-  image_url: null,
-  audio_narration: "/audio/week37_easy/explore_main.mp3",
-  content_en: `Participating in fun outdoor sports **is great for our body** in many wonderful ways. When young children **run in the park**, their leg muscles grow strong, their lungs expand, and their hearts stay very healthy. Breathing fresh outdoor air and enjoying **bright sunlight** also **help us feel happy** while giving us good positive energy for schoolwork and studying every single day.
-
-Moreover, playing team sports together teaches kids **important social skills**. When we play soccer or relay races, we **learn to cooperate** nicely with our classmates and **listen to our teammates** with kindness and care. **Working together** as a strong unified team helps everyone reach big goals much faster than playing alone.
-
-Doctor health experts say that doing **30 minutes of exercise** **every single day** keeps our active minds sharp, clear, focused, and very healthy. Put on your comfortable running trainers and **enjoy outdoor sports** with your best friends today!`,
-  content_vi: `Chơi thể thao ngoài trời rất tốt cho cơ thể chúng ta. Khi trẻ em chạy trong công viên, cơ chân phát triển khỏe mạnh và tim luôn khỏe. Hít thở không khí trong lành và đón ánh nắng sáng giúp chúng ta cảm thấy vui vẻ. Chơi các trò chơi đồng đội dạy trẻ em các kỹ năng xã hội quan trọng. Chúng ta học cách hợp tác và lắng nghe đồng đội. Làm việc cùng nhau giúp mọi người đạt mục tiêu nhanh hơn. 30 phút tập thể dục mỗi ngày giúp trí óc nhạy bén. Hãy tận hưởng thể thao ngoài trời hôm nay!`,
+  content_en: `Far away in East Africa, high in the mountains of Kenya, lies a small town named Iten. It **is known as the Home of Champions** because fast marathon runners train there every single day. High mountain air has less oxygen, so active runners build very strong lungs and healthy hearts. For many Kenyan children, **running long distances to school** across green hills **is a normal part** of daily life. They **run on red dirt paths** every morning under the warm African sun. Fresh mountain air gives active runners great natural energy. This long training helps them **win global marathon races** around the world. Today, international runners from many countries **travel to Kenya to train** together in Iten. They **share healthy meals** and **learn about different cultures** while running fast. Running **is a great bridge** that connects Kenya to children everywhere. Young athletes **feel proud** when they **achieve big dreams** through speed!`,
+  content_vi: `Xa xôi ở Đông Phi, cao trên những ngọn núi ở Kenya, có một thị trấn nhỏ tên là Iten. Nơi đây được biết đến như Quê hương của những Nhà vô địch vì các vận động viên marathon nhanh nhẹn tập luyện ở đó mỗi ngày. Không khí núi cao có ít oxy hơn, nên người chạy xây dựng lá phổi và cơ tim rất khỏe. Đối với nhiều trẻ em Kenya, chạy quãng đường dài đến trường qua những ngọn đồi xanh là một phần bình thường của cuộc sống hàng ngày. Họ chạy trên đường đất đỏ mỗi sáng dưới ánh nắng mặt trời Châu Phi ấm áp. Không khí núi trong lành mang lại năng lượng tự nhiên lớn. Sự rèn luyện lâu dài này giúp họ giành chiến thắng trong các giải marathon toàn cầu trên thế giới. Ngày nay, các vận động viên quốc tế từ nhiều quốc gia đến Kenya để cùng tập luyện ở Iten. Họ chia sẻ các bữa ăn lành mạnh và tìm hiểu về các nền văn hóa khác nhau. Chạy bộ là chiếc cầu nối tuyệt vời kết nối Kenya với trẻ em khắp nơi. Các vận động viên trẻ cảm thấy tự hào khi họ đạt được những giấc mơ lớn thông qua tốc độ!`,
   check_questions: [
-    { id: 1, question_en: "Where do young children run to build leg muscles?", answer: ["In the park", "Park"], hint_en: "In the...", hint_vi: "Trong...", audio_url: "/audio/week37_easy/explore_q1.mp3" },
-    { id: 2, question_en: "How many minutes of exercise should we do daily?", answer: ["30 minutes", "30"], hint_en: "30...", hint_vi: "30...", audio_url: "/audio/week37_easy/explore_q2.mp3" },
-    { id: 3, question_en: "What do team sports teach active kids?", answer: ["Important social skills", "Social skills"], hint_en: "Social...", hint_vi: "Kỹ năng...", audio_url: "/audio/week37_easy/explore_q3.mp3" },
-    { id: 99, type: "critical_thinking", question_en: "What outdoor sport do you like playing with your best friends? Why does it make you happy?", answer: ["I like playing soccer with my friends in the park. Running and kicking the ball together makes us feel happy and healthy."], hint_en: "Think about the game and why it is fun.", hint_vi: "Suy nghĩ về trò chơi và lý do nó vui.", audio_url: "/audio/week37_easy/explore_q4.mp3" }
+    {
+      id: 1,
+      question_en: "Where is the small town named Iten?",
+      question_vi: "Thị trấn nhỏ tên Iten ở đâu?",
+      options: [
+        "High in the mountains of Kenya",
+        "In a big city classroom",
+        "Near a ocean beach",
+        "In ancient Greece"
+      ],
+      correct_answer: 0,
+      explanation_en: "Iten is a small town high in the mountains of Kenya.",
+      explanation_vi: "Iten là một thị trấn nhỏ ở vùng núi cao của Kenya."
+    },
+    {
+      id: 2,
+      question_en: "How do Kenyan children get to school every morning?",
+      question_vi: "Trẻ em Kenya đến trường như thế nào mỗi sáng?",
+      options: [
+        "They run across green hills and red dirt paths",
+        "They take big yellow buses",
+        "They ride fast trains",
+        "They stay at home all day"
+      ],
+      correct_answer: 0,
+      explanation_en: "Kenyan children run long distances to school across hills and dirt paths.",
+      explanation_vi: "Trẻ em Kenya chạy quãng đường dài đến trường qua những ngọn đồi và đường đất."
+    },
+    {
+      id: 3,
+      question_en: "What connects Kenya to children around the world?",
+      question_vi: "Điều gì kết nối Kenya với trẻ em trên khắp thế giới?",
+      options: [
+        "Running and sports friendship",
+        "Buying new toys",
+        "Watching television alone",
+        "Playing computer games"
+      ],
+      correct_answer: 0,
+      explanation_en: "Running is a great bridge that connects Kenya to children everywhere through sports.",
+      explanation_vi: "Chạy bộ là chiếc cầu nối tuyệt vời kết nối Kenya với trẻ em khắp nơi qua tình bạn thể thao."
+    },
+    {
+      id: 4,
+      critical_thinking: true,
+      question_en: "Why is running outdoors good for your heart and body?",
+      question_vi: "Tại sao chạy bộ ngoài trời lại tốt cho tim và cơ thể của bạn?",
+      options: [
+        "It builds strong lungs, a healthy heart, and great energy",
+        "It makes people feel tired and sad all day",
+        "It prevents children from making new friends",
+        "It only works inside a quiet room"
+      ],
+      correct_answer: 0,
+      explanation_en: "Outdoor running strengthens your lungs and heart while giving high energy.",
+      explanation_vi: "Chạy bộ ngoài trời giúp tăng cường sức khỏe của phổi và tim đồng thời mang lại năng lượng dồi dào."
+    }
   ],
-  writing_prompt_en: "Write 2 sentences about playing sports outdoors.",
-  writing_prompt_vi: "Viết 2 câu về việc chơi thể thao ngoài trời.",
   question: {
-    text_en: "What outdoor sport do you like?",
-    text_vi: "Bạn thích môn thể thao ngoài trời nào?",
-    min_words: 15,
-    hint_en: "I like... It is fun because...",
-    hint_vi: "Tôi thích... Nó vui vì..."
-  },
-  chunk_focus: [
-    "is great for our body",
-    "run in the park",
-    "bright sunlight",
-    "help us feel happy",
-    "important social skills",
-    "learn to cooperate",
-    "listen to our teammates",
-    "Working together",
-    "30 minutes of exercise",
-    "every single day",
-    "enjoy outdoor sports"
-  ],
-  dictionary: {
-    'is great for our body': { word: 'is great for our body', pronunciation: '/ɪz ɡreɪt fɔːr aʊə ˈbɒdi/', definition_vi: 'tốt cho chúng ta', example: 'Sports are good for us.' },
-    'run in the park': { word: 'run in the park', pronunciation: '/rʌn ɪn ðə pɑːk/', definition_vi: 'chạy trong công viên', example: 'We run in the park.' },
-    'bright sunlight': { word: 'bright sunlight', pronunciation: '/braɪt ˈsʌnlaɪt/', definition_vi: 'ánh nắng sáng', example: 'Bright sunlight warms us.' },
-    'help us feel happy': { word: 'help us feel happy', pronunciation: '/help ʌs fiːl ˈhæpi/', definition_vi: 'giúp chúng ta cảm thấy vui vẻ', example: 'Sports help us feel happy.' },
-    'important social skills': { word: 'important social skills', pronunciation: '/ɪmˈpɔːtnt ˈsəʊʃl skɪlz/', definition_vi: 'kỹ năng xã hội quan trọng', example: 'Sports teach social skills.' },
-    'learn to cooperate': { word: 'learn to cooperate', pronunciation: '/lɜːn tuː kəʊˈɒpəreɪt/', definition_vi: 'học cách hợp tác', example: 'We learn to cooperate.' },
-    'listen to our teammates': { word: 'listen to our teammates', pronunciation: '/ˈlɪsn tuː aʊə ˈtiːmmeɪts/', definition_vi: 'lắng nghe đồng đội', example: 'Listen to teammates.' },
-    'Working together': { word: 'Working together', pronunciation: '/ˈwɜːkɪŋ təˈɡeðə/', definition_vi: 'làm việc cùng nhau', example: 'Working together brings joy.' },
-    '30 minutes of exercise': { word: '30 minutes of exercise', pronunciation: '/ˈθɜːti ˈmɪnɪts əv ˈeksəsaɪz/', definition_vi: '30 phút tập thể dục', example: 'Do 30 minutes of exercise.' },
-    'every single day': { word: 'every single day', pronunciation: '/ˈevri ˈsɪŋɡl deɪ/', definition_vi: 'mỗi một ngày', example: 'Exercise every single day.' },
-    'enjoy outdoor sports': { word: 'enjoy outdoor sports', pronunciation: '/ɪnˈdʒɔɪ ˈaʊtdɔː spɔːts/', definition_vi: 'tận hưởng thể thao ngoài trời', example: 'Enjoy outdoor sports.' }
+    text_en: "Why do runners from many countries travel to Kenya to train together?",
+    text_vi: "Tại sao các vận động viên từ nhiều quốc gia lại đến Kenya để cùng tập luyện?",
+    min_words: 10,
+    hint_en: "Mention strong lungs, running fast, and global friendship.",
+    hint_vi: "Nêu các ý: lá phổi khỏe, chạy nhanh, và tình hữu nghị toàn cầu."
   }
 };
