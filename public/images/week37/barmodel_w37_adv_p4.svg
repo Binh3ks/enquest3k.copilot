@@ -1,17 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" width="100%" height="100%">
-  <rect width="600" height="220" fill="#f8fafc" rx="12"/>
-  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Missing Part Bar Model: Relay Target Time</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
+  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
+  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Bar Model: Stadium Seats</text>
   
-  <path d="M 50 65 L 50 55 L 550 55 L 550 65 M 300 55 L 300 45" stroke="#2563eb" stroke-width="3" fill="none"/>
-  <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb" text-anchor="middle">Target Time = 60 seconds</text>
+  <!-- Total Bracket Top -->
+  <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#2563eb" stroke-width="3" fill="none"/>
+  <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb" text-anchor="middle">Total Seats = 500</text>
 
-  <rect x="50" y="70" width="270" height="60" fill="#06b6d4" rx="6" stroke="#0891b2" stroke-width="2"/>
-  <text x="185" y="100" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Leo + Maya</text>
-  <text x="185" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">32 seconds</text>
+  <!-- Part 1: Filled (320) -->
+  <rect x="60" y="70" width="307" height="60" fill="#f59e0b" rx="6"/>
+  <text x="213" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Filled: 320 seats</text>
 
-  <rect x="325" y="70" width="225" height="60" fill="#ec4899" rx="6" stroke="#be185d" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="437" y="100" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Max's Time Needed</text>
-  <text x="437" y="120" font-family="sans-serif" font-size="16" font-weight="extrabold" fill="#ffffff" text-anchor="middle">?</text>
+  <!-- Part 2: Empty (?) -->
+  <rect x="370" y="70" width="170" height="60" fill="#10b981" rx="6" stroke="#059669" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="455" y="105" font-family="sans-serif" font-size="15" font-weight="extrabold" fill="#ffffff" text-anchor="middle">Empty: ?</text>
 
-  <text x="300" y="180" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 60 - 32 = 28 seconds</text>
+  <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 500 - 320 = ? seats</text>
 </svg>

@@ -1,51 +1,51 @@
 export default {
-  title: "Sports Day Singapore Math Problems",
-  theme: "sports_day_math",
+  title: "Sports Day Easy Math Problems",
+  theme: "sports_day_easy_math",
   problems: [
     {
       id: 1,
       type: "comparison",
-      question_en: "Leo ran his relay lap in 12 seconds. Maya ran her lap 2 seconds faster than Leo. How long did Maya take?",
-      bar_model: "/images/week37/barmodel_w37_adv_p1.svg",
-      answer: ["10"],
-      hint_en: "Subtract 2 seconds from Leo's time of 12 seconds.",
-      hint_vi: "Trừ 2 giây khỏi thời gian 12 giây của Leo."
+      question_en: "Leo ran for 10 seconds. Maya ran for 8 seconds. How many seconds faster was Maya?",
+      bar_model: "/images/week37/barmodel_w37_easy_p1.svg",
+      answer: ["2"],
+      hint_en: "Subtract 8 seconds from 10 seconds.",
+      hint_vi: "Trừ 8 giây khỏi 10 giây."
     },
     {
       id: 2,
       type: "part_whole",
-      question_en: "A relay team ran a total distance of 400 metres across 4 equal laps. How long is each lap?",
-      bar_model: "/images/week37/barmodel_w37_adv_p2.svg",
-      answer: ["100"],
-      hint_en: "Divide the total distance 400m by 4 laps.",
-      hint_vi: "Chia tổng quãng đường 400m cho 4 vòng."
+      question_en: "Leo passed 5 batons on Monday and 4 batons on Tuesday. How many batons did he pass in total?",
+      bar_model: "/images/week37/barmodel_w37_easy_p2.svg",
+      answer: ["9"],
+      hint_en: "Add 5 and 4 batons.",
+      hint_vi: "Cộng 5 và 4 chiếc gậy."
     },
     {
       id: 3,
-      type: "comparison",
-      question_en: "In ancient Greece, 150 athletes competed in race A. Race B had 50 more athletes than race A. How many athletes competed in race B?",
-      bar_model: "/images/week37/barmodel_w37_adv_p3.svg",
-      answer: ["200"],
-      hint_en: "Add 50 to 150 athletes.",
-      hint_vi: "Cộng 50 vào 150 vận động viên."
+      type: "groups",
+      question_en: "There are 4 relay teams. Each team has 3 runners. How many runners are there in total?",
+      bar_model: "/images/week37/barmodel_w37_easy_p3.svg",
+      answer: ["12"],
+      hint_en: "Multiply 4 teams by 3 runners.",
+      hint_vi: "Nhân 4 đội với 3 người."
     },
     {
       id: 4,
       type: "missing_part",
-      question_en: "The stadium has 500 total seats. 320 seats are filled with spectators. How many empty seats remain?",
-      bar_model: "/images/week37/barmodel_w37_adv_p4.svg",
-      answer: ["180"],
-      hint_en: "Subtract 320 from 500 total seats.",
-      hint_vi: "Trừ 320 khỏi tổng số 500 ghế."
+      question_en: "There are 20 total seats in the stadium row. 12 seats are taken. How many seats are free?",
+      bar_model: "/images/week37/barmodel_w37_easy_p4.svg",
+      answer: ["8"],
+      hint_en: "Subtract 12 from 20 seats.",
+      hint_vi: "Trừ 12 khỏi 20 ghế."
     },
     {
       id: 5,
-      type: "groups",
-      question_en: "There are 6 relay teams in the final. Each team has 4 runners. How many runners are in the final altogether?",
-      bar_model: "/images/week37/barmodel_w37_adv_p5.svg",
-      answer: ["24"],
-      hint_en: "Multiply 6 teams by 4 runners per team.",
-      hint_vi: "Nhân 6 đội với 4 người chạy mỗi đội."
+      type: "comparison",
+      question_en: "Kenya won 6 gold medals. Greece won 4 gold medals. How many gold medals did they win altogether?",
+      bar_model: "/images/week37/barmodel_w37_easy_p5.svg",
+      answer: ["10"],
+      hint_en: "Add 6 and 4 medals.",
+      hint_vi: "Cộng 6 và 4 huy chương."
     }
   ]
 };
