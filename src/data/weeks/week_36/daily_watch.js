@@ -1,5 +1,3 @@
-// WEEK 36: Daily Watch Station — Advanced Mode
-
 export default {
   videos: [
     {
@@ -15,41 +13,41 @@ export default {
     },
     {
       id: "v36_2",
-      title: "Inside Deep Ocean Submersibles",
-      title_en: "Inside Deep Ocean Submersibles",
-      title_vi: "Bên Trong Tàu Lặn Đại Dương Sâu",
-      youtube_id: "m43x05ZgC8w",
-      thumb: "https://img.youtube.com/vi/m43x05ZgC8w/hqdefault.jpg",
+      title: "Deep Sea Submersibles & Ocean Pressure",
+      title_en: "Deep Sea Submersibles & Ocean Pressure",
+      title_vi: "Tàu Lặn Đại Dương Sâu & Áp Suất Nước",
+      youtube_id: "0a3cM09f5K0",
+      thumb: "https://img.youtube.com/vi/0a3cM09f5K0/hqdefault.jpg",
       duration: "5:30",
       summary_en: "See how scientists build titanium submersibles to withstand extreme ocean pressure.",
       summary_vi: "Xem cách các nhà khoa học chế tạo tàu lặn titan để chịu đựng áp suất đại dương cực hạn."
     },
     {
       id: "v36_3",
-      title: "Marco Polo's Journey to China",
-      title_en: "Marco Polo's Journey to China",
-      title_vi: "Hành Trình Marco Polo Đến Trung Quốc",
-      youtube_id: "2A3_jA5eG7w",
-      thumb: "https://img.youtube.com/vi/2A3_jA5eG7w/hqdefault.jpg",
+      title: "Marco Polo's Journey on the Silk Road",
+      title_en: "Marco Polo's Journey on the Silk Road",
+      title_vi: "Hành Trình Marco Polo Trên Con Đường Tơ Lụa",
+      youtube_id: "19h1vH1D574",
+      thumb: "https://img.youtube.com/vi/19h1vH1D574/hqdefault.jpg",
       duration: "4:45",
       summary_en: "Discover the 24-year Silk Road expedition of Marco Polo in the 13th century.",
       summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo ở thế kỷ 13."
     },
     {
       id: "v36_4",
-      title: "Exploring the Mariana Trench",
-      title_en: "Exploring the Mariana Trench",
+      title: "Exploring the Mariana Trench Challenger Deep",
+      title_en: "Exploring the Mariana Trench Challenger Deep",
       title_vi: "Khám Phá Rãnh Đại Dương Mariana",
-      youtube_id: "rF_yW3G0h7o",
-      thumb: "https://img.youtube.com/vi/rF_yW3G0h7o/hqdefault.jpg",
+      youtube_id: "UU40gqM4R8s",
+      thumb: "https://img.youtube.com/vi/UU40gqM4R8s/hqdefault.jpg",
       duration: "6:10",
       summary_en: "Dive nearly 11,000 metres down to Challenger Deep, the deepest point on Earth.",
       summary_vi: "Lặn xuống gần 11.000 mét tới Challenger Deep, điểm sâu nhất trên Trái Đất."
     },
     {
       id: "v36_5",
-      title: "Irregular Verbs in English Stories",
-      title_en: "Irregular Verbs in English Stories",
+      title: "Irregular Verbs in English Storytelling",
+      title_en: "Irregular Verbs in English Storytelling",
       title_vi: "Động Từ Bất Quy Tắc Trong Câu Chuyện Tiếng Anh",
       youtube_id: "MA3NFtLc22k",
       thumb: "https://img.youtube.com/vi/MA3NFtLc22k/hqdefault.jpg",

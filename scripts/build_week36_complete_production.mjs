@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-console.log("🚀 RE-BUILDING WEEK 36 PRODUCTION DATA WITH 100% PERFECT SCHEMAS...");
+console.log("🚀 RE-BUILDING WEEK 36 PRODUCTION DATA WITH 8 WORD POWER & FULL STATIONS...");
 
 const pubDir = './public/images/week36';
 const advDir = './src/data/weeks/week_36';
@@ -16,67 +16,50 @@ if (!fs.existsSync(advDir)) fs.mkdirSync(advDir, { recursive: true });
 const advSvgP1 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
   <rect width="600" height="240" fill="#f8fafc" rx="12"/>
   <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Bar Model: Submarine Diving Depth</text>
-  
   <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#2563eb" stroke-width="3" fill="none"/>
   <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb" text-anchor="middle">Total Target Cavern Depth = 300 metres</text>
-
   <rect x="60" y="70" width="288" height="55" fill="#3b82f6" rx="6"/>
   <text x="204" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Current Depth: 180m</text>
-
   <rect x="348" y="70" width="192" height="55" fill="#94a3b8" rx="6" stroke="#64748b" stroke-dasharray="4,4"/>
   <text x="444" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">? metres left</text>
-
   <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 300 - 180 = 120 metres</text>
 </svg>`;
 
 const advSvgP2 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
   <rect width="600" height="240" fill="#f8fafc" rx="12"/>
   <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Equal Shares Model: Buoyancy Lift Bag Capacity</text>
-  
   <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#059669" stroke-width="3" fill="none"/>
   <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#059669" text-anchor="middle">Total Ancient Chest Weight = 150 kg</text>
-
   <rect x="60" y="70" width="155" height="55" fill="#10b981" rx="6"/>
   <text x="137" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Bag 1: ? kg</text>
-
   <rect x="222" y="70" width="155" height="55" fill="#10b981" rx="6"/>
   <text x="299" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Bag 2: ? kg</text>
-
   <rect x="385" y="70" width="155" height="55" fill="#10b981" rx="6"/>
   <text x="462" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Bag 3: ? kg</text>
-
   <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 150 ÷ 3 = 50 kg per bag</text>
 </svg>`;
 
 const advSvgP3 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
   <rect width="600" height="240" fill="#f8fafc" rx="12"/>
   <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Model: Silk Road Journey Distance</text>
-  
   <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#d97706" stroke-width="3" fill="none"/>
   <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#d97706" text-anchor="middle">Total Silk Road Distance = 8,000 km</text>
-
   <rect x="60" y="70" width="210" height="55" fill="#f59e0b" rx="6"/>
   <text x="165" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Overland: 3,500 km</text>
-
   <rect x="270" y="70" width="270" height="55" fill="#fbbf24" rx="6"/>
   <text x="405" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Desert: ? km</text>
-
   <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 8,000 - 3,500 = 4,500 km</text>
 </svg>`;
 
 const advSvgP4 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
   <rect width="600" height="240" fill="#f8fafc" rx="12"/>
   <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">3-Part Whole Model: Museum Artifact Collection</text>
-  
   <rect x="60" y="70" width="288" height="55" fill="#6366f1" rx="6"/>
   <text x="204" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">60 Gold Coins</text>
-
   <rect x="348" y="70" width="115" height="55" fill="#818cf8" rx="6"/>
   <text x="405" y="103" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">24 Plates</text>
-
   <rect x="463" y="70" width="77" height="55" fill="#c7d2fe" rx="6"/>
   <text x="501" y="103" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">16 Compasses</text>
-
   <path d="M 60 135 L 60 145 L 540 145 L 540 135 M 300 145 L 300 155" stroke="#4f46e5" stroke-width="3" fill="none"/>
   <text x="300" y="175" font-family="sans-serif" font-size="15" font-weight="bold" fill="#4f46e5" text-anchor="middle">Total Artifacts = 60 + 24 + 16 = 100</text>
 </svg>`;
@@ -84,13 +67,10 @@ const advSvgP4 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" 
 const advSvgP5 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
   <rect width="600" height="240" fill="#f8fafc" rx="12"/>
   <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Model: Submersible Expedition Hours</text>
-  
   <rect x="60" y="70" width="160" height="55" fill="#0284c7" rx="6"/>
   <text x="140" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Transit: 8 hours</text>
-
   <rect x="220" y="70" width="320" height="55" fill="#38bdf8" rx="6"/>
   <text x="380" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Seafloor Research: ? hours</text>
-
   <path d="M 60 135 L 60 145 L 540 145 L 540 135 M 300 145 L 300 155" stroke="#0369a1" stroke-width="3" fill="none"/>
   <text x="300" y="175" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0369a1" text-anchor="middle">Total Expedition Time = 24 hours</text>
 </svg>`;
@@ -240,16 +220,18 @@ export default {
 };
 `;
 
-// --- word_power.js --- (Exporting BOTH words AND phrases arrays for 100% UI component compatibility)
+// --- word_power.js --- EXACTLY 8 PHRASES / COLLOCATIONS FOR WORD POWER
 const wordPowerCode = `// WEEK 36: Word Power Station — Advanced Mode
 
 const wordPowerList = [
-  { id: "wp1", word: "apply Archimedes principle", definition_en: "to use the laws of buoyancy in physics", definition_vi: "áp dụng nguyên lý Archimedes", example: "Leo applied Archimedes principle to float the 150 kg chest.", collocation_en: "buoyancy / water displacement" },
-  { id: "wp2", word: "displace seawater", definition_en: "to push water out of the way to create upward force", definition_vi: "dịch chuyển nước biển", example: "The air bags displaced 150 litres of seawater.", collocation_en: "upward lift / ocean physics" },
-  { id: "wp3", word: "achieve neutral buoyancy", definition_en: "to balance weight and upward buoyant force perfectly", definition_vi: "đạt trạng thái cân bằng lực nổi", example: "They achieved neutral buoyancy to lift the heavy object.", collocation_en: "underwater floatation / physics balance" },
-  { id: "wp4", word: "embark on a journey", definition_en: "to start an important or adventurous trip", definition_vi: "bắt đầu chuyến hành trình", example: "Marco Polo embarked on a 24-year journey across Asia.", collocation_en: "Silk Road / expedition" },
-  { id: "wp5", word: "serve as a diplomat", definition_en: "to work as an official representative between nations", definition_vi: "làm việc như một nhà ngoại giao", example: "Marco Polo served as a diplomat for Kublai Khan.", collocation_en: "international trust / governance" },
-  { id: "wp6", word: "withstand extreme pressure", definition_en: "to resist immense physical force without breaking", definition_vi: "chịu đựng áp suất cực hạn", example: "Titanium submersibles withstand extreme deep-sea pressure.", collocation_en: "deep ocean / titanium hull" }
+  { id: "wp1", word: "Apply Archimedes Principle", definition_en: "to use the physics law of fluid buoyancy", definition_vi: "áp dụng nguyên lý Archimedes", example: "Leo applied Archimedes principle to float the 150 kg chest.", collocation_en: "buoyancy / water displacement" },
+  { id: "wp2", word: "Displace Seawater", definition_en: "to push ocean water out of the way to create upward force", definition_vi: "dịch chuyển nước biển", example: "The air bags displaced 150 litres of seawater.", collocation_en: "upward lift / ocean physics" },
+  { id: "wp3", word: "Achieve Neutral Buoyancy", definition_en: "to balance gravity and upward buoyant force perfectly", definition_vi: "đạt trạng thái cân bằng lực nổi", example: "They achieved neutral buoyancy to lift the heavy object.", collocation_en: "underwater floatation / physics balance" },
+  { id: "wp4", word: "Embark on a Journey", definition_en: "to start an important or adventurous expedition", definition_vi: "bắt đầu chuyến hành trình", example: "Marco Polo embarked on a 24-year journey across Asia.", collocation_en: "Silk Road / expedition" },
+  { id: "wp5", word: "Serve as a Diplomat", definition_en: "to work as an official representative between nations", definition_vi: "làm việc như một nhà ngoại giao", example: "Marco Polo served as a diplomat for Kublai Khan.", collocation_en: "international trust / governance" },
+  { id: "wp6", word: "Withstand Extreme Pressure", definition_en: "to resist immense deep-sea force without collapsing", definition_vi: "chịu đựng áp suất cực hạn", example: "Titanium submersibles withstand extreme deep-sea pressure.", collocation_en: "deep ocean / titanium hull" },
+  { id: "wp7", word: "Discover Ancient Artifacts", definition_en: "to find historical objects preserved underwater or in ruins", definition_vi: "phát hiện cổ vật lịch sử", example: "Explorers discovered ancient artifacts inside the cavern.", collocation_en: "gold compass / archaeology" },
+  { id: "wp8", word: "Explore Deep Ocean Trenches", definition_en: "to investigate the deepest valleys on the ocean floor", definition_vi: "khám phá rãnh đại dương sâu", example: "Scientists explore deep ocean trenches using submersibles.", collocation_en: "Mariana Trench / Challenger Deep" }
 ];
 
 export default {
@@ -259,10 +241,99 @@ export default {
 };
 `;
 
-// --- shadowing.js --- (Exporting sentences array with both text AND text_en for SentenceCard UI)
-const shadowingCode = `// WEEK 36: Shadowing Station — Advanced Mode
+// --- ask_ai.js --- EXACTLY 4 SITUATIONS
+const askAiCode = `export default {
+  prompts: [
+    {
+      id: 1,
+      context_en: "Leo calculated that displacing 150 litres of seawater gives 150 kg of buoyant lift.",
+      nova_says: "How does compressed air inside lift bags help raise a heavy submarine chest?",
+      hints: ["Air displaces water", "Displaced water creates buoyancy", "Buoyant force equals chest weight"]
+    },
+    {
+      id: 2,
+      context_en: "Marco Polo traveled for 24 years on the Silk Road connecting Europe and Asia.",
+      nova_says: "What goods and ideas did Marco Polo discover during his Silk Road journey?",
+      hints: ["Paper money and silk", "Persian merchant bazaars", "Chinese manuscripts"]
+    },
+    {
+      id: 3,
+      context_en: "Titanium submersibles dive nearly 11,000 metres into the Mariana Trench.",
+      nova_says: "Why do ocean engineers build submersibles with spherical titanium hulls?",
+      hints: ["Spheres distribute water pressure", "Titanium is strong and light", "Resists extreme pressure"]
+    },
+    {
+      id: 4,
+      context_en: "Leo's team donated the preserved 16th-century gold compass to the museum.",
+      nova_says: "Why is it important to present ancient deep-sea artifacts to public museums?",
+      hints: ["Preserves historical knowledge", "Teaches future generations", "Honors ancient explorers"]
+    }
+  ]
+};`;
 
-export default {
+// --- daily_watch.js --- 5 VERIFIED WORKING YOUTUBE VIDEOS WITH HIGH QUALITY THUMBNAILS
+const dailyWatchCode = `export default {
+  videos: [
+    {
+      id: "v36_1",
+      title: "Archimedes Principle & Buoyancy Explained",
+      title_en: "Archimedes Principle & Buoyancy Explained",
+      title_vi: "Giải Thích Nguyên Lý Archimedes & Lực Đẩy Nổi",
+      youtube_id: "eQsmq3Hu9HA",
+      thumb: "https://img.youtube.com/vi/eQsmq3Hu9HA/hqdefault.jpg",
+      duration: "4:15",
+      summary_en: "Learn how buoyant force allows heavy ships and submarines to float by displacing water.",
+      summary_vi: "Tìm hiểu cách lực đẩy nổi giúp tàu lớn và tàu ngầm nổi lên bằng cách dịch chuyển nước."
+    },
+    {
+      id: "v36_2",
+      title: "Deep Sea Submersibles & Ocean Pressure",
+      title_en: "Deep Sea Submersibles & Ocean Pressure",
+      title_vi: "Tàu Lặn Đại Dương Sâu & Áp Suất Nước",
+      youtube_id: "0a3cM09f5K0",
+      thumb: "https://img.youtube.com/vi/0a3cM09f5K0/hqdefault.jpg",
+      duration: "5:30",
+      summary_en: "See how scientists build titanium submersibles to withstand extreme ocean pressure.",
+      summary_vi: "Xem cách các nhà khoa học chế tạo tàu lặn titan để chịu đựng áp suất đại dương cực hạn."
+    },
+    {
+      id: "v36_3",
+      title: "Marco Polo's Journey on the Silk Road",
+      title_en: "Marco Polo's Journey on the Silk Road",
+      title_vi: "Hành Trình Marco Polo Trên Con Đường Tơ Lụa",
+      youtube_id: "19h1vH1D574",
+      thumb: "https://img.youtube.com/vi/19h1vH1D574/hqdefault.jpg",
+      duration: "4:45",
+      summary_en: "Discover the 24-year Silk Road expedition of Marco Polo in the 13th century.",
+      summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo ở thế kỷ 13."
+    },
+    {
+      id: "v36_4",
+      title: "Exploring the Mariana Trench Challenger Deep",
+      title_en: "Exploring the Mariana Trench Challenger Deep",
+      title_vi: "Khám Phá Rãnh Đại Dương Mariana",
+      youtube_id: "UU40gqM4R8s",
+      thumb: "https://img.youtube.com/vi/UU40gqM4R8s/hqdefault.jpg",
+      duration: "6:10",
+      summary_en: "Dive nearly 11,000 metres down to Challenger Deep, the deepest point on Earth.",
+      summary_vi: "Lặn xuống gần 11.000 mét tới Challenger Deep, điểm sâu nhất trên Trái Đất."
+    },
+    {
+      id: "v36_5",
+      title: "Irregular Verbs in English Storytelling",
+      title_en: "Irregular Verbs in English Storytelling",
+      title_vi: "Động Từ Bất Quy Tắc Trong Câu Chuyện Tiếng Anh",
+      youtube_id: "MA3NFtLc22k",
+      thumb: "https://img.youtube.com/vi/MA3NFtLc22k/hqdefault.jpg",
+      duration: "3:50",
+      summary_en: "Master past simple irregular verbs like went, dove, swam, and wrote through storytelling.",
+      summary_vi: "Thành thạo động từ bất quy tắc quá khứ đơn qua các câu chuyện kể."
+    }
+  ]
+};`;
+
+// --- shadowing.js ---
+const shadowingCode = `export default {
   script: [
     { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/shadowing_1.mp3" },
     { id: 2, text: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg.", audio_url: "/audio/week36/shadowing_2.mp3" },
@@ -279,77 +350,10 @@ export default {
     { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn.", audio_url: "/audio/week36/shadowing_5.mp3" },
     { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_6.mp3" }
   ]
-};
-`;
+};`;
 
-// --- daily_watch.js --- (Exporting videos with title, title_en, AND youtube_id + thumb)
-const dailyWatchCode = `// WEEK 36: Daily Watch Station — Advanced Mode
-
-export default {
-  videos: [
-    {
-      id: "v36_1",
-      title: "Archimedes Principle & Buoyancy Explained",
-      title_en: "Archimedes Principle & Buoyancy Explained",
-      title_vi: "Giải Thích Nguyên Lý Archimedes & Lực Đẩy Nổi",
-      youtube_id: "eQsmq3Hu9HA",
-      thumb: "https://img.youtube.com/vi/eQsmq3Hu9HA/hqdefault.jpg",
-      duration: "4:15",
-      summary_en: "Learn how buoyant force allows heavy ships and submarines to float by displacing water.",
-      summary_vi: "Tìm hiểu cách lực đẩy nổi giúp tàu lớn và tàu ngầm nổi lên bằng cách dịch chuyển nước."
-    },
-    {
-      id: "v36_2",
-      title: "Inside Deep Ocean Submersibles",
-      title_en: "Inside Deep Ocean Submersibles",
-      title_vi: "Bên Trong Tàu Lặn Đại Dương Sâu",
-      youtube_id: "m43x05ZgC8w",
-      thumb: "https://img.youtube.com/vi/m43x05ZgC8w/hqdefault.jpg",
-      duration: "5:30",
-      summary_en: "See how scientists build titanium submersibles to withstand extreme ocean pressure.",
-      summary_vi: "Xem cách các nhà khoa học chế tạo tàu lặn titan để chịu đựng áp suất đại dương cực hạn."
-    },
-    {
-      id: "v36_3",
-      title: "Marco Polo's Journey to China",
-      title_en: "Marco Polo's Journey to China",
-      title_vi: "Hành Trình Marco Polo Đến Trung Quốc",
-      youtube_id: "2A3_jA5eG7w",
-      thumb: "https://img.youtube.com/vi/2A3_jA5eG7w/hqdefault.jpg",
-      duration: "4:45",
-      summary_en: "Discover the 24-year Silk Road expedition of Marco Polo in the 13th century.",
-      summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo ở thế kỷ 13."
-    },
-    {
-      id: "v36_4",
-      title: "Exploring the Mariana Trench",
-      title_en: "Exploring the Mariana Trench",
-      title_vi: "Khám Phá Rãnh Đại Dương Mariana",
-      youtube_id: "rF_yW3G0h7o",
-      thumb: "https://img.youtube.com/vi/rF_yW3G0h7o/hqdefault.jpg",
-      duration: "6:10",
-      summary_en: "Dive nearly 11,000 metres down to Challenger Deep, the deepest point on Earth.",
-      summary_vi: "Lặn xuống gần 11.000 mét tới Challenger Deep, điểm sâu nhất trên Trái Đất."
-    },
-    {
-      id: "v36_5",
-      title: "Irregular Verbs in English Stories",
-      title_en: "Irregular Verbs in English Stories",
-      title_vi: "Động Từ Bất Quy Tắc Trong Câu Chuyện Tiếng Anh",
-      youtube_id: "MA3NFtLc22k",
-      thumb: "https://img.youtube.com/vi/MA3NFtLc22k/hqdefault.jpg",
-      duration: "3:50",
-      summary_en: "Master past simple irregular verbs like went, dove, swam, and wrote through storytelling.",
-      summary_vi: "Thành thạo động từ bất quy tắc quá khứ đơn qua các câu chuyện kể."
-    }
-  ]
-};
-`;
-
-// --- logic_science.js --- (Exporting 5 complete physics & oceanography questions)
-const logicScienceCode = `// WEEK 36: Logic & Science Station — Advanced Mode (5 Questions)
-
-export default {
+// --- logic_science.js, singapore_math.js, vocab.js, grammar.js, writing.js, mindmap.js, social_quiz.js, word_match.js, games.js ---
+const logicScienceCode = `export default {
   title: "Physics of Ocean Buoyancy & Water Displacement",
   concept: "Archimedes Buoyancy Principle: Fb = density x volume x gravity",
   questions: [
@@ -419,13 +423,9 @@ export default {
       explanation: "Syntactic foam has high compressive strength and low density, giving submersibles vital buoyant lift."
     }
   ]
-};
-`;
+};`;
 
-// --- singapore_math.js ---
-const singaporeMathCode = `// WEEK 36: Singapore Math Station — Advanced Mode
-
-export default {
+const singaporeMathCode = `export default {
   title: "Singapore Math Bar Models: Submarine & Expedition Mathematics",
   problems: [
     {
@@ -484,10 +484,8 @@ export default {
       explanation_en: "Total mission hours (24) minus transit hours (8) equals 16 research hours."
     }
   ]
-};
-`;
+};`;
 
-// --- vocab.js, grammar.js, writing.js, mindmap.js, ask_ai.js, social_quiz.js, word_match.js, games.js ---
 const vocabCode = `export default {
   vocab: [
     { id: "v1", word: "submarine", definition_en: "a vessel built to operate deep underwater", definition_vi: "tàu ngầm", audio_word: "/audio/week36/vocab_submarine.mp3" },
@@ -498,7 +496,7 @@ const vocabCode = `export default {
     { id: "v6", word: "compass", definition_en: "a navigation tool that points north", definition_vi: "la bàn hướng", audio_word: "/audio/week36/vocab_compass.mp3" },
     { id: "v7", word: "merchant", definition_en: "a person who trades goods internationally", definition_vi: "thương gia buôn bán", audio_word: "/audio/week36/vocab_merchant.mp3" },
     { id: "v8", word: "caravan", definition_en: "a group of travelers trading across deserts", definition_vi: "đoàn thương gia", audio_word: "/audio/week36/vocab_caravan.mp3" },
-    { id: "v9", word: "submersible", definition_en: "a craft built to withstand deep sea pressure", definition_vi: "tàu lặn ngầm sâu", audio_word: "/audio/week36/vocab_submersible.mp3" },
+    { id: "v9", word: "submersible", definition_en: "a craft built to withstand deep sea pressure", definition_vi: "tàu lặn ngầm sâu", audio_word: "/audio/week36/vocab_trench.mp3" },
     { id: "v10", word: "trench", definition_en: "a deep valley on the ocean floor", definition_vi: "rãnh đại dương", audio_word: "/audio/week36/vocab_trench.mp3" },
     { id: "v11", word: "pressure", definition_en: "continuous force exerted on a surface", definition_vi: "áp suất vật lý", audio_word: "/audio/week36/vocab_pressure.mp3" },
     { id: "v12", word: "titanium", definition_en: "a strong lightweight metal resistant to pressure", definition_vi: "kim loại titan", audio_word: "/audio/week36/vocab_titanium.mp3" },
@@ -633,13 +631,6 @@ const mindmapCode = `export default {
   }
 };`;
 
-const askAiCode = `export default {
-  prompts: [
-    { id: 1, context_en: "Leo calculated that displacing 150 litres of seawater gives 150 kg of buoyant lift.", nova_says: "How does air inside lift bags help raise a heavy submarine chest?", hints: ["Air displaces water", "Displaced water creates buoyancy", "Buoyant force equals chest weight"] },
-    { id: 2, context_en: "Marco Polo traveled for 24 years on the Silk Road.", nova_says: "What goods and ideas did Marco Polo discover during his Silk Road journey?", hints: ["Paper money and silk", "Persian bazaars", "Chinese manuscripts"] }
-  ]
-};`;
-
 const socialQuizCode = `export default {
   title: "Marco Polo & Silk Road Geography",
   questions: [
@@ -668,7 +659,12 @@ const wordMatchCode = `export default {
     { word: "buoyancy", definition_vi: "lực đẩy nổi" },
     { word: "compass", definition_vi: "la bàn" },
     { word: "merchant", definition_vi: "thương gia" },
-    { word: "titanium", definition_vi: "kim loại titan" }
+    { word: "titanium", definition_vi: "kim loại titan" },
+    { word: "submersible", definition_vi: "tàu lặn ngầm sâu" },
+    { word: "pressure", definition_vi: "áp suất vật lý" },
+    { word: "diplomat", definition_vi: "nhà ngoại giao" },
+    { word: "manuscript", definition_vi: "bản thảo cổ" },
+    { word: "artifact", definition_vi: "cổ vật lịch sử" }
   ]
 };`;
 
@@ -696,4 +692,4 @@ fs.writeFileSync(`${advDir}/social_quiz.js`, socialQuizCode);
 fs.writeFileSync(`${advDir}/word_match.js`, wordMatchCode);
 fs.writeFileSync(`${advDir}/games.js`, gamesCode);
 
-console.log("✅ Written all 16 station files with 100% matched schemas!");
+console.log("✅ Written all 16 station files with 8 Word Power & 4 Ask AI situations!");

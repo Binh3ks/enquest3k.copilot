@@ -80,8 +80,8 @@ export default function LeftPanel({
   const [customUrl, setCustomUrl] = useState('');
 
   // Determine active sentence
-  // In transcript mode, use the transcript sentence; otherwise use the lesson script
-  const activeSentence = (videoTranscriptSegments && videoTranscriptSegments.length > 0
+  // In transcript mode (when explicitly toggled), use transcript sentence; otherwise strictly use lesson script
+  const activeSentence = ((useTranscriptSource && videoTranscriptSegments && videoTranscriptSegments.length > 0)
     ? videoTranscriptSegments.find(s => s.id === activeSentenceId) || videoTranscriptSegments[0]
     : script?.find(s => s.id === activeSentenceId) || script?.[0]) || null;
   // Use transcript IPA if available (for transcript mode), else fall back to script IPA

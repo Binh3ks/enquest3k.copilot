@@ -8,7 +8,7 @@ export default {
     { id: "v6", word: "compass", definition_en: "a navigation tool that points north", definition_vi: "la bàn hướng", audio_word: "/audio/week36/vocab_compass.mp3" },
     { id: "v7", word: "merchant", definition_en: "a person who trades goods internationally", definition_vi: "thương gia buôn bán", audio_word: "/audio/week36/vocab_merchant.mp3" },
     { id: "v8", word: "caravan", definition_en: "a group of travelers trading across deserts", definition_vi: "đoàn thương gia", audio_word: "/audio/week36/vocab_caravan.mp3" },
-    { id: "v9", word: "submersible", definition_en: "a craft built to withstand deep sea pressure", definition_vi: "tàu lặn ngầm sâu", audio_word: "/audio/week36/vocab_submersible.mp3" },
+    { id: "v9", word: "submersible", definition_en: "a craft built to withstand deep sea pressure", definition_vi: "tàu lặn ngầm sâu", audio_word: "/audio/week36/vocab_trench.mp3" },
     { id: "v10", word: "trench", definition_en: "a deep valley on the ocean floor", definition_vi: "rãnh đại dương", audio_word: "/audio/week36/vocab_trench.mp3" },
     { id: "v11", word: "pressure", definition_en: "continuous force exerted on a surface", definition_vi: "áp suất vật lý", audio_word: "/audio/week36/vocab_pressure.mp3" },
     { id: "v12", word: "titanium", definition_en: "a strong lightweight metal resistant to pressure", definition_vi: "kim loại titan", audio_word: "/audio/week36/vocab_titanium.mp3" },

@@ -1,5 +1,3 @@
-// WEEK 36: Singapore Math Station — Advanced Mode
-
 export default {
   title: "Singapore Math Bar Models: Submarine & Expedition Mathematics",
   problems: [

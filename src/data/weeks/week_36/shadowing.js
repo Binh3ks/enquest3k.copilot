@@ -1,5 +1,3 @@
-// WEEK 36: Shadowing Station — Advanced Mode
-
 export default {
   script: [
     { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/shadowing_1.mp3" },

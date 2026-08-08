@@ -1,5 +1,3 @@
-// WEEK 36: Logic & Science Station — Advanced Mode (5 Questions)
-
 export default {
   title: "Physics of Ocean Buoyancy & Water Displacement",
   concept: "Archimedes Buoyancy Principle: Fb = density x volume x gravity",
