@@ -1,5 +1,5 @@
 export default {
-  content_en: `Speed science helps runners run faster outdoors. On **Saturday morning**, active children **went to the sports stadium** to test their running speed. Warm sunshine **was sunny and warm** on the bright green track. Fresh air gave good oxygen energy to leg muscles. **First of all**, Leo joined the fun relay race. He **sat down with his coach** to learn how speed works. Speed equals distance divided by time. When the whistle blew, Leo **ran very fast** along the track and **passed the baton** to Maya. Strong leg muscles give runners power to move. Maya **ran across the grass** with great energy. Max **caught the baton** smoothly and sprinted to the finish line. All happy friends **watched and clapped** with big proud smiles. **At the very end**, their team crossed the line first! They **were tired but happy** because **teamwork brought victory**. Leo **smiled with pride** with his new medal.`,
+  content_en: `On **Saturday morning**, Leo’s relay team **went to the sports stadium** to run. The weather **was warm and bright**, but the team had a problem: they lost speed whenever they passed the baton. **First of all**, Leo **sat down with his coach** to fix their running plan using speed science. Speed equals distance divided by time ($v = d/t$). The coach showed them that the next runner must start running early to keep their fast momentum. Leo **ran very fast** down the track and **passed the baton** while both runners moved together at top speed. Maya **ran across the grass** without stopping, and Max **caught the baton** smoothly. Happy parents **watched and clapped** with big smiles. **At the very end**, their relay team crossed the finish line first! Everyone **was tired but happy** because **teamwork brought victory**. Leo **smiled with pride** with his new medal.`,
   sentences: [
     { id: 1, text: "On Saturday morning, Leo went to the sports stadium." },
     { id: 2, text: "The weather was warm and bright for running." },
@@ -17,16 +17,16 @@ export default {
     subtitle_en: "Easy Science Challenge",
     image_url: null,
     audio_url: "/audio/week37_easy/read_stem.mp3",
-    content_en: `Speed science helps runners run faster outdoors. On **Saturday morning**, active children **went to the sports stadium** to test their running speed. Warm sunshine **was sunny and warm** on the bright green track. Fresh air gave good oxygen energy to leg muscles. **First of all**, Leo joined the fun relay race. He **sat down with his coach** to learn how speed works. Speed equals distance divided by time. When the whistle blew, Leo **ran very fast** along the track and **passed the baton** to Maya. Strong leg muscles give runners power to move. Maya **ran across the grass** with great energy. Max **caught the baton** smoothly and sprinted to the finish line. All happy friends **watched and clapped** with big proud smiles. **At the very end**, their team crossed the line first! They **were tired but happy** because **teamwork brought victory**. Leo **smiled with pride** with his new medal.`,
-    content_vi: `Khoa học tốc độ giúp người chạy di chuyển nhanh hơn. Vào sáng thứ Bảy, trẻ em năng động đến sân vận động để thử tốc độ. Nắng ấm áp trên đường chạy. Không khí trong lành cung cấp năng lượng. Trước hết, Leo tham gia cuộc đua tiếp sức. Cậu ngồi với huấn luyện viên để học về tốc độ. Tốc độ bằng quãng đường chia cho thời gian. Khi tiếng còi vang lên, Leo chạy rất nhanh và truyền gậy cho Maya. Cơ chân khỏe cho người chạy sức mạnh. Maya chạy qua bãi cỏ. Max bắt gậy và bứt tốc về đích. Cha mẹ xem và vỗ tay. Cuối cùng, họ cán đích đầu tiên! Họ mệt nhưng rất vui vì tinh thần đồng đội mang lại chiến thắng. Leo mỉm cười tự hào với huy chương mới.`,
+    content_en: `On **Saturday morning**, Leo’s relay team **went to the sports stadium** to run. The weather **was warm and bright**, but the team had a problem: they lost speed whenever they passed the baton. **First of all**, Leo **sat down with his coach** to fix their running plan using speed science. Speed equals distance divided by time ($v = d/t$). The coach showed them that the next runner must start running early to keep their fast momentum. Leo **ran very fast** down the track and **passed the baton** while both runners moved together at top speed. Maya **ran across the grass** without stopping, and Max **caught the baton** smoothly. Happy parents **watched and clapped** with big smiles. **At the very end**, their relay team crossed the finish line first! Everyone **was tired but happy** because **teamwork brought victory**. Leo **smiled with pride** with his new medal.`,
+    content_vi: `Vào sáng thứ Bảy, đội tiếp sức của Leo đến sân vận động để chạy. Trời nắng ấm nhưng đội gặp rắc rối: họ bị giảm tốc độ mỗi khi truyền gậy. Trước hết, Leo ngồi với huấn luyện viên để sửa kế hoạch chạy bằng khoa học tốc độ (tốc độ = quãng đường / thời gian). Huấn luyện viên chỉ ra rằng người chạy tiếp theo phải bắt đầu chạy sớm để giữ đà. Leo chạy rất nhanh và truyền gậy khi cả hai cùng di chuyển ở tốc độ tối đa. Maya chạy qua bãi cỏ không dừng lại, và Max bắt gậy mượt mà. Cha mẹ xem và vỗ tay. Cuối cùng, họ cán đích đầu tiên! Mọi người đều mệt nhưng rất vui vì tinh thần đồng đội mang lại chiến thắng. Leo mỉm cười tự hào với huy chương mới.`,
     key_vocabulary: [
       { word: "runner", definition: "a person who runs", example: "Leo is a fast runner." },
       { word: "race", definition: "a competition of speed", example: "We ran a relay race." },
       { word: "baton", definition: "a stick passed in a race", example: "He passed the baton." }
     ],
     comprehension_questions: [
-      { id: 1, question_en: "Where did children go on Saturday morning?", answer: ["To the sports stadium", "Sports stadium"], clue_statement: "Children went to the sports stadium.", hint_en: "To the...", hint_vi: "Đến..." },
-      { id: 2, question_en: "What does speed equal in science?", answer: ["Speed equals distance divided by time"], clue_statement: "Speed equals distance divided by time.", hint_en: "distance divided by...", hint_vi: "quãng đường chia cho..." },
+      { id: 1, question_en: "Where did Leo's team go on Saturday morning?", answer: ["To the sports stadium", "Sports stadium"], clue_statement: "Leo's team went to the sports stadium.", hint_en: "To the...", hint_vi: "Đến..." },
+      { id: 2, question_en: "What problem did Leo's team fix using speed science?", answer: ["Losing speed during baton exchange", "Losing speed"], clue_statement: "They lost speed whenever they passed the baton.", hint_en: "Losing speed...", hint_vi: "Giảm tốc độ..." },
       { id: 3, question_en: "Who caught the baton smoothly from Maya?", answer: ["Max"], clue_statement: "Max caught the baton smoothly.", hint_en: "Max...", hint_vi: "Bạn Max..." }
     ]
   },
@@ -59,7 +59,7 @@ export default {
     "caught the baton",
     "watched and clapped",
     "At the very end",
-    "were tired but happy",
+    "was tired but happy",
     "teamwork brought victory"
   ],
   dictionary: {
@@ -74,7 +74,7 @@ export default {
     'caught the baton': { word: 'caught the baton', pronunciation: '/kɔːt ðə bəˈtɒn/', definition_vi: 'bắt lấy gậy', example: 'Max caught the baton.' },
     'watched and clapped': { word: 'watched and clapped', pronunciation: '/wɒtʃt ənd klæpt/', definition_vi: 'xem và vỗ tay', example: 'Everyone watched and clapped.' },
     'At the very end': { word: 'At the very end', pronunciation: '/æt ðə ˈveri end/', definition_vi: 'cuối cùng', example: 'At the very end, they won.' },
-    'were tired but happy': { word: 'were tired but happy', pronunciation: '/wɜː ˈtaɪəd bət ˈhæpi/', definition_vi: 'mệt nhưng rất vui', example: 'They were tired but happy.' },
+    'was tired but happy': { word: 'was tired but happy', pronunciation: '/wəz ˈtaɪəd bət ˈhæpi/', definition_vi: 'mệt nhưng rất vui', example: 'Everyone was tired but happy.' },
     'teamwork brought victory': { word: 'teamwork brought victory', pronunciation: '/ˈtiːmwɜːk brɔːt ˈvɪktəri/', definition_vi: 'đồng đội mang lại chiến thắng', example: 'Teamwork brought victory.' }
   }
 };

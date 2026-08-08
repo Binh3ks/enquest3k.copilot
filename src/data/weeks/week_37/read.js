@@ -1,5 +1,5 @@
 export default {
-  content_en: `Physical biomechanics explains how the human body converts energy into high-speed movement. On **Saturday morning**, young runners **went to the sports stadium** to analyze athletic acceleration. Warm sunshine provided ideal conditions as oxygen flowed into their expanding lungs. **First of all**, Leo studied muscle physiology before his 100-metre sprint. He **sat down with his coach** to measure velocity using physical formulas (velocity = distance / time). When the starting whistle blew, Leo **ran very fast** down the synthetic track and **passed the baton** smoothly. Chemical energy stored in leg muscles converted into powerful kinetic motion. Maya **ran across the grass** maintaining maximum velocity toward the final zone. Max **caught the baton** cleanly and accelerated toward the finish line. Spectators **watched and clapped** with scientific fascination in the stadium stands. **At the very end**, their team crossed the finish line first! Everyone **were tired but happy** because scientific **teamwork brought victory**. Leo **smiled with pride** while accepting his gold medal for physical excellence.`,
+  content_en: `On **Saturday morning**, Leo’s relay team **went to the sports stadium** for their big race. The weather **was sunny and warm**, but the team faced a serious physical problem: whenever Leo passed the baton, his teammate stopped moving, losing vital kinetic momentum. **First of all**, Leo **sat down with his coach** to solve this physics challenge. To maintain forward velocity ($v = \text{distance}/\text{time}$), the coach explained that smooth acceleration was required before the exchange zone. Instead of waiting at a standstill, the second runner needed to start sprinting early so both runners matched speed. During trial runs, Leo **ran very fast** down the red track and **passed the baton** seamlessly while both runners were moving at peak velocity. Maya **ran across the grass** maintaining momentum, and Max **caught the baton** at full speed. All the spectators **watched and clapped** as the team saved crucial seconds. **At the very end**, their team crossed the finish line first! Everyone **was tired but happy** because scientific **teamwork brought victory**. Leo **smiled with pride** for applying physics to win.`,
   sentences: [
     { id: 1, text: "On Saturday morning, Leo went to the sports stadium for sports day." },
     { id: 2, text: "The weather was sunny and warm, creating perfect running conditions." },
@@ -11,7 +11,7 @@ export default {
     { id: 8, text: "Max caught the baton smoothly and sprinted with determination." },
     { id: 9, text: "Thousands of spectators watched and clapped enthusiastically." },
     { id: 10, text: "At the very end, their relay team crossed the finish line first!" },
-    { id: 11, text: "Everyone were tired but happy because teamwork brought victory." },
+    { id: 11, text: "Everyone was tired but happy because teamwork brought victory." },
     { id: 12, text: "Leo smiled with pride as he received his golden medal." }
   ],
   read_stem: {
@@ -19,8 +19,8 @@ export default {
     subtitle_en: "Biomechanical Physics Challenge",
     image_url: null,
     audio_url: "/audio/week37/read_stem.mp3",
-    content_en: `Physical biomechanics explains how the human body converts energy into high-speed movement. On **Saturday morning**, young runners **went to the sports stadium** to analyze athletic acceleration. Warm sunshine provided ideal conditions as oxygen flowed into their expanding lungs. **First of all**, Leo studied muscle physiology before his 100-metre sprint. He **sat down with his coach** to measure velocity using physical formulas (velocity = distance / time). When the starting whistle blew, Leo **ran very fast** down the synthetic track and **passed the baton** smoothly. Chemical energy stored in leg muscles converted into powerful kinetic motion. Maya **ran across the grass** maintaining maximum velocity toward the final zone. Max **caught the baton** cleanly and accelerated toward the finish line. Spectators **watched and clapped** with scientific fascination in the stadium stands. **At the very end**, their team crossed the finish line first! Everyone **were tired but happy** because scientific **teamwork brought victory**. Leo **smiled with pride** while accepting his gold medal for physical excellence.`,
-    content_vi: `Cơ học thể chất giải thích cách cơ thể con người chuyển hóa năng lượng thành chuyển động tốc độ cao. Vào sáng thứ Bảy, các vận động viên trẻ đã đến sân vận động để phân tích gia tốc. Nắng ấm cung cấp oxy cho lá phổi mở rộng. Trước hết, Leo nghiên cứu sinh lý cơ bắp trước khi chạy 100m. Cậu ngồi xuống với huấn luyện viên để đo vận tốc (vận tốc = quãng đường / thời gian). Khi tiếng còi vang lên, Leo chạy rất nhanh và truyền gậy tiếp sức cho Maya. Năng lượng hóa học chuyển thành động năng. Maya chạy qua bãi cỏ giữ vận tốc tối đa. Max bắt gậy và bứt tốc về đích. Khán giả xem và vỗ tay. Cuối cùng, họ cán đích đầu tiên! Tinh thần đồng đội mang lại chiến thắng. Leo mỉm cười tự hào khi nhận huy chương vàng.`,
+    content_en: `On **Saturday morning**, Leo’s relay team **went to the sports stadium** for their big race. The weather **was sunny and warm**, but the team faced a serious physical problem: whenever Leo passed the baton, his teammate stopped moving, losing vital kinetic momentum. **First of all**, Leo **sat down with his coach** to solve this physics challenge. To maintain forward velocity ($v = \text{distance}/\text{time}$), the coach explained that smooth acceleration was required before the exchange zone. Instead of waiting at a standstill, the second runner needed to start sprinting early so both runners matched speed. During trial runs, Leo **ran very fast** down the red track and **passed the baton** seamlessly while both runners were moving at peak velocity. Maya **ran across the grass** maintaining momentum, and Max **caught the baton** at full speed. All the spectators **watched and clapped** as the team saved crucial seconds. **At the very end**, their team crossed the finish line first! Everyone **was tired but happy** because scientific **teamwork brought victory**. Leo **smiled with pride** for applying physics to win.`,
+    content_vi: `Vào sáng thứ Bảy, đội tiếp sức của Leo đến sân vận động cho cuộc đua lớn. Thời tiết nắng ấm, nhưng đội gặp vấn đề vật lý nghiêm trọng: mỗi khi Leo truyền gậy, đồng đội dừng lại làm mất động năng. Trước hết, Leo ngồi xuống với huấn luyện viên để giải quyết thách thức vật lý này. Để duy trì vận tốc (v = d/t), huấn luyện viên giải thích rằng cần gia tốc mượt mà trước vùng giao gậy. Thay vì đứng yên chờ, người chạy thứ hai cần bắt đầu bứt tốc sớm để cả hai đạt cùng tốc độ. Trong đợt chạy thử, Leo chạy rất nhanh và truyền gậy mượt mà khi cả hai đang di chuyển ở vận tốc đỉnh. Maya chạy qua bãi cỏ giữ nguyên động năng, và Max bắt gậy ở tốc độ tối đa. Khán giả xem và vỗ tay khi đội tiết kiệm được những giây quý giá. Cuối cùng, đội cán đích đầu tiên! Mọi người đều mệt nhưng rất vui vì khoa học mang lại chiến thắng. Leo mỉm cười tự hào vì đã áp dụng vật lý để chiến thắng.`,
     key_vocabulary: [
       { word: "athlete", definition: "a person trained in physical sports", example: "The athlete ran fast." },
       { word: "relay", definition: "a team race passing a baton", example: "Our relay team won." },
@@ -29,11 +29,11 @@ export default {
       { word: "teamwork", definition: "working together cooperatively", example: "Teamwork brought victory." }
     ],
     comprehension_questions: [
-      { id: 1, question_en: "Where did young runners go on Saturday morning?", answer: ["To the sports stadium", "Sports stadium"], clue_statement: "Runners went to the sports stadium.", hint_en: "To the...", hint_vi: "Đến..." },
-      { id: 2, question_en: "What formula did Leo measure with his coach?", answer: ["velocity = distance / time", "Velocity formula"], clue_statement: "Leo measured velocity = distance / time.", hint_en: "velocity = ...", hint_vi: "Công thức vận tốc = ..." },
-      { id: 3, question_en: "Who caught the baton cleanly from Maya?", answer: ["Max"], clue_statement: "Max caught the baton cleanly.", hint_en: "Max...", hint_vi: "Bạn Max..." },
-      { id: 4, question_en: "Why were the team happy at the end?", answer: ["Because scientific teamwork brought victory", "Teamwork brought victory"], clue_statement: "Teamwork brought victory.", hint_en: "Because...", hint_vi: "Vì..." },
-      { id: 5, question_en: "What medal did Leo receive?", answer: ["A gold medal", "Gold medal"], clue_statement: "Leo accepted his gold medal.", hint_en: "A gold...", hint_vi: "Huy chương..." }
+      { id: 1, question_en: "What physical problem did Leo's team face during baton exchange?", answer: ["Losing kinetic momentum", "Losing momentum"], clue_statement: "The teammate stopped moving, losing vital kinetic momentum.", hint_en: "Losing...", hint_vi: "Mất động năng..." },
+      { id: 2, question_en: "What formula did Leo review with his coach to maintain velocity?", answer: ["v = distance / time", "velocity = distance / time"], clue_statement: "Leo calculated velocity = distance / time.", hint_en: "v = ...", hint_vi: "Công thức v = ..." },
+      { id: 3, question_en: "How did the second runner solve the momentum problem?", answer: ["By starting to sprint early before receiving the baton"], clue_statement: "The second runner needed to start sprinting early.", hint_en: "By starting...", hint_vi: "Bằng cách chạy sớm..." },
+      { id: 4, question_en: "Why was the team happy at the end?", answer: ["Because scientific teamwork brought victory", "Teamwork brought victory"], clue_statement: "Teamwork brought victory.", hint_en: "Because...", hint_vi: "Vì..." },
+      { id: 5, question_en: "What medal did Leo receive?", answer: ["Gold medal", "A gold medal"], clue_statement: "Leo accepted his gold medal.", hint_en: "Gold...", hint_vi: "Huy chương vàng..." }
     ]
   },
   read_social: {
@@ -69,7 +69,7 @@ In ancient Greece, athletes gathered at Olympia to celebrate global peace and fr
     "caught the baton",
     "watched and clapped",
     "At the very end",
-    "were tired but happy",
+    "was tired but happy",
     "teamwork brought victory",
     "smiled with pride"
   ],
@@ -85,7 +85,7 @@ In ancient Greece, athletes gathered at Olympia to celebrate global peace and fr
     'caught the baton': { word: 'caught the baton', pronunciation: '/kɔːt ðə bəˈtɒn/', definition_vi: 'bắt lấy gậy tiếp sức', example: 'Max caught the baton.' },
     'watched and clapped': { word: 'watched and clapped', pronunciation: '/wɒtʃt ənd klæpt/', definition_vi: 'xem và vỗ tay', example: 'Everyone watched and clapped.' },
     'At the very end': { word: 'At the very end', pronunciation: '/æt ðə ˈveri end/', definition_vi: 'cuối cùng', example: 'At the very end, they won.' },
-    'were tired but happy': { word: 'were tired but happy', pronunciation: '/wɜː ˈtaɪəd bət ˈhæpi/', definition_vi: 'mệt nhưng rất vui', example: 'They were tired but happy.' },
+    'was tired but happy': { word: 'was tired but happy', pronunciation: '/wəz ˈtaɪəd bət ˈhæpi/', definition_vi: 'mệt nhưng rất vui', example: 'Everyone was tired but happy.' },
     'teamwork brought victory': { word: 'teamwork brought victory', pronunciation: '/ˈtiːmwɜːk brɔːt ˈvɪktəri/', definition_vi: 'tinh thần đồng đội mang lại chiến thắng', example: 'Teamwork brought victory.' },
     'smiled with pride': { word: 'smiled with pride', pronunciation: '/smaɪld wɪð praɪd/', definition_vi: 'mỉm cười tự hào', example: 'Leo smiled with pride.' }
   }

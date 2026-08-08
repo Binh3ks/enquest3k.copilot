@@ -33,9 +33,14 @@ Source: `.devin/workflows/start.md` §3.
 
 ## Master Curriculum & Blueprint Station Pipeline Matrix — 2026-08-08
 Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực nghiệm sau ở cả 2 mode (ADVANCED & EASY):
-1. **STEM Story vs Social Studies Content Separation**:
-   - **STEM Story (`read_stem`)**: Tập trung vào Khoa học (Science), Công nghệ (Tech), Kỹ thuật (Engineering), Toán học (Maths) - ví dụ: cơ sinh học chạy bộ, gia tốc, động năng, chuyển hóa năng lượng, cơ bắp.
-   - **Easy Mode STEM**: Bắt buộc là phiên bản đơn giản hóa ngắn gọn (A1 level, ~145 từ) cho học sinh nhỏ tuổi/slower, dùng từ ngữ trực quan, không để mã LaTeX thô.
+1. **STEM Story 3-Step Problem-Solving Framework & Content Separation**:
+   - **STEM Story (`read_stem`) MUST follow the 3-step STEM Problem-Solving Cycle**:
+     1. **Problem (Tình huống/Rắc rối thực tế)**: Nhân vật gặp rắc rối thực tế về vật lý/kỹ thuật/toán học (ví dụ: bị mất động năng kinetic momentum khi giao gậy tiếp sức, sụt giảm vận tốc).
+     2. **Science & Math Application (Ứng dụng Khoa học/Toán)**: Dùng nguyên lý Khoa học/Toán/Kỹ thuật ($v = d/t$, gia tốc mượt mà, chuyển hóa năng lượng) để phân tích giải pháp.
+     3. **Test & Result (Thử nghiệm & Kết quả)**: Thử nghiệm giải pháp kỹ thuật trên thực tế và đạt kết quả vượt trội.
+   - **Tệt đối KHÔNG nhồi nhét thuật ngữ rác**: Không đưa từ búa lớn giáo khoa một cách gượng ép không phục vụ cốt truyện. Văn phong phải mượt mà, đúng chuẩn storytelling thiếu nhi.
+   - **Easy Mode STEM**: Bắt buộc là phiên bản đơn giản hóa ngắn gọn (A1 level, ~145-150 từ) cho học sinh nhỏ tuổi/slower, dùng từ ngữ trực quan, không để mã LaTeX thô.
+   - **Grammar Integrity**: Đảm bảo ngữ pháp chuẩn 100% (ví dụ: `Everyone was tired but happy`, KHÔNG dùng `were`).
    - **Social Studies (`read_social`)**: Tập trung vào Lịch sử, Địa lý, Tinh thần thể thao (Sportsmanship), Fair Play, Đạo đức, Cổ vũ đồng đội, Lịch sử Olympic cổ đại.
 2. **Singapore Math Bar Models**:
    - Không được dùng lại hình ảnh bar model cũ của tuần trước. Mọi tuần mới bắt buộc tạo 5 hình ảnh SVG bar model độc bản tại `/public/images/weekXX/barmodel_wXX_adv_p1.svg` đến `p5.svg`.
