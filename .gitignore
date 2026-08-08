@@ -51,7 +51,6 @@ public/videos/week*/  # Week videos served from YouTube/R2
 # Design/source screenshots (archived locally, not in repo)
 Shadowing redesign/
 Shadowing format.jpg
-Shadowing*
 
 # ====== WRANGLER / CLOUDFLARE ======
 .wrangler/
