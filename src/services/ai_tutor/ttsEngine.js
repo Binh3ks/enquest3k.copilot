@@ -112,31 +112,31 @@ const TTS_DEBOUNCE_DELAY = 500; // 500ms minimum between TTS calls
 // TTS Engine configuration
 const TTS_CONFIG = {
   deepgram: {
-    enabled: true, // 🔥 PRIMARY - Deepgram Aura TTS (high quality, cost-effective)
-    voice: 'aura-asteria-en', // Female, warm, friendly - perfect for Nova
+    enabled: false, // 🚫 DISABLED - 100% Google Cloud Direct TTS
+    voice: 'en-US-Journey-F',
     speed: {
-      conversation: 1.0,   // Normal speed for conversations
-      pronunciation: 0.85  // Slower for pronunciation practice (clearer for ESL learners)
+      conversation: 1.0,
+      pronunciation: 0.85
     }
   },
   gemini: {
-    enabled: true, // 🔥 BACKUP - Google Cloud Text-to-Speech
-    voice: 'en-US-Studio-O', // 🎙️ Studio quality, energetic female voice (clearer than Neural2-F)
-    speed: 0.85 // 🎓 Slower for ESL learners (user requested)
+    enabled: true, // 🎓 PRIMARY - Google Cloud Text-to-Speech Direct
+    voice: 'en-US-Journey-F',
+    speed: 1.0
   },
   openai: {
     enabled: true, // Key is on backend (proxied via /api/ai/tts)
     model: 'tts-1',
     voice: 'nova', // Natural, warm voice
-    speed: 0.85 // Match Gemini speed for consistency
+    speed: 0.85
   },
   puter: {
-    enabled: false, // TODO: Integrate Puter.js when available
+    enabled: false,
     voice: 'en-US'
   },
   browser: {
     enabled: true, // Always available as final fallback
-    voice: 'Google US English', // Prefer Google voices
+    voice: 'Google US English',
     rate: 0.9,
     pitch: 1.0
   }
@@ -518,10 +518,9 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
   // browser fetch always fails. The Worker handles R2 cache lookup itself.
   console.log('⏩ No cache - calling TTS API...');
 
-  // Try layers in order (Google Cloud TTS Direct → Deepgram → OpenAI → Browser)
-  const useGoogleDirect = (context?.weekId === 36 || context?.weekId === '36' || localStorage.getItem('force_google_tts') === 'true' || true);
+  // Try layers in order (Google Cloud TTS Direct → OpenAI → Browser)
   const layers = preferredLayer === 'auto'
-    ? (useGoogleDirect ? ['gemini', 'deepgram', 'openai', 'browser'] : ['deepgram', 'gemini', 'openai', 'browser'])
+    ? ['gemini', 'openai', 'browser']
     : [preferredLayer, 'browser'];
 
   console.log('🔄 TTS: Trying layers in order:', layers);

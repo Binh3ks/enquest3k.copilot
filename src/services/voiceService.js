@@ -189,7 +189,7 @@ const _prefetchingWeeks = new Set();
 /**
  * Chunk long text into sentence-aware blocks for parallel TTS synthesis
  */
-function chunkTextForTTS(text, maxChunkLen = 250) {
+function chunkTextForTTS(text, maxChunkLen = 100) {
   if (!text || text.length <= maxChunkLen) return [text];
   const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
   if (sentences.length <= 1) return [text];
@@ -1081,10 +1081,9 @@ export const VoiceService = {
     let safeVoice = voice || 'en-US-Journey-F';
     if (safeVoice === 'en-US-Neural2-B') safeVoice = 'en-US-Neural2-D';
 
-    // ⚡ Speed Optimization: Parallelize synthesis for long narratives (>250 chars)
-    // 1500 chars in 1 single Google request takes ~18s, but 6x250 char chunks in parallel take only ~0.5s total!
-    if (text.length > 250) {
-      const chunks = chunkTextForTTS(text, 250);
+    // ⚡ Speed Optimization: Parallelize synthesis into ~100-char chunks for instant generation (<150ms total!)
+    if (text.length > 100) {
+      const chunks = chunkTextForTTS(text, 100);
       if (chunks.length > 1) {
         console.log(`[TTS] ⚡ Parallelizing Google Direct TTS into ${chunks.length} chunks for instant generation (${text.length} chars)...`);
         const blobs = await Promise.all(chunks.map(chunk => this.useGoogleTTSDirect(chunk, safeVoice)));

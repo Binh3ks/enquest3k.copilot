@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache_v22';
+const DB_NAME = 'EngQuestTTSCache_v23_GoogleDirectOnly';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;  // Fresh v22 store (Aug 7, 2026): Dynamic Google Cloud Direct TTS for Reading Narratives
+const DB_VERSION = 1;  // Fresh v23 store (Aug 8, 2026): 100% Google Cloud Direct TTS System-Wide
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
