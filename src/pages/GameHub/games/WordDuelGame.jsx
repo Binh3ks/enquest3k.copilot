@@ -94,15 +94,30 @@ export default function WordDuelGame({ weekNumber = 1, learningMode = 'advanced'
     const folder = isEasy ? 'weeks_easy' : 'weeks';
     const key = `../../../data/${folder}/week_${pad}/vocab.js`;
     const loader = modules[key] ?? (() => Promise.reject(new Error('not found')));
+    const parseItems = (m) => {
+      const raw = m.default?.vocab || m.vocab || m.default;
+      const list = Array.isArray(raw) ? raw : [];
+      return list
+        .filter(v => v && v.word && (v.definition_en || v.meaning_vi || v.definition_vi))
+        .map(v => ({
+          ...v,
+          definition_en: v.definition_en || v.meaning_vi || v.definition_vi
+        }));
+    };
+
     loader()
       .then(m => {
-        const items = (m.default?.vocab || m.vocab || [])
-          .filter(v => v.word && (v.definition_en || v.meaning_vi))
-          .map(v => ({
-            ...v,
-            definition_en: v.definition_en || v.meaning_vi
-          }));
-        if (!items.length) {
+        let items = parseItems(m);
+        if (!items.length && isEasy) {
+          const fallback = advVocab[`../../../data/weeks/week_${pad}/vocab.js`];
+          if (fallback) {
+            return fallback().then(fm => parseItems(fm));
+          }
+        }
+        return items;
+      })
+      .then(items => {
+        if (!items || !items.length) {
           setError('No vocabulary found for this week.');
           setLoading(false);
           return;
@@ -113,22 +128,20 @@ export default function WordDuelGame({ weekNumber = 1, learningMode = 'advanced'
       })
       .catch(() => {
         // Fallback: try advanced mode data if easy doesn't exist
-        if (isEasy) {
-          const fallback = advVocab[`../../../data/weeks/week_${pad}/vocab.js`];
-          if (fallback) {
-            fallback().then(m => {
-              const items = (m.default?.vocab || m.vocab || [])
-                .filter(v => v.word && (v.definition_en || v.meaning_vi))
-                .map(v => ({
-                  ...v,
-                  definition_en: v.definition_en || v.meaning_vi
-                }));
-              setVocabItems(items);
-              setQueue(shuffle(items).slice(0, Math.min(QUESTIONS_PER_GAME, items.length)));
+        const fallback = advVocab[`../../../data/weeks/week_${pad}/vocab.js`];
+        if (fallback) {
+          fallback().then(m => {
+            const items = parseItems(m);
+            if (!items.length) {
+              setError('Could not load vocabulary for this week.');
               setLoading(false);
-            }).catch(() => { setError('Could not load vocabulary for this week.'); setLoading(false); });
-            return;
-          }
+              return;
+            }
+            setVocabItems(items);
+            setQueue(shuffle(items).slice(0, Math.min(QUESTIONS_PER_GAME, items.length)));
+            setLoading(false);
+          }).catch(() => { setError('Could not load vocabulary for this week.'); setLoading(false); });
+          return;
         }
         setError('Could not load vocabulary for this week.');
         setLoading(false);

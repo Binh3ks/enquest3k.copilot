@@ -13,7 +13,8 @@ function getAvailableGamesForWeek() {
   return ['word_duel', 'story_remix', 'hot_seat'];
 }
 
-export default function GameHub({ weekNumber = 1, learningMode = 'advanced' }) {
+export default function GameHub({ weekNumber = 1, learningMode: propLearningMode = 'advanced' }) {
+  const learningMode = weekNumber >= 36 ? 'advanced' : propLearningMode;
   const [selectedGame, setSelectedGame] = useState(null);
   const [gameResults, setGameResults] = useState([]);
 

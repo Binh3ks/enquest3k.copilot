@@ -22,7 +22,8 @@ const EXTERNAL_GAMES = [
 const GameHub = ({ data, weekNumber: propWeekNumber }) => {
   const { weekId } = useParams();
   const weekNumber = propWeekNumber || parseInt(weekId) || data?.week_id || data?.weekId || 1;
-  const learningMode = useUserStore((state) => state.learningMode || 'advanced');
+  const rawLearningMode = useUserStore((state) => state.learningMode || 'advanced');
+  const learningMode = weekNumber >= 36 ? 'advanced' : rawLearningMode;
   const [selectedGameId, setSelectedGameId] = useState(null);
   const [playedGames, setPlayedGames] = useState([]);
 

@@ -12,7 +12,9 @@ const weekCache = new Map();
 
 // Function to dynamically load a specific week
 export const loadWeekData = async (weekId, isEasy = false) => {
-  const cacheKey = `${weekId}_${isEasy ? 'easy' : 'adv'}`;
+  // Single mode policy: W36+ has only 1 unified mode (Advanced)
+  const effectiveEasy = weekId >= 36 ? false : isEasy;
+  const cacheKey = `${weekId}_${effectiveEasy ? 'easy' : 'adv'}`;
   
   // Check cache first
   if (weekCache.has(cacheKey)) {
@@ -24,7 +26,7 @@ export const loadWeekData = async (weekId, isEasy = false) => {
   try {
     let data = null;
     
-    if (isEasy) {
+    if (effectiveEasy) {
       // Try easy mode (file then folder)
       const easyPathFile = `../weeks_easy/week_${pad}.js`;
       const easyPathFolder = `../weeks_easy/week_${pad}/index.js`;
@@ -36,8 +38,10 @@ export const loadWeekData = async (weekId, isEasy = false) => {
         const mod = await easyModulesFolder[easyPathFolder]();
         data = mod.default || mod;
       }
-    } else {
-      // Try advanced mode (folder then flat file)
+    }
+
+    // Fallback to advanced mode if data is null or effectiveEasy is false
+    if (!data) {
       const advPathFolder = `./week_${pad}/index.js`;
       const advPathFlat = `./week_${pad}.js`;
       
