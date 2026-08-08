@@ -40,11 +40,13 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
      3. **Test & Result (Thử nghiệm & Kết quả)**: Thử nghiệm giải pháp kỹ thuật trên thực tế và đạt kết quả vượt trội.
    - **Tệt đối KHÔNG nhồi nhét thuật ngữ rác**: Không đưa từ búa lớn giáo khoa một cách gượng ép không phục vụ cốt truyện. Văn phong phải mượt mà, đúng chuẩn storytelling thiếu nhi.
    - **Easy Mode STEM**: Bắt buộc là phiên bản đơn giản hóa ngắn gọn (A1 level, ~145-150 từ) cho học sinh nhỏ tuổi/slower, dùng từ ngữ trực quan, không để mã LaTeX thô.
+   - **Math Formula UI Standard**: Viết công thức dạng văn bản thuần mượt mà `(velocity = distance / time)` thay vì chèn mã LaTeX thô `\text{...}` để tránh vỡ giao diện trên UI.
    - **Grammar Integrity**: Đảm bảo ngữ pháp chuẩn 100% (ví dụ: `Everyone was tired but happy`, KHÔNG dùng `were`).
    - **Social Studies (`read_social`) MUST follow the 3-part History & Geography Framework**:
      1. **History (Lịch sử thực thụ)**: Trình bày dữ kiện lịch sử có thật (ví dụ: Thỏa thuận ngừng bắn Olympic Truce *Ekecheiria* tại Hy Lạp cổ đại), không tạo ra anachronism (nhập nhằng nhân vật hư cấu hiện đại vào thời cổ đại).
      2. **Geography & Culture (Địa lý & Văn hóa)**: Đề cập đến bối cảnh địa lý thế giới, sự đa dạng văn hóa, kết nối các quốc gia (ví dụ: hơn 200 quốc gia tham gia Olympic hiện đại, Làng Olympic).
      3. **Social Value (Giá trị Xã hội)**: Thể thao là công cụ kết nối cộng đồng quốc tế, tôn trọng sự đa dạng (Diversity & Respect).
+   - **Contextual Keyword Weaving**: Từ khóa thời gian cố định của tuần (như `Saturday morning`) khi ghép vào bài Lịch sử/Địa lý toàn cầu phải có từ nối bối cảnh tự nhiên (ví dụ: `For example, on a sunny Saturday morning during the Opening Ceremony...`) để không gây đứt gãy mạch văn.
    - **Tệt đối KHÔNG thuyết giáo đạo đức đơn điệu (No Preachy Civics)**: Không viết bài kiểu "dạy đời làm người tốt", mà phải truyền tải tri thức Lịch sử - Địa lý sinh động.
    - **ESL Chunking Standard**: Cụm từ bôi đậm `**...**` tối đa 2-4 từ, chuẩn cú pháp ESL. Dấu câu (`.`, `,`, `!`) tuyệt đối nằm NGOÀI thẻ bold.
 2. **Singapore Math Bar Models**:
