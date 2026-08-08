@@ -1,6 +1,6 @@
 export default {
   title: "Why Outdoor Sports Keep Us Healthy",
-  image_url: "/images/week37/explore_cover_w37.jpg",
+  image_url: null,
   audio_url: "/audio/week37/explore_main.mp3",
   content_en: `Participating in outdoor activities and regular sports **is great for our body** in numerous wonderful ways. When students **run in the park**, their leg muscles grow much stronger, their stamina improves, and their heart stays remarkably healthy. Absorbing fresh outdoor air and **bright sunlight** also **help us feel happy** while energizing our minds for daily learning.
 

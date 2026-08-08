@@ -16,7 +16,7 @@ export default {
   read_stem: {
     title_en: "The Fun Sports Day",
     subtitle_en: "Park sports day",
-    image_url: "/images/week37/read_stem_w37.jpg",
+    image_url: null,
     audio_url: "/audio/week37_easy/read_stem.mp3",
     content_en: `On **Saturday morning**, Leo and his happy classmates **went to the sports stadium** for their big school sports day. The bright sun **was warm and bright**, and all the excited children felt ready to run outdoors. **First of all**, Leo decided to enter the competitive 100-metre relay race. He **sat down with his coach** before the event to discuss their team plan. When the starting whistle blew, Leo **ran very fast** down the red track and **passed the baton** cleanly to Maya. Maya **ran across the grass** with great speed to reach the next zone. Max **caught the baton** smoothly and sprinted quickly toward the finish line. All the parents, teachers, and cheering friends **watched and clapped** with big proud smiles. **At the very end**, their relay team crossed the line first! They **were tired but happy** because they worked together as a wonderful team. Leo felt very proud when receiving his golden medal.`,
     content_vi: `Vào sáng thứ Bảy, Leo và các bạn đến sân vận động tham gia ngày hội thể thao. Thời tiết nắng ấm. Leo chạy rất nhanh trong cuộc đua. Cậu ấy truyền gậy tiếp sức cho bạn Maya. Maya chạy qua bãi cỏ nhanh chóng. Mọi người xem và vỗ tay. Họ mệt nhưng rất vui khi giành chiến thắng!`,
@@ -36,12 +36,21 @@ export default {
   read_social: {
     title_en: "Happy Sports Day",
     subtitle_en: "Playing nicely",
-    image_url: "/images/week37/read_social_w37.jpg",
+    image_url: null,
     audio_url: "/audio/week37_easy/read_social.mp3",
-    content_en: `Sports days **are super fun** for all students. Friends **cheer and smile** together on the field. Sharing joy with everyone makes sports day extra special.`,
-    content_vi: `Ngày hội thể thao rất vui. Bạn bè cùng cổ vũ và mỉm cười.`,
+    content_en: `On sports day, all happy students **are super fun** and excited to play together outdoors. Friends **cheer and smile** on the sunny field while their fast classmates **run very fast** toward the finish line. When runners **finish the race**, they **shake hands politely** with their opponents and **say kind words** of encouragement. True young champions know that **playing fair** is much more important than winning gold medals alone. Maya showed great kindness when she helped a friend who fell on the soft green grass. Everyone **stood together happily** after the award ceremony. Sharing joy with everyone **makes sports day** an extra special and happy event for our whole school. We **feel proud** of all active athletes who **do their best** in every exciting game today!`,
+    content_vi: `Vào ngày hội thể thao, tất cả học sinh vui vẻ rất hào hứng chơi thể thao cùng nhau ngoài trời. Bạn bè cổ vũ và mỉm cười trên sân cỏ nắng đẹp khi các bạn học sinh chạy rất nhanh về vạch đích. Khi các vận động viên hoàn thành cuộc đua, họ lịch sự bắt tay đối thủ và nói những lời động viên tốt đẹp. Những nhà vô địch nhỏ tuổi biết rằng chơi đẹp quan trọng hơn nhiều so với việc chỉ giành huy chương vàng. Maya thể hiện sự tốt bụng khi giúp đỡ một người bạn bị ngã trên cỏ xanh. Mọi người cùng nhau đứng vui vẻ sau buổi lễ. Chia sẻ niềm vui giúp ngày hội thể thao trở thành sự kiện đặc biệt. Chúng ta tự hào về tất cả các vận động viên đã nỗ lực hết mình!`,
+    key_vocabulary: [
+      { word: "runner", definition: "a person who runs", example: "The runner was fast." },
+      { word: "race", definition: "speed race", example: "They finished the race." },
+      { word: "fair", definition: "playing by rules with respect", example: "Playing fair is important." },
+      { word: "cheer", definition: "shout with joy", example: "Friends cheer and smile." },
+      { word: "proud", definition: "feeling happy about success", example: "We feel proud." }
+    ],
     comprehension_questions: [
-      { id: 1, question_en: "Are sports days fun?", answer: ["Yes"], clue_statement: "Yes, sports days are fun.", hint_en: "Yes", hint_vi: "Có" }
+      { id: 1, question_en: "What should runners do after finishing the race?", answer: ["Shake hands politely", "Shake hands"], clue_statement: "They shake hands politely with opponents.", hint_en: "Shake hands...", hint_vi: "Bắt tay..." },
+      { id: 2, question_en: "What is more important than winning gold medals?", answer: ["Playing fair"], clue_statement: "Playing fair is much more important.", hint_en: "Playing...", hint_vi: "Chơi đẹp..." },
+      { id: 3, question_en: "Who did Maya help on the grass?", answer: ["A friend", "A friend who fell"], clue_statement: "Maya helped a friend who fell.", hint_en: "A friend", hint_vi: "Một người bạn" }
     ]
   },
   chunk_focus: [

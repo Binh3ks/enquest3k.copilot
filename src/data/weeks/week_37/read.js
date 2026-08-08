@@ -17,7 +17,7 @@ export default {
   read_stem: {
     title_en: "The Great School Relay",
     subtitle_en: "Sports Day Challenge",
-    image_url: "/images/week37/read_stem_w37.jpg",
+    image_url: null,
     audio_url: "/audio/week37/read_stem.mp3",
     content_en: `On **Saturday morning**, Leo and his excited classmates **went to the sports stadium** for the annual athletic festival. The sun **was sunny and warm**, creating perfect conditions for outdoor running. **First of all**, Leo entered the exciting 100-metre relay race. He **sat down with his coach** before the event to discuss their passing strategy. When the loud whistle blew, Leo **ran very fast** along the red track and **passed the baton** cleanly to Maya. Maya **ran across the grass** with remarkable speed towards the next zone. Max **caught the baton** smoothly and sprinted with determination. Thousands of spectators **watched and clapped** with immense enthusiasm. **At the very end**, their relay team crossed the finish line first! Everyone **were tired but happy** because their dedicated **teamwork brought victory**. Leo **smiled with pride** as the school principal awarded him a golden medal for sportsmanship. It was an unforgettable day for everyone involved.`,
     content_vi: `Vào sáng thứ Bảy, Leo và các bạn cùng lớp đã đến sân vận động thể thao để tham gia ngày hội thể thao hàng năm. Thời tiết nắng ấm và ai nấy đều cảm thấy hào hứng. Trước hết, Leo tham gia cuộc đua tiếp sức 100m. Cậu ngồi xuống với huấn luyện viên trước cuộc đua để thảo luận kế hoạch. Khi tiếng còi vang lên, Leo chạy rất nhanh dọc theo đường chạy và truyền gậy tiếp sức gọn gàng cho Maya. Maya chạy qua bãi cỏ với tốc độ lớn. Max bắt lấy gậy tiếp sức và bứt tốc về đích. Mọi người xem và vỗ tay nhiệt tình. Cuối cùng, đội của họ đã cán đích đầu tiên! Họ mệt nhưng rất vui vì tinh thần đồng đội đã mang lại chiến thắng. Leo mỉm cười tự hào khi nhận huy chương vàng.`,
@@ -44,7 +44,7 @@ export default {
   read_social: {
     title_en: "Fair Play & Sportsmanship",
     subtitle_en: "Cheering for Everyone",
-    image_url: "/images/week37/read_social_w37.jpg",
+    image_url: null,
     audio_url: "/audio/week37/read_social.mp3",
     content_en: `Winning a championship trophy feels fantastic, but showing respect to other participants **is even more important**. When runners **finish the race**, they **shake hands with opponents** and **say kind words** of encouragement. True champions understand that sports building strong character matters more than trophies alone.
 

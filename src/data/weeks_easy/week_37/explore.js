@@ -1,6 +1,6 @@
 export default {
   title: "Sports in the Sun",
-  image_url: "/images/week37/explore_cover_w37.jpg",
+  image_url: null,
   audio_url: "/audio/week37_easy/explore_main.mp3",
   content_en: `Participating in fun outdoor sports **is great for our body** in many wonderful ways. When young children **run in the park**, their leg muscles grow strong, their lungs expand, and their hearts stay very healthy. Breathing fresh outdoor air and enjoying **bright sunlight** also **help us feel happy** while giving us good positive energy for schoolwork and studying every single day.
 
