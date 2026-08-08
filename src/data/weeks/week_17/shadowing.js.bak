@@ -1,0 +1,33 @@
+export default {
+  script: [
+    { id: 1, text: "Today the weather is changing!", vi: "Hôm nay thời tiết đang thay đổi!" },
+    { id: 2, text: "This morning, it is raining very hard.", vi: "Sáng nay, trời đang mưa rất to." },
+    { id: 3, text: "Big drops of water are falling from the sky.", vi: "Những giọt nước lớn đang rơi từ bầu trời." },
+    { id: 4, text: "I look outside the window.", vi: "Tôi nhìn ra ngoài cửa sổ." },
+    { id: 5, text: "The streets are wet.", vi: "Đường phố ướt mèm." },
+    { id: 6, text: "My teacher says: \"It is raining, so please be careful!\" I am wearing my blue coat today.", vi: "Giáo viên tôi nói: \"Trời đang mưa, hãy cẩn thận!\" Tôi đang mặc chiếc áo khoác màu xanh hôm nay." },
+    { id: 7, text: "It keeps me dry and warm.", vi: "Nó giữ tôi khô ráo và ấm." },
+    { id: 8, text: "My friend Linh is wearing her red hat.", vi: "Bạn Linh đang mặc chiếc mũ màu đỏ." },
+    { id: 9, text: "She looks so funny!", vi: "Trông buồn cười lắm!" },
+    { id: 10, text: "My classmate Nam is carrying a big umbrella.", vi: "Bạn Nam mang một cái ô to." },
+    { id: 11, text: "He opens it every time we go outside.", vi: "Bạn ấy mở nó mỗi khi chúng tôi ra ngoài." },
+    { id: 12, text: "It is very cold today.", vi: "Hôm nay rất lạnh." },
+    { id: 13, text: "The wind is blowing strong.", vi: "Gió thổi mạnh." },
+    { id: 14, text: "Our science teacher explains why it rains.", vi: "Giáo viên khoa học giải thích tại sao trời mưa." },
+    { id: 15, text: "She says water goes through evaporation.", vi: "Cô ấy nói nước trải qua quá trình bốc hơi." },
+    { id: 16, text: "The sun heats water in rivers and lakes.", vi: "Mặt trời làm nóng nước ở sông và hồ." },
+    { id: 17, text: "Water becomes vapor and floats up into the atmosphere.", vi: "Nước trở thành hơi và bay lên bầu khí quyển." },
+    { id: 18, text: "When vapor cools down, it forms clouds.", vi: "Khi hơi nước nguội đi, nó tạo thành mây." },
+    { id: 19, text: "Then it falls back as precipitation.", vi: "Rồi nó rơi xuống dưới dạng lượng mưa." },
+    { id: 20, text: "Rain and snow are both types of precipitation!", vi: "Mưa và tuyết đều là các loại lượng mưa!" },
+    { id: 21, text: "After school, the sky becomes sunny.", vi: "Sau giờ học, bầu trời trở nên nắng." },
+    { id: 22, text: "The rain stops.", vi: "Mưa ngừng." },
+    { id: 23, text: "Everything looks clean and bright.", vi: "Mọi thứ trông sạch sẽ và sáng sủa." },
+    { id: 24, text: "I take off my coat because it is warm outside now.", vi: "Tôi cởi áo khoác vì bây giờ ấm bên ngoài." },
+    { id: 25, text: "Linh takes off her hat too.", vi: "Linh cũng bỏ mũ ra." },
+    { id: 26, text: "Nam closes his umbrella.", vi: "Nam đóng ô lại." },
+    { id: 27, text: "We love learning about weather!", vi: "Chúng tôi thích tìm hiểu về thời tiết!" }
+  ]
+,
+  content_en: `Today the weather is changing! This morning, **it is raining** very hard. Big drops of water are **falling from the sky**. I **look outside the window**. The streets are wet. My teacher says: \\`
+};

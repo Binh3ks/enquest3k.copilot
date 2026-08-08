@@ -1,8 +1,7 @@
-// WEEK 37: The Fun Sports Day
-// Shadowing Station — Easy Mode
-
 export default {
-  title: "Easy Sports Relay Shadowing",
-  script: "Leo ran very fast and passed the baton.",
-  audio_url: "/audio/week37_easy/shadowing_main.mp3"
+  videoId: 'kJQP7kiw5Fk',
+  content_en: "Leo ran fast and passed the baton.",
+  script: [
+    { id: 1, text: "Leo ran very fast and passed the baton.", vi: "Leo chạy rất nhanh và truyền gậy tiếp sức." }
+  ]
 };

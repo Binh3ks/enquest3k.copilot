@@ -1,0 +1,38 @@
+// WEEK 35: Environmental Issues
+// Shadowing Station — Advanced Mode
+
+export default {
+  content_en: "Our planet Earth is very beautiful. It has blue oceans, green forests, and high mountains. But our planet is in danger. Many things are changing because of pollution. Factories make a lot of smoke. Cars and buses produce harmful gases. Cutting down trees destroys animal homes. Throwing away plastic pollutes our oceans and rivers. Climate change is a serious problem. The Earth is getting warmer. Polar ice is melting. Sea levels are rising. We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees. Solar power and wind power can replace fossil fuels. We must act now to save our planet.",
+  script: [
+{ id: 1, text: "Our planet is very beautiful.", vi: "Rất lâu trước đây, có một con kiến chăm chỉ sống trên một gò đất nhỏ." },
+  { id: 2, text: "It has blue oceans, green forests, and high mountains.", vi: "Cũng có một con châu chấu lười biếng sống dưới một chiếc lá xanh." },
+  { id: 3, text: "But our planet is in danger.", vi: "Dưới ánh nắng mùa hè ấm áp, con kiến đi ra đồng mỗi ngày." },
+  { id: 4, text: "many things are changing because of pollution.", vi: "Cô ấy nhặt hạt và dự trữ thức ăn cho mùa đông sắp tới." },
+  { id: 5, text: "Factories make a lot of smoke.", vi: "Ngày này qua ngày khác, con kiến làm việc rất chăm chỉ cả mùa hè." },
+  { id: 6, text: "Cars and buses produce harmful gases.", vi: "Con châu chấu chỉ tiếp tục chơi trò chơi và nhảy múa vui vẻ dưới ánh nắng ấm sáng." },
+  { id: 7, text: "Cutting down trees destroys animal homes.", vi: "Nó cứ cười và cứ hát không ngừng suốt cả ngày." },
+  { id: 8, text: "Throwing away plastic pollutes our oceans and rivers.", vi: "Một ngày lạnh vào mùa thu, sương giá đầu tiên xuất hiện trên mặt đất." },
+  { id: 9, text: "Climate change is a serious problem.", vi: "Con châu chấu cảm thấy rất lạnh và rất đói cùng một lúc." },
+  { id: 10, text: "The Earth is getting warmer.", vi: "Nó đến nhà con kiến và xin thức ăn để ăn." },
+  { id: 11, text: "Polar ice is melting.", vi: "Con kiến cho châu chấu một ít thức ăn từ kho dự trữ mùa đông của cô ấy." },
+  { id: 12, text: "Sea levels are rising.", vi: "Suốt mùa đông, hai con vật chia sẻ thức ăn cùng nhau trong nơi trú ẩn ấm áp." },
+  { id: 13, text: "Some animals are losing their homes.", vi: "Con châu chấu học được một bài học quan trọng: luôn làm việc chăm chỉ và chuẩn bị cho tương lai." },
+  { id: 14, text: "But we can make a difference!", vi: "(cụm từ: We must protect our planet.)" },
+  { id: 15, text: "We must protect our planet.", vi: "(cụm từ: We should reduce, reuse, and recycle.)" },
+  { id: 16, text: "We should reduce, reuse, and recycle.", vi: "(cụm từ: We can plant more trees.)" },
+  { id: 17, text: "We can plant more trees.", vi: "(cụm từ: We can use less plastic.)" },
+  { id: 18, text: "We can use less plastic.", vi: "(cụm từ: Many countries are working together.)" },
+  { id: 19, text: "Many countries are working together.", vi: "(cụm từ: They must reduce carbon emissions.)" },
+  { id: 20, text: "They must reduce carbon emissions.", vi: "(cụm từ: They should invest in renewable energy.)" },
+  { id: 21, text: "They should invest in renewable energy.", vi: "(cụm từ: Solar power and wind power can replace fossil fuels.)" },
+  { id: 22, text: "Solar power and wind power can replace fossil fuels.", vi: "(cụm từ: Young people can help too.)" },
+  { id: 23, text: "Young people can help too.", vi: "(cụm từ: You can turn off lights when you leave a room.)" },
+  { id: 24, text: "You can turn off lights when you leave a room.", vi: "(cụm từ: You should use less water.)" },
+  { id: 25, text: "You should use less water.", vi: "(cụm từ: You must not litter.)" },
+  { id: 26, text: "You must not litter.", vi: "(cụm từ: Small actions can make a big difference.)" },
+  { id: 27, text: "Small actions can make a big difference.", vi: "(cụm từ: Together, we can save our planet.)" },
+  { id: 28, text: "Together, we can save our planet.", vi: "(cụm từ: We must act now.)" },
+  { id: 29, text: "We must act now.", vi: "(cụm từ: The future depends on the choices we make today.)" },
+  { id: 30, text: "The future depends on the choices we make today.", vi: "(cụm từ: Our planet needs our help.)" }
+  ]
+};

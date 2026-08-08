@@ -1,0 +1,28 @@
+// WEEK 35: Environmental Issues
+// Shadowing Station — Easy Mode
+
+export default {
+  content_en: "Our planet Earth is very beautiful. It has blue oceans, green forests, and high mountains. But our planet is in danger. Climate change is making the Earth warmer. Polar ice is melting. Sea levels are rising. We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees. Small actions can make a big difference. We must act now!",
+  script: [
+{ id: 1, text: "Our planet is very beautiful.", vi: "Hành tinh Trái Đất của chúng ta rất đẹp." },
+  { id: 2, text: "It has blue oceans, green forests, and high mountains.", vi: "Nó có đại dương xanh, rừng xanh, và núi cao." },
+  { id: 3, text: "But our planet is in danger.", vi: "Nhưng hành tinh của chúng ta đang gặp nguy hiểm." },
+  { id: 4, text: "many things are changing because of pollution.", vi: "Nhiều thứ đang thay đổi vì ô nhiễm." },
+  { id: 5, text: "Factories make a lot of smoke.", vi: "Biến đổi khí hậu là một vấn đề nghiêm trọng." },
+  { id: 6, text: "Cars and buses produce harmful gases.", vi: "Trái Đất đang nóng lên." },
+  { id: 7, text: "Cutting down trees destroys animal homes.", vi: "Băng ở hai cực đang tan." },
+  { id: 8, text: "Throwing away plastic pollutes our oceans and rivers.", vi: "Mực nước biển đang dâng cao." },
+  { id: 9, text: "Climate change is a serious problem.", vi: "Chúng ta phải bảo vệ hành tinh của mình." },
+  { id: 10, text: "The Earth is getting warmer.", vi: "Chúng ta nên giảm, tái sử dụng, và tái chế." },
+  { id: 11, text: "Polar ice is melting.", vi: "Chúng ta có thể trồng nhiều cây hơn." },
+  { id: 12, text: "Sea levels are rising.", vi: "Những hành động nhỏ có thể tạo ra sự khác biệt lớn." },
+  { id: 13, text: "Some animals are losing their homes.", vi: "Cùng nhau, chúng ta có thể cứu hành tinh của mình." },
+  { id: 14, text: "But we can make a difference!", vi: "Năng lượng mặt trời có thể giúp giảm ô nhiễm không khí." },
+  { id: 15, text: "We must protect our planet.", vi: "Hành tinh của chúng ta cần sự giúp đỡ của chúng ta ngay bây giờ." },
+  { id: 16, text: "We should reduce, reuse, and recycle.", vi: "(cụm từ: We can plant more trees.)" },
+  { id: 17, text: "We can plant more trees.", vi: "(cụm từ: Small actions can make a big difference.)" },
+  { id: 18, text: "Small actions can make a big difference.", vi: "(cụm từ: Together, we can save our planet.)" },
+  { id: 19, text: "Together, we can save our planet.", vi: "(cụm từ: We must act now.)" },
+  { id: 20, text: "We must act now.", vi: "(cụm từ: Our planet needs our help.)" }
+  ]
+};
