@@ -1,5 +1,5 @@
 // WEEK 37: The Sports Day Challenge
-// AI Tutor V28 Format — 100% Schema Compliant matching week_36_real.js
+// 100% Pipeline Compliant with W36 Standard (3 Story Missions + EXACTLY 2 Free Talk Cards)
 
 const week_37RealData = {
   week_id: 37,
@@ -91,28 +91,28 @@ const week_37RealData = {
     {
       mission_id: 1,
       id: 1,
-      title: "The Great School Relay",
-      title_en: "The Great School Relay",
-      title_vi: "Cuộc Đua Tiếp Sức Trường Học",
-      theme: "Relay race execution",
+      title: "STEM: Speed Science & Relay",
+      title_en: "STEM: Speed Science & Relay",
+      title_vi: "STEM: Khoa Học Tốc Độ & Tiếp Sức",
+      theme: "Retelling STEM Story passage (read_stem)",
       type: "story",
-      character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding relay race" },
-      opening_narrative: "Hello! I am Coach Nova. On Saturday morning, Leo went to the sports stadium for sports day. He ran very fast along the track and passed the baton cleanly to Maya. Maya ran across the grass and handed it to Max. Max sprinted toward the finish line and they won first place! Want to hear how they won?",
+      character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding relay race science" },
+      opening_narrative: "Hello! I am Coach Nova. On Saturday morning, Leo and his classmates went to the sports stadium to study human physical biomechanics and speed science (v = d/t). Leo ran very fast along the red track and passed the baton cleanly to Maya. His leg muscles converted chemical energy into kinetic energy. Max sprinted smoothly to the finish line and they won first place! Do you remember the speed science story?",
       story_arc: [
         {
           phase: "the_start",
           turns: "1-4",
           phase_name: "Running Fast",
-          focus: "Describing Leo running fast using past simple",
-          goal: "Student retells how Leo ran fast",
+          focus: "Retelling STEM Story passage (read_stem)",
+          goal: "Student retells STEM speed science passage",
           phase_questions: [
             {
               template: "Awesome! Where did Leo go on Saturday morning? Say: He went to the sports stadium, or He went to the track",
               hints: ["went", "sports stadium", "track"]
             },
             {
-              template: "Great! How fast did Leo run along the red track? Say: Leo ran very fast, or Leo sprinted quickly",
-              hints: ["Leo", "ran", "very fast", "along the track"]
+              template: "Great! What speed formula did Leo calculate with his coach? Say: He calculated v = distance / time, or He calculated speed formula",
+              hints: ["calculated", "v = distance / time", "speed formula"]
             },
             {
               template: "Brilliant! How did he pass the baton to Maya? Say: He passed the baton cleanly, or He handed over the baton smoothly",
@@ -123,16 +123,16 @@ const week_37RealData = {
         {
           phase: "the_finish",
           turns: "5-8",
-          phase_name: "Crossing the Line",
-          focus: "Describing Max sprinting and winning",
-          goal: "Student describes winning the gold medal",
+          phase_name: "Kinetic Energy & Winning",
+          focus: "Describing kinetic energy and winning gold medal",
+          goal: "Student retells winning the gold medal",
           phase_questions: [
             {
-              template: "Exciting! How did Max run to the finish line? Say: Max sprinted smoothly, or Max ran with determination",
-              hints: ["Max", "sprinted", "smoothly", "determination"]
+              template: "Exciting! How did leg muscles convert food energy? Say: Leg muscles converted energy into kinetic motion, or They converted energy into speed",
+              hints: ["converted", "energy", "kinetic motion", "speed"]
             },
             {
-              template: "Hooray! What did the team win at the end? Say: They won a golden medal, or They won first place",
+              template: "Hooray! What did the team win at the finish line? Say: They won a golden medal, or They won first place",
               hints: ["won", "golden medal", "first place"]
             }
           ]
@@ -142,27 +142,31 @@ const week_37RealData = {
     {
       mission_id: 2,
       id: 2,
-      title: "Fair Play Champions",
-      title_en: "Fair Play Champions",
-      title_vi: "Nhà Vô Địch Chơi Đẹp",
-      theme: "Sportsmanship & Fair Play",
+      title: "Social Studies: Fair Play",
+      title_en: "Social Studies: Fair Play",
+      title_vi: "Social Studies: Nhà Vô Địch Chơi Đẹp",
+      theme: "Retelling Social Studies passage (read_social)",
       type: "story",
-      character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding fair play" },
-      opening_narrative: "On sports day, Maya saw a runner from another team slip on the wet grass. Instead of running past, she stopped to help! True champions know that playing fair is more important than winning gold medals. Let's discuss sportsmanship!",
+      character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding fair play history" },
+      opening_narrative: "On sports day, Maya saw a runner slip on the grass. Instead of running past, she stopped to help! In ancient Greece, athletes gathered at Olympia to celebrate global peace and sportsmanship. True champions know playing fair is more important than winning trophies!",
       story_arc: [
         {
           phase: "helping_hand",
           turns: "1-4",
-          phase_name: "Showing Respect",
-          focus: "Describing fair play actions",
-          goal: "Student explains fair play actions",
+          phase_name: "Ancient Greece & Fair Play",
+          focus: "Retelling Social Studies passage (read_social)",
+          goal: "Student explains fair play and ancient Olympics",
           phase_questions: [
             {
-              template: "Wonderful! What should runners do after finishing a race? Say: Shake hands with opponents, or Say kind words of encouragement",
+              template: "Wonderful! Where did ancient athletes gather in Greece? Say: They gathered at Olympia, or They gathered in ancient Greece",
+              hints: ["gathered", "Olympia", "ancient Greece"]
+            },
+            {
+              template: "Great job! What should runners do after finishing a race? Say: Shake hands with opponents, or Say kind words of encouragement",
               hints: ["Shake hands", "opponents", "say kind words"]
             },
             {
-              template: "Great job! Why is playing fair more important than winning gold medals? Say: It builds strong character, or It shows respect to everyone",
+              template: "Fantastic! Why is playing fair more important than winning gold medals? Say: It builds strong character, or It shows respect to everyone",
               hints: ["builds strong character", "shows respect"]
             }
           ]
@@ -172,28 +176,28 @@ const week_37RealData = {
     {
       mission_id: 3,
       id: 3,
-      title: "Active Body & Healthy Mind",
-      title_en: "Active Body & Healthy Mind",
-      title_vi: "Cơ Thể Khỏe Mạnh & Trí Óc Minh Mẫn",
-      theme: "Outdoor Exercise & Health Science",
+      title: "My Sports Day Experience",
+      title_en: "My Sports Day Experience",
+      title_vi: "Trải Nghiệm Thể Thao Bản Thân",
+      theme: "Personal Connection & Outdoor Sports",
       type: "story",
-      character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding health science" },
-      opening_narrative: "Health experts recommend 30 minutes of exercise every single day! Running outdoors builds strong leg muscles and keeps our heart healthy. What outdoor sport do you enjoy playing?",
+      character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding personal connection" },
+      opening_narrative: "Now it is YOUR turn to tell Coach Nova about your life! Health experts recommend 30 minutes of exercise every day. What outdoor sport or race do you enjoy playing with your friends?",
       story_arc: [
         {
           phase: "daily_exercise",
           turns: "1-4",
-          phase_name: "Outdoor Sports Routine",
-          focus: "Describing health benefits of sports",
-          goal: "Student describes daily sports routine",
+          phase_name: "Personal Sports Story",
+          focus: "Personal application to student's life",
+          goal: "Student describes their own sports experience",
           phase_questions: [
             {
-              template: "Tell me! How many minutes of exercise should we complete daily? Say: 30 minutes of exercise every day, or We should run 30 minutes daily",
-              hints: ["30 minutes", "exercise", "every single day"]
+              template: "Tell me! What outdoor sport do you love playing? Say: I love playing soccer in the park, or I enjoy running with my friends",
+              hints: ["love playing", "soccer", "park", "running", "friends"]
             },
             {
-              template: "Fantastic! How do outdoor sports help our body and mind? Say: They make our muscles strong and help us feel happy, or They keep our heart healthy",
-              hints: ["muscles strong", "feel happy", "heart healthy"]
+              template: "Fantastic! How do you help your teammates during a game? Say: We work together as a team, or We cheer for each other",
+              hints: ["work together", "team", "cheer"]
             }
           ]
         }
@@ -204,64 +208,51 @@ const week_37RealData = {
   spark_talk: [
     {
       id: 1,
-      title: "My Relay Experience",
+      title: "My Favorite Sports and Games",
       emoji: "🏃‍♂️",
-      seed_question: "Tell me about a race or game you joined! Did you run fast?",
-      text_en: "Tell me about a race or game you joined!",
-      text_vi: "Kể cho Nova nghe về cuộc đua bạn từng tham gia!",
-      hint_en: "I ran in a race... I played soccer in the park...",
-      hint_vi: "Tôi đã chạy trong cuộc đua... Tôi chơi bóng đá...",
+      seed_question: "Tell me about a race or outdoor sport you love playing with your friends! Where do you play?",
+      text_en: "Tell me about an outdoor sport you love playing!",
+      text_vi: "Kể cho Nova nghe về môn thể thao ngoài trời bạn thích chơi!",
+      hint_en: "I love playing soccer in the park... I like running with my friends...",
+      hint_vi: "Tôi thích chơi bóng đá... Tôi thích chạy...",
       turns: 8,
       frames: [
         {
           frame: 1,
-          prompt_en: "Tell me about a race or game you joined! Where did you play? Say: I ran in a race at school, or I played soccer in the park",
+          prompt_en: "Tell me about a sport or race you played! Where did you play? Say: I ran in a race at school, or I played soccer in the park",
           hint_en: "I ran in a race... I played soccer in the park...",
           target_vocab: ["ran", "race", "school", "soccer", "park"]
         },
         {
           frame: 2,
-          prompt_en: "How fast did you run during your game? Say: I ran very fast, or I sprinted to the line",
-          hint_en: "I ran very fast... I sprinted to the line...",
-          target_vocab: ["ran", "very fast", "sprinted", "line"]
+          prompt_en: "How fast did you run during your game? Say: I ran very fast, or I sprinted to the finish line",
+          hint_en: "I ran very fast... I sprinted to the finish line...",
+          target_vocab: ["ran", "very fast", "sprinted", "finish line"]
         }
       ]
     },
     {
       id: 2,
-      title: "Teamwork and Sportsmanship",
+      title: "Showing Teamwork and Fair Play",
       emoji: "🤝",
-      seed_question: "How do you and your friends help each other when playing sports?",
-      text_en: "How do you help your teammates?",
-      text_vi: "Bạn giúp đỡ đồng đội như thế nào khi chơi thể thao?",
-      hint_en: "We work together... We shake hands with opponents...",
+      seed_question: "How do you and your classmates show fair play and help teammates on sports day?",
+      text_en: "How do you show fair play with friends?",
+      text_vi: "Bạn thể hiện sự chơi đẹp với bạn bè như thế nào?",
+      hint_en: "We work together as a team... We shake hands with opponents...",
       hint_vi: "Chúng tôi làm việc cùng nhau... Chúng tôi bắt tay...",
       turns: 8,
       frames: [
         {
           frame: 1,
-          prompt_en: "How do teammates win a relay race together? Say: We work together as a team, or We pass the baton smoothly",
+          prompt_en: "How do you and your friends work together during sports day? Say: We work together as a team, or We pass the baton smoothly",
           hint_en: "We work together... We pass the baton smoothly...",
           target_vocab: ["work together", "teamwork", "pass baton"]
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Active Sports and Healthy Living",
-      emoji: "🌟",
-      seed_question: "What is your favourite outdoor sport to play on sunny days?",
-      text_en: "What outdoor sport do you love?",
-      text_vi: "Môn thể thao ngoài trời nào bạn yêu thích?",
-      hint_en: "I love playing basketball... I like running in the park...",
-      hint_vi: "Tôi thích chơi bóng rổ... Tôi thích chạy...",
-      turns: 8,
-      frames: [
+        },
         {
-          frame: 1,
-          prompt_en: "What outdoor sport do you love playing with friends? Say: I love playing basketball, or I enjoy running in the park",
-          hint_en: "I love playing basketball... I enjoy running...",
-          target_vocab: ["basketball", "running", "outdoor sports"]
+          frame: 2,
+          prompt_en: "What do you do after finishing an exciting match? Say: We shake hands politely with opponents, or We cheer for all runners",
+          hint_en: "We shake hands politely... We cheer for all runners...",
+          target_vocab: ["shake hands", "opponents", "cheer"]
         }
       ]
     }

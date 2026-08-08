@@ -1,66 +1,66 @@
 export default {
-  "videoId": "gf7OdFHCYfo",
-  "content_en": "On Saturday morning, Leo went to the sports stadium for the relay race. The weather was warm and bright for running. Leo entered the 100-metre relay race. He sat down with his coach to review their strategy. Leo ran very fast along the red track. He passed the baton cleanly to Maya. Maya ran across the grass with remarkable speed. Max caught the baton smoothly and sprinted forward. Thousands of spectators watched and clapped enthusiastically. At the very end, their team crossed the finish line first! Everyone were tired but happy because teamwork brought victory. Leo smiled with pride as he received his golden medal.",
+  "videoId": "Rlmms56uisw",
+  "content_en": "The Carter Family went to the sports day at the stadium. Harry and Oliver ran in the relay race. They ran fast and passed the baton cleanly to win the gold medal!",
   "script": [
     {
       "id": 1,
-      "text": "On Saturday morning, Leo went to the sports stadium.",
-      "vi": "On Saturday morning, Leo went to the sports stadium."
+      "text": "The Carter Family went to the sports day at the stadium.",
+      "vi": "Gia đình Carter đã đến ngày hội thể thao tại sân vận động."
     },
     {
       "id": 2,
-      "text": "The weather was warm and bright for running.",
-      "vi": "The weather was warm and bright for running."
+      "text": "Harry and Oliver ran in the competitive relay race.",
+      "vi": "Harry và Oliver đã chạy trong cuộc đua tiếp sức đầy tính cạnh tranh."
     },
     {
       "id": 3,
-      "text": "Leo entered the competitive 100-metre relay race.",
-      "vi": "Leo entered the competitive 100-metre relay race."
+      "text": "The weather was sunny and warm for outdoor running.",
+      "vi": "Thời tiết nắng và ấm áp thích hợp cho việc chạy bộ ngoài trời."
     },
     {
       "id": 4,
-      "text": "He sat down with his coach to review their strategy.",
-      "vi": "He sat down with his coach to review their strategy."
+      "text": "Harry ran very fast along the red track.",
+      "vi": "Harry đã chạy rất nhanh dọc theo đường chạy màu đỏ."
     },
     {
       "id": 5,
-      "text": "Leo ran very fast along the red track.",
-      "vi": "Leo ran very fast along the red track."
+      "text": "He passed the baton cleanly to Oliver.",
+      "vi": "Cậu ấy đã truyền gậy tiếp sức gọn gàng cho Oliver."
     },
     {
       "id": 6,
-      "text": "He passed the baton cleanly to Maya.",
-      "vi": "He passed the baton cleanly to Maya."
+      "text": "Oliver sprinted smoothly toward the finish line.",
+      "vi": "Oliver đã bứt tốc mượt mà về vạch đích."
     },
     {
       "id": 7,
-      "text": "Maya ran across the grass with remarkable speed.",
-      "vi": "Maya ran across the grass with remarkable speed."
+      "text": "Thousands of spectators watched and clapped enthusiastically.",
+      "vi": "Hàng ngàn khán giả đã xem và vỗ tay nhiệt tình."
     },
     {
       "id": 8,
-      "text": "Max caught the baton smoothly and sprinted forward.",
-      "vi": "Max caught the baton smoothly and sprinted forward."
+      "text": "At the very end, their relay team crossed the line first!",
+      "vi": "Cuối cùng, đội tiếp sức của họ đã cán đích đầu tiên!"
     },
     {
       "id": 9,
-      "text": "Thousands of spectators watched and clapped enthusiastically.",
-      "vi": "Thousands of spectators watched and clapped enthusiastically."
+      "text": "They shook hands politely with their opponents.",
+      "vi": "Họ đã bắt tay lịch sự với các đối thủ."
     },
     {
       "id": 10,
-      "text": "At the very end, their team crossed the finish line first!",
-      "vi": "At the very end, their team crossed the finish line first!"
+      "text": "Everyone were tired but happy because teamwork brought victory.",
+      "vi": "Mọi người mệt nhưng rất vui vì tinh thần đồng đội mang lại chiến thắng."
     },
     {
       "id": 11,
-      "text": "Everyone were tired but happy because teamwork brought victory.",
-      "vi": "Everyone were tired but happy because teamwork brought victory."
+      "text": "Oliver smiled with pride as he received his gold medal.",
+      "vi": "Oliver mỉm cười tự hào khi nhận được huy chương vàng."
     },
     {
       "id": 12,
-      "text": "Leo smiled with pride as he received his golden medal.",
-      "vi": "Leo smiled with pride as he received his golden medal."
+      "text": "Flying and running outdoors is awesome!",
+      "vi": "Chạy bộ và tham gia thể thao ngoài trời thật tuyệt vời!"
     }
   ]
 };
