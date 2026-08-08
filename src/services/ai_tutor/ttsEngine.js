@@ -15,6 +15,7 @@
  */
 
 import axios from 'axios';
+import { TTSCache } from '../ttsCache';
 
 // 🔥 Get API base URL for backend calls
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001/api';
@@ -490,6 +491,28 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
     console.log('⏩ Cache cleared, falling through to TTS generation...');
   }
 
+  // 🔥 STEP 2.5: Check IndexedDB TTSCache (0ms persistent cache)
+  try {
+    const stationName = context?.type === 'story' ? 'story' : (category || 'story');
+    const cachedBlobUrl = await TTSCache.get(cleanedText, stationName, userVoice, audioPath);
+    if (cachedBlobUrl) {
+      console.log(`✅ TTS: 0ms Instant HIT from IndexedDB TTSCache (${stationName} / ${userVoice})`);
+      audioCache.set(memoryCacheKey, cachedBlobUrl);
+      if (autoPlay) {
+        await playAudio(cachedBlobUrl, userSpeed);
+      }
+      isSpeaking = false;
+      return {
+        success: true,
+        audioUrl: cachedBlobUrl,
+        layer: 'indexeddb_cache',
+        text
+      };
+    }
+  } catch (err) {
+    console.warn('⚠️ TTSCache lookup failed:', err.message);
+  }
+
   // 🔥 STEP 3: Generate audio via TTS engines (Worker checks R2 internally)
   // Note: Direct R2 CDN HEAD check removed — R2 bucket lacks CORS headers so
   // browser fetch always fails. The Worker handles R2 cache lookup itself.
@@ -542,6 +565,12 @@ export async function textToSpeech(text, { autoPlay = true, preferredLayer = 'au
         // Cache the result in memory
         audioCache.set(memoryCacheKey, audioUrl);
         
+        // Also save blob to IndexedDB TTSCache for 0ms instant offline hits
+        fetch(audioUrl).then(r => r.blob()).then(blob => {
+          const stationName = context?.type === 'story' ? 'story' : (category || 'story');
+          TTSCache.set(cleanedText, stationName, blob, userVoice, audioPath);
+        }).catch(() => {});
+
         console.log(`✅ TTS: ${layer} successful! (Worker cached to R2: ${audioPath})`);
         
         // Worker already cached to R2 in background (no need for separate upload)

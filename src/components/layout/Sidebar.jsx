@@ -172,15 +172,21 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
         </div>
         <div className="min-w-0 flex-1">
           <h3 className="font-black text-sm text-slate-800 truncate leading-none mb-1">{currentUser.display_name || currentUser.username || currentUser.name}</h3>
-          <button 
-            onClick={(e) => { 
-              e.stopPropagation(); 
-              if (handleToggleMode) handleToggleMode(); 
-            }} 
-            className={`mt-2 text-[10px] font-black px-3 py-1.5 rounded-full border-2 flex items-center gap-1.5 transition-all ${learningMode === 'easy' ? 'bg-teal-50 text-teal-600 border-teal-200 hover:bg-teal-100' : 'bg-indigo-50 text-indigo-600 border-indigo-200 hover:bg-indigo-100'}`}
-          >
-            <RotateCcw size={10} /> {learningMode === 'easy' ? 'EASY MODE' : 'ADVANCED'}
-          </button>
+          {weekId < 36 ? (
+            <button 
+              onClick={(e) => { 
+                e.stopPropagation(); 
+                if (handleToggleMode) handleToggleMode(); 
+              }} 
+              className={`mt-2 text-[10px] font-black px-3 py-1.5 rounded-full border-2 flex items-center gap-1.5 transition-all ${learningMode === 'easy' ? 'bg-teal-50 text-teal-600 border-teal-200 hover:bg-teal-100' : 'bg-indigo-50 text-indigo-600 border-indigo-200 hover:bg-indigo-100'}`}
+            >
+              <RotateCcw size={10} /> {learningMode === 'easy' ? 'EASY MODE' : 'ADVANCED'}
+            </button>
+          ) : (
+            <div className="mt-2 text-[10px] font-black px-3 py-1.5 rounded-full border-2 flex items-center gap-1.5 bg-indigo-50 text-indigo-600 border-indigo-200 w-max">
+              ✨ FULL MODE
+            </div>
+          )}
         </div>
       </div>
       <div className="relative z-10">

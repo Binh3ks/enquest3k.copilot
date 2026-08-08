@@ -12,7 +12,8 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
   
   // 🔥 Universal Progress System with mode support
   const { savedData, saveProgress, markComplete, mode: hookMode } = useStationProgress(parseInt(weekId), 'skill_dictation');
-  const mode = propMode || hookMode || 'advanced';
+  const rawMode = propMode || hookMode || 'advanced';
+  const mode = currentWeek >= 36 ? 'advanced' : rawMode;
   
   // 🚀 TTS Prefetch - auto-cache dictation sentences (with weekNumber for auto voice detection)
   const { prefetchFromArray } = useTTSPrefetch('dictation', currentWeek);
