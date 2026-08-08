@@ -41,7 +41,12 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
    - **Tệt đối KHÔNG nhồi nhét thuật ngữ rác**: Không đưa từ búa lớn giáo khoa một cách gượng ép không phục vụ cốt truyện. Văn phong phải mượt mà, đúng chuẩn storytelling thiếu nhi.
    - **Easy Mode STEM**: Bắt buộc là phiên bản đơn giản hóa ngắn gọn (A1 level, ~145-150 từ) cho học sinh nhỏ tuổi/slower, dùng từ ngữ trực quan, không để mã LaTeX thô.
    - **Grammar Integrity**: Đảm bảo ngữ pháp chuẩn 100% (ví dụ: `Everyone was tired but happy`, KHÔNG dùng `were`).
-   - **Social Studies (`read_social`)**: Tập trung vào Lịch sử, Địa lý, Tinh thần thể thao (Sportsmanship), Fair Play, Đạo đức, Cổ vũ đồng đội, Lịch sử Olympic cổ đại.
+   - **Social Studies (`read_social`) MUST follow the 3-part History & Geography Framework**:
+     1. **History (Lịch sử thực thụ)**: Trình bày dữ kiện lịch sử có thật (ví dụ: Thỏa thuận ngừng bắn Olympic Truce *Ekecheiria* tại Hy Lạp cổ đại), không tạo ra anachronism (nhập nhằng nhân vật hư cấu hiện đại vào thời cổ đại).
+     2. **Geography & Culture (Địa lý & Văn hóa)**: Đề cập đến bối cảnh địa lý thế giới, sự đa dạng văn hóa, kết nối các quốc gia (ví dụ: hơn 200 quốc gia tham gia Olympic hiện đại, Làng Olympic).
+     3. **Social Value (Giá trị Xã hội)**: Thể thao là công cụ kết nối cộng đồng quốc tế, tôn trọng sự đa dạng (Diversity & Respect).
+   - **Tệt đối KHÔNG thuyết giáo đạo đức đơn điệu (No Preachy Civics)**: Không viết bài kiểu "dạy đời làm người tốt", mà phải truyền tải tri thức Lịch sử - Địa lý sinh động.
+   - **ESL Chunking Standard**: Cụm từ bôi đậm `**...**` tối đa 2-4 từ, chuẩn cú pháp ESL. Dấu câu (`.`, `,`, `!`) tuyệt đối nằm NGOÀI thẻ bold.
 2. **Singapore Math Bar Models**:
    - Không được dùng lại hình ảnh bar model cũ của tuần trước. Mọi tuần mới bắt buộc tạo 5 hình ảnh SVG bar model độc bản tại `/public/images/weekXX/barmodel_wXX_adv_p1.svg` đến `p5.svg`.
 3. **Shadowing Video & Conversational Dialogue Selection**:

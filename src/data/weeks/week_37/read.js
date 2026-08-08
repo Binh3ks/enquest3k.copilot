@@ -37,24 +37,24 @@ export default {
     ]
   },
   read_social: {
-    title_en: "Fair Play & Global Sportsmanship",
-    subtitle_en: "Cheering for Everyone",
+    title_en: "The Olympic Truce & Global Peace",
+    subtitle_en: "History & Geography Story",
     image_url: null,
     audio_url: "/audio/week37/read_social.mp3",
-    content_en: `Winning a championship trophy feels fantastic, but showing respect to other participants **is even more important** for young athletes. When runners **finish the race**, they **shake hands with opponents** and **say kind words** of sincere encouragement. True champions understand that **building strong character** matters far more than winning shiny trophies alone.
-
-In ancient Greece, athletes gathered at Olympia to celebrate global peace and friendly athletic competition. Maya demonstrated this true fair play when she stopped to help a fallen runner on the track. Both competing teams **stood together with smiles** after the final award ceremony concluded. Dedicated athletes demonstrate true moral greatness whether they **win or lose** in any match. Sharing joy with everyone **makes sports day** an extra special occasion for our whole community. Athletes who **play fair** earn universal respect everywhere!`,
-    content_vi: `Giành huy chương thể thao thật tuyệt vời, nhưng tôn trọng các đối thủ còn quan trọng hơn. Khi các vận động viên hoàn thành cuộc đua, họ bắt tay các đối thủ và nói những lời tốt đẹp. Ở Hy Lạp cổ đại, các vận động viên tập hợp tại Olympia để tôn vinh hòa bình. Maya thể hiện sự chơi đẹp khi dừng lại giúp một bạn bị ngã. Vận động viên chân chính thể hiện sự cao thượng dù thắng hay thua.`,
+    content_en: `Long ago in ancient Greece, warring city-states gathered at Olympia for the ancient Olympic Games. During the games, leaders **declared a sacred truce** so athletes could travel safely through rival territories. **First of all**, competitors **sat down with their leaders** to pause all conflicts and celebrate peace. Athletes **ran very fast** along dust tracks and **passed the Olympic torch** to honor unity. Today, the Modern Olympic Games bring together athletes from over two hundred nations. On **Saturday morning**, delegation teams **went to the sports stadium** wearing colorful traditional uniforms. Competitors **marched across the stadium** and **represented their home nations** with deep respect. Spectators **watched and clapped** enthusiastically as athletes from different cultures shared meals in the Olympic Village. **At the very end**, competitors **were united in peace** because international **sports brought peace** across borders. Everyone **smiled with pride** while waving national flags together.`,
+    content_vi: `Ngày xưa ở Hy Lạp cổ đại, các thành bang giao tranh đã tập hợp tại Olympia tham gia Thế vận hội Olympic cổ đại. Trong thời gian diễn ra đại hội, các nhà lãnh đạo tuyên bố một thỏa thuận ngừng bắn linh thiêng (Ekecheiria) để các vận động viên có thể di chuyển an toàn qua các vùng lãnh thổ đối đầu. Trước tiên, các đối thủ ngồi xuống với các nhà lãnh đạo để tạm dừng xung đột và tôn vinh hòa bình. Các vận động viên chạy rất nhanh và truyền ngọn đốc Olympic để tôn vinh sự đoàn kết. Ngày nay, Thế vận hội Olympic hiện đại kết nối các vận động viên từ hơn 200 quốc gia. Vào sáng thứ Bảy, các đoàn thể thao đến sân vận động trong trang phục truyền thống rực rỡ. Các vận động viên diễu hành qua sân vận động và đại diện cho quốc gia của họ với sự tôn trọng sâu sắc. Khán giả xem và vỗ tay khi các vận động viên từ nhiều nền văn hóa khác nhau cùng ăn uống tại Làng Olympic. Cuối cùng, các đối thủ đoàn kết trong hòa bình vì thể thao quốc tế mang lại hòa bình xuyên biên giới. Mọi người mỉm cười tự hào khi cùng nhau vẫy quốc kỳ.`,
     key_vocabulary: [
-      { word: "trophy", definition: "prize for winning", example: "Winning a trophy feels great." },
-      { word: "opponent", definition: "competitor in a match", example: "Shake hands with opponents." },
-      { word: "character", definition: "moral qualities of a person", example: "Sports build strong character." }
+      { word: "truce", definition: "an agreement to stop fighting", example: "Leaders declared a sacred truce." },
+      { word: "nation", definition: "a country with its own government", example: "Athletes represented their home nations." },
+      { word: "tradition", definition: "custom passed down through history", example: "The Olympics is a historic tradition." },
+      { word: "culture", definition: "ideas and customs of a people", example: "They met people from different cultures." },
+      { word: "unity", definition: "being joined together as one", example: "Sports promote global unity." }
     ],
     comprehension_questions: [
-      { id: 1, question_en: "What should runners do after finishing a race?", answer: ["Shake hands with opponents"], clue_statement: "They shake hands with opponents.", hint_en: "Shake hands...", hint_vi: "Bắt tay..." },
-      { id: 2, question_en: "What matters more than winning trophies?", answer: ["Building strong character", "Showing respect"], clue_statement: "Building strong character matters more.", hint_en: "Building...", hint_vi: "Rèn luyện nhân cách..." },
-      { id: 3, question_en: "Where did ancient athletes gather in Greece?", answer: ["Olympia", "At Olympia"], clue_statement: "Athletes gathered at Olympia.", hint_en: "At...", hint_vi: "Tại..." },
-      { id: 4, question_en: "Who earns universal respect everywhere?", answer: ["Athletes who play fair"], clue_statement: "Athletes who play fair earn respect.", hint_en: "Athletes who...", hint_vi: "Vận động viên..." }
+      { id: 1, question_en: "What sacred agreement did ancient Greek leaders declare during the Olympics?", answer: ["A sacred truce", "Sacred truce"], clue_statement: "Leaders declared a sacred truce so athletes could travel safely.", hint_en: "A sacred...", hint_vi: "Thỏa thuận..." },
+      { id: 2, question_en: "How many nations come together in the Modern Olympic Games today?", answer: ["Over two hundred nations", "Over 200 nations"], clue_statement: "Modern Olympic Games bring together athletes from over two hundred nations.", hint_en: "Over two...", hint_vi: "Hơn hai..." },
+      { id: 3, question_en: "Where do athletes from different cultures share meals during the games?", answer: ["In the Olympic Village", "Olympic Village"], clue_statement: "Athletes from different cultures shared meals in the Olympic Village.", hint_en: "In the...", hint_vi: "Tại Làng..." },
+      { id: 4, question_en: "Why were competitors united in peace at the very end?", answer: ["Because international sports brought peace across borders"], clue_statement: "Competitors were united in peace because international sports brought peace.", hint_en: "Because...", hint_vi: "Bởi vì..." }
     ]
   },
   chunk_focus: [

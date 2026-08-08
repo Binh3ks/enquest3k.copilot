@@ -35593,6 +35593,14 @@
     "type": "phrase"
   },
   {
+    "word": "was tired but happy",
+    "ipa": "/was tired but happy/",
+    "meaning": "was tired but happy",
+    "example": "We learned was tired but happy.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "Anh chị em",
     "ipa": "/anh chị em/",
     "meaning": "cụm từ vựng: anh chị em",
@@ -35977,10 +35985,58 @@
     "type": "phrase"
   },
   {
-    "word": "was tired but happy",
-    "ipa": "/was tired but happy/",
-    "meaning": "was tired but happy",
-    "example": "We learned was tired but happy.",
+    "word": "declared a sacred truce",
+    "ipa": "/declared a sacred truce/",
+    "meaning": "declared a sacred truce",
+    "example": "We learned declared a sacred truce.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sat down with their leaders",
+    "ipa": "/sat down with their leaders/",
+    "meaning": "sat down with their leaders",
+    "example": "We learned sat down with their leaders.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "passed the Olympic torch",
+    "ipa": "/passed the olympic torch/",
+    "meaning": "passed the Olympic torch",
+    "example": "We learned passed the Olympic torch.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "marched across the stadium",
+    "ipa": "/marched across the stadium/",
+    "meaning": "marched across the stadium",
+    "example": "We learned marched across the stadium.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "represented their home nations",
+    "ipa": "/represented their home nations/",
+    "meaning": "represented their home nations",
+    "example": "We learned represented their home nations.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "were united in peace",
+    "ipa": "/were united in peace/",
+    "meaning": "were united in peace",
+    "example": "We learned were united in peace.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sports brought peace",
+    "ipa": "/sports brought peace/",
+    "meaning": "sports brought peace",
+    "example": "We learned sports brought peace.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },

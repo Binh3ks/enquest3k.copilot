@@ -18,7 +18,7 @@ export default {
     image_url: null,
     audio_url: "/audio/week37_easy/read_stem.mp3",
     content_en: `On **Saturday morning**, Leo’s relay team **went to the sports stadium** to run. The weather **was warm and bright**, but the team had a problem: they lost speed whenever they passed the baton. **First of all**, Leo **sat down with his coach** to fix their running plan using speed science. Speed equals distance divided by time ($v = d/t$). The coach showed them that the next runner must start running early to keep their fast momentum. Leo **ran very fast** down the track and **passed the baton** while both runners moved together at top speed. Maya **ran across the grass** without stopping, and Max **caught the baton** smoothly. Happy parents **watched and clapped** with big smiles. **At the very end**, their relay team crossed the finish line first! Everyone **was tired but happy** because **teamwork brought victory**. Leo **smiled with pride** with his new medal.`,
-    content_vi: `Vào sáng thứ Bảy, đội tiếp sức của Leo đến sân vận động để chạy. Trời nắng ấm nhưng đội gặp rắc rối: họ bị giảm tốc độ mỗi khi truyền gậy. Trước hết, Leo ngồi với huấn luyện viên để sửa kế hoạch chạy bằng khoa học tốc độ (tốc độ = quãng đường / thời gian). Huấn luyện viên chỉ ra rằng người chạy tiếp theo phải bắt đầu chạy sớm để giữ đà. Leo chạy rất nhanh và truyền gậy khi cả hai cùng di chuyển ở tốc độ tối đa. Maya chạy qua bãi cỏ không dừng lại, và Max bắt gậy mượt mà. Cha mẹ xem và vỗ tay. Cuối cùng, họ cán đích đầu tiên! Mọi người đều mệt nhưng rất vui vì tinh thần đồng đội mang lại chiến thắng. Leo mỉm cười tự hào với huy chương mới.`,
+    content_vi: `Vào sáng thứ Bảy, đội tiếp sức của Leo đến sân vận động để chạy. Trời nắng ấm nhưng đội gặp rắc rối: họ bị giảm tốc độ mỗi khi truyền gậy. Trước hết, Leo ngồi với huấn luyện viên để sửa kế hoạch chạy bằng khoa học tốc độ (tốc độ = quãng đường / thời gian). Huấn luyện viên chỉ ra rằng người chạy tiếp theo phải bắt đầu chạy sớm để giữ đà. Leo chạy rất nhanh và truyền gậy khi cả hai cùng di chuyển ở tốc độ tối đa. Maya chạy qua bãi cỏ không dừng lại, và Max bắt gậy mượt mà. Cha mẹ xem và vỗ tay. Cuối cùng, họ cán đích đầu tiên! Họ mệt nhưng rất vui vì tinh thần đồng đội mang lại chiến thắng. Leo mỉm cười tự hào với huy chương mới.`,
     key_vocabulary: [
       { word: "runner", definition: "a person who runs", example: "Leo is a fast runner." },
       { word: "race", definition: "a competition of speed", example: "We ran a relay race." },
@@ -31,20 +31,21 @@ export default {
     ]
   },
   read_social: {
-    title_en: "Fair Play & Sports Day Fun",
-    subtitle_en: "Cheering for Friends",
+    title_en: "The Olympic Truce & Global Peace",
+    subtitle_en: "Easy History & Geography Story",
     image_url: null,
     audio_url: "/audio/week37_easy/read_social.mp3",
-    content_en: `On sports day, all happy students **are super fun** and excited to play together outdoors. Friends **cheer and smile** on the sunny field while their classmates **run very fast** toward the line. When runners **finish the race**, they **shake hands politely** with opponents and **say kind words** of cheer. True young champions know that **playing fair** is much more important than winning gold medals alone. Maya showed great kindness when she helped a friend who fell on the green grass. Everyone **stood together happily** after the ceremony. Sharing joy **makes sports day** an extra special event for our whole school. We **feel proud** of all active athletes who **do their best** in every exciting game today!`,
-    content_vi: `Vào ngày hội thể thao, học sinh rất vui vẻ. Bạn bè cổ vũ trên sân trong khi các bạn chạy nhanh về đích. Khi hoàn thành cuộc đua, họ bắt tay đối thủ và nói những lời tốt đẹp. Chơi đẹp quan trọng hơn việc giành huy chương. Maya giúp đỡ một bạn bị ngã. Mọi người đứng cùng nhau vui vẻ sau lễ trao giải. Chúng tôi tự hào về tất cả các vận động viên!`,
+    content_en: `Long ago in ancient Greece, people gathered at Olympia for the first Olympic Games. Leaders **declared a sacred truce** so athletes could travel without danger. **First of all**, competitors **sat down with their leaders** to stop all wars and share peace. Runners **ran very fast** on the track and **passed the Olympic torch** together. Today, the Modern Olympic Games connect children from over two hundred countries. On **Saturday morning**, teams **went to the sports stadium** with bright flags. Athletes **marched across the stadium** and **represented their home nations** with big smiles. Families **watched and clapped** for every runner. **At the very end**, all athletes **were united in peace** because **sports brought peace** to the world. Children **smiled with pride** for global friendship.`,
+    content_vi: `Ngày xưa ở Hy Lạp cổ đại, mọi người tập hợp tại Olympia tham gia Thế vận hội Olympic đầu tiên. Các nhà lãnh đạo tuyên bố thỏa thuận ngừng bắn linh thiêng để các vận động viên đi lại an toàn. Trước tiên, các đối thủ ngồi xuống với nhà lãnh đạo để dừng các cuộc chiến và chia sẻ hòa bình. Người chạy chạy rất nhanh và cùng nhau truyền ngọn đốc Olympic. Ngày nay, Thế vận hội Olympic hiện đại kết nối trẻ em từ hơn 200 quốc gia. Vào sáng thứ Bảy, các đội đến sân vận động với lá cờ rực rỡ. Các vận động viên diễu hành và đại diện cho quốc gia với nụ cười lớn. Gia đình xem và vỗ tay. Cuối cùng, tất cả vận động viên đoàn kết trong hòa bình vì thể thao mang lại hòa bình cho thế giới. Trẻ em mỉm cười tự hào vì tình hữu nghị toàn cầu.`,
     key_vocabulary: [
-      { word: "fair", definition: "playing by rules politely", example: "Playing fair is important." },
-      { word: "cheer", definition: "shout with support", example: "Friends cheer and smile." }
+      { word: "truce", definition: "agreement to stop fighting", example: "Leaders declared a sacred truce." },
+      { word: "nation", definition: "a country", example: "They represented their home nations." },
+      { word: "peace", definition: "freedom from war and fighting", example: "Sports bring global peace." }
     ],
     comprehension_questions: [
-      { id: 1, question_en: "What do polite athletes do after the race?", answer: ["Shake hands politely with opponents"], clue_statement: "They shake hands politely.", hint_en: "Shake hands...", hint_vi: "Bắt tay..." },
-      { id: 2, question_en: "What is more important than gold medals?", answer: ["Playing fair", "Playing fair and kindness"], clue_statement: "Playing fair is much more important.", hint_en: "Playing...", hint_vi: "Chơi đẹp..." },
-      { id: 3, question_en: "How did Maya show kindness on the field?", answer: ["She helped a friend who fell"], clue_statement: "Maya helped a friend who fell.", hint_en: "She helped...", hint_vi: "Giúp bạn ngã..." }
+      { id: 1, question_en: "What agreement did leaders declare in ancient Greece?", answer: ["A sacred truce", "Sacred truce"], clue_statement: "Leaders declared a sacred truce.", hint_en: "A sacred...", hint_vi: "Thỏa thuận..." },
+      { id: 2, question_en: "How many countries connect in the Modern Olympic Games?", answer: ["Over two hundred countries", "Over 200 countries"], clue_statement: "The Modern Olympic Games connect children from over two hundred countries.", hint_en: "Over two...", hint_vi: "Hơn hai..." },
+      { id: 3, question_en: "Why were all athletes united in peace at the very end?", answer: ["Because sports brought peace to the world"], clue_statement: "All athletes were united in peace because sports brought peace.", hint_en: "Because...", hint_vi: "Bởi vì..." }
     ]
   },
   chunk_focus: [
