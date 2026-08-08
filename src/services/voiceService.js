@@ -706,12 +706,12 @@ export const VoiceService = {
         if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'dictation', voice: voiceConfig?.dictation || 'en-US-Neural2-F', audioPath: s.audio_url });
       });
 
-      // AI Tutor Opening Narratives & Prompts
+      // AI Tutor Opening Narratives & Prompts (Matching StoryMissionTab en-US-Journey-F voice)
       const realData = weekData.weekRealData || weekData;
       const missions = realData.story_missions || realData.missions || weekData.story_missions || [];
       missions.forEach(m => {
         const txt = m.opening_narrative || m.nova_greeting;
-        if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'ask_ai', voice: voiceConfig?.questions || 'en-US-Neural2-D' });
+        if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'story', voice: 'en-US-Journey-F' });
       });
       const sparkTalk = realData.spark_talk || weekData.spark_talk || [];
       sparkTalk.forEach(s => {
