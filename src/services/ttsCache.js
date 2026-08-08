@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache_v23_GoogleDirectOnly';
+const DB_NAME = 'EngQuestTTSCache_v24_CleanMP3';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;  // Fresh v23 store (Aug 8, 2026): 100% Google Cloud Direct TTS System-Wide
+const DB_VERSION = 1;  // Fresh v24 store (Aug 8, 2026): Clean single-blob Google Cloud Direct TTS
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {

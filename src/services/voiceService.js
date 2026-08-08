@@ -736,13 +736,14 @@ export const VoiceService = {
 
       console.log(`[Prefetch] 📦 Week ${weekNumber} queue created (${itemsToPrefetch.length} items). Synthesizing Google Direct in background...`);
 
-      // Parallel batch synthesis (6 concurrent items per batch for maximum speed)
-      const BATCH_SIZE = 6;
+      // Throttled batch synthesis (2 items per batch + 100ms breather to prevent HTTP 429 rate limits)
+      const BATCH_SIZE = 2;
       for (let i = 0; i < itemsToPrefetch.length; i += BATCH_SIZE) {
         const batch = itemsToPrefetch.slice(i, i + BATCH_SIZE);
         await Promise.all(batch.map(item =>
           this.prefetch(item.text, item.station, item.audioPath, weekNumber, mode, item.voice).catch(() => {})
         ));
+        await new Promise(r => setTimeout(r, 100));
       }
 
       console.log(`[Prefetch] ✅ Week ${weekNumber} Full Google Direct TTS Pre-generation Complete!`);
@@ -1080,16 +1081,6 @@ export const VoiceService = {
     // Normalize invalid voice names for Google Cloud TTS (e.g. Neural2-B -> Neural2-D)
     let safeVoice = voice || 'en-US-Journey-F';
     if (safeVoice === 'en-US-Neural2-B') safeVoice = 'en-US-Neural2-D';
-
-    // ⚡ Speed Optimization: Parallelize synthesis into ~100-char chunks for instant generation (<150ms total!)
-    if (text.length > 100) {
-      const chunks = chunkTextForTTS(text, 100);
-      if (chunks.length > 1) {
-        console.log(`[TTS] ⚡ Parallelizing Google Direct TTS into ${chunks.length} chunks for instant generation (${text.length} chars)...`);
-        const blobs = await Promise.all(chunks.map(chunk => this.useGoogleTTSDirect(chunk, safeVoice)));
-        return new Blob(blobs, { type: 'audio/mp3' });
-      }
-    }
 
     const dedupKey = `${safeVoice}::${text}`;
     if (_pendingDirectFetches.has(dedupKey)) {
