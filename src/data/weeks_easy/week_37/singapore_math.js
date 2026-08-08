@@ -4,6 +4,8 @@ export default {
   problems: [
     { id: 1, type: "groups", question_en: "There are 2 runners in a relay team. Each runner runs 100 metres. How far do they run in total?", bar_model: "/images/week36/barmodel_w36_adv_p1_v1.svg", answer: ["200"], hint_en: "Add 100 and 100.", hint_vi: "Cong 100 va 100." },
     { id: 2, type: "part_whole", question_en: "Leo has 5 golden medals. Maya has 4 golden medals. How many medals do they have together?", bar_model: "/images/week36/barmodel_w36_adv_p2_v1.svg", answer: ["9"], hint_en: "Add 5 and 4.", hint_vi: "Cong 5 va 4." },
-    { id: 3, type: "comparison", question_en: "Max ran for 10 minutes. Leo ran for 6 minutes. How many more minutes did Max run?", bar_model: "/images/week36/barmodel_w36_adv_p3_v1.svg", answer: ["4"], hint_en: "Subtract 6 from 10.", hint_vi: "Tru 6 khoi 10." }
+    { id: 3, type: "comparison", question_en: "Max ran for 10 minutes. Leo ran for 6 minutes. How many more minutes did Max run?", bar_model: "/images/week36/barmodel_w36_adv_p3_v1.svg", answer: ["4"], hint_en: "Subtract 6 from 10.", hint_vi: "Tru 6 khoi 10." },
+    { id: 4, type: "groups", question_en: "There are 3 teams in the race. Each team has 4 runners. How many runners are there in total?", bar_model: "/images/week36/barmodel_w36_adv_p4_v1.svg", answer: ["12"], hint_en: "Multiply 3 teams by 4 runners.", hint_vi: "Nhan 3 doi voi 4 van dong vien." },
+    { id: 5, type: "missing_part", question_en: "A relay race has 15 total medals. The coach gives out 10 medals. How many medals are left?", bar_model: "/images/week36/barmodel_w36_adv_p5_v1.svg", answer: ["5"], hint_en: "Subtract 10 from 15.", hint_vi: "Tru 10 khoi 15." }
   ]
 };

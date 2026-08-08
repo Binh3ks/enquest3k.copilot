@@ -19,6 +19,26 @@ export default {
       question_frame: "___ the gold medals?",
       correctWord: "Who won",
       answer: "Who won the gold medals?"
+    },
+    {
+      id: 3,
+      nova_says: "Leo passed the baton cleanly to Maya. Ask me what he passed!",
+      nova_says_vi: "Leo đã truyền gậy tiếp sức gọn gàng cho Maya. Hãy hỏi Nova xem cậu ấy truyền gì!",
+      context_en: "Ask Nova what Leo passed to Maya.",
+      question_word_bank: ["What did", "Where did", "Who did"],
+      question_frame: "___ Leo pass to Maya?",
+      correctWord: "What did",
+      answer: "What did Leo pass to Maya?"
+    },
+    {
+      id: 4,
+      nova_says: "Playing outdoor sports keeps us happy and strong. Ask me where we play!",
+      nova_says_vi: "Chơi thể thao ngoài trời giúp chúng ta vui khỏe. Hãy hỏi Nova xem chúng ta chơi ở đâu!",
+      context_en: "Ask Nova where children play sports.",
+      question_word_bank: ["Where do", "When do", "Why do"],
+      question_frame: "___ children play outdoor sports?",
+      correctWord: "Where do",
+      answer: "Where do children play outdoor sports?"
     }
   ]
 };
