@@ -31,8 +31,36 @@ export default {
         { "word": "determination", "vi": "sự quyết tâm", "distractor": false },
         { "word": "clapped", "vi": "vỗ tay", "distractor": false },
         { "word": "teamwork", "vi": "tinh thần đồng đội", "distractor": false },
-        { "word": "medals", "vi": "huy chương", "distractor": false }
+        { "word": "medals", "vi": "huy chương", "distractor": false },
+        { "word": "passed the baton", "vi": "truyền gậy", "distractor": false },
+        { "word": "finish line", "vi": "vạch đích", "distractor": false },
+        { "word": "shake hands", "vi": "bắt tay", "distractor": false },
+        { "word": "went home", "vi": "đã về nhà", "distractor": true },
+        { "word": "cold rain", "vi": "mưa lạnh", "distractor": true }
       ]
+    }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: null,
+      image_prompt: "Young athletes sprinting on a red athletic track passing a baton under bright sunlight, cheering spectators in background, cartoon illustration.",
+      word_bank: ["ran very fast", "passed the baton", "sprinted with determination", "crossed the finish line", "cheered loudly", "smiled with pride", "teamwork brought victory", "shook hands politely"],
+      sentence_frames: [
+        { "template": "On Saturday morning, Leo ___ (go) to the sports stadium.", "answers": ["went"] },
+        { "template": "He ___ (run) very fast on the track.", "answers": ["ran"] },
+        { "template": "He ___ (pass) the baton cleanly to Maya.", "answers": ["passed"] },
+        { "template": "Maya ___ (run) across the grass.", "answers": ["ran"] },
+        { "template": "Max ___ (catch) the baton smoothly.", "answers": ["caught"] },
+        { "template": "They ___ (cross) the finish line first.", "answers": ["crossed"] },
+        { "template": "Spectators ___ (clap) enthusiastically.", "answers": ["clapped"] },
+        { "template": "Leo ___ (smile) with pride.", "answers": ["smiled"] }
+      ],
+      writing_prompts: {
+        en: "Look at the sports day relay picture and write the story. How did the runners pass the baton? Use 5+ past action verbs.",
+        vi: "Nhìn hình ngày hội thể thao và viết câu chuyện. Các vận động viên đã truyền gậy như thế nào? Dùng 5+ động từ quá quá khứ."
+      },
+      rubric_tier: 1
     }
   }
 };

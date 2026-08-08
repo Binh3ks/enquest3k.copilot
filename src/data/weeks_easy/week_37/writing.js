@@ -27,8 +27,29 @@ export default {
         { "word": "fast", "vi": "nhanh", "distractor": false },
         { "word": "baton", "vi": "gậy tiếp sức", "distractor": false },
         { "word": "clapped", "vi": "vỗ tay", "distractor": false },
-        { "word": "medal", "vi": "huy chương", "distractor": false }
+        { "word": "medal", "vi": "huy chương", "distractor": false },
+        { "word": "cold rain", "vi": "mưa lạnh", "distractor": true },
+        { "word": "sleep late", "vi": "ngủ muộn", "distractor": true }
       ]
+    }
+  },
+  story_prompts: {
+    picture_mode: {
+      type: 'picture',
+      image_url: null,
+      image_prompt: "Happy children running on grass passing a baton, sunny sky, cartoon style.",
+      word_bank: ["ran fast", "passed baton", "won medal", "cheered loudly", "smiled happy"],
+      sentence_frames: [
+        { "template": "I went to the ___.", "answers": ["park"] },
+        { "template": "Leo ran very ___.", "answers": ["fast"] },
+        { "template": "He passed the ___.", "answers": ["baton"] },
+        { "template": "We won a gold ___.", "answers": ["medal"] }
+      ],
+      writing_prompts: {
+        en: "Look at the picture and write 4 sentences about sports day.",
+        vi: "Nhìn hình và viết 4 câu về ngày hội thể thao."
+      },
+      rubric_tier: 1
     }
   }
 };

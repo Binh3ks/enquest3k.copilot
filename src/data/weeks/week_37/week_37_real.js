@@ -6,6 +6,15 @@ export default {
   topic_vi: "Cuộc Đua Tiếp Sức & Tinh Thần Thể Thao",
   cefr_level: "A1+",
   grammar_focus: "Past Simple & Adverbs of Manner (-ly)",
+  target_vocab: advVocabList,
+  vocabulary: advVocabList,
+  sentences: [
+    { id: 1, text: "Leo ran very fast along the red track.", meaning: "Leo chạy rất nhanh trên đường chạy màu đỏ." },
+    { id: 2, text: "He passed the baton cleanly to Maya.", meaning: "Cậu ấy đã truyền gậy tiếp sức gọn gàng cho Maya." },
+    { id: 3, text: "Max sprinted smoothly toward the finish line.", meaning: "Max đã bứt tốc mượt mà về vạch đích." },
+    { id: 4, text: "Spectators watched and clapped enthusiastically.", meaning: "Khán giả đã xem và vỗ tay nhiệt tình." },
+    { id: 5, text: "Their dedicated teamwork brought victory!", meaning: "Tinh thần đồng đội tận tụy của họ đã mang lại chiến thắng!" }
+  ],
   missions: [
     {
       id: "w37_m1",

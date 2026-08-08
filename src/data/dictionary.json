@@ -35577,6 +35577,22 @@
     "type": "phrase"
   },
   {
+    "word": "building strong character",
+    "ipa": "/building strong character/",
+    "meaning": "building strong character",
+    "example": "We learned building strong character.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "play fair",
+    "ipa": "/play fair/",
+    "meaning": "play fair",
+    "example": "We learned play fair.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "Anh chị em",
     "ipa": "/anh chị em/",
     "meaning": "cụm từ vựng: anh chị em",
@@ -36013,22 +36029,6 @@
     "ipa": "/2,500 years ago/",
     "meaning": "2.500 năm trước",
     "example": "This is an example: 2,500 years ago.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "building strong character",
-    "ipa": "/building strong character/",
-    "meaning": "building strong character",
-    "example": "We learned building strong character.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "play fair",
-    "ipa": "/play fair/",
-    "meaning": "play fair",
-    "example": "We learned play fair.",
     "part_of_speech": "phrase",
     "type": "phrase"
   }

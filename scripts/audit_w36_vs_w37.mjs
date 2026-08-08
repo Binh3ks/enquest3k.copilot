@@ -3,8 +3,6 @@ import path from 'path';
 
 async function auditWeek(wNum) {
   const pad = String(wNum).padStart(2, '0');
-  const advDir = `./src/data/weeks/week_${pad}`;
-  const easyDir = `./src/data/weeks_easy/week_${pad}`;
 
   // Dynamic imports
   const advRead = (await import(`../src/data/weeks/week_${pad}/read.js`)).default;
@@ -22,7 +20,13 @@ async function auditWeek(wNum) {
   const advSocial = (await import(`../src/data/weeks/week_${pad}/social_quiz.js`)).default;
   const advAskAI = (await import(`../src/data/weeks/week_${pad}/ask_ai.js`)).default;
   const advDailyWatch = (await import(`../src/data/weeks/week_${pad}/daily_watch.js`)).default;
-  const advReal = (await import(`../src/data/weeks/week_${pad}/week_${pad}_real.js`)).default;
+
+  let advReal;
+  try {
+    advReal = (await import(`../src/data/weeks/week_${pad}/week_${pad}_real.js`)).default;
+  } catch {
+    advReal = {};
+  }
 
   const easyRead = (await import(`../src/data/weeks_easy/week_${pad}/read.js`)).default;
   const easyExplore = (await import(`../src/data/weeks_easy/week_${pad}/explore.js`)).default;
@@ -39,17 +43,20 @@ async function auditWeek(wNum) {
   const easySocial = (await import(`../src/data/weeks_easy/week_${pad}/social_quiz.js`)).default;
   const easyAskAI = (await import(`../src/data/weeks_easy/week_${pad}/ask_ai.js`)).default;
   const easyDailyWatch = (await import(`../src/data/weeks_easy/week_${pad}/daily_watch.js`)).default;
+
   let easyReal;
   try {
     easyReal = (await import(`../src/data/weeks_easy/week_${pad}/week_${pad}_easy_real.js`)).default;
   } catch {
-    const raw = fs.readFileSync(`./src/data/weeks_easy/week_${pad}/week_${pad}_easy_real.js`, 'utf8');
-    const match = raw.match(/missions:\s*\[([\s\S]*?)\]\s*\}/);
-    easyReal = { missions: match ? (raw.match(/title:/g) || []) : [] };
+    easyReal = {};
   }
 
   const countWords = (str) => (str ? str.replace(/\*\*/g, '').trim().split(/\s+/).length : 0);
   const countBolds = (str) => (str ? (str.match(/\*\*.*?\*\*/g) || []).length : 0);
+  const countTotalBranches = (mmData) => {
+    if (!mmData || !mmData.branchLabels) return 0;
+    return Object.values(mmData.branchLabels).reduce((acc, list) => acc + (list ? list.length : 0), 0);
+  };
 
   return {
     ADV: {
@@ -60,6 +67,7 @@ async function auditWeek(wNum) {
       read_comprehension_q: advRead.read_stem?.comprehension_questions?.length || 0,
       explore_words: countWords(advExplore.content_en),
       explore_bolds: countBolds(advExplore.content_en),
+      explore_check_qs: advExplore.check_questions?.length || 0,
       vocab_count: advVocab.vocab?.length || 0,
       grammar_ex_count: advGrammar.exercises?.length || 0,
       word_power_count: advWordPower.words?.length || 0,
@@ -67,13 +75,15 @@ async function auditWeek(wNum) {
       dictation_sentences: advDictation.sentences?.length || 0,
       shadowing_script: advShadowing.script?.length || 0,
       mindmap_stems: advMindmap.centerStems?.length || 0,
+      mindmap_total_branches: countTotalBranches(advMindmap),
       writing_min_words: advWriting.min_words || 0,
-      writing_frames: advWriting.sentence_frames?.length || 0,
+      writing_has_picture_story: advWriting.story_prompts?.picture_mode ? 'YES' : 'NO',
       logic_questions: advLogic.questions?.length || 0,
       math_problems: advMath.problems?.length || 0,
       social_questions: advSocial.questions?.length || 0,
       ask_ai_prompts: advAskAI.prompts?.length || 0,
       daily_watch_videos: advDailyWatch.videos?.length || 0,
+      ai_tutor_vocab: advReal.target_vocab?.length || 0,
       ai_tutor_missions: advReal.missions?.length || 0
     },
     EASY: {
@@ -84,6 +94,7 @@ async function auditWeek(wNum) {
       read_comprehension_q: easyRead.read_stem?.comprehension_questions?.length || 0,
       explore_words: countWords(easyExplore.content_en),
       explore_bolds: countBolds(easyExplore.content_en),
+      explore_check_qs: easyExplore.check_questions?.length || 0,
       vocab_count: easyVocab.vocab?.length || 0,
       grammar_ex_count: easyGrammar.exercises?.length || 0,
       word_power_count: easyWordPower.words?.length || 0,
@@ -91,13 +102,15 @@ async function auditWeek(wNum) {
       dictation_sentences: easyDictation.sentences?.length || 0,
       shadowing_script: easyShadowing.script?.length || 0,
       mindmap_stems: easyMindmap.centerStems?.length || 0,
+      mindmap_total_branches: countTotalBranches(easyMindmap),
       writing_min_words: easyWriting.min_words || 0,
-      writing_frames: easyWriting.sentence_frames?.length || 0,
+      writing_has_picture_story: easyWriting.story_prompts?.picture_mode ? 'YES' : 'NO',
       logic_questions: easyLogic.questions?.length || 0,
       math_problems: easyMath.problems?.length || 0,
       social_questions: easySocial.questions?.length || 0,
       ask_ai_prompts: easyAskAI.prompts?.length || 0,
       daily_watch_videos: easyDailyWatch.videos?.length || 0,
+      ai_tutor_vocab: easyReal.target_vocab?.length || 0,
       ai_tutor_missions: easyReal.missions?.length || 0
     }
   };
@@ -107,7 +120,7 @@ async function main() {
   const w36 = await auditWeek(36);
   const w37 = await auditWeek(37);
 
-  console.log('=== AUDIT REPORT: WEEK 36 vs WEEK 37 ===\n');
+  console.log('=== ADVANCED AUDIT REPORT: WEEK 36 vs WEEK 37 ===\n');
 
   console.log('--- ADVANCED MODE ---');
   console.table(Object.keys(w36.ADV).reduce((acc, key) => {
