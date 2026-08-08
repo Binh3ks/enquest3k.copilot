@@ -5,7 +5,8 @@ export const week_37GamesEasy = {
   games: [
     { id: "sports_scramble", type: "sentence_scramble", title: "Easy Scramble",
       sentences: [
-        { scrambled: ["I", "ran", "fast"], answer: "I ran fast." }
+        { scrambled: ["Leo", "ran", "fast"], answer: "Leo ran fast." },
+        { scrambled: ["We", "won", "medals"], answer: "We won medals." }
       ]
     }
   ]

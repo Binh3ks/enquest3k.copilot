@@ -2,15 +2,17 @@ export default {
   content_en: `On **Saturday morning**, Leo and his excited classmates **went to the sports stadium** for the annual athletic festival. The sun **was sunny and warm**, creating perfect conditions for outdoor running. **First of all**, Leo entered the exciting 100-metre relay race. He **sat down with his coach** before the event to discuss their passing strategy. When the loud whistle blew, Leo **ran very fast** along the red track and **passed the baton** cleanly to Maya. Maya **ran across the grass** with remarkable speed towards the next zone. Max **caught the baton** smoothly and sprinted with determination. Thousands of spectators **watched and clapped** with immense enthusiasm. **At the very end**, their relay team crossed the finish line first! Everyone **were tired but happy** because their dedicated **teamwork brought victory**. Leo **smiled with pride** as the school principal awarded him a golden medal for sportsmanship. It was an unforgettable day for everyone involved.`,
   sentences: [
     { id: 1, text: "On Saturday morning, Leo went to the sports stadium for sports day." },
-    { id: 2, text: "The weather was sunny and warm, and everyone felt excited." },
-    { id: 3, text: "First of all, Leo entered the 100-metre relay race." },
-    { id: 4, text: "He sat down with his coach to discuss their plan." },
-    { id: 5, text: "Leo ran very fast along the track." },
+    { id: 2, text: "The weather was sunny and warm, creating perfect running conditions." },
+    { id: 3, text: "First of all, Leo entered the exciting 100-metre relay race." },
+    { id: 4, text: "He sat down with his coach to discuss their passing strategy." },
+    { id: 5, text: "Leo ran very fast along the red track." },
     { id: 6, text: "He passed the baton cleanly to Maya." },
-    { id: 7, text: "Maya ran across the grass with great speed." },
-    { id: 8, text: "Max caught the baton and sprinted to the finish line." },
-    { id: 9, text: "Everyone watched and clapped enthusiastically." },
-    { id: 10, text: "At the very end, their team crossed the line first!" }
+    { id: 7, text: "Maya ran across the grass with remarkable speed." },
+    { id: 8, text: "Max caught the baton smoothly and sprinted with determination." },
+    { id: 9, text: "Thousands of spectators watched and clapped enthusiastically." },
+    { id: 10, text: "At the very end, their relay team crossed the finish line first!" },
+    { id: 11, text: "Everyone were tired but happy because teamwork brought victory." },
+    { id: 12, text: "Leo smiled with pride as he received his golden medal." }
   ],
   read_stem: {
     title_en: "The Great School Relay",
@@ -20,15 +22,23 @@ export default {
     content_en: `On **Saturday morning**, Leo and his excited classmates **went to the sports stadium** for the annual athletic festival. The sun **was sunny and warm**, creating perfect conditions for outdoor running. **First of all**, Leo entered the exciting 100-metre relay race. He **sat down with his coach** before the event to discuss their passing strategy. When the loud whistle blew, Leo **ran very fast** along the red track and **passed the baton** cleanly to Maya. Maya **ran across the grass** with remarkable speed towards the next zone. Max **caught the baton** smoothly and sprinted with determination. Thousands of spectators **watched and clapped** with immense enthusiasm. **At the very end**, their relay team crossed the finish line first! Everyone **were tired but happy** because their dedicated **teamwork brought victory**. Leo **smiled with pride** as the school principal awarded him a golden medal for sportsmanship. It was an unforgettable day for everyone involved.`,
     content_vi: `Vào sáng thứ Bảy, Leo và các bạn cùng lớp đã đến sân vận động thể thao để tham gia ngày hội thể thao hàng năm. Thời tiết nắng ấm và ai nấy đều cảm thấy hào hứng. Trước hết, Leo tham gia cuộc đua tiếp sức 100m. Cậu ngồi xuống với huấn luyện viên trước cuộc đua để thảo luận kế hoạch. Khi tiếng còi vang lên, Leo chạy rất nhanh dọc theo đường chạy và truyền gậy tiếp sức gọn gàng cho Maya. Maya chạy qua bãi cỏ với tốc độ lớn. Max bắt lấy gậy tiếp sức và bứt tốc về đích. Mọi người xem và vỗ tay nhiệt tình. Cuối cùng, đội của họ đã cán đích đầu tiên! Họ mệt nhưng rất vui vì tinh thần đồng đội đã mang lại chiến thắng. Leo mỉm cười tự hào khi nhận huy chương vàng.`,
     key_vocabulary: [
-      { word: "athlete", definition: "a person trained in sports", example: "The athlete ran fast." },
-      { word: "relay", definition: "a team race passing a stick", example: "Our relay team won." },
-      { word: "baton", definition: "stick passed in a relay", example: "He passed the baton." },
+      { word: "athlete", definition: "a person trained in physical sports", example: "The athlete ran fast." },
+      { word: "relay", definition: "a team race passing a baton", example: "Our relay team won." },
+      { word: "baton", definition: "stick passed in a relay race", example: "He passed the baton cleanly." },
       { word: "stadium", definition: "large sports arena", example: "The stadium was full." },
-      { word: "teamwork", definition: "working together as a team", example: "Teamwork brought victory." }
+      { word: "teamwork", definition: "working together cooperatively", example: "Teamwork brought victory." },
+      { word: "sprint", definition: "run at full speed", example: "He sprinted to the line." },
+      { word: "spectator", definition: "person watching a sports event", example: "Spectators clapped loudly." },
+      { word: "sportsmanship", definition: "fair play and respect in sports", example: "He showed great sportsmanship." },
+      { word: "finish line", definition: "the end line of a race", example: "They crossed the finish line." },
+      { word: "victory", definition: "winning a competition", example: "We celebrated our victory." }
     ],
     comprehension_questions: [
       { id: 1, question_en: "Where did Leo go on Saturday morning?", answer: ["To the sports stadium", "He went to the sports stadium"], clue_statement: "Leo went to the sports stadium.", hint_en: "To the...", hint_vi: "Đến..." },
-      { id: 2, question_en: "What did Leo do before passing the baton?", answer: ["He ran very fast", "He ran very fast along the track"], clue_statement: "Leo ran very fast.", hint_en: "He ran...", hint_vi: "Cậu ấy chạy..." }
+      { id: 2, question_en: "What did Leo do before passing the baton?", answer: ["He ran very fast", "He ran very fast along the track"], clue_statement: "Leo ran very fast.", hint_en: "He ran...", hint_vi: "Cậu ấy chạy..." },
+      { id: 3, question_en: "Who caught the baton smoothly from Maya?", answer: ["Max"], clue_statement: "Max caught the baton smoothly.", hint_en: "Max...", hint_vi: "Bạn Max..." },
+      { id: 4, question_en: "Why were the team happy at the end?", answer: ["Because their teamwork brought victory", "Teamwork brought victory"], clue_statement: "Teamwork brought victory.", hint_en: "Because...", hint_vi: "Vì..." },
+      { id: 5, question_en: "What medal did Leo receive?", answer: ["A golden medal", "Golden medal"], clue_statement: "A golden medal for sportsmanship.", hint_en: "A golden...", hint_vi: "Huy chương..." }
     ]
   },
   read_social: {
@@ -39,9 +49,10 @@ export default {
     content_en: `Winning a championship trophy feels fantastic, but showing respect to other participants **is even more important**. When runners **finish the race**, they **shake hands with opponents** and **say kind words** of encouragement. True champions understand that sports building strong character matters more than trophies alone.
 
 Maya showed great fair play when she helped a runner who slipped on the track. Both teams **stood together with smiles** after the final ceremony. Athletes demonstrate true greatness whether they **win or lose** in competition.`,
-    content_vi: `Giành huy chương thể thao thật tuyệt vời, nhưng tôn trọng các đối thủ còn quan trọng hơn. Khi các vận động viên hoàn thành cuộc đua, họ bắt tay các đối thủ và nói những lời tốt đẹp. Athletes thể hiện sự tốt bụng dù thắng hay thua.`,
+    content_vi: `Giành huy chương thể thao thật tuyệt vời, nhưng tôn trọng các đối thủ còn quan trọng hơn. Khi các vận động viên hoàn thành cuộc đua, họ bắt tay các đối thủ và nói những lời tốt đẹp. Vận động viên chân chính thể hiện sự cao thượng dù thắng hay thua.`,
     comprehension_questions: [
-      { id: 1, question_en: "What should runners do after the race?", answer: ["Shake hands with opponents"], clue_statement: "They shake hands with opponents.", hint_en: "Shake hands...", hint_vi: "Bắt tay..." }
+      { id: 1, question_en: "What should runners do after finishing a race?", answer: ["Shake hands with opponents"], clue_statement: "They shake hands with opponents.", hint_en: "Shake hands...", hint_vi: "Bắt tay..." },
+      { id: 2, question_en: "What matters more than winning trophies?", answer: ["Building strong character", "Showing respect"], clue_statement: "Building strong character matters more.", hint_en: "Building...", hint_vi: "Rèn luyện nhân cách..." }
     ]
   },
   chunk_focus: [
