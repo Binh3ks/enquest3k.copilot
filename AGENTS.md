@@ -30,3 +30,14 @@ Source: `.devin/workflows/start.md` §3.
 - **Shadowing Corrections Isolation**: Shadowing corrections keys MUST be scoped by week and mode (`shadowing_corrections_v4_w${week}_${mode}_${videoId}`) to eliminate collisions between Easy and Advanced modes using the same YouTube video ID.
 - **TTS Mode Script Integrity**: In TTS mode, Shadowing MUST strictly use `data.ttsScript || script` from lesson data and ignore video transcript overrides or legacy KV server corrections.
 - **Stale CDN Chunk Recovery**: `loadWeekData` automatically reloads the page on dynamic import 404 errors caused by CDN chunk hash updates.
+
+## Master Curriculum & Blueprint Station Pipeline Matrix — 2026-08-08
+Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực nghiệm sau ở cả 2 mode (ADVANCED & EASY):
+1. **STEM Story vs Social Studies Content Separation**:
+   - **STEM Story (`read_stem`)**: Tập trung vào Khoa học (Science), Công nghệ (Tech), Kỹ thuật (Engineering), Toán học (Maths) - ví dụ: cơ sinh học chạy bộ, gia tốc, động năng, chuyển hóa năng lượng, cơ bắp.
+   - **Social Studies (`read_social`)**: Tập trung vào Lịch sử, Địa lý, Tinh thần thể thao (Sportsmanship), Fair Play, Đạo đức, Cổ vũ đồng đội, Lịch sử Olympic cổ đại.
+2. **Mindmap Speaking**: 6 `centerStems` $\times$ 6 `branchLabels` cho mỗi stem = **36 branches** tổng cộng per mode.
+3. **Explore Station (`explore.js`)**: Chứa `content_en`, `content_vi` (145-220w), `check_questions` (3 câu đọc hiểu + 1 câu `critical_thinking`), và đối tượng `question` (`text_en`, `text_vi`, `min_words`, `hint_en`, `hint_vi`).
+4. **Write & Speak (`writing.js`)**: Chứa `hints.words` (từ gợi ý + từ bẫy `distractor: true`), và `story_prompts.picture_mode` (`type: 'picture'`, `image_url`, `word_bank`, `sentence_frames`, `writing_prompts: {en, vi}`) để kích hoạt đầy đủ các sub-tab viết theo tranh.
+5. **AI Tutor V28 Format (`week_XX_real.js` & `week_XX_easy_real.js`)**: Bắt buộc xuất `target_vocab` (20 từ) & `sentences` (câu shadowing) để trạm PronunciationTab & FreeTalk không bị treo "Loading pronunciation practice...".
+6. **Daily Watch (`daily_watch.js`)**: Bắt buộc 5 video giáo dục độc bản (không dùng video âm nhạc giải trí như Despacito, không trùng lặp video ID của các tuần W01-W36).
