@@ -2,16 +2,12 @@ export default {
   title: "Why Outdoor Sports Keep Us Healthy",
   image_url: "/images/week37/explore_cover_w37.jpg",
   audio_url: "/audio/week37/explore_main.mp3",
-  content_en: `Playing outdoor sports **is great for our body**. When we **run in the park**, our muscles grow strong and our heart stays healthy. Fresh air and **bright sunlight** also **help us feel happy**.
+  content_en: `Participating in outdoor activities and regular sports **is great for our body** in numerous wonderful ways. When students **run in the park**, their leg muscles grow much stronger, their stamina improves, and their heart stays remarkably healthy. Absorbing fresh outdoor air and **bright sunlight** also **help us feel happy** while energizing our minds for daily learning.
 
-Sports teach us **important social skills**. When we play team games like football or basketball, we **learn to cooperate** and **listen to our teammates**. **Working together** helps everyone achieve more than playing alone.
+Furthermore, team activities teach children **important social skills** that last a lifetime. When students engage in sports like football, basketball, or relay racing, they **learn to cooperate** effectively and **listen to our teammates** with respect and patience. **Working together** as a unified group helps everyone achieve ambitious goals that would be impossible to accomplish alone.
 
-Scientists say that **30 minutes of exercise** **every single day** improves concentration at school. So put on your trainers and **enjoy outdoor sports** today!`,
-  content_vi: `Chơi thể thao ngoài trời rất tốt cho cơ thể chúng ta. Khi chúng ta chạy trong công viên, cơ bắp phát triển khỏe mạnh và tim luôn khỏe. Không khí trong lành và ánh nắng ấm áp cũng giúp chúng ta cảm thấy vui vẻ.
-
-Thể thao dạy chúng ta các kỹ năng xã hội quan trọng. Khi chơi các trò chơi đồng đội như bóng đá hay bóng rổ, chúng ta học cách hợp tác và lắng nghe đồng đội. Làm việc cùng nhau giúp mọi người đạt được nhiều hơn là chơi một mình.
-
-Các nhà khoa học nói rằng 30 phút tập thể dục mỗi ngày cải thiện sự tập trung tại trường. Vì vậy hãy xỏ giày thể thao và tận hưởng thể thao ngoài trời hôm nay!`,
+Health experts strongly recommend completing **30 minutes of exercise** **every single day** to maintain high energy and boost academic focus. So lace up your athletic shoes and **enjoy outdoor sports** with your classmates today for a happier and healthier life!`,
+  content_vi: `Tham gia các hoạt động ngoài trời và thể thao thường xuyên rất tốt cho cơ thể chúng ta. Khi học sinh chạy trong công viên, cơ bắp chân phát triển khỏe mạnh hơn và tim luôn khỏe. Không khí trong lành và ánh nắng sáng giúp chúng ta cảm thấy vui vẻ. Thể thao dạy chúng ta các kỹ năng xã hội quan trọng. Chúng ta học cách hợp tác và lắng nghe đồng đội. Làm việc cùng nhau giúp mọi người đạt được mục tiêu lớn. 30 phút tập thể dục mỗi ngày cải thiện sự tập trung. Hãy tận hưởng thể thao ngoài trời hôm nay!`,
   chunk_focus: [
     "is great for our body",
     "run in the park",
