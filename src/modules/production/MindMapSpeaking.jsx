@@ -286,7 +286,7 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
               speakText(s.text, s.audioUrl, 1.0, null, 'mindmap_speaking', parseInt(weekId), 'advanced', true); // ⚡ instant mode
             }}
               style={{ backgroundColor: s.color }}
-              className="group p-8 rounded-[40px] shadow-xl hover:scale-105 active:scale-95 transition-all text-white font-black text-xl uppercase italic border-b-[8px] border-black/10 h-32 flex items-center justify-center text-center">
+              className="group p-5 rounded-[28px] shadow-xl hover:scale-105 active:scale-95 transition-all text-white font-bold text-xs sm:text-sm md:text-base leading-snug border-b-[6px] border-black/10 min-h-[7rem] h-auto flex items-center justify-center text-center overflow-hidden">
               {s.text}
             </button>
           ))}
@@ -315,7 +315,7 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
         <div style={{ backgroundColor: selectedStruct.color }} 
              className="w-48 h-48 md:w-64 md:h-64 rounded-full flex items-center justify-center text-white border-[15px] border-white shadow-[0_30px_70px_rgba(0,0,0,0.2)] text-center p-6 relative overflow-hidden">
-          <span className="font-black text-xs sm:text-sm md:text-base leading-snug relative z-10 drop-shadow-md tracking-tight p-2 max-w-full text-center">
+          <span className="font-black text-sm sm:text-base md:text-lg leading-tight relative z-10 drop-shadow-md tracking-tight p-2 max-w-[90%] text-center">
             {selectedStruct.text}
           </span>
           

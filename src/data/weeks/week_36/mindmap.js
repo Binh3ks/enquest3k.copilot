@@ -18,11 +18,11 @@ export default {
     ],
     "The wooden chest rested inside a deep ocean ___.": [
       { text: "cavern", text_vi: "hang động ngầm" },
-      { text: "underwater trench", text_vi: "rãnh ngầm" },
+      { text: "trench", text_vi: "rãnh ngầm" },
       { text: "rocky seabed", text_vi: "đáy biển đá" },
       { text: "shipwreck site", text_vi: "khu xác tàu đắm" },
       { text: "coral hollow", text_vi: "hốc san hô" },
-      { text: "deep valley", text_vi: "thung lũng sâu" }
+      { text: "subsea abyss", text_vi: "vực thẳm biển sâu" }
     ],
     "Leo applied Archimedes principle of ___.": [
       { text: "buoyancy", text_vi: "lực đẩy nổi" },
@@ -40,7 +40,7 @@ export default {
       { text: "support", text_vi: "sự hỗ trợ nổi" },
       { text: "momentum", text_vi: "động lực nổi" }
     ],
-    "Inside the ancient chest, they discovered a gold ___.": [
+    "Inside the ancient chest, they discovered a gold ___." : [
       { text: "compass", text_vi: "la bàn" },
       { text: "artifact", text_vi: "cổ vật" },
       { text: "navigation tool", text_vi: "dụng cụ điều hướng" },
@@ -48,7 +48,7 @@ export default {
       { text: "historical treasure", text_vi: "báu vật lịch sử" },
       { text: "explorer coin", text_vi: "đồng xu nhà thám hiểm" }
     ],
-    "Marco Polo travelled along the famous ___.": [
+    "Marco Polo travelled along the famous ___." : [
       { text: "Silk Road", text_vi: "Con đường Tơ lụa" },
       { text: "trade route", text_vi: "tuyến đường thương mại" },
       { text: "merchant path", text_vi: "con đường thương gia" },

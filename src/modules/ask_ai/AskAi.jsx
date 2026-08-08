@@ -432,11 +432,26 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
                   </div>
                 )}
 
-                {showHint && (currentPrompt.hint || currentPrompt.hint_word) && (
-                  <div className="mt-3 text-center inline-block w-full">
-                    <span className="inline-block px-4 py-2 bg-amber-50 text-amber-700 rounded-lg text-sm font-bold border border-amber-100 animate-in fade-in slide-in-from-top-1">
-                      💡 Hint: {currentPrompt.hint || currentPrompt.hint_word}
-                    </span>
+                {/* Hints / Scaffolds chips — render if hints or scaffolds or question_word_bank present */}
+                {((currentPrompt.hints && currentPrompt.hints.length > 0) || showHint) && (
+                  <div className="mt-4 text-center">
+                    <p className="text-xs font-bold text-amber-600 uppercase mb-2">
+                      💡 {isVi ? 'Gợi ý ý tưởng trả lời (Click để điền câu):' : 'Answer Scaffolds & Hints (Click to insert):'}
+                    </p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {(Array.isArray(currentPrompt.hints) ? currentPrompt.hints : [currentPrompt.hint || currentPrompt.hint_word]).filter(Boolean).map((hText, hIdx) => (
+                        <button
+                          key={hIdx}
+                          onClick={() => {
+                            setInputVal(hText);
+                            setShowHint(true);
+                          }}
+                          className="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center gap-1"
+                        >
+                          <span>{hText}</span>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

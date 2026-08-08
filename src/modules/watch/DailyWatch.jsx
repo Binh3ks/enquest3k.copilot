@@ -14,7 +14,20 @@ const VideoItem = memo(({ video, percent, onClick }) => {
     <div onClick={() => onClick(video)}
       className={`relative rounded-xl overflow-hidden shadow-md cursor-pointer group hover:scale-[1.02] transition-all bg-white border-2 ${isDone ? 'border-green-400' : 'border-slate-100'}`}>
       <div className="aspect-video bg-slate-200 relative">
-        <img src={thumb} alt={title} className="w-full h-full object-cover" onError={(e)=>{e.target.src='https://via.placeholder.com/320x180'}}/>
+        <img
+          src={thumb}
+          alt={title}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            if (ytid && e.target.src.includes('hqdefault.jpg')) {
+              e.target.src = `https://i.ytimg.com/vi/${ytid}/mqdefault.jpg`;
+            } else if (ytid && e.target.src.includes('mqdefault.jpg')) {
+              e.target.src = `https://i.ytimg.com/vi/${ytid}/0.jpg`;
+            } else {
+              e.target.src = 'https://via.placeholder.com/320x180';
+            }
+          }}
+        />
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10">
           <Play className="w-10 h-10 text-white opacity-80 group-hover:scale-110 transition-transform"/>
         </div>

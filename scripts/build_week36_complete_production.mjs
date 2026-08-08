@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-console.log("🚀 RE-BUILDING WEEK 36 DATA WITH 5 ASK-AI, 8 DICTATION & 8 SHADOWING SENTENCES...");
+console.log("🚀 RE-BUILDING WEEK 36 DATA WITH NON-DUPLICATE MINDMAP LABELS & COMPLETE ASK-AI SCAFFOLDS...");
 
 const pubDir = './public/images/week36';
 const advDir = './src/data/weeks/week_36';
@@ -223,17 +223,6 @@ export default {
 `;
 
 // --- word_power.js --- 8 COLLOCATIONS / PHRASES
-const wordPowerList = [
-  { id: "wp1", word: "Apply Archimedes Principle", definition_en: "to use the physics law of fluid buoyancy", definition_vi: "áp dụng nguyên lý Archimedes", example: "Leo applied Archimedes principle to float the 150 kg chest.", collocation_en: "buoyancy / water displacement" },
-  { id: "wp2", word: "Displace Seawater", definition_en: "to push ocean water out of the way to create upward force", definition_vi: "dịch chuyển nước biển", example: "The air bags displaced 150 litres of seawater.", collocation_en: "upward lift / ocean physics" },
-  { id: "wp3", word: "Achieve Neutral Buoyancy", definition_en: "to balance gravity and upward buoyant force perfectly", definition_vi: "đạt trạng thái cân bằng lực nổi", example: "They achieved neutral buoyancy to lift the heavy object.", collocation_en: "underwater floatation / physics balance" },
-  { id: "wp4", word: "Embark on a Journey", definition_en: "to start an important or adventurous expedition", definition_vi: "bắt đầu chuyến hành trình", example: "Marco Polo embarked on a 24-year journey across Asia.", collocation_en: "Silk Road / expedition" },
-  { id: "wp5", word: "Serve as a Diplomat", definition_en: "to work as an official representative between nations", definition_vi: "làm việc như một nhà ngoại giao", example: "Marco Polo served as a diplomat for Kublai Khan.", collocation_en: "international trust / governance" },
-  { id: "wp6", word: "Withstand Extreme Pressure", definition_en: "to resist immense deep-sea force without collapsing", definition_vi: "chịu đựng áp suất cực hạn", example: "Titanium submersibles withstand extreme deep-sea pressure.", collocation_en: "deep ocean / titanium hull" },
-  { id: "wp7", word: "Discover Ancient Artifacts", definition_en: "to find historical objects preserved underwater or in ruins", definition_vi: "phát hiện cổ vật lịch sử", example: "Explorers discovered ancient artifacts inside the cavern.", collocation_en: "gold compass / archaeology" },
-  { id: "wp8", word: "Explore Deep Ocean Trenches", definition_en: "to investigate the deepest valleys on the ocean floor", definition_vi: "khám phá rãnh đại dương sâu", example: "Scientists explore deep ocean trenches using submersibles.", collocation_en: "Mariana Trench / Challenger Deep" }
-];
-
 const wordPowerCode = `// WEEK 36: Word Power Station — Advanced Mode
 
 const wordPowerList = [
@@ -254,37 +243,57 @@ export default {
 };
 `;
 
-// --- ask_ai.js --- EXACTLY 5 SITUATIONS
+// --- ask_ai.js --- EXACTLY 5 SITUATIONS WITH SCAFFOLDS, WORD BANKS AND HINTS
 const askAiCode = `export default {
   prompts: [
     {
       id: 1,
       context_en: "Leo calculated that displacing 150 litres of seawater gives 150 kg of buoyant lift.",
       nova_says: "How does compressed air inside lift bags help raise a heavy submarine chest?",
-      hints: ["Air displaces water", "Displaced water creates buoyancy", "Buoyant force equals chest weight"]
+      nova_says_vi: "Khí nén trong túi nâng giúp nâng chiếc rương ngầm nặng như thế nào?",
+      question_word_bank: ["displaces water", "creates upward lift", "reduces overall density", "balances heavy weight"],
+      question_frame: "Air displaces seawater to create ___ for the chest.",
+      correctWord: "creates upward lift",
+      hints: ["Air displaces water", "Displaced water creates lift", "Buoyant force balances weight"]
     },
     {
       id: 2,
       context_en: "Marco Polo traveled for 24 years on the Silk Road connecting Europe and Asia.",
       nova_says: "What goods and ideas did Marco Polo discover during his Silk Road journey?",
+      nova_says_vi: "Marco Polo đã khám phá ra hàng hóa và ý tưởng gì trong chuyến đi Con đường Tơ lụa?",
+      question_word_bank: ["paper money and silk", "merchant bazaars", "coal fuel usage", "diplomatic travel"],
+      question_frame: "Marco Polo documented ___ across Asian trade routes.",
+      correctWord: "paper money and silk",
       hints: ["Paper money and silk", "Persian merchant bazaars", "Chinese manuscripts"]
     },
     {
       id: 3,
       context_en: "Titanium submersibles dive nearly 11,000 metres into the Mariana Trench.",
       nova_says: "Why do ocean engineers build submersibles with spherical titanium hulls?",
+      nova_says_vi: "Tại sao các kỹ sư đại dương lại chế tạo tàu lặn với vỏ titan hình cầu?",
+      question_word_bank: ["distributes water pressure", "lightweight metal strength", "prevents hull collapse", "resists ocean force"],
+      question_frame: "Spherical titanium hulls ___ evenly under deep pressure.",
+      correctWord: "distributes water pressure",
       hints: ["Spheres distribute water pressure", "Titanium is strong and light", "Resists extreme pressure"]
     },
     {
       id: 4,
       context_en: "Leo's team donated the preserved 16th-century gold compass to the museum.",
       nova_says: "Why is it important to present ancient deep-sea artifacts to public museums?",
+      nova_says_vi: "Tại sao việc trình bày cổ vật biển sâu cho các bảo tàng công cộng lại quan trọng?",
+      question_word_bank: ["preserves historical knowledge", "teaches future generations", "honors ancient explorers", "shares scientific discoveries"],
+      question_frame: "Presenting artifacts ___ for future generations.",
+      correctWord: "preserves historical knowledge",
       hints: ["Preserves historical knowledge", "Teaches future generations", "Honors ancient explorers"]
     },
     {
       id: 5,
       context_en: "Deep ocean submersibles explore hydrothermal vent ecosystems without sunlight.",
       nova_says: "How do bioluminescent creatures and vent species thrive without sunlight?",
+      nova_says_vi: "Các sinh vật phát quang và loài ở miệng phun sinh sống thế nào khi không có ánh sáng mặt trời?",
+      question_word_bank: ["chemical energy synthesis", "natural light production", "extreme physical adaptation", "deep sea survival"],
+      question_frame: "Deep sea creatures use ___ to survive without light.",
+      correctWord: "chemical energy synthesis",
       hints: ["Chemical energy synthesis", "Natural light production", "Extreme adaptation"]
     }
   ]
@@ -390,7 +399,68 @@ const dictationCode = `export default {
   ]
 };`;
 
-// --- writing.js --- COMPLETE WITH TITLE AND PROMPTS
+// --- mindmap.js --- NON-DUPLICATE CLEAN BRANCH LABELS
+const mindmapCode = `export default {
+  centerStems: [
+    "On Sunday afternoon, Leo dove into the ocean in a ___.",
+    "The wooden chest rested inside a deep ocean ___.",
+    "Leo applied Archimedes principle of ___.",
+    "The lift bags displaced seawater to create upward ___.",
+    "Inside the ancient chest, they discovered a gold ___.",
+    "Marco Polo travelled along the famous ___."
+  ],
+  branchLabels: {
+    "On Sunday afternoon, Leo dove into the ocean in a ___.": [
+      { text: "submarine", text_vi: "tàu ngầm" },
+      { text: "research vessel", text_vi: "tàu nghiên cứu" },
+      { text: "deep submersible", text_vi: "tàu lặn ngầm sâu" },
+      { text: "titanium craft", text_vi: "tàu vỏ titan" },
+      { text: "exploration capsule", text_vi: "khoang thám hiểm" },
+      { text: "diving vehicle", text_vi: "phương tiện lặn" }
+    ],
+    "The wooden chest rested inside a deep ocean ___.": [
+      { text: "cavern", text_vi: "hang động ngầm" },
+      { text: "trench", text_vi: "rãnh ngầm" },
+      { text: "rocky seabed", text_vi: "đáy biển đá" },
+      { text: "shipwreck site", text_vi: "khu xác tàu đắm" },
+      { text: "coral hollow", text_vi: "hốc san hô" },
+      { text: "subsea abyss", text_vi: "vực thẳm biển sâu" }
+    ],
+    "Leo applied Archimedes principle of ___.": [
+      { text: "buoyancy", text_vi: "lực đẩy nổi" },
+      { text: "fluid displacement", text_vi: "sự dịch chuyển chất lưu" },
+      { text: "upward force", text_vi: "lực đẩy hướng lên" },
+      { text: "water density", text_vi: "khối lượng riêng của nước" },
+      { text: "neutral balance", text_vi: "cân bằng trung tính" },
+      { text: "physics science", text_vi: "khoa học vật lý" }
+    ],
+    "The lift bags displaced seawater to create upward ___.": [
+      { text: "lift", text_vi: "lực nâng" },
+      { text: "buoyant force", text_vi: "lực đẩy nổi" },
+      { text: "thrust", text_vi: "lực đẩy" },
+      { text: "elevation", text_vi: "sự nâng cao" },
+      { text: "support", text_vi: "sự hỗ trợ nổi" },
+      { text: "momentum", text_vi: "động lực nổi" }
+    ],
+    "Inside the ancient chest, they discovered a gold ___." : [
+      { text: "compass", text_vi: "la bàn" },
+      { text: "artifact", text_vi: "cổ vật" },
+      { text: "navigation tool", text_vi: "dụng cụ điều hướng" },
+      { text: "16th-century relic", text_vi: "di vật thế kỷ 16" },
+      { text: "historical treasure", text_vi: "báu vật lịch sử" },
+      { text: "explorer coin", text_vi: "đồng xu nhà thám hiểm" }
+    ],
+    "Marco Polo travelled along the famous ___." : [
+      { text: "Silk Road", text_vi: "Con đường Tơ lụa" },
+      { text: "trade route", text_vi: "tuyến đường thương mại" },
+      { text: "merchant path", text_vi: "con đường thương gia" },
+      { text: "caravan trail", text_vi: "lối đi đoàn thương gia" },
+      { text: "Asian highway", text_vi: "tuyến đường châu Á" },
+      { text: "diplomatic passage", text_vi: "hành lang ngoại giao" }
+    ]
+  }
+};`;
+
 const writingCode = `export default {
   title: "The Submarine Buoyancy Rescue & Silk Road Writing",
   title_en: "The Submarine Buoyancy Rescue & Silk Road Writing",
@@ -610,67 +680,6 @@ const grammarCode = `export default {
   ]
 };`;
 
-const mindmapCode = `export default {
-  centerStems: [
-    "On Sunday afternoon, Leo dove into the ocean in a ___.",
-    "The wooden chest rested inside a deep ocean ___.",
-    "Leo applied Archimedes principle of ___.",
-    "The lift bags displaced seawater to create upward ___.",
-    "Inside the ancient chest, they discovered a gold ___.",
-    "Marco Polo travelled along the famous ___."
-  ],
-  branchLabels: {
-    "On Sunday afternoon, Leo dove into the ocean in a ___.": [
-      { text: "submarine", text_vi: "tàu ngầm" },
-      { text: "research vessel", text_vi: "tàu nghiên cứu" },
-      { text: "deep submersible", text_vi: "tàu lặn ngầm sâu" },
-      { text: "titanium craft", text_vi: "tàu vỏ titan" },
-      { text: "exploration capsule", text_vi: "khoang thám hiểm" },
-      { text: "diving vehicle", text_vi: "phương tiện lặn" }
-    ],
-    "The wooden chest rested inside a deep ocean ___.": [
-      { text: "cavern", text_vi: "hang động ngầm" },
-      { text: "underwater trench", text_vi: "rãnh ngầm" },
-      { text: "rocky seabed", text_vi: "đáy biển đá" },
-      { text: "shipwreck site", text_vi: "khu xác tàu đắm" },
-      { text: "coral hollow", text_vi: "hốc san hô" },
-      { text: "deep valley", text_vi: "thung lũng sâu" }
-    ],
-    "Leo applied Archimedes principle of ___.": [
-      { text: "buoyancy", text_vi: "lực đẩy nổi" },
-      { text: "fluid displacement", text_vi: "sự dịch chuyển chất lưu" },
-      { text: "upward force", text_vi: "lực đẩy hướng lên" },
-      { text: "water density", text_vi: "khối lượng riêng của nước" },
-      { text: "neutral balance", text_vi: "cân bằng trung tính" },
-      { text: "physics science", text_vi: "khoa học vật lý" }
-    ],
-    "The lift bags displaced seawater to create upward ___.": [
-      { text: "lift", text_vi: "lực nâng" },
-      { text: "buoyant force", text_vi: "lực đẩy nổi" },
-      { text: "thrust", text_vi: "lực đẩy" },
-      { text: "elevation", text_vi: "sự nâng cao" },
-      { text: "support", text_vi: "sự hỗ trợ nổi" },
-      { text: "momentum", text_vi: "động lực nổi" }
-    ],
-    "Inside the ancient chest, they discovered a gold ___.": [
-      { text: "compass", text_vi: "la bàn" },
-      { text: "artifact", text_vi: "cổ vật" },
-      { text: "navigation tool", text_vi: "dụng cụ điều hướng" },
-      { text: "16th-century relic", text_vi: "di vật thế kỷ 16" },
-      { text: "historical treasure", text_vi: "báu vật lịch sử" },
-      { text: "explorer coin", text_vi: "đồng xu nhà thám hiểm" }
-    ],
-    "Marco Polo travelled along the famous ___.": [
-      { text: "Silk Road", text_vi: "Con đường Tơ lụa" },
-      { text: "trade route", text_vi: "tuyến đường thương mại" },
-      { text: "merchant path", text_vi: "con đường thương gia" },
-      { text: "caravan trail", text_vi: "lối đi đoàn thương gia" },
-      { text: "Asian highway", text_vi: "tuyến đường châu Á" },
-      { text: "diplomatic passage", text_vi: "hành lang ngoại giao" }
-    ]
-  }
-};`;
-
 const socialQuizCode = `export default {
   title: "Marco Polo & Silk Road Geography",
   questions: [
@@ -721,4 +730,4 @@ fs.writeFileSync(`${advDir}/social_quiz.js`, socialQuizCode);
 fs.writeFileSync(`${advDir}/word_match.js`, wordMatchCode);
 fs.writeFileSync(`${advDir}/games.js`, gamesCode);
 
-console.log("✅ Written all 16 station files with 5 Ask-AI, 8 Dictation, 8 Shadowing sentences & Write/Speak fixes!");
+console.log("✅ Written all 16 station files with clean non-duplicate mindmap labels and full Ask-AI scaffolds!");
