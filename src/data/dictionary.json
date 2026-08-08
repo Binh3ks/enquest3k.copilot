@@ -35769,6 +35769,14 @@
     "type": "phrase"
   },
   {
+    "word": "sat down with their coaches",
+    "ipa": "/sat down with their coaches/",
+    "meaning": "sat down with their coaches",
+    "example": "We learned sat down with their coaches.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "Anh chị em",
     "ipa": "/anh chị em/",
     "meaning": "cụm từ vựng: anh chị em",
@@ -36149,14 +36157,6 @@
     "ipa": "/reduce, reuse, and recycle/",
     "meaning": "reduce reuse and recycle",
     "example": "Natural usage of \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sat down with their coaches",
-    "ipa": "/sat down with their coaches/",
-    "meaning": "sat down with their coaches",
-    "example": "We learned sat down with their coaches.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
