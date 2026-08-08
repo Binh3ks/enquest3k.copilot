@@ -1,91 +1,63 @@
-// WEEK 36: Adventure Stories (Irregular Verbs)
-// Mindmap Station — Advanced Mode
-// W35 format: centerStems[] + branchLabels{}
-// Grammar: Irregular verbs (past tense)
+// WEEK 36: Mindmap Station — Advanced Mode
+// 6 stems x 6 branches = 36 branches total
 
-const mindMapContent = {
-  "centerStems": [
-    {
-      "text": "Yesterday, we ___ to the museum.",
-      "type": "affirmative",
-      "audio": "/audio/week36/mindmap_stem_1.mp3"
-    },
-    {
-      "text": "The explorers ___ amazing things.",
-      "type": "affirmative",
-      "audio": "/audio/week36/mindmap_stem_2.mp3"
-    },
-    {
-      "text": "Marco Polo ___ a famous book.",
-      "type": "affirmative",
-      "audio": "/audio/week36/mindmap_stem_3.mp3"
-    },
-    {
-      "text": "We never ___ a treasure.",
-      "type": "negative",
-      "audio": "/audio/week36/mindmap_stem_4.mp3"
-    },
-    {
-      "text": "They did not ___ their findings.",
-      "type": "negative",
-      "audio": "/audio/week36/mindmap_stem_5.mp3"
-    },
-    {
-      "text": "What ___ you discover today?",
-      "type": "question",
-      "audio": "/audio/week36/mindmap_stem_6.mp3"
-    }
+export default {
+  centerStems: [
+    "On Sunday afternoon, Leo dove into the ocean in a ___.",
+    "The wooden chest rested inside a deep ocean ___.",
+    "Leo applied Archimedes principle of ___.",
+    "The lift bags displaced seawater to create upward ___.",
+    "Inside the ancient chest, they discovered a gold ___.",
+    "Marco Polo travelled along the famous ___."
   ],
-  "branchLabels": {
-    "Yesterday, we ___ to the museum.": [
-      { "text": "went", "audio": "/audio/week36/mindmap_branch_1_1.mp3" },
-      { "text": "came", "audio": "/audio/week36/mindmap_branch_1_2.mp3" },
-      { "text": "drove", "audio": "/audio/week36/mindmap_branch_1_3.mp3" },
-      { "text": "rode", "audio": "/audio/week36/mindmap_branch_1_4.mp3" },
-      { "text": "ran", "audio": "/audio/week36/mindmap_branch_1_5.mp3" },
-      { "text": "swam", "audio": "/audio/week36/mindmap_branch_1_6.mp3" }
+  branchLabels: {
+    "On Sunday afternoon, Leo dove into the ocean in a ___.": [
+      { text: "submarine", text_vi: "tàu ngầm" },
+      { text: "research vessel", text_vi: "tàu nghiên cứu" },
+      { text: "deep submersible", text_vi: "tàu lặn ngầm sâu" },
+      { text: "titanium craft", text_vi: "tàu vỏ titan" },
+      { text: "exploration capsule", text_vi: "khoang thám hiểm" },
+      { text: "diving vehicle", text_vi: "phương tiện lặn" }
     ],
-    "The explorers ___ amazing things.": [
-      { "text": "saw", "audio": "/audio/week36/mindmap_branch_2_1.mp3" },
-      { "text": "found", "audio": "/audio/week36/mindmap_branch_2_2.mp3" },
-      { "text": "took", "audio": "/audio/week36/mindmap_branch_2_3.mp3" },
-      { "text": "spoke", "audio": "/audio/week36/mindmap_branch_2_4.mp3" },
-      { "text": "wrote", "audio": "/audio/week36/mindmap_branch_2_5.mp3" },
-      { "text": "made", "audio": "/audio/week36/mindmap_branch_2_6.mp3" }
+    "The wooden chest rested inside a deep ocean ___.": [
+      { text: "cavern", text_vi: "hang động ngầm" },
+      { text: "underwater trench", text_vi: "rãnh ngầm" },
+      { text: "rocky seabed", text_vi: "đáy biển đá" },
+      { text: "shipwreck site", text_vi: "khu xác tàu đắm" },
+      { text: "coral hollow", text_vi: "hốc san hô" },
+      { text: "deep valley", text_vi: "thung lũng sâu" }
     ],
-    "Marco Polo ___ a famous book.": [
-      { "text": "wrote", "audio": "/audio/week36/mindmap_branch_3_1.mp3" },
-      { "text": "read", "audio": "/audio/week36/mindmap_branch_3_2.mp3" },
-      { "text": "gave", "audio": "/audio/week36/mindmap_branch_3_3.mp3" },
-      { "text": "took", "audio": "/audio/week36/mindmap_branch_3_4.mp3" },
-      { "text": "found", "audio": "/audio/week36/mindmap_branch_3_5.mp3" },
-      { "text": "told", "audio": "/audio/week36/mindmap_branch_3_6.mp3" }
+    "Leo applied Archimedes principle of ___.": [
+      { text: "buoyancy", text_vi: "lực đẩy nổi" },
+      { text: "fluid displacement", text_vi: "sự dịch chuyển chất lưu" },
+      { text: "upward force", text_vi: "lực đẩy hướng lên" },
+      { text: "water density", text_vi: "khối lượng riêng của nước" },
+      { text: "neutral balance", text_vi: "cân bằng trung tính" },
+      { text: "physics science", text_vi: "khoa học vật lý" }
     ],
-    "We never ___ a treasure.": [
-      { "text": "found", "audio": "/audio/week36/mindmap_branch_4_1.mp3" },
-      { "text": "saw", "audio": "/audio/week36/mindmap_branch_4_2.mp3" },
-      { "text": "took", "audio": "/audio/week36/mindmap_branch_4_3.mp3" },
-      { "text": "made", "audio": "/audio/week36/mindmap_branch_4_4.mp3" },
-      { "text": "gave", "audio": "/audio/week36/mindmap_branch_4_5.mp3" },
-      { "text": "wrote", "audio": "/audio/week36/mindmap_branch_4_6.mp3" }
+    "The lift bags displaced seawater to create upward ___.": [
+      { text: "lift", text_vi: "lực nâng" },
+      { text: "buoyant force", text_vi: "lực đẩy nổi" },
+      { text: "thrust", text_vi: "lực đẩy" },
+      { text: "elevation", text_vi: "sự nâng cao" },
+      { text: "support", text_vi: "sự hỗ trợ nổi" },
+      { text: "momentum", text_vi: "động lực nổi" }
     ],
-    "They did not ___ their findings.": [
-      { "text": "give", "audio": "/audio/week36/mindmap_branch_5_1.mp3" },
-      { "text": "write", "audio": "/audio/week36/mindmap_branch_5_2.mp3" },
-      { "text": "take", "audio": "/audio/week36/mindmap_branch_5_3.mp3" },
-      { "text": "find", "audio": "/audio/week36/mindmap_branch_5_4.mp3" },
-      { "text": "speak", "audio": "/audio/week36/mindmap_branch_5_5.mp3" },
-      { "text": "make", "audio": "/audio/week36/mindmap_branch_5_6.mp3" }
+    "Inside the ancient chest, they discovered a gold ___.": [
+      { text: "compass", text_vi: "la bàn" },
+      { text: "artifact", text_vi: "cổ vật" },
+      { text: "navigation tool", text_vi: "dụng cụ điều hướng" },
+      { text: "16th-century relic", text_vi: "di vật thế kỷ 16" },
+      { text: "historical treasure", text_vi: "báu vật lịch sử" },
+      { text: "explorer coin", text_vi: "đồng xu nhà thám hiểm" }
     ],
-    "What ___ you discover today?": [
-      { "text": "did", "audio": "/audio/week36/mindmap_branch_6_1.mp3" },
-      { "text": "saw", "audio": "/audio/week36/mindmap_branch_6_2.mp3" },
-      { "text": "found", "audio": "/audio/week36/mindmap_branch_6_3.mp3" },
-      { "text": "take", "audio": "/audio/week36/mindmap_branch_6_4.mp3" },
-      { "text": "give", "audio": "/audio/week36/mindmap_branch_6_5.mp3" },
-      { "text": "write", "audio": "/audio/week36/mindmap_branch_6_6.mp3" }
+    "Marco Polo travelled along the famous ___.": [
+      { text: "Silk Road", text_vi: "Con đường Tơ lụa" },
+      { text: "trade route", text_vi: "tuyến đường thương mại" },
+      { text: "merchant path", text_vi: "con đường thương gia" },
+      { text: "caravan trail", text_vi: "lối đi đoàn thương gia" },
+      { text: "Asian highway", text_vi: "tuyến đường châu Á" },
+      { text: "diplomatic passage", text_vi: "hành lang ngoại giao" }
     ]
   }
 };
-
-export default mindMapContent;

@@ -1,34 +1,32 @@
-// WEEK 36: Adventure Stories (Irregular Verbs)
-// Grammar Station — Advanced Mode
-// Focus: Irregular verbs (5 groups: went/saw/took/came/spoke)
+// WEEK 36: Grammar Station — Advanced Mode
+// 20 Exercises: Irregular Verbs in Past Simple
 
 export default {
-  title: 'Irregular Verbs — Adventure Stories',
-  theme: 'adventure_stories',
-  rule: {
-    en: 'Irregular verbs do NOT follow the normal -ed pattern. Group 1: go→went, come→came. Group 2: see→saw, speak→spoke. Group 3: take→took, give→gave. Group 4: find→found, ride→rode. Group 5: write→wrote, make→made. Example: Marco Polo WENT to China. He SAW amazing things. He took the job seriously.',
-    vi: 'Động từ bất quy tắc KHÔNG theo quy tắc thêm -ed. Nhóm 1: go→went, come→came. Nhóm 2: see→saw, speak→spoke. Nhóm 3: take→took, give→gave. Nhóm 4: find→found, ride→rode. Nhóm 5: write→wrote, make→made.'
-  },
+  title: "Irregular Verbs in Past Simple",
+  focus: "Past Simple forms of irregular action verbs (went, dove, swam, hid, found, came, wrote, gave, spoke, made)",
   exercises: [
-    { id: 1, type: 'fill_blank', question_en: 'Marco Polo ___ (go) from Italy to China in the 1200s.', answer: 'went', hint: 'go → went (Group 1)' },
-    { id: 2, type: 'fill_blank', question_en: 'He ___ (see) amazing things on the Silk Road.', answer: 'saw', hint: 'see → saw (Group 2)' },
-    { id: 3, type: 'fill_blank', question_en: 'He ___ (take) the job very seriously.', answer: 'took', hint: 'take → took (Group 3)' },
-    { id: 4, type: 'fill_blank', question_en: 'The emperor ___ (give) him an important job.', answer: 'gave', hint: 'give → gave (Group 3)' },
-    { id: 5, type: 'fill_blank', question_en: 'We ___ (find) an underwater cave!', answer: 'found', hint: 'find → found (Group 4)' },
-    { id: 6, type: 'fill_blank', question_en: 'He ___ (write) a famous book about his travels.', answer: 'wrote', hint: 'write → wrote (Group 5)' },
-    { id: 7, type: 'fill_blank', question_en: 'She ___ (come) back home after 24 years.', answer: 'came', hint: 'come → came (Group 1)' },
-    { id: 8, type: 'fill_blank', question_en: 'They ___ (ride) horses across the mountains.', answer: 'rode', hint: 'ride → rode (Group 4)' },
-    { id: 9, type: 'unscramble', question_en: 'Unscramble the words:', words: ['Marco', 'went', 'to', 'China'], answer: 'Marco went to China' },
-    { id: 10, type: 'unscramble', question_en: 'Unscramble the words:', words: ['They', 'saw', 'amazing', 'things'], answer: 'They saw amazing things' },
-    { id: 11, type: 'multiple_choice', question_en: 'Choose the correct past tense: Marco ___ to China. (go)', options: ['goed', 'went', 'gone'], answer: 'went' },
-    { id: 12, type: 'multiple_choice', question_en: 'Choose the correct past tense: She ___ a beautiful cave. (see)', options: ['saw', 'seed', 'seen'], answer: 'saw' },
-    { id: 13, type: 'multiple_choice', question_en: 'Choose the correct past tense: He ___ the job seriously. (take)', options: ['taked', 'took', 'taken'], answer: 'took' },
-    { id: 14, type: 'fill_blank', question_en: 'They ___ (speak) five different languages.', answer: 'spoke', hint: 'speak → spoke (Group 2)' },
-    { id: 15, type: 'fill_blank', question_en: 'We ___ (make) an amazing discovery.', answer: 'made', hint: 'make → made (Group 5)' },
-    { id: 16, type: 'fill_blank', question_en: 'The expedition ___ (begin) in the morning.', answer: 'began', hint: 'begin → began' },
-    { id: 17, type: 'fill_blank', question_en: 'He ___ (win) the emperor trust completely.', answer: 'won', hint: 'win → won (Group 5)' },
-    { id: 18, type: 'fill_blank', question_en: 'The ship ___ (sink) many hundreds of years ago.', answer: 'sank', hint: 'sink → sank (Group 4)' },
-    { id: 19, type: 'sentence_correct', question_en: 'Correct the sentence: He goed to China. (Use correct irregular form)', answer: 'He went to China', hint: 'go → went, không dùng goed' },
-    { id: 20, type: 'sentence_correct', question_en: 'Correct the sentence: She taked the job seriously. (Use correct irregular form)', answer: 'She took the job seriously', hint: 'take → took, không dùng taked' }
+    { id: 1, type: "fill_blank", question: "On Sunday afternoon, Leo ___ (go) into the ocean in a submarine.", answer: "went", hint: "Past tense of go" },
+    { id: 2, type: "fill_blank", question: "The exploration team ___ (dive) 300 metres below the surface.", answer: "dove", hint: "Past tense of dive" },
+    { id: 3, type: "fill_blank", question: "They ___ (find) a heavy ancient wooden chest in the cavern.", answer: "found", hint: "Past tense of find" },
+    { id: 4, type: "fill_blank", question: "Marco Polo ___ (leave) Venice when he was seventeen years old.", answer: "left", hint: "Past tense of leave" },
+    { id: 5, type: "fill_blank", question: "Marco Polo ___ (speak) several foreign languages during his travels.", answer: "spoke", hint: "Past tense of speak" },
+    { id: 6, type: "fill_blank", question: "The team ___ (write) detailed notes in their research journal.", answer: "wrote", hint: "Past tense of write" },
+    { id: 7, type: "fill_blank", question: "They ___ (give) the 16th-century gold compass to the museum.", answer: "gave", hint: "Past tense of give" },
+    { id: 8, type: "fill_blank", question: "The ancient ship ___ (sink) hundreds of years ago.", answer: "sank", hint: "Past tense of sink" },
+
+    { id: 9, type: "multiple_choice", question: "Which irregular past verb correctly completes: 'Tiny fish ___ between the rocks'?", options: ["swam", "swimmed", "swimming", "swams"], answer: "swam" },
+    { id: 10, type: "multiple_choice", question: "Which verb is the past tense of 'hide'?", options: ["hid", "hided", "hidden", "hiding"], answer: "hid" },
+    { id: 11, type: "multiple_choice", question: "Which verb completes: 'The gold coins ___ brightly under the spotlight'?", options: ["shone", "shined", "shining", "shines"], answer: "shone" },
+    { id: 12, type: "multiple_choice", question: "Which past verb completes: 'Kublai Khan ___ Marco Polo an important job'?", options: ["gave", "gived", "given", "gives"], answer: "gave" },
+
+    { id: 13, type: "unscramble", words: ["went", "Leo", "submarine", "a", "in", "underwater"], answer: "Leo went underwater in a submarine", hint: "Start with subject Leo" },
+    { id: 14, type: "unscramble", words: ["found", "they", "compass", "a", "gold"], answer: "They found a gold compass", hint: "Start with They" },
+    { id: 15, type: "unscramble", words: ["left", "Marco", "Polo", "Venice", "in", "1271"], answer: "Marco Polo left Venice in 1271", hint: "Start with Marco Polo" },
+    { id: 16, type: "unscramble", words: ["spoke", "he", "languages", "many", "fluently"], answer: "He spoke many languages fluently", hint: "Start with He" },
+
+    { id: 17, type: "sentence_correct", incorrect: "Leo and his team feeled very excited when they found the chest.", correct: "Leo and his team felt very excited when they found the chest.", explanation: "Past of feel is felt, not feeled." },
+    { id: 18, type: "sentence_correct", incorrect: "Marco Polo writed a book about his Silk Road journey.", correct: "Marco Polo wrote a book about his Silk Road journey.", explanation: "Past of write is wrote, not writed." },
+    { id: 19, type: "sentence_correct", incorrect: "The lift bags bringed the heavy chest to the surface.", correct: "The lift bags brought the heavy chest to the surface.", explanation: "Past of bring is brought." },
+    { id: 20, type: "sentence_correct", incorrect: "They runned out of compressed air during the dive.", correct: "They ran out of compressed air during the dive.", explanation: "Past of run is ran." }
   ]
 };
