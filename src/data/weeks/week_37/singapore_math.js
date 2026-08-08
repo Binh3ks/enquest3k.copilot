@@ -1,61 +1,43 @@
 export default {
-  "title": "Sports Day Relay Math Problems",
-  "theme": "sports_day",
+  "title": "Relay Race & Speed Science Bar Models",
   "problems": [
     {
       "id": 1,
-      "type": "groups",
-      "question_en": "There are 4 runners in a relay team. Each runner sprints 100 metres. What is the total distance of the relay race?",
-      "bar_model": "/images/week37/barmodel_w37_adv_p1.svg",
-      "answer": [
-        "400"
-      ],
-      "hint_en": "Multiply 4 runners by 100 metres.",
-      "hint_vi": "Nhan 4 van dong vien voi 100 met."
+      "question_en": "Leo ran his relay lap in 12 seconds. Maya ran her lap 2 seconds faster than Leo. How long did Maya take?",
+      "question_vi": "Leo chạy vòng tiếp sức trong 12 giây. Maya chạy nhanh hơn Leo 2 giây. Maya mất bao nhiêu thời gian?",
+      "svg_image": "/images/week37/barmodel_w37_adv_p1.svg",
+      "bar_model": {
+        "bars": [
+          {
+            "label": "Leo",
+            "value": 12,
+            "unit": "s"
+          },
+          {
+            "label": "Maya",
+            "value": 10,
+            "unit": "s"
+          }
+        ]
+      },
+      "solution": "12 - 2 = 10 seconds"
     },
     {
       "id": 2,
-      "type": "comparison",
-      "question_en": "Leo ran his lap in 15 seconds. Maya ran her lap in 14 seconds. How many seconds did they take together?",
-      "bar_model": "/images/week37/barmodel_w37_adv_p2.svg",
-      "answer": [
-        "29"
-      ],
-      "hint_en": "Add 15 and 14 seconds.",
-      "hint_vi": "Cong 15 va 14 giay."
-    },
-    {
-      "id": 3,
-      "type": "part_whole",
-      "question_en": "The sports stadium has 500 spectator seats. 320 seats are filled with cheering fans. How many empty seats are left?",
-      "bar_model": "/images/week37/barmodel_w37_adv_p3.svg",
-      "answer": [
-        "180"
-      ],
-      "hint_en": "Subtract 320 from 500.",
-      "hint_vi": "Tru 320 khoi 500."
-    },
-    {
-      "id": 4,
-      "type": "missing_part",
-      "question_en": "The relay team needed 60 seconds to finish. Leo and Maya ran 32 seconds combined. How long did Max run?",
-      "bar_model": "/images/week37/barmodel_w37_adv_p4.svg",
-      "answer": [
-        "28"
-      ],
-      "hint_en": "Subtract 32 seconds from 60 seconds.",
-      "hint_vi": "Tru 32 giay khoi 60 giay."
-    },
-    {
-      "id": 5,
-      "type": "groups",
-      "question_en": "The school gave 6 medals to each of the 5 winning relay teams. How many total medals were awarded?",
-      "bar_model": "/images/week37/barmodel_w37_adv_p5.svg",
-      "answer": [
-        "30"
-      ],
-      "hint_en": "Multiply 6 medals by 5 teams.",
-      "hint_vi": "Nhan 6 huy chuong voi 5 doi."
+      "question_en": "A relay team covers a total distance of 400 metres across 4 equal laps. How long is each lap?",
+      "question_vi": "Một đội tiếp sức chạy tổng quãng đường 400 mét qua 4 vòng bằng nhau. Mỗi vòng dài bao nhiêu mét?",
+      "svg_image": "/images/week37/barmodel_w37_adv_p2.svg",
+      "bar_model": {
+        "bars": [
+          {
+            "label": "Total Distance",
+            "value": 400,
+            "unit": "m",
+            "parts": 4
+          }
+        ]
+      },
+      "solution": "400 / 4 = 100 metres"
     }
   ]
 };

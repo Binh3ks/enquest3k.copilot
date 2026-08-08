@@ -1,40 +1,49 @@
-export const week_37GamesAdvanced = {
-  title: "Games: The Sports Day Challenge",
-  image_url: null,
-  audio_url: "/audio/week37/games_main.mp3",
-  games: [
-    { id: "sports_categories", type: "categories", title: "Sports Categories",
-      instructions_easy: "Put each word into the correct category: Gear, Actions, or People.",
-      instructions_advanced: "Categorize each word into Gear, Actions, or People related to track sports.",
-      categories: ["Gear", "Actions", "People"],
-      sentences: [
-        { text: "Baton", correct: "Gear" },
-        { text: "Sprinted", correct: "Actions" },
-        { text: "Athlete", correct: "People" },
-        { text: "Track shoes", correct: "Gear" },
-        { text: "Passed", correct: "Actions" },
-        { text: "Spectator", correct: "People" },
-        { text: "Medal", correct: "Gear" },
-        { text: "Cheered", correct: "Actions" },
-        { text: "Opponent", correct: "People" }
-      ]
+export default {
+  "quiz": [
+    {
+      "question": "What is the formula for velocity?",
+      "options": [
+        "velocity = distance / time",
+        "velocity = time x distance",
+        "velocity = mass / acceleration"
+      ],
+      "answer": 0
     },
-    { id: "sports_word_smash", type: "word_smash", title: "Sports Word Smash",
-      instructions_easy: "Say the word clearly, then use it in a short sentence.",
-      instructions_advanced: "Use the word in a full sentence with an adverb of manner (-ly).",
-      word_list: ["relay", "baton", "stadium", "sprint", "spectator", "teamwork", "victory", "trophy"]
+    {
+      "question": "What agreement did ancient Greek leaders declare during the Olympics?",
+      "options": [
+        "A sacred truce (Ekecheiria)",
+        "A trade contract",
+        "A building law"
+      ],
+      "answer": 0
     },
-    { id: "sports_scramble", type: "sentence_scramble", title: "Sports Sentence Scramble",
-      instructions_easy: "Unscramble the words to make a sentence about sports day.",
-      instructions_advanced: "Unscramble the words to make a sentence about sports day.",
-      sentences: [
-        { scrambled: ["Leo", "ran", "very", "fast"], answer: "Leo ran very fast." },
-        { scrambled: ["He", "passed", "the", "baton", "cleanly"], answer: "He passed the baton cleanly." },
-        { scrambled: ["Max", "sprinted", "to", "the", "finish", "line"], answer: "Max sprinted to the finish line." },
-        { scrambled: ["Their", "teamwork", "brought", "a", "great", "victory"], answer: "Their teamwork brought a great victory." }
-      ]
+    {
+      "question": "Why do marathon runners train in Iten, Kenya?",
+      "options": [
+        "Thin high-altitude air builds strong lungs and heart muscles",
+        "Because it is next to a large ocean",
+        "Because they only run indoors"
+      ],
+      "answer": 0
+    }
+  ],
+  "matching": [
+    {
+      "word": "baton",
+      "match": "stick passed in a relay race"
+    },
+    {
+      "word": "truce",
+      "match": "agreement to stop fighting"
+    },
+    {
+      "word": "altitude",
+      "match": "height above sea level"
+    },
+    {
+      "word": "momentum",
+      "match": "the force of a moving body"
     }
   ]
 };
-
-export default week_37GamesAdvanced;

@@ -1,14 +1,85 @@
 export default {
-  title: 'Easy Sports Collocations',
-  audio_url: null,
-  words: [
-    { id: 1, word: 'passed the baton', pronunciation: '/pɑːst ðə bəˈtɒn/', cefr_level: 'A1', definition_en: 'handed over the stick', definition_vi: 'truyền gậy tiếp sức', example: 'Leo passed the baton to Maya.', collocation: 'pass the baton', model_sentence: 'Leo ran fast and passed the baton.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w1.mp3' },
-    { id: 2, word: 'ran very fast', pronunciation: '/ræn ˈveri fɑːst/', cefr_level: 'A1', definition_en: 'moved quickly on foot', definition_vi: 'chạy rất nhanh', example: 'Leo ran very fast.', collocation: 'run fast', model_sentence: 'The runner ran very fast.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w2.mp3' },
-    { id: 3, word: 'won a medal', pronunciation: '/wʌn ə ˈmedl/', cefr_level: 'A1', definition_en: 'received a golden reward', definition_vi: 'giành huy chương', example: 'They won a golden medal.', collocation: 'win a medal', model_sentence: 'Our team won a medal.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w3.mp3' },
-    { id: 4, word: 'enjoy outdoor sports', pronunciation: '/ɪnˈdʒɔɪ ˈaʊtdɔː spɔːts/', cefr_level: 'A1', definition_en: 'have fun playing outside', definition_vi: 'tận hưởng thể thao ngoài trời', example: 'We enjoy outdoor sports.', collocation: 'outdoor sports', model_sentence: 'Kids enjoy outdoor sports.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w4.mp3' },
-    { id: 5, word: 'crossed the line', pronunciation: '/krɒst ðə laɪn/', cefr_level: 'A1', definition_en: 'finished the race', definition_vi: 'cán vạch đích', example: 'They crossed the line first.', collocation: 'cross line', model_sentence: 'Max crossed the line first.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w5.mp3' },
-    { id: 6, word: 'shook hands', pronunciation: '/ʃʊk hændz/', cefr_level: 'A1', definition_en: 'greeted politely', definition_vi: 'bắt tay', example: 'Runners shook hands.', collocation: 'shake hands', model_sentence: 'They shook hands nicely.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w6.mp3' },
-    { id: 7, word: 'smiled with pride', pronunciation: '/smaɪld wɪð praɪd/', cefr_level: 'A1', definition_en: 'smiled happily', definition_vi: 'mỉm cười tự hào', example: 'Leo smiled with pride.', collocation: 'smile proud', model_sentence: 'He smiled with pride.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w7.mp3' },
-    { id: 8, word: 'worked together', pronunciation: '/wɜːkt təˈɡeðə/', cefr_level: 'A1', definition_en: 'helped each other', definition_vi: 'làm việc cùng nhau', example: 'Teammates worked together.', collocation: 'work together', model_sentence: 'We worked together nicely.', image_url: null, audio_word: '/audio/week37_easy/wordpower_w8.mp3' }
+  "collocations": [
+    {
+      "phrase": "pass the baton",
+      "meaning_vi": "truyền gậy tiếp sức",
+      "example": "He passed the baton cleanly to Maya."
+    },
+    {
+      "phrase": "kinetic momentum",
+      "meaning_vi": "động năng di chuyển",
+      "example": "Sprinting early maintains kinetic momentum."
+    },
+    {
+      "phrase": "declared a sacred truce",
+      "meaning_vi": "tuyên bố thỏa thuận ngừng bắn linh thiêng",
+      "example": "Ancient leaders declared a sacred truce."
+    },
+    {
+      "phrase": "Home of Champions",
+      "meaning_vi": "quê hương của các nhà vô địch",
+      "example": "Iten in Kenya is the Home of Champions."
+    },
+    {
+      "phrase": "united in peace",
+      "meaning_vi": "đoàn kết trong hòa bình",
+      "example": "Athletes were united in peace across borders."
+    }
+  ],
+  "word_families": [
+    {
+      "root": "compete",
+      "noun": "competition",
+      "agent": "competitor",
+      "adjective": "competitive",
+      "adverb": "competitively"
+    },
+    {
+      "root": "accelerate",
+      "noun": "acceleration",
+      "verb": "accelerates",
+      "adjective": "accelerated"
+    },
+    {
+      "root": "unite",
+      "noun": "unity",
+      "adjective": "united",
+      "adverb": "unitedly"
+    }
+  ],
+  "synonyms_antonyms": [
+    {
+      "word": "velocity",
+      "synonyms": [
+        "speed",
+        "pace"
+      ],
+      "antonyms": [
+        "sluggishness",
+        "slowdown"
+      ]
+    },
+    {
+      "word": "truce",
+      "synonyms": [
+        "ceasefire",
+        "peace agreement"
+      ],
+      "antonyms": [
+        "war",
+        "conflict"
+      ]
+    },
+    {
+      "word": "seamlessly",
+      "synonyms": [
+        "smoothly",
+        "flawlessly"
+      ],
+      "antonyms": [
+        "clumsily",
+        "roughly"
+      ]
+    }
   ]
 };

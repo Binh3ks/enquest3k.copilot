@@ -1,14 +1,85 @@
 export default {
-  title: 'Word Power: Sports & Relay Collocations',
-  audio_url: null,
-  words: [
-    { id: 1, word: 'passed the baton', pronunciation: '/pɑːst ðə bəˈtɒn/', cefr_level: 'A2', definition_en: 'handed over the relay stick cleanly', definition_vi: 'truyền gậy tiếp sức', example: 'Leo passed the baton cleanly to Maya.', collocation: 'pass the baton / hand over baton', model_sentence: 'He ran fast and passed the baton smoothly to his teammate.', image_url: null, audio_word: '/audio/week37/wordpower_w1.mp3' },
-    { id: 2, word: 'ran very fast', pronunciation: '/ræn ˈveri fɑːst/', cefr_level: 'A1', definition_en: 'moved at high speed on foot', definition_vi: 'chạy rất nhanh', example: 'Leo ran very fast along the track.', collocation: 'run fast / sprint', model_sentence: 'The star athlete ran very fast during the final relay lap.', image_url: null, audio_word: '/audio/week37/wordpower_w2.mp3' },
-    { id: 3, word: 'crossed the finish line', pronunciation: '/krɒst ðə ˈfɪnɪʃ laɪn/', cefr_level: 'A2', definition_en: 'reached the end of the race track', definition_vi: 'cán vạch đích', example: 'Their team crossed the finish line first!', collocation: 'cross line / reach finish line', model_sentence: 'The runners cheered when Max crossed the finish line first.', image_url: null, audio_word: '/audio/week37/wordpower_w3.mp3' },
-    { id: 4, word: 'shook hands with opponents', pronunciation: '/ʃʊk hændz wɪð əˈpəʊnənts/', cefr_level: 'B1', definition_en: 'greeted competitors with respect after the match', definition_vi: 'bắt tay đối thủ', example: 'They shook hands with opponents after the race.', collocation: 'shake hands / show respect', model_sentence: 'Good athletes always shake hands with opponents after competing.', image_url: null, audio_word: '/audio/week37/wordpower_w4.mp3' },
-    { id: 5, word: 'teamwork brought victory', pronunciation: '/ˈtiːmwɜːk brɔːt ˈvɪktəri/', cefr_level: 'B1', definition_en: 'cooperation led to a successful win', definition_vi: 'tinh thần đồng đội mang lại chiến thắng', example: 'Everyone agreed that teamwork brought victory.', collocation: 'teamwork victory / work together', model_sentence: 'Our hard practice and teamwork brought victory to our school.', image_url: null, audio_word: '/audio/week37/wordpower_w5.mp3' },
-    { id: 6, word: 'smiled with pride', pronunciation: '/smaɪld wɪð praɪd/', cefr_level: 'A2', definition_en: 'smiled feeling proud of an achievement', definition_vi: 'mỉm cười tự hào', example: 'Leo smiled with pride when awarded the medal.', collocation: 'smile with pride / proud moment', model_sentence: 'Leo smiled with pride as his teammates clapped for him.', image_url: null, audio_word: '/audio/week37/wordpower_w6.mp3' },
-    { id: 7, word: 'sprinted with determination', pronunciation: '/ˈsprɪntɪd wɪð dɪˌtɜːmɪˈneɪʃn/', cefr_level: 'B1', definition_en: 'ran at full speed with strong focus', definition_vi: 'bứt tốc với sự quyết tâm', example: 'Max sprinted with determination toward the finish line.', collocation: 'sprint with determination / final stretch', model_sentence: 'In the last 50 metres, Max sprinted with determination.', image_url: null, audio_word: '/audio/week37/wordpower_w7.mp3' },
-    { id: 8, word: 'enjoy outdoor sports', pronunciation: '/ɪnˈdʒɔɪ ˈaʊtdɔː spɔːts/', cefr_level: 'A1', definition_en: 'have fun playing physical games outside', definition_vi: 'tận hưởng thể thao ngoài trời', example: 'Children enjoy outdoor sports every weekend.', collocation: 'enjoy outdoor sports / active lifestyle', model_sentence: 'Putting on running shoes helps us enjoy outdoor sports in fresh air.', image_url: null, audio_word: '/audio/week37/wordpower_w8.mp3' }
+  "collocations": [
+    {
+      "phrase": "pass the baton",
+      "meaning_vi": "truyền gậy tiếp sức",
+      "example": "He passed the baton cleanly to Maya."
+    },
+    {
+      "phrase": "kinetic momentum",
+      "meaning_vi": "động năng di chuyển",
+      "example": "Sprinting early maintains kinetic momentum."
+    },
+    {
+      "phrase": "declared a sacred truce",
+      "meaning_vi": "tuyên bố thỏa thuận ngừng bắn linh thiêng",
+      "example": "Ancient leaders declared a sacred truce."
+    },
+    {
+      "phrase": "Home of Champions",
+      "meaning_vi": "quê hương của các nhà vô địch",
+      "example": "Iten in Kenya is the Home of Champions."
+    },
+    {
+      "phrase": "united in peace",
+      "meaning_vi": "đoàn kết trong hòa bình",
+      "example": "Athletes were united in peace across borders."
+    }
+  ],
+  "word_families": [
+    {
+      "root": "compete",
+      "noun": "competition",
+      "agent": "competitor",
+      "adjective": "competitive",
+      "adverb": "competitively"
+    },
+    {
+      "root": "accelerate",
+      "noun": "acceleration",
+      "verb": "accelerates",
+      "adjective": "accelerated"
+    },
+    {
+      "root": "unite",
+      "noun": "unity",
+      "adjective": "united",
+      "adverb": "unitedly"
+    }
+  ],
+  "synonyms_antonyms": [
+    {
+      "word": "velocity",
+      "synonyms": [
+        "speed",
+        "pace"
+      ],
+      "antonyms": [
+        "sluggishness",
+        "slowdown"
+      ]
+    },
+    {
+      "word": "truce",
+      "synonyms": [
+        "ceasefire",
+        "peace agreement"
+      ],
+      "antonyms": [
+        "war",
+        "conflict"
+      ]
+    },
+    {
+      "word": "seamlessly",
+      "synonyms": [
+        "smoothly",
+        "flawlessly"
+      ],
+      "antonyms": [
+        "clumsily",
+        "roughly"
+      ]
+    }
   ]
 };
