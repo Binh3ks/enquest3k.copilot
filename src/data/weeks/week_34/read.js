@@ -312,5 +312,12 @@ export const dictionary = {
     definition_vi: "came to the ant's house",
     definition_en: "Context phrase: came to the ant's house",
     example: "We practiced came to the ant's house today."
+  },
+  "came to the ant's house": {
+    word: "came to the ant's house",
+    pronunciation: "/came to the ant's house/",
+    definition_vi: "came to the ant's house",
+    definition_en: "Context phrase: came to the ant's house",
+    example: "We practiced came to the ant's house today."
   }
 };
