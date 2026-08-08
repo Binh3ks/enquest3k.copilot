@@ -395,10 +395,22 @@ const SingaporeMathDisplay = ({ weekNumber, problems = [], onProgress, learningM
           </div>
         )}
 
-        {/* Bar Model Visualizer (Dynamic SVG) */}
+        {/* Bar Model Visualizer (Custom SVG Image or Fallback Dynamic SVG) */}
         <div className="bg-blue-50/70 rounded-2xl p-4 border border-blue-100 shadow-sm">
           <p className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-3">📊 Singapore Math Bar Model:</p>
-          <DynamicBarModel problem={problem} />
+          {problem.image_url ? (
+            <img
+              src={getImageUrl(problem.image_url)}
+              alt={`Singapore Math Bar Model for Problem ${problem.id}`}
+              className="w-full max-w-lg mx-auto drop-shadow-sm rounded-lg object-contain bg-white p-2 border border-blue-100"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                if (e.target.nextSibling) e.target.nextSibling.style.display = 'block';
+              }}
+            />
+          ) : (
+            <DynamicBarModel problem={problem} />
+          )}
         </div>
 
         {/* Hint Section */}

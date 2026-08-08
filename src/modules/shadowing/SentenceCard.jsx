@@ -26,8 +26,9 @@ export default function SentenceCard({
   onCorrect,
   themeColor,
 }) {
+  const sentenceText = sentence?.text || sentence?.text_en || '';
   const [editing, setEditing] = useState(false);
-  const [editText, setEditText] = useState(sentence.text);
+  const [editText, setEditText] = useState(sentenceText);
 
   const fmtTime = (s) => {
     const m = Math.floor(s / 60);
@@ -36,14 +37,14 @@ export default function SentenceCard({
   };
 
   const handleSave = () => {
-    if (editText.trim() && editText.trim() !== sentence.text) {
+    if (editText.trim() && editText.trim() !== sentenceText) {
       onCorrect?.(sentence.id, editText.trim());
     }
     setEditing(false);
   };
 
   const handleCancel = () => {
-    setEditText(sentence.text);
+    setEditText(sentenceText);
     setEditing(false);
   };
 
@@ -107,7 +108,7 @@ export default function SentenceCard({
             <p className={`text-[15px] leading-relaxed ${
               isActive ? 'font-bold text-slate-900' : 'text-slate-700'
             }`}>
-              {sentence.text}
+              {sentenceText}
               {sentence._corrected && (
                 <span className="ml-1.5 text-[9px] text-green-600 font-bold bg-green-50 px-1 py-0.5 rounded">edited</span>
               )}
@@ -123,9 +124,9 @@ export default function SentenceCard({
           )}
 
           {/* Vietnamese translation */}
-          {sentence.vi && (
+          {(sentence.vi || sentence.text_vi) && (
             <p className="text-[12px] text-slate-400 mt-0.5 italic">
-              {sentence.vi}
+              {sentence.vi || sentence.text_vi}
             </p>
           )}
 

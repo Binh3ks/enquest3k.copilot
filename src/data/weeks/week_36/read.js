@@ -1,17 +1,15 @@
 // WEEK 36: Adventure Stories (Irregular Verbs)
 // Reading Station — Advanced Mode
-// STEM Story: Archimedes Buoyancy Principle & Submarine Rescue
-// Social Studies: Marco Polo's Silk Road Odyssey
 
 export default {
   content_en: "On a sunny **Sunday afternoon**, Leo and his marine biology team **dove down into** a deep ocean cavern 300 metres below the surface in a research submarine. They **found an ancient wooden chest** resting on the sandy floor. However, the chest **weighed 150 kilograms**—far too heavy for the submarine's mechanical arms to lift without overwhelming the thrusters and sinking the vehicle! To solve this engineering challenge, Leo **applied Archimedes buoyancy principle** (buoyant force = water density x displaced volume). He calculated that to generate 150 kilograms of upward lift, the team needed to displace 150 litres of seawater. Leo **attached inflatable lift bags** to the chest and pumped compressed air into them. As the water **was displaced by air**, the bags expanded and neutral buoyancy **was achieved**. The heavy chest **floated gently off** the seafloor and **rose smoothly to** the surface vessel. Inside the chest, they **discovered a preserved gold compass** from the 1500s, which they **presented to the maritime museum**.",
   sentences: [
-    { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine." },
-    { id: 2, text: "They found a heavy ancient wooden chest weighing 150 kilograms." },
-    { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem." },
-    { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift." },
-    { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface." },
-    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass." }
+    { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm." },
+    { id: 2, text: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg." },
+    { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề." },
+    { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên." },
+    { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn." },
+    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá." }
   ],
   read_stem: {
     title_en: "The Submarine Buoyancy Rescue",

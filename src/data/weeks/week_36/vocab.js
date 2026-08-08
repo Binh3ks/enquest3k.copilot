@@ -1,6 +1,3 @@
-// WEEK 36: Vocab Station — Advanced Mode
-// 20 Target Words with full Vietnamese diacritics
-
 export default {
   vocab: [
     { id: "v1", word: "submarine", definition_en: "a vessel built to operate deep underwater", definition_vi: "tàu ngầm", audio_word: "/audio/week36/vocab_submarine.mp3" },

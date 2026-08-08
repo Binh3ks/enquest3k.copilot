@@ -1,5 +1,4 @@
 // WEEK 36: Explore Station — Advanced Mode
-// Global World Horizon: Deep-Sea Submersibles & Mariana Trench Exploration
 
 export default {
   content_en: "Beyond shallow coastal waters lies the **Mariana Trench** in the Western Pacific Ocean, reaching a depth of nearly 11,000 metres at **Challenger Deep**. Exploring this extreme environment requires advanced **deep-sea submersibles** like the historic Trieste and Deepsea Challenger. Water **pressure at the trench floor** exceeds 1,000 atmospheres—strong enough to crush standard steel hulls instantly! To withstand such immense force, ocean engineers design **spherical titanium pressure hulls** and use specialized **syntactic foam for buoyant support**. Scientists operating these submersibles have **discovered bioluminescent organisms** and unique **hydrothermal vent ecosystems** that thrive without any sunlight. These remarkable submersibles have **opened new scientific horizons**, allowing researchers to **study ocean geology** and discover ancient secrets hidden in the deepest places on Earth. Each deep ocean dive **helps us understand** how marine life survives under extreme physical conditions and **expands human knowledge** of our mysterious ocean planet for future generations of oceanographers, marine biologists, and curious explorers worldwide.",
@@ -28,15 +27,11 @@ export default {
     "Mariana Trench",
     "Challenger Deep",
     "deep-sea submersibles",
-    "water pressure at the trench floor",
-    "spherical titanium pressure hulls",
-    "syntactic foam for buoyant support",
-    "discovered bioluminescent organisms",
-    "hydrothermal vent ecosystems",
-    "opened new scientific horizons",
-    "study ocean geology",
-    "helps us understand",
-    "expands human knowledge"
+    "water pressure",
+    "spherical titanium",
+    "syntactic foam",
+    "bioluminescent organisms",
+    "hydrothermal vent"
   ],
   dictionary: {
     submarine: "tàu ngầm",

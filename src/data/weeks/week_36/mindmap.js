@@ -1,6 +1,3 @@
-// WEEK 36: Mindmap Station — Advanced Mode
-// 6 stems x 6 branches = 36 branches total
-
 export default {
   centerStems: [
     "On Sunday afternoon, Leo dove into the ocean in a ___.",

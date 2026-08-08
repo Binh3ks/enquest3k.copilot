@@ -1,5 +1,3 @@
-// WEEK 36: Writing Station — Advanced Mode
-
 export default {
   hints: {
     words: [

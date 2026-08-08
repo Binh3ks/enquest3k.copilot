@@ -6,11 +6,15 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 // --- COMPONENT CON: VideoItem (BẤT TỬ TRƯỚC RE-RENDER) ---
 const VideoItem = memo(({ video, percent, onClick }) => {
   const isDone = percent >= 90;
+  const title = video.title || video.title_en || 'Educational Video';
+  const ytid = video.youtube_id || video.id;
+  const thumb = video.thumb || (ytid ? `https://img.youtube.com/vi/${ytid}/hqdefault.jpg` : 'https://via.placeholder.com/320x180');
+
   return (
     <div onClick={() => onClick(video)}
       className={`relative rounded-xl overflow-hidden shadow-md cursor-pointer group hover:scale-[1.02] transition-all bg-white border-2 ${isDone ? 'border-green-400' : 'border-slate-100'}`}>
       <div className="aspect-video bg-slate-200 relative">
-        <img src={video.thumb} alt={video.title} className="w-full h-full object-cover" onError={(e)=>{e.target.src='https://via.placeholder.com/320x180'}}/>
+        <img src={thumb} alt={title} className="w-full h-full object-cover" onError={(e)=>{e.target.src='https://via.placeholder.com/320x180'}}/>
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10">
           <Play className="w-10 h-10 text-white opacity-80 group-hover:scale-110 transition-transform"/>
         </div>
@@ -20,7 +24,7 @@ const VideoItem = memo(({ video, percent, onClick }) => {
         {isDone && <div className="absolute top-2 right-2 bg-green-500 text-white p-1 rounded-full shadow-lg"><CheckCircle size={16}/></div>}
       </div>
       <div className="p-3">
-        <h3 className="font-bold text-slate-700 text-sm truncate">{video.title}</h3>
+        <h3 className="font-bold text-slate-700 text-sm truncate">{title}</h3>
         <div className="text-[10px] text-slate-500 mt-1 flex justify-between font-bold">
           <span>{video.duration}</span>
           <span className={isDone ? 'text-green-600' : ''}>{percent}%</span>

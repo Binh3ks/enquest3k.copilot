@@ -294,7 +294,16 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       });
   }, [data?.words?.length, saveProgress, markComplete]);
 
-  if (!data || !data.words) return <div className="p-8 text-center text-teal-400 font-bold">Loading Word Power...</div>;
+  const wordList = (data?.words || data?.phrases || data?.collocations || []).map((item, idx) => ({
+    id: item.id || `wp_${idx}`,
+    word: item.word || item.phrase || item.collocation || '',
+    definition_en: item.definition_en || item.definition || item.meaning_en || '',
+    definition_vi: item.definition_vi || item.phrase_vi || item.meaning_vi || '',
+    example: item.example || item.sentence || '',
+    collocation_en: item.collocation_en || item.collocation || item.phrase || ''
+  }));
+
+  if (!data || wordList.length === 0) return <div className="p-8 text-center text-teal-400 font-bold">Loading Word Power...</div>;
 
   return (
     <div className="pb-24">
@@ -311,17 +320,16 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
        <div className="text-right flex flex-col items-center">
             <span className="text-xs font-bold text-teal-400 uppercase tracking-wider">Progress</span>
             <div className="text-3xl font-black text-teal-500">
-                {completedIds.length}/{data.words?.length ?? 0}
+                {completedIds.length}/{wordList.length}
             </div>
        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2">
-       {(data.words || []).map(w => (
+       {wordList.map(w => (
             <PowerCard key={w.id} word={w} themeColor={themeColor} isVi={isVi} onComplete={handleCardComplete} weekId={weekId} mode={learningMode} />
        ))}
       </div>
-      {/* DEBUG: Hiển thị trạng thái Audio để kiểm tra lỗi file câm Tuần 2 */}
     </div>
   );
 };
