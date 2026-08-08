@@ -1,5 +1,5 @@
 // WEEK 37: The Sports Day Challenge
-// 100% Pipeline Compliant with W36 Standard (3 Story Missions + EXACTLY 2 Free Talk Cards)
+// AI Tutor Data — Concise opening narratives for instant TTS audio playback (0ms delay)
 
 const week_37RealData = {
   week_id: 37,
@@ -97,7 +97,7 @@ const week_37RealData = {
       theme: "Retelling STEM Story passage (read_stem)",
       type: "story",
       character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding relay race science" },
-      opening_narrative: "Hello! I am Coach Nova. On Saturday morning, Leo and his classmates went to the sports stadium to study human physical biomechanics and speed science (v = d/t). Leo ran very fast along the red track and passed the baton cleanly to Maya. His leg muscles converted chemical energy into kinetic energy. Max sprinted smoothly to the finish line and they won first place! Do you remember the speed science story?",
+      opening_narrative: "Hello! I am Coach Nova. On Saturday morning, Leo studied speed science (speed = distance / time) in a relay race! They won gold medals with teamwork. Do you remember where Leo went?",
       story_arc: [
         {
           phase: "the_start",
@@ -111,8 +111,8 @@ const week_37RealData = {
               hints: ["went", "sports stadium", "track"]
             },
             {
-              template: "Great! What speed formula did Leo calculate with his coach? Say: He calculated v = distance / time, or He calculated speed formula",
-              hints: ["calculated", "v = distance / time", "speed formula"]
+              template: "Great! What speed formula did Leo calculate with his coach? Say: He calculated speed = distance / time, or He calculated speed formula",
+              hints: ["calculated", "speed = distance / time", "speed formula"]
             },
             {
               template: "Brilliant! How did he pass the baton to Maya? Say: He passed the baton cleanly, or He handed over the baton smoothly",
@@ -123,13 +123,13 @@ const week_37RealData = {
         {
           phase: "the_finish",
           turns: "5-8",
-          phase_name: "Kinetic Energy & Winning",
-          focus: "Describing kinetic energy and winning gold medal",
+          phase_name: "Winning Gold Medals",
+          focus: "Describing energy conversion and winning gold medal",
           goal: "Student retells winning the gold medal",
           phase_questions: [
             {
-              template: "Exciting! How did leg muscles convert food energy? Say: Leg muscles converted energy into kinetic motion, or They converted energy into speed",
-              hints: ["converted", "energy", "kinetic motion", "speed"]
+              template: "Exciting! How did leg muscles convert food energy? Say: Leg muscles converted energy into speed, or They converted energy into movement",
+              hints: ["converted", "energy", "speed", "movement"]
             },
             {
               template: "Hooray! What did the team win at the finish line? Say: They won a golden medal, or They won first place",
@@ -148,7 +148,7 @@ const week_37RealData = {
       theme: "Retelling Social Studies passage (read_social)",
       type: "story",
       character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding fair play history" },
-      opening_narrative: "On sports day, Maya saw a runner slip on the grass. Instead of running past, she stopped to help! In ancient Greece, athletes gathered at Olympia to celebrate global peace and sportsmanship. True champions know playing fair is more important than winning trophies!",
+      opening_narrative: "On sports day, Maya helped a fallen runner! In ancient Greece, athletes gathered at Olympia for fair play and global sportsmanship. True champions know respect matters more than gold. What did Maya do?",
       story_arc: [
         {
           phase: "helping_hand",
@@ -182,7 +182,7 @@ const week_37RealData = {
       theme: "Personal Connection & Outdoor Sports",
       type: "story",
       character: { name: "Coach Nova - Sports Mentor", role: "Sports mentor guiding personal connection" },
-      opening_narrative: "Now it is YOUR turn to tell Coach Nova about your life! Health experts recommend 30 minutes of exercise every day. What outdoor sport or race do you enjoy playing with your friends?",
+      opening_narrative: "Now it is YOUR turn to tell Coach Nova about yourself! What outdoor sport or race do you love playing with your friends?",
       story_arc: [
         {
           phase: "daily_exercise",

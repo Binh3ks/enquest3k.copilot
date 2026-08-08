@@ -707,9 +707,15 @@ export const VoiceService = {
       });
 
       // AI Tutor Opening Narratives & Prompts
-      const missions = weekData.story_missions || weekData.missions || [];
+      const realData = weekData.weekRealData || weekData;
+      const missions = realData.story_missions || realData.missions || weekData.story_missions || [];
       missions.forEach(m => {
         const txt = m.opening_narrative || m.nova_greeting;
+        if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'ask_ai', voice: voiceConfig?.questions || 'en-US-Neural2-D' });
+      });
+      const sparkTalk = realData.spark_talk || weekData.spark_talk || [];
+      sparkTalk.forEach(s => {
+        const txt = s.seed_question || s.text_en;
         if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'ask_ai', voice: voiceConfig?.questions || 'en-US-Neural2-D' });
       });
 
