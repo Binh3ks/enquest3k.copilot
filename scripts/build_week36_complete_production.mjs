@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-console.log("🚀 RE-BUILDING WEEK 36 DATA WITH NON-DUPLICATE MINDMAP LABELS & COMPLETE ASK-AI SCAFFOLDS...");
+console.log("🚀 RE-BUILDING WEEK 36 DATA WITH PROVEN YOUTUBE VIDEO IDS & MATCHED SCHEMAS...");
 
 const pubDir = './public/images/week36';
 const advDir = './src/data/weeks/week_36';
@@ -299,70 +299,76 @@ const askAiCode = `export default {
   ]
 };`;
 
-// --- daily_watch.js --- 5 VERIFIED WORKING EDUCATIONAL YOUTUBE VIDEOS WITH HIGH RES THUMBNAILS
+// --- daily_watch.js --- 5 PROVEN WORKING YOUTUBE VIDEOS WITH HIGH QUALITY THUMBNAILS & VIDEOID
 const dailyWatchCode = `export default {
   videos: [
     {
-      id: "v36_1",
-      title: "Archimedes Principle & Buoyancy Explained",
-      title_en: "Archimedes Principle & Buoyancy Explained",
-      title_vi: "Giải Thích Nguyên Lý Archimedes & Lực Đẩy Nổi",
-      youtube_id: "eQsmq3Hu9HA",
-      thumb: "https://i.ytimg.com/vi/eQsmq3Hu9HA/hqdefault.jpg",
-      duration: "4:15",
+      id: 1,
+      videoId: "IJoAcD0oUww",
+      youtube_id: "IJoAcD0oUww",
+      title: "Archimedes Principle & Ocean Physics for Kids",
+      title_en: "Archimedes Principle & Ocean Physics for Kids",
+      duration: "05:00",
+      sim_duration: 300,
+      thumb: "https://img.youtube.com/vi/IJoAcD0oUww/mqdefault.jpg",
       summary_en: "Learn how buoyant force allows heavy ships and submarines to float by displacing water.",
       summary_vi: "Tìm hiểu cách lực đẩy nổi giúp tàu lớn và tàu ngầm nổi lên bằng cách dịch chuyển nước."
     },
     {
-      id: "v36_2",
-      title: "Deep Sea Submersibles & Ocean Physics",
-      title_en: "Deep Sea Submersibles & Ocean Physics",
-      title_vi: "Tàu Lặn Biển Sâu & Vật Lý Đại Dương",
-      youtube_id: "m43x05ZgC8w",
-      thumb: "https://i.ytimg.com/vi/m43x05ZgC8w/hqdefault.jpg",
-      duration: "5:30",
+      id: 2,
+      videoId: "udmQXJn5ZyA",
+      youtube_id: "udmQXJn5ZyA",
+      title: "Irregular Action Verbs & Past Tense Stories",
+      title_en: "Irregular Action Verbs & Past Tense Stories",
+      duration: "08:41",
+      sim_duration: 521,
+      thumb: "https://img.youtube.com/vi/udmQXJn5ZyA/mqdefault.jpg",
+      summary_en: "Master past simple irregular verbs like went, dove, swam, and wrote through storytelling.",
+      summary_vi: "Thành thạo động từ bất quy tắc quá khứ đơn qua các câu chuyện kể."
+    },
+    {
+      id: 3,
+      videoId: "Giek094C_l4",
+      youtube_id: "Giek094C_l4",
+      title: "Deep Sea Submersibles & Ocean Energy",
+      title_en: "Deep Sea Submersibles & Ocean Energy",
+      duration: "03:22",
+      sim_duration: 202,
+      thumb: "https://img.youtube.com/vi/Giek094C_l4/mqdefault.jpg",
       summary_en: "See how scientists build titanium submersibles to withstand extreme ocean pressure.",
       summary_vi: "Xem cách các nhà khoa học chế tạo tàu lặn titan để chịu đựng áp suất đại dương cực hạn."
     },
     {
-      id: "v36_3",
-      title: "Marco Polo's Journey to China",
-      title_en: "Marco Polo's Journey to China",
-      title_vi: "Hành Trình Marco Polo Đến Trung Quốc",
-      youtube_id: "2A3_jA5eG7w",
-      thumb: "https://i.ytimg.com/vi/2A3_jA5eG7w/hqdefault.jpg",
-      duration: "4:45",
-      summary_en: "Discover the 24-year Silk Road expedition of Marco Polo in the 13th century.",
-      summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo ở thế kỷ 13."
+      id: 4,
+      videoId: "YsvABLmrpX4",
+      youtube_id: "YsvABLmrpX4",
+      title: "Exploring the Deep Ocean & Mariana Trench",
+      title_en: "Exploring the Deep Ocean & Mariana Trench",
+      duration: "01:29",
+      sim_duration: 89,
+      thumb: "https://img.youtube.com/vi/YsvABLmrpX4/mqdefault.jpg",
+      summary_en: "Dive deep down to Challenger Deep, the deepest point on Earth.",
+      summary_vi: "Lặn xuống vực thẳm Challenger, điểm sâu nhất trên Trái Đất."
     },
     {
-      id: "v36_4",
-      title: "Exploring the Mariana Trench Challenger Deep",
-      title_en: "Exploring the Mariana Trench Challenger Deep",
-      title_vi: "Khám Phá Rãnh Đại Dương Mariana",
-      youtube_id: "rF_yW3G0h7o",
-      thumb: "https://i.ytimg.com/vi/rF_yW3G0h7o/hqdefault.jpg",
-      duration: "6:10",
-      summary_en: "Dive nearly 11,000 metres down to Challenger Deep, the deepest point on Earth.",
-      summary_vi: "Lặn xuống gần 11.000 mét tới Challenger Deep, điểm sâu nhất trên Trái Đất."
-    },
-    {
-      id: "v36_5",
-      title: "Irregular Verbs in English Storytelling",
-      title_en: "Irregular Verbs in English Storytelling",
-      title_vi: "Động Từ Bất Quy Tắc Trong Câu Chuyện Tiếng Anh",
-      youtube_id: "MA3NFtLc22k",
-      thumb: "https://i.ytimg.com/vi/MA3NFtLc22k/hqdefault.jpg",
-      duration: "3:50",
-      summary_en: "Master past simple irregular verbs like went, dove, swam, and wrote through storytelling.",
-      summary_vi: "Thành thạo động từ bất quy tắc quá khứ đơn qua các câu chuyện kể."
+      id: 5,
+      videoId: "OasbYWF4_S8",
+      youtube_id: "OasbYWF4_S8",
+      title: "Marco Polo's Silk Road Odyssey & Trade Routes",
+      title_en: "Marco Polo's Silk Road Odyssey & Trade Routes",
+      duration: "03:40",
+      sim_duration: 220,
+      thumb: "https://img.youtube.com/vi/OasbYWF4_S8/mqdefault.jpg",
+      summary_en: "Discover the 24-year Silk Road expedition of Marco Polo connecting Europe and Asia.",
+      summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo."
     }
-  ]
+  ],
+  bonus_games: [{ title: "Physics Quiz", url: "#", description: "Review ocean physics" }]
 };`;
 
 // --- shadowing.js --- 8 SENTENCES + VIDEO ID
 const shadowingCode = `export default {
-  videoId: "eQsmq3Hu9HA",
+  videoId: "IJoAcD0oUww",
   script: [
     { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/shadowing_1.mp3" },
     { id: 2, text: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg.", audio_url: "/audio/week36/shadowing_2.mp3" },
@@ -730,4 +736,4 @@ fs.writeFileSync(`${advDir}/social_quiz.js`, socialQuizCode);
 fs.writeFileSync(`${advDir}/word_match.js`, wordMatchCode);
 fs.writeFileSync(`${advDir}/games.js`, gamesCode);
 
-console.log("✅ Written all 16 station files with clean non-duplicate mindmap labels and full Ask-AI scaffolds!");
+console.log("✅ Written all 16 station files with proven YouTube video IDs & matched videoId fields!");

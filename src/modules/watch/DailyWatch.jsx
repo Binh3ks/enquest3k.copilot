@@ -7,8 +7,8 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 const VideoItem = memo(({ video, percent, onClick }) => {
   const isDone = percent >= 90;
   const title = video.title || video.title_en || 'Educational Video';
-  const ytid = video.youtube_id || video.id;
-  const thumb = video.thumb || (ytid ? `https://img.youtube.com/vi/${ytid}/hqdefault.jpg` : 'https://via.placeholder.com/320x180');
+  const ytid = video.videoId || video.youtube_id || video.id;
+  const thumb = video.thumb || (ytid ? `https://img.youtube.com/vi/${ytid}/mqdefault.jpg` : 'https://via.placeholder.com/320x180');
 
   return (
     <div onClick={() => onClick(video)}
@@ -188,8 +188,9 @@ const handleClosePlayer = () => {
       setPlayerError(null);
       const startTime = watchData[activeVideo.id] || 0;
 
+      const targetVideoId = activeVideo.videoId || activeVideo.youtube_id;
       player = new window.YT.Player('yt-player-frame', {
-        videoId: activeVideo.videoId,
+        videoId: targetVideoId,
         playerVars: {
           'autoplay': 1,
           'controls': 1,
