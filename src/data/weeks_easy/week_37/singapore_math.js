@@ -1,43 +1,51 @@
 export default {
-  "title": "Relay Race & Speed Science Bar Models",
-  "problems": [
+  title: "Sports Day Singapore Math Problems",
+  theme: "sports_day_math",
+  problems: [
     {
-      "id": 1,
-      "question_en": "Leo ran his relay lap in 12 seconds. Maya ran her lap 2 seconds faster than Leo. How long did Maya take?",
-      "question_vi": "Leo chạy vòng tiếp sức trong 12 giây. Maya chạy nhanh hơn Leo 2 giây. Maya mất bao nhiêu thời gian?",
-      "svg_image": "/images/week37/barmodel_w37_adv_p1.svg",
-      "bar_model": {
-        "bars": [
-          {
-            "label": "Leo",
-            "value": 12,
-            "unit": "s"
-          },
-          {
-            "label": "Maya",
-            "value": 10,
-            "unit": "s"
-          }
-        ]
-      },
-      "solution": "12 - 2 = 10 seconds"
+      id: 1,
+      type: "comparison",
+      question_en: "Leo ran his relay lap in 12 seconds. Maya ran her lap 2 seconds faster than Leo. How long did Maya take?",
+      bar_model: "/images/week37/barmodel_w37_adv_p1.svg",
+      answer: ["10"],
+      hint_en: "Subtract 2 seconds from Leo's time of 12 seconds.",
+      hint_vi: "Trừ 2 giây khỏi thời gian 12 giây của Leo."
     },
     {
-      "id": 2,
-      "question_en": "A relay team covers a total distance of 400 metres across 4 equal laps. How long is each lap?",
-      "question_vi": "Một đội tiếp sức chạy tổng quãng đường 400 mét qua 4 vòng bằng nhau. Mỗi vòng dài bao nhiêu mét?",
-      "svg_image": "/images/week37/barmodel_w37_adv_p2.svg",
-      "bar_model": {
-        "bars": [
-          {
-            "label": "Total Distance",
-            "value": 400,
-            "unit": "m",
-            "parts": 4
-          }
-        ]
-      },
-      "solution": "400 / 4 = 100 metres"
+      id: 2,
+      type: "part_whole",
+      question_en: "A relay team ran a total distance of 400 metres across 4 equal laps. How long is each lap?",
+      bar_model: "/images/week37/barmodel_w37_adv_p2.svg",
+      answer: ["100"],
+      hint_en: "Divide the total distance 400m by 4 laps.",
+      hint_vi: "Chia tổng quãng đường 400m cho 4 vòng."
+    },
+    {
+      id: 3,
+      type: "comparison",
+      question_en: "In ancient Greece, 150 athletes competed in race A. Race B had 50 more athletes than race A. How many athletes competed in race B?",
+      bar_model: "/images/week37/barmodel_w37_adv_p3.svg",
+      answer: ["200"],
+      hint_en: "Add 50 to 150 athletes.",
+      hint_vi: "Cộng 50 vào 150 vận động viên."
+    },
+    {
+      id: 4,
+      type: "missing_part",
+      question_en: "The stadium has 500 total seats. 320 seats are filled with spectators. How many empty seats remain?",
+      bar_model: "/images/week37/barmodel_w37_adv_p4.svg",
+      answer: ["180"],
+      hint_en: "Subtract 320 from 500 total seats.",
+      hint_vi: "Trừ 320 khỏi tổng số 500 ghế."
+    },
+    {
+      id: 5,
+      type: "groups",
+      question_en: "There are 6 relay teams in the final. Each team has 4 runners. How many runners are in the final altogether?",
+      bar_model: "/images/week37/barmodel_w37_adv_p5.svg",
+      answer: ["24"],
+      hint_en: "Multiply 6 teams by 4 runners per team.",
+      hint_vi: "Nhân 6 đội với 4 người chạy mỗi đội."
     }
   ]
 };

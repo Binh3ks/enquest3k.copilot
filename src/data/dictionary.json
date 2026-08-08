@@ -1,13 +1,5 @@
 [
   {
-    "word": "countryside is peaceful",
-    "meaning": "đồng quê yên bình",
-    "pronounce": "",
-    "definition_en": "",
-    "first_taught_week": 10,
-    "example": "The countryside is peaceful with green fields, singing birds and blue skies."
-  },
-  {
     "word": "1 1 c warmer",
     "meaning": "ấm hơn 1,1 độ C",
     "pronounce": "",
@@ -16,10 +8,29 @@
     "example": "The Earth is now 1.1°C warmer than before."
   },
   {
+    "word": "1.1°c warmer",
+    "phonetic": "/1.1°c warmer/",
+    "pronunciation": "/1.1°c warmer/",
+    "type": "phrase",
+    "definition_vi": "11c warmer",
+    "definition_en": "Key collocation: 1.1°c warmer",
+    "meaning": "11c warmer",
+    "example": "Natural usage of '1.1°c warmer' in sentence context.",
+    "level": "A1+"
+  },
+  {
     "word": "2,500 years ago",
     "ipa": "/2,500 years ago/",
     "meaning": "2.500 năm trước",
     "example": "This is an example: 2,500 years ago.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "30 minutes of exercise",
+    "ipa": "/ˈθɜːti ˈmɪnɪts əv ˈeksəsaɪz/",
+    "meaning": "30 phút tập thể dục",
+    "example": "We need 30 minutes of exercise daily.",
     "part_of_speech": "phrase",
     "type": "phrase"
   },
@@ -173,6 +184,14 @@
     "example": "A very long time ago, there was a hard-working ant."
   },
   {
+    "word": "a wall of",
+    "meaning": "một bức tường (tảo/cây...)",
+    "pronounce": "/ə wɔːl ɒv/",
+    "definition_en": "a dense barrier formed by objects",
+    "first_taught_week": 36,
+    "example": "The cave was hidden behind a wall of seaweed."
+  },
+  {
     "word": "abilities",
     "meaning": "khả năng",
     "pronounce": "",
@@ -203,6 +222,28 @@
     "definition_en": "Multi-word phrase: about animals",
     "first_taught_week": 1,
     "example": "The phrase 'about animals' is commonly used in conversation."
+  },
+  {
+    "word": "about learning",
+    "phonetic": "/əˈbaʊt ˈlɜːrnɪŋ/",
+    "pronunciation": "/əˈbaʊt ˈlɜːrnɪŋ/",
+    "type": "phrase",
+    "definition_vi": "về việc học hỏi",
+    "definition_en": "concerning the acquisition of knowledge",
+    "meaning": "về việc học hỏi",
+    "example": "It is about learning new cultures.",
+    "level": "A1+"
+  },
+  {
+    "word": "about meeting",
+    "phonetic": "/əˈbaʊt ˈmiːtɪŋ/",
+    "pronunciation": "/əˈbaʊt ˈmiːtɪŋ/",
+    "type": "phrase",
+    "definition_vi": "về việc gặp gỡ",
+    "definition_en": "concerning encountering new people",
+    "meaning": "về việc gặp gỡ",
+    "example": "It is about meeting people.",
+    "level": "A1+"
   },
   {
     "word": "about school",
@@ -282,6 +323,22 @@
     "definition_en": "to successfully do or complete something",
     "example": "She works hard to achieve her dreams.",
     "first_taught_week": 17
+  },
+  {
+    "word": "achieve big dreams",
+    "ipa": "/achieve big dreams/",
+    "meaning": "achieve big dreams",
+    "example": "We learned achieve big dreams.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "achieve great goals",
+    "ipa": "/achieve great goals/",
+    "meaning": "achieve great goals",
+    "example": "We learned achieve great goals.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "across",
@@ -935,6 +992,25 @@
     "example": "This is an example: ancient greece."
   },
   {
+    "word": "ancient objects",
+    "phonetic": "/ˈeɪnʃənt ˈɒbdʒɪkts/",
+    "pronunciation": "/ˈeɪnʃənt ˈɒbdʒɪkts/",
+    "type": "phrase",
+    "definition_vi": "những cổ vật",
+    "definition_en": "English collocation / phrase: ancient objects",
+    "meaning": "những cổ vật",
+    "example": "The museum displays ancient objects.",
+    "level": "A1+"
+  },
+  {
+    "word": "ancient ships",
+    "meaning": "những con tàu cổ đại",
+    "pronounce": "/ˈeɪnʃənt ʃɪps/",
+    "definition_en": "very old vessels from past centuries",
+    "first_taught_week": 36,
+    "example": "Ancient ships sank near the island long ago."
+  },
+  {
     "word": "and",
     "meaning": "và",
     "pronounce": "/ænd/",
@@ -957,6 +1033,30 @@
     "definition_en": "feeling a strong emotion of displeasure because of something unfair",
     "first_taught_week": 24,
     "example": "It was a very angry experience for everyone."
+  },
+  {
+    "word": "Anh chị em",
+    "ipa": "/anh chị em/",
+    "meaning": "cụm từ vựng: anh chị em",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "ánh nắng ấm đẹp",
+    "ipa": "/ánh nắng ấm đẹp/",
+    "meaning": "cụm từ vựng: ánh nắng ấm đẹp",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "ánh nắng ấm sáng",
+    "ipa": "/ánh nắng ấm sáng/",
+    "meaning": "cụm từ vựng: ánh nắng ấm sáng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "animal",
@@ -1223,6 +1323,14 @@
     "example": "We are students."
   },
   {
+    "word": "are good for us",
+    "ipa": "/ɑːr ɡʊd fɔːr ʌs/",
+    "meaning": "tốt cho chúng ta",
+    "example": "Sports are good for us.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "are like a team",
     "meaning": "như một đội",
     "pronounce": "",
@@ -1237,6 +1345,14 @@
     "definition_en": "",
     "first_taught_week": 12,
     "example": "The cows are relaxing under big trees in the warm afternoon sun."
+  },
+  {
+    "word": "are super fun",
+    "ipa": "/are super fun/",
+    "meaning": "are super fun",
+    "example": "We learned are super fun.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "around",
@@ -1827,8 +1943,8 @@
   {
     "word": "back",
     "meaning": "quay lại, phía sau",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/bæk/",
+    "definition_en": "the part of your body from your neck to your waist",
     "example": "My back hurts from sitting.",
     "first_taught_week": 16
   },
@@ -1966,6 +2082,14 @@
     "definition_en": "",
     "first_taught_week": 28,
     "example": "This is an example: be a perfect day."
+  },
+  {
+    "word": "be found",
+    "meaning": "được phát hiện",
+    "pronounce": "/biː faʊnd/",
+    "definition_en": "to be discovered or located",
+    "first_taught_week": 36,
+    "example": "Many secrets are waiting to be found in the deep ocean."
   },
   {
     "word": "be so happy",
@@ -2111,6 +2235,17 @@
     "example": "The phrase 'beautiful piece' is commonly used in conversation."
   },
   {
+    "word": "beautiful things",
+    "phonetic": "/ˈbjuːtɪfl θɪŋz/",
+    "pronunciation": "/ˈbjuːtɪfl θɪŋz/",
+    "type": "phrase",
+    "definition_vi": "những cảnh đẹp",
+    "definition_en": "English collocation / phrase: beautiful things",
+    "meaning": "những cảnh đẹp",
+    "example": "We saw beautiful things under the sea.",
+    "level": "A1+"
+  },
+  {
     "word": "beautiful warm sunshine",
     "meaning": "ánh nắng mặt trời ấm áp đẹp đẽ",
     "pronounce": "",
@@ -2133,6 +2268,25 @@
     "definition_en": "",
     "example": "He became a famous singer.",
     "first_taught_week": 20
+  },
+  {
+    "word": "became a messenger",
+    "meaning": "trở thành sứ giả",
+    "pronounce": "/bɪˈkeɪm ə ˈmɛsɪnʤə/",
+    "definition_en": "became an official envoy carrying messages",
+    "first_taught_week": 36,
+    "example": "He became a messenger for the emperor."
+  },
+  {
+    "word": "became very",
+    "phonetic": "/bɪˈkeɪm ˈveri/",
+    "pronunciation": "/bɪˈkeɪm ˈveri/",
+    "type": "phrase",
+    "definition_vi": "trở nên rất",
+    "definition_en": "turned into something very notable",
+    "meaning": "trở nên rất",
+    "example": "He became very famous.",
+    "level": "A1+"
   },
   {
     "word": "because",
@@ -2270,6 +2424,17 @@
     "example": "The concert began suddenly without any warning or music introduction."
   },
   {
+    "word": "began to",
+    "phonetic": "/bɪˈɡæn tuː/",
+    "pronunciation": "/bɪˈɡæn tuː/",
+    "type": "phrase",
+    "definition_vi": "bắt đầu",
+    "definition_en": "started doing something",
+    "meaning": "bắt đầu",
+    "example": "Scientists began to explore the ocean.",
+    "level": "A1+"
+  },
+  {
     "word": "began to grow",
     "meaning": "bắt đầu mọc lên",
     "pronounce": "",
@@ -2278,12 +2443,34 @@
     "example": "The seeds began to grow after the rain."
   },
   {
+    "word": "began to plan",
+    "meaning": "bắt đầu lên kế hoạch",
+    "pronounce": "/bɪˈgæn tuː plæn/",
+    "definition_en": "English collocation / phrase: began to plan",
+    "first_taught_week": 36,
+    "example": "They began to plan their next expedition.",
+    "definition_vi": "bắt đầu lên kế hoạch",
+    "phonetic": "/bɪˈɡæn tuː plæn/",
+    "pronunciation": "/bɪˈɡæn tuː plæn/"
+  },
+  {
     "word": "begin",
     "meaning": "bắt đầu",
     "pronounce": "",
     "definition_en": "",
     "example": "Let's begin the lesson.",
     "first_taught_week": 23
+  },
+  {
+    "word": "begin their",
+    "phonetic": "/bɪˈɡɪn ðeər/",
+    "pronunciation": "/bɪˈɡɪn ðeər/",
+    "type": "phrase",
+    "definition_vi": "bắt đầu hành trình của họ",
+    "definition_en": "start their own journey",
+    "meaning": "bắt đầu hành trình của họ",
+    "example": "Adventurers begin their journey.",
+    "level": "A1+"
   },
   {
     "word": "begin to grow",
@@ -2393,6 +2580,17 @@
     "definition_en": "",
     "example": "You are the best!",
     "first_taught_week": 6
+  },
+  {
+    "word": "best adventure",
+    "phonetic": "/best ədˈventʃər/",
+    "pronunciation": "/best ədˈventʃər/",
+    "type": "phrase",
+    "definition_vi": "cuộc phiêu lưu tuyệt vời nhất",
+    "definition_en": "English collocation / phrase: best adventure",
+    "meaning": "cuộc phiêu lưu tuyệt vời nhất",
+    "example": "It was the best adventure ever.",
+    "level": "A1+"
   },
   {
     "word": "best day ever",
@@ -2816,6 +3014,14 @@
     "example": "The phrase 'blue sky' is commonly used in conversation."
   },
   {
+    "word": "bố",
+    "ipa": "/bố/",
+    "meaning": "cụm từ vựng: bố",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "board",
     "meaning": "bảng",
     "pronounce": "/bɔːrd/",
@@ -3203,6 +3409,14 @@
     "example": "The phrase 'bright pigment colors' is commonly used in conversation."
   },
   {
+    "word": "bright sunlight",
+    "ipa": "/braɪt ˈsʌnlaɪt/",
+    "meaning": "ánh nắng sáng",
+    "example": "The bright sunlight warms the field.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "bright warm sunshine",
     "meaning": "ánh nắng ấm đẹp",
     "pronounce": "",
@@ -3510,6 +3724,14 @@
     "definition_en": "a structure with walls and a roof",
     "first_taught_week": 9,
     "example": "They are building now."
+  },
+  {
+    "word": "building strong character",
+    "ipa": "/building strong character/",
+    "meaning": "building strong character",
+    "example": "We learned building strong character.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "buildings",
@@ -3832,12 +4054,42 @@
     "first_taught_week": 22
   },
   {
+    "word": "cảm thấy rất lạnh và rất đói",
+    "ipa": "/cảm thấy rất lạnh và rất đói/",
+    "meaning": "cụm từ vựng: cảm thấy rất lạnh và rất đói",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "came",
     "meaning": "đã đến",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/keɪm/",
+    "definition_en": "past tense of come",
     "example": "They came to visit us.",
     "first_taught_week": 29
+  },
+  {
+    "word": "came back",
+    "meaning": "quay trở lại",
+    "pronounce": "/keɪm bæk/",
+    "definition_en": "English collocation / phrase: came back",
+    "first_taught_week": 36,
+    "example": "He came back home after school.",
+    "definition_vi": "quay trở lại",
+    "phonetic": "/keɪm bæk/",
+    "pronunciation": "/keɪm bæk/"
+  },
+  {
+    "word": "came from",
+    "meaning": "đến từ",
+    "pronounce": "/keɪm frɒm/",
+    "definition_en": "English collocation / phrase: came from",
+    "first_taught_week": 36,
+    "example": "These artifacts came from old ships.",
+    "definition_vi": "đến từ",
+    "phonetic": "/keɪm frəm/",
+    "pronunciation": "/keɪm frəm/"
   },
   {
     "word": "came out",
@@ -3864,6 +4116,38 @@
     "example": "A kind man came to help the lost puppy sitting alone on the street."
   },
   {
+    "word": "came to help",
+    "ipa": "/came to help/",
+    "meaning": "came to help",
+    "example": "We practiced came to help today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to help them",
+    "ipa": "/came to help them/",
+    "meaning": "came to help them",
+    "example": "We practiced came to help them today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to live together",
+    "ipa": "/came to live together/",
+    "meaning": "came to live together",
+    "example": "We practiced came to live together today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "came to school",
+    "ipa": "/came to school/",
+    "meaning": "came to school",
+    "example": "We practiced came to school today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "came to swim",
     "meaning": "bơi đến",
     "pronounce": "",
@@ -3878,6 +4162,14 @@
     "definition_en": "went to where the ant lives",
     "first_taught_week": 34,
     "example": "He came to the ant's house and asked for food."
+  },
+  {
+    "word": "came to the ant\\",
+    "ipa": "/came to the ant\\",
+    "meaning": "đến nhà con kiến",
+    "example": "He came to the ant\\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "camera",
@@ -4274,10 +4566,18 @@
     "example": "The player is catching the ball with his foot."
   },
   {
+    "word": "caught the baton",
+    "ipa": "/kɔːt ðə bəˈtɒn/",
+    "meaning": "bắt lấy gậy tiếp sức",
+    "example": "Max caught the baton.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "cave",
     "meaning": "hang động",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/keɪv/",
+    "definition_en": "a large natural hole in rock or under the ground",
     "example": "Bats live in dark caves.",
     "first_taught_week": 23
   },
@@ -4376,7 +4676,7 @@
     "word": "champion",
     "meaning": "nhà vô địch",
     "pronounce": "",
-    "definition_en": "",
+    "definition_en": "a top winner in a sport",
     "example": "She is the swimming champion.",
     "first_taught_week": 25
   },
@@ -4400,12 +4700,31 @@
     "pronunciation": "/change a student's life/"
   },
   {
+    "word": "change a student\\",
+    "ipa": "/change a student\\",
+    "meaning": "thay đổi cuộc đời của một học sinh",
+    "example": "The students practiced using \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "changed",
     "meaning": "thay đổi",
     "pronounce": "",
     "definition_en": "",
     "example": "We changed together last week.",
     "first_taught_week": 19
+  },
+  {
+    "word": "changed the world",
+    "phonetic": "/tʃeɪndʒd ðə wɜːrld/",
+    "pronunciation": "/tʃeɪndʒd ðə wɜːrld/",
+    "type": "phrase",
+    "definition_vi": "thay đổi thế giới",
+    "definition_en": "made a profound impact on earth",
+    "meaning": "thay đổi thế giới",
+    "example": "Their discoveries changed the world.",
+    "level": "A1+"
   },
   {
     "word": "changes",
@@ -4529,6 +4848,14 @@
     "definition_en": "to shout to show you are happy",
     "first_taught_week": 16,
     "example": "Let's cheer for our team!"
+  },
+  {
+    "word": "cheer and smile",
+    "ipa": "/cheer and smile/",
+    "meaning": "cheer and smile",
+    "example": "We learned cheer and smile.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "cheered",
@@ -4682,6 +5009,14 @@
     "first_taught_week": 29
   },
   {
+    "word": "chia sẻ thức ăn cùng nhau",
+    "ipa": "/chia sẻ thức ăn cùng nhau/",
+    "meaning": "cụm từ vựng: chia sẻ thức ăn cùng nhau",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "chicken",
     "meaning": "con gà",
     "pronounce": "/ˈtʃɪk.ɪn/",
@@ -4720,6 +5055,14 @@
     "definition_en": "",
     "example": "Chimpanzees are very intelligent.",
     "first_taught_week": 21
+  },
+  {
+    "word": "cho châu chấu một ít thức ăn",
+    "ipa": "/cho châu chấu một ít thức ăn/",
+    "meaning": "cụm từ vựng: cho châu chấu một ít thức ăn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "choice",
@@ -4806,6 +5149,14 @@
     "definition_en": "",
     "first_taught_week": 32,
     "example": "She looked at all the apples and chose the best one for her apple pie."
+  },
+  {
+    "word": "chuẩn bị cho tương lai",
+    "ipa": "/chuẩn bị cho tương lai/",
+    "meaning": "cụm từ vựng: chuẩn bị cho tương lai",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "circle",
@@ -5501,6 +5852,14 @@
     "first_taught_week": 20
   },
   {
+    "word": "compass",
+    "meaning": "la bàn",
+    "pronounce": "/ˈkʌmpəs/",
+    "definition_en": "a tool that shows direction using magnetic north",
+    "first_taught_week": 36,
+    "example": "We used a compass to find our way."
+  },
+  {
     "word": "complete",
     "meaning": "hoàn thành, đầy đủ",
     "pronounce": "",
@@ -5788,6 +6147,25 @@
     "example": "He copies the sentence into his notebook."
   },
   {
+    "word": "coral reef",
+    "meaning": "rạn san hô",
+    "pronounce": "/ˈkɔːrəl riːf/",
+    "definition_en": "a ridge of rock in the sea formed by coral",
+    "first_taught_week": 36,
+    "example": "We saw colorful fish near the coral reef."
+  },
+  {
+    "word": "coral reefs",
+    "phonetic": "/ˈkɒrəl riːfs/",
+    "pronunciation": "/ˈkɒrəl riːfs/",
+    "type": "phrase",
+    "definition_vi": "rạn san hô",
+    "definition_en": "English collocation / phrase: coral reefs",
+    "meaning": "rạn san hô",
+    "example": "Scuba divers explored the colorful coral reefs.",
+    "level": "A1+"
+  },
+  {
     "word": "corners",
     "meaning": "góc",
     "pronounce": "",
@@ -5920,6 +6298,14 @@
     "example": "There are green fields in the countryside."
   },
   {
+    "word": "countryside is peaceful",
+    "meaning": "đồng quê yên bình",
+    "pronounce": "",
+    "definition_en": "",
+    "first_taught_week": 10,
+    "example": "The countryside is peaceful with green fields, singing birds and blue skies."
+  },
+  {
     "word": "counts",
     "meaning": "đếm",
     "pronounce": "",
@@ -6005,6 +6391,14 @@
     "definition_en": "",
     "example": "This involves crash in some way.",
     "first_taught_week": 25
+  },
+  {
+    "word": "crashed inside",
+    "meaning": "đâm sầm vào bên trong",
+    "pronounce": "/kræʃt ɪnˈsaɪd/",
+    "definition_en": "collided violently inside a space",
+    "first_taught_week": 36,
+    "example": "Ancient ships crashed inside the cave long ago."
   },
   {
     "word": "crayon",
@@ -6204,10 +6598,26 @@
     "first_taught_week": 17
   },
   {
+    "word": "cứ cười",
+    "ipa": "/cứ cười/",
+    "meaning": "cụm từ vựng: cứ cười",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "cứ hát",
+    "ipa": "/cứ hát/",
+    "meaning": "cụm từ vựng: cứ hát",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "culture",
     "meaning": "văn hóa",
     "pronounce": "",
-    "definition_en": "",
+    "definition_en": "ideas and customs of a people",
     "example": "This involves culture in some way.",
     "first_taught_week": 12
   },
@@ -6609,6 +7019,14 @@
     "first_taught_week": 25
   },
   {
+    "word": "declared a sacred truce",
+    "ipa": "/declared a sacred truce/",
+    "meaning": "declared a sacred truce",
+    "example": "We learned declared a sacred truce.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "delay",
     "meaning": "sự chậm trễ / hoãn",
     "pronounce": "/dɪˈleɪ/",
@@ -6654,6 +7072,14 @@
     "definition_en": "to show how something works or how to do it",
     "example": "We demonstrate whenever we can.",
     "first_taught_week": 20
+  },
+  {
+    "word": "đến nhà con kiến",
+    "ipa": "/đến nhà con kiến/",
+    "meaning": "cụm từ vựng: đến nhà con kiến",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "dentist",
@@ -6855,6 +7281,14 @@
     "definition_en": "",
     "example": "We developed together last week.",
     "first_taught_week": 19
+  },
+  {
+    "word": "đi ra đồng",
+    "ipa": "/đi ra đồng/",
+    "meaning": "cụm từ vựng: đi ra đồng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "diagnoses",
@@ -7066,6 +7500,17 @@
     "first_taught_week": 1
   },
   {
+    "word": "discover new",
+    "phonetic": "/dɪˈskʌvər njuː/",
+    "pronunciation": "/dɪˈskʌvər njuː/",
+    "type": "phrase",
+    "definition_vi": "khám phá điều mới",
+    "definition_en": "find new lands or facts",
+    "meaning": "khám phá điều mới",
+    "example": "Scientists discover new sea species.",
+    "level": "A1+"
+  },
+  {
     "word": "discovered",
     "meaning": "khám phá",
     "pronounce": "",
@@ -7082,6 +7527,14 @@
     "first_taught_week": 1
   },
   {
+    "word": "discovery",
+    "meaning": "khám phá; phát hiện",
+    "pronounce": "/dɪˈskʌvəri/",
+    "definition_en": "finding something for the first time",
+    "first_taught_week": 36,
+    "example": "The discovery of the cave was exciting."
+  },
+  {
     "word": "disease",
     "meaning": "chưa có nghĩa",
     "pronounce": "",
@@ -7095,6 +7548,17 @@
     "definition_en": "",
     "example": "We measure distances in kilometers.",
     "first_taught_week": 12
+  },
+  {
+    "word": "dive down",
+    "phonetic": "/daɪv daʊn/",
+    "pronunciation": "/daɪv daʊn/",
+    "type": "phrase",
+    "definition_vi": "lặn sâu xuống",
+    "definition_en": "plunge underwater",
+    "meaning": "lặn sâu xuống",
+    "example": "Divers dive down deep.",
+    "level": "A1+"
   },
   {
     "word": "dna",
@@ -7140,6 +7604,14 @@
     "example": "Plants do photosynthesis using sunlight to make their own food inside the leaves."
   },
   {
+    "word": "do their best",
+    "ipa": "/do their best/",
+    "meaning": "do their best",
+    "example": "We learned do their best.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "doctor",
     "meaning": "bác sĩ",
     "pronounce": "/ˈdɒktə/",
@@ -7177,6 +7649,17 @@
     "definition_en": "",
     "example": "I have a pet dog.",
     "first_taught_week": 4
+  },
+  {
+    "word": "đội",
+    "phonetic": "/đội/",
+    "pronunciation": "/đội/",
+    "type": "word",
+    "definition_vi": "cụm từ vựng: đội",
+    "definition_en": "Collocation: đội",
+    "meaning": "cụm từ vựng: đội",
+    "example": "The students learned 'đội' in their English lesson.",
+    "level": "A1+"
   },
   {
     "word": "doing",
@@ -7256,6 +7739,25 @@
     "definition_en": "",
     "example": "This involves doraemon in some way.",
     "first_taught_week": 26
+  },
+  {
+    "word": "dove down",
+    "phonetic": "/dəʊv daʊn/",
+    "pronunciation": "/dəʊv daʊn/",
+    "type": "phrase",
+    "definition_vi": "lặn xuống",
+    "definition_en": "English collocation / phrase: dove down",
+    "meaning": "lặn xuống",
+    "example": "The submarine dove down into the ocean.",
+    "level": "A1+"
+  },
+  {
+    "word": "dove down into",
+    "meaning": "lặn xuống",
+    "pronounce": "/dʌv daʊn ˈɪntuː/",
+    "definition_en": "plunged deep under water",
+    "first_taught_week": 36,
+    "example": "We dove down into the deep ocean."
   },
   {
     "word": "down",
@@ -7435,6 +7937,25 @@
     "example": "My sister draws pictures every single day."
   },
   {
+    "word": "dream of",
+    "phonetic": "/driːm əv/",
+    "pronunciation": "/driːm əv/",
+    "type": "phrase",
+    "definition_vi": "mơ ước về",
+    "definition_en": "English collocation / phrase: dream of",
+    "meaning": "mơ ước về",
+    "example": "Children dream of going on adventures.",
+    "level": "A1+"
+  },
+  {
+    "word": "dream of exploring",
+    "meaning": "mơ ước được đi khám phá",
+    "pronounce": "/driːm ɒv ɪksˈplɔːrɪŋ/",
+    "definition_en": "desire to travel and discover new places",
+    "first_taught_week": 36,
+    "example": "Children read his book and dream of exploring the world."
+  },
+  {
     "word": "dress",
     "meaning": "mặc quần áo, váy",
     "pronounce": "",
@@ -7574,6 +8095,14 @@
     "first_taught_week": 17
   },
   {
+    "word": "dự trữ thức ăn",
+    "ipa": "/dự trữ thức ăn/",
+    "meaning": "cụm từ vựng: dự trữ thức ăn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "ducks",
     "meaning": "vịt",
     "pronounce": "",
@@ -7588,6 +8117,14 @@
     "definition_en": "",
     "first_taught_week": 0,
     "example": "We dug in the sand for many days."
+  },
+  {
+    "word": "Dưới ánh nắng mùa hè ấm áp",
+    "ipa": "/dưới ánh nắng mùa hè ấm áp/",
+    "meaning": "cụm từ vựng: dưới ánh nắng mùa hè ấm áp",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "during",
@@ -8073,6 +8610,14 @@
     "first_taught_week": 11
   },
   {
+    "word": "enjoy outdoor sports",
+    "ipa": "/ɪnˈdʒɔɪ ˈaʊtdɔː spɔːts/",
+    "meaning": "tận hưởng thể thao ngoài trời",
+    "example": "Kids enjoy outdoor sports.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "enjoying",
     "meaning": "thích thú, tận hưởng",
     "pronounce": "",
@@ -8364,6 +8909,14 @@
     "first_taught_week": 7
   },
   {
+    "word": "everything was true",
+    "meaning": "mọi thứ đều là sự thật",
+    "pronounce": "/ˈɛvrɪθɪŋ wɒz truː/",
+    "definition_en": "all statements were accurate",
+    "first_taught_week": 36,
+    "example": "They realized that everything was true."
+  },
+  {
     "word": "everywhere",
     "meaning": "khắp nơi",
     "pronounce": "",
@@ -8534,6 +9087,25 @@
     "definition_en": "to look around and find things",
     "first_taught_week": 5,
     "example": "Let's explore together."
+  },
+  {
+    "word": "explorer",
+    "meaning": "nhà thám hiểm",
+    "pronounce": "/ɪkˈsplɔːrər/",
+    "definition_en": "a person who travels to unknown places",
+    "first_taught_week": 36,
+    "example": "Marco Polo was a famous explorer."
+  },
+  {
+    "word": "explorers",
+    "phonetic": "/ɪkˈsplɔːrərz/",
+    "pronunciation": "/ɪkˈsplɔːrərz/",
+    "type": "phrase",
+    "definition_vi": "các nhà thám hiểm",
+    "definition_en": "English collocation / phrase: explorers",
+    "meaning": "các nhà thám hiểm",
+    "example": "Brave explorers discovered new continents.",
+    "level": "A1+"
   },
   {
     "word": "exploring",
@@ -8838,6 +9410,25 @@
     "example": "The famous author visited our school and told us about her newest book."
   },
   {
+    "word": "famous book",
+    "meaning": "cuốn sách nổi tiếng",
+    "pronounce": "/ˈfeɪməs bʊk/",
+    "definition_en": "English collocation / phrase: famous book",
+    "first_taught_week": 36,
+    "example": "He wrote a famous book about his travels.",
+    "definition_vi": "cuốn sách nổi tiếng",
+    "phonetic": "/ˈfeɪməs bʊk/",
+    "pronunciation": "/ˈfeɪməs bʊk/"
+  },
+  {
+    "word": "famous explorers",
+    "meaning": "những nhà tham hiểm nổi tiếng",
+    "pronounce": "/ˈfeɪməs ɪksˈplɔːrəz/",
+    "definition_en": "renowned discoverers in history",
+    "first_taught_week": 36,
+    "example": "He became one of history most famous explorers."
+  },
+  {
     "word": "famous scientists",
     "meaning": "nổi tiếng các nhà khoa học",
     "pronounce": "",
@@ -9062,6 +9653,14 @@
     "definition_en": "",
     "first_taught_week": 4,
     "example": "When I am reading a good book, I feel calm and feel happy."
+  },
+  {
+    "word": "feel cheerful",
+    "meaning": "cảm thấy vui vẻ",
+    "pronounce": "",
+    "definition_en": "to feel happy and lively",
+    "first_taught_week": 24,
+    "example": "When you feel cheerful, it means you are happy and full of energy."
   },
   {
     "word": "feel confident",
@@ -9596,6 +10195,17 @@
     "example": "We find it!"
   },
   {
+    "word": "find new",
+    "phonetic": "/faɪnd njuː/",
+    "pronunciation": "/faɪnd njuː/",
+    "type": "phrase",
+    "definition_vi": "tìm kiếm điều mới",
+    "definition_en": "discover new objects or places",
+    "meaning": "tìm kiếm điều mới",
+    "example": "Scientists find new sea life.",
+    "level": "A1+"
+  },
+  {
     "word": "finds",
     "meaning": "tìm",
     "pronounce": "",
@@ -9650,6 +10260,14 @@
     "definition_en": "",
     "first_taught_week": 28,
     "example": "The runner reached the finish line just as the sun was setting."
+  },
+  {
+    "word": "finish the race",
+    "ipa": "/finish the race/",
+    "meaning": "finish the race",
+    "example": "We learned finish the race.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "finished",
@@ -9884,6 +10502,14 @@
     "definition_en": "",
     "first_taught_week": 29,
     "example": "The bird flew to the top of the tall tree and sang a beautiful song."
+  },
+  {
+    "word": "flew to a tiny green island",
+    "ipa": "/flew to a tiny green island/",
+    "meaning": "flew to a tiny green island",
+    "example": "We practiced flew to a tiny green island today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "flew up",
@@ -10448,10 +11074,48 @@
   {
     "word": "found",
     "meaning": "đã tìm thấy",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/faʊnd/",
+    "definition_en": "past tense of find",
     "example": "This involves found in some way.",
     "first_taught_week": 6
+  },
+  {
+    "word": "found an",
+    "phonetic": "/faʊnd ən/",
+    "pronunciation": "/faʊnd ən/",
+    "type": "phrase",
+    "definition_vi": "tìm thấy một",
+    "definition_en": "discovered a specific object",
+    "meaning": "tìm thấy một",
+    "example": "We found an ancient compass.",
+    "level": "A1+"
+  },
+  {
+    "word": "found his writings",
+    "meaning": "tìm thấy những ghi chép của ông",
+    "pronounce": "/faʊnd hɪz ˈraɪtɪŋz/",
+    "definition_en": "discovered documented manuscripts",
+    "first_taught_week": 36,
+    "example": "Scholars later found his writings."
+  },
+  {
+    "word": "found new",
+    "phonetic": "/faʊnd njuː/",
+    "pronunciation": "/faʊnd njuː/",
+    "type": "phrase",
+    "definition_vi": "tìm thấy miền đất mới",
+    "definition_en": "discovered new lands or facts",
+    "meaning": "tìm thấy miền đất mới",
+    "example": "Explorers found new places.",
+    "level": "A1+"
+  },
+  {
+    "word": "found something unexpected",
+    "meaning": "tìm thấy điều bất ngờ",
+    "pronounce": "/faʊnd ˈsʌmθɪŋ ˌʌnɪkˈspɛktɪd/",
+    "definition_en": "discovered a surprising object or place",
+    "first_taught_week": 36,
+    "example": "We found something unexpected — an underwater cave!"
   },
   {
     "word": "fountain",
@@ -10797,6 +11461,14 @@
     "example": "This is an example: fun place."
   },
   {
+    "word": "fun places",
+    "meaning": "những nơi vui vẻ",
+    "pronounce": "",
+    "definition_en": "enjoyable locations",
+    "first_taught_week": 11,
+    "example": "Children like to go to fun places like the park and the playground."
+  },
+  {
     "word": "fun weekend",
     "meaning": "cuối tuần vui vẻ",
     "pronounce": "",
@@ -10854,8 +11526,8 @@
   {
     "word": "future",
     "meaning": "tương lai",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/ˈfjuːtʃər/",
+    "definition_en": "the time that comes after now",
     "example": "This involves future in some way.",
     "first_taught_week": 20
   },
@@ -10948,12 +11620,39 @@
     "example": "Grandma gave me a lovely book for my birthday."
   },
   {
+    "word": "gave all our findings",
+    "meaning": "bàn giao toàn bộ phát hiện",
+    "pronounce": "/geɪv ɔːl ɑː ˈfaɪndɪŋz/",
+    "definition_en": "donated discovered items to an authority",
+    "first_taught_week": 36,
+    "example": "We gave all our findings to the museum."
+  },
+  {
+    "word": "gave an important job",
+    "meaning": "giao cho một công việc quan trọng",
+    "pronounce": "/geɪv ən ɪmˈpɔːtənt ʤɒb/",
+    "definition_en": "assigned a significant duty",
+    "first_taught_week": 36,
+    "example": "The ruler gave an important job to Marco."
+  },
+  {
     "word": "gave her",
     "meaning": "trao cho cô ấy",
     "pronounce": "",
     "definition_en": "",
     "first_taught_week": 29,
     "example": "My aunt gave her a beautiful flower from her garden."
+  },
+  {
+    "word": "gave him",
+    "phonetic": "/ɡeɪv hɪm/",
+    "pronunciation": "/ɡeɪv hɪm/",
+    "type": "phrase",
+    "definition_vi": "giao cho ông ấy",
+    "definition_en": "provided him with a task or gift",
+    "meaning": "giao cho ông ấy",
+    "example": "The king gave him an important job.",
+    "level": "A1+"
   },
   {
     "word": "gave him a pass",
@@ -10970,6 +11669,17 @@
     "definition_en": "",
     "first_taught_week": 29,
     "example": "She gave it to her best friend as a birthday present last week."
+  },
+  {
+    "word": "gave our",
+    "phonetic": "/ɡeɪv aʊər/",
+    "pronunciation": "/ɡeɪv aʊər/",
+    "type": "phrase",
+    "definition_vi": "trao tặng của chúng tôi",
+    "definition_en": "handed over our belongings",
+    "meaning": "trao tặng của chúng tôi",
+    "example": "We gave our findings to the museum.",
+    "level": "A1+"
   },
   {
     "word": "gave the grasshopper some food",
@@ -11184,6 +11894,14 @@
     "example": "The phrase 'getting warmer' is commonly used in conversation."
   },
   {
+    "word": "Gia đình",
+    "ipa": "/gia đình/",
+    "meaning": "cụm từ vựng: gia đình",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "giant",
     "meaning": "khổng lồ",
     "pronounce": "",
@@ -11208,6 +11926,14 @@
     "first_taught_week": 15
   },
   {
+    "word": "giúp",
+    "ipa": "/giúp/",
+    "meaning": "cụm từ vựng: giúp",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "give",
     "meaning": "cho",
     "pronounce": "/ɡɪv/",
@@ -11225,6 +11951,17 @@
     "definition_vi": "trao it color",
     "phonetic": "/give it color/",
     "pronunciation": "/give it color/"
+  },
+  {
+    "word": "give us",
+    "phonetic": "/ɡɪv ʌs/",
+    "pronunciation": "/ɡɪv ʌs/",
+    "type": "phrase",
+    "definition_vi": "mang lại cho chúng ta",
+    "definition_en": "provide us with insights",
+    "meaning": "mang lại cho chúng ta",
+    "example": "Discoveries give us knowledge.",
+    "level": "A1+"
   },
   {
     "word": "gives",
@@ -11315,6 +12052,17 @@
     "definition_en": "To move from one place to another",
     "example": "I go to school.",
     "first_taught_week": 13
+  },
+  {
+    "word": "go down",
+    "phonetic": "/ɡoʊ daʊn/",
+    "pronunciation": "/ɡoʊ daʊn/",
+    "type": "phrase",
+    "definition_vi": "đi xuống sâu",
+    "definition_en": "descend deep underwater",
+    "meaning": "đi xuống sâu",
+    "example": "Submarines go down deep.",
+    "level": "A1+"
   },
   {
     "word": "go home",
@@ -11460,6 +12208,14 @@
     "definition_en": "",
     "example": "This involves gold in some way.",
     "first_taught_week": 6
+  },
+  {
+    "word": "gold compass",
+    "meaning": "la bàn bằng vàng",
+    "pronounce": "/goʊld ˈkʌmpəs/",
+    "definition_en": "a direction tool made of gold",
+    "first_taught_week": 36,
+    "example": "He found a precious 16th-century gold compass."
   },
   {
     "word": "gone",
@@ -11644,6 +12400,14 @@
     "example": "The phrase 'got into' is commonly used in conversation."
   },
   {
+    "word": "got lost at sea",
+    "meaning": "bị lạc ngoài biển",
+    "pronounce": "/gɒt lɒst æt siː/",
+    "definition_en": "lost orientation while sailing on the ocean",
+    "first_taught_week": 36,
+    "example": "The explorer got lost at sea centuries ago."
+  },
+  {
     "word": "got on",
     "meaning": "lên (phương tiện)",
     "pronounce": "",
@@ -11666,6 +12430,17 @@
     "definition_en": "Multi-word phrase: got tired",
     "first_taught_week": 1,
     "example": "The phrase 'got tired' is commonly used in conversation."
+  },
+  {
+    "word": "government official",
+    "meaning": "quan chức chính phủ",
+    "pronounce": "/ˈgʌvnmənt əˈfɪʃəl/",
+    "definition_en": "English collocation / phrase: government official",
+    "first_taught_week": 36,
+    "example": "He worked as a government official.",
+    "definition_vi": "quan chức chính phủ",
+    "phonetic": "/ˈɡʌvənmənt əˈfɪʃl/",
+    "pronunciation": "/ˈɡʌvənmənt əˈfɪʃl/"
   },
   {
     "word": "grabbed",
@@ -12260,8 +13035,8 @@
   {
     "word": "hand",
     "meaning": "bàn tay",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/hænd/",
+    "definition_en": "the part at the end of your arm used for holding things",
     "example": "Hold my hand when we cross the street.",
     "first_taught_week": 15
   },
@@ -12512,6 +13287,14 @@
     "example": "Wear a hat in the sun."
   },
   {
+    "word": "hát ríu rít",
+    "ipa": "/hát ríu rít/",
+    "meaning": "cụm từ vựng: hát ríu rít",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "have",
     "meaning": "có (dùng với I/you/we/they)",
     "pronounce": "/hæv/",
@@ -12646,8 +13429,8 @@
   {
     "word": "head",
     "meaning": "đầu",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/hed/",
+    "definition_en": "the top part of your body with your brain, eyes, and mouth",
     "example": "I hit my head on the door.",
     "first_taught_week": 3
   },
@@ -12927,6 +13710,14 @@
     "pronunciation": "/help us/"
   },
   {
+    "word": "help us feel happy",
+    "ipa": "/help ʌs fiːl ˈhæpi/",
+    "meaning": "giúp chúng ta cảm thấy vui vẻ",
+    "example": "Fresh air helps us feel happy.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "help your body grow",
     "meaning": "giúp cơ thể bạn phát triển",
     "pronounce": "",
@@ -13115,6 +13906,14 @@
     "definition_en": "Informal greeting",
     "first_taught_week": 1,
     "example": "Hi, nice to see you!"
+  },
+  {
+    "word": "hid in",
+    "meaning": "ẩn nấp trong",
+    "pronounce": "/hɪd ɪn/",
+    "definition_en": "concealed themselves inside a place",
+    "first_taught_week": 36,
+    "example": "Tiny crabs hid in the rocks between the corals."
   },
   {
     "word": "hidden",
@@ -13351,6 +14150,14 @@
     "definition_en": "",
     "example": "My hobbies are reading and swimming.",
     "first_taught_week": 12
+  },
+  {
+    "word": "học được một bài học quan trọng",
+    "ipa": "/học được một bài học quan trọng/",
+    "meaning": "cụm từ vựng: học được một bài học quan trọng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "Hoi An",
@@ -13637,6 +14444,14 @@
     "example": "This is an example: hundreds of years."
   },
   {
+    "word": "hundreds of years ago",
+    "meaning": "hàng trăm năm trước",
+    "pronounce": "/ˈhʌndrədz ɒv jɪəz əˈgoʊ/",
+    "definition_en": "a time long ago in history",
+    "first_taught_week": 36,
+    "example": "The vessel sank hundreds of years ago."
+  },
+  {
     "word": "hungry",
     "meaning": "doi",
     "pronounce": "/hVNgriE/",
@@ -13814,6 +14629,14 @@
     "definition_en": "Multi-word phrase: important lesson",
     "first_taught_week": 1,
     "example": "The phrase 'important lesson' is commonly used in conversation."
+  },
+  {
+    "word": "important social skills",
+    "ipa": "/ɪmˈpɔːtnt ˈsəʊʃl skɪlz/",
+    "meaning": "kỹ năng xã hội quan trọng",
+    "example": "Sports teach important social skills.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "important thing",
@@ -14029,6 +14852,38 @@
     "definition_vi": "in thứ tự",
     "phonetic": "/in order/",
     "pronunciation": "/in order/"
+  },
+  {
+    "word": "In Panel Four",
+    "ipa": "/in panel four/",
+    "meaning": "ở khung thứ tư",
+    "example": "We practiced In Panel Four today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "In Panel One",
+    "ipa": "/ɪn ˈpænl wʌn/",
+    "meaning": "ở khung thứ nhất",
+    "example": "In Panel One, Leo sketched the park.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "In Panel Three",
+    "ipa": "/ɪn ˈpænl θriː/",
+    "meaning": "ở khung thứ ba",
+    "example": "In Panel Three, Leo drew a street musician.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "In Panel Two",
+    "ipa": "/ɪn ˈpænl tuː/",
+    "meaning": "ở khung thứ hai",
+    "example": "In Panel Two, Leo drew Max playing with his ball.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "in real life",
@@ -14368,6 +15223,63 @@
     "first_taught_week": 3
   },
   {
+    "word": "inspire children everywhere",
+    "ipa": "/inspire children everywhere/",
+    "meaning": "inspire children everywhere",
+    "example": "We learned inspire children everywhere.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "inspired",
+    "meaning": "truyền cảm hứng",
+    "pronounce": "/ɪnˈspaɪərd/",
+    "definition_en": "made someone feel motivated or creative",
+    "first_taught_week": 36,
+    "example": "His book inspired many people to explore."
+  },
+  {
+    "word": "inspired many adventurers",
+    "meaning": "truyền cảm hứng cho nhiều nhà phiêu lưu",
+    "pronounce": "/ɪnˈspaɪəd ˈmɛni ədˈvɛnʧərəz/",
+    "definition_en": "motivated many people to go on journeys",
+    "first_taught_week": 36,
+    "example": "His courage inspired many adventurers."
+  },
+  {
+    "word": "inspired other",
+    "phonetic": "/ɪnˈspaɪərd ˈʌðər/",
+    "pronunciation": "/ɪnˈspaɪərd ˈʌðər/",
+    "type": "phrase",
+    "definition_vi": "truyền cảm hứng cho người khác",
+    "definition_en": "motivated other travelers",
+    "meaning": "truyền cảm hứng cho người khác",
+    "example": "His story inspired other explorers.",
+    "level": "A1+"
+  },
+  {
+    "word": "inspired people",
+    "phonetic": "/ɪnˈspaɪəd ˈpiːpl/",
+    "pronunciation": "/ɪnˈspaɪəd ˈpiːpl/",
+    "type": "phrase",
+    "definition_vi": "truyền cảm hứng cho mọi người",
+    "definition_en": "English collocation / phrase: inspired people",
+    "meaning": "truyền cảm hứng cho mọi người",
+    "example": "His stories inspired people for centuries.",
+    "level": "A1+"
+  },
+  {
+    "word": "inspired us",
+    "phonetic": "/ɪnˈspaɪərd ʌs/",
+    "pronunciation": "/ɪnˈspaɪərd ʌs/",
+    "type": "phrase",
+    "definition_vi": "truyền cảm hứng cho chúng tôi",
+    "definition_en": "motivated us to learn",
+    "meaning": "truyền cảm hứng cho chúng tôi",
+    "example": "Their courage inspired us.",
+    "level": "A1+"
+  },
+  {
     "word": "inspires",
     "meaning": "chưa có nghĩa",
     "pronounce": "",
@@ -14519,12 +15431,60 @@
     "example": "She is my friend."
   },
   {
+    "word": "is a great bridge",
+    "ipa": "/is a great bridge/",
+    "meaning": "is a great bridge",
+    "example": "We learned is a great bridge.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "is a normal part",
+    "ipa": "/is a normal part/",
+    "meaning": "is a normal part",
+    "example": "We learned is a normal part.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "is a powerful bridge",
+    "ipa": "/is a powerful bridge/",
+    "meaning": "is a powerful bridge",
+    "example": "We learned is a powerful bridge.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "is barking happily",
     "meaning": "đang sủa vui vẻ",
     "pronounce": "",
     "definition_en": "",
     "first_taught_week": 12,
     "example": "The little puppy is barking happily at its reflection in the puddle."
+  },
+  {
+    "word": "is even more important",
+    "ipa": "/is even more important/",
+    "meaning": "is even more important",
+    "example": "We learned is even more important.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "is great for our body",
+    "ipa": "/ɪz ɡreɪt fɔːr aʊə ˈbɒdi/",
+    "meaning": "thật tuyệt vời cho cơ thể",
+    "example": "Playing sports is great for our body.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "is known as the Home of Champions",
+    "ipa": "/is known as the home of champions/",
+    "meaning": "is known as the Home of Champions",
+    "example": "We learned is known as the Home of Champions.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "is reading peacefully",
@@ -15058,6 +16018,22 @@
     "example": "A tidy person always kept the house tidy and organised everything well."
   },
   {
+    "word": "không bao giờ làm việc",
+    "ipa": "/không bao giờ làm việc/",
+    "meaning": "cụm từ vựng: không bao giờ làm việc",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "không bao giờ lo lắng",
+    "ipa": "/không bao giờ lo lắng/",
+    "meaning": "cụm từ vựng: không bao giờ lo lắng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "kick",
     "meaning": "đá",
     "pronounce": "/kɪk/",
@@ -15217,6 +16193,17 @@
     "first_taught_week": 28
   },
   {
+    "word": "knew the",
+    "phonetic": "/njuː ðə/",
+    "pronunciation": "/njuː ðə/",
+    "type": "phrase",
+    "definition_vi": "biết rõ",
+    "definition_en": "understood or knew a place",
+    "meaning": "biết rõ",
+    "example": "The captain knew the deep waters well.",
+    "level": "A1+"
+  },
+  {
     "word": "knife",
     "meaning": "dao",
     "pronounce": "/naɪf/",
@@ -15318,6 +16305,46 @@
     "definition_en": "",
     "example": "Ducks swim on the lakes in the park.",
     "first_taught_week": 11
+  },
+  {
+    "word": "làm việc chăm chỉ cùng nhau",
+    "ipa": "/làm việc chăm chỉ cùng nhau/",
+    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
+    "ipa": "/làm việc chăm chỉ cùng nhau suốt phần còn lại của năm/",
+    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "làm việc cùng cô mùa hè tới",
+    "ipa": "/làm việc cùng cô mùa hè tới/",
+    "meaning": "cụm từ vựng: làm việc cùng cô mùa hè tới",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Làm việc cùng tôi vào mùa hè tới",
+    "ipa": "/làm việc cùng tôi vào mùa hè tới/",
+    "meaning": "cụm từ vựng: làm việc cùng tôi vào mùa hè tới",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "làm việc rất chăm chỉ cả mùa hè",
+    "ipa": "/làm việc rất chăm chỉ cả mùa hè/",
+    "meaning": "cụm từ vựng: làm việc rất chăm chỉ cả mùa hè",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "lamp",
@@ -15650,6 +16677,14 @@
     "example": "This is an example: learn about."
   },
   {
+    "word": "learn about different cultures",
+    "ipa": "/learn about different cultures/",
+    "meaning": "learn about different cultures",
+    "example": "We learned learn about different cultures.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "learn about the world",
     "meaning": "tìm hiểu về thế giới",
     "pronounce": "/lɜːrn əˈbaʊt ðə wɜːrld/",
@@ -15664,6 +16699,14 @@
     "definition_en": "to discover or study something you did not know before",
     "example": "These tools help scientists learn new things every day.",
     "first_taught_week": 1
+  },
+  {
+    "word": "learn to cooperate",
+    "ipa": "/lɜːn tuː kəʊˈɒpəreɪt/",
+    "meaning": "học cách hợp tác",
+    "example": "Players learn to cooperate.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "learn to read",
@@ -15770,10 +16813,29 @@
     "first_taught_week": 22
   },
   {
+    "word": "left his",
+    "phonetic": "/left hɪz/",
+    "pronunciation": "/left hɪz/",
+    "type": "phrase",
+    "definition_vi": "rời bỏ quê hương của ông",
+    "definition_en": "departed from his origin",
+    "meaning": "rời bỏ quê hương của ông",
+    "example": "He left his hometown to travel.",
+    "level": "A1+"
+  },
+  {
+    "word": "left Venice",
+    "meaning": "rời khỏi thành phố Venice",
+    "pronounce": "/lɛft ˈvɛnɪs/",
+    "definition_en": "departed from Venice",
+    "first_taught_week": 36,
+    "example": "He left Venice when he was only 17 years old."
+  },
+  {
     "word": "leg",
     "meaning": "chân",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/leg/",
+    "definition_en": "the body part below the knee used for walking",
     "example": "I hurt my leg running.",
     "first_taught_week": 16
   },
@@ -16067,6 +17129,14 @@
     "example": "The audience listen to me."
   },
   {
+    "word": "listen to our teammates",
+    "ipa": "/ˈlɪsn tuː aʊə ˈtiːmmeɪts/",
+    "meaning": "lắng nghe đồng đội",
+    "example": "We listen to our teammates.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "listened",
     "meaning": "đã lắng nghe",
     "pronounce": "/lIs@nd/",
@@ -16092,6 +17162,22 @@
     "definition_en": "",
     "first_taught_week": 31,
     "example": "Early in the morning, we sat quietly and listened to the birds sing."
+  },
+  {
+    "word": "listened to their calls",
+    "ipa": "/listened to their calls/",
+    "meaning": "listened to their calls",
+    "example": "We practiced listened to their calls today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "listened to tropical birds",
+    "ipa": "/listened to tropical birds/",
+    "meaning": "listened to tropical birds",
+    "example": "We practiced listened to tropical birds today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "listening",
@@ -16482,6 +17568,14 @@
     "example": "Look at that beautiful rainbow in the sky after the rain!"
   },
   {
+    "word": "look at this",
+    "ipa": "/look at this/",
+    "meaning": "look at this",
+    "example": "We practiced look at this today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "look at tiny insects",
     "meaning": "nhìn những con côn trùng nhỏ",
     "pronounce": "/lʊk æt ˈtaɪni ˈɪnsekts/",
@@ -16695,6 +17789,22 @@
     "example": "The students looked at the map and found where the treasure was hidden."
   },
   {
+    "word": "looked at an old map",
+    "ipa": "/looked at an old map/",
+    "meaning": "looked at an old map",
+    "example": "We practiced looked at an old map today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at animals",
+    "ipa": "/looked at animals/",
+    "meaning": "looked at animals",
+    "example": "We practiced looked at animals today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "looked at the blue sky",
     "meaning": "nhìn bầu trời xanh",
     "pronounce": "",
@@ -16703,12 +17813,60 @@
     "example": "The children lay on the grass and looked at the blue sky full of fluffy clouds."
   },
   {
+    "word": "looked at the bright fruit",
+    "ipa": "/looked at the bright fruit/",
+    "meaning": "looked at the bright fruit",
+    "example": "We practiced looked at the bright fruit today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the comic strip",
+    "ipa": "/lʊkt æt ðə ˈkɒmɪk strɪp/",
+    "meaning": "nhìn vào bộ truyện tranh",
+    "example": "Mia looked at the comic strip and smiled.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the old map",
+    "ipa": "/looked at the old map/",
+    "meaning": "looked at the old map",
+    "example": "We practiced looked at the old map today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the slow tortoise",
+    "ipa": "/looked at the slow tortoise/",
+    "meaning": "looked at the slow tortoise",
+    "example": "We practiced looked at the slow tortoise today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "looked at the stars",
     "meaning": "nhìn lên những vì sao",
     "pronounce": "",
     "definition_en": "",
     "first_taught_week": 21,
     "example": "On a clear night, we looked at the stars and counted twelve bright ones."
+  },
+  {
+    "word": "looked at the symmetry",
+    "ipa": "/looked at the symmetry/",
+    "meaning": "looked at the symmetry",
+    "example": "We practiced looked at the symmetry today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "looked at the tiny point of light",
+    "ipa": "/looked at the tiny point of light/",
+    "meaning": "looked at the tiny point of light",
+    "example": "We practiced looked at the tiny point of light today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "looked over",
@@ -17178,6 +18336,38 @@
     "first_taught_week": 13
   },
   {
+    "word": "luôn bận rộn",
+    "ipa": "/luôn bận rộn/",
+    "meaning": "cụm từ vựng: luôn bận rộn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "luôn chơi đùa",
+    "ipa": "/luôn chơi đùa/",
+    "meaning": "cụm từ vựng: luôn chơi đùa",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "luôn chơi trò chơi",
+    "ipa": "/luôn chơi trò chơi/",
+    "meaning": "cụm từ vựng: luôn chơi trò chơi",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "luôn làm việc chăm chỉ",
+    "ipa": "/luôn làm việc chăm chỉ/",
+    "meaning": "cụm từ vựng: luôn làm việc chăm chỉ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "luxembourg",
     "meaning": "Luxembourg",
     "pronounce": "",
@@ -17208,8 +18398,8 @@
   {
     "word": "made",
     "meaning": "đã làm",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/meɪd/",
+    "definition_en": "past tense of make",
     "example": "This involves made in some way.",
     "first_taught_week": 14
   },
@@ -17220,6 +18410,14 @@
     "definition_en": "",
     "first_taught_week": 9,
     "example": "For lunch, Tom made a jam sandwich with bread, butter and strawberry jam."
+  },
+  {
+    "word": "made an important discovery",
+    "meaning": "tạo ra một phát hiện quan trọng",
+    "pronounce": "/meɪd ən ɪmˈpɔːtənt dɪsˈkʌvəri/",
+    "definition_en": "found something very significant",
+    "first_taught_week": 36,
+    "example": "The explorers made an important discovery."
   },
   {
     "word": "made fresh",
@@ -17236,6 +18434,17 @@
     "definition_en": "created using a material or ingredient",
     "first_taught_week": 31,
     "example": "Paper is made from trees."
+  },
+  {
+    "word": "made great",
+    "phonetic": "/meɪd ɡreɪt/",
+    "pronunciation": "/meɪd ɡreɪt/",
+    "type": "phrase",
+    "definition_vi": "tạo ra những điều tuyệt vời",
+    "definition_en": "achieved great accomplishments",
+    "meaning": "tạo ra những điều tuyệt vời",
+    "example": "They made great discoveries.",
+    "level": "A1+"
   },
   {
     "word": "made his bed",
@@ -17270,6 +18479,25 @@
     "example": "The chair is made of wood."
   },
   {
+    "word": "made people dream",
+    "phonetic": "/meɪd ˈpiːpl driːm/",
+    "pronunciation": "/meɪd ˈpiːpl driːm/",
+    "type": "phrase",
+    "definition_vi": "làm mọi người mơ ước",
+    "definition_en": "inspired people to dream of adventure",
+    "meaning": "làm mọi người mơ ước",
+    "example": "Their stories made people dream.",
+    "level": "A1+"
+  },
+  {
+    "word": "made up stories",
+    "meaning": "bịa đặt ra các câu chuyện",
+    "pronounce": "/meɪd ʌp ˈstɔːriz/",
+    "definition_en": "invented fictitious tales",
+    "first_taught_week": 36,
+    "example": "Some thought he made up stories about Asia."
+  },
+  {
     "word": "magic",
     "meaning": "phép thuật, kỳ diệu",
     "pronounce": "/ˈmædʒɪk/",
@@ -17300,6 +18528,14 @@
     "definition_en": "",
     "first_taught_week": 29,
     "example": "The magic trip took us to a beautiful island surrounded by blue sea."
+  },
+  {
+    "word": "magnificent coral reefs",
+    "meaning": "những rặng san hô tuyệt đẹp",
+    "pronounce": "/mæɡˈnɪfɪsənt ˈkɒrəl riːfs/",
+    "definition_en": "spectacular underwater coral structures",
+    "first_taught_week": 36,
+    "example": "We saw magnificent coral reefs in the ocean."
   },
   {
     "word": "magnifying",
@@ -17517,6 +18753,14 @@
     "first_taught_week": 1
   },
   {
+    "word": "makes sports day",
+    "ipa": "/makes sports day/",
+    "meaning": "makes sports day",
+    "example": "We learned makes sports day.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "makes sure",
     "meaning": "đảm bảo",
     "pronounce": "",
@@ -17555,6 +18799,14 @@
     "definition_en": "",
     "example": "We managed together last week.",
     "first_taught_week": 28
+  },
+  {
+    "word": "mang những hạt nặng",
+    "ipa": "/mang những hạt nặng/",
+    "meaning": "cụm từ vựng: mang những hạt nặng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "manga",
@@ -17671,6 +18923,14 @@
     "first_taught_week": 20
   },
   {
+    "word": "marched across the stadium",
+    "ipa": "/marched across the stadium/",
+    "meaning": "marched across the stadium",
+    "example": "We learned marched across the stadium.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "marker",
     "meaning": "bút lông",
     "pronounce": "/ˈmɑrkər/",
@@ -17779,6 +19039,14 @@
     "definition_en": "First person singular object pronoun",
     "first_taught_week": 1,
     "example": "Please come with me now."
+  },
+  {
+    "word": "Mẹ",
+    "ipa": "/mẹ/",
+    "meaning": "cụm từ vựng: mẹ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "meal",
@@ -17906,6 +19174,14 @@
     "pronunciation": "/memory you make/"
   },
   {
+    "word": "merchant",
+    "meaning": "thương nhân",
+    "pronounce": "/ˈmɜːrtʃənt/",
+    "definition_en": "a person who buys and sells goods",
+    "first_taught_week": 36,
+    "example": "Merchants sold spices and silk on the road."
+  },
+  {
     "word": "message",
     "meaning": "tin nhắn",
     "pronounce": "",
@@ -17934,6 +19210,28 @@
     "definition_en": "",
     "first_taught_week": 14,
     "example": "At the fair, she met kind strangers who helped her find her lost puppy."
+  },
+  {
+    "word": "met many",
+    "phonetic": "/met ˈmeni/",
+    "pronunciation": "/met ˈmeni/",
+    "type": "phrase",
+    "definition_vi": "gặp nhiều người",
+    "definition_en": "encountered numerous people",
+    "meaning": "gặp nhiều người",
+    "example": "He met many merchants along the way.",
+    "level": "A1+"
+  },
+  {
+    "word": "met merchants",
+    "meaning": "gặp gỡ các thương gia",
+    "pronounce": "/mɛt ˈmɜːʧənts/",
+    "definition_en": "English collocation / phrase: met merchants",
+    "first_taught_week": 36,
+    "example": "He met merchants from many countries.",
+    "definition_vi": "gặp gỡ các thương gia",
+    "phonetic": "/met ˈmɜːtʃənts/",
+    "pronunciation": "/met ˈmɜːtʃənts/"
   },
   {
     "word": "metal",
@@ -18031,6 +19329,14 @@
     "definition_en": "",
     "example": "There are millions of stars in the sky.",
     "first_taught_week": 17
+  },
+  {
+    "word": "mỉm cười đồng ý",
+    "ipa": "/mỉm cười đồng ý/",
+    "meaning": "cụm từ vựng: mỉm cười đồng ý",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "mind",
@@ -18316,6 +19622,30 @@
     "first_taught_week": 30
   },
   {
+    "word": "một con châu chấu lười biếng",
+    "ipa": "/một con châu chấu lười biếng/",
+    "meaning": "cụm từ vựng: một con châu chấu lười biếng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "một con kiến chăm chỉ",
+    "ipa": "/một con kiến chăm chỉ/",
+    "meaning": "cụm từ vựng: một con kiến chăm chỉ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "một ngày lạnh vào mùa thu",
+    "ipa": "/một ngày lạnh vào mùa thu/",
+    "meaning": "cụm từ vựng: một ngày lạnh vào mùa thu",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "mother",
     "meaning": "Mẹ",
     "pronounce": "/ˈmʌðər/",
@@ -18421,6 +19751,14 @@
     "first_taught_week": 1
   },
   {
+    "word": "Mùa hè qua mùa hè",
+    "ipa": "/mùa hè qua mùa hè/",
+    "meaning": "cụm từ vựng: mùa hè qua mùa hè",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "much",
     "meaning": "nhiều",
     "pronounce": "",
@@ -18475,6 +19813,22 @@
     "definition_en": "",
     "example": "Exercise strengthens your muscles.",
     "first_taught_week": 16
+  },
+  {
+    "word": "museum",
+    "meaning": "bảo tàng",
+    "pronounce": "/mjuːˈziːəm/",
+    "definition_en": "a building where historical or scientific objects are displayed",
+    "first_taught_week": 36,
+    "example": "The museum has old ships and maps."
+  },
+  {
+    "word": "museum director",
+    "meaning": "giám đốc bảo tàng",
+    "pronounce": "/mjuːˈzɪəm dɪˈrɛktə/",
+    "definition_en": "the person in charge of a museum",
+    "first_taught_week": 36,
+    "example": "The museum director thanked us warmly."
   },
   {
     "word": "music",
@@ -19190,6 +20544,46 @@
     "example": "The clue says: 'Look next to the window.' We run to the window."
   },
   {
+    "word": "Ngày này qua ngày khác",
+    "ipa": "/ngày này qua ngày khác/",
+    "meaning": "cụm từ vựng: ngày này qua ngày khác",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhà",
+    "ipa": "/nhà/",
+    "meaning": "cụm từ vựng: nhà",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhặt hạt",
+    "ipa": "/nhặt hạt/",
+    "meaning": "cụm từ vựng: nhặt hạt",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhảy múa vui vẻ",
+    "ipa": "/nhảy múa vui vẻ/",
+    "meaning": "cụm từ vựng: nhảy múa vui vẻ",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "nhảy tung tăng",
+    "ipa": "/nhảy tung tăng/",
+    "meaning": "cụm từ vựng: nhảy tung tăng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "nice",
     "meaning": "đẹp, tốt",
     "pronounce": "",
@@ -19356,6 +20750,17 @@
     "definition_en": "",
     "example": "This involves not in some way.",
     "first_taught_week": 3
+  },
+  {
+    "word": "not just",
+    "phonetic": "/nɒt dʒʌst/",
+    "pronunciation": "/nɒt dʒʌst/",
+    "type": "phrase",
+    "definition_vi": "không chỉ là",
+    "definition_en": "more than simply",
+    "meaning": "không chỉ là",
+    "example": "Exploration is not just traveling.",
+    "level": "A1+"
   },
   {
     "word": "notebook",
@@ -19644,6 +21049,14 @@
     "example": "The phrase 'old market' is commonly used in conversation."
   },
   {
+    "word": "old objects",
+    "meaning": "những đồ vật cổ",
+    "pronounce": "/oʊld ˈɒbʤɛkts/",
+    "definition_en": "items from ancient times",
+    "first_taught_week": 36,
+    "example": "We saw old objects on the sandy floor."
+  },
+  {
     "word": "old photo",
     "meaning": "ảnh cũ",
     "pronounce": "",
@@ -19749,6 +21162,14 @@
     "definition_vi": "vào one's bed",
     "phonetic": "/on one's bed/",
     "pronunciation": "/on one's bed/"
+  },
+  {
+    "word": "on shore",
+    "meaning": "trên bờ biển",
+    "pronounce": "/ɒn ʃɔː/",
+    "definition_en": "on the land near the ocean",
+    "first_taught_week": 36,
+    "example": "They visited the museum on shore."
   },
   {
     "word": "On Sunday",
@@ -20761,6 +22182,22 @@
     "first_taught_week": 19
   },
   {
+    "word": "passed the baton",
+    "ipa": "/pɑːst ðə bəˈtɒn/",
+    "meaning": "truyền gậy tiếp sức",
+    "example": "He passed the baton.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "passed the Olympic torch",
+    "ipa": "/passed the olympic torch/",
+    "meaning": "passed the Olympic torch",
+    "example": "We learned passed the Olympic torch.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "passenger",
     "meaning": "hành khách",
     "pronounce": "/ˈpæsɪndʒə/",
@@ -20932,7 +22369,7 @@
     "word": "peacefully",
     "meaning": "yên bình",
     "pronounce": "",
-    "definition_en": "",
+    "definition_en": "in a calm manner without conflict",
     "example": "This involves peacefully in some way.",
     "first_taught_week": 15
   },
@@ -21481,7 +22918,7 @@
   {
     "word": "planet",
     "meaning": "hành tinh",
-    "pronounce": "",
+    "pronounce": "/ˈplænɪt/",
     "definition_en": "",
     "example": "This involves planet in some way.",
     "first_taught_week": 17
@@ -21652,6 +23089,14 @@
     "example": "I play at the park with my friends."
   },
   {
+    "word": "play fair",
+    "ipa": "/play fair/",
+    "meaning": "play fair",
+    "example": "We learned play fair.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "play games",
     "meaning": "chơi games",
     "pronounce": "",
@@ -21771,6 +23216,14 @@
     "definition_en": "doing fun games or sports",
     "first_taught_week": 4,
     "example": "The children are playing outside."
+  },
+  {
+    "word": "playing fair",
+    "ipa": "/playing fair/",
+    "meaning": "playing fair",
+    "example": "We learned playing fair.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "playing soccer",
@@ -22159,8 +23612,8 @@
   {
     "word": "prepare",
     "meaning": "chuẩn bị",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/prɪˈpeər/",
+    "definition_en": "to make something ready before you need it",
     "example": "This involves prepare in some way.",
     "first_taught_week": 17
   },
@@ -22930,6 +24383,14 @@
     "first_taught_week": 29
   },
   {
+    "word": "ran across the grass",
+    "ipa": "/ræn əˈkrɒs ðə ɡrɑːs/",
+    "meaning": "chạy qua bãi cỏ",
+    "example": "Maya ran across the grass.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "ran in the corridor",
     "meaning": "chạy trong hành lang",
     "pronounce": "",
@@ -22944,6 +24405,22 @@
     "definition_en": "",
     "first_taught_week": 28,
     "example": "The car stopped in the middle of the road because it ran out of petrol."
+  },
+  {
+    "word": "ran very fast",
+    "ipa": "/ræn ˈveri fɑːst/",
+    "meaning": "chạy rất nhanh",
+    "example": "Leo ran very fast.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "Rất lâu trước đây",
+    "ipa": "/rất lâu trước đây/",
+    "meaning": "cụm từ vựng: rất lâu trước đây",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "reach",
@@ -22994,12 +24471,34 @@
     "example": "Before bed, I love to read a story book with my dad or my mum."
   },
   {
+    "word": "read about",
+    "phonetic": "/riːd əˈbaʊt/",
+    "pronunciation": "/riːd əˈbaʊt/",
+    "type": "phrase",
+    "definition_vi": "đọc về",
+    "definition_en": "learned about a topic by reading",
+    "meaning": "đọc về",
+    "example": "Children read about Marco Polo.",
+    "level": "A1+"
+  },
+  {
     "word": "read books",
     "meaning": "đọc sách",
     "pronounce": "",
     "definition_en": "",
     "first_taught_week": 4,
     "example": "I read books before bed."
+  },
+  {
+    "word": "read his",
+    "phonetic": "/riːd hɪz/",
+    "pronunciation": "/riːd hɪz/",
+    "type": "phrase",
+    "definition_vi": "đọc sách của ông",
+    "definition_en": "read his written book",
+    "meaning": "đọc sách của ông",
+    "example": "People read his travel stories.",
+    "level": "A1+"
   },
   {
     "word": "reading",
@@ -23390,6 +24889,14 @@
     "example": "The reporter stood in front of the camera and spoke clearly."
   },
   {
+    "word": "represented their home nations",
+    "ipa": "/represented their home nations/",
+    "meaning": "represented their home nations",
+    "example": "We learned represented their home nations.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "rescue",
     "meaning": "chưa có nghĩa",
     "pronounce": "",
@@ -23743,6 +25250,33 @@
     "example": "This involves rode in some way."
   },
   {
+    "word": "rode across",
+    "meaning": "cưỡi ngựa băng qua",
+    "pronounce": "/roʊd əˈkrɒs/",
+    "definition_en": "traveled across land on animals or transport",
+    "first_taught_week": 36,
+    "example": "He rode across high mountains and deserts."
+  },
+  {
+    "word": "rode into",
+    "meaning": "đi vào trong (bằng tàu/xe)",
+    "pronounce": "/roʊd ˈɪntuː/",
+    "definition_en": "traveled into a dark or enclosed space",
+    "first_taught_week": 36,
+    "example": "We carefully rode into the dark cave."
+  },
+  {
+    "word": "rode the",
+    "phonetic": "/roʊd ðə/",
+    "pronunciation": "/roʊd ðə/",
+    "type": "phrase",
+    "definition_vi": "đi trên tàu/xe",
+    "definition_en": "traveled aboard a vessel",
+    "meaning": "đi trên tàu/xe",
+    "example": "We rode the submarine through the ocean.",
+    "level": "A1+"
+  },
+  {
     "word": "rolled",
     "meaning": "chưa có nghĩa",
     "pronounce": "",
@@ -23949,6 +25483,14 @@
     "example": "She run fast in the park with her friends after school."
   },
   {
+    "word": "run in the park",
+    "ipa": "/rʌn ɪn ðə pɑːk/",
+    "meaning": "chạy trong công viên",
+    "example": "We run in the park every morning.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "run in the school corridor",
     "meaning": "chạy in the school corridor",
     "pronounce": "",
@@ -23969,6 +25511,14 @@
     "definition_vi": "chạy long distances",
     "phonetic": "/run long distances/",
     "pronunciation": "/run long distances/"
+  },
+  {
+    "word": "run on red dirt paths",
+    "ipa": "/run on red dirt paths/",
+    "meaning": "run on red dirt paths",
+    "example": "We learned run on red dirt paths.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "run quickly",
@@ -24009,6 +25559,14 @@
     "definition_en": "",
     "first_taught_week": 15,
     "example": "A young boy is running after his dog near the trees."
+  },
+  {
+    "word": "running long distances to school",
+    "ipa": "/running long distances to school/",
+    "meaning": "running long distances to school",
+    "example": "We learned running long distances to school.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "running to the goal",
@@ -24128,6 +25686,17 @@
     "example": "Tom ran to his friend and said hello with a big hug."
   },
   {
+    "word": "said it",
+    "phonetic": "/sed ɪt/",
+    "pronunciation": "/sed ɪt/",
+    "type": "phrase",
+    "definition_vi": "nói rằng điều đó",
+    "definition_en": "stated a specific fact",
+    "meaning": "nói rằng điều đó",
+    "example": "Our guide said it was very old.",
+    "level": "A1+"
+  },
+  {
     "word": "said kindly",
     "meaning": "nói dịu dàng",
     "pronounce": "",
@@ -24158,6 +25727,17 @@
     "definition_en": "",
     "first_taught_week": 29,
     "example": "All the students said the poem together at the end of the lesson."
+  },
+  {
+    "word": "said we",
+    "phonetic": "/sed wiː/",
+    "pronunciation": "/sed wiː/",
+    "type": "phrase",
+    "definition_vi": "nói chúng tôi",
+    "definition_en": "stated that we performed an action",
+    "meaning": "nói chúng tôi",
+    "example": "The guide said we did a great job.",
+    "level": "A1+"
   },
   {
     "word": "said with",
@@ -24211,7 +25791,7 @@
     "meaning": "bánh sandwich",
     "pronounce": "/ˈsænwɪdʒ/",
     "definition_en": "two pieces of bread with food such as cheese, meat, or salad between them",
-    "first_taught_week": 30,
+    "first_taught_week": 25,
     "example": "I made a sandwich for lunch."
   },
   {
@@ -24277,6 +25857,38 @@
     "definition_en": "",
     "first_taught_week": 14,
     "example": "I sat down with my new friend and shared my crayons with her."
+  },
+  {
+    "word": "sat down with his coach",
+    "ipa": "/sæt daʊn wɪð hɪz kəʊtʃ/",
+    "meaning": "ngồi xuống với huấn luyện viên",
+    "example": "He sat down with his coach.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sat down with his pencils and paper",
+    "ipa": "/sæt daʊn wɪð hɪz ˈpenslz ənd ˈpeɪpə/",
+    "meaning": "ngồi xuống với bút chì và giấy",
+    "example": "Leo sat down with his pencils and paper to draw.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sat down with their coaches",
+    "ipa": "/sat down with their coaches/",
+    "meaning": "sat down with their coaches",
+    "example": "We learned sat down with their coaches.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "sat down with their leaders",
+    "ipa": "/sat down with their leaders/",
+    "meaning": "sat down with their leaders",
+    "example": "We learned sat down with their leaders.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "sat on",
@@ -24384,10 +25996,73 @@
   {
     "word": "saw",
     "meaning": "đã thấy",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/sɔː/",
+    "definition_en": "past tense of see",
     "example": "This involves saw in some way.",
     "first_taught_week": 21
+  },
+  {
+    "word": "saw amazing",
+    "phonetic": "/sɔː əˈmeɪzɪŋ/",
+    "pronunciation": "/sɔː əˈmeɪzɪŋ/",
+    "type": "phrase",
+    "definition_vi": "nhìn thấy những điều tuyệt vời",
+    "definition_en": "spotted wonderful things",
+    "meaning": "nhìn thấy những điều tuyệt vời",
+    "example": "We saw amazing sights.",
+    "level": "A1+"
+  },
+  {
+    "word": "saw amazing things",
+    "meaning": "nhìn thấy những điều kỳ diệu",
+    "pronounce": "/sɔː əˈmeɪzɪŋ θɪŋz/",
+    "definition_en": "witnessed extraordinary sights",
+    "first_taught_week": 36,
+    "example": "He saw amazing things during his travels."
+  },
+  {
+    "word": "saw beautiful",
+    "phonetic": "/sɔː ˈbjuːtɪfl/",
+    "pronunciation": "/sɔː ˈbjuːtɪfl/",
+    "type": "phrase",
+    "definition_vi": "nhìn thấy cảnh đẹp",
+    "definition_en": "noticed attractive or lovely sights",
+    "meaning": "nhìn thấy cảnh đẹp",
+    "example": "We saw beautiful marine life.",
+    "level": "A1+"
+  },
+  {
+    "word": "saw in",
+    "phonetic": "/sɔː ɪn/",
+    "pronunciation": "/sɔː ɪn/",
+    "type": "phrase",
+    "definition_vi": "nhìn thấy ở trong",
+    "definition_en": "observed inside a location",
+    "meaning": "nhìn thấy ở trong",
+    "example": "They wrote about things they saw in China.",
+    "level": "A1+"
+  },
+  {
+    "word": "saw inside",
+    "phonetic": "/sɔː ɪnˈsaɪd/",
+    "pronunciation": "/sɔː ɪnˈsaɪd/",
+    "type": "phrase",
+    "definition_vi": "nhìn thấy bên trong",
+    "definition_en": "looked inside a space",
+    "meaning": "nhìn thấy bên trong",
+    "example": "We saw inside the underwater cave.",
+    "level": "A1+"
+  },
+  {
+    "word": "saw old",
+    "phonetic": "/sɔː oʊld/",
+    "pronunciation": "/sɔː oʊld/",
+    "type": "phrase",
+    "definition_vi": "nhìn thấy đồ cổ",
+    "definition_en": "spotted ancient objects",
+    "meaning": "nhìn thấy đồ cổ",
+    "example": "We saw old treasures in the cave.",
+    "level": "A1+"
   },
   {
     "word": "say",
@@ -24396,6 +26071,14 @@
     "definition_en": "",
     "example": "What did she say?",
     "first_taught_week": 4
+  },
+  {
+    "word": "say kind words",
+    "ipa": "/say kind words/",
+    "meaning": "say kind words",
+    "example": "We learned say kind words.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "saying",
@@ -24669,6 +26352,14 @@
     "definition_en": "",
     "first_taught_week": 28,
     "example": "This is an example: sea levels."
+  },
+  {
+    "word": "sea plants",
+    "meaning": "thực vật biển",
+    "pronounce": "/siː plɑːnts/",
+    "definition_en": "vegetation growing in the ocean",
+    "first_taught_week": 36,
+    "example": "The artifacts were covered in sea plants."
   },
   {
     "word": "search",
@@ -24987,6 +26678,22 @@
     "example": "We sat under a shady tree to rest."
   },
   {
+    "word": "shake hands politely",
+    "ipa": "/shake hands politely/",
+    "meaning": "shake hands politely",
+    "example": "We learned shake hands politely.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "shake hands with opponents",
+    "ipa": "/shake hands with opponents/",
+    "meaning": "shake hands with opponents",
+    "example": "We learned shake hands with opponents.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "shape",
     "meaning": "hình dạng",
     "pronounce": "",
@@ -25009,6 +26716,14 @@
     "definition_en": "to give part of something to others",
     "first_taught_week": 30,
     "example": "I want to share more often."
+  },
+  {
+    "word": "share healthy meals",
+    "ipa": "/share healthy meals/",
+    "meaning": "share healthy meals",
+    "example": "We learned share healthy meals.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "share my world",
@@ -25047,6 +26762,14 @@
     "definition_en": "show and explain their culture to others",
     "first_taught_week": 14,
     "example": "Festivals let people share their culture with visitors."
+  },
+  {
+    "word": "share traditional meals",
+    "ipa": "/share traditional meals/",
+    "meaning": "share traditional meals",
+    "example": "We learned share traditional meals.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "shared",
@@ -25196,6 +26919,14 @@
     "first_taught_week": 15
   },
   {
+    "word": "shone brightly",
+    "meaning": "tỏa sáng rực rỡ",
+    "pronounce": "/ʃɒn ˈbraɪtli/",
+    "definition_en": "emitted intense light",
+    "first_taught_week": 36,
+    "example": "The gold compass shone brightly in our spotlights."
+  },
+  {
     "word": "shone through",
     "meaning": "chiếu qua",
     "pronounce": "",
@@ -25254,8 +26985,8 @@
   {
     "word": "shoulder",
     "meaning": "vai",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/ˈʃəʊldər/",
+    "definition_en": "the part of your body between your neck and your arm",
     "example": "She tapped me on the shoulder.",
     "first_taught_week": 26
   },
@@ -25433,6 +27164,17 @@
     "definition_en": "",
     "example": "Traffic signals control the flow.",
     "first_taught_week": 4
+  },
+  {
+    "word": "Silk Road",
+    "meaning": "con đường tơ lụa",
+    "pronounce": "/sɪlk roʊd/",
+    "definition_en": "English collocation / phrase: silk road",
+    "first_taught_week": 36,
+    "example": "Marco Polo travelled along the Silk Road.",
+    "definition_vi": "con đường tơ lụa",
+    "phonetic": "/sɪlk rəʊd/",
+    "pronunciation": "/sɪlk rəʊd/"
   },
   {
     "word": "simple",
@@ -25893,6 +27635,14 @@
     "example": "Slow and steady wins the race."
   },
   {
+    "word": "slow and steady wins the race",
+    "meaning": "chậm và chắc chắn thì thắng cuộc đua",
+    "pronounce": "",
+    "definition_en": "working carefully and patiently leads to success; a proverb",
+    "first_taught_week": 28,
+    "example": "Slow and steady wins the race."
+  },
+  {
     "word": "slow hare",
     "meaning": "thỏ chậm",
     "pronounce": "",
@@ -26160,6 +27910,22 @@
     "example": "The librarian smiled at the children when they entered the reading room."
   },
   {
+    "word": "smiled at Lily",
+    "ipa": "/smiled at lily/",
+    "meaning": "smiled at Lily",
+    "example": "We practiced smiled at Lily today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "smiled at Luna",
+    "ipa": "/smiled at luna/",
+    "meaning": "smiled at Luna",
+    "example": "We practiced smiled at Luna today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "smiled calmly",
     "meaning": "mỉm cười bình tĩnh",
     "pronounce": "",
@@ -26174,6 +27940,14 @@
     "definition_en": "",
     "first_taught_week": 30,
     "example": "The shop owner smiled warmly and greeted every customer who walked in."
+  },
+  {
+    "word": "smiled with pride",
+    "ipa": "/smaɪld wɪð praɪd/",
+    "meaning": "mỉm cười tự hào",
+    "example": "Leo smiled with pride.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "smiles",
@@ -26910,6 +28684,33 @@
     "first_taught_week": 24
   },
   {
+    "word": "spoke five",
+    "phonetic": "/spəʊk faɪv/",
+    "pronunciation": "/spəʊk faɪv/",
+    "type": "phrase",
+    "definition_vi": "nói được 5 ngôn ngữ",
+    "definition_en": "English collocation / phrase: spoke five",
+    "meaning": "nói được 5 ngôn ngữ",
+    "example": "He spoke five different languages.",
+    "level": "A1+"
+  },
+  {
+    "word": "spoke for him",
+    "meaning": "đại diện phát ngôn cho ông ấy",
+    "pronounce": "/spoʊk fɔː hɪm/",
+    "definition_en": "represented someone in discussions",
+    "first_taught_week": 36,
+    "example": "He spoke for the emperor in distant regions."
+  },
+  {
+    "word": "spoke many languages",
+    "meaning": "nói nhiều ngôn ngữ",
+    "pronounce": "/spoʊk ˈmɛni ˈlæŋgwɪʤɪz/",
+    "definition_en": "could communicate in several tongues",
+    "first_taught_week": 36,
+    "example": "Marco Polo spoke many languages fluently."
+  },
+  {
     "word": "spoke to",
     "meaning": "nói chuyện với",
     "pronounce": "",
@@ -26932,6 +28733,14 @@
     "definition_en": "",
     "example": "My favourite sports are swimming and badminton.",
     "first_taught_week": 15
+  },
+  {
+    "word": "sports brought peace",
+    "ipa": "/sports brought peace/",
+    "meaning": "sports brought peace",
+    "example": "We learned sports brought peace.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "spots",
@@ -27441,6 +29250,22 @@
     "example": "Luna stood in front of the temple."
   },
   {
+    "word": "stood together happily",
+    "ipa": "/stood together happily/",
+    "meaning": "stood together happily",
+    "example": "We learned stood together happily.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "stood together with smiles",
+    "ipa": "/stood together with smiles/",
+    "meaning": "stood together with smiles",
+    "example": "We learned stood together with smiles.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "stop",
     "meaning": "dừng lại",
     "pronounce": "",
@@ -27811,6 +29636,22 @@
     "first_taught_week": 12
   },
   {
+    "word": "sự chăm chỉ luôn được đền bù cuối cùng",
+    "ipa": "/sự chăm chỉ luôn được đền bù cuối cùng/",
+    "meaning": "cụm từ vựng: sự chăm chỉ luôn được đền bù cuối cùng",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "submarine",
+    "meaning": "tàu ngầm",
+    "pronounce": "/ˈsʌbməriːn/",
+    "definition_en": "a boat that can travel underwater",
+    "first_taught_week": 36,
+    "example": "The submarine dove deep into the ocean."
+  },
+  {
     "word": "substance",
     "meaning": "chất, vật chất",
     "pronounce": "",
@@ -27957,6 +29798,14 @@
     "example": "The grasshopper danced happily in the bright warm sunshine."
   },
   {
+    "word": "Suốt mùa đông",
+    "ipa": "/suốt mùa đông/",
+    "meaning": "cụm từ vựng: suốt mùa đông",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "super strength",
     "meaning": "sức mạnh siêu phàm",
     "pronounce": "",
@@ -28073,6 +29922,14 @@
     "definition_en": "",
     "first_taught_week": 29,
     "example": "The little fish swam alongside the big whale in the deep ocean."
+  },
+  {
+    "word": "swam around",
+    "meaning": "bơi xung quanh",
+    "pronounce": "/swæm əˈraʊnd/",
+    "definition_en": "moved in circles in water",
+    "first_taught_week": 36,
+    "example": "Thousands of colourful fish swam around us."
   },
   {
     "word": "swam beside",
@@ -28304,6 +30161,17 @@
     "definition_vi": "lấy ra",
     "phonetic": "/teɪk aʊt/",
     "pronunciation": "/teɪk aʊt/"
+  },
+  {
+    "word": "take photos",
+    "phonetic": "/teɪk ˈfoʊtoʊz/",
+    "pronunciation": "/teɪk ˈfoʊtoʊz/",
+    "type": "phrase",
+    "definition_vi": "chụp ảnh",
+    "definition_en": "capture pictures",
+    "meaning": "chụp ảnh",
+    "example": "Divers take photos of corals.",
+    "level": "A1+"
   },
   {
     "word": "takes",
@@ -28665,6 +30533,14 @@
     "definition_en": "",
     "example": "This involves teamwork in some way.",
     "first_taught_week": 16
+  },
+  {
+    "word": "teamwork brought victory",
+    "ipa": "/ˈtiːmwɜːk brɔːt ˈvɪktəri/",
+    "meaning": "tinh thần đồng đội mang lại chiến thắng",
+    "example": "Their teamwork brought victory.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "technique",
@@ -29437,6 +31313,22 @@
     "example": "Before guests arrive, we always help tidy up the living room quickly."
   },
   {
+    "word": "tiếp tục chơi",
+    "ipa": "/tiếp tục chơi/",
+    "meaning": "cụm từ vựng: tiếp tục chơi",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "tiếp tục chơi trò chơi",
+    "ipa": "/tiếp tục chơi trò chơi/",
+    "meaning": "cụm từ vựng: tiếp tục chơi trò chơi",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "tiger",
     "meaning": "chưa có nghĩa",
     "pronounce": "",
@@ -29700,12 +31592,31 @@
     "example": "The girl told her mum everything about her exciting day at school."
   },
   {
+    "word": "told people about",
+    "meaning": "kể cho mọi người nghe về",
+    "pronounce": "/toʊld ˈpiːpl əˈbaʊt/",
+    "definition_en": "informed others regarding a subject",
+    "first_taught_week": 36,
+    "example": "His book told people about China and India."
+  },
+  {
     "word": "told the truth",
     "meaning": "nói sự thật",
     "pronounce": "",
     "definition_en": "",
     "first_taught_week": 33,
     "example": "It is always important to told the truth even when you are afraid."
+  },
+  {
+    "word": "told their",
+    "phonetic": "/toʊld ðeər/",
+    "pronunciation": "/toʊld ðeər/",
+    "type": "phrase",
+    "definition_vi": "kể những câu chuyện của họ",
+    "definition_en": "narrated their experiences",
+    "meaning": "kể những câu chuyện của họ",
+    "example": "Explorers told their stories.",
+    "level": "A1+"
   },
   {
     "word": "tom",
@@ -29749,10 +31660,56 @@
   {
     "word": "took",
     "meaning": "đã lấy",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/tʊk/",
+    "definition_en": "past tense of take",
     "example": "This involves took in some way.",
     "first_taught_week": 24
+  },
+  {
+    "word": "took 24 years",
+    "phonetic": "/tʊk ˈtwenti fɔːr jɪərz/",
+    "pronunciation": "/tʊk ˈtwenti fɔːr jɪərz/",
+    "type": "phrase",
+    "definition_vi": "mất 24 năm",
+    "definition_en": "English collocation / phrase: took 24 years",
+    "meaning": "mất 24 năm",
+    "example": "His journey across Asia took 24 years.",
+    "level": "A1+"
+  },
+  {
+    "word": "took almost 24 years",
+    "meaning": "kéo dài gần 24 năm",
+    "pronounce": "/tʊk ˈɔːlmoʊst ˈtwɛnti fɔː jɪəz/",
+    "definition_en": "spanned nearly a quarter century",
+    "first_taught_week": 36,
+    "example": "His epic journey took almost 24 years!"
+  },
+  {
+    "word": "took our breath away",
+    "meaning": "làm chúng tôi sững sờ vì kinh ngạc",
+    "pronounce": "/tʊk ɑː brɛθ əˈweɪ/",
+    "definition_en": "astonished us with its amazing beauty",
+    "first_taught_week": 36,
+    "example": "The discovery of the gold compass took our breath away."
+  },
+  {
+    "word": "took photos",
+    "phonetic": "/tʊk ˈfəʊtəʊz/",
+    "pronunciation": "/tʊk ˈfəʊtəʊz/",
+    "type": "phrase",
+    "definition_vi": "chụp ảnh",
+    "definition_en": "English collocation / phrase: took photos",
+    "meaning": "chụp ảnh",
+    "example": "We took photos of the ancient objects.",
+    "level": "A1+"
+  },
+  {
+    "word": "took the job seriously",
+    "meaning": "làm việc rất nghiêm túc",
+    "pronounce": "/tʊk ðə ʤɒb ˈsɪərɪəsli/",
+    "definition_en": "handled responsibilities with great care",
+    "first_taught_week": 36,
+    "example": "Marco took the job seriously and worked hard."
   },
   {
     "word": "tool",
@@ -29974,7 +31931,7 @@
     "word": "tradition",
     "meaning": "truyền thống",
     "pronounce": "",
-    "definition_en": "",
+    "definition_en": "a custom passed down through history",
     "example": "This involves tradition in some way.",
     "first_taught_week": 12
   },
@@ -30090,6 +32047,14 @@
     "definition_en": "",
     "first_taught_week": 28,
     "example": "This is an example: travel through."
+  },
+  {
+    "word": "travel to Kenya to train",
+    "ipa": "/travel to kenya to train/",
+    "meaning": "travel to Kenya to train",
+    "example": "We learned travel to Kenya to train.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "traveled",
@@ -30262,6 +32227,14 @@
     "pronounce": "",
     "definition_en": "",
     "example": "She is trying to hear a bird sing."
+  },
+  {
+    "word": "Từ ngày đó",
+    "ipa": "/từ ngày đó/",
+    "meaning": "cụm từ vựng: từ ngày đó",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "turn off",
@@ -30498,8 +32471,8 @@
   {
     "word": "understand",
     "meaning": "hiểu",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/ˌʌndəˈstænd/",
+    "definition_en": "to know the meaning of something",
     "example": "I don't understand this word.",
     "first_taught_week": 21
   },
@@ -30518,6 +32491,17 @@
     "definition_en": "",
     "first_taught_week": 33,
     "example": "Jake understood that running in the corridor was dangerous."
+  },
+  {
+    "word": "underwater cave",
+    "meaning": "hang động dưới nước",
+    "pronounce": "/ˌʌndəˈwɔːtə keɪv/",
+    "definition_en": "English collocation / phrase: underwater cave",
+    "first_taught_week": 36,
+    "example": "Explorers found an underwater cave.",
+    "definition_vi": "hang động dưới nước",
+    "phonetic": "/ˌʌndərˈwɔːtər keɪv/",
+    "pronunciation": "/ˌʌndərˈwɔːtər keɪv/"
   },
   {
     "word": "unfair",
@@ -30691,6 +32675,17 @@
     "definition_vi": "sử dụng rulers to",
     "phonetic": "/use rulers to/",
     "pronunciation": "/use rulers to/"
+  },
+  {
+    "word": "use technology",
+    "phonetic": "/juːz tekˈnɒlədʒi/",
+    "pronunciation": "/juːz tekˈnɒlədʒi/",
+    "type": "phrase",
+    "definition_vi": "sử dụng công nghệ",
+    "definition_en": "employ modern devices",
+    "meaning": "sử dụng công nghệ",
+    "example": "Explorers use technology underwater.",
+    "level": "A1+"
   },
   {
     "word": "use thermometers to",
@@ -31121,6 +33116,14 @@
     "first_taught_week": 18
   },
   {
+    "word": "vui vẻ khỏe mạnh suốt phần còn lại của năm",
+    "ipa": "/vui vẻ khỏe mạnh suốt phần còn lại của năm/",
+    "meaning": "cụm từ vựng: vui vẻ khỏe mạnh suốt phần còn lại của năm",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "wait",
     "meaning": "chờ đợi",
     "pronounce": "",
@@ -31306,6 +33309,14 @@
     "example": "On Sunday, we walked to the park and had a wonderful picnic lunch."
   },
   {
+    "word": "walked to the same place",
+    "ipa": "/walked to the same place/",
+    "meaning": "walked to the same place",
+    "example": "We practiced walked to the same place today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "walking",
     "meaning": "đi bộ",
     "pronounce": "/ˈwɔːkɪŋ/",
@@ -31403,6 +33414,14 @@
     "definition_en": "",
     "example": "We wanted together last week.",
     "first_taught_week": 26
+  },
+  {
+    "word": "wanted to create a comic strip",
+    "ipa": "/ˈwɒntɪd tuː kriˈeɪt ə ˈkɒmɪk strɪp/",
+    "meaning": "muốn tạo ra một bộ truyện tranh",
+    "example": "Leo wanted to create a comic strip about his weekend.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "wants",
@@ -31631,6 +33650,22 @@
     "example": "It was sunny and warm all afternoon, perfect for a picnic."
   },
   {
+    "word": "was tired but happy",
+    "ipa": "/was tired but happy/",
+    "meaning": "was tired but happy",
+    "example": "We learned was tired but happy.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "was warm and bright",
+    "ipa": "/wəz wɔːm ənd braɪt/",
+    "meaning": "trời ấm và sáng",
+    "example": "The day was warm and bright.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "was young",
     "meaning": "còn trẻ",
     "pronounce": "",
@@ -31641,8 +33676,8 @@
   {
     "word": "wash",
     "meaning": "rửa",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/wɒʃ/",
+    "definition_en": "to clean something with water and soap or detergent",
     "example": "Wash the dishes after dinner.",
     "first_taught_week": 5
   },
@@ -32109,10 +34144,18 @@
   {
     "word": "went",
     "meaning": "đã đi",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/went/",
+    "definition_en": "past tense of go",
     "example": "This involves went in some way.",
     "first_taught_week": 20
+  },
+  {
+    "word": "went from",
+    "meaning": "đi từ (đâu đến đâu)",
+    "pronounce": "/wɛnt frɒm/",
+    "definition_en": "traveled starting from a place",
+    "first_taught_week": 36,
+    "example": "Marco Polo went from Italy to China."
   },
   {
     "word": "went home",
@@ -32142,6 +34185,14 @@
     "pronunciation": "/went ɒn/"
   },
   {
+    "word": "went on an adventure",
+    "meaning": "đã tham gia một cuộc phiêu lưu",
+    "pronounce": "/wɛnt ɒn ən ədˈvɛnʧə/",
+    "definition_en": "participated in an exciting and daring trip",
+    "first_taught_week": 36,
+    "example": "Last summer, my family went on an adventure in a submarine."
+  },
+  {
     "word": "went over",
     "meaning": "đi qua",
     "pronounce": "",
@@ -32156,6 +34207,22 @@
     "definition_en": "",
     "first_taught_week": 29,
     "example": "After breakfast, the family went to the park for a morning walk."
+  },
+  {
+    "word": "went to a farm",
+    "ipa": "/went to a farm/",
+    "meaning": "went to a farm",
+    "example": "We practiced went to a farm today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to art class",
+    "ipa": "/went to art class/",
+    "meaning": "went to art class",
+    "example": "We practiced went to art class today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "went to the field",
@@ -32180,6 +34247,38 @@
     "definition_en": "went to a market to buy things",
     "first_taught_week": 20,
     "example": "Long ago, people went to the market to buy food."
+  },
+  {
+    "word": "went to the park",
+    "ipa": "/went tuː ðə pɑːk/",
+    "meaning": "đã đến công viên",
+    "example": "Leo went to the park.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to the sports stadium",
+    "ipa": "/went tuː ðə spɔːts ˈsteɪdiəm/",
+    "meaning": "đã đến sân vận động thể thao",
+    "example": "Leo went to the sports stadium.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to the temple",
+    "ipa": "/went to the temple/",
+    "meaning": "went to the temple",
+    "example": "We practiced went to the temple today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "went to the train station",
+    "ipa": "/went to the train station/",
+    "meaning": "went to the train station",
+    "example": "We practiced went to the train station today.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "were",
@@ -32214,6 +34313,14 @@
     "definition_en": "",
     "first_taught_week": 7,
     "example": "After the long hike, we were tired but happy to reach the mountain top."
+  },
+  {
+    "word": "were united in peace",
+    "ipa": "/were united in peace/",
+    "meaning": "were united in peace",
+    "example": "We learned were united in peace.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "were very big",
@@ -32256,6 +34363,17 @@
     "definition_vi": "what can we thực hiện",
     "phonetic": "/what can we do/",
     "pronunciation": "/what can we do/"
+  },
+  {
+    "word": "what can we do?",
+    "phonetic": "/what can we do?/",
+    "pronunciation": "/what can we do?/",
+    "type": "phrase",
+    "definition_vi": "what can we do",
+    "definition_en": "Key collocation: what can we do?",
+    "meaning": "what can we do",
+    "example": "Natural usage of 'what can we do?' in sentence context.",
+    "level": "A1+"
   },
   {
     "word": "what happened",
@@ -32547,6 +34665,22 @@
     "example": "We have been wining for many years now."
   },
   {
+    "word": "win global marathon races",
+    "ipa": "/win global marathon races/",
+    "meaning": "win global marathon races",
+    "example": "We learned win global marathon races.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "win or lose",
+    "ipa": "/win or lose/",
+    "meaning": "win or lose",
+    "example": "We learned win or lose.",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "win the race",
     "meaning": "thắng cuộc đua",
     "pronounce": "",
@@ -32764,12 +34898,31 @@
     "first_taught_week": 28
   },
   {
+    "word": "won the",
+    "phonetic": "/wʌn ðə/",
+    "pronunciation": "/wʌn ðə/",
+    "type": "phrase",
+    "definition_vi": "giành được",
+    "definition_en": "gained trust or victory",
+    "meaning": "giành được",
+    "example": "He won the emperor's trust.",
+    "level": "A1+"
+  },
+  {
     "word": "won the race",
     "meaning": "thắng cuộc đua",
     "pronounce": "",
     "definition_en": "",
     "first_taught_week": 28,
     "example": "We won the race together whenever we can."
+  },
+  {
+    "word": "won the trust",
+    "meaning": "giành được sự tin tưởng",
+    "pronounce": "/wʌn ðə trʌst/",
+    "definition_en": "gained confidence and loyalty",
+    "first_taught_week": 36,
+    "example": "He won the trust of Kublai Khan."
   },
   {
     "word": "wonder",
@@ -33335,8 +35488,8 @@
   {
     "word": "wrote",
     "meaning": "đã viết",
-    "pronounce": "",
-    "definition_en": "",
+    "pronounce": "/roʊt/",
+    "definition_en": "past tense of write",
     "example": "This involves wrote in some way.",
     "first_taught_week": 21
   },
@@ -33373,6 +35526,25 @@
     "example": "I wrote a short letter to thank my aunt for the lovely birthday present."
   },
   {
+    "word": "wrote about",
+    "meaning": "viết về",
+    "pronounce": "/roʊt əˈbaʊt/",
+    "definition_en": "documented in writing",
+    "first_taught_week": 36,
+    "example": "He wrote about everything he saw."
+  },
+  {
+    "word": "wrote down",
+    "meaning": "ghi chép lại",
+    "pronounce": "/roʊt daʊn/",
+    "definition_en": "English collocation / phrase: wrote down",
+    "first_taught_week": 36,
+    "example": "She wrote down what she saw.",
+    "definition_vi": "ghi chép lại",
+    "phonetic": "/rəʊt daʊn/",
+    "pronunciation": "/rəʊt daʊn/"
+  },
+  {
     "word": "wrote every answer",
     "meaning": "viết mọi câu trả lời",
     "pronounce": "",
@@ -33395,6 +35567,22 @@
     "definition_en": "",
     "first_taught_week": 15,
     "example": "The word Wrote the title is used in everyday English conversation."
+  },
+  {
+    "word": "xây một ngôi nhà ấm",
+    "ipa": "/xây một ngôi nhà ấm/",
+    "meaning": "cụm từ vựng: xây một ngôi nhà ấm",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
+    "word": "xin thức ăn",
+    "ipa": "/xin thức ăn/",
+    "meaning": "cụm từ vựng: xin thức ăn",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
   },
   {
     "word": "year",
@@ -33501,6 +35689,14 @@
     "first_taught_week": 3
   },
   {
+    "word": "yêu thương",
+    "ipa": "/yêu thương/",
+    "meaning": "cụm từ vựng: yêu thương",
+    "example": "The students learned \\",
+    "part_of_speech": "phrase",
+    "type": "phrase"
+  },
+  {
     "word": "york",
     "meaning": "York",
     "pronounce": "",
@@ -33579,2641 +35775,5 @@
     "definition_en": "a place to see animals",
     "first_taught_week": 11,
     "example": "We saw lions and elephants at the zoo."
-  },
-  {
-    "word": "feel cheerful",
-    "meaning": "cảm thấy vui vẻ",
-    "pronounce": "",
-    "definition_en": "to feel happy and lively",
-    "first_taught_week": 24,
-    "example": "When you feel cheerful, it means you are happy and full of energy."
-  },
-  {
-    "word": "fun places",
-    "meaning": "những nơi vui vẻ",
-    "pronounce": "",
-    "definition_en": "enjoyable locations",
-    "first_taught_week": 11,
-    "example": "Children like to go to fun places like the park and the playground."
-  },
-  {
-    "word": "slow and steady wins the race",
-    "meaning": "chậm và chắc chắn thì thắng cuộc đua",
-    "pronounce": "",
-    "definition_en": "working carefully and patiently leads to success; a proverb",
-    "first_taught_week": 28,
-    "example": "Slow and steady wins the race."
-  },
-  {
-    "word": "submarine",
-    "meaning": "tàu ngầm",
-    "pronounce": "/ˈsʌbməriːn/",
-    "definition_en": "a boat that can travel underwater",
-    "first_taught_week": 36,
-    "example": "The submarine dove deep into the ocean."
-  },
-  {
-    "word": "coral reef",
-    "meaning": "rạn san hô",
-    "pronounce": "/ˈkɔːrəl riːf/",
-    "definition_en": "a ridge of rock in the sea formed by coral",
-    "first_taught_week": 36,
-    "example": "We saw colorful fish near the coral reef."
-  },
-  {
-    "word": "compass",
-    "meaning": "la bàn",
-    "pronounce": "/ˈkʌmpəs/",
-    "definition_en": "a tool that shows direction using magnetic north",
-    "first_taught_week": 36,
-    "example": "We used a compass to find our way."
-  },
-  {
-    "word": "museum",
-    "meaning": "bảo tàng",
-    "pronounce": "/mjuːˈziːəm/",
-    "definition_en": "a building where historical or scientific objects are displayed",
-    "first_taught_week": 36,
-    "example": "The museum has old ships and maps."
-  },
-  {
-    "word": "discovery",
-    "meaning": "khám phá; phát hiện",
-    "pronounce": "/dɪˈskʌvəri/",
-    "definition_en": "finding something for the first time",
-    "first_taught_week": 36,
-    "example": "The discovery of the cave was exciting."
-  },
-  {
-    "word": "Silk Road",
-    "meaning": "con đường tơ lụa",
-    "pronounce": "/sɪlk roʊd/",
-    "definition_en": "English collocation / phrase: silk road",
-    "first_taught_week": 36,
-    "example": "Marco Polo travelled along the Silk Road.",
-    "definition_vi": "con đường tơ lụa",
-    "phonetic": "/sɪlk rəʊd/",
-    "pronunciation": "/sɪlk rəʊd/"
-  },
-  {
-    "word": "merchant",
-    "meaning": "thương nhân",
-    "pronounce": "/ˈmɜːrtʃənt/",
-    "definition_en": "a person who buys and sells goods",
-    "first_taught_week": 36,
-    "example": "Merchants sold spices and silk on the road."
-  },
-  {
-    "word": "explorer",
-    "meaning": "nhà thám hiểm",
-    "pronounce": "/ɪkˈsplɔːrər/",
-    "definition_en": "a person who travels to unknown places",
-    "first_taught_week": 36,
-    "example": "Marco Polo was a famous explorer."
-  },
-  {
-    "word": "government official",
-    "meaning": "quan chức chính phủ",
-    "pronounce": "/ˈgʌvnmənt əˈfɪʃəl/",
-    "definition_en": "English collocation / phrase: government official",
-    "first_taught_week": 36,
-    "example": "He worked as a government official.",
-    "definition_vi": "quan chức chính phủ",
-    "phonetic": "/ˈɡʌvənmənt əˈfɪʃl/",
-    "pronunciation": "/ˈɡʌvənmənt əˈfɪʃl/"
-  },
-  {
-    "word": "inspired",
-    "meaning": "truyền cảm hứng",
-    "pronounce": "/ɪnˈspaɪərd/",
-    "definition_en": "made someone feel motivated or creative",
-    "first_taught_week": 36,
-    "example": "His book inspired many people to explore."
-  },
-  {
-    "word": "went on an adventure",
-    "meaning": "đã tham gia một cuộc phiêu lưu",
-    "pronounce": "/wɛnt ɒn ən ədˈvɛnʧə/",
-    "definition_en": "participated in an exciting and daring trip",
-    "first_taught_week": 36,
-    "example": "Last summer, my family went on an adventure in a submarine."
-  },
-  {
-    "word": "dove down into",
-    "meaning": "lặn xuống",
-    "pronounce": "/dʌv daʊn ˈɪntuː/",
-    "definition_en": "plunged deep under water",
-    "first_taught_week": 36,
-    "example": "We dove down into the deep ocean."
-  },
-  {
-    "word": "magnificent coral reefs",
-    "meaning": "những rặng san hô tuyệt đẹp",
-    "pronounce": "/mæɡˈnɪfɪsənt ˈkɒrəl riːfs/",
-    "definition_en": "spectacular underwater coral structures",
-    "first_taught_week": 36,
-    "example": "We saw magnificent coral reefs in the ocean."
-  },
-  {
-    "word": "swam around",
-    "meaning": "bơi xung quanh",
-    "pronounce": "/swæm əˈraʊnd/",
-    "definition_en": "moved in circles in water",
-    "first_taught_week": 36,
-    "example": "Thousands of colourful fish swam around us."
-  },
-  {
-    "word": "hid in",
-    "meaning": "ẩn nấp trong",
-    "pronounce": "/hɪd ɪn/",
-    "definition_en": "concealed themselves inside a place",
-    "first_taught_week": 36,
-    "example": "Tiny crabs hid in the rocks between the corals."
-  },
-  {
-    "word": "found something unexpected",
-    "meaning": "tìm thấy điều bất ngờ",
-    "pronounce": "/faʊnd ˈsʌmθɪŋ ˌʌnɪkˈspɛktɪd/",
-    "definition_en": "discovered a surprising object or place",
-    "first_taught_week": 36,
-    "example": "We found something unexpected — an underwater cave!"
-  },
-  {
-    "word": "underwater cave",
-    "meaning": "hang động dưới nước",
-    "pronounce": "/ˌʌndəˈwɔːtə keɪv/",
-    "definition_en": "English collocation / phrase: underwater cave",
-    "first_taught_week": 36,
-    "example": "Explorers found an underwater cave.",
-    "definition_vi": "hang động dưới nước",
-    "phonetic": "/ˌʌndərˈwɔːtər keɪv/",
-    "pronunciation": "/ˌʌndərˈwɔːtər keɪv/"
-  },
-  {
-    "word": "a wall of",
-    "meaning": "một bức tường (tảo/cây...)",
-    "pronounce": "/ə wɔːl ɒv/",
-    "definition_en": "a dense barrier formed by objects",
-    "first_taught_week": 36,
-    "example": "The cave was hidden behind a wall of seaweed."
-  },
-  {
-    "word": "crashed inside",
-    "meaning": "đâm sầm vào bên trong",
-    "pronounce": "/kræʃt ɪnˈsaɪd/",
-    "definition_en": "collided violently inside a space",
-    "first_taught_week": 36,
-    "example": "Ancient ships crashed inside the cave long ago."
-  },
-  {
-    "word": "rode into",
-    "meaning": "đi vào trong (bằng tàu/xe)",
-    "pronounce": "/roʊd ˈɪntuː/",
-    "definition_en": "traveled into a dark or enclosed space",
-    "first_taught_week": 36,
-    "example": "We carefully rode into the dark cave."
-  },
-  {
-    "word": "old objects",
-    "meaning": "những đồ vật cổ",
-    "pronounce": "/oʊld ˈɒbʤɛkts/",
-    "definition_en": "items from ancient times",
-    "first_taught_week": 36,
-    "example": "We saw old objects on the sandy floor."
-  },
-  {
-    "word": "sea plants",
-    "meaning": "thực vật biển",
-    "pronounce": "/siː plɑːnts/",
-    "definition_en": "vegetation growing in the ocean",
-    "first_taught_week": 36,
-    "example": "The artifacts were covered in sea plants."
-  },
-  {
-    "word": "came from",
-    "meaning": "đến từ",
-    "pronounce": "/keɪm frɒm/",
-    "definition_en": "English collocation / phrase: came from",
-    "first_taught_week": 36,
-    "example": "These artifacts came from old ships.",
-    "definition_vi": "đến từ",
-    "phonetic": "/keɪm frəm/",
-    "pronunciation": "/keɪm frəm/"
-  },
-  {
-    "word": "ancient ships",
-    "meaning": "những con tàu cổ đại",
-    "pronounce": "/ˈeɪnʃənt ʃɪps/",
-    "definition_en": "very old vessels from past centuries",
-    "first_taught_week": 36,
-    "example": "Ancient ships sank near the island long ago."
-  },
-  {
-    "word": "hundreds of years ago",
-    "meaning": "hàng trăm năm trước",
-    "pronounce": "/ˈhʌndrədz ɒv jɪəz əˈgoʊ/",
-    "definition_en": "a time long ago in history",
-    "first_taught_week": 36,
-    "example": "The vessel sank hundreds of years ago."
-  },
-  {
-    "word": "shone brightly",
-    "meaning": "tỏa sáng rực rỡ",
-    "pronounce": "/ʃɒn ˈbraɪtli/",
-    "definition_en": "emitted intense light",
-    "first_taught_week": 36,
-    "example": "The gold compass shone brightly in our spotlights."
-  },
-  {
-    "word": "wrote down",
-    "meaning": "ghi chép lại",
-    "pronounce": "/roʊt daʊn/",
-    "definition_en": "English collocation / phrase: wrote down",
-    "first_taught_week": 36,
-    "example": "She wrote down what she saw.",
-    "definition_vi": "ghi chép lại",
-    "phonetic": "/rəʊt daʊn/",
-    "pronunciation": "/rəʊt daʊn/"
-  },
-  {
-    "word": "took our breath away",
-    "meaning": "làm chúng tôi sững sờ vì kinh ngạc",
-    "pronounce": "/tʊk ɑː brɛθ əˈweɪ/",
-    "definition_en": "astonished us with its amazing beauty",
-    "first_taught_week": 36,
-    "example": "The discovery of the gold compass took our breath away."
-  },
-  {
-    "word": "gold compass",
-    "meaning": "la bàn bằng vàng",
-    "pronounce": "/goʊld ˈkʌmpəs/",
-    "definition_en": "a direction tool made of gold",
-    "first_taught_week": 36,
-    "example": "He found a precious 16th-century gold compass."
-  },
-  {
-    "word": "got lost at sea",
-    "meaning": "bị lạc ngoài biển",
-    "pronounce": "/gɒt lɒst æt siː/",
-    "definition_en": "lost orientation while sailing on the ocean",
-    "first_taught_week": 36,
-    "example": "The explorer got lost at sea centuries ago."
-  },
-  {
-    "word": "gave all our findings",
-    "meaning": "bàn giao toàn bộ phát hiện",
-    "pronounce": "/geɪv ɔːl ɑː ˈfaɪndɪŋz/",
-    "definition_en": "donated discovered items to an authority",
-    "first_taught_week": 36,
-    "example": "We gave all our findings to the museum."
-  },
-  {
-    "word": "on shore",
-    "meaning": "trên bờ biển",
-    "pronounce": "/ɒn ʃɔː/",
-    "definition_en": "on the land near the ocean",
-    "first_taught_week": 36,
-    "example": "They visited the museum on shore."
-  },
-  {
-    "word": "museum director",
-    "meaning": "giám đốc bảo tàng",
-    "pronounce": "/mjuːˈzɪəm dɪˈrɛktə/",
-    "definition_en": "the person in charge of a museum",
-    "first_taught_week": 36,
-    "example": "The museum director thanked us warmly."
-  },
-  {
-    "word": "came back",
-    "meaning": "quay trở lại",
-    "pronounce": "/keɪm bæk/",
-    "definition_en": "English collocation / phrase: came back",
-    "first_taught_week": 36,
-    "example": "He came back home after school.",
-    "definition_vi": "quay trở lại",
-    "phonetic": "/keɪm bæk/",
-    "pronunciation": "/keɪm bæk/"
-  },
-  {
-    "word": "made an important discovery",
-    "meaning": "tạo ra một phát hiện quan trọng",
-    "pronounce": "/meɪd ən ɪmˈpɔːtənt dɪsˈkʌvəri/",
-    "definition_en": "found something very significant",
-    "first_taught_week": 36,
-    "example": "The explorers made an important discovery."
-  },
-  {
-    "word": "be found",
-    "meaning": "được phát hiện",
-    "pronounce": "/biː faʊnd/",
-    "definition_en": "to be discovered or located",
-    "first_taught_week": 36,
-    "example": "Many secrets are waiting to be found in the deep ocean."
-  },
-  {
-    "word": "began to plan",
-    "meaning": "bắt đầu lên kế hoạch",
-    "pronounce": "/bɪˈgæn tuː plæn/",
-    "definition_en": "English collocation / phrase: began to plan",
-    "first_taught_week": 36,
-    "example": "They began to plan their next expedition.",
-    "definition_vi": "bắt đầu lên kế hoạch",
-    "phonetic": "/bɪˈɡæn tuː plæn/",
-    "pronunciation": "/bɪˈɡæn tuː plæn/"
-  },
-  {
-    "word": "went from",
-    "meaning": "đi từ (đâu đến đâu)",
-    "pronounce": "/wɛnt frɒm/",
-    "definition_en": "traveled starting from a place",
-    "first_taught_week": 36,
-    "example": "Marco Polo went from Italy to China."
-  },
-  {
-    "word": "took almost 24 years",
-    "meaning": "kéo dài gần 24 năm",
-    "pronounce": "/tʊk ˈɔːlmoʊst ˈtwɛnti fɔː jɪəz/",
-    "definition_en": "spanned nearly a quarter century",
-    "first_taught_week": 36,
-    "example": "His epic journey took almost 24 years!"
-  },
-  {
-    "word": "left Venice",
-    "meaning": "rời khỏi thành phố Venice",
-    "pronounce": "/lɛft ˈvɛnɪs/",
-    "definition_en": "departed from Venice",
-    "first_taught_week": 36,
-    "example": "He left Venice when he was only 17 years old."
-  },
-  {
-    "word": "rode across",
-    "meaning": "cưỡi ngựa băng qua",
-    "pronounce": "/roʊd əˈkrɒs/",
-    "definition_en": "traveled across land on animals or transport",
-    "first_taught_week": 36,
-    "example": "He rode across high mountains and deserts."
-  },
-  {
-    "word": "saw amazing things",
-    "meaning": "nhìn thấy những điều kỳ diệu",
-    "pronounce": "/sɔː əˈmeɪzɪŋ θɪŋz/",
-    "definition_en": "witnessed extraordinary sights",
-    "first_taught_week": 36,
-    "example": "He saw amazing things during his travels."
-  },
-  {
-    "word": "met merchants",
-    "meaning": "gặp gỡ các thương gia",
-    "pronounce": "/mɛt ˈmɜːʧənts/",
-    "definition_en": "English collocation / phrase: met merchants",
-    "first_taught_week": 36,
-    "example": "He met merchants from many countries.",
-    "definition_vi": "gặp gỡ các thương gia",
-    "phonetic": "/met ˈmɜːtʃənts/",
-    "pronunciation": "/met ˈmɜːtʃənts/"
-  },
-  {
-    "word": "spoke many languages",
-    "meaning": "nói nhiều ngôn ngữ",
-    "pronounce": "/spoʊk ˈmɛni ˈlæŋgwɪʤɪz/",
-    "definition_en": "could communicate in several tongues",
-    "first_taught_week": 36,
-    "example": "Marco Polo spoke many languages fluently."
-  },
-  {
-    "word": "wrote about",
-    "meaning": "viết về",
-    "pronounce": "/roʊt əˈbaʊt/",
-    "definition_en": "documented in writing",
-    "first_taught_week": 36,
-    "example": "He wrote about everything he saw."
-  },
-  {
-    "word": "famous book",
-    "meaning": "cuốn sách nổi tiếng",
-    "pronounce": "/ˈfeɪməs bʊk/",
-    "definition_en": "English collocation / phrase: famous book",
-    "first_taught_week": 36,
-    "example": "He wrote a famous book about his travels.",
-    "definition_vi": "cuốn sách nổi tiếng",
-    "phonetic": "/ˈfeɪməs bʊk/",
-    "pronunciation": "/ˈfeɪməs bʊk/"
-  },
-  {
-    "word": "gave an important job",
-    "meaning": "giao cho một công việc quan trọng",
-    "pronounce": "/geɪv ən ɪmˈpɔːtənt ʤɒb/",
-    "definition_en": "assigned a significant duty",
-    "first_taught_week": 36,
-    "example": "The ruler gave an important job to Marco."
-  },
-  {
-    "word": "took the job seriously",
-    "meaning": "làm việc rất nghiêm túc",
-    "pronounce": "/tʊk ðə ʤɒb ˈsɪərɪəsli/",
-    "definition_en": "handled responsibilities with great care",
-    "first_taught_week": 36,
-    "example": "Marco took the job seriously and worked hard."
-  },
-  {
-    "word": "became a messenger",
-    "meaning": "trở thành sứ giả",
-    "pronounce": "/bɪˈkeɪm ə ˈmɛsɪnʤə/",
-    "definition_en": "became an official envoy carrying messages",
-    "first_taught_week": 36,
-    "example": "He became a messenger for the emperor."
-  },
-  {
-    "word": "won the trust",
-    "meaning": "giành được sự tin tưởng",
-    "pronounce": "/wʌn ðə trʌst/",
-    "definition_en": "gained confidence and loyalty",
-    "first_taught_week": 36,
-    "example": "He won the trust of Kublai Khan."
-  },
-  {
-    "word": "spoke for him",
-    "meaning": "đại diện phát ngôn cho ông ấy",
-    "pronounce": "/spoʊk fɔː hɪm/",
-    "definition_en": "represented someone in discussions",
-    "first_taught_week": 36,
-    "example": "He spoke for the emperor in distant regions."
-  },
-  {
-    "word": "made up stories",
-    "meaning": "bịa đặt ra các câu chuyện",
-    "pronounce": "/meɪd ʌp ˈstɔːriz/",
-    "definition_en": "invented fictitious tales",
-    "first_taught_week": 36,
-    "example": "Some thought he made up stories about Asia."
-  },
-  {
-    "word": "found his writings",
-    "meaning": "tìm thấy những ghi chép của ông",
-    "pronounce": "/faʊnd hɪz ˈraɪtɪŋz/",
-    "definition_en": "discovered documented manuscripts",
-    "first_taught_week": 36,
-    "example": "Scholars later found his writings."
-  },
-  {
-    "word": "everything was true",
-    "meaning": "mọi thứ đều là sự thật",
-    "pronounce": "/ˈɛvrɪθɪŋ wɒz truː/",
-    "definition_en": "all statements were accurate",
-    "first_taught_week": 36,
-    "example": "They realized that everything was true."
-  },
-  {
-    "word": "told people about",
-    "meaning": "kể cho mọi người nghe về",
-    "pronounce": "/toʊld ˈpiːpl əˈbaʊt/",
-    "definition_en": "informed others regarding a subject",
-    "first_taught_week": 36,
-    "example": "His book told people about China and India."
-  },
-  {
-    "word": "famous explorers",
-    "meaning": "những nhà tham hiểm nổi tiếng",
-    "pronounce": "/ˈfeɪməs ɪksˈplɔːrəz/",
-    "definition_en": "renowned discoverers in history",
-    "first_taught_week": 36,
-    "example": "He became one of history most famous explorers."
-  },
-  {
-    "word": "inspired many adventurers",
-    "meaning": "truyền cảm hứng cho nhiều nhà phiêu lưu",
-    "pronounce": "/ɪnˈspaɪəd ˈmɛni ədˈvɛnʧərəz/",
-    "definition_en": "motivated many people to go on journeys",
-    "first_taught_week": 36,
-    "example": "His courage inspired many adventurers."
-  },
-  {
-    "word": "dream of exploring",
-    "meaning": "mơ ước được đi khám phá",
-    "pronounce": "/driːm ɒv ɪksˈplɔːrɪŋ/",
-    "definition_en": "desire to travel and discover new places",
-    "first_taught_week": 36,
-    "example": "Children read his book and dream of exploring the world."
-  },
-  {
-    "word": "about learning",
-    "phonetic": "/əˈbaʊt ˈlɜːrnɪŋ/",
-    "pronunciation": "/əˈbaʊt ˈlɜːrnɪŋ/",
-    "type": "phrase",
-    "definition_vi": "về việc học hỏi",
-    "definition_en": "concerning the acquisition of knowledge",
-    "meaning": "về việc học hỏi",
-    "example": "It is about learning new cultures.",
-    "level": "A1+"
-  },
-  {
-    "word": "about meeting",
-    "phonetic": "/əˈbaʊt ˈmiːtɪŋ/",
-    "pronunciation": "/əˈbaʊt ˈmiːtɪŋ/",
-    "type": "phrase",
-    "definition_vi": "về việc gặp gỡ",
-    "definition_en": "concerning encountering new people",
-    "meaning": "về việc gặp gỡ",
-    "example": "It is about meeting people.",
-    "level": "A1+"
-  },
-  {
-    "word": "became very",
-    "phonetic": "/bɪˈkeɪm ˈveri/",
-    "pronunciation": "/bɪˈkeɪm ˈveri/",
-    "type": "phrase",
-    "definition_vi": "trở nên rất",
-    "definition_en": "turned into something very notable",
-    "meaning": "trở nên rất",
-    "example": "He became very famous.",
-    "level": "A1+"
-  },
-  {
-    "word": "began to",
-    "phonetic": "/bɪˈɡæn tuː/",
-    "pronunciation": "/bɪˈɡæn tuː/",
-    "type": "phrase",
-    "definition_vi": "bắt đầu",
-    "definition_en": "started doing something",
-    "meaning": "bắt đầu",
-    "example": "Scientists began to explore the ocean.",
-    "level": "A1+"
-  },
-  {
-    "word": "begin their",
-    "phonetic": "/bɪˈɡɪn ðeər/",
-    "pronunciation": "/bɪˈɡɪn ðeər/",
-    "type": "phrase",
-    "definition_vi": "bắt đầu hành trình của họ",
-    "definition_en": "start their own journey",
-    "meaning": "bắt đầu hành trình của họ",
-    "example": "Adventurers begin their journey.",
-    "level": "A1+"
-  },
-  {
-    "word": "best adventure",
-    "phonetic": "/best ədˈventʃər/",
-    "pronunciation": "/best ədˈventʃər/",
-    "type": "phrase",
-    "definition_vi": "cuộc phiêu lưu tuyệt vời nhất",
-    "definition_en": "English collocation / phrase: best adventure",
-    "meaning": "cuộc phiêu lưu tuyệt vời nhất",
-    "example": "It was the best adventure ever.",
-    "level": "A1+"
-  },
-  {
-    "word": "changed the world",
-    "phonetic": "/tʃeɪndʒd ðə wɜːrld/",
-    "pronunciation": "/tʃeɪndʒd ðə wɜːrld/",
-    "type": "phrase",
-    "definition_vi": "thay đổi thế giới",
-    "definition_en": "made a profound impact on earth",
-    "meaning": "thay đổi thế giới",
-    "example": "Their discoveries changed the world.",
-    "level": "A1+"
-  },
-  {
-    "word": "discover new",
-    "phonetic": "/dɪˈskʌvər njuː/",
-    "pronunciation": "/dɪˈskʌvər njuː/",
-    "type": "phrase",
-    "definition_vi": "khám phá điều mới",
-    "definition_en": "find new lands or facts",
-    "meaning": "khám phá điều mới",
-    "example": "Scientists discover new sea species.",
-    "level": "A1+"
-  },
-  {
-    "word": "dive down",
-    "phonetic": "/daɪv daʊn/",
-    "pronunciation": "/daɪv daʊn/",
-    "type": "phrase",
-    "definition_vi": "lặn sâu xuống",
-    "definition_en": "plunge underwater",
-    "meaning": "lặn sâu xuống",
-    "example": "Divers dive down deep.",
-    "level": "A1+"
-  },
-  {
-    "word": "dove down",
-    "phonetic": "/dəʊv daʊn/",
-    "pronunciation": "/dəʊv daʊn/",
-    "type": "phrase",
-    "definition_vi": "lặn xuống",
-    "definition_en": "English collocation / phrase: dove down",
-    "meaning": "lặn xuống",
-    "example": "The submarine dove down into the ocean.",
-    "level": "A1+"
-  },
-  {
-    "word": "dream of",
-    "phonetic": "/driːm əv/",
-    "pronunciation": "/driːm əv/",
-    "type": "phrase",
-    "definition_vi": "mơ ước về",
-    "definition_en": "English collocation / phrase: dream of",
-    "meaning": "mơ ước về",
-    "example": "Children dream of going on adventures.",
-    "level": "A1+"
-  },
-  {
-    "word": "find new",
-    "phonetic": "/faɪnd njuː/",
-    "pronunciation": "/faɪnd njuː/",
-    "type": "phrase",
-    "definition_vi": "tìm kiếm điều mới",
-    "definition_en": "discover new objects or places",
-    "meaning": "tìm kiếm điều mới",
-    "example": "Scientists find new sea life.",
-    "level": "A1+"
-  },
-  {
-    "word": "found an",
-    "phonetic": "/faʊnd ən/",
-    "pronunciation": "/faʊnd ən/",
-    "type": "phrase",
-    "definition_vi": "tìm thấy một",
-    "definition_en": "discovered a specific object",
-    "meaning": "tìm thấy một",
-    "example": "We found an ancient compass.",
-    "level": "A1+"
-  },
-  {
-    "word": "found new",
-    "phonetic": "/faʊnd njuː/",
-    "pronunciation": "/faʊnd njuː/",
-    "type": "phrase",
-    "definition_vi": "tìm thấy miền đất mới",
-    "definition_en": "discovered new lands or facts",
-    "meaning": "tìm thấy miền đất mới",
-    "example": "Explorers found new places.",
-    "level": "A1+"
-  },
-  {
-    "word": "gave him",
-    "phonetic": "/ɡeɪv hɪm/",
-    "pronunciation": "/ɡeɪv hɪm/",
-    "type": "phrase",
-    "definition_vi": "giao cho ông ấy",
-    "definition_en": "provided him with a task or gift",
-    "meaning": "giao cho ông ấy",
-    "example": "The king gave him an important job.",
-    "level": "A1+"
-  },
-  {
-    "word": "gave our",
-    "phonetic": "/ɡeɪv aʊər/",
-    "pronunciation": "/ɡeɪv aʊər/",
-    "type": "phrase",
-    "definition_vi": "trao tặng của chúng tôi",
-    "definition_en": "handed over our belongings",
-    "meaning": "trao tặng của chúng tôi",
-    "example": "We gave our findings to the museum.",
-    "level": "A1+"
-  },
-  {
-    "word": "give us",
-    "phonetic": "/ɡɪv ʌs/",
-    "pronunciation": "/ɡɪv ʌs/",
-    "type": "phrase",
-    "definition_vi": "mang lại cho chúng ta",
-    "definition_en": "provide us with insights",
-    "meaning": "mang lại cho chúng ta",
-    "example": "Discoveries give us knowledge.",
-    "level": "A1+"
-  },
-  {
-    "word": "go down",
-    "phonetic": "/ɡoʊ daʊn/",
-    "pronunciation": "/ɡoʊ daʊn/",
-    "type": "phrase",
-    "definition_vi": "đi xuống sâu",
-    "definition_en": "descend deep underwater",
-    "meaning": "đi xuống sâu",
-    "example": "Submarines go down deep.",
-    "level": "A1+"
-  },
-  {
-    "word": "inspired other",
-    "phonetic": "/ɪnˈspaɪərd ˈʌðər/",
-    "pronunciation": "/ɪnˈspaɪərd ˈʌðər/",
-    "type": "phrase",
-    "definition_vi": "truyền cảm hứng cho người khác",
-    "definition_en": "motivated other travelers",
-    "meaning": "truyền cảm hứng cho người khác",
-    "example": "His story inspired other explorers.",
-    "level": "A1+"
-  },
-  {
-    "word": "inspired people",
-    "phonetic": "/ɪnˈspaɪəd ˈpiːpl/",
-    "pronunciation": "/ɪnˈspaɪəd ˈpiːpl/",
-    "type": "phrase",
-    "definition_vi": "truyền cảm hứng cho mọi người",
-    "definition_en": "English collocation / phrase: inspired people",
-    "meaning": "truyền cảm hứng cho mọi người",
-    "example": "His stories inspired people for centuries.",
-    "level": "A1+"
-  },
-  {
-    "word": "inspired us",
-    "phonetic": "/ɪnˈspaɪərd ʌs/",
-    "pronunciation": "/ɪnˈspaɪərd ʌs/",
-    "type": "phrase",
-    "definition_vi": "truyền cảm hứng cho chúng tôi",
-    "definition_en": "motivated us to learn",
-    "meaning": "truyền cảm hứng cho chúng tôi",
-    "example": "Their courage inspired us.",
-    "level": "A1+"
-  },
-  {
-    "word": "knew the",
-    "phonetic": "/njuː ðə/",
-    "pronunciation": "/njuː ðə/",
-    "type": "phrase",
-    "definition_vi": "biết rõ",
-    "definition_en": "understood or knew a place",
-    "meaning": "biết rõ",
-    "example": "The captain knew the deep waters well.",
-    "level": "A1+"
-  },
-  {
-    "word": "left his",
-    "phonetic": "/left hɪz/",
-    "pronunciation": "/left hɪz/",
-    "type": "phrase",
-    "definition_vi": "rời bỏ quê hương của ông",
-    "definition_en": "departed from his origin",
-    "meaning": "rời bỏ quê hương của ông",
-    "example": "He left his hometown to travel.",
-    "level": "A1+"
-  },
-  {
-    "word": "made great",
-    "phonetic": "/meɪd ɡreɪt/",
-    "pronunciation": "/meɪd ɡreɪt/",
-    "type": "phrase",
-    "definition_vi": "tạo ra những điều tuyệt vời",
-    "definition_en": "achieved great accomplishments",
-    "meaning": "tạo ra những điều tuyệt vời",
-    "example": "They made great discoveries.",
-    "level": "A1+"
-  },
-  {
-    "word": "made people dream",
-    "phonetic": "/meɪd ˈpiːpl driːm/",
-    "pronunciation": "/meɪd ˈpiːpl driːm/",
-    "type": "phrase",
-    "definition_vi": "làm mọi người mơ ước",
-    "definition_en": "inspired people to dream of adventure",
-    "meaning": "làm mọi người mơ ước",
-    "example": "Their stories made people dream.",
-    "level": "A1+"
-  },
-  {
-    "word": "met many",
-    "phonetic": "/met ˈmeni/",
-    "pronunciation": "/met ˈmeni/",
-    "type": "phrase",
-    "definition_vi": "gặp nhiều người",
-    "definition_en": "encountered numerous people",
-    "meaning": "gặp nhiều người",
-    "example": "He met many merchants along the way.",
-    "level": "A1+"
-  },
-  {
-    "word": "not just",
-    "phonetic": "/nɒt dʒʌst/",
-    "pronunciation": "/nɒt dʒʌst/",
-    "type": "phrase",
-    "definition_vi": "không chỉ là",
-    "definition_en": "more than simply",
-    "meaning": "không chỉ là",
-    "example": "Exploration is not just traveling.",
-    "level": "A1+"
-  },
-  {
-    "word": "read about",
-    "phonetic": "/riːd əˈbaʊt/",
-    "pronunciation": "/riːd əˈbaʊt/",
-    "type": "phrase",
-    "definition_vi": "đọc về",
-    "definition_en": "learned about a topic by reading",
-    "meaning": "đọc về",
-    "example": "Children read about Marco Polo.",
-    "level": "A1+"
-  },
-  {
-    "word": "read his",
-    "phonetic": "/riːd hɪz/",
-    "pronunciation": "/riːd hɪz/",
-    "type": "phrase",
-    "definition_vi": "đọc sách của ông",
-    "definition_en": "read his written book",
-    "meaning": "đọc sách của ông",
-    "example": "People read his travel stories.",
-    "level": "A1+"
-  },
-  {
-    "word": "rode the",
-    "phonetic": "/roʊd ðə/",
-    "pronunciation": "/roʊd ðə/",
-    "type": "phrase",
-    "definition_vi": "đi trên tàu/xe",
-    "definition_en": "traveled aboard a vessel",
-    "meaning": "đi trên tàu/xe",
-    "example": "We rode the submarine through the ocean.",
-    "level": "A1+"
-  },
-  {
-    "word": "said it",
-    "phonetic": "/sed ɪt/",
-    "pronunciation": "/sed ɪt/",
-    "type": "phrase",
-    "definition_vi": "nói rằng điều đó",
-    "definition_en": "stated a specific fact",
-    "meaning": "nói rằng điều đó",
-    "example": "Our guide said it was very old.",
-    "level": "A1+"
-  },
-  {
-    "word": "said we",
-    "phonetic": "/sed wiː/",
-    "pronunciation": "/sed wiː/",
-    "type": "phrase",
-    "definition_vi": "nói chúng tôi",
-    "definition_en": "stated that we performed an action",
-    "meaning": "nói chúng tôi",
-    "example": "The guide said we did a great job.",
-    "level": "A1+"
-  },
-  {
-    "word": "saw amazing",
-    "phonetic": "/sɔː əˈmeɪzɪŋ/",
-    "pronunciation": "/sɔː əˈmeɪzɪŋ/",
-    "type": "phrase",
-    "definition_vi": "nhìn thấy những điều tuyệt vời",
-    "definition_en": "spotted wonderful things",
-    "meaning": "nhìn thấy những điều tuyệt vời",
-    "example": "We saw amazing sights.",
-    "level": "A1+"
-  },
-  {
-    "word": "saw beautiful",
-    "phonetic": "/sɔː ˈbjuːtɪfl/",
-    "pronunciation": "/sɔː ˈbjuːtɪfl/",
-    "type": "phrase",
-    "definition_vi": "nhìn thấy cảnh đẹp",
-    "definition_en": "noticed attractive or lovely sights",
-    "meaning": "nhìn thấy cảnh đẹp",
-    "example": "We saw beautiful marine life.",
-    "level": "A1+"
-  },
-  {
-    "word": "saw in",
-    "phonetic": "/sɔː ɪn/",
-    "pronunciation": "/sɔː ɪn/",
-    "type": "phrase",
-    "definition_vi": "nhìn thấy ở trong",
-    "definition_en": "observed inside a location",
-    "meaning": "nhìn thấy ở trong",
-    "example": "They wrote about things they saw in China.",
-    "level": "A1+"
-  },
-  {
-    "word": "saw inside",
-    "phonetic": "/sɔː ɪnˈsaɪd/",
-    "pronunciation": "/sɔː ɪnˈsaɪd/",
-    "type": "phrase",
-    "definition_vi": "nhìn thấy bên trong",
-    "definition_en": "looked inside a space",
-    "meaning": "nhìn thấy bên trong",
-    "example": "We saw inside the underwater cave.",
-    "level": "A1+"
-  },
-  {
-    "word": "saw old",
-    "phonetic": "/sɔː oʊld/",
-    "pronunciation": "/sɔː oʊld/",
-    "type": "phrase",
-    "definition_vi": "nhìn thấy đồ cổ",
-    "definition_en": "spotted ancient objects",
-    "meaning": "nhìn thấy đồ cổ",
-    "example": "We saw old treasures in the cave.",
-    "level": "A1+"
-  },
-  {
-    "word": "spoke five",
-    "phonetic": "/spəʊk faɪv/",
-    "pronunciation": "/spəʊk faɪv/",
-    "type": "phrase",
-    "definition_vi": "nói được 5 ngôn ngữ",
-    "definition_en": "English collocation / phrase: spoke five",
-    "meaning": "nói được 5 ngôn ngữ",
-    "example": "He spoke five different languages.",
-    "level": "A1+"
-  },
-  {
-    "word": "take photos",
-    "phonetic": "/teɪk ˈfoʊtoʊz/",
-    "pronunciation": "/teɪk ˈfoʊtoʊz/",
-    "type": "phrase",
-    "definition_vi": "chụp ảnh",
-    "definition_en": "capture pictures",
-    "meaning": "chụp ảnh",
-    "example": "Divers take photos of corals.",
-    "level": "A1+"
-  },
-  {
-    "word": "told their",
-    "phonetic": "/toʊld ðeər/",
-    "pronunciation": "/toʊld ðeər/",
-    "type": "phrase",
-    "definition_vi": "kể những câu chuyện của họ",
-    "definition_en": "narrated their experiences",
-    "meaning": "kể những câu chuyện của họ",
-    "example": "Explorers told their stories.",
-    "level": "A1+"
-  },
-  {
-    "word": "took 24 years",
-    "phonetic": "/tʊk ˈtwenti fɔːr jɪərz/",
-    "pronunciation": "/tʊk ˈtwenti fɔːr jɪərz/",
-    "type": "phrase",
-    "definition_vi": "mất 24 năm",
-    "definition_en": "English collocation / phrase: took 24 years",
-    "meaning": "mất 24 năm",
-    "example": "His journey across Asia took 24 years.",
-    "level": "A1+"
-  },
-  {
-    "word": "took photos",
-    "phonetic": "/tʊk ˈfəʊtəʊz/",
-    "pronunciation": "/tʊk ˈfəʊtəʊz/",
-    "type": "phrase",
-    "definition_vi": "chụp ảnh",
-    "definition_en": "English collocation / phrase: took photos",
-    "meaning": "chụp ảnh",
-    "example": "We took photos of the ancient objects.",
-    "level": "A1+"
-  },
-  {
-    "word": "use technology",
-    "phonetic": "/juːz tekˈnɒlədʒi/",
-    "pronunciation": "/juːz tekˈnɒlədʒi/",
-    "type": "phrase",
-    "definition_vi": "sử dụng công nghệ",
-    "definition_en": "employ modern devices",
-    "meaning": "sử dụng công nghệ",
-    "example": "Explorers use technology underwater.",
-    "level": "A1+"
-  },
-  {
-    "word": "won the",
-    "phonetic": "/wʌn ðə/",
-    "pronunciation": "/wʌn ðə/",
-    "type": "phrase",
-    "definition_vi": "giành được",
-    "definition_en": "gained trust or victory",
-    "meaning": "giành được",
-    "example": "He won the emperor's trust.",
-    "level": "A1+"
-  },
-  {
-    "word": "beautiful things",
-    "phonetic": "/ˈbjuːtɪfl θɪŋz/",
-    "pronunciation": "/ˈbjuːtɪfl θɪŋz/",
-    "type": "phrase",
-    "definition_vi": "những cảnh đẹp",
-    "definition_en": "English collocation / phrase: beautiful things",
-    "meaning": "những cảnh đẹp",
-    "example": "We saw beautiful things under the sea.",
-    "level": "A1+"
-  },
-  {
-    "word": "coral reefs",
-    "phonetic": "/ˈkɒrəl riːfs/",
-    "pronunciation": "/ˈkɒrəl riːfs/",
-    "type": "phrase",
-    "definition_vi": "rạn san hô",
-    "definition_en": "English collocation / phrase: coral reefs",
-    "meaning": "rạn san hô",
-    "example": "Scuba divers explored the colorful coral reefs.",
-    "level": "A1+"
-  },
-  {
-    "word": "explorers",
-    "phonetic": "/ɪkˈsplɔːrərz/",
-    "pronunciation": "/ɪkˈsplɔːrərz/",
-    "type": "phrase",
-    "definition_vi": "các nhà thám hiểm",
-    "definition_en": "English collocation / phrase: explorers",
-    "meaning": "các nhà thám hiểm",
-    "example": "Brave explorers discovered new continents.",
-    "level": "A1+"
-  },
-  {
-    "word": "ancient objects",
-    "phonetic": "/ˈeɪnʃənt ˈɒbdʒɪkts/",
-    "pronunciation": "/ˈeɪnʃənt ˈɒbdʒɪkts/",
-    "type": "phrase",
-    "definition_vi": "những cổ vật",
-    "definition_en": "English collocation / phrase: ancient objects",
-    "meaning": "những cổ vật",
-    "example": "The museum displays ancient objects.",
-    "level": "A1+"
-  },
-  {
-    "word": "chuẩn bị cho tương lai",
-    "ipa": "/chuẩn bị cho tương lai/",
-    "meaning": "cụm từ vựng: chuẩn bị cho tương lai",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "giúp",
-    "ipa": "/giúp/",
-    "meaning": "cụm từ vựng: giúp",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn chơi trò chơi",
-    "ipa": "/luôn chơi trò chơi/",
-    "meaning": "cụm từ vựng: luôn chơi trò chơi",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Rất lâu trước đây",
-    "ipa": "/rất lâu trước đây/",
-    "meaning": "cụm từ vựng: rất lâu trước đây",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "dự trữ thức ăn",
-    "ipa": "/dự trữ thức ăn/",
-    "meaning": "cụm từ vựng: dự trữ thức ăn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc rất chăm chỉ cả mùa hè",
-    "ipa": "/làm việc rất chăm chỉ cả mùa hè/",
-    "meaning": "cụm từ vựng: làm việc rất chăm chỉ cả mùa hè",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cứ cười",
-    "ipa": "/cứ cười/",
-    "meaning": "cụm từ vựng: cứ cười",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc cùng cô mùa hè tới",
-    "ipa": "/làm việc cùng cô mùa hè tới/",
-    "meaning": "cụm từ vựng: làm việc cùng cô mùa hè tới",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "đến nhà con kiến",
-    "ipa": "/đến nhà con kiến/",
-    "meaning": "cụm từ vựng: đến nhà con kiến",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "không bao giờ lo lắng",
-    "ipa": "/không bao giờ lo lắng/",
-    "meaning": "cụm từ vựng: không bao giờ lo lắng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhảy tung tăng",
-    "ipa": "/nhảy tung tăng/",
-    "meaning": "cụm từ vựng: nhảy tung tăng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "1.1°c warmer",
-    "phonetic": "/1.1°c warmer/",
-    "pronunciation": "/1.1°c warmer/",
-    "type": "phrase",
-    "definition_vi": "11c warmer",
-    "definition_en": "Key collocation: 1.1°c warmer",
-    "meaning": "11c warmer",
-    "example": "Natural usage of '1.1°c warmer' in sentence context.",
-    "level": "A1+"
-  },
-  {
-    "word": "một con kiến chăm chỉ",
-    "ipa": "/một con kiến chăm chỉ/",
-    "meaning": "cụm từ vựng: một con kiến chăm chỉ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "what can we do?",
-    "phonetic": "/what can we do?/",
-    "pronunciation": "/what can we do?/",
-    "type": "phrase",
-    "definition_vi": "what can we do",
-    "definition_en": "Key collocation: what can we do?",
-    "meaning": "what can we do",
-    "example": "Natural usage of 'what can we do?' in sentence context.",
-    "level": "A1+"
-  },
-  {
-    "word": "nhặt hạt",
-    "ipa": "/nhặt hạt/",
-    "meaning": "cụm từ vựng: nhặt hạt",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
-    "ipa": "/làm việc chăm chỉ cùng nhau suốt phần còn lại của năm/",
-    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn làm việc chăm chỉ",
-    "ipa": "/luôn làm việc chăm chỉ/",
-    "meaning": "cụm từ vựng: luôn làm việc chăm chỉ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cho châu chấu một ít thức ăn",
-    "ipa": "/cho châu chấu một ít thức ăn/",
-    "meaning": "cụm từ vựng: cho châu chấu một ít thức ăn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sự chăm chỉ luôn được đền bù cuối cùng",
-    "ipa": "/sự chăm chỉ luôn được đền bù cuối cùng/",
-    "meaning": "cụm từ vựng: sự chăm chỉ luôn được đền bù cuối cùng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Suốt mùa đông",
-    "ipa": "/suốt mùa đông/",
-    "meaning": "cụm từ vựng: suốt mùa đông",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Anh chị em",
-    "ipa": "/anh chị em/",
-    "meaning": "cụm từ vựng: anh chị em",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "đi ra đồng",
-    "ipa": "/đi ra đồng/",
-    "meaning": "cụm từ vựng: đi ra đồng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Mùa hè qua mùa hè",
-    "ipa": "/mùa hè qua mùa hè/",
-    "meaning": "cụm từ vựng: mùa hè qua mùa hè",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc chăm chỉ cùng nhau",
-    "ipa": "/làm việc chăm chỉ cùng nhau/",
-    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhà",
-    "ipa": "/nhà/",
-    "meaning": "cụm từ vựng: nhà",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "học được một bài học quan trọng",
-    "ipa": "/học được một bài học quan trọng/",
-    "meaning": "cụm từ vựng: học được một bài học quan trọng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "xây một ngôi nhà ấm",
-    "ipa": "/xây một ngôi nhà ấm/",
-    "meaning": "cụm từ vựng: xây một ngôi nhà ấm",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "tiếp tục chơi",
-    "ipa": "/tiếp tục chơi/",
-    "meaning": "cụm từ vựng: tiếp tục chơi",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Từ ngày đó",
-    "ipa": "/từ ngày đó/",
-    "meaning": "cụm từ vựng: từ ngày đó",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "ánh nắng ấm đẹp",
-    "ipa": "/ánh nắng ấm đẹp/",
-    "meaning": "cụm từ vựng: ánh nắng ấm đẹp",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "không bao giờ làm việc",
-    "ipa": "/không bao giờ làm việc/",
-    "meaning": "cụm từ vựng: không bao giờ làm việc",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cảm thấy rất lạnh và rất đói",
-    "ipa": "/cảm thấy rất lạnh và rất đói/",
-    "meaning": "cụm từ vựng: cảm thấy rất lạnh và rất đói",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "vui vẻ khỏe mạnh suốt phần còn lại của năm",
-    "ipa": "/vui vẻ khỏe mạnh suốt phần còn lại của năm/",
-    "meaning": "cụm từ vựng: vui vẻ khỏe mạnh suốt phần còn lại của năm",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "hát ríu rít",
-    "ipa": "/hát ríu rít/",
-    "meaning": "cụm từ vựng: hát ríu rít",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "mỉm cười đồng ý",
-    "ipa": "/mỉm cười đồng ý/",
-    "meaning": "cụm từ vựng: mỉm cười đồng ý",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Làm việc cùng tôi vào mùa hè tới",
-    "ipa": "/làm việc cùng tôi vào mùa hè tới/",
-    "meaning": "cụm từ vựng: làm việc cùng tôi vào mùa hè tới",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn bận rộn",
-    "ipa": "/luôn bận rộn/",
-    "meaning": "cụm từ vựng: luôn bận rộn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "một con châu chấu lười biếng",
-    "ipa": "/một con châu chấu lười biếng/",
-    "meaning": "cụm từ vựng: một con châu chấu lười biếng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "một ngày lạnh vào mùa thu",
-    "ipa": "/một ngày lạnh vào mùa thu/",
-    "meaning": "cụm từ vựng: một ngày lạnh vào mùa thu",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "xin thức ăn",
-    "ipa": "/xin thức ăn/",
-    "meaning": "cụm từ vựng: xin thức ăn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhảy múa vui vẻ",
-    "ipa": "/nhảy múa vui vẻ/",
-    "meaning": "cụm từ vựng: nhảy múa vui vẻ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "ánh nắng ấm sáng",
-    "ipa": "/ánh nắng ấm sáng/",
-    "meaning": "cụm từ vựng: ánh nắng ấm sáng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "chia sẻ thức ăn cùng nhau",
-    "ipa": "/chia sẻ thức ăn cùng nhau/",
-    "meaning": "cụm từ vựng: chia sẻ thức ăn cùng nhau",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Ngày này qua ngày khác",
-    "ipa": "/ngày này qua ngày khác/",
-    "meaning": "cụm từ vựng: ngày này qua ngày khác",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "yêu thương",
-    "ipa": "/yêu thương/",
-    "meaning": "cụm từ vựng: yêu thương",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cứ hát",
-    "ipa": "/cứ hát/",
-    "meaning": "cụm từ vựng: cứ hát",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "mang những hạt nặng",
-    "ipa": "/mang những hạt nặng/",
-    "meaning": "cụm từ vựng: mang những hạt nặng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "tiếp tục chơi trò chơi",
-    "ipa": "/tiếp tục chơi trò chơi/",
-    "meaning": "cụm từ vựng: tiếp tục chơi trò chơi",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Dưới ánh nắng mùa hè ấm áp",
-    "ipa": "/dưới ánh nắng mùa hè ấm áp/",
-    "meaning": "cụm từ vựng: dưới ánh nắng mùa hè ấm áp",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Mẹ",
-    "ipa": "/mẹ/",
-    "meaning": "cụm từ vựng: mẹ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn chơi đùa",
-    "ipa": "/luôn chơi đùa/",
-    "meaning": "cụm từ vựng: luôn chơi đùa",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "đội",
-    "phonetic": "/đội/",
-    "pronunciation": "/đội/",
-    "type": "word",
-    "definition_vi": "cụm từ vựng: đội",
-    "definition_en": "Collocation: đội",
-    "meaning": "cụm từ vựng: đội",
-    "example": "The students learned 'đội' in their English lesson.",
-    "level": "A1+"
-  },
-  {
-    "word": "bố",
-    "ipa": "/bố/",
-    "meaning": "cụm từ vựng: bố",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Gia đình",
-    "ipa": "/gia đình/",
-    "meaning": "cụm từ vựng: gia đình",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "went to the temple",
-    "ipa": "/went to the temple/",
-    "meaning": "went to the temple",
-    "example": "We practiced went to the temple today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at animals",
-    "ipa": "/looked at animals/",
-    "meaning": "looked at animals",
-    "example": "We practiced looked at animals today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "listened to their calls",
-    "ipa": "/listened to their calls/",
-    "meaning": "listened to their calls",
-    "example": "We practiced listened to their calls today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "went to art class",
-    "ipa": "/went to art class/",
-    "meaning": "went to art class",
-    "example": "We practiced went to art class today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the symmetry",
-    "ipa": "/looked at the symmetry/",
-    "meaning": "looked at the symmetry",
-    "example": "We practiced looked at the symmetry today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "In Panel One",
-    "ipa": "/ɪn ˈpænl wʌn/",
-    "meaning": "ở khung thứ nhất",
-    "example": "In Panel One, Leo sketched the park.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "In Panel Three",
-    "ipa": "/ɪn ˈpænl θriː/",
-    "meaning": "ở khung thứ ba",
-    "example": "In Panel Three, Leo drew a street musician.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "In Panel Two",
-    "ipa": "/ɪn ˈpænl tuː/",
-    "meaning": "ở khung thứ hai",
-    "example": "In Panel Two, Leo drew Max playing with his ball.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the comic strip",
-    "ipa": "/lʊkt æt ðə ˈkɒmɪk strɪp/",
-    "meaning": "nhìn vào bộ truyện tranh",
-    "example": "Mia looked at the comic strip and smiled.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sat down with his pencils and paper",
-    "ipa": "/sæt daʊn wɪð hɪz ˈpenslz ənd ˈpeɪpə/",
-    "meaning": "ngồi xuống với bút chì và giấy",
-    "example": "Leo sat down with his pencils and paper to draw.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "wanted to create a comic strip",
-    "ipa": "/ˈwɒntɪd tuː kriˈeɪt ə ˈkɒmɪk strɪp/",
-    "meaning": "muốn tạo ra một bộ truyện tranh",
-    "example": "Leo wanted to create a comic strip about his weekend.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "In Panel Four",
-    "ipa": "/in panel four/",
-    "meaning": "ở khung thứ tư",
-    "example": "We practiced In Panel Four today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to school",
-    "ipa": "/came to school/",
-    "meaning": "came to school",
-    "example": "We practiced came to school today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "went to a farm",
-    "ipa": "/went to a farm/",
-    "meaning": "went to a farm",
-    "example": "We practiced went to a farm today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "smiled at Lily",
-    "ipa": "/smiled at lily/",
-    "meaning": "smiled at Lily",
-    "example": "We practiced smiled at Lily today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "change a student\\",
-    "ipa": "/change a student\\",
-    "meaning": "thay đổi cuộc đời của một học sinh",
-    "example": "The students practiced using \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to the ant\\",
-    "ipa": "/came to the ant\\",
-    "meaning": "đến nhà con kiến",
-    "example": "He came to the ant\\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "walked to the same place",
-    "ipa": "/walked to the same place/",
-    "meaning": "walked to the same place",
-    "example": "We practiced walked to the same place today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the old map",
-    "ipa": "/looked at the old map/",
-    "meaning": "looked at the old map",
-    "example": "We practiced looked at the old map today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to live together",
-    "ipa": "/came to live together/",
-    "meaning": "came to live together",
-    "example": "We practiced came to live together today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "listened to tropical birds",
-    "ipa": "/listened to tropical birds/",
-    "meaning": "listened to tropical birds",
-    "example": "We practiced listened to tropical birds today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the slow tortoise",
-    "ipa": "/looked at the slow tortoise/",
-    "meaning": "looked at the slow tortoise",
-    "example": "We practiced looked at the slow tortoise today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "went to the train station",
-    "ipa": "/went to the train station/",
-    "meaning": "went to the train station",
-    "example": "We practiced went to the train station today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "flew to a tiny green island",
-    "ipa": "/flew to a tiny green island/",
-    "meaning": "flew to a tiny green island",
-    "example": "We practiced flew to a tiny green island today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to help them",
-    "ipa": "/came to help them/",
-    "meaning": "came to help them",
-    "example": "We practiced came to help them today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the bright fruit",
-    "ipa": "/looked at the bright fruit/",
-    "meaning": "looked at the bright fruit",
-    "example": "We practiced looked at the bright fruit today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at an old map",
-    "ipa": "/looked at an old map/",
-    "meaning": "looked at an old map",
-    "example": "We practiced looked at an old map today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "look at this",
-    "ipa": "/look at this/",
-    "meaning": "look at this",
-    "example": "We practiced look at this today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "looked at the tiny point of light",
-    "ipa": "/looked at the tiny point of light/",
-    "meaning": "looked at the tiny point of light",
-    "example": "We practiced looked at the tiny point of light today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to help",
-    "ipa": "/came to help/",
-    "meaning": "came to help",
-    "example": "We practiced came to help today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "smiled at Luna",
-    "ipa": "/smiled at luna/",
-    "meaning": "smiled at Luna",
-    "example": "We practiced smiled at Luna today.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "went to the park",
-    "ipa": "/went tuː ðə pɑːk/",
-    "meaning": "đã đến công viên",
-    "example": "Leo went to the park.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "was warm and bright",
-    "ipa": "/wəz wɔːm ənd braɪt/",
-    "meaning": "trời ấm và sáng",
-    "example": "The day was warm and bright.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "ran very fast",
-    "ipa": "/ræn ˈveri fɑːst/",
-    "meaning": "chạy rất nhanh",
-    "example": "Leo ran very fast.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "passed the baton",
-    "ipa": "/pɑːst ðə bəˈtɒn/",
-    "meaning": "truyền gậy tiếp sức",
-    "example": "He passed the baton.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "ran across the grass",
-    "ipa": "/ræn əˈkrɒs ðə ɡrɑːs/",
-    "meaning": "chạy qua bãi cỏ",
-    "example": "Maya ran across the grass.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "are good for us",
-    "ipa": "/ɑːr ɡʊd fɔːr ʌs/",
-    "meaning": "tốt cho chúng ta",
-    "example": "Sports are good for us.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "went to the sports stadium",
-    "ipa": "/went tuː ðə spɔːts ˈsteɪdiəm/",
-    "meaning": "đã đến sân vận động thể thao",
-    "example": "Leo went to the sports stadium.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sat down with his coach",
-    "ipa": "/sæt daʊn wɪð hɪz kəʊtʃ/",
-    "meaning": "ngồi xuống với huấn luyện viên",
-    "example": "He sat down with his coach.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "caught the baton",
-    "ipa": "/kɔːt ðə bəˈtɒn/",
-    "meaning": "bắt lấy gậy tiếp sức",
-    "example": "Max caught the baton.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "teamwork brought victory",
-    "ipa": "/ˈtiːmwɜːk brɔːt ˈvɪktəri/",
-    "meaning": "tinh thần đồng đội mang lại chiến thắng",
-    "example": "Their teamwork brought victory.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "smiled with pride",
-    "ipa": "/smaɪld wɪð praɪd/",
-    "meaning": "mỉm cười tự hào",
-    "example": "Leo smiled with pride.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "is great for our body",
-    "ipa": "/ɪz ɡreɪt fɔːr aʊə ˈbɒdi/",
-    "meaning": "thật tuyệt vời cho cơ thể",
-    "example": "Playing sports is great for our body.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "run in the park",
-    "ipa": "/rʌn ɪn ðə pɑːk/",
-    "meaning": "chạy trong công viên",
-    "example": "We run in the park every morning.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "bright sunlight",
-    "ipa": "/braɪt ˈsʌnlaɪt/",
-    "meaning": "ánh nắng sáng",
-    "example": "The bright sunlight warms the field.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "help us feel happy",
-    "ipa": "/help ʌs fiːl ˈhæpi/",
-    "meaning": "giúp chúng ta cảm thấy vui vẻ",
-    "example": "Fresh air helps us feel happy.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "important social skills",
-    "ipa": "/ɪmˈpɔːtnt ˈsəʊʃl skɪlz/",
-    "meaning": "kỹ năng xã hội quan trọng",
-    "example": "Sports teach important social skills.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "learn to cooperate",
-    "ipa": "/lɜːn tuː kəʊˈɒpəreɪt/",
-    "meaning": "học cách hợp tác",
-    "example": "Players learn to cooperate.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "listen to our teammates",
-    "ipa": "/ˈlɪsn tuː aʊə ˈtiːmmeɪts/",
-    "meaning": "lắng nghe đồng đội",
-    "example": "We listen to our teammates.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "30 minutes of exercise",
-    "ipa": "/ˈθɜːti ˈmɪnɪts əv ˈeksəsaɪz/",
-    "meaning": "30 phút tập thể dục",
-    "example": "We need 30 minutes of exercise daily.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "enjoy outdoor sports",
-    "ipa": "/ɪnˈdʒɔɪ ˈaʊtdɔː spɔːts/",
-    "meaning": "tận hưởng thể thao ngoài trời",
-    "example": "Kids enjoy outdoor sports.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "are super fun",
-    "ipa": "/are super fun/",
-    "meaning": "are super fun",
-    "example": "We learned are super fun.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cheer and smile",
-    "ipa": "/cheer and smile/",
-    "meaning": "cheer and smile",
-    "example": "We learned cheer and smile.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "is even more important",
-    "ipa": "/is even more important/",
-    "meaning": "is even more important",
-    "example": "We learned is even more important.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "finish the race",
-    "ipa": "/finish the race/",
-    "meaning": "finish the race",
-    "example": "We learned finish the race.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "shake hands with opponents",
-    "ipa": "/shake hands with opponents/",
-    "meaning": "shake hands with opponents",
-    "example": "We learned shake hands with opponents.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "say kind words",
-    "ipa": "/say kind words/",
-    "meaning": "say kind words",
-    "example": "We learned say kind words.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "stood together with smiles",
-    "ipa": "/stood together with smiles/",
-    "meaning": "stood together with smiles",
-    "example": "We learned stood together with smiles.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "win or lose",
-    "ipa": "/win or lose/",
-    "meaning": "win or lose",
-    "example": "We learned win or lose.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "shake hands politely",
-    "ipa": "/shake hands politely/",
-    "meaning": "shake hands politely",
-    "example": "We learned shake hands politely.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "playing fair",
-    "ipa": "/playing fair/",
-    "meaning": "playing fair",
-    "example": "We learned playing fair.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "stood together happily",
-    "ipa": "/stood together happily/",
-    "meaning": "stood together happily",
-    "example": "We learned stood together happily.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "makes sports day",
-    "ipa": "/makes sports day/",
-    "meaning": "makes sports day",
-    "example": "We learned makes sports day.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "do their best",
-    "ipa": "/do their best/",
-    "meaning": "do their best",
-    "example": "We learned do their best.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "building strong character",
-    "ipa": "/building strong character/",
-    "meaning": "building strong character",
-    "example": "We learned building strong character.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "play fair",
-    "ipa": "/play fair/",
-    "meaning": "play fair",
-    "example": "We learned play fair.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "was tired but happy",
-    "ipa": "/was tired but happy/",
-    "meaning": "was tired but happy",
-    "example": "We learned was tired but happy.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "declared a sacred truce",
-    "ipa": "/declared a sacred truce/",
-    "meaning": "declared a sacred truce",
-    "example": "We learned declared a sacred truce.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sat down with their leaders",
-    "ipa": "/sat down with their leaders/",
-    "meaning": "sat down with their leaders",
-    "example": "We learned sat down with their leaders.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "passed the Olympic torch",
-    "ipa": "/passed the olympic torch/",
-    "meaning": "passed the Olympic torch",
-    "example": "We learned passed the Olympic torch.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "marched across the stadium",
-    "ipa": "/marched across the stadium/",
-    "meaning": "marched across the stadium",
-    "example": "We learned marched across the stadium.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "represented their home nations",
-    "ipa": "/represented their home nations/",
-    "meaning": "represented their home nations",
-    "example": "We learned represented their home nations.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "were united in peace",
-    "ipa": "/were united in peace/",
-    "meaning": "were united in peace",
-    "example": "We learned were united in peace.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sports brought peace",
-    "ipa": "/sports brought peace/",
-    "meaning": "sports brought peace",
-    "example": "We learned sports brought peace.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "is known as the Home of Champions",
-    "ipa": "/is known as the home of champions/",
-    "meaning": "is known as the Home of Champions",
-    "example": "We learned is known as the Home of Champions.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "running long distances to school",
-    "ipa": "/running long distances to school/",
-    "meaning": "running long distances to school",
-    "example": "We learned running long distances to school.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "is a normal part",
-    "ipa": "/is a normal part/",
-    "meaning": "is a normal part",
-    "example": "We learned is a normal part.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "run on red dirt paths",
-    "ipa": "/run on red dirt paths/",
-    "meaning": "run on red dirt paths",
-    "example": "We learned run on red dirt paths.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "win global marathon races",
-    "ipa": "/win global marathon races/",
-    "meaning": "win global marathon races",
-    "example": "We learned win global marathon races.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "travel to Kenya to train",
-    "ipa": "/travel to kenya to train/",
-    "meaning": "travel to Kenya to train",
-    "example": "We learned travel to Kenya to train.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "share healthy meals",
-    "ipa": "/share healthy meals/",
-    "meaning": "share healthy meals",
-    "example": "We learned share healthy meals.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "learn about different cultures",
-    "ipa": "/learn about different cultures/",
-    "meaning": "learn about different cultures",
-    "example": "We learned learn about different cultures.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "is a great bridge",
-    "ipa": "/is a great bridge/",
-    "meaning": "is a great bridge",
-    "example": "We learned is a great bridge.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "achieve big dreams",
-    "ipa": "/achieve big dreams/",
-    "meaning": "achieve big dreams",
-    "example": "We learned achieve big dreams.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "share traditional meals",
-    "ipa": "/share traditional meals/",
-    "meaning": "share traditional meals",
-    "example": "We learned share traditional meals.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "is a powerful bridge",
-    "ipa": "/is a powerful bridge/",
-    "meaning": "is a powerful bridge",
-    "example": "We learned is a powerful bridge.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "inspire children everywhere",
-    "ipa": "/inspire children everywhere/",
-    "meaning": "inspire children everywhere",
-    "example": "We learned inspire children everywhere.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "achieve great goals",
-    "ipa": "/achieve great goals/",
-    "meaning": "achieve great goals",
-    "example": "We learned achieve great goals.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sat down with their coaches",
-    "ipa": "/sat down with their coaches/",
-    "meaning": "sat down with their coaches",
-    "example": "We learned sat down with their coaches.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Anh chị em",
-    "ipa": "/anh chị em/",
-    "meaning": "cụm từ vựng: anh chị em",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Gia đình",
-    "ipa": "/gia đình/",
-    "meaning": "cụm từ vựng: gia đình",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Mẹ",
-    "ipa": "/mẹ/",
-    "meaning": "cụm từ vựng: mẹ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "bố",
-    "ipa": "/bố/",
-    "meaning": "cụm từ vựng: bố",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "giúp",
-    "ipa": "/giúp/",
-    "meaning": "cụm từ vựng: giúp",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhà",
-    "ipa": "/nhà/",
-    "meaning": "cụm từ vựng: nhà",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "yêu thương",
-    "ipa": "/yêu thương/",
-    "meaning": "cụm từ vựng: yêu thương",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "change a student\\",
-    "ipa": "/change a student\\",
-    "meaning": "thay đổi cuộc đời của một học sinh",
-    "example": "The students practiced using \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Dưới ánh nắng mùa hè ấm áp",
-    "ipa": "/dưới ánh nắng mùa hè ấm áp/",
-    "meaning": "cụm từ vựng: dưới ánh nắng mùa hè ấm áp",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Ngày này qua ngày khác",
-    "ipa": "/ngày này qua ngày khác/",
-    "meaning": "cụm từ vựng: ngày này qua ngày khác",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Rất lâu trước đây",
-    "ipa": "/rất lâu trước đây/",
-    "meaning": "cụm từ vựng: rất lâu trước đây",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Suốt mùa đông",
-    "ipa": "/suốt mùa đông/",
-    "meaning": "cụm từ vựng: suốt mùa đông",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Từ ngày đó",
-    "ipa": "/từ ngày đó/",
-    "meaning": "cụm từ vựng: từ ngày đó",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "came to the ant\\",
-    "ipa": "/came to the ant\\",
-    "meaning": "đến nhà con kiến",
-    "example": "He came to the ant\\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "chia sẻ thức ăn cùng nhau",
-    "ipa": "/chia sẻ thức ăn cùng nhau/",
-    "meaning": "cụm từ vựng: chia sẻ thức ăn cùng nhau",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cho châu chấu một ít thức ăn",
-    "ipa": "/cho châu chấu một ít thức ăn/",
-    "meaning": "cụm từ vựng: cho châu chấu một ít thức ăn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "chuẩn bị cho tương lai",
-    "ipa": "/chuẩn bị cho tương lai/",
-    "meaning": "cụm từ vựng: chuẩn bị cho tương lai",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cảm thấy rất lạnh và rất đói",
-    "ipa": "/cảm thấy rất lạnh và rất đói/",
-    "meaning": "cụm từ vựng: cảm thấy rất lạnh và rất đói",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cứ cười",
-    "ipa": "/cứ cười/",
-    "meaning": "cụm từ vựng: cứ cười",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "cứ hát",
-    "ipa": "/cứ hát/",
-    "meaning": "cụm từ vựng: cứ hát",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "dự trữ thức ăn",
-    "ipa": "/dự trữ thức ăn/",
-    "meaning": "cụm từ vựng: dự trữ thức ăn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "hát ríu rít",
-    "ipa": "/hát ríu rít/",
-    "meaning": "cụm từ vựng: hát ríu rít",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "học được một bài học quan trọng",
-    "ipa": "/học được một bài học quan trọng/",
-    "meaning": "cụm từ vựng: học được một bài học quan trọng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "không bao giờ lo lắng",
-    "ipa": "/không bao giờ lo lắng/",
-    "meaning": "cụm từ vựng: không bao giờ lo lắng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "không bao giờ làm việc",
-    "ipa": "/không bao giờ làm việc/",
-    "meaning": "cụm từ vựng: không bao giờ làm việc",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn bận rộn",
-    "ipa": "/luôn bận rộn/",
-    "meaning": "cụm từ vựng: luôn bận rộn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn chơi trò chơi",
-    "ipa": "/luôn chơi trò chơi/",
-    "meaning": "cụm từ vựng: luôn chơi trò chơi",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn làm việc chăm chỉ",
-    "ipa": "/luôn làm việc chăm chỉ/",
-    "meaning": "cụm từ vựng: luôn làm việc chăm chỉ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc chăm chỉ cùng nhau",
-    "ipa": "/làm việc chăm chỉ cùng nhau/",
-    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc cùng cô mùa hè tới",
-    "ipa": "/làm việc cùng cô mùa hè tới/",
-    "meaning": "cụm từ vựng: làm việc cùng cô mùa hè tới",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc rất chăm chỉ cả mùa hè",
-    "ipa": "/làm việc rất chăm chỉ cả mùa hè/",
-    "meaning": "cụm từ vựng: làm việc rất chăm chỉ cả mùa hè",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "mang những hạt nặng",
-    "ipa": "/mang những hạt nặng/",
-    "meaning": "cụm từ vựng: mang những hạt nặng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "mỉm cười đồng ý",
-    "ipa": "/mỉm cười đồng ý/",
-    "meaning": "cụm từ vựng: mỉm cười đồng ý",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "một con châu chấu lười biếng",
-    "ipa": "/một con châu chấu lười biếng/",
-    "meaning": "cụm từ vựng: một con châu chấu lười biếng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "một con kiến chăm chỉ",
-    "ipa": "/một con kiến chăm chỉ/",
-    "meaning": "cụm từ vựng: một con kiến chăm chỉ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "một ngày lạnh vào mùa thu",
-    "ipa": "/một ngày lạnh vào mùa thu/",
-    "meaning": "cụm từ vựng: một ngày lạnh vào mùa thu",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhảy múa vui vẻ",
-    "ipa": "/nhảy múa vui vẻ/",
-    "meaning": "cụm từ vựng: nhảy múa vui vẻ",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhảy tung tăng",
-    "ipa": "/nhảy tung tăng/",
-    "meaning": "cụm từ vựng: nhảy tung tăng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "nhặt hạt",
-    "ipa": "/nhặt hạt/",
-    "meaning": "cụm từ vựng: nhặt hạt",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "sự chăm chỉ luôn được đền bù cuối cùng",
-    "ipa": "/sự chăm chỉ luôn được đền bù cuối cùng/",
-    "meaning": "cụm từ vựng: sự chăm chỉ luôn được đền bù cuối cùng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "tiếp tục chơi",
-    "ipa": "/tiếp tục chơi/",
-    "meaning": "cụm từ vựng: tiếp tục chơi",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "vui vẻ khỏe mạnh suốt phần còn lại của năm",
-    "ipa": "/vui vẻ khỏe mạnh suốt phần còn lại của năm/",
-    "meaning": "cụm từ vựng: vui vẻ khỏe mạnh suốt phần còn lại của năm",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "xin thức ăn",
-    "ipa": "/xin thức ăn/",
-    "meaning": "cụm từ vựng: xin thức ăn",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "xây một ngôi nhà ấm",
-    "ipa": "/xây một ngôi nhà ấm/",
-    "meaning": "cụm từ vựng: xây một ngôi nhà ấm",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "ánh nắng ấm đẹp",
-    "ipa": "/ánh nắng ấm đẹp/",
-    "meaning": "cụm từ vựng: ánh nắng ấm đẹp",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "đi ra đồng",
-    "ipa": "/đi ra đồng/",
-    "meaning": "cụm từ vựng: đi ra đồng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "đến nhà con kiến",
-    "ipa": "/đến nhà con kiến/",
-    "meaning": "cụm từ vựng: đến nhà con kiến",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "reduce, reuse, and recycle",
-    "ipa": "/reduce, reuse, and recycle/",
-    "meaning": "reduce reuse and recycle",
-    "example": "Natural usage of \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Làm việc cùng tôi vào mùa hè tới",
-    "ipa": "/làm việc cùng tôi vào mùa hè tới/",
-    "meaning": "cụm từ vựng: làm việc cùng tôi vào mùa hè tới",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "Mùa hè qua mùa hè",
-    "ipa": "/mùa hè qua mùa hè/",
-    "meaning": "cụm từ vựng: mùa hè qua mùa hè",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "luôn chơi đùa",
-    "ipa": "/luôn chơi đùa/",
-    "meaning": "cụm từ vựng: luôn chơi đùa",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
-    "ipa": "/làm việc chăm chỉ cùng nhau suốt phần còn lại của năm/",
-    "meaning": "cụm từ vựng: làm việc chăm chỉ cùng nhau suốt phần còn lại của năm",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "tiếp tục chơi trò chơi",
-    "ipa": "/tiếp tục chơi trò chơi/",
-    "meaning": "cụm từ vựng: tiếp tục chơi trò chơi",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "ánh nắng ấm sáng",
-    "ipa": "/ánh nắng ấm sáng/",
-    "meaning": "cụm từ vựng: ánh nắng ấm sáng",
-    "example": "The students learned \\",
-    "part_of_speech": "phrase",
-    "type": "phrase"
-  },
-  {
-    "word": "2,500 years ago",
-    "ipa": "/2,500 years ago/",
-    "meaning": "2.500 năm trước",
-    "example": "This is an example: 2,500 years ago.",
-    "part_of_speech": "phrase",
-    "type": "phrase"
   }
 ]
