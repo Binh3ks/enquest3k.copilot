@@ -35,13 +35,17 @@ Source: `.devin/workflows/start.md` §3.
 Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực nghiệm sau ở cả 2 mode (ADVANCED & EASY):
 1. **STEM Story vs Social Studies Content Separation**:
    - **STEM Story (`read_stem`)**: Tập trung vào Khoa học (Science), Công nghệ (Tech), Kỹ thuật (Engineering), Toán học (Maths) - ví dụ: cơ sinh học chạy bộ, gia tốc, động năng, chuyển hóa năng lượng, cơ bắp.
+   - **Easy Mode STEM**: Bắt buộc là phiên bản đơn giản hóa ngắn gọn (A1 level, ~145 từ) cho học sinh nhỏ tuổi/slower, dùng từ ngữ trực quan, không để mã LaTeX thô.
    - **Social Studies (`read_social`)**: Tập trung vào Lịch sử, Địa lý, Tinh thần thể thao (Sportsmanship), Fair Play, Đạo đức, Cổ vũ đồng đội, Lịch sử Olympic cổ đại.
 2. **Singapore Math Bar Models**:
    - Không được dùng lại hình ảnh bar model cũ của tuần trước. Mọi tuần mới bắt buộc tạo 5 hình ảnh SVG bar model độc bản tại `/public/images/weekXX/barmodel_wXX_adv_p1.svg` đến `p5.svg`.
-3. **Shadowing Video & Transcript**:
-   - Bắt buộc dùng video giáo dục thể thao/ngữ pháp thật (`_Itws1UmFE8` / `Rlmms56uisw`), không dùng video âm nhạc giải trí (như Despacito) và phải đồng bộ `script` nhại giọng chuẩn với video.
+3. **Shadowing Video & Conversational Dialogue Selection**:
+   - Video Shadowing phải dựa trên metadata của Syllabus (đúng chủ đề, từ vựng, ngữ pháp thì quá khứ).
+   - Bắt buộc là **conversational video (có đối thoại thực tế giữa các nhân vật)**, câu ngắn 2-6 giây thích hợp cho học sinh nhại giọng. KHÔNG dùng bài hát ngữ pháp hay diễn diễn thuyết 1 mình.
+   - KHÔNG tái sử dụng videoId đã dùng ở các tuần W01-W36. Bắt buộc có file transcript JSON Deepgram tại `src/data/video_transcripts_by_id/sentences/<videoId>.json`.
+   - **Chế độ TTS**: Sử dụng 10-12 câu tóm tắt nội dung bài đọc của tuần (`content_en`), độc lập hoàn toàn với Video Mode.
 4. **Mindmap Speaking**: 6 `centerStems` $\times$ 6 `branchLabels` cho mỗi stem = **36 branches** tổng cộng per mode.
 5. **Explore Station (`explore.js`)**: Chứa `content_en`, `content_vi` (145-220w), `check_questions` (3 câu đọc hiểu + 1 câu `critical_thinking`), và đối tượng `question` (`text_en`, `text_vi`, `min_words`, `hint_en`, `hint_vi`).
 6. **Write & Speak (`writing.js`)**: Chứa `hints.words` (từ gợi ý + từ bẫy `distractor: true`), và `story_prompts.picture_mode` (`type: 'picture'`, `image_url`, `word_bank`, `sentence_frames`, `writing_prompts: {en, vi}`) để kích hoạt đầy đủ các sub-tab viết theo tranh.
-7. **AI Tutor V28 Format (`week_XX_real.js` & `week_XX_easy_real.js`)**: Bắt buộc tạo ở cả 2 vị trí (`src/data/weeks/week_XX_real.js` và `src/data/weeks/week_XX/week_XX_real.js`), xuất đủ `story_missions` (Mission 1, 2, 3), `spark_talk.cards` (thẻ từ vựng môn học cho Free Talk), `target_vocab` (20 từ) & `sentences` (câu shadowing).
+7. **AI Tutor V28 Format (`week_XX_real.js` & `week_XX_easy_real.js`)**: Bắt buộc tạo ở cả 2 vị trí (`src/data/weeks/week_XX_real.js` và `src/data/weeks/week_XX/week_XX_real.js`), xuất đủ `story_missions` (Mission 1 retell STEM, Mission 2 retell Social Studies, Mission 3 liên hệ bản thân), `spark_talk` ĐÚNG 2 THẺ BÀI (`spark_talk` array length = 2), `target_vocab` (20 từ) & `sentences` (câu shadowing).
 8. **Daily Watch (`daily_watch.js`)**: Bắt buộc 5 video giáo dục độc bản (không dùng video âm nhạc giải trí như Despacito, không trùng lặp video ID của các tuần W01-W36).
