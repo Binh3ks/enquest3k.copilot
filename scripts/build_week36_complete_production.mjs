@@ -439,16 +439,22 @@ const writingCode = `export default {
   story_prompts: {
     picture_mode: {
       type: "picture",
-      image_url: "/images/week36/read_stem_w36.jpg",
-      word_bank: ["submarine", "buoyancy", "displace", "chest", "compass"],
+      image_url: "/images/week36/story_writing_pic.jpg",
+      image_prompt: "A yellow research submarine in a deep blue underwater ocean cavern using mechanical arms to attach red inflatable lift bags to an ancient wooden treasure chest resting on the seabed.",
+      word_bank: ["submarine", "buoyancy", "displace", "cavern", "chest", "compass", "inflatable lift bags", "upward lift", "gold compass", "maritime museum", "neutral buoyancy", "titanium hull"],
       sentence_frames: [
-        "On Sunday afternoon, Leo dove into an underwater cavern in a ___.",
-        "To float the 150 kg chest, he applied Archimedes ___ principle.",
-        "He attached lift bags to ___ 150 litres of seawater."
+        { template: "On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a ___.", answers: ["submarine"] },
+        { template: "They found an ancient wooden chest weighing ___ kilograms on the seabed.", answers: ["150"] },
+        { template: "To float the heavy chest, Leo applied Archimedes ___ principle.", answers: ["buoyancy"] },
+        { template: "He calculated that displacing 150 litres of seawater created 150 kg of ___.", answers: ["upward lift"] },
+        { template: "He attached inflatable lift bags to ___ 150 litres of seawater.", answers: ["displace"] },
+        { template: "The lift bags expanded and brought the heavy chest safely to the ___.", answers: ["surface"] },
+        { template: "Inside the chest, they discovered a preserved 16th-century gold ___.", answers: ["compass"] },
+        { template: "They presented the historical gold compass to the maritime ___.", answers: ["museum"] }
       ],
       writing_prompts: {
-        en: "Write a short paragraph about how Leo used buoyancy and physics to lift an ancient chest from the ocean floor.",
-        vi: "Viết một đoạn văn ngắn về cách Leo sử dụng lực đẩy nổi và vật lý để nâng rương cổ lên từ đáy đại dương."
+        en: "Look at the underwater picture! Write a creative story (60+ words, 8+ sentences) about how Leo's submarine crew attached lift bags, displaced seawater to create buoyancy, and rescued the ancient gold compass from the ocean cavern.",
+        vi: "Nhìn vào bức ảnh dưới biển! Viết một câu chuyện sáng tạo (60+ từ, 8+ câu) về cách thủy thủ đoàn tàu ngầm Leo gắn túi nâng, làm dịch chuyển nước biển để tạo lực nổi, và giải cứu chiếc la bàn vàng cổ từ hang động ngầm."
       }
     },
     topic_mode: {
