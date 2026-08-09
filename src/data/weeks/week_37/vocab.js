@@ -7,7 +7,8 @@ export default [
     "definition_en": "a person trained in physical sports",
     "definition_vi": "vận động viên",
     "example": "Leo is a dedicated relay athlete.",
-    "audio_word": "/audio/vocab/athlete.mp3"
+    "audio_word": "/audio/vocab/athlete.mp3",
+    "image_url": "/images/week37/v1_athlete.jpg"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@ export default [
     "definition_en": "a team race passing a baton",
     "definition_vi": "cuộc đua tiếp sức",
     "example": "Our relay team sprinted cleanly.",
-    "audio_word": "/audio/vocab/relay.mp3"
+    "audio_word": "/audio/vocab/relay.mp3",
+    "image_url": "/images/week37/v2_relay.jpg"
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@ export default [
     "definition_en": "a stick passed in a relay race",
     "definition_vi": "gậy tiếp sức",
     "example": "He passed the baton smoothly.",
-    "audio_word": "/audio/vocab/baton.mp3"
+    "audio_word": "/audio/vocab/baton.mp3",
+    "image_url": "/images/week37/v3_baton.jpg"
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@ export default [
     "definition_en": "large sports arena with seats",
     "definition_vi": "sân vận động",
     "example": "Spectators cheered in the stadium.",
-    "audio_word": "/audio/vocab/stadium.mp3"
+    "audio_word": "/audio/vocab/stadium.mp3",
+    "image_url": "/images/week37/v4_stadium.jpg"
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@ export default [
     "definition_en": "the force of a moving body",
     "definition_vi": "động năng / đà di chuyển",
     "example": "Sprinting early maintains kinetic momentum.",
-    "audio_word": "/audio/vocab/momentum.mp3"
+    "audio_word": "/audio/vocab/momentum.mp3",
+    "image_url": "/images/week37/v5_momentum.jpg"
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@ export default [
     "definition_en": "speed of motion in a direction",
     "definition_vi": "vận tốc",
     "example": "Velocity equals distance divided by time.",
-    "audio_word": "/audio/vocab/velocity.mp3"
+    "audio_word": "/audio/vocab/velocity.mp3",
+    "image_url": "/images/week37/v6_velocity.jpg"
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@ export default [
     "definition_en": "increase in speed over time",
     "definition_vi": "gia tốc / sự bứt tốc",
     "example": "Smooth acceleration prevents speed loss.",
-    "audio_word": "/audio/vocab/acceleration.mp3"
+    "audio_word": "/audio/vocab/acceleration.mp3",
+    "image_url": "/images/week37/v7_acceleration.jpg"
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@ export default [
     "definition_en": "an agreement to stop fighting",
     "definition_vi": "thỏa thuận ngừng bắn / đình chiến",
     "example": "Leaders declared a sacred Olympic truce.",
-    "audio_word": "/audio/vocab/truce.mp3"
+    "audio_word": "/audio/vocab/truce.mp3",
+    "image_url": "/images/week37/v8_truce.jpg"
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@ export default [
     "definition_en": "a country with its own government",
     "definition_vi": "quốc gia",
     "example": "Athletes represented their home nations.",
-    "audio_word": "/audio/vocab/nation.mp3"
+    "audio_word": "/audio/vocab/nation.mp3",
+    "image_url": "/images/week37/v9_nation.jpg"
   },
   {
     "id": 10,
@@ -97,7 +106,8 @@ export default [
     "definition_en": "a custom passed down through history",
     "definition_vi": "truyền thống",
     "example": "The Olympic truce is a historic tradition.",
-    "audio_word": "/audio/vocab/tradition.mp3"
+    "audio_word": "/audio/vocab/tradition.mp3",
+    "image_url": "/images/week37/v10_tradition.jpg"
   },
   {
     "id": 11,
@@ -107,7 +117,8 @@ export default [
     "definition_en": "ideas and customs of a people",
     "definition_vi": "văn hóa",
     "example": "Athletes shared different cultures in the village.",
-    "audio_word": "/audio/vocab/culture.mp3"
+    "audio_word": "/audio/vocab/culture.mp3",
+    "image_url": "/images/week37/v11_culture.jpg"
   },
   {
     "id": 12,
@@ -117,7 +128,8 @@ export default [
     "definition_en": "being joined together as one",
     "definition_vi": "sự đoàn kết",
     "example": "Passing the torch honors global unity.",
-    "audio_word": "/audio/vocab/unity.mp3"
+    "audio_word": "/audio/vocab/unity.mp3",
+    "image_url": "/images/week37/v12_unity.jpg"
   },
   {
     "id": 13,
@@ -127,7 +139,8 @@ export default [
     "definition_en": "height above sea level",
     "definition_vi": "độ cao so với mặt nước biển",
     "example": "Iten is located at high altitude.",
-    "audio_word": "/audio/vocab/altitude.mp3"
+    "audio_word": "/audio/vocab/altitude.mp3",
+    "image_url": "/images/week37/v13_altitude.jpg"
   },
   {
     "id": 14,
@@ -137,7 +150,8 @@ export default [
     "definition_en": "ability to sustain long effort",
     "definition_vi": "sức bền",
     "example": "Daily running builds strong endurance.",
-    "audio_word": "/audio/vocab/endurance.mp3"
+    "audio_word": "/audio/vocab/endurance.mp3",
+    "image_url": "/images/week37/v14_endurance.jpg"
   },
   {
     "id": 15,
@@ -147,7 +161,8 @@ export default [
     "definition_en": "a long-distance running race",
     "definition_vi": "cuộc chạy marathon",
     "example": "Kenyan runners win global marathon races.",
-    "audio_word": "/audio/vocab/marathon.mp3"
+    "audio_word": "/audio/vocab/marathon.mp3",
+    "image_url": "/images/week37/v15_marathon.jpg"
   },
   {
     "id": 16,
@@ -157,7 +172,8 @@ export default [
     "definition_en": "a top winner in a sport",
     "definition_vi": "nhà vô địch",
     "example": "Iten is the Home of Champions.",
-    "audio_word": "/audio/vocab/champion.mp3"
+    "audio_word": "/audio/vocab/champion.mp3",
+    "image_url": "/images/week37/v16_champion.jpg"
   },
   {
     "id": 17,
@@ -167,7 +183,8 @@ export default [
     "definition_en": "smoothly without interruption",
     "definition_vi": "một cách mượt mà",
     "example": "They passed the baton seamlessly.",
-    "audio_word": "/audio/vocab/seamlessly.mp3"
+    "audio_word": "/audio/vocab/seamlessly.mp3",
+    "image_url": "/images/week37/v17_seamlessly.jpg"
   },
   {
     "id": 18,
@@ -177,7 +194,8 @@ export default [
     "definition_en": "with intense excitement",
     "definition_vi": "một cách nhiệt tình",
     "example": "Spectators clapped enthusiastically.",
-    "audio_word": "/audio/vocab/enthusiastically.mp3"
+    "audio_word": "/audio/vocab/enthusiastically.mp3",
+    "image_url": "/images/week37/v18_enthusiastically.jpg"
   },
   {
     "id": 19,
@@ -187,7 +205,8 @@ export default [
     "definition_en": "good manners and respect",
     "definition_vi": "sự lịch sự",
     "example": "Athletes shook hands with politeness.",
-    "audio_word": "/audio/vocab/politeness.mp3"
+    "audio_word": "/audio/vocab/politeness.mp3",
+    "image_url": "/images/week37/v19_politeness.jpg"
   },
   {
     "id": 20,
@@ -197,6 +216,7 @@ export default [
     "definition_en": "in a calm manner without conflict",
     "definition_vi": "một cách hòa bình",
     "example": "Competitors were united peacefully.",
-    "audio_word": "/audio/vocab/peacefully.mp3"
+    "audio_word": "/audio/vocab/peacefully.mp3",
+    "image_url": "/images/week37/v20_peacefully.jpg"
   }
 ];
