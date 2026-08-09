@@ -100,11 +100,11 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
 
   // Image resolution: CDN → local Pages fallback
   useEffect(() => {
-    if (!pictureMode.image_url) { setImgFailed(true); return; }
-    const cdnUrl = getImageUrl(pictureMode.image_url);
-    setImgSrc(cdnUrl);
+    if (!pictureMode?.image_url) { setImgFailed(true); return; }
+    const initialUrl = getImageUrl(pictureMode.image_url);
+    setImgSrc(initialUrl);
     setImgFailed(false);
-  }, [pictureMode.image_url, weekId]);
+  }, [pictureMode?.image_url, weekId]);
 
   const handleImgError = useCallback(() => {
     // Fallback: if CDN URL (http/https) failed, try relative path directly from site bundle
@@ -113,7 +113,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
     } else {
       setImgFailed(true);
     }
-  }, [imgSrc, pictureMode.image_url]);
+  }, [imgSrc, pictureMode?.image_url]);
 
   const handleSubmit = () => {
     if (wordCount < scaffolding.minWords) return;

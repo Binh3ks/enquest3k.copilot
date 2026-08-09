@@ -19,6 +19,9 @@ const IMAGES_CDN =
 export function getImageUrl(path) {
   if (!path) return '';
   if (path.startsWith('http')) return path; // already absolute
+  if (path.startsWith('/images/week36') || path.startsWith('/images/week37')) {
+    return path; // Local relative bundle path for W36/W37 assets
+  }
   if (IMAGES_CDN) return `${IMAGES_CDN}${path}`; // CDN mode (default)
   return path; // fallback to relative
 }
