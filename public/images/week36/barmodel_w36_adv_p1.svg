@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
-  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
-  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Bar Model: Submarine Diving Depth</text>
+  <rect width="600" height="240" fill="#f8fafc" rx="12" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="300" y="32" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Bar Model: Submarine Target Depth</text>
   <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#2563eb" stroke-width="3" fill="none"/>
   <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb" text-anchor="middle">Total Target Cavern Depth = 300 metres</text>
-  <rect x="60" y="70" width="288" height="55" fill="#3b82f6" rx="6"/>
+  <rect x="60" y="70" width="288" height="55" fill="#3b82f6" rx="8"/>
   <text x="204" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Current Depth: 180m</text>
-  <rect x="348" y="70" width="192" height="55" fill="#94a3b8" rx="6" stroke="#64748b" stroke-dasharray="4,4"/>
+  <rect x="348" y="70" width="192" height="55" fill="#94a3b8" rx="8" stroke="#64748b" stroke-dasharray="4,4"/>
   <text x="444" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">? metres left</text>
   <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 300 - 180 = 120 metres</text>
 </svg>

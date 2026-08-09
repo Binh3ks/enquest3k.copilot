@@ -28,6 +28,24 @@ export default {
         en: "Write a short paragraph about how Leo used buoyancy and physics to lift an ancient chest from the ocean floor.",
         vi: "Viết một đoạn văn ngắn về cách Leo sử dụng lực đẩy nổi và vật lý để nâng rương cổ lên từ đáy đại dương."
       }
+    },
+    topic_mode: {
+      topics: [
+        {
+          id: "t1",
+          title_en: "The Submarine Physics Rescue",
+          en: "Describe how Leo applied Archimedes buoyancy principle to lift the 150 kg chest using compressed air bags.",
+          vi: "Mô tả cách Leo áp dụng nguyên lý lực đẩy Archimedes để nâng chiếc rương 150kg bằng túi khí nén.",
+          word_bank: ["submarine", "buoyancy", "displace", "cavern", "compass"]
+        },
+        {
+          id: "t2",
+          title_en: "Marco Polo's Silk Road Odyssey",
+          en: "Write about Marco Polo's 24-year journey across Asia and his work as a diplomat for Kublai Khan.",
+          vi: "Viết về chuyến đi 24 năm qua châu Á của Marco Polo và công việc làm sứ giả cho Hốt Tất Liệt.",
+          word_bank: ["merchant", "diplomat", "Silk Road", "manuscript", "explorer"]
+        }
+      ]
     }
   }
 };

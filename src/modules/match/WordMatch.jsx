@@ -39,7 +39,14 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mod
   const vocabList = data?.stations?.new_words?.vocab || [];
 
   const generateCards = useCallback((mode) => {
-    const selectedVocab = vocabList.slice(0, 10);
+    let selectedVocab = [];
+    if (mode === 'meaning') {
+      selectedVocab = vocabList.slice(0, 10);
+    } else if (mode === 'image') {
+      selectedVocab = vocabList.length >= 20 ? vocabList.slice(10, 20) : vocabList.slice(0, 10);
+    } else {
+      selectedVocab = shuffleArray(vocabList).slice(0, 10);
+    }
     let gameCards = [];
     selectedVocab.forEach(item => {
       const audioUrl = item.audio_word || item.audio_url;

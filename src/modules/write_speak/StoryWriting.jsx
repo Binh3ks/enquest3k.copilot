@@ -383,7 +383,7 @@ const TopicMode = ({ topicMode, weekId, savedData, saveProgress, markComplete, i
   }, [text, rubric, selectedTopicId]);
 
   const selectedTopic = topics.find(t => t.id === selectedTopicId);
-  const wordCount = useMemo(() => text.trim().split(/\s+/).filter(Boolean).length, [text]);
+  const wordCount = useMemo(() => (text || '').trim().split(/\s+/).filter(Boolean).length, [text]);
 
   const handleSubmit = () => {
     if (wordCount < 10 || !selectedTopic) return;

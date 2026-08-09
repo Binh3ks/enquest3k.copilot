@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-console.log("🚀 RE-BUILDING WEEK 36 DATA WITH PROVEN YOUTUBE VIDEO IDS & MATCHED SCHEMAS...");
+console.log("🚀 RE-BUILDING WEEK 36 DATA WITH 12 SHADOWING SENTENCES, CORRECT ASK-AI QUESTION STARTERS & HIGH-RES BAR MODELS...");
 
 const pubDir = './public/images/week36';
 const advDir = './src/data/weeks/week_36';
@@ -14,62 +14,62 @@ if (!fs.existsSync(advDir)) fs.mkdirSync(advDir, { recursive: true });
 // ==========================================
 
 const advSvgP1 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
-  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
-  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Bar Model: Submarine Diving Depth</text>
+  <rect width="600" height="240" fill="#f8fafc" rx="12" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="300" y="32" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Bar Model: Submarine Target Depth</text>
   <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#2563eb" stroke-width="3" fill="none"/>
   <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563eb" text-anchor="middle">Total Target Cavern Depth = 300 metres</text>
-  <rect x="60" y="70" width="288" height="55" fill="#3b82f6" rx="6"/>
+  <rect x="60" y="70" width="288" height="55" fill="#3b82f6" rx="8"/>
   <text x="204" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Current Depth: 180m</text>
-  <rect x="348" y="70" width="192" height="55" fill="#94a3b8" rx="6" stroke="#64748b" stroke-dasharray="4,4"/>
+  <rect x="348" y="70" width="192" height="55" fill="#94a3b8" rx="8" stroke="#64748b" stroke-dasharray="4,4"/>
   <text x="444" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">? metres left</text>
   <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 300 - 180 = 120 metres</text>
 </svg>`;
 
 const advSvgP2 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
-  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
-  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Equal Shares Model: Buoyancy Lift Bag Capacity</text>
+  <rect width="600" height="240" fill="#f8fafc" rx="12" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="300" y="32" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Equal Shares Model: Buoyancy Lift Bag Capacity</text>
   <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#059669" stroke-width="3" fill="none"/>
   <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#059669" text-anchor="middle">Total Ancient Chest Weight = 150 kg</text>
-  <rect x="60" y="70" width="155" height="55" fill="#10b981" rx="6"/>
+  <rect x="60" y="70" width="155" height="55" fill="#10b981" rx="8"/>
   <text x="137" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Bag 1: ? kg</text>
-  <rect x="222" y="70" width="155" height="55" fill="#10b981" rx="6"/>
+  <rect x="222" y="70" width="155" height="55" fill="#10b981" rx="8"/>
   <text x="299" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Bag 2: ? kg</text>
-  <rect x="385" y="70" width="155" height="55" fill="#10b981" rx="6"/>
+  <rect x="385" y="70" width="155" height="55" fill="#10b981" rx="8"/>
   <text x="462" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Bag 3: ? kg</text>
   <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 150 ÷ 3 = 50 kg per bag</text>
 </svg>`;
 
 const advSvgP3 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
-  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
-  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Model: Silk Road Journey Distance</text>
+  <rect width="600" height="240" fill="#f8fafc" rx="12" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="300" y="32" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Model: Silk Road Journey Distance</text>
   <path d="M 60 65 L 60 55 L 540 55 L 540 65 M 300 55 L 300 45" stroke="#d97706" stroke-width="3" fill="none"/>
   <text x="300" y="40" font-family="sans-serif" font-size="15" font-weight="bold" fill="#d97706" text-anchor="middle">Total Silk Road Distance = 8,000 km</text>
-  <rect x="60" y="70" width="210" height="55" fill="#f59e0b" rx="6"/>
+  <rect x="60" y="70" width="210" height="55" fill="#f59e0b" rx="8"/>
   <text x="165" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Overland: 3,500 km</text>
-  <rect x="270" y="70" width="270" height="55" fill="#fbbf24" rx="6"/>
+  <rect x="270" y="70" width="270" height="55" fill="#fbbf24" rx="8"/>
   <text x="405" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Desert: ? km</text>
   <text x="300" y="195" font-family="sans-serif" font-size="14" font-weight="bold" fill="#475569" text-anchor="middle">Equation: 8,000 - 3,500 = 4,500 km</text>
 </svg>`;
 
 const advSvgP4 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
-  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
-  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">3-Part Whole Model: Museum Artifact Collection</text>
-  <rect x="60" y="70" width="288" height="55" fill="#6366f1" rx="6"/>
+  <rect width="600" height="240" fill="#f8fafc" rx="12" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="300" y="32" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">3-Part Whole Model: Museum Artifact Collection</text>
+  <rect x="60" y="70" width="288" height="55" fill="#6366f1" rx="8"/>
   <text x="204" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">60 Gold Coins</text>
-  <rect x="348" y="70" width="115" height="55" fill="#818cf8" rx="6"/>
+  <rect x="348" y="70" width="115" height="55" fill="#818cf8" rx="8"/>
   <text x="405" y="103" font-family="sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">24 Plates</text>
-  <rect x="463" y="70" width="77" height="55" fill="#c7d2fe" rx="6"/>
+  <rect x="463" y="70" width="77" height="55" fill="#c7d2fe" rx="8"/>
   <text x="501" y="103" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">16 Compasses</text>
   <path d="M 60 135 L 60 145 L 540 145 L 540 135 M 300 145 L 300 155" stroke="#4f46e5" stroke-width="3" fill="none"/>
   <text x="300" y="175" font-family="sans-serif" font-size="15" font-weight="bold" fill="#4f46e5" text-anchor="middle">Total Artifacts = 60 + 24 + 16 = 100</text>
 </svg>`;
 
 const advSvgP5 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="100%" height="100%">
-  <rect width="600" height="240" fill="#f8fafc" rx="12"/>
-  <text x="300" y="30" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Model: Submersible Expedition Hours</text>
-  <rect x="60" y="70" width="160" height="55" fill="#0284c7" rx="6"/>
+  <rect width="600" height="240" fill="#f8fafc" rx="12" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="300" y="32" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Part-Whole Model: Submersible Expedition Hours</text>
+  <rect x="60" y="70" width="160" height="55" fill="#0284c7" rx="8"/>
   <text x="140" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Transit: 8 hours</text>
-  <rect x="220" y="70" width="320" height="55" fill="#38bdf8" rx="6"/>
+  <rect x="220" y="70" width="320" height="55" fill="#38bdf8" rx="8"/>
   <text x="380" y="103" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">Seafloor Research: ? hours</text>
   <path d="M 60 135 L 60 145 L 540 145 L 540 135 M 300 145 L 300 155" stroke="#0369a1" stroke-width="3" fill="none"/>
   <text x="300" y="175" font-family="sans-serif" font-size="15" font-weight="bold" fill="#0369a1" text-anchor="middle">Total Expedition Time = 24 hours</text>
@@ -243,151 +243,92 @@ export default {
 };
 `;
 
-// --- ask_ai.js --- EXACTLY 5 SITUATIONS WITH SCAFFOLDS, WORD BANKS AND HINTS
+// --- ask_ai.js --- EXACTLY 5 QUESTION STARTER PROMPTS
 const askAiCode = `export default {
   prompts: [
     {
       id: 1,
       context_en: "Leo calculated that displacing 150 litres of seawater gives 150 kg of buoyant lift.",
-      nova_says: "How does compressed air inside lift bags help raise a heavy submarine chest?",
-      nova_says_vi: "Khí nén trong túi nâng giúp nâng chiếc rương ngầm nặng như thế nào?",
-      question_word_bank: ["displaces water", "creates upward lift", "reduces overall density", "balances heavy weight"],
-      question_frame: "Air displaces seawater to create ___ for the chest.",
-      correctWord: "creates upward lift",
-      hints: ["Air displaces water", "Displaced water creates lift", "Buoyant force balances weight"]
+      nova_says: "Ask me how compressed air inside lift bags raises a heavy submarine chest!",
+      nova_says_vi: "Hãy hỏi tôi cách khí nén trong túi nâng giúp nâng chiếc rương ngầm nặng!",
+      question_word_bank: ["How does air...", "What displaces...", "Why does buoyancy...", "How much lift..."],
+      question_frame: "How does air displace seawater to create ___?",
+      correctWord: "upward lift",
+      hints: ["How does compressed air displace seawater?", "Why does displaced water create upward lift?", "How much buoyancy was needed?"]
     },
     {
       id: 2,
       context_en: "Marco Polo traveled for 24 years on the Silk Road connecting Europe and Asia.",
-      nova_says: "What goods and ideas did Marco Polo discover during his Silk Road journey?",
-      nova_says_vi: "Marco Polo đã khám phá ra hàng hóa và ý tưởng gì trong chuyến đi Con đường Tơ lụa?",
-      question_word_bank: ["paper money and silk", "merchant bazaars", "coal fuel usage", "diplomatic travel"],
-      question_frame: "Marco Polo documented ___ across Asian trade routes.",
-      correctWord: "paper money and silk",
-      hints: ["Paper money and silk", "Persian merchant bazaars", "Chinese manuscripts"]
+      nova_says: "Ask me what ancient goods and ideas Marco Polo discovered in China!",
+      nova_says_vi: "Hãy hỏi tôi những hàng hóa và ý tưởng cổ xưa mà Marco Polo khám phá ở Trung Quốc!",
+      question_word_bank: ["What goods did...", "How long did...", "Why did Marco...", "Where did Marco..."],
+      question_frame: "What goods did Marco Polo ___ along the Silk Road?",
+      correctWord: "discover",
+      hints: ["What goods did Marco Polo discover?", "How long was Marco Polo's journey?", "Why did Kublai Khan appoint Marco as diplomat?"]
     },
     {
       id: 3,
       context_en: "Titanium submersibles dive nearly 11,000 metres into the Mariana Trench.",
-      nova_says: "Why do ocean engineers build submersibles with spherical titanium hulls?",
-      nova_says_vi: "Tại sao các kỹ sư đại dương lại chế tạo tàu lặn với vỏ titan hình cầu?",
-      question_word_bank: ["distributes water pressure", "lightweight metal strength", "prevents hull collapse", "resists ocean force"],
-      question_frame: "Spherical titanium hulls ___ evenly under deep pressure.",
-      correctWord: "distributes water pressure",
-      hints: ["Spheres distribute water pressure", "Titanium is strong and light", "Resists extreme pressure"]
+      nova_says: "Ask me why submersibles need spherical titanium hulls to dive 11,000 metres!",
+      nova_says_vi: "Hãy hỏi tôi tại sao tàu lặn cần vỏ titan hình cầu để lặn xuống 11.000 mét!",
+      question_word_bank: ["Why do submersibles...", "How strong is...", "What material...", "How deep is..."],
+      question_frame: "Why do submersibles need ___ to withstand water pressure?",
+      correctWord: "spherical titanium hulls",
+      hints: ["Why do submersibles need spherical titanium hulls?", "How strong is ocean pressure at Challenger Deep?", "What organisms live without sunlight?"]
     },
     {
       id: 4,
-      context_en: "Leo's team donated the preserved 16th-century gold compass to the museum.",
-      nova_says: "Why is it important to present ancient deep-sea artifacts to public museums?",
-      nova_says_vi: "Tại sao việc trình bày cổ vật biển sâu cho các bảo tàng công cộng lại quan trọng?",
-      question_word_bank: ["preserves historical knowledge", "teaches future generations", "honors ancient explorers", "shares scientific discoveries"],
-      question_frame: "Presenting artifacts ___ for future generations.",
-      correctWord: "preserves historical knowledge",
-      hints: ["Preserves historical knowledge", "Teaches future generations", "Honors ancient explorers"]
+      context_en: "Leo's team donated the preserved 16th-century gold compass to the maritime museum.",
+      nova_says: "Ask me why Leo presented the 16th-century gold compass to the museum!",
+      nova_says_vi: "Hãy hỏi tôi tại sao Leo lại trao chiếc la bàn vàng thế kỷ 16 cho bảo tàng!",
+      question_word_bank: ["Why did Leo...", "What artifact...", "How old was...", "Where is the..."],
+      question_frame: "Why did Leo present the ___ to the maritime museum?",
+      correctWord: "ancient gold compass",
+      hints: ["Why did Leo present the gold compass to the museum?", "What artifact was found inside the chest?", "How was the compass preserved underwater?"]
     },
     {
       id: 5,
       context_en: "Deep ocean submersibles explore hydrothermal vent ecosystems without sunlight.",
-      nova_says: "How do bioluminescent creatures and vent species thrive without sunlight?",
-      nova_says_vi: "Các sinh vật phát quang và loài ở miệng phun sinh sống thế nào khi không có ánh sáng mặt trời?",
-      question_word_bank: ["chemical energy synthesis", "natural light production", "extreme physical adaptation", "deep sea survival"],
-      question_frame: "Deep sea creatures use ___ to survive without light.",
-      correctWord: "chemical energy synthesis",
-      hints: ["Chemical energy synthesis", "Natural light production", "Extreme adaptation"]
+      nova_says: "Ask me how bioluminescent creatures survive at hydrothermal vents without sunlight!",
+      nova_says_vi: "Hãy hỏi tôi làm sao các sinh vật phát quang sinh sống ở miệng phun mà không có ánh mặt trời!",
+      question_word_bank: ["How do creatures...", "What process...", "Why do vent species...", "Where do deep sea..."],
+      question_frame: "How do bioluminescent creatures ___ in total darkness?",
+      correctWord: "produce natural light",
+      hints: ["How do bioluminescent creatures produce light?", "What energy source powers hydrothermal vents?", "How deep is the Mariana Trench?"]
     }
   ]
 };`;
 
-// --- daily_watch.js --- 5 PROVEN WORKING YOUTUBE VIDEOS WITH HIGH QUALITY THUMBNAILS & VIDEOID
-const dailyWatchCode = `export default {
-  videos: [
-    {
-      id: 1,
-      videoId: "IJoAcD0oUww",
-      youtube_id: "IJoAcD0oUww",
-      title: "Archimedes Principle & Ocean Physics for Kids",
-      title_en: "Archimedes Principle & Ocean Physics for Kids",
-      duration: "05:00",
-      sim_duration: 300,
-      thumb: "https://img.youtube.com/vi/IJoAcD0oUww/mqdefault.jpg",
-      summary_en: "Learn how buoyant force allows heavy ships and submarines to float by displacing water.",
-      summary_vi: "Tìm hiểu cách lực đẩy nổi giúp tàu lớn và tàu ngầm nổi lên bằng cách dịch chuyển nước."
-    },
-    {
-      id: 2,
-      videoId: "udmQXJn5ZyA",
-      youtube_id: "udmQXJn5ZyA",
-      title: "Irregular Action Verbs & Past Tense Stories",
-      title_en: "Irregular Action Verbs & Past Tense Stories",
-      duration: "08:41",
-      sim_duration: 521,
-      thumb: "https://img.youtube.com/vi/udmQXJn5ZyA/mqdefault.jpg",
-      summary_en: "Master past simple irregular verbs like went, dove, swam, and wrote through storytelling.",
-      summary_vi: "Thành thạo động từ bất quy tắc quá khứ đơn qua các câu chuyện kể."
-    },
-    {
-      id: 3,
-      videoId: "Giek094C_l4",
-      youtube_id: "Giek094C_l4",
-      title: "Deep Sea Submersibles & Ocean Energy",
-      title_en: "Deep Sea Submersibles & Ocean Energy",
-      duration: "03:22",
-      sim_duration: 202,
-      thumb: "https://img.youtube.com/vi/Giek094C_l4/mqdefault.jpg",
-      summary_en: "See how scientists build titanium submersibles to withstand extreme ocean pressure.",
-      summary_vi: "Xem cách các nhà khoa học chế tạo tàu lặn titan để chịu đựng áp suất đại dương cực hạn."
-    },
-    {
-      id: 4,
-      videoId: "YsvABLmrpX4",
-      youtube_id: "YsvABLmrpX4",
-      title: "Exploring the Deep Ocean & Mariana Trench",
-      title_en: "Exploring the Deep Ocean & Mariana Trench",
-      duration: "01:29",
-      sim_duration: 89,
-      thumb: "https://img.youtube.com/vi/YsvABLmrpX4/mqdefault.jpg",
-      summary_en: "Dive deep down to Challenger Deep, the deepest point on Earth.",
-      summary_vi: "Lặn xuống vực thẳm Challenger, điểm sâu nhất trên Trái Đất."
-    },
-    {
-      id: 5,
-      videoId: "OasbYWF4_S8",
-      youtube_id: "OasbYWF4_S8",
-      title: "Marco Polo's Silk Road Odyssey & Trade Routes",
-      title_en: "Marco Polo's Silk Road Odyssey & Trade Routes",
-      duration: "03:40",
-      sim_duration: 220,
-      thumb: "https://img.youtube.com/vi/OasbYWF4_S8/mqdefault.jpg",
-      summary_en: "Discover the 24-year Silk Road expedition of Marco Polo connecting Europe and Asia.",
-      summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo."
-    }
-  ],
-  bonus_games: [{ title: "Physics Quiz", url: "#", description: "Review ocean physics" }]
-};`;
-
-// --- shadowing.js --- 8 SENTENCES + VIDEO ID
+// --- shadowing.js --- EXACTLY 12 CLEAN SENTENCES
 const shadowingCode = `export default {
   videoId: "IJoAcD0oUww",
   script: [
     { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/shadowing_1.mp3" },
     { id: 2, text: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg.", audio_url: "/audio/week36/shadowing_2.mp3" },
-    { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/shadowing_3.mp3" },
-    { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên.", audio_url: "/audio/week36/shadowing_4.mp3" },
-    { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn.", audio_url: "/audio/week36/shadowing_5.mp3" },
-    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_6.mp3" },
-    { id: 7, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/shadowing_7.mp3" },
-    { id: 8, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn.", audio_url: "/audio/week36/shadowing_8.mp3" }
+    { id: 3, text: "The mechanical arms could not lift the heavy chest alone.", text_en: "The mechanical arms could not lift the heavy chest alone.", text_vi: "Tay máy không thể tự nâng chiếc rương nặng một mình.", audio_url: "/audio/week36/shadowing_3.mp3" },
+    { id: 4, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/shadowing_4.mp3" },
+    { id: 5, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên.", audio_url: "/audio/week36/shadowing_5.mp3" },
+    { id: 6, text: "He attached inflatable lift bags to the chest and pumped air into them.", text_en: "He attached inflatable lift bags to the chest and pumped air into them.", text_vi: "Anh gắn các túi nâng bơm hơi vào rương và bơm khí vào.", audio_url: "/audio/week36/shadowing_6.mp3" },
+    { id: 7, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn.", audio_url: "/audio/week36/shadowing_7.mp3" },
+    { id: 8, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_8.mp3" },
+    { id: 9, text: "They presented the historical gold compass to the maritime museum.", text_en: "They presented the historical gold compass to the maritime museum.", text_vi: "Họ đã trao chiếc la bàn vàng lịch sử cho bảo tàng hàng hải.", audio_url: "/audio/week36/shadowing_9.mp3" },
+    { id: 10, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/shadowing_10.mp3" },
+    { id: 11, text: "He served as an official diplomat for emperor Kublai Khan in China.", text_en: "He served as an official diplomat for emperor Kublai Khan in China.", text_vi: "Ông đã làm việc như một sứ giả ngoại giao cho hoàng đế Hốt Tất Liệt tại Trung Quốc.", audio_url: "/audio/week36/shadowing_11.mp3" },
+    { id: 12, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn.", audio_url: "/audio/week36/shadowing_12.mp3" }
   ],
   sentences: [
     { id: 1, text: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine.", text_vi: "Vào một buổi chiều Chủ Nhật nắng đẹp, Leo đã lặn xuống đại dương bằng tàu ngầm.", audio_url: "/audio/week36/shadowing_1.mp3" },
     { id: 2, text: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_en: "They found a heavy ancient wooden chest weighing 150 kilograms.", text_vi: "Họ tìm thấy một rương gỗ cổ nặng 150kg.", audio_url: "/audio/week36/shadowing_2.mp3" },
-    { id: 3, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/shadowing_3.mp3" },
-    { id: 4, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên.", audio_url: "/audio/week36/shadowing_4.mp3" },
-    { id: 5, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn.", audio_url: "/audio/week36/shadowing_5.mp3" },
-    { id: 6, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_6.mp3" },
-    { id: 7, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/shadowing_7.mp3" },
-    { id: 8, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn.", audio_url: "/audio/week36/shadowing_8.mp3" }
+    { id: 3, text: "The mechanical arms could not lift the heavy chest alone.", text_en: "The mechanical arms could not lift the heavy chest alone.", text_vi: "Tay máy không thể tự nâng chiếc rương nặng một mình.", audio_url: "/audio/week36/shadowing_3.mp3" },
+    { id: 4, text: "Leo applied Archimedes buoyancy principle to solve the problem.", text_en: "Leo applied Archimedes buoyancy principle to solve the problem.", text_vi: "Leo đã áp dụng nguyên lý lực đẩy Archimedes để giải quyết vấn đề.", audio_url: "/audio/week36/shadowing_4.mp3" },
+    { id: 5, text: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_en: "He calculated that displacing 150 litres of seawater created 150 kg of upward lift.", text_vi: "Anh tính toán rằng làm dịch chuyển 150 lít nước biển tạo ra 150kg lực nâng lên.", audio_url: "/audio/week36/shadowing_5.mp3" },
+    { id: 6, text: "He attached inflatable lift bags to the chest and pumped air into them.", text_en: "He attached inflatable lift bags to the chest and pumped air into them.", text_vi: "Anh gắn các túi nâng bơm hơi vào rương và bơm khí vào.", audio_url: "/audio/week36/shadowing_6.mp3" },
+    { id: 7, text: "The lift bags expanded and brought the heavy chest safely to the surface.", text_en: "The lift bags expanded and brought the heavy chest safely to the surface.", text_vi: "Các túi nâng nở ra và đưa chiếc rương nặng lên bề mặt an toàn.", audio_url: "/audio/week36/shadowing_7.mp3" },
+    { id: 8, text: "Inside the chest, they found a valuable 16th-century gold compass.", text_en: "Inside the chest, they found a valuable 16th-century gold compass.", text_vi: "Bên trong chiếc rương, họ tìm thấy một chiếc la bàn vàng thế kỷ 16 quý giá.", audio_url: "/audio/week36/shadowing_8.mp3" },
+    { id: 9, text: "They presented the historical gold compass to the maritime museum.", text_en: "They presented the historical gold compass to the maritime museum.", text_vi: "Họ đã trao chiếc la bàn vàng lịch sử cho bảo tàng hàng hải.", audio_url: "/audio/week36/shadowing_9.mp3" },
+    { id: 10, text: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_en: "Marco Polo left Venice in 1271 to travel along the Silk Road.", text_vi: "Marco Polo rời Venice năm 1271 để du hành dọc Con đường Tơ lụa.", audio_url: "/audio/week36/shadowing_10.mp3" },
+    { id: 11, text: "He served as an official diplomat for emperor Kublai Khan in China.", text_en: "He served as an official diplomat for emperor Kublai Khan in China.", text_vi: "Ông đã làm việc như một sứ giả ngoại giao cho hoàng đế Hốt Tất Liệt tại Trung Quốc.", audio_url: "/audio/week36/shadowing_11.mp3" },
+    { id: 12, text: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_en: "Submersibles with titanium hulls withstand extreme ocean pressure.", text_vi: "Tàu lặn với vỏ titan chịu đựng áp suất đại dương cực hạn.", audio_url: "/audio/week36/shadowing_12.mp3" }
   ]
 };`;
 
@@ -405,7 +346,7 @@ const dictationCode = `export default {
   ]
 };`;
 
-// --- mindmap.js --- NON-DUPLICATE CLEAN BRANCH LABELS
+// --- mindmap.js --- CLEAN BRANCH LABELS
 const mindmapCode = `export default {
   centerStems: [
     "On Sunday afternoon, Leo dove into the ocean in a ___.",
@@ -497,6 +438,24 @@ const writingCode = `export default {
         en: "Write a short paragraph about how Leo used buoyancy and physics to lift an ancient chest from the ocean floor.",
         vi: "Viết một đoạn văn ngắn về cách Leo sử dụng lực đẩy nổi và vật lý để nâng rương cổ lên từ đáy đại dương."
       }
+    },
+    topic_mode: {
+      topics: [
+        {
+          id: "t1",
+          title_en: "The Submarine Physics Rescue",
+          en: "Describe how Leo applied Archimedes buoyancy principle to lift the 150 kg chest using compressed air bags.",
+          vi: "Mô tả cách Leo áp dụng nguyên lý lực đẩy Archimedes để nâng chiếc rương 150kg bằng túi khí nén.",
+          word_bank: ["submarine", "buoyancy", "displace", "cavern", "compass"]
+        },
+        {
+          id: "t2",
+          title_en: "Marco Polo's Silk Road Odyssey",
+          en: "Write about Marco Polo's 24-year journey across Asia and his work as a diplomat for Kublai Khan.",
+          vi: "Viết về chuyến đi 24 năm qua châu Á của Marco Polo và công việc làm sứ giả cho Hốt Tất Liệt.",
+          word_bank: ["merchant", "diplomat", "Silk Road", "manuscript", "explorer"]
+        }
+      ]
     }
   }
 };`;
@@ -701,15 +660,91 @@ const wordMatchCode = `export default {
   pairs: [
     { word: "submarine", definition_vi: "tàu ngầm" },
     { word: "buoyancy", definition_vi: "lực đẩy nổi" },
-    { word: "compass", definition_vi: "la bàn" },
-    { word: "merchant", definition_vi: "thương gia" },
-    { word: "titanium", definition_vi: "kim loại titan" },
+    { word: "cavern", definition_vi: "hang động ngầm" },
+    { word: "displace", definition_vi: "dịch chuyển nước" },
+    { word: "artifact", definition_vi: "cổ vật lịch sử" },
+    { word: "compass", definition_vi: "la bàn hướng" },
+    { word: "merchant", definition_vi: "thương gia buôn bán" },
+    { word: "caravan", definition_vi: "đoàn thương gia" },
     { word: "submersible", definition_vi: "tàu lặn ngầm sâu" },
+    { word: "trench", definition_vi: "rãnh đại dương" },
     { word: "pressure", definition_vi: "áp suất vật lý" },
+    { word: "titanium", definition_vi: "kim loại titan" },
     { word: "diplomat", definition_vi: "nhà ngoại giao" },
-    { word: "manuscript", definition_vi: "bản thảo cổ" },
-    { word: "artifact", definition_vi: "cổ vật lịch sử" }
+    { word: "explorer", definition_vi: "nhà khám phá" },
+    { word: "expedition", definition_vi: "chuyến thám hiểm" },
+    { word: "discovery", definition_vi: "sự phát hiện mới" },
+    { word: "archaeology", definition_vi: "khảo cổ học" },
+    { word: "surface", definition_vi: "bề mặt nước" },
+    { word: "thruster", definition_vi: "động cơ đẩy" },
+    { word: "manuscript", definition_vi: "bản thảo cổ" }
   ]
+};`;
+
+const dailyWatchCode = `export default {
+  videos: [
+    {
+      id: 1,
+      videoId: "IJoAcD0oUww",
+      youtube_id: "IJoAcD0oUww",
+      title: "Archimedes Principle & Ocean Physics for Kids",
+      title_en: "Archimedes Principle & Ocean Physics for Kids",
+      duration: "05:00",
+      sim_duration: 300,
+      thumb: "https://img.youtube.com/vi/IJoAcD0oUww/mqdefault.jpg",
+      summary_en: "Learn how buoyant force allows heavy ships and submarines to float by displacing water.",
+      summary_vi: "Tìm hiểu cách lực đẩy nổi giúp tàu lớn và tàu ngầm nổi lên bằng cách dịch chuyển nước."
+    },
+    {
+      id: 2,
+      videoId: "udmQXJn5ZyA",
+      youtube_id: "udmQXJn5ZyA",
+      title: "Irregular Action Verbs & Past Tense Stories",
+      title_en: "Irregular Action Verbs & Past Tense Stories",
+      duration: "08:41",
+      sim_duration: 521,
+      thumb: "https://img.youtube.com/vi/udmQXJn5ZyA/mqdefault.jpg",
+      summary_en: "Master past simple irregular verbs like went, dove, swam, and wrote through storytelling.",
+      summary_vi: "Thành thạo động từ bất quy tắc quá khứ đơn qua các câu chuyện kể."
+    },
+    {
+      id: 3,
+      videoId: "Giek094C_l4",
+      youtube_id: "Giek094C_l4",
+      title: "Deep Sea Submersibles & Ocean Energy",
+      title_en: "Deep Sea Submersibles & Ocean Energy",
+      duration: "03:22",
+      sim_duration: 202,
+      thumb: "https://img.youtube.com/vi/Giek094C_l4/mqdefault.jpg",
+      summary_en: "See how scientists build titanium submersibles to withstand extreme ocean pressure.",
+      summary_vi: "Xem cách các nhà khoa học chế tạo tàu lặn titan để chịu đựng áp suất đại dương cực hạn."
+    },
+    {
+      id: 4,
+      videoId: "YsvABLmrpX4",
+      youtube_id: "YsvABLmrpX4",
+      title: "Exploring the Deep Ocean & Mariana Trench",
+      title_en: "Exploring the Deep Ocean & Mariana Trench",
+      duration: "01:29",
+      sim_duration: 89,
+      thumb: "https://img.youtube.com/vi/YsvABLmrpX4/mqdefault.jpg",
+      summary_en: "Dive deep down to Challenger Deep, the deepest point on Earth.",
+      summary_vi: "Lặn xuống vực thẳm Challenger, điểm sâu nhất trên Trái Đất."
+    },
+    {
+      id: 5,
+      videoId: "OasbYWF4_S8",
+      youtube_id: "OasbYWF4_S8",
+      title: "Marco Polo's Silk Road Odyssey & Trade Routes",
+      title_en: "Marco Polo's Silk Road Odyssey & Trade Routes",
+      duration: "03:40",
+      sim_duration: 220,
+      thumb: "https://img.youtube.com/vi/OasbYWF4_S8/mqdefault.jpg",
+      summary_en: "Discover the 24-year Silk Road expedition of Marco Polo connecting Europe and Asia.",
+      summary_vi: "Khám phá cuộc thám hiểm Con đường Tơ lụa 24 năm của Marco Polo."
+    }
+  ],
+  bonus_games: [{ title: "Physics Quiz", url: "#", description: "Review ocean physics" }]
 };`;
 
 const gamesCode = `export const week_36GamesAdvanced = {
@@ -736,4 +771,4 @@ fs.writeFileSync(`${advDir}/social_quiz.js`, socialQuizCode);
 fs.writeFileSync(`${advDir}/word_match.js`, wordMatchCode);
 fs.writeFileSync(`${advDir}/games.js`, gamesCode);
 
-console.log("✅ Written all 16 station files with proven YouTube video IDs & matched videoId fields!");
+console.log("✅ Written all 16 station files with 12 Shadowing sentences, Ask-AI question starters, 20 word match pairs, and high-res Bar Models!");

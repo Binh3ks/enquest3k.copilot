@@ -1270,6 +1270,9 @@ export const VoiceService = {
     if (typeof audioUrl === 'string' && (audioUrl.startsWith('blob:') || audioUrl.startsWith('data:'))) {
       try {
         const ctx = getAudioCtx();
+        if (ctx.state === 'suspended') {
+          await ctx.resume();
+        }
         const response = await fetch(audioUrl);
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
