@@ -179,7 +179,8 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             </span>
           </p>
           {visibleFrames.map((frame, fi) => {
-            const parts = frame.template.split('___');
+            const template = typeof frame === 'string' ? frame : (frame?.template || frame?.text || String(frame || ''));
+            const parts = template.split('___');
             return (
               <div key={fi} className="bg-white border border-indigo-200 rounded-xl p-2 text-xs">
                 <div className="flex flex-wrap items-center gap-1.5">

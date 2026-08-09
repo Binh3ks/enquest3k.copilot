@@ -73,7 +73,31 @@ export function getActiveSegment(videoId, currentTime) {
 export function getCleanedTranscriptSentences(videoId) {
   let entry = getSentenceMap()[videoId];
   if (!entry || entry.error || !entry.segments) return [];
-  return entry.segments
+  
+  const rawSegments = entry.segments;
+  const merged = [];
+  let current = null;
+
+  for (const s of rawSegments) {
+    const text = (s.text || '').trim();
+    if (!text) continue;
+
+    if (!current) {
+      current = { id: s.id, text, start: s.start, duration: s.duration, vi: s.vi };
+    } else {
+      current.text = current.text + ' ' + text;
+      current.duration = (s.start + s.duration) - current.start;
+    }
+
+    // Check if segment ends with terminal punctuation or is at sentence boundary
+    if (/[.?!]$/.test(text) || current.text.length > 80) {
+      merged.push(current);
+      current = null;
+    }
+  }
+  if (current) merged.push(current);
+
+  return merged
     .map((s, idx) => ({
       id: s.id ?? (idx + 1),
       text: (s.text || '').trim(),
@@ -84,9 +108,6 @@ export function getCleanedTranscriptSentences(videoId) {
     }))
     .filter((s) => {
       const words = (s.text.match(/[A-Za-z']+/g) || []);
-      if (words.length === 0) return false;
-      const wps = s.duration > 0 ? words.length / s.duration : 0;
-      if (wps < 0.3) return false;
-      return true;
+      return words.length > 0;
     });
 }
