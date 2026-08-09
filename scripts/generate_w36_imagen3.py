@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 Targeted Production Generator Script for Week 36 (New Words & Word Power)
-- Engine: Google AI Studio Imagen 3 (imagen-3.0-generate-002)
+- Engine: Google AI Studio Direct Engine (imagen-3.0-generate-002 / gemini-2.5-flash-image)
 - Resolution: 1024x1024 (aspectRatio 1:1)
 - Prompt Standard: 100% RAW string prompts from week_36_image_prompts.txt
-- Quota Enforcement: Strict Exponential Backoff (60s-120s) with 0 third-party fallbacks
+- Quota Enforcement: Exponential Backoff (60s - 120s retry loop) with 0 third-party fallbacks
 """
 
 import os
@@ -24,7 +24,7 @@ def get_api_key():
                 for line in f:
                     if line.startswith("VITE_GEMINI_API_KEY=") or line.startswith("GEMINI_API_KEY="):
                         val = line.split("=", 1)[1].strip()
-                        if val and not val.startswith("AQ."):
+                        if val:
                             api_key = val
     return api_key
 
@@ -77,8 +77,8 @@ def generate_w36_card(api_key, prompt, output_path):
                         print(f"✅ Saved 1024x1024 Imagen 3 JPEG ({len(raw_bytes)} B) -> {output_path}")
                         return True
             elif resp.status_code in (429, 403):
-                print(f"⚠️ Google AI Studio API HTTP {resp.status_code} (Quota Exhausted / Permission Denied).")
-                print(f"   Sleeping {backoff}s (Attempt {attempt+1}/{max_retries})...")
+                print(f"⚠️ Google AI Studio API HTTP {resp.status_code} (Quota Exhausted / Access Denied).")
+                print(f"   Sleeping {backoff}s before retry (Attempt {attempt+1}/{max_retries})...")
                 time.sleep(backoff)
                 backoff = min(backoff * 2, 120)
             else:
@@ -107,7 +107,7 @@ def main():
         if ok:
             success += 1
         else:
-            print("⚠️ Stopping batch execution due to Google AI Studio Quota limit.")
+            print("⚠️ Batch stopped due to Google AI Studio API Quota limit.")
             break
         time.sleep(2.0)
         
