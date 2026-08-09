@@ -30,7 +30,7 @@ export default {
   story_prompts: {
     picture_mode: {
       type: "picture",
-      image_url: "/images/week36/story_writing_pic.jpg",
+      image_url: "/images/week36/story_w36_pic.jpg",
       image_prompt: "A yellow research submarine in a deep blue underwater ocean cavern using mechanical arms to attach red inflatable lift bags to an ancient wooden treasure chest resting on the seabed.",
       word_bank: ["submarine", "buoyancy", "displace", "cavern", "chest", "compass", "inflatable lift bags", "upward lift", "gold compass", "maritime museum", "neutral buoyancy", "titanium hull"],
       sentence_frames: [
