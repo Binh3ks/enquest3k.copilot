@@ -132,7 +132,7 @@ export default {
   "story_prompts": {
     "picture_mode": {
       "type": "picture",
-      "image_url": null,
+      "image_url": "/images/week37/story_w37_pic.jpg",
       "image_prompt": "Young athletes sprinting on a red athletic track passing a baton under bright sunlight, cheering spectators in background, cartoon illustration.",
       "word_bank": [
         "ran very fast",
