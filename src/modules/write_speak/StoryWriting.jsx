@@ -107,8 +107,8 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   }, [pictureMode.image_url, weekId]);
 
   const handleImgError = useCallback(() => {
-    // Fallback: try the relative /images/... path directly (served by Cloudflare Pages)
-    if (imgSrc && !imgSrc.endsWith(pictureMode.image_url)) {
+    // Fallback: if CDN URL (http/https) failed, try relative path directly from site bundle
+    if (typeof imgSrc === 'string' && (imgSrc.startsWith('http://') || imgSrc.startsWith('https://'))) {
       setImgSrc(pictureMode.image_url);
     } else {
       setImgFailed(true);
