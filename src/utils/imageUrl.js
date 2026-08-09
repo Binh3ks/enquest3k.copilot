@@ -12,16 +12,25 @@ const IMAGES_CDN =
   import.meta.env.VITE_IMAGES_CDN_URL || 'https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev';
 
 /**
- * Convert a relative image path to the CDN URL.
- * @param {string} path - e.g. "/images/week1_easy/name.jpg"
- * @returns {string} Full CDN URL
+ * Convert a relative image path to the CDN URL or local bundle path.
+ * @param {string} path - e.g. "/images/week12/perform.jpg" or "/images/week36/v1_submarine.jpg"
+ * @returns {string} Resolved image URL
  */
 export function getImageUrl(path) {
   if (!path) return '';
   if (path.startsWith('http')) return path; // already absolute
-  if (path.startsWith('/images/')) {
-    return path; // Local relative bundle path served directly by Cloudflare Pages (200 OK)
+
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+
+  // Local assets bundled directly on Cloudflare Pages for newly added weeks
+  if (cleanPath.startsWith('/images/week36/') || cleanPath.startsWith('/images/week37/')) {
+    return cleanPath;
   }
-  if (IMAGES_CDN) return `${IMAGES_CDN}${path}`; // CDN mode (default)
-  return path; // fallback to relative
+
+  // Default CDN mode for existing weeks (1..35) stored on Cloudflare R2
+  if (IMAGES_CDN) {
+    return `${IMAGES_CDN}${cleanPath}`;
+  }
+
+  return cleanPath;
 }
