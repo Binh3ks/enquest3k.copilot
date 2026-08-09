@@ -138,19 +138,25 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       {/* Picture */}
       <div className="flex-shrink-0 bg-gradient-to-b from-amber-50 to-white p-3 border-b border-amber-100">
         <div
-          className="relative rounded-2xl border-2 border-amber-200 shadow-sm cursor-pointer overflow-hidden"
+          className="relative rounded-2xl border-2 border-amber-200 shadow-sm cursor-pointer overflow-hidden max-h-[360px] flex items-center justify-center bg-amber-50/50 min-h-[220px]"
           onClick={() => imgSrc && !imgFailed && setImgZoomed(true)}
         >
           {imgSrc && !imgFailed ? (
             <img
               src={imgSrc}
               alt={isVi ? 'Tranh viết truyện' : 'Story prompt picture'}
-              className="w-full h-auto rounded-xl"
+              className="w-full max-h-[350px] object-contain rounded-xl"
               onError={handleImgError}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-amber-400">
-              <p className="text-xs">No image</p>
+            <div className="w-full h-48 flex flex-col items-center justify-center text-amber-400 gap-1.5 p-4">
+              <p className="text-xs font-bold text-amber-600">{isVi ? '📷 Đang tải tranh...' : '📷 Loading picture...'}</p>
+              <button
+                onClick={() => setImgSrc(pictureMode.image_url)}
+                className="text-[10px] text-amber-700 underline hover:text-amber-900"
+              >
+                {isVi ? 'Thử lại' : 'Retry'}
+              </button>
             </div>
           )}
         </div>
