@@ -46,7 +46,7 @@ export default defineConfig({
         // Remove hash from the main entry file so index.html always points to
         // the same filename — eliminates MIME errors caused by stale index.html
         // referencing an old hashed chunk that no longer exists after a new deploy.
-        entryFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name].js',
         chunkFileNames: (chunkInfo) => {
           const facade = chunkInfo.facadeModuleId || '';
           if (facade.includes('weeks')) {
