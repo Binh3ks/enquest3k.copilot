@@ -28,7 +28,7 @@ const FAST_RATE = 0.4; // 2.5 words/sec — base; reduced if audio shorter than 
 function buildWordTimings(sentence, audioDuration, currentSpeed = 1.0) {
   if (!sentence) return [];
   const text = sentence.text || '';
-  const words = text.match(/[A-Za-z']+/g) || [];
+  const words = text.trim().split(/\s+/).filter(Boolean);
   if (!words.length) return [];
   const wordCount = words.length;
   // Scale word duration according to playback speed

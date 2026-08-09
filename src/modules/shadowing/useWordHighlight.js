@@ -47,7 +47,8 @@ export function getSpeechWindow(sentence) {
   if (!sentence) return { start: 0, end: 0, dur: 0 };
   const start = sentence.start || 0;
   const text = sentence.text || '';
-  const wordCount = (text.match(/[A-Za-z']+/g) || []).length;
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  const wordCount = words.length;
   if (wordCount === 0) return { start, end: start, dur: 0 };
   const FAST_RATE = 0.4;   // 2.5 words/sec — fixed for all sentences
   const dur = FAST_RATE * wordCount;
@@ -66,7 +67,7 @@ export function splitWordsWithTiming(sentence) {
   }
   // Fallback: synthetic evenly-distributed timing (no L3 data available)
   const text = sentence.text || '';
-  const words = text.match(/[A-Za-z']+/g) || [];
+  const words = text.trim().split(/\s+/).filter(Boolean);
   if (!words.length) return [];
 
   const win = getSpeechWindow(sentence);

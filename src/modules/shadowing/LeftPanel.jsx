@@ -18,7 +18,7 @@ import YouTubeEmbed from './YouTubeEmbed';
 // Fallback word splitting when useWordHighlight hasn't provided timing data
 function splitWordsStatic(text) {
   if (!text) return [];
-  const words = text.match(/[A-Za-z']+/g) || [];
+  const words = text.trim().split(/\s+/).filter(Boolean);
   return words.map(w => ({ word: w, start: 0, end: 0 }));
 }
 
