@@ -298,9 +298,11 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     id: item.id || `wp_${idx}`,
     word: item.word || item.phrase || item.collocation || '',
     definition_en: item.definition_en || item.definition || item.meaning_en || '',
-    definition_vi: item.definition_vi || item.phrase_vi || item.meaning_vi || '',
+    definition_vi: item.definition_vi || item.meaning_vi || item.definition_vi || '',
     example: item.example || item.sentence || '',
-    collocation_en: item.collocation_en || item.collocation || item.phrase || ''
+    collocation_en: item.collocation_en || item.collocation || item.phrase || '',
+    image_url: item.image_url || null,
+    audio_word: item.audio_word || null
   }));
 
   if (!data || wordList.length === 0) return <div className="p-8 text-center text-teal-400 font-bold">Loading Word Power...</div>;
