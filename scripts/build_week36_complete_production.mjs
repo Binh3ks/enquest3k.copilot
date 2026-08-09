@@ -407,10 +407,21 @@ const mindmapCode = `export default {
     ]
   }
 };`;
-
 const writingCode = `export default {
   title: "The Submarine Buoyancy Rescue & Silk Road Writing",
   title_en: "The Submarine Buoyancy Rescue & Silk Road Writing",
+  prompt_en: "Write a complete story about how Leo applied Archimedes buoyancy principle to float the 150 kg chest, or how Marco Polo traveled the Silk Road.",
+  prompt_vi: "Viết một câu chuyện hoàn chỉnh về cách Leo áp dụng nguyên lý lực đẩy Archimedes để nâng rương 150kg, hoặc cách Marco Polo du hành Con đường Tơ lụa.",
+  sentence_frames: [
+    { template: "On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a ___." },
+    { template: "They found an ancient wooden chest weighing ___ kilograms on the seabed." },
+    { template: "To float the heavy chest, Leo applied Archimedes ___ principle." },
+    { template: "He calculated that displacing 150 litres of seawater created 150 kg of ___." },
+    { template: "He attached inflatable lift bags to ___ 150 litres of seawater." },
+    { template: "The lift bags expanded and brought the heavy chest safely to the ___." },
+    { template: "Inside the chest, they discovered a preserved 16th-century gold ___." },
+    { template: "They presented the historical gold compass to the maritime ___." }
+  ],
   hints: {
     words: [
       { word: "submarine", meaning_vi: "tàu ngầm" },
@@ -420,6 +431,7 @@ const writingCode = `export default {
       { word: "compass", meaning_vi: "la bàn" },
       { word: "merchant", meaning_vi: "thương gia" },
       { word: "diplomat", meaning_vi: "nhà ngoại giao" },
+      { word: "titanium", meaning_vi: "kim loại titan" },
       { word: "airplane", meaning_vi: "máy bay", distractor: true },
       { word: "skyscraper", meaning_vi: "tòa nhà cao tầng", distractor: true }
     ]
