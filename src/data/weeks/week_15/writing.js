@@ -118,39 +118,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today our class is visiting the beautiful ___.",
+      "template": "Today our class is visiting the beautiful ___ ___ .",
       "answers": [
-        "park"
+        "park",
+        "then"
       ]
     },
     {
-      "template": "Many people are enjoying their ___.",
+      "template": "Many people are enjoying their ___ ___ .",
       "answers": [
-        "day"
+        "day",
+        "also"
       ]
     },
     {
-      "template": "A young boy is running after his ___ near the trees.",
+      "template": "A young boy is running after his ___ near the trees ___ .",
       "answers": [
-        "dog"
+        "dog",
+        "so"
       ]
     },
     {
-      "template": "The dog is barking ___.",
+      "template": "The dog is barking ___ ___ .",
       "answers": [
-        "happily"
+        "happily",
+        "next"
       ]
     },
     {
-      "template": "An elderly man is sitting on a wooden ___.",
+      "template": "An elderly man is sitting on a wooden ___ ___ .",
       "answers": [
-        "bench"
+        "bench",
+        "finally"
       ]
     },
     {
-      "template": "He is reading ___ while he enjoys the fresh air.",
+      "template": "He is reading ___ while he enjoys the fresh air ___ .",
       "answers": [
-        "peacefully"
+        "peacefully",
+        "slowly"
       ]
     }
   ],

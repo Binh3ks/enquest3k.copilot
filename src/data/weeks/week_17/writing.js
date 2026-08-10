@@ -1,13 +1,13 @@
 export default {
-  title: "Weather and Clothes Around the World",
-  min_words: 50,
-  min_sentences: 8,
-  instruction_en: "Write about weather and what people are wearing in different cities!",
-  instruction_vi: "Viết về thời tiết và trang phục ở các thành phố khác nhau!",
-  prompt_en: "What is the weather in each city? What is each person wearing? Why?",
-  prompt_vi: "Thời tiết ở mỗi thành phố thế nào? Mỗi người đang mặc gì? Tại sao?",
-  topic_talk_prompt: "Talk about the weather in your city today — what are you wearing and why?",
-  vocabulary_bank: [
+  "title": "Weather and Clothes Around the World",
+  "min_words": 50,
+  "min_sentences": 8,
+  "instruction_en": "Write about weather and what people are wearing in different cities!",
+  "instruction_vi": "Viết về thời tiết và trang phục ở các thành phố khác nhau!",
+  "prompt_en": "What is the weather in each city? What is each person wearing? Why?",
+  "prompt_vi": "Thời tiết ở mỗi thành phố thế nào? Mỗi người đang mặc gì? Tại sao?",
+  "topic_talk_prompt": "Talk about the weather in your city today — what are you wearing and why?",
+  "vocabulary_bank": [
     "raining heavily",
     "wearing a thick yellow raincoat",
     "big rubber boots",
@@ -23,90 +23,170 @@ export default {
     "wearing a light green jacket",
     "flying a big kite"
   ],
-  sentence_frames: [
+  "sentence_frames": [
     {
-      "template": "In London, it is raining ___.",
-      "answers": ["heavily"]
+      "template": "In London, it is raining ___ ___ .",
+      "answers": [
+        "heavily",
+        "then"
+      ]
     },
     {
-      "template": "The boy is wearing a thick yellow ___ and big rubber boots.",
-      "answers": ["raincoat"]
+      "template": "The boy is wearing a thick yellow ___ and big rubber boots ___ .",
+      "answers": [
+        "raincoat",
+        "also"
+      ]
     },
     {
-      "template": "He has a large blue umbrella so he can walk ___ in the wet streets.",
-      "answers": ["safely"]
+      "template": "He has a large blue umbrella so he can walk ___ in the wet streets ___ .",
+      "answers": [
+        "safely",
+        "so"
+      ]
     },
     {
-      "template": "In New York, it is ___. The sky is full of snowflakes.",
-      "answers": ["snowing hard"]
+      "template": "In New York, it is ___. The sky is full of snowflakes ___ .",
+      "answers": [
+        "snowing hard",
+        "next"
+      ]
     },
     {
-      "template": "The little girl is wearing a warm winter ___, a thick red coat, and a long wool scarf.",
-      "answers": ["hat"]
+      "template": "The little girl is wearing a warm winter ___, a thick red coat, and a long wool scarf ___ .",
+      "answers": [
+        "hat",
+        "finally"
+      ]
     },
     {
-      "template": "She is having fun because she is making a big ___ in her front yard.",
-      "answers": ["snowman"]
+      "template": "She is having fun because she is making a big ___ in her front yard ___ .",
+      "answers": [
+        "snowman",
+        "slowly"
+      ]
     },
     {
-      "template": "Down in Sydney, it is a very sunny and ___ day.",
-      "answers": ["hot"]
+      "template": "Down in Sydney, it is a very sunny and ___ day ___ .",
+      "answers": [
+        "hot",
+        "happily"
+      ]
     },
     {
-      "template": "The boy is wearing a light white T-shirt and cool ___.",
-      "answers": ["sunglasses"]
-    },
-    {
-      "template": "He is walking on the beach and eating a sweet strawberry ___.",
-      "answers": ["ice cream"]
-    },
-    {
-      "template": "In my city, it is very cloudy and ___ today.",
-      "answers": ["windy"]
-    },
-    {
-      "template": "I am wearing a light green jacket to keep ___.",
-      "answers": ["warm"]
-    },
-    {
-      "template": "The strong wind is blowing the tree leaves everywhere, so I am flying a big ___ in the park.",
-      "answers": ["kite"]
+      "template": "The boy is wearing a light white T-shirt and cool ___ ___ .",
+      "answers": [
+        "sunglasses",
+        "carefully"
+      ]
     }
   ],
-  hints: {
-    vocabulary_bank: {
-      label_en: "💡 Need help? Click 💡 next to each blank",
-      label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      show_by_default: false,
-      scaffolding_stage: "medium-low",
-      words: [
-        { "word": "raining heavily", "vi": "mưa to", "distractor": false },
-        { "word": "wearing a thick raincoat", "vi": "mặc áo mưa dày", "distractor": false },
-        { "word": "big rubber boots", "vi": "ủng cao su to", "distractor": false },
-        { "word": "snowing hard", "vi": "tuyết rơi dày", "distractor": false },
-        { "word": "wearing a warm hat", "vi": "mặc mũ ấm", "distractor": false },
-        { "word": "thick red coat", "vi": "áo khoác đỏ dày", "distractor": false },
-        { "word": "making a snowman", "vi": "làm người tuyết", "distractor": false },
-        { "word": "sunny and hot day", "vi": "ngày nắng nóng", "distractor": false },
-        { "word": "wearing cool sunglasses", "vi": "đeo kính mát", "distractor": false },
-        { "word": "eating strawberry ice cream", "vi": "ăn kem dâu", "distractor": false },
-        { "word": "very cloudy and windy", "vi": "nhiều mây và gió", "distractor": false },
-        { "word": "flying a big kite", "vi": "thả diều lớn", "distractor": false },
-        { "word": "wearing a light jacket", "vi": "mặc áo khoác mỏng", "distractor": false },
-        { "word": "staying at home", "vi": "ở nhà", "distractor": false },
-        { "word": "drinking hot tea", "vi": "uống trà nóng", "distractor": false },
-        { "word": "playing indoor games", "vi": "chơi trò chơi trong nhà", "distractor": true },
-        { "word": "watching from window", "vi": "nhìn từ cửa sổ", "distractor": true },
-        { "word": "running for shelter", "vi": "chạy trú mưa", "distractor": true }
+  "hints": {
+    "vocabulary_bank": {
+      "label_en": "💡 Need help? Click 💡 next to each blank",
+      "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      "show_by_default": false,
+      "scaffolding_stage": "medium",
+      "words": [
+        {
+          "word": "raining heavily",
+          "vi": "mưa to",
+          "distractor": false
+        },
+        {
+          "word": "wearing a thick raincoat",
+          "vi": "mặc áo mưa dày",
+          "distractor": false
+        },
+        {
+          "word": "big rubber boots",
+          "vi": "ủng cao su to",
+          "distractor": false
+        },
+        {
+          "word": "snowing hard",
+          "vi": "tuyết rơi dày",
+          "distractor": false
+        },
+        {
+          "word": "wearing a warm hat",
+          "vi": "mặc mũ ấm",
+          "distractor": false
+        },
+        {
+          "word": "thick red coat",
+          "vi": "áo khoác đỏ dày",
+          "distractor": false
+        },
+        {
+          "word": "making a snowman",
+          "vi": "làm người tuyết",
+          "distractor": false
+        },
+        {
+          "word": "sunny and hot day",
+          "vi": "ngày nắng nóng",
+          "distractor": false
+        },
+        {
+          "word": "wearing cool sunglasses",
+          "vi": "đeo kính mát",
+          "distractor": false
+        },
+        {
+          "word": "eating strawberry ice cream",
+          "vi": "ăn kem dâu",
+          "distractor": false
+        },
+        {
+          "word": "very cloudy and windy",
+          "vi": "nhiều mây và gió",
+          "distractor": false
+        },
+        {
+          "word": "flying a big kite",
+          "vi": "thả diều lớn",
+          "distractor": false
+        },
+        {
+          "word": "wearing a light jacket",
+          "vi": "mặc áo khoác mỏng",
+          "distractor": false
+        },
+        {
+          "word": "staying at home",
+          "vi": "ở nhà",
+          "distractor": false
+        },
+        {
+          "word": "drinking hot tea",
+          "vi": "uống trà nóng",
+          "distractor": false
+        },
+        {
+          "word": "playing indoor games",
+          "vi": "chơi trò chơi trong nhà",
+          "distractor": true
+        },
+        {
+          "word": "watching from window",
+          "vi": "nhìn từ cửa sổ",
+          "distractor": true
+        },
+        {
+          "word": "running for shelter",
+          "vi": "chạy trú mưa",
+          "distractor": true
+        }
       ]
     }
   },
-  story_prompts: {
-    picture_mode: {
-      type: 'picture',
-      image_url: '/images/week17/story_writing_pic.jpg',
-      image_prompt: "In this very interesting picture, there are four good friends living in four different cities, and the weather in each place is completely different today! First, let's look at London. It is raining heavily and the sky is very dark, so the boy is wearing a thick yellow raincoat and big rubber boots. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: [
+  "story_prompts": {
+    "picture_mode": {
+      "type": "picture",
+      "image_url": "/images/week17/story_writing_pic.jpg",
+      "image_prompt": "In this very interesting picture, there are four good friends living in four different cities, and the weather in each place is completely different today! First, let's look at London. It is raining heavily and the sky is very dark, so the boy is wearing a thick yellow raincoat and big rubber boots. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      "word_bank": [
         "raining heavily",
         "wearing a thick yellow raincoat",
         "big rubber boots",
@@ -122,21 +202,69 @@ export default {
         "wearing a light green jacket",
         "flying a big kite"
       ],
-      writing_prompts: {
-        en: "Look at the picture. Four friends live in four different cities. What is the weather in each place? What is each person wearing and doing? Use present continuous and 3+ words from the word bank.",
-        vi: "Nhìn bức tranh. Bốn người bạn sống ở bốn thành phố khác nhau. Thời tiết ở mỗi nơi thế nào? Mỗi người đang mặc gì và làm gì? Dùng hiện tại tiếp diễn và 3+ cụm từ trong ngân hàng từ."
+      "writing_prompts": {
+        "en": "Look at the picture. Four friends live in four different cities. What is the weather in each place? What is each person wearing and doing? Use present continuous and 3+ words from the word bank.",
+        "vi": "Nhìn bức tranh. Bốn người bạn sống ở bốn thành phố khác nhau. Thời tiết ở mỗi nơi thế nào? Mỗi người đang mặc gì và làm gì? Dùng hiện tại tiếp diễn và 3+ cụm từ trong ngân hàng từ."
       },
-      rubric_tier: 1,
-      sentence_frames: [
-        {"template": "In London, ___", "answers": ["it is raining heavily"]},
-        {"template": "The boy is wearing ___", "answers": ["a thick raincoat"]},
-        {"template": "In New York, ___", "answers": ["it is snowing hard"]},
-        {"template": "The girl is making ___", "answers": ["a big snowman"]},
-        {"template": "In Sydney, ___", "answers": ["it is sunny and hot"]},
-        {"template": "He is eating ___", "answers": ["strawberry ice cream"]},
-        {"template": "In my city, ___", "answers": ["the weather is cloudy"]},
-        {"template": "I am flying ___", "answers": ["a big kite"]}
+      "rubric_tier": 1,
+      "sentence_frames": [
+        {
+          "template": "In London, ___ ___",
+          "answers": [
+            "it is raining heavily",
+            "then"
+          ]
+        },
+        {
+          "template": "The boy is wearing ___ ___",
+          "answers": [
+            "a thick raincoat",
+            "also"
+          ]
+        },
+        {
+          "template": "In New York, ___ ___",
+          "answers": [
+            "it is snowing hard",
+            "so"
+          ]
+        },
+        {
+          "template": "The girl is making ___ ___",
+          "answers": [
+            "a big snowman",
+            "next"
+          ]
+        },
+        {
+          "template": "In Sydney, ___ ___",
+          "answers": [
+            "it is sunny and hot",
+            "finally"
+          ]
+        },
+        {
+          "template": "He is eating ___ ___",
+          "answers": [
+            "strawberry ice cream",
+            "slowly"
+          ]
+        },
+        {
+          "template": "In my city, ___ ___",
+          "answers": [
+            "the weather is cloudy",
+            "happily"
+          ]
+        },
+        {
+          "template": "I am flying ___ ___",
+          "answers": [
+            "a big kite",
+            "carefully"
+          ]
+        }
       ]
     }
   }
-}
+};

@@ -22,39 +22,45 @@ export default {
   "topic_talk_prompt": "Tell me about your personality and what you love doing!",
   "sentence_frames": [
     {
-      "template": "I have a happy jar at ___.",
+      "template": "I have a happy jar at ___ ___ .",
       "answers": [
-        "home"
+        "home",
+        "then"
       ]
     },
     {
-      "template": "When I am playing, I feel ___ and happy.",
+      "template": "When I am playing, I feel ___ and happy ___ .",
       "answers": [
-        "excited"
+        "excited",
+        "also"
       ]
     },
     {
-      "template": "When I am reading, I feel ___ and calm.",
+      "template": "When I am reading, I feel ___ and calm ___ .",
       "answers": [
-        "happy"
+        "happy",
+        "so"
       ]
     },
     {
-      "template": "When I am drawing, I feel ___ and joyful.",
+      "template": "When I am drawing, I feel ___ and joyful ___ .",
       "answers": [
-        "creative"
+        "creative",
+        "next"
       ]
     },
     {
-      "template": "My mom is friendly and funny and she makes me laugh ___.",
+      "template": "My mom is friendly and funny and she makes me laugh ___ ___ .",
       "answers": [
-        "every day"
+        "every day",
+        "finally"
       ]
     },
     {
-      "template": "My happy jar helps me remember all the ___ moments.",
+      "template": "My happy jar helps me remember all the ___ moments ___ .",
       "answers": [
-        "happy"
+        "happy",
+        "slowly"
       ]
     }
   ],
@@ -63,7 +69,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "happy jar",

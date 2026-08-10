@@ -133,39 +133,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is Saturday! I have a fun weekend ___.",
+      "template": "Today is Saturday! I have a fun weekend ___ ___ .",
       "answers": [
-        "plan"
+        "plan",
+        "then"
       ]
     },
     {
-      "template": "First, I go to the ___ and play with my friends.",
+      "template": "First, I go to the ___ and play with my friends ___ .",
       "answers": [
-        "park"
+        "park",
+        "also"
       ]
     },
     {
-      "template": "We run, laugh, and have a great ___!",
+      "template": "We run, laugh, and have a great ___! ___",
       "answers": [
-        "time"
+        "time",
+        "so"
       ]
     },
     {
-      "template": "Then I go to the ___ to read a story book.",
+      "template": "Then I go to the ___ to read a story book ___ .",
       "answers": [
-        "library"
+        "library",
+        "next"
       ]
     },
     {
-      "template": "The book is very ___. I learn new words.",
+      "template": "The book is very ___. I learn new words ___ .",
       "answers": [
-        "interesting"
+        "interesting",
+        "finally"
       ]
     },
     {
-      "template": "After that, my mom and I buy ___ at the supermarket.",
+      "template": "After that, my mom and I buy ___ at the supermarket ___ .",
       "answers": [
-        "food"
+        "food",
+        "slowly"
       ]
     }
   ],

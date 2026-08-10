@@ -29,39 +29,45 @@ export default {
   "topic_talk_prompt": "Tell me everything that is in your school bag and why!",
   "sentence_frames": [
     {
-      "template": "In my backpack there is a notebook, a textbook, and a ___ case.",
+      "template": "In my backpack there is a notebook, a textbook, and a ___ case ___ .",
       "answers": [
-        "pencil"
+        "pencil",
+        "then"
       ]
     },
     {
-      "template": "I also carry a water bottle and a ___ because I get hungry.",
+      "template": "I also carry a water bottle and a ___ because I get hungry ___ .",
       "answers": [
-        "snack"
+        "snack",
+        "also"
       ]
     },
     {
-      "template": "My bag is dark blue and it has a ___ pocket at the front.",
+      "template": "My bag is dark blue and it has a ___ pocket at the front ___ .",
       "answers": [
-        "small"
+        "small",
+        "so"
       ]
     },
     {
-      "template": "It is quite heavy but I do not mind because I love being ___ and ready.",
+      "template": "It is quite heavy but I do not mind because I love being ___ and ready ___ .",
       "answers": [
-        "organised"
+        "organised",
+        "next"
       ]
     },
     {
-      "template": "Being prepared makes me feel ___ every day.",
+      "template": "Being prepared makes me feel ___ every day ___ .",
       "answers": [
-        "confident"
+        "confident",
+        "finally"
       ]
     },
     {
-      "template": "I pack my bag very ___ every morning.",
+      "template": "I pack my bag very ___ every morning ___ .",
       "answers": [
-        "carefully"
+        "carefully",
+        "slowly"
       ]
     }
   ],
@@ -70,7 +76,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "notebook",

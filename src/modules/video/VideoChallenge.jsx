@@ -375,9 +375,9 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
     const correctPool = allWords.filter(w => !w.distractor);
     const distractorPool = allWords.filter(w => w.distractor);
 
-    // Hint count based on roadmap stage: W01-W15 = max 3 hints, W16+ = max 4 hints
-    const weekNum = parseInt(weekId, 10) || 1;
-    const maxHints = weekNum <= 15 ? 3 : 4;
+    // Hint count based on mode: Easy = max 3 hints, Advanced = max 4 hints
+    const isEasy = data?.isEasy || content?.scaffolding_stage === 'high' || content?.hints?.vocabulary_bank?.scaffolding_stage === 'high';
+    const maxHints = isEasy ? 3 : 4;
 
     // Seeded RNG — different subset per blank
     const seed = frameIndex * 1000 + blankIndex;

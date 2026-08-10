@@ -133,39 +133,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is a perfect school day! I wake up at seven ___.",
+      "template": "Today is a perfect school day! I wake up at seven ___ ___ .",
       "answers": [
-        "o'clock"
+        "o'clock",
+        "then"
       ]
     },
     {
-      "template": "I brush my teeth with my blue ___.",
+      "template": "I brush my teeth with my blue ___ ___ .",
       "answers": [
-        "toothbrush"
+        "toothbrush",
+        "also"
       ]
     },
     {
-      "template": "Then I eat breakfast with my ___.",
+      "template": "Then I eat breakfast with my ___ ___ .",
       "answers": [
-        "family"
+        "family",
+        "so"
       ]
     },
     {
-      "template": "I eat rice and eggs. It is ___.",
+      "template": "I eat rice and eggs. It is ___ ___ .",
       "answers": [
-        "yummy"
+        "yummy",
+        "next"
       ]
     },
     {
-      "template": "At eight o'clock, I go to ___ with my friends.",
+      "template": "At eight o'clock, I go to ___ with my friends ___ .",
       "answers": [
-        "school"
+        "school",
+        "finally"
       ]
     },
     {
-      "template": "At twelve o'clock, I have ___.",
+      "template": "At twelve o'clock, I have ___ ___ .",
       "answers": [
-        "lunch"
+        "lunch",
+        "slowly"
       ]
     }
   ],

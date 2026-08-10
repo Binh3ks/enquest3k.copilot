@@ -24,39 +24,45 @@ export default {
   "topic_talk_prompt": "Tell me the full story of your treasure hunt!",
   "sentence_frames": [
     {
-      "template": "First, Lily hid a small treasure ___ and gave us a clue.",
+      "template": "First, Lily hid a small treasure ___ and gave us a clue ___ .",
       "answers": [
-        "box"
+        "box",
+        "then"
       ]
     },
     {
-      "template": "I searched under the bed and behind the ___ but I could not find it.",
+      "template": "I searched under the bed and behind the ___ but I could not find it ___ .",
       "answers": [
-        "bookshelf"
+        "bookshelf",
+        "also"
       ]
     },
     {
-      "template": "Then I looked inside the kitchen cupboard and finally spotted it on the top ___.",
+      "template": "Then I looked inside the kitchen cupboard and finally spotted it on the top ___ ___ .",
       "answers": [
-        "shelf"
+        "shelf",
+        "so"
       ]
     },
     {
-      "template": "I jumped with excitement and shouted because I was so ___ to find it first.",
+      "template": "I jumped with excitement and shouted because I was so ___ to find it first ___ .",
       "answers": [
-        "happy"
+        "happy",
+        "next"
       ]
     },
     {
-      "template": "We all laughed and decided to play again because it was so much ___.",
+      "template": "We all laughed and decided to play again because it was so much ___ ___ .",
       "answers": [
-        "fun"
+        "fun",
+        "finally"
       ]
     },
     {
-      "template": "The treasure was a box full of ___ coins.",
+      "template": "The treasure was a box full of ___ coins ___ .",
       "answers": [
-        "gold"
+        "gold",
+        "slowly"
       ]
     }
   ],
@@ -65,7 +71,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "my friend Lily",

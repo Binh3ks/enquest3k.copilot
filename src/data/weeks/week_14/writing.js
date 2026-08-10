@@ -113,39 +113,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Welcome to my ___! My name is Emma.",
+      "template": "Welcome to my ___! My name is Emma ___ .",
       "answers": [
-        "presentation"
+        "presentation",
+        "then"
       ]
     },
     {
-      "template": "I am 8 years old and I want to ___ my world.",
+      "template": "I am 8 years old and I want to ___ my world ___ .",
       "answers": [
-        "share"
+        "share",
+        "also"
       ]
     },
     {
-      "template": "This is my loving ___. I have 4 people in it.",
+      "template": "This is my loving ___. I have 4 people in it ___ .",
       "answers": [
-        "family"
+        "family",
+        "so"
       ]
     },
     {
-      "template": "My mom, my dad, my sister, and ___.",
+      "template": "My mom, my dad, my sister, and ___ ___ .",
       "answers": [
-        "me"
+        "me",
+        "next"
       ]
     },
     {
-      "template": "I can sing very ___.",
+      "template": "I can sing very ___ ___ .",
       "answers": [
-        "well"
+        "well",
+        "finally"
       ]
     },
     {
-      "template": "I can also ___ when I hear music.",
+      "template": "I can also ___ when I hear music ___ .",
       "answers": [
-        "dance"
+        "dance",
+        "slowly"
       ]
     }
   ],

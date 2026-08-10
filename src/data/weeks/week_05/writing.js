@@ -24,39 +24,45 @@ export default {
   "topic_talk_prompt": "Describe your house and your favorite room!",
   "sentence_frames": [
     {
-      "template": "There is a ___ on the hill. Nobody knows what is inside.",
+      "template": "There is a ___ on the hill. Nobody knows what is inside ___ .",
       "answers": [
-        "mystery house"
+        "mystery house",
+        "then"
       ]
     },
     {
-      "template": "One day, I open the door ___.",
+      "template": "One day, I open the door ___ ___ .",
       "answers": [
+        "slowly",
+        "also"
+      ]
+    },
+    {
+      "template": "Upstairs, there is a nice ___ ___ .",
+      "answers": [
+        "bedroom",
+        "so"
+      ]
+    },
+    {
+      "template": "I see a ___ on the table and a mirror on the wall ___ .",
+      "answers": [
+        "lamp",
+        "next"
+      ]
+    },
+    {
+      "template": "The room has a ___ on the floor ___ .",
+      "answers": [
+        "rug",
+        "finally"
+      ]
+    },
+    {
+      "template": "Downstairs, I find the living ___ ___ .",
+      "answers": [
+        "room",
         "slowly"
-      ]
-    },
-    {
-      "template": "Upstairs, there is a nice ___.",
-      "answers": [
-        "bedroom"
-      ]
-    },
-    {
-      "template": "I see a ___ on the table and a mirror on the wall.",
-      "answers": [
-        "lamp"
-      ]
-    },
-    {
-      "template": "The room has a ___ on the floor.",
-      "answers": [
-        "rug"
-      ]
-    },
-    {
-      "template": "Downstairs, I find the living ___.",
-      "answers": [
-        "room"
       ]
     }
   ],
@@ -65,7 +71,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "mystery house",

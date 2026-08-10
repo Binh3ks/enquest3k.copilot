@@ -25,39 +25,45 @@ export default {
   "topic_talk_prompt": "Give me a full detailed description of your classroom!",
   "sentence_frames": [
     {
-      "template": "My classroom is very bright and cheerful because the walls are covered with colorful ___.",
+      "template": "My classroom is very bright and cheerful because the walls are covered with colorful ___ ___ .",
       "answers": [
-        "posters"
+        "posters",
+        "then"
       ]
     },
     {
-      "template": "There are exactly twenty-eight students and we sit at wooden desks arranged in four ___.",
+      "template": "There are exactly twenty-eight students and we sit at wooden desks arranged in four ___ ___ .",
       "answers": [
-        "rows"
+        "rows",
+        "also"
       ]
     },
     {
-      "template": "On the front wall there is a large whiteboard and two ___ screens.",
+      "template": "On the front wall there is a large whiteboard and two ___ screens ___ .",
       "answers": [
-        "interactive"
+        "interactive",
+        "so"
       ]
     },
     {
-      "template": "Along the back wall there is a tall bookshelf with over a hundred ___ organized by subject.",
+      "template": "Along the back wall there is a tall bookshelf with over a hundred ___ organized by subject ___ .",
       "answers": [
-        "books"
+        "books",
+        "next"
       ]
     },
     {
-      "template": "Our classroom also has a reading corner with soft ___ where we can sit and read quietly.",
+      "template": "Our classroom also has a reading corner with soft ___ where we can sit and read quietly ___ .",
       "answers": [
-        "cushions"
+        "cushions",
+        "finally"
       ]
     },
     {
-      "template": "I feel ___ of our classroom because we all help to keep it neat and tidy.",
+      "template": "I feel ___ of our classroom because we all help to keep it neat and tidy ___ .",
       "answers": [
-        "proud"
+        "proud",
+        "slowly"
       ]
     }
   ],
@@ -66,7 +72,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "very bright",

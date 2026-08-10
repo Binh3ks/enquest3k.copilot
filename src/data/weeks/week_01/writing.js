@@ -18,39 +18,45 @@ export default {
   "topic_talk_prompt": "Tell me about yourself and your school!",
   "sentence_frames": [
     {
-      "template": "My name is Alex and I am ___ years old.",
+      "template": "My name is Alex and I am ___ years old ___ .",
       "answers": [
-        "eight"
+        "eight",
+        "then"
       ]
     },
     {
-      "template": "I am a new student at Greenwood Elementary ___",
+      "template": "I am a new student at Greenwood Elementary ___ ___",
       "answers": [
-        "School"
+        "School",
+        "also"
       ]
     },
     {
-      "template": "Every morning, I wake up early and get ready for ___",
+      "template": "Every morning, I wake up early and get ready for ___ ___",
       "answers": [
-        "school"
+        "school",
+        "so"
       ]
     },
     {
-      "template": "My teacher, Ms. Johnson, is very ___ and patient.",
+      "template": "My teacher, Ms. Johnson, is very ___ and patient ___ .",
       "answers": [
-        "kind"
+        "kind",
+        "next"
       ]
     },
     {
-      "template": "She teaches us English, Math, and ___",
+      "template": "She teaches us English, Math, and ___ ___",
       "answers": [
-        "Science"
+        "Science",
+        "finally"
       ]
     },
     {
-      "template": "I want to become a young ___ when I grow up.",
+      "template": "I want to become a young ___ when I grow up ___ .",
       "answers": [
-        "scientist"
+        "scientist",
+        "slowly"
       ]
     }
   ],
@@ -59,7 +65,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "eight",

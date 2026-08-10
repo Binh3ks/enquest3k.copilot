@@ -113,39 +113,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "The city is ___ because there are many shops and schools.",
+      "template": "The city is ___ because there are many shops and schools ___ .",
       "answers": [
-        "exciting"
+        "exciting",
+        "then"
       ]
     },
     {
-      "template": "But it can be very noisy and ___.",
+      "template": "But it can be very noisy and ___ ___ .",
       "answers": [
-        "crowded"
+        "crowded",
+        "also"
       ]
     },
     {
-      "template": "The air can be ___ because of heavy traffic.",
+      "template": "The air can be ___ because of heavy traffic ___ .",
       "answers": [
-        "polluted"
+        "polluted",
+        "so"
       ]
     },
     {
-      "template": "The farm, on the other hand, is peaceful and ___.",
+      "template": "The farm, on the other hand, is peaceful and ___ ___ .",
       "answers": [
-        "green"
+        "green",
+        "next"
       ]
     },
     {
-      "template": "The farm has fresh ___ and wide open spaces.",
+      "template": "The farm has fresh ___ and wide open spaces ___ .",
       "answers": [
-        "air"
+        "air",
+        "finally"
       ]
     },
     {
-      "template": "Farm life is ___ and less busy than the city.",
+      "template": "Farm life is ___ and less busy than the city ___ .",
       "answers": [
-        "quiet"
+        "quiet",
+        "slowly"
       ]
     }
   ],

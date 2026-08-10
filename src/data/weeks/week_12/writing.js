@@ -88,39 +88,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is the school talent ___!",
+      "template": "Today is the school talent ___! ___",
       "answers": [
-        "show"
+        "show",
+        "then"
       ]
     },
     {
-      "template": "Sarah can sing songs ___ on stage.",
+      "template": "Sarah can sing songs ___ on stage ___ .",
       "answers": [
-        "happily"
+        "happily",
+        "also"
       ]
     },
     {
-      "template": "The audience ___ her performance.",
+      "template": "The audience ___ her performance ___ .",
       "answers": [
-        "loves"
+        "loves",
+        "so"
       ]
     },
     {
-      "template": "Tom can dance with energy and ___.",
+      "template": "Tom can dance with energy and ___ ___ .",
       "answers": [
-        "style"
+        "style",
+        "next"
       ]
     },
     {
-      "template": "Mike can run fast around the ___.",
+      "template": "Mike can run fast around the ___ ___ .",
       "answers": [
-        "track"
+        "track",
+        "finally"
       ]
     },
     {
-      "template": "Emma can jump ___ and always lands safely.",
+      "template": "Emma can jump ___ and always lands safely ___ .",
       "answers": [
-        "high"
+        "high",
+        "slowly"
       ]
     }
   ],

@@ -23,39 +23,45 @@ export default {
   "topic_talk_prompt": "Describe your best friend's appearance in full detail!",
   "sentence_frames": [
     {
-      "template": "My best friend is Tom and he is tall with short curly ___.",
+      "template": "My best friend is Tom and he is tall with short curly ___ ___ .",
       "answers": [
-        "hair"
+        "hair",
+        "then"
       ]
     },
     {
-      "template": "His hair is dark brown and his eyes are bright ___.",
+      "template": "His hair is dark brown and his eyes are bright ___ ___ .",
       "answers": [
-        "green"
+        "green",
+        "also"
       ]
     },
     {
-      "template": "He wears round glasses because he cannot ___ well without them.",
+      "template": "He wears round glasses because he cannot ___ well without them ___ .",
       "answers": [
-        "see"
+        "see",
+        "so"
       ]
     },
     {
-      "template": "He always wears a red cap and a blue ___ to school.",
+      "template": "He always wears a red cap and a blue ___ to school ___ .",
       "answers": [
-        "jacket"
+        "jacket",
+        "next"
       ]
     },
     {
-      "template": "He is slim but very ___ because he trains every day.",
+      "template": "He is slim but very ___ because he trains every day ___ .",
       "answers": [
-        "strong"
+        "strong",
+        "finally"
       ]
     },
     {
-      "template": "He looks very unique and everyone ___ him.",
+      "template": "He looks very unique and everyone ___ him ___ .",
       "answers": [
-        "recognizes"
+        "recognizes",
+        "slowly"
       ]
     }
   ],
@@ -64,7 +70,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "Tom",

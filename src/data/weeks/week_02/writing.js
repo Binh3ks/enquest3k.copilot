@@ -22,39 +22,45 @@ export default {
   "topic_talk_prompt": "Tell me about each person in your family!",
   "sentence_frames": [
     {
-      "template": "This is my ___. She is the leader of our family.",
+      "template": "This is my ___. She is the leader of our family ___ .",
       "answers": [
-        "mother"
+        "mother",
+        "then"
       ]
     },
     {
-      "template": "My mother helps us ___ every day.",
+      "template": "My mother helps us ___ every day ___ .",
       "answers": [
-        "with everything"
+        "with everything",
+        "also"
       ]
     },
     {
-      "template": "This is my ___. He is strong and kind.",
+      "template": "This is my ___. He is strong and kind ___ .",
       "answers": [
-        "father"
+        "father",
+        "so"
       ]
     },
     {
-      "template": "He works very hard for our ___.",
+      "template": "He works very hard for our ___ ___ .",
       "answers": [
-        "family"
+        "family",
+        "next"
       ]
     },
     {
-      "template": "This is my big brother. His name is ___.",
+      "template": "This is my big brother. His name is ___ ___ .",
       "answers": [
-        "Tom"
+        "Tom",
+        "finally"
       ]
     },
     {
-      "template": "He ___ me with homework.",
+      "template": "He ___ me with homework ___ .",
       "answers": [
-        "helps"
+        "helps",
+        "slowly"
       ]
     }
   ],
@@ -63,7 +69,7 @@ export default {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
-      "scaffolding_stage": "low",
+      "scaffolding_stage": "medium",
       "words": [
         {
           "word": "mother",

@@ -128,39 +128,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "I walk on a busy ___ every day.",
+      "template": "I walk on a busy ___ every day ___ .",
       "answers": [
-        "street"
+        "street",
+        "then"
       ]
     },
     {
-      "template": "There are many people and cars ___.",
+      "template": "There are many people and cars ___ ___ .",
       "answers": [
-        "everywhere"
+        "everywhere",
+        "also"
       ]
     },
     {
-      "template": "It is a very ___ place.",
+      "template": "It is a very ___ place ___ .",
       "answers": [
-        "noisy"
+        "noisy",
+        "so"
       ]
     },
     {
-      "template": "I see a very tall ___ near the bus stop.",
+      "template": "I see a very tall ___ near the bus stop ___ .",
       "answers": [
-        "building"
+        "building",
+        "next"
       ]
     },
     {
-      "template": "A yellow bus ___ near me and people get on.",
+      "template": "A yellow bus ___ near me and people get on ___ .",
       "answers": [
-        "stops"
+        "stops",
+        "finally"
       ]
     },
     {
-      "template": "There is lots of ___ on the main road.",
+      "template": "There is lots of ___ on the main road ___ .",
       "answers": [
-        "traffic"
+        "traffic",
+        "slowly"
       ]
     }
   ],
