@@ -2,7 +2,7 @@ export default {
   "title": "City Sounds & Sights — Advanced Writing",
   "min_words": 45,
   "min_sentences": 6,
-  "model_sentence": "I walk on a busy city street every day. There are many people and cars everywhere. It is a very truly noisy place. I see a tall building near the bus stop. A yellow bus stops and people get on. There is lots of traffic on the main road.",
+  "model_sentence": "I walk on a busy street every day. There are many people and cars everywhere. It is a very noisy place. I see a tall building near the bus stop. A yellow bus arrives and people get on. There is lots of traffic on the main road.",
   "instruction_en": "Write a complete descriptive passage about city life!",
   "instruction_vi": "Viết đoạn văn mô tả hoàn chỉnh về cuộc sống thành phố!",
   "prompt_en": "Describe the busy streets, buildings, and traffic in the city!",
@@ -20,35 +20,35 @@ export default {
   "topic_talk_prompt": "Tell me a detailed story about city sights and sounds!",
   "sentence_frames": [
     {
-      "template": "I walk on a ___ city street ___.",
+      "template": "I walk on a ___ street ___.",
       "answers": [
         "busy",
         "every day"
       ]
     },
     {
-      "template": "There are ___ people and cars ___.",
+      "template": "There are ___ people and ___ everywhere.",
       "answers": [
         "many",
-        "everywhere"
+        "cars"
       ]
     },
     {
-      "template": "It is a ___ truly noisy ___.",
+      "template": "It is a ___ noisy ___.",
       "answers": [
         "very",
         "place"
       ]
     },
     {
-      "template": "I see a tall ___ near the ___.",
+      "template": "I see a ___ building near the ___.",
       "answers": [
-        "building",
+        "tall",
         "bus stop"
       ]
     },
     {
-      "template": "A yellow ___ stops and people ___.",
+      "template": "A yellow ___ arrives and people ___.",
       "answers": [
         "bus",
         "get on"
@@ -71,7 +71,7 @@ export default {
       "words": [
         {
           "word": "busy",
-          "vi": "bận rộn, đông đúc",
+          "vi": "đông đúc",
           "distractor": false
         },
         {
@@ -85,8 +85,8 @@ export default {
           "distractor": false
         },
         {
-          "word": "everywhere",
-          "vi": "khắp nơi",
+          "word": "cars",
+          "vi": "xe ô tô",
           "distractor": false
         },
         {
@@ -100,8 +100,8 @@ export default {
           "distractor": false
         },
         {
-          "word": "building",
-          "vi": "tòa nhà",
+          "word": "tall",
+          "vi": "cao",
           "distractor": false
         },
         {

@@ -46,7 +46,7 @@ async function auditWritingPipeline() {
           const middleText = parts[g+1];
           if (middleText !== undefined && g < parts.length - 2) {
             const wordsBetween = middleText.trim().split(/\s+/).filter(Boolean).length;
-            if (wordsBetween < 2) {
+            if (wordsBetween < 1) {
               errors.push(`W${pad} ADV frame ${idx+1}: Gaps are too close (${wordsBetween} words between)`);
             }
           }

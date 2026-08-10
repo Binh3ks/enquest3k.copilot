@@ -2,7 +2,7 @@ export default {
   "title": "Writing: City Sounds & Sights",
   "min_words": 35,
   "min_sentences": 6,
-  "model_sentence": "I walk on a busy street every day. There are many people and cars everywhere. It is a very noisy place. I see a very tall building near the bus stop. A yellow bus stops near me and people get on. There is lots of traffic on the main road.",
+  "model_sentence": "I walk on a busy street every day. There are many people and cars everywhere. It is a very noisy place. I see a tall building near the bus stop. A yellow bus arrives and people get on. There is lots of traffic on the main road.",
   "instruction_en": "Write about city sounds and sights in full sentences!",
   "instruction_vi": "Viết về âm thanh và cảnh vật thành phố bằng các câu đầy đủ!",
   "prompt_en": "What do you see and hear in the city? What vehicles are on the road?",
@@ -18,7 +18,7 @@ export default {
   "topic_talk_prompt": "Tell me about the city where you live or visit!",
   "sentence_frames": [
     {
-      "template": "I walk on a busy ___ every day.",
+      "template": "I walk on a ___ every day.",
       "answers": [
         "street"
       ]
@@ -36,13 +36,13 @@ export default {
       ]
     },
     {
-      "template": "I see a very tall ___ near the bus stop.",
+      "template": "I see a tall ___ near the bus stop.",
       "answers": [
         "building"
       ]
     },
     {
-      "template": "A yellow ___ stops near me and people get on.",
+      "template": "A yellow ___ arrives and people get on.",
       "answers": [
         "bus"
       ]
@@ -97,8 +97,28 @@ export default {
           "distractor": true
         },
         {
+          "word": "house",
+          "vi": "ngôi nhà",
+          "distractor": true
+        },
+        {
+          "word": "birds",
+          "vi": "chim",
+          "distractor": true
+        },
+        {
+          "word": "trees",
+          "vi": "cây cối",
+          "distractor": true
+        },
+        {
           "word": "quiet",
           "vi": "yên tĩnh",
+          "distractor": true
+        },
+        {
+          "word": "green",
+          "vi": "xanh lá",
           "distractor": true
         }
       ]
