@@ -341,9 +341,9 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
       {/* HEADER & CONTENT */}
       <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative group">
         <div className="w-full bg-slate-100 relative overflow-hidden">
-            <img src={imageSrc} className="w-full aspect-[16/6] object-cover object-center transition-transform duration-700 group-hover:scale-105" alt="cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-5">
-               <h2 className="text-xl font-black text-white leading-tight drop-shadow-md">{data.title_en}</h2>
+            <img src={imageSrc} className="w-full h-72 md:h-80 object-cover object-center transition-transform duration-700 group-hover:scale-105" alt="cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+               <h2 className="text-2xl font-black text-white leading-tight drop-shadow-md">{data.title_en}</h2>
             </div>
         </div>
         <div className="p-8">

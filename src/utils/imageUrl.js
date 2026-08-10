@@ -14,6 +14,8 @@ const IMAGES_CDN =
 // List of specific locally re-rendered images for weeks 1..35
 const LOCAL_OVERRIDE_IMAGES = new Set([
   // Week 30
+  '/images/week30/explore_cover_w30.jpg',
+  '/images/week30/explore.jpg',
   '/images/week30/vocab_refreshing.jpg',
   '/images/week30/v6_refreshing.jpg',
   '/images/week30/refreshing.jpg',
@@ -25,6 +27,8 @@ const LOCAL_OVERRIDE_IMAGES = new Set([
   '/images/week30/head_chef.jpg',
   '/images/week30/wordpower_w8.jpg',
   // Week 31
+  '/images/week31/explore_cover_w31.jpg',
+  '/images/week31/explore.jpg',
   '/images/week31/vocab_texture.jpg',
   '/images/week31/texture.jpg',
   '/images/week31/v8_texture.jpg',
