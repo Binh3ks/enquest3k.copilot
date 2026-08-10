@@ -6,7 +6,7 @@ const vocab = {
   vocab: [
     {
       id: 1,
-      word: "accident",
+      word: "accident", definition_en: "an unfortunate event that happens unexpectedly causing hurt or damage", definition_vi: "tai nạn",
       pronunciation: "/ˈæksɪdənt/",
       definition_vi: "tai nạn, sự cố",
       definition_en: "something bad that happens by chance, not on purpose",
@@ -23,7 +23,7 @@ const vocab = {
     },
     {
       id: 2,
-      word: "corridor",
+      word: "corridor", definition_en: "a long passage in a building with doors leading into rooms", definition_vi: "hành lang",
       pronunciation: "/ˈkɒrɪdɔːr/",
       definition_vi: "hành lang",
       definition_en: "a long passage in a building with rooms on each side",
@@ -40,7 +40,7 @@ const vocab = {
     },
     {
       id: 3,
-      word: "cold pack",
+      word: "cold pack", definition_en: "a flexible pouch filled with cold gel used to reduce swelling", definition_vi: "túi chườm lạnh",
       pronunciation: "/kəʊld pæk/",
       definition_vi: "túi chườm lạnh",
       definition_en: "a bag of cold material put on a body part to reduce pain or swelling",
@@ -57,7 +57,7 @@ const vocab = {
     },
     {
       id: 4,
-      word: "lesson",
+      word: "lesson", definition_en: "an important principle or experience learned from a mistake", definition_vi: "bài học",
       pronunciation: "/ˈlesən/",
       definition_vi: "bài học",
       definition_en: "something you learn so you do not make the same mistake again",
@@ -74,7 +74,7 @@ const vocab = {
     },
     {
       id: 5,
-      word: "carefully",
+      word: "carefully", definition_en: "in a way that avoids danger, harm, or mistakes by paying attention", definition_vi: "cẩn thận",
       pronunciation: "/ˈkeəfəli/",
       definition_vi: "cẩn thận",
       definition_en: "in a way that avoids danger or mistakes",
@@ -91,7 +91,7 @@ const vocab = {
     },
     {
       id: 6,
-      word: "catch",
+      word: "catch", definition_en: "to intercept and hold an object moving through the air", definition_vi: "bắt, đỡ lấy",
       pronunciation: "/kætʃ/",
       definition_vi: "bắt, đuổi kịp",
       definition_en: "to get something that is moving through the air",
@@ -108,7 +108,7 @@ const vocab = {
     },
     {
       id: 7,
-      word: "terrible",
+      word: "terrible", definition_en: "extremely bad, unpleasant, or painful", definition_vi: "khủng khiếp, rất tệ",
       pronunciation: "/ˈterəbəl/",
       definition_vi: "kinh khủng, tồi tệ",
       definition_en: "very bad or frightening",
@@ -125,7 +125,7 @@ const vocab = {
     },
     {
       id: 8,
-      word: "understand",
+      word: "understand", definition_en: "to perceive the intended meaning or importance of something", definition_vi: "hiểu, thấu hiểu",
       pronunciation: "/ˌʌndəˈstænd/",
       definition_vi: "hiểu",
       definition_en: "to know the meaning of something",
@@ -142,7 +142,7 @@ const vocab = {
     },
     {
       id: 9,
-      word: "explain",
+      word: "explain", definition_en: "to make something clear or easy to understand by describing it", definition_vi: "giải thích",
       pronunciation: "/ɪkˈspleɪn/",
       definition_vi: "giải thích",
       definition_en: "to make something clear or easy to understand",
@@ -159,7 +159,7 @@ const vocab = {
     },
     {
       id: 10,
-      word: "recover",
+      word: "recover", definition_en: "to return to a normal state of health and strength after an injury", definition_vi: "hồi phục",
       pronunciation: "/rɪˈkʌvər/",
       definition_vi: "hồi phục, bình phục",
       definition_en: "to get better after being ill or hurt",
@@ -176,7 +176,7 @@ const vocab = {
     },
     {
       id: 11,
-      word: "knee",
+      word: "knee", definition_en: "the joint between the upper and lower legs in the human body", definition_vi: "đầu gối",
       pronunciation: "/niː/",
       definition_vi: "đầu gối",
       definition_en: "the middle part of your leg that bends",
@@ -193,7 +193,7 @@ const vocab = {
     },
     {
       id: 12,
-      word: "arm",
+      word: "arm", definition_en: "each of the two upper limbs of the human body from shoulder to hand", definition_vi: "cánh tay",
       pronunciation: "/ɑːrm/",
       definition_vi: "cánh tay",
       definition_en: "the part of your body from your shoulder to your hand",
@@ -210,7 +210,7 @@ const vocab = {
     },
     {
       id: 13,
-      word: "head",
+      word: "head", definition_en: "the upper part of the human body containing the brain and eyes", definition_vi: "đầu",
       pronunciation: "/hed/",
       definition_vi: "đầu",
       definition_en: "the top part of your body with your brain, eyes, and mouth",
@@ -227,7 +227,7 @@ const vocab = {
     },
     {
       id: 14,
-      word: "leg",
+      word: "leg", definition_en: "each of the lower limbs of the human body used for walking", definition_vi: "chân",
       pronunciation: "/leg/",
       definition_vi: "chân",
       definition_en: "the body part below the knee used for walking",
@@ -244,7 +244,7 @@ const vocab = {
     },
     {
       id: 15,
-      word: "hand",
+      word: "hand", definition_en: "the end part of a person arm beyond the wrist, including fingers", definition_vi: "bàn tay",
       pronunciation: "/hænd/",
       definition_vi: "bàn tay",
       definition_en: "the part at the end of your arm used for holding things",
@@ -278,7 +278,7 @@ const vocab = {
     },
     {
       id: 17,
-      word: "shoulder",
+      word: "shoulder", definition_en: "the upper joint of the human arm connecting to the neck", definition_vi: "bờ vai",
       pronunciation: "/ˈʃəʊldər/",
       definition_vi: "vai",
       definition_en: "the part of your body between your neck and your arm",
@@ -295,7 +295,7 @@ const vocab = {
     },
     {
       id: 18,
-      word: "tongue",
+      word: "tongue", definition_en: "the fleshy muscular organ in the mouth used for tasting and speaking", definition_vi: "lưỡi",
       pronunciation: "/tʌŋ/",
       definition_vi: "lưỡi",
       definition_en: "the soft part inside your mouth used for speaking and eating",
@@ -312,7 +312,7 @@ const vocab = {
     },
     {
       id: 19,
-      word: "fell down",
+      word: "fell down", definition_en: "dropped down to the floor accidentally by losing balance", definition_vi: "ngã xuống",
       pronunciation: "/fɛl daʊn/",
       definition_vi: "bị ngã",
       definition_en: "to drop to the ground suddenly, usually by accident",
