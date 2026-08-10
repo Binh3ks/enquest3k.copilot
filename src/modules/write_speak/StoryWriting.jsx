@@ -60,6 +60,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const [imgFailed, setImgFailed] = useState(false);
   const [rubric, setRubric] = useState(savedData?.rubric || null);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [imgZoomed, setImgZoomed] = useState(false);
 
   // W66+ Exam Mode Timer (10 mins = 600s)
   const isExamMode = currentW >= 66;
@@ -201,7 +202,10 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
           </div>
         ) : (
           /* Single Picture Prompt */
-          <div className="relative rounded-2xl border-2 border-slate-200 shadow-sm overflow-hidden max-h-[280px] flex items-center justify-center bg-white min-h-[180px]">
+          <div
+            className="relative rounded-2xl border-2 border-slate-200 shadow-sm overflow-hidden max-h-[280px] flex items-center justify-center bg-white min-h-[180px] cursor-pointer"
+            onClick={() => imgSrc && !imgFailed && setImgZoomed(true)}
+          >
             {imgSrc && !imgFailed ? (
               <img
                 src={imgSrc}
