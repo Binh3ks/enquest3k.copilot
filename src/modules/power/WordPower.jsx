@@ -84,7 +84,7 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
         >
           {/* FRONT */}
           <div className="absolute inset-0 bg-teal-600 rounded-3xl shadow-xl border border-teal-500 flex flex-col overflow-hidden text-white" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-           <div className="h-[62%] w-full relative overflow-hidden flex items-center justify-center bg-teal-700/50 rounded-t-3xl">
+           <div className="h-[210px] w-full relative overflow-hidden flex items-center justify-center bg-teal-700/50 shrink-0">
                   {word.image_url ? (
                     <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   ) : (
@@ -94,14 +94,16 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
                     {isCompleted ? <CheckCircle className="w-8 h-8 fill-green-400 text-white" /> : <Zap className="w-6 h-6 text-yellow-300 fill-yellow-300" />}
                   </div>
            </div>
-           <div className="flex-1 flex flex-col items-center justify-center p-4">
-                  <h3 className={`font-black mb-2 capitalize text-center leading-tight ${word.word.length > 15 ? 'text-xl' : word.word.length > 10 ? 'text-2xl' : word.word.length > 6 ? 'text-3xl' : 'text-4xl'}`}>{word.word}</h3>
-                  <span className="text-sm font-mono bg-white/20 px-3 py-1 rounded-full mb-4">{word.pronunciation}</span>
-                  <button onClick={(e) => play(e, word.word, word.audio_word)} className="p-3 bg-white text-teal-700 rounded-full hover:scale-110 transition-transform shadow-lg">
-                    <Volume2 className="w-6 h-6" />
+           <div className="flex-1 flex flex-col items-center justify-between pt-3 pb-7 px-4">
+                  <div className="flex flex-col items-center text-center">
+                    <h3 className={`font-black mb-0.5 capitalize leading-tight ${word.word.length > 15 ? 'text-lg' : word.word.length > 10 ? 'text-xl' : word.word.length > 6 ? 'text-2xl' : 'text-3xl'}`}>{word.word}</h3>
+                    <span className="text-xs font-mono bg-white/20 px-2.5 py-0.5 rounded-full">{word.pronunciation}</span>
+                  </div>
+                  <button onClick={(e) => play(e, word.word, word.audio_word)} className="p-3 bg-white text-teal-700 rounded-full hover:scale-110 transition-transform shadow-lg my-1">
+                    <Volume2 className="w-5 h-5" />
                   </button>
            </div>
-           <p className="absolute bottom-3 w-full text-center text-[10px] font-bold opacity-60 uppercase tracking-widest">Tap for Definition</p>
+           <p className="absolute bottom-2 w-full text-center text-[10px] font-bold opacity-60 uppercase tracking-widest pointer-events-none">Tap for Definition</p>
           </div>
 
           {/* BACK */}

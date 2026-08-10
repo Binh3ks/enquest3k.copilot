@@ -157,26 +157,28 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
             style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
         >
           <div className={`absolute inset-0 bg-white rounded-3xl shadow-lg border border-slate-100 flex flex-col overflow-hidden hover:shadow-orange-200/50 transition-shadow ${isFlipped ? 'pointer-events-none' : ''}`} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-           <div className="h-[62%] w-full relative overflow-hidden flex items-center justify-center bg-slate-100 rounded-t-3xl">
+           <div className="h-[210px] w-full relative overflow-hidden flex items-center justify-center bg-slate-100 shrink-0">
                 <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-3 right-3 text-white drop-shadow-lg z-10">
                     {isCompleted ? <CheckCircle className="w-8 h-8 fill-green-500 text-white" /> : <Star className="w-6 h-6 fill-amber-400 text-amber-400" />}
                 </div>
            </div>
 
-           <div className="flex-1 flex flex-col items-center justify-center w-full relative -top-4 px-4 z-20">
-                <h3 className="text-4xl font-black text-slate-800 mb-1 capitalize">{word.word}</h3>
-                <span className="text-sm text-slate-500 font-mono bg-slate-100 px-3 py-1 rounded-full mb-4 shadow-sm">{word.pronunciation}</span>
+           <div className="flex-1 flex flex-col items-center justify-between w-full pt-3 pb-7 px-4 z-20">
+                <div className="flex flex-col items-center text-center">
+                    <h3 className="text-3xl font-black text-slate-800 mb-0.5 capitalize leading-tight">{word.word}</h3>
+                    <span className="text-xs text-slate-500 font-mono bg-slate-100 px-2.5 py-0.5 rounded-full shadow-sm">{word.pronunciation}</span>
+                </div>
 
                 <button
                     onClick={(e) => play(e, word.word, word.audio_word)}
-                    className={`p-4 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-all shadow-lg hover:shadow-orange-300 active:scale-95 flex items-center justify-center`}
+                    className={`p-3.5 bg-${themeColor}-500 text-white rounded-full hover:scale-110 transition-all shadow-md hover:shadow-orange-300 active:scale-95 flex items-center justify-center my-1`}
                     disabled={isPlaying}
                 >
-                  {isPlaying ? <Loader2 className="w-7 h-7 animate-spin" /> : <Volume2 className="w-7 h-7" />}
+                  {isPlaying ? <Loader2 className="w-6 h-6 animate-spin" /> : <Volume2 className="w-6 h-6" />}
                 </button>
            </div>
-           <p className="absolute bottom-3 text-[10px] text-slate-300 uppercase font-bold tracking-widest w-full text-center">Tap to Flip</p>
+           <p className="absolute bottom-2 text-[10px] text-slate-400 uppercase font-bold tracking-widest w-full text-center pointer-events-none">Tap to Flip</p>
           </div>
 
           {/* Back face */}
