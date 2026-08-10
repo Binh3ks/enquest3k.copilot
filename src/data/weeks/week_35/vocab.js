@@ -329,7 +329,7 @@ export default {
         "word": "glacier",
         "pronunciation": "/ˈɡlæsiər/",
         "definition_en": "a slowly moving mass or river of ice formed by snow on mountains",
-        "definition_vi": "sông băng, khối băng sơn",
+        "definition_vi": "sông băng / tảng băng trôi",
         "example": "Warmer climate temperatures cause arctic glaciers to melt into sea water.",
         "example_vi": "Nhiệt độ khí hậu ấm hơn làm cho các sông băng ở cực tan thành nước biển.",
         "collocation": [
