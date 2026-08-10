@@ -188,10 +188,10 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
             <div className="relative z-20 flex-shrink-0">
                 <div className="flex items-center justify-center gap-2 mb-1">
                     <span className="text-[10px] font-bold uppercase text-orange-400 tracking-wider">Meaning</span>
-                    <button onClick={(e) => play(e, word.definition_en)} className="p-0.5 bg-white rounded-full shadow-sm text-orange-400 hover:text-orange-600 relative z-50"><Volume2 className="w-3.5 h-3.5"/></button>
+                    <button onClick={(e) => play(e, word.definition_en || word.definition || word.meaning_en || '')} className="p-0.5 bg-white rounded-full shadow-sm text-orange-400 hover:text-orange-600 relative z-50"><Volume2 className="w-3.5 h-3.5"/></button>
                 </div>
-                <p className="font-bold text-slate-800 text-xl leading-snug">{word.definition_en}</p>
-                {word.definition_vi && <div className="mt-1.5 pt-1.5 border-t border-orange-200/50"><p className="text-sm text-slate-500 italic font-medium">"{word.definition_vi}"</p></div>}
+                <p className="font-bold text-slate-800 text-xl leading-snug">{word.definition_en || word.definition || word.meaning_en || word.word}</p>
+                {(word.definition_vi || word.meaning_vi || word.meaning) && <div className="mt-1.5 pt-1.5 border-t border-orange-200/50"><p className="text-sm text-slate-500 italic font-medium">"{word.definition_vi || word.meaning_vi || word.meaning}"</p></div>}
             </div>
 
             {/* Example section */}

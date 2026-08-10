@@ -111,10 +111,10 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
            <div className="mb-6">
                 <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="text-xs font-bold uppercase text-teal-600 tracking-wider">Definition</span>
-                    <button onClick={(e) => play(e, word.definition_en, word.audio_definition)} className="p-1 bg-teal-50 rounded-full text-teal-500 hover:text-teal-700"><Volume2 className="w-4 h-4"/></button>
+                    <button onClick={(e) => play(e, word.definition_en || word.definition || word.meaning_en || word.word, word.audio_definition)} className="p-1 bg-teal-50 rounded-full text-teal-500 hover:text-teal-700"><Volume2 className="w-4 h-4"/></button>
                 </div>
-                <p className="font-bold text-slate-800 text-xl leading-snug">{word.definition_en}</p>
-                {word.definition_vi && <p className="text-sm text-slate-400 italic mt-2">"{word.definition_vi}"</p>}
+                <p className="font-bold text-slate-800 text-xl leading-snug">{word.definition_en || word.definition || word.meaning_en || word.word}</p>
+                {(word.definition_vi || word.meaning_vi || word.meaning) && <p className="text-sm text-slate-400 italic mt-2">"{word.definition_vi || word.meaning_vi || word.meaning}"</p>}
            </div>
            <div className="pt-4 border-t border-slate-100">
                 <div className="flex items-center justify-center gap-2 mb-2">
