@@ -294,7 +294,7 @@ const vocab = {
     definition_en: "a small thin piece of metal with a sharp point, used for joining pieces of wood together",
     example: "Tom held each nail steady while his dad hammered it into the birdhouse frame.",
     collocation: "hammer a nail / metal nail",
-    image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week32/vocab_nail.jpg",
+    image_url: "/images/week32/vocab_nail.jpg",
     audio_word: "/audio/week32/vocab_nail.mp3",
     audio_definition: "/audio/week32/vocab_def_nail.mp3",
     audio_example: "/audio/week32/vocab_ex_nail.mp3",

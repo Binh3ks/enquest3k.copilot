@@ -20,8 +20,10 @@ const LOCAL_OVERRIDE_IMAGES = new Set([
   '/images/week30/refreshing.png',
   '/images/week30/wordpower_civil_engineer.jpg',
   '/images/week30/civil_engineer.jpg',
+  '/images/week30/wordpower_w7.jpg',
   '/images/week30/wordpower_head_chef.jpg',
   '/images/week30/head_chef.jpg',
+  '/images/week30/wordpower_w8.jpg',
   // Week 31
   '/images/week31/vocab_texture.jpg',
   '/images/week31/texture.jpg',

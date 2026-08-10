@@ -264,7 +264,7 @@ const vocab = {
       definition_en: "a small sharp metal spike used for joining pieces of wood",
       example: "I held the nail while Dad hammered it into the wood.",
       collocation: "hammer a nail / sharp nail",
-      image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week32/vocab_nail.jpg",
+      image_url: "/images/week32/vocab_nail.jpg",
       audio_word: "/audio/week32_easy/vocab_nail.mp3",
       audio_definition: "/audio/week32_easy/vocab_def_nail.mp3",
       audio_example: "/audio/week32_easy/vocab_ex_nail.mp3",

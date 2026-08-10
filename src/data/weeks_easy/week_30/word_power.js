@@ -112,7 +112,7 @@ export default {
       definition_vi: "kỹ sư xây dựng — người thiết kế và xây dựng các công trình như cầu, đường và tòa nhà",
       example: "My dad is a civil engineer who builds roads.",
       model_sentence: "I want to be a civil engineer when I grow up so I can build bridges and roads.",
-      image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week30/wordpower_w7.jpg",
+      image_url: "/images/week30/wordpower_civil_engineer.jpg",
       collocation: "civil engineer / mechanical engineer / become an engineer",
       audio_word: "/audio/week30/wordpower_w7_word.mp3"
     },
@@ -125,7 +125,7 @@ export default {
       definition_vi: "bếp trưởng — người đầu bếp cao cấp nhất trong nhà hàng, lãnh đạo cả đội bếp",
       example: "The head chef at my school makes very yummy food.",
       model_sentence: "The head chef at my school makes very delicious food every day.",
-      image_url: "https://pub-6b5486dcbb554a6694b6c7032a43dcae.r2.dev/images/week30/wordpower_w8.jpg",
+      image_url: "/images/week30/wordpower_head_chef.jpg",
       collocation: "head chef / top chef / become a chef",
       audio_word: "/audio/week30/wordpower_w8_word.mp3"
     }
