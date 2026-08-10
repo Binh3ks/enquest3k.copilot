@@ -228,6 +228,120 @@ export default {
         "audio_definition": "/audio/week34/vocab_def_hard_working.mp3",
         "audio_example": "/audio/week34/vocab_ex_hard_working.mp3",
         "audio_collocation": "/audio/week34/vocab_col_hard_working.mp3"
+    },
+    {
+        "id": 13,
+        "word": "summer",
+        "pronunciation": "/ˈsʌmər/",
+        "definition_en": "the warmest season of the year between spring and autumn",
+        "definition_vi": "mùa hè",
+        "example": "During the warm summer, the grasshopper played while the ant worked.",
+        "example_vi": "Trong mùa hè ấm áp, châu chấu mải chơi còn kiến miệt mài làm việc.",
+        "collocation": [
+            "summer sun",
+            "warm summer",
+            "summer days"
+        ],
+        "image_url": "/images/week34/vocab_summer.jpg",
+        "audio_word": "/audio/week34/vocab_summer.mp3",
+        "audio_definition": "/audio/week34/vocab_def_summer.mp3",
+        "audio_example": "/audio/week34/vocab_ex_summer.mp3",
+        "audio_collocation": "/audio/week34/vocab_col_summer.mp3"
+    },
+    {
+        "id": 14,
+        "word": "winter",
+        "pronunciation": "/ˈwɪntər/",
+        "definition_en": "the coldest season of the year between autumn and spring",
+        "definition_vi": "mùa đông",
+        "example": "When winter arrived, snow covered the ground and food became scarce.",
+        "example_vi": "Khi mùa đông đến, tuyết phủ kín mặt đất và thức ăn trở nên khan hiếm.",
+        "collocation": [
+            "cold winter",
+            "winter snow",
+            "prepare for winter"
+        ],
+        "image_url": "/images/week34/vocab_winter.jpg",
+        "audio_word": "/audio/week34/vocab_winter.mp3",
+        "audio_definition": "/audio/week34/vocab_def_winter.mp3",
+        "audio_example": "/audio/week34/vocab_ex_winter.mp3",
+        "audio_collocation": "/audio/week34/vocab_col_winter.mp3"
+    },
+    {
+        "id": 15,
+        "word": "grain",
+        "pronunciation": "/ɡreɪn/",
+        "definition_en": "a small hard seed harvested from cereal crops like wheat and rice",
+        "definition_vi": "hạt ngũ cốc, hạt lúa",
+        "example": "The ant carried heavy grains of wheat back to her storage nest.",
+        "example_vi": "Con kiến tha từng hạt lúa mì nặng về tổ dự trữ của mình.",
+        "collocation": [
+            "wheat grain",
+            "gather grains",
+            "golden grain"
+        ],
+        "image_url": "/images/week34/vocab_grain.jpg",
+        "audio_word": "/audio/week34/vocab_grain.mp3",
+        "audio_definition": "/audio/week34/vocab_def_grain.mp3",
+        "audio_example": "/audio/week34/vocab_ex_grain.mp3",
+        "audio_collocation": "/audio/week34/vocab_col_grain.mp3"
+    },
+    {
+        "id": 16,
+        "word": "violin",
+        "pronunciation": "/ˌvaɪəˈlɪn/",
+        "definition_en": "a musical stringed instrument played with a bow resting on the shoulder",
+        "definition_vi": "đàn vi-ô-lông",
+        "example": "The grasshopper loved to play his tiny violin and dance all day.",
+        "example_vi": "Chú châu chấu thích gảy chiếc đàn vi-ô-lông nhỏ và nhảy múa cả ngày.",
+        "collocation": [
+            "play violin",
+            "tiny violin",
+            "sound of violin"
+        ],
+        "image_url": "/images/week34/vocab_violin.jpg",
+        "audio_word": "/audio/week34/vocab_violin.mp3",
+        "audio_definition": "/audio/week34/vocab_def_violin.mp3",
+        "audio_example": "/audio/week34/vocab_ex_violin.mp3",
+        "audio_collocation": "/audio/week34/vocab_col_violin.mp3"
+    },
+    {
+        "id": 17,
+        "word": "hill",
+        "pronunciation": "/hɪl/",
+        "definition_en": "a naturally raised area of land, lower than a mountain",
+        "definition_vi": "ngọn đồi",
+        "example": "The ant colony lived on a sunny grassy hill near the forest.",
+        "example_vi": "Tổ kiến sống trên một ngọn đồi nhiều cỏ đầy nắng gần khu rừng.",
+        "collocation": [
+            "grassy hill",
+            "top of the hill",
+            "small hill"
+        ],
+        "image_url": "/images/week34/vocab_hill.jpg",
+        "audio_word": "/audio/week34/vocab_hill.mp3",
+        "audio_definition": "/audio/week34/vocab_def_hill.mp3",
+        "audio_example": "/audio/week34/vocab_ex_hill.mp3",
+        "audio_collocation": "/audio/week34/vocab_col_hill.mp3"
+    },
+    {
+        "id": 18,
+        "word": "moral",
+        "pronunciation": "/ˈmɒrəl/",
+        "definition_en": "the practical lesson about right behavior taught by a story",
+        "definition_vi": "bài học đạo đức, ý nghĩa câu chuyện",
+        "example": "The moral of the story is that hard work and preparation bring security.",
+        "example_vi": "Bài học đạo đức của câu chuyện là sự chăm chỉ và chuẩn bị mang lại an toàn.",
+        "collocation": [
+            "moral of the story",
+            "moral lesson",
+            "clear moral"
+        ],
+        "image_url": "/images/week34/vocab_moral.jpg",
+        "audio_word": "/audio/week34/vocab_moral.mp3",
+        "audio_definition": "/audio/week34/vocab_def_moral.mp3",
+        "audio_example": "/audio/week34/vocab_ex_moral.mp3",
+        "audio_collocation": "/audio/week34/vocab_col_moral.mp3"
     }
 ]
 };

@@ -5,7 +5,7 @@ export default {
         "id": 1,
         "word": "accident",
         "pronunciation": "/ˈæksɪdənt/",
-        "definition_en": "an unfortunate event that happens unexpectedly and unintentionally causing hurt or damage",
+        "definition_en": "an unfortunate event that happens unexpectedly causing hurt or damage",
         "definition_vi": "tai nạn, sự cố ngoài ý muốn",
         "example": "Jake had a sudden accident in the hallway when he slipped on the floor.",
         "example_vi": "Jake đã gặp một tai nạn bất ngờ ở hành lang khi cậu trượt chân trên sàn.",
@@ -228,6 +228,120 @@ export default {
         "audio_definition": "/audio/week33/vocab_def_recover.mp3",
         "audio_example": "/audio/week33/vocab_ex_recover.mp3",
         "audio_collocation": "/audio/week33/vocab_col_recover.mp3"
+    },
+    {
+        "id": 13,
+        "word": "head",
+        "pronunciation": "/hed/",
+        "definition_en": "the upper part of the human body containing the brain and eyes",
+        "definition_vi": "đầu",
+        "example": "Always protect your head and walk carefully in school hallways.",
+        "example_vi": "Luôn bảo vệ đầu và đi cẩn thận ở hành lang trường học.",
+        "collocation": [
+            "protect your head",
+            "nod your head",
+            "head injury"
+        ],
+        "image_url": "/images/week33/vocab_head.jpg",
+        "audio_word": "/audio/week33/vocab_head.mp3",
+        "audio_definition": "/audio/week33/vocab_def_head.mp3",
+        "audio_example": "/audio/week33/vocab_ex_head.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_head.mp3"
+    },
+    {
+        "id": 14,
+        "word": "arm",
+        "pronunciation": "/ɑːm/",
+        "definition_en": "each of the two upper limbs of the human body from shoulder to hand",
+        "definition_vi": "cánh tay",
+        "example": "Jake hurt his right arm when he tried to catch the falling cup.",
+        "example_vi": "Jake làm đau cánh tay phải khi cố đỡ chiếc cốc đang rơi.",
+        "collocation": [
+            "right arm",
+            "hurt your arm",
+            "stretch your arm"
+        ],
+        "image_url": "/images/week33/vocab_arm.jpg",
+        "audio_word": "/audio/week33/vocab_arm.mp3",
+        "audio_definition": "/audio/week33/vocab_def_arm.mp3",
+        "audio_example": "/audio/week33/vocab_ex_arm.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_arm.mp3"
+    },
+    {
+        "id": 15,
+        "word": "leg",
+        "pronunciation": "/leɡ/",
+        "definition_en": "each of the lower limbs of the human body used for walking",
+        "definition_vi": "chân",
+        "example": "His left leg felt sore after he bumped into the table corner.",
+        "example_vi": "Chân trái của cậu cảm thấy đau sau khi va vào góc bàn.",
+        "collocation": [
+            "left leg",
+            "sore leg",
+            "bend your leg"
+        ],
+        "image_url": "/images/week33/vocab_leg.jpg",
+        "audio_word": "/audio/week33/vocab_leg.mp3",
+        "audio_definition": "/audio/week33/vocab_def_leg.mp3",
+        "audio_example": "/audio/week33/vocab_ex_leg.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_leg.mp3"
+    },
+    {
+        "id": 16,
+        "word": "hand",
+        "pronunciation": "/hænd/",
+        "definition_en": "the end part of a person arm beyond the wrist, including fingers",
+        "definition_vi": "bàn tay",
+        "example": "He hit his hand against the floor when he slipped.",
+        "example_vi": "Cậu đập bàn tay xuống sàn khi bị trượt chân.",
+        "collocation": [
+            "left hand",
+            "shake hands",
+            "hold hands"
+        ],
+        "image_url": "/images/week33/vocab_hand.jpg",
+        "audio_word": "/audio/week33/vocab_hand.mp3",
+        "audio_definition": "/audio/week33/vocab_def_hand.mp3",
+        "audio_example": "/audio/week33/vocab_ex_hand.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_hand.mp3"
+    },
+    {
+        "id": 17,
+        "word": "tongue",
+        "pronunciation": "/tʌŋ/",
+        "definition_en": "the fleshy muscular organ in the mouth used for tasting and speaking",
+        "definition_vi": "lưỡi",
+        "example": "Jake accidentally bit his tongue when he fell down on the floor.",
+        "example_vi": "Jake vô tình cắn vào lưỡi khi ngã xuống sàn.",
+        "collocation": [
+            "bit his tongue",
+            "stick out tongue",
+            "sore tongue"
+        ],
+        "image_url": "/images/week33/vocab_tongue.jpg",
+        "audio_word": "/audio/week33/vocab_tongue.mp3",
+        "audio_definition": "/audio/week33/vocab_def_tongue.mp3",
+        "audio_example": "/audio/week33/vocab_ex_tongue.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_tongue.mp3"
+    },
+    {
+        "id": 18,
+        "word": "nurse",
+        "pronunciation": "/nɜːs/",
+        "definition_en": "a trained healthcare person who treats sick or injured people in school",
+        "definition_vi": "y tá trường học",
+        "example": "The caring school nurse arrived quickly to help Jake treat his knee.",
+        "example_vi": "Y tá trường học chu đáo đã đến nhanh chóng để giúp Jake chữa đầu gối.",
+        "collocation": [
+            "school nurse",
+            "caring nurse",
+            "visit the nurse"
+        ],
+        "image_url": "/images/week33/read_cover_w33.jpg",
+        "audio_word": "/audio/week33/vocab_nurse.mp3",
+        "audio_definition": "/audio/week33/vocab_def_nurse.mp3",
+        "audio_example": "/audio/week33/vocab_ex_nurse.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_nurse.mp3"
     }
 ]
 };

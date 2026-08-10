@@ -228,6 +228,120 @@ export default {
         "audio_definition": "/audio/week35/vocab_def_protecting.mp3",
         "audio_example": "/audio/week35/vocab_ex_protecting.mp3",
         "audio_collocation": "/audio/week35/vocab_col_protecting.mp3"
+    },
+    {
+        "id": 13,
+        "word": "ocean",
+        "pronunciation": "/ˈəʊʃən/",
+        "definition_en": "a vast body of salt water that covers most of Earth surface",
+        "definition_vi": "đại dương, biển khơi",
+        "example": "Plastic pollution harms sea turtles and fish living in the ocean.",
+        "example_vi": "Ô nhiễm nhựa gây hại cho rùa biển và cá sống dưới đại dương.",
+        "collocation": [
+            "blue ocean",
+            "clean ocean",
+            "protect the ocean"
+        ],
+        "image_url": "/images/week35/vocab_ocean.jpg",
+        "audio_word": "/audio/week35/vocab_ocean.mp3",
+        "audio_definition": "/audio/week35/vocab_def_ocean.mp3",
+        "audio_example": "/audio/week35/vocab_ex_ocean.mp3",
+        "audio_collocation": "/audio/week35/vocab_col_ocean.mp3"
+    },
+    {
+        "id": 14,
+        "word": "forest",
+        "pronunciation": "/ˈfɒrɪst/",
+        "definition_en": "a large area dominated by trees, supporting rich wildlife ecosystems",
+        "definition_vi": "kính rừng, rừng rậm",
+        "example": "Cutting down trees destroys rainforest habitats and increases global warming.",
+        "example_vi": "Chặt phá cây làm phá hủy môi trường sống của rừng nhiệt đới và tăng biến đổi khí hậu.",
+        "collocation": [
+            "green forest",
+            "rain forest",
+            "protect forests"
+        ],
+        "image_url": "/images/week35/vocab_forest.jpg",
+        "audio_word": "/audio/week35/vocab_forest.mp3",
+        "audio_definition": "/audio/week35/vocab_def_forest.mp3",
+        "audio_example": "/audio/week35/vocab_ex_forest.mp3",
+        "audio_collocation": "/audio/week35/vocab_col_forest.mp3"
+    },
+    {
+        "id": 15,
+        "word": "trash",
+        "pronunciation": "/træʃ/",
+        "definition_en": "waste material, rubbish, or discarded items that are no longer useful",
+        "definition_vi": "rác thải, đồ bỏ đi",
+        "example": "We must pick up trash on beaches and sort waste into recycling bins.",
+        "example_vi": "Chúng ta phải nhặt rác trên bãi biển và phân loại rác vào thùng tái chế.",
+        "collocation": [
+            "recycle trash",
+            "pick up trash",
+            "plastic trash"
+        ],
+        "image_url": "/images/week35/vocab_trash.jpg",
+        "audio_word": "/audio/week35/vocab_trash.mp3",
+        "audio_definition": "/audio/week35/vocab_def_trash.mp3",
+        "audio_example": "/audio/week35/vocab_ex_trash.mp3",
+        "audio_collocation": "/audio/week35/vocab_col_trash.mp3"
+    },
+    {
+        "id": 16,
+        "word": "atmosphere",
+        "pronunciation": "/ˈætməsfɪər/",
+        "definition_en": "the envelope of gases surrounding Earth that protects living things",
+        "definition_vi": "khí quyển, bầu khí quyển",
+        "example": "Greenhouse gases trap thermal heat within Earth atmosphere.",
+        "example_vi": "Khí nhà kính giữ nhiệt trong bầu khí quyển Trái Đất.",
+        "collocation": [
+            "earth atmosphere",
+            "clean atmosphere",
+            "protect atmosphere"
+        ],
+        "image_url": "/images/week35/vocab_atmosphere.jpg",
+        "audio_word": "/audio/week35/vocab_atmosphere.mp3",
+        "audio_definition": "/audio/week35/vocab_def_atmosphere.mp3",
+        "audio_example": "/audio/week35/vocab_ex_atmosphere.mp3",
+        "audio_collocation": "/audio/week35/vocab_col_atmosphere.mp3"
+    },
+    {
+        "id": 17,
+        "word": "energy",
+        "pronunciation": "/ˈenədʒi/",
+        "definition_en": "power derived from physical or chemical resources to provide light and heat",
+        "definition_vi": "năng lượng, điện năng",
+        "example": "Turning off lights when leaving a room saves electrical energy.",
+        "example_vi": "Tắt đèn khi rời khỏi phòng sẽ tiết kiệm điện năng.",
+        "collocation": [
+            "clean energy",
+            "save energy",
+            "renewable energy"
+        ],
+        "image_url": "/images/week35/vocab_energy.jpg",
+        "audio_word": "/audio/week35/vocab_energy.mp3",
+        "audio_definition": "/audio/week35/vocab_def_energy.mp3",
+        "audio_example": "/audio/week35/vocab_ex_energy.mp3",
+        "audio_collocation": "/audio/week35/vocab_col_energy.mp3"
+    },
+    {
+        "id": 18,
+        "word": "glacier",
+        "pronunciation": "/ˈɡlæsiər/",
+        "definition_en": "a slowly moving mass or river of ice formed by snow on mountains",
+        "definition_vi": "sông băng, khối băng sơn",
+        "example": "Warmer climate temperatures cause arctic glaciers to melt into sea water.",
+        "example_vi": "Nhiệt độ khí hậu ấm hơn làm cho các sông băng ở cực tan thành nước biển.",
+        "collocation": [
+            "melting glacier",
+            "arctic glacier",
+            "mountain glacier"
+        ],
+        "image_url": "/images/week35/vocab_glacier.jpg",
+        "audio_word": "/audio/week35/vocab_glacier.mp3",
+        "audio_definition": "/audio/week35/vocab_def_glacier.mp3",
+        "audio_example": "/audio/week35/vocab_ex_glacier.mp3",
+        "audio_collocation": "/audio/week35/vocab_col_glacier.mp3"
     }
 ]
 };
