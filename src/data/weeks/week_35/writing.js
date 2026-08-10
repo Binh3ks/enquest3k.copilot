@@ -1,71 +1,84 @@
-// WEEK 35: DOING THINGS CAREFULLY
+// WEEK 35: ENVIRONMENTAL ISSUES & CLIMATE PROTECTION
 // Writing Station — Advanced Mode
 
 export default {
-  title: "Max's Big Change — Doing Things Carefully",
-  theme: "personal_growth",
+  title: "Protecting Our Planet — Environmental Action",
+  theme: "environment",
   min_words: 65,
   min_sentences: 8,
-  model_sentence: "My friend Max used to do things very quickly, noisily, and carelessly. He accidentally broke his expensive toys and dropped his mother's favorite glass cup. But he learned a big lesson and finally decided to change. Now he does his math homework carefully and slowly, speaks kindly and quietly to his little sister, shares his colorful toys happily, and packs his heavy backpack neatly. His parents are very proud of his new, polite behavior!",
-  topic_talk_prompt: "Tell me about a habit you changed — what did you use to do, and how did you improve?",
+  model_sentence: "Our planet Earth is remarkably beautiful, but it faces serious environmental dangers today. Polar ice caps are melting rapidly in high temperatures, and global sea levels are rising across oceans. We must act now to protect our home planet. Communities around the world are planting new trees and recycling waste more effectively. Every day, families reduce single-use plastic and conserve energy at home. Small, mindful actions combined together can create a powerful difference for future generations!",
+  topic_talk_prompt: "Tell me about what we can do to protect the environment and combat climate change!",
+  instruction_en: "Write about protecting our planet using environmental action words!",
+  instruction_vi: "Viết về bảo vệ hành tinh bằng các từ chỉ hành động môi trường!",
+  prompt_en: "Why is our planet in danger? What actions can we take to protect nature and save energy?",
+  prompt_vi: "Tại sao hành tinh của chúng ta đang gặp nguy hiểm? Chúng ta có thể làm gì để bảo vệ thiên nhiên và tiết kiệm năng lượng?",
+  keywords: ["planet Earth", "environmental dangers", "melting rapidly", "sea levels rising", "protect our planet", "planting trees", "recycling waste", "reduce plastic", "conserve energy", "powerful difference"],
   sentence_frames: [
-    {"template":"My friend Max used to do things ___", "answers": ["carelessly"]},
-    {"template":"He walked ___", "answers": ["loudly"]},
-    {"template":"He accidentally ___", "answers": ["dropped the glass cup"]},
-    {"template":"Then Max decided to ___", "answers": ["change"]},
-    {"template":"Now he does homework ___", "answers": ["carefully"]},
-    {"template":"He speaks kindly and ___", "answers": ["quietly"]},
-    {"template":"He shares toys ___", "answers": ["happily"]},
-    {"template":"Everyone is ___", "answers": ["proud of his behavior"]}
+    { "template": "Our home planet Earth faces serious ___ today.", "answers": ["environmental dangers"] },
+    { "template": "Polar ice caps are ___ rapidly in high temperatures.", "answers": ["melting"] },
+    { "template": "Global sea levels are ___ across oceans.", "answers": ["rising"] },
+    { "template": "We must act now to ___ our home planet.", "answers": ["protect"] },
+    { "template": "Communities around the world are ___ new trees.", "answers": ["planting"] },
+    { "template": "Families reduce single-use ___ and conserve energy.", "answers": ["plastic"] },
+    { "template": "Recycling waste more ___ helps clean our rivers.", "answers": ["effectively"] },
+    { "template": "Small mindful actions create a powerful ___ for Earth.", "answers": ["difference"] }
   ],
   hints: {
     vocabulary_bank: {
       label_en: "💡 Need help? Click 💡 next to each blank",
       label_vi: "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       show_by_default: false,
-      scaffolding_stage: "medium",
+      scaffolding_stage: "medium-low",
       words: [
-        { "word": "carefully", "vi": "cẩn thận", "distractor": false },
-        { "word": "slowly", "vi": "chậm rãi", "distractor": false },
-        { "word": "accidentally", "vi": "tình cờ", "distractor": false },
-        { "word": "kindly", "vi": "tử tế", "distractor": false },
-        { "word": "quietly", "vi": "im lặng", "distractor": false },
-        { "word": "finally", "vi": "cuối cùng", "distractor": false },
-        { "word": "happily", "vi": "vui vẻ", "distractor": false },
-        { "word": "loudly", "vi": "to", "distractor": false },
-        { "word": "neatly", "vi": "gọn gàng", "distractor": false },
-        { "word": "decided to change", "vi": "quyết định thay đổi", "distractor": false },
-        { "word": "broke into pieces", "vi": "vỡ thành nhiều mảnh", "distractor": false },
-        { "word": "heavy backpack", "vi": "cặp sách nặng", "distractor": false },
-        { "word": "proud of", "vi": "tự hào về", "distractor": false },
-        { "word": "bad habits", "vi": "thói quen xấu", "distractor": false },
-        { "word": "clearly understands", "vi": "hiểu rõ ràng", "distractor": false },
-        { "word": "beautiful", "vi": "đẹp", "distractor": true },
-        { "word": "amazing", "vi": "tuyệt vời", "distractor": true }
+        { "word": "environmental dangers", "vi": "mối nguy hại môi trường", "distractor": false },
+        { "word": "melting", "vi": "tan chảy", "distractor": false },
+        { "word": "rising", "vi": "dâng cao", "distractor": false },
+        { "word": "protect", "vi": "bảo vệ", "distractor": false },
+        { "word": "planting", "vi": "trồng", "distractor": false },
+        { "word": "plastic", "vi": "nhựa", "distractor": false },
+        { "word": "effectively", "vi": "hiệu quả", "distractor": false },
+        { "word": "difference", "vi": "sự khác biệt", "distractor": false },
+        { "word": "melted", "vi": "đã tan chảy", "distractor": true },
+        { "word": "rose", "vi": "đã dâng cao", "distractor": true },
+        { "word": "destroying", "vi": "tàn phá", "distractor": true },
+        { "word": "pollution", "vi": "ô nhiễm", "distractor": true }
       ]
     }
   },
   story_prompts: {
     picture_mode: {
-      type: 'picture',
-      image_url: '/images/week35/story_writing_pic.jpg',
-      image_prompt: "I have a very good friend named Max, and I want to tell you a story about his important personal experience. In the past, Max always did things very quickly, noisily, and carelessly. Because he was always in a big hurry, he often walked loudly down the school halls, closed the heavy doors forcefully, and accidentally broke his expensive toys. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      word_bank: ["did things carelessly","walked loudly","broke his toys","dropped the glass cup","decided to change","does homework carefully","speaks kindly and quietly","shares toys happily","packs his backpack neatly","proud of his behavior","clearly understands","makes everyone happier","accidentally dropped","big lesson"],
-      sentence_frames: [
-        {"template": "My friend Max used to do things ___", "answers": ["carelessly"]},
-        {"template": "He walked ___", "answers": ["loudly"]},
-        {"template": "He accidentally ___", "answers": ["dropped the glass cup"]},
-        {"template": "Then Max decided to ___", "answers": ["change"]},
-        {"template": "Now he does homework ___", "answers": ["carefully"]},
-        {"template": "He speaks kindly and ___", "answers": ["quietly"]},
-        {"template": "He shares toys ___", "answers": ["happily"]},
-        {"template": "Everyone is ___", "answers": ["proud of his behavior"]}
+      type: "picture",
+      image_url: "/images/week35/story_writing_pic.jpg",
+      image_prompt: "A vivid watercolor illustration of children planting green trees and recycling plastic bottles under a bright blue sky, surrounded by melting ice and lush green nature.",
+      word_bank: [
+        "environmental dangers",
+        "melting rapidly",
+        "sea levels rising",
+        "protect our planet",
+        "planting new trees",
+        "recycling waste",
+        "reduce single-use plastic",
+        "conserve energy",
+        "powerful difference",
+        "future generations"
       ],
       writing_prompts: {
-        en: "Look at the picture and tell Max's story. What was Max like before? How did he change? Use 3+ phrases from the word bank to retell the story.",
-        vi: "Nhìn bức tranh và kể câu chuyện của Max. Max trước đây như thế nào? Anh ấy đã thay đổi ra sao? Dùng 3+ cụm từ trong ngân hàng từ để kể lại câu chuyện."
+        en: "Look at the picture and describe how children are protecting the planet. Use 3+ environmental action phrases.",
+        vi: "Nhìn bức tranh và mô tả cách các bạn nhỏ bảo vệ hành tinh. Dùng 3+ cụm từ hành động môi trường."
       },
-      rubric_tier: 1
+      rubric_tier: 1,
+      min_words: 65,
+      min_sentences: 8,
+      sentence_frames: [
+        { "template": "Our home planet faces ___", "answers": ["serious dangers"] },
+        { "template": "The polar ice is ___", "answers": ["melting fast"] },
+        { "template": "Sea levels are ___", "answers": ["rising high"] },
+        { "template": "Children are ___", "answers": ["planting trees"] },
+        { "template": "They recycle plastic ___", "answers": ["every day"] },
+        { "template": "We must save ___", "answers": ["clean energy"] },
+        { "template": "Small actions make a ___", "answers": ["big difference"] },
+        { "template": "Together we protect ___", "answers": ["our planet Earth"] }
+      ]
     }
   }
-}
+};

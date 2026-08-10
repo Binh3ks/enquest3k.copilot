@@ -1,41 +1,42 @@
-// WEEK 35: ENVIRONMENTAL ISSUES
+// WEEK 35: DOING THINGS CAREFULLY
 // Writing Station — Easy Mode
 
 export default {
-  title: "Writing: How We Can Protect Our Planet",
+  title: "Writing: Max's Big Change",
   audio_url: null,
   min_words: 30,
-  model_sentence: "Our planet Earth is very beautiful but it is in danger. The ice is melting and the sea is rising. We must protect our planet. We can plant trees and recycle more. We can use less plastic and save energy. Small actions can make a big difference!",
-  instruction_en: "Write about how we can protect our planet. Use at least 3 of these words: planet, protect, recycle, trees, energy, save, plastic, pollution, climate",
-  instruction_vi: "Viết về cách chúng ta có thể bảo vệ hành tinh. Dùng ít nhất 3 từ: planet, protect, recycle, trees, energy, save, plastic, pollution, climate",
-  prompt_en: "Write about protecting our planet: Our planet is in danger. We must protect it. We can plant trees, recycle, and save energy.",
-  prompt_vi: "Viết về bảo vệ hành tinh của chúng ta: Hành tinh của chúng ta đang gặp nguy hiểm. Chúng ta phải bảo vệ nó. Chúng ta có thể trồng cây, tái chế và tiết kiệm năng lượng.",
-  keywords: ["planet", "protect", "recycle", "trees", "energy", "save", "plastic", "pollution", "climate", "ice", "sea", "danger", "act now"],
-  topic_talk_prompt: "Tell me about something you do to help the environment!",
+  min_sentences: 6,
+  model_sentence: "My friend Max used to do things carelessly. He walked loudly and dropped a glass cup. Then Max decided to change. Now he does his homework carefully. He speaks kindly to his sister. Everyone is proud of his good behavior!",
+  instruction_en: "Write about how Max changed his habits!",
+  instruction_vi: "Viết về cách Max thay đổi thói quen!",
+  prompt_en: "What did Max do before? How does he do things now?",
+  prompt_vi: "Trước đây Max đã làm gì? Bây giờ anh ấy làm việc như thế nào?",
+  keywords: ["carelessly", "walked loudly", "decided to change", "carefully", "kindly", "proud"],
+  topic_talk_prompt: "Tell me about a good habit you have!",
   sentence_frames: [
     {
-      template: "Our planet ___ is very beautiful but it is in ___.",
-      answers: ["Earth", "danger"]
+      "template": "My friend Max used to do things ___.",
+      "answers": ["carelessly"]
     },
     {
-      template: "The ___ is ___ and the ___ is rising.",
-      answers: ["ice/polar ice", "melting", "sea/ocean"]
+      "template": "He walked ___ in the house.",
+      "answers": ["loudly"]
     },
     {
-      template: "We must ___ our ___ to help the planet.",
-      answers: ["protect", "Earth/planet/world"]
+      "template": "Then Max decided to ___ his habits.",
+      "answers": ["change"]
     },
     {
-      template: "We can ___ ___ and ___ more to help the environment.",
-      answers: ["plant trees", "recycle", "save energy"]
+      "template": "Now he does his homework ___.",
+      "answers": ["carefully"]
     },
     {
-      template: "We should use less ___ and save ___ every day.",
-      answers: ["plastic", "water/energy"]
+      "template": "He speaks ___ to his sister.",
+      "answers": ["kindly"]
     },
     {
-      template: "Small ___ like recycling can make a big ___.",
-      answers: ["actions/things", "difference"]
+      "template": "Everyone is ___ of his good behavior.",
+      "answers": ["proud"]
     }
   ],
   hints: {
@@ -45,57 +46,44 @@ export default {
       show_by_default: true,
       scaffolding_stage: "high",
       words: [
-        { "word": "planet", "vi": "hành tinh", "distractor": false },
-        { "word": "Earth", "vi": "Trái Đất", "distractor": false },
-        { "word": "danger", "vi": "nguy hiểm", "distractor": false },
-        { "word": "ice", "vi": "băng", "distractor": false },
-        { "word": "melting", "vi": "tan chảy", "distractor": false },
-        { "word": "sea", "vi": "biển", "distractor": false },
-        { "word": "rising", "vi": "dâng cao", "distractor": false },
-        { "word": "protect", "vi": "bảo vệ", "distractor": false },
-        { "word": "plant", "vi": "trồng", "distractor": false },
-        { "word": "trees", "vi": "cây", "distractor": false },
-        { "word": "recycle", "vi": "tái chế", "distractor": false },
-        { "word": "energy", "vi": "năng lượng", "distractor": false },
-        { "word": "save", "vi": "tiết kiệm", "distractor": false },
-        { "word": "plastic", "vi": "nhựa", "distractor": false },
-        { "word": "pollution", "vi": "ô nhiễm", "distractor": false },
-        { "word": "act now", "vi": "hành động ngay", "distractor": true }
+        { "word": "carelessly", "vi": "cẩu thả", "distractor": false },
+        { "word": "loudly", "vi": "ầm ĩ", "distractor": false },
+        { "word": "change", "vi": "thay đổi", "distractor": false },
+        { "word": "carefully", "vi": "cẩn thận", "distractor": false },
+        { "word": "kindly", "vi": "tử tế", "distractor": false },
+        { "word": "proud", "vi": "tự hào", "distractor": false },
+        { "word": "badly", "vi": "tồi tệ", "distractor": true },
+        { "word": "sleeping", "vi": "ngủ", "distractor": true }
       ]
     }
-  }
-,
+  },
   story_prompts: {
     picture_mode: {
       type: "picture",
       image_url: "/images/week35/story_writing_pic.jpg",
-      image_prompt: "A simple picture for week 35 story writing.",
+      image_prompt: "A simple picture of Max doing homework carefully.",
       word_bank: [
-        "Earth",
-        "danger",
-        "ice melting",
-        "sea rising",
-        "protect",
-        "plant trees",
-        "recycle",
-        "save water",
-        "use less plastic",
-        "help the planet"
+        "carelessly",
+        "walked loudly",
+        "change",
+        "carefully",
+        "kindly",
+        "proud"
       ],
       writing_prompts: {
-        en: "Look at the picture. What can you see? Write simply.",
-        vi: "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+        en: "Look at the picture. How does Max do things now?",
+        vi: "Nhìn bức tranh. Bây giờ Max làm việc như thế nào?"
       },
       rubric_tier: 1,
       min_sentences: 6,
       sentence_frames: [
-        {"template": "Max used to do things ___", "answers": ["carelessly"]},
-        {"template": "He walked ___", "answers": ["loudly"]},
-        {"template": "Then Max decided to ___", "answers": ["change"]},
-        {"template": "Now he does homework ___", "answers": ["carefully"]},
-        {"template": "He speaks ___", "answers": ["kindly and quietly"]},
-        {"template": "Everyone is ___", "answers": ["proud of him"]}
+        { "template": "Max used to do things ___.", "answers": ["carelessly"] },
+        { "template": "He walked ___.", "answers": ["loudly"] },
+        { "template": "Then Max decided to ___.", "answers": ["change"] },
+        { "template": "Now he does homework ___.", "answers": ["carefully"] },
+        { "template": "He speaks ___.", "answers": ["kindly"] },
+        { "template": "Everyone is ___ of him.", "answers": ["proud"] }
       ]
     }
   }
-}
+};

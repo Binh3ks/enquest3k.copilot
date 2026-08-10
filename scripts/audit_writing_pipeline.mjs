@@ -36,15 +36,29 @@ async function auditWritingPipeline() {
     // 2. FOUNDATION LEVEL (W01-W15)
     if (i <= 15) {
       const frames = mod?.sentence_frames || [];
-      if (frames.length === 0) {
-        errors.push(`W${pad}: Missing sentence_frames for Foundation Level`);
+      if (frames.length !== 6) {
+        errors.push(`W${pad}: Foundation level requires EXACTLY 6 short sentences (found ${frames.length})`);
       }
+      frames.forEach((f, idx) => {
+        const gapCount = (f.template || '').split('___').length - 1;
+        if (gapCount !== 1) {
+          errors.push(`W${pad} frame ${idx+1} has ${gapCount} gaps (foundation level requires EXACTLY 1 gap per sentence)`);
+        }
+      });
     }
 
     // 3. ADVANCED STORYTELLING (W16+)
     if (i >= 16) {
       if (!mod?.story_prompts?.picture_mode && !mod?.story_prompts?.topic_mode) {
         errors.push(`W${pad}: Missing story_prompts for Advanced Storytelling stage`);
+      }
+    }
+
+    // 4. WEEK 36 HINTS AUDIT
+    if (i === 36) {
+      const words = mod?.hints?.vocabulary_bank?.words;
+      if (!words || words.length === 0) {
+        errors.push(`W36: Missing hints.vocabulary_bank.words for gaps!`);
       }
     }
   }
