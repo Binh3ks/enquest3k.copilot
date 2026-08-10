@@ -22,8 +22,14 @@ export function getImageUrl(path) {
 
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
 
-  // Local assets bundled directly on Cloudflare Pages for newly added weeks
-  if (cleanPath.startsWith('/images/week36/') || cleanPath.startsWith('/images/week37/')) {
+  // Local assets bundled directly on Cloudflare Pages for local/newly added weeks
+  if (
+    cleanPath.startsWith('/images/week30/') ||
+    cleanPath.startsWith('/images/week31/') ||
+    cleanPath.startsWith('/images/week32/') ||
+    cleanPath.startsWith('/images/week36/') ||
+    cleanPath.startsWith('/images/week37/')
+  ) {
     return cleanPath;
   }
 
