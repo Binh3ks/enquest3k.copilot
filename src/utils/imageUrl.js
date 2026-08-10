@@ -93,8 +93,14 @@ export function getImageUrl(path) {
     cleanPath = `/${cleanPath}`;
   }
 
-  // Entire week folders bundled locally (e.g. week 36, week 37)
-  if (cleanPath.startsWith('/images/week36/') || cleanPath.startsWith('/images/week37/')) {
+  // Entire week folders bundled locally (e.g. week 33, 34, 35, 36, 37)
+  if (
+    cleanPath.startsWith('/images/week33/') ||
+    cleanPath.startsWith('/images/week34/') ||
+    cleanPath.startsWith('/images/week35/') ||
+    cleanPath.startsWith('/images/week36/') ||
+    cleanPath.startsWith('/images/week37/')
+  ) {
     return cleanPath;
   }
 
