@@ -267,5 +267,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "I am broadcasting live from the school courtyard then . The annual Spring Festival is happening Everyone is excited! also At the Art Club, students are painting a giant mural on the wall so . They are using bright yellow and blue paints to create an ocean scene next . The Science Club is doing a fascinating chemistry experiment finally safely . Sarah is mixing two mysterious liquids together slowly . The liquid is changing color from clear to dark purple happily . The Drama Club is practicing for their upcoming school play carefully ."
+  "model_sentence": "I am broadcasting live from the school courtyard then . The annual Spring Festival is happening Everyone is excited! also. At the Art Club, students are painting a giant mural on the wall so . They are using bright yellow and blue paints to create an ocean scene next . The Science Club is doing a fascinating chemistry experiment finally safely . Sarah is mixing two mysterious liquids together slowly . The liquid is changing color from clear to dark purple happily . The Drama Club is practicing for their upcoming school play carefully ."
 };

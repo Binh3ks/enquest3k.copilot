@@ -253,5 +253,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "My name is Mia and I am a Time Detective happily . I wear a big hat and carry a notebook to ask questions carefully . Yesterday, Mum cooked a delicious chocolate cake for my birthday! so slowly But someone ate the cake last night together . I asked everyone in the house safely . Dad said he cooked dinner at 6 o'clock and washed the dishes at 7 slowly . Mum worked in the garden one morning last weekend happily . The mystery was solved! My brother ate the cake! carefully"
+  "model_sentence": "My name is Mia and I am a Time Detective happily . I wear a big hat and carry a notebook to ask questions carefully . Yesterday, Mum cooked a delicious chocolate cake for my birthday! so slowly. But someone ate the cake last night together . I asked everyone in the house safely . Dad said he cooked dinner at 6 o'clock and washed the dishes at 7 slowly . Mum worked in the garden one morning last weekend happily . The mystery was solved! My brother ate the cake! carefully."
 };

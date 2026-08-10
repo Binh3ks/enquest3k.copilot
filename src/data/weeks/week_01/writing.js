@@ -2,7 +2,7 @@ export default {
   "title": "Hello, World!",
   "min_words": 35,
   "min_sentences": 6,
-  "model_sentence": "My name is Alex and I am eight years old then . I am a new student at Greenwood Elementary School carefully Every morning, I wake up early and get ready for school slowly My teacher, Ms Johnson, is very kind and patient next . She teaches us English, Math, and Science safely I want to become a young scientist when I grow up slowly .",
+  "model_sentence": "My name is Alex and I am eight years old then . I am a new student at Greenwood Elementary School carefully. Every morning, I wake up early and get ready for school slowly. My teacher, Ms Johnson, is very kind and patient next . She teaches us English, Math, and Science safely. I want to become a young scientist when I grow up slowly .",
   "instruction_en": "Write about yourself and your school in full sentences!",
   "instruction_vi": "Viết về bản thân và trường học bằng câu đầy đủ!",
   "prompt_en": "What is your name and age? What is your school like? What do you carry in your bag? What do you want to become?",

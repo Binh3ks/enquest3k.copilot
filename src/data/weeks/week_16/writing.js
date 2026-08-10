@@ -262,5 +262,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "Today is our school sports day Hundreds of students are running in different races on the track then . The whole schoolyard is full of energy and excitement! also Minh is running quickly. He is overtaking other runners with strong strides so . Lan is preparing for the long jump next . She is jumping very high and landing safely in the sandpit finally . Nam is kicking the ball powerfully toward the goal slowly . The goalkeeper is leaping to catch the ball! happily On the bleachers parents are waving colorful flags and cheering enthusiastically carefully ."
+  "model_sentence": "Today is our school sports day Hundreds of students are running in different races on the track then . The whole schoolyard is full of energy and excitement! also. Minh is running quickly. He is overtaking other runners with strong strides so . Lan is preparing for the long jump next . She is jumping very high and landing safely in the sandpit finally . Nam is kicking the ball powerfully toward the goal slowly . The goalkeeper is leaping to catch the ball! happily. On the bleachers parents are waving colorful flags and cheering enthusiastically carefully ."
 };

@@ -1,92 +1,92 @@
 export default {
-  "title": "My Picnic Story",
-  "min_words": 65,
+  "title": "My Family Picnic Story — Advanced Writing",
+  "min_words": 85,
   "min_sentences": 10,
-  "model_sentence": "Last Sunday, my family had a picnic happily We went to a perfect grassy spot carefully Mum brought tasty chicken sandwiches slowly We also had sweet cold lemonade together We sat on soft green grass safely Then dark grey clouds appeared suddenly We ran fast under the shelter every day It was a wonderful picnic at school Last Sunday, my family had a picnic in the afternoon Last Sunday, my family had a picnic happily",
-  "instruction_en": "Write a detailed picnic story from start to finish using vivid language!",
-  "instruction_vi": "Viết câu chuyện dã ngoại chi tiết từ đầu đến cuối bằng ngôn ngữ sinh động!",
-  "prompt_en": "What food did you bring? What happened during the picnic? How did the day end?",
-  "prompt_vi": "Bạn mang thức ăn gì? Chuyện gì xảy ra trong chuyến dã ngoại? Ngày kết thúc thế nào?",
+  "model_sentence": "Last Sunday, my family went on a picnic at the beautiful park. We found a perfect grassy spot under a big oak tree in the garden. Mum brought delicious sandwiches and fresh juicy fruit. We drank cold lemonade and played fun games together. Suddenly, dark grey clouds appeared in the stormy sky. It started to rain, so we quickly ran to the wooden shelter for complete safety. Although it rained heavily, we still had a wonderful time at the park. We packed our things and returned home safely by car. My parents were very happy with our fun weekend trip at the park. We cannot wait for our next family picnic in the coming month!",
+  "instruction_en": "Write a complete, vivid story about a family picnic from start to finish!",
+  "instruction_vi": "Viết một câu chuyện sinh động hoàn chỉnh về buổi dã ngoại gia đình từ đầu đến cuối!",
+  "prompt_en": "Describe the picnic preparation, the food, the sudden rain, and how your family enjoyed the day!",
+  "prompt_vi": "Mô tả sự chuẩn bị dã ngoại, thức ăn, cơn mưa bất ngờ và cách gia đình bạn tận hưởng ngày nghỉ!",
   "keywords": [
+    "picnic",
+    "grassy spot",
+    "sandwiches",
     "lemonade",
-    "chilled",
-    "spreading",
-    "breadcrumbs",
-    "sparrows",
-    "pecked",
-    "baskets",
-    "memories"
+    "clouds",
+    "shelter",
+    "wonderful time",
+    "returned safely"
   ],
-  "topic_talk_prompt": "Tell me everything about your perfect picnic day!",
+  "topic_talk_prompt": "Tell me a complete, exciting story about a family outing!",
   "sentence_frames": [
     {
-      "template": "Last Sunday, ___ family had ___ picnic happily",
+      "template": "Last Sunday, my family went on a ___ at the beautiful ___ .",
       "answers": [
-        "my",
-        "a"
+        "picnic",
+        "park"
       ]
     },
     {
-      "template": "We went ___ a perfect ___ spot carefully",
+      "template": "We found a perfect grassy spot under a big oak ___ in the ___ .",
       "answers": [
-        "to",
-        "grassy"
+        "tree",
+        "garden"
       ]
     },
     {
-      "template": "Mum ___ tasty chicken ___ slowly",
+      "template": "Mum brought delicious ___ and fresh juicy ___ .",
       "answers": [
-        "brought",
-        "sandwiches"
+        "sandwiches",
+        "fruit"
       ]
     },
     {
-      "template": "We ___ had sweet ___ lemonade together",
+      "template": "We drank cold ___ and played fun ___ together.",
       "answers": [
-        "also",
-        "cold"
+        "lemonade",
+        "games"
       ]
     },
     {
-      "template": "We ___ on soft ___ grass safely",
+      "template": "Suddenly, dark grey ___ appeared in the stormy ___ .",
       "answers": [
-        "sat",
-        "green"
+        "clouds",
+        "sky"
       ]
     },
     {
-      "template": "Then ___ grey clouds ___ suddenly",
+      "template": "It started to rain, so we quickly ran to the wooden ___ for complete ___ .",
       "answers": [
-        "dark",
-        "appeared"
+        "shelter",
+        "safety"
       ]
     },
     {
-      "template": "We ran ___ under the ___ every day",
+      "template": "Although it rained heavily, we still had a ___ time at the ___ .",
       "answers": [
-        "fast",
-        "shelter"
+        "wonderful",
+        "park"
       ]
     },
     {
-      "template": "It ___ a wonderful ___ at school",
+      "template": "We packed our things and returned home ___ by car ___ .",
       "answers": [
-        "was",
-        "picnic"
+        "safely",
+        "today"
       ]
     },
     {
-      "template": "Last Sunday, ___ family had ___ picnic in the afternoon",
+      "template": "My parents were very happy with our fun weekend ___ at the ___ .",
       "answers": [
-        "my",
-        "a"
+        "trip",
+        "park"
       ]
     },
     {
-      "template": "Last Sunday, ___ family had ___ picnic happily",
+      "template": "We cannot wait for our next family ___ in the coming ___ !",
       "answers": [
-        "my",
-        "a"
+        "picnic",
+        "month"
       ]
     }
   ],
@@ -98,88 +98,93 @@ export default {
       "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "woke up early",
-          "vi": "thức dậy sớm",
+          "word": "picnic",
+          "vi": "buổi dã ngoại",
           "distractor": false
         },
         {
-          "word": "prepared for a picnic",
-          "vi": "chuẩn bị cho buổi dã ngoại",
+          "word": "park",
+          "vi": "công viên",
           "distractor": false
         },
         {
-          "word": "perfect grassy spot",
-          "vi": "một chỗ cỏ đẹp hoàn hảo",
+          "word": "tree",
+          "vi": "cây sồi",
           "distractor": false
         },
         {
-          "word": "strong wooden shelter",
-          "vi": "nơi trú ẩn bằng gỗ chắc chắn",
+          "word": "garden",
+          "vi": "khu vườn",
           "distractor": false
         },
         {
-          "word": "intelligent engineer",
-          "vi": "kỹ sư thông minh",
+          "word": "sandwiches",
+          "vi": "bánh mì kẹp",
           "distractor": false
         },
         {
-          "word": "tasty chicken sandwiches",
-          "vi": "bánh mì kẹp gà ngon",
+          "word": "fruit",
+          "vi": "trái cây",
           "distractor": false
         },
         {
-          "word": "sweet cold lemonade",
-          "vi": "nước chanh ngọt lạnh",
+          "word": "lemonade",
+          "vi": "nước chanh",
           "distractor": false
         },
         {
-          "word": "beautiful flower crown",
-          "vi": "vòng hoa đẹp",
+          "word": "games",
+          "vi": "trò chơi",
           "distractor": false
         },
         {
-          "word": "soft green grass",
-          "vi": "cỏ mềm xanh",
+          "word": "clouds",
+          "vi": "mây đen",
           "distractor": false
         },
         {
-          "word": "ate our delicious sandwiches",
-          "vi": "ăn bánh mì ngon",
+          "word": "sky",
+          "vi": "bầu trời",
           "distractor": false
         },
         {
-          "word": "drank the lemonade joyfully",
-          "vi": "uống nước chanh vui vẻ",
+          "word": "shelter",
+          "vi": "nơi trú ẩn",
           "distractor": false
         },
         {
-          "word": "dark grey clouds",
-          "vi": "mây xám đen",
+          "word": "safety",
+          "vi": "sự an toàn",
           "distractor": false
         },
         {
-          "word": "heavy rain",
-          "vi": "mưa lớn",
+          "word": "wonderful",
+          "vi": "tuyệt vời",
           "distractor": false
         },
         {
-          "word": "ran fast under the shelter",
-          "vi": "chạy nhanh vào nơi trú ẩn",
+          "word": "safely",
+          "vi": "an toàn",
           "distractor": false
         },
         {
-          "word": "wonderful picnic",
-          "vi": "buổi dã ngoại tuyệt vời",
+          "word": "trip",
+          "vi": "chuyến đi",
           "distractor": false
         },
         {
-          "word": "spicy noodles",
-          "vi": "mì cay",
+          "word": "month",
+          "vi": "tháng",
+          "distractor": false
+        },
+        {
+          "word": "dances",
+          "vi": "khiêu vũ",
           "distractor": true
         },
         {
-          "word": "empty parking lot",
-          "vi": "bãi đậu xe trống",
+          "word": "sleeping",
+          "vi": "ngủ",
           "distractor": true
         }
       ]
@@ -189,102 +194,97 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week30/story_writing_pic.jpg",
-      "image_prompt": "On a beautiful, breezy Sunday morning, my family woke up early, packed our heavy bags, and prepared for a wonderful picnic in the quiet, green countryside. We drove our car for an hour and finally found a perfect, grassy spot near a small river. My father is an intelligent engineer, and he carefully built a strong wooden shelter for us in case the weather suddenly turned bad. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
+      "image_prompt": "A beautiful watercolor illustration of a happy family having a picnic under a large green tree in the park, with sandwiches and cold lemonade laid out on a checkered blanket.",
       "word_bank": [
-        "woke up early",
-        "prepared for a picnic",
-        "perfect grassy spot",
-        "strong wooden shelter",
-        "intelligent engineer",
-        "tasty chicken sandwiches",
-        "sweet cold lemonade",
-        "beautiful flower crown",
-        "soft green grass",
-        "ate our delicious sandwiches",
-        "drank the lemonade joyfully",
+        "picnic at the park",
+        "grassy spot",
+        "delicious sandwiches",
+        "fresh fruit",
+        "cold lemonade",
+        "played games together",
         "dark grey clouds",
-        "heavy rain",
-        "ran fast under the shelter",
-        "wonderful picnic"
-      ],
-      "sentence_frames": [
-        {
-          "template": "Last Sunday, my family had a ___ ___",
-          "answers": [
-            "picnic",
-            "then"
-          ]
-        },
-        {
-          "template": "We went to a ___ ___",
-          "answers": [
-            "perfect grassy spot",
-            "also"
-          ]
-        },
-        {
-          "template": "Mum brought ___ ___",
-          "answers": [
-            "tasty chicken sandwiches",
-            "so"
-          ]
-        },
-        {
-          "template": "We also had ___ ___",
-          "answers": [
-            "sweet cold lemonade",
-            "next"
-          ]
-        },
-        {
-          "template": "We sat on ___ ___",
-          "answers": [
-            "soft green grass",
-            "finally"
-          ]
-        },
-        {
-          "template": "Then dark grey ___ ___",
-          "answers": [
-            "clouds appeared",
-            "slowly"
-          ]
-        },
-        {
-          "template": "We ran fast under the ___ ___",
-          "answers": [
-            "shelter",
-            "happily"
-          ]
-        },
-        {
-          "template": "It was a wonderful ___ ___",
-          "answers": [
-            "picnic",
-            "carefully"
-          ]
-        },
-        {
-          "template": "Last Sunday, my family had a ___ ___",
-          "answers": [
-            "picnic",
-            "then"
-          ]
-        },
-        {
-          "template": "Last Sunday, my family had a ___ ___",
-          "answers": [
-            "picnic",
-            "then"
-          ]
-        }
+        "ran to the shelter",
+        "wonderful time",
+        "returned home safely"
       ],
       "writing_prompts": {
-        "en": "Look at the picture. Imagine your family picnic. What food did you prepare? Describe a sudden surprise that happened during the picnic. How did you stay dry? Use words from the word bank!",
-        "vi": "Nhìn bức tranh. Tưởng tượng buổi dã ngoại của gia đình bạn. Bạn chuẩn bị gì? Mô tả một bất ngờ xảy ra trong buổi dã ngoại. Bạn trú ướt thế nào? Dùng từ trong ngân hàng từ nhé!"
+        "en": "Look at the picture. Write a detailed story about your family picnic. Use words from the word bank!",
+        "vi": "Nhìn bức tranh. Viết một câu chuyện chi tiết về buổi dã ngoại gia đình. Dùng từ trong ngân hàng từ nhé!"
       },
       "rubric_tier": 1,
-      "min_sentences": 8
+      "min_sentences": 10,
+      "sentence_frames": [
+        {
+          "template": "Last Sunday, my family went on a ___ at the beautiful ___ .",
+          "answers": [
+            "picnic",
+            "park"
+          ]
+        },
+        {
+          "template": "We found a perfect grassy spot under a big oak ___ in the ___ .",
+          "answers": [
+            "tree",
+            "garden"
+          ]
+        },
+        {
+          "template": "Mum brought delicious ___ and fresh juicy ___ .",
+          "answers": [
+            "sandwiches",
+            "fruit"
+          ]
+        },
+        {
+          "template": "We drank cold ___ and played fun ___ together.",
+          "answers": [
+            "lemonade",
+            "games"
+          ]
+        },
+        {
+          "template": "Suddenly, dark grey ___ appeared in the stormy ___ .",
+          "answers": [
+            "clouds",
+            "sky"
+          ]
+        },
+        {
+          "template": "It started to rain, so we quickly ran to the wooden ___ for complete ___ .",
+          "answers": [
+            "shelter",
+            "safety"
+          ]
+        },
+        {
+          "template": "Although it rained heavily, we still had a ___ time at the ___ .",
+          "answers": [
+            "wonderful",
+            "park"
+          ]
+        },
+        {
+          "template": "We packed our things and returned home ___ by car ___ .",
+          "answers": [
+            "safely",
+            "today"
+          ]
+        },
+        {
+          "template": "My parents were very happy with our fun weekend ___ at the ___ .",
+          "answers": [
+            "trip",
+            "park"
+          ]
+        },
+        {
+          "template": "We cannot wait for our next family ___ in the coming ___ !",
+          "answers": [
+            "picnic",
+            "month"
+          ]
+        }
+      ]
     }
   }
 };

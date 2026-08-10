@@ -2,7 +2,7 @@ export default {
   "title": "The Old Town Mystery",
   "min_words": 55,
   "min_sentences": 8,
-  "model_sentence": "Detective Luna found an old map of her town then . The map was from one hundred years ago! word1 carefully On the old map, there was a big market near the long river so . There were tall trees along the road together . At the end of the road there was a beautiful old temple safely . There was a wooden bridge over the river suddenly . However, now there are new tall buildings where the old market was happily . There is a big new bridge but not many trees. word1 at school",
+  "model_sentence": "Detective Luna found an old map of her town then . The map was from one hundred years ago! word1 carefully. On the old map, there was a big market near the long river so . There were tall trees along the road together . At the end of the road there was a beautiful old temple safely . There was a wooden bridge over the river suddenly . However, now there are new tall buildings where the old market was happily . There is a big new bridge but not many trees. word1 at school.",
   "instruction_en": "Write about how a place has changed over time using was, were, there was, and however!",
   "instruction_vi": "Viết về sự thay đổi của một nơi theo thời gian dùng was, were, there was và however!",
   "prompt_en": "What was the place like before? What has changed? How do you feel about it?",

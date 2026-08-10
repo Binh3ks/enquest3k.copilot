@@ -131,5 +131,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "Today is the school talent show then happily Sarah can sing songs happily on stage also . The audience loves her performance so . Tom can dance with energy and style together . Mike can run fast around the track safely . Emma can jump high and always lands safely slowly ."
+  "model_sentence": "Today is the school talent show then happily. Sarah can sing songs happily on stage also . The audience loves her performance so . Tom can dance with energy and style together . Mike can run fast around the track safely . Emma can jump high and always lands safely slowly ."
 };

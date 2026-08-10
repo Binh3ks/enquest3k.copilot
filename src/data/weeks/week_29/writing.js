@@ -7,7 +7,7 @@ export default {
   "instruction_vi": "Hãy viết về một chuyến đi kỳ diệu! Dùng thì quá khứ. Bạn đã ĐI đâu? Bạn GẶP ai (một phi công, bác sĩ, nông dân, kỹ sư, hay nhà khoa học)? Điều gì ĐẾN để giúp bạn?",
   "prompt_en": "Imagine you found a magic carpet. Describe your trip using went, flew, came, and ran.",
   "prompt_vi": "Hãy tưởng tượng bạn tìm thấy một tấm thảm thần. Mô tả chuyến đi của bạn dùng went, flew, came và ran.",
-  "model_sentence": "Last week, the children went on a magic trip happily First, they got on a flying carpet carefully The carpet flew over a secret magic island slowly They met a tiny purple monkey together They also saw a friendly talking dolphin safely A brave pilot helped them find their way suddenly They took a photo to remember the adventure every day They flew safely back home at school Last week, the children went on a magic trip in the afternoon Last week, the children went on a magic trip happily",
+  "model_sentence": "Last week, the children went on a magic trip happily. First, they got on a flying carpet carefully. The carpet flew over a secret magic island slowly. They met a tiny purple monkey together. They also saw a friendly talking dolphin safely. A brave pilot helped them find their way suddenly. They took a photo to remember the adventure every day. They flew safely back home at school. Last week, the children went on a magic trip in the afternoon. Last week, the children went on a magic trip happily.",
   "keywords": [
     "went on",
     "magic carpet",

@@ -3,7 +3,7 @@ export default {
   "min_sentences": 10,
   "theme": "accidents_and_consequences",
   "min_words": 65,
-  "model_sentence": "Jake walked too fast in the corridor and fell down near the staircase. He hurt his knee and it started to bleed very badly. His teacher heard Jake crying and ran to help him right away slowly . The nurse cleaned the wound and put a bandage on Jake's knee. Jake learned to walk carefully after that because he understood how painful it was. The teacher told Jake: 'Always walk in the corridor!' suddenly Jake told everyone 'Walk in the corridor or you might fall and hurt yourself!' every day Now Jake always walks carefully and never runs in the corridor because he learned his lesson. Jake walked too fast in the corridor and fell down near the staircase. Jake walked too fast in the corridor and fell down near the staircase.",
+  "model_sentence": "Jake walked too fast in the corridor and fell down near the staircase. He hurt his knee and it started to bleed very badly. His teacher heard Jake crying and ran to help him right away slowly . The nurse cleaned the wound and put a bandage on Jake's knee. Jake learned to walk carefully after that because he understood how painful it was. The teacher told Jake: 'Always walk in the corridor!' suddenly. Jake told everyone 'Walk in the corridor or you might fall and hurt yourself!' every day. Now Jake always walks carefully and never runs in the corridor because he learned his lesson. Jake walked too fast in the corridor and fell down near the staircase. Jake walked too fast in the corridor and fell down near the staircase.",
   "topic_talk_prompt": "Tell me about a time when you got hurt or saw someone get hurt at school!",
   "sentence_frames": [
     {
