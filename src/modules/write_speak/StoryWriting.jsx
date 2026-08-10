@@ -14,11 +14,12 @@
 
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { BarChart2, Star, ArrowRight, Lightbulb } from 'lucide-react';
+import { BarChart2, Star, ArrowRight, Lightbulb, Clock, CheckCircle2, AlertCircle } from 'lucide-react';
 import Confetti from 'react-confetti';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import { scoreWritingTiered } from '../../utils/writingRubric';
 import { getImageUrl } from '../../utils/imageUrl';
+import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 
 const StoryWriting = ({ content, themeColor, isVi, onToggleLang, onReportProgress, onGoToSpeak }) => {
   const { weekId } = useParams();
@@ -50,29 +51,8 @@ const StoryWriting = ({ content, themeColor, isVi, onToggleLang, onReportProgres
 // ─────────────────────────────────────────────────────────────
 
 const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, markComplete, isVi, onReportProgress, onGoToSpeak, themeColor = 'pink' }) => {
-  const tier = pictureMode.rubric_tier || 1;
-  const allFrames = Array.isArray(pictureMode.sentence_frames) ? pictureMode.sentence_frames : [];
-
-  // Scaffolding length progression based on roadmap:
-  // Week 16-28: 8 sentences (65 words)
-  // Week 29-42: 10 sentences (85 words)
-  // Week 43+: 12 sentences (110 words)
   const currentW = parseInt(weekId, 10) || 16;
-  const scaffolding = useMemo(() => {
-    let minSentences = 8;
-    let minWords = 65;
-    if (currentW >= 43) {
-      minSentences = 12;
-      minWords = 110;
-    } else if (currentW >= 29) {
-      minSentences = 10;
-      minWords = 85;
-    }
-    return {
-      minWords: pictureMode.min_words || content?.min_words || minWords,
-      minSentences: pictureMode.min_sentences || content?.min_sentences || minSentences,
-    };
-  }, [currentW, pictureMode.min_words, pictureMode.min_sentences, content?.min_words, content?.min_sentences]);
+  const tier = pictureMode.rubric_tier || 1;
 
   // State
   const [text, setText] = useState(savedData?.text || '');
@@ -80,7 +60,19 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const [imgFailed, setImgFailed] = useState(false);
   const [rubric, setRubric] = useState(savedData?.rubric || null);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [imgZoomed, setImgZoomed] = useState(false);
+
+  // W66+ Exam Mode Timer (10 mins = 600s)
+  const isExamMode = currentW >= 66;
+  const [timeLeftSec, setTimeLeftSec] = useState(savedData?.timeLeftSec ?? 600);
+  const [timerStarted, setTimerStarted] = useState(savedData?.timerStarted ?? false);
+
+  useEffect(() => {
+    if (!isExamMode || !timerStarted || timeLeftSec <= 0) return;
+    const interval = setInterval(() => {
+      setTimeLeftSec(prev => Math.max(0, prev - 1));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [isExamMode, timerStarted, timeLeftSec]);
 
   // Hydrate from saved
   useEffect(() => {
@@ -88,14 +80,21 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
     if (savedData?.rubric) setRubric(savedData.rubric);
   }, [weekId]);
 
+  // Cambridge criteria evaluation
+  const cambridgeEval = useMemo(() => {
+    return evaluateCambridgeCriteria(text, currentW, pictureMode.word_bank);
+  }, [text, currentW, pictureMode.word_bank]);
+
   // Debounced auto-save
   useEffect(() => {
     const t = setTimeout(() => {
-      const isComplete = !!rubric && rubric.total >= 6;
-      const percent = rubric ? rubric.total * (100 / rubric.maxTotal) : (text.length > 10 ? 30 : 0);
+      const isComplete = cambridgeEval.isAllMet || (!!rubric && rubric.total >= 6);
+      const percent = isComplete ? 100 : (cambridgeEval.wordCount > 10 ? 40 : 0);
       saveProgress({
         text,
         rubric,
+        timeLeftSec,
+        timerStarted,
       }, isComplete, Math.round(percent));
       if (isComplete) {
         markComplete(Math.round(percent));
@@ -103,12 +102,9 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       if (onReportProgress) onReportProgress(Math.round(percent));
     }, 1500);
     return () => clearTimeout(t);
-  }, [text, rubric]);
+  }, [text, rubric, cambridgeEval.isAllMet, timeLeftSec, timerStarted]);
 
-  const wordCount = useMemo(() => text.trim().split(/\s+/).filter(Boolean).length, [text]);
-  const sentenceCount = useMemo(() => text.split(/[.!?]+/).filter(s => s.trim().length > 0).length, [text]);
-
-  // Image resolution: CDN → local Pages fallback
+  // Image resolution
   useEffect(() => {
     if (!pictureMode?.image_url) { setImgFailed(true); return; }
     const initialUrl = getImageUrl(pictureMode.image_url);
@@ -125,136 +121,276 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   }, [imgSrc, pictureMode?.image_url]);
 
   const handleSubmit = () => {
-    if (wordCount < scaffolding.minWords) return;
+    const wordBankArray = Array.isArray(pictureMode.word_bank)
+      ? pictureMode.word_bank
+      : [
+          ...(pictureMode.word_bank?.action_verbs || []),
+          ...(pictureMode.word_bank?.connectors || []),
+          ...(pictureMode.word_bank?.cumulative_chunks || []),
+        ];
+
     const result = scoreWritingTiered({
       text,
-      wordBank: pictureMode.word_bank || [],
+      wordBank: wordBankArray,
       promptEn: pictureMode.writing_prompts?.en || '',
       tier,
       weekNumber: weekId,
     });
     setRubric(result);
-    if (result.total >= 8) {
+    if (result.total >= 8 || cambridgeEval.isAllMet) {
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000);
     }
   };
 
+  // Extract word bank groups
+  const isCategorizedWordBank = pictureMode.word_bank && typeof pictureMode.word_bank === 'object' && !Array.isArray(pictureMode.word_bank);
+  const actionVerbs = isCategorizedWordBank ? (pictureMode.word_bank.action_verbs || []) : [];
+  const connectors = isCategorizedWordBank ? (pictureMode.word_bank.connectors || []) : [];
+  const cumulativeChunks = isCategorizedWordBank ? (pictureMode.word_bank.cumulative_chunks || []) : [];
+  const flatWordBank = Array.isArray(pictureMode.word_bank) ? pictureMode.word_bank : [];
+
+  const pictureSet = Array.isArray(pictureMode.picture_set) ? pictureMode.picture_set : null;
+
   return (
-    <div className="flex flex-col h-full overflow-hidden">
+    <div className="flex flex-col h-full overflow-hidden bg-slate-50">
       {showConfetti && <Confetti recycle={false} numberOfPieces={200} />}
 
-      {/* Picture */}
-      <div className="flex-shrink-0 bg-gradient-to-b from-amber-50 to-white p-3 border-b border-amber-100">
-        <div
-          className="relative rounded-2xl border-2 border-amber-200 shadow-sm cursor-pointer overflow-hidden max-h-[360px] flex items-center justify-center bg-amber-50/50 min-h-[220px]"
-          onClick={() => imgSrc && !imgFailed && setImgZoomed(true)}
-        >
-          {imgSrc && !imgFailed ? (
-            <img
-              src={imgSrc}
-              alt={isVi ? 'Tranh viết truyện' : 'Story prompt picture'}
-              className="w-full max-h-[350px] object-contain rounded-xl"
-              onError={handleImgError}
-            />
-          ) : (
-            <div className="w-full h-48 flex flex-col items-center justify-center text-amber-400 gap-1.5 p-4">
-              <p className="text-xs font-bold text-amber-600">{isVi ? '📷 Đang tải tranh...' : '📷 Loading picture...'}</p>
+      {/* Top Bar: Exam Mode Timer (W66+) */}
+      {isExamMode && (
+        <div className="flex-shrink-0 bg-gradient-to-r from-rose-600 to-red-700 text-white px-4 py-2 flex items-center justify-between shadow-md z-10">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4 animate-pulse" />
+            <span className="text-xs font-black uppercase tracking-wider">
+              {isVi ? 'CAMBRIDGE FLYERS EXAM MODE (10 MINS)' : 'CAMBRIDGE FLYERS EXAM MODE (10 MINS)'}
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-sm font-black bg-white/20 px-2.5 py-0.5 rounded-lg border border-white/30">
+              {Math.floor(timeLeftSec / 60)}:{String(timeLeftSec % 60).padStart(2, '0')}
+            </span>
+            {!timerStarted && (
               <button
-                onClick={() => setImgSrc(pictureMode.image_url)}
-                className="text-[10px] text-amber-700 underline hover:text-amber-900"
+                onClick={() => setTimerStarted(true)}
+                className="px-3 py-1 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold text-xs rounded-lg shadow"
               >
-                {isVi ? 'Thử lại' : 'Retry'}
+                {isVi ? 'Bắt đầu làm bài' : 'Start Exam'}
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
+      )}
+
+      {/* Story Picture(s) */}
+      <div className="flex-shrink-0 bg-gradient-to-b from-slate-100 to-white p-3 border-b border-slate-200">
+        {pictureSet && pictureSet.length > 0 ? (
+          /* Multi-Panel Cambridge 3D Picture Set */
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {pictureSet.map((p, idx) => (
+              <div key={idx} className="bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center">
+                <img
+                  src={getImageUrl(p.image_url)}
+                  alt={`Panel ${p.panel || idx + 1}`}
+                  className="w-full h-28 object-cover rounded-lg"
+                />
+                <span className="text-[10px] font-black text-slate-500 mt-1">
+                  Panel {p.panel || idx + 1}
+                </span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          /* Single Picture Prompt */
+          <div className="relative rounded-2xl border-2 border-slate-200 shadow-sm overflow-hidden max-h-[280px] flex items-center justify-center bg-white min-h-[180px]">
+            {imgSrc && !imgFailed ? (
+              <img
+                src={imgSrc}
+                alt={isVi ? 'Tranh viết truyện' : 'Story prompt picture'}
+                className="w-full max-h-[270px] object-contain rounded-xl"
+                onError={handleImgError}
+              />
+            ) : (
+              <div className="w-full h-40 flex flex-col items-center justify-center text-slate-400 gap-1.5 p-4">
+                <p className="text-xs font-bold text-slate-600">{isVi ? '📷 Đang tải tranh...' : '📷 Loading picture...'}</p>
+                <button
+                  onClick={() => setImgSrc(pictureMode.image_url)}
+                  className="text-[10px] text-indigo-600 underline hover:text-indigo-800"
+                >
+                  {isVi ? 'Thử lại' : 'Retry'}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Writing prompts */}
-        <div className="mt-2 bg-amber-50 p-2.5 rounded-xl border border-amber-100">
-          <p className="text-[10px] font-black uppercase text-amber-600 mb-1 flex items-center gap-1">
-            <Lightbulb className="w-3 h-3" />
-            {isVi ? 'Gợi ý' : 'Prompts'}
+        <div className="mt-2 bg-indigo-50/70 p-2.5 rounded-xl border border-indigo-100">
+          <p className="text-[10px] font-black uppercase text-indigo-700 mb-0.5 flex items-center gap-1">
+            <Lightbulb className="w-3.5 h-3.5" />
+            {isVi ? 'Gợi Ý Viết Truyện Cambridge' : 'Cambridge Story Writing Prompt'}
           </p>
-          <p className="text-xs text-amber-900 leading-relaxed">
+          <p className="text-xs text-slate-800 font-medium leading-relaxed">
             {isVi ? (pictureMode.writing_prompts?.vi || '') : (pictureMode.writing_prompts?.en || '')}
           </p>
         </div>
       </div>
 
-      {/* Word bank chips — read-only reference for students to type manually */}
-      {pictureMode.word_bank && pictureMode.word_bank.length > 0 && (
-        <div className="flex-shrink-0 px-3 py-2 bg-slate-50 border-b border-slate-100">
-          <p className="text-[10px] font-black uppercase text-slate-500 mb-1.5">
-            {isVi ? '💡 Ngân hàng từ (tự gõ vào ô viết)' : '💡 Word bank — use these in your writing'}
-          </p>
-          <div className="flex flex-wrap gap-1.5 max-h-20 overflow-y-auto">
-            {pictureMode.word_bank.map((w, i) => (
-              <span
-                key={i}
-                className="px-2 py-0.5 bg-white border border-amber-200 text-amber-800 text-[10px] font-medium rounded-full"
-              >
-                {w}
-              </span>
-            ))}
-          </div>
+      {/* Word Bank Pills — 3 Categorized Groups */}
+      {(!isExamMode || timerStarted) && (
+        <div className="flex-shrink-0 px-3 py-2 bg-white border-b border-slate-200 space-y-1.5">
+          {isCategorizedWordBank ? (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              {/* Category 1: Action Verbs */}
+              {actionVerbs.length > 0 && (
+                <div className="bg-indigo-50/60 p-2 rounded-xl border border-indigo-100">
+                  <p className="text-[10px] font-black uppercase text-indigo-700 mb-1">
+                    ⚡ Action Verbs (Past)
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {actionVerbs.map((v, i) => (
+                      <span key={i} className="px-2 py-0.5 bg-white border border-indigo-200 text-indigo-900 text-[10px] font-bold rounded-md">
+                        {v}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Category 2: Transition Connectors */}
+              {connectors.length > 0 && (
+                <div className="bg-amber-50/60 p-2 rounded-xl border border-amber-100">
+                  <p className="text-[10px] font-black uppercase text-amber-700 mb-1">
+                    🔗 Transition Connectors
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {connectors.map((c, i) => (
+                      <span key={i} className="px-2 py-0.5 bg-white border border-amber-200 text-amber-900 text-[10px] font-bold rounded-md">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Category 3: Cumulative Chunks */}
+              {cumulativeChunks.length > 0 && (
+                <div className="bg-emerald-50/60 p-2 rounded-xl border border-emerald-100">
+                  <p className="text-[10px] font-black uppercase text-emerald-700 mb-1">
+                    💎 Cumulative Chunks
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {cumulativeChunks.map((ch, i) => (
+                      <span key={i} className="px-2 py-0.5 bg-white border border-emerald-200 text-emerald-900 text-[10px] font-bold rounded-md">
+                        {ch}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : flatWordBank.length > 0 ? (
+            <div className="flex flex-wrap gap-1 max-h-16 overflow-y-auto">
+              <span className="text-[10px] font-black text-slate-500 uppercase mr-2">Word Bank:</span>
+              {flatWordBank.map((w, i) => (
+                <span key={i} className="px-2 py-0.5 bg-slate-100 border border-slate-200 text-slate-700 text-[10px] font-medium rounded-full">
+                  {w}
+                </span>
+              ))}
+            </div>
+          ) : null}
         </div>
       )}
 
-      {/* Textarea + Live Word & Sentence Counter */}
-      <div className="flex-1 min-h-0 overflow-y-auto p-3">
-        <div className="relative">
-          {currentW >= 43 && (
-            <p className="text-[10px] text-indigo-600 font-bold mb-1">
-              {isVi ? '💡 Gợi ý: Chia bài viết thành 2 đoạn văn ngắn' : '💡 Tip: Divide your story into 2 short paragraphs'}
-            </p>
-          )}
+      {/* Textarea + Live Real-time Cambridge Criteria Checker */}
+      <div className="flex-1 min-h-0 overflow-y-auto p-3 flex flex-col gap-2">
+        <div className="relative flex-1 flex flex-col">
           <textarea
             value={text}
             onChange={e => setText(e.target.value)}
-            placeholder={isVi ? 'Viết câu chuyện của em ở đây...' : 'Write your story here...'}
-            className="w-full min-h-[180px] p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:bg-white focus:border-indigo-400 outline-none resize-y text-sm leading-relaxed text-slate-700 font-normal"
+            disabled={isExamMode && !timerStarted}
+            placeholder={
+              isExamMode && !timerStarted
+                ? (isVi ? 'Nhấn "Bắt đầu làm bài" để mở khóa đồng hồ 10 phút...' : 'Click "Start Exam" to unlock 10-minute timer...')
+                : (isVi ? 'Viết câu chuyện Cambridge Flyers ở đây...' : 'Write your Cambridge Flyers story here...')
+            }
+            className="w-full flex-1 min-h-[160px] p-3 bg-white border-2 border-slate-200 rounded-xl focus:border-indigo-500 outline-none resize-y text-sm leading-relaxed text-slate-800 font-normal shadow-inner"
           />
-          {/* Live Word & Sentence Counter real-time */}
-          {(() => {
-            const metWords = wordCount >= scaffolding.minWords;
-            const metSentences = sentenceCount >= scaffolding.minSentences;
-            const met = metWords && metSentences;
-            return (
-              <div className={`flex flex-wrap items-center justify-between mt-2 px-2.5 py-2 rounded-lg border ${met ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50 border-amber-200'}`}>
-                <div className="flex items-center gap-3">
-                  <span className={`text-[11px] font-black ${metWords ? 'text-emerald-600' : 'text-amber-600'}`}>
-                    {wordCount}/{scaffolding.minWords} {isVi ? 'từ' : 'words'}
-                  </span>
-                  <span className={`text-[11px] font-black ${metSentences ? 'text-emerald-600' : 'text-amber-600'}`}>
-                    {sentenceCount}/{scaffolding.minSentences} {isVi ? 'câu' : 'sentences'}
-                  </span>
-                  <span className={`text-[11px] font-bold ${met ? 'text-emerald-500' : 'text-amber-500'}`}>
-                    {met ? '✓ Complete' : `→ ${Math.max(0, scaffolding.minWords - wordCount)} ${isVi ? 'từ' : 'words'}, ${Math.max(0, scaffolding.minSentences - sentenceCount)} ${isVi ? 'câu' : 'sentences'}`}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 mt-1 sm:mt-0">
-                  {met && (
-                    <button
-                      onClick={handleSubmit}
-                      className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold text-xs flex items-center gap-1"
-                    >
-                      <BarChart2 size={13} />
-                      {isVi ? 'Chấm điểm' : 'Score'}
-                    </button>
-                  )}
-                  {rubric && rubric.total >= 6 && (
-                    <button
-                      onClick={onGoToSpeak}
-                      className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs flex items-center gap-1"
-                    >
-                      {isVi ? 'Kể chuyện' : 'Tell Story'} <ArrowRight size={12} />
-                    </button>
-                  )}
-                </div>
+
+          {/* Real-time Cambridge Criteria Checker Display */}
+          <div className="mt-2 bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-2">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span className="text-[11px] font-black uppercase text-indigo-700 tracking-wider">
+                🏆 Cambridge Flyers Criteria Checker (W{currentW})
+              </span>
+              <span className={`text-[11px] font-black px-2 py-0.5 rounded-full ${cambridgeEval.isAllMet ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
+                {cambridgeEval.isAllMet ? '✓ 15/15 Shields Qualified' : '→ In Progress'}
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {/* Metric 1: Word Count */}
+              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metWords ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
+                <p className="text-[10px] font-bold text-slate-500 uppercase">Target Words</p>
+                <p className="text-xs font-black">
+                  {cambridgeEval.wordCount}/{cambridgeEval.targetWords}
+                </p>
+                <p className="text-[9px] font-bold">
+                  {cambridgeEval.metWords ? '✓ Target Met' : `Need ${Math.max(0, cambridgeEval.targetWords - cambridgeEval.wordCount)} more`}
+                </p>
               </div>
-            );
-          })()}
+
+              {/* Metric 2: Connectors */}
+              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metConnectors ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
+                <p className="text-[10px] font-bold text-slate-500 uppercase">Connectors</p>
+                <p className="text-xs font-black">
+                  {cambridgeEval.connectorsFound.length}/{cambridgeEval.minConnectors}
+                </p>
+                <p className="text-[9px] font-bold">
+                  {cambridgeEval.metConnectors ? '✓ Transition Met' : `Need ${cambridgeEval.minConnectors}+ connectors`}
+                </p>
+              </div>
+
+              {/* Metric 3: Past Continuous (W43+) */}
+              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metPastContinuous ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>
+                <p className="text-[10px] font-bold text-slate-500 uppercase">Past Continuous</p>
+                <p className="text-xs font-black">
+                  {cambridgeEval.hasPastContinuous ? 'was/were V-ing' : 'None'}
+                </p>
+                <p className="text-[9px] font-bold">
+                  {cambridgeEval.metPastContinuous ? '✓ Grammar Met' : 'Require was/were + V-ing'}
+                </p>
+              </div>
+
+              {/* Metric 4: Cumulative Chunks (W55+) */}
+              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metChunks ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
+                <p className="text-[10px] font-bold text-slate-500 uppercase">Advanced Chunks</p>
+                <p className="text-xs font-black">
+                  {cambridgeEval.chunksFound.length} Found
+                </p>
+                <p className="text-[9px] font-bold">
+                  {cambridgeEval.metChunks ? '✓ Chunks Met' : 'Add 1+ learned chunk'}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-end gap-2 pt-1">
+              <button
+                onClick={handleSubmit}
+                disabled={!cambridgeEval.isAllMet && cambridgeEval.wordCount < cambridgeEval.targetWords}
+                className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
+              >
+                <BarChart2 size={13} />
+                {isVi ? 'Chấm Điểm Cambridge' : 'Score Cambridge'}
+              </button>
+
+              <button
+                onClick={onGoToSpeak}
+                className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
+              >
+                {isVi ? 'Chuyển Kể Chuyện (Tab 3)' : 'Tell Story (Tab 3)'} <ArrowRight size={12} />
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Rubric result */}
