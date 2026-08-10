@@ -157,8 +157,8 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
             style={{ transformStyle: 'preserve-3d', transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
         >
           <div className={`absolute inset-0 bg-white rounded-3xl shadow-lg border border-slate-100 flex flex-col overflow-hidden hover:shadow-orange-200/50 transition-shadow ${isFlipped ? 'pointer-events-none' : ''}`} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-           <div className="h-[210px] w-full relative overflow-hidden flex items-center justify-center bg-slate-100 shrink-0">
-                <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+           <div className="h-[210px] w-full relative overflow-hidden flex items-center justify-center bg-slate-50 p-3 shrink-0">
+                <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-3 right-3 text-white drop-shadow-lg z-10">
                     {isCompleted ? <CheckCircle className="w-8 h-8 fill-green-500 text-white" /> : <Star className="w-6 h-6 fill-amber-400 text-amber-400" />}
                 </div>

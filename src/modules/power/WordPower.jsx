@@ -84,9 +84,9 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
         >
           {/* FRONT */}
           <div className="absolute inset-0 bg-teal-600 rounded-3xl shadow-xl border border-teal-500 flex flex-col overflow-hidden text-white" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-           <div className="h-[210px] w-full relative overflow-hidden flex items-center justify-center bg-teal-700/50 shrink-0">
+           <div className="h-[210px] w-full relative overflow-hidden flex items-center justify-center bg-teal-700/30 p-3 shrink-0">
                   {word.image_url ? (
-                    <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-105" />
                   ) : (
                     <div className="text-6xl font-black opacity-20">{word.word[0]}</div>
                   )}
