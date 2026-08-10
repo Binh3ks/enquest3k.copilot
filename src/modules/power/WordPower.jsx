@@ -231,16 +231,11 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
   useEffect(() => {
     if (hasPrefetched.current) return; // Already prefetched
     
-    if (data?.words) {
+    if (data && (Array.isArray(data) ? data.length > 0 : !!data.words)) {
       hasPrefetched.current = true;
-      console.log('[WordPower] 🐛 DEBUG - words:', {
-        hasWords: !!data.words,
-        wordsLength: data.words.length
-      });
-      
-      // NEW: Build objects with text and audioPath
+      const prefetchList = Array.isArray(data) ? data : (data?.words || data?.phrases || []);
       const items = [];
-      data.words.forEach(word => {
+      prefetchList.forEach(word => {
         if (word.word) {
           items.push({
             text: word.word,
@@ -287,16 +282,17 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       setCompletedIds(prev => {
           if (prev.includes(id)) return prev;
           const newCompleted = [...prev, id];
-          const total = data?.words?.length || 1;
+          const total = Array.isArray(data) ? data.length : (data?.words?.length || data?.phrases?.length || 1);
           const percent = Math.round((newCompleted.length / total) * 100);
           const isComplete = newCompleted.length >= total;
           saveProgress({ completedIds: newCompleted }, isComplete, percent);
           if (isComplete) markComplete(percent);
           return newCompleted;
       });
-  }, [data?.words?.length, saveProgress, markComplete]);
+  }, [data, saveProgress, markComplete]);
 
-  const wordList = (data?.words || data?.phrases || data?.collocations || []).map((item, idx) => ({
+  const rawItems = Array.isArray(data) ? data : (data?.words || data?.phrases || data?.collocations || data?.items || []);
+  const wordList = rawItems.map((item, idx) => ({
     id: item.id || `wp_${idx}`,
     word: item.word || item.phrase || item.collocation || '',
     definition_en: item.definition_en || item.definition || item.meaning_en || '',
