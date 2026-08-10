@@ -168,18 +168,12 @@ export default {
       "type": "picture",
       "image_url": "/images/week35/story_writing_pic.jpg",
       "image_prompt": "A vivid watercolor illustration of children planting green trees and recycling plastic bottles under a bright blue sky, surrounded by melting ice and lush green nature.",
-      "word_bank": [
-        "environmental dangers",
-        "melting rapidly",
-        "sea levels rising",
-        "protect our planet",
-        "planting new trees",
-        "recycling waste",
-        "reduce single-use plastic",
-        "conserve energy",
-        "powerful difference",
-        "future generations"
-      ],
+      "word_bank": {
+        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
+        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
+        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
+        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+      },
       "writing_prompts": {
         "en": "Look at the picture and describe how children are protecting the planet. Use 3+ environmental action phrases.",
         "vi": "Nhìn bức tranh và mô tả cách các bạn nhỏ bảo vệ hành tinh. Dùng 3+ cụm từ hành động môi trường."

@@ -12,8 +12,8 @@ const weekCache = new Map();
 
 // Function to dynamically load a specific week
 export const loadWeekData = async (weekId, isEasy = false) => {
-  // Single mode policy: W36+ has only 1 unified mode (Advanced)
-  const effectiveEasy = weekId >= 36 ? false : isEasy;
+  // Single mode policy: W33+ has only 1 unified mode (Full Mode)
+  const effectiveEasy = weekId >= 33 ? false : isEasy;
   const cacheKey = `${weekId}_${effectiveEasy ? 'easy' : 'adv'}`;
   
   // Check cache first

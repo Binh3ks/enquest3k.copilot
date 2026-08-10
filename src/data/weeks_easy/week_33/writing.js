@@ -1,84 +1,69 @@
 export default {
-  "title": "Writing: My Accident Story",
-  "audio_url": null,
-  "min_words": 30,
-  "model_sentence": "Last week I walked/ran in the corridor and fell down. I hurt my knee/elbow/leg and it hurt a lot. My teacher/friend came and helped me right away. She put a bandage/plaster on my knee/arm. I learned to walk carefully and in the corridor. Now I always walk/go slowly and look/be careful. Last week I walked/ran in the corridor and fell down. Last week I walked/ran in the corridor and fell down. Last week I walked/ran in the corridor and fell down. Last week I walked/ran in the corridor and fell down.",
-  "instruction_en": "Write about a time when you got hurt or saw someone get hurt. Use at least 3 of these words: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
-  "instruction_vi": "Viết về một lần bạn bị đau hoặc thấy ai đó bị đau. Dùng ít nhất 3 từ: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
-  "prompt_en": "Write about a small accident: I walked in the corridor and fell down. I hurt my knee. My teacher helped me.",
-  "prompt_vi": "Viết về một tai nạn nhỏ: Tôi đi trong hành lang và ngã xuống. Tôi bị đau đầu gối. Giáo viên đã giúp tôi.",
-  "keywords": [
-    "hurt",
-    "fell",
-    "walked",
-    "ran",
-    "teacher",
-    "corridor",
-    "knee",
-    "bandage",
-    "help",
-    "carefully"
-  ],
-  "topic_talk_prompt": "Tell me about a time when you got hurt or saw someone get hurt!",
+  "title": "Jake's Accident Story",
+  "min_sentences": 10,
+  "theme": "accidents_and_consequences",
+  "min_words": 65,
+  "model_sentence": "Last Friday, Jake was walking down the school corridor. The floor was very wet because the cleaner had just washed it. Suddenly, Leo ran past Jake without looking carefully. Leo slipped on the wet floor and fell down hard. He hurt his knee badly and it began to bleed. The teacher heard Leo crying and rushed over to help. She gently put a cold ice pack on Leo's injured knee. The nurse cleaned the wound and wrapped a clean bandage. Leo felt extremely relieved and thanked his teacher. Everyone learned to walk safely and follow school rules.",
+  "topic_talk_prompt": "Tell me about a time when you got hurt or saw someone get hurt at school!",
   "sentence_frames": [
     {
-      "template": "Last week I ___ in the corridor and fell down.",
+      "template": "Last Friday, Jake was ___ (walk) down the school corridor.",
       "answers": [
-        "walked/ran"
+        "walking"
       ]
     },
     {
-      "template": "I ___ my knee/elbow/leg and it hurt a lot.",
+      "template": "The floor was very wet because the cleaner had ___ (just) washed it.",
       "answers": [
-        "hurt"
+        "just"
       ]
     },
     {
-      "template": "My ___ came and helped me right away.",
+      "template": "Suddenly, Leo ran ___ (past) Jake without looking carefully.",
       "answers": [
-        "teacher/friend"
+        "past"
       ]
     },
     {
-      "template": "She ___ a bandage/plaster on my knee/arm.",
+      "template": "Leo ___ (slip) on the wet floor and fell down hard.",
+      "answers": [
+        "slipped"
+      ]
+    },
+    {
+      "template": "He hurt his knee badly and it began to ___ (bleed).",
+      "answers": [
+        "bleed"
+      ]
+    },
+    {
+      "template": "The teacher ___ (hear) Leo crying and rushed over to help.",
+      "answers": [
+        "heard"
+      ]
+    },
+    {
+      "template": "She gently ___ (put) a cold ice pack on Leo's injured knee.",
       "answers": [
         "put"
       ]
     },
     {
-      "template": "I learned to ___ and in the corridor.",
+      "template": "The nurse cleaned the wound and wrapped a clean ___ (bandage).",
       "answers": [
-        "walk carefully"
+        "bandage"
       ]
     },
     {
-      "template": "Now I always ___ slowly and look/be careful.",
+      "template": "Leo felt ___ (extremely) relieved and thanked his teacher.",
       "answers": [
-        "walk/go"
+        "extremely"
       ]
     },
     {
-      "template": "Last week I ___ in the corridor and fell down.",
+      "template": "Everyone learned to walk ___ (safely) and follow school rules.",
       "answers": [
-        "walked/ran"
-      ]
-    },
-    {
-      "template": "Last week I ___ in the corridor and fell down.",
-      "answers": [
-        "walked/ran"
-      ]
-    },
-    {
-      "template": "Last week I ___ in the corridor and fell down.",
-      "answers": [
-        "walked/ran"
-      ]
-    },
-    {
-      "template": "Last week I ___ in the corridor and fell down.",
-      "answers": [
-        "walked/ran"
+        "safely"
       ]
     }
   ],
@@ -86,37 +71,12 @@ export default {
     "vocabulary_bank": {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      "show_by_default": true,
-      "scaffolding_stage": "high",
+      "show_by_default": false,
+      "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "walked",
+          "word": "walking",
           "vi": "đi bộ",
-          "distractor": false
-        },
-        {
-          "word": "ran",
-          "vi": "chạy",
-          "distractor": false
-        },
-        {
-          "word": "fell",
-          "vi": "ngã",
-          "distractor": false
-        },
-        {
-          "word": "hurt",
-          "vi": "bị thương/đau",
-          "distractor": false
-        },
-        {
-          "word": "knee",
-          "vi": "đầu gối",
-          "distractor": false
-        },
-        {
-          "word": "teacher",
-          "vi": "giáo viên",
           "distractor": false
         },
         {
@@ -125,13 +85,18 @@ export default {
           "distractor": false
         },
         {
-          "word": "helped",
-          "vi": "giúp đỡ",
+          "word": "just",
+          "vi": "vừa mới",
           "distractor": false
         },
         {
-          "word": "bandage",
-          "vi": "băng",
+          "word": "it",
+          "vi": "nó",
+          "distractor": false
+        },
+        {
+          "word": "past",
+          "vi": "ngang qua",
           "distractor": false
         },
         {
@@ -140,14 +105,74 @@ export default {
           "distractor": false
         },
         {
-          "word": "walk",
-          "vi": "đi",
-          "distractor": true
+          "word": "slipped",
+          "vi": "trượt chân",
+          "distractor": false
         },
         {
-          "word": "run",
-          "vi": "chạy",
-          "distractor": true
+          "word": "down",
+          "vi": "xuống",
+          "distractor": false
+        },
+        {
+          "word": "knee",
+          "vi": "đầu gối",
+          "distractor": false
+        },
+        {
+          "word": "bleed",
+          "vi": "chảy máu",
+          "distractor": false
+        },
+        {
+          "word": "heard",
+          "vi": "nghe thấy",
+          "distractor": false
+        },
+        {
+          "word": "help",
+          "vi": "giúp đỡ",
+          "distractor": false
+        },
+        {
+          "word": "put",
+          "vi": "đặt",
+          "distractor": false
+        },
+        {
+          "word": "injured",
+          "vi": "bị thương",
+          "distractor": false
+        },
+        {
+          "word": "wound",
+          "vi": "vết thương",
+          "distractor": false
+        },
+        {
+          "word": "bandage",
+          "vi": "băng gạc",
+          "distractor": false
+        },
+        {
+          "word": "extremely",
+          "vi": "cực kỳ",
+          "distractor": false
+        },
+        {
+          "word": "teacher",
+          "vi": "giáo viên",
+          "distractor": false
+        },
+        {
+          "word": "safely",
+          "vi": "an toàn",
+          "distractor": false
+        },
+        {
+          "word": "rules",
+          "vi": "quy tắc",
+          "distractor": false
         }
       ]
     }
@@ -156,88 +181,41 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week33/story_writing_pic.jpg",
-      "image_prompt": "A simple picture for week 33 story writing.",
-      "word_bank": [
-        "ran fast",
-        "slipped",
-        "fell down",
-        "hurt knee",
-        "cried loudly",
-        "teacher helped",
-        "ice pack",
-        "bandage",
-        "walk carefully",
-        "learned a lesson"
-      ],
-      "writing_prompts": {
-        "en": "Look at the picture. What can you see? Write simply.",
-        "vi": "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+      "image_prompt": "Accident story",
+      "word_bank": {
+        "action_verbs": [
+          "running fast",
+          "slipped on wet floor",
+          "hurt his knee",
+          "began to bleed",
+          "fell down hard"
+        ],
+        "cumulative_chunks": [
+          "on a bright sunny day",
+          "suddenly felt dizzy",
+          "burst into tears",
+          "felt extremely relieved",
+          "learned a valuable lesson"
+        ],
+        "connectors": [
+          "One sunny day",
+          "Suddenly",
+          "Meanwhile",
+          "To his surprise",
+          "Eventually"
+        ],
+        "grammar_boosters": [
+          "while he was walking",
+          "decided to stop",
+          "so that he could stay safe",
+          "was running smoothly"
+        ]
       },
-      "rubric_tier": 1,
-      "min_sentences": 6,
-      "sentence_frames": [
-        {
-          "template": "Jake ran ___",
-          "answers": [
-            "very fast"
-          ]
-        },
-        {
-          "template": "He slipped on the ___",
-          "answers": [
-            "wet floor"
-          ]
-        },
-        {
-          "template": "He fell and ___",
-          "answers": [
-            "hurt his knee"
-          ]
-        },
-        {
-          "template": "He started ___",
-          "answers": [
-            "crying loudly"
-          ]
-        },
-        {
-          "template": "His teacher ___",
-          "answers": [
-            "came to help"
-          ]
-        },
-        {
-          "template": "Jake learned to ___",
-          "answers": [
-            "walk carefully"
-          ]
-        },
-        {
-          "template": "Jake ran ___",
-          "answers": [
-            "very fast"
-          ]
-        },
-        {
-          "template": "Jake ran ___",
-          "answers": [
-            "very fast"
-          ]
-        },
-        {
-          "template": "Jake ran ___",
-          "answers": [
-            "very fast"
-          ]
-        },
-        {
-          "template": "Jake ran ___",
-          "answers": [
-            "very fast"
-          ]
-        }
-      ]
+      "writing_prompts": {
+        "en": "Look at the picture. Describe Leo's accident at school and how the teacher helped him.",
+        "vi": "Nhìn bức tranh. Mô tả tai nạn của Leo ở trường và cách giáo viên giúp đỡ."
+      },
+      "rubric_tier": 2
     }
-  },
-  "min_sentences": 10
+  }
 };

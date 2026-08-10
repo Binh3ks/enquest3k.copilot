@@ -177,23 +177,12 @@ export default {
       "type": "picture",
       "image_url": "/images/week34/story_writing_pic.jpg",
       "image_prompt": "In our fun English storytelling class today, my group confidently presented the classic story of the Three Little Pigs, but we used all our new vocabulary to make the story special! The first pig was a very lazy and careless animal, so he quickly built a weak house using light paper and soft cotton. He did not work hard at all, and he just wanted to play. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      "word_bank": [
-        "built a weak house",
-        "light paper",
-        "soft cotton",
-        "worked harder",
-        "thin plastic",
-        "recycled wood",
-        "heavy stones",
-        "strong metal",
-        "thick glass",
-        "blew down",
-        "ran as fast as they could",
-        "locked the heavy metal door",
-        "sang a happy song",
-        "gave up",
-        "clapped loudly"
-      ],
+      "word_bank": {
+        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
+        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
+        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
+        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+      },
       "sentence_frames": [
         {
           "template": "The first pig was ___ ___",

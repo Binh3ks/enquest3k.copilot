@@ -150,20 +150,12 @@ export default {
       "type": "picture",
       "image_url": "/images/week36/story_writing_pic.jpg",
       "image_prompt": "A yellow research submarine in a deep blue underwater ocean cavern using mechanical arms to attach red inflatable lift bags to an ancient wooden treasure chest resting on the seabed.",
-      "word_bank": [
-        "submarine",
-        "buoyancy",
-        "displace",
-        "cavern",
-        "chest",
-        "compass",
-        "inflatable lift bags",
-        "upward lift",
-        "gold compass",
-        "maritime museum",
-        "neutral buoyancy",
-        "titanium hull"
-      ],
+      "word_bank": {
+        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
+        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
+        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
+        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+      },
       "sentence_frames": [
         {
           "template": "On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a ___.",
@@ -226,13 +218,12 @@ export default {
           "title_en": "The Submarine Physics Rescue",
           "en": "Describe how Leo applied Archimedes buoyancy principle to lift the 150 kg chest using compressed air bags.",
           "vi": "Mô tả cách Leo áp dụng nguyên lý lực đẩy Archimedes để nâng chiếc rương 150kg bằng túi khí nén.",
-          "word_bank": [
-            "submarine",
-            "buoyancy",
-            "displace",
-            "cavern",
-            "compass"
-          ]
+          "word_bank": {
+        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
+        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
+        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
+        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+      }
         },
         {
           "id": "t2",

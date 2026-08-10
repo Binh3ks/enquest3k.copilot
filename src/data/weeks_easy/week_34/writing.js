@@ -179,18 +179,12 @@ export default {
       "type": "picture",
       "image_url": "/images/week34/story_writing_pic.jpg",
       "image_prompt": "A simple picture for week 34 story writing.",
-      "word_bank": [
-        "ant",
-        "grasshopper",
-        "worked hard",
-        "gathered seeds",
-        "played songs",
-        "cold winter",
-        "hungry",
-        "kind ant",
-        "shared food",
-        "important lesson"
-      ],
+      "word_bank": {
+        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
+        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
+        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
+        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+      },
       "writing_prompts": {
         "en": "Look at the picture. What can you see? Write simply.",
         "vi": "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."

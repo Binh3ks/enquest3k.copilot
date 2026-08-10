@@ -3,77 +3,77 @@ export default {
   "min_sentences": 10,
   "theme": "accidents_and_consequences",
   "min_words": 65,
-  "model_sentence": "Jake walked too fast in the corridor and fell down near the staircase. He hurt his knee and it started to bleed very badly. His teacher heard Jake crying and ran to help him right away. The nurse cleaned the wound and put a bandage on Jake's knee. Jake learned to walk carefully after that because he understood how painful it was. The teacher told Jake: 'Always walk in the corridor!'. Jake told everyone 'Walk in the corridor or you might fall and hurt yourself!'. Now Jake always walks carefully and never runs in the corridor because he learned his lesson. Jake walked too fast in the corridor and fell down near the staircase. Jake walked too fast in the corridor and fell down near the staircase.",
+  "model_sentence": "Last Friday, Jake was walking down the school corridor. The floor was very wet because the cleaner had just washed it. Suddenly, Leo ran past Jake without looking carefully. Leo slipped on the wet floor and fell down hard. He hurt his knee badly and it began to bleed. The teacher heard Leo crying and rushed over to help. She gently put a cold ice pack on Leo's injured knee. The nurse cleaned the wound and wrapped a clean bandage. Leo felt extremely relieved and thanked his teacher. Everyone learned to walk safely and follow school rules.",
   "topic_talk_prompt": "Tell me about a time when you got hurt or saw someone get hurt at school!",
   "sentence_frames": [
     {
-      "template": "Jake walked ___ fast in ___ corridor and fell down near the staircase.",
+      "template": "Last Friday, Jake was ___ (walk) down the school ___ (corridor).",
       "answers": [
-        "too",
-        "the"
+        "walking",
+        "corridor"
       ]
     },
     {
-      "template": "He hurt ___ knee and ___ started to bleed very badly.",
+      "template": "The floor was very wet because the cleaner had ___ (just) washed ___ (it).",
       "answers": [
-        "his",
+        "just",
         "it"
       ]
     },
     {
-      "template": "His teacher ___ Jake crying ___ ran to help him right away.",
+      "template": "Suddenly, Leo ran ___ (past) Jake without looking ___ (carefully).",
+      "answers": [
+        "past",
+        "carefully"
+      ]
+    },
+    {
+      "template": "Leo ___ (slip) on the wet floor and fell ___ (down) hard.",
+      "answers": [
+        "slipped",
+        "down"
+      ]
+    },
+    {
+      "template": "He hurt his ___ (knee) badly and it began to ___ (bleed).",
+      "answers": [
+        "knee",
+        "bleed"
+      ]
+    },
+    {
+      "template": "The teacher ___ (hear) Leo crying and rushed over to ___ (help).",
       "answers": [
         "heard",
-        "and"
+        "help"
       ]
     },
     {
-      "template": "The nurse ___ the wound ___ put a bandage on Jake's knee.",
+      "template": "She gently ___ (put) a cold ice pack on Leo's ___ (injured) knee.",
       "answers": [
-        "cleaned",
-        "and"
+        "put",
+        "injured"
       ]
     },
     {
-      "template": "Jake learned ___ walk carefully ___ that because he understood how painful it was.",
+      "template": "The nurse cleaned the ___ (wound) and wrapped a clean ___ (bandage).",
       "answers": [
-        "to",
-        "after"
+        "wound",
+        "bandage"
       ]
     },
     {
-      "template": "The teacher ___ Jake: 'Always ___ in the corridor!'.",
+      "template": "Leo felt ___ (extremely) relieved and thanked his ___ (teacher).",
       "answers": [
-        "told",
-        "walk"
+        "extremely",
+        "teacher"
       ]
     },
     {
-      "template": "Jake told ___ 'Walk in ___ corridor or you might fall and hurt yourself!'.",
+      "template": "Everyone learned to walk ___ (safely) and follow school ___ (rules).",
       "answers": [
-        "everyone",
-        "the"
-      ]
-    },
-    {
-      "template": "Now Jake ___ walks carefully ___ never runs in the corridor because he learned his lesson.",
-      "answers": [
-        "always",
-        "and"
-      ]
-    },
-    {
-      "template": "Jake walked ___ fast in ___ corridor and fell down near the staircase.",
-      "answers": [
-        "too",
-        "the"
-      ]
-    },
-    {
-      "template": "Jake walked ___ fast in ___ corridor and fell down near the staircase.",
-      "answers": [
-        "too",
-        "the"
+        "safely",
+        "rules"
       ]
     }
   ],
@@ -85,48 +85,63 @@ export default {
       "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "walked",
+          "word": "walking",
           "vi": "đi bộ",
           "distractor": false
         },
         {
-          "word": "ran",
-          "vi": "chạy",
+          "word": "corridor",
+          "vi": "hành lang",
           "distractor": false
         },
         {
-          "word": "fell",
-          "vi": "ngã",
+          "word": "just",
+          "vi": "vừa mới",
           "distractor": false
         },
         {
-          "word": "hurt",
-          "vi": "bị thương",
+          "word": "it",
+          "vi": "nó",
           "distractor": false
         },
         {
-          "word": "began to bleed",
-          "vi": "bắt đầu chảy máu",
+          "word": "past",
+          "vi": "ngang qua",
           "distractor": false
         },
         {
-          "word": "crying",
-          "vi": "khóc",
+          "word": "carefully",
+          "vi": "cẩn thận",
           "distractor": false
         },
         {
-          "word": "ran",
-          "vi": "chạy đến",
+          "word": "slipped",
+          "vi": "trượt chân",
           "distractor": false
         },
         {
-          "word": "came",
-          "vi": "đến",
+          "word": "down",
+          "vi": "xuống",
           "distractor": false
         },
         {
-          "word": "cleaned",
-          "vi": "lau sạch",
+          "word": "knee",
+          "vi": "đầu gối",
+          "distractor": false
+        },
+        {
+          "word": "bleed",
+          "vi": "chảy máu",
+          "distractor": false
+        },
+        {
+          "word": "heard",
+          "vi": "nghe thấy",
+          "distractor": false
+        },
+        {
+          "word": "help",
+          "vi": "giúp đỡ",
           "distractor": false
         },
         {
@@ -135,39 +150,39 @@ export default {
           "distractor": false
         },
         {
-          "word": "learned",
-          "vi": "học được",
+          "word": "injured",
+          "vi": "bị thương",
           "distractor": false
         },
         {
-          "word": "walk carefully",
-          "vi": "đi cẩn thận",
+          "word": "wound",
+          "vi": "vết thương",
           "distractor": false
         },
         {
-          "word": "walks",
-          "vi": "đi bộ",
+          "word": "bandage",
+          "vi": "băng gạc",
           "distractor": false
         },
         {
-          "word": "runs",
-          "vi": "chạy",
+          "word": "extremely",
+          "vi": "cực kỳ",
           "distractor": false
         },
         {
-          "word": "lesson",
-          "vi": "bài học",
+          "word": "teacher",
+          "vi": "giáo viên",
           "distractor": false
         },
         {
-          "word": "slowly",
-          "vi": "chậm rãi",
-          "distractor": true
+          "word": "safely",
+          "vi": "an toàn",
+          "distractor": false
         },
         {
-          "word": "faster",
-          "vi": "nhanh hơn",
-          "distractor": true
+          "word": "rules",
+          "vi": "quy tắc",
+          "distractor": false
         }
       ]
     }
@@ -176,101 +191,41 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week33/story_writing_pic.jpg",
-      "image_prompt": "This interesting picture shows a terrible and painful accident that happened at my school yesterday afternoon. My good friend Leo was running very fast down the main corridor because he was late for his important math class. He did not look carefully where he was going, and he completely ignored the strict school rules. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
-      "word_bank": [
-        "running very fast down the corridor",
-        "slipped on the wet floor",
-        "fell down hard",
-        "hit his left knee",
-        "arm and leg hurt a lot",
-        "started crying loudly",
-        "kind teacher ran over",
-        "cold ice pack from nurse's office",
-        "gently put it on his knee",
-        "explained his careless mistake",
-        "I understand now",
-        "walk slowly and safely",
-        "learned a very important lesson",
-        "recovered and felt much better",
-        "ignoring the strict school rules"
-      ],
-      "writing_prompts": {
-        "en": "Look at the picture. Your friend Leo had a terrible accident at school. Describe what happened from the moment he ran to the corridor until the teacher helped him. Use accident verbs like fell, hit, hurt, and caught.",
-        "vi": "Nhìn bức tranh. Bạn Leo gặp tai nạn kinh khủng ở trường. Mô tả chuyện gì xảy ra từ lúc Leo chạy đến hành lang cho đến khi giáo viên giúp. Dùng các động từ tai nạn như fell, hit, hurt, và caught."
+      "image_prompt": "Accident story",
+      "word_bank": {
+        "action_verbs": [
+          "running fast",
+          "slipped on wet floor",
+          "hurt his knee",
+          "began to bleed",
+          "fell down hard"
+        ],
+        "cumulative_chunks": [
+          "on a bright sunny day",
+          "suddenly felt dizzy",
+          "burst into tears",
+          "felt extremely relieved",
+          "learned a valuable lesson"
+        ],
+        "connectors": [
+          "One sunny day",
+          "Suddenly",
+          "Meanwhile",
+          "To his surprise",
+          "Eventually"
+        ],
+        "grammar_boosters": [
+          "while he was walking",
+          "decided to stop",
+          "so that he could stay safe",
+          "was running smoothly"
+        ]
       },
-      "rubric_tier": 2,
-      "sentence_frames": [
-        {
-          "template": "Last week, Jake was running ___ ___",
-          "answers": [
-            "very fast down the corridor",
-            "then"
-          ]
-        },
-        {
-          "template": "He slipped on the ___ ___",
-          "answers": [
-            "wet floor",
-            "also"
-          ]
-        },
-        {
-          "template": "He fell down and ___ ___",
-          "answers": [
-            "hit his left knee",
-            "so"
-          ]
-        },
-        {
-          "template": "His arm and leg ___ ___",
-          "answers": [
-            "hurt a lot",
-            "next"
-          ]
-        },
-        {
-          "template": "He started ___ ___",
-          "answers": [
-            "crying loudly",
-            "finally"
-          ]
-        },
-        {
-          "template": "His kind teacher ___ ___",
-          "answers": [
-            "ran over to help",
-            "slowly"
-          ]
-        },
-        {
-          "template": "She put a cold ___ ___",
-          "answers": [
-            "ice pack on his knee",
-            "happily"
-          ]
-        },
-        {
-          "template": "Jake learned to ___ ___",
-          "answers": [
-            "walk slowly and safely",
-            "carefully"
-          ]
-        },
-        {
-          "template": "Last week, Jake was running ___ ___",
-          "answers": [
-            "very fast down the corridor",
-            "then"
-          ]
-        },
-        {
-          "template": "Last week, Jake was running ___ ___",
-          "answers": [
-            "very fast down the corridor",
-            "then"
-          ]
-        }
-      ]
+      "writing_prompts": {
+        "en": "Look at the picture. Describe Leo's accident at school and how the teacher helped him.",
+        "vi": "Nhìn bức tranh. Mô tả tai nạn của Leo ở trường và cách giáo viên giúp đỡ."
+      },
+      "rubric_tier": 2
     }
   }
 };

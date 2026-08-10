@@ -154,16 +154,12 @@ export default {
       "type": "picture",
       "image_url": "/images/week37/story_w37_pic.jpg",
       "image_prompt": "Young athletes sprinting on a red athletic track passing a baton under bright sunlight, cheering spectators in background, cartoon illustration.",
-      "word_bank": [
-        "ran very fast",
-        "passed the baton",
-        "sprinted early",
-        "crossed the finish line",
-        "cheered loudly",
-        "smiled with pride",
-        "teamwork brought victory",
-        "united in peace"
-      ],
+      "word_bank": {
+        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
+        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
+        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
+        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+      },
       "sentence_frames": [
         {
           "template": "On Saturday morning, Leo ___ (go) to the sports stadium.",

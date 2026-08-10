@@ -134,14 +134,12 @@ export default {
       "type": "picture",
       "image_url": "/images/week35/story_writing_pic.jpg",
       "image_prompt": "A simple picture of Max doing homework .",
-      "word_bank": [
-        "carelessly",
-        "walked loudly",
-        "change",
-        "carefully",
-        "kindly",
-        "proud"
-      ],
+      "word_bank": {
+        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
+        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
+        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
+        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+      },
       "writing_prompts": {
         "en": "Look at the picture. How does Max do things now?",
         "vi": "Nhìn bức tranh. Bây giờ Max làm việc như thế nào?"

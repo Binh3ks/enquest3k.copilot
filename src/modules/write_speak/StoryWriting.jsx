@@ -144,11 +144,12 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
     }
   };
 
-  // Extract word bank groups
+  // Extract word bank groups (4 groups)
   const isCategorizedWordBank = pictureMode.word_bank && typeof pictureMode.word_bank === 'object' && !Array.isArray(pictureMode.word_bank);
   const actionVerbs = isCategorizedWordBank ? (pictureMode.word_bank.action_verbs || []) : [];
-  const connectors = isCategorizedWordBank ? (pictureMode.word_bank.connectors || []) : [];
   const cumulativeChunks = isCategorizedWordBank ? (pictureMode.word_bank.cumulative_chunks || []) : [];
+  const connectors = isCategorizedWordBank ? (pictureMode.word_bank.connectors || []) : [];
+  const grammarBoosters = isCategorizedWordBank ? (pictureMode.word_bank.grammar_boosters || []) : [];
   const flatWordBank = Array.isArray(pictureMode.word_bank) ? pictureMode.word_bank : [];
 
   const pictureSet = Array.isArray(pictureMode.picture_set) ? pictureMode.picture_set : null;
@@ -239,16 +240,16 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         </div>
       </div>
 
-      {/* Word Bank Pills — 3 Categorized Groups */}
+      {/* Word Bank Pills — 4 Categorized Groups */}
       {(!isExamMode || timerStarted) && (
         <div className="flex-shrink-0 px-3 py-2 bg-white border-b border-slate-200 space-y-1.5">
           {isCategorizedWordBank ? (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              {/* Category 1: Action Verbs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+              {/* Group 1: Week Target (Action Verbs) */}
               {actionVerbs.length > 0 && (
                 <div className="bg-indigo-50/60 p-2 rounded-xl border border-indigo-100">
                   <p className="text-[10px] font-black uppercase text-indigo-700 mb-1">
-                    ⚡ Action Verbs (Past)
+                    ⚡ Week Target (Action Verbs)
                   </p>
                   <div className="flex flex-wrap gap-1">
                     {actionVerbs.map((v, i) => (
@@ -260,11 +261,27 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 </div>
               )}
 
-              {/* Category 2: Transition Connectors */}
+              {/* Group 2: Cumulative Chunks (W01-W32) */}
+              {cumulativeChunks.length > 0 && (
+                <div className="bg-emerald-50/60 p-2 rounded-xl border border-emerald-100">
+                  <p className="text-[10px] font-black uppercase text-emerald-700 mb-1">
+                    💎 Cumulative (W01-W32)
+                  </p>
+                  <div className="flex flex-wrap gap-1">
+                    {cumulativeChunks.map((ch, i) => (
+                      <span key={i} className="px-2 py-0.5 bg-white border border-emerald-200 text-emerald-900 text-[10px] font-bold rounded-md">
+                        {ch}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Group 3: Cambridge Connectors */}
               {connectors.length > 0 && (
                 <div className="bg-amber-50/60 p-2 rounded-xl border border-amber-100">
                   <p className="text-[10px] font-black uppercase text-amber-700 mb-1">
-                    🔗 Transition Connectors
+                    🔗 Cambridge Connectors
                   </p>
                   <div className="flex flex-wrap gap-1">
                     {connectors.map((c, i) => (
@@ -276,16 +293,16 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 </div>
               )}
 
-              {/* Category 3: Cumulative Chunks */}
-              {cumulativeChunks.length > 0 && (
-                <div className="bg-emerald-50/60 p-2 rounded-xl border border-emerald-100">
-                  <p className="text-[10px] font-black uppercase text-emerald-700 mb-1">
-                    💎 Cumulative Chunks
+              {/* Group 4: Grammar Boosters */}
+              {grammarBoosters.length > 0 && (
+                <div className="bg-purple-50/60 p-2 rounded-xl border border-purple-100">
+                  <p className="text-[10px] font-black uppercase text-purple-700 mb-1">
+                    🚀 Grammar Boosters
                   </p>
                   <div className="flex flex-wrap gap-1">
-                    {cumulativeChunks.map((ch, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-white border border-emerald-200 text-emerald-900 text-[10px] font-bold rounded-md">
-                        {ch}
+                    {grammarBoosters.map((g, i) => (
+                      <span key={i} className="px-2 py-0.5 bg-white border border-purple-200 text-purple-900 text-[10px] font-bold rounded-md">
+                        {g}
                       </span>
                     ))}
                   </div>
