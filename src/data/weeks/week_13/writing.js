@@ -133,42 +133,42 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is ___ perfect school ___ I wake up at seven o'clock happily .",
+      "template": "Today is ___ perfect school ___ I wake up at seven o'clock.",
       "answers": [
         "a",
         "day"
       ]
     },
     {
-      "template": "I brush ___ teeth with ___ blue toothbrush carefully .",
+      "template": "I brush ___ teeth with ___ blue toothbrush.",
       "answers": [
         "my",
         "my"
       ]
     },
     {
-      "template": "Then I ___ breakfast with ___ family slowly .",
+      "template": "Then I ___ breakfast with ___ family.",
       "answers": [
         "eat",
         "my"
       ]
     },
     {
-      "template": "I eat ___ and eggs. ___ is yummy together .",
+      "template": "I eat ___ and eggs. ___ is yummy.",
       "answers": [
         "rice",
         "It"
       ]
     },
     {
-      "template": "At eight ___ I go ___ school with my friends finally .",
+      "template": "At eight ___ I go ___ school with my friends.",
       "answers": [
         "o'clock",
         "to"
       ]
     },
     {
-      "template": "At twelve ___ I have ___ suddenly .",
+      "template": "At twelve ___ I have ___.",
       "answers": [
         "o'clock",
         "lunch"
@@ -176,5 +176,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "Today is a perfect school day I wake up at seven o'clock happily . I brush my teeth with my blue toothbrush carefully . Then I eat breakfast with my family slowly . I eat rice and eggs. It is yummy together . At eight o'clock I go to school with my friends finally . At twelve o'clock I have lunch suddenly ."
+  "model_sentence": "Today is a perfect school day I wake up at seven o'clock. I brush my teeth with my blue toothbrush. Then I eat breakfast with my family. I eat rice and eggs. It is yummy. At eight o'clock I go to school with my friends. At twelve o'clock I have lunch."
 };

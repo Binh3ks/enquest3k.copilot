@@ -113,42 +113,42 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "The city ___ exciting because ___ are many shops and schools then .",
+      "template": "The city ___ exciting because ___ are many shops and schools then.",
       "answers": [
         "is",
         "there"
       ]
     },
     {
-      "template": "But it ___ be very ___ and crowded carefully .",
+      "template": "But it ___ be very ___ and crowded.",
       "answers": [
         "can",
         "noisy"
       ]
     },
     {
-      "template": "The air ___ be polluted ___ of heavy traffic so .",
+      "template": "The air ___ be polluted ___ of heavy traffic so.",
       "answers": [
         "can",
         "because"
       ]
     },
     {
-      "template": "The farm, ___ the other ___ is peaceful and green together .",
+      "template": "The farm, ___ the other ___ is peaceful and green.",
       "answers": [
         "on",
         "hand"
       ]
     },
     {
-      "template": "The farm ___ fresh air ___ wide open spaces finally .",
+      "template": "The farm ___ fresh air ___ wide open spaces.",
       "answers": [
         "has",
         "and"
       ]
     },
     {
-      "template": "Farm life ___ quiet and ___ busy than the city slowly .",
+      "template": "Farm life ___ quiet and ___ busy than the city.",
       "answers": [
         "is",
         "less"
@@ -156,5 +156,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "The city is exciting because there are many shops and schools then . But it can be very noisy and crowded carefully . The air can be polluted because of heavy traffic so . The farm, on the other hand is peaceful and green together . The farm has fresh air and wide open spaces finally . Farm life is quiet and less busy than the city slowly ."
+  "model_sentence": "The city is exciting because there are many shops and schools then. But it can be very noisy and crowded. The air can be polluted because of heavy traffic so. The farm, on the other hand is peaceful and green. The farm has fresh air and wide open spaces. Farm life is quiet and less busy than the city."
 };

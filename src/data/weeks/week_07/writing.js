@@ -1,7 +1,7 @@
 export default {
   "title": "Inside My Backpack",
   "min_words": 45,
-  "model_sentence": "In my backpack there is a notebook, a textbook, and a pencil case then happily . I also carry a water bottle and a snack because I get hungry also . My bag is dark blue and it has a small pocket at the front so . It is quite heavy but I do not mind because I love being organised and ready next . Being prepared makes me feel confident every day finally . I pack my bag very carefully every morning slowly .",
+  "model_sentence": "In my backpack there is a notebook, a textbook, and a pencil case then. I also carry a water bottle and a snack because I get hungry also. My bag is dark blue and it has a small pocket at the front so. It is quite heavy but I do not mind because I love being organised and ready. Being prepared makes me feel confident. I pack my bag very carefully every morning.",
   "instruction_en": "Describe everything in your school bag and why you carry it!",
   "instruction_vi": "Mô tả mọi thứ trong cặp và tại sao bạn mang chúng!",
   "prompt_en": "What is in your bag? Why do you carry each item? How does being prepared make you feel?",
@@ -29,42 +29,42 @@ export default {
   "topic_talk_prompt": "Tell me everything that is in your school bag and why!",
   "sentence_frames": [
     {
-      "template": "In my ___ there is ___ notebook, a textbook, and a pencil case then happily .",
+      "template": "In my ___ there is ___ notebook, a textbook, and a pencil case then.",
       "answers": [
         "backpack",
         "a"
       ]
     },
     {
-      "template": "I also ___ a water ___ and a snack because I get hungry also .",
+      "template": "I also ___ a water ___ and a snack because I get hungry also.",
       "answers": [
         "carry",
         "bottle"
       ]
     },
     {
-      "template": "My bag ___ dark blue ___ it has a small pocket at the front so .",
+      "template": "My bag ___ dark blue ___ it has a small pocket at the front so.",
       "answers": [
         "is",
         "and"
       ]
     },
     {
-      "template": "It is ___ heavy but ___ do not mind because I love being organised and ready next .",
+      "template": "It is ___ heavy but ___ do not mind because I love being organised and ready.",
       "answers": [
         "quite",
         "I"
       ]
     },
     {
-      "template": "Being prepared ___ me feel ___ every day finally .",
+      "template": "Being prepared ___ me feel ___.",
       "answers": [
         "makes",
         "confident"
       ]
     },
     {
-      "template": "I pack ___ bag very ___ every morning slowly .",
+      "template": "I pack ___ bag very ___ every morning.",
       "answers": [
         "my",
         "carefully"

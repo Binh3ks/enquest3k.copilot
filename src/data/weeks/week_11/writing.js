@@ -3,7 +3,7 @@ export default {
   "min_words": 45,
   "instruction_en": "Write about your favorite places to visit on the weekend using the preposition 'at'!",
   "instruction_vi": "Viết về những nơi bạn thích đến vào cuối tuần với giới từ 'at'!",
-  "model_sentence": "Today is Saturday I have a fun weekend plan happily . First, I go to the park and play with my friends also . We run, laugh and have a great time! so slowly. Then I go to the library to read a story book next . The book is very interesting. I learn new words finally . After that, my mom and I buy food at the supermarket slowly .",
+  "model_sentence": "Today is Saturday I have a fun weekend plan. First, I go to the park and play with my friends also. We run, laugh and have a great time! so. Then I go to the library to read a story book. The book is very interesting. I learn new words. After that, my mom and I buy food at the supermarket.",
   "prompt_en": "Tell me about the places you like to visit on the weekend!",
   "prompt_vi": "Hãy kể về những nơi bạn thích đến vào cuối tuần!",
   "hints": {
@@ -133,42 +133,42 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is ___ I have ___ fun weekend plan happily .",
+      "template": "Today is ___ I have ___ fun weekend plan.",
       "answers": [
         "Saturday",
         "a"
       ]
     },
     {
-      "template": "First, I ___ to the ___ and play with my friends also .",
+      "template": "First, I ___ to the ___ and play with my friends also.",
       "answers": [
         "go",
         "park"
       ]
     },
     {
-      "template": "We run, ___ and have ___ great time! so slowly",
+      "template": "We run, ___ and have ___ great time! so.",
       "answers": [
         "laugh",
         "a"
       ]
     },
     {
-      "template": "Then I ___ to the ___ to read a story book next .",
+      "template": "Then I ___ to the ___ to read a story book.",
       "answers": [
         "go",
         "library"
       ]
     },
     {
-      "template": "The book ___ very interesting. ___ learn new words finally .",
+      "template": "The book ___ very interesting. ___ learn new words.",
       "answers": [
         "is",
         "I"
       ]
     },
     {
-      "template": "After that, ___ mom and ___ buy food at the supermarket slowly .",
+      "template": "After that, ___ mom and ___ buy food at the supermarket.",
       "answers": [
         "my",
         "I"

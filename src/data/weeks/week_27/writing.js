@@ -2,7 +2,7 @@ export default {
   "title": "How a Seed Grows into a Plant",
   "min_words": 60,
   "min_sentences": 8,
-  "model_sentence": "First, the farmer digs a small hole and puts a tiny little seed deep in the dark ground. Next, the plant slowly grows a strong root under the soil so it can find water and stay firmly. Then, a thin green stem grows up toward the warm sunlight. The stem gets taller and stronger every single day together . After that, many broad green leaves start to appear on the side of the stem. They help the plant catch the beautiful sunlight suddenly . Finally, a beautiful bright yellow flower opens up fully in the warm summer sun. I like planting small seeds in my own garden because I love watching the beautiful plants change and grow over time.",
+  "model_sentence": "First, the farmer digs a small hole and puts a tiny little seed deep in the dark ground. Next, the plant slowly grows a strong root under the soil so it can find water and stay firmly. Then, a thin green stem grows up toward the warm sunlight. The stem gets taller and stronger every single day. After that, many broad green leaves start to appear on the side of the stem. They help the plant catch the beautiful sunlight. Finally, a beautiful bright yellow flower opens up fully in the warm summer sun. I like planting small seeds in my own garden because I love watching the beautiful plants change and grow over time.",
   "instruction_en": "Write a detailed scientific explanation of how a seed grows using sequence words!",
   "instruction_vi": "Viết giải thích khoa học chi tiết về cách hạt giống mọc dùng từ trình tự!",
   "prompt_en": "What are all the stages? What does the seed need at each stage? Why?",
@@ -45,7 +45,7 @@ export default {
       ]
     },
     {
-      "template": "The stem ___ taller and ___ every single day together .",
+      "template": "The stem ___ taller and ___ every single day.",
       "answers": [
         "gets",
         "stronger"
@@ -59,7 +59,7 @@ export default {
       ]
     },
     {
-      "template": "They help ___ plant catch ___ beautiful sunlight suddenly .",
+      "template": "They help ___ plant catch ___ beautiful sunlight.",
       "answers": [
         "the",
         "the"

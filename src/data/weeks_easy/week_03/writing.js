@@ -1,7 +1,7 @@
 export default {
   "title": "The Mirror Game",
   "min_words": 30,
-  "model_sentence": "I look in the mirror every day. I see my round face. I have two brown eyes. I have long brown hair. I am not very tall yet. I am short. My friend wears glasses to read.",
+  "model_sentence": "I look in the mirror. I see my round face. I have two brown eyes. I have long brown hair. I am not very tall yet. I am short. My friend wears glasses to read.",
   "instruction_en": "Describe your appearance and your friend's appearance!",
   "instruction_vi": "Mô tả ngoại hình của bạn và bạn của bạn!",
   "prompt_en": "What do you look like? What about your friend? Are you the same or different?",
@@ -23,7 +23,7 @@ export default {
   "topic_talk_prompt": "Describe what you and your friend look like!",
   "sentence_frames": [
     {
-      "template": "I ___ in the mirror every day.",
+      "template": "I ___ in the mirror.",
       "answers": [
         "look"
       ]

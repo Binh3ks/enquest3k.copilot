@@ -2,7 +2,7 @@ export default {
   "title": "My Family Picnic Story — Advanced Writing",
   "min_words": 85,
   "min_sentences": 10,
-  "model_sentence": "Last Sunday, my family went on a picnic at the beautiful park. We found a perfect grassy spot under a big oak tree in the garden. Mum brought delicious sandwiches and fresh juicy fruit. We drank cold lemonade and played fun games together. Suddenly, dark grey clouds appeared in the stormy sky. It started to rain, so we quickly ran to the wooden shelter for complete safety. Although it rained heavily, we still had a wonderful time at the park. We packed our things and returned home safely by car. My parents were very happy with our fun weekend trip at the park. We cannot wait for our next family picnic in the coming month!",
+  "model_sentence": "Last Sunday, my family went on a picnic at the beautiful park. We found a perfect grassy spot under a big oak tree in the garden. Mum brought delicious sandwiches and fresh juicy fruit. We drank cold lemonade and played fun games. Suddenly, dark grey clouds appeared in the stormy sky. It started to rain, so we quickly ran to the wooden shelter for complete safety. Although it rained heavily, we still had a wonderful time at the park. We packed our things and returned home safely by car today. My parents were very happy with our fun weekend trip at the park. We cannot wait for our next family picnic in the coming month!",
   "instruction_en": "Write a complete, vivid story about a family picnic from start to finish!",
   "instruction_vi": "Viết một câu chuyện sinh động hoàn chỉnh về buổi dã ngoại gia đình từ đầu đến cuối!",
   "prompt_en": "Describe the picnic preparation, the food, the sudden rain, and how your family enjoyed the day!",
@@ -20,70 +20,70 @@ export default {
   "topic_talk_prompt": "Tell me a complete, exciting story about a family outing!",
   "sentence_frames": [
     {
-      "template": "Last Sunday, my family went on a ___ at the beautiful ___ .",
+      "template": "Last Sunday, my family went on a ___ at the beautiful ___.",
       "answers": [
         "picnic",
         "park"
       ]
     },
     {
-      "template": "We found a perfect grassy spot under a big oak ___ in the ___ .",
+      "template": "We found a perfect grassy spot under a big oak ___ in the ___.",
       "answers": [
         "tree",
         "garden"
       ]
     },
     {
-      "template": "Mum brought delicious ___ and fresh juicy ___ .",
+      "template": "Mum brought delicious ___ and fresh juicy ___.",
       "answers": [
         "sandwiches",
         "fruit"
       ]
     },
     {
-      "template": "We drank cold ___ and played fun ___ together.",
+      "template": "We drank cold ___ and played fun ___.",
       "answers": [
         "lemonade",
         "games"
       ]
     },
     {
-      "template": "Suddenly, dark grey ___ appeared in the stormy ___ .",
+      "template": "Suddenly, dark grey ___ appeared in the stormy ___.",
       "answers": [
         "clouds",
         "sky"
       ]
     },
     {
-      "template": "It started to rain, so we quickly ran to the wooden ___ for complete ___ .",
+      "template": "It started to rain, so we quickly ran to the wooden ___ for complete ___.",
       "answers": [
         "shelter",
         "safety"
       ]
     },
     {
-      "template": "Although it rained heavily, we still had a ___ time at the ___ .",
+      "template": "Although it rained heavily, we still had a ___ time at the ___.",
       "answers": [
         "wonderful",
         "park"
       ]
     },
     {
-      "template": "We packed our things and returned home ___ by car ___ .",
+      "template": "We packed our things and returned home ___ by car ___.",
       "answers": [
         "safely",
         "today"
       ]
     },
     {
-      "template": "My parents were very happy with our fun weekend ___ at the ___ .",
+      "template": "My parents were very happy with our fun weekend ___ at the ___.",
       "answers": [
         "trip",
         "park"
       ]
     },
     {
-      "template": "We cannot wait for our next family ___ in the coming ___ !",
+      "template": "We cannot wait for our next family ___ in the coming ___!",
       "answers": [
         "picnic",
         "month"
@@ -215,21 +215,21 @@ export default {
       "min_sentences": 10,
       "sentence_frames": [
         {
-          "template": "Last Sunday, my family went on a ___ at the beautiful ___ .",
+          "template": "Last Sunday, my family went on a ___ at the beautiful ___.",
           "answers": [
             "picnic",
             "park"
           ]
         },
         {
-          "template": "We found a perfect grassy spot under a big oak ___ in the ___ .",
+          "template": "We found a perfect grassy spot under a big oak ___ in the ___.",
           "answers": [
             "tree",
             "garden"
           ]
         },
         {
-          "template": "Mum brought delicious ___ and fresh juicy ___ .",
+          "template": "Mum brought delicious ___ and fresh juicy ___.",
           "answers": [
             "sandwiches",
             "fruit"
@@ -243,42 +243,42 @@ export default {
           ]
         },
         {
-          "template": "Suddenly, dark grey ___ appeared in the stormy ___ .",
+          "template": "Suddenly, dark grey ___ appeared in the stormy ___.",
           "answers": [
             "clouds",
             "sky"
           ]
         },
         {
-          "template": "It started to rain, so we quickly ran to the wooden ___ for complete ___ .",
+          "template": "It started to rain, so we quickly ran to the wooden ___ for complete ___.",
           "answers": [
             "shelter",
             "safety"
           ]
         },
         {
-          "template": "Although it rained heavily, we still had a ___ time at the ___ .",
+          "template": "Although it rained heavily, we still had a ___ time at the ___.",
           "answers": [
             "wonderful",
             "park"
           ]
         },
         {
-          "template": "We packed our things and returned home ___ by car ___ .",
+          "template": "We packed our things and returned home ___ by car ___.",
           "answers": [
             "safely",
             "today"
           ]
         },
         {
-          "template": "My parents were very happy with our fun weekend ___ at the ___ .",
+          "template": "My parents were very happy with our fun weekend ___ at the ___.",
           "answers": [
             "trip",
             "park"
           ]
         },
         {
-          "template": "We cannot wait for our next family ___ in the coming ___ !",
+          "template": "We cannot wait for our next family ___ in the coming ___!",
           "answers": [
             "picnic",
             "month"

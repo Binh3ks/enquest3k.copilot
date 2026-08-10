@@ -2,7 +2,7 @@ export default {
   "title": "My Art Class Story",
   "min_words": 55,
   "min_sentences": 8,
-  "model_sentence": "Yesterday I arrived at art class and picked up my brush happily . I dipped my brush into bright red pigment and painted a picture of red flowers. Then I folded a sheet of paper into a butterfly shape and studied both wings carefully. I used the scissors to cut shapes well from green paper. I glued the leaves around my picture to create a beautiful border. I pressed carefully each piece to check the texture of the paper suddenly . Finally, I held up proudly the picture I had worked so hard to create every day . The teacher clapped loudly and said my picture had wonderful symmetry and beautiful well at school .",
+  "model_sentence": "Yesterday I arrived at art class and picked up my brush. I dipped my brush into bright red pigment and painted a picture of red flowers. Then I folded a sheet of paper into a butterfly shape and studied both wings. I used the scissors to cut shapes well from green paper. I glued the leaves around my picture to create a beautiful border. I pressed carefully each piece to check the texture of the paper. Finally, I held up proudly the picture I had worked so hard to create. The teacher clapped loudly and said my picture had wonderful symmetry and beautiful well at school.",
   "instruction_en": "Write a step-by-step art class story using first, next, then, and finally!",
   "instruction_vi": "Viết câu chuyện mỹ thuật theo từng bước dùng first, next, then, finally!",
   "prompt_en": "What did you paint? What steps did you follow? How did you feel at the end?",
@@ -20,7 +20,7 @@ export default {
   "topic_talk_prompt": "Describe your art class step by step — what did you make and how did it turn out?",
   "sentence_frames": [
     {
-      "template": "Yesterday I ___ at art ___ and picked up my brush happily .",
+      "template": "Yesterday I ___ at art ___ and picked up my brush.",
       "answers": [
         "arrived",
         "class"
@@ -34,7 +34,7 @@ export default {
       ]
     },
     {
-      "template": "Then I ___ a sheet ___ paper into a butterfly shape and studied both wings carefully.",
+      "template": "Then I ___ a sheet ___ paper into a butterfly shape and studied both wings.",
       "answers": [
         "folded",
         "of"
@@ -55,21 +55,21 @@ export default {
       ]
     },
     {
-      "template": "I pressed ___ each piece ___ check the texture of the paper suddenly .",
+      "template": "I pressed ___ each piece ___ check the texture of the paper.",
       "answers": [
         "carefully",
         "to"
       ]
     },
     {
-      "template": "Finally, I ___ up proudly ___ picture I had worked so hard to create every day .",
+      "template": "Finally, I ___ up proudly ___ picture I had worked so hard to create.",
       "answers": [
         "held",
         "the"
       ]
     },
     {
-      "template": "The teacher ___ loudly and ___ my picture had wonderful symmetry and beautiful well at school .",
+      "template": "The teacher ___ loudly and ___ my picture had wonderful symmetry and beautiful well at school.",
       "answers": [
         "clapped",
         "said"

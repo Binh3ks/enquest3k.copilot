@@ -118,42 +118,42 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today our ___ is visiting ___ beautiful park happily .",
+      "template": "Today our ___ is visiting ___ beautiful park.",
       "answers": [
         "class",
         "the"
       ]
     },
     {
-      "template": "Many people ___ enjoying their ___ carefully .",
+      "template": "Many people ___ enjoying their ___.",
       "answers": [
         "are",
         "day"
       ]
     },
     {
-      "template": "A young ___ is running ___ his dog near the trees so .",
+      "template": "A young ___ is running ___ his dog near the trees so.",
       "answers": [
         "boy",
         "after"
       ]
     },
     {
-      "template": "The ___ is barking ___ together .",
+      "template": "The ___ is barking ___.",
       "answers": [
         "dog",
         "happily"
       ]
     },
     {
-      "template": "An elderly ___ is sitting ___ a wooden bench safely .",
+      "template": "An elderly ___ is sitting ___ a wooden bench.",
       "answers": [
         "man",
         "on"
       ]
     },
     {
-      "template": "He is ___ peacefully while ___ enjoys the fresh air slowly .",
+      "template": "He is ___ peacefully while ___ enjoys the fresh air.",
       "answers": [
         "reading",
         "he"
@@ -161,5 +161,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "Today our class is visiting the beautiful park happily . Many people are enjoying their day carefully . A young boy is running after his dog near the trees so . The dog is barking happily together . An elderly man is sitting on a wooden bench safely . He is reading peacefully while he enjoys the fresh air slowly ."
+  "model_sentence": "Today our class is visiting the beautiful park. Many people are enjoying their day. A young boy is running after his dog near the trees so. The dog is barking happily. An elderly man is sitting on a wooden bench. He is reading peacefully while he enjoys the fresh air."
 };

@@ -7,7 +7,7 @@ export default {
   "instruction_vi": "Hãy viết về một chuyến đi kỳ diệu! Dùng thì quá khứ. Bạn đã ĐI đâu? Bạn GẶP ai (một phi công, bác sĩ, nông dân, kỹ sư, hay nhà khoa học)? Điều gì ĐẾN để giúp bạn?",
   "prompt_en": "Imagine you found a magic carpet. Describe your trip using went, flew, came, and ran.",
   "prompt_vi": "Hãy tưởng tượng bạn tìm thấy một tấm thảm thần. Mô tả chuyến đi của bạn dùng went, flew, came và ran.",
-  "model_sentence": "Last week, the children went on a magic trip happily. First, they got on a flying carpet carefully. The carpet flew over a secret magic island slowly. They met a tiny purple monkey together. They also saw a friendly talking dolphin safely. A brave pilot helped them find their way suddenly. They took a photo to remember the adventure every day. They flew safely back home at school. Last week, the children went on a magic trip in the afternoon. Last week, the children went on a magic trip happily.",
+  "model_sentence": "Last week, the children went on a magic trip. First, they got on a flying carpet. The carpet flew over a secret magic island. They met a tiny purple monkey. They also saw a friendly talking dolphin. A brave pilot helped them find their way. They took a photo to remember the adventure. They flew safely back home at school. Last week, the children went on a magic trip in the afternoon. Last week, the children went on a magic trip.",
   "keywords": [
     "went on",
     "magic carpet",
@@ -22,70 +22,70 @@ export default {
   "audio_model": "/audio/week29/writing_model.mp3",
   "sentence_frames": [
     {
-      "template": "Last week, ___ children went ___ a magic trip happily",
+      "template": "Last week, ___ children went ___ a magic trip.",
       "answers": [
         "the",
         "on"
       ]
     },
     {
-      "template": "First, they ___ on a ___ carpet carefully",
+      "template": "First, they ___ on a ___ carpet.",
       "answers": [
         "got",
         "flying"
       ]
     },
     {
-      "template": "The carpet ___ over a ___ magic island slowly",
+      "template": "The carpet ___ over a ___ magic island.",
       "answers": [
         "flew",
         "secret"
       ]
     },
     {
-      "template": "They ___ a tiny ___ monkey together",
+      "template": "They ___ a tiny ___ monkey.",
       "answers": [
         "met",
         "purple"
       ]
     },
     {
-      "template": "They also ___ a friendly ___ dolphin safely",
+      "template": "They also ___ a friendly ___ dolphin.",
       "answers": [
         "saw",
         "talking"
       ]
     },
     {
-      "template": "A brave ___ helped them ___ their way suddenly",
+      "template": "A brave ___ helped them ___ their way.",
       "answers": [
         "pilot",
         "find"
       ]
     },
     {
-      "template": "They took ___ photo to ___ the adventure every day",
+      "template": "They took ___ photo to ___ the adventure.",
       "answers": [
         "a",
         "remember"
       ]
     },
     {
-      "template": "They ___ safely back ___ at school",
+      "template": "They ___ safely back ___ at school.",
       "answers": [
         "flew",
         "home"
       ]
     },
     {
-      "template": "Last week, ___ children went ___ a magic trip in the afternoon",
+      "template": "Last week, ___ children went ___ a magic trip in the afternoon.",
       "answers": [
         "the",
         "on"
       ]
     },
     {
-      "template": "Last week, ___ children went ___ a magic trip happily",
+      "template": "Last week, ___ children went ___ a magic trip.",
       "answers": [
         "the",
         "on"

@@ -1,7 +1,7 @@
 export default {
   "title": "My Family Squad",
   "min_words": 45,
-  "model_sentence": "This is my mother. She is the leader of our family then . My mother helps us with everything every day also . This is my father. He is strong and kind so . He works very hard for our family together . This is my big brother. His name is Tom safely . He helps me with homework slowly .",
+  "model_sentence": "This is my mother. She is the leader of our family then. My mother helps us with everything every day also. This is my father. He is strong and kind so. He works very hard for our family. This is my big brother. His name is Tom. He helps me with homework.",
   "instruction_en": "Describe each family member in detail!",
   "instruction_vi": "Mô tả từng thành viên gia đình chi tiết!",
   "prompt_en": "What does each person do? What are they like? What do you do together as a family?",
@@ -22,42 +22,42 @@ export default {
   "topic_talk_prompt": "Tell me about each person in your family!",
   "sentence_frames": [
     {
-      "template": "This is ___ mother. She ___ the leader of our family then .",
+      "template": "This is ___ mother. She ___ the leader of our family then.",
       "answers": [
         "my",
         "is"
       ]
     },
     {
-      "template": "My mother ___ us with ___ every day also .",
+      "template": "My mother ___ us with ___ every day also.",
       "answers": [
         "helps",
         "everything"
       ]
     },
     {
-      "template": "This is ___ father. He ___ strong and kind so .",
+      "template": "This is ___ father. He ___ strong and kind so.",
       "answers": [
         "my",
         "is"
       ]
     },
     {
-      "template": "He works ___ hard for ___ family together .",
+      "template": "He works ___ hard for ___ family.",
       "answers": [
         "very",
         "our"
       ]
     },
     {
-      "template": "This is ___ big brother. ___ name is Tom safely .",
+      "template": "This is ___ big brother. ___ name is Tom.",
       "answers": [
         "my",
         "His"
       ]
     },
     {
-      "template": "He ___ me with ___ slowly .",
+      "template": "He ___ me with ___.",
       "answers": [
         "helps",
         "homework"

@@ -5,70 +5,70 @@ export default {
   "prompt_vi": "Viết một câu chuyện hoàn chỉnh về cách Leo áp dụng nguyên lý lực đẩy Archimedes để nâng rương 150kg, hoặc cách Marco Polo du hành Con đường Tơ lụa.",
   "sentence_frames": [
     {
-      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine happily .",
+      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine.",
       "answers": [
         "sunny",
         "Leo"
       ]
     },
     {
-      "template": "They found ___ ancient wooden ___ weighing 150 kilograms on the seabed carefully .",
+      "template": "They found ___ ancient wooden ___ weighing 150 kilograms on the seabed.",
       "answers": [
         "an",
         "chest"
       ]
     },
     {
-      "template": "To float ___ heavy chest, ___ applied Archimedes buoyancy principle slowly .",
+      "template": "To float ___ heavy chest, ___ applied Archimedes buoyancy principle.",
       "answers": [
         "the",
         "Leo"
       ]
     },
     {
-      "template": "He calculated ___ displacing 150 ___ of seawater created 150 kg of upward lift together .",
+      "template": "He calculated ___ displacing 150 ___ of seawater created 150 kg of upward lift.",
       "answers": [
         "that",
         "litres"
       ]
     },
     {
-      "template": "He attached ___ lift bags ___ displace 150 litres of seawater safely .",
+      "template": "He attached ___ lift bags ___ displace 150 litres of seawater.",
       "answers": [
         "inflatable",
         "to"
       ]
     },
     {
-      "template": "The lift ___ expanded and ___ the heavy chest safely to the surface suddenly .",
+      "template": "The lift ___ expanded and ___ the heavy chest safely to the surface.",
       "answers": [
         "bags",
         "brought"
       ]
     },
     {
-      "template": "Inside the ___ they discovered ___ preserved 16th-century gold compass every day .",
+      "template": "Inside the ___ they discovered ___ preserved 16th-century gold compass.",
       "answers": [
         "chest",
         "a"
       ]
     },
     {
-      "template": "They presented ___ historical gold ___ to the maritime museum at school .",
+      "template": "They presented ___ historical gold ___ to the maritime museum at school.",
       "answers": [
         "the",
         "compass"
       ]
     },
     {
-      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine in the afternoon .",
+      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine in the afternoon.",
       "answers": [
         "sunny",
         "Leo"
       ]
     },
     {
-      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine happily .",
+      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine.",
       "answers": [
         "sunny",
         "Leo"
@@ -251,5 +251,5 @@ export default {
     }
   },
   "min_sentences": 10,
-  "model_sentence": "On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine happily . They found an ancient wooden chest weighing 150 kilograms on the seabed carefully . To float the heavy chest, Leo applied Archimedes buoyancy principle slowly . He calculated that displacing 150 litres of seawater created 150 kg of upward lift together . He attached inflatable lift bags to displace 150 litres of seawater safely . The lift bags expanded and brought the heavy chest safely to the surface suddenly . Inside the chest they discovered a preserved 16th-century gold compass every day . They presented the historical gold compass to the maritime museum at school . On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine in the afternoon . On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine happily ."
+  "model_sentence": "On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine. They found an ancient wooden chest weighing 150 kilograms on the seabed. To float the heavy chest, Leo applied Archimedes buoyancy principle. He calculated that displacing 150 litres of seawater created 150 kg of upward lift. He attached inflatable lift bags to displace 150 litres of seawater. The lift bags expanded and brought the heavy chest safely to the surface. Inside the chest they discovered a preserved 16th-century gold compass. They presented the historical gold compass to the maritime museum at school. On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine in the afternoon. On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine."
 };

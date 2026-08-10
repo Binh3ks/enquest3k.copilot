@@ -3,76 +3,76 @@ export default {
   "theme": "sports_day",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "On Saturday morning we went to the sports stadium happily . The weather was sunny and warm carefully . Leo ran very fast along the track slowly . He passed the baton cleanly to Maya together . Max sprinted with fast momentum toward the line safely . Spectators watched and clapped with joy suddenly . Our scientific teamwork brought victory every day . Competitors were united in peace at the end at school . On Saturday morning we went to the sports stadium in the afternoon . On Saturday morning we went to the sports stadium happily .",
+  "model_sentence": "On Saturday morning we went to the sports stadium. The weather was sunny and warm. Leo ran very fast along the track. He passed the baton cleanly to Maya. Max sprinted with fast momentum toward the line. Spectators watched and clapped with joy. Our scientific teamwork brought victory every day. Competitors were united in peace at the end at school. On Saturday morning we went to the sports stadium in the afternoon. On Saturday morning we went to the sports stadium.",
   "topic_talk_prompt": "Tell me about a sports day race or Olympic story — how did you apply speed science or teamwork to win?",
   "prompt_en": "Write about speed science and relay racing. Use 5+ sports action words (ran fast, passed the baton, maintained momentum, clapped, won, declared truce).",
   "prompt_vi": "Viết về khoa học tốc độ và chạy tiếp sức. Dùng 5+ từ chỉ hành động thể thao (ran fast, passed the baton, maintained momentum, clapped, won, declared truce).",
   "sentence_frames": [
     {
-      "template": "On Saturday ___ we went ___ the sports stadium happily .",
+      "template": "On Saturday ___ we went ___ the sports stadium.",
       "answers": [
         "morning",
         "to"
       ]
     },
     {
-      "template": "The weather ___ sunny and ___ carefully .",
+      "template": "The weather ___ sunny and ___.",
       "answers": [
         "was",
         "warm"
       ]
     },
     {
-      "template": "Leo ran ___ fast along ___ track slowly .",
+      "template": "Leo ran ___ fast along ___ track.",
       "answers": [
         "very",
         "the"
       ]
     },
     {
-      "template": "He passed ___ baton cleanly ___ Maya together .",
+      "template": "He passed ___ baton cleanly ___ Maya.",
       "answers": [
         "the",
         "to"
       ]
     },
     {
-      "template": "Max sprinted ___ fast momentum ___ the line safely .",
+      "template": "Max sprinted ___ fast momentum ___ the line.",
       "answers": [
         "with",
         "toward"
       ]
     },
     {
-      "template": "Spectators watched ___ clapped with ___ suddenly .",
+      "template": "Spectators watched ___ clapped with ___.",
       "answers": [
         "and",
         "joy"
       ]
     },
     {
-      "template": "Our scientific ___ brought victory ___ day .",
+      "template": "Our scientific ___ brought victory ___ day.",
       "answers": [
         "teamwork",
         "every"
       ]
     },
     {
-      "template": "Competitors were ___ in peace ___ the end at school .",
+      "template": "Competitors were ___ in peace ___ the end at school.",
       "answers": [
         "united",
         "at"
       ]
     },
     {
-      "template": "On Saturday ___ we went ___ the sports stadium in the afternoon .",
+      "template": "On Saturday ___ we went ___ the sports stadium in the afternoon.",
       "answers": [
         "morning",
         "to"
       ]
     },
     {
-      "template": "On Saturday ___ we went ___ the sports stadium happily .",
+      "template": "On Saturday ___ we went ___ the sports stadium.",
       "answers": [
         "morning",
         "to"

@@ -108,7 +108,7 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "I walk on a busy ___ every day.",
+      "template": "I walk on a busy ___.",
       "answers": [
         "street"
       ]
@@ -145,5 +145,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "I walk on a busy street every day. There are many people and cars everywhere. It is a very noisy place. I see a tall building near the bus stop. There is lots of traffic on the road. I also see a quiet street nearby."
+  "model_sentence": "I walk on a busy street. There are many people and cars everywhere. It is a very noisy place. I see a tall building near the bus stop. There is lots of traffic on the road. I also see a quiet street nearby."
 };

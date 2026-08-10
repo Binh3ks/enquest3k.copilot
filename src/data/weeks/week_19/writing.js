@@ -25,56 +25,56 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Today is ___ rainy afternoon, ___ I am sitting in the living room with my mother then .",
+      "template": "Today is ___ rainy afternoon, ___ I am sitting in the living room with my mother then.",
       "answers": [
         "a",
         "so"
       ]
     },
     {
-      "template": "We are ___ at an ___ photo album also carefully .",
+      "template": "We are ___ at an ___ photo album also.",
       "answers": [
         "looking",
         "old"
       ]
     },
     {
-      "template": "In this ___ picture, I ___ just a young, tiny baby slowly .",
+      "template": "In this ___ picture, I ___ just a young, tiny baby.",
       "answers": [
         "first",
         "was"
       ]
     },
     {
-      "template": "I was ___ small, round, ___ cute together .",
+      "template": "I was ___ small, round, ___ cute.",
       "answers": [
         "very",
         "and"
       ]
     },
     {
-      "template": "My mother ___ I was ___ extremely noisy safely .",
+      "template": "My mother ___ I was ___ extremely noisy.",
       "answers": [
         "says",
         "also"
       ]
     },
     {
-      "template": "I was ___ not quiet ___ my older brother suddenly .",
+      "template": "I was ___ not quiet ___ my older brother.",
       "answers": [
         "definitely",
         "like"
       ]
     },
     {
-      "template": "He was ___ brave and ___ every day .",
+      "template": "He was ___ brave and ___.",
       "answers": [
         "very",
         "smart"
       ]
     },
     {
-      "template": "Whenever I ___ scared, he ___ always there to hold my hand at school .",
+      "template": "Whenever I ___ scared, he ___ always there to hold my hand at school.",
       "answers": [
         "was",
         "was"
@@ -267,5 +267,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "Today is a rainy afternoon, so I am sitting in the living room with my mother then . We are looking at an old photo album also carefully . In this first picture, I was just a young, tiny baby slowly . I was very small, round, and cute together . My mother says I was also extremely noisy safely . I was definitely not quiet like my older brother suddenly . He was very brave and smart every day . Whenever I was scared, he was always there to hold my hand at school ."
+  "model_sentence": "Today is a rainy afternoon, so I am sitting in the living room with my mother then. We are looking at an old photo album also. In this first picture, I was just a young, tiny baby. I was very small, round, and cute. My mother says I was also extremely noisy. I was definitely not quiet like my older brother. He was very brave and smart. Whenever I was scared, he was always there to hold my hand at school."
 };

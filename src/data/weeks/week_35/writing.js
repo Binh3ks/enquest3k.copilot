@@ -3,7 +3,7 @@ export default {
   "theme": "environment",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Our home planet Earth faces serious environmental dangers today then happily . Polar ice caps are melting rapidly in high temperatures also . Global sea levels are rising across oceans so . We must act now to protect our home planet next . Communities around the world are planting new trees finally . Families reduce single-use plastic and conserve energy slowly . Recycling waste more effectively helps clean our rivers happily . Small mindful actions create a powerful difference for Earth carefully . Our home planet Earth faces serious environmental dangers today then in the afternoon . Our home planet Earth faces serious environmental dangers today then happily .",
+  "model_sentence": "Our home planet Earth faces serious environmental dangers today then. Polar ice caps are melting rapidly in high temperatures also. Global sea levels are rising across oceans so. We must act now to protect our home planet. Communities around the world are planting new trees. Families reduce single-use plastic and conserve energy. Recycling waste more effectively helps clean our rivers. Small mindful actions create a powerful difference for Earth. Our home planet Earth faces serious environmental dangers today then in the afternoon. Our home planet Earth faces serious environmental dangers today then.",
   "topic_talk_prompt": "Tell me about what we can do to protect the environment and combat climate change!",
   "instruction_en": "Write about protecting our planet using environmental action words!",
   "instruction_vi": "Viết về bảo vệ hành tinh bằng các từ chỉ hành động môi trường!",
@@ -23,70 +23,70 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Our home ___ Earth faces ___ environmental dangers today then happily .",
+      "template": "Our home ___ Earth faces ___ environmental dangers today then.",
       "answers": [
         "planet",
         "serious"
       ]
     },
     {
-      "template": "Polar ice ___ are melting ___ in high temperatures also .",
+      "template": "Polar ice ___ are melting ___ in high temperatures also.",
       "answers": [
         "caps",
         "rapidly"
       ]
     },
     {
-      "template": "Global sea ___ are rising ___ oceans so .",
+      "template": "Global sea ___ are rising ___ oceans so.",
       "answers": [
         "levels",
         "across"
       ]
     },
     {
-      "template": "We must ___ now to ___ our home planet next .",
+      "template": "We must ___ now to ___ our home planet.",
       "answers": [
         "act",
         "protect"
       ]
     },
     {
-      "template": "Communities around ___ world are ___ new trees finally .",
+      "template": "Communities around ___ world are ___ new trees.",
       "answers": [
         "the",
         "planting"
       ]
     },
     {
-      "template": "Families reduce ___ plastic and ___ energy slowly .",
+      "template": "Families reduce ___ plastic and ___ energy.",
       "answers": [
         "single-use",
         "conserve"
       ]
     },
     {
-      "template": "Recycling waste ___ effectively helps ___ our rivers happily .",
+      "template": "Recycling waste ___ effectively helps ___ our rivers.",
       "answers": [
         "more",
         "clean"
       ]
     },
     {
-      "template": "Small mindful ___ create a ___ difference for Earth carefully .",
+      "template": "Small mindful ___ create a ___ difference for Earth.",
       "answers": [
         "actions",
         "powerful"
       ]
     },
     {
-      "template": "Our home ___ Earth faces ___ environmental dangers today then in the afternoon .",
+      "template": "Our home ___ Earth faces ___ environmental dangers today then in the afternoon.",
       "answers": [
         "planet",
         "serious"
       ]
     },
     {
-      "template": "Our home ___ Earth faces ___ environmental dangers today then happily .",
+      "template": "Our home ___ Earth faces ___ environmental dangers today then.",
       "answers": [
         "planet",
         "serious"

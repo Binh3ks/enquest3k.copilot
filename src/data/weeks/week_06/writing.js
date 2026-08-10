@@ -1,7 +1,7 @@
 export default {
   "title": "Finding the Treasure",
   "min_words": 45,
-  "model_sentence": "First, Lily hid a small treasure box and gave us a clue then . I searched under the bed and behind the bookshelf but I could not find it also . Then I looked inside the kitchen cupboard and finally spotted it on the top shelf slowly . I jumped with excitement and shouted because I was so happy to find it first next . We all laughed and decided to play again because it was so much fun safely . The treasure was a box full of gold coins slowly suddenly .",
+  "model_sentence": "First, Lily hid a small treasure box and gave us a clue then. I searched under the bed and behind the bookshelf but I could not find it also. Then I looked inside the kitchen cupboard and finally spotted it on the top shelf. I jumped with excitement and shouted because I was so happy to find it first. We all laughed and decided to play again because it was so much fun. The treasure was a box full of gold coins.",
   "instruction_en": "Write about your treasure hunt using sequence words and prepositions!",
   "instruction_vi": "Viết về cuộc tìm kho báu dùng từ nối và giới từ chỉ nơi chốn!",
   "prompt_en": "Where did you search? What happened step by step? How did you feel when you found it?",
@@ -24,42 +24,42 @@ export default {
   "topic_talk_prompt": "Tell me the full story of your treasure hunt!",
   "sentence_frames": [
     {
-      "template": "First, Lily ___ a small ___ box and gave us a clue then .",
+      "template": "First, Lily ___ a small ___ box and gave us a clue then.",
       "answers": [
         "hid",
         "treasure"
       ]
     },
     {
-      "template": "I searched ___ the bed ___ behind the bookshelf but I could not find it also .",
+      "template": "I searched ___ the bed ___ behind the bookshelf but I could not find it also.",
       "answers": [
         "under",
         "and"
       ]
     },
     {
-      "template": "Then I ___ inside the ___ cupboard and finally spotted it on the top shelf slowly .",
+      "template": "Then I ___ inside the ___ cupboard and finally spotted it on the top shelf.",
       "answers": [
         "looked",
         "kitchen"
       ]
     },
     {
-      "template": "I jumped ___ excitement and ___ because I was so happy to find it first next .",
+      "template": "I jumped ___ excitement and ___ because I was so happy to find it first.",
       "answers": [
         "with",
         "shouted"
       ]
     },
     {
-      "template": "We all ___ and decided ___ play again because it was so much fun safely .",
+      "template": "We all ___ and decided ___ play again because it was so much fun.",
       "answers": [
         "laughed",
         "to"
       ]
     },
     {
-      "template": "The treasure ___ a box ___ of gold coins slowly suddenly .",
+      "template": "The treasure ___ a box ___ of gold coins.",
       "answers": [
         "was",
         "full"

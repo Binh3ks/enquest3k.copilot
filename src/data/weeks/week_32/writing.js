@@ -3,7 +3,7 @@ export default {
   "audio_url": null,
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Last Saturday, I woke up early and made my bed. First, I did homework and wrote a letter to my grandmother. Then I cut the grass and put my tools away. I kept my room tidy by cleaning together . My mum/dad and I built a birdhouse together finally safely . I chose a muffin because I was hungry suddenly . At the café I paid for it with my my own money. By evening, I put my things away and fell asleep early. I felt proud because I had a productive day. Last Saturday, I woke up early and made my bed.",
+  "model_sentence": "Last Saturday, I woke up early and made my bed. First, I did homework and wrote a letter to my grandmother. Then I cut the grass and put my tools away. I kept my room tidy by cleaning. My mum/dad and I built a birdhouse together. I chose a muffin because I was hungry. At the café I paid for it with my my own money. By evening, I put my things away and fell asleep early. I felt proud because I had a productive day. Last Saturday, I woke up early and made my bed.",
   "instruction_en": "Write about a busy Saturday using at least 5 task verbs (woke, made, did, wrote, cut, built, put, kept, chose, or paid)!",
   "instruction_vi": "Viết về một ngày thứ Bảy bận rộn, sử dụng ít nhất 5 động từ công việc (woke, made, did, wrote, cut, built, put, kept, chose, hoặc paid)!",
   "prompt_en": "What did you do on a busy Saturday? Use: woke, made, did, wrote, cut, built, put, kept, chose, paid",
@@ -50,21 +50,21 @@ export default {
       ]
     },
     {
-      "template": "I kept ___ room tidy ___ cleaning together .",
+      "template": "I kept ___ room tidy ___ cleaning.",
       "answers": [
         "my",
         "by"
       ]
     },
     {
-      "template": "My mum/dad ___ I built ___ birdhouse together finally safely .",
+      "template": "My mum/dad ___ I built ___ birdhouse together.",
       "answers": [
         "and",
         "a"
       ]
     },
     {
-      "template": "I chose ___ muffin because ___ was hungry suddenly .",
+      "template": "I chose ___ muffin because ___ was hungry.",
       "answers": [
         "a",
         "I"

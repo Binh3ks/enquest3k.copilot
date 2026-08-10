@@ -2,7 +2,7 @@ export default {
   "title": "My Weekend Comic Strip",
   "min_words": 60,
   "min_sentences": 8,
-  "model_sentence": "On Saturday morning I was very excited and full of energy. I walked to the local park and played a long, difficult game of soccer with my best friends. We ran very fast, so I was quite tired, but I was also very happy because my team won the match. In the afternoon it rained heavily so I had to stay inside the quiet house. I helped my mother cook a big dinner for the family. We made fried chicken. On Sunday morning my whole family visited an old history museum downtown suddenly . There were many amazing historical things to see, like old clothes and ancient weapons. Finally, we watched a funny comedy movie at the cinema and we laughed a lot.",
+  "model_sentence": "On Saturday morning I was very excited and full of energy. I walked to the local park and played a long, difficult game of soccer with my best friends. We ran very fast, so I was quite tired, but I was also very happy because my team won the match. In the afternoon it rained heavily so I had to stay inside the quiet house. I helped my mother cook a big dinner for the family. We made fried chicken. On Sunday morning my whole family visited an old history museum downtown. There were many amazing historical things to see, like old clothes and ancient weapons. Finally, we watched a funny comedy movie at the cinema and we laughed a lot.",
   "instruction_en": "Write a weekend comic strip story with four clear panels — like Leo's adventure!",
   "instruction_vi": "Viết câu chuyện truyện tranh cuối tuần với bốn khung rõ ràng như cuộc phiêu lưu của Leo!",
   "prompt_en": "Use First of all, In Panel One, In Panel Two, In Panel Three, In Panel Four. Add lots of detail to each panel!",
@@ -58,7 +58,7 @@ export default {
       ]
     },
     {
-      "template": "On Sunday ___ my whole ___ visited an old history museum downtown suddenly .",
+      "template": "On Sunday ___ my whole ___ visited an old history museum downtown.",
       "answers": [
         "morning",
         "family"

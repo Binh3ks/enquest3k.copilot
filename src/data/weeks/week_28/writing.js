@@ -2,7 +2,7 @@ export default {
   "title": "Retell The Tortoise and the Hare",
   "min_words": 65,
   "min_sentences": 8,
-  "model_sentence": "The hare was a very proud and confident animal, and he always boasted to his friends. The tortoise, on the other hand was quiet, patient, and very steady carefully . They started a big race across the town to see who was actually faster. The proud hare rode a very fast motorbike, and he quickly got far ahead. Because he was lazy and overly confident, he lay down and took a long nap under a big, shady tree. The patient tortoise rode a slow old bicycle, but he never stopped pedaling his short legs. He rode carefully and steadily down the bumpy road without taking any breaks. The tortoise crossed the finish line first! He was the great winner.",
+  "model_sentence": "The hare was a very proud and confident animal, and he always boasted to his friends. The tortoise, on the other hand was quiet, patient, and very steady. They started a big race across the town to see who was actually faster. The proud hare rode a very fast motorbike, and he quickly got far ahead. Because he was lazy and overly confident, he lay down and took a long nap under a big, shady tree. The patient tortoise rode a slow old bicycle, but he never stopped pedaling his short legs. He rode carefully and steadily down the bumpy road without taking any breaks. The tortoise crossed the finish line first! He was the great winner.",
   "instruction_en": "Retell the fable in full using past tense and story phrases like once upon a time, meanwhile, and by the time!",
   "instruction_vi": "Kể lại truyện ngụ ngôn đầy đủ bằng thì quá khứ và cụm từ kể chuyện như once upon a time, meanwhile, by the time!",
   "prompt_en": "What did the Hare do? What did the Tortoise do? What is the moral?",
@@ -31,7 +31,7 @@ export default {
       ]
     },
     {
-      "template": "The tortoise, ___ the other ___ was quiet, patient, and very steady carefully .",
+      "template": "The tortoise, ___ the other ___ was quiet, patient, and very steady.",
       "answers": [
         "on",
         "hand"

@@ -3,7 +3,7 @@ export default {
   "min_words": 30,
   "instruction_en": "Write about what you did yesterday using past tense!",
   "instruction_vi": "Viết về những gì bạn đã làm hôm qua bằng thì quá khứ!",
-  "model_sentence": "Yesterday, I woke up at 6:30 a.m. First, I made my bed and cleaned my room. Then I wrote a letter to my grandmother. I helped Dad cut the grass in the garden. We built a birdhouse together. At the cafe, I chose a muffin and paid for it. By evening, I fell asleep early. Yesterday, I woke up at 6:30 a.m.",
+  "model_sentence": "Yesterday, I woke up at 6:30 a.m. First, I made my bed and cleaned my room. Then I wrote a letter to my grandmother. I helped Dad cut the grass in the garden. We built a birdhouse. At the cafe, I chose a muffin and paid for it. By evening, I fell asleep early. Yesterday, I woke up at 6:30 a.m.",
   "prompt_en": "What did you do in the morning? After school? In the evening?",
   "prompt_vi": "Buổi sáng bạn đã làm gì? Sau trường? Tối thì sao?",
   "topic_talk_prompt": "What did you do yesterday — morning, afternoon, and evening?",
@@ -34,7 +34,7 @@ export default {
       ]
     },
     {
-      "template": "We built a ___ together.",
+      "template": "We built a ___.",
       "answers": [
         "birdhouse"
       ]

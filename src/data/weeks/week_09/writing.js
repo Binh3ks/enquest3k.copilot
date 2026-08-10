@@ -128,42 +128,42 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "I walk ___ a busy ___ every day then .",
+      "template": "I walk ___ a busy ___ every day then.",
       "answers": [
         "on",
         "street"
       ]
     },
     {
-      "template": "There are ___ people and ___ everywhere carefully .",
+      "template": "There are ___ people and ___ everywhere.",
       "answers": [
         "many",
         "cars"
       ]
     },
     {
-      "template": "It is ___ very noisy ___ so slowly .",
+      "template": "It is ___ very noisy ___ so.",
       "answers": [
         "a",
         "place"
       ]
     },
     {
-      "template": "I see ___ very tall ___ near the bus stop next .",
+      "template": "I see ___ very tall ___ near the bus stop.",
       "answers": [
         "a",
         "building"
       ]
     },
     {
-      "template": "A yellow ___ stops near ___ and people get on finally .",
+      "template": "A yellow ___ stops near ___ and people get on.",
       "answers": [
         "bus",
         "me"
       ]
     },
     {
-      "template": "There is ___ of traffic ___ the main road slowly .",
+      "template": "There is ___ of traffic ___ the main road.",
       "answers": [
         "lots",
         "on"
@@ -171,5 +171,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "I walk on a busy street every day then . There are many people and cars everywhere carefully . It is a very noisy place so slowly . I see a very tall building near the bus stop next . A yellow bus stops near me and people get on finally . There is lots of traffic on the main road slowly ."
+  "model_sentence": "I walk on a busy street every day then. There are many people and cars everywhere. It is a very noisy place so. I see a very tall building near the bus stop. A yellow bus stops near me and people get on. There is lots of traffic on the main road."
 };

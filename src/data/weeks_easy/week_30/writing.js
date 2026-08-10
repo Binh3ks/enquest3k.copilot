@@ -3,7 +3,7 @@ export default {
   "audio_url": null,
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Last Sunday, my family went on a picnic at the park. We found a perfect grassy spot under a big tree. Mum brought delicious sandwiches and fresh fruit. We drank cold lemonade and played games together. Suddenly, dark grey clouds appeared in the sky. It started to rain, so we quickly ran to the shelter. Although it rained, we still had a wonderful time. We packed our things and returned home safely. My parents were happy with our fun weekend trip. We cannot wait for our next family picnic!",
+  "model_sentence": "Last Sunday, my family went on a picnic at the park. We found a perfect grassy spot under a big tree. Mum brought delicious sandwiches and fresh fruit. We drank cold lemonade and played games. Suddenly, dark grey clouds appeared in the sky. It started to rain, so we quickly ran to the shelter. Although it rained, we still had a wonderful time. We packed our things and returned home safely. My parents were happy with our fun weekend trip. We cannot wait for our next family picnic!",
   "instruction_en": "Write about a family picnic from start to finish in full, clear sentences!",
   "instruction_vi": "Viết về buổi dã ngoại gia đình từ đầu đến cuối bằng các câu rõ ràng, đầy đủ!",
   "prompt_en": "Where did you go? What food did you bring? What happened when it rained?",
@@ -26,7 +26,7 @@ export default {
       ]
     },
     {
-      "template": "We found a perfect grassy spot under a big ___ .",
+      "template": "We found a perfect grassy spot under a big ___.",
       "answers": [
         "tree"
       ]
@@ -38,7 +38,7 @@ export default {
       ]
     },
     {
-      "template": "We drank cold lemonade and played ___ together.",
+      "template": "We drank cold lemonade and played ___.",
       "answers": [
         "games"
       ]
@@ -50,7 +50,7 @@ export default {
       ]
     },
     {
-      "template": "It started to rain, so we quickly ran to the ___ .",
+      "template": "It started to rain, so we quickly ran to the ___.",
       "answers": [
         "shelter"
       ]
@@ -62,19 +62,19 @@ export default {
       ]
     },
     {
-      "template": "We packed our things and returned home ___ .",
+      "template": "We packed our things and returned home ___.",
       "answers": [
         "safely"
       ]
     },
     {
-      "template": "My parents were happy with our fun weekend ___ .",
+      "template": "My parents were happy with our fun weekend ___.",
       "answers": [
         "trip"
       ]
     },
     {
-      "template": "We cannot wait for our next family ___ !",
+      "template": "We cannot wait for our next family ___!",
       "answers": [
         "picnic"
       ]
@@ -176,7 +176,7 @@ export default {
           ]
         },
         {
-          "template": "We found a perfect grassy spot under a big ___ .",
+          "template": "We found a perfect grassy spot under a big ___.",
           "answers": [
             "tree"
           ]
@@ -200,7 +200,7 @@ export default {
           ]
         },
         {
-          "template": "It started to rain, so we quickly ran to the ___ .",
+          "template": "It started to rain, so we quickly ran to the ___.",
           "answers": [
             "shelter"
           ]
@@ -212,19 +212,19 @@ export default {
           ]
         },
         {
-          "template": "We packed our things and returned home ___ .",
+          "template": "We packed our things and returned home ___.",
           "answers": [
             "safely"
           ]
         },
         {
-          "template": "My parents were happy with our fun weekend ___ .",
+          "template": "My parents were happy with our fun weekend ___.",
           "answers": [
             "trip"
           ]
         },
         {
-          "template": "We cannot wait for our next family ___ !",
+          "template": "We cannot wait for our next family ___!",
           "answers": [
             "picnic"
           ]

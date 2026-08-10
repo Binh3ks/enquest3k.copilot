@@ -3,11 +3,11 @@ export default {
   "theme": "fable_and_moral",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton happily . The second pig worked a bit harder than his brother, and he made his house with thin plastic and recycled wood. The third pig who was very smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house slowly . When the bad hungry wolf finally came, he took a deep breath and blew down the paper house and the wooden house very easily! The two scared pigs ran as fast as they could to their smart brother's house. The angry wolf tried to blow down the third house, but no matter how hard he tried, he could not destroy the strong stone walls. The three pigs safely stayed inside the strong house, locked the heavy metal door , and sang a happy song every day . The tired wolf finally gave up and ran away forever, and all the students clapped loudly for our great story! The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton in the afternoon . The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton happily .",
+  "model_sentence": "The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton. The second pig worked a bit harder than his brother, and he made his house with thin plastic and recycled wood. The third pig who was very smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house. When the bad hungry wolf finally came, he took a deep breath and blew down the paper house and the wooden house very easily! The two scared pigs ran as fast as they could to their smart brother's house. The angry wolf tried to blow down the third house, but no matter how hard he tried, he could not destroy the strong stone walls. The three pigs safely stayed inside the strong house, locked the heavy metal door, and sang a happy song. The tired wolf finally gave up and ran away forever, and all the students clapped loudly for our great story! The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton in the afternoon. The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton.",
   "topic_talk_prompt": "Tell me about a time when you worked hard with your friends to finish a project!",
   "sentence_frames": [
     {
-      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton happily .",
+      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton.",
       "answers": [
         "pig",
         "and"
@@ -21,7 +21,7 @@ export default {
       ]
     },
     {
-      "template": "The third ___ who was ___ smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house slowly .",
+      "template": "The third ___ who was ___ smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house.",
       "answers": [
         "pig",
         "very"
@@ -49,7 +49,7 @@ export default {
       ]
     },
     {
-      "template": "The three ___ safely stayed ___ the strong house, locked the heavy metal door , and sang a happy song every day .",
+      "template": "The three ___ safely stayed ___ the strong house, locked the heavy metal door, and sang a happy song.",
       "answers": [
         "pigs",
         "inside"
@@ -63,14 +63,14 @@ export default {
       ]
     },
     {
-      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton in the afternoon .",
+      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton in the afternoon.",
       "answers": [
         "pig",
         "and"
       ]
     },
     {
-      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton happily .",
+      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton.",
       "answers": [
         "pig",
         "and"

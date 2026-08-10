@@ -9,56 +9,56 @@ export default {
   "topic_talk_prompt": "Tell me about a detective interview — what questions were asked and how were they answered?",
   "sentence_frames": [
     {
-      "template": "My name ___ Mia and ___ am a Time Detective happily .",
+      "template": "My name ___ Mia and ___ am a Time Detective.",
       "answers": [
         "is",
         "I"
       ]
     },
     {
-      "template": "I wear ___ big hat ___ carry a notebook to ask questions carefully .",
+      "template": "I wear ___ big hat ___ carry a notebook to ask questions.",
       "answers": [
         "a",
         "and"
       ]
     },
     {
-      "template": "Yesterday, Mum ___ a delicious ___ cake for my birthday! so slowly",
+      "template": "Yesterday, Mum ___ a delicious ___ cake for my birthday! so.",
       "answers": [
         "cooked",
         "chocolate"
       ]
     },
     {
-      "template": "But someone ___ the cake ___ night together .",
+      "template": "But someone ___ the cake ___ night.",
       "answers": [
         "ate",
         "last"
       ]
     },
     {
-      "template": "I asked ___ in the ___ safely .",
+      "template": "I asked ___ in the ___.",
       "answers": [
         "everyone",
         "house"
       ]
     },
     {
-      "template": "Dad said ___ cooked dinner ___ 6 o'clock and washed the dishes at 7 slowly .",
+      "template": "Dad said ___ cooked dinner ___ 6 o'clock and washed the dishes at 7.",
       "answers": [
         "he",
         "at"
       ]
     },
     {
-      "template": "Mum worked ___ the garden ___ morning last weekend happily .",
+      "template": "Mum worked ___ the garden ___ morning last weekend.",
       "answers": [
         "in",
         "one"
       ]
     },
     {
-      "template": "The mystery ___ solved! My ___ ate the cake! carefully",
+      "template": "The mystery ___ solved! My ___ ate the cake!.",
       "answers": [
         "was",
         "brother"
@@ -253,5 +253,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "My name is Mia and I am a Time Detective happily . I wear a big hat and carry a notebook to ask questions carefully . Yesterday, Mum cooked a delicious chocolate cake for my birthday! so slowly. But someone ate the cake last night together . I asked everyone in the house safely . Dad said he cooked dinner at 6 o'clock and washed the dishes at 7 slowly . Mum worked in the garden one morning last weekend happily . The mystery was solved! My brother ate the cake! carefully."
+  "model_sentence": "My name is Mia and I am a Time Detective. I wear a big hat and carry a notebook to ask questions. Yesterday, Mum cooked a delicious chocolate cake for my birthday! so. But someone ate the cake last night. I asked everyone in the house. Dad said he cooked dinner at 6 o'clock and washed the dishes at 7. Mum worked in the garden one morning last weekend. The mystery was solved! My brother ate the cake!."
 };
