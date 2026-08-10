@@ -78,3 +78,17 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
       1. Bắt buộc thể hiện **bối cảnh câu chuyện phong phú, giàu chi tiết trực quan** (ví dụ: Archimedes trong bồn tắm gỗ tràn nước ở Syracuse; đoàn lạc đà Marco Polo trên Con đường Tơ lụa; các vận động viên chạy trên con đường đất đỏ ở thung lũng Rift Valley - Kenya; Lễ đình chiến Olympic cổ đại với vòng nguyệt quế olive).
       2. **Tuyệt đối KHÔNG chứa chữ/ký tự**: Mọi văn bản tiêu đề đều được render tự động bằng UI component của hệ thống.
       3. **Full-Bleed Aspect Ratio**: Tỷ lệ mở rộng chiều dọc hiển thị trọn vẹn chi tiết trên thẻ header các trạm.
+12. **New Week Production Pipeline & Anti-Bug Quality Standard**:
+    - **Chống Lỗi Khái Niệm Trừu Tượng (Concrete Object Action Prompts - COAP)**:
+      - KHÔNG BAO GIỜ truyền động từ/khái niệm trừu tượng thô vào prompt vẽ hình (như `make a difference`, `act now`, `emissions`).
+      - BẮT BUỘC dịch khái niệm thành **đối tượng và hành động vật lý cụ thể**:
+        - `emissions` -> *"Ống khói nhà máy gạch và ống bô xe ô tô xả khói xám công nghiệp ra không khí"*.
+        - `act now` -> *"Chú bé tắt công tắc điện và bỏ chai nhựa vào thùng tái chế"*.
+        - `make a difference` -> *"Chú bé trồng cây non xanh bằng bình tưới nước"*.
+        - `nurse` -> *"Cô y tá trường học mang hộp y tế chữ thập đỏ"*.
+    - **Định Nghĩa Tiếng Anh Bắt Buộc (`definition_en`)**:
+      - Mặt sau thẻ từ vựng (`vocab.js` & `word_power.js`) BẮT BUỘC chứa `definition_en` bằng Tiếng Anh 100% chuẩn ESL (in đậm phía trên) và `definition_vi` bằng Tiếng Việt (in nghiêng phía dưới).
+      - KHÔNG ĐƯỢC chép đè Tiếng Việt vào `definition_en`.
+    - **Kiểm Duyệt Tự Động 2 Bước Trước Khi Commit (Mandatory Pre-Commit Gatekeeper)**:
+      1. Run `npm run audit:chunks` (`node scripts/audit_chunks.js`) -> Bảo đảm 0 lỗi chunking.
+      2. Run `npm run audit:week <weekNum>` (`node scripts/audit_new_week.mjs <weekNum>`) -> Bảo đảm 0 lỗi schema, 0 lỗi thiếu `definition_en`, 0 lỗi chữ Tiếng Việt trong `definition_en`.

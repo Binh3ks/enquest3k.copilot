@@ -19,7 +19,8 @@
     "dict:dry-run": "node tools/build_dictionary.mjs --dry-run",
     "dict:lint": "node tools/dict_lint.mjs",
     "content:lint": "node tools/content_lint.mjs",
-    "audit:chunks": "node scripts/audit_chunks.js"
+    "audit:chunks": "node scripts/audit_chunks.js",
+    "audit:week": "node scripts/audit_new_week.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
