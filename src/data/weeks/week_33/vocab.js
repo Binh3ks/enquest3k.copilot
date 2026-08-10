@@ -1,31 +1,233 @@
-// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
-// Vocabulary Station — Advanced Mode
-// 19 words (W16+ Standard: 11 core + 8 Cambridge body parts)
-
 export default {
-  title: "The Mistake — Week 33",
-  theme: "accidents_and_consequences",
+  week_id: 33,
   vocab: [
-    // 11 core words
-    { id: 1, word: "accident", pronunciation: "/ˈæksɪdənt/", definition_en: "tai nạn", definition_vi: "tai nạn", meaning_vi: "tai nạn", part_of_speech: "noun", example_en: "Jake had an accident in the corridor.", example_vi: "Jake bị một tai nạn trong hành lang.", collocation: "road accident / have an accident", image_url: "/images/week33/vocab_accident.jpg" },
-    { id: 2, word: "corridor", pronunciation: "/ˈkɒrɪdɔːr/", definition_en: "hành lang", definition_vi: "hành lang", meaning_vi: "hành lang", part_of_speech: "noun", example_en: "Students must walk in the corridor.", example_vi: "Học sinh phải đi bộ trong hành lang.", collocation: "school corridor / walk in the corridor", image_url: "/images/week33/vocab_corridor.jpg" },
-    { id: 3, word: "cold pack", pronunciation: "/kəʊld pæk/", definition_en: "túi chườm lạnh", definition_vi: "túi chườm lạnh", meaning_vi: "túi chườm lạnh", part_of_speech: "noun", example_en: "The nurse put a cold pack on Jake's knee.", example_vi: "Y tá đặt túi chườm lạnh lên đầu gối của Jake.", collocation: "cold pack / put a cold pack", image_url: "/images/week33/vocab_cold_pack.jpg" },
-    { id: 4, word: "lesson", pronunciation: "/ˈlesən/", definition_en: "bài học", definition_vi: "bài học", meaning_vi: "bài học", part_of_speech: "noun", example_en: "Jake learned an important lesson.", example_vi: "Jake đã học được một bài học quan trọng.", collocation: "learn a lesson / important lesson", image_url: "/images/week33/vocab_lesson.jpg" },
-    { id: 5, word: "carefully", pronunciation: "/ˈkeəfəli/", definition_en: "cẩn thận", definition_vi: "cẩn thận", meaning_vi: "cẩn thận", part_of_speech: "adverb", example_en: "Always walk carefully in the corridor.", example_vi: "Luôn đi cẩn thận trong hành lang.", collocation: "walk carefully / drive carefully", image_url: "/images/week33/vocab_carefully.jpg" },
-    { id: 6, word: "catch", pronunciation: "/kætʃ/", definition_en: "bắt, nắm bắt", definition_vi: "bắt, nắm bắt", meaning_vi: "bắt, nắm bắt", part_of_speech: "verb", example_en: "Jake tried to catch the falling cup.", example_vi: "Jake cố bắt chiếc cốc đang rơi.", collocation: "catch a ball / catch a cold", image_url: "/images/week33/vocab_catch.jpg" },
-    { id: 7, word: "terrible", pronunciation: "/ˈterəbəl/", definition_en: "khủng khiếp", definition_vi: "khủng khiếp", meaning_vi: "khủng khiếp", part_of_speech: "adjective", example_en: "Something terrible happened at school.", example_vi: "Một điều khủng khiếp đã xảy ra ở trường.", collocation: "terrible accident / feel terrible", image_url: "/images/week33/vocab_terrible.jpg" },
-    { id: 8, word: "understand", pronunciation: "/ˌʌndəˈstænd/", definition_en: "hiểu", definition_vi: "hiểu", meaning_vi: "hiểu", part_of_speech: "verb", example_en: "Jake understood that running was dangerous.", example_vi: "Jake hiểu rằng việc chạy là nguy hiểm.", collocation: "understand the lesson / clearly understand", image_url: "/images/week33/vocab_understand.jpg" },
-    { id: 9, word: "explain", pronunciation: "/ɪkˈspleɪn/", definition_en: "giải thích", definition_vi: "giải thích", meaning_vi: "giải thích", part_of_speech: "verb", example_en: "The teacher asked Jake to explain what happened.", example_vi: "Giáo viên yêu cầu Jake giải thích chuyện gì đã xảy ra.", collocation: "explain clearly / explain the situation", image_url: "/images/week33/vocab_explain.jpg" },
-    { id: 10, word: "fell down", pronunciation: "/fɛl daʊn/", definition_en: "ngã xuống", definition_vi: "ngã xuống", meaning_vi: "ngã xuống", part_of_speech: "verb phrase", example_en: "Jake fell down in the corridor.", example_vi: "Jake ngã xuống trong hành lang.", collocation: "fell down / slip and fell down", image_url: "/images/week33/vocab_felldown.jpg" },
-    { id: 11, word: "recover", pronunciation: "/rɪˈkʌvər/", definition_en: "hồi phục", definition_vi: "hồi phục", meaning_vi: "hồi phục", part_of_speech: "verb", example_en: "Jake recovered quickly at home.", example_vi: "Jake hồi phục nhanh ở nhà.", collocation: "recover quickly / recover fully", image_url: "/images/week33/vocab_recover.jpg" },
-    // 8 Cambridge body parts
-    { id: 12, word: "head", pronunciation: "/hed/", definition_en: "đầu", definition_vi: "đầu", meaning_vi: "đầu", part_of_speech: "noun", example_en: "Jake hit his head on the table.", example_vi: "Jake đập đầu vào bàn.", collocation: "hit your head / headache", image_url: "/images/week33/vocab_head.jpg" },
-    { id: 13, word: "arm", pronunciation: "/ɑːm/", definition_en: "cánh tay", definition_vi: "cánh tay", meaning_vi: "cánh tay", part_of_speech: "noun", example_en: "His arm hurt after the fall.", example_vi: "Cánh tay cậu bị đau sau khi ngã.", collocation: "broken arm / arm hurts", image_url: "/images/week33/vocab_arm.jpg" },
-    { id: 14, word: "leg", pronunciation: "/leg/", definition_en: "chân", definition_vi: "chân", meaning_vi: "chân", part_of_speech: "noun", example_en: "Jake could not walk on his leg.", example_vi: "Jake không thể đi trên chân.", collocation: "broken leg / leg hurts", image_url: "/images/week33/vocab_leg.jpg" },
-    { id: 15, word: "knee", pronunciation: "/niː/", definition_en: "đầu gối", definition_vi: "đầu gối", meaning_vi: "đầu gối", part_of_speech: "noun", example_en: "Jake hit his knee on the table.", example_vi: "Jake đập đầu gối vào bàn.", collocation: "hurt your knee / a sore knee", image_url: "/images/week33/vocab_knee.jpg" },
-    { id: 16, word: "hand", pronunciation: "/hænd/", definition_en: "bàn tay", definition_vi: "bàn tay", meaning_vi: "bàn tay", part_of_speech: "noun", example_en: "Jake's hand hit the floor.", example_vi: "Bàn tay của Jake đập xuống sàn.", collocation: "raise your hand / hurt your hand", image_url: "/images/week33/vocab_hand.jpg" },
-    { id: 17, word: "back", pronunciation: "/bæk/", definition_en: "lưng", definition_vi: "lưng", meaning_vi: "lưng", part_of_speech: "noun", example_en: "Jake felt pain in his back.", example_vi: "Jake cảm thấy đau ở lưng.", collocation: "back pain / back hurts", image_url: "/images/week33/vocab_back.jpg" },
-    { id: 18, word: "shoulder", pronunciation: "/ˈʃəʊldər/", definition_en: "vai", definition_vi: "vai", meaning_vi: "vai", part_of_speech: "noun", example_en: "The cold pack helped Jake's shoulder.", example_vi: "Túi chườm lạnh giúp ích cho vai của Jake.", collocation: "sore shoulder / shoulder pain", image_url: "/images/week33/vocab_shoulder.jpg" },
-    { id: 19, word: "tongue", pronunciation: "/tʌŋ/", definition_en: "lưỡi", definition_vi: "lưỡi", meaning_vi: "lưỡi", part_of_speech: "noun", example_en: "Jake bit his tongue when he fell.", example_vi: "Jake cắn vào lưỡi khi ngã.", collocation: "bit his tongue / bite your tongue", image_url: "/images/week33/vocab_tongue.jpg" }
-  ]
+    {
+        "id": 1,
+        "word": "accident",
+        "pronunciation": "/ˈæksɪdənt/",
+        "definition_en": "an unfortunate event that happens unexpectedly and unintentionally causing hurt or damage",
+        "definition_vi": "tai nạn, sự cố ngoài ý muốn",
+        "example": "Jake had a sudden accident in the hallway when he slipped on the floor.",
+        "example_vi": "Jake đã gặp một tai nạn bất ngờ ở hành lang khi cậu trượt chân trên sàn.",
+        "collocation": [
+            "have an accident",
+            "car accident",
+            "prevent accidents"
+        ],
+        "image_url": "/images/week33/vocab_accident.jpg",
+        "audio_word": "/audio/week33/vocab_accident.mp3",
+        "audio_definition": "/audio/week33/vocab_def_accident.mp3",
+        "audio_example": "/audio/week33/vocab_ex_accident.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_accident.mp3"
+    },
+    {
+        "id": 2,
+        "word": "corridor",
+        "pronunciation": "/ˈkɒrɪdɔːr/",
+        "definition_en": "a long passage in a building with doors leading into rooms",
+        "definition_vi": "hành lang",
+        "example": "Students must walk carefully and slowly in the school corridor.",
+        "example_vi": "Học sinh phải đi cẩn thận và chậm rãi trong hành lang trường học.",
+        "collocation": [
+            "school corridor",
+            "walk in the corridor",
+            "corridor floor"
+        ],
+        "image_url": "/images/week33/vocab_corridor.jpg",
+        "audio_word": "/audio/week33/vocab_corridor.mp3",
+        "audio_definition": "/audio/week33/vocab_def_corridor.mp3",
+        "audio_example": "/audio/week33/vocab_ex_corridor.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_corridor.mp3"
+    },
+    {
+        "id": 3,
+        "word": "cold pack",
+        "pronunciation": "/kəʊld pæk/",
+        "definition_en": "a flexible pouch filled with cold gel used to reduce swelling on injuries",
+        "definition_vi": "túi chườm lạnh",
+        "example": "The nurse placed a cold pack on Jake sore knee to stop the swelling.",
+        "example_vi": "Y tá đã đặt một túi chườm lạnh lên đầu gối đau của Jake để giảm sưng.",
+        "collocation": [
+            "apply a cold pack",
+            "ice cold pack",
+            "nurse cold pack"
+        ],
+        "image_url": "/images/week33/vocab_cold_pack.jpg",
+        "audio_word": "/audio/week33/vocab_cold_pack.mp3",
+        "audio_definition": "/audio/week33/vocab_def_cold_pack.mp3",
+        "audio_example": "/audio/week33/vocab_ex_cold_pack.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_cold_pack.mp3"
+    },
+    {
+        "id": 4,
+        "word": "carefully",
+        "pronunciation": "/ˈkeəfəli/",
+        "definition_en": "in a way that avoids danger, harm, or mistakes by paying close attention",
+        "definition_vi": "cẩn thận, cẩn trọng",
+        "example": "Jake promised his teacher he would always walk carefully near the stairs.",
+        "example_vi": "Jake hứa với giáo viên cậu sẽ luôn đi cẩn thận gần cầu thang.",
+        "collocation": [
+            "walk carefully",
+            "listen carefully",
+            "handle carefully"
+        ],
+        "image_url": "/images/week33/vocab_carefully.jpg",
+        "audio_word": "/audio/week33/vocab_carefully.mp3",
+        "audio_definition": "/audio/week33/vocab_def_carefully.mp3",
+        "audio_example": "/audio/week33/vocab_ex_carefully.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_carefully.mp3"
+    },
+    {
+        "id": 5,
+        "word": "catch",
+        "pronunciation": "/kætʃ/",
+        "definition_en": "to intercept and hold an object moving through the air",
+        "definition_vi": "bắt, đỡ lấy",
+        "example": "He tried to catch the falling glass cup before it hit the floor.",
+        "example_vi": "Cậu cố bắt chiếc cốc thủy tinh đang rơi trước khi nó chạm sàn.",
+        "collocation": [
+            "catch the ball",
+            "catch the cup",
+            "try to catch"
+        ],
+        "image_url": "/images/week33/vocab_catch.jpg",
+        "audio_word": "/audio/week33/vocab_catch.mp3",
+        "audio_definition": "/audio/week33/vocab_def_catch.mp3",
+        "audio_example": "/audio/week33/vocab_ex_catch.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_catch.mp3"
+    },
+    {
+        "id": 6,
+        "word": "terrible",
+        "pronunciation": "/ˈterəbəl/",
+        "definition_en": "extremely bad, unpleasant, or painful",
+        "definition_vi": "khủng khiếp, rất tệ",
+        "example": "Jake felt terrible about breaking the cup and hurting his knee.",
+        "example_vi": "Jake cảm thấy rất tệ về việc làm vỡ cốc và làm đau đầu gối.",
+        "collocation": [
+            "feel terrible",
+            "terrible mistake",
+            "terrible pain"
+        ],
+        "image_url": "/images/week33/vocab_terrible.jpg",
+        "audio_word": "/audio/week33/vocab_terrible.mp3",
+        "audio_definition": "/audio/week33/vocab_def_terrible.mp3",
+        "audio_example": "/audio/week33/vocab_ex_terrible.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_terrible.mp3"
+    },
+    {
+        "id": 7,
+        "word": "understand",
+        "pronunciation": "/ˌʌndəˈstænd/",
+        "definition_en": "to perceive the intended meaning or importance of something",
+        "definition_vi": "hiểu, thấu hiểu",
+        "example": "Jake understood why running in the corridor was dangerous for everyone.",
+        "example_vi": "Jake hiểu tại sao chạy trong hành lang lại nguy hiểm cho mọi người.",
+        "collocation": [
+            "understand the rule",
+            "clearly understand",
+            "easy to understand"
+        ],
+        "image_url": "/images/week33/vocab_understand.jpg",
+        "audio_word": "/audio/week33/vocab_understand.mp3",
+        "audio_definition": "/audio/week33/vocab_def_understand.mp3",
+        "audio_example": "/audio/week33/vocab_ex_understand.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_understand.mp3"
+    },
+    {
+        "id": 8,
+        "word": "explain",
+        "pronunciation": "/ɪkˈspleɪn/",
+        "definition_en": "to make something clear or easy to understand by describing it",
+        "definition_vi": "giải thích",
+        "example": "The nurse explained how to treat scraped knees carefully with ice.",
+        "example_vi": "Y tá đã giải thích cách điều trị đầu gối bị xước cẩn thận bằng đá.",
+        "collocation": [
+            "explain the rule",
+            "clearly explain",
+            "explain to someone"
+        ],
+        "image_url": "/images/week33/vocab_explain.jpg",
+        "audio_word": "/audio/week33/vocab_explain.mp3",
+        "audio_definition": "/audio/week33/vocab_def_explain.mp3",
+        "audio_example": "/audio/week33/vocab_ex_explain.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_explain.mp3"
+    },
+    {
+        "id": 9,
+        "word": "knee",
+        "pronunciation": "/niː/",
+        "definition_en": "the joint between the upper and lower legs in the human body",
+        "definition_vi": "đầu gối",
+        "example": "Jake scraped his left knee when he bumped into the table corner.",
+        "example_vi": "Jake trượt đầu gối trái khi va vào góc bàn.",
+        "collocation": [
+            "left knee",
+            "hurt knee",
+            "knee injury"
+        ],
+        "image_url": "/images/week33/vocab_knee.jpg",
+        "audio_word": "/audio/week33/vocab_knee.mp3",
+        "audio_definition": "/audio/week33/vocab_def_knee.mp3",
+        "audio_example": "/audio/week33/vocab_ex_knee.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_knee.mp3"
+    },
+    {
+        "id": 10,
+        "word": "shoulder",
+        "pronunciation": "/ˈʃəʊldər/",
+        "definition_en": "the upper joint of the human arm connecting to the neck",
+        "definition_vi": "vai, bờ vai",
+        "example": "He rested his hand on his shoulder after carrying his school backpack.",
+        "example_vi": "Cậu đặt tay lên vai sau khi mang chiếc ba lô đi học.",
+        "collocation": [
+            "left shoulder",
+            "on his shoulder",
+            "shoulder injury"
+        ],
+        "image_url": "/images/week33/vocab_shoulder.jpg",
+        "audio_word": "/audio/week33/vocab_shoulder.mp3",
+        "audio_definition": "/audio/week33/vocab_def_shoulder.mp3",
+        "audio_example": "/audio/week33/vocab_ex_shoulder.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_shoulder.mp3"
+    },
+    {
+        "id": 11,
+        "word": "fell down",
+        "pronunciation": "/fel daʊn/",
+        "definition_en": "dropped down to the floor accidentally by losing balance",
+        "definition_vi": "ngã xuống, té ngã",
+        "example": "Jake fell down on the slippery tiles but learned an important lesson.",
+        "example_vi": "Jake ngã xuống sàn gạch trơn nhưng đã học được một bài học quan trọng.",
+        "collocation": [
+            "fell down hard",
+            "fell down on floor",
+            "slip and fall down"
+        ],
+        "image_url": "/images/week33/vocab_felldown.jpg",
+        "audio_word": "/audio/week33/vocab_felldown.mp3",
+        "audio_definition": "/audio/week33/vocab_def_felldown.mp3",
+        "audio_example": "/audio/week33/vocab_ex_felldown.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_felldown.mp3"
+    },
+    {
+        "id": 12,
+        "word": "recover",
+        "pronunciation": "/rɪˈkʌvər/",
+        "definition_en": "to return to a normal state of health and strength after an injury",
+        "definition_vi": "hồi phục, bình phục",
+        "example": "With rest and ice, Jake recovered quickly from his minor leg scrape.",
+        "example_vi": "Với việc nghỉ ngơi và chườm đá, Jake đã nhanh chóng hồi phục khỏi vết xước nhẹ ở chân.",
+        "collocation": [
+            "recover quickly",
+            "fully recover",
+            "recover from injury"
+        ],
+        "image_url": "/images/week33/vocab_recover.jpg",
+        "audio_word": "/audio/week33/vocab_recover.mp3",
+        "audio_definition": "/audio/week33/vocab_def_recover.mp3",
+        "audio_example": "/audio/week33/vocab_ex_recover.mp3",
+        "audio_collocation": "/audio/week33/vocab_col_recover.mp3"
+    }
+]
 };

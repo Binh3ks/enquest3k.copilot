@@ -43,11 +43,12 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
   }, [savedCardData]);
 
   // collocation can be an array ["chunk1", "chunk2"] or string "chunk1 / chunk2"
-  const collocations = Array.isArray(word.collocation)
-    ? word.collocation
-    : (typeof word.collocation === 'string' && word.collocation.includes('/'))
-    ? word.collocation.split('/').map(s => s.trim())
-    : (word.collocation ? [word.collocation] : []);
+  const rawColls = word.collocation || word.collocations || [];
+  const collocations = Array.isArray(rawColls)
+    ? rawColls
+    : (typeof rawColls === 'string' && rawColls.includes('/'))
+    ? rawColls.split('/').map(s => s.trim()).filter(Boolean)
+    : (typeof rawColls === 'string' && rawColls ? [rawColls] : []);
 
   const isColloCorrect = feedback.collocation?.isCorrect;
   const isSentCorrect = feedback.sentence?.isCorrect;
@@ -126,7 +127,7 @@ const VocabCard = ({ word, themeColor, isVi, onComplete, savedCardData, onUpdate
     return res.message || "";
   };
 
-  const example = word.example || '';
+  const example = word.example || word.example_en || '';
 
   return (
     <div className={`flex flex-col gap-4 transition-all duration-500 ${isCompleted ? 'opacity-50 grayscale hover:grayscale-0 hover:opacity-100' : ''}`}>
