@@ -452,13 +452,13 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
       <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden relative group">
         {data.image_url && (
             <div className="w-full bg-slate-100 relative overflow-hidden">
-                <img src={getImageUrl(data.image_url)} className="w-full h-72 md:h-80 object-cover object-center transition-transform duration-700 group-hover:scale-105" alt="Reading Cover" onError={(e) => { e.target.style.display='none'; }} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
-                    <div className="flex items-center gap-2 mb-1">
+                <img src={getImageUrl(data.image_url)} className="w-full max-h-[480px] md:max-h-[560px] aspect-[16/10] md:aspect-[16/9] object-cover object-center transition-transform duration-700 group-hover:scale-105" alt="Reading Cover" onError={(e) => { e.target.style.display='none'; }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6 md:p-8">
+                    <div className="flex items-center gap-2 mb-2">
                         <div className={`p-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white shadow-sm`}><BookOpen className="w-4 h-4" /></div>
-                        <p className="text-[10px] text-white/80 font-bold uppercase tracking-widest">{isVi ? "Đọc hiểu & Dịch thuật" : "Reading & Translation"}</p>
+                        <p className="text-xs text-white/90 font-bold uppercase tracking-widest">{isVi ? "Đọc hiểu & Dịch thuật" : "Reading & Translation"}</p>
                     </div>
-                    <h2 className="text-2xl font-black text-white leading-tight drop-shadow-md">{data.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-black text-white leading-tight drop-shadow-lg">{data.title || data.title_en}</h2>
                 </div>
             </div>
         )}
