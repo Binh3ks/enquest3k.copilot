@@ -1,7 +1,7 @@
 export default {
   "title": "The Tortoise and the Hare",
   "min_words": 30,
-  "model_sentence": "Once the Hare and the Tortoise had a race. The Hare was very fast. He was sure he would win. Then he stopped under a big tree. He fell asleep. The Tortoise walked slowly but steadily. The Tortoise won the race.",
+  "model_sentence": "Once the Hare and the Tortoise had a race. The Hare ran very fast. Then he stopped under a big tree and fell asleep. The Tortoise walked slowly but steadily and never gave up. The Tortoise won the race. Slow and steady wins the race. Once the Hare and the Tortoise had a race. Once the Hare and the Tortoise had a race.",
   "instruction_en": "Retell the story of the tortoise and the hare in your own words!",
   "instruction_vi": "Kể lại câu chuyện Rùa và Thỏ bằng lời của bạn!",
   "prompt_en": "Who were the characters? What happened? Who won and why?",

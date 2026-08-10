@@ -113,47 +113,48 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Welcome to my ___! My name is Emma ___ .",
+      "template": "Welcome to ___ presentation! My ___ is Emma then .",
       "answers": [
-        "presentation",
-        "then"
+        "my",
+        "name"
       ]
     },
     {
-      "template": "I am 8 years old and I want to ___ my world ___ .",
+      "template": "I am ___ years old ___ I want to share my world also .",
       "answers": [
-        "share",
-        "also"
+        "8",
+        "and"
       ]
     },
     {
-      "template": "This is my loving ___. I have 4 people in it ___ .",
+      "template": "This is ___ loving family. ___ have 4 people in it so .",
       "answers": [
-        "family",
-        "so"
+        "my",
+        "I"
       ]
     },
     {
-      "template": "My mom, my dad, my sister, and ___ ___ .",
+      "template": "My mom, ___ dad, my ___ and me together .",
       "answers": [
-        "me",
-        "next"
+        "my",
+        "sister"
       ]
     },
     {
-      "template": "I can sing very ___ ___ .",
+      "template": "I ___ sing very ___ safely .",
       "answers": [
-        "well",
-        "finally"
+        "can",
+        "well"
       ]
     },
     {
-      "template": "I can also ___ when I hear music ___ .",
+      "template": "I can ___ dance when ___ hear music slowly .",
       "answers": [
-        "dance",
-        "slowly"
+        "also",
+        "I"
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "Welcome to my presentation! My name is Emma then . I am 8 years old and I want to share my world also . This is my loving family. I have 4 people in it so . My mom, my dad, my sister and me together . I can sing very well safely . I can also dance when I hear music slowly ."
 };

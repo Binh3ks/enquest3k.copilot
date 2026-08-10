@@ -1,7 +1,7 @@
 export default {
   "title": "My Classroom",
   "min_words": 30,
-  "model_sentence": "Today I am at school. I look around my classroom. There are desks in neat rows in my room. There are chairs too. I sit on a chair at a desk. I open my bag and take out my pencil. In my pencil case there are bright markers. The teacher writes on the board. There are words on the board! On the wall there are shelves. There are books on the shelves. We do art today. There are crayons and papers on the desks. I love my classroom!",
+  "model_sentence": "Today I am at school. I look around my classroom. There are desks in neat rows. I sit on a chair at a desk. I open my bag and take out my pencil. The teacher writes on the board and there are books on the shelves.",
   "instruction_en": "Write about your classroom and what you see!",
   "instruction_vi": "Viết về lớp học của bạn và những gì bạn nhìn thấy!",
   "prompt_en": "What is in your classroom? How many things are there? What do you do?",

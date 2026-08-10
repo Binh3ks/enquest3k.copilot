@@ -25,59 +25,59 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "In London, it is raining ___ ___ .",
+      "template": "In London, ___ is raining ___ happily .",
       "answers": [
-        "heavily",
-        "then"
+        "it",
+        "heavily"
       ]
     },
     {
-      "template": "The boy is wearing a thick yellow ___ and big rubber boots ___ .",
+      "template": "The boy ___ wearing a ___ yellow raincoat and big rubber boots also .",
       "answers": [
-        "raincoat",
-        "also"
+        "is",
+        "thick"
       ]
     },
     {
-      "template": "He has a large blue umbrella so he can walk ___ in the wet streets ___ .",
+      "template": "He has ___ large blue ___ so he can walk safely in the wet streets so .",
       "answers": [
-        "safely",
-        "so"
+        "a",
+        "umbrella"
       ]
     },
     {
-      "template": "In New York, it is ___. The sky is full of snowflakes ___ .",
+      "template": "In New ___ it is ___ hard. The sky is full of snowflakes next .",
       "answers": [
-        "snowing hard",
-        "next"
+        "York",
+        "snowing"
       ]
     },
     {
-      "template": "The little girl is wearing a warm winter ___, a thick red coat, and a long wool scarf ___ .",
+      "template": "The little ___ is wearing ___ warm winter hat, a thick red coat, and a long wool scarf finally .",
       "answers": [
-        "hat",
-        "finally"
+        "girl",
+        "a"
       ]
     },
     {
-      "template": "She is having fun because she is making a big ___ in her front yard ___ .",
+      "template": "She is ___ fun because ___ is making a big snowman in her front yard slowly .",
       "answers": [
-        "snowman",
-        "slowly"
+        "having",
+        "she"
       ]
     },
     {
-      "template": "Down in Sydney, it is a very sunny and ___ day ___ .",
+      "template": "Down in ___ it is ___ very sunny and hot day happily every day .",
       "answers": [
-        "hot",
-        "happily"
+        "Sydney",
+        "a"
       ]
     },
     {
-      "template": "The boy is wearing a light white T-shirt and cool ___ ___ .",
+      "template": "The boy ___ wearing a ___ white T-shirt and cool sunglasses at school .",
       "answers": [
-        "sunglasses",
-        "carefully"
+        "is",
+        "light"
       ]
     }
   ],
@@ -266,5 +266,6 @@ export default {
         }
       ]
     }
-  }
+  },
+  "model_sentence": "In London, it is raining heavily happily . The boy is wearing a thick yellow raincoat and big rubber boots also . He has a large blue umbrella so he can walk safely in the wet streets so . In New York it is snowing hard. The sky is full of snowflakes next . The little girl is wearing a warm winter hat, a thick red coat, and a long wool scarf finally . She is having fun because she is making a big snowman in her front yard slowly . Down in Sydney it is a very sunny and hot day happily every day . The boy is wearing a light white T-shirt and cool sunglasses at school ."
 };

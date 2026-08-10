@@ -2,7 +2,7 @@ export default {
   "title": "How a Seed Grows into a Plant",
   "min_words": 60,
   "min_sentences": 8,
-  "model_sentence": "The life cycle of a plant is one of nature's most fascinating processes and I am going to explain it step by step so you can understand exactly how a tiny seed becomes a beautiful flowering plant. First, a seed is carefully planted in warm and moist soil, where it is protected from cold temperatures and extreme weather until it is ready to germinate. The seed needs a combination of warmth, water, and oxygen to trigger the germination process, and once these conditions are right, the seed coat breaks open and a tiny white root pushes down into the soil. Next, a small green shoot pushes upward through the surface of the soil toward the sunlight, because all plants are drawn to light as their source of energy. Then, the shoot grows taller and produces its first pair of small green leaves, which begin to absorb sunlight through a process called photosynthesis. Finally, the plant matures, produces a bud, and eventually blooms into a beautiful flower that attracts bees and butterflies to spread its pollen.",
+  "model_sentence": "First, the farmer digs a small hole and puts a tiny little seed deep in the dark ground. Next, the plant slowly grows a strong root under the soil so it can find water and stay firmly. Then, a thin green stem grows up toward the warm sunlight. The stem gets taller and stronger every single day together . After that, many broad green leaves start to appear on the side of the stem. They help the plant catch the beautiful sunlight suddenly . Finally, a beautiful bright yellow flower opens up fully in the warm summer sun. I like planting small seeds in my own garden because I love watching the beautiful plants change and grow over time.",
   "instruction_en": "Write a detailed scientific explanation of how a seed grows using sequence words!",
   "instruction_vi": "Viết giải thích khoa học chi tiết về cách hạt giống mọc dùng từ trình tự!",
   "prompt_en": "What are all the stages? What does the seed need at each stage? Why?",
@@ -24,59 +24,59 @@ export default {
   "topic_talk_prompt": "Explain the full life cycle of a plant from seed to flower in scientific detail!",
   "sentence_frames": [
     {
-      "template": "First, the farmer digs a small ___ and puts a tiny little seed deep in the dark ___.",
+      "template": "First, the ___ digs a ___ hole and puts a tiny little seed deep in the dark ground.",
       "answers": [
-        "hole",
-        "ground"
+        "farmer",
+        "small"
       ]
     },
     {
-      "template": "Next, the plant slowly grows a strong ___ under the soil so it can find water and stay ___.",
+      "template": "Next, the ___ slowly grows ___ strong root under the soil so it can find water and stay firmly.",
       "answers": [
-        "root",
-        "firmly"
+        "plant",
+        "a"
       ]
     },
     {
-      "template": "Then, a thin green ___ grows up toward the warm ___.",
+      "template": "Then, a ___ green stem ___ up toward the warm sunlight.",
       "answers": [
-        "stem",
-        "sunlight"
+        "thin",
+        "grows"
       ]
     },
     {
-      "template": "The stem gets taller and stronger every single ___ ___ .",
+      "template": "The stem ___ taller and ___ every single day together .",
       "answers": [
-        "day",
-        "next"
+        "gets",
+        "stronger"
       ]
     },
     {
-      "template": "After that, many broad green ___ start to appear on the side of the ___.",
+      "template": "After that, ___ broad green ___ start to appear on the side of the stem.",
       "answers": [
-        "leaves",
-        "stem"
+        "many",
+        "leaves"
       ]
     },
     {
-      "template": "They help the plant catch the beautiful ___ ___ .",
+      "template": "They help ___ plant catch ___ beautiful sunlight suddenly .",
       "answers": [
-        "sunlight",
-        "slowly"
+        "the",
+        "the"
       ]
     },
     {
-      "template": "Finally, a beautiful, bright ___ flower opens up fully in the warm summer ___.",
+      "template": "Finally, a ___ bright yellow ___ opens up fully in the warm summer sun.",
       "answers": [
-        "yellow",
-        "sun"
+        "beautiful",
+        "flower"
       ]
     },
     {
-      "template": "I like planting small seeds in my own garden because I love watching the beautiful plants ___ and grow over ___.",
+      "template": "I like ___ small seeds ___ my own garden because I love watching the beautiful plants change and grow over time.",
       "answers": [
-        "change",
-        "time"
+        "planting",
+        "in"
       ]
     }
   ],

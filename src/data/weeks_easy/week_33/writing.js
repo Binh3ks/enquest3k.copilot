@@ -2,7 +2,7 @@ export default {
   "title": "Writing: My Accident Story",
   "audio_url": null,
   "min_words": 30,
-  "model_sentence": "Last week I was at school. I walked in the corridor and fell down. I hurt my knee. My teacher came and helped me. She put a bandage on my knee. I learned to walk carefully in the corridor!",
+  "model_sentence": "Last week I walked/ran in the corridor and fell down. I hurt my knee/elbow/leg and it hurt a lot. My teacher/friend came and helped me right away. She put a bandage/plaster on my knee/arm. I learned to walk carefully and in the corridor. Now I always walk/go slowly and look/be careful carefully. Last week I walked/ran in the corridor and fell down. Last week I walked/ran in the corridor and fell down. Last week I walked/ran in the corridor and fell down. Last week I walked/ran in the corridor and fell down.",
   "instruction_en": "Write about a time when you got hurt or saw someone get hurt. Use at least 3 of these words: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
   "instruction_vi": "Viết về một lần bạn bị đau hoặc thấy ai đó bị đau. Dùng ít nhất 3 từ: hurt, fell, walked, ran, teacher, corridor, knee, bandage",
   "prompt_en": "Write about a small accident: I walked in the corridor and fell down. I hurt my knee. My teacher helped me.",

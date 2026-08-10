@@ -4,65 +4,65 @@ export default {
   "min_sentences": 8,
   "instruction_en": "Write about your yesterday in full detail using past tense — morning to night!",
   "instruction_vi": "Viết về hôm qua chi tiết bằng thì quá khứ — từ sáng đến tối!",
-  "model_sentence": "Yesterday was a busy and beautiful day. I woke up early, brushed my teeth, and packed my bag. I walked to school with my friend Lily, and we talked all the way about our science homework. At school, I listened carefully to the teacher. At break time, I played soccer with my classmates. We shouted with excitement when our team scored a goal. After school, I helped my mother prepare dinner. Then I cleaned my room and organised my books. I washed my hands before dinner and watched my favourite TV program for thirty minutes. In the evening, I looked at the stars through my bedroom window and counted ten of them. I was very tired, so I started to fall asleep at nine o'clock. What a busy and beautiful day!",
+  "model_sentence": "Yesterday, I woke up at 630 a.m then . First, I made my bed and cleaned my room because I wanted everything tidy also . Then I wrote a letter to my grandmother because I missed her very much so . After that, I helped Dad cut the grass in the garden next . We built a beautiful birdhouse together using old wood and nails finally . At the cafe I chose a chocolate muffin because I was so hungry suddenly . I paid for the muffin with my own money because I am growing up! happily By evening, I put all my toys away and fell asleep early carefully at school .",
   "prompt_en": "What did you do morning, afternoon, and evening? How did you feel at the end?",
   "prompt_vi": "Bạn đã làm gì sáng, chiều, tối? Cuối ngày bạn cảm thấy thế nào?",
   "topic_talk_prompt": "Tell me everything you did yesterday from morning to night!",
   "sentence_frames": [
     {
-      "template": "Yesterday, I woke ___ at 6:30 a.m ___ .",
+      "template": "Yesterday, I ___ up at ___ a.m then .",
       "answers": [
-        "up",
-        "then"
+        "woke",
+        "630"
       ]
     },
     {
-      "template": "First, I made my bed and cleaned my ___ because I wanted everything tidy ___ .",
+      "template": "First, I ___ my bed ___ cleaned my room because I wanted everything tidy also .",
       "answers": [
-        "room",
-        "also"
+        "made",
+        "and"
       ]
     },
     {
-      "template": "Then I wrote a letter to my ___ because I missed her very much ___ .",
+      "template": "Then I ___ a letter ___ my grandmother because I missed her very much so .",
       "answers": [
-        "grandmother",
-        "so"
+        "wrote",
+        "to"
       ]
     },
     {
-      "template": "After that, I helped Dad ___ the grass in the garden ___ .",
+      "template": "After that, ___ helped Dad ___ the grass in the garden next .",
       "answers": [
-        "cut",
-        "next"
+        "I",
+        "cut"
       ]
     },
     {
-      "template": "We built a beautiful ___ together using old wood and nails ___ .",
+      "template": "We built ___ beautiful birdhouse ___ using old wood and nails finally .",
       "answers": [
-        "birdhouse",
-        "finally"
+        "a",
+        "together"
       ]
     },
     {
-      "template": "At the cafe, I chose a chocolate muffin because I was so ___ ___ .",
+      "template": "At the ___ I chose ___ chocolate muffin because I was so hungry suddenly .",
       "answers": [
-        "hungry",
-        "slowly"
+        "cafe",
+        "a"
       ]
     },
     {
-      "template": "I paid for the muffin with my own ___ because I am growing up! ___",
+      "template": "I paid ___ the muffin ___ my own money because I am growing up! happily",
       "answers": [
-        "money",
-        "happily"
+        "for",
+        "with"
       ]
     },
     {
-      "template": "By evening, I put all my toys away and fell ___ early ___ .",
+      "template": "By evening, ___ put all ___ toys away and fell asleep early carefully at school .",
       "answers": [
-        "asleep",
-        "carefully"
+        "I",
+        "my"
       ]
     }
   ],

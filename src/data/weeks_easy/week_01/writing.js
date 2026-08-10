@@ -1,7 +1,7 @@
 export default {
   "title": "Hello, World!",
   "min_words": 30,
-  "model_sentence": "My name is Alex. I am eight years old. I am a student. I am at school today. I sit next to my friend Lily. I have a blue pen and a story book in my bag. I can see a colorful picture on the wall. My kind teacher is kind. I like my classroom. Every day is a happy day to learn.",
+  "model_sentence": "My name is Tim. I live in a house. My house has many rooms. I sleep in my bedroom and have a soft bed. I eat in the kitchen and sit at the table. I wash my hands in the bathroom.",
   "instruction_en": "Write about yourself and your classroom!",
   "instruction_vi": "Viết về bản thân và lớp học của bạn!",
   "prompt_en": "What is your name? How old are you? What do you have? Who is next to you?",

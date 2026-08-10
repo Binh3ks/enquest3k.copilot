@@ -314,5 +314,6 @@ export default {
       ]
     }
   },
-  "min_sentences": 8
+  "min_sentences": 8,
+  "model_sentence": "Today is our school sports day! Students are running on the track. The schoolyard is full of energy! A boy is kicking the ball toward the goal. A girl is jumping very high in the long jump. The crowd is cheering loudly on the bleachers. Parents are waving flags and smiling. Everyone is having fun at the sports day! Today is our school sports day! Students are running on the track."
 };

@@ -2,7 +2,7 @@ export default {
   "title": "My Art Class Story",
   "min_words": 55,
   "min_sentences": 8,
-  "model_sentence": "Yesterday, Mia arrived at art class and picked up her brush. She dipped her brush into red pigment and painted a picture of red flowers. Mia colored carefully the flowers in her picture using blue and yellow. Then she folded carefully a sheet of paper into a butterfly shape. Both wings were the same — perfect symmetry! She used the scissors to cut shapes carefully from green paper. Mia glued the leaves around her picture to create a beautiful border. She pressed carefully each piece to check the texture of the paper. Finally, Mia held up proudly the picture she had worked so hard to create. The teacher clapped loudly and said the picture had wonderful texture, bright pigment, and beautiful symmetry.",
+  "model_sentence": "Yesterday I arrived at art class and picked up my brush happily . I dipped my brush into bright red pigment and painted a picture of red flowers. Then I folded a sheet of paper into a butterfly shape and studied both wings carefully. I used the scissors to cut shapes well from green paper. I glued the leaves around my picture to create a beautiful border. I pressed carefully each piece to check the texture of the paper suddenly . Finally, I held up proudly the picture I had worked so hard to create every day . The teacher clapped loudly and said my picture had wonderful symmetry and beautiful well at school .",
   "instruction_en": "Write a step-by-step art class story using first, next, then, and finally!",
   "instruction_vi": "Viết câu chuyện mỹ thuật theo từng bước dùng first, next, then, finally!",
   "prompt_en": "What did you paint? What steps did you follow? How did you feel at the end?",
@@ -20,57 +20,59 @@ export default {
   "topic_talk_prompt": "Describe your art class step by step — what did you make and how did it turn out?",
   "sentence_frames": [
     {
-      "template": "Yesterday I arrived at art class and ___ my ___.",
+      "template": "Yesterday I ___ at art ___ and picked up my brush happily .",
       "answers": [
-        "picked up",
-        "brush"
+        "arrived",
+        "class"
       ]
     },
     {
-      "template": "I ___ my brush into ___ pigment and painted a picture of red flowers.",
+      "template": "I dipped ___ brush into ___ red pigment and painted a picture of red flowers.",
       "answers": [
-        "dipped",
-        "bright red"
+        "my",
+        "bright"
       ]
     },
     {
-      "template": "Then I ___ a sheet of paper into a butterfly shape and ___ both wings carefully.",
+      "template": "Then I ___ a sheet ___ paper into a butterfly shape and studied both wings carefully.",
       "answers": [
         "folded",
-        "studied"
+        "of"
       ]
     },
     {
-      "template": "I ___ the scissors to ___ well from green paper.",
+      "template": "I used ___ scissors to ___ shapes well from green paper.",
       "answers": [
-        "used",
-        "cut shapes"
+        "the",
+        "cut"
       ]
     },
     {
-      "template": "I ___ the leaves around my picture to create a beautiful ___.",
+      "template": "I glued ___ leaves around ___ picture to create a beautiful border.",
       "answers": [
-        "glued",
-        "border"
+        "the",
+        "my"
       ]
     },
     {
-      "template": "I ___ ___ each piece to check the texture of the paper.",
+      "template": "I pressed ___ each piece ___ check the texture of the paper suddenly .",
       "answers": [
-        "pressed carefully"
+        "carefully",
+        "to"
       ]
     },
     {
-      "template": "Finally, I ___ ___ the picture I had worked so hard to create.",
+      "template": "Finally, I ___ up proudly ___ picture I had worked so hard to create every day .",
       "answers": [
-        "held up proudly"
+        "held",
+        "the"
       ]
     },
     {
-      "template": "The teacher ___ ___ and said my picture had wonderful symmetry and beautiful well.",
+      "template": "The teacher ___ loudly and ___ my picture had wonderful symmetry and beautiful well at school .",
       "answers": [
-        "clapped loudly",
-        "texture"
+        "clapped",
+        "said"
       ]
     }
   ],

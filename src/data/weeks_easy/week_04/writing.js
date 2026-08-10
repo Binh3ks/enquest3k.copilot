@@ -1,7 +1,7 @@
 export default {
   "title": "My Happy Jar",
   "min_words": 30,
-  "model_sentence": "My name is Mia. I play with my toys every afternoon. I draw pictures of animals and flowers. I read books before bed. When I play, I smile. When I draw, I laugh with joy. When I read, I feel very happy. I have many happy things. I love each moment. They make me feel good every day. Every afternoon is a happy time for me!",
+  "model_sentence": "My name is Mia. I play with my toys every afternoon. I draw pictures of animals and flowers. I read books before bed. When I play, I smile. When I draw, I laugh. I feel happy when I read.",
   "instruction_en": "Write about things you like doing and how they make you feel!",
   "instruction_vi": "Viết về những việc bạn thích làm và cảm giác của bạn!",
   "prompt_en": "What do you like doing? How do you feel when you do it?",

@@ -25,59 +25,59 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "I am broadcasting ___ from the school courtyard ___ .",
+      "template": "I am ___ live from ___ school courtyard then .",
       "answers": [
-        "live",
-        "then"
+        "broadcasting",
+        "the"
       ]
     },
     {
-      "template": "The annual Spring Festival is ___. Everyone is excited! ___",
+      "template": "The annual ___ Festival is ___ Everyone is excited! also",
       "answers": [
-        "happening",
-        "also"
+        "Spring",
+        "happening"
       ]
     },
     {
-      "template": "At the Art Club, students are ___ a giant mural on the wall ___ .",
+      "template": "At the ___ Club, students ___ painting a giant mural on the wall so .",
       "answers": [
-        "painting",
-        "so"
+        "Art",
+        "are"
       ]
     },
     {
-      "template": "They are using bright yellow and blue ___ to create an ocean scene ___ .",
+      "template": "They are ___ bright yellow ___ blue paints to create an ocean scene next .",
       "answers": [
-        "paints",
-        "next"
+        "using",
+        "and"
       ]
     },
     {
-      "template": "The Science Club is doing a fascinating ___ experiment ___ .",
+      "template": "The Science ___ is doing ___ fascinating chemistry experiment finally safely .",
       "answers": [
-        "chemistry",
-        "finally"
+        "Club",
+        "a"
       ]
     },
     {
-      "template": "Sarah is ___ two mysterious liquids together ___ .",
+      "template": "Sarah is ___ two mysterious ___ together slowly .",
       "answers": [
         "mixing",
-        "slowly"
+        "liquids"
       ]
     },
     {
-      "template": "The liquid is changing ___ from clear to dark purple ___ .",
+      "template": "The liquid ___ changing color ___ clear to dark purple happily .",
       "answers": [
-        "color",
-        "happily"
+        "is",
+        "from"
       ]
     },
     {
-      "template": "The Drama Club is ___ for their upcoming school play ___ .",
+      "template": "The Drama ___ is practicing ___ their upcoming school play carefully .",
       "answers": [
-        "practicing",
-        "carefully"
+        "Club",
+        "for"
       ]
     }
   ],
@@ -266,5 +266,6 @@ export default {
         }
       ]
     }
-  }
+  },
+  "model_sentence": "I am broadcasting live from the school courtyard then . The annual Spring Festival is happening Everyone is excited! also At the Art Club, students are painting a giant mural on the wall so . They are using bright yellow and blue paints to create an ocean scene next . The Science Club is doing a fascinating chemistry experiment finally safely . Sarah is mixing two mysterious liquids together slowly . The liquid is changing color from clear to dark purple happily . The Drama Club is practicing for their upcoming school play carefully ."
 };

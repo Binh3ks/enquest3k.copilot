@@ -2,7 +2,7 @@ export default {
   "title": "Writing: My Very Busy Saturday",
   "audio_url": null,
   "min_words": 40,
-  "model_sentence": "Last Saturday, I woke up early and made my bed. Then I wrote a letter to my grandmother. I helped Dad cut the grass and we built a birdhouse. At the café, I chose a muffin and paid for it myself. I put all my things away in the evening. I fell asleep early because I was so tired!",
+  "model_sentence": "Last Saturday, I woke up early and made my bed. First, I kept my room tidy by cleaning. Then I wrote a letter to my grandmother. I helped Dad cut the grass. We built a birdhouse together. I chose a muffin at the café. I paid for it with my own money. At night, I put my things away and fell asleep early. Last Saturday, I woke up early and made my bed. Last Saturday, I woke up early and made my bed.",
   "instruction_en": "Write about your own busy Saturday using at least 4 task verbs (woke, made, did, wrote, cut, built, put, chose, or paid)!",
   "instruction_vi": "Viết về ngày thứ Bảy bận rộn của bạn, sử dụng ít nhất 4 động từ công việc (woke, made, did, wrote, cut, built, put, chose, hoặc paid)!",
   "prompt_en": "What did you do on a busy Saturday? Use: woke, made, did, wrote, cut, built, put, chose, paid",

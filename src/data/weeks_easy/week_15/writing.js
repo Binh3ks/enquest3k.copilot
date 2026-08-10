@@ -134,5 +134,6 @@ export default {
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "Today we are visiting the park. Many people are enjoying their day. A boy is running after his dog. An old man is sitting on a bench. A family is having a picnic on the grass. The park is my favorite place!"
 };

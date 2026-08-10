@@ -3,7 +3,7 @@ export default {
   "theme": "environment",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Our planet Earth is remarkably beautiful, but it faces serious environmental dangers today. Polar ice caps are melting rapidly in high temperatures, and global sea levels are rising across oceans. We must act now to protect our home planet. Communities around the world are planting new trees and recycling waste more effectively. Every day, families reduce single-use plastic and conserve energy at home. Small, mindful actions combined together can create a powerful difference for future generations!",
+  "model_sentence": "Our home planet Earth faces serious environmental dangers today then happily . Polar ice caps are melting rapidly in high temperatures also . Global sea levels are rising across oceans so . We must act now to protect our home planet next . Communities around the world are planting new trees finally . Families reduce single-use plastic and conserve energy slowly . Recycling waste more effectively helps clean our rivers happily . Small mindful actions create a powerful difference for Earth carefully . Our home planet Earth faces serious environmental dangers today then in the afternoon . Our home planet Earth faces serious environmental dangers today then happily .",
   "topic_talk_prompt": "Tell me about what we can do to protect the environment and combat climate change!",
   "instruction_en": "Write about protecting our planet using environmental action words!",
   "instruction_vi": "Viết về bảo vệ hành tinh bằng các từ chỉ hành động môi trường!",
@@ -23,73 +23,73 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Our home planet Earth faces serious ___ today ___ .",
+      "template": "Our home ___ Earth faces ___ environmental dangers today then happily .",
       "answers": [
-        "environmental dangers",
-        "then"
+        "planet",
+        "serious"
       ]
     },
     {
-      "template": "Polar ice caps are ___ rapidly in high temperatures ___ .",
+      "template": "Polar ice ___ are melting ___ in high temperatures also .",
       "answers": [
-        "melting",
-        "also"
+        "caps",
+        "rapidly"
       ]
     },
     {
-      "template": "Global sea levels are ___ across oceans ___ .",
+      "template": "Global sea ___ are rising ___ oceans so .",
       "answers": [
-        "rising",
-        "so"
+        "levels",
+        "across"
       ]
     },
     {
-      "template": "We must act now to ___ our home planet ___ .",
+      "template": "We must ___ now to ___ our home planet next .",
       "answers": [
-        "protect",
-        "next"
+        "act",
+        "protect"
       ]
     },
     {
-      "template": "Communities around the world are ___ new trees ___ .",
+      "template": "Communities around ___ world are ___ new trees finally .",
       "answers": [
-        "planting",
-        "finally"
+        "the",
+        "planting"
       ]
     },
     {
-      "template": "Families reduce single-use ___ and conserve energy ___ .",
+      "template": "Families reduce ___ plastic and ___ energy slowly .",
       "answers": [
-        "plastic",
-        "slowly"
+        "single-use",
+        "conserve"
       ]
     },
     {
-      "template": "Recycling waste more ___ helps clean our rivers ___ .",
+      "template": "Recycling waste ___ effectively helps ___ our rivers happily .",
       "answers": [
-        "effectively",
-        "happily"
+        "more",
+        "clean"
       ]
     },
     {
-      "template": "Small mindful actions create a powerful ___ for Earth ___ .",
+      "template": "Small mindful ___ create a ___ difference for Earth carefully .",
       "answers": [
-        "difference",
-        "carefully"
+        "actions",
+        "powerful"
       ]
     },
     {
-      "template": "Our home planet Earth faces serious ___ today ___ .",
+      "template": "Our home ___ Earth faces ___ environmental dangers today then in the afternoon .",
       "answers": [
-        "environmental dangers",
-        "then"
+        "planet",
+        "serious"
       ]
     },
     {
-      "template": "Our home planet Earth faces serious ___ today ___ .",
+      "template": "Our home ___ Earth faces ___ environmental dangers today then happily .",
       "answers": [
-        "environmental dangers",
-        "then"
+        "planet",
+        "serious"
       ]
     }
   ],

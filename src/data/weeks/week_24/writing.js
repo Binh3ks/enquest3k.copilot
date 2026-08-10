@@ -2,7 +2,7 @@ export default {
   "title": "My Emotional Day",
   "min_words": 60,
   "min_sentences": 8,
-  "model_sentence": "Yesterday was a very emotional day for me because I felt so many different things from morning to night. In the morning I felt very worried because I could not find my homework anywhere. My brother looked so angry because someone took his pencil, but our mum stayed very calm and helped us both look everywhere. I felt so relieved when I found the homework inside my school bag. At school the class felt very excited because there was a special visitor — it was a famous author! Everyone looked so surprised. During the long talk, some students felt very bored because the author spoke very slowly. After the snack, the children felt hungry and thirsty. By lunchtime, the whole class felt very cheerful again. At the end of the day I felt so tired but happy. What an emotional day!",
+  "model_sentence": "I was very excited because I saw a huge rollercoaster near the front entrance of the park. But when we slowly climbed to the top of the steep ride, I was suddenly terrified. I was really scared because we were so high up in the sky. I felt incredibly proud of myself because I was brave enough to try it. By noon, we were walking under the hot sun for hours, so I was very hungry and thirsty. We waited in a very long line for a popular carnival game. When my brother finally played the game and won a beautiful stuffed bear for me, I was absolutely surprised. It was a very long and exhausting day, but my heart was full of wonderful feelings.",
   "instruction_en": "Write about an emotional day from morning to night using because and feeling words!",
   "instruction_vi": "Viết về một ngày đầy cảm xúc từ sáng đến tối dùng because và từ cảm xúc!",
   "prompt_en": "What happened? How did you feel and why? How did the day end?",
@@ -22,59 +22,59 @@ export default {
   "topic_talk_prompt": "Describe an emotional day — what feelings did you have and why?",
   "sentence_frames": [
     {
-      "template": "I was very ___ because I saw a huge rollercoaster near the front ___ of the park.",
+      "template": "I was ___ excited because ___ saw a huge rollercoaster near the front entrance of the park.",
       "answers": [
-        "excited",
-        "entrance"
+        "very",
+        "I"
       ]
     },
     {
-      "template": "But when we slowly ___ to the top of the steep ride, I was suddenly ___.",
+      "template": "But when ___ slowly climbed ___ the top of the steep ride, I was suddenly terrified.",
       "answers": [
-        "climbed",
-        "terrified"
+        "we",
+        "to"
       ]
     },
     {
-      "template": "I was really ___ because we were so high up in the ___.",
+      "template": "I was ___ scared because ___ were so high up in the sky.",
       "answers": [
-        "scared",
-        "sky"
+        "really",
+        "we"
       ]
     },
     {
-      "template": "I felt incredibly ___ of myself because I was ___ enough to try it.",
+      "template": "I felt ___ proud of ___ because I was brave enough to try it.",
       "answers": [
-        "proud",
-        "brave"
+        "incredibly",
+        "myself"
       ]
     },
     {
-      "template": "By noon, we were walking under the hot ___ for hours, so I was very ___ and thirsty.",
+      "template": "By noon, ___ were walking ___ the hot sun for hours, so I was very hungry and thirsty.",
       "answers": [
-        "sun",
-        "hungry"
+        "we",
+        "under"
       ]
     },
     {
-      "template": "We waited in a very ___ line for a popular carnival ___.",
+      "template": "We waited ___ a very ___ line for a popular carnival game.",
       "answers": [
-        "long",
-        "game"
+        "in",
+        "long"
       ]
     },
     {
-      "template": "When my brother finally ___ the game and won a beautiful ___ for me, I was absolutely surprised.",
+      "template": "When my ___ finally played ___ game and won a beautiful stuffed bear for me, I was absolutely surprised.",
       "answers": [
-        "played",
-        "stuffed bear"
+        "brother",
+        "the"
       ]
     },
     {
-      "template": "It was a very long and ___ day, but my heart was full of ___ feelings.",
+      "template": "It was ___ very long ___ exhausting day, but my heart was full of wonderful feelings.",
       "answers": [
-        "exhausting",
-        "wonderful"
+        "a",
+        "and"
       ]
     }
   ],

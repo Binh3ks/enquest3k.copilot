@@ -25,59 +25,59 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Today is our school sports day! Hundreds of students are ___ on the track ___ .",
+      "template": "Today is ___ school sports ___ Hundreds of students are running in different races on the track then .",
       "answers": [
-        "running in different races",
-        "then"
+        "our",
+        "day"
       ]
     },
     {
-      "template": "The whole schoolyard is full of ___ and excitement! ___",
+      "template": "The whole ___ is full ___ energy and excitement! also",
       "answers": [
-        "energy",
-        "also"
+        "schoolyard",
+        "of"
       ]
     },
     {
-      "template": "Minh is running quickly. He is ___ other runners with strong strides ___ .",
+      "template": "Minh is ___ quickly. He ___ overtaking other runners with strong strides so .",
       "answers": [
-        "overtaking",
-        "so"
+        "running",
+        "is"
       ]
     },
     {
-      "template": "Lan is ___ for the long jump ___ .",
+      "template": "Lan is ___ for the ___ jump next .",
       "answers": [
         "preparing",
-        "next"
+        "long"
       ]
     },
     {
-      "template": "She is jumping very high and ___ safely in the sandpit ___ .",
+      "template": "She is ___ very high ___ landing safely in the sandpit finally .",
       "answers": [
-        "landing",
-        "finally"
+        "jumping",
+        "and"
       ]
     },
     {
-      "template": "Nam is ___ the ball powerfully toward the goal ___ .",
+      "template": "Nam is ___ the ball ___ toward the goal slowly .",
       "answers": [
         "kicking",
-        "slowly"
+        "powerfully"
       ]
     },
     {
-      "template": "The goalkeeper is ___ to catch the ball! ___",
+      "template": "The goalkeeper ___ leaping to ___ the ball! happily",
       "answers": [
-        "leaping",
-        "happily"
+        "is",
+        "catch"
       ]
     },
     {
-      "template": "On the bleachers, parents are waving ___ and cheering enthusiastically ___ .",
+      "template": "On the ___ parents are ___ colorful flags and cheering enthusiastically carefully .",
       "answers": [
-        "colorful flags",
-        "carefully"
+        "bleachers",
+        "waving"
       ]
     }
   ],
@@ -261,5 +261,6 @@ export default {
         }
       ]
     }
-  }
+  },
+  "model_sentence": "Today is our school sports day Hundreds of students are running in different races on the track then . The whole schoolyard is full of energy and excitement! also Minh is running quickly. He is overtaking other runners with strong strides so . Lan is preparing for the long jump next . She is jumping very high and landing safely in the sandpit finally . Nam is kicking the ball powerfully toward the goal slowly . The goalkeeper is leaping to catch the ball! happily On the bleachers parents are waving colorful flags and cheering enthusiastically carefully ."
 };

@@ -1,7 +1,7 @@
 export default {
   "title": "The Mystery House",
   "min_words": 30,
-  "model_sentence": "My name is Tim. I live in a house. My house has many rooms. I sleep in my bedroom. I have a soft bed in my bedroom. I eat in the kitchen. I sit on a chair at the table. I wash my hands in the bathroom. I watch TV in the living room every evening. I like to explore every room. Every room in my house is fun. I love my house!",
+  "model_sentence": "I look for my toy car. I look on the floor and in the box. My friend helps me. He looks under the desk. He finds it! The toy car is under the desk. Now I look for my ball. It is next to the door. We play hide and seek.",
   "instruction_en": "Write about your house and what you do in each room!",
   "instruction_vi": "Viết về ngôi nhà của bạn và bạn làm gì ở mỗi phòng!",
   "prompt_en": "What rooms does your house have? What do you do in each room?",

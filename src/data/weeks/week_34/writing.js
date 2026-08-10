@@ -3,77 +3,77 @@ export default {
   "theme": "fable_and_moral",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "The first pig was lazy and careless, so he built a weak house from light paper and soft cotton. The second pig worked harder and made his house with thin plastic and recycled wood. But the third pig, who was smart and hardworking, put heavy stones, strong metal, and thick glass together to build a powerful, safe house. When the hungry wolf came, he blew down the first two houses easily, but he could not destroy the strong stone walls. The three pigs locked the heavy metal door and sang a happy song while the tired wolf gave up and ran away forever!",
+  "model_sentence": "The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton happily . The second pig worked a bit harder than his brother, and he made his house with thin plastic and recycled wood. The third pig who was very smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house slowly . When the bad hungry wolf finally came, he took a deep breath and blew down the paper house and the wooden house very easily! The two scared pigs ran as fast as they could to their smart brother's house. The angry wolf tried to blow down the third house, but no matter how hard he tried, he could not destroy the strong stone walls. The three pigs safely stayed inside the strong house, locked the heavy metal door , and sang a happy song every day . The tired wolf finally gave up and ran away forever, and all the students clapped loudly for our great story! The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton in the afternoon . The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton happily .",
   "topic_talk_prompt": "Tell me about a time when you worked hard with your friends to finish a project!",
   "sentence_frames": [
     {
-      "template": "The first pig was ___ and ___, so he quickly built a weak house using light paper and soft cotton.",
+      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton happily .",
       "answers": [
-        "lazy",
-        "careless"
+        "pig",
+        "and"
       ]
     },
     {
-      "template": "The second pig ___ a bit harder than his brother, and he made his house with ___ plastic and recycled wood.",
+      "template": "The second ___ worked a ___ harder than his brother, and he made his house with thin plastic and recycled wood.",
       "answers": [
-        "worked",
-        "thin"
+        "pig",
+        "bit"
       ]
     },
     {
-      "template": "The third pig, who was very ___ and ___, carefully put heavy stones, strong metal, and thick glass together to build a safe house.",
+      "template": "The third ___ who was ___ smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house slowly .",
       "answers": [
-        "smart",
-        "patient"
+        "pig",
+        "very"
       ]
     },
     {
-      "template": "When the bad, ___ wolf finally came, he took a deep ___ and blew down the paper house and the wooden house very easily!",
+      "template": "When the ___ hungry wolf ___ came, he took a deep breath and blew down the paper house and the wooden house very easily!",
       "answers": [
-        "hungry",
-        "breath"
+        "bad",
+        "finally"
       ]
     },
     {
-      "template": "The two scared ___ ran as ___ as they could to their smart brother's house.",
+      "template": "The two ___ pigs ran ___ fast as they could to their smart brother's house.",
+      "answers": [
+        "scared",
+        "as"
+      ]
+    },
+    {
+      "template": "The angry ___ tried to ___ down the third house, but no matter how hard he tried, he could not destroy the strong stone walls.",
+      "answers": [
+        "wolf",
+        "blow"
+      ]
+    },
+    {
+      "template": "The three ___ safely stayed ___ the strong house, locked the heavy metal door , and sang a happy song every day .",
       "answers": [
         "pigs",
-        "fast"
+        "inside"
       ]
     },
     {
-      "template": "The angry wolf tried to blow down the third house, but no matter how ___ he tried, he could not ___ the strong stone walls.",
+      "template": "The tired ___ finally gave ___ and ran away forever, and all the students clapped loudly for our great story!",
       "answers": [
-        "hard",
-        "destroy"
+        "wolf",
+        "up"
       ]
     },
     {
-      "template": "The three pigs safely stayed inside the strong house, locked the ___ metal ___ , and sang a happy song.",
+      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton in the afternoon .",
       "answers": [
-        "heavy",
-        "door"
+        "pig",
+        "and"
       ]
     },
     {
-      "template": "The tired wolf finally gave ___ and ran away ___, and all the students clapped loudly for our great story!",
+      "template": "The first ___ was lazy ___ careless, so he quickly built a weak house using light paper and soft cotton happily .",
       "answers": [
-        "up",
-        "forever"
-      ]
-    },
-    {
-      "template": "The first pig was ___ and ___, so he quickly built a weak house using light paper and soft cotton.",
-      "answers": [
-        "lazy",
-        "careless"
-      ]
-    },
-    {
-      "template": "The first pig was ___ and ___, so he quickly built a weak house using light paper and soft cotton.",
-      "answers": [
-        "lazy",
-        "careless"
+        "pig",
+        "and"
       ]
     }
   ],

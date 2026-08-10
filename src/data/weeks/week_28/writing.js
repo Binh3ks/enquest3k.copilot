@@ -2,7 +2,7 @@ export default {
   "title": "Retell The Tortoise and the Hare",
   "min_words": 65,
   "min_sentences": 8,
-  "model_sentence": "Once upon a time, the slow hare was very proud of being the fastest. He always bragged about winning every race and looked at the slow tortoise with loud laughter. The slow tortoise smiled calmly and said, 'Slow and steady wins the great race.' The animals all got into their vehicles. The slow hare jumped on his old bicycle and rode down the hill fast. The fox got into a yellow taxi. The elephant went to the train station. The slow tortoise got on his small boat. BANG — the race began suddenly. The slow hare got ahead of everyone quickly. But then he got tired and fell asleep under a tree. Meanwhile, the slow tortoise kept on sailing steadily while the taxi got stuck in traffic, the bus stopped at every station, the motorbike ran out of petrol, and the car got a flat tyre. The slow tortoise won the race and all the animals cheered loudly.",
+  "model_sentence": "The hare was a very proud and confident animal, and he always boasted to his friends. The tortoise, on the other hand was quiet, patient, and very steady carefully . They started a big race across the town to see who was actually faster. The proud hare rode a very fast motorbike, and he quickly got far ahead. Because he was lazy and overly confident, he lay down and took a long nap under a big, shady tree. The patient tortoise rode a slow old bicycle, but he never stopped pedaling his short legs. He rode carefully and steadily down the bumpy road without taking any breaks. The tortoise crossed the finish line first! He was the great winner.",
   "instruction_en": "Retell the fable in full using past tense and story phrases like once upon a time, meanwhile, and by the time!",
   "instruction_vi": "Kể lại truyện ngụ ngôn đầy đủ bằng thì quá khứ và cụm từ kể chuyện như once upon a time, meanwhile, by the time!",
   "prompt_en": "What did the Hare do? What did the Tortoise do? What is the moral?",
@@ -24,59 +24,59 @@ export default {
   "topic_talk_prompt": "Retell the tortoise and the hare story with all the details!",
   "sentence_frames": [
     {
-      "template": "The hare was a very ___ and confident animal, and he always ___ to his friends.",
+      "template": "The hare ___ a very ___ and confident animal, and he always boasted to his friends.",
       "answers": [
-        "proud",
-        "boasted"
+        "was",
+        "proud"
       ]
     },
     {
-      "template": "The tortoise, on the other hand, was ___, ___, and very steady.",
+      "template": "The tortoise, ___ the other ___ was quiet, patient, and very steady carefully .",
       "answers": [
-        "quiet",
-        "patient"
+        "on",
+        "hand"
       ]
     },
     {
-      "template": "They started a big ___ across the town to see who was actually ___.",
+      "template": "They started ___ big race ___ the town to see who was actually faster.",
       "answers": [
-        "race",
-        "faster"
+        "a",
+        "across"
       ]
     },
     {
-      "template": "The proud hare rode a very fast ___, and he quickly got far ___.",
+      "template": "The proud ___ rode a ___ fast motorbike, and he quickly got far ahead.",
       "answers": [
-        "motorbike",
-        "ahead"
+        "hare",
+        "very"
       ]
     },
     {
-      "template": "Because he was lazy and overly ___, he lay down and took a long ___ under a big, shady tree.",
+      "template": "Because he ___ lazy and ___ confident, he lay down and took a long nap under a big, shady tree.",
       "answers": [
-        "confident",
-        "nap"
+        "was",
+        "overly"
       ]
     },
     {
-      "template": "The patient tortoise rode a slow, old ___, but he never stopped ___ his short legs.",
+      "template": "The patient ___ rode a ___ old bicycle, but he never stopped pedaling his short legs.",
       "answers": [
-        "bicycle",
-        "pedaling"
+        "tortoise",
+        "slow"
       ]
     },
     {
-      "template": "He rode carefully and ___ down the bumpy road without taking any ___.",
+      "template": "He rode ___ and steadily ___ the bumpy road without taking any breaks.",
       "answers": [
-        "steadily",
-        "breaks"
+        "carefully",
+        "down"
       ]
     },
     {
-      "template": "The tortoise crossed the ___ line first! He was the great ___.",
+      "template": "The tortoise ___ the finish ___ first! He was the great winner.",
       "answers": [
-        "finish",
-        "winner"
+        "crossed",
+        "line"
       ]
     }
   ],

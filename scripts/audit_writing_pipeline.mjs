@@ -11,7 +11,7 @@ async function auditWritingPipeline() {
   let totalAudited = 0;
   let errors = [];
 
-  console.log('🔍 AUDITING WRITE & SPEAK STATION EASY VS ADVANCED MODE PIPELINE (W01–W48+)...\n');
+  console.log('🔍 AUDITING WRITE & SPEAK TAB 1 MODEL CHALLENGE PIPELINE (W01–W48+)...\n');
 
   for (let i = 1; i <= 48; i++) {
     const pad = String(i).padStart(2, '0');
@@ -23,19 +23,33 @@ async function auditWritingPipeline() {
     }
 
     totalAudited++;
-    const targetSentences = i <= 15 ? 6 : (i <= 28 ? 8 : 10);
+    const targetSentences = i <= 15 ? 6 : (i <= 28 ? 8 : (i <= 42 ? 10 : 12));
     const modAdv = (await import(wFileAdv)).default;
 
     // 1. ADVANCED MODE AUDIT
     const framesAdv = modAdv?.sentence_frames || [];
-    if (i <= 35 && framesAdv.length !== targetSentences) {
+    if (!modAdv?.model_sentence) {
+      errors.push(`W${pad} ADV: Missing model_sentence`);
+    }
+    if (i <= 42 && framesAdv.length !== targetSentences) {
       errors.push(`W${pad} ADV: Sentence count is ${framesAdv.length}, expected ${targetSentences}`);
     }
     if (i <= 35) {
       framesAdv.forEach((f, idx) => {
-        const gapCount = (f.template || '').split('___').length - 1;
+        const template = f.template || '';
+        const parts = template.split('___');
+        const gapCount = parts.length - 1;
         if (gapCount !== 2) {
           errors.push(`W${pad} ADV frame ${idx+1} has ${gapCount} gaps (expected EXACTLY 2 gaps for Advanced mode)`);
+        }
+        for (let g = 0; g < parts.length - 1; g++) {
+          const middleText = parts[g+1];
+          if (middleText !== undefined && g < parts.length - 2) {
+            const wordsBetween = middleText.trim().split(/\s+/).filter(Boolean).length;
+            if (wordsBetween < 2) {
+              errors.push(`W${pad} ADV frame ${idx+1}: Gaps are too close (${wordsBetween} words between)`);
+            }
+          }
         }
       });
     }
@@ -44,6 +58,9 @@ async function auditWritingPipeline() {
     if (fs.existsSync(wFileEasy)) {
       const modEasy = (await import(wFileEasy)).default;
       const framesEasy = modEasy?.sentence_frames || [];
+      if (!modEasy?.model_sentence) {
+        errors.push(`W${pad} EASY: Missing model_sentence`);
+      }
       if (framesEasy.length !== targetSentences) {
         errors.push(`W${pad} EASY: Sentence count is ${framesEasy.length}, expected ${targetSentences}`);
       }
@@ -67,7 +84,7 @@ async function auditWritingPipeline() {
 
   console.log(`Audited ${totalAudited} week writing.js files across Easy & Advanced modes.`);
   if (errors.length === 0) {
-    console.log('✅ ALL WRITE & SPEAK EASY VS ADVANCED MODE PIPELINE AUDITS PASSED CLEANLY!');
+    console.log('✅ ALL WRITE & SPEAK TAB 1 MODEL CHALLENGE AUDITS PASSED CLEANLY!');
   } else {
     console.error(`❌ FOUND ${errors.length} PIPELINE AUDIT ERRORS:`);
     errors.forEach(e => console.error(`  - ${e}`));

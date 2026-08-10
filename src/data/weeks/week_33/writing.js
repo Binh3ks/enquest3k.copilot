@@ -3,77 +3,77 @@ export default {
   "min_sentences": 10,
   "theme": "accidents_and_consequences",
   "min_words": 65,
-  "model_sentence": "Last week, Jake walked too fast in the school corridor and fell down near the staircase. He hurt his knee badly. His teacher came and said, 'Walk carefully, Jake!' The nurse cleaned the wound and put a bandage on it. Jake learned an important lesson: always walk carefully in the corridor. We must walk carefully to stay safe!",
+  "model_sentence": "Jake walked too fast in the corridor and fell down near the staircase. He hurt his knee and it started to bleed very badly. His teacher heard Jake crying and ran to help him right away slowly . The nurse cleaned the wound and put a bandage on Jake's knee. Jake learned to walk carefully after that because he understood how painful it was. The teacher told Jake: 'Always walk in the corridor!' suddenly Jake told everyone 'Walk in the corridor or you might fall and hurt yourself!' every day Now Jake always walks carefully and never runs in the corridor because he learned his lesson. Jake walked too fast in the corridor and fell down near the staircase. Jake walked too fast in the corridor and fell down near the staircase.",
   "topic_talk_prompt": "Tell me about a time when you got hurt or saw someone get hurt at school!",
   "sentence_frames": [
     {
-      "template": "Jake ___ too fast in the corridor and ___ down near the staircase.",
+      "template": "Jake walked ___ fast in ___ corridor and fell down near the staircase.",
       "answers": [
-        "walked",
-        "fell"
+        "too",
+        "the"
       ]
     },
     {
-      "template": "He ___ his knee and it ___ very badly.",
+      "template": "He hurt ___ knee and ___ started to bleed very badly.",
       "answers": [
-        "hurt",
-        "started to bleed"
+        "his",
+        "it"
       ]
     },
     {
-      "template": "His teacher heard Jake ___ and ___ to help him right away.",
+      "template": "His teacher ___ Jake crying ___ ran to help him right away slowly .",
       "answers": [
-        "crying",
-        "ran"
+        "heard",
+        "and"
       ]
     },
     {
-      "template": "The nurse ___ the wound and ___ a bandage on Jake's knee.",
+      "template": "The nurse ___ the wound ___ put a bandage on Jake's knee.",
       "answers": [
         "cleaned",
-        "put"
+        "and"
       ]
     },
     {
-      "template": "Jake ___ to walk carefully after that because he ___ how painful it was.",
+      "template": "Jake learned ___ walk carefully ___ that because he understood how painful it was.",
       "answers": [
-        "learned",
-        "understood"
+        "to",
+        "after"
       ]
     },
     {
-      "template": "The teacher told Jake: 'Always ___ ___ in the corridor!'",
+      "template": "The teacher ___ Jake: 'Always ___ in the corridor!' suddenly",
       "answers": [
-        "walk",
-        "carefully"
+        "told",
+        "walk"
       ]
     },
     {
-      "template": "Jake told everyone: '___ ___ in the corridor or you might fall and hurt yourself!'",
+      "template": "Jake told ___ 'Walk in ___ corridor or you might fall and hurt yourself!' every day",
       "answers": [
-        "Walk",
-        "slowly"
+        "everyone",
+        "the"
       ]
     },
     {
-      "template": "Now Jake always ___ carefully and never ___ in the corridor because he learned his lesson.",
+      "template": "Now Jake ___ walks carefully ___ never runs in the corridor because he learned his lesson.",
       "answers": [
-        "walks",
-        "runs"
+        "always",
+        "and"
       ]
     },
     {
-      "template": "Jake ___ too fast in the corridor and ___ down near the staircase.",
+      "template": "Jake walked ___ fast in ___ corridor and fell down near the staircase.",
       "answers": [
-        "walked",
-        "fell"
+        "too",
+        "the"
       ]
     },
     {
-      "template": "Jake ___ too fast in the corridor and ___ down near the staircase.",
+      "template": "Jake walked ___ fast in ___ corridor and fell down near the staircase.",
       "answers": [
-        "walked",
-        "fell"
+        "too",
+        "the"
       ]
     }
   ],

@@ -1,7 +1,7 @@
 export default {
   "title": "Finding the Treasure",
   "min_words": 30,
-  "model_sentence": "Today I play a game. I look for my toy car. I look on the floor. It is not there! I look in the box. No toy! My friend helps me. He looks under the desk. He finds it! The toy car is under the desk! Now I look for my ball. It is next to the door. Now we play hide and seek. I hide my ball in the box. My friend hides his toy next to the window. We seek them again. This game is so much fun!",
+  "model_sentence": "I look for my toy car. I look on the floor. I look in the box. My friend helps me. He looks under the desk. He finds it! The toy car is under the desk. Now I look for my ball. It is next to the door.",
   "instruction_en": "Write about your treasure hunt and hiding games!",
   "instruction_vi": "Viết về cuộc săn kho báu và trò chơi giấu đồ của bạn!",
   "prompt_en": "Where do you look? Where do you find things? What game do you play?",

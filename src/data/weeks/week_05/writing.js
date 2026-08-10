@@ -1,7 +1,7 @@
 export default {
   "title": "The Mystery House",
   "min_words": 45,
-  "model_sentence": "There is a big mystery house on the hill. Nobody knows what is inside. One day, I open the door slowly. Upstairs, there is a nice bedroom. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find the living room. There is a big sofa and many shelves with books. In the kitchen, I open the cabinet carefully and look in the fridge. There is food and drinks inside! This mystery house has beautiful furniture. Now it is my new home.",
+  "model_sentence": "There is a mystery house on the hill. Nobody knows what is inside then . One day, I open the door slowly carefully . Upstairs, there is a nice bedroom slowly . I see a lamp on the table and a mirror on the wall next . The room has a rug on the floor finally . Downstairs, I find the living room suddenly .",
   "instruction_en": "Describe your house room by room with full details!",
   "instruction_vi": "Mô tả từng phòng trong nhà bạn với đầy đủ chi tiết!",
   "prompt_en": "What rooms are there? What is in each room? Which room is your favorite and why?",
@@ -24,45 +24,45 @@ export default {
   "topic_talk_prompt": "Describe your house and your favorite room!",
   "sentence_frames": [
     {
-      "template": "There is a ___ on the hill. Nobody knows what is inside ___ .",
+      "template": "There is ___ mystery house ___ the hill. Nobody knows what is inside then .",
       "answers": [
-        "mystery house",
-        "then"
+        "a",
+        "on"
       ]
     },
     {
-      "template": "One day, I open the door ___ ___ .",
+      "template": "One day, ___ open the ___ slowly carefully .",
       "answers": [
-        "slowly",
-        "also"
+        "I",
+        "door"
       ]
     },
     {
-      "template": "Upstairs, there is a nice ___ ___ .",
+      "template": "Upstairs, there ___ a nice ___ slowly .",
       "answers": [
-        "bedroom",
-        "so"
+        "is",
+        "bedroom"
       ]
     },
     {
-      "template": "I see a ___ on the table and a mirror on the wall ___ .",
+      "template": "I see ___ lamp on ___ table and a mirror on the wall next .",
       "answers": [
-        "lamp",
-        "next"
+        "a",
+        "the"
       ]
     },
     {
-      "template": "The room has a ___ on the floor ___ .",
+      "template": "The room ___ a rug ___ the floor finally .",
       "answers": [
-        "rug",
-        "finally"
+        "has",
+        "on"
       ]
     },
     {
-      "template": "Downstairs, I find the living ___ ___ .",
+      "template": "Downstairs, I ___ the living ___ suddenly .",
       "answers": [
-        "room",
-        "slowly"
+        "find",
+        "room"
       ]
     }
   ],

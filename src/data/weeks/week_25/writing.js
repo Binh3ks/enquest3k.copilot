@@ -2,7 +2,7 @@ export default {
   "title": "My Step-by-Step Guide",
   "min_words": 60,
   "min_sentences": 8,
-  "model_sentence": "Here is my step-by-step guide to making a jam sandwich, which is my all-time favourite snack. First of all, I grabbed two slices of soft bread from the bag. After that, I picked up the sharp knife and used it to spread strawberry jam on one top slice. After that, I pressed the two top slices together carefully. At the very end, I cut the sandwich in half and put it on a clean dinner plate. Now I understand why the right sequence matters. If I tried to eat first and spread the jam later, it would be a disaster! Every morning task follows its own right sequence.",
+  "model_sentence": "First, you take two pieces of fresh, soft bread and put them neatly on a clean plate. Next, you must wash the green vegetables very carefully so they are completely clean. Then, you can add some delicious cold meat, a fried egg, or some healthy tuna. After that, you put a thick slice of yellow cheese on top of the meat so it tastes even better. Finally, you place the second piece of bread on top of everything and press it down gently with your hands. Always remember to wash your hands with soap and water to keep them clean. I really love making my own sandwiches because it is very easy, it saves time, and they always taste absolutely great. After you finish eating, you should clean the table and put your dirty plate in the kitchen sink.",
   "instruction_en": "Write a step-by-step guide using First of all, After that, and At the very end!",
   "instruction_vi": "Viết hướng dẫn từng bước dùng First of all, After that, At the very end!",
   "prompt_en": "What are you guiding someone to do? What are all the steps in the right sequence?",
@@ -22,59 +22,59 @@ export default {
   "topic_talk_prompt": "Give me a really detailed step-by-step guide for your favourite thing to make!",
   "sentence_frames": [
     {
-      "template": "First, you take two pieces of ___ bread and put them neatly on a clean ___.",
+      "template": "First, you ___ two pieces ___ fresh, soft bread and put them neatly on a clean plate.",
       "answers": [
-        "fresh, soft",
-        "plate"
+        "take",
+        "of"
       ]
     },
     {
-      "template": "Next, you must wash the ___ vegetables very carefully so they are completely ___.",
+      "template": "Next, you ___ wash the ___ vegetables very carefully so they are completely clean.",
       "answers": [
-        "green",
-        "clean"
+        "must",
+        "green"
       ]
     },
     {
-      "template": "Then, you can add some delicious ___, a fried egg, or some healthy ___.",
+      "template": "Then, you ___ add some ___ cold meat, a fried egg, or some healthy tuna.",
       "answers": [
-        "cold meat",
-        "tuna"
+        "can",
+        "delicious"
       ]
     },
     {
-      "template": "After that, you put a thick slice of ___ cheese on top of the meat so it tastes even ___.",
+      "template": "After that, ___ put a ___ slice of yellow cheese on top of the meat so it tastes even better.",
       "answers": [
-        "yellow",
-        "better"
+        "you",
+        "thick"
       ]
     },
     {
-      "template": "Finally, you ___ the second piece of bread on top of everything and press it down ___ with your hands.",
+      "template": "Finally, you ___ the second ___ of bread on top of everything and press it down gently with your hands.",
       "answers": [
         "place",
-        "gently"
+        "piece"
       ]
     },
     {
-      "template": "Always remember to wash your ___ with soap and water to keep them ___.",
+      "template": "Always remember ___ wash your ___ with soap and water to keep them clean.",
       "answers": [
-        "hands",
-        "clean"
+        "to",
+        "hands"
       ]
     },
     {
-      "template": "I really love making my own sandwiches because it is very ___, it saves ___, and they always taste absolutely great.",
+      "template": "I really ___ making my ___ sandwiches because it is very easy, it saves time, and they always taste absolutely great.",
       "answers": [
-        "easy",
-        "time"
+        "love",
+        "own"
       ]
     },
     {
-      "template": "After you finish eating, you should clean the ___ and put your dirty plate in the kitchen ___.",
+      "template": "After you ___ eating, you ___ clean the table and put your dirty plate in the kitchen sink.",
       "answers": [
-        "table",
-        "sink"
+        "finish",
+        "should"
       ]
     }
   ],

@@ -1,7 +1,7 @@
 export default {
   "title": "How a Seed Grows",
   "min_words": 32,
-  "model_sentence": "First a seed is planted in soil. It needs water and sunlight. Next a tiny shoot grows up. Then leaves appear. Finally a flower blooms.",
+  "model_sentence": "First a seed is planted in soil. It needs water and sunlight. Next a tiny stem grows up. Then leaves appear. A bright yellow flower blooms. Finally the flower is truly magical. First a seed is planted in soil. First a seed is planted in soil.",
   "instruction_en": "Describe how a seed grows step by step!",
   "instruction_vi": "Mô tả cách một hạt giống mọc lên theo từng bước!",
   "prompt_en": "What happens first? What does the seed need? What comes next?",

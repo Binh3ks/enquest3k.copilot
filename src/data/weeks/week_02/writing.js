@@ -1,7 +1,7 @@
 export default {
   "title": "My Family Squad",
   "min_words": 45,
-  "model_sentence": "My name is Emma. This is my family. We are like a team! This is my mother. She is the leader of our family and she helps us every day. This is my father. He is strong and kind. He works hard for our family. This is my big brother Tom. He helps me with homework. This is my little sister Lily. She is funny and sweet. We love each other very much. Our home is full of love. We work together as a great team.",
+  "model_sentence": "This is my mother. She is the leader of our family then . My mother helps us with everything every day also . This is my father. He is strong and kind so . He works very hard for our family together . This is my big brother. His name is Tom safely . He helps me with homework slowly .",
   "instruction_en": "Describe each family member in detail!",
   "instruction_vi": "Mô tả từng thành viên gia đình chi tiết!",
   "prompt_en": "What does each person do? What are they like? What do you do together as a family?",
@@ -22,45 +22,45 @@ export default {
   "topic_talk_prompt": "Tell me about each person in your family!",
   "sentence_frames": [
     {
-      "template": "This is my ___. She is the leader of our family ___ .",
+      "template": "This is ___ mother. She ___ the leader of our family then .",
       "answers": [
-        "mother",
-        "then"
+        "my",
+        "is"
       ]
     },
     {
-      "template": "My mother helps us ___ every day ___ .",
-      "answers": [
-        "with everything",
-        "also"
-      ]
-    },
-    {
-      "template": "This is my ___. He is strong and kind ___ .",
-      "answers": [
-        "father",
-        "so"
-      ]
-    },
-    {
-      "template": "He works very hard for our ___ ___ .",
-      "answers": [
-        "family",
-        "next"
-      ]
-    },
-    {
-      "template": "This is my big brother. His name is ___ ___ .",
-      "answers": [
-        "Tom",
-        "finally"
-      ]
-    },
-    {
-      "template": "He ___ me with homework ___ .",
+      "template": "My mother ___ us with ___ every day also .",
       "answers": [
         "helps",
-        "slowly"
+        "everything"
+      ]
+    },
+    {
+      "template": "This is ___ father. He ___ strong and kind so .",
+      "answers": [
+        "my",
+        "is"
+      ]
+    },
+    {
+      "template": "He works ___ hard for ___ family together .",
+      "answers": [
+        "very",
+        "our"
+      ]
+    },
+    {
+      "template": "This is ___ big brother. ___ name is Tom safely .",
+      "answers": [
+        "my",
+        "His"
+      ]
+    },
+    {
+      "template": "He ___ me with ___ slowly .",
+      "answers": [
+        "helps",
+        "homework"
       ]
     }
   ],

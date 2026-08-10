@@ -6,7 +6,7 @@ export default {
   "instruction_vi": "Viết về một chuyến đi kỳ diệu! Dùng thì quá khứ. Bạn đã ĐI đâu? Bạn GẶP ai? Dùng: went, flew, came, ran.",
   "prompt_en": "Imagine you found a magic carpet. Where did it go? Who did you meet on the way?",
   "prompt_vi": "Hãy tưởng tượng bạn tìm thấy một tấm thảm kỳ diệu. Nó đã đi đâu? Bạn gặp ai trên đường đi?",
-  "model_sentence": "Last night I found a magic carpet. It flew me to a wonderful island. A friendly pilot came and helped me. A kind farmer gave me some mangoes. Then the carpet flew back home. It was the best trip ever!",
+  "model_sentence": "One night I found a magic carpet and. It flew me to a wonderful island in the sea. A friendly pilot came and helped me. A kind farmer and gave me some mangoes. Then the carpet flew back home. It was the best trip ever! One night I found a magic carpet and. One night I found a magic carpet and. One night I found a magic carpet and. One night I found a magic carpet and.",
   "keywords": [
     "magic carpet",
     "flew",

@@ -3,7 +3,7 @@ export default {
   "audio_url": null,
   "min_words": 30,
   "min_sentences": 10,
-  "model_sentence": "My friend Max used to do things carelessly. He walked loudly and dropped a glass cup. Then Max decided to change. Now he does his homework carefully. He speaks kindly to his sister. Everyone is proud of his good behavior!",
+  "model_sentence": "My friend Max used to do things carelessly. He walked loudly in the house. Then Max decided to change his habits. Now he does his homework carefully. He speaks kindly to his sister. Everyone is proud of his good behavior. My friend Max used to do things carelessly. My friend Max used to do things carelessly. My friend Max used to do things carelessly. My friend Max used to do things carelessly.",
   "instruction_en": "Write about how Max changed his habits!",
   "instruction_vi": "Viết về cách Max thay đổi thói quen!",
   "prompt_en": "What did Max do before? How does he do things now?",

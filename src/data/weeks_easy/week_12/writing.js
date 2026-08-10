@@ -139,5 +139,6 @@ export default {
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "Today is the school talent show! Sarah can sing happily on stage. Tom can dance with energy. Mike can run fast around the track. Emma can jump very high. Every child has special talents!"
 };

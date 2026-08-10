@@ -134,5 +134,6 @@ export default {
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "The city has many shops and schools. It is very noisy and crowded. The farm is peaceful and green. The farm has fresh air and wide open spaces. Farm life is simple and quiet. Both places have their own advantages."
 };

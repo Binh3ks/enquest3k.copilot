@@ -1,7 +1,7 @@
 export default {
   "title": "The Mirror Game",
   "min_words": 45,
-  "model_sentence": "My best friend is Tom and he is tall with short curly hair. His hair is dark brown and his eyes are bright green. He wears round glasses because he cannot see well without them. He always wears a red cap and a blue jacket to school. He is slim but very strong because he trains every day. Everyone recognises him because he looks so unique and cool.",
+  "model_sentence": "My best friend is Tom and he is tall with short curly hair happily . His hair is dark brown and his eyes are bright green carefully . He wears round glasses because he cannot see well without them so . He always wears a red cap and a blue jacket to school next . He is slim but very strong because he trains every day finally . He looks very unique and everyone recognizes him slowly suddenly .",
   "instruction_en": "Describe your best friend from head to toe!",
   "instruction_vi": "Mô tả người bạn thân từ đầu đến chân!",
   "prompt_en": "What does your friend look like? What do they wear? What makes them unique?",
@@ -23,45 +23,45 @@ export default {
   "topic_talk_prompt": "Describe your best friend's appearance in full detail!",
   "sentence_frames": [
     {
-      "template": "My best friend is Tom and he is tall with short curly ___ ___ .",
+      "template": "My best ___ is Tom ___ he is tall with short curly hair happily .",
       "answers": [
-        "hair",
-        "then"
+        "friend",
+        "and"
       ]
     },
     {
-      "template": "His hair is dark brown and his eyes are bright ___ ___ .",
+      "template": "His hair ___ dark brown ___ his eyes are bright green carefully .",
       "answers": [
-        "green",
-        "also"
+        "is",
+        "and"
       ]
     },
     {
-      "template": "He wears round glasses because he cannot ___ well without them ___ .",
+      "template": "He wears ___ glasses because ___ cannot see well without them so .",
       "answers": [
-        "see",
-        "so"
+        "round",
+        "he"
       ]
     },
     {
-      "template": "He always wears a red cap and a blue ___ to school ___ .",
+      "template": "He always ___ a red ___ and a blue jacket to school next .",
       "answers": [
-        "jacket",
-        "next"
+        "wears",
+        "cap"
       ]
     },
     {
-      "template": "He is slim but very ___ because he trains every day ___ .",
+      "template": "He is ___ but very ___ because he trains every day finally .",
       "answers": [
-        "strong",
-        "finally"
+        "slim",
+        "strong"
       ]
     },
     {
-      "template": "He looks very unique and everyone ___ him ___ .",
+      "template": "He looks ___ unique and ___ recognizes him slowly suddenly .",
       "answers": [
-        "recognizes",
-        "slowly"
+        "very",
+        "everyone"
       ]
     }
   ],

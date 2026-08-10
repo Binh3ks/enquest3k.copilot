@@ -211,5 +211,6 @@ export default {
       ]
     }
   },
-  "min_sentences": 8
+  "min_sentences": 8,
+  "model_sentence": "In London, it is raining today. The boy is wearing a thick raincoat and rubber boots. In New York, it is snowing hard. The girl is making a big snowman outside. In Sydney, it is sunny and hot. In my city, it is cloudy and windy. I am flying a big kite in the park. In London, it is raining today."
 };

@@ -1,7 +1,7 @@
 export default {
   "title": "The Old Town Mystery",
   "min_words": 30,
-  "model_sentence": "Last year there was a small local market near the river. There were tall trees along the road. There was a wooden bridge. Now there is a new bridge and new buildings. The old temple still stands. The past is still here if you look carefully!",
+  "model_sentence": "Detective Luna found an old map of her town. On the map, there was a big market near the river. There were tall trees along the road. There was an old temple at the end of the road. There was a wooden bridge over the river. Now there are new buildings. However, the old temple still stands. Detective Luna found an old map of her town. Detective Luna found an old map of her town.",
   "instruction_en": "Write about how your neighbourhood has changed!",
   "instruction_vi": "Viết về khu phố của bạn đã thay đổi như thế nào!",
   "prompt_en": "What was there before? What is there now? How is it different?",

@@ -212,5 +212,6 @@ export default {
       ]
     }
   },
-  "min_sentences": 8
+  "min_sentences": 8,
+  "model_sentence": "Welcome to the school festival! I am the reporter. I pick up the microphone. Students are painting a giant mural on the wall. The Science Club is mixing two mysterious liquids. The Drama Club is practicing for their play. Everyone is smiling and chatting happily. Welcome to the school festival! Welcome to the school festival!"
 };

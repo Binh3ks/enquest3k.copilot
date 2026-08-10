@@ -1,7 +1,7 @@
 export default {
   "title": "My Weekend Story",
   "min_words": 30,
-  "model_sentence": "It was Sunday afternoon and Leo sat down to create a comic strip. First he wrote the title. In Panel One he drew himself walking to the park. In Panel Two Max chased a ball. In Panel Three they watched a street musician. In Panel Four they walked home tired but happy. It was a perfect day!",
+  "model_sentence": "Leo sat down to create a comic strip. First he wrote the title. In Panel One he drew himself walking to the park. In Panel Two Max chased a ball. In Panel Three they watched a street musician. In Panel Four they walked home tired but happy. Leo sat down to create a comic strip. Leo sat down to create a comic strip.",
   "instruction_en": "Write your weekend story in order, like a four-panel comic strip!",
   "instruction_vi": "Viết câu chuyện cuối tuần theo thứ tự như một dải truyện tranh bốn khung!",
   "prompt_en": "Where did you go? What did you do first? Then? At the end?",

@@ -1,7 +1,7 @@
 export default {
   "title": "My Happy Jar",
   "min_words": 45,
-  "model_sentence": "My name is Sam. I have a happy jar at home. Every day, I put happy things in my jar. When I am playing with my dog, I feel excited. I put a yellow star in my jar. When I am reading a good book, I feel calm and happy. I put a blue heart in my jar. When I am drawing colorful pictures, I feel creative. My mom is friendly and funny. She makes me laugh every day. I love my happy jar because it helps me remember all the happy moments.",
+  "model_sentence": "I have a happy jar at home happily . When I am playing, I feel excited and happy also . When I am reading, I feel happy and calm so . When I am drawing, I feel creative and joyful next . My mom is friendly and funny and she makes me laugh every day safely . My happy jar helps me remember all the happy moments slowly suddenly .",
   "instruction_en": "Write about your personality and hobbies using because and when!",
   "instruction_vi": "Viết về tính cách và sở thích bằng because và when!",
   "prompt_en": "What makes you feel happy? What do you like doing? How do you feel?",
@@ -22,45 +22,45 @@ export default {
   "topic_talk_prompt": "Tell me about your personality and what you love doing!",
   "sentence_frames": [
     {
-      "template": "I have a happy jar at ___ ___ .",
+      "template": "I have ___ happy jar ___ home happily .",
       "answers": [
-        "home",
-        "then"
+        "a",
+        "at"
       ]
     },
     {
-      "template": "When I am playing, I feel ___ and happy ___ .",
+      "template": "When I ___ playing, I ___ excited and happy also .",
       "answers": [
-        "excited",
-        "also"
+        "am",
+        "feel"
       ]
     },
     {
-      "template": "When I am reading, I feel ___ and calm ___ .",
+      "template": "When I ___ reading, I ___ happy and calm so .",
       "answers": [
-        "happy",
-        "so"
+        "am",
+        "feel"
       ]
     },
     {
-      "template": "When I am drawing, I feel ___ and joyful ___ .",
+      "template": "When I ___ drawing, I ___ creative and joyful next .",
       "answers": [
-        "creative",
-        "next"
+        "am",
+        "feel"
       ]
     },
     {
-      "template": "My mom is friendly and funny and she makes me laugh ___ ___ .",
+      "template": "My mom ___ friendly and ___ and she makes me laugh every day safely .",
       "answers": [
-        "every day",
-        "finally"
+        "is",
+        "funny"
       ]
     },
     {
-      "template": "My happy jar helps me remember all the ___ moments ___ .",
+      "template": "My happy ___ helps me ___ all the happy moments slowly suddenly .",
       "answers": [
-        "happy",
-        "slowly"
+        "jar",
+        "remember"
       ]
     }
   ],

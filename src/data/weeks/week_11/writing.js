@@ -3,7 +3,7 @@ export default {
   "min_words": 45,
   "instruction_en": "Write about your favorite places to visit on the weekend using the preposition 'at'!",
   "instruction_vi": "Viết về những nơi bạn thích đến vào cuối tuần với giới từ 'at'!",
-  "model_sentence": "Today is Saturday! I have a fun weekend plan. First, I go to the park. I play at the park with my friends. We run and laugh! Then I go to the library. I read a story book at the library. The book is very interesting! After that, my mom and I buy food at the supermarket. I help my mom carry the bags. Finally, we go to the playground. I slide down at the playground and it is so much fun! On Sunday I go to the zoo and see a lion and a monkey at the zoo. Then we have lunch at a restaurant. The food is very delicious! I love my weekend! Every place is special and fun!",
+  "model_sentence": "Today is Saturday I have a fun weekend plan happily . First, I go to the park and play with my friends also . We run, laugh and have a great time! so slowly Then I go to the library to read a story book next . The book is very interesting. I learn new words finally . After that, my mom and I buy food at the supermarket slowly .",
   "prompt_en": "Tell me about the places you like to visit on the weekend!",
   "prompt_vi": "Hãy kể về những nơi bạn thích đến vào cuối tuần!",
   "hints": {
@@ -133,45 +133,45 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is Saturday! I have a fun weekend ___ ___ .",
+      "template": "Today is ___ I have ___ fun weekend plan happily .",
       "answers": [
-        "plan",
-        "then"
+        "Saturday",
+        "a"
       ]
     },
     {
-      "template": "First, I go to the ___ and play with my friends ___ .",
+      "template": "First, I ___ to the ___ and play with my friends also .",
       "answers": [
-        "park",
-        "also"
+        "go",
+        "park"
       ]
     },
     {
-      "template": "We run, laugh, and have a great ___! ___",
+      "template": "We run, ___ and have ___ great time! so slowly",
       "answers": [
-        "time",
-        "so"
+        "laugh",
+        "a"
       ]
     },
     {
-      "template": "Then I go to the ___ to read a story book ___ .",
+      "template": "Then I ___ to the ___ to read a story book next .",
       "answers": [
-        "library",
-        "next"
+        "go",
+        "library"
       ]
     },
     {
-      "template": "The book is very ___. I learn new words ___ .",
+      "template": "The book ___ very interesting. ___ learn new words finally .",
       "answers": [
-        "interesting",
-        "finally"
+        "is",
+        "I"
       ]
     },
     {
-      "template": "After that, my mom and I buy ___ at the supermarket ___ .",
+      "template": "After that, ___ mom and ___ buy food at the supermarket slowly .",
       "answers": [
-        "food",
-        "slowly"
+        "my",
+        "I"
       ]
     }
   ],

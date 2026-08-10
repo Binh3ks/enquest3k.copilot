@@ -2,7 +2,7 @@ export default {
   "title": "My Market Visit",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Last Sunday, I walked to the busy market with my mum. The stalls were full of fresh fruit, colorful cloth, paper bags, glass bottles, and shiny metal pots. I saw oranges, green vegetables, and bright red apples. I heard the sellers calling and the sound of coins on the wooden table. I smelt warm bread and spicy ginger near the food stall. I felt the smooth cotton scarf, the rough stone tile, and the cold metal tray. Later I bought a sweet mango and a cool lemonade. The market was noisy, exciting, and full of new smells.",
+  "model_sentence": "Last Sunday I went to the busy market with my mum. The stalls had fresh fruit, colorful cloth, and big bags of rice. I saw a seller counting coins on the wooden table. I heard people calling and the sound of coins in the market. I smelt warm bread and spicy ginger from the food stall. I felt the smooth cotton scarf and the rough metal pot. The paper bags were full of fruit and small goods. I bought a sweet mango and a cool lemonade drink. The market smelled busy, looked colorful and felt exciting. At the end I said the market was amazing and I wanted to come back.",
   "instruction_en": "Write about a visit to the market using saw, heard, felt, and smelt. Mention at least TWO materials words such as cotton, metal, paper, glass, stone, or wood.",
   "instruction_vi": "Viết về chuyến đi chợ dùng saw, heard, felt, smelt. Dùng ít nhất HAI từ vật liệu như cotton, metal, paper, glass, stone hoặc wood.",
   "prompt_en": "What did you see, hear, smell, and feel at the market? Which market materials did you notice?",
@@ -28,73 +28,73 @@ export default {
   "topic_talk_prompt": "Describe a busy market using your senses and materials words.",
   "sentence_frames": [
     {
-      "template": "Last Sunday I went to the busy ___ with my ___.",
+      "template": "Last Sunday ___ went to ___ busy market with my mum.",
       "answers": [
-        "market",
-        "mum"
+        "I",
+        "the"
       ]
     },
     {
-      "template": "The stalls had fresh ___, colorful ___, and big bags of rice.",
+      "template": "The stalls ___ fresh fruit, ___ cloth, and big bags of rice.",
       "answers": [
-        "fruit",
-        "cloth"
-      ]
-    },
-    {
-      "template": "I saw a seller counting ___ on the ___ table.",
-      "answers": [
-        "coins",
-        "wooden"
-      ]
-    },
-    {
-      "template": "I heard people ___ and the sound of ___ in the market.",
-      "answers": [
-        "calling",
-        "coins"
-      ]
-    },
-    {
-      "template": "I smelt warm ___ and spicy ___ from the food stall.",
-      "answers": [
-        "bread",
-        "ginger"
-      ]
-    },
-    {
-      "template": "I felt the smooth ___ scarf and the rough ___ pot.",
-      "answers": [
-        "cotton",
-        "metal"
-      ]
-    },
-    {
-      "template": "The paper ___ were full of ___ and small goods.",
-      "answers": [
-        "bags",
-        "fruit"
-      ]
-    },
-    {
-      "template": "I bought a sweet ___ and a cool ___ drink.",
-      "answers": [
-        "mango",
-        "lemonade"
-      ]
-    },
-    {
-      "template": "The market smelled ___, looked ___, and felt exciting.",
-      "answers": [
-        "busy",
+        "had",
         "colorful"
       ]
     },
     {
-      "template": "At the end, I said the market was ___ and I wanted to ___.",
+      "template": "I saw ___ seller counting ___ on the wooden table.",
       "answers": [
-        "amazing",
-        "come back"
+        "a",
+        "coins"
+      ]
+    },
+    {
+      "template": "I heard ___ calling and ___ sound of coins in the market.",
+      "answers": [
+        "people",
+        "the"
+      ]
+    },
+    {
+      "template": "I smelt ___ bread and ___ ginger from the food stall.",
+      "answers": [
+        "warm",
+        "spicy"
+      ]
+    },
+    {
+      "template": "I felt ___ smooth cotton ___ and the rough metal pot.",
+      "answers": [
+        "the",
+        "scarf"
+      ]
+    },
+    {
+      "template": "The paper ___ were full ___ fruit and small goods.",
+      "answers": [
+        "bags",
+        "of"
+      ]
+    },
+    {
+      "template": "I bought ___ sweet mango ___ a cool lemonade drink.",
+      "answers": [
+        "a",
+        "and"
+      ]
+    },
+    {
+      "template": "The market ___ busy, looked ___ and felt exciting.",
+      "answers": [
+        "smelled",
+        "colorful"
+      ]
+    },
+    {
+      "template": "At the ___ I said ___ market was amazing and I wanted to come back.",
+      "answers": [
+        "end",
+        "the"
       ]
     }
   ],

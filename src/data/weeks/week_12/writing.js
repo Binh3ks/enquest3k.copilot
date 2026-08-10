@@ -88,47 +88,48 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is the school talent ___! ___",
+      "template": "Today is ___ school talent ___ then happily",
       "answers": [
-        "show",
-        "then"
+        "the",
+        "show"
       ]
     },
     {
-      "template": "Sarah can sing songs ___ on stage ___ .",
+      "template": "Sarah can ___ songs happily ___ stage also .",
       "answers": [
-        "happily",
-        "also"
+        "sing",
+        "on"
       ]
     },
     {
-      "template": "The audience ___ her performance ___ .",
+      "template": "The ___ loves her ___ so .",
       "answers": [
-        "loves",
-        "so"
+        "audience",
+        "performance"
       ]
     },
     {
-      "template": "Tom can dance with energy and ___ ___ .",
+      "template": "Tom can ___ with energy ___ style together .",
       "answers": [
-        "style",
-        "next"
+        "dance",
+        "and"
       ]
     },
     {
-      "template": "Mike can run fast around the ___ ___ .",
+      "template": "Mike can ___ fast around ___ track safely .",
       "answers": [
-        "track",
-        "finally"
+        "run",
+        "the"
       ]
     },
     {
-      "template": "Emma can jump ___ and always lands safely ___ .",
+      "template": "Emma can ___ high and ___ lands safely slowly .",
       "answers": [
-        "high",
-        "slowly"
+        "jump",
+        "always"
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "Today is the school talent show then happily Sarah can sing songs happily on stage also . The audience loves her performance so . Tom can dance with energy and style together . Mike can run fast around the track safely . Emma can jump high and always lands safely slowly ."
 };

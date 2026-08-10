@@ -2,7 +2,7 @@ export default {
   "title": "My Picnic Story",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Last Sunday my family had the most wonderful outdoor picnic in the large park at the end of our street, and the warm sunny weather made everything feel absolutely perfect. My mum had spent Saturday afternoon preparing all the food, which included soft white bread rolls, slices of cheddar cheese, cold roast chicken, fresh grapes and strawberries, and a large bottle of homemade lemonade that she had chilled overnight. We found a perfect spot under a wide spreading oak tree near the duck pond and spread two large blankets on the cool soft grass. We spent the afternoon eating, chatting, and laughing at funny stories from when my parents were young, and my younger brother kept trying to steal extra strawberries when he thought nobody was looking. At one point, a group of sparrows flew down and pecked at our breadcrumbs, which made everyone laugh. As the sun began to set and the air grew cooler, we packed everything into our baskets and walked home slowly, full of good food and happy memories.",
+  "model_sentence": "Last Sunday, my family had a picnic happily We went to a perfect grassy spot carefully Mum brought tasty chicken sandwiches slowly We also had sweet cold lemonade together We sat on soft green grass safely Then dark grey clouds appeared suddenly We ran fast under the shelter every day It was a wonderful picnic at school Last Sunday, my family had a picnic in the afternoon Last Sunday, my family had a picnic happily",
   "instruction_en": "Write a detailed picnic story from start to finish using vivid language!",
   "instruction_vi": "Viết câu chuyện dã ngoại chi tiết từ đầu đến cuối bằng ngôn ngữ sinh động!",
   "prompt_en": "What food did you bring? What happened during the picnic? How did the day end?",
@@ -20,73 +20,73 @@ export default {
   "topic_talk_prompt": "Tell me everything about your perfect picnic day!",
   "sentence_frames": [
     {
-      "template": "Last Sunday, my family had a ___ ___",
+      "template": "Last Sunday, ___ family had ___ picnic happily",
       "answers": [
-        "picnic",
-        "then"
+        "my",
+        "a"
       ]
     },
     {
-      "template": "We went to a ___ ___",
+      "template": "We went ___ a perfect ___ spot carefully",
       "answers": [
-        "perfect grassy spot",
-        "also"
+        "to",
+        "grassy"
       ]
     },
     {
-      "template": "Mum brought ___ ___",
+      "template": "Mum ___ tasty chicken ___ slowly",
       "answers": [
-        "tasty chicken sandwiches",
-        "so"
+        "brought",
+        "sandwiches"
       ]
     },
     {
-      "template": "We also had ___ ___",
+      "template": "We ___ had sweet ___ lemonade together",
       "answers": [
-        "sweet cold lemonade",
-        "next"
+        "also",
+        "cold"
       ]
     },
     {
-      "template": "We sat on ___ ___",
+      "template": "We ___ on soft ___ grass safely",
       "answers": [
-        "soft green grass",
-        "finally"
+        "sat",
+        "green"
       ]
     },
     {
-      "template": "Then dark grey ___ ___",
+      "template": "Then ___ grey clouds ___ suddenly",
       "answers": [
-        "clouds appeared",
-        "slowly"
+        "dark",
+        "appeared"
       ]
     },
     {
-      "template": "We ran fast under the ___ ___",
+      "template": "We ran ___ under the ___ every day",
       "answers": [
-        "shelter",
-        "happily"
+        "fast",
+        "shelter"
       ]
     },
     {
-      "template": "It was a wonderful ___ ___",
+      "template": "It ___ a wonderful ___ at school",
       "answers": [
-        "picnic",
-        "carefully"
+        "was",
+        "picnic"
       ]
     },
     {
-      "template": "Last Sunday, my family had a ___ ___",
+      "template": "Last Sunday, ___ family had ___ picnic in the afternoon",
       "answers": [
-        "picnic",
-        "then"
+        "my",
+        "a"
       ]
     },
     {
-      "template": "Last Sunday, my family had a ___ ___",
+      "template": "Last Sunday, ___ family had ___ picnic happily",
       "answers": [
-        "picnic",
-        "then"
+        "my",
+        "a"
       ]
     }
   ],

@@ -25,59 +25,59 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Today is a rainy afternoon, so I am sitting in the ___ with my mother ___ .",
+      "template": "Today is ___ rainy afternoon, ___ I am sitting in the living room with my mother then .",
       "answers": [
-        "living room",
-        "then"
-      ]
-    },
-    {
-      "template": "We are looking at an old ___ album ___ .",
-      "answers": [
-        "photo",
-        "also"
-      ]
-    },
-    {
-      "template": "In this first picture, I was just a young, tiny ___ ___ .",
-      "answers": [
-        "baby",
+        "a",
         "so"
       ]
     },
     {
-      "template": "I was very small, round, and ___ ___ .",
+      "template": "We are ___ at an ___ photo album also carefully .",
       "answers": [
-        "cute",
-        "next"
+        "looking",
+        "old"
       ]
     },
     {
-      "template": "My mother says I was also extremely ___ ___ .",
+      "template": "In this ___ picture, I ___ just a young, tiny baby slowly .",
       "answers": [
-        "noisy",
-        "finally"
+        "first",
+        "was"
       ]
     },
     {
-      "template": "I was definitely not quiet like my older ___ ___ .",
+      "template": "I was ___ small, round, ___ cute together .",
       "answers": [
-        "brother",
-        "slowly"
+        "very",
+        "and"
       ]
     },
     {
-      "template": "He was very brave and ___ ___ .",
+      "template": "My mother ___ I was ___ extremely noisy safely .",
       "answers": [
-        "smart",
-        "happily"
+        "says",
+        "also"
       ]
     },
     {
-      "template": "Whenever I was scared, he was always there to hold my ___ ___ .",
+      "template": "I was ___ not quiet ___ my older brother suddenly .",
       "answers": [
-        "hand",
-        "carefully"
+        "definitely",
+        "like"
+      ]
+    },
+    {
+      "template": "He was ___ brave and ___ every day .",
+      "answers": [
+        "very",
+        "smart"
+      ]
+    },
+    {
+      "template": "Whenever I ___ scared, he ___ always there to hold my hand at school .",
+      "answers": [
+        "was",
+        "was"
       ]
     }
   ],
@@ -266,5 +266,6 @@ export default {
         }
       ]
     }
-  }
+  },
+  "model_sentence": "Today is a rainy afternoon, so I am sitting in the living room with my mother then . We are looking at an old photo album also carefully . In this first picture, I was just a young, tiny baby slowly . I was very small, round, and cute together . My mother says I was also extremely noisy safely . I was definitely not quiet like my older brother suddenly . He was very brave and smart every day . Whenever I was scared, he was always there to hold my hand at school ."
 };

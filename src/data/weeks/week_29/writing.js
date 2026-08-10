@@ -7,7 +7,7 @@ export default {
   "instruction_vi": "Hãy viết về một chuyến đi kỳ diệu! Dùng thì quá khứ. Bạn đã ĐI đâu? Bạn GẶP ai (một phi công, bác sĩ, nông dân, kỹ sư, hay nhà khoa học)? Điều gì ĐẾN để giúp bạn?",
   "prompt_en": "Imagine you found a magic carpet. Describe your trip using went, flew, came, and ran.",
   "prompt_vi": "Hãy tưởng tượng bạn tìm thấy một tấm thảm thần. Mô tả chuyến đi của bạn dùng went, flew, came và ran.",
-  "model_sentence": "Last week, the children at Green School went on a magic trip to a wonderful place. First, they got on a magic carpet that flew to a tiny green island in the sea. On the island, a friendly pilot came to help them. He picked up a beautiful photo and gave it to the teacher. A kind farmer went to the field and gave them fresh mangoes. An engineer looked at an old map and showed them a tiny lighthouse. A scientist looked through a telescope and said loudly, 'Come and look at this!' On the way back, the dolphins jumped out of the water and swam alongside the magic carpet. The magic carpet flew back over the sea to the school station. All the children went home happy and tired. 'What a wonderful trip!' they said together. 'We will always remember this adventure.'",
+  "model_sentence": "Last week, the children went on a magic trip happily First, they got on a flying carpet carefully The carpet flew over a secret magic island slowly They met a tiny purple monkey together They also saw a friendly talking dolphin safely A brave pilot helped them find their way suddenly They took a photo to remember the adventure every day They flew safely back home at school Last week, the children went on a magic trip in the afternoon Last week, the children went on a magic trip happily",
   "keywords": [
     "went on",
     "magic carpet",
@@ -22,73 +22,73 @@ export default {
   "audio_model": "/audio/week29/writing_model.mp3",
   "sentence_frames": [
     {
-      "template": "Last week, the children went on a ___ ___",
+      "template": "Last week, ___ children went ___ a magic trip happily",
       "answers": [
-        "magic trip",
-        "then"
+        "the",
+        "on"
       ]
     },
     {
-      "template": "First, they got on a ___ ___",
+      "template": "First, they ___ on a ___ carpet carefully",
       "answers": [
-        "flying carpet",
-        "also"
+        "got",
+        "flying"
       ]
     },
     {
-      "template": "The carpet flew over ___ ___",
+      "template": "The carpet ___ over a ___ magic island slowly",
       "answers": [
-        "a secret magic island",
-        "so"
+        "flew",
+        "secret"
       ]
     },
     {
-      "template": "They met a tiny ___ ___",
+      "template": "They ___ a tiny ___ monkey together",
       "answers": [
-        "purple monkey",
-        "next"
+        "met",
+        "purple"
       ]
     },
     {
-      "template": "They also saw a ___ ___",
+      "template": "They also ___ a friendly ___ dolphin safely",
       "answers": [
-        "friendly talking dolphin",
-        "finally"
+        "saw",
+        "talking"
       ]
     },
     {
-      "template": "A brave pilot helped them ___ ___",
+      "template": "A brave ___ helped them ___ their way suddenly",
       "answers": [
-        "find their way",
-        "slowly"
+        "pilot",
+        "find"
       ]
     },
     {
-      "template": "They took a photo to ___ ___",
+      "template": "They took ___ photo to ___ the adventure every day",
       "answers": [
-        "remember the adventure",
-        "happily"
+        "a",
+        "remember"
       ]
     },
     {
-      "template": "They flew safely ___ ___",
+      "template": "They ___ safely back ___ at school",
       "answers": [
-        "back home",
-        "carefully"
+        "flew",
+        "home"
       ]
     },
     {
-      "template": "Last week, the children went on a ___ ___",
+      "template": "Last week, ___ children went ___ a magic trip in the afternoon",
       "answers": [
-        "magic trip",
-        "then"
+        "the",
+        "on"
       ]
     },
     {
-      "template": "Last week, the children went on a ___ ___",
+      "template": "Last week, ___ children went ___ a magic trip happily",
       "answers": [
-        "magic trip",
-        "then"
+        "the",
+        "on"
       ]
     }
   ],

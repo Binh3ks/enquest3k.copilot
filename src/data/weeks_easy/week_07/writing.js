@@ -1,7 +1,7 @@
 export default {
   "title": "Inside My Backpack",
   "min_words": 30,
-  "model_sentence": "There is a backpack on my bed. I open it. There is a yellow pencil inside the bag. There is a red crayon too. There is blank paper in the bag. There is a blue folder for my homework. I see my lunch box. There is a water bottle next to it. There is white glue in my pencil case. There are sharp scissors too. There is a big marker to draw. I put everything in my bag. Now I am ready for school!",
+  "model_sentence": "There is a backpack on my bed. I open it. There is a yellow pencil and a red crayon inside. There is blank paper in the bag. There is a blue folder for my homework. I see my lunch box. There is a water bottle next to it. Now I am ready for school!",
   "instruction_en": "Write about what is in your school bag!",
   "instruction_vi": "Viết về những gì có trong cặp sách của bạn!",
   "prompt_en": "What do you have in your bag? What color are your things? Are you ready for school?",

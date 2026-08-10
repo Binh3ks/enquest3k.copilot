@@ -1,7 +1,7 @@
 export default {
   "title": "My Busy Classroom",
   "min_words": 45,
-  "model_sentence": "My classroom is very bright and cheerful because the walls are covered with colorful posters and student artwork. There are exactly twenty-eight students in my class and we all sit at wooden desks arranged in four rows. On the front wall there is a large whiteboard and two interactive screens that the teacher uses every day. Along the back wall there is a tall bookshelf with over a hundred books organised by subject. Our classroom also has a reading corner with soft cushions where we can sit and read quietly during free time. I feel proud of our classroom because we all help to keep it neat and tidy.",
+  "model_sentence": "My classroom is very bright and cheerful because the walls are covered with colorful posters happily . There are exactly twenty-eight students and we sit at wooden desks arranged in four rows carefully . On the front wall there is a large whiteboard and two interactive screens so slowly . Along the back wall there is a tall bookshelf with over a hundred books organized by subject next . Our classroom also has a reading corner with soft cushions where we can sit and read quietly finally . I feel proud of our classroom because we all help to keep it neat and tidy slowly .",
   "instruction_en": "Describe your busy classroom with numbers, colors, and reasons!",
   "instruction_vi": "Mô tả lớp học bận rộn của bạn với số đếm, màu sắc và lý do!",
   "prompt_en": "What does your classroom look like? How many of each thing? Why do you feel proud?",
@@ -25,45 +25,45 @@ export default {
   "topic_talk_prompt": "Give me a full detailed description of your classroom!",
   "sentence_frames": [
     {
-      "template": "My classroom is very bright and cheerful because the walls are covered with colorful ___ ___ .",
+      "template": "My classroom ___ very bright ___ cheerful because the walls are covered with colorful posters happily .",
       "answers": [
-        "posters",
-        "then"
+        "is",
+        "and"
       ]
     },
     {
-      "template": "There are exactly twenty-eight students and we sit at wooden desks arranged in four ___ ___ .",
+      "template": "There are ___ twenty-eight students ___ we sit at wooden desks arranged in four rows carefully .",
       "answers": [
-        "rows",
-        "also"
+        "exactly",
+        "and"
       ]
     },
     {
-      "template": "On the front wall there is a large whiteboard and two ___ screens ___ .",
+      "template": "On the ___ wall there ___ a large whiteboard and two interactive screens so slowly .",
       "answers": [
-        "interactive",
-        "so"
+        "front",
+        "is"
       ]
     },
     {
-      "template": "Along the back wall there is a tall bookshelf with over a hundred ___ organized by subject ___ .",
+      "template": "Along the ___ wall there ___ a tall bookshelf with over a hundred books organized by subject next .",
       "answers": [
-        "books",
-        "next"
+        "back",
+        "is"
       ]
     },
     {
-      "template": "Our classroom also has a reading corner with soft ___ where we can sit and read quietly ___ .",
+      "template": "Our classroom ___ has a ___ corner with soft cushions where we can sit and read quietly finally .",
       "answers": [
-        "cushions",
-        "finally"
+        "also",
+        "reading"
       ]
     },
     {
-      "template": "I feel ___ of our classroom because we all help to keep it neat and tidy ___ .",
+      "template": "I feel ___ of our ___ because we all help to keep it neat and tidy slowly .",
       "answers": [
         "proud",
-        "slowly"
+        "classroom"
       ]
     }
   ],

@@ -2,7 +2,7 @@ export default {
   "title": "The Old Town Mystery",
   "min_words": 55,
   "min_sentences": 8,
-  "model_sentence": "Detective Luna loves mysteries. She found an old map of her town. On the old map, there was a local market near a long river with tall trees along the road. There was a wooden bridge over the river. Now the market is gone. There is a new bridge and new buildings. But the old temple still stands. Luna smiled and said, 'The past is still here if you look carefully!'",
+  "model_sentence": "Detective Luna found an old map of her town then . The map was from one hundred years ago! word1 carefully On the old map, there was a big market near the long river so . There were tall trees along the road together . At the end of the road there was a beautiful old temple safely . There was a wooden bridge over the river suddenly . However, now there are new tall buildings where the old market was happily . There is a big new bridge but not many trees. word1 at school",
   "instruction_en": "Write about how a place has changed over time using was, were, there was, and however!",
   "instruction_vi": "Viết về sự thay đổi của một nơi theo thời gian dùng was, were, there was và however!",
   "prompt_en": "What was the place like before? What has changed? How do you feel about it?",
@@ -10,59 +10,59 @@ export default {
   "topic_talk_prompt": "Describe a place that has changed — past vs present!",
   "sentence_frames": [
     {
-      "template": "Detective Luna found an old ___ of her town ___ .",
+      "template": "Detective Luna ___ an old ___ of her town then .",
       "answers": [
-        "map",
-        "then"
+        "found",
+        "map"
       ]
     },
     {
-      "template": "The map was from one hundred years ago! ___ ___",
+      "template": "The map ___ from one ___ years ago! word1 carefully",
       "answers": [
-        "word1",
-        "word2"
+        "was",
+        "hundred"
       ]
     },
     {
-      "template": "On the old map, there was a big ___ near the long river ___ .",
+      "template": "On the ___ map, there ___ a big market near the long river so .",
       "answers": [
-        "market",
-        "so"
+        "old",
+        "was"
       ]
     },
     {
-      "template": "There were tall trees along the ___ ___ .",
+      "template": "There were ___ trees along ___ road together .",
       "answers": [
-        "road",
-        "next"
+        "tall",
+        "the"
       ]
     },
     {
-      "template": "At the end of the road, there was a beautiful old ___ ___ .",
+      "template": "At the ___ of the ___ there was a beautiful old temple safely .",
       "answers": [
-        "temple",
-        "finally"
+        "end",
+        "road"
       ]
     },
     {
-      "template": "There was a wooden bridge over the ___ ___ .",
+      "template": "There was ___ wooden bridge ___ the river suddenly .",
       "answers": [
-        "river",
-        "slowly"
+        "a",
+        "over"
       ]
     },
     {
-      "template": "However, now there are new tall ___ where the old market was ___ .",
+      "template": "However, now ___ are new ___ buildings where the old market was happily .",
       "answers": [
-        "buildings",
-        "happily"
+        "there",
+        "tall"
       ]
     },
     {
-      "template": "There is a big new bridge, but not many trees. ___ ___",
+      "template": "There is ___ big new ___ but not many trees. word1 at school",
       "answers": [
-        "word1",
-        "word2"
+        "a",
+        "bridge"
       ]
     }
   ],

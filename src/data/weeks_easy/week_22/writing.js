@@ -202,5 +202,6 @@ export default {
       ]
     }
   },
-  "min_sentences": 8
+  "min_sentences": 8,
+  "model_sentence": "I am a Time Detective. Someone ate the chocolate cake last night! Dad cooked dinner at 6 and washed the dishes at 7. Mum worked in the garden last weekend. The mystery was solved! My brother ate the cake! I am a Time Detective. I am a Time Detective."
 };

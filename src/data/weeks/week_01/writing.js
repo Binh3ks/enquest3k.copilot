@@ -2,7 +2,7 @@ export default {
   "title": "Hello, World!",
   "min_words": 35,
   "min_sentences": 6,
-  "model_sentence": "My name is Alex and I am eight years old. I am a new student at Greenwood Elementary School. Every morning, I wake up early and get ready for school. My teacher, Ms. Johnson, is very kind and patient. She teaches us English, Math, and Science. I want to become a young scientist when I grow up.",
+  "model_sentence": "My name is Alex and I am eight years old then . I am a new student at Greenwood Elementary School carefully Every morning, I wake up early and get ready for school slowly My teacher, Ms Johnson, is very kind and patient next . She teaches us English, Math, and Science safely I want to become a young scientist when I grow up slowly .",
   "instruction_en": "Write about yourself and your school in full sentences!",
   "instruction_vi": "Viết về bản thân và trường học bằng câu đầy đủ!",
   "prompt_en": "What is your name and age? What is your school like? What do you carry in your bag? What do you want to become?",
@@ -18,45 +18,45 @@ export default {
   "topic_talk_prompt": "Tell me about yourself and your school!",
   "sentence_frames": [
     {
-      "template": "My name is Alex and I am ___ years old ___ .",
+      "template": "My name ___ Alex and ___ am eight years old then .",
       "answers": [
-        "eight",
-        "then"
+        "is",
+        "I"
       ]
     },
     {
-      "template": "I am a new student at Greenwood Elementary ___ ___",
+      "template": "I am ___ new student ___ Greenwood Elementary School carefully",
       "answers": [
-        "School",
-        "also"
+        "a",
+        "at"
       ]
     },
     {
-      "template": "Every morning, I wake up early and get ready for ___ ___",
+      "template": "Every morning, ___ wake up ___ and get ready for school slowly",
       "answers": [
-        "school",
-        "so"
+        "I",
+        "early"
       ]
     },
     {
-      "template": "My teacher, Ms. Johnson, is very ___ and patient ___ .",
+      "template": "My teacher, ___ Johnson, is ___ kind and patient next .",
       "answers": [
-        "kind",
-        "next"
+        "Ms",
+        "very"
       ]
     },
     {
-      "template": "She teaches us English, Math, and ___ ___",
+      "template": "She teaches ___ English, Math, ___ Science safely",
       "answers": [
-        "Science",
-        "finally"
+        "us",
+        "and"
       ]
     },
     {
-      "template": "I want to become a young ___ when I grow up ___ .",
+      "template": "I want ___ become a ___ scientist when I grow up slowly .",
       "answers": [
-        "scientist",
-        "slowly"
+        "to",
+        "young"
       ]
     }
   ],

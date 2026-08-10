@@ -3,7 +3,7 @@ export default {
   "audio_url": null,
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Last Saturday, I woke up early and had a very busy day. First, I made my bed and kept my room tidy. Then I wrote a letter to my grandmother and did all my homework. In the afternoon, I helped Dad cut the grass and we built a birdhouse together. At the café, I chose my own lunch and paid for it myself. By evening, I put everything away and fell asleep very quickly — it was my best Saturday ever!",
+  "model_sentence": "Last Saturday, I woke up early and made my bed. First, I did homework and wrote a letter to my grandmother. Then I cut the grass and put my tools away. I kept my room tidy by cleaning together . My mum/dad and I built a birdhouse together finally safely . I chose a muffin because I was hungry suddenly . At the café I paid for it with my my own money. By evening, I put my things away and fell asleep early. I felt proud because I had a productive day. Last Saturday, I woke up early and made my bed.",
   "instruction_en": "Write about a busy Saturday using at least 5 task verbs (woke, made, did, wrote, cut, built, put, kept, chose, or paid)!",
   "instruction_vi": "Viết về một ngày thứ Bảy bận rộn, sử dụng ít nhất 5 động từ công việc (woke, made, did, wrote, cut, built, put, kept, chose, hoặc paid)!",
   "prompt_en": "What did you do on a busy Saturday? Use: woke, made, did, wrote, cut, built, put, kept, chose, paid",
@@ -29,73 +29,73 @@ export default {
   "topic_talk_prompt": "Tell me about your busiest Saturday — what did you make, do, write, or build? Did you wake up early? Did you choose something special?",
   "sentence_frames": [
     {
-      "template": "Last Saturday, I woke up ___ and made ___.",
+      "template": "Last Saturday, ___ woke up ___ and made my bed.",
       "answers": [
-        "early",
-        "my bed"
-      ]
-    },
-    {
-      "template": "First, I did ___ and wrote ___ to my grandmother.",
-      "answers": [
-        "homework",
-        "a letter"
-      ]
-    },
-    {
-      "template": "Then I cut ___ and put ___ away.",
-      "answers": [
-        "the grass",
-        "my tools"
-      ]
-    },
-    {
-      "template": "I kept my room ___ by ___.",
-      "answers": [
-        "tidy",
-        "cleaning"
-      ]
-    },
-    {
-      "template": "My mum/dad and I built ___ together ___ .",
-      "answers": [
-        "a birdhouse",
-        "finally"
-      ]
-    },
-    {
-      "template": "I chose ___ because ___.",
-      "answers": [
-        "a muffin",
-        "I was hungry"
-      ]
-    },
-    {
-      "template": "At the café, I paid for ___ with my ___.",
-      "answers": [
-        "it",
-        "my own money"
-      ]
-    },
-    {
-      "template": "By evening, I put ___ away and fell asleep ___.",
-      "answers": [
-        "my things",
+        "I",
         "early"
       ]
     },
     {
-      "template": "I felt ___ because I ___.",
+      "template": "First, I ___ homework and ___ a letter to my grandmother.",
       "answers": [
-        "proud",
-        "had a productive day"
+        "did",
+        "wrote"
       ]
     },
     {
-      "template": "Last Saturday, I woke up ___ and made ___.",
+      "template": "Then I ___ the grass ___ put my tools away.",
       "answers": [
-        "early",
-        "my bed"
+        "cut",
+        "and"
+      ]
+    },
+    {
+      "template": "I kept ___ room tidy ___ cleaning together .",
+      "answers": [
+        "my",
+        "by"
+      ]
+    },
+    {
+      "template": "My mum/dad ___ I built ___ birdhouse together finally safely .",
+      "answers": [
+        "and",
+        "a"
+      ]
+    },
+    {
+      "template": "I chose ___ muffin because ___ was hungry suddenly .",
+      "answers": [
+        "a",
+        "I"
+      ]
+    },
+    {
+      "template": "At the ___ I paid ___ it with my my own money.",
+      "answers": [
+        "café",
+        "for"
+      ]
+    },
+    {
+      "template": "By evening, ___ put my ___ away and fell asleep early.",
+      "answers": [
+        "I",
+        "things"
+      ]
+    },
+    {
+      "template": "I felt ___ because I ___ a productive day.",
+      "answers": [
+        "proud",
+        "had"
+      ]
+    },
+    {
+      "template": "Last Saturday, ___ woke up ___ and made my bed.",
+      "answers": [
+        "I",
+        "early"
       ]
     }
   ],

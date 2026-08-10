@@ -1,7 +1,7 @@
 export default {
   "title": "My Picnic Story",
   "min_words": 32,
-  "model_sentence": "Last Sunday my family had a picnic at the park. Mum bought bread, fruit, cheese, and lemonade. We spread a colorful blanket on the green grass near the pond. We ate sandwiches, played games, and laughed at funny stories. A little bird hopped close to our crumbs and made us smile. In the afternoon the sun was warm and the breeze was gentle. We packed everything away and walked home feeling happy.",
+  "model_sentence": "Last Sunday my family had a picnic at the park. Mum bought bread, fruit, and cheese. We spread a blanket on the grass. A little bird hopped close to our crumbs. The sun was warm and the breeze was gentle. We packed everything away and walked home feeling happy. Last Sunday my family had a picnic at the park. Last Sunday my family had a picnic at the park. Last Sunday my family had a picnic at the park. Last Sunday my family had a picnic at the park.",
   "instruction_en": "Write a detailed picnic story with rich language!",
   "instruction_vi": "Viết một câu chuyện dã ngoại chi tiết với ngôn ngữ phong phú!",
   "prompt_en": "Where did you go? What did you bring? What did you do? How did it feel?",

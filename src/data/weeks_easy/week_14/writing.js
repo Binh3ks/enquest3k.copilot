@@ -144,5 +144,6 @@ export default {
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "Welcome to my presentation! My name is Emma. This is my loving family. I can sing very well. I can also dance to music. I am proud of my work. Thank you for listening!"
 };

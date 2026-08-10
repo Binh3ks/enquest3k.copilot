@@ -1,7 +1,7 @@
 export default {
   "title": "My Family Squad",
   "min_words": 30,
-  "model_sentence": "This is my family. My lovely mother is kind. She makes food for us every day. My funny father is strong. He plays with me in the park. My big brother helps me with homework. My little sister is funny. She draws pictures for me. We love each other. We work together as a great team. Our home is full of happiness.",
+  "model_sentence": "This is my mother. She is kind. She makes food for us every day. This is my father. He is strong. He plays with me in the park. My big brother helps me with homework. We love each other and work together.",
   "instruction_en": "Write about your family!",
   "instruction_vi": "Viết về gia đình của bạn!",
   "prompt_en": "Who is in your family? What does each person do? What are they like?",

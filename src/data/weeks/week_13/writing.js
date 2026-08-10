@@ -133,47 +133,48 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is a perfect school day! I wake up at seven ___ ___ .",
+      "template": "Today is ___ perfect school ___ I wake up at seven o'clock happily .",
+      "answers": [
+        "a",
+        "day"
+      ]
+    },
+    {
+      "template": "I brush ___ teeth with ___ blue toothbrush carefully .",
+      "answers": [
+        "my",
+        "my"
+      ]
+    },
+    {
+      "template": "Then I ___ breakfast with ___ family slowly .",
+      "answers": [
+        "eat",
+        "my"
+      ]
+    },
+    {
+      "template": "I eat ___ and eggs. ___ is yummy together .",
+      "answers": [
+        "rice",
+        "It"
+      ]
+    },
+    {
+      "template": "At eight ___ I go ___ school with my friends finally .",
       "answers": [
         "o'clock",
-        "then"
+        "to"
       ]
     },
     {
-      "template": "I brush my teeth with my blue ___ ___ .",
+      "template": "At twelve ___ I have ___ suddenly .",
       "answers": [
-        "toothbrush",
-        "also"
-      ]
-    },
-    {
-      "template": "Then I eat breakfast with my ___ ___ .",
-      "answers": [
-        "family",
-        "so"
-      ]
-    },
-    {
-      "template": "I eat rice and eggs. It is ___ ___ .",
-      "answers": [
-        "yummy",
-        "next"
-      ]
-    },
-    {
-      "template": "At eight o'clock, I go to ___ with my friends ___ .",
-      "answers": [
-        "school",
-        "finally"
-      ]
-    },
-    {
-      "template": "At twelve o'clock, I have ___ ___ .",
-      "answers": [
-        "lunch",
-        "slowly"
+        "o'clock",
+        "lunch"
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "Today is a perfect school day I wake up at seven o'clock happily . I brush my teeth with my blue toothbrush carefully . Then I eat breakfast with my family slowly . I eat rice and eggs. It is yummy together . At eight o'clock I go to school with my friends finally . At twelve o'clock I have lunch suddenly ."
 };

@@ -144,5 +144,6 @@ export default {
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "I wake up at seven o'clock. I brush my teeth and eat breakfast. I go to school with my friends. At twelve o'clock, I have lunch. I do homework after school. I go to bed at nine o'clock."
 };

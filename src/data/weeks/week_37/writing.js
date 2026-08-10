@@ -2,60 +2,80 @@ export default {
   "title": "Speed Science & Olympic Peace — Writing Station",
   "theme": "sports_day",
   "min_words": 65,
-  "min_sentences": 8,
-  "model_sentence": "On Saturday morning, our relay team went to the sports stadium for our big race. We solved a physics problem by sprinting early before the baton exchange zone to keep our fast momentum. Leo ran very fast and passed the baton cleanly to Maya. Max sprinted at peak velocity and crossed the finish line first! Scientific teamwork brought victory, and we felt proud like Olympic champions.",
+  "min_sentences": 10,
+  "model_sentence": "On Saturday morning we went to the sports stadium happily . The weather was sunny and warm carefully . Leo ran very fast along the track slowly . He passed the baton cleanly to Maya together . Max sprinted with fast momentum toward the line safely . Spectators watched and clapped with joy suddenly . Our scientific teamwork brought victory every day . Competitors were united in peace at the end at school . On Saturday morning we went to the sports stadium in the afternoon . On Saturday morning we went to the sports stadium happily .",
   "topic_talk_prompt": "Tell me about a sports day race or Olympic story — how did you apply speed science or teamwork to win?",
   "prompt_en": "Write about speed science and relay racing. Use 5+ sports action words (ran fast, passed the baton, maintained momentum, clapped, won, declared truce).",
   "prompt_vi": "Viết về khoa học tốc độ và chạy tiếp sức. Dùng 5+ từ chỉ hành động thể thao (ran fast, passed the baton, maintained momentum, clapped, won, declared truce).",
   "sentence_frames": [
     {
-      "template": "On Saturday morning, we went to the ___.",
+      "template": "On Saturday ___ we went ___ the sports stadium happily .",
       "answers": [
-        "sports stadium",
-        "stadium"
+        "morning",
+        "to"
       ]
     },
     {
-      "template": "The weather was ___ and warm.",
+      "template": "The weather ___ sunny and ___ carefully .",
       "answers": [
-        "sunny"
+        "was",
+        "warm"
       ]
     },
     {
-      "template": "Leo ran very ___ along the track.",
+      "template": "Leo ran ___ fast along ___ track slowly .",
       "answers": [
-        "fast"
+        "very",
+        "the"
       ]
     },
     {
-      "template": "He passed the ___ cleanly to Maya.",
+      "template": "He passed ___ baton cleanly ___ Maya together .",
       "answers": [
-        "baton"
+        "the",
+        "to"
       ]
     },
     {
-      "template": "Max sprinted with fast ___ toward the line.",
+      "template": "Max sprinted ___ fast momentum ___ the line safely .",
       "answers": [
-        "momentum",
-        "speed"
+        "with",
+        "toward"
       ]
     },
     {
-      "template": "Spectators watched and ___ with joy.",
+      "template": "Spectators watched ___ clapped with ___ suddenly .",
       "answers": [
-        "clapped"
+        "and",
+        "joy"
       ]
     },
     {
-      "template": "Our scientific ___ brought victory.",
+      "template": "Our scientific ___ brought victory ___ day .",
       "answers": [
-        "teamwork"
+        "teamwork",
+        "every"
       ]
     },
     {
-      "template": "Competitors were united in ___ at the end.",
+      "template": "Competitors were ___ in peace ___ the end at school .",
       "answers": [
-        "peace"
+        "united",
+        "at"
+      ]
+    },
+    {
+      "template": "On Saturday ___ we went ___ the sports stadium in the afternoon .",
+      "answers": [
+        "morning",
+        "to"
+      ]
+    },
+    {
+      "template": "On Saturday ___ we went ___ the sports stadium happily .",
+      "answers": [
+        "morning",
+        "to"
       ]
     }
   ],

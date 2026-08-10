@@ -213,5 +213,6 @@ export default {
       ]
     }
   },
-  "min_sentences": 8
+  "min_sentences": 8,
+  "model_sentence": "I was a baby in this photo. I was little and cute. My face was round and my eyes were very big. I was very loud and noisy. This picture shows my first day of school. I love these pictures from when I was small! I was a baby in this photo. I was a baby in this photo."
 };

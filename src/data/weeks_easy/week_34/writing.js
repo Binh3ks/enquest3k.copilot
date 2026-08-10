@@ -2,7 +2,7 @@ export default {
   "title": "Writing: The Ant and the Grasshopper Story",
   "audio_url": null,
   "min_words": 30,
-  "model_sentence": "Once upon a time there was an ant and a grasshopper. The ant worked hard and gathered seeds every day. The grasshopper only played and sang songs. When winter came, the grasshopper was cold and hungry. The kind ant gave the grasshopper some food. They learned: always prepare for the future!",
+  "model_sentence": "Once upon a time there was an ant and a grasshopper. The ant worked hard every day and gathered seeds. The grasshopper only played and sang songs all summer. When winter came, the grasshopper was very cold and hungry. The kind ant ant gave the grasshopper some food. They learned an important lesson: always prepare for the future. Now the ant and the grasshopper work hard together every day. Once upon a time there was an ant and a grasshopper. Once upon a time there was an ant and a grasshopper. Once upon a time there was an ant and a grasshopper.",
   "instruction_en": "Write about the ant and the grasshopper story. Use at least 3 of these words: ant, grasshopper, worked, gathered, seeds, winter, cold, hungry, shared, lesson",
   "instruction_vi": "Viết về câu chuyện con kiến và con châu chấu. Dùng ít nhất 3 từ: ant, grasshopper, worked, gathered, seeds, winter, cold, hungry, shared, lesson",
   "prompt_en": "Write about the ant and the grasshopper: The ant worked hard and gathered seeds. The grasshopper only played. When winter came, the grasshopper was cold and hungry.",

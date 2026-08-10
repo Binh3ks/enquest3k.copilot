@@ -1,7 +1,7 @@
 export default {
   "title": "My Art Class Story",
   "min_words": 30,
-  "model_sentence": "Yesterday I had art class. First I picked up my brush. Then I dipped it in red paint. I painted a flower. It looked beautiful. My teacher clapped and said it was wonderful.",
+  "model_sentence": "Yesterday I had art class. First I picked up my brush. Then I dipped it in red paint. I painted a picture of a flower. It looked beautiful. My teacher clapped loudly and said it was wonderful. Yesterday I had art class. Yesterday I had art class.",
   "instruction_en": "Write a sequence story about your art class!",
   "instruction_vi": "Viết một câu chuyện theo trình tự về giờ học mỹ thuật!",
   "prompt_en": "What did you do first? Then? What did you make?",

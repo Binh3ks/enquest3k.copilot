@@ -118,47 +118,48 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today our class is visiting the beautiful ___ ___ .",
+      "template": "Today our ___ is visiting ___ beautiful park happily .",
       "answers": [
-        "park",
-        "then"
+        "class",
+        "the"
       ]
     },
     {
-      "template": "Many people are enjoying their ___ ___ .",
+      "template": "Many people ___ enjoying their ___ carefully .",
       "answers": [
-        "day",
-        "also"
+        "are",
+        "day"
       ]
     },
     {
-      "template": "A young boy is running after his ___ near the trees ___ .",
+      "template": "A young ___ is running ___ his dog near the trees so .",
+      "answers": [
+        "boy",
+        "after"
+      ]
+    },
+    {
+      "template": "The ___ is barking ___ together .",
       "answers": [
         "dog",
-        "so"
+        "happily"
       ]
     },
     {
-      "template": "The dog is barking ___ ___ .",
+      "template": "An elderly ___ is sitting ___ a wooden bench safely .",
       "answers": [
-        "happily",
-        "next"
+        "man",
+        "on"
       ]
     },
     {
-      "template": "An elderly man is sitting on a wooden ___ ___ .",
+      "template": "He is ___ peacefully while ___ enjoys the fresh air slowly .",
       "answers": [
-        "bench",
-        "finally"
-      ]
-    },
-    {
-      "template": "He is reading ___ while he enjoys the fresh air ___ .",
-      "answers": [
-        "peacefully",
-        "slowly"
+        "reading",
+        "he"
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "Today our class is visiting the beautiful park happily . Many people are enjoying their day carefully . A young boy is running after his dog near the trees so . The dog is barking happily together . An elderly man is sitting on a wooden bench safely . He is reading peacefully while he enjoys the fresh air slowly ."
 };

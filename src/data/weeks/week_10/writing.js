@@ -113,47 +113,48 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "The city is ___ because there are many shops and schools ___ .",
+      "template": "The city ___ exciting because ___ are many shops and schools then .",
       "answers": [
-        "exciting",
-        "then"
+        "is",
+        "there"
       ]
     },
     {
-      "template": "But it can be very noisy and ___ ___ .",
+      "template": "But it ___ be very ___ and crowded carefully .",
       "answers": [
-        "crowded",
-        "also"
+        "can",
+        "noisy"
       ]
     },
     {
-      "template": "The air can be ___ because of heavy traffic ___ .",
+      "template": "The air ___ be polluted ___ of heavy traffic so .",
       "answers": [
-        "polluted",
-        "so"
+        "can",
+        "because"
       ]
     },
     {
-      "template": "The farm, on the other hand, is peaceful and ___ ___ .",
+      "template": "The farm, ___ the other ___ is peaceful and green together .",
       "answers": [
-        "green",
-        "next"
+        "on",
+        "hand"
       ]
     },
     {
-      "template": "The farm has fresh ___ and wide open spaces ___ .",
+      "template": "The farm ___ fresh air ___ wide open spaces finally .",
       "answers": [
-        "air",
-        "finally"
+        "has",
+        "and"
       ]
     },
     {
-      "template": "Farm life is ___ and less busy than the city ___ .",
+      "template": "Farm life ___ quiet and ___ busy than the city slowly .",
       "answers": [
-        "quiet",
-        "slowly"
+        "is",
+        "less"
       ]
     }
   ],
-  "min_sentences": 6
+  "min_sentences": 6,
+  "model_sentence": "The city is exciting because there are many shops and schools then . But it can be very noisy and crowded carefully . The air can be polluted because of heavy traffic so . The farm, on the other hand is peaceful and green together . The farm has fresh air and wide open spaces finally . Farm life is quiet and less busy than the city slowly ."
 };

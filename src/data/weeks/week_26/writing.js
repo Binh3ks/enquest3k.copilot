@@ -2,7 +2,7 @@ export default {
   "title": "My Weekend Comic Strip",
   "min_words": 60,
   "min_sentences": 8,
-  "model_sentence": "It was Sunday afternoon when Leo sat down with his pencils, paper, and a big smile. He had decided to create a comic strip about his great adventure-filled fun weekend. First of all, Leo wrote the title across the top of the paper: 'My Fun Weekend Adventure — by Leo.' In Panel One, Leo sketched the scene where he and his dog Max walked to the park on Saturday morning. In Panel Two, Leo drew Max chasing after a red ball across the green grass. In Panel Three, Leo drew the moment a street musician arrived and everyone stopped to watch. In Panel Four, Leo drew himself and Max walking home — both looking tired but happy. Mia looked over Leo's shoulder and smiled. 'This is wonderful,' she said. 'A good comic strip can express a big story in just a few small first panels.'",
+  "model_sentence": "On Saturday morning I was very excited and full of energy. I walked to the local park and played a long, difficult game of soccer with my best friends. We ran very fast, so I was quite tired, but I was also very happy because my team won the match. In the afternoon it rained heavily so I had to stay inside the quiet house. I helped my mother cook a big dinner for the family. We made fried chicken. On Sunday morning my whole family visited an old history museum downtown suddenly . There were many amazing historical things to see, like old clothes and ancient weapons. Finally, we watched a funny comedy movie at the cinema and we laughed a lot.",
   "instruction_en": "Write a weekend comic strip story with four clear panels — like Leo's adventure!",
   "instruction_vi": "Viết câu chuyện truyện tranh cuối tuần với bốn khung rõ ràng như cuộc phiêu lưu của Leo!",
   "prompt_en": "Use First of all, In Panel One, In Panel Two, In Panel Three, In Panel Four. Add lots of detail to each panel!",
@@ -23,59 +23,59 @@ export default {
   "topic_talk_prompt": "Tell me your weekend story with four panels — like a comic strip!",
   "sentence_frames": [
     {
-      "template": "On Saturday morning, I was very ___ and full of ___.",
+      "template": "On Saturday ___ I was ___ excited and full of energy.",
       "answers": [
-        "excited",
-        "energy"
+        "morning",
+        "very"
       ]
     },
     {
-      "template": "I walked to the ___ park and played a long, difficult game of ___ with my best friends.",
+      "template": "I walked ___ the local ___ and played a long, difficult game of soccer with my best friends.",
       "answers": [
-        "local",
-        "soccer"
+        "to",
+        "park"
       ]
     },
     {
-      "template": "We ran very fast, so I was quite ___, but I was also very ___ because my team won the match.",
+      "template": "We ran ___ fast, so ___ was quite tired, but I was also very happy because my team won the match.",
       "answers": [
-        "tired",
-        "happy"
+        "very",
+        "I"
       ]
     },
     {
-      "template": "In the afternoon, it rained ___, so I had to stay inside the quiet ___.",
+      "template": "In the ___ it rained ___ so I had to stay inside the quiet house.",
       "answers": [
-        "heavily",
-        "house"
+        "afternoon",
+        "heavily"
       ]
     },
     {
-      "template": "I helped my ___ cook a big dinner for the ___. We made fried chicken.",
+      "template": "I helped ___ mother cook ___ big dinner for the family. We made fried chicken.",
       "answers": [
-        "mother",
+        "my",
+        "a"
+      ]
+    },
+    {
+      "template": "On Sunday ___ my whole ___ visited an old history museum downtown suddenly .",
+      "answers": [
+        "morning",
         "family"
       ]
     },
     {
-      "template": "On Sunday morning, my whole family visited an old ___ museum ___.",
+      "template": "There were ___ amazing historical ___ to see, like old clothes and ancient weapons.",
       "answers": [
-        "history",
-        "downtown"
+        "many",
+        "things"
       ]
     },
     {
-      "template": "There were many ___ historical things to see, like old clothes and ancient ___.",
+      "template": "Finally, we ___ a funny ___ movie at the cinema and we laughed a lot.",
       "answers": [
-        "amazing",
-        "weapons"
-      ]
-    },
-    {
-      "template": "Finally, we watched a funny comedy ___ at the cinema and we ___ a lot.",
-      "answers": [
-        "movie",
-        "laughed"
+        "watched",
+        "comedy"
       ]
     }
   ],
