@@ -34,7 +34,7 @@ async function auditWritingPipeline() {
     if (i <= 42 && framesAdv.length !== targetSentences) {
       errors.push(`W${pad} ADV: Sentence count is ${framesAdv.length}, expected ${targetSentences}`);
     }
-    if (i <= 35) {
+    if (i <= 32) {
       framesAdv.forEach((f, idx) => {
         const template = f.template || '';
         const parts = template.split('___');
@@ -54,8 +54,8 @@ async function auditWritingPipeline() {
       });
     }
 
-    // 2. EASY MODE AUDIT (W01-W35)
-    if (fs.existsSync(wFileEasy)) {
+    // 2. EASY MODE AUDIT (W01-W32)
+    if (i <= 32 && fs.existsSync(wFileEasy)) {
       const modEasy = (await import(wFileEasy)).default;
       const framesEasy = modEasy?.sentence_frames || [];
       if (!modEasy?.model_sentence) {

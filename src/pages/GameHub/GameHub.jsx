@@ -14,7 +14,7 @@ function getAvailableGamesForWeek() {
 }
 
 export default function GameHub({ weekNumber = 1, learningMode: propLearningMode = 'advanced' }) {
-  const learningMode = weekNumber >= 36 ? 'advanced' : propLearningMode;
+  const learningMode = weekNumber >= 33 ? 'advanced' : propLearningMode;
   const [selectedGame, setSelectedGame] = useState(null);
   const [gameResults, setGameResults] = useState([]);
 

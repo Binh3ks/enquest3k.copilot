@@ -1,4 +1,8 @@
-export default {
+// Rewrite Week 33 Tab 1 Model Challenge with Cambridge Accumulation Story
+import fs from 'fs';
+import path from 'path';
+
+const week33AccumulationData = {
   "title": "Jake's Accident Story",
   "min_sentences": 10,
   "theme": "accidents_and_consequences",
@@ -8,66 +12,43 @@ export default {
   "sentence_frames": [
     {
       "template": "On a _____ day, Jake was walking _____ down the school corridor.",
-      "answers": [
-        "bright sunny",
-        "smoothly"
-      ]
+      "answers": ["bright sunny", "smoothly"]
     },
     {
       "template": "The floor was very wet because the janitor had _____ washed it.",
-      "answers": [
-        "just"
-      ]
+      "answers": ["just"]
     },
     {
       "template": "_____, Leo ran past Jake while he was walking without looking _____.",
-      "answers": [
-        "Suddenly",
-        "carefully"
-      ]
+      "answers": ["Suddenly", "carefully"]
     },
     {
       "template": "Leo _____ on the wet floor and fell down _____.",
-      "answers": [
-        "slipped",
-        "hard"
-      ]
+      "answers": ["slipped", "hard"]
     },
     {
       "template": "He hurt his knee badly and _____ into tears.",
-      "answers": [
-        "burst"
-      ]
+      "answers": ["burst"]
     },
     {
       "template": "The teacher heard him crying and _____ over to help.",
-      "answers": [
-        "rushed"
-      ]
+      "answers": ["rushed"]
     },
     {
       "template": "She gently put a cold _____ pack on Leo's injured knee.",
-      "answers": [
-        "ice"
-      ]
+      "answers": ["ice"]
     },
     {
       "template": "The nurse cleaned the wound and wrapped a _____ bandage.",
-      "answers": [
-        "clean"
-      ]
+      "answers": ["clean"]
     },
     {
       "template": "Leo felt _____ relieved and thanked his teacher.",
-      "answers": [
-        "extremely"
-      ]
+      "answers": ["extremely"]
     },
     {
       "template": "Everyone learned a _____ lesson to walk safely.",
-      "answers": [
-        "valuable"
-      ]
+      "answers": ["valuable"]
     }
   ],
   "hints": {
@@ -77,81 +58,21 @@ export default {
       "show_by_default": false,
       "scaffolding_stage": "medium",
       "words": [
-        {
-          "word": "bright sunny",
-          "vi": "nắng đẹp rực rỡ",
-          "distractor": false
-        },
-        {
-          "word": "smoothly",
-          "vi": "mượt mà, êm ả",
-          "distractor": false
-        },
-        {
-          "word": "just",
-          "vi": "vừa mới",
-          "distractor": false
-        },
-        {
-          "word": "Suddenly",
-          "vi": "Đột nhiên",
-          "distractor": false
-        },
-        {
-          "word": "carefully",
-          "vi": "cẩn thận",
-          "distractor": false
-        },
-        {
-          "word": "slipped",
-          "vi": "trượt chân",
-          "distractor": false
-        },
-        {
-          "word": "hard",
-          "vi": "mạnh",
-          "distractor": false
-        },
-        {
-          "word": "burst",
-          "vi": "oà khóc",
-          "distractor": false
-        },
-        {
-          "word": "rushed",
-          "vi": "vội vã chạy đến",
-          "distractor": false
-        },
-        {
-          "word": "ice",
-          "vi": "đá lạnh",
-          "distractor": false
-        },
-        {
-          "word": "clean",
-          "vi": "sạch sẻ",
-          "distractor": false
-        },
-        {
-          "word": "extremely",
-          "vi": "cực kỳ",
-          "distractor": false
-        },
-        {
-          "word": "valuable",
-          "vi": "quý giá",
-          "distractor": false
-        },
-        {
-          "word": "slowly",
-          "vi": "chậm rãi",
-          "distractor": true
-        },
-        {
-          "word": "faster",
-          "vi": "nhanh hơn",
-          "distractor": true
-        }
+        { "word": "bright sunny", "vi": "nắng đẹp rực rỡ", "distractor": false },
+        { "word": "smoothly", "vi": "mượt mà, êm ả", "distractor": false },
+        { "word": "just", "vi": "vừa mới", "distractor": false },
+        { "word": "Suddenly", "vi": "Đột nhiên", "distractor": false },
+        { "word": "carefully", "vi": "cẩn thận", "distractor": false },
+        { "word": "slipped", "vi": "trượt chân", "distractor": false },
+        { "word": "hard", "vi": "mạnh", "distractor": false },
+        { "word": "burst", "vi": "oà khóc", "distractor": false },
+        { "word": "rushed", "vi": "vội vã chạy đến", "distractor": false },
+        { "word": "ice", "vi": "đá lạnh", "distractor": false },
+        { "word": "clean", "vi": "sạch sẻ", "distractor": false },
+        { "word": "extremely", "vi": "cực kỳ", "distractor": false },
+        { "word": "valuable", "vi": "quý giá", "distractor": false },
+        { "word": "slowly", "vi": "chậm rãi", "distractor": true },
+        { "word": "faster", "vi": "nhanh hơn", "distractor": true }
       ]
     }
   },
@@ -197,3 +118,25 @@ export default {
     }
   }
 };
+
+async function rewriteW33Accumulation() {
+  const root = process.cwd();
+  console.log('⚡ REWRITING WEEK 33 TAB 1 WITH CAMBRIDGE ACCUMULATION STORY...\n');
+
+  const targets = [
+    path.join(root, 'src/data/weeks/week_33/writing.js'),
+    path.join(root, 'src/data/weeks_easy/week_33/writing.js')
+  ];
+
+  for (const targetPath of targets) {
+    if (fs.existsSync(path.dirname(targetPath))) {
+      const code = `export default ${JSON.stringify(week33AccumulationData, null, 2)};\n`;
+      fs.writeFileSync(targetPath, code, 'utf8');
+      console.log(`✅ Overwrote W33 accumulation writing.js in: ${path.relative(root, targetPath)}`);
+    }
+  }
+
+  console.log('\n🎉 WEEK 33 ACCUMULATION STORY REWRITE COMPLETE!');
+}
+
+rewriteW33Accumulation().catch(console.error);

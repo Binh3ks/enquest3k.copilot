@@ -172,7 +172,7 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
         </div>
         <div className="min-w-0 flex-1">
           <h3 className="font-black text-sm text-slate-800 truncate leading-none mb-1">{currentUser.display_name || currentUser.username || currentUser.name}</h3>
-          {weekId < 36 ? (
+          {weekId < 33 ? (
             <button 
               onClick={(e) => { 
                 e.stopPropagation(); 
@@ -183,8 +183,8 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
               <RotateCcw size={10} /> {learningMode === 'easy' ? 'EASY MODE' : 'ADVANCED'}
             </button>
           ) : (
-            <div className="mt-2 text-[10px] font-black px-3 py-1.5 rounded-full border-2 flex items-center gap-1.5 bg-indigo-50 text-indigo-600 border-indigo-200 w-max">
-              ✨ FULL MODE
+            <div className="mt-2 text-[10px] font-black px-3 py-1.5 rounded-full border-2 flex items-center gap-1.5 bg-indigo-50 text-indigo-600 border-indigo-200 w-max shadow-sm">
+              ✨ CAMBRIDGE FULL MODE
             </div>
           )}
         </div>

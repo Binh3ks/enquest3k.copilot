@@ -14,8 +14,8 @@ const ReadExploreRouter = ({ data, themeColor, isVi, onToggleLang, onReportProgr
   const { learningMode } = useUserStore();
   const currentWeek = parseInt(weekId);
 
-  // W36+: detect dual-tab structure in the read.js export
-  if (currentWeek >= 36 && data && (data.read_stem || data.read_social)) {
+  // W33+: detect dual-tab structure in the read.js export
+  if (currentWeek >= 33 && data && (data.read_stem || data.read_social)) {
     return <TabbedReadExplore weekNumber={currentWeek} weekData={data} />;
   }
 

@@ -3,67 +3,70 @@ export default {
   "min_sentences": 10,
   "theme": "accidents_and_consequences",
   "min_words": 65,
-  "model_sentence": "Last Friday, Jake was walking down the school corridor. The floor was very wet because the cleaner had just washed it. Suddenly, Leo ran past Jake without looking carefully. Leo slipped on the wet floor and fell down hard. He hurt his knee badly and it began to bleed. The teacher heard Leo crying and rushed over to help. She gently put a cold ice pack on Leo's injured knee. The nurse cleaned the wound and wrapped a clean bandage. Leo felt extremely relieved and thanked his teacher. Everyone learned to walk safely and follow school rules.",
+  "model_sentence": "On a bright sunny day, Jake was walking smoothly down the school corridor. The floor was very wet because the janitor had just washed it. Suddenly, Leo ran past Jake while he was walking without looking carefully. Leo slipped on the wet floor and fell down hard. He hurt his knee badly and burst into tears. The teacher heard him crying and rushed over to help. She gently put a cold ice pack on Leo's injured knee. The nurse cleaned the wound and wrapped a clean bandage. Leo felt extremely relieved and thanked his teacher. Everyone learned a valuable lesson to walk safely.",
   "topic_talk_prompt": "Tell me about a time when you got hurt or saw someone get hurt at school!",
   "sentence_frames": [
     {
-      "template": "Last Friday, Jake was ___ (walk) down the school corridor.",
+      "template": "On a _____ day, Jake was walking _____ down the school corridor.",
       "answers": [
-        "walking"
+        "bright sunny",
+        "smoothly"
       ]
     },
     {
-      "template": "The floor was very wet because the cleaner had ___ (just) washed it.",
+      "template": "The floor was very wet because the janitor had _____ washed it.",
       "answers": [
         "just"
       ]
     },
     {
-      "template": "Suddenly, Leo ran ___ (past) Jake without looking carefully.",
+      "template": "_____, Leo ran past Jake while he was walking without looking _____.",
       "answers": [
-        "past"
+        "Suddenly",
+        "carefully"
       ]
     },
     {
-      "template": "Leo ___ (slip) on the wet floor and fell down hard.",
+      "template": "Leo _____ on the wet floor and fell down _____.",
       "answers": [
-        "slipped"
+        "slipped",
+        "hard"
       ]
     },
     {
-      "template": "He hurt his knee badly and it began to ___ (bleed).",
+      "template": "He hurt his knee badly and _____ into tears.",
       "answers": [
-        "bleed"
+        "burst"
       ]
     },
     {
-      "template": "The teacher ___ (hear) Leo crying and rushed over to help.",
+      "template": "The teacher heard him crying and _____ over to help.",
       "answers": [
-        "heard"
+        "rushed"
       ]
     },
     {
-      "template": "She gently ___ (put) a cold ice pack on Leo's injured knee.",
+      "template": "She gently put a cold _____ pack on Leo's injured knee.",
       "answers": [
-        "put"
+        "ice"
       ]
     },
     {
-      "template": "The nurse cleaned the wound and wrapped a clean ___ (bandage).",
+      "template": "The nurse cleaned the wound and wrapped a _____ bandage.",
       "answers": [
-        "bandage"
+        "clean"
       ]
     },
     {
-      "template": "Leo felt ___ (extremely) relieved and thanked his teacher.",
+      "template": "Leo felt _____ relieved and thanked his teacher.",
       "answers": [
         "extremely"
       ]
     },
     {
-      "template": "Everyone learned to walk ___ (safely) and follow school rules.",
+      "template": "Everyone learned a _____ lesson to walk safely.",
       "answers": [
-        "safely"
+        "valuable"
       ]
     }
   ],
@@ -75,13 +78,13 @@ export default {
       "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "walking",
-          "vi": "đi bộ",
+          "word": "bright sunny",
+          "vi": "nắng đẹp rực rỡ",
           "distractor": false
         },
         {
-          "word": "corridor",
-          "vi": "hành lang",
+          "word": "smoothly",
+          "vi": "mượt mà, êm ả",
           "distractor": false
         },
         {
@@ -90,13 +93,8 @@ export default {
           "distractor": false
         },
         {
-          "word": "it",
-          "vi": "nó",
-          "distractor": false
-        },
-        {
-          "word": "past",
-          "vi": "ngang qua",
+          "word": "Suddenly",
+          "vi": "Đột nhiên",
           "distractor": false
         },
         {
@@ -110,48 +108,28 @@ export default {
           "distractor": false
         },
         {
-          "word": "down",
-          "vi": "xuống",
+          "word": "hard",
+          "vi": "mạnh",
           "distractor": false
         },
         {
-          "word": "knee",
-          "vi": "đầu gối",
+          "word": "burst",
+          "vi": "oà khóc",
           "distractor": false
         },
         {
-          "word": "bleed",
-          "vi": "chảy máu",
+          "word": "rushed",
+          "vi": "vội vã chạy đến",
           "distractor": false
         },
         {
-          "word": "heard",
-          "vi": "nghe thấy",
+          "word": "ice",
+          "vi": "đá lạnh",
           "distractor": false
         },
         {
-          "word": "help",
-          "vi": "giúp đỡ",
-          "distractor": false
-        },
-        {
-          "word": "put",
-          "vi": "đặt",
-          "distractor": false
-        },
-        {
-          "word": "injured",
-          "vi": "bị thương",
-          "distractor": false
-        },
-        {
-          "word": "wound",
-          "vi": "vết thương",
-          "distractor": false
-        },
-        {
-          "word": "bandage",
-          "vi": "băng gạc",
+          "word": "clean",
+          "vi": "sạch sẻ",
           "distractor": false
         },
         {
@@ -160,19 +138,19 @@ export default {
           "distractor": false
         },
         {
-          "word": "teacher",
-          "vi": "giáo viên",
+          "word": "valuable",
+          "vi": "quý giá",
           "distractor": false
         },
         {
-          "word": "safely",
-          "vi": "an toàn",
-          "distractor": false
+          "word": "slowly",
+          "vi": "chậm rãi",
+          "distractor": true
         },
         {
-          "word": "rules",
-          "vi": "quy tắc",
-          "distractor": false
+          "word": "faster",
+          "vi": "nhanh hơn",
+          "distractor": true
         }
       ]
     }
@@ -181,7 +159,7 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week33/story_writing_pic.jpg",
-      "image_prompt": "Accident story",
+      "image_prompt": "This interesting picture shows a terrible and painful accident that happened at my school yesterday afternoon. My good friend Leo was running very fast down the main corridor because he was late for his important math class. He did not look carefully where he was going, and he completely ignored the strict school rules. Watercolor children book illustration style, soft pastel colors, friendly cartoon characters, cozy setting, no text on image.",
       "word_bank": {
         "action_verbs": [
           "running fast",
