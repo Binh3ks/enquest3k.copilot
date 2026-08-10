@@ -25,7 +25,7 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "I am ___ live from ___ school courtyard then.",
+      "template": "I am ___ live from ___ school courtyard.",
       "answers": [
         "broadcasting",
         "the"
@@ -39,7 +39,7 @@ export default {
       ]
     },
     {
-      "template": "At the ___ Club, students ___ painting a giant mural on the wall so.",
+      "template": "At the ___ Club, students ___ painting a giant mural on the wall.",
       "answers": [
         "Art",
         "are"
@@ -267,5 +267,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "I am broadcasting live from the school courtyard then. The annual Spring Festival is happening Everyone is excited! also. At the Art Club, students are painting a giant mural on the wall so. They are using bright yellow and blue paints to create an ocean scene. The Science Club is doing a fascinating chemistry experiment. Sarah is mixing two mysterious liquids. The liquid is changing color from clear to dark purple. The Drama Club is practicing for their upcoming school play."
+  "model_sentence": "I am broadcasting live from the school courtyard. The annual Spring Festival is happening Everyone is excited! also. At the Art Club, students are painting a giant mural on the wall. They are using bright yellow and blue paints to create an ocean scene. The Science Club is doing a fascinating chemistry experiment. Sarah is mixing two mysterious liquids. The liquid is changing color from clear to dark purple. The Drama Club is practicing for their upcoming school play."
 };

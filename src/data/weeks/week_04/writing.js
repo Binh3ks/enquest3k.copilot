@@ -1,7 +1,7 @@
 export default {
   "title": "My Happy Jar",
   "min_words": 45,
-  "model_sentence": "I have a happy jar at home. When I am playing, I feel excited and happy also. When I am reading, I feel happy and calm so. When I am drawing, I feel creative and joyful. My mom is friendly and funny and she makes me laugh. My happy jar helps me remember all the happy moments.",
+  "model_sentence": "I have a happy jar at home. When I am playing, I feel excited and happy also. When I am reading, I feel happy and calm. When I am drawing, I feel creative and joyful. My mom is friendly and funny and she makes me laugh. My happy jar helps me remember all the happy moments.",
   "instruction_en": "Write about your personality and hobbies using because and when!",
   "instruction_vi": "Viết về tính cách và sở thích bằng because và when!",
   "prompt_en": "What makes you feel happy? What do you like doing? How do you feel?",
@@ -36,7 +36,7 @@ export default {
       ]
     },
     {
-      "template": "When I ___ reading, I ___ happy and calm so.",
+      "template": "When I ___ reading, I ___ happy and calm.",
       "answers": [
         "am",
         "feel"

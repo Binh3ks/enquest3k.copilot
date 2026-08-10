@@ -25,10 +25,9 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Today is ___ rainy afternoon, ___ I am sitting in the living room with my mother then.",
+      "template": "Today is ___ rainy afternoon, ___ I am sitting in the living room with my mother.",
       "answers": [
-        "a",
-        "so"
+        "a"
       ]
     },
     {
@@ -267,5 +266,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "Today is a rainy afternoon, so I am sitting in the living room with my mother then. We are looking at an old photo album also. In this first picture, I was just a young, tiny baby. I was very small, round, and cute. My mother says I was also extremely noisy. I was definitely not quiet like my older brother. He was very brave and smart. Whenever I was scared, he was always there to hold my hand at school."
+  "model_sentence": "Today is a rainy afternoon, I am sitting in the living room with my mother. We are looking at an old photo album also. In this first picture, I was just a young, tiny baby. I was very small, round, and cute. My mother says I was also extremely noisy. I was definitely not quiet like my older brother. He was very brave and smart. Whenever I was scared, he was always there to hold my hand at school."
 };

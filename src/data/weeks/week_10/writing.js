@@ -113,7 +113,7 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "The city ___ exciting because ___ are many shops and schools then.",
+      "template": "The city ___ exciting because ___ are many shops and schools.",
       "answers": [
         "is",
         "there"
@@ -127,7 +127,7 @@ export default {
       ]
     },
     {
-      "template": "The air ___ be polluted ___ of heavy traffic so.",
+      "template": "The air ___ be polluted ___ of heavy traffic.",
       "answers": [
         "can",
         "because"
@@ -156,5 +156,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "The city is exciting because there are many shops and schools then. But it can be very noisy and crowded. The air can be polluted because of heavy traffic so. The farm, on the other hand is peaceful and green. The farm has fresh air and wide open spaces. Farm life is quiet and less busy than the city."
+  "model_sentence": "The city is exciting because there are many shops and schools. But it can be very noisy and crowded. The air can be polluted because of heavy traffic. The farm, on the other hand is peaceful and green. The farm has fresh air and wide open spaces. Farm life is quiet and less busy than the city."
 };

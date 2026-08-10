@@ -88,7 +88,7 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Today is ___ school talent ___ then.",
+      "template": "Today is ___ school talent ___.",
       "answers": [
         "the",
         "show"
@@ -102,7 +102,7 @@ export default {
       ]
     },
     {
-      "template": "The ___ loves her ___ so.",
+      "template": "The ___ loves her ___.",
       "answers": [
         "audience",
         "performance"
@@ -131,5 +131,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "Today is the school talent show then. Sarah can sing songs happily on stage also. The audience loves her performance so. Tom can dance with energy and style. Mike can run fast around the track. Emma can jump high and always lands."
+  "model_sentence": "Today is the school talent show. Sarah can sing songs happily on stage also. The audience loves her performance. Tom can dance with energy and style. Mike can run fast around the track. Emma can jump high and always lands."
 };

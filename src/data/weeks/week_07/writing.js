@@ -1,7 +1,7 @@
 export default {
   "title": "Inside My Backpack",
   "min_words": 45,
-  "model_sentence": "In my backpack there is a notebook, a textbook, and a pencil case then. I also carry a water bottle and a snack because I get hungry also. My bag is dark blue and it has a small pocket at the front so. It is quite heavy but I do not mind because I love being organised and ready. Being prepared makes me feel confident. I pack my bag very carefully every morning.",
+  "model_sentence": "In my backpack there is a notebook, a textbook, and a pencil case. I also carry a water bottle and a snack because I get hungry also. My bag is dark blue and it has a small pocket at the front. It is quite heavy but I do not mind because I love being organised and ready. Being prepared makes me feel confident. I pack my bag very carefully every morning.",
   "instruction_en": "Describe everything in your school bag and why you carry it!",
   "instruction_vi": "Mô tả mọi thứ trong cặp và tại sao bạn mang chúng!",
   "prompt_en": "What is in your bag? Why do you carry each item? How does being prepared make you feel?",
@@ -29,7 +29,7 @@ export default {
   "topic_talk_prompt": "Tell me everything that is in your school bag and why!",
   "sentence_frames": [
     {
-      "template": "In my ___ there is ___ notebook, a textbook, and a pencil case then.",
+      "template": "In my ___ there is ___ notebook, a textbook, and a pencil case.",
       "answers": [
         "backpack",
         "a"
@@ -43,7 +43,7 @@ export default {
       ]
     },
     {
-      "template": "My bag ___ dark blue ___ it has a small pocket at the front so.",
+      "template": "My bag ___ dark blue ___ it has a small pocket at the front.",
       "answers": [
         "is",
         "and"

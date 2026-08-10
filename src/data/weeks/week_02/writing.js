@@ -1,7 +1,7 @@
 export default {
   "title": "My Family Squad",
   "min_words": 45,
-  "model_sentence": "This is my mother. She is the leader of our family then. My mother helps us with everything every day also. This is my father. He is strong and kind so. He works very hard for our family. This is my big brother. His name is Tom. He helps me with homework.",
+  "model_sentence": "This is my mother. She is the leader of our family. My mother helps us with everything every day also. This is my father. He is strong and kind. He works very hard for our family. This is my big brother. His name is Tom. He helps me with homework.",
   "instruction_en": "Describe each family member in detail!",
   "instruction_vi": "Mô tả từng thành viên gia đình chi tiết!",
   "prompt_en": "What does each person do? What are they like? What do you do together as a family?",
@@ -22,7 +22,7 @@ export default {
   "topic_talk_prompt": "Tell me about each person in your family!",
   "sentence_frames": [
     {
-      "template": "This is ___ mother. She ___ the leader of our family then.",
+      "template": "This is ___ mother. She ___ the leader of our family.",
       "answers": [
         "my",
         "is"
@@ -36,7 +36,7 @@ export default {
       ]
     },
     {
-      "template": "This is ___ father. He ___ strong and kind so.",
+      "template": "This is ___ father. He ___ strong and kind.",
       "answers": [
         "my",
         "is"

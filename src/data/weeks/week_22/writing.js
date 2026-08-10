@@ -23,7 +23,7 @@ export default {
       ]
     },
     {
-      "template": "Yesterday, Mum ___ a delicious ___ cake for my birthday! so.",
+      "template": "Yesterday, Mum ___ a delicious ___ cake for my birthday!.",
       "answers": [
         "cooked",
         "chocolate"
@@ -253,5 +253,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "My name is Mia and I am a Time Detective. I wear a big hat and carry a notebook to ask questions. Yesterday, Mum cooked a delicious chocolate cake for my birthday! so. But someone ate the cake last night. I asked everyone in the house. Dad said he cooked dinner at 6 o'clock and washed the dishes at 7. Mum worked in the garden one morning last weekend. The mystery was solved! My brother ate the cake!."
+  "model_sentence": "My name is Mia and I am a Time Detective. I wear a big hat and carry a notebook to ask questions. Yesterday, Mum cooked a delicious chocolate cake for my birthday!. But someone ate the cake last night. I asked everyone in the house. Dad said he cooked dinner at 6 o'clock and washed the dishes at 7. Mum worked in the garden one morning last weekend. The mystery was solved! My brother ate the cake!."
 };

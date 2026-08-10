@@ -1,7 +1,7 @@
 export default {
   "title": "My Busy Classroom",
   "min_words": 45,
-  "model_sentence": "My classroom is very bright and cheerful because the walls are covered with colorful posters. There are exactly twenty-eight students and we sit at wooden desks arranged in four rows. On the front wall there is a large whiteboard and two interactive screens so. Along the back wall there is a tall bookshelf with over a hundred books organized by subject. Our classroom also has a reading corner with soft cushions where we can sit and read quietly. I feel proud of our classroom because we all help to keep it neat and tidy.",
+  "model_sentence": "My classroom is very bright and cheerful because the walls are covered with colorful posters. There are exactly twenty-eight students and we sit at wooden desks arranged in four rows. On the front wall there is a large whiteboard and two interactive screens. Along the back wall there is a tall bookshelf with over a hundred books organized by subject. Our classroom also has a reading corner with soft cushions where we can sit and read quietly. I feel proud of our classroom because we all help to keep it neat and tidy.",
   "instruction_en": "Describe your busy classroom with numbers, colors, and reasons!",
   "instruction_vi": "Mô tả lớp học bận rộn của bạn với số đếm, màu sắc và lý do!",
   "prompt_en": "What does your classroom look like? How many of each thing? Why do you feel proud?",
@@ -39,7 +39,7 @@ export default {
       ]
     },
     {
-      "template": "On the ___ wall there ___ a large whiteboard and two interactive screens so.",
+      "template": "On the ___ wall there ___ a large whiteboard and two interactive screens.",
       "answers": [
         "front",
         "is"

@@ -1,7 +1,7 @@
 export default {
   "title": "The Mirror Game",
   "min_words": 45,
-  "model_sentence": "My best friend is Tom and he is tall with short curly hair. His hair is dark brown and his eyes are bright green. He wears round glasses because he cannot see well without them so. He always wears a red cap and a blue jacket to school. He is slim but very strong because he trains. He looks very unique and everyone recognizes him.",
+  "model_sentence": "My best friend is Tom and he is tall with short curly hair. His hair is dark brown and his eyes are bright green. He wears round glasses because he cannot see well without them. He always wears a red cap and a blue jacket to school. He is slim but very strong because he trains. He looks very unique and everyone recognizes him.",
   "instruction_en": "Describe your best friend from head to toe!",
   "instruction_vi": "Mô tả người bạn thân từ đầu đến chân!",
   "prompt_en": "What does your friend look like? What do they wear? What makes them unique?",
@@ -37,7 +37,7 @@ export default {
       ]
     },
     {
-      "template": "He wears ___ glasses because ___ cannot see well without them so.",
+      "template": "He wears ___ glasses because ___ cannot see well without them.",
       "answers": [
         "round",
         "he"

@@ -3,7 +3,7 @@ export default {
   "min_words": 45,
   "instruction_en": "Write about your favorite places to visit on the weekend using the preposition 'at'!",
   "instruction_vi": "Viết về những nơi bạn thích đến vào cuối tuần với giới từ 'at'!",
-  "model_sentence": "Today is Saturday I have a fun weekend plan. First, I go to the park and play with my friends also. We run, laugh and have a great time! so. Then I go to the library to read a story book. The book is very interesting. I learn new words. After that, my mom and I buy food at the supermarket.",
+  "model_sentence": "Today is Saturday I have a fun weekend plan. First, I go to the park and play with my friends also. We run, laugh and have a great time!. Then I go to the library to read a story book. The book is very interesting. I learn new words. After that, my mom and I buy food at the supermarket.",
   "prompt_en": "Tell me about the places you like to visit on the weekend!",
   "prompt_vi": "Hãy kể về những nơi bạn thích đến vào cuối tuần!",
   "hints": {
@@ -147,7 +147,7 @@ export default {
       ]
     },
     {
-      "template": "We run, ___ and have ___ great time! so.",
+      "template": "We run, ___ and have ___ great time!.",
       "answers": [
         "laugh",
         "a"

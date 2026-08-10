@@ -1,7 +1,7 @@
 export default {
   "title": "The Mystery House",
   "min_words": 45,
-  "model_sentence": "There is a mystery house on the hill. Nobody knows what is inside then. One day, I open the door. Upstairs, there is a nice bedroom. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find the living room.",
+  "model_sentence": "There is a mystery house on the hill. Nobody knows what is inside. One day, I open the door. Upstairs, there is a nice bedroom. I see a lamp on the table and a mirror on the wall. The room has a rug on the floor. Downstairs, I find the living room.",
   "instruction_en": "Describe your house room by room with full details!",
   "instruction_vi": "Mô tả từng phòng trong nhà bạn với đầy đủ chi tiết!",
   "prompt_en": "What rooms are there? What is in each room? Which room is your favorite and why?",
@@ -24,7 +24,7 @@ export default {
   "topic_talk_prompt": "Describe your house and your favorite room!",
   "sentence_frames": [
     {
-      "template": "There is ___ mystery house ___ the hill. Nobody knows what is inside then.",
+      "template": "There is ___ mystery house ___ the hill. Nobody knows what is inside.",
       "answers": [
         "a",
         "on"

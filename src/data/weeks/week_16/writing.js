@@ -25,7 +25,7 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Today is ___ school sports ___ Hundreds of students are running in different races on the track then.",
+      "template": "Today is ___ school sports ___ Hundreds of students are running in different races on the track.",
       "answers": [
         "our",
         "day"
@@ -39,7 +39,7 @@ export default {
       ]
     },
     {
-      "template": "Minh is ___ quickly. He ___ overtaking other runners with strong strides so.",
+      "template": "Minh is ___ quickly. He ___ overtaking other runners with strong strides.",
       "answers": [
         "running",
         "is"
@@ -262,5 +262,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "Today is our school sports day Hundreds of students are running in different races on the track then. The whole schoolyard is full of energy and excitement! also. Minh is running quickly. He is overtaking other runners with strong strides so. Lan is preparing for the long jump. She is jumping very high and landing safely in the sandpit. Nam is kicking the ball powerfully toward the goal. The goalkeeper is leaping to catch the ball!. On the bleachers parents are waving colorful flags and cheering enthusiastically."
+  "model_sentence": "Today is our school sports day Hundreds of students are running in different races on the track. The whole schoolyard is full of energy and excitement! also. Minh is running quickly. He is overtaking other runners with strong strides. Lan is preparing for the long jump. She is jumping very high and landing safely in the sandpit. Nam is kicking the ball powerfully toward the goal. The goalkeeper is leaping to catch the ball!. On the bleachers parents are waving colorful flags and cheering enthusiastically."
 };

@@ -3,7 +3,7 @@ export default {
   "theme": "fable_and_moral",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton. The second pig worked a bit harder than his brother, and he made his house with thin plastic and recycled wood. The third pig who was very smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house. When the bad hungry wolf finally came, he took a deep breath and blew down the paper house and the wooden house very easily! The two scared pigs ran as fast as they could to their smart brother's house. The angry wolf tried to blow down the third house, but no matter how hard he tried, he could not destroy the strong stone walls. The three pigs safely stayed inside the strong house, locked the heavy metal door, and sang a happy song. The tired wolf finally gave up and ran away forever, and all the students clapped loudly for our great story! The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton in the afternoon. The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton.",
+  "model_sentence": "The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton. The second pig worked a bit harder than his brother, and he made his house with thin plastic and recycled wood. The third pig who was very smart and patient, carefully put heavy stones, strong metal, and thick glass together to build a safe house. When the bad hungry wolf came, he took a deep breath and blew down the paper house and the wooden house very easily! The two scared pigs ran as fast as they could to their smart brother's house. The angry wolf tried to blow down the third house, but no matter how hard he tried, he could not destroy the strong stone walls. The three pigs safely stayed inside the strong house, locked the heavy metal door, and sang a happy song. The tired wolf finally gave up and ran away forever, and all the students clapped loudly for our great story! The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton in the afternoon. The first pig was lazy and careless, so he quickly built a weak house using light paper and soft cotton.",
   "topic_talk_prompt": "Tell me about a time when you worked hard with your friends to finish a project!",
   "sentence_frames": [
     {
@@ -30,8 +30,7 @@ export default {
     {
       "template": "When the ___ hungry wolf ___ came, he took a deep breath and blew down the paper house and the wooden house very easily!",
       "answers": [
-        "bad",
-        "finally"
+        "bad"
       ]
     },
     {

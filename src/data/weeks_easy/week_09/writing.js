@@ -1,122 +1,32 @@
 export default {
-  "title": "My City",
-  "min_words": 30,
-  "hints": {
-    "vocabulary_bank": {
-      "label_en": "Need help? Click next to each blank",
-      "label_vi": "Can ho tro? Bam ben canh moi o",
-      "show_by_default": true,
-      "scaffolding_stage": "high",
-      "words": [
-        {
-          "word": "a busy street",
-          "vi": "duong pho dong cua",
-          "distractor": false
-        },
-        {
-          "word": "many people and cars",
-          "vi": "nhieu nguoi va xe",
-          "distractor": false
-        },
-        {
-          "word": "a noisy place",
-          "vi": "noi on ao",
-          "distractor": false
-        },
-        {
-          "word": "a tall building",
-          "vi": "toa nha cao",
-          "distractor": false
-        },
-        {
-          "word": "very high",
-          "vi": "rat cao",
-          "distractor": false
-        },
-        {
-          "word": "the yellow bus",
-          "vi": "xe buyt mau vang",
-          "distractor": false
-        },
-        {
-          "word": "stops near me",
-          "vi": "dung gan toi",
-          "distractor": false
-        },
-        {
-          "word": "get on the bus",
-          "vi": "len xe buyt",
-          "distractor": false
-        },
-        {
-          "word": "lots of traffic",
-          "vi": "nhieu giao thong",
-          "distractor": false
-        },
-        {
-          "word": "move slowly",
-          "vi": "di chuyen cham",
-          "distractor": false
-        },
-        {
-          "word": "a quiet street",
-          "vi": "con pho yen tinh",
-          "distractor": false
-        },
-        {
-          "word": "less busy than the main street",
-          "vi": "it dong cu hon con pho chinh",
-          "distractor": false
-        },
-        {
-          "word": "tall buildings",
-          "vi": "nhung toa nha cao",
-          "distractor": false
-        },
-        {
-          "word": "busy streets",
-          "vi": "duong pho dong cua",
-          "distractor": false
-        },
-        {
-          "word": "the modern city",
-          "vi": "thanh pho hien dai",
-          "distractor": false
-        },
-        {
-          "word": "exploring",
-          "vi": "kham pha",
-          "distractor": false
-        },
-        {
-          "word": "quiet and empty",
-          "vi": "yen tinh va trong vac",
-          "distractor": true
-        },
-        {
-          "word": "nothing exciting",
-          "vi": "khong co gi thu vi",
-          "distractor": true
-        },
-        {
-          "word": "hate the city",
-          "vi": "ghet thanh pho",
-          "distractor": true
-        }
-      ]
-    }
-  },
+  "title": "Writing: City Sounds & Sights",
+  "min_words": 35,
+  "min_sentences": 6,
+  "model_sentence": "I walk on a busy street every day. There are many people and cars everywhere. It is a very noisy place. I see a very tall building near the bus stop. A yellow bus stops near me and people get on. There is lots of traffic on the main road.",
+  "instruction_en": "Write about city sounds and sights in full sentences!",
+  "instruction_vi": "Viết về âm thanh và cảnh vật thành phố bằng các câu đầy đủ!",
+  "prompt_en": "What do you see and hear in the city? What vehicles are on the road?",
+  "prompt_vi": "Bạn thấy và nghe gì ở thành phố? Phương tiện nào có trên đường?",
+  "keywords": [
+    "street",
+    "cars",
+    "noisy",
+    "building",
+    "bus",
+    "traffic"
+  ],
+  "topic_talk_prompt": "Tell me about the city where you live or visit!",
   "sentence_frames": [
     {
-      "template": "I walk on a busy ___.",
+      "template": "I walk on a busy ___ every day.",
       "answers": [
         "street"
       ]
     },
     {
-      "template": "There are many ___ and cars everywhere.",
+      "template": "There are many people and ___ everywhere.",
       "answers": [
-        "people"
+        "cars"
       ]
     },
     {
@@ -126,24 +36,72 @@ export default {
       ]
     },
     {
-      "template": "I see a tall ___ near the bus stop.",
+      "template": "I see a very tall ___ near the bus stop.",
       "answers": [
         "building"
       ]
     },
     {
-      "template": "There is lots of ___ on the road.",
+      "template": "A yellow ___ stops near me and people get on.",
       "answers": [
-        "traffic"
+        "bus"
       ]
     },
     {
-      "template": "I also see a ___ street nearby.",
+      "template": "There is lots of ___ on the main road.",
       "answers": [
-        "quiet"
+        "traffic"
       ]
     }
   ],
-  "min_sentences": 6,
-  "model_sentence": "I walk on a busy street. There are many people and cars everywhere. It is a very noisy place. I see a tall building near the bus stop. There is lots of traffic on the road. I also see a quiet street nearby."
+  "hints": {
+    "vocabulary_bank": {
+      "label_en": "💡 Need help? Click 💡 next to each blank",
+      "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
+      "show_by_default": true,
+      "scaffolding_stage": "high",
+      "words": [
+        {
+          "word": "street",
+          "vi": "con đường",
+          "distractor": false
+        },
+        {
+          "word": "cars",
+          "vi": "xe ô tô",
+          "distractor": false
+        },
+        {
+          "word": "noisy",
+          "vi": "ồn ào",
+          "distractor": false
+        },
+        {
+          "word": "building",
+          "vi": "tòa nhà",
+          "distractor": false
+        },
+        {
+          "word": "bus",
+          "vi": "xe buýt",
+          "distractor": false
+        },
+        {
+          "word": "traffic",
+          "vi": "giao thông",
+          "distractor": false
+        },
+        {
+          "word": "park",
+          "vi": "công viên",
+          "distractor": true
+        },
+        {
+          "word": "quiet",
+          "vi": "yên tĩnh",
+          "distractor": true
+        }
+      ]
+    }
+  }
 };

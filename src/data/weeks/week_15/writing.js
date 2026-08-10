@@ -132,7 +132,7 @@ export default {
       ]
     },
     {
-      "template": "A young ___ is running ___ his dog near the trees so.",
+      "template": "A young ___ is running ___ his dog near the trees.",
       "answers": [
         "boy",
         "after"
@@ -161,5 +161,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "Today our class is visiting the beautiful park. Many people are enjoying their day. A young boy is running after his dog near the trees so. The dog is barking happily. An elderly man is sitting on a wooden bench. He is reading peacefully while he enjoys the fresh air."
+  "model_sentence": "Today our class is visiting the beautiful park. Many people are enjoying their day. A young boy is running after his dog near the trees. The dog is barking happily. An elderly man is sitting on a wooden bench. He is reading peacefully while he enjoys the fresh air."
 };

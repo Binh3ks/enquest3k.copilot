@@ -2,7 +2,7 @@ export default {
   "title": "The Old Town Mystery",
   "min_words": 55,
   "min_sentences": 8,
-  "model_sentence": "Detective Luna found an old map of her town then. The map was from one hundred years ago! word1. On the old map, there was a big market near the long river so. There were tall trees along the road. At the end of the road there was a beautiful old temple. There was a wooden bridge over the river. However, now there are new tall buildings where the old market was. There is a big new bridge but not many trees. word1 at school.",
+  "model_sentence": "Detective Luna found an old map of her town. The map was from one hundred years ago! word1. On the old map, there was a big market near the long river. There were tall trees along the road. At the end of the road there was a beautiful old temple. There was a wooden bridge over the river. However, now there are new tall buildings where the old market was. There is a big new bridge but not many trees. word1 at school.",
   "instruction_en": "Write about how a place has changed over time using was, were, there was, and however!",
   "instruction_vi": "Viết về sự thay đổi của một nơi theo thời gian dùng was, were, there was và however!",
   "prompt_en": "What was the place like before? What has changed? How do you feel about it?",
@@ -10,7 +10,7 @@ export default {
   "topic_talk_prompt": "Describe a place that has changed — past vs present!",
   "sentence_frames": [
     {
-      "template": "Detective Luna ___ an old ___ of her town then.",
+      "template": "Detective Luna ___ an old ___ of her town.",
       "answers": [
         "found",
         "map"
@@ -24,7 +24,7 @@ export default {
       ]
     },
     {
-      "template": "On the ___ map, there ___ a big market near the long river so.",
+      "template": "On the ___ map, there ___ a big market near the long river.",
       "answers": [
         "old",
         "was"

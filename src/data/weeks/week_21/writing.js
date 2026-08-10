@@ -4,13 +4,13 @@ export default {
   "min_sentences": 8,
   "instruction_en": "Write about your yesterday in full detail using past tense — morning to night!",
   "instruction_vi": "Viết về hôm qua chi tiết bằng thì quá khứ — từ sáng đến tối!",
-  "model_sentence": "Yesterday, I woke up at 630 a.m then. First, I made my bed and cleaned my room because I wanted everything tidy also. Then I wrote a letter to my grandmother because I missed her very much so. After that, I helped Dad cut the grass in the garden. We built a beautiful birdhouse together using old wood and nails. At the cafe I chose a chocolate muffin because I was so hungry. I paid for the muffin with my own money because I am growing up!. By evening, I put all my toys away and fell asleep early carefully at school.",
+  "model_sentence": "Yesterday, I woke up at 630 a.m. First, I made my bed and cleaned my room because I wanted everything tidy also. Then I wrote a letter to my grandmother because I missed her very much. After that, I helped Dad cut the grass in the garden. We built a beautiful birdhouse together using old wood and nails. At the cafe I chose a chocolate muffin because I was so hungry. I paid for the muffin with my own money because I am growing up!. By evening, I put all my toys away and fell asleep early carefully at school.",
   "prompt_en": "What did you do morning, afternoon, and evening? How did you feel at the end?",
   "prompt_vi": "Bạn đã làm gì sáng, chiều, tối? Cuối ngày bạn cảm thấy thế nào?",
   "topic_talk_prompt": "Tell me everything you did yesterday from morning to night!",
   "sentence_frames": [
     {
-      "template": "Yesterday, I ___ up at ___ a.m then.",
+      "template": "Yesterday, I ___ up at ___ a.m.",
       "answers": [
         "woke",
         "630"
@@ -24,7 +24,7 @@ export default {
       ]
     },
     {
-      "template": "Then I ___ a letter ___ my grandmother because I missed her very much so.",
+      "template": "Then I ___ a letter ___ my grandmother because I missed her very much.",
       "answers": [
         "wrote",
         "to"

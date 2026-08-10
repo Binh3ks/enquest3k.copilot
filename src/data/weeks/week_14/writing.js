@@ -113,7 +113,7 @@ export default {
   },
   "sentence_frames": [
     {
-      "template": "Welcome to ___ presentation! My ___ is Emma then.",
+      "template": "Welcome to ___ presentation! My ___ is Emma.",
       "answers": [
         "my",
         "name"
@@ -127,7 +127,7 @@ export default {
       ]
     },
     {
-      "template": "This is ___ loving family. ___ have 4 people in it so.",
+      "template": "This is ___ loving family. ___ have 4 people in it.",
       "answers": [
         "my",
         "I"
@@ -156,5 +156,5 @@ export default {
     }
   ],
   "min_sentences": 6,
-  "model_sentence": "Welcome to my presentation! My name is Emma then. I am 8 years old and I want to share my world also. This is my loving family. I have 4 people in it so. My mom, my dad, my sister and me. I can sing very well. I can also dance when I hear music."
+  "model_sentence": "Welcome to my presentation! My name is Emma. I am 8 years old and I want to share my world also. This is my loving family. I have 4 people in it. My mom, my dad, my sister and me. I can sing very well. I can also dance when I hear music."
 };

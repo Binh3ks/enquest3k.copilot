@@ -3,7 +3,7 @@ export default {
   "theme": "environment",
   "min_words": 65,
   "min_sentences": 10,
-  "model_sentence": "Our home planet Earth faces serious environmental dangers today then. Polar ice caps are melting rapidly in high temperatures also. Global sea levels are rising across oceans so. We must act now to protect our home planet. Communities around the world are planting new trees. Families reduce single-use plastic and conserve energy. Recycling waste more effectively helps clean our rivers. Small mindful actions create a powerful difference for Earth. Our home planet Earth faces serious environmental dangers today then in the afternoon. Our home planet Earth faces serious environmental dangers today then.",
+  "model_sentence": "Our home planet Earth faces serious environmental dangers today. Polar ice caps are melting rapidly in high temperatures also. Global sea levels are rising across oceans. We must act now to protect our home planet. Communities around the world are planting new trees. Families reduce single-use plastic and conserve energy. Recycling waste more effectively helps clean our rivers. Small mindful actions create a powerful difference for Earth. Our home planet Earth faces serious environmental dangers today then in the afternoon. Our home planet Earth faces serious environmental dangers today.",
   "topic_talk_prompt": "Tell me about what we can do to protect the environment and combat climate change!",
   "instruction_en": "Write about protecting our planet using environmental action words!",
   "instruction_vi": "Viết về bảo vệ hành tinh bằng các từ chỉ hành động môi trường!",
@@ -23,7 +23,7 @@ export default {
   ],
   "sentence_frames": [
     {
-      "template": "Our home ___ Earth faces ___ environmental dangers today then.",
+      "template": "Our home ___ Earth faces ___ environmental dangers today.",
       "answers": [
         "planet",
         "serious"
@@ -37,7 +37,7 @@ export default {
       ]
     },
     {
-      "template": "Global sea ___ are rising ___ oceans so.",
+      "template": "Global sea ___ are rising ___ oceans.",
       "answers": [
         "levels",
         "across"
@@ -86,7 +86,7 @@ export default {
       ]
     },
     {
-      "template": "Our home ___ Earth faces ___ environmental dangers today then.",
+      "template": "Our home ___ Earth faces ___ environmental dangers today.",
       "answers": [
         "planet",
         "serious"

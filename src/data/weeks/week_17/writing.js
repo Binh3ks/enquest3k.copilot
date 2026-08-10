@@ -39,7 +39,7 @@ export default {
       ]
     },
     {
-      "template": "He has ___ large blue ___ so he can walk safely in the wet streets so.",
+      "template": "He has ___ large blue ___ so he can walk safely in the wet streets.",
       "answers": [
         "a",
         "umbrella"
@@ -267,5 +267,5 @@ export default {
       ]
     }
   },
-  "model_sentence": "In London, it is raining heavily. The boy is wearing a thick yellow raincoat and big rubber boots also. He has a large blue umbrella so he can walk safely in the wet streets so. In New York it is snowing hard. The sky is full of snowflakes. The little girl is wearing a warm winter hat, a thick red coat, and a long wool scarf. She is having fun because she is making a big snowman in her front yard. Down in Sydney it is a very sunny and hot day. The boy is wearing a light white T-shirt and cool sunglasses at school."
+  "model_sentence": "In London, it is raining heavily. The boy is wearing a thick yellow raincoat and big rubber boots also. He has a large blue umbrella so he can walk safely in the wet streets. In New York it is snowing hard. The sky is full of snowflakes. The little girl is wearing a warm winter hat, a thick red coat, and a long wool scarf. She is having fun because she is making a big snowman in her front yard. Down in Sydney it is a very sunny and hot day. The boy is wearing a light white T-shirt and cool sunglasses at school."
 };
