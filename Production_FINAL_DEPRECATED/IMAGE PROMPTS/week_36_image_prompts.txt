@@ -1,4 +1,5 @@
-# WEEK 36: Adventure Stories & Ocean Physics — Image Prompts (v6 Rich Context)
+# WEEK 36: Adventure Stories & Ocean Physics — Image Prompts (FROZEN PIPELINE v7 RICH CONTEXT)
+# FORMULA: Cute 3D illustration of [Subject+Action], set in a full frame edge-to-edge [Full Bleed Environment], 3D Disney Pixar animation style, vibrant vivid colors, soft volumetric lighting, sharp focus, complete fully-formed bodies. No text, no letters, no blank margins, no white borders.
 
 # COVER IMAGES
 1. Filename: read_stem_w36.jpg. Cute 3D illustration of a yellow research submarine diving in a deep ocean cavern discovering an ancient wooden treasure chest, glowing blue water, 3D Disney Pixar animation style, vibrant colors, cheerful atmosphere, soft volumetric lighting. No text or letters in the image.

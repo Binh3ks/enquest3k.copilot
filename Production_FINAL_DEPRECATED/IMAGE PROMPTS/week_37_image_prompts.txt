@@ -1,4 +1,5 @@
-# WEEK 37: The Sports Day Challenge & Olympic Truce — Image Prompts (v6 Rich Context)
+# WEEK 37: The Sports Day Challenge & Olympic Truce — Image Prompts (FROZEN PIPELINE v7 RICH CONTEXT)
+# FORMULA: Cute 3D illustration of [Subject+Action], set in a full frame edge-to-edge [Full Bleed Environment], 3D Disney Pixar animation style, vibrant vivid colors, soft volumetric lighting, sharp focus, complete fully-formed bodies. No text, no letters, no blank margins, no white borders.
 # Theme: Speed Science, Relay Race & Global Olympic Truce
 
 # COVER IMAGES

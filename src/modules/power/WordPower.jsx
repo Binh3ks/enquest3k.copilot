@@ -84,13 +84,13 @@ const PowerCard = ({ word, themeColor, isVi, onComplete, weekId, mode }) => {
         >
           {/* FRONT */}
           <div className="absolute inset-0 bg-teal-600 rounded-3xl shadow-xl border border-teal-500 flex flex-col overflow-hidden text-white" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-           <div className="h-3/5 w-full relative p-6 flex items-center justify-center bg-teal-700/50">
+           <div className="h-[62%] w-full relative overflow-hidden flex items-center justify-center bg-teal-700/50 rounded-t-3xl">
                   {word.image_url ? (
-                    <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-contain drop-shadow-md transition-transform group-hover:scale-105" />
+                    <img src={getImageUrl(word.image_url)} alt={word.word} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   ) : (
                     <div className="text-6xl font-black opacity-20">{word.word[0]}</div>
                   )}
-                  <div className="absolute top-3 right-3">
+                  <div className="absolute top-3 right-3 z-10">
                     {isCompleted ? <CheckCircle className="w-8 h-8 fill-green-400 text-white" /> : <Zap className="w-6 h-6 text-yellow-300 fill-yellow-300" />}
                   </div>
            </div>
