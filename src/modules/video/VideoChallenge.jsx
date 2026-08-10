@@ -24,7 +24,7 @@ function incAiFeedbackCount(weekId) {
   } catch { return 1; }
 }
 
-const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
+const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress, forcedTab }) => {
   const { weekId } = useParams();
   const content = (data?.writing || data?.video) ? (data.writing || data.video) : data;
 
@@ -35,11 +35,16 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   );
 
   // Track whether we've already hydrated local state from savedData.
-  // Zustand hydrates asynchronously, so savedData may be empty on first render.
   const hydratedRef = useRef(false);
 
   // --- STATE ---
-  const [activeTab, setActiveTab] = useState(savedData.lastTab || 'write'); 
+  const [activeTab, setActiveTab] = useState(forcedTab || savedData.lastTab || 'write');
+
+  useEffect(() => {
+    if (forcedTab) {
+      setActiveTab(forcedTab);
+    }
+  }, [forcedTab]); 
   const [script, setScript] = useState(savedData.script || "");
   const [isRecording, setIsRecording] = useState(false);
   const [videoBlob, setVideoBlob] = useState(null);
@@ -370,14 +375,9 @@ const VideoChallenge = ({ data, themeColor, isVi, onToggleLang, onReportProgress
     const correctPool = allWords.filter(w => !w.distractor);
     const distractorPool = allWords.filter(w => w.distractor);
 
-    // Hint count based on scaffolding stage
-    const stage = content.hints?.vocabulary_bank?.scaffolding_stage || 'medium';
-    const avgLen = correctPool.length > 0
-      ? correctPool.reduce((s, w) => s + w.word.length, 0) / correctPool.length : 0;
-    const isPhrase = avgLen > 12;
-    const maxHints = isPhrase
-      ? (stage === 'high' ? 3 : stage === 'medium' ? 3 : stage === 'medium-low' ? 4 : 5)
-      : (stage === 'high' ? 4 : stage === 'medium' ? 5 : stage === 'medium-low' ? 6 : 7);
+    // Hint count based on roadmap stage: W01-W15 = max 3 hints, W16+ = max 4 hints
+    const weekNum = parseInt(weekId, 10) || 1;
+    const maxHints = weekNum <= 15 ? 3 : 4;
 
     // Seeded RNG — different subset per blank
     const seed = frameIndex * 1000 + blankIndex;

@@ -31,81 +31,33 @@ const week_37RealData = {
     "smiled with pride"
   ],
   "target_vocab": [
-    {
-      "word": "athlete",
-      "pronunciation": "/ˈæθliːt/",
-      "definition_vi": "vận động viên",
-      "definition_en": "a person trained in physical sports"
-    },
-    {
-      "word": "relay",
-      "pronunciation": "/ˈriːleɪ/",
-      "definition_vi": "cuộc đua tiếp sức",
-      "definition_en": "a race between teams passing a stick"
-    },
-    {
-      "word": "baton",
-      "pronunciation": "/bəˈtɒn/",
-      "definition_vi": "gậy tiếp sức",
-      "definition_en": "a stick passed from runner to runner"
-    },
-    {
-      "word": "stadium",
-      "pronunciation": "/ˈsteɪdiəm/",
-      "definition_vi": "sân vận động",
-      "definition_en": "a large sports arena"
-    },
-    {
-      "word": "teamwork",
-      "pronunciation": "/ˈtiːmwɜːk/",
-      "definition_vi": "tinh thần đồng đội",
-      "definition_en": "working together cooperatively as a group"
-    },
-    {
-      "word": "momentum",
-      "pronunciation": "/məˈmentəm/",
-      "definition_vi": "động năng / đà di chuyển",
-      "definition_en": "the force of a moving body"
-    },
-    {
-      "word": "truce",
-      "pronunciation": "/truːs/",
-      "definition_vi": "thỏa thuận ngừng bắn",
-      "definition_en": "an agreement to stop fighting"
-    },
-    {
-      "word": "nation",
-      "pronunciation": "/ˈneɪʃn/",
-      "definition_vi": "quốc gia",
-      "definition_en": "a country with its own government"
-    }
+    { "word": "athlete", "pronunciation": "/ˈæθliːt/", "definition_vi": "vận động viên", "definition_en": "a person trained in physical sports" },
+    { "word": "relay", "pronunciation": "/ˈriːleɪ/", "definition_vi": "cuộc đua tiếp sức", "definition_en": "a team race passing a baton" },
+    { "word": "baton", "pronunciation": "/bəˈtɒn/", "definition_vi": "gậy tiếp sức", "definition_en": "a stick passed in a relay race" },
+    { "word": "stadium", "pronunciation": "/ˈsteɪdiəm/", "definition_vi": "sân vận động", "definition_en": "large sports arena with seats" },
+    { "word": "momentum", "pronunciation": "/məˈmentəm/", "definition_vi": "động năng / đà di chuyển", "definition_en": "the force of a moving body" },
+    { "word": "velocity", "pronunciation": "/vəˈlɒsəti/", "definition_vi": "vận tốc", "definition_en": "speed of motion in a direction" },
+    { "word": "acceleration", "pronunciation": "/əkˌseləˈreɪʃn/", "definition_vi": "gia tốc / sự bứt tốc", "definition_en": "increase in speed over time" },
+    { "word": "truce", "pronunciation": "/truːs/", "definition_vi": "thỏa thuận ngừng bắn / đình chiến", "definition_en": "an agreement to stop fighting" },
+    { "word": "nation", "pronunciation": "/ˈneɪʃn/", "definition_vi": "quốc gia", "definition_en": "a country with its own government" },
+    { "word": "tradition", "pronunciation": "/trəˈdɪʃn/", "definition_vi": "truyền thống", "definition_en": "a custom passed down through history" },
+    { "word": "culture", "pronunciation": "/ˈkʌltʃə/", "definition_vi": "văn hóa", "definition_en": "ideas and customs of a people" },
+    { "word": "unity", "pronunciation": "/ˈjuːnəti/", "definition_vi": "sự đoàn kết", "definition_en": "being joined together as one" },
+    { "word": "altitude", "pronunciation": "/ˈæltɪtjuːd/", "definition_vi": "độ cao so với mặt nước biển", "definition_en": "height above sea level" },
+    { "word": "endurance", "pronunciation": "/ɪnˈdjʊərəns/", "definition_vi": "sức bền", "definition_en": "ability to sustain long effort" },
+    { "word": "marathon", "pronunciation": "/ˈmærəθən/", "definition_vi": "cuộc chạy marathon", "definition_en": "a long-distance running race" },
+    { "word": "champion", "pronunciation": "/ˈtʃæmpiən/", "definition_vi": "nhà vô địch", "definition_en": "a top winner in a sport" },
+    { "word": "seamlessly", "pronunciation": "/ˈsiːmləsli/", "definition_vi": "một cách mượt mà", "definition_en": "smoothly without interruption" },
+    { "word": "enthusiastically", "pronunciation": "/ɪnˌθjuːziˈæstɪkli/", "definition_vi": "một cách nhiệt tình", "definition_en": "with intense excitement" },
+    { "word": "politeness", "pronunciation": "/pəˈlaɪtnəs/", "definition_vi": "sự lịch sự", "definition_en": "good manners and respect" },
+    { "word": "peacefully", "pronunciation": "/ˈpiːsfəli/", "definition_vi": "một cách hòa bình", "definition_en": "in a calm manner without conflict" }
   ],
   "sentences": [
-    {
-      "id": 1,
-      "text": "Leo ran very fast along the red track.",
-      "meaning": "Leo chạy rất nhanh trên đường chạy màu đỏ."
-    },
-    {
-      "id": 2,
-      "text": "He passed the baton cleanly to Maya.",
-      "meaning": "Cậu ấy đã truyền gậy tiếp sức gọn gàng cho Maya."
-    },
-    {
-      "id": 3,
-      "text": "Ancient Greek leaders declared a sacred truce.",
-      "meaning": "Các nhà lãnh đạo Hy Lạp cổ đại đã tuyên bố đình chiến linh thiêng."
-    },
-    {
-      "id": 4,
-      "text": "Over two hundred nations join the Modern Olympics.",
-      "meaning": "Hơn hai trăm quốc gia tham gia Thế vận hội hiện đại."
-    },
-    {
-      "id": 5,
-      "text": "Their dedicated teamwork brought victory!",
-      "meaning": "Tinh thần đồng đội tận tụy của họ đã mang lại chiến thắng!"
-    }
+    { "id": 1, "text": "Leo ran very fast along the red track.", "meaning": "Leo chạy rất nhanh trên đường chạy màu đỏ." },
+    { "id": 2, "text": "He passed the baton cleanly to Maya.", "meaning": "Cậu ấy đã truyền gậy tiếp sức gọn gàng cho Maya." },
+    { "id": 3, "text": "Ancient Greek leaders declared a sacred truce.", "meaning": "Các nhà lãnh đạo Hy Lạp cổ đại đã tuyên bố đình chiến linh thiêng." },
+    { "id": 4, "text": "Over two hundred nations join the Modern Olympics.", "meaning": "Hơn hai trăm quốc gia tham gia Thế vận hội hiện đại." },
+    { "id": 5, "text": "Their dedicated teamwork brought victory!", "meaning": "Tinh thần đồng đội tận tụy của họ đã mang lại chiến thắng!" }
   ],
   "voice_character": {
     "name": "Coach Nova - Sports Mentor",
@@ -118,10 +70,7 @@ const week_37RealData = {
     "personality": "Energetic, encouraging, supportive, uses sports terms",
     "backstory": "I am Nova, your AI Sports Coach! Today we explore speed science, Olympic history, and Kenya runners!",
     "speaking_style": "Upbeat, motivating, uses past simple and clear story concepts",
-    "facts": {
-      "loves_sports": true,
-      "teaches_past_simple": true
-    },
+    "facts": { "loves_sports": true, "teaches_past_simple": true },
     "role": "Sports mentor guiding students in relay physics, Olympic history, and global running"
   },
   "story_missions": [
@@ -147,27 +96,16 @@ const week_37RealData = {
           "goal": "Student retells STEM speed science passage",
           "phase_questions": [
             {
-              "template": "Awesome! Where did Leo's team go on Saturday morning? Say: They went to the sports stadium, or They went to the track",
-              "hints": [
-                "went",
-                "sports stadium",
-                "track"
-              ]
+              "template": "Where did Leo's team go on Saturday morning? Say: They went to the sports stadium, or They went to the track",
+              "hints": ["went", "sports stadium", "track"]
             },
             {
-              "template": "Great! What physics formula did Leo review with his coach? Say: He measured velocity = distance / time, or He used the speed formula",
-              "hints": [
-                "velocity = distance / time",
-                "speed formula"
-              ]
+              "template": "What physics formula did Leo review with his coach? Say: He measured velocity = distance / time, or He used the speed formula",
+              "hints": ["velocity = distance / time", "speed formula"]
             },
             {
-              "template": "Brilliant! How did the second runner keep fast kinetic momentum? Say: By starting to sprint early, or By running before receiving the baton",
-              "hints": [
-                "sprint early",
-                "momentum",
-                "running fast"
-              ]
+              "template": "How did the second runner keep fast kinetic momentum? Say: By starting to sprint early, or By running before receiving the baton",
+              "hints": ["sprint early", "momentum", "running fast"]
             }
           ]
         },
@@ -179,20 +117,12 @@ const week_37RealData = {
           "goal": "Student retells winning the gold medal",
           "phase_questions": [
             {
-              "template": "Exciting! How did Max catch the baton from Maya? Say: He caught the baton at full speed, or He caught the baton smoothly",
-              "hints": [
-                "caught the baton",
-                "full speed",
-                "smoothly"
-              ]
+              "template": "How did Max catch the baton from Maya? Say: He caught the baton at full speed, or He caught the baton smoothly",
+              "hints": ["caught the baton", "full speed", "smoothly"]
             },
             {
-              "template": "Hooray! What did the team win at the finish line? Say: They won a gold medal, or Scientific teamwork brought victory",
-              "hints": [
-                "won",
-                "gold medal",
-                "teamwork brought victory"
-              ]
+              "template": "What did the team win at the finish line? Say: They won a gold medal, or Scientific teamwork brought victory",
+              "hints": ["won", "gold medal", "teamwork brought victory"]
             }
           ]
         }
@@ -220,25 +150,16 @@ const week_37RealData = {
           "goal": "Student explains Olympic Truce history and 200 nations",
           "phase_questions": [
             {
-              "template": "Wonderful! What sacred agreement did ancient Greek leaders declare? Say: They declared a sacred truce, or They stopped all conflicts",
-              "hints": [
-                "declared a sacred truce",
-                "stopped conflicts"
-              ]
+              "template": "What sacred agreement did ancient Greek leaders declare? Say: They declared a sacred truce, or They stopped all conflicts",
+              "hints": ["declared a sacred truce", "stopped conflicts"]
             },
             {
-              "template": "Great job! How many nations come together in the Modern Olympics today? Say: Over two hundred nations, or Over 200 countries",
-              "hints": [
-                "over two hundred nations",
-                "200 countries"
-              ]
+              "template": "How many nations come together in the Modern Olympics today? Say: Over two hundred nations, or Over 200 countries",
+              "hints": ["over two hundred nations", "200 countries"]
             },
             {
-              "template": "Fantastic! Why were all athletes united in peace at the end? Say: International sports brought peace across borders, or Sports connect the world in peace",
-              "hints": [
-                "sports brought peace",
-                "united in peace"
-              ]
+              "template": "Why were all athletes united in peace at the end? Say: International sports brought peace across borders, or Sports connect the world in peace",
+              "hints": ["sports brought peace", "united in peace"]
             }
           ]
         }
@@ -266,20 +187,12 @@ const week_37RealData = {
           "goal": "Student connects Kenya marathon story to their own sports",
           "phase_questions": [
             {
-              "template": "Tell me! Why do runners train high up in Kenya? Say: Thin mountain air builds strong lungs and hearts, or To become marathon champions",
-              "hints": [
-                "strong lungs",
-                "marathon champions"
-              ]
+              "template": "Why do runners train high up in Kenya? Say: Thin mountain air builds strong lungs and hearts, or To become marathon champions",
+              "hints": ["strong lungs", "marathon champions"]
             },
             {
-              "template": "Awesome! What outdoor sport or race do you love playing with friends? Say: I love running in the park, or I enjoy playing soccer with my team",
-              "hints": [
-                "love running",
-                "park",
-                "soccer",
-                "team"
-              ]
+              "template": "What outdoor sport or race do you love playing with friends? Say: I love running in the park, or I enjoy playing soccer with my team",
+              "hints": ["love running", "park", "soccer", "team"]
             }
           ]
         }
@@ -302,21 +215,13 @@ const week_37RealData = {
           "frame": 1,
           "prompt_en": "Tell me about a race you ran! How did you pass the baton? Say: I ran very fast and passed the baton smoothly, or We sprinted to the finish line",
           "hint_en": "I ran very fast... passed the baton smoothly...",
-          "target_vocab": [
-            "ran very fast",
-            "passed the baton",
-            "finish line"
-          ]
+          "target_vocab": ["ran very fast", "passed the baton", "finish line"]
         },
         {
           "frame": 2,
           "prompt_en": "How does teamwork help your team win gold medals? Say: Scientific teamwork brought victory, or We cheered and clapped together",
           "hint_en": "teamwork brought victory... cheered and clapped...",
-          "target_vocab": [
-            "teamwork brought victory",
-            "cheered",
-            "clapped"
-          ]
+          "target_vocab": ["teamwork brought victory", "cheered", "clapped"]
         }
       ]
     },
@@ -335,24 +240,17 @@ const week_37RealData = {
           "frame": 1,
           "prompt_en": "What did ancient Greek leaders declare during the Olympics? Say: They declared a sacred truce for peace, or They stopped all conflicts",
           "hint_en": "declared a sacred truce... stopped all conflicts...",
-          "target_vocab": [
-            "declared a sacred truce",
-            "peace",
-            "olympics"
-          ]
+          "target_vocab": ["declared a sacred truce", "peace", "olympics"]
         },
         {
           "frame": 2,
           "prompt_en": "How do marathon runners in Kenya inspire children everywhere? Say: They run high in the mountains to build strong lungs, or They achieve big dreams through speed",
           "hint_en": "strong lungs... achieve big dreams...",
-          "target_vocab": [
-            "strong lungs",
-            "kenya",
-            "achieve big dreams"
-          ]
+          "target_vocab": ["strong lungs", "kenya", "achieve big dreams"]
         }
       ]
     }
   ]
 };
+
 export default week_37RealData;

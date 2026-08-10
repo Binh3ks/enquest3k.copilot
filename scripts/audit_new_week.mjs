@@ -5,11 +5,13 @@ import fs from 'fs';
 import path from 'path';
 
 const vnChars = new Set('àáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ'.split(''));
+const praiseRegex = /^\s*(Awesome|Great|Brilliant|Exciting|Hooray|Wonderful|Great job|Fantastic|Good job)[!\s,]/i;
 
-function auditWeek(weekNum) {
+async function auditWeek(weekNum) {
   const wStr = String(weekNum).padStart(2, '0');
   const advDir = path.join(process.cwd(), 'src/data/weeks', `week_${wStr}`);
-  const easyDir = path.join(process.cwd(), 'src/data/weeks_easy', `week_${wStr}`);
+  const rootRealFile = path.join(process.cwd(), 'src/data/weeks', `week_${wStr}_real.js`);
+  const folderRealFile = path.join(advDir, `week_${wStr}_real.js`);
   
   let errors = [];
 
@@ -55,6 +57,47 @@ function auditWeek(weekNum) {
     errors.push(`Missing word_power.js in week_${wStr}`);
   }
 
+  // 4. Audit shadowing.js grammar and ttsScript
+  const shPath = path.join(advDir, 'shadowing.js');
+  if (fs.existsSync(shPath)) {
+    const shContent = fs.readFileSync(shPath, 'utf8');
+    if (/\bEveryone were\b/i.test(shContent)) {
+      errors.push(`shadowing.js contains incorrect grammar "Everyone were" (must be "Everyone was")`);
+    }
+  }
+
+  // 5. Audit week_XX_real.js files (No premature praise, target_vocab = 20, synchronization)
+  if (fs.existsSync(folderRealFile)) {
+    const realMod = (await import(folderRealFile)).default;
+    if ((realMod.target_vocab?.length || 0) !== 20) {
+      errors.push(`week_${wStr}_real.js (folder) target_vocab count is ${realMod.target_vocab?.length || 0}, expected 20`);
+    }
+
+    // Check premature praise in template
+    const missions = realMod.story_missions || realMod.missions || [];
+    missions.forEach(m => {
+      (m.story_arc || []).forEach(arc => {
+        (arc.phase_questions || []).forEach(q => {
+          if (praiseRegex.test(q.template || '')) {
+            errors.push(`Premature praise detected in question template: "${q.template}"`);
+          }
+        });
+      });
+    });
+  } else {
+    errors.push(`Missing week_${wStr}_real.js inside folder week_${wStr}`);
+  }
+
+  if (fs.existsSync(rootRealFile) && fs.existsSync(folderRealFile)) {
+    const c1 = fs.readFileSync(rootRealFile, 'utf8').trim();
+    const c2 = fs.readFileSync(folderRealFile, 'utf8').trim();
+    if (c1 !== c2) {
+      errors.push(`Desynchronization between root week_${wStr}_real.js and folder week_${wStr}_real.js`);
+    }
+  } else if (!fs.existsSync(rootRealFile)) {
+    errors.push(`Missing root week_${wStr}_real.js file`);
+  }
+
   // Output results
   if (errors.length === 0) {
     console.log(`✅ WEEK ${wStr} PASSED ALL PIPELINE SCHEMA GATEWAY AUDITS!`);
@@ -66,4 +109,7 @@ function auditWeek(weekNum) {
 }
 
 const targetWeek = process.argv[2] ? parseInt(process.argv[2], 10) : 37;
-auditWeek(targetWeek);
+auditWeek(targetWeek).catch(err => {
+  console.error(err);
+  process.exit(1);
+});

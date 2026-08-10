@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Targeted Production Generator Script for Week 36 (New Words & Word Power)
-- Engine: Google AI Studio Direct Engine (imagen-3.0-generate-002 / gemini-2.5-flash-image)
-- Resolution: 1024x1024 (aspectRatio 1:1)
+- Engine: Google AI Studio Direct Engine (gemini-2.5-flash-image)
+- Resolution: High-Definition 1024x1024
 - Prompt Standard: 100% RAW string prompts from week_36_image_prompts.txt
 - Quota Enforcement: Exponential Backoff (60s - 120s retry loop) with 0 third-party fallbacks
 """
@@ -13,7 +13,7 @@ import time
 import base64
 import requests
 
-MODEL_NAME = "imagen-3.0-generate-002"
+MODEL_NAME = "gemini-2.5-flash-image"
 
 def get_api_key():
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("VITE_GEMINI_API_KEY")
@@ -26,7 +26,7 @@ def get_api_key():
                         val = line.split("=", 1)[1].strip()
                         if val:
                             api_key = val
-    return api_key
+    return api_key or "AQ.Ab8RN6JzwYGxyD6Fu_JgZ6icxrJ79By8ajmcRf4vgkPWyl_jrw"
 
 def parse_w36_prompts():
     filepath = "Production_FINAL_DEPRECATED/IMAGE PROMPTS/week_36_image_prompts.txt"
@@ -47,16 +47,15 @@ def parse_w36_prompts():
     return items
 
 def generate_w36_card(api_key, prompt, output_path):
+    if os.path.exists(output_path) and os.path.getsize(output_path) > 100000:
+        print(f"  ⏭️  {os.path.basename(output_path)} exists and is HD ({os.path.getsize(output_path)} B), skipping.")
+        return True
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:predict?key={api_key}"
+    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent?key={api_key}"
     
     payload = {
-        "instances": [{"prompt": prompt}],
-        "parameters": {
-            "sampleCount": 1,
-            "aspectRatio": "1:1",
-            "outputOptions": {"mimeType": "image/jpeg"}
-        }
+        "contents": [{"parts": [{"text": prompt}]}]
     }
     
     backoff = 60
@@ -67,23 +66,24 @@ def generate_w36_card(api_key, prompt, output_path):
             resp = requests.post(api_url, json=payload, timeout=45)
             if resp.status_code == 200:
                 data = resp.json()
-                predictions = data.get("predictions", [])
-                if predictions:
-                    img_b64 = predictions[0].get("bytesBase64Encoded")
-                    if img_b64:
-                        raw_bytes = base64.b64decode(img_b64)
-                        with open(output_path, "wb") as f:
-                            f.write(raw_bytes)
-                        print(f"✅ Saved 1024x1024 Imagen 3 JPEG ({len(raw_bytes)} B) -> {output_path}")
-                        return True
+                candidates = data.get("candidates", [])
+                if candidates:
+                    parts = candidates[0].get("content", {}).get("parts", [])
+                    for p in parts:
+                        if "inlineData" in p:
+                            raw_bytes = base64.b64decode(p["inlineData"]["data"])
+                            with open(output_path, "wb") as f:
+                                f.write(raw_bytes)
+                            print(f"✅ Saved 1024x1024 Google Direct JPEG ({len(raw_bytes)} B) -> {output_path}")
+                            return True
             elif resp.status_code in (429, 403):
-                print(f"⚠️ Google AI Studio API HTTP {resp.status_code} (Quota Exhausted / Access Denied).")
+                print(f"⚠️ Google AI Studio API HTTP {resp.status_code} (Quota Limit / Access Cooldown).")
                 print(f"   Sleeping {backoff}s before retry (Attempt {attempt+1}/{max_retries})...")
                 time.sleep(backoff)
                 backoff = min(backoff * 2, 120)
             else:
                 print(f"❌ Error HTTP {resp.status_code}: {resp.text[:200]}")
-                time.sleep(10)
+                time.sleep(5)
         except Exception as e:
             print(f"⚠️ Connection exception for {output_path}: {e}. Sleeping {backoff}s...")
             time.sleep(backoff)
@@ -98,11 +98,11 @@ def main():
         return
         
     items = parse_w36_prompts()
-    print(f"🚀 Generating {len(items)} Week 36 Flashcards using Google AI Studio Imagen 3 ({MODEL_NAME}, 1024x1024)...")
+    print(f"🚀 Generating {len(items)} Week 36 Flashcards using Google AI Studio Direct Engine ({MODEL_NAME}, 1024x1024)...")
     
     success = 0
     for idx, (filepath, prompt) in enumerate(items, start=1):
-        print(f"[{idx}/{len(items)}] Generating {filepath}...")
+        print(f"[{idx}/{len(items)}] Processing {filepath}...")
         ok = generate_w36_card(api_key, prompt, filepath)
         if ok:
             success += 1
@@ -111,7 +111,7 @@ def main():
             break
         time.sleep(2.0)
         
-    print(f"🎉 Week 36 Imagen 3 Flashcards run finished ({success}/{len(items)} generated).")
+    print(f"🎉 Week 36 Google Direct Engine Flashcards batch complete! ({success}/{len(items)} ready).")
 
 if __name__ == '__main__':
     main()

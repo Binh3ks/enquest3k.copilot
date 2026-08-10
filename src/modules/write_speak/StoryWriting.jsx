@@ -53,20 +53,31 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const tier = pictureMode.rubric_tier || 1;
   const allFrames = Array.isArray(pictureMode.sentence_frames) ? pictureMode.sentence_frames : [];
 
-  // Show ALL sentence frames as scaffolding — progression is in min_words/min_sentences, not in hiding frames
-  const scaffolding = useMemo(() => ({
-    showFrames: allFrames.length,
-    minWords: pictureMode.min_words || content?.min_words || 50,
-    minSentences: pictureMode.min_sentences || content?.min_sentences || 8,
-  }), [allFrames.length, pictureMode.min_words, pictureMode.min_sentences, content?.min_words, content?.min_sentences]);
-  const visibleFrames = allFrames;
-  const hasFrames = visibleFrames.length > 0;
+  // Scaffolding length progression based on roadmap:
+  // Week 16-28: 8 sentences (65 words)
+  // Week 29-42: 10 sentences (85 words)
+  // Week 43+: 12 sentences (110 words)
+  const currentW = parseInt(weekId, 10) || 16;
+  const scaffolding = useMemo(() => {
+    let minSentences = 8;
+    let minWords = 65;
+    if (currentW >= 43) {
+      minSentences = 12;
+      minWords = 110;
+    } else if (currentW >= 29) {
+      minSentences = 10;
+      minWords = 85;
+    }
+    return {
+      minWords: pictureMode.min_words || content?.min_words || minWords,
+      minSentences: pictureMode.min_sentences || content?.min_sentences || minSentences,
+    };
+  }, [currentW, pictureMode.min_words, pictureMode.min_sentences, content?.min_words, content?.min_sentences]);
 
   // State
   const [text, setText] = useState(savedData?.text || '');
   const [imgSrc, setImgSrc] = useState('');
   const [imgFailed, setImgFailed] = useState(false);
-  const [frameInputs, setFrameInputs] = useState(savedData?.frameInputs || {});
   const [rubric, setRubric] = useState(savedData?.rubric || null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [imgZoomed, setImgZoomed] = useState(false);
@@ -74,7 +85,6 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   // Hydrate from saved
   useEffect(() => {
     if (savedData?.text) setText(savedData.text);
-    if (savedData?.frameInputs) setFrameInputs(savedData.frameInputs);
     if (savedData?.rubric) setRubric(savedData.rubric);
   }, [weekId]);
 
@@ -85,7 +95,6 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       const percent = rubric ? rubric.total * (100 / rubric.maxTotal) : (text.length > 10 ? 30 : 0);
       saveProgress({
         text,
-        frameInputs,
         rubric,
       }, isComplete, Math.round(percent));
       if (isComplete) {
@@ -94,9 +103,10 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       if (onReportProgress) onReportProgress(Math.round(percent));
     }, 1500);
     return () => clearTimeout(t);
-  }, [text, frameInputs, rubric]);
+  }, [text, rubric]);
 
   const wordCount = useMemo(() => text.trim().split(/\s+/).filter(Boolean).length, [text]);
+  const sentenceCount = useMemo(() => text.split(/[.!?]+/).filter(s => s.trim().length > 0).length, [text]);
 
   // Image resolution: CDN → local Pages fallback
   useEffect(() => {
@@ -107,7 +117,6 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   }, [pictureMode?.image_url, weekId]);
 
   const handleImgError = useCallback(() => {
-    // Fallback: if CDN URL (http/https) failed, try relative path directly from site bundle
     if (typeof imgSrc === 'string' && (imgSrc.startsWith('http://') || imgSrc.startsWith('https://'))) {
       setImgSrc(pictureMode.image_url);
     } else {
@@ -173,45 +182,6 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         </div>
       </div>
 
-      {/* Sentence frames — scaffolding for students */}
-      {hasFrames && (
-        <div className="flex-shrink-0 px-3 py-2 bg-indigo-50 border-b border-indigo-100 space-y-2">
-          <p className="text-[10px] font-black uppercase text-indigo-600 tracking-wider">
-            {isVi ? '📝 Khung câu gợi ý' : '📝 Sentence Frames'}
-            <span className="ml-2 font-normal text-indigo-400">
-              {isVi
-                ? `viết tối thiểu ${scaffolding.minWords} từ, ${scaffolding.minSentences} câu`
-                : `write ${scaffolding.minWords}+ words, ${scaffolding.minSentences}+ sentences`}
-            </span>
-          </p>
-          {visibleFrames.map((frame, fi) => {
-            const template = typeof frame === 'string' ? frame : (frame?.template || frame?.text || String(frame || ''));
-            const parts = template.split('___');
-            return (
-              <div key={fi} className="bg-white border border-indigo-200 rounded-xl p-2 text-xs">
-                <div className="flex flex-wrap items-center gap-1.5">
-                  {parts.map((p, pi) => (
-                    <React.Fragment key={pi}>
-                      <span className="text-indigo-900">{p}</span>
-                      {pi < parts.length - 1 && (
-                        <input
-                          type="text"
-                          value={frameInputs[`${fi}-${pi}`] || ''}
-                          onChange={e => setFrameInputs(prev => ({ ...prev, [`${fi}-${pi}`]: e.target.value }))}
-                          placeholder="..."
-                          className="min-w-[80px] max-w-[180px] border-b-2 border-indigo-300 bg-white/80 px-1.5 py-0.5 outline-none text-indigo-700 font-bold placeholder:text-slate-300 rounded text-xs"
-                          style={{ width: `${Math.max(80, (frameInputs[`${fi}-${pi}`]?.length || 3) * 8)}px` }}
-                        />
-                      )}
-                    </React.Fragment>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
       {/* Word bank chips — read-only reference for students to type manually */}
       {pictureMode.word_bank && pictureMode.word_bank.length > 0 && (
         <div className="flex-shrink-0 px-3 py-2 bg-slate-50 border-b border-slate-100">
@@ -231,29 +201,39 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         </div>
       )}
 
-      {/* Textarea + submit */}
+      {/* Textarea + Live Word & Sentence Counter */}
       <div className="flex-1 min-h-0 overflow-y-auto p-3">
         <div className="relative">
+          {currentW >= 43 && (
+            <p className="text-[10px] text-indigo-600 font-bold mb-1">
+              {isVi ? '💡 Gợi ý: Chia bài viết thành 2 đoạn văn ngắn' : '💡 Tip: Divide your story into 2 short paragraphs'}
+            </p>
+          )}
           <textarea
             value={text}
             onChange={e => setText(e.target.value)}
             placeholder={isVi ? 'Viết câu chuyện của em ở đây...' : 'Write your story here...'}
-            className="w-full min-h-[180px] p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:bg-white focus:border-indigo-400 outline-none resize-y text-sm leading-relaxed text-slate-700"
+            className="w-full min-h-[180px] p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:bg-white focus:border-indigo-400 outline-none resize-y text-sm leading-relaxed text-slate-700 font-normal"
           />
-          {/* Word/sentence progress bar */}
+          {/* Live Word & Sentence Counter real-time */}
           {(() => {
-            const met = wordCount >= scaffolding.minWords;
+            const metWords = wordCount >= scaffolding.minWords;
+            const metSentences = sentenceCount >= scaffolding.minSentences;
+            const met = metWords && metSentences;
             return (
-              <div className={`flex items-center justify-between mt-2 px-2 py-1.5 rounded-lg border ${met ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50 border-amber-200'}`}>
+              <div className={`flex flex-wrap items-center justify-between mt-2 px-2.5 py-2 rounded-lg border ${met ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50 border-amber-200'}`}>
                 <div className="flex items-center gap-3">
-                  <span className={`text-[11px] font-black ${met ? 'text-emerald-600' : 'text-amber-600'}`}>
+                  <span className={`text-[11px] font-black ${metWords ? 'text-emerald-600' : 'text-amber-600'}`}>
                     {wordCount}/{scaffolding.minWords} {isVi ? 'từ' : 'words'}
                   </span>
+                  <span className={`text-[11px] font-black ${metSentences ? 'text-emerald-600' : 'text-amber-600'}`}>
+                    {sentenceCount}/{scaffolding.minSentences} {isVi ? 'câu' : 'sentences'}
+                  </span>
                   <span className={`text-[11px] font-bold ${met ? 'text-emerald-500' : 'text-amber-500'}`}>
-                    {met ? '✓' : `→ ${scaffolding.minWords - wordCount} ${isVi ? 'từ nữa' : 'more'}`}
+                    {met ? '✓ Complete' : `→ ${Math.max(0, scaffolding.minWords - wordCount)} ${isVi ? 'từ' : 'words'}, ${Math.max(0, scaffolding.minSentences - sentenceCount)} ${isVi ? 'câu' : 'sentences'}`}
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 mt-1 sm:mt-0">
                   {met && (
                     <button
                       onClick={handleSubmit}
@@ -275,7 +255,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
               </div>
             );
           })()}
-          </div>
+        </div>
 
         {/* Rubric result */}
         {rubric && (
