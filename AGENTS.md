@@ -70,3 +70,11 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
 10. **Week Index Schema Invariant & AI Tutor TTS Cache Alignment**:
     - **`index.js` Schema**: File `index.js` của mỗi tuần BẮT BUỘC xuất đối tượng `weekData` bọc đầy đủ wrapper `stations: { read_explore, new_words, word_match, grammar, word_power, ask_ai, logic_lab, dictation, shadowing, writing, explore, mindmap_speaking, daily_watch, game_hub }` để tránh lỗi `undefined` tiêu đề hoặc treo Spinner ở các trạm.
     - **AI Tutor TTS Alignment**: Cấu hình prefetch âm thanh mở đầu AI Tutor Story Mission trong `voiceService.js` BẮT BUỘC dùng đúng `voice: 'en-US-Journey-F'` và `station: 'story'` trùng khớp hoàn toàn với `StoryMissionTab.jsx` để đảm bảo tốc độ phát âm thanh tức thì (0ms latency).
+11. **Golden Cover Image Pipeline Standard (Frozen W36 & W37 Specs)**:
+    - **Tiêu chuẩn Vàng Đóng Băng**: Toàn bộ hình ảnh covers ở các trạm `read_stem`, `read_social`, và `explore.js` cho tất cả các tuần mới về sau BẮT BUỘC lấy mẫu từ bộ hình chuẩn cao cấp của Tuần 36 và Tuần 37.
+    - **Công thức Prompt Bắt Buộc**:
+      `"Cute 3D render of [BỐI CẢNH/NHÂN VẬT/HÀNH ĐỘNG CHI TIẾT TẠO THÀNH BỨC TRANH CỐT TRUYỆN ĐẦY ĐỦ], Pixar animation style, vibrant colors, soft studio lighting, clean background. No text or letters in the image."`
+    - **Nguyên tắc Thẩm mỹ & Chi tiết**:
+      1. Bắt buộc thể hiện **bối cảnh câu chuyện phong phú, giàu chi tiết trực quan** (ví dụ: Archimedes trong bồn tắm gỗ tràn nước ở Syracuse; đoàn lạc đà Marco Polo trên Con đường Tơ lụa; các vận động viên chạy trên con đường đất đỏ ở thung lũng Rift Valley - Kenya; Lễ đình chiến Olympic cổ đại với vòng nguyệt quế olive).
+      2. **Tuyệt đối KHÔNG chứa chữ/ký tự**: Mọi văn bản tiêu đề đều được render tự động bằng UI component của hệ thống.
+      3. **Full-Bleed Aspect Ratio**: Tỷ lệ mở rộng chiều dọc hiển thị trọn vẹn chi tiết trên thẻ header các trạm.
