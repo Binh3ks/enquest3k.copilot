@@ -7,8 +7,13 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 const VideoItem = memo(({ video, percent, onClick }) => {
   const isDone = percent >= 90;
   const title = video.title || video.title_en || 'Educational Video';
-  const ytid = video.videoId || video.youtube_id || video.id;
-  const thumb = video.thumb || (ytid ? `https://img.youtube.com/vi/${ytid}/mqdefault.jpg` : 'https://via.placeholder.com/320x180');
+  let ytid = video.videoId || video.youtube_id;
+  if (!ytid && video.url) {
+    const match = video.url.match(/(?:embed\/|v=|\/)([a-zA-Z0-9_-]{11})/);
+    if (match) ytid = match[1];
+  }
+  if (!ytid && video.id && video.id.length === 11) ytid = video.id;
+  const thumb = video.thumb || (ytid ? `https://img.youtube.com/vi/${ytid}/mqdefault.jpg` : '/images/video_placeholder.svg');
 
   return (
     <div onClick={() => onClick(video)}

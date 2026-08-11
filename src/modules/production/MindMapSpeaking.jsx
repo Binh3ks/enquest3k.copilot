@@ -116,12 +116,12 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   });
 
   const sentenceTargets = selectedStruct 
-    ? (data.branchLabels[selectedStruct.text] || data.branchLabels[selectedStruct.id] || []) 
+    ? (data.branchLabels[selectedStruct.text] || data.branchLabels[selectedStruct.id] || data.branchLabels[selectedStruct.label] || data.branchLabels[selectedStruct.title] || []) 
     : [];
 
   const branches = sentenceTargets.map((branch, i) => {
-    // Handle both old format (string) and new format ({text, audio})
-    const branchText = typeof branch === 'string' ? branch : branch.text;
+    // Handle both old format (string) and new format ({text, label, title, audio})
+    const branchText = typeof branch === 'string' ? branch : (branch.text || branch.label || branch.title || branch.name || '');
     // Fall back to dataHooks-injected branch audio map for string-only weeks
     const branchAudio = typeof branch === 'string'
       ? (data.branchLabelsAudio?.[selectedStruct.text]?.[i] || null)  // dataHooks: /audio/week1/mindmap_branch_N.mp3

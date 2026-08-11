@@ -34,12 +34,14 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
     if (savedData.correctSentences?.length) setCompletedIds(new Set(savedData.correctSentences));
   }, [savedData]);
 
+  // 🔒 Memoize shuffled word order per sentence — prevents reshuffling on every  const sentencesList = useMemo(() => Array.isArray(data) ? data : (data?.sentences || []), [data]);
+
   // 🔒 Memoize shuffled word order per sentence — prevents reshuffling on every keystroke
   const shuffledWordsBySentence = useMemo(() => {
-    if (!data?.sentences) return {};
+    if (!sentencesList.length) return {};
     const result = {};
-    data.sentences.forEach(s => {
-      const words = (s.text_en || s.text || '')
+    sentencesList.forEach(s => {
+      const words = (s.text_en || s.text || s.sentence || '')
         .replace(/[.,?!]$/g, '').replace(/[,?!]/g, '').split(' ');
       // Fisher-Yates shuffle (stable per mount)
       for (let i = words.length - 1; i > 0; i--) {
@@ -49,33 +51,25 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
       result[s.id] = words;
     });
     return result;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data?.sentences]);
+  }, [sentencesList]);
 
-  // � DEBUG: Log sentences structure
+  // Debug log
   useEffect(() => {
-    const sentences = data?.sentences || [];
-    console.log('[DictationEngine] 🐛 DEBUG - sentences:', {
-      hasSentences: !!data?.sentences,
-      sentencesLength: sentences.length,
-      mode: mode,
-      firstItem: sentences[0]
-    });
-  }, [data, mode]);
+    console.log('[DictationEngine] sentences count:', sentencesList.length);
+  }, [sentencesList]);
 
-  const hasPrefetched = useRef(false); // 🔥 Prevent infinite prefetch loop
-  // 🔥 FIX: Reset state when mode changes
+  const hasPrefetched = useRef(false);
 
   useEffect(() => {
     setLevel(savedData.level || 1);
     setInputs(savedData.inputs || {});
     setFeedback(savedData.feedback || {});
     setCompletedIds(new Set(savedData.correctSentences || []));
-  }, [mode]); // Only depend on mode
+  }, [mode]);
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      const totalSentences = data?.sentences?.length || 0;
+      const totalSentences = sentencesList.length;
       if (totalSentences > 0) {
         const percent = Math.round((completedIds.size / totalSentences) * 100);
         const isComplete = completedIds.size === totalSentences;
@@ -91,31 +85,22 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
           markComplete(100);
         }
       }
-    }, 1500); // Debounce saving
+    }, 1500);
 
     return () => clearTimeout(handler);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [level, inputs, feedback, completedIds]);
+  }, [level, inputs, feedback, completedIds, sentencesList]);
 
-  // 🚀 Pre-cache dictation sentences for instant playback (ONCE per data load)
   useEffect(() => {
-    // Reset flag when data or mode changes
     hasPrefetched.current = false;
   }, [data, mode]);
   
   useEffect(() => {
-    if (hasPrefetched.current) return; // Already prefetched
-    
-    if (data?.sentences) {
+    if (hasPrefetched.current) return;
+    if (sentencesList.length > 0) {
       hasPrefetched.current = true;
-      console.log(`[DictationEngine] 🚀 Starting prefetch for ${data.sentences.length} sentences...`);
-      prefetchFromArray(data.sentences, 'text_en').catch(err => {
-        console.warn('[DictationEngine] ❌ Prefetch failed:', err);
-      });
+      prefetchFromArray(sentencesList, 'text_en').catch(() => {});
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data?.sentences?.length, prefetchFromArray]);
-
+  }, [sentencesList, prefetchFromArray]);
 
   if (!data) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Dictation...</div>;
 
@@ -201,7 +186,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
       </div>
 
       <div className="space-y-4">
-        {data.sentences && data.sentences.map((s, idx) => (
+        {sentencesList.map((s, idx) => (
           <div key={s.id} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
            <div className="flex justify-between items-center mb-3">
                <span className={`px-2 py-1 rounded bg-${themeColor}-100 text-${themeColor}-700 text-xs font-black`}>#{idx+1}</span>

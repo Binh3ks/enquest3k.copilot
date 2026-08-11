@@ -675,6 +675,13 @@ function shuffleOptionsAndAnswer(q) {
 // BUILDERS FOR ALL 12 STATIONS
 // ---------------------------------------------------------------------------
 
+function cleanTextPunctuation(str) {
+  if (!str) return str;
+  return str
+    .replace(/\s+([.,!?])/g, '$1')
+    .replace(/\*\*([^*]+?)([.,!?])\*\*/g, '**$1**$2');
+}
+
 function buildReadJs(data) {
   const dictMap = data.dictMap;
   const englishKeys = Object.keys(dictMap);
@@ -692,8 +699,8 @@ function buildReadJs(data) {
     title_vi: data.stem_title,
     image_url: `/images/week${data.weekId}/read_cover_w${data.weekId}.jpg`,
     audio_url: `/audio/week${data.weekId}/read_main.mp3`,
-    content_en: data.stem_content,
-    content_vi: data.stem_vi,
+    content_en: cleanTextPunctuation(data.stem_content),
+    content_vi: cleanTextPunctuation(data.stem_vi),
     comprehension_questions: stemQuestions,
     questions: stemQuestions
   };
@@ -704,8 +711,8 @@ function buildReadJs(data) {
     title_vi: data.social_title,
     image_url: `/images/week${data.weekId}/explore_w${data.weekId}.jpg`,
     audio_url: `/audio/week${data.weekId}/read_main.mp3`,
-    content_en: data.social_content,
-    content_vi: data.social_vi,
+    content_en: cleanTextPunctuation(data.social_content),
+    content_vi: cleanTextPunctuation(data.social_vi),
     comprehension_questions: socialQuestions,
     questions: socialQuestions
   };

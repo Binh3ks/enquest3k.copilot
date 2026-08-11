@@ -365,119 +365,90 @@ const Explore = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => 
         </div>
       </div>
 
-      {/* CHECK QUESTIONS */}
+      {/* CHECK QUESTIONS — 100% CAMBRIDGE A2 FLYERS MULTIPLE CHOICE (MCQ) */}
       <div className="grid grid-cols-1 gap-6">
         {checkQs.map((q, i) => {
-            const qId = i + 1;
-            const answers = q.answer || q.answer_en || [];
-            const currentFeedback = feedback[qId];
+          const qId = i + 1;
+          const selectedOpt = inputs[qId] || '';
+          const isSubmitted = submitted[qId];
+          const isCorrect = selectedOpt === q.answer;
 
-            return (
-                <div key={qId} className={`bg-white p-6 rounded-2xl border-2 shadow-sm transition-all ${currentFeedback?.status === 'perfect' ? 'border-green-200' : currentFeedback?.status === 'warning' ? 'border-amber-200' : 'border-slate-200'}`}>
-                   <h3 className="text-xs font-black text-slate-400 uppercase mb-3 flex items-center"><HelpCircle className="w-4 h-4 mr-2 text-lime-500"/> {isVi ? "Câu hỏi" : "Check"} {qId}</h3>
-                   <p className="text-xl font-bold text-slate-800 mb-4">{q.question_en}</p>
-                    
-                   <div className="relative">
-                      <input 
-                        type="text" 
-                        className={`w-full p-4 pr-32 bg-slate-50 rounded-xl border-2 outline-none text-lg font-medium transition-all 
-                            ${currentFeedback?.status === 'perfect' ? 'border-green-400 bg-green-50 text-green-900' : 
-                              currentFeedback?.status === 'warning' ? 'border-amber-400 bg-amber-50 text-amber-900' : 
-                              currentFeedback?.status === 'wrong' ? 'border-rose-300 bg-rose-50 text-rose-900' : 
-                              'border-slate-200 focus:border-lime-500 focus:bg-white'}`} 
-                        placeholder={isVi ? "Nhập câu trả lời..." : "Type your answer..."} 
-                        value={inputs[qId]||''} 
-                        onChange={e=>{
-                            setInputs({...inputs, [qId]: e.target.value}); 
-                            if(currentFeedback) setFeedback({...feedback, [qId]: null});
-                        }} 
-                        onKeyDown={(e) => e.key === 'Enter' && handleCheck(qId, answers)} 
-                      />
-                      <div className="absolute right-2 top-2 bottom-2 flex gap-1">
-                          <button onClick={() => toggleHint(qId)} className="p-2 text-slate-400 hover:text-amber-500 hover:bg-amber-50 rounded-lg transition-colors" title="Hint"><HelpCircle className="w-5 h-5" /></button>
-                          <button onClick={()=>handleCheck(qId, answers)} className={`px-4 rounded-lg font-bold text-xs uppercase tracking-wider transition-colors text-white shadow-sm ${currentFeedback?.status === 'perfect' ? 'bg-green-500' : 'bg-lime-600 hover:bg-lime-700 active:scale-95'}`}>Check</button>
-                      </div>
-                   </div>
-                   {currentFeedback && (
-                       <div className={`mt-3 flex items-start gap-2 animate-in slide-in-from-top-1 ${currentFeedback.status === 'perfect' ? 'text-green-600' : currentFeedback.status === 'warning' ? 'text-amber-600' : 'text-rose-500'}`}>
-                           {currentFeedback.status === 'perfect' ? <CheckCircle className="w-5 h-5 mt-0.5"/> : currentFeedback.status === 'warning' ? <AlertTriangle className="w-5 h-5 mt-0.5"/> : <XCircle className="w-5 h-5 mt-0.5"/>}
-                           <span className="text-sm font-bold">{currentFeedback.message} {attempts[qId] > 0 && !showAnswer[qId] && `(Lần ${attempts[qId]}/3)`}</span>
-                       </div>
-                   )}
-                   {showHint[qId] && (<div className="mt-3 p-3 bg-amber-50 border-l-4 border-amber-300 rounded-r-lg text-xs text-slate-600 italic flex items-center animate-fade-in"><Lightbulb className="w-3 h-3 mr-2 text-amber-500"/> {isVi ? q.hint_vi : (q.hint_en || q.hint)}</div>)}
-                   {showAnswer[qId] && (
-                       <div className="mt-3 p-3 bg-green-50 border-l-4 border-green-400 rounded-r-lg animate-fade-in">
-                           <p className="text-[10px] font-black text-green-600 uppercase mb-1">Đáp án đúng:</p>
-                           <p className="text-sm font-bold text-green-800">{Array.isArray(answers) ? answers[0] : answers}</p>
-                       </div>
-                   )}
+          return (
+            <div key={qId} className={`bg-white p-6 rounded-2xl border-2 shadow-sm transition-all ${isSubmitted ? (isCorrect ? 'border-emerald-300 bg-emerald-50/20' : 'border-rose-300 bg-rose-50/20') : 'border-slate-200'}`}>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-xs font-black text-slate-400 uppercase flex items-center">
+                  <HelpCircle className="w-4 h-4 mr-2 text-lime-500"/> {isVi ? "Câu hỏi trắc nghiệm" : "Multiple Choice Question"} {qId}
+                </h3>
+                {q.hint_en && (
+                  <button onClick={() => toggleHint(qId)} className="text-slate-400 hover:text-amber-500 flex items-center text-xs font-bold gap-1">
+                    <Lightbulb className="w-3.5 h-3.5" /> {isVi ? "Gợi ý" : "Hint"}
+                  </button>
+                )}
+              </div>
+              <p className="text-xl font-bold text-slate-800 mb-5">{q.question_en || q.question}</p>
+
+              {showHint[qId] && (
+                <div className="mb-4 p-3 bg-amber-50 border-l-4 border-amber-300 rounded-r-lg text-xs text-slate-600 italic flex items-center">
+                  <Lightbulb className="w-3.5 h-3.5 mr-2 text-amber-500 flex-shrink-0"/> {isVi ? (q.hint_vi || q.hint_en) : (q.hint_en || q.hint)}
                 </div>
-            );
+              )}
+
+              {/* 4 MCQ Option Pills */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {(q.options || ["Option A", "Option B", "Option C", "Option D"]).map((opt, optIdx) => {
+                  const isThisSelected = selectedOpt === opt;
+                  let optStyle = "border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700";
+                  if (isSubmitted) {
+                    if (opt === q.answer) {
+                      optStyle = "border-emerald-500 bg-emerald-100 text-emerald-900 font-bold shadow-sm";
+                    } else if (isThisSelected && !isCorrect) {
+                      optStyle = "border-rose-400 bg-rose-100 text-rose-900 font-bold";
+                    }
+                  } else if (isThisSelected) {
+                    optStyle = "border-lime-500 bg-lime-100 text-lime-900 font-bold shadow-md";
+                  }
+
+                  return (
+                    <button
+                      key={optIdx}
+                      disabled={isSubmitted}
+                      onClick={() => {
+                        setInputs({ ...inputs, [qId]: opt });
+                        setSubmitted({ ...submitted, [qId]: false });
+                      }}
+                      className={`p-4 rounded-xl border-2 text-left text-base font-semibold transition-all flex items-center justify-between ${optStyle}`}
+                    >
+                      <span>{opt}</span>
+                      {isSubmitted && opt === q.answer && <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />}
+                      {isSubmitted && isThisSelected && !isCorrect && <XCircle className="w-5 h-5 text-rose-500 flex-shrink-0" />}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Action Submit Button */}
+              {!isSubmitted && (
+                <div className="mt-4 flex justify-end">
+                  <button
+                    disabled={!selectedOpt}
+                    onClick={() => setSubmitted({ ...submitted, [qId]: true })}
+                    className={`px-6 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white transition-all shadow-md ${selectedOpt ? 'bg-lime-600 hover:bg-lime-700 active:scale-95 cursor-pointer' : 'bg-slate-300 cursor-not-allowed'}`}
+                  >
+                    {isVi ? "Kiểm tra đáp án" : "Submit Answer"}
+                  </button>
+                </div>
+              )}
+
+              {/* Feedback Alert */}
+              {isSubmitted && (
+                <div className={`mt-4 p-3 rounded-xl flex items-center gap-2 text-sm font-bold ${isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`}>
+                  {isCorrect ? <CheckCircle className="w-5 h-5" /> : <XCircle className="w-5 h-5" />}
+                  <span>{isCorrect ? (isVi ? "Chính xác! Xuất sắc!" : "Awesome! That is correct!") : (isVi ? `Chưa đúng. Đáp án đúng là: ${q.answer}` : `Not quite. Correct answer: ${q.answer}`)}</span>
+                </div>
+              )}
+            </div>
+          );
         })}
-      </div>
-
-      {/* 3. CRITICAL THINKING */}
-      <div className={`bg-gradient-to-br from-lime-50 to-white p-8 rounded-3xl border-2 transition-all shadow-sm ${feedback[99]?.status === 'perfect' ? 'border-green-300 ring-2 ring-green-100' : 'border-lime-200'}`}>
-           <h3 className="text-sm font-black text-lime-700 uppercase mb-4 flex items-center">
-              <Sparkles className="w-4 h-4 mr-2 text-yellow-500 fill-yellow-500"/> 
-              {isVi ? "Tư duy Phản biện" : "Critical Thinking"}
-           </h3>
-           <p className="text-2xl font-bold text-slate-800 mb-2">{criticalQ.text_en}</p>
-           {isVi && <p className="text-sm text-slate-500 italic mb-6">{criticalQ.text_vi}</p>}
-           
-           <div className="relative">
-              <textarea 
-                  className={`w-full p-5 bg-white rounded-2xl border-2 text-lg outline-none resize-none transition-all shadow-inner
-                    ${feedback[99]?.status === 'perfect' ? 'border-green-400 text-green-900 focus:ring-2 focus:ring-green-200' : 
-                      feedback[99]?.status === 'warning' ? 'border-amber-400 focus:ring-2 focus:ring-amber-200' : 
-                      'border-lime-200 focus:border-lime-400 focus:ring-2 focus:ring-lime-100'}`} 
-                  rows="3" 
-                  placeholder={isVi ? "Tôi nghĩ là..." : "I think..."} 
-                  value={inputs[99]||''} 
-                  onChange={e=>{
-                      setInputs({...inputs, [99]: e.target.value}); 
-                      if(feedback[99]) setFeedback({...feedback, 99: null});
-                      if(showModel) setShowModel(false);
-                  }}
-               ></textarea>
-               
-               <button onClick={()=>handleCheck(99, [])} className={`mt-4 px-8 py-3 rounded-xl font-bold text-sm shadow-md transition-all float-right flex items-center text-white transform active:scale-95 ${feedback[99]?.status === 'perfect' ? 'bg-green-600 hover:bg-green-700' : 'bg-lime-600 hover:bg-lime-700'}`}>
-                   {isVi ? "Kiểm tra" : "Check Answer"} <Edit3 className="w-4 h-4 ml-2"/>
-               </button>
-           </div>
-           
-           <div className="clear-both pt-2"></div>
-
-           {/* FEEDBACK */}
-           {feedback[99] && (
-               <div className={`mt-4 p-4 rounded-xl flex items-start gap-3 animate-in slide-in-from-top-2 ${feedback[99].status === 'perfect' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}`}>
-                   {feedback[99].status === 'perfect' ? <CheckCircle className="w-6 h-6 shrink-0"/> : <AlertTriangle className="w-6 h-6 shrink-0"/>}
-                   <div><p className="font-bold">{feedback[99].message}</p></div>
-               </div>
-           )}
-
-           {/* MODEL ANSWER & HINT */}
-           {showModel && (
-               <div className="mt-6 animate-in fade-in zoom-in-95 duration-300 space-y-3">
-                   {/* Cấu trúc */}
-                   <div className="p-4 bg-white rounded-xl border border-lime-100 shadow-sm">
-                       <p className="text-xs font-black text-lime-500 uppercase mb-1 flex items-center tracking-wider">
-                          <Lightbulb className="w-3 h-3 mr-1.5"/> {isVi ? "Cấu trúc gợi ý:" : "Sentence Structure:"}
-                       </p>
-                       <p className="font-medium text-slate-600 italic">"{criticalQ.hint_en || criticalQ.hint}"</p>
-                   </div>
-                   
-                   {/* Câu Mẫu Hoàn Chỉnh (Nếu có) */}
-                   {criticalQ.model_answer && (
-                       <div className="p-4 bg-lime-100/50 rounded-xl border border-lime-200 shadow-sm">
-                           <p className="text-xs font-black text-green-600 uppercase mb-1 flex items-center tracking-wider">
-                              <CheckCircle className="w-3 h-3 mr-1.5"/> {isVi ? "Câu mẫu hoàn chỉnh:" : "Model Example:"}
-                           </p>
-                           <p className="text-lg font-bold text-green-800">"{criticalQ.model_answer}"</p>
-                       </div>
-                   )}
-               </div>
-           )}
       </div>
     </div>
   );
