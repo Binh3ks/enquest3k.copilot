@@ -1,37 +1,32 @@
-// Index wrapper for Week 33
-import read_explore from './read.js';
-import explore from './explore.js';
-import new_words from './vocab.js';
-import word_match from './word_match.js';
-import word_power from './word_power.js';
-import grammar from './grammar.js';
-import daily_watch from './daily_watch.js';
-import logic_lab from './logic_lab.js';
-import mindmap_speaking from './mindmap.js';
-import ask_ai from './ask_ai.js';
-import writing from './writing.js';
-import dictation from './dictation.js';
-import shadowing from './shadowing.js';
+import { readingHubData } from './reading_hub.js';
+import { listeningHubData } from './listening_hub.js';
+import { writingHubData } from './writing_hub.js';
+import { speakingHubData } from './speaking_hub.js';
 
-export const weekData = {
-  weekId: 33,
-  title: "Corridor Safety & School Care",
-  title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học",
+export const week33Data = {
+  week: 33,
+  theme: "The Accident File",
+  cefr_level: "A2 Flyers",
+  readingHub: readingHubData,
+  listeningHub: listeningHubData,
+  writingHub: writingHubData,
+  speakingHub: speakingHubData,
   stations: {
-    read_explore,
-    explore,
-    new_words,
-    word_match,
-    word_power,
-    grammar,
-    daily_watch,
-    logic_lab,
-    mindmap_speaking,
-    ask_ai,
-    writing,
-    dictation,
-    shadowing
+    read_explore: readingHubData,
+    new_words: readingHubData.vocab,
+    word_match: listeningHubData.flash_arena,
+    grammar: listeningHubData.grammar_drills,
+    word_power: readingHubData.vocab,
+    ask_ai: speakingHubData.nova_examiner_prompt,
+    logic_lab: listeningHubData.singapore_math,
+    dictation: writingHubData.word_bank_pills,
+    shadowing: speakingHubData.shadowing_script,
+    writing: writingHubData.picture_story,
+    explore: readingHubData.story_scenes,
+    mindmap_speaking: speakingHubData.shadowing_script,
+    daily_watch: [],
+    game_hub: listeningHubData.flash_arena
   }
 };
 
-export default weekData;
+export default week33Data;

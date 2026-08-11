@@ -52,6 +52,7 @@ import { generateSmartReviewAsync } from './utils/srsGenerator';
 import EncounterOverlay from './components/encounter/EncounterOverlay';
 import UnboxAnimation from './components/avatar/UnboxAnimation';
 import WordTreasury from './pages/WordTreasury';
+import Station2Hub from './modules/hubs/station2/Station2Hub';
 import { getCollectionByWeek } from './data/collectionConfig';
 
 // Lazy-load checkpoint data only for the 4 checkpoint weeks
@@ -195,6 +196,7 @@ const App = () => {
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
       <Route path="/collection" element={<CollectionBoard />} />
       <Route path="/word-treasury" element={<WordTreasury />} />
+      <Route path="/hub/station-2" element={<Station2Hub />} />
     </Routes>
     
     {/* Global AI Tutor Widget - V5 Premium */}

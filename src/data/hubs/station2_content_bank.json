@@ -1,0 +1,298 @@
+[
+  {
+    "content_id": "st2_w33_g01",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Trại thám hiểm hang động - W33",
+    "week": "W33",
+    "raw_content": {
+      "text": "Ghép câu diễn tả hành động đang diễn ra thì có hành động khác xen vào (Past Continuous + When/While).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "past_continuous_when_while",
+      "word_blocks": ["While", "I", "was", "exploring", "the", "cave", ",", "I", "found", "a", "glowing", "crystal", "."],
+      "distractor_blocks": ["am", "is", "explore"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["While", "I", "was", "exploring", "the", "cave", ",", "I", "found", "a", "glowing", "crystal", "."],
+        ["I", "found", "a", "glowing", "crystal", "while", "I", "was", "exploring", "the", "cave", "."]
+      ],
+      "acceptable_connectors": ["as", "when"],
+      "clause_rules": {
+        "main_clause": ["I found a glowing crystal"],
+        "subordinate_clause": ["I was exploring the cave"],
+        "connector": ["while"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  },
+  {
+    "content_id": "st2_w33_g02",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Trại thám hiểm hang động - W33",
+    "week": "W33",
+    "raw_content": {
+      "text": "Ghép câu chỉ nguyên nhân kết quả (Clauses of Reason with Because/So).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "clauses_of_reason",
+      "word_blocks": ["We", "brought", "torches", "because", "the", "cave", "was", "very", "dark", "."],
+      "distractor_blocks": ["so", "why", "brings"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["We", "brought", "torches", "because", "the", "cave", "was", "very", "dark", "."],
+        ["Because", "the", "cave", "was", "very", "dark", ",", "we", "brought", "torches", "."]
+      ],
+      "acceptable_connectors": ["as", "since"],
+      "clause_rules": {
+        "main_clause": ["We brought torches"],
+        "subordinate_clause": ["the cave was very dark"],
+        "connector": ["because"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  },
+  {
+    "content_id": "st2_w33_g03",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Trại thám hiểm hang động - W33",
+    "week": "W33",
+    "raw_content": {
+      "text": "Ghép câu sử dụng từ nối đối lập và bổ sung (Connectors: Although, However).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "connectors",
+      "word_blocks": ["Although", "the", "path", "was", "steep", ",", "the", "scout", "kept", "walking", "."],
+      "distractor_blocks": ["but", "despite", "walks"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["Although", "the", "path", "was", "steep", ",", "the", "scout", "kept", "walking", "."],
+        ["The", "scout", "kept", "walking", "although", "the", "path", "was", "steep", "."]
+      ],
+      "acceptable_connectors": ["even though"],
+      "clause_rules": {
+        "main_clause": ["the scout kept walking"],
+        "subordinate_clause": ["the path was steep"],
+        "connector": ["although"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  },
+  {
+    "content_id": "st2_w33_g04",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Trại thám hiểm hang động - W33",
+    "week": "W33",
+    "raw_content": {
+      "text": "Ghép câu khi đang làm việc gì đó thì xảy ra sự việc khác (Past Continuous with When).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "past_continuous_when_while",
+      "word_blocks": ["They", "were", "climbing", "when", "it", "started", "to", "rain", "."],
+      "distractor_blocks": ["was", "while", "climbed"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["They", "were", "climbing", "when", "it", "started", "to", "rain", "."],
+        ["When", "it", "started", "to", "rain", ",", "they", "were", "climbing", "."]
+      ],
+      "acceptable_connectors": ["as", "while"],
+      "clause_rules": {
+        "main_clause": ["They were climbing"],
+        "subordinate_clause": ["it started to rain"],
+        "connector": ["when"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  },
+  {
+    "content_id": "st2_w34_g01",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Cứu hộ núi cao - W34",
+    "week": "W34",
+    "raw_content": {
+      "text": "Ghép câu diễn tả sự việc đang xảy ra trên núi (Past Continuous with While).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "past_continuous_when_while",
+      "word_blocks": ["While", "the", "rescue", "team", "was", "searching", ",", "they", "spotted", "a", "signal", "."],
+      "distractor_blocks": ["were", "search", "spot"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["While", "the", "rescue", "team", "was", "searching", ",", "they", "spotted", "a", "signal", "."],
+        ["They", "spotted", "a", "signal", "while", "the", "rescue", "team", "was", "searching", "."]
+      ],
+      "acceptable_connectors": ["as", "when"],
+      "clause_rules": {
+        "main_clause": ["they spotted a signal"],
+        "subordinate_clause": ["the rescue team was searching"],
+        "connector": ["while"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  },
+  {
+    "content_id": "st2_w34_g02",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Cứu hộ núi cao - W34",
+    "week": "W34",
+    "raw_content": {
+      "text": "Ghép câu chỉ lý do hành động cứu hộ (Clauses of Reason with As/Because).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "clauses_of_reason",
+      "word_blocks": ["The", "pilot", "landed", "safely", "because", "the", "wind", "calmed", "down", "."],
+      "distractor_blocks": ["so", "why", "lands"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["The", "pilot", "landed", "safely", "because", "the", "wind", "calmed", "down", "."],
+        ["Because", "the", "wind", "calmed", "down", ",", "the", "pilot", "landed", "safely", "."]
+      ],
+      "acceptable_connectors": ["as", "since"],
+      "clause_rules": {
+        "main_clause": ["The pilot landed safely"],
+        "subordinate_clause": ["the wind calmed down"],
+        "connector": ["because"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  },
+  {
+    "content_id": "st2_w34_g03",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Cứu hộ núi cao - W34",
+    "week": "W34",
+    "raw_content": {
+      "text": "Ghép câu từ nối bổ sung thông tin (Connectors: In addition, Furthermore).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "connectors",
+      "word_blocks": ["In", "addition", "to", "food", ",", "they", "carried", "medical", "kits", "."],
+      "distractor_blocks": ["also", "and", "carry"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["In", "addition", "to", "food", ",", "they", "carried", "medical", "kits", "."],
+        ["They", "carried", "medical", "kits", "in", "addition", "to", "food", "."]
+      ],
+      "acceptable_connectors": ["besides"],
+      "clause_rules": {
+        "main_clause": ["they carried medical kits"],
+        "subordinate_clause": ["In addition to food"],
+        "connector": ["in addition to"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  },
+  {
+    "content_id": "st2_w34_g04",
+    "station": "2",
+    "skill_target": "grammar",
+    "exam_reference": {
+      "exam": "Flyers",
+      "part": "Grammar Part 2",
+      "cefr_level": "A2"
+    },
+    "unit_theme": "Cứu hộ núi cao - W34",
+    "week": "W34",
+    "raw_content": {
+      "text": "Ghép câu diễn tả 2 hành động song song trong quá khứ (Past Continuous + While).",
+      "audio_asset_id": null,
+      "image_asset_ids": [],
+      "question_type": "sentence-build",
+      "grammar_tag": "past_continuous_when_while",
+      "word_blocks": ["While", "Leo", "was", "holding", "the", "rope", ",", "Mia", "was", "climbing", "."],
+      "distractor_blocks": ["is", "hold", "climb"]
+    },
+    "answer_key": {
+      "valid_structures": [
+        ["While", "Leo", "was", "holding", "the", "rope", ",", "Mia", "was", "climbing", "."],
+        ["Mia", "was", "climbing", "while", "Leo", "was", "holding", "the", "rope", "."]
+      ],
+      "acceptable_connectors": ["as", "when"],
+      "clause_rules": {
+        "main_clause": ["Mia was climbing"],
+        "subordinate_clause": ["Leo was holding the rope"],
+        "connector": ["while"],
+        "requires_comma_if_subordinate_first": true
+      }
+    },
+    "rubric_ref": null,
+    "difficulty_tier": 1,
+    "qa_status": "approved"
+  }
+]
