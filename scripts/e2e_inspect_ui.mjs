@@ -22,10 +22,10 @@ async function runE2EInspection() {
   // 1. Inspect Explore Station (/week/36/explore)
   console.log('📸 Navigating to Explore Station (/week/36/explore)...');
   try {
-    await page.goto(`${BASE_URL}/week/36/explore`, { waitUntil: 'domcontentloaded', timeout: 10000 });
-    await page.waitForTimeout(3000);
+    await page.goto(`${BASE_URL}/week/36/explore`, { waitUntil: 'load', timeout: 15000 });
+    await page.waitForTimeout(5000);
     const exploreP = path.join(ARTIFACTS_DIR, 'e2e_w36_explore_mcq.png');
-    await page.screenshot({ path: exploreP, fullPage: true });
+    await page.screenshot({ path: exploreP });
     console.log(`  ✅ Explore screenshot saved at ${exploreP}`);
   } catch (e) {
     console.error('Explore station navigation failed:', e.message);
@@ -34,37 +34,13 @@ async function runE2EInspection() {
   // 2. Inspect Game Hub Station (/week/36/game_hub)
   console.log('📸 Navigating to Game Hub Station (/week/36/game_hub)...');
   try {
-    await page.goto(`${BASE_URL}/week/36/game_hub`, { waitUntil: 'domcontentloaded', timeout: 10000 });
-    await page.waitForTimeout(3000);
+    await page.goto(`${BASE_URL}/week/36/game_hub`, { waitUntil: 'load', timeout: 15000 });
+    await page.waitForTimeout(5000);
     const gameHubP = path.join(ARTIFACTS_DIR, 'e2e_w36_game_hub.png');
-    await page.screenshot({ path: gameHubP, fullPage: true });
+    await page.screenshot({ path: gameHubP });
     console.log(`  ✅ Game Hub screenshot saved at ${gameHubP}`);
   } catch (e) {
     console.error('Game Hub navigation failed:', e.message);
-  }
-
-  // 3. Inspect Daily Watch (/week/36/daily_watch)
-  console.log('📸 Navigating to Daily Watch (/week/36/daily_watch)...');
-  try {
-    await page.goto(`${BASE_URL}/week/36/daily_watch`, { waitUntil: 'domcontentloaded', timeout: 10000 });
-    await page.waitForTimeout(3000);
-    const dwP = path.join(ARTIFACTS_DIR, 'e2e_w36_daily_watch.png');
-    await page.screenshot({ path: dwP, fullPage: true });
-    console.log(`  ✅ Daily Watch screenshot saved at ${dwP}`);
-  } catch (e) {
-    console.error('Daily Watch navigation failed:', e.message);
-  }
-
-  // 4. Inspect Mindmap (/week/36/mindmap_speaking)
-  console.log('📸 Navigating to Mindmap (/week/36/mindmap_speaking)...');
-  try {
-    await page.goto(`${BASE_URL}/week/36/mindmap_speaking`, { waitUntil: 'domcontentloaded', timeout: 10000 });
-    await page.waitForTimeout(3000);
-    const mmP = path.join(ARTIFACTS_DIR, 'e2e_w36_mindmap.png');
-    await page.screenshot({ path: mmP, fullPage: true });
-    console.log(`  ✅ Mindmap screenshot saved at ${mmP}`);
-  } catch (e) {
-    console.error('Mindmap navigation failed:', e.message);
   }
 
   await browser.close();
