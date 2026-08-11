@@ -1,96 +1,152 @@
 // Cambridge A2 Flyers explore.js — Week 36
 export default {
-  image_url: "/images/week36/explore_w36.jpg",
-  content_en: "Caves are amazing underground wonderlands formed over thousands of years by moving water. In Vietnam, **Son Doong Cave** is the largest cave in the entire world! Inside Son Doong, explorers found an **underground jungle** with trees and rare animals.",
-  content_vi: "Hang động là những vùng đất kỳ diệu dưới lòng đất. Ở Việt Nam, Hang Sơn Đoòng là hang động lớn nhất thế giới!",
-  key_vocabulary: [
-  {
-    "word": "mysterious",
-    "definition": "difficult or impossible to understand or explain",
-    "definition_vi": "bí ẩn",
-    "example": "They found a mysterious entrance behind the rock."
+  "title_en": "Subterranean World Wonders — Global Cave Exploration",
+  "title_vi": "Kỳ Quan Thế Giới Underground — Khám Phá Hang Động Toàn Cầu",
+  "content_en": "Deep beneath Earth's surface lie vast subterranean worlds formed by moving water over thousands of years. In Vietnam, **Son Doong Cave** features giant stalactites over 70 meters high and its own underground cloud weather system. In the United States, **Mammoth Cave** in Kentucky stretches over 680 kilometers, making it the longest recorded cave system in the world. Meanwhile, in Austria, the **Eisriesenwelt Ice Cave** holds giant frozen ice palaces inside limestone cliffs. In New Zealand, the **Waitomo Glowworm Caves** sparkle with thousands of tiny bioluminescent creatures hanging from rocky ceilings. Exploring these natural wonders teaches scientists about Earth's ancient climate, underground ecosystems, and the importance of global conservation.",
+  "content_vi": "Sâu dưới bề mặt Trái đất là những thế giới dưới lòng đất bao la được tạo thành bởi nước chảy qua hàng ngàn năm. Tại Việt Nam, Hang Sơn Đoòng có những khối nhũ đá khổng lồ cao hơn 70 mét và hệ thống thời tiết mây mù riêng dưới lòng đất. Tại Hoa Kỳ, Hang Mammoth ở Kentucky trải dài hơn 680 km, trở thành hệ thống hang động dài nhất thế giới. Trong khi đó, tại Áo, Hang Băng Eisriesenwelt sở hữu những cung điện băng giá khổng lồ bên trong các vách đá vôi. Tại New Zealand, Hang Động Đom Đóm Waitomo lấp lánh với hàng ngàn sinh vật phát quang sinh học nhỏ bé treo trên trần đá. Việc khám phá những kỳ quan thiên nhiên này dạy các nhà khoa học về khí hậu cổ đại của Trái đất, hệ sinh thái dưới lòng đất và tầm quan trọng của việc bảo tồn toàn cầu.",
+  "questions": [
+    {
+      "id": 1,
+      "question_en": "Which cave in the United States is the longest recorded cave system in the world?",
+      "options": [
+        "Son Doong Cave in Vietnam",
+        "Mammoth Cave in Kentucky",
+        "Eisriesenwelt Cave in Austria",
+        "Waitomo Caves in New Zealand"
+      ],
+      "answer": "Mammoth Cave in Kentucky"
+    },
+    {
+      "id": 2,
+      "question_en": "What creates the sparkling light on the ceiling of Waitomo Caves in New Zealand?",
+      "options": [
+        "Electric lanterns",
+        "Gold coins",
+        "Reflecting ice crystals",
+        "Bioluminescent glowworms"
+      ],
+      "answer": "Bioluminescent glowworms"
+    },
+    {
+      "id": 3,
+      "question_en": "What unique natural feature is found inside Austria's Eisriesenwelt Cave?",
+      "options": [
+        "Tropical palm trees",
+        "Hot desert sand",
+        "Giant frozen ice palaces",
+        "Active volcanoes"
+      ],
+      "answer": "Giant frozen ice palaces"
+    },
+    {
+      "id": 4,
+      "question_en": "Why do scientists explore subterranean cave systems around the world?",
+      "options": [
+        "To mine for modern plastic",
+        "To burn ancient trees",
+        "To study Earth's climate and preserve underground habitats",
+        "To build fast subway trains"
+      ],
+      "answer": "To study Earth's climate and preserve underground habitats"
+    }
+  ],
+  "question": {
+    "text_en": "If you could explore one famous underground cave system in the world, which one would you choose and why?",
+    "text_vi": "Nếu bạn có thể khám phá một hệ thống hang động nổi tiếng dưới lòng đất trên thế giới, bạn sẽ chọn hang động nào và tại sao?",
+    "min_words": 25,
+    "hint_en": "I would like to explore Son Doong Cave because it has a hidden underground jungle and giant stalactites...",
+    "hint_vi": "Tôi muốn khám phá Hang Sơn Đoòng vì nó có rừng rậm ẩn dưới lòng đất và những khối nhũ đá khổng lồ..."
   },
-  {
-    "word": "flashlight",
-    "definition": "a portable battery-powered electric lamp",
-    "definition_vi": "đèn pin",
-    "example": "Turn on your flashlight inside the dark cave."
-  },
-  {
-    "word": "entrance",
-    "definition": "an opening that allows access to a place",
-    "definition_vi": "lối vào",
-    "example": "The cave entrance was covered with vines."
-  },
-  {
-    "word": "ancient",
-    "definition": "belonging to the very distant past",
-    "definition_vi": "cổ xưa",
-    "example": "The explorer drew an ancient parchment map."
-  },
-  {
-    "word": "compass",
-    "definition": "an instrument showing magnetic north used for navigation",
-    "definition_vi": "la bàn",
-    "example": "Use a shiny brass compass to find north."
-  }
-],
-  check_questions: [
-  {
-    "id": 1,
-    "question_en": "Which is the largest cave in the world?",
-    "options": [
-      "Mammoth Cave in USA",
-      "Son Doong Cave in Vietnam",
-      "Waitomo Cave in New Zealand",
-      "Blue Cave in Italy"
-    ],
-    "answer": "Son Doong Cave in Vietnam",
-    "clue_statement": "Son Doong Cave is the largest cave in the entire world.",
-    "hint_en": "Son Doong...",
-    "hint_vi": "Hang Sơn Đoòng..."
-  },
-  {
-    "id": 2,
-    "question_en": "What unique natural feature exists inside Son Doong Cave?",
-    "options": [
-      "An underground jungle with trees and animals",
-      "A volcanic lake",
-      "A giant ice castle",
-      "A floating city"
-    ],
-    "answer": "An underground jungle with trees and animals",
-    "clue_statement": "Explorers found an underground jungle inside Son Doong.",
-    "hint_en": "Underground jungle...",
-    "hint_vi": "Rừng rậm dưới lòng đất..."
-  },
-  {
-    "id": 3,
-    "question_en": "How are most caves formed over long periods of time?",
-    "options": [
-      "By strong winds in one day",
-      "By heavy traffic",
-      "By falling meteorites",
-      "By moving water over thousands of years"
-    ],
-    "answer": "By moving water over thousands of years",
-    "clue_statement": "Caves are formed over thousands of years by moving water.",
-    "hint_en": "Moving water...",
-    "hint_vi": "Nước chảy..."
-  },
-  {
-    "id": 4,
-    "question_en": "Why should explorers protect ancient caves?",
-    "options": [
-      "To preserve rare natural beauty and habitats",
-      "To build shopping malls inside",
-      "To leave trash behind",
-      "To block natural water"
-    ],
-    "answer": "To preserve rare natural beauty and habitats",
-    "clue_statement": "Caves are natural wonderlands that must be preserved.",
-    "hint_en": "Preserve natural beauty...",
-    "hint_vi": "Bảo tồn vẻ đẹp..."
-  }
-]
+  "check_questions": [
+    {
+      "id": 1,
+      "question_en": "Which cave in the United States is the longest recorded cave system in the world?",
+      "options": [
+        "Son Doong Cave in Vietnam",
+        "Mammoth Cave in Kentucky",
+        "Eisriesenwelt Cave in Austria",
+        "Waitomo Caves in New Zealand"
+      ],
+      "answer": "Mammoth Cave in Kentucky"
+    },
+    {
+      "id": 2,
+      "question_en": "What creates the sparkling light on the ceiling of Waitomo Caves in New Zealand?",
+      "options": [
+        "Electric lanterns",
+        "Gold coins",
+        "Reflecting ice crystals",
+        "Bioluminescent glowworms"
+      ],
+      "answer": "Bioluminescent glowworms"
+    },
+    {
+      "id": 3,
+      "question_en": "What unique natural feature is found inside Austria's Eisriesenwelt Cave?",
+      "options": [
+        "Tropical palm trees",
+        "Hot desert sand",
+        "Giant frozen ice palaces",
+        "Active volcanoes"
+      ],
+      "answer": "Giant frozen ice palaces"
+    },
+    {
+      "id": 4,
+      "question_en": "Why do scientists explore subterranean cave systems around the world?",
+      "options": [
+        "To mine for modern plastic",
+        "To burn ancient trees",
+        "To study Earth's climate and preserve underground habitats",
+        "To build fast subway trains"
+      ],
+      "answer": "To study Earth's climate and preserve underground habitats"
+    }
+  ],
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Which cave in the United States is the longest recorded cave system in the world?",
+      "options": [
+        "Son Doong Cave in Vietnam",
+        "Mammoth Cave in Kentucky",
+        "Eisriesenwelt Cave in Austria",
+        "Waitomo Caves in New Zealand"
+      ],
+      "answer": "Mammoth Cave in Kentucky"
+    },
+    {
+      "id": 2,
+      "question_en": "What creates the sparkling light on the ceiling of Waitomo Caves in New Zealand?",
+      "options": [
+        "Electric lanterns",
+        "Gold coins",
+        "Reflecting ice crystals",
+        "Bioluminescent glowworms"
+      ],
+      "answer": "Bioluminescent glowworms"
+    },
+    {
+      "id": 3,
+      "question_en": "What unique natural feature is found inside Austria's Eisriesenwelt Cave?",
+      "options": [
+        "Tropical palm trees",
+        "Hot desert sand",
+        "Giant frozen ice palaces",
+        "Active volcanoes"
+      ],
+      "answer": "Giant frozen ice palaces"
+    },
+    {
+      "id": 4,
+      "question_en": "Why do scientists explore subterranean cave systems around the world?",
+      "options": [
+        "To mine for modern plastic",
+        "To burn ancient trees",
+        "To study Earth's climate and preserve underground habitats",
+        "To build fast subway trains"
+      ],
+      "answer": "To study Earth's climate and preserve underground habitats"
+    }
+  ]
 };

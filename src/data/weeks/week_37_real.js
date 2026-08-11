@@ -3,6 +3,35 @@ export default {
   "weekId": 37,
   "title": "The Sports Day Challenge — Teamwork & Speed",
   "title_vi": "Ngày Hội Thể Thao — Tinh Thần Đồng Đội & Tốc Độ",
+  "spark_talk": [
+    {
+      "id": 1,
+      "topic_en": "How did Leo prepare for a smooth baton handoff in the relay race?",
+      "topic_vi": "Leo đã chuẩn bị như thế nào cho màn trao gậy tiếp sức mượt mà?"
+    },
+    {
+      "id": 2,
+      "topic_en": "Why is working as a synchronized team better than running alone?",
+      "topic_vi": "Tại sao làm việc như một đội ăn ý lại tốt hơn chạy một mình?"
+    }
+  ],
+  "story_missions": [
+    {
+      "id": 1,
+      "title": "Mission 1: Retell STEM Story",
+      "prompt": "Retell how Leo and his relay team used smooth acceleration to win the 4x100m gold medal."
+    },
+    {
+      "id": 2,
+      "title": "Mission 2: Retell Social Story",
+      "prompt": "Explain the ancient Greek Olympic Truce and how the Olympic Games bring nations together."
+    },
+    {
+      "id": 3,
+      "title": "Mission 3: Personal Connection",
+      "prompt": "Share a sports day or team relay experience where you worked together with your friends."
+    }
+  ],
   "target_vocab": [
     {
       "word": "annual",
@@ -185,35 +214,6 @@ export default {
       "id": 8,
       "text": "Cheering spectators filled the stadium stands.",
       "translation": "Ví dụ: cheering trong câu."
-    }
-  ],
-  "spark_talk": [
-    {
-      "id": 1,
-      "topic_en": "What safety rule did Jake follow in The Sports Day Challenge — Teamwork & Speed?",
-      "topic_vi": "Quy tắc an toàn nào Jake đã tuân thủ?"
-    },
-    {
-      "id": 2,
-      "topic_en": "How can you help a classmate who falls down?",
-      "topic_vi": "Bạn có thể giúp bạn cùng lớp như thế nào khi bạn ấy bị ngã?"
-    }
-  ],
-  "story_missions": [
-    {
-      "id": 1,
-      "title": "Mission 1: Retell STEM Story",
-      "prompt": "Retell how Jake helped his friend in The Sports Day Challenge — Teamwork & Speed."
-    },
-    {
-      "id": 2,
-      "title": "Mission 2: Retell Social Story",
-      "prompt": "Explain global school safety rules from The Olympic Truce & World Relays."
-    },
-    {
-      "id": 3,
-      "title": "Mission 3: Personal Connection",
-      "prompt": "Share an experience where you helped someone at school."
     }
   ]
 };

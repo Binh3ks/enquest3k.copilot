@@ -3,142 +3,176 @@ export default {
   prompts: [
   {
     "id": 1,
-    "title_en": "Situation 1: Main Story Inquiry",
-    "context_en": "Ask Nova about the main event in The Sports Day Challenge — Teamwork & Speed.",
-    "context_vi": "Hỏi Nova về sự kiện chính trong bài The Sports Day Challenge — Teamwork & Speed.",
-    "sample_question_en": "What happened in the story of The Sports Day Challenge — Teamwork & Speed?",
-    "sample_question_vi": "Chuyện gì đã xảy ra trong câu chuyện The Sports Day Challenge — Teamwork & Speed?",
-    "answer": "What happened in the story of The Sports Day Challenge — Teamwork & Speed?",
+    "title_en": "Situation 1: Relay Handoff Physics",
+    "context_en": "Ask Nova how accelerating in the exchange zone maintains running momentum.",
+    "context_vi": "Hỏi Nova cách tăng tốc trong vùng giao gậy giúp duy trì động năng.",
+    "sample_question_en": "How does smooth acceleration in the exchange zone help relay runners?",
+    "sample_question_vi": "Tăng tốc mượt mà trong khu vực giao gậy giúp các vận động viên tiếp sức như thế nào?",
+    "answer": "How does smooth acceleration in the exchange zone help relay runners?",
     "word_bank": [
-      "What",
-      "happened",
-      "in",
-      "the",
-      "story"
+      "How",
+      "does",
+      "acceleration",
+      "help",
+      "relay",
+      "runners"
     ]
   },
   {
     "id": 2,
-    "title_en": "Situation 2: Key Lesson Inquiry",
-    "context_en": "Ask Nova what main lesson students learn from The Sports Day Challenge — Teamwork & Speed.",
-    "context_vi": "Hỏi Nova bài học chính học sinh rút ra từ The Sports Day Challenge — Teamwork & Speed.",
-    "sample_question_en": "What is the most important lesson in this story?",
-    "sample_question_vi": "Bài học quan trọng nhất trong câu chuyện này là gì?",
-    "answer": "What is the most important lesson in this story?",
+    "title_en": "Situation 2: High Altitude Stamina",
+    "context_en": "Ask Nova why runners from Kenya's Rift Valley excel at marathon stamina.",
+    "context_vi": "Hỏi Nova tại sao các vận động viên từ Thung lũng Rift ở Kenya lại có sức bền tuyệt vời.",
+    "sample_question_en": "Why do athletes training at high altitudes develop greater stamina?",
+    "sample_question_vi": "Tại sao các vận động viên tập luyện ở vùng cao nguyên lại phát triển sức bền tốt hơn?",
+    "answer": "Why do athletes training at high altitudes develop greater stamina?",
     "word_bank": [
-      "What",
-      "is",
-      "the",
-      "most",
-      "important",
-      "lesson"
+      "Why",
+      "do",
+      "athletes",
+      "develop",
+      "greater",
+      "stamina"
     ]
   },
   {
     "id": 3,
-    "title_en": "Situation 3: Scientific & Moral Inquiry",
-    "context_en": "Ask Nova how we can apply these skills in our daily school life.",
-    "context_vi": "Hỏi Nova cách áp dụng kỹ năng này vào cuộc sống học đường hàng ngày.",
-    "sample_question_en": "How can students apply this lesson at school?",
-    "sample_question_vi": "Học sinh có thể áp dụng bài học này ở trường như thế nào?",
-    "answer": "How can students apply this lesson at school?",
+    "title_en": "Situation 3: Olympic Truce History",
+    "context_en": "Ask Nova about the history and purpose of the ancient Olympic Truce Ekecheiria.",
+    "context_vi": "Hỏi Nova về lịch sử và mục đích của Thỏa thuận Ngừng bắn Olympic Ekecheiria.",
+    "sample_question_en": "What was the purpose of the ancient Olympic Truce Ekecheiria?",
+    "sample_question_vi": "Mục đích của Thỏa thuận Ngừng bắn Olympic Ekecheiria cổ đại là gì?",
+    "answer": "What was the purpose of the ancient Olympic Truce Ekecheiria?",
     "word_bank": [
-      "How",
-      "can",
-      "students",
-      "apply",
-      "this",
-      "lesson"
+      "What",
+      "was",
+      "the",
+      "purpose",
+      "of",
+      "Olympic",
+      "Truce"
     ]
   },
   {
     "id": 4,
-    "title_en": "Situation 4: Personal Reflection",
-    "context_en": "Ask Nova what advice she has for kids when facing unexpected problems.",
-    "context_vi": "Hỏi Nova lời khuyên dành cho trẻ em khi gặp rắc rối bất ngờ.",
-    "sample_question_en": "What should we do when an accident happens?",
-    "sample_question_vi": "Chúng ta nên làm gì khi xảy ra sự cố bất ngờ?",
-    "answer": "What should we do when an accident happens?",
+    "title_en": "Situation 4: Track Friction Science",
+    "context_en": "Ask Nova how running spikes create friction to prevent slipping.",
+    "context_vi": "Hỏi Nova cách đinh giày chạy tạo ma sát để chống trượt.",
+    "sample_question_en": "How do athletic shoe spikes increase friction on synthetic tracks?",
+    "sample_question_vi": "Đinh giày thể thao tăng ma sát trên đường chạy tổng hợp như thế nào?",
+    "answer": "How do athletic shoe spikes increase friction on synthetic tracks?",
+    "word_bank": [
+      "How",
+      "do",
+      "shoe",
+      "spikes",
+      "increase",
+      "friction"
+    ]
+  },
+  {
+    "id": 5,
+    "title_en": "Situation 5: Values of Teamwork",
+    "context_en": "Ask Nova what key values of teamwork relay races teach young students.",
+    "context_vi": "Hỏi Nova những giá trị làm việc nhóm cốt lõi mà chạy tiếp sức dạy cho học sinh.",
+    "sample_question_en": "What essential teamwork values do relay races promote among students?",
+    "sample_question_vi": "Chạy tiếp sức thúc đẩy những giá trị làm việc nhóm thiết yếu nào giữa các học sinh?",
+    "answer": "What essential teamwork values do relay races promote among students?",
     "word_bank": [
       "What",
-      "should",
-      "we",
+      "teamwork",
+      "values",
       "do",
-      "when",
-      "an",
-      "accident",
-      "happens"
+      "relays",
+      "promote"
     ]
   }
 ],
   situations: [
   {
     "id": 1,
-    "title_en": "Situation 1: Main Story Inquiry",
-    "context_en": "Ask Nova about the main event in The Sports Day Challenge — Teamwork & Speed.",
-    "context_vi": "Hỏi Nova về sự kiện chính trong bài The Sports Day Challenge — Teamwork & Speed.",
-    "sample_question_en": "What happened in the story of The Sports Day Challenge — Teamwork & Speed?",
-    "sample_question_vi": "Chuyện gì đã xảy ra trong câu chuyện The Sports Day Challenge — Teamwork & Speed?",
-    "answer": "What happened in the story of The Sports Day Challenge — Teamwork & Speed?",
+    "title_en": "Situation 1: Relay Handoff Physics",
+    "context_en": "Ask Nova how accelerating in the exchange zone maintains running momentum.",
+    "context_vi": "Hỏi Nova cách tăng tốc trong vùng giao gậy giúp duy trì động năng.",
+    "sample_question_en": "How does smooth acceleration in the exchange zone help relay runners?",
+    "sample_question_vi": "Tăng tốc mượt mà trong khu vực giao gậy giúp các vận động viên tiếp sức như thế nào?",
+    "answer": "How does smooth acceleration in the exchange zone help relay runners?",
     "word_bank": [
-      "What",
-      "happened",
-      "in",
-      "the",
-      "story"
+      "How",
+      "does",
+      "acceleration",
+      "help",
+      "relay",
+      "runners"
     ]
   },
   {
     "id": 2,
-    "title_en": "Situation 2: Key Lesson Inquiry",
-    "context_en": "Ask Nova what main lesson students learn from The Sports Day Challenge — Teamwork & Speed.",
-    "context_vi": "Hỏi Nova bài học chính học sinh rút ra từ The Sports Day Challenge — Teamwork & Speed.",
-    "sample_question_en": "What is the most important lesson in this story?",
-    "sample_question_vi": "Bài học quan trọng nhất trong câu chuyện này là gì?",
-    "answer": "What is the most important lesson in this story?",
+    "title_en": "Situation 2: High Altitude Stamina",
+    "context_en": "Ask Nova why runners from Kenya's Rift Valley excel at marathon stamina.",
+    "context_vi": "Hỏi Nova tại sao các vận động viên từ Thung lũng Rift ở Kenya lại có sức bền tuyệt vời.",
+    "sample_question_en": "Why do athletes training at high altitudes develop greater stamina?",
+    "sample_question_vi": "Tại sao các vận động viên tập luyện ở vùng cao nguyên lại phát triển sức bền tốt hơn?",
+    "answer": "Why do athletes training at high altitudes develop greater stamina?",
     "word_bank": [
-      "What",
-      "is",
-      "the",
-      "most",
-      "important",
-      "lesson"
+      "Why",
+      "do",
+      "athletes",
+      "develop",
+      "greater",
+      "stamina"
     ]
   },
   {
     "id": 3,
-    "title_en": "Situation 3: Scientific & Moral Inquiry",
-    "context_en": "Ask Nova how we can apply these skills in our daily school life.",
-    "context_vi": "Hỏi Nova cách áp dụng kỹ năng này vào cuộc sống học đường hàng ngày.",
-    "sample_question_en": "How can students apply this lesson at school?",
-    "sample_question_vi": "Học sinh có thể áp dụng bài học này ở trường như thế nào?",
-    "answer": "How can students apply this lesson at school?",
+    "title_en": "Situation 3: Olympic Truce History",
+    "context_en": "Ask Nova about the history and purpose of the ancient Olympic Truce Ekecheiria.",
+    "context_vi": "Hỏi Nova về lịch sử và mục đích của Thỏa thuận Ngừng bắn Olympic Ekecheiria.",
+    "sample_question_en": "What was the purpose of the ancient Olympic Truce Ekecheiria?",
+    "sample_question_vi": "Mục đích của Thỏa thuận Ngừng bắn Olympic Ekecheiria cổ đại là gì?",
+    "answer": "What was the purpose of the ancient Olympic Truce Ekecheiria?",
     "word_bank": [
-      "How",
-      "can",
-      "students",
-      "apply",
-      "this",
-      "lesson"
+      "What",
+      "was",
+      "the",
+      "purpose",
+      "of",
+      "Olympic",
+      "Truce"
     ]
   },
   {
     "id": 4,
-    "title_en": "Situation 4: Personal Reflection",
-    "context_en": "Ask Nova what advice she has for kids when facing unexpected problems.",
-    "context_vi": "Hỏi Nova lời khuyên dành cho trẻ em khi gặp rắc rối bất ngờ.",
-    "sample_question_en": "What should we do when an accident happens?",
-    "sample_question_vi": "Chúng ta nên làm gì khi xảy ra sự cố bất ngờ?",
-    "answer": "What should we do when an accident happens?",
+    "title_en": "Situation 4: Track Friction Science",
+    "context_en": "Ask Nova how running spikes create friction to prevent slipping.",
+    "context_vi": "Hỏi Nova cách đinh giày chạy tạo ma sát để chống trượt.",
+    "sample_question_en": "How do athletic shoe spikes increase friction on synthetic tracks?",
+    "sample_question_vi": "Đinh giày thể thao tăng ma sát trên đường chạy tổng hợp như thế nào?",
+    "answer": "How do athletic shoe spikes increase friction on synthetic tracks?",
+    "word_bank": [
+      "How",
+      "do",
+      "shoe",
+      "spikes",
+      "increase",
+      "friction"
+    ]
+  },
+  {
+    "id": 5,
+    "title_en": "Situation 5: Values of Teamwork",
+    "context_en": "Ask Nova what key values of teamwork relay races teach young students.",
+    "context_vi": "Hỏi Nova những giá trị làm việc nhóm cốt lõi mà chạy tiếp sức dạy cho học sinh.",
+    "sample_question_en": "What essential teamwork values do relay races promote among students?",
+    "sample_question_vi": "Chạy tiếp sức thúc đẩy những giá trị làm việc nhóm thiết yếu nào giữa các học sinh?",
+    "answer": "What essential teamwork values do relay races promote among students?",
     "word_bank": [
       "What",
-      "should",
-      "we",
+      "teamwork",
+      "values",
       "do",
-      "when",
-      "an",
-      "accident",
-      "happens"
+      "relays",
+      "promote"
     ]
   }
 ]

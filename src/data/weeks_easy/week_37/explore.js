@@ -1,96 +1,152 @@
 // Cambridge A2 Flyers explore.js — Week 37
 export default {
-  image_url: "/images/week37/explore_w37.jpg",
-  content_en: "Relay races originate from ancient messenger runners who carried torches across cities. Today, athletes from **over 200 nations** compete peacefully in the Olympic Games. The Olympic Truce (*Ekecheiria*) was an ancient Greek tradition where all wars stopped during the games. Relay teams teach us that **working as one team leads to success**.",
-  content_vi: "Chạy tiếp sức bắt nguồn từ những người đưa tin cổ đại mang ngọn đuốc qua các thành phố. Ngày nay, các vận động viên từ hơn 200 quốc gia thi đấu hòa bình tại Olympic.",
-  key_vocabulary: [
-  {
-    "word": "annual",
-    "definition": "occurring once every year",
-    "definition_vi": "hàng năm",
-    "example": "Our school holds its annual Sports Day in May."
+  "title_en": "Global Running Cultures — From Kenya to the Olympic Torch",
+  "title_vi": "Văn Hóa Chạy Toàn Cầu — Từ Kenya Đến Ngọn Đuốc Olympic",
+  "content_en": "Running is one of the oldest and most universal sports practiced across human civilizations. In Kenya's high-altitude **Rift Valley**, world-champion marathon runners train daily along red dirt paths, developing extraordinary cardiovascular stamina and running efficiency. In northern Mexico, the indigenous **Tarahumara people** are famous for running non-stop over 200 kilometers through steep mountain canyons wearing thin handmade sandals. In ancient Greece, messenger Pheidippides ran 42 kilometers from the battlefield of Marathon to Athens, inspiring the modern **Marathon race**. Today, the **Olympic Torch Relay** travels across multiple continents, bringing people together in a spirit of peace, endurance, and international unity.",
+  "content_vi": "Chạy bộ là một trong những môn thể thao lâu đời và phổ biến nhất trên khắp các nền văn minh nhân loại. Tại Thung lũng Rift cao nguyên của Kenya, các nhà vô địch marathon thế giới tập luyện hàng ngày trên những con đường đất đỏ, phát triển sức bền tim mạch và hiệu suất chạy vượt trội. Ở miền bắc Mexico, người Tarahumara bản địa nổi tiếng với khả năng chạy liên tục hơn 200 km qua các hẻm núi dốc đứng với đôi dép thủ công mỏng. Tại Hy Lạp cổ đại, người đưa tin Pheidippides đã chạy 42 km từ chiến trường Marathon đến Athens, truyền cảm hứng cho giải Marathon hiện đại. Ngày nay, Hành trình Ngọn đuốc Olympic đi qua nhiều châu lục, kết nối mọi người trong tinh thần hòa bình, sức bền và sự đoàn kết quốc tế.",
+  "questions": [
+    {
+      "id": 1,
+      "question_en": "Where do world-champion marathon runners train in Kenya?",
+      "options": [
+        "Coastal beaches",
+        "Indoor gymnasiums",
+        "High-altitude Rift Valley",
+        "City shopping centers"
+      ],
+      "answer": "High-altitude Rift Valley"
+    },
+    {
+      "id": 2,
+      "question_en": "What are the Tarahumara people of Mexico famous for?",
+      "options": [
+        "Swimming across oceans",
+        "Flying gliders",
+        "Running long distances through steep canyons",
+        "Riding fast bicycles"
+      ],
+      "answer": "Running long distances through steep canyons"
+    },
+    {
+      "id": 3,
+      "question_en": "Which historical event inspired the modern 42km Marathon race?",
+      "options": [
+        "Pheidippides running from Marathon to Athens",
+        "The first balloon flight",
+        "Ancient Olympic chariot races",
+        "The invention of synthetic running tracks"
+      ],
+      "answer": "Pheidippides running from Marathon to Athens"
+    },
+    {
+      "id": 4,
+      "question_en": "What is the global mission of the Olympic Torch Relay?",
+      "options": [
+        "Selling sports equipment",
+        "Building new stadiums",
+        "Uniting nations in a spirit of peace and endurance",
+        "Testing fast sports cars"
+      ],
+      "answer": "Uniting nations in a spirit of peace and endurance"
+    }
+  ],
+  "question": {
+    "text_en": "How can regular exercise and teamwork help you achieve your personal goals at school?",
+    "text_vi": "Tập thể dục thường xuyên và tinh thần đồng đội có thể giúp bạn đạt được mục tiêu cá nhân ở trường như thế nào?",
+    "min_words": 25,
+    "hint_en": "Regular exercise gives me energy, while teamwork helps me solve problems faster with my classmates...",
+    "hint_vi": "Tập thể dục thường xuyên giúp tôi có năng lượng, trong khi làm việc nhóm giúp tôi giải quyết vấn đề nhanh hơn cùng bạn học..."
   },
-  {
-    "word": "stadium",
-    "definition": "a sports arena with tier seating for spectators",
-    "definition_vi": "sân vận động",
-    "example": "The crowded sports stadium was loud."
-  },
-  {
-    "word": "relay",
-    "definition": "a race between teams where each member runs a part",
-    "definition_vi": "chạy tiếp sức",
-    "example": "Leo ran the last leg of the 4x100m relay."
-  },
-  {
-    "word": "baton",
-    "definition": "a short stick passed from runner to runner in a relay",
-    "definition_vi": "gậy tiếp sức",
-    "example": "Pass the baton smoothly without dropping it."
-  },
-  {
-    "word": "accelerate",
-    "definition": "begin to move more quickly; gain speed",
-    "definition_vi": "tăng tốc",
-    "example": "Accelerate quickly down the straight track."
-  }
-],
-  check_questions: [
-  {
-    "id": 1,
-    "question_en": "How many nations compete in the Olympic Games?",
-    "options": [
-      "50 nations",
-      "Over 200 nations",
-      "100 nations",
-      "10 nations"
-    ],
-    "answer": "Over 200 nations",
-    "clue_statement": "Athletes from over 200 nations compete peacefully.",
-    "hint_en": "Over 200...",
-    "hint_vi": "Hơn 200..."
-  },
-  {
-    "id": 2,
-    "question_en": "What main lesson do relay races teach athletes?",
-    "options": [
-      "Working as one team leads to success",
-      "Speed does not matter",
-      "Winning is the only thing",
-      "Running alone is always better"
-    ],
-    "answer": "Working as one team leads to success",
-    "clue_statement": "Relay teams teach us that success comes from working as one team.",
-    "hint_en": "Working as one...",
-    "hint_vi": "Làm việc như một..."
-  },
-  {
-    "id": 3,
-    "question_en": "What symbol represents peace during ancient Olympic Games?",
-    "options": [
-      "Golden crowns",
-      "Bronze shields",
-      "Red flags",
-      "The Olympic Truce Ekecheiria"
-    ],
-    "answer": "The Olympic Truce Ekecheiria",
-    "clue_statement": "The Olympic Truce Ekecheiria called for peace.",
-    "hint_en": "Olympic Truce...",
-    "hint_vi": "Thỏa thuận ngừng bắn..."
-  },
-  {
-    "id": 4,
-    "question_en": "Why is passing the baton smoothly important in a relay?",
-    "options": [
-      "It maintains running velocity and momentum",
-      "It stops the race",
-      "It slows down the team",
-      "It confuses the judges"
-    ],
-    "answer": "It maintains running velocity and momentum",
-    "clue_statement": "Smooth handoffs maintain speed and momentum.",
-    "hint_en": "Maintain velocity...",
-    "hint_vi": "Duy trì vận tốc..."
-  }
-]
+  "check_questions": [
+    {
+      "id": 1,
+      "question_en": "Where do world-champion marathon runners train in Kenya?",
+      "options": [
+        "Coastal beaches",
+        "Indoor gymnasiums",
+        "High-altitude Rift Valley",
+        "City shopping centers"
+      ],
+      "answer": "High-altitude Rift Valley"
+    },
+    {
+      "id": 2,
+      "question_en": "What are the Tarahumara people of Mexico famous for?",
+      "options": [
+        "Swimming across oceans",
+        "Flying gliders",
+        "Running long distances through steep canyons",
+        "Riding fast bicycles"
+      ],
+      "answer": "Running long distances through steep canyons"
+    },
+    {
+      "id": 3,
+      "question_en": "Which historical event inspired the modern 42km Marathon race?",
+      "options": [
+        "Pheidippides running from Marathon to Athens",
+        "The first balloon flight",
+        "Ancient Olympic chariot races",
+        "The invention of synthetic running tracks"
+      ],
+      "answer": "Pheidippides running from Marathon to Athens"
+    },
+    {
+      "id": 4,
+      "question_en": "What is the global mission of the Olympic Torch Relay?",
+      "options": [
+        "Selling sports equipment",
+        "Building new stadiums",
+        "Uniting nations in a spirit of peace and endurance",
+        "Testing fast sports cars"
+      ],
+      "answer": "Uniting nations in a spirit of peace and endurance"
+    }
+  ],
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Where do world-champion marathon runners train in Kenya?",
+      "options": [
+        "Coastal beaches",
+        "Indoor gymnasiums",
+        "High-altitude Rift Valley",
+        "City shopping centers"
+      ],
+      "answer": "High-altitude Rift Valley"
+    },
+    {
+      "id": 2,
+      "question_en": "What are the Tarahumara people of Mexico famous for?",
+      "options": [
+        "Swimming across oceans",
+        "Flying gliders",
+        "Running long distances through steep canyons",
+        "Riding fast bicycles"
+      ],
+      "answer": "Running long distances through steep canyons"
+    },
+    {
+      "id": 3,
+      "question_en": "Which historical event inspired the modern 42km Marathon race?",
+      "options": [
+        "Pheidippides running from Marathon to Athens",
+        "The first balloon flight",
+        "Ancient Olympic chariot races",
+        "The invention of synthetic running tracks"
+      ],
+      "answer": "Pheidippides running from Marathon to Athens"
+    },
+    {
+      "id": 4,
+      "question_en": "What is the global mission of the Olympic Torch Relay?",
+      "options": [
+        "Selling sports equipment",
+        "Building new stadiums",
+        "Uniting nations in a spirit of peace and endurance",
+        "Testing fast sports cars"
+      ],
+      "answer": "Uniting nations in a spirit of peace and endurance"
+    }
+  ]
 };

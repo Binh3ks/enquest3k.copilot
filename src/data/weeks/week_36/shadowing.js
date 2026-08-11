@@ -5,63 +5,63 @@ export default {
   sentences: [
   {
     "id": 1,
-    "text": "They found a mysterious entrance behind the rock.",
+    "text": "Early on a sunny Saturday morning, Leo and Mia went hiking in the pine forest.",
     "start_time": 0,
-    "end_time": 3
+    "end_time": 4
   },
   {
     "id": 2,
-    "text": "Turn on your flashlight inside the dark cave.",
-    "start_time": 3,
-    "end_time": 6
-  },
-  {
-    "id": 3,
-    "text": "The cave entrance was covered with vines.",
-    "start_time": 6,
+    "text": "While they were walking along the rocky path, they discovered a hidden entrance.",
+    "start_time": 4,
     "end_time": 9
   },
   {
-    "id": 4,
-    "text": "The explorer drew an ancient parchment map.",
+    "id": 3,
+    "text": "They turned on their bright flashlights and stepped inside the mysterious cave.",
     "start_time": 9,
-    "end_time": 12
+    "end_time": 14
   },
   {
-    "id": 5,
-    "text": "Use a shiny brass compass to find north.",
-    "start_time": 12,
-    "end_time": 15
-  },
-  {
-    "id": 6,
-    "text": "Water dripped from a long stalactite.",
-    "start_time": 15,
+    "id": 4,
+    "text": "Cool drops of water dripped silently from the rocky ceiling above.",
+    "start_time": 14,
     "end_time": 18
   },
   {
-    "id": 7,
-    "text": "Brave explorers mapped the deep cave.",
+    "id": 5,
+    "text": "Dark grey shadows danced on the stone walls as they walked forward.",
     "start_time": 18,
-    "end_time": 21
+    "end_time": 23
+  },
+  {
+    "id": 6,
+    "text": "Mia spotted a dusty wooden box tucked carefully behind a large stone.",
+    "start_time": 23,
+    "end_time": 28
+  },
+  {
+    "id": 7,
+    "text": "They opened the heavy lid gently and found an ancient parchment map.",
+    "start_time": 28,
+    "end_time": 33
   },
   {
     "id": 8,
-    "text": "The ancient map was written on parchment.",
-    "start_time": 21,
-    "end_time": 24
+    "text": "A shiny brass compass lay next to the map pointing strictly to the north.",
+    "start_time": 33,
+    "end_time": 38
   },
   {
     "id": 9,
-    "text": "Dark grey shadows danced on the rocky wall.",
-    "start_time": 24,
-    "end_time": 27
+    "text": "Their hearts beat fast with excitement as they realized it was a treasure map.",
+    "start_time": 38,
+    "end_time": 43
   },
   {
     "id": 10,
-    "text": "The underground lake was icy cold.",
-    "start_time": 27,
-    "end_time": 30
+    "text": "They felt extremely excited and burst into cheerful laughter together.",
+    "start_time": 43,
+    "end_time": 48
   }
 ]
 };

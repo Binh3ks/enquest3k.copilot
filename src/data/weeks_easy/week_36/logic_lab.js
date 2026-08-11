@@ -1,136 +1,158 @@
 // Cambridge A2 Flyers logic_lab.js — Week 36
 export default {
-  logic_science: {
-  "title": "The Secret Cave — Adventure & Exploration — Logic Science",
-  "questions": [
-    {
-      "id": 1,
-      "question_en": "Where were Leo and Mia hiking on Saturday morning?",
-      "options": [
-        "On the sandy beach",
-        "In the green pine forest",
-        "Around the city center",
-        "In the school garden"
-      ],
-      "answer": "In the green pine forest"
-    },
-    {
-      "id": 2,
-      "question_en": "What did they discover while walking along the rocky path?",
-      "options": [
-        "A hidden entrance to a mysterious cave",
-        "A wooden bench",
-        "A small red bicycle",
-        "A lost dog"
-      ],
-      "answer": "A hidden entrance to a mysterious cave"
-    },
-    {
-      "id": 3,
-      "question_en": "What was inside the dusty wooden box?",
-      "options": [
-        "Gold coins and diamonds",
-        "A toy train",
-        "Old books and letters",
-        "An ancient map and a shiny brass compass"
-      ],
-      "answer": "An ancient map and a shiny brass compass"
-    },
-    {
-      "id": 4,
-      "question_en": "How did their hearts react to the discovery?",
-      "options": [
-        "Their hearts beat fast with excitement",
-        "They felt scared and ran home",
-        "They went to sleep",
-        "They cried loudly"
-      ],
-      "answer": "Their hearts beat fast with excitement"
-    }
-  ]
-},
-  singapore_math: {
-  "title": "Singapore Math Bar Models — Week 36",
-  "problems": [
-    {
-      "id": 1,
-      "text": "Problem 1: Solve the Cambridge A2 math challenge for Week 36.",
-      "answer": "10",
-      "svg_url": "/images/week36/barmodel_w36_adv_p1.svg"
-    },
-    {
-      "id": 2,
-      "text": "Problem 2: Solve the Cambridge A2 math challenge for Week 36.",
-      "answer": "20",
-      "svg_url": "/images/week36/barmodel_w36_adv_p2.svg"
-    },
-    {
-      "id": 3,
-      "text": "Problem 3: Solve the Cambridge A2 math challenge for Week 36.",
-      "answer": "30",
-      "svg_url": "/images/week36/barmodel_w36_adv_p3.svg"
-    },
-    {
-      "id": 4,
-      "text": "Problem 4: Solve the Cambridge A2 math challenge for Week 36.",
-      "answer": "40",
-      "svg_url": "/images/week36/barmodel_w36_adv_p4.svg"
-    },
-    {
-      "id": 5,
-      "text": "Problem 5: Solve the Cambridge A2 math challenge for Week 36.",
-      "answer": "50",
-      "svg_url": "/images/week36/barmodel_w36_adv_p5.svg"
-    }
-  ]
-},
-  social_quiz: {
-  "title": "Son Doong & Underground Wonders — Social Quiz",
-  "questions": [
-    {
-      "id": 1,
-      "question_en": "Which is the largest cave in the world?",
-      "options": [
-        "Mammoth Cave in USA",
-        "Son Doong Cave in Vietnam",
-        "Waitomo Cave in New Zealand",
-        "Blue Cave in Italy"
-      ],
-      "answer": "Son Doong Cave in Vietnam"
-    },
-    {
-      "id": 2,
-      "question_en": "What unique natural feature exists inside Son Doong Cave?",
-      "options": [
-        "An underground jungle with trees and animals",
-        "A volcanic lake",
-        "A giant ice castle",
-        "A floating city"
-      ],
-      "answer": "An underground jungle with trees and animals"
-    },
-    {
-      "id": 3,
-      "question_en": "How are most caves formed over long periods of time?",
-      "options": [
-        "By strong winds in one day",
-        "By heavy traffic",
-        "By falling meteorites",
-        "By moving water over thousands of years"
-      ],
-      "answer": "By moving water over thousands of years"
-    },
-    {
-      "id": 4,
-      "question_en": "Why should explorers protect ancient caves?",
-      "options": [
-        "To preserve rare natural beauty and habitats",
-        "To build shopping malls inside",
-        "To leave trash behind",
-        "To block natural water"
-      ],
-      "answer": "To preserve rare natural beauty and habitats"
-    }
-  ]
-}
+  "logic_science": {
+    "title": "Cave Science & Geology Lab — Week 36",
+    "questions": [
+      {
+        "id": 1,
+        "question_en": "How does acidic rainwater form stalactites over thousands of years?",
+        "options": [
+          "By dissolving limestone rock and depositing minerals drop by drop",
+          "By blowing desert sand",
+          "By melting winter ice crystals",
+          "By heating volcanic lava"
+        ],
+        "answer": "By dissolving limestone rock and depositing minerals drop by drop"
+      },
+      {
+        "id": 2,
+        "question_en": "If a stalactite grows at a rate of 0.1 mm per year, how long will it take to grow 10 mm?",
+        "options": [
+          "50 years",
+          "10 years",
+          "500 years",
+          "100 years"
+        ],
+        "answer": "100 years"
+      },
+      {
+        "id": 3,
+        "question_en": "Why is a brass magnetic compass effective inside a deep limestone cave?",
+        "options": [
+          "Because limestone turns into gold",
+          "Because water attracts magnets",
+          "Because Earth's magnetic field penetrates rock, guiding north",
+          "Because brass shines in the dark"
+        ],
+        "answer": "Because Earth's magnetic field penetrates rock, guiding north"
+      },
+      {
+        "id": 4,
+        "question_en": "What is the main source of light and energy for ecosystems in total darkness?",
+        "options": [
+          "Moonlight through thick soil",
+          "Direct sunlight from solar panels",
+          "Chemosynthesis and organic matter carried by rivers",
+          "Electric lightning strikes"
+        ],
+        "answer": "Chemosynthesis and organic matter carried by rivers"
+      },
+      {
+        "id": 5,
+        "question_en": "Why is flashlight brightness measured in lumens important for explorers?",
+        "options": [
+          "It provides clear visibility to navigate safely past sharp rocks",
+          "It heats up cold cave air",
+          "It changes rock colors",
+          "It creates loud echo sounds"
+        ],
+        "answer": "It provides clear visibility to navigate safely past sharp rocks"
+      }
+    ]
+  },
+  "singapore_math": {
+    "title": "Singapore Bar Models — Cave Distance & Time — Week 36",
+    "problems": [
+      {
+        "id": 1,
+        "text": "Explorers walked inside a cave tunnel at a speed of 40 meters per minute. If they walked for 12 minutes, how far did they travel?",
+        "answer": "480 meters",
+        "svg_url": "/images/week36/barmodel_w36_adv_p1.svg"
+      },
+      {
+        "id": 2,
+        "text": "A stalactite grew 2 millimeters every 10 years. How many millimeters will it grow in 200 years?",
+        "answer": "40 millimeters",
+        "svg_url": "/images/week36/barmodel_w36_adv_p2.svg"
+      },
+      {
+        "id": 3,
+        "text": "Mia has 4 batteries for her flashlight. Each battery lasts for 3 hours. How many total hours of light can she get?",
+        "answer": "12 hours",
+        "svg_url": "/images/week36/barmodel_w36_adv_p3.svg"
+      },
+      {
+        "id": 4,
+        "text": "On a parchment map, 1 centimeter represents 50 meters in real life. If the cave trail measures 6 centimeters on the map, what is the actual distance?",
+        "answer": "300 meters",
+        "svg_url": "/images/week36/barmodel_w36_adv_p4.svg"
+      },
+      {
+        "id": 5,
+        "text": "Outside the cave, the temperature was 28°C. Deep inside the cave, it was 16°C. What was the temperature difference?",
+        "answer": "12°C",
+        "svg_url": "/images/week36/barmodel_w36_adv_p5.svg"
+      }
+    ]
+  },
+  "social_quiz": {
+    "title": "Global Cave History & Conservation — Week 36",
+    "questions": [
+      {
+        "id": 1,
+        "question_en": "In what year was Son Doong Cave first discovered by local man Ho Khanh?",
+        "options": [
+          "2009",
+          "1991",
+          "2020",
+          "1975"
+        ],
+        "answer": "1991"
+      },
+      {
+        "id": 2,
+        "question_en": "Which international organization protects Phong Nha-Ke Bang National Park?",
+        "options": [
+          "UNESCO World Heritage",
+          "WHO",
+          "UNICEF",
+          "WWF"
+        ],
+        "answer": "UNESCO World Heritage"
+      },
+      {
+        "id": 3,
+        "question_en": "Which country is home to Mammoth Cave, the longest recorded cave system?",
+        "options": [
+          "United States",
+          "Canada",
+          "Australia",
+          "Vietnam"
+        ],
+        "answer": "United States"
+      },
+      {
+        "id": 4,
+        "question_en": "What bioluminescent animal lives inside the Waitomo Caves in New Zealand?",
+        "options": [
+          "Glowworms",
+          "Bats",
+          "Fireflies",
+          "Jellyfish"
+        ],
+        "answer": "Glowworms"
+      },
+      {
+        "id": 5,
+        "question_en": "Why must visitors follow strict eco-rules when entering delicate caves?",
+        "options": [
+          "To make loud echoes",
+          "To prevent damage to ancient stalactites and wildlife",
+          "To leave trash behind",
+          "To speed up walking time"
+        ],
+        "answer": "To prevent damage to ancient stalactites and wildlife"
+      }
+    ]
+  }
 };
