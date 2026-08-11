@@ -29,6 +29,31 @@ const FALLBACK_CHECK_QUESTIONS = [
     content_id: 'chk_h2_05',
     raw_content: { text: "Tom apologized because he was clumsy in the morning.", grammar_tag: "clauses_of_reason" },
     answer_key: { valid_structures: [["Tom", "apologized", "because", "he", "was", "clumsy", "in", "the", "morning", "."]] }
+  },
+  {
+    content_id: 'chk_h2_06',
+    raw_content: { text: "Mia found the backpack while she was searching the bus.", grammar_tag: "past_continuous_when_while" },
+    answer_key: { valid_structures: [["Mia", "found", "the", "backpack", "while", "she", "was", "searching", "the", "bus", "."]] }
+  },
+  {
+    content_id: 'chk_h2_07',
+    raw_content: { text: "Because Tom ran downstairs quickly, he slipped on the rug.", grammar_tag: "clauses_of_reason" },
+    answer_key: { valid_structures: [["Because", "Tom", "ran", "downstairs", "quickly", ",", "he", "slipped", "on", "the", "rug", "."]] }
+  },
+  {
+    content_id: 'chk_h2_08',
+    raw_content: { text: "Although he lost his bag, his friend brought it to class.", grammar_tag: "connectors" },
+    answer_key: { valid_structures: [["Although", "he", "lost", "his", "bag", ",", "his", "friend", "brought", "it", "to", "class", "."]] }
+  },
+  {
+    content_id: 'chk_h2_09',
+    raw_content: { text: "They were fixing the clock when the school bell rang.", grammar_tag: "past_continuous_when_while" },
+    answer_key: { valid_structures: [["They", "were", "fixing", "the", "clock", "when", "the", "school", "bell", "rang", "."]] }
+  },
+  {
+    content_id: 'chk_h2_10',
+    raw_content: { text: "Tom promised to be cautious so he could avoid future accidents.", grammar_tag: "connectors" },
+    answer_key: { valid_structures: [["Tom", "promised", "to", "be", "cautious", "so", "he", "could", "avoid", "future", "accidents", "."]] }
   }
 ];
 
@@ -49,11 +74,14 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
           station: '2',
           mode: 'learn'
         });
-        if (items && items.length > 0) {
-          setQuestions(items.slice(0, 5));
+        if (items && items.length >= 10) {
+          setQuestions(items.slice(0, 10));
+        } else {
+          setQuestions(FALLBACK_CHECK_QUESTIONS);
         }
       } catch (e) {
         console.error('Failed to load check mode questions', e);
+        setQuestions(FALLBACK_CHECK_QUESTIONS);
       }
     }
     loadExamContent();
@@ -139,7 +167,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
             <FileText size={32} />
           </div>
           <h3 className="text-2xl font-black text-slate-900">Grammar Check Mode Completed</h3>
-          <p className="text-xs text-slate-500 font-medium">Isolated exam results saved to learner progress.</p>
+          <p className="text-xs text-slate-500 font-medium">10-question isolated exam results saved to learner progress.</p>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6 text-center">
@@ -166,7 +194,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
           }}
           className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-base transition flex items-center justify-center gap-2 shadow-md"
         >
-          <RefreshCw size={18} /> Retake Check Mode Exam
+          <RefreshCw size={18} /> Retake 10-Question Check Mode Exam
         </button>
       </div>
     );
@@ -198,7 +226,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
           </h2>
         </div>
         <div className="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-600">
-          <ShieldCheck size={14} className="text-emerald-600" /> Isolated Exam Mode
+          <ShieldCheck size={14} className="text-emerald-600" /> Isolated Exam Mode (10 Questions)
         </div>
       </div>
 

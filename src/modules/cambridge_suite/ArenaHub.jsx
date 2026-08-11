@@ -1,81 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { contentBankService } from '../../services/contentBankService';
+import React, { useState } from 'react';
 import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilderBattle';
 import { BarModelQuest } from '../hubs/station2/LearnMode/BarModelQuest';
 import { FlashArena } from '../hubs/station2/LearnMode/FlashArena';
 import { Station2CheckMode } from '../hubs/station2/CheckMode/Station2CheckMode';
 import { AdaptiveExplainerModal } from '../hubs/station2/components/AdaptiveExplainerModal';
-import { learnerProgressService } from '../../services/learnerProgressService';
-import { adaptiveLogicEngine } from '../../services/adaptiveLogicEngine';
-import { Swords, Layers, ShieldCheck, RefreshCw, Zap, Award, GraduationCap, PlayCircle, BookOpen } from 'lucide-react';
+import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers } from 'lucide-react';
 
-export default function ArenaHub({ weekNumber = 33 }) {
+export default function ArenaHub({ data, weekNumber = 33 }) {
   const [viewMode, setViewMode] = useState('learn'); // 'learn' | 'check'
   const [activeTab, setActiveTab] = useState('sentence_builder'); // 'sentence_builder' | 'bar_model' | 'flash_arena'
-  const [contentList, setContentList] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [adaptiveGrammarTag, setAdaptiveGrammarTag] = useState(null);
-  const [learnerAlias, setLearnerAlias] = useState('');
+  const [consecutiveFails, setConsecutiveFails] = useState(0);
 
-  // Adaptive Logic State
   const [adaptiveState, setAdaptiveState] = useState({
     streak100: 0,
-    failTracker: {},
     isEliteUnlocked: false
   });
 
-  useEffect(() => {
-    async function loadData() {
-      setLoading(true);
-      try {
-        const items = await contentBankService.getStationContent({
-          week: `W${weekNumber}`,
-          station: '2',
-          mode: 'learn'
-        });
-        setContentList(items);
-
-        const parentInfo = await learnerProgressService.getPrivateParentIdentity('learner_default_01');
-        setLearnerAlias(parentInfo ? parentInfo.anonymous_alias : 'Bé Sóc Nhanh Trí #382');
-      } catch (err) {
-        console.error('Failed to load arena hub data', err);
-      } finally {
-        setLoading(false);
+  const handleAttemptEvaluation = (attemptResult) => {
+    if (attemptResult?.isCorrect) {
+      setConsecutiveFails(0);
+      setAdaptiveState((prev) => {
+        const nextStreak = prev.streak100 + 1;
+        return {
+          streak100: nextStreak,
+          isEliteUnlocked: nextStreak >= 3
+        };
+      });
+    } else {
+      setAdaptiveState((prev) => ({ ...prev, streak100: 0 }));
+      const nextFails = consecutiveFails + 1;
+      setConsecutiveFails(nextFails);
+      if (nextFails >= 2) {
+        setAdaptiveGrammarTag('past_continuous_when_while');
+        setConsecutiveFails(0);
       }
     }
-    loadData();
-  }, [weekNumber]);
-
-  const handleAttemptEvaluation = (evaluation, grammarTag) => {
-    const res = adaptiveLogicEngine.processAttempt(adaptiveState, evaluation, grammarTag);
-    setAdaptiveState(res.newState);
-
-    if (res.triggerHint) {
-      setAdaptiveGrammarTag(res.hintGrammarTag);
-    }
   };
-
-  const handleNextItem = () => {
-    if (currentIndex < contentList.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
-    } else {
-      setCurrentIndex(0);
-    }
-  };
-
-  const currentItem = contentList[currentIndex];
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Header Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
         <div>
-          <span className="px-3.5 py-1.5 bg-amber-50 text-amber-800 border border-amber-200 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <Swords size={14} /> Hub 2: Logic & Arena Battles (W{weekNumber})
+          <span className="px-3.5 py-1.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
+            <Swords size={14} /> Hub 2: Arena Battles & Exam Prep (W{weekNumber})
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2 tracking-tight">
-            Grammar Bridge & Singapore Bar Models
+            Interactive Sentence & Math Arena
           </h1>
           <p className="text-xs text-slate-500 font-medium mt-1">Interactive Sentence Builder, Math Bar Model Quests & Speed Flash Arena</p>
         </div>
@@ -100,7 +72,6 @@ export default function ArenaHub({ weekNumber = 33 }) {
               <GraduationCap size={14} /> Check Mode (Cambridge Exam)
             </button>
           </div>
-
         </div>
       </div>
 
@@ -115,7 +86,7 @@ export default function ArenaHub({ weekNumber = 33 }) {
                   activeTab === 'sentence_builder' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
-                <BookOpen size={14} /> 1. Sentence Builder Battle
+                <Brain size={15} /> Sentence Builder (5 Drills)
               </button>
               <button
                 onClick={() => setActiveTab('bar_model')}
@@ -123,7 +94,7 @@ export default function ArenaHub({ weekNumber = 33 }) {
                   activeTab === 'bar_model' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
-                <Layers size={14} /> 2. Singapore Bar Model Quest
+                <Zap size={15} /> Bar Model Quest (5 Problems)
               </button>
               <button
                 onClick={() => setActiveTab('flash_arena')}
@@ -131,15 +102,14 @@ export default function ArenaHub({ weekNumber = 33 }) {
                   activeTab === 'flash_arena' ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
-                <Zap size={14} /> 3. Speed Flash Arena
+                <Layers size={15} /> Flash Arena (3 Groups)
               </button>
             </div>
 
-            {/* Streak Tracker & Elite Badge Indicator */}
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-xl border border-slate-200 text-xs font-black text-amber-600 shadow-sm">
+            <div className="px-3 py-1.5 bg-amber-50 text-amber-900 rounded-xl text-xs font-black border border-amber-200 flex items-center gap-1.5 shadow-sm">
               <Award size={14} /> Streak: {adaptiveState.streak100}/5
               {adaptiveState.isEliteUnlocked && (
-                <span className="ml-1 px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] uppercase font-black tracking-wider">
+                <span className="ml-1 px-2 py-0.5 bg-amber-200 text-amber-950 rounded-md text-[10px] uppercase font-black tracking-wider">
                   PET B1 Badge Unlocked!
                 </span>
               )}
@@ -150,35 +120,32 @@ export default function ArenaHub({ weekNumber = 33 }) {
           <div className="bg-slate-50 rounded-2xl border border-slate-200 p-4 sm:p-6 min-h-[420px]">
             {activeTab === 'sentence_builder' && (
               <SentenceBuilderBattle
-                item={currentItem}
-                onAttemptEvaluate={handleAttemptEvaluation}
-                onNext={handleNextItem}
+                customDrills={data?.grammar_drills}
+                onAttemptResult={handleAttemptEvaluation}
               />
             )}
             {activeTab === 'bar_model' && (
               <BarModelQuest
-                item={currentItem}
-                onAttemptEvaluate={handleAttemptEvaluation}
-                onNext={handleNextItem}
+                customQuestions={data?.singapore_math}
+                onAttemptResult={handleAttemptEvaluation}
               />
             )}
             {activeTab === 'flash_arena' && (
               <FlashArena
-                item={currentItem}
-                onAttemptEvaluate={handleAttemptEvaluation}
-                onNext={handleNextItem}
+                customSets={data?.flash_arena}
+                onAttemptResult={handleAttemptEvaluation}
               />
             )}
           </div>
         </div>
       ) : (
-        /* CHECK MODE (Cambridge Exam Standard) */
+        /* CHECK MODE (Cambridge Exam Standard - 10 Questions) */
         <div className="bg-white rounded-2xl border border-slate-200 p-6">
           <Station2CheckMode weekNumber={weekNumber} />
         </div>
       )}
 
-      {/* Adaptive Explainer Modal (Triggers on 2 Consecutive Fails) */}
+      {/* Adaptive Explainer Modal */}
       {adaptiveGrammarTag && (
         <AdaptiveExplainerModal
           grammarTag={adaptiveGrammarTag}

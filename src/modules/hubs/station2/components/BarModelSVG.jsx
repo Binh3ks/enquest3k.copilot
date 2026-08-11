@@ -135,7 +135,7 @@ export function BarModelSVG({ modelData }) {
               <line x1="0" y1="0" x2="80" y2="0" stroke="#f43f5e" strokeDasharray="4" strokeWidth="2" />
               <line x1="0" y1="40" x2="80" y2="40" stroke="#f43f5e" strokeDasharray="4" strokeWidth="2" />
               <text x="40" y="24" fill="#f43f5e" fontSize="12" fontWeight="bold" textAnchor="middle">
-                ? Chênh lệch
+                Difference: ?
               </text>
             </g>
           </g>

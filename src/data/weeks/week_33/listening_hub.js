@@ -1,13 +1,13 @@
 /**
  * Week 33 Gold Standard Reference Data — Listening & Arena Hub
- * Includes 16 Sentence Builder Drills, 10 Singapore Bar Models, and 4 Flash Arena Card Sets.
+ * Includes 5 Sentence Builder Drills, 5 Singapore Bar Models, 3 Flash Arena Card Sets, and 10 Check Mode Questions.
  */
 
 export const listeningHubData = {
   week: 33,
   theme: "The Accident File",
 
-  // 1. Array of 16 Sentence Builder Drills (Past Continuous, Clauses of Reason, Connectors)
+  // 1. Array of EXACTLY 5 Sentence Builder Drills
   grammar_drills: [
     {
       id: "st2_w33_g01",
@@ -19,9 +19,7 @@ export const listeningHubData = {
         valid_structures: [
           ["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "clock", "."],
           ["He", "broke", "his", "clock", "while", "Tom", "was", "waking", "up", "."]
-        ],
-        acceptable_connectors: ["as", "when"],
-        clause_rules: { main_clause: ["he broke his clock"], subordinate_clause: ["Tom was waking up"], connector: ["while"], requires_comma_if_subordinate_first: true }
+        ]
       }
     },
     {
@@ -34,9 +32,7 @@ export const listeningHubData = {
         valid_structures: [
           ["Tom", "fell", "down", "because", "the", "floor", "was", "slippery", "."],
           ["Because", "the", "floor", "was", "slippery", ",", "Tom", "fell", "down", "."]
-        ],
-        acceptable_connectors: ["as", "since"],
-        clause_rules: { main_clause: ["Tom fell down"], subordinate_clause: ["the floor was slippery"], connector: ["because"], requires_comma_if_subordinate_first: true }
+        ]
       }
     },
     {
@@ -49,119 +45,38 @@ export const listeningHubData = {
         valid_structures: [
           ["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."],
           ["Mia", "helped", "him", "although", "Tom", "made", "a", "mistake", "."]
-        ],
-        acceptable_connectors: ["even though"],
-        clause_rules: { main_clause: ["Mia helped him"], subordinate_clause: ["Tom made a mistake"], connector: ["although"], requires_comma_if_subordinate_first: true }
+        ]
       }
     },
     {
       id: "st2_w33_g04",
       grammar_tag: "past_continuous_when_while",
-      text_en: "Build a sentence describing an interruption with 'when'.",
-      word_blocks: ["They", "were", "walking", "when", "it", "started", "to", "rain", "."],
-      distractor_blocks: ["was", "while", "walked"],
+      text_en: "Build a sentence about dropping a glass of orange juice.",
+      word_blocks: ["While", "making", "breakfast", ",", "he", "dropped", "a", "glass", "."],
+      distractor_blocks: ["were", "breaks", "while"],
       answer_key: {
         valid_structures: [
-          ["They", "were", "walking", "when", "it", "started", "to", "rain", "."],
-          ["When", "it", "started", "to", "rain", ",", "they", "were", "walking", "."]
-        ],
-        acceptable_connectors: ["as"],
-        clause_rules: { main_clause: ["They were walking"], subordinate_clause: ["it started to rain"], connector: ["when"], requires_comma_if_subordinate_first: true }
+          ["While", "making", "breakfast", ",", "he", "dropped", "a", "glass", "."],
+          ["He", "dropped", "a", "glass", "while", "making", "breakfast", "."]
+        ]
       }
     },
     {
       id: "st2_w33_g05",
-      grammar_tag: "past_continuous_when_while",
-      text_en: "Build a sentence about dropping juice while making breakfast.",
-      word_blocks: ["While", "he", "was", "making", "breakfast", ",", "he", "dropped", "a", "glass", "."],
-      distractor_blocks: ["were", "breaks", "while"],
-      answer_key: {
-        valid_structures: [
-          ["While", "he", "was", "making", "breakfast", ",", "he", "dropped", "a", "glass", "."],
-          ["He", "dropped", "a", "glass", "while", "he", "was", "making", "breakfast", "."]
-        ],
-        acceptable_connectors: ["as"],
-        clause_rules: { main_clause: ["he dropped a glass"], subordinate_clause: ["he was making breakfast"], connector: ["while"], requires_comma_if_subordinate_first: true }
-      }
-    },
-    {
-      id: "st2_w33_g06",
       grammar_tag: "clauses_of_reason",
-      text_en: "Build a sentence showing why Tom was late.",
-      word_blocks: ["Tom", "was", "late", "because", "he", "lost", "his", "backpack", "."],
-      distractor_blocks: ["so", "falls", "why"],
-      answer_key: {
-        valid_structures: [
-          ["Tom", "was", "late", "because", "he", "lost", "his", "backpack", "."],
-          ["Because", "he", "lost", "his", "backpack", ",", "Tom", "was", "late", "."]
-        ],
-        acceptable_connectors: ["as", "since"],
-        clause_rules: { main_clause: ["Tom was late"], subordinate_clause: ["he lost his backpack"], connector: ["because"], requires_comma_if_subordinate_first: true }
-      }
-    },
-    {
-      id: "st2_w33_g07",
-      grammar_tag: "past_continuous_when_while",
-      text_en: "Build a sentence about slipping on a wet floor.",
-      word_blocks: ["While", "Tom", "was", "running", ",", "he", "slipped", "on", "a", "puddle", "."],
-      distractor_blocks: ["is", "slips", "run"],
-      answer_key: {
-        valid_structures: [
-          ["While", "Tom", "was", "running", ",", "he", "slipped", "on", "a", "puddle", "."],
-          ["He", "slipped", "on", "a", "puddle", "while", "Tom", "was", "running", "."]
-        ],
-        acceptable_connectors: ["as", "when"],
-        clause_rules: { main_clause: ["he slipped on a puddle"], subordinate_clause: ["Tom was running"], connector: ["while"], requires_comma_if_subordinate_first: true }
-      }
-    },
-    {
-      id: "st2_w33_g08",
-      grammar_tag: "connectors",
-      text_en: "Build a contrast sentence with 'Although'.",
-      word_blocks: ["Although", "Tom", "felt", "sorry", ",", "his", "teacher", "remained", "kind", "."],
-      distractor_blocks: ["but", "helps", "makes"],
-      answer_key: {
-        valid_structures: [
-          ["Although", "Tom", "felt", "sorry", ",", "his", "teacher", "remained", "kind", "."],
-          ["His", "teacher", "remained", "kind", "although", "Tom", "felt", "sorry", "."]
-        ],
-        acceptable_connectors: ["even though"],
-        clause_rules: { main_clause: ["his teacher remained kind"], subordinate_clause: ["Tom felt sorry"], connector: ["although"], requires_comma_if_subordinate_first: true }
-      }
-    },
-    {
-      id: "st2_w33_g09",
-      grammar_tag: "past_continuous_when_while",
-      text_en: "Build a sentence about searching for the lost backpack.",
-      word_blocks: ["Mia", "found", "the", "bag", "while", "she", "was", "searching", "."],
-      distractor_blocks: ["finds", "were", "search"],
-      answer_key: {
-        valid_structures: [
-          ["Mia", "found", "the", "bag", "while", "she", "was", "searching", "."],
-          ["While", "she", "was", "searching", ",", "Mia", "found", "the", "bag", "."]
-        ],
-        acceptable_connectors: ["as", "when"],
-        clause_rules: { main_clause: ["Mia found the bag"], subordinate_clause: ["she was searching"], connector: ["while"], requires_comma_if_subordinate_first: true }
-      }
-    },
-    {
-      id: "st2_w33_g10",
-      grammar_tag: "clauses_of_reason",
-      text_en: "Build a sentence about apologizing for a mistake.",
-      word_blocks: ["Tom", "apologized", "because", "he", "made", "a", "clumsy", "mistake", "."],
+      text_en: "Build a sentence about apologizing for a clumsy mistake.",
+      word_blocks: ["Tom", "apologized", "because", "he", "made", "a", "mistake", "."],
       distractor_blocks: ["so", "forgets", "why"],
       answer_key: {
         valid_structures: [
-          ["Tom", "apologized", "because", "he", "made", "a", "clumsy", "mistake", "."],
-          ["Because", "he", "made", "a", "clumsy", "mistake", ",", "Tom", "apologized", "."]
-        ],
-        acceptable_connectors: ["as", "since"],
-        clause_rules: { main_clause: ["Tom apologized"], subordinate_clause: ["he made a clumsy mistake"], connector: ["because"], requires_comma_if_subordinate_first: true }
+          ["Tom", "apologized", "because", "he", "made", "a", "mistake", "."],
+          ["Because", "he", "made", "a", "mistake", ",", "Tom", "apologized", "."]
+        ]
       }
     }
   ],
 
-  // 2. Array of EXACTLY 10 Singapore Bar Model Math Problems (Part-Whole & Comparison)
+  // 2. Array of EXACTLY 5 Singapore Bar Model Math Problems
   singapore_math: [
     {
       id: "bar_w33_01",
@@ -220,7 +135,7 @@ export const listeningHubData = {
     {
       id: "bar_w33_05",
       title: "Problem 5: Repair Shop Items (Part-Whole)",
-      problemText: "The repair shop received 12 broken clocks and 18 damaged school bags. How many items did the shop receive in total?",
+      problemText: "The repair shop received 12 broken alarm clocks and 18 damaged school bags. How many items did the shop receive in total?",
       modelData: {
         type: "part_whole",
         bars: [
@@ -230,81 +145,14 @@ export const listeningHubData = {
         totalLabel: "? items"
       },
       correctAnswer: 30
-    },
-    {
-      id: "bar_w33_06",
-      title: "Problem 6: Comparing Repair Fees (Comparison)",
-      problemText: "Repairing a school bag costs 50 dollars. Repairing a vintage clock costs 85 dollars. How much more does the clock repair cost?",
-      modelData: {
-        type: "comparison",
-        bars: [
-          { name: "Clock Repair", label: "85 dollars", width: 255 },
-          { name: "Bag Repair", label: "50 dollars", width: 150 }
-        ]
-      },
-      correctAnswer: 35
-    },
-    {
-      id: "bar_w33_07",
-      title: "Problem 7: First Aid Bandages (Part-Whole)",
-      problemText: "The school nurse had 35 small bandages and 25 large bandages. How many bandages were in the first aid box in total?",
-      modelData: {
-        type: "part_whole",
-        bars: [
-          { label: "Small Bandages (35)", value: 58, color: "#4f46e5" },
-          { label: "Large Bandages (25)", value: 42, color: "#06b6d4" }
-        ],
-        totalLabel: "? bandages"
-      },
-      correctAnswer: 60
-    },
-    {
-      id: "bar_w33_08",
-      title: "Problem 8: Distance to School (Comparison)",
-      problemText: "The bus route to school is 100 meters long. Tom walked 68 meters before catching the bus. How many meters did he ride on the bus?",
-      modelData: {
-        type: "comparison",
-        bars: [
-          { name: "Total Distance", label: "100 meters", width: 300 },
-          { name: "Walked Distance", label: "68 meters", width: 204 }
-        ]
-      },
-      correctAnswer: 32
-    },
-    {
-      id: "bar_w33_09",
-      title: "Problem 9: Cleaning Towels Used (Part-Whole)",
-      problemText: "Tom used 6 paper towels for the spilled juice and 4 paper towels for the wet stairs. How many towels did he use in total?",
-      modelData: {
-        type: "part_whole",
-        bars: [
-          { label: "Juice Cleanup (6)", value: 60, color: "#4f46e5" },
-          { label: "Stair Cleanup (4)", value: 40, color: "#06b6d4" }
-        ],
-        totalLabel: "? towels"
-      },
-      correctAnswer: 10
-    },
-    {
-      id: "bar_w33_10",
-      title: "Problem 10: Bus Seat Search (Comparison)",
-      problemText: "The school bus has 45 total seats. Mia searched 30 seats before finding Tom's backpack. How many seats were left unsearched?",
-      modelData: {
-        type: "comparison",
-        bars: [
-          { name: "Total Seats", label: "45 seats", width: 225 },
-          { name: "Searched Seats", label: "30 seats", width: 150 }
-        ]
-      },
-      correctAnswer: 15
     }
   ],
 
-  // 3. Array of 4 Flash Arena Card Sets
+  // 3. Array of EXACTLY 3 Flash Arena Card Sets
   flash_arena: [
     {
       set_id: "set_w33_01",
-      title: "Set 1: Accident Verbs",
+      title: "Group 1: Core Words",
       pairs: [
         { id: "v01", en: "broke", vi: "đã làm vỡ / gãy" },
         { id: "v02", en: "fell", vi: "đã ngã / rơi" },
@@ -315,36 +163,79 @@ export const listeningHubData = {
     },
     {
       set_id: "set_w33_02",
-      title: "Set 2: Attributes & Fixes",
+      title: "Group 2: Irregular Verbs",
       pairs: [
-        { id: "v06", en: "accident", vi: "sự cố tai nạn" },
-        { id: "v07", en: "fix", vi: "sửa chữa" },
-        { id: "v08", en: "sorry", vi: "xin lỗi / hối hận" },
-        { id: "v09", en: "careful", vi: "cẩn thận" },
-        { id: "v10", en: "clumsy", vi: "vụng về" }
+        { id: "v06", en: "dropped", vi: "đánh rơi" },
+        { id: "v07", en: "damaged", vi: "bị hư hại" },
+        { id: "v08", en: "searched", vi: "đã tìm kiếm" },
+        { id: "v09", en: "apologized", vi: "đã xin lỗi" },
+        { id: "v10", en: "slipped", vi: "trượt chân" }
       ]
     },
     {
       set_id: "set_w33_03",
-      title: "Set 3: Extended Actions A2/B1+",
+      title: "Group 3: Chunks & Collocations",
       pairs: [
-        { id: "v11", en: "dropped", vi: "đánh rơi" },
-        { id: "v12", en: "damaged", vi: "bị hư hại" },
-        { id: "v13", en: "searched", vi: "đã tìm kiếm" },
-        { id: "v14", en: "apologized", vi: "đã xin lỗi" },
-        { id: "v15", en: "trip", vi: "vấp chân" }
+        { id: "c01", en: "broke an alarm clock", vi: "làm vỡ đồng hồ báo thức" },
+        { id: "c02", en: "slipped on a puddle", vi: "trượt chân trên vũng nước" },
+        { id: "c03", en: "dropped a glass", vi: "đánh rơi ly nước" },
+        { id: "c04", en: "lost his backpack", vi: "làm mất chiếc cặp" },
+        { id: "c05", en: "apologized to teacher", vi: "xin lỗi cô giáo" }
       ]
+    }
+  ],
+
+  // 4. Array of EXACTLY 10 Check Mode Questions for Hub 2
+  check_mode_drills: [
+    {
+      content_id: "chk_h2_01",
+      raw_content: { text_en: "While Tom was waking up, he broke his alarm clock.", grammar_tag: "past_continuous_when_while" },
+      answer_key: { valid_structures: [["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "alarm", "clock", "."]] }
     },
     {
-      set_id: "set_w33_04",
-      title: "Set 4: Caution & Carefulness",
-      pairs: [
-        { id: "v16", en: "slip", vi: "trượt chân" },
-        { id: "v17", en: "repair", vi: "sửa sang" },
-        { id: "v18", en: "cautious", vi: "thận trọng" },
-        { id: "v19", en: "careless", vi: "bất cẩn" },
-        { id: "v20", en: "ignore", vi: "ngó lơ" }
-      ]
+      content_id: "chk_h2_02",
+      raw_content: { text_en: "Tom fell down because the floor was wet.", grammar_tag: "clauses_of_reason" },
+      answer_key: { valid_structures: [["Tom", "fell", "down", "because", "the", "floor", "was", "wet", "."]] }
+    },
+    {
+      content_id: "chk_h2_03",
+      raw_content: { text_en: "Although Tom made a mistake, Mia helped him.", grammar_tag: "connectors" },
+      answer_key: { valid_structures: [["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."]] }
+    },
+    {
+      content_id: "chk_h2_04",
+      raw_content: { text_en: "He dropped a glass while he was making breakfast.", grammar_tag: "past_continuous_when_while" },
+      answer_key: { valid_structures: [["He", "dropped", "a", "glass", "while", "he", "was", "making", "breakfast", "."]] }
+    },
+    {
+      content_id: "chk_h2_05",
+      raw_content: { text_en: "Tom apologized because he was clumsy in the morning.", grammar_tag: "clauses_of_reason" },
+      answer_key: { valid_structures: [["Tom", "apologized", "because", "he", "was", "clumsy", "in", "the", "morning", "."]] }
+    },
+    {
+      content_id: "chk_h2_06",
+      raw_content: { text_en: "Mia found the backpack while she was searching the bus.", grammar_tag: "past_continuous_when_while" },
+      answer_key: { valid_structures: [["Mia", "found", "the", "backpack", "while", "she", "was", "searching", "the", "bus", "."]] }
+    },
+    {
+      content_id: "chk_h2_07",
+      raw_content: { text_en: "Because Tom ran downstairs quickly, he slipped.", grammar_tag: "clauses_of_reason" },
+      answer_key: { valid_structures: [["Because", "Tom", "ran", "downstairs", "quickly", ",", "he", "slipped", "."]] }
+    },
+    {
+      content_id: "chk_h2_08",
+      raw_content: { text_en: "Although he lost his bag, his friend brought it to class.", grammar_tag: "connectors" },
+      answer_key: { valid_structures: [["Although", "he", "lost", "his", "bag", ",", "his", "friend", "brought", "it", "to", "class", "."]] }
+    },
+    {
+      content_id: "chk_h2_09",
+      raw_content: { text_en: "They were fixing the clock when the school bell rang.", grammar_tag: "past_continuous_when_while" },
+      answer_key: { valid_structures: [["They", "were", "fixing", "the", "clock", "when", "the", "school", "bell", "rang", "."]] }
+    },
+    {
+      content_id: "chk_h2_10",
+      raw_content: { text_en: "Tom promised to be cautious so he could avoid accidents.", grammar_tag: "connectors" },
+      answer_key: { valid_structures: [["Tom", "promised", "to", "be", "cautious", "so", "he", "could", "avoid", "accidents", "."]] }
     }
   ]
 };
