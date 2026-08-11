@@ -103,19 +103,21 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   // Handle both old format (string) and new format ({text, audio})
   // Fall back to dataHooks-injected audio arrays for string-only weeks (e.g. week 1)
   const structures = data.centerStems.map((stem, i) => {
-    const stemText = typeof stem === 'string' ? stem : stem.text;
+    const stemText = typeof stem === 'string' ? stem : (stem.text || stem.label || stem.title || `Stem ${i + 1}`);
     const stemAudio = typeof stem === 'string'
       ? (data.centerStemAudio?.[i] || null)   // dataHooks: /audio/week1/mindmap_stem_1.mp3
       : stem.audio;
     return {
-      id: `s${i}`,
+      id: stem.id || `s${i}`,
       text: stemText,
       audioUrl: stemAudio,
       color: ['#6366F1', '#F43F5E', '#F59E0B', '#10B981', '#8B5CF6', '#EC4899'][i % 6]
     };
   });
 
-  const sentenceTargets = selectedStruct ? (data.branchLabels[selectedStruct.text] || []) : [];
+  const sentenceTargets = selectedStruct 
+    ? (data.branchLabels[selectedStruct.text] || data.branchLabels[selectedStruct.id] || []) 
+    : [];
 
   const branches = sentenceTargets.map((branch, i) => {
     // Handle both old format (string) and new format ({text, audio})

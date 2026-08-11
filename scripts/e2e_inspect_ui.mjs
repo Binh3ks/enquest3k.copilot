@@ -15,7 +15,6 @@ async function runE2E() {
       headless: true
     });
   } catch (e1) {
-    console.log('⚠️ Fallback to macOS default Chrome executable path...');
     const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
     if (fs.existsSync(chromePath)) {
       browser = await chromium.launch({
@@ -23,7 +22,7 @@ async function runE2E() {
         headless: true
       });
     } else {
-      throw new Error(`Google Chrome not found at ${chromePath}: ` + e1.message);
+      throw new Error(`Google Chrome not found: ` + e1.message);
     }
   }
 
@@ -31,7 +30,6 @@ async function runE2E() {
     viewport: { width: 1280, height: 800 }
   });
 
-  // Inject Zustand session state using correct localStorage key
   await context.addInitScript(() => {
     localStorage.setItem('placement_result', JSON.stringify({ startWeek: 36 }));
     localStorage.setItem('engquest-user-storage', JSON.stringify({
@@ -46,29 +44,23 @@ async function runE2E() {
 
   const page = await context.newPage();
 
-  // Test 1: Read & Explore (Week 36)
-  console.log('📸 Navigating to Read & Explore W36...');
-  await page.goto(`${BASE_URL}/week/36/read_explore`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  // Test 1: Mindmap
+  console.log('📸 Navigating to Mindmap W36...');
+  await page.goto(`${BASE_URL}/week/36/mindmap_speaking`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
-  const screenshotPathRead = path.join(ARTIFACTS_DIR, 'e2e_w36_read_explore.png');
-  await page.screenshot({ path: screenshotPathRead, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathRead}`);
+  await page.screenshot({ path: path.join(ARTIFACTS_DIR, 'e2e_w36_mindmap_fix.png'), fullPage: false });
 
-  // Test 2: Daily Watch (Week 36)
-  console.log('📸 Navigating to Daily Watch W36...');
-  await page.goto(`${BASE_URL}/week/36/daily_watch`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  // Test 2: Writing
+  console.log('📸 Navigating to Writing W36...');
+  await page.goto(`${BASE_URL}/week/36/writing`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
-  const screenshotPathWatch = path.join(ARTIFACTS_DIR, 'e2e_w36_daily_watch.png');
-  await page.screenshot({ path: screenshotPathWatch, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathWatch}`);
+  await page.screenshot({ path: path.join(ARTIFACTS_DIR, 'e2e_w36_writing_fix.png'), fullPage: false });
 
-  // Test 3: Word Match (Week 36)
-  console.log('📸 Navigating to Word Match W36...');
-  await page.goto(`${BASE_URL}/week/36/word_match`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  // Test 3: Game Hub
+  console.log('📸 Navigating to Game Hub W36...');
+  await page.goto(`${BASE_URL}/week/36/game_hub`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
-  const screenshotPathWordMatch = path.join(ARTIFACTS_DIR, 'e2e_w36_word_match.png');
-  await page.screenshot({ path: screenshotPathWordMatch, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathWordMatch}`);
+  await page.screenshot({ path: path.join(ARTIFACTS_DIR, 'e2e_w36_gamehub_fix.png'), fullPage: false });
 
   await browser.close();
   console.log('🎉 Full E2E UI Inspection Complete!');

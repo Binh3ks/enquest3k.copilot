@@ -513,16 +513,16 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       { word: "courage", definition_en: "the ability to do something that frightens one", definition_vi: "lòng dũng cảm", example: "Exploring dark caves requires true courage.", ipa: "/ˈkʌr.ɪdʒ/", image_url: "/images/week36/vocab_20.jpg" }
     ],
     word_power_chunks: [
-      { word: "sunny Saturday morning", collocation: "on a sunny Saturday morning", definition_en: "a Saturday morning with bright sunlight and warm weather", definition_vi: "sáng thứ Bảy nắng đẹp rực rỡ", example: "They went hiking on a sunny Saturday morning.", ipa: "/ˈsʌn.i ˈsæt.ə.deɪ ˈmɔː.nɪŋ/" },
-      { word: "green pine forest", collocation: "in the green pine forest", definition_en: "a woodland filled with tall evergreen pine trees", definition_vi: "rừng thông xanh", example: "Birds chirped merrily in the green pine forest.", ipa: "/ɡriːn paɪn ˈfɒr.ɪst/" },
-      { word: "walking along the rocky path", collocation: "while walking along the rocky path", definition_en: "moving on a narrow trail made of stones and rocks", definition_vi: "đi dọc theo con đường đá", example: "They were careful while walking along the rocky path.", ipa: "/ˈwɔː.kɪŋ əˈlɒŋ ðə ˈrɒk.i pɑːθ/" },
-      { word: "discovered a hidden entrance", collocation: "discovered a hidden entrance to", definition_en: "found a secret opening leading inside a mystery place", definition_vi: "phát hiện ra một lối vào ẩn", example: "The kids discovered a hidden entrance to a cave.", ipa: "/dɪˈskʌv.əd ə ˈhɪd.ən ˈen.trəns/" },
-      { word: "turned on bright flashlights", collocation: "turned on bright flashlights", definition_en: "switched on powerful portable electric lights", definition_vi: "bật chiếc đèn pin sáng", example: "They turned on bright flashlights in the dark cave.", ipa: "/tɜːnd ɒn braɪt ˈflæʃ.laɪts/" },
-      { word: "stepped inside carefully", collocation: "stepped inside carefully", definition_en: "entered an enclosed space with great caution", definition_vi: "cẩn thận bước vào trong", example: "Mia stepped inside carefully to avoid slipping.", ipa: "/stept ɪnˈsaɪd ˈkeə.fəl.i/" },
-      { word: "cool drops of water", collocation: "cool drops of water dripping", definition_en: "small round quantities of cold liquid falling down", definition_vi: "những giọt nước mát lạnh", example: "Cool drops of water dripped from the ceiling.", ipa: "/kuːl drɒps əv ˈwɔː.tər/" },
-      { word: "spotted a dusty wooden box", collocation: "spotted a dusty wooden box behind", definition_en: "noticed a wooden container covered in dust", definition_vi: "phát hiện ra một chiếc hộp gỗ bám bụi", example: "Leo spotted a dusty wooden box behind the rock.", ipa: "/ˈspɒt.ɪd ə ˈdʌs.ti ˈwʊd.ən bɒks/" },
-      { word: "found an ancient map", collocation: "found an ancient map inside", definition_en: "discovered a very old document showing paths", definition_vi: "tìm thấy một bản đồ cổ", example: "They opened the box and found an ancient map.", ipa: "/faʊnd ən ˈeɪn.ʃənt mæp/" },
-      { word: "shiny brass compass", collocation: "a shiny brass compass", definition_en: "a polished metal navigation tool pointing north", definition_vi: "la bàn đồng sáng bóng", example: "The shiny brass compass helped them navigate.", ipa: "/ˈʃaɪ.ni brɑːs ˈkʌm.pəs/" }
+      { word: "explored a dark cave", collocation: "explored a dark cave carefully", definition_en: "traveled through a dark underground cavern to discover its secrets", definition_vi: "khám phá hang động tối", example: "They turned on flashlights and explored a dark cave together.", ipa: "/ɪkˈsplɔːd ə dɑːk keɪv/" },
+      { word: "found an ancient map", collocation: "found an ancient map inside", definition_en: "discovered a very old paper document showing hidden paths", definition_vi: "tìm thấy tấm bản đồ cổ", example: "Inside the dusty box, they found an ancient map.", ipa: "/faʊnd ən ˈeɪn.ʃənt mæp/" },
+      { word: "turned on bright flashlights", collocation: "turned on bright flashlights in", definition_en: "switched on powerful handheld lights to see in the dark", definition_vi: "bật đèn pin sáng", example: "They stepped inside and turned on bright flashlights immediately.", ipa: "/tɜːnd ɒn braɪt ˈflæʃ.laɪts/" },
+      { word: "stepped inside carefully", collocation: "stepped inside carefully to avoid", definition_en: "entered an enclosed space with great attention and caution", definition_vi: "bước vào trong một cách cẩn thận", example: "Mia held the door and stepped inside carefully.", ipa: "/stept ɪnˈsaɪd ˈkeə.fəl.i/" },
+      { word: "discovered a hidden entrance", collocation: "discovered a hidden entrance behind", definition_en: "found a secret doorway leading into a hidden chamber", definition_vi: "phát hiện lối vào bí mật", example: "Behind the green bushes, they discovered a hidden entrance.", ipa: "/dɪˈskʌv.əd ə ˈhɪd.ən ˈen.trəns/" },
+      { word: "spotted a dusty wooden box", collocation: "spotted a dusty wooden box tucked away", definition_en: "noticed an old wooden container covered with layers of dust", definition_vi: "nhận ra chiếc rương gỗ bụi bặm", example: "Leo looked under the rock and spotted a dusty wooden box.", ipa: "/ˈspɒt.ɪd ə ˈdʌs.ti ˈwʊd.ən bɒks/" },
+      { word: "held their breath in fear", collocation: "held their breath in fear as", definition_en: "stopped breathing temporarily due to intense nervous anticipation", definition_vi: "nín thở vì sợ hãi", example: "As the shadows moved, they held their breath in fear.", ipa: "/held ðeə breθ ɪn fɪər/" },
+      { word: "to their utter surprise", collocation: "to their utter surprise, they saw", definition_en: "resulting in complete and extreme amazement", definition_vi: "bất ngờ ngoài dự tính", example: "To their utter surprise, the old box contained glowing gems.", ipa: "/tuː ðeər ˈʌt.ər səˈpraɪz/" },
+      { word: "opened the heavy chest", collocation: "opened the heavy chest slowly", definition_en: "lifted the thick lid of a heavy wooden treasure box", definition_vi: "mở chiếc rương nặng", example: "They unlocked the lock and opened the heavy chest.", ipa: "/ˈəʊ.pənd ðə ˈhev.i tʃest/" },
+      { word: "burst into cheerful laughter", collocation: "burst into cheerful laughter after", definition_en: "suddenly started laughing together with joy and relief", definition_vi: "bật ra tiếng cười vui vẻ", example: "When they saw the funny map, they burst into cheerful laughter.", ipa: "/bɜːst ˈɪn.tuː ˈtʃɪə.fəl ˈlɑːf.tər/" }
     ],
     daily_watch: [
       { id: "w36_v1", title: "Son Doong Cave — Earth's Largest Cave 4K", url: "https://www.youtube.com/embed/9-o89uG9fAc" },
@@ -967,24 +967,36 @@ export default {
 
 function buildWritingJs(data) {
   const sentenceFrames = [
-    "On a sunny day, the main character was acting carefully.",
-    "Suddenly, an unexpected situation happened near the area.",
-    "The character rushed over immediately to help.",
-    "They stayed calm and handled the situation gently.",
-    "Help arrived quickly with proper safety equipment.",
-    "Everyone felt extremely relieved after the event.",
-    "They learned an important lesson about cooperation.",
-    "In different countries, people practice safety rules.",
-    "Working together as a team leads to successful results.",
-    "We should always care for nature and our friends."
+    { template: "Early on a ___ morning, Leo and Mia went hiking in the ___.", answers: ["sunny Saturday", "green pine forest"] },
+    { template: "While walking along the rocky path, they discovered a ___ entrance to a cave.", answers: ["hidden"] },
+    { template: "They turned on their ___ flashlights and stepped inside carefully.", answers: ["bright"] },
+    { template: "Inside the cave, cool drops of water dripped from the ___ ceiling.", answers: ["rocky"] },
+    { template: "Suddenly, Mia spotted a ___ wooden box behind a large stone.", answers: ["dusty"] },
+    { template: "They opened it gently and found an ___ map with a shiny brass compass.", answers: ["ancient"] },
+    { template: "Their hearts beat fast with ___ as they looked at the map.", answers: ["excitement"] },
+    { template: "They realized it was a historical ___ map left by old explorers.", answers: ["treasure"] },
+    { template: "They felt extremely ___ and burst into cheerful laughter.", answers: ["excited"] },
+    { template: "We should always work together to explore nature ___.", answers: ["safely"] }
   ];
+
+  const vocabWords = data.vocab.map(v => ({ word: v.word, distractor: false }));
 
   const writingData = {
     title: data.title_en,
+    prompt_en: `Write a short story about an exciting adventure based on ${data.title_en}. Use Past Continuous and Past Simple tenses.`,
+    prompt_vi: `Viết một câu chuyện ngắn về cuộc phiêu lưu dựa trên bài ${data.title_en}. Sử dụng thì Quá khứ tiếp diễn và Quá khứ đơn.`,
     min_sentences: 10,
     min_words: 65,
     model_sentence: data.model_sentence,
     sentence_frames: sentenceFrames,
+    hints: {
+      scaffolding_stage: "medium",
+      words: vocabWords,
+      vocabulary_bank: {
+        scaffolding_stage: "medium",
+        words: vocabWords
+      }
+    },
     story_prompts: {
       picture_mode: {
         type: "picture",

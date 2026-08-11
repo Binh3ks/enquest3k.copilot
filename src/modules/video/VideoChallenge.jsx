@@ -921,7 +921,8 @@ Respond in JSON: {"ai_response": "your feedback here"}`;
                 {isVi ? '📝 Điền vào khung câu:' : '📝 Fill in the sentence frames:'}
               </p>
               {content.sentence_frames.map((frame, fi) => {
-                const parts = frame.template.split('___');
+                const templateString = typeof frame === 'string' ? frame : (frame?.template || frame?.frame || '');
+                const parts = templateString.split('___');
                 const blankCount = parts.length - 1;
                 const filledCount = Object.values(frameInputs[fi] || {}).filter(v => v.trim()).length;
                 const allFilled = filledCount >= blankCount;
