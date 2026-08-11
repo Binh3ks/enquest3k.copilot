@@ -7,7 +7,7 @@ import { Station2CheckMode } from '../hubs/station2/CheckMode/Station2CheckMode'
 import { AdaptiveExplainerModal } from '../hubs/station2/components/AdaptiveExplainerModal';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { adaptiveLogicEngine } from '../../services/adaptiveLogicEngine';
-import { Swords, Layers, ShieldCheck, RefreshCw, Zap, Award, GraduationCap, PlayCircle } from 'lucide-react';
+import { Swords, Layers, ShieldCheck, RefreshCw, Zap, Award, GraduationCap, PlayCircle, BookOpen } from 'lucide-react';
 
 export default function ArenaHub({ weekNumber = 33 }) {
   const [viewMode, setViewMode] = useState('learn'); // 'learn' | 'check'
