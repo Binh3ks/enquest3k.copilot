@@ -92,3 +92,12 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
     - **Kiểm Duyệt Tự Động 2 Bước Trước Khi Commit (Mandatory Pre-Commit Gatekeeper)**:
       1. Run `npm run audit:chunks` (`node scripts/audit_chunks.js`) -> Bảo đảm 0 lỗi chunking.
       2. Run `npm run audit:week <weekNum>` (`node scripts/audit_new_week.mjs <weekNum>`) -> Bảo đảm 0 lỗi schema, 0 lỗi thiếu `definition_en`, 0 lỗi chữ Tiếng Việt trong `definition_en`.
+      3. Run `node scripts/validate_week.mjs <weekNum>` -> One-shot master validation gatekeeper.
+
+## Consolidated Self-Improvement Lessons & Incident Prevention (Lessons 001-015)
+- **Lesson-001 (Auto-lint/Rollback)**: Sau khi Edit/Write code `.js/.jsx`, phải run lint/build. Nếu vỡ build -> rollback ngay.
+- **Lesson-004 (MediaRecorder Release)**: Khi reducer chuyển phase sang `ALL_DONE` hay `SCORED`, phải có effect cleanup `useEffect(() => { if (phase === ALL_DONE) stopRecording(); }, [phase])` để release micro.
+- **Lesson-006 (TDZ Prevention)**: Mọi biến trong deps array `[a, b, c]` của `useCallback`/`useMemo` BẮT BUỘC phải được khai báo bằng `const` ở DÒNG TRÊN. Không forward-reference biến ở dòng bên dưới gây crash runtime.
+- **Lesson-009 (No Truncation)**: Tuyệt đối KHÔNG cắt xén code hoặc dùng `...` làm gãy file JSON/JS khi sinh nội dung hàng loạt.
+- **Lesson-011 (Unified Shadowing)**: Không tách file Shadowing ADV/EASY riêng làm trôi timestamp; dùng 1 file duy nhất bọc dữ liệu chuẩn.
+- **Lesson-014 (No Literal `\n` in JSON)**: File JSON tuyệt đối không chứa `\n` thô trong string literals gây crash Vite build parser.
