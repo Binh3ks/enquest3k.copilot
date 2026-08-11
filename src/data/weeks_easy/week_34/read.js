@@ -28,7 +28,45 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
     "hint_en": "Gathering ___.",
     "hint_vi": "Nhặt ___."
   }
-]
+],
+  read_stem: {
+  "title": "The Ant and the Grasshopper (STEM Science)",
+  "image_url": "/images/week34/read_cover_w34.jpg",
+  "audio_url": "/audio/week34/read_main.mp3",
+  "content_en": "On a **bright sunny summer day**, the **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, the **lazy grasshopper** was **singing cheerfully** under a **green tree**.\n\nWhen the **cold winter arrived**, **snow covered the ground everywhere**. The grasshopper **had no food** and was **shivering in the cold**.\n\nHe **slowly walked** to the ant's **warm wooden house** and **knocked on the door**. The **kind ant** opened the door and **invited him inside** for **warm soup**.\n\nThe grasshopper **felt deeply grateful** and **learned a valuable lesson**. **From that day on**, he **promised to work hard** every summer.",
+  "content_vi": "Vào một **ngày hè nắng đẹp rực rỡ**, chú **kiến chăm chỉ** đang **nhặt những hạt lúa mì**. **Trong khi đó**, chú **châu chấu lười biếng** đang **hát ca vui vẻ** dưới bóng cây xanh.\n\nKhi **mùa đông lạnh giá đến**, **tuyết phủ kín mặt đất khắp nơi**. Châu chấu **không có thức ăn** và đang **run rẩy trong giá lạnh**.\n\nChú **chậm rãi bước đến** ngôi **nhà gỗ ấm áp** của kiến và **gõ cửa**. Chú **kiến tốt bụng** mở cửa và **mời chú vào trong** dùng **súp nóng**.\n\nChâu chấu **cảm thấy cực kỳ biết ơn** và **học được một bài học quý giá**. **Từ ngày đó trở đi**, chú **hứa sẽ làm việc chăm chỉ** mỗi mùa hè.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "What was the ant doing during the summer?",
+      "answer": [
+        "Gathering grains of wheat"
+      ],
+      "clue_statement": "The ant was gathering grains of wheat.",
+      "hint_en": "Gathering ___.",
+      "hint_vi": "Nhặt ___."
+    }
+  ]
+},
+  read_social: {
+  "title": "The Ant and the Grasshopper (Social Studies)",
+  "image_url": "/images/week34/explore_w34.jpg",
+  "audio_url": "/audio/week34/read_main.mp3",
+  "content_en": "Fables are ancient short stories that teach us **valuable life lessons**. Aesop was a famous storyteller from Greece who wrote stories about animals with human personalities. Stories like *The Ant and the Grasshopper* show us how **hard work and patience** always win.",
+  "content_vi": "Truyện ngụ ngôn là những câu chuyện ngắn cổ xưa dạy chúng ta những bài học cuộc sống quý giá. Aesop là một người kể chuyện nổi tiếng từ Hy Lạp.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Who was Aesop?",
+      "answer": [
+        "A famous storyteller from ancient Greece"
+      ],
+      "clue_statement": "Aesop was a famous storyteller from Greece.",
+      "hint_en": "Storyteller from ___.",
+      "hint_vi": "Người kể chuyện từ ___."
+    }
+  ]
+}
 };
 
 export const chunk_focus = [
@@ -55,6 +93,8 @@ export const chunk_focus = [
   "learned a valuable lesson",
   "From that day on",
   "promised to work hard",
+  "valuable life lessons",
+  "hard work and patience",
   "ngày hè nắng đẹp rực rỡ",
   "chú kiến chăm chỉ",
   "hardworking ant",
@@ -77,7 +117,9 @@ export const chunk_focus = [
   "cảm thấy cực kỳ biết ơn",
   "học được một bài học quý giá",
   "Từ ngày đó trở đi",
-  "hứa sẽ làm việc chăm chỉ"
+  "hứa sẽ làm việc chăm chỉ",
+  "bài học cuộc sống quý giá",
+  "chăm chỉ và kiên nhẫn"
 ];
 
 export const dictionary = {
@@ -104,6 +146,8 @@ export const dictionary = {
   "learned a valuable lesson": "học được một bài học quý giá",
   "From that day on": "Từ ngày đó trở đi",
   "promised to work hard": "hứa sẽ làm việc chăm chỉ",
+  "valuable life lessons": "bài học cuộc sống quý giá",
+  "hard work and patience": "chăm chỉ và kiên nhẫn",
   "ngày hè nắng đẹp rực rỡ": "bright sunny summer day",
   "chú kiến chăm chỉ": "hardworking ant",
   "nhặt những hạt lúa mì": "gathering grains of wheat",
@@ -124,5 +168,7 @@ export const dictionary = {
   "cảm thấy cực kỳ biết ơn": "felt deeply grateful",
   "học được một bài học quý giá": "learned a valuable lesson",
   "Từ ngày đó trở đi": "From that day on",
-  "hứa sẽ làm việc chăm chỉ": "promised to work hard"
+  "hứa sẽ làm việc chăm chỉ": "promised to work hard",
+  "bài học cuộc sống quý giá": "valuable life lessons",
+  "chăm chỉ và kiên nhẫn": "hard work and patience"
 };

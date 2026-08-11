@@ -56,7 +56,11 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
         "applied a clean bandage": "băng một chiếc băng sạch",
         "felt extremely relieved": "cảm thấy cực kỳ nhẹ nhõm",
         "reminded all students": "nhắc nhở tất cả học sinh",
-        "learned a valuable lesson": "học được một bài học quý giá"
+        "learned a valuable lesson": "học được một bài học quý giá",
+        "safety rules": "quy tắc an toàn",
+        "emergency earthquake drills": "diễn tập động đất",
+        "bright yellow warning signs": "biển cảnh báo màu vàng",
+        "social responsibility": "trách nhiệm xã hội"
       },
       comprehension_questions: [
         { id: 1, question_en: "What was Jake doing when the boy slipped?", answer: ["Walking carefully down the school corridor"], clue_statement: "Jake was walking carefully down the school corridor.", hint_en: "Jake was ___.", hint_vi: "Jake đang ___." },
@@ -160,7 +164,9 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
         "felt deeply grateful": "cảm thấy cực kỳ biết ơn",
         "learned a valuable lesson": "học được một bài học quý giá",
         "From that day on": "Từ ngày đó trở đi",
-        "promised to work hard": "hứa sẽ làm việc chăm chỉ"
+        "promised to work hard": "hứa sẽ làm việc chăm chỉ",
+        "valuable life lessons": "bài học cuộc sống quý giá",
+        "hard work and patience": "chăm chỉ và kiên nhẫn"
       },
       comprehension_questions: [
         { id: 1, question_en: "What was the ant doing during the summer?", answer: ["Gathering grains of wheat"], clue_statement: "The ant was gathering grains of wheat.", hint_en: "Gathering ___.", hint_vi: "Nhặt ___." }
@@ -260,7 +266,11 @@ Tất cả du khách **đều mỉm cười và vỗ tay khen ngợi** **nỗ l�
         "smiled and applauded": "đều mỉm cười và vỗ tay khen ngợi",
         "wonderful effort": "nỗ lực tuyệt vời của họ",
         "felt extremely proud": "cảm thấy cực kỳ tự hào",
-        "protecting nature": "bảo vệ thiên nhiên"
+        "protecting nature": "bảo vệ thiên nhiên",
+        "green lungs": "lá phổi xanh",
+        "futuristic supertrees": "siêu cây tương lai",
+        "wild swans, ducks, and squirrels": "thiên nga, vịt và sóc dại",
+        "healthier places": "nơi lành mạnh hơn"
       },
       comprehension_questions: [
         { id: 1, question_en: "Where did Maya and Tom go on Saturday morning?", answer: ["Their favorite city park"], clue_statement: "Maya and Tom visited their favorite city park.", hint_en: "Favorite ___ park.", hint_vi: "Công viên ___ yêu thích." }
@@ -358,7 +368,9 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
         "hearts beat fast": "tim họ đập nhanh",
         "historical treasure map": "bản đồ kho báu lịch sử",
         "felt extremely excited": "cảm thấy cực kỳ hào hứng",
-        "burst into laughter": "bật cười vui vẻ"
+        "burst into laughter": "bật cười vui vẻ",
+        "Son Doong Cave": "Hang Sơn Đoòng",
+        "underground jungle": "rừng rậm dưới lòng đất"
       },
       comprehension_questions: [
         { id: 1, question_en: "Where were Leo and Mia hiking?", answer: ["In the green pine forest"], clue_statement: "Leo and Mia went hiking in the green pine forest.", hint_en: "In the green ___.", hint_vi: "Trong rừng ___." }
@@ -454,7 +466,9 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
         "burst into cheers": "bật lên tiếng reo hò",
         "received shiny gold medals": "nhận được những tấm huy chương vàng sáng bóng",
         "felt extremely proud": "cảm thấy cực kỳ tự hào",
-        "scientific teamwork": "tinh thần đồng đội khoa học"
+        "scientific teamwork": "tinh thần đồng đội khoa học",
+        "athletes from over 200 nations": "vận động viên từ hơn 200 quốc gia",
+        "working as one team": "làm việc như một đội"
       },
       comprehension_questions: [
         { id: 1, question_en: "Which race did Leo run in Sports Day?", answer: ["The final 4x100m relay race"], clue_statement: "Leo was chosen to run the final 4x100m relay race.", hint_en: "Final 4x100m ___.", hint_vi: "Chạy tiếp sức ___." }
@@ -520,6 +534,24 @@ function buildReadJs(data) {
   const fullDict = { ...dictMap };
   Object.entries(dictMap).forEach(([k, v]) => { fullDict[v] = k; });
 
+  const stemStory = {
+    title: data.read.title + " (STEM Science)",
+    image_url: data.read.image_url,
+    audio_url: data.read.audio_url,
+    content_en: data.read.content_en,
+    content_vi: data.read.content_vi,
+    comprehension_questions: data.read.comprehension_questions
+  };
+
+  const socialStory = {
+    title: data.read.title + " (Social Studies)",
+    image_url: data.explore.image_url || data.read.image_url,
+    audio_url: data.read.audio_url,
+    content_en: data.explore.content_en,
+    content_vi: data.explore.content_vi,
+    comprehension_questions: data.explore.check_questions
+  };
+
   return `// Auto-generated Cambridge A2 read.js for Week ${data.weekId}
 export default {
   title: ${JSON.stringify(data.read.title)},
@@ -527,7 +559,9 @@ export default {
   audio_url: ${JSON.stringify(data.read.audio_url)},
   content_en: \`${data.read.content_en}\`,
   content_vi: \`${data.read.content_vi}\`,
-  comprehension_questions: ${JSON.stringify(data.read.comprehension_questions, null, 2)}
+  comprehension_questions: ${JSON.stringify(data.read.comprehension_questions, null, 2)},
+  read_stem: ${JSON.stringify(stemStory, null, 2)},
+  read_social: ${JSON.stringify(socialStory, null, 2)}
 };
 
 export const chunk_focus = ${JSON.stringify(chunks, null, 2)};

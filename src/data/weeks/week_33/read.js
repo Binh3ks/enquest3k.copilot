@@ -38,7 +38,55 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
     "hint_en": "He ___ on the wet floor.",
     "hint_vi": "Cậu ấy ___ trên sàn ướt."
   }
-]
+],
+  read_stem: {
+  "title": "Jake's Unexpected Fall (STEM Science)",
+  "image_url": "/images/week33/read_cover_w33.jpg",
+  "audio_url": "/audio/week33/read_main.mp3",
+  "content_en": "On a **bright sunny day**, Jake was **walking carefully** down the **school corridor**. He had just **finished his science class** and was **holding his notebooks**.\n\n**Suddenly**, a boy who was **running fast** **slipped on the wet floor**. He **fell heavily** and **hurt his knee**. Jake **rushed over to help** him immediately.\n\nThe boy **began to bleed** a little and **burst into tears**. Jake **stayed calm** and **called the school nurse**. The nurse came quickly and **applied a clean bandage**.\n\nEveryone **felt extremely relieved**. The headmaster thanked Jake and **reminded all students** to walk safely. Everyone **learned a valuable lesson** about school safety.",
+  "content_vi": "Vào một **ngày hè nắng đẹp rực rỡ**, Jake đang **cẩn thận bước đi** dọc theo **hành lang trường học**. Chú vừa **học xong tiết khoa học** và đang **cầm các cuốn vở**.\n\n**Đột nhiên**, một cậu bé đang **chạy rất nhanh** đã **trượt ngã trên sàn nhà ướt**. Cậu ấy **ngã rất đau** và **bị thương ở đầu gối**. Jake **vội vã chạy đến giúp đỡ** ngay lập tức.\n\nCậu bé **bắt đầu chảy máu** một chút và **bật khóc nức nở**. Jake **giữ bình tĩnh** và **gọi cô y tá trường học**. Cô y tá đến nhanh chóng và **băng một chiếc băng sạch**.\n\nMọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng cảm ơn Jake và **nhắc nhở tất cả học sinh** đi lại an toàn. Mọi người **học được một bài học quý giá** về an toàn trường học.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "What was Jake doing when the boy slipped?",
+      "answer": [
+        "Walking carefully down the school corridor"
+      ],
+      "clue_statement": "Jake was walking carefully down the school corridor.",
+      "hint_en": "Jake was ___.",
+      "hint_vi": "Jake đang ___."
+    },
+    {
+      "id": 2,
+      "question_en": "What happened to the boy who was running fast?",
+      "answer": [
+        "He slipped on the wet floor and hurt his knee"
+      ],
+      "clue_statement": "A boy running fast slipped on the wet floor.",
+      "hint_en": "He ___ on the wet floor.",
+      "hint_vi": "Cậu ấy ___ trên sàn ướt."
+    }
+  ]
+},
+  read_social: {
+  "title": "Jake's Unexpected Fall (Social Studies)",
+  "image_url": "/images/week33/explore_w33.jpg",
+  "audio_url": "/audio/week33/read_main.mp3",
+  "content_en": "Schools around the world have special **safety rules** to keep students happy and healthy. In Japan, children practice **emergency earthquake drills** every month so they know exactly how to protect their heads under sturdy wooden desks. In Canada, school corridors have **bright yellow warning signs** whenever janitors mop the floors during snowy winter days. By obeying these simple rules, students learn **social responsibility** and care for their friends every single day.",
+  "content_vi": "Trường học trên khắp thế giới có các quy tắc an toàn đặc biệt để giữ cho học sinh vui vẻ và khỏe mạnh. Ở Nhật Bản, trẻ em thực hành diễn tập động đất hàng tháng. Ở Canada, hành lang trường học có biển cảnh báo màu vàng tươi khi lau sàn. Bằng cách tuân thủ các quy tắc đơn giản này, học sinh học được trách nhiệm xã hội và quan tâm đến bạn bè.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Why do Japanese schools conduct earthquake drills?",
+      "answer": [
+        "To protect their heads under desks"
+      ],
+      "clue_statement": "Children practice drills so they know how to protect their heads.",
+      "hint_en": "Protect their ___.",
+      "hint_vi": "Bảo vệ ___."
+    }
+  ]
+}
 };
 
 export const chunk_focus = [
@@ -61,6 +109,10 @@ export const chunk_focus = [
   "felt extremely relieved",
   "reminded all students",
   "learned a valuable lesson",
+  "safety rules",
+  "emergency earthquake drills",
+  "bright yellow warning signs",
+  "social responsibility",
   "ngày hè nắng đẹp rực rỡ",
   "cẩn thận bước đi",
   "hành lang trường học",
@@ -79,7 +131,11 @@ export const chunk_focus = [
   "băng một chiếc băng sạch",
   "cảm thấy cực kỳ nhẹ nhõm",
   "nhắc nhở tất cả học sinh",
-  "học được một bài học quý giá"
+  "học được một bài học quý giá",
+  "quy tắc an toàn",
+  "diễn tập động đất",
+  "biển cảnh báo màu vàng",
+  "trách nhiệm xã hội"
 ];
 
 export const dictionary = {
@@ -102,6 +158,10 @@ export const dictionary = {
   "felt extremely relieved": "cảm thấy cực kỳ nhẹ nhõm",
   "reminded all students": "nhắc nhở tất cả học sinh",
   "learned a valuable lesson": "học được một bài học quý giá",
+  "safety rules": "quy tắc an toàn",
+  "emergency earthquake drills": "diễn tập động đất",
+  "bright yellow warning signs": "biển cảnh báo màu vàng",
+  "social responsibility": "trách nhiệm xã hội",
   "ngày hè nắng đẹp rực rỡ": "bright sunny day",
   "cẩn thận bước đi": "walking carefully",
   "hành lang trường học": "school corridor",
@@ -120,5 +180,9 @@ export const dictionary = {
   "băng một chiếc băng sạch": "applied a clean bandage",
   "cảm thấy cực kỳ nhẹ nhõm": "felt extremely relieved",
   "nhắc nhở tất cả học sinh": "reminded all students",
-  "học được một bài học quý giá": "learned a valuable lesson"
+  "học được một bài học quý giá": "learned a valuable lesson",
+  "quy tắc an toàn": "safety rules",
+  "diễn tập động đất": "emergency earthquake drills",
+  "biển cảnh báo màu vàng": "bright yellow warning signs",
+  "trách nhiệm xã hội": "social responsibility"
 };

@@ -28,7 +28,45 @@ Tất cả du khách **đều mỉm cười và vỗ tay khen ngợi** **nỗ l�
     "hint_en": "Favorite ___ park.",
     "hint_vi": "Công viên ___ yêu thích."
   }
-]
+],
+  read_stem: {
+  "title": "Save Our Park (STEM Science)",
+  "image_url": "/images/week35/read_cover_w35.jpg",
+  "audio_url": "/audio/week35/read_main.mp3",
+  "content_en": "On a **warm Saturday morning**, Maya and Tom **visited their favorite city park**. They were sad to see **plastic bottles and rubbish** **scattered on the green grass**.\n\n**Without hesitation**, they **decided to clean up** the **entire park together**. **First**, they **put on gloves** and **collected all the plastic waste** into **recycling bins**.\n\n**Next**, they **planted colorful flowers** and **young green trees** near the pond. **Thanks to their hard work**, the park became **clean and beautiful again**.\n\nAll the visitors **smiled and applauded** their **wonderful effort**. Maya and Tom **felt extremely proud** of **protecting nature**.",
+  "content_vi": "Vào một **sáng thứ Bảy ấm áp**, Maya và Tom **đến thăm công viên thành phố yêu thích của họ**. Họ rất buồn khi thấy **chai nhựa và rác thải** **vứt bừa bãi trên thảm cỏ xanh**.\n\n**Không một chút do dự**, họ **quyết định cùng nhau dọn dẹp** **toàn bộ công viên**. **Đầu tiên**, họ **đeo găng tay** và **gom toàn bộ rác thải nhựa** vào **thùng tái chế**.\n\n**Tiếp theo**, họ **trồng những bông hoa rực rỡ** và **những cây xanh non** gần hồ nước. **Nhờ vào nỗ lực chăm chỉ của họ**, công viên đã trở nên **sạch sẽ và đẹp đẽ trở lại**.\n\nTất cả du khách **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực tuyệt vời của họ**. Maya và Tom **cảm thấy cực kỳ tự hào** vì đã **bảo vệ thiên nhiên**.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Where did Maya and Tom go on Saturday morning?",
+      "answer": [
+        "Their favorite city park"
+      ],
+      "clue_statement": "Maya and Tom visited their favorite city park.",
+      "hint_en": "Favorite ___ park.",
+      "hint_vi": "Công viên ___ yêu thích."
+    }
+  ]
+},
+  read_social: {
+  "title": "Save Our Park (Social Studies)",
+  "image_url": "/images/week35/explore_w35.jpg",
+  "audio_url": "/audio/week35/read_main.mp3",
+  "content_en": "Parks in big cities are essential **green lungs** that clean the air we breathe. In Singapore, city parks have **futuristic supertrees** covered in real plants. In London, Hyde Park provides a safe home for **wild swans, ducks, and squirrels**. By keeping parks clean, communities make cities **healthier places** for everyone.",
+  "content_vi": "Công viên ở các thành phố lớn là những lá phổi xanh thiết yếu làm sạch không khí.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Why are city parks called green lungs?",
+      "answer": [
+        "Because they clean the air we breathe"
+      ],
+      "clue_statement": "Parks are green lungs that clean the air.",
+      "hint_en": "Clean the ___.",
+      "hint_vi": "Làm sạch ___."
+    }
+  ]
+}
 };
 
 export const chunk_focus = [
@@ -52,6 +90,10 @@ export const chunk_focus = [
   "wonderful effort",
   "felt extremely proud",
   "protecting nature",
+  "green lungs",
+  "futuristic supertrees",
+  "wild swans, ducks, and squirrels",
+  "healthier places",
   "sáng thứ Bảy ấm áp",
   "đến thăm công viên thành phố yêu thích của họ",
   "chai nhựa và rác thải",
@@ -71,7 +113,11 @@ export const chunk_focus = [
   "đều mỉm cười và vỗ tay khen ngợi",
   "nỗ lực tuyệt vời của họ",
   "cảm thấy cực kỳ tự hào",
-  "bảo vệ thiên nhiên"
+  "bảo vệ thiên nhiên",
+  "lá phổi xanh",
+  "siêu cây tương lai",
+  "thiên nga, vịt và sóc dại",
+  "nơi lành mạnh hơn"
 ];
 
 export const dictionary = {
@@ -95,6 +141,10 @@ export const dictionary = {
   "wonderful effort": "nỗ lực tuyệt vời của họ",
   "felt extremely proud": "cảm thấy cực kỳ tự hào",
   "protecting nature": "bảo vệ thiên nhiên",
+  "green lungs": "lá phổi xanh",
+  "futuristic supertrees": "siêu cây tương lai",
+  "wild swans, ducks, and squirrels": "thiên nga, vịt và sóc dại",
+  "healthier places": "nơi lành mạnh hơn",
   "sáng thứ Bảy ấm áp": "warm Saturday morning",
   "đến thăm công viên thành phố yêu thích của họ": "visited their favorite city park",
   "chai nhựa và rác thải": "plastic bottles and rubbish",
@@ -114,5 +164,9 @@ export const dictionary = {
   "đều mỉm cười và vỗ tay khen ngợi": "smiled and applauded",
   "nỗ lực tuyệt vời của họ": "wonderful effort",
   "cảm thấy cực kỳ tự hào": "felt extremely proud",
-  "bảo vệ thiên nhiên": "protecting nature"
+  "bảo vệ thiên nhiên": "protecting nature",
+  "lá phổi xanh": "green lungs",
+  "siêu cây tương lai": "futuristic supertrees",
+  "thiên nga, vịt và sóc dại": "wild swans, ducks, and squirrels",
+  "nơi lành mạnh hơn": "healthier places"
 };

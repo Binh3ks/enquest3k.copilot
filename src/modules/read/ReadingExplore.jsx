@@ -154,22 +154,21 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
   }, [currentIdx, inputValue, committedLength, qInputs, qFeedback, qAttempts, showAnswer, isReady]);
 
   useEffect(() => {
-    if (data && data.content_en) {
-      const enRaw = data.content_en.match(/[^.!?]+[.!?]+(\s|$)/g) || [data.content_en];
-      const viRaw = data.content_vi ? (data.content_vi.match(/[^.!?]+[.!?]+(\s|$)/g) || [data.content_vi]) : [];
+    const activeData = data?.content_en ? data : (data?.read_explore || data?.read_stem || data);
+    if (activeData && activeData.content_en) {
+      const enRaw = activeData.content_en.match(/[^.!?]+[.!?]+(\s|$)/g) || [activeData.content_en];
+      const viRaw = activeData.content_vi ? (activeData.content_vi.match(/[^.!?]+[.!?]+(\s|$)/g) || [activeData.content_vi]) : [];
       
       const combined = enRaw.map((s, i) => ({
         en: s.trim(),
         vi: viRaw[i] ? viRaw[i].trim() : ""
       }));
       setSentences(combined);
-      
-      // State is already initialized. Just mark as ready.
       setIsReady(true);
 
-      // Prefetch is handled centrally by TTSWeekPrefetch (App.jsx) — no duplicate call here.
-
-      if(textareaRef.current) textareaRef.current.focus({ preventScroll: true });
+      if (textareaRef.current) textareaRef.current.focus({ preventScroll: true });
+    } else if (data) {
+      setIsReady(true);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);

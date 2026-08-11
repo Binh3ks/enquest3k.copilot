@@ -28,7 +28,45 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
     "hint_en": "Final 4x100m ___.",
     "hint_vi": "Chạy tiếp sức ___."
   }
-]
+],
+  read_stem: {
+  "title": "The Sports Day Challenge (STEM Science)",
+  "image_url": "/images/week37/read_cover_w37.jpg",
+  "audio_url": "/audio/week37/read_main.mp3",
+  "content_en": "On a **bright Saturday morning**, Leo's school held its **annual Sports Day**. The **crowded sports stadium** was filled with **cheering students and parents**.\n\nLeo was chosen to run the **final 4x100m relay race**. While the **first runner was sprinting fast**, Leo **prepared himself carefully** in the exchange zone.\n\nWhen his teammate arrived, Leo **passed the baton cleanly** and **accelerated smoothly down the track**. He **ran as fast as wind** and **crossed the finish line first**.\n\nOut of breath, he **smiled happily** as his team **burst into cheers**. They **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.",
+  "content_vi": "Vào một **sáng thứ Bảy nắng đẹp rực rỡ**, trường của Leo đã tổ chức **Ngày Hội Thể Thao hàng năm**. **Sân vận động thể thao đông đúc** ngập tràn **tiếng reo hò của học sinh và phụ huynh**.\n\nLeo được chọn để chạy **trận chung kết tiếp sức 4x100m**. Trong khi **vận động viên đầu tiên đang chạy nước rút nhanh**, Leo **chuẩn bị cẩn thận** trong khu vực trao gậy.\n\nKhi đồng đội của chú đến, Leo **trao gậy tiếp sức mượt mà** và **tăng tốc êm ái trên đường chạy**. Chú **chạy nhanh như gió** và **cán đích đầu tiên**.\n\nDù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **bật lên tiếng reo hò**. Họ **nhận được những tấm huy chương vàng sáng bóng** và **cảm thấy cực kỳ tự hào** về **tinh thần đồng đội khoa học**.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Which race did Leo run in Sports Day?",
+      "answer": [
+        "The final 4x100m relay race"
+      ],
+      "clue_statement": "Leo was chosen to run the final 4x100m relay race.",
+      "hint_en": "Final 4x100m ___.",
+      "hint_vi": "Chạy tiếp sức ___."
+    }
+  ]
+},
+  read_social: {
+  "title": "The Sports Day Challenge (Social Studies)",
+  "image_url": "/images/week37/explore_w37.jpg",
+  "audio_url": "/audio/week37/read_main.mp3",
+  "content_en": "The Olympic Games are the world's biggest sports celebration where **athletes from over 200 nations** compete peacefully. Running together in relay teams teaches us that true success comes from **working as one team**.",
+  "content_vi": "Thế vận hội Olympic là ngày hội thể thao lớn nhất thế giới.",
+  "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "How many nations compete in the modern Olympic Games?",
+      "answer": [
+        "Over 200 nations"
+      ],
+      "clue_statement": "Athletes from over 200 nations compete.",
+      "hint_en": "Over ___ nations.",
+      "hint_vi": "Hơn ___ quốc gia."
+    }
+  ]
+}
 };
 
 export const chunk_focus = [
@@ -48,6 +86,8 @@ export const chunk_focus = [
   "received shiny gold medals",
   "felt extremely proud",
   "scientific teamwork",
+  "athletes from over 200 nations",
+  "working as one team",
   "sáng thứ Bảy nắng đẹp rực rỡ",
   "Ngày Hội Thể Thao hàng năm",
   "Sân vận động thể thao đông đúc",
@@ -63,7 +103,9 @@ export const chunk_focus = [
   "bật lên tiếng reo hò",
   "nhận được những tấm huy chương vàng sáng bóng",
   "cảm thấy cực kỳ tự hào",
-  "tinh thần đồng đội khoa học"
+  "tinh thần đồng đội khoa học",
+  "vận động viên từ hơn 200 quốc gia",
+  "làm việc như một đội"
 ];
 
 export const dictionary = {
@@ -83,6 +125,8 @@ export const dictionary = {
   "received shiny gold medals": "nhận được những tấm huy chương vàng sáng bóng",
   "felt extremely proud": "cảm thấy cực kỳ tự hào",
   "scientific teamwork": "tinh thần đồng đội khoa học",
+  "athletes from over 200 nations": "vận động viên từ hơn 200 quốc gia",
+  "working as one team": "làm việc như một đội",
   "sáng thứ Bảy nắng đẹp rực rỡ": "bright Saturday morning",
   "Ngày Hội Thể Thao hàng năm": "annual Sports Day",
   "Sân vận động thể thao đông đúc": "crowded sports stadium",
@@ -98,5 +142,7 @@ export const dictionary = {
   "bật lên tiếng reo hò": "burst into cheers",
   "nhận được những tấm huy chương vàng sáng bóng": "received shiny gold medals",
   "cảm thấy cực kỳ tự hào": "felt extremely proud",
-  "tinh thần đồng đội khoa học": "scientific teamwork"
+  "tinh thần đồng đội khoa học": "scientific teamwork",
+  "vận động viên từ hơn 200 quốc gia": "athletes from over 200 nations",
+  "làm việc như một đội": "working as one team"
 };
