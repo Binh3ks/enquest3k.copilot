@@ -504,25 +504,67 @@ const ReadingExplore = ({ data, themeColor, isVi, onToggleLang, onReportProgress
       {/* 3. COMPREHENSION CHECK */}
       <div className="space-y-6 pt-8 border-t border-slate-200 mt-8">
         <h3 className="font-black text-slate-700 uppercase tracking-wider ml-1 text-sm">{isVi ? "Kiểm tra Đọc hiểu" : "Comprehension Check"}</h3>
-        {data.comprehension_questions && data.comprehension_questions.map((q, idx) => (
-            <div key={q.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-100 transition-colors">
+        {data.comprehension_questions && data.comprehension_questions.map((q, idx) => {
+          const opts = (q.options && Array.isArray(q.options) && q.options.length > 0)
+            ? q.options
+            : [
+                (Array.isArray(q.answer) ? q.answer[0] : q.answer) || 'Correct Choice',
+                'Other Option 1',
+                'Other Option 2',
+                'Other Option 3'
+              ];
+          const selectedOpt = qInputs[q.id] || '';
+          const isDone = qFeedback[q.id]?.isCorrect;
+
+          return (
+            <div key={q.id || idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-100 transition-colors">
                <div className="flex gap-3 mb-4">
                   <span className={`px-2 py-1 rounded bg-${themeColor}-50 text-${themeColor}-700 text-[10px] font-black h-fit uppercase`}>Q{idx + 1}</span>
                   <p className="font-bold text-slate-800 text-base">{q.question_en}</p>
                </div>
-               <div className="relative">
-                  <input type="text" className={`w-full p-4 pr-32 bg-slate-50 border-2 rounded-xl outline-none text-sm transition-all font-medium ${qFeedback[q.id]?.isCorrect ? 'border-green-400 bg-green-50 text-green-800' : qFeedback[q.id] ? 'border-rose-300 bg-rose-50 text-rose-800' : 'border-slate-100 focus:border-indigo-300 focus:bg-white'}`} placeholder={isVi ? "Nhập câu trả lời..." : "Type answer..."} value={qInputs[q.id] || ''} onChange={(e) => {setQInputs({ ...qInputs, [q.id]: e.target.value }); if(qFeedback[q.id]) setQFeedback({...qFeedback, [q.id]: null})}} onKeyDown={(e) => e.key === 'Enter' && handleQCheck(q.id, q.answer)} disabled={qFeedback[q.id]?.isCorrect} />
-                  <div className="absolute right-2 top-2 bottom-2 flex gap-1">
-                      <button onClick={() => toggleHint(q.id)} className="p-2 text-slate-400 hover:text-amber-500 hover:bg-amber-50 rounded-lg transition-colors" title="Hint" disabled={qFeedback[q.id]?.isCorrect}><HelpCircle className="w-5 h-5" /></button>
-                      <button onClick={() => handleQCheck(q.id, q.answer)} className={`px-5 rounded-lg font-bold text-[10px] uppercase tracking-wider text-white transition-all bg-${themeColor}-600 hover:bg-${themeColor}-700 active:scale-95 shadow-sm`} disabled={qFeedback[q.id]?.isCorrect}>Check</button>
-                  </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                 {opts.map((opt, optIdx) => {
+                   const isSelected = selectedOpt === opt;
+                   const correctChoice = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+                   const isOptCorrect = isDone && (opt === correctChoice || opt === q.answer);
+                   const isOptWrong = qFeedback[q.id] && !qFeedback[q.id].isCorrect && isSelected;
+                   
+                   let btnClass = "bg-white border-slate-200 text-slate-700 hover:bg-slate-50";
+                   if (isSelected) btnClass = "bg-indigo-600 text-white border-indigo-600 font-bold shadow-sm";
+                   if (isDone && isOptCorrect) btnClass = "bg-green-600 text-white border-green-600 font-bold shadow-md";
+                   if (isOptWrong) btnClass = "bg-rose-500 text-white border-rose-500 font-bold opacity-80";
+
+                   return (
+                     <button
+                       key={optIdx}
+                       disabled={isDone}
+                       onClick={() => {
+                         setQInputs(prev => ({ ...prev, [q.id]: opt }));
+                         handleQCheck(q.id, opt, q.answer);
+                       }}
+                       className={`px-4 py-2.5 rounded-xl border text-left text-sm transition-all flex items-center gap-2 ${btnClass}`}
+                     >
+                       <span className="w-5 h-5 rounded-full bg-slate-100/30 text-xs font-black flex items-center justify-center flex-shrink-0">
+                         {String.fromCharCode(65 + optIdx)}
+                       </span>
+                       <span>{opt}</span>
+                     </button>
+                   );
+                 })}
                </div>
-               {qFeedback[q.id] && !qFeedback[q.id].isCorrect && (<p className={`mt-3 text-xs font-bold flex items-center animate-in slide-in-from-top-1 text-rose-500`}><XCircle className="w-4 h-4 mr-1.5"/> {qFeedback[q.id].message} {qAttempts[q.id] > 0 && !showAnswer[q.id] && `(Attempt ${qAttempts[q.id]}/3)`}</p>)}
-               {qFeedback[q.id]?.isCorrect && (<p className={`mt-3 text-xs font-bold flex items-center animate-in slide-in-from-top-1 text-green-600`}><CheckCircle className="w-4 h-4 mr-1.5"/> {qFeedback[q.id].message}</p>)}
-               {showHint[q.id] && !qFeedback[q.id]?.isCorrect && (<div className="mt-2 p-3 bg-amber-50 border-l-4 border-amber-300 rounded-r-lg text-xs text-slate-600 italic flex items-center animate-fade-in"><HelpCircle className="w-3 h-3 mr-2 text-amber-500"/> {isVi ? q.hint_vi : q.hint_en}</div>)}
-               {showAnswer[q.id] && (<div className="mt-2 p-3 bg-green-50 border-l-4 border-green-400 rounded-r-lg animate-fade-in"><p className="text-[10px] font-black text-green-600 uppercase mb-1">Correct Answer:</p><p className="text-sm font-bold text-green-800">{Array.isArray(q.answer) ? q.answer[0] : q.answer}</p></div>)}
+               {qFeedback[q.id] && !qFeedback[q.id].isCorrect && (
+                 <p className="mt-3 text-xs font-bold flex items-center animate-in slide-in-from-top-1 text-rose-500">
+                   <XCircle className="w-4 h-4 mr-1.5"/> {qFeedback[q.id].message}
+                 </p>
+               )}
+               {qFeedback[q.id]?.isCorrect && (
+                 <p className="mt-3 text-xs font-bold flex items-center animate-in slide-in-from-top-1 text-green-600">
+                   <CheckCircle className="w-4 h-4 mr-1.5"/> {qFeedback[q.id].message}
+                 </p>
+               )}
             </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
