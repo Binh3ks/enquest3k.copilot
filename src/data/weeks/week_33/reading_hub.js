@@ -101,23 +101,22 @@ export const readingHubData = {
       definition_vi: "vụng về",
       audio_word: "/audio/words/clumsy.mp3"
     },
-
-    // --- 10 EXTENDED WORDS (A2/B1+) ---
+    // --- 10 EXTENDED A2/B1+ WORDS ---
     {
       id: "w33_v11",
       word: "dropped",
       part_of_speech: "verb",
       phonetic: "/drɑːpt/",
-      definition_en: "Let something fall down accidentally.",
+      definition_en: "Let something fall to the ground.",
       definition_vi: "đã đánh rơi",
       audio_word: "/audio/words/dropped.mp3"
     },
     {
       id: "w33_v12",
       word: "damaged",
-      part_of_speech: "adjective",
+      part_of_speech: "verb",
       phonetic: "/ˈdæm.ɪdʒd/",
-      definition_en: "Hurt or broken in condition.",
+      definition_en: "Hurt or spoiled something.",
       definition_vi: "bị hư hại",
       audio_word: "/audio/words/damaged.mp3"
     },
@@ -135,7 +134,7 @@ export const readingHubData = {
       word: "apologized",
       part_of_speech: "verb",
       phonetic: "/əˈpɑː.lə.dʒaɪzd/",
-      definition_en: "Said sorry for a mistake made.",
+      definition_en: "Said sorry for doing something wrong.",
       definition_vi: "đã xin lỗi",
       audio_word: "/audio/words/apologized.mp3"
     },
@@ -144,7 +143,7 @@ export const readingHubData = {
       word: "trip",
       part_of_speech: "verb",
       phonetic: "/trɪp/",
-      definition_en: "To catch one’s foot on something and stumble.",
+      definition_en: "Catch one's foot on something and stumble.",
       definition_vi: "vấp chân",
       audio_word: "/audio/words/trip.mp3"
     },
@@ -153,7 +152,7 @@ export const readingHubData = {
       word: "slip",
       part_of_speech: "verb",
       phonetic: "/slɪp/",
-      definition_en: "To slide accidentally on a smooth or wet surface.",
+      definition_en: "Slide unintentionally on a wet surface.",
       definition_vi: "trượt chân",
       audio_word: "/audio/words/slip.mp3"
     },
@@ -162,16 +161,16 @@ export const readingHubData = {
       word: "repair",
       part_of_speech: "verb",
       phonetic: "/rɪˈper/",
-      definition_en: "To restore something broken to good condition.",
-      definition_vi: "sửa sang lại",
+      definition_en: "Fix something that is damaged or broken.",
+      definition_vi: "sửa sang / tu sửa",
       audio_word: "/audio/words/repair.mp3"
     },
     {
       id: "w33_v18",
       word: "cautious",
       part_of_speech: "adjective",
-      phonetic: "/ˈkɔː.ʃəs/",
-      definition_en: "Taking care to avoid potential risks.",
+      phonetic: "/ˈkɑː.ʃəs/",
+      definition_en: "Being very careful to avoid risks.",
       definition_vi: "thận trọng",
       audio_word: "/audio/words/cautious.mp3"
     },
@@ -180,7 +179,7 @@ export const readingHubData = {
       word: "careless",
       part_of_speech: "adjective",
       phonetic: "/ˈker.ləs/",
-      definition_en: "Not paying enough attention to what one is doing.",
+      definition_en: "Not taking enough care or attention.",
       definition_vi: "bất cẩn",
       audio_word: "/audio/words/careless.mp3"
     },
@@ -189,25 +188,41 @@ export const readingHubData = {
       word: "ignore",
       part_of_speech: "verb",
       phonetic: "/ɪɡˈnɔːr/",
-      definition_en: "To pay no attention to something or someone.",
-      definition_vi: "ngó lơ / làm lơ",
+      definition_en: "Refuse to pay attention to something.",
+      definition_vi: "ngó lơ / xem thường",
       audio_word: "/audio/words/ignore.mp3"
     }
   ],
 
-  // 2. Array of EXACTLY 6 Static Webtoon Story Scenes ("Tom's Bad Day")
+  // Dedicated Array of 12 Lexical Chunks
+  lexical_chunks: [
+    { chunk: "broke his alarm clock", vi: "đã làm vỡ đồng hồ báo thức" },
+    { chunk: "reached clumsily", vi: "với tay vụng về" },
+    { chunk: "slipped on a puddle", vi: "trượt chân trên vũng nước" },
+    { chunk: "fell onto the rug", vi: "ngã xuống tấm thảm" },
+    { chunk: "dropped a glass", vi: "đánh rơi ly nước" },
+    { chunk: "damaged his notebook", vi: "làm hư hại cuốn vở" },
+    { chunk: "lost his backpack", vi: "làm mất chiếc cặp" },
+    { chunk: "searched everywhere", vi: "tìm kiếm khắp nơi" },
+    { chunk: "found the backpack", vi: "tìm thấy chiếc cặp" },
+    { chunk: "apologized for the mistake", vi: "xin lỗi vì sai lầm" },
+    { chunk: "be more cautious", vi: "thận trọng hơn" },
+    { chunk: "avoid careless accidents", vi: "tránh các tai nạn bất cẩn" }
+  ],
+
+  // 2. Array of 6 Webtoon Scene Frames (Gold Standard Pixar 3D)
   story_scenes: [
     {
       scene_id: "scene_1",
       title_en: "Scene 1: The Waking Mistake",
-      title_vi: "Cảnh 1: Lỗi Sai Buổi Sáng",
-      description_en: "Tom woke up late and accidentally broke his alarm clock while reaching for it clumsily.",
-      description_vi: "Tom thức dậy muộn và vô tình làm vỡ chiếc đồng hồ báo thức khi với tay vụng về.",
+      title_vi: "Cảnh 1: Lỗi Sai Lúc Thức Dậy",
+      description_en: "Tom reached clumsily for his glasses on the nightstand and accidentally broke his alarm clock.",
+      description_vi: "Tom với tay vụng về lấy kính trên bàn đầu giường và vô tình làm vỡ chiếc đồng hồ báo thức.",
       image_url: "/images/week33/webtoon_scene_1.png",
-      audio_sfx_url: "/audio/sfx/alarm_crash.mp3",
+      audio_sfx_url: "/audio/sfx/glass_shatter.mp3",
       lexical_chunks: [
         { word: "broke", chunk: "broke his alarm clock", x: 45, y: 55, vi: "đã làm vỡ đồng hồ" },
-        { word: "clumsy", chunk: "reached clumsily", x: 60, y: 40, vi: "với tay vụng về" }
+        { word: "clumsy", chunk: "reached clumsily", x: 25, y: 40, vi: "với tay vụng về" }
       ]
     },
     {
@@ -217,7 +232,7 @@ export const readingHubData = {
       description_en: "He rushed downstairs in a hurry, slipped on a wet puddle, and fell onto the rug.",
       description_vi: "Cậu vội vã chạy xuống nhà, trượt chân trên vũng nước và ngã xuống tấm thảm.",
       image_url: "/images/week33/webtoon_scene_2.png",
-      audio_sfx_url: "/audio/sfx/slip_fall.mp3",
+      audio_sfx_url: "/audio/sfx/thud_fall.mp3",
       lexical_chunks: [
         { word: "slipped", chunk: "slipped on a puddle", x: 30, y: 65, vi: "đã trượt chân trên vũng nước" },
         { word: "fell", chunk: "fell onto the rug", x: 65, y: 75, vi: "đã ngã xuống thảm" }
@@ -230,7 +245,7 @@ export const readingHubData = {
       description_en: "While making breakfast, he dropped a glass of orange juice and damaged his notebook.",
       description_vi: "Trong lúc làm bữa sáng, cậu làm rơi ly nước cam và làm hư hại cuốn vở bài tập.",
       image_url: "/images/week33/webtoon_scene_3.png",
-      audio_sfx_url: "/audio/sfx/glass_spill.mp3",
+      audio_sfx_url: "/audio/sfx/liquid_splash.mp3",
       lexical_chunks: [
         { word: "dropped", chunk: "dropped a glass", x: 50, y: 50, vi: "đã đánh rơi ly nước" },
         { word: "damaged", chunk: "damaged his notebook", x: 70, y: 60, vi: "bị hư hại cuốn vở" }
@@ -240,13 +255,13 @@ export const readingHubData = {
       scene_id: "scene_4",
       title_en: "Scene 4: The Lost Backpack",
       title_vi: "Cảnh 4: Chiếc Cặp Bị Mất",
-      description_en: "At the bus stop, Tom realized he lost his red backpack and searched everywhere for it.",
-      description_vi: "Tại trạm xe buýt, Tom nhận ra mình đã làm mất chiếc cặp đỏ và tìm kiếm khắp nơi.",
+      description_en: "When he arrived at school, Tom realized he had lost his backpack on the bus.",
+      description_vi: "Khi đến trường, Tom nhận ra mình đã làm mất chiếc cặp xách trên xe buýt.",
       image_url: "/images/week33/webtoon_scene_4.png",
-      audio_sfx_url: "/audio/sfx/bus_horn.mp3",
+      audio_sfx_url: "/audio/sfx/gasp_giggle.mp3",
       lexical_chunks: [
-        { word: "lost", chunk: "lost his backpack", x: 40, y: 55, vi: "đã làm mất cặp" },
-        { word: "searched", chunk: "searched everywhere", x: 60, y: 45, vi: "đã tìm kiếm khắp nơi" }
+        { word: "lost", chunk: "lost his backpack", x: 35, y: 60, vi: "đã làm mất chiếc cặp" },
+        { word: "searched", chunk: "searched everywhere", x: 60, y: 40, vi: "tìm kiếm khắp nơi" }
       ]
     },
     {
@@ -277,7 +292,7 @@ export const readingHubData = {
     }
   ],
 
-  // 3. Array of 5 Cambridge Reading MCQ Comprehension Drills
+  // 3. Array of 10 Cambridge Reading MCQ Comprehension Drills (Check Mode)
   check_mode_drills: [
     {
       id: "chk_w33_01",
@@ -331,6 +346,61 @@ export const readingHubData = {
         "B) To stay at home on bad days.",
         "C) To be more cautious and careful in the future.",
         "D) To buy a new backpack every week."
+      ],
+      answerIndex: 2
+    },
+    {
+      id: "chk_w33_06",
+      question: "What adjective best describes Tom's behavior in the morning?",
+      options: [
+        "A) Clumsy and in a hurry.",
+        "B) Slow and calm.",
+        "C) Angry and loud.",
+        "D) Cautious and prepared."
+      ],
+      answerIndex: 0
+    },
+    {
+      id: "chk_w33_07",
+      question: "Where did Tom leave his lost backpack?",
+      options: [
+        "A) In the kitchen.",
+        "B) On the bus seat.",
+        "C) Under his bed.",
+        "D) At the front gate."
+      ],
+      answerIndex: 1
+    },
+    {
+      id: "chk_w33_08",
+      question: "What did Tom do when he realized he made a mistake?",
+      options: [
+        "A) He blamed his friend Mia.",
+        "B) He apologized to his teacher.",
+        "C) He ran out of the classroom.",
+        "D) He broke another clock."
+      ],
+      answerIndex: 1
+    },
+    {
+      id: "chk_w33_09",
+      question: "Which irregular verb is the past tense of 'fall'?",
+      options: [
+        "A) fallen",
+        "B) fell",
+        "C) falling",
+        "D) falled"
+      ],
+      answerIndex: 1
+    },
+    {
+      id: "chk_w33_10",
+      question: "Which word means 'being very careful to avoid danger or mistakes'?",
+      options: [
+        "A) Careless",
+        "B) Clumsy",
+        "C) Cautious",
+        "D) Ignore"
       ],
       answerIndex: 2
     }

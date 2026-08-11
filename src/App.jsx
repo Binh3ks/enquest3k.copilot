@@ -769,14 +769,50 @@ const MainLayout = () => {
 
             {/* ✨ Nova CTA removed — button is now in the header */}
 
-            {/* Station nav — 4 Cambridge Suite Hub Cards for W33+ vs Legacy 16 Stations for W01-W32 */}
+            {/* Station nav — 4 Cambridge Suite Hub Cards for W33+ (Single horizontal row flex-nowrap with Pastel Inactive themes) */}
             {weekId >= 33 ? (
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-6 px-4">
+              <div className="flex flex-nowrap items-center justify-between gap-3 mb-6 px-2 sm:px-4 overflow-x-auto w-full">
                 {[
-                  { hubId: 1, key: 'read_explore', title: 'Hub 1: World Discovery', desc: 'Webtoon & Story Quest', icon: BookOpen, activeColor: 'bg-indigo-600 border-indigo-400' },
-                  { hubId: 2, key: 'grammar', title: 'Hub 2: Arena Battles', desc: 'Grammar Bridge & Bar Models', icon: Swords, activeColor: 'bg-amber-600 border-amber-400' },
-                  { hubId: 3, key: 'writing', title: 'Hub 3: Writing Studio', desc: '3D Picture Scriptwriter', icon: PenTool, activeColor: 'bg-purple-600 border-purple-400' },
-                  { hubId: 4, key: 'ask_ai', title: 'Hub 4: Nova Talk Show', desc: 'Podcast & AI Examiner 1-1', icon: Radio, activeColor: 'bg-red-600 border-red-400' }
+                  { 
+                    hubId: 1, 
+                    key: 'read_explore', 
+                    title: 'Hub 1: World Discovery', 
+                    desc: 'Webtoon & Story Quest', 
+                    icon: BookOpen, 
+                    activeColor: 'bg-indigo-600 border-indigo-500 text-white shadow-lg ring-4 ring-indigo-500/20',
+                    inactiveColor: 'bg-indigo-50/90 text-indigo-950 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-300',
+                    iconBg: 'bg-indigo-600 text-white'
+                  },
+                  { 
+                    hubId: 2, 
+                    key: 'grammar', 
+                    title: 'Hub 2: Arena Battles', 
+                    desc: 'Grammar Bridge & Bar Models', 
+                    icon: Swords, 
+                    activeColor: 'bg-amber-600 border-amber-500 text-white shadow-lg ring-4 ring-amber-500/20',
+                    inactiveColor: 'bg-amber-50/90 text-amber-950 border-amber-200 hover:bg-amber-100 hover:border-amber-300',
+                    iconBg: 'bg-amber-600 text-white'
+                  },
+                  { 
+                    hubId: 3, 
+                    key: 'writing', 
+                    title: 'Hub 3: Writing Studio', 
+                    desc: '3D Picture Scriptwriter', 
+                    icon: PenTool, 
+                    activeColor: 'bg-purple-600 border-purple-500 text-white shadow-lg ring-4 ring-purple-500/20',
+                    inactiveColor: 'bg-purple-50/90 text-purple-950 border-purple-200 hover:bg-purple-100 hover:border-purple-300',
+                    iconBg: 'bg-purple-600 text-white'
+                  },
+                  { 
+                    hubId: 4, 
+                    key: 'ask_ai', 
+                    title: 'Hub 4: Nova Talk Show', 
+                    desc: 'Podcast & AI Examiner 1-1', 
+                    icon: Radio, 
+                    activeColor: 'bg-rose-600 border-rose-500 text-white shadow-lg ring-4 ring-rose-500/20',
+                    inactiveColor: 'bg-rose-50/90 text-rose-950 border-rose-200 hover:bg-rose-100 hover:border-rose-300',
+                    iconBg: 'bg-rose-600 text-white'
+                  }
                 ].map((h) => {
                   const isHubActive = 
                     (h.hubId === 1 && ['read_explore', 'explore', 'new_words'].includes(tabKey)) ||
@@ -789,18 +825,18 @@ const MainLayout = () => {
                       key={h.hubId}
                       to={`/week/${weekId}/${h.key}`}
                       onClick={() => setShowWelcomeCard(false)}
-                      className={`flex items-center gap-3 px-5 py-3 rounded-2xl transition-all border-2 ${
+                      className={`flex-1 min-w-[210px] flex items-center gap-3 px-4 py-3 rounded-2xl transition-all border-2 shrink-0 ${
                         isHubActive
-                          ? `${h.activeColor} text-white shadow-xl scale-105 ring-4 ring-indigo-500/20`
-                          : `bg-white text-slate-700 border-slate-200 hover:border-slate-300 shadow-sm hover:scale-102`
+                          ? `${h.activeColor} scale-102`
+                          : `${h.inactiveColor} shadow-sm`
                       }`}
                     >
-                      <div className={`p-2 rounded-xl text-white ${isHubActive ? 'bg-white/20' : 'bg-slate-900'}`}>
-                        <h.icon size={20} />
+                      <div className={`p-2.5 rounded-xl shrink-0 shadow-sm ${h.iconBg}`}>
+                        <h.icon size={18} />
                       </div>
-                      <div className="text-left">
-                        <div className="text-xs font-black tracking-tight">{h.title}</div>
-                        <div className={`text-[10px] font-medium ${isHubActive ? 'text-slate-200' : 'text-slate-400'}`}>{h.desc}</div>
+                      <div className="text-left overflow-hidden">
+                        <div className="text-xs font-black tracking-tight whitespace-nowrap truncate">{h.title}</div>
+                        <div className={`text-[10px] font-bold whitespace-nowrap truncate ${isHubActive ? 'text-white/90' : 'text-slate-500'}`}>{h.desc}</div>
                       </div>
                     </Link>
                   );

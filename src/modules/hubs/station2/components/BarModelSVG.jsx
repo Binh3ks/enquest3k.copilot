@@ -71,7 +71,7 @@ export function BarModelSVG({ modelData }) {
                   fontWeight="extrabold"
                   textAnchor="middle"
                 >
-                  Tổng: {totalLabel}
+                  Total: {totalLabel}
                 </text>
               </g>
             )}

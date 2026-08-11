@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import VoiceService from '../../services/voiceService';
 import { Mic, Volume2, Radio, Star, AlertTriangle, MessageSquare, Play, RefreshCw, CheckCircle2 } from 'lucide-react';
 
 export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
@@ -47,13 +48,17 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         }
       ];
 
-  // Play dialogue sentence audio via TTS
-  const handlePlaySentence = (text) => {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      window.speechSynthesis.speak(utterance);
+  // Play dialogue sentence audio via Primary Google Direct TTS with Browser fallback
+  const handlePlaySentence = async (text) => {
+    try {
+      await VoiceService.speak(text, 'shadowing');
+    } catch (err) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        window.speechSynthesis.speak(utterance);
+      }
     }
   };
 

@@ -33,6 +33,15 @@ export function FlashArena({ customSets, onAttemptResult }) {
   const activeSets = customSets || WEEK33_VOCAB_SETS;
   const currentPairs = activeSets[activeSetKey] || activeSets.set_w33_01 || Object.values(activeSets)[0];
 
+  const [shuffledViList, setShuffledViList] = useState([]);
+
+  // Fisher-Yates Shuffle for Vietnamese column to ensure non-aligned items
+  useEffect(() => {
+    if (!currentPairs || currentPairs.length === 0) return;
+    const shuffled = [...currentPairs].sort(() => Math.random() - 0.5);
+    setShuffledViList(shuffled);
+  }, [activeSetKey, customSets]);
+
   // Timer Countdown Engine (Only active in Speed mode)
   useEffect(() => {
     if (playMode !== 'speed' || isGameOver) return;
@@ -232,10 +241,10 @@ export function FlashArena({ customSets, onAttemptResult }) {
             })}
           </div>
 
-          {/* Vietnamese Column */}
+          {/* Vietnamese Column (Shuffled to prevent straight row matching) */}
           <div className="space-y-2.5">
             <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">VIETNAMESE</div>
-            {currentPairs.map((item) => {
+            {(shuffledViList.length > 0 ? shuffledViList : currentPairs).map((item) => {
               const isMatched = matchedIds.includes(item.id);
               const isSelected = selectedVi?.id === item.id;
               return (
