@@ -179,8 +179,8 @@ export async function saveProgressWithBackup({ weekId, stationId, data, isComple
     markJournalSynced(weekId, stationId);
     return result;
   } catch (err) {
-    console.warn('[progressBackup] server save failed after retries:', err?.message);
-    throw err;
+    console.warn('[progressBackup] Server save unavailable (saved to local journal):', err?.message);
+    return { ok: false, offline: true, message: err?.message };
   } finally {
     inFlight.delete(k);
   }
