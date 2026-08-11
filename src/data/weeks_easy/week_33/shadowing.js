@@ -1,32 +1,67 @@
+// Cambridge A2 Flyers shadowing.js — Week 33
 export default {
-  videoId: "gWOqA3pUaTk",
-  content_en: `Jake had a bad day at school last Tuesday. He was late, so he ran in the corridor. He hit his knee on the table. He fell down and broke a glass cup. His books fell on the floor and his pencil case opened. Everything went wrong that morning.
-
-Jake's knee **was hurt** a lot. The nurse came and put a cold pack on his knee. His arm **was hurt** too. His friends saw him and felt sorry for him. Everyone at school knew Jake had a very bad day.
-
-The teacher asked Jake what happened. Jake told the truth. The teacher explained an important lesson — everyone must **walk carefully** in the corridor. Jake understood and promised to be careful. His teacher smiled and gave him a pass to go home early.
-
-At home, Jake rested and his knee **got better**. He learned a big lesson: always **walk carefully** in the corridor. He never forgot this lesson. The next day, Jake walked slowly and safely to class.`,
-  script: [
-    { id: 1, text: "Jake had a bad day at school last Tuesday.", vi: "Jake có một ngày tồi tệ ở trường vào thứ Ba tuần trước." },
-    { id: 2, text: "He was late, so he ran in the corridor.", vi: "Cậu bị muộn, nên cậu chạy trong hành lang." },
-    { id: 3, text: "He hit his knee on the table.", vi: "Cậu đập đầu gối vào bàn." },
-    { id: 4, text: "He fell down and broke a glass cup.", vi: "Cậu ngã xuống và làm vỡ một chiếc cốc thủy tinh." },
-    { id: 5, text: "His books fell on the floor and his pencil case opened.", vi: "Sách của cậu rơi xuống sàn và hộp bút bị mở ra." },
-    { id: 6, text: "Everything went wrong that morning.", vi: "Mọi thứ đều sai sót vào buổi sáng hôm đó." },
-    { id: 7, text: "Jake's knee was hurt a lot.", vi: "Đầu gối của Jake bị đau nhiều." },
-    { id: 8, text: "The nurse came and put a cold pack on his knee.", vi: "Y tá đến và đặt túi chườm lạnh lên đầu gối của cậu." },
-    { id: 9, text: "His arm was hurt too.", vi: "Cánh tay của cậu cũng bị đau." },
-    { id: 10, text: "His friends saw him and felt sorry for him.", vi: "Bạn bè nhìn cậu và thương hại cho cậu." },
-    { id: 11, text: "Everyone at school knew Jake had a very bad day.", vi: "Mọi người ở trường đều biết Jake có một ngày rất tệ." },
-    { id: 12, text: "The teacher asked Jake what happened.", vi: "Giáo viên hỏi Jake chuyện gì đã xảy ra." },
-    { id: 13, text: "Jake told the truth.", vi: "Jake nói sự thật." },
-    { id: 14, text: "The teacher explained an important lesson — everyone must walk carefully in the corridor.", vi: "Giáo viên giải thích một bài học quan trọng — mọi người phải đi cẩn thận trong hành lang." },
-    { id: 15, text: "Jake understood and promised to be careful.", vi: "Jake hiểu và hứa sẽ cẩn thận." },
-    { id: 16, text: "His teacher smiled and gave him a pass to go home early.", vi: "Giáo viên mỉm cười và đưa cậu giấy phép về nhà sớm." },
-    { id: 17, text: "At home, Jake rested and his knee got better.", vi: "Ở nhà, Jake nghỉ ngơi và đầu gối khá hơn." },
-    { id: 18, text: "He learned a big lesson: always walk carefully in the corridor.", vi: "Cậu học được một bài học lớn: luôn đi cẩn thận trong hành lang." },
-    { id: 19, text: "He never forgot this lesson.", vi: "Cậu không bao giờ quên bài học này." },
-    { id: 20, text: "The next day, Jake walked slowly and safely to class.", vi: "Ngày hôm sau, Jake đi chậm và an toàn đến lớp." },
-  ]
+  videoId: "shadowing_w33",
+  title: "Corridor Safety & School Care — Shadowing",
+  sentences: [
+  {
+    "id": 1,
+    "text": "Walk carefully down the school corridor.",
+    "start_time": 0,
+    "end_time": 3
+  },
+  {
+    "id": 2,
+    "text": "He slipped on the wet floor near the stairs.",
+    "start_time": 3,
+    "end_time": 6
+  },
+  {
+    "id": 3,
+    "text": "The nurse applied a clean bandage to his knee.",
+    "start_time": 6,
+    "end_time": 9
+  },
+  {
+    "id": 4,
+    "text": "The school nurse treated the boy gently.",
+    "start_time": 9,
+    "end_time": 12
+  },
+  {
+    "id": 5,
+    "text": "Call the nurse in an emergency.",
+    "start_time": 12,
+    "end_time": 15
+  },
+  {
+    "id": 6,
+    "text": "Students walked cautiously on the wet grass.",
+    "start_time": 15,
+    "end_time": 18
+  },
+  {
+    "id": 7,
+    "text": "Look at the yellow warning sign on the floor.",
+    "start_time": 18,
+    "end_time": 21
+  },
+  {
+    "id": 8,
+    "text": "The cut on his knee stopped bleeding quickly.",
+    "start_time": 21,
+    "end_time": 24
+  },
+  {
+    "id": 9,
+    "text": "The headmaster praised Jake for his fast reaction.",
+    "start_time": 24,
+    "end_time": 27
+  },
+  {
+    "id": 10,
+    "text": "Everyone felt relieved when the boy smiled again.",
+    "start_time": 27,
+    "end_time": 30
+  }
+]
 };

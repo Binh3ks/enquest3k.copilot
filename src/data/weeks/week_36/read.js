@@ -1,6 +1,6 @@
 // Cambridge A2 Flyers read.js — Week 36
 export default {
-  title: "The Secret Cave Exploration",
+  title: "Leo and Mia's Hidden Cave Discovery",
   image_url: "/images/week36/read_cover_w36.jpg",
   audio_url: "/audio/week36/read_main.mp3",
   content_en: `Early on a **sunny Saturday morning**, Leo and Mia went hiking in the **green pine forest**. While they were **walking along the rocky path**, they **discovered a hidden entrance** to a **mysterious cave**.
@@ -51,9 +51,9 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
     "question_en": "What was inside the dusty wooden box?",
     "options": [
       "An ancient map and a shiny brass compass",
-      "Gold coins and silver rings",
-      "Old storybooks",
-      "A set of keys"
+      "Gold coins and diamonds",
+      "Old books and letters",
+      "A toy train"
     ],
     "answer": "An ancient map and a shiny brass compass",
     "clue_statement": "They found an ancient map with a shiny brass compass.",
@@ -64,19 +64,19 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
     "id": 4,
     "question_en": "How did their hearts react to the discovery?",
     "options": [
-      "Beat fast with excitement",
-      "Stopped suddenly",
-      "Felt sad",
-      "Ached badly"
+      "Their hearts beat fast with excitement",
+      "They felt scared and ran home",
+      "They went to sleep",
+      "They cried loudly"
     ],
-    "answer": "Beat fast with excitement",
+    "answer": "Their hearts beat fast with excitement",
     "clue_statement": "Their hearts beat fast with excitement.",
-    "hint_en": "Beat fast...",
-    "hint_vi": "Tim đập nhanh..."
+    "hint_en": "Hearts beat...",
+    "hint_vi": "Tim đập..."
   }
 ],
   read_stem: {
-  "title": "The Secret Cave Exploration",
+  "title": "Leo and Mia's Hidden Cave Discovery",
   "image_url": "/images/week36/read_cover_w36.jpg",
   "audio_url": "/audio/week36/read_main.mp3",
   "content_en": "Early on a **sunny Saturday morning**, Leo and Mia went hiking in the **green pine forest**. While they were **walking along the rocky path**, they **discovered a hidden entrance** to a **mysterious cave**.\n\nThey **turned on their bright flashlights** and **stepped inside carefully**. Inside the cave, **cool drops of water** dripped from the **rocky ceiling**, and **dark grey shadows** danced on the walls.\n\nSuddenly, Mia **spotted a dusty wooden box** tucked behind a large stone. They opened it gently and **found an ancient map** with a **shiny brass compass**.\n\nTheir **hearts beat fast** with excitement. They realized it was a **historical treasure map** left by old explorers. They **felt extremely excited** and **burst into laughter**, ready for their next big adventure.",
@@ -115,9 +115,9 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "question_en": "What was inside the dusty wooden box?",
       "options": [
         "An ancient map and a shiny brass compass",
-        "Gold coins and silver rings",
-        "Old storybooks",
-        "A set of keys"
+        "Gold coins and diamonds",
+        "Old books and letters",
+        "A toy train"
       ],
       "answer": "An ancient map and a shiny brass compass",
       "clue_statement": "They found an ancient map with a shiny brass compass.",
@@ -128,15 +128,15 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "id": 4,
       "question_en": "How did their hearts react to the discovery?",
       "options": [
-        "Beat fast with excitement",
-        "Stopped suddenly",
-        "Felt sad",
-        "Ached badly"
+        "Their hearts beat fast with excitement",
+        "They felt scared and ran home",
+        "They went to sleep",
+        "They cried loudly"
       ],
-      "answer": "Beat fast with excitement",
+      "answer": "Their hearts beat fast with excitement",
       "clue_statement": "Their hearts beat fast with excitement.",
-      "hint_en": "Beat fast...",
-      "hint_vi": "Tim đập nhanh..."
+      "hint_en": "Hearts beat...",
+      "hint_vi": "Tim đập..."
     }
   ]
 },

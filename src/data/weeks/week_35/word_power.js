@@ -21,106 +21,106 @@ export default {
     "example": "We must care for our urban environment."
   },
   {
-    "phrase": "hesitation",
-    "definition_en": "pausing before doing something because of doubt",
-    "definition_vi": "sự do dự",
-    "example": "They helped clean up without any hesitation."
+    "phrase": "protective",
+    "definition_en": "serving or intended to protect someone or something",
+    "definition_vi": "bảo hộ",
+    "example": "Wear protective gloves when picking up trash."
   },
   {
-    "phrase": "applaud",
-    "definition_en": "show approval or praise by clapping hands",
-    "definition_vi": "vỗ tay khen ngợi",
-    "example": "Park visitors applauded their hard work."
+    "phrase": "scattered",
+    "definition_en": "thrown around in various directions",
+    "definition_vi": "vứt bừa bãi",
+    "example": "Plastic wrappers were scattered on the grass."
   },
   {
-    "phrase": "community",
-    "definition_en": "a group of people living in the same place",
-    "definition_vi": "cộng đồng",
-    "example": "Our local community loves the green park."
+    "phrase": "supertrees",
+    "definition_en": "tall plant-covered towers that harvest rainwater and solar energy",
+    "definition_vi": "siêu cây công nghệ",
+    "example": "Singapore built tall futuristic supertrees."
   },
   {
-    "phrase": "supertree",
-    "definition_en": "a tall tree-like structure covered in greenery",
-    "definition_vi": "siêu cây",
-    "example": "Singapore supertrees harvest solar power."
+    "phrase": "urban",
+    "definition_en": "in, relating to, or characteristic of a town or city",
+    "definition_vi": "thuộc đô thị",
+    "example": "Urban green parks improve city air quality."
   },
   {
-    "phrase": "futuristic",
-    "definition_en": "having or involving very modern technology or design",
-    "definition_vi": "hiện đại tương lai",
-    "example": "The park has futuristic plant towers."
+    "phrase": "carbon",
+    "definition_en": "a chemical element present in carbon dioxide",
+    "definition_vi": "khí các-bon",
+    "example": "Trees absorb carbon dioxide to clean air."
+  },
+  {
+    "phrase": "rainwater",
+    "definition_en": "water that has fallen as rain",
+    "definition_vi": "nước mưa",
+    "example": "Supertrees harvest rainwater for plants."
+  },
+  {
+    "phrase": "generate",
+    "definition_en": "produce or create something like energy or power",
+    "definition_vi": "tạo ra",
+    "example": "Solar panels generate clean electrical power."
+  },
+  {
+    "phrase": "nature",
+    "definition_en": "the physical world including plants, animals, and landscapes",
+    "definition_vi": "thiên nhiên",
+    "example": "Protecting nature is our shared responsibility."
+  },
+  {
+    "phrase": "effort",
+    "definition_en": "a vigorous or determined attempt to achieve something",
+    "definition_vi": "nỗ lực",
+    "example": "Their great cleaning effort paid off."
   },
   {
     "phrase": "volunteer",
     "definition_en": "a person who freely offers to take part in an enterprise",
     "definition_vi": "tình nguyện viên",
-    "example": "Volunteers cleaned the lake shore."
-  },
-  {
-    "phrase": "habitat",
-    "definition_en": "the natural home of an animal or plant",
-    "definition_vi": "môi trường sống",
-    "example": "The park is a safe habitat for wild ducks."
+    "example": "Many volunteers joined the weekend park cleanup."
   },
   {
     "phrase": "pollution",
-    "definition_en": "harmful substances introduced into the environment",
+    "definition_en": "the presence in the environment of a substance that has harmful effects",
     "definition_vi": "sự ô nhiễm",
-    "example": "Recycling reduces plastic pollution."
+    "example": "Plastic pollution hurts fish and sea birds."
   },
   {
-    "phrase": "protect",
-    "definition_en": "keep safe from harm or injury",
-    "definition_vi": "bảo vệ",
-    "example": "Protect nature by planting young trees."
+    "phrase": "community",
+    "definition_en": "a group of people living in the same place or having a particular characteristic",
+    "definition_vi": "cộng đồng",
+    "example": "Our local community loves the green park."
   },
   {
-    "phrase": "nature",
-    "definition_en": "the physical world including plants and animals",
-    "definition_vi": "thiên nhiên",
-    "example": "Spend time outside enjoying nature."
-  },
-  {
-    "phrase": "gardening",
-    "definition_en": "the activity of tending and cultivating a garden",
-    "definition_vi": "làm vườn",
-    "example": "Gardening helps flowers grow healthy."
-  },
-  {
-    "phrase": "cleanliness",
-    "definition_en": "the state or quality of being clean",
-    "definition_vi": "sự sạch sẽ",
-    "example": "Maintain cleanliness in your neighborhood."
-  },
-  {
-    "phrase": "restore",
-    "definition_en": "bring back to a former or original condition",
-    "definition_vi": "khôi phục",
-    "example": "They helped restore the dirty park."
-  },
-  {
-    "phrase": "breathe",
-    "definition_en": "take air into the lungs and expel it",
-    "definition_vi": "hít thở",
-    "example": "Trees clean air so we breathe easily."
+    "phrase": "biodiversity",
+    "definition_en": "the variety of plant and animal life in a habitat",
+    "definition_vi": "đa dạng sinh học",
+    "example": "Parks support biodiversity in big cities."
   },
   {
     "phrase": "oxygen",
-    "definition_en": "a colorless reactive gas essential for life",
-    "definition_vi": "oxy",
+    "definition_en": "a colorless reactive gas essential to human respiration",
+    "definition_vi": "khí ô-xy",
     "example": "Green leaves produce fresh oxygen."
   },
   {
-    "phrase": "trash",
-    "definition_en": "waste material or things that are discarded",
-    "definition_vi": "rác",
-    "example": "Dispose of trash in proper bins."
+    "phrase": "sustainable",
+    "definition_en": "able to be maintained at a certain rate or level",
+    "definition_vi": "bền vững",
+    "example": "Solar power is a sustainable energy source."
   },
   {
     "phrase": "wildlife",
-    "definition_en": "wild animals collectively",
+    "definition_en": "wild animals collectively; native fauna of a region",
     "definition_vi": "động vật hoang dã",
-    "example": "City parks protect urban wildlife."
+    "example": "City trees provide homes for wildlife."
+  },
+  {
+    "phrase": "beautify",
+    "definition_en": "improve the appearance of a place",
+    "definition_vi": "làm đẹp",
+    "example": "Planting flowers helps beautify our neighborhood."
   }
 ]
 };

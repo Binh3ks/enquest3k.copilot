@@ -1,8 +1,8 @@
 // Cambridge A2 Flyers explore.js — Week 37
 export default {
   image_url: "/images/week37/explore_w37.jpg",
-  content_en: "The Olympic Games are the world's biggest sports celebration where **athletes from over 200 nations** compete peacefully. Running together in relay teams teaches us that true success comes from **working as one team**.",
-  content_vi: "Thế vận hội Olympic là ngày hội thể thao lớn nhất thế giới.",
+  content_en: "Relay races originate from ancient messenger runners who carried torches across cities. Today, athletes from **over 200 nations** compete peacefully in the Olympic Games. The Olympic Truce (*Ekecheiria*) was an ancient Greek tradition where all wars stopped during the games. Relay teams teach us that **working as one team leads to success**.",
+  content_vi: "Chạy tiếp sức bắt nguồn từ những người đưa tin cổ đại mang ngọn đuốc qua các thành phố. Ngày nay, các vận động viên từ hơn 200 quốc gia thi đấu hòa bình tại Olympic.",
   key_vocabulary: [
   {
     "word": "annual",

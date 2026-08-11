@@ -1,58 +1,36 @@
-// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper
-// Easy Mode Index
-
-import read from './read.js';
+// Index wrapper for Week 34
+import read_explore from './read.js';
 import explore from './explore.js';
-import vocab from './vocab.js';
+import new_words from './vocab.js';
+import word_match from './word_match.js';
+import word_power from './word_power.js';
 import grammar from './grammar.js';
+import daily_watch from './daily_watch.js';
+import logic_lab from './logic_lab.js';
+import mindmap_speaking from './mindmap.js';
 import ask_ai from './ask_ai.js';
-import logic_science from './logic_science.js';
-import singapore_math from './singapore_math.js';
+import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
-import writing from './writing.js';
-import word_power from './word_power.js';
-import mindmap from './mindmap.js';
-import word_match from './word_match.js';
-import daily_watch from './daily_watch.js';
-import { week34GamesEasy as games } from './games.js';
 
-const weekData = {
+export const weekData = {
   weekId: 34,
-  isEasy: true,
-  weekTitle_en: "Storytelling Practice 1 — The Ant and the Grasshopper",
-  weekTitle_vi: "Luyện Kể Chuyện 1 — Kiến và Châu Chấu",
-  chunk_focus: [...new Set([...(read.chunk_focus || []), ...(explore?.chunk_focus || [])])],
-  dictionary: { ...(read.dictionary || {}), ...(explore?.dictionary || {}) },
-  grammar_focus: "Relative Clauses WHO / WHICH / THAT",
-
-  global_vocab: vocab.vocab,
-
-  voiceConfig: {
-    narration: 'en-US-Journey-F',
-    vocabulary: 'en-US-Neural2-F',
-    dictation: 'en-US-Neural2-F',
-    shadowing: 'en-US-Journey-F',
-    questions: 'en-US-Neural2-D',
-    mindmap: 'en-US-Neural2-D',
-    logic_lab: 'en-US-Neural2-D'
-  },
-
+  title: "The Ant and the Grasshopper — Fables & Moral",
+  title_vi: "Con Kiến và Con Châu Chấu — Truyện Ngụ Ngôn",
   stations: {
-    read_explore: read,
-    new_words: vocab,
-    word_match: word_match,
-    grammar: grammar,
-    word_power: word_power,
-    ask_ai: ask_ai,
-    logic_lab: { logic_science, singapore_math },
-    dictation: dictation,
-    shadowing: shadowing,
-    writing: writing,
-    explore: explore,
-    mindmap_speaking: mindmap,
-    daily_watch: daily_watch,
-    game_hub: games
+    read_explore,
+    explore,
+    new_words,
+    word_match,
+    word_power,
+    grammar,
+    daily_watch,
+    logic_lab,
+    mindmap_speaking,
+    ask_ai,
+    writing,
+    dictation,
+    shadowing
   }
 };
 

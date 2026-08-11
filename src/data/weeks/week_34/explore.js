@@ -5,64 +5,64 @@ export default {
   content_vi: "Truyện ngụ ngôn là những câu chuyện ngắn cổ xưa dạy chúng ta những bài học cuộc sống quý giá. Aesop là một người kể chuyện nổi tiếng từ Hy Lạp.",
   key_vocabulary: [
   {
-    "word": "fable",
-    "definition": "a short story that teaches a moral lesson using animals",
-    "definition_vi": "truyện ngụ ngôn",
-    "example": "The fable of the ant teaches us hard work."
+    "word": "hardworking",
+    "definition": "tending to work with energy and commitment",
+    "definition_vi": "chăm chỉ",
+    "example": "The hardworking ant gathered food all summer."
   },
   {
     "word": "grasshopper",
-    "definition": "a plant-eating insect with long hind legs for jumping",
-    "definition_vi": "châu chấu",
-    "example": "The grasshopper sang all summer long."
+    "definition": "a plant-eating insect with long hind legs for leaping",
+    "definition_vi": "con châu chấu",
+    "example": "The grasshopper sang under the shady tree."
   },
   {
-    "word": "hardworking",
-    "definition": "putting a lot of effort into a job and working diligently",
-    "definition_vi": "chăm chỉ",
-    "example": "The hardworking ant stored wheat grains."
+    "word": "grain",
+    "definition": "small hard seeds of food plants like wheat or corn",
+    "definition_vi": "hạt lúa mì",
+    "example": "Ants store wheat grain for the cold winter."
   },
   {
-    "word": "wheat",
-    "definition": "a cereal plant grown for its grain to make flour",
-    "definition_vi": "lúa mì",
-    "example": "They gathered wheat grains from the field."
+    "word": "shivering",
+    "definition": "shaking slightly because of being cold or frightened",
+    "definition_vi": "run rẩy",
+    "example": "He was shivering in the freezing winter wind."
   },
   {
-    "word": "cheerfully",
-    "definition": "in a happy and optimistic manner",
-    "definition_vi": "vui vẻ",
-    "example": "The bird sang cheerfully in the morning."
+    "word": "fable",
+    "definition": "a short story typically with animals conveying a moral",
+    "definition_vi": "truyện ngụ ngôn",
+    "example": "Aesop wrote many famous animal fables."
   }
 ],
   check_questions: [
   {
     "id": 1,
-    "question_en": "Where was Aesop the storyteller from?",
+    "question_en": "Who was Aesop?",
     "options": [
-      "Greece",
-      "Canada",
-      "Japan",
-      "Egypt"
+      "A famous storyteller from ancient Greece",
+      "A modern Canadian scientist",
+      "A famous runner from Kenya",
+      "A Japanese headmaster"
     ],
-    "answer": "Greece",
+    "answer": "A famous storyteller from ancient Greece",
     "clue_statement": "Aesop was a famous storyteller from Greece.",
     "hint_en": "Storyteller from...",
     "hint_vi": "Người kể chuyện từ..."
   },
   {
     "id": 2,
-    "question_en": "What main lesson do fables teach children?",
+    "question_en": "What main lesson do Aesop's fables teach us?",
     "options": [
-      "Valuable life lessons and moral values",
-      "How to drive a car",
-      "How to build computers",
-      "How to fly planes"
+      "Hard work and patience lead to success",
+      "Singing is better than working",
+      "Winter is the warmest season",
+      "Ants live in modern houses"
     ],
-    "answer": "Valuable life lessons and moral values",
-    "clue_statement": "Fables teach us valuable life lessons.",
-    "hint_en": "Valuable life...",
-    "hint_vi": "Bài học..."
+    "answer": "Hard work and patience lead to success",
+    "clue_statement": "Fables show how hard work and patience always lead to success.",
+    "hint_en": "Hard work and...",
+    "hint_vi": "Chăm chỉ và..."
   }
 ]
 };

@@ -2,6 +2,7 @@
 export default {
   "weekId": 36,
   "title": "The Secret Cave — Adventure & Exploration",
+  "title_vi": "Hang Động Bí Ẩn — Phiêu Lưu & Khám Phá",
   "target_vocab": [
     {
       "word": "mysterious",
@@ -144,31 +145,75 @@ export default {
       "ipa": "/ˈkʌr.ɪdʒ/"
     }
   ],
-  "story_missions": [
+  "sentences": [
     {
       "id": 1,
-      "title": "Retell STEM Story: The Secret Cave Exploration",
-      "target_turns": 15
+      "text": "They found a mysterious entrance behind the rock.",
+      "translation": "Ví dụ: mysterious trong câu."
     },
     {
       "id": 2,
-      "title": "Retell Social Story: Son Doong & Underground Wonders",
-      "target_turns": 15
+      "text": "Turn on your flashlight inside the dark cave.",
+      "translation": "Ví dụ: flashlight trong câu."
     },
     {
       "id": 3,
-      "title": "Personal Life Connection",
-      "target_turns": 15
+      "text": "The cave entrance was covered with vines.",
+      "translation": "Ví dụ: entrance trong câu."
+    },
+    {
+      "id": 4,
+      "text": "The explorer drew an ancient parchment map.",
+      "translation": "Ví dụ: ancient trong câu."
+    },
+    {
+      "id": 5,
+      "text": "Use a shiny brass compass to find north.",
+      "translation": "Ví dụ: compass trong câu."
+    },
+    {
+      "id": 6,
+      "text": "Water dripped from a long stalactite.",
+      "translation": "Ví dụ: stalactite trong câu."
+    },
+    {
+      "id": 7,
+      "text": "Brave explorers mapped the deep cave.",
+      "translation": "Ví dụ: explorer trong câu."
+    },
+    {
+      "id": 8,
+      "text": "The ancient map was written on parchment.",
+      "translation": "Ví dụ: parchment trong câu."
     }
   ],
   "spark_talk": [
     {
       "id": 1,
-      "topic": "The Secret Cave — Adventure & Exploration — Safety & Preparation"
+      "topic_en": "What safety rule did Jake follow in The Secret Cave — Adventure & Exploration?",
+      "topic_vi": "Quy tắc an toàn nào Jake đã tuân thủ?"
     },
     {
       "id": 2,
-      "topic": "The Secret Cave — Adventure & Exploration — Teamwork & Care"
+      "topic_en": "How can you help a classmate who falls down?",
+      "topic_vi": "Bạn có thể giúp bạn cùng lớp như thế nào khi bạn ấy bị ngã?"
+    }
+  ],
+  "story_missions": [
+    {
+      "id": 1,
+      "title": "Mission 1: Retell STEM Story",
+      "prompt": "Retell how Jake helped his friend in The Secret Cave — Adventure & Exploration."
+    },
+    {
+      "id": 2,
+      "title": "Mission 2: Retell Social Story",
+      "prompt": "Explain global school safety rules from Son Doong & Underground Wonders."
+    },
+    {
+      "id": 3,
+      "title": "Mission 3: Personal Connection",
+      "prompt": "Share an experience where you helped someone at school."
     }
   ]
 };

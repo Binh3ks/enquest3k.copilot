@@ -1,15 +1,53 @@
-// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper
-// Dictation Station — Easy Mode
-
-export default {
-  sentences: [
-    { id: 1, text: "A very long time ago, there was a hard-working ant who lived in a small hill.", meaning: "Rất lâu trước đây, có một con kiến chăm chỉ sống trên một gò đất nhỏ." },
-    { id: 2, text: "There was also a lazy grasshopper who lived under a big green leaf.", meaning: "Cũng có một con châu chấu lười biếng sống dưới một chiếc lá xanh lớn." },
-    { id: 3, text: "In the warm summer sun, the ant went to the field every day.", meaning: "Dưới ánh nắng mùa hè ấm áp, con kiến đi ra đồng mỗi ngày." },
-    { id: 4, text: "She gathered seeds and stored food for the coming winter.", meaning: "Cô ấy nhặt hạt và dự trữ thức ăn cho mùa đông sắp tới." },
-    { id: 5, text: "The grasshopper jumped around and sang songs all day long.", meaning: "Con châu chấu nhảy tung tăng và hát ríu rít cả ngày." },
-    { id: 6, text: "Then one cold day in autumn, the first frost appeared.", meaning: "Rồi một ngày lạnh vào mùa thu, sương giá đầu tiên xuất hiện." },
-    { id: 7, text: "The grasshopper **learned an important lesson**: **work hard** and **prepare for the future**.", meaning: "Con châu chấu học được một bài học quan trọng: luôn làm việc chăm chỉ và chuẩn bị cho tương lai." },
-    { id: 8, text: "The fable teaches us that **hard work pays off** in the end.", meaning: "Truyện ngụ ngôn dạy chúng ta rằng sự chăm chỉ luôn được đền bù cuối cùng." }
-  ]
-};
+// Cambridge A2 Flyers dictation.js — Week 34
+export default [
+  {
+    "id": 1,
+    "sentence": "The hardworking ant gathered food all summer.",
+    "audio_url": "/audio/week34/dictation_1.mp3"
+  },
+  {
+    "id": 2,
+    "sentence": "The grasshopper sang under the shady tree.",
+    "audio_url": "/audio/week34/dictation_2.mp3"
+  },
+  {
+    "id": 3,
+    "sentence": "Ants store wheat grain for the cold winter.",
+    "audio_url": "/audio/week34/dictation_3.mp3"
+  },
+  {
+    "id": 4,
+    "sentence": "He was shivering in the freezing winter wind.",
+    "audio_url": "/audio/week34/dictation_4.mp3"
+  },
+  {
+    "id": 5,
+    "sentence": "Aesop wrote many famous animal fables.",
+    "audio_url": "/audio/week34/dictation_5.mp3"
+  },
+  {
+    "id": 6,
+    "sentence": "The grasshopper felt deeply grateful to the ant.",
+    "audio_url": "/audio/week34/dictation_6.mp3"
+  },
+  {
+    "id": 7,
+    "sentence": "His diligence paid off when winter came.",
+    "audio_url": "/audio/week34/dictation_7.mp3"
+  },
+  {
+    "id": 8,
+    "sentence": "Patience and hard work bring great success.",
+    "audio_url": "/audio/week34/dictation_8.mp3"
+  },
+  {
+    "id": 9,
+    "sentence": "Every fable has a clear moral lesson.",
+    "audio_url": "/audio/week34/dictation_9.mp3"
+  },
+  {
+    "id": 10,
+    "sentence": "He sang cheerfully during the warm summer.",
+    "audio_url": "/audio/week34/dictation_10.mp3"
+  }
+];

@@ -1,16 +1,16 @@
 // Cambridge A2 Flyers read.js — Week 34
 export default {
-  title: "The Ant and the Grasshopper Fable",
+  title: "The Diligent Ant and the Carefree Grasshopper",
   image_url: "/images/week34/read_cover_w34.jpg",
   audio_url: "/audio/week34/read_main.mp3",
-  content_en: `On a **bright sunny summer day**, the **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, the **lazy grasshopper** was **singing cheerfully** under a **green tree**.
+  content_en: `On a **bright sunny summer day**, a **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, a **lazy grasshopper** was **singing cheerfully** under a **green tree**.
 
 When the **cold winter arrived**, **snow covered the ground everywhere**. The grasshopper **had no food** and was **shivering in the cold**.
 
 He **slowly walked** to the ant's **warm wooden house** and **knocked on the door**. The **kind ant** opened the door and **invited him inside** for **warm soup**.
 
 The grasshopper **felt deeply grateful** and **learned a valuable lesson**. **From that day on**, he **promised to work hard** every summer.`,
-  content_vi: `Vào một **ngày hè nắng đẹp rực rỡ**, chú **kiến chăm chỉ** đang **nhặt những hạt lúa mì**. **Trong khi đó**, chú **châu chấu lười biếng** đang **hát ca vui vẻ** dưới bóng cây xanh.
+  content_vi: `Vào một **ngày hè nắng đẹp rực rỡ**, **kiến chăm chỉ** đang **nhặt những hạt lúa mì**. **Trong khi đó**, **châu chấu lười biếng** đang **hát ca vui vẻ** dưới **cây xanh**.
 
 Khi **mùa đông lạnh giá đến**, **tuyết phủ kín mặt đất khắp nơi**. Châu chấu **không có thức ăn** và đang **run rẩy trong giá lạnh**.
 
@@ -76,11 +76,11 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
   }
 ],
   read_stem: {
-  "title": "The Ant and the Grasshopper Fable",
+  "title": "The Diligent Ant and the Carefree Grasshopper",
   "image_url": "/images/week34/read_cover_w34.jpg",
   "audio_url": "/audio/week34/read_main.mp3",
-  "content_en": "On a **bright sunny summer day**, the **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, the **lazy grasshopper** was **singing cheerfully** under a **green tree**.\n\nWhen the **cold winter arrived**, **snow covered the ground everywhere**. The grasshopper **had no food** and was **shivering in the cold**.\n\nHe **slowly walked** to the ant's **warm wooden house** and **knocked on the door**. The **kind ant** opened the door and **invited him inside** for **warm soup**.\n\nThe grasshopper **felt deeply grateful** and **learned a valuable lesson**. **From that day on**, he **promised to work hard** every summer.",
-  "content_vi": "Vào một **ngày hè nắng đẹp rực rỡ**, chú **kiến chăm chỉ** đang **nhặt những hạt lúa mì**. **Trong khi đó**, chú **châu chấu lười biếng** đang **hát ca vui vẻ** dưới bóng cây xanh.\n\nKhi **mùa đông lạnh giá đến**, **tuyết phủ kín mặt đất khắp nơi**. Châu chấu **không có thức ăn** và đang **run rẩy trong giá lạnh**.\n\nChú **chậm rãi bước đến** ngôi **nhà gỗ ấm áp** của kiến và **gõ cửa**. Chú **kiến tốt bụng** mở cửa và **mời chú vào trong** dùng **súp nóng**.\n\nChâu chấu **cảm thấy cực kỳ biết ơn** và **học được một bài học quý giá**. **Từ ngày đó trở đi**, chú **hứa sẽ làm việc chăm chỉ** mỗi mùa hè.",
+  "content_en": "On a **bright sunny summer day**, a **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, a **lazy grasshopper** was **singing cheerfully** under a **green tree**.\n\nWhen the **cold winter arrived**, **snow covered the ground everywhere**. The grasshopper **had no food** and was **shivering in the cold**.\n\nHe **slowly walked** to the ant's **warm wooden house** and **knocked on the door**. The **kind ant** opened the door and **invited him inside** for **warm soup**.\n\nThe grasshopper **felt deeply grateful** and **learned a valuable lesson**. **From that day on**, he **promised to work hard** every summer.",
+  "content_vi": "Vào một **ngày hè nắng đẹp rực rỡ**, **kiến chăm chỉ** đang **nhặt những hạt lúa mì**. **Trong khi đó**, **châu chấu lười biếng** đang **hát ca vui vẻ** dưới **cây xanh**.\n\nKhi **mùa đông lạnh giá đến**, **tuyết phủ kín mặt đất khắp nơi**. Châu chấu **không có thức ăn** và đang **run rẩy trong giá lạnh**.\n\nChú **chậm rãi bước đến** ngôi **nhà gỗ ấm áp** của kiến và **gõ cửa**. Chú **kiến tốt bụng** mở cửa và **mời chú vào trong** dùng **súp nóng**.\n\nChâu chấu **cảm thấy cực kỳ biết ơn** và **học được một bài học quý giá**. **Từ ngày đó trở đi**, chú **hứa sẽ làm việc chăm chỉ** mỗi mùa hè.",
   "comprehension_questions": [
     {
       "id": 1,
@@ -149,31 +149,31 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
   "comprehension_questions": [
     {
       "id": 1,
-      "question_en": "Where was Aesop the storyteller from?",
+      "question_en": "Who was Aesop?",
       "options": [
-        "Greece",
-        "Canada",
-        "Japan",
-        "Egypt"
+        "A famous storyteller from ancient Greece",
+        "A modern Canadian scientist",
+        "A famous runner from Kenya",
+        "A Japanese headmaster"
       ],
-      "answer": "Greece",
+      "answer": "A famous storyteller from ancient Greece",
       "clue_statement": "Aesop was a famous storyteller from Greece.",
       "hint_en": "Storyteller from...",
       "hint_vi": "Người kể chuyện từ..."
     },
     {
       "id": 2,
-      "question_en": "What main lesson do fables teach children?",
+      "question_en": "What main lesson do Aesop's fables teach us?",
       "options": [
-        "Valuable life lessons and moral values",
-        "How to drive a car",
-        "How to build computers",
-        "How to fly planes"
+        "Hard work and patience lead to success",
+        "Singing is better than working",
+        "Winter is the warmest season",
+        "Ants live in modern houses"
       ],
-      "answer": "Valuable life lessons and moral values",
-      "clue_statement": "Fables teach us valuable life lessons.",
-      "hint_en": "Valuable life...",
-      "hint_vi": "Bài học..."
+      "answer": "Hard work and patience lead to success",
+      "clue_statement": "Fables show how hard work and patience always lead to success.",
+      "hint_en": "Hard work and...",
+      "hint_vi": "Chăm chỉ và..."
     }
   ]
 }

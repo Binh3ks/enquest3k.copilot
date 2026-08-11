@@ -165,7 +165,7 @@ const GrammarEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgress 
       <div className={`card-3d p-6 md:p-8 border-${themeColor}-100 min-h-[300px] flex flex-col`}>
         <div className="mb-8">
           <h3 className={`text-sm font-bold text-${themeColor}-600 mb-2 uppercase tracking-wider flex items-center`}><Keyboard className="w-4 h-4 mr-2" /> {isVi ? "Bài tập" : "Task"}</h3>
-          <p className="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">{currentQ.question || currentQ.question_en || currentQ.sentence || (currentQ.type === 'unscramble' ? 'Unscramble the words:' : '')}</p>
+          <p className="text-xl md:text-2xl font-medium text-slate-800 leading-relaxed">{currentQ.question || currentQ.prompt || currentQ.question_en || currentQ.sentence || (currentQ.type === 'unscramble' ? 'Unscramble the words:' : '')}</p>
           {currentQ.type === 'mc' && (
             <div className="mt-4 flex flex-wrap gap-3">
                 {currentQ.options.map(opt => (

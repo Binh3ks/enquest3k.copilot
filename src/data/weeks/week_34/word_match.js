@@ -1,76 +1,56 @@
 // Cambridge A2 Flyers word_match.js — Week 34
 export default [
   {
-    "word": "fable",
-    "definition": "truyện ngụ ngôn"
-  },
-  {
-    "word": "grasshopper",
-    "definition": "châu chấu"
-  },
-  {
     "word": "hardworking",
     "definition": "chăm chỉ"
   },
   {
-    "word": "wheat",
-    "definition": "lúa mì"
+    "word": "grasshopper",
+    "definition": "con châu chấu"
   },
   {
-    "word": "cheerfully",
-    "definition": "vui vẻ"
+    "word": "grain",
+    "definition": "hạt lúa mì"
   },
   {
     "word": "shivering",
     "definition": "run rẩy"
   },
   {
-    "word": "starving",
-    "definition": "verily hungry"
+    "word": "fable",
+    "definition": "truyện ngụ ngôn"
   },
   {
     "word": "grateful",
     "definition": "biết ơn"
   },
   {
+    "word": "diligence",
+    "definition": "sự siêng năng"
+  },
+  {
     "word": "patience",
     "definition": "sự kiên nhẫn"
-  },
-  {
-    "word": "shelter",
-    "definition": "nơi trú ẩn"
-  },
-  {
-    "word": "winter",
-    "definition": "mùa đông"
-  },
-  {
-    "word": "harvest",
-    "definition": "thu hoạch"
-  },
-  {
-    "word": "lazy",
-    "definition": "lười biếng"
   },
   {
     "word": "moral",
     "definition": "bài học đạo đức"
   },
   {
-    "word": "ancient",
-    "definition": "cổ xưa"
+    "word": "cheerfully",
+    "definition": "vui vẻ"
   },
   {
-    "word": "store",
-    "definition": "dự trữ"
+    "word": "freeze",
+    "definition": "đóng băng"
   },
   {
-    "word": "generous",
-    "definition": "rộng lượng"
+    "word": "shelter",
+    "definition": "nơi trú ẩn"
   },
   {
-    "word": "lesson",
-    "definition": "bài học"
+    "word": "gather",
+    "definition": "thu thập"
   },
   {
     "word": "prepare",
@@ -78,6 +58,26 @@ export default [
   },
   {
     "word": "wisdom",
-    "definition": "trí tuệ"
+    "definition": "sự khôn ngoan"
+  },
+  {
+    "word": "kindness",
+    "definition": "lòng tốt"
+  },
+  {
+    "word": "season",
+    "definition": "mùa trong năm"
+  },
+  {
+    "word": "wheat",
+    "definition": "cây lúa mì"
+  },
+  {
+    "word": "generous",
+    "definition": "hào phóng"
+  },
+  {
+    "word": "future",
+    "definition": "tương lai"
   }
 ];

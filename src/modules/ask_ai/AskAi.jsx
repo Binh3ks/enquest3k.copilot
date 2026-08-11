@@ -75,10 +75,11 @@ const AskAi = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) => {
   }, [currentPromptIdx, history, completedPrompts, feedback, wrongCount, responseTimes]);
 
 
-  if (!data || !data.prompts) return <div>Loading AI...</div>;
+  const prompts = data?.prompts || data?.situations || [];
+  if (!data || !prompts.length) return <div className="p-10 text-center animate-pulse text-slate-400">Loading Ask AI...</div>;
 
-  const currentPrompt = data.prompts[currentPromptIdx];
-  const isLast = currentPromptIdx === data.prompts.length - 1;
+  const currentPrompt = prompts[currentPromptIdx] || prompts[0];
+  const isLast = currentPromptIdx === prompts.length - 1;
 
   const recognition = window.SpeechRecognition || window.webkitSpeechRecognition 
     ? new (window.SpeechRecognition || window.webkitSpeechRecognition)() 

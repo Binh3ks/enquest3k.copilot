@@ -1,36 +1,36 @@
 // Cambridge A2 Flyers read.js — Week 37
 export default {
-  title: "The 4x100m Relay Sprint",
+  title: "The 4x100m Relay Handoff Victory",
   image_url: "/images/week37/read_cover_w37.jpg",
   audio_url: "/audio/week37/read_main.mp3",
-  content_en: `On a **bright Saturday morning**, Leo's school held its **annual Sports Day**. The **crowded sports stadium** was filled with **cheering students and parents**.
+  content_en: `On a **sunny Saturday morning**, the **annual Sports Day** took place. The **crowded sports stadium** was filled with the **cheering of students and parents**.
 
-Leo was chosen to run the **final 4x100m relay race**. While the **first runner was sprinting fast**, Leo **prepared himself carefully** in the exchange zone.
+Leo and his team were in the **final 4x100m relay race**. The **first runner was sprinting fast** down the track. Leo **prepared carefully** for the baton exchange.
 
-When his teammate arrived, Leo **passed the baton cleanly** and **accelerated smoothly down the track**. He **ran as fast as wind** and **crossed the finish line first**.
+When his teammate reached the zone, Leo **passed the baton cleanly** and **accelerated smoothly on the track**. He **ran as fast as the wind** toward the finish line.
 
-Out of breath, he **smiled happily** as his team **burst into cheers**. They **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.`,
-  content_vi: `Vào một **sáng thứ Bảy nắng đẹp rực rỡ**, trường của Leo đã tổ chức **Ngày Hội Thể Thao hàng năm**. **Sân vận động thể thao đông đúc** ngập tràn **tiếng reo hò của học sinh và phụ huynh**.
+Leo **crossed the finish line first** and **smiled happily**. The crowd **erupted into cheers**. The team **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.`,
+  content_vi: `Sáng **thứ Bảy nắng đẹp rực rỡ**, **Ngày Hội Thể Thao hàng năm** đã diễn ra. **Sân vận động thể thao đông đúc** ngập tràn **tiếng reo hò của học sinh và phụ huynh**.
 
-Leo được chọn để chạy **trận chung kết tiếp sức 4x100m**. Trong khi **vận động viên đầu tiên đang chạy nước rút nhanh**, Leo **chuẩn bị cẩn thận** trong khu vực trao gậy.
+Leo và đội của mình tham gia **trận chung kết tiếp sức 4x100m**. **Vận động viên đầu tiên đang chạy nước rút nhanh** trên đường chạy. Leo **chuẩn bị cẩn thận** cho màn trao gậy.
 
-Khi đồng đội của chú đến, Leo **trao gậy tiếp sức mượt mà** và **tăng tốc êm ái trên đường chạy**. Chú **chạy nhanh như gió** và **cán đích đầu tiên**.
+Khi đồng đội đến khu vực giao gậy, Leo **trao gậy tiếp sức mượt mà** và **tăng tốc êm ái trên đường chạy**. Chú **chạy nhanh như gió** về phía vạch đích.
 
-Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **bật lên tiếng reo hò**. Họ **nhận được những tấm huy chương vàng sáng bóng** và **cảm thấy cực kỳ tự hào** về **tinh thần đồng đội khoa học**.`,
+Leo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đông **bật lên tiếng reo hò**. Cả đội **nhận được những tấm huy chương vàng sáng bóng** và **cảm thấy cực kỳ tự hào** về **tinh thần đồng đội khoa học**.`,
   comprehension_questions: [
   {
     "id": 1,
-    "question_en": "Which race did Leo run in Sports Day?",
+    "question_en": "What event took place on Saturday morning?",
     "options": [
-      "The final 4x100m relay race",
-      "The 800m marathon",
-      "The high jump",
-      "The swimming relay"
+      "Annual Sports Day",
+      "School Science Fair",
+      "Music Concert",
+      "Art Exhibition"
     ],
-    "answer": "The final 4x100m relay race",
-    "clue_statement": "Leo was chosen to run the final 4x100m relay race.",
-    "hint_en": "4x100m relay...",
-    "hint_vi": "Tiếp sức 4x100m..."
+    "answer": "Annual Sports Day",
+    "clue_statement": "The annual Sports Day took place.",
+    "hint_en": "Annual Sports...",
+    "hint_vi": "Ngày Hội Thể Thao..."
   },
   {
     "id": 2,
@@ -76,25 +76,25 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
   }
 ],
   read_stem: {
-  "title": "The 4x100m Relay Sprint",
+  "title": "The 4x100m Relay Handoff Victory",
   "image_url": "/images/week37/read_cover_w37.jpg",
   "audio_url": "/audio/week37/read_main.mp3",
-  "content_en": "On a **bright Saturday morning**, Leo's school held its **annual Sports Day**. The **crowded sports stadium** was filled with **cheering students and parents**.\n\nLeo was chosen to run the **final 4x100m relay race**. While the **first runner was sprinting fast**, Leo **prepared himself carefully** in the exchange zone.\n\nWhen his teammate arrived, Leo **passed the baton cleanly** and **accelerated smoothly down the track**. He **ran as fast as wind** and **crossed the finish line first**.\n\nOut of breath, he **smiled happily** as his team **burst into cheers**. They **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.",
-  "content_vi": "Vào một **sáng thứ Bảy nắng đẹp rực rỡ**, trường của Leo đã tổ chức **Ngày Hội Thể Thao hàng năm**. **Sân vận động thể thao đông đúc** ngập tràn **tiếng reo hò của học sinh và phụ huynh**.\n\nLeo được chọn để chạy **trận chung kết tiếp sức 4x100m**. Trong khi **vận động viên đầu tiên đang chạy nước rút nhanh**, Leo **chuẩn bị cẩn thận** trong khu vực trao gậy.\n\nKhi đồng đội của chú đến, Leo **trao gậy tiếp sức mượt mà** và **tăng tốc êm ái trên đường chạy**. Chú **chạy nhanh như gió** và **cán đích đầu tiên**.\n\nDù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **bật lên tiếng reo hò**. Họ **nhận được những tấm huy chương vàng sáng bóng** và **cảm thấy cực kỳ tự hào** về **tinh thần đồng đội khoa học**.",
+  "content_en": "On a **sunny Saturday morning**, the **annual Sports Day** took place. The **crowded sports stadium** was filled with the **cheering of students and parents**.\n\nLeo and his team were in the **final 4x100m relay race**. The **first runner was sprinting fast** down the track. Leo **prepared carefully** for the baton exchange.\n\nWhen his teammate reached the zone, Leo **passed the baton cleanly** and **accelerated smoothly on the track**. He **ran as fast as the wind** toward the finish line.\n\nLeo **crossed the finish line first** and **smiled happily**. The crowd **erupted into cheers**. The team **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.",
+  "content_vi": "Sáng **thứ Bảy nắng đẹp rực rỡ**, **Ngày Hội Thể Thao hàng năm** đã diễn ra. **Sân vận động thể thao đông đúc** ngập tràn **tiếng reo hò của học sinh và phụ huynh**.\n\nLeo và đội của mình tham gia **trận chung kết tiếp sức 4x100m**. **Vận động viên đầu tiên đang chạy nước rút nhanh** trên đường chạy. Leo **chuẩn bị cẩn thận** cho màn trao gậy.\n\nKhi đồng đội đến khu vực giao gậy, Leo **trao gậy tiếp sức mượt mà** và **tăng tốc êm ái trên đường chạy**. Chú **chạy nhanh như gió** về phía vạch đích.\n\nLeo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đông **bật lên tiếng reo hò**. Cả đội **nhận được những tấm huy chương vàng sáng bóng** và **cảm thấy cực kỳ tự hào** về **tinh thần đồng đội khoa học**.",
   "comprehension_questions": [
     {
       "id": 1,
-      "question_en": "Which race did Leo run in Sports Day?",
+      "question_en": "What event took place on Saturday morning?",
       "options": [
-        "The final 4x100m relay race",
-        "The 800m marathon",
-        "The high jump",
-        "The swimming relay"
+        "Annual Sports Day",
+        "School Science Fair",
+        "Music Concert",
+        "Art Exhibition"
       ],
-      "answer": "The final 4x100m relay race",
-      "clue_statement": "Leo was chosen to run the final 4x100m relay race.",
-      "hint_en": "4x100m relay...",
-      "hint_vi": "Tiếp sức 4x100m..."
+      "answer": "Annual Sports Day",
+      "clue_statement": "The annual Sports Day took place.",
+      "hint_en": "Annual Sports...",
+      "hint_vi": "Ngày Hội Thể Thao..."
     },
     {
       "id": 2,
@@ -141,11 +141,11 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
   ]
 },
   read_social: {
-  "title": "Olympic Spirit & International Unity",
+  "title": "The Olympic Truce & World Relays",
   "image_url": "/images/week37/explore_w37.jpg",
   "audio_url": "/audio/week37/read_main.mp3",
-  "content_en": "The Olympic Games are the world's biggest sports celebration where **athletes from over 200 nations** compete peacefully. Running together in relay teams teaches us that true success comes from **working as one team**.",
-  "content_vi": "Thế vận hội Olympic là ngày hội thể thao lớn nhất thế giới.",
+  "content_en": "Relay races originate from ancient messenger runners who carried torches across cities. Today, athletes from **over 200 nations** compete peacefully in the Olympic Games. The Olympic Truce (*Ekecheiria*) was an ancient Greek tradition where all wars stopped during the games. Relay teams teach us that **working as one team leads to success**.",
+  "content_vi": "Chạy tiếp sức bắt nguồn từ những người đưa tin cổ đại mang ngọn đuốc qua các thành phố. Ngày nay, các vận động viên từ hơn 200 quốc gia thi đấu hòa bình tại Olympic.",
   "comprehension_questions": [
     {
       "id": 1,
@@ -180,25 +180,25 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
 };
 
 export const chunk_focus = [
-  "bright Saturday morning",
+  "sunny Saturday morning",
   "annual Sports Day",
   "crowded sports stadium",
-  "cheering students and parents",
+  "cheering of students and parents",
   "final 4x100m relay race",
   "first runner was sprinting fast",
-  "prepared himself carefully",
+  "prepared carefully",
   "passed the baton cleanly",
-  "accelerated smoothly down the track",
-  "ran as fast as wind",
+  "accelerated smoothly on the track",
+  "ran as fast as the wind",
   "crossed the finish line first",
   "smiled happily",
-  "burst into cheers",
+  "erupted into cheers",
   "received shiny gold medals",
   "felt extremely proud",
   "scientific teamwork",
-  "athletes from over 200 nations",
-  "working as one team",
-  "sáng thứ Bảy nắng đẹp rực rỡ",
+  "over 200 nations",
+  "working as one team leads to success",
+  "thứ Bảy nắng đẹp rực rỡ",
   "Ngày Hội Thể Thao hàng năm",
   "Sân vận động thể thao đông đúc",
   "tiếng reo hò của học sinh và phụ huynh",
@@ -214,44 +214,44 @@ export const chunk_focus = [
   "nhận được những tấm huy chương vàng sáng bóng",
   "cảm thấy cực kỳ tự hào",
   "tinh thần đồng đội khoa học",
-  "vận động viên từ hơn 200 quốc gia",
-  "làm việc như một đội"
+  "hơn 200 quốc gia",
+  "làm việc như một đội dẫn đến thành công"
 ];
 export const dictionary = {
-  "bright Saturday morning": "sáng thứ Bảy nắng đẹp rực rỡ",
+  "sunny Saturday morning": "thứ Bảy nắng đẹp rực rỡ",
   "annual Sports Day": "Ngày Hội Thể Thao hàng năm",
   "crowded sports stadium": "Sân vận động thể thao đông đúc",
-  "cheering students and parents": "tiếng reo hò của học sinh và phụ huynh",
+  "cheering of students and parents": "tiếng reo hò của học sinh và phụ huynh",
   "final 4x100m relay race": "trận chung kết tiếp sức 4x100m",
   "first runner was sprinting fast": "vận động viên đầu tiên đang chạy nước rút nhanh",
-  "prepared himself carefully": "chuẩn bị cẩn thận",
+  "prepared carefully": "chuẩn bị cẩn thận",
   "passed the baton cleanly": "trao gậy tiếp sức mượt mà",
-  "accelerated smoothly down the track": "tăng tốc êm ái trên đường chạy",
-  "ran as fast as wind": "chạy nhanh như gió",
+  "accelerated smoothly on the track": "tăng tốc êm ái trên đường chạy",
+  "ran as fast as the wind": "chạy nhanh như gió",
   "crossed the finish line first": "cán đích đầu tiên",
   "smiled happily": "mỉm cười hạnh phúc",
-  "burst into cheers": "bật lên tiếng reo hò",
+  "erupted into cheers": "bật lên tiếng reo hò",
   "received shiny gold medals": "nhận được những tấm huy chương vàng sáng bóng",
   "felt extremely proud": "cảm thấy cực kỳ tự hào",
   "scientific teamwork": "tinh thần đồng đội khoa học",
-  "athletes from over 200 nations": "vận động viên từ hơn 200 quốc gia",
-  "working as one team": "làm việc như một đội",
-  "sáng thứ Bảy nắng đẹp rực rỡ": "bright Saturday morning",
+  "over 200 nations": "hơn 200 quốc gia",
+  "working as one team leads to success": "làm việc như một đội dẫn đến thành công",
+  "thứ Bảy nắng đẹp rực rỡ": "sunny Saturday morning",
   "Ngày Hội Thể Thao hàng năm": "annual Sports Day",
   "Sân vận động thể thao đông đúc": "crowded sports stadium",
-  "tiếng reo hò của học sinh và phụ huynh": "cheering students and parents",
+  "tiếng reo hò của học sinh và phụ huynh": "cheering of students and parents",
   "trận chung kết tiếp sức 4x100m": "final 4x100m relay race",
   "vận động viên đầu tiên đang chạy nước rút nhanh": "first runner was sprinting fast",
-  "chuẩn bị cẩn thận": "prepared himself carefully",
+  "chuẩn bị cẩn thận": "prepared carefully",
   "trao gậy tiếp sức mượt mà": "passed the baton cleanly",
-  "tăng tốc êm ái trên đường chạy": "accelerated smoothly down the track",
-  "chạy nhanh như gió": "ran as fast as wind",
+  "tăng tốc êm ái trên đường chạy": "accelerated smoothly on the track",
+  "chạy nhanh như gió": "ran as fast as the wind",
   "cán đích đầu tiên": "crossed the finish line first",
   "mỉm cười hạnh phúc": "smiled happily",
-  "bật lên tiếng reo hò": "burst into cheers",
+  "bật lên tiếng reo hò": "erupted into cheers",
   "nhận được những tấm huy chương vàng sáng bóng": "received shiny gold medals",
   "cảm thấy cực kỳ tự hào": "felt extremely proud",
   "tinh thần đồng đội khoa học": "scientific teamwork",
-  "vận động viên từ hơn 200 quốc gia": "athletes from over 200 nations",
-  "làm việc như một đội": "working as one team"
+  "hơn 200 quốc gia": "over 200 nations",
+  "làm việc như một đội dẫn đến thành công": "working as one team leads to success"
 };

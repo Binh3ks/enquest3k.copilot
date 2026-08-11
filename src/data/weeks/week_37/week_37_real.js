@@ -2,6 +2,7 @@
 export default {
   "weekId": 37,
   "title": "The Sports Day Challenge — Teamwork & Speed",
+  "title_vi": "Ngày Hội Thể Thao — Tinh Thần Đồng Đội & Tốc Độ",
   "target_vocab": [
     {
       "word": "annual",
@@ -144,31 +145,75 @@ export default {
       "ipa": "/ˈtiːm.wɜːk/"
     }
   ],
-  "story_missions": [
+  "sentences": [
     {
       "id": 1,
-      "title": "Retell STEM Story: The 4x100m Relay Sprint",
-      "target_turns": 15
+      "text": "Our school holds its annual Sports Day in May.",
+      "translation": "Ví dụ: annual trong câu."
     },
     {
       "id": 2,
-      "title": "Retell Social Story: Olympic Spirit & International Unity",
-      "target_turns": 15
+      "text": "The crowded sports stadium was loud.",
+      "translation": "Ví dụ: stadium trong câu."
     },
     {
       "id": 3,
-      "title": "Personal Life Connection",
-      "target_turns": 15
+      "text": "Leo ran the last leg of the 4x100m relay.",
+      "translation": "Ví dụ: relay trong câu."
+    },
+    {
+      "id": 4,
+      "text": "Pass the baton smoothly without dropping it.",
+      "translation": "Ví dụ: baton trong câu."
+    },
+    {
+      "id": 5,
+      "text": "Accelerate quickly down the straight track.",
+      "translation": "Ví dụ: accelerate trong câu."
+    },
+    {
+      "id": 6,
+      "text": "The first runner began to sprint fast.",
+      "translation": "Ví dụ: sprint trong câu."
+    },
+    {
+      "id": 7,
+      "text": "The baton handoff went very smoothly.",
+      "translation": "Ví dụ: smoothly trong câu."
+    },
+    {
+      "id": 8,
+      "text": "Cheering spectators filled the stadium stands.",
+      "translation": "Ví dụ: cheering trong câu."
     }
   ],
   "spark_talk": [
     {
       "id": 1,
-      "topic": "The Sports Day Challenge — Teamwork & Speed — Safety & Preparation"
+      "topic_en": "What safety rule did Jake follow in The Sports Day Challenge — Teamwork & Speed?",
+      "topic_vi": "Quy tắc an toàn nào Jake đã tuân thủ?"
     },
     {
       "id": 2,
-      "topic": "The Sports Day Challenge — Teamwork & Speed — Teamwork & Care"
+      "topic_en": "How can you help a classmate who falls down?",
+      "topic_vi": "Bạn có thể giúp bạn cùng lớp như thế nào khi bạn ấy bị ngã?"
+    }
+  ],
+  "story_missions": [
+    {
+      "id": 1,
+      "title": "Mission 1: Retell STEM Story",
+      "prompt": "Retell how Jake helped his friend in The Sports Day Challenge — Teamwork & Speed."
+    },
+    {
+      "id": 2,
+      "title": "Mission 2: Retell Social Story",
+      "prompt": "Explain global school safety rules from The Olympic Truce & World Relays."
+    },
+    {
+      "id": 3,
+      "title": "Mission 3: Personal Connection",
+      "prompt": "Share an experience where you helped someone at school."
     }
   ]
 };

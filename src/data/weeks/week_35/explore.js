@@ -1,8 +1,8 @@
 // Cambridge A2 Flyers explore.js — Week 35
 export default {
   image_url: "/images/week35/explore_w35.jpg",
-  content_en: "Parks in big cities are essential **green lungs** that clean the air we breathe. In Singapore, city parks have **futuristic supertrees** covered in real plants. In London, Hyde Park provides a safe home for **wild swans, ducks, and squirrels**. By keeping parks clean, communities make cities **healthier places** for everyone.",
-  content_vi: "Công viên ở các thành phố lớn là những lá phổi xanh thiết yếu làm sạch không khí.",
+  content_en: "City parks are called **green lungs** because trees clean the air we breathe. In Singapore, urban planners built **futuristic supertrees** covered in over 150,000 plants. These tall plant towers collect rainwater and generate solar energy. By planting trees in cities, humans create **healthier places** for **wild swans, ducks, and squirrels**.",
+  content_vi: "Công viên thành phố được gọi là lá phổi xanh vì cây cối làm sạch không khí chúng ta hít thở. Ở Singapore, các nhà quy hoạch đô thị đã xây dựng các siêu cây tương lai được bao phủ bởi hơn 150.000 cây xanh. Bằng cách trồng cây trong thành phố, con người tạo ra những nơi lành mạnh hơn cho chim chóc và sóc.",
   key_vocabulary: [
   {
     "word": "recycling",
@@ -23,16 +23,16 @@ export default {
     "example": "We must care for our urban environment."
   },
   {
-    "word": "hesitation",
-    "definition": "pausing before doing something because of doubt",
-    "definition_vi": "sự do dự",
-    "example": "They helped clean up without any hesitation."
+    "word": "protective",
+    "definition": "serving or intended to protect someone or something",
+    "definition_vi": "bảo hộ",
+    "example": "Wear protective gloves when picking up trash."
   },
   {
-    "word": "applaud",
-    "definition": "show approval or praise by clapping hands",
-    "definition_vi": "vỗ tay khen ngợi",
-    "example": "Park visitors applauded their hard work."
+    "word": "scattered",
+    "definition": "thrown around in various directions",
+    "definition_vi": "vứt bừa bãi",
+    "example": "Plastic wrappers were scattered on the grass."
   }
 ],
   check_questions: [

@@ -1,37 +1,67 @@
+// Cambridge A2 Flyers shadowing.js — Week 34
 export default {
-  videoId: "XbMrw3cwVUc",  // The Ant and the Grasshopper | PINKFONG Story Time
-  content_en: "Chirp chirp! I love summer! I love singing! The grasshopper was resting on a tree on a hot summer day. While under the tree, the ant was sweating and slaving away. Hey ant! Life is too short to work so hard. The grasshopper said to the ant because the ant was working all summer long. Listen grasshopper, if you don't prepare for winter now, you're going to starve. Oh, there's plenty of time! Why worry? I'm going to go back to my singing now. In no time, summer went and the freezing winter came. The wind howled and howled, and buckets of snow fell from the winter sky. Oh, I'm so hungry. I'm so cold. What if the ant is right? Then I'll starve to death! The grasshopper went to look for food. But instead of finding food, he got lost in the snow. And he could barely move his legs anymore. Luckily, the grasshopper found the ant's house. He mustered up enough energy to knock on the door. Please ant, will you give me some food? Or even just a crumb, please. Don't worry grasshopper, I have plenty of food. Come on in! The grasshopper went inside. He sat next to the fire and ate until he couldn't eat anymore. This is delicious! And I'm really sorry for making fun of you before. That was wrong of me. That's okay. You can help me next year. It was then that the grasshopper finally understood why the ant had worked so hard in the summer. And he was thankful that he had such a good friend.",
-  script: [
-    { id: 1, text: "Chirp chirp! I love summer!", vi: "Chíp chíp! Mình yêu mùa hè!" },
-    { id: 2, text: "I love singing!", vi: "Mình thích hát!" },
-    { id: 3, text: "The grasshopper was resting on a tree on a hot summer day.", vi: "Con châu chấu đang nghỉ trên cây vào một ngày hè nóng bức." },
-    { id: 4, text: "While under the tree, the ant was sweating and slaving away.", vi: "Trong khi ở dưới gốc cây, con kiến đang đổ mồ hôi và làm việc cật lực." },
-    { id: 5, text: "Hey ant! Life is too short to work so hard.", vi: "Này kiến! Cuộc sống quá ngắn để làm việc vất vả như vậy." },
-    { id: 6, text: "The grasshopper said to the ant because the ant was working all summer long.", vi: "Con châu chấu nói với con kiến vì con kiến đã làm việc suốt cả mùa hè." },
-    { id: 7, text: "Listen grasshopper, if you don't prepare for winter now, you're going to starve.", vi: "Nghe này châu chấu, nếu bây giờ cậu không chuẩn bị cho mùa đông thì cậu sẽ bị đói." },
-    { id: 8, text: "Oh, there's plenty of time! Why worry?", vi: "Ôi, còn nhiều thời gian mà! Lo gì chứ?" },
-    { id: 9, text: "I'm going to go back to my singing now.", vi: "Mình sẽ quay lại hát đây." },
-    { id: 10, text: "In no time, summer went and the freezing winter came.", vi: "Chẳng mấy chốc, mùa hè qua đi và mùa đông lạnh giá tới." },
-    { id: 11, text: "The wind howled and howled, and buckets of snow fell from the winter sky.", vi: "Gió rít mãi, và từng xô tuyết rơi từ bầu trời mùa đông." },
-    { id: 12, text: "Oh, I'm so hungry.", vi: "Ôi, mình đói quá." },
-    { id: 13, text: "I'm so cold.", vi: "Mình lạnh quá." },
-    { id: 14, text: "What if the ant is right? Then I'll starve to death!", vi: "Nếu con kiến đúng thì sao? Vậy mình sẽ chết đói mất!" },
-    { id: 15, text: "The grasshopper went to look for food.", vi: "Con châu chấu đi tìm thức ăn." },
-    { id: 16, text: "But instead of finding food, he got lost in the snow.", vi: "Nhưng thay vì tìm thấy thức ăn, nó lại bị lạc trong tuyết." },
-    { id: 17, text: "And he could barely move his legs anymore.", vi: "Và nó hầu như không còn cử động được chân nữa." },
-    { id: 18, text: "Luckily, the grasshopper found the ant's house.", vi: "May mắn là con châu chấu tìm thấy nhà con kiến." },
-    { id: 19, text: "He mustered up enough energy to knock on the door.", vi: "Nó gom đủ sức để gõ cửa." },
-    { id: 20, text: "Please ant, will you give me some food?", vi: "Làm ơn kiến, cậu cho mình chút thức ăn được không?" },
-    { id: 21, text: "Or even just a crumb, please.", vi: "Hoặc chỉ một mẩu vụn thôi cũng được, làm ơn." },
-    { id: 22, text: "Don't worry grasshopper, I have plenty of food. Come on in!", vi: "Đừng lo châu chấu, mình có đủ thức ăn. Vào đi!" },
-    { id: 23, text: "The grasshopper went inside.", vi: "Con châu chấu đi vào trong." },
-    { id: 24, text: "He sat next to the fire and ate until he couldn't eat anymore.", vi: "Nó ngồi cạnh lửa và ăn đến mức không ăn nổi nữa." },
-    { id: 25, text: "This is delicious!", vi: "Ngon quá!" },
-    { id: 26, text: "And I'm really sorry for making fun of you before.", vi: "Và mình thật sự xin lỗi vì đã chế giễu cậu trước đây." },
-    { id: 27, text: "That was wrong of me.", vi: "Đó là sai của mình." },
-    { id: 28, text: "That's okay.", vi: "Không sao đâu." },
-    { id: 29, text: "You can help me next year.", vi: "Năm sau cậu có thể giúp mình." },
-    { id: 30, text: "It was then that the grasshopper finally understood why the ant had worked so hard in the summer.", vi: "Lúc đó con châu chấu mới hiểu vì sao con kiến đã làm việc chăm chỉ đến vậy vào mùa hè." },
-    { id: 31, text: "And he was thankful that he had such a good friend.", vi: "Và nó biết ơn vì có một người bạn tốt như vậy." },
-  ]
+  videoId: "shadowing_w34",
+  title: "The Ant and the Grasshopper — Fables & Moral — Shadowing",
+  sentences: [
+  {
+    "id": 1,
+    "text": "The hardworking ant gathered food all summer.",
+    "start_time": 0,
+    "end_time": 3
+  },
+  {
+    "id": 2,
+    "text": "The grasshopper sang under the shady tree.",
+    "start_time": 3,
+    "end_time": 6
+  },
+  {
+    "id": 3,
+    "text": "Ants store wheat grain for the cold winter.",
+    "start_time": 6,
+    "end_time": 9
+  },
+  {
+    "id": 4,
+    "text": "He was shivering in the freezing winter wind.",
+    "start_time": 9,
+    "end_time": 12
+  },
+  {
+    "id": 5,
+    "text": "Aesop wrote many famous animal fables.",
+    "start_time": 12,
+    "end_time": 15
+  },
+  {
+    "id": 6,
+    "text": "The grasshopper felt deeply grateful to the ant.",
+    "start_time": 15,
+    "end_time": 18
+  },
+  {
+    "id": 7,
+    "text": "His diligence paid off when winter came.",
+    "start_time": 18,
+    "end_time": 21
+  },
+  {
+    "id": 8,
+    "text": "Patience and hard work bring great success.",
+    "start_time": 21,
+    "end_time": 24
+  },
+  {
+    "id": 9,
+    "text": "Every fable has a clear moral lesson.",
+    "start_time": 24,
+    "end_time": 27
+  },
+  {
+    "id": 10,
+    "text": "He sang cheerfully during the warm summer.",
+    "start_time": 27,
+    "end_time": 30
+  }
+]
 };

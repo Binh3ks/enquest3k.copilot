@@ -2,144 +2,144 @@
 export default {
   vocab: [
   {
-    "word": "fable",
-    "definition_en": "a short story that teaches a moral lesson using animals",
-    "definition_vi": "truyện ngụ ngôn",
-    "example": "The fable of the ant teaches us hard work.",
-    "ipa": "/ˈfeɪ.bəl/"
-  },
-  {
-    "word": "grasshopper",
-    "definition_en": "a plant-eating insect with long hind legs for jumping",
-    "definition_vi": "châu chấu",
-    "example": "The grasshopper sang all summer long.",
-    "ipa": "/ˈɡrɑːsˌhɒp.ər/"
-  },
-  {
     "word": "hardworking",
-    "definition_en": "putting a lot of effort into a job and working diligently",
+    "definition_en": "tending to work with energy and commitment",
     "definition_vi": "chăm chỉ",
-    "example": "The hardworking ant stored wheat grains.",
+    "example": "The hardworking ant gathered food all summer.",
     "ipa": "/ˌhɑːdˈwɜː.kɪŋ/"
   },
   {
-    "word": "wheat",
-    "definition_en": "a cereal plant grown for its grain to make flour",
-    "definition_vi": "lúa mì",
-    "example": "They gathered wheat grains from the field.",
-    "ipa": "/wiːt/"
+    "word": "grasshopper",
+    "definition_en": "a plant-eating insect with long hind legs for leaping",
+    "definition_vi": "con châu chấu",
+    "example": "The grasshopper sang under the shady tree.",
+    "ipa": "/ˈɡrɑːsˌhɒp.ər/"
   },
   {
-    "word": "cheerfully",
-    "definition_en": "in a happy and optimistic manner",
-    "definition_vi": "vui vẻ",
-    "example": "The bird sang cheerfully in the morning.",
-    "ipa": "/ˈtʃɪə.fəl.i/"
+    "word": "grain",
+    "definition_en": "small hard seeds of food plants like wheat or corn",
+    "definition_vi": "hạt lúa mì",
+    "example": "Ants store wheat grain for the cold winter.",
+    "ipa": "/ɡreɪn/"
   },
   {
     "word": "shivering",
-    "definition_en": "shaking slightly because of cold or fear",
+    "definition_en": "shaking slightly because of being cold or frightened",
     "definition_vi": "run rẩy",
-    "example": "He stood shivering in the snow.",
+    "example": "He was shivering in the freezing winter wind.",
     "ipa": "/ˈʃɪv.ər.ɪŋ/"
   },
   {
-    "word": "starving",
-    "definition_en": "suffering or dying from hunger",
-    "definition_vi": "verily hungry",
-    "example": "The ant helped the starving insect.",
-    "ipa": "/ˈstɑː.vɪŋ/"
+    "word": "fable",
+    "definition_en": "a short story typically with animals conveying a moral",
+    "definition_vi": "truyện ngụ ngôn",
+    "example": "Aesop wrote many famous animal fables.",
+    "ipa": "/ˈfeɪ.bəl/"
   },
   {
     "word": "grateful",
-    "definition_en": "feeling or showing appreciation for kindness received",
+    "definition_en": "feeling or showing an appreciation of kindness",
     "definition_vi": "biết ơn",
-    "example": "The grasshopper was grateful for the hot soup.",
+    "example": "The grasshopper felt deeply grateful to the ant.",
     "ipa": "/ˈɡreɪt.fəl/"
   },
   {
+    "word": "diligence",
+    "definition_en": "careful and persistent work or effort",
+    "definition_vi": "sự siêng năng",
+    "example": "His diligence paid off when winter came.",
+    "ipa": "/ˈdɪl.ɪ.dʒəns/"
+  },
+  {
     "word": "patience",
-    "definition_en": "the capacity to accept delay or trouble without getting angry",
+    "definition_en": "the capacity to accept delay without getting angry",
     "definition_vi": "sự kiên nhẫn",
-    "example": "Learning a skill takes time and patience.",
+    "example": "Patience and hard work bring great success.",
     "ipa": "/ˈpeɪ.ʃəns/"
-  },
-  {
-    "word": "shelter",
-    "definition_en": "a place giving protection from bad weather or danger",
-    "definition_vi": "nơi trú ẩn",
-    "example": "The ant gave shelter to his friend.",
-    "ipa": "/ˈʃel.tər/"
-  },
-  {
-    "word": "winter",
-    "definition_en": "the coldest season of the year",
-    "definition_vi": "mùa đông",
-    "example": "Cold winter snow fell on the forest.",
-    "ipa": "/ˈwɪn.tər/"
-  },
-  {
-    "word": "harvest",
-    "definition_en": "the process or period of gathering crops",
-    "definition_vi": "thu hoạch",
-    "example": "Summer is the season for wheat harvest.",
-    "ipa": "/ˈhɑː.vɪst/"
-  },
-  {
-    "word": "lazy",
-    "definition_en": "unwilling to work or use energy",
-    "definition_vi": "lười biếng",
-    "example": "Do not be lazy when exams come.",
-    "ipa": "/ˈleɪ.zi/"
   },
   {
     "word": "moral",
     "definition_en": "a lesson derived from a story or experience",
     "definition_vi": "bài học đạo đức",
-    "example": "The moral of the story is to prepare early.",
+    "example": "Every fable has a clear moral lesson.",
     "ipa": "/ˈmɒr.əl/"
   },
   {
-    "word": "ancient",
-    "definition_en": "belonging to the very distant past",
-    "definition_vi": "cổ xưa",
-    "example": "Aesop wrote ancient stories in Greece.",
-    "ipa": "/ˈeɪn.ʃənt/"
+    "word": "cheerfully",
+    "definition_en": "in a happy and optimistic manner",
+    "definition_vi": "vui vẻ",
+    "example": "He sang cheerfully during the warm summer.",
+    "ipa": "/ˈtʃɪə.fəl.i/"
   },
   {
-    "word": "store",
-    "definition_en": "to keep or accumulate for future use",
-    "definition_vi": "dự trữ",
-    "example": "Store food before winter arrives.",
-    "ipa": "/stɔːr/"
+    "word": "freeze",
+    "definition_en": "turn into ice as a result of extreme cold",
+    "definition_vi": "đóng băng",
+    "example": "Water rivers freeze during cold winter.",
+    "ipa": "/friːz/"
   },
   {
-    "word": "generous",
-    "definition_en": "showing kindness toward others by giving freely",
-    "definition_vi": "rộng lượng",
-    "example": "The ant was generous to share his soup.",
-    "ipa": "/ˈdʒen.ər.əs/"
+    "word": "shelter",
+    "definition_en": "a place giving protection from bad weather",
+    "definition_vi": "nơi trú ẩn",
+    "example": "The ant's house provided warm shelter.",
+    "ipa": "/ˈʃel.tər/"
   },
   {
-    "word": "lesson",
-    "definition_en": "a period of learning or a useful practical insight",
-    "definition_vi": "bài học",
-    "example": "He learned a valuable life lesson.",
-    "ipa": "/ˈles.ən/"
+    "word": "gather",
+    "definition_en": "bring together or collect from various places",
+    "definition_vi": "thu thập",
+    "example": "Ants gather seeds from the green field.",
+    "ipa": "/ˈɡæð.ər/"
   },
   {
     "word": "prepare",
     "definition_en": "make something ready for use or consideration",
     "definition_vi": "chuẩn bị",
-    "example": "Prepare your backpack every evening.",
+    "example": "Prepare early for cold winter months.",
     "ipa": "/prɪˈpeər/"
   },
   {
     "word": "wisdom",
-    "definition_en": "the quality of having experience and good judgment",
-    "definition_vi": "trí tuệ",
-    "example": "Fables share ancient wisdom with kids.",
+    "definition_en": "the quality of having experience, knowledge, and good judgment",
+    "definition_vi": "sự khôn ngoan",
+    "example": "Ancient fables share timeless human wisdom.",
     "ipa": "/ˈwɪz.dəm/"
+  },
+  {
+    "word": "kindness",
+    "definition_en": "the quality of being friendly, generous, and considerate",
+    "definition_vi": "lòng tốt",
+    "example": "The ant showed great kindness to his friend.",
+    "ipa": "/ˈkaɪnd.nəs/"
+  },
+  {
+    "word": "season",
+    "definition_en": "each of the four divisions of the year",
+    "definition_vi": "mùa trong năm",
+    "example": "Summer is the best season to collect food.",
+    "ipa": "/ˈsiː.zən/"
+  },
+  {
+    "word": "wheat",
+    "definition_en": "a cereal plant cultivated for food grain",
+    "definition_vi": "cây lúa mì",
+    "example": "Golden wheat grew in the wide field.",
+    "ipa": "/wiːt/"
+  },
+  {
+    "word": "generous",
+    "definition_en": "showing a readiness to give more of something than expected",
+    "definition_vi": "hào phóng",
+    "example": "The generous ant offered hot vegetable soup.",
+    "ipa": "/ˈdʒen.ər.əs/"
+  },
+  {
+    "word": "future",
+    "definition_en": "the time or a period of time following the moment of speaking",
+    "definition_vi": "tương lai",
+    "example": "Work hard now to protect your future.",
+    "ipa": "/ˈfjuː.tʃər/"
   }
 ]
 };

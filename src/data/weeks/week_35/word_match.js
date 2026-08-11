@@ -13,71 +13,71 @@ export default [
     "definition": "môi trường"
   },
   {
-    "word": "hesitation",
-    "definition": "sự do dự"
+    "word": "protective",
+    "definition": "bảo hộ"
   },
   {
-    "word": "applaud",
-    "definition": "vỗ tay khen ngợi"
+    "word": "scattered",
+    "definition": "vứt bừa bãi"
   },
   {
-    "word": "community",
-    "definition": "cộng đồng"
+    "word": "supertrees",
+    "definition": "siêu cây công nghệ"
   },
   {
-    "word": "supertree",
-    "definition": "siêu cây"
+    "word": "urban",
+    "definition": "thuộc đô thị"
   },
   {
-    "word": "futuristic",
-    "definition": "hiện đại tương lai"
+    "word": "carbon",
+    "definition": "khí các-bon"
   },
   {
-    "word": "volunteer",
-    "definition": "tình nguyện viên"
+    "word": "rainwater",
+    "definition": "nước mưa"
   },
   {
-    "word": "habitat",
-    "definition": "môi trường sống"
-  },
-  {
-    "word": "pollution",
-    "definition": "sự ô nhiễm"
-  },
-  {
-    "word": "protect",
-    "definition": "bảo vệ"
+    "word": "generate",
+    "definition": "tạo ra"
   },
   {
     "word": "nature",
     "definition": "thiên nhiên"
   },
   {
-    "word": "gardening",
-    "definition": "làm vườn"
+    "word": "effort",
+    "definition": "nỗ lực"
   },
   {
-    "word": "cleanliness",
-    "definition": "sự sạch sẽ"
+    "word": "volunteer",
+    "definition": "tình nguyện viên"
   },
   {
-    "word": "restore",
-    "definition": "khôi phục"
+    "word": "pollution",
+    "definition": "sự ô nhiễm"
   },
   {
-    "word": "breathe",
-    "definition": "hít thở"
+    "word": "community",
+    "definition": "cộng đồng"
+  },
+  {
+    "word": "biodiversity",
+    "definition": "đa dạng sinh học"
   },
   {
     "word": "oxygen",
-    "definition": "oxy"
+    "definition": "khí ô-xy"
   },
   {
-    "word": "trash",
-    "definition": "rác"
+    "word": "sustainable",
+    "definition": "bền vững"
   },
   {
     "word": "wildlife",
     "definition": "động vật hoang dã"
+  },
+  {
+    "word": "beautify",
+    "definition": "làm đẹp"
   }
 ];

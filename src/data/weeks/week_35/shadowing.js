@@ -1,36 +1,67 @@
+// Cambridge A2 Flyers shadowing.js — Week 35
 export default {
-  videoId: "X2YgM1Zw4_E",
-  content_en: "Our planet Earth is very beautiful. It has blue oceans, green forests, and high mountains. But our planet is in danger. Many things are changing because of pollution. Factories make a lot of smoke. Cars and buses produce harmful gases. Cutting down trees destroys animal homes. Throwing away plastic pollutes our oceans and rivers. Climate change is a serious problem. The Earth is getting warmer. Polar ice is melting. Sea levels are rising. We must protect our planet. We should reduce, reuse, and recycle. We can plant more trees. Solar power and wind power can replace fossil fuels. We must act now to save our planet.",
-  script: [
-    { id: 1, text: "Our planet is very beautiful.", vi: "Hành tinh của chúng ta rất đẹp." },
-    { id: 2, text: "It has blue oceans, green forests, and high mountains.", vi: "Nó có đại dương xanh, rừng xanh, và núi cao." },
-    { id: 3, text: "But our planet is in danger.", vi: "Nhưng hành tinh của chúng ta đang gặp nguy hiểm." },
-    { id: 4, text: "Many things are changing because of pollution.", vi: "Nhiều thứ đang thay đổi vì ô nhiễm." },
-    { id: 5, text: "Factories make a lot of smoke.", vi: "Nhà máy tạo ra nhiều khói." },
-    { id: 6, text: "Cars and buses produce harmful gases.", vi: "Xe hơi và xe buýt thải khí độc hại." },
-    { id: 7, text: "Cutting down trees destroys animal homes.", vi: "Cắt phá rừng phá hủy nhà của động vật." },
-    { id: 8, text: "Throwing away plastic pollutes our oceans and rivers.", vi: "Vứt bỏ nhựa gây ô nhiễm đại dương và sông ngòi." },
-    { id: 9, text: "Climate change is a serious problem.", vi: "Biến đổi khí hậu là vấn đề nghiêm trọng." },
-    { id: 10, text: "The Earth is getting warmer.", vi: "Trái Đất đang nóng lên." },
-    { id: 11, text: "Polar ice is melting.", vi: "Băng ở hai cực đang tan." },
-    { id: 12, text: "Sea levels are rising.", vi: "Mực nước biển đang dâng cao." },
-    { id: 13, text: "Some animals are losing their homes.", vi: "Một số động vật đang mất nhà." },
-    { id: 14, text: "But we can make a difference!", vi: "Nhưng chúng ta có thể tạo ra sự khác biệt!" },
-    { id: 15, text: "We must protect our planet.", vi: "Chúng ta phải bảo vệ hành tinh." },
-    { id: 16, text: "We should reduce, reuse, and recycle.", vi: "Chúng ta nên giảm, tái sử dụng, và tái chế." },
-    { id: 17, text: "We can plant more trees.", vi: "Chúng ta có thể trồng nhiều cây hơn." },
-    { id: 18, text: "We can use less plastic.", vi: "Chúng ta có thể dùng ít nhựa hơn." },
-    { id: 19, text: "Many countries are working together.", vi: "Nhiều quốc gia đang làm việc cùng nhau." },
-    { id: 20, text: "They must reduce carbon emissions.", vi: "Họ phải giảm phát thải carbon." },
-    { id: 21, text: "They should invest in renewable energy.", vi: "Họ nên đầu tư vào năng lượng tái tạo." },
-    { id: 22, text: "Solar power and wind power can replace fossil fuels.", vi: "Năng lượng mặt trời và gió có thể thay thế nhiên liệu hóa thạch." },
-    { id: 23, text: "Young people can help too.", vi: "Người trẻ cũng có thể giúp." },
-    { id: 24, text: "You can turn off lights when you leave a room.", vi: "Bạn có thể tắt đèn khi rời phòng." },
-    { id: 25, text: "You should use less water.", vi: "Bạn nên dùng ít nước hơn." },
-    { id: 26, text: "You must not litter.", vi: "Bạn không được vứt rác." },
-    { id: 27, text: "Small actions can make a big difference.", vi: "Hành động nhỏ có thể tạo ra sự khác biệt lớn." },
-    { id: 28, text: "Together, we can save our planet.", vi: "Cùng nhau, chúng ta có thể cứu hành tinh." },
-    { id: 29, text: "We must act now.", vi: "Chúng ta phải hành động ngay." },
-    { id: 30, text: "The future depends on the choices we make today.", vi: "Tương lai phụ thuộc vào sự lựa chọn của chúng ta hôm nay." },
-  ]
+  videoId: "shadowing_w35",
+  title: "Save Our Park — Environmental Action — Shadowing",
+  sentences: [
+  {
+    "id": 1,
+    "text": "Put empty plastic bottles into recycling bins.",
+    "start_time": 0,
+    "end_time": 3
+  },
+  {
+    "id": 2,
+    "text": "Do not drop litter on the grass.",
+    "start_time": 3,
+    "end_time": 6
+  },
+  {
+    "id": 3,
+    "text": "We must care for our urban environment.",
+    "start_time": 6,
+    "end_time": 9
+  },
+  {
+    "id": 4,
+    "text": "Wear protective gloves when picking up trash.",
+    "start_time": 9,
+    "end_time": 12
+  },
+  {
+    "id": 5,
+    "text": "Plastic wrappers were scattered on the grass.",
+    "start_time": 12,
+    "end_time": 15
+  },
+  {
+    "id": 6,
+    "text": "Singapore built tall futuristic supertrees.",
+    "start_time": 15,
+    "end_time": 18
+  },
+  {
+    "id": 7,
+    "text": "Urban green parks improve city air quality.",
+    "start_time": 18,
+    "end_time": 21
+  },
+  {
+    "id": 8,
+    "text": "Trees absorb carbon dioxide to clean air.",
+    "start_time": 21,
+    "end_time": 24
+  },
+  {
+    "id": 9,
+    "text": "Supertrees harvest rainwater for plants.",
+    "start_time": 24,
+    "end_time": 27
+  },
+  {
+    "id": 10,
+    "text": "Solar panels generate clean electrical power.",
+    "start_time": 27,
+    "end_time": 30
+  }
+]
 };

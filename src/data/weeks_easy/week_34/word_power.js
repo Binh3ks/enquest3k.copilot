@@ -3,124 +3,124 @@ export default {
   title: "Collocations & Chunks — Week 34",
   collocations: [
   {
-    "phrase": "fable",
-    "definition_en": "a short story that teaches a moral lesson using animals",
-    "definition_vi": "truyện ngụ ngôn",
-    "example": "The fable of the ant teaches us hard work."
+    "phrase": "hardworking",
+    "definition_en": "tending to work with energy and commitment",
+    "definition_vi": "chăm chỉ",
+    "example": "The hardworking ant gathered food all summer."
   },
   {
     "phrase": "grasshopper",
-    "definition_en": "a plant-eating insect with long hind legs for jumping",
-    "definition_vi": "châu chấu",
-    "example": "The grasshopper sang all summer long."
+    "definition_en": "a plant-eating insect with long hind legs for leaping",
+    "definition_vi": "con châu chấu",
+    "example": "The grasshopper sang under the shady tree."
   },
   {
-    "phrase": "hardworking",
-    "definition_en": "putting a lot of effort into a job and working diligently",
-    "definition_vi": "chăm chỉ",
-    "example": "The hardworking ant stored wheat grains."
-  },
-  {
-    "phrase": "wheat",
-    "definition_en": "a cereal plant grown for its grain to make flour",
-    "definition_vi": "lúa mì",
-    "example": "They gathered wheat grains from the field."
-  },
-  {
-    "phrase": "cheerfully",
-    "definition_en": "in a happy and optimistic manner",
-    "definition_vi": "vui vẻ",
-    "example": "The bird sang cheerfully in the morning."
+    "phrase": "grain",
+    "definition_en": "small hard seeds of food plants like wheat or corn",
+    "definition_vi": "hạt lúa mì",
+    "example": "Ants store wheat grain for the cold winter."
   },
   {
     "phrase": "shivering",
-    "definition_en": "shaking slightly because of cold or fear",
+    "definition_en": "shaking slightly because of being cold or frightened",
     "definition_vi": "run rẩy",
-    "example": "He stood shivering in the snow."
+    "example": "He was shivering in the freezing winter wind."
   },
   {
-    "phrase": "starving",
-    "definition_en": "suffering or dying from hunger",
-    "definition_vi": "verily hungry",
-    "example": "The ant helped the starving insect."
+    "phrase": "fable",
+    "definition_en": "a short story typically with animals conveying a moral",
+    "definition_vi": "truyện ngụ ngôn",
+    "example": "Aesop wrote many famous animal fables."
   },
   {
     "phrase": "grateful",
-    "definition_en": "feeling or showing appreciation for kindness received",
+    "definition_en": "feeling or showing an appreciation of kindness",
     "definition_vi": "biết ơn",
-    "example": "The grasshopper was grateful for the hot soup."
+    "example": "The grasshopper felt deeply grateful to the ant."
+  },
+  {
+    "phrase": "diligence",
+    "definition_en": "careful and persistent work or effort",
+    "definition_vi": "sự siêng năng",
+    "example": "His diligence paid off when winter came."
   },
   {
     "phrase": "patience",
-    "definition_en": "the capacity to accept delay or trouble without getting angry",
+    "definition_en": "the capacity to accept delay without getting angry",
     "definition_vi": "sự kiên nhẫn",
-    "example": "Learning a skill takes time and patience."
-  },
-  {
-    "phrase": "shelter",
-    "definition_en": "a place giving protection from bad weather or danger",
-    "definition_vi": "nơi trú ẩn",
-    "example": "The ant gave shelter to his friend."
-  },
-  {
-    "phrase": "winter",
-    "definition_en": "the coldest season of the year",
-    "definition_vi": "mùa đông",
-    "example": "Cold winter snow fell on the forest."
-  },
-  {
-    "phrase": "harvest",
-    "definition_en": "the process or period of gathering crops",
-    "definition_vi": "thu hoạch",
-    "example": "Summer is the season for wheat harvest."
-  },
-  {
-    "phrase": "lazy",
-    "definition_en": "unwilling to work or use energy",
-    "definition_vi": "lười biếng",
-    "example": "Do not be lazy when exams come."
+    "example": "Patience and hard work bring great success."
   },
   {
     "phrase": "moral",
     "definition_en": "a lesson derived from a story or experience",
     "definition_vi": "bài học đạo đức",
-    "example": "The moral of the story is to prepare early."
+    "example": "Every fable has a clear moral lesson."
   },
   {
-    "phrase": "ancient",
-    "definition_en": "belonging to the very distant past",
-    "definition_vi": "cổ xưa",
-    "example": "Aesop wrote ancient stories in Greece."
+    "phrase": "cheerfully",
+    "definition_en": "in a happy and optimistic manner",
+    "definition_vi": "vui vẻ",
+    "example": "He sang cheerfully during the warm summer."
   },
   {
-    "phrase": "store",
-    "definition_en": "to keep or accumulate for future use",
-    "definition_vi": "dự trữ",
-    "example": "Store food before winter arrives."
+    "phrase": "freeze",
+    "definition_en": "turn into ice as a result of extreme cold",
+    "definition_vi": "đóng băng",
+    "example": "Water rivers freeze during cold winter."
   },
   {
-    "phrase": "generous",
-    "definition_en": "showing kindness toward others by giving freely",
-    "definition_vi": "rộng lượng",
-    "example": "The ant was generous to share his soup."
+    "phrase": "shelter",
+    "definition_en": "a place giving protection from bad weather",
+    "definition_vi": "nơi trú ẩn",
+    "example": "The ant's house provided warm shelter."
   },
   {
-    "phrase": "lesson",
-    "definition_en": "a period of learning or a useful practical insight",
-    "definition_vi": "bài học",
-    "example": "He learned a valuable life lesson."
+    "phrase": "gather",
+    "definition_en": "bring together or collect from various places",
+    "definition_vi": "thu thập",
+    "example": "Ants gather seeds from the green field."
   },
   {
     "phrase": "prepare",
     "definition_en": "make something ready for use or consideration",
     "definition_vi": "chuẩn bị",
-    "example": "Prepare your backpack every evening."
+    "example": "Prepare early for cold winter months."
   },
   {
     "phrase": "wisdom",
-    "definition_en": "the quality of having experience and good judgment",
-    "definition_vi": "trí tuệ",
-    "example": "Fables share ancient wisdom with kids."
+    "definition_en": "the quality of having experience, knowledge, and good judgment",
+    "definition_vi": "sự khôn ngoan",
+    "example": "Ancient fables share timeless human wisdom."
+  },
+  {
+    "phrase": "kindness",
+    "definition_en": "the quality of being friendly, generous, and considerate",
+    "definition_vi": "lòng tốt",
+    "example": "The ant showed great kindness to his friend."
+  },
+  {
+    "phrase": "season",
+    "definition_en": "each of the four divisions of the year",
+    "definition_vi": "mùa trong năm",
+    "example": "Summer is the best season to collect food."
+  },
+  {
+    "phrase": "wheat",
+    "definition_en": "a cereal plant cultivated for food grain",
+    "definition_vi": "cây lúa mì",
+    "example": "Golden wheat grew in the wide field."
+  },
+  {
+    "phrase": "generous",
+    "definition_en": "showing a readiness to give more of something than expected",
+    "definition_vi": "hào phóng",
+    "example": "The generous ant offered hot vegetable soup."
+  },
+  {
+    "phrase": "future",
+    "definition_en": "the time or a period of time following the moment of speaking",
+    "definition_vi": "tương lai",
+    "example": "Work hard now to protect your future."
   }
 ]
 };

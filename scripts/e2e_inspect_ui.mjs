@@ -3,9 +3,10 @@ import fs from 'fs';
 import path from 'path';
 
 const ARTIFACTS_DIR = '/Users/binhnguyen/.gemini/antigravity-ide/brain/fd5de532-53a7-4fe0-b374-4b9b329dde4f';
+const BASE_URL = 'http://localhost:5173';
 
 async function runE2E() {
-  console.log('🚀 Starting E2E UI Inspection using system Google Chrome...');
+  console.log(`🚀 Starting E2E UI Inspection on ${BASE_URL} using system Google Chrome...`);
   
   let browser;
   try {
@@ -45,57 +46,45 @@ async function runE2E() {
 
   const page = await context.newPage();
 
-  // Test 1: Read & Explore Week 36
-  console.log('📸 Navigating to Read & Explore W36...');
-  try {
-    await page.goto('https://app.bkbacademy.vn/week/36/read_explore', { waitUntil: 'domcontentloaded', timeout: 15000 });
-  } catch (e) {
-    console.log('Navigation warning:', e.message);
-  }
-  await page.waitForTimeout(3000);
-
-  const screenshotPathRead = path.join(ARTIFACTS_DIR, 'e2e_w36_read_explore.png');
-  await page.screenshot({ path: screenshotPathRead, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathRead}`);
-
-  // Test 2: New Words Week 36
-  console.log('📸 Navigating to New Words W36...');
-  try {
-    await page.goto('https://app.bkbacademy.vn/week/36/new_words', { waitUntil: 'domcontentloaded', timeout: 15000 });
-  } catch (e) {
-    console.log('Navigation warning:', e.message);
-  }
-  await page.waitForTimeout(3000);
-
-  const screenshotPathVocab = path.join(ARTIFACTS_DIR, 'e2e_w36_new_words.png');
-  await page.screenshot({ path: screenshotPathVocab, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathVocab}`);
-
-  // Test 3: Grammar Week 36
+  // Test 1: Grammar Station (Week 36)
   console.log('📸 Navigating to Grammar W36...');
-  try {
-    await page.goto('https://app.bkbacademy.vn/week/36/grammar', { waitUntil: 'domcontentloaded', timeout: 15000 });
-  } catch (e) {
-    console.log('Navigation warning:', e.message);
-  }
+  await page.goto(`${BASE_URL}/week/36/grammar`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
-
   const screenshotPathGrammar = path.join(ARTIFACTS_DIR, 'e2e_w36_grammar.png');
   await page.screenshot({ path: screenshotPathGrammar, fullPage: false });
   console.log(`✅ Saved screenshot: ${screenshotPathGrammar}`);
 
-  // Test 4: Writing Week 36
-  console.log('📸 Navigating to Writing W36...');
-  try {
-    await page.goto('https://app.bkbacademy.vn/week/36/writing', { waitUntil: 'domcontentloaded', timeout: 15000 });
-  } catch (e) {
-    console.log('Navigation warning:', e.message);
-  }
+  // Test 2: Mindmap Speaking (Week 36)
+  console.log('📸 Navigating to Mindmap Speaking W36...');
+  await page.goto(`${BASE_URL}/week/36/mindmap_speaking`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
+  const screenshotPathMindmap = path.join(ARTIFACTS_DIR, 'e2e_w36_mindmap.png');
+  await page.screenshot({ path: screenshotPathMindmap, fullPage: false });
+  console.log(`✅ Saved screenshot: ${screenshotPathMindmap}`);
 
-  const screenshotPathWrite = path.join(ARTIFACTS_DIR, 'e2e_w36_writing.png');
-  await page.screenshot({ path: screenshotPathWrite, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathWrite}`);
+  // Test 3: Ask AI (Week 36)
+  console.log('📸 Navigating to Ask AI W36...');
+  await page.goto(`${BASE_URL}/week/36/ask_ai`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  await page.waitForTimeout(3000);
+  const screenshotPathAskAi = path.join(ARTIFACTS_DIR, 'e2e_w36_ask_ai.png');
+  await page.screenshot({ path: screenshotPathAskAi, fullPage: false });
+  console.log(`✅ Saved screenshot: ${screenshotPathAskAi}`);
+
+  // Test 4: Logic Lab (Week 36)
+  console.log('📸 Navigating to Logic Lab W36...');
+  await page.goto(`${BASE_URL}/week/36/logic_lab`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  await page.waitForTimeout(3000);
+  const screenshotPathLogic = path.join(ARTIFACTS_DIR, 'e2e_w36_logic_lab.png');
+  await page.screenshot({ path: screenshotPathLogic, fullPage: false });
+  console.log(`✅ Saved screenshot: ${screenshotPathLogic}`);
+
+  // Test 5: New Words (Week 36)
+  console.log('📸 Navigating to New Words W36...');
+  await page.goto(`${BASE_URL}/week/36/new_words`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  await page.waitForTimeout(3000);
+  const screenshotPathVocab = path.join(ARTIFACTS_DIR, 'e2e_w36_new_words.png');
+  await page.screenshot({ path: screenshotPathVocab, fullPage: false });
+  console.log(`✅ Saved screenshot: ${screenshotPathVocab}`);
 
   await browser.close();
   console.log('🎉 Full E2E UI Inspection Complete!');

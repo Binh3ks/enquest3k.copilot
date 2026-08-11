@@ -3,68 +3,18 @@ export default {
   "title": "Corridor Safety & School Care",
   "min_sentences": 10,
   "min_words": 65,
-  "model_sentence": "On a bright sunny day, Jake was walking carefully down the school corridor. He had just finished his science class and was holding his notebooks. Suddenly, a boy who was running fast slipped on the wet floor. He fell heavily and hurt his knee. Jake rushed over to help him immediately. The boy began to bleed a little and burst into tears. Jake stayed calm and called the school nurse. The nurse came quickly and applied a clean bandage. Everyone felt extremely relieved. Everyone learned a valuable lesson about school safety.",
+  "model_sentence": "On a bright sunny day, Jake was walking carefully down the school corridor after finishing his science class. Suddenly, a boy running fast slipped on the wet floor and hurt his knee severely. Jake rushed over to help him without any hesitation and stayed calm. He called the school nurse immediately, who arrived quickly with a clean bandage and treated the cut gently. Everyone felt extremely relieved, and the headmaster praised Jake while reminding all students to follow corridor safety rules.",
   "sentence_frames": [
-    {
-      "template": "On a _____ day, Jake was walking carefully down the corridor.",
-      "answers": [
-        "bright sunny"
-      ]
-    },
-    {
-      "template": "He had just finished his science class and was _____ his notebooks.",
-      "answers": [
-        "holding"
-      ]
-    },
-    {
-      "template": "Suddenly, a boy who was running fast _____ on the wet floor.",
-      "answers": [
-        "slipped"
-      ]
-    },
-    {
-      "template": "He fell heavily and _____ his knee.",
-      "answers": [
-        "hurt"
-      ]
-    },
-    {
-      "template": "Jake rushed over to _____ him immediately.",
-      "answers": [
-        "help"
-      ]
-    },
-    {
-      "template": "The boy began to bleed a little and _____ into tears.",
-      "answers": [
-        "burst"
-      ]
-    },
-    {
-      "template": "Jake stayed calm and called the school _____.",
-      "answers": [
-        "nurse"
-      ]
-    },
-    {
-      "template": "The nurse came quickly and applied a clean _____.",
-      "answers": [
-        "bandage"
-      ]
-    },
-    {
-      "template": "Everyone felt _____ relieved after he smiled.",
-      "answers": [
-        "extremely"
-      ]
-    },
-    {
-      "template": "Everyone learned a _____ lesson about school safety.",
-      "answers": [
-        "valuable"
-      ]
-    }
+    "On a sunny day, the main character was acting carefully.",
+    "Suddenly, an unexpected situation happened near the area.",
+    "The character rushed over immediately to help.",
+    "They stayed calm and handled the situation gently.",
+    "Help arrived quickly with proper safety equipment.",
+    "Everyone felt extremely relieved after the event.",
+    "They learned an important lesson about cooperation.",
+    "In different countries, people practice safety rules.",
+    "Working together as a team leads to successful results.",
+    "We should always care for nature and our friends."
   ],
   "story_prompts": {
     "picture_mode": {

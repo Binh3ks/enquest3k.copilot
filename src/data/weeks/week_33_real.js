@@ -2,6 +2,7 @@
 export default {
   "weekId": 33,
   "title": "Corridor Safety & School Care",
+  "title_vi": "An Toàn Hành Lang & Chăm Sóc Trường Học",
   "target_vocab": [
     {
       "word": "corridor",
@@ -144,31 +145,75 @@ export default {
       "ipa": "/əˈten.ʃən/"
     }
   ],
-  "story_missions": [
+  "sentences": [
     {
       "id": 1,
-      "title": "Retell STEM Story: Jake's Quick Response in the Corridor",
-      "target_turns": 15
+      "text": "Walk carefully down the school corridor.",
+      "translation": "Ví dụ: corridor trong câu."
     },
     {
       "id": 2,
-      "title": "Retell Social Story: Global School Safety & Earthquake Drills",
-      "target_turns": 15
+      "text": "He slipped on the wet floor near the stairs.",
+      "translation": "Ví dụ: slipped trong câu."
     },
     {
       "id": 3,
-      "title": "Personal Life Connection",
-      "target_turns": 15
+      "text": "The nurse applied a clean bandage to his knee.",
+      "translation": "Ví dụ: bandage trong câu."
+    },
+    {
+      "id": 4,
+      "text": "The school nurse treated the boy gently.",
+      "translation": "Ví dụ: nurse trong câu."
+    },
+    {
+      "id": 5,
+      "text": "Call the nurse in an emergency.",
+      "translation": "Ví dụ: emergency trong câu."
+    },
+    {
+      "id": 6,
+      "text": "Students walked cautiously on the wet grass.",
+      "translation": "Ví dụ: cautiously trong câu."
+    },
+    {
+      "id": 7,
+      "text": "Look at the yellow warning sign on the floor.",
+      "translation": "Ví dụ: warning trong câu."
+    },
+    {
+      "id": 8,
+      "text": "The cut on his knee stopped bleeding quickly.",
+      "translation": "Ví dụ: bleeding trong câu."
     }
   ],
   "spark_talk": [
     {
       "id": 1,
-      "topic": "Corridor Safety & School Care — Safety & Preparation"
+      "topic_en": "What safety rule did Jake follow in Corridor Safety & School Care?",
+      "topic_vi": "Quy tắc an toàn nào Jake đã tuân thủ?"
     },
     {
       "id": 2,
-      "topic": "Corridor Safety & School Care — Teamwork & Care"
+      "topic_en": "How can you help a classmate who falls down?",
+      "topic_vi": "Bạn có thể giúp bạn cùng lớp như thế nào khi bạn ấy bị ngã?"
+    }
+  ],
+  "story_missions": [
+    {
+      "id": 1,
+      "title": "Mission 1: Retell STEM Story",
+      "prompt": "Retell how Jake helped his friend in Corridor Safety & School Care."
+    },
+    {
+      "id": 2,
+      "title": "Mission 2: Retell Social Story",
+      "prompt": "Explain global school safety rules from Global School Safety & Earthquake Drills."
+    },
+    {
+      "id": 3,
+      "title": "Mission 3: Personal Connection",
+      "prompt": "Share an experience where you helped someone at school."
     }
   ]
 };

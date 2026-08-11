@@ -71,8 +71,22 @@ const MindMapSpeaking = ({ data, themeColor, isVi, onReportProgress }) => {
   // console.log(data);
   // ===============================================
 
+  // Normalize branchLabels if centerStems has nested branches
+  const effectiveBranchLabels = data?.branchLabels || (data?.centerStems ? Object.fromEntries(
+    data.centerStems.map((s, idx) => [
+      s.id || `stem_${idx + 1}`,
+      (s.branches || []).map((b, bIdx) => typeof b === 'string' ? { id: `b_${idx + 1}_${bIdx + 1}`, label: b } : b)
+    ])
+  ) : null);
+
+  const effectiveCenterStems = (data?.centerStems || []).map((s, idx) => ({
+    id: s.id || `stem_${idx + 1}`,
+    label: s.label || s.title || `Stem ${idx + 1}`,
+    icon: s.icon || '📌'
+  }));
+
   // 🔥 EARLY RETURN AFTER ALL HOOKS (Rules of Hooks compliance)
-  if (!data || !data.centerStems || !data.branchLabels) {
+  if (!data || !effectiveCenterStems.length || !effectiveBranchLabels) {
     return (
       <div className="flex flex-col items-center justify-center p-10 h-full bg-slate-50 rounded-lg">
         <Brain className="text-slate-300 mb-4" size={64} />
