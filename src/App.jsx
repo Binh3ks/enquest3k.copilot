@@ -51,8 +51,12 @@ import { recordDailyStreak } from './utils/progressReport';
 import { generateSmartReviewAsync } from './utils/srsGenerator';
 import EncounterOverlay from './components/encounter/EncounterOverlay';
 import UnboxAnimation from './components/avatar/UnboxAnimation';
-import WordTreasury from './pages/WordTreasury';
 import Station2Hub from './modules/hubs/station2/Station2Hub';
+import WorldDiscoveryHub from './modules/cambridge_suite/WorldDiscoveryHub';
+import ArenaHub from './modules/cambridge_suite/ArenaHub';
+import WritingStudioHub from './modules/cambridge_suite/WritingStudioHub';
+import NovaTalkShowHub from './modules/cambridge_suite/NovaTalkShowHub';
+import week33Data from './data/weeks/week_33/index.js';
 import { getCollectionByWeek } from './data/collectionConfig';
 
 // Lazy-load checkpoint data only for the 4 checkpoint weeks
@@ -196,7 +200,10 @@ const App = () => {
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
       <Route path="/collection" element={<CollectionBoard />} />
       <Route path="/word-treasury" element={<WordTreasury />} />
-      <Route path="/hub/station-2" element={<Station2Hub />} />
+      <Route path="/hub/station-1" element={<WorldDiscoveryHub data={week33Data?.readingHub} weekNumber={33} />} />
+      <Route path="/hub/station-2" element={<ArenaHub weekNumber={33} />} />
+      <Route path="/hub/station-3" element={<WritingStudioHub data={week33Data?.writingHub} weekNumber={33} />} />
+      <Route path="/hub/station-4" element={<NovaTalkShowHub data={week33Data?.speakingHub} weekNumber={33} />} />
     </Routes>
     
     {/* Global AI Tutor Widget - V5 Premium */}
@@ -824,20 +831,55 @@ const MainLayout = () => {
                   <button onClick={() => setSpeakingNudge(false)} className="text-violet-400 hover:text-violet-600 ml-3 text-xs font-bold">✕</button>
                 </div>
               )}
-              <CurrentModule 
-                key={`${weekId}-${tabKey}-${learningMode}`} 
-                data={matchData} 
-                themeColor={currentStation.color} 
-                isVi={isVi} 
-                onToggleLang={() => setIsVi(!isVi)} 
-                onReportProgress={handleReportProgress} 
-                currentProgress={weekProgress[tabKey] || 0}
-                weekNumber={weekId}
-                mode={learningMode}
-                reviewItems={reviewItems}
-                setReviewItems={setReviewItems}
-                onWeekComplete={handleWeekComplete}
-              />
+
+              {/* Week 33+ Gold Standard 4-Hub Router vs Legacy Modules */}
+              {weekId >= 33 ? (
+                (() => {
+                  if (['read_explore', 'explore', 'new_words'].includes(tabKey)) {
+                    return <WorldDiscoveryHub data={weekData?.readingHub || weekData?.stations?.read_explore} weekNumber={weekId} />;
+                  }
+                  if (['grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tabKey)) {
+                    return <ArenaHub weekNumber={weekId} />;
+                  }
+                  if (['writing', 'dictation'].includes(tabKey)) {
+                    return <WritingStudioHub data={weekData?.writingHub} weekNumber={weekId} />;
+                  }
+                  if (['shadowing', 'ask_ai', 'mindmap_speaking'].includes(tabKey)) {
+                    return <NovaTalkShowHub data={weekData?.speakingHub} weekNumber={weekId} />;
+                  }
+                  return (
+                    <CurrentModule 
+                      key={`${weekId}-${tabKey}-${learningMode}`} 
+                      data={matchData} 
+                      themeColor={currentStation.color} 
+                      isVi={isVi} 
+                      onToggleLang={() => setIsVi(!isVi)} 
+                      onReportProgress={handleReportProgress} 
+                      currentProgress={weekProgress[tabKey] || 0}
+                      weekNumber={weekId}
+                      mode={learningMode}
+                      reviewItems={reviewItems}
+                      setReviewItems={setReviewItems}
+                      onWeekComplete={handleWeekComplete}
+                    />
+                  );
+                })()
+              ) : (
+                <CurrentModule 
+                  key={`${weekId}-${tabKey}-${learningMode}`} 
+                  data={matchData} 
+                  themeColor={currentStation.color} 
+                  isVi={isVi} 
+                  onToggleLang={() => setIsVi(!isVi)} 
+                  onReportProgress={handleReportProgress} 
+                  currentProgress={weekProgress[tabKey] || 0}
+                  weekNumber={weekId}
+                  mode={learningMode}
+                  reviewItems={reviewItems}
+                  setReviewItems={setReviewItems}
+                  onWeekComplete={handleWeekComplete}
+                />
+              )}
             </div>
           </div>
         </main>
