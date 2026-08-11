@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import NovaMascot from './components/NovaMascot';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useParams, useNavigate } from 'react-router-dom';
-import { Menu, Printer, Gauge, Sparkles } from 'lucide-react';
+import { Menu, Printer, Gauge, Sparkles, BookOpen, Swords, PenTool, Radio } from 'lucide-react';
 
 // STORES & API
 import { useUserStore } from './stores/useUserStore';
@@ -769,60 +769,98 @@ const MainLayout = () => {
 
             {/* ✨ Nova CTA removed — button is now in the header */}
 
-            {/* Station nav — progressive reveal: 3 pinned + expand */}
-            {(() => {
-              const PINNED = ['read_explore', 'new_words', 'grammar'];
-              const pinned = STATIONS.filter(s => PINNED.includes(s.key));
-              const rest   = STATIONS.filter(s => !PINNED.includes(s.key) && s.key !== 'review');
-              const review = STATIONS.filter(s => s.key === 'review');
-              // If current tab is in the rest, ensure expanded
-              const isRestActive = rest.some(s => s.key === tabKey) || review.some(s => s.key === tabKey);
-              const showAll = stationsExpanded || isRestActive;
-              const displayed = showAll ? [...pinned, ...rest, ...review] : pinned;
-              const handleExpand = () => {
-                setStationsExpanded(true);
-              };
-              const handleCollapse = () => {
-                setStationsExpanded(false);
-              };
-              return (
-                <div className="flex space-x-3 mb-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth no-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>
-                  <div className="flex space-x-3 mx-auto min-w-max px-6 pt-3">
-                    {displayed.map(s => {
-                      const isActive = tabKey === s.key;
-                      return (
-                        <Link key={s.key} to={`/week/${weekId}/${s.key}`}
-                              onClick={() => setShowWelcomeCard(false)}
-                              className={`flex-shrink-0 flex flex-col items-center justify-center rounded-[26px] transition-all duration-500 border-2 ${isActive ? `w-20 h-20 bg-${s.color}-500 text-white border-${s.color}-300 shadow-xl scale-105` : `w-16 h-16 bg-white border-slate-100 text-${s.color}-500 hover:border-${s.color}-300 hover:bg-slate-50 shadow-sm`}`}>
-                          <div className={`p-2 rounded-xl mb-0.5 ${isActive ? 'bg-white/20' : `bg-${s.color}-50`}`}><s.icon size={isActive ? 22 : 18} className={isActive ? 'animate-bounce-slow' : ''} /></div>
-                          <span className={`text-[8px] font-black uppercase tracking-tighter px-1 text-center ${isActive ? 'opacity-100' : 'opacity-70'}`}>{s.title_en}</span>
-                        </Link>
-                      );
-                    })}
-                    {!showAll && (
-                      <button
-                        onClick={handleExpand}
-                        className="flex-shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-[26px] border-2 border-dashed border-slate-200 text-slate-400 hover:border-indigo-300 hover:text-indigo-500 transition-all bg-white"
-                        title={`Xem thêm ${rest.length + review.length} tính năng`}
-                      >
-                        <span className="text-base">+{rest.length + review.length}</span>
-                        <span className="text-[7px] font-black uppercase tracking-tighter mt-0.5">Thêm</span>
-                      </button>
-                    )}
-                    {showAll && (
-                      <button
-                        onClick={handleCollapse}
-                        className="flex-shrink-0 flex flex-col items-center justify-center w-12 h-16 rounded-[26px] border-2 border-dashed border-slate-200 text-slate-300 hover:border-slate-400 hover:text-slate-500 transition-all bg-white"
-                        title="Thu gọn"
-                      >
-                        <span className="text-lg leading-none">‹</span>
-                        <span className="text-[7px] font-black uppercase tracking-tighter mt-0.5">Thu gọn</span>
-                      </button>
-                    )}
+            {/* Station nav — 4 Cambridge Suite Hub Cards for W33+ vs Legacy 16 Stations for W01-W32 */}
+            {weekId >= 33 ? (
+              <div className="flex flex-wrap items-center justify-center gap-3 mb-6 px-4">
+                {[
+                  { hubId: 1, key: 'read_explore', title: 'Hub 1: World Discovery', desc: 'Webtoon & Story Quest', icon: BookOpen, activeColor: 'bg-indigo-600 border-indigo-400' },
+                  { hubId: 2, key: 'grammar', title: 'Hub 2: Arena Battles', desc: 'Grammar Bridge & Bar Models', icon: Swords, activeColor: 'bg-amber-600 border-amber-400' },
+                  { hubId: 3, key: 'writing', title: 'Hub 3: Writing Studio', desc: '3D Picture Scriptwriter', icon: PenTool, activeColor: 'bg-purple-600 border-purple-400' },
+                  { hubId: 4, key: 'ask_ai', title: 'Hub 4: Nova Talk Show', desc: 'Podcast & AI Examiner 1-1', icon: Radio, activeColor: 'bg-red-600 border-red-400' }
+                ].map((h) => {
+                  const isHubActive = 
+                    (h.hubId === 1 && ['read_explore', 'explore', 'new_words'].includes(tabKey)) ||
+                    (h.hubId === 2 && ['grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tabKey)) ||
+                    (h.hubId === 3 && ['writing', 'dictation'].includes(tabKey)) ||
+                    (h.hubId === 4 && ['shadowing', 'ask_ai', 'mindmap_speaking'].includes(tabKey));
+
+                  return (
+                    <Link
+                      key={h.hubId}
+                      to={`/week/${weekId}/${h.key}`}
+                      onClick={() => setShowWelcomeCard(false)}
+                      className={`flex items-center gap-3 px-5 py-3 rounded-2xl transition-all border-2 ${
+                        isHubActive
+                          ? `${h.activeColor} text-white shadow-xl scale-105 ring-4 ring-indigo-500/20`
+                          : `bg-white text-slate-700 border-slate-200 hover:border-slate-300 shadow-sm hover:scale-102`
+                      }`}
+                    >
+                      <div className={`p-2 rounded-xl text-white ${isHubActive ? 'bg-white/20' : 'bg-slate-900'}`}>
+                        <h.icon size={20} />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-xs font-black tracking-tight">{h.title}</div>
+                        <div className={`text-[10px] font-medium ${isHubActive ? 'text-slate-200' : 'text-slate-400'}`}>{h.desc}</div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            ) : (
+              (() => {
+                const PINNED = ['read_explore', 'new_words', 'grammar'];
+                const pinned = STATIONS.filter(s => PINNED.includes(s.key));
+                const rest   = STATIONS.filter(s => !PINNED.includes(s.key) && s.key !== 'review');
+                const review = STATIONS.filter(s => s.key === 'review');
+                // If current tab is in the rest, ensure expanded
+                const isRestActive = rest.some(s => s.key === tabKey) || review.some(s => s.key === tabKey);
+                const showAll = stationsExpanded || isRestActive;
+                const displayed = showAll ? [...pinned, ...rest, ...review] : pinned;
+                const handleExpand = () => {
+                  setStationsExpanded(true);
+                };
+                const handleCollapse = () => {
+                  setStationsExpanded(false);
+                };
+                return (
+                  <div className="flex space-x-3 mb-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth no-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>
+                    <div className="flex space-x-3 mx-auto min-w-max px-6 pt-3">
+                      {displayed.map(s => {
+                        const isActive = tabKey === s.key;
+                        return (
+                          <Link key={s.key} to={`/week/${weekId}/${s.key}`}
+                                onClick={() => setShowWelcomeCard(false)}
+                                className={`flex-shrink-0 flex flex-col items-center justify-center rounded-[26px] transition-all duration-500 border-2 ${isActive ? `w-20 h-20 bg-${s.color}-500 text-white border-${s.color}-300 shadow-xl scale-105` : `w-16 h-16 bg-white border-slate-100 text-${s.color}-500 hover:border-${s.color}-300 hover:bg-slate-50 shadow-sm`}`}>
+                            <div className={`p-2 rounded-xl mb-0.5 ${isActive ? 'bg-white/20' : `bg-${s.color}-50`}`}><s.icon size={isActive ? 22 : 18} className={isActive ? 'animate-bounce-slow' : ''} /></div>
+                            <span className={`text-[8px] font-black uppercase tracking-tighter px-1 text-center ${isActive ? 'opacity-100' : 'opacity-70'}`}>{s.title_en}</span>
+                          </Link>
+                        );
+                      })}
+                      {!showAll && (
+                        <button
+                          onClick={handleExpand}
+                          className="flex-shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-[26px] border-2 border-dashed border-slate-200 text-slate-400 hover:border-indigo-300 hover:text-indigo-500 transition-all bg-white"
+                          title={`Xem thêm ${rest.length + review.length} tính năng`}
+                        >
+                          <span className="text-base">+{rest.length + review.length}</span>
+                          <span className="text-[7px] font-black uppercase tracking-tighter mt-0.5">Thêm</span>
+                        </button>
+                      )}
+                      {showAll && (
+                        <button
+                          onClick={handleCollapse}
+                          className="flex-shrink-0 flex flex-col items-center justify-center w-12 h-16 rounded-[26px] border-2 border-dashed border-slate-200 text-slate-300 hover:border-slate-400 hover:text-slate-500 transition-all bg-white"
+                          title="Thu gọn"
+                        >
+                          <span className="text-lg leading-none">‹</span>
+                          <span className="text-[7px] font-black uppercase tracking-tighter mt-0.5">Thu gọn</span>
+                        </button>
+                      )}
+                    </div>
                   </div>
-                </div>
-              );
-            })()}
+                );
+              })()
+            )}
             
             <div className="max-w-7xl mx-auto relative">
               {/* Speaking nudge banner (Rule 5) */}
