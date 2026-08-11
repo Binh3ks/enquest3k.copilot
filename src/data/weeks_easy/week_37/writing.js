@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 writing.js for Week 37
+// Cambridge A2 Flyers writing.js — Week 37
 export default {
-  "title": "The Sports Day Challenge — Relay & Speed",
+  "title": "The Sports Day Challenge — Teamwork & Speed",
   "min_sentences": 10,
   "min_words": 65,
   "model_sentence": "On a bright Saturday morning, Leo's school held its annual Sports Day. The crowded sports stadium was filled with cheering students and parents. Leo was chosen to run the final 4x100m relay race. While the first runner was sprinting fast, Leo prepared himself carefully in the exchange zone. When his teammate arrived, Leo passed the baton cleanly and accelerated smoothly down the track. He ran as fast as wind and crossed the finish line first. Out of breath, he smiled happily as his team burst into cheers. They received shiny gold medals and felt extremely proud of their scientific teamwork.",
@@ -72,21 +72,26 @@ export default {
       "image_url": "/images/week37/story_writing_pic.jpg",
       "word_bank": {
         "action_verbs": [
-          "sports_word_1",
-          "sports_word_2"
+          "annual",
+          "stadium",
+          "relay"
         ],
         "cumulative_chunks": [
           "on a bright sunny day",
-          "felt extremely happy"
+          "felt extremely happy",
+          "without any hesitation"
         ],
         "connectors": [
           "Suddenly",
           "Meanwhile",
-          "Eventually"
+          "Eventually",
+          "First",
+          "Next"
         ],
         "grammar_boosters": [
           "while he was walking",
-          "decided to help"
+          "decided to help",
+          "so that everyone was safe"
         ]
       }
     }

@@ -1,126 +1,126 @@
-// Auto-generated Cambridge A2 word_power.js for Week 33
+// Cambridge A2 Flyers word_power.js — Week 33
 export default {
   title: "Collocations & Chunks — Week 33",
   collocations: [
   {
-    "phrase": "word_1",
-    "definition_en": "English definition for target word 1",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 1",
-    "example": "Example sentence using target word 1."
+    "phrase": "corridor",
+    "definition_en": "a long passage in a building with doors on each side",
+    "definition_vi": "hành lang",
+    "example": "Walk carefully down the school corridor."
   },
   {
-    "phrase": "word_2",
-    "definition_en": "English definition for target word 2",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 2",
-    "example": "Example sentence using target word 2."
+    "phrase": "slipped",
+    "definition_en": "slid accidentally and lost balance",
+    "definition_vi": "trượt ngã",
+    "example": "He slipped on the wet floor near the stairs."
   },
   {
-    "phrase": "word_3",
-    "definition_en": "English definition for target word 3",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 3",
-    "example": "Example sentence using target word 3."
+    "phrase": "bandage",
+    "definition_en": "a strip of cloth used to bind a wound or injury",
+    "definition_vi": "băng y tế",
+    "example": "The nurse applied a clean bandage to his knee."
   },
   {
-    "phrase": "word_4",
-    "definition_en": "English definition for target word 4",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 4",
-    "example": "Example sentence using target word 4."
+    "phrase": "nurse",
+    "definition_en": "a person trained to care for sick or injured people",
+    "definition_vi": "y tá",
+    "example": "The school nurse treated the boy gently."
   },
   {
-    "phrase": "word_5",
-    "definition_en": "English definition for target word 5",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 5",
-    "example": "Example sentence using target word 5."
+    "phrase": "emergency",
+    "definition_en": "a serious, unexpected, and dangerous situation",
+    "definition_vi": "tình huống khẩn cấp",
+    "example": "Call the nurse in an emergency."
   },
   {
-    "phrase": "word_6",
-    "definition_en": "English definition for target word 6",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 6",
-    "example": "Example sentence using target word 6."
+    "phrase": "cautiously",
+    "definition_en": "in a careful way to avoid danger or mistakes",
+    "definition_vi": "cẩn trọng",
+    "example": "Students walked cautiously on the wet grass."
   },
   {
-    "phrase": "word_7",
-    "definition_en": "English definition for target word 7",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 7",
-    "example": "Example sentence using target word 7."
+    "phrase": "warning",
+    "definition_en": "a statement or sign telling someone of potential danger",
+    "definition_vi": "cảnh báo",
+    "example": "Look at the yellow warning sign on the floor."
   },
   {
-    "phrase": "word_8",
-    "definition_en": "English definition for target word 8",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 8",
-    "example": "Example sentence using target word 8."
+    "phrase": "bleeding",
+    "definition_en": "losing blood from the body due to injury",
+    "definition_vi": "chảy máu",
+    "example": "The cut on his knee stopped bleeding quickly."
   },
   {
-    "phrase": "word_9",
-    "definition_en": "English definition for target word 9",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 9",
-    "example": "Example sentence using target word 9."
+    "phrase": "headmaster",
+    "definition_en": "the principal teacher in charge of a school",
+    "definition_vi": "thầy hiệu trưởng",
+    "example": "The headmaster praised Jake for his fast reaction."
   },
   {
-    "phrase": "word_10",
-    "definition_en": "English definition for target word 10",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 10",
-    "example": "Example sentence using target word 10."
+    "phrase": "relieved",
+    "definition_en": "feeling relaxed because something bad has stopped",
+    "definition_vi": "nhẹ nhõm",
+    "example": "Everyone felt relieved when the boy smiled again."
   },
   {
-    "phrase": "word_11",
-    "definition_en": "English definition for target word 11",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 11",
-    "example": "Example sentence using target word 11."
+    "phrase": "hesitation",
+    "definition_en": "the action of pausing before saying or doing something",
+    "definition_vi": "sự do dự",
+    "example": "Jake helped him without any hesitation."
   },
   {
-    "phrase": "word_12",
-    "definition_en": "English definition for target word 12",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 12",
-    "example": "Example sentence using target word 12."
+    "phrase": "injure",
+    "definition_en": "to harm or damage a person physically",
+    "definition_vi": "làm bị thương",
+    "example": "Be careful so you do not injure your leg."
   },
   {
-    "phrase": "word_13",
-    "definition_en": "English definition for target word 13",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 13",
-    "example": "Example sentence using target word 13."
+    "phrase": "first-aid",
+    "definition_en": "help given to a sick or injured person before medical care",
+    "definition_vi": "sơ cứu",
+    "example": "The nurse brought a complete first-aid kit."
   },
   {
-    "phrase": "word_14",
-    "definition_en": "English definition for target word 14",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 14",
-    "example": "Example sentence using target word 14."
+    "phrase": "slippery",
+    "definition_en": "difficult to hold or stand on because it is wet or smooth",
+    "definition_vi": "trơn trượt",
+    "example": "The wet wooden floor was very slippery."
   },
   {
-    "phrase": "word_15",
-    "definition_en": "English definition for target word 15",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 15",
-    "example": "Example sentence using target word 15."
+    "phrase": "stumble",
+    "definition_en": "to trip or lose balance while walking",
+    "definition_vi": "vấp ngã",
+    "example": "Watch your step so you do not stumble."
   },
   {
-    "phrase": "word_16",
-    "definition_en": "English definition for target word 16",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 16",
-    "example": "Example sentence using target word 16."
+    "phrase": "prevent",
+    "definition_en": "to stop something from happening or arising",
+    "definition_vi": "ngăn ngừa",
+    "example": "Walking slowly helps prevent accidents."
   },
   {
-    "phrase": "word_17",
-    "definition_en": "English definition for target word 17",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 17",
-    "example": "Example sentence using target word 17."
+    "phrase": "rules",
+    "definition_en": "instructions stating what is allowed or forbidden",
+    "definition_vi": "quy tắc",
+    "example": "Always obey the school safety rules."
   },
   {
-    "phrase": "word_18",
-    "definition_en": "English definition for target word 18",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 18",
-    "example": "Example sentence using target word 18."
+    "phrase": "calmly",
+    "definition_en": "in a quiet and relaxed manner without excitement",
+    "definition_vi": "bình tĩnh",
+    "example": "Jake spoke calmly to the injured student."
   },
   {
-    "phrase": "word_19",
-    "definition_en": "English definition for target word 19",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 19",
-    "example": "Example sentence using target word 19."
+    "phrase": "responsibly",
+    "definition_en": "in a sensible and trustworthy manner",
+    "definition_vi": "có trách nhiệm",
+    "example": "Act responsibly when helping younger children."
   },
   {
-    "phrase": "word_20",
-    "definition_en": "English definition for target word 20",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ 20",
-    "example": "Example sentence using target word 20."
+    "phrase": "attention",
+    "definition_en": "notice taken of someone or something",
+    "definition_vi": "sự chú ý",
+    "example": "Pay close attention to warning signs."
   }
 ]
 };

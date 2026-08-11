@@ -1,70 +1,70 @@
-// Auto-generated Cambridge A2 mindmap.js for Week 34
+// Cambridge A2 Flyers mindmap.js — Week 34
 export default {
   centerStems: [
   {
-    "label": "Summer Setting",
+    "label": "Beginning Scene",
     "branches": [
-      "bright sunny summer day",
-      "hardworking ant in field",
-      "gathering grains of wheat",
-      "lazy grasshopper under tree",
-      "singing cheerfully all day",
-      "warm golden sunshine"
+      "on a bright sunny day",
+      "walking carefully down corridor",
+      "finished science class",
+      "holding notebooks",
+      "clean wooden floors",
+      "busy school morning"
     ]
   },
   {
-    "label": "Winter Problem",
+    "label": "Main Event",
     "branches": [
-      "cold winter arrived",
-      "snow covered ground everywhere",
-      "no food to eat",
-      "shivering in freezing cold",
-      "empty belly and weak legs",
-      "felt cold and sad"
+      "running fast down hall",
+      "slipped on wet floor",
+      "fell heavily on knee",
+      "began to bleed",
+      "burst into tears",
+      "hurt his leg"
     ]
   },
   {
-    "label": "Asking for Help",
+    "label": "Helping Action",
     "branches": [
-      "slowly walked down path",
-      "reached warm wooden house",
-      "knocked gently on door",
-      "asked for warm soup",
-      "kind ant opened door",
-      "invited him inside"
+      "rushed over immediately",
+      "stayed calm and gentle",
+      "called the school nurse",
+      "held his hand",
+      "helped him sit up",
+      "brought a glass of water"
     ]
   },
   {
-    "label": "Kind Response",
+    "label": "Medical Care",
     "branches": [
-      "served hot vegetable soup",
-      "shared stored wheat grains",
-      "sat near warm fireplace",
-      "listened with kindness",
-      "gave him a warm coat",
-      "smiled gently"
+      "arrived with medical box",
+      "cleaned the cut carefully",
+      "applied a clean bandage",
+      "checked his knee",
+      "smiled warmly",
+      "gave him a sticker"
     ]
   },
   {
-    "label": "Grateful Emotion",
+    "label": "Relief & Reaction",
     "branches": [
-      "felt deeply grateful",
-      "thanked the ant warmly",
-      "warmed up inside house",
-      "realized his past mistake",
-      "smiled with joy",
-      "heart felt warm"
+      "felt extremely relieved",
+      "stopped crying softly",
+      "thanked Jake warmly",
+      "headmaster praised them",
+      "friends cheered loudly",
+      "clapped hands together"
     ]
   },
   {
-    "label": "Life Lesson",
+    "label": "Ending Moral",
     "branches": [
       "learned a valuable lesson",
-      "promised to work hard",
-      "prepare for winter early",
-      "never be lazy again",
-      "work together every summer",
-      "help friends in need"
+      "walk safely in corridor",
+      "never run on wet floors",
+      "care for classmates",
+      "obey school rules",
+      "keep everyone safe"
     ]
   }
 ]

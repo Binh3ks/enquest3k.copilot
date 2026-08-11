@@ -149,7 +149,7 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
 
   // ────────── Styling based on tier ──────────
   // Tier 1 (Bold): Target vocab this week
-  const tier1Class = `font-black text-${themeColor}-600 text-2xl px-1 rounded border-b-2 border-${themeColor}-200`;
+  const tier1Class = `font-black text-${themeColor}-600 text-2xl px-0.5 rounded border-b-2 border-${themeColor}-200`;
   // Tier 2 (Semi-bold): New academic words (not formally taught yet)
   const tier2Class = `text-xl font-semibold text-${themeColor}-500 border-b border-dotted border-${themeColor}-300`;
   // Tier 3 (Plain): Already learned (taught in previous weeks) — subtle, passive review only

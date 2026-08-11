@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 read.js for Week 37
+// Cambridge A2 Flyers read.js — Week 37
 export default {
-  title: "The Sports Day Challenge",
+  title: "The 4x100m Relay Sprint",
   image_url: "/images/week37/read_cover_w37.jpg",
   audio_url: "/audio/week37/read_main.mp3",
   content_en: `On a **bright Saturday morning**, Leo's school held its **annual Sports Day**. The **crowded sports stadium** was filled with **cheering students and parents**.
@@ -21,16 +21,62 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
   {
     "id": 1,
     "question_en": "Which race did Leo run in Sports Day?",
-    "answer": [
-      "The final 4x100m relay race"
+    "options": [
+      "The final 4x100m relay race",
+      "The 800m marathon",
+      "The high jump",
+      "The swimming relay"
     ],
+    "answer": "The final 4x100m relay race",
     "clue_statement": "Leo was chosen to run the final 4x100m relay race.",
-    "hint_en": "Final 4x100m ___.",
-    "hint_vi": "Chạy tiếp sức ___."
+    "hint_en": "4x100m relay...",
+    "hint_vi": "Tiếp sức 4x100m..."
+  },
+  {
+    "id": 2,
+    "question_en": "What was the crowded sports stadium filled with?",
+    "options": [
+      "Cheering students and parents",
+      "Empty wooden chairs",
+      "Rain drops",
+      "Flying birds"
+    ],
+    "answer": "Cheering students and parents",
+    "clue_statement": "The stadium was filled with cheering students and parents.",
+    "hint_en": "Cheering...",
+    "hint_vi": "Tiếng reo hò..."
+  },
+  {
+    "id": 3,
+    "question_en": "How did Leo pass the baton to his teammate?",
+    "options": [
+      "Passed the baton cleanly",
+      "Dropped it on the grass",
+      "Threw it far away",
+      "Forgot the baton"
+    ],
+    "answer": "Passed the baton cleanly",
+    "clue_statement": "Leo passed the baton cleanly.",
+    "hint_en": "Passed the baton...",
+    "hint_vi": "Trao gậy tiếp sức..."
+  },
+  {
+    "id": 4,
+    "question_en": "What award did the relay team receive?",
+    "options": [
+      "Shiny gold medals",
+      "Paper certificates",
+      "Silver cups",
+      "Wooden trophies"
+    ],
+    "answer": "Shiny gold medals",
+    "clue_statement": "They received shiny gold medals.",
+    "hint_en": "Shiny gold...",
+    "hint_vi": "Huy chương vàng..."
   }
 ],
   read_stem: {
-  "title": "The Sports Day Challenge (STEM Science)",
+  "title": "The 4x100m Relay Sprint",
   "image_url": "/images/week37/read_cover_w37.jpg",
   "audio_url": "/audio/week37/read_main.mp3",
   "content_en": "On a **bright Saturday morning**, Leo's school held its **annual Sports Day**. The **crowded sports stadium** was filled with **cheering students and parents**.\n\nLeo was chosen to run the **final 4x100m relay race**. While the **first runner was sprinting fast**, Leo **prepared himself carefully** in the exchange zone.\n\nWhen his teammate arrived, Leo **passed the baton cleanly** and **accelerated smoothly down the track**. He **ran as fast as wind** and **crossed the finish line first**.\n\nOut of breath, he **smiled happily** as his team **burst into cheers**. They **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.",
@@ -39,17 +85,63 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
     {
       "id": 1,
       "question_en": "Which race did Leo run in Sports Day?",
-      "answer": [
-        "The final 4x100m relay race"
+      "options": [
+        "The final 4x100m relay race",
+        "The 800m marathon",
+        "The high jump",
+        "The swimming relay"
       ],
+      "answer": "The final 4x100m relay race",
       "clue_statement": "Leo was chosen to run the final 4x100m relay race.",
-      "hint_en": "Final 4x100m ___.",
-      "hint_vi": "Chạy tiếp sức ___."
+      "hint_en": "4x100m relay...",
+      "hint_vi": "Tiếp sức 4x100m..."
+    },
+    {
+      "id": 2,
+      "question_en": "What was the crowded sports stadium filled with?",
+      "options": [
+        "Cheering students and parents",
+        "Empty wooden chairs",
+        "Rain drops",
+        "Flying birds"
+      ],
+      "answer": "Cheering students and parents",
+      "clue_statement": "The stadium was filled with cheering students and parents.",
+      "hint_en": "Cheering...",
+      "hint_vi": "Tiếng reo hò..."
+    },
+    {
+      "id": 3,
+      "question_en": "How did Leo pass the baton to his teammate?",
+      "options": [
+        "Passed the baton cleanly",
+        "Dropped it on the grass",
+        "Threw it far away",
+        "Forgot the baton"
+      ],
+      "answer": "Passed the baton cleanly",
+      "clue_statement": "Leo passed the baton cleanly.",
+      "hint_en": "Passed the baton...",
+      "hint_vi": "Trao gậy tiếp sức..."
+    },
+    {
+      "id": 4,
+      "question_en": "What award did the relay team receive?",
+      "options": [
+        "Shiny gold medals",
+        "Paper certificates",
+        "Silver cups",
+        "Wooden trophies"
+      ],
+      "answer": "Shiny gold medals",
+      "clue_statement": "They received shiny gold medals.",
+      "hint_en": "Shiny gold...",
+      "hint_vi": "Huy chương vàng..."
     }
   ]
 },
   read_social: {
-  "title": "The Sports Day Challenge (Social Studies)",
+  "title": "Olympic Spirit & International Unity",
   "image_url": "/images/week37/explore_w37.jpg",
   "audio_url": "/audio/week37/read_main.mp3",
   "content_en": "The Olympic Games are the world's biggest sports celebration where **athletes from over 200 nations** compete peacefully. Running together in relay teams teaches us that true success comes from **working as one team**.",
@@ -57,13 +149,31 @@ Dù thở dốc, chú **mỉm cười hạnh phúc** khi đội của chú **b�
   "comprehension_questions": [
     {
       "id": 1,
-      "question_en": "How many nations compete in the modern Olympic Games?",
-      "answer": [
-        "Over 200 nations"
+      "question_en": "How many nations compete in the Olympic Games?",
+      "options": [
+        "Over 200 nations",
+        "50 nations",
+        "10 nations",
+        "100 nations"
       ],
-      "clue_statement": "Athletes from over 200 nations compete.",
-      "hint_en": "Over ___ nations.",
-      "hint_vi": "Hơn ___ quốc gia."
+      "answer": "Over 200 nations",
+      "clue_statement": "Athletes from over 200 nations compete peacefully.",
+      "hint_en": "Over 200...",
+      "hint_vi": "Hơn 200..."
+    },
+    {
+      "id": 2,
+      "question_en": "What main lesson do relay races teach athletes?",
+      "options": [
+        "Working as one team leads to success",
+        "Running alone is always better",
+        "Winning is the only thing",
+        "Speed does not matter"
+      ],
+      "answer": "Working as one team leads to success",
+      "clue_statement": "Relay teams teach us that success comes from working as one team.",
+      "hint_en": "Working as one...",
+      "hint_vi": "Làm việc như một..."
     }
   ]
 }
@@ -107,7 +217,6 @@ export const chunk_focus = [
   "vận động viên từ hơn 200 quốc gia",
   "làm việc như một đội"
 ];
-
 export const dictionary = {
   "bright Saturday morning": "sáng thứ Bảy nắng đẹp rực rỡ",
   "annual Sports Day": "Ngày Hội Thể Thao hàng năm",

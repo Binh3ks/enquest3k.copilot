@@ -1,83 +1,83 @@
-// Auto-generated Cambridge A2 word_match.js for Week 36
+// Cambridge A2 Flyers word_match.js — Week 36
 export default [
   {
-    "word": "cave_word_1",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 1"
+    "word": "mysterious",
+    "definition": "bí ẩn"
   },
   {
-    "word": "cave_word_2",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 2"
+    "word": "flashlight",
+    "definition": "đèn pin"
   },
   {
-    "word": "cave_word_3",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 3"
+    "word": "entrance",
+    "definition": "lối vào"
   },
   {
-    "word": "cave_word_4",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 4"
+    "word": "ancient",
+    "definition": "cổ xưa"
   },
   {
-    "word": "cave_word_5",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 5"
+    "word": "compass",
+    "definition": "la bàn"
   },
   {
-    "word": "cave_word_6",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 6"
+    "word": "stalactite",
+    "definition": "nhũ đá"
   },
   {
-    "word": "cave_word_7",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 7"
+    "word": "explorer",
+    "definition": "nhà khám phá"
   },
   {
-    "word": "cave_word_8",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 8"
+    "word": "parchment",
+    "definition": "cuộn giấy da"
   },
   {
-    "word": "cave_word_9",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 9"
+    "word": "shadow",
+    "definition": "bóng râm"
   },
   {
-    "word": "cave_word_10",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 10"
+    "word": "underground",
+    "definition": "dưới lòng đất"
   },
   {
-    "word": "cave_word_11",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 11"
+    "word": "chamber",
+    "definition": "ngăn hang động"
   },
   {
-    "word": "cave_word_12",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 12"
+    "word": "adventure",
+    "definition": "cuộc phiêu lưu"
   },
   {
-    "word": "cave_word_13",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 13"
+    "word": "discover",
+    "definition": "khám phá out"
   },
   {
-    "word": "cave_word_14",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 14"
+    "word": "ceiling",
+    "definition": "trần hang"
   },
   {
-    "word": "cave_word_15",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 15"
+    "word": "drip",
+    "definition": "nhỏ giọt"
   },
   {
-    "word": "cave_word_16",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 16"
+    "word": "treasure",
+    "definition": "kho báu"
   },
   {
-    "word": "cave_word_17",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 17"
+    "word": "historical",
+    "definition": "thuộc lịch sử"
   },
   {
-    "word": "cave_word_18",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 18"
+    "word": "hiking",
+    "definition": "đi bộ đường dài"
   },
   {
-    "word": "cave_word_19",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 19"
+    "word": "forest",
+    "definition": "rừng cây"
   },
   {
-    "word": "cave_word_20",
-    "definition": "Định nghĩa tiếng Việt cho từ hang động 20"
+    "word": "courage",
+    "definition": "lòng dũng cảm"
   }
 ];

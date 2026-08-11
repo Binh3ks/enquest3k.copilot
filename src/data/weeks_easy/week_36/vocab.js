@@ -1,125 +1,145 @@
-// Auto-generated Cambridge A2 vocab.js for Week 36
+// Cambridge A2 Flyers vocab.js — Week 36
 export default {
   vocab: [
   {
-    "word": "cave_word_1",
-    "definition_en": "English definition for cave word 1",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 1",
-    "example": "Example sentence for cave word 1."
+    "word": "mysterious",
+    "definition_en": "difficult or impossible to understand or explain",
+    "definition_vi": "bí ẩn",
+    "example": "They found a mysterious entrance behind the rock.",
+    "ipa": "/mɪˈstɪə.ri.əs/"
   },
   {
-    "word": "cave_word_2",
-    "definition_en": "English definition for cave word 2",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 2",
-    "example": "Example sentence for cave word 2."
+    "word": "flashlight",
+    "definition_en": "a portable battery-powered electric lamp",
+    "definition_vi": "đèn pin",
+    "example": "Turn on your flashlight inside the dark cave.",
+    "ipa": "/ˈflæʃ.laɪt/"
   },
   {
-    "word": "cave_word_3",
-    "definition_en": "English definition for cave word 3",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 3",
-    "example": "Example sentence for cave word 3."
+    "word": "entrance",
+    "definition_en": "an opening that allows access to a place",
+    "definition_vi": "lối vào",
+    "example": "The cave entrance was covered with vines.",
+    "ipa": "/ˈen.trəns/"
   },
   {
-    "word": "cave_word_4",
-    "definition_en": "English definition for cave word 4",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 4",
-    "example": "Example sentence for cave word 4."
+    "word": "ancient",
+    "definition_en": "belonging to the very distant past",
+    "definition_vi": "cổ xưa",
+    "example": "The explorer drew an ancient parchment map.",
+    "ipa": "/ˈeɪn.ʃənt/"
   },
   {
-    "word": "cave_word_5",
-    "definition_en": "English definition for cave word 5",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 5",
-    "example": "Example sentence for cave word 5."
+    "word": "compass",
+    "definition_en": "an instrument showing magnetic north used for navigation",
+    "definition_vi": "la bàn",
+    "example": "Use a shiny brass compass to find north.",
+    "ipa": "/ˈkʌm.pəs/"
   },
   {
-    "word": "cave_word_6",
-    "definition_en": "English definition for cave word 6",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 6",
-    "example": "Example sentence for cave word 6."
+    "word": "stalactite",
+    "definition_en": "an icicle-shaped formation hanging from a cave ceiling",
+    "definition_vi": "nhũ đá",
+    "example": "Water dripped from a long stalactite.",
+    "ipa": "/ˈstæl.ək.taɪt/"
   },
   {
-    "word": "cave_word_7",
-    "definition_en": "English definition for cave word 7",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 7",
-    "example": "Example sentence for cave word 7."
+    "word": "explorer",
+    "definition_en": "a person who explores an unfamiliar area",
+    "definition_vi": "nhà khám phá",
+    "example": "Brave explorers mapped the deep cave.",
+    "ipa": "/ɪkˈsplɔː.rər/"
   },
   {
-    "word": "cave_word_8",
-    "definition_en": "English definition for cave word 8",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 8",
-    "example": "Example sentence for cave word 8."
+    "word": "parchment",
+    "definition_en": "a stiff flat material made from animal skin for writing",
+    "definition_vi": "cuộn giấy da",
+    "example": "The ancient map was written on parchment.",
+    "ipa": "/ˈpɑːtʃ.mənt/"
   },
   {
-    "word": "cave_word_9",
-    "definition_en": "English definition for cave word 9",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 9",
-    "example": "Example sentence for cave word 9."
+    "word": "shadow",
+    "definition_en": "a dark area produced by a body coming between rays of light",
+    "definition_vi": "bóng râm",
+    "example": "Dark grey shadows danced on the rocky wall.",
+    "ipa": "/ˈʃæd.əʊ/"
   },
   {
-    "word": "cave_word_10",
-    "definition_en": "English definition for cave word 10",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 10",
-    "example": "Example sentence for cave word 10."
+    "word": "underground",
+    "definition_en": "situated beneath the surface of the earth",
+    "definition_vi": "dưới lòng đất",
+    "example": "The underground lake was icy cold.",
+    "ipa": "/ˌʌn.dəˈɡraʊnd/"
   },
   {
-    "word": "cave_word_11",
-    "definition_en": "English definition for cave word 11",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 11",
-    "example": "Example sentence for cave word 11."
+    "word": "chamber",
+    "definition_en": "a large room or enclosed space in a cave",
+    "definition_vi": "ngăn hang động",
+    "example": "They stepped into a wide stone chamber.",
+    "ipa": "/ˈtʃeɪm.bər/"
   },
   {
-    "word": "cave_word_12",
-    "definition_en": "English definition for cave word 12",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 12",
-    "example": "Example sentence for cave word 12."
+    "word": "adventure",
+    "definition_en": "an unusual and exciting experience",
+    "definition_vi": "cuộc phiêu lưu",
+    "example": "Hiking in the forest was a great adventure.",
+    "ipa": "/ədˈven.tʃər/"
   },
   {
-    "word": "cave_word_13",
-    "definition_en": "English definition for cave word 13",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 13",
-    "example": "Example sentence for cave word 13."
+    "word": "discover",
+    "definition_en": "find unexpectedly or during a search",
+    "definition_vi": "khám phá out",
+    "example": "They discovered a wooden treasure box.",
+    "ipa": "/dɪˈskʌv.ər/"
   },
   {
-    "word": "cave_word_14",
-    "definition_en": "English definition for cave word 14",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 14",
-    "example": "Example sentence for cave word 14."
+    "word": "ceiling",
+    "definition_en": "the upper interior surface of a room or cave",
+    "definition_vi": "trần hang",
+    "example": "Water dripped from the rocky ceiling.",
+    "ipa": "/ˈsiː.lɪŋ/"
   },
   {
-    "word": "cave_word_15",
-    "definition_en": "English definition for cave word 15",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 15",
-    "example": "Example sentence for cave word 15."
+    "word": "drip",
+    "definition_en": "fall in small drops of liquid",
+    "definition_vi": "nhỏ giọt",
+    "example": "Cool water drops drip silently.",
+    "ipa": "/drɪp/"
   },
   {
-    "word": "cave_word_16",
-    "definition_en": "English definition for cave word 16",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 16",
-    "example": "Example sentence for cave word 16."
+    "word": "treasure",
+    "definition_en": "a quantity of precious metals, gems, or valuable items",
+    "definition_vi": "kho báu",
+    "example": "The map led to a historical treasure.",
+    "ipa": "/ˈtreʒ.ər/"
   },
   {
-    "word": "cave_word_17",
-    "definition_en": "English definition for cave word 17",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 17",
-    "example": "Example sentence for cave word 17."
+    "word": "historical",
+    "definition_en": "concerning history or past events",
+    "definition_vi": "thuộc lịch sử",
+    "example": "They found a historical map from 1850.",
+    "ipa": "/hɪˈstɒr.ɪ.kəl/"
   },
   {
-    "word": "cave_word_18",
-    "definition_en": "English definition for cave word 18",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 18",
-    "example": "Example sentence for cave word 18."
+    "word": "hiking",
+    "definition_en": "the activity of going for long walks in the countryside",
+    "definition_vi": "đi bộ đường dài",
+    "example": "We enjoy hiking in the pine forest.",
+    "ipa": "/ˈhaɪ.kɪŋ/"
   },
   {
-    "word": "cave_word_19",
-    "definition_en": "English definition for cave word 19",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 19",
-    "example": "Example sentence for cave word 19."
+    "word": "forest",
+    "definition_en": "a large area covered chiefly with trees and undergrowth",
+    "definition_vi": "rừng cây",
+    "example": "Tall trees grew in the pine forest.",
+    "ipa": "/ˈfɒr.ɪst/"
   },
   {
-    "word": "cave_word_20",
-    "definition_en": "English definition for cave word 20",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 20",
-    "example": "Example sentence for cave word 20."
+    "word": "courage",
+    "definition_en": "the ability to do something that frightens one",
+    "definition_vi": "lòng dũng cảm",
+    "example": "Exploring dark caves requires true courage.",
+    "ipa": "/ˈkʌr.ɪdʒ/"
   }
 ]
 };

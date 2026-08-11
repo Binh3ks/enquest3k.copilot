@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 read.js for Week 35
+// Cambridge A2 Flyers read.js — Week 35
 export default {
-  title: "Save Our Park",
+  title: "Maya & Tom's Park Cleanup",
   image_url: "/images/week35/read_cover_w35.jpg",
   audio_url: "/audio/week35/read_main.mp3",
   content_en: `On a **warm Saturday morning**, Maya and Tom **visited their favorite city park**. They were sad to see **plastic bottles and rubbish** **scattered on the green grass**.
@@ -21,16 +21,62 @@ Tất cả du khách **đều mỉm cười và vỗ tay khen ngợi** **nỗ l�
   {
     "id": 1,
     "question_en": "Where did Maya and Tom go on Saturday morning?",
-    "answer": [
-      "Their favorite city park"
+    "options": [
+      "Their favorite city park",
+      "The shopping mall",
+      "The cinema",
+      "The swimming pool"
     ],
+    "answer": "Their favorite city park",
     "clue_statement": "Maya and Tom visited their favorite city park.",
-    "hint_en": "Favorite ___ park.",
-    "hint_vi": "Công viên ___ yêu thích."
+    "hint_en": "Favorite city...",
+    "hint_vi": "Công viên..."
+  },
+  {
+    "id": 2,
+    "question_en": "What was scattered on the green grass?",
+    "options": [
+      "Plastic bottles and rubbish",
+      "Colorful autumn leaves",
+      "Wooden toys",
+      "Flower petals"
+    ],
+    "answer": "Plastic bottles and rubbish",
+    "clue_statement": "Plastic bottles and rubbish were scattered on the grass.",
+    "hint_en": "Plastic bottles...",
+    "hint_vi": "Chai nhựa..."
+  },
+  {
+    "id": 3,
+    "question_en": "Where did they throw the collected plastic waste?",
+    "options": [
+      "Into recycling bins",
+      "Into the lake",
+      "Under the bench",
+      "Behind the trees"
+    ],
+    "answer": "Into recycling bins",
+    "clue_statement": "They collected plastic waste into recycling bins.",
+    "hint_en": "Recycling...",
+    "hint_vi": "Thùng tái chế..."
+  },
+  {
+    "id": 4,
+    "question_en": "What did they plant near the pond?",
+    "options": [
+      "Colorful flowers and young green trees",
+      "Vegetables and corn",
+      "Grass seeds",
+      "Plastic flags"
+    ],
+    "answer": "Colorful flowers and young green trees",
+    "clue_statement": "They planted colorful flowers and young green trees.",
+    "hint_en": "Colorful flowers...",
+    "hint_vi": "Hoa rực rỡ..."
   }
 ],
   read_stem: {
-  "title": "Save Our Park (STEM Science)",
+  "title": "Maya & Tom's Park Cleanup",
   "image_url": "/images/week35/read_cover_w35.jpg",
   "audio_url": "/audio/week35/read_main.mp3",
   "content_en": "On a **warm Saturday morning**, Maya and Tom **visited their favorite city park**. They were sad to see **plastic bottles and rubbish** **scattered on the green grass**.\n\n**Without hesitation**, they **decided to clean up** the **entire park together**. **First**, they **put on gloves** and **collected all the plastic waste** into **recycling bins**.\n\n**Next**, they **planted colorful flowers** and **young green trees** near the pond. **Thanks to their hard work**, the park became **clean and beautiful again**.\n\nAll the visitors **smiled and applauded** their **wonderful effort**. Maya and Tom **felt extremely proud** of **protecting nature**.",
@@ -39,17 +85,63 @@ Tất cả du khách **đều mỉm cười và vỗ tay khen ngợi** **nỗ l�
     {
       "id": 1,
       "question_en": "Where did Maya and Tom go on Saturday morning?",
-      "answer": [
-        "Their favorite city park"
+      "options": [
+        "Their favorite city park",
+        "The shopping mall",
+        "The cinema",
+        "The swimming pool"
       ],
+      "answer": "Their favorite city park",
       "clue_statement": "Maya and Tom visited their favorite city park.",
-      "hint_en": "Favorite ___ park.",
-      "hint_vi": "Công viên ___ yêu thích."
+      "hint_en": "Favorite city...",
+      "hint_vi": "Công viên..."
+    },
+    {
+      "id": 2,
+      "question_en": "What was scattered on the green grass?",
+      "options": [
+        "Plastic bottles and rubbish",
+        "Colorful autumn leaves",
+        "Wooden toys",
+        "Flower petals"
+      ],
+      "answer": "Plastic bottles and rubbish",
+      "clue_statement": "Plastic bottles and rubbish were scattered on the grass.",
+      "hint_en": "Plastic bottles...",
+      "hint_vi": "Chai nhựa..."
+    },
+    {
+      "id": 3,
+      "question_en": "Where did they throw the collected plastic waste?",
+      "options": [
+        "Into recycling bins",
+        "Into the lake",
+        "Under the bench",
+        "Behind the trees"
+      ],
+      "answer": "Into recycling bins",
+      "clue_statement": "They collected plastic waste into recycling bins.",
+      "hint_en": "Recycling...",
+      "hint_vi": "Thùng tái chế..."
+    },
+    {
+      "id": 4,
+      "question_en": "What did they plant near the pond?",
+      "options": [
+        "Colorful flowers and young green trees",
+        "Vegetables and corn",
+        "Grass seeds",
+        "Plastic flags"
+      ],
+      "answer": "Colorful flowers and young green trees",
+      "clue_statement": "They planted colorful flowers and young green trees.",
+      "hint_en": "Colorful flowers...",
+      "hint_vi": "Hoa rực rỡ..."
     }
   ]
 },
   read_social: {
-  "title": "Save Our Park (Social Studies)",
+  "title": "Green Cities & Urban Forests",
   "image_url": "/images/week35/explore_w35.jpg",
   "audio_url": "/audio/week35/read_main.mp3",
   "content_en": "Parks in big cities are essential **green lungs** that clean the air we breathe. In Singapore, city parks have **futuristic supertrees** covered in real plants. In London, Hyde Park provides a safe home for **wild swans, ducks, and squirrels**. By keeping parks clean, communities make cities **healthier places** for everyone.",
@@ -58,12 +150,30 @@ Tất cả du khách **đều mỉm cười và vỗ tay khen ngợi** **nỗ l�
     {
       "id": 1,
       "question_en": "Why are city parks called green lungs?",
-      "answer": [
-        "Because they clean the air we breathe"
+      "options": [
+        "Because they clean the air we breathe",
+        "Because they are shaped like lungs",
+        "Because they are painted green",
+        "Because birds nest in them"
       ],
+      "answer": "Because they clean the air we breathe",
       "clue_statement": "Parks are green lungs that clean the air.",
-      "hint_en": "Clean the ___.",
-      "hint_vi": "Làm sạch ___."
+      "hint_en": "Clean the air...",
+      "hint_vi": "Làm sạch không khí..."
+    },
+    {
+      "id": 2,
+      "question_en": "Which city is famous for futuristic supertrees covered in plants?",
+      "options": [
+        "Singapore",
+        "London",
+        "Tokyo",
+        "Paris"
+      ],
+      "answer": "Singapore",
+      "clue_statement": "In Singapore, city parks have futuristic supertrees.",
+      "hint_en": "Singapore...",
+      "hint_vi": "Singapore..."
     }
   ]
 }
@@ -119,7 +229,6 @@ export const chunk_focus = [
   "thiên nga, vịt và sóc dại",
   "nơi lành mạnh hơn"
 ];
-
 export const dictionary = {
   "warm Saturday morning": "sáng thứ Bảy ấm áp",
   "visited their favorite city park": "đến thăm công viên thành phố yêu thích của họ",

@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 read.js for Week 34
+// Cambridge A2 Flyers read.js — Week 34
 export default {
-  title: "The Ant and the Grasshopper",
+  title: "The Ant and the Grasshopper Fable",
   image_url: "/images/week34/read_cover_w34.jpg",
   audio_url: "/audio/week34/read_main.mp3",
   content_en: `On a **bright sunny summer day**, the **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, the **lazy grasshopper** was **singing cheerfully** under a **green tree**.
@@ -21,16 +21,62 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
   {
     "id": 1,
     "question_en": "What was the ant doing during the summer?",
-    "answer": [
-      "Gathering grains of wheat"
+    "options": [
+      "Gathering grains of wheat",
+      "Singing songs under the tree",
+      "Sleeping inside the log",
+      "Swimming in the river"
     ],
-    "clue_statement": "The ant was gathering grains of wheat.",
-    "hint_en": "Gathering ___.",
-    "hint_vi": "Nhặt ___."
+    "answer": "Gathering grains of wheat",
+    "clue_statement": "The hardworking ant was gathering grains of wheat.",
+    "hint_en": "Gathering grains...",
+    "hint_vi": "Nhặt những hạt..."
+  },
+  {
+    "id": 2,
+    "question_en": "What was the grasshopper doing while the ant worked?",
+    "options": [
+      "Singing cheerfully under a green tree",
+      "Cooking vegetable soup",
+      "Building a brick house",
+      "Collecting dry leaves"
+    ],
+    "answer": "Singing cheerfully under a green tree",
+    "clue_statement": "The grasshopper was singing cheerfully under a green tree.",
+    "hint_en": "Singing...",
+    "hint_vi": "Hát ca..."
+  },
+  {
+    "id": 3,
+    "question_en": "Why was the grasshopper shivering in winter?",
+    "options": [
+      "He had no food and it was freezing",
+      "His house was too hot",
+      "He was playing in cold water",
+      "He ate too much ice cream"
+    ],
+    "answer": "He had no food and it was freezing",
+    "clue_statement": "The grasshopper had no food and was shivering in the cold.",
+    "hint_en": "Had no food...",
+    "hint_vi": "Không có thức ăn..."
+  },
+  {
+    "id": 4,
+    "question_en": "How did the kind ant help the grasshopper?",
+    "options": [
+      "Invited him inside for warm soup",
+      "Gave him a wooden shovel",
+      "Closed the door quickly",
+      "Told him to go away"
+    ],
+    "answer": "Invited him inside for warm soup",
+    "clue_statement": "The ant invited him inside for warm soup.",
+    "hint_en": "Invited him...",
+    "hint_vi": "Mời vào..."
   }
 ],
   read_stem: {
-  "title": "The Ant and the Grasshopper (STEM Science)",
+  "title": "The Ant and the Grasshopper Fable",
   "image_url": "/images/week34/read_cover_w34.jpg",
   "audio_url": "/audio/week34/read_main.mp3",
   "content_en": "On a **bright sunny summer day**, the **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, the **lazy grasshopper** was **singing cheerfully** under a **green tree**.\n\nWhen the **cold winter arrived**, **snow covered the ground everywhere**. The grasshopper **had no food** and was **shivering in the cold**.\n\nHe **slowly walked** to the ant's **warm wooden house** and **knocked on the door**. The **kind ant** opened the door and **invited him inside** for **warm soup**.\n\nThe grasshopper **felt deeply grateful** and **learned a valuable lesson**. **From that day on**, he **promised to work hard** every summer.",
@@ -39,31 +85,95 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
     {
       "id": 1,
       "question_en": "What was the ant doing during the summer?",
-      "answer": [
-        "Gathering grains of wheat"
+      "options": [
+        "Gathering grains of wheat",
+        "Singing songs under the tree",
+        "Sleeping inside the log",
+        "Swimming in the river"
       ],
-      "clue_statement": "The ant was gathering grains of wheat.",
-      "hint_en": "Gathering ___.",
-      "hint_vi": "Nhặt ___."
+      "answer": "Gathering grains of wheat",
+      "clue_statement": "The hardworking ant was gathering grains of wheat.",
+      "hint_en": "Gathering grains...",
+      "hint_vi": "Nhặt những hạt..."
+    },
+    {
+      "id": 2,
+      "question_en": "What was the grasshopper doing while the ant worked?",
+      "options": [
+        "Singing cheerfully under a green tree",
+        "Cooking vegetable soup",
+        "Building a brick house",
+        "Collecting dry leaves"
+      ],
+      "answer": "Singing cheerfully under a green tree",
+      "clue_statement": "The grasshopper was singing cheerfully under a green tree.",
+      "hint_en": "Singing...",
+      "hint_vi": "Hát ca..."
+    },
+    {
+      "id": 3,
+      "question_en": "Why was the grasshopper shivering in winter?",
+      "options": [
+        "He had no food and it was freezing",
+        "His house was too hot",
+        "He was playing in cold water",
+        "He ate too much ice cream"
+      ],
+      "answer": "He had no food and it was freezing",
+      "clue_statement": "The grasshopper had no food and was shivering in the cold.",
+      "hint_en": "Had no food...",
+      "hint_vi": "Không có thức ăn..."
+    },
+    {
+      "id": 4,
+      "question_en": "How did the kind ant help the grasshopper?",
+      "options": [
+        "Invited him inside for warm soup",
+        "Gave him a wooden shovel",
+        "Closed the door quickly",
+        "Told him to go away"
+      ],
+      "answer": "Invited him inside for warm soup",
+      "clue_statement": "The ant invited him inside for warm soup.",
+      "hint_en": "Invited him...",
+      "hint_vi": "Mời vào..."
     }
   ]
 },
   read_social: {
-  "title": "The Ant and the Grasshopper (Social Studies)",
+  "title": "Aesop's Fables & Ancient Life Lessons",
   "image_url": "/images/week34/explore_w34.jpg",
   "audio_url": "/audio/week34/read_main.mp3",
-  "content_en": "Fables are ancient short stories that teach us **valuable life lessons**. Aesop was a famous storyteller from Greece who wrote stories about animals with human personalities. Stories like *The Ant and the Grasshopper* show us how **hard work and patience** always win.",
+  "content_en": "Fables are ancient short stories that teach us **valuable life lessons**. Aesop was a famous storyteller from Greece who wrote stories about animals with human personalities. Stories like *The Ant and the Grasshopper* show us how **hard work and patience** always lead to success.",
   "content_vi": "Truyện ngụ ngôn là những câu chuyện ngắn cổ xưa dạy chúng ta những bài học cuộc sống quý giá. Aesop là một người kể chuyện nổi tiếng từ Hy Lạp.",
   "comprehension_questions": [
     {
       "id": 1,
-      "question_en": "Who was Aesop?",
-      "answer": [
-        "A famous storyteller from ancient Greece"
+      "question_en": "Where was Aesop the storyteller from?",
+      "options": [
+        "Greece",
+        "Canada",
+        "Japan",
+        "Egypt"
       ],
+      "answer": "Greece",
       "clue_statement": "Aesop was a famous storyteller from Greece.",
-      "hint_en": "Storyteller from ___.",
-      "hint_vi": "Người kể chuyện từ ___."
+      "hint_en": "Storyteller from...",
+      "hint_vi": "Người kể chuyện từ..."
+    },
+    {
+      "id": 2,
+      "question_en": "What main lesson do fables teach children?",
+      "options": [
+        "Valuable life lessons and moral values",
+        "How to drive a car",
+        "How to build computers",
+        "How to fly planes"
+      ],
+      "answer": "Valuable life lessons and moral values",
+      "clue_statement": "Fables teach us valuable life lessons.",
+      "hint_en": "Valuable life...",
+      "hint_vi": "Bài học..."
     }
   ]
 }
@@ -72,11 +182,9 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
 export const chunk_focus = [
   "bright sunny summer day",
   "hardworking ant",
-  "kiến chăm chỉ",
   "gathering grains of wheat",
   "Meanwhile",
   "lazy grasshopper",
-  "châu chấu lười biếng",
   "singing cheerfully",
   "green tree",
   "cold winter arrived",
@@ -96,12 +204,10 @@ export const chunk_focus = [
   "valuable life lessons",
   "hard work and patience",
   "ngày hè nắng đẹp rực rỡ",
-  "chú kiến chăm chỉ",
-  "hardworking ant",
+  "kiến chăm chỉ",
   "nhặt những hạt lúa mì",
   "Trong khi đó",
-  "chú châu chấu lười biếng",
-  "lazy grasshopper",
+  "châu chấu lười biếng",
   "hát ca vui vẻ",
   "cây xanh",
   "mùa đông lạnh giá đến",
@@ -121,15 +227,12 @@ export const chunk_focus = [
   "bài học cuộc sống quý giá",
   "chăm chỉ và kiên nhẫn"
 ];
-
 export const dictionary = {
   "bright sunny summer day": "ngày hè nắng đẹp rực rỡ",
   "hardworking ant": "kiến chăm chỉ",
-  "kiến chăm chỉ": "hardworking ant",
   "gathering grains of wheat": "nhặt những hạt lúa mì",
   "Meanwhile": "Trong khi đó",
   "lazy grasshopper": "châu chấu lười biếng",
-  "châu chấu lười biếng": "lazy grasshopper",
   "singing cheerfully": "hát ca vui vẻ",
   "green tree": "cây xanh",
   "cold winter arrived": "mùa đông lạnh giá đến",
@@ -149,10 +252,10 @@ export const dictionary = {
   "valuable life lessons": "bài học cuộc sống quý giá",
   "hard work and patience": "chăm chỉ và kiên nhẫn",
   "ngày hè nắng đẹp rực rỡ": "bright sunny summer day",
-  "chú kiến chăm chỉ": "hardworking ant",
+  "kiến chăm chỉ": "hardworking ant",
   "nhặt những hạt lúa mì": "gathering grains of wheat",
   "Trong khi đó": "Meanwhile",
-  "chú châu chấu lười biếng": "lazy grasshopper",
+  "châu chấu lười biếng": "lazy grasshopper",
   "hát ca vui vẻ": "singing cheerfully",
   "cây xanh": "green tree",
   "mùa đông lạnh giá đến": "cold winter arrived",

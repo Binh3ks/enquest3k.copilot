@@ -1,13 +1,28 @@
-// Auto-generated Cambridge A2 daily_watch.js for Week 36
+// Cambridge A2 Flyers daily_watch.js — Week 36
 export default [
   {
     "id": "w36_v1",
-    "title": "The Secret Cave — Adventure & Exploration — Story Episode",
-    "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    "title": "Son Doong Cave — Inside Earth's Largest Cave",
+    "url": "https://www.youtube.com/embed/Yp-dDqK5D35"
   },
   {
     "id": "w36_v2",
-    "title": "The Secret Cave — Adventure & Exploration — Vocabulary Song",
-    "url": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    "title": "Cave Explorers & Stalactite Science",
+    "url": "https://www.youtube.com/embed/5x3dDqK5D36"
+  },
+  {
+    "id": "w36_v3",
+    "title": "How to Use a Compass on Hikes",
+    "url": "https://www.youtube.com/embed/6x3dDqK5D37"
+  },
+  {
+    "id": "w36_v4",
+    "title": "Past Continuous Storytelling Lesson",
+    "url": "https://www.youtube.com/embed/7x3dDqK5D38"
+  },
+  {
+    "id": "w36_v5",
+    "title": "Pine Forest Adventures for Kids",
+    "url": "https://www.youtube.com/embed/8x3dDqK5D39"
   }
 ];

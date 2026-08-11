@@ -1,126 +1,126 @@
-// Auto-generated Cambridge A2 word_power.js for Week 35
+// Cambridge A2 Flyers word_power.js — Week 35
 export default {
   title: "Collocations & Chunks — Week 35",
   collocations: [
   {
-    "phrase": "park_word_1",
-    "definition_en": "English definition for park word 1",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 1",
-    "example": "Example sentence for park word 1."
+    "phrase": "recycling",
+    "definition_en": "the process of converting waste into reusable material",
+    "definition_vi": "tái chế",
+    "example": "Put empty plastic bottles into recycling bins."
   },
   {
-    "phrase": "park_word_2",
-    "definition_en": "English definition for park word 2",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 2",
-    "example": "Example sentence for park word 2."
+    "phrase": "litter",
+    "definition_en": "rubbish left lying in an open public place",
+    "definition_vi": "rác thải công cộng",
+    "example": "Do not drop litter on the grass."
   },
   {
-    "phrase": "park_word_3",
-    "definition_en": "English definition for park word 3",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 3",
-    "example": "Example sentence for park word 3."
+    "phrase": "environment",
+    "definition_en": "the natural world as a whole or in a particular area",
+    "definition_vi": "môi trường",
+    "example": "We must care for our urban environment."
   },
   {
-    "phrase": "park_word_4",
-    "definition_en": "English definition for park word 4",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 4",
-    "example": "Example sentence for park word 4."
+    "phrase": "hesitation",
+    "definition_en": "pausing before doing something because of doubt",
+    "definition_vi": "sự do dự",
+    "example": "They helped clean up without any hesitation."
   },
   {
-    "phrase": "park_word_5",
-    "definition_en": "English definition for park word 5",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 5",
-    "example": "Example sentence for park word 5."
+    "phrase": "applaud",
+    "definition_en": "show approval or praise by clapping hands",
+    "definition_vi": "vỗ tay khen ngợi",
+    "example": "Park visitors applauded their hard work."
   },
   {
-    "phrase": "park_word_6",
-    "definition_en": "English definition for park word 6",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 6",
-    "example": "Example sentence for park word 6."
+    "phrase": "community",
+    "definition_en": "a group of people living in the same place",
+    "definition_vi": "cộng đồng",
+    "example": "Our local community loves the green park."
   },
   {
-    "phrase": "park_word_7",
-    "definition_en": "English definition for park word 7",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 7",
-    "example": "Example sentence for park word 7."
+    "phrase": "supertree",
+    "definition_en": "a tall tree-like structure covered in greenery",
+    "definition_vi": "siêu cây",
+    "example": "Singapore supertrees harvest solar power."
   },
   {
-    "phrase": "park_word_8",
-    "definition_en": "English definition for park word 8",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 8",
-    "example": "Example sentence for park word 8."
+    "phrase": "futuristic",
+    "definition_en": "having or involving very modern technology or design",
+    "definition_vi": "hiện đại tương lai",
+    "example": "The park has futuristic plant towers."
   },
   {
-    "phrase": "park_word_9",
-    "definition_en": "English definition for park word 9",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 9",
-    "example": "Example sentence for park word 9."
+    "phrase": "volunteer",
+    "definition_en": "a person who freely offers to take part in an enterprise",
+    "definition_vi": "tình nguyện viên",
+    "example": "Volunteers cleaned the lake shore."
   },
   {
-    "phrase": "park_word_10",
-    "definition_en": "English definition for park word 10",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 10",
-    "example": "Example sentence for park word 10."
+    "phrase": "habitat",
+    "definition_en": "the natural home of an animal or plant",
+    "definition_vi": "môi trường sống",
+    "example": "The park is a safe habitat for wild ducks."
   },
   {
-    "phrase": "park_word_11",
-    "definition_en": "English definition for park word 11",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 11",
-    "example": "Example sentence for park word 11."
+    "phrase": "pollution",
+    "definition_en": "harmful substances introduced into the environment",
+    "definition_vi": "sự ô nhiễm",
+    "example": "Recycling reduces plastic pollution."
   },
   {
-    "phrase": "park_word_12",
-    "definition_en": "English definition for park word 12",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 12",
-    "example": "Example sentence for park word 12."
+    "phrase": "protect",
+    "definition_en": "keep safe from harm or injury",
+    "definition_vi": "bảo vệ",
+    "example": "Protect nature by planting young trees."
   },
   {
-    "phrase": "park_word_13",
-    "definition_en": "English definition for park word 13",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 13",
-    "example": "Example sentence for park word 13."
+    "phrase": "nature",
+    "definition_en": "the physical world including plants and animals",
+    "definition_vi": "thiên nhiên",
+    "example": "Spend time outside enjoying nature."
   },
   {
-    "phrase": "park_word_14",
-    "definition_en": "English definition for park word 14",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 14",
-    "example": "Example sentence for park word 14."
+    "phrase": "gardening",
+    "definition_en": "the activity of tending and cultivating a garden",
+    "definition_vi": "làm vườn",
+    "example": "Gardening helps flowers grow healthy."
   },
   {
-    "phrase": "park_word_15",
-    "definition_en": "English definition for park word 15",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 15",
-    "example": "Example sentence for park word 15."
+    "phrase": "cleanliness",
+    "definition_en": "the state or quality of being clean",
+    "definition_vi": "sự sạch sẽ",
+    "example": "Maintain cleanliness in your neighborhood."
   },
   {
-    "phrase": "park_word_16",
-    "definition_en": "English definition for park word 16",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 16",
-    "example": "Example sentence for park word 16."
+    "phrase": "restore",
+    "definition_en": "bring back to a former or original condition",
+    "definition_vi": "khôi phục",
+    "example": "They helped restore the dirty park."
   },
   {
-    "phrase": "park_word_17",
-    "definition_en": "English definition for park word 17",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 17",
-    "example": "Example sentence for park word 17."
+    "phrase": "breathe",
+    "definition_en": "take air into the lungs and expel it",
+    "definition_vi": "hít thở",
+    "example": "Trees clean air so we breathe easily."
   },
   {
-    "phrase": "park_word_18",
-    "definition_en": "English definition for park word 18",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 18",
-    "example": "Example sentence for park word 18."
+    "phrase": "oxygen",
+    "definition_en": "a colorless reactive gas essential for life",
+    "definition_vi": "oxy",
+    "example": "Green leaves produce fresh oxygen."
   },
   {
-    "phrase": "park_word_19",
-    "definition_en": "English definition for park word 19",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 19",
-    "example": "Example sentence for park word 19."
+    "phrase": "trash",
+    "definition_en": "waste material or things that are discarded",
+    "definition_vi": "rác",
+    "example": "Dispose of trash in proper bins."
   },
   {
-    "phrase": "park_word_20",
-    "definition_en": "English definition for park word 20",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 20",
-    "example": "Example sentence for park word 20."
+    "phrase": "wildlife",
+    "definition_en": "wild animals collectively",
+    "definition_vi": "động vật hoang dã",
+    "example": "City parks protect urban wildlife."
   }
 ]
 };

@@ -1,126 +1,126 @@
-// Auto-generated Cambridge A2 word_power.js for Week 37
+// Cambridge A2 Flyers word_power.js — Week 37
 export default {
   title: "Collocations & Chunks — Week 37",
   collocations: [
   {
-    "phrase": "sports_word_1",
-    "definition_en": "English definition for sports word 1",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 1",
-    "example": "Example sentence for sports word 1."
+    "phrase": "annual",
+    "definition_en": "occurring once every year",
+    "definition_vi": "hàng năm",
+    "example": "Our school holds its annual Sports Day in May."
   },
   {
-    "phrase": "sports_word_2",
-    "definition_en": "English definition for sports word 2",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 2",
-    "example": "Example sentence for sports word 2."
+    "phrase": "stadium",
+    "definition_en": "a sports arena with tier seating for spectators",
+    "definition_vi": "sân vận động",
+    "example": "The crowded sports stadium was loud."
   },
   {
-    "phrase": "sports_word_3",
-    "definition_en": "English definition for sports word 3",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 3",
-    "example": "Example sentence for sports word 3."
+    "phrase": "relay",
+    "definition_en": "a race between teams where each member runs a part",
+    "definition_vi": "chạy tiếp sức",
+    "example": "Leo ran the last leg of the 4x100m relay."
   },
   {
-    "phrase": "sports_word_4",
-    "definition_en": "English definition for sports word 4",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 4",
-    "example": "Example sentence for sports word 4."
+    "phrase": "baton",
+    "definition_en": "a short stick passed from runner to runner in a relay",
+    "definition_vi": "gậy tiếp sức",
+    "example": "Pass the baton smoothly without dropping it."
   },
   {
-    "phrase": "sports_word_5",
-    "definition_en": "English definition for sports word 5",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 5",
-    "example": "Example sentence for sports word 5."
+    "phrase": "accelerate",
+    "definition_en": "begin to move more quickly; gain speed",
+    "definition_vi": "tăng tốc",
+    "example": "Accelerate quickly down the straight track."
   },
   {
-    "phrase": "sports_word_6",
-    "definition_en": "English definition for sports word 6",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 6",
-    "example": "Example sentence for sports word 6."
+    "phrase": "sprint",
+    "definition_en": "run at full speed over a short distance",
+    "definition_vi": "chạy nước rút",
+    "example": "The first runner began to sprint fast."
   },
   {
-    "phrase": "sports_word_7",
-    "definition_en": "English definition for sports word 7",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 7",
-    "example": "Example sentence for sports word 7."
+    "phrase": "smoothly",
+    "definition_en": "in a even and regular way without sudden movements",
+    "definition_vi": "mượt mà",
+    "example": "The baton handoff went very smoothly."
   },
   {
-    "phrase": "sports_word_8",
-    "definition_en": "English definition for sports word 8",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 8",
-    "example": "Example sentence for sports word 8."
+    "phrase": "cheering",
+    "definition_en": "shouting for joy or in praise or encouragement",
+    "definition_vi": "tiếng reo hò",
+    "example": "Cheering spectators filled the stadium stands."
   },
   {
-    "phrase": "sports_word_9",
-    "definition_en": "English definition for sports word 9",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 9",
-    "example": "Example sentence for sports word 9."
+    "phrase": "podium",
+    "definition_en": "a raised platform on which winners receive medals",
+    "definition_vi": "bục nhận giải",
+    "example": "The team stood proudly on the gold podium."
   },
   {
-    "phrase": "sports_word_10",
-    "definition_en": "English definition for sports word 10",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 10",
-    "example": "Example sentence for sports word 10."
+    "phrase": "teammate",
+    "definition_en": "a fellow member of a sports team",
+    "definition_vi": "đồng đội",
+    "example": "Leo cheered loudly for his teammate."
   },
   {
-    "phrase": "sports_word_11",
-    "definition_en": "English definition for sports word 11",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 11",
-    "example": "Example sentence for sports word 11."
+    "phrase": "olympic",
+    "definition_en": "relating to the ancient or modern Olympic Games",
+    "definition_vi": "thuộc Olympic",
+    "example": "Olympic runners train for many years."
   },
   {
-    "phrase": "sports_word_12",
-    "definition_en": "English definition for sports word 12",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 12",
-    "example": "Example sentence for sports word 12."
+    "phrase": "athlete",
+    "definition_en": "a person who is proficient in sports and physical exercise",
+    "definition_vi": "vận động viên",
+    "example": "More than 200 athletes joined the games."
   },
   {
-    "phrase": "sports_word_13",
-    "definition_en": "English definition for sports word 13",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 13",
-    "example": "Example sentence for sports word 13."
+    "phrase": "velocity",
+    "definition_en": "the speed of something in a given direction",
+    "definition_vi": "vận tốc",
+    "example": "Smooth acceleration increases velocity."
   },
   {
-    "phrase": "sports_word_14",
-    "definition_en": "English definition for sports word 14",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 14",
-    "example": "Example sentence for sports word 14."
+    "phrase": "stamina",
+    "definition_en": "the ability to sustain prolonged physical effort",
+    "definition_vi": "sức bền",
+    "example": "Long distance running requires high stamina."
   },
   {
-    "phrase": "sports_word_15",
-    "definition_en": "English definition for sports word 15",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 15",
-    "example": "Example sentence for sports word 15."
+    "phrase": "victory",
+    "definition_en": "an act of defeating an opponent in a competition",
+    "definition_vi": "chiến thắng",
+    "example": "The team celebrated their relay victory."
   },
   {
-    "phrase": "sports_word_16",
-    "definition_en": "English definition for sports word 16",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 16",
-    "example": "Example sentence for sports word 16."
+    "phrase": "competition",
+    "definition_en": "an event in which people compete against each other",
+    "definition_vi": "cuộc thi đấu",
+    "example": "The Sports Day competition was intense."
   },
   {
-    "phrase": "sports_word_17",
-    "definition_en": "English definition for sports word 17",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 17",
-    "example": "Example sentence for sports word 17."
+    "phrase": "finish-line",
+    "definition_en": "a line marking the end of a race",
+    "definition_vi": "vạch đích",
+    "example": "Leo crossed the finish-line first."
   },
   {
-    "phrase": "sports_word_18",
-    "definition_en": "English definition for sports word 18",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 18",
-    "example": "Example sentence for sports word 18."
+    "phrase": "medal",
+    "definition_en": "a metal disc awarded to a sports winner",
+    "definition_vi": "huy chương",
+    "example": "He wore a shiny gold medal around his neck."
   },
   {
-    "phrase": "sports_word_19",
-    "definition_en": "English definition for sports word 19",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 19",
-    "example": "Example sentence for sports word 19."
+    "phrase": "momentum",
+    "definition_en": "the quantity of motion of a moving body",
+    "definition_vi": "động năng tiếp sức",
+    "example": "Keep your running momentum into the turn."
   },
   {
-    "phrase": "sports_word_20",
-    "definition_en": "English definition for sports word 20",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ thể thao 20",
-    "example": "Example sentence for sports word 20."
+    "phrase": "teamwork",
+    "definition_en": "the combined action of a group of people",
+    "definition_vi": "tinh thần đồng đội",
+    "example": "Scientific teamwork led them to victory."
   }
 ]
 };

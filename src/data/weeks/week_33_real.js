@@ -1,154 +1,174 @@
-// Auto-generated Cambridge A2 week_33_real.js
+// Cambridge A2 Flyers week_33_real.js
 export default {
   "weekId": 33,
-  "title": "Corridor Safety & Accident Verbs",
+  "title": "Corridor Safety & School Care",
   "target_vocab": [
     {
-      "word": "word_1",
-      "definition_en": "English definition for target word 1",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 1",
-      "example": "Example sentence using target word 1."
+      "word": "corridor",
+      "definition_en": "a long passage in a building with doors on each side",
+      "definition_vi": "hành lang",
+      "example": "Walk carefully down the school corridor.",
+      "ipa": "/ˈkɒr.ɪ.dɔːr/"
     },
     {
-      "word": "word_2",
-      "definition_en": "English definition for target word 2",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 2",
-      "example": "Example sentence using target word 2."
+      "word": "slipped",
+      "definition_en": "slid accidentally and lost balance",
+      "definition_vi": "trượt ngã",
+      "example": "He slipped on the wet floor near the stairs.",
+      "ipa": "/slɪpt/"
     },
     {
-      "word": "word_3",
-      "definition_en": "English definition for target word 3",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 3",
-      "example": "Example sentence using target word 3."
+      "word": "bandage",
+      "definition_en": "a strip of cloth used to bind a wound or injury",
+      "definition_vi": "băng y tế",
+      "example": "The nurse applied a clean bandage to his knee.",
+      "ipa": "/ˈbæn.dɪdʒ/"
     },
     {
-      "word": "word_4",
-      "definition_en": "English definition for target word 4",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 4",
-      "example": "Example sentence using target word 4."
+      "word": "nurse",
+      "definition_en": "a person trained to care for sick or injured people",
+      "definition_vi": "y tá",
+      "example": "The school nurse treated the boy gently.",
+      "ipa": "/nɜːs/"
     },
     {
-      "word": "word_5",
-      "definition_en": "English definition for target word 5",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 5",
-      "example": "Example sentence using target word 5."
+      "word": "emergency",
+      "definition_en": "a serious, unexpected, and dangerous situation",
+      "definition_vi": "tình huống khẩn cấp",
+      "example": "Call the nurse in an emergency.",
+      "ipa": "/ɪˈmɜː.dʒən.si/"
     },
     {
-      "word": "word_6",
-      "definition_en": "English definition for target word 6",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 6",
-      "example": "Example sentence using target word 6."
+      "word": "cautiously",
+      "definition_en": "in a careful way to avoid danger or mistakes",
+      "definition_vi": "cẩn trọng",
+      "example": "Students walked cautiously on the wet grass.",
+      "ipa": "/ˈkɔː.ʃəs.li/"
     },
     {
-      "word": "word_7",
-      "definition_en": "English definition for target word 7",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 7",
-      "example": "Example sentence using target word 7."
+      "word": "warning",
+      "definition_en": "a statement or sign telling someone of potential danger",
+      "definition_vi": "cảnh báo",
+      "example": "Look at the yellow warning sign on the floor.",
+      "ipa": "/ˈwɔː.nɪŋ/"
     },
     {
-      "word": "word_8",
-      "definition_en": "English definition for target word 8",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 8",
-      "example": "Example sentence using target word 8."
+      "word": "bleeding",
+      "definition_en": "losing blood from the body due to injury",
+      "definition_vi": "chảy máu",
+      "example": "The cut on his knee stopped bleeding quickly.",
+      "ipa": "/ˈbliː.dɪŋ/"
     },
     {
-      "word": "word_9",
-      "definition_en": "English definition for target word 9",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 9",
-      "example": "Example sentence using target word 9."
+      "word": "headmaster",
+      "definition_en": "the principal teacher in charge of a school",
+      "definition_vi": "thầy hiệu trưởng",
+      "example": "The headmaster praised Jake for his fast reaction.",
+      "ipa": "/ˌhedˈmɑː.stər/"
     },
     {
-      "word": "word_10",
-      "definition_en": "English definition for target word 10",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 10",
-      "example": "Example sentence using target word 10."
+      "word": "relieved",
+      "definition_en": "feeling relaxed because something bad has stopped",
+      "definition_vi": "nhẹ nhõm",
+      "example": "Everyone felt relieved when the boy smiled again.",
+      "ipa": "/rɪˈliːvd/"
     },
     {
-      "word": "word_11",
-      "definition_en": "English definition for target word 11",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 11",
-      "example": "Example sentence using target word 11."
+      "word": "hesitation",
+      "definition_en": "the action of pausing before saying or doing something",
+      "definition_vi": "sự do dự",
+      "example": "Jake helped him without any hesitation.",
+      "ipa": "/ˌhez.ɪˈteɪ.ʃən/"
     },
     {
-      "word": "word_12",
-      "definition_en": "English definition for target word 12",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 12",
-      "example": "Example sentence using target word 12."
+      "word": "injure",
+      "definition_en": "to harm or damage a person physically",
+      "definition_vi": "làm bị thương",
+      "example": "Be careful so you do not injure your leg.",
+      "ipa": "/ˈɪn.dʒər/"
     },
     {
-      "word": "word_13",
-      "definition_en": "English definition for target word 13",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 13",
-      "example": "Example sentence using target word 13."
+      "word": "first-aid",
+      "definition_en": "help given to a sick or injured person before medical care",
+      "definition_vi": "sơ cứu",
+      "example": "The nurse brought a complete first-aid kit.",
+      "ipa": "/ˌfɜːst ˈeɪd/"
     },
     {
-      "word": "word_14",
-      "definition_en": "English definition for target word 14",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 14",
-      "example": "Example sentence using target word 14."
+      "word": "slippery",
+      "definition_en": "difficult to hold or stand on because it is wet or smooth",
+      "definition_vi": "trơn trượt",
+      "example": "The wet wooden floor was very slippery.",
+      "ipa": "/ˈslɪp.ər.i/"
     },
     {
-      "word": "word_15",
-      "definition_en": "English definition for target word 15",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 15",
-      "example": "Example sentence using target word 15."
+      "word": "stumble",
+      "definition_en": "to trip or lose balance while walking",
+      "definition_vi": "vấp ngã",
+      "example": "Watch your step so you do not stumble.",
+      "ipa": "/ˈstʌm.bəl/"
     },
     {
-      "word": "word_16",
-      "definition_en": "English definition for target word 16",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 16",
-      "example": "Example sentence using target word 16."
+      "word": "prevent",
+      "definition_en": "to stop something from happening or arising",
+      "definition_vi": "ngăn ngừa",
+      "example": "Walking slowly helps prevent accidents.",
+      "ipa": "/prɪˈvent/"
     },
     {
-      "word": "word_17",
-      "definition_en": "English definition for target word 17",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 17",
-      "example": "Example sentence using target word 17."
+      "word": "rules",
+      "definition_en": "instructions stating what is allowed or forbidden",
+      "definition_vi": "quy tắc",
+      "example": "Always obey the school safety rules.",
+      "ipa": "/ruːlz/"
     },
     {
-      "word": "word_18",
-      "definition_en": "English definition for target word 18",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 18",
-      "example": "Example sentence using target word 18."
+      "word": "calmly",
+      "definition_en": "in a quiet and relaxed manner without excitement",
+      "definition_vi": "bình tĩnh",
+      "example": "Jake spoke calmly to the injured student.",
+      "ipa": "/ˈkɑːm.li/"
     },
     {
-      "word": "word_19",
-      "definition_en": "English definition for target word 19",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 19",
-      "example": "Example sentence using target word 19."
+      "word": "responsibly",
+      "definition_en": "in a sensible and trustworthy manner",
+      "definition_vi": "có trách nhiệm",
+      "example": "Act responsibly when helping younger children.",
+      "ipa": "/rɪˈspɒn.sə.bli/"
     },
     {
-      "word": "word_20",
-      "definition_en": "English definition for target word 20",
-      "definition_vi": "Định nghĩa tiếng Việt cho từ 20",
-      "example": "Example sentence using target word 20."
+      "word": "attention",
+      "definition_en": "notice taken of someone or something",
+      "definition_vi": "sự chú ý",
+      "example": "Pay close attention to warning signs.",
+      "ipa": "/əˈten.ʃən/"
     }
   ],
   "story_missions": [
     {
       "id": 1,
-      "title": "Retell Corridor Safety & Accident Verbs",
+      "title": "Retell STEM Story: Jake's Quick Response in the Corridor",
       "target_turns": 15
     },
     {
       "id": 2,
-      "title": "Explore Reflection",
+      "title": "Retell Social Story: Global School Safety & Earthquake Drills",
       "target_turns": 15
     },
     {
       "id": 3,
-      "title": "Personal Connection",
+      "title": "Personal Life Connection",
       "target_turns": 15
     }
   ],
   "spark_talk": [
     {
       "id": 1,
-      "topic": "School Safety"
+      "topic": "Corridor Safety & School Care — Safety & Preparation"
     },
     {
       "id": 2,
-      "topic": "Teamwork"
+      "topic": "Corridor Safety & School Care — Teamwork & Care"
     }
   ]
 };

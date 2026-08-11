@@ -1,70 +1,70 @@
-// Auto-generated Cambridge A2 mindmap.js for Week 36
+// Cambridge A2 Flyers mindmap.js — Week 36
 export default {
   centerStems: [
   {
-    "label": "Morning Start",
+    "label": "Beginning Scene",
     "branches": [
-      "sunny Saturday morning",
-      "went hiking together",
-      "green pine forest",
-      "walking along rocky path",
-      "fresh mountain air",
-      "holding flashlights"
+      "on a bright sunny day",
+      "walking carefully down corridor",
+      "finished science class",
+      "holding notebooks",
+      "clean wooden floors",
+      "busy school morning"
     ]
   },
   {
-    "label": "Cave Discovery",
+    "label": "Main Event",
     "branches": [
-      "discovered hidden entrance",
-      "mysterious dark cave",
-      "turned on bright flashlights",
-      "stepped inside carefully",
-      "cool drops of water",
-      "dark grey shadows"
+      "running fast down hall",
+      "slipped on wet floor",
+      "fell heavily on knee",
+      "began to bleed",
+      "burst into tears",
+      "hurt his leg"
     ]
   },
   {
-    "label": "Finding the Box",
+    "label": "Helping Action",
     "branches": [
-      "spotted dusty wooden box",
-      "behind large grey stone",
-      "opened lid gently",
-      "found an ancient map",
-      "shiny brass compass",
-      "old explorer letters"
+      "rushed over immediately",
+      "stayed calm and gentle",
+      "called the school nurse",
+      "held his hand",
+      "helped him sit up",
+      "brought a glass of water"
     ]
   },
   {
-    "label": "Examining Map",
+    "label": "Medical Care",
     "branches": [
-      "unrolled parchment map",
-      "marked red cross sign",
-      "traced river path",
-      "saw mountain drawings",
-      "read old symbols",
-      "held brass compass"
+      "arrived with medical box",
+      "cleaned the cut carefully",
+      "applied a clean bandage",
+      "checked his knee",
+      "smiled warmly",
+      "gave him a sticker"
     ]
   },
   {
-    "label": "Excited Feelings",
+    "label": "Relief & Reaction",
     "branches": [
-      "hearts beat fast",
-      "felt extremely excited",
-      "eyes shined with wonder",
-      "burst into laughter",
-      "smiled at each other",
-      "hugged happily"
+      "felt extremely relieved",
+      "stopped crying softly",
+      "thanked Jake warmly",
+      "headmaster praised them",
+      "friends cheered loudly",
+      "clapped hands together"
     ]
   },
   {
-    "label": "Next Adventure",
+    "label": "Ending Moral",
     "branches": [
-      "decided to follow map",
-      "planned next adventure",
-      "kept secret safe",
-      "walked out into sunshine",
-      "felt like brave explorers",
-      "shared big dream"
+      "learned a valuable lesson",
+      "walk safely in corridor",
+      "never run on wet floors",
+      "care for classmates",
+      "obey school rules",
+      "keep everyone safe"
     ]
   }
 ]

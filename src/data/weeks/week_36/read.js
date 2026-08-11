@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 read.js for Week 36
+// Cambridge A2 Flyers read.js — Week 36
 export default {
-  title: "The Secret Cave Adventure",
+  title: "The Secret Cave Exploration",
   image_url: "/images/week36/read_cover_w36.jpg",
   audio_url: "/audio/week36/read_main.mp3",
   content_en: `Early on a **sunny Saturday morning**, Leo and Mia went hiking in the **green pine forest**. While they were **walking along the rocky path**, they **discovered a hidden entrance** to a **mysterious cave**.
@@ -20,17 +20,63 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
   comprehension_questions: [
   {
     "id": 1,
-    "question_en": "Where were Leo and Mia hiking?",
-    "answer": [
-      "In the green pine forest"
+    "question_en": "Where were Leo and Mia hiking on Saturday morning?",
+    "options": [
+      "In the green pine forest",
+      "On the sandy beach",
+      "In the school garden",
+      "Around the city center"
     ],
+    "answer": "In the green pine forest",
     "clue_statement": "Leo and Mia went hiking in the green pine forest.",
-    "hint_en": "In the green ___.",
-    "hint_vi": "Trong rừng ___."
+    "hint_en": "Green pine...",
+    "hint_vi": "Rừng thông..."
+  },
+  {
+    "id": 2,
+    "question_en": "What did they discover while walking along the rocky path?",
+    "options": [
+      "A hidden entrance to a mysterious cave",
+      "A lost dog",
+      "A small red bicycle",
+      "A wooden bench"
+    ],
+    "answer": "A hidden entrance to a mysterious cave",
+    "clue_statement": "They discovered a hidden entrance to a mysterious cave.",
+    "hint_en": "Mysterious cave...",
+    "hint_vi": "Hang động bí mật..."
+  },
+  {
+    "id": 3,
+    "question_en": "What was inside the dusty wooden box?",
+    "options": [
+      "An ancient map and a shiny brass compass",
+      "Gold coins and silver rings",
+      "Old storybooks",
+      "A set of keys"
+    ],
+    "answer": "An ancient map and a shiny brass compass",
+    "clue_statement": "They found an ancient map with a shiny brass compass.",
+    "hint_en": "Ancient map...",
+    "hint_vi": "Bản đồ cổ..."
+  },
+  {
+    "id": 4,
+    "question_en": "How did their hearts react to the discovery?",
+    "options": [
+      "Beat fast with excitement",
+      "Stopped suddenly",
+      "Felt sad",
+      "Ached badly"
+    ],
+    "answer": "Beat fast with excitement",
+    "clue_statement": "Their hearts beat fast with excitement.",
+    "hint_en": "Beat fast...",
+    "hint_vi": "Tim đập nhanh..."
   }
 ],
   read_stem: {
-  "title": "The Secret Cave Adventure (STEM Science)",
+  "title": "The Secret Cave Exploration",
   "image_url": "/images/week36/read_cover_w36.jpg",
   "audio_url": "/audio/week36/read_main.mp3",
   "content_en": "Early on a **sunny Saturday morning**, Leo and Mia went hiking in the **green pine forest**. While they were **walking along the rocky path**, they **discovered a hidden entrance** to a **mysterious cave**.\n\nThey **turned on their bright flashlights** and **stepped inside carefully**. Inside the cave, **cool drops of water** dripped from the **rocky ceiling**, and **dark grey shadows** danced on the walls.\n\nSuddenly, Mia **spotted a dusty wooden box** tucked behind a large stone. They opened it gently and **found an ancient map** with a **shiny brass compass**.\n\nTheir **hearts beat fast** with excitement. They realized it was a **historical treasure map** left by old explorers. They **felt extremely excited** and **burst into laughter**, ready for their next big adventure.",
@@ -38,18 +84,64 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
   "comprehension_questions": [
     {
       "id": 1,
-      "question_en": "Where were Leo and Mia hiking?",
-      "answer": [
-        "In the green pine forest"
+      "question_en": "Where were Leo and Mia hiking on Saturday morning?",
+      "options": [
+        "In the green pine forest",
+        "On the sandy beach",
+        "In the school garden",
+        "Around the city center"
       ],
+      "answer": "In the green pine forest",
       "clue_statement": "Leo and Mia went hiking in the green pine forest.",
-      "hint_en": "In the green ___.",
-      "hint_vi": "Trong rừng ___."
+      "hint_en": "Green pine...",
+      "hint_vi": "Rừng thông..."
+    },
+    {
+      "id": 2,
+      "question_en": "What did they discover while walking along the rocky path?",
+      "options": [
+        "A hidden entrance to a mysterious cave",
+        "A lost dog",
+        "A small red bicycle",
+        "A wooden bench"
+      ],
+      "answer": "A hidden entrance to a mysterious cave",
+      "clue_statement": "They discovered a hidden entrance to a mysterious cave.",
+      "hint_en": "Mysterious cave...",
+      "hint_vi": "Hang động bí mật..."
+    },
+    {
+      "id": 3,
+      "question_en": "What was inside the dusty wooden box?",
+      "options": [
+        "An ancient map and a shiny brass compass",
+        "Gold coins and silver rings",
+        "Old storybooks",
+        "A set of keys"
+      ],
+      "answer": "An ancient map and a shiny brass compass",
+      "clue_statement": "They found an ancient map with a shiny brass compass.",
+      "hint_en": "Ancient map...",
+      "hint_vi": "Bản đồ cổ..."
+    },
+    {
+      "id": 4,
+      "question_en": "How did their hearts react to the discovery?",
+      "options": [
+        "Beat fast with excitement",
+        "Stopped suddenly",
+        "Felt sad",
+        "Ached badly"
+      ],
+      "answer": "Beat fast with excitement",
+      "clue_statement": "Their hearts beat fast with excitement.",
+      "hint_en": "Beat fast...",
+      "hint_vi": "Tim đập nhanh..."
     }
   ]
 },
   read_social: {
-  "title": "The Secret Cave Adventure (Social Studies)",
+  "title": "Son Doong & Underground Wonders",
   "image_url": "/images/week36/explore_w36.jpg",
   "audio_url": "/audio/week36/read_main.mp3",
   "content_en": "Caves are amazing underground wonderlands formed over thousands of years by moving water. In Vietnam, **Son Doong Cave** is the largest cave in the entire world! Inside Son Doong, explorers found an **underground jungle** with trees and rare animals.",
@@ -58,12 +150,30 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
     {
       "id": 1,
       "question_en": "Which is the largest cave in the world?",
-      "answer": [
-        "Son Doong Cave in Vietnam"
+      "options": [
+        "Son Doong Cave in Vietnam",
+        "Mammoth Cave in USA",
+        "Blue Cave in Italy",
+        "Waitomo Cave in New Zealand"
       ],
-      "clue_statement": "Son Doong Cave is the largest cave in the world.",
+      "answer": "Son Doong Cave in Vietnam",
+      "clue_statement": "Son Doong Cave is the largest cave in the entire world.",
       "hint_en": "Son Doong...",
       "hint_vi": "Hang Sơn Đoòng..."
+    },
+    {
+      "id": 2,
+      "question_en": "What unique natural feature exists inside Son Doong Cave?",
+      "options": [
+        "An underground jungle with trees and animals",
+        "A floating city",
+        "A giant ice castle",
+        "A volcanic lake"
+      ],
+      "answer": "An underground jungle with trees and animals",
+      "clue_statement": "Explorers found an underground jungle inside Son Doong.",
+      "hint_en": "Underground jungle...",
+      "hint_vi": "Rừng rậm dưới lòng đất..."
     }
   ]
 }
@@ -71,7 +181,6 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
 
 export const chunk_focus = [
   "sunny Saturday morning",
-  "thứ Bảy nắng đẹp rực rỡ",
   "green pine forest",
   "walking along the rocky path",
   "discovered a hidden entrance",
@@ -90,8 +199,7 @@ export const chunk_focus = [
   "burst into laughter",
   "Son Doong Cave",
   "underground jungle",
-  "sáng thứ Bảy nắng đẹp rực rỡ",
-  "sunny Saturday morning",
+  "thứ Bảy nắng đẹp rực rỡ",
   "rừng thông xanh",
   "đi dọc theo con đường đá",
   "phát hiện ra một lối vào ẩn",
@@ -111,10 +219,8 @@ export const chunk_focus = [
   "Hang Sơn Đoòng",
   "rừng rậm dưới lòng đất"
 ];
-
 export const dictionary = {
   "sunny Saturday morning": "thứ Bảy nắng đẹp rực rỡ",
-  "thứ Bảy nắng đẹp rực rỡ": "sunny Saturday morning",
   "green pine forest": "rừng thông xanh",
   "walking along the rocky path": "đi dọc theo con đường đá",
   "discovered a hidden entrance": "phát hiện ra một lối vào ẩn",
@@ -133,7 +239,7 @@ export const dictionary = {
   "burst into laughter": "bật cười vui vẻ",
   "Son Doong Cave": "Hang Sơn Đoòng",
   "underground jungle": "rừng rậm dưới lòng đất",
-  "sáng thứ Bảy nắng đẹp rực rỡ": "sunny Saturday morning",
+  "thứ Bảy nắng đẹp rực rỡ": "sunny Saturday morning",
   "rừng thông xanh": "green pine forest",
   "đi dọc theo con đường đá": "walking along the rocky path",
   "phát hiện ra một lối vào ẩn": "discovered a hidden entrance",

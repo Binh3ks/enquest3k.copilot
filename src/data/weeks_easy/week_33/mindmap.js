@@ -1,8 +1,8 @@
-// Auto-generated Cambridge A2 mindmap.js for Week 33
+// Cambridge A2 Flyers mindmap.js — Week 33
 export default {
   centerStems: [
   {
-    "label": "Corridor Setting",
+    "label": "Beginning Scene",
     "branches": [
       "on a bright sunny day",
       "walking carefully down corridor",
@@ -13,7 +13,7 @@ export default {
     ]
   },
   {
-    "label": "The Accident Event",
+    "label": "Main Event",
     "branches": [
       "running fast down hall",
       "slipped on wet floor",
@@ -24,7 +24,7 @@ export default {
     ]
   },
   {
-    "label": "Jake's Helping Action",
+    "label": "Helping Action",
     "branches": [
       "rushed over immediately",
       "stayed calm and gentle",
@@ -35,7 +35,7 @@ export default {
     ]
   },
   {
-    "label": "Nurse Treatment",
+    "label": "Medical Care",
     "branches": [
       "arrived with medical box",
       "cleaned the cut carefully",
@@ -57,7 +57,7 @@ export default {
     ]
   },
   {
-    "label": "Safety Lesson",
+    "label": "Ending Moral",
     "branches": [
       "learned a valuable lesson",
       "walk safely in corridor",

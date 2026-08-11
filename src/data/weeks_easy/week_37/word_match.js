@@ -1,83 +1,83 @@
-// Auto-generated Cambridge A2 word_match.js for Week 37
+// Cambridge A2 Flyers word_match.js — Week 37
 export default [
   {
-    "word": "sports_word_1",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 1"
+    "word": "annual",
+    "definition": "hàng năm"
   },
   {
-    "word": "sports_word_2",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 2"
+    "word": "stadium",
+    "definition": "sân vận động"
   },
   {
-    "word": "sports_word_3",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 3"
+    "word": "relay",
+    "definition": "chạy tiếp sức"
   },
   {
-    "word": "sports_word_4",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 4"
+    "word": "baton",
+    "definition": "gậy tiếp sức"
   },
   {
-    "word": "sports_word_5",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 5"
+    "word": "accelerate",
+    "definition": "tăng tốc"
   },
   {
-    "word": "sports_word_6",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 6"
+    "word": "sprint",
+    "definition": "chạy nước rút"
   },
   {
-    "word": "sports_word_7",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 7"
+    "word": "smoothly",
+    "definition": "mượt mà"
   },
   {
-    "word": "sports_word_8",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 8"
+    "word": "cheering",
+    "definition": "tiếng reo hò"
   },
   {
-    "word": "sports_word_9",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 9"
+    "word": "podium",
+    "definition": "bục nhận giải"
   },
   {
-    "word": "sports_word_10",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 10"
+    "word": "teammate",
+    "definition": "đồng đội"
   },
   {
-    "word": "sports_word_11",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 11"
+    "word": "olympic",
+    "definition": "thuộc Olympic"
   },
   {
-    "word": "sports_word_12",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 12"
+    "word": "athlete",
+    "definition": "vận động viên"
   },
   {
-    "word": "sports_word_13",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 13"
+    "word": "velocity",
+    "definition": "vận tốc"
   },
   {
-    "word": "sports_word_14",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 14"
+    "word": "stamina",
+    "definition": "sức bền"
   },
   {
-    "word": "sports_word_15",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 15"
+    "word": "victory",
+    "definition": "chiến thắng"
   },
   {
-    "word": "sports_word_16",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 16"
+    "word": "competition",
+    "definition": "cuộc thi đấu"
   },
   {
-    "word": "sports_word_17",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 17"
+    "word": "finish-line",
+    "definition": "vạch đích"
   },
   {
-    "word": "sports_word_18",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 18"
+    "word": "medal",
+    "definition": "huy chương"
   },
   {
-    "word": "sports_word_19",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 19"
+    "word": "momentum",
+    "definition": "động năng tiếp sức"
   },
   {
-    "word": "sports_word_20",
-    "definition": "Định nghĩa tiếng Việt cho từ thể thao 20"
+    "word": "teamwork",
+    "definition": "tinh thần đồng đội"
   }
 ];

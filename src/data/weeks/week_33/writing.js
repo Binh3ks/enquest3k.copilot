@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 writing.js for Week 33
+// Cambridge A2 Flyers writing.js — Week 33
 export default {
-  "title": "Corridor Safety — Jake's Good Deed",
+  "title": "Corridor Safety & School Care",
   "min_sentences": 10,
   "min_words": 65,
   "model_sentence": "On a bright sunny day, Jake was walking carefully down the school corridor. He had just finished his science class and was holding his notebooks. Suddenly, a boy who was running fast slipped on the wet floor. He fell heavily and hurt his knee. Jake rushed over to help him immediately. The boy began to bleed a little and burst into tears. Jake stayed calm and called the school nurse. The nurse came quickly and applied a clean bandage. Everyone felt extremely relieved. Everyone learned a valuable lesson about school safety.",
@@ -72,21 +72,26 @@ export default {
       "image_url": "/images/week33/story_writing_pic.jpg",
       "word_bank": {
         "action_verbs": [
-          "word_1",
-          "word_2"
+          "corridor",
+          "slipped",
+          "bandage"
         ],
         "cumulative_chunks": [
           "on a bright sunny day",
-          "felt extremely happy"
+          "felt extremely happy",
+          "without any hesitation"
         ],
         "connectors": [
           "Suddenly",
           "Meanwhile",
-          "Eventually"
+          "Eventually",
+          "First",
+          "Next"
         ],
         "grammar_boosters": [
           "while he was walking",
-          "decided to help"
+          "decided to help",
+          "so that everyone was safe"
         ]
       }
     }

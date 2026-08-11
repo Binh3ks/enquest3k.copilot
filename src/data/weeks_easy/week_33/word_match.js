@@ -1,83 +1,83 @@
-// Auto-generated Cambridge A2 word_match.js for Week 33
+// Cambridge A2 Flyers word_match.js — Week 33
 export default [
   {
-    "word": "word_1",
-    "definition": "Định nghĩa tiếng Việt cho từ 1"
+    "word": "corridor",
+    "definition": "hành lang"
   },
   {
-    "word": "word_2",
-    "definition": "Định nghĩa tiếng Việt cho từ 2"
+    "word": "slipped",
+    "definition": "trượt ngã"
   },
   {
-    "word": "word_3",
-    "definition": "Định nghĩa tiếng Việt cho từ 3"
+    "word": "bandage",
+    "definition": "băng y tế"
   },
   {
-    "word": "word_4",
-    "definition": "Định nghĩa tiếng Việt cho từ 4"
+    "word": "nurse",
+    "definition": "y tá"
   },
   {
-    "word": "word_5",
-    "definition": "Định nghĩa tiếng Việt cho từ 5"
+    "word": "emergency",
+    "definition": "tình huống khẩn cấp"
   },
   {
-    "word": "word_6",
-    "definition": "Định nghĩa tiếng Việt cho từ 6"
+    "word": "cautiously",
+    "definition": "cẩn trọng"
   },
   {
-    "word": "word_7",
-    "definition": "Định nghĩa tiếng Việt cho từ 7"
+    "word": "warning",
+    "definition": "cảnh báo"
   },
   {
-    "word": "word_8",
-    "definition": "Định nghĩa tiếng Việt cho từ 8"
+    "word": "bleeding",
+    "definition": "chảy máu"
   },
   {
-    "word": "word_9",
-    "definition": "Định nghĩa tiếng Việt cho từ 9"
+    "word": "headmaster",
+    "definition": "thầy hiệu trưởng"
   },
   {
-    "word": "word_10",
-    "definition": "Định nghĩa tiếng Việt cho từ 10"
+    "word": "relieved",
+    "definition": "nhẹ nhõm"
   },
   {
-    "word": "word_11",
-    "definition": "Định nghĩa tiếng Việt cho từ 11"
+    "word": "hesitation",
+    "definition": "sự do dự"
   },
   {
-    "word": "word_12",
-    "definition": "Định nghĩa tiếng Việt cho từ 12"
+    "word": "injure",
+    "definition": "làm bị thương"
   },
   {
-    "word": "word_13",
-    "definition": "Định nghĩa tiếng Việt cho từ 13"
+    "word": "first-aid",
+    "definition": "sơ cứu"
   },
   {
-    "word": "word_14",
-    "definition": "Định nghĩa tiếng Việt cho từ 14"
+    "word": "slippery",
+    "definition": "trơn trượt"
   },
   {
-    "word": "word_15",
-    "definition": "Định nghĩa tiếng Việt cho từ 15"
+    "word": "stumble",
+    "definition": "vấp ngã"
   },
   {
-    "word": "word_16",
-    "definition": "Định nghĩa tiếng Việt cho từ 16"
+    "word": "prevent",
+    "definition": "ngăn ngừa"
   },
   {
-    "word": "word_17",
-    "definition": "Định nghĩa tiếng Việt cho từ 17"
+    "word": "rules",
+    "definition": "quy tắc"
   },
   {
-    "word": "word_18",
-    "definition": "Định nghĩa tiếng Việt cho từ 18"
+    "word": "calmly",
+    "definition": "bình tĩnh"
   },
   {
-    "word": "word_19",
-    "definition": "Định nghĩa tiếng Việt cho từ 19"
+    "word": "responsibly",
+    "definition": "có trách nhiệm"
   },
   {
-    "word": "word_20",
-    "definition": "Định nghĩa tiếng Việt cho từ 20"
+    "word": "attention",
+    "definition": "sự chú ý"
   }
 ];

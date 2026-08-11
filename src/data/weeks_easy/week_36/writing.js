@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 writing.js for Week 36
+// Cambridge A2 Flyers writing.js — Week 36
 export default {
-  "title": "The Secret Cave — Adventure & Treasure",
+  "title": "The Secret Cave — Adventure & Exploration",
   "min_sentences": 10,
   "min_words": 65,
   "model_sentence": "Early on a sunny Saturday morning, Leo and Mia went hiking in the green pine forest. While they were walking along the rocky path, they discovered a hidden entrance to a mysterious cave. They turned on their bright flashlights and stepped inside carefully. Inside the cave, cool drops of water dripped from the rocky ceiling, and dark grey shadows danced on the walls. Suddenly, Mia spotted a dusty wooden box tucked behind a large stone. They opened it gently and found an ancient map with a shiny brass compass. Their hearts beat fast with excitement. They felt extremely excited and burst into laughter.",
@@ -72,21 +72,26 @@ export default {
       "image_url": "/images/week36/story_writing_pic.jpg",
       "word_bank": {
         "action_verbs": [
-          "cave_word_1",
-          "cave_word_2"
+          "mysterious",
+          "flashlight",
+          "entrance"
         ],
         "cumulative_chunks": [
           "on a bright sunny day",
-          "felt extremely happy"
+          "felt extremely happy",
+          "without any hesitation"
         ],
         "connectors": [
           "Suddenly",
           "Meanwhile",
-          "Eventually"
+          "Eventually",
+          "First",
+          "Next"
         ],
         "grammar_boosters": [
           "while he was walking",
-          "decided to help"
+          "decided to help",
+          "so that everyone was safe"
         ]
       }
     }

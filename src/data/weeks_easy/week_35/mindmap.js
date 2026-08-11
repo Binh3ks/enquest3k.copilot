@@ -1,70 +1,70 @@
-// Auto-generated Cambridge A2 mindmap.js for Week 35
+// Cambridge A2 Flyers mindmap.js — Week 35
 export default {
   centerStems: [
   {
-    "label": "Morning Visit",
+    "label": "Beginning Scene",
     "branches": [
-      "on a warm Saturday morning",
-      "visited favorite city park",
-      "walked along green path",
-      "saw blue pond water",
-      "birds singing in trees",
-      "sunny city morning"
+      "on a bright sunny day",
+      "walking carefully down corridor",
+      "finished science class",
+      "holding notebooks",
+      "clean wooden floors",
+      "busy school morning"
     ]
   },
   {
-    "label": "The Litter Problem",
+    "label": "Main Event",
     "branches": [
-      "sad to see plastic waste",
-      "rubbish scattered on grass",
-      "empty water bottles lying",
-      "dirty plastic bags around",
-      "threatened small animals",
-      "felt sad and concerned"
+      "running fast down hall",
+      "slipped on wet floor",
+      "fell heavily on knee",
+      "began to bleed",
+      "burst into tears",
+      "hurt his leg"
     ]
   },
   {
-    "label": "Cleanup Action",
+    "label": "Helping Action",
     "branches": [
-      "without any hesitation",
-      "decided to clean up park",
-      "put on protective gloves",
-      "collected plastic waste into bins",
-      "sorted paper and plastic",
-      "worked hard together"
+      "rushed over immediately",
+      "stayed calm and gentle",
+      "called the school nurse",
+      "held his hand",
+      "helped him sit up",
+      "brought a glass of water"
     ]
   },
   {
-    "label": "Planting Trees",
+    "label": "Medical Care",
     "branches": [
-      "planted colorful flowers",
-      "young green oak trees",
-      "watered plants with bucket",
-      "placed wooden bench near pond",
-      "added garden signs",
-      "cared for nature"
+      "arrived with medical box",
+      "cleaned the cut carefully",
+      "applied a clean bandage",
+      "checked his knee",
+      "smiled warmly",
+      "gave him a sticker"
     ]
   },
   {
-    "label": "Community Praise",
+    "label": "Relief & Reaction",
     "branches": [
-      "park clean and beautiful again",
-      "visitors smiled and applauded",
-      "praised their wonderful effort",
-      "children played on clean grass",
-      "swans swam happily",
-      "everyone cheered warmly"
+      "felt extremely relieved",
+      "stopped crying softly",
+      "thanked Jake warmly",
+      "headmaster praised them",
+      "friends cheered loudly",
+      "clapped hands together"
     ]
   },
   {
-    "label": "Environmental Pride",
+    "label": "Ending Moral",
     "branches": [
-      "felt extremely proud",
-      "learned to protect nature",
-      "keep city parks clean",
-      "recycle plastic bottles daily",
-      "inspire other friends",
-      "make world greener"
+      "learned a valuable lesson",
+      "walk safely in corridor",
+      "never run on wet floors",
+      "care for classmates",
+      "obey school rules",
+      "keep everyone safe"
     ]
   }
 ]

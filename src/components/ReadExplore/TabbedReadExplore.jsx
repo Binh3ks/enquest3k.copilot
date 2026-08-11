@@ -69,7 +69,8 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
 
           if (isWordChar) {
             if (currentNonWord) {
-              parts.push(<span key={key++} className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800">{currentNonWord}</span>);
+              const cleanedNonWord = currentNonWord.replace(/^\s+([.,!?:;])/, '$1');
+              parts.push(<span key={key++} className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800">{cleanedNonWord}</span>);
               currentNonWord = '';
             }
             currentWord += char;
@@ -108,7 +109,8 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
           );
         }
         if (currentNonWord) {
-          parts.push(<span key={key++} className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800">{currentNonWord}</span>);
+          const cleanedNonWord = currentNonWord.replace(/^\s+([.,!?:;])/, '$1');
+          parts.push(<span key={key++} className="text-xl md:text-2xl leading-relaxed md:leading-loose text-slate-800">{cleanedNonWord}</span>);
         }
       }
     }

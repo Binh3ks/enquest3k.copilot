@@ -1,70 +1,70 @@
-// Auto-generated Cambridge A2 mindmap.js for Week 37
+// Cambridge A2 Flyers mindmap.js — Week 37
 export default {
   centerStems: [
   {
-    "label": "Stadium Morning",
+    "label": "Beginning Scene",
     "branches": [
-      "bright Saturday morning",
-      "annual Sports Day event",
-      "crowded sports stadium",
-      "cheering students and parents",
-      "colorful flags waving",
-      "excited sports atmosphere"
+      "on a bright sunny day",
+      "walking carefully down corridor",
+      "finished science class",
+      "holding notebooks",
+      "clean wooden floors",
+      "busy school morning"
     ]
   },
   {
-    "label": "Relay Race Event",
+    "label": "Main Event",
     "branches": [
-      "final 4x100m relay race",
-      "stood in exchange zone",
-      "first runner sprinting fast",
-      "prepared himself carefully",
-      "holding hands ready",
-      "focused on baton"
+      "running fast down hall",
+      "slipped on wet floor",
+      "fell heavily on knee",
+      "began to bleed",
+      "burst into tears",
+      "hurt his leg"
     ]
   },
   {
-    "label": "Baton Pass Action",
+    "label": "Helping Action",
     "branches": [
-      "passed the baton cleanly",
-      "accelerated smoothly on track",
-      "sprinted at full speed",
-      "ran as fast as wind",
-      "pumped arms powerfully",
-      "focused on finish line"
+      "rushed over immediately",
+      "stayed calm and gentle",
+      "called the school nurse",
+      "held his hand",
+      "helped him sit up",
+      "brought a glass of water"
     ]
   },
   {
-    "label": "Finish Victory",
+    "label": "Medical Care",
     "branches": [
-      "crossed finish line first",
-      "broke red ribbon tape",
-      "out of breath happily",
-      "smiled with big joy",
-      "friends hugged together",
-      "cheered loudly"
+      "arrived with medical box",
+      "cleaned the cut carefully",
+      "applied a clean bandage",
+      "checked his knee",
+      "smiled warmly",
+      "gave him a sticker"
     ]
   },
   {
-    "label": "Award Moment",
+    "label": "Relief & Reaction",
     "branches": [
-      "received shiny gold medals",
-      "stood on victory podium",
-      "parents took photographs",
-      "clapped hands together",
-      "shouted with happiness",
-      "held trophy up"
+      "felt extremely relieved",
+      "stopped crying softly",
+      "thanked Jake warmly",
+      "headmaster praised them",
+      "friends cheered loudly",
+      "clapped hands together"
     ]
   },
   {
-    "label": "Teamwork Pride",
+    "label": "Ending Moral",
     "branches": [
-      "felt extremely proud",
-      "learned scientific teamwork",
-      "practice relay handoffs",
-      "support teammates always",
-      "respect competitor friends",
-      "enjoy sports daily"
+      "learned a valuable lesson",
+      "walk safely in corridor",
+      "never run on wet floors",
+      "care for classmates",
+      "obey school rules",
+      "keep everyone safe"
     ]
   }
 ]

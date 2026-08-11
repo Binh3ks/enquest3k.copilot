@@ -1,83 +1,83 @@
-// Auto-generated Cambridge A2 word_match.js for Week 34
+// Cambridge A2 Flyers word_match.js — Week 34
 export default [
   {
-    "word": "fable_word_1",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 1"
+    "word": "fable",
+    "definition": "truyện ngụ ngôn"
   },
   {
-    "word": "fable_word_2",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 2"
+    "word": "grasshopper",
+    "definition": "châu chấu"
   },
   {
-    "word": "fable_word_3",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 3"
+    "word": "hardworking",
+    "definition": "chăm chỉ"
   },
   {
-    "word": "fable_word_4",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 4"
+    "word": "wheat",
+    "definition": "lúa mì"
   },
   {
-    "word": "fable_word_5",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 5"
+    "word": "cheerfully",
+    "definition": "vui vẻ"
   },
   {
-    "word": "fable_word_6",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 6"
+    "word": "shivering",
+    "definition": "run rẩy"
   },
   {
-    "word": "fable_word_7",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 7"
+    "word": "starving",
+    "definition": "verily hungry"
   },
   {
-    "word": "fable_word_8",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 8"
+    "word": "grateful",
+    "definition": "biết ơn"
   },
   {
-    "word": "fable_word_9",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 9"
+    "word": "patience",
+    "definition": "sự kiên nhẫn"
   },
   {
-    "word": "fable_word_10",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 10"
+    "word": "shelter",
+    "definition": "nơi trú ẩn"
   },
   {
-    "word": "fable_word_11",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 11"
+    "word": "winter",
+    "definition": "mùa đông"
   },
   {
-    "word": "fable_word_12",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 12"
+    "word": "harvest",
+    "definition": "thu hoạch"
   },
   {
-    "word": "fable_word_13",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 13"
+    "word": "lazy",
+    "definition": "lười biếng"
   },
   {
-    "word": "fable_word_14",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 14"
+    "word": "moral",
+    "definition": "bài học đạo đức"
   },
   {
-    "word": "fable_word_15",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 15"
+    "word": "ancient",
+    "definition": "cổ xưa"
   },
   {
-    "word": "fable_word_16",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 16"
+    "word": "store",
+    "definition": "dự trữ"
   },
   {
-    "word": "fable_word_17",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 17"
+    "word": "generous",
+    "definition": "rộng lượng"
   },
   {
-    "word": "fable_word_18",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 18"
+    "word": "lesson",
+    "definition": "bài học"
   },
   {
-    "word": "fable_word_19",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 19"
+    "word": "prepare",
+    "definition": "chuẩn bị"
   },
   {
-    "word": "fable_word_20",
-    "definition": "Định nghĩa tiếng Việt cho từ ngụ ngôn 20"
+    "word": "wisdom",
+    "definition": "trí tuệ"
   }
 ];

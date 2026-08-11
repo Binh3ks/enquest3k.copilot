@@ -1,126 +1,126 @@
-// Auto-generated Cambridge A2 word_power.js for Week 34
+// Cambridge A2 Flyers word_power.js — Week 34
 export default {
   title: "Collocations & Chunks — Week 34",
   collocations: [
   {
-    "phrase": "fable_word_1",
-    "definition_en": "English definition for fable word 1",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 1",
-    "example": "Example sentence for fable word 1."
+    "phrase": "fable",
+    "definition_en": "a short story that teaches a moral lesson using animals",
+    "definition_vi": "truyện ngụ ngôn",
+    "example": "The fable of the ant teaches us hard work."
   },
   {
-    "phrase": "fable_word_2",
-    "definition_en": "English definition for fable word 2",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 2",
-    "example": "Example sentence for fable word 2."
+    "phrase": "grasshopper",
+    "definition_en": "a plant-eating insect with long hind legs for jumping",
+    "definition_vi": "châu chấu",
+    "example": "The grasshopper sang all summer long."
   },
   {
-    "phrase": "fable_word_3",
-    "definition_en": "English definition for fable word 3",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 3",
-    "example": "Example sentence for fable word 3."
+    "phrase": "hardworking",
+    "definition_en": "putting a lot of effort into a job and working diligently",
+    "definition_vi": "chăm chỉ",
+    "example": "The hardworking ant stored wheat grains."
   },
   {
-    "phrase": "fable_word_4",
-    "definition_en": "English definition for fable word 4",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 4",
-    "example": "Example sentence for fable word 4."
+    "phrase": "wheat",
+    "definition_en": "a cereal plant grown for its grain to make flour",
+    "definition_vi": "lúa mì",
+    "example": "They gathered wheat grains from the field."
   },
   {
-    "phrase": "fable_word_5",
-    "definition_en": "English definition for fable word 5",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 5",
-    "example": "Example sentence for fable word 5."
+    "phrase": "cheerfully",
+    "definition_en": "in a happy and optimistic manner",
+    "definition_vi": "vui vẻ",
+    "example": "The bird sang cheerfully in the morning."
   },
   {
-    "phrase": "fable_word_6",
-    "definition_en": "English definition for fable word 6",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 6",
-    "example": "Example sentence for fable word 6."
+    "phrase": "shivering",
+    "definition_en": "shaking slightly because of cold or fear",
+    "definition_vi": "run rẩy",
+    "example": "He stood shivering in the snow."
   },
   {
-    "phrase": "fable_word_7",
-    "definition_en": "English definition for fable word 7",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 7",
-    "example": "Example sentence for fable word 7."
+    "phrase": "starving",
+    "definition_en": "suffering or dying from hunger",
+    "definition_vi": "verily hungry",
+    "example": "The ant helped the starving insect."
   },
   {
-    "phrase": "fable_word_8",
-    "definition_en": "English definition for fable word 8",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 8",
-    "example": "Example sentence for fable word 8."
+    "phrase": "grateful",
+    "definition_en": "feeling or showing appreciation for kindness received",
+    "definition_vi": "biết ơn",
+    "example": "The grasshopper was grateful for the hot soup."
   },
   {
-    "phrase": "fable_word_9",
-    "definition_en": "English definition for fable word 9",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 9",
-    "example": "Example sentence for fable word 9."
+    "phrase": "patience",
+    "definition_en": "the capacity to accept delay or trouble without getting angry",
+    "definition_vi": "sự kiên nhẫn",
+    "example": "Learning a skill takes time and patience."
   },
   {
-    "phrase": "fable_word_10",
-    "definition_en": "English definition for fable word 10",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 10",
-    "example": "Example sentence for fable word 10."
+    "phrase": "shelter",
+    "definition_en": "a place giving protection from bad weather or danger",
+    "definition_vi": "nơi trú ẩn",
+    "example": "The ant gave shelter to his friend."
   },
   {
-    "phrase": "fable_word_11",
-    "definition_en": "English definition for fable word 11",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 11",
-    "example": "Example sentence for fable word 11."
+    "phrase": "winter",
+    "definition_en": "the coldest season of the year",
+    "definition_vi": "mùa đông",
+    "example": "Cold winter snow fell on the forest."
   },
   {
-    "phrase": "fable_word_12",
-    "definition_en": "English definition for fable word 12",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 12",
-    "example": "Example sentence for fable word 12."
+    "phrase": "harvest",
+    "definition_en": "the process or period of gathering crops",
+    "definition_vi": "thu hoạch",
+    "example": "Summer is the season for wheat harvest."
   },
   {
-    "phrase": "fable_word_13",
-    "definition_en": "English definition for fable word 13",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 13",
-    "example": "Example sentence for fable word 13."
+    "phrase": "lazy",
+    "definition_en": "unwilling to work or use energy",
+    "definition_vi": "lười biếng",
+    "example": "Do not be lazy when exams come."
   },
   {
-    "phrase": "fable_word_14",
-    "definition_en": "English definition for fable word 14",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 14",
-    "example": "Example sentence for fable word 14."
+    "phrase": "moral",
+    "definition_en": "a lesson derived from a story or experience",
+    "definition_vi": "bài học đạo đức",
+    "example": "The moral of the story is to prepare early."
   },
   {
-    "phrase": "fable_word_15",
-    "definition_en": "English definition for fable word 15",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 15",
-    "example": "Example sentence for fable word 15."
+    "phrase": "ancient",
+    "definition_en": "belonging to the very distant past",
+    "definition_vi": "cổ xưa",
+    "example": "Aesop wrote ancient stories in Greece."
   },
   {
-    "phrase": "fable_word_16",
-    "definition_en": "English definition for fable word 16",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 16",
-    "example": "Example sentence for fable word 16."
+    "phrase": "store",
+    "definition_en": "to keep or accumulate for future use",
+    "definition_vi": "dự trữ",
+    "example": "Store food before winter arrives."
   },
   {
-    "phrase": "fable_word_17",
-    "definition_en": "English definition for fable word 17",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 17",
-    "example": "Example sentence for fable word 17."
+    "phrase": "generous",
+    "definition_en": "showing kindness toward others by giving freely",
+    "definition_vi": "rộng lượng",
+    "example": "The ant was generous to share his soup."
   },
   {
-    "phrase": "fable_word_18",
-    "definition_en": "English definition for fable word 18",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 18",
-    "example": "Example sentence for fable word 18."
+    "phrase": "lesson",
+    "definition_en": "a period of learning or a useful practical insight",
+    "definition_vi": "bài học",
+    "example": "He learned a valuable life lesson."
   },
   {
-    "phrase": "fable_word_19",
-    "definition_en": "English definition for fable word 19",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 19",
-    "example": "Example sentence for fable word 19."
+    "phrase": "prepare",
+    "definition_en": "make something ready for use or consideration",
+    "definition_vi": "chuẩn bị",
+    "example": "Prepare your backpack every evening."
   },
   {
-    "phrase": "fable_word_20",
-    "definition_en": "English definition for fable word 20",
-    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 20",
-    "example": "Example sentence for fable word 20."
+    "phrase": "wisdom",
+    "definition_en": "the quality of having experience and good judgment",
+    "definition_vi": "trí tuệ",
+    "example": "Fables share ancient wisdom with kids."
   }
 ]
 };

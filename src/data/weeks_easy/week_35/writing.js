@@ -1,4 +1,4 @@
-// Auto-generated Cambridge A2 writing.js for Week 35
+// Cambridge A2 Flyers writing.js — Week 35
 export default {
   "title": "Save Our Park — Environmental Action",
   "min_sentences": 10,
@@ -72,21 +72,26 @@ export default {
       "image_url": "/images/week35/story_writing_pic.jpg",
       "word_bank": {
         "action_verbs": [
-          "park_word_1",
-          "park_word_2"
+          "recycling",
+          "litter",
+          "environment"
         ],
         "cumulative_chunks": [
           "on a bright sunny day",
-          "felt extremely happy"
+          "felt extremely happy",
+          "without any hesitation"
         ],
         "connectors": [
           "Suddenly",
           "Meanwhile",
-          "Eventually"
+          "Eventually",
+          "First",
+          "Next"
         ],
         "grammar_boosters": [
           "while he was walking",
-          "decided to help"
+          "decided to help",
+          "so that everyone was safe"
         ]
       }
     }

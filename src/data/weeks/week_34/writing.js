@@ -1,6 +1,6 @@
-// Auto-generated Cambridge A2 writing.js for Week 34
+// Cambridge A2 Flyers writing.js — Week 34
 export default {
-  "title": "The Ant and the Grasshopper — Work Ethic",
+  "title": "The Ant and the Grasshopper — Fables & Moral",
   "min_sentences": 10,
   "min_words": 65,
   "model_sentence": "On a bright sunny summer day, the hardworking ant was gathering grains of wheat. Meanwhile, the lazy grasshopper was singing cheerfully under a green tree. When the cold winter arrived, snow covered the ground everywhere. The grasshopper had no food and was shivering in the cold. He slowly walked to the ant's warm wooden house and knocked on the door. The kind ant opened the door and invited him inside for warm soup. The grasshopper felt deeply grateful and learned a valuable lesson. From that day on, he promised to work hard every summer.",
@@ -72,21 +72,26 @@ export default {
       "image_url": "/images/week34/story_writing_pic.jpg",
       "word_bank": {
         "action_verbs": [
-          "fable_word_1",
-          "fable_word_2"
+          "fable",
+          "grasshopper",
+          "hardworking"
         ],
         "cumulative_chunks": [
           "on a bright sunny day",
-          "felt extremely happy"
+          "felt extremely happy",
+          "without any hesitation"
         ],
         "connectors": [
           "Suddenly",
           "Meanwhile",
-          "Eventually"
+          "Eventually",
+          "First",
+          "Next"
         ],
         "grammar_boosters": [
           "while he was walking",
-          "decided to help"
+          "decided to help",
+          "so that everyone was safe"
         ]
       }
     }
