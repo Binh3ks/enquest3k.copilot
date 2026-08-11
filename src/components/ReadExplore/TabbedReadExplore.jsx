@@ -348,25 +348,58 @@ const TabbedReadExplore = ({ weekNumber, weekData }) => {
                           </div>
                           <div className="text-gray-800 font-medium flex-1">{questionText}</div>
                         </div>
-                        <div className="flex space-x-2 ml-6">
-                          <input
-                            type="text"
-                            value={userAnswer}
-                            onChange={(e) => setAnswers(prev => ({ ...prev, [idx]: e.target.value }))}
-                            onKeyDown={(e) => e.key === 'Enter' && handleCheck(idx, userAnswer, correctAnswers)}
-                            placeholder="Type your answer..."
-                            disabled={showCorrect && isCorrect}
-                            className="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-indigo-400 text-sm"
-                          />
-                          <button
-                            onClick={() => handleCheck(idx, userAnswer, correctAnswers)}
-                            disabled={(showCorrect && isCorrect) || !userAnswer.trim()}
-                            className={`px-4 py-2 rounded-lg font-bold text-xs text-white transition-colors ${checkBtnClass}`}
-                          >
-                            {showCorrect && isCorrect ? 'OK Correct' : 'Check'}
-                          </button>
-                        </div>
-                        {showCorrect && !isCorrect && correctAnswers.length > 0 && (
+                        {q.options && Array.isArray(q.options) ? (
+                          <div className="ml-6 space-y-2 mt-2">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                              {q.options.map((opt, optIdx) => {
+                                const isSelected = userAnswer === opt;
+                                const isOptCorrect = showCorrect && opt === correctAnswers[0];
+                                const isOptWrong = showCorrect && isSelected && !isOptCorrect;
+                                let btnStyle = "bg-white border-slate-200 text-slate-700 hover:bg-slate-50";
+                                if (isSelected) btnStyle = "bg-indigo-600 text-white border-indigo-600 font-bold shadow-sm";
+                                if (showCorrect && isOptCorrect) btnStyle = "bg-green-600 text-white border-green-600 font-bold shadow-md";
+                                if (showCorrect && isOptWrong) btnStyle = "bg-rose-500 text-white border-rose-500 font-bold opacity-80";
+
+                                return (
+                                  <button
+                                    key={optIdx}
+                                    disabled={showCorrect && isCorrect}
+                                    onClick={() => {
+                                      setAnswers(prev => ({ ...prev, [idx]: opt }));
+                                      setChecked(prev => ({ ...prev, [idx]: true }));
+                                    }}
+                                    className={`px-4 py-2.5 rounded-xl border text-left text-sm transition-all flex items-center gap-2 ${btnStyle}`}
+                                  >
+                                    <span className="w-5 h-5 rounded-full bg-slate-100/30 text-xs font-black flex items-center justify-center flex-shrink-0">
+                                      {String.fromCharCode(65 + optIdx)}
+                                    </span>
+                                    <span>{opt}</span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex space-x-2 ml-6">
+                            <input
+                              type="text"
+                              value={userAnswer}
+                              onChange={(e) => setAnswers(prev => ({ ...prev, [idx]: e.target.value }))}
+                              onKeyDown={(e) => e.key === 'Enter' && handleCheck(idx, userAnswer, correctAnswers)}
+                              placeholder="Type your answer..."
+                              disabled={showCorrect && isCorrect}
+                              className="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-indigo-400 text-sm"
+                            />
+                            <button
+                              onClick={() => handleCheck(idx, userAnswer, correctAnswers)}
+                              disabled={(showCorrect && isCorrect) || !userAnswer.trim()}
+                              className={`px-4 py-2 rounded-lg font-bold text-xs text-white transition-colors ${checkBtnClass}`}
+                            >
+                              {showCorrect && isCorrect ? 'OK Correct' : 'Check'}
+                            </button>
+                          </div>
+                        )}
+                        {showCorrect && !isCorrect && correctAnswers.length > 0 && !q.options && (
                           <div className="ml-6 mt-2 text-sm text-green-700">
                             <strong>Answer:</strong> {correctAnswers[0]}
                           </div>

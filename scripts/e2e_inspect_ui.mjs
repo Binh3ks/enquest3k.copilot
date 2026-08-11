@@ -46,45 +46,29 @@ async function runE2E() {
 
   const page = await context.newPage();
 
-  // Test 1: Grammar Station (Week 36)
-  console.log('📸 Navigating to Grammar W36...');
-  await page.goto(`${BASE_URL}/week/36/grammar`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  // Test 1: Read & Explore (Week 36)
+  console.log('📸 Navigating to Read & Explore W36...');
+  await page.goto(`${BASE_URL}/week/36/read_explore`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
-  const screenshotPathGrammar = path.join(ARTIFACTS_DIR, 'e2e_w36_grammar.png');
-  await page.screenshot({ path: screenshotPathGrammar, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathGrammar}`);
+  const screenshotPathRead = path.join(ARTIFACTS_DIR, 'e2e_w36_read_explore.png');
+  await page.screenshot({ path: screenshotPathRead, fullPage: false });
+  console.log(`✅ Saved screenshot: ${screenshotPathRead}`);
 
-  // Test 2: Mindmap Speaking (Week 36)
-  console.log('📸 Navigating to Mindmap Speaking W36...');
-  await page.goto(`${BASE_URL}/week/36/mindmap_speaking`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  // Test 2: Daily Watch (Week 36)
+  console.log('📸 Navigating to Daily Watch W36...');
+  await page.goto(`${BASE_URL}/week/36/daily_watch`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
-  const screenshotPathMindmap = path.join(ARTIFACTS_DIR, 'e2e_w36_mindmap.png');
-  await page.screenshot({ path: screenshotPathMindmap, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathMindmap}`);
+  const screenshotPathWatch = path.join(ARTIFACTS_DIR, 'e2e_w36_daily_watch.png');
+  await page.screenshot({ path: screenshotPathWatch, fullPage: false });
+  console.log(`✅ Saved screenshot: ${screenshotPathWatch}`);
 
-  // Test 3: Ask AI (Week 36)
-  console.log('📸 Navigating to Ask AI W36...');
-  await page.goto(`${BASE_URL}/week/36/ask_ai`, { waitUntil: 'domcontentloaded', timeout: 15000 });
+  // Test 3: Word Match (Week 36)
+  console.log('📸 Navigating to Word Match W36...');
+  await page.goto(`${BASE_URL}/week/36/word_match`, { waitUntil: 'domcontentloaded', timeout: 15000 });
   await page.waitForTimeout(3000);
-  const screenshotPathAskAi = path.join(ARTIFACTS_DIR, 'e2e_w36_ask_ai.png');
-  await page.screenshot({ path: screenshotPathAskAi, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathAskAi}`);
-
-  // Test 4: Logic Lab (Week 36)
-  console.log('📸 Navigating to Logic Lab W36...');
-  await page.goto(`${BASE_URL}/week/36/logic_lab`, { waitUntil: 'domcontentloaded', timeout: 15000 });
-  await page.waitForTimeout(3000);
-  const screenshotPathLogic = path.join(ARTIFACTS_DIR, 'e2e_w36_logic_lab.png');
-  await page.screenshot({ path: screenshotPathLogic, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathLogic}`);
-
-  // Test 5: New Words (Week 36)
-  console.log('📸 Navigating to New Words W36...');
-  await page.goto(`${BASE_URL}/week/36/new_words`, { waitUntil: 'domcontentloaded', timeout: 15000 });
-  await page.waitForTimeout(3000);
-  const screenshotPathVocab = path.join(ARTIFACTS_DIR, 'e2e_w36_new_words.png');
-  await page.screenshot({ path: screenshotPathVocab, fullPage: false });
-  console.log(`✅ Saved screenshot: ${screenshotPathVocab}`);
+  const screenshotPathWordMatch = path.join(ARTIFACTS_DIR, 'e2e_w36_word_match.png');
+  await page.screenshot({ path: screenshotPathWordMatch, fullPage: false });
+  console.log(`✅ Saved screenshot: ${screenshotPathWordMatch}`);
 
   await browser.close();
   console.log('🎉 Full E2E UI Inspection Complete!');

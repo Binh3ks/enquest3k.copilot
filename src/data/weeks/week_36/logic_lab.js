@@ -108,6 +108,28 @@ export default {
         "A volcanic lake"
       ],
       "answer": "An underground jungle with trees and animals"
+    },
+    {
+      "id": 3,
+      "question_en": "How are most caves formed over long periods of time?",
+      "options": [
+        "By moving water over thousands of years",
+        "By strong winds in one day",
+        "By falling meteorites",
+        "By heavy traffic"
+      ],
+      "answer": "By moving water over thousands of years"
+    },
+    {
+      "id": 4,
+      "question_en": "Why should explorers protect ancient caves?",
+      "options": [
+        "To preserve rare natural beauty and habitats",
+        "To build shopping malls inside",
+        "To leave trash behind",
+        "To block natural water"
+      ],
+      "answer": "To preserve rare natural beauty and habitats"
     }
   ]
 }

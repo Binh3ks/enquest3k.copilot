@@ -1,5 +1,6 @@
 // Cambridge A2 Flyers daily_watch.js — Week 33
-export default [
+export default {
+  videos: [
   {
     "id": "w33_v1",
     "title": "School Corridor Safety Rules for Kids",
@@ -25,4 +26,5 @@ export default [
     "title": "Caring for Friends at School",
     "url": "https://www.youtube.com/embed/8x3dDqK5D24"
   }
-];
+]
+};

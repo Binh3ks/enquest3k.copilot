@@ -1,5 +1,6 @@
 // Cambridge A2 Flyers daily_watch.js — Week 36
-export default [
+export default {
+  videos: [
   {
     "id": "w36_v1",
     "title": "Son Doong Cave — Inside Earth's Largest Cave",
@@ -25,4 +26,5 @@ export default [
     "title": "Pine Forest Adventures for Kids",
     "url": "https://www.youtube.com/embed/8x3dDqK5D39"
   }
-];
+]
+};

@@ -50,7 +50,7 @@ export default [
   },
   {
     "word": "discover",
-    "definition": "khám phá out"
+    "definition": "khám phá"
   },
   {
     "word": "ceiling",

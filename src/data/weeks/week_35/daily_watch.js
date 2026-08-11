@@ -1,5 +1,6 @@
 // Cambridge A2 Flyers daily_watch.js — Week 35
-export default [
+export default {
+  videos: [
   {
     "id": "w35_v1",
     "title": "Singapore Supertrees & Urban Nature Science",
@@ -25,4 +26,5 @@ export default [
     "title": "Urban Trees & Green Lungs Explained",
     "url": "https://www.youtube.com/embed/8x3dDqK5D34"
   }
-];
+]
+};

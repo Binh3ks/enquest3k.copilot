@@ -80,13 +80,14 @@ const DailyWatch = ({ data, onReportProgress }) => {
 
   // Debounced Sync to Universal Progress System
   useEffect(() => {
+    const videosList = Array.isArray(data) ? data : (Array.isArray(data?.videos) ? data.videos : []);
     const handler = setTimeout(() => {
-      if (!isReady || !data?.videos) return;
+      if (!isReady || videosList.length === 0) return;
 
       let completedCount = 0;
       let totalPercent = 0;
       
-      data.videos.forEach(v => {
+      videosList.forEach(v => {
         const sec = watchData[v.id] || 0;
         const total = videoDurations[v.id] || v.duration_sec || v.sim_duration || 300;
         const percent = Math.min(Math.round((sec / total) * 100), 100);
@@ -94,14 +95,14 @@ const DailyWatch = ({ data, onReportProgress }) => {
         if (percent >= 90) completedCount++;
       });
       
-      const overallProgress = Math.round(totalPercent / data.videos.length);
-      const isFullyCompleted = completedCount === data.videos.length;
+      const overallProgress = Math.round(totalPercent / videosList.length);
+      const isFullyCompleted = completedCount === videosList.length;
       
       const progressData = { 
         watchData,
         videoDurations,
         completedCount,
-        totalVideos: data.videos.length,
+        totalVideos: videosList.length,
         lastWatchedId: activeVideo?.id,
       };
 
@@ -243,10 +244,11 @@ const handleClosePlayer = () => {
     return Math.min(100, Math.floor((sec / total) * 100));
   };
 
+  const videosList = Array.isArray(data) ? data : (Array.isArray(data?.videos) ? data.videos : []);
   if (!data) {
     return <div className="p-10 text-center animate-pulse text-slate-400">Loading Daily Watch...</div>;
   }
-  if (!Array.isArray(data.videos) || data.videos.length === 0) {
+  if (!videosList || videosList.length === 0) {
     return <div className="p-10 text-center text-slate-400">No Daily Watch videos available.</div>;
   }
 
@@ -258,13 +260,13 @@ const handleClosePlayer = () => {
           <p className="text-xs text-rose-600 font-bold mt-1">Listen to English naturally every day.</p>
         </div>
         <div className="bg-white px-6 py-2 rounded-2xl border-2 border-rose-200 shadow-inner">
-            <span className="text-2xl font-black text-rose-500">{data.videos.filter(v => getPercent(v.id, v.duration_sec || v.sim_duration) >= 90).length}</span>
-            <span className="text-sm font-bold text-slate-400">/{data.videos.length}</span>
+            <span className="text-2xl font-black text-rose-500">{videosList.filter(v => getPercent(v.id, v.duration_sec || v.sim_duration) >= 90).length}</span>
+            <span className="text-sm font-bold text-slate-400">/{videosList.length}</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.videos.map(v => (
+        {videosList.map(v => (
           <VideoItem key={v.id} video={v} percent={getPercent(v.id, v.duration_sec || v.sim_duration)} onClick={setActiveVideo} />
         ))}
       </div>

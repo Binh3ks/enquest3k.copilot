@@ -1,5 +1,6 @@
 // Cambridge A2 Flyers daily_watch.js — Week 37
-export default [
+export default {
+  videos: [
   {
     "id": "w37_v1",
     "title": "Relay Handoff Science & Smooth Baton Passes",
@@ -25,4 +26,5 @@ export default [
     "title": "Teamwork and Velocity for Young Athletes",
     "url": "https://www.youtube.com/embed/8x3dDqK5D44"
   }
-];
+]
+};

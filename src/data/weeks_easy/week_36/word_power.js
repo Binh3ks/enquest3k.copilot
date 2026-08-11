@@ -77,7 +77,7 @@ export default {
   {
     "phrase": "discover",
     "definition_en": "find unexpectedly or during a search",
-    "definition_vi": "khám phá out",
+    "definition_vi": "khám phá",
     "example": "They discovered a wooden treasure box."
   },
   {

@@ -486,29 +486,31 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
     ],
     social_questions: [
       { id: 1, question_en: "Which is the largest cave in the world?", options: ["Son Doong Cave in Vietnam", "Mammoth Cave in USA", "Blue Cave in Italy", "Waitomo Cave in New Zealand"], answer: "Son Doong Cave in Vietnam", clue_statement: "Son Doong Cave is the largest cave in the entire world.", hint_en: "Son Doong...", hint_vi: "Hang Sơn Đoòng..." },
-      { id: 2, question_en: "What unique natural feature exists inside Son Doong Cave?", options: ["An underground jungle with trees and animals", "A floating city", "A giant ice castle", "A volcanic lake"], answer: "An underground jungle with trees and animals", clue_statement: "Explorers found an underground jungle inside Son Doong.", hint_en: "Underground jungle...", hint_vi: "Rừng rậm dưới lòng đất..." }
+      { id: 2, question_en: "What unique natural feature exists inside Son Doong Cave?", options: ["An underground jungle with trees and animals", "A floating city", "A giant ice castle", "A volcanic lake"], answer: "An underground jungle with trees and animals", clue_statement: "Explorers found an underground jungle inside Son Doong.", hint_en: "Underground jungle...", hint_vi: "Rừng rậm dưới lòng đất..." },
+      { id: 3, question_en: "How are most caves formed over long periods of time?", options: ["By moving water over thousands of years", "By strong winds in one day", "By falling meteorites", "By heavy traffic"], answer: "By moving water over thousands of years", clue_statement: "Caves are formed over thousands of years by moving water.", hint_en: "Moving water...", hint_vi: "Nước chảy..." },
+      { id: 4, question_en: "Why should explorers protect ancient caves?", options: ["To preserve rare natural beauty and habitats", "To build shopping malls inside", "To leave trash behind", "To block natural water"], answer: "To preserve rare natural beauty and habitats", clue_statement: "Caves are natural wonderlands that must be preserved.", hint_en: "Preserve natural beauty...", hint_vi: "Bảo tồn vẻ đẹp..." }
     ],
     vocab: [
-      { word: "mysterious", definition_en: "difficult or impossible to understand or explain", definition_vi: "bí ẩn", example: "They found a mysterious entrance behind the rock.", ipa: "/mɪˈstɪə.ri.əs/" },
-      { word: "flashlight", definition_en: "a portable battery-powered electric lamp", definition_vi: "đèn pin", example: "Turn on your flashlight inside the dark cave.", ipa: "/ˈflæʃ.laɪt/" },
-      { word: "entrance", definition_en: "an opening that allows access to a place", definition_vi: "lối vào", example: "The cave entrance was covered with vines.", ipa: "/ˈen.trəns/" },
-      { word: "ancient", definition_en: "belonging to the very distant past", definition_vi: "cổ xưa", example: "The explorer drew an ancient parchment map.", ipa: "/ˈeɪn.ʃənt/" },
-      { word: "compass", definition_en: "an instrument showing magnetic north used for navigation", definition_vi: "la bàn", example: "Use a shiny brass compass to find north.", ipa: "/ˈkʌm.pəs/" },
-      { word: "stalactite", definition_en: "an icicle-shaped formation hanging from a cave ceiling", definition_vi: "nhũ đá", example: "Water dripped from a long stalactite.", ipa: "/ˈstæl.ək.taɪt/" },
-      { word: "explorer", definition_en: "a person who explores an unfamiliar area", definition_vi: "nhà khám phá", example: "Brave explorers mapped the deep cave.", ipa: "/ɪkˈsplɔː.rər/" },
-      { word: "parchment", definition_en: "a stiff flat material made from animal skin for writing", definition_vi: "cuộn giấy da", example: "The ancient map was written on parchment.", ipa: "/ˈpɑːtʃ.mənt/" },
-      { word: "shadow", definition_en: "a dark area produced by a body coming between rays of light", definition_vi: "bóng râm", example: "Dark grey shadows danced on the rocky wall.", ipa: "/ˈʃæd.əʊ/" },
-      { word: "underground", definition_en: "situated beneath the surface of the earth", definition_vi: "dưới lòng đất", example: "The underground lake was icy cold.", ipa: "/ˌʌn.dəˈɡraʊnd/" },
-      { word: "chamber", definition_en: "a large room or enclosed space in a cave", definition_vi: "ngăn hang động", example: "They stepped into a wide stone chamber.", ipa: "/ˈtʃeɪm.bər/" },
-      { word: "adventure", definition_en: "an unusual and exciting experience", definition_vi: "cuộc phiêu lưu", example: "Hiking in the forest was a great adventure.", ipa: "/ədˈven.tʃər/" },
-      { word: "discover", definition_en: "find unexpectedly or during a search", definition_vi: "khám phá out", example: "They discovered a wooden treasure box.", ipa: "/dɪˈskʌv.ər/" },
-      { word: "ceiling", definition_en: "the upper interior surface of a room or cave", definition_vi: "trần hang", example: "Water dripped from the rocky ceiling.", ipa: "/ˈsiː.lɪŋ/" },
-      { word: "drip", definition_en: "fall in small drops of liquid", definition_vi: "nhỏ giọt", example: "Cool water drops drip silently.", ipa: "/drɪp/" },
-      { word: "treasure", definition_en: "a quantity of precious metals, gems, or valuable items", definition_vi: "kho báu", example: "The map led to a historical treasure.", ipa: "/ˈtreʒ.ər/" },
-      { word: "historical", definition_en: "concerning history or past events", definition_vi: "thuộc lịch sử", example: "They found a historical map from 1850.", ipa: "/hɪˈstɒr.ɪ.kəl/" },
-      { word: "hiking", definition_en: "the activity of going for long walks in the countryside", definition_vi: "đi bộ đường dài", example: "We enjoy hiking in the pine forest.", ipa: "/ˈhaɪ.kɪŋ/" },
-      { word: "forest", definition_en: "a large area covered chiefly with trees and undergrowth", definition_vi: "rừng cây", example: "Tall trees grew in the pine forest.", ipa: "/ˈfɒr.ɪst/" },
-      { word: "courage", definition_en: "the ability to do something that frightens one", definition_vi: "lòng dũng cảm", example: "Exploring dark caves requires true courage.", ipa: "/ˈkʌr.ɪdʒ/" }
+      { word: "mysterious", definition_en: "difficult or impossible to understand or explain", definition_vi: "bí ẩn", example: "They found a mysterious entrance behind the rock.", ipa: "/mɪˈstɪə.ri.əs/", image_url: "/images/week36/vocab_1.jpg" },
+      { word: "flashlight", definition_en: "a portable battery-powered electric lamp", definition_vi: "đèn pin", example: "Turn on your flashlight inside the dark cave.", ipa: "/ˈflæʃ.laɪt/", image_url: "/images/week36/vocab_2.jpg" },
+      { word: "entrance", definition_en: "an opening that allows access to a place", definition_vi: "lối vào", example: "The cave entrance was covered with vines.", ipa: "/ˈen.trəns/", image_url: "/images/week36/vocab_3.jpg" },
+      { word: "ancient", definition_en: "belonging to the very distant past", definition_vi: "cổ xưa", example: "The explorer drew an ancient parchment map.", ipa: "/ˈeɪn.ʃənt/", image_url: "/images/week36/vocab_4.jpg" },
+      { word: "compass", definition_en: "an instrument showing magnetic north used for navigation", definition_vi: "la bàn", example: "Use a shiny brass compass to find north.", ipa: "/ˈkʌm.pəs/", image_url: "/images/week36/vocab_5.jpg" },
+      { word: "stalactite", definition_en: "an icicle-shaped formation hanging from a cave ceiling", definition_vi: "nhũ đá", example: "Water dripped from a long stalactite.", ipa: "/ˈstæl.ək.taɪt/", image_url: "/images/week36/vocab_6.jpg" },
+      { word: "explorer", definition_en: "a person who explores an unfamiliar area", definition_vi: "nhà khám phá", example: "Brave explorers mapped the deep cave.", ipa: "/ɪkˈsplɔː.rər/", image_url: "/images/week36/vocab_7.jpg" },
+      { word: "parchment", definition_en: "a stiff flat material made from animal skin for writing", definition_vi: "cuộn giấy da", example: "The ancient map was written on parchment.", ipa: "/ˈpɑːtʃ.mənt/", image_url: "/images/week36/vocab_8.jpg" },
+      { word: "shadow", definition_en: "a dark area produced by a body coming between rays of light", definition_vi: "bóng râm", example: "Dark grey shadows danced on the rocky wall.", ipa: "/ˈʃæd.əʊ/", image_url: "/images/week36/vocab_9.jpg" },
+      { word: "underground", definition_en: "situated beneath the surface of the earth", definition_vi: "dưới lòng đất", example: "The underground lake was icy cold.", ipa: "/ˌʌn.dəˈɡraʊnd/", image_url: "/images/week36/vocab_10.jpg" },
+      { word: "chamber", definition_en: "a large room or enclosed space in a cave", definition_vi: "ngăn hang động", example: "They stepped into a wide stone chamber.", ipa: "/ˈtʃeɪm.bər/", image_url: "/images/week36/vocab_11.jpg" },
+      { word: "adventure", definition_en: "an unusual and exciting experience", definition_vi: "cuộc phiêu lưu", example: "Hiking in the forest was a great adventure.", ipa: "/ədˈven.tʃər/", image_url: "/images/week36/vocab_12.jpg" },
+      { word: "discover", definition_en: "find unexpectedly or during a search", definition_vi: "khám phá", example: "They discovered a wooden treasure box.", ipa: "/dɪˈskʌv.ər/", image_url: "/images/week36/vocab_13.jpg" },
+      { word: "ceiling", definition_en: "the upper interior surface of a room or cave", definition_vi: "trần hang", example: "Water dripped from the rocky ceiling.", ipa: "/ˈsiː.lɪŋ/", image_url: "/images/week36/vocab_14.jpg" },
+      { word: "drip", definition_en: "fall in small drops of liquid", definition_vi: "nhỏ giọt", example: "Cool water drops drip silently.", ipa: "/drɪp/", image_url: "/images/week36/vocab_15.jpg" },
+      { word: "treasure", definition_en: "a quantity of precious metals, gems, or valuable items", definition_vi: "kho báu", example: "The map led to a historical treasure.", ipa: "/ˈtreʒ.ər/", image_url: "/images/week36/vocab_16.jpg" },
+      { word: "historical", definition_en: "concerning history or past events", definition_vi: "thuộc lịch sử", example: "They found a historical map from 1850.", ipa: "/hɪˈstɒr.ɪ.kəl/", image_url: "/images/week36/vocab_17.jpg" },
+      { word: "hiking", definition_en: "the activity of going for long walks in the countryside", definition_vi: "đi bộ đường dài", example: "We enjoy hiking in the pine forest.", ipa: "/ˈhaɪ.kɪŋ/", image_url: "/images/week36/vocab_18.jpg" },
+      { word: "forest", definition_en: "a large area covered chiefly with trees and undergrowth", definition_vi: "rừng cây", example: "Tall trees grew in the pine forest.", ipa: "/ˈfɒr.ɪst/", image_url: "/images/week36/vocab_19.jpg" },
+      { word: "courage", definition_en: "the ability to do something that frightens one", definition_vi: "lòng dũng cảm", example: "Exploring dark caves requires true courage.", ipa: "/ˈkʌr.ɪdʒ/", image_url: "/images/week36/vocab_20.jpg" }
     ],
     daily_watch: [
       { id: "w36_v1", title: "Son Doong Cave — Inside Earth's Largest Cave", url: "https://www.youtube.com/embed/Yp-dDqK5D35" },
@@ -744,7 +746,9 @@ export default {
 
 function buildDailyWatchJs(data) {
   return `// Cambridge A2 Flyers daily_watch.js — Week ${data.weekId}
-export default ${JSON.stringify(data.daily_watch, null, 2)};
+export default {
+  videos: ${JSON.stringify(data.daily_watch, null, 2)}
+};
 `;
 }
 

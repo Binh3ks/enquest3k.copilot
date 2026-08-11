@@ -1,5 +1,6 @@
 // Cambridge A2 Flyers daily_watch.js — Week 34
-export default [
+export default {
+  videos: [
   {
     "id": "w34_v1",
     "title": "The Ant and the Grasshopper Animated Fable",
@@ -25,4 +26,5 @@ export default [
     "title": "Moral Lessons & Diligence Storytime",
     "url": "https://www.youtube.com/embed/8x3dDqK5D29"
   }
-];
+]
+};

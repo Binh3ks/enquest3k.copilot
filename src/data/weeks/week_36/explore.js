@@ -63,6 +63,34 @@ export default {
     "clue_statement": "Explorers found an underground jungle inside Son Doong.",
     "hint_en": "Underground jungle...",
     "hint_vi": "Rừng rậm dưới lòng đất..."
+  },
+  {
+    "id": 3,
+    "question_en": "How are most caves formed over long periods of time?",
+    "options": [
+      "By moving water over thousands of years",
+      "By strong winds in one day",
+      "By falling meteorites",
+      "By heavy traffic"
+    ],
+    "answer": "By moving water over thousands of years",
+    "clue_statement": "Caves are formed over thousands of years by moving water.",
+    "hint_en": "Moving water...",
+    "hint_vi": "Nước chảy..."
+  },
+  {
+    "id": 4,
+    "question_en": "Why should explorers protect ancient caves?",
+    "options": [
+      "To preserve rare natural beauty and habitats",
+      "To build shopping malls inside",
+      "To leave trash behind",
+      "To block natural water"
+    ],
+    "answer": "To preserve rare natural beauty and habitats",
+    "clue_statement": "Caves are natural wonderlands that must be preserved.",
+    "hint_en": "Preserve natural beauty...",
+    "hint_vi": "Bảo tồn vẻ đẹp..."
   }
 ]
 };
