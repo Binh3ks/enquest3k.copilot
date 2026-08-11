@@ -14,7 +14,31 @@ import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngi
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight } from 'lucide-react';
 
-export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHint }) {
+const WEEK33_GRAMMAR_DRILLS = [
+  {
+    id: "st2_w33_g01",
+    grammar_tag: "past_continuous_when_while",
+    text_en: "Build a past continuous sentence with 'While'.",
+    word_blocks: ["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "clock", "."],
+    distractor_blocks: ["is", "breaks", "run"]
+  },
+  {
+    id: "st2_w33_g02",
+    grammar_tag: "clauses_of_reason",
+    text_en: "Build a cause and effect sentence with 'because'.",
+    word_blocks: ["Tom", "fell", "down", "because", "the", "floor", "was", "slippery", "."],
+    distractor_blocks: ["so", "falls", "why"]
+  },
+  {
+    id: "st2_w33_g03",
+    grammar_tag: "connectors",
+    text_en: "Build a sentence showing contrast with 'Although'.",
+    word_blocks: ["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."],
+    distractor_blocks: ["but", "helps", "makes"]
+  }
+];
+
+export function SentenceBuilderBattle({ customItem, onNext, onTriggerAdaptiveHint }) {
   const [bankBlocks, setBankBlocks] = useState([]);
   const [targetBlocks, setTargetBlocks] = useState([]);
   const [activeId, setActiveId] = useState(null);
@@ -22,52 +46,40 @@ export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHi
   const [isShaking, setIsShaking] = useState(false);
   const [consecutiveFails, setConsecutiveFails] = useState(0);
   const [startTime, setStartTime] = useState(Date.now());
+  const [drillIndex, setDrillIndex] = useState(0);
 
-  // Set up dnd-kit sensors with mobile/tablet scroll-prevention constraints
+  const currentDrill = customItem || WEEK33_GRAMMAR_DRILLS[drillIndex] || WEEK33_GRAMMAR_DRILLS[0];
+
   const sensors = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: {
-        distance: 5
-      }
-    }),
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 100, // 100ms hold ensures page scrolling isn't hijacked on iPad/Android
-        tolerance: 5
-      }
-    })
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
   );
 
-  // Initialize question blocks
   useEffect(() => {
-    if (!currentItem) return;
+    if (!currentDrill) return;
 
     const allWords = [
-      ...(currentItem.raw_content.word_blocks || []),
-      ...(currentItem.raw_content.distractor_blocks || [])
+      ...(currentDrill.word_blocks || currentDrill.raw_content?.word_blocks || []),
+      ...(currentDrill.distractor_blocks || currentDrill.raw_content?.distractor_blocks || [])
     ];
 
-    // Create block items with unique IDs
     const formatted = allWords.map((word, idx) => ({
-      id: `blk_${currentItem.content_id}_${idx}_${word}`,
+      id: `blk_${currentDrill.id || currentDrill.content_id}_${idx}_${word}`,
       word: word
     }));
 
-    // Fisher-Yates shuffle
     const shuffled = [...formatted].sort(() => Math.random() - 0.5);
 
     setBankBlocks(shuffled);
     setTargetBlocks([]);
     setFeedback(null);
     setStartTime(Date.now());
-  }, [currentItem]);
+  }, [currentDrill]);
 
-  // Handle Drag Start
   const handleDragStart = (event) => {
     setActiveId(event.active.id);
   };
 
-  // Handle Drag End (Move between bank and target or reorder target)
   const handleDragEnd = (event) => {
     const { active, over } = event;
     setActiveId(null);
@@ -78,121 +90,115 @@ export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHi
     const overId = over.id;
 
     const inBank = bankBlocks.some((b) => b.id === activeId);
-    const inTarget = targetBlocks.some((b) => b.id === activeId);
 
-    // Case A: Dragged from Bank into Target zone
-    if (inBank && (overId === 'target_dropzone' || targetBlocks.some((b) => b.id === overId))) {
-      const blockToMove = bankBlocks.find((b) => b.id === activeId);
-      setBankBlocks(bankBlocks.filter((b) => b.id !== activeId));
-      setTargetBlocks([...targetBlocks, blockToMove]);
-    }
-    // Case B: Dragged from Target back into Bank
-    else if (inTarget && (overId === 'bank_dropzone' || bankBlocks.some((b) => b.id === overId))) {
-      const blockToMove = targetBlocks.find((b) => b.id === activeId);
-      setTargetBlocks(targetBlocks.filter((b) => b.id !== activeId));
-      setBankBlocks([...bankBlocks, blockToMove]);
-    }
-    // Case C: Reorder inside Target Zone
-    else if (inTarget && targetBlocks.some((b) => b.id === overId)) {
-      const oldIndex = targetBlocks.findIndex((b) => b.id === activeId);
-      const newIndex = targetBlocks.findIndex((b) => b.id === overId);
-      if (oldIndex !== newIndex) {
-        setTargetBlocks(arrayMove(targetBlocks, oldIndex, newIndex));
+    if (overId === 'target_dropzone' || targetBlocks.some((b) => b.id === overId)) {
+      if (inBank) {
+        const itemToMove = bankBlocks.find((b) => b.id === activeId);
+        setBankBlocks(bankBlocks.filter((b) => b.id !== activeId));
+        setTargetBlocks([...targetBlocks, itemToMove]);
+      } else {
+        const oldIdx = targetBlocks.findIndex((b) => b.id === activeId);
+        const newIdx = targetBlocks.findIndex((b) => b.id === overId);
+        if (oldIdx !== -1 && newIdx !== -1 && oldIdx !== newIdx) {
+          setTargetBlocks(arrayMove(targetBlocks, oldIdx, newIdx));
+        }
+      }
+    } else if (overId === 'bank_dropzone' || bankBlocks.some((b) => b.id === overId)) {
+      if (!inBank) {
+        const itemToMove = targetBlocks.find((b) => b.id === activeId);
+        setTargetBlocks(targetBlocks.filter((b) => b.id !== activeId));
+        setBankBlocks([...bankBlocks, itemToMove]);
       }
     }
   };
 
-  // Tap-to-Place Fallback (Alternative gesture for younger kids)
-  const handleBlockTap = (id, word) => {
+  const handleBlockTap = (id) => {
     const inBank = bankBlocks.some((b) => b.id === id);
     if (inBank) {
-      const blockToMove = bankBlocks.find((b) => b.id === id);
+      const itemToMove = bankBlocks.find((b) => b.id === id);
       setBankBlocks(bankBlocks.filter((b) => b.id !== id));
-      setTargetBlocks([...targetBlocks, blockToMove]);
+      setTargetBlocks([...targetBlocks, itemToMove]);
     } else {
-      const blockToMove = targetBlocks.find((b) => b.id === id);
+      const itemToMove = targetBlocks.find((b) => b.id === id);
       setTargetBlocks(targetBlocks.filter((b) => b.id !== id));
-      setBankBlocks([...bankBlocks, blockToMove]);
+      setBankBlocks([...bankBlocks, itemToMove]);
     }
   };
 
-  // Check Answer
-  const handleCheckAnswer = async () => {
-    const userTokens = targetBlocks.map((b) => b.word);
-    const result = evaluateSentenceAttempt(userTokens, currentItem.answer_key);
-    const timeSpent = Math.round((Date.now() - startTime) / 1000);
-
-    setFeedback(result);
-
-    // Real-time Event Logging via learnerProgressService
-    await learnerProgressService.logAttempt({
-      learnerId: 'learner_default_01',
-      contentId: currentItem.content_id,
-      mode: 'learn',
-      result: result.isCorrect
-        ? result.isMinorError
-          ? 'minor_error'
-          : 'correct'
-        : 'incorrect',
-      hintUsed: false,
-      minorErrors: result.minorErrors,
-      diagnosticTag: result.diagnosticTag,
-      score: result.score,
-      timeSpentSeconds: timeSpent
-    });
-
-    if (result.isCorrect) {
-      setConsecutiveFails(0);
-    } else {
-      setIsShaking(true);
-      setTimeout(() => setIsShaking(false), 500);
-
-      const newFailCount = consecutiveFails + 1;
-      setConsecutiveFails(newFailCount);
-
-      // Adaptive Logic Rule Check: Fail 2 consecutive times on same grammar tag -> trigger Mini Explainer Modal
-      if (newFailCount >= 2 && onTriggerAdaptiveHint) {
-        onTriggerAdaptiveHint(currentItem.raw_content.grammar_tag);
-      }
-    }
-  };
-
-  // Reset current target line
   const handleClear = () => {
-    const all = [...bankBlocks, ...targetBlocks];
-    setBankBlocks(all);
+    const all = [...targetBlocks, ...bankBlocks];
     setTargetBlocks([]);
+    setBankBlocks(all);
     setFeedback(null);
   };
 
-  const activeBlock = activeId
-    ? [...bankBlocks, ...targetBlocks].find((b) => b.id === activeId)
-    : null;
+  const handleCheckAnswer = async () => {
+    const userWords = targetBlocks.map((b) => b.word);
+    const timeSpentSeconds = Math.max(1, Math.round((Date.now() - startTime) / 1000));
+
+    const evalResult = evaluateSentenceAttempt(userWords, currentDrill.answer_key || {
+      valid_structures: [currentDrill.word_blocks]
+    });
+
+    const isCorrect = evalResult.isCorrect;
+
+    if (isCorrect) {
+      setConsecutiveFails(0);
+      setFeedback({ isCorrect: true, text: '100% Correct! Excellent grammar structure!' });
+
+      await learnerProgressService.logAttempt({
+        learnerId: 'learner_default_01',
+        contentId: currentDrill.id || 'w33_sentence_builder',
+        mode: 'learn',
+        result: 'correct',
+        score: 100,
+        timeSpentSeconds
+      });
+    } else {
+      const nextFails = consecutiveFails + 1;
+      setConsecutiveFails(nextFails);
+
+      setIsShaking(true);
+      setTimeout(() => setIsShaking(false), 500);
+
+      setFeedback({
+        isCorrect: false,
+        text: evalResult.feedbackText || 'Incorrect order. Check word positions and try again!'
+      });
+
+      if (nextFails >= 2 && onTriggerAdaptiveHint) {
+        onTriggerAdaptiveHint(currentDrill.grammar_tag);
+      }
+    }
+  };
+
+  const handleNextDrill = () => {
+    if (onNext) {
+      onNext();
+    } else {
+      setDrillIndex((prev) => (prev + 1) % WEEK33_GRAMMAR_DRILLS.length);
+    }
+  };
+
+  const activeBlock = [...bankBlocks, ...targetBlocks].find((b) => b.id === activeId);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl text-white">
-      {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900">
+      {/* Header Info */}
+      <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
         <div>
-          <span className="inline-block px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">
-            Learn Mode — Sentence Builder Battle
+          <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
+            LEARN MODE — SENTENCE BUILDER BATTLE
           </span>
-          <h2 className="text-xl sm:text-2xl font-extrabold text-amber-400">
-            {currentItem?.unit_theme}
-          </h2>
-          <p className="text-sm text-slate-300 mt-1">
-            {currentItem?.raw_content.text}
-          </p>
+          <h3 className="text-lg font-black text-slate-900 mt-0.5">
+            {currentDrill.text_en || currentDrill.text || 'Build the target sentence'}
+          </h3>
         </div>
-        <div className="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-xl text-xs font-medium text-slate-300">
-          <span>Dạng: </span>
-          <span className="text-emerald-400 font-bold">
-            {currentItem?.raw_content.grammar_tag}
-          </span>
-        </div>
+        <span className="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-mono font-bold rounded-lg border border-indigo-100 uppercase">
+          Tag: {currentDrill.grammar_tag || 'grammar'}
+        </span>
       </div>
 
-      {/* Dnd Context Wrapper */}
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
@@ -200,9 +206,9 @@ export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHi
         onDragEnd={handleDragEnd}
       >
         {/* Arena Battle Visual Field */}
-        <div className="my-6 relative min-h-[160px] bg-slate-950 rounded-2xl p-4 sm:p-6 border-2 border-dashed border-indigo-500/40 flex flex-col justify-center items-center">
-          <div className="text-xs text-indigo-400 font-semibold uppercase tracking-wider mb-3">
-            Dòng Sông Từ Vựng (Thả hoặc Chạm các từ để xếp câu tại đây)
+        <div className="my-6 relative min-h-[160px] bg-slate-50 rounded-2xl p-4 sm:p-6 border-2 border-dashed border-indigo-300 flex flex-col justify-center items-center shadow-inner">
+          <div className="text-xs text-indigo-600 font-black uppercase tracking-wider mb-3">
+            Sentence Builder Zone (Drag or tap words below to construct sentence)
           </div>
 
           {/* Target Dropzone */}
@@ -212,8 +218,8 @@ export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHi
               isShaking ? 'animate-bounce border-2 border-red-500' : ''
             } ${
               feedback?.isCorrect
-                ? 'bg-emerald-950/40 border-2 border-emerald-500'
-                : 'bg-slate-900/80 border border-slate-700'
+                ? 'bg-emerald-50 border-2 border-emerald-500'
+                : 'bg-white border border-slate-300 shadow-sm'
             }`}
           >
             <SortableContext
@@ -221,8 +227,8 @@ export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHi
               strategy={horizontalListSortingStrategy}
             >
               {targetBlocks.length === 0 ? (
-                <span className="text-slate-500 text-sm italic pointer-events-none">
-                  (Kéo từ bên dưới lên đây hoặc chạm từ để xếp câu...)
+                <span className="text-slate-400 text-xs font-medium italic pointer-events-none">
+                  (Drag or tap word pills below to construct your sentence...)
                 </span>
               ) : (
                 targetBlocks.map((block) => (
@@ -240,15 +246,15 @@ export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHi
         </div>
 
         {/* Word Bank Field */}
-        <div id="bank_dropzone" className="bg-slate-800/60 rounded-2xl p-4 sm:p-5 border border-slate-700">
-          <div className="text-xs text-slate-400 font-medium mb-3 flex items-center justify-between">
-            <span>Kho Khối Từ (Chạm hoặc kéo để chọn):</span>
+        <div id="bank_dropzone" className="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm">
+          <div className="text-xs text-slate-600 font-black mb-3 flex items-center justify-between">
+            <span>Word Bank (Tap or drag words to choose):</span>
             {targetBlocks.length > 0 && (
               <button
                 onClick={handleClear}
-                className="text-xs text-amber-400 hover:underline flex items-center gap-1"
+                className="text-xs text-indigo-600 font-bold hover:underline flex items-center gap-1"
               >
-                <RefreshCw size={12} /> Làm lại
+                <RefreshCw size={12} /> Reset All
               </button>
             )}
           </div>
@@ -271,57 +277,35 @@ export function SentenceBuilderBattle({ currentItem, onNext, onTriggerAdaptiveHi
           </div>
         </div>
 
-        {/* Drag Overlay for smooth touch dragging */}
         <DragOverlay>
           {activeBlock ? <WordBlock id={activeBlock.id} word={activeBlock.word} /> : null}
         </DragOverlay>
       </DndContext>
 
-      {/* Feedback Alert Bar */}
-      {feedback && (
-        <div
-          className={`mt-6 p-4 rounded-2xl flex items-center gap-3 transition-all ${
-            feedback.isCorrect
-              ? feedback.isMinorError
-                ? 'bg-amber-950/60 border border-amber-500 text-amber-200'
-                : 'bg-emerald-950/60 border border-emerald-500 text-emerald-200'
-              : 'bg-rose-950/60 border border-rose-500 text-rose-200'
-          }`}
-        >
-          {feedback.isCorrect ? (
-            <CheckCircle2 className="w-6 h-6 text-emerald-400 shrink-0" />
-          ) : (
-            <AlertCircle className="w-6 h-6 text-rose-400 shrink-0" />
-          )}
-          <div className="flex-1 text-sm font-medium">{feedback.feedbackText}</div>
-        </div>
-      )}
-
-      {/* Action Footer Controls */}
-      <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between gap-4">
+      {/* Action Controls & Feedback */}
+      <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <button
-          onClick={handleClear}
+          onClick={handleCheckAnswer}
           disabled={targetBlocks.length === 0}
-          className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-xl text-sm transition disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-sm transition shadow-md disabled:opacity-50 flex items-center justify-center gap-2"
         >
-          Xóa hết
+          <Sparkles size={16} /> Check Sentence
         </button>
 
-        {feedback?.isCorrect ? (
-          <button
-            onClick={onNext}
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-emerald-600/30"
-          >
-            Câu tiếp theo <ArrowRight size={16} />
-          </button>
-        ) : (
-          <button
-            onClick={handleCheckAnswer}
-            disabled={targetBlocks.length === 0}
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-sm transition flex items-center gap-2 shadow-lg shadow-indigo-600/30 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <Sparkles size={16} /> Kiểm tra câu
-          </button>
+        {feedback && (
+          <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
+            <span className={`text-xs font-black ${feedback.isCorrect ? 'text-emerald-600' : 'text-red-600'}`}>
+              {feedback.text}
+            </span>
+            {feedback.isCorrect && (
+              <button
+                onClick={handleNextDrill}
+                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-xl text-xs transition shadow-md flex items-center gap-1.5"
+              >
+                Next Drill <ArrowRight size={14} />
+              </button>
+            )}
+          </div>
         )}
       </div>
     </div>

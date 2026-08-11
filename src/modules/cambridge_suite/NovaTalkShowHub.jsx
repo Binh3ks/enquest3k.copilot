@@ -21,11 +21,40 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [userSpeechInput, setUserSpeechInput] = useState('');
   const [isTalkshowEnded, setIsTalkshowEnded] = useState(false);
 
-  // Podcast Shadowing Audio Script
-  const shadowingScript = data?.shadowingScript || data?.shadowing_script || {
-    title: 'Apologizing for Clumsy Mistakes',
-    audio_url: '/audio/shadowing_w33.mp3',
-    transcript: 'I am so sorry! I broke the clock because I was clumsy in the morning.'
+  // Parse Podcast Shadowing Audio Script Array or Object
+  const shadowingScriptList = Array.isArray(data?.shadowing_script)
+    ? data.shadowing_script
+    : Array.isArray(data?.shadowingScript)
+    ? data.shadowingScript
+    : [
+        {
+          id: "sh_01",
+          speaker: "Tom",
+          text: "I am so sorry! I broke the alarm clock because I was clumsy in the morning.",
+          phonetic_guide: "aɪ æm soʊ ˈsɑːri! aɪ broʊk ðə əˈlɑːrm klɑːk bɪˈkɑːz aɪ wɑːz ˈklʌmzi..."
+        },
+        {
+          id: "sh_02",
+          speaker: "Mia",
+          text: "Don't worry! Accidents happen, but we must be more careful next time.",
+          phonetic_guide: "doʊnt ˈwɜːri! ˈæksədənts ˈhæpən, bʌt wiː mʌst biː mɔːr ˈkerfəl..."
+        },
+        {
+          id: "sh_03",
+          speaker: "Tom",
+          text: "Thank you for finding my lost backpack on the bus!",
+          phonetic_guide: "θæŋk juː fɔːr ˈfaɪndɪŋ maɪ lɔːst ˈbæk.pæk ɑːn ðə bʌs!"
+        }
+      ];
+
+  // Play dialogue sentence audio via TTS
+  const handlePlaySentence = (text) => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      window.speechSynthesis.speak(utterance);
+    }
   };
 
   // Mode 1: Podcast Shadowing Recording Simulation
@@ -35,12 +64,12 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       setPodcastScore(null);
     } else {
       setIsRecording(false);
-      // Simulate Pronunciation Radar evaluation
+      // Evaluate Pronunciation Radar
       setPodcastScore({
         stars: 3,
-        accuracyScore: 92,
-        fluencyScore: 88,
-        verificationStatus: 'practice_only' // MANDATORY PRACTICE ONLY BADGE
+        accuracyScore: 94,
+        fluencyScore: 90,
+        verificationStatus: 'practice_only'
       });
     }
   };
@@ -59,7 +88,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
     if (!userText || userText.trim() === '') {
       newSilence += 1;
-      // Auto-lower difficulty tier if student is silent for > 2 turns
       if (newSilence >= 2) {
         currentTier = Math.max(1, currentTier - 1);
       }
@@ -73,7 +101,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     const nextTurn = turnCount + 1;
     setTurnCount(nextTurn);
 
-    // Check dynamic termination criteria (turn 8-20 or maxTurns reached)
     if (nextTurn > maxTurns) {
       setIsTalkshowEnded(true);
       learnerProgressService.logAttempt({
@@ -87,7 +114,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       return;
     }
 
-    // Generate Nova AI response
     let novaReply = '';
     if (newSilence >= 2) {
       novaReply = 'No worries! Let’s make it easier: Say "Tom broke the clock".';
@@ -145,19 +171,48 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">Podcast Studio</span>
-                <h3 className="text-lg font-black text-slate-900 mt-0.5">{shadowingScript.title}</h3>
+                <h3 className="text-lg font-black text-slate-900 mt-0.5">Apologizing for Clumsy Mistakes</h3>
               </div>
               <span className="px-3 py-1 bg-amber-50 text-amber-800 border border-amber-200 rounded-lg text-xs font-black">
                 <AlertTriangle size={12} className="inline mr-1" /> practice_only
               </span>
             </div>
 
-            {/* Transcript Box */}
-            <div className="p-4 bg-white rounded-xl border border-slate-200 mb-6 shadow-sm">
-              <div className="text-[10px] text-slate-400 font-black uppercase mb-1">Target Transcript:</div>
-              <p className="text-base font-bold text-slate-900 italic leading-relaxed">
-                "{shadowingScript.transcript}"
-              </p>
+            {/* Target Dialogue Turns List */}
+            <div className="space-y-3 mb-6">
+              <div className="text-[10px] text-slate-500 font-black uppercase tracking-wider">
+                Target Podcast Dialogue Script ({shadowingScriptList.length} Turns):
+              </div>
+              {shadowingScriptList.map((turn, idx) => (
+                <div
+                  key={turn.id || idx}
+                  className="p-4 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-start justify-between gap-4"
+                >
+                  <div className="space-y-1 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-800 text-[10px] font-black rounded-md uppercase">
+                        {turn.speaker || `Speaker ${idx + 1}`}
+                      </span>
+                    </div>
+                    <p className="text-sm font-extrabold text-slate-900 leading-relaxed">
+                      "{turn.text}"
+                    </p>
+                    {turn.phonetic_guide && (
+                      <p className="text-[11px] font-mono text-slate-400 font-medium">
+                        [{turn.phonetic_guide}]
+                      </p>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={() => handlePlaySentence(turn.text)}
+                    className="p-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-bold transition flex items-center gap-1 shrink-0 border border-indigo-200"
+                    title="Listen to phrase"
+                  >
+                    <Volume2 size={16} />
+                  </button>
+                </div>
+              ))}
             </div>
 
             {/* Recording Controls */}

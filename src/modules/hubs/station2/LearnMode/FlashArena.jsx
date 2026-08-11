@@ -2,26 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee } from 'lucide-react';
 
-const VOCAB_SETS = {
-  set_w33: [
-    { id: 'v1', en: 'explore', vi: 'khám phá' },
-    { id: 'v2', en: 'expedition', vi: 'cuộc thám hiểm' },
-    { id: 'v3', en: 'crystal', vi: 'pha lê' },
-    { id: 'v4', en: 'torch', vi: 'đèn pin / đuốc' },
-    { id: 'v5', en: 'steep', vi: 'dốc' }
+const WEEK33_VOCAB_SETS = {
+  set_w33_01: [
+    { id: 'v1', en: 'broke', vi: 'đã làm vỡ / gãy' },
+    { id: 'v2', en: 'fell', vi: 'đã ngã / rơi' },
+    { id: 'v3', en: 'lost', vi: 'đã làm mất' },
+    { id: 'v4', en: 'found', vi: 'đã tìm thấy' },
+    { id: 'v5', en: 'mistake', vi: 'sai lầm / lỗi' }
   ],
-  set_w34: [
-    { id: 'v6', en: 'rescue', vi: 'cứu hộ' },
-    { id: 'v7', en: 'rope', vi: 'dây thừng' },
-    { id: 'v8', en: 'map', vi: 'bản đồ' },
-    { id: 'v9', en: 'treasure', vi: 'kho báu' },
-    { id: 'v10', en: 'scout', vi: 'hướng đạo sinh' }
+  set_w33_02: [
+    { id: 'v6', en: 'accident', vi: 'sự cố tai nạn' },
+    { id: 'v7', en: 'fix', vi: 'sửa chữa' },
+    { id: 'v8', en: 'sorry', vi: 'xin lỗi' },
+    { id: 'v9', en: 'careful', vi: 'cẩn thận' },
+    { id: 'v10', en: 'clumsy', vi: 'vụng về' }
   ]
 };
 
-export function FlashArena({ onAttemptResult }) {
+export function FlashArena({ customSets, onAttemptResult }) {
   const [playMode, setPlayMode] = useState('casual'); // 'casual' (Untimed) | 'speed' (30s Timer)
-  const [activeSetKey, setActiveSetKey] = useState('set_w33');
+  const [activeSetKey, setActiveSetKey] = useState('set_w33_01');
   const [selectedEn, setSelectedEn] = useState(null);
   const [selectedVi, setSelectedVi] = useState(null);
   const [matchedIds, setMatchedIds] = useState([]);
@@ -30,7 +30,8 @@ export function FlashArena({ onAttemptResult }) {
   const [timeLeft, setTimeLeft] = useState(30);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  const currentPairs = VOCAB_SETS[activeSetKey] || VOCAB_SETS.set_w33;
+  const activeSets = customSets || WEEK33_VOCAB_SETS;
+  const currentPairs = activeSets[activeSetKey] || activeSets.set_w33_01 || Object.values(activeSets)[0];
 
   // Timer Countdown Engine (Only active in Speed mode)
   useEffect(() => {
@@ -47,7 +48,6 @@ export function FlashArena({ onAttemptResult }) {
       });
     }, 1000);
 
-    // AI Bot simulate matching score every 6 seconds in speed mode
     const botTimer = setInterval(() => {
       if (!isGameOver) {
         setBotScore((prev) => prev + 10);
@@ -60,100 +60,90 @@ export function FlashArena({ onAttemptResult }) {
     };
   }, [playMode, isGameOver]);
 
-  // Match Verification with Race Condition Protection
-  useEffect(() => {
-    if (selectedEn && selectedVi) {
-      // Race condition protection test check
-      const currentTimerVal = playMode === 'speed' ? timeLeft : 999;
-      const evalRes = evaluateFlashPairMatch(
-        selectedEn,
-        selectedVi,
-        score,
-        matchedIds,
-        currentPairs.length,
-        currentTimerVal
-      );
+  // Handle Match Selection
+  const handleEnClick = (item) => {
+    if (matchedIds.includes(item.id)) return;
+    setSelectedEn(item);
+    if (selectedVi) {
+      checkMatch(item, selectedVi);
+    }
+  };
 
-      if (evalRes.raceConditionBlocked) {
-        console.warn('Race condition prevented: Match attempt blocked because timer reached 0s.');
-        setSelectedEn(null);
-        setSelectedVi(null);
-        return;
-      }
+  const handleViClick = (item) => {
+    if (matchedIds.includes(item.id)) return;
+    setSelectedVi(item);
+    if (selectedEn) {
+      checkMatch(selectedEn, item);
+    }
+  };
 
-      if (evalRes.isMatch) {
-        setMatchedIds(evalRes.newMatchedIds);
-        setScore(evalRes.newScore);
+  const checkMatch = async (enItem, viItem) => {
+    if (enItem.id === viItem.id) {
+      // Correct Match
+      const newMatched = [...matchedIds, enItem.id];
+      setMatchedIds(newMatched);
+      setScore((prev) => prev + 20);
+      setSelectedEn(null);
+      setSelectedVi(null);
+
+      // Check if all matched
+      if (newMatched.length === currentPairs.length) {
+        setIsGameOver(true);
+        await learnerProgressService.logAttempt({
+          learnerId: 'learner_default_01',
+          contentId: `w33_flash_arena_${activeSetKey}`,
+          mode: 'learn',
+          result: 'correct',
+          score: score + 20,
+          timeSpentSeconds: 30 - timeLeft
+        });
 
         if (onAttemptResult) {
-          onAttemptResult(true, 'vocab_flash');
-        }
-
-        if (evalRes.isGameOver) {
-          setIsGameOver(true);
-          learnerProgressService.logAttempt({
-            learnerId: 'learner_default_01',
-            contentId: `flash_arena_${activeSetKey}`,
-            mode: 'learn',
-            result: 'correct',
-            score: evalRes.newScore,
-            timeSpentSeconds: playMode === 'speed' ? 30 - timeLeft : 20
-          });
+          onAttemptResult(true, 'flash_arena');
         }
       }
-
+    } else {
+      // Incorrect Match
       setSelectedEn(null);
       setSelectedVi(null);
     }
-  }, [selectedEn, selectedVi]);
+  };
 
   const handleRestart = () => {
     setMatchedIds([]);
+    setSelectedEn(null);
+    setSelectedVi(null);
     setScore(0);
     setBotScore(0);
     setTimeLeft(30);
     setIsGameOver(false);
-    setSelectedEn(null);
-    setSelectedVi(null);
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl text-white">
-      {/* Header Banner & Play Mode Switcher */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 mb-6 border-b border-slate-800">
+    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900">
+      {/* Top Controls */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 mb-6 border-b border-slate-200">
         <div>
-          <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1">
-            <Zap size={14} /> Flash Arena — Chế Độ Đấu Thẻ Từ Vựng
+          <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
+            <Zap size={14} /> Flash Arena — Vocabulary Speed Battle
           </span>
-          <h2 className="text-xl sm:text-2xl font-extrabold text-amber-400 mt-2">
-            Luyện Từ Vựng W33–W34
-          </h2>
+          <h2 className="text-xl font-black text-slate-900 mt-1">Week 33 Vocabulary Battle</h2>
         </div>
 
-        {/* Mode Selector: Casual vs Speed */}
-        <div className="flex items-center gap-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-800">
+        {/* Mode Selector */}
+        <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
           <button
-            onClick={() => {
-              setPlayMode('casual');
-              handleRestart();
-            }}
-            className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 ${
-              playMode === 'casual'
-                ? 'bg-emerald-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white'
+            onClick={() => { setPlayMode('casual'); handleRestart(); }}
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+              playMode === 'casual' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            <Coffee size={14} /> Casual Mode (Thong thả)
+            <Coffee size={14} /> Casual Mode (Untimed)
           </button>
           <button
-            onClick={() => {
-              setPlayMode('speed');
-              handleRestart();
-            }}
-            className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 ${
-              playMode === 'speed'
-                ? 'bg-purple-600 text-white shadow-md'
-                : 'text-slate-400 hover:text-white'
+            onClick={() => { setPlayMode('speed'); handleRestart(); }}
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+              playMode === 'speed' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <Timer size={14} /> Speed Battle (30s)
@@ -162,132 +152,125 @@ export function FlashArena({ onAttemptResult }) {
       </div>
 
       {/* Set Selector */}
-      <div className="flex items-center gap-2 mb-6">
-        <span className="text-xs text-slate-400 font-bold">Bộ từ vựng:</span>
-        <button
-          onClick={() => {
-            setActiveSetKey('set_w33');
-            handleRestart();
-          }}
-          className={`px-3 py-1 rounded-lg text-xs font-bold transition ${
-            activeSetKey === 'set_w33' ? 'bg-indigo-600 text-white' : 'bg-slate-800 text-slate-400'
-          }`}
-        >
-          W33 (Hang Động)
-        </button>
-        <button
-          onClick={() => {
-            setActiveSetKey('set_w34');
-            handleRestart();
-          }}
-          className={`px-3 py-1 rounded-lg text-xs font-bold transition ${
-            activeSetKey === 'set_w34' ? 'bg-indigo-600 text-white' : 'bg-slate-800 text-slate-400'
-          }`}
-        >
-          W34 (Cứu Hộ)
-        </button>
-      </div>
-
-      {/* Scoreboard */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="bg-indigo-950/60 p-4 rounded-2xl border border-indigo-500/40 flex items-center justify-between">
-          <div>
-            <div className="text-xs text-indigo-300 font-bold uppercase">Điểm Của Bạn</div>
-            <div className="text-2xl font-black text-white">{score} điểm</div>
-          </div>
-          <Trophy className="w-8 h-8 text-amber-400" />
-        </div>
-
-        <div className="bg-purple-950/60 p-4 rounded-2xl border border-purple-500/40 flex items-center justify-between">
-          <div>
-            <div className="text-xs text-purple-300 font-bold uppercase">
-              {playMode === 'speed' ? 'Đối Thủ (AI Nova)' : 'Chế Độ Luyện Tập'}
-            </div>
-            <div className="text-2xl font-black text-white">
-              {playMode === 'speed' ? `${botScore} điểm` : 'Không Giới Hạn'}
-            </div>
-          </div>
-          {playMode === 'speed' ? (
-            <div className="flex items-center gap-1 text-amber-400 font-mono font-bold">
-              <Timer size={16} /> {timeLeft}s
-            </div>
-          ) : (
-            <Coffee className="w-8 h-8 text-emerald-400" />
-          )}
-        </div>
-      </div>
-
-      {/* Game Board Grid */}
-      {isGameOver ? (
-        <div className="text-center py-10 bg-slate-950 rounded-2xl border border-slate-800 p-6">
-          <h3 className="text-2xl font-black text-amber-400 mb-2">
-            🎉 HOÀN THÀNH BỘ TỪ VỰNG!
-          </h3>
-          <p className="text-sm text-slate-300 mb-6">
-            Tổng điểm của bạn: <span className="font-extrabold text-emerald-400">{score}</span> điểm
-          </p>
+      <div className="flex items-center gap-2 mb-6 overflow-x-auto pb-2">
+        <span className="text-xs font-black text-slate-500 uppercase mr-2">Card Sets:</span>
+        {Object.keys(activeSets).map((key, idx) => (
           <button
-            onClick={handleRestart}
-            className="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-sm transition inline-flex items-center gap-2"
+            key={key}
+            onClick={() => { setActiveSetKey(key); handleRestart(); }}
+            className={`px-3 py-1.5 rounded-xl text-xs font-black transition border ${
+              activeSetKey === key
+                ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
+                : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
+            }`}
           >
-            <RefreshCw size={16} /> Chơi lại lần nữa
+            Set {idx + 1} (Irregular Verbs)
           </button>
+        ))}
+      </div>
+
+      {/* Arena Status Bar */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+        <div className="p-3 bg-indigo-50 rounded-2xl border border-indigo-100 flex items-center gap-3">
+          <div className="p-2.5 bg-indigo-600 text-white rounded-xl">
+            <Trophy size={18} />
+          </div>
+          <div>
+            <div className="text-[10px] text-indigo-700 font-black uppercase">Your Score</div>
+            <div className="text-lg font-black text-indigo-950">{score} pts</div>
+          </div>
         </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <div className="p-3 bg-purple-50 rounded-2xl border border-purple-100 flex items-center gap-3">
+          <div className="p-2.5 bg-purple-600 text-white rounded-xl">
+            <Swords size={18} />
+          </div>
+          <div>
+            <div className="text-[10px] text-purple-700 font-black uppercase">Mode</div>
+            <div className="text-sm font-black text-purple-950">
+              {playMode === 'casual' ? 'Untimed Practice' : `Speed (${timeLeft}s remaining)`}
+            </div>
+          </div>
+        </div>
+
+        <div className="p-3 bg-emerald-50 rounded-2xl border border-emerald-100 flex items-center gap-3 col-span-2 sm:col-span-1">
+          <div className="p-2.5 bg-emerald-600 text-white rounded-xl">
+            <CheckCircle2 size={18} />
+          </div>
+          <div>
+            <div className="text-[10px] text-emerald-700 font-black uppercase">Matched</div>
+            <div className="text-sm font-black text-emerald-950">{matchedIds.length}/{currentPairs.length} Pairs</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Matching Grid */}
+      {!isGameOver ? (
+        <div className="grid grid-cols-2 gap-4">
           {/* English Column */}
-          <div className="space-y-3">
-            <h4 className="text-xs text-slate-400 font-bold uppercase text-center">Tiếng Anh (English)</h4>
+          <div className="space-y-2.5">
+            <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">ENGLISH</div>
             {currentPairs.map((item) => {
               const isMatched = matchedIds.includes(item.id);
-              const isSelected = selectedEn === item.id;
-
+              const isSelected = selectedEn?.id === item.id;
               return (
                 <button
                   key={item.id}
                   disabled={isMatched}
-                  onClick={() => setSelectedEn(item.id)}
-                  className={`w-full p-4 rounded-xl font-bold text-base transition border shadow-md text-left flex items-center justify-between ${
+                  onClick={() => handleEnClick(item)}
+                  className={`w-full p-4 rounded-2xl font-black text-sm transition border text-left shadow-sm ${
                     isMatched
-                      ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-400 opacity-50 cursor-not-allowed'
+                      ? 'bg-slate-100 text-slate-300 border-slate-200 line-through'
                       : isSelected
-                      ? 'bg-indigo-600 border-indigo-400 text-white scale-102 ring-2 ring-indigo-400'
-                      : 'bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700'
+                      ? 'bg-indigo-600 text-white border-indigo-600 ring-4 ring-indigo-200 shadow-md scale-102'
+                      : 'bg-slate-50 hover:bg-slate-100 text-slate-800 border-slate-200'
                   }`}
                 >
-                  <span>{item.en}</span>
-                  {isMatched && <CheckCircle2 size={18} />}
+                  {item.en}
                 </button>
               );
             })}
           </div>
 
           {/* Vietnamese Column */}
-          <div className="space-y-3">
-            <h4 className="text-xs text-slate-400 font-bold uppercase text-center">Tiếng Việt (Vietnamese)</h4>
+          <div className="space-y-2.5">
+            <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">VIETNAMESE</div>
             {currentPairs.map((item) => {
               const isMatched = matchedIds.includes(item.id);
-              const isSelected = selectedVi === item.id;
-
+              const isSelected = selectedVi?.id === item.id;
               return (
                 <button
                   key={item.id}
                   disabled={isMatched}
-                  onClick={() => setSelectedVi(item.id)}
-                  className={`w-full p-4 rounded-xl font-bold text-base transition border shadow-md text-left flex items-center justify-between ${
+                  onClick={() => handleViClick(item)}
+                  className={`w-full p-4 rounded-2xl font-black text-sm transition border text-left shadow-sm ${
                     isMatched
-                      ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-400 opacity-50 cursor-not-allowed'
+                      ? 'bg-slate-100 text-slate-300 border-slate-200 line-through'
                       : isSelected
-                      ? 'bg-indigo-600 border-indigo-400 text-white scale-102 ring-2 ring-indigo-400'
-                      : 'bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700'
+                      ? 'bg-purple-600 text-white border-purple-600 ring-4 ring-purple-200 shadow-md scale-102'
+                      : 'bg-slate-50 hover:bg-slate-100 text-slate-800 border-slate-200'
                   }`}
                 >
-                  <span>{item.vi}</span>
-                  {isMatched && <CheckCircle2 size={18} />}
+                  {item.vi}
                 </button>
               );
             })}
           </div>
+        </div>
+      ) : (
+        /* Game Over Screen */
+        <div className="p-8 bg-slate-50 rounded-2xl border border-slate-200 text-center space-y-4 animate-in fade-in">
+          <div className="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-2xl font-black shadow-md">
+            🏆
+          </div>
+          <h3 className="text-xl font-black text-slate-900">Flash Arena Completed!</h3>
+          <p className="text-sm font-bold text-slate-600">Total Score Achieved: {score} Points</p>
+          <button
+            onClick={handleRestart}
+            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-sm transition inline-flex items-center gap-2 shadow-md"
+          >
+            <RefreshCw size={16} /> Play Arena Again
+          </button>
         </div>
       )}
     </div>

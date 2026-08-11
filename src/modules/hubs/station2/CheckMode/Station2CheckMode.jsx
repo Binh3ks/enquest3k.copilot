@@ -4,7 +4,7 @@ import { learnerProgressService } from '../../../../services/learnerProgressServ
 import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngine';
 import { ShieldCheck, CheckCircle2, ArrowRight, RefreshCw, FileText } from 'lucide-react';
 
-export function Station2CheckMode({ onFinishCheckMode }) {
+export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -18,9 +18,9 @@ export function Station2CheckMode({ onFinishCheckMode }) {
       setLoading(true);
       try {
         const items = await contentBankService.getStationContent({
-          week: 'W33',
+          week: `W${weekNumber}`,
           station: '2',
-          mode: 'learn' // Same content bank items, rendered exam-style!
+          mode: 'learn'
         });
         setQuestions(items);
         setStartTime(Date.now());
@@ -31,7 +31,7 @@ export function Station2CheckMode({ onFinishCheckMode }) {
       }
     }
     loadExamContent();
-  }, []);
+  }, [weekNumber]);
 
   const currentQ = questions[currentIndex];
 
@@ -66,28 +66,27 @@ export function Station2CheckMode({ onFinishCheckMode }) {
       const score = evalRes.isCorrect ? (evalRes.isMinorError ? 90 : 100) : 0;
       totalScore += score;
 
-      // Log to Learner Progress Layer with mode: 'check'
       await learnerProgressService.logAttempt({
         learnerId: 'learner_default_01',
         contentId: q.content_id,
-        mode: 'check', // ISOLATED CHECK MODE RECORD
+        mode: 'check',
         result: evalRes.isCorrect ? (evalRes.isMinorError ? 'minor_error' : 'correct') : 'incorrect',
         hintUsed: false,
         minorErrors: evalRes.minorErrors,
         diagnosticTag: evalRes.diagnosticTag,
         score: score,
-        timeSpentSeconds: Math.round(totalTimeSpent / questions.length)
+        timeSpentSeconds: Math.round(totalTimeSpent / Math.max(1, questions.length))
       });
 
       evaluatedResults.push({
         contentId: q.content_id,
-        grammarTag: q.raw_content.grammar_tag,
+        grammarTag: q.raw_content?.grammar_tag || 'grammar',
         score: score,
         evalRes
       });
     }
 
-    const finalAvgScore = Math.round(totalScore / questions.length);
+    const finalAvgScore = Math.round(totalScore / Math.max(1, questions.length));
 
     setResultsSummary({
       totalQuestions: questions.length,
@@ -100,56 +99,36 @@ export function Station2CheckMode({ onFinishCheckMode }) {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center py-20 text-slate-400">
-        <RefreshCw className="w-8 h-8 animate-spin text-indigo-500 mb-3" />
-        <p className="text-sm font-medium">Đang tải đề thi Cambridge Check Mode...</p>
+      <div className="p-8 text-center text-slate-500 font-bold animate-pulse">
+        Loading Cambridge Check Mode Exam...
       </div>
     );
   }
 
-  if (isCompleted) {
+  if (isCompleted && resultsSummary) {
     return (
-      <div className="w-full max-w-3xl mx-auto bg-white text-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl font-sans">
-        <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
-          <div className="flex items-center gap-3">
-            <div className="p-3 bg-indigo-100 text-indigo-700 rounded-xl">
-              <FileText size={24} />
-            </div>
-            <div>
-              <span className="text-xs text-indigo-600 font-bold uppercase tracking-wider">Cambridge Assessment Result</span>
-              <h2 className="text-2xl font-black text-slate-900">KẾT QUẢ BÀI THI CHECK MODE (TRẠM 2)</h2>
-            </div>
+      <div className="w-full max-w-2xl mx-auto bg-white rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl text-slate-900 font-sans">
+        <div className="text-center mb-6">
+          <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
+            <FileText size={32} />
           </div>
-          <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-mono font-bold rounded-lg">
-            Mode: Check
-          </span>
+          <h3 className="text-2xl font-black text-slate-900">Grammar Check Mode Completed</h3>
+          <p className="text-xs text-slate-500 font-medium">Isolated exam results saved to learner progress.</p>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <div className="text-xs text-slate-500 font-semibold uppercase">Điểm Trung Bình</div>
-            <div className="text-3xl font-black text-indigo-600">{resultsSummary.finalAvgScore} / 100</div>
+          <div className="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+            <div className="text-[10px] text-indigo-700 font-black uppercase">Average Score</div>
+            <div className="text-2xl font-black text-indigo-950">{resultsSummary.finalAvgScore} / 100</div>
           </div>
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <div className="text-xs text-slate-500 font-semibold uppercase">Số Câu Đã Thi</div>
-            <div className="text-3xl font-black text-slate-800">{resultsSummary.totalQuestions} câu</div>
+            <div className="text-[10px] text-slate-500 font-black uppercase">Questions</div>
+            <div className="text-2xl font-black text-slate-900">{resultsSummary.totalQuestions}</div>
           </div>
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <div className="text-xs text-slate-500 font-semibold uppercase">Thời Gian</div>
-            <div className="text-3xl font-black text-slate-800">{resultsSummary.totalTimeSpent}s</div>
+            <div className="text-[10px] text-slate-500 font-black uppercase">Time Spent</div>
+            <div className="text-2xl font-black text-slate-900">{resultsSummary.totalTimeSpent}s</div>
           </div>
-        </div>
-
-        <div className="space-y-3 mb-8">
-          <h4 className="text-sm font-bold text-slate-700 uppercase">Chi tiết từng câu:</h4>
-          {resultsSummary.evaluatedResults.map((r, idx) => (
-            <div key={r.contentId} className="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between text-sm">
-              <span className="font-semibold text-slate-800">Câu {idx + 1} ({r.grammarTag}):</span>
-              <span className={`font-bold ${r.score >= 90 ? 'text-emerald-600' : 'text-rose-600'}`}>
-                {r.score >= 90 ? `ĐẠT (${r.score}%)` : 'CHƯA ĐẠT (0%)'}
-              </span>
-            </div>
-          ))}
         </div>
 
         <button
@@ -159,17 +138,18 @@ export function Station2CheckMode({ onFinishCheckMode }) {
             setSelectedAnswers({});
             setStartTime(Date.now());
           }}
-          className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-base transition flex items-center justify-center gap-2 shadow-md"
+          className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-base transition flex items-center justify-center gap-2 shadow-md"
         >
-          <RefreshCw size={18} /> Làm lại bài thi Check Mode
+          <RefreshCw size={18} /> Retake Check Mode Exam
         </button>
       </div>
     );
   }
 
-  // Generate standardized Cambridge MCQ options for current question
-  const validOptionA = currentQ.answer_key.valid_structures[0];
-  const validOptionB = currentQ.answer_key.valid_structures[1] || currentQ.answer_key.valid_structures[0];
+  if (!currentQ) return null;
+
+  const validOptionA = currentQ.answer_key?.valid_structures[0] || [];
+  const validOptionB = currentQ.answer_key?.valid_structures[1] || validOptionA;
   const invalidOptionC = [...validOptionA].sort(() => 0.5 - Math.random());
 
   const options = [
@@ -182,10 +162,9 @@ export function Station2CheckMode({ onFinishCheckMode }) {
 
   return (
     <div className="w-full max-w-3xl mx-auto bg-white text-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl font-sans">
-      {/* Cambridge Standard Minimal Header */}
       <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
         <div>
-          <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">
+          <span className="text-xs font-black text-slate-500 uppercase tracking-widest">
             CAMBRIDGE FLYERS & PET — GRAMMAR CHECK MODE
           </span>
           <h2 className="text-xl font-black text-slate-900 mt-1">
@@ -197,17 +176,15 @@ export function Station2CheckMode({ onFinishCheckMode }) {
         </div>
       </div>
 
-      {/* Question Text */}
       <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6">
-        <p className="text-sm font-semibold text-slate-700 mb-1">
+        <p className="text-xs font-bold text-slate-600 mb-1">
           Exam Directive: Choose the correct grammatical sentence structure.
         </p>
-        <p className="text-base font-bold text-slate-900">
-          {currentQ.raw_content.text} ({currentQ.raw_content.grammar_tag})
+        <p className="text-sm font-black text-slate-900">
+          {currentQ.raw_content?.text_en || currentQ.raw_content?.text} ({currentQ.raw_content?.grammar_tag || 'grammar'})
         </p>
       </div>
 
-      {/* Standard Multiple-Choice Options */}
       <div className="space-y-3 mb-8">
         {options.map((opt) => {
           const optStr = opt.tokens.join(' ').replace(/\s+([.,!?:;])/g, '$1');
@@ -219,27 +196,26 @@ export function Station2CheckMode({ onFinishCheckMode }) {
               onClick={() => handleSelectOption(opt.tokens)}
               className={`w-full p-4 rounded-xl text-left border transition-all flex items-start gap-4 ${
                 isSelected
-                  ? 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500'
+                  ? 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm'
                   : 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800'
               }`}
             >
-              <span className={`w-7 h-7 rounded-full font-bold flex items-center justify-center text-xs shrink-0 ${
+              <span className={`w-7 h-7 rounded-full font-black flex items-center justify-center text-xs shrink-0 ${
                 isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-700'
               }`}>
                 {opt.label}
               </span>
-              <span className="text-base leading-relaxed">{optStr}</span>
+              <span className="text-sm font-bold leading-relaxed">{optStr}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Footer Navigation */}
       <div className="flex items-center justify-between pt-4 border-t border-slate-200">
         <button
           onClick={handlePrev}
           disabled={currentIndex === 0}
-          className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-lg text-sm transition disabled:opacity-40"
+          className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black rounded-lg text-xs transition disabled:opacity-40"
         >
           ← Previous
         </button>
@@ -248,14 +224,14 @@ export function Station2CheckMode({ onFinishCheckMode }) {
           <button
             onClick={handleSubmitExam}
             disabled={Object.keys(selectedAnswers).length < questions.length}
-            className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-sm transition flex items-center gap-2 shadow-md disabled:opacity-50"
+            className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-lg text-xs transition flex items-center gap-2 shadow-md disabled:opacity-50"
           >
             <CheckCircle2 size={16} /> Submit Exam
           </button>
         ) : (
           <button
             onClick={handleNext}
-            className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg text-sm transition flex items-center gap-2 shadow-md"
+            className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-lg text-xs transition flex items-center gap-2 shadow-md"
           >
             Next Question <ArrowRight size={16} />
           </button>
