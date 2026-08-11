@@ -51,6 +51,7 @@ import { recordDailyStreak } from './utils/progressReport';
 import { generateSmartReviewAsync } from './utils/srsGenerator';
 import EncounterOverlay from './components/encounter/EncounterOverlay';
 import UnboxAnimation from './components/avatar/UnboxAnimation';
+import WordTreasury from './pages/WordTreasury';
 import Station2Hub from './modules/hubs/station2/Station2Hub';
 import WorldDiscoveryHub from './modules/cambridge_suite/WorldDiscoveryHub';
 import ArenaHub from './modules/cambridge_suite/ArenaHub';
