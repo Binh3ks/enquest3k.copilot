@@ -40,10 +40,10 @@ export default {
     "id": 1,
     "question_en": "Why are city parks called green lungs?",
     "options": [
-      "Because they clean the air we breathe",
       "Because they are shaped like lungs",
-      "Because they are painted green",
-      "Because birds nest in them"
+      "Because they clean the air we breathe",
+      "Because birds nest in them",
+      "Because they are painted green"
     ],
     "answer": "Because they clean the air we breathe",
     "clue_statement": "Parks are green lungs that clean the air.",
@@ -55,9 +55,9 @@ export default {
     "question_en": "Which city is famous for futuristic supertrees covered in plants?",
     "options": [
       "Singapore",
-      "London",
+      "Paris",
       "Tokyo",
-      "Paris"
+      "London"
     ],
     "answer": "Singapore",
     "clue_statement": "In Singapore, city parks have futuristic supertrees.",

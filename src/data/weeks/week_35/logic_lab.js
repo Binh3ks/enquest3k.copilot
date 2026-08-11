@@ -7,10 +7,10 @@ export default {
       "id": 1,
       "question_en": "Where did Maya and Tom go on Saturday morning?",
       "options": [
-        "Their favorite city park",
         "The shopping mall",
-        "The cinema",
-        "The swimming pool"
+        "Their favorite city park",
+        "The swimming pool",
+        "The cinema"
       ],
       "answer": "Their favorite city park"
     },
@@ -19,9 +19,9 @@ export default {
       "question_en": "What was scattered on the green grass?",
       "options": [
         "Plastic bottles and rubbish",
-        "Colorful autumn leaves",
+        "Flower petals",
         "Wooden toys",
-        "Flower petals"
+        "Colorful autumn leaves"
       ],
       "answer": "Plastic bottles and rubbish"
     },
@@ -29,10 +29,10 @@ export default {
       "id": 3,
       "question_en": "Where did they throw the collected plastic waste?",
       "options": [
-        "Into recycling bins",
         "Into the lake",
+        "Behind the trees",
         "Under the bench",
-        "Behind the trees"
+        "Into recycling bins"
       ],
       "answer": "Into recycling bins"
     },
@@ -91,10 +91,10 @@ export default {
       "id": 1,
       "question_en": "Why are city parks called green lungs?",
       "options": [
-        "Because they clean the air we breathe",
         "Because they are shaped like lungs",
-        "Because they are painted green",
-        "Because birds nest in them"
+        "Because they clean the air we breathe",
+        "Because birds nest in them",
+        "Because they are painted green"
       ],
       "answer": "Because they clean the air we breathe"
     },
@@ -103,9 +103,9 @@ export default {
       "question_en": "Which city is famous for futuristic supertrees covered in plants?",
       "options": [
         "Singapore",
-        "London",
+        "Paris",
         "Tokyo",
-        "Paris"
+        "London"
       ],
       "answer": "Singapore"
     }

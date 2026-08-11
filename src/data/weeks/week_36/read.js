@@ -22,10 +22,10 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
     "id": 1,
     "question_en": "Where were Leo and Mia hiking on Saturday morning?",
     "options": [
-      "In the green pine forest",
       "On the sandy beach",
-      "In the school garden",
-      "Around the city center"
+      "In the green pine forest",
+      "Around the city center",
+      "In the school garden"
     ],
     "answer": "In the green pine forest",
     "clue_statement": "Leo and Mia went hiking in the green pine forest.",
@@ -37,9 +37,9 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
     "question_en": "What did they discover while walking along the rocky path?",
     "options": [
       "A hidden entrance to a mysterious cave",
-      "A lost dog",
+      "A wooden bench",
       "A small red bicycle",
-      "A wooden bench"
+      "A lost dog"
     ],
     "answer": "A hidden entrance to a mysterious cave",
     "clue_statement": "They discovered a hidden entrance to a mysterious cave.",
@@ -50,10 +50,10 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
     "id": 3,
     "question_en": "What was inside the dusty wooden box?",
     "options": [
-      "An ancient map and a shiny brass compass",
       "Gold coins and diamonds",
+      "A toy train",
       "Old books and letters",
-      "A toy train"
+      "An ancient map and a shiny brass compass"
     ],
     "answer": "An ancient map and a shiny brass compass",
     "clue_statement": "They found an ancient map with a shiny brass compass.",
@@ -86,10 +86,10 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "id": 1,
       "question_en": "Where were Leo and Mia hiking on Saturday morning?",
       "options": [
-        "In the green pine forest",
         "On the sandy beach",
-        "In the school garden",
-        "Around the city center"
+        "In the green pine forest",
+        "Around the city center",
+        "In the school garden"
       ],
       "answer": "In the green pine forest",
       "clue_statement": "Leo and Mia went hiking in the green pine forest.",
@@ -101,9 +101,9 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "question_en": "What did they discover while walking along the rocky path?",
       "options": [
         "A hidden entrance to a mysterious cave",
-        "A lost dog",
+        "A wooden bench",
         "A small red bicycle",
-        "A wooden bench"
+        "A lost dog"
       ],
       "answer": "A hidden entrance to a mysterious cave",
       "clue_statement": "They discovered a hidden entrance to a mysterious cave.",
@@ -114,10 +114,10 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "id": 3,
       "question_en": "What was inside the dusty wooden box?",
       "options": [
-        "An ancient map and a shiny brass compass",
         "Gold coins and diamonds",
+        "A toy train",
         "Old books and letters",
-        "A toy train"
+        "An ancient map and a shiny brass compass"
       ],
       "answer": "An ancient map and a shiny brass compass",
       "clue_statement": "They found an ancient map with a shiny brass compass.",
@@ -151,10 +151,10 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "id": 1,
       "question_en": "Which is the largest cave in the world?",
       "options": [
-        "Son Doong Cave in Vietnam",
         "Mammoth Cave in USA",
-        "Blue Cave in Italy",
-        "Waitomo Cave in New Zealand"
+        "Son Doong Cave in Vietnam",
+        "Waitomo Cave in New Zealand",
+        "Blue Cave in Italy"
       ],
       "answer": "Son Doong Cave in Vietnam",
       "clue_statement": "Son Doong Cave is the largest cave in the entire world.",
@@ -166,9 +166,9 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "question_en": "What unique natural feature exists inside Son Doong Cave?",
       "options": [
         "An underground jungle with trees and animals",
-        "A floating city",
+        "A volcanic lake",
         "A giant ice castle",
-        "A volcanic lake"
+        "A floating city"
       ],
       "answer": "An underground jungle with trees and animals",
       "clue_statement": "Explorers found an underground jungle inside Son Doong.",
@@ -179,10 +179,10 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "id": 3,
       "question_en": "How are most caves formed over long periods of time?",
       "options": [
-        "By moving water over thousands of years",
         "By strong winds in one day",
+        "By heavy traffic",
         "By falling meteorites",
-        "By heavy traffic"
+        "By moving water over thousands of years"
       ],
       "answer": "By moving water over thousands of years",
       "clue_statement": "Caves are formed over thousands of years by moving water.",

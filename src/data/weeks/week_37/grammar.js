@@ -17,10 +17,10 @@ export default {
     "prompt": "While the first runner _____ (sprint), Leo waited in the zone.",
     "question": "While the first runner _____ (sprint), Leo waited in the zone.",
     "options": [
-      "was sprinting",
       "sprinted",
-      "sprints",
-      "is sprinting"
+      "was sprinting",
+      "is sprinting",
+      "sprints"
     ],
     "answer": "was sprinting",
     "hint_en": "Past Continuous.",
@@ -33,9 +33,9 @@ export default {
     "question": "When his teammate arrived, Leo _____ (take) the baton smoothly.",
     "options": [
       "took",
-      "was taking",
+      "is taking",
       "takes",
-      "is taking"
+      "was taking"
     ],
     "answer": "took",
     "hint_en": "Past Simple reaction.",
@@ -47,10 +47,10 @@ export default {
     "prompt": "While spectators _____ (cheer), Leo crossed the finish line.",
     "question": "While spectators _____ (cheer), Leo crossed the finish line.",
     "options": [
-      "were cheering",
       "cheered",
+      "are cheering",
       "cheers",
-      "are cheering"
+      "were cheering"
     ],
     "answer": "were cheering",
     "hint_en": "Plural past continuous.",
@@ -77,10 +77,10 @@ export default {
     "prompt": "The runners smiled happily because they _____ (win) gold medals.",
     "question": "The runners smiled happily because they _____ (win) gold medals.",
     "options": [
-      "had won",
       "wins",
-      "winning",
-      "was win"
+      "had won",
+      "was win",
+      "winning"
     ],
     "answer": "had won",
     "hint_en": "Past Perfect for prior victory.",
@@ -93,9 +93,9 @@ export default {
     "question": "Leo ran _____ (fast) than the other runners on the straight track.",
     "options": [
       "faster",
-      "fastest",
+      "fastly",
       "more fast",
-      "fastly"
+      "fastest"
     ],
     "answer": "faster",
     "hint_en": "Comparative adverb of fast.",
@@ -107,10 +107,10 @@ export default {
     "prompt": "While they _____ (accelerate), their momentum carried them forward.",
     "question": "While they _____ (accelerate), their momentum carried them forward.",
     "options": [
-      "were accelerating",
       "accelerated",
+      "is accelerating",
       "accelerates",
-      "is accelerating"
+      "were accelerating"
     ],
     "answer": "were accelerating",
     "hint_en": "Past Continuous.",
@@ -137,10 +137,10 @@ export default {
     "prompt": "Athletes from over 200 nations _____ (compete) in the Olympics.",
     "question": "Athletes from over 200 nations _____ (compete) in the Olympics.",
     "options": [
-      "compete",
       "competed",
-      "was competing",
-      "competing"
+      "compete",
+      "competing",
+      "was competing"
     ],
     "answer": "compete",
     "hint_en": "General truth.",
@@ -153,9 +153,9 @@ export default {
     "question": "While parents _____ (clapping), the principal presented gold medals.",
     "options": [
       "were clapping",
-      "clapped",
+      "is clapping",
       "claps",
-      "is clapping"
+      "clapped"
     ],
     "answer": "were clapping",
     "hint_en": "Past Continuous.",
@@ -167,10 +167,10 @@ export default {
     "prompt": "Leo _____ (pass) the baton cleanly to the final runner.",
     "question": "Leo _____ (pass) the baton cleanly to the final runner.",
     "options": [
-      "passed",
       "was passing",
+      "is passing",
       "passes",
-      "is passing"
+      "passed"
     ],
     "answer": "passed",
     "hint_en": "Past Simple.",
@@ -197,10 +197,10 @@ export default {
     "prompt": "While the wind _____ (blow), the team kept running hard.",
     "question": "While the wind _____ (blow), the team kept running hard.",
     "options": [
-      "was blowing",
       "blew",
-      "blows",
-      "is blowing"
+      "was blowing",
+      "is blowing",
+      "blows"
     ],
     "answer": "was blowing",
     "hint_en": "Past Continuous.",
@@ -213,9 +213,9 @@ export default {
     "question": "They stood proudly on the gold podium while music _____ (play).",
     "options": [
       "was playing",
-      "played",
+      "is playing",
       "plays",
-      "is playing"
+      "played"
     ],
     "answer": "was playing",
     "hint_en": "Past Continuous.",
@@ -227,10 +227,10 @@ export default {
     "prompt": "Teamwork _____ (lead) to victory in relay races.",
     "question": "Teamwork _____ (lead) to victory in relay races.",
     "options": [
-      "leads",
       "led",
+      "leading",
       "was leading",
-      "leading"
+      "leads"
     ],
     "answer": "leads",
     "hint_en": "Uncountable noun takes 'leads'.",
@@ -257,10 +257,10 @@ export default {
     "prompt": "They _____ (celebrate) their victory with cheers and high-fives.",
     "question": "They _____ (celebrate) their victory with cheers and high-fives.",
     "options": [
-      "celebrated",
       "were celebrating",
-      "celebrates",
-      "is celebrating"
+      "celebrated",
+      "is celebrating",
+      "celebrates"
     ],
     "answer": "celebrated",
     "hint_en": "Past Simple.",
@@ -273,9 +273,9 @@ export default {
     "question": "High stamina _____ (require) for long-distance relay running.",
     "options": [
       "is required",
-      "requires",
+      "requiring",
       "was requiring",
-      "requiring"
+      "requires"
     ],
     "answer": "is required",
     "hint_en": "Passive voice in Present Simple.",
@@ -287,10 +287,10 @@ export default {
     "prompt": "While the camera _____ (flash), the runners raised their medals.",
     "question": "While the camera _____ (flash), the runners raised their medals.",
     "options": [
-      "was flashing",
       "flashed",
+      "is flashing",
       "flashes",
-      "is flashing"
+      "was flashing"
     ],
     "answer": "was flashing",
     "hint_en": "Past Continuous.",

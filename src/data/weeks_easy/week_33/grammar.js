@@ -17,10 +17,10 @@ export default {
     "prompt": "While Jake _____ (walk) down the corridor, a boy slipped.",
     "question": "While Jake _____ (walk) down the corridor, a boy slipped.",
     "options": [
-      "was walking",
       "walked",
-      "walks",
-      "is walking"
+      "was walking",
+      "is walking",
+      "walks"
     ],
     "answer": "was walking",
     "hint_en": "Use Past Continuous for long action.",
@@ -33,9 +33,9 @@ export default {
     "question": "The boy slipped because the wooden floor _____ (be) wet.",
     "options": [
       "was",
-      "were",
+      "being",
       "is",
-      "being"
+      "were"
     ],
     "answer": "was",
     "hint_en": "Singular subject takes 'was'.",
@@ -47,10 +47,10 @@ export default {
     "prompt": "While the students _____ (study) science, the nurse arrived.",
     "question": "While the students _____ (study) science, the nurse arrived.",
     "options": [
-      "were studying",
       "studied",
+      "studies",
       "are studying",
-      "studies"
+      "were studying"
     ],
     "answer": "were studying",
     "hint_en": "Plural subject takes 'were studying'.",
@@ -77,10 +77,10 @@ export default {
     "prompt": "They walked carefully so that they _____ (not fall).",
     "question": "They walked carefully so that they _____ (not fall).",
     "options": [
-      "would not fall",
       "does not fall",
-      "falling not",
-      "not fell"
+      "would not fall",
+      "not fell",
+      "falling not"
     ],
     "answer": "would not fall",
     "hint_en": "Purpose in the past uses 'would not'.",
@@ -93,9 +93,9 @@ export default {
     "question": "While the nurse _____ (clean) his knee, Jake held his hand.",
     "options": [
       "was cleaning",
-      "cleaned",
+      "is cleaning",
       "cleans",
-      "is cleaning"
+      "cleaned"
     ],
     "answer": "was cleaning",
     "hint_en": "Past action in progress.",
@@ -107,10 +107,10 @@ export default {
     "prompt": "The headmaster _____ (thank) Jake for his quick reaction.",
     "question": "The headmaster _____ (thank) Jake for his quick reaction.",
     "options": [
-      "thanked",
       "was thanking",
+      "thanking",
       "thanks",
-      "thanking"
+      "thanked"
     ],
     "answer": "thanked",
     "hint_en": "Past Simple tense.",
@@ -137,10 +137,10 @@ export default {
     "prompt": "The students _____ (promise) to walk slowly on wet floors.",
     "question": "The students _____ (promise) to walk slowly on wet floors.",
     "options": [
-      "promised",
       "was promising",
-      "promises",
-      "promising"
+      "promised",
+      "promising",
+      "promises"
     ],
     "answer": "promised",
     "hint_en": "Past Simple action.",
@@ -153,9 +153,9 @@ export default {
     "question": "He fell on the floor while he _____ (run) fast.",
     "options": [
       "was running",
-      "ran",
+      "is running",
       "runs",
-      "is running"
+      "ran"
     ],
     "answer": "was running",
     "hint_en": "Action in progress while running.",
@@ -167,10 +167,10 @@ export default {
     "prompt": "The boy _____ (cry) until the nurse arrived.",
     "question": "The boy _____ (cry) until the nurse arrived.",
     "options": [
-      "cried",
       "was crying",
+      "is crying",
       "cries",
-      "is crying"
+      "cried"
     ],
     "answer": "cried",
     "hint_en": "Completed past event.",
@@ -197,10 +197,10 @@ export default {
     "prompt": "While the janitor _____ (mop) the hall, he put up a sign.",
     "question": "While the janitor _____ (mop) the hall, he put up a sign.",
     "options": [
-      "was mopping",
       "mopped",
-      "mops",
-      "is mopping"
+      "was mopping",
+      "is mopping",
+      "mops"
     ],
     "answer": "was mopping",
     "hint_en": "Past Continuous progress.",
@@ -213,9 +213,9 @@ export default {
     "question": "They put up signs so that students _____ (be) safe.",
     "options": [
       "would be",
-      "are",
+      "will be",
       "were being",
-      "will be"
+      "are"
     ],
     "answer": "would be",
     "hint_en": "Clause of purpose in past.",
@@ -227,10 +227,10 @@ export default {
     "prompt": "The nurse _____ (apply) a clean bandage gently.",
     "question": "The nurse _____ (apply) a clean bandage gently.",
     "options": [
-      "applied",
       "was applying",
+      "applying",
       "applies",
-      "applying"
+      "applied"
     ],
     "answer": "applied",
     "hint_en": "Past Simple verb.",
@@ -257,10 +257,10 @@ export default {
     "prompt": "The headmaster _____ (remind) everyone to follow safety rules.",
     "question": "The headmaster _____ (remind) everyone to follow safety rules.",
     "options": [
-      "reminded",
       "was reminding",
-      "reminds",
-      "remind"
+      "reminded",
+      "remind",
+      "reminds"
     ],
     "answer": "reminded",
     "hint_en": "Past Simple.",
@@ -273,9 +273,9 @@ export default {
     "question": "While they _____ (talk), the ambulance bell rang outside.",
     "options": [
       "were talking",
-      "talked",
+      "talks",
       "are talking",
-      "talks"
+      "talked"
     ],
     "answer": "were talking",
     "hint_en": "Plural past continuous.",
@@ -287,10 +287,10 @@ export default {
     "prompt": "Jake _____ (feel) proud because he helped a friend.",
     "question": "Jake _____ (feel) proud because he helped a friend.",
     "options": [
-      "felt",
       "was feeling",
+      "is feeling",
       "feels",
-      "is feeling"
+      "felt"
     ],
     "answer": "felt",
     "hint_en": "Past tense of feel.",

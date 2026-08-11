@@ -40,10 +40,10 @@ export default {
     "id": 1,
     "question_en": "Which is the largest cave in the world?",
     "options": [
-      "Son Doong Cave in Vietnam",
       "Mammoth Cave in USA",
-      "Blue Cave in Italy",
-      "Waitomo Cave in New Zealand"
+      "Son Doong Cave in Vietnam",
+      "Waitomo Cave in New Zealand",
+      "Blue Cave in Italy"
     ],
     "answer": "Son Doong Cave in Vietnam",
     "clue_statement": "Son Doong Cave is the largest cave in the entire world.",
@@ -55,9 +55,9 @@ export default {
     "question_en": "What unique natural feature exists inside Son Doong Cave?",
     "options": [
       "An underground jungle with trees and animals",
-      "A floating city",
+      "A volcanic lake",
       "A giant ice castle",
-      "A volcanic lake"
+      "A floating city"
     ],
     "answer": "An underground jungle with trees and animals",
     "clue_statement": "Explorers found an underground jungle inside Son Doong.",
@@ -68,10 +68,10 @@ export default {
     "id": 3,
     "question_en": "How are most caves formed over long periods of time?",
     "options": [
-      "By moving water over thousands of years",
       "By strong winds in one day",
+      "By heavy traffic",
       "By falling meteorites",
-      "By heavy traffic"
+      "By moving water over thousands of years"
     ],
     "answer": "By moving water over thousands of years",
     "clue_statement": "Caves are formed over thousands of years by moving water.",

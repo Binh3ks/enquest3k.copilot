@@ -7,10 +7,10 @@ export default {
       "id": 1,
       "question_en": "What event took place on Saturday morning?",
       "options": [
-        "Annual Sports Day",
         "School Science Fair",
-        "Music Concert",
-        "Art Exhibition"
+        "Annual Sports Day",
+        "Art Exhibition",
+        "Music Concert"
       ],
       "answer": "Annual Sports Day"
     },
@@ -19,9 +19,9 @@ export default {
       "question_en": "What was the crowded sports stadium filled with?",
       "options": [
         "Cheering students and parents",
-        "Empty wooden chairs",
+        "Flying birds",
         "Rain drops",
-        "Flying birds"
+        "Empty wooden chairs"
       ],
       "answer": "Cheering students and parents"
     },
@@ -29,10 +29,10 @@ export default {
       "id": 3,
       "question_en": "How did Leo pass the baton to his teammate?",
       "options": [
-        "Passed the baton cleanly",
         "Dropped it on the grass",
+        "Forgot the baton",
         "Threw it far away",
-        "Forgot the baton"
+        "Passed the baton cleanly"
       ],
       "answer": "Passed the baton cleanly"
     },
@@ -91,10 +91,10 @@ export default {
       "id": 1,
       "question_en": "How many nations compete in the Olympic Games?",
       "options": [
-        "Over 200 nations",
         "50 nations",
-        "10 nations",
-        "100 nations"
+        "Over 200 nations",
+        "100 nations",
+        "10 nations"
       ],
       "answer": "Over 200 nations"
     },
@@ -103,9 +103,9 @@ export default {
       "question_en": "What main lesson do relay races teach athletes?",
       "options": [
         "Working as one team leads to success",
-        "Running alone is always better",
+        "Speed does not matter",
         "Winning is the only thing",
-        "Speed does not matter"
+        "Running alone is always better"
       ],
       "answer": "Working as one team leads to success"
     }

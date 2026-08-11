@@ -17,10 +17,10 @@ export default {
     "prompt": "While Maya and Tom _____ (walk) in the park, they saw rubbish.",
     "question": "While Maya and Tom _____ (walk) in the park, they saw rubbish.",
     "options": [
-      "were walking",
       "walked",
-      "walks",
-      "is walking"
+      "were walking",
+      "is walking",
+      "walks"
     ],
     "answer": "were walking",
     "hint_en": "Plural subject in Past Continuous.",
@@ -33,9 +33,9 @@ export default {
     "question": "They _____ (decide) to clean the park without hesitation.",
     "options": [
       "decided",
-      "were deciding",
+      "is deciding",
       "decides",
-      "is deciding"
+      "were deciding"
     ],
     "answer": "decided",
     "hint_en": "Past Simple decision.",
@@ -47,10 +47,10 @@ export default {
     "prompt": "We _____ (must) protect our city parks and nature.",
     "question": "We _____ (must) protect our city parks and nature.",
     "options": [
-      "must",
       "should to",
+      "having to",
       "ought",
-      "having to"
+      "must"
     ],
     "answer": "must",
     "hint_en": "Modal verb of obligation.",
@@ -77,10 +77,10 @@ export default {
     "prompt": "They put plastic waste into recycling bins so that it _____ (be) reused.",
     "question": "They put plastic waste into recycling bins so that it _____ (be) reused.",
     "options": [
-      "could be",
       "is",
-      "being",
-      "will be"
+      "could be",
+      "will be",
+      "being"
     ],
     "answer": "could be",
     "hint_en": "Modal passive purpose.",
@@ -93,9 +93,9 @@ export default {
     "question": "Tom _____ (plant) young trees near the small pond.",
     "options": [
       "planted",
-      "was planting",
+      "is planting",
       "plants",
-      "is planting"
+      "was planting"
     ],
     "answer": "planted",
     "hint_en": "Completed action.",
@@ -107,10 +107,10 @@ export default {
     "prompt": "The park became clean because everyone _____ (help).",
     "question": "The park became clean because everyone _____ (help).",
     "options": [
-      "helped",
       "was helping",
+      "helping",
       "helps",
-      "helping"
+      "helped"
     ],
     "answer": "helped",
     "hint_en": "Past Simple reason.",
@@ -137,10 +137,10 @@ export default {
     "prompt": "While the sun _____ (shine), they finished planting flowers.",
     "question": "While the sun _____ (shine), they finished planting flowers.",
     "options": [
-      "was shining",
       "shone",
-      "shines",
-      "is shining"
+      "was shining",
+      "is shining",
+      "shines"
     ],
     "answer": "was shining",
     "hint_en": "Past Continuous.",
@@ -153,9 +153,9 @@ export default {
     "question": "They _____ (feel) proud of their environmental work.",
     "options": [
       "felt",
-      "was feeling",
+      "feeling",
       "feels",
-      "feeling"
+      "was feeling"
     ],
     "answer": "felt",
     "hint_en": "Past Simple of feel.",
@@ -167,10 +167,10 @@ export default {
     "prompt": "Singapore _____ (build) futuristic supertrees to absorb carbon.",
     "question": "Singapore _____ (build) futuristic supertrees to absorb carbon.",
     "options": [
-      "built",
       "was building",
+      "is building",
       "builds",
-      "is building"
+      "built"
     ],
     "answer": "built",
     "hint_en": "Past Simple history.",
@@ -197,10 +197,10 @@ export default {
     "prompt": "While birds _____ (sing) in the trees, Tom watered the plants.",
     "question": "While birds _____ (sing) in the trees, Tom watered the plants.",
     "options": [
-      "were singing",
       "sang",
-      "sings",
-      "is singing"
+      "were singing",
+      "is singing",
+      "sings"
     ],
     "answer": "were singing",
     "hint_en": "Plural past continuous.",
@@ -213,9 +213,9 @@ export default {
     "question": "Maya _____ (wear) protective gloves while picking up glass.",
     "options": [
       "wore",
-      "was wearing",
+      "is wearing",
       "wears",
-      "is wearing"
+      "was wearing"
     ],
     "answer": "wore",
     "hint_en": "Past Simple.",
@@ -227,10 +227,10 @@ export default {
     "prompt": "If we care for nature, our cities _____ (become) beautiful.",
     "question": "If we care for nature, our cities _____ (become) beautiful.",
     "options": [
-      "will become",
       "became",
+      "would become",
       "becoming",
-      "would become"
+      "will become"
     ],
     "answer": "will become",
     "hint_en": "First Conditional.",
@@ -257,10 +257,10 @@ export default {
     "prompt": "While visitors _____ (resting) on benches, children cleaned the path.",
     "question": "While visitors _____ (resting) on benches, children cleaned the path.",
     "options": [
-      "were resting",
       "rested",
-      "rests",
-      "is resting"
+      "were resting",
+      "is resting",
+      "rests"
     ],
     "answer": "were resting",
     "hint_en": "Past Continuous.",
@@ -273,9 +273,9 @@ export default {
     "question": "The mayor _____ (award) them certificates of environmental care.",
     "options": [
       "awarded",
-      "was awarding",
+      "is awarding",
       "awards",
-      "is awarding"
+      "was awarding"
     ],
     "answer": "awarded",
     "hint_en": "Past Simple.",
@@ -287,10 +287,10 @@ export default {
     "prompt": "Recycling plastic _____ (save) energy and wild animals.",
     "question": "Recycling plastic _____ (save) energy and wild animals.",
     "options": [
-      "saves",
       "saved",
+      "saving",
       "was saving",
-      "saving"
+      "saves"
     ],
     "answer": "saves",
     "hint_en": "General scientific fact.",

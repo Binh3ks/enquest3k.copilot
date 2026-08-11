@@ -17,10 +17,10 @@ export default {
     "prompt": "While Leo and Mia _____ (hike), they found a hidden cave.",
     "question": "While Leo and Mia _____ (hike), they found a hidden cave.",
     "options": [
-      "were hiking",
       "hiked",
-      "hikes",
-      "are hiking"
+      "were hiking",
+      "are hiking",
+      "hikes"
     ],
     "answer": "were hiking",
     "hint_en": "Past Continuous background.",
@@ -33,9 +33,9 @@ export default {
     "question": "Mia spotted a wooden box while she _____ (look) behind the stone.",
     "options": [
       "was looking",
-      "looked",
+      "is looking",
       "looks",
-      "is looking"
+      "looked"
     ],
     "answer": "was looking",
     "hint_en": "Past Continuous after while.",
@@ -47,10 +47,10 @@ export default {
     "prompt": "While water _____ (drip) from the ceiling, they opened the map.",
     "question": "While water _____ (drip) from the ceiling, they opened the map.",
     "options": [
-      "was dripping",
       "dripped",
+      "is dripping",
       "drips",
-      "is dripping"
+      "was dripping"
     ],
     "answer": "was dripping",
     "hint_en": "Continuous dripping action.",
@@ -77,10 +77,10 @@ export default {
     "prompt": "Their hearts beat fast because they _____ (find) an ancient map.",
     "question": "Their hearts beat fast because they _____ (find) an ancient map.",
     "options": [
-      "had found",
       "finds",
-      "finding",
-      "was find"
+      "had found",
+      "was find",
+      "finding"
     ],
     "answer": "had found",
     "hint_en": "Past Perfect cause.",
@@ -93,9 +93,9 @@ export default {
     "question": "While shadows _____ (dance) on walls, they examined the compass.",
     "options": [
       "were dancing",
-      "danced",
+      "is dancing",
       "dances",
-      "is dancing"
+      "danced"
     ],
     "answer": "were dancing",
     "hint_en": "Plural past continuous.",
@@ -107,10 +107,10 @@ export default {
     "prompt": "They _____ (open) the dusty box gently with excitement.",
     "question": "They _____ (open) the dusty box gently with excitement.",
     "options": [
-      "opened",
       "was opening",
+      "is opening",
       "opens",
-      "is opening"
+      "opened"
     ],
     "answer": "opened",
     "hint_en": "Past Simple.",
@@ -137,10 +137,10 @@ export default {
     "prompt": "Explorers _____ (discover) an underground jungle inside Son Doong.",
     "question": "Explorers _____ (discover) an underground jungle inside Son Doong.",
     "options": [
-      "discovered",
       "was discovering",
-      "discovers",
-      "is discovering"
+      "discovered",
+      "is discovering",
+      "discovers"
     ],
     "answer": "discovered",
     "hint_en": "Past historical discovery.",
@@ -153,9 +153,9 @@ export default {
     "question": "While they _____ (explore), cool air blew through the entrance.",
     "options": [
       "were exploring",
-      "explored",
+      "is exploring",
       "explores",
-      "is exploring"
+      "explored"
     ],
     "answer": "were exploring",
     "hint_en": "Past Continuous.",
@@ -167,10 +167,10 @@ export default {
     "prompt": "The shiny brass compass _____ (point) strictly to magnetic north.",
     "question": "The shiny brass compass _____ (point) strictly to magnetic north.",
     "options": [
-      "pointed",
       "was pointing",
+      "is pointing",
       "points",
-      "is pointing"
+      "pointed"
     ],
     "answer": "pointed",
     "hint_en": "Past action.",
@@ -197,10 +197,10 @@ export default {
     "prompt": "While water drops _____ (fall), stalactites grew over centuries.",
     "question": "While water drops _____ (fall), stalactites grew over centuries.",
     "options": [
-      "were falling",
       "fell",
-      "falls",
-      "is falling"
+      "were falling",
+      "is falling",
+      "falls"
     ],
     "answer": "were falling",
     "hint_en": "Past Continuous.",
@@ -213,9 +213,9 @@ export default {
     "question": "Mia _____ (hold) the flashlight steadily for Leo.",
     "options": [
       "held",
-      "was holding",
+      "is holding",
       "holds",
-      "is holding"
+      "was holding"
     ],
     "answer": "held",
     "hint_en": "Past tense of hold.",
@@ -227,10 +227,10 @@ export default {
     "prompt": "They _____ (burst) into laughter when they solved the puzzle.",
     "question": "They _____ (burst) into laughter when they solved the puzzle.",
     "options": [
-      "burst",
       "was bursting",
+      "is bursting",
       "bursts",
-      "is bursting"
+      "burst"
     ],
     "answer": "burst",
     "hint_en": "Past form of burst is burst.",
@@ -257,10 +257,10 @@ export default {
     "prompt": "While they _____ (return) home, the sun was setting.",
     "question": "While they _____ (return) home, the sun was setting.",
     "options": [
-      "were returning",
       "returned",
-      "returns",
-      "is returning"
+      "were returning",
+      "is returning",
+      "returns"
     ],
     "answer": "were returning",
     "hint_en": "Plural past continuous.",
@@ -273,9 +273,9 @@ export default {
     "question": "They _____ (tell) their parents about the mysterious adventure.",
     "options": [
       "told",
-      "was telling",
+      "is telling",
       "tells",
-      "is telling"
+      "was telling"
     ],
     "answer": "told",
     "hint_en": "Past tense of tell.",
@@ -287,10 +287,10 @@ export default {
     "prompt": "Exploring dark caves _____ (require) true courage and flashlights.",
     "question": "Exploring dark caves _____ (require) true courage and flashlights.",
     "options": [
-      "requires",
       "required",
+      "requiring",
       "was requiring",
-      "requiring"
+      "requires"
     ],
     "answer": "requires",
     "hint_en": "Gerund subject takes singular present verb.",

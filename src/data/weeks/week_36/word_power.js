@@ -1,126 +1,208 @@
 // Cambridge A2 Flyers word_power.js — Week 36
 export default {
   title: "Collocations & Chunks — Week 36",
+  words: [
+  {
+    "id": 1,
+    "word": "sunny Saturday morning",
+    "collocation": "on a sunny Saturday morning",
+    "definition_en": "a Saturday morning with bright sunlight and warm weather",
+    "definition_vi": "sáng thứ Bảy nắng đẹp rực rỡ",
+    "example": "They went hiking on a sunny Saturday morning.",
+    "ipa": "/ˈsʌn.i ˈsæt.ə.deɪ ˈmɔː.nɪŋ/",
+    "image_url": "/images/week36/wordpower_1.jpg"
+  },
+  {
+    "id": 2,
+    "word": "green pine forest",
+    "collocation": "in the green pine forest",
+    "definition_en": "a woodland filled with tall evergreen pine trees",
+    "definition_vi": "rừng thông xanh",
+    "example": "Birds chirped merrily in the green pine forest.",
+    "ipa": "/ɡriːn paɪn ˈfɒr.ɪst/",
+    "image_url": "/images/week36/wordpower_2.jpg"
+  },
+  {
+    "id": 3,
+    "word": "walking along the rocky path",
+    "collocation": "while walking along the rocky path",
+    "definition_en": "moving on a narrow trail made of stones and rocks",
+    "definition_vi": "đi dọc theo con đường đá",
+    "example": "They were careful while walking along the rocky path.",
+    "ipa": "/ˈwɔː.kɪŋ əˈlɒŋ ðə ˈrɒk.i pɑːθ/",
+    "image_url": "/images/week36/wordpower_3.jpg"
+  },
+  {
+    "id": 4,
+    "word": "discovered a hidden entrance",
+    "collocation": "discovered a hidden entrance to",
+    "definition_en": "found a secret opening leading inside a mystery place",
+    "definition_vi": "phát hiện ra một lối vào ẩn",
+    "example": "The kids discovered a hidden entrance to a cave.",
+    "ipa": "/dɪˈskʌv.əd ə ˈhɪd.ən ˈen.trəns/",
+    "image_url": "/images/week36/wordpower_4.jpg"
+  },
+  {
+    "id": 5,
+    "word": "turned on bright flashlights",
+    "collocation": "turned on bright flashlights",
+    "definition_en": "switched on powerful portable electric lights",
+    "definition_vi": "bật chiếc đèn pin sáng",
+    "example": "They turned on bright flashlights in the dark cave.",
+    "ipa": "/tɜːnd ɒn braɪt ˈflæʃ.laɪts/",
+    "image_url": "/images/week36/wordpower_5.jpg"
+  },
+  {
+    "id": 6,
+    "word": "stepped inside carefully",
+    "collocation": "stepped inside carefully",
+    "definition_en": "entered an enclosed space with great caution",
+    "definition_vi": "cẩn thận bước vào trong",
+    "example": "Mia stepped inside carefully to avoid slipping.",
+    "ipa": "/stept ɪnˈsaɪd ˈkeə.fəl.i/",
+    "image_url": "/images/week36/wordpower_6.jpg"
+  },
+  {
+    "id": 7,
+    "word": "cool drops of water",
+    "collocation": "cool drops of water dripping",
+    "definition_en": "small round quantities of cold liquid falling down",
+    "definition_vi": "những giọt nước mát lạnh",
+    "example": "Cool drops of water dripped from the ceiling.",
+    "ipa": "/kuːl drɒps əv ˈwɔː.tər/",
+    "image_url": "/images/week36/wordpower_7.jpg"
+  },
+  {
+    "id": 8,
+    "word": "spotted a dusty wooden box",
+    "collocation": "spotted a dusty wooden box behind",
+    "definition_en": "noticed a wooden container covered in dust",
+    "definition_vi": "phát hiện ra một chiếc hộp gỗ bám bụi",
+    "example": "Leo spotted a dusty wooden box behind the rock.",
+    "ipa": "/ˈspɒt.ɪd ə ˈdʌs.ti ˈwʊd.ən bɒks/",
+    "image_url": "/images/week36/wordpower_8.jpg"
+  },
+  {
+    "id": 9,
+    "word": "found an ancient map",
+    "collocation": "found an ancient map inside",
+    "definition_en": "discovered a very old document showing paths",
+    "definition_vi": "tìm thấy một bản đồ cổ",
+    "example": "They opened the box and found an ancient map.",
+    "ipa": "/faʊnd ən ˈeɪn.ʃənt mæp/",
+    "image_url": "/images/week36/wordpower_9.jpg"
+  },
+  {
+    "id": 10,
+    "word": "shiny brass compass",
+    "collocation": "a shiny brass compass",
+    "definition_en": "a polished metal navigation tool pointing north",
+    "definition_vi": "la bàn đồng sáng bóng",
+    "example": "The shiny brass compass helped them navigate.",
+    "ipa": "/ˈʃaɪ.ni brɑːs ˈkʌm.pəs/",
+    "image_url": "/images/week36/wordpower_10.jpg"
+  }
+],
   collocations: [
   {
-    "phrase": "mysterious",
-    "definition_en": "difficult or impossible to understand or explain",
-    "definition_vi": "bí ẩn",
-    "example": "They found a mysterious entrance behind the rock."
+    "id": 1,
+    "word": "sunny Saturday morning",
+    "collocation": "on a sunny Saturday morning",
+    "definition_en": "a Saturday morning with bright sunlight and warm weather",
+    "definition_vi": "sáng thứ Bảy nắng đẹp rực rỡ",
+    "example": "They went hiking on a sunny Saturday morning.",
+    "ipa": "/ˈsʌn.i ˈsæt.ə.deɪ ˈmɔː.nɪŋ/",
+    "image_url": "/images/week36/wordpower_1.jpg"
   },
   {
-    "phrase": "flashlight",
-    "definition_en": "a portable battery-powered electric lamp",
-    "definition_vi": "đèn pin",
-    "example": "Turn on your flashlight inside the dark cave."
+    "id": 2,
+    "word": "green pine forest",
+    "collocation": "in the green pine forest",
+    "definition_en": "a woodland filled with tall evergreen pine trees",
+    "definition_vi": "rừng thông xanh",
+    "example": "Birds chirped merrily in the green pine forest.",
+    "ipa": "/ɡriːn paɪn ˈfɒr.ɪst/",
+    "image_url": "/images/week36/wordpower_2.jpg"
   },
   {
-    "phrase": "entrance",
-    "definition_en": "an opening that allows access to a place",
-    "definition_vi": "lối vào",
-    "example": "The cave entrance was covered with vines."
+    "id": 3,
+    "word": "walking along the rocky path",
+    "collocation": "while walking along the rocky path",
+    "definition_en": "moving on a narrow trail made of stones and rocks",
+    "definition_vi": "đi dọc theo con đường đá",
+    "example": "They were careful while walking along the rocky path.",
+    "ipa": "/ˈwɔː.kɪŋ əˈlɒŋ ðə ˈrɒk.i pɑːθ/",
+    "image_url": "/images/week36/wordpower_3.jpg"
   },
   {
-    "phrase": "ancient",
-    "definition_en": "belonging to the very distant past",
-    "definition_vi": "cổ xưa",
-    "example": "The explorer drew an ancient parchment map."
+    "id": 4,
+    "word": "discovered a hidden entrance",
+    "collocation": "discovered a hidden entrance to",
+    "definition_en": "found a secret opening leading inside a mystery place",
+    "definition_vi": "phát hiện ra một lối vào ẩn",
+    "example": "The kids discovered a hidden entrance to a cave.",
+    "ipa": "/dɪˈskʌv.əd ə ˈhɪd.ən ˈen.trəns/",
+    "image_url": "/images/week36/wordpower_4.jpg"
   },
   {
-    "phrase": "compass",
-    "definition_en": "an instrument showing magnetic north used for navigation",
-    "definition_vi": "la bàn",
-    "example": "Use a shiny brass compass to find north."
+    "id": 5,
+    "word": "turned on bright flashlights",
+    "collocation": "turned on bright flashlights",
+    "definition_en": "switched on powerful portable electric lights",
+    "definition_vi": "bật chiếc đèn pin sáng",
+    "example": "They turned on bright flashlights in the dark cave.",
+    "ipa": "/tɜːnd ɒn braɪt ˈflæʃ.laɪts/",
+    "image_url": "/images/week36/wordpower_5.jpg"
   },
   {
-    "phrase": "stalactite",
-    "definition_en": "an icicle-shaped formation hanging from a cave ceiling",
-    "definition_vi": "nhũ đá",
-    "example": "Water dripped from a long stalactite."
+    "id": 6,
+    "word": "stepped inside carefully",
+    "collocation": "stepped inside carefully",
+    "definition_en": "entered an enclosed space with great caution",
+    "definition_vi": "cẩn thận bước vào trong",
+    "example": "Mia stepped inside carefully to avoid slipping.",
+    "ipa": "/stept ɪnˈsaɪd ˈkeə.fəl.i/",
+    "image_url": "/images/week36/wordpower_6.jpg"
   },
   {
-    "phrase": "explorer",
-    "definition_en": "a person who explores an unfamiliar area",
-    "definition_vi": "nhà khám phá",
-    "example": "Brave explorers mapped the deep cave."
+    "id": 7,
+    "word": "cool drops of water",
+    "collocation": "cool drops of water dripping",
+    "definition_en": "small round quantities of cold liquid falling down",
+    "definition_vi": "những giọt nước mát lạnh",
+    "example": "Cool drops of water dripped from the ceiling.",
+    "ipa": "/kuːl drɒps əv ˈwɔː.tər/",
+    "image_url": "/images/week36/wordpower_7.jpg"
   },
   {
-    "phrase": "parchment",
-    "definition_en": "a stiff flat material made from animal skin for writing",
-    "definition_vi": "cuộn giấy da",
-    "example": "The ancient map was written on parchment."
+    "id": 8,
+    "word": "spotted a dusty wooden box",
+    "collocation": "spotted a dusty wooden box behind",
+    "definition_en": "noticed a wooden container covered in dust",
+    "definition_vi": "phát hiện ra một chiếc hộp gỗ bám bụi",
+    "example": "Leo spotted a dusty wooden box behind the rock.",
+    "ipa": "/ˈspɒt.ɪd ə ˈdʌs.ti ˈwʊd.ən bɒks/",
+    "image_url": "/images/week36/wordpower_8.jpg"
   },
   {
-    "phrase": "shadow",
-    "definition_en": "a dark area produced by a body coming between rays of light",
-    "definition_vi": "bóng râm",
-    "example": "Dark grey shadows danced on the rocky wall."
+    "id": 9,
+    "word": "found an ancient map",
+    "collocation": "found an ancient map inside",
+    "definition_en": "discovered a very old document showing paths",
+    "definition_vi": "tìm thấy một bản đồ cổ",
+    "example": "They opened the box and found an ancient map.",
+    "ipa": "/faʊnd ən ˈeɪn.ʃənt mæp/",
+    "image_url": "/images/week36/wordpower_9.jpg"
   },
   {
-    "phrase": "underground",
-    "definition_en": "situated beneath the surface of the earth",
-    "definition_vi": "dưới lòng đất",
-    "example": "The underground lake was icy cold."
-  },
-  {
-    "phrase": "chamber",
-    "definition_en": "a large room or enclosed space in a cave",
-    "definition_vi": "ngăn hang động",
-    "example": "They stepped into a wide stone chamber."
-  },
-  {
-    "phrase": "adventure",
-    "definition_en": "an unusual and exciting experience",
-    "definition_vi": "cuộc phiêu lưu",
-    "example": "Hiking in the forest was a great adventure."
-  },
-  {
-    "phrase": "discover",
-    "definition_en": "find unexpectedly or during a search",
-    "definition_vi": "khám phá",
-    "example": "They discovered a wooden treasure box."
-  },
-  {
-    "phrase": "ceiling",
-    "definition_en": "the upper interior surface of a room or cave",
-    "definition_vi": "trần hang",
-    "example": "Water dripped from the rocky ceiling."
-  },
-  {
-    "phrase": "drip",
-    "definition_en": "fall in small drops of liquid",
-    "definition_vi": "nhỏ giọt",
-    "example": "Cool water drops drip silently."
-  },
-  {
-    "phrase": "treasure",
-    "definition_en": "a quantity of precious metals, gems, or valuable items",
-    "definition_vi": "kho báu",
-    "example": "The map led to a historical treasure."
-  },
-  {
-    "phrase": "historical",
-    "definition_en": "concerning history or past events",
-    "definition_vi": "thuộc lịch sử",
-    "example": "They found a historical map from 1850."
-  },
-  {
-    "phrase": "hiking",
-    "definition_en": "the activity of going for long walks in the countryside",
-    "definition_vi": "đi bộ đường dài",
-    "example": "We enjoy hiking in the pine forest."
-  },
-  {
-    "phrase": "forest",
-    "definition_en": "a large area covered chiefly with trees and undergrowth",
-    "definition_vi": "rừng cây",
-    "example": "Tall trees grew in the pine forest."
-  },
-  {
-    "phrase": "courage",
-    "definition_en": "the ability to do something that frightens one",
-    "definition_vi": "lòng dũng cảm",
-    "example": "Exploring dark caves requires true courage."
+    "id": 10,
+    "word": "shiny brass compass",
+    "collocation": "a shiny brass compass",
+    "definition_en": "a polished metal navigation tool pointing north",
+    "definition_vi": "la bàn đồng sáng bóng",
+    "example": "The shiny brass compass helped them navigate.",
+    "ipa": "/ˈʃaɪ.ni brɑːs ˈkʌm.pəs/",
+    "image_url": "/images/week36/wordpower_10.jpg"
   }
 ]
 };

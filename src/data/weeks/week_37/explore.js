@@ -40,10 +40,10 @@ export default {
     "id": 1,
     "question_en": "How many nations compete in the Olympic Games?",
     "options": [
-      "Over 200 nations",
       "50 nations",
-      "10 nations",
-      "100 nations"
+      "Over 200 nations",
+      "100 nations",
+      "10 nations"
     ],
     "answer": "Over 200 nations",
     "clue_statement": "Athletes from over 200 nations compete peacefully.",
@@ -55,9 +55,9 @@ export default {
     "question_en": "What main lesson do relay races teach athletes?",
     "options": [
       "Working as one team leads to success",
-      "Running alone is always better",
+      "Speed does not matter",
       "Winning is the only thing",
-      "Speed does not matter"
+      "Running alone is always better"
     ],
     "answer": "Working as one team leads to success",
     "clue_statement": "Relay teams teach us that success comes from working as one team.",

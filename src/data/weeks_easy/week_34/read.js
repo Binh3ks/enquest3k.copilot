@@ -22,10 +22,10 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
     "id": 1,
     "question_en": "What was the ant doing during the summer?",
     "options": [
-      "Gathering grains of wheat",
       "Singing songs under the tree",
-      "Sleeping inside the log",
-      "Swimming in the river"
+      "Gathering grains of wheat",
+      "Swimming in the river",
+      "Sleeping inside the log"
     ],
     "answer": "Gathering grains of wheat",
     "clue_statement": "The hardworking ant was gathering grains of wheat.",
@@ -37,9 +37,9 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
     "question_en": "What was the grasshopper doing while the ant worked?",
     "options": [
       "Singing cheerfully under a green tree",
-      "Cooking vegetable soup",
+      "Collecting dry leaves",
       "Building a brick house",
-      "Collecting dry leaves"
+      "Cooking vegetable soup"
     ],
     "answer": "Singing cheerfully under a green tree",
     "clue_statement": "The grasshopper was singing cheerfully under a green tree.",
@@ -50,10 +50,10 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
     "id": 3,
     "question_en": "Why was the grasshopper shivering in winter?",
     "options": [
-      "He had no food and it was freezing",
       "His house was too hot",
+      "He ate too much ice cream",
       "He was playing in cold water",
-      "He ate too much ice cream"
+      "He had no food and it was freezing"
     ],
     "answer": "He had no food and it was freezing",
     "clue_statement": "The grasshopper had no food and was shivering in the cold.",
@@ -86,10 +86,10 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
       "id": 1,
       "question_en": "What was the ant doing during the summer?",
       "options": [
-        "Gathering grains of wheat",
         "Singing songs under the tree",
-        "Sleeping inside the log",
-        "Swimming in the river"
+        "Gathering grains of wheat",
+        "Swimming in the river",
+        "Sleeping inside the log"
       ],
       "answer": "Gathering grains of wheat",
       "clue_statement": "The hardworking ant was gathering grains of wheat.",
@@ -101,9 +101,9 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
       "question_en": "What was the grasshopper doing while the ant worked?",
       "options": [
         "Singing cheerfully under a green tree",
-        "Cooking vegetable soup",
+        "Collecting dry leaves",
         "Building a brick house",
-        "Collecting dry leaves"
+        "Cooking vegetable soup"
       ],
       "answer": "Singing cheerfully under a green tree",
       "clue_statement": "The grasshopper was singing cheerfully under a green tree.",
@@ -114,10 +114,10 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
       "id": 3,
       "question_en": "Why was the grasshopper shivering in winter?",
       "options": [
-        "He had no food and it was freezing",
         "His house was too hot",
+        "He ate too much ice cream",
         "He was playing in cold water",
-        "He ate too much ice cream"
+        "He had no food and it was freezing"
       ],
       "answer": "He had no food and it was freezing",
       "clue_statement": "The grasshopper had no food and was shivering in the cold.",
@@ -151,10 +151,10 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
       "id": 1,
       "question_en": "Who was Aesop?",
       "options": [
-        "A famous storyteller from ancient Greece",
         "A modern Canadian scientist",
-        "A famous runner from Kenya",
-        "A Japanese headmaster"
+        "A famous storyteller from ancient Greece",
+        "A Japanese headmaster",
+        "A famous runner from Kenya"
       ],
       "answer": "A famous storyteller from ancient Greece",
       "clue_statement": "Aesop was a famous storyteller from Greece.",
@@ -166,9 +166,9 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
       "question_en": "What main lesson do Aesop's fables teach us?",
       "options": [
         "Hard work and patience lead to success",
-        "Singing is better than working",
+        "Ants live in modern houses",
         "Winter is the warmest season",
-        "Ants live in modern houses"
+        "Singing is better than working"
       ],
       "answer": "Hard work and patience lead to success",
       "clue_statement": "Fables show how hard work and patience always lead to success.",

@@ -1,126 +1,208 @@
 // Cambridge A2 Flyers word_power.js — Week 34
 export default {
   title: "Collocations & Chunks — Week 34",
-  collocations: [
+  words: [
   {
-    "phrase": "hardworking",
+    "id": 1,
+    "word": "hardworking",
+    "collocation": "hardworking",
     "definition_en": "tending to work with energy and commitment",
     "definition_vi": "chăm chỉ",
-    "example": "The hardworking ant gathered food all summer."
+    "example": "The hardworking ant gathered food all summer.",
+    "ipa": "/ˌhɑːdˈwɜː.kɪŋ/",
+    "image_url": "/images/week34/wordpower_1.jpg"
   },
   {
-    "phrase": "grasshopper",
+    "id": 2,
+    "word": "grasshopper",
+    "collocation": "grasshopper",
     "definition_en": "a plant-eating insect with long hind legs for leaping",
     "definition_vi": "con châu chấu",
-    "example": "The grasshopper sang under the shady tree."
+    "example": "The grasshopper sang under the shady tree.",
+    "ipa": "/ˈɡrɑːsˌhɒp.ər/",
+    "image_url": "/images/week34/wordpower_2.jpg"
   },
   {
-    "phrase": "grain",
+    "id": 3,
+    "word": "grain",
+    "collocation": "grain",
     "definition_en": "small hard seeds of food plants like wheat or corn",
     "definition_vi": "hạt lúa mì",
-    "example": "Ants store wheat grain for the cold winter."
+    "example": "Ants store wheat grain for the cold winter.",
+    "ipa": "/ɡreɪn/",
+    "image_url": "/images/week34/wordpower_3.jpg"
   },
   {
-    "phrase": "shivering",
+    "id": 4,
+    "word": "shivering",
+    "collocation": "shivering",
     "definition_en": "shaking slightly because of being cold or frightened",
     "definition_vi": "run rẩy",
-    "example": "He was shivering in the freezing winter wind."
+    "example": "He was shivering in the freezing winter wind.",
+    "ipa": "/ˈʃɪv.ər.ɪŋ/",
+    "image_url": "/images/week34/wordpower_4.jpg"
   },
   {
-    "phrase": "fable",
+    "id": 5,
+    "word": "fable",
+    "collocation": "fable",
     "definition_en": "a short story typically with animals conveying a moral",
     "definition_vi": "truyện ngụ ngôn",
-    "example": "Aesop wrote many famous animal fables."
+    "example": "Aesop wrote many famous animal fables.",
+    "ipa": "/ˈfeɪ.bəl/",
+    "image_url": "/images/week34/wordpower_5.jpg"
   },
   {
-    "phrase": "grateful",
+    "id": 6,
+    "word": "grateful",
+    "collocation": "grateful",
     "definition_en": "feeling or showing an appreciation of kindness",
     "definition_vi": "biết ơn",
-    "example": "The grasshopper felt deeply grateful to the ant."
+    "example": "The grasshopper felt deeply grateful to the ant.",
+    "ipa": "/ˈɡreɪt.fəl/",
+    "image_url": "/images/week34/wordpower_6.jpg"
   },
   {
-    "phrase": "diligence",
+    "id": 7,
+    "word": "diligence",
+    "collocation": "diligence",
     "definition_en": "careful and persistent work or effort",
     "definition_vi": "sự siêng năng",
-    "example": "His diligence paid off when winter came."
+    "example": "His diligence paid off when winter came.",
+    "ipa": "/ˈdɪl.ɪ.dʒəns/",
+    "image_url": "/images/week34/wordpower_7.jpg"
   },
   {
-    "phrase": "patience",
+    "id": 8,
+    "word": "patience",
+    "collocation": "patience",
     "definition_en": "the capacity to accept delay without getting angry",
     "definition_vi": "sự kiên nhẫn",
-    "example": "Patience and hard work bring great success."
+    "example": "Patience and hard work bring great success.",
+    "ipa": "/ˈpeɪ.ʃəns/",
+    "image_url": "/images/week34/wordpower_8.jpg"
   },
   {
-    "phrase": "moral",
+    "id": 9,
+    "word": "moral",
+    "collocation": "moral",
     "definition_en": "a lesson derived from a story or experience",
     "definition_vi": "bài học đạo đức",
-    "example": "Every fable has a clear moral lesson."
+    "example": "Every fable has a clear moral lesson.",
+    "ipa": "/ˈmɒr.əl/",
+    "image_url": "/images/week34/wordpower_9.jpg"
   },
   {
-    "phrase": "cheerfully",
+    "id": 10,
+    "word": "cheerfully",
+    "collocation": "cheerfully",
     "definition_en": "in a happy and optimistic manner",
     "definition_vi": "vui vẻ",
-    "example": "He sang cheerfully during the warm summer."
+    "example": "He sang cheerfully during the warm summer.",
+    "ipa": "/ˈtʃɪə.fəl.i/",
+    "image_url": "/images/week34/wordpower_10.jpg"
+  }
+],
+  collocations: [
+  {
+    "id": 1,
+    "word": "hardworking",
+    "collocation": "hardworking",
+    "definition_en": "tending to work with energy and commitment",
+    "definition_vi": "chăm chỉ",
+    "example": "The hardworking ant gathered food all summer.",
+    "ipa": "/ˌhɑːdˈwɜː.kɪŋ/",
+    "image_url": "/images/week34/wordpower_1.jpg"
   },
   {
-    "phrase": "freeze",
-    "definition_en": "turn into ice as a result of extreme cold",
-    "definition_vi": "đóng băng",
-    "example": "Water rivers freeze during cold winter."
+    "id": 2,
+    "word": "grasshopper",
+    "collocation": "grasshopper",
+    "definition_en": "a plant-eating insect with long hind legs for leaping",
+    "definition_vi": "con châu chấu",
+    "example": "The grasshopper sang under the shady tree.",
+    "ipa": "/ˈɡrɑːsˌhɒp.ər/",
+    "image_url": "/images/week34/wordpower_2.jpg"
   },
   {
-    "phrase": "shelter",
-    "definition_en": "a place giving protection from bad weather",
-    "definition_vi": "nơi trú ẩn",
-    "example": "The ant's house provided warm shelter."
+    "id": 3,
+    "word": "grain",
+    "collocation": "grain",
+    "definition_en": "small hard seeds of food plants like wheat or corn",
+    "definition_vi": "hạt lúa mì",
+    "example": "Ants store wheat grain for the cold winter.",
+    "ipa": "/ɡreɪn/",
+    "image_url": "/images/week34/wordpower_3.jpg"
   },
   {
-    "phrase": "gather",
-    "definition_en": "bring together or collect from various places",
-    "definition_vi": "thu thập",
-    "example": "Ants gather seeds from the green field."
+    "id": 4,
+    "word": "shivering",
+    "collocation": "shivering",
+    "definition_en": "shaking slightly because of being cold or frightened",
+    "definition_vi": "run rẩy",
+    "example": "He was shivering in the freezing winter wind.",
+    "ipa": "/ˈʃɪv.ər.ɪŋ/",
+    "image_url": "/images/week34/wordpower_4.jpg"
   },
   {
-    "phrase": "prepare",
-    "definition_en": "make something ready for use or consideration",
-    "definition_vi": "chuẩn bị",
-    "example": "Prepare early for cold winter months."
+    "id": 5,
+    "word": "fable",
+    "collocation": "fable",
+    "definition_en": "a short story typically with animals conveying a moral",
+    "definition_vi": "truyện ngụ ngôn",
+    "example": "Aesop wrote many famous animal fables.",
+    "ipa": "/ˈfeɪ.bəl/",
+    "image_url": "/images/week34/wordpower_5.jpg"
   },
   {
-    "phrase": "wisdom",
-    "definition_en": "the quality of having experience, knowledge, and good judgment",
-    "definition_vi": "sự khôn ngoan",
-    "example": "Ancient fables share timeless human wisdom."
+    "id": 6,
+    "word": "grateful",
+    "collocation": "grateful",
+    "definition_en": "feeling or showing an appreciation of kindness",
+    "definition_vi": "biết ơn",
+    "example": "The grasshopper felt deeply grateful to the ant.",
+    "ipa": "/ˈɡreɪt.fəl/",
+    "image_url": "/images/week34/wordpower_6.jpg"
   },
   {
-    "phrase": "kindness",
-    "definition_en": "the quality of being friendly, generous, and considerate",
-    "definition_vi": "lòng tốt",
-    "example": "The ant showed great kindness to his friend."
+    "id": 7,
+    "word": "diligence",
+    "collocation": "diligence",
+    "definition_en": "careful and persistent work or effort",
+    "definition_vi": "sự siêng năng",
+    "example": "His diligence paid off when winter came.",
+    "ipa": "/ˈdɪl.ɪ.dʒəns/",
+    "image_url": "/images/week34/wordpower_7.jpg"
   },
   {
-    "phrase": "season",
-    "definition_en": "each of the four divisions of the year",
-    "definition_vi": "mùa trong năm",
-    "example": "Summer is the best season to collect food."
+    "id": 8,
+    "word": "patience",
+    "collocation": "patience",
+    "definition_en": "the capacity to accept delay without getting angry",
+    "definition_vi": "sự kiên nhẫn",
+    "example": "Patience and hard work bring great success.",
+    "ipa": "/ˈpeɪ.ʃəns/",
+    "image_url": "/images/week34/wordpower_8.jpg"
   },
   {
-    "phrase": "wheat",
-    "definition_en": "a cereal plant cultivated for food grain",
-    "definition_vi": "cây lúa mì",
-    "example": "Golden wheat grew in the wide field."
+    "id": 9,
+    "word": "moral",
+    "collocation": "moral",
+    "definition_en": "a lesson derived from a story or experience",
+    "definition_vi": "bài học đạo đức",
+    "example": "Every fable has a clear moral lesson.",
+    "ipa": "/ˈmɒr.əl/",
+    "image_url": "/images/week34/wordpower_9.jpg"
   },
   {
-    "phrase": "generous",
-    "definition_en": "showing a readiness to give more of something than expected",
-    "definition_vi": "hào phóng",
-    "example": "The generous ant offered hot vegetable soup."
-  },
-  {
-    "phrase": "future",
-    "definition_en": "the time or a period of time following the moment of speaking",
-    "definition_vi": "tương lai",
-    "example": "Work hard now to protect your future."
+    "id": 10,
+    "word": "cheerfully",
+    "collocation": "cheerfully",
+    "definition_en": "in a happy and optimistic manner",
+    "definition_vi": "vui vẻ",
+    "example": "He sang cheerfully during the warm summer.",
+    "ipa": "/ˈtʃɪə.fəl.i/",
+    "image_url": "/images/week34/wordpower_10.jpg"
   }
 ]
 };

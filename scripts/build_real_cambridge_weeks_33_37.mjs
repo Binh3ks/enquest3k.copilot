@@ -512,12 +512,24 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       { word: "forest", definition_en: "a large area covered chiefly with trees and undergrowth", definition_vi: "rừng cây", example: "Tall trees grew in the pine forest.", ipa: "/ˈfɒr.ɪst/", image_url: "/images/week36/vocab_19.jpg" },
       { word: "courage", definition_en: "the ability to do something that frightens one", definition_vi: "lòng dũng cảm", example: "Exploring dark caves requires true courage.", ipa: "/ˈkʌr.ɪdʒ/", image_url: "/images/week36/vocab_20.jpg" }
     ],
+    word_power_chunks: [
+      { word: "sunny Saturday morning", collocation: "on a sunny Saturday morning", definition_en: "a Saturday morning with bright sunlight and warm weather", definition_vi: "sáng thứ Bảy nắng đẹp rực rỡ", example: "They went hiking on a sunny Saturday morning.", ipa: "/ˈsʌn.i ˈsæt.ə.deɪ ˈmɔː.nɪŋ/" },
+      { word: "green pine forest", collocation: "in the green pine forest", definition_en: "a woodland filled with tall evergreen pine trees", definition_vi: "rừng thông xanh", example: "Birds chirped merrily in the green pine forest.", ipa: "/ɡriːn paɪn ˈfɒr.ɪst/" },
+      { word: "walking along the rocky path", collocation: "while walking along the rocky path", definition_en: "moving on a narrow trail made of stones and rocks", definition_vi: "đi dọc theo con đường đá", example: "They were careful while walking along the rocky path.", ipa: "/ˈwɔː.kɪŋ əˈlɒŋ ðə ˈrɒk.i pɑːθ/" },
+      { word: "discovered a hidden entrance", collocation: "discovered a hidden entrance to", definition_en: "found a secret opening leading inside a mystery place", definition_vi: "phát hiện ra một lối vào ẩn", example: "The kids discovered a hidden entrance to a cave.", ipa: "/dɪˈskʌv.əd ə ˈhɪd.ən ˈen.trəns/" },
+      { word: "turned on bright flashlights", collocation: "turned on bright flashlights", definition_en: "switched on powerful portable electric lights", definition_vi: "bật chiếc đèn pin sáng", example: "They turned on bright flashlights in the dark cave.", ipa: "/tɜːnd ɒn braɪt ˈflæʃ.laɪts/" },
+      { word: "stepped inside carefully", collocation: "stepped inside carefully", definition_en: "entered an enclosed space with great caution", definition_vi: "cẩn thận bước vào trong", example: "Mia stepped inside carefully to avoid slipping.", ipa: "/stept ɪnˈsaɪd ˈkeə.fəl.i/" },
+      { word: "cool drops of water", collocation: "cool drops of water dripping", definition_en: "small round quantities of cold liquid falling down", definition_vi: "những giọt nước mát lạnh", example: "Cool drops of water dripped from the ceiling.", ipa: "/kuːl drɒps əv ˈwɔː.tər/" },
+      { word: "spotted a dusty wooden box", collocation: "spotted a dusty wooden box behind", definition_en: "noticed a wooden container covered in dust", definition_vi: "phát hiện ra một chiếc hộp gỗ bám bụi", example: "Leo spotted a dusty wooden box behind the rock.", ipa: "/ˈspɒt.ɪd ə ˈdʌs.ti ˈwʊd.ən bɒks/" },
+      { word: "found an ancient map", collocation: "found an ancient map inside", definition_en: "discovered a very old document showing paths", definition_vi: "tìm thấy một bản đồ cổ", example: "They opened the box and found an ancient map.", ipa: "/faʊnd ən ˈeɪn.ʃənt mæp/" },
+      { word: "shiny brass compass", collocation: "a shiny brass compass", definition_en: "a polished metal navigation tool pointing north", definition_vi: "la bàn đồng sáng bóng", example: "The shiny brass compass helped them navigate.", ipa: "/ˈʃaɪ.ni brɑːs ˈkʌm.pəs/" }
+    ],
     daily_watch: [
-      { id: "w36_v1", title: "Son Doong Cave — Inside Earth's Largest Cave", url: "https://www.youtube.com/embed/Yp-dDqK5D35" },
-      { id: "w36_v2", title: "Cave Explorers & Stalactite Science", url: "https://www.youtube.com/embed/5x3dDqK5D36" },
-      { id: "w36_v3", title: "How to Use a Compass on Hikes", url: "https://www.youtube.com/embed/6x3dDqK5D37" },
-      { id: "w36_v4", title: "Past Continuous Storytelling Lesson", url: "https://www.youtube.com/embed/7x3dDqK5D38" },
-      { id: "w36_v5", title: "Pine Forest Adventures for Kids", url: "https://www.youtube.com/embed/8x3dDqK5D39" }
+      { id: "w36_v1", title: "Son Doong Cave — Earth's Largest Cave 4K", url: "https://www.youtube.com/embed/9-o89uG9fAc" },
+      { id: "w36_v2", title: "How Caves Form & Stalactite Science for Kids", url: "https://www.youtube.com/embed/3Qd71-5nQ8Y" },
+      { id: "w36_v3", title: "How to Read a Map and Use a Compass", url: "https://www.youtube.com/embed/0fe9cwntsqg" },
+      { id: "w36_v4", title: "Past Continuous Storytelling Grammar Lesson", url: "https://www.youtube.com/embed/WJ_W9_8k4m8" },
+      { id: "w36_v5", title: "Forest Habitats & Wilderness for Kids", url: "https://www.youtube.com/embed/bW84YlKqEzA" }
     ],
     model_sentence: "Early on a sunny Saturday morning, Leo and Mia went hiking in the green pine forest. While they were walking along the rocky path, they discovered a hidden entrance to a mysterious cave. They turned on their bright flashlights and stepped inside carefully. Inside the cave, cool drops of water dripped from the rocky ceiling, and dark grey shadows danced on the walls. Suddenly, Mia spotted a dusty wooden box tucked behind a large stone. They opened it gently and found an ancient map with a shiny brass compass. Their hearts beat fast with excitement. They felt extremely excited and burst into laughter.",
     sentence_frames: [
@@ -627,6 +639,25 @@ Object.keys(WEEKS_DATA).forEach(wId => {
 });
 
 // ---------------------------------------------------------------------------
+// HELPER FOR RANDOMLY SHUFFLING MC OPTIONS
+// ---------------------------------------------------------------------------
+function shuffleOptionsAndAnswer(q) {
+  if (!q || !q.options || !Array.isArray(q.options)) return q;
+  const correctText = q.answer || q.options[0];
+  // Deterministic shuffle based on question id to prevent random re-shuffles on re-render
+  const optionsCopy = [...q.options];
+  for (let i = optionsCopy.length - 1; i > 0; i--) {
+    const j = (i + (q.id || 1) * 3) % (i + 1);
+    [optionsCopy[i], optionsCopy[j]] = [optionsCopy[j], optionsCopy[i]];
+  }
+  return {
+    ...q,
+    options: optionsCopy,
+    answer: correctText
+  };
+}
+
+// ---------------------------------------------------------------------------
 // BUILDERS FOR ALL 12 STATIONS
 // ---------------------------------------------------------------------------
 
@@ -638,13 +669,16 @@ function buildReadJs(data) {
   const fullDict = { ...dictMap };
   Object.entries(dictMap).forEach(([k, v]) => { fullDict[v] = k; });
 
+  const stemQuestions = data.stem_questions.map(q => shuffleOptionsAndAnswer(q));
+  const socialQuestions = data.social_questions.map(q => shuffleOptionsAndAnswer(q));
+
   const stemStory = {
     title: data.stem_title,
     image_url: `/images/week${data.weekId}/read_cover_w${data.weekId}.jpg`,
     audio_url: `/audio/week${data.weekId}/read_main.mp3`,
     content_en: data.stem_content,
     content_vi: data.stem_vi,
-    comprehension_questions: data.stem_questions
+    comprehension_questions: stemQuestions
   };
 
   const socialStory = {
@@ -653,7 +687,7 @@ function buildReadJs(data) {
     audio_url: `/audio/week${data.weekId}/read_main.mp3`,
     content_en: data.social_content,
     content_vi: data.social_vi,
-    comprehension_questions: data.social_questions
+    comprehension_questions: socialQuestions
   };
 
   return `// Cambridge A2 Flyers read.js — Week ${data.weekId}
@@ -663,7 +697,7 @@ export default {
   audio_url: "/audio/week${data.weekId}/read_main.mp3",
   content_en: \`${data.stem_content}\`,
   content_vi: \`${data.stem_vi}\`,
-  comprehension_questions: ${JSON.stringify(data.stem_questions, null, 2)},
+  comprehension_questions: ${JSON.stringify(stemQuestions, null, 2)},
   read_stem: ${JSON.stringify(stemStory, null, 2)},
   read_social: ${JSON.stringify(socialStory, null, 2)}
 };
@@ -680,6 +714,7 @@ function buildExploreJs(data) {
     definition_vi: v.definition_vi,
     example: v.example
   }));
+  const socialQuestions = data.social_questions.map(q => shuffleOptionsAndAnswer(q));
 
   return `// Cambridge A2 Flyers explore.js — Week ${data.weekId}
 export default {
@@ -687,7 +722,7 @@ export default {
   content_en: ${JSON.stringify(data.social_content)},
   content_vi: ${JSON.stringify(data.social_vi)},
   key_vocabulary: ${JSON.stringify(keyVocab, null, 2)},
-  check_questions: ${JSON.stringify(data.social_questions, null, 2)}
+  check_questions: ${JSON.stringify(socialQuestions, null, 2)}
 };
 `;
 }
@@ -711,21 +746,39 @@ export default ${JSON.stringify(pairs, null, 2)};
 }
 
 function buildWordPowerJs(data) {
-  const collocations = data.vocab.map(v => ({
-    phrase: v.word,
+  const chunksList = data.word_power_chunks || data.vocab.slice(0, 10).map((v, i) => ({
+    id: i + 1,
+    word: v.word,
+    collocation: v.word,
     definition_en: v.definition_en,
     definition_vi: v.definition_vi,
-    example: v.example
+    example: v.example,
+    ipa: v.ipa
   }));
+
+  const formatted = chunksList.map((item, i) => ({
+    id: i + 1,
+    word: item.word,
+    collocation: item.collocation || item.word,
+    definition_en: item.definition_en,
+    definition_vi: item.definition_vi,
+    example: item.example,
+    ipa: item.ipa || "",
+    image_url: `/images/week${data.weekId}/wordpower_${i + 1}.jpg`
+  }));
+
   return `// Cambridge A2 Flyers word_power.js — Week ${data.weekId}
 export default {
   title: "Collocations & Chunks — Week ${data.weekId}",
-  collocations: ${JSON.stringify(collocations, null, 2)}
+  words: ${JSON.stringify(formatted, null, 2)},
+  collocations: ${JSON.stringify(formatted, null, 2)}
 };
 `;
 }
 
 function buildGrammarJs(data) {
+  const exercises = data.grammar_exercises.map(q => shuffleOptionsAndAnswer(q));
+
   return `// Cambridge A2 Flyers grammar.js — Week ${data.weekId}
 export default {
   title: ${JSON.stringify(data.grammar_title)},
@@ -739,7 +792,7 @@ export default {
       { icon: "💡", rule_en: "Connect sentences with **WHILE** (continuous) or **WHEN** (interruption).", rule_vi: "Nối câu bằng **WHILE** (hành động đang diễn ra) hoặc **WHEN** (xen vào).", example_en: "While they were walking, it started to rain." }
     ]
   },
-  exercises: ${JSON.stringify(data.grammar_exercises, null, 2)}
+  exercises: ${JSON.stringify(exercises, null, 2)}
 };
 `;
 }
@@ -755,7 +808,7 @@ export default {
 function buildLogicLabJs(data) {
   const logicScience = {
     title: `${data.title_en} — Logic Science`,
-    questions: data.stem_questions.map((q, idx) => ({
+    questions: data.stem_questions.map((q, idx) => shuffleOptionsAndAnswer({
       id: idx + 1,
       question_en: q.question_en,
       options: q.options,
@@ -775,7 +828,7 @@ function buildLogicLabJs(data) {
 
   const socialQuiz = {
     title: `${data.social_title} — Social Quiz`,
-    questions: data.social_questions.map((q, idx) => ({
+    questions: data.social_questions.map((q, idx) => shuffleOptionsAndAnswer({
       id: idx + 1,
       question_en: q.question_en,
       options: q.options,

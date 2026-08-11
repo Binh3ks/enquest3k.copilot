@@ -22,10 +22,10 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
     "id": 1,
     "question_en": "What was Jake doing when the boy slipped?",
     "options": [
-      "Walking carefully down the corridor",
       "Running fast down the stairs",
-      "Playing football outside",
-      "Eating lunch in the canteen"
+      "Walking carefully down the corridor",
+      "Eating lunch in the canteen",
+      "Playing football outside"
     ],
     "answer": "Walking carefully down the corridor",
     "clue_statement": "Jake was walking carefully down the school corridor.",
@@ -37,9 +37,9 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
     "question_en": "Why did the boy fall on the floor?",
     "options": [
       "The floor was wet",
-      "He tripped over a chair",
+      "It was too dark",
       "His shoe lace was untied",
-      "It was too dark"
+      "He tripped over a chair"
     ],
     "answer": "The floor was wet",
     "clue_statement": "A boy slipped on the wet floor.",
@@ -50,10 +50,10 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
     "id": 3,
     "question_en": "Who did Jake call to help the injured boy?",
     "options": [
-      "The school nurse",
       "The police officer",
+      "The bus driver",
       "His science teacher",
-      "The bus driver"
+      "The school nurse"
     ],
     "answer": "The school nurse",
     "clue_statement": "Jake stayed calm and called the school nurse.",
@@ -86,10 +86,10 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
       "id": 1,
       "question_en": "What was Jake doing when the boy slipped?",
       "options": [
-        "Walking carefully down the corridor",
         "Running fast down the stairs",
-        "Playing football outside",
-        "Eating lunch in the canteen"
+        "Walking carefully down the corridor",
+        "Eating lunch in the canteen",
+        "Playing football outside"
       ],
       "answer": "Walking carefully down the corridor",
       "clue_statement": "Jake was walking carefully down the school corridor.",
@@ -101,9 +101,9 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
       "question_en": "Why did the boy fall on the floor?",
       "options": [
         "The floor was wet",
-        "He tripped over a chair",
+        "It was too dark",
         "His shoe lace was untied",
-        "It was too dark"
+        "He tripped over a chair"
       ],
       "answer": "The floor was wet",
       "clue_statement": "A boy slipped on the wet floor.",
@@ -114,10 +114,10 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
       "id": 3,
       "question_en": "Who did Jake call to help the injured boy?",
       "options": [
-        "The school nurse",
         "The police officer",
+        "The bus driver",
         "His science teacher",
-        "The bus driver"
+        "The school nurse"
       ],
       "answer": "The school nurse",
       "clue_statement": "Jake stayed calm and called the school nurse.",
@@ -151,10 +151,10 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
       "id": 1,
       "question_en": "Why do Japanese students practice earthquake drills?",
       "options": [
-        "To protect their heads under desks",
         "To win a running trophy",
-        "To learn science facts",
-        "To clean their classroom"
+        "To protect their heads under desks",
+        "To clean their classroom",
+        "To learn science facts"
       ],
       "answer": "To protect their heads under desks",
       "clue_statement": "Children practice drills so they know how to protect their heads.",
@@ -166,9 +166,9 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
       "question_en": "What warning signs are used in Canadian school corridors?",
       "options": [
         "Bright yellow warning signs",
-        "Red stop signs",
+        "Blue water signs",
         "Green exit signs",
-        "Blue water signs"
+        "Red stop signs"
       ],
       "answer": "Bright yellow warning signs",
       "clue_statement": "Corridors have bright yellow warning signs.",
@@ -179,10 +179,10 @@ Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng 
       "id": 3,
       "question_en": "What do students learn by following safety rules?",
       "options": [
-        "Social responsibility and caring for friends",
         "How to cook food",
+        "How to play chess",
         "How to draw pictures",
-        "How to play chess"
+        "Social responsibility and caring for friends"
       ],
       "answer": "Social responsibility and caring for friends",
       "clue_statement": "Students learn social responsibility.",

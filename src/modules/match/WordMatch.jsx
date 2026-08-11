@@ -50,18 +50,22 @@ const WordMatch = ({ data, themeColor, isVi, onToggleLang, onReportProgress, mod
     let gameCards = [];
     selectedVocab.forEach(item => {
       const audioUrl = item.audio_word || item.audio_url;
-      gameCards.push({ id: item.id, type: 'word', content: item.word, speakContent: item.word, audioUrl: audioUrl, uniqueId: `word-${item.id}` });
+      const cleanWordKey = (item.word || '').replace(/\s+/g, '_').toLowerCase();
+      const uniqueWordId = `w${weekId}_${mode}_word-${cleanWordKey}`;
+      const uniquePairId = `w${weekId}_${mode}_pair-${cleanWordKey}`;
+
+      gameCards.push({ id: item.id, type: 'word', content: item.word, speakContent: item.word, audioUrl: audioUrl, uniqueId: uniqueWordId });
       
       if (mode === 'meaning') {
-        gameCards.push({ id: item.id, type: 'meaning', content: item.definition_vi, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
+        gameCards.push({ id: item.id, type: 'meaning', content: item.definition_vi, speakContent: item.word, audioUrl: audioUrl, uniqueId: uniquePairId });
       } else if (mode === 'image') {
-        gameCards.push({ id: item.id, type: 'image', content: getImageUrl(item.image_url), speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
+        gameCards.push({ id: item.id, type: 'image', content: getImageUrl(item.image_url), speakContent: item.word, audioUrl: audioUrl, uniqueId: uniquePairId });
       } else if (mode === 'audio') {
-        gameCards.push({ id: item.id, type: 'audio', content: item.word, speakContent: item.word, audioUrl: audioUrl, uniqueId: `pair-${item.id}` });
+        gameCards.push({ id: item.id, type: 'audio', content: item.word, speakContent: item.word, audioUrl: audioUrl, uniqueId: uniquePairId });
       }
     });
     return shuffleArray(gameCards);
-  }, [vocabList]);
+  }, [vocabList, weekId]);
 
   const switchGameMode = useCallback((newMode, forceReset = false) => {
     setIsGameReady(false);

@@ -3,28 +3,28 @@ export default {
   videos: [
   {
     "id": "w36_v1",
-    "title": "Son Doong Cave — Inside Earth's Largest Cave",
-    "url": "https://www.youtube.com/embed/Yp-dDqK5D35"
+    "title": "Son Doong Cave — Earth's Largest Cave 4K",
+    "url": "https://www.youtube.com/embed/9-o89uG9fAc"
   },
   {
     "id": "w36_v2",
-    "title": "Cave Explorers & Stalactite Science",
-    "url": "https://www.youtube.com/embed/5x3dDqK5D36"
+    "title": "How Caves Form & Stalactite Science for Kids",
+    "url": "https://www.youtube.com/embed/3Qd71-5nQ8Y"
   },
   {
     "id": "w36_v3",
-    "title": "How to Use a Compass on Hikes",
-    "url": "https://www.youtube.com/embed/6x3dDqK5D37"
+    "title": "How to Read a Map and Use a Compass",
+    "url": "https://www.youtube.com/embed/0fe9cwntsqg"
   },
   {
     "id": "w36_v4",
-    "title": "Past Continuous Storytelling Lesson",
-    "url": "https://www.youtube.com/embed/7x3dDqK5D38"
+    "title": "Past Continuous Storytelling Grammar Lesson",
+    "url": "https://www.youtube.com/embed/WJ_W9_8k4m8"
   },
   {
     "id": "w36_v5",
-    "title": "Pine Forest Adventures for Kids",
-    "url": "https://www.youtube.com/embed/8x3dDqK5D39"
+    "title": "Forest Habitats & Wilderness for Kids",
+    "url": "https://www.youtube.com/embed/bW84YlKqEzA"
   }
 ]
 };

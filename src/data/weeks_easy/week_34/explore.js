@@ -40,10 +40,10 @@ export default {
     "id": 1,
     "question_en": "Who was Aesop?",
     "options": [
-      "A famous storyteller from ancient Greece",
       "A modern Canadian scientist",
-      "A famous runner from Kenya",
-      "A Japanese headmaster"
+      "A famous storyteller from ancient Greece",
+      "A Japanese headmaster",
+      "A famous runner from Kenya"
     ],
     "answer": "A famous storyteller from ancient Greece",
     "clue_statement": "Aesop was a famous storyteller from Greece.",
@@ -55,9 +55,9 @@ export default {
     "question_en": "What main lesson do Aesop's fables teach us?",
     "options": [
       "Hard work and patience lead to success",
-      "Singing is better than working",
+      "Ants live in modern houses",
       "Winter is the warmest season",
-      "Ants live in modern houses"
+      "Singing is better than working"
     ],
     "answer": "Hard work and patience lead to success",
     "clue_statement": "Fables show how hard work and patience always lead to success.",

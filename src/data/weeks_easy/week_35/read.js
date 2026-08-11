@@ -22,10 +22,10 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
     "id": 1,
     "question_en": "Where did Maya and Tom go on Saturday morning?",
     "options": [
-      "Their favorite city park",
       "The shopping mall",
-      "The cinema",
-      "The swimming pool"
+      "Their favorite city park",
+      "The swimming pool",
+      "The cinema"
     ],
     "answer": "Their favorite city park",
     "clue_statement": "Maya and Tom visited their favorite city park.",
@@ -37,9 +37,9 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
     "question_en": "What was scattered on the green grass?",
     "options": [
       "Plastic bottles and rubbish",
-      "Colorful autumn leaves",
+      "Flower petals",
       "Wooden toys",
-      "Flower petals"
+      "Colorful autumn leaves"
     ],
     "answer": "Plastic bottles and rubbish",
     "clue_statement": "Plastic bottles and rubbish were scattered on the grass.",
@@ -50,10 +50,10 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
     "id": 3,
     "question_en": "Where did they throw the collected plastic waste?",
     "options": [
-      "Into recycling bins",
       "Into the lake",
+      "Behind the trees",
       "Under the bench",
-      "Behind the trees"
+      "Into recycling bins"
     ],
     "answer": "Into recycling bins",
     "clue_statement": "They collected plastic waste into recycling bins.",
@@ -86,10 +86,10 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
       "id": 1,
       "question_en": "Where did Maya and Tom go on Saturday morning?",
       "options": [
-        "Their favorite city park",
         "The shopping mall",
-        "The cinema",
-        "The swimming pool"
+        "Their favorite city park",
+        "The swimming pool",
+        "The cinema"
       ],
       "answer": "Their favorite city park",
       "clue_statement": "Maya and Tom visited their favorite city park.",
@@ -101,9 +101,9 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
       "question_en": "What was scattered on the green grass?",
       "options": [
         "Plastic bottles and rubbish",
-        "Colorful autumn leaves",
+        "Flower petals",
         "Wooden toys",
-        "Flower petals"
+        "Colorful autumn leaves"
       ],
       "answer": "Plastic bottles and rubbish",
       "clue_statement": "Plastic bottles and rubbish were scattered on the grass.",
@@ -114,10 +114,10 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
       "id": 3,
       "question_en": "Where did they throw the collected plastic waste?",
       "options": [
-        "Into recycling bins",
         "Into the lake",
+        "Behind the trees",
         "Under the bench",
-        "Behind the trees"
+        "Into recycling bins"
       ],
       "answer": "Into recycling bins",
       "clue_statement": "They collected plastic waste into recycling bins.",
@@ -151,10 +151,10 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
       "id": 1,
       "question_en": "Why are city parks called green lungs?",
       "options": [
-        "Because they clean the air we breathe",
         "Because they are shaped like lungs",
-        "Because they are painted green",
-        "Because birds nest in them"
+        "Because they clean the air we breathe",
+        "Because birds nest in them",
+        "Because they are painted green"
       ],
       "answer": "Because they clean the air we breathe",
       "clue_statement": "Parks are green lungs that clean the air.",
@@ -166,9 +166,9 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
       "question_en": "Which city is famous for futuristic supertrees covered in plants?",
       "options": [
         "Singapore",
-        "London",
+        "Paris",
         "Tokyo",
-        "Paris"
+        "London"
       ],
       "answer": "Singapore",
       "clue_statement": "In Singapore, city parks have futuristic supertrees.",

@@ -17,10 +17,10 @@ export default {
     "prompt": "While the ant _____ (work) hard, the grasshopper sang.",
     "question": "While the ant _____ (work) hard, the grasshopper sang.",
     "options": [
-      "was working",
       "worked",
-      "works",
-      "is working"
+      "was working",
+      "is working",
+      "works"
     ],
     "answer": "was working",
     "hint_en": "Background continuous action.",
@@ -33,9 +33,9 @@ export default {
     "question": "The grasshopper _____ (sing) cheerfully under the green tree.",
     "options": [
       "was singing",
-      "sang",
+      "is singing",
       "sings",
-      "is singing"
+      "sang"
     ],
     "answer": "was singing",
     "hint_en": "Continuous past action.",
@@ -47,10 +47,10 @@ export default {
     "prompt": "When winter arrived, snow _____ (cover) the ground.",
     "question": "When winter arrived, snow _____ (cover) the ground.",
     "options": [
-      "covered",
       "was covering",
+      "is covering",
       "covers",
-      "is covering"
+      "covered"
     ],
     "answer": "covered",
     "hint_en": "Past Simple event.",
@@ -77,10 +77,10 @@ export default {
     "prompt": "He _____ (knock) on the ant's door shivering in the cold.",
     "question": "He _____ (knock) on the ant's door shivering in the cold.",
     "options": [
-      "knocked",
       "was knocking",
-      "knocks",
-      "is knocking"
+      "knocked",
+      "is knocking",
+      "knocks"
     ],
     "answer": "knocked",
     "hint_en": "Single past action.",
@@ -93,9 +93,9 @@ export default {
     "question": "While the ant _____ (cook) warm soup, he opened the door.",
     "options": [
       "was cooking",
-      "cooked",
+      "is cooking",
       "cooks",
-      "is cooking"
+      "cooked"
     ],
     "answer": "was cooking",
     "hint_en": "Past Continuous progress.",
@@ -107,10 +107,10 @@ export default {
     "prompt": "The ant _____ (invite) the grasshopper inside warmly.",
     "question": "The ant _____ (invite) the grasshopper inside warmly.",
     "options": [
-      "invited",
       "was inviting",
+      "is inviting",
       "invites",
-      "is inviting"
+      "invited"
     ],
     "answer": "invited",
     "hint_en": "Past Simple.",
@@ -137,10 +137,10 @@ export default {
     "prompt": "He promised that he _____ (work) hard next summer.",
     "question": "He promised that he _____ (work) hard next summer.",
     "options": [
-      "would work",
       "will work",
-      "worked",
-      "is working"
+      "would work",
+      "is working",
+      "worked"
     ],
     "answer": "would work",
     "hint_en": "Future in the past uses 'would'.",
@@ -153,9 +153,9 @@ export default {
     "question": "Aesop _____ (write) many ancient fables long ago.",
     "options": [
       "wrote",
-      "was writing",
+      "is writing",
       "writes",
-      "is writing"
+      "was writing"
     ],
     "answer": "wrote",
     "hint_en": "Past tense of write.",
@@ -167,10 +167,10 @@ export default {
     "prompt": "While animals _____ (prepare) for winter, the sun shone brightly.",
     "question": "While animals _____ (prepare) for winter, the sun shone brightly.",
     "options": [
-      "were preparing",
       "prepared",
+      "is preparing",
       "prepares",
-      "is preparing"
+      "were preparing"
     ],
     "answer": "were preparing",
     "hint_en": "Plural past continuous.",
@@ -197,10 +197,10 @@ export default {
     "prompt": "While snow _____ (fall) outside, they sat near the fireplace.",
     "question": "While snow _____ (fall) outside, they sat near the fireplace.",
     "options": [
-      "was falling",
       "fell",
-      "falls",
-      "is falling"
+      "was falling",
+      "is falling",
+      "falls"
     ],
     "answer": "was falling",
     "hint_en": "Uncountable 'snow' takes 'was falling'.",
@@ -213,9 +213,9 @@ export default {
     "question": "The kind ant _____ (share) his food generously.",
     "options": [
       "shared",
-      "was sharing",
+      "is sharing",
       "shares",
-      "is sharing"
+      "was sharing"
     ],
     "answer": "shared",
     "hint_en": "Past action.",
@@ -227,10 +227,10 @@ export default {
     "prompt": "They _____ (become) good friends after that winter.",
     "question": "They _____ (become) good friends after that winter.",
     "options": [
-      "became",
       "was becoming",
+      "is becoming",
       "becomes",
-      "is becoming"
+      "became"
     ],
     "answer": "became",
     "hint_en": "Past tense of become.",
@@ -257,10 +257,10 @@ export default {
     "prompt": "Fables _____ (teach) us moral lessons about life.",
     "question": "Fables _____ (teach) us moral lessons about life.",
     "options": [
-      "teach",
       "was teaching",
-      "taught",
-      "is teaching"
+      "teach",
+      "is teaching",
+      "taught"
     ],
     "answer": "teach",
     "hint_en": "General truth in Present Simple.",
@@ -273,9 +273,9 @@ export default {
     "question": "While the wind _____ (blow), the ant kept his home warm.",
     "options": [
       "was blowing",
-      "blew",
+      "is blowing",
       "blows",
-      "is blowing"
+      "blew"
     ],
     "answer": "was blowing",
     "hint_en": "Past Continuous.",
@@ -287,10 +287,10 @@ export default {
     "prompt": "He _____ (collect) grains every day during summer.",
     "question": "He _____ (collect) grains every day during summer.",
     "options": [
-      "collected",
       "was collecting",
+      "is collecting",
       "collects",
-      "is collecting"
+      "collected"
     ],
     "answer": "collected",
     "hint_en": "Habitual past action.",

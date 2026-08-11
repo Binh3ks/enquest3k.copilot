@@ -40,10 +40,10 @@ export default {
     "id": 1,
     "question_en": "Why do Japanese students practice earthquake drills?",
     "options": [
-      "To protect their heads under desks",
       "To win a running trophy",
-      "To learn science facts",
-      "To clean their classroom"
+      "To protect their heads under desks",
+      "To clean their classroom",
+      "To learn science facts"
     ],
     "answer": "To protect their heads under desks",
     "clue_statement": "Children practice drills so they know how to protect their heads.",
@@ -55,9 +55,9 @@ export default {
     "question_en": "What warning signs are used in Canadian school corridors?",
     "options": [
       "Bright yellow warning signs",
-      "Red stop signs",
+      "Blue water signs",
       "Green exit signs",
-      "Blue water signs"
+      "Red stop signs"
     ],
     "answer": "Bright yellow warning signs",
     "clue_statement": "Corridors have bright yellow warning signs.",
@@ -68,10 +68,10 @@ export default {
     "id": 3,
     "question_en": "What do students learn by following safety rules?",
     "options": [
-      "Social responsibility and caring for friends",
       "How to cook food",
+      "How to play chess",
       "How to draw pictures",
-      "How to play chess"
+      "Social responsibility and caring for friends"
     ],
     "answer": "Social responsibility and caring for friends",
     "clue_statement": "Students learn social responsibility.",
