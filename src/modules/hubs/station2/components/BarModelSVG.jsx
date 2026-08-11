@@ -10,7 +10,7 @@ export function BarModelSVG({ modelData }) {
   const { type = 'part_whole', bars = [], totalLabel = '' } = modelData;
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-slate-950 p-4 sm:p-6 rounded-2xl border border-slate-800 shadow-inner flex flex-col items-center">
+    <div className="w-full max-w-lg mx-auto bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center">
       <svg
         viewBox="0 0 400 180"
         className="w-full h-auto max-h-[220px]"
@@ -60,13 +60,13 @@ export function BarModelSVG({ modelData }) {
                 <path
                   d="M 0 0 L 0 15 L 160 25 L 320 15 L 320 0"
                   fill="none"
-                  stroke="#fbbf24"
+                  stroke="#d97706"
                   strokeWidth="2"
                 />
                 <text
                   x="160"
                   y="45"
-                  fill="#fbbf24"
+                  fill="#d97706"
                   fontSize="16"
                   fontWeight="extrabold"
                   textAnchor="middle"
