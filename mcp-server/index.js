@@ -340,7 +340,18 @@ async function seedDatabase() {
 
 
 // Middleware
-app.use(cors()); // Cho phép Cross-Origin Resource Sharing
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow all origins dynamically (including app.bkbacademy.vn, localhost, etc.)
+    callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'x-admin-token', 'apikey'],
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(express.json({ limit: '10mb' })); // Tăng limit để nhận avatar base64 lớn
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
