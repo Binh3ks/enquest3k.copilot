@@ -676,24 +676,28 @@ export const VoiceService = {
       }
 
       // Vocabulary
-      if (weekData.stations?.new_words?.vocab) {
-        weekData.stations.new_words.vocab.forEach(v => {
-          if (v.word) itemsToPrefetch.push({ text: v.word, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F', audioPath: v.audio_word });
-          if (v.definition_en) itemsToPrefetch.push({ text: v.definition_en, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
-          if (v.example_sentence) itemsToPrefetch.push({ text: v.example_sentence, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
-        });
-      }
+      const vocabList = Array.isArray(weekData.stations?.new_words)
+        ? weekData.stations.new_words
+        : (weekData.stations?.new_words?.vocab || []);
+      vocabList.forEach(v => {
+        if (v.word) itemsToPrefetch.push({ text: v.word, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F', audioPath: v.audio_word });
+        if (v.definition_en) itemsToPrefetch.push({ text: v.definition_en, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+        if (v.example_sentence) itemsToPrefetch.push({ text: v.example_sentence, station: 'new_word', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+      });
 
       // Word Power
-      if (weekData.stations?.word_power?.phrases) {
-        weekData.stations.word_power.phrases.forEach(p => {
-          if (p.phrase) itemsToPrefetch.push({ text: p.phrase, station: 'word_power', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
-          if (p.example) itemsToPrefetch.push({ text: p.example, station: 'word_power', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
-        });
-      }
+      const wordPowerList = Array.isArray(weekData.stations?.word_power)
+        ? weekData.stations.word_power
+        : (weekData.stations?.word_power?.phrases || []);
+      wordPowerList.forEach(p => {
+        if (p.phrase || p.word) itemsToPrefetch.push({ text: p.phrase || p.word, station: 'word_power', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+        if (p.example) itemsToPrefetch.push({ text: p.example, station: 'word_power', voice: voiceConfig?.vocabulary || 'en-US-Neural2-F' });
+      });
 
       // Shadowing
-      const shadowingList = weekData.stations?.shadowing?.script || weekData.stations?.shadowing?.sentences || [];
+      const shadowingList = Array.isArray(weekData.stations?.shadowing)
+        ? weekData.stations.shadowing
+        : (weekData.stations?.shadowing?.script || weekData.stations?.shadowing?.sentences || []);
       shadowingList.forEach(s => {
         const txt = s.text || s.text_en;
         if (txt) itemsToPrefetch.push({ text: txt.replace(/\*\*/g, ''), station: 'shadowing', voice: voiceConfig?.shadowing || 'en-US-Journey-F', audioPath: s.audio_url });

@@ -4,7 +4,12 @@ import { writingHubData } from './writing_hub.js';
 import { speakingHubData } from './speaking_hub.js';
 
 export const week33Data = {
+  weekId: 33,
   week: 33,
+  title: "The Accident File — Irregular Verbs Group 5",
+  title_vi: "Hồ Sơ Tai Nạn — Động Từ Bất Quy Tắc Nhóm 5",
+  weekTitle_en: "The Accident File — Irregular Verbs Group 5",
+  weekTitle_vi: "Hồ Sơ Tai Nạn — Động Từ Bất Quy Tắc Nhóm 5",
   theme: "The Accident File",
   cefr_level: "A2 Flyers",
   readingHub: readingHubData,

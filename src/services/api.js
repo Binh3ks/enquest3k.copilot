@@ -78,8 +78,13 @@ export const progressAPI = {
    * @returns {Promise} Response with progress map: { stationId: { data, isCompleted, score } }
    */
   fetchWeekProgress: async (weekId) => {
-    const response = await apiClient.get(`/progress/${weekId}`);
-    return response.data;
+    try {
+      const response = await apiClient.get(`/progress/${weekId}`);
+      return response.data || {};
+    } catch (err) {
+      console.warn(`[ProgressAPI] Remote fetch un-reachable for week ${weekId}, falling back to local progress:`, err.message);
+      return {};
+    }
   },
 
   /**
