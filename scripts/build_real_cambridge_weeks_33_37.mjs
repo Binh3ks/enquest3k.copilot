@@ -525,11 +525,11 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       { word: "burst into cheerful laughter", collocation: "burst into cheerful laughter after", definition_en: "suddenly started laughing together with joy and relief", definition_vi: "bật ra tiếng cười vui vẻ", example: "When they saw the funny map, they burst into cheerful laughter.", ipa: "/bɜːst ˈɪn.tuː ˈtʃɪə.fəl ˈlɑːf.tər/" }
     ],
     daily_watch: [
-      { id: "w36_v1", title: "Son Doong Cave — Earth's Largest Cave 4K", url: "https://www.youtube.com/embed/9-o89uG9fAc" },
-      { id: "w36_v2", title: "How Caves Form & Stalactite Science for Kids", url: "https://www.youtube.com/embed/3Qd71-5nQ8Y" },
-      { id: "w36_v3", title: "How to Read a Map and Use a Compass", url: "https://www.youtube.com/embed/0fe9cwntsqg" },
-      { id: "w36_v4", title: "Past Continuous Storytelling Grammar Lesson", url: "https://www.youtube.com/embed/WJ_W9_8k4m8" },
-      { id: "w36_v5", title: "Forest Habitats & Wilderness for Kids", url: "https://www.youtube.com/embed/bW84YlKqEzA" }
+      { id: "w36_v1", videoId: "L_LUpnjgPso", title: "Cave Exploration & Earth Wonders 4K", url: "https://www.youtube.com/embed/L_LUpnjgPso", thumb: "https://img.youtube.com/vi/L_LUpnjgPso/mqdefault.jpg" },
+      { id: "w36_v2", videoId: "34Na4j8AVgA", title: "How to Read a Map and Use a Compass", url: "https://www.youtube.com/embed/34Na4j8AVgA", thumb: "https://img.youtube.com/vi/34Na4j8AVgA/mqdefault.jpg" },
+      { id: "w36_v3", videoId: "eX2qFMC8cFo", title: "Past Continuous Storytelling Grammar Lesson", url: "https://www.youtube.com/embed/eX2qFMC8cFo", thumb: "https://img.youtube.com/vi/eX2qFMC8cFo/mqdefault.jpg" },
+      { id: "w36_v4", videoId: "lVUksZ1A9mk", title: "Exploring Forests & Wildlife Habitats", url: "https://www.youtube.com/embed/lVUksZ1A9mk", thumb: "https://img.youtube.com/vi/lVUksZ1A9mk/mqdefault.jpg" },
+      { id: "w36_v5", videoId: "uRZ5HSY69Po", title: "Science & Tools for Young Explorers", url: "https://www.youtube.com/embed/uRZ5HSY69Po", thumb: "https://img.youtube.com/vi/uRZ5HSY69Po/mqdefault.jpg" }
     ],
     model_sentence: "Early on a sunny Saturday morning, Leo and Mia went hiking in the green pine forest. While they were walking along the rocky path, they discovered a hidden entrance to a mysterious cave. They turned on their bright flashlights and stepped inside carefully. Inside the cave, cool drops of water dripped from the rocky ceiling, and dark grey shadows danced on the walls. Suddenly, Mia spotted a dusty wooden box tucked behind a large stone. They opened it gently and found an ancient map with a shiny brass compass. Their hearts beat fast with excitement. They felt extremely excited and burst into laughter.",
     sentence_frames: [
@@ -631,11 +631,11 @@ Leo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đôn
       { word: "celebrated their relay victory", collocation: "celebrated their relay victory happily", definition_en: "rejoiced together after winning the team relay race", definition_vi: "ăn mừng chiến thắng tiếp sức", example: "The whole school celebrated their relay victory happily.", ipa: "/ˈsel.ə.breɪ.tɪd ðeər ˈriː.leɪ ˈvɪk.tər.i/" }
     ],
     daily_watch: [
-      { id: "w37_v1", videoId: "8wZi38lF28E", title: "Relay Handoff Science & Smooth Baton Passes", url: "https://www.youtube.com/embed/8wZi38lF28E" },
-      { id: "w37_v2", videoId: "O07X1XLK4tM", title: "The History of the Olympic Games & Torch Relay", url: "https://www.youtube.com/embed/O07X1XLK4tM" },
-      { id: "w37_v3", videoId: "9-o89uG9fAc", title: "Sports Day Relay Finals Highlights", url: "https://www.youtube.com/embed/9-o89uG9fAc" },
-      { id: "w37_v4", videoId: "3Qd71-5nQ8Y", title: "Comparative Adverbs in Action Lesson", url: "https://www.youtube.com/embed/3Qd71-5nQ8Y" },
-      { id: "w37_v5", videoId: "0fe9cwntsqg", title: "Teamwork and Velocity for Young Athletes", url: "https://www.youtube.com/embed/0fe9cwntsqg" }
+      { id: "w37_v1", videoId: "AS5nhKzaOqo", title: "School Supplies & Classroom Vocabulary", url: "https://www.youtube.com/embed/AS5nhKzaOqo", thumb: "https://img.youtube.com/vi/AS5nhKzaOqo/mqdefault.jpg" },
+      { id: "w37_v2", videoId: "yzfMUrpN-Go", title: "City Places & Transportation for Kids", url: "https://www.youtube.com/embed/yzfMUrpN-Go", thumb: "https://img.youtube.com/vi/yzfMUrpN-Go/mqdefault.jpg" },
+      { id: "w37_v3", videoId: "y_8Diip0XGg", title: "Places We Go & Community Sports", url: "https://www.youtube.com/embed/y_8Diip0XGg", thumb: "https://img.youtube.com/vi/y_8Diip0XGg/mqdefault.jpg" },
+      { id: "w37_v4", videoId: "bLH_drXjgRk", title: "Action & Exercise Songs for Kids", url: "https://www.youtube.com/embed/bLH_drXjgRk", thumb: "https://img.youtube.com/vi/bLH_drXjgRk/mqdefault.jpg" },
+      { id: "w37_v5", videoId: "CA6Mofzh7jo", title: "Wild Animals & Nature Adventure", url: "https://www.youtube.com/embed/CA6Mofzh7jo", thumb: "https://img.youtube.com/vi/CA6Mofzh7jo/mqdefault.jpg" }
     ],
     model_sentence: "On a sunny Saturday morning, the annual Sports Day took place at our school. The crowded sports stadium was filled with the loud cheering of excited students and parents. Leo and his team were running in the final 4x100m relay race. The first runner was sprinting fast down the track. When his teammate reached the exchange zone, Leo passed the baton cleanly and accelerated smoothly on the track. He ran as fast as the wind toward the finish line and crossed it first. The team received shiny gold medals and felt extremely proud.",
     sentence_frames: [

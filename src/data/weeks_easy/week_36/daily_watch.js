@@ -3,28 +3,38 @@ export default {
   videos: [
   {
     "id": "w36_v1",
-    "title": "Son Doong Cave — Earth's Largest Cave 4K",
-    "url": "https://www.youtube.com/embed/9-o89uG9fAc"
+    "videoId": "L_LUpnjgPso",
+    "title": "Cave Exploration & Earth Wonders 4K",
+    "url": "https://www.youtube.com/embed/L_LUpnjgPso",
+    "thumb": "https://img.youtube.com/vi/L_LUpnjgPso/mqdefault.jpg"
   },
   {
     "id": "w36_v2",
-    "title": "How Caves Form & Stalactite Science for Kids",
-    "url": "https://www.youtube.com/embed/3Qd71-5nQ8Y"
+    "videoId": "34Na4j8AVgA",
+    "title": "How to Read a Map and Use a Compass",
+    "url": "https://www.youtube.com/embed/34Na4j8AVgA",
+    "thumb": "https://img.youtube.com/vi/34Na4j8AVgA/mqdefault.jpg"
   },
   {
     "id": "w36_v3",
-    "title": "How to Read a Map and Use a Compass",
-    "url": "https://www.youtube.com/embed/0fe9cwntsqg"
+    "videoId": "eX2qFMC8cFo",
+    "title": "Past Continuous Storytelling Grammar Lesson",
+    "url": "https://www.youtube.com/embed/eX2qFMC8cFo",
+    "thumb": "https://img.youtube.com/vi/eX2qFMC8cFo/mqdefault.jpg"
   },
   {
     "id": "w36_v4",
-    "title": "Past Continuous Storytelling Grammar Lesson",
-    "url": "https://www.youtube.com/embed/WJ_W9_8k4m8"
+    "videoId": "lVUksZ1A9mk",
+    "title": "Exploring Forests & Wildlife Habitats",
+    "url": "https://www.youtube.com/embed/lVUksZ1A9mk",
+    "thumb": "https://img.youtube.com/vi/lVUksZ1A9mk/mqdefault.jpg"
   },
   {
     "id": "w36_v5",
-    "title": "Forest Habitats & Wilderness for Kids",
-    "url": "https://www.youtube.com/embed/bW84YlKqEzA"
+    "videoId": "uRZ5HSY69Po",
+    "title": "Science & Tools for Young Explorers",
+    "url": "https://www.youtube.com/embed/uRZ5HSY69Po",
+    "thumb": "https://img.youtube.com/vi/uRZ5HSY69Po/mqdefault.jpg"
   }
 ]
 };

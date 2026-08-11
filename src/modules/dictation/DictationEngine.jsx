@@ -34,7 +34,7 @@ const DictationEngine = ({ data, themeColor, isVi, onToggleLang, onReportProgres
     if (savedData.correctSentences?.length) setCompletedIds(new Set(savedData.correctSentences));
   }, [savedData]);
 
-  // 🔒 Memoize shuffled word order per sentence — prevents reshuffling on every  const sentencesList = useMemo(() => Array.isArray(data) ? data : (data?.sentences || []), [data]);
+  const sentencesList = useMemo(() => Array.isArray(data) ? data : (data?.sentences || []), [data]);
 
   // 🔒 Memoize shuffled word order per sentence — prevents reshuffling on every keystroke
   const shuffledWordsBySentence = useMemo(() => {
