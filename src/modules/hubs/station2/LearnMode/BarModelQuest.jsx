@@ -62,6 +62,21 @@ const WEEK33_BAR_QUESTIONS = [
     },
     correctAnswer: 35,
     hintText: 'Clean pages remaining = 50 total pages - 15 damaged pages = 35 pages.'
+  },
+  {
+    id: 'bar_w33_05',
+    title: 'Problem 5: Repair Shop Items (Part-Whole)',
+    problemText: 'The repair shop received 12 broken alarm clocks and 18 damaged school bags. How many items did the shop receive in total?',
+    modelData: {
+      type: 'part_whole',
+      bars: [
+        { label: 'Broken Clocks (12)', value: 40, color: '#4f46e5' },
+        { label: 'Damaged Bags (18)', value: 60, color: '#06b6d4' }
+      ],
+      totalLabel: '? items'
+    },
+    correctAnswer: 30,
+    hintText: 'Total items received = 12 broken clocks + 18 damaged bags = 30 items.'
   }
 ];
 

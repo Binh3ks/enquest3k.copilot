@@ -726,16 +726,6 @@ const MainLayout = () => {
                  📊 {isVi ? 'Phụ huynh' : 'Parent Report'}
                </Link>}
             </div>
-            {/* Nova — truly centered, outside the right flex group so it never overlaps */}
-            {currentUser?.role !== 'guest' && (
-              <button
-                onClick={() => useTutorStore.getState().toggleWidget()}
-                className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[11px] font-black rounded-xl shadow-md hover:opacity-90 active:scale-95 transition-all whitespace-nowrap"
-                title="Nova AI Tutor"
-              >
-                <Sparkles size={13} /> I'm Nova — Talk with me!
-              </button>
-            )}
           </header>
 
           <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-5 relative no-scrollbar" onClick={() => { if (showWelcomeCard) setShowWelcomeCard(false); }}>

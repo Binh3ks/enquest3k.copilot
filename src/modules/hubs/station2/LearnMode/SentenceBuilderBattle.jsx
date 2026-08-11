@@ -35,6 +35,20 @@ const WEEK33_GRAMMAR_DRILLS = [
     text_en: "Build a sentence showing contrast with 'Although'.",
     word_blocks: ["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."],
     distractor_blocks: ["but", "helps", "makes"]
+  },
+  {
+    id: "st2_w33_g04",
+    grammar_tag: "past_continuous_when_while",
+    text_en: "Build a sentence about dropping a glass of orange juice.",
+    word_blocks: ["While", "making", "breakfast", ",", "he", "dropped", "a", "glass", "."],
+    distractor_blocks: ["were", "breaks", "while"]
+  },
+  {
+    id: "st2_w33_g05",
+    grammar_tag: "clauses_of_reason",
+    text_en: "Build a sentence about apologizing for a clumsy mistake.",
+    word_blocks: ["Tom", "apologized", "because", "he", "made", "a", "mistake", "."],
+    distractor_blocks: ["so", "forgets", "why"]
   }
 ];
 

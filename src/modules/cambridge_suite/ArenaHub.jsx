@@ -101,9 +101,6 @@ export default function ArenaHub({ weekNumber = 33 }) {
             </button>
           </div>
 
-          <div className="px-3 py-1.5 bg-slate-900 text-amber-300 rounded-xl text-xs font-black border border-slate-800 flex items-center gap-1.5 shadow-sm">
-            <ShieldCheck size={14} /> {learnerAlias || 'Learner #382'}
-          </div>
         </div>
       </div>
 

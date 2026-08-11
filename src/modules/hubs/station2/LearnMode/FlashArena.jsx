@@ -11,11 +11,18 @@ const WEEK33_VOCAB_SETS = {
     { id: 'v5', en: 'mistake', vi: 'sai lầm / lỗi' }
   ],
   set_w33_02: [
-    { id: 'v6', en: 'accident', vi: 'sự cố tai nạn' },
-    { id: 'v7', en: 'fix', vi: 'sửa chữa' },
-    { id: 'v8', en: 'sorry', vi: 'xin lỗi' },
-    { id: 'v9', en: 'careful', vi: 'cẩn thận' },
-    { id: 'v10', en: 'clumsy', vi: 'vụng về' }
+    { id: 'v6', en: 'dropped', vi: 'đánh rơi' },
+    { id: 'v7', en: 'damaged', vi: 'bị hư hại' },
+    { id: 'v8', en: 'searched', vi: 'đã tìm kiếm' },
+    { id: 'v9', en: 'apologized', vi: 'đã xin lỗi' },
+    { id: 'v10', en: 'slipped', vi: 'trượt chân' }
+  ],
+  set_w33_03: [
+    { id: 'c1', en: 'broke an alarm clock', vi: 'làm vỡ đồng hồ báo thức' },
+    { id: 'c2', en: 'slipped on a puddle', vi: 'trượt chân trên vũng nước' },
+    { id: 'c3', en: 'dropped a glass', vi: 'đánh rơi ly nước' },
+    { id: 'c4', en: 'lost his backpack', vi: 'làm mất chiếc cặp' },
+    { id: 'c5', en: 'apologized to teacher', vi: 'xin lỗi cô giáo' }
   ]
 };
 
@@ -173,7 +180,7 @@ export function FlashArena({ customSets, onAttemptResult }) {
                 : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
             }`}
           >
-            Set {idx + 1} (Irregular Verbs)
+            {idx === 0 ? 'Group 1: Core Words' : idx === 1 ? 'Group 2: Irregular Verbs' : 'Group 3: Chunks & Collocations'}
           </button>
         ))}
       </div>

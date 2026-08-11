@@ -4,36 +4,62 @@ import { learnerProgressService } from '../../../../services/learnerProgressServ
 import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngine';
 import { ShieldCheck, CheckCircle2, ArrowRight, RefreshCw, FileText } from 'lucide-react';
 
+const FALLBACK_CHECK_QUESTIONS = [
+  {
+    content_id: 'chk_h2_01',
+    raw_content: { text: "While Tom was waking up, he broke his alarm clock.", grammar_tag: "past_continuous_when_while" },
+    answer_key: { valid_structures: [["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "alarm", "clock", "."]] }
+  },
+  {
+    content_id: 'chk_h2_02',
+    raw_content: { text: "Tom fell down because the floor was wet.", grammar_tag: "clauses_of_reason" },
+    answer_key: { valid_structures: [["Tom", "fell", "down", "because", "the", "floor", "was", "wet", "."]] }
+  },
+  {
+    content_id: 'chk_h2_03',
+    raw_content: { text: "Although Tom made a mistake, Mia helped him.", grammar_tag: "connectors" },
+    answer_key: { valid_structures: [["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."]] }
+  },
+  {
+    content_id: 'chk_h2_04',
+    raw_content: { text: "He dropped a glass while he was making breakfast.", grammar_tag: "past_continuous_when_while" },
+    answer_key: { valid_structures: [["He", "dropped", "a", "glass", "while", "he", "was", "making", "breakfast", "."]] }
+  },
+  {
+    content_id: 'chk_h2_05',
+    raw_content: { text: "Tom apologized because he was clumsy in the morning.", grammar_tag: "clauses_of_reason" },
+    answer_key: { valid_structures: [["Tom", "apologized", "because", "he", "was", "clumsy", "in", "the", "morning", "."]] }
+  }
+];
+
 export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState(FALLBACK_CHECK_QUESTIONS);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [resultsSummary, setResultsSummary] = useState(null);
   const [startTime, setStartTime] = useState(Date.now());
 
   useEffect(() => {
     async function loadExamContent() {
-      setLoading(true);
       try {
         const items = await contentBankService.getStationContent({
           week: `W${weekNumber}`,
           station: '2',
           mode: 'learn'
         });
-        setQuestions(items);
-        setStartTime(Date.now());
+        if (items && items.length > 0) {
+          setQuestions(items.slice(0, 5));
+        }
       } catch (e) {
         console.error('Failed to load check mode questions', e);
-      } finally {
-        setLoading(false);
       }
     }
     loadExamContent();
   }, [weekNumber]);
 
-  const currentQ = questions[currentIndex];
+  const currentQ = questions[currentIndex] || questions[0];
 
   const handleSelectOption = (optionTokens) => {
     setSelectedAnswers((prev) => ({

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
-import { PenTool, Sparkles, CheckCircle2, AlertTriangle, Layers, Film } from 'lucide-react';
+import { PenTool, Sparkles, CheckCircle2, AlertTriangle, Layers, Film, HelpCircle, X } from 'lucide-react';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [userScript, setUserScript] = useState('');
   const [ruleScore, setRuleScore] = useState(null);
   const [aiScore, setAiScore] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [showHintsModal, setShowHintsModal] = useState(false);
 
   const picturePanels = data?.picture_story || data?.picturePanels || [
     {
@@ -36,21 +37,17 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
     grammar_boosters: ['was playing', 'were climbing', 'had realized', 'was searching']
   };
 
-  // Tap-to-insert pill helper
   const handleInsertPill = (word) => {
     setUserScript((prev) => (prev ? `${prev} ${word}` : word));
   };
 
-  // Layer 1: Rule-based client-side checker
   const handleAnalyzeScript = async () => {
     setIsAnalyzing(true);
     const textLower = userScript.toLowerCase();
 
-    // Past tense verb detection
     const pastVerbs = ['broke', 'fell', 'lost', 'found', 'slipped', 'spilled', 'tore', 'hurt', 'dropped', 'apologized'];
     const matchedVerbs = pastVerbs.filter((v) => textLower.includes(v));
 
-    // Connectors detection
     const connectors = ['first', 'suddenly', 'finally', 'while', 'because', 'although', 'when', 'so', 'however'];
     const matchedConnectors = connectors.filter((c) => textLower.includes(c));
 
@@ -67,20 +64,18 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
     setRuleScore(layer1Result);
 
-    // Layer 2: Simulated AI Content Feedback (with mandatory practice_only tag)
     setTimeout(async () => {
       const calculatedMovieScore = Math.min(100, Math.max(50, wordCount * 2 + matchedVerbs.length * 10));
 
       const layer2Result = {
         movieQualityScore: calculatedMovieScore,
         aiFeedbackText: 'Great story! Your narrative flows smoothly across all 3 picture panels. Try adding more connecting words for a higher score.',
-        verificationStatus: 'practice_only' // MANDATORY PRACTICE ONLY TAG
+        verificationStatus: 'practice_only'
       };
 
       setAiScore(layer2Result);
       setIsAnalyzing(false);
 
-      // Log attempt
       await learnerProgressService.logAttempt({
         learnerId: 'learner_default_01',
         contentId: `w${weekNumber}_writing_p7`,
@@ -106,8 +101,18 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           <p className="text-xs text-slate-500 font-medium mt-1">Write a complete story script based on 3 Pixar 3D visual story panels!</p>
         </div>
 
-        <div className="px-3 py-1.5 bg-amber-50 text-amber-800 rounded-xl text-xs font-black border border-amber-200 flex items-center gap-1.5 shadow-sm">
-          <AlertTriangle size={14} /> Status: practice_only
+        <div className="flex items-center gap-2">
+          {/* Show Hints Scaffolding Button */}
+          <button
+            onClick={() => setShowHintsModal(true)}
+            className="px-4 py-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm"
+          >
+            <HelpCircle size={14} className="text-amber-600" /> Show Hints
+          </button>
+
+          <div className="px-3 py-2 bg-purple-50 text-purple-800 rounded-xl text-xs font-black border border-purple-200 flex items-center gap-1.5 shadow-sm">
+            <AlertTriangle size={14} /> practice_only
+          </div>
         </div>
       </div>
 
@@ -118,129 +123,189 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
             <div className="relative w-full h-48 bg-slate-200 rounded-xl overflow-hidden mb-3 border border-slate-300">
               <img
                 src={panel.image_url}
-                alt={panel.title_en || `Panel ${idx + 1}`}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                alt={panel.title_en}
+                className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
               />
-              <span className="absolute bottom-2 left-2 px-2.5 py-1 bg-slate-900/80 text-white font-black text-[10px] rounded-lg backdrop-blur-md">
+              <span className="absolute top-2 left-2 px-2.5 py-1 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black rounded-lg uppercase">
                 Panel {idx + 1}
               </span>
             </div>
-            <h4 className="text-xs font-black text-slate-900 truncate">{panel.title_en}</h4>
-            <p className="text-[10px] text-slate-500 italic mt-0.5 truncate">{panel.title_vi}</p>
+
+            <h4 className="text-xs font-black text-slate-900 mb-1">{panel.title_en}</h4>
+            <p className="text-[11px] font-medium text-slate-600 leading-snug">{panel.description_en}</p>
           </div>
         ))}
       </div>
 
-      {/* 4-Color Word Bank Pills */}
+      {/* Interactive Word Bank Pills Container */}
       <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 mb-6 space-y-3">
         <div className="flex items-center justify-between">
-          <h4 className="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-            <Sparkles size={14} className="text-purple-600" /> Word Bank Pills (Click to insert into script):
-          </h4>
-          <span className="text-[10px] text-slate-500 font-bold">4 Color-Coded Categories</span>
+          <span className="text-xs font-black text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+            <Layers size={14} /> Tap Pills below to insert into your story script:
+          </span>
+          <button
+            onClick={() => setShowHintsModal(true)}
+            className="text-xs font-black text-purple-600 hover:underline"
+          >
+            Need Scaffolding Hints?
+          </button>
         </div>
 
-        {/* Action Verbs Pills (Blue) */}
-        <div className="flex flex-wrap gap-1.5">
-          {wordBankPills.action_verbs?.map((word) => (
-            <button
-              key={word}
-              onClick={() => handleInsertPill(word)}
-              className="px-3 py-1 bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-black rounded-lg border border-blue-200 transition active:scale-95 shadow-sm"
-            >
-              + {word}
-            </button>
-          ))}
-        </div>
+        <div className="space-y-2">
+          {/* Action Verbs */}
+          <div className="flex flex-wrap gap-1.5">
+            <span className="text-[10px] font-black uppercase text-indigo-500 self-center mr-1">Verbs:</span>
+            {wordBankPills.action_verbs.map((word) => (
+              <button
+                key={word}
+                onClick={() => handleInsertPill(word)}
+                className="px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg text-xs font-bold transition shadow-xs"
+              >
+                + {word}
+              </button>
+            ))}
+          </div>
 
-        {/* Connectors Pills (Purple) */}
-        <div className="flex flex-wrap gap-1.5">
-          {wordBankPills.connectors?.map((word) => (
-            <button
-              key={word}
-              onClick={() => handleInsertPill(word)}
-              className="px-3 py-1 bg-purple-100 hover:bg-purple-200 text-purple-800 text-xs font-black rounded-lg border border-purple-200 transition active:scale-95 shadow-sm"
-            >
-              + {word}
-            </button>
-          ))}
-        </div>
+          {/* Connectors */}
+          <div className="flex flex-wrap gap-1.5">
+            <span className="text-[10px] font-black uppercase text-purple-500 self-center mr-1">Connectors:</span>
+            {wordBankPills.connectors.map((word) => (
+              <button
+                key={word}
+                onClick={() => handleInsertPill(word)}
+                className="px-2.5 py-1 bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 rounded-lg text-xs font-bold transition shadow-xs"
+              >
+                + {word}
+              </button>
+            ))}
+          </div>
 
-        {/* Cumulative Chunks Pills (Amber) */}
-        <div className="flex flex-wrap gap-1.5">
-          {wordBankPills.cumulative_chunks?.map((chunk) => (
-            <button
-              key={chunk}
-              onClick={() => handleInsertPill(chunk)}
-              className="px-3 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-black rounded-lg border border-amber-300 transition active:scale-95 shadow-sm"
-            >
-              ⚡ {chunk}
-            </button>
-          ))}
+          {/* Chunks */}
+          <div className="flex flex-wrap gap-1.5">
+            <span className="text-[10px] font-black uppercase text-amber-600 self-center mr-1">Chunks:</span>
+            {wordBankPills.cumulative_chunks.map((word) => (
+              <button
+                key={word}
+                onClick={() => handleInsertPill(word)}
+                className="px-2.5 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-lg text-xs font-bold transition shadow-xs"
+              >
+                + {word}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Script Input Box */}
+      {/* Script Text Area Input */}
       <div className="space-y-3 mb-6">
-        <label className="block text-xs font-black text-slate-800 uppercase tracking-wider">
-          Your Story Script (Write at least 20 words describing the 3 pictures):
+        <label className="block text-xs font-black text-slate-700 uppercase">
+          Your 3-Picture Story Script (Minimum 20 words + 2 past tense verbs):
         </label>
         <textarea
+          rows={5}
           value={userScript}
           onChange={(e) => setUserScript(e.target.value)}
-          placeholder="First, Tom was playing with his soccer ball in the living room. Suddenly, the ball hit a glass flower vase and broke it. Finally, Tom apologized to his mom..."
-          rows={5}
-          className="w-full p-4 bg-slate-50 text-slate-900 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-500 font-sans text-sm leading-relaxed"
+          placeholder="First, Tom was playing soccer in the living room... Suddenly, the ball hit the table..."
+          className="w-full p-4 bg-white border border-slate-300 rounded-2xl text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
         />
 
-        <button
-          onClick={handleAnalyzeScript}
-          disabled={isAnalyzing || userScript.trim().length === 0}
-          className="w-full py-3.5 bg-purple-600 hover:bg-purple-700 text-white font-black rounded-xl text-base transition flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
-        >
-          <Sparkles size={18} /> {isAnalyzing ? 'Analyzing Script...' : 'Submit & Analyze Script'}
-        </button>
+        <div className="flex justify-end">
+          <button
+            onClick={handleAnalyzeScript}
+            disabled={isAnalyzing || userScript.trim().length === 0}
+            className="px-8 py-3.5 bg-purple-600 hover:bg-purple-700 text-white font-black rounded-xl text-sm transition shadow-md disabled:opacity-50 flex items-center gap-2"
+          >
+            <Sparkles size={16} /> {isAnalyzing ? 'Analyzing Script...' : 'Submit & Analyze Script'}
+          </button>
+        </div>
       </div>
 
-      {/* Layer 1 Rule-Based Evaluation Results */}
+      {/* Layer 1 Rule Feedback & Layer 2 AI Score */}
       {ruleScore && (
-        <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200 mb-4 animate-in fade-in">
-          <h4 className="text-sm font-black text-purple-950 mb-2">Layer 1: Script Analysis Results</h4>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-            <div className="bg-white p-2.5 rounded-xl border border-purple-100">
-              <span className="text-slate-500 block">Total Words</span>
-              <span className="text-base font-black text-purple-900">{ruleScore.wordCount}</span>
+        <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200 space-y-4 animate-in fade-in">
+          <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+            <span className="text-xs font-black uppercase text-slate-700">Layer 1 Rule Check:</span>
+            <span className={`text-xs font-black ${ruleScore.isRulePass ? 'text-emerald-600' : 'text-red-600'}`}>
+              {ruleScore.isRulePass ? '✅ Pass (Criteria Met)' : '❌ Needs Revision'}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-3 gap-3 text-center text-xs font-bold">
+            <div className="p-3 bg-white rounded-xl border border-slate-200">
+              <div className="text-slate-400 text-[10px] uppercase font-black">Word Count</div>
+              <div className="text-lg font-black text-slate-900">{ruleScore.wordCount} / 20 words</div>
             </div>
-            <div className="bg-white p-2.5 rounded-xl border border-purple-100">
-              <span className="text-slate-500 block">Past Verbs</span>
-              <span className="text-base font-black text-purple-900">{ruleScore.pastVerbsCount}</span>
+            <div className="p-3 bg-white rounded-xl border border-slate-200">
+              <div className="text-slate-400 text-[10px] uppercase font-black">Past Verbs</div>
+              <div className="text-lg font-black text-indigo-600">{ruleScore.pastVerbsCount} detected</div>
             </div>
-            <div className="bg-white p-2.5 rounded-xl border border-purple-100">
-              <span className="text-slate-500 block">Connectors</span>
-              <span className="text-base font-black text-purple-900">{ruleScore.connectorsCount}</span>
-            </div>
-            <div className="bg-white p-2.5 rounded-xl border border-purple-100">
-              <span className="text-slate-500 block">Rule Gatekeeper</span>
-              <span className={`text-base font-black ${ruleScore.isRulePass ? 'text-emerald-600' : 'text-amber-600'}`}>
-                {ruleScore.isRulePass ? 'PASSED' : 'NEEDS MORE WORDS'}
-              </span>
+            <div className="p-3 bg-white rounded-xl border border-slate-200">
+              <div className="text-slate-400 text-[10px] uppercase font-black">Connectors</div>
+              <div className="text-lg font-black text-purple-600">{ruleScore.connectorsCount} detected</div>
             </div>
           </div>
+
+          {aiScore && (
+            <div className="p-4 bg-purple-50 rounded-xl border border-purple-200 space-y-2 animate-in fade-in">
+              <div className="flex items-center justify-between">
+                <h4 className="text-sm font-black text-purple-950 flex items-center gap-1.5">
+                  <Film size={16} /> AI Movie Quality Score: {aiScore.movieQualityScore}/100
+                </h4>
+                <span className="px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-black uppercase">
+                  {aiScore.verificationStatus}
+                </span>
+              </div>
+              <p className="text-xs font-semibold text-purple-900">{aiScore.aiFeedbackText}</p>
+            </div>
+          )}
         </div>
       )}
 
-      {/* Layer 2 AI Evaluation Feedback */}
-      {aiScore && (
-        <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 animate-in fade-in">
-          <div className="flex items-center justify-between mb-2">
-            <h4 className="text-sm font-black text-emerald-950 flex items-center gap-1.5">
-              <CheckCircle2 size={16} className="text-emerald-600" /> Layer 2: AI Story Evaluation
-            </h4>
-            <span className="px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-black uppercase">
-              {aiScore.verificationStatus}
-            </span>
+      {/* Show Hints Modal */}
+      {showHintsModal && (
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl p-6 max-w-lg w-full shadow-2xl border border-slate-200 space-y-4 animate-in zoom-in-95">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+              <h3 className="text-base font-black text-slate-900 flex items-center gap-2">
+                <HelpCircle size={18} className="text-amber-500" /> Writing Scaffolding Hints
+              </h3>
+              <button
+                onClick={() => setShowHintsModal(false)}
+                className="p-1.5 hover:bg-slate-100 rounded-xl text-slate-400 hover:text-slate-700"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="space-y-3">
+              <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
+                <h4 className="text-xs font-black text-amber-950 uppercase">Suggested New Words (Core Verbs & Nouns):</h4>
+                <p className="text-xs font-bold text-amber-900">
+                  broke, fell, lost, found, slipped, dropped, damaged, apologized, flower vase, soccer ball.
+                </p>
+              </div>
+
+              <div className="p-3 bg-indigo-50 rounded-xl border border-indigo-200 space-y-1">
+                <h4 className="text-xs font-black text-indigo-950 uppercase">Suggested Collocations & Chunks:</h4>
+                <ul className="text-xs font-bold text-indigo-900 space-y-1 list-disc pl-4">
+                  <li>played soccer inside the living room</li>
+                  <li>hit the wooden table by accident</li>
+                  <li>broke the glass flower vase into pieces</li>
+                  <li>apologized to his mom for the mistake</li>
+                  <li>swept and cleaned up the floor carefully</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="pt-2 flex justify-end">
+              <button
+                onClick={() => setShowHintsModal(false)}
+                className="px-6 py-2.5 bg-slate-900 text-white font-black text-xs rounded-xl hover:bg-slate-800 transition"
+              >
+                Close Hints
+              </button>
+            </div>
           </div>
-          <p className="text-xs text-emerald-900 font-medium">{aiScore.aiFeedbackText}</p>
         </div>
       )}
     </div>

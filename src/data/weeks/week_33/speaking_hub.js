@@ -1,46 +1,79 @@
 /**
  * Week 33 Gold Standard Reference Data — Nova Speaking Hub
- * Includes Podcast Shadowing Scripts and Nova Examiner System Prompt.
+ * Includes 2-Phase Podcast Shadowing (5 Sentences + 1 Long Paragraph) and 5-Turn Live Talk Show.
  */
 
 export const speakingHubData = {
   week: 33,
   theme: "Apologizing for Clumsy Accidents",
 
-  // 1. Array of Podcast Shadowing Dialogue Sentences
-  shadowing_script: [
+  // Phase 1: EXACTLY 5 Single Podcast Shadowing Sentences
+  shadowing_sentences: [
     {
       id: "sh_01",
       speaker: "Tom",
       text: "I am so sorry! I broke the alarm clock because I was clumsy in the morning.",
-      audio_url: "/audio/shadowing_w33_01.mp3",
       phonetic_guide: "aɪ æm soʊ ˈsɑːri! aɪ broʊk ðə əˈlɑːrm klɑːk bɪˈkɑːz aɪ wɑːz ˈklʌmzi..."
     },
     {
       id: "sh_02",
       speaker: "Mia",
       text: "Don't worry! Accidents happen, but we must be more careful next time.",
-      audio_url: "/audio/shadowing_w33_02.mp3",
       phonetic_guide: "doʊnt ˈwɜːri! ˈæksədənts ˈhæpən, bʌt wiː mʌst biː mɔːr ˈkerfəl..."
     },
     {
       id: "sh_03",
       speaker: "Tom",
-      text: "Thank you for finding my lost backpack on the bus!",
-      audio_url: "/audio/shadowing_w33_03.mp3",
-      phonetic_guide: "θæŋk juː fɔːr ˈfaɪndɪŋ maɪ lɔːst ˈbæk.pæk ɑːn ðə bʌs!"
+      text: "While I was running downstairs, I slipped on a wet puddle and fell onto the rug.",
+      phonetic_guide: "waɪl aɪ wɑːz ˈrʌnɪŋ ˌdaʊnˈsterz, aɪ slɪpt ɑːn ə wet ˈpʌdəl ænd fel ˈɑːntu ðə rʌɡ."
+    },
+    {
+      id: "sh_04",
+      speaker: "Tom",
+      text: "Thank you for finding my lost backpack on the bus seat!",
+      phonetic_guide: "θæŋk juː fɔːr ˈfaɪndɪŋ maɪ lɔːst ˈbæk.pæk ɑːn ðə bʌs siːt!"
+    },
+    {
+      id: "sh_05",
+      speaker: "Mia",
+      text: "You should apologize to your teacher and promise to be more cautious in the future.",
+      phonetic_guide: "juː ʃʊd əˈpɑːlədʒaɪz tuː jʊər ˈtiːtʃər ænd ˈprɑːmɪs tuː biː mɔːr ˈkɑːʃəs..."
     }
   ],
 
-  // 2. Nova Examiner System Prompt (1-1 AI Dialogue State Machine Config)
-  nova_examiner_prompt: `You are Nova, a warm but firm Cambridge Speaking Examiner for 8-11 year old students.
-Target Topic: "The Accident File & Making Amends" (Week 33).
-Your Goal: Conduct a 1-1 interactive dialogue with gentle pressure to test student spoken English fluency.
+  // Phase 2: 1 Continuous Long Paragraph combining all 5 sentences above
+  shadowing_paragraph: {
+    title: "Continuous Shadowing: Tom's Clumsy Morning Story",
+    text: "I am so sorry! I broke the alarm clock because I was clumsy in the morning. Don't worry! Accidents happen, but we must be more careful next time. While I was running downstairs, I slipped on a wet puddle and fell onto the rug. Thank you for finding my lost backpack on the bus seat! You should apologize to your teacher and promise to be more cautious in the future.",
+    phonetic_guide: "Full story intonation guide: Practice continuous rhythm, rising pitch on questions, and falling pitch on apologies."
+  },
 
-Rules:
-1. Ask clear questions about clumsy mistakes, broken items, or lost objects.
-2. Example Question: "What did your parents say when you broke something by accident?"
-3. If student remains silent or unresponsive for > 2 turns, automatically lower difficulty tier (e.g., ask simple binary or choice questions: "Did you say sorry? Say: Yes I did, or No I did not").
-4. Keep maximum turns between 8 and 20 turns before completing the interview.
-5. All result cards generated MUST strictly display the badge: practice_only.`
+  // 5-Turn Interactive Live Talk Show Logic
+  talkshow_turns: [
+    {
+      turn_number: 1,
+      nova_question: "Welcome to Nova Live Talk Show! Can you tell me what broke when Tom woke up in the morning?",
+      hint_response: "Tom broke his alarm clock because he reached clumsily for his glasses."
+    },
+    {
+      turn_number: 2,
+      nova_question: "Oh no! And why did he fall down while running downstairs?",
+      hint_response: "He slipped on a wet puddle on the floor and fell onto the rug."
+    },
+    {
+      turn_number: 3,
+      nova_question: "What happened when Tom dropped the glass of orange juice?",
+      hint_response: "He damaged his homework notebook with the spilled juice."
+    },
+    {
+      turn_number: 4,
+      nova_question: "Who found Tom's lost backpack on the school bus?",
+      hint_response: "His kind friend Mia found his backpack on the bus seat."
+    },
+    {
+      turn_number: 5,
+      nova_question: "What important lesson did Tom learn at the end of the day?",
+      hint_response: "Tom learned to apologize for his mistakes and be more cautious next time."
+    }
+  ]
 };
