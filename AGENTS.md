@@ -101,3 +101,10 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
 - **Lesson-009 (No Truncation)**: Tuyệt đối KHÔNG cắt xén code hoặc dùng `...` làm gãy file JSON/JS khi sinh nội dung hàng loạt.
 - **Lesson-011 (Unified Shadowing)**: Không tách file Shadowing ADV/EASY riêng làm trôi timestamp; dùng 1 file duy nhất bọc dữ liệu chuẩn.
 - **Lesson-014 (No Literal `\n` in JSON)**: File JSON tuyệt đối không chứa `\n` thô trong string literals gây crash Vite build parser.
+- **Lesson-016 (Single-line Comment Syntax Protection)**: Sau khi refactor hoặc replace code, tuyệt đối không append câu lệnh `const`/`let`/`var` vào cuối dòng comment `//`. Các câu lệnh khai báo phải nằm ở DÒNG MỚI ĐỘC LẬP để tránh bị comment bỏ qua gây `ReferenceError`.
+- **Lesson-017 (Master Pipeline Matrix Verification Gatekeeper)**: Khi sinh hoặc rebuild dữ liệu tuần mới:
+  1. `read_social` & `explore.js` BẮT BUỘC đạt độ dài **145-220 từ**. `explore.js` phải xuất `check_questions`, `comprehension_questions`, và `questions`.
+  2. `logic_lab.js` BẮT BUỘC chứa 3 tab với **15 câu hỏi độc lập** (5 Logic Science, 5 Singapore Bar Models SVG, 5 Social Quiz), KHÔNG lấy lại câu hỏi từ `read.js`.
+  3. `mindmap.js` BẮT BUỘC chứa 6 `centerStems` × 6 `branchLabels` = **36 nhánh độc bản** theo chủ đề tuần (KHÔNG dùng nhánh mặc định vỡ nốt/ngã chảy máu).
+  4. `ask_ai.js` BẮT BUỘC chứa **5 câu hỏi luyện nói** + hint + word_bank.
+  5. `daily_watch.js` BẮT BUỘC dùng **5 Video YouTube giáo dục thoại** đã verify **HTTP 200 OK** thumbnail.
