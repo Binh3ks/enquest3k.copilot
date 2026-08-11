@@ -16,7 +16,7 @@ export const writingHubData = {
       description_en: "First, Tom was playing with his soccer ball inside the living room near the table.",
       description_vi: "Đầu tiên, Tom đang đá bóng trong phòng khách gần chiếc bàn.",
       image_prompt: "Cute 3D render of a young boy playing with a soccer ball in a cozy living room near a wooden table, Pixar animation style, vibrant colors, soft studio lighting, clean background. No text or letters in the image.",
-      image_url: "/images/week33/writing_panel_1.webp"
+      image_url: "/images/week33/writing_panel_1.png"
     },
     {
       panel_id: "panel_2",
@@ -25,7 +25,7 @@ export const writingHubData = {
       description_en: "Suddenly, the ball hit the table, and a glass flower vase fell down and broke into pieces.",
       description_vi: "Bất ngờ, quả bóng đập vào bàn, làm chiếc bình hoa thủy tinh rơi xuống và vỡ tan.",
       image_prompt: "Cute 3D render of a glass flower vase breaking on the floor near a wooden table, Pixar animation style, vibrant colors, soft studio lighting, clean background. No text or letters in the image.",
-      image_url: "/images/week33/writing_panel_2.webp"
+      image_url: "/images/week33/writing_panel_2.png"
     },
     {
       panel_id: "panel_3",
@@ -34,7 +34,7 @@ export const writingHubData = {
       description_en: "Finally, Tom apologized to his mom and carefully cleaned up the broken pieces.",
       description_vi: "Cuối cùng, Tom xin lỗi mẹ và cẩn thận dọn dẹp các mảnh vỡ.",
       image_prompt: "Cute 3D render of a boy apologizing to his mom while sweeping the floor together, Pixar animation style, vibrant colors, soft studio lighting, clean background. No text or letters in the image.",
-      image_url: "/images/week33/writing_panel_3.webp"
+      image_url: "/images/week33/writing_panel_3.png"
     }
   ],
 

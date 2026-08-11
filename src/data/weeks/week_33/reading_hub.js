@@ -203,7 +203,7 @@ export const readingHubData = {
       title_vi: "Cảnh 1: Lỗi Sai Buổi Sáng",
       description_en: "Tom woke up late and accidentally broke his alarm clock while reaching for it clumsily.",
       description_vi: "Tom thức dậy muộn và vô tình làm vỡ chiếc đồng hồ báo thức khi với tay vụng về.",
-      image_url: "/images/week33/webtoon_scene_1.webp",
+      image_url: "/images/week33/webtoon_scene_1.png",
       audio_sfx_url: "/audio/sfx/alarm_crash.mp3",
       lexical_chunks: [
         { word: "broke", chunk: "broke his alarm clock", x: 45, y: 55, vi: "đã làm vỡ đồng hồ" },
@@ -216,7 +216,7 @@ export const readingHubData = {
       title_vi: "Cảnh 2: Trượt Chân Trên Sàn",
       description_en: "He rushed downstairs in a hurry, slipped on a wet puddle, and fell onto the rug.",
       description_vi: "Cậu vội vã chạy xuống nhà, trượt chân trên vũng nước và ngã xuống tấm thảm.",
-      image_url: "/images/week33/webtoon_scene_2.webp",
+      image_url: "/images/week33/webtoon_scene_2.png",
       audio_sfx_url: "/audio/sfx/slip_fall.mp3",
       lexical_chunks: [
         { word: "slipped", chunk: "slipped on a puddle", x: 30, y: 65, vi: "đã trượt chân trên vũng nước" },
@@ -229,7 +229,7 @@ export const readingHubData = {
       title_vi: "Cảnh 3: Đánh Rơi Ly Nước",
       description_en: "While making breakfast, he dropped a glass of orange juice and damaged his notebook.",
       description_vi: "Trong lúc làm bữa sáng, cậu làm rơi ly nước cam và làm hư hại cuốn vở bài tập.",
-      image_url: "/images/week33/webtoon_scene_3.webp",
+      image_url: "/images/week33/webtoon_scene_3.png",
       audio_sfx_url: "/audio/sfx/glass_spill.mp3",
       lexical_chunks: [
         { word: "dropped", chunk: "dropped a glass", x: 50, y: 50, vi: "đã đánh rơi ly nước" },
@@ -242,7 +242,7 @@ export const readingHubData = {
       title_vi: "Cảnh 4: Chiếc Cặp Bị Mất",
       description_en: "At the bus stop, Tom realized he lost his red backpack and searched everywhere for it.",
       description_vi: "Tại trạm xe buýt, Tom nhận ra mình đã làm mất chiếc cặp đỏ và tìm kiếm khắp nơi.",
-      image_url: "/images/week33/webtoon_scene_4.webp",
+      image_url: "/images/week33/webtoon_scene_4.png",
       audio_sfx_url: "/audio/sfx/bus_horn.mp3",
       lexical_chunks: [
         { word: "lost", chunk: "lost his backpack", x: 40, y: 55, vi: "đã làm mất cặp" },
@@ -255,7 +255,7 @@ export const readingHubData = {
       title_vi: "Cảnh 5: Người Bạn Tốt Bụng",
       description_en: "Luckily, his friend Mia found the backpack on the bus seat and brought it to class.",
       description_vi: "May mắn thay, bạn Mia đã tìm thấy chiếc cặp trên ghế xe buýt và mang vào lớp.",
-      image_url: "/images/week33/webtoon_scene_5.webp",
+      image_url: "/images/week33/webtoon_scene_5.png",
       audio_sfx_url: "/audio/sfx/bell_chime.mp3",
       lexical_chunks: [
         { word: "found", chunk: "found the backpack", x: 50, y: 45, vi: "đã tìm thấy chiếc cặp" },
@@ -268,7 +268,7 @@ export const readingHubData = {
       title_vi: "Cảnh 6: Bài Học Về Sự Thận Trọng",
       description_en: "Tom apologized to his teacher for the mistake and promised to be more cautious next time.",
       description_vi: "Tom đã xin lỗi cô giáo vì sự cố và hứa sẽ thận trọng hơn trong những lần sau.",
-      image_url: "/images/week33/webtoon_scene_6.webp",
+      image_url: "/images/week33/webtoon_scene_6.png",
       audio_sfx_url: "/audio/sfx/applause_soft.mp3",
       lexical_chunks: [
         { word: "apologized", chunk: "apologized for the mistake", x: 40, y: 40, vi: "đã xin lỗi vì sai lầm" },

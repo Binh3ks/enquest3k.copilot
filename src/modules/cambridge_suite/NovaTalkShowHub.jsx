@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
-import { Mic, Volume2, Radio, Star, AlertTriangle, MessageSquare, Play, Square, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Mic, Volume2, Radio, Star, AlertTriangle, MessageSquare, Play, RefreshCw, CheckCircle2 } from 'lucide-react';
 
 export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [subMode, setSubMode] = useState('podcast'); // 'podcast' | 'talkshow'
@@ -22,7 +22,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [isTalkshowEnded, setIsTalkshowEnded] = useState(false);
 
   // Podcast Shadowing Audio Script
-  const shadowingScript = data?.shadowingScript || {
+  const shadowingScript = data?.shadowingScript || data?.shadowing_script || {
     title: 'Apologizing for Clumsy Mistakes',
     audio_url: '/audio/shadowing_w33.mp3',
     transcript: 'I am so sorry! I broke the clock because I was clumsy in the morning.'
@@ -104,32 +104,33 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-slate-950 text-slate-100 rounded-3xl border border-slate-800 shadow-2xl font-sans">
+    <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
         <div>
-          <span className="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 w-fit">
+          <span className="px-3.5 py-1.5 bg-red-50 text-red-700 border border-red-200 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
             <Radio size={14} /> Hub 4: Nova Talk Show & Exam Simulator (W{weekNumber})
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-amber-400 mt-2">
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2 tracking-tight">
             Podcast Shadowing & AI Examiner Talk Show
           </h1>
+          <p className="text-xs text-slate-500 font-medium mt-1">Practise Podcast Shadowing & 1-on-1 Interactive Dialogue with AI Examiner Nova!</p>
         </div>
 
-        {/* Sub-mode Navigation Switcher */}
-        <div className="flex items-center gap-2 bg-slate-900 p-1.5 rounded-2xl border border-slate-800">
+        {/* Sub-Mode Switcher */}
+        <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
           <button
             onClick={() => setSubMode('podcast')}
-            className={`px-4 py-2 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 ${
-              subMode === 'podcast' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:text-white'
+            className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+              subMode === 'podcast' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <Volume2 size={14} /> Podcast Shadowing
           </button>
           <button
             onClick={() => setSubMode('talkshow')}
-            className={`px-4 py-2 rounded-xl text-xs font-extrabold transition flex items-center gap-1.5 ${
-              subMode === 'talkshow' ? 'bg-red-600 text-white shadow-md' : 'text-slate-400 hover:text-white'
+            className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <MessageSquare size={14} /> Nova Live Talk Show
@@ -137,123 +138,114 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         </div>
       </div>
 
-      {/* SUB-MODE 1: PODCAST SHADOWING */}
       {subMode === 'podcast' ? (
-        <div className="space-y-6 bg-slate-900 p-6 rounded-2xl border border-slate-800">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-800">
-            <div>
-              <span className="text-xs text-indigo-400 font-bold uppercase">Podcast Studio</span>
-              <h3 className="text-xl font-black text-amber-400 mt-1">{shadowingScript.title}</h3>
+        /* MODE 1: PODCAST SHADOWING */
+        <div className="space-y-6">
+          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">Podcast Studio</span>
+                <h3 className="text-lg font-black text-slate-900 mt-0.5">{shadowingScript.title}</h3>
+              </div>
+              <span className="px-3 py-1 bg-amber-50 text-amber-800 border border-amber-200 rounded-lg text-xs font-black">
+                <AlertTriangle size={12} className="inline mr-1" /> practice_only
+              </span>
             </div>
 
-            {/* MANDATORY UNCALIBRATED PRACTICE ONLY BADGE */}
-            <span className="px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/40 rounded-full text-xs font-mono font-bold flex items-center gap-1">
-              <AlertTriangle size={12} /> practice_only
+            {/* Transcript Box */}
+            <div className="p-4 bg-white rounded-xl border border-slate-200 mb-6 shadow-sm">
+              <div className="text-[10px] text-slate-400 font-black uppercase mb-1">Target Transcript:</div>
+              <p className="text-base font-bold text-slate-900 italic leading-relaxed">
+                "{shadowingScript.transcript}"
+              </p>
+            </div>
+
+            {/* Recording Controls */}
+            <div className="flex flex-col items-center justify-center py-4">
+              <button
+                onClick={handleToggleRecording}
+                className={`px-8 py-4 rounded-2xl text-sm font-black transition flex items-center gap-2 shadow-lg ${
+                  isRecording ? 'bg-red-600 hover:bg-red-700 text-white animate-pulse' : 'bg-indigo-600 hover:bg-indigo-700 text-white'
+                }`}
+              >
+                <Mic size={18} /> {isRecording ? 'Stop Recording (Analyzing Voice...)' : 'Start Shadowing Recording'}
+              </button>
+            </div>
+
+            {/* Score Output */}
+            {podcastScore && (
+              <div className="mt-6 p-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-center animate-in fade-in">
+                <div className="flex justify-center items-center gap-1 text-amber-500 mb-2">
+                  {[...Array(podcastScore.stars)].map((_, i) => (
+                    <Star key={i} size={20} className="fill-amber-400" />
+                  ))}
+                </div>
+                <h4 className="text-base font-black text-emerald-950">Pronunciation Score: {podcastScore.accuracyScore}%</h4>
+                <p className="text-xs text-emerald-700 font-semibold mt-1">Fluency: {podcastScore.fluencyScore}% · Tag: {podcastScore.verificationStatus}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        /* MODE 2: NOVA LIVE TALK SHOW 1-ON-1 EXAMINER */
+        <div className="space-y-4">
+          <div className="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs font-black text-slate-700">
+            <span className="flex items-center gap-1">
+              <Radio size={14} className="text-purple-600" /> Dialogue Turn: {turnCount}/{maxTurns}
+            </span>
+            <span className="flex items-center gap-1 text-indigo-700">
+              Difficulty Tier: {difficultyTier === 2 ? 'A2 Flyers' : 'A1 Scaffolded'}
+            </span>
+            <span className="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] uppercase font-black">
+              practice_only
             </span>
           </div>
 
-          <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
-            <h4 className="text-xs text-slate-400 font-bold uppercase mb-2">Transcript Mẫu:</h4>
-            <p className="text-lg font-bold text-slate-100 italic">"{shadowingScript.transcript}"</p>
-          </div>
-
-          {/* Controls */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-4">
-            <button
-              onClick={handleToggleRecording}
-              className={`px-6 py-3.5 rounded-2xl font-bold text-sm transition flex items-center gap-2 shadow-lg ${
-                isRecording ? 'bg-red-600 hover:bg-red-500 text-white animate-pulse' : 'bg-indigo-600 hover:bg-indigo-500 text-white'
-              }`}
-            >
-              <Mic size={18} /> {isRecording ? 'Đang Thu Âm (Bấm để dừng)' : 'Bắt Đầu Ghi Âm Nhại Giọng'}
-            </button>
-          </div>
-
-          {/* Pronunciation Radar Results */}
-          {podcastScore && (
-            <div className="p-4 bg-indigo-950/60 rounded-xl border border-indigo-500/40 text-center animate-in fade-in duration-200">
-              <h4 className="text-xs text-indigo-300 font-bold uppercase mb-2">Pronunciation Radar Rating:</h4>
-              <div className="flex justify-center gap-1 mb-2">
-                {[...Array(podcastScore.stars)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <p className="text-sm font-semibold text-slate-200">
-                Độ chính xác: <span className="text-emerald-400 font-bold">{podcastScore.accuracyScore}%</span> | Lưu khoát: <span className="text-purple-400 font-bold">{podcastScore.fluencyScore}%</span>
-              </p>
-            </div>
-          )}
-        </div>
-      ) : (
-        /* SUB-MODE 2: NOVA LIVE TALK SHOW (State Machine) */
-        <div className="space-y-6 bg-slate-900 p-6 rounded-2xl border border-slate-800">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-800">
-            <div>
-              <span className="text-xs text-red-400 font-bold uppercase">AI Examiner 1-1 Dialogue</span>
-              <h3 className="text-xl font-black text-amber-400 mt-1">Nova Live Talk Show (Turn {turnCount}/{maxTurns})</h3>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-slate-400 font-mono bg-slate-950 px-2.5 py-1 rounded-lg">
-                Difficulty Tier: <span className="text-amber-400 font-bold">{difficultyTier}</span>
-              </span>
-              {/* MANDATORY PRACTICE ONLY BADGE */}
-              <span className="px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/40 rounded-full text-xs font-mono font-bold flex items-center gap-1">
-                <AlertTriangle size={12} /> practice_only
-              </span>
-            </div>
-          </div>
-
-          {/* Chat History Messages */}
-          <div className="space-y-3 max-h-80 overflow-y-auto p-4 bg-slate-950 rounded-xl border border-slate-800">
+          {/* Chat Messages Log */}
+          <div className="h-80 overflow-y-auto p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3 shadow-inner">
             {chatHistory.map((msg, idx) => (
               <div
                 key={idx}
-                className={`p-3.5 rounded-2xl max-w-[80%] text-sm font-medium leading-relaxed ${
-                  msg.sender === 'nova'
-                    ? 'bg-slate-800 text-slate-100 border border-slate-700 self-start'
-                    : 'bg-indigo-600 text-white self-end ml-auto'
-                }`}
+                className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div className="text-[10px] text-slate-400 font-bold mb-1 uppercase">
-                  {msg.sender === 'nova' ? '🤖 Nova Examiner' : '👤 Student'}
+                <div
+                  className={`max-w-md p-3.5 rounded-2xl text-xs font-semibold leading-relaxed ${
+                    msg.sender === 'user'
+                      ? 'bg-indigo-600 text-white rounded-br-none shadow-sm'
+                      : 'bg-white text-slate-900 border border-slate-200 rounded-bl-none shadow-sm'
+                  }`}
+                >
+                  <div className="text-[9px] font-black uppercase mb-1 opacity-75">
+                    {msg.sender === 'user' ? 'You' : 'Nova AI Examiner'}
+                  </div>
+                  {msg.text}
                 </div>
-                {msg.text}
               </div>
             ))}
           </div>
 
-          {/* Input Controls */}
-          {isTalkshowEnded ? (
-            <div className="p-6 bg-slate-950 rounded-2xl border border-amber-500/40 text-center space-y-3">
-              <h3 className="text-2xl font-black text-amber-400">🎉 THẺ KẾT QUẢ TẠM THỜI (PRACTICE ONLY)</h3>
-              <p className="text-sm text-slate-300">Bạn đã hoàn thành phiên nói hội thoại 1-1 với Nova Examiner!</p>
-              <div className="inline-block px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/40 rounded-full text-xs font-mono font-bold">
-                Trạng thái: practice_only (Chờ Calibration chính thức)
-              </div>
-            </div>
-          ) : (
-            <div className="flex gap-2">
+          {/* User Speech Input Box */}
+          {!isTalkshowEnded ? (
+            <div className="flex items-center gap-2">
               <input
                 type="text"
                 value={userSpeechInput}
                 onChange={(e) => setUserSpeechInput(e.target.value)}
-                placeholder="Trả lời bằng giọng nói / gõ văn bản..."
-                className="flex-1 px-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-slate-100 focus:outline-none focus:ring-2 focus:ring-red-500 text-sm font-medium"
+                placeholder="Type or speak your answer to Nova..."
+                onKeyDown={(e) => e.key === 'Enter' && handleSendTalkshowMessage(userSpeechInput)}
+                className="flex-1 p-3.5 bg-slate-50 text-slate-900 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
               <button
                 onClick={() => handleSendTalkshowMessage(userSpeechInput)}
-                className="px-5 py-3 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl text-sm transition shadow-md"
+                className="px-5 py-3.5 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-black shadow-md transition"
               >
-                Gửi câu trả lời
+                Send Answer
               </button>
-              <button
-                onClick={() => handleSendTalkshowMessage('')}
-                className="px-4 py-3 bg-slate-800 hover:bg-slate-700 text-slate-400 font-bold rounded-xl text-xs transition"
-                title="Giả lập im lặng để test tự hạ độ khó"
-              >
-                (Bỏ qua / Im lặng)
-              </button>
+            </div>
+          ) : (
+            <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-xl text-center">
+              <h4 className="text-sm font-black text-emerald-950">Talk Show Exam Completed!</h4>
+              <p className="text-xs text-emerald-700 mt-1">12 turns completed successfully. Score logged to progress service.</p>
             </div>
           )}
         </div>
