@@ -1,86 +1,69 @@
 export default {
-  "title": "Writing: The Ant and the Grasshopper Story",
-  "audio_url": null,
-  "min_words": 30,
-  "model_sentence": "Once upon a time there was an ant and a grasshopper. The ant worked hard every day and gathered seeds. The grasshopper only played and sang songs all summer. When winter came, the grasshopper was very cold and hungry. The kind ant ant gave the grasshopper some food. They learned an important lesson: always prepare for the future. Now the ant and the grasshopper work hard. Once upon a time there was an ant and a grasshopper. Once upon a time there was an ant and a grasshopper. Once upon a time there was an ant and a grasshopper.",
-  "instruction_en": "Write about the ant and the grasshopper story. Use at least 3 of these words: ant, grasshopper, worked, gathered, seeds, winter, cold, hungry, shared, lesson",
-  "instruction_vi": "Viết về câu chuyện con kiến và con châu chấu. Dùng ít nhất 3 từ: ant, grasshopper, worked, gathered, seeds, winter, cold, hungry, shared, lesson",
-  "prompt_en": "Write about the ant and the grasshopper: The ant worked hard and gathered seeds. The grasshopper only played. When winter came, the grasshopper was cold and hungry.",
-  "prompt_vi": "Viết về con kiến và châu chấu: Con kiến làm việc chăm chỉ và nhặt hạt. Con châu chấu chỉ chơi. Khi mùa đông đến, châu chấu lạnh và đói.",
-  "keywords": [
-    "ant",
-    "grasshopper",
-    "worked",
-    "gathered",
-    "seeds",
-    "winter",
-    "cold",
-    "hungry",
-    "shared",
-    "lesson",
-    "summer",
-    "food"
-  ],
-  "topic_talk_prompt": "Tell me about a time when you helped a friend or a friend helped you!",
+  "title": "The Ant and the Grasshopper — Fable & Work Ethic",
+  "min_sentences": 10,
+  "theme": "fable_and_moral",
+  "min_words": 65,
+  "model_sentence": "All summer long, on a bright sunny summer day, the tiny ant worked hard while gathering food grain by grain. Meanwhile, the lazy grasshopper sat near the ice-cold water stream and sang cheerfully under the warm sun. Suddenly, dark clouds covered the sky and the warm days disappeared quickly. When winter came, heavy snow fell all over the forest and winter arrived. The helpless grasshopper had no food left and was shivering in cold. He felt deeply worried and slowly walked to the ant's cozy house. The kind ant invited him inside and shared her warm food with him. The grasshopper was touched by her kindness and felt extremely relieved. Eventually, he learned a valuable lesson to work hard before winter. From that day on, he always worked hard to prepare for the future.",
+  "topic_talk_prompt": "Tell me about a time when you worked hard with your friends to finish a project!",
   "sentence_frames": [
     {
-      "template": "Once upon a time there was an ___ and a grasshopper.",
+      "template": "All summer long, on a _____ summer day, the tiny ant worked hard while gathering food grain by grain.",
       "answers": [
-        "ant"
+        "bright sunny"
       ]
     },
     {
-      "template": "The ant ___ hard every day and gathered seeds.",
+      "template": "Meanwhile, the lazy grasshopper sat near the _____ water stream and sang cheerfully.",
       "answers": [
-        "worked"
+        "ice-cold"
       ]
     },
     {
-      "template": "The grasshopper only ___ and sang songs all summer.",
+      "template": "_____, dark clouds covered the sky and the warm days disappeared quickly.",
       "answers": [
-        "played"
+        "Suddenly"
       ]
     },
     {
-      "template": "When ___ came, the grasshopper was very cold and hungry.",
+      "template": "When winter came, heavy snow fell all over the forest and winter _____.",
       "answers": [
-        "winter"
+        "arrived"
       ]
     },
     {
-      "template": "The kind ___ ant gave the grasshopper some food.",
+      "template": "The helpless grasshopper had no food left and was _____ in cold.",
       "answers": [
-        "ant"
+        "shivering"
       ]
     },
     {
-      "template": "They learned an important ___: always prepare for the future.",
+      "template": "He felt _____ worried and slowly walked to the ant's cozy house.",
       "answers": [
-        "lesson"
+        "deeply"
       ]
     },
     {
-      "template": "Now the ant and the grasshopper work ___.",
+      "template": "The kind ant invited him inside and _____ her warm food with him.",
+      "answers": [
+        "shared"
+      ]
+    },
+    {
+      "template": "The grasshopper was touched by her kindness and felt _____ relieved.",
+      "answers": [
+        "extremely"
+      ]
+    },
+    {
+      "template": "_____, he learned a valuable lesson to work hard before winter.",
+      "answers": [
+        "Eventually"
+      ]
+    },
+    {
+      "template": "From that day on, he always worked _____ to prepare for the future.",
       "answers": [
         "hard"
-      ]
-    },
-    {
-      "template": "Once upon a time there was an ___ and a grasshopper.",
-      "answers": [
-        "ant"
-      ]
-    },
-    {
-      "template": "Once upon a time there was an ___ and a grasshopper.",
-      "answers": [
-        "ant"
-      ]
-    },
-    {
-      "template": "Once upon a time there was an ___ and a grasshopper.",
-      "answers": [
-        "ant"
       ]
     }
   ],
@@ -88,57 +71,37 @@ export default {
     "vocabulary_bank": {
       "label_en": "💡 Need help? Click 💡 next to each blank",
       "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
-      "show_by_default": true,
-      "scaffolding_stage": "high",
+      "show_by_default": false,
+      "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "ant",
-          "vi": "con kiến",
+          "word": "bright sunny",
+          "vi": "nắng hè rực rỡ",
           "distractor": false
         },
         {
-          "word": "grasshopper",
-          "vi": "con châu chấu",
+          "word": "ice-cold",
+          "vi": "lạnh như băng",
           "distractor": false
         },
         {
-          "word": "worked",
-          "vi": "làm việc",
+          "word": "Suddenly",
+          "vi": "Đột nhiên",
           "distractor": false
         },
         {
-          "word": "gathered",
-          "vi": "nhặt",
+          "word": "arrived",
+          "vi": "đã đến",
           "distractor": false
         },
         {
-          "word": "seeds",
-          "vi": "hạt",
+          "word": "shivering",
+          "vi": "run rẩy",
           "distractor": false
         },
         {
-          "word": "winter",
-          "vi": "mùa đông",
-          "distractor": false
-        },
-        {
-          "word": "cold",
-          "vi": "lạnh",
-          "distractor": false
-        },
-        {
-          "word": "hungry",
-          "vi": "đói",
-          "distractor": false
-        },
-        {
-          "word": "kind",
-          "vi": "tốt bụng",
-          "distractor": false
-        },
-        {
-          "word": "gave",
-          "vi": "cho",
+          "word": "deeply",
+          "vi": "sâu sắc",
           "distractor": false
         },
         {
@@ -147,28 +110,28 @@ export default {
           "distractor": false
         },
         {
-          "word": "lesson",
-          "vi": "bài học",
+          "word": "extremely",
+          "vi": "cực kỳ",
           "distractor": false
         },
         {
-          "word": "prepare",
-          "vi": "chuẩn bị",
+          "word": "Eventually",
+          "vi": "Rốt cuộc",
           "distractor": false
         },
         {
-          "word": "future",
-          "vi": "tương lai",
+          "word": "hard",
+          "vi": "chăm chỉ",
           "distractor": false
         },
         {
-          "word": "summer",
-          "vi": "mùa hè",
+          "word": "slowly",
+          "vi": "chậm rãi",
           "distractor": true
         },
         {
-          "word": "played",
-          "vi": "chơi",
+          "word": "delicious",
+          "vi": "ngon miệng",
           "distractor": true
         }
       ]
@@ -178,82 +141,40 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week34/story_writing_pic.jpg",
-      "image_prompt": "A simple picture for week 34 story writing.",
+      "image_prompt": "In our fun English storytelling class today, my group presented the fable of the Ant and the Grasshopper. The ant gathered food grain by grain during bright sunny summer while the grasshopper sang cheerfully. When winter came, the grasshopper was shivering in cold. Watercolor children book illustration style.",
       "word_bank": {
-        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
-        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
-        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
-        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+        "action_verbs": [
+          "gathered food",
+          "grain by grain",
+          "sang cheerfully",
+          "shivering in cold",
+          "shared warm food"
+        ],
+        "cumulative_chunks": [
+          "bright sunny summer",
+          "ice-cold water",
+          "felt deeply worried",
+          "felt extremely relieved",
+          "valuable lesson"
+        ],
+        "connectors": [
+          "All summer long",
+          "Meanwhile",
+          "Suddenly",
+          "When winter came",
+          "Eventually"
+        ],
+        "grammar_boosters": [
+          "while gathering food",
+          "while the ant was working",
+          "so that he could survive"
+        ]
       },
       "writing_prompts": {
-        "en": "Look at the picture. What can you see? Write simply.",
-        "vi": "Nhìn bức tranh. Bạn thấy gì? Viết đơn giản."
+        "en": "Look at the picture. Describe how the ant gathered food during summer while the grasshopper sang cheerfully, and what happened when winter arrived.",
+        "vi": "Nhìn bức tranh. Mô tả cách chú kiến tích trữ thức ăn trong mùa hè trong khi chú châu chấu ca hát, và chuyện gì xảy ra khi mùa đông đến."
       },
-      "rubric_tier": 1,
-      "min_sentences": 6,
-      "sentence_frames": [
-        {
-          "template": "The first pig built a ___",
-          "answers": [
-            "weak house"
-          ]
-        },
-        {
-          "template": "The second pig used ___",
-          "answers": [
-            "wood"
-          ]
-        },
-        {
-          "template": "The third pig used ___",
-          "answers": [
-            "strong metal"
-          ]
-        },
-        {
-          "template": "The wolf blew down ___",
-          "answers": [
-            "the first house"
-          ]
-        },
-        {
-          "template": "The pigs ran and ___",
-          "answers": [
-            "locked the door"
-          ]
-        },
-        {
-          "template": "In the end they ___",
-          "answers": [
-            "sang a happy song"
-          ]
-        },
-        {
-          "template": "The first pig built a ___",
-          "answers": [
-            "weak house"
-          ]
-        },
-        {
-          "template": "The first pig built a ___",
-          "answers": [
-            "weak house"
-          ]
-        },
-        {
-          "template": "The first pig built a ___",
-          "answers": [
-            "weak house"
-          ]
-        },
-        {
-          "template": "The first pig built a ___",
-          "answers": [
-            "weak house"
-          ]
-        }
-      ]
+      "rubric_tier": 2
     }
-  },
-  "min_sentences": 10
+  }
 };

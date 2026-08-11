@@ -1,77 +1,69 @@
 export default {
-  "title": "The Submarine Buoyancy Rescue & Silk Road Writing",
-  "title_en": "The Submarine Buoyancy Rescue & Silk Road Writing",
-  "prompt_en": "Write a complete story about how Leo applied Archimedes buoyancy principle to float the 150 kg chest, or how Marco Polo traveled the Silk Road.",
-  "prompt_vi": "Viết một câu chuyện hoàn chỉnh về cách Leo áp dụng nguyên lý lực đẩy Archimedes để nâng rương 150kg, hoặc cách Marco Polo du hành Con đường Tơ lụa.",
+  "title": "Adventure Stories — The Secret Cave & Ancient Map",
+  "min_sentences": 10,
+  "theme": "adventure",
+  "min_words": 65,
+  "model_sentence": "Early in the morning, the brave explorers walked into the forest holding bright flashlights. They followed an ancient map to search for a mysterious cave. While they were exploring the dark cave, their hearts beat fast with curiosity. Dark grey shadows danced on the rocky walls, but they walked forward bravely. Suddenly, a strange sparkle caught Leo's eyes near a deep stone wall. To their utter surprise, they discovered a hidden treasure chest filled with gold coins. Leo exclaimed: 'Look! We found the ancient secret!'. Everyone felt extremely excited and cheered out loud with joy. Bursting into laughter, they carefully carried the heavy chest to the surface. In the end, they donated the historic treasure to the local museum.",
+  "topic_talk_prompt": "Tell me about an exciting adventure story or mysterious discovery!",
   "sentence_frames": [
     {
-      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine.",
+      "template": "Early in the morning, the brave explorers walked into the forest holding _____ flashlights.",
       "answers": [
-        "sunny",
-        "Leo"
+        "bright"
       ]
     },
     {
-      "template": "They found ___ ancient wooden ___ weighing 150 kilograms on the seabed.",
+      "template": "They followed an _____ map to search for a mysterious cave.",
       "answers": [
-        "an",
-        "chest"
+        "ancient"
       ]
     },
     {
-      "template": "To float ___ heavy chest, ___ applied Archimedes buoyancy principle.",
+      "template": "While they were exploring the dark cave, their _____ beat fast with curiosity.",
       "answers": [
-        "the",
-        "Leo"
+        "hearts"
       ]
     },
     {
-      "template": "He calculated ___ displacing 150 ___ of seawater created 150 kg of upward lift.",
+      "template": "Dark grey _____ danced on the rocky walls, but they walked forward bravely.",
       "answers": [
-        "that",
-        "litres"
+        "shadows"
       ]
     },
     {
-      "template": "He attached ___ lift bags ___ displace 150 litres of seawater.",
+      "template": "_____, a strange sparkle caught Leo's eyes near a deep stone wall.",
       "answers": [
-        "inflatable",
-        "to"
+        "Suddenly"
       ]
     },
     {
-      "template": "The lift ___ expanded and ___ the heavy chest safely to the surface.",
+      "template": "To their utter surprise, they discovered a hidden _____ chest filled with gold coins.",
       "answers": [
-        "bags",
-        "brought"
+        "treasure"
       ]
     },
     {
-      "template": "Inside the ___ they discovered ___ preserved 16th-century gold compass.",
+      "template": "Leo exclaimed: 'Look! We found the ancient _____!'.",
       "answers": [
-        "chest",
-        "a"
+        "secret"
       ]
     },
     {
-      "template": "They presented ___ historical gold ___ to the maritime museum at school.",
+      "template": "Everyone felt _____ excited and cheered out loud with joy.",
       "answers": [
-        "the",
-        "compass"
+        "extremely"
       ]
     },
     {
-      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine in the afternoon.",
+      "template": "Bursting into _____, they carefully carried the heavy chest to the surface.",
       "answers": [
-        "sunny",
-        "Leo"
+        "laughter"
       ]
     },
     {
-      "template": "On a ___ Sunday afternoon, ___ dove into a deep ocean cavern in a submarine.",
+      "template": "_____, they donated the historic treasure to the local museum.",
       "answers": [
-        "sunny",
-        "Leo"
+        "In the end"
       ]
     }
   ],
@@ -83,63 +75,63 @@ export default {
       "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "submarine",
-          "vi": "tàu ngầm",
+          "word": "bright",
+          "vi": "sáng rực",
           "distractor": false
         },
         {
-          "word": "150",
-          "vi": "150",
+          "word": "ancient",
+          "vi": "cổ xưa",
           "distractor": false
         },
         {
-          "word": "buoyancy",
-          "vi": "lực đẩy nổi",
+          "word": "hearts",
+          "vi": "trái tim",
           "distractor": false
         },
         {
-          "word": "upward lift",
-          "vi": "lực nâng lên",
+          "word": "shadows",
+          "vi": "bóng tối",
           "distractor": false
         },
         {
-          "word": "displace",
-          "vi": "dịch chuyển nước",
+          "word": "Suddenly",
+          "vi": "Đột nhiên",
           "distractor": false
         },
         {
-          "word": "surface",
-          "vi": "bề mặt",
+          "word": "treasure",
+          "vi": "kho báu",
           "distractor": false
         },
         {
-          "word": "compass",
-          "vi": "la bàn",
+          "word": "secret",
+          "vi": "bí mật",
           "distractor": false
         },
         {
-          "word": "museum",
-          "vi": "bảo tàng",
+          "word": "extremely",
+          "vi": "cực kỳ",
           "distractor": false
         },
         {
-          "word": "airplane",
-          "vi": "máy bay",
+          "word": "laughter",
+          "vi": "tiếng cười",
+          "distractor": false
+        },
+        {
+          "word": "In the end",
+          "vi": "Cuối cùng",
+          "distractor": false
+        },
+        {
+          "word": "scary",
+          "vi": "đáng sợ",
           "distractor": true
         },
         {
-          "word": "displaced",
-          "vi": "đã dịch chuyển",
-          "distractor": true
-        },
-        {
-          "word": "sinking",
-          "vi": "chìm xuống",
-          "distractor": true
-        },
-        {
-          "word": "skyscraper",
-          "vi": "tòa nhà cao tầng",
+          "word": "quietly",
+          "vi": "lặng lẽ",
           "distractor": true
         }
       ]
@@ -149,98 +141,40 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week36/story_writing_pic.jpg",
-      "image_prompt": "A yellow research submarine in a deep blue underwater ocean cavern using mechanical arms to attach red inflatable lift bags to an ancient wooden treasure chest resting on the seabed.",
+      "image_prompt": "Brave explorers inside a mysterious cave holding bright flashlights, discovering an ancient treasure chest. Dark grey shadows on stone walls, heart beat fast. Watercolor children book illustration style.",
       "word_bank": {
-        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
-        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
-        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
-        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+        "action_verbs": [
+          "holding bright flashlights",
+          "mysterious cave",
+          "ancient map",
+          "hidden treasure chest",
+          "carried the heavy chest"
+        ],
+        "cumulative_chunks": [
+          "dark grey shadows",
+          "heart beat fast",
+          "felt extremely excited",
+          "burst into laughter",
+          "historic treasure"
+        ],
+        "connectors": [
+          "Early in the morning",
+          "Suddenly",
+          "To their utter surprise",
+          "In the end",
+          "Meanwhile"
+        ],
+        "grammar_boosters": [
+          "while they were exploring",
+          "noticed a shiny box",
+          "exclaimed with joy"
+        ]
       },
-      "sentence_frames": [
-        {
-          "template": "On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a ___.",
-          "answers": [
-            "submarine"
-          ]
-        },
-        {
-          "template": "They found an ancient wooden chest weighing ___ kilograms on the seabed.",
-          "answers": [
-            "150"
-          ]
-        },
-        {
-          "template": "To float the heavy chest, Leo applied Archimedes ___ principle.",
-          "answers": [
-            "buoyancy"
-          ]
-        },
-        {
-          "template": "He calculated that displacing 150 litres of seawater created 150 kg of ___.",
-          "answers": [
-            "upward lift"
-          ]
-        },
-        {
-          "template": "He attached inflatable lift bags to ___ 150 litres of seawater.",
-          "answers": [
-            "displace"
-          ]
-        },
-        {
-          "template": "The lift bags expanded and brought the heavy chest safely to the ___.",
-          "answers": [
-            "surface"
-          ]
-        },
-        {
-          "template": "Inside the chest, they discovered a preserved 16th-century gold ___.",
-          "answers": [
-            "compass"
-          ]
-        },
-        {
-          "template": "They presented the historical gold compass to the maritime ___.",
-          "answers": [
-            "museum"
-          ]
-        }
-      ],
       "writing_prompts": {
-        "en": "Look at the underwater picture! Write a creative story (60+ words, 8+ sentences) about how Leo's submarine crew attached lift bags, displaced seawater to create buoyancy, and rescued the ancient gold compass from the ocean cavern.",
-        "vi": "Nhìn vào bức ảnh dưới biển! Viết một câu chuyện sáng tạo (60+ từ, 8+ câu) về cách thủy thủ đoàn tàu ngầm Leo gắn túi nâng, làm dịch chuyển nước biển để tạo lực nổi, và giải cứu chiếc la bàn vàng cổ từ hang động ngầm."
-      }
-    },
-    "topic_mode": {
-      "topics": [
-        {
-          "id": "t1",
-          "title_en": "The Submarine Physics Rescue",
-          "en": "Describe how Leo applied Archimedes buoyancy principle to lift the 150 kg chest using compressed air bags.",
-          "vi": "Mô tả cách Leo áp dụng nguyên lý lực đẩy Archimedes để nâng chiếc rương 150kg bằng túi khí nén.",
-          "word_bank": {
-        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
-        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
-        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
-        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
-      }
-        },
-        {
-          "id": "t2",
-          "title_en": "Marco Polo's Silk Road Odyssey",
-          "en": "Write about Marco Polo's 24-year journey across Asia and his work as a diplomat for Kublai Khan.",
-          "vi": "Viết về chuyến đi 24 năm qua châu Á của Marco Polo và công việc làm sứ giả cho Hốt Tất Liệt.",
-          "word_bank": [
-            "merchant",
-            "diplomat",
-            "Silk Road",
-            "manuscript",
-            "explorer"
-          ]
-        }
-      ]
+        "en": "Look at the picture. Describe how explorers used an ancient map and flashlights to discover a hidden treasure chest in a mysterious cave.",
+        "vi": "Nhìn bức tranh. Mô tả cách các nhà thám hiểm dùng bản đồ cổ và đèn pin để tìm thấy rương kho báu trong hang động kỳ bí."
+      },
+      "rubric_tier": 2
     }
-  },
-  "min_sentences": 10,
-  "model_sentence": "On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine. They found an ancient wooden chest weighing 150 kilograms on the seabed. To float the heavy chest, Leo applied Archimedes buoyancy principle. He calculated that displacing 150 litres of seawater created 150 kg of upward lift. He attached inflatable lift bags to displace 150 litres of seawater. The lift bags expanded and brought the heavy chest safely to the surface. Inside the chest they discovered a preserved 16th-century gold compass. They presented the historical gold compass to the maritime museum at school. On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine in the afternoon. On a sunny Sunday afternoon, Leo dove into a deep ocean cavern in a submarine."
+  }
 };

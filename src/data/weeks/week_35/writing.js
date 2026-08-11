@@ -1,95 +1,69 @@
 export default {
   "title": "Protecting Our Planet — Environmental Action",
+  "min_sentences": 10,
   "theme": "environment",
   "min_words": 65,
-  "min_sentences": 10,
-  "model_sentence": "Our home planet Earth faces serious environmental dangers today. Polar ice caps are melting rapidly in high temperatures also. Global sea levels are rising across oceans. We must act now to protect our home planet. Communities around the world are planting new trees. Families reduce single-use plastic and conserve energy. Recycling waste more effectively helps clean our rivers. Small mindful actions create a powerful difference for Earth. Our home planet Earth faces serious environmental dangers today then in the afternoon. Our home planet Earth faces serious environmental dangers today.",
+  "model_sentence": "Last weekend, our student team visited the busy city park to clean up the dirty street. First, we noticed lots of plastic waste lying on the grass because plastic harms animals. We quickly collected bottles and recycled paper so that we could keep the park clean. After that, we planted green trees along the walkway to protect nature. Many local families saw our action and decided to join our green team. Everyone worked together happily to reduce pollution in our neighborhood. The park soon became a beautiful green park full of fresh air. Thanks to their hard work, the whole community learned how to care for Earth. The hardworking students felt proud of themselves and smiled brightly. We promised to protect our home planet Earth every single day.",
   "topic_talk_prompt": "Tell me about what we can do to protect the environment and combat climate change!",
-  "instruction_en": "Write about protecting our planet using environmental action words!",
-  "instruction_vi": "Viết về bảo vệ hành tinh bằng các từ chỉ hành động môi trường!",
-  "prompt_en": "Why is our planet in danger? What actions can we take to protect nature and save energy?",
-  "prompt_vi": "Tại sao hành tinh của chúng ta đang gặp nguy hiểm? Chúng ta có thể làm gì để bảo vệ thiên nhiên và tiết kiệm năng lượng?",
-  "keywords": [
-    "planet Earth",
-    "environmental dangers",
-    "melting rapidly",
-    "sea levels rising",
-    "protect our planet",
-    "planting trees",
-    "recycling waste",
-    "reduce plastic",
-    "conserve energy",
-    "powerful difference"
-  ],
   "sentence_frames": [
     {
-      "template": "Our home ___ Earth faces ___ environmental dangers today.",
+      "template": "Last weekend, our student team visited the _____ park to clean up the dirty street.",
       "answers": [
-        "planet",
-        "serious"
+        "busy city"
       ]
     },
     {
-      "template": "Polar ice ___ are melting ___ in high temperatures also.",
+      "template": "First, we noticed lots of _____ waste lying on the grass because plastic harms animals.",
       "answers": [
-        "caps",
-        "rapidly"
+        "plastic"
       ]
     },
     {
-      "template": "Global sea ___ are rising ___ oceans.",
+      "template": "We quickly collected _____ and recycled paper so that we could keep the park clean.",
       "answers": [
-        "levels",
-        "across"
+        "bottles"
       ]
     },
     {
-      "template": "We must ___ now to ___ our home planet.",
+      "template": "After that, we _____ green trees along the walkway to protect nature.",
       "answers": [
-        "act",
+        "planted"
+      ]
+    },
+    {
+      "template": "Many local families saw our action and _____ to join our green team.",
+      "answers": [
+        "decided"
+      ]
+    },
+    {
+      "template": "Everyone worked together happily to _____ pollution in our neighborhood.",
+      "answers": [
+        "reduce"
+      ]
+    },
+    {
+      "template": "The park soon became a _____ green park full of fresh air.",
+      "answers": [
+        "beautiful"
+      ]
+    },
+    {
+      "template": "_____, the whole community learned how to care for Earth.",
+      "answers": [
+        "Thanks to their hard work"
+      ]
+    },
+    {
+      "template": "The hardworking students felt _____ of themselves and smiled brightly.",
+      "answers": [
+        "proud"
+      ]
+    },
+    {
+      "template": "We promised to _____ our home planet Earth every single day.",
+      "answers": [
         "protect"
-      ]
-    },
-    {
-      "template": "Communities around ___ world are ___ new trees.",
-      "answers": [
-        "the",
-        "planting"
-      ]
-    },
-    {
-      "template": "Families reduce ___ plastic and ___ energy.",
-      "answers": [
-        "single-use",
-        "conserve"
-      ]
-    },
-    {
-      "template": "Recycling waste ___ effectively helps ___ our rivers.",
-      "answers": [
-        "more",
-        "clean"
-      ]
-    },
-    {
-      "template": "Small mindful ___ create a ___ difference for Earth.",
-      "answers": [
-        "actions",
-        "powerful"
-      ]
-    },
-    {
-      "template": "Our home ___ Earth faces ___ environmental dangers today then in the afternoon.",
-      "answers": [
-        "planet",
-        "serious"
-      ]
-    },
-    {
-      "template": "Our home ___ Earth faces ___ environmental dangers today.",
-      "answers": [
-        "planet",
-        "serious"
       ]
     }
   ],
@@ -101,28 +75,8 @@ export default {
       "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "environmental dangers",
-          "vi": "mối nguy hại môi trường",
-          "distractor": false
-        },
-        {
-          "word": "melting",
-          "vi": "tan chảy",
-          "distractor": false
-        },
-        {
-          "word": "rising",
-          "vi": "dâng cao",
-          "distractor": false
-        },
-        {
-          "word": "protect",
-          "vi": "bảo vệ",
-          "distractor": false
-        },
-        {
-          "word": "planting",
-          "vi": "trồng",
+          "word": "busy city",
+          "vi": "thành phố nhộn nhịp",
           "distractor": false
         },
         {
@@ -131,33 +85,53 @@ export default {
           "distractor": false
         },
         {
-          "word": "effectively",
-          "vi": "hiệu quả",
+          "word": "bottles",
+          "vi": "chai lọ",
           "distractor": false
         },
         {
-          "word": "difference",
-          "vi": "sự khác biệt",
+          "word": "planted",
+          "vi": "trồng",
           "distractor": false
         },
         {
-          "word": "melted",
-          "vi": "đã tan chảy",
+          "word": "decided",
+          "vi": "quyết định",
+          "distractor": false
+        },
+        {
+          "word": "reduce",
+          "vi": "cắt giảm",
+          "distractor": false
+        },
+        {
+          "word": "beautiful",
+          "vi": "xinh đẹp",
+          "distractor": false
+        },
+        {
+          "word": "Thanks to their hard work",
+          "vi": "Nhờ nỗ lực chăm chỉ của họ",
+          "distractor": false
+        },
+        {
+          "word": "proud",
+          "vi": "tự hào",
+          "distractor": false
+        },
+        {
+          "word": "protect",
+          "vi": "bảo vệ",
+          "distractor": false
+        },
+        {
+          "word": "destroy",
+          "vi": "phá hỏng",
           "distractor": true
         },
         {
-          "word": "rose",
-          "vi": "đã dâng cao",
-          "distractor": true
-        },
-        {
-          "word": "destroying",
-          "vi": "tàn phá",
-          "distractor": true
-        },
-        {
-          "word": "pollution",
-          "vi": "ô nhiễm",
+          "word": "carelessly",
+          "vi": "bẩu ẩu",
           "distractor": true
         }
       ]
@@ -167,92 +141,40 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week35/story_writing_pic.jpg",
-      "image_prompt": "A vivid watercolor illustration of children planting green trees and recycling plastic bottles under a bright blue sky, surrounded by melting ice and lush green nature.",
+      "image_prompt": "Students cleaning a busy city park, collecting plastic bottles, and planting green trees. They feel proud of themselves under a bright sunny sky. Watercolor children book illustration style.",
       "word_bank": {
-        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
-        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
-        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
-        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+        "action_verbs": [
+          "plastic waste",
+          "collected bottles",
+          "planted green trees",
+          "protect nature",
+          "reduce pollution"
+        ],
+        "cumulative_chunks": [
+          "busy city park",
+          "dirty street",
+          "felt proud of themselves",
+          "beautiful green park",
+          "fresh air"
+        ],
+        "connectors": [
+          "Last weekend",
+          "First",
+          "After that",
+          "Thanks to their hard work",
+          "In the end"
+        ],
+        "grammar_boosters": [
+          "so that they could keep it clean",
+          "because plastic harms animals",
+          "by planting new trees"
+        ]
       },
       "writing_prompts": {
-        "en": "Look at the picture and describe how children are protecting the planet. Use 3+ environmental action phrases.",
-        "vi": "Nhìn bức tranh và mô tả cách các bạn nhỏ bảo vệ hành tinh. Dùng 3+ cụm từ hành động môi trường."
+        "en": "Look at the picture. Describe how students collected plastic bottles and planted green trees to protect nature.",
+        "vi": "Nhìn bức tranh. Mô tả cách học sinh gom chai nhựa và trồng cây xanh để bảo vệ thiên nhiên."
       },
-      "rubric_tier": 1,
-      "min_words": 65,
-      "min_sentences": 8,
-      "sentence_frames": [
-        {
-          "template": "Our home planet faces ___ ___",
-          "answers": [
-            "serious dangers",
-            "then"
-          ]
-        },
-        {
-          "template": "The polar ice is ___ ___",
-          "answers": [
-            "melting fast",
-            "also"
-          ]
-        },
-        {
-          "template": "Sea levels are ___ ___",
-          "answers": [
-            "rising high",
-            "so"
-          ]
-        },
-        {
-          "template": "Children are ___ ___",
-          "answers": [
-            "planting trees",
-            "next"
-          ]
-        },
-        {
-          "template": "They recycle plastic ___ ___",
-          "answers": [
-            "every day",
-            "finally"
-          ]
-        },
-        {
-          "template": "We must save ___ ___",
-          "answers": [
-            "clean energy",
-            "slowly"
-          ]
-        },
-        {
-          "template": "Small actions make a ___ ___",
-          "answers": [
-            "big difference",
-            "happily"
-          ]
-        },
-        {
-          "template": "Together we protect ___ ___",
-          "answers": [
-            "our planet Earth",
-            "carefully"
-          ]
-        },
-        {
-          "template": "Our home planet faces ___ ___",
-          "answers": [
-            "serious dangers",
-            "then"
-          ]
-        },
-        {
-          "template": "Our home planet faces ___ ___",
-          "answers": [
-            "serious dangers",
-            "then"
-          ]
-        }
-      ]
+      "rubric_tier": 2
     }
   }
 };

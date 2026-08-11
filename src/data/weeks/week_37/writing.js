@@ -1,149 +1,137 @@
 export default {
-  "title": "Speed Science & Olympic Peace — Writing Station",
+  "title": "Speed Science & Olympic Peace — Sports Day Challenge",
+  "min_sentences": 10,
   "theme": "sports_day",
   "min_words": 65,
-  "min_sentences": 10,
-  "model_sentence": "On Saturday morning we went to the sports stadium. The weather was sunny and warm. Leo ran very fast along the track. He passed the baton cleanly to Maya. Max sprinted with fast momentum toward the line. Spectators watched and clapped with joy. Our scientific teamwork brought victory every day. Competitors were united in peace at the end at school. On Saturday morning we went to the sports stadium in the afternoon. On Saturday morning we went to the sports stadium.",
+  "model_sentence": "On Saturday morning, our class gathered at the crowded sports stadium for the relay race. At first, the blue team was leading, but our runners maintained high momentum. While Leo was sprinting at full speed, Max passed the baton cleanly without dropping it. Meanwhile, thousands of spectators were cheering loudly in the stands. Max sprinted fast along the red track with smooth acceleration. Out of breath, he pushed forward with strong determination. He crossed the finish line first and broke the school record! Scientific teamwork brought victory to our hard-working team. Everyone felt proud and happy as they received their golden trophy. We celebrated our great triumph together with huge smiles.",
   "topic_talk_prompt": "Tell me about a sports day race or Olympic story — how did you apply speed science or teamwork to win?",
-  "prompt_en": "Write about speed science and relay racing. Use 5+ sports action words (ran fast, passed the baton, maintained momentum, clapped, won, declared truce).",
-  "prompt_vi": "Viết về khoa học tốc độ và chạy tiếp sức. Dùng 5+ từ chỉ hành động thể thao (ran fast, passed the baton, maintained momentum, clapped, won, declared truce).",
   "sentence_frames": [
     {
-      "template": "On Saturday ___ we went ___ the sports stadium.",
+      "template": "On Saturday morning, our class gathered at the _____ sports stadium for the relay race.",
       "answers": [
-        "morning",
-        "to"
+        "crowded"
       ]
     },
     {
-      "template": "The weather ___ sunny and ___.",
+      "template": "At first, the blue team was leading, but our runners maintained high _____.",
       "answers": [
-        "was",
-        "warm"
+        "momentum"
       ]
     },
     {
-      "template": "Leo ran ___ fast along ___ track.",
+      "template": "While Leo was sprinting at full speed, Max _____ the baton cleanly without dropping it.",
       "answers": [
-        "very",
-        "the"
+        "passed"
       ]
     },
     {
-      "template": "He passed ___ baton cleanly ___ Maya.",
+      "template": "_____, thousands of spectators were cheering loudly in the stands.",
       "answers": [
-        "the",
-        "to"
+        "Meanwhile"
       ]
     },
     {
-      "template": "Max sprinted ___ fast momentum ___ the line.",
+      "template": "Max _____ fast along the red track with smooth acceleration.",
       "answers": [
-        "with",
-        "toward"
+        "sprinted"
       ]
     },
     {
-      "template": "Spectators watched ___ clapped with ___.",
+      "template": "Out of _____, he pushed forward with strong determination.",
       "answers": [
-        "and",
-        "joy"
+        "breath"
       ]
     },
     {
-      "template": "Our scientific ___ brought victory ___ day.",
+      "template": "He crossed the _____ line first and broke the school record!",
       "answers": [
-        "teamwork",
-        "every"
+        "finish"
       ]
     },
     {
-      "template": "Competitors were ___ in peace ___ the end at school.",
+      "template": "_____ brought victory to our hard-working team.",
       "answers": [
-        "united",
-        "at"
+        "Scientific teamwork"
       ]
     },
     {
-      "template": "On Saturday ___ we went ___ the sports stadium in the afternoon.",
+      "template": "Everyone felt _____ and happy as they received their golden trophy.",
       "answers": [
-        "morning",
-        "to"
+        "proud"
       ]
     },
     {
-      "template": "On Saturday ___ we went ___ the sports stadium.",
+      "template": "We celebrated our great triumph together with _____ smiles.",
       "answers": [
-        "morning",
-        "to"
+        "huge"
       ]
     }
   ],
   "hints": {
     "vocabulary_bank": {
-      "label_en": "Need help? Click next to each blank",
-      "label_vi": "Cần trợ giúp? Bấm bên cạnh mỗi ô",
+      "label_en": "💡 Need help? Click 💡 next to each blank",
+      "label_vi": "💡 Cần trợ giúp? Bấm 💡 bên cạnh mỗi ô",
       "show_by_default": false,
       "scaffolding_stage": "medium",
       "words": [
         {
-          "word": "sports stadium",
-          "vi": "sân vận động",
-          "distractor": false
-        },
-        {
-          "word": "sunny",
-          "vi": "nắng",
-          "distractor": false
-        },
-        {
-          "word": "fast",
-          "vi": "nhanh",
-          "distractor": false
-        },
-        {
-          "word": "baton",
-          "vi": "gậy tiếp sức",
+          "word": "crowded",
+          "vi": "đông đúc",
           "distractor": false
         },
         {
           "word": "momentum",
-          "vi": "động năng / đà",
+          "vi": "động năng",
           "distractor": false
         },
         {
-          "word": "clapped",
-          "vi": "vỗ tay",
+          "word": "passed",
+          "vi": "chuyền",
           "distractor": false
         },
         {
-          "word": "teamwork",
-          "vi": "tinh thần đồng đội",
+          "word": "Meanwhile",
+          "vi": "Trong lúc đó",
           "distractor": false
         },
         {
-          "word": "peace",
-          "vi": "hòa bình",
+          "word": "sprinted",
+          "vi": "bứt tốc",
           "distractor": false
         },
         {
-          "word": "passed the baton",
-          "vi": "truyền gậy",
+          "word": "breath",
+          "vi": "hơi thở",
           "distractor": false
         },
         {
-          "word": "sacred truce",
-          "vi": "thỏa thuận ngừng bắn",
+          "word": "finish",
+          "vi": "đích",
           "distractor": false
         },
         {
-          "word": "went home",
-          "vi": "đã về nhà",
+          "word": "Scientific teamwork",
+          "vi": "Tinh thần đồng đội khoa học",
+          "distractor": false
+        },
+        {
+          "word": "proud",
+          "vi": "tự hào",
+          "distractor": false
+        },
+        {
+          "word": "huge",
+          "vi": "rạng rỡ",
+          "distractor": false
+        },
+        {
+          "word": "slowly",
+          "vi": "chậm chạp",
           "distractor": true
         },
         {
-          "word": "cold rain",
-          "vi": "mưa lạnh",
+          "word": "lost",
+          "vi": "thua",
           "distractor": true
         }
       ]
@@ -152,68 +140,41 @@ export default {
   "story_prompts": {
     "picture_mode": {
       "type": "picture",
-      "image_url": "/images/week37/story_w37_pic.jpg",
-      "image_prompt": "Young athletes sprinting on a red athletic track passing a baton under bright sunlight, cheering spectators in background, cartoon illustration.",
+      "image_url": "/images/week37/story_writing_pic.jpg",
+      "image_prompt": "Runners in a sports day relay race at a crowded sports stadium. Max passes the baton cleanly while sprinting fast. Spectators cheering loudly. Watercolor children book illustration style.",
       "word_bank": {
-        "action_verbs": ["walked carefully", "spotted the issue", "decided to help", "smiled with pride"],
-        "cumulative_chunks": ["on a bright sunny day", "suddenly felt dizzy", "burst into tears", "felt extremely relieved"],
-        "connectors": ["One sunny day", "Suddenly", "Meanwhile", "To their surprise", "Eventually"],
-        "grammar_boosters": ["while he was walking", "decided to stop", "so that he could stay safe"]
+        "action_verbs": [
+          "relay race",
+          "passed the baton",
+          "sprinted fast",
+          "crossed the finish line",
+          "maintained high momentum"
+        ],
+        "cumulative_chunks": [
+          "crowded sports stadium",
+          "cheering loudly",
+          "out of breath",
+          "felt proud and happy",
+          "broke the school record"
+        ],
+        "connectors": [
+          "On Saturday morning",
+          "At first",
+          "Meanwhile",
+          "Scientific teamwork brought victory",
+          "Eventually"
+        ],
+        "grammar_boosters": [
+          "while Leo was sprinting",
+          "passed the baton cleanly",
+          "with smooth acceleration"
+        ]
       },
-      "sentence_frames": [
-        {
-          "template": "On Saturday morning, Leo ___ (go) to the sports stadium.",
-          "answers": [
-            "went"
-          ]
-        },
-        {
-          "template": "He ___ (run) very fast on the track.",
-          "answers": [
-            "ran"
-          ]
-        },
-        {
-          "template": "He ___ (pass) the baton cleanly to Maya.",
-          "answers": [
-            "passed"
-          ]
-        },
-        {
-          "template": "Maya ___ (run) across the grass with fast momentum.",
-          "answers": [
-            "ran"
-          ]
-        },
-        {
-          "template": "Max ___ (catch) the baton smoothly at full speed.",
-          "answers": [
-            "caught"
-          ]
-        },
-        {
-          "template": "They ___ (cross) the finish line first.",
-          "answers": [
-            "crossed"
-          ]
-        },
-        {
-          "template": "Spectators ___ (clap) enthusiastically.",
-          "answers": [
-            "clapped"
-          ]
-        },
-        {
-          "template": "Leo ___ (smile) with pride.",
-          "answers": [
-            "smiled"
-          ]
-        }
-      ],
       "writing_prompts": {
-        "en": "Look at the sports day relay picture and write the story. How did the runners pass the baton cleanly? Use 5+ past action verbs.",
-        "vi": "Nhìn vào bức ảnh chạy tiếp sức và viết lại câu chuyện. Các vận động viên đã truyền gậy gọn gàng như thế nào? Dùng 5+ động từ quá khứ."
-      }
+        "en": "Look at the picture. Describe how runners used teamwork, passed the baton cleanly, and sprinted fast to win the sports day relay race.",
+        "vi": "Nhìn bức tranh. Mô tả cách các vận động viên phối hợp đồng đội, chuyền gậy tiếp sức và bứt tốc để chiến thắng cuộc thi chạy tiếp sức."
+      },
+      "rubric_tier": 2
     }
   }
 };
