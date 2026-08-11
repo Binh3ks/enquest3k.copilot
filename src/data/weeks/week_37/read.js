@@ -77,6 +77,8 @@ Leo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đôn
 ],
   read_stem: {
   "title": "The 4x100m Relay Handoff Victory",
+  "title_en": "The 4x100m Relay Handoff Victory",
+  "title_vi": "The 4x100m Relay Handoff Victory",
   "image_url": "/images/week37/read_cover_w37.jpg",
   "audio_url": "/audio/week37/read_main.mp3",
   "content_en": "On a **sunny Saturday morning**, the **annual Sports Day** took place. The **crowded sports stadium** was filled with the **cheering of students and parents**.\n\nLeo and his team were in the **final 4x100m relay race**. The **first runner was sprinting fast** down the track. Leo **prepared carefully** for the baton exchange.\n\nWhen his teammate reached the zone, Leo **passed the baton cleanly** and **accelerated smoothly on the track**. He **ran as fast as the wind** toward the finish line.\n\nLeo **crossed the finish line first** and **smiled happily**. The crowd **erupted into cheers**. The team **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.",
@@ -138,10 +140,70 @@ Leo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đôn
       "hint_en": "Shiny gold...",
       "hint_vi": "Huy chương vàng..."
     }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question_en": "What event took place on Saturday morning?",
+      "options": [
+        "School Science Fair",
+        "Annual Sports Day",
+        "Art Exhibition",
+        "Music Concert"
+      ],
+      "answer": "Annual Sports Day",
+      "clue_statement": "The annual Sports Day took place.",
+      "hint_en": "Annual Sports...",
+      "hint_vi": "Ngày Hội Thể Thao..."
+    },
+    {
+      "id": 2,
+      "question_en": "What was the crowded sports stadium filled with?",
+      "options": [
+        "Cheering students and parents",
+        "Flying birds",
+        "Rain drops",
+        "Empty wooden chairs"
+      ],
+      "answer": "Cheering students and parents",
+      "clue_statement": "The stadium was filled with cheering students and parents.",
+      "hint_en": "Cheering...",
+      "hint_vi": "Tiếng reo hò..."
+    },
+    {
+      "id": 3,
+      "question_en": "How did Leo pass the baton to his teammate?",
+      "options": [
+        "Dropped it on the grass",
+        "Forgot the baton",
+        "Threw it far away",
+        "Passed the baton cleanly"
+      ],
+      "answer": "Passed the baton cleanly",
+      "clue_statement": "Leo passed the baton cleanly.",
+      "hint_en": "Passed the baton...",
+      "hint_vi": "Trao gậy tiếp sức..."
+    },
+    {
+      "id": 4,
+      "question_en": "What award did the relay team receive?",
+      "options": [
+        "Shiny gold medals",
+        "Paper certificates",
+        "Silver cups",
+        "Wooden trophies"
+      ],
+      "answer": "Shiny gold medals",
+      "clue_statement": "They received shiny gold medals.",
+      "hint_en": "Shiny gold...",
+      "hint_vi": "Huy chương vàng..."
+    }
   ]
 },
   read_social: {
   "title": "The Olympic Truce & World Relays",
+  "title_en": "The Olympic Truce & World Relays",
+  "title_vi": "The Olympic Truce & World Relays",
   "image_url": "/images/week37/explore_w37.jpg",
   "audio_url": "/audio/week37/read_main.mp3",
   "content_en": "Relay races originate from ancient messenger runners who carried torches across cities. Today, athletes from **over 200 nations** compete peacefully in the Olympic Games. The Olympic Truce (*Ekecheiria*) was an ancient Greek tradition where all wars stopped during the games. Relay teams teach us that **working as one team leads to success**.",
@@ -174,6 +236,92 @@ Leo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đôn
       "clue_statement": "Relay teams teach us that success comes from working as one team.",
       "hint_en": "Working as one...",
       "hint_vi": "Làm việc như một..."
+    },
+    {
+      "id": 3,
+      "question_en": "What symbol represents peace during ancient Olympic Games?",
+      "options": [
+        "Golden crowns",
+        "Bronze shields",
+        "Red flags",
+        "The Olympic Truce Ekecheiria"
+      ],
+      "answer": "The Olympic Truce Ekecheiria",
+      "clue_statement": "The Olympic Truce Ekecheiria called for peace.",
+      "hint_en": "Olympic Truce...",
+      "hint_vi": "Thỏa thuận ngừng bắn..."
+    },
+    {
+      "id": 4,
+      "question_en": "Why is passing the baton smoothly important in a relay?",
+      "options": [
+        "It maintains running velocity and momentum",
+        "It stops the race",
+        "It slows down the team",
+        "It confuses the judges"
+      ],
+      "answer": "It maintains running velocity and momentum",
+      "clue_statement": "Smooth handoffs maintain speed and momentum.",
+      "hint_en": "Maintain velocity...",
+      "hint_vi": "Duy trì vận tốc..."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question_en": "How many nations compete in the Olympic Games?",
+      "options": [
+        "50 nations",
+        "Over 200 nations",
+        "100 nations",
+        "10 nations"
+      ],
+      "answer": "Over 200 nations",
+      "clue_statement": "Athletes from over 200 nations compete peacefully.",
+      "hint_en": "Over 200...",
+      "hint_vi": "Hơn 200..."
+    },
+    {
+      "id": 2,
+      "question_en": "What main lesson do relay races teach athletes?",
+      "options": [
+        "Working as one team leads to success",
+        "Speed does not matter",
+        "Winning is the only thing",
+        "Running alone is always better"
+      ],
+      "answer": "Working as one team leads to success",
+      "clue_statement": "Relay teams teach us that success comes from working as one team.",
+      "hint_en": "Working as one...",
+      "hint_vi": "Làm việc như một..."
+    },
+    {
+      "id": 3,
+      "question_en": "What symbol represents peace during ancient Olympic Games?",
+      "options": [
+        "Golden crowns",
+        "Bronze shields",
+        "Red flags",
+        "The Olympic Truce Ekecheiria"
+      ],
+      "answer": "The Olympic Truce Ekecheiria",
+      "clue_statement": "The Olympic Truce Ekecheiria called for peace.",
+      "hint_en": "Olympic Truce...",
+      "hint_vi": "Thỏa thuận ngừng bắn..."
+    },
+    {
+      "id": 4,
+      "question_en": "Why is passing the baton smoothly important in a relay?",
+      "options": [
+        "It maintains running velocity and momentum",
+        "It stops the race",
+        "It slows down the team",
+        "It confuses the judges"
+      ],
+      "answer": "It maintains running velocity and momentum",
+      "clue_statement": "Smooth handoffs maintain speed and momentum.",
+      "hint_en": "Maintain velocity...",
+      "hint_vi": "Duy trì vận tốc..."
     }
   ]
 }

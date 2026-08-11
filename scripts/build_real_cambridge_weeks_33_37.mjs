@@ -592,7 +592,9 @@ Leo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đôn
     ],
     social_questions: [
       { id: 1, question_en: "How many nations compete in the Olympic Games?", options: ["Over 200 nations", "50 nations", "10 nations", "100 nations"], answer: "Over 200 nations", clue_statement: "Athletes from over 200 nations compete peacefully.", hint_en: "Over 200...", hint_vi: "Hơn 200..." },
-      { id: 2, question_en: "What main lesson do relay races teach athletes?", options: ["Working as one team leads to success", "Running alone is always better", "Winning is the only thing", "Speed does not matter"], answer: "Working as one team leads to success", clue_statement: "Relay teams teach us that success comes from working as one team.", hint_en: "Working as one...", hint_vi: "Làm việc như một..." }
+      { id: 2, question_en: "What main lesson do relay races teach athletes?", options: ["Working as one team leads to success", "Running alone is always better", "Winning is the only thing", "Speed does not matter"], answer: "Working as one team leads to success", clue_statement: "Relay teams teach us that success comes from working as one team.", hint_en: "Working as one...", hint_vi: "Làm việc như một..." },
+      { id: 3, question_en: "What symbol represents peace during ancient Olympic Games?", options: ["The Olympic Truce Ekecheiria", "Golden crowns", "Red flags", "Bronze shields"], answer: "The Olympic Truce Ekecheiria", clue_statement: "The Olympic Truce Ekecheiria called for peace.", hint_en: "Olympic Truce...", hint_vi: "Thỏa thuận ngừng bắn..." },
+      { id: 4, question_en: "Why is passing the baton smoothly important in a relay?", options: ["It maintains running velocity and momentum", "It stops the race", "It slows down the team", "It confuses the judges"], answer: "It maintains running velocity and momentum", clue_statement: "Smooth handoffs maintain speed and momentum.", hint_en: "Maintain velocity...", hint_vi: "Duy trì vận tốc..." }
     ],
     vocab: [
       { word: "annual", definition_en: "occurring once every year", definition_vi: "hàng năm", example: "Our school holds its annual Sports Day in May.", ipa: "/ˈæn.ju.əl/" },
@@ -616,19 +618,31 @@ Leo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đôn
       { word: "momentum", definition_en: "the quantity of motion of a moving body", definition_vi: "động năng tiếp sức", example: "Keep your running momentum into the turn.", ipa: "/məˈmen.təm/" },
       { word: "teamwork", definition_en: "the combined action of a group of people", definition_vi: "tinh thần đồng đội", example: "Scientific teamwork led them to victory.", ipa: "/ˈtiːm.wɜːk/" }
     ],
+    word_power_chunks: [
+      { word: "ran the last leg", collocation: "ran the last leg of relay", definition_en: "competed in the final portion of a relay race", definition_vi: "chạy chặng cuối", example: "Leo ran the last leg of the 4x100m relay race.", ipa: "/ræn ðə lɑːst leg/" },
+      { word: "passed the baton smoothly", collocation: "passed the baton smoothly to", definition_en: "handed over the relay stick without dropping or slowing down", definition_vi: "trao gậy mượt mà", example: "When he reached the zone, he passed the baton smoothly.", ipa: "/pɑːst ðə ˈbæt.ɒn ˈsmuːð.li/" },
+      { word: "accelerated down the track", collocation: "accelerated down the track fast", definition_en: "gained speed quickly along the straight running path", definition_vi: "tăng tốc trên đường chạy", example: "Leo accelerated down the track toward the finish line.", ipa: "/əkˈsel.ə.reɪ.tɪd daʊn ðə træk/" },
+      { word: "sprinted at full speed", collocation: "sprinted at full speed ahead", definition_en: "ran as fast as possible over a short distance", definition_vi: "chạy nước rút hết tốc lực", example: "The first runner sprinted at full speed.", ipa: "/sprɪn.tɪd æt fʊl spiːd/" },
+      { word: "stood on the gold podium", collocation: "stood on the gold podium proudly", definition_en: "stepped onto the highest raised winner platform to receive medals", definition_vi: "đứng trên bục vàng", example: "The four teammates stood on the gold podium proudly.", ipa: "/stʊd ɒn ðə ɡəʊld ˈpəʊ.di.əm/" },
+      { word: "cheered loudly for teammate", collocation: "cheered loudly for teammate during", definition_en: "shouted enthusiasm and support for a fellow team runner", definition_vi: "reo hò cho đồng đội", example: "Students cheered loudly for their teammate near the turn.", ipa: "/tʃɪəd ˈlaʊd.li fɔː ˈtiːm.meɪt/" },
+      { word: "crossed the finish line first", collocation: "crossed the finish line first to win", definition_en: "reached the end of the race before all other competitors", definition_vi: "cán đích đầu tiên", example: "Leo ran as fast as the wind and crossed the finish line first.", ipa: "/krɒst ðə ˈfɪn.ɪʃ laɪn fɜːst/" },
+      { word: "received shiny gold medals", collocation: "received shiny gold medals at", definition_en: "accepted top honor awards made of gold for winning the race", definition_vi: "nhận huy chương vàng", example: "They smiled as they received shiny gold medals.", ipa: "/rɪˈsiːvd ˈʃaɪ.ni ɡəʊld ˈmed.əlz/" },
+      { word: "filled the sports stadium", collocation: "filled the sports stadium with cheering", definition_en: "packed the arena seating completely with energetic spectators", definition_vi: "lấp đầy sân vận động", example: "Excited parents filled the sports stadium.", ipa: "/fɪld ðə spɔːts ˈsteɪ.di.əm/" },
+      { word: "celebrated their relay victory", collocation: "celebrated their relay victory happily", definition_en: "rejoiced together after winning the team relay race", definition_vi: "ăn mừng chiến thắng tiếp sức", example: "The whole school celebrated their relay victory happily.", ipa: "/ˈsel.ə.breɪ.tɪd ðeər ˈriː.leɪ ˈvɪk.tər.i/" }
+    ],
     daily_watch: [
-      { id: "w37_v1", title: "Relay Handoff Science & Smooth Baton Passes", url: "https://www.youtube.com/embed/Yp-dDqK5D40" },
-      { id: "w37_v2", title: "The History of the Olympic Games & Torch Relay", url: "https://www.youtube.com/embed/5x3dDqK5D41" },
-      { id: "w37_v3", title: "Sports Day Relay Finals Highlights", url: "https://www.youtube.com/embed/6x3dDqK5D42" },
-      { id: "w37_v4", title: "Comparative Adverbs in Action Lesson", url: "https://www.youtube.com/embed/7x3dDqK5D43" },
-      { id: "w37_v5", title: "Teamwork and Velocity for Young Athletes", url: "https://www.youtube.com/embed/8x3dDqK5D44" }
+      { id: "w37_v1", videoId: "8wZi38lF28E", title: "Relay Handoff Science & Smooth Baton Passes", url: "https://www.youtube.com/embed/8wZi38lF28E" },
+      { id: "w37_v2", videoId: "O07X1XLK4tM", title: "The History of the Olympic Games & Torch Relay", url: "https://www.youtube.com/embed/O07X1XLK4tM" },
+      { id: "w37_v3", videoId: "9-o89uG9fAc", title: "Sports Day Relay Finals Highlights", url: "https://www.youtube.com/embed/9-o89uG9fAc" },
+      { id: "w37_v4", videoId: "3Qd71-5nQ8Y", title: "Comparative Adverbs in Action Lesson", url: "https://www.youtube.com/embed/3Qd71-5nQ8Y" },
+      { id: "w37_v5", videoId: "0fe9cwntsqg", title: "Teamwork and Velocity for Young Athletes", url: "https://www.youtube.com/embed/0fe9cwntsqg" }
     ],
     model_sentence: "On a sunny Saturday morning, the annual Sports Day took place at our school. The crowded sports stadium was filled with the loud cheering of excited students and parents. Leo and his team were running in the final 4x100m relay race. The first runner was sprinting fast down the track. When his teammate reached the exchange zone, Leo passed the baton cleanly and accelerated smoothly on the track. He ran as fast as the wind toward the finish line and crossed it first. The team received shiny gold medals and felt extremely proud.",
     sentence_frames: [
-      "On a _____ morning, the annual Sports Day took place at _____.",
-      "The crowded stadium was filled with the _____ of students.",
-      "Leo passed the _____ cleanly and accelerated _____ on the track.",
-      "They crossed the finish line first and received shiny _____ medals."
+      { template: "On a ___ morning, the annual Sports Day took place at our ___.", answers: ["sunny Saturday", "school"] },
+      { template: "The crowded stadium was filled with the ___ cheering of students.", answers: ["loud"] },
+      { template: "Leo passed the ___ cleanly and accelerated ___ on the track.", answers: ["baton", "smoothly"] },
+      { template: "They crossed the finish line first and received shiny ___ medals.", answers: ["gold"] }
     ]
   }
 };
@@ -674,20 +688,26 @@ function buildReadJs(data) {
 
   const stemStory = {
     title: data.stem_title,
+    title_en: data.stem_title,
+    title_vi: data.stem_title,
     image_url: `/images/week${data.weekId}/read_cover_w${data.weekId}.jpg`,
     audio_url: `/audio/week${data.weekId}/read_main.mp3`,
     content_en: data.stem_content,
     content_vi: data.stem_vi,
-    comprehension_questions: stemQuestions
+    comprehension_questions: stemQuestions,
+    questions: stemQuestions
   };
 
   const socialStory = {
     title: data.social_title,
+    title_en: data.social_title,
+    title_vi: data.social_title,
     image_url: `/images/week${data.weekId}/explore_w${data.weekId}.jpg`,
     audio_url: `/audio/week${data.weekId}/read_main.mp3`,
     content_en: data.social_content,
     content_vi: data.social_vi,
-    comprehension_questions: socialQuestions
+    comprehension_questions: socialQuestions,
+    questions: socialQuestions
   };
 
   return `// Cambridge A2 Flyers read.js — Week ${data.weekId}

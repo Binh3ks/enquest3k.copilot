@@ -63,6 +63,34 @@ export default {
     "clue_statement": "Relay teams teach us that success comes from working as one team.",
     "hint_en": "Working as one...",
     "hint_vi": "Làm việc như một..."
+  },
+  {
+    "id": 3,
+    "question_en": "What symbol represents peace during ancient Olympic Games?",
+    "options": [
+      "Golden crowns",
+      "Bronze shields",
+      "Red flags",
+      "The Olympic Truce Ekecheiria"
+    ],
+    "answer": "The Olympic Truce Ekecheiria",
+    "clue_statement": "The Olympic Truce Ekecheiria called for peace.",
+    "hint_en": "Olympic Truce...",
+    "hint_vi": "Thỏa thuận ngừng bắn..."
+  },
+  {
+    "id": 4,
+    "question_en": "Why is passing the baton smoothly important in a relay?",
+    "options": [
+      "It maintains running velocity and momentum",
+      "It stops the race",
+      "It slows down the team",
+      "It confuses the judges"
+    ],
+    "answer": "It maintains running velocity and momentum",
+    "clue_statement": "Smooth handoffs maintain speed and momentum.",
+    "hint_en": "Maintain velocity...",
+    "hint_vi": "Duy trì vận tốc..."
   }
 ]
 };

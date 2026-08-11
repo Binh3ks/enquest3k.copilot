@@ -108,6 +108,28 @@ export default {
         "Running alone is always better"
       ],
       "answer": "Working as one team leads to success"
+    },
+    {
+      "id": 3,
+      "question_en": "What symbol represents peace during ancient Olympic Games?",
+      "options": [
+        "Golden crowns",
+        "Bronze shields",
+        "Red flags",
+        "The Olympic Truce Ekecheiria"
+      ],
+      "answer": "The Olympic Truce Ekecheiria"
+    },
+    {
+      "id": 4,
+      "question_en": "Why is passing the baton smoothly important in a relay?",
+      "options": [
+        "It maintains running velocity and momentum",
+        "It stops the race",
+        "It slows down the team",
+        "It confuses the judges"
+      ],
+      "answer": "It maintains running velocity and momentum"
     }
   ]
 }

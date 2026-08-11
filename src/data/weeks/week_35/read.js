@@ -77,6 +77,8 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
 ],
   read_stem: {
   "title": "Maya and Tom's Green Park Clean-up",
+  "title_en": "Maya and Tom's Green Park Clean-up",
+  "title_vi": "Maya and Tom's Green Park Clean-up",
   "image_url": "/images/week35/read_cover_w35.jpg",
   "audio_url": "/audio/week35/read_main.mp3",
   "content_en": "On a **warm Saturday morning**, Maya and Tom **visited their favorite city park**. They saw **plastic bottles and rubbish** **scattered on the green grass**.\n\n**Without any hesitation**, they **decided to clean up** the whole park together. **First**, they **put on protective gloves** and **collected all plastic waste** into **recycling bins**.\n\n**Next**, they **planted colorful flowers** and **young green trees** near the small pond. **Thanks to their hard work**, the park became **clean and beautiful again**.\n\nVisitors **smiled and clapped** for their **great effort**. Maya and Tom **felt extremely proud** of **protecting nature**.",
@@ -138,15 +140,105 @@ Khách tham quan **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực 
       "hint_en": "Colorful flowers...",
       "hint_vi": "Hoa rực rỡ..."
     }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question_en": "Where did Maya and Tom go on Saturday morning?",
+      "options": [
+        "The shopping mall",
+        "Their favorite city park",
+        "The swimming pool",
+        "The cinema"
+      ],
+      "answer": "Their favorite city park",
+      "clue_statement": "Maya and Tom visited their favorite city park.",
+      "hint_en": "Favorite city...",
+      "hint_vi": "Công viên..."
+    },
+    {
+      "id": 2,
+      "question_en": "What was scattered on the green grass?",
+      "options": [
+        "Plastic bottles and rubbish",
+        "Flower petals",
+        "Wooden toys",
+        "Colorful autumn leaves"
+      ],
+      "answer": "Plastic bottles and rubbish",
+      "clue_statement": "Plastic bottles and rubbish were scattered on the grass.",
+      "hint_en": "Plastic bottles...",
+      "hint_vi": "Chai nhựa..."
+    },
+    {
+      "id": 3,
+      "question_en": "Where did they throw the collected plastic waste?",
+      "options": [
+        "Into the lake",
+        "Behind the trees",
+        "Under the bench",
+        "Into recycling bins"
+      ],
+      "answer": "Into recycling bins",
+      "clue_statement": "They collected plastic waste into recycling bins.",
+      "hint_en": "Recycling...",
+      "hint_vi": "Thùng tái chế..."
+    },
+    {
+      "id": 4,
+      "question_en": "What did they plant near the pond?",
+      "options": [
+        "Colorful flowers and young green trees",
+        "Vegetables and corn",
+        "Grass seeds",
+        "Plastic flags"
+      ],
+      "answer": "Colorful flowers and young green trees",
+      "clue_statement": "They planted colorful flowers and young green trees.",
+      "hint_en": "Colorful flowers...",
+      "hint_vi": "Hoa rực rỡ..."
+    }
   ]
 },
   read_social: {
   "title": "Urban Green Lungs & Singapore Supertrees",
+  "title_en": "Urban Green Lungs & Singapore Supertrees",
+  "title_vi": "Urban Green Lungs & Singapore Supertrees",
   "image_url": "/images/week35/explore_w35.jpg",
   "audio_url": "/audio/week35/read_main.mp3",
   "content_en": "City parks are called **green lungs** because trees clean the air we breathe. In Singapore, urban planners built **futuristic supertrees** covered in over 150,000 plants. These tall plant towers collect rainwater and generate solar energy. By planting trees in cities, humans create **healthier places** for **wild swans, ducks, and squirrels**.",
   "content_vi": "Công viên thành phố được gọi là lá phổi xanh vì cây cối làm sạch không khí chúng ta hít thở. Ở Singapore, các nhà quy hoạch đô thị đã xây dựng các siêu cây tương lai được bao phủ bởi hơn 150.000 cây xanh. Bằng cách trồng cây trong thành phố, con người tạo ra những nơi lành mạnh hơn cho chim chóc và sóc.",
   "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Why are city parks called green lungs?",
+      "options": [
+        "Because they are shaped like lungs",
+        "Because they clean the air we breathe",
+        "Because birds nest in them",
+        "Because they are painted green"
+      ],
+      "answer": "Because they clean the air we breathe",
+      "clue_statement": "Parks are green lungs that clean the air.",
+      "hint_en": "Clean the air...",
+      "hint_vi": "Làm sạch không khí..."
+    },
+    {
+      "id": 2,
+      "question_en": "Which city is famous for futuristic supertrees covered in plants?",
+      "options": [
+        "Singapore",
+        "Paris",
+        "Tokyo",
+        "London"
+      ],
+      "answer": "Singapore",
+      "clue_statement": "In Singapore, city parks have futuristic supertrees.",
+      "hint_en": "Singapore...",
+      "hint_vi": "Singapore..."
+    }
+  ],
+  "questions": [
     {
       "id": 1,
       "question_en": "Why are city parks called green lungs?",

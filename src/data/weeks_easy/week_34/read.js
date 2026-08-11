@@ -77,6 +77,8 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
 ],
   read_stem: {
   "title": "The Diligent Ant and the Carefree Grasshopper",
+  "title_en": "The Diligent Ant and the Carefree Grasshopper",
+  "title_vi": "The Diligent Ant and the Carefree Grasshopper",
   "image_url": "/images/week34/read_cover_w34.jpg",
   "audio_url": "/audio/week34/read_main.mp3",
   "content_en": "On a **bright sunny summer day**, a **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, a **lazy grasshopper** was **singing cheerfully** under a **green tree**.\n\nWhen the **cold winter arrived**, **snow covered the ground everywhere**. The grasshopper **had no food** and was **shivering in the cold**.\n\nHe **slowly walked** to the ant's **warm wooden house** and **knocked on the door**. The **kind ant** opened the door and **invited him inside** for **warm soup**.\n\nThe grasshopper **felt deeply grateful** and **learned a valuable lesson**. **From that day on**, he **promised to work hard** every summer.",
@@ -138,15 +140,105 @@ Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một b
       "hint_en": "Invited him...",
       "hint_vi": "Mời vào..."
     }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question_en": "What was the ant doing during the summer?",
+      "options": [
+        "Singing songs under the tree",
+        "Gathering grains of wheat",
+        "Swimming in the river",
+        "Sleeping inside the log"
+      ],
+      "answer": "Gathering grains of wheat",
+      "clue_statement": "The hardworking ant was gathering grains of wheat.",
+      "hint_en": "Gathering grains...",
+      "hint_vi": "Nhặt những hạt..."
+    },
+    {
+      "id": 2,
+      "question_en": "What was the grasshopper doing while the ant worked?",
+      "options": [
+        "Singing cheerfully under a green tree",
+        "Collecting dry leaves",
+        "Building a brick house",
+        "Cooking vegetable soup"
+      ],
+      "answer": "Singing cheerfully under a green tree",
+      "clue_statement": "The grasshopper was singing cheerfully under a green tree.",
+      "hint_en": "Singing...",
+      "hint_vi": "Hát ca..."
+    },
+    {
+      "id": 3,
+      "question_en": "Why was the grasshopper shivering in winter?",
+      "options": [
+        "His house was too hot",
+        "He ate too much ice cream",
+        "He was playing in cold water",
+        "He had no food and it was freezing"
+      ],
+      "answer": "He had no food and it was freezing",
+      "clue_statement": "The grasshopper had no food and was shivering in the cold.",
+      "hint_en": "Had no food...",
+      "hint_vi": "Không có thức ăn..."
+    },
+    {
+      "id": 4,
+      "question_en": "How did the kind ant help the grasshopper?",
+      "options": [
+        "Invited him inside for warm soup",
+        "Gave him a wooden shovel",
+        "Closed the door quickly",
+        "Told him to go away"
+      ],
+      "answer": "Invited him inside for warm soup",
+      "clue_statement": "The ant invited him inside for warm soup.",
+      "hint_en": "Invited him...",
+      "hint_vi": "Mời vào..."
+    }
   ]
 },
   read_social: {
   "title": "Aesop's Fables & Ancient Life Lessons",
+  "title_en": "Aesop's Fables & Ancient Life Lessons",
+  "title_vi": "Aesop's Fables & Ancient Life Lessons",
   "image_url": "/images/week34/explore_w34.jpg",
   "audio_url": "/audio/week34/read_main.mp3",
   "content_en": "Fables are ancient short stories that teach us **valuable life lessons**. Aesop was a famous storyteller from Greece who wrote stories about animals with human personalities. Stories like *The Ant and the Grasshopper* show us how **hard work and patience** always lead to success.",
   "content_vi": "Truyện ngụ ngôn là những câu chuyện ngắn cổ xưa dạy chúng ta những bài học cuộc sống quý giá. Aesop là một người kể chuyện nổi tiếng từ Hy Lạp.",
   "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Who was Aesop?",
+      "options": [
+        "A modern Canadian scientist",
+        "A famous storyteller from ancient Greece",
+        "A Japanese headmaster",
+        "A famous runner from Kenya"
+      ],
+      "answer": "A famous storyteller from ancient Greece",
+      "clue_statement": "Aesop was a famous storyteller from Greece.",
+      "hint_en": "Storyteller from...",
+      "hint_vi": "Người kể chuyện từ..."
+    },
+    {
+      "id": 2,
+      "question_en": "What main lesson do Aesop's fables teach us?",
+      "options": [
+        "Hard work and patience lead to success",
+        "Ants live in modern houses",
+        "Winter is the warmest season",
+        "Singing is better than working"
+      ],
+      "answer": "Hard work and patience lead to success",
+      "clue_statement": "Fables show how hard work and patience always lead to success.",
+      "hint_en": "Hard work and...",
+      "hint_vi": "Chăm chỉ và..."
+    }
+  ],
+  "questions": [
     {
       "id": 1,
       "question_en": "Who was Aesop?",

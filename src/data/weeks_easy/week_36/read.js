@@ -77,6 +77,8 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
 ],
   read_stem: {
   "title": "Leo and Mia's Hidden Cave Discovery",
+  "title_en": "Leo and Mia's Hidden Cave Discovery",
+  "title_vi": "Leo and Mia's Hidden Cave Discovery",
   "image_url": "/images/week36/read_cover_w36.jpg",
   "audio_url": "/audio/week36/read_main.mp3",
   "content_en": "Early on a **sunny Saturday morning**, Leo and Mia went hiking in the **green pine forest**. While they were **walking along the rocky path**, they **discovered a hidden entrance** to a **mysterious cave**.\n\nThey **turned on their bright flashlights** and **stepped inside carefully**. Inside the cave, **cool drops of water** dripped from the **rocky ceiling**, and **dark grey shadows** danced on the walls.\n\nSuddenly, Mia **spotted a dusty wooden box** tucked behind a large stone. They opened it gently and **found an ancient map** with a **shiny brass compass**.\n\nTheir **hearts beat fast** with excitement. They realized it was a **historical treasure map** left by old explorers. They **felt extremely excited** and **burst into laughter**, ready for their next big adventure.",
@@ -138,15 +140,133 @@ Họ **bật chiếc đèn pin sáng** và **cẩn thận bước vào trong**. 
       "hint_en": "Hearts beat...",
       "hint_vi": "Tim đập..."
     }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question_en": "Where were Leo and Mia hiking on Saturday morning?",
+      "options": [
+        "On the sandy beach",
+        "In the green pine forest",
+        "Around the city center",
+        "In the school garden"
+      ],
+      "answer": "In the green pine forest",
+      "clue_statement": "Leo and Mia went hiking in the green pine forest.",
+      "hint_en": "Green pine...",
+      "hint_vi": "Rừng thông..."
+    },
+    {
+      "id": 2,
+      "question_en": "What did they discover while walking along the rocky path?",
+      "options": [
+        "A hidden entrance to a mysterious cave",
+        "A wooden bench",
+        "A small red bicycle",
+        "A lost dog"
+      ],
+      "answer": "A hidden entrance to a mysterious cave",
+      "clue_statement": "They discovered a hidden entrance to a mysterious cave.",
+      "hint_en": "Mysterious cave...",
+      "hint_vi": "Hang động bí mật..."
+    },
+    {
+      "id": 3,
+      "question_en": "What was inside the dusty wooden box?",
+      "options": [
+        "Gold coins and diamonds",
+        "A toy train",
+        "Old books and letters",
+        "An ancient map and a shiny brass compass"
+      ],
+      "answer": "An ancient map and a shiny brass compass",
+      "clue_statement": "They found an ancient map with a shiny brass compass.",
+      "hint_en": "Ancient map...",
+      "hint_vi": "Bản đồ cổ..."
+    },
+    {
+      "id": 4,
+      "question_en": "How did their hearts react to the discovery?",
+      "options": [
+        "Their hearts beat fast with excitement",
+        "They felt scared and ran home",
+        "They went to sleep",
+        "They cried loudly"
+      ],
+      "answer": "Their hearts beat fast with excitement",
+      "clue_statement": "Their hearts beat fast with excitement.",
+      "hint_en": "Hearts beat...",
+      "hint_vi": "Tim đập..."
+    }
   ]
 },
   read_social: {
   "title": "Son Doong & Underground Wonders",
+  "title_en": "Son Doong & Underground Wonders",
+  "title_vi": "Son Doong & Underground Wonders",
   "image_url": "/images/week36/explore_w36.jpg",
   "audio_url": "/audio/week36/read_main.mp3",
   "content_en": "Caves are amazing underground wonderlands formed over thousands of years by moving water. In Vietnam, **Son Doong Cave** is the largest cave in the entire world! Inside Son Doong, explorers found an **underground jungle** with trees and rare animals.",
   "content_vi": "Hang động là những vùng đất kỳ diệu dưới lòng đất. Ở Việt Nam, Hang Sơn Đoòng là hang động lớn nhất thế giới!",
   "comprehension_questions": [
+    {
+      "id": 1,
+      "question_en": "Which is the largest cave in the world?",
+      "options": [
+        "Mammoth Cave in USA",
+        "Son Doong Cave in Vietnam",
+        "Waitomo Cave in New Zealand",
+        "Blue Cave in Italy"
+      ],
+      "answer": "Son Doong Cave in Vietnam",
+      "clue_statement": "Son Doong Cave is the largest cave in the entire world.",
+      "hint_en": "Son Doong...",
+      "hint_vi": "Hang Sơn Đoòng..."
+    },
+    {
+      "id": 2,
+      "question_en": "What unique natural feature exists inside Son Doong Cave?",
+      "options": [
+        "An underground jungle with trees and animals",
+        "A volcanic lake",
+        "A giant ice castle",
+        "A floating city"
+      ],
+      "answer": "An underground jungle with trees and animals",
+      "clue_statement": "Explorers found an underground jungle inside Son Doong.",
+      "hint_en": "Underground jungle...",
+      "hint_vi": "Rừng rậm dưới lòng đất..."
+    },
+    {
+      "id": 3,
+      "question_en": "How are most caves formed over long periods of time?",
+      "options": [
+        "By strong winds in one day",
+        "By heavy traffic",
+        "By falling meteorites",
+        "By moving water over thousands of years"
+      ],
+      "answer": "By moving water over thousands of years",
+      "clue_statement": "Caves are formed over thousands of years by moving water.",
+      "hint_en": "Moving water...",
+      "hint_vi": "Nước chảy..."
+    },
+    {
+      "id": 4,
+      "question_en": "Why should explorers protect ancient caves?",
+      "options": [
+        "To preserve rare natural beauty and habitats",
+        "To build shopping malls inside",
+        "To leave trash behind",
+        "To block natural water"
+      ],
+      "answer": "To preserve rare natural beauty and habitats",
+      "clue_statement": "Caves are natural wonderlands that must be preserved.",
+      "hint_en": "Preserve natural beauty...",
+      "hint_vi": "Bảo tồn vẻ đẹp..."
+    }
+  ],
+  "questions": [
     {
       "id": 1,
       "question_en": "Which is the largest cave in the world?",
