@@ -3,67 +3,67 @@ export default {
   "min_sentences": 10,
   "theme": "fable_and_moral",
   "min_words": 65,
-  "model_sentence": "All summer long, on a bright sunny summer day, the tiny ant worked hard while gathering food grain by grain. Meanwhile, the lazy grasshopper sat near the ice-cold water stream and sang cheerfully under the warm sun. Suddenly, dark clouds covered the sky and the warm days disappeared quickly. When winter came, heavy snow fell all over the forest and winter arrived. The helpless grasshopper had no food left and was shivering in cold. He felt deeply worried and slowly walked to the ant's cozy house. The kind ant invited him inside and shared her warm food with him. The grasshopper was touched by her kindness and felt extremely relieved. Eventually, he learned a valuable lesson to work hard before winter. From that day on, he always worked hard to prepare for the future.",
+  "model_sentence": "On a bright sunny summer day, the hardworking ant was gathering grains of wheat. Meanwhile, the lazy grasshopper was singing cheerfully under a green tree. When the cold winter arrived, snow covered the ground everywhere. The grasshopper had no food and was shivering in the cold. He slowly walked to the ant's warm wooden house and knocked on the door. The kind ant opened the door and invited him inside for warm soup. The grasshopper felt deeply grateful and learned a valuable lesson. From that day on, he promised to work hard every summer.",
   "topic_talk_prompt": "Tell me about a time when you worked hard with your friends to finish a project!",
   "sentence_frames": [
     {
-      "template": "All summer long, on a _____ summer day, the tiny ant worked hard while gathering food grain by grain.",
+      "template": "On a _____ summer day, the ant was gathering grains of wheat.",
       "answers": [
         "bright sunny"
       ]
     },
     {
-      "template": "Meanwhile, the lazy grasshopper sat near the _____ water stream and sang cheerfully.",
+      "template": "_____, the lazy grasshopper was singing cheerfully under a tree.",
       "answers": [
-        "ice-cold"
+        "Meanwhile"
       ]
     },
     {
-      "template": "_____, dark clouds covered the sky and the warm days disappeared quickly.",
+      "template": "When the cold winter arrived, _____ covered the ground everywhere.",
       "answers": [
-        "Suddenly"
+        "snow"
       ]
     },
     {
-      "template": "When winter came, heavy snow fell all over the forest and winter _____.",
-      "answers": [
-        "arrived"
-      ]
-    },
-    {
-      "template": "The helpless grasshopper had no food left and was _____ in cold.",
+      "template": "The grasshopper had no food and was _____ in the cold.",
       "answers": [
         "shivering"
       ]
     },
     {
-      "template": "He felt _____ worried and slowly walked to the ant's cozy house.",
+      "template": "He slowly walked to the ant's warm _____ house.",
+      "answers": [
+        "wooden"
+      ]
+    },
+    {
+      "template": "He _____ on the door and asked for help.",
+      "answers": [
+        "knocked"
+      ]
+    },
+    {
+      "template": "The kind ant opened the door and invited him inside for _____ soup.",
+      "answers": [
+        "warm"
+      ]
+    },
+    {
+      "template": "The grasshopper felt _____ grateful for the food.",
       "answers": [
         "deeply"
       ]
     },
     {
-      "template": "The kind ant invited him inside and _____ her warm food with him.",
+      "template": "He learned a _____ lesson about working hard.",
       "answers": [
-        "shared"
+        "valuable"
       ]
     },
     {
-      "template": "The grasshopper was touched by her kindness and felt _____ relieved.",
+      "template": "From that day on, he _____ to prepare for winter.",
       "answers": [
-        "extremely"
-      ]
-    },
-    {
-      "template": "_____, he learned a valuable lesson to work hard before winter.",
-      "answers": [
-        "Eventually"
-      ]
-    },
-    {
-      "template": "From that day on, he always worked _____ to prepare for the future.",
-      "answers": [
-        "hard"
+        "promised"
       ]
     }
   ],
@@ -76,22 +76,17 @@ export default {
       "words": [
         {
           "word": "bright sunny",
-          "vi": "nắng hè rực rỡ",
+          "vi": "nắng đẹp rực rỡ",
           "distractor": false
         },
         {
-          "word": "ice-cold",
-          "vi": "lạnh như băng",
+          "word": "Meanwhile",
+          "vi": "Trong khi đó",
           "distractor": false
         },
         {
-          "word": "Suddenly",
-          "vi": "Đột nhiên",
-          "distractor": false
-        },
-        {
-          "word": "arrived",
-          "vi": "đã đến",
+          "word": "snow",
+          "vi": "tuyết",
           "distractor": false
         },
         {
@@ -100,28 +95,33 @@ export default {
           "distractor": false
         },
         {
+          "word": "wooden",
+          "vi": "bằng gỗ",
+          "distractor": false
+        },
+        {
+          "word": "knocked",
+          "vi": "gõ cửa",
+          "distractor": false
+        },
+        {
+          "word": "warm",
+          "vi": "nóng ấm",
+          "distractor": false
+        },
+        {
           "word": "deeply",
           "vi": "sâu sắc",
           "distractor": false
         },
         {
-          "word": "shared",
-          "vi": "chia sẻ",
+          "word": "valuable",
+          "vi": "quý giá",
           "distractor": false
         },
         {
-          "word": "extremely",
-          "vi": "cực kỳ",
-          "distractor": false
-        },
-        {
-          "word": "Eventually",
-          "vi": "Rốt cuộc",
-          "distractor": false
-        },
-        {
-          "word": "hard",
-          "vi": "chăm chỉ",
+          "word": "promised",
+          "vi": "đã hứa",
           "distractor": false
         },
         {
@@ -141,38 +141,32 @@ export default {
     "picture_mode": {
       "type": "picture",
       "image_url": "/images/week34/story_writing_pic.jpg",
-      "image_prompt": "In our fun English storytelling class today, my group presented the fable of the Ant and the Grasshopper. The ant gathered food grain by grain during bright sunny summer while the grasshopper sang cheerfully. When winter came, the grasshopper was shivering in cold. Watercolor children book illustration style.",
+      "image_prompt": "In our fun English storytelling class today, my group presented the fable of the Ant and the Grasshopper. The ant gathered grains of wheat during bright sunny summer while the grasshopper sang cheerfully. When winter came, the grasshopper knocked on the wooden house. Watercolor children book illustration style.",
       "word_bank": {
         "action_verbs": [
-          "gathered food",
-          "grain by grain",
-          "sang cheerfully",
+          "gathering grains",
           "shivering in cold",
-          "shared warm food"
+          "wooden house",
+          "warm soup"
         ],
         "cumulative_chunks": [
           "bright sunny summer",
-          "ice-cold water",
-          "felt deeply worried",
-          "felt extremely relieved",
-          "valuable lesson"
+          "felt deeply grateful",
+          "learned a valuable lesson"
         ],
         "connectors": [
-          "All summer long",
           "Meanwhile",
-          "Suddenly",
-          "When winter came",
-          "Eventually"
+          "When winter arrived",
+          "From that day on"
         ],
         "grammar_boosters": [
-          "while gathering food",
           "while the ant was working",
-          "so that he could survive"
+          "promised to work hard"
         ]
       },
       "writing_prompts": {
-        "en": "Look at the picture. Describe how the ant gathered food during summer while the grasshopper sang cheerfully, and what happened when winter arrived.",
-        "vi": "Nhìn bức tranh. Mô tả cách chú kiến tích trữ thức ăn trong mùa hè trong khi chú châu chấu ca hát, và chuyện gì xảy ra khi mùa đông đến."
+        "en": "Look at the picture. Describe how the ant gathered grains during summer while the grasshopper sang cheerfully, and what happened when winter arrived.",
+        "vi": "Nhìn bức tranh. Mô tả cách chú kiến nhặt lúa mì trong mùa hè trong khi chú châu chấu ca hát, và chuyện gì xảy ra khi mùa đông đến."
       },
       "rubric_tier": 2
     }
