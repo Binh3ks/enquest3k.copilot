@@ -1,6 +1,6 @@
-// Auto-generated synchronized read.js
+// Auto-generated Cambridge A2 read.js for Week 35
 export default {
-  title: "Save Our Park — Environmental Action",
+  title: "Save Our Park",
   image_url: "/images/week35/read_cover_w35.jpg",
   audio_url: "/audio/week35/read_main.mp3",
   content_en: `On a **warm Saturday morning**, Maya and Tom **visited their favorite city park**. They were sad to see **plastic bottles and rubbish** **scattered on the green grass**.
@@ -18,8 +18,17 @@ All the visitors **smiled and applauded** their **wonderful effort**. Maya and T
 
 Tất cả du khách **đều mỉm cười và vỗ tay khen ngợi** **nỗ lực tuyệt vời của họ**. Maya và Tom **cảm thấy cực kỳ tự hào** vì đã **bảo vệ thiên nhiên**.`,
   comprehension_questions: [
-    { id: 1, question_en: "What did the characters do in the story?", answer: ["Worked hard together", "Cleaned and helped"], clue_statement: "They worked together and made a wonderful effort.", hint_en: "They worked ___.", hint_vi: "Họ làm việc ___.", audio_url: "/audio/week35/read_main.mp3" }
-  ]
+  {
+    "id": 1,
+    "question_en": "Where did Maya and Tom go on Saturday morning?",
+    "answer": [
+      "Their favorite city park"
+    ],
+    "clue_statement": "Maya and Tom visited their favorite city park.",
+    "hint_en": "Favorite ___ park.",
+    "hint_vi": "Công viên ___ yêu thích."
+  }
+]
 };
 
 export const chunk_focus = [

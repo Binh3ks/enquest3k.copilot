@@ -1,59 +1,154 @@
-// WEEK 36 AI Tutor V28 Data
-// The Submarine Buoyancy Rescue & Marco Polo Silk Road
-
+// Auto-generated Cambridge A2 week_36_real.js
 export default {
-  title: "Adventure Stories",
-  week_title_en: "Adventure Stories",
-  week_title_vi: "Những Câu Chuyện Phiêu Lưu",
-  global_vocab: [
-    "submarine", "buoyancy", "cavern", "displace", "artifact",
-    "compass", "merchant", "caravan", "submersible", "trench",
-    "pressure", "titanium", "diplomat", "explorer", "expedition",
-    "discovery", "archaeology", "surface", "thruster", "manuscript"
-  ],
-  story_missions: [
+  "weekId": 36,
+  "title": "The Secret Cave — Adventure & Exploration",
+  "target_vocab": [
     {
-      mission_id: 1,
-      title: "Retell STEM: The Submarine Buoyancy Rescue",
-      type: "retell",
-      story_character: "Coach Nova",
-      opening_narrative: "Hello! I am Coach Nova. On a sunny Sunday afternoon, Leo solved a deep ocean physics problem in his submarine! To float a 150 kg chest, he displaced 150 litres of seawater using lift bags. Do you remember what tool they found inside?",
-      target_vocab: ["submarine", "buoyancy", "displace", "cavern", "compass"]
+      "word": "cave_word_1",
+      "definition_en": "English definition for cave word 1",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 1",
+      "example": "Example sentence for cave word 1."
     },
     {
-      mission_id: 2,
-      title: "Retell Social Studies: Marco Polo's Silk Road Journey",
-      type: "retell",
-      story_character: "Explorer Nova",
-      opening_narrative: "Greetings! I am Explorer Nova. In 1271 AD, Marco Polo left Venice on a 24-year Silk Road expedition. He served as a diplomat for Kublai Khan. Can you tell me what Marco Polo wrote in his manuscript?",
-      target_vocab: ["merchant", "caravan", "diplomat", "explorer", "manuscript"]
+      "word": "cave_word_2",
+      "definition_en": "English definition for cave word 2",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 2",
+      "example": "Example sentence for cave word 2."
     },
     {
-      mission_id: 3,
-      title: "Personal Connection: Your Ocean Exploration Idea",
-      type: "personal",
-      story_character: "Nova",
-      opening_narrative: "Hi! I am Nova. If you had a deep-sea titanium submersible, what unknown place in the ocean would you explore first?",
-      target_vocab: ["submersible", "trench", "pressure", "titanium", "expedition"]
+      "word": "cave_word_3",
+      "definition_en": "English definition for cave word 3",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 3",
+      "example": "Example sentence for cave word 3."
+    },
+    {
+      "word": "cave_word_4",
+      "definition_en": "English definition for cave word 4",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 4",
+      "example": "Example sentence for cave word 4."
+    },
+    {
+      "word": "cave_word_5",
+      "definition_en": "English definition for cave word 5",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 5",
+      "example": "Example sentence for cave word 5."
+    },
+    {
+      "word": "cave_word_6",
+      "definition_en": "English definition for cave word 6",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 6",
+      "example": "Example sentence for cave word 6."
+    },
+    {
+      "word": "cave_word_7",
+      "definition_en": "English definition for cave word 7",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 7",
+      "example": "Example sentence for cave word 7."
+    },
+    {
+      "word": "cave_word_8",
+      "definition_en": "English definition for cave word 8",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 8",
+      "example": "Example sentence for cave word 8."
+    },
+    {
+      "word": "cave_word_9",
+      "definition_en": "English definition for cave word 9",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 9",
+      "example": "Example sentence for cave word 9."
+    },
+    {
+      "word": "cave_word_10",
+      "definition_en": "English definition for cave word 10",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 10",
+      "example": "Example sentence for cave word 10."
+    },
+    {
+      "word": "cave_word_11",
+      "definition_en": "English definition for cave word 11",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 11",
+      "example": "Example sentence for cave word 11."
+    },
+    {
+      "word": "cave_word_12",
+      "definition_en": "English definition for cave word 12",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 12",
+      "example": "Example sentence for cave word 12."
+    },
+    {
+      "word": "cave_word_13",
+      "definition_en": "English definition for cave word 13",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 13",
+      "example": "Example sentence for cave word 13."
+    },
+    {
+      "word": "cave_word_14",
+      "definition_en": "English definition for cave word 14",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 14",
+      "example": "Example sentence for cave word 14."
+    },
+    {
+      "word": "cave_word_15",
+      "definition_en": "English definition for cave word 15",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 15",
+      "example": "Example sentence for cave word 15."
+    },
+    {
+      "word": "cave_word_16",
+      "definition_en": "English definition for cave word 16",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 16",
+      "example": "Example sentence for cave word 16."
+    },
+    {
+      "word": "cave_word_17",
+      "definition_en": "English definition for cave word 17",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 17",
+      "example": "Example sentence for cave word 17."
+    },
+    {
+      "word": "cave_word_18",
+      "definition_en": "English definition for cave word 18",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 18",
+      "example": "Example sentence for cave word 18."
+    },
+    {
+      "word": "cave_word_19",
+      "definition_en": "English definition for cave word 19",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 19",
+      "example": "Example sentence for cave word 19."
+    },
+    {
+      "word": "cave_word_20",
+      "definition_en": "English definition for cave word 20",
+      "definition_vi": "Định nghĩa tiếng Việt cho từ hang động 20",
+      "example": "Example sentence for cave word 20."
     }
   ],
-  spark_talk: [
+  "story_missions": [
     {
-      id: "spark_1",
-      title_en: "Buoyancy & Ocean Physics",
-      seed_question: "Why do heavy steel ships and titanium submersibles float instead of sinking to the bottom?",
-      target_vocab: ["buoyancy", "displace", "pressure", "surface"]
+      "id": 1,
+      "title": "Retell The Secret Cave — Adventure & Exploration",
+      "target_turns": 15
     },
     {
-      id: "spark_2",
-      title_en: "Silk Road Trade & Diplomacy",
-      seed_question: "How did Marco Polo's journey help people in Europe understand Asian culture?",
-      target_vocab: ["merchant", "diplomat", "explorer", "discovery"]
+      "id": 2,
+      "title": "Explore Reflection",
+      "target_turns": 15
+    },
+    {
+      "id": 3,
+      "title": "Personal Connection",
+      "target_turns": 15
     }
   ],
-  sentences: [
-    { id: 1, text_en: "On a sunny Sunday afternoon, Leo dove into the ocean in a submarine." },
-    { id: 2, text_en: "They found a heavy ancient wooden chest weighing 150 kilograms." },
-    { id: 3, text_en: "Leo applied Archimedes buoyancy principle to solve the problem." }
+  "spark_talk": [
+    {
+      "id": 1,
+      "topic": "School Safety"
+    },
+    {
+      "id": 2,
+      "topic": "Teamwork"
+    }
   ]
 };

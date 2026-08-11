@@ -1,145 +1,126 @@
-// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper
-// Word Power Station — Easy Mode
-
+// Auto-generated Cambridge A2 word_power.js for Week 34
 export default {
-  title: "Word Power: Fable Collocations",
-  audio_url: null,
-  words: [
-    {
-      id: 1,
-      word: "hard-working ant",
-      pronunciation: "/ˌhɑːdˈwɜːkɪŋ ænt/",
-      cefr_level: "A1",
-      definition_vi: "con kiến chăm chỉ",
-      definition_en: "an ant that works with a lot of effort and care",
-      example: "The hard-working ant gathered seeds every day.",
-      model_sentence: "My mum is a hard-working person who always prepares dinner for our family.",
-      collocation: "hard-working ant / very hard-working / hard-working student",
-      image_url: "/images/week34/wordpower_hard_working_ant.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w1_word.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w1_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w1_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w1_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w1_model.mp3"
-    },
-    {
-      id: 2,
-      word: "lazy grasshopper",
-      pronunciation: "/ˈleɪzi ˈɡræsˌhɒpər/",
-      cefr_level: "A1",
-      definition_vi: "con châu chấu lười biếng",
-      definition_en: "a grasshopper that does not want to work",
-      example: "The lazy grasshopper sang songs all summer long.",
-      model_sentence: "The lazy grasshopper never prepared food, so it was hungry in winter.",
-      collocation: "lazy grasshopper / very lazy / lazy person",
-      image_url: "/images/week34/wordpower_lazy_grasshopper.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w2_word.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w2_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w2_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w2_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w2_model.mp3"
-    },
-    {
-      id: 3,
-      word: "gather seeds",
-      pronunciation: "/ˈɡæðər siːdz/",
-      cefr_level: "A1",
-      definition_vi: "nhặt hạt",
-      definition_en: "to collect seeds from the ground or plants",
-      example: "The ant gathered seeds every morning in the summer.",
-      model_sentence: "I gathered seeds from the garden and planted them in a pot.",
-      collocation: "gather seeds / gather food / gather together",
-      image_url: "/images/week34/wordpower_gather_seeds.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w3_word.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w3_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w3_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w3_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w3_model.mp3"
-    },
-    {
-      id: 4,
-      word: "prepare for the future",
-      pronunciation: "/prɪˈpeər fə ðə ˈfjuːtʃər/",
-      cefr_level: "A1",
-      definition_vi: "chuẩn bị cho tương lai",
-      definition_en: "to make plans and work for what comes next",
-      example: "We should always prepare for the future.",
-      model_sentence: "I prepare for the future by studying hard at school every day.",
-      collocation: "prepare for the future / prepare for winter / prepare well",
-      image_url: "/images/week34/wordpower_prepare_future.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w4_word.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w4_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w4_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w4_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w4_model.mp3"
-    },
-    {
-      id: 5,
-      word: "warm shelter",
-      pronunciation: "/wɔːm ˈʃeltər/",
-      cefr_level: "A1",
-      definition_vi: "nơi trú ẩn ấm áp",
-      definition_en: "a safe place that protects you from cold weather",
-      example: "The ant built a warm shelter under the ground.",
-      model_sentence: "The warm shelter kept the ant safe during the cold winter.",
-      collocation: "warm shelter / safe shelter / build a shelter",
-      image_url: "/images/week34/wordpower_warm_shelter.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w5_think_ahead.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w5_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w5_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w5_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w5_model.mp3"
-    },
-    {
-      id: 6,
-      word: "share food",
-      pronunciation: "/ʃeər fuːd/",
-      cefr_level: "A1",
-      definition_vi: "chia sẻ thức ăn",
-      definition_en: "to give part of your food to other people",
-      example: "The kind ant shared food with the hungry grasshopper.",
-      model_sentence: "I shared my food with my friend who forgot his lunch.",
-      collocation: "share food / share with / share together",
-      image_url: "/images/week34/wordpower_share_food.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w6_word.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w6_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w6_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w6_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w6_model.mp3"
-    },
-    {
-      id: 7,
-      word: "first frost",
-      pronunciation: "/fɜːst frɒst/",
-      cefr_level: "A1",
-      definition_vi: "sương giá đầu tiên",
-      definition_en: "the first time frost appears at the beginning of winter",
-      example: "The first frost appeared on the grass one autumn morning.",
-      model_sentence: "When the first frost came, the grasshopper felt very cold.",
-      collocation: "first frost / cold frost / morning frost",
-      image_url: "/images/week34/wordpower_first_frost.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w7_word.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w7_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w7_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w7_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w7_model.mp3"
-    },
-    {
-      id: 8,
-      word: "think ahead",
-      pronunciation: "/lɜːn ə ˈlesən/",
-      cefr_level: "A1",
-      definition_vi: "suy nghĩ và tính toán trước cho tương lai",
-      definition_en: "to learn something important from an experience",
-      example: "The grasshopper learned a lesson about preparing for the future.",
-      model_sentence: "I learned a lesson about being organized after I forgot my homework.",
-      collocation: "think ahead / learn an important lesson / learn your lesson",
-      image_url: "/images/week34/wordpower_learn_lesson.jpg",
-      audio_word: "/audio/week34_easy/wordpower_w8_word.mp3",
-      audio_definition: "/audio/week34_easy/wordpower_w8_def.mp3",
-      audio_example: "/audio/week34_easy/wordpower_w8_example.mp3",
-      audio_collocation: "/audio/week34_easy/wordpower_w8_collocation.mp3",
-      audio_model: "/audio/week34_easy/wordpower_w8_model.mp3"
-    }
-  ]
+  title: "Collocations & Chunks — Week 34",
+  collocations: [
+  {
+    "phrase": "fable_word_1",
+    "definition_en": "English definition for fable word 1",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 1",
+    "example": "Example sentence for fable word 1."
+  },
+  {
+    "phrase": "fable_word_2",
+    "definition_en": "English definition for fable word 2",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 2",
+    "example": "Example sentence for fable word 2."
+  },
+  {
+    "phrase": "fable_word_3",
+    "definition_en": "English definition for fable word 3",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 3",
+    "example": "Example sentence for fable word 3."
+  },
+  {
+    "phrase": "fable_word_4",
+    "definition_en": "English definition for fable word 4",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 4",
+    "example": "Example sentence for fable word 4."
+  },
+  {
+    "phrase": "fable_word_5",
+    "definition_en": "English definition for fable word 5",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 5",
+    "example": "Example sentence for fable word 5."
+  },
+  {
+    "phrase": "fable_word_6",
+    "definition_en": "English definition for fable word 6",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 6",
+    "example": "Example sentence for fable word 6."
+  },
+  {
+    "phrase": "fable_word_7",
+    "definition_en": "English definition for fable word 7",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 7",
+    "example": "Example sentence for fable word 7."
+  },
+  {
+    "phrase": "fable_word_8",
+    "definition_en": "English definition for fable word 8",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 8",
+    "example": "Example sentence for fable word 8."
+  },
+  {
+    "phrase": "fable_word_9",
+    "definition_en": "English definition for fable word 9",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 9",
+    "example": "Example sentence for fable word 9."
+  },
+  {
+    "phrase": "fable_word_10",
+    "definition_en": "English definition for fable word 10",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 10",
+    "example": "Example sentence for fable word 10."
+  },
+  {
+    "phrase": "fable_word_11",
+    "definition_en": "English definition for fable word 11",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 11",
+    "example": "Example sentence for fable word 11."
+  },
+  {
+    "phrase": "fable_word_12",
+    "definition_en": "English definition for fable word 12",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 12",
+    "example": "Example sentence for fable word 12."
+  },
+  {
+    "phrase": "fable_word_13",
+    "definition_en": "English definition for fable word 13",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 13",
+    "example": "Example sentence for fable word 13."
+  },
+  {
+    "phrase": "fable_word_14",
+    "definition_en": "English definition for fable word 14",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 14",
+    "example": "Example sentence for fable word 14."
+  },
+  {
+    "phrase": "fable_word_15",
+    "definition_en": "English definition for fable word 15",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 15",
+    "example": "Example sentence for fable word 15."
+  },
+  {
+    "phrase": "fable_word_16",
+    "definition_en": "English definition for fable word 16",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 16",
+    "example": "Example sentence for fable word 16."
+  },
+  {
+    "phrase": "fable_word_17",
+    "definition_en": "English definition for fable word 17",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 17",
+    "example": "Example sentence for fable word 17."
+  },
+  {
+    "phrase": "fable_word_18",
+    "definition_en": "English definition for fable word 18",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 18",
+    "example": "Example sentence for fable word 18."
+  },
+  {
+    "phrase": "fable_word_19",
+    "definition_en": "English definition for fable word 19",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 19",
+    "example": "Example sentence for fable word 19."
+  },
+  {
+    "phrase": "fable_word_20",
+    "definition_en": "English definition for fable word 20",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ ngụ ngôn 20",
+    "example": "Example sentence for fable word 20."
+  }
+]
 };

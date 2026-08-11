@@ -1,176 +1,71 @@
-const mindMapContent = {
-  "centerStems": [
-    {
-      "text": "The ant is very ___ today.",
-      "type": "affirmative",
-      "audio": "/audio/week34/mindmap_stem_1.mp3"
-    },
-    {
-      "text": "The grasshopper is very ___ today.",
-      "type": "affirmative",
-      "audio": "/audio/week34/mindmap_stem_2.mp3"
-    },
-    {
-      "text": "The ant is not ___ today.",
-      "type": "negative",
-      "audio": "/audio/week34/mindmap_stem_3.mp3"
-    },
-    {
-      "text": "The grasshopper did not ___ last summer.",
-      "type": "negative",
-      "audio": "/audio/week34/mindmap_stem_4.mp3"
-    },
-    {
-      "text": "Do you ___ or ___?",
-      "type": "question",
-      "audio": "/audio/week34/mindmap_stem_5.mp3"
-    },
-    {
-      "text": "What is your ___ lesson?",
-      "type": "question",
-      "audio": "/audio/week34/mindmap_stem_6.mp3"
-    }
-  ],
-  "branchLabels": {
-    "The ant is very ___ today.": [
-      {
-        "text": "hard-working",
-        "audio": "/audio/week34/mindmap_branch_1_1.mp3"
-      },
-      {
-        "text": "busy",
-        "audio": "/audio/week34/mindmap_branch_1_2.mp3"
-      },
-      {
-        "text": "careful",
-        "audio": "/audio/week34/mindmap_branch_1_3.mp3"
-      },
-      {
-        "text": "prepared",
-        "audio": "/audio/week34/mindmap_branch_1_4.mp3"
-      },
-      {
-        "text": "happy",
-        "audio": "/audio/week34/mindmap_branch_1_5.mp3"
-      },
-      {
-        "text": "clever",
-        "audio": "/audio/week34/mindmap_branch_1_6.mp3"
-      }
-    ],
-    "The grasshopper is very ___ today.": [
-      {
-        "text": "lazy",
-        "audio": "/audio/week34/mindmap_branch_2_1.mp3"
-      },
-      {
-        "text": "fun",
-        "audio": "/audio/week34/mindmap_branch_2_2.mp3"
-      },
-      {
-        "text": "happy",
-        "audio": "/audio/week34/mindmap_branch_2_3.mp3"
-      },
-      {
-        "text": "careless",
-        "audio": "/audio/week34/mindmap_branch_2_4.mp3"
-      },
-      {
-        "text": "singing",
-        "audio": "/audio/week34/mindmap_branch_2_5.mp3"
-      },
-      {
-        "text": "dancing",
-        "audio": "/audio/week34/mindmap_branch_2_6.mp3"
-      }
-    ],
-    "The ant is not ___ today.": [
-      {
-        "text": "lazy",
-        "audio": "/audio/week34/mindmap_branch_3_1.mp3"
-      },
-      {
-        "text": "resting",
-        "audio": "/audio/week34/mindmap_branch_3_2.mp3"
-      },
-      {
-        "text": "still",
-        "audio": "/audio/week34/mindmap_branch_3_3.mp3"
-      },
-      {
-        "text": "playing",
-        "audio": "/audio/week34/mindmap_branch_3_4.mp3"
-      },
-      {
-        "text": "worried",
-        "audio": "/audio/week34/mindmap_branch_3_5.mp3"
-      },
-      {
-        "text": "hungry",
-        "audio": "/audio/week34/mindmap_branch_3_6.mp3"
-      }
-    ],
-    "The grasshopper did not ___ last summer.": [
-      {
-        "text": "work",
-        "audio": "/audio/week34/mindmap_branch_4_1.mp3"
-      },
-      {
-        "text": "prepare",
-        "audio": "/audio/week34/mindmap_branch_4_2.mp3"
-      },
-      {
-        "text": "gather",
-        "audio": "/audio/week34/mindmap_branch_4_3.mp3"
-      },
-      {
-        "text": "store",
-        "audio": "/audio/week34/mindmap_branch_4_4.mp3"
-      },
-      {
-        "text": "build",
-        "audio": "/audio/week34/mindmap_branch_4_5.mp3"
-      },
-      {
-        "text": "plan",
-        "audio": "/audio/week34/mindmap_branch_4_6.mp3"
-      }
-    ],
-    "Do you ___ or ___?": [
-      { text: "work or play", audio: "/audio/week34/mindmap_branch_5_1.mp3" },
-      { text: "save or spend", audio: "/audio/week34/mindmap_branch_5_2.mp3" },
-      { text: "prepare or wait", audio: "/audio/week34/mindmap_branch_5_3.mp3" },
-      { text: "run or rest", audio: "/audio/week34/mindmap_branch_5_4.mp3" },
-      { text: "plan or improvise", audio: "/audio/week34/mindmap_branch_5_5.mp3" },
-      { text: "help or watch", audio: "/audio/week34/mindmap_branch_5_6.mp3" }
-    ],
-    "What is your ___ lesson?": [
-      {
-        "text": "favorite",
-        "audio": "/audio/week34/mindmap_branch_6_1.mp3"
-      },
-      {
-        "text": "important",
-        "audio": "/audio/week34/mindmap_branch_6_2.mp3"
-      },
-      {
-        "text": "big",
-        "audio": "/audio/week34/mindmap_branch_6_3.mp3"
-      },
-      {
-        "text": "new",
-        "audio": "/audio/week34/mindmap_branch_6_4.mp3"
-      },
-      {
-        "text": "interesting",
-        "audio": "/audio/week34/mindmap_branch_6_5.mp3"
-      },
-      {
-        "text": "best",
-        "audio": "/audio/week34/mindmap_branch_6_6.mp3"
-      }
+// Auto-generated Cambridge A2 mindmap.js for Week 34
+export default {
+  centerStems: [
+  {
+    "label": "Summer Setting",
+    "branches": [
+      "bright sunny summer day",
+      "hardworking ant in field",
+      "gathering grains of wheat",
+      "lazy grasshopper under tree",
+      "singing cheerfully all day",
+      "warm golden sunshine"
+    ]
+  },
+  {
+    "label": "Winter Problem",
+    "branches": [
+      "cold winter arrived",
+      "snow covered ground everywhere",
+      "no food to eat",
+      "shivering in freezing cold",
+      "empty belly and weak legs",
+      "felt cold and sad"
+    ]
+  },
+  {
+    "label": "Asking for Help",
+    "branches": [
+      "slowly walked down path",
+      "reached warm wooden house",
+      "knocked gently on door",
+      "asked for warm soup",
+      "kind ant opened door",
+      "invited him inside"
+    ]
+  },
+  {
+    "label": "Kind Response",
+    "branches": [
+      "served hot vegetable soup",
+      "shared stored wheat grains",
+      "sat near warm fireplace",
+      "listened with kindness",
+      "gave him a warm coat",
+      "smiled gently"
+    ]
+  },
+  {
+    "label": "Grateful Emotion",
+    "branches": [
+      "felt deeply grateful",
+      "thanked the ant warmly",
+      "warmed up inside house",
+      "realized his past mistake",
+      "smiled with joy",
+      "heart felt warm"
+    ]
+  },
+  {
+    "label": "Life Lesson",
+    "branches": [
+      "learned a valuable lesson",
+      "promised to work hard",
+      "prepare for winter early",
+      "never be lazy again",
+      "work together every summer",
+      "help friends in need"
     ]
   }
+]
 };
-
-export default mindMapContent;

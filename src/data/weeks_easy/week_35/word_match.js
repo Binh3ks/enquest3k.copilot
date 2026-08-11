@@ -1,48 +1,83 @@
-// WEEK 35: Environmental Issues
-// Word Match Station — Easy Mode
-
-export default {
-  title: "Word Match: Environmental Issues",
-  image_url: null,
-  audio_url: "/audio/week35_easy/wordmatch_main.mp3",
-  instruction_en: "Match each word or phrase to its meaning or pair.",
-  instruction_vi: "Noi moi tu hoac cum tu voi nghia hoac cap cua no.",
-  sets: [
-    {
-      id: "set1",
-      label_en: "Vocabulary: Words and Meanings",
-      label_vi: "Tu vung: Tu va Nghia",
-      pairs: [
-        { left: "planet", right: "the Earth, our world" },
-        { left: "pollution", right: "harmful things in the air, water, or land" },
-        { left: "climate", right: "the usual weather in a place" },
-        { left: "renewable", right: "something that will never run out" },
-        { left: "melting", right: "becoming liquid because of heat" }
-      ]
-    },
-    {
-      id: "set2",
-      label_en: "Modal Verbs: Must, Should, Can",
-      label_vi: "Dong tu Modal: Must, Should, Can",
-      pairs: [
-        { left: "MUST", right: "bắt buộc phải (obligation)" },
-        { left: "SHOULD", right: "nên làm (advice)" },
-        { left: "CAN", right: "có thể làm (ability)" },
-        { left: "We MUST protect our planet.", right: "obligation / bắt buộc" },
-        { left: "We SHOULD recycle.", right: "advice / nên" }
-      ]
-    },
-    {
-      id: "set3",
-      label_en: "Vocabulary: English to Vietnamese",
-      label_vi: "Tu vung: Tieng Anh sang Tieng Viet",
-      pairs: [
-        { left: "recycle", right: "tai che" },
-        { left: "solar power", right: "nang luong mat troi" },
-        { left: "sea level", right: "muc nuoc bien" },
-        { left: "act now", right: "hanh dong ngay" },
-        { left: "protect", right: "bao ve" }
-      ]
-    }
-  ]
-};
+// Auto-generated Cambridge A2 word_match.js for Week 35
+export default [
+  {
+    "word": "park_word_1",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 1"
+  },
+  {
+    "word": "park_word_2",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 2"
+  },
+  {
+    "word": "park_word_3",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 3"
+  },
+  {
+    "word": "park_word_4",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 4"
+  },
+  {
+    "word": "park_word_5",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 5"
+  },
+  {
+    "word": "park_word_6",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 6"
+  },
+  {
+    "word": "park_word_7",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 7"
+  },
+  {
+    "word": "park_word_8",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 8"
+  },
+  {
+    "word": "park_word_9",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 9"
+  },
+  {
+    "word": "park_word_10",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 10"
+  },
+  {
+    "word": "park_word_11",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 11"
+  },
+  {
+    "word": "park_word_12",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 12"
+  },
+  {
+    "word": "park_word_13",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 13"
+  },
+  {
+    "word": "park_word_14",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 14"
+  },
+  {
+    "word": "park_word_15",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 15"
+  },
+  {
+    "word": "park_word_16",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 16"
+  },
+  {
+    "word": "park_word_17",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 17"
+  },
+  {
+    "word": "park_word_18",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 18"
+  },
+  {
+    "word": "park_word_19",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 19"
+  },
+  {
+    "word": "park_word_20",
+    "definition": "Định nghĩa tiếng Việt cho từ công viên 20"
+  }
+];

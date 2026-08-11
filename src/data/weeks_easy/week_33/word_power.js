@@ -1,145 +1,126 @@
-// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
-// Word Power Station — Easy Mode
-
+// Auto-generated Cambridge A2 word_power.js for Week 33
 export default {
-  title: "Word Power: Accident Collocations",
-  audio_url: null,
-  words: [
-    {
-      id: 1,
-      word: "have an accident",
-      pronunciation: "/hæv ən ˈæksɪdənt/",
-      cefr_level: "A1",
-      definition_vi: "bị tai nạn",
-      definition_en: "to be involved in an accident",
-      example: "Jake had an accident in the school corridor.",
-      model_sentence: "I had an accident at home when I slipped in the kitchen.",
-      collocation: "have an accident / have a bad accident / had an accident",
-      image_url: "/images/week33/wordpower_have_an_accident.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w1_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w1_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w1_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w1_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w1_model.mp3"
-    },
-    {
-      id: 2,
-      word: "fall down",
-      pronunciation: "/fɔːl daʊn/",
-      cefr_level: "A1",
-      definition_vi: "ngã xuống",
-      definition_en: "to move down to the ground suddenly",
-      example: "Jake fell down and hurt his knee.",
-      model_sentence: "I fell down on the playground and scraped my knee.",
-      collocation: "fall down / fall down hard / suddenly fall down",
-      image_url: "/images/week33/wordpower_fall_down.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w2_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w2_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w2_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w2_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w2_model.mp3"
-    },
-    {
-      id: 3,
-      word: "hurt yourself",
-      pronunciation: "/hɜːrt jɔːrˈself/",
-      cefr_level: "A1",
-      definition_vi: "làm đau bản thân",
-      definition_en: "to cause pain or injury to yourself",
-      example: "Be careful or you will hurt yourself.",
-      model_sentence: "I hurt myself when I fell down in the playground.",
-      collocation: "hurt yourself / hurt his knee / hurt my arm",
-      image_url: "/images/week33/wordpower_hurt_yourself.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w3_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w3_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w3_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w3_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w3_model.mp3"
-    },
-    {
-      id: 4,
-      word: "break something",
-      pronunciation: "/breɪk ˈsʌmθɪŋ/",
-      cefr_level: "A1",
-      definition_vi: "làm vỡ thứ gì đó",
-      definition_en: "to damage something so it is in two or more pieces",
-      example: "Jake broke a glass cup when he fell.",
-      model_sentence: "I broke my mum's favourite cup by accident.",
-      collocation: "break a cup / break something / break your toy",
-      image_url: "/images/week33/wordpower_break_something.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w4_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w4_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w4_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w4_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w4_model.mp3"
-    },
-    {
-      id: 5,
-      word: "learn a lesson",
-      pronunciation: "/lɜːn ə ˈlesən/",
-      cefr_level: "A1",
-      definition_vi: "học được một bài học",
-      definition_en: "to learn something important so you do not make the same mistake again",
-      example: "Jake learned a lesson: always walk carefully.",
-      model_sentence: "I learned a lesson about being careful after my accident.",
-      collocation: "learn a lesson / learn an important lesson / learn your lesson",
-      image_url: "/images/week33/wordpower_learn_a_lesson.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w5_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w5_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w5_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w5_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w5_model.mp3"
-    },
-    {
-      id: 6,
-      word: "tell the truth",
-      pronunciation: "/tel ðə truːθ/",
-      cefr_level: "A1",
-      definition_vi: "nói sự thật",
-      definition_en: "to say what really happened, not a lie",
-      example: "Jake told the truth about running in the corridor.",
-      model_sentence: "I told the truth about my accident and my mum was proud.",
-      collocation: "tell the truth / always tell the truth / told the truth about",
-      image_url: "/images/week33/wordpower_tell_the_truth.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w6_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w6_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w6_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w6_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w6_model.mp3"
-    },
-    {
-      id: 7,
-      word: "run in the corridor",
-      pronunciation: "/rʌn ɪn ðə ˈkɒrɪdɔːr/",
-      cefr_level: "A1",
-      definition_vi: "chạy trong hành lang",
-      definition_en: "to run inside a passage in a building",
-      example: "Jake was running in the corridor because he was late for class.",
-      model_sentence: "We should never run in the corridor — it is dangerous.",
-      collocation: "run in the corridor / walk in the corridor / never run in the corridor",
-      image_url: "/images/week33/wordpower_run_in_corridor.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w7_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w7_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w7_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w7_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w7_model.mp3"
-    },
-    {
-      id: 8,
-      word: "get better",
-      pronunciation: "/get ˈbetər/",
-      cefr_level: "A1",
-      definition_vi: "khỏe lại, tốt hơn",
-      definition_en: "to become well after being ill or hurt",
-      example: "Jake's knee got better after he rested at home.",
-      model_sentence: "My knee got better after a few days of rest.",
-      collocation: "get better / get well / started to get better",
-      image_url: "/images/week33/wordpower_get_better.jpg",
-      audio_word: "/audio/week33_easy/wordpower_w8_word.mp3",
-      audio_definition: "/audio/week33_easy/wordpower_w8_def.mp3",
-      audio_example: "/audio/week33_easy/wordpower_w8_example.mp3",
-      audio_collocation: "/audio/week33_easy/wordpower_w8_collocation.mp3",
-      audio_model: "/audio/week33_easy/wordpower_w8_model.mp3"
-    }
-  ]
+  title: "Collocations & Chunks — Week 33",
+  collocations: [
+  {
+    "phrase": "word_1",
+    "definition_en": "English definition for target word 1",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 1",
+    "example": "Example sentence using target word 1."
+  },
+  {
+    "phrase": "word_2",
+    "definition_en": "English definition for target word 2",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 2",
+    "example": "Example sentence using target word 2."
+  },
+  {
+    "phrase": "word_3",
+    "definition_en": "English definition for target word 3",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 3",
+    "example": "Example sentence using target word 3."
+  },
+  {
+    "phrase": "word_4",
+    "definition_en": "English definition for target word 4",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 4",
+    "example": "Example sentence using target word 4."
+  },
+  {
+    "phrase": "word_5",
+    "definition_en": "English definition for target word 5",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 5",
+    "example": "Example sentence using target word 5."
+  },
+  {
+    "phrase": "word_6",
+    "definition_en": "English definition for target word 6",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 6",
+    "example": "Example sentence using target word 6."
+  },
+  {
+    "phrase": "word_7",
+    "definition_en": "English definition for target word 7",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 7",
+    "example": "Example sentence using target word 7."
+  },
+  {
+    "phrase": "word_8",
+    "definition_en": "English definition for target word 8",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 8",
+    "example": "Example sentence using target word 8."
+  },
+  {
+    "phrase": "word_9",
+    "definition_en": "English definition for target word 9",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 9",
+    "example": "Example sentence using target word 9."
+  },
+  {
+    "phrase": "word_10",
+    "definition_en": "English definition for target word 10",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 10",
+    "example": "Example sentence using target word 10."
+  },
+  {
+    "phrase": "word_11",
+    "definition_en": "English definition for target word 11",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 11",
+    "example": "Example sentence using target word 11."
+  },
+  {
+    "phrase": "word_12",
+    "definition_en": "English definition for target word 12",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 12",
+    "example": "Example sentence using target word 12."
+  },
+  {
+    "phrase": "word_13",
+    "definition_en": "English definition for target word 13",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 13",
+    "example": "Example sentence using target word 13."
+  },
+  {
+    "phrase": "word_14",
+    "definition_en": "English definition for target word 14",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 14",
+    "example": "Example sentence using target word 14."
+  },
+  {
+    "phrase": "word_15",
+    "definition_en": "English definition for target word 15",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 15",
+    "example": "Example sentence using target word 15."
+  },
+  {
+    "phrase": "word_16",
+    "definition_en": "English definition for target word 16",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 16",
+    "example": "Example sentence using target word 16."
+  },
+  {
+    "phrase": "word_17",
+    "definition_en": "English definition for target word 17",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 17",
+    "example": "Example sentence using target word 17."
+  },
+  {
+    "phrase": "word_18",
+    "definition_en": "English definition for target word 18",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 18",
+    "example": "Example sentence using target word 18."
+  },
+  {
+    "phrase": "word_19",
+    "definition_en": "English definition for target word 19",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 19",
+    "example": "Example sentence using target word 19."
+  },
+  {
+    "phrase": "word_20",
+    "definition_en": "English definition for target word 20",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 20",
+    "example": "Example sentence using target word 20."
+  }
+]
 };

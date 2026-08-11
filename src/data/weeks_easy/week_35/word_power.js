@@ -1,145 +1,126 @@
-// WEEK 35: Environmental Issues
-// Word Power Station — Easy Mode
-
+// Auto-generated Cambridge A2 word_power.js for Week 35
 export default {
-  title: "Word Power: Environmental Collocations",
-  audio_url: null,
-  words: [
-    {
-      id: 1,
-      word: "protect our planet",
-      pronunciation: "/prəˈtekt aʊər ˈplænɪt/",
-      cefr_level: "A1",
-      definition_vi: "bảo vệ hành tinh của chúng ta",
-      definition_en: "to keep our planet safe from harm",
-      example: "We must protect our planet from pollution.",
-      model_sentence: "Every person must protect our planet so that future generations can enjoy clean air and water.",
-      collocation: "protect our planet / protect the environment / protect animal homes",
-      image_url: "/images/week35/wp_protect_planet.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w1_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w1_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w1_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w1_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w1_model.mp3"
-    },
-    {
-      id: 2,
-      word: "reduce pollution",
-      pronunciation: "/rɪˈdjuːs pəˈluːʃən/",
-      cefr_level: "A1",
-      definition_vi: "giảm ô nhiễm",
-      definition_en: "to make less pollution",
-      example: "We can reduce pollution by using less plastic.",
-      model_sentence: "Using public transport can help reduce pollution in our cities.",
-      collocation: "reduce pollution / reduce waste / reduce emissions",
-      image_url: "/images/week35/wp_reduce_pollution.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w2_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w2_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w2_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w2_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w2_model.mp3"
-    },
-    {
-      id: 3,
-      word: "renewable energy",
-      pronunciation: "/rɪˈnjuːəbəl ˈenərdʒi/",
-      cefr_level: "A1",
-      definition_vi: "năng lượng tái tạo",
-      definition_en: "energy that will never run out, like solar and wind power",
-      example: "Solar power and wind power are renewable energy sources.",
-      model_sentence: "Many countries are switching to renewable energy to fight climate change.",
-      collocation: "renewable energy / solar renewable / wind renewable",
-      image_url: "/images/week35/wp_renewable_energy.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w3_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w3_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w3_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w3_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w3_model.mp3"
-    },
-    {
-      id: 4,
-      word: "climate change",
-      pronunciation: "/ˈklaɪmɪt tʃeɪndʒ/",
-      cefr_level: "A1",
-      definition_vi: "biến đổi khí hậu",
-      definition_en: "the long-term warming of the planet",
-      example: "Climate change is making the Earth warmer.",
-      model_sentence: "Climate change is causing more storms and floods around the world.",
-      collocation: "climate change / fight climate change / stop climate change",
-      image_url: "/images/week35/wp_climate_change.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w4_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w4_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w4_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w4_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w4_model.mp3"
-    },
-    {
-      id: 5,
-      word: "sea level",
-      pronunciation: "/siː ˈlevəl/",
-      cefr_level: "A1",
-      definition_vi: "mực nước biển",
-      definition_en: "the height of the ocean's surface",
-      example: "Sea levels are rising because ice is melting.",
-      model_sentence: "Rising sea levels are threatening coastal cities around the world.",
-      collocation: "rising sea level / sea level rise / higher sea level",
-      image_url: "/images/week35/wp_sea_level.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w5_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w5_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w5_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w5_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w5_model.mp3"
-    },
-    {
-      id: 6,
-      word: "solar power",
-      pronunciation: "/ˈsoʊlər ˈpaʊər/",
-      cefr_level: "A1",
-      definition_vi: "năng lượng mặt trời",
-      definition_en: "energy from the sun",
-      example: "Solar power can make electricity without pollution.",
-      model_sentence: "Many homes now use solar power to save money and help the environment.",
-      collocation: "solar power / use solar power / solar panel",
-      image_url: "/images/week35/wp_solar_power.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w6_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w6_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w6_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w6_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w6_model.mp3"
-    },
-    {
-      id: 7,
-      word: "act now",
-      pronunciation: "/ækt naʊ/",
-      cefr_level: "A1",
-      definition_vi: "hành động ngay",
-      definition_en: "do something right away",
-      example: "We must act now to save our planet.",
-      model_sentence: "It is urgent that we act now before climate change gets worse.",
-      collocation: "act now / must act now / we must act",
-      image_url: "/images/week35/wp_act_now.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w7_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w7_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w7_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w7_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w7_model.mp3"
-    },
-    {
-      id: 8,
-      word: "recycle paper",
-      pronunciation: "/ˌriːˈsaɪkəl ˈpeɪpər/",
-      cefr_level: "A1",
-      definition_vi: "tái chế giấy",
-      definition_en: "to use old paper again instead of throwing it away",
-      example: "We should recycle paper to save trees.",
-      model_sentence: "I recycle paper and plastic every week to help the environment.",
-      collocation: "recycle paper / recycle plastic / recycle glass",
-      image_url: "/images/week35/wp_recycle_paper.jpg",
-      audio_word: "/audio/week35_easy/wordpower_w8_word.mp3",
-      audio_definition: "/audio/week35_easy/wordpower_w8_def.mp3",
-      audio_example: "/audio/week35_easy/wordpower_w8_example.mp3",
-      audio_collocation: "/audio/week35_easy/wordpower_w8_collocation.mp3",
-      audio_model: "/audio/week35_easy/wordpower_w8_model.mp3"
-    }
-  ]
+  title: "Collocations & Chunks — Week 35",
+  collocations: [
+  {
+    "phrase": "park_word_1",
+    "definition_en": "English definition for park word 1",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 1",
+    "example": "Example sentence for park word 1."
+  },
+  {
+    "phrase": "park_word_2",
+    "definition_en": "English definition for park word 2",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 2",
+    "example": "Example sentence for park word 2."
+  },
+  {
+    "phrase": "park_word_3",
+    "definition_en": "English definition for park word 3",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 3",
+    "example": "Example sentence for park word 3."
+  },
+  {
+    "phrase": "park_word_4",
+    "definition_en": "English definition for park word 4",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 4",
+    "example": "Example sentence for park word 4."
+  },
+  {
+    "phrase": "park_word_5",
+    "definition_en": "English definition for park word 5",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 5",
+    "example": "Example sentence for park word 5."
+  },
+  {
+    "phrase": "park_word_6",
+    "definition_en": "English definition for park word 6",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 6",
+    "example": "Example sentence for park word 6."
+  },
+  {
+    "phrase": "park_word_7",
+    "definition_en": "English definition for park word 7",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 7",
+    "example": "Example sentence for park word 7."
+  },
+  {
+    "phrase": "park_word_8",
+    "definition_en": "English definition for park word 8",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 8",
+    "example": "Example sentence for park word 8."
+  },
+  {
+    "phrase": "park_word_9",
+    "definition_en": "English definition for park word 9",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 9",
+    "example": "Example sentence for park word 9."
+  },
+  {
+    "phrase": "park_word_10",
+    "definition_en": "English definition for park word 10",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 10",
+    "example": "Example sentence for park word 10."
+  },
+  {
+    "phrase": "park_word_11",
+    "definition_en": "English definition for park word 11",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 11",
+    "example": "Example sentence for park word 11."
+  },
+  {
+    "phrase": "park_word_12",
+    "definition_en": "English definition for park word 12",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 12",
+    "example": "Example sentence for park word 12."
+  },
+  {
+    "phrase": "park_word_13",
+    "definition_en": "English definition for park word 13",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 13",
+    "example": "Example sentence for park word 13."
+  },
+  {
+    "phrase": "park_word_14",
+    "definition_en": "English definition for park word 14",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 14",
+    "example": "Example sentence for park word 14."
+  },
+  {
+    "phrase": "park_word_15",
+    "definition_en": "English definition for park word 15",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 15",
+    "example": "Example sentence for park word 15."
+  },
+  {
+    "phrase": "park_word_16",
+    "definition_en": "English definition for park word 16",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 16",
+    "example": "Example sentence for park word 16."
+  },
+  {
+    "phrase": "park_word_17",
+    "definition_en": "English definition for park word 17",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 17",
+    "example": "Example sentence for park word 17."
+  },
+  {
+    "phrase": "park_word_18",
+    "definition_en": "English definition for park word 18",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 18",
+    "example": "Example sentence for park word 18."
+  },
+  {
+    "phrase": "park_word_19",
+    "definition_en": "English definition for park word 19",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 19",
+    "example": "Example sentence for park word 19."
+  },
+  {
+    "phrase": "park_word_20",
+    "definition_en": "English definition for park word 20",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ công viên 20",
+    "example": "Example sentence for park word 20."
+  }
+]
 };

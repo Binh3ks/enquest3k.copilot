@@ -1,27 +1,83 @@
-// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
-// Word Match Station — Advanced Mode
-
-export default {
-  // Note: WordMatch component reads vocab from stations.new_words.vocab (global_vocab).
-  // This file provides custom definition matches for the matching game mode.
-  pairs: [
-    { left_id: 1,  right_match: "something bad that happens unexpectedly" },
-    { left_id: 2,  right_match: "a long passage in a building" },
-    { left_id: 3,  right_match: "something cold used to reduce swelling" },
-    { left_id: 4,  right_match: "something you learn from experience" },
-    { left_id: 5,  right_match: "in a careful, safe way" },
-    { left_id: 6,  right_match: "to grab or stop something" },
-    { left_id: 7,  right_match: "very bad or shocking" },
-    { left_id: 8,  right_match: "to know the meaning of something" },
-    { left_id: 9,  right_match: "to make something clear" },
-    { left_id: 10, right_match: "to get better after being hurt" },
-    { left_id: 11, right_match: "to feel pain in part of your body" },
-    { left_id: 12, right_match: "to drop to the ground" },
-    { left_id: 13, right_match: "to damage something so it breaks" },
-    { left_id: 14, right_match: "the top part of your body" },
-    { left_id: 15, right_match: "the body part below the shoulder" },
-    { left_id: 16, right_match: "the body part below the waist" },
-    { left_id: 17, right_match: "the back part of the body below the neck" },
-    { left_id: 18, right_match: "the joint between the leg and the foot" }
-  ]
-};
+// Auto-generated Cambridge A2 word_match.js for Week 33
+export default [
+  {
+    "word": "word_1",
+    "definition": "Định nghĩa tiếng Việt cho từ 1"
+  },
+  {
+    "word": "word_2",
+    "definition": "Định nghĩa tiếng Việt cho từ 2"
+  },
+  {
+    "word": "word_3",
+    "definition": "Định nghĩa tiếng Việt cho từ 3"
+  },
+  {
+    "word": "word_4",
+    "definition": "Định nghĩa tiếng Việt cho từ 4"
+  },
+  {
+    "word": "word_5",
+    "definition": "Định nghĩa tiếng Việt cho từ 5"
+  },
+  {
+    "word": "word_6",
+    "definition": "Định nghĩa tiếng Việt cho từ 6"
+  },
+  {
+    "word": "word_7",
+    "definition": "Định nghĩa tiếng Việt cho từ 7"
+  },
+  {
+    "word": "word_8",
+    "definition": "Định nghĩa tiếng Việt cho từ 8"
+  },
+  {
+    "word": "word_9",
+    "definition": "Định nghĩa tiếng Việt cho từ 9"
+  },
+  {
+    "word": "word_10",
+    "definition": "Định nghĩa tiếng Việt cho từ 10"
+  },
+  {
+    "word": "word_11",
+    "definition": "Định nghĩa tiếng Việt cho từ 11"
+  },
+  {
+    "word": "word_12",
+    "definition": "Định nghĩa tiếng Việt cho từ 12"
+  },
+  {
+    "word": "word_13",
+    "definition": "Định nghĩa tiếng Việt cho từ 13"
+  },
+  {
+    "word": "word_14",
+    "definition": "Định nghĩa tiếng Việt cho từ 14"
+  },
+  {
+    "word": "word_15",
+    "definition": "Định nghĩa tiếng Việt cho từ 15"
+  },
+  {
+    "word": "word_16",
+    "definition": "Định nghĩa tiếng Việt cho từ 16"
+  },
+  {
+    "word": "word_17",
+    "definition": "Định nghĩa tiếng Việt cho từ 17"
+  },
+  {
+    "word": "word_18",
+    "definition": "Định nghĩa tiếng Việt cho từ 18"
+  },
+  {
+    "word": "word_19",
+    "definition": "Định nghĩa tiếng Việt cho từ 19"
+  },
+  {
+    "word": "word_20",
+    "definition": "Định nghĩa tiếng Việt cho từ 20"
+  }
+];

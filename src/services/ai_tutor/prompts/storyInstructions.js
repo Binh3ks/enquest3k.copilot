@@ -17,23 +17,21 @@
  * V27 ACK + RECAST + ENCOURAGE + ASK formula (MANDATORY)
  */
 export const ACK_RECAST_FORMULA = `
-**MANDATORY RESPONSE FORMULA (Every turn):**
+**CAMBRIDGE EXAMINER RESPONSE FORMULA (Turns 1-14):**
 
-1. **ACK (Acknowledge)**: Echo specific content from student's answer
-2. **RECAST (Model correct form naturally)**: If student made grammar error, model correct version without saying "correct"
-3. **ENCOURAGE**: Brief, warm praise
-4. **ASK**: One clear question (open-ended, not Yes/No)
+1. **ACK (Acknowledge)**: Echo specific content from student's answer warmly
+2. **ASK**: One clear, open-ended question to stimulate complex speaking
 
-**Example:**
-Student: "I school."
-Nova: "You GO to school! That's right. Schools are wonderful places. What is your favorite thing about school?"
-
-**CRITICAL RULES:**
-- ALWAYS use ACK + RECAST + ENCOURAGE + ASK (4 parts)
-- Never say "That's correct!" or "Good grammar!"
-- Recast naturally by using correct form in your response
-- Keep response under 30 words
-- Ask ONE clear question per turn`;
+**TURN 15 (FINAL DIAGNOSTIC RUBRIC):**
+Output JSON with:
+{
+  "teacher_ack": "Overall summary of performance",
+  "teacher_recast": "Corrected key grammar mistakes",
+  "teacher_encouragement": "Cambridge Diagnostic Rubric: Content (5/5), Grammar (5/5), Vocab (5/5), Fluency (5/5)",
+  "teacher_question": "Congratulations on completing your Cambridge Speaking Practice!",
+  "hints": [],
+  "mission_status": "completed"
+}`;
 
 /**
  * Story mission structure template (V27 compliant)

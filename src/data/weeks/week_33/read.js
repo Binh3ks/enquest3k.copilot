@@ -1,63 +1,124 @@
-// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
-// Reading Station — Advanced Mode
-
+// Auto-generated Cambridge A2 read.js for Week 33
 export default {
-  title: "Jake's Bad Day",
+  title: "Jake's Unexpected Fall",
   image_url: "/images/week33/read_cover_w33.jpg",
   audio_url: "/audio/week33/read_main.mp3",
-  content_en: `Something terrible happened **at school** last Monday. Jake was running in the corridor because he was late for class. He forgot to **walk carefully**.
+  content_en: `On a **bright sunny day**, Jake was **walking carefully** down the **school corridor**. He had just **finished his science class** and was **holding his notebooks**.
 
-Suddenly, Jake **hit his knee** on the corner of a table. He **fell down** hard and broke the **glass cup** that another student was holding. His arm hurt when he tried to catch the falling cup.
+**Suddenly**, a boy who was **running fast** **slipped on the wet floor**. He **fell heavily** and **hurt his knee**. Jake **rushed over to help** him immediately.
 
-Jake bit his tongue when he **fell down**, and his hand hit the floor. He began to cry because everything hurt **at once**. **His teacher** **came quickly** and called the school nurse.
+The boy **began to bleed** a little and **burst into tears**. Jake **stayed calm** and **called the school nurse**. The nurse came quickly and **applied a clean bandage**.
 
-**The nurse** **put a cold pack** on Jake's knee and arm. She told Jake it was an **important lesson** — **everyone must** **walk carefully** in the corridor. Jake understood that running in the corridor was dangerous.
+Everyone **felt extremely relieved**. The headmaster thanked Jake and **reminded all students** to walk safely. Everyone **learned a valuable lesson** about school safety.`,
+  content_vi: `Vào một **ngày hè nắng đẹp rực rỡ**, Jake đang **cẩn thận bước đi** dọc theo **hành lang trường học**. Chú vừa **học xong tiết khoa học** và đang **cầm các cuốn vở**.
 
-**At home**, Jake recovered quickly. He learned one very **important lesson**: always **walk carefully**, even when you are late.`,
-  content_vi: `Một điều kinh khủng đã xảy ra ở trường vào thứ Hai tuần trước. Jake đang chạy trong hành lang vì cậu bị muộn. Cậu quên đi cẩn thận.
+**Đột nhiên**, một cậu bé đang **chạy rất nhanh** đã **trượt ngã trên sàn nhà ướt**. Cậu ấy **ngã rất đau** và **bị thương ở đầu gối**. Jake **vội vã chạy đến giúp đỡ** ngay lập tức.
 
-Đột nhiên, Jake đập đầu gối vào góc bàn. Cậu ngã mạnh xuống và làm vỡ chiếc cốc thủy tinh mà một học sinh khác đang cầm. Cánh tay cậu bị đau khi cậu cố bắt chiếc cốc đang rơi.
+Cậu bé **bắt đầu chảy máu** một chút và **bật khóc nức nở**. Jake **giữ bình tĩnh** và **gọi cô y tá trường học**. Cô y tá đến nhanh chóng và **băng một chiếc băng sạch**.
 
-Jake cắn lưỡi khi ngã, và bàn tay cậu đập xuống sàn. Cậu bắt đầu khóc vì mọi thứ đau cùng một lúc. Giáo viên đến nhanh và gọi y tá trường.
-
-Y tá đặt túi chườm lạnh lên đầu gối và cánh tay của Jake. Cô ấy nói với Jake đó là một bài học quan trọng — mọi người phải đi cẩn thận trong hành lang. Jake hiểu rằng chạy trong hành lang rất nguy hiểm.
-
-Ở nhà, Jake hồi phục nhanh. Cậu học được một bài học quan trọng: luôn đi cẩn thận, kể cả khi bị muộn.`,
+Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng cảm ơn Jake và **nhắc nhở tất cả học sinh** đi lại an toàn. Mọi người **học được một bài học quý giá** về an toàn trường học.`,
   comprehension_questions: [
-    { id: 1, question_en: "Why did Jake run in the corridor?", answer: ["Because he was late"], clue_statement: "Jake was late, so he ran in the corridor.", hint_en: "Jake was ___ , so he ran.", hint_vi: "Jake bi ___ , nen cậu chạy.", audio_url: "/audio/week33/read_q1.mp3" },
-    { id: 2, question_en: "What happened when Jake hit the table?", answer: ["He fell down and broke a glass cup", "Jake fell and broke a cup"], clue_statement: "Jake fell down and broke a glass cup when he hit the table.", hint_en: "Jake ___ down and ___ a glass ___.", hint_vi: "Jake ___ xuống và ___ mộtChiếc ___ thủy tinh.", audio_url: "/audio/week33/read_q2.mp3" },
-    { id: 3, question_en: "What lesson did Jake learn?", answer: ["Always walk carefully in the corridor", "Walk carefully in the corridor", "Always be careful"], clue_statement: "Jake learned an important lesson: always walk carefully in the corridor.", hint_en: "Always ___ ___ in the ___.", hint_vi: "Luon ___ ___ trong ___.", audio_url: "/audio/week33/read_q3.mp3" }
-  ]
+  {
+    "id": 1,
+    "question_en": "What was Jake doing when the boy slipped?",
+    "answer": [
+      "Walking carefully down the school corridor"
+    ],
+    "clue_statement": "Jake was walking carefully down the school corridor.",
+    "hint_en": "Jake was ___.",
+    "hint_vi": "Jake đang ___."
+  },
+  {
+    "id": 2,
+    "question_en": "What happened to the boy who was running fast?",
+    "answer": [
+      "He slipped on the wet floor and hurt his knee"
+    ],
+    "clue_statement": "A boy running fast slipped on the wet floor.",
+    "hint_en": "He ___ on the wet floor.",
+    "hint_vi": "Cậu ấy ___ trên sàn ướt."
+  }
+]
 };
 
 export const chunk_focus = [
-  "at school",
-  "walk carefully",
-  "hit his knee",
-  "fell down",
-  "glass cup",
-  "at once",
-  "His teacher",
-  "came quickly",
-  "The nurse",
-  "put a cold pack",
-  "important lesson",
-  "everyone must",
-  "At home"
+  "bright sunny day",
+  "walking carefully",
+  "school corridor",
+  "finished his science class",
+  "holding his notebooks",
+  "Suddenly",
+  "running fast",
+  "slipped on the wet floor",
+  "fell heavily",
+  "hurt his knee",
+  "rushed over to help",
+  "began to bleed",
+  "burst into tears",
+  "stayed calm",
+  "called the school nurse",
+  "applied a clean bandage",
+  "felt extremely relieved",
+  "reminded all students",
+  "learned a valuable lesson",
+  "ngày hè nắng đẹp rực rỡ",
+  "cẩn thận bước đi",
+  "hành lang trường học",
+  "học xong tiết khoa học",
+  "cầm các cuốn vở",
+  "Đột nhiên",
+  "chạy rất nhanh",
+  "trượt ngã trên sàn nhà ướt",
+  "ngã rất đau",
+  "bị thương ở đầu gối",
+  "vội vã chạy đến giúp đỡ",
+  "bắt đầu chảy máu",
+  "bật khóc nức nở",
+  "giữ bình tĩnh",
+  "gọi cô y tá trường học",
+  "băng một chiếc băng sạch",
+  "cảm thấy cực kỳ nhẹ nhõm",
+  "nhắc nhở tất cả học sinh",
+  "học được một bài học quý giá"
 ];
 
 export const dictionary = {
-    'At home': { word: 'At home', pronunciation: '/at home/', definition_vi: 'ở nhà', definition_en: 'meaning of at home', example: 'I have a happy jar at home.' },
-    'His teacher': { word: 'His teacher', pronunciation: '/his teacher/', definition_vi: 'của anh ấy giáo viên', definition_en: 'Collocation: his teacher', example: 'The students learned \'his teacher\' in their English lesson.' },
-    'The nurse': { word: 'The nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
-    'at once': { word: 'at once', pronunciation: '/at once/', definition_vi: 'ngay lập tức', definition_en: 'meaning of at once', example: 'This is an example: at once.' },
-    'at school': { word: 'at school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
-    'came quickly': { word: 'came quickly', pronunciation: '/came quickly/', definition_vi: 'đến nhanh', definition_en: 'meaning of came quickly', example: 'When the fire alarm rang, the firefighters came quickly with their trucks.' },
-    'everyone must': { word: 'everyone must', pronunciation: '/everyone must/', definition_vi: 'mọi người phải', definition_en: 'Multi-word phrase: everyone must', example: 'The phrase \'everyone must\' is commonly used in conversation.' },
-    'fell down': { word: 'fell down', pronunciation: '/fell down/', definition_vi: 'ngã xuống', definition_en: 'meaning of fell down', example: 'He fell down hard and broke the glass cup that another student was holding.' },
-    'glass cup': { word: 'glass cup', pronunciation: '/glass cup/', definition_vi: 'cốc thủy tinh', definition_en: 'Multi-word phrase: glass cup', example: 'The phrase \'glass cup\' is commonly used in conversation.' },
-    'hit his knee': { word: 'hit his knee', pronunciation: '/hit his knee/', definition_vi: 'đập đầu gối', definition_en: 'meaning of hit his knee', example: 'He fell off his bike and hit his knee hard on the ground.' },
-    'important lesson': { word: 'important lesson', pronunciation: '/important lesson/', definition_vi: 'bài học quan trọng', definition_en: 'Multi-word phrase: important lesson', example: 'The phrase \'important lesson\' is commonly used in conversation.' },
-    'put a cold pack': { word: 'put a cold pack', pronunciation: '/put a cold pack/', definition_vi: 'đặt túi chườm lạnh', definition_en: 'meaning of put a cold pack', example: 'The nurse put a cold pack on his swollen ankle to reduce the pain.' },
-    'walk carefully': { word: 'walk carefully', pronunciation: '/walk carefully/', definition_vi: 'đi cẩn thận', definition_en: 'meaning of walk carefully', example: 'He forgot to walk carefully.' }
+  "bright sunny day": "ngày hè nắng đẹp rực rỡ",
+  "walking carefully": "cẩn thận bước đi",
+  "school corridor": "hành lang trường học",
+  "finished his science class": "học xong tiết khoa học",
+  "holding his notebooks": "cầm các cuốn vở",
+  "Suddenly": "Đột nhiên",
+  "running fast": "chạy rất nhanh",
+  "slipped on the wet floor": "trượt ngã trên sàn nhà ướt",
+  "fell heavily": "ngã rất đau",
+  "hurt his knee": "bị thương ở đầu gối",
+  "rushed over to help": "vội vã chạy đến giúp đỡ",
+  "began to bleed": "bắt đầu chảy máu",
+  "burst into tears": "bật khóc nức nở",
+  "stayed calm": "giữ bình tĩnh",
+  "called the school nurse": "gọi cô y tá trường học",
+  "applied a clean bandage": "băng một chiếc băng sạch",
+  "felt extremely relieved": "cảm thấy cực kỳ nhẹ nhõm",
+  "reminded all students": "nhắc nhở tất cả học sinh",
+  "learned a valuable lesson": "học được một bài học quý giá",
+  "ngày hè nắng đẹp rực rỡ": "bright sunny day",
+  "cẩn thận bước đi": "walking carefully",
+  "hành lang trường học": "school corridor",
+  "học xong tiết khoa học": "finished his science class",
+  "cầm các cuốn vở": "holding his notebooks",
+  "Đột nhiên": "Suddenly",
+  "chạy rất nhanh": "running fast",
+  "trượt ngã trên sàn nhà ướt": "slipped on the wet floor",
+  "ngã rất đau": "fell heavily",
+  "bị thương ở đầu gối": "hurt his knee",
+  "vội vã chạy đến giúp đỡ": "rushed over to help",
+  "bắt đầu chảy máu": "began to bleed",
+  "bật khóc nức nở": "burst into tears",
+  "giữ bình tĩnh": "stayed calm",
+  "gọi cô y tá trường học": "called the school nurse",
+  "băng một chiếc băng sạch": "applied a clean bandage",
+  "cảm thấy cực kỳ nhẹ nhõm": "felt extremely relieved",
+  "nhắc nhở tất cả học sinh": "reminded all students",
+  "học được một bài học quý giá": "learned a valuable lesson"
 };

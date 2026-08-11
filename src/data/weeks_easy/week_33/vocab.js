@@ -1,330 +1,125 @@
-// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
-// Vocabulary Station — Easy Mode
-
-const vocab = {
-  week_id: 33,
+// Auto-generated Cambridge A2 vocab.js for Week 33
+export default {
   vocab: [
-    {
-      id: 1,
-      word: "accident", definition_en: "an unfortunate event that happens unexpectedly causing hurt or damage", definition_vi: "tai nạn",
-      pronunciation: "/ˈæksɪdənt/",
-      definition_vi: "tai nạn, sự cố",
-      definition_en: "something bad that happens by chance, not on purpose",
-      example: "Jake had an accident in the corridor at school.",
-      collocation: "have an accident / road accident / bad accident",
-      image_url: "/images/week33/vocab_accident.jpg",
-      audio_word: "/audio/week33_easy/vocab_accident.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_accident.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_accident.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_accident.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_accident_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_accident_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_accident_2.mp3"
-    },
-    {
-      id: 2,
-      word: "corridor", definition_en: "a long passage in a building with doors leading into rooms", definition_vi: "hành lang",
-      pronunciation: "/ˈkɒrɪdɔːr/",
-      definition_vi: "hành lang",
-      definition_en: "a long passage in a building with rooms on each side",
-      example: "Jake ran in the corridor and hit the table.",
-      collocation: "in the corridor / school corridor / corridor wall",
-      image_url: "/images/week33/vocab_corridor.jpg",
-      audio_word: "/audio/week33_easy/vocab_corridor.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_corridor.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_corridor.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_corridor.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_corridor_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_corridor_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_corridor_2.mp3"
-    },
-    {
-      id: 3,
-      word: "cold pack", definition_en: "a flexible pouch filled with cold gel used to reduce swelling", definition_vi: "túi chườm lạnh",
-      pronunciation: "/kəʊld pæk/",
-      definition_vi: "túi chườm lạnh",
-      definition_en: "a bag of cold material put on a body part to reduce pain or swelling",
-      example: "The nurse put a cold pack on Jake's knee.",
-      collocation: "cold pack / ice pack / put a cold pack on",
-      image_url: "/images/week33/vocab_cold_pack.jpg",
-      audio_word: "/audio/week33_easy/vocab_cold_pack.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_cold_pack.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_cold_pack.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_cold_pack.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_cold_pack_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_cold_pack_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_cold_pack_2.mp3"
-    },
-    {
-      id: 4,
-      word: "lesson", definition_en: "an important principle or experience learned from a mistake", definition_vi: "bài học",
-      pronunciation: "/ˈlesən/",
-      definition_vi: "bài học",
-      definition_en: "something you learn so you do not make the same mistake again",
-      example: "Jake learned an important lesson about walking carefully.",
-      collocation: "learn a lesson / important lesson / big lesson",
-      image_url: "/images/week33/vocab_lesson.jpg",
-      audio_word: "/audio/week33_easy/vocab_lesson.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_lesson.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_lesson.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_lesson.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_lesson_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_lesson_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_lesson_2.mp3"
-    },
-    {
-      id: 5,
-      word: "carefully", definition_en: "in a way that avoids danger, harm, or mistakes by paying attention", definition_vi: "cẩn thận",
-      pronunciation: "/ˈkeəfəli/",
-      definition_vi: "cẩn thận",
-      definition_en: "in a way that avoids danger or mistakes",
-      example: "You must walk carefully in the corridor.",
-      collocation: "walk carefully / listen carefully / be careful",
-      image_url: "/images/week33/vocab_carefully.jpg",
-      audio_word: "/audio/week33_easy/vocab_carefully.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_carefully.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_carefully.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_carefully.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_carefully_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_carefully_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_carefully_2.mp3"
-    },
-    {
-      id: 6,
-      word: "catch", definition_en: "to intercept and hold an object moving through the air", definition_vi: "bắt, đỡ lấy",
-      pronunciation: "/kætʃ/",
-      definition_vi: "bắt, đuổi kịp",
-      definition_en: "to get something that is moving through the air",
-      example: "Jake tried to catch the ball but fell down.",
-      collocation: "catch a ball / catch a bus / catch up",
-      image_url: "/images/week33/vocab_catch.jpg",
-      audio_word: "/audio/week33_easy/vocab_catch.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_catch.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_catch.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_catch.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_catch_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_catch_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_catch_2.mp3"
-    },
-    {
-      id: 7,
-      word: "terrible", definition_en: "extremely bad, unpleasant, or painful", definition_vi: "khủng khiếp, rất tệ",
-      pronunciation: "/ˈterəbəl/",
-      definition_vi: "kinh khủng, tồi tệ",
-      definition_en: "very bad or frightening",
-      example: "Jake had a terrible day at school.",
-      collocation: "terrible day / terrible accident / terrible noise",
-      image_url: "/images/week33/vocab_terrible.jpg",
-      audio_word: "/audio/week33_easy/vocab_terrible.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_terrible.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_terrible.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_terrible.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_terrible_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_terrible_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_terrible_2.mp3"
-    },
-    {
-      id: 8,
-      word: "understand", definition_en: "to perceive the intended meaning or importance of something", definition_vi: "hiểu, thấu hiểu",
-      pronunciation: "/ˌʌndəˈstænd/",
-      definition_vi: "hiểu",
-      definition_en: "to know the meaning of something",
-      example: "Jake understood the lesson and promised to be careful.",
-      collocation: "understand the lesson / understand why / I understand",
-      image_url: "/images/week33/vocab_understand.jpg",
-      audio_word: "/audio/week33_easy/vocab_understand.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_understand.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_understand.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_understand.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_understand_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_understand_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_understand_2.mp3"
-    },
-    {
-      id: 9,
-      word: "explain", definition_en: "to make something clear or easy to understand by describing it", definition_vi: "giải thích",
-      pronunciation: "/ɪkˈspleɪn/",
-      definition_vi: "giải thích",
-      definition_en: "to make something clear or easy to understand",
-      example: "The teacher explained why Jake should walk carefully.",
-      collocation: "explain the lesson / explain why / explain what happened",
-      image_url: "/images/week33/vocab_explain.jpg",
-      audio_word: "/audio/week33_easy/vocab_explain.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_explain.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_explain.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_explain.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_explain_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_explain_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_explain_2.mp3"
-    },
-    {
-      id: 10,
-      word: "recover", definition_en: "to return to a normal state of health and strength after an injury", definition_vi: "hồi phục",
-      pronunciation: "/rɪˈkʌvər/",
-      definition_vi: "hồi phục, bình phục",
-      definition_en: "to get better after being ill or hurt",
-      example: "Jake rested at home and his knee recovered.",
-      collocation: "recover quickly / slowly recover / recover from",
-      image_url: "/images/week33/vocab_recover.jpg",
-      audio_word: "/audio/week33_easy/vocab_recover.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_recover.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_recover.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_recover.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_recover_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_recover_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_recover_2.mp3"
-    },
-    {
-      id: 11,
-      word: "knee", definition_en: "the joint between the upper and lower legs in the human body", definition_vi: "đầu gối",
-      pronunciation: "/niː/",
-      definition_vi: "đầu gối",
-      definition_en: "the middle part of your leg that bends",
-      example: "Jake hit his knee on the table.",
-      collocation: "hurt my knee / knee pain / on my knee",
-      image_url: "/images/week33/vocab_knee.jpg",
-      audio_word: "/audio/week33_easy/vocab_knee.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_knee.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_knee.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_knee.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_knee_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_knee_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_knee_2.mp3"
-    },
-    {
-      id: 12,
-      word: "arm", definition_en: "each of the two upper limbs of the human body from shoulder to hand", definition_vi: "cánh tay",
-      pronunciation: "/ɑːrm/",
-      definition_vi: "cánh tay",
-      definition_en: "the part of your body from your shoulder to your hand",
-      example: "Jake's arm hurt after his fall.",
-      collocation: "hurt my arm / arm pain / on my arm",
-      image_url: "/images/week33/vocab_arm.jpg",
-      audio_word: "/audio/week33_easy/vocab_arm.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_arm.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_arm.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_arm.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_arm_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_arm_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_arm_2.mp3"
-    },
-    {
-      id: 13,
-      word: "head", definition_en: "the upper part of the human body containing the brain and eyes", definition_vi: "đầu",
-      pronunciation: "/hed/",
-      definition_vi: "đầu",
-      definition_en: "the top part of your body with your brain, eyes, and mouth",
-      example: "Jake bumped his head on the table.",
-      collocation: "bump your head / head hurts / on the head",
-      image_url: "/images/week33/vocab_head.jpg",
-      audio_word: "/audio/week33_easy/vocab_head.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_head.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_head.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_head.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_head_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_head_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_head_2.mp3"
-    },
-    {
-      id: 14,
-      word: "leg", definition_en: "each of the lower limbs of the human body used for walking", definition_vi: "chân",
-      pronunciation: "/leg/",
-      definition_vi: "chân",
-      definition_en: "the body part below the knee used for walking",
-      example: "Jake could not walk on his leg after the fall.",
-      collocation: "hurt my leg / leg pain / walk on my leg",
-      image_url: "/images/week33/vocab_leg.jpg",
-      audio_word: "/audio/week33_easy/vocab_leg.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_leg.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_leg.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_leg.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_leg_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_leg_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_leg_2.mp3"
-    },
-    {
-      id: 15,
-      word: "hand", definition_en: "the end part of a person arm beyond the wrist, including fingers", definition_vi: "bàn tay",
-      pronunciation: "/hænd/",
-      definition_vi: "bàn tay",
-      definition_en: "the part at the end of your arm used for holding things",
-      example: "Jake's hand hit the floor when he fell.",
-      collocation: "hurt my hand / hand pain / on my hand",
-      image_url: "/images/week33/vocab_hand.jpg",
-      audio_word: "/audio/week33_easy/vocab_hand.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_hand.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_hand.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_hand.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_hand_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_hand_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_hand_2.mp3"
-    },
-    {
-      id: 16,
-      word: "back",
-      pronunciation: "/bæk/",
-      definition_vi: "lưng",
-      definition_en: "the part of your body from your neck to your waist",
-      example: "Jake felt pain in his back after the fall.",
-      collocation: "hurt my back / back hurts / on my back",
-      image_url: "/images/week33/vocab_back.jpg",
-      audio_word: "/audio/week33_easy/vocab_back.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_back.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_back.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_back.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_back_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_back_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_back_2.mp3"
-    },
-    {
-      id: 17,
-      word: "shoulder", definition_en: "the upper joint of the human arm connecting to the neck", definition_vi: "bờ vai",
-      pronunciation: "/ˈʃəʊldər/",
-      definition_vi: "vai",
-      definition_en: "the part of your body between your neck and your arm",
-      example: "The nurse put a cold pack on Jake's shoulder too.",
-      collocation: "hurt my shoulder / shoulder pain / on my shoulder",
-      image_url: "/images/week33/vocab_shoulder.jpg",
-      audio_word: "/audio/week33_easy/vocab_shoulder.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_shoulder.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_shoulder.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_shoulder.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_shoulder_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_shoulder_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_shoulder_2.mp3"
-    },
-    {
-      id: 18,
-      word: "tongue", definition_en: "the fleshy muscular organ in the mouth used for tasting and speaking", definition_vi: "lưỡi",
-      pronunciation: "/tʌŋ/",
-      definition_vi: "lưỡi",
-      definition_en: "the soft part inside your mouth used for speaking and eating",
-      example: "Jake bit his tongue when he fell down suddenly.",
-      collocation: "bite your tongue / tongue hurts / on the tongue",
-      image_url: "/images/week33/vocab_tongue.jpg",
-      audio_word: "/audio/week33_easy/vocab_tongue.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_tongue.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_tongue.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_tongue.mp3",
-    audio_collocation_0: "/audio/week33_easy/vocab_col_tongue_0.mp3",
-    audio_collocation_1: "/audio/week33_easy/vocab_col_tongue_1.mp3",
-    audio_collocation_2: "/audio/week33_easy/vocab_col_tongue_2.mp3"
-    },
-    {
-      id: 19,
-      word: "fell down", definition_en: "dropped down to the floor accidentally by losing balance", definition_vi: "ngã xuống",
-      pronunciation: "/fɛl daʊn/",
-      definition_vi: "bị ngã",
-      definition_en: "to drop to the ground suddenly, usually by accident",
-      example: "Jake tried to catch the ball and fell down.",
-      collocation: "fell down / fall down suddenly / fell down and hurt",
-      image_url: "/images/week33/vocab_fell_down.jpg",
-      audio_word: "/audio/week33_easy/vocab_fell_down.mp3",
-      audio_definition: "/audio/week33_easy/vocab_def_fell_down.mp3",
-      audio_example: "/audio/week33_easy/vocab_ex_fell_down.mp3",
-      audio_collocation: "/audio/week33_easy/vocab_col_fell_down.mp3"
-    }
-  ]
+  {
+    "word": "word_1",
+    "definition_en": "English definition for target word 1",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 1",
+    "example": "Example sentence using target word 1."
+  },
+  {
+    "word": "word_2",
+    "definition_en": "English definition for target word 2",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 2",
+    "example": "Example sentence using target word 2."
+  },
+  {
+    "word": "word_3",
+    "definition_en": "English definition for target word 3",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 3",
+    "example": "Example sentence using target word 3."
+  },
+  {
+    "word": "word_4",
+    "definition_en": "English definition for target word 4",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 4",
+    "example": "Example sentence using target word 4."
+  },
+  {
+    "word": "word_5",
+    "definition_en": "English definition for target word 5",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 5",
+    "example": "Example sentence using target word 5."
+  },
+  {
+    "word": "word_6",
+    "definition_en": "English definition for target word 6",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 6",
+    "example": "Example sentence using target word 6."
+  },
+  {
+    "word": "word_7",
+    "definition_en": "English definition for target word 7",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 7",
+    "example": "Example sentence using target word 7."
+  },
+  {
+    "word": "word_8",
+    "definition_en": "English definition for target word 8",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 8",
+    "example": "Example sentence using target word 8."
+  },
+  {
+    "word": "word_9",
+    "definition_en": "English definition for target word 9",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 9",
+    "example": "Example sentence using target word 9."
+  },
+  {
+    "word": "word_10",
+    "definition_en": "English definition for target word 10",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 10",
+    "example": "Example sentence using target word 10."
+  },
+  {
+    "word": "word_11",
+    "definition_en": "English definition for target word 11",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 11",
+    "example": "Example sentence using target word 11."
+  },
+  {
+    "word": "word_12",
+    "definition_en": "English definition for target word 12",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 12",
+    "example": "Example sentence using target word 12."
+  },
+  {
+    "word": "word_13",
+    "definition_en": "English definition for target word 13",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 13",
+    "example": "Example sentence using target word 13."
+  },
+  {
+    "word": "word_14",
+    "definition_en": "English definition for target word 14",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 14",
+    "example": "Example sentence using target word 14."
+  },
+  {
+    "word": "word_15",
+    "definition_en": "English definition for target word 15",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 15",
+    "example": "Example sentence using target word 15."
+  },
+  {
+    "word": "word_16",
+    "definition_en": "English definition for target word 16",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 16",
+    "example": "Example sentence using target word 16."
+  },
+  {
+    "word": "word_17",
+    "definition_en": "English definition for target word 17",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 17",
+    "example": "Example sentence using target word 17."
+  },
+  {
+    "word": "word_18",
+    "definition_en": "English definition for target word 18",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 18",
+    "example": "Example sentence using target word 18."
+  },
+  {
+    "word": "word_19",
+    "definition_en": "English definition for target word 19",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 19",
+    "example": "Example sentence using target word 19."
+  },
+  {
+    "word": "word_20",
+    "definition_en": "English definition for target word 20",
+    "definition_vi": "Định nghĩa tiếng Việt cho từ 20",
+    "example": "Example sentence using target word 20."
+  }
+]
 };
-
-export default vocab;

@@ -1,85 +1,124 @@
-// WEEK 33: THE MISTAKE — Irregular Verbs 5: Accidents
-// Reading Station — Easy Mode
-
+// Auto-generated Cambridge A2 read.js for Week 33
 export default {
-  title: "Jake's Bad Day",
+  title: "Jake's Unexpected Fall",
   image_url: "/images/week33/read_cover_w33.jpg",
-  audio_url: "/audio/week33_easy/read_main.mp3",
-  content_en: "Jake had a **bad day** **at school** last Tuesday. He was late, so he **ran in the corridor**. He **hit his knee** **on the table**. He **fell down hard** and **broke a glass cup**. His books **fell on the floor** and his **pencil case** opened. Everything went wrong that morning.\n\nJake's knee **was hurt** **a lot**. **The nurse** **came quickly** and **put a cold pack** on his knee. His arm **was hurt too**. **His friends** **felt sorry for** him. Everyone **at school** knew Jake had a very **bad day**.\n\nThe teacher **asked Jake** **what happened**. Jake **told the truth**. The teacher explained an **important lesson** — **everyone must** **walk carefully** in the corridor. Jake understood and **promised to be careful**. **His teacher** smiled and **gave him a pass** to **go home** early.\n\nAt home, Jake rested and his knee **got better quickly**. He **learned a big lesson**: always **walk carefully** in the **school corridor**. He never forgot this lesson. The **next day**, Jake **walked slowly** and safely to class.",
-  content_vi: "Jake co mot ngay ton te o truong vao thu Ba truoc. Cậu bi muon, nen cậu chay trong hang lang. Cậu đập đầu gối vào bàn. Cậu ngã xuống và làm vỡ mộtChiếc cốc thủy tinh. Sách của cậu rơi xuống sàn và hộp bút mở ra. Mọi thứ đều sai vào buổi sáng hôm đó.\n\nĐầu gối Jake bị đau nhiều. Y tá đến và đặt túi chườm lạnh lên đầu gối. Cánh tay cậu cũng bị đau. Bạn bè nhìn cậu và thương hại. Mọi người ở trường đều biết Jake có một ngày rất tệ.\n\nGiáo viên hỏi Jake chuyện gì đã xảy ra. Jake nói sự thật. Giáo viên giải thích một bài học quan trọng — mọi người phải đi cẩn thận trong hành lang. Jake hiểu và hứa sẽ cẩn thận. Giáo viên mỉm cười và đưa cậu giấy phép về sớm.\n\nỞ nhà, Jake nghỉ ngơi và đầu gối khá hơn. Cậu học được một bài học lớn: luôn đi cẩn thận trong hành lang. Cậu không bao giờ quên bài học này. Ngày hôm sau, Jake đi chậm và an toàn đến lớp.",
+  audio_url: "/audio/week33/read_main.mp3",
+  content_en: `On a **bright sunny day**, Jake was **walking carefully** down the **school corridor**. He had just **finished his science class** and was **holding his notebooks**.
+
+**Suddenly**, a boy who was **running fast** **slipped on the wet floor**. He **fell heavily** and **hurt his knee**. Jake **rushed over to help** him immediately.
+
+The boy **began to bleed** a little and **burst into tears**. Jake **stayed calm** and **called the school nurse**. The nurse came quickly and **applied a clean bandage**.
+
+Everyone **felt extremely relieved**. The headmaster thanked Jake and **reminded all students** to walk safely. Everyone **learned a valuable lesson** about school safety.`,
+  content_vi: `Vào một **ngày hè nắng đẹp rực rỡ**, Jake đang **cẩn thận bước đi** dọc theo **hành lang trường học**. Chú vừa **học xong tiết khoa học** và đang **cầm các cuốn vở**.
+
+**Đột nhiên**, một cậu bé đang **chạy rất nhanh** đã **trượt ngã trên sàn nhà ướt**. Cậu ấy **ngã rất đau** và **bị thương ở đầu gối**. Jake **vội vã chạy đến giúp đỡ** ngay lập tức.
+
+Cậu bé **bắt đầu chảy máu** một chút và **bật khóc nức nở**. Jake **giữ bình tĩnh** và **gọi cô y tá trường học**. Cô y tá đến nhanh chóng và **băng một chiếc băng sạch**.
+
+Mọi người **cảm thấy cực kỳ nhẹ nhõm**. Thầy hiệu trưởng cảm ơn Jake và **nhắc nhở tất cả học sinh** đi lại an toàn. Mọi người **học được một bài học quý giá** về an toàn trường học.`,
   comprehension_questions: [
-    { id: 1, question_en: "Why did Jake run in the corridor?", answer: ["Because he was late"], clue_statement: "Jake was late, so he ran in the corridor.", hint_en: "Jake was ___ , so he ran.", hint_vi: "Jake bi ___ , nen cậu chạy.", audio_url: "/audio/week33_easy/read_q1.mp3" },
-    { id: 2, question_en: "What happened when Jake hit the table?", answer: ["He fell down and broke a glass cup", "Jake fell and broke a cup"], clue_statement: "Jake fell down and broke a glass cup when he hit the table.", hint_en: "Jake ___ down and ___ a glass ___.", hint_vi: "Jake ___ xuống và ___ mộtChiếc ___ thủy tinh.", audio_url: "/audio/week33_easy/read_q2.mp3" },
-    { id: 3, question_en: "What lesson did Jake learn?", answer: ["Always walk carefully in the corridor", "Walk carefully in the corridor", "Always be careful"], clue_statement: "Jake learned an important lesson: always walk carefully in the corridor.", hint_en: "Always ___ ___ in the ___.", hint_vi: "Luon ___ ___ trong ___.", audio_url: "/audio/week33_easy/read_q3.mp3" }
-  ]
+  {
+    "id": 1,
+    "question_en": "What was Jake doing when the boy slipped?",
+    "answer": [
+      "Walking carefully down the school corridor"
+    ],
+    "clue_statement": "Jake was walking carefully down the school corridor.",
+    "hint_en": "Jake was ___.",
+    "hint_vi": "Jake đang ___."
+  },
+  {
+    "id": 2,
+    "question_en": "What happened to the boy who was running fast?",
+    "answer": [
+      "He slipped on the wet floor and hurt his knee"
+    ],
+    "clue_statement": "A boy running fast slipped on the wet floor.",
+    "hint_en": "He ___ on the wet floor.",
+    "hint_vi": "Cậu ấy ___ trên sàn ướt."
+  }
+]
 };
 
 export const chunk_focus = [
-  "bad day",
-  "at school",
-  "ran in the corridor",
-  "hit his knee",
-  "on the table",
-  "fell down hard",
-  "broke a glass cup",
-  "fell on the floor",
-  "pencil case",
-  "was hurt",
-  "a lot",
-  "The nurse",
-  "came quickly",
-  "put a cold pack",
-  "was hurt too",
-  "His friends",
-  "felt sorry for",
-  "asked Jake",
-  "what happened",
-  "told the truth",
-  "important lesson",
-  "everyone must",
-  "walk carefully",
-  "promised to be careful",
-  "His teacher",
-  "gave him a pass",
-  "go home",
-  "got better quickly",
-  "learned a big lesson",
+  "bright sunny day",
+  "walking carefully",
   "school corridor",
-  "next day",
-  "walked slowly"
+  "finished his science class",
+  "holding his notebooks",
+  "Suddenly",
+  "running fast",
+  "slipped on the wet floor",
+  "fell heavily",
+  "hurt his knee",
+  "rushed over to help",
+  "began to bleed",
+  "burst into tears",
+  "stayed calm",
+  "called the school nurse",
+  "applied a clean bandage",
+  "felt extremely relieved",
+  "reminded all students",
+  "learned a valuable lesson",
+  "ngày hè nắng đẹp rực rỡ",
+  "cẩn thận bước đi",
+  "hành lang trường học",
+  "học xong tiết khoa học",
+  "cầm các cuốn vở",
+  "Đột nhiên",
+  "chạy rất nhanh",
+  "trượt ngã trên sàn nhà ướt",
+  "ngã rất đau",
+  "bị thương ở đầu gối",
+  "vội vã chạy đến giúp đỡ",
+  "bắt đầu chảy máu",
+  "bật khóc nức nở",
+  "giữ bình tĩnh",
+  "gọi cô y tá trường học",
+  "băng một chiếc băng sạch",
+  "cảm thấy cực kỳ nhẹ nhõm",
+  "nhắc nhở tất cả học sinh",
+  "học được một bài học quý giá"
 ];
 
 export const dictionary = {
-    'His friends': { word: 'His friends', pronunciation: '/his friends/', definition_vi: 'his những người bạn', definition_en: 'Key collocation: his friends', example: 'Natural usage of \'his friends\' in sentence context.' },
-    'His teacher': { word: 'His teacher', pronunciation: '/his teacher/', definition_vi: 'của anh ấy giáo viên', definition_en: 'Collocation: his teacher', example: 'The students learned \'his teacher\' in their English lesson.' },
-    'The nurse': { word: 'The nurse', pronunciation: '/the nurse/', definition_vi: 'y tá', definition_en: 'meaning of the nurse', example: 'The nurse put a bandage on the child’s scraped knee gently.' },
-    'a lot': { word: 'a lot', pronunciation: '/ə lɒt/', definition_vi: 'rất nhiều', definition_en: 'English collocation / phrase: a lot', example: 'Thank you a lot for your help.' },
-    'asked Jake': { word: 'asked Jake', pronunciation: '/asked jake/', definition_vi: 'hỏi Jake', definition_en: 'meaning of asked jake', example: 'The teacher asked Jake to explain what had happened in the hallway.' },
-    'at school': { word: 'at school', pronunciation: '/æt skuːl/', definition_vi: 'ở trường học', definition_en: 'English collocation / phrase: at school', example: 'Children learn many subjects at school.' },
-    'bad day': { word: 'bad day', pronunciation: '/bad day/', definition_vi: 'ngày tệ', definition_en: 'Multi-word phrase: bad day', example: 'The phrase \'bad day\' is commonly used in conversation.' },
-    'broke a glass cup': { word: 'broke a glass cup', pronunciation: '/broke a glass cup/', definition_vi: 'làm vỡ một chiếc cốc thủy tinh', definition_en: 'meaning of broke a glass cup', example: 'She accidentally dropped the plate and broke a glass cup on the kitchen floor.' },
-    'came quickly': { word: 'came quickly', pronunciation: '/came quickly/', definition_vi: 'đến nhanh', definition_en: 'meaning of came quickly', example: 'When the fire alarm rang, the firefighters came quickly with their trucks.' },
-    'everyone must': { word: 'everyone must', pronunciation: '/everyone must/', definition_vi: 'mọi người phải', definition_en: 'Multi-word phrase: everyone must', example: 'The phrase \'everyone must\' is commonly used in conversation.' },
-    'fell down hard': { word: 'fell down hard', pronunciation: '/fell down hard/', definition_vi: 'ngã mạnh', definition_en: 'meaning of fell down hard', example: 'The boy slipped on the wet floor and fell down hard on his bottom.' },
-    'fell on the floor': { word: 'fell on the floor', pronunciation: '/fell on the floor/', definition_vi: 'rơi xuống sàn', definition_en: 'meaning of fell on the floor', example: 'The stack of books fell on the floor when the wind blew through the open window.' },
-    'felt sorry for': { word: 'felt sorry for', pronunciation: '/felt sorry for/', definition_vi: 'thương hại', definition_en: 'meaning of felt sorry for', example: 'The children felt sorry for the lost puppy and tried to find its owner.' },
-    'gave him a pass': { word: 'gave him a pass', pronunciation: '/gave him a pass/', definition_vi: 'cho anh ấy giấy phép', definition_en: 'meaning of gave him a pass', example: 'The teacher gave him a pass so he could go home early to rest.' },
-    'go home': { word: 'go home', pronunciation: '/go home/', definition_vi: 'về nhà', definition_en: 'Multi-word phrase: go home', example: 'The phrase \'go home\' is commonly used in conversation.' },
-    'got better quickly': { word: 'got better quickly', pronunciation: '/got better quickly/', definition_vi: 'khá hơn nhanh chóng', definition_en: 'meaning of got better quickly', example: 'With plenty of rest, her cold got better quickly within two days.' },
-    'hit his knee': { word: 'hit his knee', pronunciation: '/hit his knee/', definition_vi: 'đập đầu gối', definition_en: 'meaning of hit his knee', example: 'He fell off his bike and hit his knee hard on the ground.' },
-    'important lesson': { word: 'important lesson', pronunciation: '/important lesson/', definition_vi: 'bài học quan trọng', definition_en: 'Multi-word phrase: important lesson', example: 'The phrase \'important lesson\' is commonly used in conversation.' },
-    'learned a big lesson': { word: 'learned a big lesson', pronunciation: '/learned a big lesson/', definition_vi: 'học được một bài học lớn', definition_en: 'meaning of learned a big lesson', example: 'After the accident, he learned a big lesson about being careful always.' },
-    'next day': { word: 'next day', pronunciation: '/next day/', definition_vi: 'ngày hôm sau', definition_en: 'Multi-word phrase: next day', example: 'The phrase \'next day\' is commonly used in conversation.' },
-    'on the table': { word: 'on the table', pronunciation: '/on the table/', definition_vi: 'trên table', definition_en: 'English collocation / phrase: on the table', example: 'It is located on the table.' },
-    'pencil case': { word: 'pencil case', pronunciation: '/pencil case/', definition_vi: 'hộp bút', definition_en: 'a bag or box for holding pens and pencils', example: 'I keep my pens and ruler in my pencil case.' },
-    'promised to be careful': { word: 'promised to be careful', pronunciation: '/promised to be careful/', definition_vi: 'hứa sẽ cẩn thận', definition_en: 'meaning of promised to be careful', example: 'The boy promised to be careful and walk slowly near the pond.' },
-    'put a cold pack': { word: 'put a cold pack', pronunciation: '/put a cold pack/', definition_vi: 'đặt túi chườm lạnh', definition_en: 'meaning of put a cold pack', example: 'The nurse put a cold pack on his swollen ankle to reduce the pain.' },
-    'ran in the corridor': { word: 'ran in the corridor', pronunciation: '/ran in the corridor/', definition_vi: 'chạy trong hành lang', definition_en: 'meaning of ran in the corridor', example: 'You should never run in the corridor because it is dangerous.' },
-    'school corridor': { word: 'school corridor', pronunciation: '/school corridor/', definition_vi: 'hành lang trường học', definition_en: 'meaning of school corridor', example: 'The school corridor was quiet and clean after the students went home.' },
-    'told the truth': { word: 'told the truth', pronunciation: '/told the truth/', definition_vi: 'nói sự thật', definition_en: 'meaning of told the truth', example: 'It is always important to told the truth even when you are afraid.' },
-    'walk carefully': { word: 'walk carefully', pronunciation: '/walk carefully/', definition_vi: 'đi cẩn thận', definition_en: 'meaning of walk carefully', example: 'He forgot to walk carefully.' },
-    'walked slowly': { word: 'walked slowly', pronunciation: '/walked slowly/', definition_vi: 'Đi bộ chậm', definition_en: 'meaning of walked slowly', example: 'The old man Walked slowly across the road so the cars could see him clearly.' },
-    'was hurt': { word: 'was hurt', pronunciation: '/was hurt/', definition_vi: 'bị đau', definition_en: 'meaning of was hurt', example: 'The boy was hurt in the playground accident.' },
-    'was hurt too': { word: 'was hurt too', pronunciation: '/was hurt too/', definition_vi: 'cũng bị đau', definition_en: 'meaning of was hurt too', example: 'His arm was hurt too after he fell off the climbing wall at the park.' },
-    'what happened': { word: 'what happened', pronunciation: '/what happened/', definition_vi: 'chuyện gì đã xảy ra', definition_en: 'Multi-word phrase: what happened', example: 'The phrase \'what happened\' is commonly used in conversation.' }
+  "bright sunny day": "ngày hè nắng đẹp rực rỡ",
+  "walking carefully": "cẩn thận bước đi",
+  "school corridor": "hành lang trường học",
+  "finished his science class": "học xong tiết khoa học",
+  "holding his notebooks": "cầm các cuốn vở",
+  "Suddenly": "Đột nhiên",
+  "running fast": "chạy rất nhanh",
+  "slipped on the wet floor": "trượt ngã trên sàn nhà ướt",
+  "fell heavily": "ngã rất đau",
+  "hurt his knee": "bị thương ở đầu gối",
+  "rushed over to help": "vội vã chạy đến giúp đỡ",
+  "began to bleed": "bắt đầu chảy máu",
+  "burst into tears": "bật khóc nức nở",
+  "stayed calm": "giữ bình tĩnh",
+  "called the school nurse": "gọi cô y tá trường học",
+  "applied a clean bandage": "băng một chiếc băng sạch",
+  "felt extremely relieved": "cảm thấy cực kỳ nhẹ nhõm",
+  "reminded all students": "nhắc nhở tất cả học sinh",
+  "learned a valuable lesson": "học được một bài học quý giá",
+  "ngày hè nắng đẹp rực rỡ": "bright sunny day",
+  "cẩn thận bước đi": "walking carefully",
+  "hành lang trường học": "school corridor",
+  "học xong tiết khoa học": "finished his science class",
+  "cầm các cuốn vở": "holding his notebooks",
+  "Đột nhiên": "Suddenly",
+  "chạy rất nhanh": "running fast",
+  "trượt ngã trên sàn nhà ướt": "slipped on the wet floor",
+  "ngã rất đau": "fell heavily",
+  "bị thương ở đầu gối": "hurt his knee",
+  "vội vã chạy đến giúp đỡ": "rushed over to help",
+  "bắt đầu chảy máu": "began to bleed",
+  "bật khóc nức nở": "burst into tears",
+  "giữ bình tĩnh": "stayed calm",
+  "gọi cô y tá trường học": "called the school nurse",
+  "băng một chiếc băng sạch": "applied a clean bandage",
+  "cảm thấy cực kỳ nhẹ nhõm": "felt extremely relieved",
+  "nhắc nhở tất cả học sinh": "reminded all students",
+  "học được một bài học quý giá": "learned a valuable lesson"
 };

@@ -1,382 +1,128 @@
-// WEEK 34: STORYTELLING PRACTICE 1 — The Ant and the Grasshopper (Fable)
-// Reading Station — Easy Mode
-
+// Auto-generated Cambridge A2 read.js for Week 34
 export default {
   title: "The Ant and the Grasshopper",
   image_url: "/images/week34/read_cover_w34.jpg",
-  audio_url: "/audio/week34_easy/read_main.mp3",
-  content_en: `**Long ago**, **there was** a hard-**working ant** **who lived** in a **small hill**. **There was** also a **lazy grasshopper** **who lived** under a big **green leaf**. The ant was **always busy** while the grasshopper was **always playing**.
+  audio_url: "/audio/week34/read_main.mp3",
+  content_en: `On a **bright sunny summer day**, the **hardworking ant** was **gathering grains of wheat**. **Meanwhile**, the **lazy grasshopper** was **singing cheerfully** under a **green tree**.
 
-**In the summer sun**, the **ant went** to the field **every day**. She **gathered seeds** and **stored food** for the **coming winter**. The grasshopper **jumped around** and **sang songs** **all day** long. He **never worked** and **never worried** about tomorrow.
+When the **cold winter arrived**, **snow covered the ground everywhere**. The grasshopper **had no food** and was **shivering in the cold**.
 
-**Day after day**, the ant **worked very hard all summer long**. She **carried heavy seeds** and **built a warm shelter** in the hill. The grasshopper just **kept playing** and danced in the **warm sunshine**. He laughed and sang **all summer long**.
+He **slowly walked** to the ant's **warm wooden house** and **knocked on the door**. The **kind ant** opened the door and **invited him inside** for **warm soup**.
 
-Then one **cold day** in autumn, the **first frost appeared**. The grasshopper **felt very cold and very hungry**. He **came to the ant's house** and **asked for food**. The ant **gave the grasshopper some food** and invited him inside, saying he should work harder **next summer**.
+The grasshopper **felt deeply grateful** and **learned a valuable lesson**. **From that day on**, he **promised to work hard** every summer.`,
+  content_vi: `Vào một **ngày hè nắng đẹp rực rỡ**, chú **kiến chăm chỉ** đang **nhặt những hạt lúa mì**. **Trong khi đó**, chú **châu chấu lười biếng** đang **hát ca vui vẻ** dưới bóng cây xanh.
 
-**All winter long**, the two animals **shared food together**. The grasshopper **learned an important lesson**: **work hard** and **prepare for the future**. The ant **smiled and agreed**. **From that day on**, both the **ant and the grasshopper** worked together and stayed **happy and healthy** **for the rest of the year**. The fable teaches us that **hard work pays off** in the end.`,
-  content_vi: `**Rất lâu trước đây**, có **một con kiến chăm chỉ** sống trên một gò đất nhỏ. Cũng có **một con châu chấu lười biếng** sống dưới một chiếc lá xanh lớn. Con kiến **luôn bận rộn** trong khi con châu chấu **luôn chơi trò chơi**.
+Khi **mùa đông lạnh giá đến**, **tuyết phủ kín mặt đất khắp nơi**. Châu chấu **không có thức ăn** và đang **run rẩy trong giá lạnh**.
 
-**Dưới ánh nắng mùa hè ấm áp**, con kiến **đi ra đồng** mỗi ngày. Cô ấy **nhặt hạt** và **dự trữ thức ăn** cho mùa đông sắp tới. Con châu chấu **nhảy tung tăng** và **hát ríu rít** cả ngày. Nó **không bao giờ làm việc** và **không bao giờ lo lắng** về ngày mai.
+Chú **chậm rãi bước đến** ngôi **nhà gỗ ấm áp** của kiến và **gõ cửa**. Chú **kiến tốt bụng** mở cửa và **mời chú vào trong** dùng **súp nóng**.
 
-**Ngày này qua ngày khác**, con kiến **làm việc rất chăm chỉ cả mùa hè**. Cô ấy **mang những hạt nặng** và **xây một ngôi nhà ấm** trong gò đất. Con châu chấu chỉ **tiếp tục chơi** và **nhảy múa vui vẻ** dưới **ánh nắng ấm đẹp**. Nó **cứ cười** và **cứ hát** suốt mùa hè.
-
-Rồi **một ngày lạnh vào mùa thu**, sương giá đầu tiên xuất hiện. Con châu chấu **cảm thấy rất lạnh và rất đói**. Nó **đến nhà con kiến** và **xin thức ăn**. Con kiến **cho châu chấu một ít thức ăn** và mời nó vào trong, nói rằng nó nên **làm việc cùng cô mùa hè tới**.
-
-**Suốt mùa đông**, hai con vật **chia sẻ thức ăn cùng nhau**. Con châu chấu **học được một bài học quan trọng**: **luôn làm việc chăm chỉ** và **chuẩn bị cho tương lai**. Con kiến **mỉm cười đồng ý**. **Từ ngày đó**, cả kiến và châu chấu **làm việc chăm chỉ cùng nhau** và sống **vui vẻ khỏe mạnh suốt phần còn lại của năm**. Truyện ngụ ngôn dạy chúng ta rằng **sự chăm chỉ luôn được đền bù cuối cùng**."`,
+Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một bài học quý giá**. **Từ ngày đó trở đi**, chú **hứa sẽ làm việc chăm chỉ** mỗi mùa hè.`,
   comprehension_questions: [
-    { id: 1, question_en: "What did the ant do every day in summer?", answer: ["Gathered seeds and stored food", "Went to the field and gathered seeds"], clue_statement: "The ant went to the field every day and gathered seeds and stored food.", hint_en: "The ant ___ and ___ ___ for the coming ___.", hint_vi: "Con kiến ___ và ___ ___ cho mùa ___ sắp tới.", audio_url: "/audio/week34_easy/read_q1.mp3" },
-    { id: 2, question_en: "What lesson did the grasshopper learn?", answer: ["Always work hard and prepare for the future", "Work hard and prepare", "Always work hard"], clue_statement: "The grasshopper learned an important lesson: always work hard and prepare for the future.", hint_en: "Always ___ ___ and ___ for the ___.", hint_vi: "Luôn ___ ___ và ___ cho ___.", audio_url: "/audio/week34_easy/read_q2.mp3" },
-    { id: 3, question_en: "When did the grasshopper feel very cold?", answer: ["When the first frost appeared", "On a cold day in autumn", "In autumn when it was cold"], clue_statement: "The grasshopper felt very cold when the first frost appeared in autumn.", hint_en: "The first ___ ___ in ___.", hint_vi: "Sương ___ đầu tiên ___ vào ___.", audio_url: "/audio/week34_easy/read_q3.mp3" }
-  ]
+  {
+    "id": 1,
+    "question_en": "What was the ant doing during the summer?",
+    "answer": [
+      "Gathering grains of wheat"
+    ],
+    "clue_statement": "The ant was gathering grains of wheat.",
+    "hint_en": "Gathering ___.",
+    "hint_vi": "Nhặt ___."
+  }
+]
 };
 
 export const chunk_focus = [
-  "Long ago",
-  "there was",
-  "working ant",
-  "who lived",
-  "small hill",
-  "There was",
+  "bright sunny summer day",
+  "hardworking ant",
+  "kiến chăm chỉ",
+  "gathering grains of wheat",
+  "Meanwhile",
   "lazy grasshopper",
-  "green leaf",
-  "always busy",
-  "always playing",
-  "In the summer sun",
-  "ant went",
-  "every day",
-  "gathered seeds",
-  "stored food",
-  "coming winter",
-  "jumped around",
-  "sang songs",
-  "all day",
-  "never worked",
-  "never worried",
-  "Day after day",
-  "worked very hard all summer long",
-  "carried heavy seeds",
-  "built a warm shelter",
-  "kept playing",
-  "warm sunshine",
-  "all summer long",
-  "cold day",
-  "first frost appeared",
-  "felt very cold and very hungry",
-  "came to the ant",
-  ",",
-  "came to the ant's house",
-  "asked for food",
-  "gave the grasshopper some food",
-  "next summer",
-  "All winter long",
-  "shared food together",
-  "learned an important lesson",
-  "work hard",
-  "prepare for the future",
-  "smiled and agreed",
+  "châu chấu lười biếng",
+  "singing cheerfully",
+  "green tree",
+  "cold winter arrived",
+  "snow covered the ground everywhere",
+  "had no food",
+  "shivering in the cold",
+  "slowly walked",
+  "warm wooden house",
+  "knocked on the door",
+  "kind ant",
+  "invited him inside",
+  "warm soup",
+  "felt deeply grateful",
+  "learned a valuable lesson",
   "From that day on",
-  "ant and the grasshopper",
-  "happy and healthy",
-  "for the rest of the year",
-  "hard work pays off",
-  "Rất lâu trước đây",
-  "một con kiến chăm chỉ",
-  "một con châu chấu lười biếng",
-  "luôn bận rộn",
-  "luôn chơi trò chơi",
-  "Dưới ánh nắng mùa hè ấm áp",
-  "đi ra đồng",
-  "nhặt hạt",
-  "dự trữ thức ăn",
-  "nhảy tung tăng",
-  "hát ríu rít",
-  "không bao giờ làm việc",
-  "không bao giờ lo lắng",
-  "Ngày này qua ngày khác",
-  "làm việc rất chăm chỉ cả mùa hè",
-  "mang những hạt nặng",
-  "xây một ngôi nhà ấm",
-  "tiếp tục chơi",
-  "nhảy múa vui vẻ",
-  "ánh nắng ấm đẹp",
-  "cứ cười",
-  "cứ hát",
-  "một ngày lạnh vào mùa thu",
-  "cảm thấy rất lạnh và rất đói",
-  "đến nhà con kiến",
-  "xin thức ăn",
-  "cho châu chấu một ít thức ăn",
-  "làm việc cùng cô mùa hè tới",
-  "Suốt mùa đông",
-  "chia sẻ thức ăn cùng nhau",
-  "học được một bài học quan trọng",
-  "luôn làm việc chăm chỉ",
-  "chuẩn bị cho tương lai",
-  "mỉm cười đồng ý",
-  "Từ ngày đó",
-  "làm việc chăm chỉ cùng nhau",
-  "vui vẻ khỏe mạnh suốt phần còn lại của năm",
-  "sự chăm chỉ luôn được đền bù cuối cùng"
+  "promised to work hard",
+  "ngày hè nắng đẹp rực rỡ",
+  "chú kiến chăm chỉ",
+  "hardworking ant",
+  "nhặt những hạt lúa mì",
+  "Trong khi đó",
+  "chú châu chấu lười biếng",
+  "lazy grasshopper",
+  "hát ca vui vẻ",
+  "cây xanh",
+  "mùa đông lạnh giá đến",
+  "tuyết phủ kín mặt đất khắp nơi",
+  "không có thức ăn",
+  "run rẩy trong giá lạnh",
+  "chậm rãi bước đến",
+  "nhà gỗ ấm áp",
+  "gõ cửa",
+  "kiến tốt bụng",
+  "mời chú vào trong",
+  "súp nóng",
+  "cảm thấy cực kỳ biết ơn",
+  "học được một bài học quý giá",
+  "Từ ngày đó trở đi",
+  "hứa sẽ làm việc chăm chỉ"
 ];
 
 export const dictionary = {
-'All winter long': { word: 'All winter long', pronunciation: '/all winter long/', definition_vi: 'suốt mùa đông', definition_en: 'throughout the entire winter season', example: 'All winter long, the two animals shared food together.' },
-    'Day after day': { word: 'Day after day', pronunciation: '/day after day/', definition_vi: 'ngày này qua ngày khác', definition_en: 'every single day, again and again', example: 'Day after day, the ant worked very hard all summer long.' },
-    'Dưới ánh nắng mùa hè ấm áp': { word: 'Dưới ánh nắng mùa hè ấm áp', pronunciation: '/dưới ánh nắng mùa hè ấm áp/', definition_vi: 'cụm từ vựng: dưới ánh nắng mùa hè ấm áp', definition_en: 'Collocation: dưới ánh nắng mùa hè ấm áp', example: 'The students learned \'dưới ánh nắng mùa hè ấm áp\' in their English lesson.' },
-    'From that day on': { word: 'From that day on', pronunciation: '/from that day on/', definition_vi: 'từ ngày đó', definition_en: 'starting from that specific day onwards', example: 'From that day on, both the ant and the grasshopper worked hard together.' },
-    'In the summer sun': { word: 'In the summer sun', pronunciation: '/in the summer sun/', definition_vi: 'dưới nắng mùa hè', definition_en: 'during the warm sunshine of summer', example: 'The children played happily in the summer sun.' },
-    'Long ago': { word: 'Long ago', pronunciation: '/long ago/', definition_vi: 'lâu rồi', definition_en: 'meaning of long ago', example: 'This is an example: long ago.' },
-    'Ngày này qua ngày khác': { word: 'Ngày này qua ngày khác', pronunciation: '/ngày này qua ngày khác/', definition_vi: 'cụm từ vựng: ngày này qua ngày khác', definition_en: 'Collocation: ngày này qua ngày khác', example: 'The students learned \'ngày này qua ngày khác\' in their English lesson.' },
-    'Rất lâu trước đây': { word: 'Rất lâu trước đây', pronunciation: '/rất lâu trước đây/', definition_vi: 'cụm từ vựng: rất lâu trước đây', definition_en: 'Collocation: rất lâu trước đây', example: 'The students learned \'rất lâu trước đây\' in their English lesson.' },
-    'Suốt mùa đông': { word: 'Suốt mùa đông', pronunciation: '/suốt mùa đông/', definition_vi: 'cụm từ vựng: suốt mùa đông', definition_en: 'Collocation: suốt mùa đông', example: 'The students learned \'suốt mùa đông\' in their English lesson.' },
-    'There was': { word: 'There was', pronunciation: '/there was/', definition_vi: 'có (nghĩa tồn tại)', definition_en: 'meaning of there was', example: 'There was a big market near the river.' },
-    'Từ ngày đó': { word: 'Từ ngày đó', pronunciation: '/từ ngày đó/', definition_vi: 'cụm từ vựng: từ ngày đó', definition_en: 'Collocation: từ ngày đó', example: 'The students learned \'từ ngày đó\' in their English lesson.' },
-    'all day': { word: 'all day', pronunciation: '/all day/', definition_vi: 'cả ngày', definition_en: 'Multi-word phrase: all day', example: 'The phrase \'all day\' is commonly used in conversation.' },
-    'all summer long': { word: 'all summer long', pronunciation: '/all summer long/', definition_vi: 'cả mùa hè', definition_en: 'Multi-word phrase: all summer long', example: 'The phrase \'all summer long\' is commonly used in conversation.' },
-    'always busy': { word: 'always busy', pronunciation: '/always busy/', definition_vi: 'luôn bận rộn', definition_en: 'never having free time, always doing something', example: 'The ant was always busy while the grasshopper was always playing games.' },
-    'always playing': { word: 'always playing', pronunciation: '/always playing/', definition_vi: 'luôn luôn chơi', definition_en: 'spending all the time playing games or having fun', example: 'The ant was always busy while the grasshopper was always playing games.' },
-    'ant and the grasshopper': { word: 'ant and the grasshopper', pronunciation: '/ænt ænd ðə ˈɡrɑːshɒpər/', definition_vi: 'kiến và châu chấu', definition_en: 'English collocation / phrase: ant and the grasshopper', example: 'The story of the ant and the grasshopper teaches hard work.' },
-    'ant went': { word: 'ant went', pronunciation: '/ant went/', definition_vi: 'con kiến đi', definition_en: 'Multi-word phrase: ant went', example: 'The phrase \'ant went\' is commonly used in conversation.' },
-    'asked for food': { word: 'asked for food', pronunciation: '/asked for food/', definition_vi: 'xin thức ăn', definition_en: 'made a request to receive food', example: 'He came to the ant\'s house and asked for food.' },
-    'built a warm shelter': { word: 'built a warm shelter', pronunciation: '/built a warm shelter/', definition_vi: 'xây một nơi trú ẩn ấm áp', definition_en: 'made a safe, warm place to live', example: 'She carried heavy seeds and built a warm shelter in the hill.' },
-    'came to the ant\'s house': { word: 'came to the ant\'s house', pronunciation: '/came to the ant\'s house/', definition_vi: 'đến nhà con kiến', definition_en: 'went to where the ant lives', example: 'He came to the ant\'s house and asked for food.' },
-    'carried heavy seeds': { word: 'carried heavy seeds', pronunciation: '/carried heavy seeds/', definition_vi: 'mang những hạt nặng', definition_en: 'took seeds that were heavy or difficult to carry', example: 'She carried heavy seeds and built a warm shelter.' },
-    'chia sẻ thức ăn cùng nhau': { word: 'chia sẻ thức ăn cùng nhau', pronunciation: '/chia sẻ thức ăn cùng nhau/', definition_vi: 'cụm từ vựng: chia sẻ thức ăn cùng nhau', definition_en: 'Collocation: chia sẻ thức ăn cùng nhau', example: 'The students learned \'chia sẻ thức ăn cùng nhau\' in their English lesson.' },
-    'cho châu chấu một ít thức ăn': { word: 'cho châu chấu một ít thức ăn', pronunciation: '/cho châu chấu một ít thức ăn/', definition_vi: 'cụm từ vựng: cho châu chấu một ít thức ăn', definition_en: 'Collocation: cho châu chấu một ít thức ăn', example: 'The students learned \'cho châu chấu một ít thức ăn\' in their English lesson.' },
-    'chuẩn bị cho tương lai': { word: 'chuẩn bị cho tương lai', pronunciation: '/chuẩn bị cho tương lai/', definition_vi: 'cụm từ vựng: chuẩn bị cho tương lai', definition_en: 'Collocation: chuẩn bị cho tương lai', example: 'The students learned \'chuẩn bị cho tương lai\' in their English lesson.' },
-    'cold day': { word: 'cold day', pronunciation: '/cold day/', definition_vi: 'ngày lạnh', definition_en: 'Multi-word phrase: cold day', example: 'The phrase \'cold day\' is commonly used in conversation.' },
-    'coming winter': { word: 'coming winter', pronunciation: '/coming winter/', definition_vi: 'mùa đông sắp tới', definition_en: 'Multi-word phrase: coming winter', example: 'The phrase \'coming winter\' is commonly used in conversation.' },
-    'cảm thấy rất lạnh và rất đói': { word: 'cảm thấy rất lạnh và rất đói', pronunciation: '/cảm thấy rất lạnh và rất đói/', definition_vi: 'cụm từ vựng: cảm thấy rất lạnh và rất đói', definition_en: 'Collocation: cảm thấy rất lạnh và rất đói', example: 'The students learned \'cảm thấy rất lạnh và rất đói\' in their English lesson.' },
-    'cứ cười': { word: 'cứ cười', pronunciation: '/cứ cười/', definition_vi: 'cụm từ vựng: cứ cười', definition_en: 'Collocation: cứ cười', example: 'The students learned \'cứ cười\' in their English lesson.' },
-    'cứ hát': { word: 'cứ hát', pronunciation: '/cứ hát/', definition_vi: 'cụm từ vựng: cứ hát', definition_en: 'Collocation: cứ hát', example: 'The students learned \'cứ hát\' in their English lesson.' },
-    'dự trữ thức ăn': { word: 'dự trữ thức ăn', pronunciation: '/dự trữ thức ăn/', definition_vi: 'cụm từ vựng: dự trữ thức ăn', definition_en: 'Collocation: dự trữ thức ăn', example: 'The students learned \'dự trữ thức ăn\' in their English lesson.' },
-    'every day': { word: 'every day', pronunciation: '/every day/', definition_vi: 'mỗi ngày', definition_en: 'meaning of every day', example: 'This is my family. My mother is kind. She makes food for us every day. My father is strong. He plays with me in the park.' },
-    'felt very cold and very hungry': { word: 'felt very cold and very hungry', pronunciation: '/felt very cold and very hungry/', definition_vi: 'cảm thấy rất lạnh và rất đói', definition_en: 'experienced extreme cold and hunger at the same time', example: 'The grasshopper felt very cold and very hungry.' },
-    'first frost appeared': { word: 'first frost appeared', pronunciation: '/first frost appeared/', definition_vi: 'sương giá đầu tiên xuất hiện', definition_en: 'Multi-word phrase: first frost appeared', example: 'The phrase \'first frost appeared\' is commonly used in conversation.' },
-    'for the rest of the year': { word: 'for the rest of the year', pronunciation: '/for the rest of the year/', definition_vi: 'cho the rest of the year', definition_en: 'English phrase: for the rest of the year', example: 'The phrase \'for the rest of the year\' means cho the rest of the year.' },
-    'gathered seeds': { word: 'gathered seeds', pronunciation: '/gathered seeds/', definition_vi: 'nhặt hạt', definition_en: 'collected seeds from the field', example: 'She gathered seeds and stored food for the coming winter.' },
-    'gave the grasshopper some food': { word: 'gave the grasshopper some food', pronunciation: '/gave the grasshopper some food/', definition_vi: 'cho châu chấu một ít thức ăn', definition_en: 'shared food with the grasshopper', example: 'The ant gave the grasshopper some food and invited him inside.' },
-    'green leaf': { word: 'green leaf', pronunciation: '/green leaf/', definition_vi: 'lá xanh', definition_en: 'meaning of green leaf', example: 'The baby plant pushes through the dark soil with one small green leaf.' },
-    'happy and healthy': { word: 'happy and healthy', pronunciation: '/happy and healthy/', definition_vi: 'vui vẻ và khỏe mạnh', definition_en: 'feeling good and in good health', example: 'They stayed happy and healthy all year long.' },
-    'hard work pays off': { word: 'hard work pays off', pronunciation: '/hard work pays off/', definition_vi: 'làm việc chăm chỉ được đền đáp', definition_en: 'meaning of hard work pays off', example: 'This is an example: hard work pays off.' },
-    'hát ríu rít': { word: 'hát ríu rít', pronunciation: '/hát ríu rít/', definition_vi: 'cụm từ vựng: hát ríu rít', definition_en: 'Collocation: hát ríu rít', example: 'The students learned \'hát ríu rít\' in their English lesson.' },
-    'học được một bài học quan trọng': { word: 'học được một bài học quan trọng', pronunciation: '/học được một bài học quan trọng/', definition_vi: 'cụm từ vựng: học được một bài học quan trọng', definition_en: 'Collocation: học được một bài học quan trọng', example: 'The students learned \'học được một bài học quan trọng\' in their English lesson.' },
-    'jumped around': { word: 'jumped around', pronunciation: '/jumped around/', definition_vi: 'nhảy tung tăng', definition_en: 'moved by jumping here and there', example: 'The grasshopper jumped around and sang songs all day long.' },
-    'kept playing': { word: 'kept playing', pronunciation: '/kept playing/', definition_vi: 'tiếp tục chơi', definition_en: 'continued to play without stopping', example: 'The grasshopper just kept playing and danced happily.' },
-    'không bao giờ lo lắng': { word: 'không bao giờ lo lắng', pronunciation: '/không bao giờ lo lắng/', definition_vi: 'cụm từ vựng: không bao giờ lo lắng', definition_en: 'Collocation: không bao giờ lo lắng', example: 'The students learned \'không bao giờ lo lắng\' in their English lesson.' },
-    'không bao giờ làm việc': { word: 'không bao giờ làm việc', pronunciation: '/không bao giờ làm việc/', definition_vi: 'cụm từ vựng: không bao giờ làm việc', definition_en: 'Collocation: không bao giờ làm việc', example: 'The students learned \'không bao giờ làm việc\' in their English lesson.' },
-    'lazy grasshopper': { word: 'lazy grasshopper', pronunciation: '/lazy grasshopper/', definition_vi: 'con châu chấu lười biếng', definition_en: 'Multi-word phrase: lazy grasshopper', example: 'The phrase \'lazy grasshopper\' is commonly used in conversation.' },
-    'learned an important lesson': { word: 'learned an important lesson', pronunciation: '/learned an important lesson/', definition_vi: 'học được một bài học quan trọng', definition_en: 'gained understanding of something very important', example: 'The grasshopper learned an important lesson: always work hard.' },
-    'luôn bận rộn': { word: 'luôn bận rộn', pronunciation: '/luôn bận rộn/', definition_vi: 'cụm từ vựng: luôn bận rộn', definition_en: 'Collocation: luôn bận rộn', example: 'The students learned \'luôn bận rộn\' in their English lesson.' },
-    'luôn chơi trò chơi': { word: 'luôn chơi trò chơi', pronunciation: '/luôn chơi trò chơi/', definition_vi: 'cụm từ vựng: luôn chơi trò chơi', definition_en: 'Collocation: luôn chơi trò chơi', example: 'The students learned \'luôn chơi trò chơi\' in their English lesson.' },
-    'luôn làm việc chăm chỉ': { word: 'luôn làm việc chăm chỉ', pronunciation: '/luôn làm việc chăm chỉ/', definition_vi: 'cụm từ vựng: luôn làm việc chăm chỉ', definition_en: 'Collocation: luôn làm việc chăm chỉ', example: 'The students learned \'luôn làm việc chăm chỉ\' in their English lesson.' },
-    'làm việc chăm chỉ cùng nhau': { word: 'làm việc chăm chỉ cùng nhau', pronunciation: '/làm việc chăm chỉ cùng nhau/', definition_vi: 'cụm từ vựng: làm việc chăm chỉ cùng nhau', definition_en: 'Collocation: làm việc chăm chỉ cùng nhau', example: 'The students learned \'làm việc chăm chỉ cùng nhau\' in their English lesson.' },
-    'làm việc cùng cô mùa hè tới': { word: 'làm việc cùng cô mùa hè tới', pronunciation: '/làm việc cùng cô mùa hè tới/', definition_vi: 'cụm từ vựng: làm việc cùng cô mùa hè tới', definition_en: 'Collocation: làm việc cùng cô mùa hè tới', example: 'The students learned \'làm việc cùng cô mùa hè tới\' in their English lesson.' },
-    'làm việc rất chăm chỉ cả mùa hè': { word: 'làm việc rất chăm chỉ cả mùa hè', pronunciation: '/làm việc rất chăm chỉ cả mùa hè/', definition_vi: 'cụm từ vựng: làm việc rất chăm chỉ cả mùa hè', definition_en: 'Collocation: làm việc rất chăm chỉ cả mùa hè', example: 'The students learned \'làm việc rất chăm chỉ cả mùa hè\' in their English lesson.' },
-    'mang những hạt nặng': { word: 'mang những hạt nặng', pronunciation: '/mang những hạt nặng/', definition_vi: 'cụm từ vựng: mang những hạt nặng', definition_en: 'Collocation: mang những hạt nặng', example: 'The students learned \'mang những hạt nặng\' in their English lesson.' },
-    'mỉm cười đồng ý': { word: 'mỉm cười đồng ý', pronunciation: '/mỉm cười đồng ý/', definition_vi: 'cụm từ vựng: mỉm cười đồng ý', definition_en: 'Collocation: mỉm cười đồng ý', example: 'The students learned \'mỉm cười đồng ý\' in their English lesson.' },
-    'một con châu chấu lười biếng': { word: 'một con châu chấu lười biếng', pronunciation: '/một con châu chấu lười biếng/', definition_vi: 'cụm từ vựng: một con châu chấu lười biếng', definition_en: 'Collocation: một con châu chấu lười biếng', example: 'The students learned \'một con châu chấu lười biếng\' in their English lesson.' },
-    'một con kiến chăm chỉ': { word: 'một con kiến chăm chỉ', pronunciation: '/một con kiến chăm chỉ/', definition_vi: 'cụm từ vựng: một con kiến chăm chỉ', definition_en: 'Collocation: một con kiến chăm chỉ', example: 'The students learned \'một con kiến chăm chỉ\' in their English lesson.' },
-    'một ngày lạnh vào mùa thu': { word: 'một ngày lạnh vào mùa thu', pronunciation: '/một ngày lạnh vào mùa thu/', definition_vi: 'cụm từ vựng: một ngày lạnh vào mùa thu', definition_en: 'Collocation: một ngày lạnh vào mùa thu', example: 'The students learned \'một ngày lạnh vào mùa thu\' in their English lesson.' },
-    'never worked': { word: 'never worked', pronunciation: '/never worked/', definition_vi: 'không bao giờ làm việc', definition_en: 'did not do any work at all', example: 'He never worked and never worried about tomorrow.' },
-    'never worried': { word: 'never worried', pronunciation: '/never worried/', definition_vi: 'không bao giờ lo lắng', definition_en: 'did not feel anxious or concerned about anything', example: 'He never worked and never worried about tomorrow.' },
-    'next summer': { word: 'next summer', pronunciation: '/next summer/', definition_vi: 'mùa hè tới', definition_en: 'meaning of next summer', example: 'This is an example: next summer.' },
-    'nhảy múa vui vẻ': { word: 'nhảy múa vui vẻ', pronunciation: '/nhảy múa vui vẻ/', definition_vi: 'cụm từ vựng: nhảy múa vui vẻ', definition_en: 'Collocation: nhảy múa vui vẻ', example: 'The students learned \'nhảy múa vui vẻ\' in their English lesson.' },
-    'nhảy tung tăng': { word: 'nhảy tung tăng', pronunciation: '/nhảy tung tăng/', definition_vi: 'cụm từ vựng: nhảy tung tăng', definition_en: 'Collocation: nhảy tung tăng', example: 'The students learned \'nhảy tung tăng\' in their English lesson.' },
-    'nhặt hạt': { word: 'nhặt hạt', pronunciation: '/nhặt hạt/', definition_vi: 'cụm từ vựng: nhặt hạt', definition_en: 'Collocation: nhặt hạt', example: 'The students learned \'nhặt hạt\' in their English lesson.' },
-    'prepare for the future': { word: 'prepare for the future', pronunciation: '/prepare for the future/', definition_vi: 'chuẩn bị cho tương lai', definition_en: 'get ready for what comes next', example: 'Always work hard and prepare for the future.' },
-    'sang songs': { word: 'sang songs', pronunciation: '/sang songs/', definition_vi: 'hát ríu rít', definition_en: 'made music with the voice', example: 'The grasshopper jumped around and sang songs all day long.' },
-    'shared food together': { word: 'shared food together', pronunciation: '/shared food together/', definition_vi: 'chia sẻ thức ăn cùng nhau', definition_en: 'gave and received food with each other', example: 'All winter long, the two animals shared food together.' },
-    'small hill': { word: 'small hill', pronunciation: '/small hill/', definition_vi: 'đồi nhỏ', definition_en: 'Multi-word phrase: small hill', example: 'The phrase \'small hill\' is commonly used in conversation.' },
-    'smiled and agreed': { word: 'smiled and agreed', pronunciation: '/smiled and agreed/', definition_vi: 'mỉm cười đồng ý', definition_en: 'showed happiness and said yes', example: 'The ant smiled and agreed with the lesson.' },
-    'stored food': { word: 'stored food', pronunciation: '/stored food/', definition_vi: 'dự trữ thức ăn', definition_en: 'kept food in a safe place for later', example: 'The ant gathered seeds and stored food for the coming winter.' },
-    'sự chăm chỉ luôn được đền bù cuối cùng': { word: 'sự chăm chỉ luôn được đền bù cuối cùng', pronunciation: '/sự chăm chỉ luôn được đền bù cuối cùng/', definition_vi: 'cụm từ vựng: sự chăm chỉ luôn được đền bù cuối cùng', definition_en: 'Collocation: sự chăm chỉ luôn được đền bù cuối cùng', example: 'The students learned \'sự chăm chỉ luôn được đền bù cuối cùng\' in their English lesson.' },
-    'there was': { word: 'there was', pronunciation: '/there was/', definition_vi: 'có (nghĩa tồn tại)', definition_en: 'meaning of there was', example: 'There was a big market near the river.' },
-    'tiếp tục chơi': { word: 'tiếp tục chơi', pronunciation: '/tiếp tục chơi/', definition_vi: 'cụm từ vựng: tiếp tục chơi', definition_en: 'Collocation: tiếp tục chơi', example: 'The students learned \'tiếp tục chơi\' in their English lesson.' },
-    'vui vẻ khỏe mạnh suốt phần còn lại của năm': { word: 'vui vẻ khỏe mạnh suốt phần còn lại của năm', pronunciation: '/vui vẻ khỏe mạnh suốt phần còn lại của năm/', definition_vi: 'cụm từ vựng: vui vẻ khỏe mạnh suốt phần còn lại của năm', definition_en: 'Collocation: vui vẻ khỏe mạnh suốt phần còn lại của năm', example: 'The students learned \'vui vẻ khỏe mạnh suốt phần còn lại của năm\' in their English lesson.' },
-    'warm sunshine': { word: 'warm sunshine', pronunciation: '/warm sunshine/', definition_vi: 'nắng ấm', definition_en: 'meaning of warm sunshine', example: 'This is an example: warm sunshine.' },
-    'who lived': { word: 'who lived', pronunciation: '/who lived/', definition_vi: 'người đã sống', definition_en: 'Multi-word phrase: who lived', example: 'The phrase \'who lived\' is commonly used in conversation.' },
-    'work hard': { word: 'work hard', pronunciation: '/work hard/', definition_vi: 'làm việc chăm chỉ', definition_en: 'meaning of work hard', example: 'This is an example: work hard.' },
-    'worked very hard all summer long': { word: 'worked very hard all summer long', pronunciation: '/worked very hard all summer long/', definition_vi: 'làm việc rất chăm chỉ suốt mùa hè', definition_en: 'put in a lot of effort every day during the whole summer', example: 'Day after day, the ant worked very hard all summer long.' },
-    'working ant': { word: 'working ant', pronunciation: '/working ant/', definition_vi: 'con kiến chăm chỉ', definition_en: 'Multi-word phrase: working ant', example: 'The phrase \'working ant\' is commonly used in conversation.' },
-    'xin thức ăn': { word: 'xin thức ăn', pronunciation: '/xin thức ăn/', definition_vi: 'cụm từ vựng: xin thức ăn', definition_en: 'Collocation: xin thức ăn', example: 'The students learned \'xin thức ăn\' in their English lesson.' },
-    'xây một ngôi nhà ấm': { word: 'xây một ngôi nhà ấm', pronunciation: '/xây một ngôi nhà ấm/', definition_vi: 'cụm từ vựng: xây một ngôi nhà ấm', definition_en: 'Collocation: xây một ngôi nhà ấm', example: 'The students learned \'xây một ngôi nhà ấm\' in their English lesson.' },
-    'ánh nắng ấm đẹp': { word: 'ánh nắng ấm đẹp', pronunciation: '/ánh nắng ấm đẹp/', definition_vi: 'cụm từ vựng: ánh nắng ấm đẹp', definition_en: 'Collocation: ánh nắng ấm đẹp', example: 'The students learned \'ánh nắng ấm đẹp\' in their English lesson.' },
-    'đi ra đồng': { word: 'đi ra đồng', pronunciation: '/đi ra đồng/', definition_vi: 'cụm từ vựng: đi ra đồng', definition_en: 'Collocation: đi ra đồng', example: 'The students learned \'đi ra đồng\' in their English lesson.' },
-    'đến nhà con kiến': { word: 'đến nhà con kiến', pronunciation: '/đến nhà con kiến/', definition_vi: 'cụm từ vựng: đến nhà con kiến', definition_en: 'Collocation: đến nhà con kiến', example: 'The students learned \'đến nhà con kiến\' in their English lesson.' },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  },
-  "came to the ant's house": {
-    word: "came to the ant's house",
-    pronunciation: "/came to the ant's house/",
-    definition_vi: "came to the ant's house",
-    definition_en: "Context phrase: came to the ant's house",
-    example: "We practiced came to the ant's house today."
-  }
+  "bright sunny summer day": "ngày hè nắng đẹp rực rỡ",
+  "hardworking ant": "kiến chăm chỉ",
+  "kiến chăm chỉ": "hardworking ant",
+  "gathering grains of wheat": "nhặt những hạt lúa mì",
+  "Meanwhile": "Trong khi đó",
+  "lazy grasshopper": "châu chấu lười biếng",
+  "châu chấu lười biếng": "lazy grasshopper",
+  "singing cheerfully": "hát ca vui vẻ",
+  "green tree": "cây xanh",
+  "cold winter arrived": "mùa đông lạnh giá đến",
+  "snow covered the ground everywhere": "tuyết phủ kín mặt đất khắp nơi",
+  "had no food": "không có thức ăn",
+  "shivering in the cold": "run rẩy trong giá lạnh",
+  "slowly walked": "chậm rãi bước đến",
+  "warm wooden house": "nhà gỗ ấm áp",
+  "knocked on the door": "gõ cửa",
+  "kind ant": "kiến tốt bụng",
+  "invited him inside": "mời chú vào trong",
+  "warm soup": "súp nóng",
+  "felt deeply grateful": "cảm thấy cực kỳ biết ơn",
+  "learned a valuable lesson": "học được một bài học quý giá",
+  "From that day on": "Từ ngày đó trở đi",
+  "promised to work hard": "hứa sẽ làm việc chăm chỉ",
+  "ngày hè nắng đẹp rực rỡ": "bright sunny summer day",
+  "chú kiến chăm chỉ": "hardworking ant",
+  "nhặt những hạt lúa mì": "gathering grains of wheat",
+  "Trong khi đó": "Meanwhile",
+  "chú châu chấu lười biếng": "lazy grasshopper",
+  "hát ca vui vẻ": "singing cheerfully",
+  "cây xanh": "green tree",
+  "mùa đông lạnh giá đến": "cold winter arrived",
+  "tuyết phủ kín mặt đất khắp nơi": "snow covered the ground everywhere",
+  "không có thức ăn": "had no food",
+  "run rẩy trong giá lạnh": "shivering in the cold",
+  "chậm rãi bước đến": "slowly walked",
+  "nhà gỗ ấm áp": "warm wooden house",
+  "gõ cửa": "knocked on the door",
+  "kiến tốt bụng": "kind ant",
+  "mời chú vào trong": "invited him inside",
+  "súp nóng": "warm soup",
+  "cảm thấy cực kỳ biết ơn": "felt deeply grateful",
+  "học được một bài học quý giá": "learned a valuable lesson",
+  "Từ ngày đó trở đi": "From that day on",
+  "hứa sẽ làm việc chăm chỉ": "promised to work hard"
 };

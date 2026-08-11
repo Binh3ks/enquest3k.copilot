@@ -1,4 +1,4 @@
-// Auto-generated synchronized read.js
+// Auto-generated Cambridge A2 read.js for Week 34
 export default {
   title: "The Ant and the Grasshopper",
   image_url: "/images/week34/read_cover_w34.jpg",
@@ -18,8 +18,17 @@ Chú **chậm rãi bước đến** ngôi **nhà gỗ ấm áp** của kiến v�
 
 Châu chấu **cảm thấy cực kỳ biết ơn** và **học được một bài học quý giá**. **Từ ngày đó trở đi**, chú **hứa sẽ làm việc chăm chỉ** mỗi mùa hè.`,
   comprehension_questions: [
-    { id: 1, question_en: "What did the characters do in the story?", answer: ["Worked hard together", "Cleaned and helped"], clue_statement: "They worked together and made a wonderful effort.", hint_en: "They worked ___.", hint_vi: "Họ làm việc ___.", audio_url: "/audio/week34/read_main.mp3" }
-  ]
+  {
+    "id": 1,
+    "question_en": "What was the ant doing during the summer?",
+    "answer": [
+      "Gathering grains of wheat"
+    ],
+    "clue_statement": "The ant was gathering grains of wheat.",
+    "hint_en": "Gathering ___.",
+    "hint_vi": "Nhặt ___."
+  }
+]
 };
 
 export const chunk_focus = [
