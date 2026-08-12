@@ -345,8 +345,11 @@ const MainLayout = () => {
         try {
           // Verify user session and get latest data
           const { getMe } = await import('./services/api');
-          const meResponse = await getMe();
-          if (meResponse.data) {
+          const meResponse = await getMe().catch((err) => {
+            console.warn('[App] Session verify unreachable:', err.message);
+            return { data: null };
+          });
+          if (meResponse?.data) {
             useUserStore.getState().setCurrentUser(meResponse.data);
           }
 
