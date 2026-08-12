@@ -33,7 +33,10 @@ This document establishes the inviolable architectural, UX, and pedagogical rule
 
 ---
 
-### RULE 4: Cambridge Grammar Check Mode Standard (Clean Gap-Fill)
-- **Clean Gap-Fill Format**: Multiple-choice questions MUST be Gap-fill or sentence choices.
-- **Zero Dev Tags**: ABSOLUTELY NO raw dev tags displayed on UI (e.g. NO `(past_continuous_when_while)`).
-- **Distinct Options**: Options A, B, C MUST be completely distinct grammatical fill-in choices (e.g. Question: `"While Tom ___ up, he broke his alarm clock."` -> A: was waking, B: is waking, C: waked).
+---
+
+### RULE 5: Global Text Processing & Clickable Dictionary
+- **No Custom Ad-Hoc Dictionary Tabs**: DO NOT create custom ad-hoc dictionary tabs or custom popup logic (e.g. DELETE separate "Click-to-Learn" tabs).
+- **Global Text Parser Reuse**: MUST reuse the system's global text parser (`HoverWord` & regex `**...**`) for ALL narrative text rendering (Webtoon captions, Interactive Story, Shadowing scripts).
+- **Chunk & Vocab Bolding**: Lexical chunks MUST be wrapped in double asterisks `**...**` for Tier 1 bolding and dictionary linking. Core vocabulary words MUST use Tier 2 bolding.
+- **Global Dictionary Integration**: All bolded words and chunks automatically link to the global `HoverWord` portal dictionary modal, displaying phonetic IPA, Vietnamese meaning, audio playback, and example sentences. Week 33 data (20 core words + 10 lexical chunks) MUST be fully loaded into the global dictionary context.

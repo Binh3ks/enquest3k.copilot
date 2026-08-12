@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import VoiceService from '../../services/voiceService';
+import HoverWord from '../../components/common/HoverWord';
+import { speakText } from '../../utils/AudioHelper';
 import { Mic, MicOff, Volume2, Radio, Star, AlertTriangle, MessageSquare, Layers, BookOpen, Info } from 'lucide-react';
 
 export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
@@ -58,6 +60,72 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         window.speechSynthesis.speak(utterance);
       }
     }
+  };
+
+  const renderParsedText = (text, themeColor = 'indigo') => {
+    if (!text) return null;
+    const segments = text.split(/(\*\*.*?\*\*)/);
+    let key = 0;
+    const parts = [];
+
+    for (const segment of segments) {
+      if (segment.startsWith('**') && segment.endsWith('**')) {
+        const word = segment.slice(2, -2).trim();
+        parts.push(
+          <HoverWord
+            key={key++}
+            word={word}
+            themeColor={themeColor}
+            onSpeak={(w) => speakText(w, null, 1.0, null, 'shadowing', weekNumber, 'advanced')}
+            tier={1}
+          />
+        );
+      } else {
+        let currentWord = '';
+        let currentNonWord = '';
+
+        for (let i = 0; i < segment.length; i++) {
+          const char = segment[i];
+          if (/[\w'-]/.test(char)) {
+            if (currentNonWord) {
+              parts.push(<span key={key++}>{currentNonWord}</span>);
+              currentNonWord = '';
+            }
+            currentWord += char;
+          } else {
+            if (currentWord) {
+              parts.push(
+                <HoverWord
+                  key={key++}
+                  word={currentWord}
+                  themeColor={themeColor}
+                  onSpeak={(w) => speakText(w, null, 1.0, null, 'shadowing', weekNumber, 'advanced')}
+                  tier={3}
+                />
+              );
+              currentWord = '';
+            }
+            currentNonWord += char;
+          }
+        }
+        if (currentWord) {
+          parts.push(
+            <HoverWord
+              key={key++}
+              word={currentWord}
+              themeColor={themeColor}
+              onSpeak={(w) => speakText(w, null, 1.0, null, 'shadowing', weekNumber, 'advanced')}
+              tier={3}
+            />
+          );
+        }
+        if (currentNonWord) {
+          parts.push(<span key={key++}>{currentNonWord}</span>);
+        }
+      }
+    }
+
+    return parts;
   };
 
   const handlePlaySentence = async (text) => {
@@ -253,7 +321,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 </button>
               </div>
               <p className="text-base font-extrabold text-indigo-950 leading-relaxed p-4 bg-white rounded-2xl border border-indigo-100 shadow-inner">
-                "{longParagraph.text}"
+                {renderParsedText(longParagraph.text, 'indigo')}
               </p>
               <p className="text-xs font-mono text-indigo-700 italic">{longParagraph.phonetic_guide}</p>
             </div>
