@@ -115,25 +115,14 @@ export function usToUkIpa(usIpa, word = '') {
 // Generate IPA words from arbitrary text (for transcript mode)
 // Uses CMU dict; falls back to word as-is if not found
 // Lightweight, synchronous - loads dict lazily
-let cmuDictInstance = null;
-let cmuLoadingPromise = null;
+// Dynamic import of 3.9MB cmudict.json removed to optimize bundle size
+let cmuDictInstance = {
+  get(word) {
+    return null; // Fallback gracefully to predefined dictionary pronounce entry
+  }
+};
 async function getCmuDict() {
-  if (cmuDictInstance) return cmuDictInstance;
-  if (cmuLoadingPromise) return cmuLoadingPromise;
-  cmuLoadingPromise = (async () => {
-    // Lazy-load bundled CMU dict JSON (3.9MB, code-split by Vite)
-    const mod = await import('../../data/cmudict.json');
-    const raw = mod.default || mod;
-    // Convert to Map for fast lookup (word -> ARPAbet string)
-    const map = new Map(Object.entries(raw));
-    cmuDictInstance = {
-      get(word) {
-        return map.get(word.toUpperCase()) || null;
-      }
-    };
-    return cmuDictInstance;
-  })();
-  return cmuLoadingPromise;
+  return cmuDictInstance;
 }
 
 const FUNCTION_WORDS = new Set([

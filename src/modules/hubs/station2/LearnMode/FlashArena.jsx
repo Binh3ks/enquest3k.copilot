@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { useUserStore } from '../../../../stores/useUserStore';
 import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee } from 'lucide-react';
 
 const WEEK33_VOCAB_SETS = {
@@ -42,6 +43,9 @@ const WEEK33_VOCAB_SETS = {
 };
 
 export function FlashArena({ customSets, onAttemptResult }) {
+  const currentUser = useUserStore((state) => state.currentUser);
+  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+
   const [playMode, setPlayMode] = useState('casual'); // 'casual' (Untimed) | 'speed' (30s Timer)
   const [activeSetKey, setActiveSetKey] = useState('set1_nouns_adj');
   const [selectedEn, setSelectedEn] = useState(null);
@@ -129,7 +133,7 @@ export function FlashArena({ customSets, onAttemptResult }) {
       if (newMatched.length === currentPairs.length) {
         setIsGameOver(true);
         await learnerProgressService.logAttempt({
-          learnerId: 'learner_default_01',
+          learnerId,
           contentId: `w33_flash_arena_${activeSetKey}`,
           mode: 'learn',
           result: 'correct',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BarModelSVG } from '../components/BarModelSVG';
 import { evaluateBarModelAnswer } from '../../../../utils/barModelEvaluator';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, Sparkles, HelpCircle } from 'lucide-react';
 
@@ -52,36 +53,42 @@ const WEEK33_BAR_QUESTIONS = [
   },
   {
     id: 'bar_w33_04',
-    title: 'Problem 4: Finding Missing Homework Pages (Comparison)',
-    problemText: 'Tom’s notebook had 50 total pages. The spilled juice damaged 15 pages. How many clean pages remain?',
+    title: 'Problem 4: Multiplied Cleanup Work (Equal Parts)',
+    problemText: 'Tom cleaned 4 clumsy mistakes today. Each cleanup took 10 minutes. How many total minutes did Tom spend on cleanups?',
     modelData: {
-      type: 'comparison',
+      type: 'equal_parts',
       bars: [
-        { name: 'Total Pages', label: '50 pages', width: 250 },
-        { name: 'Damaged', label: '15 pages', width: 75 }
-      ]
+        { label: 'Mistake 1 (10m)', value: 25, color: '#4f46e5' },
+        { label: 'Mistake 2 (10m)', value: 25, color: '#4f46e5' },
+        { label: 'Mistake 3 (10m)', value: 25, color: '#4f46e5' },
+        { label: 'Mistake 4 (10m)', value: 25, color: '#4f46e5' }
+      ],
+      totalLabel: '? total minutes'
     },
-    correctAnswer: 35,
-    hintText: 'Clean pages remaining = 50 total pages - 15 damaged pages = 35 pages.'
+    correctAnswer: 40,
+    hintText: 'Total cleanup time = 4 mistakes × 10 minutes = 40 minutes.'
   },
   {
     id: 'bar_w33_05',
-    title: 'Problem 5: Repair Shop Items (Part-Whole)',
-    problemText: 'The repair shop received 12 broken alarm clocks and 18 damaged school bags. How many items did the shop receive in total?',
+    title: 'Problem 5: Remaining Bus Seats (Part-Whole Difference)',
+    problemText: 'The school bus has 50 seats. 35 passengers are sitting inside. How many empty seats are remaining for Tom and Mia?',
     modelData: {
       type: 'part_whole',
       bars: [
-        { label: 'Broken Clocks (12)', value: 40, color: '#4f46e5' },
-        { label: 'Damaged Bags (18)', value: 60, color: '#06b6d4' }
+        { label: 'Seated (35)', value: 70, color: '#4f46e5' },
+        { label: 'Empty (?)', value: 30, color: '#f59e0b' }
       ],
-      totalLabel: '? items'
+      totalLabel: '50 Seats'
     },
-    correctAnswer: 30,
-    hintText: 'Total items received = 12 broken clocks + 18 damaged bags = 30 items.'
+    correctAnswer: 15,
+    hintText: 'Empty seats = 50 total seats - 35 seated passengers = 15 empty seats.'
   }
 ];
 
 export function BarModelQuest({ customQuestions, onAttemptResult }) {
+  const currentUser = useUserStore((state) => state.currentUser);
+  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+
   const [questionIndex, setQuestionIndex] = useState(0);
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState(null);
@@ -92,11 +99,12 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!userInput.trim()) return;
 
     const evalRes = evaluateBarModelAnswer(userInput, currentQ.correctAnswer);
 
-    if (!evalRes.isCorrect && evalRes.errorMsg && evalRes.errorMsg.includes('không')) {
-      setFeedback({ isCorrect: false, text: 'Please enter a valid positive integer.' });
+    if (evalRes.isInvalidFormat) {
+      setFeedback({ isCorrect: false, text: evalRes.errorMsg });
       return;
     }
 
@@ -108,7 +116,7 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
     setFeedback({ isCorrect, text: resultText });
 
     await learnerProgressService.logAttempt({
-      learnerId: 'learner_default_01',
+      learnerId,
       contentId: currentQ.id,
       mode: 'learn',
       result: isCorrect ? 'correct' : 'incorrect',

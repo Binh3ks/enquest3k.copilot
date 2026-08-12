@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import { useUserStore } from '../../stores/useUserStore';
 import { renderParsedText } from '../../components/common/HoverWord';
 import { PenTool, Sparkles, AlertTriangle, Layers, Film, HelpCircle, X, Info } from 'lucide-react';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
+  const currentUser = useUserStore((state) => state.currentUser);
+  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+
   const [userScript, setUserScript] = useState('');
   const [ruleScore, setRuleScore] = useState(null);
   const [aiScore, setAiScore] = useState(null);
@@ -79,7 +83,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       setIsAnalyzing(false);
 
       await learnerProgressService.logAttempt({
-        learnerId: 'learner_default_01',
+        learnerId,
         contentId: `w${weekNumber}_writing_p7`,
         mode: 'learn',
         result: layer1Result.isRulePass ? 'correct' : 'incorrect',

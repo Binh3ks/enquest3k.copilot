@@ -1,11 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
 import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle } from 'lucide-react';
 
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
+  const currentUser = useUserStore((state) => state.currentUser);
+  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+
   const [activeTab, setActiveTab] = useState('webtoon'); // 'webtoon' | 'check'
   const [learnSubTab, setLearnSubTab] = useState('webtoon'); // 'webtoon' | 'interactive_story' (EXACTLY 2 TABS)
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
@@ -22,7 +26,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const [checkScore, setCheckScore] = useState(null);
   const [checkSubmitted, setCheckSubmitted] = useState(false);
 
-  const storyFrames = data?.story_scenes || data?.storyFrames || [
+  const storyScenes = data?.story_scenes || [
     {
       scene_id: 'scene_1',
       title_en: 'Scene 1: The Waking Mistake',
@@ -35,22 +39,51 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     },
     {
       scene_id: 'scene_2',
-      title_en: 'Scene 2: Slipping on the Floor',
-      description_en: 'He rushed downstairs in a hurry, **slipped on a puddle**, and **fell onto the rug**.',
+      title_en: 'Scene 2: Slipping on the Tiles',
+      description_en: 'Then he rushed downstairs into the kitchen and **slipped on a wet puddle** near the table.',
       image_url: '/images/week33/webtoon_scene_2.png',
       lexical_chunks: [
-        { word: 'slipped', chunk: 'slipped on a puddle', x: 30, y: 65 },
-        { word: 'fell', chunk: 'fell onto the rug', x: 65, y: 75 }
+        { word: 'slipped', chunk: 'slipped on a puddle', x: 50, y: 70 },
+        { word: 'puddle', chunk: 'a wet puddle', x: 60, y: 80 }
       ]
     },
     {
       scene_id: 'scene_3',
-      title_en: 'Scene 3: The Dropped Juice',
-      description_en: 'While making breakfast, he **dropped a glass** of orange juice and **damaged his notebook**.',
+      title_en: 'Scene 3: The Spilled Juice Incident',
+      description_en: 'While trying to balance, Tom **spilled the juice** over his desk and **damaged a notebook**.',
       image_url: '/images/week33/webtoon_scene_3.png',
       lexical_chunks: [
-        { word: 'dropped', chunk: 'dropped a glass', x: 50, y: 50 },
-        { word: 'damaged', chunk: 'damaged his notebook', x: 70, y: 60 }
+        { word: 'spilled', chunk: 'spilled the juice', x: 35, y: 50 },
+        { word: 'damaged', chunk: 'damaged a notebook', x: 55, y: 60 }
+      ]
+    },
+    {
+      scene_id: 'scene_4',
+      title_en: 'Scene 4: Apologizing to Mom',
+      description_en: 'Feeling very sorry for the mess, Tom **apologized to mom** and cleaned the room carefully.',
+      image_url: '/images/week33/webtoon_scene_4.png',
+      lexical_chunks: [
+        { word: 'apologized', chunk: 'apologized to mom', x: 40, y: 45 },
+        { word: 'careful', chunk: 'cleaned up carefully', x: 60, y: 65 }
+      ]
+    },
+    {
+      scene_id: 'scene_5',
+      title_en: 'Scene 5: The Bus Surprise',
+      description_en: 'On his way to school, Tom **lost his backpack** on the bus! Fortunately, Mia **found his backpack** on a seat.',
+      image_url: '/images/week33/webtoon_scene_5.png',
+      lexical_chunks: [
+        { word: 'lost', chunk: 'lost his backpack', x: 30, y: 50 },
+        { word: 'found', chunk: 'found his backpack', x: 70, y: 55 }
+      ]
+    },
+    {
+      scene_id: 'scene_6',
+      title_en: 'Scene 6: A Lesson Learned',
+      description_en: 'Tom felt relieved and promised to be more **cautious** and **careful** every morning.',
+      image_url: '/images/week33/webtoon_scene_6.png',
+      lexical_chunks: [
+        { word: 'cautious', chunk: 'promised to be cautious', x: 50, y: 50 }
       ]
     }
   ];
@@ -59,16 +92,16 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     title: "Interactive Story: Tom's Clumsy Morning",
     text_template: "Tom had a very bad morning today. First, he accidentally ____1____ his alarm clock because he was feeling ____2____. Then, he rushed downstairs and slipped on a wet ____3____ on the kitchen floor. To make things worse, he ____4____ his backpack on the bus! His mother told him not to worry, but Tom promised to be more ____5____ next time.",
     gaps: [
-      { id: 1, target: "broke", hint: "past of break" },
-      { id: 2, target: "clumsy", hint: "moving awkwardly" },
-      { id: 3, target: "puddle", hint: "small pool of liquid" },
-      { id: 4, target: "lost", hint: "past of lose" },
-      { id: 5, target: "careful", hint: "paying attention to avoid mistakes" }
+      { id: 1, target: 'broke', hint: 'past of break' },
+      { id: 2, target: 'clumsy', hint: 'moving awkwardly' },
+      { id: 3, target: 'puddle', hint: 'small pool of liquid' },
+      { id: 4, target: 'lost', hint: 'past of lose' },
+      { id: 5, target: 'careful', hint: 'paying attention to avoid mistakes' }
     ],
-    word_bank: ["broke", "clumsy", "puddle", "lost", "careful", "spilled", "dropped"]
+    word_bank: ['broke', 'clumsy', 'puddle', 'lost', 'careful', 'spilled', 'dropped']
   };
 
-  const checkQuestions = data?.check_mode_drills || data?.checkQuestions || data?.check_questions || [
+  const checkQuestions = data?.check_mode_drills || [
     {
       id: 'q1',
       question: 'What did Tom break in the morning?',
@@ -77,62 +110,62 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     },
     {
       id: 'q2',
-      question: 'Why did Tom fall on the stairs?',
-      options: ['A) He slipped on a wet puddle', 'B) He ran into his dog', 'C) The lights were off', 'D) He tripped over a shoe'],
-      answerIndex: 0
+      question: 'How did Tom feel when he woke up late?',
+      options: ['A) Energetic', 'B) Clumsy', 'C) Angry', 'D) Excited'],
+      answerIndex: 1
     },
     {
       id: 'q3',
-      question: 'What was damaged when Tom dropped orange juice?',
-      options: ['A) His clock', 'B) His notebook', 'C) His shoes', 'D) The bus seat'],
+      question: 'What did Tom slip on in the kitchen?',
+      options: ['A) A rug', 'B) A wet puddle', 'C) A banana peel', 'D) A toy car'],
       answerIndex: 1
     },
     {
       id: 'q4',
-      question: 'Who found Tom’s lost backpack on the bus?',
-      options: ['A) Bus driver', 'B) Mia', 'C) Teacher', 'D) Tom'],
+      question: 'What did Tom spill over his desk?',
+      options: ['A) Milk', 'B) Orange juice', 'C) Water', 'D) Soup'],
       answerIndex: 1
     },
     {
       id: 'q5',
-      question: 'What lesson did Tom learn at the end of the story?',
-      options: ['A) Ignore mistakes', 'B) Stay home', 'C) Be more cautious and careful', 'D) Buy a clock'],
+      question: 'What did Tom lose on the bus?',
+      options: ['A) His jacket', 'B) His hat', 'C) His backpack', 'D) His homework'],
       answerIndex: 2
     },
     {
       id: 'q6',
-      question: 'What adjective describes Tom’s morning behavior?',
-      options: ['A) Clumsy and in a hurry', 'B) Slow and calm', 'C) Angry', 'D) Cautious'],
-      answerIndex: 0
+      question: 'Who found Tom\'s lost backpack?',
+      options: ['A) His teacher', 'B) The bus driver', 'C) Mia', 'D) His mother'],
+      answerIndex: 2
     },
     {
       id: 'q7',
-      question: 'Where did Tom leave his backpack?',
-      options: ['A) Kitchen', 'B) Bus seat', 'C) Bed', 'D) Gate'],
+      question: 'What did Tom do after spilling the liquid?',
+      options: ['A) He ran away', 'B) He apologized to mom', 'C) He went to sleep', 'D) He laughed'],
       answerIndex: 1
     },
     {
       id: 'q8',
-      question: 'What did Tom do when he realized his mistake?',
-      options: ['A) He blamed Mia', 'B) He apologized to his mother', 'C) He ran away', 'D) He broke another clock'],
+      question: 'What is the past simple tense of "break"?',
+      options: ['A) Breakings', 'B) Broke', 'C) Breaked', 'D) Broken'],
       answerIndex: 1
     },
     {
       id: 'q9',
-      question: 'Which irregular verb is past tense of fall?',
-      options: ['A) fallen', 'B) fell', 'C) falling', 'D) falled'],
-      answerIndex: 1
+      question: 'What is the past simple tense of "lose"?',
+      options: ['A) Lost', 'B) Losed', 'C) Losing', 'D) Loses'],
+      answerIndex: 0
     },
     {
       id: 'q10',
-      question: 'Which word means being very careful to avoid danger?',
-      options: ['A) Careless', 'B) Clumsy', 'C) Cautious', 'D) Ignore'],
-      answerIndex: 2
+      question: 'What did Tom promise to be in the future?',
+      options: ['A) More careless', 'B) More cautious and careful', 'C) More clumsy', 'D) Faster'],
+      answerIndex: 1
     }
   ];
 
-  const currentFrame = storyFrames[activeFrameIndex] || storyFrames[0];
-  const frameHotspots = currentFrame.lexical_chunks || currentFrame.hotspots || [];
+  const currentFrame = storyScenes[activeFrameIndex] || storyScenes[0];
+  const frameHotspots = currentFrame.lexical_chunks || [];
 
   // System Global Text Parser using HoverWord component
   const renderParsedText = (text, themeColor = 'indigo') => {

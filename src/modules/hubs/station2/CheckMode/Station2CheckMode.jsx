@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { useUserStore } from '../../../../stores/useUserStore';
 import HoverWord from '../../../../components/common/HoverWord';
 import { speakText } from '../../../../utils/AudioHelper';
 import { CheckCircle2, ArrowRight, RefreshCw, FileText } from 'lucide-react';
@@ -164,6 +165,9 @@ const FALLBACK_CHECK_QUESTIONS = [
 ];
 
 export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
+  const currentUser = useUserStore((state) => state.currentUser);
+  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+
   const [questions] = useState(FALLBACK_CHECK_QUESTIONS);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -203,7 +207,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
       totalScore += score;
 
       await learnerProgressService.logAttempt({
-        learnerId: 'learner_default_01',
+        learnerId,
         contentId: q.content_id,
         mode: 'check',
         result: isCorrect ? 'correct' : 'incorrect',

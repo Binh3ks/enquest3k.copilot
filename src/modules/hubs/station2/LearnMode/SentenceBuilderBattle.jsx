@@ -12,6 +12,7 @@ import { SortableContext, horizontalListSortingStrategy, arrayMove } from '@dnd-
 import { WordBlock } from '../components/WordBlock';
 import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngine';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight } from 'lucide-react';
 
@@ -39,34 +40,36 @@ const WEEK33_GRAMMAR_DRILLS = [
   },
   {
     id: "st2_w33_g04",
-    grammar_tag: "past_continuous_when_while",
-    text_en: "Build a sentence about dropping a glass of orange juice.",
-    word_blocks: ["While", "making", "breakfast", ",", "he", "dropped", "a", "glass", "."],
-    distractor_blocks: ["were", "breaks", "while"]
+    grammar_tag: "past_simple_irregular",
+    text_en: "Build a past narrative sentence with 'lost'.",
+    word_blocks: ["Tom", "lost", "his", "backpack", "on", "the", "bus", "yesterday", "."],
+    distractor_blocks: ["loses", "losing", "find"]
   },
   {
     id: "st2_w33_g05",
-    grammar_tag: "clauses_of_reason",
-    text_en: "Build a sentence about apologizing for a clumsy mistake.",
-    word_blocks: ["Tom", "apologized", "because", "he", "made", "a", "mistake", "."],
-    distractor_blocks: ["so", "forgets", "why"]
+    grammar_tag: "modal_verbs",
+    text_en: "Build a resolution sentence with 'promised'.",
+    word_blocks: ["Tom", "promised", "to", "be", "more", "careful", "next", "time", "."],
+    distractor_blocks: ["promises", "careless", "always"]
   }
 ];
 
-export function SentenceBuilderBattle({ customItem, customDrills, onNext, onTriggerAdaptiveHint }) {
-  const [bankBlocks, setBankBlocks] = useState([]);
+export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
+  const currentUser = useUserStore((state) => state.currentUser);
+  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+
+  const [currentDrillIndex, setCurrentDrillIndex] = useState(0);
   const [targetBlocks, setTargetBlocks] = useState([]);
+  const [bankBlocks, setBankBlocks] = useState([]);
   const [activeId, setActiveId] = useState(null);
   const [feedback, setFeedback] = useState(null);
-  const [isShaking, setIsShaking] = useState(false);
   const [consecutiveFails, setConsecutiveFails] = useState(0);
+  const [isShaking, setIsShaking] = useState(false);
   const [startTime, setStartTime] = useState(Date.now());
-  const [drillIndex, setDrillIndex] = useState(0);
 
-  const drillsList = customDrills && customDrills.length > 0 ? customDrills : WEEK33_GRAMMAR_DRILLS;
-  const currentDrillIndex = drillIndex;
+  const drillsList = customDrills || WEEK33_GRAMMAR_DRILLS;
+  const currentDrill = drillsList[currentDrillIndex] || drillsList[0];
   const totalDrillsCount = drillsList.length;
-  const currentDrill = customItem || drillsList[drillIndex] || drillsList[0];
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -76,77 +79,53 @@ export function SentenceBuilderBattle({ customItem, customDrills, onNext, onTrig
   useEffect(() => {
     if (!currentDrill) return;
 
-    const allWords = [
-      ...(currentDrill.word_blocks || currentDrill.raw_content?.word_blocks || []),
-      ...(currentDrill.distractor_blocks || currentDrill.raw_content?.distractor_blocks || [])
-    ];
+    const correctWords = currentDrill.word_blocks || [];
+    const distractors = currentDrill.distractor_blocks || [];
+    const allWords = [...correctWords, ...distractorWordsShuffle(distractors)];
 
-    const formatted = allWords.map((word, idx) => ({
-      id: `blk_${currentDrill.id || currentDrill.content_id}_${idx}_${word}`,
-      word: word
-    }));
-
-    const shuffled = [...formatted].sort(() => Math.random() - 0.5);
+    const shuffled = allWords
+      .map((word, index) => ({ id: `block-${index}-${word}`, word }))
+      .sort(() => Math.random() - 0.5);
 
     setBankBlocks(shuffled);
     setTargetBlocks([]);
     setFeedback(null);
+    setConsecutiveFails(0);
     setStartTime(Date.now());
-  }, [currentDrill]);
+  }, [currentDrillIndex, customDrills]);
 
-  const handleDragStart = (event) => {
-    setActiveId(event.active.id);
-  };
+  const distractorWordsShuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+
+  const handleDragStart = (event) => setActiveId(event.active.id);
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
     setActiveId(null);
-
     if (!over) return;
 
-    const activeId = active.id;
-    const overId = over.id;
+    if (active.id !== over.id) {
+      const activeInTarget = targetBlocks.some((b) => b.id === active.id);
+      const overInTarget = targetBlocks.some((b) => b.id === over.id);
 
-    const inBank = bankBlocks.some((b) => b.id === activeId);
-
-    if (overId === 'target_dropzone' || targetBlocks.some((b) => b.id === overId)) {
-      if (inBank) {
-        const itemToMove = bankBlocks.find((b) => b.id === activeId);
-        setBankBlocks(bankBlocks.filter((b) => b.id !== activeId));
-        setTargetBlocks([...targetBlocks, itemToMove]);
-      } else {
-        const oldIdx = targetBlocks.findIndex((b) => b.id === activeId);
-        const newIdx = targetBlocks.findIndex((b) => b.id === overId);
-        if (oldIdx !== -1 && newIdx !== -1 && oldIdx !== newIdx) {
-          setTargetBlocks(arrayMove(targetBlocks, oldIdx, newIdx));
-        }
-      }
-    } else if (overId === 'bank_dropzone' || bankBlocks.some((b) => b.id === overId)) {
-      if (!inBank) {
-        const itemToMove = targetBlocks.find((b) => b.id === activeId);
-        setTargetBlocks(targetBlocks.filter((b) => b.id !== activeId));
-        setBankBlocks([...bankBlocks, itemToMove]);
+      if (activeInTarget && overInTarget) {
+        setTargetBlocks((items) => {
+          const oldIndex = items.findIndex((i) => i.id === active.id);
+          const newIndex = items.findIndex((i) => i.id === over.id);
+          return arrayMove(items, oldIndex, newIndex);
+        });
       }
     }
   };
 
-  const handleBlockTap = (id) => {
-    const inBank = bankBlocks.some((b) => b.id === id);
-    if (inBank) {
-      const itemToMove = bankBlocks.find((b) => b.id === id);
-      setBankBlocks(bankBlocks.filter((b) => b.id !== id));
-      setTargetBlocks([...targetBlocks, itemToMove]);
-    } else {
-      const itemToMove = targetBlocks.find((b) => b.id === id);
-      setTargetBlocks(targetBlocks.filter((b) => b.id !== id));
-      setBankBlocks([...bankBlocks, itemToMove]);
-    }
+  const handleTapBlockToTarget = (block) => {
+    setBankBlocks((prev) => prev.filter((b) => b.id !== block.id));
+    setTargetBlocks((prev) => [...prev, block]);
+    setFeedback(null);
   };
 
-  const handleClear = () => {
-    const all = [...targetBlocks, ...bankBlocks];
-    setTargetBlocks([]);
-    setBankBlocks(all);
+  const handleTapBlockToBank = (block) => {
+    setTargetBlocks((prev) => prev.filter((b) => b.id !== block.id));
+    setBankBlocks((prev) => [...prev, block]);
     setFeedback(null);
   };
 
@@ -165,13 +144,14 @@ export function SentenceBuilderBattle({ customItem, customDrills, onNext, onTrig
       setFeedback({ isCorrect: true, text: '100% Correct! Excellent grammar structure!' });
 
       await learnerProgressService.logAttempt({
-        learnerId: 'learner_default_01',
+        learnerId,
         contentId: currentDrill.id || 'w33_sentence_builder',
         mode: 'learn',
         result: 'correct',
         score: 100,
         timeSpentSeconds
       });
+      if (onAttemptResult) onAttemptResult(true);
     } else {
       const nextFails = consecutiveFails + 1;
       setConsecutiveFails(nextFails);
