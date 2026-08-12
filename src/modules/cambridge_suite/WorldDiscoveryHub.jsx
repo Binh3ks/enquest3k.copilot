@@ -687,40 +687,17 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </div>
               )}
 
-              {/* UNIFIED FLOW: CAMBRIDGE FLYERS READING PART 3 (NARRATIVE COMPREHENSION QUESTIONS) INTEGRATED DIRECTLY BELOW */}
+              {/* UNIFIED FLOW: CAMBRIDGE FLYERS READING PART 3 (SENTENCE COMPLETION QUESTIONS) */}
               <div className="pt-8 border-t-2 border-slate-200 space-y-6">
-                {/* Header Banner */}
-                <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-indigo-700">
-                  <span className="text-xs font-black tracking-widest text-indigo-300 uppercase bg-indigo-950/60 px-3.5 py-1 rounded-full border border-indigo-700/50">
-                    CAMBRIDGE FLYERS READING PART 3 — NARRATIVE COMPREHENSION
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-black mt-2 text-white">
-                    {readingPart3Data.title}
-                  </h3>
-                  <p className="text-sm text-indigo-200 mt-1 max-w-2xl leading-relaxed">
-                    Read the narrative below carefully and choose the best response (A, B, or C) for each question.
-                  </p>
+                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                  <h4 className="text-base sm:text-lg font-black text-slate-900 uppercase tracking-wide flex items-center gap-2">
+                    <HelpCircle size={20} className="text-indigo-600" /> Comprehension Questions (Part 3)
+                  </h4>
+                  <span className="text-xs font-bold text-slate-500 font-mono">5 Items • Sentence Completion</span>
                 </div>
 
-                {/* Story Narrative Box (Boosted Typography: text-lg sm:text-xl font-bold leading-loose) */}
-                <div className="bg-amber-50/90 p-6 sm:p-8 rounded-3xl border border-amber-200 shadow-sm space-y-3">
-                  <div className="text-xs font-black text-amber-800 uppercase tracking-wide flex items-center gap-2">
-                    <BookOpen size={18} /> Story Narrative (Click or hover words for dictionary):
-                  </div>
-                  <div className="text-lg sm:text-xl font-bold text-slate-900 leading-loose sm:leading-extraloose pt-1">
-                    {renderParsedText(readingPart3Data.story_text, 'indigo')}
-                  </div>
-                </div>
-
-                {/* 5 Multiple-Choice Questions with Boosted Typography & Instant Feedback */}
-                <div className="space-y-6 pt-2">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
-                    <h4 className="text-base sm:text-lg font-black text-slate-900 uppercase tracking-wide flex items-center gap-2">
-                      <HelpCircle size={20} className="text-indigo-600" /> Comprehension Questions ({readingPart3Data.questions.length} Items):
-                    </h4>
-                    <span className="text-xs font-bold text-slate-500 font-mono">Part 3 Exam</span>
-                  </div>
-
+                {/* 5 Sentence Completion Questions with Boosted Typography & Instant Feedback */}
+                <div className="space-y-6">
                   {readingPart3Data.questions.map((q, qIdx) => {
                     const isSubmitted = !!r3Submitted[q.id];
                     const selectedOpt = r3Answers[q.id];

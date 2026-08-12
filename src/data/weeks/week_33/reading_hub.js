@@ -23,58 +23,57 @@ export const readingHubData = {
     word_bank: ["broke", "clumsy", "puddle", "lost", "careful", "spilled", "dropped"]
   },
 
-  // Cambridge Flyers Reading Part 3 — Narrative Story & 5 Multiple-Choice Questions (A/B/C)
+  // Cambridge Flyers Reading Part 3 — 5 Sentence Completion Questions (A/B/C)
   reading_part3_story: {
     title: "Cambridge Flyers Reading Part 3 — Tom's Morning Adventure",
-    story_text: "Tom had a very eventful Saturday morning. While he was waking up, his alarm clock rang loudly. He reached over clumsily and accidentally knocked it off the table. Later, while he was rushing downstairs to have breakfast, he slipped on a wet puddle on the kitchen floor. To make things worse, he dropped his glass of juice over his English notebook. Fortunately, his sister Mia helped him clean the floor, and he promised to be more cautious.",
     questions: [
       {
         id: "r3_q01",
-        question: "Why did Tom knock his alarm clock off the table?",
+        question: "When Tom's alarm clock rang, he was feeling clumsy and...",
         options: [
-          { label: "A", text: "Because he reached over clumsily while waking up.", isCorrect: true },
-          { label: "B", text: "Because he wanted to break it on purpose.", isCorrect: false },
-          { label: "C", text: "Because his dog jumped onto his bed.", isCorrect: false }
+          { label: "A", text: "accidentally knocked it off the table.", isCorrect: true },
+          { label: "B", text: "threw it out of the window.", isCorrect: false },
+          { label: "C", text: "went back to sleep immediately.", isCorrect: false }
         ],
         answerIndex: 0
       },
       {
         id: "r3_q02",
-        question: "What happened while Tom was rushing downstairs?",
+        question: "While Tom was rushing downstairs for breakfast, he...",
         options: [
-          { label: "A", text: "He slipped on a wet puddle on the kitchen floor.", isCorrect: true },
-          { label: "B", text: "He met his teacher at the front door.", isCorrect: false },
-          { label: "C", text: "He dropped his shoes into the sink.", isCorrect: false }
+          { label: "A", text: "slipped on a wet puddle on the floor.", isCorrect: true },
+          { label: "B", text: "met his friends outside the house.", isCorrect: false },
+          { label: "C", text: "dropped his backpack on the stairs.", isCorrect: false }
         ],
         answerIndex: 0
       },
       {
         id: "r3_q03",
-        question: "What was damaged when Tom dropped his glass of juice?",
+        question: "To make his morning even worse, Tom...",
         options: [
-          { label: "A", text: "His English notebook.", isCorrect: true },
-          { label: "B", text: "His new sports shoes.", isCorrect: false },
-          { label: "C", text: "His mother's phone.", isCorrect: false }
+          { label: "A", text: "spilled his glass of juice over his English notebook.", isCorrect: true },
+          { label: "B", text: "lost his shoes under the kitchen table.", isCorrect: false },
+          { label: "C", text: "broke another alarm clock.", isCorrect: false }
         ],
         answerIndex: 0
       },
       {
         id: "r3_q04",
-        question: "Who helped Tom clean up the kitchen floor?",
+        question: "When Tom's sister, Mia, saw the mess, she...",
         options: [
-          { label: "A", text: "His sister Mia.", isCorrect: true },
-          { label: "B", text: "His school bus driver.", isCorrect: false },
-          { label: "C", text: "His neighbor Mr. Green.", isCorrect: false }
+          { label: "A", text: "helped him clean the wet floor.", isCorrect: true },
+          { label: "B", text: "laughed at him because he was clumsy.", isCorrect: false },
+          { label: "C", text: "called the school bus driver.", isCorrect: false }
         ],
         answerIndex: 0
       },
       {
         id: "r3_q05",
-        question: "What did Tom promise to do next time?",
+        question: "After everything that happened, Tom promised his mother that...",
         options: [
-          { label: "A", text: "To be more cautious in the morning.", isCorrect: true },
-          { label: "B", text: "To sleep all day on Saturday.", isCorrect: false },
-          { label: "C", text: "To buy a new alarm clock.", isCorrect: false }
+          { label: "A", text: "he would be more careful next time.", isCorrect: true },
+          { label: "B", text: "he would never drink juice again.", isCorrect: false },
+          { label: "C", text: "he would buy a new alarm clock.", isCorrect: false }
         ],
         answerIndex: 0
       }
