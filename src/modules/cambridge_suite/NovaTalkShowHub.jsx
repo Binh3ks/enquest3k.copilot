@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import VoiceService from '../../services/voiceService';
-import { Mic, MicOff, Volume2, Radio, Star, AlertTriangle, MessageSquare, Play, RefreshCw, CheckCircle2, Layers, BookOpen } from 'lucide-react';
+import { Mic, MicOff, Volume2, Radio, Star, AlertTriangle, MessageSquare, Layers, BookOpen, Info } from 'lucide-react';
 
 export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [subMode, setSubMode] = useState('podcast'); // 'podcast' | 'talkshow'
   const [shadowingPhase, setShadowingPhase] = useState(1); // Phase 1: 5 Sentences | Phase 2: Long Paragraph
   const [isRecording, setIsRecording] = useState(false);
   const [podcastScore, setPodcastScore] = useState(null);
+  const [showPracticeNotice, setShowPracticeNotice] = useState(false);
 
   // Nova Live Talk Show State Machine (5 Turns)
   const [currentTurnIdx, setCurrentTurnIdx] = useState(0);
@@ -17,27 +18,27 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [isTalkshowEnded, setIsTalkshowEnded] = useState(false);
 
   const sentencesList = data?.shadowing_sentences || [
-    { id: "sh_01", speaker: "Tom", text: "I am so sorry! I broke the alarm clock because I was clumsy in the morning." },
-    { id: "sh_02", speaker: "Mia", text: "Don't worry! Accidents happen, but we must be more careful next time." },
-    { id: "sh_03", speaker: "Tom", text: "While I was running downstairs, I slipped on a wet puddle and fell onto the rug." },
-    { id: "sh_04", speaker: "Tom", text: "Thank you for finding my lost backpack on the bus seat!" },
-    { id: "sh_05", speaker: "Mia", text: "You should apologize to your teacher and promise to be more cautious in the future." }
+    { id: "sh_01", speaker: "Tom", text: "I had a terrible morning today because I woke up late and accidentally broke my alarm clock." },
+    { id: "sh_02", speaker: "Tom", text: "I felt so clumsy when I dropped my glasses on the rug." },
+    { id: "sh_03", speaker: "Tom", text: "While I was running downstairs, I slipped on a wet puddle." },
+    { id: "sh_04", speaker: "Tom", text: "To make things worse, I lost my backpack on the school bus seat!" },
+    { id: "sh_05", speaker: "Mia", text: "My mom told me not to worry, because accidents happen, but I promised to be more careful next time." }
   ];
 
   const longParagraph = data?.shadowing_paragraph || {
     title: "Continuous Shadowing: Tom's Clumsy Morning Story",
-    text: "I am so sorry! I broke the alarm clock because I was clumsy in the morning. Don't worry! Accidents happen, but we must be more careful next time. While I was running downstairs, I slipped on a wet puddle and fell onto the rug. Thank you for finding my lost backpack on the bus seat! You should apologize to your teacher and promise to be more cautious in the future."
+    text: "I had a terrible morning today! First, I woke up late and accidentally broke my alarm clock. I felt so clumsy. Then, while I was running downstairs, I slipped on a wet puddle. To make things worse, I lost my backpack on the bus! My mom told me not to worry, because accidents happen, but I promised to be more careful next time.",
+    phonetic_guide: "Full story intonation guide: Practice continuous rhythm, rising pitch on exclamation points, and falling pitch on resolutions."
   };
 
   const talkshowTurns = data?.talkshow_turns || [
-    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Can you tell me what broke when Tom woke up in the morning?" },
-    { turn_number: 2, nova_question: "Oh no! And why did he fall down while running downstairs?" },
-    { turn_number: 3, nova_question: "What happened when Tom dropped the glass of orange juice?" },
-    { turn_number: 4, nova_question: "Who found Tom's lost backpack on the school bus?" },
-    { turn_number: 5, nova_question: "What important lesson did Tom learn at the end of the day?" }
+    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! In Hub 3, you wrote a 3-picture story script. Can you tell me what happened in Panel 1 when Tom was in the living room?" },
+    { turn_number: 2, nova_question: "Oh dear! And what clumsy accident happened in Panel 2 when the soccer ball hit the table?" },
+    { turn_number: 3, nova_question: "How did Tom feel when he saw the broken flower vase on the floor?" },
+    { turn_number: 4, nova_question: "In Panel 3, what did Tom do to make amends with his mom after the accident?" },
+    { turn_number: 5, nova_question: "What an important lesson! What did Tom promise to do next time to avoid clumsy mistakes?" }
   ];
 
-  // Initialize Talkshow Chat turn 1
   useEffect(() => {
     if (subMode === 'talkshow' && chatHistory.length === 0 && talkshowTurns[0]) {
       const q1 = talkshowTurns[0].nova_question;
@@ -87,7 +88,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     }
   };
 
-  // Mic Button Voice Capture Handler
   const handleMicClick = () => {
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -105,7 +105,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
       recognition.onerror = () => {
         setIsMicListening(false);
-        setUserSpeechInput("Tom broke his alarm clock by accident.");
+        setUserSpeechInput("Tom broke his alarm clock by accident in the morning.");
       };
 
       recognition.onend = () => {
@@ -203,7 +203,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 shadowingPhase === 2 ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-indigo-900 hover:bg-indigo-100'
               }`}
             >
-              <BookOpen size={14} /> Phase 2: Long Paragraph Intonation
+              <BookOpen size={14} /> Phase 2: Continuous Story Intonation
             </button>
           </div>
 
@@ -245,7 +245,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               ))}
             </div>
           ) : (
-            /* Phase 2: Long Paragraph Intonation Shadowing */
+            /* Phase 2: Continuous Story Intonation Shadowing */
             <div className="p-6 bg-indigo-50 rounded-3xl border border-indigo-200 space-y-4 shadow-sm">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-black text-indigo-950">{longParagraph.title}</h3>
@@ -253,7 +253,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                   onClick={() => handlePlaySentence(longParagraph.text)}
                   className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-md"
                 >
-                  <Volume2 size={16} /> Play Full Paragraph
+                  <Volume2 size={16} /> Play Full Story (Google TTS)
                 </button>
               </div>
               <p className="text-base font-extrabold text-indigo-950 leading-relaxed p-4 bg-white rounded-2xl border border-indigo-100 shadow-inner">
@@ -288,15 +288,35 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           )}
         </div>
       ) : (
-        /* MODE 2: NOVA LIVE TALK SHOW (5 TURNS WITH BIG MIC BUTTON) */
+        /* MODE 2: NOVA LIVE TALK SHOW (EXACTLY 5 TURNS WITH BIG MIC BUTTON) */
         <div className="space-y-4">
           <div className="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs font-black text-slate-700">
             <span className="flex items-center gap-1">
-              <Radio size={14} className="text-purple-600" /> Turn {currentTurnIdx + 1} / {talkshowTurns.length}
+              <Radio size={14} className="text-purple-600" /> Turn {currentTurnIdx + 1} / {talkshowTurns.length} (Target: Exactly 5 Turns)
             </span>
-            <span className="px-2 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] uppercase font-black">
-              practice_only
-            </span>
+            
+            <div className="relative">
+              <button
+                onClick={() => setShowPracticeNotice(!showPracticeNotice)}
+                className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-md text-[10px] uppercase font-black cursor-pointer transition flex items-center gap-1"
+              >
+                <AlertTriangle size={12} /> practice_only <Info size={11} />
+              </button>
+
+              {showPracticeNotice && (
+                <div className="absolute right-0 top-8 z-50 w-72 p-3 bg-slate-900 text-white rounded-2xl shadow-xl text-xs font-medium border border-slate-700 animate-in fade-in zoom-in-95">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <span className="font-black text-amber-400 flex items-center gap-1">
+                      <Info size={14} /> Cambridge Examiner Notice
+                    </span>
+                    <button onClick={() => setShowPracticeNotice(false)} className="text-slate-400 hover:text-white font-bold">×</button>
+                  </div>
+                  <p className="text-[11px] text-slate-300 leading-snug">
+                    AI Grading is for practice only. Official Cambridge certificates require human examiners.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Chat History Container */}
@@ -360,7 +380,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           ) : (
             <div className="p-6 bg-emerald-50 border border-emerald-300 rounded-2xl text-center space-y-2 animate-in fade-in">
               <h4 className="text-base font-black text-emerald-950">5-Turn Talk Show Exam Completed!</h4>
-              <p className="text-xs font-bold text-emerald-700">All 5 turns answered successfully. Score logged to progress service.</p>
+              <p className="text-xs font-bold text-emerald-700">All 5 turns answered successfully. Retelling score logged to progress service.</p>
               <button
                 onClick={() => { setIsTalkshowEnded(false); setCurrentTurnIdx(0); setChatHistory([]); }}
                 className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-md transition"

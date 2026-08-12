@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
-import { PenTool, Sparkles, CheckCircle2, AlertTriangle, Layers, Film, HelpCircle, X } from 'lucide-react';
+import { PenTool, Sparkles, AlertTriangle, Layers, Film, HelpCircle, X, Info } from 'lucide-react';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [userScript, setUserScript] = useState('');
@@ -8,6 +8,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [aiScore, setAiScore] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showHintsModal, setShowHintsModal] = useState(false);
+  const [showPracticeNotice, setShowPracticeNotice] = useState(false);
 
   const picturePanels = data?.picture_story || data?.picturePanels || [
     {
@@ -59,7 +60,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       connectorsCount: matchedConnectors.length,
       matchedVerbs,
       matchedConnectors,
-      isRulePass: matchedVerbs.length >= 2 && wordCount >= 20
+      isRulePass: matchedVerbs.length >= 2 && wordCount >= 35
     };
 
     setRuleScore(layer1Result);
@@ -69,7 +70,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
       const layer2Result = {
         movieQualityScore: calculatedMovieScore,
-        aiFeedbackText: 'Great story! Your narrative flows smoothly across all 3 picture panels. Try adding more connecting words for a higher score.',
+        aiFeedbackText: 'Great Cambridge Flyers story script! Your narrative flows across all 3 picture panels. Keep using connectors for high accuracy.',
         verificationStatus: 'practice_only'
       };
 
@@ -101,7 +102,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           <p className="text-xs text-slate-500 font-medium mt-1">Write a complete story script based on 3 Pixar 3D visual story panels!</p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 relative">
           {/* Show Hints Scaffolding Button */}
           <button
             onClick={() => setShowHintsModal(true)}
@@ -110,13 +111,33 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
             <HelpCircle size={14} className="text-amber-600" /> Show Hints
           </button>
 
-          <div className="px-3 py-2 bg-purple-50 text-purple-800 rounded-xl text-xs font-black border border-purple-200 flex items-center gap-1.5 shadow-sm">
-            <AlertTriangle size={14} /> practice_only
-          </div>
+          {/* Interactive Practice Only Tag */}
+          <button
+            onClick={() => setShowPracticeNotice(!showPracticeNotice)}
+            className="px-3 py-2 bg-purple-50 hover:bg-purple-100 text-purple-800 rounded-xl text-xs font-black border border-purple-200 flex items-center gap-1.5 shadow-sm cursor-pointer transition"
+            title="Click to view official Cambridge examiner notice"
+          >
+            <AlertTriangle size={14} className="text-purple-600" /> practice_only <Info size={13} />
+          </button>
+
+          {/* Practice Only Tooltip Toast */}
+          {showPracticeNotice && (
+            <div className="absolute right-0 top-12 z-50 w-72 p-3 bg-slate-900 text-white rounded-2xl shadow-xl text-xs font-medium border border-slate-700 animate-in fade-in zoom-in-95">
+              <div className="flex items-start justify-between gap-2 mb-1">
+                <span className="font-black text-amber-400 flex items-center gap-1">
+                  <Info size={14} /> Practice Only Mode
+                </span>
+                <button onClick={() => setShowPracticeNotice(false)} className="text-slate-400 hover:text-white font-bold">×</button>
+              </div>
+              <p className="text-[11px] text-slate-300 leading-snug">
+                AI Grading is for practice only. Official Cambridge certificates require human examiners.
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* 3 Pixar 3D Picture Panels Display */}
+      {/* 3 Pixar 3D Picture Panels Display (Cleaned: NO pre-written full sentences!) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         {picturePanels.map((panel, idx) => (
           <div key={panel.panel_id || idx} className="bg-slate-50 rounded-2xl border border-slate-200 p-3 shadow-sm overflow-hidden flex flex-col">
@@ -132,7 +153,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
             </div>
 
             <h4 className="text-xs font-black text-slate-900 mb-1">{panel.title_en}</h4>
-            <p className="text-[11px] font-medium text-slate-600 leading-snug">{panel.description_en}</p>
+            <p className="text-[11px] font-bold text-slate-500">{panel.title_vi}</p>
           </div>
         ))}
       </div>
@@ -141,7 +162,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 mb-6 space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-xs font-black text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-            <Layers size={14} /> Tap Pills below to insert into your story script:
+            <Layers size={14} /> Tap Pills below to build your original story script:
           </span>
           <button
             onClick={() => setShowHintsModal(true)}
@@ -196,16 +217,16 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
         </div>
       </div>
 
-      {/* Script Text Area Input */}
+      {/* Script Text Area Input with Cambridge Flyers Standard Target */}
       <div className="space-y-3 mb-6">
         <label className="block text-xs font-black text-slate-700 uppercase">
-          Your 3-Picture Story Script (Minimum 20 words + 2 past tense verbs):
+          Your 3-Picture Story Script (<span className="text-purple-600">Target: 35-50 words — Cambridge Flyers Standard</span> + 2 past verbs):
         </label>
         <textarea
           rows={5}
           value={userScript}
           onChange={(e) => setUserScript(e.target.value)}
-          placeholder="First, Tom was playing soccer in the living room... Suddenly, the ball hit the table..."
+          placeholder="First, Tom was playing with his soccer ball in the living room... Suddenly, the ball hit the wooden table..."
           className="w-full p-4 bg-white border border-slate-300 rounded-2xl text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
         />
 
@@ -225,15 +246,15 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
         <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200 space-y-4 animate-in fade-in">
           <div className="flex items-center justify-between pb-3 border-b border-slate-200">
             <span className="text-xs font-black uppercase text-slate-700">Layer 1 Rule Check:</span>
-            <span className={`text-xs font-black ${ruleScore.isRulePass ? 'text-emerald-600' : 'text-red-600'}`}>
-              {ruleScore.isRulePass ? '✅ Pass (Criteria Met)' : '❌ Needs Revision'}
+            <span className={`text-xs font-black ${ruleScore.isRulePass ? 'text-emerald-600' : 'text-amber-600'}`}>
+              {ruleScore.isRulePass ? '✅ Pass (Target 35-50 words met)' : '⚠️ Below Target Word Count'}
             </span>
           </div>
 
           <div className="grid grid-cols-3 gap-3 text-center text-xs font-bold">
             <div className="p-3 bg-white rounded-xl border border-slate-200">
               <div className="text-slate-400 text-[10px] uppercase font-black">Word Count</div>
-              <div className="text-lg font-black text-slate-900">{ruleScore.wordCount} / 20 words</div>
+              <div className="text-lg font-black text-slate-900">{ruleScore.wordCount} / 35-50 words</div>
             </div>
             <div className="p-3 bg-white rounded-xl border border-slate-200">
               <div className="text-slate-400 text-[10px] uppercase font-black">Past Verbs</div>
@@ -249,7 +270,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
             <div className="p-4 bg-purple-50 rounded-xl border border-purple-200 space-y-2 animate-in fade-in">
               <div className="flex items-center justify-between">
                 <h4 className="text-sm font-black text-purple-950 flex items-center gap-1.5">
-                  <Film size={16} /> AI Movie Quality Score: {aiScore.movieQualityScore}/100
+                  <Film size={16} /> AI Story Quality Score: {aiScore.movieQualityScore}/100
                 </h4>
                 <span className="px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-black uppercase">
                   {aiScore.verificationStatus}
@@ -279,9 +300,9 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
             <div className="space-y-3">
               <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
-                <h4 className="text-xs font-black text-amber-950 uppercase">Suggested New Words (Core Verbs & Nouns):</h4>
+                <h4 className="text-xs font-black text-amber-950 uppercase">Suggested Core Vocab:</h4>
                 <p className="text-xs font-bold text-amber-900">
-                  broke, fell, lost, found, slipped, dropped, damaged, apologized, flower vase, soccer ball.
+                  broke, fell, lost, found, slipped, dropped, damaged, apologized, flower vase, soccer ball, alarm clock, backpack.
                 </p>
               </div>
 

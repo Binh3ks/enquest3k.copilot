@@ -1,13 +1,54 @@
 /**
  * Week 33 Gold Standard Reference Data — Listening & Arena Hub
- * Includes 5 Sentence Builder Drills, 5 Singapore Bar Models, 3 Flash Arena Card Sets, and 10 Check Mode Questions.
+ * Includes 20 Core Vocab Items (Nouns, Adjectives, Verbs), 10 Lexical Chunks, 5 Sentence Builder Drills, 5 Singapore Bar Models, 4 Flash Arena Card Sets, and 10 Check Mode Questions.
  */
 
 export const listeningHubData = {
   week: 33,
-  theme: "The Accident File",
+  theme: "The Accident File & Making Amends",
 
-  // 1. Array of EXACTLY 5 Sentence Builder Drills
+  // 1. Array of 20 Core Vocab Items (Nouns, Adjectives, Verbs)
+  vocab_20_words: [
+    // Nouns (7)
+    { id: "v01", en: "mistake", vi: "sai lầm / lỗi", category: "Nouns" },
+    { id: "v02", en: "accident", vi: "sự cố tai nạn", category: "Nouns" },
+    { id: "v03", en: "puddle", vi: "vũng nước", category: "Nouns" },
+    { id: "v04", en: "backpack", vi: "chiếc cặp sách", category: "Nouns" },
+    { id: "v05", en: "flower vase", vi: "bình hoa", category: "Nouns" },
+    { id: "v06", en: "alarm clock", vi: "đồng hồ báo thức", category: "Nouns" },
+    { id: "v07", en: "juice glass", vi: "ly nước trái cây", category: "Nouns" },
+    // Adjectives (6)
+    { id: "v08", en: "careful", vi: "cẩn thận", category: "Adjectives" },
+    { id: "v09", en: "clumsy", vi: "vụng về", category: "Adjectives" },
+    { id: "v10", en: "sorry", vi: "xin lỗi / hối hận", category: "Adjectives" },
+    { id: "v11", en: "cautious", vi: "dè chừng / cẩn trọng", category: "Adjectives" },
+    { id: "v12", en: "careless", vi: "bất cẩn", category: "Adjectives" },
+    { id: "v13", en: "slippery", vi: "trơn trượt", category: "Adjectives" },
+    // Verbs (7)
+    { id: "v14", en: "broke", vi: "đã làm vỡ", category: "Verbs" },
+    { id: "v15", en: "fell", vi: "đã ngã", category: "Verbs" },
+    { id: "v16", en: "lost", vi: "đã làm mất", category: "Verbs" },
+    { id: "v17", en: "slipped", vi: "đã trượt chân", category: "Verbs" },
+    { id: "v18", en: "spilled", vi: "đã làm tràn / đổ", category: "Verbs" },
+    { id: "v19", en: "dropped", vi: "đã đánh rơi", category: "Verbs" },
+    { id: "v20", en: "apologized", vi: "đã xin lỗi", category: "Verbs" }
+  ],
+
+  // 2. Array of 10 Lexical Chunks / Collocations
+  lexical_chunks_10: [
+    { id: "c01", en: "broke an alarm clock", vi: "làm vỡ đồng hồ báo thức" },
+    { id: "c02", en: "slipped on a puddle", vi: "trượt chân trên vũng nước" },
+    { id: "c03", en: "spilled the juice", vi: "làm đổ nước trái cây" },
+    { id: "c04", en: "apologized to mom", vi: "xin lỗi mẹ" },
+    { id: "c05", en: "lost his backpack", vi: "làm mất chiếc cặp" },
+    { id: "c06", en: "dropped a glass", vi: "đánh rơi ly nước" },
+    { id: "c07", en: "cleaned up carefully", vi: "cẩn thận dọn dẹp" },
+    { id: "c08", en: "damaged a notebook", vi: "làm hư cuốn vở" },
+    { id: "c09", en: "searched the bus", vi: "tìm kiếm trên xe buýt" },
+    { id: "c10", en: "promised to be cautious", vi: "hứa sẽ cẩn trọng hơn" }
+  ],
+
+  // 3. Array of 5 Sentence Builder Drills
   grammar_drills: [
     {
       id: "st2_w33_g01",
@@ -76,7 +117,7 @@ export const listeningHubData = {
     }
   ],
 
-  // 2. Array of EXACTLY 5 Singapore Bar Model Math Problems
+  // 4. Array of 5 Singapore Bar Model Math Problems
   singapore_math: [
     {
       id: "bar_w33_01",
@@ -148,44 +189,49 @@ export const listeningHubData = {
     }
   ],
 
-  // 3. Array of EXACTLY 3 Flash Arena Card Sets
-  flash_arena: [
-    {
-      set_id: "set_w33_01",
-      title: "Group 1: Core Words",
-      pairs: [
-        { id: "v01", en: "broke", vi: "đã làm vỡ / gãy" },
-        { id: "v02", en: "fell", vi: "đã ngã / rơi" },
-        { id: "v03", en: "lost", vi: "đã làm mất" },
-        { id: "v04", en: "found", vi: "đã tìm thấy" },
-        { id: "v05", en: "mistake", vi: "sai lầm / lỗi" }
-      ]
-    },
-    {
-      set_id: "set_w33_02",
-      title: "Group 2: Irregular Verbs",
-      pairs: [
-        { id: "v06", en: "dropped", vi: "đánh rơi" },
-        { id: "v07", en: "damaged", vi: "bị hư hại" },
-        { id: "v08", en: "searched", vi: "đã tìm kiếm" },
-        { id: "v09", en: "apologized", vi: "đã xin lỗi" },
-        { id: "v10", en: "slipped", vi: "trượt chân" }
-      ]
-    },
-    {
-      set_id: "set_w33_03",
-      title: "Group 3: Chunks & Collocations",
-      pairs: [
-        { id: "c01", en: "broke an alarm clock", vi: "làm vỡ đồng hồ báo thức" },
-        { id: "c02", en: "slipped on a puddle", vi: "trượt chân trên vũng nước" },
-        { id: "c03", en: "dropped a glass", vi: "đánh rơi ly nước" },
-        { id: "c04", en: "lost his backpack", vi: "làm mất chiếc cặp" },
-        { id: "c05", en: "apologized to teacher", vi: "xin lỗi cô giáo" }
-      ]
-    }
-  ],
+  // 5. Array of 4 Flash Arena Card Sets (20 Core Words + 10 Chunks)
+  flash_arena: {
+    set_w33_01: [
+      { id: "v01", en: "mistake", vi: "sai lầm / lỗi" },
+      { id: "v02", en: "accident", vi: "sự cố tai nạn" },
+      { id: "v03", en: "puddle", vi: "vũng nước" },
+      { id: "v04", en: "backpack", vi: "chiếc cặp sách" },
+      { id: "v05", en: "careful", vi: "cẩn thận" },
+      { id: "v06", en: "clumsy", vi: "vụng về" },
+      { id: "v07", en: "slippery", vi: "trơn trượt" }
+    ],
+    set_w33_02: [
+      { id: "v08", en: "broke", vi: "đã làm vỡ / gãy" },
+      { id: "v09", en: "fell", vi: "đã ngã / rơi" },
+      { id: "v10", en: "lost", vi: "đã làm mất" },
+      { id: "v11", en: "slipped", vi: "đã trượt chân" },
+      { id: "v12", en: "spilled", vi: "đã làm tràn / đổ" },
+      { id: "v13", en: "dropped", vi: "đánh rơi" },
+      { id: "v14", en: "damaged", vi: "bị hư hại" }
+    ],
+    set_w33_03: [
+      { id: "v15", en: "flower vase", vi: "bình hoa" },
+      { id: "v16", en: "alarm clock", vi: "đồng hồ báo thức" },
+      { id: "v17", en: "sorry", vi: "xin lỗi" },
+      { id: "v18", en: "cautious", vi: "cẩn trọng" },
+      { id: "v19", en: "careless", vi: "bất cẩn" },
+      { id: "v20", en: "apologized", vi: "đã xin lỗi" }
+    ],
+    set_w33_04: [
+      { id: "c01", en: "broke an alarm clock", vi: "làm vỡ đồng hồ báo thức" },
+      { id: "c02", en: "slipped on a puddle", vi: "trượt chân trên vũng nước" },
+      { id: "c03", en: "spilled the juice", vi: "làm đổ nước trái cây" },
+      { id: "c04", en: "apologized to mom", vi: "xin lỗi mẹ" },
+      { id: "c05", en: "lost his backpack", vi: "làm mất chiếc cặp" },
+      { id: "c06", en: "dropped a glass", vi: "đánh rơi ly nước" },
+      { id: "c07", en: "cleaned up carefully", vi: "cẩn thận dọn dẹp" },
+      { id: "c08", en: "damaged a notebook", vi: "làm hư cuốn vở" },
+      { id: "c09", en: "searched the bus", vi: "tìm kiếm trên xe buýt" },
+      { id: "c10", en: "promised to be cautious", vi: "hứa sẽ cẩn trọng hơn" }
+    ]
+  },
 
-  // 4. Array of EXACTLY 10 Check Mode Questions for Hub 2
+  // 6. Array of 10 Check Mode Questions for Hub 2
   check_mode_drills: [
     {
       content_id: "chk_h2_01",
@@ -219,8 +265,8 @@ export const listeningHubData = {
     },
     {
       content_id: "chk_h2_07",
-      raw_content: { text_en: "Because Tom ran downstairs quickly, he slipped.", grammar_tag: "clauses_of_reason" },
-      answer_key: { valid_structures: [["Because", "Tom", "ran", "downstairs", "quickly", ",", "he", "slipped", "."]] }
+      raw_content: { text_en: "Because Tom ran downstairs quickly, he slipped on the rug.", grammar_tag: "clauses_of_reason" },
+      answer_key: { valid_structures: [["Because", "Tom", "ran", "downstairs", "quickly", ",", "he", "slipped", "on", "the", "rug", "."]] }
     },
     {
       content_id: "chk_h2_08",
@@ -234,8 +280,8 @@ export const listeningHubData = {
     },
     {
       content_id: "chk_h2_10",
-      raw_content: { text_en: "Tom promised to be cautious so he could avoid accidents.", grammar_tag: "connectors" },
-      answer_key: { valid_structures: [["Tom", "promised", "to", "be", "cautious", "so", "he", "could", "avoid", "accidents", "."]] }
+      raw_content: { text_en: "Tom promised to be cautious so he could avoid future accidents.", grammar_tag: "connectors" },
+      answer_key: { valid_structures: [["Tom", "promised", "to", "be", "cautious", "so", "he", "could", "avoid", "future", "accidents", "."]] }
     }
   ]
 };

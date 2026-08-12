@@ -188,7 +188,13 @@ export function FlashArena({ customSets, onAttemptResult }) {
                 : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
             }`}
           >
-            {idx === 0 ? 'Group 1: Core Words' : idx === 1 ? 'Group 2: Irregular Verbs' : 'Group 3: Chunks & Collocations'}
+            {idx === 0
+              ? 'Set 1: Nouns & Adjectives'
+              : idx === 1
+              ? 'Set 2: Action Verbs'
+              : idx === 2
+              ? 'Set 3: Verbs & Modifiers'
+              : 'Set 4: 10 Lexical Chunks'}
           </button>
         ))}
       </div>

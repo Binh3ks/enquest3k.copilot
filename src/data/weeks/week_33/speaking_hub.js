@@ -1,79 +1,79 @@
 /**
  * Week 33 Gold Standard Reference Data — Nova Speaking Hub
- * Includes 2-Phase Podcast Shadowing (5 Sentences + 1 Long Paragraph) and 5-Turn Live Talk Show.
+ * Includes 2-Phase Podcast Shadowing (5 Single Sentences + Continuous Story) and 5-Turn Live Talk Show.
  */
 
 export const speakingHubData = {
   week: 33,
-  theme: "Apologizing for Clumsy Accidents",
+  theme: "Apologizing for Clumsy Accidents & Retelling the Picture Story",
 
   // Phase 1: EXACTLY 5 Single Podcast Shadowing Sentences
   shadowing_sentences: [
     {
       id: "sh_01",
       speaker: "Tom",
-      text: "I am so sorry! I broke the alarm clock because I was clumsy in the morning.",
-      phonetic_guide: "aɪ æm soʊ ˈsɑːri! aɪ broʊk ðə əˈlɑːrm klɑːk bɪˈkɑːz aɪ wɑːz ˈklʌmzi..."
+      text: "I had a terrible morning today because I woke up late and accidentally broke my alarm clock.",
+      phonetic_guide: "aɪ hæd ə ˈterəbəl ˈmɔːrnɪŋ təˈdeɪ bɪˈkɑːz aɪ woʊk ʌp leɪt ænd ˌæksəˈdentəli broʊk..."
     },
     {
       id: "sh_02",
-      speaker: "Mia",
-      text: "Don't worry! Accidents happen, but we must be more careful next time.",
-      phonetic_guide: "doʊnt ˈwɜːri! ˈæksədənts ˈhæpən, bʌt wiː mʌst biː mɔːr ˈkerfəl..."
+      speaker: "Tom",
+      text: "I felt so clumsy when I dropped my glasses on the rug.",
+      phonetic_guide: "aɪ felt soʊ ˈklʌmzi wen aɪ drɑːpt maɪ ˈɡlæsəz ɑːn ðə rʌɡ."
     },
     {
       id: "sh_03",
       speaker: "Tom",
-      text: "While I was running downstairs, I slipped on a wet puddle and fell onto the rug.",
-      phonetic_guide: "waɪl aɪ wɑːz ˈrʌnɪŋ ˌdaʊnˈsterz, aɪ slɪpt ɑːn ə wet ˈpʌdəl ænd fel ˈɑːntu ðə rʌɡ."
+      text: "While I was running downstairs, I slipped on a wet puddle.",
+      phonetic_guide: "waɪl aɪ wɑːz ˈrʌnɪŋ ˌdaʊnˈsterz, aɪ slɪpt ɑːn ə wet ˈpʌdəl."
     },
     {
       id: "sh_04",
       speaker: "Tom",
-      text: "Thank you for finding my lost backpack on the bus seat!",
-      phonetic_guide: "θæŋk juː fɔːr ˈfaɪndɪŋ maɪ lɔːst ˈbæk.pæk ɑːn ðə bʌs siːt!"
+      text: "To make things worse, I lost my backpack on the school bus seat!",
+      phonetic_guide: "tuː meɪk θɪŋz wɜːrs, aɪ lɔːst maɪ ˈbæk.pæk ɑːn ðə skuːl bʌs siːt!"
     },
     {
       id: "sh_05",
       speaker: "Mia",
-      text: "You should apologize to your teacher and promise to be more cautious in the future.",
-      phonetic_guide: "juː ʃʊd əˈpɑːlədʒaɪz tuː jʊər ˈtiːtʃər ænd ˈprɑːmɪs tuː biː mɔːr ˈkɑːʃəs..."
+      text: "My mom told me not to worry, because accidents happen, but I promised to be more careful next time.",
+      phonetic_guide: "maɪ mɑːm toʊld miː nɑːt tuː ˈwɜːri, bɪˈkɑːz ˈæksədənts ˈhæpən, bʌt aɪ ˈprɑːmɪst..."
     }
   ],
 
-  // Phase 2: 1 Continuous Long Paragraph combining all 5 sentences above
+  // Phase 2: Continuous Story (Exact Cambridge Flyers Standard Intonation Text)
   shadowing_paragraph: {
     title: "Continuous Shadowing: Tom's Clumsy Morning Story",
-    text: "I am so sorry! I broke the alarm clock because I was clumsy in the morning. Don't worry! Accidents happen, but we must be more careful next time. While I was running downstairs, I slipped on a wet puddle and fell onto the rug. Thank you for finding my lost backpack on the bus seat! You should apologize to your teacher and promise to be more cautious in the future.",
-    phonetic_guide: "Full story intonation guide: Practice continuous rhythm, rising pitch on questions, and falling pitch on apologies."
+    text: "I had a terrible morning today! First, I woke up late and accidentally broke my alarm clock. I felt so clumsy. Then, while I was running downstairs, I slipped on a wet puddle. To make things worse, I lost my backpack on the bus! My mom told me not to worry, because accidents happen, but I promised to be more careful next time.",
+    phonetic_guide: "Full story intonation guide: Practice continuous rhythm, rising pitch on exclamation points, and falling pitch on resolutions."
   },
 
-  // 5-Turn Interactive Live Talk Show Logic
+  // EXACTLY 5-Turn Interactive Live Talk Show Logic (Contextually aligned with Hub 3 Picture Story)
   talkshow_turns: [
     {
       turn_number: 1,
-      nova_question: "Welcome to Nova Live Talk Show! Can you tell me what broke when Tom woke up in the morning?",
-      hint_response: "Tom broke his alarm clock because he reached clumsily for his glasses."
+      nova_question: "Welcome to Nova Live Talk Show! In Hub 3, you wrote a 3-picture story script. Can you tell me what happened in Panel 1 when Tom was in the living room?",
+      hint_response: "First, Tom was playing with his soccer ball inside the living room near the wooden table."
     },
     {
       turn_number: 2,
-      nova_question: "Oh no! And why did he fall down while running downstairs?",
-      hint_response: "He slipped on a wet puddle on the floor and fell onto the rug."
+      nova_question: "Oh dear! And what clumsy accident happened in Panel 2 when the soccer ball hit the table?",
+      hint_response: "The ball hit the table by accident, and a glass flower vase fell down and broke into pieces."
     },
     {
       turn_number: 3,
-      nova_question: "What happened when Tom dropped the glass of orange juice?",
-      hint_response: "He damaged his homework notebook with the spilled juice."
+      nova_question: "How did Tom feel when he saw the broken flower vase on the floor?",
+      hint_response: "Tom felt very clumsy and sorry because he caused an unexpected accident."
     },
     {
       turn_number: 4,
-      nova_question: "Who found Tom's lost backpack on the school bus?",
-      hint_response: "His kind friend Mia found his backpack on the bus seat."
+      nova_question: "In Panel 3, what did Tom do to make amends with his mom after the accident?",
+      hint_response: "Tom apologized to his mom immediately and carefully cleaned up the broken glass pieces."
     },
     {
       turn_number: 5,
-      nova_question: "What important lesson did Tom learn at the end of the day?",
-      hint_response: "Tom learned to apologize for his mistakes and be more cautious next time."
+      nova_question: "What an important lesson! What did Tom promise to do next time to avoid clumsy mistakes?",
+      hint_response: "Tom promised to be more cautious and careful whenever he plays indoors."
     }
   ]
 };
