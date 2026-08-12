@@ -22,108 +22,117 @@ const FALLBACK_CHECK_QUESTIONS = [
   {
     id: 'chk_w33_02',
     content_id: 'chk_w33_02',
-    text: 'While Tom was waking up, he accidentally broke his alarm clock.',
-    prompt: 'While Tom was waking up, he accidentally broke his alarm clock.',
+    dialogue_context: 'Mia: Why were you rushing downstairs so fast, Tom?',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: 'was waking', isCorrect: true },
-      { label: 'B', text: 'is waking', isCorrect: false },
-      { label: 'C', text: 'waked', isCorrect: false }
+      { label: 'A', text: 'Because I woke up late and was in a hurry.', isCorrect: true },
+      { label: 'B', text: 'While he was running outside.', isCorrect: false },
+      { label: 'C', text: 'Yes, I broke my backpack.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_03',
     content_id: 'chk_w33_03',
-    text: 'While Tom woke up in a hurry, he accidentally knocked over his clock.',
-    prompt: 'While Tom woke up in a hurry, he accidentally knocked over his clock.',
+    dialogue_context: 'Mom: What happened while you were making breakfast?',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: 'While', isCorrect: true },
-      { label: 'B', text: 'Because', isCorrect: false },
-      { label: 'C', text: 'So', isCorrect: false }
+      { label: 'A', text: 'I dropped a glass of orange juice on the floor.', isCorrect: true },
+      { label: 'B', text: 'Because it was very sweet.', isCorrect: false },
+      { label: 'C', text: 'So he was sleeping in bed.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_04',
     content_id: 'chk_w33_04',
-    text: 'Tom slipped and fell, because the kitchen tile floor was wet.',
-    prompt: 'Tom slipped and fell, because the kitchen tile floor was wet.',
+    dialogue_context: 'Tom: I slipped on a wet puddle on the kitchen tile floor!',
+    text: 'What does Mia say?',
+    prompt: 'What does Mia say?',
     options: [
-      { label: 'A', text: 'because', isCorrect: true },
-      { label: 'B', text: 'although', isCorrect: false },
-      { label: 'C', text: 'but', isCorrect: false }
+      { label: 'A', text: 'Are you okay? You should be more careful.', isCorrect: true },
+      { label: 'B', text: 'No, the floor is dry.', isCorrect: false },
+      { label: 'C', text: 'Because he was clumsy.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_05',
     content_id: 'chk_w33_05',
-    text: 'Although Tom made a clumsy mistake, Mia helped him mop the puddle kindly.',
-    prompt: 'Although Tom made a clumsy mistake, Mia helped him mop the puddle kindly.',
+    dialogue_context: 'Mom: Why is your English notebook damaged?',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: 'Although', isCorrect: true },
-      { label: 'B', text: 'Because', isCorrect: false },
-      { label: 'C', text: 'So', isCorrect: false }
+      { label: 'A', text: 'Because I spilled juice over it while eating.', isCorrect: true },
+      { label: 'B', text: 'While I was walking to school.', isCorrect: false },
+      { label: 'C', text: 'Yes, I found your backpack.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_06',
     content_id: 'chk_w33_06',
-    text: 'He dropped a glass of juice while he was making breakfast for his sister.',
-    prompt: 'He dropped a glass of juice while he was making breakfast for his sister.',
+    dialogue_context: "Tom: Oh no! I can't find my backpack anywhere!",
+    text: 'What does Mia say?',
+    prompt: 'What does Mia say?',
     options: [
-      { label: 'A', text: 'was making', isCorrect: true },
-      { label: 'B', text: 'were making', isCorrect: false },
-      { label: 'C', text: 'makes', isCorrect: false }
+      { label: 'A', text: 'I saw you leave it on the bus earlier!', isCorrect: true },
+      { label: 'B', text: 'While we were eating lunch.', isCorrect: false },
+      { label: 'C', text: 'So he apologized to mom.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_07',
     content_id: 'chk_w33_07',
-    text: 'Tom apologized to his mother immediately, because he felt very sorry.',
-    prompt: 'Tom apologized to his mother immediately, because he felt very sorry.',
+    dialogue_context: 'Mia: Here is your lost backpack, Tom! I picked it up.',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: 'because', isCorrect: true },
-      { label: 'B', text: 'although', isCorrect: false },
-      { label: 'C', text: 'while', isCorrect: false }
+      { label: 'A', text: 'Thank you so much, Mia! You saved my day.', isCorrect: true },
+      { label: 'B', text: 'Because I was running.', isCorrect: false },
+      { label: 'C', text: 'No, it wasn\'t clumsy.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_08',
     content_id: 'chk_w33_08',
-    text: 'Mia found the blue backpack while she was searching the back row of seats.',
-    prompt: 'Mia found the blue backpack while she was searching the back row of seats.',
+    dialogue_context: 'Mom: You made several clumsy mistakes this morning, Tom.',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: 'was searching', isCorrect: true },
-      { label: 'B', text: 'searches', isCorrect: false },
-      { label: 'C', text: 'is search', isCorrect: false }
+      { label: 'A', text: "I'm really sorry, Mom. I promise to be cautious.", isCorrect: true },
+      { label: 'B', text: 'While she was cooking breakfast.', isCorrect: false },
+      { label: 'C', text: 'Yes, the bus arrived late.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_09',
     content_id: 'chk_w33_09',
-    text: 'Because Tom rushed downstairs too quickly, he slipped on the rug.',
-    prompt: 'Because Tom rushed downstairs too quickly, he slipped on the rug.',
+    dialogue_context: 'Mia: Shall we clean up the spilled juice together?',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: 'slipped', isCorrect: true },
-      { label: 'B', text: 'slips', isCorrect: false },
-      { label: 'C', text: 'was slip', isCorrect: false }
+      { label: 'A', text: "That's very kind of you. Let me get a cloth.", isCorrect: true },
+      { label: 'B', text: 'Because he slipped on the rug.', isCorrect: false },
+      { label: 'C', text: 'So I lost my glasses.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_10',
     content_id: 'chk_w33_10',
-    text: 'Tom promised to be cautious, so he could avoid future morning accidents.',
-    prompt: 'Tom promised to be cautious, so he could avoid future morning accidents.',
+    dialogue_context: 'Mom: Will you remember to set your alarm clock tonight?',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: 'so', isCorrect: true },
-      { label: 'B', text: 'because', isCorrect: false },
-      { label: 'C', text: 'although', isCorrect: false }
+      { label: 'A', text: "Yes, Mom. I won't wake up late tomorrow!", isCorrect: true },
+      { label: 'B', text: 'While he was fixing the clock.', isCorrect: false },
+      { label: 'C', text: 'Because it dropped on the floor.', isCorrect: false }
     ],
     answerIndex: 0
   }
