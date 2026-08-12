@@ -160,11 +160,11 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         </div>
 
         {/* Sub-Mode Switcher */}
-        <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+        <div className="flex items-center gap-2 bg-indigo-50/70 p-1.5 rounded-2xl border border-indigo-200">
           <button
             onClick={() => setSubMode('podcast')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'podcast' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
+              subMode === 'podcast' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
             }`}
           >
             <Volume2 size={14} /> Podcast Shadowing
@@ -172,7 +172,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           <button
             onClick={() => setSubMode('talkshow')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
+              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
             }`}
           >
             <MessageSquare size={14} /> Nova Live Talk Show (5 Turns)
@@ -184,19 +184,19 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         /* MODE 1: PODCAST SHADOWING (2 PHASES) */
         <div className="space-y-6">
           {/* Phase Selector Tabs */}
-          <div className="flex items-center gap-3 bg-indigo-50 p-2 rounded-2xl border border-indigo-100">
+          <div className="flex items-center gap-3 bg-indigo-50/70 p-2 rounded-2xl border border-indigo-200">
             <button
               onClick={() => setShadowingPhase(1)}
               className={`flex-1 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-2 ${
-                shadowingPhase === 1 ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-indigo-900 hover:bg-indigo-100'
+                shadowingPhase === 1 ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <Layers size={14} /> Phase 1: 5 Single Sentences ({sentencesList.length})
+              <Layers size={14} /> Phase 1: 5 Single Sentences
             </button>
             <button
               onClick={() => setShadowingPhase(2)}
               className={`flex-1 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-2 ${
-                shadowingPhase === 2 ? 'bg-indigo-600 text-white shadow-md' : 'bg-white text-indigo-900 hover:bg-indigo-100'
+                shadowingPhase === 2 ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
               <BookOpen size={14} /> Phase 2: Continuous Story Intonation
@@ -279,7 +279,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 ))}
               </div>
               <h4 className="text-base font-black text-emerald-950">Pronunciation Score: {podcastScore.accuracyScore}%</h4>
-              <p className="text-xs text-emerald-700 font-semibold mt-1">Fluency: {podcastScore.fluencyScore}% · Tag: {podcastScore.verificationStatus}</p>
+              <p className="text-xs text-emerald-700 font-semibold mt-1">Fluency: {podcastScore.fluencyScore}%</p>
             </div>
           )}
         </div>

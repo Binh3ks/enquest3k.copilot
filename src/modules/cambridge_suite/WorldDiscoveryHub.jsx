@@ -167,11 +167,11 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
         </div>
 
         {/* Tab Switcher: Learn Mode vs Check Mode */}
-        <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+        <div className="flex items-center gap-2 bg-indigo-50/70 p-1.5 rounded-2xl border border-indigo-200">
           <button
             onClick={() => setActiveTab('webtoon')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              activeTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
+              activeTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
             }`}
           >
             <PlayCircle size={14} /> Learn Mode (Webtoon 3D)
@@ -179,7 +179,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
           <button
             onClick={() => setActiveTab('check')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              activeTab === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
+              activeTab === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
             }`}
           >
             <GraduationCap size={14} /> Check Mode (10 MCQ)

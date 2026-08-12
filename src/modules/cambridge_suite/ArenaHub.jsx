@@ -50,11 +50,11 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
 
         {/* Learn Mode vs Check Mode Switcher */}
         <div className="flex items-center gap-3">
-          <div className="bg-slate-100 p-1.5 rounded-2xl border border-slate-200 flex items-center gap-1">
+          <div className="bg-amber-50/70 p-1.5 rounded-2xl border border-amber-200 flex items-center gap-1.5">
             <button
               onClick={() => setViewMode('learn')}
               className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                viewMode === 'learn' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
+                viewMode === 'learn' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
               }`}
             >
               <PlayCircle size={14} /> Learn Mode
@@ -62,7 +62,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
             <button
               onClick={() => setViewMode('check')}
               className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                viewMode === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'
+                viewMode === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
               }`}
             >
               <GraduationCap size={14} /> Check Mode (Cambridge Exam)
@@ -74,12 +74,12 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
       {viewMode === 'learn' ? (
         <div className="space-y-6">
           {/* Sub-Tabs Navigation for Learn Mode */}
-          <div className="flex items-center justify-between flex-wrap gap-3 p-2 bg-slate-100 rounded-2xl border border-slate-200">
+          <div className="flex items-center justify-between flex-wrap gap-3 p-2 bg-amber-50/70 rounded-2xl border border-amber-200">
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setActiveTab('sentence_builder')}
                 className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
-                  activeTab === 'sentence_builder' ? 'bg-indigo-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200'
+                  activeTab === 'sentence_builder' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
                 <Brain size={15} /> Sentence Builder (5 Drills)
@@ -87,7 +87,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
               <button
                 onClick={() => setActiveTab('bar_model')}
                 className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
-                  activeTab === 'bar_model' ? 'bg-indigo-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200'
+                  activeTab === 'bar_model' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
                 <Zap size={15} /> Bar Model Quest (5 Problems)
@@ -95,7 +95,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
               <button
                 onClick={() => setActiveTab('flash_arena')}
                 className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
-                  activeTab === 'flash_arena' ? 'bg-indigo-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200'
+                  activeTab === 'flash_arena' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
                 <Layers size={15} /> Flash Arena (30 Items)

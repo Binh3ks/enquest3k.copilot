@@ -207,9 +207,7 @@ export function FlashArena({ customSets, onAttemptResult }) {
               ? 'Set 1: Nouns & Adjectives'
               : idx === 1
               ? 'Set 2: Action Verbs'
-              : idx === 2
-              ? 'Set 3: Verbs & Modifiers'
-              : 'Set 4: 10 Lexical Chunks'}
+              : 'Set 3: Chunks & Collocations'}
           </button>
         ))}
       </div>

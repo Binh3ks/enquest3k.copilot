@@ -208,9 +208,6 @@ export function SentenceBuilderBattle({ customItem, onNext, onTriggerAdaptiveHin
             {currentDrill.text_en || currentDrill.text || 'Build the target sentence'}
           </h3>
         </div>
-        <span className="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-mono font-bold rounded-lg border border-indigo-100 uppercase">
-          Tag: {currentDrill.grammar_tag || 'grammar'}
-        </span>
       </div>
 
       <DndContext
