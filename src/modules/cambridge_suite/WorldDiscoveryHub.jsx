@@ -420,7 +420,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
                 <div>
                   <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">CAMBRIDGE READING PART 4 — GAP-FILL</span>
-                  <h3 className="text-lg font-black text-slate-900 mt-0.5">{interactiveStory.title}</h3>
+                  <h3 className="text-lg font-black text-slate-900 mt-0.5">{renderParsedText(interactiveStory.title, 'indigo')}</h3>
                 </div>
                 <span className="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-black font-mono rounded-full">
                   5 Blanks

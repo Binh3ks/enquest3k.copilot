@@ -43,6 +43,12 @@ const week33DictItems = [
   { word: "woke", meaning: "đã thức dậy", pronounce: "/woʊk/", example: "Tom woke up late in the morning." },
   { word: "rushed", meaning: "đã vội vã / lao đi", pronounce: "/rʌʃt/", example: "He rushed downstairs in a hurry." },
   { word: "damaged", meaning: "đã làm hư hại / hỏng", pronounce: "/ˈdæm.ɪdʒd/", example: "The spilled liquid damaged his notebook." },
+  { word: "continuous", meaning: "liên tục / kéo dài", pronounce: "/kənˈtɪn.ju.əs/", example: "Build a past continuous sentence." },
+  { word: "sentence", meaning: "câu", pronounce: "/ˈsen.təns/", example: "Drag words to construct a sentence." },
+  { word: "morning", meaning: "buổi sáng", pronounce: "/ˈmɔːr.nɪŋ/", example: "In the morning." },
+  { word: "interactive", meaning: "tương tác", pronounce: "/ˌɪn.t̬ɚˈræk.tɪv/", example: "Interactive story." },
+  { word: "story", meaning: "câu chuyện", pronounce: "/ˈstɔːr.i/", example: "Read the story." },
+  { word: "how many", meaning: "bao nhiêu", pronounce: "/haʊ ˈmen.i/", example: "How many items did Tom break?" },
   // 10 Lexical Chunks
   { word: "broke an alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk ən əˈlɑːrm klɑːk/", example: "He accidentally broke an alarm clock." },
   { word: "broke his alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk hɪz əˈlɑːrm klɑːk/", example: "He accidentally broke his alarm clock." },
@@ -320,9 +326,13 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
               <div className="flex items-center justify-between mb-1">
                 <span className={`text-xl font-black text-${themeColor}-700`}>{word}</span>
                 <button
-                  onClick={(e) => { e.stopPropagation(); onSpeak(word); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onSpeak) onSpeak(word);
+                    else VoiceService.speak(word, 'vocab');
+                  }}
                   className={`p-1.5 bg-${themeColor}-100 text-${themeColor}-700 rounded-full hover:bg-${themeColor}-600 hover:text-white transition-all active:scale-90 flex-shrink-0 ml-2`}
-                  title="Nghe phát âm"
+                  title="Say it!"
                 >
                   <Volume2 size={14} />
                 </button>
@@ -335,11 +345,24 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
 
               <div className={`h-px bg-${themeColor}-50 mb-3`} />
 
-              {/* Vietnamese meaning — main content */}
+              {/* Vietnamese meaning or Universal Fallback */}
               {resolvedEntry?.meaning ? (
                 <p className="text-base font-bold text-slate-800 leading-snug">{resolvedEntry.meaning}</p>
               ) : (
-                <p className="text-sm italic text-slate-400">Chưa có trong từ điển</p>
+                <div className="space-y-2">
+                  <p className="text-xs font-bold text-indigo-700 bg-indigo-50 p-2.5 rounded-xl leading-relaxed">
+                    Universal Word Lookup Ready! Click <Volume2 size={12} className="inline mx-0.5" /> to listen.
+                  </p>
+                  <a
+                    href={`https://dictionary.cambridge.org/dictionary/english/${encodeURIComponent(word.toLowerCase())}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className={`w-full flex items-center justify-center gap-1.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-xs transition-all`}
+                  >
+                    <BookOpen size={13} /> Tra từ này trên Cambridge
+                  </a>
+                </div>
               )}
 
               {/* Example sentence (preferred) or Definition (fallback) */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import VoiceService from '../../services/voiceService';
-import HoverWord from '../../components/common/HoverWord';
+import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
 import { Mic, MicOff, Volume2, Radio, Star, AlertTriangle, MessageSquare, Layers, BookOpen, Info } from 'lucide-react';
 
@@ -62,71 +62,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     }
   };
 
-  const renderParsedText = (text, themeColor = 'indigo') => {
-    if (!text) return null;
-    const segments = text.split(/(\*\*.*?\*\*)/);
-    let key = 0;
-    const parts = [];
 
-    for (const segment of segments) {
-      if (segment.startsWith('**') && segment.endsWith('**')) {
-        const word = segment.slice(2, -2).trim();
-        parts.push(
-          <HoverWord
-            key={key++}
-            word={word}
-            themeColor={themeColor}
-            onSpeak={(w) => speakText(w, null, 1.0, null, 'shadowing', weekNumber, 'advanced')}
-            tier={1}
-          />
-        );
-      } else {
-        let currentWord = '';
-        let currentNonWord = '';
-
-        for (let i = 0; i < segment.length; i++) {
-          const char = segment[i];
-          if (/[\w'-]/.test(char)) {
-            if (currentNonWord) {
-              parts.push(<span key={key++}>{currentNonWord}</span>);
-              currentNonWord = '';
-            }
-            currentWord += char;
-          } else {
-            if (currentWord) {
-              parts.push(
-                <HoverWord
-                  key={key++}
-                  word={currentWord}
-                  themeColor={themeColor}
-                  onSpeak={(w) => speakText(w, null, 1.0, null, 'shadowing', weekNumber, 'advanced')}
-                  tier={3}
-                />
-              );
-              currentWord = '';
-            }
-            currentNonWord += char;
-          }
-        }
-        if (currentWord) {
-          parts.push(
-            <HoverWord
-              key={key++}
-              word={currentWord}
-              themeColor={themeColor}
-              onSpeak={(w) => speakText(w, null, 1.0, null, 'shadowing', weekNumber, 'advanced')}
-              tier={3}
-            />
-          );
-        }
-        if (currentNonWord) {
-          parts.push(<span key={key++}>{currentNonWord}</span>);
-        }
-      }
-    }
-
-    return parts;
-  };
 
   const handlePlaySentence = async (text) => {
     try {
@@ -259,7 +195,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 shadowingPhase === 1 ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <Layers size={14} /> Phase 1: 5 Single Sentences
+              <Layers size={14} /> {renderParsedText("Phase 1: 5 Single Sentences", 'indigo')}
             </button>
             <button
               onClick={() => setShadowingPhase(2)}
@@ -267,7 +203,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 shadowingPhase === 2 ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <BookOpen size={14} /> Phase 2: Continuous Story Intonation
+              <BookOpen size={14} /> {renderParsedText("Phase 2: Continuous Story Intonation", 'indigo')}
             </button>
           </div>
 
@@ -312,7 +248,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             /* Phase 2: Continuous Story Intonation Shadowing */
             <div className="p-6 bg-indigo-50 rounded-3xl border border-indigo-200 space-y-4 shadow-sm">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-black text-indigo-950">{longParagraph.title}</h3>
+                <h3 className="text-lg font-black text-indigo-950">{renderParsedText(longParagraph.title, 'indigo')}</h3>
                 <button
                   onClick={() => handlePlaySentence(longParagraph.text)}
                   className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-md"
