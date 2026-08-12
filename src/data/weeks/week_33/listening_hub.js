@@ -206,33 +206,20 @@ export const listeningHubData = {
       id: "chk_w33_01",
       content_id: "chk_w33_01",
       dialogue_context: "Tom: I accidentally broke my alarm clock this morning!",
-      text: "What should Mia reply?",
-      prompt: "What should Mia reply?",
+      text: "What does Mom say?",
+      prompt: "What does Mom say?",
       options: [
-        { label: "A", text: "Don't worry, it was just a clumsy accident.", isCorrect: true },
-        { label: "B", text: "Yes, I am waking up right now.", isCorrect: false },
-        { label: "C", text: "No, he didn't call the bus driver.", isCorrect: false }
+        { label: "A", text: "Don't worry, it's just an accident.", isCorrect: true },
+        { label: "B", text: "Yes, I am waking up.", isCorrect: false },
+        { label: "C", text: "No, he didn't.", isCorrect: false }
       ],
       answerIndex: 0
     },
     {
       id: "chk_w33_02",
       content_id: "chk_w33_02",
-      dialogue_context: "Mia: Did you find your lost backpack on the school bus?",
-      text: "What should Tom reply?",
-      prompt: "What should Tom reply?",
-      options: [
-        { label: "A", text: "No, I am walking home.", isCorrect: false },
-        { label: "B", text: "Yes, thank you for helping me search!", isCorrect: true },
-        { label: "C", text: "I like riding the bus to school.", isCorrect: false }
-      ],
-      answerIndex: 1
-    },
-    {
-      id: "chk_w33_03",
-      content_id: "chk_w33_03",
-      text: "While Tom ___ up in a hurry, he accidentally knocked over his clock.",
-      prompt: "While Tom ___ up in a hurry, he accidentally knocked over his clock.",
+      text: "While Tom was waking up, he accidentally broke his alarm clock.",
+      prompt: "While Tom was waking up, he accidentally broke his alarm clock.",
       options: [
         { label: "A", text: "was waking", isCorrect: true },
         { label: "B", text: "is waking", isCorrect: false },
@@ -241,10 +228,22 @@ export const listeningHubData = {
       answerIndex: 0
     },
     {
+      id: "chk_w33_03",
+      content_id: "chk_w33_03",
+      text: "While Tom woke up in a hurry, he accidentally knocked over his clock.",
+      prompt: "While Tom woke up in a hurry, he accidentally knocked over his clock.",
+      options: [
+        { label: "A", text: "While", isCorrect: true },
+        { label: "B", text: "Because", isCorrect: false },
+        { label: "C", text: "So", isCorrect: false }
+      ],
+      answerIndex: 0
+    },
+    {
       id: "chk_w33_04",
       content_id: "chk_w33_04",
-      text: "Tom slipped and fell ___ the kitchen tile floor was wet.",
-      prompt: "Tom slipped and fell ___ the kitchen tile floor was wet.",
+      text: "Tom slipped and fell, because the kitchen tile floor was wet.",
+      prompt: "Tom slipped and fell, because the kitchen tile floor was wet.",
       options: [
         { label: "A", text: "because", isCorrect: true },
         { label: "B", text: "although", isCorrect: false },
@@ -255,8 +254,8 @@ export const listeningHubData = {
     {
       id: "chk_w33_05",
       content_id: "chk_w33_05",
-      text: "___ Tom made a clumsy mistake, Mia helped him mop the puddle kindly.",
-      prompt: "___ Tom made a clumsy mistake, Mia helped him mop the puddle kindly.",
+      text: "Although Tom made a clumsy mistake, Mia helped him mop the puddle kindly.",
+      prompt: "Although Tom made a clumsy mistake, Mia helped him mop the puddle kindly.",
       options: [
         { label: "A", text: "Although", isCorrect: true },
         { label: "B", text: "Because", isCorrect: false },
@@ -267,8 +266,8 @@ export const listeningHubData = {
     {
       id: "chk_w33_06",
       content_id: "chk_w33_06",
-      text: "He dropped a glass of juice while he ___ breakfast for his sister.",
-      prompt: "He dropped a glass of juice while he ___ breakfast for his sister.",
+      text: "He dropped a glass of juice while he was making breakfast for his sister.",
+      prompt: "He dropped a glass of juice while he was making breakfast for his sister.",
       options: [
         { label: "A", text: "was making", isCorrect: true },
         { label: "B", text: "were making", isCorrect: false },
@@ -279,8 +278,8 @@ export const listeningHubData = {
     {
       id: "chk_w33_07",
       content_id: "chk_w33_07",
-      text: "Tom apologized to his mother immediately ___ he felt very sorry.",
-      prompt: "Tom apologized to his mother immediately ___ he felt very sorry.",
+      text: "Tom apologized to his mother immediately, because he felt very sorry.",
+      prompt: "Tom apologized to his mother immediately, because he felt very sorry.",
       options: [
         { label: "A", text: "because", isCorrect: true },
         { label: "B", text: "although", isCorrect: false },
@@ -291,8 +290,8 @@ export const listeningHubData = {
     {
       id: "chk_w33_08",
       content_id: "chk_w33_08",
-      text: "Mia found the blue backpack while she ___ the back row of seats.",
-      prompt: "Mia found the blue backpack while she ___ the back row of seats.",
+      text: "Mia found the blue backpack while she was searching the back row of seats.",
+      prompt: "Mia found the blue backpack while she was searching the back row of seats.",
       options: [
         { label: "A", text: "was searching", isCorrect: true },
         { label: "B", text: "searches", isCorrect: false },
@@ -303,8 +302,8 @@ export const listeningHubData = {
     {
       id: "chk_w33_09",
       content_id: "chk_w33_09",
-      text: "Because Tom rushed downstairs too quickly, he ___ on the rug.",
-      prompt: "Because Tom rushed downstairs too quickly, he ___ on the rug.",
+      text: "Because Tom rushed downstairs too quickly, he slipped on the rug.",
+      prompt: "Because Tom rushed downstairs too quickly, he slipped on the rug.",
       options: [
         { label: "A", text: "slipped", isCorrect: true },
         { label: "B", text: "slips", isCorrect: false },
@@ -315,8 +314,8 @@ export const listeningHubData = {
     {
       id: "chk_w33_10",
       content_id: "chk_w33_10",
-      text: "Tom promised to be cautious ___ he could avoid future morning accidents.",
-      prompt: "Tom promised to be cautious ___ he could avoid future morning accidents.",
+      text: "Tom promised to be cautious, so he could avoid future morning accidents.",
+      prompt: "Tom promised to be cautious, so he could avoid future morning accidents.",
       options: [
         { label: "A", text: "so", isCorrect: true },
         { label: "B", text: "because", isCorrect: false },
