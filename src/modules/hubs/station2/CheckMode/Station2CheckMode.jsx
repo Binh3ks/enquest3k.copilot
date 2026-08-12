@@ -51,130 +51,126 @@ const renderParsedText = (text, themeColor = 'indigo') => {
 
 const FALLBACK_CHECK_QUESTIONS = [
   {
-    id: 'chk_d01',
-    content_id: 'chk_d01',
+    id: 'chk_w33_01',
+    content_id: 'chk_w33_01',
     dialogue_context: 'Tom: I accidentally broke my alarm clock this morning!',
     text: 'What should Mia reply?',
     prompt: 'What should Mia reply?',
     options: [
-      { label: 'A', text: "Don't worry, it's just an accident.", isCorrect: true },
-      { label: 'B', text: 'I am waking up.', isCorrect: false },
-      { label: 'C', text: 'Yes, it is.', isCorrect: false }
+      { label: 'A', text: "Don't worry, it was just a clumsy accident.", isCorrect: true },
+      { label: 'B', text: 'Yes, I am waking up right now.', isCorrect: false },
+      { label: 'C', text: "No, he didn't call the bus driver.", isCorrect: false }
     ],
     answerIndex: 0
   },
   {
-    id: 'chk_d02',
-    content_id: 'chk_d02',
-    dialogue_context: 'Mia: Did you find your lost backpack on the bus?',
+    id: 'chk_w33_02',
+    content_id: 'chk_w33_02',
+    dialogue_context: 'Mia: Did you find your lost backpack on the school bus?',
     text: 'What should Tom reply?',
     prompt: 'What should Tom reply?',
     options: [
-      { label: 'A', text: 'No, I am going home.', isCorrect: false },
-      { label: 'B', text: 'Yes, thank you for helping me!', isCorrect: true },
-      { label: 'C', text: 'I like riding the bus.', isCorrect: false }
+      { label: 'A', text: 'No, I am walking home.', isCorrect: false },
+      { label: 'B', text: 'Yes, thank you for helping me search!', isCorrect: true },
+      { label: 'C', text: 'I like riding the bus to school.', isCorrect: false }
     ],
     answerIndex: 1
   },
   {
-    content_id: 'chk_h2_01',
-    text: 'While Tom ___ up, he accidentally broke his alarm clock.',
-    prompt: 'While Tom ___ up, he accidentally broke his alarm clock.',
+    id: 'chk_w33_03',
+    content_id: 'chk_w33_03',
+    text: 'While Tom ___ up in a hurry, he accidentally knocked over his clock.',
+    prompt: 'While Tom ___ up in a hurry, he accidentally knocked over his clock.',
     options: [
       { label: 'A', text: 'was waking', isCorrect: true },
       { label: 'B', text: 'is waking', isCorrect: false },
       { label: 'C', text: 'waked', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   },
   {
-    content_id: 'chk_h2_02',
-    text: 'Tom fell down ___ the floor was wet and slippery.',
-    prompt: 'Tom fell down ___ the floor was wet and slippery.',
+    id: 'chk_w33_04',
+    content_id: 'chk_w33_04',
+    text: 'Tom slipped and fell ___ the kitchen tile floor was wet.',
+    prompt: 'Tom slipped and fell ___ the kitchen tile floor was wet.',
     options: [
       { label: 'A', text: 'because', isCorrect: true },
       { label: 'B', text: 'although', isCorrect: false },
       { label: 'C', text: 'but', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   },
   {
-    content_id: 'chk_h2_03',
-    text: '___ Tom made a clumsy mistake, Mia helped him kindly.',
-    prompt: '___ Tom made a clumsy mistake, Mia helped him kindly.',
+    id: 'chk_w33_05',
+    content_id: 'chk_w33_05',
+    text: '___ Tom made a clumsy mistake, Mia helped him mop the puddle kindly.',
+    prompt: '___ Tom made a clumsy mistake, Mia helped him mop the puddle kindly.',
     options: [
       { label: 'A', text: 'Although', isCorrect: true },
       { label: 'B', text: 'Because', isCorrect: false },
       { label: 'C', text: 'So', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   },
   {
-    content_id: 'chk_h2_04',
-    text: 'He dropped a glass while he ___ breakfast in the kitchen.',
-    prompt: 'He dropped a glass while he ___ breakfast in the kitchen.',
+    id: 'chk_w33_06',
+    content_id: 'chk_w33_06',
+    text: 'He dropped a glass of juice while he ___ breakfast for his sister.',
+    prompt: 'He dropped a glass of juice while he ___ breakfast for his sister.',
     options: [
       { label: 'A', text: 'was making', isCorrect: true },
       { label: 'B', text: 'were making', isCorrect: false },
       { label: 'C', text: 'makes', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   },
   {
-    content_id: 'chk_h2_05',
-    text: 'Tom apologized immediately ___ he felt very sorry.',
-    prompt: 'Tom apologized immediately ___ he felt very sorry.',
+    id: 'chk_w33_07',
+    content_id: 'chk_w33_07',
+    text: 'Tom apologized to his mother immediately ___ he felt very sorry.',
+    prompt: 'Tom apologized to his mother immediately ___ he felt very sorry.',
     options: [
       { label: 'A', text: 'because', isCorrect: true },
       { label: 'B', text: 'although', isCorrect: false },
       { label: 'C', text: 'while', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   },
   {
-    content_id: 'chk_h2_06',
-    text: 'Mia found the backpack while she ___ the bus.',
-    prompt: 'Mia found the backpack while she ___ the bus.',
+    id: 'chk_w33_08',
+    content_id: 'chk_w33_08',
+    text: 'Mia found the blue backpack while she ___ the back row of seats.',
+    prompt: 'Mia found the blue backpack while she ___ the back row of seats.',
     options: [
       { label: 'A', text: 'was searching', isCorrect: true },
       { label: 'B', text: 'searches', isCorrect: false },
       { label: 'C', text: 'is search', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   },
   {
-    content_id: 'chk_h2_07',
-    text: 'Because Tom ran downstairs quickly, he ___ on the rug.',
-    prompt: 'Because Tom ran downstairs quickly, he ___ on the rug.',
+    id: 'chk_w33_09',
+    content_id: 'chk_w33_09',
+    text: 'Because Tom rushed downstairs too quickly, he ___ on the rug.',
+    prompt: 'Because Tom rushed downstairs too quickly, he ___ on the rug.',
     options: [
       { label: 'A', text: 'slipped', isCorrect: true },
       { label: 'B', text: 'slips', isCorrect: false },
       { label: 'C', text: 'was slip', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   },
   {
-    content_id: 'chk_h2_08',
-    text: '___ he lost his school bag, his friend found it.',
-    prompt: '___ he lost his school bag, his friend found it.',
-    options: [
-      { label: 'A', text: 'Although', isCorrect: true },
-      { label: 'B', text: 'Because', isCorrect: false },
-      { label: 'C', text: 'So', isCorrect: false }
-    ]
-  },
-  {
-    content_id: 'chk_h2_09',
-    text: 'They ___ the clock when the school bell rang.',
-    prompt: 'They ___ the clock when the school bell rang.',
-    options: [
-      { label: 'A', text: 'were fixing', isCorrect: true },
-      { label: 'B', text: 'was fixing', isCorrect: false },
-      { label: 'C', text: 'fixed', isCorrect: false }
-    ]
-  },
-  {
-    content_id: 'chk_h2_10',
-    text: 'Tom promised to be cautious ___ he could avoid future accidents.',
-    prompt: 'Tom promised to be cautious ___ he could avoid future accidents.',
+    id: 'chk_w33_10',
+    content_id: 'chk_w33_10',
+    text: 'Tom promised to be cautious ___ he could avoid future morning accidents.',
+    prompt: 'Tom promised to be cautious ___ he could avoid future morning accidents.',
     options: [
       { label: 'A', text: 'so', isCorrect: true },
       { label: 'B', text: 'because', isCorrect: false },
       { label: 'C', text: 'although', isCorrect: false }
-    ]
+    ],
+    answerIndex: 0
   }
 ];
 

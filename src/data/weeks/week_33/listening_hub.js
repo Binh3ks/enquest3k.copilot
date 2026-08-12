@@ -200,70 +200,129 @@ export const listeningHubData = {
     }
   ],
 
-  // 4. Array of 10 Check Mode Questions for Hub 2
+  // 4. Array of 10 Clean Cambridge Check Mode Exam Questions for Hub 2
   check_mode_drills: [
     {
-      id: "chk_dialogue_01",
-      content_id: "chk_dialogue_01",
+      id: "chk_w33_01",
+      content_id: "chk_w33_01",
       dialogue_context: "Tom: I accidentally broke my alarm clock this morning!",
-      prompt: "What does Mom say?",
-      text: "What does Mom say?",
+      text: "What should Mia reply?",
+      prompt: "What should Mia reply?",
       options: [
-        { label: "A", text: "Don't worry, it's just an accident.", isCorrect: true },
-        { label: "B", text: "Yes, I am waking up.", isCorrect: false },
-        { label: "C", text: "No, he didn't.", isCorrect: false }
+        { label: "A", text: "Don't worry, it was just a clumsy accident.", isCorrect: true },
+        { label: "B", text: "Yes, I am waking up right now.", isCorrect: false },
+        { label: "C", text: "No, he didn't call the bus driver.", isCorrect: false }
       ],
       answerIndex: 0
     },
     {
-      content_id: "chk_h2_01",
-      raw_content: { text_en: "While Tom was waking up, he broke his alarm clock.", grammar_tag: "past_continuous_when_while" },
-      answer_key: { valid_structures: [["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "alarm", "clock", "."]] }
+      id: "chk_w33_02",
+      content_id: "chk_w33_02",
+      dialogue_context: "Mia: Did you find your lost backpack on the school bus?",
+      text: "What should Tom reply?",
+      prompt: "What should Tom reply?",
+      options: [
+        { label: "A", text: "No, I am walking home.", isCorrect: false },
+        { label: "B", text: "Yes, thank you for helping me search!", isCorrect: true },
+        { label: "C", text: "I like riding the bus to school.", isCorrect: false }
+      ],
+      answerIndex: 1
     },
     {
-      content_id: "chk_h2_02",
-      raw_content: { text_en: "Tom fell down because the floor was wet.", grammar_tag: "clauses_of_reason" },
-      answer_key: { valid_structures: [["Tom", "fell", "down", "because", "the", "floor", "was", "wet", "."]] }
+      id: "chk_w33_03",
+      content_id: "chk_w33_03",
+      text: "While Tom ___ up in a hurry, he accidentally knocked over his clock.",
+      prompt: "While Tom ___ up in a hurry, he accidentally knocked over his clock.",
+      options: [
+        { label: "A", text: "was waking", isCorrect: true },
+        { label: "B", text: "is waking", isCorrect: false },
+        { label: "C", text: "waked", isCorrect: false }
+      ],
+      answerIndex: 0
     },
     {
-      content_id: "chk_h2_03",
-      raw_content: { text_en: "Although Tom made a mistake, Mia helped him.", grammar_tag: "connectors" },
-      answer_key: { valid_structures: [["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."]] }
+      id: "chk_w33_04",
+      content_id: "chk_w33_04",
+      text: "Tom slipped and fell ___ the kitchen tile floor was wet.",
+      prompt: "Tom slipped and fell ___ the kitchen tile floor was wet.",
+      options: [
+        { label: "A", text: "because", isCorrect: true },
+        { label: "B", text: "although", isCorrect: false },
+        { label: "C", text: "but", isCorrect: false }
+      ],
+      answerIndex: 0
     },
     {
-      content_id: "chk_h2_04",
-      raw_content: { text_en: "He dropped a glass while he was making breakfast.", grammar_tag: "past_continuous_when_while" },
-      answer_key: { valid_structures: [["He", "dropped", "a", "glass", "while", "he", "was", "making", "breakfast", "."]] }
+      id: "chk_w33_05",
+      content_id: "chk_w33_05",
+      text: "___ Tom made a clumsy mistake, Mia helped him mop the puddle kindly.",
+      prompt: "___ Tom made a clumsy mistake, Mia helped him mop the puddle kindly.",
+      options: [
+        { label: "A", text: "Although", isCorrect: true },
+        { label: "B", text: "Because", isCorrect: false },
+        { label: "C", text: "So", isCorrect: false }
+      ],
+      answerIndex: 0
     },
     {
-      content_id: "chk_h2_05",
-      raw_content: { text_en: "Tom apologized because he was clumsy in the morning.", grammar_tag: "clauses_of_reason" },
-      answer_key: { valid_structures: [["Tom", "apologized", "because", "he", "was", "clumsy", "in", "the", "morning", "."]] }
+      id: "chk_w33_06",
+      content_id: "chk_w33_06",
+      text: "He dropped a glass of juice while he ___ breakfast for his sister.",
+      prompt: "He dropped a glass of juice while he ___ breakfast for his sister.",
+      options: [
+        { label: "A", text: "was making", isCorrect: true },
+        { label: "B", text: "were making", isCorrect: false },
+        { label: "C", text: "makes", isCorrect: false }
+      ],
+      answerIndex: 0
     },
     {
-      content_id: "chk_h2_06",
-      raw_content: { text_en: "Mia found the backpack while she was searching the bus.", grammar_tag: "past_continuous_when_while" },
-      answer_key: { valid_structures: [["Mia", "found", "the", "backpack", "while", "she", "was", "searching", "the", "bus", "."]] }
+      id: "chk_w33_07",
+      content_id: "chk_w33_07",
+      text: "Tom apologized to his mother immediately ___ he felt very sorry.",
+      prompt: "Tom apologized to his mother immediately ___ he felt very sorry.",
+      options: [
+        { label: "A", text: "because", isCorrect: true },
+        { label: "B", text: "although", isCorrect: false },
+        { label: "C", text: "while", isCorrect: false }
+      ],
+      answerIndex: 0
     },
     {
-      content_id: "chk_h2_07",
-      raw_content: { text_en: "Because Tom ran downstairs quickly, he slipped on the rug.", grammar_tag: "clauses_of_reason" },
-      answer_key: { valid_structures: [["Because", "Tom", "ran", "downstairs", "quickly", ",", "he", "slipped", "on", "the", "rug", "."]] }
+      id: "chk_w33_08",
+      content_id: "chk_w33_08",
+      text: "Mia found the blue backpack while she ___ the back row of seats.",
+      prompt: "Mia found the blue backpack while she ___ the back row of seats.",
+      options: [
+        { label: "A", text: "was searching", isCorrect: true },
+        { label: "B", text: "searches", isCorrect: false },
+        { label: "C", text: "is search", isCorrect: false }
+      ],
+      answerIndex: 0
     },
     {
-      content_id: "chk_h2_08",
-      raw_content: { text_en: "Although he lost his bag, his friend brought it to class.", grammar_tag: "connectors" },
-      answer_key: { valid_structures: [["Although", "he", "lost", "his", "bag", ",", "his", "friend", "brought", "it", "to", "class", "."]] }
+      id: "chk_w33_09",
+      content_id: "chk_w33_09",
+      text: "Because Tom rushed downstairs too quickly, he ___ on the rug.",
+      prompt: "Because Tom rushed downstairs too quickly, he ___ on the rug.",
+      options: [
+        { label: "A", text: "slipped", isCorrect: true },
+        { label: "B", text: "slips", isCorrect: false },
+        { label: "C", text: "was slip", isCorrect: false }
+      ],
+      answerIndex: 0
     },
     {
-      content_id: "chk_h2_09",
-      raw_content: { text_en: "They were fixing the clock when the school bell rang.", grammar_tag: "past_continuous_when_while" },
-      answer_key: { valid_structures: [["They", "were", "fixing", "the", "clock", "when", "the", "school", "bell", "rang", "."]] }
-    },
-    {
-      content_id: "chk_h2_10",
-      raw_content: { text_en: "Tom promised to be cautious so he could avoid future accidents.", grammar_tag: "connectors" },
-      answer_key: { valid_structures: [["Tom", "promised", "to", "be", "cautious", "so", "he", "could", "avoid", "future", "accidents", "."]] }
+      id: "chk_w33_10",
+      content_id: "chk_w33_10",
+      text: "Tom promised to be cautious ___ he could avoid future morning accidents.",
+      prompt: "Tom promised to be cautious ___ he could avoid future morning accidents.",
+      options: [
+        { label: "A", text: "so", isCorrect: true },
+        { label: "B", text: "because", isCorrect: false },
+        { label: "C", text: "although", isCorrect: false }
+      ],
+      answerIndex: 0
     }
   ]
 };
