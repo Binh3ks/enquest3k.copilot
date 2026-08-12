@@ -16,18 +16,50 @@ const apiClient = axios.create({
   //   here would force that, breaking multer file parsing on the server.
 });
 
-// Use an interceptor to dynamically set the Authorization header for every request.
-// This is the single source of truth for auth tokens.
+// ─── Circuit Breaker for Offline / CORS-blocked Backend ───────────────
+let backendOfflineUntil = 0;
+const CIRCUIT_BREAKER_COOLDOWN_MS = 60_000; // 60 seconds
+
+export function isBackendAvailable() {
+  return Date.now() > backendOfflineUntil;
+}
+
+export function tripCircuitBreaker(reason) {
+  if (isBackendAvailable()) {
+    console.warn(`[API] Backend unreachable or CORS blocked (${reason}). Circuit breaker OPEN for 60s.`);
+  }
+  backendOfflineUntil = Date.now() + CIRCUIT_BREAKER_COOLDOWN_MS;
+}
+
+// Request Interceptor: check circuit breaker before attempting requests
 apiClient.interceptors.request.use(
   (config) => {
-    // Read token via lazy getter (avoids circular import with useUserStore)
+    if (!isBackendAvailable() && !config.bypassCircuitBreaker) {
+      return Promise.reject(new axios.Cancel('Circuit breaker OPEN: backend unreachable / CORS blocked'));
+    }
     const token = _getToken?.();
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
     }
     return config;
   },
+  (error) => Promise.reject(error)
+);
+
+// Response Interceptor: trip circuit breaker on Network Error or CORS failure
+apiClient.interceptors.response.use(
+  (response) => {
+    backendOfflineUntil = 0;
+    return response;
+  },
   (error) => {
+    if (axios.isCancel(error)) {
+      return Promise.reject(error);
+    }
+    const isNetworkError = error?.message === 'Network Error' || error?.code === 'ERR_NETWORK' || !error?.response;
+    if (isNetworkError) {
+      tripCircuitBreaker(error?.message || 'Network Error');
+    }
     return Promise.reject(error);
   }
 );
