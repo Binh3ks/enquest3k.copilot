@@ -3,7 +3,7 @@ import { learnerProgressService } from '../../../../services/learnerProgressServ
 import { useUserStore } from '../../../../stores/useUserStore';
 import HoverWord from '../../../../components/common/HoverWord';
 import { speakText } from '../../../../utils/AudioHelper';
-import { CheckCircle2, ArrowRight, RefreshCw, FileText } from 'lucide-react';
+import { CheckCircle2, ArrowRight, RefreshCw, FileText, XCircle } from 'lucide-react';
 
 const renderParsedText = (text, themeColor = 'indigo') => {
   if (!text) return null;
@@ -24,47 +24,25 @@ const renderParsedText = (text, themeColor = 'indigo') => {
         />
       );
     } else {
-      let currentWord = '';
-      let currentNonWord = '';
-
-      for (let i = 0; i < segment.length; i++) {
-        const char = segment[i];
-        if (/[\w'-]/.test(char)) {
-          if (currentNonWord) {
-            parts.push(<span key={key++}>{currentNonWord}</span>);
-            currentNonWord = '';
-          }
-          currentWord += char;
+      const words = segment.split(/(\s+)/);
+      words.forEach((w) => {
+        const cleanWord = w.replace(/[^a-zA-Z]/g, '');
+        if (cleanWord.length > 2) {
+          parts.push(
+            <HoverWord
+              key={key++}
+              word={cleanWord}
+              themeColor={themeColor}
+              onSpeak={(wordToSpeak) => speakText(wordToSpeak, null, 1.0, null, 'grammar', 33, 'advanced')}
+              tier={3}
+            >
+              {w}
+            </HoverWord>
+          );
         } else {
-          if (currentWord) {
-            parts.push(
-              <HoverWord
-                key={key++}
-                word={currentWord}
-                themeColor={themeColor}
-                onSpeak={(w) => speakText(w, null, 1.0, null, 'grammar', 33, 'advanced')}
-                tier={3}
-              />
-            );
-            currentWord = '';
-          }
-          currentNonWord += char;
+          parts.push(<span key={key++}>{w}</span>);
         }
-      }
-      if (currentWord) {
-        parts.push(
-          <HoverWord
-            key={key++}
-            word={currentWord}
-            themeColor={themeColor}
-            onSpeak={(w) => speakText(w, null, 1.0, null, 'grammar', 33, 'advanced')}
-            tier={3}
-          />
-        );
-      }
-      if (currentNonWord) {
-        parts.push(<span key={key++}>{currentNonWord}</span>);
-      }
+      });
     }
   }
 
@@ -207,16 +185,27 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
   const [questions] = useState(FALLBACK_CHECK_QUESTIONS);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [submittedQuestions, setSubmittedQuestions] = useState({});
   const [isCompleted, setIsCompleted] = useState(false);
   const [resultsSummary, setResultsSummary] = useState(null);
   const [startTime] = useState(Date.now());
 
   const currentQ = questions[currentIndex] || questions[0];
+  const isSubmitted = !!submittedQuestions[currentQ.content_id];
 
   const handleSelectOption = (opt) => {
+    if (isSubmitted) return;
     setSelectedAnswers((prev) => ({
       ...prev,
       [currentQ.content_id]: opt
+    }));
+  };
+
+  const handleCheckAnswer = () => {
+    if (!selectedAnswers[currentQ.content_id]) return;
+    setSubmittedQuestions((prev) => ({
+      ...prev,
+      [currentQ.content_id]: true
     }));
   };
 
@@ -292,6 +281,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
             setIsCompleted(false);
             setCurrentIndex(0);
             setSelectedAnswers({});
+            setSubmittedQuestions({});
           }}
           className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-base transition flex items-center justify-center gap-2 shadow-md"
         >
@@ -319,7 +309,6 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
       </div>
 
       {currentQ.dialogue_context ? (
-        /* LUỒNG A: CAMBRIDGE READING PART 2 - DIALOGUE RESPONSE (SPEECH BUBBLE) */
         <div className="space-y-4 mb-6">
           <div className="flex items-start gap-3 bg-amber-50/90 p-4 rounded-2xl border border-amber-200 shadow-sm relative">
             <div className="w-10 h-10 rounded-full bg-amber-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm">
@@ -345,7 +334,6 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
           </div>
         </div>
       ) : (
-        /* LUỒNG B: STANDARD GRAMMAR GAP-FILL */
         <div className="bg-indigo-50/70 p-4 rounded-2xl border border-indigo-100 mb-6">
           <p className="text-xs font-black text-indigo-700 mb-1 uppercase tracking-wide">
             CHOOSE THE CORRECT WORD TO FILL IN THE BLANK:
@@ -357,25 +345,53 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
       )}
 
       <div className="space-y-3 mb-8">
-        {currentQ.options.map((opt) => {
+        {currentQ.options.map((opt, optIdx) => {
           const isSelected = currentSelection && currentSelection.label === opt.label;
+          const isCorrect = opt.isCorrect || (currentQ.answerIndex !== undefined && optIdx === currentQ.answerIndex);
+
+          let buttonStyle = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800';
+          let badgeStyle = 'bg-slate-200 text-slate-700';
+
+          if (isSubmitted) {
+            if (isCorrect) {
+              buttonStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-400 shadow-sm';
+              badgeStyle = 'bg-emerald-600 text-white';
+            } else if (isSelected && !isCorrect) {
+              buttonStyle = 'border-rose-500 bg-rose-50 text-rose-950 font-bold ring-2 ring-rose-400 shadow-sm';
+              badgeStyle = 'bg-rose-600 text-white';
+            } else {
+              buttonStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
+              badgeStyle = 'bg-slate-200 text-slate-400';
+            }
+          } else if (isSelected) {
+            buttonStyle = 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm';
+            badgeStyle = 'bg-indigo-600 text-white';
+          }
 
           return (
             <button
               key={opt.label}
+              disabled={isSubmitted}
               onClick={() => handleSelectOption(opt)}
-              className={`w-full p-4 rounded-xl text-left border transition-all flex items-center gap-4 ${
-                isSelected
-                  ? 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm'
-                  : 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800'
-              }`}
+              className={`w-full p-4 rounded-xl text-left border transition-all flex items-center justify-between gap-4 ${buttonStyle}`}
             >
-              <span className={`w-7 h-7 rounded-full font-black flex items-center justify-center text-xs shrink-0 ${
-                isSelected ? 'bg-indigo-600 text-white' : 'bg-slate-200 text-slate-700'
-              }`}>
-                {opt.label}
-              </span>
-              <span className="text-sm font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
+              <div className="flex items-center gap-4 flex-1">
+                <span className={`w-7 h-7 rounded-full font-black flex items-center justify-center text-xs shrink-0 ${badgeStyle}`}>
+                  {opt.label}
+                </span>
+                <span className="text-sm font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
+              </div>
+
+              {isSubmitted && isCorrect && (
+                <span className="flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-700 font-extrabold text-xs rounded-full shrink-0">
+                  <CheckCircle2 size={16} /> Correct
+                </span>
+              )}
+              {isSubmitted && isSelected && !isCorrect && (
+                <span className="flex items-center gap-1.5 px-3 py-1 bg-rose-100 text-rose-700 font-extrabold text-xs rounded-full shrink-0">
+                  <XCircle size={16} /> Incorrect
+                </span>
+              )}
             </button>
           );
         })}
@@ -390,13 +406,20 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
           ← Previous
         </button>
 
-        {currentIndex === questions.length - 1 ? (
+        {!isSubmitted ? (
           <button
-            onClick={handleSubmitExam}
-            disabled={Object.keys(selectedAnswers).length < questions.length}
+            onClick={handleCheckAnswer}
+            disabled={!currentSelection}
             className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-lg text-xs transition flex items-center gap-2 shadow-md disabled:opacity-50"
           >
-            <CheckCircle2 size={16} /> Submit Exam
+            <CheckCircle2 size={16} /> Check Answer
+          </button>
+        ) : currentIndex === questions.length - 1 ? (
+          <button
+            onClick={handleSubmitExam}
+            className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-lg text-xs transition flex items-center gap-2 shadow-md"
+          >
+            <CheckCircle2 size={16} /> Finish Exam & View Results
           </button>
         ) : (
           <button
