@@ -73,6 +73,32 @@ const renderParsedText = (text, themeColor = 'indigo') => {
 
 const FALLBACK_CHECK_QUESTIONS = [
   {
+    id: 'chk_d01',
+    content_id: 'chk_d01',
+    dialogue_context: 'Tom: I accidentally broke my alarm clock this morning!',
+    text: 'What should Mia reply?',
+    prompt: 'What should Mia reply?',
+    options: [
+      { label: 'A', text: "Don't worry, it's just an accident.", isCorrect: true },
+      { label: 'B', text: 'I am waking up.', isCorrect: false },
+      { label: 'C', text: 'Yes, it is.', isCorrect: false }
+    ],
+    answerIndex: 0
+  },
+  {
+    id: 'chk_d02',
+    content_id: 'chk_d02',
+    dialogue_context: 'Mia: Did you find your lost backpack on the bus?',
+    text: 'What should Tom reply?',
+    prompt: 'What should Tom reply?',
+    options: [
+      { label: 'A', text: 'No, I am going home.', isCorrect: false },
+      { label: 'B', text: 'Yes, thank you for helping me!', isCorrect: true },
+      { label: 'C', text: 'I like riding the bus.', isCorrect: false }
+    ],
+    answerIndex: 1
+  },
+  {
     content_id: 'chk_h2_01',
     text: 'While Tom ___ up, he accidentally broke his alarm clock.',
     prompt: 'While Tom ___ up, he accidentally broke his alarm clock.',
@@ -170,28 +196,6 @@ const FALLBACK_CHECK_QUESTIONS = [
       { label: 'A', text: 'so', isCorrect: true },
       { label: 'B', text: 'because', isCorrect: false },
       { label: 'C', text: 'although', isCorrect: false }
-    ]
-  },
-  {
-    content_id: 'chk_d01',
-    dialogue_context: 'Tom: I accidentally broke my alarm clock this morning!',
-    text: 'What should Mia reply?',
-    prompt: 'What should Mia reply?',
-    options: [
-      { label: 'A', text: "Don't worry, it's just an accident.", isCorrect: true },
-      { label: 'B', text: 'I am waking up.', isCorrect: false },
-      { label: 'C', text: 'Yes, it is.', isCorrect: false }
-    ]
-  },
-  {
-    content_id: 'chk_d02',
-    dialogue_context: 'Mia: Did you find your lost backpack on the bus?',
-    text: 'What should Tom reply?',
-    prompt: 'What should Tom reply?',
-    options: [
-      { label: 'A', text: 'No, I am going home.', isCorrect: false },
-      { label: 'B', text: 'Yes, thank you for helping me!', isCorrect: true },
-      { label: 'C', text: 'I like riding the bus.', isCorrect: false }
     ]
   }
 ];

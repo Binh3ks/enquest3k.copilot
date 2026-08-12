@@ -203,6 +203,19 @@ export const listeningHubData = {
   // 4. Array of 10 Check Mode Questions for Hub 2
   check_mode_drills: [
     {
+      id: "chk_dialogue_01",
+      content_id: "chk_dialogue_01",
+      dialogue_context: "Tom: I accidentally broke my alarm clock this morning!",
+      prompt: "What does Mom say?",
+      text: "What does Mom say?",
+      options: [
+        { label: "A", text: "Don't worry, it's just an accident.", isCorrect: true },
+        { label: "B", text: "Yes, I am waking up.", isCorrect: false },
+        { label: "C", text: "No, he didn't.", isCorrect: false }
+      ],
+      answerIndex: 0
+    },
+    {
       content_id: "chk_h2_01",
       raw_content: { text_en: "While Tom was waking up, he broke his alarm clock.", grammar_tag: "past_continuous_when_while" },
       answer_key: { valid_structures: [["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "alarm", "clock", "."]] }
