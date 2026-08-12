@@ -395,7 +395,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                       <Sparkles size={18} className="text-amber-500" /> {currentFrame.title_en}
                     </h3>
                     <span className="text-xs font-bold text-slate-400 font-mono">
-                      Frame {activeFrameIndex + 1} of {storyFrames.length}
+                      Frame {activeFrameIndex + 1} of {storyScenes.length}
                     </span>
                   </div>
                   <div className="text-sm font-bold text-slate-700 leading-relaxed">
@@ -418,10 +418,10 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                   </div>
 
                   <button
-                    onClick={() => handleHotspotClick(selectedHotspot)}
-                    className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs rounded-xl transition shadow-sm flex items-center gap-1.5"
+                    onClick={() => setSelectedHotspot(null)}
+                    className="p-2 text-slate-400 hover:text-slate-600 rounded-lg transition"
                   >
-                    <Volume2 size={14} /> Replay TTS
+                    <X size={16} />
                   </button>
                 </div>
               )}
@@ -430,7 +430,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
               <div className="space-y-3">
                 <div className="text-xs font-black text-slate-400 uppercase tracking-wider">Select Webtoon Scene:</div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-                  {storyFrames.map((frame, idx) => (
+                  {storyScenes.map((frame, idx) => (
                     <button
                       key={frame.scene_id}
                       onClick={() => { setActiveFrameIndex(idx); setSelectedHotspot(null); }}
