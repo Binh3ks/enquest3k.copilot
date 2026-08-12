@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
-import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
 import { Mic, MicOff, Volume2, Radio, Star, AlertTriangle, MessageSquare, Layers, BookOpen, Info } from 'lucide-react';
 
@@ -228,7 +227,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 shadowingPhase === 1 ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <Layers size={14} /> {renderParsedText("Phase 1: 5 Single Sentences", 'indigo')}
+              <Layers size={14} /> Phase 1: 5 Single Sentences
             </button>
             <button
               onClick={() => setShadowingPhase(2)}
@@ -236,7 +235,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 shadowingPhase === 2 ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <BookOpen size={14} /> {renderParsedText("Phase 2: Continuous Story Intonation", 'indigo')}
+              <BookOpen size={14} /> Phase 2: Continuous Story Intonation
             </button>
           </div>
 
@@ -258,7 +257,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                       </span>
                     </div>
                     <p className="text-sm font-extrabold text-slate-900 leading-relaxed">
-                      {renderParsedText(turn.text, 'indigo')}
+                      {turn.text}
                     </p>
                     {turn.phonetic_guide && (
                       <p className="text-[11px] font-mono text-slate-400 font-medium">
@@ -281,7 +280,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             /* Phase 2: Continuous Story Intonation Shadowing */
             <div className="p-6 bg-indigo-50 rounded-3xl border border-indigo-200 space-y-4 shadow-sm">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-black text-indigo-950">{renderParsedText(longParagraph.title, 'indigo')}</h3>
+                <h3 className="text-lg font-black text-indigo-950">{longParagraph.title}</h3>
                 <button
                   onClick={() => handlePlaySentence(longParagraph.text)}
                   className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-md"
@@ -290,7 +289,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 </button>
               </div>
               <p className="text-base font-extrabold text-indigo-950 leading-relaxed p-4 bg-white rounded-2xl border border-indigo-100 shadow-inner">
-                {renderParsedText(longParagraph.text, 'indigo')}
+                {longParagraph.text}
               </p>
               <p className="text-xs font-mono text-indigo-700 italic">{longParagraph.phonetic_guide}</p>
             </div>
@@ -346,7 +345,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                   <div className="text-[9px] font-black uppercase mb-1 opacity-75">
                     {msg.sender === 'user' ? 'You' : 'Nova AI Examiner'}
                   </div>
-                  {renderParsedText(msg.text, msg.sender === 'user' ? 'indigo' : 'purple')}
+                  {msg.text}
                 </div>
               </div>
             ))}

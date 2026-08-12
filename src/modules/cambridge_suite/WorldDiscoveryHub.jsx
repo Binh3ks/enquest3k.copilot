@@ -525,7 +525,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
 
               {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs (Boosted Typography: text-lg sm:text-xl font-bold leading-loose) */}
               <div className="p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm leading-loose sm:leading-extraloose text-lg sm:text-xl font-bold text-slate-900 space-y-2">
-                {renderParsedText("Tom had a very bad morning today. First, he **accidentally** ")}{' '}
+                {renderParsedText("Tom had a very bad morning today. First, he accidentally ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -571,7 +571,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[2] || '[ Blank 2 ]'}
                   </button>
                 )}
-                {renderParsedText(". Then, he **rushed downstairs** and **slipped** on a wet ")}{' '}
+                {renderParsedText(". Then, he **rushed downstairs** and slipped on a wet ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -617,7 +617,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[4] || '[ Blank 4 ]'}
                   </button>
                 )}{' '}
-                {renderParsedText("his **backpack** on the bus! His mother told him not to worry, but Tom promised to be more ")}{' '}
+                {renderParsedText("his backpack on the bus! His mother told him not to worry, but Tom promised to be more ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"

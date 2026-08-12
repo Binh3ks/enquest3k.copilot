@@ -31,21 +31,21 @@ export const readingHubData = {
         id: "r3_q01",
         question: "When Tom's alarm clock rang, he was feeling clumsy and...",
         options: [
-          { label: "A", text: "accidentally knocked it off the table.", isCorrect: true },
-          { label: "B", text: "threw it out of the window.", isCorrect: false },
+          { label: "A", text: "threw it out of the window.", isCorrect: false },
+          { label: "B", text: "accidentally knocked it off the table.", isCorrect: true },
           { label: "C", text: "went back to sleep immediately.", isCorrect: false }
         ],
-        answerIndex: 0
+        answerIndex: 1
       },
       {
         id: "r3_q02",
         question: "While Tom was rushing downstairs for breakfast, he...",
         options: [
-          { label: "A", text: "slipped on a wet puddle on the floor.", isCorrect: true },
-          { label: "B", text: "met his friends outside the house.", isCorrect: false },
-          { label: "C", text: "dropped his backpack on the stairs.", isCorrect: false }
+          { label: "A", text: "met his friends outside the house.", isCorrect: false },
+          { label: "B", text: "dropped his backpack on the stairs.", isCorrect: false },
+          { label: "C", text: "slipped on a wet puddle on the floor.", isCorrect: true }
         ],
-        answerIndex: 0
+        answerIndex: 2
       },
       {
         id: "r3_q03",
@@ -61,21 +61,21 @@ export const readingHubData = {
         id: "r3_q04",
         question: "When Tom's sister, Mia, saw the mess, she...",
         options: [
-          { label: "A", text: "helped him clean the wet floor.", isCorrect: true },
-          { label: "B", text: "laughed at him because he was clumsy.", isCorrect: false },
-          { label: "C", text: "called the school bus driver.", isCorrect: false }
+          { label: "A", text: "laughed at him because he was clumsy.", isCorrect: false },
+          { label: "B", text: "called the school bus driver.", isCorrect: false },
+          { label: "C", text: "helped him clean the wet floor.", isCorrect: true }
         ],
-        answerIndex: 0
+        answerIndex: 2
       },
       {
         id: "r3_q05",
         question: "After everything that happened, Tom promised his mother that...",
         options: [
-          { label: "A", text: "he would be more careful next time.", isCorrect: true },
-          { label: "B", text: "he would never drink juice again.", isCorrect: false },
+          { label: "A", text: "he would never drink juice again.", isCorrect: false },
+          { label: "B", text: "he would be more careful next time.", isCorrect: true },
           { label: "C", text: "he would buy a new alarm clock.", isCorrect: false }
         ],
-        answerIndex: 0
+        answerIndex: 1
       }
     ]
   },

@@ -291,13 +291,13 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2, chil
 
   // ────────── Tiered Bolding Styling (Chunks vs Core Words) ──────────
   const isChunk = isPhrase || tier === 1;
-  const chunkClass = `font-black text-${themeColor}-800 underline decoration-${themeColor}-300 decoration-dashed cursor-pointer bg-${themeColor}-50 px-1 rounded shadow-sm hover:bg-${themeColor}-100 transition-all`;
-  const singleWordClass = `font-semibold text-${themeColor}-600 hover:bg-${themeColor}-50/50 cursor-pointer rounded px-0.5 transition-all`;
-  const plainWordClass = `font-normal text-slate-700 hover:text-${themeColor}-600 hover:bg-${themeColor}-50/30 cursor-pointer rounded px-0.5 transition-all`;
+  const chunkClass = `font-black text-indigo-950 border-b-2 border-slate-300 pb-[1px] hover:border-indigo-400 cursor-pointer transition-all`;
+  const singleWordClass = `font-semibold text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/50 cursor-pointer rounded px-0.5 transition-all`;
+  const plainWordClass = `font-medium text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/30 cursor-pointer rounded px-0.5 transition-all`;
 
   const baseClass = isChunk ? chunkClass : tier <= 2 ? singleWordClass : plainWordClass;
   const baseClass2 = `cursor-pointer transition-colors`;
-  const idleClass = isChunk ? 'bg-indigo-50/80' : '';
+  const idleClass = '';
   const activeClass = `bg-${themeColor}-100 ring-2 ring-${themeColor}-200`;
 
   return (
