@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BarModelSVG } from '../components/BarModelSVG';
 import { evaluateBarModelAnswer } from '../../../../utils/barModelEvaluator';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, Sparkles, HelpCircle } from 'lucide-react';
 
 const WEEK33_BAR_QUESTIONS = [
@@ -143,7 +144,7 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
 
       {/* Problem Statement Card */}
       <div className="p-4 bg-indigo-50/70 rounded-2xl border border-indigo-100 mb-6 shadow-sm">
-        <p className="text-sm font-bold text-indigo-950 leading-relaxed">{currentQ.problemText}</p>
+        <p className="text-sm font-bold text-indigo-950 leading-relaxed">{renderParsedText(currentQ.problemText, 'indigo')}</p>
       </div>
 
       {/* Bar Model SVG Rendering Component */}

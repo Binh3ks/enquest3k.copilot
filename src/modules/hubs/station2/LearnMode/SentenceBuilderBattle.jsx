@@ -12,6 +12,7 @@ import { SortableContext, horizontalListSortingStrategy, arrayMove } from '@dnd-
 import { WordBlock } from '../components/WordBlock';
 import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngine';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight } from 'lucide-react';
 
 const WEEK33_GRAMMAR_DRILLS = [
@@ -208,7 +209,7 @@ export function SentenceBuilderBattle({ customItem, customDrills, onNext, onTrig
             LEARN MODE — SENTENCE BUILDER BATTLE
           </span>
           <h3 className="text-lg font-black text-slate-900 mt-0.5">
-            {currentDrill.text_en || currentDrill.text || 'Build the target sentence'}
+            {renderParsedText(currentDrill.text_en || currentDrill.text || 'Build the target sentence', 'indigo')}
           </h3>
         </div>
         <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">

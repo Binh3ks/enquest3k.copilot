@@ -38,6 +38,11 @@ const week33DictItems = [
   { word: "mistake", meaning: "sai lầm / lỗi", pronounce: "/mɪˈsteɪk/", example: "Everyone makes a clumsy mistake sometimes." },
   { word: "accident", meaning: "sự cố / tai nạn", pronounce: "/ˈæk.sɪ.dənt/", example: "It was just an accident in the morning." },
   { word: "careless", meaning: "bất cẩn", pronounce: "/ˈkɛr.ləs/", example: "Don't be careless with glass." },
+  { word: "accidentally", meaning: "vô tình / tình cờ", pronounce: "/ˌæk.səˈden.t̬əl.i/", example: "He accidentally broke his alarm clock." },
+  { word: "clumsily", meaning: "một cách vụng về", pronounce: "/ˈklʌm.zə.li/", example: "Tom reached clumsily for his glasses." },
+  { word: "woke", meaning: "đã thức dậy", pronounce: "/woʊk/", example: "Tom woke up late in the morning." },
+  { word: "rushed", meaning: "đã vội vã / lao đi", pronounce: "/rʌʃt/", example: "He rushed downstairs in a hurry." },
+  { word: "damaged", meaning: "đã làm hư hại / hỏng", pronounce: "/ˈdæm.ɪdʒd/", example: "The spilled liquid damaged his notebook." },
   // 10 Lexical Chunks
   { word: "broke an alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk ən əˈlɑːrm klɑːk/", example: "He accidentally broke an alarm clock." },
   { word: "broke his alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk hɪz əˈlɑːrm klɑːk/", example: "He accidentally broke his alarm clock." },
@@ -65,6 +70,92 @@ const week33Map = Object.fromEntries(
 );
 
 const dictMap = { ...baseDict, ...week33Map };
+
+/**
+ * Universal Length-Descending Text & Chunk Parser
+ */
+export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
+  if (!text) return null;
+
+  // Step 1: Filter phrases containing spaces and SORT BY LENGTH DESCENDING (b.length - a.length)
+  const sortedPhrases = Object.keys(dictMap)
+    .filter((k) => k.includes(' '))
+    .sort((a, b) => b.length - a.length);
+
+  // Step 2: Build master regex for markdown bold **...** OR multi-word phrases
+  const escapedPhrases = sortedPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const masterRegex = new RegExp(`(\\calc\\*\\*.*?\\*\\*|${escapedPhrases.join('|')})`, 'gi');
+
+  // Step 3: Parse text segments
+  const segments = text.split(masterRegex);
+  let key = 0;
+  const parts = [];
+
+  for (const segment of segments) {
+    if (!segment) continue;
+
+    const cleanSegment = segment.replace(/\*\*/g, '').trim().toLowerCase();
+    const isMarkdownBold = segment.startsWith('**') && segment.endsWith('**');
+    const isMatchedPhrase = sortedPhrases.includes(cleanSegment);
+
+    if (isMarkdownBold || isMatchedPhrase) {
+      const phraseWord = segment.replace(/\*\*/g, '').trim();
+      parts.push(
+        <HoverWord
+          key={key++}
+          word={phraseWord}
+          themeColor={themeColor}
+          onSpeak={onSpeak}
+          tier={1}
+        />
+      );
+    } else {
+      let currentWord = '';
+      let currentNonWord = '';
+
+      for (let i = 0; i < segment.length; i++) {
+        const char = segment[i];
+        if (/[\w'-]/.test(char)) {
+          if (currentNonWord) {
+            parts.push(<span key={key++}>{currentNonWord}</span>);
+            currentNonWord = '';
+          }
+          currentWord += char;
+        } else {
+          if (currentWord) {
+            parts.push(
+              <HoverWord
+                key={key++}
+                word={currentWord}
+                themeColor={themeColor}
+                onSpeak={onSpeak}
+                tier={3}
+              />
+            );
+            currentWord = '';
+          }
+          currentNonWord += char;
+        }
+      }
+      if (currentWord) {
+        parts.push(
+          <HoverWord
+            key={key++}
+            word={currentWord}
+            themeColor={themeColor}
+            onSpeak={onSpeak}
+            tier={3}
+          />
+        );
+      }
+      if (currentNonWord) {
+        parts.push(<span key={key++}>{currentNonWord}</span>);
+      }
+    }
+  }
+
+  return parts;
+}
 
 // Look up a word/phrase in dictionary (handles plurals + past tense)
 const lookupDict = (raw) => {

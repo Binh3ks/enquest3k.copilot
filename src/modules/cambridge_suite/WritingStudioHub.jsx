@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import { renderParsedText } from '../../components/common/HoverWord';
 import { PenTool, Sparkles, AlertTriangle, Layers, Film, HelpCircle, X, Info } from 'lucide-react';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
@@ -124,7 +125,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
               </span>
             </div>
 
-            <h4 className="text-xs font-black text-slate-900 mb-1">{panel.title_en}</h4>
+            <h4 className="text-xs font-black text-slate-900 mb-1">{renderParsedText(panel.title_en, 'purple')}</h4>
           </div>
         ))}
       </div>
