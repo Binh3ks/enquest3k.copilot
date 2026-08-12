@@ -12,15 +12,30 @@ export const readingHubData = {
   interactive_story: {
     mode: "open_cloze",
     title: "Interactive Story: Tom's Clumsy Morning",
-    text_template: "Tom had a very bad morning today. First, he accidentally ____1____ his alarm clock because he was feeling ____2____. Then, he rushed downstairs and slipped on a wet ____3____ on the kitchen floor. To make things worse, he ____4____ his backpack on the bus! His mother told him not to worry, but Tom promised to be more ____5____ next time.",
+    text_template: "Tom **woke up in a hurry** today. First, he **felt extremely clumsy** when he ____1____ his alarm clock off the table. Then, he ____2____ to have breakfast and ____3____ on the kitchen floor. ____4____, he **spilled a glass of juice** over his English notebook! Fortunately, his sister Mia helped him **cleaned up the mess**. After that, Tom ____5____ and **promised to be more careful** next time.",
     gaps: [
-      { id: 1, target: "broke", hint: "past of break" },
-      { id: 2, target: "clumsy", hint: "moving awkwardly" },
-      { id: 3, target: "puddle", hint: "small pool of liquid" },
-      { id: 4, target: "lost", hint: "past of lose" },
-      { id: 5, target: "careful", hint: "paying attention to avoid mistakes" }
+      { id: 1, target: "accidentally knocked over", hint: "vô tình làm đổ", hint_vi: "vô tình làm đổ" },
+      { id: 2, target: "rushed downstairs", hint: "chạy vội xuống lầu", hint_vi: "chạy vội xuống lầu" },
+      { id: 3, target: "slipped on a wet puddle", hint: "trượt chân trên vũng nước ướt", hint_vi: "trượt chân trên vũng nước ướt" },
+      { id: 4, target: "to make things worse", hint: "tồi tệ hơn nữa", hint_vi: "tồi tệ hơn nữa" },
+      { id: 5, target: "apologized to his mother", hint: "xin lỗi mẹ", hint_vi: "xin lỗi mẹ" }
     ],
-    word_bank: ["broke", "clumsy", "puddle", "lost", "careful", "spilled", "dropped"]
+    hints: {
+      1: "vô tình làm đổ",
+      2: "chạy vội xuống lầu",
+      3: "trượt chân trên vũng nước ướt",
+      4: "tồi tệ hơn nữa",
+      5: "xin lỗi mẹ"
+    },
+    word_bank: [
+      "accidentally knocked over",
+      "rushed downstairs",
+      "slipped on a wet puddle",
+      "to make things worse",
+      "apologized to his mother",
+      "spilled a glass of juice",
+      "cleaned up the mess"
+    ]
   },
 
   // Cambridge Flyers Reading Part 3 — 5 Sentence Completion Questions (A/B/C)
@@ -29,17 +44,17 @@ export const readingHubData = {
     questions: [
       {
         id: "r3_q01",
-        question: "When Tom's alarm clock rang, he was feeling clumsy and...",
+        question: "When Tom woke up in a hurry, he felt extremely clumsy and...",
         options: [
-          { label: "A", text: "threw it out of the window.", isCorrect: false },
-          { label: "B", text: "accidentally knocked it off the table.", isCorrect: true },
+          { label: "A", text: "threw his clock out of the window.", isCorrect: false },
+          { label: "B", text: "accidentally knocked over his alarm clock.", isCorrect: true },
           { label: "C", text: "went back to sleep immediately.", isCorrect: false }
         ],
         answerIndex: 1
       },
       {
         id: "r3_q02",
-        question: "While Tom was rushing downstairs for breakfast, he...",
+        question: "While Tom rushed downstairs for breakfast, he...",
         options: [
           { label: "A", text: "met his friends outside the house.", isCorrect: false },
           { label: "B", text: "dropped his backpack on the stairs.", isCorrect: false },
@@ -49,9 +64,9 @@ export const readingHubData = {
       },
       {
         id: "r3_q03",
-        question: "To make his morning even worse, Tom...",
+        question: "To make things worse during breakfast, Tom...",
         options: [
-          { label: "A", text: "spilled his glass of juice over his English notebook.", isCorrect: true },
+          { label: "A", text: "spilled a glass of juice over his notebook.", isCorrect: true },
           { label: "B", text: "lost his shoes under the kitchen table.", isCorrect: false },
           { label: "C", text: "broke another alarm clock.", isCorrect: false }
         ],
@@ -59,21 +74,21 @@ export const readingHubData = {
       },
       {
         id: "r3_q04",
-        question: "When Tom's sister, Mia, saw the mess, she...",
+        question: "When Tom's sister, Mia, saw the messy floor, she...",
         options: [
           { label: "A", text: "laughed at him because he was clumsy.", isCorrect: false },
           { label: "B", text: "called the school bus driver.", isCorrect: false },
-          { label: "C", text: "helped him clean the wet floor.", isCorrect: true }
+          { label: "C", text: "helped him cleaned up the mess.", isCorrect: true }
         ],
         answerIndex: 2
       },
       {
         id: "r3_q05",
-        question: "After everything that happened, Tom promised his mother that...",
+        question: "After Tom apologized to his mother, he...",
         options: [
-          { label: "A", text: "he would never drink juice again.", isCorrect: false },
-          { label: "B", text: "he would be more careful next time.", isCorrect: true },
-          { label: "C", text: "he would buy a new alarm clock.", isCorrect: false }
+          { label: "A", text: "promised never to drink juice again.", isCorrect: false },
+          { label: "B", text: "promised to be more careful next time.", isCorrect: true },
+          { label: "C", text: "promised to buy a new alarm clock.", isCorrect: false }
         ],
         answerIndex: 1
       }

@@ -523,16 +523,16 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </span>
               </div>
 
-              {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs (Boosted Typography: text-lg sm:text-xl font-bold leading-loose) */}
+              {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs (Boosted Typography: font-sans font-bold text-lg sm:text-xl leading-loose) */}
               <div className="p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm leading-loose sm:leading-extraloose text-lg sm:text-xl font-bold text-slate-900 space-y-2">
-                {renderParsedText("Tom had a very bad morning today. First, he accidentally ")}{' '}
+                {renderParsedText("Tom **woke up in a hurry** today. First, he **felt extremely clumsy** when he ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
                     value={storyAnswers[1] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 1: e.target.value }))}
-                    placeholder="____"
-                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
+                    placeholder={interactiveStory.hints?.[1] || "____"}
+                    className="w-48 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-base sm:text-lg focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner placeholder:text-slate-400 placeholder:italic placeholder:text-sm"
                   />
                 ) : (
                   <button
@@ -545,17 +545,17 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
                     }`}
                   >
-                    {storyAnswers[1] || '[ Blank 1 ]'}
+                    {storyAnswers[1] || `[ ${interactiveStory.hints?.[1] || 'Blank 1'} ]`}
                   </button>
                 )}{' '}
-                {renderParsedText("his **alarm clock** because he was feeling ")}{' '}
+                {renderParsedText("his alarm clock off the table. Then, he ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
                     value={storyAnswers[2] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 2: e.target.value }))}
-                    placeholder="____"
-                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
+                    placeholder={interactiveStory.hints?.[2] || "____"}
+                    className="w-48 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-base sm:text-lg focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner placeholder:text-slate-400 placeholder:italic placeholder:text-sm"
                   />
                 ) : (
                   <button
@@ -568,17 +568,17 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
                     }`}
                   >
-                    {storyAnswers[2] || '[ Blank 2 ]'}
+                    {storyAnswers[2] || `[ ${interactiveStory.hints?.[2] || 'Blank 2'} ]`}
                   </button>
                 )}
-                {renderParsedText(". Then, he **rushed downstairs** and slipped on a wet ")}{' '}
+                {renderParsedText(" to have breakfast and ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
                     value={storyAnswers[3] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 3: e.target.value }))}
-                    placeholder="____"
-                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
+                    placeholder={interactiveStory.hints?.[3] || "____"}
+                    className="w-48 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-base sm:text-lg focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner placeholder:text-slate-400 placeholder:italic placeholder:text-sm"
                   />
                 ) : (
                   <button
@@ -591,17 +591,17 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
                     }`}
                   >
-                    {storyAnswers[3] || '[ Blank 3 ]'}
+                    {storyAnswers[3] || `[ ${interactiveStory.hints?.[3] || 'Blank 3'} ]`}
                   </button>
                 )}{' '}
-                {renderParsedText("on the kitchen floor. To make things worse, he ")}{' '}
+                {renderParsedText(" on the kitchen floor. ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
                     value={storyAnswers[4] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 4: e.target.value }))}
-                    placeholder="____"
-                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
+                    placeholder={interactiveStory.hints?.[4] || "____"}
+                    className="w-48 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-base sm:text-lg focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner placeholder:text-slate-400 placeholder:italic placeholder:text-sm"
                   />
                 ) : (
                   <button
@@ -614,17 +614,17 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
                     }`}
                   >
-                    {storyAnswers[4] || '[ Blank 4 ]'}
+                    {storyAnswers[4] || `[ ${interactiveStory.hints?.[4] || 'Blank 4'} ]`}
                   </button>
                 )}{' '}
-                {renderParsedText("his backpack on the bus! His mother told him not to worry, but Tom promised to be more ")}{' '}
+                {renderParsedText(", he **spilled a glass of juice** over his English notebook! Fortunately, his sister Mia helped him **cleaned up the mess**. After that, Tom ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
                     value={storyAnswers[5] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 5: e.target.value }))}
-                    placeholder="____"
-                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
+                    placeholder={interactiveStory.hints?.[5] || "____"}
+                    className="w-48 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-base sm:text-lg focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner placeholder:text-slate-400 placeholder:italic placeholder:text-sm"
                   />
                 ) : (
                   <button
@@ -637,10 +637,10 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
                     }`}
                   >
-                    {storyAnswers[5] || '[ Blank 5 ]'}
+                    {storyAnswers[5] || `[ ${interactiveStory.hints?.[5] || 'Blank 5'} ]`}
                   </button>
                 )}{' '}
-                {renderParsedText("next time.")}
+                {renderParsedText(" and **promised to be more careful** next time.")}
               </div>
 
               {/* Word Bank Container (Hidden if mode === 'open_cloze') */}

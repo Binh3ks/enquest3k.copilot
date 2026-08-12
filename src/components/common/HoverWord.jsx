@@ -291,9 +291,9 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2, chil
 
   // ────────── Tiered Bolding Styling (Chunks vs Core Words) ──────────
   const isChunk = isPhrase || tier === 1;
-  const chunkClass = `font-black text-indigo-950 border-b-2 border-slate-300 pb-[1px] hover:border-indigo-400 cursor-pointer transition-all`;
-  const singleWordClass = `font-semibold text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/50 cursor-pointer rounded px-0.5 transition-all`;
-  const plainWordClass = `font-medium text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/30 cursor-pointer rounded px-0.5 transition-all`;
+  const chunkClass = `text-blue-700 font-extrabold border-b-[2px] border-blue-200 hover:border-blue-500 cursor-pointer transition-all`;
+  const singleWordClass = `font-semibold text-slate-800 hover:text-blue-600 hover:bg-blue-50/50 cursor-pointer rounded px-0.5 transition-all`;
+  const plainWordClass = `font-medium text-slate-800 hover:text-blue-600 hover:bg-blue-50/30 cursor-pointer rounded px-0.5 transition-all`;
 
   const baseClass = isChunk ? chunkClass : tier <= 2 ? singleWordClass : plainWordClass;
   const baseClass2 = `cursor-pointer transition-colors`;
