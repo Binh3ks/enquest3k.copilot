@@ -74,6 +74,7 @@ const renderParsedText = (text, themeColor = 'indigo') => {
 const FALLBACK_CHECK_QUESTIONS = [
   {
     content_id: 'chk_h2_01',
+    text: 'While Tom ___ up, he accidentally broke his alarm clock.',
     prompt: 'While Tom ___ up, he accidentally broke his alarm clock.',
     options: [
       { label: 'A', text: 'was waking', isCorrect: true },
@@ -83,6 +84,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_02',
+    text: 'Tom fell down ___ the floor was wet and slippery.',
     prompt: 'Tom fell down ___ the floor was wet and slippery.',
     options: [
       { label: 'A', text: 'because', isCorrect: true },
@@ -92,6 +94,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_03',
+    text: '___ Tom made a clumsy mistake, Mia helped him kindly.',
     prompt: '___ Tom made a clumsy mistake, Mia helped him kindly.',
     options: [
       { label: 'A', text: 'Although', isCorrect: true },
@@ -101,6 +104,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_04',
+    text: 'He dropped a glass while he ___ breakfast in the kitchen.',
     prompt: 'He dropped a glass while he ___ breakfast in the kitchen.',
     options: [
       { label: 'A', text: 'was making', isCorrect: true },
@@ -110,6 +114,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_05',
+    text: 'Tom apologized immediately ___ he felt very sorry.',
     prompt: 'Tom apologized immediately ___ he felt very sorry.',
     options: [
       { label: 'A', text: 'because', isCorrect: true },
@@ -119,6 +124,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_06',
+    text: 'Mia found the backpack while she ___ the bus.',
     prompt: 'Mia found the backpack while she ___ the bus.',
     options: [
       { label: 'A', text: 'was searching', isCorrect: true },
@@ -128,6 +134,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_07',
+    text: 'Because Tom ran downstairs quickly, he ___ on the rug.',
     prompt: 'Because Tom ran downstairs quickly, he ___ on the rug.',
     options: [
       { label: 'A', text: 'slipped', isCorrect: true },
@@ -137,6 +144,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_08',
+    text: '___ he lost his school bag, his friend found it.',
     prompt: '___ he lost his school bag, his friend found it.',
     options: [
       { label: 'A', text: 'Although', isCorrect: true },
@@ -146,6 +154,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_09',
+    text: 'They ___ the clock when the school bell rang.',
     prompt: 'They ___ the clock when the school bell rang.',
     options: [
       { label: 'A', text: 'were fixing', isCorrect: true },
@@ -155,6 +164,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   },
   {
     content_id: 'chk_h2_10',
+    text: 'Tom promised to be cautious ___ he could avoid future accidents.',
     prompt: 'Tom promised to be cautious ___ he could avoid future accidents.',
     options: [
       { label: 'A', text: 'so', isCorrect: true },
@@ -165,6 +175,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   {
     content_id: 'chk_d01',
     dialogue_context: 'Tom: I accidentally broke my alarm clock this morning!',
+    text: 'What should Mia reply?',
     prompt: 'What should Mia reply?',
     options: [
       { label: 'A', text: "Don't worry, it's just an accident.", isCorrect: true },
@@ -175,6 +186,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   {
     content_id: 'chk_d02',
     dialogue_context: 'Mia: Did you find your lost backpack on the bus?',
+    text: 'What should Tom reply?',
     prompt: 'What should Tom reply?',
     options: [
       { label: 'A', text: 'No, I am going home.', isCorrect: false },
@@ -324,7 +336,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
               Question:
             </p>
             <div className="text-base font-black text-slate-900 leading-relaxed">
-              {renderParsedText(currentQ.prompt, 'indigo')}
+              {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo')}
             </div>
           </div>
         </div>
@@ -335,7 +347,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
             CHOOSE THE CORRECT WORD TO FILL IN THE BLANK:
           </p>
           <div className="text-base font-black text-slate-900 leading-relaxed">
-            {renderParsedText(currentQ.prompt, 'indigo')}
+            {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo')}
           </div>
         </div>
       )}

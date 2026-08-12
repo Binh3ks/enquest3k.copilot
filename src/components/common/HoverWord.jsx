@@ -63,7 +63,8 @@ const week33DictItems = [
   { word: "damaged his notebook", meaning: "làm hư cuốn vở", pronounce: "/ˈdæm.ɪdʒd hɪz ˈnoʊt.bʊk/", example: "The liquid damaged his notebook." },
   { word: "searched the bus", meaning: "tìm kiếm trên xe buýt", pronounce: "/sɜːrtʃt ðə bʌs/", example: "Mia searched the bus seat." },
   { word: "promised to be cautious", meaning: "hứa sẽ cẩn trọng hơn", pronounce: "/ˈprɑː.mɪst tuː biː ˈkɑː.ʃəs/", example: "Tom promised to be cautious." },
-  { word: "fell onto the rug", meaning: "ngã xuống tấm thảm", pronounce: "/fɛl ˈɑːn.tuː ðə rʌɡ/", example: "He fell onto the rug." }
+  { word: "fell onto the rug", meaning: "ngã xuống tấm thảm", pronounce: "/fɛl ˈɑːn.tuː ðə rʌɡ/", example: "He fell onto the rug." },
+  { word: "rushed downstairs", meaning: "vội vã chạy xuống lầu", pronounce: "/rʌʃt ˌdaʊnˈsterz/", example: "He rushed downstairs to have breakfast." }
 ];
 
 // Build dictionary lookup map (shared across all HoverWord instances)
@@ -90,7 +91,7 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
 
   // Step 2: Build master regex for markdown bold **...** OR multi-word phrases
   const escapedPhrases = sortedPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-  const masterRegex = new RegExp(`(\\calc\\*\\*.*?\\*\\*|${escapedPhrases.join('|')})`, 'gi');
+  const masterRegex = new RegExp(`(\\*{2}.*?\\*{2}|${escapedPhrases.join('|')})`, 'gi');
 
   // Step 3: Parse text segments
   const segments = text.split(masterRegex);
