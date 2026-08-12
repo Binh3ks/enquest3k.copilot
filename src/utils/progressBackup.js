@@ -130,9 +130,10 @@ export async function saveWithRetry(payload, { maxAttempts = 4, signal } = {}) {
       return result;
     } catch (err) {
       lastErr = err;
-      // Don't retry 4xx (client errors) — those are not transient
+      // Don't retry 4xx (client errors) or Network Errors (CORS / offline) — fail fast
       const status = err?.response?.status;
-      if (status && status >= 400 && status < 500 && status !== 408 && status !== 429) {
+      const isNetworkError = err?.message === 'Network Error' || err?.code === 'ERR_NETWORK' || !err?.response;
+      if (isNetworkError || (status && status >= 400 && status < 500 && status !== 408 && status !== 429)) {
         throw err;
       }
       if (attempt < maxAttempts - 1) {
@@ -209,15 +210,16 @@ export async function replayJournal() {
           isCompleted: entry.isCompleted,
           score: entry.score
         },
-        { maxAttempts: 3 }
+        { maxAttempts: 1 }
       );
       markJournalSynced(entry.weekId, entry.stationId);
     } catch (err) {
       console.warn(
-        `[progressBackup] replay failed for week=${entry.weekId} station=${entry.stationId}:`,
+        `[progressBackup] replay paused for network/CORS issue at week=${entry.weekId} station=${entry.stationId}:`,
         err?.message
       );
-      // Leave in journal — will retry next boot
+      // Abort replay loop on network error to avoid spamming 20+ failing requests
+      break;
     }
   }
 }
