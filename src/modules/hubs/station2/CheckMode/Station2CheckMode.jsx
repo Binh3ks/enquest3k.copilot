@@ -1,6 +1,74 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import HoverWord from '../../../../components/common/HoverWord';
+import { speakText } from '../../../../utils/AudioHelper';
 import { CheckCircle2, ArrowRight, RefreshCw, FileText } from 'lucide-react';
+
+const renderParsedText = (text, themeColor = 'indigo') => {
+  if (!text) return null;
+  const segments = text.split(/(\*\*.*?\*\*)/);
+  let key = 0;
+  const parts = [];
+
+  for (const segment of segments) {
+    if (segment.startsWith('**') && segment.endsWith('**')) {
+      const word = segment.slice(2, -2).trim();
+      parts.push(
+        <HoverWord
+          key={key++}
+          word={word}
+          themeColor={themeColor}
+          onSpeak={(w) => speakText(w, null, 1.0, null, 'grammar', 33, 'advanced')}
+          tier={1}
+        />
+      );
+    } else {
+      let currentWord = '';
+      let currentNonWord = '';
+
+      for (let i = 0; i < segment.length; i++) {
+        const char = segment[i];
+        if (/[\w'-]/.test(char)) {
+          if (currentNonWord) {
+            parts.push(<span key={key++}>{currentNonWord}</span>);
+            currentNonWord = '';
+          }
+          currentWord += char;
+        } else {
+          if (currentWord) {
+            parts.push(
+              <HoverWord
+                key={key++}
+                word={currentWord}
+                themeColor={themeColor}
+                onSpeak={(w) => speakText(w, null, 1.0, null, 'grammar', 33, 'advanced')}
+                tier={3}
+              />
+            );
+            currentWord = '';
+          }
+          currentNonWord += char;
+        }
+      }
+      if (currentWord) {
+        parts.push(
+          <HoverWord
+            key={key++}
+            word={currentWord}
+            themeColor={themeColor}
+            onSpeak={(w) => speakText(w, null, 1.0, null, 'grammar', 33, 'advanced')}
+            tier={3}
+          />
+        );
+      }
+      if (currentNonWord) {
+        parts.push(<span key={key++}>{currentNonWord}</span>);
+      }
+    }
+  }
+
+  return parts;
+};
 
 const FALLBACK_CHECK_QUESTIONS = [
   {
@@ -213,7 +281,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
           Choose the correct word to fill in the blank:
         </p>
         <p className="text-base font-black text-slate-900 leading-relaxed">
-          {currentQ.prompt}
+          {renderParsedText(currentQ.prompt, 'indigo')}
         </p>
       </div>
 
@@ -236,7 +304,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
               }`}>
                 {opt.label}
               </span>
-              <span className="text-sm font-bold leading-relaxed">{opt.text}</span>
+              <span className="text-sm font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
             </button>
           );
         })}

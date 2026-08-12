@@ -429,7 +429,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
 
               {/* Story Paragraph with Clickable Blanks */}
               <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm leading-extraloose text-base font-extrabold text-slate-800">
-                Tom had a very bad morning today. First, he accidentally{' '}
+                {renderParsedText("Tom had a very bad morning today. First, he accidentally ")}{' '}
                 <button
                   onClick={() => setSelectedGapId(1)}
                   className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
@@ -442,7 +442,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 >
                   {storyAnswers[1] || '[ Blank 1 ]'}
                 </button>{' '}
-                his alarm clock because he was feeling{' '}
+                {renderParsedText("his alarm clock because he was feeling ")}{' '}
                 <button
                   onClick={() => setSelectedGapId(2)}
                   className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
@@ -455,7 +455,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 >
                   {storyAnswers[2] || '[ Blank 2 ]'}
                 </button>
-                . Then, he rushed downstairs and slipped on a wet{' '}
+                {renderParsedText(". Then, he rushed downstairs and slipped on a wet ")}{' '}
                 <button
                   onClick={() => setSelectedGapId(3)}
                   className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
@@ -468,7 +468,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 >
                   {storyAnswers[3] || '[ Blank 3 ]'}
                 </button>{' '}
-                on the kitchen floor. To make things worse, he{' '}
+                {renderParsedText("on the kitchen floor. To make things worse, he ")}{' '}
                 <button
                   onClick={() => setSelectedGapId(4)}
                   className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
@@ -481,7 +481,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 >
                   {storyAnswers[4] || '[ Blank 4 ]'}
                 </button>{' '}
-                his backpack on the bus! His mother told him not to worry, but Tom promised to be more{' '}
+                {renderParsedText("his backpack on the bus! His mother told him not to worry, but Tom promised to be more ")}{' '}
                 <button
                   onClick={() => setSelectedGapId(5)}
                   className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
@@ -494,7 +494,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 >
                   {storyAnswers[5] || '[ Blank 5 ]'}
                 </button>{' '}
-                next time.
+                {renderParsedText("next time.")}
               </div>
 
               {/* Word Bank Container */}

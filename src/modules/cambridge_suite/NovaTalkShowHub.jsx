@@ -289,7 +289,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                       </span>
                     </div>
                     <p className="text-sm font-extrabold text-slate-900 leading-relaxed">
-                      "{turn.text}"
+                      {renderParsedText(turn.text, 'indigo')}
                     </p>
                     {turn.phonetic_guide && (
                       <p className="text-[11px] font-mono text-slate-400 font-medium">
@@ -377,7 +377,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                   <div className="text-[9px] font-black uppercase mb-1 opacity-75">
                     {msg.sender === 'user' ? 'You' : 'Nova AI Examiner'}
                   </div>
-                  {msg.text}
+                  {renderParsedText(msg.text, msg.sender === 'user' ? 'indigo' : 'purple')}
                 </div>
               </div>
             ))}

@@ -17,10 +17,54 @@ function levenshtein(a, b) {
   return matrix[b.length][a.length];
 }
 
+const week33DictItems = [
+  { word: "broke", meaning: "đã làm vỡ / gãy", pronounce: "/broʊk/", example: "He accidentally broke his alarm clock." },
+  { word: "fell", meaning: "đã ngã / rơi", pronounce: "/fɛl/", example: "He fell onto the rug after slipping." },
+  { word: "lost", meaning: "đã làm mất", pronounce: "/lɔːst/", example: "Tom lost his backpack on the bus." },
+  { word: "found", meaning: "đã tìm thấy", pronounce: "/faʊnd/", example: "Mia found his lost backpack." },
+  { word: "slipped", meaning: "đã trượt chân", pronounce: "/slɪpt/", example: "He slipped on a wet puddle." },
+  { word: "spilled", meaning: "đã làm đổ / tràn", pronounce: "/spɪld/", example: "He spilled the juice on his desk." },
+  { word: "dropped", meaning: "đã đánh rơi", pronounce: "/drɑːpt/", example: "He dropped a glass of orange juice." },
+  { word: "apologized", meaning: "đã xin lỗi", pronounce: "/əˈpɑː.lə.dʒaɪzd/", example: "Tom apologized to mom for being clumsy." },
+  { word: "repaired", meaning: "đã sửa chữa", pronounce: "/rɪˈpɛrd/", example: "He repaired the broken toy." },
+  { word: "searched", meaning: "đã tìm kiếm", pronounce: "/sɜːrtʃt/", example: "Mia searched the bus seat." },
+  { word: "clumsy", meaning: "vụng về / bất cẩn", pronounce: "/ˈklʌmzi/", example: "Tom felt clumsy when he woke up late." },
+  { word: "puddle", meaning: "vũng nước", pronounce: "/ˈpʌd.əl/", example: "There was a wet puddle on the floor." },
+  { word: "backpack", meaning: "chiếc cặp / ba lô", pronounce: "/ˈbæk.pæk/", example: "He left his backpack on the bus." },
+  { word: "vase", meaning: "bình hoa", pronounce: "/veɪs/", example: "The ball knocked over the vase." },
+  { word: "careful", meaning: "cẩn thận", pronounce: "/ˈkɛr.fəl/", example: "Be careful when walking on wet tiles." },
+  { word: "cautious", meaning: "cẩn trọng", pronounce: "/ˈkɑː.ʃəs/", example: "He promised to be more cautious next time." },
+  { word: "sorry", meaning: "xin lỗi / hối hận", pronounce: "/ˈsɑː.ri/", example: "Tom said he was sorry for making a mistake." },
+  { word: "mistake", meaning: "sai lầm / lỗi", pronounce: "/mɪˈsteɪk/", example: "Everyone makes a clumsy mistake sometimes." },
+  { word: "accident", meaning: "sự cố / tai nạn", pronounce: "/ˈæk.sɪ.dənt/", example: "It was just an accident in the morning." },
+  { word: "careless", meaning: "bất cẩn", pronounce: "/ˈkɛr.ləs/", example: "Don't be careless with glass." },
+  // 10 Lexical Chunks
+  { word: "broke an alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk ən əˈlɑːrm klɑːk/", example: "He accidentally broke an alarm clock." },
+  { word: "broke his alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk hɪz əˈlɑːrm klɑːk/", example: "He accidentally broke his alarm clock." },
+  { word: "slipped on a puddle", meaning: "trượt chân trên vũng nước", pronounce: "/slɪpt ɑːn ə ˈpʌd.əl/", example: "Tom slipped on a puddle on the floor." },
+  { word: "slipped on a wet puddle", meaning: "trượt chân trên vũng nước ướt", pronounce: "/slɪpt ɑːn ə wɛt ˈpʌd.əl/", example: "Tom slipped on a wet puddle." },
+  { word: "spilled the juice", meaning: "làm đổ nước trái cây", pronounce: "/spɪld ðə dʒuːs/", example: "He spilled the juice on his notebook." },
+  { word: "apologized to mom", meaning: "xin lỗi mẹ", pronounce: "/əˈpɑː.lə.dʒaɪzd tuː mɑːm/", example: "Tom apologized to mom." },
+  { word: "lost his backpack", meaning: "làm mất chiếc cặp", pronounce: "/lɔːst hɪz ˈbæk.pæk/", example: "He lost his backpack on the bus." },
+  { word: "dropped a glass", meaning: "đánh rơi ly nước", pronounce: "/drɑːpt ə ɡlæs/", example: "He dropped a glass of orange juice." },
+  { word: "cleaned up carefully", meaning: "cẩn thận dọn dẹp", pronounce: "/kliːnd ʌp ˈkɛr.fə.li/", example: "Tom cleaned up carefully." },
+  { word: "damaged a notebook", meaning: "làm hư cuốn vở", pronounce: "/ˈdæm.ɪdʒd ə ˈnoʊt.bʊk/", example: "The liquid damaged a notebook." },
+  { word: "damaged his notebook", meaning: "làm hư cuốn vở", pronounce: "/ˈdæm.ɪdʒd hɪz ˈnoʊt.bʊk/", example: "The liquid damaged his notebook." },
+  { word: "searched the bus", meaning: "tìm kiếm trên xe buýt", pronounce: "/sɜːrtʃt ðə bʌs/", example: "Mia searched the bus seat." },
+  { word: "promised to be cautious", meaning: "hứa sẽ cẩn trọng hơn", pronounce: "/ˈprɑː.mɪst tuː biː ˈkɑː.ʃəs/", example: "Tom promised to be cautious." },
+  { word: "fell onto the rug", meaning: "ngã xuống tấm thảm", pronounce: "/fɛl ˈɑːn.tuː ðə rʌɡ/", example: "He fell onto the rug." }
+];
+
 // Build dictionary lookup map (shared across all HoverWord instances)
-const dictMap = Object.fromEntries(
+const baseDict = Object.fromEntries(
   (Array.isArray(dictionaryData) ? dictionaryData : []).map(e => [(e.word || '').toLowerCase(), e])
 );
+
+const week33Map = Object.fromEntries(
+  week33DictItems.map(e => [e.word.toLowerCase(), e])
+);
+
+const dictMap = { ...baseDict, ...week33Map };
 
 // Look up a word/phrase in dictionary (handles plurals + past tense)
 const lookupDict = (raw) => {
@@ -147,18 +191,16 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
     recognition.start();
   };
 
-  // ────────── Styling based on tier ──────────
-  // Tier 1 (Bold): Target vocab this week
-  const tier1Class = `font-black text-${themeColor}-600 text-2xl px-0.5 rounded border-b-2 border-${themeColor}-200`;
-  // Tier 2 (Semi-bold): New academic words (not formally taught yet)
-  const tier2Class = `text-xl font-semibold text-${themeColor}-500 border-b border-dotted border-${themeColor}-300`;
-  // Tier 3 (Plain): Already learned (taught in previous weeks) — subtle, passive review only
-  const tier3Class = `text-xl font-normal text-gray-700 hover:text-${themeColor}-600`;
+  // ────────── Tiered Bolding Styling (Chunks vs Core Words) ──────────
+  const isChunk = isPhrase || tier === 1;
+  const chunkClass = `font-black text-${themeColor}-800 underline decoration-${themeColor}-300 decoration-dashed cursor-pointer bg-${themeColor}-50 px-1 rounded shadow-sm hover:bg-${themeColor}-100 transition-all`;
+  const singleWordClass = `font-semibold text-${themeColor}-600 hover:bg-${themeColor}-50/50 cursor-pointer rounded px-0.5 transition-all`;
+  const plainWordClass = `font-normal text-slate-700 hover:text-${themeColor}-600 hover:bg-${themeColor}-50/30 cursor-pointer rounded px-0.5 transition-all`;
 
-  const baseClass = tier === 1 ? tier1Class : tier === 2 ? tier2Class : tier3Class;
+  const baseClass = isChunk ? chunkClass : tier <= 2 ? singleWordClass : plainWordClass;
   const baseClass2 = `cursor-pointer transition-colors`;
-  const idleClass = tier === 3 ? '' : `hover:bg-${themeColor}-50/50`;
-  const activeClass = `bg-${themeColor}-50`;
+  const idleClass = isChunk ? 'bg-indigo-50/80' : '';
+  const activeClass = `bg-${themeColor}-100 ring-2 ring-${themeColor}-200`;
 
   return (
     <>
