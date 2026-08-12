@@ -8,6 +8,20 @@ export const readingHubData = {
   theme: "The Accident File",
   cefr_level: "A2 Flyers",
 
+  // Interactive Gap-Fill Story Reading (Cambridge Reading Part 4 Standard)
+  interactive_story: {
+    title: "Interactive Story: Tom's Clumsy Morning",
+    text_template: "Tom had a very bad morning today. First, he accidentally ____1____ his alarm clock because he was feeling ____2____. Then, he rushed downstairs and slipped on a wet ____3____ on the kitchen floor. To make things worse, he ____4____ his backpack on the bus! His mother told him not to worry, but Tom promised to be more ____5____ next time.",
+    gaps: [
+      { id: 1, target: "broke", hint: "past of break" },
+      { id: 2, target: "clumsy", hint: "moving awkwardly" },
+      { id: 3, target: "puddle", hint: "small pool of liquid" },
+      { id: 4, target: "lost", hint: "past of lose" },
+      { id: 5, target: "careful", hint: "paying attention to avoid mistakes" }
+    ],
+    word_bank: ["broke", "clumsy", "puddle", "lost", "careful", "spilled", "dropped"]
+  },
+
   // 1. Array of EXACTLY 20 Vocab items (10 Core + 10 Extended)
   vocab: [
     // --- 10 CORE WORDS ---

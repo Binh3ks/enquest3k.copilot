@@ -136,7 +136,7 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
           </span>
           <h3 className="text-lg font-black text-slate-900 mt-0.5">{currentQ.title}</h3>
         </div>
-        <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-mono font-bold rounded-lg border border-slate-200">
+        <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
           Problem {questionIndex + 1} / {questionsList.length}
         </span>
       </div>
