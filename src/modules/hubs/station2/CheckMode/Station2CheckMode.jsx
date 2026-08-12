@@ -1,53 +1,9 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { useUserStore } from '../../../../stores/useUserStore';
-import HoverWord from '../../../../components/common/HoverWord';
+import HoverWord, { renderParsedText } from '../../../../components/common/HoverWord';
 import { speakText } from '../../../../utils/AudioHelper';
 import { CheckCircle2, ArrowRight, RefreshCw, FileText, XCircle } from 'lucide-react';
-
-const renderParsedText = (text, themeColor = 'indigo') => {
-  if (!text) return null;
-  const segments = text.split(/(\*\*.*?\*\*)/);
-  let key = 0;
-  const parts = [];
-
-  for (const segment of segments) {
-    if (segment.startsWith('**') && segment.endsWith('**')) {
-      const word = segment.slice(2, -2).trim();
-      parts.push(
-        <HoverWord
-          key={key++}
-          word={word}
-          themeColor={themeColor}
-          onSpeak={(w) => speakText(w, null, 1.0, null, 'grammar', 33, 'advanced')}
-          tier={1}
-        />
-      );
-    } else {
-      const words = segment.split(/(\s+)/);
-      words.forEach((w) => {
-        const cleanWord = w.replace(/[^a-zA-Z]/g, '');
-        if (cleanWord.length > 2) {
-          parts.push(
-            <HoverWord
-              key={key++}
-              word={cleanWord}
-              themeColor={themeColor}
-              onSpeak={(wordToSpeak) => speakText(wordToSpeak, null, 1.0, null, 'grammar', 33, 'advanced')}
-              tier={3}
-            >
-              {w}
-            </HoverWord>
-          );
-        } else {
-          parts.push(<span key={key++}>{w}</span>);
-        }
-      });
-    }
-  }
-
-  return parts;
-};
 
 const FALLBACK_CHECK_QUESTIONS = [
   {

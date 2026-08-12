@@ -184,7 +184,7 @@ const lookupDict = (raw) => {
  * Tầng 1 (hover): Mini tooltip — tên từ + IPA + "Bấm xem nghĩa"
  * Tầng 2 (click): Popup đầy đủ qua Portal — từ + IPA + 🔊 + nghĩa + 🎤 + links
  */
-const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) => {
+const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2, children }) => {
   // Auto-lookup in dictionary when entry is not provided by parent
   const resolvedEntry = useMemo(() => entry || lookupDict(word), [entry, word]);
   const [mode, setMode] = useState('idle'); // idle | hover | open
@@ -454,7 +454,7 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2 }) =>
           onClick={handleClick}
           className={`${baseClass} ${baseClass2} ${mode !== 'idle' ? activeClass : idleClass}`}
         >
-          {word}
+          {children || word}
         </span>
 
         {/* ── TẦNG 1: Hover mini tooltip (desktop only, pointer-events-none) ── */}
