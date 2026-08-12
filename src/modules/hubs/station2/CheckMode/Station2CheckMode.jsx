@@ -1,98 +1,114 @@
-import React, { useState, useEffect } from 'react';
-import { contentBankService } from '../../../../services/contentBankService';
+import React, { useState } from 'react';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
-import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngine';
-import { ShieldCheck, CheckCircle2, ArrowRight, RefreshCw, FileText } from 'lucide-react';
+import { CheckCircle2, ArrowRight, RefreshCw, FileText } from 'lucide-react';
 
 const FALLBACK_CHECK_QUESTIONS = [
   {
     content_id: 'chk_h2_01',
-    raw_content: { text: "While Tom was waking up, he broke his alarm clock.", grammar_tag: "past_continuous_when_while" },
-    answer_key: { valid_structures: [["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "alarm", "clock", "."]] }
+    prompt: 'While Tom ___ up, he accidentally broke his alarm clock.',
+    options: [
+      { label: 'A', text: 'was waking', isCorrect: true },
+      { label: 'B', text: 'is waking', isCorrect: false },
+      { label: 'C', text: 'waked', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_02',
-    raw_content: { text: "Tom fell down because the floor was wet.", grammar_tag: "clauses_of_reason" },
-    answer_key: { valid_structures: [["Tom", "fell", "down", "because", "the", "floor", "was", "wet", "."]] }
+    prompt: 'Tom fell down ___ the floor was wet and slippery.',
+    options: [
+      { label: 'A', text: 'because', isCorrect: true },
+      { label: 'B', text: 'although', isCorrect: false },
+      { label: 'C', text: 'but', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_03',
-    raw_content: { text: "Although Tom made a mistake, Mia helped him.", grammar_tag: "connectors" },
-    answer_key: { valid_structures: [["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."]] }
+    prompt: '___ Tom made a clumsy mistake, Mia helped him kindly.',
+    options: [
+      { label: 'A', text: 'Although', isCorrect: true },
+      { label: 'B', text: 'Because', isCorrect: false },
+      { label: 'C', text: 'So', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_04',
-    raw_content: { text: "He dropped a glass while he was making breakfast.", grammar_tag: "past_continuous_when_while" },
-    answer_key: { valid_structures: [["He", "dropped", "a", "glass", "while", "he", "was", "making", "breakfast", "."]] }
+    prompt: 'He dropped a glass while he ___ breakfast in the kitchen.',
+    options: [
+      { label: 'A', text: 'was making', isCorrect: true },
+      { label: 'B', text: 'were making', isCorrect: false },
+      { label: 'C', text: 'makes', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_05',
-    raw_content: { text: "Tom apologized because he was clumsy in the morning.", grammar_tag: "clauses_of_reason" },
-    answer_key: { valid_structures: [["Tom", "apologized", "because", "he", "was", "clumsy", "in", "the", "morning", "."]] }
+    prompt: 'Tom apologized immediately ___ he felt very sorry.',
+    options: [
+      { label: 'A', text: 'because', isCorrect: true },
+      { label: 'B', text: 'although', isCorrect: false },
+      { label: 'C', text: 'while', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_06',
-    raw_content: { text: "Mia found the backpack while she was searching the bus.", grammar_tag: "past_continuous_when_while" },
-    answer_key: { valid_structures: [["Mia", "found", "the", "backpack", "while", "she", "was", "searching", "the", "bus", "."]] }
+    prompt: 'Mia found the backpack while she ___ the bus.',
+    options: [
+      { label: 'A', text: 'was searching', isCorrect: true },
+      { label: 'B', text: 'searches', isCorrect: false },
+      { label: 'C', text: 'is search', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_07',
-    raw_content: { text: "Because Tom ran downstairs quickly, he slipped on the rug.", grammar_tag: "clauses_of_reason" },
-    answer_key: { valid_structures: [["Because", "Tom", "ran", "downstairs", "quickly", ",", "he", "slipped", "on", "the", "rug", "."]] }
+    prompt: 'Because Tom ran downstairs quickly, he ___ on the rug.',
+    options: [
+      { label: 'A', text: 'slipped', isCorrect: true },
+      { label: 'B', text: 'slips', isCorrect: false },
+      { label: 'C', text: 'was slip', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_08',
-    raw_content: { text: "Although he lost his bag, his friend brought it to class.", grammar_tag: "connectors" },
-    answer_key: { valid_structures: [["Although", "he", "lost", "his", "bag", ",", "his", "friend", "brought", "it", "to", "class", "."]] }
+    prompt: '___ he lost his school bag, his friend found it.',
+    options: [
+      { label: 'A', text: 'Although', isCorrect: true },
+      { label: 'B', text: 'Because', isCorrect: false },
+      { label: 'C', text: 'So', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_09',
-    raw_content: { text: "They were fixing the clock when the school bell rang.", grammar_tag: "past_continuous_when_while" },
-    answer_key: { valid_structures: [["They", "were", "fixing", "the", "clock", "when", "the", "school", "bell", "rang", "."]] }
+    prompt: 'They ___ the clock when the school bell rang.',
+    options: [
+      { label: 'A', text: 'were fixing', isCorrect: true },
+      { label: 'B', text: 'was fixing', isCorrect: false },
+      { label: 'C', text: 'fixed', isCorrect: false }
+    ]
   },
   {
     content_id: 'chk_h2_10',
-    raw_content: { text: "Tom promised to be cautious so he could avoid future accidents.", grammar_tag: "connectors" },
-    answer_key: { valid_structures: [["Tom", "promised", "to", "be", "cautious", "so", "he", "could", "avoid", "future", "accidents", "."]] }
+    prompt: 'Tom promised to be cautious ___ he could avoid future accidents.',
+    options: [
+      { label: 'A', text: 'so', isCorrect: true },
+      { label: 'B', text: 'because', isCorrect: false },
+      { label: 'C', text: 'although', isCorrect: false }
+    ]
   }
 ];
 
 export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
-  const [questions, setQuestions] = useState(FALLBACK_CHECK_QUESTIONS);
+  const [questions] = useState(FALLBACK_CHECK_QUESTIONS);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [loading, setLoading] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [resultsSummary, setResultsSummary] = useState(null);
-  const [startTime, setStartTime] = useState(Date.now());
-
-  useEffect(() => {
-    async function loadExamContent() {
-      try {
-        const items = await contentBankService.getStationContent({
-          week: `W${weekNumber}`,
-          station: '2',
-          mode: 'learn'
-        });
-        if (items && items.length >= 10) {
-          setQuestions(items.slice(0, 10));
-        } else {
-          setQuestions(FALLBACK_CHECK_QUESTIONS);
-        }
-      } catch (e) {
-        console.error('Failed to load check mode questions', e);
-        setQuestions(FALLBACK_CHECK_QUESTIONS);
-      }
-    }
-    loadExamContent();
-  }, [weekNumber]);
+  const [startTime] = useState(Date.now());
 
   const currentQ = questions[currentIndex] || questions[0];
 
-  const handleSelectOption = (optionTokens) => {
+  const handleSelectOption = (opt) => {
     setSelectedAnswers((prev) => ({
       ...prev,
-      [currentQ.content_id]: optionTokens
+      [currentQ.content_id]: opt
     }));
   };
 
@@ -111,53 +127,32 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
   const handleSubmitExam = async () => {
     const totalTimeSpent = Math.round((Date.now() - startTime) / 1000);
     let totalScore = 0;
-    const evaluatedResults = [];
 
     for (const q of questions) {
-      const userAnsTokens = selectedAnswers[q.content_id] || [];
-      const evalRes = evaluateSentenceAttempt(userAnsTokens, q.answer_key);
-
-      const score = evalRes.isCorrect ? (evalRes.isMinorError ? 90 : 100) : 0;
+      const selectedOpt = selectedAnswers[q.content_id];
+      const isCorrect = selectedOpt && selectedOpt.isCorrect;
+      const score = isCorrect ? 100 : 0;
       totalScore += score;
 
       await learnerProgressService.logAttempt({
         learnerId: 'learner_default_01',
         contentId: q.content_id,
         mode: 'check',
-        result: evalRes.isCorrect ? (evalRes.isMinorError ? 'minor_error' : 'correct') : 'incorrect',
-        hintUsed: false,
-        minorErrors: evalRes.minorErrors,
-        diagnosticTag: evalRes.diagnosticTag,
+        result: isCorrect ? 'correct' : 'incorrect',
         score: score,
-        timeSpentSeconds: Math.round(totalTimeSpent / Math.max(1, questions.length))
-      });
-
-      evaluatedResults.push({
-        contentId: q.content_id,
-        grammarTag: q.raw_content?.grammar_tag || 'grammar',
-        score: score,
-        evalRes
+        timeSpentSeconds: Math.round(totalTimeSpent / questions.length)
       });
     }
 
-    const finalAvgScore = Math.round(totalScore / Math.max(1, questions.length));
+    const finalAvgScore = Math.round(totalScore / questions.length);
 
     setResultsSummary({
       totalQuestions: questions.length,
       finalAvgScore,
-      totalTimeSpent,
-      evaluatedResults
+      totalTimeSpent
     });
     setIsCompleted(true);
   };
-
-  if (loading) {
-    return (
-      <div className="p-8 text-center text-slate-500 font-bold animate-pulse">
-        Loading Cambridge Check Mode Exam...
-      </div>
-    );
-  }
 
   if (isCompleted && resultsSummary) {
     return (
@@ -167,7 +162,6 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
             <FileText size={32} />
           </div>
           <h3 className="text-2xl font-black text-slate-900">Grammar Check Mode Completed</h3>
-          <p className="text-xs text-slate-500 font-medium">10-question isolated exam results saved to learner progress.</p>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6 text-center">
@@ -190,7 +184,6 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
             setIsCompleted(false);
             setCurrentIndex(0);
             setSelectedAnswers({});
-            setStartTime(Date.now());
           }}
           className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-base transition flex items-center justify-center gap-2 shadow-md"
         >
@@ -199,18 +192,6 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
       </div>
     );
   }
-
-  if (!currentQ) return null;
-
-  const validOptionA = currentQ.answer_key?.valid_structures[0] || [];
-  const validOptionB = currentQ.answer_key?.valid_structures[1] || validOptionA;
-  const invalidOptionC = [...validOptionA].sort(() => 0.5 - Math.random());
-
-  const options = [
-    { label: 'A', tokens: validOptionA },
-    { label: 'B', tokens: validOptionB },
-    { label: 'C', tokens: invalidOptionC }
-  ];
 
   const currentSelection = selectedAnswers[currentQ.content_id];
 
@@ -225,30 +206,26 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
             Question {currentIndex + 1} of {questions.length}
           </h2>
         </div>
-        <div className="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-lg text-xs font-mono font-bold text-slate-600">
-          <ShieldCheck size={14} className="text-emerald-600" /> Isolated Exam Mode (10 Questions)
-        </div>
       </div>
 
-      <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6">
-        <p className="text-xs font-bold text-slate-600 mb-1">
-          Exam Directive: Choose the correct grammatical sentence structure.
+      <div className="bg-indigo-50/70 p-4 rounded-xl border border-indigo-100 mb-6">
+        <p className="text-xs font-bold text-indigo-700 mb-1 uppercase tracking-wide">
+          Choose the correct word to fill in the blank:
         </p>
-        <p className="text-sm font-black text-slate-900">
-          {currentQ.raw_content?.text_en || currentQ.raw_content?.text} ({currentQ.raw_content?.grammar_tag || 'grammar'})
+        <p className="text-base font-black text-slate-900 leading-relaxed">
+          {currentQ.prompt}
         </p>
       </div>
 
       <div className="space-y-3 mb-8">
-        {options.map((opt) => {
-          const optStr = opt.tokens.join(' ').replace(/\s+([.,!?:;])/g, '$1');
-          const isSelected = currentSelection && currentSelection.join(' ') === opt.tokens.join(' ');
+        {currentQ.options.map((opt) => {
+          const isSelected = currentSelection && currentSelection.label === opt.label;
 
           return (
             <button
               key={opt.label}
-              onClick={() => handleSelectOption(opt.tokens)}
-              className={`w-full p-4 rounded-xl text-left border transition-all flex items-start gap-4 ${
+              onClick={() => handleSelectOption(opt)}
+              className={`w-full p-4 rounded-xl text-left border transition-all flex items-center gap-4 ${
                 isSelected
                   ? 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm'
                   : 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800'
@@ -259,7 +236,7 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
               }`}>
                 {opt.label}
               </span>
-              <span className="text-sm font-bold leading-relaxed">{optStr}</span>
+              <span className="text-sm font-bold leading-relaxed">{opt.text}</span>
             </button>
           );
         })}

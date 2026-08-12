@@ -249,7 +249,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                   onClick={() => handlePlaySentence(longParagraph.text)}
                   className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-md"
                 >
-                  <Volume2 size={16} /> Play Full Story (Google TTS)
+                  <Volume2 size={16} /> Play Full Story
                 </button>
               </div>
               <p className="text-base font-extrabold text-indigo-950 leading-relaxed p-4 bg-white rounded-2xl border border-indigo-100 shadow-inner">
@@ -288,16 +288,8 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         <div className="space-y-4">
           <div className="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs font-black text-slate-700">
             <span className="flex items-center gap-1">
-              <Radio size={14} className="text-purple-600" /> Turn {currentTurnIdx + 1} / {talkshowTurns.length} (Target: Exactly 5 Turns)
+              <Radio size={14} className="text-purple-600" /> Turn {currentTurnIdx + 1} / {talkshowTurns.length}
             </span>
-            
-            <button
-              onClick={() => alert('AI Grading is for practice only. Official Cambridge certificates require human examiners.')}
-              className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-md text-[10px] uppercase font-black cursor-pointer transition flex items-center gap-1"
-              title="Click to view official Cambridge examiner notice"
-            >
-              <AlertTriangle size={12} /> practice_only <Info size={11} />
-            </button>
           </div>
 
           {/* Chat History Container */}

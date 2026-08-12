@@ -106,15 +106,6 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           >
             <HelpCircle size={14} className="text-amber-600" /> Show Hints
           </button>
-
-          {/* Interactive Practice Only Tag */}
-          <button
-            onClick={() => alert('AI Grading is for practice only. Official Cambridge certificates require human examiners.')}
-            className="px-3 py-2 bg-purple-50 hover:bg-purple-100 text-purple-800 rounded-xl text-xs font-black border border-purple-200 flex items-center gap-1.5 shadow-sm cursor-pointer transition"
-            title="Click to view official Cambridge examiner notice"
-          >
-            <AlertTriangle size={14} className="text-purple-600" /> practice_only <Info size={13} />
-          </button>
         </div>
       </div>
 
