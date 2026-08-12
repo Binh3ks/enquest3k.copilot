@@ -8,8 +8,9 @@ export const readingHubData = {
   theme: "The Accident File",
   cefr_level: "A2 Flyers",
 
-  // Interactive Gap-Fill Story Reading (Cambridge Reading Part 4 Standard)
+  // Interactive Gap-Fill Story Reading (Cambridge Reading Part 4 & Part 6 Standard)
   interactive_story: {
+    mode: "open_cloze",
     title: "Interactive Story: Tom's Clumsy Morning",
     text_template: "Tom had a very bad morning today. First, he accidentally ____1____ his alarm clock because he was feeling ____2____. Then, he rushed downstairs and slipped on a wet ____3____ on the kitchen floor. To make things worse, he ____4____ his backpack on the bus! His mother told him not to worry, but Tom promised to be more ____5____ next time.",
     gaps: [

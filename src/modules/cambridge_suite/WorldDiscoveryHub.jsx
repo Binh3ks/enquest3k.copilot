@@ -285,11 +285,13 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     }
   };
 
-  // Submit Interactive Story Gap-Fill
+  // Submit Interactive Story Gap-Fill / Open Cloze
   const handleStorySubmit = async () => {
     let correct = 0;
     interactiveStory.gaps.forEach((g) => {
-      if (storyAnswers[g.id] === g.target) {
+      const userAns = (storyAnswers[g.id] || '').toLowerCase().trim();
+      const targetAns = (g.target || '').toLowerCase().trim();
+      if (userAns === targetAns) {
         correct += 1;
       }
     });
@@ -298,7 +300,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     setStorySubmitted(true);
 
     await learnerProgressService.logAttempt({
-      learnerId: 'learner_default_01',
+      learnerId,
       contentId: `w${weekNumber}_interactive_story`,
       mode: 'learn',
       result: pct >= 80 ? 'correct' : 'incorrect',
@@ -460,93 +462,145 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </span>
               </div>
 
-              {/* Story Paragraph with Clickable Blanks */}
+              {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs */}
               <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm leading-extraloose text-base font-extrabold text-slate-800">
                 {renderParsedText("Tom had a very bad morning today. First, he accidentally ")}{' '}
-                <button
-                  onClick={() => setSelectedGapId(1)}
-                  className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
-                    selectedGapId === 1
-                      ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
-                      : storyAnswers[1]
-                      ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
-                      : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
-                  }`}
-                >
-                  {storyAnswers[1] || '[ Blank 1 ]'}
-                </button>{' '}
+                {interactiveStory.mode === 'open_cloze' ? (
+                  <input
+                    type="text"
+                    value={storyAnswers[1] || ''}
+                    onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 1: e.target.value }))}
+                    placeholder="____"
+                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                  />
+                ) : (
+                  <button
+                    onClick={() => setSelectedGapId(1)}
+                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                      selectedGapId === 1
+                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        : storyAnswers[1]
+                        ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
+                        : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
+                    }`}
+                  >
+                    {storyAnswers[1] || '[ Blank 1 ]'}
+                  </button>
+                )}{' '}
                 {renderParsedText("his alarm clock because he was feeling ")}{' '}
-                <button
-                  onClick={() => setSelectedGapId(2)}
-                  className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
-                    selectedGapId === 2
-                      ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
-                      : storyAnswers[2]
-                      ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
-                      : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
-                  }`}
-                >
-                  {storyAnswers[2] || '[ Blank 2 ]'}
-                </button>
+                {interactiveStory.mode === 'open_cloze' ? (
+                  <input
+                    type="text"
+                    value={storyAnswers[2] || ''}
+                    onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 2: e.target.value }))}
+                    placeholder="____"
+                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                  />
+                ) : (
+                  <button
+                    onClick={() => setSelectedGapId(2)}
+                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                      selectedGapId === 2
+                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        : storyAnswers[2]
+                        ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
+                        : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
+                    }`}
+                  >
+                    {storyAnswers[2] || '[ Blank 2 ]'}
+                  </button>
+                )}
                 {renderParsedText(". Then, he rushed downstairs and slipped on a wet ")}{' '}
-                <button
-                  onClick={() => setSelectedGapId(3)}
-                  className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
-                    selectedGapId === 3
-                      ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
-                      : storyAnswers[3]
-                      ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
-                      : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
-                  }`}
-                >
-                  {storyAnswers[3] || '[ Blank 3 ]'}
-                </button>{' '}
+                {interactiveStory.mode === 'open_cloze' ? (
+                  <input
+                    type="text"
+                    value={storyAnswers[3] || ''}
+                    onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 3: e.target.value }))}
+                    placeholder="____"
+                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                  />
+                ) : (
+                  <button
+                    onClick={() => setSelectedGapId(3)}
+                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                      selectedGapId === 3
+                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        : storyAnswers[3]
+                        ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
+                        : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
+                    }`}
+                  >
+                    {storyAnswers[3] || '[ Blank 3 ]'}
+                  </button>
+                )}{' '}
                 {renderParsedText("on the kitchen floor. To make things worse, he ")}{' '}
-                <button
-                  onClick={() => setSelectedGapId(4)}
-                  className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
-                    selectedGapId === 4
-                      ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
-                      : storyAnswers[4]
-                      ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
-                      : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
-                  }`}
-                >
-                  {storyAnswers[4] || '[ Blank 4 ]'}
-                </button>{' '}
+                {interactiveStory.mode === 'open_cloze' ? (
+                  <input
+                    type="text"
+                    value={storyAnswers[4] || ''}
+                    onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 4: e.target.value }))}
+                    placeholder="____"
+                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                  />
+                ) : (
+                  <button
+                    onClick={() => setSelectedGapId(4)}
+                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                      selectedGapId === 4
+                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        : storyAnswers[4]
+                        ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
+                        : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
+                    }`}
+                  >
+                    {storyAnswers[4] || '[ Blank 4 ]'}
+                  </button>
+                )}{' '}
                 {renderParsedText("his backpack on the bus! His mother told him not to worry, but Tom promised to be more ")}{' '}
-                <button
-                  onClick={() => setSelectedGapId(5)}
-                  className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
-                    selectedGapId === 5
-                      ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
-                      : storyAnswers[5]
-                      ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
-                      : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
-                  }`}
-                >
-                  {storyAnswers[5] || '[ Blank 5 ]'}
-                </button>{' '}
+                {interactiveStory.mode === 'open_cloze' ? (
+                  <input
+                    type="text"
+                    value={storyAnswers[5] || ''}
+                    onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 5: e.target.value }))}
+                    placeholder="____"
+                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                  />
+                ) : (
+                  <button
+                    onClick={() => setSelectedGapId(5)}
+                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                      selectedGapId === 5
+                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        : storyAnswers[5]
+                        ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
+                        : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
+                    }`}
+                  >
+                    {storyAnswers[5] || '[ Blank 5 ]'}
+                  </button>
+                )}{' '}
                 {renderParsedText("next time.")}
               </div>
 
-              {/* Word Bank Container */}
-              <div className="p-4 bg-white rounded-2xl border border-slate-200 space-y-3">
-                <div className="text-xs font-black text-slate-500 uppercase tracking-wider">
-                  Word Bank (Click a word to fill selected Blank {selectedGapId || 1}):
+              {/* Word Bank Container (Hidden if mode === 'open_cloze') */}
+              {interactiveStory.mode !== 'open_cloze' && (
+                <div className="p-4 bg-white rounded-2xl border border-slate-200 space-y-3">
+                  <div className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                    Word Bank (Click a word to fill selected Blank {selectedGapId || 1}):
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {interactiveStory.word_bank.map((w, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleSelectWord(w)}
+                        className="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 rounded-xl text-sm font-black transition shadow-sm hover:scale-105 active:scale-95"
+                      >
+                        {w}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {interactiveStory.word_bank.map((w, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => handleSelectWord(w)}
-                      className="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 rounded-xl text-sm font-black transition shadow-sm hover:scale-105 active:scale-95"
-                    >
-                      {w}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              )}
 
               {/* Submit / Results */}
               {!storySubmitted ? (

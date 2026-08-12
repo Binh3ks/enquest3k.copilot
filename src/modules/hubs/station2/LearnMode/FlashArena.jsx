@@ -39,6 +39,18 @@ const WEEK33_VOCAB_SETS = {
     { id: "c08", en: "damaged a notebook", vi: "làm hư cuốn vở" },
     { id: "c09", en: "searched the bus", vi: "tìm kiếm trên xe buýt" },
     { id: "c10", en: "promised to be cautious", vi: "hứa sẽ cẩn trọng hơn" }
+  ],
+  set4_definitions: [
+    { id: "def01", en: "backpack", vi: "You put your books in this to take them to school." },
+    { id: "def02", en: "puddle", vi: "A small pool of liquid on the ground after rain." },
+    { id: "def03", en: "alarm clock", vi: "A device that wakes you up with a loud sound." },
+    { id: "def04", en: "vase", vi: "A container used for holding fresh flowers." },
+    { id: "def05", en: "clumsy", vi: "Moving awkwardly or dropping things easily." },
+    { id: "def06", en: "careful", vi: "Paying close attention to avoid making mistakes." },
+    { id: "def07", en: "cautious", vi: "Taking care to avoid potential danger or mistakes." },
+    { id: "def08", en: "spilled", vi: "Accidentally allowed liquid to flow out of a cup." },
+    { id: "def09", en: "repaired", vi: "Fixed or restored something that was broken." },
+    { id: "def10", en: "apologized", vi: "Said sorry for causing an accident or mistake." }
   ]
 };
 
@@ -211,7 +223,9 @@ export function FlashArena({ customSets, onAttemptResult }) {
               ? 'Set 1: Nouns & Adjectives'
               : idx === 1
               ? 'Set 2: Action Verbs'
-              : 'Set 3: Chunks & Collocations'}
+              : idx === 2
+              ? 'Set 3: Chunks & Collocations'
+              : 'Set 4: Definitions'}
           </button>
         ))}
       </div>

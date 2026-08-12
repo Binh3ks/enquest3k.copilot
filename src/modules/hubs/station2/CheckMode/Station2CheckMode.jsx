@@ -161,6 +161,26 @@ const FALLBACK_CHECK_QUESTIONS = [
       { label: 'B', text: 'because', isCorrect: false },
       { label: 'C', text: 'although', isCorrect: false }
     ]
+  },
+  {
+    content_id: 'chk_d01',
+    dialogue_context: 'Tom: I accidentally broke my alarm clock this morning!',
+    prompt: 'What should Mia reply?',
+    options: [
+      { label: 'A', text: "Don't worry, it's just an accident.", isCorrect: true },
+      { label: 'B', text: 'I am waking up.', isCorrect: false },
+      { label: 'C', text: 'Yes, it is.', isCorrect: false }
+    ]
+  },
+  {
+    content_id: 'chk_d02',
+    dialogue_context: 'Mia: Did you find your lost backpack on the bus?',
+    prompt: 'What should Tom reply?',
+    options: [
+      { label: 'A', text: 'No, I am going home.', isCorrect: false },
+      { label: 'B', text: 'Yes, thank you for helping me!', isCorrect: true },
+      { label: 'C', text: 'I like riding the bus.', isCorrect: false }
+    ]
   }
 ];
 
@@ -280,9 +300,20 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
         </div>
       </div>
 
+      {currentQ.dialogue_context && (
+        <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 mb-4 shadow-sm">
+          <p className="text-[10px] font-black text-amber-700 uppercase tracking-wider mb-1">
+            Dialogue Context (Cambridge Reading Part 2):
+          </p>
+          <p className="text-sm font-bold text-amber-950 italic">
+            "{currentQ.dialogue_context}"
+          </p>
+        </div>
+      )}
+
       <div className="bg-indigo-50/70 p-4 rounded-xl border border-indigo-100 mb-6">
         <p className="text-xs font-bold text-indigo-700 mb-1 uppercase tracking-wide">
-          Choose the correct word to fill in the blank:
+          {currentQ.dialogue_context ? 'Select the best response:' : 'Choose the correct word to fill in the blank:'}
         </p>
         <p className="text-base font-black text-slate-900 leading-relaxed">
           {renderParsedText(currentQ.prompt, 'indigo')}
