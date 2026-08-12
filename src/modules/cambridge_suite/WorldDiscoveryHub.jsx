@@ -462,9 +462,9 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </span>
               </div>
 
-              {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs */}
+              {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs (Parsed with Universal Dictionary) */}
               <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm leading-extraloose text-base font-extrabold text-slate-800">
-                {renderParsedText("Tom had a very bad morning today. First, he accidentally ")}{' '}
+                {renderParsedText("Tom had a very bad morning today. First, he **accidentally** ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -487,7 +487,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[1] || '[ Blank 1 ]'}
                   </button>
                 )}{' '}
-                {renderParsedText("his alarm clock because he was feeling ")}{' '}
+                {renderParsedText("his **alarm clock** because he was feeling ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -510,7 +510,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[2] || '[ Blank 2 ]'}
                   </button>
                 )}
-                {renderParsedText(". Then, he rushed downstairs and slipped on a wet ")}{' '}
+                {renderParsedText(". Then, he **rushed downstairs** and **slipped** on a wet ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -556,7 +556,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[4] || '[ Blank 4 ]'}
                   </button>
                 )}{' '}
-                {renderParsedText("his backpack on the bus! His mother told him not to worry, but Tom promised to be more ")}{' '}
+                {renderParsedText("his **backpack** on the bus! His mother told him not to worry, but Tom promised to be more ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"

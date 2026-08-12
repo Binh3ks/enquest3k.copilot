@@ -293,9 +293,11 @@ export function FlashArena({ customSets, onAttemptResult }) {
             })}
           </div>
 
-          {/* Vietnamese Column (Shuffled to prevent straight row matching) */}
+          {/* Meaning / Definition Column (Shuffled to prevent straight row matching) */}
           <div className="space-y-2.5">
-            <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">VIETNAMESE</div>
+            <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">
+              {activeSetKey === 'set4_definitions' ? 'DEFINITION (ENGLISH)' : 'VIETNAMESE'}
+            </div>
             {(shuffledViList.length > 0 ? shuffledViList : currentPairs).map((item) => {
               const isMatched = matchedIds.includes(item.id);
               const isSelected = selectedVi?.id === item.id;

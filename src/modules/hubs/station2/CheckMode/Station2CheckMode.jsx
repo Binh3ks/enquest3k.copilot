@@ -292,7 +292,9 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
       <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
         <div>
           <span className="text-xs font-black text-slate-500 uppercase tracking-widest">
-            CAMBRIDGE FLYERS & PET — GRAMMAR CHECK MODE
+            {currentQ.dialogue_context
+              ? 'CAMBRIDGE READING PART 2 — CHOOSE THE BEST RESPONSE'
+              : 'CAMBRIDGE FLYERS & PET — GRAMMAR CHECK MODE'}
           </span>
           <h2 className="text-xl font-black text-slate-900 mt-1">
             Question {currentIndex + 1} of {questions.length}
@@ -300,25 +302,43 @@ export function Station2CheckMode({ onFinishCheckMode, weekNumber = 33 }) {
         </div>
       </div>
 
-      {currentQ.dialogue_context && (
-        <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 mb-4 shadow-sm">
-          <p className="text-[10px] font-black text-amber-700 uppercase tracking-wider mb-1">
-            Dialogue Context (Cambridge Reading Part 2):
+      {currentQ.dialogue_context ? (
+        /* LUỒNG A: CAMBRIDGE READING PART 2 - DIALOGUE RESPONSE (SPEECH BUBBLE) */
+        <div className="space-y-4 mb-6">
+          <div className="flex items-start gap-3 bg-amber-50/90 p-4 rounded-2xl border border-amber-200 shadow-sm relative">
+            <div className="w-10 h-10 rounded-full bg-amber-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm">
+              Speaker A
+            </div>
+            <div className="flex-1">
+              <div className="text-[10px] font-black text-amber-700 uppercase tracking-wider mb-1">
+                Statement / Question:
+              </div>
+              <div className="text-sm font-bold text-amber-950 leading-relaxed italic">
+                "{renderParsedText(currentQ.dialogue_context, 'amber')}"
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-indigo-50/70 p-4 rounded-2xl border border-indigo-100">
+            <p className="text-xs font-black text-indigo-700 mb-1 uppercase tracking-wide">
+              Question:
+            </p>
+            <div className="text-base font-black text-slate-900 leading-relaxed">
+              {renderParsedText(currentQ.prompt, 'indigo')}
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* LUỒNG B: STANDARD GRAMMAR GAP-FILL */
+        <div className="bg-indigo-50/70 p-4 rounded-2xl border border-indigo-100 mb-6">
+          <p className="text-xs font-black text-indigo-700 mb-1 uppercase tracking-wide">
+            CHOOSE THE CORRECT WORD TO FILL IN THE BLANK:
           </p>
-          <p className="text-sm font-bold text-amber-950 italic">
-            "{currentQ.dialogue_context}"
-          </p>
+          <div className="text-base font-black text-slate-900 leading-relaxed">
+            {renderParsedText(currentQ.prompt, 'indigo')}
+          </div>
         </div>
       )}
-
-      <div className="bg-indigo-50/70 p-4 rounded-xl border border-indigo-100 mb-6">
-        <p className="text-xs font-bold text-indigo-700 mb-1 uppercase tracking-wide">
-          {currentQ.dialogue_context ? 'Select the best response:' : 'Choose the correct word to fill in the blank:'}
-        </p>
-        <p className="text-base font-black text-slate-900 leading-relaxed">
-          {renderParsedText(currentQ.prompt, 'indigo')}
-        </p>
-      </div>
 
       <div className="space-y-3 mb-8">
         {currentQ.options.map((opt) => {
