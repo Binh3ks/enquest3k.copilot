@@ -209,7 +209,7 @@ export function SentenceBuilderBattle({ customItem, onNext, onTriggerAdaptiveHin
           </h3>
         </div>
         <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
-          Sentence {currentDrillIndex + 1} / {drills.length}
+          Sentence {drillIndex + 1} / {(customDrills || WEEK33_GRAMMAR_DRILLS).length}
         </span>
       </div>
 
