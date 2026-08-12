@@ -52,7 +52,7 @@ const WEEK33_GRAMMAR_DRILLS = [
   }
 ];
 
-export function SentenceBuilderBattle({ customItem, onNext, onTriggerAdaptiveHint }) {
+export function SentenceBuilderBattle({ customItem, customDrills, onNext, onTriggerAdaptiveHint }) {
   const [bankBlocks, setBankBlocks] = useState([]);
   const [targetBlocks, setTargetBlocks] = useState([]);
   const [activeId, setActiveId] = useState(null);
@@ -62,7 +62,10 @@ export function SentenceBuilderBattle({ customItem, onNext, onTriggerAdaptiveHin
   const [startTime, setStartTime] = useState(Date.now());
   const [drillIndex, setDrillIndex] = useState(0);
 
-  const currentDrill = customItem || WEEK33_GRAMMAR_DRILLS[drillIndex] || WEEK33_GRAMMAR_DRILLS[0];
+  const drillsList = customDrills && customDrills.length > 0 ? customDrills : WEEK33_GRAMMAR_DRILLS;
+  const currentDrillIndex = drillIndex;
+  const totalDrillsCount = drillsList.length;
+  const currentDrill = customItem || drillsList[drillIndex] || drillsList[0];
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -209,7 +212,7 @@ export function SentenceBuilderBattle({ customItem, onNext, onTriggerAdaptiveHin
           </h3>
         </div>
         <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
-          Sentence {drillIndex + 1} / {(customDrills || WEEK33_GRAMMAR_DRILLS).length}
+          Sentence {currentDrillIndex + 1} / {totalDrillsCount}
         </span>
       </div>
 
