@@ -40,3 +40,10 @@ This document establishes the inviolable architectural, UX, and pedagogical rule
 - **Global Text Parser Reuse**: MUST reuse the system's global text parser (`HoverWord` & regex `**...**`) for ALL narrative text rendering (Webtoon captions, Interactive Story, Shadowing scripts).
 - **Chunk & Vocab Bolding**: Lexical chunks MUST be wrapped in double asterisks `**...**` for Tier 1 bolding and dictionary linking. Core vocabulary words MUST use Tier 2 bolding.
 - **Global Dictionary Integration**: All bolded words and chunks automatically link to the global `HoverWord` portal dictionary modal, displaying phonetic IPA, Vietnamese meaning, audio playback, and example sentences. Week 33 data (20 core words + 10 lexical chunks) MUST be fully loaded into the global dictionary context.
+
+---
+
+### RULE 7: Strict CEFR Vocabulary Governance
+- **Kho từ vựng tối thượng**: Toàn bộ từ vựng mục tiêu (Target Vocab) phải được tham chiếu từ `src/data/official_wordlists/`.
+- **Giới hạn sinh nội dung (Content Generation Constraint)**: AI Content Agent khi tạo Content Bank cho các tuần học BẮT BUỘC chỉ được phép dùng từ vựng trong danh sách chuẩn của cấp độ tương ứng (hoặc cấp độ thấp hơn để ôn tập).
+- **Cấm tuyệt đối (Zero Tolerance)**: Cấm tuyệt đối việc tự ý "bịa" hoặc sử dụng từ vựng vượt cấp độ CEFR mục tiêu gây quá tải nhận thức cho học sinh.
