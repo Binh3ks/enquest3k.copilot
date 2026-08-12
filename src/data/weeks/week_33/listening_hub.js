@@ -34,16 +34,16 @@ export const listeningHubData = {
       { id: "v10", en: "searched", vi: "đã tìm kiếm" }
     ],
     set3_chunks: [
-      { id: "c01", en: "broke an alarm clock", vi: "làm vỡ đồng hồ báo thức" },
-      { id: "c02", en: "slipped on a puddle", vi: "trượt chân trên vũng nước" },
-      { id: "c03", en: "spilled the juice", vi: "làm đổ nước trái cây" },
-      { id: "c04", en: "apologized to mom", vi: "xin lỗi mẹ" },
-      { id: "c05", en: "lost his backpack", vi: "làm mất chiếc cặp" },
-      { id: "c06", en: "dropped a glass", vi: "đánh rơi ly nước" },
-      { id: "c07", en: "cleaned up carefully", vi: "cẩn thận dọn dẹp" },
-      { id: "c08", en: "damaged a notebook", vi: "làm hư cuốn vở" },
-      { id: "c09", en: "searched the bus", vi: "tìm kiếm trên xe buýt" },
-      { id: "c10", en: "promised to be cautious", vi: "hứa sẽ cẩn trọng hơn" }
+      { id: "c01", en: "woke up in a hurry", vi: "tỉnh dậy vội vã" },
+      { id: "c02", en: "felt extremely clumsy", vi: "cảm thấy cực kỳ hậu đậu" },
+      { id: "c03", en: "accidentally knocked over", vi: "vô tình làm đổ" },
+      { id: "c04", en: "rushed downstairs", vi: "vội vã chạy xuống lầu" },
+      { id: "c05", en: "slipped on a wet puddle", vi: "trượt chân trên vũng nước" },
+      { id: "c06", en: "to make things worse", vi: "tệ hại hơn là" },
+      { id: "c07", en: "spilled a glass of juice", vi: "làm đổ một cốc nước ép" },
+      { id: "c08", en: "cleaned up the mess", vi: "dọn dẹp đống bừa bộn" },
+      { id: "c09", en: "apologized to his mother", vi: "xin lỗi mẹ cậu ấy" },
+      { id: "c10", en: "promised to be more careful", vi: "hứa sẽ cẩn thận hơn" }
     ],
     set4_definitions: [
       { id: "def01", en: "backpack", vi: "You put your books in this to take them to school." },

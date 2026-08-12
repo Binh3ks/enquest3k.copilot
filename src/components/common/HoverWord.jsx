@@ -48,23 +48,18 @@ const week33DictItems = [
   { word: "morning", meaning: "buổi sáng", pronounce: "/ˈmɔːr.nɪŋ/", example: "In the morning." },
   { word: "interactive", meaning: "tương tác", pronounce: "/ˌɪn.t̬ɚˈræk.tɪv/", example: "Interactive story." },
   { word: "story", meaning: "câu chuyện", pronounce: "/ˈstɔːr.i/", example: "Read the story." },
-  { word: "how many", meaning: "bao nhiêu", pronounce: "/haʊ ˈmen.i/", example: "How many items did Tom break?" },
-  // 10 Lexical Chunks
-  { word: "broke an alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk ən əˈlɑːrm klɑːk/", example: "He accidentally broke an alarm clock." },
-  { word: "broke his alarm clock", meaning: "làm vỡ đồng hồ báo thức", pronounce: "/broʊk hɪz əˈlɑːrm klɑːk/", example: "He accidentally broke his alarm clock." },
-  { word: "slipped on a puddle", meaning: "trượt chân trên vũng nước", pronounce: "/slɪpt ɑːn ə ˈpʌd.əl/", example: "Tom slipped on a puddle on the floor." },
-  { word: "slipped on a wet puddle", meaning: "trượt chân trên vũng nước ướt", pronounce: "/slɪpt ɑːn ə wɛt ˈpʌd.əl/", example: "Tom slipped on a wet puddle." },
-  { word: "spilled the juice", meaning: "làm đổ nước trái cây", pronounce: "/spɪld ðə dʒuːs/", example: "He spilled the juice on his notebook." },
-  { word: "apologized to mom", meaning: "xin lỗi mẹ", pronounce: "/əˈpɑː.lə.dʒaɪzd tuː mɑːm/", example: "Tom apologized to mom." },
-  { word: "lost his backpack", meaning: "làm mất chiếc cặp", pronounce: "/lɔːst hɪz ˈbæk.pæk/", example: "He lost his backpack on the bus." },
-  { word: "dropped a glass", meaning: "đánh rơi ly nước", pronounce: "/drɑːpt ə ɡlæs/", example: "He dropped a glass of orange juice." },
-  { word: "cleaned up carefully", meaning: "cẩn thận dọn dẹp", pronounce: "/kliːnd ʌp ˈkɛr.fə.li/", example: "Tom cleaned up carefully." },
-  { word: "damaged a notebook", meaning: "làm hư cuốn vở", pronounce: "/ˈdæm.ɪdʒd ə ˈnoʊt.bʊk/", example: "The liquid damaged a notebook." },
-  { word: "damaged his notebook", meaning: "làm hư cuốn vở", pronounce: "/ˈdæm.ɪdʒd hɪz ˈnoʊt.bʊk/", example: "The liquid damaged his notebook." },
-  { word: "searched the bus", meaning: "tìm kiếm trên xe buýt", pronounce: "/sɜːrtʃt ðə bʌs/", example: "Mia searched the bus seat." },
-  { word: "promised to be cautious", meaning: "hứa sẽ cẩn trọng hơn", pronounce: "/ˈprɑː.mɪst tuː biː ˈkɑː.ʃəs/", example: "Tom promised to be cautious." },
-  { word: "fell onto the rug", meaning: "ngã xuống tấm thảm", pronounce: "/fɛl ˈɑːn.tuː ðə rʌɡ/", example: "He fell onto the rug." },
-  { word: "rushed downstairs", meaning: "vội vã chạy xuống lầu", pronounce: "/rʌʃt ˌdaʊnˈsterz/", example: "He rushed downstairs to have breakfast." }
+  // 10 Gold Standard Lexical Chunks for Week 33
+  { word: "woke up in a hurry", meaning: "tỉnh dậy vội vã", pronounce: "/woʊk ʌp ɪn ə ˈhɜːr.i/", example: "Tom woke up in a hurry today." },
+  { word: "felt extremely clumsy", meaning: "cảm thấy cực kỳ hậu đậu", pronounce: "/fɛlt ɪkˈstriːm.li ˈklʌm.zi/", example: "He felt extremely clumsy in the morning." },
+  { word: "accidentally knocked over", meaning: "vô tình làm đổ", pronounce: "/ˌæk.səˈden.t̬əl.i nɑːkt ˈoʊ.vɚ/", example: "He accidentally knocked over his alarm clock." },
+  { word: "rushed downstairs", meaning: "vội vã chạy xuống lầu", pronounce: "/rʌʃt ˌdaʊnˈsterz/", example: "He rushed downstairs to have breakfast." },
+  { word: "slipped on a wet puddle", meaning: "trượt chân trên vũng nước", pronounce: "/slɪpt ɑːn ə wɛt ˈpʌd.əl/", example: "He slipped on a wet puddle on the kitchen floor." },
+  { word: "to make things worse", meaning: "tệ hại hơn là", pronounce: "/tuː meɪk θɪŋz wɜːrs/", example: "To make things worse, he spilled juice over his notebook." },
+  { word: "spilled a glass of juice", meaning: "làm đổ một cốc nước ép", pronounce: "/spɪld ə ɡlæs ʌv dʒuːs/", example: "He spilled a glass of juice on the table." },
+  { word: "cleaned up the mess", meaning: "dọn dẹp đống bừa bộn", pronounce: "/kliːnd ʌp ðə mɛs/", example: "Mia helped him cleaned up the mess." },
+  { word: "apologized to his mother", meaning: "xin lỗi mẹ cậu ấy", pronounce: "/əˈpɑː.lə.dʒaɪzd tuː hɪz ˈmʌð.ɚ/", example: "Tom apologized to his mother for being careless." },
+  { word: "promised to be more careful", meaning: "hứa sẽ cẩn thận hơn", pronounce: "/ˈprɑː.mɪst tuː biː mɔːr ˈkɛr.fəl/", example: "He promised to be more careful next time." },
+  { word: "fell onto the rug", meaning: "ngã xuống tấm thảm", pronounce: "/fɛl ˈɑːn.tuː ðə rʌɡ/", example: "He fell onto the rug." }
 ];
 
 // Build dictionary lookup map (shared across all HoverWord instances)
