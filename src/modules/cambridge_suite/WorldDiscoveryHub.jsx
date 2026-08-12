@@ -419,15 +419,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 learnSubTab === 'interactive_story' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <FileText size={14} /> Interactive Story
-            </button>
-            <button
-              onClick={() => setLearnSubTab('reading_part3')}
-              className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                learnSubTab === 'reading_part3' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
-              }`}
-            >
-              <Layers size={14} /> Reading Part 3 (Flyers)
+              <FileText size={14} /> Interactive Story & Reading Part 3
             </button>
           </div>
 
@@ -518,7 +510,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </div>
               </div>
             </div>
-          ) : learnSubTab === 'interactive_story' ? (
+          ) : (
             /* SUB-TAB 2: INTERACTIVE STORY GAP-FILL (Cambridge Reading Part 4) */
             <div className="p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
@@ -531,8 +523,8 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </span>
               </div>
 
-              {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs (Parsed with Universal Dictionary) */}
-              <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm leading-extraloose text-base font-extrabold text-slate-800">
+              {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs (Boosted Typography: text-lg sm:text-xl font-bold leading-loose) */}
+              <div className="p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm leading-loose sm:leading-extraloose text-lg sm:text-xl font-bold text-slate-900 space-y-2">
                 {renderParsedText("Tom had a very bad morning today. First, he **accidentally** ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
@@ -540,14 +532,14 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     value={storyAnswers[1] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 1: e.target.value }))}
                     placeholder="____"
-                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
                   />
                 ) : (
                   <button
                     onClick={() => setSelectedGapId(1)}
-                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                    className={`px-4 py-1.5 mx-1 rounded-xl border-2 font-black text-lg sm:text-xl transition-all ${
                       selectedGapId === 1
-                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        ? 'bg-indigo-600 text-white font-black ring-4 ring-indigo-200'
                         : storyAnswers[1]
                         ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
@@ -563,14 +555,14 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     value={storyAnswers[2] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 2: e.target.value }))}
                     placeholder="____"
-                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
                   />
                 ) : (
                   <button
                     onClick={() => setSelectedGapId(2)}
-                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                    className={`px-4 py-1.5 mx-1 rounded-xl border-2 font-black text-lg sm:text-xl transition-all ${
                       selectedGapId === 2
-                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        ? 'bg-indigo-600 text-white font-black ring-4 ring-indigo-200'
                         : storyAnswers[2]
                         ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
@@ -586,14 +578,14 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     value={storyAnswers[3] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 3: e.target.value }))}
                     placeholder="____"
-                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
                   />
                 ) : (
                   <button
                     onClick={() => setSelectedGapId(3)}
-                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                    className={`px-4 py-1.5 mx-1 rounded-xl border-2 font-black text-lg sm:text-xl transition-all ${
                       selectedGapId === 3
-                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        ? 'bg-indigo-600 text-white font-black ring-4 ring-indigo-200'
                         : storyAnswers[3]
                         ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
@@ -609,14 +601,14 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     value={storyAnswers[4] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 4: e.target.value }))}
                     placeholder="____"
-                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
                   />
                 ) : (
                   <button
                     onClick={() => setSelectedGapId(4)}
-                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                    className={`px-4 py-1.5 mx-1 rounded-xl border-2 font-black text-lg sm:text-xl transition-all ${
                       selectedGapId === 4
-                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        ? 'bg-indigo-600 text-white font-black ring-4 ring-indigo-200'
                         : storyAnswers[4]
                         ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
@@ -632,14 +624,14 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     value={storyAnswers[5] || ''}
                     onChange={(e) => setStoryAnswers((prev) => ({ ...prev, 5: e.target.value }))}
                     placeholder="____"
-                    className="w-28 px-2 py-1 mx-1 rounded-xl border border-indigo-300 bg-white text-indigo-900 font-bold text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none shadow-inner"
+                    className="w-32 px-3 py-1.5 mx-1 rounded-xl border-2 border-indigo-400 bg-white text-indigo-950 font-black text-center text-lg sm:text-xl focus:ring-4 focus:ring-indigo-200 focus:outline-none shadow-inner"
                   />
                 ) : (
                   <button
                     onClick={() => setSelectedGapId(5)}
-                    className={`px-3 py-1 mx-1 rounded-xl border transition-all ${
+                    className={`px-4 py-1.5 mx-1 rounded-xl border-2 font-black text-lg sm:text-xl transition-all ${
                       selectedGapId === 5
-                        ? 'bg-indigo-600 text-white font-black ring-2 ring-indigo-300'
+                        ? 'bg-indigo-600 text-white font-black ring-4 ring-indigo-200'
                         : storyAnswers[5]
                         ? 'bg-indigo-100 text-indigo-900 border-indigo-300'
                         : 'bg-amber-100 text-amber-900 border-amber-300 animate-pulse'
@@ -653,16 +645,16 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
 
               {/* Word Bank Container (Hidden if mode === 'open_cloze') */}
               {interactiveStory.mode !== 'open_cloze' && (
-                <div className="p-4 bg-white rounded-2xl border border-slate-200 space-y-3">
-                  <div className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                <div className="p-5 bg-white rounded-2xl border border-slate-200 space-y-3 shadow-sm">
+                  <div className="text-xs font-black text-slate-600 uppercase tracking-wider">
                     Word Bank (Click a word to fill selected Blank {selectedGapId || 1}):
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2.5">
                     {interactiveStory.word_bank.map((w, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleSelectWord(w)}
-                        className="px-4 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 rounded-xl text-sm font-black transition shadow-sm hover:scale-105 active:scale-95"
+                        className="px-5 py-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-950 border border-indigo-200 rounded-xl text-base font-black transition shadow-sm hover:scale-105 active:scale-95"
                       >
                         {w}
                       </button>
@@ -671,157 +663,157 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </div>
               )}
 
-              {/* Submit / Results */}
+              {/* Submit / Results for Part 4 Gap-Fill */}
               {!storySubmitted ? (
                 <div className="flex justify-end">
                   <button
                     onClick={handleStorySubmit}
                     disabled={Object.keys(storyAnswers).length < interactiveStory.gaps.length}
-                    className="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-2xl text-xs transition shadow-md flex items-center gap-2 disabled:opacity-40"
+                    className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-2xl text-sm transition shadow-md flex items-center gap-2 disabled:opacity-40"
                   >
-                    <CheckCircle2 size={16} /> Check Interactive Story
+                    <CheckCircle2 size={18} /> Check Interactive Story
                   </button>
                 </div>
               ) : (
-                <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-300 text-center space-y-2 animate-in fade-in">
-                  <h4 className="text-lg font-black text-emerald-950">Gap-Fill Score: {storyScore}%</h4>
-                  <p className="text-xs text-emerald-700 font-semibold">Great active reading practice!</p>
+                <div className="p-5 bg-emerald-50 rounded-2xl border border-emerald-300 text-center space-y-2 animate-in fade-in">
+                  <h4 className="text-xl font-black text-emerald-950">Gap-Fill Score: {storyScore}%</h4>
+                  <p className="text-sm text-emerald-800 font-semibold">Great active reading practice!</p>
                   <button
                     onClick={() => { setStorySubmitted(false); setStoryAnswers({}); setStoryScore(null); }}
-                    className="px-4 py-2 bg-indigo-600 text-white font-black text-xs rounded-xl shadow-sm hover:bg-indigo-700 transition"
+                    className="px-5 py-2.5 bg-indigo-600 text-white font-black text-xs rounded-xl shadow-sm hover:bg-indigo-700 transition"
                   >
                     Try Again
                   </button>
                 </div>
               )}
-            </div>
-          ) : (
-            /* SUB-TAB 3: CAMBRIDGE FLYERS READING PART 3 (STORY & QUESTIONS) */
-            <div className="space-y-6 animate-in fade-in duration-200">
-              {/* Header Banner */}
-              <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-indigo-700">
-                <span className="text-[10px] font-black tracking-widest text-indigo-300 uppercase bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-700/50">
-                  CAMBRIDGE FLYERS READING PART 3 — NARRATIVE COMPREHENSION
-                </span>
-                <h3 className="text-xl sm:text-2xl font-black mt-2 text-white">
-                  {readingPart3Data.title}
-                </h3>
-                <p className="text-xs text-indigo-200 mt-1 max-w-2xl leading-relaxed">
-                  Read the story carefully and choose the best response (A, B, or C) for each comprehension question.
-                </p>
-              </div>
 
-              {/* Story Narrative Box */}
-              <div className="bg-amber-50/90 p-6 rounded-3xl border border-amber-200 shadow-sm space-y-2">
-                <div className="text-xs font-black text-amber-800 uppercase tracking-wide flex items-center gap-2">
-                  <BookOpen size={16} /> Story Narrative (Click or hover words for dictionary):
-                </div>
-                <div className="text-base font-medium text-slate-900 leading-relaxed pt-1">
-                  {renderParsedText(readingPart3Data.story_text, 'indigo')}
-                </div>
-              </div>
-
-              {/* 5 Multiple-Choice Questions with Instant Feedback */}
-              <div className="space-y-6 pt-2">
-                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
-                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-wide flex items-center gap-2">
-                    <HelpCircle size={18} className="text-indigo-600" /> Comprehension Questions ({readingPart3Data.questions.length} Items):
-                  </h4>
-                  <span className="text-xs font-bold text-slate-400 font-mono">Part 3 Exam</span>
+              {/* UNIFIED FLOW: CAMBRIDGE FLYERS READING PART 3 (NARRATIVE COMPREHENSION QUESTIONS) INTEGRATED DIRECTLY BELOW */}
+              <div className="pt-8 border-t-2 border-slate-200 space-y-6">
+                {/* Header Banner */}
+                <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-indigo-700">
+                  <span className="text-xs font-black tracking-widest text-indigo-300 uppercase bg-indigo-950/60 px-3.5 py-1 rounded-full border border-indigo-700/50">
+                    CAMBRIDGE FLYERS READING PART 3 — NARRATIVE COMPREHENSION
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-black mt-2 text-white">
+                    {readingPart3Data.title}
+                  </h3>
+                  <p className="text-sm text-indigo-200 mt-1 max-w-2xl leading-relaxed">
+                    Read the narrative below carefully and choose the best response (A, B, or C) for each question.
+                  </p>
                 </div>
 
-                {readingPart3Data.questions.map((q, qIdx) => {
-                  const isSubmitted = !!r3Submitted[q.id];
-                  const selectedOpt = r3Answers[q.id];
+                {/* Story Narrative Box (Boosted Typography: text-lg sm:text-xl font-bold leading-loose) */}
+                <div className="bg-amber-50/90 p-6 sm:p-8 rounded-3xl border border-amber-200 shadow-sm space-y-3">
+                  <div className="text-xs font-black text-amber-800 uppercase tracking-wide flex items-center gap-2">
+                    <BookOpen size={18} /> Story Narrative (Click or hover words for dictionary):
+                  </div>
+                  <div className="text-lg sm:text-xl font-bold text-slate-900 leading-loose sm:leading-extraloose pt-1">
+                    {renderParsedText(readingPart3Data.story_text, 'indigo')}
+                  </div>
+                </div>
 
-                  return (
-                    <div key={q.id || qIdx} className="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
-                      <div className="text-sm font-black text-slate-900 flex items-start gap-2">
-                        <span className="px-2.5 py-1 bg-indigo-100 text-indigo-800 rounded-lg text-xs font-mono shrink-0">
-                          Q{qIdx + 1}
-                        </span>
-                        <span className="pt-0.5">{renderParsedText(q.question, 'indigo')}</span>
-                      </div>
+                {/* 5 Multiple-Choice Questions with Boosted Typography & Instant Feedback */}
+                <div className="space-y-6 pt-2">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <h4 className="text-base sm:text-lg font-black text-slate-900 uppercase tracking-wide flex items-center gap-2">
+                      <HelpCircle size={20} className="text-indigo-600" /> Comprehension Questions ({readingPart3Data.questions.length} Items):
+                    </h4>
+                    <span className="text-xs font-bold text-slate-500 font-mono">Part 3 Exam</span>
+                  </div>
 
-                      <div className="space-y-2.5">
-                        {q.options.map((opt, optIdx) => {
-                          const isSelected = selectedOpt && selectedOpt.label === opt.label;
-                          const isCorrect = opt.isCorrect || (q.answerIndex !== undefined && optIdx === q.answerIndex);
+                  {readingPart3Data.questions.map((q, qIdx) => {
+                    const isSubmitted = !!r3Submitted[q.id];
+                    const selectedOpt = r3Answers[q.id];
 
-                          let buttonStyle = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800';
-                          let badgeStyle = 'bg-slate-200 text-slate-700';
+                    return (
+                      <div key={q.id || qIdx} className="p-6 sm:p-7 bg-white rounded-3xl border border-slate-200 shadow-sm space-y-5">
+                        <div className="text-base sm:text-lg font-black text-slate-900 flex items-start gap-3 leading-snug">
+                          <span className="px-3 py-1 bg-indigo-100 text-indigo-900 rounded-xl text-xs font-mono shrink-0 mt-0.5">
+                            Q{qIdx + 1}
+                          </span>
+                          <span>{renderParsedText(q.question, 'indigo')}</span>
+                        </div>
 
-                          if (isSubmitted) {
-                            if (isCorrect) {
-                              buttonStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-400 shadow-sm';
-                              badgeStyle = 'bg-emerald-600 text-white';
-                            } else if (isSelected && !isCorrect) {
-                              buttonStyle = 'border-rose-500 bg-rose-50 text-rose-950 font-bold ring-2 ring-rose-400 shadow-sm';
-                              badgeStyle = 'bg-rose-600 text-white';
-                            } else {
-                              buttonStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
-                              badgeStyle = 'bg-slate-200 text-slate-400';
+                        <div className="space-y-3">
+                          {q.options.map((opt, optIdx) => {
+                            const isSelected = selectedOpt && selectedOpt.label === opt.label;
+                            const isCorrect = opt.isCorrect || (q.answerIndex !== undefined && optIdx === q.answerIndex);
+
+                            let buttonStyle = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800';
+                            let badgeStyle = 'bg-slate-200 text-slate-700';
+
+                            if (isSubmitted) {
+                              if (isCorrect) {
+                                buttonStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-400 shadow-sm';
+                                badgeStyle = 'bg-emerald-600 text-white';
+                              } else if (isSelected && !isCorrect) {
+                                buttonStyle = 'border-rose-500 bg-rose-50 text-rose-950 font-bold ring-2 ring-rose-400 shadow-sm';
+                                badgeStyle = 'bg-rose-600 text-white';
+                              } else {
+                                buttonStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
+                                badgeStyle = 'bg-slate-200 text-slate-400';
+                              }
+                            } else if (isSelected) {
+                              buttonStyle = 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm';
+                              badgeStyle = 'bg-indigo-600 text-white';
                             }
-                          } else if (isSelected) {
-                            buttonStyle = 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm';
-                            badgeStyle = 'bg-indigo-600 text-white';
-                          }
 
-                          return (
+                            return (
+                              <button
+                                key={opt.label}
+                                disabled={isSubmitted}
+                                onClick={() => setR3Answers((prev) => ({ ...prev, [q.id]: opt }))}
+                                className={`w-full p-4 sm:p-5 rounded-2xl text-left border transition-all flex items-center justify-between gap-4 ${buttonStyle}`}
+                              >
+                                <div className="flex items-center gap-4 flex-1">
+                                  <span className={`w-8 h-8 rounded-full font-black flex items-center justify-center text-sm shrink-0 ${badgeStyle}`}>
+                                    {opt.label}
+                                  </span>
+                                  <span className="text-base font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
+                                </div>
+
+                                {isSubmitted && isCorrect && (
+                                  <span className="flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-700 font-extrabold text-xs rounded-full shrink-0">
+                                    <CheckCircle2 size={16} /> Correct
+                                  </span>
+                                )}
+                                {isSubmitted && isSelected && !isCorrect && (
+                                  <span className="flex items-center gap-1.5 px-3 py-1 bg-rose-100 text-rose-700 font-extrabold text-xs rounded-full shrink-0">
+                                    <XCircle size={16} /> Incorrect
+                                  </span>
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+
+                        {!isSubmitted ? (
+                          <div className="flex justify-end pt-1">
                             <button
-                              key={opt.label}
-                              disabled={isSubmitted}
-                              onClick={() => setR3Answers((prev) => ({ ...prev, [q.id]: opt }))}
-                              className={`w-full p-3.5 rounded-xl text-left border transition-all flex items-center justify-between gap-3 ${buttonStyle}`}
+                              disabled={!selectedOpt}
+                              onClick={() => setR3Submitted((prev) => ({ ...prev, [q.id]: true }))}
+                              className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm disabled:opacity-40"
                             >
-                              <div className="flex items-center gap-3 flex-1">
-                                <span className={`w-6 h-6 rounded-full font-black flex items-center justify-center text-xs shrink-0 ${badgeStyle}`}>
-                                  {opt.label}
-                                </span>
-                                <span className="text-xs font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
-                              </div>
-
-                              {isSubmitted && isCorrect && (
-                                <span className="flex items-center gap-1 px-2.5 py-0.5 bg-emerald-100 text-emerald-700 font-extrabold text-[11px] rounded-full shrink-0">
-                                  <CheckCircle2 size={14} /> Correct
-                                </span>
-                              )}
-                              {isSubmitted && isSelected && !isCorrect && (
-                                <span className="flex items-center gap-1 px-2.5 py-0.5 bg-rose-100 text-rose-700 font-extrabold text-[11px] rounded-full shrink-0">
-                                  <XCircle size={14} /> Incorrect
-                                </span>
-                              )}
+                              <CheckCircle2 size={16} /> Check Answer
                             </button>
-                          );
-                        })}
+                          </div>
+                        ) : (
+                          <div className="flex justify-end pt-1">
+                            <button
+                              onClick={() => {
+                                setR3Submitted((prev) => ({ ...prev, [q.id]: false }));
+                                setR3Answers((prev) => ({ ...prev, [q.id]: null }));
+                              }}
+                              className="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg text-xs transition flex items-center gap-1.5"
+                            >
+                              <RefreshCw size={14} /> Retry Question
+                            </button>
+                          </div>
+                        )}
                       </div>
-
-                      {!isSubmitted ? (
-                        <div className="flex justify-end pt-1">
-                          <button
-                            disabled={!selectedOpt}
-                            onClick={() => setR3Submitted((prev) => ({ ...prev, [q.id]: true }))}
-                            className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm disabled:opacity-40"
-                          >
-                            <CheckCircle2 size={14} /> Check Answer
-                          </button>
-                        </div>
-                      ) : (
-                        <div className="flex justify-end pt-1">
-                          <button
-                            onClick={() => {
-                              setR3Submitted((prev) => ({ ...prev, [q.id]: false }));
-                              setR3Answers((prev) => ({ ...prev, [q.id]: null }));
-                            }}
-                            className="px-4 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg text-[11px] transition flex items-center gap-1"
-                          >
-                            <RefreshCw size={12} /> Retry Question
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           )}
