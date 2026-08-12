@@ -3,32 +3,47 @@ import { learnerProgressService } from '../../../../services/learnerProgressServ
 import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee } from 'lucide-react';
 
 const WEEK33_VOCAB_SETS = {
-  set_w33_01: [
-    { id: 'v1', en: 'broke', vi: 'đã làm vỡ / gãy' },
-    { id: 'v2', en: 'fell', vi: 'đã ngã / rơi' },
-    { id: 'v3', en: 'lost', vi: 'đã làm mất' },
-    { id: 'v4', en: 'found', vi: 'đã tìm thấy' },
-    { id: 'v5', en: 'mistake', vi: 'sai lầm / lỗi' }
+  set1_nouns_adj: [
+    { id: "na01", en: "mistake", vi: "sai lầm / lỗi" },
+    { id: "na02", en: "accident", vi: "sự cố tai nạn" },
+    { id: "na03", en: "puddle", vi: "vũng nước" },
+    { id: "na04", en: "backpack", vi: "chiếc cặp sách" },
+    { id: "na05", en: "vase", vi: "bình hoa" },
+    { id: "na06", en: "careful", vi: "cẩn thận" },
+    { id: "na07", en: "clumsy", vi: "vụng về" },
+    { id: "na08", en: "sorry", vi: "xin lỗi / hối hận" },
+    { id: "na09", en: "cautious", vi: "cẩn trọng" },
+    { id: "na10", en: "careless", vi: "bất cẩn" }
   ],
-  set_w33_02: [
-    { id: 'v6', en: 'dropped', vi: 'đánh rơi' },
-    { id: 'v7', en: 'damaged', vi: 'bị hư hại' },
-    { id: 'v8', en: 'searched', vi: 'đã tìm kiếm' },
-    { id: 'v9', en: 'apologized', vi: 'đã xin lỗi' },
-    { id: 'v10', en: 'slipped', vi: 'trượt chân' }
+  set2_verbs: [
+    { id: "v01", en: "broke", vi: "đã làm vỡ" },
+    { id: "v02", en: "fell", vi: "đã ngã" },
+    { id: "v03", en: "lost", vi: "đã làm mất" },
+    { id: "v04", en: "found", vi: "đã tìm thấy" },
+    { id: "v05", en: "slipped", vi: "đã trượt chân" },
+    { id: "v06", en: "spilled", vi: "đã làm tràn / đổ" },
+    { id: "v07", en: "dropped", vi: "đánh rơi" },
+    { id: "v08", en: "apologized", vi: "đã xin lỗi" },
+    { id: "v09", en: "repaired", vi: "đã sửa chữa" },
+    { id: "v10", en: "searched", vi: "đã tìm kiếm" }
   ],
-  set_w33_03: [
-    { id: 'c1', en: 'broke an alarm clock', vi: 'làm vỡ đồng hồ báo thức' },
-    { id: 'c2', en: 'slipped on a puddle', vi: 'trượt chân trên vũng nước' },
-    { id: 'c3', en: 'dropped a glass', vi: 'đánh rơi ly nước' },
-    { id: 'c4', en: 'lost his backpack', vi: 'làm mất chiếc cặp' },
-    { id: 'c5', en: 'apologized to teacher', vi: 'xin lỗi cô giáo' }
+  set3_chunks: [
+    { id: "c01", en: "broke an alarm clock", vi: "làm vỡ đồng hồ báo thức" },
+    { id: "c02", en: "slipped on a puddle", vi: "trượt chân trên vũng nước" },
+    { id: "c03", en: "spilled the juice", vi: "làm đổ nước trái cây" },
+    { id: "c04", en: "apologized to mom", vi: "xin lỗi mẹ" },
+    { id: "c05", en: "lost his backpack", vi: "làm mất chiếc cặp" },
+    { id: "c06", en: "dropped a glass", vi: "đánh rơi ly nước" },
+    { id: "c07", en: "cleaned up carefully", vi: "cẩn thận dọn dẹp" },
+    { id: "c08", en: "damaged a notebook", vi: "làm hư cuốn vở" },
+    { id: "c09", en: "searched the bus", vi: "tìm kiếm trên xe buýt" },
+    { id: "c10", en: "promised to be cautious", vi: "hứa sẽ cẩn trọng hơn" }
   ]
 };
 
 export function FlashArena({ customSets, onAttemptResult }) {
   const [playMode, setPlayMode] = useState('casual'); // 'casual' (Untimed) | 'speed' (30s Timer)
-  const [activeSetKey, setActiveSetKey] = useState('set_w33_01');
+  const [activeSetKey, setActiveSetKey] = useState('set1_nouns_adj');
   const [selectedEn, setSelectedEn] = useState(null);
   const [selectedVi, setSelectedVi] = useState(null);
   const [matchedIds, setMatchedIds] = useState([]);
@@ -38,7 +53,7 @@ export function FlashArena({ customSets, onAttemptResult }) {
   const [isGameOver, setIsGameOver] = useState(false);
 
   const activeSets = customSets || WEEK33_VOCAB_SETS;
-  const currentPairs = activeSets[activeSetKey] || activeSets.set_w33_01 || Object.values(activeSets)[0];
+  const currentPairs = activeSets[activeSetKey] || activeSets.set1_nouns_adj || Object.values(activeSets)[0];
 
   const [shuffledViList, setShuffledViList] = useState([]);
 

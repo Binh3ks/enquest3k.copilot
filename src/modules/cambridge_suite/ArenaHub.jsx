@@ -43,13 +43,9 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
         <div>
-          <span className="px-3.5 py-1.5 bg-amber-50 text-amber-900 border border-amber-200 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <Swords size={14} /> Hub 2: Arena Battles & Exam Prep (W{weekNumber})
-          </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2 tracking-tight">
-            Interactive Sentence & Math Arena
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            Hub 2: Arena Battles
           </h1>
-          <p className="text-xs text-slate-500 font-medium mt-1">Interactive Sentence Builder, Math Bar Model Quests & Speed Flash Arena</p>
         </div>
 
         {/* Learn Mode vs Check Mode Switcher */}

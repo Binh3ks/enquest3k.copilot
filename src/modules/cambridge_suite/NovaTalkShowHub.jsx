@@ -154,13 +154,9 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
         <div>
-          <span className="px-3.5 py-1.5 bg-red-50 text-red-700 border border-red-200 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <Radio size={14} /> Hub 4: Nova Talk Show & Exam Simulator (W{weekNumber})
-          </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2 tracking-tight">
-            Podcast Shadowing & AI Examiner Talk Show
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            Hub 4: Nova Talk Show
           </h1>
-          <p className="text-xs text-slate-500 font-medium mt-1">Practise 2-Phase Shadowing & 5-Turn Interactive Dialogue with AI Examiner Nova!</p>
         </div>
 
         {/* Sub-Mode Switcher */}
@@ -295,28 +291,13 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               <Radio size={14} className="text-purple-600" /> Turn {currentTurnIdx + 1} / {talkshowTurns.length} (Target: Exactly 5 Turns)
             </span>
             
-            <div className="relative">
-              <button
-                onClick={() => setShowPracticeNotice(!showPracticeNotice)}
-                className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-md text-[10px] uppercase font-black cursor-pointer transition flex items-center gap-1"
-              >
-                <AlertTriangle size={12} /> practice_only <Info size={11} />
-              </button>
-
-              {showPracticeNotice && (
-                <div className="absolute right-0 top-8 z-50 w-72 p-3 bg-slate-900 text-white rounded-2xl shadow-xl text-xs font-medium border border-slate-700 animate-in fade-in zoom-in-95">
-                  <div className="flex items-start justify-between gap-2 mb-1">
-                    <span className="font-black text-amber-400 flex items-center gap-1">
-                      <Info size={14} /> Cambridge Examiner Notice
-                    </span>
-                    <button onClick={() => setShowPracticeNotice(false)} className="text-slate-400 hover:text-white font-bold">×</button>
-                  </div>
-                  <p className="text-[11px] text-slate-300 leading-snug">
-                    AI Grading is for practice only. Official Cambridge certificates require human examiners.
-                  </p>
-                </div>
-              )}
-            </div>
+            <button
+              onClick={() => alert('AI Grading is for practice only. Official Cambridge certificates require human examiners.')}
+              className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-md text-[10px] uppercase font-black cursor-pointer transition flex items-center gap-1"
+              title="Click to view official Cambridge examiner notice"
+            >
+              <AlertTriangle size={12} /> practice_only <Info size={11} />
+            </button>
           </div>
 
           {/* Chat History Container */}

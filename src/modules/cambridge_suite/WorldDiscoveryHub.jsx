@@ -161,13 +161,9 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       {/* Top Header Navigation */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
         <div>
-          <span className="px-3.5 py-1.5 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <BookOpen size={14} /> Hub 1: World Discovery & Webtoon Quest (W{weekNumber})
-          </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2 tracking-tight">
-            The Accident File — Tom's Bad Day
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            Hub 1: World Discovery
           </h1>
-          <p className="text-xs text-slate-500 font-medium mt-1">Explore 6 3D Pixar Webtoon Scenes & 20 Irregular Vocab Chunks!</p>
         </div>
 
         {/* Tab Switcher: Learn Mode vs Check Mode */}
