@@ -15,17 +15,17 @@ export const readingHubData = {
     text_template: "Tom **woke up in a hurry** today. First, he **felt extremely clumsy** when he ____1____ his alarm clock off the table. Then, he ____2____ to have breakfast and ____3____ on the kitchen floor. ____4____, he **spilled a glass of juice** over his English notebook! Fortunately, his sister Mia helped him **cleaned up the mess**. After that, Tom ____5____ and **promised to be more careful** next time.",
     gaps: [
       { id: 1, target: "accidentally knocked over", hint: "vô tình làm đổ", hint_vi: "vô tình làm đổ" },
-      { id: 2, target: "rushed downstairs", hint: "chạy vội xuống lầu", hint_vi: "chạy vội xuống lầu" },
-      { id: 3, target: "slipped on a wet puddle", hint: "trượt chân trên vũng nước ướt", hint_vi: "trượt chân trên vũng nước ướt" },
-      { id: 4, target: "to make things worse", hint: "tồi tệ hơn nữa", hint_vi: "tồi tệ hơn nữa" },
-      { id: 5, target: "apologized to his mother", hint: "xin lỗi mẹ", hint_vi: "xin lỗi mẹ" }
+      { id: 2, target: "rushed downstairs", hint: "vội vã chạy xuống lầu", hint_vi: "vội vã chạy xuống lầu" },
+      { id: 3, target: "slipped on a wet puddle", hint: "trượt chân trên vũng nước", hint_vi: "trượt chân trên vũng nước" },
+      { id: 4, target: "to make things worse", hint: "tệ hại hơn là", hint_vi: "tệ hại hơn là" },
+      { id: 5, target: "apologized to his mother", hint: "xin lỗi mẹ cậu ấy", hint_vi: "xin lỗi mẹ cậu ấy" }
     ],
     hints: {
       1: "vô tình làm đổ",
-      2: "chạy vội xuống lầu",
-      3: "trượt chân trên vũng nước ướt",
-      4: "tồi tệ hơn nữa",
-      5: "xin lỗi mẹ"
+      2: "vội vã chạy xuống lầu",
+      3: "trượt chân trên vũng nước",
+      4: "tệ hại hơn là",
+      5: "xin lỗi mẹ cậu ấy"
     },
     word_bank: [
       "accidentally knocked over",

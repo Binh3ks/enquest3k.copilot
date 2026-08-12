@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
+import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
 import { Mic, MicOff, Volume2, Radio, Star, AlertTriangle, MessageSquare, Layers, BookOpen, Info } from 'lucide-react';
 
@@ -51,25 +52,25 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [isTalkshowEnded, setIsTalkshowEnded] = useState(false);
 
   const sentencesList = data?.shadowing_sentences || [
-    { id: "sh_01", speaker: "Tom", text: "I had a terrible morning today because I woke up late and accidentally broke my alarm clock." },
-    { id: "sh_02", speaker: "Tom", text: "I felt so clumsy when I dropped my glasses on the rug." },
-    { id: "sh_03", speaker: "Tom", text: "While I was running downstairs, I slipped on a wet puddle." },
-    { id: "sh_04", speaker: "Tom", text: "To make things worse, I lost my backpack on the school bus seat!" },
-    { id: "sh_05", speaker: "Mia", text: "My mom told me not to worry, because accidents happen, but I promised to be more careful next time." }
+    { id: "sh_01", speaker: "Tom", text: "I had a terrible morning today because I **woke up in a hurry** and **accidentally knocked over** my alarm clock." },
+    { id: "sh_02", speaker: "Tom", text: "I **felt extremely clumsy** when I **rushed downstairs**." },
+    { id: "sh_03", speaker: "Tom", text: "While I was walking in the kitchen, I **slipped on a wet puddle**." },
+    { id: "sh_04", speaker: "Tom", text: "**To make things worse**, I **spilled a glass of juice** on my notebook!" },
+    { id: "sh_05", speaker: "Tom", text: "My sister helped me **cleaned up the mess**. I **apologized to my mother** and **promised to be more careful** next time." }
   ];
 
   const longParagraph = data?.shadowing_paragraph || {
     title: "Continuous Shadowing: Tom's Clumsy Morning Story",
-    text: "I had a terrible morning today! First, I woke up late and accidentally broke my alarm clock. I felt so clumsy. Then, while I was running downstairs, I slipped on a wet puddle. To make things worse, I lost my backpack on the bus! My mom told me not to worry, because accidents happen, but I promised to be more careful next time.",
+    text: "Tom **woke up in a hurry** today. First, he **felt extremely clumsy** when he **accidentally knocked over** his alarm clock off the table. Then, he **rushed downstairs** to have breakfast and **slipped on a wet puddle** on the kitchen floor. **To make things worse**, he **spilled a glass of juice** over his English notebook! Fortunately, his sister Mia helped him **cleaned up the mess**. After that, Tom **apologized to his mother** and **promised to be more careful** next time.",
     phonetic_guide: "Full story intonation guide: Practice continuous rhythm, rising pitch on exclamation points, and falling pitch on resolutions."
   };
 
   const talkshowTurns = data?.talkshow_turns || [
-    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! In Hub 3, you wrote a 3-picture story script. Can you tell me what happened in Panel 1 when Tom was in the living room?" },
-    { turn_number: 2, nova_question: "Oh dear! And what clumsy accident happened in Panel 2 when the soccer ball hit the table?" },
-    { turn_number: 3, nova_question: "How did Tom feel when he saw the broken flower vase on the floor?" },
-    { turn_number: 4, nova_question: "In Panel 3, what did Tom do to make amends with his mom after the accident?" },
-    { turn_number: 5, nova_question: "What an important lesson! What did Tom promise to do next time to avoid clumsy mistakes?" }
+    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Can you tell me what happened when Tom woke up in a hurry?" },
+    { turn_number: 2, nova_question: "Oh dear! And what clumsy accident happened when he accidentally knocked over his alarm clock?" },
+    { turn_number: 3, nova_question: "How did Tom feel when he slipped on a wet puddle on the kitchen floor?" },
+    { turn_number: 4, nova_question: "To make things worse, what happened to his glass of juice during breakfast?" },
+    { turn_number: 5, nova_question: "What an important lesson! What did Tom promise his mother next time?" }
   ];
 
   useEffect(() => {
@@ -113,7 +114,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     } else {
       setIsRecording(false);
       const targetStr = shadowingPhase === 1 ? (sentencesList[0]?.text || '') : (longParagraph?.text || '');
-      const realScores = calculateSpeechAccuracy(userSpeechInput || "I had a terrible morning today broke alarm clock", targetStr);
+      const realScores = calculateSpeechAccuracy(userSpeechInput || "woke up in a hurry accidentally knocked over", targetStr);
 
       setPodcastScore({
         stars: realScores.stars,
@@ -141,7 +142,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
       recognition.onerror = () => {
         setIsMicListening(false);
-        setUserSpeechInput("Tom broke his alarm clock by accident in the morning.");
+        setUserSpeechInput("Tom woke up in a hurry and promised to be more careful.");
       };
 
       recognition.onend = () => {
@@ -152,7 +153,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     } else {
       setIsMicListening(!isMicListening);
       if (!isMicListening) {
-        setUserSpeechInput("Tom broke his alarm clock because he was clumsy.");
+        setUserSpeechInput("Tom accidentally knocked over his clock because he was clumsy.");
       }
     }
   };
@@ -235,7 +236,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 shadowingPhase === 2 ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <BookOpen size={14} /> Phase 2: Continuous Story Intonation
+              <BookOpen size={14} /> Phase 2: Continuous Story
             </button>
           </div>
 
@@ -257,7 +258,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                       </span>
                     </div>
                     <p className="text-sm font-extrabold text-slate-900 leading-relaxed">
-                      {turn.text}
+                      {renderParsedText(turn.text, 'indigo')}
                     </p>
                     {turn.phonetic_guide && (
                       <p className="text-[11px] font-mono text-slate-400 font-medium">
@@ -280,7 +281,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             /* Phase 2: Continuous Story Intonation Shadowing */
             <div className="p-6 bg-indigo-50 rounded-3xl border border-indigo-200 space-y-4 shadow-sm">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-black text-indigo-950">{longParagraph.title}</h3>
+                <h3 className="text-lg font-black text-indigo-950">{renderParsedText(longParagraph.title, 'indigo')}</h3>
                 <button
                   onClick={() => handlePlaySentence(longParagraph.text)}
                   className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-md"
@@ -289,11 +290,11 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 </button>
               </div>
               <p className="text-base font-extrabold text-indigo-950 leading-relaxed p-4 bg-white rounded-2xl border border-indigo-100 shadow-inner">
-                {longParagraph.text}
+                {renderParsedText(longParagraph.text, 'indigo')}
               </p>
               <p className="text-xs font-mono text-indigo-700 italic">{longParagraph.phonetic_guide}</p>
             </div>
-          )}
+          )})}
 
           {/* Recording Action Button */}
           <div className="flex flex-col items-center justify-center py-4">
