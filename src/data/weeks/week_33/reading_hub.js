@@ -23,6 +23,64 @@ export const readingHubData = {
     word_bank: ["broke", "clumsy", "puddle", "lost", "careful", "spilled", "dropped"]
   },
 
+  // Cambridge Flyers Reading Part 3 — Narrative Story & 5 Multiple-Choice Questions (A/B/C)
+  reading_part3_story: {
+    title: "Cambridge Flyers Reading Part 3 — Tom's Morning Adventure",
+    story_text: "Tom had a very eventful Saturday morning. While he was waking up, his alarm clock rang loudly. He reached over clumsily and accidentally knocked it off the table. Later, while he was rushing downstairs to have breakfast, he slipped on a wet puddle on the kitchen floor. To make things worse, he dropped his glass of juice over his English notebook. Fortunately, his sister Mia helped him clean the floor, and he promised to be more cautious.",
+    questions: [
+      {
+        id: "r3_q01",
+        question: "Why did Tom knock his alarm clock off the table?",
+        options: [
+          { label: "A", text: "Because he reached over clumsily while waking up.", isCorrect: true },
+          { label: "B", text: "Because he wanted to break it on purpose.", isCorrect: false },
+          { label: "C", text: "Because his dog jumped onto his bed.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q02",
+        question: "What happened while Tom was rushing downstairs?",
+        options: [
+          { label: "A", text: "He slipped on a wet puddle on the kitchen floor.", isCorrect: true },
+          { label: "B", text: "He met his teacher at the front door.", isCorrect: false },
+          { label: "C", text: "He dropped his shoes into the sink.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q03",
+        question: "What was damaged when Tom dropped his glass of juice?",
+        options: [
+          { label: "A", text: "His English notebook.", isCorrect: true },
+          { label: "B", text: "His new sports shoes.", isCorrect: false },
+          { label: "C", text: "His mother's phone.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q04",
+        question: "Who helped Tom clean up the kitchen floor?",
+        options: [
+          { label: "A", text: "His sister Mia.", isCorrect: true },
+          { label: "B", text: "His school bus driver.", isCorrect: false },
+          { label: "C", text: "His neighbor Mr. Green.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q05",
+        question: "What did Tom promise to do next time?",
+        options: [
+          { label: "A", text: "To be more cautious in the morning.", isCorrect: true },
+          { label: "B", text: "To sleep all day on Saturday.", isCorrect: false },
+          { label: "C", text: "To buy a new alarm clock.", isCorrect: false }
+        ],
+        answerIndex: 0
+      }
+    ]
+  },
+
   // Full Story Reading & Interactive Click-to-Learn Dictionary
   full_story_reading: {
     title: "Tom's Bad Day — Full Narrative Story",

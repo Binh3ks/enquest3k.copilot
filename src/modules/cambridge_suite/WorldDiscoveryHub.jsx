@@ -4,16 +4,20 @@ import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
-import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle } from 'lucide-react';
+import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle } from 'lucide-react';
 
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
   const [activeTab, setActiveTab] = useState('webtoon'); // 'webtoon' | 'check'
-  const [learnSubTab, setLearnSubTab] = useState('webtoon'); // 'webtoon' | 'interactive_story' (EXACTLY 2 TABS)
+  const [learnSubTab, setLearnSubTab] = useState('webtoon'); // 'webtoon' | 'interactive_story' | 'reading_part3'
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
   const [selectedHotspot, setSelectedHotspot] = useState(null);
+
+  // Cambridge Flyers Reading Part 3 state
+  const [r3Answers, setR3Answers] = useState({});
+  const [r3Submitted, setR3Submitted] = useState({});
 
   // Interactive Gap-Fill Story state (Cambridge Reading Part 4 Standard)
   const [storyAnswers, setStoryAnswers] = useState({});
@@ -163,6 +167,63 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       answerIndex: 1
     }
   ];
+
+  const readingPart3Data = data?.reading_part3_story || {
+    title: "Cambridge Flyers Reading Part 3 — Tom's Morning Adventure",
+    story_text: "Tom had a very eventful Saturday morning. While he was waking up, his alarm clock rang loudly. He reached over clumsily and accidentally knocked it off the table. Later, while he was rushing downstairs to have breakfast, he slipped on a wet puddle on the kitchen floor. To make things worse, he dropped his glass of juice over his English notebook. Fortunately, his sister Mia helped him clean the floor, and he promised to be more cautious.",
+    questions: [
+      {
+        id: "r3_q01",
+        question: "Why did Tom knock his alarm clock off the table?",
+        options: [
+          { label: "A", text: "Because he reached over clumsily while waking up.", isCorrect: true },
+          { label: "B", text: "Because he wanted to break it on purpose.", isCorrect: false },
+          { label: "C", text: "Because his dog jumped onto his bed.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q02",
+        question: "What happened while Tom was rushing downstairs?",
+        options: [
+          { label: "A", text: "He slipped on a wet puddle on the kitchen floor.", isCorrect: true },
+          { label: "B", text: "He met his teacher at the front door.", isCorrect: false },
+          { label: "C", text: "He dropped his shoes into the sink.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q03",
+        question: "What was damaged when Tom dropped his glass of juice?",
+        options: [
+          { label: "A", text: "His English notebook.", isCorrect: true },
+          { label: "B", text: "His new sports shoes.", isCorrect: false },
+          { label: "C", text: "His mother's phone.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q04",
+        question: "Who helped Tom clean up the kitchen floor?",
+        options: [
+          { label: "A", text: "His sister Mia.", isCorrect: true },
+          { label: "B", text: "His school bus driver.", isCorrect: false },
+          { label: "C", text: "His neighbor Mr. Green.", isCorrect: false }
+        ],
+        answerIndex: 0
+      },
+      {
+        id: "r3_q05",
+        question: "What did Tom promise to do next time?",
+        options: [
+          { label: "A", text: "To be more cautious in the morning.", isCorrect: true },
+          { label: "B", text: "To sleep all day on Saturday.", isCorrect: false },
+          { label: "C", text: "To buy a new alarm clock.", isCorrect: false }
+        ],
+        answerIndex: 0
+      }
+    ]
+  };
 
   const currentFrame = storyScenes[activeFrameIndex] || storyScenes[0];
   const frameHotspots = currentFrame.lexical_chunks || [];
@@ -360,6 +421,14 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
             >
               <FileText size={14} /> Interactive Story
             </button>
+            <button
+              onClick={() => setLearnSubTab('reading_part3')}
+              className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                learnSubTab === 'reading_part3' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              }`}
+            >
+              <Layers size={14} /> Reading Part 3 (Flyers)
+            </button>
           </div>
 
           {learnSubTab === 'webtoon' ? (
@@ -449,7 +518,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </div>
               </div>
             </div>
-          ) : (
+          ) : learnSubTab === 'interactive_story' ? (
             /* SUB-TAB 2: INTERACTIVE STORY GAP-FILL (Cambridge Reading Part 4) */
             <div className="p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
@@ -625,6 +694,135 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                   </button>
                 </div>
               )}
+            </div>
+          ) : (
+            /* SUB-TAB 3: CAMBRIDGE FLYERS READING PART 3 (STORY & QUESTIONS) */
+            <div className="space-y-6 animate-in fade-in duration-200">
+              {/* Header Banner */}
+              <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-indigo-700">
+                <span className="text-[10px] font-black tracking-widest text-indigo-300 uppercase bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-700/50">
+                  CAMBRIDGE FLYERS READING PART 3 — NARRATIVE COMPREHENSION
+                </span>
+                <h3 className="text-xl sm:text-2xl font-black mt-2 text-white">
+                  {readingPart3Data.title}
+                </h3>
+                <p className="text-xs text-indigo-200 mt-1 max-w-2xl leading-relaxed">
+                  Read the story carefully and choose the best response (A, B, or C) for each comprehension question.
+                </p>
+              </div>
+
+              {/* Story Narrative Box */}
+              <div className="bg-amber-50/90 p-6 rounded-3xl border border-amber-200 shadow-sm space-y-2">
+                <div className="text-xs font-black text-amber-800 uppercase tracking-wide flex items-center gap-2">
+                  <BookOpen size={16} /> Story Narrative (Click or hover words for dictionary):
+                </div>
+                <div className="text-base font-medium text-slate-900 leading-relaxed pt-1">
+                  {renderParsedText(readingPart3Data.story_text, 'indigo')}
+                </div>
+              </div>
+
+              {/* 5 Multiple-Choice Questions with Instant Feedback */}
+              <div className="space-y-6 pt-2">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-wide flex items-center gap-2">
+                    <HelpCircle size={18} className="text-indigo-600" /> Comprehension Questions ({readingPart3Data.questions.length} Items):
+                  </h4>
+                  <span className="text-xs font-bold text-slate-400 font-mono">Part 3 Exam</span>
+                </div>
+
+                {readingPart3Data.questions.map((q, qIdx) => {
+                  const isSubmitted = !!r3Submitted[q.id];
+                  const selectedOpt = r3Answers[q.id];
+
+                  return (
+                    <div key={q.id || qIdx} className="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                      <div className="text-sm font-black text-slate-900 flex items-start gap-2">
+                        <span className="px-2.5 py-1 bg-indigo-100 text-indigo-800 rounded-lg text-xs font-mono shrink-0">
+                          Q{qIdx + 1}
+                        </span>
+                        <span className="pt-0.5">{renderParsedText(q.question, 'indigo')}</span>
+                      </div>
+
+                      <div className="space-y-2.5">
+                        {q.options.map((opt, optIdx) => {
+                          const isSelected = selectedOpt && selectedOpt.label === opt.label;
+                          const isCorrect = opt.isCorrect || (q.answerIndex !== undefined && optIdx === q.answerIndex);
+
+                          let buttonStyle = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800';
+                          let badgeStyle = 'bg-slate-200 text-slate-700';
+
+                          if (isSubmitted) {
+                            if (isCorrect) {
+                              buttonStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-400 shadow-sm';
+                              badgeStyle = 'bg-emerald-600 text-white';
+                            } else if (isSelected && !isCorrect) {
+                              buttonStyle = 'border-rose-500 bg-rose-50 text-rose-950 font-bold ring-2 ring-rose-400 shadow-sm';
+                              badgeStyle = 'bg-rose-600 text-white';
+                            } else {
+                              buttonStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
+                              badgeStyle = 'bg-slate-200 text-slate-400';
+                            }
+                          } else if (isSelected) {
+                            buttonStyle = 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm';
+                            badgeStyle = 'bg-indigo-600 text-white';
+                          }
+
+                          return (
+                            <button
+                              key={opt.label}
+                              disabled={isSubmitted}
+                              onClick={() => setR3Answers((prev) => ({ ...prev, [q.id]: opt }))}
+                              className={`w-full p-3.5 rounded-xl text-left border transition-all flex items-center justify-between gap-3 ${buttonStyle}`}
+                            >
+                              <div className="flex items-center gap-3 flex-1">
+                                <span className={`w-6 h-6 rounded-full font-black flex items-center justify-center text-xs shrink-0 ${badgeStyle}`}>
+                                  {opt.label}
+                                </span>
+                                <span className="text-xs font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
+                              </div>
+
+                              {isSubmitted && isCorrect && (
+                                <span className="flex items-center gap-1 px-2.5 py-0.5 bg-emerald-100 text-emerald-700 font-extrabold text-[11px] rounded-full shrink-0">
+                                  <CheckCircle2 size={14} /> Correct
+                                </span>
+                              )}
+                              {isSubmitted && isSelected && !isCorrect && (
+                                <span className="flex items-center gap-1 px-2.5 py-0.5 bg-rose-100 text-rose-700 font-extrabold text-[11px] rounded-full shrink-0">
+                                  <XCircle size={14} /> Incorrect
+                                </span>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {!isSubmitted ? (
+                        <div className="flex justify-end pt-1">
+                          <button
+                            disabled={!selectedOpt}
+                            onClick={() => setR3Submitted((prev) => ({ ...prev, [q.id]: true }))}
+                            className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm disabled:opacity-40"
+                          >
+                            <CheckCircle2 size={14} /> Check Answer
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex justify-end pt-1">
+                          <button
+                            onClick={() => {
+                              setR3Submitted((prev) => ({ ...prev, [q.id]: false }));
+                              setR3Answers((prev) => ({ ...prev, [q.id]: null }));
+                            }}
+                            className="px-4 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-lg text-[11px] transition flex items-center gap-1"
+                          >
+                            <RefreshCw size={12} /> Retry Question
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
