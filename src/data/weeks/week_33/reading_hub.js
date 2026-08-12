@@ -22,6 +22,85 @@ export const readingHubData = {
     word_bank: ["broke", "clumsy", "puddle", "lost", "careful", "spilled", "dropped"]
   },
 
+  // Full Story Reading & Interactive Click-to-Learn Dictionary
+  full_story_reading: {
+    title: "Tom's Bad Day — Full Narrative Story",
+    paragraph: "Tom had a terrible morning today! First, he woke up late and accidentally broke his alarm clock because he was feeling clumsy. Next, he rushed downstairs in a hurry, slipped on a wet puddle, and fell onto the rug. While making breakfast, he dropped a glass of orange juice and damaged his notebook. To make things worse, he lost his backpack on the bus! Later, Mia found his bag and returned it. Tom apologized to his mom and promised to be more cautious next time."
+  },
+
+  story_dictionary: [
+    {
+      id: "dict_01",
+      word: "broke",
+      ipa: "/broʊk/",
+      meaning_vi: "đã làm vỡ / gãy",
+      example_en: "He accidentally broke his alarm clock in the morning."
+    },
+    {
+      id: "dict_02",
+      word: "clumsy",
+      ipa: "/ˈklʌmzi/",
+      meaning_vi: "vụng về / bất cẩn",
+      example_en: "Tom felt so clumsy when he reached for his glasses."
+    },
+    {
+      id: "dict_03",
+      word: "slipped",
+      ipa: "/slɪpt/",
+      meaning_vi: "đã trượt chân",
+      example_en: "He slipped on a wet puddle on the kitchen floor."
+    },
+    {
+      id: "dict_04",
+      word: "puddle",
+      ipa: "/ˈpʌd.əl/",
+      meaning_vi: "vũng nước",
+      example_en: "There was a wet puddle near the back door."
+    },
+    {
+      id: "dict_05",
+      word: "fell",
+      ipa: "/fɛl/",
+      meaning_vi: "đã ngã / rơi",
+      example_en: "He fell onto the rug after slipping."
+    },
+    {
+      id: "dict_06",
+      word: "dropped",
+      ipa: "/drɑːpt/",
+      meaning_vi: "đã đánh rơi",
+      example_en: "He dropped a glass of orange juice while making breakfast."
+    },
+    {
+      id: "dict_07",
+      word: "damaged",
+      ipa: "/ˈdæm.ɪdʒd/",
+      meaning_vi: "bị hư hại / hỏng",
+      example_en: "The spilled juice damaged his school notebook."
+    },
+    {
+      id: "dict_08",
+      word: "lost",
+      ipa: "/lɔːst/",
+      meaning_vi: "đã làm mất",
+      example_en: "Tom lost his backpack on the school bus."
+    },
+    {
+      id: "dict_09",
+      word: "apologized",
+      ipa: "/əˈpɑː.lə.dʒaɪzd/",
+      meaning_vi: "đã xin lỗi",
+      example_en: "Tom apologized to his mom for being clumsy."
+    },
+    {
+      id: "dict_10",
+      word: "cautious",
+      ipa: "/ˈkɑː.ʃəs/",
+      meaning_vi: "cẩn trọng / cẩn thận",
+      example_en: "He promised to be more cautious next time."
+    }
+  ],
+
   // 1. Array of EXACTLY 20 Vocab items (10 Core + 10 Extended)
   vocab: [
     // --- 10 CORE WORDS ---

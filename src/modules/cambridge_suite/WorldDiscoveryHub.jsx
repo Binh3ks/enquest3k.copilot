@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import VoiceService from '../../services/voiceService';
-import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw } from 'lucide-react';
+import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle } from 'lucide-react';
 
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const [activeTab, setActiveTab] = useState('webtoon'); // 'webtoon' | 'check'
-  const [learnSubTab, setLearnSubTab] = useState('webtoon'); // 'webtoon' | 'interactive_story'
+  const [learnSubTab, setLearnSubTab] = useState('webtoon'); // 'webtoon' | 'interactive_story' | 'click_to_learn'
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
   const [selectedHotspot, setSelectedHotspot] = useState(null);
+
+  // Click-to-Learn Dictionary state
+  const [activeDictWord, setActiveDictWord] = useState(null);
 
   // Interactive Gap-Fill Story state (Cambridge Reading Part 4 Standard)
   const [storyAnswers, setStoryAnswers] = useState({}); // { 1: 'broke', 2: 'clumsy', ... }
@@ -65,6 +68,32 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     ],
     word_bank: ["broke", "clumsy", "puddle", "lost", "careful", "spilled", "dropped"]
   };
+
+  const fullStoryReading = data?.full_story_reading || {
+    title: "Tom's Bad Day — Full Narrative Story",
+    paragraph: "Tom had a terrible morning today! First, he woke up late and accidentally broke his alarm clock because he was feeling clumsy. Next, he rushed downstairs in a hurry, slipped on a wet puddle, and fell onto the rug. While making breakfast, he dropped a glass of orange juice and damaged his notebook. To make things worse, he lost his backpack on the bus! Later, Mia found his bag and returned it. Tom apologized to his mom and promised to be more cautious next time."
+  };
+
+  const storyDictionaryList = data?.story_dictionary || [
+    { id: "dict_01", word: "broke", ipa: "/broʊk/", meaning_vi: "đã làm vỡ / gãy", example_en: "He accidentally broke his alarm clock in the morning." },
+    { id: "dict_02", word: "clumsy", ipa: "/ˈklʌmzi/", meaning_vi: "vụng về / bất cẩn", example_en: "Tom felt so clumsy when he reached for his glasses." },
+    { id: "dict_03", word: "slipped", ipa: "/slɪpt/", meaning_vi: "đã trượt chân", example_en: "He slipped on a wet puddle on the kitchen floor." },
+    { id: "dict_04", word: "puddle", ipa: "/ˈpʌd.əl/", meaning_vi: "vũng nước", example_en: "There was a wet puddle near the back door." },
+    { id: "dict_05", word: "fell", ipa: "/fɛl/", meaning_vi: "đã ngã / rơi", example_en: "He fell onto the rug after slipping." },
+    { id: "dict_06", word: "dropped", ipa: "/drɑːpt/", meaning_vi: "đã đánh rơi", example_en: "He dropped a glass of orange juice while making breakfast." },
+    { id: "dict_07", word: "damaged", ipa: "/ˈdæm.ɪdʒd/", meaning_vi: "bị hư hại / hỏng", example_en: "The spilled juice damaged his school notebook." },
+    { id: "dict_08", word: "lost", ipa: "/lɔːst/", meaning_vi: "đã làm mất", example_en: "Tom lost his backpack on the school bus." },
+    { id: "dict_09", word: "apologized", ipa: "/əˈpɑː.lə.dʒaɪzd/", meaning_vi: "đã xin lỗi", example_en: "Tom apologized to his mom for being clumsy." },
+    { id: "dict_10", word: "cautious", ipa: "/ˈkɑː.ʃəs/", meaning_vi: "cẩn trọng / cẩn thận", example_en: "He promised to be more cautious next time." }
+  ];
+
+  const dictionaryMap = useMemo(() => {
+    const map = {};
+    storyDictionaryList.forEach((item) => {
+      map[item.word.toLowerCase()] = item;
+    });
+    return map;
+  }, [storyDictionaryList]);
 
   const checkQuestions = data?.check_mode_drills || data?.checkQuestions || data?.check_questions || [
     {
@@ -136,11 +165,11 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const handleHotspotClick = async (hs) => {
     setSelectedHotspot(hs);
     try {
-      await VoiceService.speak(hs.chunk, 'read');
+      await VoiceService.speak(hs.chunk || hs.word, 'read');
     } catch (err) {
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(hs.chunk);
+        const utterance = new SpeechSynthesisUtterance(hs.chunk || hs.word);
         utterance.lang = 'en-US';
         window.speechSynthesis.speak(utterance);
       }
@@ -206,6 +235,34 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     });
   };
 
+  // Helper to render interactive Click-to-Learn text paragraph
+  const renderClickToLearnText = (text) => {
+    const tokens = text.split(/(\s+)/);
+    return tokens.map((token, idx) => {
+      const match = token.match(/^([^a-zA-Z]*)([a-zA-Z]+)([^a-zA-Z]*)$/);
+      if (match) {
+        const [, prefix, cleanWord, suffix] = match;
+        const entry = dictionaryMap[cleanWord.toLowerCase()];
+        if (entry) {
+          return (
+            <span key={idx}>
+              {prefix}
+              <span
+                onClick={() => setActiveDictWord(entry)}
+                className="text-indigo-600 font-extrabold cursor-pointer hover:bg-indigo-100 rounded px-1 underline transition-all"
+                title="Click to learn word definition"
+              >
+                {cleanWord}
+              </span>
+              {suffix}
+            </span>
+          );
+        }
+      }
+      return <span key={idx}>{token}</span>;
+    });
+  };
+
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Top Header Navigation */}
@@ -238,11 +295,11 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       </div>
 
       {activeTab === 'webtoon' ? (
-        /* LEARN MODE: SUB-TABS (3D Webtoon vs Interactive Story) */
+        /* LEARN MODE: SUB-TABS (3D Webtoon, Interactive Story, Click-to-Learn Story) */
         <div className="space-y-6">
-          <div className="flex items-center gap-2 p-1.5 bg-indigo-50/70 rounded-2xl border border-indigo-200">
+          <div className="flex items-center gap-2 p-1.5 bg-indigo-50/70 rounded-2xl border border-indigo-200 flex-wrap">
             <button
-              onClick={() => setLearnSubTab('webtoon')}
+              onClick={() => { setLearnSubTab('webtoon'); setActiveDictWord(null); }}
               className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
                 learnSubTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
@@ -250,12 +307,20 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
               <BookOpen size={14} /> 3D Webtoon
             </button>
             <button
-              onClick={() => setLearnSubTab('interactive_story')}
+              onClick={() => { setLearnSubTab('interactive_story'); setActiveDictWord(null); }}
               className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
                 learnSubTab === 'interactive_story' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
               <FileText size={14} /> Interactive Story
+            </button>
+            <button
+              onClick={() => { setLearnSubTab('click_to_learn'); setActiveDictWord(null); }}
+              className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                learnSubTab === 'click_to_learn' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              }`}
+            >
+              <Sparkles size={14} /> Click-to-Learn Story
             </button>
           </div>
 
@@ -346,7 +411,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 </div>
               </div>
             </div>
-          ) : (
+          ) : learnSubTab === 'interactive_story' ? (
             /* SUB-TAB 2: INTERACTIVE STORY GAP-FILL (Cambridge Reading Part 4) */
             <div className="p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
@@ -468,6 +533,88 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                   >
                     Try Again
                   </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            /* SUB-TAB 3: CLICK-TO-LEARN STORY & DICTIONARY POPOVER */
+            <div className="p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner space-y-6">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+                <div>
+                  <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">CLICK-TO-LEARN DICTIONARY</span>
+                  <h3 className="text-lg font-black text-slate-900 mt-0.5">{fullStoryReading.title}</h3>
+                </div>
+                <button
+                  onClick={async () => {
+                    try {
+                      await VoiceService.speak(fullStoryReading.paragraph, 'read');
+                    } catch (err) {
+                      if ('speechSynthesis' in window) {
+                        const u = new SpeechSynthesisUtterance(fullStoryReading.paragraph);
+                        u.lang = 'en-US';
+                        window.speechSynthesis.speak(u);
+                      }
+                    }
+                  }}
+                  className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-md"
+                >
+                  <Volume2 size={16} /> Listen Full Story
+                </button>
+              </div>
+
+              {/* Interactive Paragraph with Clickable Words */}
+              <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm leading-loose text-base font-extrabold text-slate-800">
+                {renderClickToLearnText(fullStoryReading.paragraph)}
+              </div>
+
+              {/* Popover / Tooltip Modal for Active Dictionary Word */}
+              {activeDictWord && (
+                <div className="p-5 bg-slate-900 text-white rounded-2xl border border-slate-700 shadow-2xl space-y-2 animate-in fade-in zoom-in-95 max-w-md mx-auto">
+                  <div className="flex items-center justify-between gap-3 border-b border-slate-800 pb-2">
+                    <div className="flex items-center gap-2">
+                      <h4 className="text-lg font-black text-indigo-400">{activeDictWord.word}</h4>
+                      <button
+                        onClick={async () => {
+                          try {
+                            await VoiceService.speak(activeDictWord.word, 'read');
+                          } catch (err) {
+                            if ('speechSynthesis' in window) {
+                              const u = new SpeechSynthesisUtterance(activeDictWord.word);
+                              u.lang = 'en-US';
+                              window.speechSynthesis.speak(u);
+                            }
+                          }
+                        }}
+                        className="p-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs transition shadow-sm"
+                        title="Listen Audio"
+                      >
+                        <Volume2 size={14} />
+                      </button>
+                    </div>
+                    <button
+                      onClick={() => setActiveDictWord(null)}
+                      className="text-slate-400 hover:text-white font-bold text-base px-2"
+                    >
+                      ×
+                    </button>
+                  </div>
+
+                  <div className="text-xs font-mono text-slate-400 font-semibold">
+                    {activeDictWord.ipa}
+                  </div>
+
+                  <div className="text-base font-black text-amber-300">
+                    {activeDictWord.meaning_vi}
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-800">
+                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-0.5">
+                      EXAMPLE:
+                    </div>
+                    <p className="text-xs font-medium text-slate-200 italic leading-snug">
+                      "{activeDictWord.example_en}"
+                    </p>
+                  </div>
                 </div>
               )}
             </div>
