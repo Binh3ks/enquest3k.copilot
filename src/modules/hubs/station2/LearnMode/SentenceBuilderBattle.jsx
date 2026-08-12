@@ -129,6 +129,12 @@ export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
     setFeedback(null);
   };
 
+  const handleClear = () => {
+    setBankBlocks((prev) => [...prev, ...targetBlocks]);
+    setTargetBlocks([]);
+    setFeedback(null);
+  };
+
   const handleCheckAnswer = async () => {
     const userWords = targetBlocks.map((b) => b.word);
     const timeSpentSeconds = Math.max(1, Math.round((Date.now() - startTime) / 1000));
@@ -235,7 +241,7 @@ export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
                     id={block.id}
                     word={block.word}
                     isPlaced={true}
-                    onClick={handleBlockTap}
+                    onClick={() => handleTapBlockToBank(block)}
                   />
                 ))
               )}
@@ -268,7 +274,7 @@ export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
                   id={block.id}
                   word={block.word}
                   isPlaced={false}
-                  onClick={handleBlockTap}
+                  onClick={() => handleTapBlockToTarget(block)}
                 />
               ))}
             </SortableContext>
