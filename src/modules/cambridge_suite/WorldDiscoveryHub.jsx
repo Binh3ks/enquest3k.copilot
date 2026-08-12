@@ -174,7 +174,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
               activeTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
             }`}
           >
-            <PlayCircle size={14} /> Learn Mode (Webtoon 3D)
+            <PlayCircle size={14} /> Learn Mode
           </button>
           <button
             onClick={() => setActiveTab('check')}
@@ -182,7 +182,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
               activeTab === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
             }`}
           >
-            <GraduationCap size={14} /> Check Mode (10 MCQ)
+            <GraduationCap size={14} /> Check Mode
           </button>
         </div>
       </div>

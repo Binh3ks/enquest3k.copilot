@@ -65,7 +65,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                 viewMode === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
               }`}
             >
-              <GraduationCap size={14} /> Check Mode (Cambridge Exam)
+              <GraduationCap size={14} /> Check Mode
             </button>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                   activeTab === 'sentence_builder' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
-                <Brain size={15} /> Sentence Builder (5 Drills)
+                <Brain size={15} /> Sentence Builder
               </button>
               <button
                 onClick={() => setActiveTab('bar_model')}
@@ -90,7 +90,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                   activeTab === 'bar_model' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
-                <Zap size={15} /> Bar Model Quest (5 Problems)
+                <Zap size={15} /> Bar Model Quest
               </button>
               <button
                 onClick={() => setActiveTab('flash_arena')}
@@ -98,7 +98,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                   activeTab === 'flash_arena' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
-                <Layers size={15} /> Flash Arena (30 Items)
+                <Layers size={15} /> Flash Arena
               </button>
             </div>
 

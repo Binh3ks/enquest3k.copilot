@@ -160,11 +160,11 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         </div>
 
         {/* Sub-Mode Switcher */}
-        <div className="flex items-center gap-2 bg-indigo-50/70 p-1.5 rounded-2xl border border-indigo-200">
+        <div className="flex items-center gap-2 bg-rose-50/70 p-1.5 rounded-2xl border border-rose-200">
           <button
             onClick={() => setSubMode('podcast')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'podcast' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              subMode === 'podcast' ? 'bg-rose-600 text-white shadow-md' : 'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100'
             }`}
           >
             <Volume2 size={14} /> Podcast Shadowing
@@ -172,10 +172,10 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           <button
             onClick={() => setSubMode('talkshow')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md' : 'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100'
             }`}
           >
-            <MessageSquare size={14} /> Nova Live Talk Show (5 Turns)
+            <MessageSquare size={14} /> Nova Live Talk Show
           </button>
         </div>
       </div>

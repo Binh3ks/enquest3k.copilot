@@ -132,7 +132,7 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
       <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
         <div>
           <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
-            STATION 2 — SINGAPORE BAR MODEL QUEST (W33)
+            STATION 2 — SINGAPORE BAR MODEL QUEST
           </span>
           <h3 className="text-lg font-black text-slate-900 mt-0.5">{currentQ.title}</h3>
         </div>

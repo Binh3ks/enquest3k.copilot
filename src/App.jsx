@@ -767,7 +767,6 @@ const MainLayout = () => {
                     hubId: 1, 
                     key: 'read_explore', 
                     title: 'Hub 1: World Discovery', 
-                    desc: 'Webtoon & Story Quest', 
                     icon: BookOpen, 
                     activeColor: 'bg-indigo-600 border-indigo-500 text-white shadow-lg ring-4 ring-indigo-500/20',
                     inactiveColor: 'bg-indigo-50/90 text-indigo-950 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-300',
@@ -777,7 +776,6 @@ const MainLayout = () => {
                     hubId: 2, 
                     key: 'grammar', 
                     title: 'Hub 2: Arena Battles', 
-                    desc: 'Grammar Bridge & Bar Models', 
                     icon: Swords, 
                     activeColor: 'bg-amber-600 border-amber-500 text-white shadow-lg ring-4 ring-amber-500/20',
                     inactiveColor: 'bg-amber-50/90 text-amber-950 border-amber-200 hover:bg-amber-100 hover:border-amber-300',
@@ -787,7 +785,6 @@ const MainLayout = () => {
                     hubId: 3, 
                     key: 'writing', 
                     title: 'Hub 3: Writing Studio', 
-                    desc: '3D Picture Scriptwriter', 
                     icon: PenTool, 
                     activeColor: 'bg-purple-600 border-purple-500 text-white shadow-lg ring-4 ring-purple-500/20',
                     inactiveColor: 'bg-purple-50/90 text-purple-950 border-purple-200 hover:bg-purple-100 hover:border-purple-300',
@@ -797,7 +794,6 @@ const MainLayout = () => {
                     hubId: 4, 
                     key: 'ask_ai', 
                     title: 'Hub 4: Nova Talk Show', 
-                    desc: 'Podcast & AI Examiner 1-1', 
                     icon: Radio, 
                     activeColor: 'bg-rose-600 border-rose-500 text-white shadow-lg ring-4 ring-rose-500/20',
                     inactiveColor: 'bg-rose-50/90 text-rose-950 border-rose-200 hover:bg-rose-100 hover:border-rose-300',
@@ -815,19 +811,16 @@ const MainLayout = () => {
                       key={h.hubId}
                       to={`/week/${weekId}/${h.key}`}
                       onClick={() => setShowWelcomeCard(false)}
-                      className={`flex-1 min-w-[210px] flex items-center gap-3 px-4 py-3 rounded-2xl transition-all border-2 shrink-0 ${
+                      className={`flex-1 min-w-[180px] flex items-center justify-center gap-2.5 px-4 py-3 rounded-2xl transition-all border-2 shrink-0 ${
                         isHubActive
                           ? `${h.activeColor} scale-102`
                           : `${h.inactiveColor} shadow-sm`
                       }`}
                     >
-                      <div className={`p-2.5 rounded-xl shrink-0 shadow-sm ${h.iconBg}`}>
+                      <div className={`p-2 rounded-xl shrink-0 shadow-sm ${h.iconBg}`}>
                         <h.icon size={18} />
                       </div>
-                      <div className="text-left overflow-hidden">
-                        <div className="text-xs font-black tracking-tight whitespace-nowrap truncate">{h.title}</div>
-                        <div className={`text-[10px] font-bold whitespace-nowrap truncate ${isHubActive ? 'text-white/90' : 'text-slate-500'}`}>{h.desc}</div>
-                      </div>
+                      <span className="text-xs font-black tracking-tight whitespace-nowrap">{h.title}</span>
                     </Link>
                   );
                 })}
