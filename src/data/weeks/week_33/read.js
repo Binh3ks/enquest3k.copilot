@@ -59,5 +59,15 @@ export default {
         { word: "praised", chunk: "praised Jake", x: 65, y: 55 }
       ]
     }
-  ]
+  ],
+  story_title_options: {
+    question_en: "Now choose the best title for the story:",
+    question_vi: "Bây giờ hãy chọn tiêu đề hay nhất cho câu chuyện:",
+    options: [
+      { id: "opt_a", text: "Tom's Clumsy Morning", is_correct: false, explanation: "Incorrect: This story is about Jake in the school corridor, not Tom at home." },
+      { id: "opt_b", text: "Corridor Safety & Quick Action", is_correct: true, explanation: "Correct! The story describes corridor safety, Jake's quick action, and first aid treatment." },
+      { id: "opt_c", text: "Playing Soccer in Science Class", is_correct: false, explanation: "Incorrect: Soccer is not played in the science class." }
+    ]
+  }
 };
+

@@ -2,18 +2,21 @@ import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { useUserStore } from '../../stores/useUserStore';
 import { renderParsedText } from '../../components/common/HoverWord';
-import { PenTool, Sparkles, AlertTriangle, Layers, Film, HelpCircle, X, Info } from 'lucide-react';
+import { NotepadNoteCompleter } from '../../components/common/NotepadNoteCompleter';
+import { PenTool, Sparkles, AlertTriangle, Layers, Film, HelpCircle, X, Info, FileText } from 'lucide-react';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
+  const [activeTab, setActiveTab] = useState('rw_p7'); // 'rw_p7' | 'listening_p2'
   const [userScript, setUserScript] = useState('');
   const [ruleScore, setRuleScore] = useState(null);
   const [aiScore, setAiScore] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showHintsModal, setShowHintsModal] = useState(false);
   const [showPracticeNotice, setShowPracticeNotice] = useState(false);
+
 
   const picturePanels = data?.picture_story || data?.picturePanels || [
     {
@@ -114,7 +117,51 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
         </div>
       </div>
 
-      {/* 3 Pixar 3D Picture Panels Display (Cleaned: NO pre-written full sentences and NO Vietnamese translations!) */}
+      {/* Sub-tab Switcher Bar */}
+
+      <div className="flex items-center gap-2 mb-6 p-1.5 bg-slate-100 rounded-2xl w-fit border border-slate-200">
+        <button
+          onClick={() => setActiveTab('rw_p7')}
+          className={`px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center gap-2 ${
+            activeTab === 'rw_p7'
+              ? 'bg-purple-600 text-white shadow-md'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+          }`}
+        >
+          <PenTool size={16} /> R&W Part 7: Write 3-Picture Story
+        </button>
+        <button
+          onClick={() => setActiveTab('listening_p2')}
+          className={`px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center gap-2 ${
+            activeTab === 'listening_p2'
+              ? 'bg-amber-600 text-white shadow-md'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+          }`}
+        >
+          <FileText size={16} /> Listening Part 2: Notepad Note Completion
+        </button>
+      </div>
+
+      {activeTab === 'listening_p2' ? (
+        <NotepadNoteCompleter
+          title="School Incident Notepad (Cambridge Listening P2)"
+          notes={data?.listening_p2_notes}
+          onComplete={async (score) => {
+            await learnerProgressService.logAttempt({
+              learnerId,
+              contentId: `w${weekNumber}_listening_p2`,
+              mode: 'learn',
+              result: score >= 80 ? 'correct' : 'incorrect',
+              score,
+              timeSpentSeconds: 45
+            });
+          }}
+        />
+      ) : (
+        <div className="space-y-6">
+
+
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         {picturePanels.map((panel, idx) => (
           <div key={panel.panel_id || idx} className="bg-slate-50 rounded-2xl border border-slate-200 p-3 shadow-sm overflow-hidden flex flex-col">
@@ -257,6 +304,19 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           )}
         </div>
       )}
+      </div>
+      )}
+
+
+
+
+
+
+
+
+
+
+
 
       {/* Show Hints Modal */}
       {showHintsModal && (

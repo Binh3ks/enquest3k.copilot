@@ -214,10 +214,12 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
         </div>
       )}
 
-      <div className="space-y-3 mb-8">
+      {/* Option Choices (Supports Text MC or Cambridge Listening Part 4 3-Picture Choice Cards A/B/C) */}
+      <div className={currentQ.options.some(o => o.image_url || o.image) ? "grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8" : "space-y-3 mb-8"}>
         {currentQ.options.map((opt, optIdx) => {
           const isSelected = currentSelection && currentSelection.label === opt.label;
           const isCorrect = opt.isCorrect || (currentQ.answerIndex !== undefined && optIdx === currentQ.answerIndex);
+          const optImage = opt.image_url || opt.image || (optIdx === 0 ? '/images/week33/webtoon_scene_1.png' : optIdx === 1 ? '/images/week33/webtoon_scene_2.png' : '/images/week33/webtoon_scene_4.png');
 
           let buttonStyle = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800';
           let badgeStyle = 'bg-slate-200 text-slate-700';
@@ -238,18 +240,43 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
             badgeStyle = 'bg-indigo-600 text-white';
           }
 
+          if (currentQ.type === 'listening_p4_picture' || currentQ.options.some(o => o.image_url || o.image)) {
+            return (
+              <button
+                key={opt.label || optIdx}
+                disabled={isSubmitted}
+                onClick={() => handleSelectOption(opt)}
+                className={`p-4 rounded-2xl border-2 transition-all flex flex-col items-center justify-between text-center gap-3 relative overflow-hidden shadow-sm hover:scale-[1.02] active:scale-95 ${buttonStyle}`}
+              >
+                <div className="flex items-center justify-between w-full">
+                  <span className={`w-8 h-8 rounded-xl text-sm font-black flex items-center justify-center ${badgeStyle}`}>
+                    {opt.label || String.fromCharCode(65 + optIdx)}
+                  </span>
+                  {isSubmitted && isCorrect && <CheckCircle2 className="w-6 h-6 text-emerald-500" />}
+                  {isSubmitted && isSelected && !isCorrect && <XCircle className="w-6 h-6 text-rose-500" />}
+                </div>
+
+                <div className="w-full h-32 bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+                  <img src={optImage} alt={opt.text} className="w-full h-full object-cover" />
+                </div>
+
+                <span className="text-xs font-bold text-slate-800 line-clamp-2">{opt.text}</span>
+              </button>
+            );
+          }
+
           return (
             <button
-              key={opt.label}
+              key={opt.label || optIdx}
               disabled={isSubmitted}
               onClick={() => handleSelectOption(opt)}
-              className={`w-full p-4 rounded-xl text-left border transition-all flex items-center justify-between gap-4 ${buttonStyle}`}
+              className={`w-full p-4 rounded-xl border-2 transition-all text-left flex items-center justify-between gap-3.5 shadow-sm active:scale-[0.99] ${buttonStyle}`}
             >
-              <div className="flex items-center gap-4 flex-1">
-                <span className={`w-7 h-7 rounded-full font-black flex items-center justify-center text-xs shrink-0 ${badgeStyle}`}>
-                  {opt.label}
+              <div className="flex items-center gap-3">
+                <span className={`w-8 h-8 rounded-xl text-sm font-black flex items-center justify-center shrink-0 ${badgeStyle}`}>
+                  {opt.label || String.fromCharCode(65 + optIdx)}
                 </span>
-                <span className="text-sm font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
+                <span className="text-sm font-bold text-slate-800">{opt.text}</span>
               </div>
 
               {isSubmitted && isCorrect && (
@@ -264,6 +291,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
               )}
             </button>
           );
+
         })}
       </div>
 

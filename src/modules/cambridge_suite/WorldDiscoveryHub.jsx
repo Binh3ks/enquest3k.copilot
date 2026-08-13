@@ -33,6 +33,11 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const [checkScore, setCheckScore] = useState(null);
   const [checkSubmitted, setCheckSubmitted] = useState(false);
 
+  // Cambridge Reading Part 3 Story Title State
+  const [selectedStoryTitle, setSelectedStoryTitle] = useState(null);
+  const [storyTitleSubmitted, setStoryTitleSubmitted] = useState(false);
+
+
     const storyScenes = data?.story_scenes || [
     {
       scene_id: 'scene_1',
@@ -741,8 +746,94 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                   })}
                 </div>
               </div>
+
+              {/* CAMBRIDGE FLYERS READING PART 3: CHOOSE THE BEST TITLE FOR THE STORY */}
+              <div className="pt-8 border-t-2 border-indigo-200 space-y-4">
+                <div className="p-6 sm:p-8 bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 text-white rounded-3xl shadow-xl space-y-4 border border-indigo-700">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 bg-indigo-500/30 text-indigo-200 text-xs font-black uppercase tracking-widest rounded-full border border-indigo-400/30">
+                      CAMBRIDGE READING PART 3 — FINAL TASK
+                    </span>
+                    <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black font-serif">
+                    {data?.story_title_options?.question_en || "Now choose the best title for the story:"}
+                  </h3>
+
+                  <div className="grid grid-cols-1 gap-3 pt-2">
+                    {(data?.story_title_options?.options || [
+                      { id: "opt_a", text: "Tom's Clumsy Morning", is_correct: false, explanation: "Incorrect: The story is about Jake in the school corridor, not Tom." },
+                      { id: "opt_b", text: "Corridor Safety & Quick Action", is_correct: true, explanation: "Correct! The story describes corridor safety, Jake's quick action, and first aid treatment." },
+                      { id: "opt_c", text: "Playing Soccer in Science Class", is_correct: false, explanation: "Incorrect: Soccer is not played in science class." }
+                    ]).map((opt) => {
+                      const isSelected = selectedStoryTitle === opt.id;
+                      const isCorrect = opt.is_correct;
+
+                      return (
+                        <button
+                          key={opt.id}
+                          disabled={storyTitleSubmitted}
+                          onClick={() => setSelectedStoryTitle(opt.id)}
+                          className={`p-4 rounded-2xl font-bold text-left transition-all flex items-center justify-between border-2 ${
+                            storyTitleSubmitted
+                              ? isCorrect
+                                ? 'bg-emerald-600 text-white border-emerald-400 shadow-md'
+                                : isSelected
+                                ? 'bg-rose-600 text-white border-rose-400 shadow-md'
+                                : 'bg-indigo-950/60 text-indigo-200 border-indigo-800 opacity-60'
+                              : isSelected
+                              ? 'bg-amber-400 text-indigo-950 border-amber-300 font-black shadow-lg scale-[1.01]'
+                              : 'bg-indigo-950/80 hover:bg-indigo-800/80 text-white border-indigo-700'
+                          }`}
+                        >
+                          <span className="text-base sm:text-lg">{opt.text}</span>
+                          {storyTitleSubmitted && isCorrect && <CheckCircle2 className="w-6 h-6 text-white" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {!storyTitleSubmitted ? (
+                    <div className="pt-2 flex justify-end">
+                      <button
+                        disabled={!selectedStoryTitle}
+                        onClick={async () => {
+                          setStoryTitleSubmitted(true);
+                          const isCorrect = selectedStoryTitle === 'opt_b' || selectedStoryTitle?.includes('b');
+                          await learnerProgressService.logAttempt({
+                            learnerId,
+                            contentId: `w${weekNumber}_rw_p3_title`,
+                            mode: 'learn',
+                            result: isCorrect ? 'correct' : 'incorrect',
+                            score: isCorrect ? 100 : 0,
+                            timeSpentSeconds: 20
+                          });
+                        }}
+                        className="px-8 py-3.5 bg-amber-400 hover:bg-amber-300 text-indigo-950 font-black text-sm sm:text-base rounded-2xl transition shadow-lg active:scale-95 disabled:opacity-40"
+                      >
+                        Submit Story Title Choice
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="p-4 bg-indigo-950/90 rounded-2xl border border-indigo-600 text-sm font-bold text-indigo-100 flex items-center justify-between">
+                      <span>
+                        {selectedStoryTitle === 'opt_b' || selectedStoryTitle?.includes('b')
+                          ? '🎉 Correct! Corridor Safety & Quick Action is the best title!'
+                          : '❌ Try again! Re-read the main theme of the story.'}
+                      </span>
+                      <button
+                        onClick={() => { setStoryTitleSubmitted(false); setSelectedStoryTitle(null); }}
+                        className="px-4 py-2 bg-indigo-700 hover:bg-indigo-600 text-white font-bold rounded-xl text-xs transition"
+                      >
+                        Retry Title
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           )}
+
         </div>
       ) : (
         /* CHECK MODE: 10 CAMBRIDGE READING MCQ DRILLS */
