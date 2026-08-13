@@ -1,239 +1,190 @@
-// Cambridge A2 Flyers week_36_real.js
+// Cambridge A2 Flyers week_36_real.js (Restored Syllabus Data)
 export default {
   "weekId": 36,
-  "title": "The Secret Cave — Adventure & Exploration",
-  "title_vi": "Hang Động Bí Ẩn — Phiêu Lưu & Khám Phá",
+  "title": "My Adventure Book — Project 3 & Irregular Verbs Review",
+  "title_vi": "Sách Phiêu Lưu Của Em — Dự Án 3 & Ôn Tập Động Từ Bất Quy Tắc",
   "target_vocab": [
     {
-      "word": "mysterious",
-      "definition_en": "difficult or impossible to understand or explain",
-      "definition_vi": "bí ẩn",
-      "example": "They found a mysterious entrance behind the rock.",
-      "ipa": "/mɪˈstɪə.ri.əs/",
-      "image_url": "/images/week36/vocab_1.jpg"
-    },
-    {
-      "word": "flashlight",
-      "definition_en": "a portable battery-powered electric lamp",
-      "definition_vi": "đèn pin",
-      "example": "Turn on your flashlight inside the dark cave.",
-      "ipa": "/ˈflæʃ.laɪt/",
-      "image_url": "/images/week36/vocab_2.jpg"
-    },
-    {
-      "word": "entrance",
-      "definition_en": "an opening that allows access to a place",
-      "definition_vi": "lối vào",
-      "example": "The cave entrance was covered with vines.",
-      "ipa": "/ˈen.trəns/",
-      "image_url": "/images/week36/vocab_3.jpg"
-    },
-    {
-      "word": "ancient",
-      "definition_en": "belonging to the very distant past",
-      "definition_vi": "cổ xưa",
-      "example": "The explorer drew an ancient parchment map.",
-      "ipa": "/ˈeɪn.ʃənt/",
-      "image_url": "/images/week36/vocab_4.jpg"
-    },
-    {
-      "word": "compass",
-      "definition_en": "an instrument showing magnetic north used for navigation",
-      "definition_vi": "la bàn",
-      "example": "Use a shiny brass compass to find north.",
-      "ipa": "/ˈkʌm.pəs/",
-      "image_url": "/images/week36/vocab_5.jpg"
-    },
-    {
-      "word": "stalactite",
-      "definition_en": "an icicle-shaped formation hanging from a cave ceiling",
-      "definition_vi": "nhũ đá",
-      "example": "Water dripped from a long stalactite.",
-      "ipa": "/ˈstæl.ək.taɪt/",
-      "image_url": "/images/week36/vocab_6.jpg"
-    },
-    {
-      "word": "explorer",
-      "definition_en": "a person who explores an unfamiliar area",
-      "definition_vi": "nhà khám phá",
-      "example": "Brave explorers mapped the deep cave.",
-      "ipa": "/ɪkˈsplɔː.rər/",
-      "image_url": "/images/week36/vocab_7.jpg"
-    },
-    {
-      "word": "parchment",
-      "definition_en": "a stiff flat material made from animal skin for writing",
-      "definition_vi": "cuộn giấy da",
-      "example": "The ancient map was written on parchment.",
-      "ipa": "/ˈpɑːtʃ.mənt/",
-      "image_url": "/images/week36/vocab_8.jpg"
-    },
-    {
-      "word": "shadow",
-      "definition_en": "a dark area produced by a body coming between rays of light",
-      "definition_vi": "bóng râm",
-      "example": "Dark grey shadows danced on the rocky wall.",
-      "ipa": "/ˈʃæd.əʊ/",
-      "image_url": "/images/week36/vocab_9.jpg"
-    },
-    {
-      "word": "underground",
-      "definition_en": "situated beneath the surface of the earth",
-      "definition_vi": "dưới lòng đất",
-      "example": "The underground lake was icy cold.",
-      "ipa": "/ˌʌn.dəˈɡraʊnd/",
-      "image_url": "/images/week36/vocab_10.jpg"
-    },
-    {
-      "word": "chamber",
-      "definition_en": "a large room or enclosed space in a cave",
-      "definition_vi": "ngăn hang động",
-      "example": "They stepped into a wide stone chamber.",
-      "ipa": "/ˈtʃeɪm.bər/",
-      "image_url": "/images/week36/vocab_11.jpg"
-    },
-    {
       "word": "adventure",
-      "definition_en": "an unusual and exciting experience",
-      "definition_vi": "cuộc phiêu lưu",
-      "example": "Hiking in the forest was a great adventure.",
-      "ipa": "/ədˈven.tʃər/",
-      "image_url": "/images/week36/vocab_12.jpg"
+      "definition_en": "An exciting or daring experience",
+      "definition_vi": "chuyến phiêu lưu",
+      "example": "Leo wrote an adventure book.",
+      "ipa": "/ədˈven.tʃər/"
     },
     {
-      "word": "discover",
-      "definition_en": "find unexpectedly or during a search",
+      "word": "journey",
+      "definition_en": "An act of traveling from one place to another",
+      "definition_vi": "hành trình",
+      "example": "His journey took him across the sea.",
+      "ipa": "/ˈdʒɜː.ni/"
+    },
+    {
+      "word": "explore",
+      "definition_en": "To travel through an unfamiliar area to learn about it",
       "definition_vi": "khám phá",
-      "example": "They discovered a wooden treasure box.",
-      "ipa": "/dɪˈskʌv.ər/",
-      "image_url": "/images/week36/vocab_13.jpg"
+      "example": "He explored a mysterious island.",
+      "ipa": "/ɪkˈsplɔːr/"
     },
     {
-      "word": "ceiling",
-      "definition_en": "the upper interior surface of a room or cave",
-      "definition_vi": "trần hang",
-      "example": "Water dripped from the rocky ceiling.",
-      "ipa": "/ˈsiː.lɪŋ/",
-      "image_url": "/images/week36/vocab_14.jpg"
-    },
-    {
-      "word": "drip",
-      "definition_en": "fall in small drops of liquid",
-      "definition_vi": "nhỏ giọt",
-      "example": "Cool water drops drip silently.",
-      "ipa": "/drɪp/",
-      "image_url": "/images/week36/vocab_15.jpg"
-    },
-    {
-      "word": "treasure",
-      "definition_en": "a quantity of precious metals, gems, or valuable items",
-      "definition_vi": "kho báu",
-      "example": "The map led to a historical treasure.",
-      "ipa": "/ˈtreʒ.ər/",
-      "image_url": "/images/week36/vocab_16.jpg"
-    },
-    {
-      "word": "historical",
-      "definition_en": "concerning history or past events",
-      "definition_vi": "thuộc lịch sử",
-      "example": "They found a historical map from 1850.",
-      "ipa": "/hɪˈstɒr.ɪ.kəl/",
-      "image_url": "/images/week36/vocab_17.jpg"
-    },
-    {
-      "word": "hiking",
-      "definition_en": "the activity of going for long walks in the countryside",
-      "definition_vi": "đi bộ đường dài",
-      "example": "We enjoy hiking in the pine forest.",
-      "ipa": "/ˈhaɪ.kɪŋ/",
-      "image_url": "/images/week36/vocab_18.jpg"
+      "word": "path",
+      "definition_en": "A track laid down for walking",
+      "definition_vi": "con đường nhỏ",
+      "example": "Follow the path through the dense forest.",
+      "ipa": "/pɑːθ/"
     },
     {
       "word": "forest",
-      "definition_en": "a large area covered chiefly with trees and undergrowth",
-      "definition_vi": "rừng cây",
-      "example": "Tall trees grew in the pine forest.",
-      "ipa": "/ˈfɒr.ɪst/",
-      "image_url": "/images/week36/vocab_19.jpg"
+      "definition_en": "A large area covered chiefly with trees",
+      "definition_vi": "Khu rừng",
+      "example": "The green forest was full of birds.",
+      "ipa": "/ˈfɒr.ɪst/"
     },
     {
-      "word": "courage",
-      "definition_en": "the ability to do something that frightens one",
-      "definition_vi": "lòng dũng cảm",
-      "example": "Exploring dark caves requires true courage.",
-      "ipa": "/ˈkʌr.ɪdʒ/",
-      "image_url": "/images/week36/vocab_20.jpg"
-    }
-  ],
-  "sentences": [
-    {
-      "id": 1,
-      "text": "They found a mysterious entrance behind the rock.",
-      "translation": "Ví dụ: mysterious trong câu."
+      "word": "mountain",
+      "definition_en": "A large natural elevation of the earth's surface",
+      "definition_vi": "ngọn núi",
+      "example": "They climbed the high mountain.",
+      "ipa": "/ˈmaʊn.tɪn/"
     },
     {
-      "id": 2,
-      "text": "Turn on your flashlight inside the dark cave.",
-      "translation": "Ví dụ: flashlight trong câu."
+      "word": "island",
+      "definition_en": "A piece of land surrounded by water",
+      "definition_vi": "hòn đảo",
+      "example": "The hidden island had secret caves.",
+      "ipa": "/ˈaɪ.lənd/"
     },
     {
-      "id": 3,
-      "text": "The cave entrance was covered with vines.",
-      "translation": "Ví dụ: entrance trong câu."
+      "word": "map",
+      "definition_en": "A diagrammatic representation of an area",
+      "definition_vi": "bản đồ",
+      "example": "He found an ancient treasure map.",
+      "ipa": "/mæp/"
     },
     {
-      "id": 4,
-      "text": "The explorer drew an ancient parchment map.",
-      "translation": "Ví dụ: ancient trong câu."
+      "word": "compass",
+      "definition_en": "An instrument for determining directions",
+      "definition_vi": "la bàn",
+      "example": "He used his compass to find north.",
+      "ipa": "/ˈkʌm.pəs/"
     },
     {
-      "id": 5,
-      "text": "Use a shiny brass compass to find north.",
-      "translation": "Ví dụ: compass trong câu."
+      "word": "treasure",
+      "definition_en": "A quantity of precious metals or valuable objects",
+      "definition_vi": "kho báu",
+      "example": "The treasure map showed an X mark.",
+      "ipa": "/ˈtreʒ.ər/"
     },
     {
-      "id": 6,
-      "text": "Water dripped from a long stalactite.",
-      "translation": "Ví dụ: stalactite trong câu."
+      "word": "discovered",
+      "definition_en": "Found unexpectedly during a search",
+      "definition_vi": "đã phát hiện",
+      "example": "He discovered a wooden chest.",
+      "ipa": "/dɪˈskʌv.əd/"
     },
     {
-      "id": 7,
-      "text": "Brave explorers mapped the deep cave.",
-      "translation": "Ví dụ: explorer trong câu."
+      "word": "travelled",
+      "definition_en": "Went from one place to another",
+      "definition_vi": "đã du lịch",
+      "example": "Leo travelled by boat.",
+      "ipa": "/ˈtræv.əld/"
     },
     {
-      "id": 8,
-      "text": "The ancient map was written on parchment.",
-      "translation": "Ví dụ: parchment trong câu."
-    }
-  ],
-  "spark_talk": [
-    {
-      "id": 1,
-      "topic_en": "What safety rule did Jake follow in The Secret Cave — Adventure & Exploration?",
-      "topic_vi": "Quy tắc an toàn nào Jake đã tuân thủ?"
+      "word": "climbed",
+      "definition_en": "Went up a steep slope or mountain",
+      "definition_vi": "đã leo",
+      "example": "He climbed up the mossy rock.",
+      "ipa": "/klaɪmd/"
     },
     {
-      "id": 2,
-      "topic_en": "How can you help a classmate who falls down?",
-      "topic_vi": "Bạn có thể giúp bạn cùng lớp như thế nào khi bạn ấy bị ngã?"
+      "word": "crossed",
+      "definition_en": "Passed from one side of a river or path to another",
+      "definition_vi": "đã băng qua",
+      "example": "He crossed the roaring river.",
+      "ipa": "/krɒst/"
+    },
+    {
+      "word": "reached",
+      "definition_en": "Arrived at a destination",
+      "definition_vi": "đã tới nơi",
+      "example": "He reached the waterfall.",
+      "ipa": "/riːtʃt/"
+    },
+    {
+      "word": "returned",
+      "definition_en": "Came back to a place",
+      "definition_vi": "đã trở về",
+      "example": "He returned home safely.",
+      "ipa": "/rɪˈtɜːnd/"
+    },
+    {
+      "word": "memory",
+      "definition_en": "Something remembered from the past",
+      "definition_vi": "kỷ niệm",
+      "example": "Writing a book creates a great memory.",
+      "ipa": "/ˈmem.ər.i/"
+    },
+    {
+      "word": "illustration",
+      "definition_en": "A picture illustrating a book or story",
+      "definition_vi": "hình minh họa",
+      "example": "He drew colorful illustrations.",
+      "ipa": "/ˌɪl.əˈstreɪ.ʃən/"
+    },
+    {
+      "word": "author",
+      "definition_en": "A writer of a book or story",
+      "definition_vi": "tác giả",
+      "example": "Every student became a book author.",
+      "ipa": "/ˈɔː.θər/"
+    },
+    {
+      "word": "chapter",
+      "definition_en": "A main division of a book",
+      "definition_vi": "chương sách",
+      "example": "Chapter One describes the island.",
+      "ipa": "/ˈtʃæp.tər/"
     }
   ],
   "story_missions": [
     {
-      "id": 1,
-      "title": "Mission 1: Retell STEM Story",
-      "prompt": "Retell how Jake helped his friend in The Secret Cave — Adventure & Exploration."
+      "mission_id": 1,
+      "title": "My Adventure Story",
+      "mission_context": "Retell Leo's adventure book story using past irregular verbs (went, saw, found, took, made)."
     },
     {
-      "id": 2,
-      "title": "Mission 2: Retell Social Story",
-      "prompt": "Explain global school safety rules from Son Doong & Underground Wonders."
+      "mission_id": 2,
+      "title": "Creating Project 3",
+      "mission_context": "Explain how you illustrated and wrote your own adventure book chapters."
     },
     {
-      "id": 3,
-      "title": "Mission 3: Personal Connection",
-      "prompt": "Share an experience where you helped someone at school."
+      "mission_id": 3,
+      "title": "Author Presentation",
+      "mission_context": "Present your completed adventure book project to the class."
     }
+  ],
+  "spark_talk": [
+    {
+      "topic_en": "Adventure Book Writing",
+      "topic_vi": "Viết sách phiêu lưu",
+      "cards": [
+        "What irregular verbs did you use in Chapter 1?",
+        "Where does your adventure story take place?"
+      ]
+    },
+    {
+      "topic_en": "Illustrating Stories",
+      "topic_vi": "Vẽ minh họa câu chuyện",
+      "cards": [
+        "What picture did you draw for Chapter 2?",
+        "Who is the main author of your book?"
+      ]
+    }
+  ],
+  "sentences": [
+    "Welcome to Project 3: My Adventure Book!",
+    "Leo went to a mysterious bay by boat.",
+    "He saw a colorful parrot and found an ancient treasure map.",
+    "He took out his compass and made his way across the jungle.",
+    "Leo wrote five thrilling chapters and drew beautiful illustrations."
   ]
 };

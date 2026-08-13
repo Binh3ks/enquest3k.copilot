@@ -65,7 +65,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       connectorsCount: matchedConnectors.length,
       matchedVerbs,
       matchedConnectors,
-      isRulePass: matchedVerbs.length >= 2 && wordCount >= 35
+      isRulePass: matchedVerbs.length >= 2 && wordCount >= 20
     };
 
     setRuleScore(layer1Result);
@@ -196,7 +196,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       {/* Script Text Area Input with Cambridge Flyers Standard Target */}
       <div className="space-y-3 mb-6">
         <label className="block text-xs font-black text-slate-700 uppercase">
-          Your 3-Picture Story Script (<span className="text-purple-600">Target: 35-50 words — Cambridge Flyers Standard</span> + 2 past verbs):
+          Your 3-Picture Story Script (<span className="text-purple-600">Cambridge Min: 20+ words | EngQuest Stretch Goal: 35–50 words</span> + 2 past verbs):
         </label>
         <textarea
           rows={5}
@@ -223,14 +223,14 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           <div className="flex items-center justify-between pb-3 border-b border-slate-200">
             <span className="text-xs font-black uppercase text-slate-700">Layer 1 Rule Check:</span>
             <span className={`text-xs font-black ${ruleScore.isRulePass ? 'text-emerald-600' : 'text-amber-600'}`}>
-              {ruleScore.isRulePass ? '✅ Pass (Target 35-50 words met)' : '⚠️ Below Target Word Count'}
+              {ruleScore.isRulePass ? (ruleScore.wordCount >= 35 ? '✅ Pass (Cambridge 20+ words & EngQuest Stretch Goal met!)' : '✅ Pass (Cambridge Minimum 20+ words met)') : '⚠️ Below Cambridge Minimum (20 words)'}
             </span>
           </div>
 
           <div className="grid grid-cols-3 gap-3 text-center text-xs font-bold">
             <div className="p-3 bg-white rounded-xl border border-slate-200">
               <div className="text-slate-400 text-[10px] uppercase font-black">Word Count</div>
-              <div className="text-lg font-black text-slate-900">{ruleScore.wordCount} / 35-50 words</div>
+              <div className="text-lg font-black text-slate-900">{ruleScore.wordCount} words <span className="text-[10px] text-slate-400 font-bold block">(Cam: 20+ | Stretch: 35–50)</span></div>
             </div>
             <div className="p-3 bg-white rounded-xl border border-slate-200">
               <div className="text-slate-400 text-[10px] uppercase font-black">Past Verbs</div>

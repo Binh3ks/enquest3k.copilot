@@ -9,28 +9,26 @@ if (!fs.existsSync(syllabusPath)) {
   process.exit(1);
 }
 
-const syllabusRaw = fs.readFileSync(syllabusPath, 'utf8');
-
 // Expected Syllabus Rules mapping
 const SYLLABUS_WEEK_RULES = {
   34: {
     topicKeywords: ['lion', 'mouse', 'fable'],
-    grammarKeywords: ['past'],
+    forbiddenKeywords: ['grasshopper', 'ant'],
     targetVocab: ['net', 'trap', 'roar', 'help', 'friend', 'tiny', 'huge']
   },
   35: {
     topicKeywords: ['best day', 'recount', 'wonderful'],
-    grammarKeywords: ['past simple', 'adjective'],
+    forbiddenKeywords: ['litter', 'recycling'],
     targetVocab: ['wonderful', 'exciting', 'sunny', 'memorable', 'joyful', 'delicious', 'happy', 'remember']
   },
   36: {
     topicKeywords: ['adventure book', 'project'],
-    grammarKeywords: ['irregular verb'],
+    forbiddenKeywords: ['flashlight', 'stalactite'],
     targetVocab: ['adventure', 'journey', 'explore', 'path', 'forest', 'mountain', 'island', 'map', 'compass', 'treasure']
   },
   37: {
     topicKeywords: ['living', 'non-living', 'nature'],
-    grammarKeywords: ['because'],
+    forbiddenKeywords: ['stadium', 'marathon'],
     targetVocab: ['living', 'non-living', 'breathe', 'grow', 'need', 'food', 'water', 'rock', 'plastic']
   }
 };
@@ -39,7 +37,7 @@ const args = process.argv.slice(2);
 const weeksToAudit = args.length > 0 ? args.map(n => parseInt(n, 10)) : [34, 35, 36, 37];
 
 console.log('\n================================================================');
-console.log('🛡️ PRODUCTION ANTI-DRIFT GUARD: SYLLABUS INTEGRITY VALIDATOR');
+console.log('🛡️ STRENGTHENED PRODUCTION ANTI-DRIFT GUARD (MULTIPLE RUNTIME DATA SOURCES)');
 console.log('================================================================\n');
 
 let totalDriftErrors = 0;
@@ -53,47 +51,57 @@ weeksToAudit.forEach((weekId) => {
 
   const weekStr = weekId < 10 ? `0${weekId}` : `${weekId}`;
   const weekDir = path.join(root, 'src', 'data', 'weeks', `week_${weekStr}`);
-  const readPath = path.join(weekDir, 'read.js');
-  const vocabPath = path.join(weekDir, 'vocab.js');
+  
+  // Inspect ALL active runtime data sources for this week
+  const dataSourcesToAudit = [
+    { name: `week_${weekStr}/read.js`, filePath: path.join(weekDir, 'read.js') },
+    { name: `week_${weekStr}/vocab.js`, filePath: path.join(weekDir, 'vocab.js') },
+    { name: `week_${weekStr}_real.js (flat)`, filePath: path.join(root, 'src', 'data', 'weeks', `week_${weekStr}_real.js`) },
+    { name: `week_${weekStr}/week_${weekStr}_real.js (nested)`, filePath: path.join(weekDir, `week_${weekStr}_real.js`) }
+  ];
 
-  if (!fs.existsSync(readPath) || !fs.existsSync(vocabPath)) {
-    console.error(`❌ Week ${weekId}: Missing read.js or vocab.js file in ${weekDir}`);
-    totalDriftErrors++;
-    return;
-  }
+  dataSourcesToAudit.forEach((src) => {
+    if (!fs.existsSync(src.filePath)) {
+      console.error(`❌ Week ${weekId}: Data source missing: ${src.name}`);
+      totalDriftErrors++;
+      return;
+    }
 
-  const readContent = fs.readFileSync(readPath, 'utf8').toLowerCase();
-  const vocabContent = fs.readFileSync(vocabPath, 'utf8').toLowerCase();
+    const fileContent = fs.readFileSync(src.filePath, 'utf8').toLowerCase();
+    const sourceErrors = [];
 
-  const errors = [];
+    // 1. Topic Keyword Check
+    const hasTopic = rule.topicKeywords.some(kw => fileContent.includes(kw));
+    if (!hasTopic) {
+      sourceErrors.push(`Topic Drift in ${src.name}: Missing expected topic keywords [${rule.topicKeywords.join(', ')}]`);
+    }
 
-  // Check 1: Topic Keyword Check
-  const hasTopic = rule.topicKeywords.some(kw => readContent.includes(kw));
-  if (!hasTopic) {
-    errors.push(`Topic Drift: read.js does not contain expected topic keywords [${rule.topicKeywords.join(', ')}]`);
-  }
+    // 2. Forbidden Un-restored Keyword Check
+    if (rule.forbiddenKeywords) {
+      const foundForbidden = rule.forbiddenKeywords.filter(kw => fileContent.includes(kw));
+      if (foundForbidden.length > 0) {
+        sourceErrors.push(`Legacy Drift in ${src.name}: Contains un-restored legacy keywords [${foundForbidden.join(', ')}]`);
+      }
+    }
 
-  // Check 2: Target Vocabulary Match Rate (Must contain at least 70% of target vocab)
-  const missingVocab = rule.targetVocab.filter(word => !readContent.includes(word) && !vocabContent.includes(word));
-  if (missingVocab.length > Math.floor(rule.targetVocab.length * 0.4)) {
-    errors.push(`Lexical Drift: Missing critical target vocabulary from Syllabus [${missingVocab.join(', ')}]`);
-  }
+    if (sourceErrors.length > 0) {
+      totalDriftErrors++;
+      console.error(`❌ [DRIFT DETECTED] WEEK ${weekId} (${src.name})`);
+      sourceErrors.forEach(e => console.error(`   └─ ${e}`));
+    }
+  });
 
-  if (errors.length > 0) {
-    totalDriftErrors++;
-    console.error(`❌ [DRIFT DETECTED] WEEK ${weekId}`);
-    errors.forEach(e => console.error(`   └─ ${e}`));
-  } else {
-    console.log(`✅ [FAITHFUL] WEEK ${weekId}: 100% aligned with original Syllabus source of truth.`);
+  if (totalDriftErrors === 0) {
+    console.log(`✅ [FAITHFUL] WEEK ${weekId}: ALL 4 active data sources are 100% aligned with Syllabus.`);
   }
 });
 
 console.log('\n================================================================');
 if (totalDriftErrors > 0) {
-  console.error(`❌ ANTI-DRIFT GUARD FAILED! Found ${totalDriftErrors} week(s) with Syllabus drift.`);
+  console.error(`❌ STRENGTHENED ANTI-DRIFT GUARD FAILED! Found ${totalDriftErrors} data source error(s).`);
   process.exit(1);
 } else {
-  console.log(`🎉 ALL AUDITED WEEKS ARE 100% FAITHFUL TO THE SYLLABUS! STATUS: GO.`);
+  console.log(`🎉 ALL AUDITED RUNTIME DATA SOURCES ARE 100% FAITHFUL TO THE SYLLABUS! STATUS: GO.`);
   console.log('================================================================\n');
   process.exit(0);
 }

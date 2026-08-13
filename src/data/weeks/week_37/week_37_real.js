@@ -1,219 +1,190 @@
-// Cambridge A2 Flyers week_37_real.js
+// Cambridge A2 Flyers week_37_real.js (Restored Syllabus Data)
 export default {
   "weekId": 37,
-  "title": "The Sports Day Challenge — Teamwork & Speed",
-  "title_vi": "Ngày Hội Thể Thao — Tinh Thần Đồng Đội & Tốc Độ",
+  "title": "Living vs. Non-Living — CLIL Unit 6 Nature's Rules",
+  "title_vi": "Vật Sống & Không Sống — Quy Luật Tự Nhiên CLIL Unit 6",
   "target_vocab": [
     {
-      "word": "annual",
-      "definition_en": "occurring once every year",
-      "definition_vi": "hàng năm",
-      "example": "Our school holds its annual Sports Day in May.",
-      "ipa": "/ˈæn.ju.əl/"
+      "word": "living",
+      "definition_en": "Having life; alive and active",
+      "definition_vi": "vật sống",
+      "example": "A puppy is a living organism.",
+      "ipa": "/ˈlɪv.ɪŋ/"
     },
     {
-      "word": "stadium",
-      "definition_en": "a sports arena with tier seating for spectators",
-      "definition_vi": "sân vận động",
-      "example": "The crowded sports stadium was loud.",
-      "ipa": "/ˈsteɪ.di.əm/"
+      "word": "non-living",
+      "definition_en": "Not alive; matter that does not grow or breathe",
+      "definition_vi": "vật không sống",
+      "example": "A grey rock is a non-living object.",
+      "ipa": "/nɒnˈlɪv.ɪŋ/"
     },
     {
-      "word": "relay",
-      "definition_en": "a race between teams where each member runs a part",
-      "definition_vi": "chạy tiếp sức",
-      "example": "Leo ran the last leg of the 4x100m relay.",
-      "ipa": "/ˈriː.leɪ/"
+      "word": "breathe",
+      "definition_en": "To take air into the lungs and expel it",
+      "definition_vi": "thở, hít thở",
+      "example": "Living animals breathe fresh air.",
+      "ipa": "/briːð/"
     },
     {
-      "word": "baton",
-      "definition_en": "a short stick passed from runner to runner in a relay",
-      "definition_vi": "gậy tiếp sức",
-      "example": "Pass the baton smoothly without dropping it.",
-      "ipa": "/ˈbæt.ɒn/"
+      "word": "grow",
+      "definition_en": "To increase in size and develop",
+      "definition_vi": "lớn lên, phát triển",
+      "example": "Trees grow bigger with sunlight.",
+      "ipa": "/ɡrəʊ/"
     },
     {
-      "word": "accelerate",
-      "definition_en": "begin to move more quickly; gain speed",
-      "definition_vi": "tăng tốc",
-      "example": "Accelerate quickly down the straight track.",
-      "ipa": "/əkˈsel.ə.reɪt/"
+      "word": "need",
+      "definition_en": "To require something essential for life",
+      "definition_vi": "cần thiết",
+      "example": "Plants need water and sunlight.",
+      "ipa": "/niːd/"
     },
     {
-      "word": "sprint",
-      "definition_en": "run at full speed over a short distance",
-      "definition_vi": "chạy nước rút",
-      "example": "The first runner began to sprint fast.",
-      "ipa": "/sprɪnt/"
+      "word": "food",
+      "definition_en": "Substance consumed to provide nutritional support",
+      "definition_vi": "thức ăn",
+      "example": "Animals eat food to get energy.",
+      "ipa": "/fuːd/"
     },
     {
-      "word": "smoothly",
-      "definition_en": "in a even and regular way without sudden movements",
-      "definition_vi": "mượt mà",
-      "example": "The baton handoff went very smoothly.",
-      "ipa": "/ˈsmuːð.li/"
+      "word": "water",
+      "definition_en": "Essential clear liquid necessary for life",
+      "definition_vi": "nước uống",
+      "example": "All living things require water.",
+      "ipa": "/ˈwɔː.tər/"
     },
     {
-      "word": "cheering",
-      "definition_en": "shouting for joy or in praise or encouragement",
-      "definition_vi": "tiếng reo hò",
-      "example": "Cheering spectators filled the stadium stands.",
-      "ipa": "/ˈtʃɪə.rɪŋ/"
+      "word": "rock",
+      "definition_en": "Solid mineral material forming part of the earth",
+      "definition_vi": "tảng đá",
+      "example": "A rock is non-living because it does not grow.",
+      "ipa": "/rɒk/"
     },
     {
-      "word": "podium",
-      "definition_en": "a raised platform on which winners receive medals",
-      "definition_vi": "bục nhận giải",
-      "example": "The team stood proudly on the gold podium.",
-      "ipa": "/ˈpəʊ.di.əm/"
+      "word": "plastic",
+      "definition_en": "Synthetic non-living material",
+      "definition_vi": "chất nhựa",
+      "example": "A plastic car is a non-living toy.",
+      "ipa": "/ˈplæs.tɪk/"
     },
     {
-      "word": "teammate",
-      "definition_en": "a fellow member of a sports team",
-      "definition_vi": "đồng đội",
-      "example": "Leo cheered loudly for his teammate.",
-      "ipa": "/ˈtiːm.meɪt/"
+      "word": "reproduce",
+      "definition_en": "To produce offspring or new organisms",
+      "definition_vi": "sinh sản",
+      "example": "Living organisms can reproduce.",
+      "ipa": "/ˌriː.prəˈdjuːs/"
     },
     {
-      "word": "olympic",
-      "definition_en": "relating to the ancient or modern Olympic Games",
-      "definition_vi": "thuộc Olympic",
-      "example": "Olympic runners train for many years.",
-      "ipa": "/əˈlɪm.pɪk/"
+      "word": "organism",
+      "definition_en": "An individual living creature",
+      "definition_vi": "sinh vật",
+      "example": "A green plant is a living organism.",
+      "ipa": "/ˈɔː.ɡən.ɪ.zəm/"
     },
     {
-      "word": "athlete",
-      "definition_en": "a person who is proficient in sports and physical exercise",
-      "definition_vi": "vận động viên",
-      "example": "More than 200 athletes joined the games.",
-      "ipa": "/ˈæθ.liːt/"
+      "word": "energy",
+      "definition_en": "Power derived from food or sunlight",
+      "definition_vi": "năng lượng",
+      "example": "Food gives living things energy.",
+      "ipa": "/ˈen.ə.dʒi/"
     },
     {
-      "word": "velocity",
-      "definition_en": "the speed of something in a given direction",
-      "definition_vi": "vận tốc",
-      "example": "Smooth acceleration increases velocity.",
-      "ipa": "/vəˈlɒs.ə.ti/"
+      "word": "survive",
+      "definition_en": "To continue to live or exist",
+      "definition_vi": "tồn tại, sống sót",
+      "example": "Animals need air to survive.",
+      "ipa": "/səˈvaɪv/"
     },
     {
-      "word": "stamina",
-      "definition_en": "the ability to sustain prolonged physical effort",
-      "definition_vi": "sức bền",
-      "example": "Long distance running requires high stamina.",
-      "ipa": "/ˈstæm.ɪ.nə/"
+      "word": "air",
+      "definition_en": "The invisible gaseous substance surrounding the earth",
+      "definition_vi": "không khí",
+      "example": "We breathe clean air.",
+      "ipa": "/eər/"
     },
     {
-      "word": "victory",
-      "definition_en": "an act of defeating an opponent in a competition",
-      "definition_vi": "chiến thắng",
-      "example": "The team celebrated their relay victory.",
-      "ipa": "/ˈvɪk.tər.i/"
+      "word": "sunlight",
+      "definition_en": "Light from the sun essential for plants",
+      "definition_vi": "ánh nắng mặt trời",
+      "example": "Plants absorb warm sunlight.",
+      "ipa": "/ˈsʌn.laɪt/"
     },
     {
-      "word": "competition",
-      "definition_en": "an event in which people compete against each other",
-      "definition_vi": "cuộc thi đấu",
-      "example": "The Sports Day competition was intense.",
-      "ipa": "/ˌkɒm.pəˈtɪʃ.ən/"
+      "word": "plant",
+      "definition_en": "A living organism such as a tree or flower",
+      "definition_vi": "thực vật, cây xanh",
+      "example": "A green plant is living.",
+      "ipa": "/plɑːnt/"
     },
     {
-      "word": "finish-line",
-      "definition_en": "a line marking the end of a race",
-      "definition_vi": "vạch đích",
-      "example": "Leo crossed the finish-line first.",
-      "ipa": "/ˈfɪn.ɪʃ ˌlaɪn/"
+      "word": "animal",
+      "definition_en": "A living organism that feeds on organic matter",
+      "definition_vi": "động vật",
+      "example": "Animals are living organisms.",
+      "ipa": "/ˈæn.ɪ.məl/"
     },
     {
-      "word": "medal",
-      "definition_en": "a metal disc awarded to a sports winner",
-      "definition_vi": "huy chương",
-      "example": "He wore a shiny gold medal around his neck.",
-      "ipa": "/ˈmed.əl/"
+      "word": "object",
+      "definition_en": "A material thing that can be seen and touched",
+      "definition_vi": "vật thể",
+      "example": "A stone is a non-living object.",
+      "ipa": "/ˈɒb.dʒɪkt/"
     },
     {
-      "word": "momentum",
-      "definition_en": "the quantity of motion of a moving body",
-      "definition_vi": "động năng tiếp sức",
-      "example": "Keep your running momentum into the turn.",
-      "ipa": "/məˈmen.təm/"
+      "word": "environment",
+      "definition_en": "The surroundings in which a living thing lives",
+      "definition_vi": "môi trường",
+      "example": "Organisms adapt to their environment.",
+      "ipa": "/ɪnˈvaɪ.rən.mənt/"
     },
     {
-      "word": "teamwork",
-      "definition_en": "the combined action of a group of people",
-      "definition_vi": "tinh thần đồng đội",
-      "example": "Scientific teamwork led them to victory.",
-      "ipa": "/ˈtiːm.wɜːk/"
-    }
-  ],
-  "sentences": [
-    {
-      "id": 1,
-      "text": "Our school holds its annual Sports Day in May.",
-      "translation": "Ví dụ: annual trong câu."
-    },
-    {
-      "id": 2,
-      "text": "The crowded sports stadium was loud.",
-      "translation": "Ví dụ: stadium trong câu."
-    },
-    {
-      "id": 3,
-      "text": "Leo ran the last leg of the 4x100m relay.",
-      "translation": "Ví dụ: relay trong câu."
-    },
-    {
-      "id": 4,
-      "text": "Pass the baton smoothly without dropping it.",
-      "translation": "Ví dụ: baton trong câu."
-    },
-    {
-      "id": 5,
-      "text": "Accelerate quickly down the straight track.",
-      "translation": "Ví dụ: accelerate trong câu."
-    },
-    {
-      "id": 6,
-      "text": "The first runner began to sprint fast.",
-      "translation": "Ví dụ: sprint trong câu."
-    },
-    {
-      "id": 7,
-      "text": "The baton handoff went very smoothly.",
-      "translation": "Ví dụ: smoothly trong câu."
-    },
-    {
-      "id": 8,
-      "text": "Cheering spectators filled the stadium stands.",
-      "translation": "Ví dụ: cheering trong câu."
-    }
-  ],
-  "spark_talk": [
-    {
-      "id": 1,
-      "topic_en": "What safety rule did Jake follow in The Sports Day Challenge — Teamwork & Speed?",
-      "topic_vi": "Quy tắc an toàn nào Jake đã tuân thủ?"
-    },
-    {
-      "id": 2,
-      "topic_en": "How can you help a classmate who falls down?",
-      "topic_vi": "Bạn có thể giúp bạn cùng lớp như thế nào khi bạn ấy bị ngã?"
+      "word": "natural",
+      "definition_en": "Existing in or caused by nature",
+      "definition_vi": "tự nhiên",
+      "example": "Rocks are natural non-living objects.",
+      "ipa": "/ˈnætʃ.ər.əl/"
     }
   ],
   "story_missions": [
     {
-      "id": 1,
-      "title": "Mission 1: Retell STEM Story",
-      "prompt": "Retell how Jake helped his friend in The Sports Day Challenge — Teamwork & Speed."
+      "mission_id": 1,
+      "title": "Classifying Nature",
+      "mission_context": "Explain why a puppy or tree is living using 'because' (it breathes/grows)."
     },
     {
-      "id": 2,
-      "title": "Mission 2: Retell Social Story",
-      "prompt": "Explain global school safety rules from The Olympic Truce & World Relays."
+      "mission_id": 2,
+      "title": "Non-Living Objects",
+      "mission_context": "Explain why a rock or plastic toy is non-living using 'because' (it does not eat/grow)."
     },
     {
-      "id": 3,
-      "title": "Mission 3: Personal Connection",
-      "prompt": "Share an experience where you helped someone at school."
+      "mission_id": 3,
+      "title": "Scientific Reasoning",
+      "mission_context": "Present your CLIL Unit 6 science classification chart to the class."
     }
+  ],
+  "spark_talk": [
+    {
+      "topic_en": "Living Organisms",
+      "topic_vi": "Sinh vật sống",
+      "cards": [
+        "Why is a puppy a living thing?",
+        "What three things do plants need to survive?"
+      ]
+    },
+    {
+      "topic_en": "Non-Living Objects",
+      "topic_vi": "Vật thể không sống",
+      "cards": [
+        "Is a rock living or non-living?",
+        "How do you explain it using 'because'?"
+      ]
+    }
+  ],
+  "sentences": [
+    "Welcome to CLIL Unit 6: Nature's Rules!",
+    "Today young scientists classify living and non-living things.",
+    "A puppy is living because it breathes fresh air and grows.",
+    "A grey rock is non-living because it does not breathe or grow.",
+    "An organism is living because it carries out vital life processes."
   ]
 };

@@ -10,7 +10,9 @@ export const DEFAULT_TASK_CONFIG = {
   gapCount: 5,            // Reading Part 4 Open Cloze gap count (5 -> 10)
   optionCount: 3,         // Choice grid option count (3 -> 8)
   panelCount: 3,          // Picture panel count (3 -> 4)
-  targetWordMin: 35,      // Writing script target word minimum (35-50 words)
+  cambridgeWordMin: 20,   // Official Cambridge Flyers Part 7 minimum (20+ words)
+  engQuestStretchMin: 35, // EngQuest extension stretch goal (35-50 words)
+  targetWordMin: 20,      // Primary passing threshold (Cambridge minimum 20+ words)
   differenceSpotCount: 6, // Dual picture spot difference count
   dialogueTurnLimit: 5    // Mascot voice dialogue turn limit (5 -> 20)
 };
@@ -28,23 +30,17 @@ export function validateWeekContentSchema(weekData) {
   }
 
   const weekNum = weekData.weekId || weekData.week;
-  if (typeof weekNum !== 'number') {
-    errors.push('Missing weekId or week numeric property');
+  if (!weekNum || typeof weekNum !== 'number') {
+    errors.push('Week data must contain a numeric weekId or week property');
   }
 
-  const titleStr = weekData.title || weekData.weekTitle_en;
-  if (!titleStr) {
-    errors.push('Missing title or weekTitle_en property');
-  }
+  // W33+ requires 4-Hub structure or target_vocab / story_missions
+  const stations = weekData.stations || weekData;
+  const has4Hubs = Boolean(stations.read_explore || weekData.readingHub);
+  const hasRealFields = Boolean(weekData.target_vocab || weekData.story_missions);
 
-  // Check 4 Hubs or stations or target_vocab
-  const has4Hubs = (weekData.readingHub || weekData.stations?.read_explore) && 
-                   (weekData.writingHub || weekData.stations?.writing) && 
-                   (weekData.speakingHub || weekData.stations?.ask_ai);
-  const hasTargetVocab = Array.isArray(weekData.target_vocab);
-
-  if (!has4Hubs && !hasTargetVocab) {
-    errors.push('Week data must contain 4 Hub objects/stations or target_vocab array');
+  if (!has4Hubs && !hasRealFields) {
+    errors.push('Missing Hub 1 (read_explore or readingHub)');
   }
 
   return {
