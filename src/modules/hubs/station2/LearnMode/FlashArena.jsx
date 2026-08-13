@@ -5,28 +5,28 @@ import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee } from 'luc
 
 const WEEK33_VOCAB_SETS = {
   set1_nouns_adj: [
-    { id: "na01", en: "mistake", vi: "sai lầm / lỗi" },
-    { id: "na02", en: "accident", vi: "sự cố tai nạn" },
-    { id: "na03", en: "puddle", vi: "vũng nước" },
-    { id: "na04", en: "backpack", vi: "chiếc cặp sách" },
-    { id: "na05", en: "vase", vi: "bình hoa" },
-    { id: "na06", en: "careful", vi: "cẩn thận" },
-    { id: "na07", en: "clumsy", vi: "vụng về" },
-    { id: "na08", en: "sorry", vi: "xin lỗi / hối hận" },
-    { id: "na09", en: "cautious", vi: "cẩn trọng" },
-    { id: "na10", en: "careless", vi: "bất cẩn" }
+    { id: "na01", en: "corridor", vi: "hành lang" },
+    { id: "na02", en: "bandage", vi: "băng cá nhân" },
+    { id: "na03", en: "nurse", vi: "y tế / y tá" },
+    { id: "na04", en: "cold pack", vi: "túi chườm lạnh" },
+    { id: "na05", en: "relieved", vi: "nhẹ nhõm" },
+    { id: "na06", en: "praised", vi: "khen ngợi" },
+    { id: "na07", en: "carefully", vi: "cẩn thận" },
+    { id: "na08", en: "immediately", vi: "ngay lập tức" },
+    { id: "na09", en: "truce", vi: "hòa bình / ngưng chiến" },
+    { id: "na10", en: "olympic", vi: "thế vận hội" }
   ],
   set2_verbs: [
-    { id: "v01", en: "broke", vi: "đã làm vỡ" },
-    { id: "v02", en: "fell", vi: "đã ngã" },
-    { id: "v03", en: "lost", vi: "đã làm mất" },
-    { id: "v04", en: "found", vi: "đã tìm thấy" },
-    { id: "v05", en: "slipped", vi: "đã trượt chân" },
-    { id: "v06", en: "spilled", vi: "đã làm tràn / đổ" },
-    { id: "v07", en: "dropped", vi: "đánh rơi" },
-    { id: "v08", en: "apologized", vi: "đã xin lỗi" },
-    { id: "v09", en: "repaired", vi: "đã sửa chữa" },
-    { id: "v10", en: "searched", vi: "đã tìm kiếm" }
+    { id: "v01", en: "slipped", vi: "đã trượt chân" },
+    { id: "v02", en: "fell down", vi: "đã ngã xuống" },
+    { id: "v03", en: "called", vi: "đã gọi trợ giúp" },
+    { id: "v04", en: "treated", vi: "đã sơ cứu" },
+    { id: "v05", en: "applied", vi: "đã băng bó" },
+    { id: "v06", en: "reminded", vi: "đã nhắc nhở" },
+    { id: "v07", en: "followed", vi: "đã tuân thủ" },
+    { id: "v08", en: "helped", vi: "đã giúp đỡ" },
+    { id: "v09", en: "stopped", vi: "đã dừng lại" },
+    { id: "v10", en: "praised", vi: "đã khen ngợi" }
   ],
     set3_chunks: [
     { id: "c01", en: "walking carefully down corridor", vi: "đi bộ cẩn thận dưới hành lang" },

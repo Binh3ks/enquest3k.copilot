@@ -508,7 +508,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
 
               {/* Story Paragraph with Clickable Blanks or Open Cloze Inputs (Boosted Typography: font-sans font-bold text-lg sm:text-xl leading-loose) */}
               <div className="p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-sm leading-loose sm:leading-extraloose text-lg sm:text-xl font-bold text-slate-900 space-y-2">
-                {renderParsedText("Tom **woke up in a hurry** today. First, he **felt extremely clumsy** when he ")}{' '}
+                {renderParsedText("Jake was walking **carefully down the school corridor** today. Suddenly, a classmate running fast ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -531,7 +531,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[1] || `[ ${interactiveStory.hints?.[1] || 'Blank 1'} ]`}
                   </button>
                 )}{' '}
-                {renderParsedText("his alarm clock off the table. Then, he ")}{' '}
+                {renderParsedText(" on the wet slippery tiles and ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -554,7 +554,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[2] || `[ ${interactiveStory.hints?.[2] || 'Blank 2'} ]`}
                   </button>
                 )}
-                {renderParsedText(" to have breakfast and ")}{' '}
+                {renderParsedText(" heavily near the science room. ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -577,7 +577,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[3] || `[ ${interactiveStory.hints?.[3] || 'Blank 3'} ]`}
                   </button>
                 )}{' '}
-                {renderParsedText(" on the kitchen floor. ")}{' '}
+                {renderParsedText(", Jake stopped immediately and ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
@@ -600,7 +600,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                     {storyAnswers[4] || `[ ${interactiveStory.hints?.[4] || 'Blank 4'} ]`}
                   </button>
                 )}{' '}
-                {renderParsedText(", he **spilled a glass of juice** over his English notebook! Fortunately, his sister Mia helped him **cleaned up the mess**. After that, Tom ")}{' '}
+                {renderParsedText(" the school nurse for medical help. The nurse arrived quickly with a ")}{' '}
                 {interactiveStory.mode === 'open_cloze' ? (
                   <input
                     type="text"
