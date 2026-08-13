@@ -3,176 +3,142 @@ export default {
   prompts: [
   {
     "id": 1,
-    "title_en": "Situation 1: Cave Stalactite Science",
-    "context_en": "Ask Nova how acidic water forms stalactites over thousands of years.",
-    "context_vi": "Hỏi Nova cách nước axit tạo thành nhũ đá qua hàng ngàn năm.",
-    "sample_question_en": "How does water form stalactites inside limestone caves over time?",
-    "sample_question_vi": "Nước tạo thành nhũ đá trong hang đá vôi theo thời gian như thế nào?",
-    "answer": "How does water form stalactites inside limestone caves over time?",
+    "title_en": "Situation 1: Main Story Inquiry",
+    "context_en": "Ask Nova about the main event in The Secret Cave — Adventure & Exploration.",
+    "context_vi": "Hỏi Nova về sự kiện chính trong bài The Secret Cave — Adventure & Exploration.",
+    "sample_question_en": "What happened in the story of The Secret Cave — Adventure & Exploration?",
+    "sample_question_vi": "Chuyện gì đã xảy ra trong câu chuyện The Secret Cave — Adventure & Exploration?",
+    "answer": "What happened in the story of The Secret Cave — Adventure & Exploration?",
     "word_bank": [
-      "How",
-      "does",
-      "water",
-      "form",
-      "stalactites",
-      "inside",
-      "caves"
+      "What",
+      "happened",
+      "in",
+      "the",
+      "story"
     ]
   },
   {
     "id": 2,
-    "title_en": "Situation 2: Magnetic Compass Navigation",
-    "context_en": "Ask Nova why a brass compass always points toward Earth's magnetic north.",
-    "context_vi": "Hỏi Nova tại sao la bàn đồng luôn chỉ về hướng Bắc từ tính.",
-    "sample_question_en": "Why does a magnetic compass always point toward Earth's north pole?",
-    "sample_question_vi": "Tại sao la bàn từ tính luôn chỉ về cực Bắc của Trái đất?",
-    "answer": "Why does a magnetic compass always point toward Earth's north pole?",
+    "title_en": "Situation 2: Key Lesson Inquiry",
+    "context_en": "Ask Nova what main lesson students learn from The Secret Cave — Adventure & Exploration.",
+    "context_vi": "Hỏi Nova bài học chính học sinh rút ra từ The Secret Cave — Adventure & Exploration.",
+    "sample_question_en": "What is the most important lesson in this story?",
+    "sample_question_vi": "Bài học quan trọng nhất trong câu chuyện này là gì?",
+    "answer": "What is the most important lesson in this story?",
     "word_bank": [
-      "Why",
-      "does",
-      "a",
-      "compass",
-      "point",
-      "north"
+      "What",
+      "is",
+      "the",
+      "most",
+      "important",
+      "lesson"
     ]
   },
   {
     "id": 3,
-    "title_en": "Situation 3: Son Doong Underground Jungle",
-    "context_en": "Ask Nova about the unique weather and jungle inside Vietnam's Son Doong Cave.",
-    "context_vi": "Hỏi Nova về thời tiết và rừng rậm độc đáo bên trong Hang Sơn Đoòng.",
-    "sample_question_en": "What unique natural features exist inside Son Doong Cave in Vietnam?",
-    "sample_question_vi": "Những đặc điểm tự nhiên độc đáo nào tồn tại bên trong Hang Sơn Đoòng?",
-    "answer": "What unique natural features exist inside Son Doong Cave in Vietnam?",
+    "title_en": "Situation 3: Scientific & Moral Inquiry",
+    "context_en": "Ask Nova how we can apply these skills in our daily school life.",
+    "context_vi": "Hỏi Nova cách áp dụng kỹ năng này vào cuộc sống học đường hàng ngày.",
+    "sample_question_en": "How can students apply this lesson at school?",
+    "sample_question_vi": "Học sinh có thể áp dụng bài học này ở trường như thế nào?",
+    "answer": "How can students apply this lesson at school?",
     "word_bank": [
-      "What",
-      "features",
-      "exist",
-      "inside",
-      "Son Doong",
-      "Cave"
+      "How",
+      "can",
+      "students",
+      "apply",
+      "this",
+      "lesson"
     ]
   },
   {
     "id": 4,
-    "title_en": "Situation 4: Historical Explorer Maps",
-    "context_en": "Ask Nova how ancient explorers drew parchment maps before GPS existed.",
-    "context_vi": "Hỏi Nova cách các nhà khám phá cổ đại vẽ bản đồ giấy da trước khi có GPS.",
-    "sample_question_en": "How did historical explorers create detailed parchment maps long ago?",
-    "sample_question_vi": "Các nhà khám phá lịch sử đã tạo ra bản đồ giấy da chi tiết như thế nào ngày xưa?",
-    "answer": "How did historical explorers create detailed parchment maps long ago?",
-    "word_bank": [
-      "How",
-      "did",
-      "explorers",
-      "create",
-      "parchment",
-      "maps"
-    ]
-  },
-  {
-    "id": 5,
-    "title_en": "Situation 5: Wilderness Safety Rules",
-    "context_en": "Ask Nova what safety gear kids should prepare for a forest hike.",
-    "context_vi": "Hỏi Nova những thiết bị an toàn trẻ em nên chuẩn bị khi đi bộ trong rừng.",
-    "sample_question_en": "What safety equipment should explorers bring when hiking in forests?",
-    "sample_question_vi": "Nhà khám phá nên mang theo thiết bị an toàn nào khi đi bộ đường dài trong rừng?",
-    "answer": "What safety equipment should explorers bring when hiking in forests?",
+    "title_en": "Situation 4: Personal Reflection",
+    "context_en": "Ask Nova what advice she has for kids when facing unexpected problems.",
+    "context_vi": "Hỏi Nova lời khuyên dành cho trẻ em khi gặp rắc rối bất ngờ.",
+    "sample_question_en": "What should we do when an accident happens?",
+    "sample_question_vi": "Chúng ta nên làm gì khi xảy ra sự cố bất ngờ?",
+    "answer": "What should we do when an accident happens?",
     "word_bank": [
       "What",
-      "safety",
-      "equipment",
       "should",
-      "explorers",
-      "bring"
+      "we",
+      "do",
+      "when",
+      "an",
+      "accident",
+      "happens"
     ]
   }
 ],
   situations: [
   {
     "id": 1,
-    "title_en": "Situation 1: Cave Stalactite Science",
-    "context_en": "Ask Nova how acidic water forms stalactites over thousands of years.",
-    "context_vi": "Hỏi Nova cách nước axit tạo thành nhũ đá qua hàng ngàn năm.",
-    "sample_question_en": "How does water form stalactites inside limestone caves over time?",
-    "sample_question_vi": "Nước tạo thành nhũ đá trong hang đá vôi theo thời gian như thế nào?",
-    "answer": "How does water form stalactites inside limestone caves over time?",
+    "title_en": "Situation 1: Main Story Inquiry",
+    "context_en": "Ask Nova about the main event in The Secret Cave — Adventure & Exploration.",
+    "context_vi": "Hỏi Nova về sự kiện chính trong bài The Secret Cave — Adventure & Exploration.",
+    "sample_question_en": "What happened in the story of The Secret Cave — Adventure & Exploration?",
+    "sample_question_vi": "Chuyện gì đã xảy ra trong câu chuyện The Secret Cave — Adventure & Exploration?",
+    "answer": "What happened in the story of The Secret Cave — Adventure & Exploration?",
     "word_bank": [
-      "How",
-      "does",
-      "water",
-      "form",
-      "stalactites",
-      "inside",
-      "caves"
+      "What",
+      "happened",
+      "in",
+      "the",
+      "story"
     ]
   },
   {
     "id": 2,
-    "title_en": "Situation 2: Magnetic Compass Navigation",
-    "context_en": "Ask Nova why a brass compass always points toward Earth's magnetic north.",
-    "context_vi": "Hỏi Nova tại sao la bàn đồng luôn chỉ về hướng Bắc từ tính.",
-    "sample_question_en": "Why does a magnetic compass always point toward Earth's north pole?",
-    "sample_question_vi": "Tại sao la bàn từ tính luôn chỉ về cực Bắc của Trái đất?",
-    "answer": "Why does a magnetic compass always point toward Earth's north pole?",
+    "title_en": "Situation 2: Key Lesson Inquiry",
+    "context_en": "Ask Nova what main lesson students learn from The Secret Cave — Adventure & Exploration.",
+    "context_vi": "Hỏi Nova bài học chính học sinh rút ra từ The Secret Cave — Adventure & Exploration.",
+    "sample_question_en": "What is the most important lesson in this story?",
+    "sample_question_vi": "Bài học quan trọng nhất trong câu chuyện này là gì?",
+    "answer": "What is the most important lesson in this story?",
     "word_bank": [
-      "Why",
-      "does",
-      "a",
-      "compass",
-      "point",
-      "north"
+      "What",
+      "is",
+      "the",
+      "most",
+      "important",
+      "lesson"
     ]
   },
   {
     "id": 3,
-    "title_en": "Situation 3: Son Doong Underground Jungle",
-    "context_en": "Ask Nova about the unique weather and jungle inside Vietnam's Son Doong Cave.",
-    "context_vi": "Hỏi Nova về thời tiết và rừng rậm độc đáo bên trong Hang Sơn Đoòng.",
-    "sample_question_en": "What unique natural features exist inside Son Doong Cave in Vietnam?",
-    "sample_question_vi": "Những đặc điểm tự nhiên độc đáo nào tồn tại bên trong Hang Sơn Đoòng?",
-    "answer": "What unique natural features exist inside Son Doong Cave in Vietnam?",
+    "title_en": "Situation 3: Scientific & Moral Inquiry",
+    "context_en": "Ask Nova how we can apply these skills in our daily school life.",
+    "context_vi": "Hỏi Nova cách áp dụng kỹ năng này vào cuộc sống học đường hàng ngày.",
+    "sample_question_en": "How can students apply this lesson at school?",
+    "sample_question_vi": "Học sinh có thể áp dụng bài học này ở trường như thế nào?",
+    "answer": "How can students apply this lesson at school?",
     "word_bank": [
-      "What",
-      "features",
-      "exist",
-      "inside",
-      "Son Doong",
-      "Cave"
+      "How",
+      "can",
+      "students",
+      "apply",
+      "this",
+      "lesson"
     ]
   },
   {
     "id": 4,
-    "title_en": "Situation 4: Historical Explorer Maps",
-    "context_en": "Ask Nova how ancient explorers drew parchment maps before GPS existed.",
-    "context_vi": "Hỏi Nova cách các nhà khám phá cổ đại vẽ bản đồ giấy da trước khi có GPS.",
-    "sample_question_en": "How did historical explorers create detailed parchment maps long ago?",
-    "sample_question_vi": "Các nhà khám phá lịch sử đã tạo ra bản đồ giấy da chi tiết như thế nào ngày xưa?",
-    "answer": "How did historical explorers create detailed parchment maps long ago?",
-    "word_bank": [
-      "How",
-      "did",
-      "explorers",
-      "create",
-      "parchment",
-      "maps"
-    ]
-  },
-  {
-    "id": 5,
-    "title_en": "Situation 5: Wilderness Safety Rules",
-    "context_en": "Ask Nova what safety gear kids should prepare for a forest hike.",
-    "context_vi": "Hỏi Nova những thiết bị an toàn trẻ em nên chuẩn bị khi đi bộ trong rừng.",
-    "sample_question_en": "What safety equipment should explorers bring when hiking in forests?",
-    "sample_question_vi": "Nhà khám phá nên mang theo thiết bị an toàn nào khi đi bộ đường dài trong rừng?",
-    "answer": "What safety equipment should explorers bring when hiking in forests?",
+    "title_en": "Situation 4: Personal Reflection",
+    "context_en": "Ask Nova what advice she has for kids when facing unexpected problems.",
+    "context_vi": "Hỏi Nova lời khuyên dành cho trẻ em khi gặp rắc rối bất ngờ.",
+    "sample_question_en": "What should we do when an accident happens?",
+    "sample_question_vi": "Chúng ta nên làm gì khi xảy ra sự cố bất ngờ?",
+    "answer": "What should we do when an accident happens?",
     "word_bank": [
       "What",
-      "safety",
-      "equipment",
       "should",
-      "explorers",
-      "bring"
+      "we",
+      "do",
+      "when",
+      "an",
+      "accident",
+      "happens"
     ]
   }
 ]

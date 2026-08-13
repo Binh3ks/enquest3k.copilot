@@ -1,15 +1,145 @@
-// Cambridge A2 Flyers vocab.js — Week 33 (10 Gold Standard Lexical Chunks)
+// Cambridge A2 Flyers vocab.js — Week 33
 export default {
   vocab: [
-    { id: "c1", word: "woke up in a hurry", en: "woke up in a hurry", vi: "tỉnh dậy vội vã", definition_en: "woke up in a hurry", definition_vi: "tỉnh dậy vội vã", example: "Tom woke up in a hurry today.", type: "phrase" },
-    { id: "c2", word: "felt extremely clumsy", en: "felt extremely clumsy", vi: "cảm thấy cực kỳ hậu đậu", definition_en: "felt extremely clumsy", definition_vi: "cảm thấy cực kỳ hậu đậu", example: "He felt extremely clumsy in the morning.", type: "phrase" },
-    { id: "c3", word: "accidentally knocked over", en: "accidentally knocked over", vi: "vô tình làm đổ", definition_en: "accidentally knocked over", definition_vi: "vô tình làm đổ", example: "He accidentally knocked over his alarm clock.", type: "phrase" },
-    { id: "c4", word: "rushed downstairs", en: "rushed downstairs", vi: "vội vã chạy xuống lầu", definition_en: "rushed downstairs", definition_vi: "vội vã chạy xuống lầu", example: "He rushed downstairs to have breakfast.", type: "phrase" },
-    { id: "c5", word: "slipped on a wet puddle", en: "slipped on a wet puddle", vi: "trượt chân trên vũng nước", definition_en: "slipped on a wet puddle", definition_vi: "trượt chân trên vũng nước", example: "He slipped on a wet puddle on the kitchen floor.", type: "phrase" },
-    { id: "c6", word: "to make things worse", en: "to make things worse", vi: "tệ hại hơn là", definition_en: "to make things worse", definition_vi: "tệ hại hơn là", example: "To make things worse, he spilled juice over his notebook.", type: "phrase" },
-    { id: "c7", word: "spilled a glass of juice", en: "spilled a glass of juice", vi: "làm đổ một cốc nước ép", definition_en: "spilled a glass of juice", definition_vi: "làm đổ một cốc nước ép", example: "He spilled a glass of juice on the table.", type: "phrase" },
-    { id: "c8", word: "cleaned up the mess", en: "cleaned up the mess", vi: "dọn dẹp đống bừa bộn", definition_en: "cleaned up the mess", definition_vi: "dọn dẹp đống bừa bộn", example: "Mia helped him cleaned up the mess.", type: "phrase" },
-    { id: "c9", word: "apologized to his mother", en: "apologized to his mother", vi: "xin lỗi mẹ cậu ấy", definition_en: "apologized to his mother", definition_vi: "xin lỗi mẹ cậu ấy", example: "Tom apologized to his mother for being careless.", type: "phrase" },
-    { id: "c10", word: "promised to be more careful", en: "promised to be more careful", vi: "hứa sẽ cẩn thận hơn", definition_en: "promised to be more careful", definition_vi: "hứa sẽ cẩn thận hơn", example: "He promised to be more careful next time.", type: "phrase" }
-  ]
+  {
+    "word": "corridor",
+    "definition_en": "a long passage in a building with doors on each side",
+    "definition_vi": "hành lang",
+    "example": "Walk carefully down the school corridor.",
+    "ipa": "/ˈkɒr.ɪ.dɔːr/"
+  },
+  {
+    "word": "slipped",
+    "definition_en": "slid accidentally and lost balance",
+    "definition_vi": "trượt ngã",
+    "example": "He slipped on the wet floor near the stairs.",
+    "ipa": "/slɪpt/"
+  },
+  {
+    "word": "bandage",
+    "definition_en": "a strip of cloth used to bind a wound or injury",
+    "definition_vi": "băng y tế",
+    "example": "The nurse applied a clean bandage to his knee.",
+    "ipa": "/ˈbæn.dɪdʒ/"
+  },
+  {
+    "word": "nurse",
+    "definition_en": "a person trained to care for sick or injured people",
+    "definition_vi": "y tá",
+    "example": "The school nurse treated the boy gently.",
+    "ipa": "/nɜːs/"
+  },
+  {
+    "word": "emergency",
+    "definition_en": "a serious, unexpected, and dangerous situation",
+    "definition_vi": "tình huống khẩn cấp",
+    "example": "Call the nurse in an emergency.",
+    "ipa": "/ɪˈmɜː.dʒən.si/"
+  },
+  {
+    "word": "cautiously",
+    "definition_en": "in a careful way to avoid danger or mistakes",
+    "definition_vi": "cẩn trọng",
+    "example": "Students walked cautiously on the wet grass.",
+    "ipa": "/ˈkɔː.ʃəs.li/"
+  },
+  {
+    "word": "warning",
+    "definition_en": "a statement or sign telling someone of potential danger",
+    "definition_vi": "cảnh báo",
+    "example": "Look at the yellow warning sign on the floor.",
+    "ipa": "/ˈwɔː.nɪŋ/"
+  },
+  {
+    "word": "bleeding",
+    "definition_en": "losing blood from the body due to injury",
+    "definition_vi": "chảy máu",
+    "example": "The cut on his knee stopped bleeding quickly.",
+    "ipa": "/ˈbliː.dɪŋ/"
+  },
+  {
+    "word": "headmaster",
+    "definition_en": "the principal teacher in charge of a school",
+    "definition_vi": "thầy hiệu trưởng",
+    "example": "The headmaster praised Jake for his fast reaction.",
+    "ipa": "/ˌhedˈmɑː.stər/"
+  },
+  {
+    "word": "relieved",
+    "definition_en": "feeling relaxed because something bad has stopped",
+    "definition_vi": "nhẹ nhõm",
+    "example": "Everyone felt relieved when the boy smiled again.",
+    "ipa": "/rɪˈliːvd/"
+  },
+  {
+    "word": "hesitation",
+    "definition_en": "the action of pausing before saying or doing something",
+    "definition_vi": "sự do dự",
+    "example": "Jake helped him without any hesitation.",
+    "ipa": "/ˌhez.ɪˈteɪ.ʃən/"
+  },
+  {
+    "word": "injure",
+    "definition_en": "to harm or damage a person physically",
+    "definition_vi": "làm bị thương",
+    "example": "Be careful so you do not injure your leg.",
+    "ipa": "/ˈɪn.dʒər/"
+  },
+  {
+    "word": "first-aid",
+    "definition_en": "help given to a sick or injured person before medical care",
+    "definition_vi": "sơ cứu",
+    "example": "The nurse brought a complete first-aid kit.",
+    "ipa": "/ˌfɜːst ˈeɪd/"
+  },
+  {
+    "word": "slippery",
+    "definition_en": "difficult to hold or stand on because it is wet or smooth",
+    "definition_vi": "trơn trượt",
+    "example": "The wet wooden floor was very slippery.",
+    "ipa": "/ˈslɪp.ər.i/"
+  },
+  {
+    "word": "stumble",
+    "definition_en": "to trip or lose balance while walking",
+    "definition_vi": "vấp ngã",
+    "example": "Watch your step so you do not stumble.",
+    "ipa": "/ˈstʌm.bəl/"
+  },
+  {
+    "word": "prevent",
+    "definition_en": "to stop something from happening or arising",
+    "definition_vi": "ngăn ngừa",
+    "example": "Walking slowly helps prevent accidents.",
+    "ipa": "/prɪˈvent/"
+  },
+  {
+    "word": "rules",
+    "definition_en": "instructions stating what is allowed or forbidden",
+    "definition_vi": "quy tắc",
+    "example": "Always obey the school safety rules.",
+    "ipa": "/ruːlz/"
+  },
+  {
+    "word": "calmly",
+    "definition_en": "in a quiet and relaxed manner without excitement",
+    "definition_vi": "bình tĩnh",
+    "example": "Jake spoke calmly to the injured student.",
+    "ipa": "/ˈkɑːm.li/"
+  },
+  {
+    "word": "responsibly",
+    "definition_en": "in a sensible and trustworthy manner",
+    "definition_vi": "có trách nhiệm",
+    "example": "Act responsibly when helping younger children.",
+    "ipa": "/rɪˈspɒn.sə.bli/"
+  },
+  {
+    "word": "attention",
+    "definition_en": "notice taken of someone or something",
+    "definition_vi": "sự chú ý",
+    "example": "Pay close attention to warning signs.",
+    "ipa": "/əˈten.ʃən/"
+  }
+]
 };

@@ -5,63 +5,63 @@ export default {
   sentences: [
   {
     "id": 1,
-    "text": "On a sunny Saturday morning, the annual Sports Day took place at our school.",
+    "text": "Our school holds its annual Sports Day in May.",
     "start_time": 0,
-    "end_time": 4
+    "end_time": 3
   },
   {
     "id": 2,
-    "text": "The crowded sports stadium was filled with the loud cheering of excited spectators.",
-    "start_time": 4,
-    "end_time": 9
+    "text": "The crowded sports stadium was loud.",
+    "start_time": 3,
+    "end_time": 6
   },
   {
     "id": 3,
-    "text": "Leo and his team were running in the final four-by-one-hundred-meter relay race.",
-    "start_time": 9,
-    "end_time": 14
+    "text": "Leo ran the last leg of the 4x100m relay.",
+    "start_time": 6,
+    "end_time": 9
   },
   {
     "id": 4,
-    "text": "The first runner was sprinting fast down the red track lane.",
-    "start_time": 14,
-    "end_time": 18
+    "text": "Pass the baton smoothly without dropping it.",
+    "start_time": 9,
+    "end_time": 12
   },
   {
     "id": 5,
-    "text": "When his teammate reached the exchange zone, Leo accelerated smoothly forward.",
-    "start_time": 18,
-    "end_time": 23
+    "text": "Accelerate quickly down the straight track.",
+    "start_time": 12,
+    "end_time": 15
   },
   {
     "id": 6,
-    "text": "Leo passed the baton cleanly without losing any running momentum.",
-    "start_time": 23,
-    "end_time": 28
+    "text": "The first runner began to sprint fast.",
+    "start_time": 15,
+    "end_time": 18
   },
   {
     "id": 7,
-    "text": "He ran as fast as the wind toward the finish line down the straight track.",
-    "start_time": 28,
-    "end_time": 33
+    "text": "The baton handoff went very smoothly.",
+    "start_time": 18,
+    "end_time": 21
   },
   {
     "id": 8,
-    "text": "Leo crossed the finish line first and raised his arms happily.",
-    "start_time": 33,
-    "end_time": 37
+    "text": "Cheering spectators filled the stadium stands.",
+    "start_time": 21,
+    "end_time": 24
   },
   {
     "id": 9,
-    "text": "The team stood on the gold podium and received shiny gold medals.",
-    "start_time": 37,
-    "end_time": 42
+    "text": "The team stood proudly on the gold podium.",
+    "start_time": 24,
+    "end_time": 27
   },
   {
     "id": 10,
-    "text": "They felt extremely proud of their scientific teamwork and mutual support.",
-    "start_time": 42,
-    "end_time": 47
+    "text": "Leo cheered loudly for his teammate.",
+    "start_time": 27,
+    "end_time": 30
   }
 ]
 };

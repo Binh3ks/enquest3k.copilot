@@ -1,37 +1,46 @@
-import { readingHubData } from './reading_hub.js';
-import { listeningHubData } from './listening_hub.js';
-import { writingHubData } from './writing_hub.js';
-import { speakingHubData } from './speaking_hub.js';
+// Index wrapper for Week 33
+import read_explore from './read.js';
+import explore from './explore.js';
+import new_words from './vocab.js';
+import word_match from './word_match.js';
+import word_power from './word_power.js';
+import grammar from './grammar.js';
+import daily_watch from './daily_watch.js';
+import logic_lab from './logic_lab.js';
+import mindmap_speaking from './mindmap.js';
+import ask_ai from './ask_ai.js';
+import writing from './writing.js';
+import dictation from './dictation.js';
+import shadowing from './shadowing.js';
 
-export const week33Data = {
+import { readingHubData as readingHub } from './reading_hub.js';
+import { listeningHubData as listeningHub } from './listening_hub.js';
+import { writingHubData as writingHub } from './writing_hub.js';
+import { speakingHubData as speakingHub } from './speaking_hub.js';
+
+export const weekData = {
   weekId: 33,
-  week: 33,
-  title: "The Accident File — Irregular Verbs Group 5",
-  title_vi: "Hồ Sơ Tai Nạn — Động Từ Bất Quy Tắc Nhóm 5",
-  weekTitle_en: "The Accident File — Irregular Verbs Group 5",
-  weekTitle_vi: "Hồ Sơ Tai Nạn — Động Từ Bất Quy Tắc Nhóm 5",
-  theme: "The Accident File",
-  cefr_level: "A2 Flyers",
-  readingHub: readingHubData,
-  listeningHub: listeningHubData,
-  writingHub: writingHubData,
-  speakingHub: speakingHubData,
+  title: "Corridor Safety & School Care",
+  title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học",
+  readingHub,
+  listeningHub,
+  writingHub,
+  speakingHub,
   stations: {
-    read_explore: readingHubData,
-    new_words: readingHubData.vocab,
-    word_match: listeningHubData.flash_arena,
-    grammar: listeningHubData.grammar_drills,
-    word_power: readingHubData.vocab,
-    ask_ai: speakingHubData.nova_examiner_prompt,
-    logic_lab: listeningHubData.singapore_math,
-    dictation: writingHubData.word_bank_pills,
-    shadowing: speakingHubData.shadowing_script,
-    writing: writingHubData.picture_story,
-    explore: readingHubData.story_scenes,
-    mindmap_speaking: speakingHubData.shadowing_script,
-    daily_watch: [],
-    game_hub: listeningHubData.flash_arena
+    read_explore,
+    explore,
+    new_words,
+    word_match,
+    word_power,
+    grammar,
+    daily_watch,
+    logic_lab,
+    mindmap_speaking,
+    ask_ai,
+    writing,
+    dictation,
+    shadowing
   }
 };
 
-export default week33Data;
+export default weekData;

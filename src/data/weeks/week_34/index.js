@@ -12,11 +12,19 @@ import ask_ai from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
+import readingHub from './reading_hub.js';
+import listeningHub from './listening_hub.js';
+import writingHub from './writing_hub.js';
+import speakingHub from './speaking_hub.js';
 
 export const weekData = {
   weekId: 34,
   title: "The Ant and the Grasshopper — Fables & Moral",
-  title_vi: "Con Kiến và Con Châu Chấu — Truyện Ngụ Ngôn",
+  title_vi: "Con Kiến và Con Châu Chấu — Truyện Ngụ Ngôn & Bài Học",
+  readingHub,
+  listeningHub,
+  writingHub,
+  speakingHub,
   stations: {
     read_explore,
     explore,

@@ -1,145 +1,24 @@
-// Cambridge A2 Flyers vocab.js — Week 34
-export default {
-  vocab: [
-  {
-    "word": "hardworking",
-    "definition_en": "tending to work with energy and commitment",
-    "definition_vi": "chăm chỉ",
-    "example": "The hardworking ant gathered food all summer.",
-    "ipa": "/ˌhɑːdˈwɜː.kɪŋ/"
-  },
-  {
-    "word": "grasshopper",
-    "definition_en": "a plant-eating insect with long hind legs for leaping",
-    "definition_vi": "con châu chấu",
-    "example": "The grasshopper sang under the shady tree.",
-    "ipa": "/ˈɡrɑːsˌhɒp.ər/"
-  },
-  {
-    "word": "grain",
-    "definition_en": "small hard seeds of food plants like wheat or corn",
-    "definition_vi": "hạt lúa mì",
-    "example": "Ants store wheat grain for the cold winter.",
-    "ipa": "/ɡreɪn/"
-  },
-  {
-    "word": "shivering",
-    "definition_en": "shaking slightly because of being cold or frightened",
-    "definition_vi": "run rẩy",
-    "example": "He was shivering in the freezing winter wind.",
-    "ipa": "/ˈʃɪv.ər.ɪŋ/"
-  },
-  {
-    "word": "fable",
-    "definition_en": "a short story typically with animals conveying a moral",
-    "definition_vi": "truyện ngụ ngôn",
-    "example": "Aesop wrote many famous animal fables.",
-    "ipa": "/ˈfeɪ.bəl/"
-  },
-  {
-    "word": "grateful",
-    "definition_en": "feeling or showing an appreciation of kindness",
-    "definition_vi": "biết ơn",
-    "example": "The grasshopper felt deeply grateful to the ant.",
-    "ipa": "/ˈɡreɪt.fəl/"
-  },
-  {
-    "word": "diligence",
-    "definition_en": "careful and persistent work or effort",
-    "definition_vi": "sự siêng năng",
-    "example": "His diligence paid off when winter came.",
-    "ipa": "/ˈdɪl.ɪ.dʒəns/"
-  },
-  {
-    "word": "patience",
-    "definition_en": "the capacity to accept delay without getting angry",
-    "definition_vi": "sự kiên nhẫn",
-    "example": "Patience and hard work bring great success.",
-    "ipa": "/ˈpeɪ.ʃəns/"
-  },
-  {
-    "word": "moral",
-    "definition_en": "a lesson derived from a story or experience",
-    "definition_vi": "bài học đạo đức",
-    "example": "Every fable has a clear moral lesson.",
-    "ipa": "/ˈmɒr.əl/"
-  },
-  {
-    "word": "cheerfully",
-    "definition_en": "in a happy and optimistic manner",
-    "definition_vi": "vui vẻ",
-    "example": "He sang cheerfully during the warm summer.",
-    "ipa": "/ˈtʃɪə.fəl.i/"
-  },
-  {
-    "word": "freeze",
-    "definition_en": "turn into ice as a result of extreme cold",
-    "definition_vi": "đóng băng",
-    "example": "Water rivers freeze during cold winter.",
-    "ipa": "/friːz/"
-  },
-  {
-    "word": "shelter",
-    "definition_en": "a place giving protection from bad weather",
-    "definition_vi": "nơi trú ẩn",
-    "example": "The ant's house provided warm shelter.",
-    "ipa": "/ˈʃel.tər/"
-  },
-  {
-    "word": "gather",
-    "definition_en": "bring together or collect from various places",
-    "definition_vi": "thu thập",
-    "example": "Ants gather seeds from the green field.",
-    "ipa": "/ˈɡæð.ər/"
-  },
-  {
-    "word": "prepare",
-    "definition_en": "make something ready for use or consideration",
-    "definition_vi": "chuẩn bị",
-    "example": "Prepare early for cold winter months.",
-    "ipa": "/prɪˈpeər/"
-  },
-  {
-    "word": "wisdom",
-    "definition_en": "the quality of having experience, knowledge, and good judgment",
-    "definition_vi": "sự khôn ngoan",
-    "example": "Ancient fables share timeless human wisdom.",
-    "ipa": "/ˈwɪz.dəm/"
-  },
-  {
-    "word": "kindness",
-    "definition_en": "the quality of being friendly, generous, and considerate",
-    "definition_vi": "lòng tốt",
-    "example": "The ant showed great kindness to his friend.",
-    "ipa": "/ˈkaɪnd.nəs/"
-  },
-  {
-    "word": "season",
-    "definition_en": "each of the four divisions of the year",
-    "definition_vi": "mùa trong năm",
-    "example": "Summer is the best season to collect food.",
-    "ipa": "/ˈsiː.zən/"
-  },
-  {
-    "word": "wheat",
-    "definition_en": "a cereal plant cultivated for food grain",
-    "definition_vi": "cây lúa mì",
-    "example": "Golden wheat grew in the wide field.",
-    "ipa": "/wiːt/"
-  },
-  {
-    "word": "generous",
-    "definition_en": "showing a readiness to give more of something than expected",
-    "definition_vi": "hào phóng",
-    "example": "The generous ant offered hot vegetable soup.",
-    "ipa": "/ˈdʒen.ər.əs/"
-  },
-  {
-    "word": "future",
-    "definition_en": "the time or a period of time following the moment of speaking",
-    "definition_vi": "tương lai",
-    "example": "Work hard now to protect your future.",
-    "ipa": "/ˈfjuː.tʃər/"
-  }
-]
-};
+// Week 34 Vocab — The Lion and the Mouse
+export const vocab = [
+  { id: 1, word: "lion", definition_en: "A large wild cat with golden fur", definition_vi: "con sư tử" },
+  { id: 2, word: "mouse", definition_en: "A small rodent with a long tail", definition_vi: "con chuột" },
+  { id: 3, word: "net", definition_en: "A meshed fabric used to trap animals", definition_vi: "tấm lưới" },
+  { id: 4, word: "trap", definition_en: "A device used to catch animals", definition_vi: "bẫy" },
+  { id: 5, word: "roar", definition_en: "To make a loud deep sound", definition_vi: "tiếng gầm, gầm lớn" },
+  { id: 6, word: "help", definition_en: "To assist someone in need", definition_vi: "giúp đỡ" },
+  { id: 7, word: "friend", definition_en: "A person or animal you like and trust", definition_vi: "bạn bè" },
+  { id: 8, word: "tiny", definition_en: "Very small in size", definition_vi: "tí hon, nhỏ bé" },
+  { id: 9, word: "huge", definition_en: "Very large in size", definition_vi: "to lớn, khổng lồ" },
+  { id: 10, word: "caught", definition_en: "Captured something (past of catch)", definition_vi: "đã bắt" },
+  { id: 11, word: "freed", definition_en: "Set something free from a trap", definition_vi: "đã giải thoát" },
+  { id: 12, word: "chewed", definition_en: "Bitten repeatedly with teeth", definition_vi: "đã gặm, cắn" },
+  { id: 13, word: "hunter", definition_en: "A person who tracks and catches wild animals", definition_vi: "thợ săn" },
+  { id: 14, word: "sharp", definition_en: "Having a fine edge that can cut", definition_vi: "sắc nhọn" },
+  { id: 15, word: "rope", definition_en: "Strong thick cord", definition_vi: "dây thừng" },
+  { id: 16, word: "laugh", definition_en: "To make sounds showing happiness", definition_vi: "cười" },
+  { id: 17, word: "promise", definition_en: "To say you will definitely do something", definition_vi: "hứa" },
+  { id: 18, word: "grace", definition_en: "Kindness and mercy", definition_vi: "lòng nhân từ" },
+  { id: 19, word: "fable", definition_en: "A short story teaching a moral lesson", definition_vi: "truyện ngụ ngôn" },
+  { id: 20, word: "grateful", definition_en: "Feeling or showing thanks", definition_vi: "biết ơn" }
+];
+export default vocab;

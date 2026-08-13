@@ -1,109 +1,19 @@
-// Cambridge A2 Flyers read.js — Week 37
-export default {
-  "title_en": "The Sports Day Challenge — Teamwork & Speed",
-  "title_vi": "Ngày Hội Thể Thao — Tinh Thần Đồng Đội & Tốc Độ",
-  "read_stem": {
-    "title_en": "The 4x100m Relay Handoff Victory",
-    "title_vi": "The 4x100m Relay Handoff Victory",
-    "content_en": "On a **sunny Saturday morning**, the **annual Sports Day** took place. The **crowded sports stadium** was filled with the **cheering of students and parents**.\n\nLeo and his team were in the **final 4x100m relay race**. The **first runner was sprinting fast** down the track. Leo **prepared carefully** for the baton exchange.\n\nWhen his teammate reached the zone, Leo **passed the baton cleanly** and **accelerated smoothly on the track**. He **ran as fast as the wind** toward the finish line.\n\nLeo **crossed the finish line first** and **smiled happily**. The crowd **erupted into cheers**. The team **received shiny gold medals** and **felt extremely proud** of their **scientific teamwork**.",
-    "content_vi": "Sáng **thứ Bảy nắng đẹp rực rỡ**, **Ngày Hội Thể Thao hàng năm** đã diễn ra. **Sân vận động thể thao đông đúc** ngập tràn **tiếng reo hò của học sinh và phụ huynh**.\n\nLeo và đội của mình tham gia **trận chung kết tiếp sức 4x100m**. **Vận động viên đầu tiên đang chạy nước rút nhanh** trên đường chạy. Leo **chuẩn bị cẩn thận** cho màn trao gậy.\n\nKhi đồng đội đến khu vực giao gậy, Leo **trao gậy tiếp sức mượt mà** và **tăng tốc êm ái trên đường chạy**. Chú **chạy nhanh như gió** về phía vạch đích.\n\nLeo **cán đích đầu tiên** và **mỉm cười hạnh phúc**. Đám đông **bật lên tiếng reo hò**. Cả đội **nhận được những tấm huy chương vàng sáng bóng** và **cảm thấy cực kỳ tự hào** về **tinh thần đồng đội khoa học**.",
-    "questions": [
-      {
-        "id": 1,
-        "question_en": "What event took place on Saturday morning?",
-        "options": [
-          "Music Concert",
-          "Annual Sports Day",
-          "School Science Fair",
-          "Art Exhibition"
-        ],
-        "answer": "Annual Sports Day"
-      },
-      {
-        "id": 2,
-        "question_en": "What was the crowded sports stadium filled with?",
-        "options": [
-          "Empty wooden chairs",
-          "Cheering students and parents",
-          "Rain drops",
-          "Flying birds"
-        ],
-        "answer": "Cheering students and parents"
-      },
-      {
-        "id": 3,
-        "question_en": "How did Leo pass the baton to his teammate?",
-        "options": [
-          "Forgot the baton",
-          "Passed the baton cleanly",
-          "Dropped it on the grass",
-          "Threw it far away"
-        ],
-        "answer": "Passed the baton cleanly"
-      },
-      {
-        "id": 4,
-        "question_en": "What award did the relay team receive?",
-        "options": [
-          "Silver cups",
-          "Paper certificates",
-          "Wooden trophies",
-          "Shiny gold medals"
-        ],
-        "answer": "Shiny gold medals"
-      }
-    ]
-  },
-  "read_social": {
-    "title_en": "The Olympic Truce & World Relays",
-    "title_vi": "The Olympic Truce & World Relays",
-    "content_en": "Relay races have a rich global history originating from ancient messenger runners who carried urgent news and lighted torches across Greek city-states. During the ancient Olympic Games, Greeks established the **Olympic Truce (*Ekecheiria*)**, a historic peace agreement where all conflict ceased so athletes and spectators could travel safely. In the modern era, more than 200 nations gather peacefully every four years at the Olympic Games to celebrate human achievement, stamina, and international unity. Global relay events demonstrate that individual athletic speed is meaningless without synchronized teamwork and mutual respect. By passing the baton smoothly from one generation to the next, athletes across the world inspire young people to practice fair play, cultural diversity, and lifelong friendship.",
-    "content_vi": "Chạy tiếp sức có lịch sử toàn cầu phong phú bắt nguồn từ những người đưa tin cổ đại mang tin tức cấp báo và ngọn đuốc thắp sáng qua các thành phố Hy Lạp. Trong Thế vận hội Olympic cổ đại, người Hy Lạp đã thiết lập Thỏa thuận Ngừng bắn Olympic (Ekecheiria), một hòa ước lịch sử nơi mọi xung đột chấm dứt để các vận động viên và khán giả đi lại an toàn. Trong thời kỳ hiện đại, hơn 200 quốc gia tập hợp hòa bình bốn năm một lần tại Thế vận hội Olympic để tôn vinh thành tựu, sức bền và sự đoàn kết quốc tế của con người. Các sự kiện tiếp sức toàn cầu chứng minh rằng tốc độ cá nhân sẽ không có ý nghĩa nếu không có sự phối hợp đồng đội và sự tôn trọng lẫn nhau. Bằng cách trao gậy tiếp sức mượt mà từ thế hệ này sang thế hệ khác, các vận động viên trên thế giới truyền cảm hứng cho người trẻ thực hành chơi đẹp, đa dạng văn hóa và tình bạn vĩnh cửu.",
-    "questions": [
-      {
-        "id": 1,
-        "question_en": "How many nations compete in the Olympic Games?",
-        "options": [
-          "Over 200 nations",
-          "10 nations",
-          "100 nations",
-          "50 nations"
-        ],
-        "answer": "Over 200 nations"
-      },
-      {
-        "id": 2,
-        "question_en": "What main lesson do relay races teach athletes?",
-        "options": [
-          "Winning is the only thing",
-          "Working as one team leads to success",
-          "Speed does not matter",
-          "Running alone is always better"
-        ],
-        "answer": "Working as one team leads to success"
-      },
-      {
-        "id": 3,
-        "question_en": "What symbol represents peace during ancient Olympic Games?",
-        "options": [
-          "Golden crowns",
-          "Red flags",
-          "The Olympic Truce Ekecheiria",
-          "Bronze shields"
-        ],
-        "answer": "The Olympic Truce Ekecheiria"
-      },
-      {
-        "id": 4,
-        "question_en": "Why is passing the baton smoothly important in a relay?",
-        "options": [
-          "It stops the race",
-          "It confuses the judges",
-          "It slows down the team",
-          "It maintains running velocity and momentum"
-        ],
-        "answer": "It maintains running velocity and momentum"
-      }
-    ]
+// Week 37 — Living vs. Non-Living (Syllabus Restoration)
+export const readData = {
+  week: 37,
+  title: "Living vs. Non-Living",
+  text_en: "Welcome to CLIL Unit 6: Nature's Rules! Today, young scientists investigate clues in nature to classify living and non-living things. A puppy is a living thing because it breathes fresh air, grows bigger every day, and needs food and water to survive. A green tree is also living because it grows towards sunlight and absorbs water from the soil. In contrast, a grey rock is non-living because it does not breathe, grow, or eat food. A plastic toy car is non-living because it cannot move by itself or reproduce. We use scientific reasoning with 'because' to explain natural rules: an organism is living because it carries out vital life processes!",
+  text_vi: "Chào mừng đến với CLIL Đơn vị 6: Quy luật Tự nhiên! Hôm nay, các nhà khoa học nhí điều tra các manh mối trong tự nhiên để phân loại vật sống và vật không sống. Chú chó con là một vật sống vì nó thở không khí trong lành, lớn lên mỗi ngày và cần thức ăn và nước uống để tồn tại. Cây xanh cũng là vật sống vì nó lớn lên hướng về ánh nắng mặt trời và hấp thụ nước từ đất. Ngược lại, một tảng đá xám là vật không sống vì nó không thở, không lớn lên hay ăn thức ăn. Một chiếc ô tô đồ chơi bằng nhựa là vật không sống vì nó không thể tự di chuyển hoặc sinh sản. Chúng ta sử dụng lý luận khoa học với 'vì' để giải thích các quy luật tự nhiên: một sinh vật là vật sống vì nó thực hiện các quá trình sống thiết yếu!",
+  interactive_story: {
+    title: "Interactive Story: Living vs. Non-Living",
+    gaps: [
+      { id: 1, target: "puppy is a living thing" },
+      { id: 2, target: "breathes fresh air and grows" },
+      { id: 3, target: "needs food and water" },
+      { id: 4, target: "rock is non-living" },
+      { id: 5, target: "plastic car cannot move" }
+    ],
+    word_bank: ["puppy is a living thing", "breathes fresh air and grows", "needs food and water", "rock is non-living", "plastic car cannot move"]
   }
 };
+export default readData;

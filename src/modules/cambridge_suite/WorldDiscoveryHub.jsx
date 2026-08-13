@@ -1,5 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import { executeOpenClozeVerticalSlice } from '../../services/slices/OpenClozeVerticalSlice';
+import { executeGenericVerticalSlice, ChoiceQuestionAdapter } from '../../services/slices/GenericVerticalSliceOrchestrator';
+import ChoiceGrid from '../../components/common/ChoiceGrid';
 import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord from '../../components/common/HoverWord';
@@ -346,28 +349,17 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     }
   };
 
-  // Submit Interactive Story Gap-Fill / Open Cloze
+  // Submit Interactive Story Gap-Fill / Open Cloze via Golden Vertical Slice Pipeline
   const handleStorySubmit = async () => {
-    let correct = 0;
-    interactiveStory.gaps.forEach((g) => {
-      const userAns = (storyAnswers[g.id] || '').toLowerCase().trim();
-      const targetAns = (g.target || '').toLowerCase().trim();
-      if (userAns === targetAns) {
-        correct += 1;
-      }
-    });
-    const pct = Math.round((correct / interactiveStory.gaps.length) * 100);
-    setStoryScore(pct);
-    setStorySubmitted(true);
-
-    await learnerProgressService.logAttempt({
+    const sliceResult = await executeOpenClozeVerticalSlice({
+      weekData: { weekId: weekNumber, readingHub: data, interactive_story: interactiveStory },
+      userAnswers: storyAnswers,
       learnerId,
-      contentId: `w${weekNumber}_interactive_story`,
-      mode: 'learn',
-      result: pct >= 80 ? 'correct' : 'incorrect',
-      score: pct,
       timeSpentSeconds: 45
     });
+
+    setStoryScore(sliceResult.stage3_scoreResult.scorePct);
+    setStorySubmitted(true);
   };
 
   return (
@@ -711,64 +703,30 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                           <span>{renderParsedText(q.question, 'indigo')}</span>
                         </div>
 
-                        <div className="space-y-3">
-                          {q.options.map((opt, optIdx) => {
-                            const isSelected = selectedOpt && selectedOpt.label === opt.label;
-                            const isCorrect = opt.isCorrect || (q.answerIndex !== undefined && optIdx === q.answerIndex);
-
-                            let buttonStyle = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800';
-                            let badgeStyle = 'bg-slate-200 text-slate-700';
-
-                            if (isSubmitted) {
-                              if (isCorrect) {
-                                buttonStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-400 shadow-sm';
-                                badgeStyle = 'bg-emerald-600 text-white';
-                              } else if (isSelected && !isCorrect) {
-                                buttonStyle = 'border-rose-500 bg-rose-50 text-rose-950 font-bold ring-2 ring-rose-400 shadow-sm';
-                                badgeStyle = 'bg-rose-600 text-white';
-                              } else {
-                                buttonStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
-                                badgeStyle = 'bg-slate-200 text-slate-400';
-                              }
-                            } else if (isSelected) {
-                              buttonStyle = 'border-indigo-600 bg-indigo-50/80 text-indigo-950 font-bold ring-2 ring-indigo-500 shadow-sm';
-                              badgeStyle = 'bg-indigo-600 text-white';
-                            }
-
-                            return (
-                              <button
-                                key={opt.label}
-                                disabled={isSubmitted}
-                                onClick={() => setR3Answers((prev) => ({ ...prev, [q.id]: opt }))}
-                                className={`w-full p-4 sm:p-5 rounded-2xl text-left border transition-all flex items-center justify-between gap-4 ${buttonStyle}`}
-                              >
-                                <div className="flex items-center gap-4 flex-1">
-                                  <span className={`w-8 h-8 rounded-full font-black flex items-center justify-center text-sm shrink-0 ${badgeStyle}`}>
-                                    {opt.label}
-                                  </span>
-                                  <span className="text-base font-bold leading-relaxed">{renderParsedText(opt.text, 'indigo')}</span>
-                                </div>
-
-                                {isSubmitted && isCorrect && (
-                                  <span className="flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-700 font-extrabold text-xs rounded-full shrink-0">
-                                    <CheckCircle2 size={16} /> Correct
-                                  </span>
-                                )}
-                                {isSubmitted && isSelected && !isCorrect && (
-                                  <span className="flex items-center gap-1.5 px-3 py-1 bg-rose-100 text-rose-700 font-extrabold text-xs rounded-full shrink-0">
-                                    <XCircle size={16} /> Incorrect
-                                  </span>
-                                )}
-                              </button>
-                            );
-                          })}
-                        </div>
+                        <ChoiceGrid
+                          options={q.options}
+                          selectedOption={selectedOpt}
+                          isSubmitted={isSubmitted}
+                          answerIndex={q.answerIndex}
+                          onSelectOption={(opt) => setR3Answers((prev) => ({ ...prev, [q.id]: opt }))}
+                          themeColor="indigo"
+                        />
 
                         {!isSubmitted ? (
                           <div className="flex justify-end pt-1">
                             <button
                               disabled={!selectedOpt}
-                              onClick={() => setR3Submitted((prev) => ({ ...prev, [q.id]: true }))}
+                              onClick={async () => {
+                                setR3Submitted((prev) => ({ ...prev, [q.id]: true }));
+                                await executeGenericVerticalSlice({
+                                  adapter: ChoiceQuestionAdapter,
+                                  rawData: { questions: [q] },
+                                  weekData: { weekId: weekNumber, readingHub: data },
+                                  userAnswers: { [q.id]: selectedOpt },
+                                  learnerId,
+                                  contentIdOverride: `w${weekNumber}_r3_${q.id}`
+                                });
+                              }}
                               className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-xl text-xs transition flex items-center gap-1.5 shadow-sm disabled:opacity-40"
                             >
                               <CheckCircle2 size={16} /> Check Answer

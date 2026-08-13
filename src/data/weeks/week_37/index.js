@@ -12,11 +12,19 @@ import ask_ai from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
+import readingHub from './reading_hub.js';
+import listeningHub from './listening_hub.js';
+import writingHub from './writing_hub.js';
+import speakingHub from './speaking_hub.js';
 
 export const weekData = {
   weekId: 37,
   title: "The Sports Day Challenge — Teamwork & Speed",
-  title_vi: "Ngày Hội Thể Thao — Tinh Thần Đồng Đội & Tốc Độ",
+  title_vi: "Thử Thách Ngày Hội Thể Thao — Đồng Đội & Tốc Độ",
+  readingHub,
+  listeningHub,
+  writingHub,
+  speakingHub,
   stations: {
     read_explore,
     explore,
