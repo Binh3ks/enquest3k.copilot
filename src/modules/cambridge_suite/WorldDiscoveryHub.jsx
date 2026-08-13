@@ -7,7 +7,12 @@ import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
-import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle } from 'lucide-react';
+import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle, MessageSquare, Type } from 'lucide-react';
+import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGrid';
+import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter';
+import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
+import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
+
 
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -390,26 +395,51 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       </div>
 
       {activeTab === 'webtoon' ? (
-        /* LEARN MODE: SUB-TABS (EXACTLY 2 TABS: 3D Webtoon & Interactive Story) */
+        /* LEARN MODE: CAMBRIDGE READING & WRITING SUITE SUB-TABS */
         <div className="space-y-6">
-          <div className="flex items-center gap-2 p-1.5 bg-indigo-50/70 rounded-2xl border border-indigo-200">
+          <div className="flex items-center gap-2 p-1.5 bg-indigo-50/70 rounded-2xl border border-indigo-200 overflow-x-auto no-scrollbar">
             <button
               onClick={() => setLearnSubTab('webtoon')}
-              className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
                 learnSubTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
               <BookOpen size={14} /> 3D Webtoon
             </button>
             <button
-              onClick={() => setLearnSubTab('interactive_story')}
-              className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                learnSubTab === 'interactive_story' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              onClick={() => setLearnSubTab('rw_part1')}
+              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                learnSubTab === 'rw_part1' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <FileText size={14} /> Interactive Story & Reading Part 3
+              <Layers size={14} /> Part 1: Word Bank
+            </button>
+            <button
+              onClick={() => setLearnSubTab('rw_part2')}
+              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                learnSubTab === 'rw_part2' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              }`}
+            >
+              <MessageSquare size={14} /> Part 2: Dialogue A-H
+            </button>
+            <button
+              onClick={() => setLearnSubTab('rw_part4')}
+              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                learnSubTab === 'rw_part4' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              }`}
+            >
+              <FileText size={14} /> Part 4: Inline Cloze
+            </button>
+            <button
+              onClick={() => setLearnSubTab('rw_part5')}
+              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                learnSubTab === 'rw_part5' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              }`}
+            >
+              <Type size={14} /> Part 5: Extraction
             </button>
           </div>
+
 
           {learnSubTab === 'webtoon' ? (
             /* SUB-TAB 1: 3D WEBTOON SCENES & HOTSPOTS */
@@ -833,6 +863,71 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
               </div>
             </div>
           )}
+
+          {learnSubTab === 'rw_part1' && (
+            <WordBankMatchingGrid
+              customData={data?.rw_part1}
+              onComplete={async (score) => {
+                await learnerProgressService.logAttempt({
+                  learnerId,
+                  contentId: `w${weekNumber}_rw_part1`,
+                  mode: 'learn',
+                  result: score >= 80 ? 'correct' : 'incorrect',
+                  score,
+                  timeSpentSeconds: 60
+                });
+              }}
+            />
+          )}
+
+          {learnSubTab === 'rw_part2' && (
+            <DialogueAHCompleter
+              customData={data?.rw_part2}
+              onComplete={async (score) => {
+                await learnerProgressService.logAttempt({
+                  learnerId,
+                  contentId: `w${weekNumber}_rw_part2`,
+                  mode: 'learn',
+                  result: score >= 80 ? 'correct' : 'incorrect',
+                  score,
+                  timeSpentSeconds: 60
+                });
+              }}
+            />
+          )}
+
+          {learnSubTab === 'rw_part4' && (
+            <InlineTextClozeDropdown
+              customData={data?.rw_part4}
+              onComplete={async (score) => {
+                await learnerProgressService.logAttempt({
+                  learnerId,
+                  contentId: `w${weekNumber}_rw_part4`,
+                  mode: 'learn',
+                  result: score >= 80 ? 'correct' : 'incorrect',
+                  score,
+                  timeSpentSeconds: 60
+                });
+              }}
+            />
+          )}
+
+          {learnSubTab === 'rw_part5' && (
+            <TextExtractionCompleter
+              customData={data?.rw_part5}
+              onComplete={async (score) => {
+                await learnerProgressService.logAttempt({
+                  learnerId,
+                  contentId: `w${weekNumber}_rw_part5`,
+                  mode: 'learn',
+                  result: score >= 80 ? 'correct' : 'incorrect',
+                  score,
+                  timeSpentSeconds: 60
+                });
+              }}
+            />
+          )}
+
 
         </div>
       ) : (
