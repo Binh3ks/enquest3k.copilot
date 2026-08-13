@@ -51,26 +51,26 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [userSpeechInput, setUserSpeechInput] = useState('');
   const [isTalkshowEnded, setIsTalkshowEnded] = useState(false);
 
-  const sentencesList = data?.shadowing_sentences || [
-    { id: "sh_01", speaker: "Tom", text: "I had a terrible morning today because I **woke up in a hurry** and **accidentally knocked over** my alarm clock." },
-    { id: "sh_02", speaker: "Tom", text: "I **felt extremely clumsy** when I **rushed downstairs**." },
-    { id: "sh_03", speaker: "Tom", text: "While I was walking in the kitchen, I **slipped on a wet puddle**." },
-    { id: "sh_04", speaker: "Tom", text: "**To make things worse**, I **spilled a glass of juice** on my notebook!" },
-    { id: "sh_05", speaker: "Tom", text: "My sister helped me **cleaned up the mess**. I **apologized to my mother** and **promised to be more careful** next time." }
+    const sentencesList = data?.shadowing_sentences || [
+    { id: "sh_01", speaker: "Jake", text: "Jake was walking **carefully down the school corridor** after science class." },
+    { id: "sh_02", speaker: "Jake", text: "Suddenly, a boy running fast **slipped on the wet floor**." },
+    { id: "sh_03", speaker: "Jake", text: "**Without hesitation**, Jake stopped immediately and **called the school nurse**." },
+    { id: "sh_04", speaker: "Nurse", text: "The school nurse applied a **clean bandage** and a **cold pack** gently." },
+    { id: "sh_05", speaker: "Headmaster", text: "Everyone **felt relieved**, and the headmaster **praised Jake** for following safety rules." }
   ];
 
   const longParagraph = data?.shadowing_paragraph || {
-    title: "Continuous Shadowing: Tom's Clumsy Morning Story",
-    text: "Tom **woke up in a hurry** today. First, he **felt extremely clumsy** when he **accidentally knocked over** his alarm clock off the table. Then, he **rushed downstairs** to have breakfast and **slipped on a wet puddle** on the kitchen floor. **To make things worse**, he **spilled a glass of juice** over his English notebook! Fortunately, his sister Mia helped him **cleaned up the mess**. After that, Tom **apologized to his mother** and **promised to be more careful** next time.",
-    phonetic_guide: "Full story intonation guide: Practice continuous rhythm, rising pitch on exclamation points, and falling pitch on resolutions."
+    title: "Continuous Shadowing: School Corridor Safety Incident",
+    text: "Jake was walking **carefully down the school corridor** after science class. Suddenly, a classmate running fast **slipped on the wet floor** and fell down heavily. **Without hesitation**, Jake stopped immediately and **called the school nurse** for medical help. The nurse arrived quickly and applied a **clean bandage** and a **cold pack** to his cut knee. Everyone **felt relieved**, and the headmaster **praised Jake** for his quick thinking and care.",
+    phonetic_guide: "Full story intonation guide: Practice continuous rhythm, rising pitch on key actions, and falling pitch on resolutions."
   };
 
   const talkshowTurns = data?.talkshow_turns || [
-    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Can you tell me what happened when Tom woke up in a hurry?" },
-    { turn_number: 2, nova_question: "Oh dear! And what clumsy accident happened when he accidentally knocked over his alarm clock?" },
-    { turn_number: 3, nova_question: "How did Tom feel when he slipped on a wet puddle on the kitchen floor?" },
-    { turn_number: 4, nova_question: "To make things worse, what happened to his glass of juice during breakfast?" },
-    { turn_number: 5, nova_question: "What an important lesson! What did Tom promise his mother next time?" }
+    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! What happened while Jake was walking down the school corridor?" },
+    { turn_number: 2, nova_question: "Oh dear! How did the boy slip on the floor near the science room?" },
+    { turn_number: 3, nova_question: "What responsible action did Jake take when he saw his classmate fall down?" },
+    { turn_number: 4, nova_question: "How did the school nurse treat the boy's cut knee during first aid?" },
+    { turn_number: 5, nova_question: "What an important lesson! Why did the headmaster praise Jake at the end?" }
   ];
 
   useEffect(() => {

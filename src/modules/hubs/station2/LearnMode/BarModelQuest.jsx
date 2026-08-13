@@ -9,79 +9,47 @@ import { CheckCircle2, AlertCircle, Sparkles, HelpCircle } from 'lucide-react';
 const WEEK33_BAR_QUESTIONS = [
   {
     id: 'bar_w33_01',
-    title: 'Problem 1: Broken Clocks & Vases (Part-Whole)',
-    problemText: 'Tom broke 2 alarm clocks and 3 glass vases by accident in the morning. How many items did Tom break in total?',
+    title: 'Problem 1: Corridor First Aid Bandages (Part-Whole)',
+    problemText: 'The school nurse used 4 small bandages and 6 large bandages to treat students today. How many bandages were used in total?',
     modelData: {
       type: 'part_whole',
       bars: [
-        { label: 'Alarm Clocks (2)', value: 40, color: '#4f46e5' },
-        { label: 'Glass Vases (3)', value: 60, color: '#06b6d4' }
+        { label: 'Small Bandages (4)', value: 40, color: '#4f46e5' },
+        { label: 'Large Bandages (6)', value: 60, color: '#06b6d4' }
       ],
-      totalLabel: '? items'
+      totalLabel: '? bandages'
     },
-    correctAnswer: 5,
-    hintText: 'Look at the total bar model: Total items broken = 2 alarm clocks + 3 glass vases = 5 items.'
+    correctAnswer: 10,
+    hintText: 'Look at the total bar model: Total bandages = 4 small + 6 large = 10 bandages.'
   },
   {
     id: 'bar_w33_02',
-    title: 'Problem 2: Comparing Replacement Costs (Comparison)',
-    problemText: 'A new alarm clock costs 25 dollars. A new backpack costs 40 dollars. How much more expensive is the backpack than the alarm clock?',
+    title: 'Problem 2: Corridor Walking vs Running Speed (Comparison)',
+    problemText: 'Running down the corridor takes 15 seconds. Walking carefully takes 40 seconds. How many seconds slower is walking carefully?',
     modelData: {
       type: 'comparison',
       bars: [
-        { name: 'Backpack', label: '40 dollars', width: 240 },
-        { name: 'Alarm Clock', label: '25 dollars', width: 150 }
+        { name: 'Walking Carefully', label: '40 seconds', width: 240 },
+        { name: 'Running Fast', label: '15 seconds', width: 90 }
       ]
     },
-    correctAnswer: 15,
-    hintText: 'Difference between the two bar models = 40 dollars - 25 dollars = 15 dollars.'
+    correctAnswer: 25,
+    hintText: 'Difference between the bar models = 40 seconds - 15 seconds = 25 seconds.'
   },
   {
     id: 'bar_w33_03',
-    title: 'Problem 3: Total Repair Time (Part-Whole)',
-    problemText: 'Tom spent 15 minutes cleaning up spilled juice and 25 minutes fixing his clock. How many total minutes did he spend?',
+    title: 'Problem 3: Total Safety Inspection Time (Part-Whole)',
+    problemText: 'The headmaster spent 20 minutes inspecting the corridor floor and 30 minutes placing safety warning signs. How many total minutes did he spend?',
     modelData: {
       type: 'part_whole',
       bars: [
-        { label: 'Juice Cleanup (15m)', value: 37.5, color: '#4f46e5' },
-        { label: 'Clock Repair (25m)', value: 62.5, color: '#06b6d4' }
+        { label: 'Floor Inspection (20m)', value: 40, color: '#4f46e5' },
+        { label: 'Safety Signs (30m)', value: 60, color: '#06b6d4' }
       ],
       totalLabel: '? minutes'
     },
-    correctAnswer: 40,
-    hintText: 'Total repair time = 15 minutes + 25 minutes = 40 minutes.'
-  },
-  {
-    id: 'bar_w33_04',
-    title: 'Problem 4: Multiplied Cleanup Work (Equal Parts)',
-    problemText: 'Tom cleaned 4 clumsy mistakes today. Each cleanup took 10 minutes. How many total minutes did Tom spend on cleanups?',
-    modelData: {
-      type: 'equal_parts',
-      bars: [
-        { label: 'Mistake 1 (10m)', value: 25, color: '#4f46e5' },
-        { label: 'Mistake 2 (10m)', value: 25, color: '#4f46e5' },
-        { label: 'Mistake 3 (10m)', value: 25, color: '#4f46e5' },
-        { label: 'Mistake 4 (10m)', value: 25, color: '#4f46e5' }
-      ],
-      totalLabel: '? total minutes'
-    },
-    correctAnswer: 40,
-    hintText: 'Total cleanup time = 4 mistakes × 10 minutes = 40 minutes.'
-  },
-  {
-    id: 'bar_w33_05',
-    title: 'Problem 5: Remaining Bus Seats (Part-Whole Difference)',
-    problemText: 'The school bus has 50 seats. 35 passengers are sitting inside. How many empty seats are remaining for Tom and Mia?',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { label: 'Seated (35)', value: 70, color: '#4f46e5' },
-        { label: 'Empty (?)', value: 30, color: '#f59e0b' }
-      ],
-      totalLabel: '50 Seats'
-    },
-    correctAnswer: 15,
-    hintText: 'Empty seats = 50 total seats - 35 seated passengers = 15 empty seats.'
+    correctAnswer: 50,
+    hintText: 'Add both time intervals: 20 minutes + 30 minutes = 50 total minutes.'
   }
 ];
 

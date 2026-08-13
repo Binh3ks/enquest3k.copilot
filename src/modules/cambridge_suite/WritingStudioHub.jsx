@@ -278,18 +278,18 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
               <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
                 <h4 className="text-xs font-black text-amber-950 uppercase">Suggested Core Vocab:</h4>
                 <p className="text-xs font-bold text-amber-900">
-                  broke, fell, lost, found, slipped, dropped, damaged, apologized, flower vase, soccer ball, alarm clock, backpack.
+                  corridor, slipped, fell down, nurse, bandage, cold pack, praised, carefully, immediately, relieved.
                 </p>
               </div>
 
               <div className="p-3 bg-indigo-50 rounded-xl border border-indigo-200 space-y-1">
                 <h4 className="text-xs font-black text-indigo-950 uppercase">Suggested Collocations & Chunks:</h4>
                 <ul className="text-xs font-bold text-indigo-900 space-y-1 list-disc pl-4">
-                  <li>played soccer inside the living room</li>
-                  <li>hit the wooden table by accident</li>
-                  <li>broke the glass flower vase into pieces</li>
-                  <li>apologized to his mom for the mistake</li>
-                  <li>swept and cleaned up the floor carefully</li>
+                  <li>walked carefully down the school corridor</li>
+                  <li>slipped on the wet slippery tiles</li>
+                  <li>called the school nurse immediately</li>
+                  <li>applied a clean bandage and cold pack</li>
+                  <li>praised Jake for following safety rules</li>
                 </ul>
               </div>
             </div>

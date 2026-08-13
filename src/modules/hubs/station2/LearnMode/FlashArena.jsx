@@ -28,29 +28,29 @@ const WEEK33_VOCAB_SETS = {
     { id: "v09", en: "repaired", vi: "đã sửa chữa" },
     { id: "v10", en: "searched", vi: "đã tìm kiếm" }
   ],
-  set3_chunks: [
-    { id: "c01", en: "woke up in a hurry", vi: "tỉnh dậy vội vã" },
-    { id: "c02", en: "felt extremely clumsy", vi: "cảm thấy cực kỳ hậu đậu" },
-    { id: "c03", en: "accidentally knocked over", vi: "vô tình làm đổ" },
-    { id: "c04", en: "rushed downstairs", vi: "vội vã chạy xuống lầu" },
-    { id: "c05", en: "slipped on a wet puddle", vi: "trượt chân trên vũng nước" },
-    { id: "c06", en: "to make things worse", vi: "tệ hại hơn là" },
-    { id: "c07", en: "spilled a glass of juice", vi: "làm đổ một cốc nước ép" },
-    { id: "c08", en: "cleaned up the mess", vi: "dọn dẹp đống bừa bộn" },
-    { id: "c09", en: "apologized to his mother", vi: "xin lỗi mẹ cậu ấy" },
-    { id: "c10", en: "promised to be more careful", vi: "hứa sẽ cẩn thận hơn" }
+    set3_chunks: [
+    { id: "c01", en: "walking carefully down corridor", vi: "đi bộ cẩn thận dưới hành lang" },
+    { id: "c02", en: "slipped on the wet floor", vi: "trượt chân trên sàn ướt" },
+    { id: "c03", en: "fell down heavily", vi: "ngã xuống rất đau" },
+    { id: "c04", en: "called the school nurse", vi: "gọi y tế trường học" },
+    { id: "c05", en: "without hesitation", vi: "không một chút chần chừ" },
+    { id: "c06", en: "applied a clean bandage", vi: "băng vết thương sạch sẽ" },
+    { id: "c07", en: "placed a cold pack", vi: "chườm túi đá lạnh" },
+    { id: "c08", en: "felt extremely relieved", vi: "cảm thấy rất nhẹ nhõm" },
+    { id: "c09", en: "praised for quick thinking", vi: "khen ngợi vì phản ứng nhanh" },
+    { id: "c10", en: "followed safety rules", vi: "tuân thủ quy tắc an toàn" }
   ],
   set4_definitions: [
-    { id: "def01", en: "backpack", vi: "You put your books in this to take them to school." },
-    { id: "def02", en: "puddle", vi: "A small pool of liquid on the ground after rain." },
-    { id: "def03", en: "alarm clock", vi: "A device that wakes you up with a loud sound." },
-    { id: "def04", en: "vase", vi: "A container used for holding fresh flowers." },
-    { id: "def05", en: "clumsy", vi: "Moving awkwardly or dropping things easily." },
-    { id: "def06", en: "careful", vi: "Paying close attention to avoid making mistakes." },
-    { id: "def07", en: "cautious", vi: "Taking care to avoid potential danger or mistakes." },
-    { id: "def08", en: "spilled", vi: "Accidentally allowed liquid to flow out of a cup." },
-    { id: "def09", en: "repaired", vi: "Fixed or restored something that was broken." },
-    { id: "def10", en: "apologized", vi: "Said sorry for causing an accident or mistake." }
+    { id: "def01", en: "corridor", vi: "A long passage in a school building with doors on each side." },
+    { id: "def02", en: "bandage", vi: "A strip of clean material used to bind up a wound or cut." },
+    { id: "def03", en: "nurse", vi: "A trained healthcare worker who cares for sick or injured students." },
+    { id: "def04", en: "slipped", vi: "Slid accidentally on a wet or smooth floor and lost balance." },
+    { id: "def05", en: "relieved", vi: "Feeling happy because something difficult or scary is over." },
+    { id: "def06", en: "praised", vi: "Expressed warm approval or admiration for good behavior." },
+    { id: "def07", en: "caution", vi: "Care taken to avoid danger, accidents, or mistakes." },
+    { id: "def08", en: "immediately", vi: "Right away without any delay." },
+    { id: "def09", en: "truce", vi: "An agreement between groups to stop fighting or competing." },
+    { id: "def10", en: "olympic", vi: "Relating to the global sports festival originating in ancient Greece." }
   ]
 };
 
