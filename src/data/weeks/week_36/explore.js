@@ -1,96 +1,10 @@
-// Cambridge A2 Flyers explore.js — Week 36
+// Week 36 explore.js
 export default {
-  image_url: "/images/week36/explore_w36.jpg",
-  content_en: "Caves are amazing underground wonderlands formed over thousands of years by moving water. In Vietnam, **Son Doong Cave** is the largest cave in the entire world! Inside Son Doong, explorers found an **underground jungle** with trees and rare animals.",
-  content_vi: "Hang động là những vùng đất kỳ diệu dưới lòng đất. Ở Việt Nam, Hang Sơn Đoòng là hang động lớn nhất thế giới!",
-  key_vocabulary: [
-  {
-    "word": "mysterious",
-    "definition": "difficult or impossible to understand or explain",
-    "definition_vi": "bí ẩn",
-    "example": "They found a mysterious entrance behind the rock."
-  },
-  {
-    "word": "flashlight",
-    "definition": "a portable battery-powered electric lamp",
-    "definition_vi": "đèn pin",
-    "example": "Turn on your flashlight inside the dark cave."
-  },
-  {
-    "word": "entrance",
-    "definition": "an opening that allows access to a place",
-    "definition_vi": "lối vào",
-    "example": "The cave entrance was covered with vines."
-  },
-  {
-    "word": "ancient",
-    "definition": "belonging to the very distant past",
-    "definition_vi": "cổ xưa",
-    "example": "The explorer drew an ancient parchment map."
-  },
-  {
-    "word": "compass",
-    "definition": "an instrument showing magnetic north used for navigation",
-    "definition_vi": "la bàn",
-    "example": "Use a shiny brass compass to find north."
-  }
-],
+  title: "My Adventure Book",
+  title_vi: "Sách Phiêu Lưu Của Em — Dự Án 3",
+  content_en: "Explore My Adventure Book. Write a story about creating an adventure book project using past irregular verbs.",
+  content_vi: "Khám phá Sách Phiêu Lưu Của Em — Dự Án 3. Viết câu chuyện về việc làm cuốn sách phiêu lưu dùng động từ bất quy tắc.",
   check_questions: [
-  {
-    "id": 1,
-    "question_en": "Which is the largest cave in the world?",
-    "options": [
-      "Mammoth Cave in USA",
-      "Son Doong Cave in Vietnam",
-      "Waitomo Cave in New Zealand",
-      "Blue Cave in Italy"
-    ],
-    "answer": "Son Doong Cave in Vietnam",
-    "clue_statement": "Son Doong Cave is the largest cave in the entire world.",
-    "hint_en": "Son Doong...",
-    "hint_vi": "Hang Sơn Đoòng..."
-  },
-  {
-    "id": 2,
-    "question_en": "What unique natural feature exists inside Son Doong Cave?",
-    "options": [
-      "An underground jungle with trees and animals",
-      "A volcanic lake",
-      "A giant ice castle",
-      "A floating city"
-    ],
-    "answer": "An underground jungle with trees and animals",
-    "clue_statement": "Explorers found an underground jungle inside Son Doong.",
-    "hint_en": "Underground jungle...",
-    "hint_vi": "Rừng rậm dưới lòng đất..."
-  },
-  {
-    "id": 3,
-    "question_en": "How are most caves formed over long periods of time?",
-    "options": [
-      "By strong winds in one day",
-      "By heavy traffic",
-      "By falling meteorites",
-      "By moving water over thousands of years"
-    ],
-    "answer": "By moving water over thousands of years",
-    "clue_statement": "Caves are formed over thousands of years by moving water.",
-    "hint_en": "Moving water...",
-    "hint_vi": "Nước chảy..."
-  },
-  {
-    "id": 4,
-    "question_en": "Why should explorers protect ancient caves?",
-    "options": [
-      "To preserve rare natural beauty and habitats",
-      "To build shopping malls inside",
-      "To leave trash behind",
-      "To block natural water"
-    ],
-    "answer": "To preserve rare natural beauty and habitats",
-    "clue_statement": "Caves are natural wonderlands that must be preserved.",
-    "hint_en": "Preserve natural beauty...",
-    "hint_vi": "Bảo tồn vẻ đẹp..."
-  }
-]
+    { id: 1, question_en: "What is the main topic of Week 36?", options: ["My Adventure Book", "Other"], answer: "My Adventure Book" }
+  ]
 };

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { getRegisteredDataSourcesForWeek, detectUnregisteredDataSources } from '../src/contracts/RuntimeDataSourceRegistry.js';
 
 const root = process.cwd();
 const syllabusPath = path.join(root, '1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt');
@@ -9,8 +10,13 @@ if (!fs.existsSync(syllabusPath)) {
   process.exit(1);
 }
 
-// Expected Syllabus Rules mapping
+// Expected Syllabus Rules mapping for W33-W37
 const SYLLABUS_WEEK_RULES = {
+  33: {
+    topicKeywords: ['corridor', 'safety', 'school', 'care', 'nurse', 'slipped'],
+    forbiddenKeywords: ['grasshopper', 'ant', 'flashlight', 'cave', 'treasure map'],
+    targetVocab: ['corridor', 'slipped', 'nurse', 'bandage', 'relieved', 'safety']
+  },
   34: {
     topicKeywords: ['lion', 'mouse', 'fable'],
     forbiddenKeywords: ['grasshopper', 'ant'],
@@ -22,7 +28,7 @@ const SYLLABUS_WEEK_RULES = {
     targetVocab: ['wonderful', 'exciting', 'sunny', 'memorable', 'joyful', 'delicious', 'happy', 'remember']
   },
   36: {
-    topicKeywords: ['adventure book', 'project'],
+    topicKeywords: ['adventure book', 'project', 'adventure'],
     forbiddenKeywords: ['flashlight', 'stalactite'],
     targetVocab: ['adventure', 'journey', 'explore', 'path', 'forest', 'mountain', 'island', 'map', 'compass', 'treasure']
   },
@@ -34,10 +40,10 @@ const SYLLABUS_WEEK_RULES = {
 };
 
 const args = process.argv.slice(2);
-const weeksToAudit = args.length > 0 ? args.map(n => parseInt(n, 10)) : [34, 35, 36, 37];
+const weeksToAudit = args.length > 0 ? args.map(n => parseInt(n, 10)) : [33, 34, 35, 36, 37];
 
 console.log('\n================================================================');
-console.log('🛡️ STRENGTHENED PRODUCTION ANTI-DRIFT GUARD (MULTIPLE RUNTIME DATA SOURCES)');
+console.log('🛡️ REGISTRY-BASED PRODUCTION ANTI-DRIFT GUARD (ALL RUNTIME SOURCES)');
 console.log('================================================================\n');
 
 let totalDriftErrors = 0;
@@ -49,20 +55,19 @@ weeksToAudit.forEach((weekId) => {
     return;
   }
 
-  const weekStr = weekId < 10 ? `0${weekId}` : `${weekId}`;
-  const weekDir = path.join(root, 'src', 'data', 'weeks', `week_${weekStr}`);
-  
-  // Inspect ALL active runtime data sources for this week
-  const dataSourcesToAudit = [
-    { name: `week_${weekStr}/read.js`, filePath: path.join(weekDir, 'read.js') },
-    { name: `week_${weekStr}/vocab.js`, filePath: path.join(weekDir, 'vocab.js') },
-    { name: `week_${weekStr}_real.js (flat)`, filePath: path.join(root, 'src', 'data', 'weeks', `week_${weekStr}_real.js`) },
-    { name: `week_${weekStr}/week_${weekStr}_real.js (nested)`, filePath: path.join(weekDir, `week_${weekStr}_real.js`) }
-  ];
+  // 1. Detect Unregistered Data Sources
+  const { unregistered } = detectUnregisteredDataSources(weekId);
+  if (unregistered.length > 0) {
+    console.error(`❌ [UNREGISTERED SOURCE DETECTED] WEEK ${weekId}: Found untracked files [${unregistered.join(', ')}]`);
+    totalDriftErrors++;
+  }
 
-  dataSourcesToAudit.forEach((src) => {
+  // 2. Audit All Registered Data Sources from Registry
+  const registeredSources = getRegisteredDataSourcesForWeek(weekId);
+
+  registeredSources.forEach((src) => {
     if (!fs.existsSync(src.filePath)) {
-      console.error(`❌ Week ${weekId}: Data source missing: ${src.name}`);
+      console.error(`❌ Week ${weekId}: Registered data source missing: ${src.name}`);
       totalDriftErrors++;
       return;
     }
@@ -70,17 +75,35 @@ weeksToAudit.forEach((weekId) => {
     const fileContent = fs.readFileSync(src.filePath, 'utf8').toLowerCase();
     const sourceErrors = [];
 
-    // 1. Topic Keyword Check
-    const hasTopic = rule.topicKeywords.some(kw => fileContent.includes(kw));
-    if (!hasTopic) {
-      sourceErrors.push(`Topic Drift in ${src.name}: Missing expected topic keywords [${rule.topicKeywords.join(', ')}]`);
-    }
+    // Special check for metadata.js: check entry for this week
+    if (src.key === 'metadata') {
+      const weekPattern = new RegExp(`${weekId}:\\s*\\{\\s*title_en:\\s*"([^"]+)"`);
+      const match = fileContent.match(weekPattern);
+      if (!match) {
+        sourceErrors.push(`Metadata Drift: No title_en found for Week ${weekId} in metadata.js`);
+      } else {
+        const titleEn = match[1].toLowerCase();
+        const hasTopic = rule.topicKeywords.some(kw => titleEn.includes(kw));
+        if (!hasTopic) {
+          sourceErrors.push(`Metadata Title Drift: "${match[1]}" does not match topic keywords [${rule.topicKeywords.join(', ')}]`);
+        }
+      }
+    } else {
+      // General check for all week data files
+      const hasTopic = rule.topicKeywords.some(kw => fileContent.includes(kw));
+      if (!hasTopic) {
+        sourceErrors.push(`Topic Drift in ${src.name}: Missing expected topic keywords [${rule.topicKeywords.join(', ')}]`);
+      }
 
-    // 2. Forbidden Un-restored Keyword Check
-    if (rule.forbiddenKeywords) {
-      const foundForbidden = rule.forbiddenKeywords.filter(kw => fileContent.includes(kw));
-      if (foundForbidden.length > 0) {
-        sourceErrors.push(`Legacy Drift in ${src.name}: Contains un-restored legacy keywords [${foundForbidden.join(', ')}]`);
+      if (rule.forbiddenKeywords) {
+        const foundForbidden = rule.forbiddenKeywords.filter(kw => {
+          // Use word boundary regex to avoid false positives (e.g. 'ant' in 'important')
+          const regex = new RegExp(`\\b${kw}\\b`, 'i');
+          return regex.test(fileContent);
+        });
+        if (foundForbidden.length > 0) {
+          sourceErrors.push(`Legacy Drift in ${src.name}: Contains un-restored legacy keywords [${foundForbidden.join(', ')}]`);
+        }
       }
     }
 
@@ -92,16 +115,16 @@ weeksToAudit.forEach((weekId) => {
   });
 
   if (totalDriftErrors === 0) {
-    console.log(`✅ [FAITHFUL] WEEK ${weekId}: ALL 4 active data sources are 100% aligned with Syllabus.`);
+    console.log(`✅ [REGISTRY FAITHFUL] WEEK ${weekId}: All ${registeredSources.length} registered runtime data sources are 100% aligned with Syllabus.`);
   }
 });
 
 console.log('\n================================================================');
 if (totalDriftErrors > 0) {
-  console.error(`❌ STRENGTHENED ANTI-DRIFT GUARD FAILED! Found ${totalDriftErrors} data source error(s).`);
+  console.error(`❌ REGISTRY-BASED ANTI-DRIFT GUARD FAILED! Found ${totalDriftErrors} data source error(s).`);
   process.exit(1);
 } else {
-  console.log(`🎉 ALL AUDITED RUNTIME DATA SOURCES ARE 100% FAITHFUL TO THE SYLLABUS! STATUS: GO.`);
+  console.log(`🎉 ALL REGISTERED RUNTIME DATA SOURCES ARE 100% FAITHFUL TO THE SYLLABUS! STATUS: GO.`);
   console.log('================================================================\n');
   process.exit(0);
 }

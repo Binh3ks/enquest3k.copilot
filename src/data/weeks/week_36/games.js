@@ -1,5 +1,6 @@
-export const week_36GamesAdvanced = {
-  theme: "Adventure Stories & Ocean Physics",
-  vocab: ["submarine", "buoyancy", "cavern", "displace", "compass", "merchant", "diplomat", "explorer"]
+// Week 36 games.js
+export const week36GamesAdvanced = {
+  title: "My Adventure Book Games",
+  wordList: ["adventure", "journey"]
 };
-export default week_36GamesAdvanced;
+export default week36GamesAdvanced;

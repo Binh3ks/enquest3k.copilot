@@ -1,67 +1,12 @@
-// Cambridge A2 Flyers shadowing.js — Week 37
+// Week 37 shadowing.js
 export default {
   videoId: "shadowing_w37",
-  title: "The Sports Day Challenge — Teamwork & Speed — Shadowing",
+  title: "Living vs. Non-Living — Shadowing",
   sentences: [
-  {
-    "id": 1,
-    "text": "Our school holds its annual Sports Day in May.",
-    "start_time": 0,
-    "end_time": 3
-  },
-  {
-    "id": 2,
-    "text": "The crowded sports stadium was loud.",
-    "start_time": 3,
-    "end_time": 6
-  },
-  {
-    "id": 3,
-    "text": "Leo ran the last leg of the 4x100m relay.",
-    "start_time": 6,
-    "end_time": 9
-  },
-  {
-    "id": 4,
-    "text": "Pass the baton smoothly without dropping it.",
-    "start_time": 9,
-    "end_time": 12
-  },
-  {
-    "id": 5,
-    "text": "Accelerate quickly down the straight track.",
-    "start_time": 12,
-    "end_time": 15
-  },
-  {
-    "id": 6,
-    "text": "The first runner began to sprint fast.",
-    "start_time": 15,
-    "end_time": 18
-  },
-  {
-    "id": 7,
-    "text": "The baton handoff went very smoothly.",
-    "start_time": 18,
-    "end_time": 21
-  },
-  {
-    "id": 8,
-    "text": "Cheering spectators filled the stadium stands.",
-    "start_time": 21,
-    "end_time": 24
-  },
-  {
-    "id": 9,
-    "text": "The team stood proudly on the gold podium.",
-    "start_time": 24,
-    "end_time": 27
-  },
-  {
-    "id": 10,
-    "text": "Leo cheered loudly for his teammate.",
-    "start_time": 27,
-    "end_time": 30
-  }
-]
+    { id: 1, text: "Welcome to CLIL Unit 6 Nature's Rules.", start_time: 0, end_time: 5 },
+    { id: 2, text: "A puppy is living because it grows and breathes.", start_time: 5, end_time: 10 },
+    { id: 3, text: "A stone is non-living because it does not need water.", start_time: 10, end_time: 15 },
+    { id: 4, text: "Living organisms reproduce and need energy.", start_time: 15, end_time: 20 },
+    { id: 5, text: "All plants and animals are living organisms in nature.", start_time: 20, end_time: 25 }
+  ]
 };

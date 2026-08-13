@@ -8,24 +8,28 @@ const weekConfigs = [
     weekId: 34,
     theme: "The Lion and the Mouse",
     theme_vi: "Sư Tử và Chuột — Truyện Ngụ Ngôn",
+    coverImage: "/images/week34/read_cover_w34.jpg",
     vocabCount: 20
   },
   {
     weekId: 35,
     theme: "The Best Day Ever",
     theme_vi: "Ngày Tuyệt Vời Nhất — Kể Lại Kỷ Niệm Cá Nhân",
+    coverImage: "/images/week35/read_cover_w35.jpg",
     vocabCount: 20
   },
   {
     weekId: 36,
     theme: "My Adventure Book",
     theme_vi: "Sách Phiêu Lưu Của Em — Dự Án 3",
+    coverImage: "/images/week36/read_stem_w36.jpg",
     vocabCount: 20
   },
   {
     weekId: 37,
     theme: "Living vs. Non-Living",
     theme_vi: "Vật Sống & Không Sống — Quy Luật Tự Nhiên CLIL Unit 6",
+    coverImage: "/images/week37/read_stem_w37.jpg",
     vocabCount: 20
   }
 ];
@@ -39,7 +43,7 @@ function buildHubWrappersForWeek(config) {
     fs.mkdirSync(weekDir, { recursive: true });
   }
 
-  // 1. Generate reading_hub.js
+  // 1. Generate reading_hub.js with explicit image_url fields for Webtoon Scenes
   const readingHubContent = `/**
  * Week ${weekId} Gold Standard Data — Reading Hub
  * Theme: "${config.theme}"
@@ -61,8 +65,15 @@ export const readingHubData = {
   story_scenes: Array.from({ length: 5 }, (_, i) => ({
     id: i + 1,
     scene_number: i + 1,
-    title: \`Panel \${i + 1}\`,
-    description: \`Scene \${i + 1} description\`
+    scene_id: \`scene_\${i + 1}\`,
+    title: \`Panel \${i + 1}: \${"${config.theme}"}\`,
+    title_en: \`Panel \${i + 1}: \${"${config.theme}"}\`,
+    description: \`Scene \${i + 1} narrative for \${"${config.theme}"}.\`,
+    description_en: \`Scene \${i + 1} narrative for \${"${config.theme}"}.\`,
+    image_url: "${config.coverImage}",
+    lexical_chunks: [
+      { word: "story", chunk: "${config.theme}", x: 50, y: 50 }
+    ]
   })),
   read_explore
 };
@@ -71,7 +82,7 @@ export default readingHubData;
 `;
   fs.writeFileSync(path.join(weekDir, 'reading_hub.js'), readingHubContent, 'utf8');
 
-  // 2. Generate listening_hub.js (Zero raw LaTeX)
+  // 2. Generate listening_hub.js
   const listeningHubContent = `/**
  * Week ${weekId} Gold Standard Data — Listening Hub
  * Theme: "${config.theme}"
@@ -183,6 +194,6 @@ export default weekData;
   fs.writeFileSync(path.join(weekDir, 'index.js'), indexContent, 'utf8');
 }
 
-console.log('🚀 Building Hub Wrappers for Weeks 34, 35, 36, and 37 with Restored Syllabus Themes...');
+console.log('🚀 Building Hub Wrappers with explicit Webtoon image_url for Weeks 34, 35, 36, and 37...');
 weekConfigs.forEach(buildHubWrappersForWeek);
-console.log('🎉 Successfully created Hub Wrappers for W34-W37!');
+console.log('🎉 Successfully created Hub Wrappers with Webtoon image_url for W34-W37!');

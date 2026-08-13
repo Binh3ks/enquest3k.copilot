@@ -33,11 +33,11 @@ export const weekTitles = {
   30: { title_en: "Picnic Time! (Irregular Verbs 2)", title_vi: "Đến Giờ Dã Ngoại! (Động Từ Bất Quy Tắc 2)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   31: { title_en: "The Senses (Irregular Verbs 3)", title_vi: "Các Giác Quan (Động Từ Bất Quy Tắc 3)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
   32: { title_en: "The Busy Day (Irregular Verbs 4)", title_vi: "Ngày Bận Rộn (Động Từ Bất Quy Tắc 4)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
-  33: { title_en: "The Mistake (Irregular Verbs 5)", title_vi: "Sai Lầm (Động Từ Bất Quy Tắc 5)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
-  34: { title_en: "The Ant and the Grasshopper (Fable)", title_vi: "Kiến và Châu Chấu (Truyện Ngụ Ngôn)", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
-  35: { title_en: "Environmental Issues", title_vi: "Các Vấn Đề Môi Trường", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
-  36: { title_en: "Adventure Stories", title_vi: "Những Câu Chuyện Phiêu Lưu", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
-  37: { title_en: "The Sports Day Challenge", title_vi: "Thách Thức Ngày Hội Thể Thao", cefr_level: "A1+", cambridge_prep: "YLE Movers" },
+  33: { title_en: "Corridor Safety & School Care", title_vi: "An Toàn Hành Lang & Giúp Đỡ Bạn Bè", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+  34: { title_en: "The Lion and the Mouse", title_vi: "Sư Tử và Chuột — Truyện Ngụ Ngôn", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+  35: { title_en: "The Best Day Ever", title_vi: "Ngày Tuyệt Vời Nhất — Kể Lại Kỷ Niệm Cá Nhân", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+  36: { title_en: "My Adventure Book", title_vi: "Sách Phiêu Lưu Của Em — Dự Án 3", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
+  37: { title_en: "Living vs. Non-Living", title_vi: "Vật Sống & Không Sống — CLIL Unit 6", cefr_level: "A2 Flyers", cambridge_prep: "YLE Flyers" },
 };
 
 // Helper to get title with fallback

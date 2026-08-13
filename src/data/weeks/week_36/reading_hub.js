@@ -19,8 +19,15 @@ export const readingHubData = {
   story_scenes: Array.from({ length: 5 }, (_, i) => ({
     id: i + 1,
     scene_number: i + 1,
-    title: `Panel ${i + 1}`,
-    description: `Scene ${i + 1} description`
+    scene_id: `scene_${i + 1}`,
+    title: `Panel ${i + 1}: ${"My Adventure Book"}`,
+    title_en: `Panel ${i + 1}: ${"My Adventure Book"}`,
+    description: `Scene ${i + 1} narrative for ${"My Adventure Book"}.`,
+    description_en: `Scene ${i + 1} narrative for ${"My Adventure Book"}.`,
+    image_url: "/images/week36/read_stem_w36.jpg",
+    lexical_chunks: [
+      { word: "story", chunk: "My Adventure Book", x: 50, y: 50 }
+    ]
   })),
   read_explore
 };

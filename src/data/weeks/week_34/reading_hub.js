@@ -19,8 +19,15 @@ export const readingHubData = {
   story_scenes: Array.from({ length: 5 }, (_, i) => ({
     id: i + 1,
     scene_number: i + 1,
-    title: `Panel ${i + 1}`,
-    description: `Scene ${i + 1} description`
+    scene_id: `scene_${i + 1}`,
+    title: `Panel ${i + 1}: ${"The Lion and the Mouse"}`,
+    title_en: `Panel ${i + 1}: ${"The Lion and the Mouse"}`,
+    description: `Scene ${i + 1} narrative for ${"The Lion and the Mouse"}.`,
+    description_en: `Scene ${i + 1} narrative for ${"The Lion and the Mouse"}.`,
+    image_url: "/images/week34/read_cover_w34.jpg",
+    lexical_chunks: [
+      { word: "story", chunk: "The Lion and the Mouse", x: 50, y: 50 }
+    ]
   })),
   read_explore
 };

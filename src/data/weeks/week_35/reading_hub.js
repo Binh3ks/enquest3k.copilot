@@ -19,8 +19,15 @@ export const readingHubData = {
   story_scenes: Array.from({ length: 5 }, (_, i) => ({
     id: i + 1,
     scene_number: i + 1,
-    title: `Panel ${i + 1}`,
-    description: `Scene ${i + 1} description`
+    scene_id: `scene_${i + 1}`,
+    title: `Panel ${i + 1}: ${"The Best Day Ever"}`,
+    title_en: `Panel ${i + 1}: ${"The Best Day Ever"}`,
+    description: `Scene ${i + 1} narrative for ${"The Best Day Ever"}.`,
+    description_en: `Scene ${i + 1} narrative for ${"The Best Day Ever"}.`,
+    image_url: "/images/week35/read_cover_w35.jpg",
+    lexical_chunks: [
+      { word: "story", chunk: "The Best Day Ever", x: 50, y: 50 }
+    ]
   })),
   read_explore
 };

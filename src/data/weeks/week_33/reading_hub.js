@@ -5,7 +5,7 @@
 
 export const readingHubData = {
   week: 33,
-  theme: "The Accident File",
+  theme: "Corridor Safety & School Care",
   cefr_level: "A2 Flyers",
 
   // Interactive Gap-Fill Story Reading (Cambridge Reading Part 4 & Part 6 Standard)
