@@ -6,14 +6,12 @@ export function setTokenGetter(fn) { _getToken = fn; }
 
 // Create an Axios instance with a base URL.
 // In Vite, environment variables must be prefixed with VITE_ to be exposed to the client.
+const configuredApiUrl = import.meta.env.VITE_API_URL;
+const isApiUrlProvided = configuredApiUrl !== undefined && configuredApiUrl !== null && configuredApiUrl.trim() !== '';
+
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001/api',
+  baseURL: isApiUrlProvided ? configuredApiUrl : '',
   timeout: 20000, // 20s — fail fast instead of hanging forever
-  // NOTE: deliberately NO default Content-Type header.
-  // - For JSON requests, axios V2 sets it automatically from the body.
-  // - For FormData (multipart uploads), the BROWSER must generate
-  //   `multipart/form-data; boundary=...` itself; setting application/json
-  //   here would force that, breaking multer file parsing on the server.
 });
 
 // ─── Circuit Breaker for Offline / CORS-blocked Backend ───────────────
@@ -21,7 +19,7 @@ let backendOfflineUntil = 0;
 const CIRCUIT_BREAKER_COOLDOWN_MS = 60_000; // 60 seconds
 
 export function isBackendAvailable() {
-  return Date.now() > backendOfflineUntil;
+  return isApiUrlProvided && Date.now() > backendOfflineUntil;
 }
 
 export function tripCircuitBreaker(reason) {
@@ -34,6 +32,9 @@ export function tripCircuitBreaker(reason) {
 // Request Interceptor: check circuit breaker before attempting requests
 apiClient.interceptors.request.use(
   (config) => {
+    if (!isApiUrlProvided && !config.bypassCircuitBreaker) {
+      return Promise.reject(new axios.Cancel('No remote API configured. Running in Cloudflare client-side mode.'));
+    }
     if (!isBackendAvailable() && !config.bypassCircuitBreaker) {
       return Promise.reject(new axios.Cancel('Circuit breaker OPEN: backend unreachable / CORS blocked'));
     }
@@ -45,6 +46,7 @@ apiClient.interceptors.request.use(
   },
   (error) => Promise.reject(error)
 );
+
 
 // Response Interceptor: trip circuit breaker on Network Error or CORS failure
 apiClient.interceptors.response.use(
