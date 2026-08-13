@@ -1242,9 +1242,22 @@ export const VoiceService = {
     return false;
   },
 
+  stopAudio() {
+    this._shouldPauseNext = true;
+    if (this._currentSourceNode) {
+      try { this._currentSourceNode.stop(); } catch (_) {}
+      this._currentSourceNode = null;
+    }
+    if (this._currentAudio) {
+      try { this._currentAudio.pause(); this._currentAudio.currentTime = 0; } catch (_) {}
+      this._currentAudio = null;
+    }
+  },
+
   /**
    * Resume the currently paused TTS audio.
    */
+
   resumeTTS() {
     this._shouldPauseNext = false;
     if (!this._currentAudio) return Promise.resolve(false);

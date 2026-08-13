@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, Play, Pause, RotateCcw, Headphones } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
@@ -20,21 +20,41 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
   // Combine notes audio into 1 continuous dialogue audio passage if passageAudioText is not passed
   const fullAudioPassage = passageAudioText || defaultNotes.map(n => n.audio_text).join(" ");
 
-  const handleToggleMasterAudio = () => {
+  // Cleanup audio playback on unmount or tab switch
+  useEffect(() => {
+    return () => {
+      VoiceService.stopAudio();
+    };
+  }, []);
+
+  const handleToggleMasterAudio = async () => {
     if (isPlaying) {
       VoiceService.stopAudio();
       setIsPlaying(false);
     } else {
       setIsPlaying(true);
-      VoiceService.speak(fullAudioPassage, 'dictation');
+      try {
+        await VoiceService.speak(fullAudioPassage, 'dictation');
+      } catch (err) {
+        console.warn('[Notepad] Audio playback error:', err);
+      } finally {
+        setIsPlaying(false);
+      }
     }
   };
 
-  const handleReplayMasterAudio = () => {
+  const handleReplayMasterAudio = async () => {
     VoiceService.stopAudio();
     setIsPlaying(true);
-    VoiceService.speak(fullAudioPassage, 'dictation');
+    try {
+      await VoiceService.speak(fullAudioPassage, 'dictation');
+    } catch (err) {
+      console.warn('[Notepad] Audio playback error:', err);
+    } finally {
+      setIsPlaying(false);
+    }
   };
+
 
   const handleCheck = () => {
     let totalCorrect = 0;

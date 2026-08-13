@@ -37,6 +37,16 @@ if (novaCode.includes('handleSelectPicStorySubmode') && novaCode.includes('🚀 
 }
 
 
+// Test 4: Verify Audio completion state cleanup in NotepadNoteCompleter (isPlaying resets to false when audio finishes)
+if (notepadCode.includes('setIsPlaying(false)') && notepadCode.includes('finally {')) {
+  console.log('✅ [QA PASS] Hub 2 Listening P2: Audio completion state cleanup active (isPlaying resets to false on audio end)!');
+  totalPassed++;
+} else {
+  console.error('❌ [QA FAIL] Hub 2 Listening P2: Audio completion state cleanup missing in NotepadNoteCompleter.jsx');
+  process.exit(1);
+}
+
 console.log(`\n================================================================`);
-console.log(`🎉 QA VERIFICATION SUMMARY: ${totalPassed}/3 TESTS PASSED 100%!`);
+console.log(`🎉 QA VERIFICATION SUMMARY: ${totalPassed}/4 TESTS PASSED 100%!`);
 console.log(`================================================================`);
+
