@@ -143,3 +143,6 @@ export function NotepadNoteCompleter({ title, notes, onComplete }) {
     </div>
   );
 }
+
+export default NotepadNoteCompleter;
+
