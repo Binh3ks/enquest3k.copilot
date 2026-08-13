@@ -9,130 +9,39 @@ const FALLBACK_CHECK_QUESTIONS = [
   {
     id: 'chk_w33_01',
     content_id: 'chk_w33_01',
-    dialogue_context: 'Tom: I accidentally broke my alarm clock this morning!',
-    text: 'What does Mom say?',
-    prompt: 'What does Mom say?',
+    dialogue_context: 'Jake: What happened while you were walking down the corridor?',
+    text: 'What does Tom say?',
+    prompt: 'What does Tom say?',
     options: [
-      { label: 'A', text: "Don't worry, it's just an accident.", isCorrect: true },
-      { label: 'B', text: 'Yes, I am waking up.', isCorrect: false },
-      { label: 'C', text: "No, he didn't.", isCorrect: false }
+      { label: 'A', text: "A boy running fast slipped on the wet floor.", isCorrect: true },
+      { label: 'B', text: 'Yes, I am walking home now.', isCorrect: false },
+      { label: 'C', text: "No, he didn't eat lunch.", isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_02',
     content_id: 'chk_w33_02',
-    dialogue_context: 'Mia: Why were you rushing downstairs so fast, Tom?',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
+    dialogue_context: 'Teacher: What did Jake do when his classmate fell down?',
+    text: 'What does Mia say?',
+    prompt: 'What does Mia say?',
     options: [
-      { label: 'A', text: 'Because I woke up late and was in a hurry.', isCorrect: true },
+      { label: 'A', text: 'He called the school nurse immediately for help.', isCorrect: true },
       { label: 'B', text: 'While he was running outside.', isCorrect: false },
-      { label: 'C', text: 'Yes, I broke my backpack.', isCorrect: false }
+      { label: 'C', text: 'Yes, he broke his backpack.', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
     id: 'chk_w33_03',
     content_id: 'chk_w33_03',
-    dialogue_context: 'Mom: What happened while you were making breakfast?',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
+    dialogue_context: "Nurse: How did you treat the boy's cut knee?",
+    text: 'What does the Nurse say?',
+    prompt: 'What does the Nurse say?',
     options: [
-      { label: 'A', text: 'I dropped a glass of orange juice on the floor.', isCorrect: true },
+      { label: 'A', text: 'I applied a clean bandage and a cold pack.', isCorrect: true },
       { label: 'B', text: 'Because it was very sweet.', isCorrect: false },
       { label: 'C', text: 'So he was sleeping in bed.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_04',
-    content_id: 'chk_w33_04',
-    dialogue_context: 'Tom: I slipped on a wet puddle on the kitchen tile floor!',
-    text: 'What does Mia say?',
-    prompt: 'What does Mia say?',
-    options: [
-      { label: 'A', text: 'Are you okay? You should be more careful.', isCorrect: true },
-      { label: 'B', text: 'No, the floor is dry.', isCorrect: false },
-      { label: 'C', text: 'Because he was clumsy.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_05',
-    content_id: 'chk_w33_05',
-    dialogue_context: 'Mom: Why is your English notebook damaged?',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
-    options: [
-      { label: 'A', text: 'Because I spilled juice over it while eating.', isCorrect: true },
-      { label: 'B', text: 'While I was walking to school.', isCorrect: false },
-      { label: 'C', text: 'Yes, I found your backpack.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_06',
-    content_id: 'chk_w33_06',
-    dialogue_context: "Tom: Oh no! I can't find my backpack anywhere!",
-    text: 'What does Mia say?',
-    prompt: 'What does Mia say?',
-    options: [
-      { label: 'A', text: 'I saw you leave it on the bus earlier!', isCorrect: true },
-      { label: 'B', text: 'While we were eating lunch.', isCorrect: false },
-      { label: 'C', text: 'So he apologized to mom.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_07',
-    content_id: 'chk_w33_07',
-    dialogue_context: 'Mia: Here is your lost backpack, Tom! I picked it up.',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
-    options: [
-      { label: 'A', text: 'Thank you so much, Mia! You saved my day.', isCorrect: true },
-      { label: 'B', text: 'Because I was running.', isCorrect: false },
-      { label: 'C', text: 'No, it wasn\'t clumsy.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_08',
-    content_id: 'chk_w33_08',
-    dialogue_context: 'Mom: You made several clumsy mistakes this morning, Tom.',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
-    options: [
-      { label: 'A', text: "I'm really sorry, Mom. I promise to be cautious.", isCorrect: true },
-      { label: 'B', text: 'While she was cooking breakfast.', isCorrect: false },
-      { label: 'C', text: 'Yes, the bus arrived late.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_09',
-    content_id: 'chk_w33_09',
-    dialogue_context: 'Mia: Shall we clean up the spilled juice together?',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
-    options: [
-      { label: 'A', text: "That's very kind of you. Let me get a cloth.", isCorrect: true },
-      { label: 'B', text: 'Because he slipped on the rug.', isCorrect: false },
-      { label: 'C', text: 'So I lost my glasses.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_10',
-    content_id: 'chk_w33_10',
-    dialogue_context: 'Mom: Will you remember to set your alarm clock tonight?',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
-    options: [
-      { label: 'A', text: "Yes, Mom. I won't wake up late tomorrow!", isCorrect: true },
-      { label: 'B', text: 'While he was fixing the clock.', isCorrect: false },
-      { label: 'C', text: 'Because it dropped on the floor.', isCorrect: false }
     ],
     answerIndex: 0
   }

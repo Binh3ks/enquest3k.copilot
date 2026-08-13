@@ -21,36 +21,36 @@ const WEEK33_GRAMMAR_DRILLS = [
     id: "st2_w33_g01",
     grammar_tag: "past_continuous_when_while",
     text_en: "Build a past continuous sentence with 'While'.",
-    word_blocks: ["While", "Tom", "was", "waking", "up", ",", "he", "broke", "his", "clock", "."],
-    distractor_blocks: ["is", "breaks", "run"]
+    word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "."],
+    distractor_blocks: ["is", "slips", "run"]
   },
   {
     id: "st2_w33_g02",
-    grammar_tag: "clauses_of_reason",
-    text_en: "Build a cause and effect sentence with 'because'.",
-    word_blocks: ["Tom", "fell", "down", "because", "the", "floor", "was", "slippery", "."],
-    distractor_blocks: ["so", "falls", "why"]
+    grammar_tag: "past_continuous_when_while",
+    text_en: "Build a sentence describing first aid treatment.",
+    word_blocks: ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "relieved", "."],
+    distractor_blocks: ["feels", "treats", "so"]
   },
   {
     id: "st2_w33_g03",
-    grammar_tag: "connectors",
-    text_en: "Build a sentence showing contrast with 'Although'.",
-    word_blocks: ["Although", "Tom", "made", "a", "mistake", ",", "Mia", "helped", "him", "."],
-    distractor_blocks: ["but", "helps", "makes"]
+    grammar_tag: "past_continuous_when_while",
+    text_en: "Build a sentence showing cause of slipping.",
+    word_blocks: ["A", "boy", "slipped", "while", "he", "was", "running", "fast", "on", "the", "wet", "floor", "."],
+    distractor_blocks: ["runs", "is", "slowly"]
   },
   {
     id: "st2_w33_g04",
     grammar_tag: "past_simple_irregular",
-    text_en: "Build a past narrative sentence with 'lost'.",
-    word_blocks: ["Tom", "lost", "his", "backpack", "on", "the", "bus", "yesterday", "."],
-    distractor_blocks: ["loses", "losing", "find"]
+    text_en: "Build an emergency action sentence.",
+    word_blocks: ["Jake", "called", "the", "school", "nurse", "immediately", "for", "medical", "help", "."],
+    distractor_blocks: ["calls", "calling", "later"]
   },
   {
     id: "st2_w33_g05",
     grammar_tag: "modal_verbs",
-    text_en: "Build a resolution sentence with 'promised'.",
-    word_blocks: ["Tom", "promised", "to", "be", "more", "careful", "next", "time", "."],
-    distractor_blocks: ["promises", "careless", "always"]
+    text_en: "Build a school rule sentence.",
+    word_blocks: ["The", "headmaster", "reminded", "all", "students", "never", "to", "run", "in", "corridors", "."],
+    distractor_blocks: ["reminds", "always", "slow"]
   }
 ];
 

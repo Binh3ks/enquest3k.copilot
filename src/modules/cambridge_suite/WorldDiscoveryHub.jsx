@@ -33,79 +33,70 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const [checkScore, setCheckScore] = useState(null);
   const [checkSubmitted, setCheckSubmitted] = useState(false);
 
-  const storyScenes = data?.story_scenes || [
+    const storyScenes = data?.story_scenes || [
     {
       scene_id: 'scene_1',
-      title_en: 'Scene 1: The Waking Mistake',
-      description_en: 'Tom reached **clumsily** for his glasses on the nightstand and accidentally **broke his alarm clock**.',
+      title_en: 'Scene 1: Walking Down the Corridor',
+      description_en: 'Jake was walking **carefully** down the school **corridor** after science class.',
       image_url: '/images/week33/webtoon_scene_1.png',
       lexical_chunks: [
-        { word: 'broke', chunk: 'broke his alarm clock', x: 45, y: 55 },
-        { word: 'clumsy', chunk: 'reached clumsily', x: 25, y: 40 }
+        { word: 'corridor', chunk: 'school corridor', x: 45, y: 55 },
+        { word: 'carefully', chunk: 'walking carefully', x: 25, y: 40 }
       ]
     },
     {
       scene_id: 'scene_2',
-      title_en: 'Scene 2: Slipping on the Tiles',
-      description_en: 'Then he rushed downstairs into the kitchen and **slipped on a wet puddle** near the table.',
+      title_en: 'Scene 2: Slipping on the Wet Floor',
+      description_en: 'A boy running fast **slipped on the wet floor** and **fell down** heavily.',
       image_url: '/images/week33/webtoon_scene_2.png',
       lexical_chunks: [
-        { word: 'slipped', chunk: 'slipped on a puddle', x: 50, y: 70 },
-        { word: 'puddle', chunk: 'a wet puddle', x: 60, y: 80 }
+        { word: 'slipped', chunk: 'slipped on wet floor', x: 50, y: 70 },
+        { word: 'fell', chunk: 'fell down heavily', x: 60, y: 80 }
       ]
     },
     {
       scene_id: 'scene_3',
-      title_en: 'Scene 3: The Spilled Juice Incident',
-      description_en: 'While trying to balance, Tom **spilled the juice** over his desk and **damaged a notebook**.',
+      title_en: 'Scene 3: Calling the School Nurse',
+      description_en: 'Jake stopped immediately and **called the school nurse** for medical help.',
       image_url: '/images/week33/webtoon_scene_3.png',
       lexical_chunks: [
-        { word: 'spilled', chunk: 'spilled the juice', x: 35, y: 50 },
-        { word: 'damaged', chunk: 'damaged a notebook', x: 55, y: 60 }
+        { word: 'nurse', chunk: 'school nurse', x: 35, y: 50 },
+        { word: 'called', chunk: 'called immediately', x: 55, y: 60 }
       ]
     },
     {
       scene_id: 'scene_4',
-      title_en: 'Scene 4: Apologizing to Mom',
-      description_en: 'Feeling very sorry for the mess, Tom **apologized to mom** and cleaned the room carefully.',
+      title_en: 'Scene 4: Applying First Aid & Bandage',
+      description_en: 'The nurse arrived quickly with a **clean bandage** and a **cold pack**.',
       image_url: '/images/week33/webtoon_scene_4.png',
       lexical_chunks: [
-        { word: 'apologized', chunk: 'apologized to mom', x: 40, y: 45 },
-        { word: 'careful', chunk: 'cleaned up carefully', x: 60, y: 65 }
+        { word: 'bandage', chunk: 'clean bandage', x: 40, y: 60 },
+        { word: 'cold_pack', chunk: 'cold pack', x: 60, y: 65 }
       ]
     },
     {
       scene_id: 'scene_5',
-      title_en: 'Scene 5: The Bus Surprise',
-      description_en: 'On his way to school, Tom **lost his backpack** on the bus! Fortunately, Mia **found his backpack** on a seat.',
+      title_en: 'Scene 5: Feeling Relieved & Praised',
+      description_en: 'Everyone **felt relieved** and the headmaster **praised Jake** for following safety rules.',
       image_url: '/images/week33/webtoon_scene_5.png',
       lexical_chunks: [
-        { word: 'lost', chunk: 'lost his backpack', x: 30, y: 50 },
-        { word: 'found', chunk: 'found his backpack', x: 70, y: 55 }
-      ]
-    },
-    {
-      scene_id: 'scene_6',
-      title_en: 'Scene 6: A Lesson Learned',
-      description_en: 'Tom felt relieved and promised to be more **cautious** and **careful** every morning.',
-      image_url: '/images/week33/webtoon_scene_6.png',
-      lexical_chunks: [
-        { word: 'cautious', chunk: 'promised to be cautious', x: 50, y: 50 }
+        { word: 'relieved', chunk: 'felt relieved', x: 45, y: 50 },
+        { word: 'praised', chunk: 'praised Jake', x: 65, y: 55 }
       ]
     }
   ];
 
-  const interactiveStory = data?.interactive_story || {
-    title: "Interactive Story: Tom's Clumsy Morning",
-    text_template: "Tom had a very bad morning today. First, he accidentally ____1____ his alarm clock because he was feeling ____2____. Then, he rushed downstairs and slipped on a wet ____3____ on the kitchen floor. To make things worse, he ____4____ his backpack on the bus! His mother told him not to worry, but Tom promised to be more ____5____ next time.",
+    const interactiveStory = data?.interactive_story || {
+    title: "Interactive Story: Corridor Safety Incident",
+    text_template: "Jake was walking carefully down the school corridor today. First, he noticed a wet puddle near the science room. Then, a boy running fast ____1____ on the slippery tiles and ____2____ heavily. ____3____, Jake stopped immediately and ____4____ the school nurse. The nurse arrived quickly with a ____5____ and treated his knee gently.",
     gaps: [
-      { id: 1, target: 'broke', hint: 'past of break' },
-      { id: 2, target: 'clumsy', hint: 'moving awkwardly' },
-      { id: 3, target: 'puddle', hint: 'small pool of liquid' },
-      { id: 4, target: 'lost', hint: 'past of lose' },
-      { id: 5, target: 'careful', hint: 'paying attention to avoid mistakes' }
+      { id: 1, target: 'slipped', hint: 'bị trượt chân' },
+      { id: 2, target: 'fell down', hint: 'ngã xuống' },
+      { id: 3, target: 'Without hesitation', hint: 'không chần chừ' },
+      { id: 4, target: 'called', hint: 'gọi y tế' },
+      { id: 5, target: 'clean bandage', hint: 'băng cá nhân' }
     ],
-    word_bank: ['broke', 'clumsy', 'puddle', 'lost', 'careful', 'spilled', 'dropped']
+    word_bank: ['slipped', 'fell down', 'Without hesitation', 'called', 'clean bandage', 'careful', 'hurt']
   };
 
   const checkQuestions = data?.check_mode_drills || [
