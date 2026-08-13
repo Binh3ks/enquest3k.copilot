@@ -12,15 +12,16 @@ import ask_ai from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
-import readingHub from './reading_hub.js';
-import listeningHub from './listening_hub.js';
-import writingHub from './writing_hub.js';
-import speakingHub from './speaking_hub.js';
+
+import { readingHubData as readingHub } from './reading_hub.js';
+import { listeningHubData as listeningHub } from './listening_hub.js';
+import { writingHubData as writingHub } from './writing_hub.js';
+import { speakingHubData as speakingHub } from './speaking_hub.js';
 
 export const weekData = {
   weekId: 35,
-  title: "Save Our Park — Environmental Action",
-  title_vi: "Bảo Vệ Công Viên — Hành Động Vì Môi Trường",
+  title: "The Best Day Ever",
+  title_vi: "Ngày Tuyệt Vời Nhất — Kể Lại Kỷ Niệm Cá Nhân",
   readingHub,
   listeningHub,
   writingHub,

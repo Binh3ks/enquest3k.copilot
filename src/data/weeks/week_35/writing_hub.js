@@ -1,13 +1,13 @@
 /**
  * Week 35 Gold Standard Data — Writing Hub
- * Theme: "Save Our Park — Environmental Action"
+ * Theme: "The Best Day Ever"
  */
 
 import writing from './writing.js';
 
 export const writingHubData = {
   week: 35,
-  theme: "Save Our Park — Environmental Action",
+  theme: "The Best Day Ever",
   writing
 };
 

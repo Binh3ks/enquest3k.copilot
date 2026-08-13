@@ -1,6 +1,6 @@
 /**
  * Week 37 Gold Standard Data — Reading Hub
- * Theme: "The Sports Day Challenge — Teamwork & Speed"
+ * Theme: "Living vs. Non-Living"
  */
 
 import read_explore from './read.js';
@@ -8,7 +8,7 @@ import vocabList from './vocab.js';
 
 export const readingHubData = {
   week: 37,
-  theme: "The Sports Day Challenge — Teamwork & Speed",
+  theme: "Living vs. Non-Living",
   cefr_level: "A2 Flyers",
   vocab: Array.isArray(vocabList) && vocabList.length >= 20 ? vocabList : Array.from({ length: 20 }, (_, i) => ({
     id: i + 1,

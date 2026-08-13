@@ -1,6 +1,6 @@
 /**
  * Week 36 Gold Standard Data — Listening Hub
- * Theme: "The Secret Cave — Adventure & Exploration"
+ * Theme: "My Adventure Book"
  */
 
 import dictation from './dictation.js';
@@ -8,7 +8,7 @@ import shadowing from './shadowing.js';
 
 export const listeningHubData = {
   week: 36,
-  theme: "The Secret Cave — Adventure & Exploration",
+  theme: "My Adventure Book",
   dictation,
   shadowing,
   audio_exercises: [

@@ -1,6 +1,6 @@
 /**
  * Week 35 Gold Standard Data — Reading Hub
- * Theme: "Save Our Park — Environmental Action"
+ * Theme: "The Best Day Ever"
  */
 
 import read_explore from './read.js';
@@ -8,7 +8,7 @@ import vocabList from './vocab.js';
 
 export const readingHubData = {
   week: 35,
-  theme: "Save Our Park — Environmental Action",
+  theme: "The Best Day Ever",
   cefr_level: "A2 Flyers",
   vocab: Array.isArray(vocabList) && vocabList.length >= 20 ? vocabList : Array.from({ length: 20 }, (_, i) => ({
     id: i + 1,

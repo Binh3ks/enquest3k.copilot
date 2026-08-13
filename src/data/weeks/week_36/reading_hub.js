@@ -1,6 +1,6 @@
 /**
  * Week 36 Gold Standard Data — Reading Hub
- * Theme: "The Secret Cave — Adventure & Exploration"
+ * Theme: "My Adventure Book"
  */
 
 import read_explore from './read.js';
@@ -8,7 +8,7 @@ import vocabList from './vocab.js';
 
 export const readingHubData = {
   week: 36,
-  theme: "The Secret Cave — Adventure & Exploration",
+  theme: "My Adventure Book",
   cefr_level: "A2 Flyers",
   vocab: Array.isArray(vocabList) && vocabList.length >= 20 ? vocabList : Array.from({ length: 20 }, (_, i) => ({
     id: i + 1,

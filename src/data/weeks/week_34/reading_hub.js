@@ -1,6 +1,6 @@
 /**
  * Week 34 Gold Standard Data — Reading Hub
- * Theme: "The Ant and the Grasshopper — Fables & Moral"
+ * Theme: "The Lion and the Mouse"
  */
 
 import read_explore from './read.js';
@@ -8,7 +8,7 @@ import vocabList from './vocab.js';
 
 export const readingHubData = {
   week: 34,
-  theme: "The Ant and the Grasshopper — Fables & Moral",
+  theme: "The Lion and the Mouse",
   cefr_level: "A2 Flyers",
   vocab: Array.isArray(vocabList) && vocabList.length >= 20 ? vocabList : Array.from({ length: 20 }, (_, i) => ({
     id: i + 1,

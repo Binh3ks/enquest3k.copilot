@@ -1,13 +1,13 @@
 /**
  * Week 36 Gold Standard Data — Writing Hub
- * Theme: "The Secret Cave — Adventure & Exploration"
+ * Theme: "My Adventure Book"
  */
 
 import writing from './writing.js';
 
 export const writingHubData = {
   week: 36,
-  theme: "The Secret Cave — Adventure & Exploration",
+  theme: "My Adventure Book",
   writing
 };
 

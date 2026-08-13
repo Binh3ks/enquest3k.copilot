@@ -294,7 +294,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               </p>
               <p className="text-xs font-mono text-indigo-700 italic">{longParagraph.phonetic_guide}</p>
             </div>
-          )})}
+          )}
 
           {/* Recording Action Button */}
           <div className="flex flex-col items-center justify-center py-4">

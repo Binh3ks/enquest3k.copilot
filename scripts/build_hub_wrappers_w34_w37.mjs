@@ -6,26 +6,26 @@ const root = process.cwd();
 const weekConfigs = [
   {
     weekId: 34,
-    theme: "The Ant and the Grasshopper — Fables & Moral",
-    theme_vi: "Con Kiến và Con Châu Chấu — Truyện Ngụ Ngôn & Bài Học",
+    theme: "The Lion and the Mouse",
+    theme_vi: "Sư Tử và Chuột — Truyện Ngụ Ngôn",
     vocabCount: 20
   },
   {
     weekId: 35,
-    theme: "Save Our Park — Environmental Action",
-    theme_vi: "Bảo Vệ Công Viên — Hành Động Vì Môi Trường",
+    theme: "The Best Day Ever",
+    theme_vi: "Ngày Tuyệt Vời Nhất — Kể Lại Kỷ Niệm Cá Nhân",
     vocabCount: 20
   },
   {
     weekId: 36,
-    theme: "The Secret Cave — Adventure & Exploration",
-    theme_vi: "Hang Động Bí Mật — Phưu Lưu & Khám Phá",
+    theme: "My Adventure Book",
+    theme_vi: "Sách Phiêu Lưu Của Em — Dự Án 3",
     vocabCount: 20
   },
   {
     weekId: 37,
-    theme: "The Sports Day Challenge — Teamwork & Speed",
-    theme_vi: "Thử Thách Ngày Hội Thể Thao — Đồng Đội & Tốc Độ",
+    theme: "Living vs. Non-Living",
+    theme_vi: "Vật Sống & Không Sống — Quy Luật Tự Nhiên CLIL Unit 6",
     vocabCount: 20
   }
 ];
@@ -147,10 +147,11 @@ import ask_ai from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
-import readingHub from './reading_hub.js';
-import listeningHub from './listening_hub.js';
-import writingHub from './writing_hub.js';
-import speakingHub from './speaking_hub.js';
+
+import { readingHubData as readingHub } from './reading_hub.js';
+import { listeningHubData as listeningHub } from './listening_hub.js';
+import { writingHubData as writingHub } from './writing_hub.js';
+import { speakingHubData as speakingHub } from './speaking_hub.js';
 
 export const weekData = {
   weekId: ${weekId},
@@ -182,6 +183,6 @@ export default weekData;
   fs.writeFileSync(path.join(weekDir, 'index.js'), indexContent, 'utf8');
 }
 
-console.log('🚀 Building Hub Wrappers for Weeks 34, 35, 36, and 37...');
+console.log('🚀 Building Hub Wrappers for Weeks 34, 35, 36, and 37 with Restored Syllabus Themes...');
 weekConfigs.forEach(buildHubWrappersForWeek);
 console.log('🎉 Successfully created Hub Wrappers for W34-W37!');

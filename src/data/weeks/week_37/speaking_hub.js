@@ -1,6 +1,6 @@
 /**
  * Week 37 Gold Standard Data — Speaking Hub
- * Theme: "The Sports Day Challenge — Teamwork & Speed"
+ * Theme: "Living vs. Non-Living"
  */
 
 import mindmap from './mindmap.js';
@@ -8,7 +8,7 @@ import ask_ai from './ask_ai.js';
 
 export const speakingHubData = {
   week: 37,
-  theme: "The Sports Day Challenge — Teamwork & Speed",
+  theme: "Living vs. Non-Living",
   mindmap,
   ask_ai
 };

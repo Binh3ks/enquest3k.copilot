@@ -12,15 +12,16 @@ import ask_ai from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
-import readingHub from './reading_hub.js';
-import listeningHub from './listening_hub.js';
-import writingHub from './writing_hub.js';
-import speakingHub from './speaking_hub.js';
+
+import { readingHubData as readingHub } from './reading_hub.js';
+import { listeningHubData as listeningHub } from './listening_hub.js';
+import { writingHubData as writingHub } from './writing_hub.js';
+import { speakingHubData as speakingHub } from './speaking_hub.js';
 
 export const weekData = {
   weekId: 37,
-  title: "The Sports Day Challenge — Teamwork & Speed",
-  title_vi: "Thử Thách Ngày Hội Thể Thao — Đồng Đội & Tốc Độ",
+  title: "Living vs. Non-Living",
+  title_vi: "Vật Sống & Không Sống — Quy Luật Tự Nhiên CLIL Unit 6",
   readingHub,
   listeningHub,
   writingHub,

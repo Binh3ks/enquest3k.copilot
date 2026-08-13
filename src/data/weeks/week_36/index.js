@@ -12,15 +12,16 @@ import ask_ai from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
-import readingHub from './reading_hub.js';
-import listeningHub from './listening_hub.js';
-import writingHub from './writing_hub.js';
-import speakingHub from './speaking_hub.js';
+
+import { readingHubData as readingHub } from './reading_hub.js';
+import { listeningHubData as listeningHub } from './listening_hub.js';
+import { writingHubData as writingHub } from './writing_hub.js';
+import { speakingHubData as speakingHub } from './speaking_hub.js';
 
 export const weekData = {
   weekId: 36,
-  title: "The Secret Cave — Adventure & Exploration",
-  title_vi: "Hang Động Bí Mật — Phưu Lưu & Khám Phá",
+  title: "My Adventure Book",
+  title_vi: "Sách Phiêu Lưu Của Em — Dự Án 3",
   readingHub,
   listeningHub,
   writingHub,
