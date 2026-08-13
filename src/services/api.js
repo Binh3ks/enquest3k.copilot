@@ -80,7 +80,9 @@ export const login = async (username, password) => {
           name: username || 'owner',
           username: username || 'owner',
           displayName: username || 'owner',
-          role: 'student',
+          role: 'super_admin',
+          plan: 'unlimited',
+          plan_expires_at: '2099-12-31T23:59:59.000Z',
           avatarUrl: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Owner'
         },
         token: 'local_owner_token'

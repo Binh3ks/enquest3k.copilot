@@ -58,9 +58,13 @@ const useUserStore = create(
           console.error('Backend login unavailable, falling back to offline client mode:', error.message || error);
           // Offline Client-Side Fallback Mode
           const fallbackUser = {
+            id: 'user_owner',
             name: email || 'owner',
+            username: email || 'owner',
             displayName: email || 'owner',
-            role: 'student',
+            role: 'super_admin',
+            plan: 'unlimited',
+            plan_expires_at: '2099-12-31T23:59:59.000Z',
             avatarUrl: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Owner'
           };
           set({ currentUser: fallbackUser, token: 'offline_token' });
@@ -92,9 +96,13 @@ const useUserStore = create(
         } catch (error) {
           console.error('Registration failed, falling back to offline client mode:', error.message || error);
           const fallbackUser = {
+            id: 'user_owner',
             name: payload.username || payload.name || 'owner',
+            username: payload.username || payload.name || 'owner',
             displayName: payload.displayName || payload.username || 'owner',
-            role: 'student',
+            role: 'super_admin',
+            plan: 'unlimited',
+            plan_expires_at: '2099-12-31T23:59:59.000Z',
             avatarUrl: payload.avatarUrl || 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Owner'
           };
           set({ currentUser: fallbackUser, token: 'offline_token' });
@@ -111,9 +119,13 @@ const useUserStore = create(
       
       guestLogin: () => {
         const guestUser = { 
+          id: 'user_owner',
           name: 'owner', 
+          username: 'owner',
           displayName: 'owner',
-          role: 'student', 
+          role: 'super_admin', 
+          plan: 'unlimited',
+          plan_expires_at: '2099-12-31T23:59:59.000Z',
           avatarUrl: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Owner',
         };
         set({ currentUser: guestUser, token: 'guest_token' });

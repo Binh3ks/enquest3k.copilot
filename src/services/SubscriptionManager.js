@@ -146,10 +146,21 @@ function isExpired(dateStr) {
 
 export function getEffectivePlan(user) {
   if (!user) return 'guest';
-  const { role, plan, plan_expires_at, trial_expires_at } = user;
+  const { role, plan, plan_expires_at, trial_expires_at, name, username } = user;
 
   if (role === 'guest') return 'guest';
-  if (role === 'super_admin' || role === 'admin') return 'unlimited';
+  
+  // Owner, Admin, and Super Admin accounts ALWAYS have unlimited lifetime access
+  if (
+    role === 'owner' ||
+    role === 'super_admin' ||
+    role === 'admin' ||
+    name === 'owner' ||
+    username === 'owner' ||
+    plan === 'unlimited' ||
+    plan === 'premium_lifetime'
+  ) return 'unlimited';
+
   // Staff roles always have full access
   if (role === 'teacher' || role === 'team_leader' || role === 'center_director') return 'unlimited';
   // Parent (Family plan holder) — treat same as paid student for content access
