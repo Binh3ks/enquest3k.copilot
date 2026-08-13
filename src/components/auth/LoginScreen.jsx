@@ -174,7 +174,7 @@ if (showForgotPassword) {
                 <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200"></div></div>
                 <div className="relative flex justify-center text-xs uppercase"><span className="bg-white px-2 text-slate-400 font-bold">Or</span></div>
               </div>
-              <button onClick={() => { setMode('register'); setError(''); }} className="w-full py-3 rounded-xl font-bold text-indigo-600 border-2 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50 transition-all flex items-center justify-center">
+              <button onClick={() => { if (onGuestLogin) { onGuestLogin(); } else { setMode('register'); setError(''); } }} className="w-full py-3 rounded-xl font-bold text-indigo-600 border-2 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50 transition-all flex items-center justify-center cursor-pointer">
                 <Compass className="w-5 h-5 mr-2" /> {t.freeTrialBtn}
               </button>
             </>
