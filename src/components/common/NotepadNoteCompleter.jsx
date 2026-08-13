@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Volume2, CheckCircle2, AlertCircle, Sparkles, HelpCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, Play, Pause, RotateCcw, Headphones } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
 
-export function NotepadNoteCompleter({ title, notes, onComplete }) {
+export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplete }) {
   const [answers, setAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const defaultNotes = notes || [
     { id: 1, label: "Incident Location", hint: "Where did it happen?", target: "school corridor", audio_text: "The incident happened down the school corridor after science class." },
@@ -16,11 +17,24 @@ export function NotepadNoteCompleter({ title, notes, onComplete }) {
     { id: 5, label: "School Rule", hint: "What rule to follow?", target: "never run", audio_text: "The headmaster reminded all students never to run in corridors." }
   ];
 
-  const handlePlayAudio = (text) => {
-    VoiceService.speak(text, 'dictation');
+  // Combine notes audio into 1 continuous dialogue audio passage if passageAudioText is not passed
+  const fullAudioPassage = passageAudioText || defaultNotes.map(n => n.audio_text).join(" ");
+
+  const handleToggleMasterAudio = () => {
+    if (isPlaying) {
+      VoiceService.stopAudio();
+      setIsPlaying(false);
+    } else {
+      setIsPlaying(true);
+      VoiceService.speak(fullAudioPassage, 'dictation');
+    }
   };
 
-
+  const handleReplayMasterAudio = () => {
+    VoiceService.stopAudio();
+    setIsPlaying(true);
+    VoiceService.speak(fullAudioPassage, 'dictation');
+  };
 
   const handleCheck = () => {
     let totalCorrect = 0;
@@ -57,7 +71,48 @@ export function NotepadNoteCompleter({ title, notes, onComplete }) {
           </span>
         </div>
 
-        {/* Notes Form List */}
+        {/* 🎧 Master Global Audio Player Bar (Cambridge Flyers Listening Part 2 Standard) */}
+        <div className="mb-6 p-4 sm:p-5 bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 text-white rounded-2xl shadow-lg border border-amber-500/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 w-full sm:w-auto">
+            <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0 border border-white/30">
+              <Headphones className="w-6 h-6 text-amber-200 animate-pulse" />
+            </div>
+            <div>
+              <span className="text-[10px] font-black text-amber-200 uppercase tracking-widest block">
+                GLOBAL DIALOGUE AUDIO
+              </span>
+              <h4 className="text-sm font-black text-white">
+                Listen to the Full Passage Dialogue
+              </h4>
+              <p className="text-[11px] font-medium text-amber-100/90 italic">
+                Listen carefully to the continuous recording and fill in the 5 notes below.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+            <button
+              onClick={handleToggleMasterAudio}
+              className={`px-5 py-3 rounded-xl font-black text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 active:scale-95 ${
+                isPlaying
+                  ? 'bg-amber-400 text-amber-950 ring-4 ring-amber-300 animate-pulse'
+                  : 'bg-white text-amber-900 hover:bg-amber-100'
+              }`}
+            >
+              {isPlaying ? <Pause size={18} className="fill-amber-950" /> : <Play size={18} className="fill-amber-900 ml-0.5" />}
+              <span>{isPlaying ? 'Pause Audio' : 'Play Full Audio 🎧'}</span>
+            </button>
+            <button
+              onClick={handleReplayMasterAudio}
+              className="p-3 bg-amber-800/80 hover:bg-amber-900 text-white rounded-xl text-xs transition border border-amber-500/50 active:scale-95"
+              title="Replay from start"
+            >
+              <RotateCcw size={18} />
+            </button>
+          </div>
+        </div>
+
+        {/* Notes Form List (NO individual speaker buttons) */}
         <div className="space-y-4 font-mono">
           {defaultNotes.map((note, index) => {
             const userAns = (answers[note.id] || '').trim().toLowerCase();
@@ -65,20 +120,16 @@ export function NotepadNoteCompleter({ title, notes, onComplete }) {
             const isCorrect = isSubmitted && (userAns === targetAns || (userAns && targetAns.includes(userAns)));
 
             return (
-              <div key={note.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 bg-white/80 rounded-2xl border border-amber-200 gap-3">
+              <div key={note.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 bg-white/90 rounded-2xl border border-amber-200 gap-3 shadow-sm">
                 <div className="flex items-center gap-3 flex-1">
-                  <button
-                    onClick={() => handlePlayAudio(note.audio_text)}
-                    className="p-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl shadow-md transition-all active:scale-95 flex-shrink-0"
-                    title="Listen to note prompt"
-                  >
-                    <Volume2 className="w-5 h-5" />
-                  </button>
+                  <span className="w-7 h-7 rounded-xl bg-amber-200 text-amber-950 font-black text-xs flex items-center justify-center shrink-0">
+                    {index + 1}
+                  </span>
                   <div>
-                    <span className="text-sm font-bold text-amber-900 font-sans">
-                      {index + 1}. {note.label}:
+                    <span className="text-sm font-black text-amber-950 font-sans">
+                      {note.label}:
                     </span>
-                    <p className="text-xs text-amber-600 font-sans italic">{note.hint}</p>
+                    <p className="text-xs text-amber-700 font-sans italic">{note.hint}</p>
                   </div>
                 </div>
 
@@ -88,8 +139,8 @@ export function NotepadNoteCompleter({ title, notes, onComplete }) {
                     disabled={isSubmitted}
                     value={answers[note.id] || ''}
                     onChange={(e) => setAnswers({ ...answers, [note.id]: e.target.value })}
-                    placeholder="Type note..."
-                    className={`px-3 py-2 rounded-xl border-2 font-bold text-sm text-slate-900 w-44 sm:w-52 focus:outline-none transition-all ${
+                    placeholder="Type answer note..."
+                    className={`px-3.5 py-2 rounded-xl border-2 font-bold text-sm text-slate-900 w-48 sm:w-56 focus:outline-none transition-all ${
                       isSubmitted
                         ? isCorrect
                           ? 'border-emerald-500 bg-emerald-50 text-emerald-950'
@@ -146,4 +197,3 @@ export function NotepadNoteCompleter({ title, notes, onComplete }) {
 }
 
 export default NotepadNoteCompleter;
-

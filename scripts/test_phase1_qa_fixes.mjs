@@ -6,15 +6,16 @@ console.log('================================================================\n'
 
 let totalPassed = 0;
 
-// Test 1: Verify NotepadNoteCompleter calls VoiceService.speak(text, 'dictation')
+// Test 1: Verify NotepadNoteCompleter Master Global Audio Player (Cambridge Flyers Listening Part 2 standard)
 const notepadCode = readFileSync('src/components/common/NotepadNoteCompleter.jsx', 'utf-8');
-if (notepadCode.includes("VoiceService.speak(text, 'dictation')")) {
-  console.log('✅ [QA PASS] Hub 2 Listening P2: Speaker button calls VoiceService.speak(text, "dictation") correctly!');
+if (notepadCode.includes('handleToggleMasterAudio') && notepadCode.includes('Play Full Audio') && !notepadCode.includes('Listen to note prompt')) {
+  console.log('✅ [QA PASS] Hub 2 Listening P2: Master Global Audio Player active & individual note speaker buttons removed (Cambridge Flyers Part 2 Standard)!');
   totalPassed++;
 } else {
-  console.error('❌ [QA FAIL] Hub 2 Listening P2: VoiceService.speak call missing or incorrect in NotepadNoteCompleter.jsx');
+  console.error('❌ [QA FAIL] Hub 2 Listening P2: Master Global Audio Player missing or individual speaker buttons still exist in NotepadNoteCompleter.jsx');
   process.exit(1);
 }
+
 
 // Test 2: Verify NovaTalkShowHub has activeRecordingPicId for independent picture recording state
 const novaCode = readFileSync('src/modules/cambridge_suite/NovaTalkShowHub.jsx', 'utf-8');
