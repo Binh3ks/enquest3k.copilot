@@ -1,145 +1,23 @@
-// Cambridge A2 Flyers vocab.js — Week 33
-export default {
-  vocab: [
-  {
-    "word": "corridor",
-    "definition_en": "a long passage in a building with doors on each side",
-    "definition_vi": "hành lang",
-    "example": "Walk carefully down the school corridor.",
-    "ipa": "/ˈkɒr.ɪ.dɔːr/"
-  },
-  {
-    "word": "slipped",
-    "definition_en": "slid accidentally and lost balance",
-    "definition_vi": "trượt ngã",
-    "example": "He slipped on the wet floor near the stairs.",
-    "ipa": "/slɪpt/"
-  },
-  {
-    "word": "bandage",
-    "definition_en": "a strip of cloth used to bind a wound or injury",
-    "definition_vi": "băng y tế",
-    "example": "The nurse applied a clean bandage to his knee.",
-    "ipa": "/ˈbæn.dɪdʒ/"
-  },
-  {
-    "word": "nurse",
-    "definition_en": "a person trained to care for sick or injured people",
-    "definition_vi": "y tá",
-    "example": "The school nurse treated the boy gently.",
-    "ipa": "/nɜːs/"
-  },
-  {
-    "word": "emergency",
-    "definition_en": "a serious, unexpected, and dangerous situation",
-    "definition_vi": "tình huống khẩn cấp",
-    "example": "Call the nurse in an emergency.",
-    "ipa": "/ɪˈmɜː.dʒən.si/"
-  },
-  {
-    "word": "cautiously",
-    "definition_en": "in a careful way to avoid danger or mistakes",
-    "definition_vi": "cẩn trọng",
-    "example": "Students walked cautiously on the wet grass.",
-    "ipa": "/ˈkɔː.ʃəs.li/"
-  },
-  {
-    "word": "warning",
-    "definition_en": "a statement or sign telling someone of potential danger",
-    "definition_vi": "cảnh báo",
-    "example": "Look at the yellow warning sign on the floor.",
-    "ipa": "/ˈwɔː.nɪŋ/"
-  },
-  {
-    "word": "bleeding",
-    "definition_en": "losing blood from the body due to injury",
-    "definition_vi": "chảy máu",
-    "example": "The cut on his knee stopped bleeding quickly.",
-    "ipa": "/ˈbliː.dɪŋ/"
-  },
-  {
-    "word": "headmaster",
-    "definition_en": "the principal teacher in charge of a school",
-    "definition_vi": "thầy hiệu trưởng",
-    "example": "The headmaster praised Jake for his fast reaction.",
-    "ipa": "/ˌhedˈmɑː.stər/"
-  },
-  {
-    "word": "relieved",
-    "definition_en": "feeling relaxed because something bad has stopped",
-    "definition_vi": "nhẹ nhõm",
-    "example": "Everyone felt relieved when the boy smiled again.",
-    "ipa": "/rɪˈliːvd/"
-  },
-  {
-    "word": "hesitation",
-    "definition_en": "the action of pausing before saying or doing something",
-    "definition_vi": "sự do dự",
-    "example": "Jake helped him without any hesitation.",
-    "ipa": "/ˌhez.ɪˈteɪ.ʃən/"
-  },
-  {
-    "word": "injure",
-    "definition_en": "to harm or damage a person physically",
-    "definition_vi": "làm bị thương",
-    "example": "Be careful so you do not injure your leg.",
-    "ipa": "/ˈɪn.dʒər/"
-  },
-  {
-    "word": "first-aid",
-    "definition_en": "help given to a sick or injured person before medical care",
-    "definition_vi": "sơ cứu",
-    "example": "The nurse brought a complete first-aid kit.",
-    "ipa": "/ˌfɜːst ˈeɪd/"
-  },
-  {
-    "word": "slippery",
-    "definition_en": "difficult to hold or stand on because it is wet or smooth",
-    "definition_vi": "trơn trượt",
-    "example": "The wet wooden floor was very slippery.",
-    "ipa": "/ˈslɪp.ər.i/"
-  },
-  {
-    "word": "stumble",
-    "definition_en": "to trip or lose balance while walking",
-    "definition_vi": "vấp ngã",
-    "example": "Watch your step so you do not stumble.",
-    "ipa": "/ˈstʌm.bəl/"
-  },
-  {
-    "word": "prevent",
-    "definition_en": "to stop something from happening or arising",
-    "definition_vi": "ngăn ngừa",
-    "example": "Walking slowly helps prevent accidents.",
-    "ipa": "/prɪˈvent/"
-  },
-  {
-    "word": "rules",
-    "definition_en": "instructions stating what is allowed or forbidden",
-    "definition_vi": "quy tắc",
-    "example": "Always obey the school safety rules.",
-    "ipa": "/ruːlz/"
-  },
-  {
-    "word": "calmly",
-    "definition_en": "in a quiet and relaxed manner without excitement",
-    "definition_vi": "bình tĩnh",
-    "example": "Jake spoke calmly to the injured student.",
-    "ipa": "/ˈkɑːm.li/"
-  },
-  {
-    "word": "responsibly",
-    "definition_en": "in a sensible and trustworthy manner",
-    "definition_vi": "có trách nhiệm",
-    "example": "Act responsibly when helping younger children.",
-    "ipa": "/rɪˈspɒn.sə.bli/"
-  },
-  {
-    "word": "attention",
-    "definition_en": "notice taken of someone or something",
-    "definition_vi": "sự chú ý",
-    "example": "Pay close attention to warning signs.",
-    "ipa": "/əˈten.ʃən/"
-  }
-]
-};
+// Week 33 Target Vocabulary List (20 Words)
+export default [
+  { id: 1, word: "corridor", definition_en: "a long passage in a building with doors on each side", definition_vi: "hành lang", audio_word: "/audio/week33/vocab_corridor.mp3", image_url: "/images/week33/vocab_corridor.jpg" },
+  { id: 2, word: "slipped", definition_en: "slid accidentally on a wet surface and lost balance", definition_vi: "bị trượt chân", audio_word: "/audio/week33/vocab_slipped.mp3", image_url: "/images/week33/vocab_slipped.jpg" },
+  { id: 3, word: "nurse", definition_en: "a person trained to care for sick or injured people", definition_vi: "y tá trường học", audio_word: "/audio/week33/vocab_nurse.mp3", image_url: "/images/week33/vocab_nurse.jpg" },
+  { id: 4, word: "bandage", definition_en: "a strip of material used to bind a wound or cut", definition_vi: "băng cá nhân / băng gạc", audio_word: "/audio/week33/vocab_bandage.mp3", image_url: "/images/week33/vocab_bandage.jpg" },
+  { id: 5, word: "relieved", definition_en: "feeling happy because something unpleasant has stopped", definition_vi: "cảm thấy nhẹ nhõm", audio_word: "/audio/week33/vocab_relieved.mp3", image_url: "/images/week33/vocab_relieved.jpg" },
+  { id: 6, word: "mistake", definition_en: "an action or decision that is wrong or incorrect", definition_vi: "lỗi lầm / sai sót", audio_word: "/audio/week33/vocab_mistake.mp3", image_url: "/images/week33/vocab_mistake.jpg" },
+  { id: 7, word: "accident", definition_en: "an unfortunate incident that happens unexpectedly", definition_vi: "tai nạn ngoài ý muốn", audio_word: "/audio/week33/vocab_accident.mp3", image_url: "/images/week33/vocab_accident.jpg" },
+  { id: 8, word: "fix", definition_en: "to repair or mend something that is broken or damaged", definition_vi: "sửa chữa / khắc phục", audio_word: "/audio/week33/vocab_fix.mp3", image_url: "/images/week33/vocab_fix.jpg" },
+  { id: 9, word: "sorry", definition_en: "feeling sadness or regret for a mistake made", definition_vi: "xin lỗi / hối hận", audio_word: "/audio/week33/vocab_sorry.mp3", image_url: "/images/week33/vocab_sorry.jpg" },
+  { id: 10, word: "careful", definition_en: "giving serious attention to avoid danger or mistakes", definition_vi: "cẩn thận", audio_word: "/audio/week33/vocab_careful.mp3", image_url: "/images/week33/vocab_careful.jpg" },
+  { id: 11, word: "clumsy", definition_en: "moving or acting awkwardly without grace or balance", definition_vi: "vụng về / hậu đậu", audio_word: "/audio/week33/vocab_clumsy.mp3", image_url: "/images/week33/vocab_clumsy.jpg" },
+  { id: 12, word: "arm", definition_en: "the upper limb of the human body from shoulder to hand", definition_vi: "cánh tay", audio_word: "/audio/week33/vocab_arm.mp3", image_url: "/images/week33/vocab_arm.jpg" },
+  { id: 13, word: "knee", definition_en: "the joint between the thigh and lower leg", definition_vi: "đầu gối", audio_word: "/audio/week33/vocab_knee.mp3", image_url: "/images/week33/vocab_knee.jpg" },
+  { id: 14, word: "leg", definition_en: "each of the limbs on which a person walks and stands", definition_vi: "chân", audio_word: "/audio/week33/vocab_leg.mp3", image_url: "/images/week33/vocab_leg.jpg" },
+  { id: 15, word: "head", definition_en: "the upper part of the body containing brain and eyes", definition_vi: "đầu", audio_word: "/audio/week33/vocab_head.mp3", image_url: "/images/week33/vocab_head.jpg" },
+  { id: 16, word: "cold_pack", definition_en: "a gel bag chilled in ice used to reduce swelling", definition_vi: "túi chườm lạnh", audio_word: "/audio/week33/vocab_cold_pack.mp3", image_url: "/images/week33/vocab_cold_pack.jpg" },
+  { id: 17, word: "recover", definition_en: "to return to normal health or strength after injury", definition_vi: "hồi phục", audio_word: "/audio/week33/vocab_recover.mp3", image_url: "/images/week33/vocab_recover.jpg" },
+  { id: 18, word: "explain", definition_en: "to make something clear by giving detail and reason", definition_vi: "giải thích", audio_word: "/audio/week33/vocab_explain.mp3", image_url: "/images/week33/vocab_explain.jpg" },
+  { id: 19, word: "lesson", definition_en: "a period of learning or a moral learned from experience", definition_vi: "bài học rút ra", audio_word: "/audio/week33/vocab_lesson.mp3", image_url: "/images/week33/vocab_lesson.jpg" },
+  { id: 20, word: "terrible", definition_en: "extremely bad, serious, or distressing", definition_vi: "tồi tệ / khủng khiếp", audio_word: "/audio/week33/vocab_terrible.mp3", image_url: "/images/week33/vocab_terrible.jpg" }
+];

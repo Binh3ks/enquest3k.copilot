@@ -75,7 +75,7 @@ async function runMilestone5Tests() {
     adapter: OpenClozeAdapter,
     rawData: week33Data.readingHub.interactive_story,
     weekData: week33Data,
-    userAnswers: { 1: 'accidentally knocked over', 2: 'rushed downstairs', 3: 'slipped on a wet puddle', 4: 'to make things worse', 5: 'apologized to his mother' },
+    userAnswers: Object.fromEntries(week33Data.readingHub.interactive_story.gaps.map(g => [g.id, g.target])),
     learnerId: 'learner_milestone_5_unique',
     previousScorePct: 40
   });

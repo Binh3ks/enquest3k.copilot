@@ -1,20 +1,45 @@
-// Week 33 writing.js
+// Week 33 Writing Studio Data
 export default {
-  title: "Corridor Safety & School Care",
-  prompt_en: "Write a short story about school corridor safety and helping friends.",
-  prompt_vi: "Viết một câu chuyện ngắn về an toàn hành lang và giúp đỡ bạn bè.",
+  title: "Corridor Incident & Safety Report",
+  prompt_en: "Write a 3-paragraph story script (35-50 words) about an accident in the school corridor and how first aid was applied.",
+  prompt_vi: "Viết kịch bản câu chuyện 3 đoạn (35-50 từ) về một sự cố ở hành lang trường học và cách sơ cứu được thực hiện.",
   min_sentences: 5,
   min_words: 35,
-  model_sentence: "Write about Corridor Safety & School Care using key vocabulary: corridor, slipped, nurse.",
+  max_words: 50,
+  model_sentence: "While Jake was walking down the school corridor, a boy slipped on the wet floor and hurt his knee. Jake called the nurse immediately. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved.",
   sentence_frames: [
-    {
-      template: "This lesson is about Corridor Safety & School Care and ___.",
-      answers: ["corridor"]
-    }
+    { template: "While Jake was walking in the ___, a boy slipped.", answers: ["corridor"] },
+    { template: "The boy fell down and hurt his ___.", answers: ["knee"] },
+    { template: "Jake called the school ___ immediately.", answers: ["nurse"] },
+    { template: "The nurse brought a clean ___ and cold pack.", answers: ["bandage"] },
+    { template: "Everyone felt ___ and praised Jake.", answers: ["relieved"] }
   ],
+  picture_mode: {
+    type: "picture",
+    image_url: "/images/week33/writing_panel_1.png",
+    panels: [
+      { id: 1, image_url: "/images/week33/writing_panel_1.png", caption: "Panel 1: Running in corridor" },
+      { id: 2, image_url: "/images/week33/writing_panel_2.png", caption: "Panel 2: Slipping on wet floor" },
+      { id: 3, image_url: "/images/week33/writing_panel_3.png", caption: "Panel 3: Nurse applying bandage" }
+    ],
+    word_bank: ["corridor", "slipped", "fell", "nurse", "bandage", "relieved", "careful"],
+    sentence_frames: [
+      "While a student was running in the corridor, he...",
+      "Suddenly, he slipped on the wet floor and...",
+      "Jake called the school nurse, who arrived with..."
+    ],
+    writing_prompts: {
+      en: "Describe what happened in the 3 picture panels using past continuous and past simple verbs.",
+      vi: "Mô tả điều xảy ra trong 3 bức tranh dùng động từ quá khứ tiếp diễn và quá khứ đơn."
+    }
+  },
   hints: {
     words: [
-      { word: "corridor", meaning_vi: "corridor" }
+      { word: "corridor", meaning_vi: "hành lang" },
+      { word: "slipped", meaning_vi: "trượt chân" },
+      { word: "nurse", meaning_vi: "y tá" },
+      { word: "bandage", meaning_vi: "băng cá nhân" },
+      { word: "relieved", meaning_vi: "nhẹ nhõm" }
     ]
   }
 };
