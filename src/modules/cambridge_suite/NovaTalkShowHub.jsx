@@ -66,17 +66,14 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [picStoryScore, setPicStoryScore] = useState(null);
   const [activeRecordingPicId, setActiveRecordingPicId] = useState(null);
 
-  // Auto-play Examiner Introduction audio when entering 4-Picture Story Continuation mode
-  useEffect(() => {
-    if (subMode === 'pic_story') {
-      const timer = setTimeout(() => {
-        speakNovaQuestion(pictureStoryData.intro_audio_text);
-      }, 400);
-      return () => clearTimeout(timer);
-    }
-  }, [subMode]);
+  const handleSelectPicStorySubmode = () => {
+    setSubMode('pic_story');
+    // Direct User Gesture audio trigger — unblocks browser Autoplay Policy 100%
+    speakNovaQuestion(pictureStoryData.intro_audio_text);
+  };
 
   const handleRecordPicture = (picId) => {
+
     if (activeRecordingPicId === picId && isMicListening) {
       handleMicClick();
       setActiveRecordingPicId(null);
@@ -358,13 +355,14 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             <Radio size={14} /> Reverse Role Cue-Card (S P2)
           </button>
           <button
-            onClick={() => setSubMode('story_picture')}
+            onClick={handleSelectPicStorySubmode}
             className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'story_picture' ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-600 hover:bg-slate-200'
+              (subMode === 'pic_story' || subMode === 'story_picture') ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300' : 'text-slate-600 hover:bg-slate-200'
             }`}
           >
             <BookOpen size={14} /> 4-Picture Story (S P3)
           </button>
+
         </div>
       </div>
 
@@ -694,19 +692,25 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               </span>
             </div>
 
-            {/* Picture 1 Intro Audio Card */}
-            <div className="p-4 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-between gap-4">
-              <div className="space-y-1">
-                <span className="text-[10px] font-black text-indigo-700 uppercase">Examiner Introduction (Picture 1):</span>
-                <p className="text-xs font-bold text-indigo-950">{pictureStoryData.intro_audio_text}</p>
+            {/* Picture 1 Intro Audio Card / Prominent Hero Start Mission Banner */}
+            <div className="p-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-indigo-300">
+              <div className="space-y-1 text-center sm:text-left">
+                <span className="px-2.5 py-0.5 bg-white/20 text-white rounded-md text-[10px] font-black uppercase tracking-wider">
+                  Examiner Introduction (Picture 1)
+                </span>
+                <p className="text-sm sm:text-base font-black text-white leading-snug">
+                  "{pictureStoryData.intro_audio_text}"
+                </p>
               </div>
               <button
                 onClick={() => speakNovaQuestion(pictureStoryData.intro_audio_text)}
-                className="p-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-md flex items-center gap-1.5 shrink-0"
+                className="px-6 py-3.5 bg-white hover:bg-indigo-50 text-indigo-900 rounded-2xl text-xs sm:text-sm font-black shadow-lg transition flex items-center justify-center gap-2 shrink-0 active:scale-95 ring-4 ring-white/30"
               >
-                <Volume2 size={16} /> Play Intro
+                <Volume2 size={20} className="text-indigo-600 animate-bounce" />
+                <span>🚀 Start Mission: Listen to Story Intro 🎧</span>
               </button>
             </div>
+
 
             {/* 4 Pictures Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

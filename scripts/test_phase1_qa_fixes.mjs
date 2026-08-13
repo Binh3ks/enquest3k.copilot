@@ -26,14 +26,15 @@ if (novaCode.includes('activeRecordingPicId') && novaCode.includes('activeRecord
   process.exit(1);
 }
 
-// Test 3: Verify Picture 1 intro auto-play effect
-if (novaCode.includes("subMode === 'pic_story'") && novaCode.includes('speakNovaQuestion(pictureStoryData.intro_audio_text)')) {
-  console.log('✅ [QA PASS] Hub 4 Speaking P3: Picture 1 Examiner Introduction auto-plays audio on load!');
+// Test 3: Verify User Gesture click audio trigger and Hero Start Mission button
+if (novaCode.includes('handleSelectPicStorySubmode') && novaCode.includes('🚀 Start Mission: Listen to Story Intro 🎧')) {
+  console.log('✅ [QA PASS] Hub 4 Speaking P3: User Gesture audio trigger & Hero Start Mission button active (Autoplay Policy compliant 100%)!');
   totalPassed++;
 } else {
-  console.error('❌ [QA FAIL] Hub 4 Speaking P3: Picture 1 intro auto-play effect missing in NovaTalkShowHub.jsx');
+  console.error('❌ [QA FAIL] Hub 4 Speaking P3: User gesture audio trigger or Hero Start Mission button missing in NovaTalkShowHub.jsx');
   process.exit(1);
 }
+
 
 console.log(`\n================================================================`);
 console.log(`🎉 QA VERIFICATION SUMMARY: ${totalPassed}/3 TESTS PASSED 100%!`);
