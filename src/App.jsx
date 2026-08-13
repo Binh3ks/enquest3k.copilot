@@ -756,6 +756,40 @@ const MainLayout = () => {
             {/* 👋 Welcome back card — compact corner float, no layout shift */}
             {currentUser?.role !== 'guest' && showWelcomeCard && (() => {
               const firstName = currentUser?.display_name || (currentUser?.name || currentUser?.username || '').split(' ').pop() || '';
+              const isV2Hub = weekId >= 33;
+              if (isV2Hub) {
+                const HUBS = [
+                  { hubId: 1, title: 'Hub 1: World Discovery', link: `/week/${weekId}/hub/1`, keys: ['read_explore', 'explore', 'new_words', 'hub1', '1'] },
+                  { hubId: 2, title: 'Hub 2: Arena & Listening', link: `/week/${weekId}/hub/2`, keys: ['grammar', 'logic_lab', 'word_match', 'game_hub', 'hub2', '2'] },
+                  { hubId: 3, title: 'Hub 3: Writing Studio', link: `/week/${weekId}/hub/3`, keys: ['writing', 'dictation', 'hub3', '3'] },
+                  { hubId: 4, title: 'Hub 4: Nova Talk Show', link: `/week/${weekId}/hub/4`, keys: ['shadowing', 'ask_ai', 'mindmap_speaking', 'hub4', '4'] }
+                ];
+                const completedHubs = HUBS.filter(h => h.keys.some(k => (weekProgress[k] || 0) >= 100)).length;
+                const nextHub = HUBS.find(h => !h.keys.some(k => (weekProgress[k] || 0) >= 100)) || HUBS[0];
+
+                return (
+                  <div className="absolute top-4 left-4 z-30 w-72 rounded-2xl overflow-hidden shadow-xl" onClick={e => e.stopPropagation()}>
+                    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-3">
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <span className="text-white font-black text-[13px] leading-tight">👋 Welcome back, {firstName}!</span>
+                        <button onClick={() => setShowWelcomeCard(false)} className="text-white/70 hover:text-white text-lg font-bold leading-none flex-shrink-0 mt-0.5">×</button>
+                      </div>
+                      <p className="text-white/90 font-bold text-[11px]">Week {weekId} · {completedHubs}/4 Hubs done</p>
+                      {nextHub && <p className="text-white/80 text-[11px] mt-0.5">Next: <b className="text-white">{nextHub.title}</b></p>}
+                      {nextHub && (
+                        <Link
+                          to={nextHub.link}
+                          onClick={() => setShowWelcomeCard(false)}
+                          className="mt-2 w-full block text-center px-4 py-1.5 bg-white text-indigo-700 text-[11px] font-black rounded-lg hover:bg-indigo-50 transition-colors shadow-sm"
+                        >
+                          Start →
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                );
+              }
+
               const completedCount = STATIONS.filter(s => (weekProgress[s.key] || 0) >= 50).length;
               const nextStation = STATIONS.find(s => (weekProgress[s.key] || 0) < 50);
               return (
@@ -780,6 +814,7 @@ const MainLayout = () => {
                 </div>
               );
             })()}
+
 
             {/* ✨ Nova CTA removed — button is now in the header */}
 
@@ -919,18 +954,20 @@ const MainLayout = () => {
               {/* Week 33+ Gold Standard 4-Hub Router vs Legacy Modules */}
               {weekId >= 33 ? (
                 (() => {
-                  if (['read_explore', 'explore', 'new_words'].includes(tabKey)) {
+                  const tk = String(tabKey || '');
+                  if (['hub1', '1', 'read_explore', 'explore', 'new_words'].includes(tk)) {
                     return <WorldDiscoveryHub data={weekData?.readingHub || weekData?.stations?.read_explore} weekNumber={weekId} />;
                   }
-                  if (['grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tabKey)) {
+                  if (['hub2', '2', 'grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tk)) {
                     return <ArenaHub weekNumber={weekId} />;
                   }
-                  if (['writing', 'dictation'].includes(tabKey)) {
+                  if (['hub3', '3', 'writing', 'dictation'].includes(tk)) {
                     return <WritingStudioHub data={weekData?.writingHub} weekNumber={weekId} />;
                   }
-                  if (['shadowing', 'ask_ai', 'mindmap_speaking'].includes(tabKey)) {
+                  if (['hub4', '4', 'shadowing', 'ask_ai', 'mindmap_speaking'].includes(tk)) {
                     return <NovaTalkShowHub data={weekData?.speakingHub} weekNumber={weekId} />;
                   }
+
                   return (
                     <CurrentModule 
                       key={`${weekId}-${tabKey}-${learningMode}`} 

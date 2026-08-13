@@ -1,7 +1,9 @@
+import './utils/schemaMigration';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+
 import FloatingUpgradeWrapper from './components/subscription/FloatingUpgradeWrapper';
 import SuperAdminLauncher from './components/subscription/SuperAdminLauncher';
 import TeacherLauncher from './components/teacher/TeacherLauncher';

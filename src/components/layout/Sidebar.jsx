@@ -131,7 +131,18 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
     {/* Continue Learning Card - Master Prompt V23 Section 0.1.1.D */}
     {hasProgress && (
       <div 
-        onClick={() => navigate(`/week/${lastWeek}/${lastStation}`)}
+        onClick={() => {
+          if (lastWeek >= 33) {
+            let targetHub = 1;
+            if (['grammar', 'logic_lab', 'word_match', 'game_hub', 'hub2', '2'].includes(lastStation)) targetHub = 2;
+            else if (['writing', 'dictation', 'hub3', '3'].includes(lastStation)) targetHub = 3;
+            else if (['shadowing', 'ask_ai', 'mindmap_speaking', 'hub4', '4'].includes(lastStation)) targetHub = 4;
+            navigate(`/week/${lastWeek}/hub/${targetHub}`);
+          } else {
+            navigate(`/week/${lastWeek}/${lastStation}`);
+          }
+        }}
+
         className="mx-3 mb-3 p-3.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-all group"
       >
         <div className="text-xs font-black text-white/80 uppercase tracking-widest mb-2">
