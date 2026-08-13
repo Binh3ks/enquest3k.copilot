@@ -17,8 +17,9 @@ export function NotepadNoteCompleter({ title, notes, onComplete }) {
   ];
 
   const handlePlayAudio = (text) => {
-    VoiceService.speakText(text, { voice: 'en-US-Neural2-D', station: 'dictation' });
+    VoiceService.speak(text, 'dictation');
   };
+
 
 
   const handleCheck = () => {

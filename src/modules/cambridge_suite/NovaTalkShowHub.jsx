@@ -64,6 +64,28 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [picStoryRecording, setPicStoryRecording] = useState(false);
   const [picStoryFeedback, setPicStoryFeedback] = useState({});
   const [picStoryScore, setPicStoryScore] = useState(null);
+  const [activeRecordingPicId, setActiveRecordingPicId] = useState(null);
+
+  // Auto-play Examiner Introduction audio when entering 4-Picture Story Continuation mode
+  useEffect(() => {
+    if (subMode === 'pic_story') {
+      const timer = setTimeout(() => {
+        speakNovaQuestion(pictureStoryData.intro_audio_text);
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+  }, [subMode]);
+
+  const handleRecordPicture = (picId) => {
+    if (activeRecordingPicId === picId && isMicListening) {
+      handleMicClick();
+      setActiveRecordingPicId(null);
+    } else {
+      if (!isMicListening) handleMicClick();
+      setActiveRecordingPicId(picId);
+    }
+  };
+
 
 
   const sentencesList = data?.shadowing_sentences || [
@@ -702,15 +724,18 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                   {!pic.is_intro ? (
                     <div className="pt-1 flex flex-col gap-1.5 mt-auto">
                       <button
-                        onClick={handleMicClick}
+                        onClick={() => handleRecordPicture(pic.id)}
                         className={`w-full py-2 rounded-xl text-xs font-black transition flex items-center justify-center gap-1 shadow-sm ${
-                          isMicListening ? 'bg-red-600 text-white animate-pulse' : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                          isMicListening && activeRecordingPicId === pic.id
+                            ? 'bg-red-600 text-white animate-pulse ring-2 ring-red-300'
+                            : 'bg-indigo-600 text-white hover:bg-indigo-700'
                         }`}
                       >
-                        <Mic size={14} /> Record P{pic.id}
+                        <Mic size={14} /> {isMicListening && activeRecordingPicId === pic.id ? `Recording P${pic.id}...` : `Record P${pic.id}`}
                       </button>
                     </div>
                   ) : (
+
                     <span className="text-[10px] font-bold text-indigo-600 italic mt-auto">Intro Story Picture</span>
                   )}
                 </div>
