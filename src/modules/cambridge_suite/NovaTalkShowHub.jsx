@@ -692,24 +692,50 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               </span>
             </div>
 
-            {/* Picture 1 Intro Audio Card / Prominent Hero Start Mission Banner */}
-            <div className="p-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-indigo-300">
-              <div className="space-y-1 text-center sm:text-left">
-                <span className="px-2.5 py-0.5 bg-white/20 text-white rounded-md text-[10px] font-black uppercase tracking-wider">
-                  Examiner Introduction (Picture 1)
-                </span>
-                <p className="text-sm sm:text-base font-black text-white leading-snug">
-                  "{pictureStoryData.intro_audio_text}"
-                </p>
+            {/* Gamified Nova Mascot Speech Bubble & Story Intro Hero Banner */}
+            <div className="p-5 sm:p-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-3xl text-white shadow-xl border-2 border-indigo-200/50 flex flex-col md:flex-row items-center gap-5 relative overflow-hidden">
+              {/* Mascot Nova Avatar Badge */}
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/20 p-2 shrink-0 backdrop-blur-md border border-white/30 shadow-inner flex items-center justify-center">
+                <span className="text-3xl sm:text-4xl animate-bounce">🤖</span>
               </div>
+
+              {/* Instructions & Story Quote Context */}
+              <div className="space-y-2 flex-1 text-center md:text-left">
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span className="px-2.5 py-0.5 bg-amber-400 text-amber-950 font-black text-[11px] rounded-full uppercase tracking-wider shadow-sm">
+                    ✨ Mascot Nova's Story Challenge
+                  </span>
+                  <span className="px-2.5 py-0.5 bg-white/20 text-white font-bold text-[10px] rounded-full">
+                    Picture 1 Intro
+                  </span>
+                </div>
+
+                <p className="text-xs sm:text-sm font-bold text-white/95 leading-relaxed">
+                  "Nova has a story for you! Click the button below to listen to the beginning. Then, use your mic to tell me what happens next in pictures 2, 3, and 4!"
+                </p>
+
+                <p className="text-[11px] font-medium text-white/80 italic">
+                  (Nova có một câu chuyện cho bạn! Hãy bấm nút bên dưới để nghe phần mở đầu. Sau đó, dùng micro để kể xem chuyện gì xảy ra tiếp theo ở tranh 2, 3 và 4 nhé!)
+                </p>
+
+                <div className="pt-2 border-t border-white/20 mt-2">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-amber-200">Picture 1 Story Beginning:</span>
+                  <p className="text-xs sm:text-sm font-black text-white italic">
+                    "{pictureStoryData.intro_audio_text}"
+                  </p>
+                </div>
+              </div>
+
+              {/* Prominent Action Button */}
               <button
                 onClick={() => speakNovaQuestion(pictureStoryData.intro_audio_text)}
-                className="px-6 py-3.5 bg-white hover:bg-indigo-50 text-indigo-900 rounded-2xl text-xs sm:text-sm font-black shadow-lg transition flex items-center justify-center gap-2 shrink-0 active:scale-95 ring-4 ring-white/30"
+                className="w-full md:w-auto px-6 py-4 bg-white hover:bg-amber-50 text-indigo-950 rounded-2xl text-xs sm:text-sm font-black shadow-2xl transition-all active:scale-95 flex items-center justify-center gap-2.5 shrink-0 ring-4 ring-white/40 hover:ring-amber-300 group"
               >
-                <Volume2 size={20} className="text-indigo-600 animate-bounce" />
-                <span>🚀 Start Mission: Listen to Story Intro 🎧</span>
+                <Volume2 size={22} className="text-indigo-600 group-hover:scale-110 transition-transform" />
+                <span className="tracking-tight">🚀 Start Mission: Listen to Story Intro 🎧</span>
               </button>
             </div>
+
 
 
             {/* 4 Pictures Grid */}
