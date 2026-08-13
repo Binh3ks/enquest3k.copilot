@@ -49,6 +49,7 @@ export const CUE_CARD_PROMPTS = [
     target_prompt_vi: "Hỏi Nova xem Jake đang đi đâu sau giờ học khoa học.",
     question_word: "Where",
     word_bank: ["Where", "was", "Jake", "walking", "after", "science", "class", "?"],
+    scrambled_words: ["science", "walking", "Where", "class", "Jake", "after", "was", "?"],
     acceptable_questions: [
       "Where was Jake walking after science class?",
       "Where was Jake walking?",
@@ -62,6 +63,7 @@ export const CUE_CARD_PROMPTS = [
     target_prompt_vi: "Hỏi Nova tại sao cậu bé đang chạy lại bị trượt chân.",
     question_word: "Why",
     word_bank: ["Why", "did", "the", "running", "boy", "slip", "on", "the", "floor", "?"],
+    scrambled_words: ["slip", "Why", "floor", "running", "did", "boy", "on", "the", "the", "?"],
     acceptable_questions: [
       "Why did the running boy slip?",
       "Why did the boy slip on the floor?",
@@ -75,6 +77,7 @@ export const CUE_CARD_PROMPTS = [
     target_prompt_vi: "Hỏi Nova xem Jake đã gọi ai ngay lập tức để giúp đỡ.",
     question_word: "Who",
     word_bank: ["Who", "did", "Jake", "call", "immediately", "for", "help", "?"],
+    scrambled_words: ["help", "immediately", "Who", "call", "Jake", "for", "did", "?"],
     acceptable_questions: [
       "Who did Jake call for help?",
       "Who did Jake call immediately?",
@@ -88,6 +91,7 @@ export const CUE_CARD_PROMPTS = [
     target_prompt_vi: "Hỏi Nova xem cô y tá đã dán/chườm cái gì lên vết thương.",
     question_word: "What",
     word_bank: ["What", "did", "the", "school", "nurse", "apply", "to", "his", "knee", "?"],
+    scrambled_words: ["apply", "What", "nurse", "knee", "school", "his", "did", "to", "the", "?"],
     acceptable_questions: [
       "What did the school nurse apply to his knee?",
       "What did the nurse apply?",
@@ -98,15 +102,16 @@ export const CUE_CARD_PROMPTS = [
   {
     cue_id: "cue_5",
     target_prompt_en: "Ask Nova why the headmaster praised Jake.",
-    target_prompt_vi: "Hỏi Nova tại sao thầy hiệu trưởng lại tuyên dương Jake.",
+    target_prompt_vi: "Hỏi Nova tại sao thầy hiệu trưởng lại khen ngợi Jake.",
     question_word: "Why",
     word_bank: ["Why", "did", "the", "headmaster", "praise", "Jake", "?"],
+    scrambled_words: ["praise", "headmaster", "Why", "Jake", "did", "the", "?"],
     acceptable_questions: [
       "Why did the headmaster praise Jake?",
-      "Why did he praise Jake?",
+      "Why did the principal praise Jake?",
       "Why was Jake praised?"
     ],
-    nova_answer_audio_text: "The headmaster praised Jake for following safety rules and acting responsibly."
+    nova_answer_audio_text: "The headmaster praised Jake for staying calm and calling the nurse quickly."
   }
 ];
 

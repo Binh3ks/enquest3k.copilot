@@ -88,9 +88,10 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
     } catch (e) {
       console.error("Failed to check SRS completion status:", e);
     }
-    navigate(`/week/${targetWeek}/read_explore`);
+    navigate(targetWeek >= 33 ? `/week/${targetWeek}/hub/1` : `/week/${targetWeek}/read_explore`);
     if (typeof setIsSidebarOpen === 'function') setIsSidebarOpen(false);
   };
+
 
   // Shadowing collapsed strip — auto-hides full sidebar to a thin tab on
   // the left edge. User clicks the chevron to re-open.

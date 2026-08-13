@@ -197,7 +197,9 @@ const App = () => {
       <Route path="/dashboard" element={<ParentDashboard />} />
       <Route path="/dashboard/:weekId" element={<ParentDashboard />} />
       <Route path="/parent/children" element={<ParentChildrenPage />} />
+      <Route path="/week/:weekId/hub/:hubId" element={<MainLayout />} />
       <Route path="/week/:weekId/:tabKey" element={<MainLayout />} />
+
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
       <Route path="/collection" element={<CollectionBoard />} />
       <Route path="/word-treasury" element={<WordTreasury />} />
@@ -260,8 +262,27 @@ const MainLayout = () => {
   const { isWidgetOpen } = useTutorStore();
   
   const params = useParams();
+  const navigate = useNavigate();
   const weekId = parseInt(params.weekId || 1);
-  const tabKey = params.tabKey || 'read_explore';
+  const hubId = params.hubId;
+  
+  let tabKey = params.tabKey || 'read_explore';
+  if (hubId) {
+    tabKey = `hub${hubId}`;
+  }
+
+  // Redirect legacy 14-station URLs to clean /week/:weekId/hub/:hubId for Week 33+
+  useEffect(() => {
+    if (weekId >= 33 && !hubId) {
+      let targetHub = 1;
+      if (['read_explore', 'explore', 'new_words'].includes(tabKey)) targetHub = 1;
+      else if (['grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tabKey)) targetHub = 2;
+      else if (['writing', 'dictation'].includes(tabKey)) targetHub = 3;
+      else if (['shadowing', 'ask_ai', 'mindmap_speaking'].includes(tabKey)) targetHub = 4;
+      navigate(`/week/${weekId}/hub/${targetHub}`, { replace: true });
+    }
+  }, [weekId, hubId, tabKey, navigate]);
+
   
   const { data: weekData, loading: isWeekDataLoading, error: weekDataError } = useFetchWeekData(weekId, learningMode);
   const stationData = useStationData(tabKey, weekData);
@@ -804,15 +825,16 @@ const MainLayout = () => {
                   }
                 ].map((h) => {
                   const isHubActive = 
-                    (h.hubId === 1 && ['read_explore', 'explore', 'new_words'].includes(tabKey)) ||
-                    (h.hubId === 2 && ['grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tabKey)) ||
-                    (h.hubId === 3 && ['writing', 'dictation'].includes(tabKey)) ||
-                    (h.hubId === 4 && ['shadowing', 'ask_ai', 'mindmap_speaking'].includes(tabKey));
+                    String(hubId) === String(h.hubId) ||
+                    (h.hubId === 1 && ['read_explore', 'explore', 'new_words', 'hub1', '1'].includes(tabKey)) ||
+                    (h.hubId === 2 && ['grammar', 'logic_lab', 'word_match', 'game_hub', 'hub2', '2'].includes(tabKey)) ||
+                    (h.hubId === 3 && ['writing', 'dictation', 'hub3', '3'].includes(tabKey)) ||
+                    (h.hubId === 4 && ['shadowing', 'ask_ai', 'mindmap_speaking', 'hub4', '4'].includes(tabKey));
 
                   return (
                     <Link
                       key={h.hubId}
-                      to={`/week/${weekId}/${h.key}`}
+                      to={`/week/${weekId}/hub/${h.hubId}`}
                       onClick={() => setShowWelcomeCard(false)}
                       className={`flex-1 min-w-[180px] flex items-center justify-center gap-2.5 px-4 py-3 rounded-2xl transition-all border-2 shrink-0 ${
                         isHubActive
@@ -827,6 +849,7 @@ const MainLayout = () => {
                     </Link>
                   );
                 })}
+
               </div>
             ) : (
               (() => {

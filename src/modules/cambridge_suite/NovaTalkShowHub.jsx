@@ -57,12 +57,14 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [cueFeedback, setCueFeedback] = useState(null);
   const [cueScore, setCueScore] = useState(null);
   const [cueCompleted, setCueCompleted] = useState(false);
+  const [cueFailedAttempts, setCueFailedAttempts] = useState(0);
 
   // Cambridge Speaking Part 3: 4-Picture Story Continuation State
   const [picStoryStep, setPicStoryStep] = useState(1);
   const [picStoryRecording, setPicStoryRecording] = useState(false);
   const [picStoryFeedback, setPicStoryFeedback] = useState({});
   const [picStoryScore, setPicStoryScore] = useState(null);
+
 
   const sentencesList = data?.shadowing_sentences || [
     { id: "sh_01", speaker: "Jake", text: "Jake was walking **carefully down the school corridor** after science class." },
@@ -135,6 +137,12 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     const hasQuestionMark = userQuestion.includes('?') || userQuestion.length > 10;
     
     const isCorrectSyntax = validStart && hasQuestionMark;
+
+    if (!isCorrectSyntax) {
+      setCueFailedAttempts(prev => prev + 1);
+    } else {
+      setCueFailedAttempts(0);
+    }
     
     setCueFeedback({
       isCorrectSyntax,
@@ -145,24 +153,28 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     // Nova speaks speech response
     speakNovaQuestion(currentCue.nova_answer_audio_text);
 
-    if (cueCardIdx < cueCardPrompts.length - 1) {
-      setTimeout(() => {
-        setCueCardIdx(prev => prev + 1);
-        setCueQuestionInput('');
-        setCueFeedback(null);
-      }, 4000);
-    } else {
-      setCueCompleted(true);
-      await learnerProgressService.logAttempt({
-        learnerId,
-        contentId: `w${weekNumber}_speaking_p2_cue_card`,
-        mode: 'learn',
-        result: 'correct',
-        score: 100,
-        timeSpentSeconds: 60
-      });
+    if (isCorrectSyntax) {
+      if (cueCardIdx < cueCardPrompts.length - 1) {
+        setTimeout(() => {
+          setCueCardIdx(prev => prev + 1);
+          setCueQuestionInput('');
+          setCueFeedback(null);
+          setCueFailedAttempts(0);
+        }, 4000);
+      } else {
+        setCueCompleted(true);
+        await learnerProgressService.logAttempt({
+          learnerId,
+          contentId: `w${weekNumber}_speaking_p2_cue_card`,
+          mode: 'learn',
+          result: 'correct',
+          score: 100,
+          timeSpentSeconds: 60
+        });
+      }
     }
   };
+
 
 
 
@@ -547,21 +559,34 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                   )}
                 </div>
 
-                {/* Word Bank Scaffolding Pills */}
-                <div className="p-4 bg-amber-100/60 rounded-2xl border border-amber-200 space-y-2">
-                  <span className="text-xs font-black text-amber-800 uppercase tracking-wider">Word Bank Pills (Tap to insert):</span>
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {cueCardPrompts[cueCardIdx].word_bank.map((w, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCueQuestionInput((prev) => (prev ? `${prev} ${w}` : w))}
-                        className="px-3.5 py-1.5 bg-white hover:bg-amber-200 text-amber-950 border border-amber-300 rounded-xl text-xs font-black shadow-sm transition active:scale-95"
-                      >
-                        {w}
-                      </button>
-                    ))}
+                {/* Progressive Scaffolding Pills */}
+                {cueFailedAttempts >= 2 ? (
+                  <div className="p-4 bg-amber-100/80 rounded-2xl border-2 border-amber-300 space-y-2 animate-in fade-in">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-black text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                        <AlertTriangle size={14} className="text-amber-600" /> L1 Scaffolding Hint Unlocked (2 Failed Attempts):
+                      </span>
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-amber-200 text-amber-950 rounded-md">Scrambled Pills</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {(cueCardPrompts[cueCardIdx].scrambled_words || cueCardPrompts[cueCardIdx].word_bank).map((w, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCueQuestionInput((prev) => (prev ? `${prev} ${w}` : w))}
+                          className="px-3.5 py-1.5 bg-white hover:bg-amber-200 text-amber-950 border border-amber-300 rounded-xl text-xs font-black shadow-sm transition active:scale-95"
+                        >
+                          + {w}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="p-3.5 bg-amber-50/80 rounded-2xl border border-amber-200 text-xs font-bold text-amber-900 flex items-center gap-2">
+                    <Info size={16} className="text-amber-600 shrink-0" />
+                    <span>Practice Mode: Word Pills are hidden to test your question-forming skill. Type or speak into Mic independently!</span>
+                  </div>
+                )}
+
 
                 {/* Question Input Box + Send & Mic */}
                 <div className="space-y-2">

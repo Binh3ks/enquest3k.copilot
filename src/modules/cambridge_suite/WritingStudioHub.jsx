@@ -117,48 +117,8 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
         </div>
       </div>
 
-      {/* Sub-tab Switcher Bar */}
+      <div className="space-y-6">
 
-      <div className="flex items-center gap-2 mb-6 p-1.5 bg-slate-100 rounded-2xl w-fit border border-slate-200">
-        <button
-          onClick={() => setActiveTab('rw_p7')}
-          className={`px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center gap-2 ${
-            activeTab === 'rw_p7'
-              ? 'bg-purple-600 text-white shadow-md'
-              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
-          }`}
-        >
-          <PenTool size={16} /> R&W Part 7: Write 3-Picture Story
-        </button>
-        <button
-          onClick={() => setActiveTab('listening_p2')}
-          className={`px-5 py-2.5 rounded-xl font-black text-sm transition-all flex items-center gap-2 ${
-            activeTab === 'listening_p2'
-              ? 'bg-amber-600 text-white shadow-md'
-              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
-          }`}
-        >
-          <FileText size={16} /> Listening Part 2: Notepad Note Completion
-        </button>
-      </div>
-
-      {activeTab === 'listening_p2' ? (
-        <NotepadNoteCompleter
-          title="School Incident Notepad (Cambridge Listening P2)"
-          notes={data?.listening_p2_notes}
-          onComplete={async (score) => {
-            await learnerProgressService.logAttempt({
-              learnerId,
-              contentId: `w${weekNumber}_listening_p2`,
-              mode: 'learn',
-              result: score >= 80 ? 'correct' : 'incorrect',
-              score,
-              timeSpentSeconds: 45
-            });
-          }}
-        />
-      ) : (
-        <div className="space-y-6">
 
 
 
@@ -304,8 +264,9 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           )}
         </div>
       )}
-      </div>
-      )}
+    </div>
+
+
 
 
 

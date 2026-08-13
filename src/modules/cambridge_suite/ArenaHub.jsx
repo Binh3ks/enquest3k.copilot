@@ -4,7 +4,11 @@ import { BarModelQuest } from '../hubs/station2/LearnMode/BarModelQuest';
 import { FlashArena } from '../hubs/station2/LearnMode/FlashArena';
 import { Station2CheckMode } from '../hubs/station2/CheckMode/Station2CheckMode';
 import { AdaptiveExplainerModal } from '../hubs/station2/components/AdaptiveExplainerModal';
-import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers } from 'lucide-react';
+import NotepadNoteCompleter from '../../components/common/NotepadNoteCompleter';
+import { learnerProgressService } from '../../services/learnerProgressService';
+import { useUserStore } from '../../stores/useUserStore';
+import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers, FileText } from 'lucide-react';
+
 
 export default function ArenaHub({ data, weekNumber = 33 }) {
   const [viewMode, setViewMode] = useState('learn'); // 'learn' | 'check'
@@ -100,6 +104,14 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
               >
                 <Layers size={15} /> Flash Arena
               </button>
+              <button
+                onClick={() => setActiveTab('listening_p2')}
+                className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
+                  activeTab === 'listening_p2' ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' : 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200'
+                }`}
+              >
+                <FileText size={15} /> Listening P2: Notepad
+              </button>
             </div>
 
             <div className="px-3 py-1.5 bg-amber-50 text-amber-900 rounded-xl text-xs font-black border border-amber-200 flex items-center gap-1.5 shadow-sm">
@@ -132,7 +144,26 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                 onAttemptResult={handleAttemptEvaluation}
               />
             )}
+            {activeTab === 'listening_p2' && (
+              <NotepadNoteCompleter
+                title="School Incident Notepad (Cambridge Listening P2)"
+                notes={data?.listening_p2_notes}
+                onComplete={async (score) => {
+                  const currentUser = useUserStore.getState().currentUser;
+                  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+                  await learnerProgressService.logAttempt({
+                    learnerId,
+                    contentId: `w${weekNumber}_listening_p2`,
+                    mode: 'learn',
+                    result: score >= 80 ? 'correct' : 'incorrect',
+                    score,
+                    timeSpentSeconds: 45
+                  });
+                }}
+              />
+            )}
           </div>
+
         </div>
       ) : (
         /* CHECK MODE (Cambridge Exam Standard - 10 Questions) */
