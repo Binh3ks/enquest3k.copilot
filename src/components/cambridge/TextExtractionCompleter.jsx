@@ -36,6 +36,17 @@ export function TextExtractionCompleter({ customData, onComplete }) {
     { id: 7, text_before: "All the students felt relieved and promised to walk ", text_after: " down the corridor.", target: "carefully", paragraph_ref: 3 }
   ];
 
+  // Helper to normalize string: trim spaces, lowercase, strip punctuation & leading articles (a, an, the)
+  const normalizeText = (str) => {
+    if (!str) return '';
+    return str
+      .trim()
+      .toLowerCase()
+      .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '') // Strip punctuation
+      .replace(/^(the|a|an)\s+/, '') // Strip optional leading articles
+      .replace(/\s+/g, ' '); // Collapse multiple spaces
+  };
+
   const handleInputChange = (sentId, text) => {
     if (isSubmitted) return;
     setAnswers({ ...answers, [sentId]: text });
@@ -44,10 +55,12 @@ export function TextExtractionCompleter({ customData, onComplete }) {
   const handleCheck = () => {
     let correct = 0;
     summarySentences.forEach((sent) => {
-      const userText = (answers[sent.id] || '').trim().toLowerCase();
-      const targetText = sent.target.toLowerCase();
-      // Match exact or fuzzy target phrase containing key words
-      if (userText === targetText || (userText && targetText.includes(userText)) || (userText && userText.includes(targetText))) {
+      const userNorm = normalizeText(answers[sent.id] || '');
+      const targetNorm = normalizeText(sent.target);
+      const altNorm = sent.alt_target ? normalizeText(sent.alt_target) : '';
+
+      // Match normalized exact target or acceptable alternate target (with/without leading 'the', 'a', 'an')
+      if (userNorm && (userNorm === targetNorm || (altNorm && userNorm === altNorm) || targetNorm.includes(userNorm) || userNorm.includes(targetNorm))) {
         correct++;
       }
     });
@@ -56,6 +69,7 @@ export function TextExtractionCompleter({ customData, onComplete }) {
     setIsSubmitted(true);
     if (onComplete) onComplete(finalScore);
   };
+
 
   const handleReset = () => {
     setAnswers({});

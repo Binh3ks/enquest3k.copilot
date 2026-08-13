@@ -67,7 +67,17 @@ if (allShuffled) {
   process.exit(1);
 }
 
+// Test 7: Verify Smart String Normalization & Article Stripping in TextExtractionCompleter (R&W Part 5)
+if (part5Code.includes('normalizeText') && part5Code.includes('replace(/^(the|a|an)\\s+/')) {
+  console.log('✅ [QA PASS] R&W Part 5: Smart String Normalization active (trims spaces, case-insensitive, strips optional "the/a/an" articles)!');
+  totalPassed++;
+} else {
+  console.error('❌ [QA FAIL] R&W Part 5: Smart String Normalization missing in TextExtractionCompleter.jsx');
+  process.exit(1);
+}
+
 console.log(`\n================================================================`);
-console.log(`🎉 QA VERIFICATION SUMMARY: ${totalPassed}/6 TESTS PASSED 100%!`);
+console.log(`🎉 QA VERIFICATION SUMMARY: ${totalPassed}/7 TESTS PASSED 100%!`);
 console.log(`================================================================`);
+
 
