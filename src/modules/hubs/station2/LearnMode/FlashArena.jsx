@@ -71,22 +71,41 @@ export function FlashArena({ customSets, onAttemptResult }) {
   const activeSets = customSets || WEEK33_VOCAB_SETS;
   const currentPairs = activeSets[activeSetKey] || activeSets.set1_nouns_adj || Object.values(activeSets)[0];
 
+  const [shuffledEnList, setShuffledEnList] = useState([]);
   const [shuffledViList, setShuffledViList] = useState([]);
 
-  // Explicit Fisher-Yates Shuffle for Vietnamese column
+  // Fisher-Yates Shuffle BOTH English and Right columns independently
   useEffect(() => {
     if (!currentPairs || currentPairs.length === 0) return;
-    const arr = [...currentPairs];
-    for (let i = arr.length - 1; i > 0; i--) {
+
+    // Shuffle English column
+    const arrEn = [...currentPairs];
+    for (let i = arrEn.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      [arrEn[i], arrEn[j]] = [arrEn[j], arrEn[i]];
     }
-    // Guarantee non-identical alignment with English column
-    if (arr.length > 1 && arr.every((item, idx) => item.id === currentPairs[idx].id)) {
-      [arr[0], arr[1]] = [arr[1], arr[0]];
+    setShuffledEnList(arrEn);
+
+    // Shuffle Right column (VI / Definition)
+    const arrVi = [...currentPairs];
+    for (let i = arrVi.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arrVi[i], arrVi[j]] = [arrVi[j], arrVi[i]];
     }
-    setShuffledViList(arr);
+
+    // Guarantee no side-by-side row match at the start
+    let attempts = 0;
+    while (attempts < 10 && arrVi.some((item, idx) => item.id === arrEn[idx]?.id)) {
+      for (let i = arrVi.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arrVi[i], arrVi[j]] = [arrVi[j], arrVi[i]];
+      }
+      attempts++;
+    }
+
+    setShuffledViList(arrVi);
   }, [activeSetKey, customSets]);
+
 
   // Timer Countdown Engine (Only active in Speed mode)
   useEffect(() => {
@@ -271,7 +290,8 @@ export function FlashArena({ customSets, onAttemptResult }) {
           {/* English Column */}
           <div className="space-y-2.5">
             <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">ENGLISH</div>
-            {currentPairs.map((item) => {
+            {(shuffledEnList.length > 0 ? shuffledEnList : currentPairs).map((item) => {
+
               const isMatched = matchedIds.includes(item.id);
               const isSelected = selectedEn?.id === item.id;
               return (

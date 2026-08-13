@@ -1,31 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, MessageSquare, ListFilter } from 'lucide-react';
+
+function shuffleArray(array) {
+  if (!Array.isArray(array)) return [];
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export function DialogueAHCompleter({ customData, onComplete }) {
   const [answers, setAnswers] = useState({});
   const [selectedGap, setSelectedGap] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
+  const [shuffleSeed, setShuffleSeed] = useState(0);
 
-  // Default Continuous 5-Exchange Dialogue & 8 A-H Options (Cambridge Reading & Writing Part 2 Standard)
-  const dialogueExchanges = customData?.dialogue || [
-    { gap_id: 1, speaker_a: "Tom", text_a: "Hello Helen! What were you doing when the boy slipped in the corridor?", target: "A" },
-    { gap_id: 2, speaker_a: "Tom", text_a: "Oh dear! Did he fall down heavily near the science room?", target: "B" },
-    { gap_id: 3, speaker_a: "Tom", text_a: "Did someone try to run to get a teacher first?", target: "C" },
-    { gap_id: 4, speaker_a: "Tom", text_a: "What did the school nurse apply for first aid treatment?", target: "E" },
-    { gap_id: 5, speaker_a: "Tom", text_a: "Why did the headmaster publicly praise Jake during assembly?", target: "D" }
-  ];
+  // Fisher-Yates Shuffle A-H Options and dynamically assign keys A to H
+  const { ahOptions, targetKeyMap } = useMemo(() => {
+    const rawOptions = customData?.options || [
+      { id: "opt_1", text: "I was walking carefully back from the science lab.", for_gap: 1 },
+      { id: "opt_2", text: "Yes, he slipped on the wet floor near the stairs.", for_gap: 2 },
+      { id: "opt_3", text: "No, Jake stopped and called the school nurse immediately.", for_gap: 3 },
+      { id: "opt_4", text: "The nurse applied a clean bandage and a cold pack gently.", for_gap: 4 },
+      { id: "opt_5", text: "Because he followed safety rules and helped his friend.", for_gap: 5 },
+      { id: "opt_6", text: "They were eating lunch together in the cafeteria.", for_gap: null },
+      { id: "opt_7", text: "It was raining heavily outside the school building.", for_gap: null },
+      { id: "opt_8", text: "We have science class every Monday morning at eight.", for_gap: null }
+    ];
 
-  const ahOptions = customData?.options || [
-    { key: "A", text: "I was walking carefully back from the science lab." },
-    { key: "B", text: "Yes, he slipped on the wet floor near the stairs." },
-    { key: "C", text: "No, Jake stopped and called the school nurse immediately." },
-    { key: "D", text: "Because he followed safety rules and helped his friend." },
-    { key: "E", text: "The nurse applied a clean bandage and a cold pack gently." },
-    { key: "F", text: "They were eating lunch together in the cafeteria." },
-    { key: "G", text: "It was raining heavily outside the school building." },
-    { key: "H", text: "We have science class every Monday morning at eight." }
-  ];
+    const shuffled = shuffleArray(rawOptions);
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const keyMap = {};
+    const formatted = shuffled.map((opt, idx) => {
+      const key = letters[idx];
+      if (opt.for_gap) keyMap[opt.for_gap] = key;
+      return { key, text: opt.text, id: opt.id };
+    });
+
+    return { ahOptions: formatted, targetKeyMap: keyMap };
+  }, [customData, shuffleSeed]);
+
+  // Dynamically map target keys for the 5 dialogue gaps
+  const dialogueExchanges = useMemo(() => {
+    const rawDialogue = customData?.dialogue || [
+      { gap_id: 1, speaker_a: "Tom", text_a: "Hello Helen! What were you doing when the boy slipped in the corridor?" },
+      { gap_id: 2, speaker_a: "Tom", text_a: "Oh dear! Did he fall down heavily near the science room?" },
+      { gap_id: 3, speaker_a: "Tom", text_a: "Did someone try to run to get a teacher first?" },
+      { gap_id: 4, speaker_a: "Tom", text_a: "What did the school nurse apply for first aid treatment?" },
+      { gap_id: 5, speaker_a: "Tom", text_a: "Why did the headmaster publicly praise Jake during assembly?" }
+    ];
+
+    return rawDialogue.map((ex) => ({
+      ...ex,
+      target: targetKeyMap[ex.gap_id] || "A"
+    }));
+  }, [customData, targetKeyMap]);
+
 
   // Map option keys to the gap they are currently assigned to
   const optionToGapMap = {};
@@ -69,7 +102,9 @@ export function DialogueAHCompleter({ customData, onComplete }) {
     setSelectedGap(1);
     setIsSubmitted(false);
     setScore(null);
+    setShuffleSeed((prev) => prev + 1);
   };
+
 
   return (
     <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">

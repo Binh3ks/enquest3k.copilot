@@ -1,18 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, BookOpen, Layers } from 'lucide-react';
+
+function shuffleArray(array) {
+  if (!Array.isArray(array)) return [];
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export function WordBankMatchingGrid({ customData, onComplete }) {
   const [answers, setAnswers] = useState({});
   const [selectedWord, setSelectedWord] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
+  const [shuffleSeed, setShuffleSeed] = useState(0);
 
-  // Default 15 Word Bank & 10 Definitions (Cambridge Reading & Writing Part 1 Standard)
-  const wordBank = customData?.word_bank || [
-    "corridor", "nurse", "bandage", "headmaster", "puddle",
-    "library", "cafeteria", "handrail", "warning-sign", "first-aid",
-    "playground", "stairs", "slippery", "helmet", "scaffold"
-  ];
+  // Fisher-Yates Shuffle 15-Word Bank Pool
+  const wordBank = useMemo(() => {
+    const rawWordBank = customData?.word_bank || [
+      "corridor", "nurse", "bandage", "headmaster", "puddle",
+      "library", "cafeteria", "handrail", "warning-sign", "first-aid",
+      "playground", "stairs", "slippery", "helmet", "scaffold"
+    ];
+    return shuffleArray(rawWordBank);
+  }, [customData, shuffleSeed]);
 
   const definitions = customData?.definitions || [
     { id: 1, text: "You walk along this long passage inside a school building to get to your classroom.", target: "corridor" },
@@ -26,6 +40,7 @@ export function WordBankMatchingGrid({ customData, onComplete }) {
     { id: 9, text: "A yellow sign that warns people to walk carefully on wet floors.", target: "warning-sign" },
     { id: 10, text: "A box containing bandages and cold packs used for quick medical aid.", target: "first-aid" }
   ];
+
 
   // Track which words in the 15-word pool have already been assigned
   const usedWords = Object.values(answers).filter(Boolean);
@@ -74,7 +89,9 @@ export function WordBankMatchingGrid({ customData, onComplete }) {
     setSelectedWord(null);
     setIsSubmitted(false);
     setScore(null);
+    setShuffleSeed((prev) => prev + 1);
   };
+
 
   return (
     <div className="w-full max-w-4xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">

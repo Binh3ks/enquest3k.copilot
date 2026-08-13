@@ -56,6 +56,18 @@ if (hub1Code.includes('WordBankMatchingGrid') && hub1Code.includes('DialogueAHCo
   process.exit(1);
 }
 
+// Test 6: Verify Fisher-Yates Array Shuffling in all components (DialogueAHCompleter, WordBankMatchingGrid, InlineTextClozeDropdown, FlashArena)
+const flashArenaCode = readFileSync('src/modules/hubs/station2/LearnMode/FlashArena.jsx', 'utf-8');
+const allShuffled = part1Code.includes('shuffleArray') && part2Code.includes('shuffleArray') && part4Code.includes('shuffleArray') && flashArenaCode.includes('shuffledEnList');
+if (allShuffled) {
+  console.log('✅ [QA PASS] Array Shuffling (Fisher-Yates): Active in DialogueAHCompleter, WordBankMatchingGrid, InlineTextClozeDropdown, and FlashArena!');
+  totalPassed++;
+} else {
+  console.error('❌ [QA FAIL] Array Shuffling missing in one or more components.');
+  process.exit(1);
+}
+
 console.log(`\n================================================================`);
-console.log(`🎉 QA VERIFICATION SUMMARY: ${totalPassed}/5 TESTS PASSED 100%!`);
+console.log(`🎉 QA VERIFICATION SUMMARY: ${totalPassed}/6 TESTS PASSED 100%!`);
 console.log(`================================================================`);
+

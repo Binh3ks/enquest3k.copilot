@@ -1,5 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, ChevronDown } from 'lucide-react';
+
+function shuffleArray(array) {
+  if (!Array.isArray(array)) return [];
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export function InlineTextClozeDropdown({ customData, onComplete }) {
   const [answers, setAnswers] = useState({});
@@ -7,26 +17,39 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
   const [selectedTitle, setSelectedTitle] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
+  const [shuffleSeed, setShuffleSeed] = useState(0);
 
-  // Default 10 Inline Gaps with 3 Multiple Choice Options each (Cambridge Reading & Writing Part 4 Standard)
-  const gapsData = customData?.gaps || [
-    { id: 1, target: "slipped", options: ["slipped", "slipping", "slips"] },
-    { id: 2, target: "fell", options: ["fell", "fallen", "falling"] },
-    { id: 3, target: "carefully", options: ["carefully", "careful", "care"] },
-    { id: 4, target: "called", options: ["called", "calling", "calls"] },
-    { id: 5, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
-    { id: 6, target: "nurse", options: ["nurse", "doctor", "teacher"] },
-    { id: 7, target: "corridor", options: ["corridor", "playground", "library"] },
-    { id: 8, target: "praised", options: ["praised", "praise", "praising"] },
-    { id: 9, target: "without", options: ["without", "with", "within"] },
-    { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
-  ];
+  // Fisher-Yates Shuffle 3 options per inline gap popover
+  const gapsData = useMemo(() => {
+    const rawGaps = customData?.gaps || [
+      { id: 1, target: "slipped", options: ["slipped", "slipping", "slips"] },
+      { id: 2, target: "fell", options: ["fell", "fallen", "falling"] },
+      { id: 3, target: "carefully", options: ["carefully", "careful", "care"] },
+      { id: 4, target: "called", options: ["called", "calling", "calls"] },
+      { id: 5, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
+      { id: 6, target: "nurse", options: ["nurse", "doctor", "teacher"] },
+      { id: 7, target: "corridor", options: ["corridor", "playground", "library"] },
+      { id: 8, target: "praised", options: ["praised", "praise", "praising"] },
+      { id: 9, target: "without", options: ["without", "with", "within"] },
+      { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
+    ];
 
-  const titleOptions = customData?.title_options || [
-    { id: 1, title: "A Dangerous Run Near the Science Room", target: false },
-    { id: 2, title: "Jake's Responsible Action in the School Corridor", target: true },
-    { id: 3, title: "How Teachers Clean Science Experiments", target: false }
-  ];
+    return rawGaps.map((g) => ({
+      ...g,
+      options: shuffleArray(g.options)
+    }));
+  }, [customData, shuffleSeed]);
+
+  // Fisher-Yates Shuffle Story Title choices
+  const titleOptions = useMemo(() => {
+    const rawTitles = customData?.title_options || [
+      { id: 1, title: "A Dangerous Run Near the Science Room", target: false },
+      { id: 2, title: "Jake's Responsible Action in the School Corridor", target: true },
+      { id: 3, title: "How Teachers Clean Science Experiments", target: false }
+    ];
+    return shuffleArray(rawTitles);
+  }, [customData, shuffleSeed]);
+
 
   const storySegments = [
     { type: 'text', content: "Jake was walking " },
@@ -77,7 +100,9 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
     setActiveGapPopover(null);
     setIsSubmitted(false);
     setScore(null);
+    setShuffleSeed((prev) => prev + 1);
   };
+
 
   return (
     <div className="w-full max-w-4xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
