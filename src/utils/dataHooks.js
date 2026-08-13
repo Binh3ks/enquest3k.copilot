@@ -157,7 +157,8 @@ export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
 
         if (isMounted) {
           if (rawData) {
-            console.log(`[DataHooks] Loaded data title:`, rawData?.weekTitle_en);
+            console.log(`[DataHooks] Loaded data title:`, rawData?.weekTitle_en || rawData?.title);
+
             
             // Deep copy before processing to avoid mutation issues
             const deepClonedData = JSON.parse(JSON.stringify(rawData));

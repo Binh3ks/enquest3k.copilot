@@ -21,7 +21,9 @@ import { speakingHubData as speakingHub } from './speaking_hub.js';
 export const weekData = {
   weekId: 33,
   title: "Corridor Safety & School Care",
+  weekTitle_en: "Corridor Safety & School Care",
   title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học",
+
   readingHub,
   listeningHub,
   writingHub,
