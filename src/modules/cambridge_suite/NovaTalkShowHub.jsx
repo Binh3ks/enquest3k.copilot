@@ -3,8 +3,7 @@ import { learnerProgressService } from '../../services/learnerProgressService';
 import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
-import { speakText } from '../../utils/AudioHelper';
-import { Mic, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, RefreshCw, Trophy, AlertCircle, PlayCircle, HelpCircle } from 'lucide-react';
+import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, RefreshCw, Trophy, AlertCircle, PlayCircle, HelpCircle, Layers, BookOpen, Star, Radio, AlertTriangle, Info } from 'lucide-react';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 
 /**
