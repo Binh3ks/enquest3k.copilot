@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, RefreshCw, Trophy, HelpCircle, PlayCircle, ArrowRight } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
@@ -117,21 +117,31 @@ export function InformationExchangeP2({ customData }) {
   const [revealedTableA, setRevealedTableA] = useState({});
   const [tableBResults, setTableBResults] = useState({});
   const [feedbackMessage, setFeedbackMessage] = useState(null);
+  const [attemptCounts, setAttemptCounts] = useState({});
 
   const missingFieldsA = data.table_a.fields.filter(f => f.is_missing);
   const tableBFields = data.table_b.fields;
 
+  // Helper function for Nova audio playback with debug logging
+  const speakNovaWithDebug = (text) => {
+    console.log(`[SPEAKING_P2_DEBUG] Nova Speaking: "${text}"`);
+    VoiceService.speak(text, 'questions');
+  };
+
   // Start Exam Flow
   const handleStartExam = () => {
+    console.log('[SPEAKING_P2_DEBUG] Phase changed to: PHASE_1_INTRO | Current Question Index: 0');
     setFlowState('phase1_intro');
     setPhase1Index(0);
     setPhase2Index(0);
     setRevealedTableA({});
     setTableBResults({});
     setFeedbackMessage(null);
+    setAttemptCounts({});
 
     // Play Phase 1 Intro Audio
-    VoiceService.speak("I don't know anything about Jake, but you do. I'm going to ask you some questions.", 'questions');
+    const introText = "I don't know anything about Jake, but you do. I'm going to ask you some questions.";
+    speakNovaWithDebug(introText);
     
     // Auto-advance to Phase 1 Question 1 after 3.5 seconds
     setTimeout(() => {
@@ -143,21 +153,24 @@ export function InformationExchangeP2({ customData }) {
   const playPhase1Question = (index) => {
     const field = tableBFields[index];
     if (!field) return;
+    console.log(`[SPEAKING_P2_DEBUG] Phase changed to: PHASE_1_EXAMINER_ASKS | Current Question Index: ${index}`);
     setFlowState('phase1_q');
     setPhase1Index(index);
     setUserInputText('');
     setFeedbackMessage(null);
-    VoiceService.speak(field.nova_question, 'questions');
+    speakNovaWithDebug(field.nova_question);
   };
 
   // Play Phase 2 Intro & Transition to Candidate Asking Phase
   const startPhase2 = () => {
+    console.log('[SPEAKING_P2_DEBUG] Phase changed to: PHASE_2_INTRO | Current Question Index: 0');
     setFlowState('phase2_intro');
     setPhase2Index(0);
     setUserInputText('');
     setFeedbackMessage(null);
 
-    VoiceService.speak("Now, you don't know anything about Tom, so you ask me some questions.", 'questions');
+    const transitionText = "Now, you don't know anything about Tom, so you ask me some questions.";
+    speakNovaWithDebug(transitionText);
 
     setTimeout(() => {
       setFlowState('phase2_q');
@@ -168,6 +181,7 @@ export function InformationExchangeP2({ customData }) {
   const promptCandidateForQuestion = (index) => {
     const field = missingFieldsA[index];
     if (!field) return;
+    console.log(`[SPEAKING_P2_DEBUG] Phase changed to: PHASE_2_CANDIDATE_ASKS | Current Question Index: ${index}`);
     setPhase2Index(index);
     setUserInputText('');
     setFeedbackMessage(null);
@@ -178,8 +192,15 @@ export function InformationExchangeP2({ customData }) {
     const textToEval = inputVal || userInputText;
     if (!textToEval.trim()) return;
 
+    console.log(`[SPEAKING_P2_DEBUG] User Transcript Received: "${textToEval}"`);
+
     const currentField = tableBFields[phase1Index];
+    const attempts = (attemptCounts[currentField.id] || 0) + 1;
+    setAttemptCounts(prev => ({ ...prev, [currentField.id]: attempts }));
+
     const result = evaluateSpeechInput(textToEval, currentField.acceptable_answers);
+
+    console.log(`[SPEAKING_P2_DEBUG] Evaluation Result -> Score: ${result.score}%, Status: ${result.isCorrect ? 'PASS' : 'FAIL'}, Attempts: ${attempts}`);
 
     setTableBResults(prev => ({
       ...prev,
@@ -188,10 +209,13 @@ export function InformationExchangeP2({ customData }) {
 
     if (result.isCorrect) {
       setFeedbackMessage({ type: 'success', text: 'Great answer!' });
-      VoiceService.speak("Good job!", 'questions');
+      speakNovaWithDebug("Good job!");
     } else {
+      if (attempts >= 2) {
+        console.log(`[SPEAKING_P2_DEBUG] Fallback Triggered: MAX_ATTEMPTS_REACHED -> Providing hint.`);
+      }
       setFeedbackMessage({ type: 'info', text: `Good try! Correct answer: ${currentField.value}` });
-      VoiceService.speak("Good try!", 'questions');
+      speakNovaWithDebug("Good try!");
     }
 
     // Auto-advance to next question or Phase 2
@@ -209,8 +233,15 @@ export function InformationExchangeP2({ customData }) {
     const textToEval = inputVal || userInputText;
     if (!textToEval.trim()) return;
 
+    console.log(`[SPEAKING_P2_DEBUG] User Transcript Received: "${textToEval}"`);
+
     const currentField = missingFieldsA[phase2Index];
+    const attempts = (attemptCounts[currentField.id] || 0) + 1;
+    setAttemptCounts(prev => ({ ...prev, [currentField.id]: attempts }));
+
     const result = evaluateSpeechInput(textToEval, currentField.acceptable_questions);
+
+    console.log(`[SPEAKING_P2_DEBUG] Evaluation Result -> Score: ${result.score}%, Status: ${result.isCorrect ? 'PASS' : 'FAIL'}, Attempts: ${attempts}`);
 
     if (result.isCorrect || textToEval.trim().length > 3) {
       setRevealedTableA(prev => ({
@@ -218,20 +249,24 @@ export function InformationExchangeP2({ customData }) {
         [currentField.id]: currentField.value
       }));
       setFeedbackMessage({ type: 'success', text: 'Correct question structure!' });
-      VoiceService.speak(currentField.nova_reply, 'questions');
+      speakNovaWithDebug(currentField.nova_reply);
 
       // Auto-advance to next question or complete
       setTimeout(() => {
         if (phase2Index + 1 < missingFieldsA.length) {
           promptCandidateForQuestion(phase2Index + 1);
         } else {
+          console.log('[SPEAKING_P2_DEBUG] Phase changed to: EXAM_COMPLETED');
           setFlowState('completed');
-          VoiceService.speak("Fantastic job! You completed the Speaking Information Exchange Exam!", 'questions');
+          speakNovaWithDebug("Fantastic job! You completed the Speaking Information Exchange Exam!");
         }
       }, 3500);
     } else {
+      if (attempts >= 2) {
+        console.log(`[SPEAKING_P2_DEBUG] Fallback Triggered: MAX_ATTEMPTS_REACHED -> Providing hint.`);
+      }
       setFeedbackMessage({ type: 'warning', text: `Try asking: "${currentField.acceptable_questions[0]}"` });
-      VoiceService.speak("Pardon? Can you ask again?", 'questions');
+      speakNovaWithDebug("Pardon? Can you ask again?");
     }
   };
 
