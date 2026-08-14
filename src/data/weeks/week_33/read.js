@@ -42,7 +42,7 @@ export default {
     {
       scene_id: "scene_4",
       title_en: "Scene 4: Calling the Nurse for Help",
-      description_en: "Jake fell down on the corridor floor, hurt his knee and called out for medical help.",
+      description_en: "Jake called the school nurse immediately to come and help his fallen friend.",
       image_url: "/images/week33/webtoon_scene_4.png",
       lexical_chunks: [
         { word: "hurt", chunk: "hurt his knee", x: 45, y: 65 },

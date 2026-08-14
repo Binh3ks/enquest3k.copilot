@@ -149,52 +149,30 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       : 'bg-white border-slate-200 hover:border-amber-300'
                   }`}
                 >
-                  <div className="flex items-center gap-3 w-full">
-                    {/* Section 1 (Far Left): Orange circle with item ID number */}
-                    <span className="w-7 h-7 rounded-full bg-amber-500 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-xl bg-amber-600 text-white font-black text-sm flex items-center justify-center shrink-0 shadow-sm">
                       {item.id}
                     </span>
+                    <span className="text-sm font-black text-slate-900">
+                      {item.name}
+                    </span>
+                  </div>
 
-                    {/* Section 2 (Middle): 64x64px Square 3D Image Thumbnail */}
-                    <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-slate-200 shrink-0 bg-slate-100 relative shadow-sm group-hover:scale-105 transition-transform">
-                      <img
-                        src={
-                          item.id === 1 ? '/images/week33/nurse_cabinet.jpg' :
-                          item.id === 2 ? '/images/week33/cold_pack.jpg' :
-                          item.id === 3 ? '/images/week33/corridor.jpg' :
-                          item.id === 4 ? '/images/week33/lab_desk.jpg' :
-                          '/images/week33/bedroom_table.jpg'
-                        }
-                        alt={item.name}
-                        className="w-full h-full object-cover"
-                      />
-                      <span className="absolute bottom-0.5 right-0.5 w-5 h-5 rounded-md bg-slate-950/80 backdrop-blur-sm text-white text-xs flex items-center justify-center shadow">
-                        {item.id === 1 ? '🩹' : item.id === 2 ? '🧊' : item.id === 3 ? '📓' : item.id === 4 ? '🍹' : '⏰'}
-                      </span>
+                  <div className="flex items-center gap-2">
+                    <div className={`px-3 py-1 rounded-xl text-xs font-black border ${
+                      assignedLetter ? 'bg-amber-500 text-white border-amber-600' : 'bg-slate-100 text-slate-400 border-slate-200'
+                    }`}>
+                      {assignedLetter ? `Card ${assignedLetter}` : 'Select Picture'}
                     </div>
 
-                    {/* Section 3 (Far Right): Item Name & Selected Card Status */}
-                    <div className="flex-1 min-w-0 space-y-1">
-                      <span className="text-xs sm:text-sm font-black text-slate-900 block truncate">
-                        {item.name}
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <span className={`px-2.5 py-0.5 rounded-lg text-[11px] font-black border ${
-                          assignedLetter ? 'bg-amber-500 text-white border-amber-600' : 'bg-slate-100 text-slate-500 border-slate-200'
-                        }`}>
-                          {assignedLetter ? `Matched: Card ${assignedLetter}` : 'Click to Match Picture'}
-                        </span>
-
-                        {assignedLetter && !isSubmitted && (
-                          <button
-                            onClick={(e) => handleClearMatch(item.id, e)}
-                            className="px-1.5 py-0.5 bg-rose-100 hover:bg-rose-200 text-rose-700 text-[10px] font-black rounded-md transition"
-                          >
-                            Clear ✕
-                          </button>
-                        )}
-                      </div>
-                    </div>
+                    {assignedLetter && !isSubmitted && (
+                      <button
+                        onClick={(e) => handleClearMatch(item.id, e)}
+                        className="text-slate-400 hover:text-rose-600 text-xs font-bold px-1 py-0.5"
+                      >
+                        ✕
+                      </button>
+                    )}
                   </div>
 
                   {isSubmitted && (
