@@ -153,6 +153,15 @@ export function VisualMatchingAH({ customData, onComplete }) {
                     <span className="w-7 h-7 rounded-lg bg-amber-600 text-white font-black text-xs flex items-center justify-center shrink-0">
                       {item.id}
                     </span>
+                    <span className={`w-9 h-9 rounded-xl border flex items-center justify-center text-lg shadow-sm shrink-0 ${
+                      item.id === 1 ? 'bg-rose-100 text-rose-800 border-rose-300' :
+                      item.id === 2 ? 'bg-cyan-100 text-cyan-800 border-cyan-300' :
+                      item.id === 3 ? 'bg-indigo-100 text-indigo-800 border-indigo-300' :
+                      item.id === 4 ? 'bg-amber-100 text-amber-800 border-amber-300' :
+                      'bg-purple-100 text-purple-800 border-purple-300'
+                    }`}>
+                      {item.id === 1 ? '🩹' : item.id === 2 ? '🧊' : item.id === 3 ? '📓' : item.id === 4 ? '🍹' : '⏰'}
+                    </span>
                     <span className="text-xs sm:text-sm font-black text-slate-900">
                       {item.name}
                     </span>
