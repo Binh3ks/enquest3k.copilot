@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, RefreshCw, Trophy, HelpCircle, User } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, RefreshCw, Trophy, HelpCircle, PlayCircle, ArrowRight } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
 /**
- * Speech Recognition Accuracy Evaluator
+ * Speech Recognition & Response Accuracy Evaluator
  */
 const evaluateSpeechInput = (spokenText, acceptableList) => {
   if (!spokenText || !acceptableList || acceptableList.length === 0) {
@@ -30,13 +30,12 @@ const evaluateSpeechInput = (spokenText, acceptableList) => {
     }
   }
 
-  return { isCorrect: false, score: 40 };
+  return { isCorrect: false, score: 45 };
 };
 
 export function InformationExchangeP2({ customData }) {
   const data = customData || {
     title: "Cambridge Speaking Part 2 — Information Exchange",
-    subtitle: "Table A: Candidate asks questions for missing info (?) • Table B: Candidate answers Nova's questions",
     table_a: {
       title: "Table A: Tom's Accident (Candidate Asks Questions)",
       person: "Tom",
@@ -45,7 +44,7 @@ export function InformationExchangeP2({ customData }) {
         {
           id: "field_a2",
           label: "Injury location?",
-          value: "?",
+          value: "Corridor",
           is_missing: true,
           cue_prompt: "Where / Tom / get injured?",
           acceptable_questions: ["Where did Tom get injured?", "Where was Tom injured?", "Where did he slip?"],
@@ -54,7 +53,7 @@ export function InformationExchangeP2({ customData }) {
         {
           id: "field_a3",
           label: "Hurt what?",
-          value: "?",
+          value: "His left knee",
           is_missing: true,
           cue_prompt: "What / Tom / hurt?",
           acceptable_questions: ["What did Tom hurt?", "What did he hurt?", "Which part of his body did he hurt?"],
@@ -63,7 +62,7 @@ export function InformationExchangeP2({ customData }) {
         {
           id: "field_a4",
           label: "Time?",
-          value: "?",
+          value: "9:30 AM",
           is_missing: true,
           cue_prompt: "What time / slip?",
           acceptable_questions: ["What time did Tom slip?", "What time did he slip?", "When did the accident happen?"],
@@ -107,279 +106,431 @@ export function InformationExchangeP2({ customData }) {
     }
   };
 
-  // State for Table A (Asking Questions)
-  const [activeFieldA, setActiveFieldA] = useState('field_a2');
-  const [questionInputs, setQuestionInputs] = useState({});
-  const [tableAAnswers, setTableAAnswers] = useState({});
-  const [activeMicA, setActiveMicA] = useState(null);
+  // State Machine for Conversational Flow
+  // 'idle' | 'phase1_intro' | 'phase1_q' | 'phase2_intro' | 'phase2_q' | 'completed'
+  const [flowState, setFlowState] = useState('idle');
+  const [phase1Index, setPhase1Index] = useState(0); // 0 to 3 for Table B
+  const [phase2Index, setPhase2Index] = useState(0); // 0 to 2 for Table A missing fields
 
-  // State for Table B (Answering Questions)
-  const [activeFieldB, setActiveFieldB] = useState('field_b1');
-  const [answerInputs, setAnswerInputs] = useState({});
+  const [userInputText, setUserInputText] = useState('');
+  const [isMicListening, setIsMicListening] = useState(false);
+  const [revealedTableA, setRevealedTableA] = useState({});
   const [tableBResults, setTableBResults] = useState({});
-  const [activeMicB, setActiveMicB] = useState(null);
+  const [feedbackMessage, setFeedbackMessage] = useState(null);
 
-  // Handler for Submitting Question for Table A
-  const handleAskQuestionSubmit = (field) => {
-    const userText = questionInputs[field.id] || '';
-    const result = evaluateSpeechInput(userText, field.acceptable_questions);
+  const missingFieldsA = data.table_a.fields.filter(f => f.is_missing);
+  const tableBFields = data.table_b.fields;
 
-    if (result.isCorrect || userText.trim().length > 3) {
-      setTableAAnswers((prev) => ({
-        ...prev,
-        [field.id]: { revealedValue: field.nova_reply, isPassed: true }
-      }));
-      VoiceService.speak(field.nova_reply, 'questions');
-    } else {
-      VoiceService.speak("Pardon? Can you ask again? For example: " + field.acceptable_questions[0], 'questions');
-    }
+  // Start Exam Flow
+  const handleStartExam = () => {
+    setFlowState('phase1_intro');
+    setPhase1Index(0);
+    setPhase2Index(0);
+    setRevealedTableA({});
+    setTableBResults({});
+    setFeedbackMessage(null);
+
+    // Play Phase 1 Intro Audio
+    VoiceService.speak("I don't know anything about Jake, but you do. I'm going to ask you some questions.", 'questions');
+    
+    // Auto-advance to Phase 1 Question 1 after 3.5 seconds
+    setTimeout(() => {
+      playPhase1Question(0);
+    }, 3800);
   };
 
-  // Handler for Nova Question Audio Playback for Table B
-  const handlePlayNovaQuestion = (field) => {
-    setActiveFieldB(field.id);
+  // Play Question for Phase 1 (Examiner Asks, Candidate Answers)
+  const playPhase1Question = (index) => {
+    const field = tableBFields[index];
+    if (!field) return;
+    setFlowState('phase1_q');
+    setPhase1Index(index);
+    setUserInputText('');
+    setFeedbackMessage(null);
     VoiceService.speak(field.nova_question, 'questions');
   };
 
-  // Handler for Submitting Answer for Table B
-  const handleAnswerSubmit = (field) => {
-    const userText = answerInputs[field.id] || '';
-    const result = evaluateSpeechInput(userText, field.acceptable_answers);
+  // Play Phase 2 Intro & Transition to Candidate Asking Phase
+  const startPhase2 = () => {
+    setFlowState('phase2_intro');
+    setPhase2Index(0);
+    setUserInputText('');
+    setFeedbackMessage(null);
 
-    setTableBResults((prev) => ({
+    VoiceService.speak("Now, you don't know anything about Tom, so you ask me some questions.", 'questions');
+
+    setTimeout(() => {
+      setFlowState('phase2_q');
+      promptCandidateForQuestion(0);
+    }, 3800);
+  };
+
+  const promptCandidateForQuestion = (index) => {
+    const field = missingFieldsA[index];
+    if (!field) return;
+    setPhase2Index(index);
+    setUserInputText('');
+    setFeedbackMessage(null);
+  };
+
+  // Candidate Submits Answer for Phase 1 (Table B)
+  const handlePhase1AnswerSubmit = (inputVal) => {
+    const textToEval = inputVal || userInputText;
+    if (!textToEval.trim()) return;
+
+    const currentField = tableBFields[phase1Index];
+    const result = evaluateSpeechInput(textToEval, currentField.acceptable_answers);
+
+    setTableBResults(prev => ({
       ...prev,
-      [field.id]: { userText, isCorrect: result.isCorrect, score: result.score }
+      [currentField.id]: { userText: textToEval, isCorrect: result.isCorrect, score: result.score }
     }));
 
     if (result.isCorrect) {
-      VoiceService.speak("Excellent answer! " + field.value, 'questions');
+      setFeedbackMessage({ type: 'success', text: 'Great answer!' });
+      VoiceService.speak("Good job!", 'questions');
     } else {
-      VoiceService.speak("Good try! The answer is: " + field.value, 'questions');
+      setFeedbackMessage({ type: 'info', text: `Good try! Correct answer: ${currentField.value}` });
+      VoiceService.speak("Good try!", 'questions');
+    }
+
+    // Auto-advance to next question or Phase 2
+    setTimeout(() => {
+      if (phase1Index + 1 < tableBFields.length) {
+        playPhase1Question(phase1Index + 1);
+      } else {
+        startPhase2();
+      }
+    }, 2000);
+  };
+
+  // Candidate Submits Question for Phase 2 (Table A)
+  const handlePhase2QuestionSubmit = (inputVal) => {
+    const textToEval = inputVal || userInputText;
+    if (!textToEval.trim()) return;
+
+    const currentField = missingFieldsA[phase2Index];
+    const result = evaluateSpeechInput(textToEval, currentField.acceptable_questions);
+
+    if (result.isCorrect || textToEval.trim().length > 3) {
+      setRevealedTableA(prev => ({
+        ...prev,
+        [currentField.id]: currentField.value
+      }));
+      setFeedbackMessage({ type: 'success', text: 'Correct question structure!' });
+      VoiceService.speak(currentField.nova_reply, 'questions');
+
+      // Auto-advance to next question or complete
+      setTimeout(() => {
+        if (phase2Index + 1 < missingFieldsA.length) {
+          promptCandidateForQuestion(phase2Index + 1);
+        } else {
+          setFlowState('completed');
+          VoiceService.speak("Fantastic job! You completed the Speaking Information Exchange Exam!", 'questions');
+        }
+      }, 3500);
+    } else {
+      setFeedbackMessage({ type: 'warning', text: `Try asking: "${currentField.acceptable_questions[0]}"` });
+      VoiceService.speak("Pardon? Can you ask again?", 'questions');
+    }
+  };
+
+  // Speech-to-Text Toggle
+  const handleToggleMic = () => {
+    if (isMicListening) {
+      setIsMicListening(false);
+      return;
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Browser Speech Recognition not available. Please type your response.");
+      return;
+    }
+
+    try {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      setIsMicListening(true);
+      recognition.start();
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setUserInputText(transcript);
+        setIsMicListening(false);
+
+        if (flowState === 'phase1_q') {
+          handlePhase1AnswerSubmit(transcript);
+        } else if (flowState === 'phase2_q') {
+          handlePhase2QuestionSubmit(transcript);
+        }
+      };
+
+      recognition.onerror = () => {
+        setIsMicListening(false);
+      };
+
+      recognition.onend = () => {
+        setIsMicListening(false);
+      };
+    } catch (err) {
+      setIsMicListening(false);
     }
   };
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
       {/* Header Banner */}
-      <div className="pb-4 border-b border-slate-200 space-y-1">
-        <div className="flex items-center justify-between">
+      <div className="pb-3 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+        <div>
           <span className="px-3.5 py-1 bg-purple-100 text-purple-900 text-[11px] font-black rounded-full uppercase tracking-wider flex items-center gap-1.5 w-max">
             📊 INFORMATION EXCHANGE — SPEAKING PART 2
           </span>
-          <span className="text-xs font-black text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
-            Side-by-Side Information Tables
-          </span>
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+            Candidate Information Exchange (Side-by-Side Data Tables)
+          </h2>
         </div>
-        <h2 className="text-xl sm:text-2xl font-black text-slate-900">
-          Candidate Information Exchange (Ask & Answer Tables)
-        </h2>
-        <p className="text-xs font-bold text-slate-500">
-          Table A: Candidate forms & asks questions to discover missing info (?) • Table B: Candidate answers Examiner Nova's questions.
-        </p>
+
+        {flowState === 'idle' ? (
+          <button
+            onClick={handleStartExam}
+            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black rounded-2xl text-xs shadow-lg transition flex items-center gap-2 animate-bounce shrink-0"
+          >
+            <PlayCircle size={16} /> Start Examiner Nova Flow
+          </button>
+        ) : (
+          <button
+            onClick={handleStartExam}
+            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300 transition flex items-center gap-1.5 shrink-0"
+          >
+            <RefreshCw size={14} /> Restart Flow
+          </button>
+        )}
       </div>
 
-      {/* Side-by-Side Information Tables Grid */}
+      {/* Side-by-Side Information Tables (Clean Text/Data Only - No Inline Buttons) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        {/* TABLE A: CANDIDATE'S COPY (TOM'S ACCIDENT - ASK QUESTIONS) */}
-        <div className="bg-amber-50/80 rounded-3xl border-2 border-amber-300 p-5 sm:p-6 shadow-lg space-y-4 relative overflow-hidden flex flex-col justify-between">
-          <div>
-            {/* Table Header */}
-            <div className="flex items-center justify-between border-b-2 border-amber-300 pb-3 mb-4">
-              <div className="flex items-center gap-2">
-                <span className="p-2 bg-amber-500 text-white rounded-xl text-xs font-black">📋</span>
-                <div>
-                  <h3 className="text-base sm:text-lg font-black text-amber-950 font-serif">
-                    {data.table_a.title}
-                  </h3>
-                  <span className="text-[11px] font-bold text-amber-800">Person: {data.table_a.person}</span>
-                </div>
+        {/* TABLE A: TOM'S ACCIDENT (MISSING INFO TO ASK) */}
+        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all ${
+          flowState === 'phase2_q' ? 'bg-amber-50 border-amber-400 ring-4 ring-amber-100' : 'bg-slate-50/70 border-slate-200 opacity-90'
+        }`}>
+          <div className="flex items-center justify-between border-b-2 border-amber-300/70 pb-3 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="p-2 bg-amber-500 text-white rounded-xl text-xs font-black">📋</span>
+              <div>
+                <h3 className="text-base sm:text-lg font-black text-amber-950 font-serif">
+                  {data.table_a.title}
+                </h3>
+                <span className="text-[11px] font-bold text-amber-800">Person: {data.table_a.person}</span>
               </div>
-              <span className="text-[10px] font-black uppercase tracking-wider bg-amber-200 text-amber-950 px-2.5 py-1 rounded-full">
-                Ask Questions
+            </div>
+            {flowState === 'phase2_q' && (
+              <span className="text-[10px] font-black uppercase tracking-wider bg-amber-300 text-amber-950 px-2.5 py-1 rounded-full animate-pulse">
+                Active: Ask Nova
               </span>
-            </div>
-
-            {/* Information Rows */}
-            <div className="space-y-3">
-              {data.table_a.fields.map((field) => {
-                const answerState = tableAAnswers[field.id];
-                const isCurrentActive = activeFieldA === field.id;
-
-                return (
-                  <div
-                    key={field.id}
-                    className={`p-3.5 rounded-2xl border transition-all ${
-                      field.is_missing
-                        ? answerState?.isPassed
-                          ? 'bg-emerald-100/90 border-emerald-400 shadow-sm'
-                          : isCurrentActive
-                          ? 'bg-white border-amber-400 ring-2 ring-amber-200 shadow-md'
-                          : 'bg-white/80 border-amber-200 hover:border-amber-300'
-                        : 'bg-amber-100/50 border-amber-200'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-black text-amber-900 w-1/3">
-                        {field.label}
-                      </span>
-
-                      {!field.is_missing ? (
-                        <span className="text-xs font-black text-slate-800 bg-amber-200/80 px-3 py-1 rounded-lg">
-                          {field.value}
-                        </span>
-                      ) : answerState?.isPassed ? (
-                        <div className="flex items-center gap-1.5 text-xs font-black text-emerald-950 bg-emerald-200 px-3 py-1 rounded-lg">
-                          <CheckCircle2 size={14} className="text-emerald-700 shrink-0" />
-                          <span>{answerState.revealedValue}</span>
-                        </div>
-                      ) : (
-                        <button
-                          onClick={() => setActiveFieldA(field.id)}
-                          className="text-xs font-black text-amber-700 bg-amber-200 hover:bg-amber-300 px-3 py-1 rounded-lg transition animate-pulse"
-                        >
-                          ? (Form Question)
-                        </button>
-                      )}
-                    </div>
-
-                    {/* Interactive Form Question Expansion Panel */}
-                    {field.is_missing && !answerState?.isPassed && isCurrentActive && (
-                      <div className="mt-3 pt-3 border-t border-amber-200 space-y-2 animate-in fade-in">
-                        <div className="text-[11px] font-black text-amber-800 flex items-center gap-1">
-                          <HelpCircle size={13} className="text-amber-600" /> Cue Card Prompt:
-                          <span className="text-amber-950 font-serif font-black bg-amber-200 px-2 py-0.5 rounded">
-                            {field.cue_prompt}
-                          </span>
-                        </div>
-
-                        <div className="flex items-center gap-2 pt-1">
-                          <input
-                            type="text"
-                            value={questionInputs[field.id] || ''}
-                            onChange={(e) => setQuestionInputs({ ...questionInputs, [field.id]: e.target.value })}
-                            onKeyDown={(e) => { if (e.key === 'Enter') handleAskQuestionSubmit(field); }}
-                            placeholder={`Type: "${field.acceptable_questions[0]}"`}
-                            className="flex-1 px-3 py-1.5 rounded-xl border-2 border-amber-300 text-xs font-bold text-amber-950 focus:outline-none focus:ring-2 focus:ring-amber-400 bg-white"
-                          />
-                          <button
-                            onClick={() => handleAskQuestionSubmit(field)}
-                            className="px-3.5 py-1.5 bg-amber-600 hover:bg-amber-700 text-white font-black rounded-xl text-xs transition shadow-md shrink-0 flex items-center gap-1"
-                          >
-                            <Send size={13} /> Ask Nova
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+            )}
           </div>
 
-          <div className="text-[11px] font-bold text-amber-800 italic bg-amber-200/50 p-2.5 rounded-xl border border-amber-300/50 text-center">
-            💡 Form 3 questions to uncover all missing info in Table A!
+          <div className="space-y-3">
+            {data.table_a.fields.map((field) => {
+              const isMissing = field.is_missing;
+              const isRevealed = revealedTableA[field.id];
+              const isHighlighted = flowState === 'phase2_q' && missingFieldsA[phase2Index]?.id === field.id;
+
+              return (
+                <div
+                  key={field.id}
+                  className={`p-3.5 rounded-2xl border flex items-center justify-between transition-all ${
+                    isHighlighted
+                      ? 'bg-amber-100 border-amber-500 ring-2 ring-amber-300 shadow-md scale-102'
+                      : isRevealed
+                      ? 'bg-emerald-100 border-emerald-400'
+                      : !isMissing
+                      ? 'bg-amber-100/50 border-amber-200'
+                      : 'bg-white border-amber-200'
+                  }`}
+                >
+                  <span className="text-xs font-black text-amber-950">{field.label}</span>
+                  {!isMissing ? (
+                    <span className="text-xs font-black text-slate-800 bg-amber-200/80 px-3 py-1 rounded-lg">
+                      {field.value}
+                    </span>
+                  ) : isRevealed ? (
+                    <span className="text-xs font-black text-emerald-950 bg-emerald-200 px-3 py-1 rounded-lg flex items-center gap-1">
+                      <CheckCircle2 size={13} className="text-emerald-700" /> {isRevealed}
+                    </span>
+                  ) : (
+                    <span className={`text-xs font-black px-3 py-1 rounded-lg ${
+                      isHighlighted ? 'bg-amber-400 text-amber-950 animate-bounce' : 'bg-slate-200 text-slate-600'
+                    }`}>
+                      ?
+                    </span>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* TABLE B: EXAMINER'S COPY (JAKE'S ACTION - ANSWER QUESTIONS) */}
-        <div className="bg-indigo-50/80 rounded-3xl border-2 border-indigo-300 p-5 sm:p-6 shadow-lg space-y-4 relative overflow-hidden flex flex-col justify-between">
-          <div>
-            {/* Table Header */}
-            <div className="flex items-center justify-between border-b-2 border-indigo-300 pb-3 mb-4">
-              <div className="flex items-center gap-2">
-                <span className="p-2 bg-indigo-600 text-white rounded-xl text-xs font-black">🎙️</span>
-                <div>
-                  <h3 className="text-base sm:text-lg font-black text-indigo-950 font-serif">
-                    {data.table_b.title}
-                  </h3>
-                  <span className="text-[11px] font-bold text-indigo-800">Person: {data.table_b.person}</span>
-                </div>
+        {/* TABLE B: JAKE'S ACTION (COMPLETE INFO TO ANSWER) */}
+        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all ${
+          flowState === 'phase1_q' ? 'bg-indigo-50 border-indigo-400 ring-4 ring-indigo-100' : 'bg-slate-50/70 border-slate-200 opacity-90'
+        }`}>
+          <div className="flex items-center justify-between border-b-2 border-indigo-300/70 pb-3 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="p-2 bg-indigo-600 text-white rounded-xl text-xs font-black">🎙️</span>
+              <div>
+                <h3 className="text-base sm:text-lg font-black text-indigo-950 font-serif">
+                  {data.table_b.title}
+                </h3>
+                <span className="text-[11px] font-bold text-indigo-800">Person: {data.table_b.person}</span>
               </div>
-              <span className="text-[10px] font-black uppercase tracking-wider bg-indigo-200 text-indigo-950 px-2.5 py-1 rounded-full">
-                Answer Nova
+            </div>
+            {flowState === 'phase1_q' && (
+              <span className="text-[10px] font-black uppercase tracking-wider bg-indigo-300 text-indigo-950 px-2.5 py-1 rounded-full animate-pulse">
+                Active: Answer Nova
               </span>
-            </div>
-
-            {/* Information Rows */}
-            <div className="space-y-3">
-              {data.table_b.fields.map((field) => {
-                const evalResult = tableBResults[field.id];
-                const isCurrentActive = activeFieldB === field.id;
-
-                return (
-                  <div
-                    key={field.id}
-                    className={`p-3.5 rounded-2xl border transition-all ${
-                      evalResult?.isCorrect
-                        ? 'bg-emerald-100/90 border-emerald-400 shadow-sm'
-                        : isCurrentActive
-                        ? 'bg-white border-indigo-400 ring-2 ring-indigo-200 shadow-md'
-                        : 'bg-white/80 border-indigo-200 hover:border-indigo-300'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-black text-indigo-900 w-1/3">
-                        {field.label}
-                      </span>
-                      <span className="text-xs font-black text-indigo-950 bg-indigo-100 px-3 py-1 rounded-lg">
-                        {field.value}
-                      </span>
-                      <button
-                        onClick={() => handlePlayNovaQuestion(field)}
-                        className="p-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold transition shadow-sm shrink-0 flex items-center gap-1"
-                        title="Listen to Nova's Question"
-                      >
-                        <Volume2 size={13} /> Ask
-                      </button>
-                    </div>
-
-                    {/* Interactive Answer Input Panel */}
-                    {isCurrentActive && (
-                      <div className="mt-3 pt-3 border-t border-indigo-200 space-y-2 animate-in fade-in">
-                        <div className="text-[11px] font-black text-indigo-900 bg-indigo-100/80 p-2 rounded-xl flex items-center gap-1.5">
-                          <MessageSquare size={13} className="text-indigo-600 shrink-0" />
-                          <span>Nova: "{field.nova_question}"</span>
-                        </div>
-
-                        <div className="flex items-center gap-2 pt-1">
-                          <input
-                            type="text"
-                            value={answerInputs[field.id] || ''}
-                            onChange={(e) => setAnswerInputs({ ...answerInputs, [field.id]: e.target.value })}
-                            onKeyDown={(e) => { if (e.key === 'Enter') handleAnswerSubmit(field); }}
-                            placeholder={`Answer: "${field.value}"`}
-                            className="flex-1 px-3 py-1.5 rounded-xl border-2 border-indigo-300 text-xs font-bold text-indigo-950 focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white"
-                          />
-                          <button
-                            onClick={() => handleAnswerSubmit(field)}
-                            className="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition shadow-md shrink-0 flex items-center gap-1"
-                          >
-                            <Send size={13} /> Answer
-                          </button>
-                        </div>
-
-                        {evalResult && (
-                          <div className={`text-[11px] font-black px-2.5 py-1 rounded-lg flex items-center justify-between ${
-                            evalResult.isCorrect ? 'bg-emerald-200 text-emerald-950' : 'bg-amber-200 text-amber-950'
-                          }`}>
-                            <span>{evalResult.isCorrect ? '✓ Correct Answer!' : 'Good try!'}</span>
-                            <span>Score: {evalResult.score}%</span>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+            )}
           </div>
 
-          <div className="text-[11px] font-bold text-indigo-800 italic bg-indigo-200/50 p-2.5 rounded-xl border border-indigo-300/50 text-center">
-            💡 Read information on Table B to answer Examiner Nova's 4 questions!
+          <div className="space-y-3">
+            {tableBFields.map((field, idx) => {
+              const evalRes = tableBResults[field.id];
+              const isHighlighted = flowState === 'phase1_q' && phase1Index === idx;
+
+              return (
+                <div
+                  key={field.id}
+                  className={`p-3.5 rounded-2xl border flex items-center justify-between transition-all ${
+                    isHighlighted
+                      ? 'bg-indigo-100 border-indigo-500 ring-2 ring-indigo-300 shadow-md scale-102'
+                      : evalRes?.isCorrect
+                      ? 'bg-emerald-100 border-emerald-400'
+                      : 'bg-white border-indigo-200'
+                  }`}
+                >
+                  <span className="text-xs font-black text-indigo-950">{field.label}</span>
+                  <span className="text-xs font-black text-indigo-950 bg-indigo-100/90 px-3 py-1 rounded-lg">
+                    {field.value}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
 
+      </div>
+
+      {/* CENTRAL VOICE CONTROLLER (HOSTED BY MASCOT NOVA) */}
+      <div className="p-5 sm:p-6 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 rounded-3xl text-white shadow-2xl border-2 border-indigo-400/40 space-y-4">
+        {/* Nova Status Bar */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-700/80 pb-3">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-500 p-2.5 shrink-0 shadow-lg border border-white/20 flex items-center justify-center text-2xl">
+              🤖
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-black text-purple-300 uppercase tracking-widest">Examiner Mascot Nova</span>
+                <span className="px-2 py-0.5 bg-purple-900 text-purple-200 rounded-md text-[10px] font-bold border border-purple-700">
+                  {flowState === 'phase1_intro' || flowState === 'phase1_q' ? 'Phase 1: Candidate Answers' : flowState === 'phase2_intro' || flowState === 'phase2_q' ? 'Phase 2: Candidate Asks' : flowState === 'completed' ? 'Exam Complete' : 'Press Start'}
+                </span>
+              </div>
+              <p className="text-xs font-bold text-slate-300">
+                {flowState === 'idle' && 'Click "Start Examiner Nova Flow" to begin the Speaking Exam.'}
+                {flowState === 'phase1_intro' && 'Nova: "I don\'t know anything about Jake, but you do..."'}
+                {flowState === 'phase1_q' && `Listen to Nova's Question #${phase1Index + 1} and speak your answer from Table B!`}
+                {flowState === 'phase2_intro' && 'Nova: "Now, you don\'t know anything about Tom, so ask me..."'}
+                {flowState === 'phase2_q' && `Look at highlighted row ${phase2Index + 1} in Table A and ask Nova!`}
+                {flowState === 'completed' && '🎉 Exam Completed! Excellent Speaking Information Exchange.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Cue Prompt Scaffolding Pill for Phase 2 */}
+          {flowState === 'phase2_q' && missingFieldsA[phase2Index] && (
+            <div className="bg-amber-400 text-slate-950 font-black px-3.5 py-1.5 rounded-xl text-xs shadow-md border border-amber-300 flex items-center gap-1.5 shrink-0">
+              <HelpCircle size={14} /> Prompt: {missingFieldsA[phase2Index].cue_prompt}
+            </div>
+          )}
+        </div>
+
+        {/* Live Controller Actions (Mic & Input Field) */}
+        {flowState !== 'idle' && flowState !== 'completed' && (
+          <div className="space-y-3 pt-1">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleToggleMic}
+                className={`p-4 rounded-2xl text-white font-black transition flex items-center justify-center gap-2 shadow-xl shrink-0 ${
+                  isMicListening ? 'bg-rose-600 ring-4 ring-rose-400 animate-pulse scale-105' : 'bg-purple-600 hover:bg-purple-500 active:scale-95'
+                }`}
+              >
+                {isMicListening ? <MicOff size={22} /> : <Mic size={22} />}
+                <span className="text-xs font-black hidden sm:inline">
+                  {isMicListening ? 'Listening...' : 'Speak Response'}
+                </span>
+              </button>
+
+              <input
+                type="text"
+                value={userInputText}
+                onChange={(e) => setUserInputText(e.target.value)}
+                placeholder={
+                  flowState === 'phase1_q'
+                    ? `Look at Table B and answer Nova...`
+                    : `Ask Nova using prompt "${missingFieldsA[phase2Index]?.cue_prompt || ''}"...`
+                }
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    if (flowState === 'phase1_q') handlePhase1AnswerSubmit(userInputText);
+                    else if (flowState === 'phase2_q') handlePhase2QuestionSubmit(userInputText);
+                  }
+                }}
+                className="flex-1 p-3.5 bg-slate-800 text-white placeholder-slate-400 rounded-2xl border border-slate-700 text-xs sm:text-sm font-bold focus:outline-none focus:ring-2 focus:ring-purple-400 shadow-inner"
+              />
+
+              <button
+                disabled={!userInputText.trim()}
+                onClick={() => {
+                  if (flowState === 'phase1_q') handlePhase1AnswerSubmit(userInputText);
+                  else if (flowState === 'phase2_q') handlePhase2QuestionSubmit(userInputText);
+                }}
+                className="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-xs font-black shadow-md transition disabled:opacity-40 shrink-0 flex items-center gap-1.5"
+              >
+                <Send size={15} /> Send
+              </button>
+            </div>
+
+            {/* Live Feedback Toast */}
+            {feedbackMessage && (
+              <div className={`p-3 rounded-xl text-xs font-bold transition flex items-center gap-2 ${
+                feedbackMessage.type === 'success'
+                  ? 'bg-emerald-900/80 text-emerald-200 border border-emerald-700'
+                  : 'bg-amber-900/80 text-amber-200 border border-amber-700'
+              }`}>
+                <Sparkles size={14} /> {feedbackMessage.text}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Completion Card */}
+        {flowState === 'completed' && (
+          <div className="p-4 bg-emerald-950/80 border border-emerald-600 rounded-2xl text-center space-y-2 animate-in fade-in">
+            <Trophy className="w-10 h-10 text-amber-400 mx-auto animate-bounce" />
+            <h4 className="text-base font-black text-emerald-200">Exam State Machine Completed!</h4>
+            <button
+              onClick={handleStartExam}
+              className="px-6 py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-black rounded-xl text-xs transition shadow-md inline-flex items-center gap-1.5"
+            >
+              <RefreshCw size={14} /> Retake Exam Flow
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
