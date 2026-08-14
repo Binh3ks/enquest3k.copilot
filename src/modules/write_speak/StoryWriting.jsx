@@ -164,7 +164,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 animate-pulse" />
             <span className="text-xs font-black uppercase tracking-wider">
-              {isVi ? 'CAMBRIDGE FLYERS EXAM MODE (10 MINS)' : 'CAMBRIDGE FLYERS EXAM MODE (10 MINS)'}
+              {isVi ? 'TIMED WRITING CHALLENGE (10 MINS)' : 'TIMED WRITING CHALLENGE (10 MINS)'}
             </span>
           </div>
           <div className="flex items-center gap-3">

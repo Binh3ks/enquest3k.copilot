@@ -210,7 +210,7 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
             </button>
           ) : (
             <div className="mt-2 text-[10px] font-black px-3 py-1.5 rounded-full border-2 flex items-center gap-1.5 bg-indigo-50 text-indigo-600 border-indigo-200 w-max shadow-sm">
-              ✨ CAMBRIDGE FULL MODE
+              ✨ FLYERS FULL MODE
             </div>
           )}
         </div>

@@ -581,7 +581,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           <div className="p-6 bg-amber-50 rounded-3xl border-4 border-amber-200 shadow-xl space-y-4 relative overflow-hidden">
             <div className="flex items-center justify-between border-b-2 border-amber-300 pb-3">
               <div>
-                <span className="text-xs font-black text-amber-700 uppercase tracking-widest">CAMBRIDGE SPEAKING PART 2 — REVERSE ROLE</span>
+                <span className="text-xs font-black text-amber-700 uppercase tracking-widest">❓ ASK & ANSWER CHALLENGE</span>
                 <h3 className="text-xl sm:text-2xl font-black text-amber-950 font-serif">Cue-Card Question Master</h3>
               </div>
               <span className="px-3.5 py-1 bg-amber-500 text-white text-xs font-black rounded-full font-mono shadow-sm">
@@ -709,7 +709,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           <div className="p-6 bg-slate-50 rounded-3xl border border-slate-200 shadow-md space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-200">
               <div>
-                <span className="text-xs font-black text-indigo-600 uppercase tracking-widest">CAMBRIDGE SPEAKING PART 3</span>
+                <span className="text-xs font-black text-indigo-600 uppercase tracking-widest">🎬 PICTURE STORY MISSION</span>
                 <h3 className="text-xl font-black text-slate-900">{pictureStoryData.title}</h3>
               </div>
               <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-black rounded-full font-mono">
