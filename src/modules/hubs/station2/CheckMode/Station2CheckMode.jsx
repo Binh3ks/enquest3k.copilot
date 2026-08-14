@@ -3,7 +3,8 @@ import { learnerProgressService } from '../../../../services/learnerProgressServ
 import { useUserStore } from '../../../../stores/useUserStore';
 import HoverWord, { renderParsedText } from '../../../../components/common/HoverWord';
 import { speakText } from '../../../../utils/AudioHelper';
-import { CheckCircle2, ArrowRight, RefreshCw, FileText, XCircle } from 'lucide-react';
+import { CheckCircle2, ArrowRight, RefreshCw, FileText, XCircle, Volume2 } from 'lucide-react';
+
 
 const FALLBACK_CHECK_QUESTIONS = [
   {
