@@ -36,7 +36,9 @@ import Sidebar from './components/layout/Sidebar';
 import AITutorWidget from './modules/ai_tutor/AITutorWidget';
 import TutorWindow from './modules/ai_tutor/components/TutorWindow';
 import useTutorStore from './services/ai_tutor/tutorStore';
+import SandboxQAPanel from './components/common/SandboxQAPanel';
 import SaveToast from './components/common/SaveToast';
+
 import AutoSaveIndicator from './components/common/AutoSaveIndicator';
 import CongratulationsModal from './components/common/CongratulationsModal';
 import GameHub from './pages/GameHub/GameHub';
@@ -178,6 +180,12 @@ const MobileNotSupported = () => (
 );
 
 const App = () => {
+  const [isSandboxQAOpen, setIsSandboxQAOpen] = useState(false);
+
+  useEffect(() => {
+    window.__openSandboxQA = () => setIsSandboxQAOpen(true);
+  }, []);
+
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   useEffect(() => {
     const handler = () => setIsMobile(window.innerWidth < 768);
@@ -211,9 +219,13 @@ const App = () => {
     
     {/* Global AI Tutor Widget - V5 Premium */}
     <AITutorWidget />
+
+    {/* Production Sandbox QA Tools Panel */}
+    <SandboxQAPanel isOpen={isSandboxQAOpen} onClose={() => setIsSandboxQAOpen(false)} />
   </Router>
 );
 };
+
 
 const MainLayout = () => {
   // Global state from Zustand store

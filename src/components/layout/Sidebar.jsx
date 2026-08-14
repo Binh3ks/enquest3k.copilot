@@ -109,13 +109,27 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
     );
   }
 
+  const [logoClickCount, setLogoClickCount] = useState(0);
+
+  const handleLogoClick = () => {
+    setLogoClickCount((prev) => {
+      const next = prev + 1;
+      if (next >= 5) {
+        if (window.__openSandboxQA) window.__openSandboxQA();
+        return 0;
+      }
+      return next;
+    });
+  };
+
   return (
     <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-72 bg-white border-r border-slate-200 transform transition-transform duration-300 ${setIsSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 flex flex-col shadow-2xl lg:shadow-none`}>
     <div className="p-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer select-none" title="Click 5x to open Sandbox QA Panel">
            <NovaMascot size={44} mood="sidebar" />
            <h1 style={{ fontFamily: "'Nunito', 'Quicksand', system-ui, sans-serif", fontWeight: 800, fontSize: '1.6rem', color: '#58cc02', letterSpacing: '-0.5px', lineHeight: 1 }}>Lexio</h1>
         </div>
+
         <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden p-2 bg-slate-50 rounded-xl text-slate-400 hover:text-rose-500"><X size={24} /></button>
         {isShadowing && (
           <button
