@@ -34,11 +34,14 @@ const calculateSpeechAccuracy = (spokenText, targetText) => {
   return { accuracyScore, fluencyScore, stars };
 };
 
+import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
+
 export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
-  const [subMode, setSubMode] = useState('podcast'); // 'podcast' | 'talkshow'
+  const [subMode, setSubMode] = useState('podcast'); // 'podcast' | 'talkshow' | 'cue_card' | 'pic_story' | 'find_diff'
+
   const [shadowingPhase, setShadowingPhase] = useState(1); // Phase 1: 5 Sentences | Phase 2: Long Paragraph
   const [isRecording, setIsRecording] = useState(false);
   const [podcastScore, setPodcastScore] = useState(null);
@@ -362,9 +365,34 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           >
             <BookOpen size={14} /> 4-Picture Story (S P3)
           </button>
+          <button
+            onClick={() => setSubMode('find_diff')}
+            className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+              subMode === 'find_diff' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-rose-100 text-rose-900 border border-rose-300 hover:bg-rose-200'
+            }`}
+          >
+            <Radio size={14} /> Find Differences (S P1)
+          </button>
 
         </div>
       </div>
+
+      {subMode === 'find_diff' && (
+        <FindDifferencesInteractive
+          customData={data?.find_differences}
+          onComplete={async (score) => {
+            await learnerProgressService.logAttempt({
+              learnerId,
+              contentId: `w${weekNumber}_speaking_p1_differences`,
+              mode: 'learn',
+              result: score >= 80 ? 'correct' : 'incorrect',
+              score,
+              timeSpentSeconds: 60
+            });
+          }}
+        />
+      )}
+
 
 
       {subMode === 'podcast' ? (

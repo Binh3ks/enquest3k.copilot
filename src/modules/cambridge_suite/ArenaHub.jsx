@@ -10,9 +10,13 @@ import { useUserStore } from '../../stores/useUserStore';
 import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers, FileText } from 'lucide-react';
 
 
+import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
+import VisualMatchingAH from '../../components/cambridge/VisualMatchingAH';
+import SVGColorAndWrite from '../../components/cambridge/SVGColorAndWrite';
+
 export default function ArenaHub({ data, weekNumber = 33 }) {
   const [viewMode, setViewMode] = useState('learn'); // 'learn' | 'check'
-  const [activeTab, setActiveTab] = useState('sentence_builder'); // 'sentence_builder' | 'bar_model' | 'flash_arena'
+  const [activeTab, setActiveTab] = useState('sentence_builder');
   const [adaptiveGrammarTag, setAdaptiveGrammarTag] = useState(null);
   const [consecutiveFails, setConsecutiveFails] = useState(0);
 
@@ -48,7 +52,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
         <div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            Hub 2: Arena Battles
+            Hub 2: Arena Battles & Listening Suite
           </h1>
         </div>
 
@@ -77,50 +81,65 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
 
       {viewMode === 'learn' ? (
         <div className="space-y-6">
-          {/* Sub-Tabs Navigation for Learn Mode */}
-          <div className="flex items-center justify-between flex-wrap gap-3 p-2 bg-amber-50/70 rounded-2xl border border-amber-200">
-            <div className="flex items-center gap-2">
+          {/* Sub-Tabs Navigation for Learn Mode & Listening Suite */}
+          <div className="flex items-center justify-between flex-wrap gap-3 p-2 bg-amber-50/70 rounded-2xl border border-amber-200 overflow-x-auto no-scrollbar">
+            <div className="flex items-center gap-2 shrink-0">
               <button
                 onClick={() => setActiveTab('sentence_builder')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
                   activeTab === 'sentence_builder' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
-                <Brain size={15} /> Sentence Builder
+                <Brain size={14} /> Sentence Builder
               </button>
               <button
                 onClick={() => setActiveTab('bar_model')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
                   activeTab === 'bar_model' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
-                <Zap size={15} /> Bar Model Quest
+                <Zap size={14} /> Bar Model Quest
               </button>
               <button
                 onClick={() => setActiveTab('flash_arena')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
                   activeTab === 'flash_arena' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
                 }`}
               >
-                <Layers size={15} /> Flash Arena
+                <Layers size={14} /> Flash Arena
+              </button>
+              <button
+                onClick={() => setActiveTab('listening_p1')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                  activeTab === 'listening_p1' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                }`}
+              >
+                <FileText size={14} /> Listening P1: SVG Lines
               </button>
               <button
                 onClick={() => setActiveTab('listening_p2')}
-                className={`px-4 py-2.5 rounded-xl text-xs font-black transition flex items-center gap-2 ${
-                  activeTab === 'listening_p2' ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' : 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200'
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                  activeTab === 'listening_p2' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
                 }`}
               >
-                <FileText size={15} /> Listening P2: Notepad
+                <FileText size={14} /> Listening P2: Notepad
               </button>
-            </div>
-
-            <div className="px-3 py-1.5 bg-amber-50 text-amber-900 rounded-xl text-xs font-black border border-amber-200 flex items-center gap-1.5 shadow-sm">
-              <Award size={14} /> Streak: {adaptiveState.streak100}/5
-              {adaptiveState.isEliteUnlocked && (
-                <span className="ml-1 px-2 py-0.5 bg-amber-200 text-amber-950 rounded-md text-[10px] uppercase font-black tracking-wider">
-                  PET B1 Badge Unlocked!
-                </span>
-              )}
+              <button
+                onClick={() => setActiveTab('listening_p3')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                  activeTab === 'listening_p3' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                }`}
+              >
+                <FileText size={14} /> Listening P3: Visual A-H
+              </button>
+              <button
+                onClick={() => setActiveTab('listening_p5')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                  activeTab === 'listening_p5' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                }`}
+              >
+                <FileText size={14} /> Listening P5: Color & Write
+              </button>
             </div>
           </div>
 
@@ -144,6 +163,23 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                 onAttemptResult={handleAttemptEvaluation}
               />
             )}
+            {activeTab === 'listening_p1' && (
+              <SVGLineMatcher
+                customData={data?.listening_p1}
+                onComplete={async (score) => {
+                  const currentUser = useUserStore.getState().currentUser;
+                  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+                  await learnerProgressService.logAttempt({
+                    learnerId,
+                    contentId: `w${weekNumber}_listening_p1`,
+                    mode: 'learn',
+                    result: score >= 80 ? 'correct' : 'incorrect',
+                    score,
+                    timeSpentSeconds: 45
+                  });
+                }}
+              />
+            )}
             {activeTab === 'listening_p2' && (
               <NotepadNoteCompleter
                 title="School Incident Notepad (Cambridge Listening P2)"
@@ -162,7 +198,42 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                 }}
               />
             )}
+            {activeTab === 'listening_p3' && (
+              <VisualMatchingAH
+                customData={data?.listening_p3}
+                onComplete={async (score) => {
+                  const currentUser = useUserStore.getState().currentUser;
+                  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+                  await learnerProgressService.logAttempt({
+                    learnerId,
+                    contentId: `w${weekNumber}_listening_p3`,
+                    mode: 'learn',
+                    result: score >= 80 ? 'correct' : 'incorrect',
+                    score,
+                    timeSpentSeconds: 45
+                  });
+                }}
+              />
+            )}
+            {activeTab === 'listening_p5' && (
+              <SVGColorAndWrite
+                customData={data?.listening_p5}
+                onComplete={async (score) => {
+                  const currentUser = useUserStore.getState().currentUser;
+                  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+                  await learnerProgressService.logAttempt({
+                    learnerId,
+                    contentId: `w${weekNumber}_listening_p5`,
+                    mode: 'learn',
+                    result: score >= 80 ? 'correct' : 'incorrect',
+                    score,
+                    timeSpentSeconds: 45
+                  });
+                }}
+              />
+            )}
           </div>
+
 
         </div>
       ) : (

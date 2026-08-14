@@ -7,6 +7,32 @@ import { CheckCircle2, ArrowRight, RefreshCw, FileText, XCircle } from 'lucide-r
 
 const FALLBACK_CHECK_QUESTIONS = [
   {
+    id: 'chk_w33_p4_01',
+    content_id: 'chk_w33_p4_01',
+    type: 'listening_p4_picture',
+    prompt: 'Cambridge Listening Part 4: Where was the boy when he slipped on the wet floor?',
+    text: 'Where was the boy when he slipped on the wet floor?',
+    options: [
+      { label: 'A', text: 'A) In the school corridor near science room', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: true },
+      { label: 'B', text: 'B) Inside the science laboratory', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'C', text: 'C) In the school nurse office', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
+    ],
+    answerIndex: 0
+  },
+  {
+    id: 'chk_w33_p4_02',
+    content_id: 'chk_w33_p4_02',
+    type: 'listening_p4_picture',
+    prompt: 'Cambridge Listening Part 4: What medical aid item did the nurse bring first?',
+    text: 'What medical aid item did the nurse bring first?',
+    options: [
+      { label: 'A', text: 'A) A clean bandage and cold pack', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
+      { label: 'B', text: 'B) A pair of crutches', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: false },
+      { label: 'C', text: 'C) A glass of orange juice', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false }
+    ],
+    answerIndex: 0
+  },
+  {
     id: 'chk_w33_01',
     content_id: 'chk_w33_01',
     dialogue_context: 'Jake: What happened while you were walking down the corridor?',
@@ -29,19 +55,6 @@ const FALLBACK_CHECK_QUESTIONS = [
       { label: 'A', text: 'He called the school nurse immediately for help.', isCorrect: true },
       { label: 'B', text: 'While he was running outside.', isCorrect: false },
       { label: 'C', text: 'Yes, he broke his backpack.', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_03',
-    content_id: 'chk_w33_03',
-    dialogue_context: "Nurse: How did you treat the boy's cut knee?",
-    text: 'What does the Nurse say?',
-    prompt: 'What does the Nurse say?',
-    options: [
-      { label: 'A', text: 'I applied a clean bandage and a cold pack.', isCorrect: true },
-      { label: 'B', text: 'Because it was very sweet.', isCorrect: false },
-      { label: 'C', text: 'So he was sleeping in bed.', isCorrect: false }
     ],
     answerIndex: 0
   }
