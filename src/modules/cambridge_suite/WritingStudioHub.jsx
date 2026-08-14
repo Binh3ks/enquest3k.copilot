@@ -83,13 +83,8 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
-      {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-100">
-        <div>
-          <span className="text-xs font-black text-purple-600 uppercase tracking-wider">
-            STORY WRITING STUDIO
-          </span>
-        </div>
+      {/* Top Controls: Show Hints Button */}
+      <div className="flex items-center justify-end mb-4">
 
         <div className="flex items-center gap-2 relative">
           {/* Show Hints Scaffolding Button */}

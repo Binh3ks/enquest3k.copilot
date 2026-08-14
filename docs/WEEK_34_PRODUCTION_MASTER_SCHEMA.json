@@ -1,0 +1,180 @@
+{
+  "$schema": "https://engquest3k.com/schemas/week-master-template.json",
+  "week_number": 34,
+  "theme": "Corridor Safety & School Care",
+  "level": "A1+ / Flyers Standard",
+  "stations": {
+    "webtoon_story": {
+      "title": "Corridor Safety Incident",
+      "scenes": [
+        {
+          "scene_id": "scene_1",
+          "title_en": "Scene 1: Walking Down the Corridor",
+          "description_en": "Jake was **walking carefully** down the school corridor after science class.",
+          "image_url": "/images/week34/webtoon_scene_1.png",
+          "lexical_chunks": [
+            { "word": "walking", "chunk": "walking carefully", "x": 30, "y": 50 }
+          ]
+        },
+        {
+          "scene_id": "scene_2",
+          "title_en": "Scene 2: Running Fast Past the Lab",
+          "description_en": "Suddenly, a boy in a green shirt was **running fast** near the wet floor sign.",
+          "image_url": "/images/week34/webtoon_scene_2.png",
+          "lexical_chunks": [
+            { "word": "running", "chunk": "running fast", "x": 40, "y": 60 }
+          ]
+        },
+        {
+          "scene_id": "scene_3",
+          "title_en": "Scene 3: Slipping on the Wet Floor",
+          "description_en": "The boy **slipped on the wet floor** and **hurt his knee** badly.",
+          "image_url": "/images/week34/webtoon_scene_3.png",
+          "lexical_chunks": [
+            { "word": "slipped", "chunk": "slipped on the wet floor", "x": 50, "y": 70 },
+            { "word": "hurt", "chunk": "hurt his knee", "x": 55, "y": 75 }
+          ]
+        },
+        {
+          "scene_id": "scene_4",
+          "title_en": "Scene 4: Calling the Nurse for Help",
+          "description_en": "Jake stopped immediately and walked quickly to **call the school nurse** for help.",
+          "image_url": "/images/week34/webtoon_scene_4.png",
+          "lexical_chunks": [
+            { "word": "called", "chunk": "call the school nurse", "x": 35, "y": 55 }
+          ]
+        },
+        {
+          "scene_id": "scene_5",
+          "title_en": "Scene 5: Nurse Applying Bandage",
+          "description_en": "The nurse arrived with a **clean bandage** and a **cold pack** to treat his knee.",
+          "image_url": "/images/week34/webtoon_scene_5.png",
+          "lexical_chunks": [
+            { "word": "bandage", "chunk": "clean bandage", "x": 45, "y": 65 },
+            { "word": "cold_pack", "chunk": "cold pack", "x": 65, "y": 70 }
+          ]
+        }
+      ]
+    },
+    "reading_writing_p1": {
+      "definitions": [
+        { "id": "def_1", "text": "This is a piece of soft cloth used to cover and protect a hurt knee or arm.", "answer": "clean bandage" },
+        { "id": "def_2", "text": "This is a small bag filled with cold gel used to reduce swelling on an injury.", "answer": "cold pack" },
+        { "id": "def_3", "text": "This is a book with pages used for writing notes during science experiments.", "answer": "science notebook" },
+        { "id": "def_4", "text": "This is a sweet drink made from squeezed fresh oranges.", "answer": "orange juice" },
+        { "id": "def_5", "text": "This is a clock that rings loudly to wake you up in the morning.", "answer": "alarm clock" }
+      ],
+      "word_pool_15": [
+        "clean bandage", "cold pack", "science notebook", "orange juice", "alarm clock",
+        "school backpack", "water bottle", "first aid kit", "headmaster", "school nurse",
+        "wet floor sign", "corridor", "clumsy", "cautious", "medicine"
+      ]
+    },
+    "reading_writing_p2": {
+      "dialogues": [
+        { "id": "d1", "speaker_a": "Teacher: What happened in the corridor this morning, Jake?", "options_a_h": ["A", "B", "C", "D", "E", "F", "G", "H"], "correct_letter": "A" },
+        { "id": "d2", "speaker_a": "Teacher: Oh dear! Did he hurt himself when he fell?", "options_a_h": ["A", "B", "C", "D", "E", "F", "G", "H"], "correct_letter": "C" },
+        { "id": "d3", "speaker_a": "Teacher: What did you do to help him?", "options_a_h": ["A", "B", "C", "D", "E", "F", "G", "H"], "correct_letter": "E" },
+        { "id": "d4", "speaker_a": "Teacher: Did the school nurse arrive quickly?", "options_a_h": ["A", "B", "C", "D", "E", "F", "G", "H"], "correct_letter": "G" },
+        { "id": "d5", "speaker_a": "Teacher: You acted very responsibly, Jake!", "options_a_h": ["A", "B", "C", "D", "E", "F", "G", "H"], "correct_letter": "H" }
+      ]
+    },
+    "reading_writing_p4": {
+      "story_title": "Tom's Morning Incident",
+      "text_with_10_gaps": "Tom had a very eventful Saturday morning. While he was walking down the school corridor, he ____1____ (slipped) on a wet puddle. He ____2____ (fell) down heavily and ____3____ (hurt) his left knee. Jake was ____4____ (walking) carefully behind him. Without hesitation, Jake ____5____ (stopped) and ____6____ (called) the school nurse for help. The nurse arrived ____7____ (quickly) with a ____8____ (clean) bandage and a cold pack. She treated his knee ____9____ (gently). Tom promised to be more ____10____ (cautious) in the future.",
+      "gap_options_10": [
+        { "gap_id": 1, "options": ["slipped", "slipping", "slips"], "correct": "slipped" },
+        { "gap_id": 2, "options": ["fell", "falling", "falls"], "correct": "fell" },
+        { "gap_id": 3, "options": ["hurt", "hurting", "hurts"], "correct": "hurt" },
+        { "gap_id": 4, "options": ["walking", "walked", "walks"], "correct": "walking" },
+        { "gap_id": 5, "options": ["stopped", "stopping", "stops"], "correct": "stopped" },
+        { "gap_id": 6, "options": ["called", "calling", "calls"], "correct": "called" },
+        { "gap_id": 7, "options": ["quickly", "quick", "quickest"], "correct": "quickly" },
+        { "gap_id": 8, "options": ["clean", "cleaned", "cleaning"], "correct": "clean" },
+        { "gap_id": 9, "options": ["gently", "gentle", "gentler"], "correct": "gently" },
+        { "gap_id": 10, "options": ["cautious", "caution", "cautiously"], "correct": "cautious" }
+      ],
+      "story_title_options": [
+        { "label": "A", "title": "Tom's Morning Incident", "isCorrect": true },
+        { "label": "B", "title": "The Broken Alarm Clock", "isCorrect": false },
+        { "label": "C", "title": "A Rainy Saturday", "isCorrect": false }
+      ]
+    },
+    "reading_writing_p5": {
+      "instruction": "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
+      "passage_text": "Jake was walking carefully down the corridor when Tom slipped on a wet floor near the science room. Tom fell down and hurt his left knee. Jake immediately called the school nurse. The nurse arrived quickly with a clean bandage and a cold pack.",
+      "questions_1_4_words": [
+        { "id": "q1", "prompt": "Tom slipped on the wet floor near the ____.", "correct_answers": ["science room"] },
+        { "id": "q2", "prompt": "When Tom fell down, he hurt his ____.", "correct_answers": ["left knee", "knee"] },
+        { "id": "q3", "prompt": "Jake called the ____ to get help for Tom.", "correct_answers": ["school nurse", "nurse"] },
+        { "id": "q4", "prompt": "The nurse brought a ____ and a cold pack.", "correct_answers": ["clean bandage"] },
+        { "id": "q5", "prompt": "The headmaster praised Jake for being ____.", "correct_answers": ["cautious and responsible", "responsible", "helpful"] }
+      ]
+    },
+    "listening_p1": {
+      "passage_audio_script": "Girl: Look at the boy in the corridor! Is he running? Man: No, the boy slipping on the wet floor in the red shirt is Tom! Look at the boy walking carefully in the blue shirt. Girl: Oh, I see him now. Is that Jake? Man: Yes, that's right. Jake is walking carefully. Girl: Who is the lady in the white uniform carrying a bandage? Man: That's the school nurse! She is rushing to help Tom.",
+      "names": [
+        { "id": "n1", "text": "Jake", "target_id": "t1" },
+        { "id": "n2", "text": "School Nurse", "target_id": "t2" },
+        { "id": "n3", "text": "Tom", "target_id": "t3" },
+        { "id": "n4", "text": "Headmaster", "target_id": "t4" },
+        { "id": "n5", "text": "Mia", "target_id": "t5" }
+      ]
+    },
+    "listening_p3": {
+      "passage_audio_script": "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet, which is picture card A.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was placed on the first aid table. That is picture card B.",
+      "items": [
+        { "id": 1, "name": "Clean Bandage", "target_letter": "A" },
+        { "id": 2, "name": "Cold Pack", "target_letter": "B" },
+        { "id": 3, "name": "Science Notebook", "target_letter": "C" },
+        { "id": 4, "name": "Orange Juice", "target_letter": "D" },
+        { "id": 5, "name": "Alarm Clock", "target_letter": "E" }
+      ],
+      "cards_a_h": [
+        { "letter": "A", "name": "Clean Bandage", "image_url": "/images/week34/card_clean_bandage.jpg" },
+        { "letter": "B", "name": "Cold Pack", "image_url": "/images/week34/card_cold_pack.jpg" },
+        { "letter": "C", "name": "Science Notebook", "image_url": "/images/week34/card_science_notebook.jpg" },
+        { "letter": "D", "name": "Orange Juice", "image_url": "/images/week34/card_orange_juice.jpg" },
+        { "letter": "E", "name": "Alarm Clock", "image_url": "/images/week34/card_alarm_clock.jpg" },
+        { "letter": "F", "name": "School Backpack", "image_url": "/images/week34/card_backpack.jpg" },
+        { "letter": "G", "name": "Water Bottle", "image_url": "/images/week34/card_water_bottle.jpg" },
+        { "letter": "H", "name": "First Aid Kit", "image_url": "/images/week34/card_first_aid_kit.jpg" }
+      ]
+    },
+    "listening_p4": {
+      "questions": [
+        {
+          "id": "lp4_1",
+          "question": "1. Where did Tom slip and hurt his knee?",
+          "audio_script": "Girl: Did Tom slip inside the science lab?\nBoy: No, he was walking past the science lab, but he actually slipped on wet tiles in the school corridor!\nGirl: Oh, so it was in the corridor, not in the lab!",
+          "options": [
+            { "label": "A", "text": "In the school corridor", "image_url": "/images/week34/webtoon_scene_3.png", "isCorrect": true },
+            { "label": "B", "text": "Inside the science lab", "image_url": "/images/week34/webtoon_scene_1.png", "isCorrect": false },
+            { "label": "C", "text": "On the outdoor playground", "image_url": "/images/week34/webtoon_scene_2.png", "isCorrect": false }
+          ]
+        }
+      ]
+    },
+    "listening_p5": {
+      "audio_script": "Examiner: Look at the picture of the school corridor. Can you see the boy sitting on the floor with a hurt knee?\nStudent: Yes! I can see him.\nExaminer: Look at the clean bandage on his knee. Can you color it blue?\nStudent: Sure! I'm coloring the clean bandage blue now.\nExaminer: Excellent. Now look at the first aid table. Can you find the cold pack?\nStudent: Yes, it's sitting on the table.\nExaminer: Color the cold pack green.\nExaminer: Next, color the wet floor warning sign yellow.\nExaminer: Finally, write the word SAFE on the sign label.",
+      "tasks": [
+        { "id": "t1", "type": "color", "target_id": "bandage", "target_color": "#3b82f6", "prompt": "1. Color the clean bandage on the boy's knee BLUE." },
+        { "id": "t2", "type": "color", "target_id": "coldpack", "target_color": "#22c55e", "prompt": "2. Color the cold pack GREEN." },
+        { "id": "t3", "type": "color", "target_id": "warning_sign", "target_color": "#eab308", "prompt": "3. Color the wet floor warning sign YELLOW." },
+        { "id": "t4", "type": "write", "label_id": "sign_label", "target_text": "SAFE", "prompt": "4. Write the word SAFE on the warning sign label." }
+      ]
+    },
+    "reading_writing_p7": {
+      "picture_panels": [
+        { "panel_id": "p1", "image_url": "/images/week34/writing_panel_1.png" },
+        { "panel_id": "p2", "image_url": "/images/week34/writing_panel_2.png" },
+        { "panel_id": "p3", "image_url": "/images/week34/writing_panel_3.png" }
+      ],
+      "word_bank_pills": {
+        "action_verbs": ["slipped", "fell down", "hurt knee", "called nurse", "applied bandage"],
+        "connectors": ["first", "then", "while", "because", "so", "finally"],
+        "min_words": 20
+      }
+    }
+  }
+}
