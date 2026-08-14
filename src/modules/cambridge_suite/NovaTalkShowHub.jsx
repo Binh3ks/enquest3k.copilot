@@ -324,13 +324,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
-      {/* Top Controls: Standardized GlobalModeToggle */}
-      <div className="flex items-center justify-end mb-4">
-        <GlobalModeToggle
-          activeMode={activeMode}
-          onModeChange={(m) => setActiveMode(m)}
-        />
-      </div>
 
       {/* Sub-Mode Switcher: Evenly Spaced Flexbox */}
       <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-slate-100">
