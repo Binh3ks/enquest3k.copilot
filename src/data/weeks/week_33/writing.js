@@ -1,11 +1,11 @@
 // Week 33 Writing Studio Data
 export default {
   title: "Corridor Incident & Safety Report",
-  prompt_en: "Write a 3-paragraph story script (35-50 words) about an accident in the school corridor and how first aid was applied.",
-  prompt_vi: "Viết kịch bản câu chuyện 3 đoạn (35-50 từ) về một sự cố ở hành lang trường học và cách sơ cứu được thực hiện.",
-  min_sentences: 5,
-  min_words: 35,
-  max_words: 50,
+  prompt_en: "Look at the three pictures. Write the story. Write 20 or more words.",
+  prompt_vi: "Nhìn vào 3 bức tranh. Viết câu chuyện kể lại sự việc (20 từ trở lên).",
+  min_sentences: 3,
+  min_words: 20,
+  max_words: 60,
   model_sentence: "While Jake was walking down the school corridor, a boy slipped on the wet floor and hurt his knee. Jake called the nurse immediately. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved.",
   sentence_frames: [
     { template: "While Jake was walking in the ___, a boy slipped.", answers: ["corridor"] },

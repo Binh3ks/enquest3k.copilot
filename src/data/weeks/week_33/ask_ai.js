@@ -45,8 +45,8 @@ export default [
 export const CUE_CARD_PROMPTS = [
   {
     cue_id: "cue_1",
-    target_prompt_en: "Ask Nova where Jake was walking after science class.",
-    target_prompt_vi: "Hỏi Nova xem Jake đang đi đâu sau giờ học khoa học.",
+    target_prompt_en: "Where / Jake / walk after science class?",
+    target_prompt_vi: "Hỏi Nova: Jake đi đâu sau giờ học khoa học?",
     question_word: "Where",
     word_bank: ["Where", "was", "Jake", "walking", "after", "science", "class", "?"],
     scrambled_words: ["science", "walking", "Where", "class", "Jake", "after", "was", "?"],
@@ -59,8 +59,8 @@ export const CUE_CARD_PROMPTS = [
   },
   {
     cue_id: "cue_2",
-    target_prompt_en: "Ask Nova why the running boy slipped on the floor.",
-    target_prompt_vi: "Hỏi Nova tại sao cậu bé đang chạy lại bị trượt chân.",
+    target_prompt_en: "Why / boy / slip on wet floor?",
+    target_prompt_vi: "Hỏi Nova: Tại sao cậu bé trượt chân?",
     question_word: "Why",
     word_bank: ["Why", "did", "the", "running", "boy", "slip", "on", "the", "floor", "?"],
     scrambled_words: ["slip", "Why", "floor", "running", "did", "boy", "on", "the", "the", "?"],
@@ -73,8 +73,8 @@ export const CUE_CARD_PROMPTS = [
   },
   {
     cue_id: "cue_3",
-    target_prompt_en: "Ask Nova who Jake called immediately for help.",
-    target_prompt_vi: "Hỏi Nova xem Jake đã gọi ai ngay lập tức để giúp đỡ.",
+    target_prompt_en: "Who / call / school nurse?",
+    target_prompt_vi: "Hỏi Nova: Ai đã gọi cô y tá?",
     question_word: "Who",
     word_bank: ["Who", "did", "Jake", "call", "immediately", "for", "help", "?"],
     scrambled_words: ["help", "immediately", "Who", "call", "Jake", "for", "did", "?"],
@@ -87,8 +87,8 @@ export const CUE_CARD_PROMPTS = [
   },
   {
     cue_id: "cue_4",
-    target_prompt_en: "Ask Nova what the school nurse applied to his cut knee.",
-    target_prompt_vi: "Hỏi Nova xem cô y tá đã dán/chườm cái gì lên vết thương.",
+    target_prompt_en: "What / nurse / apply to knee?",
+    target_prompt_vi: "Hỏi Nova: Cô y tá dùng cái gì chườm/dán lên đầu gối?",
     question_word: "What",
     word_bank: ["What", "did", "the", "school", "nurse", "apply", "to", "his", "knee", "?"],
     scrambled_words: ["apply", "What", "nurse", "knee", "school", "his", "did", "to", "the", "?"],
@@ -101,8 +101,8 @@ export const CUE_CARD_PROMPTS = [
   },
   {
     cue_id: "cue_5",
-    target_prompt_en: "Ask Nova why the headmaster praised Jake.",
-    target_prompt_vi: "Hỏi Nova tại sao thầy hiệu trưởng lại khen ngợi Jake.",
+    target_prompt_en: "Why / headmaster / praise Jake?",
+    target_prompt_vi: "Hỏi Nova: Tại sao thầy hiệu trưởng khen Jake?",
     question_word: "Why",
     word_bank: ["Why", "did", "the", "headmaster", "praise", "Jake", "?"],
     scrambled_words: ["praise", "headmaster", "Why", "Jake", "did", "the", "?"],

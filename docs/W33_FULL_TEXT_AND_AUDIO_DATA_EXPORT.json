@@ -594,37 +594,37 @@
       ]
     },
     "listening_p3": {
-      "passage_audio_script": "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet, which is picture card A.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was placed on the first aid table. That is picture card B.\nTeacher: Where was Tom's science notebook?\nJake: Tom dropped his science notebook on the lab desk before running, so that is picture card C.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria table, which is picture card D.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home, picture card E! The backpack, water bottle, and first aid box weren't used at all.",
+      "passage_audio_script": "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was placed on the first aid table.\nTeacher: Where was Tom's science notebook?\nJake: Tom dropped his science notebook on the lab desk before running.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria table.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home! The backpack, water bottle, and first aid box weren't used at all.",
       "items": [
         {
           "id": 1,
           "name": "Clean Bandage",
           "target_letter": "A",
-          "audio_text": "The clean bandage was kept in the medical cabinet, picture card A."
+          "audio_text": "The clean bandage was kept in the medical cabinet."
         },
         {
           "id": 2,
           "name": "Cold Pack",
           "target_letter": "B",
-          "audio_text": "The cold pack was placed on the first aid table, picture card B."
+          "audio_text": "The cold pack was placed on the first aid table."
         },
         {
           "id": 3,
           "name": "Science Notebook",
           "target_letter": "C",
-          "audio_text": "The science notebook was on the lab desk, picture card C."
+          "audio_text": "The science notebook was on the lab desk."
         },
         {
           "id": 4,
           "name": "Orange Juice",
           "target_letter": "D",
-          "audio_text": "The orange juice glass was on the cafeteria table, picture card D."
+          "audio_text": "The orange juice glass was on the cafeteria table."
         },
         {
           "id": 5,
           "name": "Alarm Clock",
           "target_letter": "E",
-          "audio_text": "The alarm clock was on the bedroom table, picture card E."
+          "audio_text": "The alarm clock was on the bedroom table at home."
         }
       ],
       "cards": [
@@ -789,11 +789,11 @@
     "theme": "Corridor Safety & School Care",
     "writing": {
       "title": "Corridor Incident & Safety Report",
-      "prompt_en": "Write a 3-paragraph story script (35-50 words) about an accident in the school corridor and how first aid was applied.",
-      "prompt_vi": "Viết kịch bản câu chuyện 3 đoạn (35-50 từ) về một sự cố ở hành lang trường học và cách sơ cứu được thực hiện.",
-      "min_sentences": 5,
-      "min_words": 35,
-      "max_words": 50,
+      "prompt_en": "Look at the three pictures. Write the story. Write 20 or more words.",
+      "prompt_vi": "Nhìn vào 3 bức tranh. Viết câu chuyện kể lại sự việc (20 từ trở lên).",
+      "min_sentences": 3,
+      "min_words": 20,
+      "max_words": 60,
       "model_sentence": "While Jake was walking down the school corridor, a boy slipped on the wet floor and hurt his knee. Jake called the nurse immediately. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved.",
       "sentence_frames": [
         {
@@ -2204,11 +2204,11 @@
     ],
     "writing": {
       "title": "Corridor Incident & Safety Report",
-      "prompt_en": "Write a 3-paragraph story script (35-50 words) about an accident in the school corridor and how first aid was applied.",
-      "prompt_vi": "Viết kịch bản câu chuyện 3 đoạn (35-50 từ) về một sự cố ở hành lang trường học và cách sơ cứu được thực hiện.",
-      "min_sentences": 5,
-      "min_words": 35,
-      "max_words": 50,
+      "prompt_en": "Look at the three pictures. Write the story. Write 20 or more words.",
+      "prompt_vi": "Nhìn vào 3 bức tranh. Viết câu chuyện kể lại sự việc (20 từ trở lên).",
+      "min_sentences": 3,
+      "min_words": 20,
+      "max_words": 60,
       "model_sentence": "While Jake was walking down the school corridor, a boy slipped on the wet floor and hurt his knee. Jake called the nurse immediately. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved.",
       "sentence_frames": [
         {

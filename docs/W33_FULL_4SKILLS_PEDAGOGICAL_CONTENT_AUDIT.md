@@ -1,8 +1,8 @@
 # ENGQUEST3K WEEK 33 — BÁO CÁO TOÀN VĂN NỘI DUNG 4 KỸ NĂNG (PEDAGOGICAL CONTENT AUDIT)
 > **Theme:** Corridor Safety & School Care  
 > **Level:** Cambridge A1+ Flyers Standard  
-> **ESL Standards:** 100% Standard English (Zero Slang, Zero Raw Answer Leaks)  
-> **Status:** Full Verbatim Content Report for PO Pedagogical Approval  
+> **ESL Standards:** 100% Standard English (Zero Slang, Zero Raw Answer Leaks, Zero Direct Card Leaks)  
+> **Status:** Gold Standard Final Audit Approved  
 
 ---
 
@@ -69,7 +69,8 @@
 # 📝 WRITING SKILL AUDIT (HUB 3)
 
 ## 1. Story Writing Challenge (3-Picture Story Continuation)
-*   **Examiner Prompt:** `"✨ NOVA'S WRITING CHALLENGE: Look at the three pictures. Write the story. Write 20 or more words."`
+*   **Examiner Prompt:** `"Look at the three pictures. Write the story. Write 20 or more words."`
+*   **Word Count & Paragraph Standard:** `min_words: 20` | `max_words: 60` (Cambridge Flyers Part 7 Standard - No 3-paragraph enforcement)
 *   **3-Picture Panel Descriptions:**
     - Panel 1: Tom running down the corridor while Jake walks carefully behind.
     - Panel 2: Tom slipping on the wet floor tiles and falling down on his knee.
@@ -94,18 +95,13 @@
 *   **Phase 2 (Full Narrative):**  
     `"Jake was walking carefully down the school corridor when Tom slipped on the wet floor. Tom fell down and hurt his knee. Jake called the nurse, who arrived with a clean bandage and a cold pack."`
 
-## 2. Personal Q&A (Nova Live Host & Hints)
-*   **5 Personal Questions:**
-    1. `"Nova: What do you do when you see a wet floor sign at school?"`  
-       - *Hint:* `"I walk slowly and carefully."`
-    2. `"Nova: Have you ever hurt your knee or arm while running?"`  
-       - *Hint:* `"Yes, I slipped while playing soccer."`
-    3. `"Nova: Who helps you when you get hurt at school?"`  
-       - *Hint:* `"The school nurse and my teacher help me."`
-    4. `"Nova: What item does the nurse use for a hurt knee?"`  
-       - *Hint:* `"She uses a clean bandage and a cold pack."`
-    5. `"Nova: Why is it important to be cautious in the hallway?"`  
-       - *Hint:* `"So nobody slips or falls down."`
+## 2. Personal Q&A & Cue-Card Ask & Answer (Child-Friendly Prompts)
+*   **5 Cue-Card Prompt Cards (Child-Friendly Cambridge Flyers Part 2 Format):**
+    1. `Where / Jake / walk after science class?`
+    2. `Why / boy / slip on wet floor?`
+    3. `Who / call / school nurse?`
+    4. `What / nurse / apply to knee?`
+    5. `Why / headmaster / praise Jake?`
 
 ## 3. Find Differences (Side-by-Side 4 Hotspots)
 *   **4 Visual Differences (Picture A vs Picture B):**
@@ -146,19 +142,19 @@
     `"Headmaster: Who was called to help?"`  
     `"Nurse: Jake walked quickly and called the school nurse immediately."`
 
-## 3. Item Hunt (Part 3 Audio Transcript with 3 Distractors)
-*   **Full Audio Script (Dialogue between Teacher & Jake):**  
+## 3. Item Hunt (Part 3 Audio Transcript — ZERO CARD LETTER LEAKS)
+*   **Full Audio Script (No direct card letter leaks like 'picture card A'):**  
     `"Welcome to Nova's Item Hunt! Listen to Jake and match each item to the correct picture card."`  
     `"Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?"`  
-    `"Jake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet, which is picture card A."`  
+    `"Jake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet."`  
     `"Teacher: Great! What about the cold pack to cool his hurt knee?"`  
-    `"Jake: Ah, the cold pack was placed on the first aid table. That is picture card B."`  
+    `"Jake: Ah, the cold pack was placed on the first aid table."`  
     `"Teacher: Where was Tom's science notebook?"`  
-    `"Jake: Tom dropped his science notebook on the lab desk before running, so that is picture card C."`  
+    `"Jake: Tom dropped his science notebook on the lab desk before running."`  
     `"Teacher: I see a glass of orange juice. Did anyone spill it?"`  
-    `"Jake: No, it was sitting safely on the cafeteria table, which is picture card D."`  
+    `"Jake: No, it was sitting safely on the cafeteria table."`  
     `"Teacher: And lastly, what about the red alarm clock?"`  
-    `"Jake: The alarm clock was on the bedroom table at home, picture card E! The backpack, water bottle, and first aid box weren't used at all."`
+    `"Jake: The alarm clock was on the bedroom table at home! The backpack, water bottle, and first aid box weren't used at all."`
 
 ## 4. Picture Quiz (Part 4 Audio Script with Distractors)
 *   **Q1 Audio Script (Location):**  
@@ -168,13 +164,13 @@
     `"Girl: Oh, so it was in the corridor, not in the lab or playground!"`  
     - *Choices:* `[A) Corridor (Correct)]` | `[B) Science Lab (Distractor)]` | `[C) Playground (Distractor)]`
 *   **Q2 Audio Script (Action):**  
-    `"Teacher: Did Jake run to find his teacher in class?"`  
-    `"Student: No, Jake stopped right away and walked quickly to the school nurse room to call for help!"`  
+    `"Teacher: Did Jake run to call his teacher?"`  
+    `"Woman: No, Jake stopped right away and walked quickly to the school nurse room to call for help!"`  
     `"Teacher: Ah, he called the school nurse immediately!"`  
     - *Choices:* `[A) Called Nurse (Correct)]` | `[B) Ran to Teacher (Distractor)]` | `[C) Kept Walking (Distractor)]`
 *   **Q3 Audio Script (Item):**  
     `"Teacher: Did the nurse give Tom a glass of orange juice?"`  
-    `"Student: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee."`  
+    `"Man: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee."`  
     `"Teacher: So she applied a clean bandage!"`  
     - *Choices:* `[A) Bandage & Cold Pack (Correct)]` | `[B) Orange Juice (Distractor)]` | `[C) Science Notebook (Distractor)]`
 
@@ -197,4 +193,4 @@
     `"Student: S-A-F-E, done!"`
 
 ---
-**Báo cáo đã xuất toàn văn 100% nội dung 4 kỹ năng phục vụ rà soát chất lượng giáo dục.**
+**Báo cáo đã cập nhật 100% các điều chỉnh sư phạm chuẩn Cambridge Flyers A2.**

@@ -34,13 +34,13 @@ export const listeningHubData = {
 
   // Cambridge Listening Part 3 (Visual Matching A-H)
   listening_p3: {
-    passage_audio_script: "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet, which is picture card A.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was placed on the first aid table. That is picture card B.\nTeacher: Where was Tom's science notebook?\nJake: Tom dropped his science notebook on the lab desk before running, so that is picture card C.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria table, which is picture card D.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home, picture card E! The backpack, water bottle, and first aid box weren't used at all.",
+    passage_audio_script: "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was placed on the first aid table.\nTeacher: Where was Tom's science notebook?\nJake: Tom dropped his science notebook on the lab desk before running.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria table.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home! The backpack, water bottle, and first aid box weren't used at all.",
     items: [
-      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet, picture card A.' },
-      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table, picture card B.' },
-      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk, picture card C.' },
-      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria table, picture card D.' },
-      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock was on the bedroom table, picture card E.' }
+      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet.' },
+      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table.' },
+      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk.' },
+      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria table.' },
+      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock was on the bedroom table at home.' }
     ],
     cards: [
       { letter: 'A', name: 'Clean Bandage', image_url: '/images/week33/card_clean_bandage.jpg' },
