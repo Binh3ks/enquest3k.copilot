@@ -577,8 +577,8 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
         <div className="space-y-6 bg-slate-50 rounded-3xl p-6 border border-slate-200 shadow-inner">
           <div className="flex items-center justify-between pb-4 border-b border-slate-200">
             <div>
-              <span className="text-[10px] font-black text-emerald-600 uppercase tracking-wider">CAMBRIDGE CHECK MODE</span>
-              <h2 className="text-xl font-black text-slate-900 mt-0.5">Reading Comprehension Exam (10 Questions)</h2>
+              <span className="text-[10px] font-black text-amber-600 uppercase tracking-wider">🎯 READING MASTERY CHALLENGE</span>
+              <h2 className="text-xl font-black text-slate-900 mt-0.5">Test your story reading skills (10 Questions)</h2>
             </div>
             <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-black font-mono">
               10 Items

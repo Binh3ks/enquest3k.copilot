@@ -183,8 +183,8 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
         <div>
           <span className="text-xs font-black text-slate-500 uppercase tracking-widest">
             {currentQ.dialogue_context
-              ? 'CAMBRIDGE READING PART 2 — CHOOSE THE BEST RESPONSE'
-              : 'CAMBRIDGE FLYERS & PET — GRAMMAR CHECK MODE'}
+              ? '💬 CHAT CHALLENGE: CHOOSE THE BEST RESPONSE'
+              : '✨ NOVA\'S GRAMMAR CHALLENGE'}
           </span>
           <h2 className="text-xl font-black text-slate-900 mt-1">
             Question {currentIndex + 1} of {questions.length}
@@ -196,7 +196,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
         <div className="bg-gradient-to-r from-amber-500 to-indigo-600 p-5 rounded-2xl text-white shadow-lg mb-6 space-y-3">
           <div className="flex items-center justify-between">
             <span className="px-3 py-1 bg-white/20 backdrop-blur-md text-white text-[11px] font-black rounded-full uppercase tracking-wider">
-              CAMBRIDGE LISTENING PART 4 — 3 PICTURE CHOICE (A/B/C)
+              🖼️ PICTURE QUIZ CHALLENGE
             </span>
             <span className="text-xs font-bold text-amber-100 flex items-center gap-1">
               🎧 Listen to Audio Prompt First
