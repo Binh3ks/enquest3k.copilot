@@ -404,7 +404,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 learnSubTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <BookOpen size={14} /> 3D Webtoon
+              📖 Story Time
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part1')}
@@ -412,7 +412,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 learnSubTab === 'rw_part1' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <Layers size={14} /> Part 1: Word Bank
+              🧩 Word Match
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part2')}
@@ -420,7 +420,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 learnSubTab === 'rw_part2' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <MessageSquare size={14} /> Part 2: Dialogue A-H
+              💬 Chat Box
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part4')}
@@ -428,7 +428,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 learnSubTab === 'rw_part4' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <FileText size={14} /> Part 4: Inline Cloze
+              📝 Fill the Blanks
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part5')}
@@ -436,7 +436,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                 learnSubTab === 'rw_part5' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
               }`}
             >
-              <Type size={14} /> Part 5: Extraction
+              🕵️ Story Detective
             </button>
           </div>
 

@@ -16,7 +16,8 @@ import SVGColorAndWrite from '../../components/cambridge/SVGColorAndWrite';
 
 export default function ArenaHub({ data, weekNumber = 33 }) {
   const [viewMode, setViewMode] = useState('learn'); // 'learn' | 'check'
-  const [activeTab, setActiveTab] = useState('sentence_builder');
+  const [mainCategory, setMainCategory] = useState('listening'); // 'listening' | 'arena'
+  const [activeTab, setActiveTab] = useState('listening_p1');
   const [adaptiveGrammarTag, setAdaptiveGrammarTag] = useState(null);
   const [consecutiveFails, setConsecutiveFails] = useState(0);
 
@@ -52,7 +53,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
         <div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            Hub 2: Arena Battles & Listening Suite
+            Hub 2: Arena Games & Listening Suite
           </h1>
         </div>
 
@@ -81,67 +82,108 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
 
       {viewMode === 'learn' ? (
         <div className="space-y-6">
-          {/* Sub-Tabs Navigation for Learn Mode & Listening Suite */}
-          <div className="flex items-center justify-between flex-wrap gap-3 p-2 bg-amber-50/70 rounded-2xl border border-amber-200 overflow-x-auto no-scrollbar">
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                onClick={() => setActiveTab('sentence_builder')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                  activeTab === 'sentence_builder' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
-                }`}
-              >
-                <Brain size={14} /> Sentence Builder
-              </button>
-              <button
-                onClick={() => setActiveTab('bar_model')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                  activeTab === 'bar_model' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
-                }`}
-              >
-                <Zap size={14} /> Bar Model Quest
-              </button>
-              <button
-                onClick={() => setActiveTab('flash_arena')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                  activeTab === 'flash_arena' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
-                }`}
-              >
-                <Layers size={14} /> Flash Arena
-              </button>
+          {/* LEVEL 1 TABS: [ 🎧 Listening Missions ] vs [ ⚔️ Arena Games ] */}
+          <div className="flex items-center gap-3 pb-2 border-b border-slate-200">
+            <button
+              onClick={() => {
+                setMainCategory('listening');
+                setActiveTab('listening_p1');
+              }}
+              className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition flex items-center gap-2 ${
+                mainCategory === 'listening'
+                  ? 'bg-indigo-600 text-white shadow-lg scale-102 ring-4 ring-indigo-200'
+                  : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+              }`}
+            >
+              🎧 Listening Missions
+            </button>
+            <button
+              onClick={() => {
+                setMainCategory('arena');
+                setActiveTab('sentence_builder');
+              }}
+              className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition flex items-center gap-2 ${
+                mainCategory === 'arena'
+                  ? 'bg-amber-500 text-white shadow-lg scale-102 ring-4 ring-amber-200'
+                  : 'bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100'
+              }`}
+            >
+              ⚔️ Arena Games
+            </button>
+          </div>
+
+          {/* LEVEL 2 SUB-TABS NAVIGATION */}
+          {mainCategory === 'listening' ? (
+            <div className="flex items-center gap-2 p-1.5 bg-indigo-50/70 rounded-2xl border border-indigo-200 overflow-x-auto no-scrollbar">
               <button
                 onClick={() => setActiveTab('listening_p1')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
                   activeTab === 'listening_p1' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
                 }`}
               >
-                <FileText size={14} /> Listening P1: SVG Lines
+                🔗 Draw the Lines
               </button>
               <button
                 onClick={() => setActiveTab('listening_p2')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
                   activeTab === 'listening_p2' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
                 }`}
               >
-                <FileText size={14} /> Listening P2: Notepad
+                📋 Secret Notes
               </button>
               <button
                 onClick={() => setActiveTab('listening_p3')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
                   activeTab === 'listening_p3' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
                 }`}
               >
-                <FileText size={14} /> Listening P3: Visual A-H
+                🔍 Item Hunt
+              </button>
+              <button
+                onClick={() => setActiveTab('listening_p4')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                  activeTab === 'listening_p4' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                }`}
+              >
+                🖼️ Picture Quiz
               </button>
               <button
                 onClick={() => setActiveTab('listening_p5')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
                   activeTab === 'listening_p5' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
                 }`}
               >
-                <FileText size={14} /> Listening P5: Color & Write
+                🎨 Magic Color
               </button>
             </div>
-          </div>
+          ) : (
+            <div className="flex items-center gap-2 p-1.5 bg-amber-50/70 rounded-2xl border border-amber-200 overflow-x-auto no-scrollbar">
+              <button
+                onClick={() => setActiveTab('sentence_builder')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                  activeTab === 'sentence_builder' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
+                }`}
+              >
+                🧠 Sentence Builder
+              </button>
+              <button
+                onClick={() => setActiveTab('bar_model')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                  activeTab === 'bar_model' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
+                }`}
+              >
+                📐 Bar Model Quest
+              </button>
+              <button
+                onClick={() => setActiveTab('flash_arena')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                  activeTab === 'flash_arena' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
+                }`}
+              >
+                ⚡ Speed Match
+              </button>
+            </div>
+          )}
 
           {/* Active Interactive Battle Sub-Component */}
           <div className="bg-slate-50 rounded-2xl border border-slate-200 p-4 sm:p-6 min-h-[420px]">
@@ -182,7 +224,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
             )}
             {activeTab === 'listening_p2' && (
               <NotepadNoteCompleter
-                title="School Incident Notepad (Cambridge Listening P2)"
+                title="School Incident Notepad (Secret Notes)"
                 notes={data?.listening_p2_notes}
                 onComplete={async (score) => {
                   const currentUser = useUserStore.getState().currentUser;
@@ -215,6 +257,23 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                 }}
               />
             )}
+            {activeTab === 'listening_p4' && (
+              <Station2CheckMode
+                customQuestions={data?.listening_p4_questions}
+                onComplete={async (score) => {
+                  const currentUser = useUserStore.getState().currentUser;
+                  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+                  await learnerProgressService.logAttempt({
+                    learnerId,
+                    contentId: `w${weekNumber}_listening_p4`,
+                    mode: 'learn',
+                    result: score >= 80 ? 'correct' : 'incorrect',
+                    score,
+                    timeSpentSeconds: 45
+                  });
+                }}
+              />
+            )}
             {activeTab === 'listening_p5' && (
               <SVGColorAndWrite
                 customData={data?.listening_p5}
@@ -233,8 +292,6 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
               />
             )}
           </div>
-
-
         </div>
       ) : (
         /* CHECK MODE (Cambridge Exam Standard - 10 Questions) */

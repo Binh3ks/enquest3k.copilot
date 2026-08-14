@@ -232,7 +232,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
                     )}
                   </div>
 
-                  <div className="w-full h-24 bg-slate-100 rounded-xl overflow-hidden mb-1.5 border border-slate-200 relative">
+                  <div className="w-full h-24 bg-slate-100 rounded-xl overflow-hidden mb-2 border border-slate-200 relative shadow-inner">
                     <img 
                       src={card.image_url} 
                       alt={card.name} 
@@ -243,12 +243,10 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       }}
                       className="w-full h-full object-cover" 
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-900/70 to-transparent p-1.5">
-                      <span className="text-[10px] sm:text-[11px] font-black text-amber-300 block text-center leading-tight drop-shadow">
-                        📍 {card.name}
-                      </span>
-                    </div>
                   </div>
+                  <span className="text-[11px] sm:text-xs font-black text-slate-800 block text-center leading-tight py-0.5">
+                    {card.name}
+                  </span>
                 </button>
               );
             })}
