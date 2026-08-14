@@ -33,11 +33,11 @@ export function VisualMatchingAH({ customData, onComplete }) {
   // Fisher-Yates Shuffle 8 Picture Cards (A to H)
   const pictureCards = useMemo(() => {
     const rawCards = customData?.cards || [
-      { letter: 'A', name: 'School Nurse Cabinet', image_url: '/images/week33/nurse.jpg' },
+      { letter: 'A', name: "Nurse's Cabinet", image_url: '/images/week33/nurse.jpg' },
       { letter: 'B', name: 'First Aid Ice Box', image_url: '/images/week33/cold_pack.jpg' },
-      { letter: 'C', name: 'School Corridor Floor', image_url: '/images/week33/corridor.jpg' },
+      { letter: 'C', name: 'Corridor Floor', image_url: '/images/week33/corridor.jpg' },
       { letter: 'D', name: 'Bedroom Table', image_url: '/images/week33/webtoon_scene_5.png' },
-      { letter: 'E', name: 'Science Laboratory', image_url: '/images/week33/webtoon_scene_2.png' },
+      { letter: 'E', name: 'Science Lab Desk', image_url: '/images/week33/webtoon_scene_2.png' },
       { letter: 'F', name: 'School Cafeteria', image_url: '/images/week33/webtoon_scene_3.png' },
       { letter: 'G', name: 'Library Desk', image_url: '/images/week33/w33_diff_scene_a.jpg' },
       { letter: 'H', name: 'Playground Bench', image_url: '/images/week33/w33_diff_scene_b.jpg' }

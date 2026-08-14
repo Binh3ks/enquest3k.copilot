@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, User, MoveRight, Layers, Trash2 } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, User, MoveRight, Layers, Trash2, Volume2 } from 'lucide-react';
+import VoiceService from '../../services/voiceService';
 
 export function SVGLineMatcher({ customData, onComplete }) {
   const [selectedName, setSelectedName] = useState(null);
@@ -7,6 +8,8 @@ export function SVGLineMatcher({ customData, onComplete }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
   const containerRef = useRef(null);
+
+  const fullListeningScript = "Welcome to Cambridge Listening Part 1. Listen and draw a line from each name to the correct person in the picture. First, look at Jake. He is the boy walking carefully down the corridor in his blue shirt. Second, look at Tom. He is the boy slipping on the wet floor puddle in his red shirt. Third, look at the school nurse. She is carrying a clean bandage to help. Fourth, look at the headmaster. He is wearing a blue suit talking to students. And fifth, look at Mia. She is the girl holding a mop near the wet floor sign.";
 
   // Default Listening Part 1 Line Matching Data
   const sceneData = customData || {
@@ -116,6 +119,22 @@ export function SVGLineMatcher({ customData, onComplete }) {
           >
             <Trash2 size={14} /> Clear Lines
           </button>
+        </div>
+      </div>
+
+      {/* Master Audio Player Bar for Listening Part 1 */}
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => VoiceService.speak(fullListeningScript, 'questions')}
+            className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
+          >
+            <Volume2 size={18} /> Play Part 1 Listening Audio 🎧
+          </button>
+          <div>
+            <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">Listening Part 1 Audio Script:</div>
+            <p className="text-xs font-bold text-white italic">"Listen and draw a line from each name to the correct person in the picture..."</p>
+          </div>
         </div>
       </div>
 

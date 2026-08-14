@@ -21,14 +21,14 @@ export function FindDifferencesInteractive({ customData, onComplete }) {
     ]
   };
 
+  const [showHint, setShowHint] = useState(false);
+
   const handleHotspotClick = (hs) => {
     if (!foundHotspots.includes(hs.id)) {
       setFoundHotspots([...foundHotspots, hs.id]);
     }
     setActiveHotspot(hs);
-    if (hs.prompt_en) {
-      VoiceService.speak(hs.prompt_en, 'questions');
-    }
+    setShowHint(false); // Hide hint by default for authentic Speaking practice
   };
 
   const handleToggleRecord = () => {
@@ -68,6 +68,7 @@ export function FindDifferencesInteractive({ customData, onComplete }) {
     setSpokenResponses({});
     setIsSubmitted(false);
     setScore(null);
+    setShowHint(false);
   };
 
   return (
@@ -156,39 +157,66 @@ export function FindDifferencesInteractive({ customData, onComplete }) {
 
       {/* Examiner Prompt & Microphone Recording Card */}
       {activeHotspot && (
-        <div className="p-5 bg-rose-50/80 rounded-2xl border-2 border-rose-200 space-y-3 animate-in fade-in">
+        <div className="p-5 bg-rose-50/80 rounded-2xl border-2 border-rose-200 space-y-4 animate-in fade-in">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-black text-rose-950 uppercase tracking-wider flex items-center gap-1.5">
-              <Eye size={16} /> Difference: {activeHotspot.name}
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="w-8 h-8 rounded-xl bg-rose-600 text-white font-black text-xs flex items-center justify-center shadow">
+                🎙️
+              </span>
+              <div>
+                <span className="text-xs font-black text-rose-950 uppercase tracking-wider block">
+                  Difference Found: {activeHotspot.name}
+                </span>
+                <span className="text-xs font-bold text-rose-700">
+                  Describe this difference / Hãy mô tả điểm khác biệt này
+                </span>
+              </div>
+            </div>
+
             <button
-              onClick={handleListenExaminerPrompt}
-              className="px-3 py-1 bg-rose-600 text-white rounded-xl text-xs font-bold transition flex items-center gap-1 hover:bg-rose-700"
+              onClick={() => setShowHint(!showHint)}
+              className="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-950 font-black text-xs rounded-xl border border-amber-300 transition flex items-center gap-1 shadow-sm"
             >
-              <Volume2 size={14} /> Listen Examiner
+              💡 {showHint ? 'Hide Hint' : 'Show Hint'}
             </button>
           </div>
 
-          <p className="text-xs sm:text-sm font-bold text-slate-800 italic">
-            "{activeHotspot.prompt_en}"
-          </p>
+          {/* Authentic Speaking Practice: English Text & Audio are HIDDEN by default */}
+          {showHint && (
+            <div className="p-3.5 bg-white/90 rounded-xl border border-rose-200 space-y-2 animate-in fade-in">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black text-rose-700 uppercase tracking-wider">
+                  Sample English Answer (Examiner Hint):
+                </span>
+                <button
+                  onClick={handleListenExaminerPrompt}
+                  className="px-2.5 py-1 bg-rose-600 text-white rounded-lg text-[11px] font-bold transition flex items-center gap-1 hover:bg-rose-700"
+                >
+                  <Volume2 size={12} /> Listen Sample
+                </button>
+              </div>
+              <p className="text-xs sm:text-sm font-bold text-slate-800 italic">
+                "{activeHotspot.prompt_en}"
+              </p>
+            </div>
+          )}
 
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex items-center gap-3 pt-1">
             <button
               onClick={handleToggleRecord}
               className={`px-5 py-2.5 rounded-xl font-black text-xs transition flex items-center gap-2 shadow-md ${
                 isRecording
                   ? 'bg-rose-600 text-white animate-pulse'
-                  : 'bg-rose-100 text-rose-950 border border-rose-300 hover:bg-rose-200'
+                  : 'bg-rose-600 text-white hover:bg-rose-700'
               }`}
             >
               {isRecording ? <MicOff size={16} /> : <Mic size={16} />}
-              <span>{isRecording ? 'Stop Recording' : 'Record Speaking Explanation'}</span>
+              <span>{isRecording ? 'Stop Recording' : 'Record Your Speaking Explanation 🎙️'}</span>
             </button>
 
             {spokenResponses[activeHotspot.id] && (
               <span className="text-xs font-bold text-emerald-700 flex items-center gap-1">
-                <CheckCircle2 size={16} /> Voice Explanation Recorded!
+                <CheckCircle2 size={16} /> Explanation Recorded!
               </span>
             )}
           </div>
