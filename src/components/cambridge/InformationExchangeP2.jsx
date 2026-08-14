@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, RefreshCw, Trophy, HelpCircle, PlayCircle, ArrowRight } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
@@ -122,6 +122,9 @@ export function InformationExchangeP2({ customData }) {
   const missingFieldsA = data.table_a.fields.filter(f => f.is_missing);
   const tableBFields = data.table_b.fields;
 
+  // Active missing field in Phase 2 derived strictly by phase2Index
+  const currentActiveFieldA = missingFieldsA[phase2Index] || null;
+
   // Helper function for Nova audio playback with debug logging
   const speakNovaWithDebug = (text) => {
     console.log(`[SPEAKING_P2_DEBUG] Nova Speaking: "${text}"`);
@@ -235,7 +238,9 @@ export function InformationExchangeP2({ customData }) {
 
     console.log(`[SPEAKING_P2_DEBUG] User Transcript Received: "${textToEval}"`);
 
-    const currentField = missingFieldsA[phase2Index];
+    const currentField = currentActiveFieldA;
+    if (!currentField) return;
+
     const attempts = (attemptCounts[currentField.id] || 0) + 1;
     setAttemptCounts(prev => ({ ...prev, [currentField.id]: attempts }));
 
@@ -374,14 +379,14 @@ export function InformationExchangeP2({ customData }) {
             {data.table_a.fields.map((field) => {
               const isMissing = field.is_missing;
               const isRevealed = revealedTableA[field.id];
-              const isHighlighted = flowState === 'phase2_q' && missingFieldsA[phase2Index]?.id === field.id;
+              const isHighlighted = flowState === 'phase2_q' && currentActiveFieldA?.id === field.id;
 
               return (
                 <div
                   key={field.id}
                   className={`p-3.5 rounded-2xl border flex items-center justify-between transition-all ${
                     isHighlighted
-                      ? 'bg-amber-100 border-amber-500 ring-2 ring-amber-300 shadow-md scale-102'
+                      ? 'bg-amber-100 border-amber-500 ring-2 ring-amber-300 shadow-md scale-102 font-black'
                       : isRevealed
                       ? 'bg-emerald-100 border-emerald-400'
                       : !isMissing
@@ -442,7 +447,7 @@ export function InformationExchangeP2({ customData }) {
                   key={field.id}
                   className={`p-3.5 rounded-2xl border flex items-center justify-between transition-all ${
                     isHighlighted
-                      ? 'bg-indigo-100 border-indigo-500 ring-2 ring-indigo-300 shadow-md scale-102'
+                      ? 'bg-indigo-100 border-indigo-500 ring-2 ring-indigo-300 shadow-md scale-102 font-black'
                       : evalRes?.isCorrect
                       ? 'bg-emerald-100 border-emerald-400'
                       : 'bg-white border-indigo-200'
@@ -480,16 +485,16 @@ export function InformationExchangeP2({ customData }) {
                 {flowState === 'phase1_intro' && 'Nova: "I don\'t know anything about Jake, but you do..."'}
                 {flowState === 'phase1_q' && `Listen to Nova's Question #${phase1Index + 1} and speak your answer from Table B!`}
                 {flowState === 'phase2_intro' && 'Nova: "Now, you don\'t know anything about Tom, so ask me..."'}
-                {flowState === 'phase2_q' && `Look at highlighted row ${phase2Index + 1} in Table A and ask Nova!`}
+                {flowState === 'phase2_q' && `Look at highlighted row (${currentActiveFieldA?.label || ''}) in Table A and ask Nova!`}
                 {flowState === 'completed' && '🎉 Exam Completed! Excellent Speaking Information Exchange.'}
               </p>
             </div>
           </div>
 
           {/* Cue Prompt Scaffolding Pill for Phase 2 */}
-          {flowState === 'phase2_q' && missingFieldsA[phase2Index] && (
+          {flowState === 'phase2_q' && currentActiveFieldA && (
             <div className="bg-amber-400 text-slate-950 font-black px-3.5 py-1.5 rounded-xl text-xs shadow-md border border-amber-300 flex items-center gap-1.5 shrink-0">
-              <HelpCircle size={14} /> Prompt: {missingFieldsA[phase2Index].cue_prompt}
+              <HelpCircle size={14} /> Prompt: {currentActiveFieldA.cue_prompt}
             </div>
           )}
         </div>
@@ -517,7 +522,7 @@ export function InformationExchangeP2({ customData }) {
                 placeholder={
                   flowState === 'phase1_q'
                     ? `Look at Table B and answer Nova...`
-                    : `Ask Nova using prompt "${missingFieldsA[phase2Index]?.cue_prompt || ''}"...`
+                    : `Ask Nova using prompt "${currentActiveFieldA?.cue_prompt || ''}"...`
                 }
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
