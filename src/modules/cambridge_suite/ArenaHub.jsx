@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilderBattle';
 import { BarModelQuest } from '../hubs/station2/LearnMode/BarModelQuest';
 import { FlashArena } from '../hubs/station2/LearnMode/FlashArena';
-import Station2CheckMode from '../hubs/station2/CheckMode/Station2CheckMode';
+import { Station2CheckMode } from '../hubs/station2/CheckMode/Station2CheckMode';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import { AdaptiveExplainerModal } from '../hubs/station2/components/AdaptiveExplainerModal';
 import NotepadNoteCompleter from '../../components/common/NotepadNoteCompleter';
