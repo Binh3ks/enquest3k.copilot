@@ -209,13 +209,13 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           rows={5}
           value={userScript}
           onChange={(e) => setUserScript(e.target.value)}
-          placeholder="First, Tom was playing with his soccer ball in the living room... Suddenly, the ball hit the wooden table..."
+          placeholder="First, a student was running down the school corridor... Suddenly, he slipped on the wet floor and fell down... The nurse brought a clean bandage..."
           className="w-full p-4 bg-white border border-slate-300 rounded-2xl text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
         />
 
         <div className="flex justify-end">
           <button
-            onClick={handleAnalyzeScript}
+            onClick={handleRuleSubmitCheck}
             disabled={isAnalyzing || userScript.trim().length === 0}
             className="px-8 py-3.5 bg-purple-600 hover:bg-purple-700 text-white font-black rounded-xl text-sm transition shadow-md disabled:opacity-50 flex items-center gap-2"
           >
