@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, RefreshCw, Trophy, HelpCircle, PlayCircle, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, RefreshCw, Trophy, HelpCircle, PlayCircle, ArrowRight, LifeBuoy } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
 /**
@@ -118,6 +118,10 @@ export function InformationExchangeP2({ customData }) {
   const [tableBResults, setTableBResults] = useState({});
   const [feedbackMessage, setFeedbackMessage] = useState(null);
   const [attemptCounts, setAttemptCounts] = useState({});
+  const [showLifebuoyHint, setShowLifebuoyHint] = useState(false);
+
+  const silenceTimerRef = useRef(null);
+  const speechDebounceTimerRef = useRef(null);
 
   const missingFieldsA = data.table_a.fields.filter(f => f.is_missing);
   const tableBFields = data.table_b.fields;
@@ -131,8 +135,34 @@ export function InformationExchangeP2({ customData }) {
     VoiceService.speak(text, 'questions');
   };
 
+  // Clear silence and speech timers
+  const clearAllTimers = () => {
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    if (speechDebounceTimerRef.current) clearTimeout(speechDebounceTimerRef.current);
+  };
+
+  // Reset 10s Silence Fallback Timer
+  const resetSilenceTimer = () => {
+    clearAllTimers();
+    silenceTimerRef.current = setTimeout(() => {
+      if (flowState === 'phase1_q' || flowState === 'phase2_q') {
+        console.log('[SPEAKING_P2_DEBUG] Fallback Triggered: TIMEOUT -> Providing hint.');
+        setFeedbackMessage({ type: 'info', text: 'Take your time! Look at the highlighted table row...' });
+        speakNovaWithDebug("Take your time! Look at the table row and try speaking into the mic.");
+      }
+    }, 10000); // 10s timeout threshold
+  };
+
+  useEffect(() => {
+    if (flowState === 'phase1_q' || flowState === 'phase2_q') {
+      resetSilenceTimer();
+    }
+    return () => clearAllTimers();
+  }, [flowState, phase1Index, phase2Index]);
+
   // Start Exam Flow
   const handleStartExam = () => {
+    clearAllTimers();
     console.log('[SPEAKING_P2_DEBUG] Phase changed to: PHASE_1_INTRO | Current Question Index: 0');
     setFlowState('phase1_intro');
     setPhase1Index(0);
@@ -141,6 +171,7 @@ export function InformationExchangeP2({ customData }) {
     setTableBResults({});
     setFeedbackMessage(null);
     setAttemptCounts({});
+    setShowLifebuoyHint(false);
 
     // Play Phase 1 Intro Audio
     const introText = "I don't know anything about Jake, but you do. I'm going to ask you some questions.";
@@ -161,16 +192,20 @@ export function InformationExchangeP2({ customData }) {
     setPhase1Index(index);
     setUserInputText('');
     setFeedbackMessage(null);
+    setShowLifebuoyHint(false);
     speakNovaWithDebug(field.nova_question);
+    resetSilenceTimer();
   };
 
   // Play Phase 2 Intro & Transition to Candidate Asking Phase
   const startPhase2 = () => {
+    clearAllTimers();
     console.log('[SPEAKING_P2_DEBUG] Phase changed to: PHASE_2_INTRO | Current Question Index: 0');
     setFlowState('phase2_intro');
     setPhase2Index(0);
     setUserInputText('');
     setFeedbackMessage(null);
+    setShowLifebuoyHint(false);
 
     const transitionText = "Now, you don't know anything about Tom, so you ask me some questions.";
     speakNovaWithDebug(transitionText);
@@ -188,10 +223,13 @@ export function InformationExchangeP2({ customData }) {
     setPhase2Index(index);
     setUserInputText('');
     setFeedbackMessage(null);
+    setShowLifebuoyHint(false);
+    resetSilenceTimer();
   };
 
   // Candidate Submits Answer for Phase 1 (Table B)
   const handlePhase1AnswerSubmit = (inputVal) => {
+    clearAllTimers();
     const textToEval = inputVal || userInputText;
     if (!textToEval.trim()) return;
 
@@ -216,6 +254,7 @@ export function InformationExchangeP2({ customData }) {
     } else {
       if (attempts >= 2) {
         console.log(`[SPEAKING_P2_DEBUG] Fallback Triggered: MAX_ATTEMPTS_REACHED -> Providing hint.`);
+        setShowLifebuoyHint(true);
       }
       setFeedbackMessage({ type: 'info', text: `Good try! Correct answer: ${currentField.value}` });
       speakNovaWithDebug("Good try!");
@@ -228,11 +267,12 @@ export function InformationExchangeP2({ customData }) {
       } else {
         startPhase2();
       }
-    }, 2000);
+    }, 2500);
   };
 
   // Candidate Submits Question for Phase 2 (Table A)
   const handlePhase2QuestionSubmit = (inputVal) => {
+    clearAllTimers();
     const textToEval = inputVal || userInputText;
     if (!textToEval.trim()) return;
 
@@ -253,6 +293,7 @@ export function InformationExchangeP2({ customData }) {
         ...prev,
         [currentField.id]: currentField.value
       }));
+      setShowLifebuoyHint(false);
       setFeedbackMessage({ type: 'success', text: 'Correct question structure!' });
       speakNovaWithDebug(currentField.nova_reply);
 
@@ -269,13 +310,17 @@ export function InformationExchangeP2({ customData }) {
     } else {
       if (attempts >= 2) {
         console.log(`[SPEAKING_P2_DEBUG] Fallback Triggered: MAX_ATTEMPTS_REACHED -> Providing hint.`);
+        setShowLifebuoyHint(true);
+        setFeedbackMessage({ type: 'warning', text: `Lifebuoy Unlocked: Try asking "${currentField.acceptable_questions[0]}"` });
+        speakNovaWithDebug(`Good try! Here is a hint. Try asking: ${currentField.acceptable_questions[0]}`);
+      } else {
+        setFeedbackMessage({ type: 'warning', text: `Good try! Try asking using 'Where' or 'What'.` });
+        speakNovaWithDebug("Good try! Let's try asking again using Where or What.");
       }
-      setFeedbackMessage({ type: 'warning', text: `Try asking: "${currentField.acceptable_questions[0]}"` });
-      speakNovaWithDebug("Pardon? Can you ask again?");
     }
   };
 
-  // Speech-to-Text Toggle
+  // Speech-to-Text Toggle with 3000ms Debounce VAD Timeout
   const handleToggleMic = () => {
     if (isMicListening) {
       setIsMicListening(false);
@@ -291,22 +336,29 @@ export function InformationExchangeP2({ customData }) {
     try {
       const recognition = new SpeechRecognition();
       recognition.lang = 'en-US';
-      recognition.interimResults = false;
-      recognition.maxAlternatives = 1;
+      recognition.interimResults = true;
+      recognition.continuous = true;
 
       setIsMicListening(true);
       recognition.start();
 
       recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setUserInputText(transcript);
-        setIsMicListening(false);
-
-        if (flowState === 'phase1_q') {
-          handlePhase1AnswerSubmit(transcript);
-        } else if (flowState === 'phase2_q') {
-          handlePhase2QuestionSubmit(transcript);
+        let interimTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          interimTranscript += event.results[i][0].transcript;
         }
+        setUserInputText(interimTranscript);
+
+        // 3000ms Speech Debounce Timer to prevent cutting off early mid-sentence
+        if (speechDebounceTimerRef.current) clearTimeout(speechDebounceTimerRef.current);
+        speechDebounceTimerRef.current = setTimeout(() => {
+          recognition.stop();
+          setIsMicListening(false);
+          if (interimTranscript.trim()) {
+            if (flowState === 'phase1_q') handlePhase1AnswerSubmit(interimTranscript);
+            else if (flowState === 'phase2_q') handlePhase2QuestionSubmit(interimTranscript);
+          }
+        }, 3000); // 3000ms VAD timeout threshold
       };
 
       recognition.onerror = () => {
@@ -320,6 +372,10 @@ export function InformationExchangeP2({ customData }) {
       setIsMicListening(false);
     }
   };
+
+  // Determine Dimming & Visual Isolation
+  const isPhase1Active = flowState === 'phase1_intro' || flowState === 'phase1_q';
+  const isPhase2Active = flowState === 'phase2_intro' || flowState === 'phase2_q';
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
@@ -351,12 +407,16 @@ export function InformationExchangeP2({ customData }) {
         )}
       </div>
 
-      {/* Side-by-Side Information Tables (Clean Text/Data Only - No Inline Buttons) */}
+      {/* Side-by-Side Information Tables with Visual Isolation & Phase Dimming */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* TABLE A: TOM'S ACCIDENT (MISSING INFO TO ASK) */}
-        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all ${
-          flowState === 'phase2_q' ? 'bg-amber-50 border-amber-400 ring-4 ring-amber-100' : 'bg-slate-50/70 border-slate-200 opacity-90'
+        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all duration-500 ${
+          isPhase2Active
+            ? 'bg-amber-50 border-amber-500 ring-4 ring-amber-200 shadow-2xl opacity-100 scale-101'
+            : isPhase1Active
+            ? 'opacity-40 pointer-events-none grayscale bg-slate-50 border-slate-200'
+            : 'bg-slate-50/70 border-slate-200 opacity-90'
         }`}>
           <div className="flex items-center justify-between border-b-2 border-amber-300/70 pb-3 mb-4">
             <div className="flex items-center gap-2">
@@ -368,8 +428,8 @@ export function InformationExchangeP2({ customData }) {
                 <span className="text-[11px] font-bold text-amber-800">Person: {data.table_a.person}</span>
               </div>
             </div>
-            {flowState === 'phase2_q' && (
-              <span className="text-[10px] font-black uppercase tracking-wider bg-amber-300 text-amber-950 px-2.5 py-1 rounded-full animate-pulse">
+            {isPhase2Active && (
+              <span className="text-[10px] font-black uppercase tracking-wider bg-amber-400 text-amber-950 px-3 py-1 rounded-full animate-pulse shadow-sm">
                 Active: Ask Nova
               </span>
             )}
@@ -379,7 +439,7 @@ export function InformationExchangeP2({ customData }) {
             {data.table_a.fields.map((field) => {
               const isMissing = field.is_missing;
               const isRevealed = revealedTableA[field.id];
-              const isHighlighted = flowState === 'phase2_q' && currentActiveFieldA?.id === field.id;
+              const isHighlighted = isPhase2Active && currentActiveFieldA?.id === field.id;
 
               return (
                 <div
@@ -417,8 +477,12 @@ export function InformationExchangeP2({ customData }) {
         </div>
 
         {/* TABLE B: JAKE'S ACTION (COMPLETE INFO TO ANSWER) */}
-        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all ${
-          flowState === 'phase1_q' ? 'bg-indigo-50 border-indigo-400 ring-4 ring-indigo-100' : 'bg-slate-50/70 border-slate-200 opacity-90'
+        <div className={`rounded-3xl border-2 p-5 sm:p-6 shadow-md transition-all duration-500 ${
+          isPhase1Active
+            ? 'bg-indigo-50 border-indigo-500 ring-4 ring-indigo-200 shadow-2xl opacity-100 scale-101'
+            : isPhase2Active
+            ? 'opacity-40 pointer-events-none grayscale bg-slate-50 border-slate-200'
+            : 'bg-slate-50/70 border-slate-200 opacity-90'
         }`}>
           <div className="flex items-center justify-between border-b-2 border-indigo-300/70 pb-3 mb-4">
             <div className="flex items-center gap-2">
@@ -430,8 +494,8 @@ export function InformationExchangeP2({ customData }) {
                 <span className="text-[11px] font-bold text-indigo-800">Person: {data.table_b.person}</span>
               </div>
             </div>
-            {flowState === 'phase1_q' && (
-              <span className="text-[10px] font-black uppercase tracking-wider bg-indigo-300 text-indigo-950 px-2.5 py-1 rounded-full animate-pulse">
+            {isPhase1Active && (
+              <span className="text-[10px] font-black uppercase tracking-wider bg-indigo-400 text-indigo-950 px-3 py-1 rounded-full animate-pulse shadow-sm">
                 Active: Answer Nova
               </span>
             )}
@@ -499,6 +563,26 @@ export function InformationExchangeP2({ customData }) {
           )}
         </div>
 
+        {/* Lifebuoy Scaffolding Hint Box (Max Attempts >= 2) */}
+        {showLifebuoyHint && flowState === 'phase2_q' && currentActiveFieldA && (
+          <div className="p-4 bg-amber-500/20 border-2 border-amber-400 rounded-2xl space-y-2 animate-in fade-in">
+            <div className="flex items-center justify-between text-amber-300 font-black text-xs">
+              <span className="flex items-center gap-1.5">
+                <LifeBuoy size={16} className="text-amber-400 animate-spin" /> 🛟 Lifebuoy Hint Unlocked (2 Failed Attempts):
+              </span>
+              <button
+                onClick={() => VoiceService.speak(currentActiveFieldA.acceptable_questions[0], 'questions')}
+                className="px-3 py-1 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-lg text-xs font-black transition flex items-center gap-1 shadow-sm"
+              >
+                <Volume2 size={13} /> Listen Sample Audio
+              </button>
+            </div>
+            <p className="text-sm font-black text-white">
+              Try asking: <span className="text-amber-300 font-mono">"{currentActiveFieldA.acceptable_questions[0]}"</span>
+            </p>
+          </div>
+        )}
+
         {/* Live Controller Actions (Mic & Input Field) */}
         {flowState !== 'idle' && flowState !== 'completed' && (
           <div className="space-y-3 pt-1">
@@ -511,7 +595,7 @@ export function InformationExchangeP2({ customData }) {
               >
                 {isMicListening ? <MicOff size={22} /> : <Mic size={22} />}
                 <span className="text-xs font-black hidden sm:inline">
-                  {isMicListening ? 'Listening...' : 'Speak Response'}
+                  {isMicListening ? 'Listening (3s Debounce)...' : 'Speak Response'}
                 </span>
               </button>
 
