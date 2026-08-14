@@ -104,7 +104,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
         </div>
         <div>
           <span className="text-[10px] font-black text-amber-200 uppercase tracking-widest block">
-            CAMBRIDGE READING & WRITING PART 7 — EXAMINER INSTRUCTIONS:
+            ✨ NOVA'S WRITING CHALLENGE:
           </span>
           <p className="text-sm sm:text-base font-extrabold text-white">
             "Look at the three pictures. Write the story. Write 20 or more words."

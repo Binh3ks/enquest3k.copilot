@@ -323,45 +323,45 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
-      {/* Sub-Mode Switcher */}
-      <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-slate-100 overflow-x-auto no-scrollbar">
-        <div className="flex flex-wrap items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+      {/* Sub-Mode Switcher: Evenly Spaced Flexbox */}
+      <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-slate-100">
+        <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
           <button
             onClick={() => setSubMode('podcast')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'podcast' ? 'bg-rose-600 text-white shadow-md' : 'text-slate-600 hover:bg-slate-200'
+            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+              subMode === 'podcast' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
             }`}
           >
             🎙️ Podcast Shadowing
           </button>
           <button
             onClick={() => setSubMode('talkshow')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-600 hover:bg-slate-200'
+            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300' : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
             }`}
           >
             💬 Personal Q&A
           </button>
           <button
             onClick={() => setSubMode('cue_card')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'cue_card' ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' : 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200'
+            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+              subMode === 'cue_card' ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' : 'bg-white text-amber-900 border border-amber-300 hover:bg-amber-100'
             }`}
           >
             ❓ Ask & Answer
           </button>
           <button
             onClick={handleSelectPicStorySubmode}
-            className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              (subMode === 'pic_story' || subMode === 'story_picture') ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300' : 'text-slate-600 hover:bg-slate-200'
+            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+              (subMode === 'pic_story' || subMode === 'story_picture') ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300' : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
             }`}
           >
             🖼️ Picture Story
           </button>
           <button
             onClick={() => setSubMode('find_diff')}
-            className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              subMode === 'find_diff' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-rose-100 text-rose-900 border border-rose-300 hover:bg-rose-200'
+            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+              subMode === 'find_diff' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-white text-rose-900 border border-rose-300 hover:bg-rose-100'
             }`}
           >
             🔍 Find Differences

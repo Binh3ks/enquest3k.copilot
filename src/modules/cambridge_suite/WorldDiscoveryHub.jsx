@@ -368,23 +368,25 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       {/* Top Controls: Learn Mode vs Check Mode */}
       <div className="flex items-center justify-end mb-4">
 
-        {/* Tab Switcher: Learn Mode vs Check Mode */}
-        <div className="flex items-center gap-2 bg-indigo-50/70 p-1.5 rounded-2xl border border-indigo-200">
+        {/* Tab Switcher: Learn Mode (Blue Pastel) vs Check Mode (Amber Focus) */}
+        <div className={`flex items-center gap-2 p-1.5 rounded-2xl border transition-all ${
+          activeTab === 'webtoon' ? 'bg-blue-50/80 border-blue-200 ring-2 ring-blue-100' : 'bg-amber-50/90 border-amber-300 ring-2 ring-amber-200'
+        }`}>
           <button
             onClick={() => setActiveTab('webtoon')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              activeTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              activeTab === 'webtoon' ? 'bg-blue-600 text-white shadow-md' : 'bg-white/60 text-blue-800 hover:bg-blue-100'
             }`}
           >
-            <PlayCircle size={14} /> Learn Mode
+            <PlayCircle size={14} /> 📖 Learn Mode
           </button>
           <button
             onClick={() => setActiveTab('check')}
             className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              activeTab === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              activeTab === 'check' ? 'bg-amber-600 text-white shadow-md' : 'bg-white/60 text-amber-900 hover:bg-amber-100'
             }`}
           >
-            <GraduationCap size={14} /> Check Mode
+            <GraduationCap size={14} /> 🎯 Check Mode
           </button>
         </div>
       </div>
@@ -392,43 +394,43 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       {activeTab === 'webtoon' ? (
         /* LEARN MODE: CAMBRIDGE READING & WRITING SUITE SUB-TABS */
         <div className="space-y-6">
-          <div className="flex items-center gap-2 p-1.5 bg-indigo-50/70 rounded-2xl border border-indigo-200 overflow-x-auto no-scrollbar">
+          <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 p-1.5 bg-blue-50/60 rounded-2xl border border-blue-200">
             <button
               onClick={() => setLearnSubTab('webtoon')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                learnSubTab === 'webtoon' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                learnSubTab === 'webtoon' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
               }`}
             >
               📖 Story Time
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part1')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                learnSubTab === 'rw_part1' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                learnSubTab === 'rw_part1' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
               }`}
             >
               🧩 Word Match
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part2')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                learnSubTab === 'rw_part2' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                learnSubTab === 'rw_part2' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
               }`}
             >
               💬 Chat Box
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part4')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                learnSubTab === 'rw_part4' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                learnSubTab === 'rw_part4' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
               }`}
             >
               📝 Fill the Blanks
             </button>
             <button
               onClick={() => setLearnSubTab('rw_part5')}
-              className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                learnSubTab === 'rw_part5' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100'
+              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                learnSubTab === 'rw_part5' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
               }`}
             >
               🕵️ Story Detective

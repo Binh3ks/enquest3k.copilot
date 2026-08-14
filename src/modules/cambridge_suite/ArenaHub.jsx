@@ -54,22 +54,24 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
 
         {/* Learn Mode vs Check Mode Switcher */}
         <div className="flex items-center gap-3">
-          <div className="bg-amber-50/70 p-1.5 rounded-2xl border border-amber-200 flex items-center gap-1.5">
+          <div className={`p-1.5 rounded-2xl border transition-all ${
+            viewMode === 'learn' ? 'bg-blue-50/80 border-blue-200 ring-2 ring-blue-100' : 'bg-amber-50/90 border-amber-300 ring-2 ring-amber-200'
+          }`}>
             <button
               onClick={() => setViewMode('learn')}
               className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                viewMode === 'learn' ? 'bg-amber-500 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
+                viewMode === 'learn' ? 'bg-blue-600 text-white shadow-md' : 'bg-white/60 text-blue-800 hover:bg-blue-100'
               }`}
             >
-              <PlayCircle size={14} /> Learn Mode
+              <PlayCircle size={14} /> 📖 Learn Mode
             </button>
             <button
               onClick={() => setViewMode('check')}
               className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                viewMode === 'check' ? 'bg-emerald-600 text-white shadow-md' : 'bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100'
+                viewMode === 'check' ? 'bg-amber-600 text-white shadow-md' : 'bg-white/60 text-amber-900 hover:bg-amber-100'
               }`}
             >
-              <GraduationCap size={14} /> Check Mode
+              <GraduationCap size={14} /> 🎯 Check Mode
             </button>
           </div>
         </div>
@@ -84,10 +86,10 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                 setMainCategory('listening');
                 setActiveTab('listening_p1');
               }}
-              className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition flex items-center gap-2 ${
+              className={`flex-1 px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 ${
                 mainCategory === 'listening'
-                  ? 'bg-indigo-600 text-white shadow-lg scale-102 ring-4 ring-indigo-200'
-                  : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                  ? 'bg-blue-600 text-white shadow-lg scale-102 ring-4 ring-blue-200'
+                  : 'bg-blue-50 text-blue-800 border border-blue-200 hover:bg-blue-100'
               }`}
             >
               🎧 Listening Missions
@@ -97,7 +99,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
                 setMainCategory('arena');
                 setActiveTab('sentence_builder');
               }}
-              className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition flex items-center gap-2 ${
+              className={`flex-1 px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-black transition flex items-center justify-center gap-2 ${
                 mainCategory === 'arena'
                   ? 'bg-amber-500 text-white shadow-lg scale-102 ring-4 ring-amber-200'
                   : 'bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100'
@@ -109,35 +111,35 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
 
           {/* LEVEL 2 SUB-TABS NAVIGATION */}
           {mainCategory === 'listening' ? (
-            <div className="flex items-center gap-2 p-1.5 bg-indigo-50/70 rounded-2xl border border-indigo-200 overflow-x-auto no-scrollbar">
+            <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 p-1.5 bg-blue-50/60 rounded-2xl border border-blue-200">
               <button
                 onClick={() => setActiveTab('listening_p1')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                  activeTab === 'listening_p1' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                  activeTab === 'listening_p1' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-800 border border-blue-200 hover:bg-blue-100'
                 }`}
               >
                 🔗 Draw the Lines
               </button>
               <button
                 onClick={() => setActiveTab('listening_p2')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                  activeTab === 'listening_p2' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                  activeTab === 'listening_p2' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-800 border border-blue-200 hover:bg-blue-100'
                 }`}
               >
                 📋 Secret Notes
               </button>
               <button
                 onClick={() => setActiveTab('listening_p3')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                  activeTab === 'listening_p3' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                  activeTab === 'listening_p3' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-800 border border-blue-200 hover:bg-blue-100'
                 }`}
               >
                 🔍 Item Hunt
               </button>
               <button
                 onClick={() => setActiveTab('listening_p4')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
-                  activeTab === 'listening_p4' ? 'bg-indigo-600 text-white shadow-md' : 'bg-indigo-50 text-indigo-800 border border-indigo-200 hover:bg-indigo-100'
+                className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                  activeTab === 'listening_p4' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-800 border border-blue-200 hover:bg-blue-100'
                 }`}
               >
                 🖼️ Picture Quiz

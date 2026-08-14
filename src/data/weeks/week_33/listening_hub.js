@@ -15,7 +15,7 @@ export const listeningHubData = {
   // Cambridge Listening Part 1 (SVG Line Matcher)
   listening_p1: {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',
-    passage_audio_script: "Look at Part 1. Listen and draw lines. Girl: Look at that boy in the corridor! Is he running? Man: No, the boy slipping on the wet floor in the red shirt is Tom! Look at the boy walking carefully in the blue shirt. Girl: Oh, I see him now. Is that Jake? Man: Yes, that's right. Jake is walking carefully. Girl: Who is the lady in the white uniform carrying a bandage? Man: That's the school nurse! She is rushing to help Tom. Girl: And who is the tall man in the blue suit talking to students? Man: That's the headmaster. He is making sure everyone stays safe. Girl: Look at the girl near the yellow wet floor sign holding a mop. Man: Ah, that's Mia. She is cleaning the wet floor so nobody else falls.",
+    passage_audio_script: "Look at Part 1. Listen and draw lines. Mia: Look at that boy in the corridor! Is he running? Teacher: No, the boy slipping on the wet floor in the red shirt is Tom! Look at the boy walking carefully in the blue shirt. Mia: Oh, I see him now. Is that Jake? Teacher: Yes, that's right. Jake is walking carefully. Mia: Who is the lady in the white uniform carrying a bandage? Teacher: That's the school nurse! She is rushing to help Tom. Mia: And who is the tall man in the blue suit talking to students? Teacher: That's the headmaster. He is making sure everyone stays safe. Mia: Look at the girl near the yellow wet floor sign holding a mop. Teacher: Ah, that's Mia. She is cleaning the wet floor so nobody else falls.",
     names: [
       { id: 'n1', text: 'Jake', target_id: 't1' },
       { id: 'n2', text: 'School Nurse', target_id: 't2' },
