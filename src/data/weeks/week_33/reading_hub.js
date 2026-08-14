@@ -32,7 +32,21 @@ export const readingHubData = {
     word_bank: ["slipped", "fell down", "Without hesitation", "called", "clean bandage"]
   },
   story_scenes: read_explore.story_scenes,
-  read_explore
+  read_explore,
+
+  // Cambridge Reading & Writing Part 6 (Open Cloze - 5 Gaps Text Input)
+  rw_part_6: {
+    instructions: "Read the diary and write the missing words. Write one word on each line.",
+    title: "Jake's Diary: Tuesday",
+    text_template: "Dear Diary, today was a crazy day at school. After science class, I was walking down the [1]_____. Suddenly, Tom ran past me very fast. He didn't see the yellow warning sign. He [2]_____ on the wet floor and fell down! He [3]_____ his left knee. I walked quickly and [4]_____ the school nurse for help. She brought a clean [5]_____ and fixed his knee. I'm glad he is okay!",
+    answers: {
+      "1": "corridor",
+      "2": "slipped",
+      "3": "hurt",
+      "4": "called",
+      "5": "bandage"
+    }
+  }
 };
 
 export default readingHubData;

@@ -13,6 +13,7 @@ import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter'
 import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
 import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
+import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
 
 
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
@@ -557,77 +558,8 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
 
         </div>
       ) : (
-        /* CHECK MODE: 10 CAMBRIDGE READING MCQ DRILLS */
-        <div className="space-y-6 bg-slate-50 rounded-3xl p-6 border border-slate-200 shadow-inner">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-            <div>
-              <span className="text-[10px] font-black text-amber-600 uppercase tracking-wider">🎯 READING MASTERY CHALLENGE</span>
-              <h2 className="text-xl font-black text-slate-900 mt-0.5">Test your story reading skills (10 Questions)</h2>
-            </div>
-            <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-black font-mono">
-              10 Items
-            </span>
-          </div>
-
-          <div className="space-y-6">
-            {checkQuestions.map((q, qIdx) => (
-              <div key={q.id || qIdx} className="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-3">
-                <div className="text-sm font-black text-slate-900 flex items-start gap-2">
-                  <span className="px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-md text-xs">Q{qIdx + 1}</span>
-                  <span>{q.question}</span>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
-                  {q.options.map((opt, optIdx) => {
-                    const isSelected = checkAnswers[q.id] === optIdx;
-                    return (
-                      <button
-                        key={optIdx}
-                        disabled={checkSubmitted}
-                        onClick={() => setCheckAnswers((prev) => ({ ...prev, [q.id]: optIdx }))}
-                        className={`p-3 rounded-xl text-xs font-bold transition border text-left flex items-center justify-between ${
-                          isSelected
-                            ? 'bg-indigo-600 text-white border-indigo-600 shadow-md ring-2 ring-indigo-200'
-                            : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
-                        }`}
-                      >
-                        <span>{opt}</span>
-                        {isSelected && <CheckCircle2 size={16} />}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Submit Action */}
-          {!checkSubmitted ? (
-            <div className="pt-4 flex justify-end">
-              <button
-                onClick={handleCheckSubmit}
-                disabled={Object.keys(checkAnswers).length < checkQuestions.length}
-                className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-2xl text-sm transition shadow-lg flex items-center gap-2 disabled:opacity-50"
-              >
-                <CheckCircle2 size={18} /> Submit Reading Exam
-              </button>
-            </div>
-          ) : (
-            <div className="p-6 bg-emerald-50 rounded-2xl border border-emerald-300 text-center space-y-3 animate-in fade-in">
-              <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl font-black shadow-md">
-                🏆
-              </div>
-              <h3 className="text-xl font-black text-emerald-950">Reading Exam Completed!</h3>
-              <p className="text-base font-black text-emerald-800">Final Score: {checkScore}%</p>
-              <button
-                onClick={() => { setCheckSubmitted(false); setCheckAnswers({}); setCheckScore(null); }}
-                className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-xs transition shadow-md"
-              >
-                Retake Reading Exam
-              </button>
-            </div>
-          )}
-        </div>
+        /* CHECK MODE: CAMBRIDGE READING & WRITING PART 6 (OPEN CLOZE - 5 GAPS TEXT INPUT) */
+        <OpenClozeCompleter customData={data?.rw_part_6} />
       )}
     </div>
   );

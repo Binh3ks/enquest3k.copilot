@@ -96,6 +96,15 @@ if (part5Code.includes('STORY DETECTIVE MISSION') || part5Code.includes('TextExt
   process.exit(1);
 }
 
+// Test 9b: Reading & Writing Part 6 (Open Cloze 5 Gaps Text Input)
+const openClozeCode = readFileSync('src/components/cambridge/OpenClozeCompleter.jsx', 'utf-8');
+if (openClozeCode.includes('OPEN CLOZE CHALLENGE') && openClozeCode.includes('renderParsedDiaryText')) {
+  console.log('✅ [QA PASS] R&W Part 6: OpenClozeCompleter active with 5 gaps text input & keyboard typing!');
+} else {
+  console.error('❌ [QA FAIL] R&W Part 6: OpenClozeCompleter implementation incomplete.');
+  process.exit(1);
+}
+
 // Test 10: Reading & Writing Part 7 (Story Writing Studio)
 const writingHubCode = readFileSync('src/modules/cambridge_suite/WritingStudioHub.jsx', 'utf-8');
 if (writingHubCode.includes('WritingStudioHub') || writingHubCode.includes('story')) {
