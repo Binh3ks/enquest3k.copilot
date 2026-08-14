@@ -125,10 +125,11 @@ if (findDiffCode.includes('foundHotspots') && (findDiffCode.includes('FIND DIFFE
   process.exit(1);
 }
 
-// Test 12: Speaking Part 2 (Reverse Role Cue-Card)
+// Test 12: Speaking Part 2 (Information Exchange Side-by-Side Tables)
 const talkshowHubCode = readFileSync('src/modules/cambridge_suite/NovaTalkShowHub.jsx', 'utf-8');
-if (talkshowHubCode.includes('Reverse Role Cue-Card') || talkshowHubCode.includes('cue_card')) {
-  console.log('✅ [QA PASS] 12/16 Speaking Part 2: Reverse Role Cue-Card active!');
+const infoExCode = readFileSync('src/components/cambridge/InformationExchangeP2.jsx', 'utf-8');
+if (talkshowHubCode.includes('InformationExchangeP2') && infoExCode.includes('Table A') && infoExCode.includes('Table B')) {
+  console.log('✅ [QA PASS] 12/16 Speaking Part 2: InformationExchangeP2 active with side-by-side tables!');
   totalPassed++;
 } else {
   console.error('❌ [QA FAIL] 12/16 Speaking Part 2 incomplete.');

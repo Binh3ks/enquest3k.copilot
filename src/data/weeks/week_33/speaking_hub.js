@@ -4,13 +4,14 @@
  */
 
 import mindmap from './mindmap.js';
-import ask_ai from './ask_ai.js';
+import ask_ai, { INFORMATION_EXCHANGE_P2 } from './ask_ai.js';
 
 export const speakingHubData = {
   week: 33,
   theme: "Corridor Safety & School Care",
   mindmap,
   ask_ai,
+  cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
 
   // Cambridge Speaking Part 1 (Find Differences)
   find_differences: {

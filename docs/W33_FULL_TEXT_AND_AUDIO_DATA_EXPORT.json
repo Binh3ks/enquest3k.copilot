@@ -1163,6 +1163,111 @@
         ]
       }
     ],
+    "cue_card_info_exchange": {
+      "title": "Cambridge Speaking Part 2 — Information Exchange",
+      "subtitle": "Table A: Candidate asks questions for missing info (?) • Table B: Candidate answers Nova's questions",
+      "table_a": {
+        "title": "Table A: Tom's Accident (Candidate Asks Questions)",
+        "person": "Tom",
+        "fields": [
+          {
+            "id": "field_a1",
+            "label": "Who?",
+            "value": "Tom",
+            "is_missing": false
+          },
+          {
+            "id": "field_a2",
+            "label": "Injury location?",
+            "value": "?",
+            "is_missing": true,
+            "cue_prompt": "Where / Tom / get injured?",
+            "acceptable_questions": [
+              "Where did Tom get injured?",
+              "Where was Tom injured?",
+              "Where did he slip?"
+            ],
+            "nova_reply": "Tom got injured in the main school corridor near the science lab."
+          },
+          {
+            "id": "field_a3",
+            "label": "Hurt what?",
+            "value": "?",
+            "is_missing": true,
+            "cue_prompt": "What / Tom / hurt?",
+            "acceptable_questions": [
+              "What did Tom hurt?",
+              "What did he hurt?",
+              "Which part of his body did he hurt?"
+            ],
+            "nova_reply": "Tom hurt his left knee when he fell down."
+          },
+          {
+            "id": "field_a4",
+            "label": "Time?",
+            "value": "?",
+            "is_missing": true,
+            "cue_prompt": "What time / slip?",
+            "acceptable_questions": [
+              "What time did Tom slip?",
+              "What time did he slip?",
+              "When did the accident happen?"
+            ],
+            "nova_reply": "He slipped at exactly 9:30 AM."
+          }
+        ]
+      },
+      "table_b": {
+        "title": "Table B: Jake's Action (Examiner Asks Questions)",
+        "person": "Jake",
+        "fields": [
+          {
+            "id": "field_b1",
+            "label": "Who?",
+            "value": "Jake",
+            "nova_question": "Who took quick action when Tom fell down?",
+            "acceptable_answers": [
+              "Jake took quick action.",
+              "Jake",
+              "Jake did."
+            ]
+          },
+          {
+            "id": "field_b2",
+            "label": "Action taken?",
+            "value": "Called school nurse",
+            "nova_question": "What action did Jake take?",
+            "acceptable_answers": [
+              "He called the school nurse.",
+              "Called the school nurse",
+              "He called the nurse for help."
+            ]
+          },
+          {
+            "id": "field_b3",
+            "label": "First aid item?",
+            "value": "Clean bandage & cold pack",
+            "nova_question": "What first aid item did the nurse bring?",
+            "acceptable_answers": [
+              "She brought a clean bandage and a cold pack.",
+              "Clean bandage and cold pack",
+              "A clean bandage"
+            ]
+          },
+          {
+            "id": "field_b4",
+            "label": "Feeling?",
+            "value": "Relieved & safe",
+            "nova_question": "How did everyone feel after that?",
+            "acceptable_answers": [
+              "Everyone felt relieved and safe.",
+              "Relieved",
+              "They felt relieved."
+            ]
+          }
+        ]
+      }
+    },
     "find_differences": {
       "picA": {
         "title": "Picture A (Original Scene)",

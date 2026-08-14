@@ -5,6 +5,7 @@ import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, RefreshCw, Trophy, AlertCircle, PlayCircle, HelpCircle, Layers, BookOpen, Star, Radio, AlertTriangle, Info } from 'lucide-react';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
+import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
 
 /**
  * Real Speech Recognition Accuracy Calculation Algorithm
@@ -569,133 +570,8 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           )}
         </div>
       ) : subMode === 'cue_card' ? (
-        /* MODE 3: REVERSE ROLE CUE-CARD QUESTION MASTER (SPEAKING PART 2) */
-        <div className="space-y-6">
-          <div className="p-6 bg-amber-50 rounded-3xl border-4 border-amber-200 shadow-xl space-y-4 relative overflow-hidden">
-            <div className="flex items-center justify-between border-b-2 border-amber-300 pb-3">
-              <div>
-                <span className="text-xs font-black text-amber-700 uppercase tracking-widest">❓ ASK & ANSWER CHALLENGE</span>
-                <h3 className="text-xl sm:text-2xl font-black text-amber-950 font-serif">Cue-Card Question Master</h3>
-              </div>
-              <span className="px-3.5 py-1 bg-amber-500 text-white text-xs font-black rounded-full font-mono shadow-sm">
-                Cue {cueCardIdx + 1} / {cueCardPrompts.length}
-              </span>
-            </div>
-
-            {!cueCompleted ? (
-              <div className="space-y-5">
-                {/* Active Cue-Card Prompt */}
-                <div className="p-5 bg-white rounded-2xl border-2 border-amber-300 shadow-md space-y-2">
-                  <div className="text-xs font-black text-amber-600 uppercase tracking-wider">YOUR TASK (FORM & ASK QUESTION):</div>
-                  <h4 className="text-lg font-black text-slate-900 leading-snug">
-                    {cueCardPrompts[cueCardIdx].target_prompt_en}
-                  </h4>
-                  {cueCardPrompts[cueCardIdx].target_prompt_vi && (
-                    <p className="text-xs font-bold text-slate-500 italic">
-                      ({cueCardPrompts[cueCardIdx].target_prompt_vi})
-                    </p>
-                  )}
-                </div>
-
-                {/* Progressive Scaffolding Pills */}
-                {cueFailedAttempts >= 2 ? (
-                  <div className="p-4 bg-amber-100/80 rounded-2xl border-2 border-amber-300 space-y-2 animate-in fade-in">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-black text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
-                        <AlertTriangle size={14} className="text-amber-600" /> L1 Scaffolding Hint Unlocked (2 Failed Attempts):
-                      </span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-amber-200 text-amber-950 rounded-md">Scrambled Pills</span>
-                    </div>
-                    <div className="flex flex-wrap gap-2 pt-1">
-                      {(cueCardPrompts[cueCardIdx].scrambled_words || cueCardPrompts[cueCardIdx].word_bank).map((w, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setCueQuestionInput((prev) => (prev ? `${prev} ${w}` : w))}
-                          className="px-3.5 py-1.5 bg-white hover:bg-amber-200 text-amber-950 border border-amber-300 rounded-xl text-xs font-black shadow-sm transition active:scale-95"
-                        >
-                          + {w}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <div className="p-3.5 bg-amber-50/80 rounded-2xl border border-amber-200 text-xs font-bold text-amber-900 flex items-center gap-2">
-                    <Info size={16} className="text-amber-600 shrink-0" />
-                    <span>Practice Mode: Word Pills are hidden to test your question-forming skill. Type or speak into Mic independently!</span>
-                  </div>
-                )}
-
-
-                {/* Question Input Box + Send & Mic */}
-                <div className="space-y-2">
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={handleMicClick}
-                      className={`p-4 rounded-2xl text-white font-black transition flex items-center justify-center gap-2 shadow-lg shrink-0 ${
-                        isMicListening ? 'bg-red-600 animate-pulse' : 'bg-amber-600 hover:bg-amber-700'
-                      }`}
-                      title="Speak question via mic"
-                    >
-                      {isMicListening ? <MicOff size={20} /> : <Mic size={20} />}
-                      <span className="text-xs font-black hidden sm:inline">Ask via Mic</span>
-                    </button>
-
-                    <input
-                      type="text"
-                      value={cueQuestionInput}
-                      onChange={(e) => setCueQuestionInput(e.target.value)}
-                      placeholder={`Type your question starting with '${cueCardPrompts[cueCardIdx].question_word}'...`}
-                      onKeyDown={(e) => e.key === 'Enter' && handleAskNovaQuestion(cueQuestionInput)}
-                      className="flex-1 p-4 bg-white text-slate-900 rounded-2xl border-2 border-amber-300 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
-                    />
-
-                    <button
-                      disabled={!cueQuestionInput.trim()}
-                      onClick={() => handleAskNovaQuestion(cueQuestionInput)}
-                      className="px-6 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-2xl text-xs font-black shadow-md transition disabled:opacity-40 shrink-0"
-                    >
-                      Ask Nova
-                    </button>
-                  </div>
-                </div>
-
-                {/* Nova AI Speech Response Feedback Card */}
-                {cueFeedback && (
-                  <div className={`p-5 rounded-2xl border-2 text-slate-900 space-y-2 animate-in zoom-in-95 ${
-                    cueFeedback.isCorrectSyntax ? 'bg-emerald-50 border-emerald-300' : 'bg-amber-100 border-amber-400'
-                  }`}>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-black uppercase text-amber-800">Your Asked Question:</span>
-                      <span className="text-xs font-bold px-2.5 py-0.5 rounded-md bg-white border border-amber-300">
-                        {cueFeedback.isCorrectSyntax ? 'Grammar Syntax PASS ✓' : 'Practice Syntax'}
-                      </span>
-                    </div>
-                    <p className="text-sm font-black text-slate-900">"{cueFeedback.userQuestion}"</p>
-                    <div className="pt-2 border-t border-amber-200">
-                      <div className="text-xs font-black text-purple-700 uppercase mb-1">Mascot Nova Answers:</div>
-                      <p className="text-sm font-extrabold text-purple-950 flex items-center gap-2">
-                        <Volume2 className="w-5 h-5 text-purple-600 shrink-0" />
-                        "{cueFeedback.novaResponse}"
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="p-8 bg-emerald-50 border-2 border-emerald-300 rounded-2xl text-center space-y-3 animate-in fade-in">
-                <Star className="w-12 h-12 text-amber-400 fill-amber-400 mx-auto animate-bounce" />
-                <h4 className="text-xl font-black text-emerald-950">Cue-Card Reverse Role Exam Passed!</h4>
-                <p className="text-sm font-bold text-emerald-800">You successfully formed and asked all 5 questions to Mascot Nova!</p>
-                <button
-                  onClick={() => { setCueCompleted(false); setCueCardIdx(0); setCueQuestionInput(''); setCueFeedback(null); }}
-                  className="px-6 py-3 bg-amber-600 text-white font-black text-sm rounded-xl shadow-md hover:bg-amber-700 transition"
-                >
-                  Restart Cue-Card Master
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
+        /* MODE 3: CAMBRIDGE SPEAKING PART 2 (INFORMATION EXCHANGE SIDE-BY-SIDE TABLES) */
+        <InformationExchangeP2 customData={data?.cue_card_info_exchange} />
       ) : (
         /* MODE 4: 4-PICTURE STORY CONTINUATION (SPEAKING PART 3) */
         <div className="space-y-6">
