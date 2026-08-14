@@ -9,7 +9,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
   const [score, setScore] = useState(null);
   const containerRef = useRef(null);
 
-  const fullListeningScript = "Welcome to Cambridge Listening Part 1. Listen and draw a line from each name to the correct person in the picture. First, look at Jake. He is the boy walking carefully down the corridor in his blue shirt. Second, look at Tom. He is the boy slipping on the wet floor puddle in his red shirt. Third, look at the school nurse. She is carrying a clean bandage to help. Fourth, look at the headmaster. He is wearing a blue suit talking to students. And fifth, look at Mia. She is the girl holding a mop near the wet floor sign.";
+  const fullListeningScript = "Look at Part 1. Listen and draw lines. Girl: Look at that boy in the corridor! Is he running? Man: No, the boy slipping on the wet floor in the red shirt is Tom! Look at the boy walking carefully in the blue shirt. Girl: Oh, I see him now. Is that Jake? Man: Yes, that's right. Jake is walking carefully. Girl: Who is the lady in the white uniform carrying a bandage? Man: That's the school nurse! She is rushing to help Tom. Girl: And who is the tall man in the blue suit talking to students? Man: That's the headmaster. He is making sure everyone stays safe. Girl: Look at the girl near the yellow wet floor sign holding a mop. Man: Ah, that's Mia. She is cleaning the wet floor so nobody else falls.";
 
   // Default Listening Part 1 Line Matching Data
   const sceneData = customData || {

@@ -21,71 +21,56 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const picturePanels = data?.picture_story || data?.picturePanels || [
     {
       panel_id: 'panel_1',
-      title_en: 'Panel 1: Running in the Living Room',
-      title_vi: 'Cảnh 1: Chạy Nhảy Trong Phòng Khách',
+      title_en: 'Panel 1: Running in the Corridor',
+      title_vi: 'Cảnh 1: Chạy Nhảy Tại Hành Lang Trường',
       image_url: '/images/week33/writing_panel_1.png'
     },
     {
       panel_id: 'panel_2',
-      title_en: 'Panel 2: Accidental Crash',
-      title_vi: 'Cảnh 2: Va Chạm Vô Tình',
+      title_en: 'Panel 2: Slipping on Wet Floor',
+      title_vi: 'Cảnh 2: Trượt Chân Trên Sàn Ướt',
       image_url: '/images/week33/writing_panel_2.png'
     },
     {
       panel_id: 'panel_3',
-      title_en: 'Panel 3: Apologizing and Cleaning',
-      title_vi: 'Cảnh 3: Xin Lỗi Và Dọn Dẹp',
+      title_en: 'Panel 3: Nurse Applying Bandage',
+      title_vi: 'Cảnh 3: Y Tá Băng Bó Và Dọn Dẹp',
       image_url: '/images/week33/writing_panel_3.png'
     }
   ];
 
   const wordBankPills = data?.word_bank_pills || data?.wordBankPills || {
-    action_verbs: ['broke', 'fell', 'lost', 'found', 'slipped', 'spilled', 'dropped', 'apologized'],
-    connectors: ['first', 'suddenly', 'finally', 'while', 'because', 'although', 'so'],
-    cumulative_chunks: ['broke a flower vase', 'slipped on the floor', 'apologized to mom', 'cleaned up carefully'],
-    grammar_boosters: ['was playing', 'were climbing', 'had realized', 'was searching']
+    action_verbs: ['slipped', 'fell down', 'hurt knee', 'called nurse', 'applied bandage', 'helped clean', 'walked carefully'],
+    connectors: ['first', 'suddenly', 'then', 'while', 'because', 'so', 'finally'],
+    cumulative_chunks: ['slipped on wet floor', 'hurt his knee', 'called the school nurse', 'applied a clean bandage', 'cleaned the wet floor'],
+    grammar_boosters: ['was running', 'was walking carefully', 'were helping', 'had slipped']
   };
 
   const handleInsertPill = (word) => {
     setUserScript((prev) => (prev ? `${prev} ${word}` : word));
   };
 
-  const handleAnalyzeScript = async () => {
+  const handleRuleSubmitCheck = () => {
+    if (!userScript.trim()) return;
+
     setIsAnalyzing(true);
-    const textLower = userScript.toLowerCase();
-
-    const pastVerbs = ['broke', 'fell', 'lost', 'found', 'slipped', 'spilled', 'tore', 'hurt', 'dropped', 'apologized'];
-    const matchedVerbs = pastVerbs.filter((v) => textLower.includes(v));
-
-    const connectors = ['first', 'suddenly', 'finally', 'while', 'because', 'although', 'when', 'so', 'however'];
-    const matchedConnectors = connectors.filter((c) => textLower.includes(c));
-
-    const wordCount = userScript.trim().split(/\s+/).filter(Boolean).length;
-
-    const layer1Result = {
-      wordCount,
-      pastVerbsCount: matchedVerbs.length,
-      connectorsCount: matchedConnectors.length,
-      matchedVerbs,
-      matchedConnectors,
-      isRulePass: matchedVerbs.length >= 2 && wordCount >= 20
-    };
-
-    setRuleScore(layer1Result);
-
-    setTimeout(async () => {
-      const calculatedMovieScore = Math.min(100, Math.max(50, wordCount * 2 + matchedVerbs.length * 10));
-
-      const layer2Result = {
-        movieQualityScore: calculatedMovieScore,
-        aiFeedbackText: 'Great Cambridge Flyers story script! Your narrative flows across all 3 picture panels. Keep using connectors for high accuracy.',
-        verificationStatus: 'practice_only'
-      };
-
-      setAiScore(layer2Result);
+    setTimeout(() => {
       setIsAnalyzing(false);
 
-      await learnerProgressService.logAttempt({
+      const words = userScript.trim().split(/\s+/).filter(Boolean);
+      const isWordCountPass = words.length >= 20;
+
+      const layer1Result = {
+        isRulePass: isWordCountPass,
+        wordCount: words.length
+      };
+
+      setRuleScore(layer1Result);
+
+      const calculatedMovieScore = isWordCountPass ? 100 : Math.round((words.length / 20) * 100);
+      setAiScore(calculatedMovieScore);
+
+      learnerProgressService.logAttempt({
         learnerId,
         contentId: `w${weekNumber}_writing_p7`,
         mode: 'learn',
@@ -114,6 +99,21 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           >
             <HelpCircle size={14} className="text-amber-600" /> Show Hints
           </button>
+        </div>
+      </div>
+
+      {/* Examiner Instructions Banner */}
+      <div className="p-4 mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl text-white shadow-md flex items-center gap-3">
+        <div className="p-2.5 bg-amber-400 text-slate-950 font-black rounded-xl text-lg shrink-0">
+          📝
+        </div>
+        <div>
+          <span className="text-[10px] font-black text-amber-200 uppercase tracking-widest block">
+            CAMBRIDGE READING & WRITING PART 7 — EXAMINER INSTRUCTIONS:
+          </span>
+          <p className="text-sm sm:text-base font-extrabold text-white">
+            "Look at the three pictures. Write the story. Write 20 or more words."
+          </p>
         </div>
       </div>
 
