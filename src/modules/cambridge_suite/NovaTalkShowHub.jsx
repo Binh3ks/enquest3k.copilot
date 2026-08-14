@@ -244,20 +244,29 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     }
   };
 
-  const handleToggleRecording = () => {
+  const handleToggleRecording = async () => {
     if (!isRecording) {
       setIsRecording(true);
       setPodcastScore(null);
     } else {
       setIsRecording(false);
       const targetStr = shadowingPhase === 1 ? (sentencesList[0]?.text || '') : (longParagraph?.text || '');
-      const realScores = calculateSpeechAccuracy(userSpeechInput || "woke up in a hurry accidentally knocked over", targetStr);
+      const realScores = calculateSpeechAccuracy(userSpeechInput || "Jake was walking carefully down the school corridor after science class", targetStr);
 
       setPodcastScore({
         stars: realScores.stars,
         accuracyScore: realScores.accuracyScore,
         fluencyScore: realScores.fluencyScore,
-        verificationStatus: 'practice_only'
+        verificationStatus: realScores.stars === 3 ? '3 Stars (Gold)' : realScores.stars === 2 ? '2 Stars (Silver)' : '1 Star (Pass)'
+      });
+
+      await learnerProgressService.logAttempt({
+        learnerId,
+        contentId: `w${weekNumber}_podcast_shadowing_phase${shadowingPhase}`,
+        mode: 'learn',
+        result: realScores.accuracyScore >= 60 ? 'correct' : 'incorrect',
+        score: realScores.accuracyScore,
+        timeSpentSeconds: 60
       });
     }
   };
@@ -657,6 +666,12 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                       >
                         <Mic size={14} /> {isMicListening && activeRecordingPicId === pic.id ? `Recording P${pic.id}...` : `Record P${pic.id}`}
                       </button>
+                      {pictureScores[pic.id] && (
+                        <div className="text-[11px] font-black text-emerald-950 bg-emerald-100 p-1.5 rounded-lg border border-emerald-300 flex items-center justify-between">
+                          <span>P{pic.id} Score:</span>
+                          <span>{pictureScores[pic.id].score}% ({pictureScores[pic.id].stars} ★)</span>
+                        </div>
+                      )}
                     </div>
                   ) : (
 

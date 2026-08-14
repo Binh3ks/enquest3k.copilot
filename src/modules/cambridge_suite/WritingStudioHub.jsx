@@ -61,24 +61,56 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       setIsAnalyzing(false);
 
       const words = userScript.trim().split(/\s+/).filter(Boolean);
+      const cleanText = userScript.toLowerCase();
+
+      // 1. Word Count Check (20 pts max)
       const isWordCountPass = words.length >= 20;
+      const wordScore = isWordCountPass ? 20 : Math.round((words.length / 20) * 20);
+
+      // 2. Target Vocab Keywords Check (40 pts max)
+      const targetKeywords = ['slipped', 'corridor', 'nurse', 'bandage', 'knee', 'fell', 'help', 'pack', 'clean', 'stopped', 'walked', 'called', 'fast', 'wet', 'floor', 'aid', 'school'];
+      const foundKeywords = Array.from(new Set(targetKeywords.filter(k => cleanText.includes(k))));
+      const keywordScore = Math.min(40, foundKeywords.length * 10);
+
+      // 3. Past Tense Verbs Check (40 pts max)
+      const pastVerbs = ['was', 'were', 'slipped', 'fell', 'hurt', 'called', 'stopped', 'arrived', 'brought', 'treated', 'helped', 'walked', 'ran', 'saw', 'dropped', 'promised'];
+      const foundPastVerbs = Array.from(new Set(pastVerbs.filter(v => cleanText.includes(v))));
+      const grammarScore = Math.min(40, foundPastVerbs.length * 10);
+
+      const totalScore = Math.min(100, wordScore + keywordScore + grammarScore);
+      const stars = totalScore >= 80 ? 3 : totalScore >= 60 ? 2 : 1;
+
+      let feedbackText = "";
+      if (totalScore >= 80) {
+        feedbackText = "Outstanding story! Excellent past tense verbs and target keywords (corridor, slipped, nurse)!";
+      } else if (totalScore >= 60) {
+        feedbackText = "Good story! Try adding more target keywords (like 'corridor' or 'bandage') and past verbs to get 3 stars!";
+      } else {
+        feedbackText = "Keep practicing! Write 20+ words and include past tense verbs (slipped, fell, called) to describe the accident.";
+      }
 
       const layer1Result = {
         isRulePass: isWordCountPass,
-        wordCount: words.length
+        wordCount: words.length,
+        pastVerbsCount: foundPastVerbs.length,
+        connectorsCount: foundKeywords.length
       };
 
       setRuleScore(layer1Result);
 
-      const calculatedMovieScore = isWordCountPass ? 100 : Math.round((words.length / 20) * 100);
-      setAiScore(calculatedMovieScore);
+      setAiScore({
+        movieQualityScore: totalScore,
+        stars,
+        verificationStatus: stars === 3 ? '3 Stars (Gold)' : stars === 2 ? '2 Stars (Silver)' : '1 Star (Pass)',
+        aiFeedbackText: feedbackText
+      });
 
       learnerProgressService.logAttempt({
         learnerId,
         contentId: `w${weekNumber}_writing_p7`,
         mode: 'learn',
-        result: layer1Result.isRulePass ? 'correct' : 'incorrect',
-        score: calculatedMovieScore,
+        result: isWordCountPass && totalScore >= 60 ? 'correct' : 'incorrect',
+        score: totalScore,
         timeSpentSeconds: 60
       });
     }, 1200);
