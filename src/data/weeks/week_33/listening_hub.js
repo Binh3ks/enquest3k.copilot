@@ -43,12 +43,12 @@ export const listeningHubData = {
       { id: 5, name: 'Alarm Clock', target_letter: 'D', audio_text: 'The alarm clock was ringing on the bedroom table at home.' }
     ],
     cards: [
-      { letter: 'A', name: 'School Nurse Cabinet', image_url: '/images/week33/nurse.jpg' },
+      { letter: 'A', name: "Nurse's Cabinet", image_url: '/images/week33/nurse_cabinet.jpg' },
       { letter: 'B', name: 'First Aid Ice Box', image_url: '/images/week33/cold_pack.jpg' },
-      { letter: 'C', name: 'School Corridor Floor', image_url: '/images/week33/corridor.jpg' },
-      { letter: 'D', name: 'Bedroom Table', image_url: '/images/week33/webtoon_scene_5.png' },
-      { letter: 'E', name: 'Science Laboratory', image_url: '/images/week33/webtoon_scene_2.png' },
-      { letter: 'F', name: 'School Cafeteria', image_url: '/images/week33/webtoon_scene_3.png' },
+      { letter: 'C', name: 'Corridor Floor', image_url: '/images/week33/corridor.jpg' },
+      { letter: 'D', name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
+      { letter: 'E', name: 'Science Lab Desk', image_url: '/images/week33/lab_desk.jpg' },
+      { letter: 'F', name: 'School Cafeteria', image_url: '/images/week33/cafeteria.jpg' },
       { letter: 'G', name: 'Library Desk', image_url: '/images/week33/w33_diff_scene_a.jpg' },
       { letter: 'H', name: 'Playground Bench', image_url: '/images/week33/w33_diff_scene_b.jpg' }
     ]
