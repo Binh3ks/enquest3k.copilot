@@ -377,7 +377,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         </div>
       </div>
 
-      {subMode === 'find_diff' && (
+      {subMode === 'find_diff' ? (
         <FindDifferencesInteractive
           customData={data?.find_differences}
           onComplete={async (score) => {
@@ -391,11 +391,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             });
           }}
         />
-      )}
-
-
-
-      {subMode === 'podcast' ? (
+      ) : subMode === 'podcast' ? (
         /* MODE 1: PODCAST SHADOWING (2 PHASES) */
         <div className="space-y-6">
           {/* Phase Selector Tabs */}

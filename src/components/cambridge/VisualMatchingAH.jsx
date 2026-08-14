@@ -19,26 +19,28 @@ export function VisualMatchingAH({ customData, onComplete }) {
   const [score, setScore] = useState(null);
   const [shuffleSeed, setShuffleSeed] = useState(0);
 
+  const fullPassageScript = "Welcome to Cambridge Listening Part 3. Listen to Jake talking to his teacher about where different items were placed during the school incident. First, the clean bandage was inside the school nurse cabinet. Second, the cold pack was taken from the first aid ice box. Third, the science notebook fell on the corridor floor when the boy slipped. Fourth, the orange juice glass was sitting on the science lab desk. And fifth, the alarm clock was ringing on the bedroom table at home.";
+
   // Default Listening Part 3 Visual Matching Data
   const itemsList = customData?.items || [
-    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'Jake requested a clean bandage from the school nurse cabinet.' },
-    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The nurse took a cold pack out of the first aid ice box.' },
-    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The classmate dropped his science notebook on the school corridor floor.' },
-    { id: 4, name: 'Orange Juice', target_letter: 'E', audio_text: 'The student drank orange juice inside the science laboratory.' },
-    { id: 5, name: 'Alarm Clock', target_letter: 'D', audio_text: 'The alarm clock was ringing on the bedroom table.' }
+    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was inside the school nurse cabinet.' },
+    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was taken from the first aid ice box.' },
+    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook fell on the corridor floor when the boy slipped.' },
+    { id: 4, name: 'Orange Juice', target_letter: 'E', audio_text: 'The orange juice glass was sitting on the science lab desk.' },
+    { id: 5, name: 'Alarm Clock', target_letter: 'D', audio_text: 'The alarm clock was ringing on the bedroom table at home.' }
   ];
 
   // Fisher-Yates Shuffle 8 Picture Cards (A to H)
   const pictureCards = useMemo(() => {
     const rawCards = customData?.cards || [
-      { letter: 'A', name: 'School Nurse Cabinet', image_url: '/images/week33/webtoon_scene_4.png' },
-      { letter: 'B', name: 'First Aid Ice Box', image_url: '/images/week33/webtoon_scene_4.png' },
-      { letter: 'C', name: 'School Corridor Floor', image_url: '/images/week33/webtoon_scene_1.png' },
+      { letter: 'A', name: 'School Nurse Cabinet', image_url: '/images/week33/nurse.jpg' },
+      { letter: 'B', name: 'First Aid Ice Box', image_url: '/images/week33/cold_pack.jpg' },
+      { letter: 'C', name: 'School Corridor Floor', image_url: '/images/week33/corridor.jpg' },
       { letter: 'D', name: 'Bedroom Table', image_url: '/images/week33/webtoon_scene_5.png' },
       { letter: 'E', name: 'Science Laboratory', image_url: '/images/week33/webtoon_scene_2.png' },
       { letter: 'F', name: 'School Cafeteria', image_url: '/images/week33/webtoon_scene_3.png' },
-      { letter: 'G', name: 'Library Desk', image_url: '/images/week33/webtoon_scene_1.png' },
-      { letter: 'H', name: 'Playground Bench', image_url: '/images/week33/webtoon_scene_5.png' }
+      { letter: 'G', name: 'Library Desk', image_url: '/images/week33/w33_diff_scene_a.jpg' },
+      { letter: 'H', name: 'Playground Bench', image_url: '/images/week33/w33_diff_scene_b.jpg' }
     ];
     return shuffleArray(rawCards);
   }, [customData, shuffleSeed]);
@@ -50,7 +52,6 @@ export function VisualMatchingAH({ customData, onComplete }) {
       VoiceService.speak(item.audio_text, 'questions');
     }
   };
-
 
   const handleMatchCard = (card) => {
     if (isSubmitted || !selectedItem) return;
@@ -106,14 +107,14 @@ export function VisualMatchingAH({ customData, onComplete }) {
       <div className="bg-gradient-to-r from-amber-500 to-indigo-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <button
-            onClick={() => VoiceService.speak("Listen to the dialogue about the 5 items and match each item to the correct picture card from A to H.", 'questions')}
+            onClick={() => VoiceService.speak(fullPassageScript, 'questions')}
             className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
           >
-            <Volume2 size={18} /> Play Listening Passage Audio 🎧
+            <Volume2 size={18} /> Play Full Listening Passage Audio 🎧
           </button>
           <div>
-            <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">Listening Passage Audio:</div>
-            <p className="text-xs font-bold text-white italic">"Listen to where each item was placed during the school incident..."</p>
+            <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">Listening Passage Audio Script:</div>
+            <p className="text-xs font-bold text-white italic">"Listen to Jake talking to his teacher about where different items were placed..."</p>
           </div>
         </div>
       </div>

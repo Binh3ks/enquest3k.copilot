@@ -10,20 +10,20 @@ export function SVGLineMatcher({ customData, onComplete }) {
 
   // Default Listening Part 1 Line Matching Data
   const sceneData = customData || {
-    image_url: '/images/week33/webtoon_scene_1.png',
+    image_url: '/images/week33/w33_listening_p1_scene.jpg',
     names: [
       { id: 'n1', text: 'Jake', target_id: 't1' },
-      { id: 'n2', text: 'Tom', target_id: 't2' },
-      { id: 'n3', text: 'School Nurse', target_id: 't3' },
+      { id: 'n2', text: 'School Nurse', target_id: 't2' },
+      { id: 'n3', text: 'Tom', target_id: 't3' },
       { id: 'n4', text: 'Headmaster', target_id: 't4' },
       { id: 'n5', text: 'Mia', target_id: 't5' }
     ],
     targets: [
-      { id: 't1', label: 'Boy walking carefully', x: 25, y: 50 },
-      { id: 't2', label: 'Boy slipping on wet floor', x: 60, y: 70 },
-      { id: 't3', label: 'Nurse carrying bandage', x: 45, y: 40 },
-      { id: 't4', label: 'Headmaster praising student', x: 80, y: 45 },
-      { id: 't5', label: 'Girl helping clean floor', x: 15, y: 75 }
+      { id: 't1', label: 'Jake (Boy walking carefully)', x: 20, y: 60 },
+      { id: 't2', label: 'School Nurse (Carrying bandage)', x: 39, y: 50 },
+      { id: 't3', label: 'Tom (Slipping on wet floor)', x: 56, y: 68 },
+      { id: 't4', label: 'Headmaster (In blue suit)', x: 74, y: 48 },
+      { id: 't5', label: 'Mia (Girl holding mop)', x: 88, y: 52 }
     ]
   };
 
