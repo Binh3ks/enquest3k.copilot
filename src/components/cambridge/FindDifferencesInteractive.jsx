@@ -26,6 +26,9 @@ export function FindDifferencesInteractive({ customData, onComplete }) {
       setFoundHotspots([...foundHotspots, hs.id]);
     }
     setActiveHotspot(hs);
+    if (hs.prompt_en) {
+      VoiceService.speak(hs.prompt_en, 'questions');
+    }
   };
 
   const handleToggleRecord = () => {

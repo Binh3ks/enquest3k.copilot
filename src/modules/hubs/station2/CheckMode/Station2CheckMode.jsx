@@ -191,7 +191,35 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
         </div>
       </div>
 
-      {currentQ.dialogue_context ? (
+      {currentQ.type === 'listening_p4_picture' ? (
+        <div className="bg-gradient-to-r from-amber-500 to-indigo-600 p-5 rounded-2xl text-white shadow-lg mb-6 space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="px-3 py-1 bg-white/20 backdrop-blur-md text-white text-[11px] font-black rounded-full uppercase tracking-wider">
+              CAMBRIDGE LISTENING PART 4 — 3 PICTURE CHOICE (A/B/C)
+            </span>
+            <span className="text-xs font-bold text-amber-100 flex items-center gap-1">
+              🎧 Listen to Audio Prompt First
+            </span>
+          </div>
+
+          <div className="flex items-center gap-4 bg-black/20 p-3.5 rounded-xl border border-white/20">
+            <button
+              onClick={() => speakText(currentQ.prompt || currentQ.text || 'Where was the boy when he slipped on the wet floor?')}
+              className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
+            >
+              <Volume2 size={18} /> Play Listening Audio
+            </button>
+            <div className="flex-1">
+              <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">
+                Listening Question Audio:
+              </div>
+              <p className="text-sm font-black text-white italic">
+                "{currentQ.prompt || currentQ.text}"
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : currentQ.dialogue_context ? (
         <div className="space-y-4 mb-6">
           <div className="flex items-start gap-3 bg-amber-50/90 p-4 rounded-2xl border border-amber-200 shadow-sm relative">
             <div className="w-10 h-10 rounded-full bg-amber-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm">

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Layers, Grid } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Layers, Grid, Volume2 } from 'lucide-react';
+import VoiceService from '../../services/voiceService';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -20,11 +21,11 @@ export function VisualMatchingAH({ customData, onComplete }) {
 
   // Default Listening Part 3 Visual Matching Data
   const itemsList = customData?.items || [
-    { id: 1, name: 'Clean Bandage', target_letter: 'A' },
-    { id: 2, name: 'Cold Pack', target_letter: 'B' },
-    { id: 3, name: 'Science Notebook', target_letter: 'C' },
-    { id: 4, name: 'Orange Juice', target_letter: 'E' },
-    { id: 5, name: 'Alarm Clock', target_letter: 'D' }
+    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'Jake requested a clean bandage from the school nurse cabinet.' },
+    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The nurse took a cold pack out of the first aid ice box.' },
+    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The classmate dropped his science notebook on the school corridor floor.' },
+    { id: 4, name: 'Orange Juice', target_letter: 'E', audio_text: 'The student drank orange juice inside the science laboratory.' },
+    { id: 5, name: 'Alarm Clock', target_letter: 'D', audio_text: 'The alarm clock was ringing on the bedroom table.' }
   ];
 
   // Fisher-Yates Shuffle 8 Picture Cards (A to H)
@@ -45,7 +46,11 @@ export function VisualMatchingAH({ customData, onComplete }) {
   const handleSelectItem = (item) => {
     if (isSubmitted) return;
     setSelectedItem(item);
+    if (item.audio_text) {
+      VoiceService.speak(item.audio_text, 'questions');
+    }
   };
+
 
   const handleMatchCard = (card) => {
     if (isSubmitted || !selectedItem) return;
@@ -95,6 +100,22 @@ export function VisualMatchingAH({ customData, onComplete }) {
         <span className="px-3.5 py-1.5 bg-slate-100 text-slate-700 text-xs font-black rounded-xl border border-slate-200">
           5 Items · 8 Shuffled Picture Cards
         </span>
+      </div>
+
+      {/* Master Audio Player Bar */}
+      <div className="bg-gradient-to-r from-amber-500 to-indigo-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => VoiceService.speak("Listen to the dialogue about the 5 items and match each item to the correct picture card from A to H.", 'questions')}
+            className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
+          >
+            <Volume2 size={18} /> Play Listening Passage Audio 🎧
+          </button>
+          <div>
+            <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">Listening Passage Audio:</div>
+            <p className="text-xs font-bold text-white italic">"Listen to where each item was placed during the school incident..."</p>
+          </div>
+        </div>
       </div>
 
       {/* Main Split Grid: Left 5 Object Items vs Right 8 Picture Cards A-H */}

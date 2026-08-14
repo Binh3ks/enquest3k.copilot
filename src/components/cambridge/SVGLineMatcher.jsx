@@ -27,6 +27,16 @@ export function SVGLineMatcher({ customData, onComplete }) {
     ]
   };
 
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    if (!selectedName || !containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setMousePos({ x, y });
+  };
+
   const handleSelectName = (nameObj, e) => {
     if (isSubmitted) return;
     const rect = containerRef.current?.getBoundingClientRect();
@@ -36,6 +46,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
       const startX = ((nameEl.left + nameEl.width / 2 - rect.left) / rect.width) * 100;
       const startY = ((nameEl.top + nameEl.height / 2 - rect.top) / rect.height) * 100;
       setSelectedName({ ...nameObj, startX, startY });
+      setMousePos({ x: startX, y: startY });
     }
   };
 
@@ -91,10 +102,10 @@ export function SVGLineMatcher({ customData, onComplete }) {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
           <span className="px-3 py-1 bg-indigo-100 text-indigo-800 text-[11px] font-black rounded-full uppercase tracking-wider">
-            CAMBRIDGE LISTENING PART 1 — SVG LINE MATCHING
+            CAMBRIDGE LISTENING PART 1 — REAL-TIME SVG LINE MATCHING
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Draw SVG Lines from Names to People in the Picture
+            Click Name Pill then Move Mouse & Click Person in Picture
           </h2>
         </div>
         <div className="flex items-center gap-2">
@@ -112,10 +123,10 @@ export function SVGLineMatcher({ customData, onComplete }) {
       <div className="p-4 bg-indigo-50/80 rounded-2xl border-2 border-indigo-200 space-y-2">
         <div className="flex items-center justify-between">
           <span className="text-xs font-black text-indigo-900 uppercase tracking-wider flex items-center gap-1.5">
-            <User size={15} /> Character Names (Click name, then click person in picture):
+            <User size={15} /> Character Names (Click name, then move mouse over picture):
           </span>
           <span className="text-[11px] font-bold text-indigo-700">
-            {selectedName ? `Drawing line for: ${selectedName.text}` : 'Select a name'}
+            {selectedName ? `Drawing live line for: ${selectedName.text}` : 'Select a name'}
           </span>
         </div>
 
@@ -131,7 +142,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
                 onClick={(e) => handleSelectName(name, e)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-1.5 border shadow-sm ${
                   isSelected
-                    ? 'bg-indigo-600 text-white border-indigo-700 ring-4 ring-indigo-200 scale-105 shadow-md'
+                    ? 'bg-indigo-600 text-white border-indigo-700 ring-4 ring-indigo-200 scale-105 shadow-md animate-pulse'
                     : hasLine
                     ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
                     : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
@@ -148,17 +159,19 @@ export function SVGLineMatcher({ customData, onComplete }) {
       {/* 🖼️ Main Image Viewport with SVG Overlay Canvas */}
       <div
         ref={containerRef}
-        className="relative w-full h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 select-none"
+        onMouseMove={handleMouseMove}
+        className="relative w-full h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 select-none cursor-crosshair"
       >
-        {/* Background Picture Scene */}
+        {/* Background Picture Scene (Clean, without text overlays) */}
         <img
           src={sceneData.image_url}
           alt="Listening Part 1 Scene"
           className="w-full h-full object-cover object-center"
         />
 
-        {/* ✏️ SVG Overlay Canvas (Renders Vector Lines) */}
+        {/* ✏️ Real-Time Dynamic SVG Line Canvas */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-20">
+          {/* Locked Drawn Lines */}
           {drawnLines.map((line, idx) => {
             const nameObj = sceneData.names.find(n => n.id === line.nameId);
             const isCorrect = isSubmitted && nameObj?.target_id === line.targetId;
@@ -172,18 +185,34 @@ export function SVGLineMatcher({ customData, onComplete }) {
                   x2={`${line.endX}%`}
                   y2={`${line.endY}%`}
                   stroke={strokeColor}
-                  strokeWidth="4"
+                  strokeWidth="5"
                   strokeDasharray="6 4"
                   strokeLinecap="round"
-                  className="animate-pulse"
                 />
                 <circle cx={`${line.endX}%`} cy={`${line.endY}%`} r="8" fill={strokeColor} />
               </g>
             );
           })}
+
+          {/* Active Real-Time Mouse Tracking Line */}
+          {selectedName && (
+            <g>
+              <line
+                x1={`${selectedName.startX}%`}
+                y1={`${selectedName.startY}%`}
+                x2={`${mousePos.x}%`}
+                y2={`${mousePos.y}%`}
+                stroke="#f59e0b"
+                strokeWidth="4"
+                strokeDasharray="4 4"
+                strokeLinecap="round"
+              />
+              <circle cx={`${mousePos.x}%`} cy={`${mousePos.y}%`} r="10" fill="#f59e0b" className="animate-ping" />
+            </g>
+          )}
         </svg>
 
-        {/* Target Location Hotspot Pins on Picture */}
+        {/* Pure Clean Vector Target Pins on Picture (No text badges) */}
         {sceneData.targets.map((target) => {
           const matchedLine = drawnLines.find(l => l.targetId === target.id);
 
@@ -193,16 +222,18 @@ export function SVGLineMatcher({ customData, onComplete }) {
               disabled={isSubmitted}
               onClick={() => handleTargetClick(target)}
               style={{ left: `${target.x}%`, top: `${target.y}%` }}
-              className={`absolute transform -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-full text-xs font-black shadow-xl backdrop-blur-md flex items-center gap-1.5 border z-30 transition-all ${
-                matchedLine
-                  ? 'bg-indigo-600 text-white border-indigo-300 scale-105 ring-4 ring-indigo-300/50'
-                  : selectedName
-                  ? 'bg-amber-400 text-slate-950 border-amber-300 animate-bounce cursor-pointer'
-                  : 'bg-slate-900/80 text-white border-slate-400 hover:bg-indigo-600'
+              className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-30 transition-all ${
+                selectedName ? 'scale-125 cursor-pointer' : 'hover:scale-110'
               }`}
+              title={matchedLine ? matchedLine.nameText : 'Click to connect line'}
             >
-              <MoveRight size={14} />
-              <span>{matchedLine ? matchedLine.nameText : target.label}</span>
+              <div className="relative flex items-center justify-center">
+                <span className={`w-8 h-8 rounded-full border-2 border-white shadow-xl flex items-center justify-center font-black text-xs ${
+                  matchedLine ? 'bg-indigo-600 text-white' : selectedName ? 'bg-amber-400 text-slate-950 animate-bounce' : 'bg-slate-900/80 text-white'
+                }`}>
+                  {matchedLine ? matchedLine.nameText : '📍'}
+                </span>
+              </div>
             </button>
           );
         })}
