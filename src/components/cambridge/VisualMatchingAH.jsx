@@ -23,24 +23,24 @@ export function VisualMatchingAH({ customData, onComplete }) {
 
   // Default Listening Part 3 Visual Matching Data
   const itemsList = customData?.items || [
-    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was inside the school nurse cabinet.' },
-    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was taken from the first aid ice box.' },
-    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook fell on the corridor floor when the boy slipped.' },
-    { id: 4, name: 'Orange Juice', target_letter: 'E', audio_text: 'The orange juice glass was sitting on the science lab desk.' },
-    { id: 5, name: 'Alarm Clock', target_letter: 'D', audio_text: 'The alarm clock was ringing on the bedroom table at home.' }
+    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage is shown in picture card A.' },
+    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack is shown in picture card B.' },
+    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook is shown in picture card C.' },
+    { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass is shown in picture card D.' },
+    { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock is shown in picture card E.' }
   ];
 
   // Fisher-Yates Shuffle 8 Picture Cards (A to H)
   const pictureCards = useMemo(() => {
     const rawCards = customData?.cards || [
-      { letter: 'A', name: "Nurse's Cabinet", image_url: '/images/week33/nurse_cabinet.jpg' },
-      { letter: 'B', name: 'First Aid Ice Box', image_url: '/images/week33/cold_pack.jpg' },
-      { letter: 'C', name: 'Corridor Floor', image_url: '/images/week33/corridor.jpg' },
-      { letter: 'D', name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
-      { letter: 'E', name: 'Science Lab Desk', image_url: '/images/week33/lab_desk.jpg' },
-      { letter: 'F', name: 'School Cafeteria', image_url: '/images/week33/cafeteria.jpg' },
-      { letter: 'G', name: 'Library Desk', image_url: '/images/week33/w33_diff_scene_a.jpg' },
-      { letter: 'H', name: 'Playground Bench', image_url: '/images/week33/w33_diff_scene_b.jpg' }
+      { letter: 'A', name: 'Clean Bandage', image_url: '/images/week33/card_clean_bandage.jpg' },
+      { letter: 'B', name: 'Cold Pack', image_url: '/images/week33/card_cold_pack.jpg' },
+      { letter: 'C', name: 'Science Notebook', image_url: '/images/week33/card_science_notebook.jpg' },
+      { letter: 'D', name: 'Orange Juice', image_url: '/images/week33/card_orange_juice.jpg' },
+      { letter: 'E', name: 'Alarm Clock', image_url: '/images/week33/card_alarm_clock.jpg' },
+      { letter: 'F', name: 'School Backpack', image_url: '/images/week33/card_backpack.jpg' },
+      { letter: 'G', name: 'Water Bottle', image_url: '/images/week33/card_water_bottle.jpg' },
+      { letter: 'H', name: 'First Aid Kit', image_url: '/images/week33/card_first_aid_kit.jpg' }
     ];
     return shuffleArray(rawCards);
   }, [customData, shuffleSeed]);
