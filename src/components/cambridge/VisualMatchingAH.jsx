@@ -226,8 +226,8 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       {card.letter}
                     </span>
                     {matchedItem && (
-                      <span className="px-1.5 py-0.5 bg-amber-100 text-amber-950 font-black text-[9px] rounded-md truncate max-w-[70px]">
-                        Item #{matchedItem.id}
+                      <span className="px-1.5 py-0.5 bg-amber-500 text-white font-black text-[9px] rounded-md truncate max-w-[85px] shadow-sm">
+                        🎯 {matchedItem.name}
                       </span>
                     )}
                   </div>

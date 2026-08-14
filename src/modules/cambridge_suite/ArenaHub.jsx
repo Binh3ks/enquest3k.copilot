@@ -50,11 +50,11 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-100">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            Hub 2: Arena Games & Listening Suite
-          </h1>
+          <span className="text-xs font-black text-amber-600 uppercase tracking-wider">
+            ARENA BATTLES & LISTENING SUITE
+          </span>
         </div>
 
         {/* Learn Mode vs Check Mode Switcher */}

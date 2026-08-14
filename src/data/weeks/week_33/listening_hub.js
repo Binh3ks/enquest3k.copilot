@@ -34,13 +34,13 @@ export const listeningHubData = {
 
   // Cambridge Listening Part 3 (Visual Matching A-H)
   listening_p3: {
-    passage_audio_script: "Welcome to Cambridge Listening Part 3. Listen to Jake talking to his teacher about where different items were placed during the school incident. First, the clean bandage was in card A. Second, the cold pack was in card B. Third, the science notebook was in card C. Fourth, the orange juice glass was in card D. And fifth, the alarm clock was in card E.",
+    passage_audio_script: "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet, which is picture card A.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was placed on the first aid table. That is picture card B.\nTeacher: Where was Tom's science notebook?\nJake: Tom dropped his science notebook on the lab desk before running, so that is picture card C.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria table, which is picture card D.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home, picture card E! The backpack, water bottle, and first aid box weren't used at all.",
     items: [
-      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage is shown in picture card A.' },
-      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack is shown in picture card B.' },
-      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook is shown in picture card C.' },
-      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass is shown in picture card D.' },
-      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock is shown in picture card E.' }
+      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet, picture card A.' },
+      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table, picture card B.' },
+      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk, picture card C.' },
+      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria table, picture card D.' },
+      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock was on the bedroom table, picture card E.' }
     ],
     cards: [
       { letter: 'A', name: 'Clean Bandage', image_url: '/images/week33/card_clean_bandage.jpg' },
@@ -54,8 +54,43 @@ export const listeningHubData = {
     ]
   },
 
-  // Cambridge Listening Part 5 (SVG Color & Write)
+  // Cambridge Listening Part 4 (3-Picture Option Cards with Distractors)
+  listening_p4_questions: [
+    {
+      id: 'lp4_1',
+      question: '1. Where did Tom slip and hurt his knee?',
+      audio_script: "Girl: Did Tom slip inside the science lab?\nBoy: No, he was walking past the science lab, but he actually slipped on wet tiles in the school corridor!\nGirl: Oh, so it was in the corridor, not in the lab or playground!",
+      options: [
+        { label: 'A', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
+        { label: 'B', text: 'Inside the science lab', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
+        { label: 'C', text: 'On the outdoor playground', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false }
+      ]
+    },
+    {
+      id: 'lp4_2',
+      question: '2. What did Jake do immediately when Tom fell?',
+      audio_script: "Man: Did Jake run to call his teacher?\nWoman: No, Jake stopped right away and walked quickly to the school nurse room to call for help!\nMan: Ah, he called the school nurse immediately!",
+      options: [
+        { label: 'A', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
+        { label: 'B', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+        { label: 'C', text: 'Kept walking down the hallway', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false }
+      ]
+    },
+    {
+      id: 'lp4_3',
+      question: '3. What did the school nurse apply to Tom’s knee?',
+      audio_script: "Woman: Did the nurse give Tom a glass of orange juice?\nMan: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee.\nWoman: So she applied a clean bandage!",
+      options: [
+        { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
+        { label: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false },
+        { label: 'C', text: 'Gave him a new science notebook', image_url: '/images/week33/card_science_notebook.jpg', isCorrect: false }
+      ]
+    }
+  ],
+
+  // Cambridge Listening Part 5 (SVG Color & Write Dialogue)
   listening_p5: {
+    audio_script: "Examiner: Look at the picture of the school corridor. Can you see the boy sitting on the floor with a hurt knee?\nStudent: Yes! I can see him.\nExaminer: Look at the clean bandage on his knee. Can you color it blue?\nStudent: Sure! I'm coloring the clean bandage blue now.\nExaminer: Excellent. Now look at the first aid table. Can you find the cold pack?\nStudent: Yes, it's sitting on the table.\nExaminer: Color the cold pack green.\nStudent: Green cold pack, done!\nExaminer: Now look at the warning sign on the floor near the wet tiles. Color the warning sign yellow.\nStudent: Okay, the wet floor warning sign is yellow.\nExaminer: Finally, can you write something on the label at the bottom of the sign?\nStudent: What should I write?\nExaminer: Write the word SAFE in capital letters.\nStudent: S-A-F-E, done!",
     instructions: [
       { id: 't1', type: 'color', target_id: 'bandage', target_color: '#3b82f6', color_name: 'Blue', prompt: '1. Color the clean bandage on the boy’s knee BLUE.' },
       { id: 't2', type: 'color', target_id: 'coldpack', target_color: '#22c55e', color_name: 'Green', prompt: '2. Color the cold pack GREEN.' },

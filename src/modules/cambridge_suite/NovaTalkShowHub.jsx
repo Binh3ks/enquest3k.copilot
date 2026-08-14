@@ -319,16 +319,14 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     setChatHistory([...newHistory, { sender: 'nova', text: nextQ }]);
     setUserSpeechInput('');
     speakNovaQuestion(nextQ);
-  };
-
-  return (
+  };  return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-100">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-100">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-            Hub 4: Nova Talk Show
-          </h1>
+          <span className="text-xs font-black text-rose-600 uppercase tracking-wider">
+            NOVA LIVE TALK SHOW & SPEAKING STUDIO
+          </span>
         </div>
 
         {/* Sub-Mode Switcher */}
@@ -339,7 +337,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               subMode === 'podcast' ? 'bg-rose-600 text-white shadow-md' : 'text-slate-600 hover:bg-slate-200'
             }`}
           >
-            <Volume2 size={14} /> Podcast Shadowing
+            🎙️ Podcast Shadowing
           </button>
           <button
             onClick={() => setSubMode('talkshow')}
@@ -347,7 +345,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md' : 'text-slate-600 hover:bg-slate-200'
             }`}
           >
-            <MessageSquare size={14} /> Personal Q&A (S P4)
+            💬 Personal Q&A
           </button>
           <button
             onClick={() => setSubMode('cue_card')}
@@ -355,7 +353,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               subMode === 'cue_card' ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' : 'bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200'
             }`}
           >
-            <Radio size={14} /> Reverse Role Cue-Card (S P2)
+            ❓ Ask & Answer
           </button>
           <button
             onClick={handleSelectPicStorySubmode}
@@ -363,7 +361,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               (subMode === 'pic_story' || subMode === 'story_picture') ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300' : 'text-slate-600 hover:bg-slate-200'
             }`}
           >
-            <BookOpen size={14} /> 4-Picture Story (S P3)
+            🖼️ Picture Story
           </button>
           <button
             onClick={() => setSubMode('find_diff')}
@@ -371,9 +369,8 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
               subMode === 'find_diff' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-rose-100 text-rose-900 border border-rose-300 hover:bg-rose-200'
             }`}
           >
-            <Radio size={14} /> Find Differences (S P1)
+            🔍 Find Differences
           </button>
-
         </div>
       </div>
 
