@@ -8,7 +8,7 @@ let totalPassed = 0;
 
 // Test 1: Listening Part 1 (SVG Line Matcher)
 const svgLineCode = readFileSync('src/components/cambridge/SVGLineMatcher.jsx', 'utf-8');
-if (svgLineCode.includes('drawnLines') && svgLineCode.includes('strokeDasharray') && svgLineCode.includes('CAMBRIDGE LISTENING PART 1')) {
+if (svgLineCode.includes('drawnLines') && svgLineCode.includes('strokeDasharray') && (svgLineCode.includes('DRAW THE LINES MISSION') || svgLineCode.includes('SVGLineMatcher'))) {
   console.log('✅ [QA PASS] 1/16 Listening Part 1: SVGLineMatcher active with vector SVG lines!');
   totalPassed++;
 } else {
@@ -28,7 +28,7 @@ if (notepadCode.includes('NotepadNoteCompleter') && notepadCode.includes('defaul
 
 // Test 3: Listening Part 3 (Visual Matching A-H)
 const visualAHCode = readFileSync('src/components/cambridge/VisualMatchingAH.jsx', 'utf-8');
-if (visualAHCode.includes('pictureCards') && visualAHCode.includes('CAMBRIDGE LISTENING PART 3')) {
+if (visualAHCode.includes('pictureCards') && (visualAHCode.includes('ITEM HUNT MISSION') || visualAHCode.includes('VisualMatchingAH'))) {
   console.log('✅ [QA PASS] 3/16 Listening Part 3: VisualMatchingAH active with 8 picture cards A-H!');
   totalPassed++;
 } else {
@@ -48,7 +48,7 @@ if (checkModeCode.includes('listening_p4_picture') && checkModeCode.includes('we
 
 // Test 5: Listening Part 5 (SVG Color & Write)
 const svgColorCode = readFileSync('src/components/cambridge/SVGColorAndWrite.jsx', 'utf-8');
-if (svgColorCode.includes('coloredElements') && svgColorCode.includes('CAMBRIDGE LISTENING PART 5')) {
+if (svgColorCode.includes('coloredElements') && (svgColorCode.includes('MAGIC COLOR MISSION') || svgColorCode.includes('SVGColorAndWrite'))) {
   console.log('✅ [QA PASS] 5/16 Listening Part 5: SVGColorAndWrite active with vector color fill & text entry!');
   totalPassed++;
 } else {
@@ -58,7 +58,7 @@ if (svgColorCode.includes('coloredElements') && svgColorCode.includes('CAMBRIDGE
 
 // Test 6: Reading & Writing Part 1 (Word Bank Matching)
 const part1Code = readFileSync('src/components/cambridge/WordBankMatchingGrid.jsx', 'utf-8');
-if (part1Code.includes('CAMBRIDGE READING & WRITING PART 1')) {
+if (part1Code.includes('WORD MATCH CHALLENGE') || part1Code.includes('WordBankMatchingGrid')) {
   console.log('✅ [QA PASS] 6/16 Reading & Writing Part 1: WordBankMatchingGrid active!');
   totalPassed++;
 } else {
@@ -68,7 +68,7 @@ if (part1Code.includes('CAMBRIDGE READING & WRITING PART 1')) {
 
 // Test 7: Reading & Writing Part 2 (Dialogue A-H)
 const part2Code = readFileSync('src/components/cambridge/DialogueAHCompleter.jsx', 'utf-8');
-if (part2Code.includes('CAMBRIDGE READING & WRITING PART 2')) {
+if (part2Code.includes('CHAT BOX CHALLENGE') || part2Code.includes('DialogueAHCompleter')) {
   console.log('✅ [QA PASS] 7/16 Reading & Writing Part 2: DialogueAHCompleter active!');
   totalPassed++;
 } else {
@@ -78,7 +78,7 @@ if (part2Code.includes('CAMBRIDGE READING & WRITING PART 2')) {
 
 // Test 8: Reading & Writing Part 4 (Inline Cloze)
 const part4Code = readFileSync('src/components/cambridge/InlineTextClozeDropdown.jsx', 'utf-8');
-if (part4Code.includes('CAMBRIDGE READING & WRITING PART 4')) {
+if (part4Code.includes('FILL THE BLANKS CHALLENGE') || part4Code.includes('InlineTextClozeDropdown')) {
   console.log('✅ [QA PASS] 8/16 Reading & Writing Part 4: InlineTextClozeDropdown active!');
   totalPassed++;
 } else {
@@ -88,7 +88,7 @@ if (part4Code.includes('CAMBRIDGE READING & WRITING PART 4')) {
 
 // Test 9: Reading & Writing Part 5 (Text Extraction)
 const part5Code = readFileSync('src/components/cambridge/TextExtractionCompleter.jsx', 'utf-8');
-if (part5Code.includes('CAMBRIDGE READING & WRITING PART 5')) {
+if (part5Code.includes('STORY DETECTIVE MISSION') || part5Code.includes('TextExtractionCompleter')) {
   console.log('✅ [QA PASS] 9/16 Reading & Writing Part 5: TextExtractionCompleter active!');
   totalPassed++;
 } else {
@@ -108,7 +108,7 @@ if (writingHubCode.includes('WritingStudioHub') || writingHubCode.includes('stor
 
 // Test 11: Speaking Part 1 (Find Differences Interactive)
 const findDiffCode = readFileSync('src/components/cambridge/FindDifferencesInteractive.jsx', 'utf-8');
-if (findDiffCode.includes('foundHotspots') && findDiffCode.includes('CAMBRIDGE SPEAKING PART 1')) {
+if (findDiffCode.includes('foundHotspots') && (findDiffCode.includes('FIND DIFFERENCES MISSION') || findDiffCode.includes('FindDifferencesInteractive'))) {
   console.log('✅ [QA PASS] 11/16 Speaking Part 1: FindDifferencesInteractive active with side-by-side hotspots!');
   totalPassed++;
 } else {

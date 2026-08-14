@@ -4,7 +4,8 @@ import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
-import { Mic, MicOff, Volume2, Radio, Star, AlertTriangle, MessageSquare, Layers, BookOpen, Info } from 'lucide-react';
+import { Mic, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, RefreshCw, Trophy, AlertCircle, PlayCircle, HelpCircle } from 'lucide-react';
+import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 
 /**
  * Real Speech Recognition Accuracy Calculation Algorithm
@@ -41,6 +42,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
   const [subMode, setSubMode] = useState('podcast'); // 'podcast' | 'talkshow' | 'cue_card' | 'pic_story' | 'find_diff'
+  const [activeMode, setActiveMode] = useState('learn'); // 'learn' | 'check'
 
   const [shadowingPhase, setShadowingPhase] = useState(1); // Phase 1: 5 Sentences | Phase 2: Long Paragraph
   const [isRecording, setIsRecording] = useState(false);
@@ -323,6 +325,14 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
+      {/* Top Controls: Standardized GlobalModeToggle */}
+      <div className="flex items-center justify-end mb-4">
+        <GlobalModeToggle
+          activeMode={activeMode}
+          onModeChange={(m) => setActiveMode(m)}
+        />
+      </div>
+
       {/* Sub-Mode Switcher: Evenly Spaced Flexbox */}
       <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-slate-100">
         <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">

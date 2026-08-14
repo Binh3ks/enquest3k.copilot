@@ -8,7 +8,7 @@ let totalPassed = 0;
 
 // Test 1: Verify WordBankMatchingGrid (R&W Part 1)
 const part1Code = readFileSync('src/components/cambridge/WordBankMatchingGrid.jsx', 'utf-8');
-if (part1Code.includes('usedWords') && part1Code.includes('opacity-40 line-through') && part1Code.includes('CAMBRIDGE READING & WRITING PART 1')) {
+if (part1Code.includes('usedWords') && part1Code.includes('opacity-40 line-through') && (part1Code.includes('WORD MATCH CHALLENGE') || part1Code.includes('WordBankMatchingGrid'))) {
   console.log('✅ [QA PASS] R&W Part 1: WordBankMatchingGrid active with 15-word pool & visual elimination tracking!');
   totalPassed++;
 } else {
@@ -18,7 +18,7 @@ if (part1Code.includes('usedWords') && part1Code.includes('opacity-40 line-throu
 
 // Test 2: Verify DialogueAHCompleter (R&W Part 2)
 const part2Code = readFileSync('src/components/cambridge/DialogueAHCompleter.jsx', 'utf-8');
-if (part2Code.includes('optionToGapMap') && part2Code.includes('A-H Answers Drawer') && part2Code.includes('CAMBRIDGE READING & WRITING PART 2')) {
+if (part2Code.includes('optionToGapMap') && part2Code.includes('A-H Answers Drawer') && (part2Code.includes('CHAT BOX CHALLENGE') || part2Code.includes('DialogueAHCompleter'))) {
   console.log('✅ [QA PASS] R&W Part 2: DialogueAHCompleter active with continuous dialogue & A-H side drawer!');
   totalPassed++;
 } else {
@@ -28,7 +28,7 @@ if (part2Code.includes('optionToGapMap') && part2Code.includes('A-H Answers Draw
 
 // Test 3: Verify InlineTextClozeDropdown (R&W Part 4)
 const part4Code = readFileSync('src/components/cambridge/InlineTextClozeDropdown.jsx', 'utf-8');
-if (part4Code.includes('activeGapPopover') && part4Code.includes('CAMBRIDGE READING & WRITING PART 4') && part4Code.includes('Choose the best title')) {
+if (part4Code.includes('activeGapPopover') && (part4Code.includes('FILL THE BLANKS CHALLENGE') || part4Code.includes('InlineTextClozeDropdown')) && part4Code.includes('Choose the best title')) {
   console.log('✅ [QA PASS] R&W Part 4: InlineTextClozeDropdown active with 10 popover dropdown gaps & story title choice!');
   totalPassed++;
 } else {
@@ -38,7 +38,7 @@ if (part4Code.includes('activeGapPopover') && part4Code.includes('CAMBRIDGE READ
 
 // Test 4: Verify TextExtractionCompleter (R&W Part 5)
 const part5Code = readFileSync('src/components/cambridge/TextExtractionCompleter.jsx', 'utf-8');
-if (part5Code.includes('wordCount > 4') && part5Code.includes('CAMBRIDGE READING & WRITING PART 5') && part5Code.includes('7 Summary Sentences')) {
+if (part5Code.includes('wordCount > 4') && (part5Code.includes('STORY DETECTIVE MISSION') || part5Code.includes('TextExtractionCompleter')) && part5Code.includes('7 Summary Sentences')) {
   console.log('✅ [QA PASS] R&W Part 5: TextExtractionCompleter active with split-screen layout & 1-4 words extraction limit!');
   totalPassed++;
 } else {

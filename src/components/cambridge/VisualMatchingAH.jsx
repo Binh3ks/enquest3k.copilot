@@ -91,8 +91,8 @@ export function VisualMatchingAH({ customData, onComplete }) {
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
-          <span className="px-3 py-1 bg-amber-100 text-amber-800 text-[11px] font-black rounded-full uppercase tracking-wider">
-            CAMBRIDGE LISTENING PART 3 — VISUAL MATCHING A-H
+          <span className="px-3 py-1 bg-amber-100 text-amber-900 text-[11px] font-black rounded-full uppercase tracking-wider">
+            🔍 ITEM HUNT MISSION
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             Match 5 Items to the Correct Picture Cards (A to H)

@@ -76,8 +76,8 @@ export function FindDifferencesInteractive({ customData, onComplete }) {
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
-          <span className="px-3 py-1 bg-rose-100 text-rose-800 text-[11px] font-black rounded-full uppercase tracking-wider">
-            CAMBRIDGE SPEAKING PART 1 — FIND DIFFERENCES
+          <span className="px-3 py-1 bg-rose-100 text-rose-900 text-[11px] font-black rounded-full uppercase tracking-wider">
+            🔍 FIND DIFFERENCES MISSION
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             Click Hotspot Differences & Record Your Explanation

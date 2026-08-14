@@ -111,8 +111,8 @@ export function DialogueAHCompleter({ customData, onComplete }) {
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
-          <span className="px-3 py-1 bg-purple-100 text-purple-800 text-[11px] font-black rounded-full uppercase tracking-wider">
-            CAMBRIDGE READING & WRITING PART 2
+          <span className="px-3 py-1 bg-purple-100 text-purple-900 text-[11px] font-black rounded-full uppercase tracking-wider">
+            💬 CHAT BOX CHALLENGE
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             Continuous Dialogue A-H Completer

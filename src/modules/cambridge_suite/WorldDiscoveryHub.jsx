@@ -12,6 +12,7 @@ import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGri
 import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter';
 import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
 import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
+import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 
 
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
@@ -368,27 +369,10 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       {/* Top Controls: Learn Mode vs Check Mode */}
       <div className="flex items-center justify-end mb-4">
 
-        {/* Tab Switcher: Learn Mode (Blue Pastel) vs Check Mode (Amber Focus) */}
-        <div className={`flex items-center gap-2 p-1.5 rounded-2xl border transition-all ${
-          activeTab === 'webtoon' ? 'bg-blue-50/80 border-blue-200 ring-2 ring-blue-100' : 'bg-amber-50/90 border-amber-300 ring-2 ring-amber-200'
-        }`}>
-          <button
-            onClick={() => setActiveTab('webtoon')}
-            className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              activeTab === 'webtoon' ? 'bg-blue-600 text-white shadow-md' : 'bg-white/60 text-blue-800 hover:bg-blue-100'
-            }`}
-          >
-            <PlayCircle size={14} /> 📖 Learn Mode
-          </button>
-          <button
-            onClick={() => setActiveTab('check')}
-            className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              activeTab === 'check' ? 'bg-amber-600 text-white shadow-md' : 'bg-white/60 text-amber-900 hover:bg-amber-100'
-            }`}
-          >
-            <GraduationCap size={14} /> 🎯 Check Mode
-          </button>
-        </div>
+        <GlobalModeToggle
+          activeMode={activeTab === 'webtoon' ? 'learn' : 'check'}
+          onModeChange={(mode) => setActiveTab(mode === 'learn' ? 'webtoon' : 'check')}
+        />
       </div>
 
       {activeTab === 'webtoon' ? (

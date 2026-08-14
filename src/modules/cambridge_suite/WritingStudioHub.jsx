@@ -3,7 +3,8 @@ import { learnerProgressService } from '../../services/learnerProgressService';
 import { useUserStore } from '../../stores/useUserStore';
 import { renderParsedText } from '../../components/common/HoverWord';
 import { NotepadNoteCompleter } from '../../components/common/NotepadNoteCompleter';
-import { PenTool, Sparkles, AlertTriangle, Layers, Film, HelpCircle, X, Info, FileText } from 'lucide-react';
+import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle2 } from 'lucide-react';
+import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -13,6 +14,8 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [userScript, setUserScript] = useState('');
   const [ruleScore, setRuleScore] = useState(null);
   const [aiScore, setAiScore] = useState(null);
+  const [userStory, setUserStory] = useState('');
+  const [activeMode, setActiveMode] = useState('learn'); // 'learn' | 'check'
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showHintsModal, setShowHintsModal] = useState(false);
   const [showPracticeNotice, setShowPracticeNotice] = useState(false);
@@ -83,9 +86,12 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
-      {/* Top Controls: Show Hints Button */}
-      <div className="flex items-center justify-end mb-4">
-
+      {/* Top Controls: Standardized GlobalModeToggle + Show Hints */}
+      <div className="flex items-center justify-between mb-4 gap-4">
+        <GlobalModeToggle
+          activeMode={activeMode}
+          onModeChange={(m) => setActiveMode(m)}
+        />
         <div className="flex items-center gap-2 relative">
           {/* Show Hints Scaffolding Button */}
           <button

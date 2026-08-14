@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilderBattle';
 import { BarModelQuest } from '../hubs/station2/LearnMode/BarModelQuest';
 import { FlashArena } from '../hubs/station2/LearnMode/FlashArena';
-import { Station2CheckMode } from '../hubs/station2/CheckMode/Station2CheckMode';
+import Station2CheckMode from '../hubs/station2/CheckMode/Station2CheckMode';
+import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import { AdaptiveExplainerModal } from '../hubs/station2/components/AdaptiveExplainerModal';
 import NotepadNoteCompleter from '../../components/common/NotepadNoteCompleter';
 import { learnerProgressService } from '../../services/learnerProgressService';
@@ -52,29 +53,10 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
       {/* Top Controls: Learn Mode vs Check Mode */}
       <div className="flex items-center justify-end mb-4">
 
-        {/* Learn Mode vs Check Mode Switcher */}
-        <div className="flex items-center gap-3">
-          <div className={`p-1.5 rounded-2xl border transition-all ${
-            viewMode === 'learn' ? 'bg-blue-50/80 border-blue-200 ring-2 ring-blue-100' : 'bg-amber-50/90 border-amber-300 ring-2 ring-amber-200'
-          }`}>
-            <button
-              onClick={() => setViewMode('learn')}
-              className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                viewMode === 'learn' ? 'bg-blue-600 text-white shadow-md' : 'bg-white/60 text-blue-800 hover:bg-blue-100'
-              }`}
-            >
-              <PlayCircle size={14} /> 📖 Learn Mode
-            </button>
-            <button
-              onClick={() => setViewMode('check')}
-              className={`px-4 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-                viewMode === 'check' ? 'bg-amber-600 text-white shadow-md' : 'bg-white/60 text-amber-900 hover:bg-amber-100'
-              }`}
-            >
-              <GraduationCap size={14} /> 🎯 Check Mode
-            </button>
-          </div>
-        </div>
+        <GlobalModeToggle
+          activeMode={viewMode}
+          onModeChange={(mode) => setViewMode(mode)}
+        />
       </div>
 
       {viewMode === 'learn' ? (

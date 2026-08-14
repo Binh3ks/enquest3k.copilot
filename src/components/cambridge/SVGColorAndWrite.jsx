@@ -95,8 +95,8 @@ export function SVGColorAndWrite({ customData, onComplete }) {
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
-          <span className="px-3 py-1 bg-cyan-100 text-cyan-800 text-[11px] font-black rounded-full uppercase tracking-wider">
-            CAMBRIDGE LISTENING PART 5 — 🎨 MAGIC COLOR
+          <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-[11px] font-black rounded-full uppercase tracking-wider">
+            🎨 MAGIC COLOR MISSION
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
             Listen, Color & Write on Corridor Scene
