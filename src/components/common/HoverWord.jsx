@@ -2,60 +2,9 @@ import React, { useState, useRef, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { Volume2, BookOpen, Book, Mic, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
 import dictionaryData from '../../data/dictionary.json';
+import { week33MasterDictionary } from '../../data/weeks/week_33/vocab_dictionary_master';
 
-// Levenshtein distance for pronunciation scoring
-function levenshtein(a, b) {
-  const matrix = Array.from({ length: b.length + 1 }, (_, i) => [i]);
-  for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
-  for (let i = 1; i <= b.length; i++) {
-    for (let j = 1; j <= a.length; j++) {
-      matrix[i][j] = b[i - 1] === a[j - 1]
-        ? matrix[i - 1][j - 1]
-        : Math.min(matrix[i - 1][j - 1], matrix[i][j - 1], matrix[i - 1][j]) + 1;
-    }
-  }
-  return matrix[b.length][a.length];
-}
-
-const week33DictItems = [
-  // 10 MANDATORY W33 LEXICAL CHUNKS & COLLOCATIONS
-  { word: "slipped on the wet floor", meaning: "trượt chân trên sàn ướt", pronounce: "/slɪpt ɑːn ðə wɛt flɔːr/", example: "Tom ran fast and slipped on the wet floor near the science room." },
-  { word: "yellow warning sign", meaning: "biển báo cảnh báo màu vàng", pronounce: "/ˈjɛl.oʊ ˈwɔːr.nɪŋ saɪn/", example: "The janitor placed a yellow warning sign near the wet tiles." },
-  { word: "hurt his knee", meaning: "bị đau / chấn thương đầu gối", pronounce: "/hɜːrt hɪz niː/", example: "Tom fell down and hurt his knee when slipping." },
-  { word: "call the school nurse", meaning: "gọi y tế / y tá trường học", pronounce: "/kɔːl ðə skuːl nɜːrs/", example: "Jake ran quickly to call the school nurse right away." },
-  { word: "clean bandage", meaning: "băng gạc y tế sạch", pronounce: "/kliːn ˈbæn.dɪdʒ/", example: "The school nurse applied a clean bandage to Tom's cut knee." },
-  { word: "cold pack", meaning: "túi chườm lạnh / chườm đá", pronounce: "/koʊld pæk/", example: "She placed a cold pack on his knee to reduce swelling." },
-  { word: "walk carefully", meaning: "đi bộ cẩn thận", pronounce: "/wɔːk ˈkɛr.fəl.i/", example: "Always walk carefully down the school corridor." },
-  { word: "headmaster office", meaning: "phòng hiệu trưởng", pronounce: "/ˌhɛdˈmæs.tɚ ˈɑː.fɪs/", example: "The headmaster office is located on the second floor." },
-  { word: "corridor safety", meaning: "an toàn hành lang trường học", pronounce: "/ˈkɔːr.ə.dɚ ˈseɪf.ti/", example: "Students learned important rules about corridor safety." },
-  { word: "quick action", meaning: "hành động nhanh chóng / xử lý kịp thời", pronounce: "/kwɪk ˈæk.ʃən/", example: "Jake was praised for his quick action during the incident." },
-
-  // 20 CORE W33 VOCABULARY & PHRASES
-  { word: "corridor", meaning: "hành lang trường học", pronounce: "/ˈkɔːr.ə.dɚ/", example: "Jake walked carefully down the school corridor." },
-  { word: "slipped", meaning: "đã trượt chân", pronounce: "/slɪpt/", example: "A boy running fast slipped on the wet floor." },
-  { word: "fell", meaning: "đã ngã / rơi", pronounce: "/fɛl/", example: "He fell down on the slippery tiles." },
-  { word: "nurse", meaning: "y tế / y tá trường", pronounce: "/nɜːrs/", example: "Jake called the school nurse immediately." },
-  { word: "bandage", meaning: "băng cá nhân", pronounce: "/ˈbæn.dɪdʒ/", example: "The nurse applied a clean bandage to his knee." },
-  { word: "relieved", meaning: "nhẹ nhõm / an tâm", pronounce: "/rɪˈliːvd/", example: "Everyone felt relieved when the boy smiled." },
-  { word: "praised", meaning: "khen ngợi / tuyên dương", pronounce: "/preɪzd/", example: "The headmaster praised Jake for his quick action." },
-  { word: "carefully", meaning: "một cách cẩn thận", pronounce: "/ˈkɛr.fəl.i/", example: "Walk carefully on wet floors." },
-  { word: "immediately", meaning: "ngay lập tức", pronounce: "/ɪˈmiː.di.ət.li/", example: "Jake called for help immediately." },
-  { word: "truce", meaning: "thỏa thuận hòa bình / ngưng chiến", pronounce: "/truːs/", example: "The ancient Olympic Truce brought peace." },
-  { word: "olympic", meaning: "thế vận hội Olympic", pronounce: "/əˈlɪm.pɪk/", example: "Athletes joined the ancient Olympic games." },
-  { word: "cautious", meaning: "cẩn trọng", pronounce: "/ˈkɑː.ʃəs/", example: "Always be cautious near wet floor signs." },
-  { word: "first_aid", meaning: "sơ cứu ban đầu", pronounce: "/ˌfɜːrst ˈeɪd/", example: "The nurse provided first aid treatment." },
-  { word: "cold_pack", meaning: "túi chườm đá lạnh", pronounce: "/koʊld pæk/", example: "She placed a cold pack on his knee." },
-  { word: "woke up in a hurry", meaning: "tỉnh dậy vội vã", pronounce: "/woʊk ʌp ɪn ə ˈhɜːr.i/", example: "Jake walked quickly down the hall." },
-  { word: "felt extremely clumsy", meaning: "cảm thấy hậu đậu", pronounce: "/fɛlt ɪkˈstriːm.li ˈklʌm.zi/", example: "The boy felt clumsy after slipping." },
-  { word: "accidentally knocked over", meaning: "vô tình làm đổ", pronounce: "/ˌæk.səˈden.t̬əl.i nɑːkt ˈoʊ.vɚ/", example: "He accidentally slipped on the water." },
-  { word: "rushed downstairs", meaning: "vội vã chạy xuống lầu", pronounce: "/rʌʃt ˌdaʊnˈsterz/", example: "Do not rush downstairs or run in hall." },
-  { word: "slipped on a wet puddle", meaning: "trượt chân trên vũng nước", pronounce: "/slɪpt ɑːn ə wɛt ˈpʌd.əl/", example: "He slipped on a wet puddle near science lab." },
-  { word: "to make things worse", meaning: "tệ hại hơn là", pronounce: "/tuː meɪk θɪŋz wɜːrs/", example: "To make things worse, the floor was slippery." },
-  { word: "spilled a glass of juice", meaning: "làm đổ nước ép", pronounce: "/spilled a glass of juice/", example: "Water was spilled on the corridor floor." },
-  { word: "cleaned up the mess", meaning: "dọn dẹp vũng nước", pronounce: "/kliːnd ʌp ðə mɛs/", example: "The janitor cleaned up the mess." },
-  { word: "apologized to his mother", meaning: "xin lỗi", pronounce: "/əˈpɑː.lə.dʒaɪzd/", example: "The running boy apologized for careless running." },
-  { word: "promised to be more careful", meaning: "hứa sẽ cẩn thận hơn", pronounce: "/ˈprɑː.mɪst tuː biː mɔːr ˈkɛr.fəl/", example: "He promised to be more careful in school." }
-];
+const week33DictItems = week33MasterDictionary;
 
 // Build dictionary lookup map (shared across all HoverWord instances)
 const baseDict = Object.fromEntries(
