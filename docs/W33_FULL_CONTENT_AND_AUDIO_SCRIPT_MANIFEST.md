@@ -44,7 +44,8 @@
 
 ### Listening Part 3: Item Hunt (8 School Locations A-H Matching)
 - **Audio Transcript**:
-  > "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?  
+  > "Welcome to Nova's Item Hunt! Let's listen to where the items were placed around the school...  
+  > Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?  
   > Jake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet in the nurse room.  
   > Teacher: Great! What about the cold pack to cool his hurt knee?  
   > Jake: Ah, the cold pack was taken from the first aid table near the corridor.  

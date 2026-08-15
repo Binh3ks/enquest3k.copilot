@@ -34,7 +34,7 @@ export const listeningHubData = {
 
   // Cambridge Listening Part 3 (Visual Matching A-H — School Locations)
   listening_p3: {
-    passage_audio_script: "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet in the nurse room.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was taken from the first aid table near the corridor.\nTeacher: Where was Tom's science notebook?\nJake: Tom left his science notebook on the lab desk in the science room.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria counter in the canteen.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home! The corridor locker, headmaster office, and playground bench weren't used.",
+    passage_audio_script: "Welcome to Nova's Item Hunt! Let's listen to where the items were placed around the school...\nTeacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet in the nurse room.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was taken from the first aid table near the corridor.\nTeacher: Where was Tom's science notebook?\nJake: Tom left his science notebook on the lab desk in the science room.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria counter in the canteen.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home! The corridor locker, headmaster office, and playground bench weren't used.",
     items: [
       { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet in the nurse room.' },
       { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table near the corridor.' },
@@ -44,12 +44,12 @@ export const listeningHubData = {
     ],
     cards: [
       { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },
-      { letter: 'B', name: 'First Aid Table', location_name: 'First Aid Table', image_url: '/images/week33/cold_pack.jpg' },
+      { letter: 'B', name: 'First Aid Table', location_name: 'First Aid Table', image_url: '/images/week33/card_b_first_aid_table.jpg' },
       { letter: 'C', name: 'Science Lab Desk', location_name: 'Science Lab Desk', image_url: '/images/week33/lab_desk.jpg' },
       { letter: 'D', name: 'Cafeteria Counter', location_name: 'Cafeteria Counter', image_url: '/images/week33/cafeteria.jpg' },
       { letter: 'E', name: 'Bedroom Table (Home)', location_name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
       { letter: 'F', name: 'Corridor Safety Locker', location_name: 'Corridor Locker', image_url: '/images/week33/corridor.jpg' },
-      { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/read.jpg' },
+      { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/card_g_headmaster_office.jpg' },
       { letter: 'H', name: 'Playground Bench', location_name: 'Playground Bench', image_url: '/images/week33/explore.jpg' }
     ]
   },

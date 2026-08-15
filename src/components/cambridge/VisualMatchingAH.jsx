@@ -19,27 +19,27 @@ export function VisualMatchingAH({ customData, onComplete }) {
   const [score, setScore] = useState(null);
   const [shuffleSeed, setShuffleSeed] = useState(0);
 
-  const fullPassageScript = "Welcome to Cambridge Listening Part 3. Listen to Jake talking to his teacher about where different items were placed during the school incident. First, the clean bandage was inside the school nurse cabinet. Second, the cold pack was taken from the first aid ice box. Third, the science notebook fell on the corridor floor when the boy slipped. Fourth, the orange juice glass was sitting on the science lab desk. And fifth, the alarm clock was ringing on the bedroom table at home.";
+  const fullPassageScript = "Welcome to Nova's Item Hunt! Let's listen to Jake talking to his teacher about where different items were placed during the school incident. First, the clean bandage was inside the medical cabinet. Second, the cold pack was taken from the first aid table. Third, the science notebook was left on the lab desk. Fourth, the orange juice glass was sitting on the cafeteria counter. And fifth, the alarm clock was on the bedroom table at home.";
 
   // Default Listening Part 3 Visual Matching Data
   const itemsList = customData?.items || [
-    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage is shown in picture card A.' },
-    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack is shown in picture card B.' },
-    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook is shown in picture card C.' },
-    { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass is shown in picture card D.' },
-    { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock is shown in picture card E.' }
+    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet.' },
+    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table.' },
+    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk.' },
+    { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria counter.' },
+    { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock was on the bedroom table at home.' }
   ];
 
   // Fisher-Yates Shuffle 8 Picture Cards (A to H — School Locations)
   const pictureCards = useMemo(() => {
     const rawCards = customData?.cards || [
       { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },
-      { letter: 'B', name: 'First Aid Table', location_name: 'First Aid Table', image_url: '/images/week33/cold_pack.jpg' },
+      { letter: 'B', name: 'First Aid Table', location_name: 'First Aid Table', image_url: '/images/week33/card_b_first_aid_table.jpg' },
       { letter: 'C', name: 'Science Lab Desk', location_name: 'Science Lab Desk', image_url: '/images/week33/lab_desk.jpg' },
       { letter: 'D', name: 'Cafeteria Counter', location_name: 'Cafeteria Counter', image_url: '/images/week33/cafeteria.jpg' },
       { letter: 'E', name: 'Bedroom Table (Home)', location_name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
       { letter: 'F', name: 'Corridor Safety Locker', location_name: 'Corridor Locker', image_url: '/images/week33/corridor.jpg' },
-      { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/read.jpg' },
+      { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/card_g_headmaster_office.jpg' },
       { letter: 'H', name: 'Playground Bench', location_name: 'Playground Bench', image_url: '/images/week33/explore.jpg' }
     ];
     return shuffleArray(rawCards);
