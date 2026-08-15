@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, BookOpen, Layers } from 'lucide-react';
+import HoverWord, { renderParsedText } from '../common/HoverWord';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -173,9 +174,9 @@ export function WordBankMatchingGrid({ customData, onComplete }) {
                 <span className="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-900 text-xs font-black flex items-center justify-center shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
-                <p className="text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
-                  {def.text}
-                </p>
+                <div className="text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
+                  {renderParsedText(def.text, 'indigo')}
+                </div>
               </div>
 
               <div className="flex items-center gap-2 self-end sm:self-auto shrink-0">

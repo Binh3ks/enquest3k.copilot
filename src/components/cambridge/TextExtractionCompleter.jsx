@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, Layers, Type } from 'lucide-react';
+import HoverWord, { renderParsedText } from '../common/HoverWord';
 
 export function TextExtractionCompleter({ customData, onComplete }) {
   const [answers, setAnswers] = useState({});
@@ -119,7 +120,9 @@ export function TextExtractionCompleter({ customData, onComplete }) {
                   <span className="text-[10px] font-mono font-black text-amber-800 block mb-1">
                     Paragraph {p.id}
                   </span>
-                  {p.text}
+                  <div className="leading-relaxed font-sans text-sm sm:text-base text-slate-900">
+                    {renderParsedText(p.text, 'amber')}
+                  </div>
                 </div>
               );
             })}

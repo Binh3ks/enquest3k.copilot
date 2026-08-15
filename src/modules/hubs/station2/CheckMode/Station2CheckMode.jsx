@@ -214,9 +214,9 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
               <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">
                 Listening Question Audio:
               </div>
-              <p className="text-sm font-black text-white italic">
-                "{currentQ.prompt || currentQ.text}"
-              </p>
+              <div className="text-sm font-black text-white italic">
+                "{renderParsedText(currentQ.prompt || currentQ.text, 'amber')}"
+              </div>
             </div>
           </div>
         </div>
@@ -302,7 +302,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                   <img src={optImage} alt={opt.text} className="w-full h-full object-cover" />
                 </div>
 
-                <span className="text-xs font-bold text-slate-800 line-clamp-2">{opt.text}</span>
+                <div className="text-xs font-bold text-slate-800 line-clamp-2">{renderParsedText(opt.text, 'indigo')}</div>
               </button>
             );
           }
@@ -318,7 +318,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                 <span className={`w-8 h-8 rounded-xl text-sm font-black flex items-center justify-center shrink-0 ${badgeStyle}`}>
                   {opt.label || String.fromCharCode(65 + optIdx)}
                 </span>
-                <span className="text-sm font-bold text-slate-800">{opt.text}</span>
+                <div className="text-sm font-semibold">{renderParsedText(opt.text, 'indigo')}</div>
               </div>
 
               {isSubmitted && isCorrect && (

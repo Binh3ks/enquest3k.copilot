@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, ChevronDown } from 'lucide-react';
+import HoverWord, { renderParsedText } from '../common/HoverWord';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -125,7 +126,7 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
       <div className="p-6 sm:p-8 bg-slate-50 rounded-3xl border border-slate-200 shadow-inner leading-loose text-slate-900 font-serif text-base sm:text-lg relative">
         {storySegments.map((seg, idx) => {
           if (seg.type === 'text') {
-            return <span key={idx}>{seg.content}</span>;
+            return <span key={idx}>{renderParsedText(seg.content, 'indigo')}</span>;
           }
 
           const gap = gapsData.find(g => g.id === seg.gapId);

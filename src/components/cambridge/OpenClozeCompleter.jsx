@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, PenTool, BookOpen } from 'lucide-react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import HoverWord, { renderParsedText } from '../common/HoverWord';
 
 export function OpenClozeCompleter({ customData, onComplete }) {
   const data = customData || {
@@ -90,7 +91,7 @@ export function OpenClozeCompleter({ customData, onComplete }) {
       if (matchIndex > lastIndex) {
         parts.push(
           <span key={`text-${lastIndex}`}>
-            {rawText.substring(lastIndex, matchIndex)}
+            {renderParsedText(rawText.substring(lastIndex, matchIndex), 'indigo')}
           </span>
         );
       }
@@ -132,7 +133,7 @@ export function OpenClozeCompleter({ customData, onComplete }) {
     if (lastIndex < rawText.length) {
       parts.push(
         <span key={`text-${lastIndex}`}>
-          {rawText.substring(lastIndex)}
+          {renderParsedText(rawText.substring(lastIndex), 'indigo')}
         </span>
       );
     }

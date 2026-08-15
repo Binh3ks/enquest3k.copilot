@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, MessageSquare, ListFilter } from 'lucide-react';
+import HoverWord, { renderParsedText } from '../common/HoverWord';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -145,9 +146,9 @@ export function DialogueAHCompleter({ customData, onComplete }) {
                     <span className="px-2.5 py-0.5 bg-indigo-600 text-white font-black text-[10px] rounded-md uppercase shrink-0 mt-0.5">
                       {ex.speaker_a}
                     </span>
-                    <p className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
-                      "{ex.text_a}"
-                    </p>
+                    <div className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
+                      "{renderParsedText(ex.text_a, 'indigo')}"
+                    </div>
                   </div>
 
                   {/* Helen's Answer Slot */}
@@ -170,9 +171,9 @@ export function DialogueAHCompleter({ customData, onComplete }) {
                         Helen [{ex.gap_id}]
                       </span>
                       {assignedOpt ? (
-                        <p className="text-xs font-bold text-slate-900 truncate">
-                          <b className="text-purple-700 mr-1.5">({assignedOpt.key})</b> {assignedOpt.text}
-                        </p>
+                        <div className="text-xs font-bold text-slate-900 truncate">
+                          <b className="text-purple-700 mr-1.5">({assignedOpt.key})</b> {renderParsedText(assignedOpt.text, 'purple')}
+                        </div>
                       ) : (
                         <span className="text-xs font-semibold text-slate-400 italic">
                           Click to select Gap [{ex.gap_id}], then choose A-H on the right...
@@ -238,7 +239,7 @@ export function DialogueAHCompleter({ customData, onComplete }) {
                     {opt.key}
                   </span>
                   <div className="flex-1">
-                    <p className="leading-snug">{opt.text}</p>
+                    <div className="leading-snug">{renderParsedText(opt.text, 'indigo')}</div>
                     {isUsed && (
                       <span className="text-[10px] font-mono text-purple-800 font-extrabold block mt-0.5">
                         [Used in Gap {assignedGapId}]
