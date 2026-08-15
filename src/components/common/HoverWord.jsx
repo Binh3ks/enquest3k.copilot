@@ -2,35 +2,52 @@ import React, { useState, useRef, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { Volume2, BookOpen, Book, Mic, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
 import dictionaryData from '../../data/dictionary.json';
-import { week33MasterDictionary } from '../../data/weeks/week_33/vocab_dictionary_master';
+import { WEEK_33_MASTER_DICTIONARY } from '../../data/weeks/week_33/vocab_dictionary_master';
 
-const week33DictItems = week33MasterDictionary;
-
-// Build dictionary lookup map (shared across all HoverWord instances)
+// Strict dictionary lookup map built from WEEK_33_MASTER_DICTIONARY + fallback dictionaryData
 const baseDict = Object.fromEntries(
   (Array.isArray(dictionaryData) ? dictionaryData : []).map(e => [(e.word || '').toLowerCase(), e])
 );
 
 const week33Map = Object.fromEntries(
-  week33DictItems.map(e => [e.word.toLowerCase(), e])
+  Object.entries(WEEK_33_MASTER_DICTIONARY).map(([word, item]) => [
+    word.toLowerCase(),
+    {
+      word,
+      pronounce: item.ipa,
+      meaning: item.meaning,
+      example: item.example,
+      type: item.type,
+      audioText: item.audioText
+    }
+  ])
 );
 
 const dictMap = { ...baseDict, ...week33Map };
 
+// Strict whitelist set for text parser (ONLY items from WEEK_33_MASTER_DICTIONARY)
+const whitelistMap = week33Map;
+
 /**
- * Universal Length-Descending Text & Chunk Parser
+ * Universal Length-Descending Text & Chunk Parser (Strict Whitelist Enforcement)
  */
 export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
   if (!text) return null;
 
-  // Step 1: Filter phrases containing spaces and SORT BY LENGTH DESCENDING (b.length - a.length)
-  const sortedPhrases = Object.keys(dictMap)
+  // Step 1: Filter multi-word phrases from whitelist and SORT BY LENGTH DESCENDING
+  const sortedPhrases = Object.keys(whitelistMap)
     .filter((k) => k.includes(' '))
     .sort((a, b) => b.length - a.length);
 
+  const whitelistSingleWords = new Set(
+    Object.keys(whitelistMap).filter((k) => !k.includes(' '))
+  );
+
   // Step 2: Build master regex for markdown bold **...** OR multi-word phrases
   const escapedPhrases = sortedPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
-  const masterRegex = new RegExp(`(\\*{2}.*?\\*{2}|${escapedPhrases.join('|')})`, 'gi');
+  const masterRegex = escapedPhrases.length > 0
+    ? new RegExp(`(\\*{2}.*?\\*{2}|${escapedPhrases.join('|')})`, 'gi')
+    : /(\*{2}.*?\*{2})/gi;
 
   // Step 3: Parse text segments
   const segments = text.split(masterRegex);
@@ -69,30 +86,48 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
           currentWord += char;
         } else {
           if (currentWord) {
-            parts.push(
-              <HoverWord
-                key={key++}
-                word={currentWord}
-                themeColor={themeColor}
-                onSpeak={onSpeak}
-                tier={3}
-              />
-            );
+            const cleanW = currentWord.toLowerCase();
+            const isWhitelisted = whitelistSingleWords.has(cleanW) || 
+                                  (cleanW.endsWith('s') && whitelistSingleWords.has(cleanW.slice(0, -1))) ||
+                                  (cleanW.endsWith('ed') && whitelistSingleWords.has(cleanW.slice(0, -2)));
+
+            if (isWhitelisted) {
+              parts.push(
+                <HoverWord
+                  key={key++}
+                  word={currentWord}
+                  themeColor={themeColor}
+                  onSpeak={onSpeak}
+                  tier={1}
+                />
+              );
+            } else {
+              parts.push(<span key={key++}>{currentWord}</span>);
+            }
             currentWord = '';
           }
           currentNonWord += char;
         }
       }
       if (currentWord) {
-        parts.push(
-          <HoverWord
-            key={key++}
-            word={currentWord}
-            themeColor={themeColor}
-            onSpeak={onSpeak}
-            tier={3}
-          />
-        );
+        const cleanW = currentWord.toLowerCase();
+        const isWhitelisted = whitelistSingleWords.has(cleanW) || 
+                              (cleanW.endsWith('s') && whitelistSingleWords.has(cleanW.slice(0, -1))) ||
+                              (cleanW.endsWith('ed') && whitelistSingleWords.has(cleanW.slice(0, -2)));
+
+        if (isWhitelisted) {
+          parts.push(
+            <HoverWord
+              key={key++}
+              word={currentWord}
+              themeColor={themeColor}
+              onSpeak={onSpeak}
+              tier={1}
+            />
+          );
+        } else {
+          parts.push(<span key={key++}>{currentWord}</span>);
+        }
       }
       if (currentNonWord) {
         parts.push(<span key={key++}>{currentNonWord}</span>);

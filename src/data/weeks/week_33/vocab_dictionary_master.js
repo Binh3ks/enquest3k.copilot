@@ -1,195 +1,226 @@
 /**
- * Week 33 Master Dictionary (20 Core Words + 10 Lexical Chunks/Collocations)
- * Enforces 100% complete dictionary lookup data:
- * - word / phrase title
- * - pronounce (IPA)
- * - meaning (Vietnamese definition)
- * - example (Contextual Example sentence)
+ * WEEK 33 MASTER DICTIONARY DATABASE (CAMBRIDGE A2 FLYERS)
+ * Strict Whitelist: Exactly 10 Collocations/Chunks + 20 Core Vocabulary Words.
+ * Professional ESL definitions, IPA, and contextual examples.
  */
-export const week33MasterDictionary = [
-  // 10 MANDATORY LEXICAL CHUNKS & COLLOCATIONS (W33)
-  {
-    word: "slipped on the wet floor",
-    pronounce: "/slɪpt ɑːn ðə wɛt flɔːr/",
-    meaning: "trượt chân trên sàn ướt",
-    example: "Tom ran fast and slipped on the wet floor near the science lab."
+
+export const WEEK_33_MASTER_DICTIONARY = {
+  // --- 10 LEXICAL CHUNKS & COLLOCATIONS ---
+  "slipped on the wet floor": {
+    type: "Collocation",
+    ipa: "/slɪpt ɑːn ðə wɛt flɔːr/",
+    meaning: "trượt chân ngã trên nền sàn ướt",
+    example: "Tom ran fast and slipped on the wet floor near the science lab.",
+    audioText: "slipped on the wet floor"
   },
-  {
-    word: "yellow warning sign",
-    pronounce: "/ˈjɛl.oʊ ˈwɔːr.nɪŋ saɪn/",
+  "yellow warning sign": {
+    type: "Collocation",
+    ipa: "/ˈjɛloʊ ˈwɔːrnɪŋ saɪn/",
     meaning: "biển báo cảnh báo màu vàng",
-    example: "The janitor placed a yellow warning sign near the wet corridor tiles."
+    example: "Always watch out for the yellow warning sign when the floor is mopped.",
+    audioText: "yellow warning sign"
   },
-  {
-    word: "hurt his knee",
-    pronounce: "/hɜːrt hɪz niː/",
-    meaning: "bị đau / chấn thương đầu gối",
-    example: "Tom fell down heavily and hurt his knee while running."
+  "hurt his knee": {
+    type: "Collocation",
+    ipa: "/hɜːrt hɪz niː/",
+    meaning: "bị đau đầu gối",
+    example: "Tom fell down heavily and hurt his knee during recess.",
+    audioText: "hurt his knee"
   },
-  {
-    word: "call the school nurse",
-    pronounce: "/kɔːl ðə skuːl nɜːrs/",
-    meaning: "gọi y tế / y tá trường học",
-    example: "Jake ran quickly to call the school nurse right away."
+  "call the school nurse": {
+    type: "Collocation",
+    ipa: "/kɔːl ðə skuːl nɜːrs/",
+    meaning: "gọi y tế trường học",
+    example: "Jake acted responsibly and decided to call the school nurse right away.",
+    audioText: "call the school nurse"
   },
-  {
-    word: "clean bandage",
-    pronounce: "/kliːn ˈbæn.dɪdʒ/",
-    meaning: "băng gạc y tế sạch",
-    example: "The nurse gently applied a clean bandage to Tom's cut knee."
+  "clean bandage": {
+    type: "Collocation",
+    ipa: "/kliːn ˈbændɪdʒ/",
+    meaning: "băng gạc sạch",
+    example: "The school nurse applied a clean bandage to protect the cut.",
+    audioText: "clean bandage"
   },
-  {
-    word: "cold pack",
-    pronounce: "/koʊld pæk/",
-    meaning: "túi chườm lạnh / chườm đá",
-    example: "She placed a cold pack on his knee to reduce swelling."
-  },
-  {
-    word: "walk carefully",
-    pronounce: "/wɔːk ˈkɛr.fəl.i/",
-    meaning: "đi bộ cẩn thận",
-    example: "Always walk carefully down the school corridor."
-  },
-  {
-    word: "headmaster office",
-    pronounce: "/ˌhɛdˈmæs.tɚ ˈɑː.fɪs/",
-    meaning: "phòng hiệu trưởng",
-    example: "The headmaster office is located on the second floor."
-  },
-  {
-    word: "corridor safety",
-    pronounce: "/ˈkɔːr.ə.dɚ ˈseɪf.ti/",
-    meaning: "an toàn hành lang trường học",
-    example: "Students learned important rules about corridor safety."
-  },
-  {
-    word: "quick action",
-    pronounce: "/kwɪk ˈæk.ʃən/",
-    meaning: "hành động nhanh chóng / xử lý kịp thời",
-    example: "Jake was praised during assembly for his quick action."
-  },
-
-  // 20 CORE VOCABULARY WORDS (W33)
-  {
-    word: "corridor",
-    pronounce: "/ˈkɔːr.ə.dɚ/",
-    meaning: "hành lang trường học",
-    example: "Jake walked carefully down the school corridor."
-  },
-  {
-    word: "slipped",
-    pronounce: "/slɪpt/",
-    meaning: "bị trượt chân",
-    example: "A boy running fast slipped on the wet floor."
-  },
-  {
-    word: "nurse",
-    pronounce: "/nɜːrs/",
-    meaning: "y tế / y tá trường học",
-    example: "Jake called the school nurse immediately."
-  },
-  {
-    word: "bandage",
-    pronounce: "/ˈbæn.dɪdʒ/",
-    meaning: "băng cá nhân / băng gạc",
-    example: "The nurse applied a clean bandage to his knee."
-  },
-  {
-    word: "relieved",
-    pronounce: "/rɪˈliːvd/",
-    meaning: "cảm thấy nhẹ nhõm",
-    example: "Everyone felt relieved when Tom smiled."
-  },
-  {
-    word: "mistake",
-    pronounce: "/mɪˈsteɪk/",
-    meaning: "lỗi lầm / sai sót",
-    example: "Running in the hall was a dangerous mistake."
-  },
-  {
-    word: "accident",
-    pronounce: "/ˈæk.sə.dənt/",
-    meaning: "tai nạn ngoài ý muốn",
-    example: "Jake helped his friend after the sudden accident."
-  },
-  {
-    word: "fix",
-    pronounce: "/fɪks/",
-    meaning: "sửa chữa / khắc phục",
-    example: "The nurse fixed his knee with medical care."
-  },
-  {
-    word: "sorry",
-    pronounce: "/ˈsɔːr.i/",
-    meaning: "xin lỗi / hối hận",
-    example: "The running boy said sorry for being careless."
-  },
-  {
-    word: "careful",
-    pronounce: "/ˈkɛr.fəl/",
-    meaning: "cẩn thận",
-    example: "Be careful when walking on wet corridor floors."
-  },
-  {
-    word: "clumsy",
-    pronounce: "/ˈklʌm.zi/",
-    meaning: "vụng về / hậu đậu",
-    example: "He felt clumsy after tripping over his shoelaces."
-  },
-  {
-    word: "arm",
-    pronounce: "/ɑːrm/",
-    meaning: "cánh tay",
-    example: "He held his arm while sitting on the floor."
-  },
-  {
-    word: "knee",
-    pronounce: "/niː/",
-    meaning: "đầu gối",
-    example: "The nurse checked Tom's swollen knee."
-  },
-  {
-    word: "leg",
-    pronounce: "/leɡ/",
-    meaning: "chân",
-    example: "His left leg was hurting after the fall."
-  },
-  {
-    word: "head",
-    pronounce: "/hed/",
-    meaning: "đầu",
-    example: "He protected his head when he fell."
-  },
-  {
-    word: "cold_pack",
-    pronounce: "/koʊld pæk/",
+  "cold pack": {
+    type: "Collocation",
+    ipa: "/koʊld pæk/",
     meaning: "túi chườm lạnh",
-    example: "She placed a cold pack on his knee."
+    example: "The nurse used a cold pack to reduce the swelling on his knee.",
+    audioText: "cold pack"
   },
-  {
-    word: "recover",
-    pronounce: "/rɪˈkʌv.ɚ/",
-    meaning: "hồi phục",
-    example: "Tom will recover quickly after resting."
+  "walk carefully": {
+    type: "Collocation",
+    ipa: "/wɔːk ˈkɛrfəli/",
+    meaning: "đi bộ cẩn thận",
+    example: "Students must walk carefully in the school corridor to prevent accidents.",
+    audioText: "walk carefully"
   },
-  {
-    word: "explain",
-    pronounce: "/ɪkˈspleɪn/",
-    meaning: "giải thích",
-    example: "Jake explained what happened to the teacher."
+  "headmaster office": {
+    type: "Collocation",
+    ipa: "/ˈhɛdmæstər ˈɔːfɪs/",
+    meaning: "phòng hiệu trưởng",
+    example: "The headmaster praised Jake for his quick action in the headmaster office.",
+    audioText: "headmaster office"
   },
-  {
-    word: "lesson",
-    pronounce: "/ˈles.ən/",
-    meaning: "bài học rút ra",
-    example: "They learned an important safety lesson."
+  "corridor safety": {
+    type: "Collocation",
+    ipa: "/ˈkɔːrɪdɔːr ˈseɪfti/",
+    meaning: "an toàn hành lang",
+    example: "Corridor safety is everyone's responsibility at our school.",
+    audioText: "corridor safety"
   },
-  {
-    word: "terrible",
-    pronounce: "/ˈter.ə.bəl/",
-    meaning: "tồi tệ / khủng khiếp",
-    example: "The slip was scary, but not terrible."
-  }
-];
+  "quick action": {
+    type: "Collocation",
+    ipa: "/kwɪk ˈækʃən/",
+    meaning: "hành động nhanh chóng / xử lý kịp thời",
+    example: "Thanks to Jake's quick action, Tom received medical help immediately.",
+    audioText: "quick action"
+  },
 
-export default week33MasterDictionary;
+  // --- 20 CORE VOCABULARY WORDS ---
+  "corridor": {
+    type: "Noun",
+    ipa: "/ˈkɔːrɪdɔːr/",
+    meaning: "hành lang trường học",
+    example: "Jake was walking down the school corridor after science class.",
+    audioText: "corridor"
+  },
+  "slipped": {
+    type: "Verb",
+    ipa: "/slɪpt/",
+    meaning: "bị trượt chân (quá khứ của slip)",
+    example: "Tom ran too fast and slipped on the wet tiles.",
+    audioText: "slipped"
+  },
+  "nurse": {
+    type: "Noun",
+    ipa: "/nɜːrs/",
+    meaning: "y tá / y sĩ trường học",
+    example: "The school nurse came quickly with first aid supplies.",
+    audioText: "nurse"
+  },
+  "bandage": {
+    type: "Noun",
+    ipa: "/ˈbændɪdʒ/",
+    meaning: "băng cá nhân / băng gạc",
+    example: "She put a clean bandage on his injured knee.",
+    audioText: "bandage"
+  },
+  "relieved": {
+    type: "Adjective",
+    ipa: "/rɪˈliːvd/",
+    meaning: "an tâm / nhẹ nhõm",
+    example: "Everyone felt relieved when they knew Tom was okay.",
+    audioText: "relieved"
+  },
+  "mistake": {
+    type: "Noun",
+    ipa: "/mɪˈsteɪk/",
+    meaning: "lỗi lầm / sai sót",
+    example: "Running in the hallway is a dangerous mistake.",
+    audioText: "mistake"
+  },
+  "accident": {
+    type: "Noun",
+    ipa: "/ˈæksɪdənt/",
+    meaning: "tai nạn / sự cố bất ngờ",
+    example: "We can prevent most accidents by following safety rules.",
+    audioText: "accident"
+  },
+  "fix": {
+    type: "Verb",
+    ipa: "/fɪks/",
+    meaning: "sửa chữa / khắc phục",
+    example: "The janitor quickly cleaned up the spill to fix the hazard.",
+    audioText: "fix"
+  },
+  "sorry": {
+    type: "Adjective",
+    ipa: "/ˈsɑːri/",
+    meaning: "cảm thấy tiếc / xin lỗi",
+    example: "Tom said he was sorry for running in the corridor.",
+    audioText: "sorry"
+  },
+  "careful": {
+    type: "Adjective",
+    ipa: "/ˈkɛrfəl/",
+    meaning: "cẩn thận",
+    example: "Please be careful when carrying hot soup in the cafeteria.",
+    audioText: "careful"
+  },
+  "clumsy": {
+    type: "Adjective",
+    ipa: "/ˈklʌmzi/",
+    meaning: "vềnh vàng / vụng về",
+    example: "He dropped his books because he was being clumsy.",
+    audioText: "clumsy"
+  },
+  "arm": {
+    type: "Noun",
+    ipa: "/ɑːrm/",
+    meaning: "cánh tay",
+    example: "He scraped his arm slightly when he fell.",
+    audioText: "arm"
+  },
+  "knee": {
+    type: "Noun",
+    ipa: "/niː/",
+    meaning: "đầu gối",
+    example: "Tom hit his knee hard against the hard floor.",
+    audioText: "knee"
+  },
+  "leg": {
+    type: "Noun",
+    ipa: "/lɛɡ/",
+    meaning: "chân",
+    example: "He stretched his leg to make sure it wasn't broken.",
+    audioText: "leg"
+  },
+  "head": {
+    type: "Noun",
+    ipa: "/hɛd/",
+    meaning: "đầu",
+    example: "Always wear a helmet to protect your head while cycling.",
+    audioText: "head"
+  },
+  "recover": {
+    type: "Verb",
+    ipa: "/rɪˈkʌvər/",
+    meaning: "hồi phục / bình phục",
+    example: "Tom needed a few days to fully recover from his fall.",
+    audioText: "recover"
+  },
+  "explain": {
+    type: "Verb",
+    ipa: "/ɪkˈspleɪn/",
+    meaning: "giải thích",
+    example: "The teacher asked Tom to explain what happened.",
+    audioText: "explain"
+  },
+  "lesson": {
+    type: "Noun",
+    ipa: "/ˈlɛsən/",
+    meaning: "bài học kinh nghiệm",
+    example: "That day taught everyone a valuable safety lesson.",
+    audioText: "lesson"
+  },
+  "terrible": {
+    type: "Adjective",
+    ipa: "/ˈtɛrəbəl/",
+    meaning: "tệ hại / khủng khiếp",
+    example: "It felt like a terrible accident, but thankfully he recovered quickly.",
+    audioText: "terrible"
+  }
+};
+
+// Backward compatible array export
+export const week33MasterDictionary = Object.entries(WEEK_33_MASTER_DICTIONARY).map(([word, item]) => ({
+  word,
+  pronounce: item.ipa,
+  meaning: item.meaning,
+  example: item.example,
+  type: item.type,
+  audioText: item.audioText
+}));
+
+export default WEEK_33_MASTER_DICTIONARY;
