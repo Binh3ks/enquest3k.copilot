@@ -30,17 +30,17 @@ export function VisualMatchingAH({ customData, onComplete }) {
     { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock is shown in picture card E.' }
   ];
 
-  // Fisher-Yates Shuffle 8 Picture Cards (A to H)
+  // Fisher-Yates Shuffle 8 Picture Cards (A to H — School Locations)
   const pictureCards = useMemo(() => {
     const rawCards = customData?.cards || [
-      { letter: 'A', name: 'Clean Bandage', image_url: '/images/week33/card_clean_bandage.jpg' },
-      { letter: 'B', name: 'Cold Pack', image_url: '/images/week33/card_cold_pack.jpg' },
-      { letter: 'C', name: 'Science Notebook', image_url: '/images/week33/card_science_notebook.jpg' },
-      { letter: 'D', name: 'Orange Juice', image_url: '/images/week33/card_orange_juice.jpg' },
-      { letter: 'E', name: 'Alarm Clock', image_url: '/images/week33/card_alarm_clock.jpg' },
-      { letter: 'F', name: 'School Backpack', image_url: '/images/week33/card_backpack.jpg' },
-      { letter: 'G', name: 'Water Bottle', image_url: '/images/week33/card_water_bottle.jpg' },
-      { letter: 'H', name: 'First Aid Kit', image_url: '/images/week33/card_first_aid_kit.jpg' }
+      { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },
+      { letter: 'B', name: 'First Aid Table', location_name: 'First Aid Table', image_url: '/images/week33/cold_pack.jpg' },
+      { letter: 'C', name: 'Science Lab Desk', location_name: 'Science Lab Desk', image_url: '/images/week33/lab_desk.jpg' },
+      { letter: 'D', name: 'Cafeteria Counter', location_name: 'Cafeteria Counter', image_url: '/images/week33/cafeteria.jpg' },
+      { letter: 'E', name: 'Bedroom Table (Home)', location_name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
+      { letter: 'F', name: 'Corridor Safety Locker', location_name: 'Corridor Locker', image_url: '/images/week33/corridor.jpg' },
+      { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/read.jpg' },
+      { letter: 'H', name: 'Playground Bench', location_name: 'Playground Bench', image_url: '/images/week33/explore.jpg' }
     ];
     return shuffleArray(rawCards);
   }, [customData, shuffleSeed]);

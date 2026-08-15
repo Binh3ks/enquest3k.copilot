@@ -32,25 +32,25 @@ export const listeningHubData = {
     ]
   },
 
-  // Cambridge Listening Part 3 (Visual Matching A-H)
+  // Cambridge Listening Part 3 (Visual Matching A-H — School Locations)
   listening_p3: {
-    passage_audio_script: "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was placed on the first aid table.\nTeacher: Where was Tom's science notebook?\nJake: Tom dropped his science notebook on the lab desk before running.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria table.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home! The backpack, water bottle, and first aid box weren't used at all.",
+    passage_audio_script: "Teacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet in the nurse room.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was taken from the first aid table near the corridor.\nTeacher: Where was Tom's science notebook?\nJake: Tom left his science notebook on the lab desk in the science room.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria counter in the canteen.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home! The corridor locker, headmaster office, and playground bench weren't used.",
     items: [
-      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet.' },
-      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table.' },
-      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk.' },
-      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria table.' },
+      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet in the nurse room.' },
+      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table near the corridor.' },
+      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk in the science room.' },
+      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria counter in the canteen.' },
       { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock was on the bedroom table at home.' }
     ],
     cards: [
-      { letter: 'A', name: 'Clean Bandage', image_url: '/images/week33/card_clean_bandage.jpg' },
-      { letter: 'B', name: 'Cold Pack', image_url: '/images/week33/card_cold_pack.jpg' },
-      { letter: 'C', name: 'Science Notebook', image_url: '/images/week33/card_science_notebook.jpg' },
-      { letter: 'D', name: 'Orange Juice', image_url: '/images/week33/card_orange_juice.jpg' },
-      { letter: 'E', name: 'Alarm Clock', image_url: '/images/week33/card_alarm_clock.jpg' },
-      { letter: 'F', name: 'School Backpack', image_url: '/images/week33/card_backpack.jpg' },
-      { letter: 'G', name: 'Water Bottle', image_url: '/images/week33/card_water_bottle.jpg' },
-      { letter: 'H', name: 'First Aid Kit', image_url: '/images/week33/card_first_aid_kit.jpg' }
+      { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },
+      { letter: 'B', name: 'First Aid Table', location_name: 'First Aid Table', image_url: '/images/week33/cold_pack.jpg' },
+      { letter: 'C', name: 'Science Lab Desk', location_name: 'Science Lab Desk', image_url: '/images/week33/lab_desk.jpg' },
+      { letter: 'D', name: 'Cafeteria Counter', location_name: 'Cafeteria Counter', image_url: '/images/week33/cafeteria.jpg' },
+      { letter: 'E', name: 'Bedroom Table (Home)', location_name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
+      { letter: 'F', name: 'Corridor Safety Locker', location_name: 'Corridor Locker', image_url: '/images/week33/corridor.jpg' },
+      { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/read.jpg' },
+      { letter: 'H', name: 'Playground Bench', location_name: 'Playground Bench', image_url: '/images/week33/explore.jpg' }
     ]
   },
 
