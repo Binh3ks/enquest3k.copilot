@@ -207,12 +207,11 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
               <div className="relative aspect-4/3 rounded-xl overflow-hidden mb-2 bg-slate-200 border border-slate-200">
                 <img src={panel.image_url} alt={panel.title_en} className="w-full h-full object-cover" />
                 <span className="absolute top-2 left-2 px-2.5 py-1 bg-slate-900/80 text-white rounded-lg text-[10px] font-black uppercase tracking-wider backdrop-blur-md">
-                  Panel {idx + 1}
+                  Picture {idx + 1}
                 </span>
               </div>
               <div>
-                <h4 className="text-xs font-bold text-slate-800">{panel.title_en}</h4>
-                <p className="text-[11px] text-slate-500 font-medium italic">{panel.title_vi}</p>
+                <h4 className="text-xs font-bold text-slate-800">{activeMode === 'check' ? `Picture ${idx + 1}` : panel.title_en}</h4>
               </div>
             </div>
           ))}

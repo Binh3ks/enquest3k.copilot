@@ -683,7 +683,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         </div>
       ) : subMode === 'cue_card' ? (
         /* MODE 3: CAMBRIDGE SPEAKING PART 2 (INFORMATION EXCHANGE SIDE-BY-SIDE TABLES) */
-        <InformationExchangeP2 customData={data?.cue_card_info_exchange} />
+        <InformationExchangeP2 customData={data?.cue_card_info_exchange} isStealthMode={activeMode === 'check'} />
       ) : (
         /* MODE 4: 4-PICTURE STORY CONTINUATION (SPEAKING PART 3) */
         <div className="space-y-6">
@@ -755,7 +755,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                     </span>
                   </div>
 
-                  <h4 className="text-xs font-black text-slate-900">{pic.title}</h4>
+                  <h4 className="text-xs font-black text-slate-900">{activeMode === 'check' ? `Picture ${pic.id}` : pic.title}</h4>
 
                   {!pic.is_intro ? (
                     <div className="pt-1 flex flex-col gap-1.5 mt-auto">

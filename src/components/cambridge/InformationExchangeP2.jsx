@@ -33,7 +33,7 @@ const evaluateSpeechInput = (spokenText, acceptableList) => {
   return { isCorrect: false, score: 45 };
 };
 
-export function InformationExchangeP2({ customData }) {
+export function InformationExchangeP2({ customData, isStealthMode = false }) {
   const data = customData || {
     title: "Nova's Cue-Card Exchange",
     table_a: {
@@ -555,16 +555,16 @@ export function InformationExchangeP2({ customData }) {
             </div>
           </div>
 
-          {/* Cue Prompt Scaffolding Pill for Phase 2 */}
-          {flowState === 'phase2_q' && currentActiveFieldA && (
+          {/* Cue Prompt Scaffolding Pill for Phase 2 (Hidden in Stealth / Check Mode) */}
+          {!isStealthMode && flowState === 'phase2_q' && currentActiveFieldA && (
             <div className="bg-amber-400 text-slate-950 font-black px-3.5 py-1.5 rounded-xl text-xs shadow-md border border-amber-300 flex items-center gap-1.5 shrink-0">
               <HelpCircle size={14} /> Prompt: {currentActiveFieldA.cue_prompt}
             </div>
           )}
         </div>
 
-        {/* Lifebuoy Scaffolding Hint Box (Max Attempts >= 2) */}
-        {showLifebuoyHint && flowState === 'phase2_q' && currentActiveFieldA && (
+        {/* Lifebuoy Scaffolding Hint Box (Max Attempts >= 2, Hidden in Stealth / Check Mode) */}
+        {!isStealthMode && showLifebuoyHint && flowState === 'phase2_q' && currentActiveFieldA && (
           <div className="p-4 bg-amber-500/20 border-2 border-amber-400 rounded-2xl space-y-2 animate-in fade-in">
             <div className="flex items-center justify-between text-amber-300 font-black text-xs">
               <span className="flex items-center gap-1.5">

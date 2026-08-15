@@ -505,12 +505,45 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
               }}
             />
           )}
-
-
         </div>
       ) : (
-        /* CHECK MODE: CAMBRIDGE READING & WRITING PART 6 (OPEN CLOZE - 5 GAPS TEXT INPUT) */
-        <OpenClozeCompleter customData={data?.rw_part_6} />
+        /* CHECK MODE: CAMBRIDGE READING & WRITING MOCK EXAM SUITE (PARTS A, B, C - 15 QUESTIONS TOTAL) */
+        <div className="space-y-8 animate-in fade-in">
+          <div className="p-4 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between text-amber-900 shadow-sm">
+            <div className="flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-amber-600 shrink-0" />
+              <span className="text-xs font-black">🎯 CHECK MODE (CAMBRIDGE FLYERS READING MOCK EXAM): Complete all 3 Parts (15 Questions Total) under strict exam conditions!</span>
+            </div>
+            <span className="text-[10px] font-black uppercase px-2.5 py-1 bg-amber-200 text-amber-900 rounded-lg shrink-0">15 Questions</span>
+          </div>
+
+          {/* Part A: Open Cloze (5 Gaps - No Word Bank) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-purple-100 text-purple-900 text-xs font-black rounded-xl">PART A — Open Cloze (5 Gaps)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 6 Standard</span>
+            </div>
+            <OpenClozeCompleter customData={data?.rw_part_6} />
+          </div>
+
+          {/* Part B: Interactive Story Cloze (5 Gaps) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-blue-100 text-blue-900 text-xs font-black rounded-xl">PART B — Story Gap-Fill (5 Gaps)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 4 Standard</span>
+            </div>
+            <InlineTextClozeDropdown customData={data?.rw_part4} />
+          </div>
+
+          {/* Part C: Text Extraction & Information Matching (5 Questions) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-900 text-xs font-black rounded-xl">PART C — Text Extraction (5 Questions)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 5 Standard</span>
+            </div>
+            <TextExtractionCompleter customData={data?.rw_part5} />
+          </div>
+        </div>
       )}
     </div>
   );

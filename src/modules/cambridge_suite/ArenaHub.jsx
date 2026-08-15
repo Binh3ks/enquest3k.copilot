@@ -8,7 +8,7 @@ import { AdaptiveExplainerModal } from '../hubs/station2/components/AdaptiveExpl
 import NotepadNoteCompleter from '../../components/common/NotepadNoteCompleter';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { useUserStore } from '../../stores/useUserStore';
-import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers, FileText } from 'lucide-react';
+import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers, FileText, Trophy } from 'lucide-react';
 
 
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
@@ -273,9 +273,60 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
           </div>
         </div>
       ) : (
-        /* CHECK MODE (Cambridge Exam Standard - 10 Questions) */
-        <div className="bg-white rounded-2xl border border-slate-200 p-6">
-          <Station2CheckMode weekNumber={weekNumber} />
+        /* CHECK MODE (CAMBRIDGE FLYERS LISTENING MOCK EXAM SUITE - 5 PARTS • 25 QUESTIONS TOTAL) */
+        <div className="space-y-8 animate-in fade-in">
+          <div className="p-4 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between text-amber-900 shadow-sm">
+            <div className="flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-amber-600 shrink-0" />
+              <span className="text-xs font-black">🎯 CHECK MODE (CAMBRIDGE FLYERS LISTENING MOCK EXAM): Complete all 5 Parts (25 Questions Total) with hidden scripts under exam conditions!</span>
+            </div>
+            <span className="text-[10px] font-black uppercase px-2.5 py-1 bg-amber-200 text-amber-900 rounded-lg shrink-0">25 Questions</span>
+          </div>
+
+          {/* Part 1: SVG Line Matching (5 Questions) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-black rounded-xl">PART 1 — SVG Wire Match (5 Questions)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 1 Standard</span>
+            </div>
+            <SVGLineMatcher customData={data?.listening_p1} isStealthMode={true} />
+          </div>
+
+          {/* Part 2: Notepad Fill (5 Questions) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-purple-100 text-purple-900 text-xs font-black rounded-xl">PART 2 — Notepad Fill (5 Questions)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 2 Standard</span>
+            </div>
+            <NotepadNoteCompleter title="School Incident Notepad (Exam Mode)" notes={data?.listening_p2_notes} isStealthMode={true} />
+          </div>
+
+          {/* Part 3: Item Matching A-H (5 Questions) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-black rounded-xl">PART 3 — Item Matching A-H (5 Questions)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 3 Standard</span>
+            </div>
+            <VisualMatchingAH customData={data?.listening_p3} isStealthMode={true} />
+          </div>
+
+          {/* Part 4: 3D Picture Quiz (5 Questions) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-rose-100 text-rose-900 text-xs font-black rounded-xl">PART 4 — 3D Picture Quiz (5 Questions)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 4 Standard</span>
+            </div>
+            <Station2CheckMode customQuestions={data?.listening_p4_questions} weekNumber={weekNumber} isStealthMode={true} />
+          </div>
+
+          {/* Part 5: SVG Canvas Color & Write (5 Questions) */}
+          <div className="p-5 bg-white border border-slate-200 rounded-3xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-900 text-xs font-black rounded-xl">PART 5 — SVG Color & Write (5 Questions)</span>
+              <span className="text-xs font-bold text-slate-400">Cambridge Part 5 Standard</span>
+            </div>
+            <SVGColorAndWrite customData={data?.listening_p5} isStealthMode={true} />
+          </div>
         </div>
       )}
 
