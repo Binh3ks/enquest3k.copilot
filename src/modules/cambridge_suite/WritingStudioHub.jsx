@@ -150,7 +150,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Top Controls: Mode Toggle, Mascot Store & Hints */}
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-        <GlobalModeToggle mode={activeMode} onChange={setActiveMode} />
+        <GlobalModeToggle activeMode={activeMode} onModeChange={setActiveMode} />
 
         <div className="flex items-center gap-2">
           {/* Nova Mascot Fitting Store Button */}

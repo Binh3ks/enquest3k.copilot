@@ -409,7 +409,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
       {/* Top Bar Controls: Mode Toggle & Mascot Store */}
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-        <GlobalModeToggle mode={activeMode} onChange={setActiveMode} />
+        <GlobalModeToggle activeMode={activeMode} onModeChange={setActiveMode} />
 
         <button
           onClick={() => setShowMascotStore(true)}
