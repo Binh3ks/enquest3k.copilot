@@ -242,9 +242,10 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const currentFrame = storyScenes[activeFrameIndex] || storyScenes[0];
   const frameHotspots = currentFrame.lexical_chunks || [];
 
-  // System Global Text Parser using HoverWord component
+  // System Global Text Parser using HoverWord component (Disables hover popups in Check Mode)
   const handleRenderParsedText = (text, themeColor = 'indigo') => {
-    return renderParsedText(text, themeColor, (w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced'));
+    const isCheckMode = activeTab === 'check';
+    return renderParsedText(text, themeColor, (w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced'), isCheckMode);
   };
 
   // Play audio chunk via Primary Google Cloud TTS Direct with Browser fallback

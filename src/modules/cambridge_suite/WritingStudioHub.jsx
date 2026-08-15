@@ -5,12 +5,15 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import { renderParsedText } from '../../components/common/HoverWord';
 import { NotepadNoteCompleter } from '../../components/common/NotepadNoteCompleter';
-import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle2, Layers, Film } from 'lucide-react';
+import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle2, Layers, Film, ShoppingBag, Zap } from 'lucide-react';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
+import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+  const addXP = useUserStore((state) => state.addXP);
+  const userXP = useUserStore((state) => state.userXP || 0);
 
   const [activeTab, setActiveTab] = useState('rw_p7'); // 'rw_p7' | 'listening_p2'
   const [userScript, setUserScript] = useState('');
@@ -21,6 +24,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showHintsModal, setShowHintsModal] = useState(false);
   const [showPracticeNotice, setShowPracticeNotice] = useState(false);
+  const [showMascotStore, setShowMascotStore] = useState(false);
 
 
   const picturePanels = data?.picture_story || data?.picturePanels || [
@@ -69,38 +73,57 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       const isWordCountPass = words.length >= 20;
       const wordScore = isWordCountPass ? 20 : Math.round((words.length / 20) * 20);
 
-      // 2. Target Vocab Keywords Check (40 pts max)
-      const targetKeywords = ['slipped', 'corridor', 'nurse', 'bandage', 'knee', 'fell', 'help', 'pack', 'clean', 'stopped', 'walked', 'called', 'fast', 'wet', 'floor', 'aid', 'school'];
-      const foundKeywords = Array.from(new Set(targetKeywords.filter(k => cleanText.includes(k))));
-      const keywordScore = Math.min(40, foundKeywords.length * 10);
+      // 2. Connectors Check (30 pts max - Coherence & Cohesion)
+      const connectorsList = ['first', 'then', 'suddenly', 'because', 'so', 'finally', 'after', 'while', 'when'];
+      const foundConnectors = Array.from(new Set(connectorsList.filter(c => cleanText.includes(c))));
+      const connectorScore = Math.min(30, foundConnectors.length * 15);
 
-      // 3. Past Tense Verbs Check (40 pts max)
+      // 3. Past Tense Verbs & Syntax Structure Check (30 pts max)
       const pastVerbs = ['was', 'were', 'slipped', 'fell', 'hurt', 'called', 'stopped', 'arrived', 'brought', 'treated', 'helped', 'walked', 'ran', 'saw', 'dropped', 'promised'];
       const foundPastVerbs = Array.from(new Set(pastVerbs.filter(v => cleanText.includes(v))));
-      const grammarScore = Math.min(40, foundPastVerbs.length * 10);
+      const syntaxScore = Math.min(30, foundPastVerbs.length * 10);
 
-      const totalScore = Math.min(100, wordScore + keywordScore + grammarScore);
+      // 4. Target Vocab Keywords Check (20 pts max)
+      const targetKeywords = ['slipped', 'corridor', 'nurse', 'bandage', 'knee', 'fell', 'help', 'pack', 'clean', 'stopped', 'walked', 'called', 'fast', 'wet', 'floor', 'aid', 'school'];
+      const foundKeywords = Array.from(new Set(targetKeywords.filter(k => cleanText.includes(k))));
+      const keywordScore = Math.min(20, foundKeywords.length * 5);
+
+      // Coherence Gatekeeper: Reject word salads (no connectors & no sentence punctuation/structure)
+      const hasSentencePunctuation = /[.!?]/.test(userScript);
+      const isCoherent = foundConnectors.length >= 1 || (hasSentencePunctuation && foundPastVerbs.length >= 2);
+
+      let totalScore = wordScore + connectorScore + syntaxScore + keywordScore;
+      if (!isCoherent && isWordCountPass) {
+        // Cap score at 55 for incoherent word salads
+        totalScore = Math.min(55, totalScore);
+      } else {
+        totalScore = Math.min(100, totalScore);
+      }
+
       const stars = totalScore >= 80 ? 3 : totalScore >= 60 ? 2 : 1;
 
-      // Hub 3 Performance Task Gamification: Trigger Confetti Burst for ≥ 80% (3 Stars) 🎉
+      // Hub 3 Performance Task Gamification: Trigger Confetti Burst & +100 XP for ≥ 80% (3 Stars) 🎉
       if (totalScore >= 80) {
         fireCelebrationConfetti();
+        if (addXP) addXP(100);
       }
 
       let feedbackText = "";
       if (totalScore >= 80) {
-        feedbackText = "Outstanding story! Excellent past tense verbs and target keywords (corridor, slipped, nurse)!";
+        feedbackText = "Outstanding story! Excellent past tense verbs, connectors (then, suddenly), and target keywords!";
       } else if (totalScore >= 60) {
-        feedbackText = "Good story! Try adding more target keywords (like 'corridor' or 'bandage') and past verbs to get 3 stars!";
+        feedbackText = "Good story! Try adding connectors like 'first', 'then', or 'suddenly' to link your sentences smoothly.";
+      } else if (!isCoherent) {
+        feedbackText = "Con hãy dùng các từ nối (first, then, suddenly) và dấu chấm câu để kết nối các từ thành bài văn hoàn chỉnh nhé!";
       } else {
         feedbackText = "Keep practicing! Write 20+ words and include past tense verbs (slipped, fell, called) to describe the accident.";
       }
 
       const layer1Result = {
-        isRulePass: isWordCountPass,
+        isRulePass: isWordCountPass && isCoherent,
         wordCount: words.length,
         pastVerbsCount: foundPastVerbs.length,
-        connectorsCount: foundKeywords.length
+        connectorsCount: foundConnectors.length
       };
 
       setRuleScore(layer1Result);
@@ -125,18 +148,41 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
-      {/* Top Controls: Show Hints Button */}
-      <div className="flex items-center justify-end mb-4">
-        <div className="flex items-center gap-2 relative">
-          {/* Show Hints Scaffolding Button */}
+      {/* Top Controls: Mode Toggle, Mascot Store & Hints */}
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <GlobalModeToggle mode={activeMode} onChange={setActiveMode} />
+
+        <div className="flex items-center gap-2">
+          {/* Nova Mascot Fitting Store Button */}
           <button
-            onClick={() => setShowHintsModal(true)}
-            className="px-4 py-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm"
+            onClick={() => setShowMascotStore(true)}
+            className="px-3.5 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-md"
           >
-            <HelpCircle size={14} className="text-amber-600" /> Show Hints
+            <ShoppingBag size={14} className="text-amber-300" /> Nova Store ({userXP} XP)
           </button>
+
+          {/* Show Hints Scaffolding Button (Only available in Learn Mode) */}
+          {activeMode === 'learn' && (
+            <button
+              onClick={() => setShowHintsModal(true)}
+              className="px-4 py-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-sm"
+            >
+              <HelpCircle size={14} className="text-amber-600" /> Show Hints
+            </button>
+          )}
         </div>
       </div>
+
+      {/* Check Mode Exam Condition Banner */}
+      {activeMode === 'check' && (
+        <div className="p-4 mb-4 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between text-amber-900 shadow-sm animate-in fade-in">
+          <div className="flex items-center gap-2">
+            <Trophy className="w-5 h-5 text-amber-600 shrink-0" />
+            <span className="text-xs font-black">🎯 CHECK MODE (EXAM CONDITION): Scaffolding pills and hints are hidden. Write your 20+ word story completely from memory!</span>
+          </div>
+          <span className="text-[10px] font-black uppercase px-2.5 py-1 bg-amber-200 text-amber-900 rounded-lg shrink-0">Real Exam</span>
+        </div>
+      )}
 
       {/* Examiner Instructions Banner */}
       <div className="p-4 mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl text-white shadow-md flex items-center gap-3">
@@ -154,42 +200,38 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       </div>
 
       <div className="space-y-6">
-
-
-
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        {picturePanels.map((panel, idx) => (
-          <div key={panel.panel_id || idx} className="bg-slate-50 rounded-2xl border border-slate-200 p-3 shadow-sm overflow-hidden flex flex-col">
-            <div className="relative w-full h-48 bg-slate-200 rounded-xl overflow-hidden mb-3 border border-slate-300">
-              <img
-                src={panel.image_url}
-                alt={panel.title_en}
-                className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
-              />
-              <span className="absolute top-2 left-2 px-2.5 py-1 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black rounded-lg uppercase">
-                Panel {idx + 1}
-              </span>
+        {/* 3 Sequential Picture Story Panels */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {picturePanels.map((panel, idx) => (
+            <div key={panel.panel_id || idx} className="bg-slate-50 rounded-2xl p-3 border border-slate-200 flex flex-col justify-between">
+              <div className="relative aspect-4/3 rounded-xl overflow-hidden mb-2 bg-slate-200 border border-slate-200">
+                <img src={panel.image_url} alt={panel.title_en} className="w-full h-full object-cover" />
+                <span className="absolute top-2 left-2 px-2.5 py-1 bg-slate-900/80 text-white rounded-lg text-[10px] font-black uppercase tracking-wider backdrop-blur-md">
+                  Panel {idx + 1}
+                </span>
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-slate-800">{panel.title_en}</h4>
+                <p className="text-[11px] text-slate-500 font-medium italic">{panel.title_vi}</p>
+              </div>
             </div>
-
-            <h4 className="text-xs font-black text-slate-900 mb-1">{renderParsedText(panel.title_en, 'purple')}</h4>
-          </div>
-        ))}
-      </div>
-
-      {/* Interactive Word Bank Pills Container */}
-      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 mb-6 space-y-3">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-black text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-            <Layers size={14} /> Tap Pills below to build your original story script:
-          </span>
-          <button
-            onClick={() => setShowHintsModal(true)}
-            className="text-xs font-black text-purple-600 hover:underline"
-          >
-            Need Scaffolding Hints?
-          </button>
+          ))}
         </div>
+
+        {/* Word Bank Pills Section (Only rendered in Learn Mode) */}
+        {activeMode === 'learn' && (
+          <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-black text-slate-700 uppercase tracking-wider">
+                💡 Scaffolding Word Bank Pills (Click to Insert):
+              </span>
+              <button
+                onClick={() => setShowHintsModal(true)}
+                className="text-xs font-black text-purple-600 hover:underline"
+              >
+                Need Scaffolding Hints?
+              </button>
+            </div>
 
         <div className="space-y-2">
           {/* Action Verbs */}
@@ -235,6 +277,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           </div>
         </div>
       </div>
+    )}
 
       {/* Script Text Area Input with Cambridge Flyers Standard Target */}
       <div className="space-y-3 mb-6">
@@ -266,7 +309,9 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           <div className="flex items-center justify-between pb-3 border-b border-slate-200">
             <span className="text-xs font-black uppercase text-slate-700">Layer 1 Rule Check:</span>
             <span className={`text-xs font-black ${ruleScore.isRulePass ? 'text-emerald-600' : 'text-amber-600'}`}>
-              {ruleScore.isRulePass ? (ruleScore.wordCount >= 35 ? '✅ Pass (Cambridge 20+ words & EngQuest Stretch Goal met!)' : '✅ Pass (Cambridge Minimum 20+ words met)') : '⚠️ Below Cambridge Minimum (20 words)'}
+              {ruleScore.isRulePass
+                ? (ruleScore.wordCount >= 35 ? '✅ Pass (Cambridge 20+ words & EngQuest Stretch Goal met!)' : '✅ Pass (Cambridge Minimum 20+ words met)')
+                : '⚠️ Below Cambridge Minimum (20 words)'}
             </span>
           </div>
 
@@ -300,20 +345,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           )}
         </div>
       )}
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </div>
 
       {/* Show Hints Modal */}
       {showHintsModal && (
@@ -362,6 +394,9 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           </div>
         </div>
       )}
+
+      {/* Nova Mascot Store Modal */}
+      <NovaMascotStore isOpen={showMascotStore} onClose={() => setShowMascotStore(false)} />
     </div>
   );
 }

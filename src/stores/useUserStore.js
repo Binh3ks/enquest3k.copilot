@@ -23,6 +23,45 @@ const useUserStore = create(
       avatarItems: [], // Array of earned avatar item IDs
       equippedItems: { hat: null, glasses: null, accessory: null }, // Currently equipped items
 
+      // META-GAME MASCOT STORE & XP ECONOMY STATE
+      userXP: 1250, // Default starting balance for Word Treasury
+      purchasedNovaItems: ['headphones'], // Pre-unlocked starter item
+      equippedNovaGear: { hat: null, glasses: null, accessory: 'headphones' },
+      streakFreezeActive: false,
+
+      // MASCOT STORE ACTIONS
+      addXP: (amount) => set((state) => ({ userXP: (state.userXP || 0) + amount })),
+      
+      buyNovaItem: (item) => {
+        const state = get();
+        const currentXP = state.userXP || 0;
+        if (currentXP < item.price) return { success: false, message: 'Not enough XP!' };
+        if ((state.purchasedNovaItems || []).includes(item.id)) return { success: false, message: 'Already owned!' };
+
+        const updatedPurchased = [...(state.purchasedNovaItems || []), item.id];
+        const updatedEquipped = { ...(state.equippedNovaGear || {}), [item.category]: item.id };
+
+        set({
+          userXP: currentXP - item.price,
+          purchasedNovaItems: updatedPurchased,
+          equippedNovaGear: updatedEquipped,
+          streakFreezeActive: item.id === 'streak_freeze' ? true : state.streakFreezeActive
+        });
+        return { success: true };
+      },
+
+      equipNovaItem: (category, itemId) => {
+        const state = get();
+        const currentEquipped = state.equippedNovaGear || {};
+        const isEquipped = currentEquipped[category] === itemId;
+        set({
+          equippedNovaGear: {
+            ...currentEquipped,
+            [category]: isEquipped ? null : itemId
+          }
+        });
+      },
+
       // ACTIONS
       
       /**

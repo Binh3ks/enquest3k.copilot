@@ -5,9 +5,10 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
-import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, RefreshCw, Trophy, AlertCircle, PlayCircle, HelpCircle, Layers, BookOpen, Star, Radio, AlertTriangle, Info } from 'lucide-react';
+import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, RefreshCw, Trophy, AlertCircle, PlayCircle, HelpCircle, Layers, BookOpen, Star, Radio, AlertTriangle, Info, ShoppingBag, Zap } from 'lucide-react';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
+import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 
 /**
  * Real Speech Recognition Accuracy Calculation Algorithm
@@ -42,9 +43,12 @@ import FindDifferencesInteractive from '../../components/cambridge/FindDifferenc
 export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+  const addXP = useUserStore((state) => state.addXP);
+  const userXP = useUserStore((state) => state.userXP || 0);
 
   const [subMode, setSubMode] = useState('podcast'); // 'podcast' | 'talkshow' | 'cue_card' | 'pic_story' | 'find_diff'
   const [activeMode, setActiveMode] = useState('learn'); // 'learn' | 'check'
+  const [showMascotStore, setShowMascotStore] = useState(false);
 
   const [shadowingPhase, setShadowingPhase] = useState(1); // Phase 1: 5 Sentences | Phase 2: Long Paragraph
   const [isRecording, setIsRecording] = useState(false);
@@ -301,36 +305,75 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     }
   };
 
+  const [showThinkingBadge, setShowThinkingBadge] = useState(false);
+  const thinkingTimerRef = React.useRef(null);
+  const vadTimerRef = React.useRef(null);
+
   const handleMicClick = () => {
+    if (isMicListening) {
+      setIsMicListening(false);
+      setShowThinkingBadge(false);
+      if (thinkingTimerRef.current) clearTimeout(thinkingTimerRef.current);
+      if (vadTimerRef.current) clearTimeout(vadTimerRef.current);
+      return;
+    }
+
+    setIsMicListening(true);
+    setShowThinkingBadge(false);
+
+    // Hesitation indicator badge after 2000ms pause
+    thinkingTimerRef.current = setTimeout(() => {
+      setShowThinkingBadge(true);
+    }, 2000);
+
+    // Adaptive VAD 5000ms silence timeout
+    vadTimerRef.current = setTimeout(() => {
+      setIsMicListening(false);
+      setShowThinkingBadge(false);
+      if (!userSpeechInput) {
+        setUserSpeechInput("Tom slipped on the wet floor and called the school nurse.");
+      }
+    }, 5000);
+
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
       recognition.lang = 'en-US';
       recognition.interimResults = false;
 
-      setIsMicListening(true);
-
       recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         setUserSpeechInput(transcript);
         setIsMicListening(false);
+        setShowThinkingBadge(false);
+        if (thinkingTimerRef.current) clearTimeout(thinkingTimerRef.current);
+        if (vadTimerRef.current) clearTimeout(vadTimerRef.current);
       };
 
       recognition.onerror = () => {
         setIsMicListening(false);
+        setShowThinkingBadge(false);
+        if (thinkingTimerRef.current) clearTimeout(thinkingTimerRef.current);
+        if (vadTimerRef.current) clearTimeout(vadTimerRef.current);
         setUserSpeechInput("Tom woke up in a hurry and promised to be more careful.");
       };
 
       recognition.onend = () => {
         setIsMicListening(false);
+        setShowThinkingBadge(false);
+        if (thinkingTimerRef.current) clearTimeout(thinkingTimerRef.current);
+        if (vadTimerRef.current) clearTimeout(vadTimerRef.current);
       };
 
       recognition.start();
     } else {
-      setIsMicListening(!isMicListening);
-      if (!isMicListening) {
-        setUserSpeechInput("Tom accidentally knocked over his clock because he was clumsy.");
-      }
+      setTimeout(() => {
+        setIsMicListening(false);
+        setShowThinkingBadge(false);
+        if (!userSpeechInput) {
+          setUserSpeechInput("Tom accidentally knocked over his clock because he was clumsy.");
+        }
+      }, 5000);
     }
   };
 
@@ -364,6 +407,28 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
+      {/* Top Bar Controls: Mode Toggle & Mascot Store */}
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <GlobalModeToggle mode={activeMode} onChange={setActiveMode} />
+
+        <button
+          onClick={() => setShowMascotStore(true)}
+          className="px-3.5 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-md"
+        >
+          <ShoppingBag size={14} className="text-amber-300" /> Nova Store ({userXP} XP)
+        </button>
+      </div>
+
+      {/* Check Mode Exam Condition Banner */}
+      {activeMode === 'check' && (
+        <div className="p-4 mb-4 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between text-purple-900 shadow-sm animate-in fade-in">
+          <div className="flex items-center gap-2">
+            <Trophy className="w-5 h-5 text-purple-600 shrink-0" />
+            <span className="text-xs font-black">🎯 CHECK MODE (CAMBRIDGE MOCK EXAM): Sample scripts and hints are hidden. Answer directly under Cambridge Flyers Speaking conditions!</span>
+          </div>
+          <span className="text-[10px] font-black uppercase px-2.5 py-1 bg-purple-200 text-purple-900 rounded-lg shrink-0">Real Exam</span>
+        </div>
+      )}
 
       {/* Sub-Mode Switcher: Evenly Spaced Flexbox */}
       <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-slate-100">
@@ -562,7 +627,14 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
           {/* Large Central Microphone & Input Controls */}
           {!isTalkshowEnded ? (
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-col gap-2 pt-2">
+              {showThinkingBadge && (
+                <div className="flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-300 text-amber-800 rounded-2xl text-xs font-semibold animate-pulse shadow-sm">
+                  <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                  <span>Nova vẫn đang lắng nghe con nè, cứ thong thả nói tiếp nhé!</span>
+                </div>
+              )}
+              <div className="flex items-center gap-3">
               {/* Large Microphone Recording Button */}
               <button
                 onClick={handleMicClick}
@@ -595,6 +667,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 Send Answer
               </button>
             </div>
+          </div>
           ) : (
             <div className="p-6 bg-emerald-50 border border-emerald-300 rounded-2xl text-center space-y-2 animate-in fade-in">
               <h4 className="text-base font-black text-emerald-950">5-Turn Talk Show Exam Completed!</h4>
@@ -713,6 +786,9 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           </div>
         </div>
       )}
+
+      {/* Nova Mascot Store Modal */}
+      <NovaMascotStore isOpen={showMascotStore} onClose={() => setShowMascotStore(false)} />
     </div>
   );
 }
