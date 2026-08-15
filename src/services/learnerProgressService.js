@@ -128,6 +128,9 @@ export const learnerProgressService = {
       localStorage.setItem(STORAGE_PROGRESS_KEY, JSON.stringify(allProgress));
       const xpAwarded = Math.round(score * 1.5);
       console.log(`[GAMIFICATION_SRS_DEBUG] Progress saved for activity: ${contentId} | Score: ${score} | XP Awarded: ${xpAwarded} | Mode: ${mode}`);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('engquest_progress_updated'));
+      }
     } catch (e) {
       console.error('Failed to save progress', e);
     }

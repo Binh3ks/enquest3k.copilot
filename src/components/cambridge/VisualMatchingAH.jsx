@@ -4,6 +4,7 @@ import VoiceService from '../../services/voiceService';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { srsService } from '../../services/srsService';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import CompletionModal from '../common/CompletionModal';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -21,6 +22,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
   const [shuffleSeed, setShuffleSeed] = useState(0);
+  const [showCompletionModal, setShowCompletionModal] = useState(false);
 
   const fullPassageScript = "Welcome to Nova's Item Hunt! Let's listen to Jake talking to his teacher about where different items were placed during the school incident. First, the clean bandage was inside the medical cabinet. Second, the cold pack was taken from the first aid table. Third, the science notebook was left on the lab desk. Fourth, the orange juice glass was sitting on the cafeteria counter. And fifth, the alarm clock was on the bedroom table at home.";
 
@@ -85,6 +87,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
 
     if (finalScore >= 80) {
       fireCelebrationConfetti('Hub2_Item_Hunt');
+      setShowCompletionModal(true);
     }
 
     learnerProgressService.logAttempt({
@@ -311,6 +314,16 @@ export function VisualMatchingAH({ customData, onComplete }) {
           </div>
         )}
       </div>
+
+      <CompletionModal
+        isOpen={showCompletionModal}
+        onClose={() => setShowCompletionModal(false)}
+        score={score || 100}
+        stars={score >= 80 ? 3 : score >= 60 ? 2 : 1}
+        xpEarned={50}
+        srsWordsAdded={5}
+        activityTitle="Item Hunt Mission (Hub 2)"
+      />
     </div>
   );
 }

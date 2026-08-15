@@ -22,6 +22,7 @@ import AIProviderStatus from './components/common/AIProviderStatus';
 import SettingsModal from './components/common/SettingsModal';
 import ProfileModal from './components/common/ProfileModal';
 import AppIntroModal from './components/common/AppIntroModal';
+import QADebugDrawer from './components/debug/QADebugDrawer';
 import HeaderProfileMenu from './components/common/HeaderProfileMenu';
 import CompletionCard from './components/common/CompletionCard';
 import CollectionBoard from './pages/CollectionBoard';
@@ -1017,6 +1018,7 @@ const MainLayout = () => {
           </div>
         </main>
       </div>
+      <QADebugDrawer />
     </>
   );
 };

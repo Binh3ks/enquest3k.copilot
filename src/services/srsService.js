@@ -40,6 +40,9 @@ class SRSService {
   saveSRSData() {
     try {
       localStorage.setItem(SRS_STORAGE_KEY, JSON.stringify(this.srsMap));
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('engquest_progress_updated'));
+      }
     } catch (_) {}
   }
 

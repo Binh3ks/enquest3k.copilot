@@ -6,6 +6,7 @@ import weekIndex from '../../data/weeks/index';
 import { useUserStore } from '../../stores/useUserStore'; // Import the store
 import { calculateStars } from '../../utils/scoringSystem';
 import { getBankStats } from '../../utils/wordMemoryBank';
+import { srsService } from '../../services/srsService';
 import { usePlanAccess } from '../../hooks/usePlanAccess';
 import { getAvatarItem } from '../../data/avatarItemConfig';
 import { COLLECTIONS } from '../../data/collectionConfig';
@@ -38,15 +39,28 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
   const lastStation = currentUser?.lastStation || 'read_explore';
   const hasProgress = currentUser?.progress && Object.keys(currentUser.progress).length > 0;
 
-  // Live SRS due-today count + bank stats — re-read from localStorage on every tab change
+  // Live SRS due-today count + bank stats — re-read from localStorage & listen to progress events
   const [srsDueCount, setSrsDueCount] = useState(0);
   const [bankStats, setBankStats] = useState({ total: 0, mastered: 0 });
-  useEffect(() => {
+
+  const refreshSidebarStats = () => {
     try {
       const stats = getBankStats();
-      setSrsDueCount(stats.dueToday || 0);
-      setBankStats({ total: stats.total || 0, mastered: stats.mastered || 0 });
-    } catch { /* ignore */ }
+      const srsData = srsService.loadSRSData();
+      const srsEntries = Object.values(srsData);
+
+      const srsTotal = Math.max(stats.total || 0, srsEntries.length);
+      const srsMastered = srsEntries.filter(i => i.box >= 2).length || stats.mastered || 0;
+
+      setSrsDueCount(stats.dueToday || srsEntries.filter(i => i.nextReview <= Date.now()).length);
+      setBankStats({ total: srsTotal, mastered: srsMastered });
+    } catch (_) {}
+  };
+
+  useEffect(() => {
+    refreshSidebarStats();
+    window.addEventListener('engquest_progress_updated', refreshSidebarStats);
+    return () => window.removeEventListener('engquest_progress_updated', refreshSidebarStats);
   }, [tabKey]);
 
   // Get station progress for each week from the new centralized state
