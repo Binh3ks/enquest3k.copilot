@@ -51,6 +51,7 @@ import WorldDiscoveryHub from './modules/cambridge_suite/WorldDiscoveryHub';
 import ArenaHub from './modules/cambridge_suite/ArenaHub';
 import WritingStudioHub from './modules/cambridge_suite/WritingStudioHub';
 import NovaTalkShowHub from './modules/cambridge_suite/NovaTalkShowHub';
+import SubscriptionModal from './components/subscription/SubscriptionModal';
 
 // Lazy-loaded heavy pages
 const GameHub = React.lazy(() => import('./pages/GameHub/GameHub'));
@@ -638,8 +639,8 @@ const MainLayout = () => {
           onClose={() => setCompletedCollectionId(null)}
           onOpenCloset={() => setIsAvatarClosetOpen(true)}
         />
-        <SuperAdminLauncher />
-        <TeacherLauncher />
+        {/* <SuperAdminLauncher /> */}
+        {/* <TeacherLauncher /> */}
 
         <Sidebar 
           isOpen={isSidebarOpen}
