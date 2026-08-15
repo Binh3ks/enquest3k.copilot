@@ -18,6 +18,7 @@ import { BarChart2, Star, ArrowRight, Lightbulb, Clock, CheckCircle2, AlertCircl
 import Confetti from 'react-confetti';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import { scoreWritingTiered } from '../../utils/writingRubric';
+import { renderParsedText } from '../../components/common/HoverWord';
 import { getImageUrl } from '../../utils/imageUrl';
 import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 
@@ -235,7 +236,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             {isVi ? 'Gợi Ý Viết Truyện' : 'Story Writing Prompt'}
           </p>
           <p className="text-xs text-slate-800 font-medium leading-relaxed">
-            {isVi ? (pictureMode.writing_prompts?.vi || '') : (pictureMode.writing_prompts?.en || '')}
+            {isVi ? (pictureMode.writing_prompts?.vi || '') : renderParsedText(pictureMode.writing_prompts?.en || '', 'indigo')}
           </p>
         </div>
       </div>

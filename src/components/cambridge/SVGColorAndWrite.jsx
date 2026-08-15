@@ -201,82 +201,104 @@ export function SVGColorAndWrite({ customData, onComplete }) {
           </div>
         </div>
 
-        {/* Right Column: Layered Line Art Vector SVG Canvas */}
-        <div className="lg:col-span-7 bg-slate-900 rounded-3xl p-6 border-2 border-slate-800 flex flex-col items-center justify-center relative shadow-2xl">
-          <span className="text-[10px] font-mono text-cyan-400 font-bold mb-2 uppercase tracking-wider">
-            Click SVG vector layers to color with active palette
-          </span>
+        {/* Right Column: High-Definition School Corridor Vector SVG Canvas */}
+        <div className="lg:col-span-7 bg-slate-950 rounded-3xl p-5 border-2 border-slate-800 flex flex-col items-center justify-center relative shadow-2xl">
+          <div className="w-full flex items-center justify-between mb-3 px-2">
+            <span className="text-[11px] font-black text-cyan-400 uppercase tracking-wider flex items-center gap-1">
+              <Palette size={14} /> Interactive Line-Art Scene (Click objects to color):
+            </span>
+            <span className="text-[10px] font-bold text-slate-400">
+              Color Active: {colorsPalette.find(c => c.hex === selectedColor)?.name || 'Blue'}
+            </span>
+          </div>
 
-          {/* Clean Monochrome Line Art Vector SVG Scene */}
-          <svg viewBox="0 0 500 350" className="w-full h-[320px] select-none bg-slate-950 rounded-2xl border border-slate-800">
-            {/* Background Corridor Wall & Floor Contours */}
-            <rect x="10" y="10" width="480" height="230" fill="#0f172a" stroke="#334155" strokeWidth="2" rx="12" />
-            <line x1="10" y1="240" x2="490" y2="240" stroke="#475569" strokeWidth="3" />
+          {/* High-Definition Monochrome Vector Line Art SVG Scene */}
+          <svg viewBox="0 0 520 360" className="w-full h-[330px] select-none bg-slate-900 rounded-2xl border-2 border-slate-700 shadow-inner">
+            {/* Background Corridor Architecture */}
+            <rect x="10" y="10" width="500" height="240" fill="#0f172a" stroke="#334155" strokeWidth="2.5" rx="12" />
+            <line x1="10" y1="250" x2="510" y2="250" stroke="#475569" strokeWidth="4" />
             
-            {/* Corridor Medical Room Door (Monochrome Line Art) */}
-            <rect x="40" y="40" width="85" height="195" fill="none" stroke="#64748b" strokeWidth="2.5" rx="6" />
-            <circle cx="110" cy="140" r="4" fill="#cbd5e1" />
-            <text x="82" y="70" textAnchor="middle" fill="#94a3b8" fontSize="11" fontWeight="900">NURSE</text>
+            {/* Tiled Floor Contours */}
+            <path d="M 10 250 L 510 250 M 80 250 L 50 350 M 180 250 L 160 350 M 280 250 L 290 350 M 380 250 L 410 350 M 480 250 L 500 350" stroke="#334155" strokeWidth="1.5" />
 
-            {/* Boy Sitting on Floor Contour */}
-            <circle cx="210" cy="175" r="20" fill="none" stroke="#94a3b8" strokeWidth="2.5" />
-            <rect x="195" y="197" width="30" height="42" fill="none" stroke="#94a3b8" strokeWidth="2.5" rx="6" />
+            {/* Nurse Office Door with Red Cross Emblem */}
+            <rect x="35" y="35" width="90" height="215" fill="#1e293b" stroke="#64748b" strokeWidth="3" rx="8" />
+            <circle cx="110" cy="145" r="4.5" fill="#e2e8f0" />
+            <rect x="70" y="55" width="20" height="6" fill="#ef4444" rx="2" />
+            <rect x="77" y="48" width="6" height="20" fill="#ef4444" rx="2" />
+            <text x="80" y="90" textAnchor="middle" fill="#94a3b8" fontSize="11" fontWeight="900">NURSE ROOM</text>
 
-            {/* SVG Layer 1: Bandage Vector on Knee (Fillable Line Art) */}
-            <g onClick={() => handleElementClick('bandage')} className="cursor-pointer hover:opacity-80 transition">
+            {/* Tom Sitting on Floor with Hurt Knee */}
+            <g transform="translate(140, 140)">
+              {/* Head & Hair */}
+              <circle cx="50" cy="30" r="18" fill="#334155" stroke="#cbd5e1" strokeWidth="2.5" />
+              {/* Torso */}
+              <path d="M 35 48 Q 50 45 65 48 L 60 90 L 40 90 Z" fill="#1e293b" stroke="#cbd5e1" strokeWidth="2.5" />
+              {/* Arm reaching for knee */}
+              <path d="M 38 55 Q 25 75 45 85" fill="none" stroke="#cbd5e1" strokeWidth="3" strokeLinecap="round" />
+            </g>
+
+            {/* SVG Layer 1: Bandage Vector on Knee (Interactive Click Target) */}
+            <g onClick={() => handleElementClick('bandage')} className="cursor-pointer group">
               <rect
-                x="198"
-                y="242"
-                width="40"
-                height="20"
+                x="175"
+                y="232"
+                width="48"
+                height="22"
                 rx="6"
                 fill={coloredElements['bandage'] || '#ffffff'}
-                stroke="#0f172a"
-                strokeWidth="3"
+                stroke={coloredElements['bandage'] ? '#0284c7' : '#38bdf8'}
+                strokeWidth="3.5"
+                className="transition-all group-hover:scale-105"
               />
-              <text x="218" y="256" textAnchor="middle" fill="#0f172a" fontSize="9" fontWeight="900">BANDAGE</text>
+              <text x="199" y="246" textAnchor="middle" fill="#0f172a" fontSize="10" fontWeight="900">BANDAGE</text>
             </g>
 
-            {/* First Aid Table Contour */}
-            <line x1="310" y1="180" x2="440" y2="180" stroke="#64748b" strokeWidth="3" />
-            <line x1="325" y1="180" x2="325" y2="270" stroke="#475569" strokeWidth="2.5" />
-            <line x1="425" y1="180" x2="425" y2="270" stroke="#475569" strokeWidth="2.5" />
+            {/* First Aid Table with Medicine Containers */}
+            <g transform="translate(290, 160)">
+              <rect x="0" y="20" width="130" height="12" fill="#334155" stroke="#64748b" strokeWidth="2" rx="3" />
+              <line x1="15" y1="32" x2="15" y2="90" stroke="#475569" strokeWidth="3" />
+              <line x1="115" y1="32" x2="115" y2="90" stroke="#475569" strokeWidth="3" />
+              <rect x="90" y="0" width="14" height="20" fill="#475569" stroke="#94a3b8" strokeWidth="1.5" rx="2" />
+            </g>
 
-            {/* SVG Layer 2: Cold Pack Vector on Table (Fillable Line Art) */}
-            <g onClick={() => handleElementClick('coldpack')} className="cursor-pointer hover:opacity-80 transition">
+            {/* SVG Layer 2: Cold Pack Vector on Table (Interactive Click Target) */}
+            <g onClick={() => handleElementClick('coldpack')} className="cursor-pointer group">
               <rect
-                x="330"
-                y="142"
-                width="48"
-                height="35"
+                x="305"
+                y="138"
+                width="54"
+                height="38"
                 rx="8"
                 fill={coloredElements['coldpack'] || '#ffffff'}
-                stroke="#0f172a"
-                strokeWidth="3"
+                stroke={coloredElements['coldpack'] ? '#16a34a' : '#4ade80'}
+                strokeWidth="3.5"
+                className="transition-all group-hover:scale-105"
               />
-              <text x="354" y="164" textAnchor="middle" fill="#0f172a" fontSize="8" fontWeight="900">COLD PACK</text>
+              <text x="332" y="161" textAnchor="middle" fill="#0f172a" fontSize="9" fontWeight="900">COLD PACK</text>
             </g>
 
-            {/* SVG Layer 3: Warning Sign Vector Triangle on Floor (Fillable Line Art) */}
-            <g onClick={() => handleElementClick('warning_sign')} className="cursor-pointer hover:opacity-80 transition">
+            {/* SVG Layer 3: Yellow Warning Sign Triangle on Floor (Interactive Click Target) */}
+            <g onClick={() => handleElementClick('warning_sign')} className="cursor-pointer group">
               <polygon
-                points="410,225 375,290 445,290"
+                points="450,220 410,295 490,295"
                 fill={coloredElements['warning_sign'] || '#ffffff'}
-                stroke="#0f172a"
-                strokeWidth="3"
+                stroke={coloredElements['warning_sign'] ? '#ca8a04' : '#facc15'}
+                strokeWidth="3.5"
+                className="transition-all group-hover:scale-105"
               />
-              <text x="410" y="275" textAnchor="middle" fill="#0f172a" fontSize="8" fontWeight="900">WET FLOOR</text>
+              <text x="450" y="278" textAnchor="middle" fill="#0f172a" fontSize="9" fontWeight="900">WET FLOOR</text>
             </g>
 
-            {/* SVG Layer 4: Interactive Text Input Node on Sign Base */}
-            <foreignObject x="365" y="296" width="90" height="35">
+            {/* SVG Layer 4: Interactive Text Label Input Box on Warning Sign */}
+            <foreignObject x="405" y="302" width="90" height="34">
               <input
                 type="text"
                 disabled={isSubmitted}
                 value={writtenText['sign_label'] || ''}
                 onChange={(e) => handleTextChange('sign_label', e.target.value)}
-                placeholder="WRITE HERE"
-                className="w-full h-full px-1 rounded bg-white font-black text-[10px] text-center text-slate-900 border-2 border-cyan-400 focus:outline-none uppercase shadow"
+                placeholder="TYPE SAFE"
+                className="w-full h-full px-1.5 rounded-xl bg-white font-black text-[11px] text-center text-slate-900 border-2 border-cyan-400 focus:outline-none uppercase shadow-lg"
               />
             </foreignObject>
           </svg>

@@ -4,8 +4,7 @@ import { executeOpenClozeVerticalSlice } from '../../services/slices/OpenClozeVe
 import { executeGenericVerticalSlice, ChoiceQuestionAdapter } from '../../services/slices/GenericVerticalSliceOrchestrator';
 import ChoiceGrid from '../../components/common/ChoiceGrid';
 import { useUserStore } from '../../stores/useUserStore';
-import VoiceService from '../../services/voiceService';
-import HoverWord from '../../components/common/HoverWord';
+import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
 import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle, MessageSquare, Type } from 'lucide-react';
 import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGrid';
@@ -235,70 +234,8 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const frameHotspots = currentFrame.lexical_chunks || [];
 
   // System Global Text Parser using HoverWord component
-  const renderParsedText = (text, themeColor = 'indigo') => {
-    if (!text) return null;
-    const segments = text.split(/(\*\*.*?\*\*)/);
-    let key = 0;
-    const parts = [];
-
-    for (const segment of segments) {
-      if (segment.startsWith('**') && segment.endsWith('**')) {
-        const word = segment.slice(2, -2).trim();
-        parts.push(
-          <HoverWord
-            key={key++}
-            word={word}
-            themeColor={themeColor}
-            onSpeak={(w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced')}
-            tier={1}
-          />
-        );
-      } else {
-        let currentWord = '';
-        let currentNonWord = '';
-
-        for (let i = 0; i < segment.length; i++) {
-          const char = segment[i];
-          if (/[\w'-]/.test(char)) {
-            if (currentNonWord) {
-              parts.push(<span key={key++}>{currentNonWord}</span>);
-              currentNonWord = '';
-            }
-            currentWord += char;
-          } else {
-            if (currentWord) {
-              parts.push(
-                <HoverWord
-                  key={key++}
-                  word={currentWord}
-                  themeColor={themeColor}
-                  onSpeak={(w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced')}
-                  tier={3}
-                />
-              );
-              currentWord = '';
-            }
-            currentNonWord += char;
-          }
-        }
-        if (currentWord) {
-          parts.push(
-            <HoverWord
-              key={key++}
-              word={currentWord}
-              themeColor={themeColor}
-              onSpeak={(w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced')}
-              tier={3}
-            />
-          );
-        }
-        if (currentNonWord) {
-          parts.push(<span key={key++}>{currentNonWord}</span>);
-        }
-      }
-    }
-
-    return parts;
+  const handleRenderParsedText = (text, themeColor = 'indigo') => {
+    return renderParsedText(text, themeColor, (w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced'));
   };
 
   // Play audio chunk via Primary Google Cloud TTS Direct with Browser fallback

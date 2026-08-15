@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, Play, Pause, RotateCcw, Headphones } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import HoverWord, { renderParsedText } from './HoverWord';
 
 
 export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplete }) {
@@ -129,6 +130,16 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
             >
               <RotateCcw size={18} />
             </button>
+          </div>
+        </div>
+
+        {/* Continuous Audio Text Script Box with Global Lexical Chunks Parser */}
+        <div className="p-4 bg-amber-950/40 rounded-2xl border border-amber-500/30 text-amber-100 text-xs leading-relaxed space-y-1 font-sans">
+          <span className="text-[10px] font-black text-amber-300 uppercase tracking-wider block">
+            📄 Interactive Dialogue Script (Click chunks to inspect meaning):
+          </span>
+          <div>
+            {renderParsedText(fullAudioPassage, 'amber')}
           </div>
         </div>
 
