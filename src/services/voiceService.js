@@ -1254,6 +1254,10 @@ export const VoiceService = {
     }
   },
 
+  stop() {
+    this.stopAudio();
+  },
+
   /**
    * Resume the currently paused TTS audio.
    */

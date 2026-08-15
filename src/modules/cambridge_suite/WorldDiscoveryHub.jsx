@@ -48,7 +48,11 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   // Audio Cleanup on Tab Switch or Unmount to prevent overlapping TTS audio
   React.useEffect(() => {
     return () => {
-      VoiceService.stop();
+      if (typeof VoiceService.stopAudio === 'function') {
+        VoiceService.stopAudio();
+      } else if (typeof VoiceService.stop === 'function') {
+        VoiceService.stop();
+      }
     };
   }, [activeTab, learnSubTab]);
 
