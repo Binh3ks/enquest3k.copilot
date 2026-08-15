@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import { srsService } from '../../services/srsService';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import VoiceService from '../../services/voiceService';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
@@ -96,6 +98,11 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         [picId]: { stars: evalRes.stars, score: evalRes.accuracyScore }
       }));
 
+      // Performance Task Gamification: Trigger Confetti Burst for ≥ 80% (3 Stars) 🎉
+      if (evalRes.accuracyScore >= 80) {
+        fireCelebrationConfetti();
+      }
+
       await learnerProgressService.logAttempt({
         learnerId,
         contentId: `w${weekNumber}_speaking_p3_picture_${picId}`,
@@ -120,12 +127,14 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     { id: "sh_05", speaker: "Headmaster", text: "Everyone **felt relieved**, and the headmaster **praised Jake** for following safety rules." }
   ];
 
+  const srsSpeakingContext = srsService.getSpeakingContextualPrompt();
+
   const talkshowTurns = data?.talkshow_turns || [
     { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Today we are discussing school safety. What happened while Jake was walking down the school corridor?" },
     { turn_number: 2, nova_question: "Oh dear! How did Tom slip on the wet floor near the science lab?" },
     { turn_number: 3, nova_question: "What responsible action did Jake take right away when he saw Tom fall down?" },
     { turn_number: 4, nova_question: "How did the school nurse help Tom with the clean bandage and cold pack?" },
-    { turn_number: 5, nova_question: "What a great story! How do you help your classmates when they need help at school?" }
+    { turn_number: 5, nova_question: srsSpeakingContext.nova_question }
   ];
 
   const cueCardPrompts = data?.cue_card_prompts || [

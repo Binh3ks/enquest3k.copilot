@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { learnerProgressService } from '../../services/learnerProgressService';
+import { srsService } from '../../services/srsService';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import { renderParsedText } from '../../components/common/HoverWord';
 import { NotepadNoteCompleter } from '../../components/common/NotepadNoteCompleter';
@@ -79,6 +81,11 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
       const totalScore = Math.min(100, wordScore + keywordScore + grammarScore);
       const stars = totalScore >= 80 ? 3 : totalScore >= 60 ? 2 : 1;
+
+      // Hub 3 Performance Task Gamification: Trigger Confetti Burst for ≥ 80% (3 Stars) 🎉
+      if (totalScore >= 80) {
+        fireCelebrationConfetti();
+      }
 
       let feedbackText = "";
       if (totalScore >= 80) {

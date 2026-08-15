@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { srsService } from '../../../../services/srsService';
+import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
-import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee } from 'lucide-react';
+import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee, Star } from 'lucide-react';
 
 const WEEK33_VOCAB_SETS = {
   set1_nouns_adj: [
@@ -28,12 +30,12 @@ const WEEK33_VOCAB_SETS = {
     { id: "v09", en: "stopped", vi: "đã dừng lại" },
     { id: "v10", en: "praised", vi: "đã khen ngợi" }
   ],
-    set3_chunks: [
+  set3_chunks: [
     { id: "c01", en: "walking carefully down corridor", vi: "đi bộ cẩn thận dưới hành lang" },
     { id: "c02", en: "slipped on the wet floor", vi: "trượt chân trên sàn ướt" },
     { id: "c03", en: "fell down heavily", vi: "ngã xuống rất đau" },
     { id: "c04", en: "called the school nurse", vi: "gọi y tế trường học" },
-    { id: "c05", en: "without hesitation", vi: "không một chút chần chừ" },
+    { id: "c05", en: "right away", vi: "ngay lập tức" },
     { id: "c06", en: "applied a clean bandage", vi: "băng vết thương sạch sẽ" },
     { id: "c07", en: "placed a cold pack", vi: "chườm túi đá lạnh" },
     { id: "c08", en: "felt extremely relieved", vi: "cảm thấy rất nhẹ nhõm" },
@@ -58,7 +60,7 @@ export function FlashArena({ customSets, onAttemptResult }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
-  const [playMode, setPlayMode] = useState('casual'); // 'casual' (Untimed) | 'speed' (30s Timer)
+  const [playMode, setPlayMode] = useState('casual'); // 'casual' (Untimed Learn) | 'speed' (30s Check Challenge)
   const [activeSetKey, setActiveSetKey] = useState('set1_nouns_adj');
   const [selectedEn, setSelectedEn] = useState(null);
   const [selectedVi, setSelectedVi] = useState(null);
@@ -68,8 +70,9 @@ export function FlashArena({ customSets, onAttemptResult }) {
   const [timeLeft, setTimeLeft] = useState(30);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  const activeSets = customSets || WEEK33_VOCAB_SETS;
-  const currentPairs = activeSets[activeSetKey] || activeSets.set1_nouns_adj || Object.values(activeSets)[0];
+  // Dynamic Word Pool: 70% Current Week Vocab + 30% Past SRS Review Words
+  const basePairs = (customSets || WEEK33_VOCAB_SETS)[activeSetKey] || WEEK33_VOCAB_SETS.set1_nouns_adj;
+  const currentPairs = srsService.getDynamicWordPool(basePairs, 10);
 
   const [shuffledEnList, setShuffledEnList] = useState([]);
   const [shuffledViList, setShuffledViList] = useState([]);
@@ -78,7 +81,6 @@ export function FlashArena({ customSets, onAttemptResult }) {
   useEffect(() => {
     if (!currentPairs || currentPairs.length === 0) return;
 
-    // Shuffle English column
     const arrEn = [...currentPairs];
     for (let i = arrEn.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -86,25 +88,42 @@ export function FlashArena({ customSets, onAttemptResult }) {
     }
     setShuffledEnList(arrEn);
 
-    // Shuffle Right column (VI / Definition)
     const arrVi = [...currentPairs];
     for (let i = arrVi.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arrVi[i], arrVi[j]] = [arrVi[j], arrVi[i]];
     }
 
-    // Guarantee no side-by-side row match at the start
-    let attempts = 0;
-    while (attempts < 10 && arrVi.some((item, idx) => item.id === arrEn[idx]?.id)) {
-      for (let i = arrVi.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arrVi[i], arrVi[j]] = [arrVi[j], arrVi[i]];
-      }
-      attempts++;
-    }
-
     setShuffledViList(arrVi);
   }, [activeSetKey, customSets]);
+
+  // Match Evaluation Logic
+  useEffect(() => {
+    if (selectedEn && selectedVi) {
+      if (selectedEn.id === selectedVi.id) {
+        // Match Correct! Update SRS box & score
+        srsService.recordReview(selectedEn.en, true);
+        const newMatched = [...matchedIds, selectedEn.id];
+        setMatchedIds(newMatched);
+        setScore((prev) => prev + 10);
+
+        if (newMatched.length === currentPairs.length) {
+          setIsGameOver(true);
+          // Check Mode (Speed mode): Trigger Confetti Burst 🎉
+          if (playMode === 'speed') {
+            fireCelebrationConfetti();
+          }
+        }
+      } else {
+        // Incorrect match: Reset SRS box to Box 1
+        srsService.recordReview(selectedEn.en, false);
+      }
+      setTimeout(() => {
+        setSelectedEn(null);
+        setSelectedVi(null);
+      }, 400);
+    }
+  }, [selectedEn, selectedVi]);
 
 
   // Timer Countdown Engine (Only active in Speed mode)
