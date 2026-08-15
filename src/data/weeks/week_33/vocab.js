@@ -21,3 +21,16 @@ export default [
   { id: 19, word: "lesson", definition_en: "a period of learning or a moral learned from experience", definition_vi: "bài học rút ra", audio_word: "/audio/week33/vocab_lesson.mp3", image_url: "/images/week33/vocab_lesson.jpg" },
   { id: 20, word: "terrible", definition_en: "extremely bad, serious, or distressing", definition_vi: "tồi tệ / khủng khiếp", audio_word: "/audio/week33/vocab_terrible.mp3", image_url: "/images/week33/vocab_terrible.jpg" }
 ];
+
+export const lexicalChunks = [
+  { id: "c1", chunk: "slipped on the wet floor", definition_en: "slid accidentally on a wet corridor tile", definition_vi: "trượt chân trên sàn ướt" },
+  { id: "c2", chunk: "yellow warning sign", definition_en: "a bright sign alerting people to wet tiles", definition_vi: "biển báo cảnh báo màu vàng" },
+  { id: "c3", chunk: "hurt his knee", definition_en: "injured the joint on his leg during a fall", definition_vi: "bị đau đầu gối" },
+  { id: "c4", chunk: "call the school nurse", definition_en: "get medical aid from the school nurse", definition_vi: "gọi y tế trường học" },
+  { id: "c5", chunk: "clean bandage", definition_en: "a sterile cloth wrapped around a wound", definition_vi: "băng gạc sạch" },
+  { id: "c6", chunk: "cold pack", definition_en: "a chilled gel bag to reduce swelling", definition_vi: "túi chườm lạnh" },
+  { id: "c7", chunk: "walk carefully", definition_en: "move attentively without rushing", definition_vi: "đi bộ cẩn thận" },
+  { id: "c8", chunk: "headmaster office", definition_en: "the office of the principal", definition_vi: "phòng hiệu trưởng" },
+  { id: "c9", chunk: "corridor safety", definition_en: "rules to avoid accidents in hallways", definition_vi: "an toàn hành lang" },
+  { id: "c10", chunk: "quick action", definition_en: "responding right away to help someone", definition_vi: "hành động nhanh chóng / xử lý kịp thời" }
+];
