@@ -1,6 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Layers, Grid, Volume2 } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import { learnerProgressService } from '../../services/learnerProgressService';
+import { srsService } from '../../services/srsService';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -70,11 +73,29 @@ export function VisualMatchingAH({ customData, onComplete }) {
   const handleCheck = () => {
     let correct = 0;
     itemsList.forEach((item) => {
-      if (answers[item.id] === item.target_letter) correct++;
+      const isItemCorrect = answers[item.id] === item.target_letter;
+      if (isItemCorrect) correct++;
+      // Record SRS attempt for each item matched
+      srsService.recordReview(item.name, isItemCorrect);
     });
+
     const finalScore = Math.round((correct / itemsList.length) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
+
+    if (finalScore >= 80) {
+      fireCelebrationConfetti('Hub2_Item_Hunt');
+    }
+
+    learnerProgressService.logAttempt({
+      learnerId: 'learner_default_01',
+      contentId: 'w33_listening_p3_item_hunt',
+      mode: 'check',
+      result: finalScore >= 60 ? 'correct' : 'incorrect',
+      score: finalScore,
+      timeSpentSeconds: 45
+    });
+
     if (onComplete) onComplete(finalScore);
   };
 

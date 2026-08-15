@@ -97,6 +97,7 @@ class SRSService {
     };
 
     this.saveSRSData();
+    console.log(`[GAMIFICATION_SRS_DEBUG] SRS Service updated word: ${cleanWord} -> New Box Level: ${newBox}`);
   }
 
   /**

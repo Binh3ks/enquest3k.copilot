@@ -2,8 +2,10 @@
  * Pure DOM Canvas Confetti Burst Helper
  * Zero dependency celebratory confetti animation for Check Mode and Performance Tasks.
  */
-export function fireCelebrationConfetti() {
+export function fireCelebrationConfetti(activityId = 'Activity') {
   if (typeof window === 'undefined') return;
+
+  console.log(`[GAMIFICATION_SRS_DEBUG] Confetti & Star Ranks rendered successfully for Activity ${activityId}.`);
 
   const canvas = document.createElement('canvas');
   canvas.style.position = 'fixed';
