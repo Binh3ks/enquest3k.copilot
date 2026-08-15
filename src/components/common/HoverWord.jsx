@@ -52,12 +52,12 @@ export const lookupDict = (raw) => {
 };
 
 /**
- * Universal Text & Chunk Parser (Stealth Mode Support for Assessment Areas)
+ * Universal Text & Chunk Parser (Stealth Mode & Morphological Alias Mapping Engine)
  *
  * @param {string} text - Text to parse
  * @param {string} themeColor - Color theme (default 'indigo')
  * @param {function} onSpeak - Custom speak handler
- * @param {boolean} isStealthMode - If true, wraps words for popup lookup BUT forces tier=3 plain text style (no bold indigo underlines in tests/questions!)
+ * @param {boolean} isStealthMode - If true, forces tier=3 (natural text style) for ALL words & chunks so NO answers leak in tests!
  */
 export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, isStealthMode = false) {
   if (!text) return null;
@@ -141,16 +141,16 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
 const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, children }) => {
   const cleanKey = (word || '').toLowerCase().trim();
 
-  // Automatic Alias & Fallback Entry Generator
+  // Automatic Alias & Fallback Entry Generator (Never displays empty meaning or "chưa có nghĩa")
   const resolvedEntry = useMemo(() => {
-    if (entry) return entry;
+    if (entry && (entry.meaning || entry.definition_vi || entry.definition)) return entry;
 
     const matchedBaseKey = phraseLookupMap[cleanKey];
     const dictItem = (matchedBaseKey && WEEK_33_MASTER_DICTIONARY[matchedBaseKey]) ||
                       baseDict[cleanKey] ||
                       lookupDict(word);
 
-    if (dictItem) {
+    if (dictItem && (dictItem.meaning || dictItem.definition_vi || dictItem.definition)) {
       return {
         word: dictItem.word || word,
         pronounce: dictItem.ipa || dictItem.pronounce || dictItem.pronunciation,
@@ -161,11 +161,11 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
       };
     }
 
-    // FALLBACK ENTRY: Always exists so no word is ever dead/unclickable!
+    // FALLBACK ENTRY: Guarantees every word is 100% clickable & playable with rich ESL message!
     return {
       word,
       pronounce: `/${cleanKey}/`,
-      meaning: "Chạm để nghe phát âm, hoặc tra cứu thêm trên từ điển ngoài.",
+      meaning: `Từ vựng tiếng Anh "${word}". Chạm để nghe phát âm chuẩn hoặc tra từ điển ngoài.`,
       example: `"${word}" is used in school context.`,
       audioText: cleanKey,
       type: "Word"
@@ -173,7 +173,6 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
   }, [entry, word, cleanKey]);
 
   const [mode, setMode] = useState('idle'); // idle | open
-  const isPhrase = word.trim().includes(' ');
   const [popupPos, setPopupPos] = useState({ top: 0, left: 0 });
   const wordRef = useRef(null);
 
@@ -240,8 +239,8 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
     recognition.start();
   };
 
-  // Tier 1 vs Tier 3 styling
-  const isTarget = isPhrase || tier === 1;
+  // Tier 1 vs Tier 3 styling (STRICTLY OBEYS TIER = 1 VS TIER = 3 SO STEALTH MODE NEVER LEAKS)
+  const isTarget = tier === 1;
   const targetClass = `text-indigo-600 font-bold underline decoration-dotted cursor-pointer hover:text-indigo-800 transition-colors`;
   const generalWordClass = `font-medium text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/50 cursor-pointer rounded px-[1px] transition-all`;
 

@@ -37071,5 +37071,138 @@
     "example": "We learned building stronger lungs.",
     "part_of_speech": "phrase",
     "type": "phrase"
+  },
+  {
+    "word": "cloth",
+    "pronounce": "/klɔːθ/",
+    "meaning": "khăn vải / vải y tế",
+    "example": "The nurse wiped the cut with a clean cloth.",
+    "type": "Noun"
+  },
+  {
+    "word": "charge",
+    "pronounce": "/tʃɑːrdʒ/",
+    "meaning": "phụ trách / quản lý (in charge)",
+    "example": "The headmaster is in charge of school safety.",
+    "type": "Noun"
+  },
+  {
+    "word": "managing",
+    "pronounce": "/ˈmænɪdʒɪŋ/",
+    "meaning": "quản lý / điều hành",
+    "example": "She is good at managing first aid supplies.",
+    "type": "Verb"
+  },
+  {
+    "word": "janitor",
+    "pronounce": "/ˈdʒænɪtər/",
+    "meaning": "người lao công / nhân viên vệ sinh trường học",
+    "example": "The janitor put up a yellow warning sign.",
+    "type": "Noun"
+  },
+  {
+    "word": "sterile",
+    "pronounce": "/ˈsterəl/",
+    "meaning": "vô trùng / tiệt trùng y tế",
+    "example": "Always use sterile gauze on open wounds.",
+    "type": "Adjective"
+  },
+  {
+    "word": "hazard",
+    "pronounce": "/ˈhæzərd/",
+    "meaning": "mối nguy hiểm / rủi ro",
+    "example": "A wet floor is a dangerous safety hazard.",
+    "type": "Noun"
+  },
+  {
+    "word": "attentively",
+    "pronounce": "/əˈtentɪvli/",
+    "meaning": "một cách chăm chú / chú ý",
+    "example": "Students listened attentively to the safety instructions.",
+    "type": "Adverb"
+  },
+  {
+    "word": "praised",
+    "pronounce": "/preɪzd/",
+    "meaning": "được khen ngợi / tuyên dương",
+    "example": "Jake was praised by the principal for his quick action.",
+    "type": "Verb"
+  },
+  {
+    "word": "assembly",
+    "pronounce": "/əˈsembli/",
+    "meaning": "buổi chào cờ / tập trung toàn trường",
+    "example": "The principal announced the reward during Monday assembly.",
+    "type": "Noun"
+  },
+  {
+    "word": "responsibly",
+    "pronounce": "/rɪˈspɑːnsəbli/",
+    "meaning": "một cách có trách nhiệm",
+    "example": "Jake acted responsibly by calling the nurse immediately.",
+    "type": "Adverb"
+  },
+  {
+    "word": "puddle",
+    "pronounce": "/ˈpʌdl/",
+    "meaning": "vũng nước nhỏ trên sàn / đường",
+    "example": "Tom slipped on a water puddle in the corridor.",
+    "type": "Noun"
+  },
+  {
+    "word": "tiles",
+    "pronounce": "/taɪlz/",
+    "meaning": "gạch lát sàn / nền nhà",
+    "example": "The wet floor tiles were slippery.",
+    "type": "Noun"
+  },
+  {
+    "word": "hallway",
+    "pronounce": "/ˈhɔːlweɪ/",
+    "meaning": "hành lang trường học",
+    "example": "Do not run in the school hallway.",
+    "type": "Noun"
+  },
+  {
+    "word": "hallways",
+    "pronounce": "/ˈhɔːlweɪz/",
+    "meaning": "các hành lang trường học",
+    "example": "Keep all hallways clear of obstacles.",
+    "type": "Noun"
+  },
+  {
+    "word": "scraped",
+    "pronounce": "/skreɪpt/",
+    "meaning": "bị trầy xước nhẹ",
+    "example": "He scraped his knee when he fell down.",
+    "type": "Verb"
+  },
+  {
+    "word": "badly",
+    "pronounce": "/ˈbædli/",
+    "meaning": "mặt xấu / nghiêm trọng / bị thương nặng",
+    "example": "Luckily, his leg was not injured badly.",
+    "type": "Adverb"
+  },
+  {
+    "word": "gently",
+    "pronounce": "/ˈdʒentli/",
+    "meaning": "một cách nhẹ nhàng / êm ái",
+    "example": "The nurse gently cleaned the cut on his leg.",
+    "type": "Adverb"
+  },
+  {
+    "word": "praise",
+    "pronounce": "/preɪz/",
+    "meaning": "khen ngợi / tuyên dương",
+    "example": "Teachers praise students who follow safety rules.",
+    "type": "Verb"
+  },
+  {
+    "word": "reward",
+    "pronounce": "/rɪˈwɔːrd/",
+    "meaning": "phần thưởng / tuyên dương",
+    "example": "Jake received a safety badge as a reward.",
+    "type": "Noun"
   }
 ]
