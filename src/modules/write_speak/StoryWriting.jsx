@@ -232,7 +232,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         <div className="mt-2 bg-indigo-50/70 p-2.5 rounded-xl border border-indigo-100">
           <p className="text-[10px] font-black uppercase text-indigo-700 mb-0.5 flex items-center gap-1">
             <Lightbulb className="w-3.5 h-3.5" />
-            {isVi ? 'Gợi Ý Viết Truyện Cambridge' : 'Cambridge Story Writing Prompt'}
+            {isVi ? 'Gợi Ý Viết Truyện' : 'Story Writing Prompt'}
           </p>
           <p className="text-xs text-slate-800 font-medium leading-relaxed">
             {isVi ? (pictureMode.writing_prompts?.vi || '') : (pictureMode.writing_prompts?.en || '')}
@@ -277,11 +277,11 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 </div>
               )}
 
-              {/* Group 3: Cambridge Connectors */}
+              {/* Group 3: Story Connectors */}
               {connectors.length > 0 && (
                 <div className="bg-amber-50/60 p-2 rounded-xl border border-amber-100">
                   <p className="text-[10px] font-black uppercase text-amber-700 mb-1">
-                    🔗 Cambridge Connectors
+                    🔗 Story Connectors
                   </p>
                   <div className="flex flex-wrap gap-1">
                     {connectors.map((c, i) => (
@@ -322,7 +322,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         </div>
       )}
 
-      {/* Textarea + Live Real-time Cambridge Criteria Checker */}
+      {/* Textarea + Live Real-time Criteria Checker */}
       <div className="flex-1 min-h-0 overflow-y-auto p-3 flex flex-col gap-2">
         <div className="relative flex-1 flex flex-col">
           <textarea
@@ -332,16 +332,16 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             placeholder={
               isExamMode && !timerStarted
                 ? (isVi ? 'Nhấn "Bắt đầu làm bài" để mở khóa đồng hồ 10 phút...' : 'Click "Start Exam" to unlock 10-minute timer...')
-                : (isVi ? 'Viết câu chuyện Cambridge Flyers ở đây...' : 'Write your Cambridge Flyers story here...')
+                : (isVi ? 'Viết câu chuyện của bạn ở đây...' : 'Write your story script here...')
             }
             className="w-full flex-1 min-h-[160px] p-3 bg-white border-2 border-slate-200 rounded-xl focus:border-indigo-500 outline-none resize-y text-sm leading-relaxed text-slate-800 font-normal shadow-inner"
           />
 
-          {/* Real-time Cambridge Criteria Checker Display */}
+          {/* Real-time Criteria Checker Display */}
           <div className="mt-2 bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-2">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <span className="text-[11px] font-black uppercase text-indigo-700 tracking-wider">
-                🏆 Cambridge Flyers Criteria Checker (W{currentW})
+                🏆 Story Criteria Checker (W{currentW})
               </span>
               <span className={`text-[11px] font-black px-2 py-0.5 rounded-full ${cambridgeEval.isAllMet ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
                 {cambridgeEval.isAllMet ? '✓ 15/15 Shields Qualified' : '→ In Progress'}

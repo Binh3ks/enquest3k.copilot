@@ -116,7 +116,7 @@ export const CUE_CARD_PROMPTS = [
 ];
 
 export const INFORMATION_EXCHANGE_P2 = {
-  title: "Cambridge Speaking Part 2 — Information Exchange",
+  title: "Nova's Cue-Card Exchange",
   subtitle: "Table A: Candidate asks questions for missing info (?) • Table B: Candidate answers Nova's questions",
   table_a: {
     title: "Table A: Tom's Accident (Candidate Asks Questions)",

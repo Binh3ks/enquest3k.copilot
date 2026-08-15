@@ -178,7 +178,7 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
         })}
       </div>
 
-      {/* 🏷️ Cambridge Part 4 Title Selection */}
+      {/* 🏷️ Nova's Story Title Selection */}
       <div className="p-5 bg-emerald-50/70 rounded-2xl border-2 border-emerald-200 space-y-3 font-sans">
         <span className="text-xs font-black text-emerald-900 uppercase tracking-wider flex items-center gap-1.5">
           <BookOpen size={16} /> Choose the best title for the story:

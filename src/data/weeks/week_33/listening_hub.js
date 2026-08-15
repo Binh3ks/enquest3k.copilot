@@ -88,9 +88,9 @@ export const listeningHubData = {
     }
   ],
 
-  // Cambridge Listening Part 5 (SVG Color & Write Dialogue)
+  // Nova's Color & Write Mission
   listening_p5: {
-    audio_script: "Examiner: Look at the picture of the school corridor. Can you see the boy sitting on the floor with a hurt knee?\nStudent: Yes! I can see him.\nExaminer: Look at the clean bandage on his knee. Can you color it blue?\nStudent: Sure! I'm coloring the clean bandage blue now.\nExaminer: Excellent. Now look at the first aid table. Can you find the cold pack?\nStudent: Yes, it's sitting on the table.\nExaminer: Color the cold pack green.\nStudent: Green cold pack, done!\nExaminer: Now look at the warning sign on the floor near the wet tiles. Color the warning sign yellow.\nStudent: Okay, the wet floor warning sign is yellow.\nExaminer: Finally, can you write something on the label at the bottom of the sign?\nStudent: What should I write?\nExaminer: Write the word SAFE in capital letters.\nStudent: S-A-F-E, done!",
+    audio_script: "Nova: Look at the picture of the school corridor. Can you see the boy sitting on the floor with a hurt knee?\nJake: Yes! I can see him.\nNova: Look at the clean bandage on his knee. Can you color it blue?\nJake: Sure! I'm coloring the clean bandage blue now.\nNova: Excellent. Now look at the first aid table. Can you find the cold pack?\nJake: Yes, it's sitting on the table.\nNova: Color the cold pack green.\nJake: Green cold pack, done!\nNova: Now look at the warning sign on the floor near the wet tiles. Color the warning sign yellow.\nJake: Okay, the wet floor warning sign is yellow.\nNova: Finally, can you write something on the label at the bottom of the sign?\nJake: What should I write?\nNova: Write the word SAFE in capital letters.\nJake: S-A-F-E, done!",
     instructions: [
       { id: 't1', type: 'color', target_id: 'bandage', target_color: '#3b82f6', color_name: 'Blue', prompt: '1. Color the clean bandage on the boy’s knee BLUE.' },
       { id: 't2', type: 'color', target_id: 'coldpack', target_color: '#22c55e', color_name: 'Green', prompt: '2. Color the cold pack GREEN.' },

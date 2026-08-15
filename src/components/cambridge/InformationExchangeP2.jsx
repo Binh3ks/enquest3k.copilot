@@ -35,7 +35,7 @@ const evaluateSpeechInput = (spokenText, acceptableList) => {
 
 export function InformationExchangeP2({ customData }) {
   const data = customData || {
-    title: "Cambridge Speaking Part 2 — Information Exchange",
+    title: "Nova's Cue-Card Exchange",
     table_a: {
       title: "Table A: Tom's Accident (Candidate Asks Questions)",
       person: "Tom",

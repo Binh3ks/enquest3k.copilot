@@ -11,7 +11,7 @@ const FALLBACK_CHECK_QUESTIONS = [
     id: 'chk_w33_p4_01',
     content_id: 'chk_w33_p4_01',
     type: 'listening_p4_picture',
-    prompt: 'Cambridge Listening Part 4: Where was the boy when he slipped on the wet floor?',
+    prompt: "Nova's Listening Challenge: Where was the boy when he slipped on the wet floor?",
     text: 'Where was the boy when he slipped on the wet floor?',
     options: [
       { label: 'A', text: 'A) In the school corridor near science room', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: true },
@@ -24,7 +24,7 @@ const FALLBACK_CHECK_QUESTIONS = [
     id: 'chk_w33_p4_02',
     content_id: 'chk_w33_p4_02',
     type: 'listening_p4_picture',
-    prompt: 'Cambridge Listening Part 4: What medical aid item did the nurse bring first?',
+    prompt: "Nova's Listening Challenge: What medical aid item did the nurse bring first?",
     text: 'What medical aid item did the nurse bring first?',
     options: [
       { label: 'A', text: 'A) A clean bandage and cold pack', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },

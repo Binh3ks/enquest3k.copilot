@@ -175,7 +175,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   ];
 
   const readingPart3Data = data?.reading_part3_story || {
-    title: "Cambridge Flyers Reading Part 3 — Tom's Morning Adventure",
+    title: "Nova's Story Discovery — Tom's Morning Adventure",
     story_text: "Tom had a very eventful Saturday morning. While he was waking up, his alarm clock rang loudly. He reached over clumsily and accidentally knocked it off the table. Later, while he was rushing downstairs to have breakfast, he slipped on a wet puddle on the kitchen floor. To make things worse, he dropped his glass of juice over his English notebook. Fortunately, his sister Mia helped him clean the floor, and he promised to be more cautious.",
     questions: [
       {

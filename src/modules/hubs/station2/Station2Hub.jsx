@@ -109,7 +109,7 @@ export default function Station2Hub() {
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <GraduationCap size={14} /> Check Mode (Cambridge Exam)
+              <GraduationCap size={14} /> Check Mode (Nova Challenge)
             </button>
           </div>
 
