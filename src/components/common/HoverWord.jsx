@@ -3,23 +3,27 @@ import { createPortal } from 'react-dom';
 import { Volume2, BookOpen, Book, Mic, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
 import dictionaryData from '../../data/dictionary.json';
 import { WEEK_33_MASTER_DICTIONARY } from '../../data/weeks/week_33/vocab_dictionary_master';
+import VoiceService from '../../services/voiceService';
 
 // Base general English dictionary map (from dictionary.json)
 const baseDict = Object.fromEntries(
-  (Array.isArray(dictionaryData) ? dictionaryData : []).map(e => [(e.word || '').toLowerCase(), e])
+  (Array.isArray(dictionaryData) ? dictionaryData : []).map((e) => [
+    (e.word || '').toLowerCase().trim(),
+    e
+  ])
 );
 
 // Target Week 33 dictionary map (from WEEK_33_MASTER_DICTIONARY)
 const week33Map = Object.fromEntries(
   Object.entries(WEEK_33_MASTER_DICTIONARY).map(([word, item]) => [
-    word.toLowerCase(),
+    word.toLowerCase().trim(),
     {
       word,
       pronounce: item.ipa,
       meaning: item.meaning,
       example: item.example,
       type: item.type,
-      audioText: item.audioText
+      audioText: item.audioText || word
     }
   ])
 );
@@ -27,17 +31,33 @@ const week33Map = Object.fromEntries(
 // Full combined dictionary lookup map for popup dictionary resolves
 const dictMap = { ...baseDict, ...week33Map };
 
+// Robust dictionary entry resolver (handles stem variations, plurals, past tense)
+export const lookupDict = (raw) => {
+  if (!raw) return null;
+  const clean = raw.replace(/^[^\w']+|[^\w']+$ /g, '').toLowerCase().trim();
+  if (!clean) return null;
+
+  if (dictMap[clean]) return dictMap[clean];
+  if (clean.endsWith('s') && dictMap[clean.slice(0, -1)]) return dictMap[clean.slice(0, -1)];
+  if (clean.endsWith('es') && dictMap[clean.slice(0, -2)]) return dictMap[clean.slice(0, -2)];
+  if (clean.endsWith('ed') && dictMap[clean.slice(0, -2)]) return dictMap[clean.slice(0, -2)];
+  if (clean.endsWith('ing') && dictMap[clean.slice(0, -3)]) return dictMap[clean.slice(0, -3)];
+  if (clean.endsWith('ing') && dictMap[clean.slice(0, -3) + 'e']) return dictMap[clean.slice(0, -3) + 'e'];
+
+  return null;
+};
+
 /**
- * Universal Length-Descending Text & Chunk Parser (Dual-Layer Parsing Logic)
+ * Universal Dual-Layer Length-Descending Text & Chunk Parser
  *
- * Layer 1 (Strict Whitelist for Multi-Word Chunks):
- * Multi-word phrases (containing spaces) MUST strictly exist in WEEK_33_MASTER_DICTIONARY!
+ * Layer 1 (Strict Master Whitelist for Multi-Word Chunks):
+ * Multi-word phrases containing spaces MUST strictly exist in WEEK_33_MASTER_DICTIONARY!
  * Zero non-target phrases (like "our class", "walk down") will EVER be chunked!
  *
  * Layer 2 (Global Base Dictionary for Single Words):
- * Single words are parsed and matched against dictMap (WEEK_33_MASTER_DICTIONARY + dictionary.json).
+ * Single words are looked up against dictMap (WEEK_33_MASTER_DICTIONARY + dictionary.json).
  * Target single words get tier 1 (highlighted indigo + dotted underline).
- * General English words get tier 3 (plain text style, clickable for full dictionary popup).
+ * General English words get tier 3 (plain text style, fully clickable for popup dictionary).
  */
 export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
   if (!text) return null;
@@ -46,14 +66,6 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
   const sortedPhrases = Object.keys(week33Map)
     .filter((k) => k.includes(' '))
     .sort((a, b) => b.length - a.length);
-
-  const week33SingleWords = new Set(
-    Object.keys(week33Map).filter((k) => !k.includes(' '))
-  );
-
-  const baseSingleWords = new Set(
-    Object.keys(baseDict).filter((k) => !k.includes(' '))
-  );
 
   // Step 2: Build master regex for markdown bold **...** OR whitelisted multi-word phrases ONLY
   const escapedPhrases = sortedPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
@@ -75,12 +87,14 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
 
     if (isMarkdownBold || isMatchedPhrase) {
       const phraseWord = segment.replace(/\*\*/g, '').trim();
+      const entry = lookupDict(phraseWord);
       parts.push(
         <HoverWord
           key={key++}
           word={phraseWord}
           themeColor={themeColor}
           onSpeak={onSpeak}
+          entry={entry}
           tier={1}
         />
       );
@@ -98,33 +112,18 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
           currentWord += char;
         } else {
           if (currentWord) {
-            const cleanW = currentWord.toLowerCase();
-            const isWeek33Single = week33SingleWords.has(cleanW) || 
-                                  (cleanW.endsWith('s') && week33SingleWords.has(cleanW.slice(0, -1))) ||
-                                  (cleanW.endsWith('ed') && week33SingleWords.has(cleanW.slice(0, -2)));
-
-            const isBaseDictSingle = baseSingleWords.has(cleanW) ||
-                                     (cleanW.endsWith('s') && baseSingleWords.has(cleanW.slice(0, -1))) ||
-                                     (cleanW.endsWith('ed') && baseSingleWords.has(cleanW.slice(0, -2)));
-
-            if (isWeek33Single) {
+            const entry = lookupDict(currentWord);
+            if (entry) {
+              const cleanW = currentWord.toLowerCase().trim();
+              const isTarget = Boolean(week33Map[cleanW]);
               parts.push(
                 <HoverWord
                   key={key++}
                   word={currentWord}
                   themeColor={themeColor}
                   onSpeak={onSpeak}
-                  tier={1}
-                />
-              );
-            } else if (isBaseDictSingle) {
-              parts.push(
-                <HoverWord
-                  key={key++}
-                  word={currentWord}
-                  themeColor={themeColor}
-                  onSpeak={onSpeak}
-                  tier={3}
+                  entry={entry}
+                  tier={isTarget ? 1 : 3}
                 />
               );
             } else {
@@ -136,33 +135,18 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
         }
       }
       if (currentWord) {
-        const cleanW = currentWord.toLowerCase();
-        const isWeek33Single = week33SingleWords.has(cleanW) || 
-                              (cleanW.endsWith('s') && week33SingleWords.has(cleanW.slice(0, -1))) ||
-                              (cleanW.endsWith('ed') && week33SingleWords.has(cleanW.slice(0, -2)));
-
-        const isBaseDictSingle = baseSingleWords.has(cleanW) ||
-                                 (cleanW.endsWith('s') && baseSingleWords.has(cleanW.slice(0, -1))) ||
-                                 (cleanW.endsWith('ed') && baseSingleWords.has(cleanW.slice(0, -2)));
-
-        if (isWeek33Single) {
+        const entry = lookupDict(currentWord);
+        if (entry) {
+          const cleanW = currentWord.toLowerCase().trim();
+          const isTarget = Boolean(week33Map[cleanW]);
           parts.push(
             <HoverWord
               key={key++}
               word={currentWord}
               themeColor={themeColor}
               onSpeak={onSpeak}
-              tier={1}
-            />
-          );
-        } else if (isBaseDictSingle) {
-          parts.push(
-            <HoverWord
-              key={key++}
-              word={currentWord}
-              themeColor={themeColor}
-              onSpeak={onSpeak}
-              tier={3}
+              entry={entry}
+              tier={isTarget ? 1 : 3}
             />
           );
         } else {
@@ -178,86 +162,45 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
   return parts;
 }
 
-// Look up a word/phrase in dictionary (handles plurals + past tense)
-const lookupDict = (raw) => {
-  if (!raw) return null;
-  const t = raw.toLowerCase().trim();
-  if (dictMap[t]) return dictMap[t];
-  if (t.endsWith('s') && dictMap[t.slice(0, -1)]) return dictMap[t.slice(0, -1)];
-  if (t.endsWith('ed') && dictMap[t.slice(0, -2)]) return dictMap[t.slice(0, -2)];
-  return null;
-};
-
 /**
- * HoverWord — Từ trong đọc hiểu với hover dictionary 3 tầng.
+ * HoverWord — Clickable Word/Phrase with Dual-Layer Interactive Dictionary Popover
  *
- * Tier 1 (Bold): Từ target tuần này (vocab.js) — font-black, border-b-2, full popup
- * Tier 2 (Semi-bold): Từ chưa học chính thức — font-semibold, border-dotted, full popup
- * Tier 3 (Plain): Từ đã học (vocab.js tuần trước) — normal text, no border, passive hover only
- *
- * Tầng 1 (hover): Mini tooltip — tên từ + IPA + "Bấm xem nghĩa"
- * Tầng 2 (click): Popup đầy đủ qua Portal — từ + IPA + 🔊 + nghĩa + 🎤 + links
+ * Tier 1 (Bold Target): Target collocations & core words (W33) — bold indigo + dotted underline
+ * Tier 3 (General Word): Words from dictionary.json — normal text, clickable for popup dictionary
  */
-const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2, children }) => {
-  // Auto-lookup in dictionary when entry is not provided by parent
+const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, children }) => {
   const resolvedEntry = useMemo(() => entry || lookupDict(word), [entry, word]);
-  const [mode, setMode] = useState('idle'); // idle | hover | open
+  const [mode, setMode] = useState('idle'); // idle | open
   const isPhrase = word.trim().includes(' ');
   const [popupPos, setPopupPos] = useState({ top: 0, left: 0 });
   const wordRef = useRef(null);
-  const leaveTimer = useRef(null);
 
   // Pronunciation check state
   const [isRecording, setIsRecording] = useState(false);
-  const [pronunciationResult, setPronunciationResult] = useState(null); // { score: 'perfect' | 'good' | 'try-again', transcript: string }
-  const recognitionRef = useRef(null);
-
-  const clearLeave = () => clearTimeout(leaveTimer.current);
-
-  // ────────── Desktop hover handlers ──────────
-  const handleMouseEnter = () => {
-    clearLeave();
-    if (mode === 'idle') setMode('hover');
-  };
-
-  const handleMouseLeave = () => {
-    if (mode === 'hover') {
-      leaveTimer.current = setTimeout(() => setMode('idle'), 200);
-    }
-  };
+  const [pronunciationResult, setPronunciationResult] = useState(null);
 
   // ────────── Click / tap handler ──────────
   const handleClick = (e) => {
     e.stopPropagation();
-    clearLeave();
     if (mode === 'open') {
       setMode('idle');
     } else {
-      // Calculate position for the fixed popup (avoids overflow-hidden clipping)
       if (wordRef.current) {
         const rect = wordRef.current.getBoundingClientRect();
         setPopupPos({ top: rect.top, left: rect.left + rect.width / 2 });
       }
       setMode('open');
-      // Don't auto-play — let student click 🔊 explicitly to avoid interrupting story narration
     }
-  };
-
-  // Keep popup open when mouse moves into it
-  const handlePopupMouseEnter = () => clearLeave();
-  const handlePopupMouseLeave = () => {
-    leaveTimer.current = setTimeout(() => setMode('idle'), 300);
   };
 
   // ────────── Pronunciation check with browser SpeechRecognition ──────────
   const handleMicClick = (e) => {
     e.stopPropagation();
-    if (isRecording) return; // Prevent double-click
+    if (isRecording) return;
 
-    // Check browser support
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      alert('Speech recognition not supported in this browser. Please use Chrome.');
+      alert('Speech recognition is not supported in this browser.');
       return;
     }
 
@@ -265,35 +208,27 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2, chil
     recognition.lang = 'en-US';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
-    recognitionRef.current = recognition;
 
-    setIsRecording(true);
-    setPronunciationResult(null);
+    recognition.onstart = () => {
+      setIsRecording(true);
+      setPronunciationResult(null);
+    };
 
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript.toLowerCase().trim();
-      const target = word.toLowerCase();
-      const distance = levenshtein(transcript, target);
+      const target = word.toLowerCase().trim();
+      const isMatch = transcript === target || target.includes(transcript) || transcript.includes(target);
 
-      let score;
-      if (transcript === target) {
-        score = 'perfect';
-      } else if (distance <= 2 && transcript.length >= target.length - 2) {
-        score = 'good';
-      } else {
-        score = 'try-again';
-      }
-
-      setPronunciationResult({ score, transcript });
+      setPronunciationResult({
+        score: isMatch ? 'perfect' : 'good',
+        transcript
+      });
       setIsRecording(false);
     };
 
-    recognition.onerror = (event) => {
-      console.error('Speech recognition error:', event.error);
+    recognition.onerror = () => {
       setIsRecording(false);
-      if (event.error === 'no-speech') {
-        setPronunciationResult({ score: 'try-again', transcript: '(no speech detected)' });
-      }
+      setPronunciationResult({ score: 'try-again', transcript: 'Try again' });
     };
 
     recognition.onend = () => {
@@ -303,29 +238,25 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2, chil
     recognition.start();
   };
 
-  // ────────── Tiered Bolding Styling (Chunks vs Core Words) ──────────
-  const isChunk = isPhrase || tier === 1;
-  const chunkClass = `text-blue-700 font-extrabold border-b-[2px] border-blue-200 hover:border-blue-500 cursor-pointer transition-all`;
-  const singleWordClass = `font-semibold text-slate-800 hover:text-blue-600 hover:bg-blue-50/50 cursor-pointer rounded px-0.5 transition-all`;
-  const plainWordClass = `font-medium text-slate-800 hover:text-blue-600 hover:bg-blue-50/30 cursor-pointer rounded px-0.5 transition-all`;
+  // Tier 1 vs Tier 3 styling
+  const isTarget = isPhrase || tier === 1;
+  const targetClass = `text-indigo-600 font-bold underline decoration-dotted cursor-pointer hover:text-indigo-800 transition-colors`;
+  const generalWordClass = `font-medium text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/50 cursor-pointer rounded px-[1px] transition-all`;
 
-  const baseClass = isChunk ? chunkClass : tier <= 2 ? singleWordClass : plainWordClass;
-  const baseClass2 = `cursor-pointer transition-colors`;
-  const idleClass = '';
-  const activeClass = `bg-${themeColor}-100 ring-2 ring-${themeColor}-200`;
+  const className = isTarget ? targetClass : generalWordClass;
 
   return (
     <>
-      {/* ── TẦNG 2: Full popup via Portal (không bị clip bởi overflow-hidden) ── */}
+      {/* Popover Portal */}
       {mode === 'open' && createPortal(
         <>
-          {/* Transparent overlay — click anywhere outside to close */}
+          {/* Overlay */}
           <div
             className="fixed inset-0 z-[9950]"
             onClick={() => setMode('idle')}
           />
 
-          {/* Popup card */}
+          {/* Popup Card */}
           <div
             className="fixed z-[9951] animate-in fade-in zoom-in-95 duration-200"
             style={{
@@ -333,161 +264,112 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 2, chil
               left: popupPos.left,
               transform: 'translate(-50%, calc(-100% - 12px))',
             }}
-            onMouseEnter={handlePopupMouseEnter}
-            onMouseLeave={handlePopupMouseLeave}
           >
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-4 min-w-[210px] max-w-[280px]">
-              {/* Header: word + audio */}
-              <div className="flex items-center justify-between mb-1">
-                <span className={`text-xl font-black text-${themeColor}-700`}>{word}</span>
+            <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 min-w-[220px] max-w-[300px]">
+              {/* Header: word + type + audio */}
+              <div className="flex items-center justify-between mb-1.5 gap-2">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <span className="text-base font-black text-indigo-700 truncate">{word}</span>
+                  {resolvedEntry?.type && (
+                    <span className="text-[9px] font-black uppercase px-1.5 py-0.5 bg-indigo-100 text-indigo-800 rounded">
+                      {resolvedEntry.type}
+                    </span>
+                  )}
+                </div>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     if (onSpeak) onSpeak(word);
-                    else VoiceService.speak(word, 'vocab');
+                    else VoiceService.speak(resolvedEntry?.audioText || word, 'vocab');
                   }}
-                  className={`p-1.5 bg-${themeColor}-100 text-${themeColor}-700 rounded-full hover:bg-${themeColor}-600 hover:text-white transition-all active:scale-90 flex-shrink-0 ml-2`}
-                  title="Say it!"
+                  className="p-1.5 bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-600 hover:text-white transition-all active:scale-90 flex-shrink-0"
+                  title="Play Audio"
                 >
-                  <Volume2 size={14} />
+                  <Volume2 size={15} />
                 </button>
               </div>
 
               {/* IPA */}
-              {resolvedEntry?.pronounce && (
-                <p className="text-xs text-slate-400 font-mono mb-3">{resolvedEntry.pronounce}</p>
+              {(resolvedEntry?.pronounce || resolvedEntry?.ipa) && (
+                <p className="text-xs font-mono text-slate-500 mb-2">
+                  {resolvedEntry.pronounce || resolvedEntry.ipa}
+                </p>
               )}
 
-              <div className={`h-px bg-${themeColor}-50 mb-3`} />
-
-              {/* Vietnamese meaning or Universal Fallback */}
-              {resolvedEntry?.meaning ? (
-                <p className="text-base font-bold text-slate-800 leading-snug">{resolvedEntry.meaning}</p>
-              ) : (
-                <div className="space-y-2">
-                  <p className="text-xs font-bold text-indigo-700 bg-indigo-50 p-2.5 rounded-xl leading-relaxed">
-                    Universal Word Lookup Ready! Click <Volume2 size={12} className="inline mx-0.5" /> to listen.
+              {/* Meaning */}
+              {(resolvedEntry?.meaning || resolvedEntry?.definition_vi) && (
+                <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-2">
+                  <p className="text-xs font-black text-indigo-950 leading-snug">
+                    {resolvedEntry.meaning || resolvedEntry.definition_vi}
                   </p>
-                  <a
-                    href={`https://dictionary.cambridge.org/dictionary/english/${encodeURIComponent(word.toLowerCase())}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className={`w-full flex items-center justify-center gap-1.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-xs transition-all`}
-                  >
-                    <BookOpen size={13} /> Tra từ này trên Cambridge
-                  </a>
                 </div>
               )}
 
-              {/* Example sentence (preferred) or Definition (fallback) */}
-              {resolvedEntry?.example ? (
-                <div className="mt-2 pt-2 border-t border-slate-50">
+              {/* Contextual Example */}
+              {resolvedEntry?.example && (
+                <div className="mt-2 pt-2 border-t border-slate-100">
                   <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Example:</p>
                   <p className="text-xs text-slate-600 leading-relaxed italic">
                     &ldquo;{resolvedEntry.example}&rdquo;
                   </p>
                 </div>
-              ) : resolvedEntry?.definition_en ? (
-                <div className="mt-2 pt-2 border-t border-slate-50">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Definition:</p>
-                  <p className="text-xs text-slate-500 leading-relaxed italic">
-                    {resolvedEntry.definition_en.split(' ').slice(0, 12).join(' ')}
-                    {resolvedEntry.definition_en.split(' ').length > 12 ? '…' : ''}
-                  </p>
-                </div>
-              ) : null}
-
-              {/* Pronunciation practice */}
-              {!isPhrase && (
-                <div className="mt-3 pt-3 border-t border-slate-100">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Practice pronunciation:</p>
-                  <button
-                    onClick={handleMicClick}
-                    disabled={isRecording}
-                    className={`w-full py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-all ${
-                      isRecording
-                        ? `bg-rose-500 text-white`
-                        : `bg-${themeColor}-100 text-${themeColor}-700 hover:bg-${themeColor}-600 hover:text-white active:scale-95`
-                    } ${
-                      isRecording ? 'animate-pulse' : ''
-                    }`}
-                  >
-                    <Mic size={16} className={isRecording ? 'animate-pulse' : ''} />
-                    {isRecording ? 'Listening...' : 'Say it!'}
-                  </button>
-
-                  {/* Pronunciation feedback */}
-                  {pronunciationResult && (
-                    <div className={`mt-2 p-2 rounded-lg text-xs font-bold flex items-center gap-2 animate-in fade-in ${
-                      pronunciationResult.score === 'perfect' ? 'bg-green-100 text-green-800' :
-                      pronunciationResult.score === 'good' ? 'bg-amber-100 text-amber-800' :
-                      'bg-rose-100 text-rose-800'
-                    }`}>
-                      {pronunciationResult.score === 'perfect' && <><CheckCircle size={14} /> Perfect! 🎉</>}
-                      {pronunciationResult.score === 'good' && <><AlertTriangle size={14} /> Almost! Try again 💪</>}
-                      {pronunciationResult.score === 'try-again' && <><XCircle size={14} /> Try harder! 🔊</>}
-                    </div>
-                  )}
-                </div>
               )}
 
-              {/* External lookup links */}
-              <div className="mt-3 pt-2 border-t border-slate-100 flex gap-2">
+              {/* Pronunciation Practice */}
+              <div className="mt-3 pt-2.5 border-t border-slate-100">
+                <button
+                  onClick={handleMicClick}
+                  disabled={isRecording}
+                  className={`w-full py-1.5 rounded-lg font-bold text-xs flex items-center justify-center gap-1.5 transition-all ${
+                    isRecording
+                      ? 'bg-rose-500 text-white animate-pulse'
+                      : 'bg-indigo-50 text-indigo-700 hover:bg-indigo-600 hover:text-white active:scale-95'
+                  }`}
+                >
+                  <Mic size={14} />
+                  {isRecording ? 'Listening...' : 'Practice Speaking'}
+                </button>
+                {pronunciationResult && (
+                  <div className="mt-1.5 p-1.5 rounded bg-emerald-50 text-emerald-800 text-[11px] font-bold text-center">
+                    ✓ Pronounced: "{pronunciationResult.transcript}"
+                  </div>
+                )}
+              </div>
+
+              {/* External dictionary links */}
+              <div className="mt-2.5 pt-2 border-t border-slate-100 flex gap-2">
                 <a
                   href={`https://dictionary.cambridge.org/dictionary/english-vietnamese/${encodeURIComponent(word.toLowerCase())}`}
-                  target="_blank" rel="noreferrer"
-                  onClick={e => e.stopPropagation()}
-                  className={`flex-1 flex items-center justify-center gap-1 py-1.5 bg-${themeColor}-50 hover:bg-${themeColor}-100 text-${themeColor}-700 rounded-lg text-[10px] font-bold transition-colors`}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex-1 flex items-center justify-center gap-1 py-1 bg-slate-100 hover:bg-indigo-50 text-slate-600 hover:text-indigo-700 rounded text-[10px] font-bold transition-colors"
                 >
-                  <BookOpen size={11}/> Cambridge
+                  <BookOpen size={11} /> Cambridge
                 </a>
                 <a
                   href={`https://dict.laban.vn/find?type=1&query=${encodeURIComponent(word.toLowerCase())}`}
-                  target="_blank" rel="noreferrer"
-                  onClick={e => e.stopPropagation()}
-                  className="flex-1 flex items-center justify-center gap-1 py-1.5 bg-slate-50 hover:bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex-1 flex items-center justify-center gap-1 py-1 bg-slate-100 hover:bg-indigo-50 text-slate-600 hover:text-indigo-700 rounded text-[10px] font-bold transition-colors"
                 >
-                  <Book size={11}/> Laban
+                  <Book size={11} /> Laban
                 </a>
               </div>
             </div>
-            {/* Caret pointing down toward the word */}
-            <div className="w-3 h-3 bg-white border-b border-r border-slate-100 rotate-45 mx-auto -mt-1.5" />
           </div>
         </>,
         document.body
       )}
 
-      {/* ── Word span + hover tooltip ── */}
-      <span className="relative inline-block">
-        <span
-          ref={wordRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onClick={handleClick}
-          className={`${baseClass} ${baseClass2} ${mode !== 'idle' ? activeClass : idleClass}`}
-        >
-          {children || word}
-        </span>
-
-        {/* ── TẦNG 1: Hover mini tooltip (desktop only, pointer-events-none) ── */}
-        {mode === 'hover' && (
-          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none animate-in fade-in zoom-in-95 duration-150">
-            <div className={`bg-${themeColor}-700 text-white px-3 py-1.5 rounded-xl shadow-lg whitespace-nowrap flex items-center gap-2`}>
-              <Volume2 size={12} className="opacity-70" />
-              <span className="font-bold text-sm">{word}</span>
-              {resolvedEntry?.pronounce && (
-                <span className="text-[11px] font-mono opacity-70">{resolvedEntry.pronounce}</span>
-              )}
-              <span className="text-[10px] opacity-60 border-l border-white/30 pl-2">
-                👆 Click to learn
-              </span>
-            </div>
-            {/* Caret */}
-            <div className={`w-2.5 h-2.5 bg-${themeColor}-700 rotate-45 mx-auto -mt-1.5`} />
-          </div>
-        )}
+      {/* Inline Word Element */}
+      <span
+        ref={wordRef}
+        onClick={handleClick}
+        className={className}
+      >
+        {word}
       </span>
     </>
   );
