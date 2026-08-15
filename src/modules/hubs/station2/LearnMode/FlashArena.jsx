@@ -71,7 +71,8 @@ export function FlashArena({ customSets, onAttemptResult }) {
   const [isGameOver, setIsGameOver] = useState(false);
 
   // Dynamic Word Pool: 70% Current Week Vocab + 30% Past SRS Review Words
-  const basePairs = (customSets || WEEK33_VOCAB_SETS)[activeSetKey] || WEEK33_VOCAB_SETS.set1_nouns_adj;
+  const activeSets = customSets || WEEK33_VOCAB_SETS;
+  const basePairs = activeSets[activeSetKey] || activeSets.set1_nouns_adj || Object.values(activeSets)[0];
   const currentPairs = srsService.getDynamicWordPool(basePairs, 10);
 
   const [shuffledEnList, setShuffledEnList] = useState([]);
