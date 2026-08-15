@@ -27,13 +27,7 @@ import HeaderProfileMenu from './components/common/HeaderProfileMenu';
 import CompletionCard from './components/common/CompletionCard';
 import CollectionBoard from './pages/CollectionBoard';
 import AvatarCloset from './components/avatar/AvatarCloset';
-import AdminDashboard from './components/common/AdminDashboard';
-import SubscriptionModal from './components/subscription/SubscriptionModal';
-import SuperAdminLauncher from './components/subscription/SuperAdminLauncher';
-import TeacherLauncher from './components/teacher/TeacherLauncher';
-import WorksheetGenerator from './components/common/WorksheetGenerator';
 import Sidebar from './components/layout/Sidebar';
-// import AITutor from './modules/ai_tutor/AITutor'; // LEGACY - Replaced by AITutorWidget
 import AITutorWidget from './modules/ai_tutor/AITutorWidget';
 import TutorWindow from './modules/ai_tutor/components/TutorWindow';
 import useTutorStore from './services/ai_tutor/tutorStore';
@@ -42,11 +36,9 @@ import SaveToast from './components/common/SaveToast';
 
 import AutoSaveIndicator from './components/common/AutoSaveIndicator';
 import CongratulationsModal from './components/common/CongratulationsModal';
-import GameHub from './pages/GameHub/GameHub';
 import PlacementTest from './components/PlacementTest';
 import CheckpointAssessment from './components/CheckpointAssessment';
 import PeriodicAssessmentModal from './components/assessment/PeriodicAssessmentModal';
-import ParentDashboard from './pages/ParentDashboard';
 import ChildrenManager from './components/parent/ChildrenManager';
 import { getWeekCEFR, MILESTONE_WEEKS } from './data/weekData';
 import { evaluateSpeakingNudge } from './utils/adaptiveEngine';
@@ -54,12 +46,18 @@ import { recordDailyStreak } from './utils/progressReport';
 import { generateSmartReviewAsync } from './utils/srsGenerator';
 import EncounterOverlay from './components/encounter/EncounterOverlay';
 import UnboxAnimation from './components/avatar/UnboxAnimation';
-import WordTreasury from './pages/WordTreasury';
 import Station2Hub from './modules/hubs/station2/Station2Hub';
 import WorldDiscoveryHub from './modules/cambridge_suite/WorldDiscoveryHub';
 import ArenaHub from './modules/cambridge_suite/ArenaHub';
 import WritingStudioHub from './modules/cambridge_suite/WritingStudioHub';
 import NovaTalkShowHub from './modules/cambridge_suite/NovaTalkShowHub';
+
+// Lazy-loaded heavy pages
+const GameHub = React.lazy(() => import('./pages/GameHub/GameHub'));
+const ParentDashboard = React.lazy(() => import('./pages/ParentDashboard'));
+const WordTreasury = React.lazy(() => import('./pages/WordTreasury'));
+const AdminDashboard = React.lazy(() => import('./components/common/AdminDashboard'));
+const WorksheetGenerator = React.lazy(() => import('./components/common/WorksheetGenerator'));
 import week33Data from './data/weeks/week_33/index.js';
 import { getCollectionByWeek } from './data/collectionConfig';
 

@@ -46,7 +46,22 @@ export default defineConfig({
         // Remove hash from the main entry file so index.html always points to
         // the same filename — eliminates MIME errors caused by stale index.html
         // referencing an old hashed chunk that no longer exists after a new deploy.
-        entryFileNames: 'assets/[name].js',
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('lucide-react')) return 'vendor-lucide';
+            if (id.includes('katex') || id.includes('canvas-confetti')) return 'vendor-libs';
+            return 'vendor';
+          }
+          if (id.includes('src/data/dictionary.json')) {
+            return 'dictionary-data';
+          }
+          if (id.includes('src/modules/cambridge_suite') || id.includes('src/modules/hubs')) {
+            return 'cambridge-hubs';
+          }
+          if (id.includes('src/pages/GameHub')) {
+            return 'game-hub-chunk';
+          }
+        },
         chunkFileNames: (chunkInfo) => {
           const facade = chunkInfo.facadeModuleId || '';
           if (facade.includes('weeks')) {

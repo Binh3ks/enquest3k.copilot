@@ -47,22 +47,22 @@ export function evaluateCambridgeCriteria(text, weekNum, customWordBank = {}) {
   let isExamMode = false;
 
   if (weekNum >= 66) {
-    targetWords = 100;
+    targetWords = 80;
     minConnectors = 3;
     requirePastContinuous = true;
     requireChunks = true;
     isExamMode = true;
   } else if (weekNum >= 55) {
-    targetWords = 80;
+    targetWords = 60;
     minConnectors = 3;
     requirePastContinuous = true;
     requireChunks = true;
   } else if (weekNum >= 43) {
-    targetWords = 65;
+    targetWords = 35;
     minConnectors = 2;
     requirePastContinuous = true;
-  } else if (weekNum >= 33) {
-    targetWords = 50;
+  } else if (weekNum >= 16) {
+    targetWords = 20; // Cambridge A2 Flyers Part 7 Standard: 20 or more words
     minConnectors = 1;
   }
 

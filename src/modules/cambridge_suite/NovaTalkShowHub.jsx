@@ -88,7 +88,8 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       const targetTextMap = {
         2: "Tom ran fast and slipped on the wet floor near the yellow warning sign",
         3: "Jake stopped immediately and called the school nurse to get help",
-        4: "The school nurse brought a clean bandage and a cold pack to treat his knee"
+        4: "The school nurse brought a clean bandage and a cold pack to treat his knee",
+        5: "Everyone felt relieved and the principal praised Jake publicly during Monday assembly"
       };
       const targetText = targetTextMap[picId] || "Tom slipped on the wet floor";
       const evalRes = calculateSpeechAccuracy(userSpeechInput || targetText, targetText);
@@ -182,12 +183,13 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
   const pictureStoryData = data?.picture_story_continuation || {
     title: "Safety First at School",
-    intro_audio_text: "Look at the four pictures. They tell a story called 'Safety First at School'. Just look at Picture 1 first. Jake was walking carefully down the corridor after science class when he noticed a slippery floor.",
+    intro_audio_text: "Look at the five pictures. They tell a story called 'Safety First at School'. Just look at Picture 1 first. Jake was walking carefully down the corridor after science class.",
     pictures: [
       { id: 1, title: "Picture 1: Walking down corridor", image: "/images/week33/webtoon_scene_1.png", is_intro: true, script: "Jake was walking carefully down the corridor after science class." },
       { id: 2, title: "Picture 2: Slipping on wet floor", image: "/images/week33/webtoon_scene_2.png", prompt_en: "Now you tell the story! What happened next in Picture 2?", key_chunks: ["slipped on wet floor", "fell down heavily"] },
       { id: 3, title: "Picture 3: Calling the school nurse", image: "/images/week33/webtoon_scene_3.png", prompt_en: "What quick action did Jake take in Picture 3?", key_chunks: ["called school nurse", "stopped immediately"] },
-      { id: 4, title: "Picture 4: Applying first aid & praised", image: "/images/week33/webtoon_scene_4.png", prompt_en: "How does the story end in Picture 4?", key_chunks: ["clean bandage", "cold pack", "praised by headmaster"] }
+      { id: 4, title: "Picture 4: Applying clean bandage", image: "/images/week33/webtoon_scene_4.png", prompt_en: "How did the nurse treat Tom in Picture 4?", key_chunks: ["clean bandage", "cold pack"] },
+      { id: 5, title: "Picture 5: Feeling relieved & praised", image: "/images/week33/webtoon_scene_5.png", prompt_en: "How does the story end in Picture 5?", key_chunks: ["felt relieved", "praised by principal"] }
     ]
   };
 
@@ -619,7 +621,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 <h3 className="text-xl font-black text-slate-900">{pictureStoryData.title}</h3>
               </div>
               <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-black rounded-full font-mono">
-                4 Pictures
+                5 Pictures (Cambridge Standard)
               </span>
             </div>
 
@@ -642,11 +644,11 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 </div>
 
                 <p className="text-xs sm:text-sm font-bold text-white/95 leading-relaxed">
-                  "Nova has a story for you! Click the button below to listen to the beginning. Then, use your mic to tell me what happens next in pictures 2, 3, and 4!"
+                  "Nova has a 5-picture story for you! Click the button below to listen to the beginning (Picture 1). Then, use your mic to tell me what happens next in pictures 2, 3, 4, and 5!"
                 </p>
 
                 <p className="text-[11px] font-medium text-white/80 italic">
-                  (Nova có một câu chuyện cho bạn! Hãy bấm nút bên dưới để nghe phần mở đầu. Sau đó, dùng micro để kể xem chuyện gì xảy ra tiếp theo ở tranh 2, 3 và 4 nhé!)
+                  (Nova có một câu chuyện 5 bức tranh cho bạn! Bấm nút bên dưới để nghe phần mở đầu. Sau đó, dùng micro kể xem chuyện gì xảy ra tiếp theo ở các tranh 2, 3, 4 và 5 nhé!)
                 </p>
 
                 <div className="pt-2 border-t border-white/20 mt-2">
@@ -669,8 +671,8 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
 
 
-            {/* 4 Pictures Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* 5 Pictures Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
               {pictureStoryData.pictures.map((pic) => (
                 <div key={pic.id} className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col space-y-2">
                   <div className="relative w-full h-36 bg-slate-100 rounded-xl overflow-hidden border border-slate-200">

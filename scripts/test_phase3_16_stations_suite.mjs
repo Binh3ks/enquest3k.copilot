@@ -136,9 +136,9 @@ if (talkshowHubCode.includes('InformationExchangeP2') && infoExCode.includes('Ta
   process.exit(1);
 }
 
-// Test 13: Speaking Part 3 (4-Picture Story Continuation)
-if (talkshowHubCode.includes('4-Picture Story') || talkshowHubCode.includes('pic_story')) {
-  console.log('✅ [QA PASS] 13/16 Speaking Part 3: 4-Picture Story Continuation active!');
+// Test 13: Speaking Part 3 (5-Picture Story Continuation - Cambridge Standard)
+if (talkshowHubCode.includes('5 Pictures') || talkshowHubCode.includes('pic_story')) {
+  console.log('✅ [QA PASS] 13/16 Speaking Part 3: 5-Picture Story Continuation active!');
   totalPassed++;
 } else {
   console.error('❌ [QA FAIL] 13/16 Speaking Part 3 incomplete.');
