@@ -179,12 +179,22 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
   // Pronunciation check state
   const [isRecording, setIsRecording] = useState(false);
   const [pronunciationResult, setPronunciationResult] = useState(null);
+  const recognitionRef = useRef(null);
+
+  const handleClose = () => {
+    if (recognitionRef.current) {
+      try { recognitionRef.current.abort(); } catch (_) {}
+      recognitionRef.current = null;
+    }
+    setIsRecording(false);
+    setMode('idle');
+  };
 
   // ────────── Click / tap handler ──────────
   const handleClick = (e) => {
     e.stopPropagation();
     if (mode === 'open') {
-      setMode('idle');
+      handleClose();
     } else {
       if (wordRef.current) {
         const rect = wordRef.current.getBoundingClientRect();
@@ -209,6 +219,7 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
     recognition.lang = 'en-US';
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
+    recognitionRef.current = recognition;
 
     recognition.onstart = () => {
       setIsRecording(true);
@@ -256,7 +267,7 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
           {/* Overlay */}
           <div
             className="fixed inset-0 z-[9950]"
-            onClick={() => setMode('idle')}
+            onClick={handleClose}
           />
 
           {/* Popup Card */}

@@ -15,6 +15,8 @@ import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
 
 
+import VoiceService from '../../services/voiceService';
+
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
@@ -42,6 +44,13 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   // Cambridge Reading Part 3 Story Title State
   const [selectedStoryTitle, setSelectedStoryTitle] = useState(null);
   const [storyTitleSubmitted, setStoryTitleSubmitted] = useState(false);
+
+  // Audio Cleanup on Tab Switch or Unmount to prevent overlapping TTS audio
+  React.useEffect(() => {
+    return () => {
+      VoiceService.stop();
+    };
+  }, [activeTab, learnSubTab]);
 
 
     const storyScenes = data?.story_scenes || [
