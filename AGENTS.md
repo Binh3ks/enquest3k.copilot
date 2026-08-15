@@ -108,3 +108,8 @@ Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực ng
   3. `mindmap.js` BẮT BUỘC chứa 6 `centerStems` × 6 `branchLabels` = **36 nhánh độc bản** theo chủ đề tuần (KHÔNG dùng nhánh mặc định vỡ nốt/ngã chảy máu).
   4. `ask_ai.js` BẮT BUỘC chứa **5 câu hỏi luyện nói** + hint + word_bank.
   5. `daily_watch.js` BẮT BUỘC dùng **5 Video YouTube giáo dục thoại** đã verify **HTTP 200 OK** thumbnail.
+- **Lesson-018 (Writing Target Words, Speaking 5-Picture & Bundle Optimization Standards — 2026-08-15)**:
+  1. **Writing Part 7 Target Word Calibration**: `cambridgeCriteria.js` target word count MUST be set to **20 words** for Tier 1 & Tier 2 (Weeks 16-42) to strictly match `writing.js` `min_words: 20` schema and Cambridge A2 Flyers Part 7 standards.
+  2. **Speaking Part 3 5-Picture Invariant**: Speaking Part 3 (`picture_story_continuation`) MUST render **5 sequential pictures** (`Picture 1` intro by examiner, `Pictures 2-5` recorded by candidate via mic). Never truncate to 4 pictures.
+  3. **Vite Manual Chunks Code-Splitting**: Always configure `manualChunks` in `vite.config.js` to isolate monolithic data (`dictionary.json`), heavy libraries (`lucide-react`, `katex`, `canvas-confetti`), and hubs/games to prevent bundle size bloat.
+  4. **Stealth Mode Chunk Styling**: In assessment components (`isStealthMode={true}`), chunk styling MUST rely on `const isTarget = tier === 1` so collocations render as plain text without leaking answer highlights.
