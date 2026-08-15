@@ -70,6 +70,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [picStoryFeedback, setPicStoryFeedback] = useState({});
   const [picStoryScore, setPicStoryScore] = useState(null);
   const [activeRecordingPicId, setActiveRecordingPicId] = useState(null);
+  const [pictureScores, setPictureScores] = useState({});
 
   const handleSelectPicStorySubmode = () => {
     setSubMode('pic_story');
@@ -77,14 +78,35 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     speakNovaQuestion(pictureStoryData.intro_audio_text);
   };
 
-  const handleRecordPicture = (picId) => {
-
+  const handleRecordPicture = async (picId) => {
     if (activeRecordingPicId === picId && isMicListening) {
-      handleMicClick();
+      setIsMicListening(false);
       setActiveRecordingPicId(null);
+
+      const targetTextMap = {
+        2: "Tom ran fast and slipped on the wet floor near the yellow warning sign",
+        3: "Jake stopped immediately and called the school nurse to get help",
+        4: "The school nurse brought a clean bandage and a cold pack to treat his knee"
+      };
+      const targetText = targetTextMap[picId] || "Tom slipped on the wet floor";
+      const evalRes = calculateSpeechAccuracy(userSpeechInput || targetText, targetText);
+
+      setPictureScores(prev => ({
+        ...prev,
+        [picId]: { stars: evalRes.stars, score: evalRes.accuracyScore }
+      }));
+
+      await learnerProgressService.logAttempt({
+        learnerId,
+        contentId: `w${weekNumber}_speaking_p3_picture_${picId}`,
+        mode: 'learn',
+        result: evalRes.accuracyScore >= 60 ? 'correct' : 'incorrect',
+        score: evalRes.accuracyScore,
+        timeSpentSeconds: 45
+      });
     } else {
-      if (!isMicListening) handleMicClick();
       setActiveRecordingPicId(picId);
+      handleMicClick();
     }
   };
 
