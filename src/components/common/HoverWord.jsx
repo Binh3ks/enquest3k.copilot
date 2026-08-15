@@ -161,12 +161,12 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
       };
     }
 
-    // FALLBACK ENTRY: Guarantees every word is 100% clickable & playable with rich ESL message!
+    // FALLBACK ENTRY: Guarantees every word is 100% clickable & playable with clean ESL message!
     return {
       word,
       pronounce: `/${cleanKey}/`,
-      meaning: `Từ vựng tiếng Anh "${word}". Chạm để nghe phát âm chuẩn hoặc tra từ điển ngoài.`,
-      example: `"${word}" is used in school context.`,
+      meaning: `Từ vựng tiếng Anh "${word}". Chạm nút 🔊 để nghe phát âm chuẩn hoặc tra cứu thêm từ điển ngoài.`,
+      example: null,
       audioText: cleanKey,
       type: "Word"
     };
