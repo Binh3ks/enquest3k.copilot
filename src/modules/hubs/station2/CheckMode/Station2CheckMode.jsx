@@ -215,7 +215,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                 Listening Question Audio:
               </div>
               <div className="text-sm font-black text-white italic">
-                "{renderParsedText(currentQ.prompt || currentQ.text, 'amber')}"
+                "{renderParsedText(currentQ.prompt || currentQ.text, 'amber', null, true)}"
               </div>
             </div>
           </div>
@@ -231,7 +231,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                 Statement / Question:
               </div>
               <div className="text-sm font-bold text-amber-950 leading-relaxed italic">
-                "{renderParsedText(currentQ.dialogue_context, 'amber')}"
+                "{renderParsedText(currentQ.dialogue_context, 'amber', null, true)}"
               </div>
             </div>
           </div>
@@ -241,7 +241,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
               Question:
             </p>
             <div className="text-base font-black text-slate-900 leading-relaxed">
-              {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo')}
+              {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo', null, true)}
             </div>
           </div>
         </div>
@@ -251,7 +251,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
             CHOOSE THE CORRECT WORD TO FILL IN THE BLANK:
           </p>
           <div className="text-base font-black text-slate-900 leading-relaxed">
-            {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo')}
+            {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo', null, true)}
           </div>
         </div>
       )}
@@ -302,7 +302,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                   <img src={optImage} alt={opt.text} className="w-full h-full object-cover" />
                 </div>
 
-                <div className="text-xs font-bold text-slate-800 line-clamp-2">{renderParsedText(opt.text, 'indigo')}</div>
+                <div className="text-xs font-bold text-slate-800 line-clamp-2">{renderParsedText(opt.text, 'indigo', null, true)}</div>
               </button>
             );
           }
@@ -318,7 +318,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                 <span className={`w-8 h-8 rounded-xl text-sm font-black flex items-center justify-center shrink-0 ${badgeStyle}`}>
                   {opt.label || String.fromCharCode(65 + optIdx)}
                 </span>
-                <div className="text-sm font-semibold">{renderParsedText(opt.text, 'indigo')}</div>
+                <div className="text-sm font-semibold">{renderParsedText(opt.text, 'indigo', null, true)}</div>
               </div>
 
               {isSubmitted && isCorrect && (

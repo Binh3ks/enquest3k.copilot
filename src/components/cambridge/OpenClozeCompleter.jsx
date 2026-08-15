@@ -91,7 +91,7 @@ export function OpenClozeCompleter({ customData, onComplete }) {
       if (matchIndex > lastIndex) {
         parts.push(
           <span key={`text-${lastIndex}`}>
-            {renderParsedText(rawText.substring(lastIndex, matchIndex), 'indigo')}
+            {renderParsedText(rawText.substring(lastIndex, matchIndex), 'indigo', null, true)}
           </span>
         );
       }
@@ -133,7 +133,7 @@ export function OpenClozeCompleter({ customData, onComplete }) {
     if (lastIndex < rawText.length) {
       parts.push(
         <span key={`text-${lastIndex}`}>
-          {renderParsedText(rawText.substring(lastIndex), 'indigo')}
+          {renderParsedText(rawText.substring(lastIndex), 'indigo', null, true)}
         </span>
       );
     }

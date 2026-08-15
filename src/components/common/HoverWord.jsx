@@ -52,18 +52,14 @@ export const lookupDict = (raw) => {
 };
 
 /**
- * Universal Text & Chunk Parser (Morphological Alias Mapping Engine)
+ * Universal Text & Chunk Parser (Stealth Mode Support for Assessment Areas)
  *
- * Layer 1 (Strict Master Whitelist + Morphological Aliases for Multi-Word Chunks):
- * Multi-word phrases containing spaces are matched against Base Keys + Aliases
- * (e.g. "walking carefully" -> maps to base key "walk carefully").
- *
- * Layer 2 (Universal 100% Single Word Wrapping):
- * ALL remaining English words (/^[a-zA-Z0-9'-]+$/) are 100% wrapped in <HoverWord>.
- * Target W33 words/aliases get tier 1 (highlighted indigo + dotted underline).
- * All general words get tier 3 (natural text style, 100% clickable for popover dictionary + TTS fallback).
+ * @param {string} text - Text to parse
+ * @param {string} themeColor - Color theme (default 'indigo')
+ * @param {function} onSpeak - Custom speak handler
+ * @param {boolean} isStealthMode - If true, wraps words for popup lookup BUT forces tier=3 plain text style (no bold indigo underlines in tests/questions!)
  */
-export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
+export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, isStealthMode = false) {
   if (!text) return null;
 
   // 2. Filter all multi-word phrases (Base + Aliases containing spaces) sorted by length descending
@@ -101,7 +97,7 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
           themeColor={themeColor}
           onSpeak={onSpeak}
           entry={entry}
-          tier={1}
+          tier={isStealthMode ? 3 : 1}
         />
       );
     } else {
@@ -125,7 +121,7 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
               themeColor={themeColor}
               onSpeak={onSpeak}
               entry={entry}
-              tier={isTarget ? 1 : 3}
+              tier={isStealthMode ? 3 : (isTarget ? 1 : 3)}
             />
           );
         } else {

@@ -175,7 +175,7 @@ export function WordBankMatchingGrid({ customData, onComplete }) {
                   {idx + 1}
                 </span>
                 <div className="text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
-                  {renderParsedText(def.text, 'indigo')}
+                  {renderParsedText(def.text, 'indigo', null, true)}
                 </div>
               </div>
 

@@ -239,7 +239,7 @@ export function DialogueAHCompleter({ customData, onComplete }) {
                     {opt.key}
                   </span>
                   <div className="flex-1">
-                    <div className="leading-snug">{renderParsedText(opt.text, 'indigo')}</div>
+                    <div className="leading-snug">{renderParsedText(opt.text, 'indigo', null, true)}</div>
                     {isUsed && (
                       <span className="text-[10px] font-mono text-purple-800 font-extrabold block mt-0.5">
                         [Used in Gap {assignedGapId}]

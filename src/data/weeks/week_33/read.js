@@ -22,7 +22,7 @@ export default {
     {
       scene_id: "scene_2",
       title_en: "Scene 2: Running Fast Past the Lab",
-      description_en: "A boy running fast sped past the science laboratory classroom door.",
+      description_en: "A boy ran very fast past the science laboratory classroom door.",
       image_url: "/images/week33/webtoon_scene_2.png",
       lexical_chunks: [
         { word: "running", chunk: "running fast", x: 50, y: 50 },
