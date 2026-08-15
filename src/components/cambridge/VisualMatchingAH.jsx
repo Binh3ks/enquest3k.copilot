@@ -40,7 +40,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
       { letter: 'E', name: 'Bedroom Table (Home)', location_name: 'Bedroom Table', image_url: '/images/week33/bedroom_table.jpg' },
       { letter: 'F', name: 'Corridor Safety Locker', location_name: 'Corridor Locker', image_url: '/images/week33/corridor.jpg' },
       { letter: 'G', name: 'Headmaster Office Desk', location_name: 'Headmaster Office', image_url: '/images/week33/card_g_headmaster_office.jpg' },
-      { letter: 'H', name: 'Playground Bench', location_name: 'Playground Bench', image_url: '/images/week33/explore.jpg' }
+      { letter: 'H', name: 'Playground Bench', location_name: 'Playground Bench', image_url: '/images/week33/card_h_playground_bench.jpg' }
     ];
     return shuffleArray(rawCards);
   }, [customData, shuffleSeed]);
