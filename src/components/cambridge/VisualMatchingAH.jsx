@@ -124,10 +124,10 @@ export function VisualMatchingAH({ customData, onComplete }) {
         {/* Left Column: 5 Object Items */}
         <div className="lg:col-span-5 space-y-3">
           <div className="text-xs font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-            <Layers size={15} className="text-amber-600" /> 5 Object Items (Click an item):
+            <Layers size={15} className="text-amber-600" /> 5 Object Items (Select an item to match):
           </div>
 
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             {itemsList.map((item) => {
               const assignedLetter = answers[item.id];
               const isSelected = selectedItem?.id === item.id;
@@ -137,7 +137,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
                 <div
                   key={item.id}
                   onClick={() => handleSelectItem(item)}
-                  className={`p-3.5 rounded-2xl border-2 transition-all flex items-center justify-between cursor-pointer ${
+                  className={`p-4 rounded-2xl border-2 transition-all cursor-pointer flex flex-col justify-between ${
                     isSubmitted
                       ? isCorrect
                         ? 'bg-emerald-50 border-emerald-400'
@@ -145,66 +145,75 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       : isSelected
                       ? 'bg-amber-100/90 border-amber-500 ring-4 ring-amber-200 scale-102 shadow-md'
                       : assignedLetter
-                      ? 'bg-white border-amber-300'
+                      ? 'bg-white border-amber-300 shadow-sm'
                       : 'bg-white border-slate-200 hover:border-amber-300'
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-xl bg-amber-600 text-white font-black text-sm flex items-center justify-center shrink-0 shadow-sm">
-                      {item.id}
-                    </span>
-                    <span className="text-sm font-black text-slate-900">
-                      {item.name}
-                    </span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className="w-8 h-8 rounded-xl bg-amber-600 text-white font-black text-sm flex items-center justify-center shrink-0 shadow-sm">
+                        {item.id}
+                      </span>
+                      <div>
+                        <span className="text-sm font-black text-slate-900 block leading-tight">
+                          {item.name}
+                        </span>
+                        <span className="text-[10px] font-bold text-slate-400 block mt-0.5">
+                          {item.audio_text}
+                        </span>
+                      </div>
+                    </div>
+
+                    {isSubmitted && (
+                      <div className="ml-2">
+                        {isCorrect ? (
+                          <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                        ) : (
+                          <div className="flex items-center gap-1">
+                            <AlertCircle className="w-5 h-5 text-rose-500 shrink-0" />
+                            <span className="text-xs font-black text-rose-700">({item.target_letter})</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <div className={`px-3 py-1 rounded-xl text-xs font-black border ${
-                      assignedLetter ? 'bg-amber-500 text-white border-amber-600' : 'bg-slate-100 text-slate-400 border-slate-200'
+                  {/* Vertical Status Pill Container */}
+                  <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
+                    <div className={`px-3 py-1 rounded-xl text-xs font-black border flex items-center gap-1.5 ${
+                      assignedLetter ? 'bg-amber-500 text-white border-amber-600 shadow-sm' : 'bg-slate-100 text-slate-500 border-slate-200'
                     }`}>
-                      {assignedLetter ? `Card ${assignedLetter}` : 'Select Picture'}
+                      <span className="text-[10px] uppercase opacity-75 font-bold">Matched:</span>
+                      <span>{assignedLetter ? `Card ${assignedLetter}` : 'Select Picture 👇'}</span>
                     </div>
 
                     {assignedLetter && !isSubmitted && (
                       <button
                         onClick={(e) => handleClearMatch(item.id, e)}
-                        className="text-slate-400 hover:text-rose-600 text-xs font-bold px-1 py-0.5"
+                        className="px-2.5 py-1 bg-rose-50 hover:bg-rose-100 text-rose-600 text-xs font-bold rounded-lg border border-rose-200"
                       >
-                        ✕
+                        Clear ✕
                       </button>
                     )}
                   </div>
-
-                  {isSubmitted && (
-                    <div className="ml-3">
-                      {isCorrect ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                      ) : (
-                        <div className="flex items-center gap-1">
-                          <AlertCircle className="w-5 h-5 text-rose-500 shrink-0" />
-                          <span className="text-xs font-black text-rose-700">({item.target_letter})</span>
-                        </div>
-                      )}
-                    </div>
-                  )}
                 </div>
               );
             })}
           </div>
         </div>
 
-        {/* Right Column: 8 Shuffled Picture Cards (A to H) */}
+        {/* Right Column: 8 Shuffled Picture Cards A-H (2 Columns Grid Layout) */}
         <div className="lg:col-span-7 space-y-3 bg-amber-50/60 p-4 sm:p-5 rounded-3xl border-2 border-amber-200">
           <div className="flex items-center justify-between pb-2 border-b border-amber-200">
             <span className="text-xs font-black text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
-              <Grid size={15} /> 8 Picture Cards A-H (Click card to match):
+              <Grid size={15} /> 8 School Location Cards A-H (2 Columns Layout):
             </span>
             <span className="text-[10px] font-bold text-amber-700">
               {selectedItem ? `Matching: ${selectedItem.name}` : 'Click item on left first'}
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {pictureCards.map((card) => {
               const matchedItem = itemsList.find(i => answers[i.id] === card.letter);
 
@@ -213,7 +222,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
                   key={card.letter}
                   disabled={isSubmitted}
                   onClick={() => handleMatchCard(card)}
-                  className={`p-2.5 rounded-2xl border-2 text-left transition-all flex flex-col justify-between shadow-sm relative group overflow-hidden ${
+                  className={`p-3 rounded-2xl border-2 text-left transition-all flex flex-col justify-between shadow-sm relative group overflow-hidden ${
                     matchedItem
                       ? 'bg-white border-amber-500 ring-2 ring-amber-300'
                       : selectedItem
@@ -221,18 +230,18 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       : 'bg-white border-slate-200 hover:border-slate-300'
                   }`}
                 >
-                  <div className="flex items-center justify-between w-full mb-1">
-                    <span className="w-6 h-6 rounded-lg bg-amber-600 text-white font-black text-xs flex items-center justify-center shrink-0">
+                  <div className="flex items-center justify-between w-full mb-1.5">
+                    <span className="w-7 h-7 rounded-lg bg-amber-600 text-white font-black text-xs flex items-center justify-center shrink-0">
                       {card.letter}
                     </span>
                     {matchedItem && (
-                      <span className="px-1.5 py-0.5 bg-amber-500 text-white font-black text-[9px] rounded-md truncate max-w-[85px] shadow-sm">
+                      <span className="px-2 py-0.5 bg-amber-500 text-white font-black text-[10px] rounded-md truncate max-w-[120px] shadow-sm">
                         🎯 {matchedItem.name}
                       </span>
                     )}
                   </div>
 
-                  <div className="w-full h-24 bg-slate-100 rounded-xl overflow-hidden mb-2 border border-slate-200 relative shadow-inner">
+                  <div className="w-full h-36 sm:h-40 bg-slate-100 rounded-xl overflow-hidden mb-2 border border-slate-200 relative shadow-inner">
                     <img 
                       src={card.image_url} 
                       alt={card.name} 
@@ -244,7 +253,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       className="w-full h-full object-cover" 
                     />
                   </div>
-                  <span className="text-[11px] sm:text-xs font-black text-slate-800 block text-center leading-tight py-0.5">
+                  <span className="text-xs font-black text-slate-800 block text-center leading-tight py-1">
                     {card.name}
                   </span>
                 </button>
