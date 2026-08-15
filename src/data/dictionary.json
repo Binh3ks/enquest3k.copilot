@@ -37204,5 +37204,789 @@
     "meaning": "phần thưởng / tuyên dương",
     "example": "Jake received a safety badge as a reward.",
     "type": "Noun"
+  },
+  {
+    "word": "heavily",
+    "pronounce": "/ˈhevɪli/",
+    "meaning": "nặng nề / rất mạnh",
+    "example": "Tom fell down heavily on the floor.",
+    "type": "Adverb"
+  },
+  {
+    "word": "balance",
+    "pronounce": "/ˈbæləns/",
+    "meaning": "sự thăng bằng / giữ thăng bằng",
+    "example": "He lost his balance and fell.",
+    "type": "Noun"
+  },
+  {
+    "word": "pack",
+    "pronounce": "/pæk/",
+    "meaning": "túi / gói (cold pack)",
+    "example": "The nurse used a cold pack for his knee.",
+    "type": "Noun"
+  },
+  {
+    "word": "headmaster",
+    "pronounce": "/ˌhedˈmæstər/",
+    "meaning": "hiệu trưởng nhà trường",
+    "example": "The headmaster thanked Jake for acting quickly.",
+    "type": "Noun"
+  },
+  {
+    "word": "applying",
+    "pronounce": "/əˈplaɪɪŋ/",
+    "meaning": "đang bôi / đắp / dán băng gạc",
+    "example": "She is applying a clean bandage to his cut.",
+    "type": "Verb"
+  },
+  {
+    "word": "relief",
+    "pronounce": "/rɪˈliːf/",
+    "meaning": "sự nhẹ nhõm / sự dịu đau",
+    "example": "Tom felt relief after the cold pack was applied.",
+    "type": "Noun"
+  },
+  {
+    "word": "applied",
+    "pronounce": "/əˈplaɪd/",
+    "meaning": "đã dán / đắp (băng gạc)",
+    "example": "The nurse applied gauze to the wound.",
+    "type": "Verb"
+  },
+  {
+    "word": "explanation",
+    "pronounce": "/ˌekspləˈneɪʃn/",
+    "meaning": "lời giải thích",
+    "example": "He gave a clear explanation of the accident.",
+    "type": "Noun"
+  },
+  {
+    "word": "incorrect",
+    "pronounce": "/ˌɪnkəˈrekt/",
+    "meaning": "không chính xác / sai",
+    "example": "Running in the hallway is an incorrect action.",
+    "type": "Adjective"
+  },
+  {
+    "word": "action",
+    "pronounce": "/ˈækʃn/",
+    "meaning": "hành động / sự xử lý",
+    "example": "Jake's quick action saved Tom from further injury.",
+    "type": "Noun"
+  },
+  {
+    "word": "aid",
+    "pronounce": "/eɪd/",
+    "meaning": "sự sơ cứu / sự trợ giúp (first aid)",
+    "example": "First aid supplies were kept in the cabinet.",
+    "type": "Noun"
+  },
+  {
+    "word": "treatment",
+    "pronounce": "/ˈtriːtmənt/",
+    "meaning": "sự điều trị / sự chăm sóc y tế",
+    "example": "Tom received prompt treatment from the school nurse.",
+    "type": "Noun"
+  },
+  {
+    "word": "standard",
+    "pronounce": "/ˈstændərd/",
+    "meaning": "tiêu chuẩn / quy chuẩn",
+    "example": "Corridor safety is a standard school rule.",
+    "type": "Noun"
+  },
+  {
+    "word": "interactive",
+    "pronounce": "/ˌɪntərˈæktɪv/",
+    "meaning": "có tính tương tác",
+    "example": "Students enjoyed the interactive safety lesson.",
+    "type": "Adjective"
+  },
+  {
+    "word": "incident",
+    "pronounce": "/ˈɪnsɪdənt/",
+    "meaning": "sự cố / tai nạn nhỏ",
+    "example": "The headmaster reported the corridor incident.",
+    "type": "Noun"
+  },
+  {
+    "word": "noticed",
+    "pronounce": "/ˈnoʊtɪst/",
+    "meaning": "đã chú ý / phát hiện ra",
+    "example": "Jake noticed Tom slipping on the floor.",
+    "type": "Verb"
+  },
+  {
+    "word": "slippery",
+    "pronounce": "/ˈslɪpəri/",
+    "meaning": "trơn trượt",
+    "example": "The wet floor tiles were very slippery.",
+    "type": "Adjective"
+  },
+  {
+    "word": "target",
+    "pronounce": "/ˈtɑːrɡɪt/",
+    "meaning": "mục tiêu",
+    "example": "Our target is to keep all corridors safe.",
+    "type": "Noun"
+  },
+  {
+    "word": "hint",
+    "pronounce": "/hɪnt/",
+    "meaning": "gợi ý / lời nhắc",
+    "example": "Read the hint before answering the question.",
+    "type": "Noun"
+  },
+  {
+    "word": "hints",
+    "pronounce": "/hɪnts/",
+    "meaning": "các lời gợi ý",
+    "example": "The teacher gave helpful hints.",
+    "type": "Noun"
+  },
+  {
+    "word": "input",
+    "pronounce": "/ˈɪnpʊt/",
+    "meaning": "dữ liệu nhập / ý kiến",
+    "example": "Type your answer into the input box.",
+    "type": "Noun"
+  },
+  {
+    "word": "tuesday",
+    "pronounce": "/ˈtuːzdeɪ/",
+    "meaning": "Thứ Ba",
+    "example": "The assembly took place on Tuesday morning.",
+    "type": "Noun"
+  },
+  {
+    "word": "crazy",
+    "pronounce": "/ˈkreɪzi/",
+    "meaning": "điên rồ / nguy hiểm",
+    "example": "Running down wet stairs is crazy.",
+    "type": "Adjective"
+  },
+  {
+    "word": "didn",
+    "pronounce": "/ˈdɪdnt/",
+    "meaning": "không (quá khứ của do not)",
+    "example": "He didn't notice the warning sign.",
+    "type": "Verb"
+  },
+  {
+    "word": "warning",
+    "pronounce": "/ˈwɔːrnɪŋ/",
+    "meaning": "cảnh báo / sự nhắc nhở",
+    "example": "Look at the yellow warning sign on the floor.",
+    "type": "Noun"
+  },
+  {
+    "word": "sign",
+    "pronounce": "/saɪn/",
+    "meaning": "biển báo / ký hiệu",
+    "example": "The warning sign alerts students to wet floors.",
+    "type": "Noun"
+  },
+  {
+    "word": "glad",
+    "pronounce": "/ɡlæd/",
+    "meaning": "vui mừng / an tâm",
+    "example": "Everyone was glad Tom was not seriously hurt.",
+    "type": "Adjective"
+  },
+  {
+    "word": "okay",
+    "pronounce": "/oʊˈkeɪ/",
+    "meaning": "ổn định / an toàn",
+    "example": "Tom said he was feeling okay now.",
+    "type": "Adjective"
+  },
+  {
+    "word": "dictation",
+    "pronounce": "/dɪkˈteɪʃn/",
+    "meaning": "bài nghe chép chính tả",
+    "example": "Students practiced dictation in English class.",
+    "type": "Noun"
+  },
+  {
+    "word": "shadowing",
+    "pronounce": "/ˈʃædoʊɪŋ/",
+    "meaning": "phương pháp nhại giọng / đuổi theo phát âm",
+    "example": "Shadowing helps improve pronunciation fluency.",
+    "type": "Noun"
+  },
+  {
+    "word": "matcher",
+    "pronounce": "/ˈmætʃər/",
+    "meaning": "công cụ ghép nối",
+    "example": "Use the line matcher to connect matching pairs.",
+    "type": "Noun"
+  },
+  {
+    "word": "lady",
+    "pronounce": "/ˈleɪdi/",
+    "meaning": "quý bà / cô y tế",
+    "example": "The lady in the white coat is the school nurse.",
+    "type": "Noun"
+  },
+  {
+    "word": "suit",
+    "pronounce": "/suːt/",
+    "meaning": "bộ trang phục",
+    "example": "The janitor wore a clean work suit.",
+    "type": "Noun"
+  },
+  {
+    "word": "mop",
+    "pronounce": "/mɑːp/",
+    "meaning": "cây lau nhà / lau sàn",
+    "example": "The janitor used a mop to clean the spill.",
+    "type": "Noun"
+  },
+  {
+    "word": "targets",
+    "pronounce": "/ˈtɑːrɡɪts/",
+    "meaning": "các mục tiêu",
+    "example": "Focus on the target vocabulary items.",
+    "type": "Noun"
+  },
+  {
+    "word": "label",
+    "pronounce": "/ˈleɪbl/",
+    "meaning": "nhãn tên / nhãn hiệu",
+    "example": "Read the label on the medicine bottle.",
+    "type": "Noun"
+  },
+  {
+    "word": "matching",
+    "pronounce": "/ˈmætʃɪŋ/",
+    "meaning": "sự ghép nối / phù hợp",
+    "example": "Draw matching lines between words and pictures.",
+    "type": "Noun"
+  },
+  {
+    "word": "placed",
+    "pronounce": "/pleɪst/",
+    "meaning": "đã đặt / để",
+    "example": "The janitor placed a warning sign on the floor.",
+    "type": "Verb"
+  },
+  {
+    "word": "medical",
+    "pronounce": "/ˈmedɪkl/",
+    "meaning": "thuộc y tế / y học",
+    "example": "Tom received medical attention at the nurse office.",
+    "type": "Adjective"
+  },
+  {
+    "word": "taken",
+    "pronounce": "/ˈteɪkən/",
+    "meaning": "được đưa tới / đưa đi",
+    "example": "Tom was taken to the nurse office after falling.",
+    "type": "Verb"
+  },
+  {
+    "word": "spill",
+    "pronounce": "/spɪl/",
+    "meaning": "vết tràn nước / sự tràn chất lỏng",
+    "example": "Clean up any water spill right away.",
+    "type": "Noun"
+  },
+  {
+    "word": "cafeteria",
+    "pronounce": "/ˌkæfəˈtɪriə/",
+    "meaning": "nhà ăn trường học",
+    "example": "Students eat lunch in the school cafeteria.",
+    "type": "Noun"
+  },
+  {
+    "word": "counter",
+    "pronounce": "/ˈkaʊntər/",
+    "meaning": "quầy phục vụ / quầy thanh toán",
+    "example": "Food is served at the cafeteria counter.",
+    "type": "Noun"
+  },
+  {
+    "word": "canteen",
+    "pronounce": "/kænˈtiːn/",
+    "meaning": "căng tin trường học",
+    "example": "Buy drinks at the school canteen.",
+    "type": "Noun"
+  },
+  {
+    "word": "locker",
+    "pronounce": "/ˈlɑːkər/",
+    "meaning": "tủ đồ học sinh",
+    "example": "Put your backpack inside your hallway locker.",
+    "type": "Noun"
+  },
+  {
+    "word": "office",
+    "pronounce": "/ˈɑːfɪs/",
+    "meaning": "phòng làm việc",
+    "example": "The nurse office is next to the principal room.",
+    "type": "Noun"
+  },
+  {
+    "word": "distractors",
+    "pronounce": "/dɪˈstræktərz/",
+    "meaning": "các phương án bẫy trong trắc nghiệm",
+    "example": "Beware of distractor choices in the quiz.",
+    "type": "Noun"
+  },
+  {
+    "word": "apply",
+    "pronounce": "/əˈplaɪ/",
+    "meaning": "dán / đắp / áp dụng",
+    "example": "Apply pressure to stop the bleeding.",
+    "type": "Verb"
+  },
+  {
+    "word": "woman",
+    "pronounce": "/ˈwʊmən/",
+    "meaning": "người phụ nữ",
+    "example": "The school nurse is a kind woman.",
+    "type": "Noun"
+  },
+  {
+    "word": "mission",
+    "pronounce": "/ˈmɪʃn/",
+    "meaning": "nhiệm vụ học tập",
+    "example": "Complete Mission 1 by retelling the story.",
+    "type": "Noun"
+  },
+  {
+    "word": "should",
+    "pronounce": "/ʃʊd/",
+    "meaning": "nếu / nên",
+    "example": "Students should walk carefully in hallways.",
+    "type": "Verb"
+  },
+  {
+    "word": "capital",
+    "pronounce": "/ˈkæpɪtl/",
+    "meaning": "chữ in hoa",
+    "example": "Start every sentence with a capital letter.",
+    "type": "Noun"
+  },
+  {
+    "word": "prompt",
+    "pronounce": "/prɑːmpt/",
+    "meaning": "lời gợi ý / đề bài",
+    "example": "Read the story prompt carefully.",
+    "type": "Noun"
+  },
+  {
+    "word": "coldpack",
+    "pronounce": "/koʊld pæk/",
+    "meaning": "túi chườm lạnh",
+    "example": "Place a coldpack on the swollen knee.",
+    "type": "Noun"
+  },
+  {
+    "word": "passage",
+    "pronounce": "/ˈpæsɪdʒ/",
+    "meaning": "đoạn văn đọc hiểu",
+    "example": "Read the passage and answer questions.",
+    "type": "Noun"
+  },
+  {
+    "word": "slid",
+    "pronounce": "/slɪd/",
+    "meaning": "đã trượt (quá khứ của slide)",
+    "example": "Tom slid across the smooth tile floor.",
+    "type": "Verb"
+  },
+  {
+    "word": "accidentally",
+    "pronounce": "/ˌæksɪˈdentəli/",
+    "meaning": "tình cờ / vô ý",
+    "example": "He accidentally knocked over the water bottle.",
+    "type": "Adverb"
+  },
+  {
+    "word": "bind",
+    "pronounce": "/baɪnd/",
+    "meaning": "băng bó / buộc lại",
+    "example": "Use gauze to bind the small cut.",
+    "type": "Verb"
+  },
+  {
+    "word": "wound",
+    "pronounce": "/wuːnd/",
+    "meaning": "vết thương",
+    "example": "Clean the cut wound before applying a bandage.",
+    "type": "Noun"
+  },
+  {
+    "word": "unpleasant",
+    "pronounce": "/ʌnˈpleznt/",
+    "meaning": "khó chịu / không hay",
+    "example": "Falling on a wet floor is an unpleasant experience.",
+    "type": "Adjective"
+  },
+  {
+    "word": "decision",
+    "pronounce": "/dɪˈsɪʒn/",
+    "meaning": "quyết định",
+    "example": "Calling the nurse was a wise decision.",
+    "type": "Noun"
+  },
+  {
+    "word": "unfortunate",
+    "pronounce": "/ʌnˈfɔːrtʃənət/",
+    "meaning": "không may / đáng tiếc",
+    "example": "It was an unfortunate slip on wet tiles.",
+    "type": "Adjective"
+  },
+  {
+    "word": "unexpectedly",
+    "pronounce": "/ˌʌnɪkˈspektɪdli/",
+    "meaning": "bất ngờ / không báo trước",
+    "example": "The boy ran unexpectedly around the corner.",
+    "type": "Adverb"
+  },
+  {
+    "word": "repair",
+    "pronounce": "/rɪˈper/",
+    "meaning": "sửa chữa / khắc phục",
+    "example": "The janitor came to repair the leaking pipe.",
+    "type": "Verb"
+  },
+  {
+    "word": "mend",
+    "pronounce": "/mend/",
+    "meaning": "khâu vá / sửa chữa",
+    "example": "Rest will help your knee mend quickly.",
+    "type": "Verb"
+  },
+  {
+    "word": "damaged",
+    "pronounce": "/ˈdæmɪdʒd/",
+    "meaning": "bị hư hỏng / thương hại",
+    "example": "Ensure your leg is not damaged.",
+    "type": "Adjective"
+  },
+  {
+    "word": "regret",
+    "pronounce": "/rɪˈɡret/",
+    "meaning": "hối hận / nuối tiếc",
+    "example": "Tom said he felt regret for running.",
+    "type": "Verb"
+  },
+  {
+    "word": "serious",
+    "pronounce": "/ˈsɪriəs/",
+    "meaning": "nghiêm trọng",
+    "example": "Fortunately, the injury was not serious.",
+    "type": "Adjective"
+  },
+  {
+    "word": "avoid",
+    "pronounce": "/əˈvɔɪd/",
+    "meaning": "tránh né / phòng tránh",
+    "example": "Walk carefully to avoid falling.",
+    "type": "Verb"
+  },
+  {
+    "word": "awkwardly",
+    "pronounce": "/ˈɔːkwərdli/",
+    "meaning": "vụng về / lúng túng",
+    "example": "He landed awkwardly on his left knee.",
+    "type": "Adverb"
+  },
+  {
+    "word": "grace",
+    "pronounce": "/ɡreɪs/",
+    "meaning": "sự duyên dáng / khéo léo",
+    "example": "Dancers move with elegance and grace.",
+    "type": "Noun"
+  },
+  {
+    "word": "upper",
+    "pronounce": "/ˈʌpər/",
+    "meaning": "phía trên / phần trên",
+    "example": "The upper part of his leg had a slight mark.",
+    "type": "Adjective"
+  },
+  {
+    "word": "limb",
+    "pronounce": "/lɪm/",
+    "meaning": "chi / tay chân",
+    "example": "He stretched his upper limb to test movement.",
+    "type": "Noun"
+  },
+  {
+    "word": "joint",
+    "pronounce": "/dʒɔɪnt/",
+    "meaning": "khớp xương",
+    "example": "His knee joint felt sore after the fall.",
+    "type": "Noun"
+  },
+  {
+    "word": "thigh",
+    "pronounce": "/θaɪ/",
+    "meaning": "đùi",
+    "example": "He hurt his lower thigh when he hit the floor.",
+    "type": "Noun"
+  },
+  {
+    "word": "lower",
+    "pronounce": "/ˈloʊər/",
+    "meaning": "phía dưới",
+    "example": "Be careful with your lower leg joints.",
+    "type": "Adjective"
+  },
+  {
+    "word": "limbs",
+    "pronounce": "/lɪmz/",
+    "meaning": "các chi / tay chân",
+    "example": "Protect your limbs during sports.",
+    "type": "Noun"
+  },
+  {
+    "word": "containing",
+    "pronounce": "/kənˈteɪnɪŋ/",
+    "meaning": "chứa đựng",
+    "example": "A first aid box containing bandages and cold packs.",
+    "type": "Verb"
+  },
+  {
+    "word": "gel",
+    "pronounce": "/dʒel/",
+    "meaning": "gel / chất keo y tế",
+    "example": "Apply cooling gel on the scraped skin.",
+    "type": "Noun"
+  },
+  {
+    "word": "chilled",
+    "pronounce": "/tʃɪld/",
+    "meaning": "được làm lạnh",
+    "example": "Use a chilled ice pack to reduce pain.",
+    "type": "Adjective"
+  },
+  {
+    "word": "reduce",
+    "pronounce": "/rɪˈduːs/",
+    "meaning": "giảm bớt / hạ nhẹ",
+    "example": "A cold pack helps reduce swelling.",
+    "type": "Verb"
+  },
+  {
+    "word": "injury",
+    "pronounce": "/ˈɪndʒəri/",
+    "meaning": "chấn thương / vết thương",
+    "example": "Prevent injury by obeying corridor rules.",
+    "type": "Noun"
+  },
+  {
+    "word": "reason",
+    "pronounce": "/ˈriːzn/",
+    "meaning": "lý do / nguyên do",
+    "example": "What was the reason for the accident?",
+    "type": "Noun"
+  },
+  {
+    "word": "period",
+    "pronounce": "/ˈpɪriəd/",
+    "meaning": "khoảng thời gian / giờ học",
+    "example": "The accident happened during recess period.",
+    "type": "Noun"
+  },
+  {
+    "word": "experience",
+    "pronounce": "/ɪkˈspɪriəns/",
+    "meaning": "trải nghiệm / bài học",
+    "example": "It was a valuable learning experience.",
+    "type": "Noun"
+  },
+  {
+    "word": "extremely",
+    "pronounce": "/ɪkˈstriːmli/",
+    "meaning": "cực kỳ / rất",
+    "example": "The corridor floor was extremely slippery.",
+    "type": "Adverb"
+  },
+  {
+    "word": "distressing",
+    "pronounce": "/dɪˈstresɪŋ/",
+    "meaning": "đau đớn / làm lo âu",
+    "example": "Slipping hard can be a distressing moment.",
+    "type": "Adjective"
+  },
+  {
+    "word": "tile",
+    "pronounce": "/taɪl/",
+    "meaning": "gạch lát sàn",
+    "example": "A loose tile can cause someone to trip.",
+    "type": "Noun"
+  },
+  {
+    "word": "alerting",
+    "pronounce": "/əˈlɜːrtɪŋ/",
+    "meaning": "cảnh báo / báo động",
+    "example": "A sign alerting students to wet floors.",
+    "type": "Verb"
+  },
+  {
+    "word": "wrapped",
+    "pronounce": "/ræpt/",
+    "meaning": "đã được quấn / băng bó",
+    "example": "The nurse wrapped his knee with clean gauze.",
+    "type": "Verb"
+  },
+  {
+    "word": "principal",
+    "pronounce": "/ˈprɪnsəpl/",
+    "meaning": "hiệu trưởng nhà trường",
+    "example": "The principal praised Jake for his quick action.",
+    "type": "Noun"
+  },
+  {
+    "word": "mopped",
+    "pronounce": "/mɑːpt/",
+    "meaning": "đã được lau chùi / lau dọn",
+    "example": "The janitor mopped the hallway floor.",
+    "type": "Verb"
+  },
+  {
+    "word": "signs",
+    "pronounce": "/saɪnz/",
+    "meaning": "các biển báo",
+    "example": "Always obey warning signs.",
+    "type": "Noun"
+  },
+  {
+    "word": "recess",
+    "pronounce": "/ˈriːses/",
+    "meaning": "giờ ra chơi / giờ giải lao",
+    "example": "Students ran into the hallway during recess.",
+    "type": "Noun"
+  },
+  {
+    "word": "hurting",
+    "pronounce": "/ˈhɜːrtɪŋ/",
+    "meaning": "đang làm đau / gây đau",
+    "example": "His knee was hurting after the fall.",
+    "type": "Verb"
+  },
+  {
+    "word": "hurts",
+    "pronounce": "/hɜːrts/",
+    "meaning": "làm đau / đau đớn",
+    "example": "My knee hurts when I walk.",
+    "type": "Verb"
+  },
+  {
+    "word": "packs",
+    "pronounce": "/pæks/",
+    "meaning": "các túi (cold packs)",
+    "example": "Keep cold packs in the first aid box.",
+    "type": "Noun"
+  },
+  {
+    "word": "prevent",
+    "pronounce": "/rɪˈvent/",
+    "meaning": "phòng ngừa / ngăn chặn",
+    "example": "Follow rules to prevent accidents.",
+    "type": "Verb"
+  },
+  {
+    "word": "responsibility",
+    "pronounce": "/rɪˌspɑːnsəˈbɪləti/",
+    "meaning": "trách nhiệm",
+    "example": "Safety is everyone's responsibility.",
+    "type": "Noun"
+  },
+  {
+    "word": "received",
+    "pronounce": "/rɪˈsiːvd/",
+    "meaning": "đã nhận được",
+    "example": "Tom received a clean bandage from the nurse.",
+    "type": "Verb"
+  },
+  {
+    "word": "knew",
+    "pronounce": "/nuː/",
+    "meaning": "đã biết (quá khứ của know)",
+    "example": "Everyone knew Jake was a helpful boy.",
+    "type": "Verb"
+  },
+  {
+    "word": "dropped",
+    "pronounce": "/drɑːpt/",
+    "meaning": "đã làm rơi / làm ngã",
+    "example": "He dropped his notebook when he slipped.",
+    "type": "Verb"
+  },
+  {
+    "word": "slightly",
+    "pronounce": "/ˈslaɪtli/",
+    "meaning": "một chút / hơi nhẹ",
+    "example": "He scraped his leg slightly.",
+    "type": "Adverb"
+  },
+  {
+    "word": "stretched",
+    "pronounce": "/stretʃt/",
+    "meaning": "đã duỗi / kéo giãn",
+    "example": "Tom stretched his leg to check for pain.",
+    "type": "Verb"
+  },
+  {
+    "word": "wasn",
+    "pronounce": "/ˈwɑːznt/",
+    "meaning": "đã không (was not)",
+    "example": "Luckily his leg wasn't broken.",
+    "type": "Verb"
+  },
+  {
+    "word": "helmet",
+    "pronounce": "/ˈhelmɪt/",
+    "meaning": "mũ bảo hiểm",
+    "example": "Wear a helmet when riding a bicycle.",
+    "type": "Noun"
+  },
+  {
+    "word": "fully",
+    "pronounce": "/ˈfʊli/",
+    "meaning": "hoàn toàn / đầy đủ",
+    "example": "He needed three days to fully recover.",
+    "type": "Adverb"
+  },
+  {
+    "word": "taught",
+    "pronounce": "/tɔːt/",
+    "meaning": "đã dạy (quá khứ của teach)",
+    "example": "The incident taught everyone a safety lesson.",
+    "type": "Verb"
+  },
+  {
+    "word": "valuable",
+    "pronounce": "/ˈvæljuəbl/",
+    "meaning": "quý giá / giá trị",
+    "example": "It was a valuable lesson for all students.",
+    "type": "Adjective"
+  },
+  {
+    "word": "thankfully",
+    "pronounce": "/ˈθæŋkfəli/",
+    "meaning": "may mắn thay / thật là tốt",
+    "example": "Thankfully, Tom was not seriously injured.",
+    "type": "Adverb"
+  },
+  {
+    "word": "eight",
+    "pronounce": "/eɪt/",
+    "meaning": "số 8 / 8 giờ",
+    "example": "Class starts at eight o'clock.",
+    "type": "Number"
+  },
+  {
+    "word": "publicly",
+    "pronounce": "/ˈpʌblɪkli/",
+    "meaning": "công khai / trước toàn trường",
+    "example": "Jake was publicly thanked during assembly.",
+    "type": "Adverb"
   }
 ]
