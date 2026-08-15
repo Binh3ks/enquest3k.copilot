@@ -104,11 +104,11 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
     gaps: [
       { id: 1, target: 'slipped', hint: 'bị trượt chân' },
       { id: 2, target: 'fell down', hint: 'ngã xuống' },
-      { id: 3, target: 'Without hesitation', hint: 'không chần chừ' },
+      { id: 3, target: 'Right away', hint: 'ngay lập tức' },
       { id: 4, target: 'called', hint: 'gọi y tế' },
       { id: 5, target: 'clean bandage', hint: 'băng cá nhân' }
     ],
-    word_bank: ['slipped', 'fell down', 'Without hesitation', 'called', 'clean bandage', 'careful', 'hurt']
+    word_bank: ['slipped', 'fell down', 'Right away', 'called', 'clean bandage', 'careful', 'hurt']
   };
 
   const checkQuestions = data?.check_mode_drills || [

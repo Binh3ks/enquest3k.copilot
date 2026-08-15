@@ -18,18 +18,18 @@ export const readingHubData = {
     gaps: [
       { id: 1, target: "slipped", hint: "trượt chân", hint_vi: "trượt chân" },
       { id: 2, target: "fell down", hint: "ngã xuống", hint_vi: "ngã xuống" },
-      { id: 3, target: "Without hesitation", hint: "không chần chừ", hint_vi: "không chần chừ" },
+      { id: 3, target: "Right away", hint: "ngay lập tức", hint_vi: "ngay lập tức" },
       { id: 4, target: "called", hint: "gọi", hint_vi: "gọi" },
       { id: 5, target: "clean bandage", hint: "băng cá nhân sạch", hint_vi: "băng cá nhân sạch" }
     ],
     hints: {
       1: "trượt chân",
       2: "ngã xuống",
-      3: "không chần chừ",
+      3: "ngay lập tức",
       4: "gọi",
       5: "băng cá nhân sạch"
     },
-    word_bank: ["slipped", "fell down", "Without hesitation", "called", "clean bandage"]
+    word_bank: ["slipped", "fell down", "Right away", "called", "clean bandage"]
   },
   story_scenes: read_explore.story_scenes,
   read_explore,

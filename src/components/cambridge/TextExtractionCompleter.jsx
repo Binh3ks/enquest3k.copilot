@@ -17,7 +17,7 @@ export function TextExtractionCompleter({ customData, onComplete }) {
       },
       {
         id: 2,
-        text: "The running classmate lost his balance and fell down heavily near the stairs. Without hesitation, Jake stopped immediately and ran to call the school nurse. The nurse arrived within two minutes carrying a clean bandage and a cold pack to treat the boy's swollen knee."
+        text: "The running classmate lost his balance and fell down heavily near the stairs. Right away, Jake stopped immediately and ran to call the school nurse. The nurse arrived within two minutes carrying a clean bandage and a cold pack to treat the boy's swollen knee."
       },
       {
         id: 3,
@@ -29,7 +29,7 @@ export function TextExtractionCompleter({ customData, onComplete }) {
   const summarySentences = customData?.summary_sentences || [
     { id: 1, text_before: "Jake was walking down the school corridor after his ", text_after: ".", target: "science class", paragraph_ref: 1 },
     { id: 2, text_before: "A classmate running fast lost his balance and slipped on the ", text_after: ".", target: "wet tiles", paragraph_ref: 1 },
-    { id: 3, text_before: "Without hesitation, Jake stopped and quickly called the ", text_after: ".", target: "school nurse", paragraph_ref: 2 },
+    { id: 3, text_before: "Right away, Jake stopped and quickly called the ", text_after: ".", target: "school nurse", paragraph_ref: 2 },
     { id: 4, text_before: "The nurse gently placed a clean ", text_after: " on the boy's knee.", target: "bandage", paragraph_ref: 2 },
     { id: 5, text_before: "A cold pack was used to reduce the swelling and ", text_after: ".", target: "knee pain", paragraph_ref: 2 },
     { id: 6, text_before: "The headmaster publicly praised Jake for remembering all ", text_after: ".", target: "safety rules", paragraph_ref: 3 },

@@ -115,9 +115,17 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const sentencesList = data?.shadowing_sentences || [
     { id: "sh_01", speaker: "Jake", text: "Jake was walking **carefully down the school corridor** after science class." },
     { id: "sh_02", speaker: "Jake", text: "Suddenly, a boy running fast **slipped on the wet floor**." },
-    { id: "sh_03", speaker: "Jake", text: "**Without hesitation**, Jake stopped immediately and **called the school nurse**." },
+    { id: "sh_03", speaker: "Jake", text: "**Right away**, Jake stopped immediately and **called the school nurse**." },
     { id: "sh_04", speaker: "Nurse", text: "The school nurse applied a **clean bandage** and a **cold pack** gently." },
     { id: "sh_05", speaker: "Headmaster", text: "Everyone **felt relieved**, and the headmaster **praised Jake** for following safety rules." }
+  ];
+
+  const talkshowTurns = data?.talkshow_turns || [
+    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Today we are discussing school safety. What happened while Jake was walking down the school corridor?" },
+    { turn_number: 2, nova_question: "Oh dear! How did Tom slip on the wet floor near the science lab?" },
+    { turn_number: 3, nova_question: "What responsible action did Jake take right away when he saw Tom fall down?" },
+    { turn_number: 4, nova_question: "How did the school nurse help Tom with the clean bandage and cold pack?" },
+    { turn_number: 5, nova_question: "What a great story! How do you help your classmates when they need help at school?" }
   ];
 
   const cueCardPrompts = data?.cue_card_prompts || [
@@ -220,17 +228,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       }
     }
   };
-
-
-
-
-  const talkshowTurns = data?.talkshow_turns || [
-    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! What happened while Jake was walking down the school corridor?" },
-    { turn_number: 2, nova_question: "Oh dear! How did the boy slip on the floor near the science room?" },
-    { turn_number: 3, nova_question: "What responsible action did Jake take when he saw his classmate fall down?" },
-    { turn_number: 4, nova_question: "How did the school nurse treat the boy's cut knee during first aid?" },
-    { turn_number: 5, nova_question: "What an important lesson! Why did the headmaster praise Jake at the end?" }
-  ];
 
   useEffect(() => {
     if (subMode === 'talkshow' && chatHistory.length === 0 && talkshowTurns[0]) {
