@@ -28,7 +28,7 @@ const week33Map = Object.fromEntries(
   ])
 );
 
-// Full combined dictionary lookup map for popup dictionary resolves
+// Full combined dictionary lookup map
 const dictMap = { ...baseDict, ...week33Map };
 
 // Robust dictionary entry resolver (handles stem variations, plurals, past tense)
@@ -48,16 +48,16 @@ export const lookupDict = (raw) => {
 };
 
 /**
- * Universal Dual-Layer Length-Descending Text & Chunk Parser
+ * Universal Text & Chunk Parser (100% Word Wrapping + Fallback Dictionary Engine)
  *
  * Layer 1 (Strict Master Whitelist for Multi-Word Chunks):
  * Multi-word phrases containing spaces MUST strictly exist in WEEK_33_MASTER_DICTIONARY!
  * Zero non-target phrases (like "our class", "walk down") will EVER be chunked!
  *
- * Layer 2 (Global Base Dictionary for Single Words):
- * Single words are looked up against dictMap (WEEK_33_MASTER_DICTIONARY + dictionary.json).
- * Target single words get tier 1 (highlighted indigo + dotted underline).
- * General English words get tier 3 (plain text style, fully clickable for popup dictionary).
+ * Layer 2 (Universal 100% Single Word Wrapping):
+ * ALL remaining English words (/^[a-zA-Z0-9'-]+$/) are 100% wrapped in <HoverWord>.
+ * Target W33 words get tier 1 (highlighted indigo + dotted underline).
+ * All general words get tier 3 (natural text style, 100% clickable for popover dictionary + TTS fallback).
  */
 export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
   if (!text) return null;
@@ -87,75 +87,41 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
 
     if (isMarkdownBold || isMatchedPhrase) {
       const phraseWord = segment.replace(/\*\*/g, '').trim();
-      const entry = lookupDict(phraseWord);
       parts.push(
         <HoverWord
-          key={key++}
+          key={`chunk-${key++}`}
           word={phraseWord}
           themeColor={themeColor}
           onSpeak={onSpeak}
-          entry={entry}
           tier={1}
         />
       );
     } else {
-      let currentWord = '';
-      let currentNonWord = '';
+      // Tokenize into words and punctuation
+      const tokens = segment.split(/([a-zA-Z0-9'-]+)/g);
 
-      for (let i = 0; i < segment.length; i++) {
-        const char = segment[i];
-        if (/[\w'-]/.test(char)) {
-          if (currentNonWord) {
-            parts.push(<span key={key++}>{currentNonWord}</span>);
-            currentNonWord = '';
-          }
-          currentWord += char;
-        } else {
-          if (currentWord) {
-            const entry = lookupDict(currentWord);
-            if (entry) {
-              const cleanW = currentWord.toLowerCase().trim();
-              const isTarget = Boolean(week33Map[cleanW]);
-              parts.push(
-                <HoverWord
-                  key={key++}
-                  word={currentWord}
-                  themeColor={themeColor}
-                  onSpeak={onSpeak}
-                  entry={entry}
-                  tier={isTarget ? 1 : 3}
-                />
-              );
-            } else {
-              parts.push(<span key={key++}>{currentWord}</span>);
-            }
-            currentWord = '';
-          }
-          currentNonWord += char;
-        }
-      }
-      if (currentWord) {
-        const entry = lookupDict(currentWord);
-        if (entry) {
-          const cleanW = currentWord.toLowerCase().trim();
-          const isTarget = Boolean(week33Map[cleanW]);
+      tokens.forEach((token) => {
+        if (!token) return;
+
+        // If English word (letters, numbers, hyphens) -> WRAP 100% IN HOVERWORD
+        if (/^[a-zA-Z0-9'-]+$/.test(token)) {
+          const cleanW = token.toLowerCase().trim();
+          const isTarget = Boolean(week33Map[cleanW] || WEEK_33_MASTER_DICTIONARY[cleanW]);
+
           parts.push(
             <HoverWord
-              key={key++}
-              word={currentWord}
+              key={`word-${key++}`}
+              word={token}
               themeColor={themeColor}
               onSpeak={onSpeak}
-              entry={entry}
               tier={isTarget ? 1 : 3}
             />
           );
         } else {
-          parts.push(<span key={key++}>{currentWord}</span>);
+          // Plain text only for whitespace and punctuation (.,!?)
+          parts.push(<span key={`space-${key++}`}>{token}</span>);
         }
-      }
-      if (currentNonWord) {
-        parts.push(<span key={key++}>{currentNonWord}</span>);
-      }
+      });
     }
   }
 
@@ -163,13 +129,41 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
 }
 
 /**
- * HoverWord — Clickable Word/Phrase with Dual-Layer Interactive Dictionary Popover
+ * HoverWord — Clickable Word/Phrase with Universal Dictionary & TTS Fallback Entry
  *
  * Tier 1 (Bold Target): Target collocations & core words (W33) — bold indigo + dotted underline
- * Tier 3 (General Word): Words from dictionary.json — normal text, clickable for popup dictionary
+ * Tier 3 (General Word): All general words — natural text style, 100% clickable for popover dictionary
  */
 const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, children }) => {
-  const resolvedEntry = useMemo(() => entry || lookupDict(word), [entry, word]);
+  const cleanKey = (word || '').toLowerCase().trim();
+
+  // Automatic Fallback Entry Generator: Guarantees 100% of all words are clickable & playable!
+  const resolvedEntry = useMemo(() => {
+    if (entry) return entry;
+
+    const dictItem = week33Map[cleanKey] || baseDict[cleanKey] || lookupDict(word);
+    if (dictItem) {
+      return {
+        word,
+        pronounce: dictItem.ipa || dictItem.pronounce || dictItem.pronunciation,
+        meaning: dictItem.meaning || dictItem.definition_vi || dictItem.definition,
+        example: dictItem.example,
+        type: dictItem.type || 'Word',
+        audioText: dictItem.audioText || dictItem.word || cleanKey
+      };
+    }
+
+    // FALLBACK ENTRY: Always exists so no word is ever dead/unclickable!
+    return {
+      word,
+      pronounce: `/${cleanKey}/`,
+      meaning: "Chạm để nghe phát âm, hoặc tra cứu thêm trên từ điển ngoài.",
+      example: `"${word}" is used in school context.`,
+      audioText: cleanKey,
+      type: "Word"
+    };
+  }, [entry, word, cleanKey]);
+
   const [mode, setMode] = useState('idle'); // idle | open
   const isPhrase = word.trim().includes(' ');
   const [popupPos, setPopupPos] = useState({ top: 0, left: 0 });
