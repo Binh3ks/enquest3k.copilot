@@ -4,11 +4,12 @@ import { Volume2, BookOpen, Book, Mic, CheckCircle, XCircle, AlertTriangle } fro
 import dictionaryData from '../../data/dictionary.json';
 import { WEEK_33_MASTER_DICTIONARY } from '../../data/weeks/week_33/vocab_dictionary_master';
 
-// Strict dictionary lookup map built from WEEK_33_MASTER_DICTIONARY + fallback dictionaryData
+// Base general English dictionary map (from dictionary.json)
 const baseDict = Object.fromEntries(
   (Array.isArray(dictionaryData) ? dictionaryData : []).map(e => [(e.word || '').toLowerCase(), e])
 );
 
+// Target Week 33 dictionary map (from WEEK_33_MASTER_DICTIONARY)
 const week33Map = Object.fromEntries(
   Object.entries(WEEK_33_MASTER_DICTIONARY).map(([word, item]) => [
     word.toLowerCase(),
@@ -23,27 +24,38 @@ const week33Map = Object.fromEntries(
   ])
 );
 
+// Full combined dictionary lookup map for popup dictionary resolves
 const dictMap = { ...baseDict, ...week33Map };
 
-// Strict whitelist set for text parser (ONLY items from WEEK_33_MASTER_DICTIONARY)
-const whitelistMap = week33Map;
-
 /**
- * Universal Length-Descending Text & Chunk Parser (Strict Whitelist Enforcement)
+ * Universal Length-Descending Text & Chunk Parser (Dual-Layer Parsing Logic)
+ *
+ * Layer 1 (Strict Whitelist for Multi-Word Chunks):
+ * Multi-word phrases (containing spaces) MUST strictly exist in WEEK_33_MASTER_DICTIONARY!
+ * Zero non-target phrases (like "our class", "walk down") will EVER be chunked!
+ *
+ * Layer 2 (Global Base Dictionary for Single Words):
+ * Single words are parsed and matched against dictMap (WEEK_33_MASTER_DICTIONARY + dictionary.json).
+ * Target single words get tier 1 (highlighted indigo + dotted underline).
+ * General English words get tier 3 (plain text style, clickable for full dictionary popup).
  */
 export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
   if (!text) return null;
 
-  // Step 1: Filter multi-word phrases from whitelist and SORT BY LENGTH DESCENDING
-  const sortedPhrases = Object.keys(whitelistMap)
+  // Layer 1: Strict Whitelist for Multi-Word Chunks (phrases containing spaces)
+  const sortedPhrases = Object.keys(week33Map)
     .filter((k) => k.includes(' '))
     .sort((a, b) => b.length - a.length);
 
-  const whitelistSingleWords = new Set(
-    Object.keys(whitelistMap).filter((k) => !k.includes(' '))
+  const week33SingleWords = new Set(
+    Object.keys(week33Map).filter((k) => !k.includes(' '))
   );
 
-  // Step 2: Build master regex for markdown bold **...** OR multi-word phrases
+  const baseSingleWords = new Set(
+    Object.keys(baseDict).filter((k) => !k.includes(' '))
+  );
+
+  // Step 2: Build master regex for markdown bold **...** OR whitelisted multi-word phrases ONLY
   const escapedPhrases = sortedPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
   const masterRegex = escapedPhrases.length > 0
     ? new RegExp(`(\\*{2}.*?\\*{2}|${escapedPhrases.join('|')})`, 'gi')
@@ -87,11 +99,15 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
         } else {
           if (currentWord) {
             const cleanW = currentWord.toLowerCase();
-            const isWhitelisted = whitelistSingleWords.has(cleanW) || 
-                                  (cleanW.endsWith('s') && whitelistSingleWords.has(cleanW.slice(0, -1))) ||
-                                  (cleanW.endsWith('ed') && whitelistSingleWords.has(cleanW.slice(0, -2)));
+            const isWeek33Single = week33SingleWords.has(cleanW) || 
+                                  (cleanW.endsWith('s') && week33SingleWords.has(cleanW.slice(0, -1))) ||
+                                  (cleanW.endsWith('ed') && week33SingleWords.has(cleanW.slice(0, -2)));
 
-            if (isWhitelisted) {
+            const isBaseDictSingle = baseSingleWords.has(cleanW) ||
+                                     (cleanW.endsWith('s') && baseSingleWords.has(cleanW.slice(0, -1))) ||
+                                     (cleanW.endsWith('ed') && baseSingleWords.has(cleanW.slice(0, -2)));
+
+            if (isWeek33Single) {
               parts.push(
                 <HoverWord
                   key={key++}
@@ -99,6 +115,16 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
                   themeColor={themeColor}
                   onSpeak={onSpeak}
                   tier={1}
+                />
+              );
+            } else if (isBaseDictSingle) {
+              parts.push(
+                <HoverWord
+                  key={key++}
+                  word={currentWord}
+                  themeColor={themeColor}
+                  onSpeak={onSpeak}
+                  tier={3}
                 />
               );
             } else {
@@ -111,11 +137,15 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
       }
       if (currentWord) {
         const cleanW = currentWord.toLowerCase();
-        const isWhitelisted = whitelistSingleWords.has(cleanW) || 
-                              (cleanW.endsWith('s') && whitelistSingleWords.has(cleanW.slice(0, -1))) ||
-                              (cleanW.endsWith('ed') && whitelistSingleWords.has(cleanW.slice(0, -2)));
+        const isWeek33Single = week33SingleWords.has(cleanW) || 
+                              (cleanW.endsWith('s') && week33SingleWords.has(cleanW.slice(0, -1))) ||
+                              (cleanW.endsWith('ed') && week33SingleWords.has(cleanW.slice(0, -2)));
 
-        if (isWhitelisted) {
+        const isBaseDictSingle = baseSingleWords.has(cleanW) ||
+                                 (cleanW.endsWith('s') && baseSingleWords.has(cleanW.slice(0, -1))) ||
+                                 (cleanW.endsWith('ed') && baseSingleWords.has(cleanW.slice(0, -2)));
+
+        if (isWeek33Single) {
           parts.push(
             <HoverWord
               key={key++}
@@ -123,6 +153,16 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
               themeColor={themeColor}
               onSpeak={onSpeak}
               tier={1}
+            />
+          );
+        } else if (isBaseDictSingle) {
+          parts.push(
+            <HoverWord
+              key={key++}
+              word={currentWord}
+              themeColor={themeColor}
+              onSpeak={onSpeak}
+              tier={3}
             />
           );
         } else {
