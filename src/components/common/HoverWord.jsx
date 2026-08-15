@@ -13,29 +13,33 @@ const baseDict = Object.fromEntries(
   ])
 );
 
-// Target Week 33 dictionary map (from WEEK_33_MASTER_DICTIONARY)
-const week33Map = Object.fromEntries(
-  Object.entries(WEEK_33_MASTER_DICTIONARY).map(([word, item]) => [
-    word.toLowerCase().trim(),
-    {
-      word,
-      pronounce: item.ipa,
-      meaning: item.meaning,
-      example: item.example,
-      type: item.type,
-      audioText: item.audioText || word
-    }
-  ])
-);
+// 1. Build Reverse Lookup Map for Phrases & Words (Base Keys + Aliases)
+const phraseLookupMap = {};
+
+Object.keys(WEEK_33_MASTER_DICTIONARY).forEach((baseKey) => {
+  const entry = WEEK_33_MASTER_DICTIONARY[baseKey];
+  phraseLookupMap[baseKey.toLowerCase().trim()] = baseKey;
+
+  if (entry.aliases && Array.isArray(entry.aliases)) {
+    entry.aliases.forEach((alias) => {
+      phraseLookupMap[alias.toLowerCase().trim()] = baseKey;
+    });
+  }
+});
 
 // Full combined dictionary lookup map
-const dictMap = { ...baseDict, ...week33Map };
+const dictMap = { ...baseDict, ...phraseLookupMap };
 
 // Robust dictionary entry resolver (handles stem variations, plurals, past tense)
 export const lookupDict = (raw) => {
   if (!raw) return null;
   const clean = raw.replace(/^[^\w']+|[^\w']+$ /g, '').toLowerCase().trim();
   if (!clean) return null;
+
+  const matchedBaseKey = phraseLookupMap[clean];
+  if (matchedBaseKey && WEEK_33_MASTER_DICTIONARY[matchedBaseKey]) {
+    return WEEK_33_MASTER_DICTIONARY[matchedBaseKey];
+  }
 
   if (dictMap[clean]) return dictMap[clean];
   if (clean.endsWith('s') && dictMap[clean.slice(0, -1)]) return dictMap[clean.slice(0, -1)];
@@ -48,27 +52,27 @@ export const lookupDict = (raw) => {
 };
 
 /**
- * Universal Text & Chunk Parser (100% Word Wrapping + Fallback Dictionary Engine)
+ * Universal Text & Chunk Parser (Morphological Alias Mapping Engine)
  *
- * Layer 1 (Strict Master Whitelist for Multi-Word Chunks):
- * Multi-word phrases containing spaces MUST strictly exist in WEEK_33_MASTER_DICTIONARY!
- * Zero non-target phrases (like "our class", "walk down") will EVER be chunked!
+ * Layer 1 (Strict Master Whitelist + Morphological Aliases for Multi-Word Chunks):
+ * Multi-word phrases containing spaces are matched against Base Keys + Aliases
+ * (e.g. "walking carefully" -> maps to base key "walk carefully").
  *
  * Layer 2 (Universal 100% Single Word Wrapping):
  * ALL remaining English words (/^[a-zA-Z0-9'-]+$/) are 100% wrapped in <HoverWord>.
- * Target W33 words get tier 1 (highlighted indigo + dotted underline).
+ * Target W33 words/aliases get tier 1 (highlighted indigo + dotted underline).
  * All general words get tier 3 (natural text style, 100% clickable for popover dictionary + TTS fallback).
  */
 export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
   if (!text) return null;
 
-  // Layer 1: Strict Whitelist for Multi-Word Chunks (phrases containing spaces)
-  const sortedPhrases = Object.keys(week33Map)
+  // 2. Filter all multi-word phrases (Base + Aliases containing spaces) sorted by length descending
+  const allPhrases = Object.keys(phraseLookupMap)
     .filter((k) => k.includes(' '))
     .sort((a, b) => b.length - a.length);
 
-  // Step 2: Build master regex for markdown bold **...** OR whitelisted multi-word phrases ONLY
-  const escapedPhrases = sortedPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  // Step 2: Build master regex for markdown bold **...** OR whitelisted multi-word phrases/aliases ONLY
+  const escapedPhrases = allPhrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
   const masterRegex = escapedPhrases.length > 0
     ? new RegExp(`(\\*{2}.*?\\*{2}|${escapedPhrases.join('|')})`, 'gi')
     : /(\*{2}.*?\*{2})/gi;
@@ -83,16 +87,20 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
 
     const cleanSegment = segment.replace(/\*\*/g, '').trim().toLowerCase();
     const isMarkdownBold = segment.startsWith('**') && segment.endsWith('**');
-    const isMatchedPhrase = sortedPhrases.includes(cleanSegment);
+    const isMatchedPhrase = allPhrases.includes(cleanSegment);
 
     if (isMarkdownBold || isMatchedPhrase) {
       const phraseWord = segment.replace(/\*\*/g, '').trim();
+      const matchedBaseKey = phraseLookupMap[phraseWord.toLowerCase()] || phraseWord;
+      const entry = WEEK_33_MASTER_DICTIONARY[matchedBaseKey] || lookupDict(phraseWord);
+
       parts.push(
         <HoverWord
           key={`chunk-${key++}`}
           word={phraseWord}
           themeColor={themeColor}
           onSpeak={onSpeak}
+          entry={entry}
           tier={1}
         />
       );
@@ -106,7 +114,9 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
         // If English word (letters, numbers, hyphens) -> WRAP 100% IN HOVERWORD
         if (/^[a-zA-Z0-9'-]+$/.test(token)) {
           const cleanW = token.toLowerCase().trim();
-          const isTarget = Boolean(week33Map[cleanW] || WEEK_33_MASTER_DICTIONARY[cleanW]);
+          const matchedBaseKey = phraseLookupMap[cleanW];
+          const isTarget = Boolean(matchedBaseKey);
+          const entry = isTarget ? WEEK_33_MASTER_DICTIONARY[matchedBaseKey] : lookupDict(token);
 
           parts.push(
             <HoverWord
@@ -114,6 +124,7 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
               word={token}
               themeColor={themeColor}
               onSpeak={onSpeak}
+              entry={entry}
               tier={isTarget ? 1 : 3}
             />
           );
@@ -129,22 +140,23 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null) {
 }
 
 /**
- * HoverWord — Clickable Word/Phrase with Universal Dictionary & TTS Fallback Entry
- *
- * Tier 1 (Bold Target): Target collocations & core words (W33) — bold indigo + dotted underline
- * Tier 3 (General Word): All general words — natural text style, 100% clickable for popover dictionary
+ * HoverWord — Clickable Word/Phrase with Universal Dictionary & Morphological Alias Resolver
  */
 const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, children }) => {
   const cleanKey = (word || '').toLowerCase().trim();
 
-  // Automatic Fallback Entry Generator: Guarantees 100% of all words are clickable & playable!
+  // Automatic Alias & Fallback Entry Generator
   const resolvedEntry = useMemo(() => {
     if (entry) return entry;
 
-    const dictItem = week33Map[cleanKey] || baseDict[cleanKey] || lookupDict(word);
+    const matchedBaseKey = phraseLookupMap[cleanKey];
+    const dictItem = (matchedBaseKey && WEEK_33_MASTER_DICTIONARY[matchedBaseKey]) ||
+                      baseDict[cleanKey] ||
+                      lookupDict(word);
+
     if (dictItem) {
       return {
-        word,
+        word: dictItem.word || word,
         pronounce: dictItem.ipa || dictItem.pronounce || dictItem.pronunciation,
         meaning: dictItem.meaning || dictItem.definition_vi || dictItem.definition,
         example: dictItem.example,
@@ -239,6 +251,8 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
 
   const className = isTarget ? targetClass : generalWordClass;
 
+  const displayTitle = resolvedEntry?.word || word;
+
   return (
     <>
       {/* Popover Portal */}
@@ -263,7 +277,7 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
               {/* Header: word + type + audio */}
               <div className="flex items-center justify-between mb-1.5 gap-2">
                 <div className="flex items-center gap-1.5 min-w-0">
-                  <span className="text-base font-black text-indigo-700 truncate">{word}</span>
+                  <span className="text-base font-black text-indigo-700 truncate">{displayTitle}</span>
                   {resolvedEntry?.type && (
                     <span className="text-[9px] font-black uppercase px-1.5 py-0.5 bg-indigo-100 text-indigo-800 rounded">
                       {resolvedEntry.type}
