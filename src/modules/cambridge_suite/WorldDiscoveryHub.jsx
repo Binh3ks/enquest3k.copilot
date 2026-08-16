@@ -6,7 +6,7 @@ import ChoiceGrid from '../../components/common/ChoiceGrid';
 import { useUserStore } from '../../stores/useUserStore';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
-import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle, MessageSquare, Type } from 'lucide-react';
+import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle, MessageSquare, Type, Trophy } from 'lucide-react';
 import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGrid';
 import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter';
 import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
