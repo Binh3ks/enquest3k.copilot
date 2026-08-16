@@ -85,6 +85,26 @@ export const listeningHubData = {
         { label: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false },
         { label: 'C', text: 'Gave him a new science notebook', image_url: '/images/week33/card_science_notebook.jpg', isCorrect: false }
       ]
+    },
+    {
+      id: 'lp4_4',
+      question: '4. How did everyone feel after Tom was safely helped?',
+      audio_script: "Girl: Was Tom's knee severely broken?\nBoy: No, the nurse fixed his knee gently, and everyone felt relieved and safe!",
+      options: [
+        { label: 'A', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
+        { label: 'B', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+        { label: 'C', text: 'Felt scared and ran away', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
+      ]
+    },
+    {
+      id: 'lp4_5',
+      question: '5. What did the headmaster do during Monday assembly?',
+      audio_script: "Man: Did the headmaster praise Jake?\nWoman: Yes, the headmaster praised Jake publicly during Monday assembly for taking responsible action!",
+      options: [
+        { label: 'A', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true },
+        { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
+        { label: 'C', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: false }
+      ]
     }
   ],
 

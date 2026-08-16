@@ -421,12 +421,17 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
 
       {/* Check Mode Exam Condition Banner */}
       {activeMode === 'check' && (
-        <div className="p-4 mb-4 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between text-purple-900 shadow-sm animate-in fade-in">
-          <div className="flex items-center gap-2">
-            <Trophy className="w-5 h-5 text-purple-600 shrink-0" />
-            <span className="text-xs font-black">🎯 CHECK MODE (CAMBRIDGE MOCK EXAM): Sample scripts and hints are hidden. Answer directly under Cambridge Flyers Speaking conditions!</span>
+        <div className="p-5 mb-6 bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 border-2 border-purple-400 rounded-3xl text-white shadow-xl animate-in fade-in space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl animate-bounce">🤖</span>
+              <h3 className="text-base font-black text-amber-300">🎯 EXAMINER NOVA SPEAKING MOCK ROOM</h3>
+            </div>
+            <span className="text-[10px] font-black uppercase px-3 py-1 bg-purple-500 text-white rounded-full tracking-wider shadow-sm">Real Exam (No Scripts)</span>
           </div>
-          <span className="text-[10px] font-black uppercase px-2.5 py-1 bg-purple-200 text-purple-900 rounded-lg shrink-0">Real Exam</span>
+          <p className="text-xs font-bold text-slate-200 leading-relaxed">
+            Examiner Mascot Nova will ask you questions directly via Audio. Answer directly into your microphone under Cambridge Flyers Examination conditions with zero text scripts or hints!
+          </p>
         </div>
       )}
 
@@ -656,7 +661,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 type="text"
                 value={userSpeechInput}
                 onChange={(e) => setUserSpeechInput(e.target.value)}
-                placeholder="Type or click Mic button to speak your answer..."
+                placeholder={activeMode === 'check' ? "🎧 Listen to Examiner Nova & Speak your answer into Mic..." : "Type or click Mic button to speak your answer..."}
                 onKeyDown={(e) => e.key === 'Enter' && handleSendTalkshowMessage(userSpeechInput)}
                 className="flex-1 p-4 bg-slate-50 text-slate-900 rounded-2xl border border-slate-300 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-inner"
               />

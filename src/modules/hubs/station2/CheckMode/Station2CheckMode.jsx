@@ -11,12 +11,12 @@ const FALLBACK_CHECK_QUESTIONS = [
     id: 'chk_w33_p4_01',
     content_id: 'chk_w33_p4_01',
     type: 'listening_p4_picture',
-    prompt: "Nova's Listening Challenge: Where was the boy when he slipped on the wet floor?",
+    prompt: "Where was the boy when he slipped on the wet floor?",
     text: 'Where was the boy when he slipped on the wet floor?',
     options: [
-      { label: 'A', text: 'A) In the school corridor near science room', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: true },
-      { label: 'B', text: 'B) Inside the science laboratory', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-      { label: 'C', text: 'C) In the school nurse office', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
+      { label: 'A', text: 'In the school corridor near science room', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: true },
+      { label: 'B', text: 'Inside the science laboratory', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'C', text: 'In the school nurse office', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
     ],
     answerIndex: 0
   },
@@ -24,38 +24,51 @@ const FALLBACK_CHECK_QUESTIONS = [
     id: 'chk_w33_p4_02',
     content_id: 'chk_w33_p4_02',
     type: 'listening_p4_picture',
-    prompt: "Nova's Listening Challenge: What medical aid item did the nurse bring first?",
+    prompt: "What medical aid item did the nurse bring first?",
     text: 'What medical aid item did the nurse bring first?',
     options: [
-      { label: 'A', text: 'A) A clean bandage and cold pack', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
-      { label: 'B', text: 'B) A pair of crutches', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: false },
-      { label: 'C', text: 'C) A glass of orange juice', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false }
+      { label: 'A', text: 'A clean bandage and cold pack', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
+      { label: 'B', text: 'A pair of crutches', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'C', text: 'A glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
-    id: 'chk_w33_01',
-    content_id: 'chk_w33_01',
-    dialogue_context: 'Jake: What happened while you were walking down the corridor?',
-    text: 'What does Tom say?',
-    prompt: 'What does Tom say?',
+    id: 'chk_w33_p4_03',
+    content_id: 'chk_w33_p4_03',
+    type: 'listening_p4_picture',
+    prompt: "What did Jake do immediately when Tom fell down?",
+    text: 'What did Jake do immediately when Tom fell down?',
     options: [
-      { label: 'A', text: "A boy running fast slipped on the wet floor.", isCorrect: true },
-      { label: 'B', text: 'Yes, I am walking home now.', isCorrect: false },
-      { label: 'C', text: "No, he didn't eat lunch.", isCorrect: false }
+      { label: 'A', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
+      { label: 'B', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'C', text: 'Kept walking down the hallway', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false }
     ],
     answerIndex: 0
   },
   {
-    id: 'chk_w33_02',
-    content_id: 'chk_w33_02',
-    dialogue_context: 'Teacher: What did Jake do when his classmate fell down?',
-    text: 'What does Mia say?',
-    prompt: 'What does Mia say?',
+    id: 'chk_w33_p4_04',
+    content_id: 'chk_w33_p4_04',
+    type: 'listening_p4_picture',
+    prompt: "How did everyone feel after Tom was safely helped?",
+    text: 'How did everyone feel after Tom was safely helped?',
     options: [
-      { label: 'A', text: 'He called the school nurse immediately for help.', isCorrect: true },
-      { label: 'B', text: 'While he was running outside.', isCorrect: false },
-      { label: 'C', text: 'Yes, he broke his backpack.', isCorrect: false }
+      { label: 'A', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
+      { label: 'B', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'C', text: 'Felt scared and ran away', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
+    ],
+    answerIndex: 0
+  },
+  {
+    id: 'chk_w33_p4_05',
+    content_id: 'chk_w33_p4_05',
+    type: 'listening_p4_picture',
+    prompt: "What did the headmaster do during Monday assembly?",
+    text: 'What did the headmaster do during Monday assembly?',
+    options: [
+      { label: 'A', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true },
+      { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
+      { label: 'C', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: false }
     ],
     answerIndex: 0
   }
@@ -65,7 +78,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
-  const initialQuestions = weekData?.stations?.listening_hub?.check_mode_drills || weekData?.check_mode_drills || FALLBACK_CHECK_QUESTIONS;
+  const initialQuestions = customQuestions || weekData?.listening_p4_questions || weekData?.stations?.listening_hub?.check_mode_drills || weekData?.check_mode_drills || FALLBACK_CHECK_QUESTIONS;
   const [questions] = useState(initialQuestions);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
