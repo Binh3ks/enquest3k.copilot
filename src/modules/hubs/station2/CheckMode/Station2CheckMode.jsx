@@ -61,7 +61,7 @@ const FALLBACK_CHECK_QUESTIONS = [
   }
 ];
 
-export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33 }) {
+export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33, customQuestions, isStealthMode = false }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
@@ -215,7 +215,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                 Listening Question Audio:
               </div>
               <div className="text-sm font-black text-white italic">
-                "{renderParsedText(currentQ.prompt || currentQ.text, 'amber', null, true)}"
+                {isStealthMode ? '"🎧 Audio Prompt Only — Listen carefully to select A, B, or C"' : `"${renderParsedText(currentQ.prompt || currentQ.text, 'amber', null, true)}"`}
               </div>
             </div>
           </div>
@@ -302,7 +302,9 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                   <img src={optImage} alt={opt.text} className="w-full h-full object-cover" />
                 </div>
 
-                <div className="text-xs font-bold text-slate-800 line-clamp-2">{renderParsedText(opt.text, 'indigo', null, true)}</div>
+                {!isStealthMode && (
+                  <div className="text-xs font-bold text-slate-800 line-clamp-2">{renderParsedText(opt.text, 'indigo', null, true)}</div>
+                )}
               </button>
             );
           }

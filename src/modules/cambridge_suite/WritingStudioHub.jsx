@@ -5,7 +5,7 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
 import { renderParsedText } from '../../components/common/HoverWord';
 import { NotepadNoteCompleter } from '../../components/common/NotepadNoteCompleter';
-import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle2, Layers, Film, ShoppingBag, Zap } from 'lucide-react';
+import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle2, Layers, Film, ShoppingBag, Zap, X } from 'lucide-react';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 

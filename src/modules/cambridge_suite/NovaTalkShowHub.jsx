@@ -479,6 +479,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       {subMode === 'find_diff' ? (
         <FindDifferencesInteractive
           customData={data?.find_differences}
+          isStealthMode={activeMode === 'check'}
           onComplete={async (score) => {
             await learnerProgressService.logAttempt({
               learnerId,

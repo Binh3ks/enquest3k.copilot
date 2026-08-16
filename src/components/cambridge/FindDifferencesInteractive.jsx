@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Mic, MicOff, Volume2, Eye } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
-export function FindDifferencesInteractive({ customData, onComplete }) {
+export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false }) {
   const [foundHotspots, setFoundHotspots] = useState([]); // [hotspotId]
   const [activeHotspot, setActiveHotspot] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
@@ -196,7 +196,7 @@ export function FindDifferencesInteractive({ customData, onComplete }) {
                 </button>
               </div>
               <p className="text-xs sm:text-sm font-bold text-slate-800 italic">
-                "{activeHotspot.prompt_en}"
+                {isStealthMode ? '"[Audio Sample Only — Speak your explanation into the mic]"' : `"${activeHotspot.prompt_en}"`}
               </p>
             </div>
           )}
