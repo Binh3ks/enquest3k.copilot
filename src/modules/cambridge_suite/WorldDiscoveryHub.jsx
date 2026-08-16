@@ -517,7 +517,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
             <span className="text-[10px] font-black uppercase px-2.5 py-1 bg-amber-200 text-amber-900 rounded-lg shrink-0">5-Min Check</span>
           </div>
 
-          <OpenClozeCompleter customData={data?.rw_part_6} />
+          <OpenClozeCompleter customData={data?.rw_part_6_check_mode || data?.rw_part_6} />
         </div>
       )}
     </div>

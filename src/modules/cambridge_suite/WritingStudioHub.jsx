@@ -283,6 +283,10 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
             </span>
           </div>
 
+          <div className="text-[11px] font-bold text-slate-600 bg-amber-50/80 px-3.5 py-2 rounded-xl border border-amber-200 flex items-center gap-2">
+            <span>💡</span> <span>Điểm luyện tập AI — Chưa phải kết quả thi Cambridge chính thức đâu con nhé!</span>
+          </div>
+
           <div className="grid grid-cols-3 gap-3 text-center text-xs font-bold">
             <div className="p-3 bg-white rounded-xl border border-slate-200">
               <div className="text-slate-400 text-[10px] uppercase font-black">Word Count</div>

@@ -64,6 +64,9 @@ export default defineConfig({
           if (id.includes('src/components/mascot') || id.includes('src/components/subscription')) {
             return 'mascot-shop-chunk';
           }
+          if (id.includes('src/components/teacher') || id.includes('src/components/parent')) {
+            return 'teacher-parent-tools';
+          }
           if (id.includes('src/pages/GameHub')) {
             return 'game-hub-chunk';
           }

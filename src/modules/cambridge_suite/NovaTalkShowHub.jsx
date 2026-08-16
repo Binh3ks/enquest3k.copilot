@@ -678,6 +678,9 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             <div className="p-6 bg-emerald-50 border border-emerald-300 rounded-2xl text-center space-y-2 animate-in fade-in">
               <h4 className="text-base font-black text-emerald-950">5-Turn Talk Show Exam Completed!</h4>
               <p className="text-xs font-bold text-emerald-700">All 5 turns answered successfully. Retelling score logged to progress service.</p>
+              <p className="text-[11px] font-bold text-amber-900 bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200 inline-block">
+                💡 Điểm luyện tập AI — Chưa phải kết quả thi Cambridge chính thức đâu con nhé!
+              </p>
               <button
                 onClick={() => { setIsTalkshowEnded(false); setCurrentTurnIdx(0); setChatHistory([]); }}
                 className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-md transition"
