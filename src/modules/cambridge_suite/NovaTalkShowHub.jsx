@@ -537,7 +537,13 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                       </span>
                     </div>
                     <p className="text-sm font-extrabold text-slate-900 leading-relaxed">
-                      {renderParsedText(turn.text, 'indigo')}
+                      {activeMode === 'check' ? (
+                        <span className="text-indigo-600 font-mono italic text-xs">
+                          🎧 [Cambridge Real Exam Mode — Audio Prompt Only (Script Hidden)]
+                        </span>
+                      ) : (
+                        renderParsedText(turn.text, 'indigo')
+                      )}
                     </p>
                     {turn.phonetic_guide && (
                       <p className="text-[11px] font-mono text-slate-400 font-medium">
@@ -569,7 +575,13 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
                 </button>
               </div>
               <p className="text-base font-extrabold text-indigo-950 leading-relaxed p-4 bg-white rounded-2xl border border-indigo-100 shadow-inner">
-                {renderParsedText(longParagraph.text, 'indigo')}
+                {activeMode === 'check' ? (
+                  <span className="text-indigo-600 font-mono italic text-xs block text-center py-4">
+                    🎧 [Cambridge Real Exam Mode — Audio Prompt Only (Full Story Script Hidden)]
+                  </span>
+                ) : (
+                  renderParsedText(longParagraph.text, 'indigo')
+                )}
               </p>
               <p className="text-xs font-mono text-indigo-700 italic">{longParagraph.phonetic_guide}</p>
             </div>
