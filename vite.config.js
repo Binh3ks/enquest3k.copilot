@@ -58,6 +58,12 @@ export default defineConfig({
           if (id.includes('src/modules/cambridge_suite') || id.includes('src/modules/hubs')) {
             return 'cambridge-hubs';
           }
+          if (id.includes('src/modules/ai_tutor')) {
+            return 'ai-tutor-chunk';
+          }
+          if (id.includes('src/components/mascot') || id.includes('src/components/subscription')) {
+            return 'mascot-shop-chunk';
+          }
           if (id.includes('src/pages/GameHub')) {
             return 'game-hub-chunk';
           }

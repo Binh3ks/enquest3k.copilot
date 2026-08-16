@@ -8,6 +8,7 @@ import { NotepadNoteCompleter } from '../../components/common/NotepadNoteComplet
 import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle2, Layers, Film, ShoppingBag, Zap, X } from 'lucide-react';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
+import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -66,41 +67,9 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
     setTimeout(() => {
       setIsAnalyzing(false);
 
-      const words = userScript.trim().split(/\s+/).filter(Boolean);
-      const cleanText = userScript.toLowerCase();
-
-      // 1. Word Count Check (20 pts max)
-      const isWordCountPass = words.length >= 20;
-      const wordScore = isWordCountPass ? 20 : Math.round((words.length / 20) * 20);
-
-      // 2. Connectors Check (30 pts max - Coherence & Cohesion)
-      const connectorsList = ['first', 'then', 'suddenly', 'because', 'so', 'finally', 'after', 'while', 'when'];
-      const foundConnectors = Array.from(new Set(connectorsList.filter(c => cleanText.includes(c))));
-      const connectorScore = Math.min(30, foundConnectors.length * 15);
-
-      // 3. Past Tense Verbs & Syntax Structure Check (30 pts max)
-      const pastVerbs = ['was', 'were', 'slipped', 'fell', 'hurt', 'called', 'stopped', 'arrived', 'brought', 'treated', 'helped', 'walked', 'ran', 'saw', 'dropped', 'promised'];
-      const foundPastVerbs = Array.from(new Set(pastVerbs.filter(v => cleanText.includes(v))));
-      const syntaxScore = Math.min(30, foundPastVerbs.length * 10);
-
-      // 4. Target Vocab Keywords Check (20 pts max)
-      const targetKeywords = ['slipped', 'corridor', 'nurse', 'bandage', 'knee', 'fell', 'help', 'pack', 'clean', 'stopped', 'walked', 'called', 'fast', 'wet', 'floor', 'aid', 'school'];
-      const foundKeywords = Array.from(new Set(targetKeywords.filter(k => cleanText.includes(k))));
-      const keywordScore = Math.min(20, foundKeywords.length * 5);
-
-      // Coherence Gatekeeper: Reject word salads (no connectors & no sentence punctuation/structure)
-      const hasSentencePunctuation = /[.!?]/.test(userScript);
-      const isCoherent = foundConnectors.length >= 1 || (hasSentencePunctuation && foundPastVerbs.length >= 2);
-
-      let totalScore = wordScore + connectorScore + syntaxScore + keywordScore;
-      if (!isCoherent && isWordCountPass) {
-        // Cap score at 55 for incoherent word salads
-        totalScore = Math.min(55, totalScore);
-      } else {
-        totalScore = Math.min(100, totalScore);
-      }
-
-      const stars = totalScore >= 80 ? 3 : totalScore >= 60 ? 2 : 1;
+      const evaluation = evaluateCambridgeCriteria(userScript, weekNumber);
+      const totalScore = evaluation.totalScore;
+      const stars = evaluation.stars;
 
       // Hub 3 Performance Task Gamification: Trigger Confetti Burst & +100 XP for ≥ 80% (3 Stars) 🎉
       if (totalScore >= 80) {

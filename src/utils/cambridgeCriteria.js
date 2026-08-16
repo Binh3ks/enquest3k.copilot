@@ -8,86 +8,99 @@ export const TRANSITION_CONNECTORS = [
   'in the end', 'as a result', 'however', 'in addition', 'all of a sudden'
 ];
 
-export function evaluateCambridgeCriteria(text, weekNum, customWordBank = {}) {
+export function evaluateCambridgeCriteria(text, weekNum = 33, customWordBank = {}) {
   const cleanText = text.trim();
   const words = cleanText.split(/\s+/).filter(Boolean);
   const wordCount = words.length;
   const lowerText = cleanText.toLowerCase();
 
-  // 1. Past Continuous Check: was/were + V-ing
+  // CEFR Scaffolding Tier Progression:
+  // W01-15: Beginners (15 words)
+  // W16-32: Movers Scaffolding (20 words, basic connectors)
+  // W33-42: Cambridge A2 Flyers Tier 1 (20 words, past continuous / past simple, 1+ connectors)
+  // W43-54: Cambridge A2 Flyers Tier 2 (30 words, 2+ connectors)
+  // W55+: PET/B1 Transition Tier (50+ words)
+  let targetWords = 20;
+  let minConnectors = 1;
+  let requirePastContinuous = false;
+  let isExamMode = false;
+
+  if (weekNum >= 55) {
+    targetWords = 50;
+    minConnectors = 3;
+    requirePastContinuous = true;
+    isExamMode = true;
+  } else if (weekNum >= 43) {
+    targetWords = 30;
+    minConnectors = 2;
+    requirePastContinuous = true;
+  } else if (weekNum >= 33) {
+    targetWords = 20; // Official Cambridge A2 Flyers Part 7 Standard: 20 or more words
+    minConnectors = 1;
+    requirePastContinuous = true;
+  } else if (weekNum >= 16) {
+    targetWords = 20;
+    minConnectors = 1;
+  } else {
+    targetWords = 15;
+    minConnectors = 0;
+  }
+
+  // 1. Past Tense / Past Continuous Check
   const hasPastContinuous = /\b(was|were)\s+\w+ing\b/i.test(cleanText);
-  const pastContinuousMatches = cleanText.match(/\b(was|were)\s+\w+ing\b/gi) || [];
+  const pastVerbs = ['was', 'were', 'slipped', 'fell', 'hurt', 'called', 'stopped', 'arrived', 'brought', 'treated', 'helped', 'walked', 'ran', 'saw', 'dropped', 'promised'];
+  const foundPastVerbs = Array.from(new Set(pastVerbs.filter(v => lowerText.includes(v))));
 
   // 2. Transition Connectors Check
-  let connectorsFound = [];
   const connectorsList = Array.isArray(customWordBank.connectors) && customWordBank.connectors.length > 0
     ? customWordBank.connectors
     : TRANSITION_CONNECTORS;
 
+  let connectorsFound = [];
   connectorsList.forEach(c => {
     if (lowerText.includes(c.toLowerCase()) && !connectorsFound.includes(c)) {
       connectorsFound.push(c);
     }
   });
 
-  // 3. Cumulative Chunks Check
-  let chunksFound = [];
-  const chunksList = Array.isArray(customWordBank.cumulative_chunks) ? customWordBank.cumulative_chunks : [];
-  chunksList.forEach(chunk => {
-    if (lowerText.includes(chunk.toLowerCase()) && !chunksFound.includes(chunk)) {
-      chunksFound.push(chunk);
-    }
-  });
+  // 3. Target Vocab Keywords Check
+  const targetKeywords = Array.isArray(customWordBank.keywords) && customWordBank.keywords.length > 0
+    ? customWordBank.keywords
+    : ['slipped', 'corridor', 'nurse', 'bandage', 'knee', 'fell', 'help', 'pack', 'clean', 'stopped', 'walked', 'called', 'fast', 'wet', 'floor', 'aid', 'school'];
+  const foundKeywords = Array.from(new Set(targetKeywords.filter(k => lowerText.includes(k.toLowerCase()))));
 
-  // 4. Target specs based on week tier
-  let targetWords = 50;
-  let minConnectors = 1;
-  let requirePastContinuous = false;
-  let requireChunks = false;
-  let isExamMode = false;
+  // Scores
+  const isWordCountPass = wordCount >= targetWords;
+  const wordScore = isWordCountPass ? 20 : Math.round((wordCount / targetWords) * 20);
+  const connectorScore = Math.min(30, connectorsFound.length * 15);
+  const syntaxScore = Math.min(30, (foundPastVerbs.length + (hasPastContinuous ? 1 : 0)) * 10);
+  const keywordScore = Math.min(20, foundKeywords.length * 5);
 
-  if (weekNum >= 66) {
-    targetWords = 80;
-    minConnectors = 3;
-    requirePastContinuous = true;
-    requireChunks = true;
-    isExamMode = true;
-  } else if (weekNum >= 55) {
-    targetWords = 60;
-    minConnectors = 3;
-    requirePastContinuous = true;
-    requireChunks = true;
-  } else if (weekNum >= 43) {
-    targetWords = 35;
-    minConnectors = 2;
-    requirePastContinuous = true;
-  } else if (weekNum >= 16) {
-    targetWords = 20; // Cambridge A2 Flyers Part 7 Standard: 20 or more words
-    minConnectors = 1;
+  const hasSentencePunctuation = /[.!?]/.test(cleanText);
+  const isCoherent = connectorsFound.length >= minConnectors || (hasSentencePunctuation && foundPastVerbs.length >= 1);
+
+  let totalScore = wordScore + connectorScore + syntaxScore + keywordScore;
+  if (!isCoherent && isWordCountPass) {
+    totalScore = Math.min(55, totalScore);
+  } else {
+    totalScore = Math.min(100, totalScore);
   }
 
-  const metWords = wordCount >= targetWords;
-  const metConnectors = connectorsFound.length >= minConnectors;
-  const metPastContinuous = !requirePastContinuous || hasPastContinuous;
-  const metChunks = !requireChunks || chunksFound.length >= 1;
-
-  const isAllMet = metWords && metConnectors && metPastContinuous && metChunks;
+  const stars = totalScore >= 80 ? 3 : totalScore >= 60 ? 2 : 1;
 
   return {
+    totalScore,
+    stars,
     wordCount,
     targetWords,
-    metWords,
+    metWords: isWordCountPass,
     connectorsFound,
     minConnectors,
-    metConnectors,
+    metConnectors: connectorsFound.length >= minConnectors,
     hasPastContinuous,
-    pastContinuousMatches,
-    requirePastContinuous,
-    metPastContinuous,
-    chunksFound,
-    requireChunks,
-    metChunks,
+    foundPastVerbs,
+    foundKeywords,
     isExamMode,
-    isAllMet,
+    isCoherent
   };
 }

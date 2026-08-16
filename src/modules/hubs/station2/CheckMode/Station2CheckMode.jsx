@@ -78,8 +78,24 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
-  const initialQuestions = customQuestions || weekData?.listening_p4_questions || weekData?.stations?.listening_hub?.check_mode_drills || weekData?.check_mode_drills || FALLBACK_CHECK_QUESTIONS;
-  const [questions] = useState(initialQuestions);
+  const rawQuestions = customQuestions || weekData?.listening_p4_questions || weekData?.stations?.listening_hub?.check_mode_drills || weekData?.check_mode_drills || FALLBACK_CHECK_QUESTIONS;
+  
+  // Parameterized Variant Transformation (Option B Pilot):
+  // Shuffle options in Check Mode so rote position memory is 100% broken
+  const [questions] = useState(() => {
+    if (!isStealthMode) return rawQuestions;
+    return rawQuestions.map((q, qIdx) => {
+      const opts = [...q.options];
+      // Rotate array based on question index
+      const shift = (qIdx + 1) % opts.length;
+      const rotated = [...opts.slice(shift), ...opts.slice(0, shift)];
+      const reindexed = rotated.map((opt, idx) => ({
+        ...opt,
+        label: String.fromCharCode(65 + idx) // Re-assign A, B, C labels
+      }));
+      return { ...q, options: reindexed };
+    });
+  });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [submittedQuestions, setSubmittedQuestions] = useState({});

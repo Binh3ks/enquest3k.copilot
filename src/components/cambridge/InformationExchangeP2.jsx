@@ -349,7 +349,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
         }
         setUserInputText(interimTranscript);
 
-        // 3000ms Speech Debounce Timer to prevent cutting off early mid-sentence
+        // 5000ms Speech Debounce Timer to prevent cutting off early mid-sentence for primary ESL learners
         if (speechDebounceTimerRef.current) clearTimeout(speechDebounceTimerRef.current);
         speechDebounceTimerRef.current = setTimeout(() => {
           recognition.stop();
@@ -358,7 +358,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
             if (flowState === 'phase1_q') handlePhase1AnswerSubmit(interimTranscript);
             else if (flowState === 'phase2_q') handlePhase2QuestionSubmit(interimTranscript);
           }
-        }, 3000); // 3000ms VAD timeout threshold
+        }, 5000); // 5000ms ESL VAD timeout threshold calibrated for primary learners
       };
 
       recognition.onerror = () => {
