@@ -25,16 +25,52 @@ if (typeof window !== 'undefined') {
     }
     return false;
   };
+
+  // Add global capture-phase error listener to detect module script load failures (stale chunk hashes)
+  window.addEventListener('error', (event) => {
+    const target = event.target;
+    const isScript = target && (target.tagName === 'SCRIPT' || target.src);
+    const msg = String(event.message || event.error?.message || '');
+    
+    if (
+      isScript || 
+      msg.includes("Failed to load module script") || 
+      msg.includes("MIME type") || 
+      msg.includes("Expected a JavaScript-or-Wasm module script") ||
+      msg.includes("dynamically imported module")
+    ) {
+      const lastReload = parseInt(sessionStorage.getItem('global_chunk_reload') || '0', 10);
+      if (Date.now() - lastReload > 5000) {
+        sessionStorage.setItem('global_chunk_reload', String(Date.now()));
+        console.warn('[Main] Stale CDN chunk error caught in error listener. Clearing SW cache & reloading...');
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
+        }
+        if ('caches' in window) {
+          caches.keys().then(keys => keys.forEach(k => caches.delete(k))).catch(() => {});
+        }
+        setTimeout(() => {
+          window.location.href = window.location.pathname + '?r=' + Date.now();
+        }, 150);
+      }
+    }
+  }, true);
+
   window.addEventListener('unhandledrejection', (event) => {
     const msg = String(event.reason?.message || event.reason || '');
     if (msg.includes("reading '1'")) {
       console.warn('[Main] Suppressed known undefined-1 rejection (non-fatal)');
       event.preventDefault();
-    } else if (msg.includes("dynamically imported module") || msg.includes("MIME type")) {
+    } else if (
+      msg.includes("dynamically imported module") || 
+      msg.includes("MIME type") ||
+      msg.includes("Failed to load module script") ||
+      msg.includes("Expected a JavaScript-or-Wasm module script")
+    ) {
       const lastReload = parseInt(sessionStorage.getItem('global_chunk_reload') || '0', 10);
       if (Date.now() - lastReload > 5000) {
         sessionStorage.setItem('global_chunk_reload', String(Date.now()));
-        console.warn('[Main] Stale CDN chunk error detected. Clearing SW cache & reloading...');
+        console.warn('[Main] Stale CDN chunk error detected in rejection. Clearing SW cache & reloading...');
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
         }

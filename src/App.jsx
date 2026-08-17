@@ -971,7 +971,7 @@ const MainLayout = () => {
                     return <WorldDiscoveryHub data={weekData?.readingHub || weekData?.stations?.read_explore} weekNumber={weekId} />;
                   }
                   if (['hub2', '2', 'grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tk)) {
-                    return <ArenaHub weekNumber={weekId} />;
+                    return <ArenaHub data={weekData?.listeningHub} weekNumber={weekId} />;
                   }
                   if (['hub3', '3', 'writing', 'dictation'].includes(tk)) {
                     return <WritingStudioHub data={weekData?.writingHub} weekNumber={weekId} />;
