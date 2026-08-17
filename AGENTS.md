@@ -1,5 +1,13 @@
 # EngQuest3K — Agent Memory
 
+## 🧠 Automated Model Routing & Task Delegation Protocol — 2026-08-17
+**Áp dụng tự động cho MỌI yêu cầu của người dùng để tối ưu token & sức mạnh model:**
+1. **Tier 1 (Fast Operations - Flash Engine)**: Lệnh shell (`git`, `npm run audit`, `npm run build`), `/handoff`, `/start`, file listing, log check $\rightarrow$ Phản hồi ngay trong $\le 0.5$s, không giải thích rườm rà.
+2. **Tier 2 (Code & Feature Build)**: Component React, UI/CSS, API integration, data hooks $\rightarrow$ Đọc kỹ file gốc, code không cắt xén, verify build exit code 0.
+3. **Tier 3 (Deep Reasoning & Cambridge Blueprint)**: Toán Singapore Bar Models SVG, cân chỉnh tọa độ LineMatcher, script audio đa giọng Cambridge Flyers, debug bug crash $\rightarrow$ Phân tích nguyên nhân gốc rễ (Root Cause) bằng empirical logs trước khi patch code.
+4. **Tier 4 (Multi-Agent Subagent Swarm)**: Sinh dữ liệu cả tuần học, audit hàng loạt $\rightarrow$ Tự động spawn Subagent Swarm (`content-writer`, `quality-reviewer`) để giữ Main Context Window luôn sạch (<20k tokens).
+5. **CLI Analyzer**: Chạy `node scripts/model_router.mjs "<User Prompt>"` để phân loại tức thì.
+
 ## 🔴 MANDATORY Multi-Agent Review Protocol — 2026-08-17
 **Áp dụng cho MỌI thực thi code sau này. KHÔNG được bỏ qua.**
 
