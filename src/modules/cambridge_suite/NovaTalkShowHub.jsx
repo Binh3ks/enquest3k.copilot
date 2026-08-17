@@ -50,6 +50,24 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
   const [activeMode, setActiveMode] = useState('learn'); // 'learn' | 'check'
   const [showMascotStore, setShowMascotStore] = useState(false);
 
+  // Check Mode Rotation: 1 Speaking Part per week, cycling every 4 weeks
+  // W33→Q&A, W34→PicStory, W35→Exchange, W36→FindDiff, W37→Q&A...
+  const CHECK_MODE_ROTATION = ['talkshow', 'pic_story', 'cue_card', 'find_diff'];
+  const CHECK_MODE_LABELS = {
+    talkshow: { icon: '💬', label: 'Personal Q&A', part: 'Part 1' },
+    pic_story: { icon: '🖼️', label: 'Picture Story', part: 'Part 3' },
+    cue_card: { icon: '❓', label: 'Information Exchange', part: 'Part 2' },
+    find_diff: { icon: '🔍', label: 'Find Differences', part: 'Part 4' },
+  };
+  const checkModeSubMode = CHECK_MODE_ROTATION[(weekNumber - 1) % 4];
+
+  // Auto-switch subMode when entering/leaving Check Mode
+  useEffect(() => {
+    if (activeMode === 'check') {
+      setSubMode(checkModeSubMode);
+    }
+  }, [activeMode, checkModeSubMode]);
+
   const [shadowingPhase, setShadowingPhase] = useState(1); // Phase 1: 5 Sentences | Phase 2: Long Paragraph
   const [isRecording, setIsRecording] = useState(false);
   const [podcastScore, setPodcastScore] = useState(null);
@@ -435,7 +453,25 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         </div>
       )}
 
-      {/* Sub-Mode Switcher: Evenly Spaced Flexbox */}
+      {/* Sub-Mode Switcher: Hidden in Check Mode (single task per week) */}
+      {activeMode === 'check' ? (
+        <div className="mb-4 p-4 bg-purple-50 border-2 border-purple-200 rounded-2xl flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">{CHECK_MODE_LABELS[checkModeSubMode]?.icon}</span>
+            <div>
+              <span className="text-[10px] font-black text-purple-600 uppercase tracking-widest block">
+                Weekly Check — {CHECK_MODE_LABELS[checkModeSubMode]?.part}
+              </span>
+              <h3 className="text-sm font-black text-purple-950">
+                {CHECK_MODE_LABELS[checkModeSubMode]?.label}
+              </h3>
+            </div>
+          </div>
+          <span className="px-3 py-1 bg-purple-200 text-purple-900 text-[10px] font-black rounded-full">
+            ~5-7 min
+          </span>
+        </div>
+      ) : (
       <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-slate-100">
         <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
           <button
@@ -480,6 +516,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           </button>
         </div>
       </div>
+      )}
 
       {subMode === 'find_diff' ? (
         <FindDifferencesInteractive
