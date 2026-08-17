@@ -182,6 +182,144 @@ export const readingHubData = {
         answerIndex: 0
       }
     ]
+  },
+
+  // ─── R&W Part 1: Word Bank Matching (15 words → 10 definitions) — Shield 11 ───
+  rw_part1: {
+    word_bank: [
+      "corridor", "nurse", "bandage", "headmaster", "puddle",
+      "library", "cafeteria", "handrail", "warning sign", "first-aid kit",
+      "playground", "stairs", "slippery", "cold pack", "science room"
+    ],
+    definitions: [
+      { id: 1, text: "You walk along this long passage inside a school building to get to your classroom.", target: "corridor" },
+      { id: 2, text: "A trained medical worker at school who helps students when they get hurt.", target: "nurse" },
+      { id: 3, text: "A soft piece of cloth used to cover and protect a cut or knee injury.", target: "bandage" },
+      { id: 4, text: "The person in charge of managing the school who praises students for safe behaviour.", target: "headmaster" },
+      { id: 5, text: "A small pool of liquid left on the floor after cleaning or rain.", target: "puddle" },
+      { id: 6, text: "A quiet room in school with books where students read and borrow stories.", target: "library" },
+      { id: 7, text: "A large room at school where children eat lunch and talk with friends.", target: "cafeteria" },
+      { id: 8, text: "You hold onto this long metal bar when walking up or down stairs.", target: "handrail" },
+      { id: 9, text: "A yellow sign placed on the floor to warn people to walk carefully on wet tiles.", target: "warning sign" },
+      { id: 10, text: "A bag or box containing bandages and cold packs used for immediate medical aid at school.", target: "first-aid kit" }
+    ]
+  },
+
+  // ─── R&W Part 2: Dialogue A-H (5 turns, 8 options) — Shield 12 ───
+  rw_part2: {
+    title: "Jake and the School Nurse — Corridor Conversation",
+    speakers: { A: "Headmaster", B: "Jake" },
+    dialogue_prompt: "Read the conversation. Choose the best answer for each gap. Write a letter (A–H).",
+    turns: [
+      {
+        id: 1,
+        speaker: "A",
+        line: "Good morning, Jake. I heard there was an accident in the corridor today. Can you tell me what happened?",
+        answer_letter: "E"
+      },
+      {
+        id: 2,
+        speaker: "A",
+        line: "That sounds very serious. Did the boy hurt himself badly?",
+        answer_letter: "B"
+      },
+      {
+        id: 3,
+        speaker: "A",
+        line: "You made the right decision. What did the nurse do when she arrived?",
+        answer_letter: "G"
+      },
+      {
+        id: 4,
+        speaker: "A",
+        line: "Excellent. And do you know why Tom was running in the corridor?",
+        answer_letter: "A"
+      },
+      {
+        id: 5,
+        speaker: "A",
+        line: "I see. We must remind all students to walk carefully. Thank you, Jake, for helping Tom today.",
+        answer_letter: "D"
+      }
+    ],
+    options: [
+      { letter: "A", text: "He said he was late for his next class and forgot the safety rule." },
+      { letter: "B", text: "Yes, he slipped on the wet tiles and hurt his knee quite badly." },
+      { letter: "C", text: "I think the corridor is cleaned every Monday and Friday morning." },
+      { letter: "D", text: "You're welcome. I just did what I learned in safety class." },
+      { letter: "E", text: "A classmate called Tom slipped on the wet floor near the science room and fell down." },
+      { letter: "F", text: "I usually walk slowly and check both sides before crossing the corridor." },
+      { letter: "G", text: "She put a cold pack on his knee and wrapped it with a clean bandage." },
+      { letter: "H", text: "Yes, I think the wet floor warning sign was there but Tom didn't see it." }
+    ]
+  },
+
+  // ─── R&W Part 4: 10-Gap Inline Cloze + Story Title — Shield 13 ───
+  rw_part4: {
+    title: "The Corridor Incident — Cambridge Reading & Writing Part 4",
+    instructions: "Read the story. Choose the right word from the box and write it next to the number. Then choose the best title for the story.",
+    story_text: "Last Tuesday, Jake __1__ carefully down the school corridor after his science lesson. Suddenly, he __2__ a boy called Tom running very fast near the science room. Tom __3__ to see the yellow warning sign on the wet floor. He __4__ on the slippery tiles and __5__ down, hurting his left knee badly. Jake stopped __6__ and walked quickly to find the school nurse. The nurse arrived in two minutes. She __7__ a cold pack onto Tom's swollen knee and __8__ it firmly with a clean white bandage. The headmaster heard about the accident and came to see Tom. He __9__ Jake for reacting so quickly and calmly. He also reminded all students to __10__ carefully in the school corridors at all times.",
+    options_per_gap: {
+      "1": ["walked", "was walking", "walks"],
+      "2": ["noticed", "was noticing", "notice"],
+      "3": ["didn't fail", "failed", "didn't manage"],
+      "4": ["slipped", "slipping", "was slip"],
+      "5": ["fell", "felt", "falls"],
+      "6": ["immediately", "lately", "carefully"],
+      "7": ["placed", "was placing", "placing"],
+      "8": ["wrapped", "was wrapping", "wraps"],
+      "9": ["praised", "was praising", "praises"],
+      "10": ["walk", "walking", "walked"]
+    },
+    answers: {
+      "1": "was walking",
+      "2": "noticed",
+      "3": "failed",
+      "4": "slipped",
+      "5": "fell",
+      "6": "immediately",
+      "7": "placed",
+      "8": "wrapped",
+      "9": "praised",
+      "10": "walk"
+    },
+    title_choices: [
+      { letter: "A", text: "Tom's Favourite Science Class" },
+      { letter: "B", text: "A Quick Action in the Corridor" },
+      { letter: "C", text: "How Jake Learned to Run Faster" }
+    ],
+    title_answer: "B"
+  },
+
+  // ─── R&W Part 5: Story Extract — 1-4 Word Completion (7 items) — Shield 15 ───
+  rw_part5: {
+    instructions: "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
+    story: {
+      title: "Jake's Quick Action in the School Corridor",
+      paragraphs: [
+        {
+          id: 1,
+          text: "On a bright Friday morning, Jake was walking carefully down the main school corridor after finishing his science class. Suddenly, he noticed another student running very fast past the science room. The floor was slippery because a cleaner had just washed the tiles."
+        },
+        {
+          id: 2,
+          text: "The running classmate lost his balance and fell down heavily near the stairs. Right away, Jake stopped immediately and ran to call the school nurse. The nurse arrived within two minutes carrying a clean bandage and a cold pack to treat the boy's swollen knee."
+        },
+        {
+          id: 3,
+          text: "The headmaster praised Jake during assembly for following all school safety rules and helping his classmate responsibly. All the students felt relieved and promised to walk carefully down the corridor in the future."
+        }
+      ]
+    },
+    summary_sentences: [
+      { id: 1, text_before: "Jake was walking down the school corridor after his ", text_after: ".", target: "science class", paragraph_ref: 1 },
+      { id: 2, text_before: "The floor was slippery because a cleaner had just ", text_after: " the tiles.", target: "washed", paragraph_ref: 1 },
+      { id: 3, text_before: "The classmate lost his balance and ", text_after: " heavily near the stairs.", target: "fell down", paragraph_ref: 2 },
+      { id: 4, text_before: "Jake ran to call the ", text_after: " for help.", target: "school nurse", paragraph_ref: 2 },
+      { id: 5, text_before: "The nurse used a clean bandage and a ", text_after: " to treat the boy.", target: "cold pack", paragraph_ref: 2 },
+      { id: 6, text_before: "The headmaster praised Jake during ", text_after: " for helping his classmate.", target: "assembly", paragraph_ref: 3 },
+      { id: 7, text_before: "All students promised to walk ", text_after: " in the corridor.", target: "carefully", paragraph_ref: 3 }
+    ]
   }
 };
 
