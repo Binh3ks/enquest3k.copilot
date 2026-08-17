@@ -26,11 +26,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
       { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy walking with backpack on left)', x: 37, y: 46, isExample: true },
-      { id: 't2', label: 'School Nurse (White uniform with bandage)', x: 66, y: 48 },
-      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 60, y: 52 },
-      { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 49, y: 42 },
-      { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 77, y: 46 }
+      { id: 't1', label: 'Jake (Boy walking with backpack on left)', x: 20, y: 62, isExample: true },
+      { id: 't2', label: 'School Nurse (White uniform with bandage)', x: 64, y: 52 },
+      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 55, y: 62 },
+      { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 36, y: 50 },
+      { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 78, y: 60 }
     ]
   };
 
@@ -42,6 +42,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
   const [calibratedTargets, setCalibratedTargets] = useState(sceneData.targets);
   const [activeCalibTargetId, setActiveCalibTargetId] = useState(sceneData.targets[0]?.id || 't1');
   const [copiedToast, setCopiedToast] = useState(false);
+  const [calibratorHover, setCalibratorHover] = useState({ x: 0, y: 0 }); // live cursor % on image
 
   const activeTargets = isCalibratorOpen ? calibratedTargets : sceneData.targets;
 
@@ -114,6 +115,15 @@ export function SVGLineMatcher({ customData, onComplete }) {
     setCalibratedTargets(updated);
   };
 
+  // Live hover tracker for calibrator (shows x%, y% on image)
+  const handleImageMouseMoveForCalibration = (e) => {
+    if (!isCalibratorOpen || !imageRef.current) return;
+    const iRect = imageRef.current.getBoundingClientRect();
+    const x = Math.round(((e.clientX - iRect.left) / iRect.width) * 100);
+    const y = Math.round(((e.clientY - iRect.top) / iRect.height) * 100);
+    setCalibratorHover({ x, y });
+  };
+
   const handleCopyCalibratedJSON = () => {
     const jsonStr = JSON.stringify(calibratedTargets, null, 2);
     navigator.clipboard.writeText(jsonStr);
@@ -122,11 +132,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
   };
 
   const handleMouseMove = (e) => {
-    if (!selectedName || !masterContainerRef.current) return;
+    if (!masterContainerRef.current) return;
     const mRect = masterContainerRef.current.getBoundingClientRect();
     const x = ((e.clientX - mRect.left) / mRect.width) * 100;
     const y = ((e.clientY - mRect.top) / mRect.height) * 100;
-    setMousePos({ x, y });
+    if (selectedName) setMousePos({ x, y });
   };
 
   const handleSelectName = (nameObj) => {
@@ -412,6 +422,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
         <div
           ref={imageRef}
           onClick={handleImageClickForCalibration}
+          onMouseMove={handleImageMouseMoveForCalibration}
           className={`relative w-full aspect-[1264/848] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 ${
             isCalibratorOpen ? 'cursor-crosshair ring-4 ring-amber-400' : selectedName ? 'cursor-crosshair' : 'cursor-default'
           }`}
@@ -423,6 +434,18 @@ export function SVGLineMatcher({ customData, onComplete }) {
             onLoad={recalculatePositions}
             className="w-full h-full object-fill block"
           />
+          {/* 🎯 Live Calibration Coordinate HUD */}
+          {isCalibratorOpen && (
+            <div
+              style={{ left: `${calibratorHover.x}%`, top: `${calibratorHover.y}%` }}
+              className="absolute pointer-events-none z-50 transform -translate-x-1/2 -translate-y-8"
+            >
+              <div className="px-2 py-0.5 bg-black/80 text-white font-mono text-[11px] font-black rounded-lg border border-amber-400 whitespace-nowrap shadow-xl">
+                x:{calibratorHover.x}% y:{calibratorHover.y}%
+              </div>
+              <div className="w-3 h-3 border-2 border-amber-400 rounded-full bg-amber-400/30 absolute top-6 left-1/2 -translate-x-1/2" />
+            </div>
+          )}
 
           {/* Clean Target Pin Markers on Picture */}
           {activeTargets.map((target) => {
