@@ -5,6 +5,7 @@ import { learnerProgressService } from '../../services/learnerProgressService';
 import { srsService } from '../../services/srsService';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import CompletionModal from '../common/CompletionModal';
+import { useUserStore } from '../../stores/useUserStore';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -118,6 +119,8 @@ export function VisualMatchingAH({ customData, onComplete }) {
     if (finalScore >= 80) {
       fireCelebrationConfetti('Hub2_Item_Hunt');
       setShowCompletionModal(true);
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(50);
     }
 
     learnerProgressService.logAttempt({
@@ -216,9 +219,6 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       <div>
                         <span className="text-sm font-black text-slate-900 block leading-tight">
                           {item.name}
-                        </span>
-                        <span className="text-[10px] font-bold text-slate-400 block mt-0.5">
-                          {item.audio_text}
                         </span>
                       </div>
                     </div>

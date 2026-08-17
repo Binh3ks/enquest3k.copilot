@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Palette, Volume2, PlayCircle, Eye, EyeOff } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import CompletionModal from '../common/CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
 export function SVGColorAndWrite({ customData, onComplete }) {
   const [selectedColor, setSelectedColor] = useState('#3b82f6'); // Default blue
@@ -79,6 +82,13 @@ export function SVGColorAndWrite({ customData, onComplete }) {
     setScore(finalScore);
     setIsSubmitted(true);
     setShowTextHelp(true);
+
+    if (finalScore >= 75) {
+      fireCelebrationConfetti('Magic_Color_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+
     if (onComplete) onComplete(finalScore);
   };
 
@@ -90,8 +100,19 @@ export function SVGColorAndWrite({ customData, onComplete }) {
     setScore(null);
   };
 
+  const starsEarned = (score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1;
+
   return (
     <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+      <CompletionModal
+        isOpen={isSubmitted && (score || 0) >= 50}
+        onClose={() => {}}
+        score={score || 0}
+        stars={starsEarned}
+        xpEarned={50}
+        srsWordsAdded={4}
+        activityTitle="Magic Color Mission (Listening Part 5)"
+      />
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>

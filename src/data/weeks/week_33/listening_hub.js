@@ -165,7 +165,7 @@ export const listeningHubData = {
       options: [
         { label: 'A', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg', isCorrect: false },
         { label: 'B', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
-        { label: 'C', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true }
+        { label: 'C', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true }
       ]
     }
   ],

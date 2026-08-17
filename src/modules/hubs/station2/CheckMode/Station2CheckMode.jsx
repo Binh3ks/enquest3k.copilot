@@ -3,7 +3,9 @@ import { learnerProgressService } from '../../../../services/learnerProgressServ
 import { useUserStore } from '../../../../stores/useUserStore';
 import HoverWord, { renderParsedText } from '../../../../components/common/HoverWord';
 import { speakText } from '../../../../utils/AudioHelper';
-import { CheckCircle2, ArrowRight, RefreshCw, FileText, XCircle, Volume2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight, RefreshCw, FileText, XCircle, Volume2, Sparkles, Trophy } from 'lucide-react';
+import CompletionModal from '../../../../components/common/CompletionModal';
+import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 
 const FALLBACK_CHECK_QUESTIONS = [
@@ -176,16 +178,36 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
       totalTimeSpent
     });
     setIsCompleted(true);
+
+    if (finalAvgScore >= 80) {
+      fireCelebrationConfetti('Picture_Quiz_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+    if (userStore?.updateLocalProgress) {
+      userStore.updateLocalProgress(weekNumber, 'listening_p4', { score: finalAvgScore, isCompleted: true });
+    }
   };
 
   if (isCompleted && resultsSummary) {
+    const starsEarned = resultsSummary.finalAvgScore >= 80 ? 3 : resultsSummary.finalAvgScore >= 60 ? 2 : 1;
     return (
       <div className="w-full max-w-2xl mx-auto bg-white text-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl font-sans animate-in fade-in">
+        <CompletionModal
+          isOpen={true}
+          onClose={() => setIsCompleted(false)}
+          score={resultsSummary.finalAvgScore}
+          stars={starsEarned}
+          xpEarned={50}
+          srsWordsAdded={5}
+          activityTitle="Picture Quiz Mission (Listening Part 4)"
+        />
         <div className="text-center mb-6">
           <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
-            <FileText size={32} />
+            <Trophy size={32} />
           </div>
-          <h3 className="text-2xl font-black text-slate-900">Grammar Check Mode Completed</h3>
+          <h3 className="text-2xl font-black text-slate-900">Picture Quiz Completed</h3>
+          <div className="text-sm font-bold text-emerald-600 mt-1">Awarded +50 XP to your Treasury! 🎉</div>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6 text-center">
@@ -212,7 +234,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
           }}
           className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-base transition flex items-center justify-center gap-2 shadow-md"
         >
-          <RefreshCw size={18} /> Retake 10-Question Check Mode Exam
+          <RefreshCw size={18} /> Retake Picture Quiz Challenge
         </button>
       </div>
     );

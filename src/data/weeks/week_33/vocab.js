@@ -1,25 +1,205 @@
 // Week 33 Target Vocabulary List (20 Words)
 export default [
-  { id: 1, word: "corridor", definition_en: "a long passage in a building with doors on each side", definition_vi: "hành lang", audio_word: "/audio/week33/vocab_corridor.mp3", image_url: "/images/week33/vocab_corridor.jpg" },
-  { id: 2, word: "slipped", definition_en: "slid accidentally on a wet surface and lost balance", definition_vi: "bị trượt chân", audio_word: "/audio/week33/vocab_slipped.mp3", image_url: "/images/week33/vocab_slipped.jpg" },
-  { id: 3, word: "nurse", definition_en: "a person trained to care for sick or injured people", definition_vi: "y tá trường học", audio_word: "/audio/week33/vocab_nurse.mp3", image_url: "/images/week33/vocab_nurse.jpg" },
-  { id: 4, word: "bandage", definition_en: "a strip of material used to bind a wound or cut", definition_vi: "băng cá nhân / băng gạc", audio_word: "/audio/week33/vocab_bandage.mp3", image_url: "/images/week33/vocab_bandage.jpg" },
-  { id: 5, word: "relieved", definition_en: "feeling happy because something unpleasant has stopped", definition_vi: "cảm thấy nhẹ nhõm", audio_word: "/audio/week33/vocab_relieved.mp3", image_url: "/images/week33/vocab_relieved.jpg" },
-  { id: 6, word: "mistake", definition_en: "an action or decision that is wrong or incorrect", definition_vi: "lỗi lầm / sai sót", audio_word: "/audio/week33/vocab_mistake.mp3", image_url: "/images/week33/vocab_mistake.jpg" },
-  { id: 7, word: "accident", definition_en: "an unfortunate incident that happens unexpectedly", definition_vi: "tai nạn ngoài ý muốn", audio_word: "/audio/week33/vocab_accident.mp3", image_url: "/images/week33/vocab_accident.jpg" },
-  { id: 8, word: "fix", definition_en: "to repair or mend something that is broken or damaged", definition_vi: "sửa chữa / khắc phục", audio_word: "/audio/week33/vocab_fix.mp3", image_url: "/images/week33/vocab_fix.jpg" },
-  { id: 9, word: "sorry", definition_en: "feeling sadness or regret for a mistake made", definition_vi: "xin lỗi / hối hận", audio_word: "/audio/week33/vocab_sorry.mp3", image_url: "/images/week33/vocab_sorry.jpg" },
-  { id: 10, word: "careful", definition_en: "giving serious attention to avoid danger or mistakes", definition_vi: "cẩn thận", audio_word: "/audio/week33/vocab_careful.mp3", image_url: "/images/week33/vocab_careful.jpg" },
-  { id: 11, word: "clumsy", definition_en: "moving or acting awkwardly without grace or balance", definition_vi: "vụng về / hậu đậu", audio_word: "/audio/week33/vocab_clumsy.mp3", image_url: "/images/week33/vocab_clumsy.jpg" },
-  { id: 12, word: "arm", definition_en: "the upper limb of the human body from shoulder to hand", definition_vi: "cánh tay", audio_word: "/audio/week33/vocab_arm.mp3", image_url: "/images/week33/vocab_arm.jpg" },
-  { id: 13, word: "knee", definition_en: "the joint between the thigh and lower leg", definition_vi: "đầu gối", audio_word: "/audio/week33/vocab_knee.mp3", image_url: "/images/week33/vocab_knee.jpg" },
-  { id: 14, word: "leg", definition_en: "each of the limbs on which a person walks and stands", definition_vi: "chân", audio_word: "/audio/week33/vocab_leg.mp3", image_url: "/images/week33/vocab_leg.jpg" },
-  { id: 15, word: "head", definition_en: "the upper part of the body containing brain and eyes", definition_vi: "đầu", audio_word: "/audio/week33/vocab_head.mp3", image_url: "/images/week33/vocab_head.jpg" },
-  { id: 16, word: "cold_pack", definition_en: "a gel bag chilled in ice used to reduce swelling", definition_vi: "túi chườm lạnh", audio_word: "/audio/week33/vocab_cold_pack.mp3", image_url: "/images/week33/vocab_cold_pack.jpg" },
-  { id: 17, word: "recover", definition_en: "to return to normal health or strength after injury", definition_vi: "hồi phục", audio_word: "/audio/week33/vocab_recover.mp3", image_url: "/images/week33/vocab_recover.jpg" },
-  { id: 18, word: "explain", definition_en: "to make something clear by giving detail and reason", definition_vi: "giải thích", audio_word: "/audio/week33/vocab_explain.mp3", image_url: "/images/week33/vocab_explain.jpg" },
-  { id: 19, word: "lesson", definition_en: "a period of learning or a moral learned from experience", definition_vi: "bài học rút ra", audio_word: "/audio/week33/vocab_lesson.mp3", image_url: "/images/week33/vocab_lesson.jpg" },
-  { id: 20, word: "terrible", definition_en: "extremely bad, serious, or distressing", definition_vi: "tồi tệ / khủng khiếp", audio_word: "/audio/week33/vocab_terrible.mp3", image_url: "/images/week33/vocab_terrible.jpg" }
+  { 
+    id: 1, 
+    word: "corridor", 
+    definition_en: "a long passage in a building with doors on each side", 
+    definition_vi: "hành lang", 
+    example_en: "Jake walked carefully down the school corridor after class.",
+    example_vi: "Jake đi bộ cẩn thận dọc theo hành lang trường sau giờ học.",
+    audio_word: "/audio/week33/vocab_corridor.mp3", 
+    image_url: "/images/week33/vocab_corridor.jpg" 
+  },
+  { 
+    id: 2, 
+    word: "slipped", 
+    definition_en: "slid accidentally on a wet surface and lost balance", 
+    definition_vi: "bị trượt chân", 
+    example_en: "Tom slipped on the wet tiles near the science room.",
+    example_vi: "Tom bị trượt chân trên nền gạch ướt gần phòng khoa học.",
+    audio_word: "/audio/week33/vocab_slipped.mp3", 
+    image_url: "/images/week33/vocab_slipped.jpg" 
+  },
+  { 
+    id: 3, 
+    word: "nurse", 
+    definition_en: "a person trained to care for sick or injured people", 
+    definition_vi: "y tá trường học", 
+    example_en: "The school nurse arrived quickly with medical supplies.",
+    example_vi: "Cô y tá trường học đã đến rất nhanh với đồ dùng y tế.",
+    audio_word: "/audio/week33/vocab_nurse.mp3", 
+    image_url: "/images/week33/vocab_nurse.jpg" 
+  },
+  { 
+    id: 4, 
+    word: "bandage", 
+    definition_en: "a strip of material used to bind a wound or cut", 
+    definition_vi: "băng cá nhân / băng gạc", 
+    example_en: "She wrapped a clean white bandage around his swollen knee.",
+    example_vi: "Cô ấy quấn một chiếc băng gạc trắng sạch quanh đầu gối sưng của cậu bé.",
+    audio_word: "/audio/week33/vocab_bandage.mp3", 
+    image_url: "/images/week33/vocab_bandage.jpg" 
+  },
+  { 
+    id: 5, 
+    word: "relieved", 
+    definition_en: "feeling happy because something unpleasant has stopped", 
+    definition_vi: "cảm thấy nhẹ nhõm", 
+    example_en: "Everyone felt relieved when they saw Tom smiling again.",
+    example_vi: "Mọi người đều cảm thấy nhẹ nhõm khi thấy Tom mỉm cười trở lại.",
+    audio_word: "/audio/week33/vocab_relieved.mp3", 
+    image_url: "/images/week33/vocab_relieved.jpg" 
+  },
+  { 
+    id: 6, 
+    word: "mistake", 
+    definition_en: "an action or decision that is wrong or incorrect", 
+    definition_vi: "lỗi lầm / sai sót", 
+    example_en: "Running on the wet floor was a dangerous mistake.",
+    example_vi: "Chạy nhảy trên sàn ướt là một sai lầm nguy hiểm.",
+    audio_word: "/audio/week33/vocab_mistake.mp3", 
+    image_url: "/images/week33/vocab_mistake.jpg" 
+  },
+  { 
+    id: 7, 
+    word: "accident", 
+    definition_en: "an unfortunate incident that happens unexpectedly", 
+    definition_vi: "tai nạn ngoài ý muốn", 
+    example_en: "Jake helped his classmate immediately after the accident.",
+    example_vi: "Jake đã giúp đỡ bạn cùng lớp ngay sau vụ tai nạn.",
+    audio_word: "/audio/week33/vocab_accident.mp3", 
+    image_url: "/images/week33/vocab_accident.jpg" 
+  },
+  { 
+    id: 8, 
+    word: "fix", 
+    definition_en: "to repair or mend something that is broken or damaged", 
+    definition_vi: "sửa chữa / khắc phục", 
+    example_en: "The nurse used first aid tools to fix his injured leg.",
+    example_vi: "Cô y tá dùng dụng cụ sơ cứu để chữa vết thương ở chân cho cậu bé.",
+    audio_word: "/audio/week33/vocab_fix.mp3", 
+    image_url: "/images/week33/vocab_fix.jpg" 
+  },
+  { 
+    id: 9, 
+    word: "sorry", 
+    definition_en: "feeling sadness or regret for a mistake made", 
+    definition_vi: "xin lỗi / hối hận", 
+    example_en: "Tom said sorry for forgetting the corridor safety rules.",
+    example_vi: "Tom đã nói lời xin lỗi vì đã quên quy tắc an toàn hành lang.",
+    audio_word: "/audio/week33/vocab_sorry.mp3", 
+    image_url: "/images/week33/vocab_sorry.jpg" 
+  },
+  { 
+    id: 10, 
+    word: "careful", 
+    definition_en: "giving serious attention to avoid danger or mistakes", 
+    definition_vi: "cẩn thận", 
+    example_en: "Students must always be careful when walking near stairs.",
+    example_vi: "Học sinh luôn phải cẩn thận khi đi bộ gần cầu thang.",
+    audio_word: "/audio/week33/vocab_careful.mp3", 
+    image_url: "/images/week33/vocab_careful.jpg" 
+  },
+  { 
+    id: 11, 
+    word: "clumsy", 
+    definition_en: "moving or acting awkwardly without grace or balance", 
+    definition_vi: "vụng về / bất cẩn", 
+    example_en: "He felt clumsy when his books fell all over the floor.",
+    example_vi: "Cậu bé cảm thấy bất cẩn khi sách vở rơi vãi khắp sàn nhà.",
+    audio_word: "/audio/week33/vocab_clumsy.mp3", 
+    image_url: "/images/week33/vocab_clumsy.jpg" 
+  },
+  { 
+    id: 12, 
+    word: "arm", 
+    definition_en: "the upper limb of the human body from shoulder to hand", 
+    definition_vi: "cánh tay", 
+    example_en: "He held onto the handrail with his strong arm.",
+    example_vi: "Cậu bé bám chặt vào tay vịn bằng cánh tay chắc khỏe của mình.",
+    audio_word: "/audio/week33/vocab_arm.mp3", 
+    image_url: "/images/week33/vocab_arm.jpg" 
+  },
+  { 
+    id: 13, 
+    word: "knee", 
+    definition_en: "the joint between the thigh and lower leg", 
+    definition_vi: "đầu gối", 
+    example_en: "Tom hurt his right knee when he slipped on the floor.",
+    example_vi: "Tom bị đau đầu gối phải khi trượt chân trên sàn.",
+    audio_word: "/audio/week33/vocab_knee.mp3", 
+    image_url: "/images/week33/vocab_knee.jpg" 
+  },
+  { 
+    id: 14, 
+    word: "leg", 
+    definition_en: "each of the limbs on which a person walks and stands", 
+    definition_vi: "chân", 
+    example_en: "He rested his leg on a soft cushion in the nurse room.",
+    example_vi: "Cậu bé gác chân lên một chiếc gối êm trong phòng y tế.",
+    audio_word: "/audio/week33/vocab_leg.mp3", 
+    image_url: "/images/week33/vocab_leg.jpg" 
+  },
+  { 
+    id: 15, 
+    word: "head", 
+    definition_en: "the upper part of the body containing brain and eyes", 
+    definition_vi: "đầu", 
+    example_en: "Fortunately, he did not bump his head during the fall.",
+    example_vi: "May mắn thay, cậu bé đã không bị đập đầu khi ngã.",
+    audio_word: "/audio/week33/vocab_head.mp3", 
+    image_url: "/images/week33/vocab_head.jpg" 
+  },
+  { 
+    id: 16, 
+    word: "cold_pack", 
+    definition_en: "a gel bag chilled in ice used to reduce swelling", 
+    definition_vi: "túi chườm lạnh", 
+    example_en: "The nurse placed a cold pack on his knee to reduce pain.",
+    example_vi: "Cô y tá đặt một túi chườm lạnh lên đầu gối để giảm đau.",
+    audio_word: "/audio/week33/vocab_cold_pack.mp3", 
+    image_url: "/images/week33/vocab_cold_pack.jpg" 
+  },
+  { 
+    id: 17, 
+    word: "recover", 
+    definition_en: "to return to normal health or strength after injury", 
+    definition_vi: "hồi phục sức khỏe", 
+    example_en: "Tom will recover quickly with rest and gentle walking.",
+    example_vi: "Tom sẽ sớm hồi phục sức khỏe khi nghỉ ngơi và đi lại nhẹ nhàng.",
+    audio_word: "/audio/week33/vocab_recover.mp3", 
+    image_url: "/images/week33/vocab_recover.jpg" 
+  },
+  { 
+    id: 18, 
+    word: "explain", 
+    definition_en: "to make something clear by giving detail and reason", 
+    definition_vi: "giải thích chi tiết", 
+    example_en: "The teacher explained why walking safely in hallways is important.",
+    example_vi: "Thầy giáo đã giải thích chi tiết lý do tại sao đi bộ an toàn ở hành lang lại quan trọng.",
+    audio_word: "/audio/week33/vocab_explain.mp3", 
+    image_url: "/images/week33/vocab_explain.jpg" 
+  },
+  { 
+    id: 19, 
+    word: "lesson", 
+    definition_en: "a period of learning or a moral learned from experience", 
+    definition_vi: "bài học kinh nghiệm", 
+    example_en: "All students learned a valuable lesson about corridor safety.",
+    example_vi: "Tất cả học sinh đều rút ra một bài học kinh nghiệm quý giá về an toàn hành lang.",
+    audio_word: "/audio/week33/vocab_lesson.mp3", 
+    image_url: "/images/week33/vocab_lesson.jpg" 
+  },
+  { 
+    id: 20, 
+    word: "terrible", 
+    definition_en: "extremely bad, serious, or distressing", 
+    definition_vi: "tồi tệ / nghiêm trọng", 
+    example_en: "He felt terrible after the fall, but the nurse helped him right away.",
+    example_vi: "Cậu bé cảm thấy rất tồi tệ sau cú ngã, nhưng cô y tá đã giúp đỡ ngay tức thì.",
+    audio_word: "/audio/week33/vocab_terrible.mp3", 
+    image_url: "/images/week33/vocab_terrible.jpg" 
+  }
 ];
 
 export const lexicalChunks = [

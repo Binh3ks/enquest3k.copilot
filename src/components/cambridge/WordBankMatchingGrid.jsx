@@ -1,6 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, BookOpen, Layers } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Layers, BookOpen } from 'lucide-react';
 import HoverWord, { renderParsedText } from '../common/HoverWord';
+import CompletionModal from '../common/CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -82,6 +85,13 @@ export function WordBankMatchingGrid({ customData, onComplete }) {
     const finalScore = Math.round((correct / definitions.length) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
+
+    if (finalScore >= 80) {
+      fireCelebrationConfetti('WordBank_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+
     if (onComplete) onComplete(finalScore);
   };
 
@@ -93,9 +103,19 @@ export function WordBankMatchingGrid({ customData, onComplete }) {
     setShuffleSeed((prev) => prev + 1);
   };
 
+  const starsEarned = (score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1;
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+    <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+      <CompletionModal
+        isOpen={isSubmitted && (score || 0) >= 50}
+        onClose={() => {}}
+        score={score || 0}
+        stars={starsEarned}
+        xpEarned={50}
+        srsWordsAdded={5}
+        activityTitle="Word Match Challenge (R&W Part 1)"
+      />
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>

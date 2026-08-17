@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, Layers, Type } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, Search, HelpCircle } from 'lucide-react';
 import HoverWord, { renderParsedText } from '../common/HoverWord';
+import CompletionModal from '../common/CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
 export function TextExtractionCompleter({ customData, onComplete }) {
   const [answers, setAnswers] = useState({});
@@ -68,6 +71,13 @@ export function TextExtractionCompleter({ customData, onComplete }) {
     const finalScore = Math.round((correct / summarySentences.length) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
+
+    if (finalScore >= 70) {
+      fireCelebrationConfetti('StoryDetective_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+
     if (onComplete) onComplete(finalScore);
   };
 
@@ -79,8 +89,19 @@ export function TextExtractionCompleter({ customData, onComplete }) {
     setScore(null);
   };
 
+  const starsEarned = (score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1;
+
   return (
     <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+      <CompletionModal
+        isOpen={isSubmitted && (score || 0) >= 50}
+        onClose={() => {}}
+        score={score || 0}
+        stars={starsEarned}
+        xpEarned={50}
+        srsWordsAdded={7}
+        activityTitle="Story Detective Mission (R&W Part 5)"
+      />
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>

@@ -8,7 +8,8 @@ import { AdaptiveExplainerModal } from '../hubs/station2/components/AdaptiveExpl
 import NotepadNoteCompleter from '../../components/common/NotepadNoteCompleter';
 import { learnerProgressService } from '../../services/learnerProgressService';
 import { useUserStore } from '../../stores/useUserStore';
-import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers, FileText, Trophy } from 'lucide-react';
+import { Swords, PlayCircle, GraduationCap, Award, Brain, Zap, Layers, FileText, Trophy, ShoppingBag } from 'lucide-react';
+import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 
 
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
@@ -16,6 +17,8 @@ import VisualMatchingAH from '../../components/cambridge/VisualMatchingAH';
 import SVGColorAndWrite from '../../components/cambridge/SVGColorAndWrite';
 
 export default function ArenaHub({ data, weekNumber = 33 }) {
+  const userXP = useUserStore((state) => state.userXP || 0);
+  const [showMascotStore, setShowMascotStore] = useState(false);
   const [viewMode, setViewMode] = useState('learn'); // 'learn' | 'check'
   const [mainCategory, setMainCategory] = useState('listening'); // 'listening' | 'arena'
   const [activeTab, setActiveTab] = useState('listening_p1');
@@ -50,14 +53,24 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
-      {/* Top Controls: Learn Mode vs Check Mode */}
-      <div className="flex items-center justify-end mb-4">
-
+      {/* Top Controls: Mode Toggle & Mascot Store */}
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <GlobalModeToggle
           activeMode={viewMode}
           onModeChange={(mode) => setViewMode(mode)}
         />
+
+        <button
+          onClick={() => setShowMascotStore(true)}
+          className="px-3.5 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-md"
+        >
+          <ShoppingBag size={14} className="text-amber-300" /> Nova Store ({userXP} XP)
+        </button>
       </div>
+
+      {showMascotStore && (
+        <NovaMascotStore isOpen={showMascotStore} onClose={() => setShowMascotStore(false)} />
+      )}
 
       {viewMode === 'learn' ? (
         <div className="space-y-6">

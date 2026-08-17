@@ -255,15 +255,15 @@ export const readingHubData = {
   // ─── R&W Part 4: 10-Gap Inline Cloze + Story Title (gaps array + title_options) — Shield 13 ───
   rw_part4: {
     gaps: [
-      { id: 1, target: "slipped", options: ["slipped", "slipping", "slips"] },
-      { id: 2, target: "fell", options: ["fell", "fallen", "falling"] },
-      { id: 3, target: "carefully", options: ["carefully", "careful", "care"] },
-      { id: 4, target: "called", options: ["called", "calling", "calls"] },
-      { id: 5, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
-      { id: 6, target: "nurse", options: ["nurse", "doctor", "teacher"] },
-      { id: 7, target: "corridor", options: ["corridor", "playground", "library"] },
-      { id: 8, target: "praised", options: ["praised", "praise", "praising"] },
-      { id: 9, target: "without", options: ["without", "with", "within"] },
+      { id: 1, target: "carefully", options: ["carefully", "careful", "care"] },
+      { id: 2, target: "corridor", options: ["corridor", "playground", "library"] },
+      { id: 3, target: "slipped", options: ["slipped", "slipping", "slips"] },
+      { id: 4, target: "fell", options: ["fell", "fallen", "falling"] },
+      { id: 5, target: "Without", options: ["Without", "With", "Within"] },
+      { id: 6, target: "called", options: ["called", "calling", "calls"] },
+      { id: 7, target: "nurse", options: ["nurse", "doctor", "teacher"] },
+      { id: 8, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
+      { id: 9, target: "praised", options: ["praised", "praise", "praising"] },
       { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
     ],
     title_options: [

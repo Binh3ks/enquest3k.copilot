@@ -6,13 +6,14 @@ import ChoiceGrid from '../../components/common/ChoiceGrid';
 import { useUserStore } from '../../stores/useUserStore';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { speakText } from '../../utils/AudioHelper';
-import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle, MessageSquare, Type, Trophy } from 'lucide-react';
+import { BookOpen, Volume2, Sparkles, CheckCircle2, PlayCircle, GraduationCap, ArrowRight, Layers, FileText, RefreshCw, HelpCircle, XCircle, MessageSquare, Type, Trophy, ShoppingBag } from 'lucide-react';
 import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGrid';
 import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter';
 import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
 import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
+import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 
 
 import VoiceService from '../../services/voiceService';
@@ -20,11 +21,13 @@ import VoiceService from '../../services/voiceService';
 export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+  const userXP = useUserStore((state) => state.userXP || 0);
 
   const [activeTab, setActiveTab] = useState('webtoon'); // 'webtoon' | 'check'
   const [learnSubTab, setLearnSubTab] = useState('webtoon'); // 'webtoon' | 'interactive_story' | 'reading_part3'
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
   const [selectedHotspot, setSelectedHotspot] = useState(null);
+  const [showMascotStore, setShowMascotStore] = useState(false);
 
   // Cambridge Flyers Reading Part 3 state
   const [r3Answers, setR3Answers] = useState({});
@@ -318,14 +321,24 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
-      {/* Top Controls: Learn Mode vs Check Mode */}
-      <div className="flex items-center justify-end mb-4">
-
+      {/* Top Controls: Mode Toggle, Mascot Store */}
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <GlobalModeToggle
           activeMode={activeTab === 'webtoon' ? 'learn' : 'check'}
           onModeChange={(mode) => setActiveTab(mode === 'learn' ? 'webtoon' : 'check')}
         />
+
+        <button
+          onClick={() => setShowMascotStore(true)}
+          className="px-3.5 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white rounded-xl text-xs font-black transition flex items-center gap-1.5 shadow-md"
+        >
+          <ShoppingBag size={14} className="text-amber-300" /> Nova Store ({userXP} XP)
+        </button>
       </div>
+
+      {showMascotStore && (
+        <NovaMascotStore isOpen={showMascotStore} onClose={() => setShowMascotStore(false)} />
+      )}
 
       {activeTab === 'webtoon' ? (
         /* LEARN MODE: CAMBRIDGE READING & WRITING SUITE SUB-TABS */

@@ -1,6 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, ChevronDown } from 'lucide-react';
 import HoverWord, { renderParsedText } from '../common/HoverWord';
+import CompletionModal from '../common/CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
 function shuffleArray(array) {
   if (!Array.isArray(array)) return [];
@@ -23,15 +26,15 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
   // Fisher-Yates Shuffle 3 options per inline gap popover
   const gapsData = useMemo(() => {
     const rawGaps = customData?.gaps || [
-      { id: 1, target: "slipped", options: ["slipped", "slipping", "slips"] },
-      { id: 2, target: "fell", options: ["fell", "fallen", "falling"] },
-      { id: 3, target: "carefully", options: ["carefully", "careful", "care"] },
-      { id: 4, target: "called", options: ["called", "calling", "calls"] },
-      { id: 5, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
-      { id: 6, target: "nurse", options: ["nurse", "doctor", "teacher"] },
-      { id: 7, target: "corridor", options: ["corridor", "playground", "library"] },
-      { id: 8, target: "praised", options: ["praised", "praise", "praising"] },
-      { id: 9, target: "without", options: ["without", "with", "within"] },
+      { id: 1, target: "carefully", options: ["carefully", "careful", "care"] },
+      { id: 2, target: "corridor", options: ["corridor", "playground", "library"] },
+      { id: 3, target: "slipped", options: ["slipped", "slipping", "slips"] },
+      { id: 4, target: "fell", options: ["fell", "fallen", "falling"] },
+      { id: 5, target: "Without", options: ["Without", "With", "Within"] },
+      { id: 6, target: "called", options: ["called", "calling", "calls"] },
+      { id: 7, target: "nurse", options: ["nurse", "doctor", "teacher"] },
+      { id: 8, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
+      { id: 9, target: "praised", options: ["praised", "praise", "praising"] },
       { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
     ];
 
@@ -54,23 +57,23 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
 
   const storySegments = [
     { type: 'text', content: "Jake was walking " },
-    { type: 'gap', gapId: 3 },
-    { type: 'text', content: " down the main school " },
-    { type: 'gap', gapId: 7 },
-    { type: 'text', content: " after his science class. Suddenly, a boy running fast " },
     { type: 'gap', gapId: 1 },
-    { type: 'text', content: " on the wet tiles and " },
+    { type: 'text', content: " down the main school " },
     { type: 'gap', gapId: 2 },
-    { type: 'text', content: " heavily to the ground. " },
-    { type: 'gap', gapId: 9 },
-    { type: 'text', content: " hesitation, Jake stopped immediately and " },
+    { type: 'text', content: " after his science class. Suddenly, a boy running fast " },
+    { type: 'gap', gapId: 3 },
+    { type: 'text', content: " on the wet tiles and " },
     { type: 'gap', gapId: 4 },
-    { type: 'text', content: " the school " },
-    { type: 'gap', gapId: 6 },
-    { type: 'text', content: ". The medical worker arrived quickly with a clean " },
+    { type: 'text', content: " heavily to the ground. " },
     { type: 'gap', gapId: 5 },
-    { type: 'text', content: " and treated his knee gently. The headmaster later " },
+    { type: 'text', content: " hesitation, Jake stopped immediately and " },
+    { type: 'gap', gapId: 6 },
+    { type: 'text', content: " the school " },
+    { type: 'gap', gapId: 7 },
+    { type: 'text', content: ". The medical worker arrived quickly with a clean " },
     { type: 'gap', gapId: 8 },
+    { type: 'text', content: " and treated his knee gently. The headmaster later " },
+    { type: 'gap', gapId: 9 },
     { type: 'text', content: " Jake for following all safety rules, and everyone felt " },
     { type: 'gap', gapId: 10 },
     { type: 'text', content: " that the injured boy was safe." }
@@ -92,6 +95,13 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
     const finalScore = Math.round((totalCorrect / (gapsData.length + 1)) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
+
+    if (finalScore >= 75) {
+      fireCelebrationConfetti('Cloze_Dropdown_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+
     if (onComplete) onComplete(finalScore);
   };
 
@@ -104,9 +114,19 @@ export function InlineTextClozeDropdown({ customData, onComplete }) {
     setShuffleSeed((prev) => prev + 1);
   };
 
+  const starsEarned = (score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1;
 
   return (
     <div className="w-full max-w-4xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+      <CompletionModal
+        isOpen={isSubmitted && (score || 0) >= 50}
+        onClose={() => {}}
+        score={score || 0}
+        stars={starsEarned}
+        xpEarned={50}
+        srsWordsAdded={5}
+        activityTitle="Fill the Blanks Challenge (R&W Part 4)"
+      />
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>
