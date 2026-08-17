@@ -4,7 +4,9 @@ import { evaluateBarModelAnswer } from '../../../../utils/barModelEvaluator';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
-import { CheckCircle2, AlertCircle, Sparkles, HelpCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy } from 'lucide-react';
+import CompletionModal from '../../../../components/common/CompletionModal';
+import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 const WEEK33_BAR_QUESTIONS = [
   {
@@ -50,6 +52,35 @@ const WEEK33_BAR_QUESTIONS = [
     },
     correctAnswer: 50,
     hintText: 'Add both time intervals: 20 minutes + 30 minutes = 50 total minutes.'
+  },
+  {
+    id: 'bar_w33_04',
+    title: 'Problem 4: First Aid Kit Bandage Stock (Comparison)',
+    problemText: 'The medical room has 35 bandages in Kit A and 20 bandages in Kit B. How many more bandages are in Kit A than Kit B?',
+    modelData: {
+      type: 'comparison',
+      bars: [
+        { name: 'First Aid Kit A', label: '35 bandages', width: 210 },
+        { name: 'First Aid Kit B', label: '20 bandages', width: 120 }
+      ]
+    },
+    correctAnswer: 15,
+    hintText: 'Compare the bar models: 35 bandages - 20 bandages = 15 bandages difference.'
+  },
+  {
+    id: 'bar_w33_05',
+    title: 'Problem 5: Total Ice Packs and Bandages (Part-Whole)',
+    problemText: 'The nurse stocked 12 cold ice packs and 18 rolls of clean bandages. How many medical supplies were stocked altogether?',
+    modelData: {
+      type: 'part_whole',
+      bars: [
+        { label: 'Ice Packs (12)', value: 40, color: '#4f46e5' },
+        { label: 'Bandages (18)', value: 60, color: '#06b6d4' }
+      ],
+      totalLabel: '? supplies'
+    },
+    correctAnswer: 30,
+    hintText: 'Sum of parts: 12 ice packs + 18 bandage rolls = 30 total supplies.'
   }
 ];
 
@@ -97,15 +128,41 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
     }
   };
 
+  const [isCompleted, setIsCompleted] = useState(false);
+
   const handleNext = () => {
     setUserInput('');
     setFeedback(null);
     setShowHint(false);
-    setQuestionIndex((prev) => (prev + 1) % questionsList.length);
+    if (questionIndex + 1 < questionsList.length) {
+      setQuestionIndex(questionIndex + 1);
+    } else {
+      setIsCompleted(true);
+      fireCelebrationConfetti('BarModelQuest_Complete');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(50);
+    }
+  };
+
+  const handleRestart = () => {
+    setQuestionIndex(0);
+    setIsCompleted(false);
+    setUserInput('');
+    setFeedback(null);
+    setShowHint(false);
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md text-slate-900 font-sans">
+      <CompletionModal
+        isOpen={isCompleted}
+        onClose={() => {}}
+        score={100}
+        stars={3}
+        xpEarned={50}
+        srsWordsAdded={5}
+        activityTitle="Bar Model Quest (Arena Game)"
+      />
       <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
         <div>
           <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
@@ -113,9 +170,19 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
           </span>
           <h3 className="text-lg font-black text-slate-900 mt-0.5">{currentQ.title}</h3>
         </div>
-        <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
-          Problem {questionIndex + 1} / {questionsList.length}
-        </span>
+        <div className="flex items-center gap-2">
+          {isCompleted && (
+            <button
+              onClick={handleRestart}
+              className="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-black rounded-lg border border-indigo-200 flex items-center gap-1 transition shadow-sm"
+            >
+              <RefreshCw size={12} /> Play Again
+            </button>
+          )}
+          <span className="px-3 py-1 bg-indigo-50 text-indigo-900 text-xs font-mono font-bold rounded-lg border border-indigo-200">
+            Problem {questionIndex + 1} / {questionsList.length}
+          </span>
+        </div>
       </div>
 
       {/* Problem Statement Card */}

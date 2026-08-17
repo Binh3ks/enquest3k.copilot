@@ -4,6 +4,7 @@ import { srsService } from '../../../../services/srsService';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
 import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee, Star } from 'lucide-react';
+import CompletionModal from '../../../../components/common/CompletionModal';
 
 const WEEK33_VOCAB_SETS = {
   set1_nouns_adj: [
@@ -183,6 +184,10 @@ export function FlashArena({ customSets, onAttemptResult }) {
       // Check if all matched
       if (newMatched.length === currentPairs.length) {
         setIsGameOver(true);
+        fireCelebrationConfetti('FlashArena_Complete');
+        const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+        if (userStore?.addXP) userStore.addXP(50);
+
         await learnerProgressService.logAttempt({
           learnerId,
           contentId: `w33_flash_arena_${activeSetKey}`,
@@ -215,6 +220,15 @@ export function FlashArena({ customSets, onAttemptResult }) {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900">
+      <CompletionModal
+        isOpen={isGameOver}
+        onClose={() => {}}
+        score={score >= 100 ? 100 : Math.round((matchedIds.length / currentPairs.length) * 100)}
+        stars={3}
+        xpEarned={50}
+        srsWordsAdded={currentPairs.length}
+        activityTitle="Flash Arena Speed Match (Arena Game)"
+      />
       {/* Top Controls */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 mb-6 border-b border-slate-200">
         <div>

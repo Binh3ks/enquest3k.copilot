@@ -12,9 +12,10 @@ import { SortableContext, horizontalListSortingStrategy, arrayMove } from '@dnd-
 import { WordBlock } from '../components/WordBlock';
 import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngine';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
-import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
-import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight } from 'lucide-react';
+import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy } from 'lucide-react';
+import CompletionModal from '../../../../components/common/CompletionModal';
+import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 const WEEK33_GRAMMAR_DRILLS = [
   {
@@ -176,31 +177,59 @@ export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
     }
   };
 
+  const [isCompleted, setIsCompleted] = useState(false);
+
   const handleNextDrill = () => {
-    if (onNext) {
-      onNext();
+    if (currentDrillIndex + 1 < totalDrillsCount) {
+      setDrillIndex(currentDrillIndex + 1);
     } else {
-      setDrillIndex((prev) => (prev + 1) % WEEK33_GRAMMAR_DRILLS.length);
+      setIsCompleted(true);
+      fireCelebrationConfetti('SentenceBuilder_Complete');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(50);
     }
+  };
+
+  const handleRestart = () => {
+    setDrillIndex(0);
+    setIsCompleted(false);
+    setFeedback(null);
   };
 
   const activeBlock = [...bankBlocks, ...targetBlocks].find((b) => b.id === activeId);
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900">
+      <CompletionModal
+        isOpen={isCompleted}
+        onClose={() => {}}
+        score={100}
+        stars={3}
+        xpEarned={50}
+        srsWordsAdded={5}
+        activityTitle="Sentence Builder Battle (Arena Game)"
+      />
       {/* Header Info */}
       <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
         <div>
           <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
             LEARN MODE — SENTENCE BUILDER BATTLE
           </span>
-          <h3 className="text-lg font-black text-slate-900 mt-0.5">
-            {renderParsedText(currentDrill.text_en || currentDrill.text || 'Build the target sentence', 'indigo')}
-          </h3>
+          <h3 className="text-base font-black text-slate-900 mt-0.5">{currentDrill.text_en}</h3>
         </div>
-        <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
-          Sentence {currentDrillIndex + 1} / {totalDrillsCount}
-        </span>
+        <div className="flex items-center gap-2">
+          {isCompleted && (
+            <button
+              onClick={handleRestart}
+              className="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-black rounded-lg border border-indigo-200 flex items-center gap-1 transition shadow-sm"
+            >
+              <RefreshCw size={12} /> Play Again
+            </button>
+          )}
+          <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
+            Sentence {currentDrillIndex + 1} / {totalDrillsCount}
+          </span>
+        </div>
       </div>
 
       <DndContext
