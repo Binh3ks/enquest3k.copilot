@@ -81,8 +81,27 @@ export function SVGLineMatcher({ customData, onComplete }) {
 
   useEffect(() => {
     recalculatePositions();
+    const t1 = setTimeout(recalculatePositions, 50);
+    const t2 = setTimeout(recalculatePositions, 200);
+    const t3 = setTimeout(recalculatePositions, 500);
+
+    let observer = null;
+    if (typeof ResizeObserver !== 'undefined') {
+      observer = new ResizeObserver(() => {
+        recalculatePositions();
+      });
+      if (masterContainerRef.current) observer.observe(masterContainerRef.current);
+      if (imageRef.current) observer.observe(imageRef.current);
+    }
+
     window.addEventListener('resize', recalculatePositions);
-    return () => window.removeEventListener('resize', recalculatePositions);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      if (observer) observer.disconnect();
+      window.removeEventListener('resize', recalculatePositions);
+    };
   }, [recalculatePositions]);
 
   const handleImageClickForCalibration = (e) => {
@@ -401,6 +420,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
           <img
             src={sceneData.image_url}
             alt="Listening Part 1 Scene"
+            onLoad={recalculatePositions}
             className="w-full h-full object-fill block"
           />
 
