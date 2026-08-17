@@ -13,10 +13,20 @@ import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
 
+import { readingHubData as readingHub } from '../../weeks/week_33/reading_hub.js';
+import { listeningHubData as listeningHub } from '../../weeks/week_33/listening_hub.js';
+import { writingHubData as writingHub } from '../../weeks/week_33/writing_hub.js';
+import { speakingHubData as speakingHub } from '../../weeks/week_33/speaking_hub.js';
+
 export const weekData = {
   weekId: 33,
   title: "Corridor Safety & School Care",
   title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học",
+
+  readingHub,
+  listeningHub,
+  writingHub,
+  speakingHub,
   stations: {
     read_explore,
     explore,

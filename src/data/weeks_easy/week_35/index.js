@@ -13,10 +13,20 @@ import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
 
+import { readingHubData as readingHub } from '../../weeks/week_35/reading_hub.js';
+import { listeningHubData as listeningHub } from '../../weeks/week_35/listening_hub.js';
+import { writingHubData as writingHub } from '../../weeks/week_35/writing_hub.js';
+import { speakingHubData as speakingHub } from '../../weeks/week_35/speaking_hub.js';
+
 export const weekData = {
   weekId: 35,
   title: "Save Our Park — Environmental Action",
   title_vi: "Bảo Vệ Công Viên — Hành Động Môi Trường",
+
+  readingHub,
+  listeningHub,
+  writingHub,
+  speakingHub,
   stations: {
     read_explore,
     explore,
