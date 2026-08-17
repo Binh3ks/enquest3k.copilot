@@ -8,6 +8,7 @@ import { NotepadNoteCompleter } from '../../components/common/NotepadNoteComplet
 import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle2, Layers, Film, ShoppingBag, Zap, X } from 'lucide-react';
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
+import CompletionModal from '../../components/common/CompletionModal';
 import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
@@ -128,6 +129,15 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white text-slate-800 rounded-3xl border border-slate-200 shadow-xl font-sans">
+      <CompletionModal
+        isOpen={!!aiScore && (aiScore.movieQualityScore >= 50)}
+        onClose={() => {}}
+        score={aiScore?.movieQualityScore || 0}
+        stars={aiScore?.stars || 1}
+        xpEarned={100}
+        srsWordsAdded={5}
+        activityTitle="Writing Studio Challenge (R&W Part 7)"
+      />
       {/* Top Controls: Mode Toggle, Mascot Store & Hints */}
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <GlobalModeToggle activeMode={activeMode} onModeChange={setActiveMode} />

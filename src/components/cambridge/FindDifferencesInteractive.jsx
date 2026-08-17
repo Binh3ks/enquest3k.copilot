@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Mic, MicOff, Volume2, Eye } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import CompletionModal from '../common/CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
 export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false }) {
   const [foundHotspots, setFoundHotspots] = useState([]); // [hotspotId]
@@ -59,6 +62,13 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
     const finalScore = Math.round((foundCount / differencesData.hotspots.length) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
+
+    if (finalScore >= 70) {
+      fireCelebrationConfetti('FindDiff_Complete');
+    }
+    const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+    if (userStore?.addXP) userStore.addXP(50);
+
     if (onComplete) onComplete(finalScore);
   };
 
@@ -72,8 +82,19 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
     setShowHint(false);
   };
 
+  const starsEarned = (score || 0) >= 80 ? 3 : (score || 0) >= 60 ? 2 : 1;
+
   return (
     <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
+      <CompletionModal
+        isOpen={isSubmitted && (score || 0) >= 50}
+        onClose={() => {}}
+        score={score || 0}
+        stars={starsEarned}
+        xpEarned={50}
+        srsWordsAdded={6}
+        activityTitle="Find Differences Mission (Speaking Part 1)"
+      />
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
         <div>

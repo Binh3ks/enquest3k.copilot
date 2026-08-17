@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, RefreshCw, Trophy, HelpCircle, PlayCircle, ArrowRight, LifeBuoy } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
+import CompletionModal from '../common/CompletionModal';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { useUserStore } from '../../stores/useUserStore';
 
 /**
  * Speech Recognition & Response Accuracy Evaluator
@@ -308,6 +311,9 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
         } else {
           console.log('[SPEAKING_P2_DEBUG] Phase changed to: EXAM_COMPLETED');
           setFlowState('completed');
+          fireCelebrationConfetti('InfoExchange_Complete');
+          const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+          if (userStore?.addXP) userStore.addXP(50);
           speakNovaWithDebug("Fantastic job! You completed the Speaking Information Exchange Exam!");
         }
       }, 3500);
@@ -382,8 +388,17 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
   const isPhase2Active = flowState === 'phase2_intro' || flowState === 'phase2_q';
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
-      {/* Header Banner */}
+    <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-slate-900 text-white rounded-3xl border border-purple-500/30 shadow-2xl font-sans space-y-6 relative overflow-hidden">
+      <CompletionModal
+        isOpen={flowState === 'completed'}
+        onClose={() => {}}
+        score={100}
+        stars={3}
+        xpEarned={50}
+        srsWordsAdded={5}
+        activityTitle="Cue Card Exchange (Speaking Part 2)"
+      />
+      {/* Decorative Glow Patterns */}
       <div className="pb-3 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
         <div>
           <span className="px-3.5 py-1 bg-purple-100 text-purple-900 text-[11px] font-black rounded-full uppercase tracking-wider flex items-center gap-1.5 w-max">

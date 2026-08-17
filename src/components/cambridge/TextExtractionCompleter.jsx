@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, Search, HelpCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, BookOpen, Search, HelpCircle, Type } from 'lucide-react';
 import HoverWord, { renderParsedText } from '../common/HoverWord';
 import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';

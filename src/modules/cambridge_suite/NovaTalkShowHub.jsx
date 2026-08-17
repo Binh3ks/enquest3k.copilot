@@ -9,6 +9,7 @@ import { Mic, MicOff, Volume2, Sparkles, Send, CheckCircle2, MessageSquare, Refr
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
+import CompletionModal from '../../components/common/CompletionModal';
 
 /**
  * Cambridge Speech Assessment Engine
@@ -873,6 +874,17 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           </div>
         </div>
       )}
+
+      {/* Completion Modal for Talkshow & Picture Story */}
+      <CompletionModal
+        isOpen={isTalkshowEnded || Object.keys(pictureScores).length >= 4}
+        onClose={() => {}}
+        score={isTalkshowEnded ? 95 : 100}
+        stars={3}
+        xpEarned={50}
+        srsWordsAdded={5}
+        activityTitle={isTalkshowEnded ? "Nova Live Talk Show (Speaking Part 4)" : "Picture Story Retell (Speaking Part 3)"}
+      />
 
       {/* Nova Mascot Store Modal */}
       <NovaMascotStore isOpen={showMascotStore} onClose={() => setShowMascotStore(false)} />
