@@ -39,6 +39,9 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 3. **Reading (Parts 1-6)**: Tuân thủ độ dài chuẩn A2 Flyers (P1 10 defs/15 words, P2 5 dialogue turns, P3 ~120w story gap-fill + title, P4 10 grammar MCQs, P5 ~250w story + 7 completions 1-4 words, P6 5 open cloze gaps).
 4. **Writing (Part 7)**: Viết truyện theo 3 tranh liên hoàn $\ge 20$ từ, chấm điểm theo Rubric 5 Shields (Content 2, Grammar/Flow 2, Vocab/Spelling 1).
 
+## 🤝 Session Handoff & Start Protocol (`/handoff` & `/start`) — 2026-08-17
+- **Kết thúc phiên (`/handoff`)**: Agent thực thi `node scripts/handoff.mjs "<Tóm tắt công việc>"` để tự động ghi nhận git status, commit hash, các việc đã xong, các việc chưa xong và các điểm cần user quyết định vào `.agents/handoffs/latest_handoff.md` và `.agents/handoffs/handoff_<timestamp>.md`.
+- **Mở đầu phiên mới (`/start`)**: Agent đọc ngay file `.agents/handoffs/latest_handoff.md`, kiểm tra `AGENTS.md`, thực thi `node scripts/start_session.mjs` và báo cáo 3 mục: (1) Công việc phiên cũ bàn giao, (2) Trạng thái Git & Build hiện tại, (3) Sẵn sàng nhận chỉ thị mới.
 
 ## Output Discipline (token-saving) — 2026-07-03
 Khi xuất báo cáo hoặc sửa code trong session OpenHands/Devin:
