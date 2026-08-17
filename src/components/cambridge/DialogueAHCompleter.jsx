@@ -22,14 +22,14 @@ export function DialogueAHCompleter({ customData, onComplete }) {
   // Fisher-Yates Shuffle A-H Options and dynamically assign keys A to H
   const { ahOptions, targetKeyMap } = useMemo(() => {
     const rawOptions = customData?.options || [
-      { id: "opt_1", text: "I was walking carefully back from the science lab.", for_gap: 1 },
-      { id: "opt_2", text: "Yes, he slipped on the wet floor near the stairs.", for_gap: 2 },
-      { id: "opt_3", text: "No, Jake stopped and called the school nurse immediately.", for_gap: 3 },
-      { id: "opt_4", text: "The nurse applied a clean bandage and a cold pack gently.", for_gap: 4 },
-      { id: "opt_5", text: "Because he followed safety rules and helped his friend.", for_gap: 5 },
-      { id: "opt_6", text: "They were eating lunch together in the cafeteria.", for_gap: null },
-      { id: "opt_7", text: "It was raining heavily outside the school building.", for_gap: null },
-      { id: "opt_8", text: "We have science class every Monday morning at eight.", for_gap: null }
+      { id: "opt_1", text: "Yes, I was walking carefully down the corridor when Tom slipped on the wet floor.", for_gap: 1 },
+      { id: "opt_2", text: "Yes, he lost his balance on the wet tiles and hurt his knee quite badly.", for_gap: 2 },
+      { id: "opt_3", text: "I stopped immediately and ran to call the school nurse for help.", for_gap: 3 },
+      { id: "opt_4", text: "She placed a cold pack on his knee and wrapped it gently with a clean bandage.", for_gap: 4 },
+      { id: "opt_5", text: "Yes, he was very pleased that I followed all school safety rules.", for_gap: 5 },
+      { id: "opt_6", text: "I usually eat lunch with my classmates in the school cafeteria.", for_gap: null },
+      { id: "opt_7", text: "The yellow warning sign is placed next to the classroom entrance.", for_gap: null },
+      { id: "opt_8", text: "We have our science experiment every Tuesday morning at nine.", for_gap: null }
     ];
 
     const shuffled = shuffleArray(rawOptions);
@@ -47,11 +47,11 @@ export function DialogueAHCompleter({ customData, onComplete }) {
   // Dynamically map target keys for the 5 dialogue gaps
   const dialogueExchanges = useMemo(() => {
     const rawDialogue = customData?.dialogue || [
-      { gap_id: 1, speaker_a: "Tom", text_a: "Hello Helen! What were you doing when the boy slipped in the corridor?" },
-      { gap_id: 2, speaker_a: "Tom", text_a: "Oh dear! Did he fall down heavily near the science room?" },
-      { gap_id: 3, speaker_a: "Tom", text_a: "Did someone try to run to get a teacher first?" },
-      { gap_id: 4, speaker_a: "Tom", text_a: "What did the school nurse apply for first aid treatment?" },
-      { gap_id: 5, speaker_a: "Tom", text_a: "Why did the headmaster publicly praise Jake during assembly?" }
+      { gap_id: 1, speaker_a: "Harry", speaker_b: "Jake", text_a: "Hi Jake! Did you see what happened in the corridor after science class today?" },
+      { gap_id: 2, speaker_a: "Harry", speaker_b: "Jake", text_a: "Oh no! Did Tom hurt himself badly when he fell down?" },
+      { gap_id: 3, speaker_a: "Harry", speaker_b: "Jake", text_a: "What did you do right away to help him?" },
+      { gap_id: 4, speaker_a: "Harry", speaker_b: "Jake", text_a: "How did the school nurse treat Tom's injured knee?" },
+      { gap_id: 5, speaker_a: "Harry", speaker_b: "Jake", text_a: "The headmaster praised you during assembly, didn't he?" }
     ];
 
     return rawDialogue.map((ex) => ({

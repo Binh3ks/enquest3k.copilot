@@ -67,7 +67,13 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
     setTimeout(() => {
       setIsAnalyzing(false);
 
-      const evaluation = evaluateCambridgeCriteria(userScript, weekNumber);
+      const evaluation = evaluateCambridgeCriteria(userScript, weekNumber, {
+        connectors: wordBankPills?.connectors || [],
+        keywords: [
+          ...(wordBankPills?.action_verbs || []),
+          ...(wordBankPills?.cumulative_chunks || [])
+        ]
+      });
       const totalScore = evaluation.totalScore;
       const stars = evaluation.stars;
       const isWordCountPass = evaluation.metWords;

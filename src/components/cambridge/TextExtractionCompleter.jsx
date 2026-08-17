@@ -29,12 +29,12 @@ export function TextExtractionCompleter({ customData, onComplete }) {
 
   const summarySentences = customData?.summary_sentences || [
     { id: 1, text_before: "Jake was walking down the school corridor after his ", text_after: ".", target: "science class", paragraph_ref: 1 },
-    { id: 2, text_before: "A classmate running fast lost his balance and slipped on the ", text_after: ".", target: "wet tiles", paragraph_ref: 1 },
-    { id: 3, text_before: "Right away, Jake stopped and quickly called the ", text_after: ".", target: "school nurse", paragraph_ref: 2 },
-    { id: 4, text_before: "The nurse gently placed a clean ", text_after: " on the boy's knee.", target: "bandage", paragraph_ref: 2 },
-    { id: 5, text_before: "A cold pack was used to reduce the swelling and ", text_after: ".", target: "knee pain", paragraph_ref: 2 },
-    { id: 6, text_before: "The headmaster publicly praised Jake for remembering all ", text_after: ".", target: "safety rules", paragraph_ref: 3 },
-    { id: 7, text_before: "All the students felt relieved and promised to walk ", text_after: " down the corridor.", target: "carefully", paragraph_ref: 3 }
+    { id: 2, text_before: "The floor was slippery because a cleaner had just ", text_after: " the tiles.", target: "washed", paragraph_ref: 1 },
+    { id: 3, text_before: "The classmate lost his balance and ", text_after: " heavily near the stairs.", target: "fell down", paragraph_ref: 2 },
+    { id: 4, text_before: "Jake ran to call the ", text_after: " for help.", target: "school nurse", paragraph_ref: 2 },
+    { id: 5, text_before: "The nurse used a clean bandage and a ", text_after: " to treat the boy.", target: "cold pack", paragraph_ref: 2 },
+    { id: 6, text_before: "The headmaster praised Jake during ", text_after: " for helping his classmate.", target: "assembly", paragraph_ref: 3 },
+    { id: 7, text_before: "All students promised to walk ", text_after: " in the corridor.", target: "carefully", paragraph_ref: 3 }
   ];
 
   // Helper to normalize string: trim spaces, lowercase, strip punctuation & leading articles (a, an, the)
