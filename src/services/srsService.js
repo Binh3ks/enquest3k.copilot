@@ -111,19 +111,28 @@ class SRSService {
       return currentWeekVocab;
     }
 
-    const srsDue = this.getDueWords(3);
+    // Standardize all input pairs to have { id, en, vi }
+    const normalizedCurrent = currentWeekVocab.map((item, idx) => ({
+      id: item.id || `vocab_${idx}`,
+      en: item.en || item.word || item.phrase || '',
+      vi: item.vi || item.definition_vi || item.definition_en || item.definition || ''
+    })).filter(item => item.en && item.vi);
+
+    // If currentWeekVocab already has 10 rich pairs, return all 10 pairs
+    if (normalizedCurrent.length >= targetSize) {
+      return normalizedCurrent.slice(0, targetSize);
+    }
+
+    const needed = targetSize - normalizedCurrent.length;
+    const srsDue = this.getDueWords(needed);
     const srsFormatted = srsDue.map((srsItem, idx) => ({
       id: `srs_due_${idx}`,
-      word: srsItem.word,
-      definition_en: `SRS Review: ${srsItem.word}`,
-      definition_vi: srsItem.definition || 'từ ôn tập cũ',
+      en: srsItem.word,
+      vi: srsItem.definition || 'từ ôn tập cũ',
       isSrsReview: true
     }));
 
-    const currentCount = Math.max(1, targetSize - srsFormatted.length);
-    const slicedCurrent = currentWeekVocab.slice(0, currentCount);
-
-    return [...slicedCurrent, ...srsFormatted];
+    return [...normalizedCurrent, ...srsFormatted].slice(0, targetSize);
   }
 
   /**
