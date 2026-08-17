@@ -381,6 +381,23 @@ export const VoiceService = {
     // Volume compensation: bass male voices are quieter than female voices
     this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
     
+    // 🎵 TIER 0: Pre-generated Static Multi-Voice MP3 priority (if live on CDN/Storage)
+    if (audioUrl) {
+      const fullAudioPath = audioUrl.startsWith('http')
+        ? audioUrl
+        : (audioUrl.startsWith('/') ? audioUrl : `/audio/week${weekNumber || 33}/${audioUrl}`);
+      try {
+        const headRes = await fetch(fullAudioPath, { method: 'HEAD' }).catch(() => null);
+        if (headRes && headRes.ok && (headRes.headers.get('content-type')?.includes('audio') || fullAudioPath.endsWith('.mp3'))) {
+          console.log(`[TTS] 🎧 Playing pre-generated static MP3 from: ${fullAudioPath}`);
+          await this.playAudio(fullAudioPath, false);
+          return;
+        }
+      } catch (staticErr) {
+        console.warn(`[TTS] Static MP3 check failed (${fullAudioPath}), falling through: ${staticErr.message}`);
+      }
+    }
+
     // 👥 MULTI-VOICE DIALOGUE SYNTHESIS & CACHE ENGINE
     // Detects scripts with multiple characters (Girl, Boy, Man, Woman, Nova, Teacher, Nurse, Headmaster)
     // Synthesizes distinct male & female Google Neural2 / Journey voices and stitches them seamlessly.
