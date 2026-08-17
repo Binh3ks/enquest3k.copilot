@@ -2,6 +2,16 @@ import React, { useState, useRef } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, User, MoveRight, Layers, Trash2, Volume2 } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
+function isCalibratedPinLabel(target, matchedLine, isCalibratorOpen) {
+  if (isCalibratorOpen) {
+    return `${target.id}: ${target.x}%, ${target.y}%`;
+  }
+  if (matchedLine) {
+    return matchedLine.nameText;
+  }
+  return '📍';
+}
+
 export function SVGLineMatcher({ customData, onComplete }) {
   const [selectedName, setSelectedName] = useState(null);
   const [drawnLines, setDrawnLines] = useState([]); // [{ nameId, nameText, targetId, startX, startY, endX, endY }]
@@ -32,6 +42,37 @@ export function SVGLineMatcher({ customData, onComplete }) {
   };
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  
+  // 🎯 Calibrator Tool State (Dev/Admin Visual Target Tuner)
+  const [isCalibratorOpen, setIsCalibratorOpen] = useState(false);
+  const [calibratedTargets, setCalibratedTargets] = useState(sceneData.targets);
+  const [activeCalibTargetId, setActiveCalibTargetId] = useState(sceneData.targets[0]?.id || 't1');
+  const [copiedToast, setCopiedToast] = useState(false);
+
+  const activeTargets = isCalibratorOpen ? calibratedTargets : sceneData.targets;
+
+  const handleImageClickForCalibration = (e) => {
+    if (!isCalibratorOpen || !activeCalibTargetId || !containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = Math.round(((e.clientX - rect.left) / rect.width) * 100);
+    const y = Math.round(((e.clientY - rect.top) / rect.height) * 100);
+
+    const updated = calibratedTargets.map(t => {
+      if (t.id === activeCalibTargetId) {
+        return { ...t, x, y };
+      }
+      return t;
+    });
+
+    setCalibratedTargets(updated);
+  };
+
+  const handleCopyCalibratedJSON = () => {
+    const jsonStr = JSON.stringify(calibratedTargets, null, 2);
+    navigator.clipboard.writeText(jsonStr);
+    setCopiedToast(true);
+    setTimeout(() => setCopiedToast(false), 2000);
+  };
 
   const handleMouseMove = (e) => {
     if (!selectedName || !containerRef.current) return;
@@ -105,7 +146,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
   };
 
   const exampleName = sceneData.names.find(n => n.isExample);
-  const exampleTarget = sceneData.targets.find(t => t.id === exampleName?.target_id || t.isExample);
+  const exampleTarget = activeTargets.find(t => t.id === exampleName?.target_id || t.isExample);
 
   return (
     <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
@@ -121,6 +162,16 @@ export function SVGLineMatcher({ customData, onComplete }) {
         </div>
         <div className="flex items-center gap-2">
           <button
+            onClick={() => setIsCalibratorOpen(!isCalibratorOpen)}
+            className={`px-3 py-1.5 font-bold text-xs rounded-xl border transition flex items-center gap-1 shadow-sm ${
+              isCalibratorOpen 
+                ? 'bg-amber-500 text-white border-amber-600 ring-2 ring-amber-300 animate-pulse' 
+                : 'bg-slate-100 text-slate-700 hover:bg-amber-50 hover:text-amber-900 border-slate-300'
+            }`}
+          >
+            🎯 Calibrate Pins
+          </button>
+          <button
             onClick={handleClearLines}
             disabled={isSubmitted || drawnLines.length === 0}
             className="px-3 py-1.5 bg-rose-50 text-rose-700 hover:bg-rose-100 font-bold text-xs rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1"
@@ -129,6 +180,43 @@ export function SVGLineMatcher({ customData, onComplete }) {
           </button>
         </div>
       </div>
+
+      {/* 🎯 Dev/Admin Target Calibrator Bar */}
+      {isCalibratorOpen && (
+        <div className="p-4 bg-amber-50 border-2 border-amber-300 rounded-2xl space-y-3 animate-fadeIn">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-black text-amber-950 uppercase tracking-wider flex items-center gap-1.5">
+              🎯 Visual Pin Calibrator Tool: Select a target pin below, then click directly on the person in the image to set exact (x%, y%) coordinates:
+            </span>
+            <button
+              onClick={handleCopyCalibratedJSON}
+              className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white font-black text-xs rounded-xl transition flex items-center gap-1 shadow-md"
+            >
+              {copiedToast ? '✅ Copied to Clipboard!' : '📋 Copy JSON Targets'}
+            </button>
+          </div>
+
+          <div className="flex flex-wrap gap-2 pt-1">
+            {calibratedTargets.map((t) => {
+              const isActive = activeCalibTargetId === t.id;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setActiveCalibTargetId(t.id)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1 border ${
+                    isActive
+                      ? 'bg-amber-600 text-white border-amber-700 ring-4 ring-amber-200 scale-105 shadow'
+                      : 'bg-white text-slate-800 border-amber-200 hover:bg-amber-100'
+                  }`}
+                >
+                  <span>{t.label || t.id}</span>
+                  <span className="text-[10px] opacity-80">({t.x}%, {t.y}%)</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Master Audio Player Bar for Listening Part 1 */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
@@ -202,7 +290,10 @@ export function SVGLineMatcher({ customData, onComplete }) {
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
-        className="relative w-full h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 select-none cursor-crosshair"
+        onClick={handleImageClickForCalibration}
+        className={`relative w-full h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 select-none ${
+          isCalibratorOpen ? 'cursor-crosshair ring-4 ring-amber-400' : 'cursor-crosshair'
+        }`}
       >
         {/* Background Picture Scene (Clean, without text overlays) */}
         <img
@@ -282,11 +373,12 @@ export function SVGLineMatcher({ customData, onComplete }) {
         )}
 
         {/* Pure Clean Vector Target Pins on Picture */}
-        {sceneData.targets.map((target) => {
+        {activeTargets.map((target) => {
           const matchedLine = drawnLines.find(l => l.targetId === target.id);
           const isExamplePin = target.isExample || target.id === 't1' || target.label?.toLowerCase().includes('jake');
+          const isCalibActive = isCalibratorOpen && activeCalibTargetId === target.id;
 
-          if (isExamplePin) {
+          if (isExamplePin && !isCalibratorOpen) {
             return (
               <div
                 key={target.id}
@@ -303,19 +395,29 @@ export function SVGLineMatcher({ customData, onComplete }) {
           return (
             <button
               key={target.id}
-              disabled={isSubmitted}
-              onClick={() => handleTargetClick(target)}
+              disabled={isSubmitted && !isCalibratorOpen}
+              onClick={() => {
+                if (isCalibratorOpen) {
+                  setActiveCalibTargetId(target.id);
+                } else {
+                  handleTargetClick(target);
+                }
+              }}
               style={{ left: `${target.x}%`, top: `${target.y}%` }}
               className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-30 transition-all ${
-                selectedName ? 'scale-125 cursor-pointer' : 'hover:scale-110'
+                isCalibActive
+                  ? 'scale-150 ring-4 ring-amber-400 z-40'
+                  : selectedName ? 'scale-125 cursor-pointer' : 'hover:scale-110'
               }`}
-              title={matchedLine ? matchedLine.nameText : 'Click to connect line'}
+              title={matchedLine ? matchedLine.nameText : target.label}
             >
               <div className="relative flex items-center justify-center">
                 <span className={`px-2.5 py-1 rounded-xl border-2 border-white shadow-xl flex items-center justify-center font-black text-xs ${
-                  matchedLine ? 'bg-indigo-600 text-white' : selectedName ? 'bg-amber-400 text-slate-950 animate-bounce' : 'bg-slate-900/80 text-white'
+                  isCalibActive
+                    ? 'bg-amber-500 text-white font-black animate-bounce'
+                    : matchedLine ? 'bg-indigo-600 text-white' : selectedName ? 'bg-amber-400 text-slate-950 animate-bounce' : 'bg-slate-900/80 text-white'
                 }`}>
-                  {matchedLine ? matchedLine.nameText : '📍'}
+                  {isCalibratedPinLabel(target, matchedLine, isCalibratorOpen)}
                 </span>
               </div>
             </button>
