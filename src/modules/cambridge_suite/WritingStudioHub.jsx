@@ -28,7 +28,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [showMascotStore, setShowMascotStore] = useState(false);
 
 
-  const picturePanels = data?.picture_story || data?.picturePanels || [
+  const picturePanels = data?.picture_story || data?.writing?.picture_story || data?.picturePanels || data?.writing?.picturePanels || [
     {
       panel_id: 'panel_1',
       title_en: 'Panel 1: Running in the Corridor',
@@ -49,7 +49,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
     }
   ];
 
-  const wordBankPills = data?.word_bank_pills || data?.wordBankPills || {
+  const wordBankPills = data?.word_bank_pills || data?.writing?.word_bank_pills || data?.wordBankPills || data?.writing?.wordBankPills || {
     action_verbs: ['slipped', 'fell down', 'hurt knee', 'called nurse', 'applied bandage', 'helped clean', 'walked carefully'],
     connectors: ['first', 'suddenly', 'then', 'while', 'because', 'so', 'finally'],
     cumulative_chunks: ['slipped on wet floor', 'hurt his knee', 'called the school nurse', 'applied a clean bandage', 'cleaned the wet floor'],

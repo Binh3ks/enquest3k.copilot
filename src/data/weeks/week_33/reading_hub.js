@@ -205,90 +205,46 @@ export const readingHubData = {
     ]
   },
 
-  // ─── R&W Part 2: Dialogue A-H (5 turns, 8 options) — Shield 12 ───
+  // ─── R&W Part 2: Dialogue A-H (5 turns, 8 options with for_gap) — Shield 12 ───
   rw_part2: {
-    title: "Jake and the School Nurse — Corridor Conversation",
-    speakers: { A: "Headmaster", B: "Jake" },
-    dialogue_prompt: "Read the conversation. Choose the best answer for each gap. Write a letter (A–H).",
-    turns: [
-      {
-        id: 1,
-        speaker: "A",
-        line: "Good morning, Jake. I heard there was an accident in the corridor today. Can you tell me what happened?",
-        answer_letter: "E"
-      },
-      {
-        id: 2,
-        speaker: "A",
-        line: "That sounds very serious. Did the boy hurt himself badly?",
-        answer_letter: "B"
-      },
-      {
-        id: 3,
-        speaker: "A",
-        line: "You made the right decision. What did the nurse do when she arrived?",
-        answer_letter: "G"
-      },
-      {
-        id: 4,
-        speaker: "A",
-        line: "Excellent. And do you know why Tom was running in the corridor?",
-        answer_letter: "A"
-      },
-      {
-        id: 5,
-        speaker: "A",
-        line: "I see. We must remind all students to walk carefully. Thank you, Jake, for helping Tom today.",
-        answer_letter: "D"
-      }
+    dialogue: [
+      { gap_id: 1, speaker_a: "Tom", text_a: "Hello Helen! What were you doing when the boy slipped in the corridor?" },
+      { gap_id: 2, speaker_a: "Tom", text_a: "Oh dear! Did he fall down heavily near the science room?" },
+      { gap_id: 3, speaker_a: "Tom", text_a: "Did someone try to run to get a teacher first?" },
+      { gap_id: 4, speaker_a: "Tom", text_a: "What did the school nurse apply for first aid treatment?" },
+      { gap_id: 5, speaker_a: "Tom", text_a: "Why did the headmaster publicly praise Jake during assembly?" }
     ],
     options: [
-      { letter: "A", text: "He said he was late for his next class and forgot the safety rule." },
-      { letter: "B", text: "Yes, he slipped on the wet tiles and hurt his knee quite badly." },
-      { letter: "C", text: "I think the corridor is cleaned every Monday and Friday morning." },
-      { letter: "D", text: "You're welcome. I just did what I learned in safety class." },
-      { letter: "E", text: "A classmate called Tom slipped on the wet floor near the science room and fell down." },
-      { letter: "F", text: "I usually walk slowly and check both sides before crossing the corridor." },
-      { letter: "G", text: "She put a cold pack on his knee and wrapped it with a clean bandage." },
-      { letter: "H", text: "Yes, I think the wet floor warning sign was there but Tom didn't see it." }
+      { id: "opt_1", text: "I was walking carefully back from the science lab.", for_gap: 1 },
+      { id: "opt_2", text: "Yes, he slipped on the wet floor near the stairs.", for_gap: 2 },
+      { id: "opt_3", text: "No, Jake stopped and called the school nurse immediately.", for_gap: 3 },
+      { id: "opt_4", text: "The nurse applied a clean bandage and a cold pack gently.", for_gap: 4 },
+      { id: "opt_5", text: "Because he followed safety rules and helped his friend.", for_gap: 5 },
+      { id: "opt_6", text: "They were eating lunch together in the cafeteria.", for_gap: null },
+      { id: "opt_7", text: "It was raining heavily outside the school building.", for_gap: null },
+      { id: "opt_8", text: "We have science class every Monday morning at eight.", for_gap: null }
     ]
   },
 
-  // ─── R&W Part 4: 10-Gap Inline Cloze + Story Title — Shield 13 ───
+  // ─── R&W Part 4: 10-Gap Inline Cloze + Story Title (gaps array + title_options) — Shield 13 ───
   rw_part4: {
-    title: "The Corridor Incident — Cambridge Reading & Writing Part 4",
-    instructions: "Read the story. Choose the right word from the box and write it next to the number. Then choose the best title for the story.",
-    story_text: "Last Tuesday, Jake __1__ carefully down the school corridor after his science lesson. Suddenly, he __2__ a boy called Tom running very fast near the science room. Tom __3__ to see the yellow warning sign on the wet floor. He __4__ on the slippery tiles and __5__ down, hurting his left knee badly. Jake stopped __6__ and walked quickly to find the school nurse. The nurse arrived in two minutes. She __7__ a cold pack onto Tom's swollen knee and __8__ it firmly with a clean white bandage. The headmaster heard about the accident and came to see Tom. He __9__ Jake for reacting so quickly and calmly. He also reminded all students to __10__ carefully in the school corridors at all times.",
-    options_per_gap: {
-      "1": ["walked", "was walking", "walks"],
-      "2": ["noticed", "was noticing", "notice"],
-      "3": ["didn't fail", "failed", "didn't manage"],
-      "4": ["slipped", "slipping", "was slip"],
-      "5": ["fell", "felt", "falls"],
-      "6": ["immediately", "lately", "carefully"],
-      "7": ["placed", "was placing", "placing"],
-      "8": ["wrapped", "was wrapping", "wraps"],
-      "9": ["praised", "was praising", "praises"],
-      "10": ["walk", "walking", "walked"]
-    },
-    answers: {
-      "1": "was walking",
-      "2": "noticed",
-      "3": "failed",
-      "4": "slipped",
-      "5": "fell",
-      "6": "immediately",
-      "7": "placed",
-      "8": "wrapped",
-      "9": "praised",
-      "10": "walk"
-    },
-    title_choices: [
-      { letter: "A", text: "Tom's Favourite Science Class" },
-      { letter: "B", text: "A Quick Action in the Corridor" },
-      { letter: "C", text: "How Jake Learned to Run Faster" }
+    gaps: [
+      { id: 1, target: "slipped", options: ["slipped", "slipping", "slips"] },
+      { id: 2, target: "fell", options: ["fell", "fallen", "falling"] },
+      { id: 3, target: "carefully", options: ["carefully", "careful", "care"] },
+      { id: 4, target: "called", options: ["called", "calling", "calls"] },
+      { id: 5, target: "bandage", options: ["bandage", "bandaged", "bandaging"] },
+      { id: 6, target: "nurse", options: ["nurse", "doctor", "teacher"] },
+      { id: 7, target: "corridor", options: ["corridor", "playground", "library"] },
+      { id: 8, target: "praised", options: ["praised", "praise", "praising"] },
+      { id: 9, target: "without", options: ["without", "with", "within"] },
+      { id: 10, target: "relieved", options: ["relieved", "relief", "relieving"] }
     ],
-    title_answer: "B"
+    title_options: [
+      { id: 1, title: "A Dangerous Run Near the Science Room", target: false },
+      { id: 2, title: "Jake's Responsible Action in the School Corridor", target: true },
+      { id: 3, title: "How Teachers Clean Science Experiments", target: false }
+    ]
   },
 
   // ─── R&W Part 5: Story Extract — 1-4 Word Completion (7 items) — Shield 15 ───

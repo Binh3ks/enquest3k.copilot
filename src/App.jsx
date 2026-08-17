@@ -212,7 +212,7 @@ const App = () => {
       <Route path="/collection" element={<CollectionBoard />} />
       <Route path="/word-treasury" element={<WordTreasury />} />
       <Route path="/hub/station-1" element={<WorldDiscoveryHub data={week33Data?.readingHub} weekNumber={33} />} />
-      <Route path="/hub/station-2" element={<ArenaHub weekNumber={33} />} />
+      <Route path="/hub/station-2" element={<ArenaHub data={week33Data?.listeningHub} weekNumber={33} />} />
       <Route path="/hub/station-3" element={<WritingStudioHub data={week33Data?.writingHub} weekNumber={33} />} />
       <Route path="/hub/station-4" element={<NovaTalkShowHub data={week33Data?.speakingHub} weekNumber={33} />} />
     </Routes>

@@ -12,6 +12,13 @@ export const speakingHubData = {
   theme: "Corridor Safety & School Care",
   mindmap,
   ask_ai,
+  talkshow_turns: [
+    { turn_number: 1, nova_question: "Welcome to Nova Live Talk Show! Today we are discussing school safety. What happened while Jake was walking down the school corridor?" },
+    { turn_number: 2, nova_question: "Oh dear! How did Tom slip on the wet floor near the science lab?" },
+    { turn_number: 3, nova_question: "What responsible action did Jake take right away when he saw Tom fall down?" },
+    { turn_number: 4, nova_question: "How did the school nurse help Tom with the clean bandage and cold pack?" },
+    { turn_number: 5, nova_question: "What lesson did all the students learn about walking safely in the school corridor?" }
+  ],
   cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
   cue_card_prompts: CUE_CARD_PROMPTS,
 
