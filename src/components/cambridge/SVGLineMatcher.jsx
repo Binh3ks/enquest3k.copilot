@@ -23,11 +23,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
       { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy walking carefully)', x: 22, y: 65, isExample: true },
-      { id: 't2', label: 'School Nurse (Carrying bandage)', x: 53, y: 62 },
-      { id: 't3', label: 'Tom (Slipping on wet floor)', x: 47, y: 68 },
-      { id: 't4', label: 'Headmaster (In dark blue suit)', x: 35, y: 55 },
-      { id: 't5', label: 'Mia (Girl holding mop)', x: 62, y: 64 }
+      { id: 't1', label: 'Jake (Boy walking carefully)', x: 39, y: 65, isExample: true },
+      { id: 't2', label: 'School Nurse (Carrying bandage)', x: 65, y: 60 },
+      { id: 't3', label: 'Tom (Slipping on wet floor)', x: 58, y: 65 },
+      { id: 't4', label: 'Headmaster (In dark blue suit)', x: 48, y: 53 },
+      { id: 't5', label: 'Mia (Girl holding mop)', x: 76, y: 64 }
     ]
   };
 

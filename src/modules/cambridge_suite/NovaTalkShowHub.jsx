@@ -180,6 +180,12 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     { id: "sh_05", speaker: "Headmaster", text: "Everyone **felt relieved**, and the headmaster **praised Jake** for following safety rules." }
   ];
 
+  const longParagraph = data?.podcast_shadowing?.long_paragraph || data?.long_paragraph || {
+    title: "Corridor Safety & Quick Action",
+    text: "Jake was walking **carefully down the school corridor** after science class when a boy running in a hurry suddenly **slipped on the wet floor**. **Right away**, Jake stopped immediately and **called the school nurse**. The nurse arrived quickly and applied a **clean bandage** and a **cold pack** to his bruised knee. Everyone **felt relieved**, and the headmaster **praised Jake** for following safety rules.",
+    phonetic_guide: "Focus on linking sounds: 'slipped on', 'called the', 'felt relieved'."
+  };
+
   const srsSpeakingContext = srsService.getSpeakingContextualPrompt();
 
   const talkshowTurns = data?.talkshow_turns || [
