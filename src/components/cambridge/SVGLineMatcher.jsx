@@ -26,11 +26,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
       { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy walking with backpack on far left)', x: 20, y: 60, isExample: true },
-      { id: 't2', label: 'School Nurse (White uniform with bandage)', x: 64, y: 52 },
-      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 56, y: 62 },
-      { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 38, y: 50 },
-      { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 72, y: 54 }
+      { id: 't1', label: 'Jake (Boy walking with backpack on far left)', x: 18, y: 56, isExample: true },
+      { id: 't2', label: 'School Nurse (White uniform with bandage)', x: 66, y: 52 },
+      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 58, y: 58 },
+      { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 38, y: 48 },
+      { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 75, y: 52 }
     ]
   };
 
@@ -389,11 +389,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
           </div>
         </div>
 
-        {/* 🖼️ Main Image Viewport */}
+        {/* 🖼️ Main Image Viewport (Aspect ratio 1264x848 locked to prevent pin drift) */}
         <div
           ref={imageRef}
           onClick={handleImageClickForCalibration}
-          className={`relative w-full h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 ${
+          className={`relative w-full aspect-[1264/848] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 ${
             isCalibratorOpen ? 'cursor-crosshair ring-4 ring-amber-400' : selectedName ? 'cursor-crosshair' : 'cursor-default'
           }`}
         >
@@ -401,7 +401,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
           <img
             src={sceneData.image_url}
             alt="Listening Part 1 Scene"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-fill block"
           />
 
           {/* Clean Target Pin Markers on Picture */}
