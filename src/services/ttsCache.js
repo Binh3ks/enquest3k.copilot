@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache_v24_CleanMP3';
+const DB_NAME = 'EngQuestTTSCache_v25_MultiVoice';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;  // Fresh v24 store (Aug 8, 2026): Clean single-blob Google Cloud Direct TTS
+const DB_VERSION = 1;  // Fresh v25 store (Aug 17, 2026): Multi-Voice composite dialogues + static MP3 routing
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
@@ -60,6 +60,7 @@ class TTSCacheService {
       indexedDB.deleteDatabase('EngQuestTTSCache_v18');
       indexedDB.deleteDatabase('EngQuestTTSCache_v20');
       indexedDB.deleteDatabase('EngQuestTTSCache_v21');
+      indexedDB.deleteDatabase('EngQuestTTSCache_v24_CleanMP3');
     } catch {}
 
     return new Promise((resolve, reject) => {

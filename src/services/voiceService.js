@@ -381,6 +381,21 @@ export const VoiceService = {
     // Volume compensation: bass male voices are quieter than female voices
     this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
     
+    // 🎵 TIER 0: Static Audio File / Pre-generated Multi-Voice MP3 priority
+    // If an explicit audioUrl or static path is passed, play it directly with 0ms latency!
+    if (audioUrl) {
+      const fullAudioPath = audioUrl.startsWith('http')
+        ? audioUrl
+        : (audioUrl.startsWith('/') ? audioUrl : `/audio/week${weekNumber || 33}/${audioUrl}`);
+      try {
+        console.log(`[TTS] 🎧 Playing pre-generated static MP3 from: ${fullAudioPath}`);
+        await this.playAudio(fullAudioPath, false);
+        return;
+      } catch (audioErr) {
+        console.warn(`[TTS] ⚠️ Static audio file playback failed, falling back to TTS: ${audioErr.message}`);
+      }
+    }
+
     // 🎓 GOOGLE CLOUD TTS DIRECT OVERRIDE (Enabled for all 36 weeks)
     const useGoogleDirect = true;
     if (useGoogleDirect) {

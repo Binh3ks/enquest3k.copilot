@@ -15,6 +15,7 @@ export const listeningHubData = {
   // Cambridge Listening Part 1 (SVG Line Matcher)
   listening_p1: {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',
+    audio_url: '/audio/week33/listening_p1_full.mp3',
     passage_audio_script: "Nova: Look at the picture of the school corridor. Some children and adults are there. Can you see them all? Let's listen and draw lines from the names to the right people.\nNova: The boy who is wearing a blue shirt and carrying a backpack — he is walking carefully. That boy is Jake.\nNova: Now look at the lady who is wearing a white uniform and rushing towards the boy on the floor. She is carrying a bandage. That is the school nurse.\nNova: Can you find the boy who is wearing a red shirt and slipping on the wet floor? His name is Tom. He fell because he was running.\nNova: Look at the tall man who is wearing a dark blue suit and standing near the lockers. He is watching to make sure everyone is safe. That is the headmaster.\nNova: Finally, find the girl who is wearing a yellow top and holding a mop near the wet floor sign. Her name is Mia. She is trying to clean the floor.\nNova: Now, there is one more name — Alex. Can you find Alex? Look carefully at all the children. Is Alex there? No! Alex is not in the picture. Alex is not there today.",
     names: [
       { id: 'n1', text: 'Jake', target_id: 't1' },
