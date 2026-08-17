@@ -1,6 +1,7 @@
 /**
  * Week 33 Gold Standard Data — Listening Hub
  * Theme: "Corridor Safety & School Care"
+ * Cambridge A2 Flyers Full Exam Standard Audio & Scripts (W33 - W72)
  */
 
 import dictation from './dictation.js';
@@ -12,11 +13,11 @@ export const listeningHubData = {
   dictation,
   shadowing,
 
-  // Cambridge Listening Part 1 (SVG Line Matcher)
+  // Cambridge Listening Part 1 (SVG Line Matcher — Scene Investigation)
   listening_p1: {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',
     audio_url: '/audio/week33/listening_p1_full.mp3',
-    passage_audio_script: "Nova: Look at the picture of the school corridor. Some children and adults are there. Can you see them all? Let's listen and draw lines from the names to the right people.\nNova: The boy who is wearing a blue shirt and carrying a backpack — he is walking carefully. That boy is Jake.\nNova: Now look at the lady who is wearing a white uniform and rushing towards the boy on the floor. She is carrying a bandage. That is the school nurse.\nNova: Can you find the boy who is wearing a red shirt and slipping on the wet floor? His name is Tom. He fell because he was running.\nNova: Look at the tall man who is wearing a dark blue suit and standing near the lockers. He is watching to make sure everyone is safe. That is the headmaster.\nNova: Finally, find the girl who is wearing a yellow top and holding a mop near the wet floor sign. Her name is Mia. She is trying to clean the floor.\nNova: Now, there is one more name — Alex. Can you find Alex? Look carefully at all the children. Is Alex there? No! Alex is not in the picture. Alex is not there today.",
+    passage_audio_script: "Nova: Look at Part 1. Now look at the picture. Listen and look. There is one example.\nGirl: Look at this photo of our school corridor after lunch! It was quite busy.\nMan: Oh yes, I can see many people. Who is that boy walking carefully down the hallway in the blue shirt?\nGirl: That's Jake. He always walks slowly and watches where he is going.\nMan: That is very sensible of him.\nNova: Can you see the line? This is an example. Now you listen and draw lines.\nGirl: Oh dear, look at the boy who is slipping on the wet floor!\nMan: Yes, his papers are flying everywhere! Is he wearing a red sweater?\nGirl: That's right, he is wearing a red shirt. His name is Tom. He fell down because he was running in a hurry.\nMan: Poor Tom! I hope he is okay.\nGirl: Look, someone is rushing quickly to help him. Can you see the lady carrying a clean bandage in the white uniform?\nMan: Ah, that's our school nurse! She always takes good care of everyone when accidents happen.\nGirl: Yes, she is very kind.\nMan: Who is that tall man standing near the blue lockers in the dark suit?\nGirl: Do you mean the man watching all the students to make sure the hallway is safe?\nMan: Yes, exactly.\nGirl: That's our headmaster! He always reminds us about corridor safety rules.\nMan: Now look near the yellow warning sign. Is that a girl holding a cleaning mop?\nGirl: Yes, that is Mia. She is wiping the water off the floor so nobody else slips.\nMan: What a helpful girl!\nGirl: Is Alex in this picture today?\nMan: No, Alex had a doctor appointment this morning, so he is not at school today.",
     names: [
       { id: 'n1', text: 'Jake', target_id: 't1' },
       { id: 'n2', text: 'School Nurse', target_id: 't2' },
@@ -36,13 +37,13 @@ export const listeningHubData = {
 
   // Cambridge Listening Part 3 (Visual Matching A-H — School Locations)
   listening_p3: {
-    passage_audio_script: "Teacher: Hello Jake! I need to write a report about yesterday. Can you help me find where everything was?\nJake: Of course! What do you need to know?\nTeacher: First, where was the clean bandage? Was it on the headmaster's desk?\nJake: Oh no, not there! The nurse keeps the clean bandage in the medical cabinet. In the nurse room.\nTeacher: I see. And what about the cold pack for Tom's knee? Was it in the science room somewhere?\nJake: No, the cold pack was on the first aid table — you know, the one near the corridor entrance.\nTeacher: Right. Now, Tom's science notebook — did he leave it in the corridor?\nJake: He thought so at first, but actually Tom left his science notebook on the lab desk. In the science room.\nTeacher: Hmm. I also heard about a glass of orange juice. Was it on the playground bench?\nJake: No, nobody took it outside! The orange juice was on the cafeteria counter. In the canteen.\nTeacher: And the alarm clock? Was that in the headmaster's office?\nJake: Ha! No. The alarm clock was at Tom's home — on his bedroom table. He forgot it there that morning!",
+    passage_audio_script: "Teacher: Hello Jake! I am writing our school safety report about yesterday. Can you tell me where all the items were found?\nJake: Of course, Mrs. Wilson! I remember everything clearly.\nTeacher: First, where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room.\nTeacher: Excellent. And what about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use.\nTeacher: Right. And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench, but actually his notebook was sitting right on the lab desk in the science room.\nTeacher: Ah, that is a relief! Now, what about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen.\nTeacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!",
     items: [
       { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_url: '/audio/week33/listening_p3_item1.mp3', audio_text: 'The clean bandage was kept in the medical cabinet in the nurse room.' },
-      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_url: '/audio/week33/listening_p3_item2.mp3', audio_text: 'The cold pack was placed on the first aid table near the corridor.' },
-      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_url: '/audio/week33/listening_p3_item3.mp3', audio_text: 'The science notebook was on the lab desk in the science room.' },
-      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_url: '/audio/week33/listening_p3_item4.mp3', audio_text: 'The orange juice glass was on the cafeteria counter in the canteen.' },
-      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_url: '/audio/week33/listening_p3_item5.mp3', audio_text: 'The alarm clock was on the bedroom table at home.' }
+      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_url: '/audio/week33/listening_p3_item2.mp3', audio_text: 'The cold pack was placed on the first aid table near the corridor entrance.' },
+      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_url: '/audio/week33/listening_p3_item3.mp3', audio_text: 'The science notebook was found on the lab desk in the science room.' },
+      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_url: '/audio/week33/listening_p3_item4.mp3', audio_text: 'The orange juice was on the cafeteria counter in the canteen.' },
+      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_url: '/audio/week33/listening_p3_item5.mp3', audio_text: 'The alarm clock was left on the bedroom table at home.' }
     ],
     cards: [
       { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },
@@ -57,7 +58,6 @@ export const listeningHubData = {
   },
 
   // Cambridge Listening Part 4 (3-Picture Option Cards with Distractors)
-
   listening_p4_questions: [
     {
       id: 'lp4_1',
@@ -66,7 +66,7 @@ export const listeningHubData = {
       question: '1. Where did Tom slip and hurt his knee?',
       prompt: 'Where did Tom slip and hurt his knee?',
       audio_url: '/audio/week33/listening_p4_q1.mp3',
-      audio_script: "Girl: Did Tom slip inside the science lab?\nBoy: No, he was walking past the science lab, but he actually slipped on wet tiles in the school corridor!\nGirl: Oh, so it was in the corridor, not in the lab or playground!",
+      audio_script: "Girl: Where did Tom slip and hurt his knee yesterday?\nBoy: Well, he walked past the science lab after class and was heading towards the outdoor playground.\nGirl: Did he fall on the playground?\nBoy: No, he was running in a hurry and slipped on the wet floor in the school corridor before reaching the exit!",
       options: [
         { label: 'A', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
         { label: 'B', text: 'Inside the science lab', image_url: '/images/week33/lab_desk.jpg', isCorrect: false },
@@ -80,7 +80,7 @@ export const listeningHubData = {
       question: '2. What did Jake do immediately when Tom fell?',
       prompt: 'What did Jake do immediately when Tom fell?',
       audio_url: '/audio/week33/listening_p4_q2.mp3',
-      audio_script: "Man: Did Jake run to find his teacher in class?\nWoman: No, Jake stopped right away and walked quickly to call the school nurse for help!\nMan: Ah, he called the school nurse immediately!",
+      audio_script: "Man: What did Jake do immediately when Tom slipped and fell down?\nWoman: Did he run back to find his teacher in class?\nMan: No, and he didn't just keep walking down the hallway either! Jake stopped right away and walked quickly to call the school nurse for help.\nWoman: That was very quick and responsible of him!",
       options: [
         { label: 'A', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
         { label: 'B', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
@@ -94,7 +94,7 @@ export const listeningHubData = {
       question: '3. What did the school nurse apply to Tom’s knee?',
       prompt: 'What did the school nurse apply to Tom’s knee?',
       audio_url: '/audio/week33/listening_p4_q3.mp3',
-      audio_script: "Woman: Did the nurse give Tom a glass of orange juice?\nMan: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee.\nWoman: So she applied a clean bandage and a cold pack!",
+      audio_script: "Woman: What did the school nurse apply to Tom's knee first?\nMan: Tom asked for a new science notebook, and someone offered him a glass of orange juice to drink.\nWoman: But what did the nurse do for his injury?\nMan: The nurse first applied a clean bandage and a cold pack directly to his hurt knee to stop the swelling.",
       options: [
         { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/card_clean_bandage.jpg', isCorrect: true },
         { label: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false },
@@ -108,7 +108,7 @@ export const listeningHubData = {
       question: '4. How did everyone feel after Tom was safely helped?',
       prompt: 'How did everyone feel after Tom was safely helped?',
       audio_url: '/audio/week33/listening_p4_q4.mp3',
-      audio_script: "Girl: Was Tom's knee severely injured?\nBoy: No, the nurse treated his knee gently, and everyone felt relieved and safe!\nGirl: That was a big relief for everyone!",
+      audio_script: "Girl: How did everyone feel after the nurse safely treated Tom?\nBoy: Tom was scared when he fell, and some students were quite upset.\nGirl: Were they still worried or angry?\nBoy: No, everyone felt greatly relieved and safe once they saw Tom was standing and smiling again.",
       options: [
         { label: 'A', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
         { label: 'B', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
@@ -122,7 +122,7 @@ export const listeningHubData = {
       question: '5. What did the headmaster do during Monday assembly?',
       prompt: 'What did the headmaster do during Monday assembly?',
       audio_url: '/audio/week33/listening_p4_q5.mp3',
-      audio_script: "Man: Did the headmaster give Jake a difficult test?\nWoman: Yes, the headmaster praised Jake publicly during Monday assembly for taking responsible action!",
+      audio_script: "Man: What did the headmaster do during Monday morning assembly?\nWoman: Did he give all the students a difficult test or close down the corridor?\nMan: No, he gave a wonderful speech and praised Jake publicly on stage for his responsible corridor safety action!\nWoman: How fantastic for Jake!",
       options: [
         { label: 'A', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true },
         { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg', isCorrect: false },
@@ -133,7 +133,7 @@ export const listeningHubData = {
 
   // Nova's Color & Write Mission
   listening_p5: {
-    audio_script: "Nova: Look at the picture of the school corridor. Can you see the boy sitting on the floor with a hurt knee?\nJake: Yes! I can see him.\nNova: Look at the clean bandage on his knee. Can you color it blue?\nJake: Sure! I'm coloring the clean bandage blue now.\nNova: Excellent. Now look at the first aid table. Can you find the cold pack?\nJake: Yes, it's sitting on the table.\nNova: Color the cold pack green.\nJake: Green cold pack, done!\nNova: Now look at the warning sign on the floor near the wet tiles. Color the warning sign yellow.\nJake: Okay, the wet floor warning sign is yellow.\nNova: Finally, can you write something on the label at the bottom of the sign?\nJake: What should I write?\nNova: Write the word SAFE in capital letters.\nJake: S-A-F-E, done!",
+    audio_script: "Nova: Look at the picture of our school corridor again. Can you see the boy sitting on the floor after his accident?\nJake: Yes! That's Tom. I can see the white bandage on his hurt knee.\nNova: That's right. Now, can you color the bandage on his knee blue?\nJake: A blue bandage on his knee? Sure, I am coloring it blue right now.\nNova: Excellent. Now look at the first aid table near the corridor entrance. Can you see the cold pack sitting on top?\nJake: Yes, I found it.\nNova: Please color the cold pack green.\nJake: Okay, coloring the cold pack green... done!\nNova: Now look down at the floor near the wet tiles. Can you see the tall warning sign?\nJake: Yes, the triangular warning sign!\nNova: Color the warning sign bright yellow.\nJake: Bright yellow for the wet floor sign. It looks very clear now.\nNova: Finally, look at the white label at the bottom of the yellow warning sign. Can you write a word there?\nJake: What word should I write?\nNova: Please write the word SAFE in capital letters.\nJake: S-A-F-E... SAFE! All finished!",
     instructions: [
       { id: 't1', type: 'color', target_id: 'bandage', target_color: '#3b82f6', color_name: 'Blue', audio_url: '/audio/week33/listening_p5_inst1.mp3', prompt: '1. Color the clean bandage on the boy’s knee BLUE.' },
       { id: 't2', type: 'color', target_id: 'coldpack', target_color: '#22c55e', color_name: 'Green', audio_url: '/audio/week33/listening_p5_inst2.mp3', prompt: '2. Color the cold pack GREEN.' },
