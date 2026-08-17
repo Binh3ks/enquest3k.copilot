@@ -1,27 +1,20 @@
-import React, { useState, useRef } from 'react';
-import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, User, MoveRight, Layers, Trash2, Volume2 } from 'lucide-react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, User, Trash2, Volume2, Target } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
-
-function isCalibratedPinLabel(target, matchedLine, isCalibratorOpen) {
-  if (isCalibratorOpen) {
-    return `${target.id}: ${target.x}%, ${target.y}%`;
-  }
-  if (matchedLine) {
-    return matchedLine.nameText;
-  }
-  return '📍';
-}
 
 export function SVGLineMatcher({ customData, onComplete }) {
   const [selectedName, setSelectedName] = useState(null);
-  const [drawnLines, setDrawnLines] = useState([]); // [{ nameId, nameText, targetId, startX, startY, endX, endY }]
+  const [drawnLines, setDrawnLines] = useState([]); // [{ nameId, nameText, targetId }]
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
-  const containerRef = useRef(null);
+
+  const masterContainerRef = useRef(null);
+  const imageRef = useRef(null);
+  const nameButtonRefs = useRef({});
 
   const fullListeningScript = "Nova: Look at Part 1. Now look at the picture. Listen and look. There is one example.\nGirl: Look at this photo of our school corridor after lunch! It was quite busy.\nMan: Oh yes, I can see many people. Who is that boy walking carefully down the hallway in the blue shirt?\nGirl: That's Jake. He always walks slowly and watches where he is going.\nMan: That is very sensible of him.\nNova: Can you see the line? This is an example. Now you listen and draw lines.\nGirl: Oh dear, look at the boy who is slipping on the wet floor!\nMan: Yes, his papers are flying everywhere! Is he wearing a red sweater?\nGirl: That's right, he is wearing a red shirt. His name is Tom. He fell down because he was running in a hurry.\nMan: Poor Tom! I hope he is okay.\nGirl: Look, someone is rushing quickly to help him. Can you see the lady carrying a clean bandage in the white uniform?\nMan: Ah, that's our school nurse! She always takes good care of everyone when accidents happen.\nGirl: Yes, she is very kind.\nMan: Who is that tall man standing near the blue lockers in the dark suit?\nGirl: Do you mean the man watching all the students to make sure the hallway is safe?\nMan: Yes, exactly.\nGirl: That's our headmaster! He always reminds us about corridor safety rules.\nMan: Now look near the yellow warning sign. Is that a girl holding a cleaning mop?\nGirl: Yes, that is Mia. She is wiping the water off the floor so nobody else slips.\nMan: What a helpful girl!\nGirl: Is Alex in this picture today?\nMan: No, Alex had a doctor appointment this morning, so he is not at school today.";
 
-  // Default Listening Part 1 Line Matching Data
+  // Default Listening Part 1 Line Matching Data with 100% Calibrated Coordinates
   const sceneData = customData || {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',
     names: [
@@ -33,17 +26,18 @@ export function SVGLineMatcher({ customData, onComplete }) {
       { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy walking carefully on far left)', x: 18, y: 58, isExample: true },
-      { id: 't2', label: 'School Nurse (Carrying bandage)', x: 65, y: 56 },
-      { id: 't3', label: 'Tom (Slipping on wet floor)', x: 58, y: 63 },
-      { id: 't4', label: 'Headmaster (In dark blue suit)', x: 48, y: 53 },
-      { id: 't5', label: 'Mia (Girl holding mop)', x: 76, y: 54 }
+      { id: 't1', label: 'Jake (Boy walking with backpack on left)', x: 37, y: 50, isExample: true },
+      { id: 't2', label: 'School Nurse (White uniform with bandage)', x: 66, y: 50 },
+      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 60, y: 54 },
+      { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 49, y: 44 },
+      { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 77, y: 48 }
     ]
   };
 
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 }); // % in master container
+  const [positions, setPositions] = useState({}); // { nameId: {x,y}, targetId: {x,y} }
   
-  // 🎯 Calibrator Tool State (Dev/Admin Visual Target Tuner)
+  // 🎯 Calibrator Tool State
   const [isCalibratorOpen, setIsCalibratorOpen] = useState(false);
   const [calibratedTargets, setCalibratedTargets] = useState(sceneData.targets);
   const [activeCalibTargetId, setActiveCalibTargetId] = useState(sceneData.targets[0]?.id || 't1');
@@ -51,19 +45,53 @@ export function SVGLineMatcher({ customData, onComplete }) {
 
   const activeTargets = isCalibratorOpen ? calibratedTargets : sceneData.targets;
 
-  const handleImageClickForCalibration = (e) => {
-    if (!isCalibratorOpen || !activeCalibTargetId || !containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = Math.round(((e.clientX - rect.left) / rect.width) * 100);
-    const y = Math.round(((e.clientY - rect.top) / rect.height) * 100);
+  // Helper to re-calculate absolute percentage positions relative to master container
+  const recalculatePositions = useCallback(() => {
+    if (!masterContainerRef.current || !imageRef.current) return;
+    const mRect = masterContainerRef.current.getBoundingClientRect();
+    const iRect = imageRef.current.getBoundingClientRect();
+    if (mRect.width === 0 || mRect.height === 0) return;
 
-    const updated = calibratedTargets.map(t => {
-      if (t.id === activeCalibTargetId) {
-        return { ...t, x, y };
+    const nextPos = {};
+
+    // 1. Calculate positions for Name Buttons
+    sceneData.names.forEach((n) => {
+      const btn = nameButtonRefs.current[n.id];
+      if (btn) {
+        const bRect = btn.getBoundingClientRect();
+        nextPos[n.id] = {
+          x: ((bRect.left + bRect.width / 2 - mRect.left) / mRect.width) * 100,
+          y: ((bRect.top + bRect.height / 2 - mRect.top) / mRect.height) * 100,
+        };
       }
-      return t;
     });
 
+    // 2. Calculate positions for Picture Targets
+    activeTargets.forEach((t) => {
+      const pxX = (t.x / 100) * iRect.width + (iRect.left - mRect.left);
+      const pxY = (t.y / 100) * iRect.height + (iRect.top - mRect.top);
+      nextPos[t.id] = {
+        x: (pxX / mRect.width) * 100,
+        y: (pxY / mRect.height) * 100,
+      };
+    });
+
+    setPositions(nextPos);
+  }, [sceneData.names, activeTargets]);
+
+  useEffect(() => {
+    recalculatePositions();
+    window.addEventListener('resize', recalculatePositions);
+    return () => window.removeEventListener('resize', recalculatePositions);
+  }, [recalculatePositions]);
+
+  const handleImageClickForCalibration = (e) => {
+    if (!isCalibratorOpen || !activeCalibTargetId || !imageRef.current) return;
+    const iRect = imageRef.current.getBoundingClientRect();
+    const x = Math.round(((e.clientX - iRect.left) / iRect.width) * 100);
+    const y = Math.round(((e.clientY - iRect.top) / iRect.height) * 100);
+
+    const updated = calibratedTargets.map(t => t.id === activeCalibTargetId ? { ...t, x, y } : t);
     setCalibratedTargets(updated);
   };
 
@@ -75,39 +103,28 @@ export function SVGLineMatcher({ customData, onComplete }) {
   };
 
   const handleMouseMove = (e) => {
-    if (!selectedName || !containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    if (!selectedName || !masterContainerRef.current) return;
+    const mRect = masterContainerRef.current.getBoundingClientRect();
+    const x = ((e.clientX - mRect.left) / mRect.width) * 100;
+    const y = ((e.clientY - mRect.top) / mRect.height) * 100;
     setMousePos({ x, y });
   };
 
-  const handleSelectName = (nameObj, e) => {
-    if (isSubmitted) return;
-    const rect = containerRef.current?.getBoundingClientRect();
-    const nameEl = e.currentTarget.getBoundingClientRect();
-
-    if (rect && nameEl) {
-      const startX = ((nameEl.left + nameEl.width / 2 - rect.left) / rect.width) * 100;
-      const startY = ((nameEl.top + nameEl.height / 2 - rect.top) / rect.height) * 100;
-      setSelectedName({ ...nameObj, startX, startY });
-      setMousePos({ x: startX, y: startY });
-    }
+  const handleSelectName = (nameObj) => {
+    if (isSubmitted || nameObj.isExample) return;
+    const startPos = positions[nameObj.id] || { x: 50, y: 10 };
+    setSelectedName(nameObj);
+    setMousePos(startPos);
   };
 
   const handleTargetClick = (targetObj) => {
     if (isSubmitted || !selectedName) return;
 
-    // Remove any existing line for this name
     const newLines = drawnLines.filter(l => l.nameId !== selectedName.id);
     newLines.push({
       nameId: selectedName.id,
       nameText: selectedName.text,
       targetId: targetObj.id,
-      startX: selectedName.startX,
-      startY: selectedName.startY,
-      endX: targetObj.x,
-      endY: targetObj.y
     });
 
     setDrawnLines(newLines);
@@ -128,7 +145,6 @@ export function SVGLineMatcher({ customData, onComplete }) {
       if (name.target_id) {
         if (matchedLine && matchedLine.targetId === name.target_id) correct++;
       } else {
-        // Distractor name: should NOT have any line drawn
         if (!matchedLine) correct++;
       }
     });
@@ -148,6 +164,9 @@ export function SVGLineMatcher({ customData, onComplete }) {
   const exampleName = sceneData.names.find(n => n.isExample);
   const exampleTarget = activeTargets.find(t => t.id === exampleName?.target_id || t.isExample);
 
+  const exampleStartPos = positions[exampleName?.id];
+  const exampleEndPos = positions[exampleTarget?.id];
+
   return (
     <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
       {/* Header Banner */}
@@ -157,7 +176,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
             🔗 DRAW THE LINES MISSION
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Click Name Pill then Move Mouse & Click Person in Picture
+            Click Name Pill then Click Person in Picture
           </h2>
         </div>
         <div className="flex items-center gap-2">
@@ -169,7 +188,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
                 : 'bg-slate-100 text-slate-700 hover:bg-amber-50 hover:text-amber-900 border-slate-300'
             }`}
           >
-            🎯 Calibrate Pins
+            <Target size={14} /> Calibrate Pins
           </button>
           <button
             onClick={handleClearLines}
@@ -186,13 +205,13 @@ export function SVGLineMatcher({ customData, onComplete }) {
         <div className="p-4 bg-amber-50 border-2 border-amber-300 rounded-2xl space-y-3 animate-fadeIn">
           <div className="flex items-center justify-between">
             <span className="text-xs font-black text-amber-950 uppercase tracking-wider flex items-center gap-1.5">
-              🎯 Visual Pin Calibrator Tool: Select a target pin below, then click directly on the person in the image to set exact (x%, y%) coordinates:
+              🎯 Visual Pin Calibrator Tool: Click target pin below, then click directly on person in the image:
             </span>
             <button
               onClick={handleCopyCalibratedJSON}
               className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white font-black text-xs rounded-xl transition flex items-center gap-1 shadow-md"
             >
-              {copiedToast ? '✅ Copied to Clipboard!' : '📋 Copy JSON Targets'}
+              {copiedToast ? '✅ Copied!' : '📋 Copy JSON Targets'}
             </button>
           </div>
 
@@ -218,7 +237,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
         </div>
       )}
 
-      {/* Master Audio Player Bar for Listening Part 1 */}
+      {/* Master Audio Player Bar */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <button
@@ -242,87 +261,37 @@ export function SVGLineMatcher({ customData, onComplete }) {
         </div>
       </div>
 
-      {/* Name Selection Ribbon */}
-      <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-black text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
-            <User size={14} className="text-indigo-600" /> Character Names (Click name, then move mouse over picture):
-          </span>
-          <span className="text-xs font-bold text-indigo-700">
-            {selectedName ? `Selected: ${selectedName.text} (Click a person dot)` : 'Select a name'}
-          </span>
-        </div>
-
-        <div className="flex flex-wrap gap-2.5 pt-1">
-          {sceneData.names.map((name) => {
-            const hasLine = drawnLines.some(l => l.nameId === name.id);
-            const isSelected = selectedName?.id === name.id;
-
-            return (
-              <button
-                key={name.id}
-                disabled={isSubmitted || name.isExample}
-                onClick={(e) => !name.isExample && handleSelectName(name, e)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-1.5 border shadow-sm ${
-                  name.isExample
-                    ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-2 ring-amber-300'
-                    : isSelected
-                    ? 'bg-indigo-600 text-white border-indigo-700 ring-4 ring-indigo-200 scale-105 shadow-md animate-pulse'
-                    : hasLine
-                    ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
-                    : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
-                }`}
-              >
-                <span>{name.text}</span>
-                {name.isExample && (
-                  <span className="text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded-md uppercase font-black tracking-wider">
-                    Example
-                  </span>
-                )}
-                {hasLine && !name.isExample && <CheckCircle2 size={14} className="text-emerald-700" />}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* 🖼️ Main Image Viewport with SVG Overlay Canvas */}
+      {/* 🌟 UNIFIED SVG CANVAS MASTER WRAPPER 🌟 */}
       <div
-        ref={containerRef}
+        ref={masterContainerRef}
         onMouseMove={handleMouseMove}
-        onClick={handleImageClickForCalibration}
-        className={`relative w-full h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 select-none ${
-          isCalibratorOpen ? 'cursor-crosshair ring-4 ring-amber-400' : 'cursor-crosshair'
-        }`}
+        className="relative w-full space-y-4 select-none"
       >
-        {/* Background Picture Scene (Clean, without text overlays) */}
-        <img
-          src={sceneData.image_url}
-          alt="Listening Part 1 Scene"
-          className="w-full h-full object-cover object-center"
-        />
-
-        {/* ✏️ Real-Time Dynamic SVG Line Canvas */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none z-20">
-          {/* 🌟 Official Cambridge Example Line (Pre-drawn) */}
-          {exampleTarget && (
+        {/* Real-time Dynamic SVG Line Canvas covering entire Master Container */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none z-20 overflow-visible">
+          {/* 🌟 Official Cambridge Example Line (Connected from Name Box to Character Pin) */}
+          {exampleStartPos && exampleEndPos && (
             <g className="opacity-95">
               <line
-                x1="10%"
-                y1="0%"
-                x2={`${exampleTarget.x}%`}
-                y2={`${exampleTarget.y}%`}
+                x1={`${exampleStartPos.x}%`}
+                y1={`${exampleStartPos.y}%`}
+                x2={`${exampleEndPos.x}%`}
+                y2={`${exampleEndPos.y}%`}
                 stroke="#f59e0b"
                 strokeWidth="5"
                 strokeDasharray="8 6"
                 strokeLinecap="round"
               />
-              <circle cx={`${exampleTarget.x}%`} cy={`${exampleTarget.y}%`} r="8" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
+              <circle cx={`${exampleEndPos.x}%`} cy={`${exampleEndPos.y}%`} r="8" fill="#f59e0b" stroke="#ffffff" strokeWidth="2.5" />
             </g>
           )}
 
-          {/* Locked Drawn Lines */}
+          {/* User Locked Drawn Lines */}
           {drawnLines.map((line, idx) => {
+            const startP = positions[line.nameId];
+            const endP = positions[line.targetId];
+            if (!startP || !endP) return null;
+
             const nameObj = sceneData.names.find(n => n.id === line.nameId);
             const isCorrect = isSubmitted && nameObj?.target_id === line.targetId;
             const strokeColor = isSubmitted ? (isCorrect ? '#10b981' : '#f43f5e') : '#6366f1';
@@ -330,26 +299,26 @@ export function SVGLineMatcher({ customData, onComplete }) {
             return (
               <g key={idx}>
                 <line
-                  x1={`${line.startX}%`}
-                  y1={`${line.startY}%`}
-                  x2={`${line.endX}%`}
-                  y2={`${line.endY}%`}
+                  x1={`${startP.x}%`}
+                  y1={`${startP.y}%`}
+                  x2={`${endP.x}%`}
+                  y2={`${endP.y}%`}
                   stroke={strokeColor}
                   strokeWidth="5"
                   strokeDasharray="6 4"
                   strokeLinecap="round"
                 />
-                <circle cx={`${line.endX}%`} cy={`${line.endY}%`} r="8" fill={strokeColor} />
+                <circle cx={`${endP.x}%`} cy={`${endP.y}%`} r="8" fill={strokeColor} stroke="#ffffff" strokeWidth="2" />
               </g>
             );
           })}
 
-          {/* Active Real-Time Mouse Tracking Line */}
-          {selectedName && (
+          {/* Active Drag/Mouse Tracking Line */}
+          {selectedName && positions[selectedName.id] && (
             <g>
               <line
-                x1={`${selectedName.startX}%`}
-                y1={`${selectedName.startY}%`}
+                x1={`${positions[selectedName.id].x}%`}
+                y1={`${positions[selectedName.id].y}%`}
                 x2={`${mousePos.x}%`}
                 y2={`${mousePos.y}%`}
                 stroke="#f59e0b"
@@ -362,67 +331,128 @@ export function SVGLineMatcher({ customData, onComplete }) {
           )}
         </svg>
 
-        {/* 🌟 Official Cambridge Example Line Floating Badge */}
-        {exampleTarget && (
+        {/* 🌟 Example Badge Floating Overlay on Example Line */}
+        {exampleStartPos && exampleEndPos && (
           <div
-            style={{ left: `${(10 + exampleTarget.x) / 2}%`, top: `${Math.max(10, (0 + exampleTarget.y) / 2)}%` }}
+            style={{
+              left: `${(exampleStartPos.x + exampleEndPos.x) / 2}%`,
+              top: `${(exampleStartPos.y + exampleEndPos.y) / 2}%`
+            }}
             className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none px-3 py-1 bg-amber-500 text-white font-black text-[11px] rounded-full uppercase tracking-wider border-2 border-white shadow-xl flex items-center gap-1 animate-pulse"
           >
             ★ EXAMPLE
           </div>
         )}
 
-        {/* Pure Clean Vector Target Pins on Picture */}
-        {activeTargets.map((target) => {
-          const matchedLine = drawnLines.find(l => l.targetId === target.id);
-          const isExamplePin = target.isExample || target.id === 't1' || target.label?.toLowerCase().includes('jake');
-          const isCalibActive = isCalibratorOpen && activeCalibTargetId === target.id;
+        {/* Name Selection Ribbon */}
+        <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2 z-10 relative">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-black text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+              <User size={14} className="text-indigo-600" /> Character Names (Click name pill, then click person below):
+            </span>
+            <span className="text-xs font-bold text-indigo-700">
+              {selectedName ? `Selected: ${selectedName.text} (Click person in picture)` : 'Select a name'}
+            </span>
+          </div>
 
-          if (isExamplePin && !isCalibratorOpen) {
+          <div className="flex flex-wrap gap-2.5 pt-1">
+            {sceneData.names.map((name) => {
+              const hasLine = drawnLines.some(l => l.nameId === name.id);
+              const isSelected = selectedName?.id === name.id;
+
+              return (
+                <button
+                  key={name.id}
+                  ref={(el) => (nameButtonRefs.current[name.id] = el)}
+                  disabled={isSubmitted || name.isExample}
+                  onClick={() => handleSelectName(name)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-1.5 border shadow-sm ${
+                    name.isExample
+                      ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-2 ring-amber-300'
+                      : isSelected
+                      ? 'bg-indigo-600 text-white border-indigo-700 ring-4 ring-indigo-200 scale-105 shadow-md animate-pulse'
+                      : hasLine
+                      ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
+                      : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
+                  }`}
+                >
+                  <span>{name.text}</span>
+                  {name.isExample && (
+                    <span className="text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded-md uppercase font-black tracking-wider">
+                      Example
+                    </span>
+                  )}
+                  {hasLine && !name.isExample && <CheckCircle2 size={14} className="text-emerald-700" />}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 🖼️ Main Image Viewport */}
+        <div
+          ref={imageRef}
+          onClick={handleImageClickForCalibration}
+          className={`relative w-full h-[400px] sm:h-[480px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 ${
+            isCalibratorOpen ? 'cursor-crosshair ring-4 ring-amber-400' : selectedName ? 'cursor-crosshair' : 'cursor-default'
+          }`}
+        >
+          {/* Background Picture Scene */}
+          <img
+            src={sceneData.image_url}
+            alt="Listening Part 1 Scene"
+            className="w-full h-full object-cover object-center"
+          />
+
+          {/* Clean Target Pin Markers on Picture */}
+          {activeTargets.map((target) => {
+            const matchedLine = drawnLines.find(l => l.targetId === target.id);
+            const isExamplePin = target.isExample || target.id === 't1' || target.label?.toLowerCase().includes('jake');
+            const isCalibActive = isCalibratorOpen && activeCalibTargetId === target.id;
+
             return (
-              <div
+              <button
                 key={target.id}
+                disabled={isSubmitted && !isCalibratorOpen}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (isCalibratorOpen) {
+                    setActiveCalibTargetId(target.id);
+                  } else {
+                    handleTargetClick(target);
+                  }
+                }}
                 style={{ left: `${target.x}%`, top: `${target.y}%` }}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
-              >
-                <span className="px-2.5 py-1 rounded-xl border-2 border-white shadow-2xl bg-amber-500 text-white font-black text-xs flex items-center gap-1">
-                  Jake (Example)
-                </span>
-              </div>
-            );
-          }
-
-          return (
-            <button
-              key={target.id}
-              disabled={isSubmitted && !isCalibratorOpen}
-              onClick={() => {
-                if (isCalibratorOpen) {
-                  setActiveCalibTargetId(target.id);
-                } else {
-                  handleTargetClick(target);
-                }
-              }}
-              style={{ left: `${target.x}%`, top: `${target.y}%` }}
-              className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-30 transition-all ${
-                isCalibActive
-                  ? 'scale-150 ring-4 ring-amber-400 z-40'
-                  : selectedName ? 'scale-125 cursor-pointer' : 'hover:scale-110'
-              }`}
-              title={matchedLine ? matchedLine.nameText : target.label}
-            >
-              <div className="relative flex items-center justify-center">
-                <span className={`px-2.5 py-1 rounded-xl border-2 border-white shadow-xl flex items-center justify-center font-black text-xs ${
+                className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-30 transition-all ${
                   isCalibActive
-                    ? 'bg-amber-500 text-white font-black animate-bounce'
-                    : matchedLine ? 'bg-indigo-600 text-white' : selectedName ? 'bg-amber-400 text-slate-950 animate-bounce' : 'bg-slate-900/80 text-white'
-                }`}>
-                  {isCalibratedPinLabel(target, matchedLine, isCalibratorOpen)}
-                </span>
-              </div>
-            </button>
-          );
-        })}
+                    ? 'scale-150 ring-4 ring-amber-400 z-40'
+                    : selectedName ? 'scale-125 cursor-pointer' : 'hover:scale-110'
+                }`}
+                title={matchedLine ? `${matchedLine.nameText} -> ${target.label}` : target.label}
+              >
+                <div className="relative flex items-center justify-center">
+                  {isExamplePin ? (
+                    <span className="px-2.5 py-1 rounded-full border-2 border-white shadow-2xl bg-amber-500 text-white font-black text-xs flex items-center gap-1">
+                      📍 Jake
+                    </span>
+                  ) : (
+                    <span className={`px-2.5 py-1 rounded-full border-2 border-white shadow-xl flex items-center justify-center font-black text-xs ${
+                      isCalibActive
+                        ? 'bg-amber-500 text-white animate-bounce'
+                        : matchedLine
+                        ? 'bg-indigo-600 text-white'
+                        : selectedName
+                        ? 'bg-amber-400 text-slate-950 animate-bounce ring-4 ring-amber-200'
+                        : 'bg-rose-600 text-white hover:bg-rose-500'
+                    }`}>
+                      📍 {matchedLine ? matchedLine.nameText : (isCalibratorOpen ? target.id : '')}
+                    </span>
+                  )}
+                </div>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Footer Check & Score */}
