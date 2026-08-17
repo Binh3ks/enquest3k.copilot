@@ -518,8 +518,8 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
                   }`}
                 >
                   <span className="text-xs font-black text-indigo-950">{field.label}</span>
-                  <span className="text-xs font-black text-indigo-950 bg-indigo-100/90 px-3 py-1 rounded-lg">
-                    {field.value}
+                  <span className={`text-xs font-black px-3 py-1 rounded-lg ${isStealthMode ? 'bg-indigo-200/60 text-indigo-400 italic' : 'text-indigo-950 bg-indigo-100/90'}`}>
+                    {isStealthMode ? '❓ Answer from your card' : field.value}
                   </span>
                 </div>
               );

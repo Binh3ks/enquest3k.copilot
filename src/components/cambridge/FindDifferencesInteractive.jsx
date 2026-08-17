@@ -48,6 +48,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
   const handleListenExaminerPrompt = async () => {
     if (!activeHotspot) return;
+    if (isStealthMode) return; // Block TTS of answer in Check Mode
     try {
       await VoiceService.speak(activeHotspot.prompt_en, 'story');
     } catch (_) {}
@@ -165,7 +166,7 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
               </span>
               <div>
                 <span className="text-xs font-black text-rose-950 uppercase tracking-wider block">
-                  Difference Found: {activeHotspot.name}
+                  {isStealthMode ? `Difference #${foundHotspots.indexOf(activeHotspot.id) + 1} Found` : `Difference Found: ${activeHotspot.name}`}
                 </span>
                 <span className="text-xs font-bold text-rose-700">
                   Describe this difference / Hãy mô tả điểm khác biệt này
@@ -173,12 +174,14 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
               </div>
             </div>
 
-            <button
-              onClick={() => setShowHint(!showHint)}
-              className="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-950 font-black text-xs rounded-xl border border-amber-300 transition flex items-center gap-1 shadow-sm"
-            >
-              💡 {showHint ? 'Hide Hint' : 'Show Hint'}
-            </button>
+            {!isStealthMode && (
+              <button
+                onClick={() => setShowHint(!showHint)}
+                className="px-3 py-1.5 bg-amber-100 hover:bg-amber-200 text-amber-950 font-black text-xs rounded-xl border border-amber-300 transition flex items-center gap-1 shadow-sm"
+              >
+                💡 {showHint ? 'Hide Hint' : 'Show Hint'}
+              </button>
+            )}
           </div>
 
           {/* Authentic Speaking Practice: English Text & Audio are HIDDEN by default */}
