@@ -381,18 +381,27 @@ export const VoiceService = {
     // Volume compensation: bass male voices are quieter than female voices
     this._speakGain = VOICE_GAIN_BOOST[deepgramVoice] || 1.0;
     
-    // 🎵 TIER 0: Static Audio File / Pre-generated Multi-Voice MP3 priority
-    // If an explicit audioUrl or static path is passed, play it directly with 0ms latency!
-    if (audioUrl) {
-      const fullAudioPath = audioUrl.startsWith('http')
-        ? audioUrl
-        : (audioUrl.startsWith('/') ? audioUrl : `/audio/week${weekNumber || 33}/${audioUrl}`);
+    // 👥 MULTI-VOICE DIALOGUE SYNTHESIS & CACHE ENGINE
+    // Detects scripts with multiple characters (Girl, Boy, Man, Woman, Nova, Teacher, Nurse, Headmaster)
+    // Synthesizes distinct male & female Google Neural2 / Journey voices and stitches them seamlessly.
+    const isDialogue = /(?:^|\n|\.\s+)(Girl|Boy|Man|Woman|Nova|Teacher|Nurse|Headmaster|Jake|Tom):\s*/i.test(text);
+    if (isDialogue) {
+      const dialogueCachedUrl = await TTSCache.get(cleanedText, station, 'multivoice_v2', audioUrl);
+      if (dialogueCachedUrl) {
+        console.log(`[TTS] 🎭 Multi-Voice Dialogue Cache Hit (0ms) [station: ${station}]`);
+        return this.playAudio(dialogueCachedUrl, true);
+      }
+
       try {
-        console.log(`[TTS] 🎧 Playing pre-generated static MP3 from: ${fullAudioPath}`);
-        await this.playAudio(fullAudioPath, false);
-        return;
-      } catch (audioErr) {
-        console.warn(`[TTS] ⚠️ Static audio file playback failed, falling back to TTS: ${audioErr.message}`);
+        console.log(`[TTS] 🎭 Synthesizing Multi-Voice Dialogue on-the-fly (W${weekNumber || 33} / ${station})...`);
+        const combinedBlob = await this.synthesizeMultiVoiceDialogue(text);
+        if (combinedBlob) {
+          await TTSCache.set(cleanedText, station, combinedBlob, 'multivoice_v2', audioUrl);
+          const blobUrl = URL.createObjectURL(combinedBlob);
+          return this.playAudio(blobUrl, true);
+        }
+      } catch (dErr) {
+        console.warn(`[TTS] ⚠️ Multi-Voice dialogue synthesis failed, falling back: ${dErr.message}`);
       }
     }
 
@@ -1140,6 +1149,173 @@ export const VoiceService = {
     } finally {
       _pendingDirectFetches.delete(dedupKey);
     }
+  },
+
+  /**
+   * Synthesize multi-speaker dialogue scripts by splitting character lines,
+   * synthesizing each with assigned male/female Google Neural2/Journey voices,
+   * and concatenating into a seamless single audio blob via Web Audio API.
+   */
+  async synthesizeMultiVoiceDialogue(rawText) {
+    if (!rawText) return null;
+
+    const lines = [];
+
+    // Check if script starts with an intro line before the first character tag
+    const firstSpeakerMatch = rawText.match(/(?:^|\n|\.\s+)(Girl|Boy|Man|Woman|Nova|Teacher|Nurse|Headmaster|Jake|Tom):\s*/i);
+    if (firstSpeakerMatch && firstSpeakerMatch.index > 0) {
+      const introText = rawText.substring(0, firstSpeakerMatch.index).trim();
+      if (introText) {
+        lines.push({ speaker: 'nova', text: introText });
+      }
+    }
+
+    // Split character dialogue turns
+    const speakerMatches = [...rawText.matchAll(/(?:^|\n|\.\s+)(Girl|Boy|Man|Woman|Nova|Teacher|Nurse|Headmaster|Jake|Tom):\s*([^.\n?!]+(?:[.?!]|$)|[^\n]+)/gi)];
+    
+    if (speakerMatches.length > 0) {
+      for (const m of speakerMatches) {
+        const speaker = m[1].toLowerCase();
+        const content = m[2].trim();
+        if (content) {
+          lines.push({ speaker, text: content });
+        }
+      }
+    } else {
+      // Fallback: split by newlines if formatted line by line
+      const rawLines = rawText.split('\n').map(l => l.trim()).filter(Boolean);
+      for (const rl of rawLines) {
+        const m = rl.match(/^(Girl|Boy|Man|Woman|Nova|Teacher|Nurse|Headmaster|Jake|Tom):\s*(.+)$/i);
+        if (m) {
+          lines.push({ speaker: m[1].toLowerCase(), text: m[2].trim() });
+        } else {
+          lines.push({ speaker: 'nova', text: rl });
+        }
+      }
+    }
+
+    if (lines.length === 0) return null;
+
+    // Voice mapping for distinct characters
+    const getVoiceForSpeaker = (speaker) => {
+      switch (speaker) {
+        case 'boy':
+        case 'man':
+        case 'headmaster':
+        case 'jake':
+        case 'tom':
+          return 'en-US-Neural2-D'; // Male voice
+        case 'girl':
+        case 'woman':
+        case 'nurse':
+        case 'teacher':
+        case 'nova':
+        default:
+          return 'en-US-Journey-F'; // Expressive Female voice
+      }
+    };
+
+    // Synthesize all lines concurrently
+    const blobPromises = lines.map(async (line) => {
+      const voice = getVoiceForSpeaker(line.speaker);
+      const cleanLine = this.cleanTextForTTS(line.text);
+      return this.useGoogleTTSDirect(cleanLine, voice);
+    });
+
+    const blobs = await Promise.all(blobPromises);
+    const validBlobs = blobs.filter(Boolean);
+    if (validBlobs.length === 0) return null;
+
+    // Decode each blob into AudioBuffer using Web Audio API
+    const ctx = getAudioCtx();
+    if (ctx.state === 'suspended') {
+      await ctx.resume();
+    }
+
+    const audioBuffers = [];
+    for (const blob of validBlobs) {
+      const ab = await blob.arrayBuffer();
+      const decoded = await ctx.decodeAudioData(ab);
+      audioBuffers.push(decoded);
+    }
+
+    // Concatenate AudioBuffers with 350ms natural conversational pause
+    const pauseSeconds = 0.35;
+    const sampleRate = audioBuffers[0].sampleRate;
+    const pauseSamples = Math.floor(pauseSeconds * sampleRate);
+    
+    let totalLength = 0;
+    audioBuffers.forEach((b, idx) => {
+      totalLength += b.length;
+      if (idx < audioBuffers.length - 1) totalLength += pauseSamples;
+    });
+
+    const compositeBuffer = ctx.createBuffer(1, totalLength, sampleRate);
+    const outputData = compositeBuffer.getChannelData(0);
+    let offset = 0;
+
+    for (let i = 0; i < audioBuffers.length; i++) {
+      const buf = audioBuffers[i];
+      const channelData = buf.getChannelData(0);
+      outputData.set(channelData, offset);
+      offset += buf.length;
+      if (i < audioBuffers.length - 1) {
+        offset += pauseSamples;
+      }
+    }
+
+    return this.audioBufferToWavBlob(compositeBuffer);
+  },
+
+  /**
+   * Helper: Convert Web Audio API AudioBuffer to WAV Blob
+   */
+  audioBufferToWavBlob(buffer) {
+    const numChannels = buffer.numberOfChannels;
+    const sampleRate = buffer.sampleRate;
+    const format = 1; // PCM
+    const bitDepth = 16;
+    const bytesPerSample = bitDepth / 8;
+    const blockAlign = numChannels * bytesPerSample;
+    const length = buffer.length;
+    const byteRate = sampleRate * blockAlign;
+    const dataSize = length * blockAlign;
+    const headerSize = 44;
+    const totalSize = headerSize + dataSize;
+    const arrayBuffer = new ArrayBuffer(totalSize);
+    const view = new DataView(arrayBuffer);
+
+    function writeString(offset, string) {
+      for (let i = 0; i < string.length; i++) {
+        view.setUint8(offset + i, string.charCodeAt(i));
+      }
+    }
+
+    writeString(0, 'RIFF');
+    view.setUint32(4, totalSize - 8, true);
+    writeString(8, 'WAVE');
+    writeString(12, 'fmt ');
+    view.setUint32(16, 16, true);
+    view.setUint16(20, format, true);
+    view.setUint16(22, numChannels, true);
+    view.setUint32(24, sampleRate, true);
+    view.setUint32(28, byteRate, true);
+    view.setUint16(32, blockAlign, true);
+    view.setUint16(34, bitDepth, true);
+    writeString(36, 'data');
+    view.setUint32(40, dataSize, true);
+
+    const channelData = buffer.getChannelData(0);
+    let offset = 44;
+    for (let i = 0; i < length; i++) {
+      let sample = channelData[i];
+      sample = Math.max(-1, Math.min(1, sample));
+      sample = sample < 0 ? sample * 0x8000 : sample * 0x7FFF;
+      view.setInt16(offset, sample, true);
+      offset += 2;
+    }
+
+    return new Blob([view], { type: 'audio/wav' });
   },
 
   /**
