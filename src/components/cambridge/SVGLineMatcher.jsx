@@ -15,18 +15,19 @@ export function SVGLineMatcher({ customData, onComplete }) {
   const sceneData = customData || {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',
     names: [
-      { id: 'n1', text: 'Jake', target_id: 't1' },
+      { id: 'n1', text: 'Jake', target_id: 't1', isExample: true },
       { id: 'n2', text: 'School Nurse', target_id: 't2' },
       { id: 'n3', text: 'Tom', target_id: 't3' },
       { id: 'n4', text: 'Headmaster', target_id: 't4' },
-      { id: 'n5', text: 'Mia', target_id: 't5' }
+      { id: 'n5', text: 'Mia', target_id: 't5' },
+      { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy walking carefully)', x: 20, y: 60 },
-      { id: 't2', label: 'School Nurse (Carrying bandage)', x: 39, y: 50 },
-      { id: 't3', label: 'Tom (Slipping on wet floor)', x: 56, y: 68 },
-      { id: 't4', label: 'Headmaster (In blue suit)', x: 74, y: 48 },
-      { id: 't5', label: 'Mia (Girl holding mop)', x: 88, y: 52 }
+      { id: 't1', label: 'Jake (Boy walking carefully)', x: 41, y: 68, isExample: true },
+      { id: 't2', label: 'School Nurse (Carrying bandage)', x: 64, y: 66 },
+      { id: 't3', label: 'Tom (Slipping on wet floor)', x: 59, y: 72 },
+      { id: 't4', label: 'Headmaster (In dark blue suit)', x: 49, y: 60 },
+      { id: 't5', label: 'Mia (Girl holding mop)', x: 74, y: 67 }
     ]
   };
 

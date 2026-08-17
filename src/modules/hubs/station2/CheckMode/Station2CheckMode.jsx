@@ -263,11 +263,16 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
             </button>
             <div className="flex-1">
               <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">
-                Listening Question Audio:
+                Listening Prompt Instructions:
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-white italic whitespace-pre-line leading-relaxed">
-                {isStealthMode ? '"🎧 Audio Prompt Only — Listen carefully to select A, B, or C"' : audioTextToPlay}
+              <div className="text-xs sm:text-sm font-semibold text-white italic leading-relaxed">
+                "🎧 Listen carefully to the conversation between the characters to select the correct picture (A, B, or C)."
               </div>
+              {currentQ.hint && (
+                <div className="text-[11px] font-bold text-amber-200 mt-1 flex items-center gap-1">
+                  💡 Hint: {currentQ.hint}
+                </div>
+              )}
             </div>
           </div>
         </div>

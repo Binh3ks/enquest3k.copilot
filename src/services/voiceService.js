@@ -780,6 +780,28 @@ export const VoiceService = {
         });
       }
 
+      // Cambridge Listening Hub Multi-Voice Dialogues
+      const lh = weekData.stations?.listening_hub || weekData.listeningHubData || weekData;
+      if (lh.listening_p1?.passage_audio_script) {
+        itemsToPrefetch.push({ text: lh.listening_p1.passage_audio_script, station: 'questions', voice: 'multivoice_v2', audioPath: lh.listening_p1.audio_url });
+      }
+      if (lh.listening_p3?.passage_audio_script) {
+        itemsToPrefetch.push({ text: lh.listening_p3.passage_audio_script, station: 'questions', voice: 'multivoice_v2', audioPath: lh.listening_p3.audio_url });
+      }
+      if (Array.isArray(lh.listening_p3?.items)) {
+        lh.listening_p3.items.forEach(it => {
+          if (it.audio_text) itemsToPrefetch.push({ text: it.audio_text, station: 'questions', voice: 'multivoice_v2', audioPath: it.audio_url });
+        });
+      }
+      if (Array.isArray(lh.listening_p4_questions)) {
+        lh.listening_p4_questions.forEach(q => {
+          if (q.audio_script) itemsToPrefetch.push({ text: q.audio_script, station: 'questions', voice: 'multivoice_v2', audioPath: q.audio_url });
+        });
+      }
+      if (lh.listening_p5?.audio_script) {
+        itemsToPrefetch.push({ text: lh.listening_p5.audio_script, station: 'questions', voice: 'multivoice_v2', audioPath: lh.listening_p5.audio_url });
+      }
+
       console.log(`[Prefetch] 📦 Week ${weekNumber} queue created (${itemsToPrefetch.length} items). Synthesizing Google Direct in background...`);
 
       // Throttled batch synthesis (2 items per batch + 100ms breather to prevent HTTP 429 rate limits)
