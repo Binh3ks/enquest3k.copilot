@@ -1,3 +1,7 @@
+if (typeof window !== 'undefined') {
+  sessionStorage.removeItem('asset_reload_guard');
+}
+
 import './utils/schemaMigration';
 import React from 'react'
 import ReactDOM from 'react-dom/client'

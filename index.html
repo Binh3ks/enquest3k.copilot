@@ -13,16 +13,24 @@
     <title>EngQuest: Kids Edition</title>
     <script>
       window.addEventListener('error', function(e) {
-        if (e && e.target && e.target.tagName === 'SCRIPT' && e.target.src && e.target.src.includes('/assets/')) {
+        if (e && e.target && e.target.tagName === 'SCRIPT' && e.target.src && (e.target.src.includes('/assets/') || e.target.src.includes('chunk'))) {
           console.warn('[AssetRecovery] Stale asset load error caught:', e.target.src);
-          if (!sessionStorage.getItem('asset_reload_guard')) {
-            sessionStorage.setItem('asset_reload_guard', '1');
+          var lastReload = parseInt(sessionStorage.getItem('asset_reload_time') || '0', 10);
+          if (Date.now() - lastReload > 3000) {
+            sessionStorage.setItem('asset_reload_time', String(Date.now()));
             if ('serviceWorker' in navigator) {
               navigator.serviceWorker.getRegistrations().then(function(regs) {
                 regs.forEach(function(r) { r.unregister(); });
               });
             }
-            setTimeout(function() { window.location.reload(); }, 100);
+            if ('caches' in window) {
+              caches.keys().then(function(keys) {
+                keys.forEach(function(k) { caches.delete(k); });
+              });
+            }
+            setTimeout(function() {
+              window.location.href = window.location.pathname + '?r=' + Date.now();
+            }, 100);
           }
         }
       }, true);
