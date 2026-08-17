@@ -30,7 +30,7 @@ const evaluateSpeechInput = (spokenText, acceptableList) => {
     }
   }
 
-  return { isCorrect: false, score: 45 };
+  return { isCorrect: false, score: 0 };
 };
 
 export function InformationExchangeP2({ customData, isStealthMode = false }) {

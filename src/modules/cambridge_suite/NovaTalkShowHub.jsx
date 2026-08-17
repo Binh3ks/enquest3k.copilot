@@ -11,31 +11,58 @@ import InformationExchangeP2 from '../../components/cambridge/InformationExchang
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 
 /**
- * Real Speech Recognition Accuracy Calculation Algorithm
- * Compares STT transcript against target sentence/paragraph words
+ * Cambridge Speech Assessment Engine
+ * - Evaluates Key Chunks & Target Vocabulary match against STT transcript.
+ * - Audio duration is STRICTLY a binary validity gate (attempted vs empty), NEVER a score quality proxy.
  */
-const calculateSpeechAccuracy = (spokenText, targetText) => {
-  if (!spokenText || !targetText) {
-    return { accuracyScore: 65, fluencyScore: 70, stars: 2 };
+const calculateSpeechAccuracy = (spokenText, targetText, keyChunks = []) => {
+  if (!spokenText || !spokenText.trim()) {
+    return { accuracyScore: 0, fluencyScore: 0, stars: 0, isAttempted: false };
   }
-  const cleanSpoken = spokenText.toLowerCase().replace(/[^\w\s']/g, '');
-  const cleanTarget = targetText.toLowerCase().replace(/[^\w\s']/g, '');
 
-  const spokenWords = cleanSpoken.split(/\s+/).filter(Boolean);
-  const targetWords = cleanTarget.split(/\s+/).filter(Boolean);
+  const cleanSpoken = spokenText.toLowerCase().replace(/[^\w\s']/g, ' ');
+  const spokenTokens = cleanSpoken.split(/\s+/).filter(Boolean);
 
-  if (targetWords.length === 0) return { accuracyScore: 60, fluencyScore: 65, stars: 2 };
+  if (spokenTokens.length === 0) {
+    return { accuracyScore: 0, fluencyScore: 0, stars: 0, isAttempted: false };
+  }
 
-  let matched = 0;
-  targetWords.forEach((word) => {
-    if (spokenWords.includes(word)) matched++;
+  // 1. Target words token matching
+  const cleanTarget = (targetText || '').toLowerCase().replace(/[^\w\s']/g, ' ');
+  const targetTokens = cleanTarget.split(/\s+/).filter(Boolean);
+
+  let matchedWords = 0;
+  targetTokens.forEach((word) => {
+    if (spokenTokens.includes(word)) matchedWords++;
   });
+  const wordScore = targetTokens.length > 0 ? (matchedWords / targetTokens.length) * 100 : 50;
 
-  const accuracyScore = Math.min(100, Math.max(30, Math.round((matched / targetWords.length) * 100)));
-  const fluencyScore = Math.min(100, Math.max(40, Math.round(accuracyScore * 0.95)));
-  const stars = accuracyScore >= 80 ? 3 : accuracyScore >= 60 ? 2 : 1;
+  // 2. Key Chunks evaluation (higher weight for Cambridge phrase mastery)
+  let chunkScore = 100;
+  if (Array.isArray(keyChunks) && keyChunks.length > 0) {
+    let matchedChunks = 0;
+    keyChunks.forEach((chunk) => {
+      const cleanChunk = chunk.toLowerCase().trim();
+      if (cleanSpoken.includes(cleanChunk)) {
+        matchedChunks++;
+      } else {
+        const chunkWords = cleanChunk.split(/\s+/);
+        const subMatch = chunkWords.filter(w => spokenTokens.includes(w)).length;
+        if (subMatch / chunkWords.length >= 0.7) matchedChunks += 0.8;
+      }
+    });
+    chunkScore = (matchedChunks / keyChunks.length) * 100;
+  }
 
-  return { accuracyScore, fluencyScore, stars };
+  const finalScore = Math.min(100, Math.round(keyChunks.length > 0 ? (wordScore * 0.4 + chunkScore * 0.6) : wordScore));
+  const stars = finalScore >= 80 ? 3 : finalScore >= 50 ? 2 : finalScore >= 25 ? 1 : 0;
+
+  return {
+    accuracyScore: finalScore,
+    fluencyScore: Math.min(100, Math.round(finalScore * 0.95)),
+    stars,
+    isAttempted: true
+  };
 };
 
 import FindDifferencesInteractive from '../../components/cambridge/FindDifferencesInteractive';
@@ -113,8 +140,9 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         4: "The school nurse brought a clean bandage and a cold pack to treat his knee",
         5: "Everyone felt relieved and the principal praised Jake publicly during Monday assembly"
       };
-      const targetText = targetTextMap[picId] || "Tom slipped on the wet floor";
-      const evalRes = calculateSpeechAccuracy(userSpeechInput || targetText, targetText);
+      const currentPic = pictureStoryData.pictures.find(p => p.id === picId);
+      const keyChunks = currentPic?.key_chunks || [];
+      const evalRes = calculateSpeechAccuracy(userSpeechInput, targetText, keyChunks);
 
       setPictureScores(prev => ({
         ...prev,
@@ -303,7 +331,7 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     } else {
       setIsRecording(false);
       const targetStr = shadowingPhase === 1 ? (sentencesList[0]?.text || '') : (longParagraph?.text || '');
-      const realScores = calculateSpeechAccuracy(userSpeechInput || "Jake was walking carefully down the school corridor after science class", targetStr);
+      const realScores = calculateSpeechAccuracy(userSpeechInput, targetStr);
 
       setPodcastScore({
         stars: realScores.stars,
@@ -348,9 +376,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
     vadTimerRef.current = setTimeout(() => {
       setIsMicListening(false);
       setShowThinkingBadge(false);
-      if (!userSpeechInput) {
-        setUserSpeechInput("Tom slipped on the wet floor and called the school nurse.");
-      }
     }, 5000);
 
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
@@ -373,7 +398,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
         setShowThinkingBadge(false);
         if (thinkingTimerRef.current) clearTimeout(thinkingTimerRef.current);
         if (vadTimerRef.current) clearTimeout(vadTimerRef.current);
-        setUserSpeechInput("Tom woke up in a hurry and promised to be more careful.");
       };
 
       recognition.onend = () => {
@@ -388,9 +412,6 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       setTimeout(() => {
         setIsMicListening(false);
         setShowThinkingBadge(false);
-        if (!userSpeechInput) {
-          setUserSpeechInput("Tom accidentally knocked over his clock because he was clumsy.");
-        }
       }, 5000);
     }
   };

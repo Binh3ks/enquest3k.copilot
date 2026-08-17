@@ -18,10 +18,12 @@ export const speakingHubData = {
     picA: { title: 'Picture A (Original Scene)', image_url: '/images/week33/w33_diff_scene_a.jpg' },
     picB: { title: 'Picture B (Difference Scene)', image_url: '/images/week33/w33_diff_scene_b.jpg' },
     hotspots: [
-      { id: 'diff1', name: 'Left Bench Backpack Color', x: 10, y: 60, prompt_en: 'In Picture A, the backpack on the left bench is blue, but in Picture B, it is red.' },
-      { id: 'diff2', name: 'Boy Shirt Color', x: 45, y: 50, prompt_en: 'In Picture A, the boy is wearing a red shirt, but in Picture B, he is wearing a blue shirt.' },
-      { id: 'diff3', name: 'Wall Clock Time', x: 73, y: 14, prompt_en: 'In Picture A, the wall clock shows 9:00, but in Picture B, it shows 10:00.' },
-      { id: 'diff4', name: 'Wet Floor Warning Sign Color', x: 78, y: 72, prompt_en: 'In Picture A, the wet floor warning sign is yellow, but in Picture B, it is orange.' }
+      { id: 'diff1', name: 'Left Bench Backpack Color', x: 11, y: 70, prompt_en: 'In Picture A, the backpack on the bench is blue, but in Picture B, it is red.' },
+      { id: 'diff2', name: 'Walking Boy Shirt Color', x: 50, y: 60, prompt_en: 'In Picture A, the boy is wearing a red shirt, but in Picture B, he is wearing a blue shirt.' },
+      { id: 'diff3', name: 'Wall Clock Time', x: 61, y: 19, prompt_en: 'In Picture A, the wall clock shows 9:00, but in Picture B, it shows 10:00.' },
+      { id: 'diff4', name: 'Wet Floor Warning Sign Color', x: 30, y: 62, prompt_en: 'In Picture A, the wet floor warning sign is yellow, but in Picture B, it is orange.' },
+      { id: 'diff5', name: 'Hanging Coat Color', x: 73, y: 51, prompt_en: 'In Picture A, the coat hanging on the wall is red, but in Picture B, it is green.' },
+      { id: 'diff6', name: 'Corner Potted Plant', x: 6, y: 85, prompt_en: 'In Picture A, there is no plant by the front bench, but in Picture B, there is a potted plant on the floor.' }
     ]
   },
 

@@ -15,8 +15,8 @@ export default {
       description_en: "Jake was walking carefully down the school corridor after science class.",
       image_url: "/images/week33/webtoon_scene_1.png",
       lexical_chunks: [
-        { word: "corridor", chunk: "school corridor", x: 45, y: 55 },
-        { word: "carefully", chunk: "walking carefully", x: 25, y: 40 }
+        { word: "corridor", chunk: "school corridor", x: 45, y: 40 },
+        { word: "carefully", chunk: "walking carefully", x: 62, y: 55 }
       ]
     },
     {
@@ -25,8 +25,8 @@ export default {
       description_en: "A boy ran very fast past the science laboratory classroom door.",
       image_url: "/images/week33/webtoon_scene_2.png",
       lexical_chunks: [
-        { word: "running", chunk: "running fast", x: 50, y: 50 },
-        { word: "laboratory", chunk: "science laboratory", x: 20, y: 40 }
+        { word: "running", chunk: "running fast", x: 62, y: 50 },
+        { word: "laboratory", chunk: "science laboratory", x: 86, y: 30 }
       ]
     },
     {
@@ -35,28 +35,28 @@ export default {
       description_en: "Suddenly, he slipped on a wet floor puddle and flew into the air with papers falling.",
       image_url: "/images/week33/webtoon_scene_3.png",
       lexical_chunks: [
-        { word: "slipped", chunk: "slipped on the wet floor", x: 50, y: 60 },
-        { word: "fell", chunk: "fell down heavily", x: 60, y: 70 }
+        { word: "slipped", chunk: "slipped on the wet floor", x: 50, y: 82 },
+        { word: "hurt", chunk: "hurt his knee", x: 30, y: 65 }
       ]
     },
     {
       scene_id: "scene_4",
       title_en: "Scene 4: Calling the Nurse for Help",
-      description_en: "Jake stopped immediately and walked quickly to call the school nurse for help.",
+      description_en: "Jake stopped immediately and called the school nurse for help.",
       image_url: "/images/week33/webtoon_scene_4.png",
       lexical_chunks: [
-        { word: "hurt", chunk: "hurt his knee", x: 45, y: 65 },
-        { word: "called", chunk: "called for help", x: 30, y: 50 }
+        { word: "nurse", chunk: "school nurse", x: 48, y: 55 },
+        { word: "bandage", chunk: "clean bandage", x: 42, y: 72 }
       ]
     },
     {
       scene_id: "scene_5",
       title_en: "Scene 5: Nurse Applying Bandage & Relief",
-      description_en: "The school nurse arrived quickly and applied a clean bandage to his injured knee on a bench.",
+      description_en: "The headmaster praised Jake for his quick action and everyone felt relieved.",
       image_url: "/images/week33/webtoon_scene_5.png",
       lexical_chunks: [
-        { word: "nurse", chunk: "school nurse", x: 60, y: 45 },
-        { word: "bandage", chunk: "clean bandage", x: 40, y: 60 }
+        { word: "praised", chunk: "praised Jake", x: 58, y: 45 },
+        { word: "relieved", chunk: "felt relieved", x: 43, y: 55 }
       ]
     }
   ],

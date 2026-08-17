@@ -15,26 +15,27 @@ export const listeningHubData = {
   // Cambridge Listening Part 1 (SVG Line Matcher)
   listening_p1: {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',
-    passage_audio_script: "Welcome to Nova's Drawing Challenge! Listen and draw lines. Alex: Look at that boy in the corridor! Is he running? Teacher: No, the boy slipping on the wet floor in the red shirt is Tom! Look at the boy walking carefully in the blue shirt. Alex: Oh, I see him now. Is that Jake? Teacher: Yes, that's right. Jake is walking carefully. Alex: Who is the lady in the white uniform carrying a bandage? Teacher: That's the school nurse! She is rushing to help Tom. Alex: And who is the tall man in the blue suit talking to students? Teacher: That's the headmaster. He is making sure everyone stays safe. Alex: Look at the girl near the yellow wet floor sign holding a mop. Teacher: Ah, that's Mia. She is cleaning the wet floor so nobody else falls.",
+    passage_audio_script: "Nova: Look at the picture of the school corridor. Some children and adults are there. Can you see them all? Let's listen and draw lines from the names to the right people.\nNova: The boy who is wearing a blue shirt and carrying a backpack — he is walking carefully. That boy is Jake.\nNova: Now look at the lady who is wearing a white uniform and rushing towards the boy on the floor. She is carrying a bandage. That is the school nurse.\nNova: Can you find the boy who is wearing a red shirt and slipping on the wet floor? His name is Tom. He fell because he was running.\nNova: Look at the tall man who is wearing a dark blue suit and standing near the lockers. He is watching to make sure everyone is safe. That is the headmaster.\nNova: Finally, find the girl who is wearing a yellow top and holding a mop near the wet floor sign. Her name is Mia. She is trying to clean the floor.\nNova: Now, there is one more name — Alex. Can you find Alex? Look carefully at all the children. Is Alex there? No! Alex is not in the picture. Alex is not there today.",
     names: [
       { id: 'n1', text: 'Jake', target_id: 't1' },
       { id: 'n2', text: 'School Nurse', target_id: 't2' },
       { id: 'n3', text: 'Tom', target_id: 't3' },
       { id: 'n4', text: 'Headmaster', target_id: 't4' },
-      { id: 'n5', text: 'Mia', target_id: 't5' }
+      { id: 'n5', text: 'Mia', target_id: 't5' },
+      { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy walking carefully)', x: 20, y: 60 },
-      { id: 't2', label: 'School Nurse (Carrying bandage)', x: 39, y: 50 },
-      { id: 't3', label: 'Tom (Slipping on wet floor)', x: 56, y: 68 },
-      { id: 't4', label: 'Headmaster (In blue suit)', x: 74, y: 48 },
-      { id: 't5', label: 'Mia (Girl holding mop)', x: 88, y: 52 }
+      { id: 't1', label: 'Jake (Boy in blue shirt, walking carefully)', x: 16, y: 65 },
+      { id: 't2', label: 'School Nurse (White uniform, rushing with bandage)', x: 58, y: 54 },
+      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 49, y: 62 },
+      { id: 't4', label: 'Headmaster (Dark blue suit, near lockers)', x: 30, y: 50 },
+      { id: 't5', label: 'Mia (Yellow top, holding mop)', x: 78, y: 56 }
     ]
   },
 
   // Cambridge Listening Part 3 (Visual Matching A-H — School Locations)
   listening_p3: {
-    passage_audio_script: "Welcome to Nova's Item Hunt! Let's listen to where the items were placed around the school...\nTeacher: Hello Jake! Can you tell me where all these items were placed during the incident in the corridor?\nJake: Sure! First, when Tom fell, the school nurse brought a clean bandage. She kept it in the medical cabinet in the nurse room.\nTeacher: Great! What about the cold pack to cool his hurt knee?\nJake: Ah, the cold pack was taken from the first aid table near the corridor.\nTeacher: Where was Tom's science notebook?\nJake: Tom left his science notebook on the lab desk in the science room.\nTeacher: I see a glass of orange juice. Did anyone spill it?\nJake: No, it was sitting safely on the cafeteria counter in the canteen.\nTeacher: And lastly, what about the red alarm clock?\nJake: The alarm clock was on the bedroom table at home!",
+    passage_audio_script: "Teacher: Hello Jake! I need to write a report about yesterday. Can you help me find where everything was?\nJake: Of course! What do you need to know?\nTeacher: First, where was the clean bandage? Was it on the headmaster's desk?\nJake: Oh no, not there! The nurse keeps the clean bandage in the medical cabinet. In the nurse room.\nTeacher: I see. And what about the cold pack for Tom's knee? Was it in the science room somewhere?\nJake: No, the cold pack was on the first aid table — you know, the one near the corridor entrance.\nTeacher: Right. Now, Tom's science notebook — did he leave it in the corridor?\nJake: He thought so at first, but actually Tom left his science notebook on the lab desk. In the science room.\nTeacher: Hmm. I also heard about a glass of orange juice. Was it on the playground bench?\nJake: No, nobody took it outside! The orange juice was on the cafeteria counter. In the canteen.\nTeacher: And the alarm clock? Was that in the headmaster's office?\nJake: Ha! No. The alarm clock was at Tom's home — on his bedroom table. He forgot it there that morning!",
     items: [
       { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet in the nurse room.' },
       { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table near the corridor.' },
@@ -55,6 +56,7 @@ export const listeningHubData = {
   },
 
   // Cambridge Listening Part 4 (3-Picture Option Cards with Distractors)
+
   listening_p4_questions: [
     {
       id: 'lp4_1',

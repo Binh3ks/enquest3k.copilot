@@ -223,7 +223,7 @@ export const INFORMATION_EXCHANGE_P2 = {
 
 export const PICTURE_STORY_CONTINUATION = {
   title: "Safety First at School",
-  intro_audio_text: "Look at the four pictures. They tell a story called 'Safety First at School'. Just look at Picture 1 first. Jake was walking carefully down the corridor after science class when he noticed a slippery floor.",
+  intro_audio_text: "Look at the five pictures. They tell a story called 'Safety First at School'. Just look at Picture 1 first. Jake was walking carefully down the corridor after science class.",
   pictures: [
     {
       id: 1,
@@ -250,12 +250,21 @@ export const PICTURE_STORY_CONTINUATION = {
     },
     {
       id: 4,
-      title: "Picture 4: Applying first aid & praised",
+      title: "Picture 4: Applying clean bandage",
       image: "/images/week33/webtoon_scene_4.png",
-      prompt_en: "How does the story end in Picture 4?",
-      prompt_vi: "Câu chuyện kết thúc như thế nào ở Bức tranh 4?",
-      key_chunks: ["clean bandage", "cold pack", "praised by headmaster"]
+      prompt_en: "How did the nurse treat Tom in Picture 4?",
+      prompt_vi: "Cô y tá đã chữa trị cho Tom như thế nào ở Bức tranh 4?",
+      key_chunks: ["clean bandage", "cold pack"]
+    },
+    {
+      id: 5,
+      title: "Picture 5: Feeling relieved & praised",
+      image: "/images/week33/webtoon_scene_5.png",
+      prompt_en: "How does the story end in Picture 5?",
+      prompt_vi: "Câu chuyện kết thúc như thế nào ở Bức tranh 5?",
+      key_chunks: ["felt relieved", "praised by headmaster"]
     }
   ]
 };
+
 

@@ -70,6 +70,11 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
       const evaluation = evaluateCambridgeCriteria(userScript, weekNumber);
       const totalScore = evaluation.totalScore;
       const stars = evaluation.stars;
+      const isWordCountPass = evaluation.metWords;
+      const isCoherent = evaluation.isCoherent;
+      const wordCount = evaluation.wordCount;
+      const foundPastVerbs = evaluation.foundPastVerbs;
+      const foundConnectors = evaluation.connectorsFound;
 
       // Hub 3 Performance Task Gamification: Trigger Confetti Burst & +100 XP for ≥ 80% (3 Stars) 🎉
       if (totalScore >= 80) {
@@ -90,7 +95,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
 
       const layer1Result = {
         isRulePass: isWordCountPass && isCoherent,
-        wordCount: words.length,
+        wordCount,
         pastVerbsCount: foundPastVerbs.length,
         connectorsCount: foundConnectors.length
       };
