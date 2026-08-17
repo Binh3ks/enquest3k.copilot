@@ -1,0 +1,40 @@
+# Antigravity & Agent Token Optimization Ignore File
+# Blocks massive static files, binary assets, and build artifacts from polluting LLM context window.
+
+# Dependencies & Build Artifacts
+node_modules/
+dist/
+build/
+.vite/
+.tempmediaStorage/
+
+# Version Control & Logs
+.git/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Monolithic / Large Data Files (Access via specific helpers if needed)
+public/dictionary.json
+src/data/dictionary.json
+src/data/dictionary_full.json
+*.pdf
+*.zip
+*.tar.gz
+
+# Media Assets (Images, Audios, Videos)
+public/images/
+public/audio/
+public/videos/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp3
+*.wav
+*.mp4
+
+# Test & Coverage Outputs
+coverage/
+.nyc_output/

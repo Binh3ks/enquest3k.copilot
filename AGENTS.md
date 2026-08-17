@@ -8,6 +8,11 @@
 4. **Tier 4 (Multi-Agent Subagent Swarm)**: Sinh dữ liệu cả tuần học, audit hàng loạt $\rightarrow$ Tự động spawn Subagent Swarm (`content-writer`, `quality-reviewer`) để giữ Main Context Window luôn sạch (<20k tokens).
 5. **CLI Analyzer**: Chạy `node scripts/model_router.mjs "<User Prompt>"` để phân loại tức thì.
 
+## 📦 Token Compression & Ignore Protocol — 2026-08-17
+1. **Ignore Protection**: Luôn tuân thủ `.antigravityignore` & `.agentignore` — TỰ ĐỘNG CHẶN đọc file rác, file build `dist/`, media binary và `dictionary.json` 40,000 dòng.
+2. **AST Repo Map Skeleton**: Sử dụng `.agents/repo_map.md` (sinh bởi `node scripts/build_repo_map.mjs`) để tra cứu Function Signatures trên 500+ file mà KHÔNG nạp thân code thừa vào Context Window (tiết kiệm 85% token).
+3. **Prompt Caching Alignment**: Giữ Prefix System Rules & Tools nhất quán giữa các turn để kích hoạt Context Caching 90% cost reduction trên Gemini/Anthropic.
+
 ## 🔴 MANDATORY Multi-Agent Review Protocol — 2026-08-17
 **Áp dụng cho MỌI thực thi code sau này. KHÔNG được bỏ qua.**
 

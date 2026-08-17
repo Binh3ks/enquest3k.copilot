@@ -1,0 +1,22 @@
+# Antigravity & Agent Token Optimization Ignore File
+node_modules/
+dist/
+build/
+.vite/
+.tempmediaStorage/
+.git/
+*.log
+public/dictionary.json
+src/data/dictionary.json
+public/images/
+public/audio/
+public/videos/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp3
+*.wav
+*.mp4
+coverage/
