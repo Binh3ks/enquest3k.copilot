@@ -134,34 +134,36 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
       setIsMicListening(false);
       setActiveRecordingPicId(null);
 
+      // BUG-1 FIX: extract targetText from map before passing to calculateSpeechAccuracy
       const targetTextMap = {
         2: "Tom ran fast and slipped on the wet floor near the yellow warning sign",
         3: "Jake stopped immediately and called the school nurse to get help",
         4: "The school nurse brought a clean bandage and a cold pack to treat his knee",
         5: "Everyone felt relieved and the principal praised Jake publicly during Monday assembly"
       };
+      const targetText = targetTextMap[picId] || "";
       const currentPic = pictureStoryData.pictures.find(p => p.id === picId);
       const keyChunks = currentPic?.key_chunks || [];
       const evalRes = calculateSpeechAccuracy(userSpeechInput, targetText, keyChunks);
 
       setPictureScores(prev => ({
         ...prev,
-        [picId]: { stars: evalRes.stars, score: evalRes.accuracyScore }
+        [picId]: { stars: evalRes.stars, score: evalRes.accuracyScore, isAttempted: evalRes.isAttempted }
       }));
 
-      // Performance Task Gamification: Trigger Confetti Burst for ≥ 80% (3 Stars) 🎉
-      if (evalRes.accuracyScore >= 80) {
-        fireCelebrationConfetti();
+      // BUG-2 FIX: Only log & celebrate if student actually attempted (isAttempted=true)
+      // Prevents empty/noise recordings from polluting learner progress data
+      if (evalRes.isAttempted) {
+        if (evalRes.accuracyScore >= 80) fireCelebrationConfetti();
+        await learnerProgressService.logAttempt({
+          learnerId,
+          contentId: `w${weekNumber}_speaking_p3_picture_${picId}`,
+          mode: 'learn',
+          result: evalRes.accuracyScore >= 60 ? 'correct' : 'incorrect',
+          score: evalRes.accuracyScore,
+          timeSpentSeconds: 45
+        });
       }
-
-      await learnerProgressService.logAttempt({
-        learnerId,
-        contentId: `w${weekNumber}_speaking_p3_picture_${picId}`,
-        mode: 'learn',
-        result: evalRes.accuracyScore >= 60 ? 'correct' : 'incorrect',
-        score: evalRes.accuracyScore,
-        timeSpentSeconds: 45
-      });
     } else {
       setActiveRecordingPicId(picId);
       handleMicClick();
