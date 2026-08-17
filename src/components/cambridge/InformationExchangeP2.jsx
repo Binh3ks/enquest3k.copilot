@@ -288,7 +288,11 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
 
     console.log(`[SPEAKING_P2_DEBUG] Evaluation Result -> Score: ${result.score}%, Status: ${result.isCorrect ? 'PASS' : 'FAIL'}, Attempts: ${attempts}`);
 
-    if (result.isCorrect || textToEval.trim().length > 3) {
+    // R-1 FIX: In Check/Stealth mode (strict Cambridge), only advance on correct answer.
+    // In Learn mode, allow lenient bypass after ≥2 attempts to prevent permanent blocking.
+    const isStrictPass = result.isCorrect;
+    const isLenientPass = !isStealthMode && attempts >= 2 && textToEval.trim().length > 8;
+    if (isStrictPass || isLenientPass) {
       setRevealedTableA(prev => ({
         ...prev,
         [currentField.id]: currentField.value

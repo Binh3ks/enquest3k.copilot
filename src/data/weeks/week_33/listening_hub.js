@@ -37,11 +37,11 @@ export const listeningHubData = {
   listening_p3: {
     passage_audio_script: "Teacher: Hello Jake! I need to write a report about yesterday. Can you help me find where everything was?\nJake: Of course! What do you need to know?\nTeacher: First, where was the clean bandage? Was it on the headmaster's desk?\nJake: Oh no, not there! The nurse keeps the clean bandage in the medical cabinet. In the nurse room.\nTeacher: I see. And what about the cold pack for Tom's knee? Was it in the science room somewhere?\nJake: No, the cold pack was on the first aid table — you know, the one near the corridor entrance.\nTeacher: Right. Now, Tom's science notebook — did he leave it in the corridor?\nJake: He thought so at first, but actually Tom left his science notebook on the lab desk. In the science room.\nTeacher: Hmm. I also heard about a glass of orange juice. Was it on the playground bench?\nJake: No, nobody took it outside! The orange juice was on the cafeteria counter. In the canteen.\nTeacher: And the alarm clock? Was that in the headmaster's office?\nJake: Ha! No. The alarm clock was at Tom's home — on his bedroom table. He forgot it there that morning!",
     items: [
-      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet in the nurse room.' },
-      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table near the corridor.' },
-      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk in the science room.' },
-      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria counter in the canteen.' },
-      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock was on the bedroom table at home.' }
+      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_url: '/audio/week33/listening_p3_item1.mp3', audio_text: 'The clean bandage was kept in the medical cabinet in the nurse room.' },
+      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_url: '/audio/week33/listening_p3_item2.mp3', audio_text: 'The cold pack was placed on the first aid table near the corridor.' },
+      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_url: '/audio/week33/listening_p3_item3.mp3', audio_text: 'The science notebook was on the lab desk in the science room.' },
+      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_url: '/audio/week33/listening_p3_item4.mp3', audio_text: 'The orange juice glass was on the cafeteria counter in the canteen.' },
+      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_url: '/audio/week33/listening_p3_item5.mp3', audio_text: 'The alarm clock was on the bedroom table at home.' }
     ],
     cards: [
       { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },
@@ -64,6 +64,7 @@ export const listeningHubData = {
       type: 'listening_p4_picture',
       question: '1. Where did Tom slip and hurt his knee?',
       prompt: 'Where did Tom slip and hurt his knee?',
+      audio_url: '/audio/week33/listening_p4_q1.mp3',
       audio_script: "Girl: Did Tom slip inside the science lab?\nBoy: No, he was walking past the science lab, but he actually slipped on wet tiles in the school corridor!\nGirl: Oh, so it was in the corridor, not in the lab or playground!",
       options: [
         { label: 'A', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
@@ -77,6 +78,7 @@ export const listeningHubData = {
       type: 'listening_p4_picture',
       question: '2. What did Jake do immediately when Tom fell?',
       prompt: 'What did Jake do immediately when Tom fell?',
+      audio_url: '/audio/week33/listening_p4_q2.mp3',
       audio_script: "Man: Did Jake run to find his teacher in class?\nWoman: No, Jake stopped right away and walked quickly to call the school nurse for help!\nMan: Ah, he called the school nurse immediately!",
       options: [
         { label: 'A', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
@@ -90,6 +92,7 @@ export const listeningHubData = {
       type: 'listening_p4_picture',
       question: '3. What did the school nurse apply to Tom’s knee?',
       prompt: 'What did the school nurse apply to Tom’s knee?',
+      audio_url: '/audio/week33/listening_p4_q3.mp3',
       audio_script: "Woman: Did the nurse give Tom a glass of orange juice?\nMan: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee.\nWoman: So she applied a clean bandage and a cold pack!",
       options: [
         { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/card_clean_bandage.jpg', isCorrect: true },
@@ -103,6 +106,7 @@ export const listeningHubData = {
       type: 'listening_p4_picture',
       question: '4. How did everyone feel after Tom was safely helped?',
       prompt: 'How did everyone feel after Tom was safely helped?',
+      audio_url: '/audio/week33/listening_p4_q4.mp3',
       audio_script: "Girl: Was Tom's knee severely injured?\nBoy: No, the nurse treated his knee gently, and everyone felt relieved and safe!\nGirl: That was a big relief for everyone!",
       options: [
         { label: 'A', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
@@ -116,6 +120,7 @@ export const listeningHubData = {
       type: 'listening_p4_picture',
       question: '5. What did the headmaster do during Monday assembly?',
       prompt: 'What did the headmaster do during Monday assembly?',
+      audio_url: '/audio/week33/listening_p4_q5.mp3',
       audio_script: "Man: Did the headmaster give Jake a difficult test?\nWoman: Yes, the headmaster praised Jake publicly during Monday assembly for taking responsible action!",
       options: [
         { label: 'A', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true },
@@ -129,10 +134,10 @@ export const listeningHubData = {
   listening_p5: {
     audio_script: "Nova: Look at the picture of the school corridor. Can you see the boy sitting on the floor with a hurt knee?\nJake: Yes! I can see him.\nNova: Look at the clean bandage on his knee. Can you color it blue?\nJake: Sure! I'm coloring the clean bandage blue now.\nNova: Excellent. Now look at the first aid table. Can you find the cold pack?\nJake: Yes, it's sitting on the table.\nNova: Color the cold pack green.\nJake: Green cold pack, done!\nNova: Now look at the warning sign on the floor near the wet tiles. Color the warning sign yellow.\nJake: Okay, the wet floor warning sign is yellow.\nNova: Finally, can you write something on the label at the bottom of the sign?\nJake: What should I write?\nNova: Write the word SAFE in capital letters.\nJake: S-A-F-E, done!",
     instructions: [
-      { id: 't1', type: 'color', target_id: 'bandage', target_color: '#3b82f6', color_name: 'Blue', prompt: '1. Color the clean bandage on the boy’s knee BLUE.' },
-      { id: 't2', type: 'color', target_id: 'coldpack', target_color: '#22c55e', color_name: 'Green', prompt: '2. Color the cold pack GREEN.' },
-      { id: 't3', type: 'color', target_id: 'warning_sign', target_color: '#eab308', color_name: 'Yellow', prompt: '3. Color the wet floor warning sign YELLOW.' },
-      { id: 't4', type: 'write', label_id: 'sign_label', target_text: 'SAFE', prompt: '4. Write the word SAFE on the warning sign label.' }
+      { id: 't1', type: 'color', target_id: 'bandage', target_color: '#3b82f6', color_name: 'Blue', audio_url: '/audio/week33/listening_p5_inst1.mp3', prompt: '1. Color the clean bandage on the boy’s knee BLUE.' },
+      { id: 't2', type: 'color', target_id: 'coldpack', target_color: '#22c55e', color_name: 'Green', audio_url: '/audio/week33/listening_p5_inst2.mp3', prompt: '2. Color the cold pack GREEN.' },
+      { id: 't3', type: 'color', target_id: 'warning_sign', target_color: '#eab308', color_name: 'Yellow', audio_url: '/audio/week33/listening_p5_inst3.mp3', prompt: '3. Color the wet floor warning sign YELLOW.' },
+      { id: 't4', type: 'write', label_id: 'sign_label', target_text: 'SAFE', audio_url: '/audio/week33/listening_p5_inst5.mp3', prompt: '4. Write the word SAFE on the warning sign label.' }
     ]
   }
 };

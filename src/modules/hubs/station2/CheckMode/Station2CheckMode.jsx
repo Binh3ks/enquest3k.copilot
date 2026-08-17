@@ -244,7 +244,14 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
 
           <div className="flex items-center gap-4 bg-black/20 p-3.5 rounded-xl border border-white/20">
             <button
-              onClick={() => speakText(audioTextToPlay)}
+              onClick={() => speakText(
+                audioTextToPlay,
+                currentQ.audio_url || currentQ.audio || `/audio/week${weekNumber}/listening_p4_q${currentIndex + 1}.mp3`,
+                1.0,
+                null,
+                'questions',
+                weekNumber
+              )}
               className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
             >
               <Volume2 size={18} /> Play Listening Audio

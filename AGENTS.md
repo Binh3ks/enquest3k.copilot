@@ -1,5 +1,37 @@
 # EngQuest3K — Agent Memory
 
+## 🔴 MANDATORY Multi-Agent Review Protocol — 2026-08-17
+**Áp dụng cho MỌI thực thi code sau này. KHÔNG được bỏ qua.**
+
+### Quy trình bắt buộc sau mỗi lần implement/sửa code:
+Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (adversarial mode) để kiểm tra lại theo checklist sau:
+
+#### Checklist Reviewer Agent phải kiểm tra:
+1. **Variable Declaration**: Mọi biến được dùng trong function có được khai báo trước đó không? (Tránh ReferenceError / TDZ — Lesson-006)
+2. **Cheat-proofing (Speaking/Assessment)**: Không có fallback text injection, không dùng audio duration làm proxy điểm chất lượng, không bypass check mode bằng length > N
+3. **Progress Data Integrity**: `logAttempt` chỉ được gọi khi `isAttempted: true` — không ghi data rác vào analytics
+4. **Mode Separation**: `isStealthMode/check` phải có code path riêng nghiêm ngặt, không chia sẻ lenient fallback của Learn Mode
+5. **Build Verification**: `npm run build` PHẢI exit code 0 trước khi push
+6. **Audit Gate**: `npm run audit:week <N>` (nếu thay đổi week data) PHẢI pass 0 errors
+
+#### Template báo cáo Reviewer Agent:
+```
+## 📋 Multi-Agent Review Report — Commit <hash>
+### 🔴 CRITICAL BUGS (crashes / wrong scores)
+### 🟡 HIGH RISKS (cheating loopholes / data pollution)
+### ✅ PASSED (correct implementation)
+```
+
+#### Quy tắc vòng lặp:
+- Nếu Reviewer phát hiện CRITICAL BUG → **sửa ngay, push fix commit riêng** với message `fix(...): ... [multi-agent-review]`
+- Nếu chỉ có HIGH RISK → **báo cáo user quyết định** có sửa ngay không
+- Nếu PASSED hết → push production commit bình thường
+
+#### Precedents từ W33 Golden Master (Commit 44c1cf13 → 60923a4e → ...):
+- BUG-1: `targetText` declared in map object nhưng không extract thành `const` → dùng `undefined` → sai 100%
+- BUG-2: `logAttempt` gọi kể cả `isAttempted: false` → data rác analytics
+- R-1: `textToEval.trim().length > 3` bypass trong Check Mode → học sinh gõ `asdf` pass → đã sửa thành `isStrictPass || isLenientPass`
+
 ## Output Discipline (token-saving) — 2026-07-03
 Khi xuất báo cáo hoặc sửa code trong session OpenHands/Devin:
 - Ưu tiên code cô đọng; bỏ phân tích lý thuyết thừa.
