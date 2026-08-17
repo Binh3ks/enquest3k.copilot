@@ -13,6 +13,15 @@ export const listeningHubData = {
   dictation,
   shadowing,
 
+  // Cambridge Listening Part 2 (Secret Notes / Notepad Note Completer)
+  listening_p2_notes: [
+    { id: 1, label: "Incident Location", hint: "Where did it happen?", target: "school corridor", audio_text: "The incident happened down the school corridor after science class." },
+    { id: 2, label: "Cause of Fall", hint: "Why did he slip?", target: "wet floor", audio_text: "The classmate running fast slipped on the wet floor." },
+    { id: 3, label: "Person Called", hint: "Who did Jake call?", target: "school nurse", audio_text: "Jake stopped immediately and called the school nurse." },
+    { id: 4, label: "First Aid Applied", hint: "What did nurse apply?", target: "clean bandage", audio_text: "The nurse treated his cut knee gently with a clean bandage." },
+    { id: 5, label: "School Rule", hint: "What rule to follow?", target: "never run", audio_text: "The headmaster reminded all students never to run in corridors." }
+  ],
+
   // Cambridge Listening Part 1 (SVG Line Matcher — Scene Investigation)
   listening_p1: {
     image_url: '/images/week33/w33_listening_p1_scene.jpg',

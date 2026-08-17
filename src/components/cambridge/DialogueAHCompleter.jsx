@@ -129,7 +129,7 @@ export function DialogueAHCompleter({ customData, onComplete }) {
         {/* Left Column: 5-Exchange Continuous Dialogue */}
         <div className="lg:col-span-7 space-y-4">
           <div className="text-xs font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-            <MessageSquare size={15} className="text-purple-600" /> Tom & Helen's Dialogue Passage:
+            <MessageSquare size={15} className="text-purple-600" /> {customData?.title || "Dialogue Passage (Cambridge Part 2):"}
           </div>
 
           <div className="space-y-3.5">
@@ -144,14 +144,14 @@ export function DialogueAHCompleter({ customData, onComplete }) {
                   {/* Speaker A Question */}
                   <div className="flex items-start gap-2.5">
                     <span className="px-2.5 py-0.5 bg-indigo-600 text-white font-black text-[10px] rounded-md uppercase shrink-0 mt-0.5">
-                      {ex.speaker_a}
+                      {ex.speaker_a || "Speaker A"}
                     </span>
                     <div className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
                       "{renderParsedText(ex.text_a, 'indigo')}"
                     </div>
                   </div>
 
-                  {/* Helen's Answer Slot */}
+                  {/* Speaker B Answer Slot */}
                   <div
                     onClick={() => !isSubmitted && setSelectedGap(ex.gap_id)}
                     className={`p-3 rounded-xl border-2 transition-all flex items-center justify-between cursor-pointer ${
@@ -168,7 +168,7 @@ export function DialogueAHCompleter({ customData, onComplete }) {
                   >
                     <div className="flex items-center gap-2 flex-1 min-w-0">
                       <span className="px-2 py-0.5 bg-purple-200 text-purple-950 font-black text-[10px] rounded-md shrink-0">
-                        Helen [{ex.gap_id}]
+                        {ex.speaker_b || "Speaker B"} [{ex.gap_id}]
                       </span>
                       {assignedOpt ? (
                         <div className="text-xs font-bold text-slate-900 truncate">
