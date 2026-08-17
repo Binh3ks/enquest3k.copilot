@@ -27,11 +27,11 @@ export const listeningHubData = {
       { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy walking with backpack on left)', x: 37, y: 50, isExample: true },
-      { id: 't2', label: 'School Nurse (White uniform with bandage)', x: 66, y: 50 },
-      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 60, y: 54 },
-      { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 49, y: 44 },
-      { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 77, y: 48 }
+      { id: 't1', label: 'Jake (Boy walking with backpack on far left)', x: 20, y: 60, isExample: true },
+      { id: 't2', label: 'School Nurse (White uniform with bandage)', x: 64, y: 52 },
+      { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 56, y: 62 },
+      { id: 't4', label: 'Headmaster (Dark blue suit near lockers)', x: 38, y: 50 },
+      { id: 't5', label: 'Mia (Girl holding cleaning mop)', x: 72, y: 54 }
     ]
   },
 
