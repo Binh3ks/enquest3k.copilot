@@ -11,12 +11,13 @@ const FALLBACK_CHECK_QUESTIONS = [
     id: 'chk_w33_p4_01',
     content_id: 'chk_w33_p4_01',
     type: 'listening_p4_picture',
-    prompt: "Where was the boy when he slipped on the wet floor?",
-    text: 'Where was the boy when he slipped on the wet floor?',
+    question: '1. Where did Tom slip and hurt his knee?',
+    prompt: 'Where did Tom slip and hurt his knee?',
+    audio_script: "Girl: Did Tom slip inside the science lab?\nBoy: No, he was walking past the science lab, but he actually slipped on wet tiles in the school corridor!\nGirl: Oh, so it was in the corridor, not in the lab or playground!",
     options: [
-      { label: 'A', text: 'In the school corridor near science room', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: true },
-      { label: 'B', text: 'Inside the science laboratory', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-      { label: 'C', text: 'In the school nurse office', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
+      { label: 'A', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
+      { label: 'B', text: 'Inside the science lab', image_url: '/images/week33/lab_desk.jpg', isCorrect: false },
+      { label: 'C', text: 'On the outdoor playground', image_url: '/images/week33/card_h_playground_bench.jpg', isCorrect: false }
     ],
     answerIndex: 0
   },
@@ -24,21 +25,9 @@ const FALLBACK_CHECK_QUESTIONS = [
     id: 'chk_w33_p4_02',
     content_id: 'chk_w33_p4_02',
     type: 'listening_p4_picture',
-    prompt: "What medical aid item did the nurse bring first?",
-    text: 'What medical aid item did the nurse bring first?',
-    options: [
-      { label: 'A', text: 'A clean bandage and cold pack', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
-      { label: 'B', text: 'A pair of crutches', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-      { label: 'C', text: 'A glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false }
-    ],
-    answerIndex: 0
-  },
-  {
-    id: 'chk_w33_p4_03',
-    content_id: 'chk_w33_p4_03',
-    type: 'listening_p4_picture',
-    prompt: "What did Jake do immediately when Tom fell down?",
-    text: 'What did Jake do immediately when Tom fell down?',
+    question: '2. What did Jake do immediately when Tom fell?',
+    prompt: 'What did Jake do immediately when Tom fell?',
+    audio_script: "Man: Did Jake run to find his teacher in class?\nWoman: No, Jake stopped right away and walked quickly to call the school nurse for help!\nMan: Ah, he called the school nurse immediately!",
     options: [
       { label: 'A', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
       { label: 'B', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
@@ -47,15 +36,30 @@ const FALLBACK_CHECK_QUESTIONS = [
     answerIndex: 0
   },
   {
+    id: 'chk_w33_p4_03',
+    content_id: 'chk_w33_p4_03',
+    type: 'listening_p4_picture',
+    question: '3. What did the school nurse apply to Tom’s knee?',
+    prompt: 'What did the school nurse apply to Tom’s knee?',
+    audio_script: "Woman: Did the nurse give Tom a glass of orange juice?\nMan: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee.\nWoman: So she applied a clean bandage and a cold pack!",
+    options: [
+      { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/card_clean_bandage.jpg', isCorrect: true },
+      { label: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false },
+      { label: 'C', text: 'Gave him a new science notebook', image_url: '/images/week33/card_science_notebook.jpg', isCorrect: false }
+    ],
+    answerIndex: 0
+  },
+  {
     id: 'chk_w33_p4_04',
     content_id: 'chk_w33_p4_04',
     type: 'listening_p4_picture',
-    prompt: "How did everyone feel after Tom was safely helped?",
-    text: 'How did everyone feel after Tom was safely helped?',
+    question: '4. How did everyone feel after Tom was safely helped?',
+    prompt: 'How did everyone feel after Tom was safely helped?',
+    audio_script: "Girl: Was Tom's knee severely injured?\nBoy: No, the nurse treated his knee gently, and everyone felt relieved and safe!\nGirl: That was a big relief for everyone!",
     options: [
       { label: 'A', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
       { label: 'B', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-      { label: 'C', text: 'Felt scared and ran away', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
+      { label: 'C', text: 'Felt scared and fell down', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
     ],
     answerIndex: 0
   },
@@ -63,12 +67,13 @@ const FALLBACK_CHECK_QUESTIONS = [
     id: 'chk_w33_p4_05',
     content_id: 'chk_w33_p4_05',
     type: 'listening_p4_picture',
-    prompt: "What did the headmaster do during Monday assembly?",
-    text: 'What did the headmaster do during Monday assembly?',
+    question: '5. What did the headmaster do during Monday assembly?',
+    prompt: 'What did the headmaster do during Monday assembly?',
+    audio_script: "Man: Did the headmaster give Jake a difficult test?\nWoman: Yes, the headmaster praised Jake publicly during Monday assembly for taking responsible action!",
     options: [
       { label: 'A', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true },
-      { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
-      { label: 'C', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: false }
+      { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg', isCorrect: false },
+      { label: 'C', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false }
     ],
     answerIndex: 0
   }
@@ -78,7 +83,11 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
-  const rawQuestions = customQuestions || weekData?.listening_p4_questions || weekData?.stations?.listening_hub?.check_mode_drills || weekData?.check_mode_drills || FALLBACK_CHECK_QUESTIONS;
+  const rawQuestions = (customQuestions || weekData?.listening_p4_questions || weekData?.stations?.listening_hub?.check_mode_drills || weekData?.check_mode_drills || FALLBACK_CHECK_QUESTIONS).map((q, qIdx) => ({
+    ...q,
+    content_id: q.content_id || q.id || `chk_q_${qIdx}`,
+    type: q.type || (q.options?.some(o => o.image_url || o.image) ? 'listening_p4_picture' : 'grammar')
+  }));
   
   // Parameterized Variant Transformation (Option B Pilot):
   // Shuffle options in Check Mode so rote position memory is 100% broken
@@ -166,7 +175,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
 
   if (isCompleted && resultsSummary) {
     return (
-      <div className="w-full max-w-2xl mx-auto bg-white rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl text-slate-900 font-sans">
+      <div className="w-full max-w-2xl mx-auto bg-white text-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl font-sans animate-in fade-in">
         <div className="text-center mb-6">
           <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
             <FileText size={32} />
@@ -205,6 +214,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
   }
 
   const currentSelection = selectedAnswers[currentQ.content_id];
+  const audioTextToPlay = currentQ.audio_script || currentQ.prompt || currentQ.question || currentQ.text || 'Where was the boy when he slipped on the wet floor?';
 
   return (
     <div className="w-full max-w-3xl mx-auto bg-white text-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-300 shadow-xl font-sans">
@@ -213,7 +223,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
           <span className="text-xs font-black text-slate-500 uppercase tracking-widest">
             {currentQ.dialogue_context
               ? '💬 CHAT CHALLENGE: CHOOSE THE BEST RESPONSE'
-              : '✨ NOVA\'S GRAMMAR CHALLENGE'}
+              : '✨ NOVA\'S LISTENING CHALLENGE'}
           </span>
           <h2 className="text-xl font-black text-slate-900 mt-1">
             Question {currentIndex + 1} of {questions.length}
@@ -234,7 +244,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
 
           <div className="flex items-center gap-4 bg-black/20 p-3.5 rounded-xl border border-white/20">
             <button
-              onClick={() => speakText(currentQ.prompt || currentQ.text || 'Where was the boy when he slipped on the wet floor?')}
+              onClick={() => speakText(audioTextToPlay)}
               className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
             >
               <Volume2 size={18} /> Play Listening Audio
@@ -243,8 +253,8 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
               <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">
                 Listening Question Audio:
               </div>
-              <div className="text-sm font-black text-white italic">
-                {isStealthMode ? '"🎧 Audio Prompt Only — Listen carefully to select A, B, or C"' : `"${renderParsedText(currentQ.prompt || currentQ.text, 'amber', null, true)}"`}
+              <div className="text-xs sm:text-sm font-semibold text-white italic whitespace-pre-line leading-relaxed">
+                {isStealthMode ? '"🎧 Audio Prompt Only — Listen carefully to select A, B, or C"' : audioTextToPlay}
               </div>
             </div>
           </div>
@@ -260,7 +270,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
                 Statement / Question:
               </div>
               <div className="text-sm font-bold text-amber-950 leading-relaxed italic">
-                "{renderParsedText(currentQ.dialogue_context, 'amber', null, true)}"
+                "{currentQ.dialogue_context}"
               </div>
             </div>
           </div>
@@ -270,7 +280,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
               Question:
             </p>
             <div className="text-base font-black text-slate-900 leading-relaxed">
-              {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo', null, true)}
+              {currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || ''}
             </div>
           </div>
         </div>
@@ -280,7 +290,7 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
             CHOOSE THE CORRECT WORD TO FILL IN THE BLANK:
           </p>
           <div className="text-base font-black text-slate-900 leading-relaxed">
-            {renderParsedText(currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || '', 'indigo', null, true)}
+            {currentQ.text || currentQ.prompt || currentQ.question || currentQ.raw_content?.text_en || ''}
           </div>
         </div>
       )}

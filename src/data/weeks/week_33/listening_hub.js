@@ -58,18 +58,24 @@ export const listeningHubData = {
   listening_p4_questions: [
     {
       id: 'lp4_1',
+      content_id: 'lp4_1',
+      type: 'listening_p4_picture',
       question: '1. Where did Tom slip and hurt his knee?',
+      prompt: 'Where did Tom slip and hurt his knee?',
       audio_script: "Girl: Did Tom slip inside the science lab?\nBoy: No, he was walking past the science lab, but he actually slipped on wet tiles in the school corridor!\nGirl: Oh, so it was in the corridor, not in the lab or playground!",
       options: [
         { label: 'A', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
-        { label: 'B', text: 'Inside the science lab', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
-        { label: 'C', text: 'On the outdoor playground', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false }
+        { label: 'B', text: 'Inside the science lab', image_url: '/images/week33/lab_desk.jpg', isCorrect: false },
+        { label: 'C', text: 'On the outdoor playground', image_url: '/images/week33/card_h_playground_bench.jpg', isCorrect: false }
       ]
     },
     {
       id: 'lp4_2',
+      content_id: 'lp4_2',
+      type: 'listening_p4_picture',
       question: '2. What did Jake do immediately when Tom fell?',
-      audio_script: "Man: Did Jake run to call his teacher?\nWoman: No, Jake stopped right away and walked quickly to the school nurse room to call for help!\nMan: Ah, he called the school nurse immediately!",
+      prompt: 'What did Jake do immediately when Tom fell?',
+      audio_script: "Man: Did Jake run to find his teacher in class?\nWoman: No, Jake stopped right away and walked quickly to call the school nurse for help!\nMan: Ah, he called the school nurse immediately!",
       options: [
         { label: 'A', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
         { label: 'B', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
@@ -78,32 +84,41 @@ export const listeningHubData = {
     },
     {
       id: 'lp4_3',
+      content_id: 'lp4_3',
+      type: 'listening_p4_picture',
       question: '3. What did the school nurse apply to Tom’s knee?',
-      audio_script: "Woman: Did the nurse give Tom a glass of orange juice?\nMan: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee.\nWoman: So she applied a clean bandage!",
+      prompt: 'What did the school nurse apply to Tom’s knee?',
+      audio_script: "Woman: Did the nurse give Tom a glass of orange juice?\nMan: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee.\nWoman: So she applied a clean bandage and a cold pack!",
       options: [
-        { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
+        { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/card_clean_bandage.jpg', isCorrect: true },
         { label: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false },
         { label: 'C', text: 'Gave him a new science notebook', image_url: '/images/week33/card_science_notebook.jpg', isCorrect: false }
       ]
     },
     {
       id: 'lp4_4',
+      content_id: 'lp4_4',
+      type: 'listening_p4_picture',
       question: '4. How did everyone feel after Tom was safely helped?',
-      audio_script: "Girl: Was Tom's knee severely broken?\nBoy: No, the nurse fixed his knee gently, and everyone felt relieved and safe!",
+      prompt: 'How did everyone feel after Tom was safely helped?',
+      audio_script: "Girl: Was Tom's knee severely injured?\nBoy: No, the nurse treated his knee gently, and everyone felt relieved and safe!\nGirl: That was a big relief for everyone!",
       options: [
         { label: 'A', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
         { label: 'B', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-        { label: 'C', text: 'Felt scared and ran away', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
+        { label: 'C', text: 'Felt scared and fell down', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
       ]
     },
     {
       id: 'lp4_5',
+      content_id: 'lp4_5',
+      type: 'listening_p4_picture',
       question: '5. What did the headmaster do during Monday assembly?',
-      audio_script: "Man: Did the headmaster praise Jake?\nWoman: Yes, the headmaster praised Jake publicly during Monday assembly for taking responsible action!",
+      prompt: 'What did the headmaster do during Monday assembly?',
+      audio_script: "Man: Did the headmaster give Jake a difficult test?\nWoman: Yes, the headmaster praised Jake publicly during Monday assembly for taking responsible action!",
       options: [
         { label: 'A', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true },
-        { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
-        { label: 'C', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: false }
+        { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg', isCorrect: false },
+        { label: 'C', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false }
       ]
     }
   ],
