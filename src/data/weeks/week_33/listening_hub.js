@@ -19,7 +19,7 @@ export const listeningHubData = {
     audio_url: '/audio/week33/listening_p1_full.mp3',
     passage_audio_script: "Nova: Look at Part 1. Now look at the picture. Listen and look. There is one example.\nGirl: Look at this photo of our school corridor after lunch! It was quite busy.\nMan: Oh yes, I can see many people. Who is that boy walking carefully down the hallway in the blue shirt?\nGirl: That's Jake. He always walks slowly and watches where he is going.\nMan: That is very sensible of him.\nNova: Can you see the line? This is an example. Now you listen and draw lines.\nGirl: Oh dear, look at the boy who is slipping on the wet floor!\nMan: Yes, his papers are flying everywhere! Is he wearing a red sweater?\nGirl: That's right, he is wearing a red shirt. His name is Tom. He fell down because he was running in a hurry.\nMan: Poor Tom! I hope he is okay.\nGirl: Look, someone is rushing quickly to help him. Can you see the lady carrying a clean bandage in the white uniform?\nMan: Ah, that's our school nurse! She always takes good care of everyone when accidents happen.\nGirl: Yes, she is very kind.\nMan: Who is that tall man standing near the blue lockers in the dark suit?\nGirl: Do you mean the man watching all the students to make sure the hallway is safe?\nMan: Yes, exactly.\nGirl: That's our headmaster! He always reminds us about corridor safety rules.\nMan: Now look near the yellow warning sign. Is that a girl holding a cleaning mop?\nGirl: Yes, that is Mia. She is wiping the water off the floor so nobody else slips.\nMan: What a helpful girl!\nGirl: Is Alex in this picture today?\nMan: No, Alex had a doctor appointment this morning, so he is not at school today.",
     names: [
-      { id: 'n1', text: 'Jake', target_id: 't1' },
+      { id: 'n1', text: 'Jake', target_id: 't1', isExample: true },
       { id: 'n2', text: 'School Nurse', target_id: 't2' },
       { id: 'n3', text: 'Tom', target_id: 't3' },
       { id: 'n4', text: 'Headmaster', target_id: 't4' },
@@ -27,7 +27,7 @@ export const listeningHubData = {
       { id: 'n6', text: 'Alex', target_id: null }
     ],
     targets: [
-      { id: 't1', label: 'Jake (Boy in blue shirt, walking carefully)', x: 16, y: 65 },
+      { id: 't1', label: 'Jake (Boy in blue shirt, walking carefully)', x: 16, y: 65, isExample: true },
       { id: 't2', label: 'School Nurse (White uniform, rushing with bandage)', x: 58, y: 54 },
       { id: 't3', label: 'Tom (Red shirt, slipping on wet floor)', x: 49, y: 62 },
       { id: 't4', label: 'Headmaster (Dark blue suit, near lockers)', x: 30, y: 50 },
@@ -39,11 +39,41 @@ export const listeningHubData = {
   listening_p3: {
     passage_audio_script: "Teacher: Hello Jake! I am writing our school safety report about yesterday. Can you tell me where all the items were found?\nJake: Of course, Mrs. Wilson! I remember everything clearly.\nTeacher: First, where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room.\nTeacher: Excellent. And what about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use.\nTeacher: Right. And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench, but actually his notebook was sitting right on the lab desk in the science room.\nTeacher: Ah, that is a relief! Now, what about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen.\nTeacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!",
     items: [
-      { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_url: '/audio/week33/listening_p3_item1.mp3', audio_text: 'The clean bandage was kept in the medical cabinet in the nurse room.' },
-      { id: 2, name: 'Cold Pack', target_letter: 'B', audio_url: '/audio/week33/listening_p3_item2.mp3', audio_text: 'The cold pack was placed on the first aid table near the corridor entrance.' },
-      { id: 3, name: 'Science Notebook', target_letter: 'C', audio_url: '/audio/week33/listening_p3_item3.mp3', audio_text: 'The science notebook was found on the lab desk in the science room.' },
-      { id: 4, name: 'Orange Juice', target_letter: 'D', audio_url: '/audio/week33/listening_p3_item4.mp3', audio_text: 'The orange juice was on the cafeteria counter in the canteen.' },
-      { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_url: '/audio/week33/listening_p3_item5.mp3', audio_text: 'The alarm clock was left on the bedroom table at home.' }
+      { 
+        id: 1, 
+        name: 'Clean Bandage', 
+        target_letter: 'A', 
+        audio_url: '/audio/week33/listening_p3_item1.mp3', 
+        audio_text: "Teacher: Where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room." 
+      },
+      { 
+        id: 2, 
+        name: 'Cold Pack', 
+        target_letter: 'B', 
+        audio_url: '/audio/week33/listening_p3_item2.mp3', 
+        audio_text: "Teacher: What about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use." 
+      },
+      { 
+        id: 3, 
+        name: 'Science Notebook', 
+        target_letter: 'C', 
+        audio_url: '/audio/week33/listening_p3_item3.mp3', 
+        audio_text: "Teacher: And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench, but actually his notebook was sitting right on the lab desk in the science room." 
+      },
+      { 
+        id: 4, 
+        name: 'Orange Juice', 
+        target_letter: 'D', 
+        audio_url: '/audio/week33/listening_p3_item4.mp3', 
+        audio_text: "Teacher: What about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen." 
+      },
+      { 
+        id: 5, 
+        name: 'Alarm Clock', 
+        target_letter: 'E', 
+        audio_url: '/audio/week33/listening_p3_item5.mp3', 
+        audio_text: "Teacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!" 
+      }
     ],
     cards: [
       { letter: 'A', name: 'Medical Cabinet (Nurse Room)', location_name: 'Medical Cabinet', image_url: '/images/week33/nurse_cabinet.jpg' },

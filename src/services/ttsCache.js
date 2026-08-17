@@ -18,9 +18,9 @@
  *   }
  */
 
-const DB_NAME = 'EngQuestTTSCache_v26_AccurateMultiVoice';
+const DB_NAME = 'EngQuestTTSCache_v27_ExampleLineAndMultiVoice';
 const STORE_NAME = 'tts_audio';
-const DB_VERSION = 1;  // Fresh v26 store (Aug 17, 2026): Accurate full-sentence Multi-Voice composite dialogues
+const DB_VERSION = 1;  // Fresh v27 store (Aug 17, 2026): Cambridge Example Line + 2-voice Item Hunt + Multi-voice Part 1
 const CACHE_EXPIRY = 30 * 24 * 60 * 60 * 1000; // 30 days - Extended for production
 
 class TTSCacheService {
@@ -62,6 +62,7 @@ class TTSCacheService {
       indexedDB.deleteDatabase('EngQuestTTSCache_v21');
       indexedDB.deleteDatabase('EngQuestTTSCache_v24_CleanMP3');
       indexedDB.deleteDatabase('EngQuestTTSCache_v25_MultiVoice');
+      indexedDB.deleteDatabase('EngQuestTTSCache_v26_AccurateMultiVoice');
     } catch {}
 
     return new Promise((resolve, reject) => {

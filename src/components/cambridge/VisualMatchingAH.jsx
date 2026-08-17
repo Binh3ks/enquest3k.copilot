@@ -24,15 +24,45 @@ export function VisualMatchingAH({ customData, onComplete }) {
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [showCompletionModal, setShowCompletionModal] = useState(false);
 
-  const fullPassageScript = "Welcome to Nova's Item Hunt! Let's listen to Jake talking to his teacher about where different items were placed during the school incident. First, the clean bandage was inside the medical cabinet. Second, the cold pack was taken from the first aid table. Third, the science notebook was left on the lab desk. Fourth, the orange juice glass was sitting on the cafeteria counter. And fifth, the alarm clock was on the bedroom table at home.";
+  const fullPassageScript = "Teacher: Hello Jake! I am writing our school safety report about yesterday. Can you tell me where all the items were found?\nJake: Of course, Mrs. Wilson! I remember everything clearly.\nTeacher: First, where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room.\nTeacher: Excellent. And what about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use.\nTeacher: Right. And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench, but actually his notebook was sitting right on the lab desk in the science room.\nTeacher: Ah, that is a relief! Now, what about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen.\nTeacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!";
 
   // Default Listening Part 3 Visual Matching Data
   const itemsList = customData?.items || [
-    { id: 1, name: 'Clean Bandage', target_letter: 'A', audio_text: 'The clean bandage was kept in the medical cabinet.' },
-    { id: 2, name: 'Cold Pack', target_letter: 'B', audio_text: 'The cold pack was placed on the first aid table.' },
-    { id: 3, name: 'Science Notebook', target_letter: 'C', audio_text: 'The science notebook was on the lab desk.' },
-    { id: 4, name: 'Orange Juice', target_letter: 'D', audio_text: 'The orange juice glass was on the cafeteria counter.' },
-    { id: 5, name: 'Alarm Clock', target_letter: 'E', audio_text: 'The alarm clock was on the bedroom table at home.' }
+    { 
+      id: 1, 
+      name: 'Clean Bandage', 
+      target_letter: 'A', 
+      audio_url: '/audio/week33/listening_p3_item1.mp3',
+      audio_text: "Teacher: Where was the clean bandage kept? Was it inside the headmaster's office?\nJake: No, not there! The school nurse keeps the clean bandage inside the white medical cabinet in the nurse room." 
+    },
+    { 
+      id: 2, 
+      name: 'Cold Pack', 
+      target_letter: 'B', 
+      audio_url: '/audio/week33/listening_p3_item2.mp3',
+      audio_text: "Teacher: What about the cold pack for Tom's knee? Did someone leave it on the science lab desk?\nJake: No, the nurse placed the cold pack on the first aid table near the corridor entrance so it was ready to use." 
+    },
+    { 
+      id: 3, 
+      name: 'Science Notebook', 
+      target_letter: 'C', 
+      audio_url: '/audio/week33/listening_p3_item3.mp3',
+      audio_text: "Teacher: And where was Tom's science notebook? I know he was looking for it everywhere.\nJake: He thought he lost it on the playground bench, but actually his notebook was sitting right on the lab desk in the science room." 
+    },
+    { 
+      id: 4, 
+      name: 'Orange Juice', 
+      target_letter: 'D', 
+      audio_url: '/audio/week33/listening_p3_item4.mp3',
+      audio_text: "Teacher: What about the glass of orange juice that someone brought for Tom?\nJake: Nobody took it outside! The fresh orange juice was placed on the cafeteria counter in the school canteen." 
+    },
+    { 
+      id: 5, 
+      name: 'Alarm Clock', 
+      target_letter: 'E', 
+      audio_url: '/audio/week33/listening_p3_item5.mp3',
+      audio_text: "Teacher: And what about Tom's alarm clock? Was that left in the corridor locker?\nJake: Haha, no! Tom told me his alarm clock was on his bedroom table at home. He woke up late that morning!" 
+    }
   ];
 
   // Fisher-Yates Shuffle 8 Picture Cards (A to H — School Locations)
@@ -54,7 +84,7 @@ export function VisualMatchingAH({ customData, onComplete }) {
     if (isSubmitted) return;
     setSelectedItem(item);
     if (item.audio_text) {
-      VoiceService.speak(item.audio_text, 'questions');
+      VoiceService.speak(item.audio_text, 'questions', item.audio_url, 33);
     }
   };
 
@@ -131,7 +161,12 @@ export function VisualMatchingAH({ customData, onComplete }) {
       <div className="bg-gradient-to-r from-amber-500 to-indigo-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <button
-            onClick={() => VoiceService.speak(fullPassageScript, 'questions')}
+            onClick={() => VoiceService.speak(
+              customData?.passage_audio_script || fullPassageScript,
+              'questions',
+              '/audio/week33/listening_p3_full.mp3',
+              33
+            )}
             className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
           >
             <Volume2 size={18} /> Play Full Listening Passage Audio 🎧

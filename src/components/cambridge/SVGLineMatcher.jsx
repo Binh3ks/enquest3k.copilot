@@ -79,14 +79,18 @@ export function SVGLineMatcher({ customData, onComplete }) {
   };
 
   const handleCheck = () => {
+    const testNames = sceneData.names.filter(n => !n.isExample);
     let correct = 0;
-    sceneData.names.forEach((name) => {
+    testNames.forEach((name) => {
       const matchedLine = drawnLines.find(l => l.nameId === name.id);
-      if (matchedLine && matchedLine.targetId === name.target_id) {
-        correct++;
+      if (name.target_id) {
+        if (matchedLine && matchedLine.targetId === name.target_id) correct++;
+      } else {
+        // Distractor name: should NOT have any line drawn
+        if (!matchedLine) correct++;
       }
     });
-    const finalScore = Math.round((correct / sceneData.names.length) * 100);
+    const finalScore = Math.round((correct / testNames.length) * 100);
     setScore(finalScore);
     setIsSubmitted(true);
     if (onComplete) onComplete(finalScore);
@@ -98,6 +102,9 @@ export function SVGLineMatcher({ customData, onComplete }) {
     setIsSubmitted(false);
     setScore(null);
   };
+
+  const exampleName = sceneData.names.find(n => n.isExample);
+  const exampleTarget = sceneData.targets.find(t => t.id === exampleName?.target_id || t.isExample);
 
   return (
     <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
@@ -146,14 +153,14 @@ export function SVGLineMatcher({ customData, onComplete }) {
         </div>
       </div>
 
-      {/* 🏷️ Top Character Names Selection Bar */}
-      <div className="p-4 bg-indigo-50/80 rounded-2xl border-2 border-indigo-200 space-y-2">
+      {/* Name Selection Ribbon */}
+      <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-black text-indigo-900 uppercase tracking-wider flex items-center gap-1.5">
-            <User size={15} /> Character Names (Click name, then move mouse over picture):
+          <span className="text-xs font-black text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+            <User size={14} className="text-indigo-600" /> Character Names (Click name, then move mouse over picture):
           </span>
-          <span className="text-[11px] font-bold text-indigo-700">
-            {selectedName ? `Drawing live line for: ${selectedName.text}` : 'Select a name'}
+          <span className="text-xs font-bold text-indigo-700">
+            {selectedName ? `Selected: ${selectedName.text} (Click a person dot)` : 'Select a name'}
           </span>
         </div>
 
@@ -165,10 +172,12 @@ export function SVGLineMatcher({ customData, onComplete }) {
             return (
               <button
                 key={name.id}
-                disabled={isSubmitted}
-                onClick={(e) => handleSelectName(name, e)}
+                disabled={isSubmitted || name.isExample}
+                onClick={(e) => !name.isExample && handleSelectName(name, e)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-1.5 border shadow-sm ${
-                  isSelected
+                  name.isExample
+                    ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-2 ring-amber-300'
+                    : isSelected
                     ? 'bg-indigo-600 text-white border-indigo-700 ring-4 ring-indigo-200 scale-105 shadow-md animate-pulse'
                     : hasLine
                     ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
@@ -176,7 +185,12 @@ export function SVGLineMatcher({ customData, onComplete }) {
                 }`}
               >
                 <span>{name.text}</span>
-                {hasLine && <CheckCircle2 size={14} className="text-emerald-700" />}
+                {name.isExample && (
+                  <span className="text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded-md uppercase font-black tracking-wider">
+                    Example
+                  </span>
+                )}
+                {hasLine && !name.isExample && <CheckCircle2 size={14} className="text-emerald-700" />}
               </button>
             );
           })}
@@ -198,6 +212,41 @@ export function SVGLineMatcher({ customData, onComplete }) {
 
         {/* ✏️ Real-Time Dynamic SVG Line Canvas */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-20">
+          {/* 🌟 Official Cambridge Example Line (Pre-drawn) */}
+          {exampleTarget && (
+            <g className="opacity-95">
+              <line
+                x1="8%"
+                y1="0%"
+                x2={`${exampleTarget.x}%`}
+                y2={`${exampleTarget.y}%`}
+                stroke="#f59e0b"
+                strokeWidth="4"
+                strokeDasharray="8 6"
+                strokeLinecap="round"
+              />
+              <circle cx={`${exampleTarget.x}%`} cy={`${exampleTarget.y}%`} r="8" fill="#f59e0b" />
+              <rect
+                x={`${(8 + exampleTarget.x) / 2 - 25}%`}
+                y={`${(0 + exampleTarget.y) / 2 - 9}%`}
+                width="50"
+                height="18"
+                rx="4"
+                fill="#f59e0b"
+              />
+              <text
+                x={`${(8 + exampleTarget.x) / 2}%`}
+                y={`${(0 + exampleTarget.y) / 2 + 4}%`}
+                fill="#ffffff"
+                fontSize="10"
+                fontWeight="900"
+                textAnchor="middle"
+              >
+                EXAMPLE
+              </text>
+            </g>
+          )}
+
           {/* Locked Drawn Lines */}
           {drawnLines.map((line, idx) => {
             const nameObj = sceneData.names.find(n => n.id === line.nameId);
