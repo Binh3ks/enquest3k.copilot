@@ -4,7 +4,8 @@
  */
 
 import mindmap from './mindmap.js';
-import ask_ai, { INFORMATION_EXCHANGE_P2 } from './ask_ai.js';
+import ask_ai, { INFORMATION_EXCHANGE_P2, CUE_CARD_PROMPTS } from './ask_ai.js';
+import shadowing from './shadowing.js';
 
 export const speakingHubData = {
   week: 33,
@@ -12,6 +13,16 @@ export const speakingHubData = {
   mindmap,
   ask_ai,
   cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
+  cue_card_prompts: CUE_CARD_PROMPTS,
+
+  // Podcast / Shadowing Station Data
+  shadowing_sentences: shadowing.sentences,
+  podcast_shadowing: {
+    long_paragraph: {
+      text: "Jake was walking carefully down the school corridor after science class when he suddenly noticed a boy running fast. The boy slipped on the wet floor and fell down heavily, hurting his knee. Jake stopped immediately and called the school nurse. The nurse arrived quickly with a clean bandage and a cold pack. Everyone felt relieved and praised Jake for following the safety rules.",
+      audio_url: '/audio/week33/shadowing_full_paragraph.mp3'
+    }
+  },
 
   // Cambridge Speaking Part 1 (Find Differences)
   find_differences: {
