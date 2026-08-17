@@ -32,6 +32,14 @@ Sau khi implement xong, Agent thực thi PHẢI tự spawn **Reviewer Agent** (a
 - BUG-2: `logAttempt` gọi kể cả `isAttempted: false` → data rác analytics
 - R-1: `textToEval.trim().length > 3` bypass trong Check Mode → học sinh gõ `asdf` pass → đã sửa thành `isStrictPass || isLenientPass`
 
+## 🏆 Cambridge A2 Flyers 4-Skills Master Blueprint Standard — 2026-08-17
+**Áp dụng bắt buộc cho toàn bộ các tuần từ W33 đến W72 theo `CAMBRIDGE_FLYERS_AUDIO_BLUEPRINT.md`:**
+1. **Listening (5 Parts)**: Đầy đủ Rubric dẫn đề, Example exchange, 5 Test items, phân bổ đa giọng (Nova `Journey-F`, Girl `Journey-F`, Boy `Journey-D`, Man `Neural2-D`, Woman `Neural2-F`). Part 4 bắt buộc nhắc đủ 3 tranh A, B, C kèm distractors.
+2. **Speaking (4 Parts)**: Đầy đủ Examiner audio guidance cho cả 4 Parts. Part 3 tuân thủ Invariant 5 tranh liên hoàn (`Picture 1` giám khảo dẫn đề $\rightarrow$ `Pictures 2-5` thí sinh ghi âm). Chấm điểm theo 5 Shields Cambridge.
+3. **Reading (Parts 1-6)**: Tuân thủ độ dài chuẩn A2 Flyers (P1 10 defs/15 words, P2 5 dialogue turns, P3 ~120w story gap-fill + title, P4 10 grammar MCQs, P5 ~250w story + 7 completions 1-4 words, P6 5 open cloze gaps).
+4. **Writing (Part 7)**: Viết truyện theo 3 tranh liên hoàn $\ge 20$ từ, chấm điểm theo Rubric 5 Shields (Content 2, Grammar/Flow 2, Vocab/Spelling 1).
+
+
 ## Output Discipline (token-saving) — 2026-07-03
 Khi xuất báo cáo hoặc sửa code trong session OpenHands/Devin:
 - Ưu tiên code cô đọng; bỏ phân tích lý thuyết thừa.

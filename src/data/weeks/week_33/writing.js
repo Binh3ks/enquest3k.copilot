@@ -39,7 +39,9 @@ export default {
       { word: "slipped", meaning_vi: "trượt chân" },
       { word: "nurse", meaning_vi: "y tá" },
       { word: "bandage", meaning_vi: "băng cá nhân" },
-      { word: "relieved", meaning_vi: "nhẹ nhõm" }
+      { word: "relieved", meaning_vi: "nhẹ nhõm" },
+      { word: "swimming", meaning_vi: "bơi lội", distractor: true },
+      { word: "bicycle", meaning_vi: "xe đạp", distractor: true }
     ]
   }
 };
