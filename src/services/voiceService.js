@@ -1159,33 +1159,36 @@ export const VoiceService = {
   async synthesizeMultiVoiceDialogue(rawText) {
     if (!rawText) return null;
 
+    // Pattern to detect speaker markers: (Nova|Girl|Boy|Man|Woman|Teacher|Nurse|Headmaster|Jake|Tom):
+    const speakerPattern = /(Nova|Girl|Boy|Man|Woman|Teacher|Nurse|Headmaster|Jake|Tom):\s*/gi;
+    const tagMatches = [...rawText.matchAll(speakerPattern)];
     const lines = [];
 
-    // Check if script starts with an intro line before the first character tag
-    const firstSpeakerMatch = rawText.match(/(?:^|\n|\.\s+)(Girl|Boy|Man|Woman|Nova|Teacher|Nurse|Headmaster|Jake|Tom):\s*/i);
-    if (firstSpeakerMatch && firstSpeakerMatch.index > 0) {
-      const introText = rawText.substring(0, firstSpeakerMatch.index).trim();
-      if (introText) {
-        lines.push({ speaker: 'nova', text: introText });
+    if (tagMatches.length > 0) {
+      // 1. Text before first speaker tag (if any)
+      if (tagMatches[0].index > 0) {
+        const intro = rawText.substring(0, tagMatches[0].index).trim();
+        if (intro) {
+          lines.push({ speaker: 'nova', text: intro });
+        }
       }
-    }
 
-    // Split character dialogue turns
-    const speakerMatches = [...rawText.matchAll(/(?:^|\n|\.\s+)(Girl|Boy|Man|Woman|Nova|Teacher|Nurse|Headmaster|Jake|Tom):\s*([^.\n?!]+(?:[.?!]|$)|[^\n]+)/gi)];
-    
-    if (speakerMatches.length > 0) {
-      for (const m of speakerMatches) {
-        const speaker = m[1].toLowerCase();
-        const content = m[2].trim();
-        if (content) {
-          lines.push({ speaker, text: content });
+      // 2. Each turn between tag[i] and tag[i+1] — captures full sentences 100%
+      for (let i = 0; i < tagMatches.length; i++) {
+        const currentMatch = tagMatches[i];
+        const speaker = currentMatch[1].toLowerCase();
+        const startPos = currentMatch.index + currentMatch[0].length;
+        const endPos = (i + 1 < tagMatches.length) ? tagMatches[i + 1].index : rawText.length;
+        const speechContent = rawText.substring(startPos, endPos).trim();
+        if (speechContent) {
+          lines.push({ speaker, text: speechContent });
         }
       }
     } else {
       // Fallback: split by newlines if formatted line by line
       const rawLines = rawText.split('\n').map(l => l.trim()).filter(Boolean);
       for (const rl of rawLines) {
-        const m = rl.match(/^(Girl|Boy|Man|Woman|Nova|Teacher|Nurse|Headmaster|Jake|Tom):\s*(.+)$/i);
+        const m = rl.match(/^(Nova|Girl|Boy|Man|Woman|Teacher|Nurse|Headmaster|Jake|Tom):\s*(.+)$/i);
         if (m) {
           lines.push({ speaker: m[1].toLowerCase(), text: m[2].trim() });
         } else {
@@ -1196,22 +1199,25 @@ export const VoiceService = {
 
     if (lines.length === 0) return null;
 
-    // Voice mapping for distinct characters
+    // Voice mapping for distinct characters with contrasting timbre & gender
     const getVoiceForSpeaker = (speaker) => {
       switch (speaker) {
         case 'boy':
-        case 'man':
-        case 'headmaster':
         case 'jake':
         case 'tom':
-          return 'en-US-Neural2-D'; // Male voice
-        case 'girl':
+          return 'en-US-Journey-D'; // Young energetic male voice
+        case 'man':
+        case 'headmaster':
+          return 'en-US-Neural2-D'; // Adult baritone male voice
         case 'woman':
         case 'nurse':
         case 'teacher':
+          return 'en-US-Neural2-F'; // Adult gentle female voice
+        case 'girl':
+          return 'en-US-Journey-F'; // Young female voice
         case 'nova':
         default:
-          return 'en-US-Journey-F'; // Expressive Female voice
+          return 'en-US-Journey-F'; // Host / Narrator
       }
     };
 

@@ -126,12 +126,15 @@ export function SVGLineMatcher({ customData, onComplete }) {
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <button
-            onClick={() => VoiceService.speak(
-              fullListeningScript,
-              'questions',
-              sceneData.audio_url || '/audio/week33/listening_p1_full.mp3',
-              33
-            )}
+            onClick={() => {
+              const scriptToSpeak = sceneData?.passage_audio_script || fullListeningScript;
+              VoiceService.speak(
+                scriptToSpeak,
+                'questions',
+                sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
+                33
+              );
+            }}
             className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
           >
             <Volume2 size={18} /> Play Part 1 Listening Audio 🎧
