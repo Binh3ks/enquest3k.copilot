@@ -1,12 +1,31 @@
 # EngQuest3K — Agent Memory
 
-## 🧠 Automated Model Routing & Task Delegation Protocol — 2026-08-17
-**Áp dụng tự động cho MỌI yêu cầu của người dùng để tối ưu token & sức mạnh model:**
-1. **Tier 1 (Fast Operations - Flash Engine)**: Lệnh shell (`git`, `npm run audit`, `npm run build`), `/handoff`, `/start`, file listing, log check $\rightarrow$ Phản hồi ngay trong $\le 0.5$s, không giải thích rườm rà.
-2. **Tier 2 (Code & Feature Build)**: Component React, UI/CSS, API integration, data hooks $\rightarrow$ Đọc kỹ file gốc, code không cắt xén, verify build exit code 0.
-3. **Tier 3 (Deep Reasoning & Cambridge Blueprint)**: Toán Singapore Bar Models SVG, cân chỉnh tọa độ LineMatcher, script audio đa giọng Cambridge Flyers, debug bug crash $\rightarrow$ Phân tích nguyên nhân gốc rễ (Root Cause) bằng empirical logs trước khi patch code.
-4. **Tier 4 (Multi-Agent Subagent Swarm)**: Sinh dữ liệu cả tuần học, audit hàng loạt $\rightarrow$ Tự động spawn Subagent Swarm (`content-writer`, `quality-reviewer`) để giữ Main Context Window luôn sạch (<20k tokens).
-5. **CLI Analyzer**: Chạy `node scripts/model_router.mjs "<User Prompt>"` để phân loại tức thì.
+## 🧠 Model Routing & Task Delegation Protocol — 2026-08-17
+**Quan trọng — Giới hạn thực tế:** Agent KHÔNG thể tự động switch model trong IDE. Cơ chế routing là **tư vấn + thông báo**: agent phân loại task, báo tier, và yêu cầu user đổi model nếu cần.
+
+### Quy tắc bắt buộc cho Agent:
+**Mỗi khi nhận request mới, agent PHẢI:**
+1. Chạy phân loại nội bộ (không cần gọi CLI)
+2. Nếu task là **Tier 3 hoặc Tier 4** → **THÔNG BÁO ngay đầu response**: `> 🧠 Tier 3 — Khuyến nghị: Chuyển sang **Claude Sonnet Thinking** hoặc **Gemini Pro** trước khi tiếp tục.`
+3. Nếu task là **Tier 1 hoặc Tier 2** → tiến hành ngay, không cần thông báo
+
+### Bảng Tier & Model Mapping:
+| Tier | Loại Task | Model Khuyến Nghị | Agent Thông Báo? |
+|------|-----------|-------------------|------------------|
+| **1** | Shell, git, audit, build, log check | Flash (default) | ❌ Không |
+| **2** | React component, UI/CSS, data hooks, API fix | Flash hoặc Standard | ❌ Không |
+| **3** | Pin calibration, Bar Model SVG, audio script Cambridge, debug crash root-cause | **Claude Sonnet Thinking** | ✅ **BẮT BUỘC** |
+| **4** | Sinh cả tuần học, multi-file pipeline, subagent swarm | **Gemini Pro + Subagent** | ✅ **BẮT BUỘC** |
+
+### CLI Analyzer (tham khảo thêm):
+Chạy `node scripts/model_router.mjs "<User Prompt>"` để kiểm tra tier classification.
+
+### Ví dụ thông báo Tier 3 (bắt buộc hiển thị):
+```
+> 🧠 **Tier 3 — Deep Reasoning detected**
+> Task này yêu cầu suy luận không gian / phân tích ảnh / debug phức tạp.
+> Khuyến nghị: Chuyển sang **Claude Sonnet (Thinking)** trong Model Settings trước khi tiếp tục.
+```
 
 ## 📦 Token Compression & Ignore Protocol — 2026-08-17
 1. **Ignore Protection**: Luôn tuân thủ `.antigravityignore` & `.agentignore` — TỰ ĐỘNG CHẶN đọc file rác, file build `dist/`, media binary và `dictionary.json` 40,000 dòng.
