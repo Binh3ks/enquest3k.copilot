@@ -54,6 +54,7 @@ Agent(
 - Update videos: `node tools/update_videos.js N --reset`
 - Validate thumbnails: `node tools/validate_video_thumbnails.js N`
 - Generate images: `node tools/image_pipeline/orchestrator.mjs --week N`
+- **[W33+] Listening P1 Pins**: Tạo ảnh scene → deploy → dùng 🎯 Calibrate Pins tool trên browser → copy JSON → paste vào `listening_hub.js` (xem skill `listening-p1-pins`)
 - Fetch transcripts: `node tools/fetch_video_transcripts.js --only N` (if new video)
 - Clean + split: `node tools/clean_transcripts.mjs && python3 tools/split_transcripts.py`
 - Build: `rm -rf node_modules/.vite dist && npm run build`
