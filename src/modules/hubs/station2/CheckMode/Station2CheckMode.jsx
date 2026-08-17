@@ -13,13 +13,14 @@ const FALLBACK_CHECK_QUESTIONS = [
     type: 'listening_p4_picture',
     question: '1. Where did Tom slip and hurt his knee?',
     prompt: 'Where did Tom slip and hurt his knee?',
-    audio_script: "Girl: Did Tom slip inside the science lab?\nBoy: No, he was walking past the science lab, but he actually slipped on wet tiles in the school corridor!\nGirl: Oh, so it was in the corridor, not in the lab or playground!",
+    audio_url: '/audio/week33/listening_p4_q1.mp3',
+    audio_script: "Girl: Where did Tom slip and hurt his knee yesterday?\nBoy: Well, he walked past the science lab after class and was heading towards the outdoor playground.\nGirl: Did he fall on the playground?\nBoy: No, he was running in a hurry and slipped on the wet floor in the school corridor before reaching the exit!",
     options: [
-      { label: 'A', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
-      { label: 'B', text: 'Inside the science lab', image_url: '/images/week33/lab_desk.jpg', isCorrect: false },
+      { label: 'A', text: 'Inside the science lab', image_url: '/images/week33/lab_desk.jpg', isCorrect: false },
+      { label: 'B', text: 'In the school corridor', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: true },
       { label: 'C', text: 'On the outdoor playground', image_url: '/images/week33/card_h_playground_bench.jpg', isCorrect: false }
     ],
-    answerIndex: 0
+    answerIndex: 1
   },
   {
     id: 'chk_w33_p4_02',
@@ -27,13 +28,14 @@ const FALLBACK_CHECK_QUESTIONS = [
     type: 'listening_p4_picture',
     question: '2. What did Jake do immediately when Tom fell?',
     prompt: 'What did Jake do immediately when Tom fell?',
-    audio_script: "Man: Did Jake run to find his teacher in class?\nWoman: No, Jake stopped right away and walked quickly to call the school nurse for help!\nMan: Ah, he called the school nurse immediately!",
+    audio_url: '/audio/week33/listening_p4_q2.mp3',
+    audio_script: "Man: What did Jake do immediately when Tom slipped and fell down?\nWoman: Did he run back to find his teacher in class?\nMan: No, and he didn't just keep walking down the hallway either! Jake stopped right away and walked quickly to call the school nurse for help.\nWoman: That was very quick and responsible of him!",
     options: [
-      { label: 'A', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true },
-      { label: 'B', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
-      { label: 'C', text: 'Kept walking down the hallway', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false }
+      { label: 'A', text: 'Ran to find his teacher in class', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'B', text: 'Kept walking down the hallway', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
+      { label: 'C', text: 'Walked quickly to call the school nurse', image_url: '/images/week33/webtoon_scene_4.png', isCorrect: true }
     ],
-    answerIndex: 0
+    answerIndex: 2
   },
   {
     id: 'chk_w33_p4_03',
@@ -41,7 +43,8 @@ const FALLBACK_CHECK_QUESTIONS = [
     type: 'listening_p4_picture',
     question: '3. What did the school nurse apply to Tom’s knee?',
     prompt: 'What did the school nurse apply to Tom’s knee?',
-    audio_script: "Woman: Did the nurse give Tom a glass of orange juice?\nMan: Tom was thirsty, but the nurse first applied a clean bandage and a cold pack to his knee.\nWoman: So she applied a clean bandage and a cold pack!",
+    audio_url: '/audio/week33/listening_p4_q3.mp3',
+    audio_script: "Woman: What did the school nurse apply to Tom's knee first?\nMan: Tom asked for a new science notebook, and someone offered him a glass of orange juice to drink.\nWoman: But what did the nurse do for his injury?\nMan: The nurse first applied a clean bandage and a cold pack directly to his hurt knee to stop the swelling.",
     options: [
       { label: 'A', text: 'Applied a clean bandage and cold pack', image_url: '/images/week33/card_clean_bandage.jpg', isCorrect: true },
       { label: 'B', text: 'Gave him a glass of orange juice', image_url: '/images/week33/card_orange_juice.jpg', isCorrect: false },
@@ -55,13 +58,14 @@ const FALLBACK_CHECK_QUESTIONS = [
     type: 'listening_p4_picture',
     question: '4. How did everyone feel after Tom was safely helped?',
     prompt: 'How did everyone feel after Tom was safely helped?',
-    audio_script: "Girl: Was Tom's knee severely injured?\nBoy: No, the nurse treated his knee gently, and everyone felt relieved and safe!\nGirl: That was a big relief for everyone!",
+    audio_url: '/audio/week33/listening_p4_q4.mp3',
+    audio_script: "Girl: How did everyone feel after the nurse safely treated Tom?\nBoy: Tom was scared when he fell, and some students were quite upset.\nGirl: Were they still worried or angry?\nBoy: No, everyone felt greatly relieved and safe once they saw Tom was standing and smiling again.",
     options: [
-      { label: 'A', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
-      { label: 'B', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'A', text: 'Felt angry and upset', image_url: '/images/week33/webtoon_scene_2.png', isCorrect: false },
+      { label: 'B', text: 'Felt relieved and safe', image_url: '/images/week33/webtoon_scene_5.png', isCorrect: true },
       { label: 'C', text: 'Felt scared and fell down', image_url: '/images/week33/webtoon_scene_3.png', isCorrect: false }
     ],
-    answerIndex: 0
+    answerIndex: 1
   },
   {
     id: 'chk_w33_p4_05',
@@ -69,13 +73,14 @@ const FALLBACK_CHECK_QUESTIONS = [
     type: 'listening_p4_picture',
     question: '5. What did the headmaster do during Monday assembly?',
     prompt: 'What did the headmaster do during Monday assembly?',
-    audio_script: "Man: Did the headmaster give Jake a difficult test?\nWoman: Yes, the headmaster praised Jake publicly during Monday assembly for taking responsible action!",
+    audio_url: '/audio/week33/listening_p4_q5.mp3',
+    audio_script: "Man: What did the headmaster do during Monday morning assembly?\nWoman: Did he give all the students a difficult test or close down the corridor?\nMan: No, he gave a wonderful speech and praised Jake publicly on stage for his responsible corridor safety action!\nWoman: How fantastic for Jake!",
     options: [
-      { label: 'A', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true },
-      { label: 'B', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg', isCorrect: false },
-      { label: 'C', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false }
+      { label: 'A', text: 'Gave Jake a difficult homework test', image_url: '/images/week33/card_g_headmaster_office.jpg', isCorrect: false },
+      { label: 'B', text: 'Closed the school corridor forever', image_url: '/images/week33/webtoon_scene_1.png', isCorrect: false },
+      { label: 'C', text: 'Praised Jake publicly during assembly', image_url: '/images/week33/w33_listening_p1_scene.jpg', isCorrect: true }
     ],
-    answerIndex: 0
+    answerIndex: 2
   }
 ];
 
@@ -306,7 +311,9 @@ export function Station2CheckMode({ weekData, onFinishCheckMode, weekNumber = 33
       <div className={currentQ.options.some(o => o.image_url || o.image) ? "grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8" : "space-y-3 mb-8"}>
         {currentQ.options.map((opt, optIdx) => {
           const isSelected = currentSelection && currentSelection.label === opt.label;
-          const isCorrect = opt.isCorrect || (currentQ.answerIndex !== undefined && optIdx === currentQ.answerIndex);
+          const isCorrect = opt.isCorrect !== undefined
+            ? Boolean(opt.isCorrect)
+            : (currentQ.correct_answer ? opt.label === currentQ.correct_answer : optIdx === currentQ.answerIndex);
           const optImage = opt.image_url || opt.image || (optIdx === 0 ? '/images/week33/webtoon_scene_1.png' : optIdx === 1 ? '/images/week33/webtoon_scene_2.png' : '/images/week33/webtoon_scene_4.png');
 
           let buttonStyle = 'border-slate-200 bg-white hover:bg-slate-50 text-slate-800';

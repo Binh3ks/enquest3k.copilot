@@ -216,34 +216,16 @@ export function SVGLineMatcher({ customData, onComplete }) {
           {exampleTarget && (
             <g className="opacity-95">
               <line
-                x1="8%"
+                x1="10%"
                 y1="0%"
                 x2={`${exampleTarget.x}%`}
                 y2={`${exampleTarget.y}%`}
                 stroke="#f59e0b"
-                strokeWidth="4"
+                strokeWidth="5"
                 strokeDasharray="8 6"
                 strokeLinecap="round"
               />
-              <circle cx={`${exampleTarget.x}%`} cy={`${exampleTarget.y}%`} r="8" fill="#f59e0b" />
-              <rect
-                x={`${(8 + exampleTarget.x) / 2 - 25}%`}
-                y={`${(0 + exampleTarget.y) / 2 - 9}%`}
-                width="50"
-                height="18"
-                rx="4"
-                fill="#f59e0b"
-              />
-              <text
-                x={`${(8 + exampleTarget.x) / 2}%`}
-                y={`${(0 + exampleTarget.y) / 2 + 4}%`}
-                fill="#ffffff"
-                fontSize="10"
-                fontWeight="900"
-                textAnchor="middle"
-              >
-                EXAMPLE
-              </text>
+              <circle cx={`${exampleTarget.x}%`} cy={`${exampleTarget.y}%`} r="8" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
             </g>
           )}
 
@@ -288,9 +270,34 @@ export function SVGLineMatcher({ customData, onComplete }) {
           )}
         </svg>
 
-        {/* Pure Clean Vector Target Pins on Picture (No text badges) */}
+        {/* 🌟 Official Cambridge Example Line Floating Badge */}
+        {exampleTarget && (
+          <div
+            style={{ left: `${(10 + exampleTarget.x) / 2}%`, top: `${Math.max(10, (0 + exampleTarget.y) / 2)}%` }}
+            className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none px-3 py-1 bg-amber-500 text-white font-black text-[11px] rounded-full uppercase tracking-wider border-2 border-white shadow-xl flex items-center gap-1 animate-pulse"
+          >
+            ★ EXAMPLE
+          </div>
+        )}
+
+        {/* Pure Clean Vector Target Pins on Picture */}
         {sceneData.targets.map((target) => {
           const matchedLine = drawnLines.find(l => l.targetId === target.id);
+          const isExamplePin = target.isExample || target.id === 't1' || target.label?.toLowerCase().includes('jake');
+
+          if (isExamplePin) {
+            return (
+              <div
+                key={target.id}
+                style={{ left: `${target.x}%`, top: `${target.y}%` }}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none"
+              >
+                <span className="px-2.5 py-1 rounded-xl border-2 border-white shadow-2xl bg-amber-500 text-white font-black text-xs flex items-center gap-1">
+                  Jake (Example)
+                </span>
+              </div>
+            );
+          }
 
           return (
             <button
@@ -304,7 +311,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
               title={matchedLine ? matchedLine.nameText : 'Click to connect line'}
             >
               <div className="relative flex items-center justify-center">
-                <span className={`w-8 h-8 rounded-full border-2 border-white shadow-xl flex items-center justify-center font-black text-xs ${
+                <span className={`px-2.5 py-1 rounded-xl border-2 border-white shadow-xl flex items-center justify-center font-black text-xs ${
                   matchedLine ? 'bg-indigo-600 text-white' : selectedName ? 'bg-amber-400 text-slate-950 animate-bounce' : 'bg-slate-900/80 text-white'
                 }`}>
                   {matchedLine ? matchedLine.nameText : '📍'}

@@ -388,13 +388,14 @@ export const VoiceService = {
         : (audioUrl.startsWith('/') ? audioUrl : `/audio/week${weekNumber || 33}/${audioUrl}`);
       try {
         const headRes = await fetch(fullAudioPath, { method: 'HEAD' }).catch(() => null);
-        if (headRes && headRes.ok && (headRes.headers.get('content-type')?.includes('audio') || fullAudioPath.endsWith('.mp3'))) {
-          console.log(`[TTS] 🎧 Playing pre-generated static MP3 from: ${fullAudioPath}`);
-          await this.playAudio(fullAudioPath, false);
+        const contentType = headRes?.headers.get('content-type') || '';
+        if (headRes && headRes.ok && (contentType.includes('audio') || contentType.includes('mpeg') || contentType.includes('octet-stream'))) {
+          console.log(`[TTS] 🎧 Playing verified static MP3 from: ${fullAudioPath}`);
+          await this.playAudio(fullAudioPath, false, true);
           return;
         }
       } catch (staticErr) {
-        console.warn(`[TTS] Static MP3 check failed (${fullAudioPath}), falling through: ${staticErr.message}`);
+        console.warn(`[TTS] Static MP3 unavailable or failed (${fullAudioPath}), falling through to Multi-Voice Synthesis: ${staticErr.message}`);
       }
     }
 
@@ -1488,7 +1489,7 @@ export const VoiceService = {
    * @param {boolean} revokeAfter - Revoke URL after playback (for memory cleanup)
    * @returns {Promise<void>}
    */
-  async playAudio(audioUrl, revokeAfter = true) {
+  async playAudio(audioUrl, revokeAfter = true, throwOnError = false) {
     // Stop any currently playing audio before starting a new one
     if (this._currentAudio) {
       try { this._currentAudio.pause(); this._currentAudio.currentTime = 0; } catch (_) {}
@@ -1554,6 +1555,7 @@ export const VoiceService = {
         });
       } catch (webAudioErr) {
         console.warn('[TTS] Web Audio API playback failed, falling back to HTML5 Audio:', webAudioErr.message);
+        if (throwOnError) throw webAudioErr;
         // Fall through to HTML5 Audio below if Web Audio API decode fails
       }
     }
@@ -1578,7 +1580,7 @@ export const VoiceService = {
       }
     }
 
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       audio.onended = () => {
         if (this._currentAudio === audio) this._currentAudio = null;
         if (revokeAfter) URL.revokeObjectURL(audioUrl);
@@ -1587,6 +1589,10 @@ export const VoiceService = {
       audio.onerror = (err) => {
         if (this._currentAudio === audio) this._currentAudio = null;
         if (revokeAfter) URL.revokeObjectURL(audioUrl);
+        if (throwOnError) {
+          reject(new Error('Audio playback failed'));
+          return;
+        }
         console.warn('[TTS] ⚠️ Audio playback error, triggering browser Web Speech fallback...');
         this.webFallback(this._lastText || '');
         resolve();
@@ -1594,6 +1600,10 @@ export const VoiceService = {
       audio.play().catch((err) => {
         if (this._currentAudio === audio) this._currentAudio = null;
         if (revokeAfter) URL.revokeObjectURL(audioUrl);
+        if (throwOnError) {
+          reject(err);
+          return;
+        }
         console.warn('[TTS] ⚠️ Audio play() rejected, triggering browser Web Speech fallback...');
         this.webFallback(this._lastText || '');
         resolve();
