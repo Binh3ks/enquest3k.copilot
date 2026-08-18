@@ -9,7 +9,9 @@ import { HelpCircle, Sparkles, AlertCircle, RefreshCw, Send, Trophy, CheckCircle
 import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 import CompletionModal from '../../components/common/CompletionModal';
-import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
+import { evaluateCambridgeCriteria, evaluateEssayStructure } from '../../utils/cambridgeCriteria';
+import { generateWeeklyWorksheet } from '../../utils/pdfWorksheetGenerator';
+import { Printer, Download } from 'lucide-react';
 
 export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -27,6 +29,7 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
   const [showHintsModal, setShowHintsModal] = useState(false);
   const [showPracticeNotice, setShowPracticeNotice] = useState(false);
   const [showMascotStore, setShowMascotStore] = useState(false);
+  const [structureResult, setStructureResult] = useState(null);
 
 
   const picturePanels = data?.picture_story || data?.writing?.picture_story || data?.picturePanels || data?.writing?.picturePanels || [
@@ -75,6 +78,9 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           ...(wordBankPills?.cumulative_chunks || [])
         ]
       });
+
+      const struct = evaluateEssayStructure(userScript, weekNumber);
+      setStructureResult(struct);
       const totalScore = evaluation.totalScore;
       const stars = evaluation.stars;
       const isWordCountPass = evaluation.metWords;
@@ -281,7 +287,15 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
           className="w-full p-4 bg-white border border-slate-300 rounded-2xl text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
         />
 
-        <div className="flex justify-end">
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <button
+            onClick={() => generateWeeklyWorksheet(data, learnerId)}
+            className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs transition border border-slate-300 flex items-center gap-1.5 shadow-sm active:scale-95"
+            title="Download/Print Weekly PBL Worksheet"
+          >
+            <Printer size={14} className="text-blue-600" /> 📥 Download Worksheet (PDF)
+          </button>
+
           <button
             onClick={handleRuleSubmitCheck}
             disabled={isAnalyzing || userScript.trim().length === 0}
@@ -322,6 +336,31 @@ export default function WritingStudioHub({ data, weekNumber = 33 }) {
               <div className="text-lg font-black text-purple-600">{ruleScore.connectorsCount} detected</div>
             </div>
           </div>
+
+          {/* Structure Analysis Card */}
+          {structureResult && (
+            <div className="p-4 bg-indigo-50/60 rounded-xl border border-indigo-200 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-indigo-950 uppercase flex items-center gap-1.5">
+                  <Layers size={14} className="text-indigo-600" /> Narrative Structure Analysis:
+                </span>
+                <span className="text-xs font-mono font-bold text-indigo-700">
+                  {structureResult.sentenceCount} sentences • {structureResult.paragraphCount} paragraph(s)
+                </span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-xs font-bold">
+                <div className={`p-2 rounded-lg text-center ${structureResult.hasIntro ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-500'}`}>
+                  {structureResult.hasIntro ? '✅ Introduction' : '⚪ Intro'}
+                </div>
+                <div className={`p-2 rounded-lg text-center ${structureResult.hasBody ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-500'}`}>
+                  {structureResult.hasBody ? '✅ Climax / Action' : '⚪ Body'}
+                </div>
+                <div className={`p-2 rounded-lg text-center ${structureResult.hasConclusion ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-500'}`}>
+                  {structureResult.hasConclusion ? '✅ Resolution' : '⚪ Conclusion'}
+                </div>
+              </div>
+            </div>
+          )}
 
           {aiScore && (
             <div className="p-4 bg-purple-50 rounded-xl border border-purple-200 space-y-2 animate-in fade-in">

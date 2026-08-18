@@ -1,7 +1,5 @@
-# EngQuest3K — Golden Master Architecture & Long-Term Roadmap (W33 → W72)
-
 > **Tài liệu chuẩn mực bắt buộc cho toàn bộ chu kỳ phát triển W33–W72.**
-> **Cập nhật:** 2026-08-18 | **Trạng thái:** 🔒 100% Golden Master Locked & Frozen (Commit `ed6adfd3`)
+> **Cập nhật:** 2026-08-18 | **Trạng thái:** 🔒 100% Golden Standard 2.0 Locked & Frozen (All 4 Hubs + CLIL/Grammar/PBL)
 
 ---
 
@@ -28,7 +26,7 @@
 Hệ thống W33+ bao phủ toàn diện **15/15 Khiên (16/16 Parts)** của chứng chỉ **Cambridge A2 Flyers** qua 4 Hubs:
 
 ```
-                                  ENGQUEST3K CAMBRIDGE SUITE (W33+)
+                                  ENGQUEST3K CAMBRIDGE SUITE (W33+ GOLDEN STANDARD 2.0)
                                                   │
        ┌──────────────────────────┬───────────────┴──────────────┬──────────────────────────┐
        ▼                          ▼                              ▼                          ▼
@@ -37,16 +35,18 @@ Hệ thống W33+ bao phủ toàn diện **15/15 Khiên (16/16 Parts)** của ch
 │WORLD DISCOVERY│       │ ARENA & LISTENING  │         │  WRITING STUDIO   │      │   NOVA TALK SHOW   │
 └───────┬───────┘       └─────────┬──────────┘         └─────────┬─────────┘      └─────────┬──────────┘
         │                         │                              │                          │
-  • 📖 Story Time           • 🎧 Listening Missions:       • 📝 Story Writing         • 🎙️ Podcast Shadowing:
-  • 🧩 Word Match (R&W P1)    - 🔗 Draw Lines (List P1)      (R&W P7: 3 Pictures,       - Phase 1: Câu ngắn
-  • 💬 Chat Box (R&W P2)      - 📋 Secret Notes (List P2)    20-50w, Word Pills)        - Phase 2: Đoạn văn
-  • 📝 Fill Blanks (R&W P4)   - 🔍 Item Hunt (List P3)     • 🎧 Dictation Engine      • 🔍 Find Diff (Speak P1)
-  • 🕵️ Detective (R&W P5)     - 🖼️ Picture Quiz (List P4)    (Listening P2 Notes)     • ❓ Ask & Answer (Speak P2)
-  • 🎯 Check Mode (R&W P6)    - 🎨 Magic Color (List P5)                              • 🖼️ Picture Story (Speak P3)
-                          • ⚔️ Arena Games:                                           • 💬 Personal Q&A (Speak P4)
-                            - 🧠 Sentence Builder
-                            - 📐 Bar Model Quest
-                            - ⚡ Flash Arena
+  • 🌍 Knowledge Explorer   • 🎧 Listening Missions:       • 📝 Story Writing         • 🎙️ Podcast Shadowing:
+    (CLIL Science/Social)     - 🔗 Draw Lines (List P1)      (R&W P7: 3 Pictures,       - Phase 1: Câu ngắn
+  • 📖 Story Time             - 📋 Secret Notes (List P2)    20-50w, Word Pills)        - Phase 2: Đoạn văn
+  • 🧩 Word Match (R&W P1)    - 🔍 Item Hunt (List P3)     • 🎧 Dictation Engine      • 🔍 Find Diff (Speak P1)
+  • 💬 Chat Box (R&W P2)      - 🖼️ Picture Quiz (List P4)    (Listening P2 Notes)     • ❓ Ask & Answer (Speak P2)
+  • 📝 Fill Blanks (R&W P4)   - 🎨 Magic Color (List P5)   • 📥 Download Worksheet    • 🖼️ Picture Story (Speak P3)
+  • 🕵️ Detective (R&W P5)   • ⚔️ Arena Games:                (Printable A4 PDF +      • 💬 Personal Q&A (Speak P4)
+  • 🎯 Check Mode (R&W P6)    - 📘 Learn Grammar (Modal)     PBL Offline Mission)     • 🎤 AI Debate Arena
+  • 🔬 Grammar X-Ray          - 🧠 Sentence Builder        • 📊 Narrative Structure     (Discourse Reasoning)
+                              - 📐 Bar Model Quest           Analysis (W43+)
+                              - ⚡ Flash Arena
+                              - 🧪 Science Drag & Drop Lab
 ```
 
 ---

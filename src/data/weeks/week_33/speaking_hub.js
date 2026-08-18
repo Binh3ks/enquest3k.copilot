@@ -56,7 +56,19 @@ export const speakingHubData = {
       { id: 4, title: "Picture 4: Applying clean bandage", image: "/images/week33/webtoon_scene_4.png", prompt_en: "How did the nurse treat Tom in Picture 4?", key_chunks: ["clean bandage", "cold pack"] },
       { id: 5, title: "Picture 5: Feeling relieved & praised", image: "/images/week33/webtoon_scene_5.png", prompt_en: "How does the story end in Picture 5?", key_chunks: ["felt relieved", "praised by principal"] }
     ]
-  }
+  },
+
+  // Cambridge AI Debate Arena (Critical Thinking & Spoken Argumentation)
+  debate_topics: [
+    {
+      id: "debate_w33_01",
+      topic_title: "School Corridors: Free Running or Strict Walking?",
+      nova_statement: "I believe students should be allowed to run freely in school corridors because rushing helps everyone get to science class on time and burns excess energy!",
+      expected_counter_points: ["Slippery floors cause dangerous accidents", "Running bumps into smaller students", "Walking calmly prevents injuries"],
+      suggested_discourse_markers: ["I disagree with Nova because...", "In my opinion, safety is more important...", "For example, running on wet tiles causes slips..."],
+      sample_rebuttal: "I disagree with Nova because running fast on polished floors creates low friction. When students rush, they lose balance and hurt themselves or others."
+    }
+  ]
 };
 
 export default speakingHubData;

@@ -58,8 +58,10 @@ export const lookupDict = (raw) => {
  * @param {string} themeColor - Color theme (default 'indigo')
  * @param {function} onSpeak - Custom speak handler
  * @param {boolean} isStealthMode - If true, forces tier=3 (natural text style) for ALL words & chunks so NO answers leak in tests!
+ * @param {string} highlightMode - 'clean' | 'vocab' | 'grammar' (default: 'vocab' for backward compat)
+ * @param {Array} targetGrammarRegex - Array of { pattern: string, label: string, color: string } for Grammar X-Ray mode
  */
-export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, isStealthMode = false) {
+export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, isStealthMode = false, highlightMode = 'vocab', targetGrammarRegex = []) {
   if (!text) return null;
 
   // 2. Filter all multi-word phrases (Base + Aliases containing spaces) sorted by length descending
@@ -97,7 +99,7 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
           themeColor={themeColor}
           onSpeak={onSpeak}
           entry={entry}
-          tier={isStealthMode ? 3 : 1}
+          tier={isStealthMode ? 3 : (highlightMode === 'clean' ? 3 : (highlightMode === 'grammar' ? 3 : 1))}
         />
       );
     } else {
@@ -114,6 +116,11 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
           const isTarget = Boolean(matchedBaseKey);
           const entry = isTarget ? WEEK_33_MASTER_DICTIONARY[matchedBaseKey] : lookupDict(token);
 
+          // Grammar X-Ray: check if this token position falls within a grammar pattern match
+          let grammarTier = isStealthMode ? 3 : (isTarget ? 1 : 3);
+          if (highlightMode === 'clean') grammarTier = 3;
+          else if (highlightMode === 'grammar') grammarTier = isTarget ? 3 : 3; // suppress vocab in grammar mode
+
           parts.push(
             <HoverWord
               key={`word-${key++}`}
@@ -121,7 +128,7 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
               themeColor={themeColor}
               onSpeak={onSpeak}
               entry={entry}
-              tier={isStealthMode ? 3 : (isTarget ? 1 : 3)}
+              tier={grammarTier}
             />
           );
         } else {
@@ -129,6 +136,70 @@ export function renderParsedText(text, themeColor = 'indigo', onSpeak = null, is
           parts.push(<span key={`space-${key++}`}>{token}</span>);
         }
       });
+    }
+  }
+
+  // Grammar X-Ray Post-Processing: wrap grammar pattern matches with <mark> highlight
+  if (highlightMode === 'grammar' && Array.isArray(targetGrammarRegex) && targetGrammarRegex.length > 0 && typeof text === 'string') {
+    // Build a flat text from parts to find grammar pattern positions
+    // Then wrap matching spans with grammar highlight styling
+    // For simplicity and robustness, we do a second pass on the original text
+    const grammarParts = [];
+    let processedText = text.replace(/\*\*/g, ''); // strip markdown bold
+    let lastIndex = 0;
+
+    // Combine all grammar regex patterns into one
+    const combinedPatterns = targetGrammarRegex.map(g => `(${g.pattern})`).join('|');
+    const grammarRegex = new RegExp(combinedPatterns, 'gi');
+    let match;
+
+    const grammarMatches = [];
+    while ((match = grammarRegex.exec(processedText)) !== null) {
+      grammarMatches.push({ start: match.index, end: match.index + match[0].length, text: match[0] });
+    }
+
+    if (grammarMatches.length > 0) {
+      // Rebuild parts with grammar highlights inserted
+      const finalParts = [];
+      let gKey = 0;
+      lastIndex = 0;
+
+      for (const gm of grammarMatches) {
+        // Add pre-match text as regular parsed
+        if (gm.start > lastIndex) {
+          const preText = processedText.slice(lastIndex, gm.start);
+          finalParts.push(...renderParsedText(preText, themeColor, onSpeak, false, 'clean', []));
+        }
+        // Add grammar-highlighted match
+        const matchTokens = gm.text.split(/([a-zA-Z0-9'-]+)/g);
+        matchTokens.forEach(mt => {
+          if (!mt) return;
+          if (/^[a-zA-Z0-9'-]+$/.test(mt)) {
+            const entry = lookupDict(mt);
+            finalParts.push(
+              <HoverWord
+                key={`grammar-${gKey++}`}
+                word={mt}
+                themeColor="amber"
+                onSpeak={onSpeak}
+                entry={entry}
+                tier={4}
+              />
+            );
+          } else {
+            finalParts.push(<span key={`gspace-${gKey++}`}>{mt}</span>);
+          }
+        });
+        lastIndex = gm.end;
+      }
+
+      // Add remaining text
+      if (lastIndex < processedText.length) {
+        const postText = processedText.slice(lastIndex);
+        finalParts.push(...renderParsedText(postText, themeColor, onSpeak, false, 'clean', []));
+      }
+
+      return finalParts;
     }
   }
 
@@ -250,12 +321,14 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
     recognition.start();
   };
 
-  // Tier 1 vs Tier 3 styling (STRICTLY OBEYS TIER = 1 VS TIER = 3 SO STEALTH MODE NEVER LEAKS)
+  // Tier 1 = Vocab target, Tier 3 = General word, Tier 4 = Grammar X-Ray highlight
   const isTarget = tier === 1;
+  const isGrammar = tier === 4;
   const targetClass = `text-indigo-600 font-bold underline decoration-dotted cursor-pointer hover:text-indigo-800 transition-colors`;
+  const grammarClass = `font-semibold text-amber-800 bg-amber-100/80 rounded px-0.5 cursor-pointer hover:bg-amber-200 transition-all border-b-2 border-amber-300`;
   const generalWordClass = `font-medium text-slate-800 hover:text-indigo-600 hover:bg-indigo-50/50 cursor-pointer rounded px-[1px] transition-all`;
 
-  const className = isTarget ? targetClass : generalWordClass;
+  const className = isGrammar ? grammarClass : (isTarget ? targetClass : generalWordClass);
 
   const displayTitle = resolvedEntry?.word || word;
 

@@ -14,8 +14,9 @@ import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngi
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
-import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy } from 'lucide-react';
+import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy, BookOpen } from 'lucide-react';
 import CompletionModal from '../../../../components/common/CompletionModal';
+import LearnGrammarModal from '../../../../components/cambridge/LearnGrammarModal';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 const WEEK33_GRAMMAR_DRILLS = [
@@ -56,9 +57,10 @@ const WEEK33_GRAMMAR_DRILLS = [
   }
 ];
 
-export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
+export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptResult }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
+  const [showGrammarModal, setShowGrammarModal] = useState(false);
 
   const [currentDrillIndex, setCurrentDrillIndex] = useState(0);
   const [targetBlocks, setTargetBlocks] = useState([]);
@@ -211,7 +213,7 @@ export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
         activityTitle="Sentence Builder Battle (Arena Game)"
       />
       {/* Header Info */}
-      <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
+      <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 flex-wrap gap-2">
         <div>
           <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
             LEARN MODE — SENTENCE BUILDER BATTLE
@@ -219,6 +221,16 @@ export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
           <h3 className="text-base font-black text-slate-900 mt-0.5">{currentDrill.text_en}</h3>
         </div>
         <div className="flex items-center gap-2">
+          {grammarLesson && (
+            <button
+              onClick={() => setShowGrammarModal(true)}
+              className="px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-black rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95 border border-blue-400/40"
+              title="Learn Grammar Rules (Grammar in Use)"
+            >
+              <BookOpen size={14} className="text-amber-300" /> 📘 Learn Grammar
+            </button>
+          )}
+
           {isCompleted && (
             <button
               onClick={handleRestart}
@@ -232,6 +244,14 @@ export function SentenceBuilderBattle({ customDrills, onAttemptResult }) {
           </span>
         </div>
       </div>
+
+      {showGrammarModal && grammarLesson && (
+        <LearnGrammarModal
+          isOpen={showGrammarModal}
+          onClose={() => setShowGrammarModal(false)}
+          grammarLesson={grammarLesson}
+        />
+      )}
 
       <DndContext
         sensors={sensors}

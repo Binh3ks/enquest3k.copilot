@@ -15,6 +15,7 @@ import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
 import VisualMatchingAH from '../../components/cambridge/VisualMatchingAH';
 import SVGColorAndWrite from '../../components/cambridge/SVGColorAndWrite';
+import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
 
 export default function ArenaHub({ data, weekNumber = 33 }) {
   const userXP = useUserStore((state) => state.userXP || 0);
@@ -174,6 +175,14 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
               >
                 ⚡ Speed Match
               </button>
+              <button
+                onClick={() => setActiveTab('science_lab')}
+                className={`px-3.5 py-2 rounded-xl text-xs font-black transition flex items-center gap-1.5 shrink-0 ${
+                  activeTab === 'science_lab' ? 'bg-emerald-600 text-white shadow-md' : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100'
+                }`}
+              >
+                🧪 Science Lab
+              </button>
             </div>
           )}
 
@@ -182,6 +191,7 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
             {activeTab === 'sentence_builder' && (
               <SentenceBuilderBattle
                 customDrills={data?.grammar_drills}
+                grammarLesson={data?.grammar_lesson}
                 onAttemptResult={handleAttemptEvaluation}
               />
             )}
@@ -194,6 +204,12 @@ export default function ArenaHub({ data, weekNumber = 33 }) {
             {activeTab === 'flash_arena' && (
               <FlashArena
                 customSets={data?.flash_arena}
+                onAttemptResult={handleAttemptEvaluation}
+              />
+            )}
+            {activeTab === 'science_lab' && (
+              <ScienceDragDropLab
+                customLabData={data?.science_lab}
                 onAttemptResult={handleAttemptEvaluation}
               />
             )}

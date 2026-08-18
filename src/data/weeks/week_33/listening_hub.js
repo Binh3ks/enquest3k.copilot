@@ -179,7 +179,205 @@ export const listeningHubData = {
       { id: 't3', type: 'color', target_id: 'warning_sign', target_color: '#eab308', color_name: 'Yellow', audio_url: '/audio/week33/listening_p5_inst3.mp3', prompt: '3. Color the wet floor warning sign YELLOW.' },
       { id: 't4', type: 'write', label_id: 'sign_label', target_text: 'SAFE', audio_url: '/audio/week33/listening_p5_inst5.mp3', prompt: '4. Write the word SAFE on the warning sign label.' }
     ]
+  },
+
+  // Arena Games: Sentence Builder Grammar Drills (Data-Driven — feeds SentenceBuilderBattle.jsx via customDrills prop)
+  grammar_drills: [
+    {
+      id: "st2_w33_g01",
+      grammar_tag: "past_continuous_when_while",
+      text_en: "Build a past continuous sentence with 'While'.",
+      word_blocks: ["While", "Jake", "was", "walking", "down", "the", "corridor", ",", "a", "boy", "slipped", "."],
+      distractor_blocks: ["is", "slips", "run"]
+    },
+    {
+      id: "st2_w33_g02",
+      grammar_tag: "past_continuous_when_while",
+      text_en: "Build a sentence describing first aid treatment.",
+      word_blocks: ["While", "the", "nurse", "was", "treating", "his", "knee", ",", "Tom", "felt", "relieved", "."],
+      distractor_blocks: ["feels", "treats", "so"]
+    },
+    {
+      id: "st2_w33_g03",
+      grammar_tag: "past_continuous_when_while",
+      text_en: "Build a sentence showing cause of slipping.",
+      word_blocks: ["A", "boy", "slipped", "while", "he", "was", "running", "fast", "on", "the", "wet", "floor", "."],
+      distractor_blocks: ["runs", "is", "slowly"]
+    },
+    {
+      id: "st2_w33_g04",
+      grammar_tag: "past_simple_irregular",
+      text_en: "Build an emergency action sentence.",
+      word_blocks: ["Jake", "called", "the", "school", "nurse", "immediately", "for", "medical", "help", "."],
+      distractor_blocks: ["calls", "calling", "later"]
+    },
+    {
+      id: "st2_w33_g05",
+      grammar_tag: "past_simple_irregular",
+      text_en: "Build a sentence about safety rules.",
+      word_blocks: ["The", "headmaster", "reminded", "all", "students", "never", "to", "run", "in", "corridors", "."],
+      distractor_blocks: ["reminds", "reminding", "always"]
+    }
+  ],
+
+  // Arena Games: Flash Arena Speed Match (4 Sub-Tabs × 10 Pairs)
+  flash_arena: {
+    set1_nouns_adj: [
+      { id: "na01", en: "corridor", vi: "hành lang" },
+      { id: "na02", en: "bandage", vi: "băng cá nhân" },
+      { id: "na03", en: "nurse", vi: "y tá" },
+      { id: "na04", en: "knee", vi: "đầu gối" },
+      { id: "na05", en: "headmaster", vi: "thầy hiệu trưởng" },
+      { id: "na06", en: "careful", vi: "cẩn thận" },
+      { id: "na07", en: "clumsy", vi: "vụng về" },
+      { id: "na08", en: "relieved", vi: "nhẹ nhõm" },
+      { id: "na09", en: "wet", vi: "ướt" },
+      { id: "na10", en: "safe", vi: "an toàn" }
+    ],
+    set2_verbs: [
+      { id: "v01", en: "slipped", vi: "đã trượt chân" },
+      { id: "v02", en: "fell down", vi: "đã ngã xuống" },
+      { id: "v03", en: "called", vi: "đã gọi" },
+      { id: "v04", en: "arrived", vi: "đã đến nơi" },
+      { id: "v05", en: "treated", vi: "đã điều trị" },
+      { id: "v06", en: "praised", vi: "đã khen ngợi" },
+      { id: "v07", en: "reminded", vi: "đã nhắc nhở" },
+      { id: "v08", en: "hurt", vi: "đã làm đau" },
+      { id: "v09", en: "stopped", vi: "đã dừng lại" },
+      { id: "v10", en: "walked", vi: "đã đi bộ" }
+    ],
+    set3_chunks: [
+      { id: "c01", en: "slipped on the wet floor", vi: "trượt chân trên sàn ướt" },
+      { id: "c02", en: "walking carefully", vi: "đi bộ cẩn thận" },
+      { id: "c03", en: "called the school nurse", vi: "đã gọi y tá trường" },
+      { id: "c04", en: "clean bandage", vi: "băng cá nhân sạch" },
+      { id: "c05", en: "hurt his knee", vi: "bị thương đầu gối" },
+      { id: "c06", en: "felt relieved", vi: "cảm thấy nhẹ nhõm" },
+      { id: "c07", en: "corridor safety rules", vi: "quy tắc an toàn hành lang" },
+      { id: "c08", en: "running fast", vi: "chạy nhanh" },
+      { id: "c09", en: "first aid kit", vi: "hộp sơ cứu" },
+      { id: "c10", en: "wet floor warning sign", vi: "biển báo sàn ướt" }
+    ],
+    set4_definitions: [
+      { id: "def01", en: "corridor", vi: "A long passage in a building from which doors lead into rooms." },
+      { id: "def02", en: "bandage", vi: "A strip of cloth used to bind up a wound." },
+      { id: "def03", en: "slipped", vi: "Lost one's balance accidentally on a smooth surface." },
+      { id: "def04", en: "nurse", vi: "A person trained to care for sick or injured people." },
+      { id: "def05", en: "relieved", vi: "No longer feeling distressed or anxious." },
+      { id: "def06", en: "praised", vi: "Expressed warm approval of someone's action." },
+      { id: "def07", en: "careful", vi: "Making sure to avoid potential danger or mistakes." },
+      { id: "def08", en: "clumsy", vi: "Awkward in movement, likely to knock things over." },
+      { id: "def09", en: "headmaster", vi: "The principal or head teacher of a school." },
+      { id: "def10", en: "treat", vi: "To give medical care to a patient for an injury." }
+    ]
+  },
+
+  // Singapore Math Bar Models (5 Problems — feeds BarModelQuest.jsx via customQuestions prop)
+  singapore_math: [
+    { id: 1, svg_url: "/images/week33/barmodel_w33_adv_p1.svg", text: "Jake walked 40 meters. The corridor is 100 meters long. How many meters are left?", answer: "60 meters", type: "part_whole" },
+    { id: 2, svg_url: "/images/week33/barmodel_w33_adv_p2.svg", text: "The nurse had 25 bandages. She used 8 bandages. How many bandages remain?", answer: "17 bandages", type: "part_whole" },
+    { id: 3, svg_url: "/images/week33/barmodel_w33_adv_p3.svg", text: "Tom rested for 15 minutes and applied ice for 10 minutes. What is the total treatment time?", answer: "25 minutes", type: "part_whole" },
+    { id: 4, svg_url: "/images/week33/barmodel_w33_adv_p4.svg", text: "Class 4A has 30 students. 24 students followed safety rules. How many ran?", answer: "6 students", type: "part_whole" },
+    { id: 5, svg_url: "/images/week33/barmodel_w33_adv_p5.svg", text: "The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?", answer: "20 stars", type: "multiplication" }
+  ],
+
+  // Grammar X-Ray Target Patterns (for Grammar Mode toggle in Hub 1)
+  target_grammar_regex: [
+    { pattern: "\\b(was|were)\\s+\\w+ing\\b", label: "Past Continuous", color: "#fef9c3" },
+    { pattern: "\\b(while|when)\\b", label: "While/When conjunction", color: "#dbeafe" },
+    { pattern: "\\b(slipped|fell|hurt|called|arrived|stopped|praised|reminded)\\b", label: "Past Simple Irregular", color: "#dcfce7" }
+  ],
+
+  // Learn Grammar Master Class (English Grammar in Use Standard — feeds SentenceBuilderBattle.jsx Learn Grammar Modal)
+  grammar_lesson: {
+    unit_id: "w33_unit_past_continuous",
+    title_en: "Unit 33: Past Continuous with WHILE",
+    title_vi: "Bài 33: Thì Quá Khứ Tiếp Diễn với WHILE",
+    rule_en: "Use WHILE + Past Continuous (was/were + V-ing) to describe a long background action that was in progress when a short action in Past Simple happened.",
+    rule_vi: "Dùng WHILE + Quá khứ tiếp diễn (was/were + V-ing) để mô tả một hành động nền đang diễn ra thì một hành động ngắn ở Quá khứ đơn xen vào.",
+    formula: "While + S + was/were + V-ing, S + V2 (Past Simple).",
+    examples: [
+      {
+        correct: true,
+        en: "While Jake **was walking** down the corridor, a boy **slipped** on the wet floor.",
+        vi: "Trong khi Jake đang đi bộ xuống hành lang, một cậu bé đã trượt chân trên sàn ướt."
+      },
+      {
+        correct: true,
+        en: "While the nurse **was treating** his knee, Tom **felt** much better.",
+        vi: "Trong khi cô y tá đang điều trị đầu gối, Tom cảm thấy đỡ hơn rất nhiều."
+      },
+      {
+        correct: false,
+        en: "While Jake walked down the corridor, a boy slipped.",
+        explanation_en: "Incorrect: 'walked' is Past Simple. The background ongoing action must use Past Continuous: 'was walking'.",
+        explanation_vi: "Sai: 'walked' là Quá khứ đơn. Hành động nền đang diễn ra phải dùng Quá khứ tiếp diễn: 'was walking'."
+      },
+      {
+        correct: false,
+        en: "While Jake was walk down the corridor...",
+        explanation_en: "Incorrect: After 'was', the verb must end in '-ing' → 'was walking'.",
+        explanation_vi: "Sai: Sau 'was', động từ phải thêm đuôi '-ing' → 'was walking'."
+      }
+    ],
+    practice_exercises: [
+      {
+        id: "pe1",
+        prompt: "While Jake ___ (walk) down the corridor, he saw a boy fall.",
+        options: ["was walking", "walked", "is walking"],
+        answer: "was walking"
+      },
+      {
+        id: "pe2",
+        prompt: "A boy slipped while he ___ (run) fast near the laboratory.",
+        options: ["was running", "ran", "runs"],
+        answer: "was running"
+      },
+      {
+        id: "pe3",
+        prompt: "While the nurse was placing the bandage, Tom ___ (feel) relieved.",
+        options: ["felt", "was feeling", "feels"],
+        answer: "felt"
+      },
+      {
+        id: "pe4",
+        prompt: "He ___ (hurt) his knee while playing near the lockers.",
+        options: ["hurt", "was hurting", "hurts"],
+        answer: "hurt"
+      },
+      {
+        id: "pe5",
+        prompt: "While we ___ (have) lunch, the headmaster announced safety rules.",
+        options: ["were having", "had", "have"],
+        answer: "were having"
+      }
+    ],
+    key_grammar_vocab: [
+      { en: "Past Continuous", vi: "Thì quá khứ tiếp diễn (was/were + V-ing)" },
+      { en: "While", vi: "Trong khi (nối hành động dài đang diễn ra)" },
+      { en: "Past Simple", vi: "Thì quá khứ đơn (hành động ngắn chen ngang)" },
+      { en: "Interrupted Action", vi: "Hành động bị ngắt quãng" },
+      { en: "Background Action", vi: "Hành động nền" },
+      { en: "Irregular Verbs", vi: "Động từ bất quy tắc (slip → slipped, fall → fell)" }
+    ]
+  },
+
+  // Interactive STEM Science Drag & Drop Lab
+  science_lab: {
+    id: "sci_w33_lab1",
+    title_en: "Corridor Friction & Safety Physics Lab",
+    title_vi: "Phòng Thí Nghiệm Vật Lý Ma Sát & An Toàn Hành Lang",
+    description_en: "Drag the physics principles and first aid tools to the correct positions on the diagram!",
+    background_image: "/images/week33/read_cover_w33.jpg",
+    zones: [
+      { id: "z1", label: "Wet Floor Puddle", correct_label: "Low Friction Zone", x: 48, y: 76 },
+      { id: "z2", label: "Running Fast", correct_label: "Kinetic Momentum", x: 62, y: 45 },
+      { id: "z3", label: "Yellow Caution Sign", correct_label: "Hazard Alert", x: 28, y: 65 },
+      { id: "z4", label: "First Aid Treatment", correct_label: "Cold Pack & Bandage", x: 80, y: 55 }
+    ],
+    labels: ["Low Friction Zone", "Kinetic Momentum", "Hazard Alert", "Cold Pack & Bandage", "High Gravity", "Thermal Radiation"]
   }
 };
 
 export default listeningHubData;
+

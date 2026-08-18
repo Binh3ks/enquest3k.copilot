@@ -10,6 +10,7 @@ import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import InformationExchangeP2 from '../../components/cambridge/InformationExchangeP2';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 import CompletionModal from '../../components/common/CompletionModal';
+import AIDebateMode from '../../components/cambridge/AIDebateMode';
 
 /**
  * Cambridge Speech Assessment Engine
@@ -544,11 +545,24 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           >
             🔍 Find Differences
           </button>
+          <button
+            onClick={() => setSubMode('ai_debate')}
+            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+              subMode === 'ai_debate' ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md ring-2 ring-purple-300' : 'bg-white text-purple-900 border border-purple-300 hover:bg-purple-100'
+            }`}
+          >
+            🎤 AI Debate
+          </button>
         </div>
       </div>
       )}
 
-      {subMode === 'find_diff' ? (
+      {subMode === 'ai_debate' ? (
+        <AIDebateMode
+          debateTopics={data?.debate_topics}
+          weekNumber={weekNumber}
+        />
+      ) : subMode === 'find_diff' ? (
         <FindDifferencesInteractive
           customData={data?.find_differences}
           isStealthMode={activeMode === 'check'}

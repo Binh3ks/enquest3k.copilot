@@ -104,3 +104,30 @@ export function evaluateCambridgeCriteria(text, weekNum = 33, customWordBank = {
     isCoherent
   };
 }
+
+/**
+ * 5-Paragraph & Essay Structure Analysis (W43+ Scaffolding)
+ * Evaluates Narrative Arc (Introduction -> Climax/Action -> Resolution/Conclusion)
+ */
+export function evaluateEssayStructure(text, weekNum = 33) {
+  const clean = (text || '').trim();
+  const sentences = clean.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
+  const paragraphs = clean.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+
+  const hasIntro = /^(one day|first|in the morning|yesterday|on \w+day|last week|while|as)\b/i.test(clean) || sentences.length >= 1;
+  const hasBody = sentences.length >= 3 || /(suddenly|then|next|after that|meanwhile)\b/i.test(clean);
+  const hasConclusion = /(finally|in the end|at last|everyone felt|was happy|learned a lesson|relieved)\b/i.test(clean) || sentences.length >= 4;
+
+  const hasCompoundSentences = /\b(and|but|so|because|although|while)\b/i.test(clean);
+
+  return {
+    sentenceCount: sentences.length,
+    paragraphCount: paragraphs.length,
+    hasIntro,
+    hasBody,
+    hasConclusion,
+    hasCompoundSentences,
+    structureScore: (hasIntro ? 30 : 0) + (hasBody ? 40 : 0) + (hasConclusion ? 30 : 0)
+  };
+}
+

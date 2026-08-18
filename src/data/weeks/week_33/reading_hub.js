@@ -11,6 +11,41 @@ export const readingHubData = {
   theme: "Corridor Safety & School Care",
   cefr_level: "A2 Flyers",
   vocab: vocabList,
+
+  // CLIL Knowledge Explorer (Science & Social Studies Integration)
+  clil_article: {
+    id: "clil_w33_01",
+    theme: "School Safety & Ancient Olympic Rules",
+    title_en: "School Safety & The Ancient Olympic Truce",
+    title_vi: "An Toàn Học Đường & Hiệp Ước Đình Chiến Olympic Cổ Đại",
+    content_en: "Rules are essential for keeping people safe both in modern schools and throughout world history. In modern schools, safety rules forbid running down wet corridors to prevent slipping accidents and injuries. When someone falls, friends stop immediately to help and call the school nurse. Similarly, during the Ancient Olympic Games in Greece, city-states signed a sacred agreement called the Olympic Truce, or Ekecheiria. This ancient rule commanded all armies to stop fighting completely so that athletes and travelers could journey safely across the country without fear. Following established rules creates a respectful environment where everyone feels protected, valued, and happy.",
+    content_vi: "Các quy tắc là điều thiết yếu để giữ an toàn cho mọi người trong cả trường học hiện đại và suốt chiều dài lịch sử thế giới. Tại các trường học ngày nay, quy tắc an toàn cấm chạy trên hành lang ướt nhằm phòng ngừa tai nạn trượt ngã và thương tích. Khi có người bị ngã, bạn bè lập tức dừng lại giúp đỡ và gọi y tế trường học. Tương tự, vào thời Hy Lạp cổ đại, các thành quốc đã ký một hiệp ước linh thiêng mang tên Hiệp ước Đình chiến Olympic (Ekecheiria). Quy tắc cổ xưa này ra lệnh cho toàn bộ quân đội ngừng giao chiến để các vận động viên và lữ khách có thể di chuyển an toàn khắp đất nước mà không phải sợ hãi. Việc tôn trọng quy tắc tạo ra một môi trường an toàn, nơi tất cả mọi người đều được bảo vệ và hạnh phúc.",
+    audio_url: "/audio/week33/explore.mp3",
+    check_questions: [
+      {
+        id: 1,
+        question_en: "Why do modern school rules forbid running in corridors?",
+        options: ["To prevent slipping accidents", "To save energy", "To keep hallways quiet"],
+        answer: "To prevent slipping accidents"
+      },
+      {
+        id: 2,
+        question_en: "What was the ancient Greek agreement called?",
+        options: ["The Olympic Truce", "The Athens Treaty", "The Spartan Charter"],
+        answer: "The Olympic Truce"
+      },
+      {
+        id: 3,
+        question_en: "What did the ancient Olympic Truce command armies to do?",
+        options: ["Stop fighting during games", "Build new sports tracks", "March together"],
+        answer: "Stop fighting during games"
+      }
+    ],
+    critical_thinking: {
+      question_en: "How do safety rules in your school and community help you feel protected and learn better?",
+      hint_en: "Think about how having clear rules prevents accidents and allows everyone to focus on learning happily without fear."
+    }
+  },
   interactive_story: {
     mode: "open_cloze",
     title: "Interactive Story: Corridor Safety Incident",

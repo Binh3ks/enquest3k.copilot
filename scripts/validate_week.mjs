@@ -13,7 +13,7 @@ if (isNaN(weekNum)) {
 }
 
 console.log(`\n================================================================`);
-console.log(`🚀 GOLD STANDARD DEEP FIELD VALIDATOR (6 GATEKEEPERS) — WEEK ${weekNum}`);
+console.log(`🚀 GOLD STANDARD DEEP FIELD VALIDATOR (7 GATEKEEPERS) — WEEK ${weekNum}`);
 console.log(`================================================================\n`);
 
 const WEEKS_DIR = path.join(process.cwd(), 'src', 'data', 'weeks', `week_${weekStr}`);
@@ -21,7 +21,7 @@ let totalFailures = 0;
 
 function reportGatekeeper(stt, name, passed, details = []) {
   const icon = passed ? '✅ PASS' : '❌ FAIL';
-  console.log(`[Gatekeeper ${stt}/6] ${name.padEnd(45, ' ')} : ${icon}`);
+  console.log(`[Gatekeeper ${stt}/7] ${name.padEnd(45, ' ')} : ${icon}`);
   if (details.length > 0) {
     details.forEach(d => console.log(`   └─ ${d}`));
   }
@@ -172,13 +172,60 @@ async function runValidation() {
     reportGatekeeper(6, 'Index Export Check (All 4 Hub Keys Present)', ok, details);
   }
 
+  // ---------------------------------------------------------------------------
+  // Gatekeeper 7: Golden Standard 2.0 CLIL, Grammar & PBL Compliance Check
+  // ---------------------------------------------------------------------------
+  {
+    const details = [];
+    let ok = true;
+
+    // Check Hub 1 CLIL Article
+    const readingData = await loadModuleFile('reading_hub.js');
+    const rHub = readingData?.readingHubData || readingData;
+    if (!rHub?.clil_article || !rHub.clil_article.content_en) {
+      ok = false;
+      details.push('reading_hub.js missing clil_article (CLIL Knowledge Explorer)');
+    }
+
+    // Check Hub 2 Grammar Lesson & Science Lab
+    const listeningData = await loadModuleFile('listening_hub.js');
+    const lHub = listeningData?.listeningHubData || listeningData;
+    if (!lHub?.grammar_lesson || !lHub.grammar_lesson.rule_en) {
+      ok = false;
+      details.push('listening_hub.js missing grammar_lesson (Learn Grammar Master Class)');
+    }
+    if (!lHub?.science_lab || !lHub.science_lab.zones) {
+      ok = false;
+      details.push('listening_hub.js missing science_lab (Science Drag & Drop Lab)');
+    }
+
+    // Check Hub 3 PBL Mission
+    const writingData = await loadModuleFile('writing_hub.js');
+    const wHub = writingData?.writingHubData || writingData;
+    if (!wHub?.pbl_mission || !wHub.pbl_mission.task_en) {
+      ok = false;
+      details.push('writing_hub.js missing pbl_mission (Offline PBL Handover Worksheet)');
+    }
+
+    // Check Hub 4 AI Debate Topics
+    const speakingData = await loadModuleFile('speaking_hub.js');
+    const sHub = speakingData?.speakingHubData || speakingData;
+    if (!Array.isArray(sHub?.debate_topics) || sHub.debate_topics.length === 0) {
+      ok = false;
+      details.push('speaking_hub.js missing debate_topics (AI Debate Arena)');
+    }
+
+    if (!ok) totalFailures++;
+    reportGatekeeper(7, 'Golden Standard 2.0 CLIL/PBL Check (All 4 Hubs)', ok, details);
+  }
+
   console.log(`\n================================================================`);
   if (totalFailures > 0) {
     console.error(`❌ DEEP VALIDATION FAILED FOR WEEK ${weekNum}! (${totalFailures} gatekeepers failed)`);
     process.exit(1);
   } else {
-    console.log(`🎉 ALL 6 GATEKEEPERS PASSED 100% FOR WEEK ${weekNum}!`);
-    console.log(`GOLD STANDARD WEEK 33 HAS BEEN LOCKED AND READY FOR MASS PRODUCTION`);
+    console.log(`🎉 ALL 7 GATEKEEPERS PASSED 100% FOR WEEK ${weekNum}!`);
+    console.log(`GOLDEN STANDARD 2.0 WEEK 33 IS LOCKED AND READY FOR MASS PRODUCTION`);
     console.log(`================================================================\n`);
     process.exit(0);
   }

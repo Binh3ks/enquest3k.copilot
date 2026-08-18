@@ -11,9 +11,10 @@ import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGri
 import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter';
 import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
 import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
-import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
+import CLILExplorer from '../../components/cambridge/CLILExplorer';
+import { Globe } from 'lucide-react';
 
 
 import VoiceService from '../../services/voiceService';
@@ -24,10 +25,11 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const userXP = useUserStore((state) => state.userXP || 0);
 
   const [activeTab, setActiveTab] = useState('webtoon'); // 'webtoon' | 'check'
-  const [learnSubTab, setLearnSubTab] = useState('webtoon'); // 'webtoon' | 'interactive_story' | 'reading_part3'
+  const [learnSubTab, setLearnSubTab] = useState('clil_explorer'); // 'clil_explorer' | 'webtoon' | 'rw_part1' | 'rw_part2' | 'rw_part4' | 'rw_part5'
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
   const [selectedHotspot, setSelectedHotspot] = useState(null);
   const [showMascotStore, setShowMascotStore] = useState(false);
+  const [highlightMode, setHighlightMode] = useState('clean'); // 'clean' | 'vocab' | 'grammar'
 
   // Cambridge Flyers Reading Part 3 state
   const [r3Answers, setR3Answers] = useState({});
@@ -249,10 +251,23 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const currentFrame = storyScenes[activeFrameIndex] || storyScenes[0];
   const frameHotspots = currentFrame.lexical_chunks || [];
 
+  // Grammar X-Ray target patterns from data (or W33 defaults)
+  const targetGrammarRegex = data?.target_grammar_regex || data?.read_explore?.target_grammar_regex || [
+    { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous', color: '#fef9c3' },
+    { pattern: '\\b(while|when)\\b', label: 'While/When conjunction', color: '#dbeafe' },
+    { pattern: '\\b(slipped|fell|hurt|called|arrived|stopped|praised|reminded)\\b', label: 'Past Simple Irregular', color: '#dcfce7' }
+  ];
+
   // System Global Text Parser using HoverWord component (Disables hover popups in Check Mode)
   const handleRenderParsedText = (text, themeColor = 'indigo') => {
     const isCheckMode = activeTab === 'check';
-    return renderParsedText(text, themeColor, (w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced'), isCheckMode);
+    return renderParsedText(
+      text, themeColor,
+      (w) => speakText(w, null, 1.0, null, 'reading', weekNumber, 'advanced'),
+      isCheckMode,
+      isCheckMode ? 'clean' : highlightMode,
+      targetGrammarRegex
+    );
   };
 
   // Play audio chunk via Primary Google Cloud TTS Direct with Browser fallback
@@ -345,6 +360,14 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
         <div className="space-y-6">
           <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 p-1.5 bg-blue-50/60 rounded-2xl border border-blue-200">
             <button
+              onClick={() => setLearnSubTab('clil_explorer')}
+              className={`flex-1 min-w-[140px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
+                learnSubTab === 'clil_explorer' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
+              }`}
+            >
+              <Globe size={14} className={learnSubTab === 'clil_explorer' ? 'text-amber-300' : 'text-blue-600'} /> 🌍 Knowledge Explorer
+            </button>
+            <button
               onClick={() => setLearnSubTab('webtoon')}
               className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
                 learnSubTab === 'webtoon' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
@@ -386,6 +409,16 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
             </button>
           </div>
 
+          {learnSubTab === 'clil_explorer' && (
+            <CLILExplorer
+              clilData={data?.clil_article}
+              weekNumber={weekNumber}
+              highlightMode={highlightMode}
+              setHighlightMode={setHighlightMode}
+              targetGrammarRegex={targetGrammarRegex}
+            />
+          )}
+
           {learnSubTab === 'webtoon' && (
             /* SUB-TAB 1: 3D WEBTOON SCENES & HOTSPOTS */
             <div className="space-y-6">
@@ -422,8 +455,43 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
                       Frame {activeFrameIndex + 1} of {storyScenes.length}
                     </span>
                   </div>
+
+                  {/* Grammar X-Ray Toggle Bar */}
+                  <div className="flex items-center gap-1.5 mb-3 bg-slate-100 rounded-xl p-1">
+                    <button
+                      onClick={() => setHighlightMode('clean')}
+                      className={`flex-1 px-3 py-1.5 rounded-lg text-[11px] font-black transition-all ${
+                        highlightMode === 'clean'
+                          ? 'bg-white text-slate-800 shadow-sm'
+                          : 'text-slate-500 hover:text-slate-700'
+                      }`}
+                    >
+                      📖 Clean
+                    </button>
+                    <button
+                      onClick={() => setHighlightMode('vocab')}
+                      className={`flex-1 px-3 py-1.5 rounded-lg text-[11px] font-black transition-all ${
+                        highlightMode === 'vocab'
+                          ? 'bg-indigo-500 text-white shadow-sm'
+                          : 'text-slate-500 hover:text-indigo-600'
+                      }`}
+                    >
+                      🔤 Vocab
+                    </button>
+                    <button
+                      onClick={() => setHighlightMode('grammar')}
+                      className={`flex-1 px-3 py-1.5 rounded-lg text-[11px] font-black transition-all ${
+                        highlightMode === 'grammar'
+                          ? 'bg-amber-500 text-white shadow-sm'
+                          : 'text-slate-500 hover:text-amber-600'
+                      }`}
+                    >
+                      🔬 Grammar
+                    </button>
+                  </div>
+
                   <div className="text-sm font-bold text-slate-700 leading-relaxed">
-                    {renderParsedText(currentFrame.description_en, 'indigo')}
+                    {handleRenderParsedText(currentFrame.description_en, 'indigo')}
                   </div>
                 </div>
               </div>
