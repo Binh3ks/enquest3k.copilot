@@ -43,7 +43,14 @@ const TeacherLauncher = () => {
   return (
     <>
       <button 
-        onClick={() => setTeacherPanelOpen(true)}
+        type="button"
+        onClick={(e) => {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          setTeacherPanelOpen(true);
+        }}
         className="fixed bottom-4 right-20 z-[9999] w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all border-2 border-white cursor-pointer no-print group relative"
         title="Teacher Panel - My Students"
       >

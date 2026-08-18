@@ -13,7 +13,14 @@ const SuperAdminLauncher = () => {
   return (
     <>
       <button 
-        onClick={() => setShowPanel(true)}
+        type="button"
+        onClick={(e) => {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          setShowPanel(true);
+        }}
         className="fixed bottom-4 right-4 z-[9999] w-14 h-14 bg-gray-900 text-yellow-400 hover:text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all border-4 border-yellow-500 cursor-pointer no-print group"
         title="Owner Control Panel"
       >

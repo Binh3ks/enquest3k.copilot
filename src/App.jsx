@@ -759,8 +759,12 @@ const MainLayout = () => {
 
                {isTeacher && (
                   <button 
+                    type="button"
                     onClick={(e) => {
-                      e.stopPropagation();
+                      if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                      }
                       useUserStore.getState().setTeacherPanelOpen(true);
                     }} 
                     className="flex px-3 py-1.5 bg-slate-900 text-white rounded-xl text-[9px] font-black uppercase tracking-widest shadow-md hover:bg-slate-800 transition-all active:scale-95 cursor-pointer"

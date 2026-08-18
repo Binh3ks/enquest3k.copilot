@@ -30,23 +30,24 @@ if (typeof window !== 'undefined') {
     return false;
   };
 
-  // Add global capture-phase error listener to detect module script load failures (stale chunk hashes)
+  // Only detect actual module script network failures (ChunkLoadError)
   window.addEventListener('error', (event) => {
     const target = event.target;
-    const isScript = target && (target.tagName === 'SCRIPT' || target.src);
+    // CRITICAL: Strictly check for SCRIPT tag only. NEVER match <img> or <audio> with src!
+    const isScript = target && target.tagName === 'SCRIPT' && target.src && (target.src.includes('/assets/') || target.src.includes('chunk'));
     const msg = String(event.message || event.error?.message || '');
     
-    if (
-      isScript || 
+    const isChunkMimeError = 
       msg.includes("Failed to load module script") || 
-      msg.includes("MIME type") || 
+      (msg.includes("MIME type") && msg.includes("text/html") && msg.includes(".js")) || 
       msg.includes("Expected a JavaScript-or-Wasm module script") ||
-      msg.includes("dynamically imported module")
-    ) {
+      msg.includes("Loading chunk");
+
+    if (isScript && isChunkMimeError) {
       const lastReload = parseInt(sessionStorage.getItem('global_chunk_reload') || '0', 10);
-      if (Date.now() - lastReload > 5000) {
+      if (Date.now() - lastReload > 8000) {
         sessionStorage.setItem('global_chunk_reload', String(Date.now()));
-        console.warn('[Main] Stale CDN chunk error caught in error listener. Clearing SW cache & reloading...');
+        console.warn('[Main] Stale JS module script error caught. Clearing SW cache & reloading...');
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
         }
@@ -55,7 +56,7 @@ if (typeof window !== 'undefined') {
         }
         setTimeout(() => {
           window.location.href = window.location.pathname + '?r=' + Date.now();
-        }, 150);
+        }, 200);
       }
     }
   }, true);
@@ -63,18 +64,19 @@ if (typeof window !== 'undefined') {
   window.addEventListener('unhandledrejection', (event) => {
     const msg = String(event.reason?.message || event.reason || '');
     if (msg.includes("reading '1'")) {
-      console.warn('[Main] Suppressed known undefined-1 rejection (non-fatal)');
       event.preventDefault();
-    } else if (
-      msg.includes("dynamically imported module") || 
-      msg.includes("MIME type") ||
-      msg.includes("Failed to load module script") ||
-      msg.includes("Expected a JavaScript-or-Wasm module script")
-    ) {
+      return;
+    }
+    
+    const isChunkRejection = 
+      (msg.includes("Failed to fetch dynamically imported module") || msg.includes("Loading chunk")) &&
+      (msg.includes(".js") || msg.includes("chunk"));
+
+    if (isChunkRejection) {
       const lastReload = parseInt(sessionStorage.getItem('global_chunk_reload') || '0', 10);
-      if (Date.now() - lastReload > 5000) {
+      if (Date.now() - lastReload > 8000) {
         sessionStorage.setItem('global_chunk_reload', String(Date.now()));
-        console.warn('[Main] Stale CDN chunk error detected in rejection. Clearing SW cache & reloading...');
+        console.warn('[Main] Stale dynamic module rejection caught. Clearing SW cache & reloading...');
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
         }
@@ -83,7 +85,7 @@ if (typeof window !== 'undefined') {
         }
         setTimeout(() => {
           window.location.href = window.location.pathname + '?r=' + Date.now();
-        }, 150);
+        }, 200);
       }
     }
   });
