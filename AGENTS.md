@@ -98,13 +98,26 @@ Source: `.devin/workflows/start.md` §3.
   6. **Automated Audit**: Run `npm run audit:chunks` (`node scripts/audit_chunks.js`) before committing to guarantee 0 chunking errors.
 - **Audio & TTS Fallback**: `audio_word` paths MUST handle missing MP3 files gracefully with browser TTS fallback so card flip audio never hangs or crashes.
 
-## Google Cloud TTS & Shadowing Standard — 2026-08-07
-- **Google Cloud TTS Direct Engine**: System-wide TTS is routed to Google Cloud TTS Direct with `en-US-Journey-F` (Narration/Shadowing), `en-US-Neural2-F` (Vocab/Dictation), and `en-US-Neural2-D` (Questions/Mindmap). Always map invalid `Neural2-B` voice names to `Neural2-D`.
-- **Cache Key Alignment**: In station views (`ReadingExplore.jsx`, `Explore.jsx`), `speakText` calls for narratives MUST pass `audio_url = null` so client-side `TTSCache` keys match `prefetchEntireWeek` 100% (`tts_${station}_${hash}_f`).
-- **Phonetic Proper Noun Normalization**: Vietnamese proper nouns (e.g., `Hội An`, `Hà Nội`, `Bánh Mì`) MUST be normalized in `cleanTextForTTS` using single compound phonetic strings (`Hoyahn`, `Hahnoy`, `Bahnmee`) to prevent English TTS engines from spelling out individual letters.
-- **Shadowing Corrections Isolation**: Shadowing corrections keys MUST be scoped by week and mode (`shadowing_corrections_v4_w${week}_${mode}_${videoId}`) to eliminate collisions between Easy and Advanced modes using the same YouTube video ID.
-- **TTS Mode Script Integrity**: In TTS mode, Shadowing MUST strictly use `data.ttsScript || script` from lesson data and ignore video transcript overrides or legacy KV server corrections.
-- **Stale CDN Chunk Recovery**: `loadWeekData` automatically reloads the page on dynamic import 404 errors caused by CDN chunk hash updates.
+## 🔒 FROZEN AUDIO PIPELINE: PRE-GENERATED MP3 & 3-TIER FALLBACK STANDARD (W33+) — 2026-08-18
+**BẮT BUỘC áp dụng cho Tuần 33 và TOÀN BỘ các tuần sản xuất mới (W34–W72). KHÔNG ĐƯỢC PHÉP BỎ QUA:**
+1. **Zero-Live-TTS on First Play**:
+   - Khi tạo nội dung tuần mới, **BẮT BUỘC chạy script pre-generate 100% file static MP3** và lưu vào `public/audio/weekXX/` (đồng thời upload lên Cloudflare R2 / CDN).
+   - Danh sách file bắt buộc sinh sẵn per week:
+     - 5 file Dictation (`dictation_1.mp3` → `dictation_5.mp3`, giọng `en-US-Neural2-F`)
+     - 5 file Listening Part 1 (`listening_p1_target1.mp3` → `target5.mp3`, giọng `en-US-Journey-F`)
+     - 1 file Listening Part 2 dài (`listening_p2_full.mp3`, giọng `en-US-Neural2-D`)
+     - 5 file Listening Part 3 (`listening_p3_item1.mp3` → `item5.mp3`, giọng `en-US-Neural2-D`)
+     - 5 file Listening Part 5 (`listening_p5_inst1.mp3` → `inst5.mp3`, giọng `en-US-Journey-F`)
+     - 1 file STEM Story (`read_stem.mp3`, giọng `en-US-Journey-F`)
+     - 1 file Social Story (`read_social.mp3`, giọng `en-US-Journey-F`)
+     - 1 file CLIL Knowledge Explorer (`explore.mp3` / `clil_friction.mp3`, giọng `en-US-Journey-F`)
+2. **Chuỗi Fallback 3 Tầng Bảo Vệ Bất Biến**:
+   - **Tier 1 (0ms)**: IndexedDB Client Cache (`TTSCache`).
+   - **Tier 2 (CDN / Pre-generated Static MP3)**: Tải trực tiếp file tĩnh từ Cloudflare R2 / local asset (`/audio/weekXX/...`).
+   - **Tier 3 (Dự phòng cấp bách khi CDN sập)**: Google Cloud TTS Direct (`en-US-Journey-F` / `en-US-Neural2-F` / `en-US-Neural2-D`).
+   - **Tier 4 (Phòng tuyến cuối cùng)**: Native Browser SpeechSynthesis.
+   - ❌ **CẤM TUYỆT ĐỐI**: Không để Client gọi trực tiếp Google Cloud TTS API khi người dùng bấm Play ở điều kiện bình thường. Tiết kiệm 100% chi phí API và triệt tiêu độ trễ!
+3. **Phonetic Proper Noun Normalization**: Vietnamese proper nouns (`Hội An`, `Hà Nội`, `Bánh Mì`) MUST be normalized in `cleanTextForTTS` using single compound phonetic strings (`Hoyahn`, `Hahnoy`, `Bahnmee`).
 
 ## Master Curriculum & Blueprint Station Pipeline Matrix — 2026-08-08
 Mọi tuần mới tạo bắt buộc tuân thủ 100% các tiêu chí thực nghiệm sau ở cả 2 mode (ADVANCED & EASY):

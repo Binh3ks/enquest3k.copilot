@@ -145,6 +145,17 @@ Khi chủ đề của tuần là Truyện Cổ tích hoặc Ngụ ngôn (Ví d�
    npm run build
    ```
 
+### 🎧 5.4. ĐÓNG BĂNG AUDIO PIPELINE & CHUỖI FALLBACK 3 TẦNG BẤT BIẾN (W33 → W72)
+1. **Quy tắc Bắt Buộc Khi Tạo Nội Dung Tuần Mới**:
+   - Chạy script tạo 100% file static MP3 cho tuần (`dictation_1-5.mp3`, `listening_p1_target1-5.mp3`, `listening_p2_full.mp3`, `listening_p3_item1-5.mp3`, `listening_p5_inst1-5.mp3`, `read_stem.mp3`, `read_social.mp3`, `explore.mp3` / `clil_*.mp3`).
+   - Lưu vào thư mục tĩnh `/public/audio/weekXX/` và tải lên Cloudflare R2 / CDN.
+2. **Cơ Chế Phát Âm Thanh 3 Tầng Bảo Vệ**:
+   - **Tier 1 (0ms)**: IndexedDB Client Cache (`TTSCache`).
+   - **Tier 2 (0-10ms)**: Static MP3 trực tiếp từ Cloudflare R2 / Local Assets (`/audio/weekXX/...`).
+   - **Tier 3 (Chỉ kích hoạt khi CDN/R2 sập)**: Google Cloud TTS Direct (`en-US-Journey-F` / `en-US-Neural2-F` / `en-US-Neural2-D`).
+   - **Tier 4 (Phòng tuyến cuối cùng)**: Native Browser SpeechSynthesis.
+   - ❌ **CẤM**: Client không bao giờ được gọi thẳng API Google TTS Direct ở điều kiện bình thường để tránh phát sinh chi phí và triệt tiêu độ trễ.
+
 ---
 
 ## 🔭 6. ĐỊNH HƯỚNG MỞ RỘNG SAU W72 (POST-FLYERS HORIZON: W73 → W156)
