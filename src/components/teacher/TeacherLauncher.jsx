@@ -7,28 +7,27 @@ import { teacherAPI } from '../../services/api';
 const STAFF_ROLES = ['teacher', 'admin', 'super_admin', 'team_leader', 'center_director'];
 
 const TeacherLauncher = () => {
-  const [showPanel, setShowPanel] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const currentUser = useUserStore(state => state.currentUser);
+  const isTeacherPanelOpen = useUserStore(state => state.isTeacherPanelOpen);
+  const setTeacherPanelOpen = useUserStore(state => state.setTeacherPanelOpen);
   const isTeacher = STAFF_ROLES.includes(currentUser?.role);
 
   useEffect(() => {
-    const handler = () => setShowPanel(true);
+    const handler = () => setTeacherPanelOpen(true);
     window.addEventListener('open-teacher-panel', handler);
     return () => window.removeEventListener('open-teacher-panel', handler);
-  }, []);
+  }, [setTeacherPanelOpen]);
 
-  // Poll for unread messages
+  // Poll for unread messages (silently in background)
   useEffect(() => {
     if (!isTeacher) return;
 
     const fetchUnread = async () => {
       try {
         const response = await teacherAPI.getUnreadCount();
-        setUnreadCount(response.data.count || 0);
-      } catch (error) {
-        // Silently fail if backend not ready yet
-        console.log('Teacher API not available yet:', error.message);
+        setUnreadCount(response?.data?.count || 0);
+      } catch (_) {
         setUnreadCount(0);
       }
     };
@@ -43,9 +42,12 @@ const TeacherLauncher = () => {
 
   return (
     <>
-      {!showPanel && (
+      {!isTeacherPanelOpen && (
         <button 
-          onClick={() => setShowPanel(true)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setTeacherPanelOpen(true);
+          }}
           className="fixed bottom-4 right-20 z-[9999] w-14 h-14 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all border-2 border-white cursor-pointer no-print group relative"
           title="Teacher Panel - My Students"
         >
@@ -58,7 +60,12 @@ const TeacherLauncher = () => {
         </button>
       )}
 
-      {showPanel && <TeacherPanel isOpen={showPanel} onClose={() => setShowPanel(false)} />}
+      {isTeacherPanelOpen && (
+        <TeacherPanel 
+          isOpen={isTeacherPanelOpen} 
+          onClose={() => setTeacherPanelOpen(false)} 
+        />
+      )}
     </>
   );
 };

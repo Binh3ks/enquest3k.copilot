@@ -23,6 +23,10 @@ const useUserStore = create(
       avatarItems: [], // Array of earned avatar item IDs
       equippedItems: { hat: null, glasses: null, accessory: null }, // Currently equipped items
 
+      // TEACHER PANEL STATE
+      isTeacherPanelOpen: false,
+      setTeacherPanelOpen: (open) => set({ isTeacherPanelOpen: Boolean(open) }),
+
       // META-GAME MASCOT STORE & XP ECONOMY STATE
       userXP: 1250, // Default starting balance for Word Treasury
       purchasedNovaItems: ['headphones'], // Pre-unlocked starter item

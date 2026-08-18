@@ -757,7 +757,17 @@ const MainLayout = () => {
 
                <div className="h-6 w-px bg-slate-200"></div>
 
-               {isTeacher && <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-panel'))} className="flex px-3 py-1.5 bg-slate-900 text-white rounded-xl text-[9px] font-black uppercase tracking-widest shadow-md">Teacher Panel</button>}
+               {isTeacher && (
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      useUserStore.getState().setTeacherPanelOpen(true);
+                    }} 
+                    className="flex px-3 py-1.5 bg-slate-900 text-white rounded-xl text-[9px] font-black uppercase tracking-widest shadow-md hover:bg-slate-800 transition-all active:scale-95 cursor-pointer"
+                  >
+                    Teacher Panel
+                  </button>
+                )}
                {!isTeacher && currentUser?.role !== 'guest' && <Link to={`/dashboard/${weekId}`} className="hidden sm:flex items-center gap-1 px-2.5 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-lg text-[9px] font-black uppercase tracking-wide hover:bg-emerald-100 transition-colors" title="Parent Dashboard">
                  📊 {isVi ? 'Phụ huynh' : 'Parent Report'}
                </Link>}
