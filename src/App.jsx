@@ -51,6 +51,11 @@ import WorldDiscoveryHub from './modules/cambridge_suite/WorldDiscoveryHub';
 import ArenaHub from './modules/cambridge_suite/ArenaHub';
 import WritingStudioHub from './modules/cambridge_suite/WritingStudioHub';
 import NovaTalkShowHub from './modules/cambridge_suite/NovaTalkShowHub';
+import StoryWorldZone from './modules/zones/StoryWorldZone';
+import BattleArenaZone from './modules/zones/BattleArenaZone';
+import CreatorStudioZone from './modules/zones/CreatorStudioZone';
+import BossBattleZone from './modules/zones/BossBattleZone';
+import { mapDataToZones } from './config/zoneDataMapper';
 import SubscriptionModal from './components/subscription/SubscriptionModal';
 
 // Lazy-loaded heavy pages
@@ -841,17 +846,14 @@ const MainLayout = () => {
               );
             })()}
 
-
-            {/* ✨ Nova CTA removed — button is now in the header */}
-
-            {/* Station nav — 4 Cambridge Suite Hub Cards for W33+ (Single horizontal row flex-nowrap with Pastel Inactive themes) */}
+            {/* Station nav — 4 Experiential Zone Cards for W33+ (Story World, Battle Arena, Creator Studio, Boss Battle) */}
             {weekId >= 33 ? (
               <div className="flex flex-nowrap items-center justify-between gap-3 mb-6 px-2 sm:px-4 overflow-x-auto w-full">
                 {[
                   { 
                     hubId: 1, 
-                    key: 'read_explore', 
-                    title: 'Hub 1: World Discovery', 
+                    key: 'story', 
+                    title: 'Zone 1: Story World', 
                     icon: BookOpen, 
                     activeColor: 'bg-indigo-600 border-indigo-500 text-white shadow-lg ring-4 ring-indigo-500/20',
                     inactiveColor: 'bg-indigo-50/90 text-indigo-950 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-300',
@@ -859,8 +861,8 @@ const MainLayout = () => {
                   },
                   { 
                     hubId: 2, 
-                    key: 'grammar', 
-                    title: 'Hub 2: Arena Battles', 
+                    key: 'arena', 
+                    title: 'Zone 2: Battle Arena', 
                     icon: Swords, 
                     activeColor: 'bg-amber-600 border-amber-500 text-white shadow-lg ring-4 ring-amber-500/20',
                     inactiveColor: 'bg-amber-50/90 text-amber-950 border-amber-200 hover:bg-amber-100 hover:border-amber-300',
@@ -868,8 +870,8 @@ const MainLayout = () => {
                   },
                   { 
                     hubId: 3, 
-                    key: 'writing', 
-                    title: 'Hub 3: Writing Studio', 
+                    key: 'create', 
+                    title: 'Zone 3: Creator Studio', 
                     icon: PenTool, 
                     activeColor: 'bg-purple-600 border-purple-500 text-white shadow-lg ring-4 ring-purple-500/20',
                     inactiveColor: 'bg-purple-50/90 text-purple-950 border-purple-200 hover:bg-purple-100 hover:border-purple-300',
@@ -877,8 +879,8 @@ const MainLayout = () => {
                   },
                   { 
                     hubId: 4, 
-                    key: 'ask_ai', 
-                    title: 'Hub 4: Nova Talk Show', 
+                    key: 'boss', 
+                    title: 'Zone 4: Boss Battle 🏆', 
                     icon: Radio, 
                     activeColor: 'bg-rose-600 border-rose-500 text-white shadow-lg ring-4 ring-rose-500/20',
                     inactiveColor: 'bg-rose-50/90 text-rose-950 border-rose-200 hover:bg-rose-100 hover:border-rose-300',
@@ -887,10 +889,10 @@ const MainLayout = () => {
                 ].map((h) => {
                   const isHubActive = 
                     String(hubId) === String(h.hubId) ||
-                    (h.hubId === 1 && ['read_explore', 'explore', 'new_words', 'hub1', '1'].includes(tabKey)) ||
-                    (h.hubId === 2 && ['grammar', 'logic_lab', 'word_match', 'game_hub', 'hub2', '2'].includes(tabKey)) ||
-                    (h.hubId === 3 && ['writing', 'dictation', 'hub3', '3'].includes(tabKey)) ||
-                    (h.hubId === 4 && ['shadowing', 'ask_ai', 'mindmap_speaking', 'hub4', '4'].includes(tabKey));
+                    (h.hubId === 1 && ['story', 'read_explore', 'explore', 'new_words', 'hub1', '1'].includes(tabKey)) ||
+                    (h.hubId === 2 && ['arena', 'grammar', 'logic_lab', 'word_match', 'game_hub', 'hub2', '2'].includes(tabKey)) ||
+                    (h.hubId === 3 && ['create', 'writing', 'dictation', 'hub3', '3'].includes(tabKey)) ||
+                    (h.hubId === 4 && ['boss', 'shadowing', 'ask_ai', 'mindmap_speaking', 'hub4', '4'].includes(tabKey));
 
                   return (
                     <Link
@@ -948,15 +950,15 @@ const MainLayout = () => {
                           className="flex-shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-[26px] border-2 border-dashed border-slate-200 text-slate-400 hover:border-indigo-300 hover:text-indigo-500 transition-all bg-white"
                           title={`Xem thêm ${rest.length + review.length} tính năng`}
                         >
-                          <span className="text-base">+{rest.length + review.length}</span>
-                          <span className="text-[7px] font-black uppercase tracking-tighter mt-0.5">Thêm</span>
+                          <span className="text-lg leading-none">›</span>
+                          <span className="text-[7px] font-black uppercase tracking-tighter mt-0.5">Thêm ({rest.length + review.length})</span>
                         </button>
                       )}
                       {showAll && (
                         <button
                           onClick={handleCollapse}
-                          className="flex-shrink-0 flex flex-col items-center justify-center w-12 h-16 rounded-[26px] border-2 border-dashed border-slate-200 text-slate-300 hover:border-slate-400 hover:text-slate-500 transition-all bg-white"
-                          title="Thu gọn"
+                          className="flex-shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-[26px] border-2 border-dashed border-slate-200 text-slate-400 hover:border-indigo-300 hover:text-indigo-500 transition-all bg-white"
+                          title="Thu gọn danh sách tính năng"
                         >
                           <span className="text-lg leading-none">‹</span>
                           <span className="text-[7px] font-black uppercase tracking-tighter mt-0.5">Thu gọn</span>
@@ -977,39 +979,26 @@ const MainLayout = () => {
                 </div>
               )}
 
-              {/* Week 33+ Gold Standard 4-Hub Router vs Legacy Modules */}
+              {/* Week 33+ Gold Standard 4-Zone Experiential Router vs Legacy Modules */}
               {weekId >= 33 ? (
                 (() => {
                   const tk = String(tabKey || '');
-                  if (['hub1', '1', 'read_explore', 'explore', 'new_words'].includes(tk)) {
-                    return <WorldDiscoveryHub data={weekData?.readingHub || weekData?.stations?.read_explore} weekNumber={weekId} />;
+                  const mappedZones = mapDataToZones(weekData, weekId);
+
+                  if (['story', 'hub1', '1', 'read_explore', 'explore', 'new_words'].includes(tk)) {
+                    return <StoryWorldZone data={mappedZones} weekNumber={weekId} />;
                   }
-                  if (['hub2', '2', 'grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tk)) {
-                    return <ArenaHub data={weekData?.listeningHub} weekNumber={weekId} />;
+                  if (['arena', 'hub2', '2', 'grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tk)) {
+                    return <BattleArenaZone data={mappedZones} weekNumber={weekId} />;
                   }
-                  if (['hub3', '3', 'writing', 'dictation'].includes(tk)) {
-                    return <WritingStudioHub data={weekData?.writingHub} weekNumber={weekId} />;
+                  if (['create', 'hub3', '3', 'writing', 'dictation'].includes(tk)) {
+                    return <CreatorStudioZone data={mappedZones} weekNumber={weekId} />;
                   }
-                  if (['hub4', '4', 'shadowing', 'ask_ai', 'mindmap_speaking'].includes(tk)) {
-                    return <NovaTalkShowHub data={weekData?.speakingHub} weekNumber={weekId} />;
+                  if (['boss', 'hub4', '4', 'shadowing', 'ask_ai', 'mindmap_speaking'].includes(tk)) {
+                    return <BossBattleZone data={mappedZones} weekNumber={weekId} />;
                   }
 
-                  return (
-                    <CurrentModule 
-                      key={`${weekId}-${tabKey}-${learningMode}`} 
-                      data={matchData} 
-                      themeColor={currentStation.color} 
-                      isVi={isVi} 
-                      onToggleLang={() => setIsVi(!isVi)} 
-                      onReportProgress={handleReportProgress} 
-                      currentProgress={weekProgress[tabKey] || 0}
-                      weekNumber={weekId}
-                      mode={learningMode}
-                      reviewItems={reviewItems}
-                      setReviewItems={setReviewItems}
-                      onWeekComplete={handleWeekComplete}
-                    />
-                  );
+                  return <StoryWorldZone data={mappedZones} weekNumber={weekId} />;
                 })()
               ) : (
                 <CurrentModule 
