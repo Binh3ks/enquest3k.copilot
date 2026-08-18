@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <rect x="20" y="15" width="160" height="24" rx="12" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5" />
+  <text x="100" y="31" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="800" fill="#065f46" text-anchor="middle">PART-WHOLE MODEL</text>
+
+  <!-- Total Top Bracket -->
+  <path d="M 50 70 L 50 55 L 250 55 L 250 45 L 250 55 L 450 55 L 450 70" fill="none" stroke="#334155" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="250" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#0f172a" text-anchor="middle">Total Bandages: 25</text>
+
+  <!-- Bar 1: Used (8) -->
+  <g filter="url(#shadow2)">
+    <rect x="50" y="75" width="130" height="55" rx="8" fill="url(#roseGrad)" stroke="#9f1239" stroke-width="2" />
+    <text x="115" y="102" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">Used</text>
+    <text x="115" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffe4e6" text-anchor="middle">8 bandages</text>
+  </g>
+
+  <!-- Bar 2: Remaining (? bandages) -->
+  <g filter="url(#shadow2)">
+    <rect x="180" y="75" width="270" height="55" rx="8" fill="url(#emeraldGrad)" stroke="#065f46" stroke-width="2" />
+    <text x="315" y="102" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">Remaining Bandages</text>
+    <text x="315" y="122" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#ecfdf5" text-anchor="middle">? bandages</text>
+  </g>
+
+  <text x="315" y="175" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">Formula: 25 - 8 = ?</text>
+</svg>

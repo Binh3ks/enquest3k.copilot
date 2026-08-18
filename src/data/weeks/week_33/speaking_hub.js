@@ -58,15 +58,19 @@ export const speakingHubData = {
     ]
   },
 
-  // Cambridge AI Debate Arena (Critical Thinking & Spoken Argumentation)
+  // Cambridge AI Debate Arena (A2 Flyers Critical Thinking & Spoken Argumentation)
   debate_topics: [
     {
       id: "debate_w33_01",
-      topic_title: "School Corridors: Free Running or Strict Walking?",
-      nova_statement: "I believe students should be allowed to run freely in school corridors because rushing helps everyone get to science class on time and burns excess energy!",
-      expected_counter_points: ["Slippery floors cause dangerous accidents", "Running bumps into smaller students", "Walking calmly prevents injuries"],
-      suggested_discourse_markers: ["I disagree with Nova because...", "In my opinion, safety is more important...", "For example, running on wet tiles causes slips..."],
-      sample_rebuttal: "I disagree with Nova because running fast on polished floors creates low friction. When students rush, they lose balance and hurt themselves or others."
+      topic_title: "School Corridors: Running vs Walking",
+      nova_statement: "I think running in the corridor is fun! It is a great way to get to the playground quickly and play with friends.",
+      expected_counter_points: ["Running on wet floors causes dangerous slips", "You can bump into friends or teachers", "Walking calmly keeps everyone safe"],
+      suggested_discourse_markers: [
+        "I disagree with Nova because...",
+        "In my opinion, running inside is...",
+        "For example, if you run on a wet floor, you can..."
+      ],
+      sample_rebuttal: "I disagree with Nova because running inside is dangerous. If the floor is wet, you can slip, fall down, and hurt your knee."
     }
   ]
 };

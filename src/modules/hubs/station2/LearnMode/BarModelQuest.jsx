@@ -92,31 +92,45 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState(null);
   const [showHint, setShowHint] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
 
-  const questionsList = customQuestions || WEEK33_BAR_QUESTIONS;
+  const questionsList = customQuestions && customQuestions.length > 0 ? customQuestions : WEEK33_BAR_QUESTIONS;
   const currentQ = questionsList[questionIndex] || questionsList[0];
+
+  const title = currentQ.title || `Problem ${questionIndex + 1}: Singapore Bar Model Quest`;
+  const problemText = currentQ.problemText || currentQ.text || currentQ.question || '';
+  const rawTargetAnswer = currentQ.correctAnswer !== undefined ? currentQ.correctAnswer : currentQ.answer;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userInput.trim()) return;
 
-    const evalRes = evaluateBarModelAnswer(userInput, currentQ.correctAnswer);
+    // Numerical evaluation & flexible unit matching
+    let isCorrect = false;
+    let errorMsg = 'Incorrect. Check your math and try again!';
 
-    if (evalRes.isInvalidFormat) {
-      setFeedback({ isCorrect: false, text: evalRes.errorMsg });
-      return;
+    const cleanInput = userInput.trim().toLowerCase();
+    const cleanTarget = String(rawTargetAnswer).trim().toLowerCase();
+
+    // Extract numbers
+    const inputNum = parseFloat(cleanInput.replace(/[^0-9.-]/g, ''));
+    const targetNum = parseFloat(cleanTarget.replace(/[^0-9.-]/g, ''));
+
+    if (!isNaN(inputNum) && !isNaN(targetNum) && Math.abs(inputNum - targetNum) < 0.001) {
+      isCorrect = true;
+    } else if (cleanInput === cleanTarget) {
+      isCorrect = true;
     }
 
-    const isCorrect = evalRes.isCorrect;
     const resultText = isCorrect
-      ? '100% Correct! You solved the Singapore Bar Model correctly!'
-      : evalRes.errorMsg || 'Incorrect. Check your math and try again!';
+      ? '🎉 100% Correct! You solved the Singapore Bar Model correctly!'
+      : `❌ Incorrect. Look closely at the bar model and try again!`;
 
     setFeedback({ isCorrect, text: resultText });
 
     await learnerProgressService.logAttempt({
       learnerId,
-      contentId: currentQ.id,
+      contentId: currentQ.id || `bar_model_${questionIndex + 1}`,
       mode: 'learn',
       result: isCorrect ? 'correct' : 'incorrect',
       score: isCorrect ? 100 : 0,
@@ -127,8 +141,6 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
       onAttemptResult(isCorrect, 'singapore_math_bar');
     }
   };
-
-  const [isCompleted, setIsCompleted] = useState(false);
 
   const handleNext = () => {
     setUserInput('');
@@ -156,7 +168,7 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md text-slate-900 font-sans">
       <CompletionModal
         isOpen={isCompleted}
-        onClose={() => {}}
+        onClose={() => setIsCompleted(false)}
         score={100}
         stars={3}
         xpEarned={50}
@@ -168,7 +180,7 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
           <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
             STATION 2 — SINGAPORE BAR MODEL QUEST
           </span>
-          <h3 className="text-lg font-black text-slate-900 mt-0.5">{currentQ.title}</h3>
+          <h3 className="text-lg font-black text-slate-900 mt-0.5">{title}</h3>
         </div>
         <div className="flex items-center gap-2">
           {isCompleted && (
@@ -187,12 +199,28 @@ export function BarModelQuest({ customQuestions, onAttemptResult }) {
 
       {/* Problem Statement Card */}
       <div className="p-4 bg-indigo-50/70 rounded-2xl border border-indigo-100 mb-6 shadow-sm">
-        <p className="text-sm font-bold text-indigo-950 leading-relaxed">{renderParsedText(currentQ.problemText, 'indigo')}</p>
+        <p className="text-sm sm:text-base font-bold text-indigo-950 leading-relaxed">
+          {renderParsedText(problemText, 'indigo')}
+        </p>
       </div>
 
-      {/* Bar Model SVG Rendering Component */}
-      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 mb-6 flex justify-center shadow-inner">
-        <BarModelSVG modelData={currentQ.modelData} />
+      {/* Bar Model Visual Rendering Component (Supports SVG URL or dynamic SVG component) */}
+      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 mb-6 flex justify-center items-center shadow-inner min-h-[160px]">
+        {currentQ.svg_url ? (
+          <img
+            src={currentQ.svg_url}
+            alt={title}
+            className="max-h-56 max-w-full object-contain rounded-xl drop-shadow-sm"
+            onError={(e) => {
+              // Fallback to dynamic SVG if file is missing
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        ) : currentQ.modelData ? (
+          <BarModelSVG modelData={currentQ.modelData} />
+        ) : (
+          <div className="text-xs text-slate-400 font-medium">Bar model diagram loading...</div>
+        )}
       </div>
 
       {/* Answer Form */}

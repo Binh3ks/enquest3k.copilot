@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Volume2, Sparkles, CheckCircle2, AlertCircle, BookOpen, Send, Lightbulb, Check, Languages, Trophy, ArrowRight, HelpCircle } from 'lucide-react';
+import { Globe, Volume2, Sparkles, CheckCircle2, AlertCircle, BookOpen, Send, Lightbulb, Check, Languages, Trophy, ArrowRight, HelpCircle, XCircle } from 'lucide-react';
 import { renderParsedText } from '../common/HoverWord';
 import VoiceService from '../../services/voiceService';
 import { useUserStore } from '../../stores/useUserStore';
@@ -7,7 +7,7 @@ import { useUserStore } from '../../stores/useUserStore';
 export default function CLILExplorer({
   clilData,
   weekNumber = 33,
-  highlightMode = 'vocab', // DEFAULT IS NOW VOCAB FOCUS (MANDATORY PEDAGOGICAL STANDARD)
+  highlightMode = 'vocab', // DEFAULT IS VOCAB FOCUS (MANDATORY ZERO-L1 IMMERSION)
   setHighlightMode,
   targetGrammarRegex = []
 }) {
@@ -22,48 +22,93 @@ export default function CLILExplorer({
   const [translationResults, setTranslationResults] = useState({});
   const [activeSentenceAudio, setActiveSentenceAudio] = useState(null);
 
-  const sentencesList = clilData?.translation_sentences || [
+  // ── STRICT PEDAGOGICAL TRANSLATION SENTENCES & KEYWORD GROUPS ──
+  const sentencesList = [
     {
       id: 1,
       en: "Why do we fall on wet floors?",
-      target_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt?",
-      keywords: ["tại sao", "ngã", "sàn", "ướt"]
+      hintConcepts: "why, fall, wet, floor",
+      requiredGroups: [
+        { name: "why", synonyms: ["tại sao", "vì sao", "sao"] },
+        { name: "fall", synonyms: ["ngã", "té", "trượt ngã", "bị ngã"] },
+        { name: "wet", synonyms: ["ướt"] },
+        { name: "floor", synonyms: ["sàn", "nền", "sàn nhà"] }
+      ],
+      minMatch: 3
     },
     {
       id: 2,
       en: "The answer is a science concept called Friction.",
-      target_vi: "Câu trả lời là một khái niệm khoa học mang tên Lực Ma Sát.",
-      keywords: ["câu trả lời", "khoa học", "ma sát"]
+      hintConcepts: "answer, science, friction",
+      requiredGroups: [
+        { name: "answer", synonyms: ["câu trả lời", "đáp án", "lời giải"] },
+        { name: "science", synonyms: ["khoa học"] },
+        { name: "friction", synonyms: ["ma sát", "lực ma sát"] }
+      ],
+      minMatch: 3
     },
     {
       id: 3,
       en: "Friction is a force that stops things from sliding.",
-      target_vi: "Lực ma sát là một lực ngăn cản các vật trượt đi.",
-      keywords: ["ma sát", "lực", "ngăn", "trượt"]
+      hintConcepts: "friction, force, stops, sliding",
+      requiredGroups: [
+        { name: "friction", synonyms: ["ma sát", "lực ma sát"] },
+        { name: "force", synonyms: ["lực"] },
+        { name: "stops", synonyms: ["ngăn", "ngăn cản", "chặn", "cản", "dừng", "giữ"] },
+        { name: "sliding", synonyms: ["trượt", "trượt đi", "trượt ngã"] }
+      ],
+      minMatch: 3
     },
     {
       id: 4,
       en: "While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor.",
-      target_vi: "Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô.",
-      keywords: ["trong khi", "đi bộ", "hành lang", "giày", "cao su", "ma sát", "sàn", "khô"]
+      hintConcepts: "walking, corridor, rubber shoes, high friction, dry floor",
+      requiredGroups: [
+        { name: "walking", synonyms: ["đi bộ", "bước đi", "đi"] },
+        { name: "corridor", synonyms: ["hành lang"] },
+        { name: "rubber shoes", synonyms: ["cao su", "giày cao su", "đế cao su"] },
+        { name: "high friction", synonyms: ["ma sát", "lực ma sát"] },
+        { name: "dry floor", synonyms: ["sàn khô", "sàn", "nền"] }
+      ],
+      minMatch: 4
     },
     {
       id: 5,
       en: "This kept him safe. But water changes everything! Water acts like a lubricant.",
-      target_vi: "Điều này giúp cậu ấy an toàn. Nhưng nước làm thay đổi tất cả! Nước đóng vai trò như một chất bôi trơn.",
-      keywords: ["an toàn", "nước", "thay đổi", "bôi trơn"]
+      hintConcepts: "safe, water, changes, lubricant",
+      requiredGroups: [
+        { name: "safe", synonyms: ["an toàn"] },
+        { name: "water", synonyms: ["nước"] },
+        { name: "changes", synonyms: ["thay đổi"] },
+        { name: "lubricant", synonyms: ["bôi trơn", "chất bôi trơn"] }
+      ],
+      minMatch: 3
     },
     {
       id: 6,
       en: "While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!",
-      target_vi: "Trong khi Tom đang chạy nhanh, giày của cậu ấy chạm vào vũng nước ướt. Lớp nước đã làm giảm lực ma sát xuống bằng không!",
-      keywords: ["trong khi", "chạy", "vũng nước", "giảm", "ma sát", "không"]
+      hintConcepts: "running, puddle, reduced, friction, zero",
+      requiredGroups: [
+        { name: "running", synonyms: ["chạy", "chạy nhanh"] },
+        { name: "puddle", synonyms: ["vũng nước", "vũng", "vũng nước ướt"] },
+        { name: "reduced", synonyms: ["giảm", "làm giảm"] },
+        { name: "friction", synonyms: ["ma sát", "lực ma sát"] },
+        { name: "zero", synonyms: ["không", "số không", "bằng không", "0"] }
+      ],
+      minMatch: 4
     },
     {
       id: 7,
       en: "While the school nurse was applying the clean bandage, she explained that we must always look for the yellow warning sign. To stay safe, walk carefully and let friction do its job!",
-      target_vi: "Trong khi cô y tá đang băng bó vết thương sạch sẽ, cô giải thích rằng chúng ta phải luôn chú ý đến biển báo cảnh báo màu vàng. Để giữ an toàn, hãy đi bộ cẩn thận và để lực ma sát làm đúng nhiệm vụ của nó!",
-      keywords: ["trong khi", "y tá", "băng", "giải thích", "biển báo", "vàng", "an toàn", "cẩn thận", "ma sát"]
+      hintConcepts: "nurse, bandage, warning sign, yellow, carefully",
+      requiredGroups: [
+        { name: "nurse", synonyms: ["y tế", "y tá", "cô y tá"] },
+        { name: "bandage", synonyms: ["băng", "băng bó", "băng gạc", "băng cá nhân"] },
+        { name: "warning sign", synonyms: ["biển báo", "cảnh báo"] },
+        { name: "yellow", synonyms: ["vàng", "màu vàng"] },
+        { name: "carefully", synonyms: ["cẩn thận", "an toàn", "ma sát"] }
+      ],
+      minMatch: 4
     }
   ];
 
@@ -120,22 +165,34 @@ export default function CLILExplorer({
     }
   };
 
+  // ── STRICT TRANSLATION VALIDATION ENGINE (NO FAKE SCORING) ──
   const handleCheckTranslation = (sent) => {
     const userInput = (translationInputs[sent.id] || '').trim().toLowerCase();
     if (!userInput) return;
 
-    // Check keyword coverage
-    const matchedKeywords = sent.keywords.filter(k => userInput.includes(k.toLowerCase()));
-    const matchRatio = matchedKeywords.length / sent.keywords.length;
-    const isPass = matchRatio >= 0.4 || userInput.length >= 15;
+    // Evaluate how many required concept groups were matched
+    const matchedGroupNames = [];
+    const missingGroupNames = [];
+
+    sent.requiredGroups.forEach(group => {
+      const hasMatch = group.synonyms.some(syn => userInput.includes(syn.toLowerCase()));
+      if (hasMatch) {
+        matchedGroupNames.push(group.name);
+      } else {
+        missingGroupNames.push(group.name);
+      }
+    });
+
+    const isPass = matchedGroupNames.length >= sent.minMatch;
 
     setTranslationResults(prev => ({
       ...prev,
       [sent.id]: {
         isSubmitted: true,
         isPass,
-        matchRatio: Math.round(matchRatio * 100),
-        sampleAnswer: sent.target_vi
+        matchedCount: matchedGroupNames.length,
+        totalRequired: sent.minMatch,
+        missingConcepts: missingGroupNames.slice(0, 2).join(', ')
       }
     }));
 
@@ -154,7 +211,7 @@ export default function CLILExplorer({
 
   return (
     <div className="w-full space-y-6 font-sans">
-      {/* Header Banner */}
+      {/* Header Banner (100% English Immersion) */}
       <div className="p-5 bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-3xl text-white shadow-lg border border-blue-800/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
@@ -166,9 +223,7 @@ export default function CLILExplorer({
           <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
             {clilData.title_en}
           </h2>
-          {clilData.title_vi && (
-            <p className="text-xs text-blue-200 font-medium italic">{clilData.title_vi}</p>
-          )}
+          <p className="text-xs text-blue-200 font-medium">Cambridge A2 Flyers — Science & Forces</p>
         </div>
 
         <div className="flex items-center gap-2 self-start md:self-center shrink-0">
@@ -242,22 +297,22 @@ export default function CLILExplorer({
         </div>
       </div>
 
-      {/* 2. TRANSLATION CHALLENGE SECTION (REPLACED STATIC TRANSLATION) */}
+      {/* 2. TRANSLATION CHALLENGE (STRICT SCORING — ZERO-L1 LEAK) */}
       <div className="bg-gradient-to-br from-indigo-50/70 to-blue-50/50 rounded-3xl p-6 sm:p-7 border border-indigo-200 shadow-sm space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2.5">
             <Languages className="text-indigo-600" size={22} />
             <div>
               <h3 className="text-base font-black text-indigo-950">
-                CLIL Sentence Translation Challenge (Thử Thách Dịch Câu)
+                CLIL Sentence Translation Challenge
               </h3>
               <p className="text-xs text-indigo-700 font-medium">
-                Tự tay dịch từng câu tiếng Anh sang tiếng Việt để khắc sâu kiến thức vật lý. Thưởng +10 XP mỗi câu!
+                Translate each science sentence into Vietnamese. Earn +10 XP for every accurate translation!
               </p>
             </div>
           </div>
           <span className="px-3 py-1 bg-indigo-100 text-indigo-900 font-mono text-xs font-black rounded-xl">
-            {Object.keys(translationResults).length} / {sentencesList.length} Completed
+            {Object.values(translationResults).filter(r => r.isPass).length} / {sentencesList.length} Solved
           </span>
         </div>
 
@@ -290,33 +345,47 @@ export default function CLILExplorer({
                   <textarea
                     rows={2}
                     value={inputVal}
-                    onChange={(e) => setTranslationInputs({ ...translationInputs, [sent.id]: e.target.value })}
-                    disabled={res?.isSubmitted}
-                    placeholder="Gõ bản dịch tiếng Việt của câu này vào đây..."
+                    onChange={(e) => {
+                      setTranslationInputs({ ...translationInputs, [sent.id]: e.target.value });
+                      // Clear failure state when user retypes
+                      if (res && !res.isPass) {
+                        setTranslationResults({ ...translationResults, [sent.id]: null });
+                      }
+                    }}
+                    disabled={res?.isPass}
+                    placeholder="Type your Vietnamese translation here..."
                     className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:bg-slate-100"
                   />
 
                   <div className="flex items-center justify-between">
                     <button
                       onClick={() => handleCheckTranslation(sent)}
-                      disabled={!inputVal.trim() || res?.isSubmitted}
-                      className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-black text-xs rounded-xl shadow-sm transition flex items-center gap-1.5 active:scale-95"
+                      disabled={!inputVal.trim() || res?.isPass}
+                      className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-black text-xs rounded-xl shadow-sm transition flex items-center gap-1.5 active:scale-95"
                     >
-                      <Check size={14} /> {res?.isSubmitted ? 'Đã kiểm tra' : 'Kiểm tra bản dịch (+10 XP)'}
+                      <Check size={14} /> {res?.isPass ? 'Solved (+10 XP)' : 'Check Translation (+10 XP)'}
                     </button>
                   </div>
                 </div>
 
-                {/* Feedback Box & Sample Answer */}
+                {/* Strict Feedback (NO PRE-PRINTED L1 ANSWER) */}
                 {res && (
-                  <div className="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs space-y-1.5 animate-in fade-in">
-                    <div className="flex items-center gap-1.5 font-bold text-emerald-900">
-                      <CheckCircle2 size={15} className="text-emerald-600" />
-                      <span>{res.isPass ? "🎉 Rất xuất sắc! (+10 XP)" : "👍 Tốt lắm! Hãy đối chiếu với bản dịch chuẩn:"}</span>
-                    </div>
-                    <div className="text-slate-700 font-medium">
-                      <span className="font-bold text-slate-900">🇻🇳 Bản dịch chuẩn:</span> {res.sampleAnswer}
-                    </div>
+                  <div className={`p-3.5 rounded-xl border text-xs space-y-1.5 animate-in fade-in ${
+                    res.isPass ? 'bg-emerald-50 border-emerald-200 text-emerald-950' : 'bg-rose-50 border-rose-200 text-rose-950'
+                  }`}>
+                    {res.isPass ? (
+                      <div className="flex items-center gap-2 font-bold text-emerald-800">
+                        <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                        <span>Great translation! You accurately captured all science concepts (+10 XP awarded).</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 font-bold text-rose-800">
+                        <XCircle size={16} className="text-rose-600 shrink-0" />
+                        <span>
+                          Try again! Make sure your translation includes key concepts like <strong>'{sent.hintConcepts}'</strong> correctly.
+                        </span>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -325,13 +394,13 @@ export default function CLILExplorer({
         </div>
       </div>
 
-      {/* Bloom's Comprehension Questions */}
+      {/* 3. COMPREHENSION CHECK (100% ZERO-L1 OPTIONS) */}
       {clilData.check_questions && clilData.check_questions.length > 0 && (
         <div className="bg-gradient-to-br from-slate-50 to-blue-50/40 rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center gap-2">
             <BookOpen className="text-blue-600" size={20} />
             <h3 className="text-base font-black text-slate-900">
-              Comprehension Check (Kiểm tra đọc hiểu Bloom's)
+              Comprehension Check (Bloom's Taxonomy)
             </h3>
           </div>
 
@@ -398,14 +467,14 @@ export default function CLILExplorer({
         </div>
       )}
 
-      {/* Critical Thinking Challenge (Updated Prompt) */}
+      {/* 4. CRITICAL THINKING CHALLENGE (100% ZERO-L1) */}
       {clilData.critical_thinking && (
         <div className="bg-gradient-to-r from-amber-50 to-orange-50/60 rounded-3xl p-6 border border-amber-200 shadow-sm space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Sparkles className="text-amber-600" size={20} />
               <h3 className="text-base font-black text-amber-950">
-                💡 Critical Thinking Challenge (Tư duy phản biện)
+                💡 Critical Thinking Challenge
               </h3>
             </div>
             <button

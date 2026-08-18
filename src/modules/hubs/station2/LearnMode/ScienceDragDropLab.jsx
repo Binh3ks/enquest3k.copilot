@@ -237,6 +237,27 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
           })}
         </div>
 
+        {/* Micro-Explanation Cause-and-Effect Banner (Directly Below Image) */}
+        {activeExplanation && (
+          <div className="p-4 bg-emerald-50 rounded-2xl border-2 border-emerald-400 text-xs sm:text-sm font-bold text-emerald-950 flex items-start gap-3 shadow-md animate-in fade-in slide-in-from-top-2">
+            <Lightbulb size={20} className="text-amber-500 shrink-0 mt-0.5" />
+            <div>
+              <span className="font-black uppercase tracking-wider text-emerald-800 block mb-0.5">
+                ⚡ CAUSE & EFFECT SCIENCE CONCEPT:
+              </span>
+              {activeExplanation}
+            </div>
+          </div>
+        )}
+
+        {feedback && !activeExplanation && (
+          <div className={`p-3.5 rounded-2xl text-xs sm:text-sm font-bold transition-all shadow-sm ${
+            feedback.type === 'success' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-rose-100 text-rose-900 border border-rose-300'
+          }`}>
+            {feedback.text}
+          </div>
+        )}
+
         {/* Draggable Labels Bank */}
         <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200">
           <div className="text-xs font-black text-slate-700 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
@@ -258,25 +279,6 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
           </div>
         </div>
       </DndContext>
-
-      {/* Micro-Explanation Cause-and-Effect Banner */}
-      {activeExplanation && (
-        <div className="p-4 bg-emerald-50 rounded-2xl border-2 border-emerald-300 text-xs font-bold text-emerald-950 flex items-start gap-2.5 shadow-sm animate-in fade-in slide-in-from-top-2">
-          <Lightbulb size={18} className="text-amber-500 shrink-0 mt-0.5" />
-          <div>
-            <span className="font-black uppercase tracking-wider text-emerald-800 block mb-0.5">Cause & Effect Science Concept:</span>
-            {activeExplanation}
-          </div>
-        </div>
-      )}
-
-      {feedback && !activeExplanation && (
-        <div className={`p-3 rounded-xl text-xs font-bold transition-all ${
-          feedback.type === 'success' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-rose-100 text-rose-900 border border-rose-300'
-        }`}>
-          {feedback.text}
-        </div>
-      )}
     </div>
   );
 }

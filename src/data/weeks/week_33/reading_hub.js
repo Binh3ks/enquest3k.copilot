@@ -25,8 +25,8 @@ export const readingHubData = {
       {
         id: 1,
         question_en: "What is the science force that stops objects from sliding?",
-        options: ["Friction (Lực ma sát)", "Gravity (Trọng lực)", "Magnetism (Từ tính)"],
-        answer: "Friction (Lực ma sát)"
+        options: ["Friction", "Gravity", "Magnetism"],
+        answer: "Friction"
       },
       {
         id: 2,
