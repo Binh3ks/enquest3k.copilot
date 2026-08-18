@@ -214,19 +214,41 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
   const refreshData = async () => {
     setLoading(true);
     try {
-      const [prRes, avRes, usersRes] = await Promise.all([
+      const [prRes, avRes, usersRes] = await Promise.allSettled([
         paymentAPI.getRequests(),
         fetchGlobalAvatars(),
         getAllUsers(),
       ]);
-      setRequests(prRes.data || []);
-      setAvatars(avRes.data.map(r => ({ id: String(r.id), url: r.url })));
-      setAllUsers(usersRes.data);
-      try { const h = await adminHierarchy(); setHierarchy(h.data || []); } catch { /* non-fatal */ }
+
+      if (prRes.status === 'fulfilled' && prRes.value?.data) {
+        setRequests(prRes.value.data);
+      }
+      if (avRes.status === 'fulfilled' && avRes.value?.data) {
+        setAvatars(avRes.value.data.map(r => ({ id: String(r.id), url: r.url })));
+      }
+      if (usersRes.status === 'fulfilled' && usersRes.value?.data) {
+        setAllUsers(usersRes.value.data);
+      } else {
+        const fallback = await getAllUsers();
+        if (fallback?.data) setAllUsers(fallback.data);
+      }
+
+      try {
+        const h = await adminHierarchy();
+        if (h?.data) setHierarchy(h.data);
+      } catch { /* non-fatal */ }
+
       const sysConfig = localStorage.getItem('engquest_sys_config');
-      if (sysConfig) { const p = JSON.parse(sysConfig); setIsPaidMode(p.isPaidMode); setShowUpgradeBtn(p.showUpgradeBtn); }
-    } catch (e) { console.error('Admin refresh failed:', e); }
-    finally { setLoading(false); }
+      if (sysConfig) {
+        const p = JSON.parse(sysConfig);
+        setIsPaidMode(p.isPaidMode);
+        setShowUpgradeBtn(p.showUpgradeBtn);
+      }
+    } catch (e) {
+      console.error('Admin refresh failed:', e);
+    } finally {
+      setLoading(false);
+    }
   };
 
   // When owner approves a billing request: call backend (auto-activates + marks approved in DB)
