@@ -4005,11 +4005,15 @@ const TeacherPanel = ({ isOpen, onClose }) => {
     setActiveTab('students');
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="bg-gray-900 w-[96vw] h-[92vh] max-w-6xl rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-700">
+    <div 
+      className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-gray-900 w-[96vw] h-[92vh] max-w-6xl rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-700"
+        onClick={e => e.stopPropagation()}
+      >
 
         {/* Header */}
         <div className="bg-gradient-to-r from-indigo-700 to-purple-700 px-6 py-4 flex items-center justify-between shrink-0">
