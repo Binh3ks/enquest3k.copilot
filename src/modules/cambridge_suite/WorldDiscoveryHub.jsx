@@ -356,57 +356,64 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
       )}
 
       {activeTab === 'webtoon' ? (
-        /* LEARN MODE: CAMBRIDGE READING & WRITING SUITE SUB-TABS */
         <div className="space-y-6">
-          <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 p-1.5 bg-blue-50/60 rounded-2xl border border-blue-200">
-            <button
-              onClick={() => setLearnSubTab('clil_explorer')}
-              className={`flex-1 min-w-[140px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-                learnSubTab === 'clil_explorer' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
-              }`}
-            >
-              <Globe size={14} className={learnSubTab === 'clil_explorer' ? 'text-amber-300' : 'text-blue-600'} /> 🌍 Knowledge Explorer
-            </button>
-            <button
-              onClick={() => setLearnSubTab('webtoon')}
-              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-                learnSubTab === 'webtoon' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
-              }`}
-            >
-              📖 Story Time
-            </button>
-            <button
-              onClick={() => setLearnSubTab('rw_part1')}
-              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-                learnSubTab === 'rw_part1' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
-              }`}
-            >
-              🧩 Word Match
-            </button>
-            <button
-              onClick={() => setLearnSubTab('rw_part2')}
-              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-                learnSubTab === 'rw_part2' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
-              }`}
-            >
-              💬 Chat Box
-            </button>
-            <button
-              onClick={() => setLearnSubTab('rw_part4')}
-              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-                learnSubTab === 'rw_part4' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
-              }`}
-            >
-              📝 Fill the Blanks
-            </button>
-            <button
-              onClick={() => setLearnSubTab('rw_part5')}
-              className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-                learnSubTab === 'rw_part5' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-100'
-              }`}
-            >
-              🕵️ Story Detective
-            </button>
+          <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 w-full">
+              <button
+                type="button"
+                onClick={() => setLearnSubTab('clil_explorer')}
+                className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                  learnSubTab === 'clil_explorer' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-50'
+                }`}
+              >
+                <Globe size={14} className={learnSubTab === 'clil_explorer' ? 'text-amber-300' : 'text-blue-600'} /> Explorer
+              </button>
+              <button
+                type="button"
+                onClick={() => setLearnSubTab('webtoon')}
+                className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                  learnSubTab === 'webtoon' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-50'
+                }`}
+              >
+                📖 Story Time
+              </button>
+              <button
+                type="button"
+                onClick={() => setLearnSubTab('rw_part1')}
+                className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                  learnSubTab === 'rw_part1' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-50'
+                }`}
+              >
+                🧩 Word Match
+              </button>
+              <button
+                type="button"
+                onClick={() => setLearnSubTab('rw_part2')}
+                className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                  learnSubTab === 'rw_part2' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-50'
+                }`}
+              >
+                💬 Chat Box
+              </button>
+              <button
+                type="button"
+                onClick={() => setLearnSubTab('rw_part4')}
+                className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                  learnSubTab === 'rw_part4' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-50'
+                }`}
+              >
+                📝 Fill Blanks
+              </button>
+              <button
+                type="button"
+                onClick={() => setLearnSubTab('rw_part5')}
+                className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                  learnSubTab === 'rw_part5' ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300' : 'bg-white text-blue-900 border border-blue-200 hover:bg-blue-50'
+                }`}
+              >
+                🕵️ Detective
+              </button>
+            </div>
           </div>
 
           {learnSubTab === 'clil_explorer' && (

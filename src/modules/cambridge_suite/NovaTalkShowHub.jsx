@@ -503,52 +503,58 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
           </span>
         </div>
       ) : (
-      <div className="flex items-center justify-between gap-4 mb-4 pb-2 border-b border-slate-100">
-        <div className="flex items-center justify-between sm:justify-evenly w-full flex-wrap gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+      <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 w-full">
           <button
+            type="button"
             onClick={() => setSubMode('podcast')}
-            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-              subMode === 'podcast' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              subMode === 'podcast' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-white text-slate-700 hover:bg-rose-50 border border-slate-200'
             }`}
           >
-            🎙️ Podcast Shadowing
+            🎙️ Podcast
           </button>
           <button
+            type="button"
             onClick={() => setSubMode('talkshow')}
-            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300' : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              subMode === 'talkshow' ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300' : 'bg-white text-slate-700 hover:bg-purple-50 border border-slate-200'
             }`}
           >
             💬 Personal Q&A
           </button>
           <button
+            type="button"
             onClick={() => setSubMode('cue_card')}
-            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-              subMode === 'cue_card' ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' : 'bg-white text-amber-900 border border-amber-300 hover:bg-amber-100'
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              subMode === 'cue_card' ? 'bg-amber-600 text-white shadow-md ring-2 ring-amber-300' : 'bg-white text-amber-900 border border-amber-300 hover:bg-amber-50'
             }`}
           >
             ❓ Ask & Answer
           </button>
           <button
+            type="button"
             onClick={handleSelectPicStorySubmode}
-            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-              (subMode === 'pic_story' || subMode === 'story_picture') ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300' : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-200'
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              (subMode === 'pic_story' || subMode === 'story_picture') ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300' : 'bg-white text-slate-700 hover:bg-indigo-50 border border-slate-200'
             }`}
           >
             🖼️ Picture Story
           </button>
           <button
+            type="button"
             onClick={() => setSubMode('find_diff')}
-            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-              subMode === 'find_diff' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-white text-rose-900 border border-rose-300 hover:bg-rose-100'
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              subMode === 'find_diff' ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300' : 'bg-white text-rose-900 border border-rose-300 hover:bg-rose-50'
             }`}
           >
-            🔍 Find Differences
+            🔍 Find Diff
           </button>
           <button
+            type="button"
             onClick={() => setSubMode('ai_debate')}
-            className={`flex-1 min-w-[120px] px-3.5 py-2.5 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 ${
-              subMode === 'ai_debate' ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md ring-2 ring-purple-300' : 'bg-white text-purple-900 border border-purple-300 hover:bg-purple-100'
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              subMode === 'ai_debate' ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md ring-2 ring-purple-300' : 'bg-white text-purple-900 border border-purple-300 hover:bg-purple-50'
             }`}
           >
             🎤 AI Debate
