@@ -12,6 +12,7 @@ import { SortableContext, horizontalListSortingStrategy, arrayMove } from '@dnd-
 import { WordBlock } from '../components/WordBlock';
 import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngine';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
+import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
 import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy } from 'lucide-react';
 import CompletionModal from '../../../../components/common/CompletionModal';
