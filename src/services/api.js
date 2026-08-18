@@ -318,23 +318,66 @@ export const deleteGlobalAvatarAPI = async (id) => {
   }
 };
 
-// PROGRESS ADMIN — for retrieval / audit / recovery (added Jun 9, 2026)
-export const dumpProgressAdmin = (params = {}) =>
-  apiClient.get('/admin/progress/dump', { params });
-export const progressStatsAdmin = () =>
-  apiClient.get('/admin/progress/stats');
+// TEACHER-STUDENT SYSTEM (with offline local storage fallback)
+const STORAGE_ASSIGNMENTS_KEY = 'engquest_teacher_assignments';
 
-// TEACHER-STUDENT SYSTEM
+function getLocalAssignments() {
+  try {
+    const raw = localStorage.getItem(STORAGE_ASSIGNMENTS_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (_) {}
+  return [];
+}
+
+function saveLocalAssignments(assignments) {
+  try {
+    localStorage.setItem(STORAGE_ASSIGNMENTS_KEY, JSON.stringify(assignments));
+  } catch (_) {}
+}
+
 export const teacherAPI = {
   // Assignments (admin only)
-  assignStudent: (teacherId, studentId, notes) =>
-    apiClient.post('/teacher/assign', { teacherId, studentId, notes }),
+  assignStudent: async (teacherId, studentId, notes) => {
+    try {
+      return await apiClient.post('/teacher/assign', { teacherId, studentId, notes });
+    } catch (_) {
+      const users = getLocalUsers();
+      const student = users.find(u => u.id === studentId);
+      const list = getLocalAssignments();
+      const updated = [
+        ...list.filter(a => a.student_id !== studentId),
+        {
+          assignment_id: Date.now(),
+          teacher_id: teacherId,
+          student_id: studentId,
+          student_name: student?.username || `User ${studentId}`,
+          student_username: student?.username || `User ${studentId}`,
+          created_at: new Date().toISOString()
+        }
+      ];
+      saveLocalAssignments(updated);
+      return { data: { success: true } };
+    }
+  },
   
-  unassignStudent: (studentId) =>
-    apiClient.delete(`/teacher/assign/${studentId}`),
+  unassignStudent: async (studentId) => {
+    try {
+      return await apiClient.delete(`/teacher/assign/${studentId}`);
+    } catch (_) {
+      const list = getLocalAssignments();
+      const updated = list.filter(a => a.student_id !== studentId);
+      saveLocalAssignments(updated);
+      return { data: { success: true } };
+    }
+  },
 
-  getAllAssignments: () =>
-    apiClient.get('/teacher/all-assignments'),
+  getAllAssignments: async () => {
+    try {
+      const res = await apiClient.get('/teacher/all-assignments');
+      if (res?.data && Array.isArray(res.data)) return res;
+    } catch (_) {}
+    return { data: getLocalAssignments() };
+  },
   
   // Teacher views
   getMyStudents: () =>

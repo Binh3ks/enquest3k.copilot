@@ -56,6 +56,40 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
   const [hierarchy, setHierarchy] = useState([]);
   const [avatars, setAvatars] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [userSearchTerm, setUserSearchTerm] = useState('');
+  const [userRoleFilter, setUserRoleFilter] = useState('all');
+
+  const sortedAndFilteredUsers = [...allUsers]
+    .sort((a, b) => {
+      // Super admin / owner ALWAYS comes first (Top 1)
+      const aIsOwner = a.username === 'owner' || a.role === 'super_admin';
+      const bIsOwner = b.username === 'owner' || b.role === 'super_admin';
+      if (aIsOwner && !bIsOwner) return -1;
+      if (!aIsOwner && bIsOwner) return 1;
+      const aIsAdmin = a.role === 'admin';
+      const bIsAdmin = b.role === 'admin';
+      if (aIsAdmin && !bIsAdmin) return -1;
+      if (!aIsAdmin && bIsAdmin) return 1;
+      return (new Date(b.created_at || 0)) - (new Date(a.created_at || 0));
+    })
+    .filter(u => {
+      if (userRoleFilter !== 'all') {
+        if (userRoleFilter === 'super_admin') {
+          if (u.role !== 'super_admin' && u.username !== 'owner') return false;
+        } else if (u.role !== userRoleFilter) {
+          return false;
+        }
+      }
+      if (!userSearchTerm.trim()) return true;
+      const term = userSearchTerm.toLowerCase();
+      return (
+        (u.username && u.username.toLowerCase().includes(term)) ||
+        (u.email && u.email.toLowerCase().includes(term)) ||
+        (u.real_email && u.real_email.toLowerCase().includes(term)) ||
+        (u.role && u.role.toLowerCase().includes(term)) ||
+        (u.plan && u.plan.toLowerCase().includes(term))
+      );
+    });
 
   // Push notification subscription state
   const [pushStatus, setPushStatus] = useState('unknown'); // 'unknown'|'granted'|'denied'|'subscribed'
@@ -604,13 +638,55 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                     )}
                   </div>
 
-                  {/* All Users Table */}
-                  <div>
-                    <h3 className="text-base font-black text-slate-800 mb-2">All Users — {allUsers.length} tài khoản</h3>
-                    <p className="text-xs text-slate-400 mb-3">
-                      Chọn <strong>Loại gói</strong> + <strong>Thời gian</strong> rồi bấm <strong>Kích hoạt</strong>.
-                      Kích hoạt luôn SET từ hôm nay (ghi đè hạn cũ). Tự động gia hạn qua Billing Requests khi user thanh toán.
-                    </p>
+                    {/* All Users Table Toolbar */}
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <div>
+                          <h3 className="text-base font-black text-slate-800">
+                            All Users — {allUsers.length} tài khoản {userSearchTerm && `(Tìm thấy ${sortedAndFilteredUsers.length})`}
+                          </h3>
+                          <p className="text-xs text-slate-400">
+                            Tài khoản <strong>owner / super_admin</strong> luôn được ghim ở đầu bảng (⭐). Chọn <strong>Loại gói</strong> + <strong>Thời gian</strong> rồi bấm <strong>Kích hoạt</strong>.
+                          </p>
+                        </div>
+
+                        {/* Search Input */}
+                        <div className="flex items-center gap-2 w-full sm:w-auto">
+                          <input
+                            type="text"
+                            value={userSearchTerm}
+                            onChange={e => setUserSearchTerm(e.target.value)}
+                            placeholder="🔍 Tìm username, email, role..."
+                            className="text-xs px-3 py-2 border border-slate-300 rounded-xl bg-white w-full sm:w-64 font-medium focus:ring-2 focus:ring-indigo-400 focus:outline-none shadow-sm"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Role Filter Tabs */}
+                      <div className="flex items-center gap-1.5 flex-wrap text-xs">
+                        {[
+                          { id: 'all', label: `Tất cả (${allUsers.length})` },
+                          { id: 'super_admin', label: `⭐ Owner (${allUsers.filter(u => u.role === 'super_admin' || u.username === 'owner').length})` },
+                          { id: 'teacher', label: `Giáo viên (${allUsers.filter(u => u.role === 'teacher').length})` },
+                          { id: 'student', label: `Học sinh (${allUsers.filter(u => u.role === 'student').length})` },
+                          { id: 'parent', label: `Phụ huynh (${allUsers.filter(u => u.role === 'parent').length})` },
+                          { id: 'team_leader', label: `Trưởng nhóm (${allUsers.filter(u => u.role === 'team_leader').length})` },
+                        ].map(rf => (
+                          <button
+                            key={rf.id}
+                            onClick={() => setUserRoleFilter(rf.id)}
+                            className={`px-3 py-1.5 rounded-lg font-bold transition ${
+                              userRoleFilter === rf.id
+                                ? 'bg-indigo-600 text-white shadow-sm'
+                                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                            }`}
+                          >
+                            {rf.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
                     <div className="border rounded-xl overflow-x-auto shadow-sm">
                       <table className="w-full text-sm">
                         <thead className="bg-slate-100 text-slate-500 text-[11px] uppercase">
@@ -624,19 +700,27 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                           </tr>
                         </thead>
                         <tbody>
-                          {allUsers.map((u) => {
+                          {sortedAndFilteredUsers.map((u) => {
                             const dl = daysLeft(u.plan_expires_at);
                             const tdl = daysLeft(u.trial_expires_at);
                             const isExpired = dl !== null && dl <= 0;
                             const isExpiringSoon = dl !== null && dl > 0 && dl <= 7;
+                            const isOwnerRow = u.username === 'owner' || u.role === 'super_admin';
                             const isTrial = u.plan !== 'premium_lifetime' && (!u.plan_expires_at || u.plan === 'free_trial');
                             const working = rowWorking[u.username];
                             return (
-                              <tr key={u.id} className={`border-t hover:bg-slate-50 ${isExpired && !isTrial ? 'bg-red-50' : ''}`}>
+                              <tr key={u.id} className={`border-t hover:bg-slate-50 ${isOwnerRow ? 'bg-amber-50/50 font-medium' : isExpired && !isTrial ? 'bg-red-50' : ''}`}>
 
                                 {/* User / Role */}
                                 <td className="p-3 whitespace-nowrap min-w-[150px]">
-                                  <p className="font-black text-slate-800">{u.username}</p>
+                                  <div className="flex items-center gap-1.5">
+                                    <p className="font-black text-slate-800">{u.username}</p>
+                                    {isOwnerRow && (
+                                      <span className="px-1.5 py-0.5 bg-amber-200 text-amber-900 rounded text-[9px] font-black uppercase tracking-wider">
+                                        ⭐ OWNER
+                                      </span>
+                                    )}
+                                  </div>
                                   {u.email && <p className="text-[10px] text-slate-400 truncate max-w-[140px]">{u.email}</p>}
                                   
                                   {/* Real Email Input */}
@@ -662,7 +746,9 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                                     value={rowRole[u.username] ?? u.role ?? 'student'}
                                     onChange={e => handleChangeRole(u, e.target.value)}
                                     disabled={!!working}
-                                    className="mt-1 text-[10px] font-black uppercase px-1.5 py-0.5 bg-slate-100 border border-slate-300 rounded cursor-pointer disabled:opacity-40"
+                                    className={`mt-1 text-[10px] font-black uppercase px-1.5 py-0.5 rounded cursor-pointer disabled:opacity-40 border ${
+                                      isOwnerRow ? 'bg-amber-100 border-amber-300 text-amber-900' : 'bg-slate-100 border-slate-300'
+                                    }`}
                                   >
                                     <option value="student">STUDENT</option>
                                     <option value="teacher">TEACHER</option>
@@ -762,10 +848,9 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                       </table>
                     </div>
                   </div>
-                </div>
             )}
 
-            {/* HIERARCHY TAB */}
+            {/* HIERARCHY TAB (Crash Protected) */}
             {activeTab === 'hierarchy' && (
               <div className="space-y-6">
                 <div>
@@ -783,11 +868,11 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                         <span className="ml-2 text-xs text-slate-500">Gói: {mgr.plan}</span>
                       </div>
                       <div className="text-right text-xs font-bold">
-                        <p className="text-indigo-700">{mgr.teacher_count} GV · {mgr.student_count} HS</p>
+                        <p className="text-indigo-700">{mgr.teacher_count || 0} GV · {mgr.student_count || 0} HS</p>
                         {mgr.trial_expires_at && <p className="text-slate-400">HH: {new Date(mgr.trial_expires_at).toLocaleDateString('vi-VN')}</p>}
                       </div>
                     </div>
-                    {mgr.teachers.length === 0 ? (
+                    {(!mgr.teachers || mgr.teachers.length === 0) ? (
                       <p className="px-5 py-3 text-xs text-slate-400 italic">Chưa có giáo viên nào.</p>
                     ) : (
                       <table className="w-full text-sm">
@@ -795,7 +880,7 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                           <tr><th className="px-5 py-2 text-left">Giáo viên</th><th className="px-5 py-2 text-right">HS đã tạo / Ghế cấp</th></tr>
                         </thead>
                         <tbody>
-                          {mgr.teachers.map(t => (
+                          {(mgr.teachers || []).map(t => (
                             <tr key={t.id} className="border-t hover:bg-slate-50">
                               <td className="px-5 py-2.5 font-bold text-slate-700">{t.username}</td>
                               <td className="px-5 py-2.5 text-right">
