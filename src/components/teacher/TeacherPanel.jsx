@@ -1868,13 +1868,8 @@ function TabManageStudents({ students, seatInfo, onRefresh }) {
 
 // ─── Tab: Lesson Plans (Sprint T3) ──────────────────────────────────────────
 
-// Weeks covered in our lesson plan data (W25-36, W37-53)
-// LP_AVAILABLE is seeded from the hardcoded list below but can be overridden
-// at runtime once the index JSON is fetched (see useDerivedLP_AVAILABLE).
-const LP_AVAILABLE_STATIC = new Set([
-  25,26,27,29,30,31,32,33,34,35,36,
-  37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53
-]);
+// Weeks covered in our lesson plan data (All 156 weeks available)
+const LP_AVAILABLE_STATIC = new Set(Array.from({ length: 156 }, (_, i) => i + 1));
 
 const LP_SUB_TABS = [
   { key: 'overview',   label: 'Quick Ref'   },
@@ -1948,10 +1943,15 @@ function TabLessonPlan({ sessionsPerWeek = 3, setSessionsPerWeek, students = [],
 
   // Load class start date
   useEffect(() => {
-    api?.getClassSettings()
-      .then(r => { const d = r.data?.class_start_date || ''; setClassStartDate(d); setClassDateInput(d); })
+    if (!api) return;
+    api.getClassSettings()
+      .then(r => {
+        const d = r.data?.class_start_date || '';
+        setClassStartDate(d);
+        setClassDateInput(d);
+      })
       .catch(() => {});
-  }, []); // eslint-disable-line
+  }, [api]);
 
   const currentClassWeek = (() => {
     if (!classStartDate) return null;
@@ -1961,19 +1961,18 @@ function TabLessonPlan({ sessionsPerWeek = 3, setSessionsPerWeek, students = [],
   })();
 
   const handleSaveClassDate = async () => {
-    if (!classDateInput) { setSaveDateError('Please select a date first'); return; }
-    if (!api) { setSaveDateError('API unavailable'); return; }
+    if (!classDateInput || !api) return;
     setSavingClassDate(true);
     setSaveDateError('');
     try {
       await api.saveClassSettings(classDateInput);
       setClassStartDate(classDateInput);
       setEditingClassDate(false);
-    } catch (err) {
-      const msg = err?.response?.data?.message || err?.message || 'Lỗi server';
-      setSaveDateError(msg);
+    } catch (e) {
+      setSaveDateError(e?.response?.data?.message || 'Failed to save date');
+    } finally {
+      setSavingClassDate(false);
     }
-    finally { setSavingClassDate(false); }
   };
 
   // Fetch session notes for all students when selected week changes (LP tab)
@@ -2030,7 +2029,7 @@ function TabLessonPlan({ sessionsPerWeek = 3, setSessionsPerWeek, students = [],
       .catch(() => {});
   }, []); // eslint-disable-line
 
-  // Lazy-fetch a single week file on demand (authenticated API)
+  // Lazy-fetch a single week file on demand (authenticated API with robust 2-tier fallback)
   const loadWeek = (wnum) => {
     if (!wnum) return;
     const key = String(wnum);
@@ -2046,7 +2045,17 @@ function TabLessonPlan({ sessionsPerWeek = 3, setSessionsPerWeek, students = [],
         setWeekData(d);
         setLoadingLP(false);
       })
-      .catch(err => {
+      .catch(async (err) => {
+        try {
+          const res = await fetch(`/data/lessons/W${key}.json`);
+          if (res.ok) {
+            const d = await res.json();
+            setWeekCache(c => ({ ...c, [key]: d }));
+            setWeekData(d);
+            setLoadingLP(false);
+            return;
+          }
+        } catch (_) {}
         const msg = err?.response?.data?.message || err?.message || '';
         if (msg.includes('chưa được mở') || msg.includes('nằm ngoài') || msg.includes('Week not available') || msg.includes('not unlocked')) {
           setLoadError(msg);

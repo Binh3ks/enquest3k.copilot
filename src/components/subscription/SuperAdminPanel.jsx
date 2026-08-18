@@ -774,7 +774,11 @@ const SuperAdminPanel = ({ isOpen, onClose }) => {
                                     <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${PLAN_BADGE[u.plan] || 'bg-slate-100 text-slate-500'}`}>
                                       {u.plan || 'free_trial'}
                                     </span>
-                                    {u.plan_expires_at && !isTrial ? (
+                                    {isOwnerRow || u.plan === 'premium_lifetime' ? (
+                                      <p className="text-[10px] mt-0.5 font-black text-emerald-600 flex items-center gap-0.5">
+                                        ⭐ Trọn đời (Vĩnh viễn)
+                                      </p>
+                                    ) : u.plan_expires_at && !isTrial ? (
                                       <p className={`text-[10px] mt-0.5 font-bold ${isExpired ? 'text-red-600' : isExpiringSoon ? 'text-amber-600' : 'text-slate-500'}`}>
                                         <Calendar size={9} className="inline mr-0.5"/>
                                         {new Date(u.plan_expires_at).toLocaleDateString('vi-VN')}
