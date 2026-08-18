@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import GearIndicator from '../../components/zones/GearIndicator';
 import { FlashArena } from '../hubs/station2/LearnMode/FlashArena';
 import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilderBattle';
 import { BarModelQuest } from '../hubs/station2/LearnMode/BarModelQuest';
@@ -8,10 +7,8 @@ import SoundSniper from '../../components/zones/SoundSniper';
 import { Swords, Zap, Brain, Trophy, ChevronRight, PlayCircle, Layers, Volume2, Shield } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 
-export default function BattleArenaZone({ data, weekNumber = 33, onCompleteGear }) {
+export default function BattleArenaZone({ data, weekNumber = 33 }) {
   const arenaData = data?.battleArena || {};
-  const [currentGear, setCurrentGear] = useState(2);
-  const [completedGears, setCompletedGears] = useState([1, 2]);
   const [activeGame, setActiveGame] = useState('flash_arena'); // 'flash_arena' | 'sound_sniper' | 'sentence_builder' | 'bar_model' | 'science_lab'
   const [earnedXP, setEarnedXP] = useState(0);
 
@@ -27,13 +24,6 @@ export default function BattleArenaZone({ data, weekNumber = 33, onCompleteGear 
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-300">
-      {/* 4-Gear Indicator */}
-      <GearIndicator
-        currentGear={currentGear}
-        onSelectGear={setCurrentGear}
-        completedGears={completedGears}
-      />
-
       {/* Arena Header */}
       <div className="bg-gradient-to-r from-amber-900 via-orange-950 to-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-amber-500/40 shadow-xl flex items-center justify-between flex-wrap gap-4">
         <div className="space-y-1">

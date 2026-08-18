@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import GearIndicator from '../../components/zones/GearIndicator';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
 import DictationEngine from '../dictation/DictationEngine';
 import StoryWriting from '../write_speak/StoryWriting';
 import { PenTool, Mic, Radio, MessageSquare, Trophy, FileText, CheckCircle2, ChevronRight } from 'lucide-react';
 
-export default function CreatorStudioZone({ data, weekNumber = 33, onCompleteGear }) {
+export default function CreatorStudioZone({ data, weekNumber = 33 }) {
   const creatorData = data?.creatorStudio || {};
-  const [currentGear, setCurrentGear] = useState(3);
-  const [completedGears, setCompletedGears] = useState([1, 2, 3]);
   const [activeStudio, setActiveStudio] = useState('story_writing'); // 'story_writing' | 'retell_voice' | 'podcast' | 'ai_debate' | 'dictation'
 
   const pictureStory = creatorData.pictureStory || null;
@@ -21,12 +18,6 @@ export default function CreatorStudioZone({ data, weekNumber = 33, onCompleteGea
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-300">
-      {/* 4-Gear Indicator */}
-      <GearIndicator
-        currentGear={currentGear}
-        onSelectGear={setCurrentGear}
-        completedGears={completedGears}
-      />
 
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-purple-500/40 shadow-xl flex items-center justify-between flex-wrap gap-4">
