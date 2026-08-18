@@ -236,11 +236,11 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
       <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 flex-wrap gap-2">
         <div>
           <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
-            LEARN MODE — SENTENCE BUILDER BATTLE
+            Sentence Smash • 45s Timed Grammar Challenge
           </span>
           <h3 className="text-base font-black text-slate-900 mt-0.5">{currentDrill.text_en}</h3>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {grammarLesson && (
             <button
               onClick={() => setShowGrammarModal(true)}
@@ -251,14 +251,14 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
             </button>
           )}
 
-          {isCompleted && (
-            <button
-              onClick={handleRestart}
-              className="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-black rounded-lg border border-indigo-200 flex items-center gap-1 transition shadow-sm"
-            >
-              <RefreshCw size={12} /> Play Again
-            </button>
-          )}
+          <div className="px-3 py-1.5 bg-slate-100 rounded-xl border border-slate-200 flex items-center gap-1.5 font-mono text-xs font-black">
+            <span className={timeLeft <= 8 ? 'text-rose-600 animate-ping' : 'text-indigo-600'}>⏱️ {timeLeft}s</span>
+          </div>
+
+          <div className="px-3 py-1.5 bg-amber-100 text-amber-900 rounded-xl border border-amber-300 font-mono text-xs font-black">
+            {score} PTS
+          </div>
+
           <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
             Sentence {currentDrillIndex + 1} / {totalDrillsCount}
           </span>

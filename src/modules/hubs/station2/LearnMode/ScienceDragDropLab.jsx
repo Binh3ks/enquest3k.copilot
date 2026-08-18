@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -56,7 +56,7 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo }) {
             : 'bg-rose-600 border-white text-white font-black scale-105 animate-shake'
           : isOver
           ? 'bg-amber-400 border-amber-600 text-slate-950 font-black scale-110 ring-4 ring-amber-300'
-          : 'bg-white/90 border-dashed border-teal-500 text-teal-950 font-bold hover:bg-white'
+          : 'bg-white/95 border-2 border-dashed border-teal-500 text-teal-950 font-bold hover:bg-white'
       }`}
     >
       <span className="text-[10px] uppercase font-black tracking-wider opacity-90">{label}</span>
@@ -68,25 +68,57 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo }) {
 }
 
 const DEFAULT_SCIENCE_DATA = {
-  experimentTitle: "Corridor Friction & Slip Hazard Virtual Lab",
+  experimentTitle: "Corridor Friction & Safety Physics Lab",
   diagramImage: "/images/week33/clil_friction.png",
   labels: [
-    { id: "lbl_01", text: "Wet Puddle", targetId: "target_01" },
-    { id: "lbl_02", text: "Friction Zero", targetId: "target_02" },
-    { id: "lbl_03", text: "Clean Bandage", targetId: "target_03" },
-    { id: "lbl_04", text: "Safety Sign", targetId: "target_04" }
+    { id: "lbl_01", text: "Low Friction Zone", targetId: "target_01" },
+    { id: "lbl_02", text: "Kinetic Momentum", targetId: "target_02" },
+    { id: "lbl_03", text: "Hazard Alert", targetId: "target_03" }
   ],
   targets: [
-    { id: "target_01", name: "Puddle Zone", x: 50, y: 75 },
-    { id: "target_02", name: "Low Friction Area", x: 65, y: 60 },
-    { id: "target_03", name: "First Aid Kit", x: 30, y: 55 },
-    { id: "target_04", name: "Corridor Warning Sign", x: 80, y: 35 }
+    { id: "target_01", name: "Wet Floor Puddle", x: 48, y: 76 },
+    { id: "target_02", name: "Running Fast", x: 62, y: 45 },
+    { id: "target_03", name: "Yellow Caution Sign", x: 28, y: 65 }
   ],
   explanation: "Water acts as a liquid lubricant between shoe soles and smooth tiles, reducing friction to near zero and causing sudden slips."
 };
 
 export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete }) {
-  const labData = scienceData || DEFAULT_SCIENCE_DATA;
+  // Normalize scienceData whether it comes from zones or targets
+  const labData = useMemo(() => {
+    if (!scienceData) return DEFAULT_SCIENCE_DATA;
+
+    const experimentTitle = scienceData.title_en || scienceData.experimentTitle || "Corridor Friction Physics Lab";
+    const diagramImage = scienceData.background_image || scienceData.diagramImage || "/images/week33/clil_friction.png";
+    const explanation = scienceData.description_en || scienceData.explanation || "Water acts as a liquid lubricant between shoe soles and smooth tiles.";
+
+    let targets = [];
+    let labels = [];
+
+    if (scienceData.zones && Array.isArray(scienceData.zones)) {
+      targets = scienceData.zones.map((z, idx) => ({
+        id: z.id || `target_${idx + 1}`,
+        name: z.label || `Zone ${idx + 1}`,
+        x: z.x || 50,
+        y: z.y || 50
+      }));
+
+      labels = scienceData.zones.map((z, idx) => ({
+        id: `lbl_${idx + 1}`,
+        text: z.correct_label || z.label || `Label ${idx + 1}`,
+        targetId: z.id || `target_${idx + 1}`
+      }));
+    } else if (scienceData.targets && Array.isArray(scienceData.targets)) {
+      targets = scienceData.targets;
+      labels = scienceData.labels || [];
+    } else {
+      targets = DEFAULT_SCIENCE_DATA.targets;
+      labels = DEFAULT_SCIENCE_DATA.labels;
+    }
+
+    return { experimentTitle, diagramImage, explanation, targets, labels };
+  }, [scienceData]);
+
   const [placedItems, setPlacedItems] = useState({});
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
@@ -229,7 +261,7 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             {/* Diagram Area with Drop Zones */}
             <div className="relative w-full aspect-video sm:aspect-[21/9] rounded-2xl overflow-hidden bg-slate-100 border-2 border-slate-300 shadow-md">
               <img
-                src={labData.diagramImage || '/images/week33/clil_friction.png'}
+                src={labData.diagramImage}
                 alt={labData.experimentTitle}
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.src = '/images/scenes/default_story.jpg'; }}

@@ -4,82 +4,54 @@ import { evaluateBarModelAnswer } from '../../../../utils/barModelEvaluator';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
-import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy, Timer, Flame, Zap } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy, Timer, Flame } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 const WEEK33_BAR_QUESTIONS = [
   {
-    id: 'bar_w33_01',
-    title: 'Problem 1: Corridor First Aid Bandages (Part-Whole)',
-    problemText: 'The school nurse used 4 small bandages and 6 large bandages to treat students today. How many bandages were used in total?',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { label: 'Small Bandages (4)', value: 40, color: '#4f46e5' },
-        { label: 'Large Bandages (6)', value: 60, color: '#06b6d4' }
-      ],
-      totalLabel: '? bandages'
-    },
-    correctAnswer: 10,
-    hintText: 'Look at the total bar model: Total bandages = 4 small + 6 large = 10 bandages.'
+    id: 1,
+    title: 'Problem 1: Corridor Distance (Part-Whole)',
+    text: 'Jake walked 40 meters. The corridor is 100 meters long. How many meters are left?',
+    svg_url: '/images/week33/barmodel_w33_adv_p1.svg',
+    correctAnswer: 60,
+    answer: '60 meters',
+    hintText: 'Total distance (100m) - Walked distance (40m) = 60 meters remaining.'
   },
   {
-    id: 'bar_w33_02',
-    title: 'Problem 2: Corridor Walking vs Running Speed (Comparison)',
-    problemText: 'Running down the corridor takes 15 seconds. Walking carefully takes 40 seconds. How many seconds slower is walking carefully?',
-    modelData: {
-      type: 'comparison',
-      bars: [
-        { name: 'Walking Carefully', label: '40 seconds', width: 240 },
-        { name: 'Running Fast', label: '15 seconds', width: 90 }
-      ]
-    },
+    id: 2,
+    title: 'Problem 2: Bandage Stock (Part-Whole)',
+    text: 'The nurse had 25 bandages. She used 8 bandages. How many bandages remain?',
+    svg_url: '/images/week33/barmodel_w33_adv_p2.svg',
+    correctAnswer: 17,
+    answer: '17 bandages',
+    hintText: 'Total bandages (25) - Used bandages (8) = 17 bandages remaining.'
+  },
+  {
+    id: 3,
+    title: 'Problem 3: Treatment Time (Part-Whole)',
+    text: 'Tom rested for 15 minutes and applied ice for 10 minutes. What is the total treatment time?',
+    svg_url: '/images/week33/barmodel_w33_adv_p3.svg',
     correctAnswer: 25,
-    hintText: 'Difference between the bar models = 40 seconds - 15 seconds = 25 seconds.'
+    answer: '25 minutes',
+    hintText: 'Resting time (15m) + Ice treatment time (10m) = 25 total minutes.'
   },
   {
-    id: 'bar_w33_03',
-    title: 'Problem 3: Total Safety Inspection Time (Part-Whole)',
-    problemText: 'The headmaster spent 20 minutes inspecting the corridor floor and 30 minutes placing safety warning signs. How many total minutes did he spend?',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { label: 'Floor Inspection (20m)', value: 40, color: '#4f46e5' },
-        { label: 'Safety Signs (30m)', value: 60, color: '#06b6d4' }
-      ],
-      totalLabel: '? minutes'
-    },
-    correctAnswer: 50,
-    hintText: 'Add both time intervals: 20 minutes + 30 minutes = 50 total minutes.'
+    id: 4,
+    title: 'Problem 4: Safety Rule Compliance (Part-Whole)',
+    text: 'Class 4A has 30 students. 24 students followed safety rules. How many ran?',
+    svg_url: '/images/week33/barmodel_w33_adv_p4.svg',
+    correctAnswer: 6,
+    answer: '6 students',
+    hintText: 'Total students (30) - Safe students (24) = 6 students running.'
   },
   {
-    id: 'bar_w33_04',
-    title: 'Problem 4: First Aid Kit Bandage Stock (Comparison)',
-    problemText: 'The medical room has 35 bandages in Kit A and 20 bandages in Kit B. How many more bandages are in Kit A than Kit B?',
-    modelData: {
-      type: 'comparison',
-      bars: [
-        { name: 'Medical Kit A', label: '35 bandages', width: 210 },
-        { name: 'Medical Kit B', label: '20 bandages', width: 120 }
-      ]
-    },
-    correctAnswer: 15,
-    hintText: 'Subtract Kit B from Kit A: 35 - 20 = 15 bandages.'
-  },
-  {
-    id: 'bar_w33_05',
-    title: 'Problem 5: Corridor Safety Sign Clean-Up (Part-Whole)',
-    problemText: 'Students cleaned 8 wet spots in the morning and 12 wet spots in the afternoon. How many wet spots were cleaned in total?',
-    modelData: {
-      type: 'part_whole',
-      bars: [
-        { label: 'Morning Wet Spots (8)', value: 40, color: '#4f46e5' },
-        { label: 'Afternoon Spots (12)', value: 60, color: '#06b6d4' }
-      ],
-      totalLabel: '? wet spots'
-    },
+    id: 5,
+    title: 'Problem 5: Safety Helper Stars (Multiplication)',
+    text: 'The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?',
+    svg_url: '/images/week33/barmodel_w33_adv_p5.svg',
     correctAnswer: 20,
-    hintText: 'Add both shifts: 8 + 12 = 20 total wet spots cleaned.'
+    answer: '20 stars',
+    hintText: 'Multiply 5 stars × 4 helpers = 20 total stars.'
   }
 ];
 
@@ -93,10 +65,24 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   const [timeLeft, setTimeLeft] = useState(45);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  const questions = (barModelData && barModelData.length > 0) ? barModelData : WEEK33_BAR_QUESTIONS;
+  const rawQuestions = (barModelData && Array.isArray(barModelData) && barModelData.length > 0)
+    ? barModelData
+    : WEEK33_BAR_QUESTIONS;
+
+  // Normalize items to ensure text, correctAnswer & svg_url exist
+  const questions = rawQuestions.map((q, idx) => ({
+    id: q.id || idx + 1,
+    title: q.title || `Problem ${idx + 1}: Singapore Bar Model`,
+    problemText: q.problemText || q.text || 'Solve the Bar Model problem below:',
+    correctAnswer: q.correctAnswer || parseInt(q.answer) || 10,
+    svg_url: q.svg_url || `/images/week33/barmodel_w33_adv_p${idx + 1}.svg`,
+    modelData: q.modelData || null,
+    hintText: q.hintText || `Check the bar model diagram to calculate the target answer!`
+  }));
+
   const currentQ = questions[currentIndex] || questions[0];
 
-  // 45s Timer Countdown
+  // 45s Timer Countdown Engine
   useEffect(() => {
     if (isGameOver) return;
     const timer = setInterval(() => {
@@ -167,7 +153,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-white rounded-3xl border-2 border-amber-300 shadow-xl space-y-6 text-slate-900 font-sans">
-      {/* Top Controls */}
+      {/* Header Dashboard */}
       <div className="flex items-center justify-between flex-wrap gap-3 border-b border-amber-100 pb-4">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-md">
@@ -181,7 +167,6 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
           </div>
         </div>
 
-        {/* Dashboard */}
         <div className="flex items-center gap-3">
           {streak > 1 && (
             <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-md rounded-full">
@@ -231,9 +216,20 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
             </p>
           </div>
 
-          {/* Singapore Bar Model SVG Display Container */}
+          {/* Bar Model Visual Display */}
           <div className="p-5 bg-slate-50 rounded-2xl border-2 border-slate-200 flex items-center justify-center shadow-inner min-h-[180px]">
-            <BarModelSVG modelData={currentQ.modelData} />
+            {currentQ.modelData ? (
+              <BarModelSVG modelData={currentQ.modelData} />
+            ) : (
+              <img
+                src={currentQ.svg_url}
+                alt={currentQ.title}
+                className="max-h-[220px] w-auto object-contain drop-shadow-md"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+            )}
           </div>
 
           {/* Answer Form */}
