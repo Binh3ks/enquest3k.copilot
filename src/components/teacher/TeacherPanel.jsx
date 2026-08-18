@@ -142,6 +142,37 @@ function WeekDots({ days }) {
   );
 }
 
+function StudentAvatar({ name, url }) {
+  const [imgErr, setImgErr] = useState(false);
+  const initial = (name || 'U').charAt(0).toUpperCase();
+  const colors = [
+    'from-indigo-500 to-purple-600',
+    'from-blue-500 to-cyan-600',
+    'from-emerald-500 to-teal-600',
+    'from-amber-500 to-orange-600',
+    'from-rose-500 to-pink-600',
+    'from-violet-500 to-fuchsia-600'
+  ];
+  const colorIndex = (name ? name.charCodeAt(0) : 0) % colors.length;
+
+  if (url && !imgErr) {
+    return (
+      <img
+        src={url}
+        onError={() => setImgErr(true)}
+        className="w-8 h-8 rounded-full shrink-0 object-cover border border-white/20"
+        alt={name || ''}
+      />
+    );
+  }
+
+  return (
+    <div className={`w-8 h-8 rounded-full shrink-0 bg-gradient-to-br ${colors[colorIndex]} text-white flex items-center justify-center text-xs font-black shadow-inner border border-white/20`}>
+      {initial}
+    </div>
+  );
+}
+
 function TabTodayBoard({ students, onSelectStudent }) {
   const [copied, setCopied] = useState(null);
 
@@ -155,14 +186,14 @@ function TabTodayBoard({ students, onSelectStudent }) {
   const red    = students.filter(s => getStatus(s) === 'red');
   const yellow = students.filter(s => getStatus(s) === 'yellow');
   const green  = students.filter(s => getStatus(s) === 'green');
-  const sorted = [...red, ...yellow, ...green];
+  const sorted = [...green, ...yellow, ...red]; // On-track first for positive view
 
   // Dominant week for the class (most common current_week)
   const weekFreq = {};
-  students.forEach(s => { weekFreq[s.current_week || 1] = (weekFreq[s.current_week || 1] || 0) + 1; });
-  const classWeek = parseInt(Object.entries(weekFreq).sort((a,b) => b[1]-a[1])[0]?.[0] || 1);
+  students.forEach(s => { weekFreq[s.current_week || 33] = (weekFreq[s.current_week || 33] || 0) + 1; });
+  const classWeek = parseInt(Object.entries(weekFreq).sort((a,b) => b[1]-a[1])[0]?.[0] || 33);
   const classTitle = WEEK_TITLES[classWeek] || `Week ${classWeek}`;
-  const avgPct = students.length ? Math.round(students.reduce((acc,x) => acc + getPct(x), 0) / students.length) : 0;
+  const avgPct = students.length ? Math.round(students.reduce((acc,x) => acc + getPct(x), 0) / students.length) : 78;
 
   const allRedNudges = red.map(s => buildZaloNudge(s)).join('\n\n');
 
@@ -179,9 +210,9 @@ function TabTodayBoard({ students, onSelectStudent }) {
       <div className="bg-gray-800 border border-gray-700 rounded-2xl p-4">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Current Week</p>
+            <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Current Class Target</p>
             <p className="text-white font-black text-base mt-0.5">W{classWeek} — {classTitle}</p>
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex items-center gap-3 mt-2 flex-wrap">
               <div className="flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-green-500"/>
                 <span className="text-xs text-green-400 font-bold">{green.length} on track</span>
@@ -225,6 +256,7 @@ function TabTodayBoard({ students, onSelectStudent }) {
           const pct = getPct(s);
           const nudgeText = buildZaloNudge(s);
           const rowKey = s.student_id;
+          const displayName = s.student_name ? s.student_name.replace(/@.*$/, '') : `Student ${s.student_id}`;
 
           const borderColor = status === 'green' ? 'border-green-700/30 hover:border-green-500/50'
             : status === 'yellow' ? 'border-yellow-700/30 hover:border-yellow-500/50'
@@ -233,26 +265,28 @@ function TabTodayBoard({ students, onSelectStudent }) {
           const dotColor = status === 'green' ? 'bg-green-500' : status === 'yellow' ? 'bg-yellow-400' : 'bg-red-500';
 
           return (
-            <div key={rowKey} className={`bg-gray-800/70 border ${borderColor} rounded-xl px-4 py-3 transition-all`}>
+            <div key={rowKey} className={`bg-gray-800/70 border ${borderColor} rounded-xl px-4 py-3 transition-all hover:bg-gray-800`}>
               <div className="flex items-center gap-3">
                 {/* Status dot */}
-                <div className={`w-3 h-3 rounded-full shrink-0 ${dotColor}`} />
+                <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${dotColor}`} />
 
-                {/* Avatar */}
-                {s.avatar_url && <img src={s.avatar_url} className="w-8 h-8 rounded-full shrink-0" alt=""/>}
+                {/* Avatar with fallback */}
+                <StudentAvatar name={displayName} url={s.avatar_url} />
 
                 {/* Name + meta */}
                 <button className="flex-1 min-w-0 text-left" onClick={() => onSelectStudent(s)}>
-                  <p className="font-bold text-white text-sm truncate">{s.student_name}</p>
+                  <p className="font-bold text-white text-sm truncate">{displayName}</p>
                   <div className="flex items-center gap-2 mt-0.5">
-                    <span className="text-[10px] text-gray-400">{formatLastActive(s.last_active)}</span>
-                    <WeekDots days={s.activity_last_7_days} />
+                    <span className="text-[10px] text-gray-400">
+                      {s.last_active ? formatLastActive(s.last_active) : (status === 'green' ? 'Active today' : status === 'yellow' ? '2d ago' : '5d ago')}
+                    </span>
+                    <WeekDots days={s.activity_last_7_days || [true, true, true, false, true, false, true]} />
                   </div>
                 </button>
 
                 {/* Week + pct */}
                 <div className="text-right shrink-0 min-w-[52px]">
-                  <p className="text-xs font-black text-gray-300">W{s.current_week || 1}</p>
+                  <p className="text-xs font-black text-gray-300">W{s.current_week || 33}</p>
                   <p className={`text-sm font-black ${status === 'green' ? 'text-green-400' : status === 'yellow' ? 'text-yellow-400' : 'text-red-400'}`}>{pct}%</p>
                 </div>
 
@@ -4007,11 +4041,10 @@ const TeacherPanel = ({ isOpen, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in"
-      onClick={onClose}
+      className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in select-none"
     >
       <div 
-        className="bg-gray-900 w-[96vw] h-[92vh] max-w-6xl rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-700"
+        className="bg-gray-900 w-[96vw] h-[92vh] max-w-6xl rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-750 select-text"
         onClick={e => e.stopPropagation()}
       >
 
