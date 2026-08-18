@@ -84,24 +84,19 @@ const WEEK33_BAR_QUESTIONS = [
 ];
 
 export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
-  const currentUser = useUserStore((state) => state.currentUser);
-  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState(null);
   const [showHint, setShowHint] = useState(false);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
-
-  // 45s Timed Challenge Engine
   const [timeLeft, setTimeLeft] = useState(45);
   const [isGameOver, setIsGameOver] = useState(false);
 
   const questions = (barModelData && barModelData.length > 0) ? barModelData : WEEK33_BAR_QUESTIONS;
   const currentQ = questions[currentIndex] || questions[0];
 
-  // Timer countdown
+  // 45s Timer Countdown
   useEffect(() => {
     if (isGameOver) return;
     const timer = setInterval(() => {
@@ -129,7 +124,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
       setStreak(nextStreak);
       const bonusScore = 20 + nextStreak * 5;
       setScore(prev => prev + bonusScore);
-      setTimeLeft(prev => Math.min(45, prev + 2)); // Bonus +2s per correct answer
+      setTimeLeft(prev => Math.min(45, prev + 3));
 
       setFeedback({
         isCorrect: true,
@@ -171,53 +166,51 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-slate-950 text-white rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-6">
-      {/* Top Arcade Status Bar */}
-      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-slate-800 pb-4">
+    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-white rounded-3xl border-2 border-amber-300 shadow-xl space-y-6 text-slate-900 font-sans">
+      {/* Top Controls */}
+      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-amber-100 pb-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-lg">
+          <div className="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-md">
             📐
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/30 text-amber-300 border border-amber-400/40">
-                Singapore Math CLIL • Problem {currentIndex + 1}/{questions.length}
-              </span>
-            </div>
-            <h3 className="text-lg font-black text-white">📐 MATH QUEST (BAR MODEL CHALLENGE)</h3>
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">
+              Singapore Math CLIL • Problem {currentIndex + 1}/{questions.length}
+            </span>
+            <h3 className="text-lg font-black text-slate-900">📐 MATH QUEST (BAR MODEL CHALLENGE)</h3>
           </div>
         </div>
 
-        {/* Score & Timer Dashboard */}
+        {/* Dashboard */}
         <div className="flex items-center gap-3">
           {streak > 1 && (
-            <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-lg">
+            <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-md rounded-full">
               <Flame size={14} /> {streak}x STREAK!
             </div>
           )}
 
-          <div className="px-4 py-2 bg-slate-900 rounded-2xl border border-slate-800 flex items-center gap-2">
-            <Timer className={timeLeft <= 8 ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={18} />
-            <span className={`text-base font-black font-mono ${timeLeft <= 8 ? 'text-rose-400' : 'text-amber-300'}`}>
+          <div className="px-4 py-2 bg-slate-100 rounded-2xl border border-slate-200 flex items-center gap-2">
+            <Timer className={timeLeft <= 8 ? 'text-rose-500 animate-ping' : 'text-amber-600'} size={18} />
+            <span className={`text-base font-black font-mono ${timeLeft <= 8 ? 'text-rose-600' : 'text-slate-900'}`}>
               {timeLeft}s
             </span>
           </div>
 
-          <div className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-2xl border border-amber-400/40 font-black text-sm font-mono">
+          <div className="px-4 py-2 bg-amber-100 text-amber-900 rounded-2xl border border-amber-300 font-black text-sm font-mono">
             {score} PTS
           </div>
         </div>
       </div>
 
-      {/* Game Over Screen */}
+      {/* Game Over Display */}
       {isGameOver ? (
-        <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-4 animate-in zoom-in-95">
-          <Trophy size={56} className="mx-auto text-amber-400 animate-bounce" />
-          <h3 className="text-2xl font-black text-amber-300">MATH QUEST COMPLETE!</h3>
-          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-200">
-            <div>Score: <span className="text-xl font-black text-amber-400">{score} PTS</span></div>
-            <div>Questions: <span className="text-xl font-black text-cyan-400">{currentIndex + (feedback?.isCorrect ? 1 : 0)}/{questions.length}</span></div>
-            <div>XP Earned: <span className="text-xl font-black text-emerald-400">+40 XP</span></div>
+        <div className="p-8 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl text-center space-y-4 shadow-inner animate-in zoom-in-95">
+          <Trophy size={56} className="mx-auto text-amber-500 animate-bounce" />
+          <h3 className="text-2xl font-black text-slate-900">MATH QUEST COMPLETE!</h3>
+          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-700">
+            <div>Score: <span className="text-xl font-black text-amber-600">{score} PTS</span></div>
+            <div>Questions: <span className="text-xl font-black text-blue-600">{currentIndex + (feedback?.isCorrect ? 1 : 0)}/{questions.length}</span></div>
+            <div>XP Earned: <span className="text-xl font-black text-emerald-600">+40 XP</span></div>
           </div>
           <button
             type="button"
@@ -229,17 +222,17 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
         </div>
       ) : (
         /* Active Question Display */
-        <div className="space-y-6">
+        <div className="space-y-5">
           {/* Question Text */}
-          <div className="p-5 bg-slate-900 rounded-2xl border border-slate-800 space-y-2">
-            <h4 className="text-sm font-black text-amber-300">{currentQ.title}</h4>
-            <p className="text-sm sm:text-base font-bold text-slate-100 leading-relaxed">
+          <div className="p-5 bg-amber-50/80 rounded-2xl border border-amber-200 space-y-1">
+            <h4 className="text-xs font-black uppercase text-amber-800 tracking-wider">{currentQ.title}</h4>
+            <p className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">
               {renderParsedText(currentQ.problemText, 'amber')}
             </p>
           </div>
 
-          {/* Singapore Bar Model SVG Display */}
-          <div className="p-4 bg-white rounded-2xl border border-slate-200 flex items-center justify-center shadow-inner min-h-[160px]">
+          {/* Singapore Bar Model SVG Display Container */}
+          <div className="p-5 bg-slate-50 rounded-2xl border-2 border-slate-200 flex items-center justify-center shadow-inner min-h-[180px]">
             <BarModelSVG modelData={currentQ.modelData} />
           </div>
 
@@ -250,36 +243,36 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               placeholder="Enter numerical answer..."
-              className="flex-1 p-3.5 bg-slate-900 text-white rounded-2xl border border-slate-700 font-mono text-base font-black outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/30 transition"
+              className="flex-1 p-3.5 bg-slate-50 text-slate-900 rounded-2xl border-2 border-slate-300 font-mono text-base font-black outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-200 transition"
             />
             <button
               type="submit"
-              className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 font-black text-sm rounded-2xl shadow-lg transition active:scale-95 shrink-0"
+              className="px-6 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 font-black text-sm rounded-2xl shadow-lg transition active:scale-95 shrink-0"
             >
               Submit Answer
             </button>
             <button
               type="button"
               onClick={() => setShowHint(!showHint)}
-              className="p-3.5 bg-slate-800 hover:bg-slate-700 text-amber-300 rounded-2xl border border-slate-700 transition shrink-0"
+              className="p-3.5 bg-slate-100 hover:bg-slate-200 text-amber-900 rounded-2xl border border-slate-300 transition shrink-0"
               title="Show Hint"
             >
               <HelpCircle size={20} />
             </button>
           </form>
 
-          {/* Hint Dropdown */}
+          {/* Hint */}
           {showHint && (
-            <div className="p-3.5 bg-amber-950/60 border border-amber-500/40 rounded-xl text-amber-200 text-xs font-medium flex items-center gap-2 animate-in fade-in">
-              <Sparkles size={16} className="text-amber-400 shrink-0" />
+            <div className="p-4 bg-amber-50 border border-amber-300 rounded-xl text-amber-900 text-xs font-bold flex items-center gap-2 animate-in fade-in">
+              <Sparkles size={16} className="text-amber-500 shrink-0" />
               {currentQ.hintText}
             </div>
           )}
 
-          {/* Feedback Overlay */}
+          {/* Feedback */}
           {feedback && (
             <div className={`p-4 rounded-2xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
-              feedback.isCorrect ? 'bg-emerald-950/80 border-emerald-500 text-emerald-300' : 'bg-rose-950/80 border-rose-500 text-rose-300'
+              feedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
             }`}>
               {feedback.isCorrect ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}
               {feedback.message}

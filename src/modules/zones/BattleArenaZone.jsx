@@ -56,7 +56,7 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
                 : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
             }`}
           >
-            ⚡ WORD BLITZ (30s)
+            ⚡ WORD BLITZ (45s)
           </button>
           <button
             type="button"

@@ -70,6 +70,28 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
   const [consecutiveFails, setConsecutiveFails] = useState(0);
   const [isShaking, setIsShaking] = useState(false);
   const [startTime, setStartTime] = useState(Date.now());
+  const [isCompleted, setIsCompleted] = useState(false);
+  const [score, setScore] = useState(0);
+  const [streak, setStreak] = useState(0);
+
+  // 45s Timer Countdown Engine
+  const [timeLeft, setTimeLeft] = useState(45);
+
+  useEffect(() => {
+    if (isCompleted) return;
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setIsCompleted(true);
+          fireCelebrationConfetti('SentenceSmash_Complete');
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isCompleted]);
 
   const drillsList = customDrills || WEEK33_GRAMMAR_DRILLS;
   const currentDrill = drillsList[currentDrillIndex] || drillsList[0];
@@ -179,8 +201,6 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
       }
     }
   };
-
-  const [isCompleted, setIsCompleted] = useState(false);
 
   const handleNextDrill = () => {
     if (currentDrillIndex + 1 < totalDrillsCount) {

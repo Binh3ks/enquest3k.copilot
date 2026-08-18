@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, Zap, CheckCircle2, XCircle, Trophy, RotateCcw } from 'lucide-react';
+import { Volume2, Zap, CheckCircle2, XCircle, Trophy, RotateCcw, Timer, Flame } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
+import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 export default function SoundSniper({ words = [], onComplete }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,12 +11,31 @@ export default function SoundSniper({ words = [], onComplete }) {
   const [isAnswered, setIsAnswered] = useState(false);
   const [options, setOptions] = useState([]);
   const [isDone, setIsDone] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(45);
 
   const currentItem = words[currentIndex] || null;
 
+  // 45s Timer Countdown
+  useEffect(() => {
+    if (isDone) return;
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setIsDone(true);
+          fireCelebrationConfetti('SoundSniper_Complete');
+          if (onComplete) onComplete(score);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isDone, score, onComplete]);
+
   // Generate 4 options for current item
   useEffect(() => {
-    if (!currentItem || words.length === 0) return;
+    if (!currentItem || words.length === 0 || isDone) return;
 
     const targetWord = typeof currentItem === 'string' ? currentItem : (currentItem.word || currentItem.en || currentItem.text || '');
     
@@ -32,7 +52,7 @@ export default function SoundSniper({ words = [], onComplete }) {
     setTimeout(() => {
       speakText(targetWord);
     }, 250);
-  }, [currentIndex, words]);
+  }, [currentIndex, words, isDone]);
 
   const handlePlaySound = () => {
     if (!currentItem) return;
@@ -41,7 +61,7 @@ export default function SoundSniper({ words = [], onComplete }) {
   };
 
   const handleSelect = (word) => {
-    if (isAnswered) return;
+    if (isAnswered || isDone) return;
     setIsAnswered(true);
     setSelectedWord(word);
 
@@ -49,50 +69,59 @@ export default function SoundSniper({ words = [], onComplete }) {
     const isCorrect = word.toLowerCase() === targetWord.toLowerCase();
 
     if (isCorrect) {
-      setScore(prev => prev + 10 + streak * 2);
-      setStreak(prev => prev + 1);
+      const nextStreak = streak + 1;
+      setStreak(nextStreak);
+      const bonusScore = 15 + nextStreak * 5;
+      setScore(prev => prev + bonusScore);
+      setTimeLeft(prev => Math.min(45, prev + 2)); // Bonus +2s per correct audio answer
     } else {
       setStreak(0);
     }
 
     setTimeout(() => {
-      if (currentIndex + 1 < Math.min(words.length, 8)) {
+      if (currentIndex + 1 < Math.min(words.length, 10)) {
         setCurrentIndex(prev => prev + 1);
       } else {
         setIsDone(true);
-        if (onComplete) onComplete(score + (isCorrect ? 10 : 0));
+        fireCelebrationConfetti('SoundSniper_Victory');
+        if (onComplete) onComplete(score + (isCorrect ? 15 : 0));
       }
-    }, 1200);
+    }, 1000);
+  };
+
+  const handleRestart = () => {
+    setCurrentIndex(0);
+    setScore(0);
+    setStreak(0);
+    setTimeLeft(45);
+    setIsDone(false);
   };
 
   if (isDone) {
     return (
-      <div className="p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-2 border-amber-400/40 rounded-3xl text-center space-y-4">
+      <div className="p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-2 border-amber-400/40 rounded-3xl text-center space-y-4 font-sans">
         <Trophy size={48} className="mx-auto text-amber-500 animate-bounce" />
-        <h3 className="text-xl font-black text-slate-900">Sound Sniper Victory!</h3>
-        <p className="text-sm font-bold text-slate-600">You earned <span className="text-amber-600 text-lg font-black">+{score} XP</span> with rapid ear decoding!</p>
+        <h3 className="text-xl font-black text-slate-900">SOUND SNIPER COMPLETE!</h3>
+        <p className="text-sm font-bold text-slate-600">
+          You earned <span className="text-amber-600 text-lg font-black">+{score} PTS</span> with rapid ear decoding!
+        </p>
         <button
           type="button"
-          onClick={() => {
-            setCurrentIndex(0);
-            setScore(0);
-            setStreak(0);
-            setIsDone(false);
-          }}
+          onClick={handleRestart}
           className="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 rounded-xl font-black text-xs shadow-md flex items-center gap-2 mx-auto"
         >
-          <RotateCcw size={14} /> Play Again
+          <RotateCcw size={14} /> Play Sound Sniper Again (45s)
         </button>
       </div>
     );
   }
 
-  if (!currentItem) return <div className="p-4 text-center text-xs text-slate-400">Loading audio words...</div>;
+  if (!currentItem) return <div className="p-4 text-center text-xs text-slate-400 font-bold">Loading audio words...</div>;
 
   const targetWord = typeof currentItem === 'string' ? currentItem : (currentItem.word || currentItem.en || currentItem.text || '');
 
   return (
-    <div className="w-full bg-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-slate-800 shadow-xl space-y-6">
+    <div className="w-full bg-slate-950 text-white rounded-3xl p-6 sm:p-7 border-2 border-amber-500/40 shadow-xl space-y-6 font-sans">
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-3">
         <div className="flex items-center gap-2">
@@ -100,25 +129,33 @@ export default function SoundSniper({ words = [], onComplete }) {
             <Zap size={18} />
           </div>
           <div>
-            <h4 className="text-sm font-black text-amber-300">⚡ SOUND SNIPER (FAST EAR DECODING)</h4>
-            <span className="text-[10px] text-slate-400">Round {currentIndex + 1} / {Math.min(words.length, 8)}</span>
+            <h4 className="text-sm font-black text-amber-300">🎧 SOUND SNIPER (FAST EAR DECODING)</h4>
+            <span className="text-[10px] text-slate-400">Question {currentIndex + 1} of {Math.min(words.length, 10)}</span>
           </div>
         </div>
 
         <div className="flex items-center gap-3">
           {streak > 1 && (
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-orange-500 text-white animate-pulse">
-              🔥 {streak}x Streak!
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase bg-orange-500 text-white animate-pulse flex items-center gap-1">
+              <Flame size={12} /> {streak}x Streak!
             </span>
           )}
+
+          <div className="px-3.5 py-1.5 bg-slate-900 rounded-xl border border-slate-800 flex items-center gap-2">
+            <Timer className={timeLeft <= 8 ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={16} />
+            <span className={`text-sm font-black font-mono ${timeLeft <= 8 ? 'text-rose-400' : 'text-amber-300'}`}>
+              {timeLeft}s
+            </span>
+          </div>
+
           <span className="text-sm font-black text-amber-400 font-mono">
-            Score: {score} XP
+            {score} PTS
           </span>
         </div>
       </div>
 
       {/* Speaker Button */}
-      <div className="text-center py-4 space-y-3">
+      <div className="text-center py-2 space-y-3">
         <button
           type="button"
           onClick={handlePlaySound}
@@ -126,7 +163,7 @@ export default function SoundSniper({ words = [], onComplete }) {
         >
           <Volume2 size={44} className="group-hover:scale-110 transition-transform" />
         </button>
-        <div className="text-xs font-bold text-slate-300">Tap the speaker to hear the word again</div>
+        <div className="text-xs font-bold text-slate-300">Tap speaker to re-listen</div>
       </div>
 
       {/* Options Grid */}
@@ -135,14 +172,14 @@ export default function SoundSniper({ words = [], onComplete }) {
           const isTarget = opt.toLowerCase() === targetWord.toLowerCase();
           const isSelected = selectedWord === opt;
 
-          let btnStyle = 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700';
+          let btnStyle = 'bg-slate-900 hover:bg-slate-800 text-slate-200 border-slate-800';
           if (isAnswered) {
             if (isTarget) {
               btnStyle = 'bg-emerald-600 text-white border-emerald-400 ring-2 ring-emerald-400';
             } else if (isSelected && !isTarget) {
               btnStyle = 'bg-rose-600 text-white border-rose-400';
             } else {
-              btnStyle = 'bg-slate-800/40 text-slate-500 border-slate-800';
+              btnStyle = 'bg-slate-900/40 text-slate-500 border-slate-900';
             }
           }
 
