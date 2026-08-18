@@ -1,395 +1,280 @@
-import React, { useState, useEffect } from 'react';
-import { learnerProgressService } from '../../../../services/learnerProgressService';
-import { srsService } from '../../../../services/srsService';
+import React, { useState, useEffect, useMemo } from 'react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
-import { Zap, Trophy, Timer, Swords, CheckCircle2, RefreshCw, Coffee, Star } from 'lucide-react';
+import { Zap, Trophy, Timer, Swords, CheckCircle2, RotateCcw, Flame, Sparkles } from 'lucide-react';
 import CompletionModal from '../../../../components/common/CompletionModal';
 
-const WEEK33_VOCAB_SETS = {
-  set1_nouns_adj: [
-    { id: "na01", en: "corridor", vi: "hành lang" },
-    { id: "na02", en: "bandage", vi: "băng cá nhân" },
-    { id: "na03", en: "nurse", vi: "y tế / y tá" },
-    { id: "na04", en: "cold pack", vi: "túi chườm lạnh" },
-    { id: "na05", en: "relieved", vi: "nhẹ nhõm" },
-    { id: "na06", en: "praised", vi: "khen ngợi" },
-    { id: "na07", en: "carefully", vi: "cẩn thận" },
-    { id: "na08", en: "immediately", vi: "ngay lập tức" },
-    { id: "na09", en: "puddle", vi: "vũng nước ướt" },
-    { id: "na10", en: "friction", vi: "lực ma sát" }
-  ],
-  set2_verbs: [
-    { id: "v01", en: "slipped", vi: "đã trượt chân" },
-    { id: "v02", en: "fell down", vi: "đã ngã xuống" },
-    { id: "v03", en: "called", vi: "đã gọi trợ giúp" },
-    { id: "v04", en: "treated", vi: "đã sơ cứu" },
-    { id: "v05", en: "applied", vi: "đã băng bó" },
-    { id: "v06", en: "reminded", vi: "đã nhắc nhở" },
-    { id: "v07", en: "followed", vi: "đã tuân thủ" },
-    { id: "v08", en: "helped", vi: "đã giúp đỡ" },
-    { id: "v09", en: "stopped", vi: "đã dừng lại" },
-    { id: "v10", en: "praised", vi: "đã khen ngợi" }
-  ],
-  set3_chunks: [
-    { id: "c01", en: "walking carefully down corridor", vi: "đi bộ cẩn thận dưới hành lang" },
-    { id: "c02", en: "slipped on the wet floor", vi: "trượt chân trên sàn ướt" },
-    { id: "c03", en: "fell down heavily", vi: "ngã xuống rất đau" },
-    { id: "c04", en: "called the school nurse", vi: "gọi y tế trường học" },
-    { id: "c05", en: "right away", vi: "ngay lập tức" },
-    { id: "c06", en: "applied a clean bandage", vi: "băng vết thương sạch sẽ" },
-    { id: "c07", en: "placed a cold pack", vi: "chườm túi đá lạnh" },
-    { id: "c08", en: "felt extremely relieved", vi: "cảm thấy rất nhẹ nhõm" },
-    { id: "c09", en: "praised for quick thinking", vi: "khen ngợi vì phản ứng nhanh" },
-    { id: "c10", en: "followed safety rules", vi: "tuân thủ quy tắc an toàn" }
-  ],
-  set4_definitions: [
-    { id: "def01", en: "corridor", vi: "A long passage in a school building with doors on each side." },
-    { id: "def02", en: "bandage", vi: "A strip of clean material used to bind up a wound or cut." },
-    { id: "def03", en: "nurse", vi: "A trained healthcare worker who cares for sick or injured students." },
-    { id: "def04", en: "slipped", vi: "Slid accidentally on a wet or smooth floor and lost balance." },
-    { id: "def05", en: "relieved", vi: "Feeling happy because something difficult or scary is over." },
-    { id: "def06", en: "praised", vi: "Expressed warm approval or admiration for good behavior." },
-    { id: "def07", en: "careful", vi: "Making sure to avoid potential danger or mistakes." },
-    { id: "def08", en: "immediately", vi: "Right away without any delay." },
-    { id: "def09", en: "puddle", vi: "A small pool of liquid on the ground or floor." },
-    { id: "def10", en: "friction", vi: "The resistance that one surface or object encounters when moving over another." }
-  ]
-};
+const DEFAULT_WORD_POOL = [
+  { id: "w01", en: "corridor", vi: "hành lang" },
+  { id: "w02", en: "bandage", vi: "băng cá nhân" },
+  { id: "w03", en: "nurse", vi: "y tế / y tá" },
+  { id: "w04", en: "cold pack", vi: "túi chườm lạnh" },
+  { id: "w05", en: "relieved", vi: "nhẹ nhõm" },
+  { id: "w06", en: "praised", vi: "khen ngợi" },
+  { id: "w07", en: "carefully", vi: "cẩn thận" },
+  { id: "w08", en: "immediately", vi: "ngay lập tức" },
+  { id: "w09", en: "puddle", vi: "vũng nước ướt" },
+  { id: "w10", en: "friction", vi: "lực ma sát" },
+  { id: "w11", en: "slipped", vi: "trượt chân" },
+  { id: "w12", en: "fell down", vi: "ngã xuống" },
+  { id: "w13", en: "called nurse", vi: "gọi y tế" },
+  { id: "w14", en: "applied bandage", vi: "băng bó vết thương" },
+  { id: "w15", en: "walking carefully", vi: "đi bộ cẩn thận" },
+  { id: "w16", en: "slipped on wet floor", vi: "trượt chân trên sàn ướt" },
+  { id: "w17", en: "clean bandage", vi: "băng cá nhân sạch" },
+  { id: "w18", en: "hurt his knee", vi: "bị thương đầu gối" },
+  { id: "w19", en: "felt relieved", vi: "cảm thấy nhẹ nhõm" },
+  { id: "w20", en: "first aid kit", vi: "hộp sơ cứu" }
+];
 
-export function FlashArena({ customSets, onAttemptResult }) {
-  const currentUser = useUserStore((state) => state.currentUser);
-  const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
-
-  const [playMode, setPlayMode] = useState('casual'); // 'casual' (Untimed Learn) | 'speed' (30s Check Challenge)
-  const [activeSetKey, setActiveSetKey] = useState('set1_nouns_adj');
+export function FlashArena({ customSets, onComplete }) {
   const [selectedEn, setSelectedEn] = useState(null);
   const [selectedVi, setSelectedVi] = useState(null);
   const [matchedIds, setMatchedIds] = useState([]);
   const [score, setScore] = useState(0);
-  const [botScore, setBotScore] = useState(0);
+  const [streak, setStreak] = useState(0);
+  const [maxStreak, setMaxStreak] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
+  const [isGameActive, setIsGameActive] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  // Dynamic Word Pool: 70% Current Week Vocab + 30% Past SRS Review Words
-  const activeSets = customSets || WEEK33_VOCAB_SETS;
-  const basePairs = activeSets[activeSetKey] || activeSets.set1_nouns_adj || Object.values(activeSets)[0];
-  const currentPairs = srsService.getDynamicWordPool(basePairs, 10);
+  // Flatten all customSets into one unified 20-word pool
+  const unifiedPool = useMemo(() => {
+    if (!customSets) return DEFAULT_WORD_POOL;
+    let list = [];
+    if (Array.isArray(customSets)) return customSets;
 
-  const [shuffledEnList, setShuffledEnList] = useState([]);
-  const [shuffledViList, setShuffledViList] = useState([]);
-
-  // Fisher-Yates Shuffle BOTH English and Right columns independently
-  useEffect(() => {
-    if (!currentPairs || currentPairs.length === 0) return;
-
-    const arrEn = [...currentPairs];
-    for (let i = arrEn.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arrEn[i], arrEn[j]] = [arrEn[j], arrEn[i]];
-    }
-    setShuffledEnList(arrEn);
-
-    const arrVi = [...currentPairs];
-    for (let i = arrVi.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arrVi[i], arrVi[j]] = [arrVi[j], arrVi[i]];
-    }
-
-    setShuffledViList(arrVi);
-  }, [activeSetKey, customSets]);
-
-  // Match Evaluation Logic
-  useEffect(() => {
-    if (selectedEn && selectedVi) {
-      if (selectedEn.id === selectedVi.id) {
-        // Match Correct! Update SRS box & score
-        srsService.recordReview(selectedEn.en, true);
-        const newMatched = [...matchedIds, selectedEn.id];
-        setMatchedIds(newMatched);
-        setScore((prev) => prev + 10);
-
-        if (newMatched.length === currentPairs.length) {
-          setIsGameOver(true);
-          // Check Mode (Speed mode): Trigger Confetti Burst 🎉
-          if (playMode === 'speed') {
-            fireCelebrationConfetti();
-          }
-        }
-      } else {
-        // Incorrect match: Reset SRS box to Box 1
-        srsService.recordReview(selectedEn.en, false);
+    Object.values(customSets).forEach(set => {
+      if (Array.isArray(set)) {
+        list = [...list, ...set];
       }
-      setTimeout(() => {
-        setSelectedEn(null);
-        setSelectedVi(null);
-      }, 400);
-    }
-  }, [selectedEn, selectedVi]);
+    });
 
+    if (list.length === 0) return DEFAULT_WORD_POOL;
 
-  // Timer Countdown Engine (Only active in Speed mode)
+    // Deduplicate by en
+    const unique = [];
+    const seen = new Set();
+    list.forEach(item => {
+      if (item && item.en && !seen.has(item.en.toLowerCase())) {
+        seen.add(item.en.toLowerCase());
+        unique.push(item);
+      }
+    });
+
+    return unique.length > 0 ? unique : DEFAULT_WORD_POOL;
+  }, [customSets]);
+
+  // Current active 6 pairs displayed on screen
+  const [activePairs, setActivePairs] = useState([]);
+  const [shuffledEn, setShuffledEn] = useState([]);
+  const [shuffledVi, setShuffledVi] = useState([]);
+
+  // Start / Restart Blitz Game
+  const handleStartGame = () => {
+    setScore(0);
+    setStreak(0);
+    setMaxStreak(0);
+    setTimeLeft(30);
+    setMatchedIds([]);
+    setSelectedEn(null);
+    setSelectedVi(null);
+    setIsGameOver(false);
+    setIsGameActive(true);
+
+    // Pick 8 random pairs from unifiedPool
+    const shuffled = [...unifiedPool].sort(() => 0.5 - Math.random()).slice(0, 8);
+    setActivePairs(shuffled);
+    setShuffledEn([...shuffled].sort(() => 0.5 - Math.random()));
+    setShuffledVi([...shuffled].sort(() => 0.5 - Math.random()));
+  };
+
+  // Auto start on mount
   useEffect(() => {
-    if (playMode !== 'speed' || isGameOver) return;
+    handleStartGame();
+  }, [unifiedPool]);
+
+  // 30-Second Countdown Timer Engine
+  useEffect(() => {
+    if (!isGameActive || isGameOver) return;
 
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeft(prev => {
         if (prev <= 1) {
           clearInterval(timer);
           setIsGameOver(true);
+          setIsGameActive(false);
+          fireCelebrationConfetti('WordBlitz_Victory');
+          const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+          if (userStore?.addXP) userStore.addXP(40);
           return 0;
         }
         return prev - 1;
       });
     }, 1000);
 
-    const botTimer = setInterval(() => {
-      if (!isGameOver) {
-        setBotScore((prev) => prev + 10);
-      }
-    }, 6000);
+    return () => clearInterval(timer);
+  }, [isGameActive, isGameOver]);
 
-    return () => {
-      clearInterval(timer);
-      clearInterval(botTimer);
-    };
-  }, [playMode, isGameOver]);
+  // Match Evaluation Logic
+  useEffect(() => {
+    if (selectedEn && selectedVi) {
+      if (selectedEn.id === selectedVi.id || selectedEn.en.toLowerCase() === selectedVi.en?.toLowerCase()) {
+        // MATCH CORRECT!
+        const nextStreak = streak + 1;
+        setStreak(nextStreak);
+        setMaxStreak(prev => Math.max(prev, nextStreak));
 
-  // Handle Match Selection
-  const handleEnClick = (item) => {
-    if (matchedIds.includes(item.id)) return;
-    setSelectedEn(item);
-    if (selectedVi) {
-      checkMatch(item, selectedVi);
-    }
-  };
+        const bonusPoints = 10 + nextStreak * 5;
+        setScore(prev => prev + bonusPoints);
+        setTimeLeft(prev => Math.min(30, prev + 1)); // Bonus +1s per correct match!
 
-  const handleViClick = (item) => {
-    if (matchedIds.includes(item.id)) return;
-    setSelectedVi(item);
-    if (selectedEn) {
-      checkMatch(selectedEn, item);
-    }
-  };
+        const newMatched = [...matchedIds, selectedEn.id];
+        setMatchedIds(newMatched);
 
-  const checkMatch = async (enItem, viItem) => {
-    if (enItem.id === viItem.id) {
-      // Correct Match
-      const newMatched = [...matchedIds, enItem.id];
-      setMatchedIds(newMatched);
-      setScore((prev) => prev + 20);
-      setSelectedEn(null);
-      setSelectedVi(null);
-
-      // Check if all matched
-      if (newMatched.length === currentPairs.length) {
-        setIsGameOver(true);
-        fireCelebrationConfetti('FlashArena_Complete');
-        const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-        if (userStore?.addXP) userStore.addXP(50);
-
-        await learnerProgressService.logAttempt({
-          learnerId,
-          contentId: `w33_flash_arena_${activeSetKey}`,
-          mode: 'learn',
-          result: 'correct',
-          score: score + 20,
-          timeSpentSeconds: 30 - timeLeft
-        });
-
-        if (onAttemptResult) {
-          onAttemptResult(true, 'flash_arena');
+        // If all 8 matched, load 8 fresh pairs!
+        if (newMatched.length === activePairs.length) {
+          setTimeout(() => {
+            const next8 = [...unifiedPool].sort(() => 0.5 - Math.random()).slice(0, 8);
+            setActivePairs(next8);
+            setShuffledEn([...next8].sort(() => 0.5 - Math.random()));
+            setShuffledVi([...next8].sort(() => 0.5 - Math.random()));
+            setMatchedIds([]);
+          }, 300);
         }
+      } else {
+        // INCORRECT MATCH
+        setStreak(0);
       }
-    } else {
-      // Incorrect Match
-      setSelectedEn(null);
-      setSelectedVi(null);
-    }
-  };
 
-  const handleRestart = () => {
-    setMatchedIds([]);
-    setSelectedEn(null);
-    setSelectedVi(null);
-    setScore(0);
-    setBotScore(0);
-    setTimeLeft(30);
-    setIsGameOver(false);
-  };
+      setTimeout(() => {
+        setSelectedEn(null);
+        setSelectedVi(null);
+      }, 250);
+    }
+  }, [selectedEn, selectedVi]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900">
-      <CompletionModal
-        isOpen={isGameOver}
-        onClose={() => {}}
-        score={score >= 100 ? 100 : Math.round((matchedIds.length / currentPairs.length) * 100)}
-        stars={3}
-        xpEarned={50}
-        srsWordsAdded={currentPairs.length}
-        activityTitle="Flash Arena Speed Match (Arena Game)"
-      />
-      {/* Top Controls */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 mb-6 border-b border-slate-200">
-        <div>
-          <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-black uppercase tracking-wider flex items-center gap-1.5 w-fit">
-            <Zap size={14} /> Flash Arena — Vocabulary Speed Battle
-          </span>
-          <h2 className="text-xl font-black text-slate-900 mt-1">Week 33 Vocabulary Battle</h2>
-        </div>
-
-        {/* Mode Selector */}
-        <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
-          <button
-            onClick={() => { setPlayMode('casual'); handleRestart(); }}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              playMode === 'casual' ? 'bg-emerald-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            <Coffee size={14} /> Casual Mode (Untimed)
-          </button>
-          <button
-            onClick={() => { setPlayMode('speed'); handleRestart(); }}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
-              playMode === 'speed' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
-            }`}
-          >
-            <Timer size={14} /> Speed Battle (30s)
-          </button>
-        </div>
-      </div>
-
-      {/* Set Selector */}
-      <div className="flex items-center gap-2 mb-6 overflow-x-auto pb-2">
-        <span className="text-xs font-black text-slate-500 uppercase mr-2">Card Sets:</span>
-        {Object.keys(activeSets).map((key, idx) => (
-          <button
-            key={key}
-            onClick={() => { setActiveSetKey(key); handleRestart(); }}
-            className={`px-3 py-1.5 rounded-xl text-xs font-black transition border ${
-              activeSetKey === key
-                ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
-                : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
-            }`}
-          >
-            {idx === 0
-              ? 'Set 1: Nouns & Adjectives'
-              : idx === 1
-              ? 'Set 2: Action Verbs'
-              : idx === 2
-              ? 'Set 3: Chunks & Collocations'
-              : 'Set 4: Definitions'}
-          </button>
-        ))}
-      </div>
-
-      {/* Arena Status Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
-        <div className="p-3 bg-indigo-50 rounded-2xl border border-indigo-100 flex items-center gap-3">
-          <div className="p-2.5 bg-indigo-600 text-white rounded-xl">
-            <Trophy size={18} />
+    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-slate-950 text-white rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-6">
+      {/* Top Arcade Status Bar */}
+      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-slate-800 pb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-lg">
+            ⚡
           </div>
           <div>
-            <div className="text-[10px] text-indigo-700 font-black uppercase">Your Score</div>
-            <div className="text-lg font-black text-indigo-950">{score} pts</div>
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/30 text-amber-300 border border-amber-400/40">
+              30-Second Arcade Speed Match
+            </span>
+            <h3 className="text-lg font-black text-white">⚡ WORD BLITZ (30s)</h3>
           </div>
         </div>
 
-        <div className="p-3 bg-purple-50 rounded-2xl border border-purple-100 flex items-center gap-3">
-          <div className="p-2.5 bg-purple-600 text-white rounded-xl">
-            <Swords size={18} />
-          </div>
-          <div>
-            <div className="text-[10px] text-purple-700 font-black uppercase">Mode</div>
-            <div className="text-sm font-black text-purple-950">
-              {playMode === 'casual' ? 'Untimed Practice' : `Speed (${timeLeft}s remaining)`}
+        {/* Score, Streak & Timer Dashboard */}
+        <div className="flex items-center gap-3">
+          {streak > 1 && (
+            <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-lg">
+              <Flame size={14} /> {streak}x COMBO!
             </div>
-          </div>
-        </div>
+          )}
 
-        <div className="p-3 bg-emerald-50 rounded-2xl border border-emerald-100 flex items-center gap-3 col-span-2 sm:col-span-1">
-          <div className="p-2.5 bg-emerald-600 text-white rounded-xl">
-            <CheckCircle2 size={18} />
+          <div className="px-4 py-2 bg-slate-900 rounded-2xl border border-slate-800 flex items-center gap-2">
+            <Timer className={timeLeft <= 5 ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={18} />
+            <span className={`text-base font-black font-mono ${timeLeft <= 5 ? 'text-rose-400' : 'text-amber-300'}`}>
+              {timeLeft}s
+            </span>
           </div>
-          <div>
-            <div className="text-[10px] text-emerald-700 font-black uppercase">Matched</div>
-            <div className="text-sm font-black text-emerald-950">{matchedIds.length}/{currentPairs.length} Pairs</div>
+
+          <div className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-2xl border border-amber-400/40 font-black text-sm font-mono">
+            {score} PTS
           </div>
         </div>
       </div>
 
-      {/* Main Matching Grid */}
-      {!isGameOver ? (
-        <div className="grid grid-cols-2 gap-4">
-          {/* English Column */}
-          <div className="space-y-2.5">
-            <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">ENGLISH</div>
-            {(shuffledEnList.length > 0 ? shuffledEnList : currentPairs).map((item) => {
+      {/* Game End Overlay */}
+      {isGameOver && (
+        <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-4 animate-in zoom-in-95">
+          <Trophy size={56} className="mx-auto text-amber-400 animate-bounce" />
+          <h3 className="text-2xl font-black text-amber-300">BLITZ TIME EXPIRED!</h3>
+          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-200">
+            <div>Score: <span className="text-xl font-black text-amber-400">{score} PTS</span></div>
+            <div>Max Combo: <span className="text-xl font-black text-orange-400">{maxStreak}x 🔥</span></div>
+            <div>XP Earned: <span className="text-xl font-black text-emerald-400">+40 XP</span></div>
+          </div>
+          <button
+            type="button"
+            onClick={handleStartGame}
+            className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+          >
+            <RotateCcw size={18} /> Play Blitz Again (30s)
+          </button>
+        </div>
+      )}
 
+      {/* Arcade Matching Columns */}
+      {!isGameOver && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Left Column: English Words */}
+          <div className="space-y-2.5">
+            <div className="text-xs font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
+              <span>ENGLISH WORD</span>
+              <span className="text-[10px] text-slate-400">Tap word first</span>
+            </div>
+            {shuffledEn.map((item) => {
               const isMatched = matchedIds.includes(item.id);
               const isSelected = selectedEn?.id === item.id;
+              if (isMatched) return null;
+
               return (
                 <button
                   key={item.id}
-                  disabled={isMatched}
-                  onClick={() => handleEnClick(item)}
-                  className={`w-full p-4 rounded-2xl font-black text-sm transition border text-left shadow-sm ${
-                    isMatched
-                      ? 'bg-slate-100 text-slate-300 border-slate-200 line-through'
-                      : isSelected
-                      ? 'bg-indigo-600 text-white border-indigo-600 ring-4 ring-indigo-200 shadow-md scale-102'
-                      : 'bg-slate-50 hover:bg-slate-100 text-slate-800 border-slate-200'
+                  type="button"
+                  onClick={() => setSelectedEn(item)}
+                  className={`w-full p-4 rounded-2xl font-black text-sm transition-all border text-left flex items-center justify-between ${
+                    isSelected
+                      ? 'bg-amber-500 text-slate-950 border-amber-300 ring-4 ring-amber-400/30 scale-[1.02] shadow-xl'
+                      : 'bg-slate-900 hover:bg-slate-800 text-slate-100 border-slate-800 shadow-md'
                   }`}
                 >
-                  {item.en}
+                  <span className="truncate">{item.en}</span>
+                  {isSelected && <Sparkles size={16} className="text-slate-950 animate-spin" />}
                 </button>
               );
             })}
           </div>
 
-          {/* Meaning / Definition Column (Shuffled to prevent straight row matching) */}
+          {/* Right Column: Vietnamese Meanings */}
           <div className="space-y-2.5">
-            <div className="text-xs font-black text-slate-400 uppercase tracking-wider text-center mb-1">
-              {activeSetKey === 'set4_definitions' ? 'DEFINITION (ENGLISH)' : 'VIETNAMESE'}
+            <div className="text-xs font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
+              <span>VIETNAMESE MEANING</span>
+              <span className="text-[10px] text-slate-400">Tap matching meaning</span>
             </div>
-            {(shuffledViList.length > 0 ? shuffledViList : currentPairs).map((item) => {
+            {shuffledVi.map((item) => {
               const isMatched = matchedIds.includes(item.id);
               const isSelected = selectedVi?.id === item.id;
+              if (isMatched) return null;
+
               return (
                 <button
                   key={item.id}
-                  disabled={isMatched}
-                  onClick={() => handleViClick(item)}
-                  className={`w-full p-4 rounded-2xl font-black text-sm transition border text-left shadow-sm ${
-                    isMatched
-                      ? 'bg-slate-100 text-slate-300 border-slate-200 line-through'
-                      : isSelected
-                      ? 'bg-purple-600 text-white border-purple-600 ring-4 ring-purple-200 shadow-md scale-102'
-                      : 'bg-slate-50 hover:bg-slate-100 text-slate-800 border-slate-200'
+                  type="button"
+                  onClick={() => setSelectedVi(item)}
+                  className={`w-full p-4 rounded-2xl font-black text-sm transition-all border text-left flex items-center justify-between ${
+                    isSelected
+                      ? 'bg-cyan-500 text-slate-950 border-cyan-300 ring-4 ring-cyan-400/30 scale-[1.02] shadow-xl'
+                      : 'bg-slate-900 hover:bg-slate-800 text-slate-100 border-slate-800 shadow-md'
                   }`}
                 >
-                  {item.vi}
+                  <span className="truncate">{item.vi}</span>
+                  {isSelected && <CheckCircle2 size={16} className="text-slate-950" />}
                 </button>
               );
             })}
           </div>
-        </div>
-      ) : (
-        /* Game Over Screen */
-        <div className="p-8 bg-slate-50 rounded-2xl border border-slate-200 text-center space-y-4 animate-in fade-in">
-          <div className="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-2xl font-black shadow-md">
-            🏆
-          </div>
-          <h3 className="text-xl font-black text-slate-900">Flash Arena Completed!</h3>
-          <p className="text-sm font-bold text-slate-600">Total Score Achieved: {score} Points</p>
-          <button
-            onClick={handleRestart}
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-sm transition inline-flex items-center gap-2 shadow-md"
-          >
-            <RefreshCw size={16} /> Play Arena Again
-          </button>
         </div>
       )}
     </div>
   );
 }
+
+export default FlashArena;
