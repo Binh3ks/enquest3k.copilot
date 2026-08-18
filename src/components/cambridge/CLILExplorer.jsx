@@ -500,7 +500,7 @@ export default function CLILExplorer({
               rows={3}
               value={criticalResponse}
               onChange={(e) => setCriticalResponse(e.target.value)}
-              placeholder="Type your thoughtful response here in English (e.g., 'Running in socks is more dangerous because socks lack rubber grip and reduce friction on smooth wood...')..."
+              placeholder="Type your thoughtful response in English here..."
               className="w-full p-3.5 bg-white rounded-2xl border border-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm font-medium text-slate-800 placeholder:text-slate-400"
             />
 

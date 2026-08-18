@@ -96,33 +96,49 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
     const words = text.split(/\s+/).filter(Boolean);
     const lower = text.toLowerCase();
 
-    // ── C.R.E DEBATE RUBRIC ENGINE (Official Pedagogical Standard) ──
-    // Tiêu chí 1: Claim (Lập trường - 30%)
-    const hasPosition = /\b(i\s+disagree|i\s+agree|my\s+opinion|i\s+believe|i\s+think|my\s+view|i\s+strongly)\b/i.test(lower);
-    const claimScore = hasPosition ? 30 : 10;
+    // ── C.R.E DEBATE RUBRIC ENGINE (100% English A2 Flyers Standard) ──
+    const wordCount = words.length;
 
-    // Tiêu chí 2: Reason (Lý do nhân quả - 40%)
-    const hasReason = /\b(because|so\s+that|since|due\s+to|as\s+a\s+result|therefore|for\s+this\s+reason)\b/i.test(lower);
+    // Minimum meaningful length check (Anti-gibberish / Anti-spam)
+    if (wordCount < 5) {
+      setDebateScore({
+        score: 30,
+        claimScore: 10,
+        reasonScore: 10,
+        evidenceScore: 10,
+        hasPosition: false,
+        hasReason: false,
+        hasEvidence: false,
+        wordCount,
+        aiFeedback: "⚠️ Argument too short: Please speak or write a complete sentence explaining your viewpoint."
+      });
+      return;
+    }
+
+    // Criteria 1: Claim / Position (30%)
+    const hasPosition = /\b(i\s+disagree|i\s+do\s+not\s+agree|i\s+agree|my\s+opinion|i\s+believe|i\s+think|my\s+view)\b/i.test(lower);
+    const claimScore = hasPosition ? 30 : 0;
+
+    // Criteria 2: Reason / Causal Connectors (40%)
+    const hasReason = /\b(because|so\s+that|since|due\s+to|as\s+a\s+result|therefore)\b/i.test(lower);
     const reasonScore = hasReason ? 40 : 10;
 
-    // Tiêu chí 3: Evidence / Science Context (Dẫn chứng thực tế - 30%)
-    const hasEvidence = /\b(friction|slip|slipped|wet\s+floor|puddle|dangerous|accident|hazard|rubber|grip|sock|wood|injury|hurt|safe|rules?)\b/i.test(lower);
+    // Criteria 3: Evidence / Safety Context (30%)
+    const hasEvidence = /\b(friction|slip|slipped|slippery|wet\s+floor|puddle|dangerous|danger|accident|hazard|rubber|grip|sock|wood|injury|hurt|fall|fall\s+down|safe|safety|rules?|nurse|bandage)\b/i.test(lower);
     const evidenceScore = hasEvidence ? 30 : 10;
 
-    // Depth booster
-    const wordCount = words.length;
     const totalScore = Math.min(100, claimScore + reasonScore + evidenceScore);
 
-    // Pedagogical Feedback Generation (Nova Coaching)
+    // English Pedagogical Feedback Generation (Nova Coaching)
     let aiFeedback = "";
     if (!hasPosition) {
-      aiFeedback = "⚠️ Chưa rõ lập trường: Con hãy bắt đầu bằng 'I disagree with Nova because...' hoặc 'In my opinion...' để nêu rõ quan điểm.";
+      aiFeedback = "⚠️ Unclear Position: Start with 'I disagree with Nova because...' or 'In my opinion...' to state your position clearly.";
     } else if (!hasReason) {
-      aiFeedback = "⚠️ Thiếu từ nối giải thích: Lập trường của con rất tốt, nhưng hãy thêm từ nối 'because' hoặc 'since' để giải thích nguyên nhân rõ ràng hơn.";
+      aiFeedback = "⚠️ Missing Causal Reason: Good position! Now add 'because' or 'since' to explain why running in corridors is unsafe.";
     } else if (!hasEvidence) {
-      aiFeedback = "⚠️ Cần thêm dẫn chứng thực tế: Lập luận tốt! Hãy bổ sung thêm từ khóa về khoa học ma sát (friction, wet floor, rubber shoes) để bài phản biện thuyết phục hơn.";
+      aiFeedback = "⚠️ Needs Safety Evidence: Good reasoning! Add a real example like 'slip on wet floor', 'hurt knee', or 'low friction' to make your argument convincing.";
     } else {
-      aiFeedback = "🌟 Xuất sắc! Luận điểm chuẩn mực C.R.E: Có lập trường rõ ràng (Claim), giải thích nguyên nhân logic (Reason), và dẫn chứng ma sát thực tế (Evidence).";
+      aiFeedback = "🌟 Brilliant C.R.E Debate! You clearly stated your position (Claim), explained why (Reason), and supported it with safety facts (Evidence).";
     }
 
     const result = {
@@ -208,13 +224,13 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
         </p>
       </div>
 
-      {/* Student Counter-Argument Studio */}
+      {/* Student Counter-Argument Studio (100% English Immersion) */}
       <div className="p-5 bg-slate-50 rounded-3xl border border-slate-200 space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <Sparkles size={16} className="text-amber-500" />
             <h4 className="text-sm font-black text-slate-800 uppercase tracking-wide">
-              Your Counter-Rebuttal (Phản biện của bạn):
+              Your Counter-Argument:
             </h4>
           </div>
 
@@ -228,25 +244,25 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
 
         {showSampleHint && (
           <div className="p-4 bg-indigo-50/70 rounded-2xl border border-indigo-200 text-xs text-indigo-950 space-y-2 animate-in fade-in">
-            <div className="font-bold uppercase tracking-wider text-indigo-800">Useful Discourse Phrases:</div>
+            <div className="font-bold uppercase tracking-wider text-indigo-800">Useful Sentence Starters:</div>
             <ul className="list-disc list-inside space-y-1 text-slate-700">
               {topic.suggested_discourse_markers.map((m, idx) => (
                 <li key={idx} className="font-medium font-mono">{m}</li>
               ))}
             </ul>
-            <div className="pt-1 text-slate-500 italic">
-              💡 Model example: &ldquo;{topic.sample_rebuttal}&rdquo;
+            <div className="pt-1 text-indigo-700 font-semibold">
+              💡 C.R.E Structure: State your position (Claim) → Explain why (Reason) → Give a safety fact (Evidence).
             </div>
           </div>
         )}
 
-        {/* Input Area */}
+        {/* Input Area (No Spoon-Feeding Placeholder) */}
         <div className="space-y-3">
           <textarea
             rows={4}
             value={userSpeechText}
             onChange={(e) => setUserSpeechText(e.target.value)}
-            placeholder="Record your speech or type your counter-argument here (e.g., 'I disagree with Nova because running is dangerous. You can slip on a wet floor and hurt your knee...')..."
+            placeholder="Record your speech or type your counter-argument in English here..."
             className="w-full p-4 bg-white rounded-2xl border border-slate-300 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
           />
 
