@@ -387,7 +387,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
               <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metChunks ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
                 <p className="text-[10px] font-bold text-slate-500 uppercase">Advanced Chunks</p>
                 <p className="text-xs font-black">
-                  {cambridgeEval.chunksFound.length} Found
+                  {cambridgeEval.chunksFound?.length || 0} Found
                 </p>
                 <p className="text-[9px] font-bold">
                   {cambridgeEval.metChunks ? '✓ Chunks Met' : 'Add 1+ learned chunk'}

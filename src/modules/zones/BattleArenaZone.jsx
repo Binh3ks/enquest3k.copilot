@@ -109,7 +109,7 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
       <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">
         {activeGame === 'flash_arena' && flashArenaData && (
           <FlashArena
-            arenaData={flashArenaData}
+            customSets={flashArenaData}
             weekNumber={weekNumber}
             onComplete={() => handleGameComplete(30)}
           />

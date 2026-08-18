@@ -88,6 +88,14 @@ export function evaluateCambridgeCriteria(text, weekNum = 33, customWordBank = {
 
   const stars = totalScore >= 80 ? 3 : totalScore >= 60 ? 2 : 1;
 
+  // 4. Cumulative Chunks Check
+  const cumulativeChunks = Array.isArray(customWordBank.cumulative_chunks) && customWordBank.cumulative_chunks.length > 0
+    ? customWordBank.cumulative_chunks
+    : ['slipped on wet floor', 'hurt his knee', 'called the school nurse', 'applied a clean bandage', 'cleaned the wet floor', 'walking carefully'];
+  const chunksFound = Array.from(new Set(cumulativeChunks.filter(c => lowerText.includes(c.toLowerCase()))));
+
+  const metChunks = chunksFound.length >= 1;
+
   return {
     totalScore,
     stars,
@@ -98,8 +106,11 @@ export function evaluateCambridgeCriteria(text, weekNum = 33, customWordBank = {
     minConnectors,
     metConnectors: connectorsFound.length >= minConnectors,
     hasPastContinuous,
+    metPastContinuous: hasPastContinuous,
     foundPastVerbs,
     foundKeywords,
+    chunksFound,
+    metChunks,
     isExamMode,
     isCoherent
   };
