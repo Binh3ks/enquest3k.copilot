@@ -100,7 +100,31 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
         {activeStudio === 'story_writing' && (
           <StoryWriting
             weekId={weekNumber}
-            writingData={creatorData}
+            content={{
+              story_prompts: {
+                picture_mode: {
+                  type: "picture",
+                  image_url: "/images/week33/writing_panel_1.png",
+                  panels: pictureStory || [
+                    { id: 1, image_url: "/images/week33/writing_panel_1.png", caption: "Panel 1: Running in corridor" },
+                    { id: 2, image_url: "/images/week33/writing_panel_2.png", caption: "Panel 2: Slipping on wet floor" },
+                    { id: 3, image_url: "/images/week33/writing_panel_3.png", caption: "Panel 3: Nurse applying bandage" }
+                  ],
+                  word_bank: (wordBankPills && Array.isArray(wordBankPills))
+                    ? wordBankPills
+                    : (wordBankPills?.action_verbs || ["corridor", "slipped", "fell", "nurse", "bandage"]),
+                  sentence_frames: creatorData.sentenceFrames || [
+                    "While a student was running in the corridor, he...",
+                    "Suddenly, he slipped on the wet floor and...",
+                    "Jake called the school nurse, who arrived with..."
+                  ],
+                  writing_prompts: {
+                    en: "Describe what happened in the 3 picture panels using past continuous and past simple verbs.",
+                    vi: "Mô tả điều xảy ra trong 3 bức tranh dùng động từ quá khứ tiếp diễn và quá khứ đơn."
+                  }
+                }
+              }
+            }}
           />
         )}
 

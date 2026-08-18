@@ -16,8 +16,8 @@ const WEEK33_VOCAB_SETS = {
     { id: "na06", en: "praised", vi: "khen ngợi" },
     { id: "na07", en: "carefully", vi: "cẩn thận" },
     { id: "na08", en: "immediately", vi: "ngay lập tức" },
-    { id: "na09", en: "truce", vi: "hòa bình / ngưng chiến" },
-    { id: "na10", en: "olympic", vi: "thế vận hội" }
+    { id: "na09", en: "puddle", vi: "vũng nước ướt" },
+    { id: "na10", en: "friction", vi: "lực ma sát" }
   ],
   set2_verbs: [
     { id: "v01", en: "slipped", vi: "đã trượt chân" },
@@ -50,10 +50,10 @@ const WEEK33_VOCAB_SETS = {
     { id: "def04", en: "slipped", vi: "Slid accidentally on a wet or smooth floor and lost balance." },
     { id: "def05", en: "relieved", vi: "Feeling happy because something difficult or scary is over." },
     { id: "def06", en: "praised", vi: "Expressed warm approval or admiration for good behavior." },
-    { id: "def07", en: "caution", vi: "Care taken to avoid danger, accidents, or mistakes." },
+    { id: "def07", en: "careful", vi: "Making sure to avoid potential danger or mistakes." },
     { id: "def08", en: "immediately", vi: "Right away without any delay." },
-    { id: "def09", en: "truce", vi: "An agreement between groups to stop fighting or competing." },
-    { id: "def10", en: "olympic", vi: "Relating to the global sports festival originating in ancient Greece." }
+    { id: "def09", en: "puddle", vi: "A small pool of liquid on the ground or floor." },
+    { id: "def10", en: "friction", vi: "The resistance that one surface or object encounters when moving over another." }
   ]
 };
 
