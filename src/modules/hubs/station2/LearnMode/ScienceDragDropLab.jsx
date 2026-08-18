@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -8,8 +8,7 @@ import {
   useSensors
 } from '@dnd-kit/core';
 import { useDraggable, useDroppable } from '@dnd-kit/core';
-import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, Trophy, HelpCircle, Lightbulb, Check } from 'lucide-react';
-import CompletionModal from '../../../../components/common/CompletionModal';
+import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, Trophy, HelpCircle, Lightbulb, Timer, Flame } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
 
@@ -34,8 +33,8 @@ function DraggableLabel({ id, text, isPlaced, disabled }) {
       style={style}
       {...listeners}
       {...attributes}
-      className={`px-3.5 py-2 bg-white border-2 border-emerald-400 text-emerald-950 font-black text-xs rounded-xl shadow-sm hover:shadow-md hover:bg-emerald-50 active:scale-95 cursor-grab active:cursor-grabbing transition select-none ${
-        isDragging ? 'opacity-50 ring-2 ring-emerald-500' : ''
+      className={`px-3.5 py-2 bg-white border-2 border-teal-400 text-teal-950 font-black text-xs rounded-xl shadow-sm hover:shadow-md hover:bg-teal-50 active:scale-95 cursor-grab active:cursor-grabbing transition select-none ${
+        isDragging ? 'opacity-50 ring-2 ring-teal-500' : ''
       }`}
     >
       🏷️ {text}
@@ -50,235 +49,229 @@ function DropZone({ id, label, currentPlaced, isCorrect, targetInfo }) {
     <div
       ref={setNodeRef}
       style={{ left: `${targetInfo.x}%`, top: `${targetInfo.y}%` }}
-      className={`absolute transform -translate-x-1/2 -translate-y-1/2 p-2 min-w-[110px] min-h-[44px] rounded-2xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md ${
+      className={`absolute transform -translate-x-1/2 -translate-y-1/2 p-2 min-w-[120px] min-h-[46px] rounded-2xl border-2 transition-all flex flex-col items-center justify-center text-center shadow-lg backdrop-blur-md ${
         currentPlaced
           ? isCorrect
             ? 'bg-emerald-500/90 border-white text-white font-black scale-105'
             : 'bg-rose-500/90 border-white text-white font-black scale-105 animate-shake'
           : isOver
           ? 'bg-amber-400/90 border-white text-slate-900 font-black scale-110 ring-4 ring-amber-300'
-          : 'bg-slate-900/80 border-dashed border-emerald-300 text-emerald-200 hover:bg-slate-900/90'
+          : 'bg-slate-900/80 border-dashed border-teal-300 text-teal-200 hover:bg-slate-900/90'
       }`}
     >
-      {currentPlaced ? (
-        <span className="text-xs font-black flex items-center gap-1">
-          {isCorrect ? <Check size={14} /> : <AlertCircle size={14} />} {currentPlaced}
-        </span>
-      ) : (
-        <>
-          <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-300">Drop Here</span>
-          <span className="text-[11px] font-black">{label}</span>
-        </>
-      )}
+      <span className="text-[10px] uppercase tracking-wider opacity-80">{label}</span>
+      <span className="text-xs font-black truncate max-w-[110px]">
+        {currentPlaced ? currentPlaced.text : 'Drop Label Here'}
+      </span>
     </div>
   );
 }
 
-export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
-  const defaultLab = {
-    title_en: "Corridor Friction & Safety Physics Lab",
-    title_vi: "Phòng Thí Nghiệm Vật Lý Ma Sát & An Toàn Hành Lang",
-    description_en: "Drag and drop the correct science labels onto the physics safety diagram!",
-    background_image: "/images/week33/read_cover_w33.jpg",
-    zones: [
-      {
-        id: "z1",
-        label: "Wet Floor Puddle",
-        correct_label: "Low Friction Zone",
-        x: 48,
-        y: 76,
-        micro_explanation: "⚠️ Physics Alert: Water acts like a lubricant! Friction is reduced to ZERO, making tiles extremely slippery."
-      },
-      {
-        id: "z2",
-        label: "Running Fast",
-        correct_label: "Kinetic Momentum",
-        x: 62,
-        y: 45,
-        micro_explanation: "⚡ Physics Alert: High running speed increases forward momentum, making it impossible for shoes to stop in time!"
-      },
-      {
-        id: "z3",
-        label: "Yellow Caution Sign",
-        correct_label: "Hazard Alert",
-        x: 28,
-        y: 65,
-        micro_explanation: "💡 Safety Alert: Warning signs instruct everyone to slow down and let rubber sole friction maintain balance."
-      },
-      {
-        id: "z4",
-        label: "First Aid Treatment",
-        correct_label: "Cold Pack & Bandage",
-        x: 80,
-        y: 55,
-        micro_explanation: "🩹 Medical Care: Cold pack reduces tissue swelling, while clean bandage protects the cut skin from bacteria."
-      }
-    ],
-    labels: ["Low Friction Zone", "Kinetic Momentum", "Hazard Alert", "Cold Pack & Bandage", "High Gravity", "Thermal Heat"]
-  };
+const DEFAULT_SCIENCE_DATA = {
+  experimentTitle: "Corridor Friction & Slip Hazard Virtual Lab",
+  diagramImage: "/images/week33/clil_friction.png",
+  labels: [
+    { id: "lbl_01", text: "Wet Puddle", targetId: "target_01" },
+    { id: "lbl_02", text: "Friction Zero", targetId: "target_02" },
+    { id: "lbl_03", text: "Clean Bandage", targetId: "target_03" },
+    { id: "lbl_04", text: "Safety Sign", targetId: "target_04" }
+  ],
+  targets: [
+    { id: "target_01", name: "Puddle Zone", x: 50, y: 75 },
+    { id: "target_02", name: "Low Friction Area", x: 65, y: 60 },
+    { id: "target_03", name: "First Aid Kit", x: 30, y: 55 },
+    { id: "target_04", name: "Corridor Warning Sign", x: 80, y: 35 }
+  ],
+  explanation: "Water acts as a liquid lubricant between shoe soles and smooth tiles, reducing friction to near zero and causing sudden slips."
+};
 
-  const lab = customLabData || defaultLab;
+export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onComplete }) {
+  const labData = scienceData || DEFAULT_SCIENCE_DATA;
   const [placedItems, setPlacedItems] = useState({});
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [feedback, setFeedback] = useState(null);
-  const [activeExplanation, setActiveExplanation] = useState(null);
+  const [score, setScore] = useState(0);
+  const [streak, setStreak] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(45);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
   );
 
+  // 45s Timed Challenge Engine
+  useEffect(() => {
+    if (isGameOver) return;
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setIsGameOver(true);
+          fireCelebrationConfetti('ScienceLab_Complete');
+          if (onComplete) onComplete(score);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isGameOver, score, onComplete]);
+
   const handleDragEnd = (event) => {
     const { active, over } = event;
-    if (!over) return;
+    if (!over || isGameOver) return;
 
-    const draggedLabel = active.id;
-    const dropZoneId = over.id;
-    const targetZone = lab.zones.find(z => z.id === dropZoneId);
+    const labelItem = labData.labels.find(l => l.id === active.id);
+    const targetInfo = labData.targets.find(t => t.id === over.id);
 
-    if (!targetZone) return;
+    if (!labelItem || !targetInfo) return;
 
-    const isCorrect = targetZone.correct_label === draggedLabel;
-
-    setPlacedItems(prev => {
-      const next = { ...prev, [dropZoneId]: draggedLabel };
-      // Check if all zones correctly filled
-      const allZonesFilled = lab.zones.every(z => next[z.id] === z.correct_label);
-      if (allZonesFilled) {
-        setIsCompleted(true);
-        fireCelebrationConfetti('ScienceLab_Complete');
-        const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-        if (userStore?.addXP) userStore.addXP(60);
-        if (onAttemptResult) onAttemptResult(true);
-      }
-      return next;
-    });
+    const isCorrect = labelItem.targetId === over.id;
+    const newPlaced = { ...placedItems, [over.id]: { ...labelItem, isCorrect } };
+    setPlacedItems(newPlaced);
 
     if (isCorrect) {
-      setActiveExplanation(targetZone.micro_explanation || `✅ "${draggedLabel}" accurately identifies this science zone.`);
-      setFeedback({ type: 'success', text: `✅ Correct Match: ${draggedLabel}!` });
+      const nextStreak = streak + 1;
+      setStreak(nextStreak);
+      const bonusScore = 25 + nextStreak * 5;
+      setScore(prev => prev + bonusScore);
+      setTimeLeft(prev => Math.min(45, prev + 2)); // Bonus +2s per correct drag
+
+      // Check if all placed
+      const totalCorrect = Object.values(newPlaced).filter(p => p.isCorrect).length;
+      if (totalCorrect === labData.targets.length) {
+        setIsGameOver(true);
+        fireCelebrationConfetti('ScienceLab_Victory');
+        const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+        if (userStore?.addXP) userStore.addXP(45);
+        if (onComplete) onComplete(score + bonusScore);
+      }
     } else {
-      setActiveExplanation(null);
-      setFeedback({ type: 'error', text: `❌ Not quite. Think about how friction and forces act here!` });
+      setStreak(0);
     }
   };
 
   const handleRestart = () => {
     setPlacedItems({});
-    setIsCompleted(false);
-    setFeedback(null);
-    setActiveExplanation(null);
+    setScore(0);
+    setStreak(0);
+    setTimeLeft(45);
+    setIsGameOver(false);
   };
 
-  const placedValues = Object.values(placedItems);
-  const availableLabels = lab.labels.filter(l => !placedValues.includes(l));
-
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900 space-y-4">
-      <CompletionModal
-        isOpen={isCompleted}
-        onClose={() => setIsCompleted(false)}
-        score={100}
-        stars={3}
-        xpEarned={60}
-        activityTitle="Science Drag & Drop Lab"
-      />
-
-      {/* Header */}
-      <div className="flex items-center justify-between pb-3 border-b border-slate-200 flex-wrap gap-2">
-        <div>
-          <span className="text-[10px] font-black text-emerald-600 uppercase tracking-wider">
-            STEM SCIENCE LAB — INTERACTIVE PHYSICS
-          </span>
-          <h3 className="text-base font-black text-slate-900 mt-0.5">{lab.title_en}</h3>
-          <p className="text-xs text-slate-500">{lab.description_en}</p>
+    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-slate-950 text-white rounded-3xl border-2 border-teal-500/40 shadow-2xl space-y-6 font-sans">
+      {/* Top Arcade Status Bar */}
+      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-slate-800 pb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-teal-500 to-emerald-400 text-slate-950 flex items-center justify-center font-black text-2xl shadow-lg">
+            🧪
+          </div>
+          <div>
+            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-teal-500/30 text-teal-300 border border-teal-400/40">
+              Science Physics CLIL • Arcade Challenge
+            </span>
+            <h3 className="text-lg font-black text-white">🧪 SCIENCE LAB (PHYSICS DRAG & DROP)</h3>
+          </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          {isCompleted && (
-            <button
-              onClick={handleRestart}
-              className="px-3.5 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-black rounded-xl border border-emerald-300 flex items-center gap-1 transition shadow-sm"
-            >
-              <RefreshCw size={13} /> Reset Lab
-            </button>
+        {/* Score & Timer Dashboard */}
+        <div className="flex items-center gap-3">
+          {streak > 1 && (
+            <div className="px-3 py-1 bg-gradient-to-r from-teal-500 to-emerald-400 text-slate-950 font-black text-xs animate-bounce flex items-center gap-1 shadow-lg">
+              <Flame size={14} /> {streak}x STREAK!
+            </div>
           )}
-          <span className="px-3 py-1 bg-emerald-50 text-emerald-900 text-xs font-mono font-black rounded-lg border border-emerald-200">
-            {Object.keys(placedItems).length} / {lab.zones.length} Matched
-          </span>
+
+          <div className="px-4 py-2 bg-slate-900 rounded-2xl border border-slate-800 flex items-center gap-2">
+            <Timer className={timeLeft <= 8 ? 'text-rose-500 animate-ping' : 'text-teal-400'} size={18} />
+            <span className={`text-base font-black font-mono ${timeLeft <= 8 ? 'text-rose-400' : 'text-teal-300'}`}>
+              {timeLeft}s
+            </span>
+          </div>
+
+          <div className="px-4 py-2 bg-teal-500/20 text-teal-300 rounded-2xl border border-teal-400/40 font-black text-sm font-mono">
+            {score} PTS
+          </div>
         </div>
       </div>
 
-      <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-        {/* Interactive Lab Diagram Viewport */}
-        <div className="relative w-full h-[320px] sm:h-[380px] bg-slate-950 rounded-3xl overflow-hidden shadow-xl border-2 border-emerald-500/50 group select-none">
-          <img
-            src={lab.background_image}
-            alt={lab.title_en}
-            className="w-full h-full object-cover object-center opacity-85"
-            onError={(e) => { e.target.src = '/images/week33/webtoon_scene_1.png'; }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30" />
-
-          {/* Render Target Drop Zones */}
-          {lab.zones.map(z => {
-            const placed = placedItems[z.id];
-            const isCorrect = placed === z.correct_label;
-            return (
-              <DropZone
-                key={z.id}
-                id={z.id}
-                label={z.label}
-                currentPlaced={placed}
-                isCorrect={isCorrect}
-                targetInfo={z}
-              />
-            );
-          })}
+      {/* Game Over Screen */}
+      {isGameOver ? (
+        <div className="p-8 bg-gradient-to-br from-teal-500/20 via-emerald-500/20 to-slate-900 border-2 border-teal-400 rounded-3xl text-center space-y-4 animate-in zoom-in-95">
+          <Trophy size={56} className="mx-auto text-teal-400 animate-bounce" />
+          <h3 className="text-2xl font-black text-teal-300">SCIENCE LAB COMPLETE!</h3>
+          <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+            {labData.explanation}
+          </p>
+          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-200">
+            <div>Score: <span className="text-xl font-black text-teal-400">{score} PTS</span></div>
+            <div>XP Earned: <span className="text-xl font-black text-emerald-400">+45 XP</span></div>
+          </div>
+          <button
+            type="button"
+            onClick={handleRestart}
+            className="px-6 py-3.5 bg-gradient-to-r from-teal-400 to-emerald-500 hover:from-teal-300 text-slate-950 rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+          >
+            <RefreshCw size={18} /> Play Science Lab Again (45s)
+          </button>
         </div>
+      ) : (
+        /* Active Lab Display */
+        <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+          <div className="space-y-5">
+            {/* Title */}
+            <div className="p-4 bg-slate-900 rounded-2xl border border-slate-800">
+              <h4 className="text-sm font-black text-teal-300">{labData.experimentTitle}</h4>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Drag the science labels into the correct position on the experiment diagram before time runs out!
+              </p>
+            </div>
 
-        {/* Micro-Explanation Cause-and-Effect Banner (Directly Below Image) */}
-        {activeExplanation && (
-          <div className="p-4 bg-emerald-50 rounded-2xl border-2 border-emerald-400 text-xs sm:text-sm font-bold text-emerald-950 flex items-start gap-3 shadow-md animate-in fade-in slide-in-from-top-2">
-            <Lightbulb size={20} className="text-amber-500 shrink-0 mt-0.5" />
-            <div>
-              <span className="font-black uppercase tracking-wider text-emerald-800 block mb-0.5">
-                ⚡ CAUSE & EFFECT SCIENCE CONCEPT:
+            {/* Diagram Area with Drop Zones */}
+            <div className="relative w-full aspect-video sm:aspect-[21/9] rounded-2xl overflow-hidden bg-slate-900 border-2 border-slate-800 shadow-inner">
+              <img
+                src={labData.diagramImage || '/images/week33/clil_friction.png'}
+                alt={labData.experimentTitle}
+                className="w-full h-full object-cover opacity-90"
+                onError={(e) => { e.target.src = '/images/scenes/default_story.jpg'; }}
+              />
+
+              {/* Render Target Dropzones */}
+              {labData.targets?.map((target) => (
+                <DropZone
+                  key={target.id}
+                  id={target.id}
+                  label={target.name}
+                  currentPlaced={placedItems[target.id]}
+                  isCorrect={placedItems[target.id]?.isCorrect}
+                  targetInfo={target}
+                />
+              ))}
+            </div>
+
+            {/* Draggable Labels Source Dock */}
+            <div className="p-4 bg-slate-900/90 rounded-2xl border border-slate-800 space-y-2">
+              <span className="text-[10px] font-black uppercase tracking-wider text-slate-400">
+                DRAG LABELS TO EXPERIMENT DIAGRAM:
               </span>
-              {activeExplanation}
+              <div className="flex items-center gap-3 flex-wrap">
+                {labData.labels?.map((label) => {
+                  const isPlaced = Object.values(placedItems).some(p => p.id === label.id && p.isCorrect);
+                  return (
+                    <DraggableLabel
+                      key={label.id}
+                      id={label.id}
+                      text={label.text}
+                      isPlaced={isPlaced}
+                      disabled={isGameOver}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
-        )}
-
-        {feedback && !activeExplanation && (
-          <div className={`p-3.5 rounded-2xl text-xs sm:text-sm font-bold transition-all shadow-sm ${
-            feedback.type === 'success' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-rose-100 text-rose-900 border border-rose-300'
-          }`}>
-            {feedback.text}
-          </div>
-        )}
-
-        {/* Draggable Labels Bank */}
-        <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200">
-          <div className="text-xs font-black text-slate-700 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-            <Sparkles size={14} className="text-amber-500" /> Science Labels Bank (Drag to image zones):
-          </div>
-
-          <div className="flex flex-wrap gap-2.5 min-h-[46px] items-center">
-            {availableLabels.length === 0 && !isCompleted ? (
-              <span className="text-xs font-bold text-slate-400 italic">All labels placed. Check results above!</span>
-            ) : availableLabels.map(label => (
-              <DraggableLabel
-                key={label}
-                id={label}
-                text={label}
-                isPlaced={false}
-                disabled={isCompleted}
-              />
-            ))}
-          </div>
-        </div>
-      </DndContext>
+        </DndContext>
+      )}
     </div>
   );
 }

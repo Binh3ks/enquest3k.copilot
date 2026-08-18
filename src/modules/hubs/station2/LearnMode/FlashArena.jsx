@@ -1,33 +1,43 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
-import { Zap, Trophy, Timer, Swords, CheckCircle2, RotateCcw, Flame, Sparkles } from 'lucide-react';
-import CompletionModal from '../../../../components/common/CompletionModal';
+import { Zap, Trophy, Timer, Swords, CheckCircle2, RotateCcw, Flame, Sparkles, Layers } from 'lucide-react';
 
-const DEFAULT_WORD_POOL = [
-  { id: "w01", en: "corridor", vi: "hành lang" },
-  { id: "w02", en: "bandage", vi: "băng cá nhân" },
-  { id: "w03", en: "nurse", vi: "y tế / y tá" },
-  { id: "w04", en: "cold pack", vi: "túi chườm lạnh" },
-  { id: "w05", en: "relieved", vi: "nhẹ nhõm" },
-  { id: "w06", en: "praised", vi: "khen ngợi" },
-  { id: "w07", en: "carefully", vi: "cẩn thận" },
-  { id: "w08", en: "immediately", vi: "ngay lập tức" },
-  { id: "w09", en: "puddle", vi: "vũng nước ướt" },
-  { id: "w10", en: "friction", vi: "lực ma sát" },
-  { id: "w11", en: "slipped", vi: "trượt chân" },
-  { id: "w12", en: "fell down", vi: "ngã xuống" },
-  { id: "w13", en: "called nurse", vi: "gọi y tế" },
-  { id: "w14", en: "applied bandage", vi: "băng bó vết thương" },
-  { id: "w15", en: "walking carefully", vi: "đi bộ cẩn thận" },
-  { id: "w16", en: "slipped on wet floor", vi: "trượt chân trên sàn ướt" },
-  { id: "w17", en: "clean bandage", vi: "băng cá nhân sạch" },
-  { id: "w18", en: "hurt his knee", vi: "bị thương đầu gối" },
-  { id: "w19", en: "felt relieved", vi: "cảm thấy nhẹ nhõm" },
-  { id: "w20", en: "first aid kit", vi: "hộp sơ cứu" }
+const ROUND_1_NOUNS_VERBS = [
+  { id: "r1_01", en: "corridor", vi: "hành lang" },
+  { id: "r1_02", en: "bandage", vi: "băng cá nhân" },
+  { id: "r1_03", en: "nurse", vi: "y tế / y tá" },
+  { id: "r1_04", en: "cold pack", vi: "túi chườm lạnh" },
+  { id: "r1_05", en: "slipped", vi: "trượt chân" },
+  { id: "r1_06", en: "fell down", vi: "ngã xuống" },
+  { id: "r1_07", en: "called", vi: "gọi trợ giúp" },
+  { id: "r1_08", en: "relieved", vi: "nhẹ nhõm" }
+];
+
+const ROUND_2_CHUNKS = [
+  { id: "r2_01", en: "slipped on wet floor", vi: "trượt chân trên sàn ướt" },
+  { id: "r2_02", en: "walking carefully", vi: "đi bộ cẩn thận" },
+  { id: "r2_03", en: "called the school nurse", vi: "gọi y tế trường" },
+  { id: "r2_04", en: "applied a clean bandage", vi: "băng bó sạch sẽ" },
+  { id: "r2_05", en: "hurt his knee", vi: "bị thương đầu gối" },
+  { id: "r2_06", en: "felt relieved", vi: "cảm thấy nhẹ nhõm" },
+  { id: "r2_07", en: "corridor safety rules", vi: "quy tắc an toàn hành lang" },
+  { id: "r2_08", en: "wet floor warning sign", vi: "biển báo sàn ướt" }
+];
+
+const ROUND_3_DEFINITIONS = [
+  { id: "r3_01", en: "corridor", vi: "A long passage in a school building" },
+  { id: "r3_02", en: "bandage", vi: "A strip of clean cloth used to bind cuts" },
+  { id: "r3_03", en: "nurse", vi: "A trained worker who cares for sick students" },
+  { id: "r3_04", en: "slipped", vi: "Slid accidentally on a smooth wet surface" },
+  { id: "r3_05", en: "friction", vi: "A force that stops objects from sliding" },
+  { id: "r3_06", en: "puddle", vi: "A small pool of liquid on the floor" },
+  { id: "r3_07", en: "careful", vi: "Making sure to avoid potential danger" },
+  { id: "r3_08", en: "praised", vi: "Expressed warm approval of good actions" }
 ];
 
 export function FlashArena({ customSets, onComplete }) {
+  const [currentRound, setCurrentRound] = useState(1); // Round 1 -> 2 -> 3
   const [selectedEn, setSelectedEn] = useState(null);
   const [selectedVi, setSelectedVi] = useState(null);
   const [matchedIds, setMatchedIds] = useState([]);
@@ -38,37 +48,42 @@ export function FlashArena({ customSets, onComplete }) {
   const [isGameActive, setIsGameActive] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  // Flatten all customSets into one unified 20-word pool
-  const unifiedPool = useMemo(() => {
-    if (!customSets) return DEFAULT_WORD_POOL;
-    let list = [];
-    if (Array.isArray(customSets)) return customSets;
-
-    Object.values(customSets).forEach(set => {
-      if (Array.isArray(set)) {
-        list = [...list, ...set];
+  // Active round pairs
+  const activePairs = useMemo(() => {
+    if (customSets && typeof customSets === 'object') {
+      if (currentRound === 1 && customSets.set1_nouns_adj && customSets.set2_verbs) {
+        return [...customSets.set1_nouns_adj.slice(0, 4), ...customSets.set2_verbs.slice(0, 4)];
       }
-    });
-
-    if (list.length === 0) return DEFAULT_WORD_POOL;
-
-    // Deduplicate by en
-    const unique = [];
-    const seen = new Set();
-    list.forEach(item => {
-      if (item && item.en && !seen.has(item.en.toLowerCase())) {
-        seen.add(item.en.toLowerCase());
-        unique.push(item);
+      if (currentRound === 2 && customSets.set3_chunks) {
+        return customSets.set3_chunks.slice(0, 8);
       }
-    });
+      if (currentRound === 3 && customSets.set4_definitions) {
+        return customSets.set4_definitions.slice(0, 8);
+      }
+    }
 
-    return unique.length > 0 ? unique : DEFAULT_WORD_POOL;
-  }, [customSets]);
+    if (currentRound === 1) return ROUND_1_NOUNS_VERBS;
+    if (currentRound === 2) return ROUND_2_CHUNKS;
+    return ROUND_3_DEFINITIONS;
+  }, [currentRound, customSets]);
 
-  // Current active 6 pairs displayed on screen
-  const [activePairs, setActivePairs] = useState([]);
   const [shuffledEn, setShuffledEn] = useState([]);
   const [shuffledVi, setShuffledVi] = useState([]);
+
+  // Load round pairs
+  const loadRound = (roundNum) => {
+    setCurrentRound(roundNum);
+    setMatchedIds([]);
+    setSelectedEn(null);
+    setSelectedVi(null);
+
+    const pairs = roundNum === 1 ? (customSets?.set1_nouns_adj ? [...customSets.set1_nouns_adj.slice(0, 4), ...(customSets.set2_verbs || []).slice(0, 4)] : ROUND_1_NOUNS_VERBS)
+      : roundNum === 2 ? (customSets?.set3_chunks ? customSets.set3_chunks.slice(0, 8) : ROUND_2_CHUNKS)
+      : (customSets?.set4_definitions ? customSets.set4_definitions.slice(0, 8) : ROUND_3_DEFINITIONS);
+
+    setShuffledEn([...pairs].sort(() => 0.5 - Math.random()));
+    setShuffledVi([...pairs].sort(() => 0.5 - Math.random()));
+  };
 
   // Start / Restart Blitz Game
   const handleStartGame = () => {
@@ -76,23 +91,14 @@ export function FlashArena({ customSets, onComplete }) {
     setStreak(0);
     setMaxStreak(0);
     setTimeLeft(30);
-    setMatchedIds([]);
-    setSelectedEn(null);
-    setSelectedVi(null);
     setIsGameOver(false);
     setIsGameActive(true);
-
-    // Pick 8 random pairs from unifiedPool
-    const shuffled = [...unifiedPool].sort(() => 0.5 - Math.random()).slice(0, 8);
-    setActivePairs(shuffled);
-    setShuffledEn([...shuffled].sort(() => 0.5 - Math.random()));
-    setShuffledVi([...shuffled].sort(() => 0.5 - Math.random()));
+    loadRound(1);
   };
 
-  // Auto start on mount
   useEffect(() => {
     handleStartGame();
-  }, [unifiedPool]);
+  }, [customSets]);
 
   // 30-Second Countdown Timer Engine
   useEffect(() => {
@@ -106,7 +112,7 @@ export function FlashArena({ customSets, onComplete }) {
           setIsGameActive(false);
           fireCelebrationConfetti('WordBlitz_Victory');
           const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-          if (userStore?.addXP) userStore.addXP(40);
+          if (userStore?.addXP) userStore.addXP(45);
           return 0;
         }
         return prev - 1;
@@ -125,22 +131,25 @@ export function FlashArena({ customSets, onComplete }) {
         setStreak(nextStreak);
         setMaxStreak(prev => Math.max(prev, nextStreak));
 
-        const bonusPoints = 10 + nextStreak * 5;
+        const bonusPoints = 15 + nextStreak * 5;
         setScore(prev => prev + bonusPoints);
-        setTimeLeft(prev => Math.min(30, prev + 1)); // Bonus +1s per correct match!
+        setTimeLeft(prev => Math.min(35, prev + 2)); // Bonus +2s per correct match!
 
         const newMatched = [...matchedIds, selectedEn.id];
         setMatchedIds(newMatched);
 
-        // If all 8 matched, load 8 fresh pairs!
+        // If all 8 matched in current Round -> Advance to Next Round!
         if (newMatched.length === activePairs.length) {
-          setTimeout(() => {
-            const next8 = [...unifiedPool].sort(() => 0.5 - Math.random()).slice(0, 8);
-            setActivePairs(next8);
-            setShuffledEn([...next8].sort(() => 0.5 - Math.random()));
-            setShuffledVi([...next8].sort(() => 0.5 - Math.random()));
-            setMatchedIds([]);
-          }, 300);
+          if (currentRound < 3) {
+            setTimeout(() => {
+              loadRound(currentRound + 1);
+            }, 350);
+          } else {
+            // Completed all 3 Rounds!
+            setIsGameOver(true);
+            setIsGameActive(false);
+            fireCelebrationConfetti('WordBlitz_Mastery');
+          }
         }
       } else {
         // INCORRECT MATCH
@@ -163,10 +172,15 @@ export function FlashArena({ customSets, onComplete }) {
             ⚡
           </div>
           <div>
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/30 text-amber-300 border border-amber-400/40">
-              30-Second Arcade Speed Match
-            </span>
-            <h3 className="text-lg font-black text-white">⚡ WORD BLITZ (30s)</h3>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/30 text-amber-300 border border-amber-400/40">
+                Round {currentRound}/3 • Arcade Speed Match
+              </span>
+              <span className="text-xs font-bold text-amber-200">
+                {currentRound === 1 ? '⚡ Nouns & Verbs' : currentRound === 2 ? '🧩 Chunks & Collocations' : '🔬 Academic Definitions'}
+              </span>
+            </div>
+            <h3 className="text-lg font-black text-white">⚡ WORD BLITZ (3 ROUNDS × 8 PAIRS)</h3>
           </div>
         </div>
 
@@ -195,18 +209,20 @@ export function FlashArena({ customSets, onComplete }) {
       {isGameOver && (
         <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-4 animate-in zoom-in-95">
           <Trophy size={56} className="mx-auto text-amber-400 animate-bounce" />
-          <h3 className="text-2xl font-black text-amber-300">BLITZ TIME EXPIRED!</h3>
+          <h3 className="text-2xl font-black text-amber-300">
+            {currentRound === 3 && matchedIds.length === activePairs.length ? '🏆 3-ROUND BLITZ MASTERY!' : 'BLITZ TIME EXPIRED!'}
+          </h3>
           <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-200">
             <div>Score: <span className="text-xl font-black text-amber-400">{score} PTS</span></div>
             <div>Max Combo: <span className="text-xl font-black text-orange-400">{maxStreak}x 🔥</span></div>
-            <div>XP Earned: <span className="text-xl font-black text-emerald-400">+40 XP</span></div>
+            <div>XP Earned: <span className="text-xl font-black text-emerald-400">+45 XP</span></div>
           </div>
           <button
             type="button"
             onClick={handleStartGame}
             className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
           >
-            <RotateCcw size={18} /> Play Blitz Again (30s)
+            <RotateCcw size={18} /> Play 3-Round Blitz Again (30s)
           </button>
         </div>
       )}
@@ -217,8 +233,8 @@ export function FlashArena({ customSets, onComplete }) {
           {/* Left Column: English Words */}
           <div className="space-y-2.5">
             <div className="text-xs font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
-              <span>ENGLISH WORD</span>
-              <span className="text-[10px] text-slate-400">Tap word first</span>
+              <span>ENGLISH ITEM</span>
+              <span className="text-[10px] text-slate-400">Round {currentRound}</span>
             </div>
             {shuffledEn.map((item) => {
               const isMatched = matchedIds.includes(item.id);
@@ -230,14 +246,14 @@ export function FlashArena({ customSets, onComplete }) {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedEn(item)}
-                  className={`w-full p-4 rounded-2xl font-black text-sm transition-all border text-left flex items-center justify-between ${
+                  className={`w-full p-3.5 rounded-2xl font-black text-xs sm:text-sm transition-all border text-left flex items-center justify-between ${
                     isSelected
                       ? 'bg-amber-500 text-slate-950 border-amber-300 ring-4 ring-amber-400/30 scale-[1.02] shadow-xl'
                       : 'bg-slate-900 hover:bg-slate-800 text-slate-100 border-slate-800 shadow-md'
                   }`}
                 >
                   <span className="truncate">{item.en}</span>
-                  {isSelected && <Sparkles size={16} className="text-slate-950 animate-spin" />}
+                  {isSelected && <Sparkles size={16} className="text-slate-950 animate-spin shrink-0" />}
                 </button>
               );
             })}
@@ -246,8 +262,8 @@ export function FlashArena({ customSets, onComplete }) {
           {/* Right Column: Vietnamese Meanings */}
           <div className="space-y-2.5">
             <div className="text-xs font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
-              <span>VIETNAMESE MEANING</span>
-              <span className="text-[10px] text-slate-400">Tap matching meaning</span>
+              <span>MEANING / DEFINITION</span>
+              <span className="text-[10px] text-slate-400">Tap match</span>
             </div>
             {shuffledVi.map((item) => {
               const isMatched = matchedIds.includes(item.id);
@@ -259,14 +275,14 @@ export function FlashArena({ customSets, onComplete }) {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedVi(item)}
-                  className={`w-full p-4 rounded-2xl font-black text-sm transition-all border text-left flex items-center justify-between ${
+                  className={`w-full p-3.5 rounded-2xl font-black text-xs sm:text-sm transition-all border text-left flex items-center justify-between ${
                     isSelected
                       ? 'bg-cyan-500 text-slate-950 border-cyan-300 ring-4 ring-cyan-400/30 scale-[1.02] shadow-xl'
                       : 'bg-slate-900 hover:bg-slate-800 text-slate-100 border-slate-800 shadow-md'
                   }`}
                 >
                   <span className="truncate">{item.vi}</span>
-                  {isSelected && <CheckCircle2 size={16} className="text-slate-950" />}
+                  {isSelected && <CheckCircle2 size={16} className="text-slate-950 shrink-0" />}
                 </button>
               );
             })}

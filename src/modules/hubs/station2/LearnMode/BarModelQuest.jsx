@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BarModelSVG } from '../components/BarModelSVG';
 import { evaluateBarModelAnswer } from '../../../../utils/barModelEvaluator';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
-import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy } from 'lucide-react';
-import CompletionModal from '../../../../components/common/CompletionModal';
+import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy, Timer, Flame, Zap } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 const WEEK33_BAR_QUESTIONS = [
@@ -60,226 +59,236 @@ const WEEK33_BAR_QUESTIONS = [
     modelData: {
       type: 'comparison',
       bars: [
-        { name: 'First Aid Kit A', label: '35 bandages', width: 210 },
-        { name: 'First Aid Kit B', label: '20 bandages', width: 120 }
+        { name: 'Medical Kit A', label: '35 bandages', width: 210 },
+        { name: 'Medical Kit B', label: '20 bandages', width: 120 }
       ]
     },
     correctAnswer: 15,
-    hintText: 'Compare the bar models: 35 bandages - 20 bandages = 15 bandages difference.'
+    hintText: 'Subtract Kit B from Kit A: 35 - 20 = 15 bandages.'
   },
   {
     id: 'bar_w33_05',
-    title: 'Problem 5: Total Ice Packs and Bandages (Part-Whole)',
-    problemText: 'The nurse stocked 12 cold ice packs and 18 rolls of clean bandages. How many medical supplies were stocked altogether?',
+    title: 'Problem 5: Corridor Safety Sign Clean-Up (Part-Whole)',
+    problemText: 'Students cleaned 8 wet spots in the morning and 12 wet spots in the afternoon. How many wet spots were cleaned in total?',
     modelData: {
       type: 'part_whole',
       bars: [
-        { label: 'Ice Packs (12)', value: 40, color: '#4f46e5' },
-        { label: 'Bandages (18)', value: 60, color: '#06b6d4' }
+        { label: 'Morning Wet Spots (8)', value: 40, color: '#4f46e5' },
+        { label: 'Afternoon Spots (12)', value: 60, color: '#06b6d4' }
       ],
-      totalLabel: '? supplies'
+      totalLabel: '? wet spots'
     },
-    correctAnswer: 30,
-    hintText: 'Sum of parts: 12 ice packs + 18 bandage rolls = 30 total supplies.'
+    correctAnswer: 20,
+    hintText: 'Add both shifts: 8 + 12 = 20 total wet spots cleaned.'
   }
 ];
 
-export function BarModelQuest({ customQuestions, onAttemptResult }) {
+export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
 
-  const [questionIndex, setQuestionIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState(null);
   const [showHint, setShowHint] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [score, setScore] = useState(0);
+  const [streak, setStreak] = useState(0);
 
-  const questionsList = customQuestions && customQuestions.length > 0 ? customQuestions : WEEK33_BAR_QUESTIONS;
-  const currentQ = questionsList[questionIndex] || questionsList[0];
+  // 45s Timed Challenge Engine
+  const [timeLeft, setTimeLeft] = useState(45);
+  const [isGameOver, setIsGameOver] = useState(false);
 
-  const title = currentQ.title || `Problem ${questionIndex + 1}: Singapore Bar Model Quest`;
-  const problemText = currentQ.problemText || currentQ.text || currentQ.question || '';
-  const rawTargetAnswer = currentQ.correctAnswer !== undefined ? currentQ.correctAnswer : currentQ.answer;
+  const questions = (barModelData && barModelData.length > 0) ? barModelData : WEEK33_BAR_QUESTIONS;
+  const currentQ = questions[currentIndex] || questions[0];
 
-  const handleSubmit = async (e) => {
+  // Timer countdown
+  useEffect(() => {
+    if (isGameOver) return;
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setIsGameOver(true);
+          fireCelebrationConfetti('MathQuest_Complete');
+          if (onComplete) onComplete(score);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isGameOver, score, onComplete]);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!userInput.trim()) return;
+    if (!userInput.trim() || isGameOver) return;
 
-    // Numerical evaluation & flexible unit matching
-    let isCorrect = false;
-    let errorMsg = 'Incorrect. Check your math and try again!';
+    const evaluation = evaluateBarModelAnswer(userInput, currentQ.correctAnswer);
+    if (evaluation.isCorrect) {
+      const nextStreak = streak + 1;
+      setStreak(nextStreak);
+      const bonusScore = 20 + nextStreak * 5;
+      setScore(prev => prev + bonusScore);
+      setTimeLeft(prev => Math.min(45, prev + 2)); // Bonus +2s per correct answer
 
-    const cleanInput = userInput.trim().toLowerCase();
-    const cleanTarget = String(rawTargetAnswer).trim().toLowerCase();
+      setFeedback({
+        isCorrect: true,
+        message: `🎉 Correct! +${bonusScore} PTS (${nextStreak}x Streak Bonus)`
+      });
 
-    // Extract numbers
-    const inputNum = parseFloat(cleanInput.replace(/[^0-9.-]/g, ''));
-    const targetNum = parseFloat(cleanTarget.replace(/[^0-9.-]/g, ''));
-
-    if (!isNaN(inputNum) && !isNaN(targetNum) && Math.abs(inputNum - targetNum) < 0.001) {
-      isCorrect = true;
-    } else if (cleanInput === cleanTarget) {
-      isCorrect = true;
-    }
-
-    const resultText = isCorrect
-      ? '🎉 100% Correct! You solved the Singapore Bar Model correctly!'
-      : `❌ Incorrect. Look closely at the bar model and try again!`;
-
-    setFeedback({ isCorrect, text: resultText });
-
-    await learnerProgressService.logAttempt({
-      learnerId,
-      contentId: currentQ.id || `bar_model_${questionIndex + 1}`,
-      mode: 'learn',
-      result: isCorrect ? 'correct' : 'incorrect',
-      score: isCorrect ? 100 : 0,
-      timeSpentSeconds: 15
-    });
-
-    if (onAttemptResult) {
-      onAttemptResult(isCorrect, 'singapore_math_bar');
-    }
-  };
-
-  const handleNext = () => {
-    setUserInput('');
-    setFeedback(null);
-    setShowHint(false);
-    if (questionIndex + 1 < questionsList.length) {
-      setQuestionIndex(questionIndex + 1);
+      setTimeout(() => {
+        setUserInput('');
+        setFeedback(null);
+        setShowHint(false);
+        if (currentIndex + 1 < questions.length) {
+          setCurrentIndex(prev => prev + 1);
+        } else {
+          setIsGameOver(true);
+          fireCelebrationConfetti('MathQuest_Victory');
+          const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+          if (userStore?.addXP) userStore.addXP(40);
+          if (onComplete) onComplete(score + bonusScore);
+        }
+      }, 1000);
     } else {
-      setIsCompleted(true);
-      fireCelebrationConfetti('BarModelQuest_Complete');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(50);
+      setStreak(0);
+      setFeedback({
+        isCorrect: false,
+        message: '❌ Not quite right. Check the Bar Model and try again!'
+      });
     }
   };
 
   const handleRestart = () => {
-    setQuestionIndex(0);
-    setIsCompleted(false);
+    setCurrentIndex(0);
     setUserInput('');
     setFeedback(null);
     setShowHint(false);
+    setScore(0);
+    setStreak(0);
+    setTimeLeft(45);
+    setIsGameOver(false);
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md text-slate-900 font-sans">
-      <CompletionModal
-        isOpen={isCompleted}
-        onClose={() => setIsCompleted(false)}
-        score={100}
-        stars={3}
-        xpEarned={50}
-        srsWordsAdded={5}
-        activityTitle="Bar Model Quest (Arena Game)"
-      />
-      <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
-        <div>
-          <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
-            STATION 2 — SINGAPORE BAR MODEL QUEST
-          </span>
-          <h3 className="text-lg font-black text-slate-900 mt-0.5">{title}</h3>
-        </div>
-        <div className="flex items-center gap-2">
-          {isCompleted && (
-            <button
-              onClick={handleRestart}
-              className="px-3 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-black rounded-lg border border-indigo-200 flex items-center gap-1 transition shadow-sm"
-            >
-              <RefreshCw size={12} /> Play Again
-            </button>
-          )}
-          <span className="px-3 py-1 bg-indigo-50 text-indigo-900 text-xs font-mono font-bold rounded-lg border border-indigo-200">
-            Problem {questionIndex + 1} / {questionsList.length}
-          </span>
-        </div>
-      </div>
-
-      {/* Problem Statement Card */}
-      <div className="p-4 bg-indigo-50/70 rounded-2xl border border-indigo-100 mb-6 shadow-sm">
-        <p className="text-sm sm:text-base font-bold text-indigo-950 leading-relaxed">
-          {renderParsedText(problemText, 'indigo')}
-        </p>
-      </div>
-
-      {/* Bar Model Visual Rendering Component (Supports SVG URL or dynamic SVG component) */}
-      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 mb-6 flex justify-center items-center shadow-inner min-h-[160px]">
-        {currentQ.svg_url ? (
-          <img
-            src={currentQ.svg_url}
-            alt={title}
-            className="max-h-56 max-w-full object-contain rounded-xl drop-shadow-sm"
-            onError={(e) => {
-              // Fallback to dynamic SVG if file is missing
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-        ) : currentQ.modelData ? (
-          <BarModelSVG modelData={currentQ.modelData} />
-        ) : (
-          <div className="text-xs text-slate-400 font-medium">Bar model diagram loading...</div>
-        )}
-      </div>
-
-      {/* Answer Form */}
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-slate-950 text-white rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-6">
+      {/* Top Arcade Status Bar */}
+      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-slate-800 pb-4">
         <div className="flex items-center gap-3">
-          <input
-            type="text"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            placeholder="Type your numeric answer here..."
-            className="flex-1 p-3.5 bg-white border border-slate-300 rounded-xl text-sm font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm"
-          />
-          <button
-            type="submit"
-            className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-sm transition shadow-md"
-          >
-            Submit Answer
-          </button>
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-lg">
+            📐
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/30 text-amber-300 border border-amber-400/40">
+                Singapore Math CLIL • Problem {currentIndex + 1}/{questions.length}
+              </span>
+            </div>
+            <h3 className="text-lg font-black text-white">📐 MATH QUEST (BAR MODEL CHALLENGE)</h3>
+          </div>
         </div>
-      </form>
 
-      {/* Hint Modal Toggle */}
-      <div className="mt-4 flex items-center justify-between">
-        <button
-          onClick={() => setShowHint(!showHint)}
-          className="text-xs font-bold text-indigo-600 hover:underline flex items-center gap-1"
-        >
-          <HelpCircle size={14} /> {showHint ? 'Hide Visual Formula Hint' : 'Need a Hint?'}
-        </button>
-      </div>
+        {/* Score & Timer Dashboard */}
+        <div className="flex items-center gap-3">
+          {streak > 1 && (
+            <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-lg">
+              <Flame size={14} /> {streak}x STREAK!
+            </div>
+          )}
 
-      {showHint && (
-        <div className="mt-3 p-3.5 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 font-semibold animate-in fade-in">
-          💡 <span className="font-black">Formula Hint:</span> {currentQ.hintText}
-        </div>
-      )}
-
-      {/* Feedback Bar */}
-      {feedback && (
-        <div
-          className={`mt-4 p-4 rounded-2xl border text-sm font-black flex items-center justify-between animate-in fade-in ${
-            feedback.isCorrect
-              ? 'bg-emerald-50 text-emerald-900 border-emerald-300'
-              : 'bg-red-50 text-red-900 border-red-300'
-          }`}
-        >
-          <div className="flex items-center gap-2">
-            {feedback.isCorrect ? <CheckCircle2 size={18} className="text-emerald-600" /> : <AlertCircle size={18} className="text-red-600" />}
-            <span>{feedback.text}</span>
+          <div className="px-4 py-2 bg-slate-900 rounded-2xl border border-slate-800 flex items-center gap-2">
+            <Timer className={timeLeft <= 8 ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={18} />
+            <span className={`text-base font-black font-mono ${timeLeft <= 8 ? 'text-rose-400' : 'text-amber-300'}`}>
+              {timeLeft}s
+            </span>
           </div>
 
+          <div className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-2xl border border-amber-400/40 font-black text-sm font-mono">
+            {score} PTS
+          </div>
+        </div>
+      </div>
+
+      {/* Game Over Screen */}
+      {isGameOver ? (
+        <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-4 animate-in zoom-in-95">
+          <Trophy size={56} className="mx-auto text-amber-400 animate-bounce" />
+          <h3 className="text-2xl font-black text-amber-300">MATH QUEST COMPLETE!</h3>
+          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-200">
+            <div>Score: <span className="text-xl font-black text-amber-400">{score} PTS</span></div>
+            <div>Questions: <span className="text-xl font-black text-cyan-400">{currentIndex + (feedback?.isCorrect ? 1 : 0)}/{questions.length}</span></div>
+            <div>XP Earned: <span className="text-xl font-black text-emerald-400">+40 XP</span></div>
+          </div>
           <button
-            onClick={handleNext}
-            className="px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-black hover:bg-slate-800 transition shadow-sm"
+            type="button"
+            onClick={handleRestart}
+            className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
           >
-            Next Problem →
+            <RefreshCw size={18} /> Play Math Quest Again (45s)
           </button>
+        </div>
+      ) : (
+        /* Active Question Display */
+        <div className="space-y-6">
+          {/* Question Text */}
+          <div className="p-5 bg-slate-900 rounded-2xl border border-slate-800 space-y-2">
+            <h4 className="text-sm font-black text-amber-300">{currentQ.title}</h4>
+            <p className="text-sm sm:text-base font-bold text-slate-100 leading-relaxed">
+              {renderParsedText(currentQ.problemText, 'amber')}
+            </p>
+          </div>
+
+          {/* Singapore Bar Model SVG Display */}
+          <div className="p-4 bg-white rounded-2xl border border-slate-200 flex items-center justify-center shadow-inner min-h-[160px]">
+            <BarModelSVG modelData={currentQ.modelData} />
+          </div>
+
+          {/* Answer Form */}
+          <form onSubmit={handleSubmit} className="flex items-center gap-3">
+            <input
+              type="number"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              placeholder="Enter numerical answer..."
+              className="flex-1 p-3.5 bg-slate-900 text-white rounded-2xl border border-slate-700 font-mono text-base font-black outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/30 transition"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 font-black text-sm rounded-2xl shadow-lg transition active:scale-95 shrink-0"
+            >
+              Submit Answer
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowHint(!showHint)}
+              className="p-3.5 bg-slate-800 hover:bg-slate-700 text-amber-300 rounded-2xl border border-slate-700 transition shrink-0"
+              title="Show Hint"
+            >
+              <HelpCircle size={20} />
+            </button>
+          </form>
+
+          {/* Hint Dropdown */}
+          {showHint && (
+            <div className="p-3.5 bg-amber-950/60 border border-amber-500/40 rounded-xl text-amber-200 text-xs font-medium flex items-center gap-2 animate-in fade-in">
+              <Sparkles size={16} className="text-amber-400 shrink-0" />
+              {currentQ.hintText}
+            </div>
+          )}
+
+          {/* Feedback Overlay */}
+          {feedback && (
+            <div className={`p-4 rounded-2xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+              feedback.isCorrect ? 'bg-emerald-950/80 border-emerald-500 text-emerald-300' : 'bg-rose-950/80 border-rose-500 text-rose-300'
+            }`}>
+              {feedback.isCorrect ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}
+              {feedback.message}
+            </div>
+          )}
         </div>
       )}
     </div>
   );
 }
+
+export default BarModelQuest;
