@@ -3,18 +3,22 @@ import RetellRecorder from '../../components/zones/RetellRecorder';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
 import DictationEngine from '../dictation/DictationEngine';
 import StoryWriting from '../write_speak/StoryWriting';
-import { PenTool, Mic, Radio, MessageSquare, Trophy, FileText, CheckCircle2, ChevronRight, Sparkles } from 'lucide-react';
+import { PenTool, Mic, Radio, MessageSquare, Trophy, FileText, CheckCircle2, ChevronRight, Sparkles, Send } from 'lucide-react';
+import { speakText } from '../../utils/AudioHelper';
 
 export default function CreatorStudioZone({ data, weekNumber = 33 }) {
   const creatorData = data?.creatorStudio || {};
-  const [activeStudio, setActiveStudio] = useState('story_writing'); // 'story_writing' | 'retell_voice' | 'podcast' | 'ai_debate' | 'dictation'
+  const [activeStudio, setActiveStudio] = useState('story_writer'); // 'story_writer' | 'podcast_creator' | 'science_report' | 'ai_debate'
+  
+  // Science report state
+  const [reportText, setReportText] = useState('');
+  const [reportSubmitted, setReportSubmitted] = useState(false);
 
   const pictureStory = creatorData.pictureStory || null;
   const wordBankPills = creatorData.wordBankPills || [];
   const storyScenes = creatorData.storyScenes || [];
   const debateTopics = creatorData.debateTopics || [];
   const podcastShadowing = creatorData.podcastShadowing || null;
-  const dictationData = creatorData.dictation || [];
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-300">
@@ -22,81 +26,71 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
       <div className="bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-purple-500/40 shadow-xl flex items-center justify-between flex-wrap gap-4">
         <div className="space-y-1">
           <span className="px-3 py-1 bg-purple-500/30 text-purple-200 border border-purple-400/40 rounded-full text-[10px] font-black uppercase tracking-wider">
-            Zone 3 • Language Creator Studio
+            Zone 3 • Creator Studio
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-amber-300">
-            🎨 3-Panel Story Writing, Voice Retelling & AI Debate
+            🎨 CREATOR STUDIO — "Tạo tác phẩm của riêng mình"
           </h2>
           <p className="text-xs sm:text-sm text-slate-300">
-            Compose 3-picture stories, record scene retellings, shadow audio podcasts and debate corridor safety rules with Nova!
+            Sáng tạo nội dung cá nhân • Viết truyện 3 tranh, Thu âm Podcast riêng & Báo cáo thí nghiệm Khoa học!
           </p>
         </div>
       </div>
 
       {/* Studio Subtabs Selector */}
       <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full">
           <button
             type="button"
-            onClick={() => setActiveStudio('story_writing')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeStudio === 'story_writing'
-                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300'
+            onClick={() => setActiveStudio('story_writer')}
+            className={`w-full py-3 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              activeStudio === 'story_writer'
+                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
                 : 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-50'
             }`}
           >
-            ✍️ 3-Picture Story
+            ✏️ STORY WRITER
           </button>
           <button
             type="button"
-            onClick={() => setActiveStudio('retell_voice')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeStudio === 'retell_voice'
-                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300'
+            onClick={() => setActiveStudio('podcast_creator')}
+            className={`w-full py-3 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              activeStudio === 'podcast_creator'
+                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
                 : 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-50'
             }`}
           >
-            🎙️ Voice Retelling
+            🎙️ PODCAST CREATOR
           </button>
           <button
             type="button"
-            onClick={() => setActiveStudio('podcast')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeStudio === 'podcast'
-                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300'
+            onClick={() => setActiveStudio('science_report')}
+            className={`w-full py-3 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              activeStudio === 'science_report'
+                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
                 : 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-50'
             }`}
           >
-            📻 Podcast Studio
+            🔬 SCIENCE REPORT
           </button>
           <button
             type="button"
             onClick={() => setActiveStudio('ai_debate')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+            className={`w-full py-3 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
               activeStudio === 'ai_debate'
-                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300'
+                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
                 : 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-50'
             }`}
           >
-            🎤 AI Debate
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveStudio('dictation')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeStudio === 'dictation'
-                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300'
-                : 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-50'
-            }`}
-          >
-            🎧 Dictation Pad
+            🎤 AI DEBATE
           </button>
         </div>
       </div>
 
       {/* Active Studio Screen */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">
-        {activeStudio === 'story_writing' && (
+      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md min-h-[440px]">
+        {/* 1. ✏️ STORY WRITER */}
+        {activeStudio === 'story_writer' && (
           <StoryWriting
             weekId={weekNumber}
             content={{
@@ -127,43 +121,69 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
           />
         )}
 
-        {activeStudio === 'retell_voice' && (
+        {/* 2. 🎙️ PODCAST CREATOR */}
+        {activeStudio === 'podcast_creator' && (
           <RetellRecorder
             scenes={storyScenes}
           />
         )}
 
-        {activeStudio === 'podcast' && podcastShadowing && (
-          <div className="space-y-4">
-            <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200">
-              <h4 className="text-sm font-black text-purple-950">📻 Episode: {podcastShadowing.episode_title}</h4>
-              <p className="text-xs text-purple-800 mt-1">{podcastShadowing.intro}</p>
+        {/* 3. 🔬 SCIENCE REPORT (MINI-REPORT ON FRICTION) */}
+        {activeStudio === 'science_report' && (
+          <div className="space-y-6">
+            <div className="p-5 bg-gradient-to-r from-teal-900 via-emerald-950 to-slate-900 text-white rounded-2xl border border-teal-500/40 space-y-2">
+              <span className="px-3 py-1 bg-teal-500/30 text-teal-200 border border-teal-400/40 rounded-full text-[10px] font-black uppercase">
+                Academic Science Mini-Report (CLIL)
+              </span>
+              <h3 className="text-lg font-black text-amber-300 flex items-center gap-2">
+                🔬 Science Task: "Why is a wet floor more slippery than a dry floor?"
+              </h3>
+              <p className="text-xs text-slate-300">
+                Write 3–5 sentences explaining the physics of friction, lubrications and safety rules using cause-effect connectors (because, so, as a result).
+              </p>
             </div>
-            {/* Audio Script Lines */}
+
+            {/* Writing Area */}
             <div className="space-y-3">
-              {podcastShadowing.script_lines?.map((line, lIdx) => (
-                <div key={lIdx} className="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start justify-between gap-3">
+              <textarea
+                value={reportText}
+                onChange={(e) => setReportText(e.target.value)}
+                placeholder="Write your science report here (e.g. Water acts as a lubricant on tiles because it reduces friction to zero. As a result, shoes slide easily and people fall...)"
+                rows={6}
+                className="w-full p-4 rounded-2xl border-2 border-slate-200 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/20 font-bold text-sm text-slate-900 outline-none transition"
+              />
+
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <span className="text-xs font-bold text-slate-500">
+                  Word count: <span className="font-black text-teal-600">{reportText.trim().split(/\s+/).filter(Boolean).length}</span> words
+                </span>
+                <button
+                  type="button"
+                  disabled={reportText.trim().length < 15}
+                  onClick={() => setReportSubmitted(true)}
+                  className="px-6 py-3 bg-teal-600 hover:bg-teal-500 disabled:opacity-40 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-2 transition"
+                >
+                  <Send size={16} /> Submit Science Report
+                </button>
+              </div>
+
+              {reportSubmitted && (
+                <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-2xl text-emerald-900 text-xs font-bold flex items-center gap-3 animate-in fade-in">
+                  <CheckCircle2 className="text-emerald-600 shrink-0" size={20} />
                   <div>
-                    <span className="text-[10px] font-black uppercase text-purple-600">{line.speaker}</span>
-                    <p className="text-sm font-bold text-slate-800">{line.text}</p>
+                    🎉 Science Report Submitted Successfully! You earned <span className="font-black text-emerald-700 text-sm">+25 CLIL Science XP</span> for explaining cause-and-effect physics!
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         )}
 
+        {/* 4. 🎤 AI DEBATE */}
         {activeStudio === 'ai_debate' && (
           <AIDebateMode
             debateTopics={debateTopics}
             weekNumber={weekNumber}
-          />
-        )}
-
-        {activeStudio === 'dictation' && (
-          <DictationEngine
-            dictationData={dictationData}
-            weekId={weekNumber}
           />
         )}
       </div>

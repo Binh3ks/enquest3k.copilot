@@ -9,7 +9,7 @@ import { useUserStore } from '../../stores/useUserStore';
 
 export default function BattleArenaZone({ data, weekNumber = 33 }) {
   const arenaData = data?.battleArena || {};
-  const [activeGame, setActiveGame] = useState('flash_arena'); // 'flash_arena' | 'sound_sniper' | 'sentence_builder' | 'bar_model' | 'science_lab'
+  const [activeGame, setActiveGame] = useState('word_blitz'); // 'word_blitz' | 'sentence_smash' | 'sound_sniper' | 'math_quest' | 'science_lab'
   const [earnedXP, setEarnedXP] = useState(0);
 
   const flashArenaData = arenaData.flashArena || null;
@@ -29,17 +29,17 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <span className="px-3 py-1 bg-amber-500/30 text-amber-200 border border-amber-400/40 rounded-full text-[10px] font-black uppercase tracking-wider">
-              Zone 2 • Speed & Logic Arena
+              Zone 2 • Battle Arena
             </span>
             <span className="px-3 py-1 bg-orange-500 text-white rounded-full text-[10px] font-black uppercase tracking-wider shadow-sm">
               +{earnedXP} Arena XP
             </span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-amber-300">
-            ⚔️ Interactive Battle Arena & Speed Labs
+            ⚔️ BATTLE ARENA — "Ai nhanh hơn, ai chính xác hơn?"
           </h2>
           <p className="text-xs sm:text-sm text-slate-300">
-            Build rapid lexical reflexes, grammar syntax blocks, Singapore bar models and virtual science experiments!
+            Mỗi trận đấu 2–3 phút • Thử thách Phản xạ Từ vựng, Cú pháp Ngữ pháp & Tư duy Math/Science CLIL!
           </p>
         </div>
       </div>
@@ -49,14 +49,25 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 w-full">
           <button
             type="button"
-            onClick={() => setActiveGame('flash_arena')}
+            onClick={() => setActiveGame('word_blitz')}
             className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'flash_arena'
+              activeGame === 'word_blitz'
                 ? 'bg-amber-500 text-white shadow-md ring-2 ring-amber-300'
                 : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
             }`}
           >
-            ⚡ Speed Match
+            ⚡ WORD BLITZ (30s)
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveGame('sentence_smash')}
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              activeGame === 'sentence_smash'
+                ? 'bg-amber-500 text-white shadow-md ring-2 ring-amber-300'
+                : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
+            }`}
+          >
+            🧱 SENTENCE SMASH
           </button>
           <button
             type="button"
@@ -67,29 +78,18 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
                 : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
             }`}
           >
-            🎧 Sound Sniper
+            🎧 SOUND SNIPER
           </button>
           <button
             type="button"
-            onClick={() => setActiveGame('sentence_builder')}
+            onClick={() => setActiveGame('math_quest')}
             className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'sentence_builder'
+              activeGame === 'math_quest'
                 ? 'bg-amber-500 text-white shadow-md ring-2 ring-amber-300'
                 : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
             }`}
           >
-            🧠 Sentence Builder
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveGame('bar_model')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'bar_model'
-                ? 'bg-amber-500 text-white shadow-md ring-2 ring-amber-300'
-                : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
-            }`}
-          >
-            📐 Bar Model Quest
+            📐 MATH QUEST
           </button>
           <button
             type="button"
@@ -100,16 +100,24 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
                 : 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50'
             }`}
           >
-            🧪 Science Lab
+            🧪 SCIENCE LAB
           </button>
         </div>
       </div>
 
       {/* Active Battle Arena Sub-Component */}
       <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">
-        {activeGame === 'flash_arena' && flashArenaData && (
+        {activeGame === 'word_blitz' && flashArenaData && (
           <FlashArena
             customSets={flashArenaData}
+            weekNumber={weekNumber}
+            onComplete={() => handleGameComplete(30)}
+          />
+        )}
+
+        {activeGame === 'sentence_smash' && (
+          <SentenceBuilderBattle
+            grammarDrills={grammarDrills}
             weekNumber={weekNumber}
             onComplete={() => handleGameComplete(30)}
           />
@@ -122,15 +130,7 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
           />
         )}
 
-        {activeGame === 'sentence_builder' && (
-          <SentenceBuilderBattle
-            grammarDrills={grammarDrills}
-            weekNumber={weekNumber}
-            onComplete={() => handleGameComplete(30)}
-          />
-        )}
-
-        {activeGame === 'bar_model' && barModelData && (
+        {activeGame === 'math_quest' && barModelData && (
           <BarModelQuest
             barModelData={barModelData}
             weekNumber={weekNumber}
