@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Trophy, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Star, Trophy, Sparkles, CheckCircle2, ArrowRight, X } from 'lucide-react';
 import NovaMascot from '../NovaMascot';
 
 export default function CompletionModal({
@@ -14,8 +14,23 @@ export default function CompletionModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-fade-in font-sans">
-      <div className="bg-white border-2 border-amber-300 w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl text-center space-y-6 relative overflow-hidden transform transition-all scale-100">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-md animate-fade-in font-sans cursor-pointer"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white border-2 border-amber-300 w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl text-center space-y-6 relative overflow-hidden transform transition-all scale-100 cursor-default"
+      >
+        {/* Close [X] Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition active:scale-90 z-20 shadow-sm"
+          title="Close Modal"
+          aria-label="Close"
+        >
+          <X size={18} />
+        </button>
         
         {/* Glow backdrop decorative pattern */}
         <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-200/50 rounded-full blur-2xl pointer-events-none" />

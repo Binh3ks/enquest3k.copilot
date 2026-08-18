@@ -92,34 +92,49 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
     const words = text.split(/\s+/).filter(Boolean);
     const lower = text.toLowerCase();
 
-    // 1. Position clarity
-    const hasPosition = /\b(disagree|agree|opinion|think|believe)\b/i.test(lower);
-    // 2. Causal reasoning
-    const hasReason = /\b(because|so|since|if|as a result|due to|therefore)\b/i.test(lower);
-    // 3. Evidence / Example
-    const hasExample = /\b(for example|such as|for instance|accident|slip|fell|hurt|injur|safe|rule)\b/i.test(lower);
-    // 4. Word count depth
-    const wordCount = words.length;
+    // ── C.R.E DEBATE RUBRIC ENGINE (Official Pedagogical Standard) ──
+    // Tiêu chí 1: Claim (Lập trường - 30%)
+    const hasPosition = /\b(i\s+disagree|i\s+agree|my\s+opinion|i\s+believe|i\s+think|my\s+view|i\s+strongly)\b/i.test(lower);
+    const claimScore = hasPosition ? 30 : 10;
 
-    let score = 50;
-    if (hasPosition) score += 15;
-    if (hasReason) score += 15;
-    if (hasExample) score += 10;
-    if (wordCount >= 20) score += 10;
+    // Tiêu chí 2: Reason (Lý do nhân quả - 40%)
+    const hasReason = /\b(because|so\s+that|since|due\s+to|as\s+a\s+result|therefore|for\s+this\s+reason)\b/i.test(lower);
+    const reasonScore = hasReason ? 40 : 10;
+
+    // Tiêu chí 3: Evidence / Science Context (Dẫn chứng thực tế - 30%)
+    const hasEvidence = /\b(friction|slip|slipped|wet\s+floor|puddle|dangerous|accident|hazard|rubber|grip|sock|wood|injury|hurt|safe|rules?)\b/i.test(lower);
+    const evidenceScore = hasEvidence ? 30 : 10;
+
+    // Depth booster
+    const wordCount = words.length;
+    const totalScore = Math.min(100, claimScore + reasonScore + evidenceScore);
+
+    // Pedagogical Feedback Generation (Nova Coaching)
+    let aiFeedback = "";
+    if (!hasPosition) {
+      aiFeedback = "⚠️ Chưa rõ lập trường: Con hãy bắt đầu bằng 'I disagree with Nova because...' hoặc 'In my opinion...' để nêu rõ quan điểm.";
+    } else if (!hasReason) {
+      aiFeedback = "⚠️ Thiếu từ nối giải thích: Lập trường của con rất tốt, nhưng hãy thêm từ nối 'because' hoặc 'since' để giải thích nguyên nhân rõ ràng hơn.";
+    } else if (!hasEvidence) {
+      aiFeedback = "⚠️ Cần thêm dẫn chứng thực tế: Lập luận tốt! Hãy bổ sung thêm từ khóa về khoa học ma sát (friction, wet floor, rubber shoes) để bài phản biện thuyết phục hơn.";
+    } else {
+      aiFeedback = "🌟 Xuất sắc! Luận điểm chuẩn mực C.R.E: Có lập trường rõ ràng (Claim), giải thích nguyên nhân logic (Reason), và dẫn chứng ma sát thực tế (Evidence).";
+    }
 
     const result = {
-      score: Math.min(100, score),
+      score: totalScore,
+      claimScore,
+      reasonScore,
+      evidenceScore,
       hasPosition,
       hasReason,
-      hasExample,
+      hasEvidence,
       wordCount,
-      aiFeedback: score >= 80
-        ? "🌟 Brilliant counter-argument! You clearly stated your position, provided causal reasoning, and connected real safety evidence."
-        : "👍 Good reasoning attempt! To score higher, try using discourse phrases like 'I disagree because...' and give a specific safety example."
+      aiFeedback
     };
 
     setDebateScore(result);
-    if (score >= 70) {
+    if (totalScore >= 70) {
       setIsCompleted(true);
       fireCelebrationConfetti('AIDebate_Complete');
       const userStore = useUserStore?.getState ? useUserStore.getState() : null;
@@ -137,7 +152,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900 space-y-6">
       <CompletionModal
         isOpen={isCompleted}
-        onClose={() => {}}
+        onClose={() => setIsCompleted(false)}
         score={debateScore?.score || 100}
         stars={3}
         xpEarned={60}
@@ -255,14 +270,14 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
         </div>
       </div>
 
-      {/* AI Argument Evaluation Scorecard */}
+      {/* AI Argument Evaluation Scorecard (C.R.E Standard) */}
       {debateScore && (
         <div className="p-5 bg-gradient-to-br from-purple-50 to-indigo-50/60 rounded-3xl border border-purple-200 space-y-3 animate-in fade-in">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Trophy className="text-amber-500" size={18} />
               <h4 className="text-sm font-black text-purple-950 uppercase tracking-wide">
-                AI Debate Scorecard: {debateScore.score}/100
+                AI Debate Scorecard (C.R.E Standard): {debateScore.score}/100
               </h4>
             </div>
             <span className="px-2.5 py-0.5 bg-purple-200 text-purple-900 rounded-md font-mono text-xs font-black">
@@ -271,20 +286,23 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
           </div>
 
           <div className="grid grid-cols-3 gap-2 text-center text-xs font-bold">
-            <div className={`p-2.5 rounded-xl border ${debateScore.hasPosition ? 'bg-emerald-100 text-emerald-900 border-emerald-300' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
-              {debateScore.hasPosition ? '✅ Position Stated' : '⚪ Position Missing'}
+            <div className={`p-2.5 rounded-xl border ${debateScore.hasPosition ? 'bg-emerald-100 text-emerald-900 border-emerald-300' : 'bg-rose-50 text-rose-800 border-rose-200'}`}>
+              <span className="block text-[10px] font-black uppercase text-slate-500">1. Claim (30%)</span>
+              {debateScore.hasPosition ? '✅ Clear Position' : '❌ Missing Position'}
             </div>
-            <div className={`p-2.5 rounded-xl border ${debateScore.hasReason ? 'bg-emerald-100 text-emerald-900 border-emerald-300' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
-              {debateScore.hasReason ? '✅ Causal Reasoning' : '⚪ Reason Missing'}
+            <div className={`p-2.5 rounded-xl border ${debateScore.hasReason ? 'bg-emerald-100 text-emerald-900 border-emerald-300' : 'bg-rose-50 text-rose-800 border-rose-200'}`}>
+              <span className="block text-[10px] font-black uppercase text-slate-500">2. Reason (40%)</span>
+              {debateScore.hasReason ? '✅ Causal Connectors' : '❌ Missing "because"'}
             </div>
-            <div className={`p-2.5 rounded-xl border ${debateScore.hasExample ? 'bg-emerald-100 text-emerald-900 border-emerald-300' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
-              {debateScore.hasExample ? '✅ Safety Evidence' : '⚪ Evidence Missing'}
+            <div className={`p-2.5 rounded-xl border ${debateScore.hasEvidence ? 'bg-emerald-100 text-emerald-900 border-emerald-300' : 'bg-rose-50 text-rose-800 border-rose-200'}`}>
+              <span className="block text-[10px] font-black uppercase text-slate-500">3. Evidence (30%)</span>
+              {debateScore.hasEvidence ? '✅ Science Evidence' : '❌ Missing CLIL Words'}
             </div>
           </div>
 
-          <p className="text-xs font-semibold text-purple-900 bg-white/80 p-3 rounded-xl border border-purple-200">
+          <div className="text-xs font-semibold text-purple-950 bg-white/90 p-3.5 rounded-2xl border border-purple-200 shadow-sm leading-relaxed">
             {debateScore.aiFeedback}
-          </p>
+          </div>
         </div>
       )}
     </div>

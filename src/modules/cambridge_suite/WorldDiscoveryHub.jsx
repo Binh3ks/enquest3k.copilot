@@ -30,7 +30,7 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
   const [selectedHotspot, setSelectedHotspot] = useState(null);
   const [showMascotStore, setShowMascotStore] = useState(false);
-  const [highlightMode, setHighlightMode] = useState('clean'); // 'clean' | 'vocab' | 'grammar'
+  const [highlightMode, setHighlightMode] = useState('vocab'); // 'clean' | 'vocab' | 'grammar'
 
   // Cambridge Flyers Reading Part 3 state
   const [r3Answers, setR3Answers] = useState({});

@@ -81,10 +81,38 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
     description_en: "Drag and drop the correct science labels onto the physics safety diagram!",
     background_image: "/images/week33/read_cover_w33.jpg",
     zones: [
-      { id: "z1", label: "Wet Floor", correct_label: "Low Friction Zone", x: 48, y: 76 },
-      { id: "z2", label: "Running Boy", correct_label: "Kinetic Momentum", x: 62, y: 45 },
-      { id: "z3", label: "Warning Sign", correct_label: "Hazard Alert", x: 28, y: 65 },
-      { id: "z4", label: "First Aid Kit", correct_label: "Cold Pack & Bandage", x: 80, y: 55 }
+      {
+        id: "z1",
+        label: "Wet Floor Puddle",
+        correct_label: "Low Friction Zone",
+        x: 48,
+        y: 76,
+        micro_explanation: "⚠️ Physics Alert: Water acts like a lubricant! Friction is reduced to ZERO, making tiles extremely slippery."
+      },
+      {
+        id: "z2",
+        label: "Running Fast",
+        correct_label: "Kinetic Momentum",
+        x: 62,
+        y: 45,
+        micro_explanation: "⚡ Physics Alert: High running speed increases forward momentum, making it impossible for shoes to stop in time!"
+      },
+      {
+        id: "z3",
+        label: "Yellow Caution Sign",
+        correct_label: "Hazard Alert",
+        x: 28,
+        y: 65,
+        micro_explanation: "💡 Safety Alert: Warning signs instruct everyone to slow down and let rubber sole friction maintain balance."
+      },
+      {
+        id: "z4",
+        label: "First Aid Treatment",
+        correct_label: "Cold Pack & Bandage",
+        x: 80,
+        y: 55,
+        micro_explanation: "🩹 Medical Care: Cold pack reduces tissue swelling, while clean bandage protects the cut skin from bacteria."
+      }
     ],
     labels: ["Low Friction Zone", "Kinetic Momentum", "Hazard Alert", "Cold Pack & Bandage", "High Gravity", "Thermal Heat"]
   };
@@ -93,6 +121,7 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
   const [placedItems, setPlacedItems] = useState({});
   const [isCompleted, setIsCompleted] = useState(false);
   const [feedback, setFeedback] = useState(null);
+  const [activeExplanation, setActiveExplanation] = useState(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -126,9 +155,11 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
     });
 
     if (isCorrect) {
-      setFeedback({ type: 'success', text: `✅ Correct! "${draggedLabel}" matches this zone.` });
+      setActiveExplanation(targetZone.micro_explanation || `✅ "${draggedLabel}" accurately identifies this science zone.`);
+      setFeedback({ type: 'success', text: `✅ Correct Match: ${draggedLabel}!` });
     } else {
-      setFeedback({ type: 'error', text: `❌ Not quite. Think about the physics principle!` });
+      setActiveExplanation(null);
+      setFeedback({ type: 'error', text: `❌ Not quite. Think about how friction and forces act here!` });
     }
   };
 
@@ -136,6 +167,7 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
     setPlacedItems({});
     setIsCompleted(false);
     setFeedback(null);
+    setActiveExplanation(null);
   };
 
   const placedValues = Object.values(placedItems);
@@ -145,7 +177,7 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900 space-y-4">
       <CompletionModal
         isOpen={isCompleted}
-        onClose={() => {}}
+        onClose={() => setIsCompleted(false)}
         score={100}
         stars={3}
         xpEarned={60}
@@ -227,7 +259,18 @@ export default function ScienceDragDropLab({ customLabData, onAttemptResult }) {
         </div>
       </DndContext>
 
-      {feedback && (
+      {/* Micro-Explanation Cause-and-Effect Banner */}
+      {activeExplanation && (
+        <div className="p-4 bg-emerald-50 rounded-2xl border-2 border-emerald-300 text-xs font-bold text-emerald-950 flex items-start gap-2.5 shadow-sm animate-in fade-in slide-in-from-top-2">
+          <Lightbulb size={18} className="text-amber-500 shrink-0 mt-0.5" />
+          <div>
+            <span className="font-black uppercase tracking-wider text-emerald-800 block mb-0.5">Cause & Effect Science Concept:</span>
+            {activeExplanation}
+          </div>
+        </div>
+      )}
+
+      {feedback && !activeExplanation && (
         <div className={`p-3 rounded-xl text-xs font-bold transition-all ${
           feedback.type === 'success' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-rose-100 text-rose-900 border border-rose-300'
         }`}>

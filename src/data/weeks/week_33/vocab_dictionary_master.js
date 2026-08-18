@@ -279,6 +279,62 @@ export const WEEK_33_MASTER_DICTIONARY = {
     example: "It felt like a terrible accident, but thankfully he recovered quickly.",
     audioText: "terrible",
     aliases: ["terribly"]
+  },
+  "friction": {
+    type: "Noun",
+    ipa: "/ˈfrɪkʃən/",
+    meaning: "lực ma sát (lực cản trở chuyển động trượt)",
+    example: "Friction is a force that stops things from sliding.",
+    audioText: "friction",
+    aliases: ["high friction", "low friction", "frictional"]
+  },
+  "lubricant": {
+    type: "Noun",
+    ipa: "/ˈluːbrɪkənt/",
+    meaning: "chất bôi trơn (chất làm giảm ma sát)",
+    example: "Water acts like a lubricant on smooth tiled floors.",
+    audioText: "lubricant",
+    aliases: ["lubricants", "lubricating"]
+  },
+  "rubber shoes": {
+    type: "Collocation",
+    ipa: "/ˈrʌbər ʃuːz/",
+    meaning: "giày đế cao su",
+    example: "Wearing rubber shoes creates high friction and keeps you safe.",
+    audioText: "rubber shoes",
+    aliases: ["rubber shoe", "rubber-soled shoes", "rubber sole"]
+  },
+  "high friction": {
+    type: "Collocation",
+    ipa: "/haɪ ˈfrɪkʃən/",
+    meaning: "lực ma sát lớn (giúp bám sàn tốt)",
+    example: "His rubber shoes created high friction with the dry floor.",
+    audioText: "high friction",
+    aliases: ["high grip and friction"]
+  },
+  "wet floors": {
+    type: "Collocation",
+    ipa: "/wɛt flɔːrz/",
+    meaning: "các sàn nhà bị ướt",
+    example: "Why do we fall on wet floors?",
+    audioText: "wet floors",
+    aliases: ["wet floor", "wet tiles", "slippery tiles"]
+  },
+  "sliding": {
+    type: "Verb",
+    ipa: "/ˈslaɪdɪŋ/",
+    meaning: "sự trượt đi / trượt ngã",
+    example: "Friction stops shoes and wheels from sliding on the ground.",
+    audioText: "sliding",
+    aliases: ["slide", "slides", "slid"]
+  },
+  "puddle": {
+    type: "Noun",
+    ipa: "/ˈpʌdəl/",
+    meaning: "vũng nước nhỏ trên sàn",
+    example: "His shoes hit the wet puddle near the science room.",
+    audioText: "puddle",
+    aliases: ["puddles", "wet puddle", "water puddle"]
   }
 };
 

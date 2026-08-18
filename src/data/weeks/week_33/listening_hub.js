@@ -369,10 +369,38 @@ export const listeningHubData = {
     description_en: "Drag the physics principles and first aid tools to the correct positions on the diagram!",
     background_image: "/images/week33/read_cover_w33.jpg",
     zones: [
-      { id: "z1", label: "Wet Floor Puddle", correct_label: "Low Friction Zone", x: 48, y: 76 },
-      { id: "z2", label: "Running Fast", correct_label: "Kinetic Momentum", x: 62, y: 45 },
-      { id: "z3", label: "Yellow Caution Sign", correct_label: "Hazard Alert", x: 28, y: 65 },
-      { id: "z4", label: "First Aid Treatment", correct_label: "Cold Pack & Bandage", x: 80, y: 55 }
+      {
+        id: "z1",
+        label: "Wet Floor Puddle",
+        correct_label: "Low Friction Zone",
+        x: 48,
+        y: 76,
+        micro_explanation: "⚠️ Physics Alert: Water acts like a lubricant! Friction is reduced to ZERO, making tiles extremely slippery."
+      },
+      {
+        id: "z2",
+        label: "Running Fast",
+        correct_label: "Kinetic Momentum",
+        x: 62,
+        y: 45,
+        micro_explanation: "⚡ Physics Alert: High running speed increases forward momentum, making it impossible for shoes to stop in time!"
+      },
+      {
+        id: "z3",
+        label: "Yellow Caution Sign",
+        correct_label: "Hazard Alert",
+        x: 28,
+        y: 65,
+        micro_explanation: "💡 Safety Alert: Warning signs instruct everyone to slow down and let rubber sole friction maintain balance."
+      },
+      {
+        id: "z4",
+        label: "First Aid Treatment",
+        correct_label: "Cold Pack & Bandage",
+        x: 80,
+        y: 55,
+        micro_explanation: "🩹 Medical Care: Cold pack reduces tissue swelling, while clean bandage protects the cut skin from bacteria."
+      }
     ],
     labels: ["Low Friction Zone", "Kinetic Momentum", "Hazard Alert", "Cold Pack & Bandage", "High Gravity", "Thermal Radiation"]
   }

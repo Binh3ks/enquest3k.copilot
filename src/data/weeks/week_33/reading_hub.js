@@ -42,8 +42,8 @@ export const readingHubData = {
       }
     ],
     critical_thinking: {
-      question_en: "How does wearing rubber-soled shoes and walking slowly help friction protect you on different surfaces?",
-      hint_en: "Explain how rubber grips the floor to create friction, whereas running quickly on wet surfaces destroys that grip."
+      question_en: "Why is it more dangerous to run in socks on a wooden floor than wearing sports shoes?",
+      hint_en: "Think about friction: socks have smooth fabric that slides easily on polished wood, whereas sports shoes have rubber soles that create high grip and friction."
     }
   },
   interactive_story: {
