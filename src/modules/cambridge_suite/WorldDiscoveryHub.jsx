@@ -11,6 +11,7 @@ import WordBankMatchingGrid from '../../components/cambridge/WordBankMatchingGri
 import DialogueAHCompleter from '../../components/cambridge/DialogueAHCompleter';
 import InlineTextClozeDropdown from '../../components/cambridge/InlineTextClozeDropdown';
 import TextExtractionCompleter from '../../components/cambridge/TextExtractionCompleter';
+import GlobalModeToggle from '../../components/cambridge/GlobalModeToggle';
 import OpenClozeCompleter from '../../components/cambridge/OpenClozeCompleter';
 import NovaMascotStore from '../../components/mascot/NovaMascotStore';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
