@@ -153,7 +153,11 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const grammarBoosters = isCategorizedWordBank ? (pictureMode.word_bank.grammar_boosters || []) : [];
   const flatWordBank = Array.isArray(pictureMode.word_bank) ? pictureMode.word_bank : [];
 
-  const pictureSet = Array.isArray(pictureMode.picture_set) ? pictureMode.picture_set : null;
+  const pictureSet = Array.isArray(pictureMode.picture_set)
+    ? pictureMode.picture_set
+    : (Array.isArray(pictureMode.panels)
+      ? pictureMode.panels
+      : (Array.isArray(pictureMode.picture_story) ? pictureMode.picture_story : null));
 
   return (
     <div className="flex flex-col h-full overflow-hidden bg-slate-50">
