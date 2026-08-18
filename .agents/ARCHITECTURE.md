@@ -106,21 +106,40 @@ W33 ── W37 ── W41 ── W45 ── W48 ── W52 ── W56 ── W60
 
 ## 🚀 5. CHIẾN LƯỢC SẢN XUẤT HÀNG LOẠT (MASS PRODUCTION W34 → W72)
 
-Mọi tuần sản xuất mới bắt buộc tuân theo quy trình chuẩn hóa:
+### 📐 5.1. 3 LUẬT THÉP CLIL & QUY CHUẨN GRAMMAR SEEDING (THE W37+ STANDARD)
+1. **LUẬT 1: SINGLE ACADEMIC FOCUS (MỘT CHỦ ĐỀ DUY NHẤT)**:
+   - Mỗi tuần chỉ được phép chọn MỘT góc nhìn học thuật thuần nhất cho `clil_article`:
+     - *Nếu là Science*: Tập trung sâu vào Vật lý, Sinh học, Hóa học (Vd: Lực ma sát, Sự quang hợp, Vòng tuần hoàn nước).
+     - *Nếu là Social Studies*: Tập trung vào Địa lý, Lịch sử, Văn hóa (Vd: Thăng Long, Ai Cập cổ đại).
+   - ❌ **TUYỆT ĐỐI KHÔNG** trộn lẫn Lịch sử và Sinh học vào cùng 1 bài đọc ("Nồi lẩu thập cẩm").
+2. **LUẬT 2: MANDATORY GRAMMAR SEEDING (BẮT BUỘC GIEO NGỮ PHÁP)**:
+   - Bài đọc CLIL tại Hub 1 bắt buộc phải cài cắm **từ 3–5 câu sử dụng chính xác cấu trúc Target Grammar của tuần** một cách tự nhiên.
+   - Regex trong `target_grammar_regex` phải được tinh chỉnh để soi đúng và chuẩn xác cụm ngữ pháp này trên UI Grammar X-Ray.
+3. **LUẬT 3: TÁCH BIỆT INPUT (HUB 1) VÀ OUTPUT (HUB 2, 3, 4)**:
+   - **Hub 1 (Knowledge Explorer)**: Chỉ cung cấp Văn bản Đọc (Reading Input) + Giải nghĩa từ vựng + Cấu trúc ngữ pháp.
+   - **Hub 2, 3, 4 (Arena, Writing, Speaking)**: Chuyển các khái niệm vừa học ở Hub 1 thành Thực hành & Đề thi thực tế (Math Lab, Drag & Drop Lab, Real-life Writing, AI Debate).
+
+### 🌉 5.2. QUY TẮC "CHIẾC CẦU NỐI" (THEMATIC BRIDGE) CHO CÁC TUẦN HƯ CẤU (W34+)
+Khi chủ đề của tuần là Truyện Cổ tích hoặc Ngụ ngôn (Ví dụ W34: *The Ant and the Grasshopper*), **KHÔNG ĐƯỢC** để nhân vật động vật biết nói xuất hiện lộn xộn ở bài thi:
+- **Công thức chuyển hóa**: `[TỪ VỰNG CHUNG]` $\rightarrow$ `[HUB 1: Truyện ngụ ngôn + Báo khoa học thực tế]` $\rightarrow$ `[HUB 2, 3, 4: Áp dụng từ vựng vào đời sống con người / đề thi thực tế]`.
+- **Hub 1 (Khởi động & Bản lề)**:
+  - *Story Time (3D Webtoon)*: Kể truyện hư cấu (*The Ant and the Grasshopper*) để nạp từ vựng (`winter, collect, hungry, prepare, lazy`).
+  - *CLIL Article (Khoa học thực tế)*: Báo khoa học sinh học (*How Animals Survive Winter: Hibernation & Food Storage*) — **TUYỆT ĐỐI KHÔNG** nhắc tên nhân vật hư cấu ở đây.
+- **Hub 2 (Chuyển hóa sang bối cảnh con người)**:
+  - *Singapore Math*: Đếm số lượng thực phẩm tích trữ cho mùa đông của gia đình/siêu thị.
+  - *Listening P1-P5*: Bối cảnh chuyến dã ngoại mùa đông của trường học (*A School Winter Trip*).
+- **Hub 3 (Writing Studio - R&W P7)**: Câu chuyện đời thường của trẻ em mang cùng bài học đạo đức chuẩn bị (*Tom mải chơi quên mang áo khoác, được bạn Jake chia sẻ khăn ấm*).
+- **Hub 4 (Speaking & AI Debate)**: Luyện nói phản biện về quản lý thời gian và sự chuẩn bị (*Doing homework first vs Playing games first*).
+
+### 📁 5.3. Quy trình tạo file chuẩn hóa:
 1. **Dữ liệu nguồn (Source of Truth)**: Dựa vào Syllabus 3 năm để lấy Chủ đề, Từ vựng cốt lõi (20 từ), 10 Gold Lexical Chunks, và Trọng tâm Ngữ pháp.
 2. **Cấu trúc File Bắt Buộc**:
-   - `src/data/weeks/week_NN/reading_hub.js` (Bao gồm `story_scenes`, `rw_part1`, `rw_part2`, `rw_part4`, `rw_part5`, `rw_part_6`, `check_mode_drills`, `reading_part3_story`)
-   - `src/data/weeks/week_NN/listening_hub.js` (Bao gồm `listening_p1`, `listening_p3`, `listening_p4_questions`, `listening_p5`, `dictation`, `shadowing`)
-   - `src/data/weeks/week_NN/writing_hub.js` (Wrapper import `writing.js`)
-   - `src/data/weeks/week_NN/speaking_hub.js` (Bao gồm `find_differences`, `cue_card_prompts`, `picture_story_continuation`, `shadowing_sentences`, `podcast_shadowing`)
+   - `src/data/weeks/week_NN/reading_hub.js` (Bao gồm `clil_article`, `story_scenes`, `rw_part1`, `rw_part2`, `rw_part4`, `rw_part5`, `rw_part_6`, `check_mode_drills`, `reading_part3_story`)
+   - `src/data/weeks/week_NN/listening_hub.js` (Bao gồm `listening_p1-p5`, `grammar_drills`, `grammar_lesson`, `flash_arena`, `singapore_math`, `science_lab`, `target_grammar_regex`)
+   - `src/data/weeks/week_NN/writing_hub.js` (Bao gồm `picture_story`, `word_bank_pills`, `pbl_mission`)
+   - `src/data/weeks/week_NN/speaking_hub.js` (Bao gồm `find_differences`, `cue_card_prompts`, `picture_story_continuation`, `debate_topics`, `podcast_shadowing`)
    - `src/data/weeks/week_NN/index.js` (Xuất `{ readingHub, listeningHub, writingHub, speakingHub, weekId, title }`)
-3. **Tiêu chuẩn Hình ảnh (Pixar 3D Standard)**:
-   - 5 Webtoon scenes (`webtoon_scene_1–5.png`)
-   - 3 Writing panels (`writing_panel_1–3.png`)
-   - 2 Speaking difference scenes (`wXX_diff_scene_a/b.jpg`)
-   - 1 Listening P1 background scene (`wXX_listening_p1_scene.jpg`)
-   - 20 Vocab card visuals (`vocab_*.jpg`)
-4. **Cổng kiểm duyệt tự động trước khi Commit (6 Gatekeepers)**:
+3. **Cổng kiểm duyệt tự động trước khi Commit (7 Gatekeepers)**:
    ```bash
    node scripts/validate_week.mjs <NN>
    npm run build

@@ -12,38 +12,38 @@ export const readingHubData = {
   cefr_level: "A2 Flyers",
   vocab: vocabList,
 
-  // CLIL Knowledge Explorer (Science & Social Studies Integration)
+  // CLIL Knowledge Explorer (Science & Physics of Friction — Single Academic Focus)
   clil_article: {
-    id: "clil_w33_01",
-    theme: "School Safety & Ancient Olympic Rules",
-    title_en: "School Safety & The Ancient Olympic Truce",
-    title_vi: "An Toàn Học Đường & Hiệp Ước Đình Chiến Olympic Cổ Đại",
-    content_en: "Rules are essential for keeping people safe both in modern schools and throughout world history. In modern schools, safety rules forbid running down wet corridors to prevent slipping accidents and injuries. When someone falls, friends stop immediately to help and call the school nurse. Similarly, during the Ancient Olympic Games in Greece, city-states signed a sacred agreement called the Olympic Truce, or Ekecheiria. This ancient rule commanded all armies to stop fighting completely so that athletes and travelers could journey safely across the country without fear. Following established rules creates a respectful environment where everyone feels protected, valued, and happy.",
-    content_vi: "Các quy tắc là điều thiết yếu để giữ an toàn cho mọi người trong cả trường học hiện đại và suốt chiều dài lịch sử thế giới. Tại các trường học ngày nay, quy tắc an toàn cấm chạy trên hành lang ướt nhằm phòng ngừa tai nạn trượt ngã và thương tích. Khi có người bị ngã, bạn bè lập tức dừng lại giúp đỡ và gọi y tế trường học. Tương tự, vào thời Hy Lạp cổ đại, các thành quốc đã ký một hiệp ước linh thiêng mang tên Hiệp ước Đình chiến Olympic (Ekecheiria). Quy tắc cổ xưa này ra lệnh cho toàn bộ quân đội ngừng giao chiến để các vận động viên và lữ khách có thể di chuyển an toàn khắp đất nước mà không phải sợ hãi. Việc tôn trọng quy tắc tạo ra một môi trường an toàn, nơi tất cả mọi người đều được bảo vệ và hạnh phúc.",
+    id: "clil_w33_science_friction",
+    theme: "The Science of Friction in Corridors",
+    title_en: "The Science of Friction in Corridors",
+    title_vi: "Khoa Học Về Lực Ma Sát Tại Hành Lang Trường Học",
+    content_en: "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero! While the school nurse was applying the clean bandage, she explained that we must always look for the yellow warning sign. To stay safe, walk carefully and let friction do its job!",
+    content_vi: "Tại sao chúng ta lại bị ngã trên sàn nhà ướt? Câu trả lời nằm ở một khái niệm khoa học mang tên Lực Ma Sát. Lực ma sát là một lực ngăn cản các vật trượt đi. Trong khi Jake đang đi bộ xuống hành lang, đế giày cao su của cậu ấy đã tạo ra lực ma sát lớn với mặt sàn khô. Điều này giúp cậu ấy an toàn. Nhưng nước làm thay đổi tất cả! Nước đóng vai trò như một chất bôi trơn. Trong khi Tom đang chạy nhanh, giày của cậu ấy chạm vào vũng nước ướt. Lớp nước đã làm giảm lực ma sát xuống bằng không! Trong khi cô y tá đang băng bó vết thương sạch sẽ, cô giải thích rằng chúng ta phải luôn chú ý đến biển báo cảnh báo màu vàng. Để giữ an toàn, hãy đi bộ cẩn thận và để lực ma sát làm đúng nhiệm vụ của nó!",
     audio_url: "/audio/week33/explore.mp3",
     check_questions: [
       {
         id: 1,
-        question_en: "Why do modern school rules forbid running in corridors?",
-        options: ["To prevent slipping accidents", "To save energy", "To keep hallways quiet"],
-        answer: "To prevent slipping accidents"
+        question_en: "What is the science force that stops objects from sliding?",
+        options: ["Friction (Lực ma sát)", "Gravity (Trọng lực)", "Magnetism (Từ tính)"],
+        answer: "Friction (Lực ma sát)"
       },
       {
         id: 2,
-        question_en: "What was the ancient Greek agreement called?",
-        options: ["The Olympic Truce", "The Athens Treaty", "The Spartan Charter"],
-        answer: "The Olympic Truce"
+        question_en: "Why did Jake not slip while walking down the dry corridor?",
+        options: ["His rubber shoes created high friction with dry floor", "He was holding the wall", "He walked with closed eyes"],
+        answer: "His rubber shoes created high friction with dry floor"
       },
       {
         id: 3,
-        question_en: "What did the ancient Olympic Truce command armies to do?",
-        options: ["Stop fighting during games", "Build new sports tracks", "March together"],
-        answer: "Stop fighting during games"
+        question_en: "What does water act like on a smooth tiled floor?",
+        options: ["A lubricant that reduces friction to zero", "A solid glue that holds shoes", "A magnet that attracts boots"],
+        answer: "A lubricant that reduces friction to zero"
       }
     ],
     critical_thinking: {
-      question_en: "How do safety rules in your school and community help you feel protected and learn better?",
-      hint_en: "Think about how having clear rules prevents accidents and allows everyone to focus on learning happily without fear."
+      question_en: "How does wearing rubber-soled shoes and walking slowly help friction protect you on different surfaces?",
+      hint_en: "Explain how rubber grips the floor to create friction, whereas running quickly on wet surfaces destroys that grip."
     }
   },
   interactive_story: {

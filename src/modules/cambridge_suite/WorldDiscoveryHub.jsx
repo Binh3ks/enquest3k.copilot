@@ -252,11 +252,10 @@ export default function WorldDiscoveryHub({ data, weekNumber = 33 }) {
   const currentFrame = storyScenes[activeFrameIndex] || storyScenes[0];
   const frameHotspots = currentFrame.lexical_chunks || [];
 
-  // Grammar X-Ray target patterns from data (or W33 defaults)
-  const targetGrammarRegex = data?.target_grammar_regex || data?.read_explore?.target_grammar_regex || [
-    { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous', color: '#fef9c3' },
-    { pattern: '\\b(while|when)\\b', label: 'While/When conjunction', color: '#dbeafe' },
-    { pattern: '\\b(slipped|fell|hurt|called|arrived|stopped|praised|reminded)\\b', label: 'Past Simple Irregular', color: '#dcfce7' }
+  // Grammar X-Ray target patterns from data (or W33 defaults) — Strict While + Past Continuous seeding
+  const targetGrammarRegex = data?.target_grammar_regex || data?.clil_article?.target_grammar_regex || [
+    { pattern: '\\bwhile\\s+[^,.]*?\\b(was|were)\\s+\\w+ing\\b', label: 'While + Past Continuous Clause', color: '#fef9c3' },
+    { pattern: '\\b(was|were)\\s+\\w+ing\\b', label: 'Past Continuous Verb', color: '#fef08a' }
   ];
 
   // System Global Text Parser using HoverWord component (Disables hover popups in Check Mode)

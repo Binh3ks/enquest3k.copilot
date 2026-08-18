@@ -281,11 +281,10 @@ export const listeningHubData = {
     { id: 5, svg_url: "/images/week33/barmodel_w33_adv_p5.svg", text: "The headmaster gave 5 safety stars to each of 4 helpers. How many stars in total?", answer: "20 stars", type: "multiplication" }
   ],
 
-  // Grammar X-Ray Target Patterns (for Grammar Mode toggle in Hub 1)
+  // Grammar X-Ray Target Patterns (for Grammar Mode toggle in Hub 1) — Strict While + Past Continuous
   target_grammar_regex: [
-    { pattern: "\\b(was|were)\\s+\\w+ing\\b", label: "Past Continuous", color: "#fef9c3" },
-    { pattern: "\\b(while|when)\\b", label: "While/When conjunction", color: "#dbeafe" },
-    { pattern: "\\b(slipped|fell|hurt|called|arrived|stopped|praised|reminded)\\b", label: "Past Simple Irregular", color: "#dcfce7" }
+    { pattern: "\\bWhile\\s+[^,.]*?\\b(was|were)\\s+\\w+ing\\b", label: "While + Past Continuous Clause", color: "#fef9c3" },
+    { pattern: "\\b(was|were)\\s+\\w+ing\\b", label: "Past Continuous Verb", color: "#fef08a" }
   ],
 
   // Learn Grammar Master Class (English Grammar in Use Standard — feeds SentenceBuilderBattle.jsx Learn Grammar Modal)
