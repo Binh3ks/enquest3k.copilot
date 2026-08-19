@@ -1,230 +1,242 @@
 import React, { useState, useMemo } from 'react';
-import { TestTube, Sparkles, CheckCircle2, Send, Trophy, Stamp } from 'lucide-react';
+import { TestTube, Sparkles, CheckCircle2, Send, Trophy, ChevronRight, ChevronLeft, Volume2 } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onComplete }) {
-  const [reportText, setReportText] = useState('');
+  const [currentStep, setCurrentStep] = useState(1);
+  const [step1Text, setStep1Text] = useState('');
+  const [step2Text, setStep2Text] = useState('');
+  const [step3Text, setStep3Text] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [selectedCause, setSelectedCause] = useState('Water on floor');
-  const [selectedMechanism, setSelectedMechanism] = useState('Reduces friction');
-  const [selectedResult, setSelectedResult] = useState('Causes slipping hazard');
 
-  // ─── Criteria Checker: real-time detection (mục 11.4) ──────────────────────
-  const criteriaCheck = useMemo(() => {
-    const lower = reportText.toLowerCase();
-    // Field 1: Cause described (uses Describe starter or cause vocab)
-    const causeDescribed = /\b(water|liquid|wet|floor|puddle|acts\s+as|cause[sd]?|because)\b/i.test(lower);
-    // Field 2: Result explained (connector presence)
-    const resultExplained = /\b(as\s+a\s+result|therefore|so|thus|friction|slipp|reduces?)\b/i.test(lower);
-    // Field 3: Safety advice given
-    const safetyGiven = /\b(walk|carefully|slowly|safe|safety|corridor|bandage|nurse|cold\s+pack|rubber\s+shoe|slip)\b/i.test(lower);
-    // Field 4: At least 2 target vocab pills used
-    const vocabUsed = [
-      'liquid lubricant', 'rubber shoes', 'reduce friction', 'wet puddle',
-      'corridor safety', 'bandage', 'cold pack'
-    ].filter(v => lower.includes(v.toLowerCase())).length;
-    const vocabMet = vocabUsed >= 1; // At least 1 explicit pill term
+  // ── Per-step live checkers ──────────────────────────────────────────────────
+  const step1OK = useMemo(() => {
+    const l = step1Text.toLowerCase();
+    return /\b(water|liquid|wet|floor|puddle|acts\s+as|cause[sd]?|because|lubricant)\b/i.test(l) && step1Text.trim().length > 8;
+  }, [step1Text]);
 
-    // Lab Notebook stamps (which sentence types detected)
-    const hasDescribe = causeDescribed;
-    const hasExplain = resultExplained;
-    const hasAdvise = safetyGiven;
+  const step2OK = useMemo(() => {
+    const l = step2Text.toLowerCase();
+    return /\b(as\s+a\s+result|therefore|so|thus|friction|slipp|reduces?|because)\b/i.test(l) && step2Text.trim().length > 8;
+  }, [step2Text]);
 
-    const canSubmit = causeDescribed && resultExplained && safetyGiven;
-    return { causeDescribed, resultExplained, safetyGiven, vocabMet, vocabUsed, hasDescribe, hasExplain, hasAdvise, canSubmit };
-  }, [reportText]);
+  const step3OK = useMemo(() => {
+    const l = step3Text.toLowerCase();
+    return /\b(walk|carefully|slowly|safe|safety|corridor|rubber\s+shoe|slip|bandage|nurse)\b/i.test(l) && step3Text.trim().length > 8;
+  }, [step3Text]);
+
+  const canSubmit = step1OK && step2OK && step3OK;
+  const assembledReport = `${step1Text.trim()} ${step2Text.trim()} ${step3Text.trim()}`.trim();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!reportText.trim() || !criteriaCheck.canSubmit) return;
+    if (!canSubmit) return;
     setIsSubmitted(true);
     fireCelebrationConfetti('ScienceReport_Complete');
     if (onComplete) onComplete(50);
   };
 
+  const speakText = (text) => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US';
+      window.speechSynthesis.speak(u);
+    }
+  };
+
+  const appendToStep = (setter, text) => setter(prev => prev ? `${prev} ${text}` : text);
+
+  const STEP_CONFIG = [
+    {
+      step: 1,
+      label: 'Describe the Cause',
+      icon: '🔬',
+      color: 'emerald',
+      starter: 'Water acts as a liquid lubricant on the floor,',
+      checker: step1OK,
+      value: step1Text,
+      setter: setStep1Text,
+      hint: 'Describe why the floor became slippery. Use: water, liquid lubricant, wet floor, puddle...',
+      pills: { '🟢 Cause Words': ['liquid lubricant', 'wet puddle', 'water on floor', 'acts as a lubricant'] },
+    },
+    {
+      step: 2,
+      label: 'Explain the Mechanism',
+      icon: '⚙️',
+      color: 'blue',
+      starter: 'As a result, friction is reduced because',
+      checker: step2OK,
+      value: step2Text,
+      setter: setStep2Text,
+      hint: 'Explain what happens to friction. Use: as a result, therefore, reduces friction, slippery...',
+      pills: {
+        '🔵 Connectors': ['as a result,', 'therefore,', 'because', 'this causes'],
+        '🔬 Physics': ['reduces friction', 'becomes slippery', 'less grip', 'smooth surface'],
+      },
+    },
+    {
+      step: 3,
+      label: 'Give Safety Advice',
+      icon: '✅',
+      color: 'amber',
+      starter: 'Therefore, students must walk carefully in the corridor',
+      checker: step3OK,
+      value: step3Text,
+      setter: setStep3Text,
+      hint: 'Give a safety recommendation. Use: walk carefully, rubber shoes, corridor, safe...',
+      pills: {
+        '🟠 Safety Actions': ['walk carefully', 'wear rubber shoes', 'avoid running', 'report to the nurse'],
+        '🩹 First Aid': ['apply a bandage', 'use a cold pack', 'visit the school nurse'],
+      },
+    },
+  ];
+
+  const cfg = STEP_CONFIG[currentStep - 1];
+  const colorMap = { emerald: 'emerald', blue: 'blue', amber: 'amber' };
+  const c = colorMap[cfg.color];
+
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-3xl border border-emerald-200 shadow-md space-y-5 text-slate-900 font-sans">
+    <div className="w-full max-w-4xl mx-auto p-4 sm:p-5 bg-white rounded-3xl border border-emerald-200 shadow-md space-y-4 text-slate-900 font-sans">
       {/* Header */}
       <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
-        <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-black text-xl shadow-md">
+        <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-black text-lg shadow-md">
           🔬
         </div>
         <div>
           <span className="text-[10px] font-black text-emerald-700 uppercase tracking-wider">
-            Science Report • CLIL Friction Analysis
+            Science Report • CLIL Friction Lab
           </span>
-          <h3 className="text-base font-black text-slate-900">Corridor Friction Science Lab Notebook</h3>
+          <h3 className="text-sm font-black text-slate-900">Corridor Friction Lab Notebook</h3>
         </div>
       </div>
 
-      {/* Section 11.1: 3-Step Visual Logic Notebook Cards */}
-      <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
-        <span className="text-xs font-black uppercase tracking-wider text-emerald-950 flex items-center gap-1.5">
-          🧪 3-STEP SCIENCE LOGIC BOARD:
-        </span>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
-          <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-300 space-y-1">
-            <span className="font-black text-emerald-900 uppercase text-[10px] block">🔬 1. Describe Cause</span>
-            <p className="font-bold text-slate-800">{selectedCause}</p>
-          </div>
-          <div className="p-3 bg-blue-50 rounded-xl border border-blue-300 space-y-1">
-            <span className="font-black text-blue-900 uppercase text-[10px] block">➡️ 2. Explain Mechanism</span>
-            <p className="font-bold text-slate-800">{selectedMechanism}</p>
-          </div>
-          <div className="p-3 bg-amber-50 rounded-xl border border-amber-300 space-y-1">
-            <span className="font-black text-amber-900 uppercase text-[10px] block">✅ 3. Give Advice</span>
-            <p className="font-bold text-slate-800">{selectedResult}</p>
-          </div>
-        </div>
+      {/* Step Indicator */}
+      <div className="flex items-center gap-2">
+        {STEP_CONFIG.map(({ step, label, checker }) => (
+          <button
+            key={step}
+            type="button"
+            onClick={() => setCurrentStep(step)}
+            className={`flex-1 py-2 px-2 rounded-xl text-center text-[10px] font-black border transition ${
+              currentStep === step
+                ? 'bg-emerald-600 text-white border-emerald-700 shadow-md'
+                : checker
+                ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
+                : 'bg-slate-100 text-slate-500 border-slate-200'
+            }`}
+          >
+            {checker ? '✓' : step}. {label.split(' ')[0]}
+          </button>
+        ))}
       </div>
 
-      {/* Half Sentence Starters & Categorized Functional Color Pills */}
-      <div className="p-4 bg-emerald-50/80 rounded-2xl border border-emerald-200 space-y-3">
-        <div className="space-y-1">
-          <span className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1">
-            <Sparkles size={14} className="text-emerald-600" /> Tap Sentence Starters:
+      {/* Active Step Panel */}
+      <div className={`p-4 bg-${c}-50 rounded-2xl border border-${c}-200 space-y-3 animate-in fade-in`}>
+        <div className="flex items-center justify-between">
+          <span className={`text-xs font-black uppercase text-${c}-900 tracking-wider flex items-center gap-1.5`}>
+            <span>{cfg.icon}</span> Step {cfg.step} — {cfg.label}
           </span>
-          <div className="flex flex-wrap gap-2">
-            {[
-              "Water acts as...",
-              "As a result, friction...",
-              "Therefore, walking carefully..."
-            ].map((starter, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setReportText(prev => prev ? `${prev} ${starter}` : starter)}
-                className="px-3.5 py-1.5 bg-white hover:bg-emerald-100 border border-emerald-300 text-emerald-950 rounded-xl text-xs font-bold transition text-left shadow-sm active:scale-95"
-              >
-                + {starter}
-              </button>
-            ))}
-          </div>
+          {cfg.checker && (
+            <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-300 rounded-lg text-[10px] font-black">
+              ✓ Done
+            </span>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 border-t border-emerald-200/60">
-          {/* 🟢 Science Words */}
-          <div className="p-2 bg-emerald-100/70 rounded-xl border border-emerald-300 space-y-1">
-            <span className="text-[10px] font-black uppercase text-emerald-900 tracking-wider">
-              🟢 Science Words:
-            </span>
-            <div className="flex flex-wrap gap-1">
-              {["liquid lubricant", "rubber shoes", "reduce friction"].map((vocab, vIdx) => (
-                <button
-                  key={vIdx}
-                  type="button"
-                  onClick={() => setReportText(prev => prev ? `${prev} ${vocab}` : vocab)}
-                  className="px-2 py-0.5 bg-white hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-md text-[11px] font-bold transition active:scale-95"
-                >
-                  + {vocab}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 🔵 Connectors */}
-          <div className="p-2 bg-blue-100/70 rounded-xl border border-blue-300 space-y-1">
-            <span className="text-[10px] font-black uppercase text-blue-900 tracking-wider">
-              🔵 Connectors:
-            </span>
-            <div className="flex flex-wrap gap-1">
-              {["as a result", "because", "therefore"].map((vocab, vIdx) => (
-                <button
-                  key={vIdx}
-                  type="button"
-                  onClick={() => setReportText(prev => prev ? `${prev} ${vocab}` : vocab)}
-                  className="px-2 py-0.5 bg-white hover:bg-blue-200 text-blue-950 border border-blue-300 rounded-md text-[11px] font-bold transition active:scale-95"
-                >
-                  + {vocab}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 🟠 Safety Words */}
-          <div className="p-2 bg-amber-100/70 rounded-xl border border-amber-300 space-y-1">
-            <span className="text-[10px] font-black uppercase text-amber-900 tracking-wider">
-              🟠 Safety Words:
-            </span>
-            <div className="flex flex-wrap gap-1">
-              {["wet puddle", "corridor safety", "bandage & cold pack"].map((vocab, vIdx) => (
-                <button
-                  key={vIdx}
-                  type="button"
-                  onClick={() => setReportText(prev => prev ? `${prev} ${vocab}` : vocab)}
-                  className="px-2 py-0.5 bg-white hover:bg-amber-200 text-amber-950 border border-amber-300 rounded-md text-[11px] font-bold transition active:scale-95"
-                >
-                  + {vocab}
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Sentence Starter */}
+        <div className={`flex items-center gap-2 px-3 py-2 bg-white border border-${c}-200 rounded-xl`}>
+          <p className={`text-xs font-semibold text-${c}-900 italic flex-1`}>
+            💡 Starter: &ldquo;{cfg.starter}...&rdquo;
+          </p>
+          <button type="button" onClick={() => speakText(cfg.starter)}
+            className={`shrink-0 p-1.5 bg-${c}-200 hover:bg-${c}-300 rounded-lg transition`}>
+            <Volume2 size={12} className={`text-${c}-700`} />
+          </button>
+          <button type="button"
+            onClick={() => cfg.setter(prev => prev ? prev : cfg.starter + ' ')}
+            className={`shrink-0 px-2 py-1 bg-${c}-600 hover:bg-${c}-700 text-white rounded-lg text-[10px] font-black transition`}>
+            Use
+          </button>
         </div>
-      </div>
 
-      {/* Criteria Checker Panel (real-time, mục 11.4) */}
-      <div className="p-3 bg-white rounded-2xl border border-slate-200 space-y-2">
-        <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider flex items-center gap-1.5">
-          🗒️ Lab Notebook Criteria:
-        </span>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          {[
-            { label: 'Cause described', met: criteriaCheck.causeDescribed, required: true },
-            { label: 'Result explained', met: criteriaCheck.resultExplained, required: true },
-            { label: 'Safety advice', met: criteriaCheck.safetyGiven, required: true },
-            { label: 'Vocab used', met: criteriaCheck.vocabMet, required: false }
-          ].map(({ label, met, required }) => (
-            <div key={label} className={`px-2.5 py-1.5 rounded-xl border text-[10px] font-black text-center transition ${
-              met
-                ? 'bg-emerald-100 border-emerald-300 text-emerald-900'
-                : required
-                  ? 'bg-slate-100 border-slate-200 text-slate-500'
-                  : 'bg-amber-50 border-amber-200 text-amber-700'
-            }`}>
-              {met ? '✓' : '○'} {label}{!required ? ' ⭐' : ''}
+        {/* Vocabulary Pills */}
+        <div className="space-y-1.5">
+          {Object.entries(cfg.pills).map(([groupLabel, words]) => (
+            <div key={groupLabel} className={`p-2 bg-white rounded-xl border border-${c}-200 space-y-1`}>
+              <span className={`text-[9px] font-black uppercase text-${c}-900 block`}>{groupLabel}:</span>
+              <div className="flex flex-wrap gap-1">
+                {words.map((w, i) => (
+                  <button key={i} type="button"
+                    onClick={() => appendToStep(cfg.setter, w)}
+                    className={`px-2 py-0.5 bg-${c}-50 hover:bg-${c}-100 text-${c}-950 border border-${c}-300 rounded-md text-[10px] font-bold transition active:scale-95`}>
+                    +{w}
+                  </button>
+                ))}
+              </div>
             </div>
           ))}
         </div>
-        {/* Lab Notebook stamps real-time */}
-        <div className="flex flex-wrap gap-1.5 pt-1">
-          {criteriaCheck.hasDescribe && <span className="px-2 py-0.5 bg-emerald-100 border border-emerald-300 rounded-md text-[10px] font-black text-emerald-900 animate-in fade-in">🔬 Describe ✓</span>}
-          {criteriaCheck.hasExplain && <span className="px-2 py-0.5 bg-blue-100 border border-blue-300 rounded-md text-[10px] font-black text-blue-900 animate-in fade-in">➡️ Explain ✓</span>}
-          {criteriaCheck.hasAdvise && <span className="px-2 py-0.5 bg-amber-100 border border-amber-300 rounded-md text-[10px] font-black text-amber-900 animate-in fade-in">✅ Advise ✓</span>}
-        </div>
-        {!criteriaCheck.canSubmit && reportText.trim().length > 5 && (
-          <p className="text-[10px] text-slate-500 font-medium">
-            {!criteriaCheck.causeDescribed ? 'Add a Cause sentence (e.g. "Water acts as...")' :
-             !criteriaCheck.resultExplained ? 'Add a Result sentence (e.g. "As a result, friction...")' :
-             'Add a Safety advice sentence (e.g. "Therefore, walking carefully...")'}
-          </p>
-        )}
-      </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Textarea */}
         <textarea
-          rows={5}
-          value={reportText}
-          onChange={(e) => setReportText(e.target.value)}
-          placeholder="Write your science lab report here using the 3-step logic board and target vocabulary..."
-          className="w-full p-4 rounded-2xl border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 text-sm font-medium text-slate-900"
+          rows={3}
+          value={cfg.value}
+          onChange={(e) => cfg.setter(e.target.value)}
+          placeholder={cfg.hint}
+          className={`w-full p-3 rounded-xl border text-sm font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-${c}-400 ${
+            cfg.checker ? `border-emerald-400 bg-emerald-50/50` : `border-${c}-300 bg-white`
+          }`}
         />
 
-        <button
-          type="submit"
-          disabled={!reportText.trim() || !criteriaCheck.canSubmit}
-          className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-2 transition"
-        >
-          <Send size={16} /> Submit Lab Report (+50 XP)
-          {!criteriaCheck.canSubmit && reportText.trim().length > 0 && (
-            <span className="ml-1 text-emerald-200 font-normal">— complete all 3 criteria first</span>
-          )}
-        </button>
-      </form>
+        {/* Live hint */}
+        {!cfg.checker && cfg.value.trim().length > 5 && (
+          <p className={`text-[10px] text-${c}-700 font-medium`}>
+            ⚡ {cfg.hint}
+          </p>
+        )}
 
-      {isSubmitted && (
+        {/* Navigation Buttons */}
+        <div className="flex items-center justify-between">
+          <button type="button" disabled={currentStep === 1}
+            onClick={() => setCurrentStep(s => s - 1)}
+            className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-slate-700 rounded-xl text-xs font-black flex items-center gap-1 transition">
+            <ChevronLeft size={13} /> Back
+          </button>
+          {currentStep < 3 ? (
+            <button type="button"
+              onClick={() => setCurrentStep(s => s + 1)}
+              className={`px-4 py-1.5 bg-${c}-600 hover:bg-${c}-700 text-white rounded-xl text-xs font-black flex items-center gap-1 transition ${!cfg.checker ? 'opacity-60' : ''}`}>
+              Next Step <ChevronRight size={13} />
+            </button>
+          ) : null}
+        </div>
+      </div>
+
+      {/* Report Preview */}
+      {assembledReport.length > 20 && (
+        <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200 space-y-1.5">
+          <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider">📄 Report Preview:</span>
+          <p className="text-xs text-slate-800 font-medium leading-relaxed italic">&ldquo;{assembledReport}&rdquo;</p>
+        </div>
+      )}
+
+      {/* Submit */}
+      {!isSubmitted ? (
+        <form onSubmit={handleSubmit}>
+          <button
+            type="submit"
+            disabled={!canSubmit}
+            className="w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white rounded-xl font-black text-sm shadow-md flex items-center justify-center gap-2 transition"
+          >
+            <Send size={16} />
+            {canSubmit ? '✅ Submit Lab Report (+50 XP)' : `Complete all 3 steps first (${[step1OK, step2OK, step3OK].filter(Boolean).length}/3 done)`}
+          </button>
+        </form>
+      ) : (
         <div className="p-4 bg-emerald-100 border border-emerald-300 rounded-2xl text-emerald-950 font-black text-xs flex items-center gap-2 animate-in fade-in">
           <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
-          🎉 Science Report Published Successfully! Lab Notebook Badge Sealed (+50 XP).
+          🎉 Science Report Published! Lab Notebook Badge Sealed (+50 XP).
         </div>
       )}
     </div>

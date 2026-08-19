@@ -16,10 +16,14 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
   const [highlightMode, setHighlightMode] = useState('vocab');
   const [selectedHotspot, setSelectedHotspot] = useState(null);
 
+  // Gear 1: Mystery pin reveal state
+  const [revealedPins, setRevealedPins] = useState({}); // { [sceneId_chunkIdx]: true }
+
   // Gear 2: Sentence Karaoke & Shadowing Studio state
   const [activeSentenceIdx, setActiveSentenceIdx] = useState(null);
   const [activeWordIdx, setActiveWordIdx] = useState(null);
-  const [sentenceShadowing, setSentenceShadowing] = useState({}); // { [idx]: { isRecording, audioUrl, score, feedback } }
+  const [shadowingKaraokeIdx, setShadowingKaraokeIdx] = useState(null); // which sentence is in shadowing+karaoke mode
+  const [sentenceShadowing, setSentenceShadowing] = useState({}); // { [idx]: { isRecording, audioUrl, score, feedback, startTime } }
   const sentenceMediaRecorderRef = useRef(null);
   const sentenceChunksRef = useRef([]);
 
@@ -83,8 +87,14 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
     }, 320); // 320ms per word Karaoke highlight speed
   };
 
-  // Gear 2: Real Sentence Shadowing Recorder & AI Pronunciation Feedback
+  // Gear 2: Shadowing = Karaoke highlight (so student reads along) + simultaneous recording
   const startSentenceShadowing = async (idx, targetSentence) => {
+    // 1. Trigger karaoke highlight first so student can follow the text
+    handleSpeakSentence(targetSentence, idx);
+    setShadowingKaraokeIdx(idx);
+
+    const recordStartTime = Date.now();
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       sentenceMediaRecorderRef.current = new MediaRecorder(stream);
@@ -95,16 +105,34 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
       };
 
       sentenceMediaRecorderRef.current.onstop = () => {
+        const durationMs = Date.now() - recordStartTime;
+        setShadowingKaraokeIdx(null);
+
+        // Voice guard: require at least 1.2 seconds of recording
+        if (durationMs < 1200) {
+          setSentenceShadowing(prev => ({
+            ...prev,
+            [idx]: {
+              isRecording: false,
+              audioUrl: null,
+              score: 0,
+              feedback: '⚠️ No voice detected! Please speak along with the highlighted words to practice shadowing.'
+            }
+          }));
+          return;
+        }
+
         const audioBlob = new Blob(sentenceChunksRef.current, { type: 'audio/webm' });
         const audioUrl = URL.createObjectURL(audioBlob);
-        const randomScore = Math.floor(Math.random() * 11) + 90; // 90-100%
+        // Score based on duration as proxy — real speech recognition upgrade possible
+        const score = Math.min(100, Math.max(75, Math.floor(durationMs / 100)));
         setSentenceShadowing(prev => ({
           ...prev,
           [idx]: {
             isRecording: false,
             audioUrl,
-            score: randomScore,
-            feedback: `🌟 Great rhythm! Your pronunciation match is ${randomScore}%. Clear pace on key chunks!`
+            score,
+            feedback: `🌟 Well done! Voice captured for ${(durationMs/1000).toFixed(1)}s. Listen back and compare with Native Audio!`
           }
         }));
         fireCelebrationConfetti('Sentence_Shadow_Complete');
@@ -113,26 +141,21 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
       sentenceMediaRecorderRef.current.start();
       setSentenceShadowing(prev => ({
         ...prev,
-        [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null }
+        [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
       }));
     } catch (err) {
-      console.warn("Microphone access fallback for sentence shadowing:", err);
+      // Microphone not available — simulate with karaoke only
+      console.warn("Mic unavailable for shadowing:", err);
+      setShadowingKaraokeIdx(null);
       setSentenceShadowing(prev => ({
         ...prev,
-        [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null }
+        [idx]: {
+          isRecording: false,
+          audioUrl: null,
+          score: null,
+          feedback: '⚠️ Microphone not available. Please allow microphone access and try again.'
+        }
       }));
-      setTimeout(() => {
-        setSentenceShadowing(prev => ({
-          ...prev,
-          [idx]: {
-            isRecording: false,
-            audioUrl: 'simulated_voice_audio',
-            score: 95,
-            feedback: "⭐ Simulated Voice Shadowing complete! Rhythm: 95% match."
-          }
-        }));
-        fireCelebrationConfetti('Sentence_Shadow_Complete');
-      }, 2500);
     }
   };
 
@@ -247,15 +270,21 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                     onError={(e) => { e.target.src = '/images/scenes/default_story.jpg'; }}
                   />
 
-                  {/* Render Pins with Robust Schema Handling */}
+                  {/* Mystery Pins — hidden until clicked, then reveal chunk */}
                   {currentScene.lexical_chunks?.map((chunk, cIdx) => {
+                    const pinKey = `${currentScene.scene_id}_${cIdx}`;
                     const chunkLabel = chunk.chunk || chunk.text || chunk.word || `Item ${cIdx + 1}`;
-                    const chunkVi = chunk.vi || chunk.meaning_vi || chunk.word || '';
+                    const chunkVi = chunk.vi || chunk.meaning_vi || '';
+                    const isRevealed = revealedPins[pinKey];
+                    const isFound = foundItems.includes(chunkLabel);
                     return (
                       <button
                         key={cIdx}
                         type="button"
                         onClick={() => {
+                          if (!isRevealed) {
+                            setRevealedPins(prev => ({ ...prev, [pinKey]: true }));
+                          }
                           setSelectedHotspot({ text: chunkLabel, vi: chunkVi });
                           speakText(chunkLabel);
                           if (!foundItems.includes(chunkLabel)) {
@@ -269,28 +298,39 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                           }
                         }}
                         style={{ left: `${chunk.x || 30 + cIdx * 25}%`, top: `${chunk.y || 40 + (cIdx % 2) * 20}%` }}
-                        className="absolute transform -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 bg-amber-400/95 hover:bg-amber-300 text-slate-950 font-black text-xs rounded-full shadow-lg border-2 border-white flex items-center gap-1 animate-bounce transition hover:scale-110 z-10"
+                        className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition hover:scale-125 z-10 ${
+                          isFound
+                            ? 'px-2.5 py-1 bg-emerald-500 border-2 border-white text-white font-black text-xs rounded-full shadow-lg'
+                            : isRevealed
+                            ? 'px-3 py-1.5 bg-amber-400 border-2 border-white text-slate-950 font-black text-xs rounded-full shadow-lg'
+                            : 'w-9 h-9 rounded-full bg-amber-400/90 hover:bg-amber-300 border-2 border-white shadow-xl flex items-center justify-center animate-pulse'
+                        }`}
                       >
-                        ✨ {chunkLabel}
+                        {isFound ? `✓ ${chunkLabel}` : isRevealed ? `✨ ${chunkLabel}` : '?'}
                       </button>
                     );
                   })}
 
                   {selectedHotspot && (
-                    <div className="absolute top-3 left-3 px-4 py-2 bg-amber-100/95 text-amber-950 rounded-2xl border-2 border-amber-400 backdrop-blur-md animate-in fade-in flex items-center gap-3 shadow-xl z-20">
-                      <div>
-                        <span className="text-amber-900 text-xs font-black">✨ {selectedHotspot.text}</span>
-                        {selectedHotspot.vi && (
-                          <span className="text-[11px] text-amber-800 italic ml-2">({selectedHotspot.vi})</span>
-                        )}
+                    <div className="absolute top-3 left-3 max-w-[80%] px-4 py-2.5 bg-white/97 text-slate-900 rounded-2xl border-2 border-amber-400 backdrop-blur-md animate-in fade-in shadow-2xl z-20 space-y-1">
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <div className="text-amber-700 text-[10px] font-black uppercase tracking-wider">✨ Chunk Found:</div>
+                          <div className="text-sm font-black text-slate-900">{selectedHotspot.text}</div>
+                          {selectedHotspot.vi && (
+                            <div className="text-[11px] text-slate-600 italic mt-0.5">{selectedHotspot.vi}</div>
+                          )}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedHotspot(null)}
+                          className="text-slate-400 hover:text-slate-700 font-black text-xs shrink-0"
+                        >✕</button>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedHotspot(null)}
-                        className="text-amber-700 hover:text-amber-950 font-black text-xs ml-1"
-                      >
-                        ✕
-                      </button>
+                      {/* Context Anchor Sentence */}
+                      <div className="text-[10px] text-slate-700 font-semibold bg-amber-50 px-2 py-1 rounded-lg border border-amber-200">
+                        💡 <em>Jake <strong className="text-emerald-700">was walking carefully</strong> down the <strong className="text-amber-700">school corridor</strong> <strong className="text-blue-700">after science class</strong>.</em>
+                      </div>
                     </div>
                   )}
 
@@ -429,25 +469,29 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                           onClick={() => handleSpeakSentence(sentence, idx)}
                           className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95"
                         >
-                          <Volume2 size={15} /> Listen Native
+                          <Volume2 size={15} /> Listen
                         </button>
 
-                        {/* Sentence Shadowing Record / Stop Button */}
+                        {/* Shadowing = Karaoke highlight + Record simultaneously */}
                         {sentenceShadowing[idx]?.isRecording ? (
                           <button
                             type="button"
                             onClick={() => stopSentenceShadowing(idx)}
                             className="px-3.5 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition animate-pulse"
                           >
-                            <Square size={13} /> Stop Recording
+                            <Square size={13} /> Stop
                           </button>
                         ) : (
                           <button
                             type="button"
                             onClick={() => startSentenceShadowing(idx, sentence)}
-                            className="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95"
+                            className={`px-3 py-1.5 rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95 ${
+                              shadowingKaraokeIdx === idx
+                                ? 'bg-purple-700 text-white animate-pulse ring-2 ring-purple-400'
+                                : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white'
+                            }`}
                           >
-                            <Mic size={14} /> 🎙️ Shadowing
+                            <Mic size={14} /> Shadow
                           </button>
                         )}
                       </div>
@@ -502,174 +546,118 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
             </button>
           </div>
 
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-5">
-            {/* Mascot Nova Prompts (Half Stems & Target Vocab) */}
-            <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200 flex items-start gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-black text-2xl shrink-0 shadow-md">
-                🤖
-              </div>
-              <div className="space-y-3 flex-1">
-                <h4 className="text-xs font-black uppercase text-purple-900 tracking-wider">Mascot Nova is Listening!</h4>
-                <p className="text-xs text-purple-800 font-bold">
-                  "Hi friend! Tap half sentence starters or target vocab pills below to help you speak with confidence!"
-                </p>
+          <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-md space-y-3">
+            {/* Slim Model Example Bar */}
+            <div className="flex items-center justify-between px-3.5 py-2 bg-indigo-50 border border-indigo-200 rounded-xl gap-3">
+              <p className="text-xs font-semibold text-indigo-900 italic flex-1 leading-relaxed">
+                💡 <strong>Model:</strong> &ldquo;Jake <span className="text-emerald-700 underline">was walking carefully</span> <span className="text-blue-700 underline">down the school corridor</span>. Suddenly, a student <span className="text-amber-700 underline">slipped on the wet floor</span>.&rdquo;
+              </p>
+              <button
+                type="button"
+                onClick={() => speakText("Jake was walking carefully down the school corridor. Suddenly, a student slipped on the wet floor.")}
+                className="shrink-0 px-2 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-[10px] font-black flex items-center gap-1 transition"
+              >
+                <Volume2 size={11} /> Listen
+              </button>
+            </div>
 
-                {/* 💡 MODEL EXAMPLE SENTENCE (Pedagogical Anchor) */}
-                {showModelExample && (
-                  <div className="p-3.5 bg-indigo-50/90 rounded-2xl border border-indigo-200 space-y-1.5">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-black uppercase text-indigo-900 tracking-wider flex items-center gap-1">
-                        💡 Model Example Sentence (Listen & Follow):
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => speakText("Jake was walking carefully down the corridor when a student slipped on the wet floor.")}
-                        className="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-[10px] font-black flex items-center gap-1 transition"
-                      >
-                        <Volume2 size={12} /> Listen Model
-                      </button>
-                    </div>
-                    <p className="text-xs font-bold text-indigo-950 italic">
-                      &ldquo;Jake <span className="text-emerald-700 underline">was walking carefully</span> <span className="text-blue-700 underline">down the school corridor</span> when a student <span className="text-amber-700 underline">slipped on the wet floor</span>.&rdquo;
-                    </p>
-                  </div>
+            {/* Fading Scaffold: Sentence Starters — horizontal, compact */}
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
+                  ✨ {retellAttemptCount === 0 ? 'Starters (Attempt 1)' : retellAttemptCount === 1 ? 'Reduced (Attempt 2)' : 'Challenge — Free Speak'}
+                </span>
+                {retellAttemptCount > 0 && (
+                  <button type="button" onClick={() => setShowHint(!showHint)}
+                    className="text-[10px] font-bold text-indigo-600 hover:text-indigo-800">
+                    💡 Hint
+                  </button>
                 )}
-
-                {/* Fading Scaffold: Retell Half Starters (Lần 1: 3, Lần 2+: 2) */}
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
-                      ✨ {retellAttemptCount === 0 ? 'Sentence Starters (Attempt 1):' : retellAttemptCount === 1 ? 'Reduced Starters (Attempt 2):' : 'Challenge Mode — Speak Freely'}
-                    </span>
-                    {retellAttemptCount > 0 && (
-                      <button
-                        type="button"
-                        onClick={() => setShowHint(!showHint)}
-                        className="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-0.5"
-                      >
-                        💡 I need a hint
-                      </button>
-                    )}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {(retellAttemptCount === 0
-                      ? ["First, Jake was walking...", "Suddenly, a student slipped...", "Finally, the school nurse..."]
-                      : retellAttemptCount === 1
-                        ? ["First, Jake was walking...", "Finally, the school nurse..."]
-                        : []
-                    ).map((starter, sIdx) => (
-                      <button
-                        key={sIdx}
-                        type="button"
-                        onClick={() => setSelectedStarter(prev => prev ? `${prev} ${starter}` : starter)}
-                        className="px-3 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-900 rounded-xl text-xs font-bold transition shadow-sm text-left"
-                      >
-                        + {starter}
-                      </button>
-                    ))}
-                    {showHint && (
-                      <button
-                        type="button"
-                        onClick={() => setSelectedStarter(prev => prev ? `${prev} Then, the nurse...` : 'Then, the nurse...')}
-                        className="px-3 py-1 bg-indigo-100 hover:bg-indigo-200 border border-indigo-300 text-indigo-900 rounded-xl text-xs font-bold transition shadow-sm"
-                      >
-                        💡 Then, the nurse...
-                      </button>
-                    )}
-                  </div>
-                </div>
-
-                {/* 4 Multi-Word Collocation & Lexical Chunk Groups */}
-                <div className="space-y-2 pt-1 border-t border-purple-200/60">
-                  <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
-                    🎯 Tap Complete Chunks & Collocations:
-                  </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {/* 🔵 1. Setting & Time */}
-                    <div className="p-2 bg-blue-50/80 rounded-xl border border-blue-200 space-y-1">
-                      <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting & Time:</span>
-                      <div className="flex flex-wrap gap-1">
-                        {["After science class", "down the school corridor", "On a Monday morning"].map((c, i) => (
-                          <button key={i} type="button" onClick={() => setSelectedStarter(prev => prev ? `${prev} ${c}` : c)}
-                            className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[11px] font-bold transition active:scale-95">
-                            + {c}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* 🟢 2. Action & Manner */}
-                    <div className="p-2 bg-emerald-50/80 rounded-xl border border-emerald-200 space-y-1">
-                      <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action & Manner:</span>
-                      <div className="flex flex-wrap gap-1">
-                        {["was walking carefully", "was running very fast", "stopped immediately to help"].map((c, i) => (
-                          <button key={i} type="button" onClick={() => setSelectedStarter(prev => prev ? `${prev} ${c}` : c)}
-                            className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[11px] font-bold transition active:scale-95">
-                            + {c}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* 🟠 3. Problem / Hazard */}
-                    <div className="p-2 bg-amber-50/80 rounded-xl border border-amber-200 space-y-1">
-                      <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem & Hazard:</span>
-                      <div className="flex flex-wrap gap-1">
-                        {["slipped on the wet floor", "fell down heavily", "hurt his knee badly"].map((c, i) => (
-                          <button key={i} type="button" onClick={() => setSelectedStarter(prev => prev ? `${prev} ${c}` : c)}
-                            className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[11px] font-bold transition active:scale-95">
-                            + {c}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* 🟣 4. Solution & Care */}
-                    <div className="p-2 bg-purple-50/80 rounded-xl border border-purple-200 space-y-1">
-                      <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution & Care:</span>
-                      <div className="flex flex-wrap gap-1">
-                        {["called the school nurse", "with a clean bandage", "felt deeply relieved"].map((c, i) => (
-                          <button key={i} type="button" onClick={() => setSelectedStarter(prev => prev ? `${prev} ${c}` : c)}
-                            className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[11px] font-bold transition active:scale-95">
-                            + {c}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {(retellAttemptCount === 0
+                  ? ["First, Jake was walking...", "Suddenly, a student slipped...", "Finally, the school nurse..."]
+                  : retellAttemptCount === 1
+                    ? ["First, Jake was walking...", "Finally, the school nurse..."]
+                    : []
+                ).map((starter, sIdx) => (
+                  <button key={sIdx} type="button"
+                    onClick={() => setSelectedStarter(prev => prev ? `${prev} ${starter}` : starter)}
+                    className="px-2.5 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-900 rounded-xl text-xs font-bold transition shadow-sm">
+                    + {starter}
+                  </button>
+                ))}
+                {showHint && (
+                  <button type="button"
+                    onClick={() => setSelectedStarter(prev => prev ? `${prev} Then, the nurse...` : 'Then, the nurse...')}
+                    className="px-2.5 py-1 bg-indigo-100 border border-indigo-300 text-indigo-900 rounded-xl text-xs font-bold transition shadow-sm">
+                    💡 Then, the nurse...
+                  </button>
+                )}
               </div>
             </div>
 
+            {/* 4 Chunk Groups — compact 2x2 grid */}
+            <div className="grid grid-cols-2 gap-1.5">
+              {[
+                { color: 'blue', label: '🔵 Setting', chunks: ['After science class', 'down the corridor', 'On a Monday'] },
+                { color: 'emerald', label: '🟢 Action', chunks: ['was walking carefully', 'stopped to help', 'called the nurse'] },
+                { color: 'amber', label: '🟠 Problem', chunks: ['slipped on the wet floor', 'hurt his knee', 'fell down heavily'] },
+                { color: 'purple', label: '🟣 Solution', chunks: ['with a clean bandage', 'felt relieved', 'praised Jake'] },
+              ].map(({ color, label, chunks }) => (
+                <div key={label} className={`p-1.5 bg-${color}-50 rounded-xl border border-${color}-200 space-y-1`}>
+                  <span className={`text-[9px] font-black uppercase text-${color}-900 block`}>{label}</span>
+                  <div className="flex flex-wrap gap-0.5">
+                    {chunks.map((c, i) => (
+                      <button key={i} type="button"
+                        onClick={() => setSelectedStarter(prev => prev ? `${prev} ${c}` : c)}
+                        className={`px-1.5 py-0.5 bg-white hover:bg-${color}-100 text-${color}-950 border border-${color}-300 rounded text-[10px] font-bold transition active:scale-95`}>
+                        +{c}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Selected prompt display (minimal) */}
             {selectedStarter && (
-              <div className="p-3 bg-purple-100 border border-purple-300 rounded-xl text-purple-950 text-xs font-bold">
-                Selected Prompt: <span className="font-black text-purple-900">"{selectedStarter}"</span>
+              <div className="px-3 py-1.5 bg-purple-100 border border-purple-300 rounded-xl text-purple-950 text-xs font-bold flex items-center justify-between gap-2">
+                <span className="truncate">"{selectedStarter}"</span>
+                <button type="button" onClick={() => setSelectedStarter('')} className="text-purple-600 text-[10px] shrink-0">✕ Clear</button>
               </div>
             )}
 
-            {/* Controls */}
-            <div className="text-center py-4 space-y-3">
+            {/* 🎙️ Mascot Nova intro — slim 1-line */}
+            <div className="flex items-center gap-2">
+              <span className="text-lg">🤖</span>
+              <span className="text-xs text-purple-800 font-bold italic">Nova is listening! Tap chunks above then record your 30-second story retell.</span>
+            </div>
+
+
+            {/* Controls — always visible */}
+            <div className="flex justify-center py-2">
               {!isRecording ? (
                 <button
                   type="button"
                   onClick={startRetellRecording}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition hover:scale-105"
+                  className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition hover:scale-105"
                 >
-                  <Mic size={22} className="animate-pulse" /> 🎙️ START 30S VOICE RETELL
+                  <Mic size={20} className="animate-pulse" /> 🎙️ START VOICE RETELL
                 </button>
               ) : (
                 <button
                   type="button"
                   onClick={stopRetellRecording}
-                  className="px-8 py-4 bg-rose-600 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition animate-bounce"
+                  className="px-8 py-3.5 bg-rose-600 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition animate-bounce"
                 >
-                  <Square size={22} fill="currentColor" /> ⏹️ STOP RECORDING
+                  <Square size={20} fill="currentColor" /> ⏹️ STOP RECORDING
                 </button>
               )}
             </div>
 
             {novaFeedback && (
-              <div className="p-5 bg-emerald-50 border border-emerald-300 rounded-2xl text-emerald-900 text-xs font-bold space-y-1 animate-in fade-in">
+              <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-2xl text-emerald-900 text-xs font-bold space-y-1 animate-in fade-in">
                 <div className="font-black text-sm text-emerald-800">{novaFeedback.praise}</div>
                 <div className="text-emerald-700">{novaFeedback.tip}</div>
               </div>
@@ -677,6 +665,7 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
           </div>
         </div>
       )}
+
 
       {/* ========================================================================= */}
       {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER + EXPLORER PASSPORT (EPIC-1)          */}

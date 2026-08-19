@@ -15,8 +15,9 @@ export default {
       description_en: "Jake was walking carefully down the school corridor after science class.",
       image_url: "/images/week33/webtoon_scene_1.png",
       lexical_chunks: [
-        { word: "corridor", chunk: "school corridor", x: 45, y: 40 },
-        { word: "carefully", chunk: "walking carefully", x: 62, y: 55 }
+        { word: "corridor", chunk: "school corridor", vi: "hành lang trường", x: 45, y: 40 },
+        { word: "carefully", chunk: "walking carefully", vi: "đi bộ cẩn thận", x: 62, y: 55 },
+        { word: "after", chunk: "after science class", vi: "sau giờ học khoa học", x: 22, y: 72 }
       ]
     },
     {

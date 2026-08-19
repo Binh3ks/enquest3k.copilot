@@ -40,6 +40,9 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
   const [debateScore, setDebateScore] = useState(null);
   const [showSampleHint, setShowSampleHint] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [debateStep, setDebateStep] = useState(1); // 1=Position, 2=Build, 3=Deliver
+  const [selectedPosition, setSelectedPosition] = useState(null); // 'agree'|'disagree'
+  const [showModelDialogue, setShowModelDialogue] = useState(false);
   const recognitionRef = useRef(null);
 
   const handlePlayNova = async () => {
@@ -315,172 +318,224 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
           </button>
         </div>
 
-        {showSampleHint && (
-          <div className="p-4 bg-indigo-50/70 rounded-2xl border border-indigo-200 text-xs text-indigo-950 space-y-2 animate-in fade-in">
-            <div className="font-bold uppercase tracking-wider text-indigo-800">Useful Sentence Starters:</div>
-            <ul className="list-disc list-inside space-y-1 text-slate-700">
-              {activeStarters.map((m, idx) => (
-                <li key={idx} className="font-medium font-mono">{m}</li>
-              ))}
-            </ul>
-            <div className="pt-1 text-indigo-700 font-semibold">
-              {isModeA 
-                ? '💡 Tip: Share your idea kindly! Tell Nova why walking in the corridor is safer.' 
-                : '💡 C.R.E Structure: State your position (Claim) → Explain why (Reason) → Give a safety fact (Evidence).'}
+        {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+        {/* 3-STEP DEBATE SCAFFOLD                                  */}
+        {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+
+        {/* Step Indicator */}
+        <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-wider">
+          {[1,2,3].map(s => (
+            <button key={s} type="button" onClick={() => setDebateStep(s)}
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-xl border transition ${
+                debateStep === s
+                  ? 'bg-purple-600 text-white border-purple-700 shadow-md'
+                  : s < debateStep
+                  ? 'bg-emerald-100 text-emerald-900 border-emerald-300'
+                  : 'bg-slate-100 text-slate-500 border-slate-200'
+              }`}>
+              {s < debateStep ? '✓' : s} {s===1 ? 'Position' : s===2 ? 'Build' : 'Deliver'}
+            </button>
+          ))}
+        </div>
+
+        {/* STEP 1: Choose Position */}
+        {debateStep === 1 && (
+          <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3 animate-in fade-in">
+            <span className="text-xs font-black uppercase text-slate-700 tracking-wider block">
+              Step 1 — Choose your position:
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button type="button"
+                onClick={() => { setSelectedPosition('agree'); setUserSpeechText('I agree that walking carefully is much safer because '); setDebateStep(2); }}
+                className={`p-4 rounded-2xl border-2 text-left transition font-bold text-sm space-y-1 ${
+                  selectedPosition === 'agree' ? 'bg-emerald-100 border-emerald-500 shadow-md' : 'bg-white border-slate-200 hover:border-emerald-300'
+                }`}>
+                <span className="text-emerald-600 text-base">✅ I agree</span>
+                <p className="text-xs text-slate-700">"Walking carefully <strong>is safer</strong> because running can cause accidents."</p>
+              </button>
+              <button type="button"
+                onClick={() => { setSelectedPosition('disagree'); setUserSpeechText('I understand your point, but I disagree because '); setDebateStep(2); }}
+                className={`p-4 rounded-2xl border-2 text-left transition font-bold text-sm space-y-1 ${
+                  selectedPosition === 'disagree' ? 'bg-rose-100 border-rose-500 shadow-md' : 'bg-white border-slate-200 hover:border-rose-300'
+                }`}>
+                <span className="text-rose-600 text-base">🚶 I disagree</span>
+                <p className="text-xs text-slate-700">"I understand your point, but running is risky because <strong>friction is reduced</strong> on wet floors."</p>
+              </button>
             </div>
           </div>
         )}
 
-        {/* Categorized Functional Pills (Categorized by Function) */}
-        <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200 space-y-3">
-          <div className="space-y-1">
-            <span className="text-xs font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
-              <Sparkles size={14} className="text-purple-600" /> Tap Sentence Starters:
-            </span>
-            <div className="flex flex-wrap gap-2">
-              {activeStarters.map((starter, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setUserSpeechText(prev => prev ? `${prev} ${starter}` : starter)}
-                  className="px-3.5 py-1.5 bg-white hover:bg-purple-100 border border-purple-300 text-purple-950 rounded-xl text-xs font-bold transition text-left shadow-sm active:scale-95"
-                >
-                  + {starter}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-purple-200/60">
-            {/* Group 1: 🟢 Science Words */}
-            <div className="p-2 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1">
-              <span className="text-[10px] font-black uppercase text-emerald-800 tracking-wider">
-                🟢 Science Words:
+        {/* STEP 2: Build Argument with Chunk Ecosystem */}
+        {debateStep === 2 && (
+          <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200 space-y-3 animate-in fade-in">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
+                <Sparkles size={14} className="text-purple-600" /> Step 2 — Build your argument:
               </span>
-              <div className="flex flex-wrap gap-1">
-                {["reduce friction", "wet floor", "slippery", "rubber shoes"].map((vocab, vIdx) => (
-                  <button
-                    key={vIdx}
-                    type="button"
-                    onClick={() => setUserSpeechText(prev => prev ? `${prev} ${vocab}` : vocab)}
-                    className="px-2 py-0.5 bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 rounded-md text-xs font-bold transition active:scale-95"
-                  >
-                    + {vocab}
-                  </button>
-                ))}
+              <button type="button" onClick={() => setDebateStep(3)}
+                className="text-[10px] font-black text-purple-600 hover:text-purple-800 border border-purple-300 px-2 py-0.5 rounded-lg">
+                Next: Deliver ▶
+              </button>
+            </div>
+
+            {/* 4 Chunk Groups in 2x2 grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {/* 🎯 Claim Starters */}
+              <div className="p-2.5 bg-indigo-50 rounded-xl border border-indigo-200 space-y-1.5">
+                <span className="text-[9px] font-black uppercase text-indigo-900 block">🎯 Claim Starters:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["I understand your point, but...", "In my opinion,", "I believe that", "I disagree because"].map((c,i) => (
+                    <button key={i} type="button" onClick={() => setUserSpeechText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-indigo-100 text-indigo-950 border border-indigo-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                      +{c}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* 🔗 Reason Connectors */}
+              <div className="p-2.5 bg-blue-50 rounded-xl border border-blue-200 space-y-1.5">
+                <span className="text-[9px] font-black uppercase text-blue-900 block">🔗 Connectors:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["because", "however", "therefore", "as a result", "on the other hand"].map((c,i) => (
+                    <button key={i} type="button" onClick={() => setUserSpeechText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                      +{c}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* 🔬 Science Evidence */}
+              <div className="p-2.5 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1.5">
+                <span className="text-[9px] font-black uppercase text-emerald-900 block">🔬 Science Evidence:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["water reduces friction", "wet floor is slippery", "rubber shoes grip better", "friction prevents sliding"].map((c,i) => (
+                    <button key={i} type="button" onClick={() => setUserSpeechText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                      +{c}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* ⚠️ Consequences */}
+              <div className="p-2.5 bg-amber-50 rounded-xl border border-amber-200 space-y-1.5">
+                <span className="text-[9px] font-black uppercase text-amber-900 block">⚠️ Consequences:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["causing students to slip", "hurt their knee badly", "a dangerous accident", "visit the school nurse"].map((c,i) => (
+                    <button key={i} type="button" onClick={() => setUserSpeechText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                      +{c}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Group 2: 🟠 Safety Words */}
-            <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
-              <span className="text-[10px] font-black uppercase text-amber-800 tracking-wider">
-                🟠 Safety Words:
+            {/* Real-time C.R.E Argument Meter */}
+            <div className="p-3 bg-white rounded-2xl border border-slate-200 space-y-1.5">
+              <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider">
+                {isModeA ? '📊 Idea Tracker:' : '📊 Argument Meter (C.R.E):'}
               </span>
-              <div className="flex flex-wrap gap-1">
-                {['dangerous', 'slip and fall', 'keep safe', 'corridor rules'].map((vocab, vIdx) => (
-                  <button
-                    key={vIdx}
-                    type="button"
-                    onClick={() => setUserSpeechText(prev => prev ? `${prev} ${vocab}` : vocab)}
-                    className="px-2 py-0.5 bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 rounded-md text-xs font-bold transition active:scale-95"
-                  >
-                    + {vocab}
-                  </button>
-                ))}
-              </div>
+              {isModeA ? (
+                <div className="grid grid-cols-2 gap-2">
+                  <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                    modeAMeter.hasIdea ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+                  }`}>💡 Idea {modeAMeter.hasIdea ? '✓' : '○'}</div>
+                  <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                    modeAMeter.hasReason ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+                  }`}>🔗 Reason {modeAMeter.hasReason ? '✓' : '○'}</div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-3 gap-2">
+                  <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                    argumentMeter.hasClaim ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+                  }`}>🎯 Claim {argumentMeter.hasClaim ? '✓' : '○'}</div>
+                  <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                    argumentMeter.hasReason ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+                  }`}>🔗 Reason {argumentMeter.hasReason ? '✓' : '○'}</div>
+                  <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                    argumentMeter.hasEvidence ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+                  }`}>🔬 Evidence {argumentMeter.hasEvidence ? '✓' : '○'}</div>
+                </div>
+              )}
+            </div>
+
+            {/* Model Dialogue (collapsible) */}
+            <div className="border border-indigo-200 rounded-xl overflow-hidden">
+              <button type="button" onClick={() => setShowModelDialogue(!showModelDialogue)}
+                className="w-full flex items-center justify-between px-3 py-2 bg-indigo-50 text-indigo-900 text-xs font-black hover:bg-indigo-100 transition">
+                <span>📖 Model Debate Dialogue (Nova ↔ Champion)</span>
+                <span>{showModelDialogue ? '▲ Hide' : '▼ Show'}</span>
+              </button>
+              {showModelDialogue && (
+                <div className="p-3 bg-white space-y-2 text-xs">
+                  {[
+                    { speaker: '🤖 Nova', color: 'purple', text: '"Running in the corridor is fast and fun! It is a great way to get to the playground quickly."' },
+                    { speaker: '🏆 Champion', color: 'emerald', text: '"I understand your point, but running is dangerous. Water reduces friction on the wet floor."' },
+                    { speaker: '🤖 Nova', color: 'purple', text: '"Hmm, that is a good point! But what if students are careful?"' },
+                    { speaker: '🏆 Champion', color: 'emerald', text: '"Therefore, walking carefully in rubber shoes is always safer — it prevents slipping and accidents."' },
+                  ].map((line, i) => (
+                    <div key={i} className={`flex items-start gap-2 p-2 bg-${line.color}-50 rounded-xl border border-${line.color}-200`}>
+                      <span className={`font-black text-${line.color}-900 shrink-0`}>{line.speaker}:</span>
+                      <span className={`text-${line.color}-800 font-medium italic`}>{line.text}</span>
+                      <button type="button" onClick={() => {
+                        const utterance = new SpeechSynthesisUtterance(line.text.replace(/"/g,''));
+                        utterance.lang = 'en-US';
+                        window.speechSynthesis.speak(utterance);
+                      }} className={`ml-auto shrink-0 p-1 bg-${line.color}-200 rounded-lg hover:bg-${line.color}-300 transition`}>
+                        <Volume2 size={11} className={`text-${line.color}-700`} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
+        )}
 
-          {/* Mode B: 🔵 Connector Pill Group */}
-          {!isModeA && (
-            <div className="pt-2 border-t border-purple-200/60">
-              <span className="text-[10px] font-black uppercase text-blue-800 tracking-wider">🔵 Connectors (Mode B):</span>
-              <div className="flex flex-wrap gap-1 mt-1">
-                {["however", "on the other hand", "therefore", "as a result"].map((word, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setUserSpeechText(prev => prev ? `${prev} ${word}` : word)}
-                    className="px-2 py-0.5 bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300 rounded-md text-xs font-bold transition active:scale-95"
-                  >
-                    + {word}
-                  </button>
-                ))}
-              </div>
+        {/* STEP 3: Deliver — textarea + mic */}
+        {debateStep === 3 && (
+          <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3 animate-in fade-in">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-black uppercase text-slate-700 tracking-wider">Step 3 — Deliver your argument:</span>
+              <button type="button" onClick={() => setDebateStep(2)}
+                className="text-[10px] font-bold text-indigo-600 hover:text-indigo-800">◀ Back to Build</button>
             </div>
-          )}
-        </div>
+            <textarea
+              rows={4}
+              value={userSpeechText}
+              onChange={(e) => setUserSpeechText(e.target.value)}
+              placeholder={isModeA ? "Record or type your idea for Nova here..." : "Record your speech or type your counter-argument in English here..."}
+              className="w-full p-4 bg-white rounded-2xl border border-slate-300 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
+            />
 
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={handleToggleMic}
+                className={`px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition active:scale-95 shadow-sm ${
+                  isRecording
+                    ? 'bg-rose-500 text-white animate-pulse'
+                    : 'bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200'
+                }`}
+              >
+                {isRecording ? <MicOff size={15} /> : <Mic size={15} />}
+                {isRecording ? 'Stop Recording' : '🎤 Speak Idea (Micro)'}
+              </button>
 
-        {/* ── Argument Meter (Real-time C.R.E tracker) ── */}
-        <div className="p-3 bg-white rounded-2xl border border-slate-200 space-y-1.5">
-          <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider">
-            {isModeA ? '📊 Idea Tracker:' : '📊 Argument Meter (C.R.E):'}
-          </span>
-          {isModeA ? (
-            <div className="grid grid-cols-2 gap-2">
-              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
-                modeAMeter.hasIdea ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
-              }`}>💡 Idea {modeAMeter.hasIdea ? '✓' : '○'}</div>
-              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
-                modeAMeter.hasReason ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
-              }`}>🔗 Reason {modeAMeter.hasReason ? '✓' : '○'}</div>
+              <button
+                type="button"
+                onClick={handleEvaluateRebuttal}
+                disabled={!userSpeechText.trim()}
+                className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 text-white font-black text-xs rounded-xl shadow-md transition flex items-center gap-2 active:scale-95"
+              >
+                <Send size={14} /> {isModeA ? 'Share My Idea' : 'Submit & Analyze Argument'}
+              </button>
             </div>
-          ) : (
-            <div className="grid grid-cols-3 gap-2">
-              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
-                argumentMeter.hasClaim ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
-              }`}>🎯 Claim {argumentMeter.hasClaim ? '✓' : '○'}</div>
-              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
-                argumentMeter.hasReason ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
-              }`}>🔗 Reason {argumentMeter.hasReason ? '✓' : '○'}</div>
-              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
-                argumentMeter.hasEvidence ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
-              }`}>🔬 Evidence {argumentMeter.hasEvidence ? '✓' : '○'}</div>
-            </div>
-          )}
-          {/* Good Listener Badge (Mode B only) */}
-          {!isModeA && argumentMeter.isGoodListener && (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-900 font-black animate-in fade-in">
-              <Award size={13} className="text-amber-600" />
-              🏅 "Good Listener" Badge — You acknowledged Nova's point first!
-            </div>
-          )}
-        </div>
-
-        <div className="space-y-3">
-          <textarea
-            rows={4}
-            value={userSpeechText}
-            onChange={(e) => setUserSpeechText(e.target.value)}
-            placeholder={isModeA ? "Record or type your idea for Nova here..." : "Record your speech or type your counter-argument in English here..."}
-            className="w-full p-4 bg-white rounded-2xl border border-slate-300 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm"
-          />
-
-          <div className="flex items-center justify-between flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={handleToggleMic}
-              className={`px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition active:scale-95 shadow-sm ${
-                isRecording
-                  ? 'bg-rose-500 text-white animate-pulse'
-                  : 'bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200'
-              }`}
-            >
-              {isRecording ? <MicOff size={15} /> : <Mic size={15} />}
-              {isRecording ? 'Stop Recording' : '🎤 Speak Idea (Micro)'}
-            </button>
-
-            <button
-              type="button"
-              onClick={handleEvaluateRebuttal}
-              disabled={!userSpeechText.trim()}
-              className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 text-white font-black text-xs rounded-xl shadow-md transition flex items-center gap-2 active:scale-95"
-            >
-              <Send size={14} /> {isModeA ? 'Share My Idea' : 'Submit & Analyze Argument'}
-            </button>
           </div>
-        </div>
+        )}
       </div>
 
       {/* AI Evaluation Scorecard */}
@@ -523,3 +578,4 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
     </div>
   );
 }
+

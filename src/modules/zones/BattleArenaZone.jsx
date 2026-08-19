@@ -32,34 +32,24 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
-      {/* Slim Game Instruction Bar */}
-      <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
-        <span className="font-black text-amber-950 flex items-center gap-1.5">
-          ⚔️ BATTLE ARENA — Rapid 2-3 min matches: speed vocabulary, grammar syntax & STEM reasoning!
-        </span>
-        <div className="px-3 py-1 bg-amber-500 text-slate-950 rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
-          <Trophy size={14} className="text-slate-950" />
-          <span>+{totalXP} XP</span>
+      {/* Slim Session XP bar */}
+      <div className="flex items-center justify-between px-3 py-2 bg-amber-50 border border-amber-300 rounded-2xl text-xs">
+        <span className="font-black text-amber-950 flex items-center gap-1.5"><Swords size={13} /> ⚔️ BATTLE ARENA</span>
+        <div className="flex items-center gap-2">
+          <span className="text-amber-700 font-bold">Session:</span>
+          <div className="px-3 py-0.5 bg-amber-500 text-slate-950 rounded-xl font-black flex items-center gap-1">
+            <Trophy size={12} /> +{totalXP} XP
+          </div>
         </div>
       </div>
 
-      {/* Class Co-op Progress Meter — EPIC-2 (gắn real XP từ useUserStore) */}
-      <div className="p-3 bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 text-white rounded-2xl border border-purple-500/40 shadow-md space-y-1.5 text-xs font-sans">
-        <div className="flex items-center justify-between font-black">
-          <span className="text-amber-300 flex items-center gap-1.5">
-            🤝 CLASS CO-OP PROGRESS: {coopContribution} / 1000 XP
-          </span>
-          <span className="text-purple-200">{coopPercent}% Completed</span>
+      {/* Class Co-op Strip — compact 1-row */}
+      <div className="flex items-center gap-3 px-3 py-2 bg-gradient-to-r from-indigo-900 to-purple-900 text-white rounded-2xl border border-purple-500/40 text-xs font-sans">
+        <span className="font-black text-amber-300 whitespace-nowrap shrink-0">🤝 CO-OP: {coopContribution}/1000 XP</span>
+        <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full transition-all duration-700" style={{ width: `${Math.max(2, coopPercent)}%` }} />
         </div>
-        <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-purple-400/40">
-          <div
-            className="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full transition-all duration-700"
-            style={{ width: `${Math.max(2, coopPercent)}%` }}
-          />
-        </div>
-        <p className="text-[11px] text-purple-200 font-medium italic text-right">
-          ✨ Every match contributes to unlocking Class Champion Accessories for everyone!
-        </p>
+        <span className="font-bold text-purple-200 shrink-0">{coopPercent}%</span>
       </div>
 
       {/* Vibrant Multi-Color Subtabs Selector */}
