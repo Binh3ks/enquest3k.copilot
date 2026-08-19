@@ -5,7 +5,6 @@ export const STORY_GEARS = [
   {
     level: 1,
     name: '3D Webtoon',
-    label_vi: 'Tranh 3D & Từ Vựng',
     icon: Film,
     color: 'from-blue-600 to-cyan-600',
     border: 'border-cyan-400',
@@ -15,7 +14,6 @@ export const STORY_GEARS = [
   {
     level: 2,
     name: 'Audio Narration',
-    label_vi: 'Nghe Tường Thuật',
     icon: Headphones,
     color: 'from-amber-500 to-orange-600',
     border: 'border-amber-400',
@@ -25,7 +23,6 @@ export const STORY_GEARS = [
   {
     level: 3,
     name: 'Retell to Nova',
-    label_vi: 'Kể Lại Cho Nova',
     icon: Mic,
     color: 'from-purple-600 to-indigo-600',
     border: 'border-purple-400',
@@ -34,19 +31,18 @@ export const STORY_GEARS = [
   },
   {
     level: 4,
-    name: 'CLIL Science',
-    label_vi: 'Khoa Học Thực Tế',
+    name: 'CLIL Knowledge Explorer',
     icon: Globe,
     color: 'from-emerald-600 to-teal-600',
     border: 'border-emerald-400',
     bg: 'bg-emerald-50 text-emerald-900',
-    desc: 'Read science article • 3 inference questions • Grammar X-Ray'
+    desc: 'Explore 2 article paragraphs with check questions after each part'
   }
 ];
 
 export default function GearIndicator({ currentGear = 1, onSelectGear, completedGears = [] }) {
   return (
-    <div className="w-full bg-slate-900/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 border border-slate-800 text-white shadow-xl mb-4">
+    <div className="w-full bg-white rounded-2xl p-2 sm:p-2.5 border border-slate-200 text-slate-900 shadow-sm mb-3 font-sans">
       <div className="flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
         {STORY_GEARS.map((g) => {
           const isActive = currentGear === g.level;
@@ -58,26 +54,24 @@ export default function GearIndicator({ currentGear = 1, onSelectGear, completed
               key={g.level}
               type="button"
               onClick={() => onSelectGear && onSelectGear(g.level)}
-              className={`flex-1 min-w-[140px] p-2.5 rounded-xl transition-all flex items-center gap-2.5 text-left border ${
+              className={`flex-1 min-w-[140px] py-2.5 px-3 rounded-xl border transition-all text-left flex items-center gap-2.5 ${
                 isActive
-                  ? `bg-gradient-to-r ${g.color} text-white shadow-lg ring-2 ring-white/30 scale-[1.02] border-white/40`
+                  ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-slate-400 scale-[1.02]'
                   : isCompleted
-                  ? 'bg-slate-800/90 text-emerald-300 border-emerald-500/40 hover:bg-slate-800'
-                  : 'bg-slate-800/50 text-slate-400 border-slate-700 hover:bg-slate-800 hover:text-slate-200'
+                  ? 'bg-emerald-50 text-emerald-950 border-emerald-300'
+                  : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
               }`}
             >
-              <div
-                className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                  isActive ? 'bg-white/25 text-white shadow-inner' : 'bg-slate-700/80 text-slate-300'
-                }`}
-              >
-                {isCompleted && !isActive ? <CheckCircle2 size={16} className="text-emerald-400" /> : <Icon size={16} />}
+              <div className={`p-1.5 rounded-lg shrink-0 ${isActive ? 'bg-amber-400 text-slate-950' : 'bg-slate-200 text-slate-700'}`}>
+                <Icon size={16} />
               </div>
               <div className="truncate">
-                <span className="text-[10px] font-black uppercase tracking-wider opacity-80 block">
-                  Gear {g.level}
-                </span>
-                <div className="text-xs font-black truncate">{g.name}</div>
+                <div className="text-[10px] font-black uppercase tracking-wider opacity-75">
+                  GEAR {g.level}
+                </div>
+                <div className="text-xs font-black truncate">
+                  {g.name}
+                </div>
               </div>
             </button>
           );

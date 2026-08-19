@@ -242,18 +242,18 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
         </div>
       )}
 
-      {/* Paused Screen */}
+      {/* Paused Banner (Non-blocking) */}
       {gameState === 'paused' && (
-        <div className="p-8 bg-slate-50 border-2 border-slate-300 rounded-3xl text-center space-y-4 shadow-inner">
-          <Pause size={48} className="mx-auto text-amber-500 animate-pulse" />
-          <h3 className="text-xl font-black text-slate-900">QUEST PAUSED</h3>
-          <p className="text-xs text-slate-600">Timer is paused. Take your time to review the problem!</p>
+        <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between animate-in fade-in">
+          <span className="text-xs font-black text-amber-900 flex items-center gap-2">
+            <Pause size={16} className="text-amber-600 animate-pulse" /> Timer Paused — Take your time to inspect the Bar Model!
+          </span>
           <button
             type="button"
             onClick={handleTogglePause}
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-xs shadow-md inline-flex items-center gap-2"
+            className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-1"
           >
-            <Play size={16} fill="currentColor" /> Resume Math Quest
+            <Play size={14} fill="currentColor" /> Resume
           </button>
         </div>
       )}
@@ -281,7 +281,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
       )}
 
       {/* Active Question Display */}
-      {gameState === 'playing' && (
+      {(gameState === 'playing' || gameState === 'paused') && (
         <div className="space-y-5">
           {/* Question Text */}
           <div className="p-5 bg-amber-50/80 rounded-2xl border border-amber-200 space-y-1">
