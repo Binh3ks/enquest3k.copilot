@@ -142,7 +142,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
       {/* Slim Game Instruction Bar */}
       <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
         <span className="font-black text-purple-950 flex items-center gap-1.5">
-          🎨 CREATOR STUDIO — Produce your story script, broadcast podcast, science report or AI debate!
+          🎨 CREATOR STUDIO — Produce your story script, broadcast episode, science report or AI debate!
         </span>
         <div className="px-3 py-1 bg-purple-600 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
           <Trophy size={14} className="text-amber-300" />

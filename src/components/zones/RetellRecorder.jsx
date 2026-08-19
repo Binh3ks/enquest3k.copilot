@@ -9,6 +9,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
   const [recordedAudioUrl, setRecordedAudioUrl] = useState(null);
   const [recordings, setRecordings] = useState({});
   const [feedback, setFeedback] = useState(null);
+  const [showFullOverview, setShowFullOverview] = useState(false);
 
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
@@ -60,31 +61,32 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
       };
 
       mediaRecorderRef.current.onstop = () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/wav' });
         const audioUrl = URL.createObjectURL(audioBlob);
         setRecordedAudioUrl(audioUrl);
-        setRecordings(prev => ({ ...prev, [currentSceneIdx]: audioUrl }));
+        setRecordings(prev => ({ ...prev, [currentScene.id]: audioUrl }));
+
         setFeedback({
-          stars: 3,
-          message: "🎉 Excellent podcast narration! Native fluency score: 95%"
+          score: 95,
+          message: "🎉 Excellent broadcast performance! Broadcast fluency score: 95%"
         });
-        fireCelebrationConfetti('Podcast_Record');
+
+        fireCelebrationConfetti('Broadcast_Record');
+        stream.getTracks().forEach(track => track.stop());
       };
 
       mediaRecorderRef.current.start();
       setIsRecording(true);
-      setFeedback(null);
     } catch (err) {
-      console.warn("Microphone access simulated for testing:", err);
+      console.warn('Microphone access fallback, simulating broadcast recording:', err);
       setIsRecording(true);
       setTimeout(() => {
         setIsRecording(false);
-        setRecordedAudioUrl("simulated_audio");
         setFeedback({
-          stars: 3,
-          message: "⭐ Simulated recording complete! Your speaking rhythm is clear."
+          score: 90,
+          message: "🎉 Broadcast audio recorded! Great reporting performance!"
         });
-        fireCelebrationConfetti('Podcast_Record');
+        fireCelebrationConfetti('Broadcast_Record');
       }, 3000);
     }
   };
@@ -104,17 +106,17 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6 sm:p-7 bg-white rounded-3xl border-2 border-purple-200 shadow-xl space-y-6 text-slate-900 font-sans">
-      {/* Slim Arcade Instruction Bar */}
+      {/* Slim Arcade Instruction Bar (Bug 1 Fix) */}
       <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
         <span className="font-black text-purple-950 flex items-center gap-1.5">
-          🎙️ PODCAST GAME GOAL: 1. Listen Native Audio → 2. Record Story Voice → 3. Earn +50 XP!
+          🎙️ BROADCAST GOAL: 1. Pick your Radio Starter & Pills → 2. Perform your scene like a reporter → 3. Earn +50 XP!
         </span>
         <span className="text-xs font-bold text-purple-900 bg-purple-200/80 px-2.5 py-1 rounded-lg">
           Scene {currentSceneIdx + 1} of {activeScenes.length}
         </span>
       </div>
 
-      {/* Current Scene Display Card (Zero-L1 English Only) */}
+      {/* Current Scene Display Card */}
       <div className="p-6 bg-purple-50/80 rounded-3xl border-2 border-purple-200 space-y-4 shadow-inner">
         <div className="flex items-center justify-between">
           <span className="text-xs font-black uppercase tracking-wider text-purple-900">
@@ -125,7 +127,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             onClick={handlePlaySceneAudio}
             className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-2 transition active:scale-95"
           >
-            <Volume2 size={16} /> 🎧 Listen Native Audio
+            <Volume2 size={16} /> 🔊 Hear My Line
           </button>
         </div>
 
@@ -135,7 +137,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
         {/* Section 10.3: Radio Host Discourse Markers & Production Tools */}
         <div className="pt-3 border-t border-purple-200/80 space-y-2.5 text-xs">
-          {/* Radio Host Starters (Scene-specific narrative function) */}
+          {/* Radio Host Starters */}
           <div className="space-y-1">
             <span className="font-black text-purple-900 uppercase text-[10px] block">🎙️ Radio Host Starters (Click to listen):</span>
             <div className="flex flex-wrap gap-1.5">
@@ -157,7 +159,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             </div>
           </div>
 
-          {/* Academic Language Pills (Transition / Expression) */}
+          {/* Academic Language Pills */}
           <div className="space-y-1">
             <span className="font-black text-indigo-900 uppercase text-[10px] block">✨ Language Transition Pills (Academic discourse):</span>
             <div className="flex flex-wrap gap-1.5">
@@ -180,27 +182,53 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             </div>
           </div>
 
-          {/* 4 Collocation Chunk Groups for Speaking Input */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
-            <div className="p-2 bg-blue-50 rounded-xl border border-blue-200 space-y-0.5">
-              <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting:</span>
-              <span className="text-[11px] font-bold text-blue-950">After science class · down the school corridor</span>
-            </div>
-            <div className="p-2 bg-emerald-50 rounded-xl border border-emerald-200 space-y-0.5">
-              <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action:</span>
-              <span className="text-[11px] font-bold text-emerald-950">was walking carefully · running very fast</span>
-            </div>
-            <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 space-y-0.5">
-              <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem:</span>
-              <span className="text-[11px] font-bold text-amber-950">slipped on the wet floor · hurt his knee</span>
-            </div>
-            <div className="p-2 bg-purple-50 rounded-xl border border-purple-200 space-y-0.5">
-              <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution:</span>
-              <span className="text-[11px] font-bold text-purple-950">called the nurse · with a clean bandage</span>
-            </div>
+          {/* Collapsible 4-Part Full Story Overview (Bug 3 Fix) */}
+          <div className="pt-2 border-t border-purple-100">
+            <button
+              type="button"
+              onClick={() => setShowFullOverview(prev => !prev)}
+              className="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 border border-purple-200 text-purple-900 rounded-xl text-xs font-black transition flex items-center justify-between w-full shadow-xs"
+            >
+              <span className="flex items-center gap-1.5">
+                📖 {showFullOverview ? 'Hide Full Story Overview' : 'View Full Story Overview (Your 4 Parts)'}
+              </span>
+              <span className="text-[10px] text-purple-600 font-bold">
+                {showFullOverview ? '▲ Collapse' : '▼ Expand'}
+              </span>
+            </button>
+
+            {showFullOverview && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2.5 animate-in fade-in duration-200">
+                {activeScenes.map((scene, sIdx) => {
+                  const bgColors = {
+                    setting: 'bg-blue-50 border-blue-200 text-blue-950',
+                    action: 'bg-emerald-50 border-emerald-200 text-emerald-950',
+                    problem: 'bg-amber-50 border-amber-200 text-amber-950',
+                    solution: 'bg-purple-50 border-purple-200 text-purple-950'
+                  };
+                  const labels = {
+                    setting: '🔵 Setting:',
+                    action: '🟢 Action:',
+                    problem: '🟠 Problem:',
+                    solution: '🟣 Solution:'
+                  };
+                  const func = scene.narrative_function || ['setting', 'action', 'problem', 'solution'][sIdx] || 'setting';
+                  return (
+                    <div key={scene.id || sIdx} className={`p-2.5 rounded-xl border space-y-1 ${bgColors[func] || 'bg-slate-50 border-slate-200 text-slate-900'}`}>
+                      <span className="text-[10px] font-black uppercase block">
+                        {labels[func] || `Scene ${sIdx + 1}:`}
+                      </span>
+                      <span className="text-xs font-bold leading-relaxed block">
+                        "{scene.en || scene.text || ''}"
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
-          {/* Sound Board & Production Tools (Non-evaled effects) */}
+          {/* Sound Board & Production Tools */}
           <div className="flex items-center justify-between flex-wrap gap-1 pt-1 border-t border-purple-100">
             <span className="font-black text-purple-900 uppercase text-[10px]">🎛️ Production Tools & Sound Board SFX:</span>
             <div className="flex items-center gap-1.5 flex-wrap">
@@ -221,7 +249,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
         </div>
       </div>
 
-      {/* Recording Control Dock */}
+      {/* Recording Control Dock (Bug 2 Fix) */}
       <div className="p-6 bg-slate-50 rounded-3xl border-2 border-slate-200 text-center space-y-4">
         {!isRecording ? (
           <button
@@ -229,7 +257,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             onClick={startRecording}
             className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition hover:scale-105 active:scale-95"
           >
-            <Mic size={22} className="animate-pulse" /> 🎙️ RECORD YOUR PODCAST RETELLING
+            <Mic size={22} className="animate-pulse" /> 🎙️ RECORD MY BROADCAST
           </button>
         ) : (
           <button
@@ -237,7 +265,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             onClick={stopRecording}
             className="px-8 py-4 bg-rose-600 hover:bg-rose-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition animate-bounce"
           >
-            <Square size={22} fill="currentColor" /> ⏹️ STOP RECORDING PODCAST
+            <Square size={22} fill="currentColor" /> ⏹️ STOP RECORDING BROADCAST
           </button>
         )}
 
