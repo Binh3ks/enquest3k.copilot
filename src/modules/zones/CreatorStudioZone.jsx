@@ -1,19 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import StoryWriting from '../write_speak/StoryWriting';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
 import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle } from 'lucide-react';
+import { useStationProgress } from '../../hooks/useStationProgress';
 
 export default function CreatorStudioZone({ data, weekNumber = 33 }) {
   const studioData = data?.creatorStudio || {};
   const [activeTab, setActiveTab] = useState('story_writer');
   const [studioXP, setStudioXP] = useState(0);
 
-  // ─── Data Contract: Story Writer → Podcast Creator (mục 9.3) ───────────────
-  // When student submits Story Writer, final_text is stored here and fed as
-  // podcast script scenes to RetellRecorder (Podcast Creator).
+  // Hydrate story submission from persistent station progress (story_writing)
+  const { savedData: storySavedData } = useStationProgress(weekNumber, 'story_writing');
+
   const [storySubmission, setStorySubmission] = useState(null);
+
+  // Sync saved story progress to Broadcast Studio on mount / progress update
+  useEffect(() => {
+    if (storySavedData?.fields) {
+      const { setting = '', action = '', problem = '', solution = '' } = storySavedData.fields;
+      const podcastScenes = [
+        {
+          id: 1,
+          narrative_function: 'setting',
+          title: 'Scene 1: Setting (🔵 Where & When)',
+          en: setting.trim() || '(Fill Part 1 Setting in Story Writer to see your script here)',
+          radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
+        },
+        {
+          id: 2,
+          narrative_function: 'action',
+          title: 'Scene 2: Action (🟢 What Was Happening)',
+          en: action.trim() || '(Fill Part 2 Action in Story Writer to see your script here)',
+          radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
+        },
+        {
+          id: 3,
+          narrative_function: 'problem',
+          title: 'Scene 3: Problem (🟠 What Went Wrong)',
+          en: problem.trim() || '(Fill Part 3 Problem in Story Writer to see your script here)',
+          radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
+        },
+        {
+          id: 4,
+          narrative_function: 'solution',
+          title: 'Scene 4: Solution (🟣 How It Was Fixed)',
+          en: solution.trim() || '(Fill Part 4 Solution in Story Writer to see your script here)',
+          radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
+        }
+      ];
+      setStorySubmission({ mode: 'structured', finalText: storySavedData.text || '', podcastScenes });
+    } else if (storySavedData?.text) {
+      const sentences = storySavedData.text.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 10);
+      const third = Math.ceil(sentences.length / 3);
+      const podcastScenes = [
+        { id: 1, narrative_function: null, title: 'Scene 1: Your Opening', en: sentences.slice(0, third).join(' ') || sentences[0] || storySavedData.text },
+        { id: 2, narrative_function: null, title: 'Scene 2: Your Action Sequence', en: sentences.slice(third, third * 2).join(' ') || sentences[1] || '' },
+        { id: 3, narrative_function: null, title: 'Scene 3: Your Conclusion', en: sentences.slice(third * 2).join(' ') || sentences[2] || '' }
+      ].filter(s => s.en.trim().length > 0);
+      setStorySubmission({ mode: 'freeform', finalText: storySavedData.text, podcastScenes });
+    }
+  }, [storySavedData]);
 
   const handleStoryComplete = (xpEarned = 50, finalText = '', extraData = null) => {
     if (xpEarned > 0) setStudioXP(prev => prev + xpEarned);

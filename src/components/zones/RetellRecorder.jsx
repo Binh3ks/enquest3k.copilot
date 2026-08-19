@@ -16,21 +16,31 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
   const DEFAULT_SCENES = [
     {
       id: 1,
-      title: "Scene 1: Walking in Corridor",
-      en: "Jake was walking carefully down the school corridor after science class.",
-      vi: "Jake đang đi bộ cẩn thận xuống hành lang trường sau giờ học khoa học."
+      narrative_function: 'setting',
+      title: "Scene 1: Setting (🔵 Where & When)",
+      en: "After science class, Jake was walking carefully down the school corridor.",
+      radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
     },
     {
       id: 2,
-      title: "Scene 2: Slipping Hazard",
-      en: "Suddenly, a boy running fast slipped on the wet floor and fell down heavily.",
-      vi: "Đột nhiên, một cậu bé chạy nhanh bị trượt chân trên sàn ướt và ngã nặng."
+      narrative_function: 'action',
+      title: "Scene 2: Action (🟢 What Was Happening)",
+      en: "Jake was walking carefully while other students were running fast.",
+      radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
     },
     {
       id: 3,
-      title: "Scene 3: First Aid Care",
-      en: "The school nurse arrived quickly with a clean bandage and a cold pack.",
-      vi: "Cô y tá trường đến nhanh chóng với băng cá nhân sạch và túi chườm lạnh."
+      narrative_function: 'problem',
+      title: "Scene 3: Problem (🟠 What Went Wrong)",
+      en: "Suddenly, a student slipped on the wet floor and fell down heavily.",
+      radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
+    },
+    {
+      id: 4,
+      narrative_function: 'solution',
+      title: "Scene 4: Solution (🟣 How It Was Fixed)",
+      en: "The school nurse arrived quickly with a clean bandage to help.",
+      radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
     }
   ];
 
