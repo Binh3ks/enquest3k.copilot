@@ -18,7 +18,7 @@ export const QUEST_SCHEDULE = [
     quests: [
       { id: 'gear1_webtoon',  label: '3D Webtoon',     zone: 1, gearIndex: 0, station: null,        icon: '📚', minutes: 8 },
       { id: 'gear2_karaoke',  label: 'Story Karaoke',  zone: 1, gearIndex: 1, station: null,        icon: '🎤', minutes: 7 },
-      { id: 'vocab_explorer', label: 'Vocab Explorer',  zone: 1, gearIndex: null, station: 'new_words', icon: '🔤', minutes: 5 },
+      { id: 'vocab_explorer', label: 'Word Blitz',      zone: 2, gearIndex: null, station: 'word_blitz', icon: '🔤', minutes: 5 },
     ],
   },
   {
