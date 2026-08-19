@@ -26,6 +26,9 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
   const [sentenceShadowing, setSentenceShadowing] = useState({}); // { [idx]: { isRecording, audioUrl, score, feedback, startTime } }
   const sentenceMediaRecorderRef = useRef(null);
   const sentenceChunksRef = useRef([]);
+  const sentenceStreamRef = useRef(null);
+  const sentenceSpeechRecRef = useRef(null);
+  const recognizedTranscriptRef = useRef({});
 
   // Gear 3: Retell to Nova state
   const [isRecording, setIsRecording] = useState(false);
@@ -94,9 +97,30 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
     setShadowingKaraokeIdx(idx);
 
     const recordStartTime = Date.now();
+    recognizedTranscriptRef.current[idx] = '';
+
+    // Start browser SpeechRecognition in parallel if available
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      try {
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const rec = new SpeechRec();
+        rec.continuous = true;
+        rec.interimResults = true;
+        rec.lang = 'en-US';
+        rec.onresult = (event) => {
+          const transcript = Array.from(event.results)
+            .map(r => r[0].transcript)
+            .join(' ');
+          recognizedTranscriptRef.current[idx] = transcript;
+        };
+        rec.start();
+        sentenceSpeechRecRef.current = rec;
+      } catch (_) {}
+    }
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      sentenceStreamRef.current = stream;
       sentenceMediaRecorderRef.current = new MediaRecorder(stream);
       sentenceChunksRef.current = [];
 
@@ -108,31 +132,52 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
         const durationMs = Date.now() - recordStartTime;
         setShadowingKaraokeIdx(null);
 
-        // Voice guard: require at least 1.2 seconds of recording
-        if (durationMs < 1200) {
+        // Stop stream tracks to release microphone hardware immediately
+        if (sentenceStreamRef.current) {
+          sentenceStreamRef.current.getTracks().forEach(track => track.stop());
+          sentenceStreamRef.current = null;
+        }
+
+        // Stop SpeechRecognition engine
+        if (sentenceSpeechRecRef.current) {
+          try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
+          sentenceSpeechRecRef.current = null;
+        }
+
+        const audioBlob = new Blob(sentenceChunksRef.current, { type: 'audio/webm' });
+        const audioUrl = URL.createObjectURL(audioBlob);
+
+        // Grade based on actual recognized words vs target sentence
+        const spokenText = (recognizedTranscriptRef.current[idx] || '').trim().toLowerCase();
+        const targetClean = targetSentence.toLowerCase().replace(/[^a-z0-9\s]/g, '');
+        const targetWords = targetClean.split(/\s+/).filter(Boolean);
+        const spokenWords = spokenText.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean);
+
+        const matchedWords = targetWords.filter(w => spokenWords.includes(w));
+        let score = targetWords.length > 0 ? Math.round((matchedWords.length / targetWords.length) * 100) : 0;
+
+        // If no voice was recognized or duration too short
+        if (spokenWords.length === 0 || durationMs < 1200) {
+          score = 0;
           setSentenceShadowing(prev => ({
             ...prev,
             [idx]: {
               isRecording: false,
               audioUrl: null,
               score: 0,
-              feedback: '⚠️ No voice detected! Please speak along with the highlighted words to practice shadowing.'
+              feedback: '⚠️ No voice spoken! Please speak out loud while shadowing the highlighted words.'
             }
           }));
           return;
         }
 
-        const audioBlob = new Blob(sentenceChunksRef.current, { type: 'audio/webm' });
-        const audioUrl = URL.createObjectURL(audioBlob);
-        // Score based on duration as proxy — real speech recognition upgrade possible
-        const score = Math.min(100, Math.max(75, Math.floor(durationMs / 100)));
         setSentenceShadowing(prev => ({
           ...prev,
           [idx]: {
             isRecording: false,
             audioUrl,
             score,
-            feedback: `🌟 Well done! Voice captured for ${(durationMs/1000).toFixed(1)}s. Listen back and compare with Native Audio!`
+            feedback: `🌟 Great shadowing! Accuracy: ${score}%. ${matchedWords.length}/${targetWords.length} target words matched!`
           }
         }));
         fireCelebrationConfetti('Sentence_Shadow_Complete');
@@ -144,7 +189,6 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
         [idx]: { isRecording: true, audioUrl: null, score: null, feedback: null, startTime: recordStartTime }
       }));
     } catch (err) {
-      // Microphone not available — simulate with karaoke only
       console.warn("Mic unavailable for shadowing:", err);
       setShadowingKaraokeIdx(null);
       setSentenceShadowing(prev => ({
@@ -160,6 +204,16 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
   };
 
   const stopSentenceShadowing = (idx) => {
+    if (sentenceSpeechRecRef.current) {
+      try { sentenceSpeechRecRef.current.stop(); } catch (_) {}
+      sentenceSpeechRecRef.current = null;
+    }
+
+    if (sentenceStreamRef.current) {
+      sentenceStreamRef.current.getTracks().forEach(track => track.stop());
+      sentenceStreamRef.current = null;
+    }
+
     if (sentenceMediaRecorderRef.current && sentenceMediaRecorderRef.current.state === 'recording') {
       sentenceMediaRecorderRef.current.stop();
     } else {
@@ -168,9 +222,6 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
         [idx]: {
           ...(prev[idx] || {}),
           isRecording: false,
-          audioUrl: prev[idx]?.audioUrl || 'simulated_audio',
-          score: prev[idx]?.score || 94,
-          feedback: "🌟 Voice recording saved! Sound clarity: 94%."
         }
       }));
     }
@@ -434,26 +485,32 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                         {idx + 1}
                       </span>
                       <div>
-                        {/* Word-by-Word Karaoke Text */}
-                        <div className="text-sm sm:text-base font-black leading-relaxed flex flex-wrap gap-1">
-                          {sentenceWords.map((word, wIdx) => {
-                            const isWordActive = isCurrentPlaying && activeWordIdx === wIdx;
-                            return (
-                              <span
-                                key={wIdx}
-                                className={`px-1 py-0.5 rounded transition-all ${
-                                  isWordActive
-                                    ? 'bg-amber-400 text-slate-950 font-black scale-110 ring-2 ring-amber-300'
-                                    : isCurrentPlaying && activeWordIdx !== null && wIdx < activeWordIdx
-                                    ? 'text-amber-900 font-bold'
-                                    : 'text-slate-900'
-                                }`}
-                              >
-                                {word}
-                              </span>
-                            );
-                          })}
-                        </div>
+                        {/* Word-by-Word Karaoke Text OR Interactive Dictionary Lookup */}
+                        {isCurrentPlaying ? (
+                          <div className="text-sm sm:text-base font-black leading-relaxed flex flex-wrap gap-1">
+                            {sentenceWords.map((word, wIdx) => {
+                              const isWordActive = activeWordIdx === wIdx;
+                              return (
+                                <span
+                                  key={wIdx}
+                                  className={`px-1 py-0.5 rounded transition-all ${
+                                    isWordActive
+                                      ? 'bg-amber-400 text-slate-950 font-black scale-110 ring-2 ring-amber-300'
+                                      : activeWordIdx !== null && wIdx < activeWordIdx
+                                      ? 'text-amber-900 font-bold'
+                                      : 'text-slate-900'
+                                  }`}
+                                >
+                                  {word}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <div className="text-sm sm:text-base font-black leading-relaxed text-slate-900">
+                            {renderParsedText(sentence, 'amber')}
+                          </div>
+                        )}
                         {isCurrentPlaying && (
                           <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase text-amber-800 tracking-wider mt-1 bg-amber-200/80 px-2 py-0.5 rounded-md">
                             <Sparkles size={12} className="animate-spin text-amber-600" /> 🎤 Real-Time Karaoke Syncing...
