@@ -1,9 +1,45 @@
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Volume2, BookOpen, Book, Mic, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
+import { Volume2, BookOpen, Book, Mic, Loader2 } from 'lucide-react';
 import dictionaryData from '../../data/dictionary.json';
 import { WEEK_33_MASTER_DICTIONARY } from '../../data/weeks/week_33/vocab_dictionary_master';
 import VoiceService from '../../services/voiceService';
+
+// ─── Free Dictionary API Cache (module-level, survives re-renders) ────────────
+const apiCache = new Map(); // word → entry | null
+
+async function fetchFreeDictionary(word) {
+  const key = word.toLowerCase().trim();
+  if (apiCache.has(key)) return apiCache.get(key);
+
+  try {
+    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(key)}`);
+    if (!res.ok) { apiCache.set(key, null); return null; }
+    const data = await res.json();
+    if (!Array.isArray(data) || !data[0]) { apiCache.set(key, null); return null; }
+
+    const entry = data[0];
+    const meaning = entry.meanings?.[0];
+    const def = meaning?.definitions?.[0];
+    const phonetic = entry.phonetic ||
+      entry.phonetics?.find(p => p.text)?.text || '';
+
+    const result = {
+      word: entry.word,
+      type: meaning?.partOfSpeech || 'word',
+      pronounce: phonetic,
+      meaning: def?.definition || '',
+      example: def?.example || '',
+      audioText: entry.word,
+      _source: 'api',
+    };
+    apiCache.set(key, result);
+    return result;
+  } catch {
+    apiCache.set(key, null);
+    return null;
+  }
+}
 
 // Base general English dictionary map (from dictionary.json)
 const baseDict = Object.fromEntries(
@@ -247,7 +283,38 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
   const [popupPos, setPopupPos] = useState({ top: 0, left: 0 });
   const wordRef = useRef(null);
 
-  // Pronunciation check state
+  // API fetch state
+  const [apiEntry, setApiEntry] = useState(null);
+  const [apiLoading, setApiLoading] = useState(false);
+
+  // True if the local entry is only the generic fallback (no real data)
+  const hasLocalEntry = Boolean(
+    entry && (entry.meaning || entry.definition_vi || entry.definition) &&
+    !(entry.meaning || '').startsWith('Từ vựng tiếng Anh')
+  ) || Boolean(
+    resolvedEntry && !resolvedEntry.meaning?.startsWith('Từ vựng tiếng Anh')
+  );
+
+  // Fetch from Free Dictionary API when popup opens without a real local entry
+  useEffect(() => {
+    if (mode !== 'open') return;
+    if (hasLocalEntry) return; // already have a real local entry
+    const clean = (word || '').toLowerCase().replace(/[^a-z'-]/g, '');
+    if (!clean || clean.length < 2) return;
+
+    // Check cache first (synchronous)
+    if (apiCache.has(clean)) {
+      setApiEntry(apiCache.get(clean));
+      return;
+    }
+
+    setApiLoading(true);
+    fetchFreeDictionary(clean).then(result => {
+      setApiEntry(result);
+      setApiLoading(false);
+    });
+  }, [mode, word, hasLocalEntry]);
+
   const [isRecording, setIsRecording] = useState(false);
   const [pronunciationResult, setPronunciationResult] = useState(null);
   const recognitionRef = useRef(null);
@@ -377,14 +444,28 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
               </div>
 
               {/* IPA */}
-              {(resolvedEntry?.pronounce || resolvedEntry?.ipa) && (
+              {(resolvedEntry?.pronounce || resolvedEntry?.ipa || (apiEntry?.pronounce && !hasLocalEntry)) && (
                 <p className="text-xs font-mono text-slate-500 mb-2">
-                  {resolvedEntry.pronounce || resolvedEntry.ipa}
+                  {(!hasLocalEntry && apiEntry?.pronounce) ? apiEntry.pronounce : (resolvedEntry.pronounce || resolvedEntry.ipa)}
                 </p>
               )}
 
-              {/* Meaning */}
-              {(resolvedEntry?.meaning || resolvedEntry?.definition_vi) && (
+              {/* Meaning — local or API */}
+              {apiLoading && !hasLocalEntry && (
+                <div className="p-2.5 bg-slate-50 rounded-xl border border-slate-100 mb-2 flex items-center gap-2">
+                  <Loader2 size={13} className="animate-spin text-indigo-400" />
+                  <span className="text-xs text-slate-400 italic">Looking up definition...</span>
+                </div>
+              )}
+              {!apiLoading && !hasLocalEntry && apiEntry?.meaning && (
+                <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-2">
+                  {apiEntry.type && (
+                    <span className="text-[9px] font-black uppercase text-indigo-500 block mb-1">{apiEntry.type}</span>
+                  )}
+                  <p className="text-xs font-black text-indigo-950 leading-snug">{apiEntry.meaning}</p>
+                </div>
+              )}
+              {hasLocalEntry && (resolvedEntry?.meaning || resolvedEntry?.definition_vi) && (
                 <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-2">
                   <p className="text-xs font-black text-indigo-950 leading-snug">
                     {resolvedEntry.meaning || resolvedEntry.definition_vi}
@@ -392,14 +473,22 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
                 </div>
               )}
 
-              {/* Contextual Example */}
-              {resolvedEntry?.example && (
+              {/* Example — local or API */}
+              {(!hasLocalEntry && apiEntry?.example) && (
                 <div className="mt-2 pt-2 border-t border-slate-100">
                   <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Example:</p>
-                  <p className="text-xs text-slate-600 leading-relaxed italic">
-                    &ldquo;{resolvedEntry.example}&rdquo;
-                  </p>
+                  <p className="text-xs text-slate-600 leading-relaxed italic">&ldquo;{apiEntry.example}&rdquo;</p>
                 </div>
+              )}
+              {(hasLocalEntry && resolvedEntry?.example) && (
+                <div className="mt-2 pt-2 border-t border-slate-100">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Example:</p>
+                  <p className="text-xs text-slate-600 leading-relaxed italic">&ldquo;{resolvedEntry.example}&rdquo;</p>
+                </div>
+              )}
+              {/* No data at all */}
+              {!apiLoading && !hasLocalEntry && !apiEntry && (
+                <p className="text-xs text-slate-400 italic text-center py-1">No definition found. Try Cambridge ↓</p>
               )}
 
               {/* Pronunciation Practice */}
