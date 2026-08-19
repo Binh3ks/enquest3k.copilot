@@ -103,11 +103,22 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
     return () => clearInterval(interval);
   }, [isExamMode, timerStarted, timeLeftSec]);
 
-  // Hydrate from saved
+  // Hydrate from saved progress
   useEffect(() => {
-    if (savedData?.text) setText(savedData.text);
+    if (savedData?.fields && isStructured) {
+      if (savedData.fields.setting) setSettingText(savedData.fields.setting);
+      if (savedData.fields.action) setActionText(savedData.fields.action);
+      if (savedData.fields.problem) setProblemText(savedData.fields.problem);
+      if (savedData.fields.solution) setSolutionText(savedData.fields.solution);
+    } else if (savedData?.text) {
+      if (!isStructured) {
+        setFreeformText(savedData.text);
+      } else {
+        setSettingText(savedData.text);
+      }
+    }
     if (savedData?.rubric) setRubric(savedData.rubric);
-  }, [weekId]);
+  }, [weekId, savedData]);
 
   // Cambridge criteria evaluation
   const cambridgeEval = useMemo(() => {
@@ -334,7 +345,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting & Time:</span>
                 <div className="flex flex-wrap gap-1">
                   {["After science class", "down the school corridor", "On a Monday morning"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                    <button key={i} type="button" onClick={() => isStructured ? setSettingText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
                     </button>
@@ -347,7 +358,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action & Manner:</span>
                 <div className="flex flex-wrap gap-1">
                   {["was walking carefully", "was running very fast", "stopped immediately to help"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                    <button key={i} type="button" onClick={() => isStructured ? setActionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
                     </button>
@@ -360,7 +371,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem & Hazard:</span>
                 <div className="flex flex-wrap gap-1">
                   {["slipped on the wet floor", "fell down heavily", "hurt his knee badly"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                    <button key={i} type="button" onClick={() => isStructured ? setProblemText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
                     </button>
@@ -373,7 +384,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
                 <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution & Care:</span>
                 <div className="flex flex-wrap gap-1">
                   {["called the school nurse", "with a clean bandage", "felt deeply relieved"].map((c, i) => (
-                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                    <button key={i} type="button" onClick={() => isStructured ? setSolutionText(prev => prev ? `${prev} ${c}` : c) : setFreeformText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
                       + {c}
                     </button>
