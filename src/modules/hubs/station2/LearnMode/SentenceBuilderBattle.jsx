@@ -5,8 +5,7 @@ import {
   PointerSensor,
   TouchSensor,
   useSensor,
-  useSensors,
-  DragOverlay
+  useSensors
 } from '@dnd-kit/core';
 import { SortableContext, horizontalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import { WordBlock } from '../components/WordBlock';
@@ -14,8 +13,7 @@ import { evaluateSentenceAttempt } from '../../../../services/answerMatchingEngi
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
-import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy, BookOpen } from 'lucide-react';
-import CompletionModal from '../../../../components/common/CompletionModal';
+import { CheckCircle2, AlertCircle, RefreshCw, Sparkles, ArrowRight, Trophy, BookOpen, Timer, Flame, Play, Pause, RotateCcw } from 'lucide-react';
 import LearnGrammarModal from '../../../../components/cambridge/LearnGrammarModal';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
@@ -57,43 +55,26 @@ const WEEK33_GRAMMAR_DRILLS = [
   }
 ];
 
-export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptResult }) {
+export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptResult, onComplete }) {
   const currentUser = useUserStore((state) => state.currentUser);
   const learnerId = currentUser?.id || currentUser?.username || 'guest_01';
   const [showGrammarModal, setShowGrammarModal] = useState(false);
 
+  const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
   const [currentDrillIndex, setCurrentDrillIndex] = useState(0);
   const [targetBlocks, setTargetBlocks] = useState([]);
   const [bankBlocks, setBankBlocks] = useState([]);
   const [activeId, setActiveId] = useState(null);
   const [feedback, setFeedback] = useState(null);
-  const [consecutiveFails, setConsecutiveFails] = useState(0);
-  const [isShaking, setIsShaking] = useState(false);
-  const [startTime, setStartTime] = useState(Date.now());
-  const [isCompleted, setIsCompleted] = useState(false);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
-
-  // 45s Timer Countdown Engine
+  const [correctCount, setCorrectCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(45);
 
-  useEffect(() => {
-    if (isCompleted) return;
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          setIsCompleted(true);
-          fireCelebrationConfetti('SentenceSmash_Complete');
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, [isCompleted]);
+  const drillsList = (customDrills && Array.isArray(customDrills) && customDrills.length > 0)
+    ? customDrills
+    : WEEK33_GRAMMAR_DRILLS;
 
-  const drillsList = customDrills || WEEK33_GRAMMAR_DRILLS;
   const currentDrill = drillsList[currentDrillIndex] || drillsList[0];
   const totalDrillsCount = drillsList.length;
 
@@ -102,12 +83,14 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
     useSensor(TouchSensor, { activationConstraint: { delay: 100, tolerance: 5 } })
   );
 
-  useEffect(() => {
-    if (!currentDrill) return;
+  // Load drill word blocks
+  const loadDrill = (idx) => {
+    const drill = drillsList[idx] || drillsList[0];
+    if (!drill) return;
 
-    const correctWords = currentDrill.word_blocks || [];
-    const distractors = currentDrill.distractor_blocks || [];
-    const allWords = [...correctWords, ...distractorWordsShuffle(distractors)];
+    const correctWords = Array.isArray(drill.word_blocks) ? drill.word_blocks : [];
+    const distractors = Array.isArray(drill.distractor_blocks) ? drill.distractor_blocks : [];
+    const allWords = [...correctWords, ...[...distractors].sort(() => Math.random() - 0.5)];
 
     const shuffled = allWords
       .map((word, index) => ({ id: `block-${index}-${word}`, word }))
@@ -116,18 +99,60 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
     setBankBlocks(shuffled);
     setTargetBlocks([]);
     setFeedback(null);
-    setConsecutiveFails(0);
-    setStartTime(Date.now());
-  }, [currentDrillIndex, customDrills]);
+  };
 
-  const distractorWordsShuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
+  // Start Game
+  const handleStartGame = () => {
+    setCurrentDrillIndex(0);
+    setScore(0);
+    setStreak(0);
+    setCorrectCount(0);
+    setTimeLeft(45);
+    setGameState('playing');
+    loadDrill(0);
+  };
+
+  const handleTogglePause = () => {
+    setGameState(prev => (prev === 'playing' ? 'paused' : 'playing'));
+  };
+
+  const finishGame = () => {
+    setGameState('gameover');
+    const xpEarned = score > 0 ? 35 : 0; // Anti-cheat: 0 XP if AFK!
+
+    if (score > 0) {
+      fireCelebrationConfetti('SentenceSmash_Victory');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(xpEarned);
+    }
+
+    if (onComplete) onComplete(score);
+  };
+
+  // Timer Engine
+  useEffect(() => {
+    if (gameState !== 'playing') return;
+
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          finishGame();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [gameState, score]);
 
   const handleDragStart = (event) => setActiveId(event.active.id);
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
     setActiveId(null);
-    if (!over) return;
+    if (!over || gameState !== 'playing') return;
 
     if (active.id !== over.id) {
       const activeInTarget = targetBlocks.some((b) => b.id === active.id);
@@ -143,127 +168,237 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
     }
   };
 
-  const handleTapBlockToTarget = (block) => {
-    setBankBlocks((prev) => prev.filter((b) => b.id !== block.id));
-    setTargetBlocks((prev) => [...prev, block]);
-    setFeedback(null);
-  };
-
-  const handleTapBlockToBank = (block) => {
-    setTargetBlocks((prev) => prev.filter((b) => b.id !== block.id));
-    setBankBlocks((prev) => [...prev, block]);
-    setFeedback(null);
-  };
-
-  const handleClear = () => {
-    setBankBlocks((prev) => [...prev, ...targetBlocks]);
-    setTargetBlocks([]);
-    setFeedback(null);
-  };
-
-  const handleCheckAnswer = async () => {
-    const userWords = targetBlocks.map((b) => b.word);
-    const timeSpentSeconds = Math.max(1, Math.round((Date.now() - startTime) / 1000));
-
-    const evalResult = evaluateSentenceAttempt(userWords, currentDrill.answer_key || {
-      valid_structures: [currentDrill.word_blocks]
-    });
-
-    const isCorrect = evalResult.isCorrect;
-
-    if (isCorrect) {
-      setConsecutiveFails(0);
-      setFeedback({ isCorrect: true, text: '100% Correct! Excellent grammar structure!' });
-
-      await learnerProgressService.logAttempt({
-        learnerId,
-        contentId: currentDrill.id || 'w33_sentence_builder',
-        mode: 'learn',
-        result: 'correct',
-        score: 100,
-        timeSpentSeconds
-      });
-      if (onAttemptResult) onAttemptResult(true);
+  const handleBlockClick = (block) => {
+    if (gameState !== 'playing') return;
+    const inTarget = targetBlocks.some((b) => b.id === block.id);
+    if (inTarget) {
+      setTargetBlocks((prev) => prev.filter((b) => b.id !== block.id));
+      setBankBlocks((prev) => [...prev, block]);
     } else {
-      const nextFails = consecutiveFails + 1;
-      setConsecutiveFails(nextFails);
+      setBankBlocks((prev) => prev.filter((b) => b.id !== block.id));
+      setTargetBlocks((prev) => [...prev, block]);
+    }
+  };
 
-      setIsShaking(true);
-      setTimeout(() => setIsShaking(false), 500);
+  const handleCheckAnswer = () => {
+    if (gameState !== 'playing') return;
+    const userSentence = targetBlocks.map((b) => b.word).join(' ');
+    const targetWords = currentDrill.word_blocks || [];
+    const evalResult = evaluateSentenceAttempt(userSentence, targetWords);
+
+    if (evalResult.isCorrect) {
+      const nextStreak = streak + 1;
+      const nextCorrect = correctCount + 1;
+      setStreak(nextStreak);
+      setCorrectCount(nextCorrect);
+      const bonusScore = 20 + nextStreak * 5;
+      setScore(prev => prev + bonusScore);
+      setTimeLeft(prev => Math.min(45, prev + 3));
 
       setFeedback({
-        isCorrect: false,
-        text: evalResult.feedbackText || 'Incorrect order. Check word positions and try again!'
+        isCorrect: true,
+        text: `🎉 Excellent! Correct sentence structure (+${bonusScore} PTS)`
       });
 
-      if (nextFails >= 2 && onTriggerAdaptiveHint) {
-        onTriggerAdaptiveHint(currentDrill.grammar_tag);
-      }
-    }
-  };
-
-  const handleNextDrill = () => {
-    if (currentDrillIndex + 1 < totalDrillsCount) {
-      setDrillIndex(currentDrillIndex + 1);
+      setTimeout(() => {
+        if (currentDrillIndex + 1 < totalDrillsCount) {
+          const nextIdx = currentDrillIndex + 1;
+          setCurrentDrillIndex(nextIdx);
+          loadDrill(nextIdx);
+        } else {
+          finishGame();
+        }
+      }, 1000);
     } else {
-      setIsCompleted(true);
-      fireCelebrationConfetti('SentenceBuilder_Complete');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(50);
+      setStreak(0);
+      setFeedback({
+        isCorrect: false,
+        text: evalResult.feedbackText || 'Incorrect order. Re-arrange word blocks and try again!'
+      });
     }
   };
 
-  const handleRestart = () => {
-    setDrillIndex(0);
-    setIsCompleted(false);
-    setFeedback(null);
-  };
-
-  const activeBlock = [...bankBlocks, ...targetBlocks].find((b) => b.id === activeId);
+  // Safe string title render
+  const drillTitleText = typeof currentDrill?.text_en === 'string'
+    ? currentDrill.text_en
+    : (typeof currentDrill?.template === 'string' ? currentDrill.template : 'Build a correct sentence');
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-slate-200 shadow-md font-sans text-slate-900">
-      <CompletionModal
-        isOpen={isCompleted}
-        onClose={() => setIsCompleted(false)}
-        score={100}
-        stars={3}
-        xpEarned={50}
-        srsWordsAdded={5}
-        activityTitle="Sentence Builder Battle (Arena Game)"
-      />
+    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-white rounded-3xl border-2 border-indigo-200 shadow-xl space-y-5 text-slate-900 font-sans">
       {/* Header Info */}
-      <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 flex-wrap gap-2">
-        <div>
-          <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
-            Sentence Smash • 45s Timed Grammar Challenge
-          </span>
-          <h3 className="text-base font-black text-slate-900 mt-0.5">{currentDrill.text_en}</h3>
+      <div className="flex items-center justify-between pb-4 border-b border-slate-200 flex-wrap gap-2">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-xl shadow-md">
+            🧱
+          </div>
+          <div>
+            <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
+              Sentence Smash • 45s Timed Challenge
+            </span>
+            <h3 className="text-base font-black text-slate-900">{drillTitleText}</h3>
+          </div>
         </div>
+
         <div className="flex items-center gap-2 flex-wrap">
           {grammarLesson && (
             <button
               onClick={() => setShowGrammarModal(true)}
-              className="px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-black rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95 border border-blue-400/40"
-              title="Learn Grammar Rules (Grammar in Use)"
+              className="px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 text-white text-xs font-black rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95"
             >
-              <BookOpen size={14} className="text-amber-300" /> 📘 Learn Grammar
+              <BookOpen size={14} className="text-amber-300" /> 📘 Grammar Rules
+            </button>
+          )}
+
+          {gameState === 'playing' && (
+            <button
+              type="button"
+              onClick={handleTogglePause}
+              className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl border border-slate-300 transition"
+              title="Pause Timer"
+            >
+              <Pause size={16} />
+            </button>
+          )}
+
+          {gameState === 'paused' && (
+            <button
+              type="button"
+              onClick={handleTogglePause}
+              className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-black text-xs flex items-center gap-1 shadow-md"
+            >
+              <Play size={14} /> Resume
             </button>
           )}
 
           <div className="px-3 py-1.5 bg-slate-100 rounded-xl border border-slate-200 flex items-center gap-1.5 font-mono text-xs font-black">
-            <span className={timeLeft <= 8 ? 'text-rose-600 animate-ping' : 'text-indigo-600'}>⏱️ {timeLeft}s</span>
+            <Timer className={timeLeft <= 8 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-indigo-600'} size={15} />
+            <span className={timeLeft <= 8 ? 'text-rose-600' : 'text-slate-900'}>{timeLeft}s</span>
           </div>
 
           <div className="px-3 py-1.5 bg-amber-100 text-amber-900 rounded-xl border border-amber-300 font-mono text-xs font-black">
             {score} PTS
           </div>
 
-          <span className="px-3 py-1 bg-amber-50 text-amber-900 text-xs font-mono font-bold rounded-lg border border-amber-200">
-            Sentence {currentDrillIndex + 1} / {totalDrillsCount}
+          <span className="px-3 py-1 bg-indigo-50 text-indigo-900 text-xs font-mono font-bold rounded-lg border border-indigo-200">
+            {currentDrillIndex + 1} / {totalDrillsCount}
           </span>
         </div>
       </div>
+
+      {/* Start Screen (Idle) */}
+      {gameState === 'idle' && (
+        <div className="p-8 bg-indigo-50/80 border-2 border-indigo-200 rounded-3xl text-center space-y-5 shadow-inner">
+          <div className="w-16 h-16 rounded-3xl bg-indigo-600 text-white flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+            🧱
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-2xl font-black text-slate-900">READY FOR SENTENCE SMASH?</h3>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              Drag or tap word pills to build correct English sentences in 45 seconds. Tap Start when ready!
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={handleStartGame}
+            className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+          >
+            <Play size={22} fill="currentColor" /> ▶️ START SENTENCE SMASH
+          </button>
+        </div>
+      )}
+
+      {/* Paused Banner */}
+      {gameState === 'paused' && (
+        <div className="p-3 bg-indigo-50 border border-indigo-300 rounded-2xl flex items-center justify-between animate-in fade-in">
+          <span className="text-xs font-black text-indigo-900 flex items-center gap-2">
+            <Pause size={16} className="text-indigo-600 animate-pulse" /> Timer Paused — Re-order word blocks at your own pace!
+          </span>
+          <button
+            type="button"
+            onClick={handleTogglePause}
+            className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-1"
+          >
+            <Play size={14} fill="currentColor" /> Resume
+          </button>
+        </div>
+      )}
+
+      {/* Game Over Screen */}
+      {gameState === 'gameover' && (
+        <div className="p-8 bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-300 rounded-3xl text-center space-y-4 shadow-inner animate-in zoom-in-95">
+          <Trophy size={56} className="mx-auto text-indigo-600 animate-bounce" />
+          <h3 className="text-2xl font-black text-slate-900">
+            {score > 0 ? 'SENTENCE SMASH COMPLETE!' : 'TIME EXPIRED — TRY AGAIN!'}
+          </h3>
+          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-700">
+            <div>Score: <span className="text-xl font-black text-indigo-600">{score} PTS</span></div>
+            <div>Sentences: <span className="text-xl font-black text-emerald-600">{correctCount}/{totalDrillsCount}</span></div>
+            <div>XP Earned: <span className={`text-xl font-black ${score > 0 ? 'text-emerald-600' : 'text-slate-400'}`}>+{score > 0 ? 35 : 0} XP</span></div>
+          </div>
+          <button
+            type="button"
+            onClick={handleStartGame}
+            className="px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 text-white rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+          >
+            <RotateCcw size={18} /> Play Sentence Smash Again
+          </button>
+        </div>
+      )}
+
+      {/* Active Game Display */}
+      {(gameState === 'playing' || gameState === 'paused') && (
+        <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+          <div className="space-y-4">
+            {/* Target Drop Zone Area */}
+            <div className="p-4 bg-indigo-50/60 border-2 border-dashed border-indigo-300 rounded-2xl min-h-[90px] flex flex-wrap items-center gap-2 shadow-inner">
+              {targetBlocks.length === 0 ? (
+                <span className="text-xs text-indigo-400 font-bold italic mx-auto">
+                  (Drag or tap word pills below to construct your sentence...)
+                </span>
+              ) : (
+                <SortableContext items={targetBlocks.map((b) => b.id)} strategy={horizontalListSortingStrategy}>
+                  {targetBlocks.map((block) => (
+                    <WordBlock key={block.id} block={block} onClick={() => handleBlockClick(block)} />
+                  ))}
+                </SortableContext>
+              )}
+            </div>
+
+            {/* Word Bank Dock */}
+            <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
+              <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">
+                Word Bank (Tap or drag words to choose):
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {bankBlocks.map((block) => (
+                  <WordBlock key={block.id} block={block} onClick={() => handleBlockClick(block)} />
+                ))}
+              </div>
+            </div>
+
+            {/* Action Bar */}
+            <div className="flex items-center justify-between flex-wrap gap-3 pt-2">
+              <button
+                type="button"
+                onClick={handleCheckAnswer}
+                disabled={targetBlocks.length === 0}
+                className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white font-black rounded-xl text-xs shadow-md flex items-center gap-1.5 transition active:scale-95"
+              >
+                <Sparkles size={16} /> Check Sentence
+              </button>
+
+              {feedback && (
+                <div className={`p-3 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+                  feedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
+                }`}>
+                  {feedback.isCorrect ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+                  {feedback.text}
+                </div>
+              )}
+            </div>
+          </div>
+        </DndContext>
+      )}
 
       {showGrammarModal && grammarLesson && (
         <LearnGrammarModal
@@ -272,116 +407,8 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
           grammarLesson={grammarLesson}
         />
       )}
-
-      <DndContext
-        sensors={sensors}
-        collisionDetection={closestCenter}
-        onDragStart={handleDragStart}
-        onDragEnd={handleDragEnd}
-      >
-        {/* Arena Battle Visual Field */}
-        <div className="my-6 relative min-h-[160px] bg-slate-50 rounded-2xl p-4 sm:p-6 border-2 border-dashed border-indigo-300 flex flex-col justify-center items-center shadow-inner">
-          <div className="text-xs text-indigo-600 font-black uppercase tracking-wider mb-3">
-            Sentence Builder Zone (Drag or tap words below to construct sentence)
-          </div>
-
-          {/* Target Dropzone */}
-          <div
-            id="target_dropzone"
-            className={`w-full min-h-[70px] flex flex-wrap items-center justify-center gap-2.5 p-3 rounded-xl transition-all ${
-              isShaking ? 'animate-bounce border-2 border-red-500' : ''
-            } ${
-              feedback?.isCorrect
-                ? 'bg-emerald-50 border-2 border-emerald-500'
-                : 'bg-white border border-slate-300 shadow-sm'
-            }`}
-          >
-            <SortableContext
-              items={targetBlocks.map((b) => b.id)}
-              strategy={horizontalListSortingStrategy}
-            >
-              {targetBlocks.length === 0 ? (
-                <span className="text-slate-400 text-xs font-medium italic pointer-events-none">
-                  (Drag or tap word pills below to construct your sentence...)
-                </span>
-              ) : (
-                targetBlocks.map((block) => (
-                  <WordBlock
-                    key={block.id}
-                    id={block.id}
-                    word={block.word}
-                    isPlaced={true}
-                    onClick={() => handleTapBlockToBank(block)}
-                  />
-                ))
-              )}
-            </SortableContext>
-          </div>
-        </div>
-
-        {/* Word Bank Field */}
-        <div id="bank_dropzone" className="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm">
-          <div className="text-xs text-slate-600 font-black mb-3 flex items-center justify-between">
-            <span>Word Bank (Tap or drag words to choose):</span>
-            {targetBlocks.length > 0 && (
-              <button
-                onClick={handleClear}
-                className="text-xs text-indigo-600 font-bold hover:underline flex items-center gap-1"
-              >
-                <RefreshCw size={12} /> Reset All
-              </button>
-            )}
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-2.5 min-h-[60px]">
-            <SortableContext
-              items={bankBlocks.map((b) => b.id)}
-              strategy={horizontalListSortingStrategy}
-            >
-              {bankBlocks.map((block) => (
-                <WordBlock
-                  key={block.id}
-                  id={block.id}
-                  word={block.word}
-                  isPlaced={false}
-                  onClick={() => handleTapBlockToTarget(block)}
-                />
-              ))}
-            </SortableContext>
-          </div>
-        </div>
-
-        <DragOverlay>
-          {activeBlock ? <WordBlock id={activeBlock.id} word={activeBlock.word} /> : null}
-        </DragOverlay>
-      </DndContext>
-
-      {/* Action Controls & Feedback */}
-      <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <button
-          onClick={handleCheckAnswer}
-          disabled={targetBlocks.length === 0}
-          className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-xl text-sm transition shadow-md disabled:opacity-50 flex items-center justify-center gap-2"
-        >
-          <Sparkles size={16} /> Check Sentence
-        </button>
-
-        {feedback && (
-          <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
-            <span className={`text-xs font-black ${feedback.isCorrect ? 'text-emerald-600' : 'text-red-600'}`}>
-              {feedback.text}
-            </span>
-            {feedback.isCorrect && (
-              <button
-                onClick={handleNextDrill}
-                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-xl text-xs transition shadow-md flex items-center gap-1.5"
-              >
-                Next Drill <ArrowRight size={14} />
-              </button>
-            )}
-          </div>
-        )}
-      </div>
     </div>
   );
 }
+
+export default SentenceBuilderBattle;

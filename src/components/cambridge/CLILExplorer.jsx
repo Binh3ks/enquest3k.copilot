@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Volume2, Sparkles, CheckCircle2, AlertCircle, BookOpen, Send, Lightbulb, Check, Languages, Trophy, ArrowRight, HelpCircle, XCircle } from 'lucide-react';
+import { Globe, Volume2, Sparkles, CheckCircle2, AlertCircle, BookOpen, Send, Lightbulb, Check, Languages, Trophy, ArrowRight, HelpCircle, XCircle, RotateCcw } from 'lucide-react';
 import { renderParsedText } from '../common/HoverWord';
 import VoiceService from '../../services/voiceService';
 import { useUserStore } from '../../stores/useUserStore';
@@ -14,9 +14,12 @@ export default function CLILExplorer({
 }) {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [criticalResponse, setCriticalResponse] = useState('');
-  const [criticalSubmitted, setCriticalSubmitted] = useState(false);
   const [activeFlippedCard, setActiveFlippedCard] = useState(null);
+
+  // Interactive Translation Challenge Blocks
+  const [activeChallengeIdx, setActiveChallengeIdx] = useState(0);
+  const [selectedBlocks, setSelectedBlocks] = useState([]);
+  const [translationFeedback, setTranslationFeedback] = useState(null);
 
   // Default Paragraph Split
   const fullText = clilData.content_en || "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!";
@@ -25,7 +28,6 @@ export default function CLILExplorer({
     const parts = fullText.split(/\n\n+/);
     if (parts.length >= 2) return [parts[0], parts.slice(1).join('\n\n')];
 
-    // Fallback mid-point split into 2 paragraphs
     const sentences = fullText.split(/(?<=[.!?])\s+/);
     const mid = Math.ceil(sentences.length / 2);
     return [
@@ -34,6 +36,7 @@ export default function CLILExplorer({
     ];
   }, [fullText]);
 
+  // 2 Questions for Paragraph 1
   const questionsP1 = [
     {
       id: "q1",
@@ -49,20 +52,48 @@ export default function CLILExplorer({
     }
   ];
 
+  // 2 Questions for Paragraph 2
   const questionsP2 = [
     {
       id: "q3",
       question: "What happens when water is on the floor?",
       options: ["Water acts like a lubricant and reduces friction", "Friction becomes 100 times higher", "Shoes stick to the floor"],
       correct: "Water acts like a lubricant and reduces friction"
+    },
+    {
+      id: "q4",
+      question: "What should students do when they see a yellow caution sign?",
+      options: ["Slow down and walk carefully", "Run as fast as possible", "Jump over the wet puddle"],
+      correct: "Slow down and walk carefully"
     }
   ];
 
-  const translationCards = [
-    { id: 1, en: "Friction is a force that stops things from sliding.", vi: "Ma sát là lực ngăn cản các vật trượt đi." },
-    { id: 2, en: "Water acts like a lubricant on smooth tiles.", vi: "Nước hoạt động như chất bôi trơn trên gạch nhẵn." },
-    { id: 3, en: "The water reduced the friction to zero!", vi: "Nước đã làm giảm lực ma sát xuống bằng không!" }
+  // Interactive Translation Drills
+  const translationDrills = [
+    {
+      id: 1,
+      en: "Friction is a force that stops things from sliding.",
+      blocks: ["Ma sát", "là lực", "ngăn cản", "các vật", "trượt đi"],
+      distractors: ["nước", "chạy nhanh"],
+      correct: ["Ma sát", "là lực", "ngăn cản", "các vật", "trượt đi"]
+    },
+    {
+      id: 2,
+      en: "Water acts like a lubricant on smooth tiles.",
+      blocks: ["Nước", "hoạt động", "như chất bôi trơn", "trên gạch nhẵn"],
+      distractors: ["ngã", "vết thương"],
+      correct: ["Nước", "hoạt động", "như chất bôi trơn", "trên gạch nhẵn"]
+    },
+    {
+      id: 3,
+      en: "The water reduced the friction to zero!",
+      blocks: ["Nước", "đã giảm", "lực ma sát", "bằng không"],
+      distractors: ["tăng lên", "băng bó"],
+      correct: ["Nước", "đã giảm", "lực ma sát", "bằng không"]
+    }
   ];
+
+  const currentDrill = translationDrills[activeChallengeIdx] || translationDrills[0];
 
   const handleToggleAudio = async () => {
     if (isPlayingAudio) {
@@ -82,6 +113,34 @@ export default function CLILExplorer({
 
   const handleSelectAnswer = (qId, option) => {
     setSelectedAnswers(prev => ({ ...prev, [qId]: option }));
+  };
+
+  const handleAddBlock = (blk) => {
+    setSelectedBlocks(prev => [...prev, blk]);
+  };
+
+  const handleRemoveBlock = (idx) => {
+    setSelectedBlocks(prev => prev.filter((_, i) => i !== idx));
+  };
+
+  const handleCheckTranslation = () => {
+    const userString = selectedBlocks.join(' ');
+    const targetString = currentDrill.correct.join(' ');
+
+    if (userString === targetString) {
+      setTranslationFeedback({
+        isCorrect: true,
+        message: "🎉 Perfect translation match! You mastered scientific terminology."
+      });
+      fireCelebrationConfetti('Translation_Success');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(20);
+    } else {
+      setTranslationFeedback({
+        isCorrect: false,
+        message: "❌ Not quite right. Re-order the Vietnamese blocks and try again!"
+      });
+    }
   };
 
   return (
@@ -138,7 +197,7 @@ export default function CLILExplorer({
       </div>
 
       {/* ========================================================================= */}
-      {/* PARAGRAPH 1 CARD & PARAGRAPH 1 CHECK QUESTIONS                            */}
+      {/* PARAGRAPH 1 CARD & PARAGRAPH 1 CHECK QUESTIONS (2 QUESTIONS)              */}
       {/* ========================================================================= */}
       <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
         <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-2">
@@ -148,10 +207,10 @@ export default function CLILExplorer({
           {renderParsedText(paragraphs[0], 'emerald', null, false, highlightMode, targetGrammarRegex)}
         </p>
 
-        {/* Paragraph 1 Check Questions */}
+        {/* Paragraph 1 Check Questions (2 Questions) */}
         <div className="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3 pt-3">
           <h4 className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1.5">
-            <HelpCircle size={15} className="text-emerald-600" /> Paragraph 1 Check Questions
+            <HelpCircle size={15} className="text-emerald-600" /> Paragraph 1 Check Questions (2 Items)
           </h4>
           <div className="space-y-3">
             {questionsP1.map((q) => {
@@ -187,7 +246,7 @@ export default function CLILExplorer({
       </div>
 
       {/* ========================================================================= */}
-      {/* PARAGRAPH 2 CARD & PARAGRAPH 2 CHECK QUESTIONS                            */}
+      {/* PARAGRAPH 2 CARD & PARAGRAPH 2 CHECK QUESTIONS (2 QUESTIONS)              */}
       {/* ========================================================================= */}
       <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
         <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-2">
@@ -197,10 +256,10 @@ export default function CLILExplorer({
           {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, highlightMode, targetGrammarRegex)}
         </p>
 
-        {/* Paragraph 2 Check Questions */}
+        {/* Paragraph 2 Check Questions (2 Questions) */}
         <div className="p-4 bg-teal-50/70 rounded-2xl border border-teal-200 space-y-3 pt-3">
           <h4 className="text-xs font-black uppercase text-teal-900 flex items-center gap-1.5">
-            <HelpCircle size={15} className="text-teal-600" /> Paragraph 2 Check Questions
+            <HelpCircle size={15} className="text-teal-600" /> Paragraph 2 Check Questions (2 Items)
           </h4>
           <div className="space-y-3">
             {questionsP2.map((q) => {
@@ -236,38 +295,101 @@ export default function CLILExplorer({
       </div>
 
       {/* ========================================================================= */}
-      {/* FUN INTERACTIVE TRANSLATION FLIP CARDS                                    */}
+      {/* FUN INTERACTIVE TRANSLATION BLOCK BUILDER CHALLENGE                       */}
       {/* ========================================================================= */}
       <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
-        <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-          <Languages size={18} className="text-emerald-600" />
-          <h4 className="text-sm font-black text-slate-900">✨ FUN TRANSLATION CARD FLIP</h4>
-          <span className="text-xs text-slate-500">Tap any sentence to reveal Vietnamese meaning</span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {translationCards.map((card) => {
-            const isFlipped = activeFlippedCard === card.id;
-
-            return (
-              <div
-                key={card.id}
-                onClick={() => setActiveFlippedCard(isFlipped ? null : card.id)}
-                className={`p-4 rounded-2xl border-2 transition-all cursor-pointer min-h-[110px] flex flex-col justify-between shadow-sm hover:shadow-md ${
-                  isFlipped
-                    ? 'bg-emerald-600 text-white border-emerald-500 scale-[1.02]'
-                    : 'bg-slate-50 text-slate-900 border-slate-200 hover:border-emerald-300'
+        <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
+          <div className="flex items-center gap-2">
+            <Languages size={18} className="text-emerald-600" />
+            <h4 className="text-sm font-black text-slate-900">✨ INTERACTIVE TRANSLATION CHALLENGE</h4>
+          </div>
+          <div className="flex items-center gap-2">
+            {translationDrills.map((_, dIdx) => (
+              <button
+                key={dIdx}
+                type="button"
+                onClick={() => {
+                  setActiveChallengeIdx(dIdx);
+                  setSelectedBlocks([]);
+                  setTranslationFeedback(null);
+                }}
+                className={`px-3 py-1 rounded-lg text-xs font-black transition ${
+                  activeChallengeIdx === dIdx
+                    ? 'bg-emerald-600 text-white shadow-sm'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
-                <div className="text-xs font-black leading-snug">
-                  {isFlipped ? card.vi : card.en}
-                </div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-right opacity-80 pt-2">
-                  {isFlipped ? '✅ Meaning' : '💡 Tap to Flip'}
-                </div>
-              </div>
-            );
-          })}
+                Sentence {dIdx + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Sentence Target */}
+        <div className="p-4 bg-emerald-50/80 rounded-2xl border border-emerald-200 space-y-1">
+          <span className="text-[10px] font-black uppercase text-emerald-800 tracking-wider">
+            Translate this English Sentence to Vietnamese:
+          </span>
+          <p className="text-base font-black text-slate-900">"{currentDrill.en}"</p>
+        </div>
+
+        {/* Selected Blocks Area */}
+        <div className="p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 min-h-[70px] flex flex-wrap items-center gap-2">
+          {selectedBlocks.length === 0 ? (
+            <span className="text-xs text-slate-400 font-bold italic">
+              (Tap Vietnamese word blocks below to build sentence translation...)
+            </span>
+          ) : (
+            selectedBlocks.map((blk, bIdx) => (
+              <button
+                key={bIdx}
+                type="button"
+                onClick={() => handleRemoveBlock(bIdx)}
+                className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-black shadow-sm flex items-center gap-1 hover:bg-emerald-500 transition"
+              >
+                {blk} <span className="text-[10px] opacity-75">✕</span>
+              </button>
+            ))
+          )}
+        </div>
+
+        {/* Available Word Blocks */}
+        <div className="p-4 bg-slate-100 rounded-2xl border border-slate-200 space-y-2">
+          <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">
+            Tap Blocks to Choose:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {[...currentDrill.blocks, ...currentDrill.distractors].sort(() => 0.5 - Math.random()).map((blk, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => handleAddBlock(blk)}
+                className="px-3.5 py-1.5 bg-white hover:bg-emerald-100 border border-slate-300 text-slate-900 rounded-xl text-xs font-bold transition shadow-sm active:scale-95"
+              >
+                + {blk}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between pt-2">
+          <button
+            type="button"
+            onClick={handleCheckTranslation}
+            disabled={selectedBlocks.length === 0}
+            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black rounded-xl text-xs shadow-md flex items-center gap-1.5 transition active:scale-95"
+          >
+            <Sparkles size={16} /> Check Translation
+          </button>
+
+          {translationFeedback && (
+            <div className={`p-3 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+              translationFeedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
+            }`}>
+              {translationFeedback.isCorrect ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+              {translationFeedback.message}
+            </div>
+          )}
         </div>
       </div>
     </div>
