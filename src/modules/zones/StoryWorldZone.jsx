@@ -188,15 +188,15 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                   ))}
 
                   {selectedHotspot && (
-                    <div className="absolute bottom-3 left-3 right-3 p-3 bg-slate-950/90 text-white rounded-xl border border-amber-400 backdrop-blur-md animate-in fade-in flex items-center justify-between z-20">
+                    <div className="absolute top-3 left-3 px-4 py-2 bg-amber-100/95 text-amber-950 rounded-2xl border-2 border-amber-400 backdrop-blur-md animate-in fade-in flex items-center gap-3 shadow-xl z-20">
                       <div>
-                        <span className="text-amber-300 text-xs font-black">{selectedHotspot.text}</span>
-                        <p className="text-[11px] text-slate-300 italic">{selectedHotspot.vi}</p>
+                        <span className="text-amber-900 text-xs font-black">✨ {selectedHotspot.text}</span>
+                        <span className="text-[11px] text-amber-800 italic ml-2">({selectedHotspot.vi})</span>
                       </div>
                       <button
                         type="button"
                         onClick={() => setSelectedHotspot(null)}
-                        className="text-slate-400 hover:text-white text-xs font-black ml-1"
+                        className="text-amber-700 hover:text-amber-950 font-black text-xs ml-1"
                       >
                         ✕
                       </button>
@@ -249,22 +249,17 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
       {/* ========================================================================= */}
       {currentGear === 2 && (
         <div className="space-y-4">
-          {/* Compact Soft Banner */}
-          <div className="bg-gradient-to-r from-amber-900 via-orange-900 to-slate-900 text-white rounded-2xl p-4 sm:p-5 border border-amber-500/40 shadow-md flex items-center justify-between flex-wrap gap-3">
-            <div className="space-y-0.5">
-              <span className="px-2.5 py-0.5 bg-amber-500/30 text-amber-200 border border-amber-400/40 rounded-full text-[10px] font-black uppercase tracking-wider">
-                Gear 2 • Full Audio Narration
-              </span>
-              <h2 className="text-lg font-black text-amber-300">
-                🎧 Continuous Story Narration & Word-by-Word Karaoke
-              </h2>
-            </div>
+          {/* Slim Arcade Instruction Bar */}
+          <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+            <span className="font-black text-amber-950 flex items-center gap-1.5">
+              🎧 GAME GOAL: Tap any sentence to listen & practice word-by-word karaoke shadowing!
+            </span>
             <button
               type="button"
               onClick={() => handleNextGear(3)}
-              className="px-4 py-2 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 font-black text-xs rounded-xl shadow flex items-center gap-1 transition"
+              className="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-sm transition"
             >
-              Next: Gear 3 (Retell to Nova) <ChevronRight size={14} />
+              Next: Gear 3 ▶
             </button>
           </div>
 
@@ -367,22 +362,17 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
       {/* ========================================================================= */}
       {currentGear === 3 && (
         <div className="space-y-4">
-          {/* Compact Soft Banner */}
-          <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-4 sm:p-5 border border-purple-500/40 shadow-md flex items-center justify-between flex-wrap gap-3">
-            <div className="space-y-0.5">
-              <span className="px-2.5 py-0.5 bg-purple-500/30 text-purple-200 border border-purple-400/40 rounded-full text-[10px] font-black uppercase tracking-wider">
-                Gear 3 • Retell to Nova
-              </span>
-              <h2 className="text-lg font-black text-amber-300">
-                🎙️ Record Your 30-Second Story Retelling
-              </h2>
-            </div>
+          {/* Slim Arcade Instruction Bar */}
+          <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+            <span className="font-black text-purple-950 flex items-center gap-1.5">
+              🎙️ GAME GOAL: Record 30s voice retell with action verbs. Earn +50 XP!
+            </span>
             <button
               type="button"
               onClick={() => handleNextGear(4)}
-              className="px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 text-white font-black text-xs rounded-xl shadow flex items-center gap-1 transition"
+              className="px-3 py-1 bg-purple-600 hover:bg-purple-500 text-white font-black text-xs rounded-xl shadow-sm transition"
             >
-              Next: Gear 4 (CLIL Knowledge Explorer) <ChevronRight size={14} />
+              Next: Gear 4 ▶
             </button>
           </div>
 

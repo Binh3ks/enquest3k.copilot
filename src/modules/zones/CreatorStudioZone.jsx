@@ -16,19 +16,14 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
-      {/* Compact Slim Header */}
-      <div className="bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 sm:p-5 border border-purple-500/40 shadow-md flex items-center justify-between flex-wrap gap-3">
-        <div className="space-y-0.5">
-          <span className="px-2.5 py-0.5 bg-purple-500/30 text-purple-200 border border-purple-400/40 rounded-full text-[10px] font-black uppercase tracking-wider">
-            Zone 3 • Creator Studio
-          </span>
-          <h2 className="text-lg font-black text-amber-300">
-            🎨 CREATOR STUDIO — EXPRESS YOUR CREATIVITY
-          </h2>
-        </div>
-        <div className="px-3.5 py-1.5 bg-purple-500/20 text-purple-300 border border-purple-400/40 rounded-xl font-black text-xs flex items-center gap-1.5">
-          <Trophy size={16} className="text-amber-400" />
-          <span>+{studioXP} STUDIO XP</span>
+      {/* Slim Game Instruction Bar */}
+      <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+        <span className="font-black text-purple-950 flex items-center gap-1.5">
+          🎨 CREATOR STUDIO — Produce your story script, podcast, science report or AI debate!
+        </span>
+        <div className="px-3 py-1 bg-purple-600 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
+          <Trophy size={14} className="text-amber-300" />
+          <span>+{studioXP} XP</span>
         </div>
       </div>
 

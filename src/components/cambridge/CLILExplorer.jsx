@@ -151,28 +151,17 @@ export default function CLILExplorer({
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-5 font-sans text-slate-900">
-      {/* Compact Slim Soft Header Banner */}
-      <div className="p-4 bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 rounded-2xl text-white shadow-md border border-emerald-500/30 flex items-center justify-between flex-wrap gap-3">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-xl shadow-md">
-            🌍
-          </div>
-          <div>
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500/30 text-emerald-200 border border-emerald-400/40">
-              Gear 4 • CLIL Knowledge Explorer
-            </span>
-            <h3 className="text-base font-black text-amber-300">
-              {clilData.title_en || "The Science of Friction & Corridor Safety"}
-            </h3>
-          </div>
-        </div>
-
+      {/* Slim Game Instruction Bar */}
+      <div className="p-3 bg-emerald-50 border border-emerald-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+        <span className="font-black text-emerald-950 flex items-center gap-1.5">
+          🌍 CLIL KNOWLEDGE EXPLORER — Read 2 article paragraphs & complete check questions after each part!
+        </span>
         <button
           type="button"
           onClick={handleToggleAudio}
-          className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95 shrink-0"
+          className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1 transition shrink-0"
         >
-          <Volume2 size={16} /> {isPlayingAudio ? 'Pause' : '🎧 Listen Article'}
+          <Volume2 size={14} /> {isPlayingAudio ? 'Pause' : '🎧 Listen'}
         </button>
       </div>
 

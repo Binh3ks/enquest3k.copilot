@@ -23,19 +23,14 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
-      {/* Compact Slim Header */}
-      <div className="bg-gradient-to-r from-amber-900 via-orange-950 to-slate-900 text-white rounded-2xl p-4 sm:p-5 border border-amber-500/40 shadow-md flex items-center justify-between flex-wrap gap-3">
-        <div className="space-y-0.5">
-          <span className="px-2.5 py-0.5 bg-amber-500/30 text-amber-200 border border-amber-400/40 rounded-full text-[10px] font-black uppercase tracking-wider">
-            Zone 2 • Battle Arena
-          </span>
-          <h2 className="text-lg font-black text-amber-300">
-            ⚔️ BATTLE ARENA — SPEED & ACCURACY CHALLENGE
-          </h2>
-        </div>
-        <div className="px-3.5 py-1.5 bg-amber-500/20 text-amber-300 border border-amber-400/40 rounded-xl font-black text-xs flex items-center gap-1.5">
-          <Trophy size={16} className="text-amber-400" />
-          <span>+{totalXP} ARENA XP</span>
+      {/* Slim Game Instruction Bar */}
+      <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+        <span className="font-black text-amber-950 flex items-center gap-1.5">
+          ⚔️ BATTLE ARENA — Rapid 2-3 min matches: speed vocabulary, grammar syntax & STEM reasoning!
+        </span>
+        <div className="px-3 py-1 bg-amber-500 text-slate-950 rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
+          <Trophy size={14} className="text-slate-950" />
+          <span>+{totalXP} XP</span>
         </div>
       </div>
 

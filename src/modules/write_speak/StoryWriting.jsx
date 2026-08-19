@@ -25,7 +25,7 @@ import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 const DEFAULT_W33_PICTURE_MODE = {
   type: "picture",
   rubric_tier: 2,
-  image_url: "/images/scenes/default_story.jpg",
+  image_url: "/images/week33/read_stem.jpg",
   word_bank: ["corridor", "walking", "fast", "slipped", "wet floor", "knee", "bandage", "nurse"],
   writing_prompts: {
     en: "Look at the school corridor story picture and write a story about what happened to the running student and how Jake helped."
@@ -118,12 +118,13 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   }, [pictureMode?.image_url, weekId]);
 
   const handleImgError = useCallback(() => {
-    if (typeof imgSrc === 'string' && (imgSrc.startsWith('http://') || imgSrc.startsWith('https://'))) {
-      setImgSrc(pictureMode.image_url);
+    if (imgSrc !== '/images/week33/read_stem.jpg') {
+      setImgSrc('/images/week33/read_stem.jpg');
+      setImgFailed(false);
     } else {
       setImgFailed(true);
     }
-  }, [imgSrc, pictureMode?.image_url]);
+  }, [imgSrc]);
 
   const handleSubmit = () => {
     const wordBankArray = Array.isArray(pictureMode.word_bank)
