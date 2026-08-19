@@ -9,21 +9,11 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
   const [step3Text, setStep3Text] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // ── Per-step live checkers ──────────────────────────────────────────────────
-  const step1OK = useMemo(() => {
-    const l = step1Text.toLowerCase();
-    return /\b(water|liquid|wet|floor|puddle|acts\s+as|cause[sd]?|because|lubricant)\b/i.test(l) && step1Text.trim().length > 8;
-  }, [step1Text]);
-
-  const step2OK = useMemo(() => {
-    const l = step2Text.toLowerCase();
-    return /\b(as\s+a\s+result|therefore|so|thus|friction|slipp|reduces?|because)\b/i.test(l) && step2Text.trim().length > 8;
-  }, [step2Text]);
-
-  const step3OK = useMemo(() => {
-    const l = step3Text.toLowerCase();
-    return /\b(walk|carefully|slowly|safe|safety|corridor|rubber\s+shoe|slip|bandage|nurse)\b/i.test(l) && step3Text.trim().length > 8;
-  }, [step3Text]);
+  // ── Per-step live checkers — just needs enough text (free typing) ─────────
+  const MIN_LEN = 8;
+  const step1OK = useMemo(() => step1Text.trim().length >= MIN_LEN, [step1Text]);
+  const step2OK = useMemo(() => step2Text.trim().length >= MIN_LEN, [step2Text]);
+  const step3OK = useMemo(() => step3Text.trim().length >= MIN_LEN, [step3Text]);
 
   const canSubmit = step1OK && step2OK && step3OK;
   const assembledReport = `${step1Text.trim()} ${step2Text.trim()} ${step3Text.trim()}`.trim();
@@ -189,10 +179,12 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
           }`}
         />
 
-        {/* Live hint */}
-        {!cfg.checker && cfg.value.trim().length > 5 && (
-          <p className={`text-[10px] text-${c}-700 font-medium`}>
-            ⚡ {cfg.hint}
+        {/* Word count badge — encourages rather than nags */}
+        {cfg.value.trim().length > 0 && (
+          <p className={`text-[10px] font-bold ${
+            cfg.checker ? `text-emerald-600` : `text-${c}-600`
+          }`}>
+            {cfg.checker ? '✓ Great!' : `${cfg.value.trim().length} chars — keep going (need ${Math.max(0, 8 - cfg.value.trim().length)} more)`}
           </p>
         )}
 
@@ -206,7 +198,7 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
           {currentStep < 3 ? (
             <button type="button"
               onClick={() => setCurrentStep(s => s + 1)}
-              className={`px-4 py-1.5 bg-${c}-600 hover:bg-${c}-700 text-white rounded-xl text-xs font-black flex items-center gap-1 transition ${!cfg.checker ? 'opacity-60' : ''}`}>
+              className={`px-4 py-1.5 bg-${c}-600 hover:bg-${c}-700 text-white rounded-xl text-xs font-black flex items-center gap-1 transition`}>
               Next Step <ChevronRight size={13} />
             </button>
           ) : null}
