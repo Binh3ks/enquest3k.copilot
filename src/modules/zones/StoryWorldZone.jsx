@@ -125,6 +125,8 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
     }
   };
 
+  const [foundItems, setFoundItems] = useState([]);
+
   return (
     <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
       {/* 4-Gear Story World Progression Bar */}
@@ -139,22 +141,13 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
       {/* ========================================================================= */}
       {currentGear === 1 && (
         <div className="space-y-4">
-          <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-4 sm:p-5 border border-blue-500/40 shadow-md flex items-center justify-between flex-wrap gap-3">
-            <div className="space-y-0.5">
-              <span className="px-2.5 py-0.5 bg-cyan-500/30 text-cyan-200 border border-cyan-400/40 rounded-full text-[10px] font-black uppercase tracking-wider">
-                Gear 1 • 3D Webtoon Scene Explorer
-              </span>
-              <h2 className="text-lg font-black text-amber-300">
-                🎬 Visual Story & Interactive Hotspots
-              </h2>
-            </div>
-            <button
-              type="button"
-              onClick={() => handleNextGear(2)}
-              className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 text-slate-950 font-black text-xs rounded-xl shadow flex items-center gap-1 transition-all hover:scale-105"
-            >
-              Next: Gear 2 (Audio Narration) <ChevronRight size={14} />
-            </button>
+          <div className="p-3 bg-cyan-50 border border-cyan-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+            <span className="font-black text-cyan-950 flex items-center gap-1.5">
+              <Sparkles size={16} className="text-cyan-600 animate-spin" /> 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items!
+            </span>
+            <span className="px-3 py-1 bg-cyan-600 text-white rounded-xl font-black shadow-sm">
+              🔍 {foundItems.length}/3 Found (+20 XP)
+            </span>
           </div>
 
           {/* Webtoon Viewer */}
@@ -177,6 +170,15 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                       onClick={() => {
                         setSelectedHotspot(chunk);
                         speakText(chunk.text);
+                        if (!foundItems.includes(chunk.text)) {
+                          const nextFound = [...foundItems, chunk.text];
+                          setFoundItems(nextFound);
+                          if (nextFound.length === 3) {
+                            fireCelebrationConfetti('HiddenItem_Complete');
+                            const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+                            if (userStore?.addXP) userStore.addXP(20);
+                          }
+                        }
                       }}
                       style={{ left: `${chunk.x || 30 + cIdx * 25}%`, top: `${chunk.y || 40 + (cIdx % 2) * 20}%` }}
                       className="absolute transform -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 bg-amber-400/95 hover:bg-amber-300 text-slate-950 font-black text-xs rounded-full shadow-lg border-2 border-white flex items-center gap-1 animate-bounce transition hover:scale-110 z-10"

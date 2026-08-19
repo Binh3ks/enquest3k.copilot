@@ -123,14 +123,20 @@ export default function CLILExplorer({
     setSelectedBlocks(prev => prev.filter((_, i) => i !== idx));
   };
 
-  const handleCheckTranslation = () => {
-    const userString = selectedBlocks.join(' ');
-    const targetString = currentDrill.correct.join(' ');
+  const [userTypedTranslation, setUserTypedTranslation] = useState('');
 
-    if (userString === targetString) {
+  const handleCheckTranslation = () => {
+    const typed = userTypedTranslation.toLowerCase().trim();
+    if (!typed) return;
+
+    // Check if typed translation contains required key concepts
+    const requiredKeys = currentDrill.blocks.slice(0, 3).map(k => k.toLowerCase());
+    const matches = requiredKeys.filter(k => typed.includes(k));
+
+    if (matches.length >= 2 || typed.length >= 15) {
       setTranslationFeedback({
         isCorrect: true,
-        message: "🎉 Perfect translation match! You mastered scientific terminology."
+        message: "🎉 Great hands-on translation! Your accuracy and typing practice earned +20 XP."
       });
       fireCelebrationConfetti('Translation_Success');
       const userStore = useUserStore?.getState ? useUserStore.getState() : null;
@@ -138,7 +144,7 @@ export default function CLILExplorer({
     } else {
       setTranslationFeedback({
         isCorrect: false,
-        message: "❌ Not quite right. Re-order the Vietnamese blocks and try again!"
+        message: "💡 Keep typing! Make sure to include target keywords like " + requiredKeys.join(', ') + "."
       });
     }
   };
@@ -295,13 +301,14 @@ export default function CLILExplorer({
       </div>
 
       {/* ========================================================================= */}
-      {/* FUN INTERACTIVE TRANSLATION BLOCK BUILDER CHALLENGE                       */}
+      {/* HANDS-ON TYPING TRANSLATION CHALLENGE (KEYWORD REFERENCE PILLS)           */}
       {/* ========================================================================= */}
       <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
         <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <Languages size={18} className="text-emerald-600" />
-            <h4 className="text-sm font-black text-slate-900">✨ INTERACTIVE TRANSLATION CHALLENGE</h4>
+            <h4 className="text-sm font-black text-slate-900">✍️ HANDS-ON TRANSLATION CHALLENGE</h4>
+            <span className="text-xs text-slate-500">(Type the Vietnamese translation below)</span>
           </div>
           <div className="flex items-center gap-2">
             {translationDrills.map((_, dIdx) => (
@@ -310,7 +317,7 @@ export default function CLILExplorer({
                 type="button"
                 onClick={() => {
                   setActiveChallengeIdx(dIdx);
-                  setSelectedBlocks([]);
+                  setUserTypedTranslation('');
                   setTranslationFeedback(null);
                 }}
                 className={`px-3 py-1 rounded-lg text-xs font-black transition ${
@@ -333,63 +340,52 @@ export default function CLILExplorer({
           <p className="text-base font-black text-slate-900">"{currentDrill.en}"</p>
         </div>
 
-        {/* Selected Blocks Area */}
-        <div className="p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 min-h-[70px] flex flex-wrap items-center gap-2">
-          {selectedBlocks.length === 0 ? (
-            <span className="text-xs text-slate-400 font-bold italic">
-              (Tap Vietnamese word blocks below to build sentence translation...)
-            </span>
-          ) : (
-            selectedBlocks.map((blk, bIdx) => (
-              <button
-                key={bIdx}
-                type="button"
-                onClick={() => handleRemoveBlock(bIdx)}
-                className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-black shadow-sm flex items-center gap-1 hover:bg-emerald-500 transition"
-              >
-                {blk} <span className="text-[10px] opacity-75">✕</span>
-              </button>
-            ))
-          )}
-        </div>
-
-        {/* Available Word Blocks */}
-        <div className="p-4 bg-slate-100 rounded-2xl border border-slate-200 space-y-2">
+        {/* Target Keyword Reference Pills (No plus signs, mixed distractors) */}
+        <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
           <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">
-            Tap Blocks to Choose:
+            💡 Target Keywords & Phrases to Include in your Translation:
           </span>
           <div className="flex flex-wrap gap-2">
-            {[...currentDrill.blocks, ...currentDrill.distractors].sort(() => 0.5 - Math.random()).map((blk, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => handleAddBlock(blk)}
-                className="px-3.5 py-1.5 bg-white hover:bg-emerald-100 border border-slate-300 text-slate-900 rounded-xl text-xs font-bold transition shadow-sm active:scale-95"
+            {[...currentDrill.blocks.slice(0, 3), ...currentDrill.distractors].sort(() => 0.5 - Math.random()).map((kw, kIdx) => (
+              <span
+                key={kIdx}
+                className="px-3 py-1 bg-white border border-slate-300 text-slate-800 rounded-xl text-xs font-bold shadow-sm"
               >
-                + {blk}
-              </button>
+                {kw}
+              </span>
             ))}
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-2">
-          <button
-            type="button"
-            onClick={handleCheckTranslation}
-            disabled={selectedBlocks.length === 0}
-            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black rounded-xl text-xs shadow-md flex items-center gap-1.5 transition active:scale-95"
-          >
-            <Sparkles size={16} /> Check Translation
-          </button>
+        {/* Typing Input */}
+        <div className="space-y-3">
+          <textarea
+            rows={3}
+            value={userTypedTranslation}
+            onChange={(e) => setUserTypedTranslation(e.target.value)}
+            placeholder="Type your complete Vietnamese sentence translation here..."
+            className="w-full p-4 rounded-2xl border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 text-sm font-bold text-slate-900"
+          />
 
-          {translationFeedback && (
-            <div className={`p-3 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
-              translationFeedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
-            }`}>
-              {translationFeedback.isCorrect ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
-              {translationFeedback.message}
-            </div>
-          )}
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleCheckTranslation}
+              disabled={!userTypedTranslation.trim()}
+              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black rounded-xl text-xs shadow-md flex items-center gap-1.5 transition active:scale-95"
+            >
+              <Sparkles size={16} /> Submit & Check Translation
+            </button>
+
+            {translationFeedback && (
+              <div className={`p-3 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+                translationFeedback.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
+              }`}>
+                {translationFeedback.isCorrect ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+                {translationFeedback.message}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

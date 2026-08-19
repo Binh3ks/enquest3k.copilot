@@ -232,7 +232,7 @@ export function FlashArena({ customSets, onComplete }) {
           <div className="space-y-2">
             <h3 className="text-2xl font-black text-amber-300">READY FOR WORD BLITZ?</h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-              Match 24 vocabulary words across 3 fast rounds (Nouns $\rightarrow$ Chunks $\rightarrow$ Definitions) in 45 seconds!
+              Match 24 vocabulary words across 3 fast rounds (Nouns → Chunks → Definitions) in 45 seconds!
             </p>
           </div>
           <button

@@ -25,10 +25,10 @@ import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 const DEFAULT_W33_PICTURE_MODE = {
   type: "picture",
   rubric_tier: 2,
-  image_url: "/images/week33/barmodel_w33_adv_p1.svg",
+  image_url: "/images/scenes/default_story.jpg",
   word_bank: ["corridor", "walking", "fast", "slipped", "wet floor", "knee", "bandage", "nurse"],
   writing_prompts: {
-    en: "Look at the school corridor picture and write a story about what happened to the running student and how Jake helped."
+    en: "Look at the school corridor story picture and write a story about what happened to the running student and how Jake helped."
   }
 };
 
