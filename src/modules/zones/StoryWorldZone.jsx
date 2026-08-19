@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
+import ExplorerPassport from '../../components/cambridge/ExplorerPassport';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { Film, Headphones, Mic, Globe, Volume2, Sparkles, CheckCircle2, ChevronRight, Play, Square, RotateCcw, MessageSquare, Info } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { getNovaStage } from '../../services/companionEngine';
 
 export default function StoryWorldZone({ data, weekNumber = 33 }) {
   const storyData = data?.storyWorld || {};
@@ -23,8 +25,15 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
   const [retellAudioUrl, setRetellAudioUrl] = useState(null);
   const [novaFeedback, setNovaFeedback] = useState(null);
   const [selectedStarter, setSelectedStarter] = useState('');
+  const [retellAttemptCount, setRetellAttemptCount] = useState(0); // Fading Scaffold: 0=Lần 1 (3 starters), 1+=Lần 2 (2 starters)
+  const [showHint, setShowHint] = useState(false); // "I need a hint" nút ẩn starter thứ 4
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
+
+  // Nova streak from localStorage for companion engine
+  const rawStreak = typeof localStorage !== 'undefined' ? localStorage.getItem('engquest_streak') : null;
+  const streakDays = rawStreak ? (JSON.parse(rawStreak).days || 0) : 3;
+  const novaStage = getNovaStage(streakDays);
 
   const scenes = storyData.storyScenes || [];
   const clilArticle = storyData.clilArticle || null;
@@ -87,8 +96,10 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
         const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
         const audioUrl = URL.createObjectURL(audioBlob);
         setRetellAudioUrl(audioUrl);
+        setRetellAttemptCount(prev => prev + 1);
+        setShowHint(false);
         setNovaFeedback({
-          praise: "🎉 Fantastic Retelling! You captured the main action with great rhythm.",
+          praise: retellAttemptCount === 0 ? "🎉 Fantastic Retelling! You captured the main action with great rhythm." : "⭐ Even better this time! Your transitions are getting smoother.",
           tip: "💡 Tip: Emphasize action verbs like 'was walking' and 'slipped' for higher marks!"
         });
         fireCelebrationConfetti('Retell_Complete');
@@ -388,17 +399,29 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                   "Hi friend! Tap half sentence starters or target vocab pills below to help you speak with confidence!"
                 </p>
 
-                {/* Retell Half Starters */}
+                {/* Fading Scaffold: Retell Half Starters (Lần 1: 3, Lần 2+: 2) */}
                 <div className="space-y-1">
-                  <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
-                    ✨ Half Sentence Starters:
-                  </span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
+                      ✨ {retellAttemptCount === 0 ? 'Sentence Starters:' : retellAttemptCount === 1 ? 'Reduced Starters (Lần 2):' : 'Challenge Mode — No Starters'}
+                    </span>
+                    {retellAttemptCount > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => setShowHint(!showHint)}
+                        className="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-0.5"
+                      >
+                        💡 I need a hint
+                      </button>
+                    )}
+                  </div>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      "First, Jake was walking...",
-                      "Suddenly, a student slipped...",
-                      "Finally, the school nurse..."
-                    ].map((starter, sIdx) => (
+                    {(retellAttemptCount === 0
+                      ? ["First, Jake was walking...", "Suddenly, a student slipped...", "Finally, the school nurse..."]
+                      : retellAttemptCount === 1
+                        ? ["First, Jake was walking...", "Finally, the school nurse..."]
+                        : []
+                    ).map((starter, sIdx) => (
                       <button
                         key={sIdx}
                         type="button"
@@ -408,22 +431,36 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                         + {starter}
                       </button>
                     ))}
+                    {/* Hidden Hint Starter ("I need a hint" toggled) */}
+                    {showHint && (
+                      <button
+                        type="button"
+                        onClick={() => setSelectedStarter(prev => prev ? `${prev} Then, the nurse...` : 'Then, the nurse...')}
+                        className="px-3 py-1 bg-indigo-100 hover:bg-indigo-200 border border-indigo-300 text-indigo-900 rounded-xl text-xs font-bold transition shadow-sm"
+                      >
+                        💡 Then, the nurse...
+                      </button>
+                    )}
                   </div>
                 </div>
 
-                {/* Target Vocab Pills */}
+                {/* Target Vocab Pills — 4 colour groups */}
                 <div className="space-y-1 pt-1 border-t border-purple-200/60">
                   <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
-                    🎯 Target Vocab & Action Verbs:
+                    🎯 Target Vocab:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
-                    {["carefully", "running fast", "wet floor", "hurt knee", "clean bandage", "relieved"].map((vocab, vIdx) => (
-                      <button
-                        key={vIdx}
-                        type="button"
-                        onClick={() => setSelectedStarter(prev => prev ? `${prev} ${vocab}` : vocab)}
-                        className="px-2.5 py-1 bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300 rounded-lg text-xs font-bold transition"
-                      >
+                    {/* 🟢 Action verbs */}
+                    {["carefully", "running fast", "slipped"].map((vocab, vIdx) => (
+                      <button key={`g${vIdx}`} type="button" onClick={() => setSelectedStarter(prev => prev ? `${prev} ${vocab}` : vocab)}
+                        className="px-2.5 py-1 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-lg text-xs font-bold transition">
+                        + {vocab}
+                      </button>
+                    ))}
+                    {/* 🟠 Safety vocab */}
+                    {["wet floor", "clean bandage", "relieved"].map((vocab, vIdx) => (
+                      <button key={`o${vIdx}`} type="button" onClick={() => setSelectedStarter(prev => prev ? `${prev} ${vocab}` : vocab)}
+                        className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 rounded-lg text-xs font-bold transition">
                         + {vocab}
                       </button>
                     ))}
@@ -470,16 +507,31 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
       )}
 
       {/* ========================================================================= */}
-      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER (2 PARAGRAPHS & CHECK QUESTIONS)       */}
+      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER + EXPLORER PASSPORT (EPIC-1)          */}
       {/* ========================================================================= */}
       {currentGear === 4 && (
-        <CLILExplorer
-          clilData={clilArticle || readExplore}
-          weekNumber={weekNumber}
-          highlightMode={highlightMode}
-          setHighlightMode={setHighlightMode}
-          targetGrammarRegex={grammarRegex}
-        />
+        <div className="space-y-5">
+          {/* Nova Evolution Badge (companionEngine connected) */}
+          <div className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-300 rounded-2xl text-xs font-black text-amber-900 shadow-sm">
+            <span className="text-2xl">{novaStage.avatarIcon}</span>
+            <div>
+              <span className="block text-[11px] uppercase tracking-wider">{novaStage.title}</span>
+              <span className="text-[10px] font-medium text-amber-800">{novaStage.badgeTitle} · Streak {streakDays}d</span>
+            </div>
+          </div>
+
+          {/* CLIL Knowledge Explorer article */}
+          <CLILExplorer
+            clilData={clilArticle || readExplore}
+            weekNumber={weekNumber}
+            highlightMode={highlightMode}
+            setHighlightMode={setHighlightMode}
+            targetGrammarRegex={grammarRegex}
+          />
+
+          {/* Explorer Passport — CLIL Stamp Collection (EPIC-1) */}
+          <ExplorerPassport earnedStamps={['science']} />
+        </div>
       )}
     </div>
   );

@@ -3,15 +3,51 @@ import StoryWriting from '../write_speak/StoryWriting';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
-import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles } from 'lucide-react';
+import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle } from 'lucide-react';
 
 export default function CreatorStudioZone({ data, weekNumber = 33 }) {
   const studioData = data?.creatorStudio || {};
   const [activeTab, setActiveTab] = useState('story_writer');
   const [studioXP, setStudioXP] = useState(0);
 
+  // ─── Data Contract: Story Writer → Podcast Creator (mục 9.3) ───────────────
+  // When student submits Story Writer, final_text is stored here and fed as
+  // podcast script scenes to RetellRecorder (Podcast Creator).
+  const [storySubmission, setStorySubmission] = useState(null);
+
+  const handleStoryComplete = (xpEarned = 50, finalText = '') => {
+    setStudioXP(prev => prev + xpEarned);
+    if (finalText) {
+      // Split story text into 3 scenes for Podcast Creator
+      const sentences = finalText
+        .split(/(?<=[.!?])\s+/)
+        .filter(s => s.trim().length > 10);
+
+      const third = Math.ceil(sentences.length / 3);
+      const podcastScenes = [
+        {
+          id: 1,
+          title: 'Scene 1: Your Opening',
+          en: sentences.slice(0, third).join(' ') || sentences[0] || ''
+        },
+        {
+          id: 2,
+          title: 'Scene 2: Your Action Sequence',
+          en: sentences.slice(third, third * 2).join(' ') || sentences[1] || ''
+        },
+        {
+          id: 3,
+          title: 'Scene 3: Your Conclusion',
+          en: sentences.slice(third * 2).join(' ') || sentences[2] || ''
+        }
+      ].filter(scene => scene.en.trim().length > 0);
+
+      setStorySubmission({ finalText, podcastScenes });
+    }
+  };
+
   const handleTaskComplete = (xpEarned = 50) => {
-    setTotalXP(prev => prev + xpEarned);
+    setStudioXP(prev => prev + xpEarned);
   };
 
   return (
@@ -39,7 +75,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
                 : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
             }`}
           >
-            ✏️ STORY WRITER
+            ✏️ STORY WRITER {storySubmission && <span className="ml-1 text-emerald-400">✓</span>}
           </button>
           <button
             type="button"
@@ -83,16 +119,30 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
           <StoryWriting
             storyPrompts={studioData.storyPrompts}
             weekNumber={weekNumber}
-            onComplete={() => handleTaskComplete(50)}
+            onComplete={(xp, finalText) => handleStoryComplete(xp, finalText)}
           />
         )}
 
         {activeTab === 'podcast_creator' && (
-          <RetellRecorder
-            storyText={studioData.podcastText}
-            weekNumber={weekNumber}
-            onComplete={() => handleTaskComplete(50)}
-          />
+          <div className="space-y-4">
+            {/* Data Contract Banner: shows when story has been written */}
+            {storySubmission ? (
+              <div className="flex items-center gap-2 px-3 py-2 bg-emerald-50 border border-emerald-300 rounded-xl text-xs text-emerald-900 font-bold">
+                <span className="text-emerald-600">✓</span>
+                Story script loaded from your Story Writer! Narrate your own story below.
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 px-3 py-2 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-900 font-bold">
+                <AlertCircle size={14} className="text-amber-600 shrink-0" />
+                Tip: Write your story in Story Writer first — your script will load here automatically!
+              </div>
+            )}
+            <RetellRecorder
+              scenes={storySubmission?.podcastScenes || studioData.podcastScenes || []}
+              weekNumber={weekNumber}
+              onComplete={() => handleTaskComplete(50)}
+            />
+          </div>
         )}
 
         {activeTab === 'science_report' && (
@@ -114,3 +164,4 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
     </div>
   );
 }
+

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { TestTube, Sparkles, CheckCircle2, Send, Trophy, ArrowRight } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { TestTube, Sparkles, CheckCircle2, Send, Trophy, Stamp } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onComplete }) {
@@ -9,9 +9,34 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
   const [selectedMechanism, setSelectedMechanism] = useState('Reduces friction');
   const [selectedResult, setSelectedResult] = useState('Causes slipping hazard');
 
+  // ─── Criteria Checker: real-time detection (mục 11.4) ──────────────────────
+  const criteriaCheck = useMemo(() => {
+    const lower = reportText.toLowerCase();
+    // Field 1: Cause described (uses Describe starter or cause vocab)
+    const causeDescribed = /\b(water|liquid|wet|floor|puddle|acts\s+as|cause[sd]?|because)\b/i.test(lower);
+    // Field 2: Result explained (connector presence)
+    const resultExplained = /\b(as\s+a\s+result|therefore|so|thus|friction|slipp|reduces?)\b/i.test(lower);
+    // Field 3: Safety advice given
+    const safetyGiven = /\b(walk|carefully|slowly|safe|safety|corridor|bandage|nurse|cold\s+pack|rubber\s+shoe|slip)\b/i.test(lower);
+    // Field 4: At least 2 target vocab pills used
+    const vocabUsed = [
+      'liquid lubricant', 'rubber shoes', 'reduce friction', 'wet puddle',
+      'corridor safety', 'bandage', 'cold pack'
+    ].filter(v => lower.includes(v.toLowerCase())).length;
+    const vocabMet = vocabUsed >= 1; // At least 1 explicit pill term
+
+    // Lab Notebook stamps (which sentence types detected)
+    const hasDescribe = causeDescribed;
+    const hasExplain = resultExplained;
+    const hasAdvise = safetyGiven;
+
+    const canSubmit = causeDescribed && resultExplained && safetyGiven;
+    return { causeDescribed, resultExplained, safetyGiven, vocabMet, vocabUsed, hasDescribe, hasExplain, hasAdvise, canSubmit };
+  }, [reportText]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!reportText.trim()) return;
+    if (!reportText.trim() || !criteriaCheck.canSubmit) return;
     setIsSubmitted(true);
     fireCelebrationConfetti('ScienceReport_Complete');
     if (onComplete) onComplete(50);
@@ -137,6 +162,44 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
         </div>
       </div>
 
+      {/* Criteria Checker Panel (real-time, mục 11.4) */}
+      <div className="p-3 bg-white rounded-2xl border border-slate-200 space-y-2">
+        <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider flex items-center gap-1.5">
+          🗒️ Lab Notebook Criteria:
+        </span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          {[
+            { label: 'Cause described', met: criteriaCheck.causeDescribed, required: true },
+            { label: 'Result explained', met: criteriaCheck.resultExplained, required: true },
+            { label: 'Safety advice', met: criteriaCheck.safetyGiven, required: true },
+            { label: 'Vocab used', met: criteriaCheck.vocabMet, required: false }
+          ].map(({ label, met, required }) => (
+            <div key={label} className={`px-2.5 py-1.5 rounded-xl border text-[10px] font-black text-center transition ${
+              met
+                ? 'bg-emerald-100 border-emerald-300 text-emerald-900'
+                : required
+                  ? 'bg-slate-100 border-slate-200 text-slate-500'
+                  : 'bg-amber-50 border-amber-200 text-amber-700'
+            }`}>
+              {met ? '✓' : '○'} {label}{!required ? ' ⭐' : ''}
+            </div>
+          ))}
+        </div>
+        {/* Lab Notebook stamps real-time */}
+        <div className="flex flex-wrap gap-1.5 pt-1">
+          {criteriaCheck.hasDescribe && <span className="px-2 py-0.5 bg-emerald-100 border border-emerald-300 rounded-md text-[10px] font-black text-emerald-900 animate-in fade-in">🔬 Describe ✓</span>}
+          {criteriaCheck.hasExplain && <span className="px-2 py-0.5 bg-blue-100 border border-blue-300 rounded-md text-[10px] font-black text-blue-900 animate-in fade-in">➡️ Explain ✓</span>}
+          {criteriaCheck.hasAdvise && <span className="px-2 py-0.5 bg-amber-100 border border-amber-300 rounded-md text-[10px] font-black text-amber-900 animate-in fade-in">✅ Advise ✓</span>}
+        </div>
+        {!criteriaCheck.canSubmit && reportText.trim().length > 5 && (
+          <p className="text-[10px] text-slate-500 font-medium">
+            {!criteriaCheck.causeDescribed ? 'Add a Cause sentence (e.g. "Water acts as...")' :
+             !criteriaCheck.resultExplained ? 'Add a Result sentence (e.g. "As a result, friction...")' :
+             'Add a Safety advice sentence (e.g. "Therefore, walking carefully...")'}
+          </p>
+        )}
+      </div>
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <textarea
           rows={5}
@@ -148,10 +211,13 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
 
         <button
           type="submit"
-          disabled={!reportText.trim()}
+          disabled={!reportText.trim() || !criteriaCheck.canSubmit}
           className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-2 transition"
         >
           <Send size={16} /> Submit Lab Report (+50 XP)
+          {!criteriaCheck.canSubmit && reportText.trim().length > 0 && (
+            <span className="ml-1 text-emerald-200 font-normal">— complete all 3 criteria first</span>
+          )}
         </button>
       </form>
 

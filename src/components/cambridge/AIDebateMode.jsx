@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { MessageSquare, Mic, MicOff, Volume2, Sparkles, CheckCircle2, AlertCircle, RefreshCw, Trophy, Send, HelpCircle, Lightbulb } from 'lucide-react';
+import React, { useState, useRef, useMemo } from 'react';
+import { MessageSquare, Mic, MicOff, Volume2, Sparkles, CheckCircle2, AlertCircle, RefreshCw, Trophy, Send, HelpCircle, Lightbulb, Award } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
@@ -217,6 +217,25 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
     "For example, walking carefully..."
   ]);
 
+  // ─── Argument Meter: Real-time C.R.E detection ────────────────────────────
+  const argumentMeter = useMemo(() => {
+    const lower = userSpeechText.toLowerCase();
+    const hasClaim = /\b(i\s+disagree|i\s+understand|i\s+think|i\s+believe|my\s+opinion|in\s+my\s+opinion|i\s+have\s+a\s+different)\b/i.test(lower);
+    const hasReason = /\b(because|so\s+that|since|due\s+to|as\s+a\s+result|therefore|however|on\s+the\s+other\s+hand)\b/i.test(lower);
+    const hasEvidence = /\b(slip|slippery|wet\s+floor|dangerous|accident|rubber|nurse|bandage|safe|safety|friction|hurt|fall)\b/i.test(lower);
+    // "Good Listener" badge: starts with acknowledgement of Nova's point
+    const isGoodListener = /^(i\s+understand|that[''']?s\s+true|i\s+see\s+your|good\s+point)/i.test(lower.trim());
+    return { hasClaim, hasReason, hasEvidence, isGoodListener };
+  }, [userSpeechText]);
+
+  // Mode A argument meter (Idea + Reason only)
+  const modeAMeter = useMemo(() => {
+    const lower = userSpeechText.toLowerCase();
+    const hasIdea = userSpeechText.trim().length > 5;
+    const hasReason = /\b(because|so|to|since|safer|better|help)\b/i.test(lower);
+    return { hasIdea, hasReason };
+  }, [userSpeechText]);
+
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-purple-200 shadow-md font-sans text-slate-900 space-y-6">
       <CompletionModal
@@ -358,7 +377,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
                 🟠 Safety Words:
               </span>
               <div className="flex flex-wrap gap-1">
-                {["dangerous", "slip and fall", "keep safe", "corridor rules"].map((vocab, vIdx) => (
+                {['dangerous', 'slip and fall', 'keep safe', 'corridor rules'].map((vocab, vIdx) => (
                   <button
                     key={vIdx}
                     type="button"
@@ -371,6 +390,62 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
               </div>
             </div>
           </div>
+
+          {/* Mode B: 🔵 Connector Pill Group */}
+          {!isModeA && (
+            <div className="pt-2 border-t border-purple-200/60">
+              <span className="text-[10px] font-black uppercase text-blue-800 tracking-wider">🔵 Connectors (Mode B):</span>
+              <div className="flex flex-wrap gap-1 mt-1">
+                {["however", "on the other hand", "therefore", "as a result"].map((word, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setUserSpeechText(prev => prev ? `${prev} ${word}` : word)}
+                    className="px-2 py-0.5 bg-blue-100 hover:bg-blue-200 text-blue-900 border border-blue-300 rounded-md text-xs font-bold transition active:scale-95"
+                  >
+                    + {word}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+
+        {/* ── Argument Meter (Real-time C.R.E tracker) ── */}
+        <div className="p-3 bg-white rounded-2xl border border-slate-200 space-y-1.5">
+          <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider">
+            {isModeA ? '📊 Idea Tracker:' : '📊 Argument Meter (C.R.E):'}
+          </span>
+          {isModeA ? (
+            <div className="grid grid-cols-2 gap-2">
+              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                modeAMeter.hasIdea ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+              }`}>💡 Idea {modeAMeter.hasIdea ? '✓' : '○'}</div>
+              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                modeAMeter.hasReason ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+              }`}>🔗 Reason {modeAMeter.hasReason ? '✓' : '○'}</div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-2">
+              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                argumentMeter.hasClaim ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+              }`}>🎯 Claim {argumentMeter.hasClaim ? '✓' : '○'}</div>
+              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                argumentMeter.hasReason ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+              }`}>🔗 Reason {argumentMeter.hasReason ? '✓' : '○'}</div>
+              <div className={`px-2.5 py-1.5 rounded-xl text-[10px] font-black border text-center ${
+                argumentMeter.hasEvidence ? 'bg-emerald-100 border-emerald-300 text-emerald-900' : 'bg-slate-100 border-slate-200 text-slate-500'
+              }`}>🔬 Evidence {argumentMeter.hasEvidence ? '✓' : '○'}</div>
+            </div>
+          )}
+          {/* Good Listener Badge (Mode B only) */}
+          {!isModeA && argumentMeter.isGoodListener && (
+            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-900 font-black animate-in fade-in">
+              <Award size={13} className="text-amber-600" />
+              🏅 "Good Listener" Badge — You acknowledged Nova's point first!
+            </div>
+          )}
         </div>
 
         <div className="space-y-3">

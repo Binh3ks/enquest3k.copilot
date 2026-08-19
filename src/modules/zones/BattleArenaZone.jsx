@@ -5,11 +5,19 @@ import SoundSniper from '../../components/zones/SoundSniper';
 import BarModelQuest from '../hubs/station2/LearnMode/BarModelQuest';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
 import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-react';
+import { useUserStore } from '../../stores/useUserStore';
 
 export default function BattleArenaZone({ data, weekNumber = 33 }) {
   const arenaData = data?.battleArena || {};
-  const [activeGame, setActiveGame] = useState('word_blitz'); // 'word_blitz' | 'sentence_smash' | 'sound_sniper' | 'math_quest' | 'science_lab'
+  const [activeGame, setActiveGame] = useState('word_blitz');
   const [totalXP, setTotalXP] = useState(0);
+
+  // Class Co-op Meter: use global userXP as proxy for session XP earned
+  const globalXP = useUserStore((state) => state.userXP || 0);
+  const addGlobalXP = useUserStore((state) => state.addXP);
+  // Co-op goal: 1000 XP total class XP (simplified: globalXP % 1000)
+  const coopContribution = Math.min(globalXP % 1000, 1000);
+  const coopPercent = Math.round((coopContribution / 1000) * 100);
 
   const flashArenaData = arenaData.vocabSets || null;
   const grammarDrills = arenaData.grammarDrills || null;
@@ -19,6 +27,7 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
 
   const handleGameComplete = (earnedXP = 30) => {
     setTotalXP(prev => prev + earnedXP);
+    if (addGlobalXP) addGlobalXP(earnedXP); // push to global store → updates Co-op Meter
   };
 
   return (
@@ -34,16 +43,19 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
         </div>
       </div>
 
-      {/* Class Co-op Progress Meter (Collaborative Progress - EPIC-2) */}
+      {/* Class Co-op Progress Meter — EPIC-2 (gắn real XP từ useUserStore) */}
       <div className="p-3 bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 text-white rounded-2xl border border-purple-500/40 shadow-md space-y-1.5 text-xs font-sans">
         <div className="flex items-center justify-between font-black">
           <span className="text-amber-300 flex items-center gap-1.5">
-            🤝 CLASS CO-OP PROGRESS: 820 / 1000 CLASS XP
+            🤝 CLASS CO-OP PROGRESS: {coopContribution} / 1000 XP
           </span>
-          <span className="text-purple-200">82% Completed</span>
+          <span className="text-purple-200">{coopPercent}% Completed</span>
         </div>
         <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-purple-400/40">
-          <div className="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full transition-all duration-500" style={{ width: '82%' }} />
+          <div
+            className="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full transition-all duration-700"
+            style={{ width: `${Math.max(2, coopPercent)}%` }}
+          />
         </div>
         <p className="text-[11px] text-purple-200 font-medium italic text-right">
           ✨ Every match contributes to unlocking Class Champion Accessories for everyone!

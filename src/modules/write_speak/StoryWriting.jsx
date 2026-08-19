@@ -32,7 +32,7 @@ const DEFAULT_W33_PICTURE_MODE = {
   }
 };
 
-const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, onReportProgress, onGoToSpeak, weekNumber }) => {
+const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, onReportProgress, onGoToSpeak, onComplete, weekNumber }) => {
   const { weekId } = useParams();
   const currentWeek = parseInt(weekId) || weekNumber || 33;
   const prompts = content?.story_prompts || storyPrompts || { picture_mode: DEFAULT_W33_PICTURE_MODE };
@@ -42,12 +42,18 @@ const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, o
   // Saved progress lives under stationId 'story_writing'
   const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'story_writing');
 
+  // Bridge: onComplete(xp, finalText) funnels into onReportProgress(percent, text)
+  const handleProgress = (percent, text = '') => {
+    if (onReportProgress) onReportProgress(percent, text);
+    if (onComplete && percent >= 100) onComplete(50, text);
+  };
+
   // ── Topic Mode (W36+) ─────────────────────────────────────
   if (topicMode && !pictureMode) {
-    return <TopicMode topicMode={topicMode} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={onReportProgress} onGoToSpeak={onGoToSpeak} />;
+    return <TopicMode topicMode={topicMode} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={handleProgress} onGoToSpeak={onGoToSpeak} />;
   }
 
-  return <PictureMode pictureMode={pictureMode} content={content || { story_prompts: prompts }} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={onReportProgress} onGoToSpeak={onGoToSpeak} themeColor={themeColor} />;
+  return <PictureMode pictureMode={pictureMode} content={content || { story_prompts: prompts }} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={handleProgress} onGoToSpeak={onGoToSpeak} themeColor={themeColor} />;
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -147,6 +153,8 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000);
     }
+    // Data contract: pass finalText up to parent (→ CreatorStudioZone → Podcast Creator)
+    if (onReportProgress) onReportProgress(100, text);
   };
 
   // Extract word bank groups (4 groups)
