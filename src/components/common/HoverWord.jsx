@@ -5,17 +5,34 @@ import dictionaryData from '../../data/dictionary.json';
 import { WEEK_33_MASTER_DICTIONARY } from '../../data/weeks/week_33/vocab_dictionary_master';
 import VoiceService from '../../services/voiceService';
 
-// ─── Free Dictionary API Cache (module-level, survives re-renders) ────────────
+// ─── Free Dictionary API + Vietnamese Translation (MyMemory) ─────────────────
 const apiCache = new Map(); // word → entry | null
+
+async function fetchViTranslation(word) {
+  try {
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(word)}&langpair=en|vi`;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const vi = data?.responseData?.translatedText || '';
+    // Reject bad/unchanged translations
+    if (!vi || vi === word || /PLEASE SELECT/i.test(vi) || /\d{3}/.test(vi)) return null;
+    return vi;
+  } catch { return null; }
+}
 
 async function fetchFreeDictionary(word) {
   const key = word.toLowerCase().trim();
   if (apiCache.has(key)) return apiCache.get(key);
 
   try {
-    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(key)}`);
-    if (!res.ok) { apiCache.set(key, null); return null; }
-    const data = await res.json();
+    const [dictRes, viMeaning] = await Promise.all([
+      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(key)}`),
+      fetchViTranslation(key),
+    ]);
+
+    if (!dictRes.ok) { apiCache.set(key, null); return null; }
+    const data = await dictRes.json();
     if (!Array.isArray(data) || !data[0]) { apiCache.set(key, null); return null; }
 
     const entry = data[0];
@@ -29,6 +46,7 @@ async function fetchFreeDictionary(word) {
       type: meaning?.partOfSpeech || 'word',
       pronounce: phonetic,
       meaning: def?.definition || '',
+      meaning_vi: viMeaning || '',   // Vietnamese translation
       example: def?.example || '',
       audioText: entry.word,
       _source: 'api',
@@ -458,20 +476,19 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
                 </div>
               )}
 
-              {/* API entry: Example sentence is PRIMARY, definition is secondary */}
+              {/* API entry: VI meaning (primary) → EN example → EN definition */}
               {!apiLoading && !hasLocalEntry && apiEntry && (
                 <>
-                  {apiEntry.example ? (
+                  {/* Vietnamese meaning — primary bold card */}
+                  {apiEntry.meaning_vi ? (
                     <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-1.5">
                       {apiEntry.type && (
                         <span className="text-[9px] font-black uppercase text-indigo-500 block mb-1">{apiEntry.type}</span>
                       )}
-                      <p className="text-xs font-bold text-indigo-950 leading-snug italic">
-                        &ldquo;{apiEntry.example}&rdquo;
-                      </p>
+                      <p className="text-xs font-black text-indigo-950 leading-snug">{apiEntry.meaning_vi}</p>
                     </div>
                   ) : apiEntry.meaning ? (
-                    /* No example available — fall back to showing definition */
+                    /* No VI translation — show EN definition as fallback primary */
                     <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-1.5">
                       {apiEntry.type && (
                         <span className="text-[9px] font-black uppercase text-indigo-500 block mb-1">{apiEntry.type}</span>
@@ -479,9 +496,15 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
                       <p className="text-xs font-black text-indigo-950 leading-snug">{apiEntry.meaning}</p>
                     </div>
                   ) : null}
-                  {/* Definition shown small below example */}
-                  {apiEntry.example && apiEntry.meaning && (
-                    <p className="text-[10px] text-slate-400 leading-snug px-0.5 mb-1">{apiEntry.meaning}</p>
+                  {/* English example sentence */}
+                  {apiEntry.example && (
+                    <p className="text-xs text-slate-600 italic leading-snug px-0.5 mb-1">
+                      &ldquo;{apiEntry.example}&rdquo;
+                    </p>
+                  )}
+                  {/* English definition — small secondary (only shown when we have VI) */}
+                  {apiEntry.meaning_vi && apiEntry.meaning && (
+                    <p className="text-[10px] text-slate-400 leading-snug px-0.5">{apiEntry.meaning}</p>
                   )}
                 </>
               )}
