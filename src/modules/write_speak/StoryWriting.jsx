@@ -42,6 +42,9 @@ const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, o
   // Saved progress lives under stationId 'story_writing'
   const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'story_writing');
 
+  // Collapsible Model Text state (audio-first to prevent direct text copying)
+  const [showModelText, setShowModelText] = useState(false);
+
   // Bridge: onComplete(xp, finalText) funnels into onReportProgress(percent, text)
   const handleProgress = (percent, text = '') => {
     if (onReportProgress) onReportProgress(percent, text);
@@ -259,21 +262,39 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       {(!isExamMode || timerStarted) && (
         <div className="flex-shrink-0 px-3 py-2.5 bg-indigo-50/70 border-b border-indigo-200 space-y-2.5 shadow-sm">
           {/* Model Example Header */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap gap-1">
             <span className="text-[10px] font-black uppercase text-indigo-900 tracking-wider flex items-center gap-1">
-              💡 Model Story Example (Tap to Listen):
+              💡 Model Story Example (Audio-First):
             </span>
-            <button
-              type="button"
-              onClick={() => speakText("Jake was walking carefully down the school corridor after science class. Suddenly, a boy slipped on the wet floor and hurt his knee. The school nurse arrived quickly with a clean bandage to help.")}
-              className="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-[10px] font-black flex items-center gap-1 transition"
-            >
-              🔊 Listen Model
-            </button>
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => speakText("Jake was walking carefully down the school corridor after science class. Suddenly, a boy slipped on the wet floor and hurt his knee. The school nurse arrived quickly with a clean bandage to help.")}
+                className="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-[10px] font-black flex items-center gap-1 transition shadow-xs"
+              >
+                🔊 Listen Model Audio
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowModelText(!showModelText)}
+                className="px-2.5 py-1 bg-white hover:bg-indigo-100 text-indigo-800 border border-indigo-300 rounded-md text-[10px] font-bold transition shadow-xs"
+              >
+                {showModelText ? '🙈 Hide Text' : '👁️ Reveal Text Hint'}
+              </button>
+            </div>
           </div>
-          <p className="text-xs text-indigo-950 font-medium italic leading-relaxed bg-white/80 p-2.5 rounded-xl border border-indigo-100">
-            &ldquo;Jake <span className="text-emerald-700 font-bold underline">was walking carefully</span> <span className="text-blue-700 font-bold underline">down the school corridor</span>. Suddenly, a boy <span className="text-amber-700 font-bold underline">slipped on the wet floor</span>. The school nurse <span className="text-purple-700 font-bold underline">arrived with a clean bandage</span> to help.&rdquo;
-          </p>
+
+          {/* Collapsible Model Text */}
+          {showModelText ? (
+            <p className="text-xs text-indigo-950 font-medium italic leading-relaxed bg-white/90 p-2.5 rounded-xl border border-indigo-200 animate-in fade-in">
+              &ldquo;Jake <span className="text-emerald-700 font-bold underline">was walking carefully</span> <span className="text-blue-700 font-bold underline">down the school corridor</span>. Suddenly, a boy <span className="text-amber-700 font-bold underline">slipped on the wet floor</span>. The school nurse <span className="text-purple-700 font-bold underline">arrived with a clean bandage</span> to help.&rdquo;
+            </p>
+          ) : (
+            <p className="text-[11px] text-indigo-700 font-medium italic bg-white/50 px-2.5 py-1.5 rounded-lg border border-indigo-100 flex items-center justify-between">
+              <span>🎧 Listen to the model audio above, then write using your own words below!</span>
+              <span className="text-[10px] font-bold text-indigo-500">(Text hidden to prevent copy-pasting)</span>
+            </p>
+          )}
 
           {/* 4 Multi-Word Collocation & Chunk Groups (Clickable to Insert) */}
           <div className="space-y-1.5 pt-1 border-t border-indigo-200/60">

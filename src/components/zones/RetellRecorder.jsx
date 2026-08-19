@@ -125,13 +125,47 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
         {/* Section 10.3: Radio Host Discourse Markers & Complete Chunks */}
         <div className="pt-3 border-t border-purple-200/80 space-y-2.5 text-xs">
-          <div className="flex items-center justify-between flex-wrap gap-1">
-            <span className="font-black text-purple-900 uppercase text-[10px]">🎙️ Radio Host Starters:</span>
+          {/* Radio Host Starters */}
+          <div className="space-y-1">
+            <span className="font-black text-purple-900 uppercase text-[10px] block">🎙️ Radio Host Starters (Click to listen):</span>
             <div className="flex flex-wrap gap-1.5">
-              {["Welcome back to Corridor Watch!", "Believe it or not...", "Stay tuned to hear what happened..."].map((starter, sIdx) => (
-                <span key={sIdx} className="px-2.5 py-1 bg-white border border-purple-300 text-purple-950 font-bold rounded-lg text-[11px] shadow-xs">
-                  + {starter}
-                </span>
+              {[
+                "Welcome back to Corridor Watch!",
+                "Believe it or not...",
+                "Stay tuned to hear what happened...",
+                "Breaking news from the hallway!"
+              ].map((starter, sIdx) => (
+                <button
+                  key={sIdx}
+                  type="button"
+                  onClick={() => speakText(starter)}
+                  className="px-2.5 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-950 font-bold rounded-lg text-[11px] shadow-xs transition active:scale-95 flex items-center gap-1"
+                >
+                  <Volume2 size={11} className="text-purple-600" /> {starter}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Dramatic Expressive Markers */}
+          <div className="space-y-1">
+            <span className="font-black text-indigo-900 uppercase text-[10px] block">⏸️ Dramatic Expressive Markers (Add while speaking):</span>
+            <div className="flex flex-wrap gap-1.5">
+              {[
+                "SUDDENLY...",
+                "[Pause 2 seconds]",
+                "Wait for it...",
+                "Right then and there!",
+                "To sum it up..."
+              ].map((marker, mIdx) => (
+                <button
+                  key={mIdx}
+                  type="button"
+                  onClick={() => speakText(marker.replace(/\[|\]/g, ''))}
+                  className="px-2 py-0.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 font-black rounded-md text-[10px] transition active:scale-95"
+                >
+                  ⚡ {marker}
+                </button>
               ))}
             </div>
           </div>
