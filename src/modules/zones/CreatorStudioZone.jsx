@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import StoryWriting from '../write_speak/StoryWriting';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
@@ -8,15 +9,28 @@ import { useStationProgress } from '../../hooks/useStationProgress';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function CreatorStudioZone({ data, weekNumber = 33 }) {
+  const [searchParams] = useSearchParams();
   const studioData = data?.creatorStudio || {};
   const [activeTab, setActiveTab] = useState('story_writer');
   const [studioXP, setStudioXP] = useState(0);
 
-  // Quest completion: mark current tab's quest when switching away
-  const handleTabSwitch = (newTab) => {
+  // Sync tab from URL ?station=...
+  useEffect(() => {
+    const station = searchParams.get('station');
+    if (station === 'broadcast') setActiveTab('podcast_creator');
+    else if (station === 'writing') setActiveTab('story_writer');
+    else if (station === 'dictation') setActiveTab('science_report');
+  }, [searchParams]);
+
+  // Instant Quest completion when activeTab changes
+  useEffect(() => {
     const TAB_QUEST_MAP = { story_writer: 'story_writer', podcast_creator: 'broadcast_studio', science_report: 'dictation', ai_debate: 'dictation' };
     const questId = TAB_QUEST_MAP[activeTab];
     if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
+  }, [activeTab, weekNumber]);
+
+  // Quest completion: mark current tab's quest when switching away
+  const handleTabSwitch = (newTab) => {
     setActiveTab(newTab);
   };
 

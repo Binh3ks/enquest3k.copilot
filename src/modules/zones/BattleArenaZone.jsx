@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import FlashArena from '../hubs/station2/LearnMode/FlashArena';
 import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilderBattle';
 import SoundSniper from '../../components/zones/SoundSniper';
@@ -9,9 +10,26 @@ import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function BattleArenaZone({ data, weekNumber = 33 }) {
+  const [searchParams] = useSearchParams();
   const arenaData = data?.battleArena || {};
   const [activeGame, setActiveGame] = useState('word_blitz');
   const [totalXP, setTotalXP] = useState(0);
+
+  // Sync activeGame from URL ?station=...
+  useEffect(() => {
+    const station = searchParams.get('station');
+    if (station === 'word_blitz') setActiveGame('word_blitz');
+    else if (station === 'sentence_smash') setActiveGame('sentence_smash');
+    else if (station === 'math_quest') setActiveGame('bar_model');
+    else if (station === 'word_power') setActiveGame('word_blitz');
+  }, [searchParams]);
+
+  // Mark quest complete when game is selected/opened
+  useEffect(() => {
+    const GAME_QUEST_MAP = { word_blitz: 'word_blitz', sentence_smash: 'sentence_smash', sound_sniper: 'word_blitz', bar_model: 'math_quest', science_lab: 'sentence_smash' };
+    const questId = GAME_QUEST_MAP[activeGame];
+    if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
+  }, [activeGame, weekNumber]);
 
   // Class Co-op Meter: use global userXP as proxy for session XP earned
   const globalXP = useUserStore((state) => state.userXP || 0);

@@ -45,9 +45,15 @@ export default function TodayQuestBar({ weekId }) {
     }
   };
 
-  // Zone-to-hub mapping for navigation links
+  // Zone-to-hub mapping for navigation links with gear/station query parameters
   const getQuestLink = (quest) => {
-    return `/week/${weekId}/hub/${quest.zone}`;
+    let link = `/week/${weekId}/hub/${quest.zone}`;
+    if (quest.gearIndex !== null && quest.gearIndex !== undefined) {
+      link += `?gear=${quest.gearIndex + 1}`;
+    } else if (quest.station) {
+      link += `?station=${quest.station}`;
+    }
+    return link;
   };
 
   // Collapsed: compact 1-line summary

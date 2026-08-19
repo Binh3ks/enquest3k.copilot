@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
 import ExplorerPassport from '../../components/cambridge/ExplorerPassport';
@@ -10,9 +11,27 @@ import { getNovaStage } from '../../services/companionEngine';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function StoryWorldZone({ data, weekNumber = 33 }) {
+  const [searchParams] = useSearchParams();
   const storyData = data?.storyWorld || {};
   const [currentGear, setCurrentGear] = useState(1);
   const [completedGears, setCompletedGears] = useState([1]);
+
+  // Sync gear from URL query param ?gear=N
+  useEffect(() => {
+    const gearParam = parseInt(searchParams.get('gear'), 10);
+    if (gearParam >= 1 && gearParam <= 4) {
+      setCurrentGear(gearParam);
+    }
+  }, [searchParams]);
+
+  // Instant Quest completion tracking whenever currentGear changes
+  useEffect(() => {
+    const GEAR_QUEST_MAP = { 1: 'gear1_webtoon', 2: 'gear2_karaoke', 3: 'gear3_retell', 4: 'gear4_clil' };
+    const questId = GEAR_QUEST_MAP[currentGear];
+    if (questId) {
+      useDailyQuestStore.getState().completeQuest(weekNumber, questId);
+    }
+  }, [currentGear, weekNumber]);
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
   const [highlightMode, setHighlightMode] = useState('vocab');
   const [selectedHotspot, setSelectedHotspot] = useState(null);
