@@ -5,11 +5,20 @@ import ScienceReportCreator from '../../components/cambridge/ScienceReportCreato
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
 import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle } from 'lucide-react';
 import { useStationProgress } from '../../hooks/useStationProgress';
+import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function CreatorStudioZone({ data, weekNumber = 33 }) {
   const studioData = data?.creatorStudio || {};
   const [activeTab, setActiveTab] = useState('story_writer');
   const [studioXP, setStudioXP] = useState(0);
+
+  // Quest completion: mark current tab's quest when switching away
+  const handleTabSwitch = (newTab) => {
+    const TAB_QUEST_MAP = { story_writer: 'story_writer', podcast_creator: 'broadcast_studio', science_report: 'dictation', ai_debate: 'dictation' };
+    const questId = TAB_QUEST_MAP[activeTab];
+    if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
+    setActiveTab(newTab);
+  };
 
   // Hydrate story submission from persistent station progress (story_writing)
   const { savedData: storySavedData } = useStationProgress(weekNumber, 'story_writing');
@@ -155,7 +164,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full">
           <button
             type="button"
-            onClick={() => setActiveTab('story_writer')}
+            onClick={() => handleTabSwitch('story_writer')}
             className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
               activeTab === 'story_writer'
                 ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
@@ -166,7 +175,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('podcast_creator')}
+            onClick={() => handleTabSwitch('podcast_creator')}
             className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
               activeTab === 'podcast_creator'
                 ? 'bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
@@ -177,7 +186,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('science_report')}
+            onClick={() => handleTabSwitch('science_report')}
             className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
               activeTab === 'science_report'
                 ? 'bg-emerald-600 text-white shadow-md ring-2 ring-emerald-300 scale-[1.02]'
@@ -188,7 +197,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('ai_debate')}
+            onClick={() => handleTabSwitch('ai_debate')}
             className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
               activeTab === 'ai_debate'
                 ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300 scale-[1.02]'
@@ -208,7 +217,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
             weekNumber={weekNumber}
             onComplete={(xp, finalText, extraData) => handleStoryComplete(xp, finalText, extraData)}
             onReportProgress={(percent, finalText, extraData) => handleStoryComplete(0, finalText, extraData)}
-            onGoToSpeak={() => setActiveTab('podcast_creator')}
+            onGoToSpeak={() => handleTabSwitch('podcast_creator')}
           />
         )}
 

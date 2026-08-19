@@ -15,6 +15,7 @@ import InformationExchangeP2 from '../../components/cambridge/InformationExchang
 import ChoiceGrid from '../../components/common/ChoiceGrid';
 import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Sparkles } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
+import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function BossBattleZone({ data, weekNumber = 33 }) {
   const userShields = useUserStore((state) => state.userShields || 0);
@@ -85,10 +86,17 @@ export default function BossBattleZone({ data, weekNumber = 33 }) {
       setEarnedShields(prev => [...prev, taskId]);
     }
 
+    // Track quest: mark boss_listening after first task, shadowing after all tasks
+    if (activeTaskIndex === 0) {
+      useDailyQuestStore.getState().completeQuest(weekNumber, 'boss_listening');
+    }
+
     if (activeTaskIndex + 1 < currentTasks.length) {
       setActiveTaskIndex(prev => prev + 1);
     } else {
       setExamFinished(true);
+      useDailyQuestStore.getState().completeQuest(weekNumber, 'shadowing');
+      useDailyQuestStore.getState().completeQuest(weekNumber, 'weekly_review');
     }
   };
 

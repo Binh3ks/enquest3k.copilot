@@ -56,6 +56,7 @@ import BattleArenaZone from './modules/zones/BattleArenaZone';
 import CreatorStudioZone from './modules/zones/CreatorStudioZone';
 import BossBattleZone from './modules/zones/BossBattleZone';
 import { mapDataToZones } from './config/zoneDataMapper';
+import TodayQuestBar from './components/common/TodayQuestBar';
 import SubscriptionModal from './components/subscription/SubscriptionModal';
 
 // Lazy-loaded heavy pages
@@ -845,6 +846,11 @@ const MainLayout = () => {
                 </div>
               );
             })()}
+
+            {/* Today's Quest Bar — Daily pacing for W33+ */}
+            {weekId >= 33 && (
+              <TodayQuestBar weekId={weekId} />
+            )}
 
             {/* Station nav — 4 Experiential Zone Cards for W33+ (Story World, Battle Arena, Creator Studio, Boss Battle) */}
             {weekId >= 33 ? (

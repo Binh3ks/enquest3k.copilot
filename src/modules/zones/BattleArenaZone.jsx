@@ -6,6 +6,7 @@ import BarModelQuest from '../hubs/station2/LearnMode/BarModelQuest';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
 import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
+import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function BattleArenaZone({ data, weekNumber = 33 }) {
   const arenaData = data?.battleArena || {};
@@ -27,7 +28,11 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
 
   const handleGameComplete = (earnedXP = 30) => {
     setTotalXP(prev => prev + earnedXP);
-    if (addGlobalXP) addGlobalXP(earnedXP); // push to global store → updates Co-op Meter
+    if (addGlobalXP) addGlobalXP(earnedXP);
+    // Track quest completion for Today's Quest
+    const GAME_QUEST_MAP = { word_blitz: 'word_blitz', sentence_smash: 'sentence_smash', sound_sniper: 'word_blitz', bar_model: 'math_quest', science_lab: 'sentence_smash' };
+    const questId = GAME_QUEST_MAP[activeGame];
+    if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
   };
 
   return (

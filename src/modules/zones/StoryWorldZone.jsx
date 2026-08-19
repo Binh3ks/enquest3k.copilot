@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
 import ExplorerPassport from '../../components/cambridge/ExplorerPassport';
@@ -7,6 +7,7 @@ import { Film, Headphones, Mic, Globe, Volume2, Sparkles, CheckCircle2, ChevronR
 import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { getNovaStage } from '../../services/companionEngine';
+import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function StoryWorldZone({ data, weekNumber = 33 }) {
   const storyData = data?.storyWorld || {};
@@ -69,7 +70,20 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
     if (!completedGears.includes(targetGear)) {
       setCompletedGears(prev => [...prev, targetGear]);
     }
+    // Track quest completion for Today's Quest
+    const GEAR_QUEST_MAP = { 1: 'gear1_webtoon', 2: 'gear2_karaoke', 3: 'gear3_retell', 4: 'gear4_clil' };
+    const completedGearNum = targetGear - 1; // moving TO targetGear means previous is done
+    if (completedGearNum >= 1 && GEAR_QUEST_MAP[completedGearNum]) {
+      useDailyQuestStore.getState().completeQuest(weekNumber, GEAR_QUEST_MAP[completedGearNum]);
+    }
   };
+
+  // Auto-complete Gear 4 (CLIL) quest when user enters it (no "next" button after)
+  useEffect(() => {
+    if (currentGear === 4) {
+      useDailyQuestStore.getState().completeQuest(weekNumber, 'gear4_clil');
+    }
+  }, [currentGear, weekNumber]);
 
   // Word-by-Word Karaoke Highlighting Simulation
   const handleSpeakSentence = (sentenceText, idx) => {
