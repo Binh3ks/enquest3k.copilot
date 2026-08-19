@@ -624,82 +624,127 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
               </p>
             </div>
 
-            {/* ── Step 1.5: Study Sentences (Fading Scaffold) ── */}
+            {/* ── Study Sentences (Fading Scaffold) ── */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between flex-wrap gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShowStudy(prev => !prev)}
-                  className="text-xs font-black uppercase tracking-widest text-indigo-800 flex items-center gap-1.5 hover:text-indigo-600 transition"
-                >
-                  📚 Study Sentences {showStudy ? '▲' : '▼'}
-                </button>
-                {showStudy && (
-                  <div className="flex items-center gap-1">
-                    {[
-                      { id: 'full',      label: '📖 Full',       active: 'bg-indigo-600 text-white',   inactive: 'bg-white text-indigo-900 border border-indigo-200 hover:bg-indigo-50' },
-                      { id: 'half',      label: '✂️ Half',       active: 'bg-amber-500 text-slate-950', inactive: 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50' },
-                      { id: 'structure', label: '⚡ Key Verbs',  active: 'bg-purple-600 text-white',   inactive: 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-50' },
-                    ].map(({ id, label, active, inactive }) => (
-                      <button
-                        key={id}
-                        type="button"
-                        onClick={() => setStudyScaffold(id)}
-                        className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition ${studyScaffold === id ? active : inactive}`}
-                      >
-                        {label}
-                      </button>
-                    ))}
-                  </div>
-                )}
+              {/* Header row */}
+              <div className="flex items-center justify-between flex-wrap gap-1.5">
+                <span className="text-xs font-black uppercase tracking-widest text-indigo-800">
+                  📚 Study Sentences
+                </span>
+                <div className="flex items-center gap-1 flex-wrap">
+                  {showStudy && (
+                    <>
+                      {[
+                        { id: 'full',    label: '📖 Full',       active: 'bg-indigo-600 text-white',   inactive: 'bg-white text-indigo-900 border border-indigo-200 hover:bg-indigo-50' },
+                        { id: 'half',    label: '✂️ Half',       active: 'bg-amber-500 text-slate-950', inactive: 'bg-white text-amber-900 border border-amber-200 hover:bg-amber-50' },
+                        { id: 'chunks',  label: '🧩 Key Chunks', active: 'bg-purple-600 text-white',   inactive: 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-50' },
+                      ].map(({ id, label, active, inactive }) => (
+                        <button
+                          key={id}
+                          type="button"
+                          onClick={() => setStudyScaffold(id)}
+                          className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition ${studyScaffold === id ? active : inactive}`}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setShowStudy(prev => !prev)}
+                    className="px-2.5 py-1 rounded-lg text-[11px] font-black bg-slate-100 hover:bg-slate-200 text-slate-600 transition border border-slate-200"
+                  >
+                    {showStudy ? '✕ Hide' : '📚 Show'}
+                  </button>
+                </div>
               </div>
 
               {showStudy && (
-                <div className="space-y-1.5 animate-in fade-in duration-200">
+                <div className="max-h-56 overflow-y-auto space-y-1.5 pr-1 animate-in fade-in duration-200">
                   {storySentences.map((sentence, idx) => {
                     const words = sentence.split(/\s+/);
                     const half = Math.ceil(words.length / 2);
 
-                    // Key structure: match grammar targets from week data, fallback to common past-tense verbs
-                    const grammarPatterns = grammarRegex.length > 0 ? grammarRegex : [];
-                    const fallbackVerbs = ['was', 'were', 'had', 'went', 'said', 'walked', 'ran', 'slipped',
-                      'stopped', 'called', 'arrived', 'fell', 'hurt', 'felt', 'praised', 'helped',
-                      'walking', 'running', 'helping', 'carrying', 'holding', 'looking', 'sitting'];
-                    const structureWords = words.filter(w => {
-                      const clean = w.toLowerCase().replace(/[^a-z]/g, '');
-                      const matchesGrammar = grammarPatterns.some(rx => {
-                        try { return new RegExp(rx, 'i').test(clean); } catch { return false; }
-                      });
-                      return matchesGrammar || fallbackVerbs.includes(clean);
+                    // Key Chunks: find 2 or 3 chunk positions to blank out
+                    // Progressive: W01-W20 = 2 blanks, W21+ = 3 blanks
+                    const numBlanks = weekNumber >= 21 ? 3 : 2;
+
+                    // Stop-words to skip as blank targets
+                    const stopWords = new Set(['a','an','the','to','of','in','on','at','by','for',
+                      'and','but','or','so','he','she','it','i','we','they','his','her','its',
+                      'my','our','their','that','this','was','were','is','are','not','very']);
+
+                    // Find content-word indices, skip first token (too obvious)
+                    const contentIdxs = words
+                      .map((w, i) => ({ w: w.toLowerCase().replace(/[^a-z]/g,''), i }))
+                      .filter(({ w, i }) => i > 0 && w.length > 2 && !stopWords.has(w));
+
+                    // Pick blank positions: spread across beginning/middle/end thirds
+                    const chunkSize = 2; // blank 2 consecutive words per gap
+                    const thirds = [
+                      Math.floor(contentIdxs.length * 0.15),
+                      Math.floor(contentIdxs.length * 0.5),
+                      Math.floor(contentIdxs.length * 0.82),
+                    ].slice(0, numBlanks);
+
+                    const blankStarts = new Set();
+                    thirds.forEach(ti => {
+                      if (contentIdxs[ti]) blankStarts.add(contentIdxs[ti].i);
+                    });
+
+                    // Build set of all word indices that are blanked
+                    const blankedIdxs = new Set();
+                    blankStarts.forEach(start => {
+                      for (let k = start; k < Math.min(start + chunkSize, words.length); k++) {
+                        blankedIdxs.add(k);
+                      }
                     });
 
                     return (
                       <div
                         key={idx}
-                        className="flex items-start gap-2 p-2.5 bg-indigo-50/60 border border-indigo-100 rounded-xl"
+                        className="flex items-start gap-2 px-2.5 py-2 bg-indigo-50/60 border border-indigo-100 rounded-xl"
                       >
                         <span className="w-5 h-5 rounded-full bg-indigo-200 text-indigo-900 text-[10px] font-black flex items-center justify-center shrink-0 mt-0.5">
                           {idx + 1}
                         </span>
-                        <div className="flex-1 min-w-0">
+                        <div className="flex-1 min-w-0 text-sm font-bold text-slate-800 leading-relaxed">
                           {studyScaffold === 'full' && (
-                            <p className="text-sm font-bold text-slate-800 leading-snug">{sentence}</p>
+                            <span>{sentence}</span>
                           )}
                           {studyScaffold === 'half' && (
-                            <p className="text-sm font-bold text-slate-800 leading-snug">
+                            <span>
                               {words.slice(0, half).join(' ')}{' '}
-                              <span className="text-slate-300 tracking-widest">{'_ '.repeat(words.length - half).trim()}</span>
-                            </p>
+                              <span className="text-slate-300 font-normal tracking-widest select-none">
+                                {'___ '.repeat(words.length - half).trim()}
+                              </span>
+                            </span>
                           )}
-                          {studyScaffold === 'structure' && (
-                            <p className="text-sm font-bold text-slate-800 leading-snug">
-                              {structureWords.length > 0
-                                ? structureWords.map((w, wi) => (
-                                    <span key={wi} className="inline-block px-1.5 py-0.5 bg-purple-100 border border-purple-200 text-purple-900 rounded mr-1 mb-0.5 text-[12px] font-black">{w}</span>
-                                  ))
-                                : <span className="text-slate-400 italic text-xs">Recall from memory</span>
-                              }
-                            </p>
+                          {studyScaffold === 'chunks' && (
+                            <span className="flex flex-wrap gap-x-1 gap-y-0.5 items-baseline">
+                              {words.map((word, wIdx) => {
+                                const isBlankStart = blankStarts.has(wIdx);
+                                const isBlankContinue = blankedIdxs.has(wIdx) && !isBlankStart;
+                                if (isBlankContinue) return null; // rendered as part of the blank span
+                                if (blankedIdxs.has(wIdx)) {
+                                  // Render the whole blanked chunk as one underline
+                                  const chunkWords = words
+                                    .slice(wIdx, Math.min(wIdx + chunkSize, words.length))
+                                    .filter((_, ci) => blankedIdxs.has(wIdx + ci));
+                                  const blankWidth = Math.max(48, chunkWords.join(' ').length * 7);
+                                  return (
+                                    <span
+                                      key={wIdx}
+                                      style={{ minWidth: blankWidth }}
+                                      className="inline-block border-b-2 border-purple-400 h-5 rounded-sm bg-purple-50/60 mx-0.5"
+                                      title={chunkWords.join(' ')}
+                                    />
+                                  );
+                                }
+                                return <span key={wIdx}>{word}</span>;
+                              })}
+                            </span>
                           )}
                         </div>
                         <button
