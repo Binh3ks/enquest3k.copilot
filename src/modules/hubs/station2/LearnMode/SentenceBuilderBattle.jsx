@@ -358,7 +358,7 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
               ) : (
                 <SortableContext items={targetBlocks.map((b) => b.id)} strategy={horizontalListSortingStrategy}>
                   {targetBlocks.map((block) => (
-                    <WordBlock key={block.id} block={block} onClick={() => handleBlockClick(block)} />
+                    <WordBlock key={block.id} id={block.id} word={block.word} onClick={() => handleBlockClick(block)} />
                   ))}
                 </SortableContext>
               )}
@@ -371,7 +371,7 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
               </span>
               <div className="flex flex-wrap gap-2">
                 {bankBlocks.map((block) => (
-                  <WordBlock key={block.id} block={block} onClick={() => handleBlockClick(block)} />
+                  <WordBlock key={block.id} id={block.id} word={block.word} onClick={() => handleBlockClick(block)} />
                 ))}
               </div>
             </div>
