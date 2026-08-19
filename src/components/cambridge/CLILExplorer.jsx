@@ -68,6 +68,8 @@ export default function CLILExplorer({
   const [sbIdx, setSbIdx] = useState(0);
   const [sbBuilt, setSbBuilt] = useState([]); // chosen chunks in order
   const [sbResult, setSbResult] = useState(null); // { correct: bool, msg }
+  const [sbMode, setSbMode] = useState('tap'); // 'tap' | 'type'
+  const [sbTyped, setSbTyped] = useState(''); // free-type input value
 
   const sentenceDrills = [
     {
@@ -122,8 +124,25 @@ export default function CLILExplorer({
     }
   };
 
+  const handleSbCheckTyped = () => {
+    const typed = sbTyped.toLowerCase().trim();
+    if (!typed) return;
+    // Check that at least 3 of the 4 key chunks appear (case-insensitive substring)
+    const keyChunks = sbDrill.correct.map(c => c.toLowerCase().replace(/[,]/g, '').trim());
+    const hits = keyChunks.filter(k => typed.includes(k));
+    if (hits.length >= Math.ceil(keyChunks.length * 0.75)) {
+      setSbResult({ correct: true, msg: '🎉 Excellent! Your sentence captures the key grammar structures. +20 XP' });
+      fireCelebrationConfetti('SentenceBuilder_Win');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(20);
+    } else {
+      setSbResult({ correct: false, msg: `💡 Try to include: ${keyChunks.filter(k => !typed.includes(k)).join(' • ')}` });
+    }
+  };
+
   const handleSbReset = () => {
     setSbBuilt([]);
+    setSbTyped('');
     setSbResult(null);
   };
 
@@ -290,67 +309,51 @@ export default function CLILExplorer({
       </div>
 
       {/* ========================================================================= */}
-      {/* SENTENCE BUILDER QUEST — Tap Chunks in Correct Grammar Order             */}
+      {/* SENTENCE BUILDER QUEST — Dual Mode: Tap Order OR Free Type              */}
       {/* ========================================================================= */}
       <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md space-y-4">
+        {/* Header row */}
         <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <span className="text-lg">🧩</span>
             <div>
               <h4 className="text-sm font-black text-slate-900">Sentence Builder Quest</h4>
-              <p className="text-[10px] text-slate-500">Tap chunks in the correct grammar order to build a complete sentence</p>
+              <p className="text-[10px] text-slate-500">
+                {sbMode === 'tap' ? 'Tap chunks in correct grammar order' : 'Write the sentence freely using the hint words'}
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-1.5">
-            {sentenceDrills.map((d, i) => (
-              <button key={i} type="button" onClick={() => { setSbIdx(i); setSbBuilt([]); setSbResult(null); }}
-                className={`px-2.5 py-1 rounded-lg text-[10px] font-black transition ${
-                  sbIdx === i ? 'bg-emerald-600 text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }`}>
-                #{i+1}
-              </button>
-            ))}
+          {/* Mode toggle */}
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+            <button type="button" onClick={() => { setSbMode('tap'); setSbResult(null); }}
+              className={`px-3 py-1 rounded-lg text-[10px] font-black transition ${
+                sbMode === 'tap' ? 'bg-purple-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              }`}>
+              🧩 Tap Mode
+            </button>
+            <button type="button" onClick={() => { setSbMode('type'); setSbResult(null); }}
+              className={`px-3 py-1 rounded-lg text-[10px] font-black transition ${
+                sbMode === 'type' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+              }`}>
+              ✍️ Type Mode
+            </button>
           </div>
         </div>
 
-        {/* Drill Label */}
-        <div className="px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-xl">
-          <span className="text-[10px] font-black uppercase text-emerald-800 tracking-wider">Goal: </span>
-          <span className="text-xs font-bold text-emerald-900">{sbDrill.label}</span>
-        </div>
-
-        {/* Built sentence display */}
-        <div className="min-h-[52px] p-3 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2 items-start">
-          {sbBuilt.length === 0 ? (
-            <span className="text-xs text-slate-400 italic">Your sentence will appear here as you tap chunks below...</span>
-          ) : (
-            sbBuilt.map((chunk, i) => (
-              <button key={i} type="button" onClick={() => handleSbRemove(i)}
-                className="px-2.5 py-1 bg-purple-100 hover:bg-rose-100 text-purple-900 hover:text-rose-700 border border-purple-300 hover:border-rose-300 rounded-lg text-xs font-bold transition active:scale-95" title="Click to remove">
-                {chunk} ×
-              </button>
-            ))
-          )}
-        </div>
-
-        {/* Remaining scrambled chips */}
-        <div className="space-y-1.5">
-          <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Tap chunks to build the sentence:</span>
-          <div className="flex flex-wrap gap-2">
-            {sbRemaining.map((chunk, i) => (
-              <button key={i} type="button" onClick={() => handleSbSelect(chunk)}
-                className="px-3 py-1.5 bg-white hover:bg-emerald-50 text-slate-800 border border-slate-300 hover:border-emerald-400 rounded-xl text-xs font-bold transition active:scale-95 shadow-sm">
-                {chunk}
-              </button>
-            ))}
-            {sbRemaining.length === 0 && sbBuilt.length > 0 && !sbResult && (
-              <span className="text-xs text-emerald-600 font-bold italic">✓ All chunks placed! Check your sentence below.</span>
-            )}
-          </div>
+        {/* Drill selector + label */}
+        <div className="flex items-center gap-2 flex-wrap">
+          {sentenceDrills.map((d, i) => (
+            <button key={i} type="button" onClick={() => { setSbIdx(i); setSbBuilt([]); setSbTyped(''); setSbResult(null); }}
+              className={`px-2.5 py-1 rounded-lg text-[10px] font-black transition ${
+                sbIdx === i ? 'bg-emerald-600 text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}>
+              #{i+1} {d.label}
+            </button>
+          ))}
         </div>
 
         {/* Grammar reminder */}
-        <div className="flex items-center gap-2 text-[10px] text-slate-500 font-medium">
+        <div className="flex items-center gap-2 text-[10px] text-slate-500 font-medium flex-wrap">
           <span className="px-2 py-0.5 bg-blue-100 text-blue-800 rounded font-black">Subject</span>
           <span>→</span>
           <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-black">Verb Phrase</span>
@@ -358,33 +361,127 @@ export default function CLILExplorer({
           <span className="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-black">Adverbial / Result</span>
         </div>
 
-        {/* Action row */}
-        <div className="flex items-center gap-2 flex-wrap">
-          <button type="button" onClick={handleSbCheck}
-            disabled={sbBuilt.length === 0 || sbRemaining.length > 0}
-            className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95">
-            <CheckCircle2 size={14} /> Check Sentence
-          </button>
-          <button type="button" onClick={handleSbReset}
-            className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition">
-            <RotateCcw size={13} /> Reset
-          </button>
-
-          {sbResult && (
-            <div className={`flex-1 min-w-0 p-2.5 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
-              sbResult.correct ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
-            }`}>
-              {sbResult.correct ? <CheckCircle2 size={14} /> : <AlertCircle size={14} />}
-              {sbResult.msg}
-              {sbResult.correct && sbIdx < sentenceDrills.length - 1 && (
-                <button type="button" onClick={() => { setSbIdx(sbIdx+1); setSbBuilt([]); setSbResult(null); }}
-                  className="ml-auto px-2.5 py-0.5 bg-emerald-600 text-white rounded-lg text-[10px] font-black">
-                  Next ▶
-                </button>
+        {/* ── TAP MODE ── */}
+        {sbMode === 'tap' && (
+          <div className="space-y-3 animate-in fade-in">
+            {/* Built sentence display */}
+            <div className="min-h-[52px] p-3 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2 items-start">
+              {sbBuilt.length === 0 ? (
+                <span className="text-xs text-slate-400 italic">Your sentence will appear here as you tap chunks below…</span>
+              ) : (
+                sbBuilt.map((chunk, i) => (
+                  <button key={i} type="button" onClick={() => handleSbRemove(i)}
+                    className="px-2.5 py-1 bg-purple-100 hover:bg-rose-100 text-purple-900 hover:text-rose-700 border border-purple-300 hover:border-rose-300 rounded-lg text-xs font-bold transition active:scale-95" title="Click to remove">
+                    {chunk} ×
+                  </button>
+                ))
               )}
             </div>
-          )}
-        </div>
+
+            {/* Remaining scrambled chips */}
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Tap chunks in the correct order:</span>
+              <div className="flex flex-wrap gap-2">
+                {sbRemaining.map((chunk, i) => (
+                  <button key={i} type="button" onClick={() => handleSbSelect(chunk)}
+                    className="px-3 py-1.5 bg-white hover:bg-emerald-50 text-slate-800 border border-slate-300 hover:border-emerald-400 rounded-xl text-xs font-bold transition active:scale-95 shadow-sm">
+                    {chunk}
+                  </button>
+                ))}
+                {sbRemaining.length === 0 && sbBuilt.length > 0 && !sbResult && (
+                  <span className="text-xs text-emerald-600 font-bold italic">✓ All chunks placed! Click “Check” below.</span>
+                )}
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <button type="button" onClick={handleSbCheck}
+                disabled={sbBuilt.length === 0 || sbRemaining.length > 0}
+                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95">
+                <CheckCircle2 size={14} /> Check Order
+              </button>
+              <button type="button" onClick={handleSbReset}
+                className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition">
+                <RotateCcw size={13} /> Reset
+              </button>
+              {sbResult && (
+                <div className={`flex-1 min-w-0 p-2.5 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+                  sbResult.correct ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
+                }`}>
+                  {sbResult.correct ? <CheckCircle2 size={14} /> : <AlertCircle size={14} />}
+                  {sbResult.msg}
+                  {sbResult.correct && sbIdx < sentenceDrills.length - 1 && (
+                    <button type="button" onClick={() => { setSbIdx(sbIdx+1); setSbBuilt([]); setSbTyped(''); setSbResult(null); }}
+                      className="ml-auto px-2.5 py-0.5 bg-emerald-600 text-white rounded-lg text-[10px] font-black">
+                      Next ▶
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* ── FREE-TYPE MODE ── */}
+        {sbMode === 'type' && (
+          <div className="space-y-3 animate-in fade-in">
+            {/* Keyword hint pills */}
+            <div className="p-3 bg-indigo-50 rounded-2xl border border-indigo-200 space-y-1.5">
+              <span className="text-[10px] font-black uppercase text-indigo-900 tracking-wider block">
+                💡 Key Words &amp; Chunks to include:
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {sbDrill.correct.map((chunk, i) => (
+                  <button key={i} type="button"
+                    onClick={() => setSbTyped(prev => prev ? `${prev} ${chunk}` : chunk)}
+                    className="px-2.5 py-1 bg-white hover:bg-indigo-100 text-indigo-900 border border-indigo-300 rounded-lg text-xs font-bold transition active:scale-95">
+                    + {chunk}
+                  </button>
+                ))}
+              </div>
+              <p className="text-[10px] text-indigo-600 font-medium italic">
+                Click to insert, or type your own complete sentence below.
+              </p>
+            </div>
+
+            {/* Free textarea */}
+            <textarea
+              rows={3}
+              value={sbTyped}
+              onChange={e => { setSbTyped(e.target.value); setSbResult(null); }}
+              placeholder={`Write a sentence about: “${sbDrill.label}”. Use the key words above.`}
+              className="w-full p-4 rounded-2xl border border-slate-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 text-sm font-medium text-slate-900 outline-none transition"
+            />
+
+            {/* Actions */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <button type="button" onClick={handleSbCheckTyped}
+                disabled={!sbTyped.trim()}
+                className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95">
+                <CheckCircle2 size={14} /> Check My Sentence
+              </button>
+              <button type="button" onClick={handleSbReset}
+                className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition">
+                <RotateCcw size={13} /> Clear
+              </button>
+              {sbResult && (
+                <div className={`flex-1 min-w-0 p-2.5 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
+                  sbResult.correct ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
+                }`}>
+                  {sbResult.correct ? <CheckCircle2 size={14} /> : <AlertCircle size={14} />}
+                  {sbResult.msg}
+                  {sbResult.correct && sbIdx < sentenceDrills.length - 1 && (
+                    <button type="button" onClick={() => { setSbIdx(sbIdx+1); setSbBuilt([]); setSbTyped(''); setSbResult(null); }}
+                      className="ml-auto px-2.5 py-0.5 bg-indigo-600 text-white rounded-lg text-[10px] font-black">
+                      Next ▶
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
