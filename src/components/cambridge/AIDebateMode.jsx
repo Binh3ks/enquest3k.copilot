@@ -204,6 +204,19 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
     setIsCompleted(false);
   };
 
+  const modeAStarters = [
+    "I think it's safer to...",
+    "I have a different idea because...",
+    "One reason is..."
+  ];
+
+  const activeStarters = isModeA ? modeAStarters : (topic.suggested_discourse_markers || [
+    "I understand your point, but...",
+    "I disagree with Nova because...",
+    "In my opinion, if a student...",
+    "For example, walking carefully..."
+  ]);
+
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-3xl border border-purple-200 shadow-md font-sans text-slate-900 space-y-6">
       <CompletionModal
@@ -287,7 +300,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
           <div className="p-4 bg-indigo-50/70 rounded-2xl border border-indigo-200 text-xs text-indigo-950 space-y-2 animate-in fade-in">
             <div className="font-bold uppercase tracking-wider text-indigo-800">Useful Sentence Starters:</div>
             <ul className="list-disc list-inside space-y-1 text-slate-700">
-              {topic.suggested_discourse_markers.map((m, idx) => (
+              {activeStarters.map((m, idx) => (
                 <li key={idx} className="font-medium font-mono">{m}</li>
               ))}
             </ul>
@@ -306,7 +319,7 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
               <Sparkles size={14} className="text-purple-600" /> Tap Sentence Starters:
             </span>
             <div className="flex flex-wrap gap-2">
-              {topic.suggested_discourse_markers.map((starter, idx) => (
+              {activeStarters.map((starter, idx) => (
                 <button
                   key={idx}
                   type="button"

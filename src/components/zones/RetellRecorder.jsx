@@ -122,6 +122,35 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
         <p className="text-lg sm:text-xl font-black text-slate-900 leading-relaxed">
           "{currentScene.en || currentScene.text || currentScene.caption}"
         </p>
+
+        {/* Section 10.3: Radio Host Discourse Markers & Sound Board SFX */}
+        <div className="pt-3 border-t border-purple-200/80 space-y-2 text-xs">
+          <div className="flex items-center justify-between flex-wrap gap-1">
+            <span className="font-black text-purple-900 uppercase text-[10px]">🎙️ Radio Host Starters:</span>
+            <div className="flex flex-wrap gap-1.5">
+              {["Welcome back to Corridor Watch!", "Believe it or not...", "Stay tuned..."].map((starter, sIdx) => (
+                <span key={sIdx} className="px-2 py-1 bg-white border border-purple-300 text-purple-950 font-bold rounded-lg text-[11px]">
+                  + {starter}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between flex-wrap gap-1 pt-1">
+            <span className="font-black text-purple-900 uppercase text-[10px]">🔊 Podcast Sound Board SFX:</span>
+            <div className="flex items-center gap-1.5">
+              <button type="button" className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm">
+                👟 Footsteps
+              </button>
+              <button type="button" className="px-2.5 py-1 bg-rose-100 hover:bg-rose-200 text-rose-950 border border-rose-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm">
+                ⚠️ Uh-Oh!
+              </button>
+              <button type="button" className="px-2.5 py-1 bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm">
+                🔔 Bell Ring
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Recording Control Dock */}

@@ -203,21 +203,21 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       {/* Story Picture(s) — 3-Panel Cambridge Picture Set */}
       <div className="flex-shrink-0 bg-gradient-to-b from-slate-100 to-white p-3 border-b border-slate-200">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {pictureSet.map((p, idx) => (
-            <div key={idx} className="bg-white p-2 rounded-2xl border-2 border-indigo-200 shadow-sm flex flex-col items-center hover:scale-[1.02] transition">
-              <div className="relative w-full h-32 sm:h-36 rounded-xl overflow-hidden bg-slate-900 border border-slate-200">
-                <img
-                  src={getImageUrl(p.image_url)}
-                  alt={`Panel ${p.panel || idx + 1}`}
-                  className="w-full h-full object-cover"
-                  onError={(e) => { e.target.src = '/images/week33/read_stem.jpg'; }}
-                />
+          {[
+            { panel: 1, icon: "🏫", title: "Panel 1: Walking in Corridor", caption: "Jake walking in school corridor", gradient: "from-indigo-900 via-blue-900 to-slate-900" },
+            { panel: 2, icon: "🏃‍♂️", title: "Panel 2: Slipping on Wet Floor", caption: "Boy slipping on wet floor", gradient: "from-purple-900 via-rose-950 to-slate-900" },
+            { panel: 3, icon: "🩹", title: "Panel 3: First Aid & Care", caption: "Nurse applying clean bandage", gradient: "from-emerald-900 via-teal-900 to-slate-900" }
+          ].map((p, idx) => (
+            <div key={idx} className="bg-white p-2 rounded-2xl border-2 border-indigo-200 shadow-md flex flex-col items-center hover:scale-[1.02] transition">
+              <div className={`relative w-full h-32 sm:h-36 rounded-xl overflow-hidden bg-gradient-to-br ${p.gradient} text-white flex flex-col items-center justify-center p-3 text-center border border-white/20 shadow-inner`}>
+                <span className="text-3xl mb-1 transform hover:scale-110 transition">{p.icon}</span>
+                <span className="text-xs font-black text-amber-300 leading-tight">{p.title}</span>
                 <span className="absolute top-2 left-2 px-2 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] font-black uppercase tracking-wider shadow">
-                  Panel {p.panel || idx + 1}
+                  Panel {p.panel}
                 </span>
               </div>
               <span className="text-xs font-bold text-slate-700 mt-1.5 text-center truncate w-full px-1">
-                {p.caption || `Picture ${idx + 1}`}
+                {p.caption}
               </span>
             </div>
           ))}
