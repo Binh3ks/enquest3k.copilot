@@ -42,9 +42,6 @@ const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, o
   // Saved progress lives under stationId 'story_writing'
   const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'story_writing');
 
-  // Collapsible Model Text state (audio-first to prevent direct text copying)
-  const [showModelText, setShowModelText] = useState(false);
-
   // Bridge: onComplete(xp, finalText) funnels into onReportProgress(percent, text)
   const handleProgress = (percent, text = '') => {
     if (onReportProgress) onReportProgress(percent, text);
@@ -74,6 +71,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const [rubric, setRubric] = useState(savedData?.rubric || null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [imgZoomed, setImgZoomed] = useState(false);
+  const [showModelText, setShowModelText] = useState(false);
 
   // W66+ Exam Mode Timer (10 mins = 600s)
   const isExamMode = currentW >= 66;
