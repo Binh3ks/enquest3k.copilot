@@ -450,21 +450,43 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
                 </p>
               )}
 
-              {/* Meaning — local or API */}
+              {/* Loading skeleton */}
               {apiLoading && !hasLocalEntry && (
                 <div className="p-2.5 bg-slate-50 rounded-xl border border-slate-100 mb-2 flex items-center gap-2">
                   <Loader2 size={13} className="animate-spin text-indigo-400" />
-                  <span className="text-xs text-slate-400 italic">Looking up definition...</span>
+                  <span className="text-xs text-slate-400 italic">Looking up example...</span>
                 </div>
               )}
-              {!apiLoading && !hasLocalEntry && apiEntry?.meaning && (
-                <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-2">
-                  {apiEntry.type && (
-                    <span className="text-[9px] font-black uppercase text-indigo-500 block mb-1">{apiEntry.type}</span>
+
+              {/* API entry: Example sentence is PRIMARY, definition is secondary */}
+              {!apiLoading && !hasLocalEntry && apiEntry && (
+                <>
+                  {apiEntry.example ? (
+                    <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-1.5">
+                      {apiEntry.type && (
+                        <span className="text-[9px] font-black uppercase text-indigo-500 block mb-1">{apiEntry.type}</span>
+                      )}
+                      <p className="text-xs font-bold text-indigo-950 leading-snug italic">
+                        &ldquo;{apiEntry.example}&rdquo;
+                      </p>
+                    </div>
+                  ) : apiEntry.meaning ? (
+                    /* No example available — fall back to showing definition */
+                    <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-1.5">
+                      {apiEntry.type && (
+                        <span className="text-[9px] font-black uppercase text-indigo-500 block mb-1">{apiEntry.type}</span>
+                      )}
+                      <p className="text-xs font-black text-indigo-950 leading-snug">{apiEntry.meaning}</p>
+                    </div>
+                  ) : null}
+                  {/* Definition shown small below example */}
+                  {apiEntry.example && apiEntry.meaning && (
+                    <p className="text-[10px] text-slate-400 leading-snug px-0.5 mb-1">{apiEntry.meaning}</p>
                   )}
-                  <p className="text-xs font-black text-indigo-950 leading-snug">{apiEntry.meaning}</p>
-                </div>
+                </>
               )}
+
+              {/* Local entry: Vietnamese meaning primary + English example */}
               {hasLocalEntry && (resolvedEntry?.meaning || resolvedEntry?.definition_vi) && (
                 <div className="p-2.5 bg-indigo-50/70 rounded-xl border border-indigo-100 mb-2">
                   <p className="text-xs font-black text-indigo-950 leading-snug">
@@ -472,23 +494,16 @@ const HoverWord = ({ word, themeColor = 'indigo', onSpeak, entry, tier = 3, chil
                   </p>
                 </div>
               )}
-
-              {/* Example — local or API */}
-              {(!hasLocalEntry && apiEntry?.example) && (
-                <div className="mt-2 pt-2 border-t border-slate-100">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Example:</p>
-                  <p className="text-xs text-slate-600 leading-relaxed italic">&ldquo;{apiEntry.example}&rdquo;</p>
-                </div>
-              )}
-              {(hasLocalEntry && resolvedEntry?.example) && (
-                <div className="mt-2 pt-2 border-t border-slate-100">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Example:</p>
+              {hasLocalEntry && resolvedEntry?.example && (
+                <div className="mt-1.5 pt-1.5 border-t border-slate-100">
+                  <p className="text-[10px] font-bold text-slate-400 uppercase mb-0.5">Example:</p>
                   <p className="text-xs text-slate-600 leading-relaxed italic">&ldquo;{resolvedEntry.example}&rdquo;</p>
                 </div>
               )}
+
               {/* No data at all */}
               {!apiLoading && !hasLocalEntry && !apiEntry && (
-                <p className="text-xs text-slate-400 italic text-center py-1">No definition found. Try Cambridge ↓</p>
+                <p className="text-xs text-slate-400 italic text-center py-1">No example found. Try Cambridge ↓</p>
               )}
 
               {/* Pronunciation Practice */}
