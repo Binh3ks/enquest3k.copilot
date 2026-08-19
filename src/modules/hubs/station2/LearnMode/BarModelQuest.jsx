@@ -4,7 +4,7 @@ import { evaluateBarModelAnswer } from '../../../../utils/barModelEvaluator';
 import { learnerProgressService } from '../../../../services/learnerProgressService';
 import { useUserStore } from '../../../../stores/useUserStore';
 import { renderParsedText } from '../../../../components/common/HoverWord';
-import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy, Timer, Flame } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Sparkles, HelpCircle, RefreshCw, Trophy, Timer, Flame, Play, Pause, RotateCcw } from 'lucide-react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 
 const WEEK33_BAR_QUESTIONS = [
@@ -56,20 +56,20 @@ const WEEK33_BAR_QUESTIONS = [
 ];
 
 export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
+  const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userInput, setUserInput] = useState('');
   const [feedback, setFeedback] = useState(null);
   const [showHint, setShowHint] = useState(false);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(45);
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(90); // 90s total (18s per problem for ages 6-10)
 
   const rawQuestions = (barModelData && Array.isArray(barModelData) && barModelData.length > 0)
     ? barModelData
     : WEEK33_BAR_QUESTIONS;
 
-  // Normalize items to ensure text, correctAnswer & svg_url exist
   const questions = rawQuestions.map((q, idx) => ({
     id: q.id || idx + 1,
     title: q.title || `Problem ${idx + 1}: Singapore Bar Model`,
@@ -82,35 +82,66 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
 
   const currentQ = questions[currentIndex] || questions[0];
 
-  // 45s Timer Countdown Engine
+  // Timer Engine (Only active when gameState === 'playing')
   useEffect(() => {
-    if (isGameOver) return;
+    if (gameState !== 'playing') return;
+
     const timer = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
           clearInterval(timer);
-          setIsGameOver(true);
-          fireCelebrationConfetti('MathQuest_Complete');
-          if (onComplete) onComplete(score);
+          finishGame();
           return 0;
         }
         return prev - 1;
       });
     }, 1000);
+
     return () => clearInterval(timer);
-  }, [isGameOver, score, onComplete]);
+  }, [gameState, score]);
+
+  const handleStartGame = () => {
+    setCurrentIndex(0);
+    setUserInput('');
+    setFeedback(null);
+    setShowHint(false);
+    setScore(0);
+    setStreak(0);
+    setCorrectCount(0);
+    setTimeLeft(90);
+    setGameState('playing');
+  };
+
+  const handleTogglePause = () => {
+    setGameState(prev => (prev === 'playing' ? 'paused' : 'playing'));
+  };
+
+  const finishGame = () => {
+    setGameState('gameover');
+    const xpEarned = score > 0 ? 40 : 0; // Anti-cheat: 0 XP if 0 points!
+
+    if (score > 0) {
+      fireCelebrationConfetti('MathQuest_Victory');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(xpEarned);
+    }
+
+    if (onComplete) onComplete(score);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!userInput.trim() || isGameOver) return;
+    if (!userInput.trim() || gameState !== 'playing') return;
 
     const evaluation = evaluateBarModelAnswer(userInput, currentQ.correctAnswer);
     if (evaluation.isCorrect) {
       const nextStreak = streak + 1;
+      const nextCorrect = correctCount + 1;
       setStreak(nextStreak);
+      setCorrectCount(nextCorrect);
+
       const bonusScore = 20 + nextStreak * 5;
       setScore(prev => prev + bonusScore);
-      setTimeLeft(prev => Math.min(45, prev + 3));
 
       setFeedback({
         isCorrect: true,
@@ -124,11 +155,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
         if (currentIndex + 1 < questions.length) {
           setCurrentIndex(prev => prev + 1);
         } else {
-          setIsGameOver(true);
-          fireCelebrationConfetti('MathQuest_Victory');
-          const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-          if (userStore?.addXP) userStore.addXP(40);
-          if (onComplete) onComplete(score + bonusScore);
+          finishGame();
         }
       }, 1000);
     } else {
@@ -140,16 +167,7 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
     }
   };
 
-  const handleRestart = () => {
-    setCurrentIndex(0);
-    setUserInput('');
-    setFeedback(null);
-    setShowHint(false);
-    setScore(0);
-    setStreak(0);
-    setTimeLeft(45);
-    setIsGameOver(false);
-  };
+  const xpEarned = score > 0 ? 40 : 0;
 
   return (
     <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-white rounded-3xl border-2 border-amber-300 shadow-xl space-y-6 text-slate-900 font-sans">
@@ -168,15 +186,30 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
         </div>
 
         <div className="flex items-center gap-3">
-          {streak > 1 && (
-            <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-md rounded-full">
-              <Flame size={14} /> {streak}x STREAK!
-            </div>
+          {gameState === 'playing' && (
+            <button
+              type="button"
+              onClick={handleTogglePause}
+              className="p-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl border border-slate-300 transition"
+              title="Pause Timer"
+            >
+              <Pause size={16} />
+            </button>
+          )}
+
+          {gameState === 'paused' && (
+            <button
+              type="button"
+              onClick={handleTogglePause}
+              className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-black text-xs flex items-center gap-1 shadow-md"
+            >
+              <Play size={14} /> Resume
+            </button>
           )}
 
           <div className="px-4 py-2 bg-slate-100 rounded-2xl border border-slate-200 flex items-center gap-2">
-            <Timer className={timeLeft <= 8 ? 'text-rose-500 animate-ping' : 'text-amber-600'} size={18} />
-            <span className={`text-base font-black font-mono ${timeLeft <= 8 ? 'text-rose-600' : 'text-slate-900'}`}>
+            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-600'} size={18} />
+            <span className={`text-base font-black font-mono ${timeLeft <= 10 ? 'text-rose-600' : 'text-slate-900'}`}>
               {timeLeft}s
             </span>
           </div>
@@ -187,26 +220,68 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
         </div>
       </div>
 
-      {/* Game Over Display */}
-      {isGameOver ? (
-        <div className="p-8 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl text-center space-y-4 shadow-inner animate-in zoom-in-95">
-          <Trophy size={56} className="mx-auto text-amber-500 animate-bounce" />
-          <h3 className="text-2xl font-black text-slate-900">MATH QUEST COMPLETE!</h3>
-          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-700">
-            <div>Score: <span className="text-xl font-black text-amber-600">{score} PTS</span></div>
-            <div>Questions: <span className="text-xl font-black text-blue-600">{currentIndex + (feedback?.isCorrect ? 1 : 0)}/{questions.length}</span></div>
-            <div>XP Earned: <span className="text-xl font-black text-emerald-600">+40 XP</span></div>
+      {/* Start Screen (Idle) */}
+      {gameState === 'idle' && (
+        <div className="p-8 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl text-center space-y-5 shadow-inner">
+          <div className="w-16 h-16 rounded-3xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+            📐
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-2xl font-black text-slate-900">READY FOR MATH QUEST?</h3>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              Solve 5 Singapore Bar Model problems in 90 seconds (18s per problem). Tap Start when you are ready to begin!
+            </p>
           </div>
           <button
             type="button"
-            onClick={handleRestart}
-            className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+            onClick={handleStartGame}
+            className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
           >
-            <RefreshCw size={18} /> Play Math Quest Again (45s)
+            <Play size={22} fill="currentColor" /> ▶️ START MATH QUEST
           </button>
         </div>
-      ) : (
-        /* Active Question Display */
+      )}
+
+      {/* Paused Screen */}
+      {gameState === 'paused' && (
+        <div className="p-8 bg-slate-50 border-2 border-slate-300 rounded-3xl text-center space-y-4 shadow-inner">
+          <Pause size={48} className="mx-auto text-amber-500 animate-pulse" />
+          <h3 className="text-xl font-black text-slate-900">QUEST PAUSED</h3>
+          <p className="text-xs text-slate-600">Timer is paused. Take your time to review the problem!</p>
+          <button
+            type="button"
+            onClick={handleTogglePause}
+            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-xs shadow-md inline-flex items-center gap-2"
+          >
+            <Play size={16} fill="currentColor" /> Resume Math Quest
+          </button>
+        </div>
+      )}
+
+      {/* Game Over Screen */}
+      {gameState === 'gameover' && (
+        <div className="p-8 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl text-center space-y-4 shadow-inner animate-in zoom-in-95">
+          <Trophy size={56} className="mx-auto text-amber-500 animate-bounce" />
+          <h3 className="text-2xl font-black text-slate-900">
+            {score > 0 ? 'MATH QUEST COMPLETE!' : 'TIME EXPIRED — TRY AGAIN!'}
+          </h3>
+          <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-700">
+            <div>Score: <span className="text-xl font-black text-amber-600">{score} PTS</span></div>
+            <div>Correct: <span className="text-xl font-black text-blue-600">{correctCount}/{questions.length}</span></div>
+            <div>XP Earned: <span className={`text-xl font-black ${xpEarned > 0 ? 'text-emerald-600' : 'text-slate-400'}`}>+{xpEarned} XP</span></div>
+          </div>
+          <button
+            type="button"
+            onClick={handleStartGame}
+            className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+          >
+            <RotateCcw size={18} /> Play Math Quest Again
+          </button>
+        </div>
+      )}
+
+      {/* Active Question Display */}
+      {gameState === 'playing' && (
         <div className="space-y-5">
           {/* Question Text */}
           <div className="p-5 bg-amber-50/80 rounded-2xl border border-amber-200 space-y-1">

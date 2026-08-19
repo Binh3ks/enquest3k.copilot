@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { fireCelebrationConfetti } from '../../../../utils/confettiHelper';
 import { useUserStore } from '../../../../stores/useUserStore';
-import { Zap, Trophy, Timer, Swords, CheckCircle2, RotateCcw, Flame, Sparkles, Layers } from 'lucide-react';
+import { Zap, Trophy, Timer, CheckCircle2, RotateCcw, Flame, Sparkles, Play, Pause } from 'lucide-react';
 
 const ROUND_1_NOUNS_VERBS = [
   { id: "r1_01", en: "corridor", vi: "hành lang" },
@@ -37,7 +37,8 @@ const ROUND_3_DEFINITIONS = [
 ];
 
 export function FlashArena({ customSets, onComplete }) {
-  const [currentRound, setCurrentRound] = useState(1); // Round 1 -> 2 -> 3
+  const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'paused' | 'gameover'
+  const [currentRound, setCurrentRound] = useState(1);
   const [selectedEn, setSelectedEn] = useState(null);
   const [selectedVi, setSelectedVi] = useState(null);
   const [matchedIds, setMatchedIds] = useState([]);
@@ -45,10 +46,7 @@ export function FlashArena({ customSets, onComplete }) {
   const [streak, setStreak] = useState(0);
   const [maxStreak, setMaxStreak] = useState(0);
   const [timeLeft, setTimeLeft] = useState(45);
-  const [isGameActive, setIsGameActive] = useState(false);
-  const [isGameOver, setIsGameOver] = useState(false);
 
-  // Active round pairs
   const activePairs = useMemo(() => {
     if (customSets && typeof customSets === 'object') {
       if (currentRound === 1 && customSets.set1_nouns_adj && customSets.set2_verbs) {
@@ -70,7 +68,6 @@ export function FlashArena({ customSets, onComplete }) {
   const [shuffledEn, setShuffledEn] = useState([]);
   const [shuffledVi, setShuffledVi] = useState([]);
 
-  // Load round pairs
   const loadRound = (roundNum) => {
     setCurrentRound(roundNum);
     setMatchedIds([]);
@@ -85,34 +82,41 @@ export function FlashArena({ customSets, onComplete }) {
     setShuffledVi([...pairs].sort(() => 0.5 - Math.random()));
   };
 
-  // Start / Restart Blitz Game
   const handleStartGame = () => {
     setScore(0);
     setStreak(0);
     setMaxStreak(0);
-    setTimeLeft(30);
-    setIsGameOver(false);
-    setIsGameActive(true);
+    setTimeLeft(45);
+    setGameState('playing');
     loadRound(1);
   };
 
-  useEffect(() => {
-    handleStartGame();
-  }, [customSets]);
+  const handleTogglePause = () => {
+    setGameState(prev => (prev === 'playing' ? 'paused' : 'playing'));
+  };
 
-  // 30-Second Countdown Timer Engine
+  const finishGame = () => {
+    setGameState('gameover');
+    const xpEarned = score > 0 ? 45 : 0; // Anti-cheat: 0 XP if AFK!
+
+    if (score > 0) {
+      fireCelebrationConfetti('WordBlitz_Victory');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(xpEarned);
+    }
+
+    if (onComplete) onComplete(score);
+  };
+
+  // Timer Engine
   useEffect(() => {
-    if (!isGameActive || isGameOver) return;
+    if (gameState !== 'playing') return;
 
     const timer = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
           clearInterval(timer);
-          setIsGameOver(true);
-          setIsGameActive(false);
-          fireCelebrationConfetti('WordBlitz_Victory');
-          const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-          if (userStore?.addXP) userStore.addXP(45);
+          finishGame();
           return 0;
         }
         return prev - 1;
@@ -120,39 +124,33 @@ export function FlashArena({ customSets, onComplete }) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [isGameActive, isGameOver]);
+  }, [gameState, score]);
 
   // Match Evaluation Logic
   useEffect(() => {
-    if (selectedEn && selectedVi) {
+    if (selectedEn && selectedVi && gameState === 'playing') {
       if (selectedEn.id === selectedVi.id || selectedEn.en.toLowerCase() === selectedVi.en?.toLowerCase()) {
-        // MATCH CORRECT!
         const nextStreak = streak + 1;
         setStreak(nextStreak);
         setMaxStreak(prev => Math.max(prev, nextStreak));
 
         const bonusPoints = 15 + nextStreak * 5;
         setScore(prev => prev + bonusPoints);
-        setTimeLeft(prev => Math.min(35, prev + 2)); // Bonus +2s per correct match!
+        setTimeLeft(prev => Math.min(50, prev + 2));
 
         const newMatched = [...matchedIds, selectedEn.id];
         setMatchedIds(newMatched);
 
-        // If all 8 matched in current Round -> Advance to Next Round!
         if (newMatched.length === activePairs.length) {
           if (currentRound < 3) {
             setTimeout(() => {
               loadRound(currentRound + 1);
             }, 350);
           } else {
-            // Completed all 3 Rounds!
-            setIsGameOver(true);
-            setIsGameActive(false);
-            fireCelebrationConfetti('WordBlitz_Mastery');
+            finishGame();
           }
         }
       } else {
-        // INCORRECT MATCH
         setStreak(0);
       }
 
@@ -161,7 +159,9 @@ export function FlashArena({ customSets, onComplete }) {
         setSelectedVi(null);
       }, 250);
     }
-  }, [selectedEn, selectedVi]);
+  }, [selectedEn, selectedVi, gameState]);
+
+  const xpEarned = score > 0 ? 45 : 0;
 
   return (
     <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-slate-950 text-white rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-6">
@@ -176,16 +176,34 @@ export function FlashArena({ customSets, onComplete }) {
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/30 text-amber-300 border border-amber-400/40">
                 Round {currentRound}/3 • Arcade Speed Match
               </span>
-              <span className="text-xs font-bold text-amber-200">
-                {currentRound === 1 ? '⚡ Nouns & Verbs' : currentRound === 2 ? '🧩 Chunks & Collocations' : '🔬 Academic Definitions'}
-              </span>
             </div>
-            <h3 className="text-lg font-black text-white">⚡ WORD BLITZ (3 ROUNDS × 8 PAIRS)</h3>
+            <h3 className="text-lg font-black text-white">⚡ WORD BLITZ (45s)</h3>
           </div>
         </div>
 
-        {/* Score, Streak & Timer Dashboard */}
+        {/* Dashboard */}
         <div className="flex items-center gap-3">
+          {gameState === 'playing' && (
+            <button
+              type="button"
+              onClick={handleTogglePause}
+              className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-xl border border-slate-800 transition"
+              title="Pause Timer"
+            >
+              <Pause size={16} />
+            </button>
+          )}
+
+          {gameState === 'paused' && (
+            <button
+              type="button"
+              onClick={handleTogglePause}
+              className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-black text-xs flex items-center gap-1 shadow-md"
+            >
+              <Play size={14} /> Resume
+            </button>
+          )}
+
           {streak > 1 && (
             <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-lg">
               <Flame size={14} /> {streak}x COMBO!
@@ -193,8 +211,8 @@ export function FlashArena({ customSets, onComplete }) {
           )}
 
           <div className="px-4 py-2 bg-slate-900 rounded-2xl border border-slate-800 flex items-center gap-2">
-            <Timer className={timeLeft <= 5 ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={18} />
-            <span className={`text-base font-black font-mono ${timeLeft <= 5 ? 'text-rose-400' : 'text-amber-300'}`}>
+            <Timer className={timeLeft <= 8 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={18} />
+            <span className={`text-base font-black font-mono ${timeLeft <= 8 ? 'text-rose-400' : 'text-amber-300'}`}>
               {timeLeft}s
             </span>
           </div>
@@ -205,32 +223,69 @@ export function FlashArena({ customSets, onComplete }) {
         </div>
       </div>
 
-      {/* Game End Overlay */}
-      {isGameOver && (
+      {/* Start Screen (Idle) */}
+      {gameState === 'idle' && (
+        <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-5 shadow-inner">
+          <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+            ⚡
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-2xl font-black text-amber-300">READY FOR WORD BLITZ?</h3>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+              Match 24 vocabulary words across 3 fast rounds (Nouns $\rightarrow$ Chunks $\rightarrow$ Definitions) in 45 seconds!
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={handleStartGame}
+            className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+          >
+            <Play size={22} fill="currentColor" /> ▶️ START WORD BLITZ
+          </button>
+        </div>
+      )}
+
+      {/* Paused Screen */}
+      {gameState === 'paused' && (
+        <div className="p-8 bg-slate-900 border-2 border-slate-800 rounded-3xl text-center space-y-4 shadow-inner">
+          <Pause size={48} className="mx-auto text-amber-400 animate-pulse" />
+          <h3 className="text-xl font-black text-amber-300">BLITZ PAUSED</h3>
+          <p className="text-xs text-slate-400">Timer is paused. Tap resume when ready!</p>
+          <button
+            type="button"
+            onClick={handleTogglePause}
+            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-xs shadow-md inline-flex items-center gap-2"
+          >
+            <Play size={16} fill="currentColor" /> Resume Word Blitz
+          </button>
+        </div>
+      )}
+
+      {/* Game Over Screen */}
+      {gameState === 'gameover' && (
         <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-4 animate-in zoom-in-95">
           <Trophy size={56} className="mx-auto text-amber-400 animate-bounce" />
           <h3 className="text-2xl font-black text-amber-300">
-            {currentRound === 3 && matchedIds.length === activePairs.length ? '🏆 3-ROUND BLITZ MASTERY!' : 'BLITZ TIME EXPIRED!'}
+            {score > 0 ? 'BLITZ COMPLETE!' : 'TIME EXPIRED — TRY AGAIN!'}
           </h3>
           <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-200">
             <div>Score: <span className="text-xl font-black text-amber-400">{score} PTS</span></div>
             <div>Max Combo: <span className="text-xl font-black text-orange-400">{maxStreak}x 🔥</span></div>
-            <div>XP Earned: <span className="text-xl font-black text-emerald-400">+45 XP</span></div>
+            <div>XP Earned: <span className={`text-xl font-black ${xpEarned > 0 ? 'text-emerald-400' : 'text-slate-400'}`}>+{xpEarned} XP</span></div>
           </div>
           <button
             type="button"
             onClick={handleStartGame}
             className="px-6 py-3.5 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
           >
-            <RotateCcw size={18} /> Play 3-Round Blitz Again (30s)
+            <RotateCcw size={18} /> Play Word Blitz Again
           </button>
         </div>
       )}
 
-      {/* Arcade Matching Columns */}
-      {!isGameOver && (
+      {/* Active Match Screen */}
+      {gameState === 'playing' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Left Column: English Words */}
           <div className="space-y-2.5">
             <div className="text-xs font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
               <span>ENGLISH ITEM</span>
@@ -259,7 +314,6 @@ export function FlashArena({ customSets, onComplete }) {
             })}
           </div>
 
-          {/* Right Column: Vietnamese Meanings */}
           <div className="space-y-2.5">
             <div className="text-xs font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
               <span>MEANING / DEFINITION</span>
