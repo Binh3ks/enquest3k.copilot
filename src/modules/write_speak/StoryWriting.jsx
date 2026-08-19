@@ -64,14 +64,31 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const currentW = parseInt(weekId, 10) || 16;
   const tier = pictureMode.rubric_tier || 1;
 
-  // State
-  const [text, setText] = useState(savedData?.text || '');
+  // State for structured input (Tier 1 & Tier 2) vs freeform (Tier 3)
+  const isStructured = tier < 3;
+  const [settingText, setSettingText] = useState(savedData?.fields?.setting || '');
+  const [actionText, setActionText] = useState(savedData?.fields?.action || '');
+  const [problemText, setProblemText] = useState(savedData?.fields?.problem || '');
+  const [solutionText, setSolutionText] = useState(savedData?.fields?.solution || '');
+
+  // Main text is assembled from fields when structured, or single text state when freeform (Tier 3)
+  const [freeformText, setFreeformText] = useState(savedData?.text || '');
+
+  const text = isStructured
+    ? [settingText, actionText, problemText, solutionText].map(s => s.trim()).filter(Boolean).join(' ')
+    : freeformText;
+
   const [imgSrc, setImgSrc] = useState('');
   const [imgFailed, setImgFailed] = useState(false);
   const [rubric, setRubric] = useState(savedData?.rubric || null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [imgZoomed, setImgZoomed] = useState(false);
   const [showModelText, setShowModelText] = useState(false);
+
+  // Field completeness check for structured mode
+  const allPartsWritten = isStructured
+    ? (settingText.trim().length >= 5 && actionText.trim().length >= 5 && problemText.trim().length >= 5 && solutionText.trim().length >= 5)
+    : true;
 
   // W66+ Exam Mode Timer (10 mins = 600s)
   const isExamMode = currentW >= 66;
@@ -100,10 +117,11 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   // Debounced auto-save
   useEffect(() => {
     const t = setTimeout(() => {
-      const isComplete = cambridgeEval.isAllMet || (!!rubric && rubric.total >= 6);
+      const isComplete = (cambridgeEval.isAllMet || (!!rubric && rubric.total >= 6)) && allPartsWritten;
       const percent = isComplete ? 100 : (cambridgeEval.wordCount > 10 ? 40 : 0);
       saveProgress({
         text,
+        fields: isStructured ? { setting: settingText, action: actionText, problem: problemText, solution: solutionText } : null,
         rubric,
         timeLeftSec,
         timerStarted,
@@ -111,10 +129,13 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       if (isComplete) {
         markComplete(Math.round(percent));
       }
-      if (onReportProgress) onReportProgress(Math.round(percent));
+      if (onReportProgress) onReportProgress(Math.round(percent), text, {
+        structured: isStructured,
+        fields: isStructured ? { setting: settingText, action: actionText, problem: problemText, solution: solutionText } : null
+      });
     }, 1500);
     return () => clearTimeout(t);
-  }, [text, rubric, cambridgeEval.isAllMet, timeLeftSec, timerStarted]);
+  }, [text, settingText, actionText, problemText, solutionText, rubric, cambridgeEval.isAllMet, allPartsWritten, timeLeftSec, timerStarted]);
 
   // Image resolution
   useEffect(() => {
@@ -154,8 +175,16 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000);
     }
-    // Data contract: pass finalText up to parent (→ CreatorStudioZone → Podcast Creator)
-    if (onReportProgress) onReportProgress(100, text);
+    // Data contract v2: pass payload up to parent (→ CreatorStudioZone → Broadcast Studio)
+    if (onReportProgress) onReportProgress(100, text, {
+      structured: isStructured,
+      fields: isStructured ? {
+        setting: settingText.trim(),
+        action: actionText.trim(),
+        problem: problemText.trim(),
+        solution: solutionText.trim(),
+      } : null
+    });
   };
 
   // Extract word bank groups (4 groups)
@@ -356,120 +385,207 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         </div>
       )}
 
-      {/* Textarea + Live Real-time Criteria Checker */}
-      <div className="flex-1 min-h-0 overflow-y-auto p-3 flex flex-col gap-2">
-        <div className="relative flex-1 flex flex-col">
-          <textarea
-            value={text}
-            onChange={e => setText(e.target.value)}
-            disabled={isExamMode && !timerStarted}
-            placeholder={
-              isExamMode && !timerStarted
-                ? (isVi ? 'Nhấn "Bắt đầu làm bài" để mở khóa đồng hồ 10 phút...' : 'Click "Start Exam" to unlock 10-minute timer...')
-                : (isVi ? 'Viết câu chuyện của bạn ở đây...' : 'Write your story script here...')
-            }
-            className="w-full flex-1 min-h-[160px] p-3 bg-white border-2 border-slate-200 rounded-xl focus:border-indigo-500 outline-none resize-y text-sm leading-relaxed text-slate-800 font-normal shadow-inner"
-          />
+      {/* 4 Structured Input Boxes OR Single Freeform Box */}
+      <div className="flex-1 min-h-0 overflow-y-auto p-3 flex flex-col gap-3">
+        {isStructured ? (
+          <div className="space-y-3">
+            {/* 🔵 1. SETTING */}
+            <div className="p-3 bg-blue-50/70 rounded-2xl border border-blue-200 space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black uppercase text-blue-900 tracking-wider flex items-center gap-1">
+                  🔵 1. SETTING — Where and when does your story begin?
+                </span>
+                {settingText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {["After science class,", "Down the school corridor,", "On a sunny Monday morning,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                  <button key={sIdx} type="button" onClick={() => setSettingText(prev => prev ? `${prev} ${starter}` : starter)}
+                    className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                    + {starter}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                rows={2}
+                value={settingText}
+                onChange={e => setSettingText(e.target.value)}
+                placeholder="Write sentence 1: Describe the setting (e.g. After science class, Jake was in the school corridor...)"
+                className="w-full p-2.5 bg-white border border-blue-300 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
 
-          {/* Sentence Starter Pills (Click to insert) */}
-          <div className="pt-1.5 border-t border-slate-100 flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] font-black uppercase text-purple-700 tracking-wider">
-              ✨ Tap Starter to Insert:
+            {/* 🟢 2. ACTION */}
+            <div className="p-3 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black uppercase text-emerald-900 tracking-wider flex items-center gap-1">
+                  🟢 2. ACTION — What was happening in the story?
+                </span>
+                {actionText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {["Jake was walking carefully,", "A student was running fast,", "Everyone was moving,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                  <button key={sIdx} type="button" onClick={() => setActionText(prev => prev ? `${prev} ${starter}` : starter)}
+                    className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                    + {starter}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                rows={2}
+                value={actionText}
+                onChange={e => setActionText(e.target.value)}
+                placeholder="Write sentence 2: What were the characters doing? (e.g. Jake was walking carefully down the corridor...)"
+                className="w-full p-2.5 bg-white border border-emerald-300 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              />
+            </div>
+
+            {/* 🟠 3. PROBLEM */}
+            <div className="p-3 bg-amber-50/70 rounded-2xl border border-amber-200 space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black uppercase text-amber-900 tracking-wider flex items-center gap-1">
+                  🟠 3. PROBLEM — What went wrong? What was the hazard?
+                </span>
+                {problemText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {["Suddenly, a student slipped on the wet floor,", "Unexpectedly, he fell down heavily,", "All of a sudden, someone lost their balance,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                  <button key={sIdx} type="button" onClick={() => setProblemText(prev => prev ? `${prev} ${starter}` : starter)}
+                    className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                    + {starter}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                rows={2}
+                value={problemText}
+                onChange={e => setProblemText(e.target.value)}
+                placeholder="Write sentence 3: What problem occurred? (e.g. Suddenly, a boy slipped on the wet floor and hurt his knee...)"
+                className="w-full p-2.5 bg-white border border-amber-300 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              />
+            </div>
+
+            {/* 🟣 4. SOLUTION */}
+            <div className="p-3 bg-purple-50/70 rounded-2xl border border-purple-200 space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
+                  🟣 4. SOLUTION — How was it solved or fixed?
+                </span>
+                {solutionText.trim().length >= 5 && <span className="text-[10px] font-bold text-emerald-600">✓ Complete</span>}
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {["The school nurse arrived quickly,", "Immediately, Jake helped his friend,", "Fortunately, a clean bandage was applied,"].slice(0, tier === 1 ? 3 : 1).map((starter, sIdx) => (
+                  <button key={sIdx} type="button" onClick={() => setSolutionText(prev => prev ? `${prev} ${starter}` : starter)}
+                    className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[10px] font-bold transition active:scale-95">
+                    + {starter}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                rows={2}
+                value={solutionText}
+                onChange={e => setSolutionText(e.target.value)}
+                placeholder="Write sentence 4: How was the situation resolved? (e.g. The school nurse arrived with a clean bandage...)"
+                className="w-full p-2.5 bg-white border border-purple-300 rounded-xl text-xs font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </div>
+
+            {/* 📖 LIVE PREVIEW (Assembled 4 parts with soft pastel source highlighting) */}
+            <div className="p-3 bg-white rounded-2xl border-2 border-dashed border-slate-300 space-y-1">
+              <span className="text-[10px] font-black uppercase text-slate-600 tracking-wider block">
+                📖 LIVE STORY PREVIEW (Auto-assembled from your 4 parts above):
+              </span>
+              {text.trim().length === 0 ? (
+                <p className="text-xs text-slate-400 italic">Your complete story will appear here as you fill out the 4 parts above…</p>
+              ) : (
+                <div className="text-xs leading-relaxed font-medium text-slate-900 flex flex-wrap gap-1">
+                  {settingText.trim() && <span className="bg-blue-100/80 text-blue-950 px-1.5 py-0.5 rounded-md border border-blue-200">{settingText.trim()}</span>}
+                  {actionText.trim() && <span className="bg-emerald-100/80 text-emerald-950 px-1.5 py-0.5 rounded-md border border-emerald-200">{actionText.trim()}</span>}
+                  {problemText.trim() && <span className="bg-amber-100/80 text-amber-950 px-1.5 py-0.5 rounded-md border border-amber-200">{problemText.trim()}</span>}
+                  {solutionText.trim() && <span className="bg-purple-100/80 text-purple-950 px-1.5 py-0.5 rounded-md border border-purple-200">{solutionText.trim()}</span>}
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          /* Tier 3 Single Freeform Box */
+          <div className="relative flex-1 flex flex-col">
+            <textarea
+              value={freeformText}
+              onChange={e => setFreeformText(e.target.value)}
+              disabled={isExamMode && !timerStarted}
+              placeholder={isVi ? 'Viết toàn bộ câu chuyện tự do của bạn ở đây...' : 'Write your full story script here...'}
+              className="w-full flex-1 min-h-[180px] p-3 bg-white border-2 border-slate-200 rounded-xl focus:border-indigo-500 outline-none resize-y text-sm leading-relaxed text-slate-800 font-normal shadow-inner"
+            />
+          </div>
+        )}
+
+        {/* Real-time Criteria Checker Display */}
+        <div className="mt-2 bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-2">
+          <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+            <span className="text-[11px] font-black uppercase text-indigo-700 tracking-wider">
+              🏆 Story Criteria Checker (W{currentW})
             </span>
-            {(pictureMode.sentence_frames || [
-              "While Jake was walking down the corridor...",
-              "Suddenly, a student slipped on the wet floor...",
-              "The school nurse arrived quickly with a clean bandage..."
-            ]).map((frame, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => {
-                  setText(prev => (prev ? `${prev} ${frame}` : frame));
-                }}
-                className="px-2.5 py-1 bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300 text-[11px] font-bold rounded-lg transition active:scale-95 text-left"
-              >
-                + {frame}
-              </button>
-            ))}
+            <span className={`text-[11px] font-black px-2 py-0.5 rounded-full ${cambridgeEval.isAllMet && allPartsWritten ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
+              {cambridgeEval.isAllMet && allPartsWritten ? '✓ All Criteria Qualified' : '→ In Progress'}
+            </span>
           </div>
 
-          {/* Real-time Criteria Checker Display */}
-          <div className="mt-2 bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-2">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-              <span className="text-[11px] font-black uppercase text-indigo-700 tracking-wider">
-                🏆 Story Criteria Checker (W{currentW})
-              </span>
-              <span className={`text-[11px] font-black px-2 py-0.5 rounded-full ${cambridgeEval.isAllMet ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
-                {cambridgeEval.isAllMet ? '✓ 15/15 Shields Qualified' : '→ In Progress'}
-              </span>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+            {/* Metric 1: Word Count */}
+            <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metWords ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
+              <p className="text-[10px] font-bold text-slate-500 uppercase">Target Words</p>
+              <p className="text-xs font-black">{cambridgeEval.wordCount}/{cambridgeEval.targetWords}</p>
+              <p className="text-[9px] font-bold">{cambridgeEval.metWords ? '✓ Target Met' : `Need ${Math.max(0, cambridgeEval.targetWords - cambridgeEval.wordCount)} more`}</p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              {/* Metric 1: Word Count */}
-              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metWords ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
-                <p className="text-[10px] font-bold text-slate-500 uppercase">Target Words</p>
-                <p className="text-xs font-black">
-                  {cambridgeEval.wordCount}/{cambridgeEval.targetWords}
-                </p>
-                <p className="text-[9px] font-bold">
-                  {cambridgeEval.metWords ? '✓ Target Met' : `Need ${Math.max(0, cambridgeEval.targetWords - cambridgeEval.wordCount)} more`}
-                </p>
-              </div>
-
-              {/* Metric 2: Connectors */}
-              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metConnectors ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
-                <p className="text-[10px] font-bold text-slate-500 uppercase">Connectors</p>
-                <p className="text-xs font-black">
-                  {cambridgeEval.connectorsFound.length}/{cambridgeEval.minConnectors}
-                </p>
-                <p className="text-[9px] font-bold">
-                  {cambridgeEval.metConnectors ? '✓ Transition Met' : `Need ${cambridgeEval.minConnectors}+ connectors`}
-                </p>
-              </div>
-
-              {/* Metric 3: Past Continuous (W43+) */}
-              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metPastContinuous ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>
-                <p className="text-[10px] font-bold text-slate-500 uppercase">Past Continuous</p>
-                <p className="text-xs font-black">
-                  {cambridgeEval.hasPastContinuous ? 'was/were V-ing' : 'None'}
-                </p>
-                <p className="text-[9px] font-bold">
-                  {cambridgeEval.metPastContinuous ? '✓ Grammar Met' : 'Require was/were + V-ing'}
-                </p>
-              </div>
-
-              {/* Metric 4: Cumulative Chunks (W55+) */}
-              <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metChunks ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
-                <p className="text-[10px] font-bold text-slate-500 uppercase">Advanced Chunks</p>
-                <p className="text-xs font-black">
-                  {cambridgeEval.chunksFound?.length || 0} Found
-                </p>
-                <p className="text-[9px] font-bold">
-                  {cambridgeEval.metChunks ? '✓ Chunks Met' : 'Add 1+ learned chunk'}
-                </p>
-              </div>
+            {/* Metric 2: Connectors */}
+            <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metConnectors ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
+              <p className="text-[10px] font-bold text-slate-500 uppercase">Connectors</p>
+              <p className="text-xs font-black">{cambridgeEval.connectorsFound.length}/{cambridgeEval.minConnectors}</p>
+              <p className="text-[9px] font-bold">{cambridgeEval.metConnectors ? '✓ Transition Met' : `Need ${cambridgeEval.minConnectors}+ connectors`}</p>
             </div>
 
-            <div className="flex items-center justify-end gap-2 pt-1">
-              <button
-                onClick={handleSubmit}
-                disabled={!cambridgeEval.isAllMet && cambridgeEval.wordCount < cambridgeEval.targetWords}
-                className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
-              >
-                <BarChart2 size={13} />
-                {isVi ? 'Chấm Điểm Cambridge' : 'Score Cambridge'}
-              </button>
-
-              <button
-                onClick={onGoToSpeak}
-                className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
-              >
-                {isVi ? 'Chuyển Kể Chuyện (Tab 3)' : 'Tell Story (Tab 3)'} <ArrowRight size={12} />
-              </button>
+            {/* Metric 3: Past Continuous */}
+            <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metPastContinuous ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-amber-50 border-amber-200 text-amber-800'}`}>
+              <p className="text-[10px] font-bold text-slate-500 uppercase">Past Continuous</p>
+              <p className="text-xs font-black">{cambridgeEval.hasPastContinuous ? 'was/were V-ing' : 'None'}</p>
+              <p className="text-[9px] font-bold">{cambridgeEval.metPastContinuous ? '✓ Grammar Met' : 'Require was/were + V-ing'}</p>
             </div>
+
+            {/* Metric 4: Advanced Chunks */}
+            <div className={`p-2 rounded-lg border text-center ${cambridgeEval.metChunks ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
+              <p className="text-[10px] font-bold text-slate-500 uppercase">Advanced Chunks</p>
+              <p className="text-xs font-black">{cambridgeEval.chunksFound?.length || 0} Found</p>
+              <p className="text-[9px] font-bold">{cambridgeEval.metChunks ? '✓ Chunks Met' : 'Add 1+ learned chunk'}</p>
+            </div>
+
+            {/* Metric 5: 4 Parts Written (Structured Mode Only) */}
+            <div className={`p-2 rounded-lg border text-center ${allPartsWritten ? 'bg-emerald-50 border-emerald-200 text-emerald-800' : 'bg-rose-50 border-rose-200 text-rose-800'}`}>
+              <p className="text-[10px] font-bold text-slate-500 uppercase">4 Story Parts</p>
+              <p className="text-xs font-black">{isStructured ? `${[settingText, actionText, problemText, solutionText].filter(s => s.trim().length >= 5).length}/4 Parts` : 'Freeform'}</p>
+              <p className="text-[9px] font-bold">{allPartsWritten ? '✓ Complete' : 'Fill all 4 boxes'}</p>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-end gap-2 pt-1">
+            <button
+              onClick={handleSubmit}
+              disabled={!allPartsWritten}
+              className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
+            >
+              <BarChart2 size={13} />
+              {isVi ? 'Chấm Điểm Cambridge' : 'Score Cambridge'}
+            </button>
+
+            <button
+              onClick={onGoToSpeak}
+              className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
+            >
+              {isVi ? 'Chuyển Kể Chuyện (Tab 3)' : 'Tell Story (Tab 3)'} <ArrowRight size={12} />
+            </button>
           </div>
         </div>
+      </div>
 
         {/* Rubric result */}
         {rubric && (
@@ -529,7 +645,6 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             )}
           </div>
         )}
-      </div>
 
       {/* Image lightbox overlay */}
       {imgZoomed && imgSrc && (

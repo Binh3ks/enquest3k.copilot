@@ -123,18 +123,18 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
           "{currentScene.en || currentScene.text || currentScene.caption}"
         </p>
 
-        {/* Section 10.3: Radio Host Discourse Markers & Complete Chunks */}
+        {/* Section 10.3: Radio Host Discourse Markers & Production Tools */}
         <div className="pt-3 border-t border-purple-200/80 space-y-2.5 text-xs">
-          {/* Radio Host Starters */}
+          {/* Radio Host Starters (Scene-specific narrative function) */}
           <div className="space-y-1">
             <span className="font-black text-purple-900 uppercase text-[10px] block">🎙️ Radio Host Starters (Click to listen):</span>
             <div className="flex flex-wrap gap-1.5">
-              {[
+              {(currentScene.radio_starters || [
                 "Welcome back to Corridor Watch!",
                 "Believe it or not...",
                 "Stay tuned to hear what happened...",
                 "Breaking news from the hallway!"
-              ].map((starter, sIdx) => (
+              ]).map((starter, sIdx) => (
                 <button
                   key={sIdx}
                   type="button"
@@ -147,21 +147,21 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             </div>
           </div>
 
-          {/* Dramatic Expressive Markers */}
+          {/* Academic Language Pills (Transition / Expression) */}
           <div className="space-y-1">
-            <span className="font-black text-indigo-900 uppercase text-[10px] block">⏸️ Dramatic Expressive Markers (Add while speaking):</span>
+            <span className="font-black text-indigo-900 uppercase text-[10px] block">✨ Language Transition Pills (Academic discourse):</span>
             <div className="flex flex-wrap gap-1.5">
               {[
                 "SUDDENLY...",
-                "[Pause 2 seconds]",
                 "Wait for it...",
                 "Right then and there!",
-                "To sum it up..."
+                "To sum it up...",
+                "Let's find out!"
               ].map((marker, mIdx) => (
                 <button
                   key={mIdx}
                   type="button"
-                  onClick={() => speakText(marker.replace(/\[|\]/g, ''))}
+                  onClick={() => speakText(marker)}
                   className="px-2 py-0.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 font-black rounded-md text-[10px] transition active:scale-95"
                 >
                   ⚡ {marker}
@@ -190,16 +190,20 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             </div>
           </div>
 
-          <div className="flex items-center justify-between flex-wrap gap-1 pt-1">
-            <span className="font-black text-purple-900 uppercase text-[10px]">🔊 Sound Board SFX:</span>
-            <div className="flex items-center gap-1.5">
-              <button type="button" onClick={() => speakText("Footsteps")} className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm active:scale-95">
+          {/* Sound Board & Production Tools (Non-evaled effects) */}
+          <div className="flex items-center justify-between flex-wrap gap-1 pt-1 border-t border-purple-100">
+            <span className="font-black text-purple-900 uppercase text-[10px]">🎛️ Production Tools & Sound Board SFX:</span>
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <button type="button" onClick={() => speakText("Pause for 2 seconds")} className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-xs active:scale-95">
+                ⏸️ Pause 2s
+              </button>
+              <button type="button" onClick={() => speakText("Footsteps")} className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-xs active:scale-95">
                 👟 Footsteps
               </button>
-              <button type="button" onClick={() => speakText("Uh-oh! Be careful!")} className="px-2.5 py-1 bg-rose-100 hover:bg-rose-200 text-rose-950 border border-rose-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm active:scale-95">
+              <button type="button" onClick={() => speakText("Uh-oh! Be careful!")} className="px-2.5 py-1 bg-rose-100 hover:bg-rose-200 text-rose-950 border border-rose-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-xs active:scale-95">
                 ⚠️ Uh-Oh!
               </button>
-              <button type="button" onClick={() => speakText("School bell")} className="px-2.5 py-1 bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm active:scale-95">
+              <button type="button" onClick={() => speakText("School bell")} className="px-2.5 py-1 bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-xs active:scale-95">
                 🔔 Bell Ring
               </button>
             </div>
