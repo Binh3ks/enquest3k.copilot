@@ -157,11 +157,19 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
   const grammarBoosters = isCategorizedWordBank ? (pictureMode.word_bank.grammar_boosters || []) : [];
   const flatWordBank = Array.isArray(pictureMode.word_bank) ? pictureMode.word_bank : [];
 
-  const pictureSet = Array.isArray(pictureMode.picture_set)
+  const fallback3Panels = [
+    { panel: 1, image_url: "/images/week33/read_stem.jpg", caption: "Jake walking in corridor" },
+    { panel: 2, image_url: "/images/scenes/default_story.jpg", caption: "Boy slipping on wet floor" },
+    { panel: 3, image_url: "/images/week33/read_stem.jpg", caption: "Nurse applying clean bandage" }
+  ];
+
+  const pictureSet = (Array.isArray(pictureMode.picture_set) && pictureMode.picture_set.length > 0)
     ? pictureMode.picture_set
-    : (Array.isArray(pictureMode.panels)
+    : (Array.isArray(pictureMode.panels) && pictureMode.panels.length > 0)
       ? pictureMode.panels
-      : (Array.isArray(pictureMode.picture_story) ? pictureMode.picture_story : null));
+      : (Array.isArray(pictureMode.picture_story) && pictureMode.picture_story.length > 0)
+        ? pictureMode.picture_story
+        : fallback3Panels;
 
   return (
     <div className="flex flex-col h-full overflow-hidden bg-slate-50">
@@ -192,55 +200,28 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         </div>
       )}
 
-      {/* Story Picture(s) */}
+      {/* Story Picture(s) — 3-Panel Cambridge Picture Set */}
       <div className="flex-shrink-0 bg-gradient-to-b from-slate-100 to-white p-3 border-b border-slate-200">
-        {pictureSet && pictureSet.length > 0 ? (
-          /* Multi-Panel Cambridge 3D Picture Set */
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            {pictureSet.map((p, idx) => (
-              <div key={idx} className="bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {pictureSet.map((p, idx) => (
+            <div key={idx} className="bg-white p-2 rounded-2xl border-2 border-indigo-200 shadow-sm flex flex-col items-center hover:scale-[1.02] transition">
+              <div className="relative w-full h-32 sm:h-36 rounded-xl overflow-hidden bg-slate-900 border border-slate-200">
                 <img
                   src={getImageUrl(p.image_url)}
                   alt={`Panel ${p.panel || idx + 1}`}
-                  className="w-full h-28 object-cover rounded-lg"
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.src = '/images/week33/read_stem.jpg'; }}
                 />
-                <span className="text-[10px] font-black text-slate-500 mt-1">
+                <span className="absolute top-2 left-2 px-2 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] font-black uppercase tracking-wider shadow">
                   Panel {p.panel || idx + 1}
                 </span>
               </div>
-            ))}
-          </div>
-        ) : (
-          /* Single Picture Prompt */
-          <div
-            className="relative rounded-2xl border-2 border-indigo-200 shadow-md overflow-hidden min-h-[220px] flex items-center justify-center bg-gradient-to-br from-indigo-900 via-slate-900 to-purple-950 text-white p-4 cursor-pointer"
-            onClick={() => imgSrc && !imgFailed && setImgZoomed(true)}
-          >
-            {imgSrc && !imgFailed ? (
-              <img
-                src={imgSrc}
-                alt={isVi ? 'Tranh viết truyện' : 'Story prompt picture'}
-                className="w-full max-h-[260px] object-cover rounded-xl shadow-md"
-                onError={() => setImgFailed(true)}
-              />
-            ) : (
-              <div className="w-full py-8 px-6 text-center space-y-3">
-                <div className="w-16 h-16 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
-                  🏫
-                </div>
-                <div className="space-y-1">
-                  <h4 className="text-base font-black text-amber-300">SCENE: SCHOOL CORRIDOR ACCIDENT & FIRST AID</h4>
-                  <p className="text-xs text-slate-300 max-w-md mx-auto">
-                    Jake walking down corridor • Running student slips on wet floor • School nurse applies clean bandage & cold pack
-                  </p>
-                </div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-800/80 rounded-full text-[10px] font-black uppercase tracking-wider text-indigo-200 border border-indigo-500/40">
-                  ✨ 3D Pixar Story Scene Rendered
-                </div>
-              </div>
-            )}
-          </div>
-        )}
+              <span className="text-xs font-bold text-slate-700 mt-1.5 text-center truncate w-full px-1">
+                {p.caption || `Picture ${idx + 1}`}
+              </span>
+            </div>
+          ))}
+        </div>
 
         {/* Writing prompts */}
         <div className="mt-2 bg-indigo-50/70 p-2.5 rounded-xl border border-indigo-100">
