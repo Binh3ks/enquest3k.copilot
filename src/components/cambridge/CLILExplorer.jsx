@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Volume2, CheckCircle2, AlertCircle, BookOpen, RotateCcw } from 'lucide-react';
+import { Globe, Volume2, CheckCircle2, AlertCircle, BookOpen, RotateCcw, HelpCircle } from 'lucide-react';
 import { renderParsedText } from '../common/HoverWord';
 import VoiceService from '../../services/voiceService';
 import { useUserStore } from '../../stores/useUserStore';
