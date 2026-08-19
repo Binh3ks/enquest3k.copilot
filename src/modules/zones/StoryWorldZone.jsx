@@ -34,10 +34,8 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
   const [isRecording, setIsRecording] = useState(false);
   const [retellAudioUrl, setRetellAudioUrl] = useState(null);
   const [novaFeedback, setNovaFeedback] = useState(null);
-  const [selectedStarter, setSelectedStarter] = useState('');
   const [retellAttemptCount, setRetellAttemptCount] = useState(0);
-  const [showHint, setShowHint] = useState(false);
-  const [showModelExample, setShowModelExample] = useState(true);
+  const [showHint, setShowHint] = useState(true); // Tier 1 default: hints visible
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
 
@@ -585,14 +583,14 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
       )}
 
       {/* ========================================================================= */}
-      {/* GEAR 3: 🎙️ RETELL TO NOVA (MASCOT STARTERS & FUN FEEDBACK)                 */}
+      {/* GEAR 3: 🎙️ RETELL TO NOVA — LISTEN → RECALL → SPEAK                      */}
       {/* ========================================================================= */}
       {currentGear === 3 && (
         <div className="space-y-4">
-          {/* Slim Arcade Instruction Bar */}
+          {/* Goal Bar */}
           <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
             <span className="font-black text-purple-950 flex items-center gap-1.5">
-              🎙️ GAME GOAL: Record 30s voice retell with action verbs. Earn +50 XP!
+              🎙️ GAME GOAL: Listen to the full story, then retell it in your own words. Earn +50 XP!
             </span>
             <button
               type="button"
@@ -603,113 +601,125 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
             </button>
           </div>
 
-          <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-md space-y-3">
-            {/* Slim Model Example Bar */}
-            <div className="flex items-center justify-between px-3.5 py-2 bg-indigo-50 border border-indigo-200 rounded-xl gap-3">
-              <p className="text-xs font-semibold text-indigo-900 italic flex-1 leading-relaxed">
-                💡 <strong>Model:</strong> &ldquo;Jake <span className="text-emerald-700 underline">was walking carefully</span> <span className="text-blue-700 underline">down the school corridor</span>. Suddenly, a student <span className="text-amber-700 underline">slipped on the wet floor</span>.&rdquo;
-              </p>
-              <button
-                type="button"
-                onClick={() => speakText("Jake was walking carefully down the school corridor. Suddenly, a student slipped on the wet floor.")}
-                className="shrink-0 px-2 py-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-[10px] font-black flex items-center gap-1 transition"
-              >
-                <Volume2 size={11} /> Listen
-              </button>
-            </div>
+          <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-md space-y-4">
 
-            {/* Fading Scaffold: Sentence Starters — horizontal, compact */}
-            <div className="space-y-1.5">
+            {/* ── Step 1: Listen to Full Story ── */}
+            <div className="p-4 bg-indigo-50 border border-indigo-200 rounded-2xl space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
-                  ✨ {retellAttemptCount === 0 ? 'Starters (Attempt 1)' : retellAttemptCount === 1 ? 'Reduced (Attempt 2)' : 'Challenge — Free Speak'}
+                <span className="text-xs font-black uppercase tracking-widest text-indigo-800">
+                  🎧 Step 1 — Listen First
                 </span>
-                {retellAttemptCount > 0 && (
-                  <button type="button" onClick={() => setShowHint(!showHint)}
-                    className="text-[10px] font-bold text-indigo-600 hover:text-indigo-800">
-                    💡 Hint
-                  </button>
-                )}
+                <button
+                  type="button"
+                  onClick={() => speakText(fullStoryText)}
+                  className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-1.5 transition active:scale-95"
+                >
+                  <Volume2 size={14} /> Play Full Story
+                </button>
               </div>
-              <div className="flex flex-wrap gap-1.5">
-                {(retellAttemptCount === 0
-                  ? ["First, Jake was walking...", "Suddenly, a student slipped...", "Finally, the school nurse..."]
-                  : retellAttemptCount === 1
-                    ? ["First, Jake was walking...", "Finally, the school nurse..."]
-                    : []
-                ).map((starter, sIdx) => (
-                  <button key={sIdx} type="button"
-                    onClick={() => setSelectedStarter(prev => prev ? `${prev} ${starter}` : starter)}
-                    className="px-2.5 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-900 rounded-xl text-xs font-bold transition shadow-sm">
-                    + {starter}
-                  </button>
-                ))}
-                {showHint && (
-                  <button type="button"
-                    onClick={() => setSelectedStarter(prev => prev ? `${prev} Then, the nurse...` : 'Then, the nurse...')}
-                    className="px-2.5 py-1 bg-indigo-100 border border-indigo-300 text-indigo-900 rounded-xl text-xs font-bold transition shadow-sm">
-                    💡 Then, the nurse...
-                  </button>
-                )}
-              </div>
+              <p className="text-xs text-indigo-700 font-medium italic">
+                Listen carefully — then close your eyes and try to remember the story before recording.
+              </p>
             </div>
 
-            {/* 4 Chunk Groups — compact 2x2 grid */}
-            <div className="grid grid-cols-2 gap-1.5">
-              {[
-                { color: 'blue', label: '🔵 Setting', chunks: ['After science class', 'down the corridor', 'On a Monday'] },
-                { color: 'emerald', label: '🟢 Action', chunks: ['was walking carefully', 'stopped to help', 'called the nurse'] },
-                { color: 'amber', label: '🟠 Problem', chunks: ['slipped on the wet floor', 'hurt his knee', 'fell down heavily'] },
-                { color: 'purple', label: '🟣 Solution', chunks: ['with a clean bandage', 'felt relieved', 'praised Jake'] },
-              ].map(({ color, label, chunks }) => (
-                <div key={label} className={`p-1.5 bg-${color}-50 rounded-xl border border-${color}-200 space-y-1`}>
-                  <span className={`text-[9px] font-black uppercase text-${color}-900 block`}>{label}</span>
-                  <div className="flex flex-wrap gap-0.5">
-                    {chunks.map((c, i) => (
-                      <button key={i} type="button"
-                        onClick={() => setSelectedStarter(prev => prev ? `${prev} ${c}` : c)}
-                        className={`px-1.5 py-0.5 bg-white hover:bg-${color}-100 text-${color}-950 border border-${color}-300 rounded text-[10px] font-bold transition active:scale-95`}>
-                        +{c}
-                      </button>
-                    ))}
-                  </div>
+            {/* ── Step 2: Memory Hints (Tier-gated) ── */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black uppercase tracking-widest text-purple-800">
+                  💡 Step 2 — Memory Hints
+                </span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setShowHint(true)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition ${
+                      showHint ? 'bg-purple-600 text-white' : 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-100'
+                    }`}
+                  >
+                    🌱 Show Hints
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowHint(false)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition ${
+                      !showHint ? 'bg-slate-600 text-white' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                    }`}
+                  >
+                    🧠 Hide (Challenge)
+                  </button>
                 </div>
-              ))}
-            </div>
-
-            {/* Selected prompt display (minimal) */}
-            {selectedStarter && (
-              <div className="px-3 py-1.5 bg-purple-100 border border-purple-300 rounded-xl text-purple-950 text-xs font-bold flex items-center justify-between gap-2">
-                <span className="truncate">"{selectedStarter}"</span>
-                <button type="button" onClick={() => setSelectedStarter('')} className="text-purple-600 text-[10px] shrink-0">✕ Clear</button>
               </div>
-            )}
 
-            {/* 🎙️ Mascot Nova intro — slim 1-line */}
-            <div className="flex items-center gap-2">
-              <span className="text-lg">🤖</span>
-              <span className="text-xs text-purple-800 font-bold italic">Nova is listening! Tap chunks above then record your 30-second story retell.</span>
+              {showHint && (
+                <div className="grid grid-cols-2 gap-1.5 animate-in fade-in duration-200">
+                  {[
+                    { dot: '🔵', label: 'SETTING', bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-950', keywords: ['After science class', 'corridor', 'Monday'] },
+                    { dot: '🟢', label: 'ACTION',  bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-950', keywords: ['walking carefully', 'stopped to help', 'called nurse'] },
+                    { dot: '🟠', label: 'PROBLEM', bg: 'bg-amber-50', border: 'border-amber-200', text: 'text-amber-950', keywords: ['slipped', 'wet floor', 'fell heavily'] },
+                    { dot: '🟣', label: 'SOLUTION', bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-950', keywords: ['clean bandage', 'felt relieved', 'praised Jake'] },
+                  ].map(({ dot, label, bg, border, text, keywords }) => (
+                    <div key={label} className={`p-2.5 rounded-xl border ${bg} ${border} space-y-1.5`}>
+                      <span className={`text-[9px] font-black uppercase ${text} flex items-center gap-1`}>
+                        {dot} {label}
+                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {keywords.map((kw, i) => (
+                          <span
+                            key={i}
+                            className={`px-1.5 py-0.5 bg-white/80 border ${border} ${text} rounded text-[10px] font-bold select-none`}
+                          >
+                            {kw}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {!showHint && (
+                <p className="text-[11px] text-slate-400 font-medium italic pl-1">
+                  Challenge mode — tell the story from memory! Tap "Show Hints" if you need help.
+                </p>
+              )}
             </div>
 
+            {/* ── Step 3: Record ── */}
+            <div className="pt-1 space-y-3">
+              <span className="text-xs font-black uppercase tracking-widest text-purple-800 block">
+                🎙️ Step 3 — Tell the Story
+              </span>
+              <div className="flex justify-center">
+                {!isRecording ? (
+                  <button
+                    type="button"
+                    onClick={startRetellRecording}
+                    className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition hover:scale-105 active:scale-95"
+                  >
+                    <Mic size={20} className="animate-pulse" /> 🎙️ START MY RETELL
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={stopRetellRecording}
+                    className="px-8 py-3.5 bg-rose-600 hover:bg-rose-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition animate-bounce"
+                  >
+                    <Square size={20} fill="currentColor" /> ⏹️ DONE — STOP
+                  </button>
+                )}
+              </div>
 
-            {/* Controls — always visible */}
-            <div className="flex justify-center py-2">
-              {!isRecording ? (
-                <button
-                  type="button"
-                  onClick={startRetellRecording}
-                  className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition hover:scale-105"
-                >
-                  <Mic size={20} className="animate-pulse" /> 🎙️ START VOICE RETELL
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  onClick={stopRetellRecording}
-                  className="px-8 py-3.5 bg-rose-600 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition animate-bounce"
-                >
-                  <Square size={20} fill="currentColor" /> ⏹️ STOP RECORDING
-                </button>
+              {retellAudioUrl && retellAudioUrl !== 'simulated_retell_audio' && (
+                <div className="flex items-center justify-center gap-3 flex-wrap">
+                  <audio controls src={retellAudioUrl} className="h-10 rounded-xl" />
+                  <button
+                    type="button"
+                    onClick={startRetellRecording}
+                    className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-black flex items-center gap-1.5"
+                  >
+                    <RotateCcw size={13} /> Re-record
+                  </button>
+                </div>
               )}
             </div>
 
