@@ -21,6 +21,7 @@ import { scoreWritingTiered } from '../../utils/writingRubric';
 import { renderParsedText } from '../../components/common/HoverWord';
 import { getImageUrl } from '../../utils/imageUrl';
 import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
+import { speakText } from '../../utils/AudioHelper';
 
 const DEFAULT_W33_PICTURE_MODE = {
   type: "picture",

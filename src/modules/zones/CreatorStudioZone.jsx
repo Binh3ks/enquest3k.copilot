@@ -16,41 +16,41 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
   const [storySubmission, setStorySubmission] = useState(null);
 
   const handleStoryComplete = (xpEarned = 50, finalText = '', extraData = null) => {
-    setStudioXP(prev => prev + xpEarned);
+    if (xpEarned > 0) setStudioXP(prev => prev + xpEarned);
 
     if (extraData?.structured && extraData?.fields) {
-      // Data Contract v2: Structured 4-scene Broadcast mapping (1:1 with story fields)
-      const { setting, action, problem, solution } = extraData.fields;
+      // Data Contract v2: 4 Structured Broadcast Scenes (1:1 with story fields)
+      const { setting = '', action = '', problem = '', solution = '' } = extraData.fields;
       const podcastScenes = [
         {
           id: 1,
           narrative_function: 'setting',
           title: 'Scene 1: Setting (🔵 Where & When)',
-          en: setting || '',
+          en: setting.trim() || '(Fill Part 1 Setting in Story Writer to see your script here)',
           radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
         },
         {
           id: 2,
           narrative_function: 'action',
           title: 'Scene 2: Action (🟢 What Was Happening)',
-          en: action || '',
+          en: action.trim() || '(Fill Part 2 Action in Story Writer to see your script here)',
           radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
         },
         {
           id: 3,
           narrative_function: 'problem',
           title: 'Scene 3: Problem (🟠 What Went Wrong)',
-          en: problem || '',
+          en: problem.trim() || '(Fill Part 3 Problem in Story Writer to see your script here)',
           radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
         },
         {
           id: 4,
           narrative_function: 'solution',
           title: 'Scene 4: Solution (🟣 How It Was Fixed)',
-          en: solution || '',
+          en: solution.trim() || '(Fill Part 4 Solution in Story Writer to see your script here)',
           radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
         }
-      ].filter(scene => scene.en.trim().length > 0);
+      ];
 
       setStorySubmission({ mode: 'structured', finalText, podcastScenes });
     } else if (finalText) {
