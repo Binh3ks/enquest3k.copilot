@@ -213,25 +213,30 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         ) : (
           /* Single Picture Prompt */
           <div
-            className="relative rounded-2xl border-2 border-slate-200 shadow-sm overflow-hidden max-h-[280px] flex items-center justify-center bg-white min-h-[180px] cursor-pointer"
+            className="relative rounded-2xl border-2 border-indigo-200 shadow-md overflow-hidden min-h-[220px] flex items-center justify-center bg-gradient-to-br from-indigo-900 via-slate-900 to-purple-950 text-white p-4 cursor-pointer"
             onClick={() => imgSrc && !imgFailed && setImgZoomed(true)}
           >
             {imgSrc && !imgFailed ? (
               <img
                 src={imgSrc}
                 alt={isVi ? 'Tranh viết truyện' : 'Story prompt picture'}
-                className="w-full max-h-[270px] object-contain rounded-xl"
-                onError={handleImgError}
+                className="w-full max-h-[260px] object-cover rounded-xl shadow-md"
+                onError={() => setImgFailed(true)}
               />
             ) : (
-              <div className="w-full h-40 flex flex-col items-center justify-center text-slate-400 gap-1.5 p-4">
-                <p className="text-xs font-bold text-slate-600">{isVi ? '📷 Đang tải tranh...' : '📷 Loading picture...'}</p>
-                <button
-                  onClick={() => setImgSrc(pictureMode.image_url)}
-                  className="text-[10px] text-indigo-600 underline hover:text-indigo-800"
-                >
-                  {isVi ? 'Thử lại' : 'Retry'}
-                </button>
+              <div className="w-full py-8 px-6 text-center space-y-3">
+                <div className="w-16 h-16 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+                  🏫
+                </div>
+                <div className="space-y-1">
+                  <h4 className="text-base font-black text-amber-300">SCENE: SCHOOL CORRIDOR ACCIDENT & FIRST AID</h4>
+                  <p className="text-xs text-slate-300 max-w-md mx-auto">
+                    Jake walking down corridor • Running student slips on wet floor • School nurse applies clean bandage & cold pack
+                  </p>
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-800/80 rounded-full text-[10px] font-black uppercase tracking-wider text-indigo-200 border border-indigo-500/40">
+                  ✨ 3D Pixar Story Scene Rendered
+                </div>
               </div>
             )}
           </div>

@@ -94,36 +94,17 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6 sm:p-7 bg-white rounded-3xl border-2 border-purple-200 shadow-xl space-y-6 text-slate-900 font-sans">
-      {/* Step-by-Step Instructions Banner */}
-      <div className="p-4 bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 text-white rounded-2xl border border-purple-500/40 space-y-2">
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <span className="px-3 py-1 bg-purple-500/30 text-purple-200 border border-purple-400/40 rounded-full text-[10px] font-black uppercase">
-            🎙️ Podcast Studio Guide
-          </span>
-          <span className="text-xs font-bold text-amber-300">Scene {currentSceneIdx + 1} of {activeScenes.length}</span>
-        </div>
-        <h3 className="text-base font-black text-amber-300 flex items-center gap-2">
-          🎙️ PODCAST CREATOR — 3 SIMPLE STEPS TO RECORD YOUR PODCAST
-        </h3>
-        
-        {/* 3 Step Guidance Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
-          <div className="p-2.5 bg-white/10 rounded-xl text-xs font-bold flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center font-black text-xs shrink-0">1</span>
-            <span>🎧 Listen to Native Model Audio</span>
-          </div>
-          <div className="p-2.5 bg-white/10 rounded-xl text-xs font-bold flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-indigo-500 text-white flex items-center justify-center font-black text-xs shrink-0">2</span>
-            <span>🎙️ Press Mic & Record Your Story</span>
-          </div>
-          <div className="p-2.5 bg-white/10 rounded-xl text-xs font-bold flex items-center gap-2">
-            <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xs shrink-0">3</span>
-            <span>📊 Compare Voice & Share Podcast</span>
-          </div>
-        </div>
+      {/* Slim Arcade Instruction Bar */}
+      <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+        <span className="font-black text-purple-950 flex items-center gap-1.5">
+          🎙️ PODCAST GAME GOAL: 1. Listen Native Audio → 2. Record Story Voice → 3. Earn +50 XP!
+        </span>
+        <span className="text-xs font-bold text-purple-900 bg-purple-200/80 px-2.5 py-1 rounded-lg">
+          Scene {currentSceneIdx + 1} of {activeScenes.length}
+        </span>
       </div>
 
-      {/* Current Scene Display Card */}
+      {/* Current Scene Display Card (Zero-L1 English Only) */}
       <div className="p-6 bg-purple-50/80 rounded-3xl border-2 border-purple-200 space-y-4 shadow-inner">
         <div className="flex items-center justify-between">
           <span className="text-xs font-black uppercase tracking-wider text-purple-900">
@@ -141,12 +122,6 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
         <p className="text-lg sm:text-xl font-black text-slate-900 leading-relaxed">
           "{currentScene.en || currentScene.text || currentScene.caption}"
         </p>
-
-        {currentScene.vi && (
-          <p className="text-xs font-bold text-slate-500 italic border-t border-purple-200/60 pt-2">
-            {currentScene.vi}
-          </p>
-        )}
       </div>
 
       {/* Recording Control Dock */}
