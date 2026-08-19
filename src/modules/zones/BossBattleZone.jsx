@@ -94,12 +94,47 @@ export default function BossBattleZone({ data, weekNumber = 33 }) {
 
   if (!hasStarted) {
     return (
-      <div className="w-full max-w-5xl mx-auto space-y-6">
+      <div className="w-full max-w-5xl mx-auto space-y-6 font-sans">
+        {/* Dual Progress Bar Indicator (EPIC-4: Cambridge Mastery vs Knowledge Bar) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="p-3.5 bg-purple-900/90 text-white rounded-2xl border border-purple-500/40 shadow-md space-y-1.5">
+            <div className="flex items-center justify-between text-xs font-black">
+              <span className="text-amber-300 flex items-center gap-1">
+                🛡️ CAMBRIDGE MASTERY BAR
+              </span>
+              <span>85% (A2 Flyers)</span>
+            </div>
+            <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+              <div className="h-full bg-amber-400 rounded-full" style={{ width: '85%' }} />
+            </div>
+          </div>
+
+          <div className="p-3.5 bg-emerald-900/90 text-white rounded-2xl border border-emerald-500/40 shadow-md space-y-1.5">
+            <div className="flex items-center justify-between text-xs font-black">
+              <span className="text-emerald-300 flex items-center gap-1">
+                🌍 CLIL KNOWLEDGE BAR
+              </span>
+              <span>90% (Science & Society)</span>
+            </div>
+            <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+              <div className="h-full bg-emerald-400 rounded-full" style={{ width: '90%' }} />
+            </div>
+          </div>
+        </div>
+
         <BossIntro
           rotaryConfig={rotaryConfig}
           onStartBattle={() => setHasStarted(true)}
           userShields={userShields}
         />
+        
+        {/* Comeback Shield Indicator */}
+        <div className="flex items-center justify-center p-3 border-t border-slate-200">
+           <div className="text-xs text-slate-500 flex items-center gap-2 font-medium">
+             <Shield className="text-amber-500" size={16} /> 
+             You have {userShields} Comeback Shields available to boost your score!
+           </div>
+        </div>
       </div>
     );
   }

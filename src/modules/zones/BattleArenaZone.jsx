@@ -34,6 +34,22 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
         </div>
       </div>
 
+      {/* Class Co-op Progress Meter (Collaborative Progress - EPIC-2) */}
+      <div className="p-3 bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 text-white rounded-2xl border border-purple-500/40 shadow-md space-y-1.5 text-xs font-sans">
+        <div className="flex items-center justify-between font-black">
+          <span className="text-amber-300 flex items-center gap-1.5">
+            🤝 CLASS CO-OP PROGRESS: 820 / 1000 CLASS XP
+          </span>
+          <span className="text-purple-200">82% Completed</span>
+        </div>
+        <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden p-0.5 border border-purple-400/40">
+          <div className="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full transition-all duration-500" style={{ width: '82%' }} />
+        </div>
+        <p className="text-[11px] text-purple-200 font-medium italic text-right">
+          ✨ Every match contributes to unlocking Class Champion Accessories for everyone!
+        </p>
+      </div>
+
       {/* Vibrant Multi-Color Subtabs Selector */}
       <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
