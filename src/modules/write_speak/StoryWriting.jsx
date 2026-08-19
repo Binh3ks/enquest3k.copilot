@@ -131,6 +131,10 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
     const t = setTimeout(() => {
       const isComplete = (cambridgeEval.isAllMet || (!!rubric && rubric.total >= 6)) && allPartsWritten;
       const percent = isComplete ? 100 : (cambridgeEval.wordCount > 10 ? 40 : 0);
+      const extraData = {
+        structured: isStructured,
+        fields: isStructured ? { setting: settingText, action: actionText, problem: problemText, solution: solutionText } : null
+      };
       saveProgress({
         text,
         fields: isStructured ? { setting: settingText, action: actionText, problem: problemText, solution: solutionText } : null,
@@ -141,11 +145,9 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       if (isComplete) {
         markComplete(Math.round(percent));
       }
-      if (onReportProgress) onReportProgress(Math.round(percent), text, {
-        structured: isStructured,
-        fields: isStructured ? { setting: settingText, action: actionText, problem: problemText, solution: solutionText } : null
-      });
-    }, 1500);
+      if (onComplete) onComplete(isComplete ? 50 : 0, text, extraData);
+      if (onReportProgress) onReportProgress(Math.round(percent), text, extraData);
+    }, 800);
     return () => clearTimeout(t);
   }, [text, settingText, actionText, problemText, solutionText, rubric, cambridgeEval.isAllMet, allPartsWritten, timeLeftSec, timerStarted]);
 
@@ -187,8 +189,7 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000);
     }
-    // Data contract v2: pass payload up to parent (→ CreatorStudioZone → Broadcast Studio)
-    if (onReportProgress) onReportProgress(100, text, {
+    const extraData = {
       structured: isStructured,
       fields: isStructured ? {
         setting: settingText.trim(),
@@ -196,7 +197,10 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         problem: problemText.trim(),
         solution: solutionText.trim(),
       } : null
-    });
+    };
+    // Data contract v2: pass payload up to parent (→ CreatorStudioZone → Broadcast Studio)
+    if (onComplete) onComplete(50, text, extraData);
+    if (onReportProgress) onReportProgress(100, text, extraData);
   };
 
   // Extract word bank groups (4 groups)
@@ -583,17 +587,17 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             <button
               onClick={handleSubmit}
               disabled={!allPartsWritten}
-              className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
+              className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white rounded-xl font-black text-xs flex items-center gap-1.5 shadow-md transition active:scale-95"
             >
-              <BarChart2 size={13} />
-              {isVi ? 'Chấm Điểm Cambridge' : 'Score Cambridge'}
+              <CheckCircle2 size={15} />
+              {isVi ? '✅ Nộp Bài Viết (+50 XP)' : '✅ Submit Story Script (+50 XP)'}
             </button>
 
             <button
               onClick={onGoToSpeak}
-              className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs flex items-center gap-1 shadow"
+              className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-black text-xs flex items-center gap-1.5 shadow transition"
             >
-              {isVi ? 'Chuyển Kể Chuyện (Tab 3)' : 'Tell Story (Tab 3)'} <ArrowRight size={12} />
+              {isVi ? 'Broadcast Studio ▶' : 'Broadcast Studio ▶'} <ArrowRight size={13} />
             </button>
           </div>
         </div>

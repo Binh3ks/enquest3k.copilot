@@ -159,6 +159,8 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
             storyPrompts={studioData.storyPrompts}
             weekNumber={weekNumber}
             onComplete={(xp, finalText, extraData) => handleStoryComplete(xp, finalText, extraData)}
+            onReportProgress={(percent, finalText, extraData) => handleStoryComplete(0, finalText, extraData)}
+            onGoToSpeak={() => setActiveTab('podcast_creator')}
           />
         )}
 
