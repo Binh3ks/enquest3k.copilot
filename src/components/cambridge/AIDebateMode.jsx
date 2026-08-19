@@ -256,28 +256,48 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33 }) {
           </div>
         )}
 
-        {/* Starter Response Options (Click to fill) */}
-      <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200 space-y-2">
-        <span className="text-xs font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
-          <Sparkles size={14} className="text-purple-600" /> Tap Argument Option to Start Debate:
-        </span>
-        <div className="flex flex-wrap gap-2">
-          {[
-            "I disagree with Nova because running inside is dangerous for students.",
-            "In my opinion, if a student runs on a wet floor, they will slip and fall.",
-            "Walking carefully keeps everyone safe and prevents corridor accidents."
-          ].map((option, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setUserSpeechText(option)}
-              className="px-3.5 py-2 bg-white hover:bg-purple-100 border border-purple-300 text-purple-950 rounded-xl text-xs font-bold transition text-left shadow-sm active:scale-95"
-            >
-              + {option}
-            </button>
-          ))}
+        {/* Sentence Half Starters & Target Vocab Pills */}
+        <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200 space-y-3">
+          <div className="space-y-1">
+            <span className="text-xs font-black uppercase text-purple-900 tracking-wider flex items-center gap-1">
+              <Sparkles size={14} className="text-purple-600" /> Tap Sentence Starters (Half Stems):
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {[
+                "I disagree with Nova because...",
+                "In my opinion, if a student...",
+                "For example, walking carefully..."
+              ].map((starter, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setUserSpeechText(prev => prev ? `${prev} ${starter}` : starter)}
+                  className="px-3.5 py-1.5 bg-white hover:bg-purple-100 border border-purple-300 text-purple-950 rounded-xl text-xs font-bold transition text-left shadow-sm active:scale-95"
+                >
+                  + {starter}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-1 pt-1 border-t border-purple-200/60">
+            <span className="text-[10px] font-black uppercase text-purple-800 tracking-wider flex items-center gap-1">
+              🎯 Target Vocab & Structures:
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {["dangerous", "slip and fall", "wet floor", "keep safe", "reduce friction", "corridor rules"].map((vocab, vIdx) => (
+                <button
+                  key={vIdx}
+                  type="button"
+                  onClick={() => setUserSpeechText(prev => prev ? `${prev} ${vocab}` : vocab)}
+                  className="px-2.5 py-1 bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300 rounded-lg text-xs font-bold transition active:scale-95"
+                >
+                  + {vocab}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
         <div className="space-y-3">
           <textarea
             rows={4}

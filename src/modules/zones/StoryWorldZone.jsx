@@ -346,9 +346,6 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                         type="button"
                         onClick={() => {
                           handleSpeakSentence(sentence, idx);
-                          setTimeout(() => {
-                            alert(`🎙️ Shadowing active for Sentence ${idx + 1}! Speak now into your microphone.`);
-                          }, 1500);
                         }}
                         className="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95"
                       >
@@ -388,33 +385,57 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
           </div>
 
           <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-5">
-            {/* Mascot Nova Prompts */}
+            {/* Mascot Nova Prompts (Half Stems & Target Vocab) */}
             <div className="p-4 bg-purple-50 rounded-2xl border border-purple-200 flex items-start gap-3">
               <div className="w-12 h-12 rounded-2xl bg-purple-600 text-white flex items-center justify-center font-black text-2xl shrink-0 shadow-md">
                 🤖
               </div>
-              <div className="space-y-2">
+              <div className="space-y-3 flex-1">
                 <h4 className="text-xs font-black uppercase text-purple-900 tracking-wider">Mascot Nova is Listening!</h4>
                 <p className="text-xs text-purple-800 font-bold">
-                  "Hi friend! Tap a story starter below to help you speak with confidence!"
+                  "Hi friend! Tap half sentence starters or target vocab pills below to help you speak with confidence!"
                 </p>
 
-                {/* Retell Starters */}
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {[
-                    "First, Jake was walking carefully in the corridor...",
-                    "Then, a student running fast slipped on the wet floor...",
-                    "Finally, the school nurse came with a clean bandage!"
-                  ].map((starter, sIdx) => (
-                    <button
-                      key={sIdx}
-                      type="button"
-                      onClick={() => setSelectedStarter(starter)}
-                      className="px-3 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-900 rounded-xl text-xs font-bold transition shadow-sm text-left"
-                    >
-                      + {starter}
-                    </button>
-                  ))}
+                {/* Retell Half Starters */}
+                <div className="space-y-1">
+                  <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
+                    ✨ Half Sentence Starters:
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "First, Jake was walking...",
+                      "Suddenly, a student slipped...",
+                      "Finally, the school nurse..."
+                    ].map((starter, sIdx) => (
+                      <button
+                        key={sIdx}
+                        type="button"
+                        onClick={() => setSelectedStarter(prev => prev ? `${prev} ${starter}` : starter)}
+                        className="px-3 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-900 rounded-xl text-xs font-bold transition shadow-sm text-left"
+                      >
+                        + {starter}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Target Vocab Pills */}
+                <div className="space-y-1 pt-1 border-t border-purple-200/60">
+                  <span className="text-[10px] font-black uppercase text-purple-900 tracking-wider">
+                    🎯 Target Vocab & Action Verbs:
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {["carefully", "running fast", "wet floor", "hurt knee", "clean bandage", "relieved"].map((vocab, vIdx) => (
+                      <button
+                        key={vIdx}
+                        type="button"
+                        onClick={() => setSelectedStarter(prev => prev ? `${prev} ${vocab}` : vocab)}
+                        className="px-2.5 py-1 bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300 rounded-lg text-xs font-bold transition"
+                      >
+                        + {vocab}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

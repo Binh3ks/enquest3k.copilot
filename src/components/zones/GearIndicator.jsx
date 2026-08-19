@@ -6,43 +6,47 @@ export const STORY_GEARS = [
     level: 1,
     name: '3D Webtoon',
     icon: Film,
-    color: 'from-blue-600 to-cyan-600',
-    border: 'border-cyan-400',
-    bg: 'bg-cyan-50 text-cyan-900',
+    activeBg: 'bg-cyan-500 text-slate-950 border-cyan-400 ring-2 ring-cyan-300 scale-[1.02]',
+    inactiveBg: 'bg-cyan-50 hover:bg-cyan-100 text-cyan-900 border-cyan-200',
+    iconActive: 'bg-slate-950 text-cyan-300',
+    iconInactive: 'bg-cyan-200 text-cyan-900',
     desc: 'Explore 5 Pixar scenes • Tap hotspots for instant definitions & audio'
   },
   {
     level: 2,
     name: 'Audio Narration',
     icon: Headphones,
-    color: 'from-amber-500 to-orange-600',
-    border: 'border-amber-400',
-    bg: 'bg-amber-50 text-amber-900',
+    activeBg: 'bg-amber-500 text-slate-950 border-amber-400 ring-2 ring-amber-300 scale-[1.02]',
+    inactiveBg: 'bg-amber-50 hover:bg-amber-100 text-amber-900 border-amber-200',
+    iconActive: 'bg-slate-950 text-amber-300',
+    iconInactive: 'bg-amber-200 text-amber-900',
     desc: 'Listen to full story • Tap any sentence to replay audio instantly'
   },
   {
     level: 3,
     name: 'Retell to Nova',
     icon: Mic,
-    color: 'from-purple-600 to-indigo-600',
-    border: 'border-purple-400',
-    bg: 'bg-purple-50 text-purple-900',
+    activeBg: 'bg-purple-600 text-white border-purple-400 ring-2 ring-purple-300 scale-[1.02]',
+    inactiveBg: 'bg-purple-50 hover:bg-purple-100 text-purple-900 border-purple-200',
+    iconActive: 'bg-purple-950 text-amber-300',
+    iconInactive: 'bg-purple-200 text-purple-900',
     desc: 'Record 30s voice retell • Get instant cheerful mascot feedback'
   },
   {
     level: 4,
     name: 'CLIL Knowledge Explorer',
     icon: Globe,
-    color: 'from-emerald-600 to-teal-600',
-    border: 'border-emerald-400',
-    bg: 'bg-emerald-50 text-emerald-900',
+    activeBg: 'bg-emerald-600 text-white border-emerald-400 ring-2 ring-emerald-300 scale-[1.02]',
+    inactiveBg: 'bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border-emerald-200',
+    iconActive: 'bg-emerald-950 text-emerald-300',
+    iconInactive: 'bg-emerald-200 text-emerald-900',
     desc: 'Explore 2 article paragraphs with check questions after each part'
   }
 ];
 
 export default function GearIndicator({ currentGear = 1, onSelectGear, completedGears = [] }) {
   return (
-    <div className="w-full bg-white rounded-2xl p-2 sm:p-2.5 border border-slate-200 text-slate-900 shadow-sm mb-3 font-sans">
+    <div className="w-full bg-slate-100/90 rounded-2xl p-2 sm:p-2.5 border border-slate-200 text-slate-900 shadow-inner mb-3 font-sans">
       <div className="flex items-center justify-between gap-2 overflow-x-auto no-scrollbar">
         {STORY_GEARS.map((g) => {
           const isActive = currentGear === g.level;
@@ -56,13 +60,13 @@ export default function GearIndicator({ currentGear = 1, onSelectGear, completed
               onClick={() => onSelectGear && onSelectGear(g.level)}
               className={`flex-1 min-w-[140px] py-2.5 px-3 rounded-xl border transition-all text-left flex items-center gap-2.5 ${
                 isActive
-                  ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-slate-400 scale-[1.02]'
+                  ? g.activeBg
                   : isCompleted
-                  ? 'bg-emerald-50 text-emerald-950 border-emerald-300'
-                  : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
+                  ? 'bg-emerald-100 text-emerald-950 border-emerald-300 font-black'
+                  : g.inactiveBg
               }`}
             >
-              <div className={`p-1.5 rounded-lg shrink-0 ${isActive ? 'bg-amber-400 text-slate-950' : 'bg-slate-200 text-slate-700'}`}>
+              <div className={`p-1.5 rounded-lg shrink-0 ${isActive ? g.iconActive : g.iconInactive}`}>
                 <Icon size={16} />
               </div>
               <div className="truncate">

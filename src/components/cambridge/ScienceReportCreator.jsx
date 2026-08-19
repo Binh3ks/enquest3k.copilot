@@ -34,21 +34,45 @@ export default function ScienceReportCreator({ reportTopic, weekNumber = 33, onC
         </div>
       </div>
 
-      <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-2">
-        <span className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1">
-          <Sparkles size={14} className="text-emerald-600" /> Tap Science Starter Pill to Insert:
-        </span>
-        <div className="flex flex-wrap gap-2">
-          {starterPills.map((pill, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setReportText(prev => prev ? `${prev} ${pill}` : pill)}
-              className="px-3.5 py-2 bg-white hover:bg-emerald-100 border border-emerald-300 text-emerald-950 rounded-xl text-xs font-bold transition text-left shadow-sm active:scale-95"
-            >
-              + {pill}
-            </button>
-          ))}
+      <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 space-y-3">
+        <div className="space-y-1">
+          <span className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1">
+            <Sparkles size={14} className="text-emerald-600" /> Tap Half Sentence Starters:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "Water acts as...",
+              "As a result, friction...",
+              "Therefore, walking carefully..."
+            ].map((starter, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setReportText(prev => prev ? `${prev} ${starter}` : starter)}
+                className="px-3.5 py-1.5 bg-white hover:bg-emerald-100 border border-emerald-300 text-emerald-950 rounded-xl text-xs font-bold transition text-left shadow-sm active:scale-95"
+              >
+                + {starter}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-1 pt-1 border-t border-emerald-200/60">
+          <span className="text-[10px] font-black uppercase text-emerald-800 tracking-wider">
+            🎯 Target Science Vocab & Collocations:
+          </span>
+          <div className="flex flex-wrap gap-1.5">
+            {["liquid lubricant", "rubber shoes", "reduce friction to zero", "wet puddle", "corridor safety", "bandage & cold pack"].map((vocab, vIdx) => (
+              <button
+                key={vIdx}
+                type="button"
+                onClick={() => setReportText(prev => prev ? `${prev} ${vocab}` : vocab)}
+                className="px-2.5 py-1 bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-300 rounded-lg text-xs font-bold transition active:scale-95"
+              >
+                + {vocab}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 

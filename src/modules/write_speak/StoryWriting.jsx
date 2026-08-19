@@ -22,11 +22,22 @@ import { renderParsedText } from '../../components/common/HoverWord';
 import { getImageUrl } from '../../utils/imageUrl';
 import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 
-const StoryWriting = ({ content, themeColor, isVi, onToggleLang, onReportProgress, onGoToSpeak }) => {
+const DEFAULT_W33_PICTURE_MODE = {
+  type: "picture",
+  rubric_tier: 2,
+  image_url: "/images/week33/barmodel_w33_adv_p1.svg",
+  word_bank: ["corridor", "walking", "fast", "slipped", "wet floor", "knee", "bandage", "nurse"],
+  writing_prompts: {
+    en: "Look at the school corridor picture and write a story about what happened to the running student and how Jake helped."
+  }
+};
+
+const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, onReportProgress, onGoToSpeak, weekNumber }) => {
   const { weekId } = useParams();
-  const currentWeek = parseInt(weekId);
-  const pictureMode = content?.story_prompts?.picture_mode;
-  const topicMode = content?.story_prompts?.topic_mode;
+  const currentWeek = parseInt(weekId) || weekNumber || 33;
+  const prompts = content?.story_prompts || storyPrompts || { picture_mode: DEFAULT_W33_PICTURE_MODE };
+  const pictureMode = prompts?.picture_mode || DEFAULT_W33_PICTURE_MODE;
+  const topicMode = prompts?.topic_mode;
 
   // Saved progress lives under stationId 'story_writing'
   const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'story_writing');
@@ -36,15 +47,7 @@ const StoryWriting = ({ content, themeColor, isVi, onToggleLang, onReportProgres
     return <TopicMode topicMode={topicMode} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={onReportProgress} onGoToSpeak={onGoToSpeak} />;
   }
 
-  if (!pictureMode) {
-    return (
-      <div className="p-10 text-center text-slate-400 font-black italic">
-        {isVi ? 'Không có nội dung viết truyện' : 'No story writing content for this week.'}
-      </div>
-    );
-  }
-
-  return <PictureMode pictureMode={pictureMode} content={content} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={onReportProgress} onGoToSpeak={onGoToSpeak} themeColor={themeColor} />;
+  return <PictureMode pictureMode={pictureMode} content={content || { story_prompts: prompts }} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={onReportProgress} onGoToSpeak={onGoToSpeak} themeColor={themeColor} />;
 };
 
 // ─────────────────────────────────────────────────────────────
