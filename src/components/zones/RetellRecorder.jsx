@@ -123,29 +123,49 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
           "{currentScene.en || currentScene.text || currentScene.caption}"
         </p>
 
-        {/* Section 10.3: Radio Host Discourse Markers & Sound Board SFX */}
-        <div className="pt-3 border-t border-purple-200/80 space-y-2 text-xs">
+        {/* Section 10.3: Radio Host Discourse Markers & Complete Chunks */}
+        <div className="pt-3 border-t border-purple-200/80 space-y-2.5 text-xs">
           <div className="flex items-center justify-between flex-wrap gap-1">
             <span className="font-black text-purple-900 uppercase text-[10px]">🎙️ Radio Host Starters:</span>
             <div className="flex flex-wrap gap-1.5">
-              {["Welcome back to Corridor Watch!", "Believe it or not...", "Stay tuned..."].map((starter, sIdx) => (
-                <span key={sIdx} className="px-2 py-1 bg-white border border-purple-300 text-purple-950 font-bold rounded-lg text-[11px]">
+              {["Welcome back to Corridor Watch!", "Believe it or not...", "Stay tuned to hear what happened..."].map((starter, sIdx) => (
+                <span key={sIdx} className="px-2.5 py-1 bg-white border border-purple-300 text-purple-950 font-bold rounded-lg text-[11px] shadow-xs">
                   + {starter}
                 </span>
               ))}
             </div>
           </div>
 
+          {/* 4 Collocation Chunk Groups for Speaking Input */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
+            <div className="p-2 bg-blue-50 rounded-xl border border-blue-200 space-y-0.5">
+              <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting:</span>
+              <span className="text-[11px] font-bold text-blue-950">After science class · down the school corridor</span>
+            </div>
+            <div className="p-2 bg-emerald-50 rounded-xl border border-emerald-200 space-y-0.5">
+              <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action:</span>
+              <span className="text-[11px] font-bold text-emerald-950">was walking carefully · running very fast</span>
+            </div>
+            <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 space-y-0.5">
+              <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem:</span>
+              <span className="text-[11px] font-bold text-amber-950">slipped on the wet floor · hurt his knee</span>
+            </div>
+            <div className="p-2 bg-purple-50 rounded-xl border border-purple-200 space-y-0.5">
+              <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution:</span>
+              <span className="text-[11px] font-bold text-purple-950">called the nurse · with a clean bandage</span>
+            </div>
+          </div>
+
           <div className="flex items-center justify-between flex-wrap gap-1 pt-1">
-            <span className="font-black text-purple-900 uppercase text-[10px]">🔊 Podcast Sound Board SFX:</span>
+            <span className="font-black text-purple-900 uppercase text-[10px]">🔊 Sound Board SFX:</span>
             <div className="flex items-center gap-1.5">
-              <button type="button" className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm">
+              <button type="button" onClick={() => speakText("Footsteps")} className="px-2.5 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm active:scale-95">
                 👟 Footsteps
               </button>
-              <button type="button" className="px-2.5 py-1 bg-rose-100 hover:bg-rose-200 text-rose-950 border border-rose-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm">
+              <button type="button" onClick={() => speakText("Uh-oh! Be careful!")} className="px-2.5 py-1 bg-rose-100 hover:bg-rose-200 text-rose-950 border border-rose-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm active:scale-95">
                 ⚠️ Uh-Oh!
               </button>
-              <button type="button" className="px-2.5 py-1 bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm">
+              <button type="button" onClick={() => speakText("School bell")} className="px-2.5 py-1 bg-blue-100 hover:bg-blue-200 text-blue-950 border border-blue-300 font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-sm active:scale-95">
                 🔔 Bell Ring
               </button>
             </div>

@@ -255,85 +255,85 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
         </div>
       </div>
 
-      {/* Word Bank Pills — 4 Categorized Groups */}
+      {/* 💡 MODEL STORY EXAMPLE & COLLOCATION CHUNKS ECOSYSTEM */}
       {(!isExamMode || timerStarted) && (
-        <div className="flex-shrink-0 px-3 py-2 bg-white border-b border-slate-200 space-y-1.5">
-          {isCategorizedWordBank ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-              {/* Group 1: Week Target (Action Verbs) */}
-              {actionVerbs.length > 0 && (
-                <div className="bg-indigo-50/60 p-2 rounded-xl border border-indigo-100">
-                  <p className="text-[10px] font-black uppercase text-indigo-700 mb-1">
-                    ⚡ Week Target (Action Verbs)
-                  </p>
-                  <div className="flex flex-wrap gap-1">
-                    {actionVerbs.map((v, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-white border border-indigo-200 text-indigo-900 text-[10px] font-bold rounded-md">
-                        {v}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
+        <div className="flex-shrink-0 px-3 py-2.5 bg-indigo-50/70 border-b border-indigo-200 space-y-2.5 shadow-sm">
+          {/* Model Example Header */}
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-black uppercase text-indigo-900 tracking-wider flex items-center gap-1">
+              💡 Model Story Example (Tap to Listen):
+            </span>
+            <button
+              type="button"
+              onClick={() => speakText("Jake was walking carefully down the school corridor after science class. Suddenly, a boy slipped on the wet floor and hurt his knee. The school nurse arrived quickly with a clean bandage to help.")}
+              className="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md text-[10px] font-black flex items-center gap-1 transition"
+            >
+              🔊 Listen Model
+            </button>
+          </div>
+          <p className="text-xs text-indigo-950 font-medium italic leading-relaxed bg-white/80 p-2.5 rounded-xl border border-indigo-100">
+            &ldquo;Jake <span className="text-emerald-700 font-bold underline">was walking carefully</span> <span className="text-blue-700 font-bold underline">down the school corridor</span>. Suddenly, a boy <span className="text-amber-700 font-bold underline">slipped on the wet floor</span>. The school nurse <span className="text-purple-700 font-bold underline">arrived with a clean bandage</span> to help.&rdquo;
+          </p>
 
-              {/* Group 2: Cumulative Chunks (W01-W32) */}
-              {cumulativeChunks.length > 0 && (
-                <div className="bg-emerald-50/60 p-2 rounded-xl border border-emerald-100">
-                  <p className="text-[10px] font-black uppercase text-emerald-700 mb-1">
-                    💎 Cumulative (W01-W32)
-                  </p>
-                  <div className="flex flex-wrap gap-1">
-                    {cumulativeChunks.map((ch, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-white border border-emerald-200 text-emerald-900 text-[10px] font-bold rounded-md">
-                        {ch}
-                      </span>
-                    ))}
-                  </div>
+          {/* 4 Multi-Word Collocation & Chunk Groups (Clickable to Insert) */}
+          <div className="space-y-1.5 pt-1 border-t border-indigo-200/60">
+            <span className="text-[10px] font-black uppercase text-slate-700 tracking-wider">
+              🎯 Tap Chunks & Collocations to Insert:
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+              {/* 🔵 Setting Chunks */}
+              <div className="p-2 bg-blue-50 rounded-xl border border-blue-200 space-y-1">
+                <span className="text-[9px] font-black uppercase text-blue-900 block">🔵 Setting & Time:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["After science class", "down the school corridor", "On a Monday morning"].map((c, i) => (
+                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-blue-100 text-blue-950 border border-blue-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                      + {c}
+                    </button>
+                  ))}
                 </div>
-              )}
+              </div>
 
-              {/* Group 3: Story Connectors */}
-              {connectors.length > 0 && (
-                <div className="bg-amber-50/60 p-2 rounded-xl border border-amber-100">
-                  <p className="text-[10px] font-black uppercase text-amber-700 mb-1">
-                    🔗 Story Connectors
-                  </p>
-                  <div className="flex flex-wrap gap-1">
-                    {connectors.map((c, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-white border border-amber-200 text-amber-900 text-[10px] font-bold rounded-md">
-                        {c}
-                      </span>
-                    ))}
-                  </div>
+              {/* 🟢 Action Chunks */}
+              <div className="p-2 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1">
+                <span className="text-[9px] font-black uppercase text-emerald-900 block">🟢 Action & Manner:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["was walking carefully", "was running very fast", "stopped immediately to help"].map((c, i) => (
+                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-emerald-100 text-emerald-950 border border-emerald-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                      + {c}
+                    </button>
+                  ))}
                 </div>
-              )}
+              </div>
 
-              {/* Group 4: Grammar Boosters */}
-              {grammarBoosters.length > 0 && (
-                <div className="bg-purple-50/60 p-2 rounded-xl border border-purple-100">
-                  <p className="text-[10px] font-black uppercase text-purple-700 mb-1">
-                    🚀 Grammar Boosters
-                  </p>
-                  <div className="flex flex-wrap gap-1">
-                    {grammarBoosters.map((g, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-white border border-purple-200 text-purple-900 text-[10px] font-bold rounded-md">
-                        {g}
-                      </span>
-                    ))}
-                  </div>
+              {/* 🟠 Problem Chunks */}
+              <div className="p-2 bg-amber-50 rounded-xl border border-amber-200 space-y-1">
+                <span className="text-[9px] font-black uppercase text-amber-900 block">🟠 Problem & Hazard:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["slipped on the wet floor", "fell down heavily", "hurt his knee badly"].map((c, i) => (
+                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                      + {c}
+                    </button>
+                  ))}
                 </div>
-              )}
+              </div>
+
+              {/* 🟣 Solution Chunks */}
+              <div className="p-2 bg-purple-50 rounded-xl border border-purple-200 space-y-1">
+                <span className="text-[9px] font-black uppercase text-purple-900 block">🟣 Solution & Care:</span>
+                <div className="flex flex-wrap gap-1">
+                  {["called the school nurse", "with a clean bandage", "felt deeply relieved"].map((c, i) => (
+                    <button key={i} type="button" onClick={() => setText(prev => prev ? `${prev} ${c}` : c)}
+                      className="px-2 py-0.5 bg-white hover:bg-purple-100 text-purple-950 border border-purple-300 rounded-md text-[10px] font-bold transition active:scale-95 text-left shadow-xs">
+                      + {c}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
-          ) : flatWordBank.length > 0 ? (
-            <div className="flex flex-wrap gap-1 max-h-16 overflow-y-auto">
-              <span className="text-[10px] font-black text-slate-500 uppercase mr-2">Word Bank:</span>
-              {flatWordBank.map((w, i) => (
-                <span key={i} className="px-2 py-0.5 bg-slate-100 border border-slate-200 text-slate-700 text-[10px] font-medium rounded-full">
-                  {w}
-                </span>
-              ))}
-            </div>
-          ) : null}
+          </div>
         </div>
       )}
 

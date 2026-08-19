@@ -185,9 +185,19 @@ export default function BossBattleZone({ data, weekNumber = 33 }) {
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-300">
-      {/* Exam Header Status Bar */}
+      {/* Exam Header Status Bar with Exit Button */}
       <div className="w-full bg-slate-900/90 rounded-2xl p-4 border border-purple-500/40 text-white flex items-center justify-between flex-wrap gap-4 shadow-xl">
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              setHasStarted(false);
+              setActiveTaskIndex(0);
+            }}
+            className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1.5 transition active:scale-95 shadow"
+          >
+            ← Exit Battle
+          </button>
           <div className="p-2 rounded-xl bg-rose-500/20 text-rose-400">
             <Shield size={20} />
           </div>
