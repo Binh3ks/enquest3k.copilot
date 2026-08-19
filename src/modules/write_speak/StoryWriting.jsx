@@ -204,23 +204,35 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
       <div className="flex-shrink-0 bg-gradient-to-b from-slate-100 to-white p-3 border-b border-slate-200">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {[
-            { panel: 1, icon: "🏫", title: "Panel 1: Walking in Corridor", caption: "Jake walking in school corridor", gradient: "from-indigo-900 via-blue-900 to-slate-900" },
-            { panel: 2, icon: "🏃‍♂️", title: "Panel 2: Slipping on Wet Floor", caption: "Boy slipping on wet floor", gradient: "from-purple-900 via-rose-950 to-slate-900" },
-            { panel: 3, icon: "🩹", title: "Panel 3: First Aid & Care", caption: "Nurse applying clean bandage", gradient: "from-emerald-900 via-teal-900 to-slate-900" }
-          ].map((p, idx) => (
-            <div key={idx} className="bg-white p-2 rounded-2xl border-2 border-indigo-200 shadow-md flex flex-col items-center hover:scale-[1.02] transition">
-              <div className={`relative w-full h-32 sm:h-36 rounded-xl overflow-hidden bg-gradient-to-br ${p.gradient} text-white flex flex-col items-center justify-center p-3 text-center border border-white/20 shadow-inner`}>
-                <span className="text-3xl mb-1 transform hover:scale-110 transition">{p.icon}</span>
-                <span className="text-xs font-black text-amber-300 leading-tight">{p.title}</span>
-                <span className="absolute top-2 left-2 px-2 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] font-black uppercase tracking-wider shadow">
-                  Panel {p.panel}
+            { panel: 1, image_url: "/images/week33/writing_panel_1.png", caption: "Jake walking in school corridor" },
+            { panel: 2, image_url: "/images/week33/writing_panel_2.png", caption: "Boy slipping on wet floor" },
+            { panel: 3, image_url: "/images/week33/writing_panel_3.png", caption: "Nurse applying clean bandage" }
+          ].map((p, idx) => {
+            const panelImg = (pictureSet && pictureSet[idx]?.image_url) || p.image_url;
+            const captionText = (pictureSet && (pictureSet[idx]?.caption || pictureSet[idx]?.title_en)) || p.caption;
+
+            return (
+              <div key={idx} className="bg-white p-2 rounded-2xl border-2 border-indigo-200 shadow-md flex flex-col items-center hover:scale-[1.02] transition">
+                <div className="relative w-full h-36 sm:h-40 rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+                  <img
+                    src={panelImg}
+                    alt={`Panel ${idx + 1}`}
+                    className="w-full h-full object-cover rounded-lg"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = `/images/week33/writing_panel_${idx + 1}.png`;
+                    }}
+                  />
+                  <span className="absolute top-2 left-2 px-2.5 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] font-black uppercase tracking-wider shadow border border-amber-300">
+                    Panel {idx + 1}
+                  </span>
+                </div>
+                <span className="text-xs font-black text-slate-800 mt-2 text-center truncate w-full px-1">
+                  {captionText}
                 </span>
               </div>
-              <span className="text-xs font-bold text-slate-700 mt-1.5 text-center truncate w-full px-1">
-                {p.caption}
-              </span>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Writing prompts */}
