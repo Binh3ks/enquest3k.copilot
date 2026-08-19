@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
-import DictationEngine from '../dictation/DictationEngine';
 import StoryWriting from '../write_speak/StoryWriting';
 import { PenTool, Mic, Radio, MessageSquare, Trophy, FileText, CheckCircle2, ChevronRight, Sparkles, Send } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -18,10 +17,9 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
   const wordBankPills = creatorData.wordBankPills || [];
   const storyScenes = creatorData.storyScenes || [];
   const debateTopics = creatorData.debateTopics || [];
-  const podcastShadowing = creatorData.podcastShadowing || null;
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-300">
+    <div className="w-full max-w-5xl mx-auto space-y-6 animate-in fade-in duration-300 font-sans">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-7 border border-purple-500/40 shadow-xl flex items-center justify-between flex-wrap gap-4">
         <div className="space-y-1">
@@ -29,10 +27,10 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
             Zone 3 • Creator Studio
           </span>
           <h2 className="text-xl sm:text-2xl font-black text-amber-300">
-            🎨 CREATOR STUDIO — "Tạo tác phẩm của riêng mình"
+            🎨 CREATOR STUDIO — EXPRESS YOUR CREATIVITY
           </h2>
           <p className="text-xs sm:text-sm text-slate-300">
-            Sáng tạo nội dung cá nhân • Viết truyện 3 tranh, Thu âm Podcast riêng & Báo cáo thí nghiệm Khoa học!
+            Personal Content Creation • 3-Panel Serial Stories, Personal Podcast Recording & Physics Science Reports!
           </p>
         </div>
       </div>
@@ -107,13 +105,13 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
                     ? wordBankPills
                     : (wordBankPills?.action_verbs || ["corridor", "slipped", "fell", "nurse", "bandage"]),
                   sentence_frames: creatorData.sentenceFrames || [
-                    "While a student was running in the corridor, he...",
-                    "Suddenly, he slipped on the wet floor and...",
-                    "Jake called the school nurse, who arrived with..."
+                    "While Jake was walking down the corridor...",
+                    "Suddenly, a boy running fast slipped on the wet floor...",
+                    "The school nurse arrived quickly with a clean bandage..."
                   ],
                   writing_prompts: {
                     en: "Describe what happened in the 3 picture panels using past continuous and past simple verbs.",
-                    vi: "Mô tả điều xảy ra trong 3 bức tranh dùng động từ quá khứ tiếp diễn và quá khứ đơn."
+                    vi: "Describe what happened in the 3 picture panels using past continuous and past simple verbs."
                   }
                 }
               }
@@ -128,19 +126,43 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
           />
         )}
 
-        {/* 3. 🔬 SCIENCE REPORT (MINI-REPORT ON FRICTION) */}
+        {/* 3. 🔬 SCIENCE REPORT */}
         {activeStudio === 'science_report' && (
           <div className="space-y-6">
             <div className="p-5 bg-gradient-to-r from-teal-900 via-emerald-950 to-slate-900 text-white rounded-2xl border border-teal-500/40 space-y-2">
               <span className="px-3 py-1 bg-teal-500/30 text-teal-200 border border-teal-400/40 rounded-full text-[10px] font-black uppercase">
-                Academic Science Mini-Report (CLIL)
+                Academic Science Mini-Report CLIL
               </span>
               <h3 className="text-lg font-black text-amber-300 flex items-center gap-2">
-                🔬 Science Task: "Why is a wet floor more slippery than a dry floor?"
+                🔬 Science Task: Why is a wet floor more slippery than a dry floor?
               </h3>
               <p className="text-xs text-slate-300">
-                Write 3–5 sentences explaining the physics of friction, lubrications and safety rules using cause-effect connectors (because, so, as a result).
+                Write 3–5 sentences explaining the physics of friction, lubricants and safety rules using cause-effect connectors (because, so, as a result).
               </p>
+            </div>
+
+            {/* Starter Pills for Fun & Easy Science Writing */}
+            <div className="p-4 bg-teal-50 rounded-2xl border border-teal-200 space-y-2">
+              <span className="text-xs font-black uppercase text-teal-900 tracking-wider flex items-center gap-1">
+                <Sparkles size={14} className="text-teal-600" /> Tap Sentence Block to Insert:
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Water acts as a liquid lubricant on smooth tiles.",
+                  "As a result, friction between shoe soles and floor drops to near zero.",
+                  "Because friction is reduced, shoes slide easily and people fall.",
+                  "Placing a warning sign instructs students to walk carefully."
+                ].map((starter, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setReportText(prev => (prev ? `${prev} ${starter}` : starter))}
+                    className="px-3 py-1.5 bg-white hover:bg-teal-100 border border-teal-300 text-teal-950 rounded-xl text-xs font-bold transition text-left shadow-sm"
+                  >
+                    + {starter}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Writing Area */}
@@ -148,7 +170,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
               <textarea
                 value={reportText}
                 onChange={(e) => setReportText(e.target.value)}
-                placeholder="Write your science report here (e.g. Water acts as a lubricant on tiles because it reduces friction to zero. As a result, shoes slide easily and people fall...)"
+                placeholder="Write your science report here..."
                 rows={6}
                 className="w-full p-4 rounded-2xl border-2 border-slate-200 focus:border-teal-500 focus:ring-4 focus:ring-teal-500/20 font-bold text-sm text-slate-900 outline-none transition"
               />
@@ -159,7 +181,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
                 </span>
                 <button
                   type="button"
-                  disabled={reportText.trim().length < 15}
+                  disabled={reportText.trim().length < 10}
                   onClick={() => setReportSubmitted(true)}
                   className="px-6 py-3 bg-teal-600 hover:bg-teal-500 disabled:opacity-40 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-2 transition"
                 >

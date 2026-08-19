@@ -315,33 +315,63 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
             </div>
 
             <div className="space-y-3">
-              {storySentences.map((sentence, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => handleSpeakSentence(sentence, idx)}
-                  className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-start justify-between gap-3 ${
-                    activeSentenceIdx === idx
-                      ? 'bg-amber-50 border-amber-300 shadow-md ring-2 ring-amber-200'
-                      : 'bg-slate-50/80 hover:bg-amber-50/50 border-slate-200 text-slate-800'
-                  }`}
-                >
-                  <div className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-black flex items-center justify-center shrink-0 mt-0.5">
-                      {idx + 1}
-                    </span>
-                    <p className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
-                      {sentence}
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    className="p-2 text-amber-600 hover:bg-amber-200 rounded-xl shrink-0"
-                    title="Replay this sentence"
+              {storySentences.map((sentence, idx) => {
+                const isCurrentPlaying = activeSentenceIdx === idx;
+                return (
+                  <div
+                    key={idx}
+                    className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${
+                      isCurrentPlaying
+                        ? 'bg-amber-100/90 border-amber-400 shadow-lg ring-4 ring-amber-300 scale-[1.01]'
+                        : 'bg-slate-50 hover:bg-amber-50/60 border-slate-200 text-slate-800'
+                    }`}
                   >
-                    <Volume2 size={18} />
-                  </button>
-                </div>
-              ))}
+                    <div className="flex items-start gap-3 flex-1">
+                      <span className={`w-7 h-7 rounded-full text-xs font-black flex items-center justify-center shrink-0 mt-0.5 ${
+                        isCurrentPlaying ? 'bg-amber-500 text-slate-950 font-black animate-pulse' : 'bg-amber-100 text-amber-900'
+                      }`}>
+                        {idx + 1}
+                      </span>
+                      <div>
+                        <p className={`text-sm sm:text-base font-black leading-relaxed ${
+                          isCurrentPlaying ? 'text-amber-950' : 'text-slate-900'
+                        }`}>
+                          {sentence}
+                        </p>
+                        {isCurrentPlaying && (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase text-amber-800 tracking-wider mt-1 bg-amber-200/80 px-2 py-0.5 rounded-md">
+                            <Sparkles size={12} className="animate-spin text-amber-600" /> 🎤 Karaoke Audio Playing...
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                      <button
+                        type="button"
+                        onClick={() => handleSpeakSentence(sentence, idx)}
+                        className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95"
+                        title="Listen to sentence"
+                      >
+                        <Volume2 size={16} /> Listen
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleSpeakSentence(sentence, idx);
+                          setTimeout(() => {
+                            alert(`🎙️ Shadowing active for Sentence ${idx + 1}! Speak now into your microphone.`);
+                          }, 1500);
+                        }}
+                        className="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95"
+                        title="Record shadowing voice"
+                      >
+                        🎙️ Shadowing
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -342,6 +342,29 @@ const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, ma
             className="w-full flex-1 min-h-[160px] p-3 bg-white border-2 border-slate-200 rounded-xl focus:border-indigo-500 outline-none resize-y text-sm leading-relaxed text-slate-800 font-normal shadow-inner"
           />
 
+          {/* Sentence Starter Pills (Click to insert) */}
+          <div className="pt-1.5 border-t border-slate-100 flex items-center gap-1.5 flex-wrap">
+            <span className="text-[10px] font-black uppercase text-purple-700 tracking-wider">
+              ✨ Tap Starter to Insert:
+            </span>
+            {(pictureMode.sentence_frames || [
+              "While Jake was walking down the corridor...",
+              "Suddenly, a student slipped on the wet floor...",
+              "The school nurse arrived quickly with a clean bandage..."
+            ]).map((frame, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => {
+                  setText(prev => (prev ? `${prev} ${frame}` : frame));
+                }}
+                className="px-2.5 py-1 bg-purple-100 hover:bg-purple-200 text-purple-900 border border-purple-300 text-[11px] font-bold rounded-lg transition active:scale-95 text-left"
+              >
+                + {frame}
+              </button>
+            ))}
+          </div>
+
           {/* Real-time Criteria Checker Display */}
           <div className="mt-2 bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-2">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
