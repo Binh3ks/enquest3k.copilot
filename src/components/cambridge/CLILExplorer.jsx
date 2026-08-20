@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Globe, Volume2, CheckCircle2, AlertCircle, BookOpen, RotateCcw, HelpCircle, ArrowRight, Sparkles, Award } from 'lucide-react';
 import { renderParsedText } from '../common/HoverWord';
@@ -21,9 +21,8 @@ export default function CLILExplorer({
 
   // Default Paragraph Split
   const fullText = clilData?.content_en || "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!";
-  
 
-  const paragraphs = React.useMemo(() => {
+  const paragraphs = useMemo(() => {
     const parts = fullText.split(/\n\n+/);
     if (parts.length >= 2) return [parts[0], parts.slice(1).join('\n\n')];
 
@@ -35,37 +34,41 @@ export default function CLILExplorer({
     ];
   }, [fullText]);
 
-  // 2 Questions for Paragraph 1
-  const questionsP1 = [
+  // 2 Questions for Paragraph 1 (with randomized options)
+  const questionsP1 = useMemo(() => [
     {
       id: "q1",
       question: "What is Friction?",
       options: ["A force that stops objects from sliding", "A type of water puddle", "A running shoe brand"],
+      shuffledOptions: ["A type of water puddle", "A force that stops objects from sliding", "A running shoe brand"].sort(() => 0.5 - Math.random()),
       correct: "A force that stops objects from sliding"
     },
     {
       id: "q2",
       question: "Why was Jake safe on the dry floor?",
       options: ["His rubber shoes created high friction", "The floor was wet", "He was running fast"],
+      shuffledOptions: ["The floor was wet", "He was running fast", "His rubber shoes created high friction"].sort(() => 0.5 - Math.random()),
       correct: "His rubber shoes created high friction"
     }
-  ];
+  ], []);
 
-  // 2 Questions for Paragraph 2
-  const questionsP2 = [
+  // 2 Questions for Paragraph 2 (with randomized options)
+  const questionsP2 = useMemo(() => [
     {
       id: "q3",
       question: "What happens when water is on the floor?",
       options: ["Water acts like a lubricant and reduces friction", "Friction becomes 100 times higher", "Shoes stick to the floor"],
+      shuffledOptions: ["Friction becomes 100 times higher", "Water acts like a lubricant and reduces friction", "Shoes stick to the floor"].sort(() => 0.5 - Math.random()),
       correct: "Water acts like a lubricant and reduces friction"
     },
     {
       id: "q4",
       question: "What should students do when they see a yellow caution sign?",
       options: ["Slow down and walk carefully", "Run as fast as possible", "Jump over the wet puddle"],
+      shuffledOptions: ["Run as fast as possible", "Jump over the wet puddle", "Slow down and walk carefully"].sort(() => 0.5 - Math.random()),
       correct: "Slow down and walk carefully"
     }
-  ];
+  ], []);
 
   // ━━ Sentence Builder Quest — tap scrambled chunks in correct order ━━
   const [sbIdx, setSbIdx] = useState(0);
@@ -76,26 +79,26 @@ export default function CLILExplorer({
     {
       id: 1,
       label: 'Describe the cause',
-      scrambled: ['Water acts', 'as a lubricant', 'on the wet floor,', 'reducing friction'],
+      scrambled: ['on the wet floor,', 'Water acts', 'reducing friction', 'as a lubricant'],
       correct: ['Water acts', 'as a lubricant', 'on the wet floor,', 'reducing friction'],
     },
     {
       id: 2,
       label: 'Explain the effect',
-      scrambled: ['As a result,', 'Tom\'s shoes', 'lost their grip', 'and he slipped'],
+      scrambled: ['lost their grip', 'and he slipped', 'As a result,', 'Tom\'s shoes'],
       correct: ['As a result,', 'Tom\'s shoes', 'lost their grip', 'and he slipped'],
     },
     {
       id: 3,
       label: 'Give safety advice',
-      scrambled: ['Therefore,', 'students should walk', 'carefully in rubber shoes', 'down the corridor'],
+      scrambled: ['down the corridor', 'Therefore,', 'carefully in rubber shoes', 'students should walk'],
       correct: ['Therefore,', 'students should walk', 'carefully in rubber shoes', 'down the corridor'],
     },
   ];
 
   const sbDrill = sentenceDrills[sbIdx];
 
-  const sbRemaining = React.useMemo(() => {
+  const sbRemaining = useMemo(() => {
     const builtCounts = {};
     sbBuilt.forEach(c => { builtCounts[c] = (builtCounts[c] || 0) + 1; });
     const result = [];
@@ -152,22 +155,27 @@ export default function CLILExplorer({
     }
   };
 
-  const handleSelectAnswer = (qId, option) => {
+  const handleSelectAnswer = (qId, option, correct) => {
     setSelectedAnswers(prev => ({ ...prev, [qId]: option }));
+    if (option === correct) {
+      fireCelebrationConfetti('CLIL_Answer_Correct');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(10);
+    }
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto space-y-5 font-sans text-slate-900">
-      {/* Stepper Header */}
+      {/* Stepper Header (Zero-L1) */}
       <div className="flex items-center justify-between px-2">
         <div className="flex items-center gap-2">
           <span className="text-sm font-black text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl">
-            {currentPhase === 1 && '🔬 Phần 1: Ma sát bề mặt khô'}
-            {currentPhase === 2 && '🧪 Phần 2: Nước & Độ trơn trượt'}
-            {currentPhase === 3 && '🎓 Phần 3: Thử thách Ghép câu'}
+            {currentPhase === 1 && '🔬 Part 1: Friction on Dry Surfaces'}
+            {currentPhase === 2 && '🧪 Part 2: Water Lubrication & Zero Friction'}
+            {currentPhase === 3 && '🎓 Part 3: Sentence Builder Challenge'}
           </span>
           <span className="text-xs font-bold text-slate-500">
-            Chặng {currentPhase} / 3
+            Step {currentPhase} of 3
           </span>
         </div>
         <div className="w-36 h-2.5 bg-slate-200 rounded-full overflow-hidden">
@@ -202,9 +210,9 @@ export default function CLILExplorer({
         <button
           type="button"
           onClick={() => handleToggleAudio(currentPhase === 1 ? paragraphs[0] : paragraphs[1])}
-          className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition"
+          className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition active:scale-95"
         >
-          <Volume2 size={15} /> {isPlayingAudio ? 'Tạm dừng' : '🎧 Nghe đoạn này'}
+          <Volume2 size={15} /> {isPlayingAudio ? 'Pause' : '🎧 Listen to this part'}
         </button>
       </div>
 
@@ -224,7 +232,7 @@ export default function CLILExplorer({
             {/* Paragraph 1 Check Questions */}
             <div className="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3 pt-3">
               <h4 className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1.5">
-                <HelpCircle size={15} className="text-emerald-600" /> Câu hỏi kiểm tra hiểu bài (2 câu)
+                <HelpCircle size={15} className="text-emerald-600" /> CHECK QUESTIONS (2 Questions)
               </h4>
               <div className="space-y-3">
                 {questionsP1.map((q) => {
@@ -232,22 +240,34 @@ export default function CLILExplorer({
                   const isCorrect = selected === q.correct;
 
                   return (
-                    <div key={q.id} className="p-3.5 bg-white rounded-2xl border border-emerald-200 space-y-2">
-                      <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                    <div key={q.id} className="p-4 bg-white rounded-2xl border border-emerald-200 space-y-2.5 shadow-sm">
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                        {selected && (
+                          <span className={`text-[11px] font-black px-2 py-0.5 rounded-lg flex items-center gap-1 animate-in zoom-in-95 ${
+                            isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'
+                          }`}>
+                            {isCorrect ? '✓ Correct! +10 XP' : '❌ Try another option'}
+                          </span>
+                        )}
+                      </div>
                       <div className="flex flex-wrap gap-2">
-                        {q.options.map((opt, i) => (
+                        {q.shuffledOptions.map((opt, i) => (
                           <button
                             key={i}
                             type="button"
-                            onClick={() => handleSelectAnswer(q.id, opt)}
-                            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition border text-left ${
+                            onClick={() => handleSelectAnswer(q.id, opt, q.correct)}
+                            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition border text-left flex items-center gap-2 ${
                               selected === opt
                                 ? isCorrect
-                                  ? 'bg-emerald-600 text-white border-emerald-500 font-black shadow-md'
+                                  ? 'bg-emerald-600 text-white border-emerald-500 font-black shadow-md scale-[1.02]'
                                   : 'bg-rose-600 text-white border-rose-500'
                                 : 'bg-slate-50 hover:bg-emerald-100 text-slate-800 border-slate-200'
                             }`}
                           >
+                            <span className="w-5 h-5 rounded-full bg-white/30 text-[10px] font-black flex items-center justify-center shrink-0">
+                              {String.fromCharCode(65 + i)}
+                            </span>
                             {opt}
                           </button>
                         ))}
@@ -263,9 +283,9 @@ export default function CLILExplorer({
             <button
               type="button"
               onClick={() => setCurrentPhase(2)}
-              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95"
+              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95 hover:scale-105"
             >
-              Tiếp tục: Sang Phần 2 ▶
+              Next: Part 2 ▶
             </button>
           </div>
         </div>
@@ -287,7 +307,7 @@ export default function CLILExplorer({
             {/* Paragraph 2 Check Questions */}
             <div className="p-4 bg-teal-50/70 rounded-2xl border border-teal-200 space-y-3 pt-3">
               <h4 className="text-xs font-black uppercase text-teal-900 flex items-center gap-1.5">
-                <HelpCircle size={15} className="text-teal-600" /> Câu hỏi kiểm tra hiểu bài (2 câu)
+                <HelpCircle size={15} className="text-teal-600" /> CHECK QUESTIONS (2 Questions)
               </h4>
               <div className="space-y-3">
                 {questionsP2.map((q) => {
@@ -295,22 +315,34 @@ export default function CLILExplorer({
                   const isCorrect = selected === q.correct;
 
                   return (
-                    <div key={q.id} className="p-3.5 bg-white rounded-2xl border border-teal-200 space-y-2">
-                      <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                    <div key={q.id} className="p-4 bg-white rounded-2xl border border-teal-200 space-y-2.5 shadow-sm">
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                        {selected && (
+                          <span className={`text-[11px] font-black px-2 py-0.5 rounded-lg flex items-center gap-1 animate-in zoom-in-95 ${
+                            isCorrect ? 'bg-teal-100 text-teal-800' : 'bg-rose-100 text-rose-800'
+                          }`}>
+                            {isCorrect ? '✓ Correct! +10 XP' : '❌ Try another option'}
+                          </span>
+                        )}
+                      </div>
                       <div className="flex flex-wrap gap-2">
-                        {q.options.map((opt, i) => (
+                        {q.shuffledOptions.map((opt, i) => (
                           <button
                             key={i}
                             type="button"
-                            onClick={() => handleSelectAnswer(q.id, opt)}
-                            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition border text-left ${
+                            onClick={() => handleSelectAnswer(q.id, opt, q.correct)}
+                            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition border text-left flex items-center gap-2 ${
                               selected === opt
                                 ? isCorrect
-                                  ? 'bg-teal-600 text-white border-teal-500 font-black shadow-md'
+                                  ? 'bg-teal-600 text-white border-teal-500 font-black shadow-md scale-[1.02]'
                                   : 'bg-rose-600 text-white border-rose-500'
                                 : 'bg-slate-50 hover:bg-teal-100 text-slate-800 border-slate-200'
                             }`}
                           >
+                            <span className="w-5 h-5 rounded-full bg-white/30 text-[10px] font-black flex items-center justify-center shrink-0">
+                              {String.fromCharCode(65 + i)}
+                            </span>
                             {opt}
                           </button>
                         ))}
@@ -326,16 +358,16 @@ export default function CLILExplorer({
             <button
               type="button"
               onClick={() => setCurrentPhase(1)}
-              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-black transition"
+              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition"
             >
-              ◀ Quay lại Phần 1
+              ◀ Back to Part 1
             </button>
             <button
               type="button"
               onClick={() => setCurrentPhase(3)}
-              className="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95"
+              className="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95 hover:scale-105"
             >
-              Thử thách Ghép câu Khoa học ▶
+              Sentence Builder Challenge ▶
             </button>
           </div>
         </div>
@@ -353,7 +385,7 @@ export default function CLILExplorer({
                 <div>
                   <h4 className="text-sm font-black text-slate-900">Sentence Builder Quest</h4>
                   <p className="text-[10px] text-slate-500">
-                    Ghép các cụm từ theo đúng cấu trúc ngữ pháp khoa học
+                    Tap the scrambled chunks in the correct grammar order
                   </p>
                 </div>
               </div>
@@ -378,7 +410,7 @@ export default function CLILExplorer({
             {/* Built sentence display */}
             <div className="min-h-[60px] p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2 items-start">
               {sbBuilt.length === 0 ? (
-                <span className="text-xs text-slate-400 italic">Chạm vào các cụm từ bên dưới theo đúng thứ tự…</span>
+                <span className="text-xs text-slate-400 italic">Tap chunks below in the correct grammar order…</span>
               ) : (
                 sbBuilt.map((chunk, i) => (
                   <button
@@ -417,14 +449,14 @@ export default function CLILExplorer({
                 disabled={sbBuilt.length === 0}
                 className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95"
               >
-                <CheckCircle2 size={15} /> Kiểm tra câu
+                <CheckCircle2 size={15} /> Check Order
               </button>
               <button
                 type="button"
                 onClick={handleSbReset}
                 className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition"
               >
-                <RotateCcw size={14} /> Xóa
+                <RotateCcw size={14} /> Reset
               </button>
               {sbResult && (
                 <div className={`flex-1 min-w-0 p-2.5 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
@@ -441,9 +473,9 @@ export default function CLILExplorer({
             <button
               type="button"
               onClick={() => setCurrentPhase(2)}
-              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-black transition"
+              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold transition"
             >
-              ◀ Quay lại Phần 2
+              ◀ Back to Part 2
             </button>
             <button
               type="button"
@@ -454,7 +486,7 @@ export default function CLILExplorer({
               }}
               className="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl font-black text-sm shadow-xl flex items-center gap-2 transition hover:scale-105 animate-bounce"
             >
-              🎉 Hoàn thành CLIL & Về bản đồ ▶
+              🎉 Complete CLIL & Return to Map ▶
             </button>
           </div>
         </div>

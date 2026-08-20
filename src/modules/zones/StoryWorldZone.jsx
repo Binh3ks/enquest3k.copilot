@@ -848,7 +848,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       )}
 
       {/* ========================================================================= */}
-      {/* GEAR 3: 🎙️ RETELL TO NOVA — STEP-BY-STEP SINGLE SENTENCE FOCUS            */}
+      {/* GEAR 3: 🎙️ RETELL TO NOVA — STEP-BY-STEP SINGLE SENTENCE FOCUS (ZERO-L1)   */}
       {/* ========================================================================= */}
       {currentGear === 3 && (
         <div className="space-y-4 animate-in fade-in">
@@ -867,7 +867,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                         🎙️ Retell to Nova
                       </span>
                       <span className="text-xs font-bold text-slate-500">
-                        Câu {retellStepIdx + 1} / {RETELL_QUESTIONS.length}
+                        Event {retellStepIdx + 1} of {RETELL_QUESTIONS.length}
                       </span>
                     </div>
                     <div className="w-36 h-2.5 bg-slate-200 rounded-full overflow-hidden">
@@ -880,34 +880,31 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
                   {/* Main Story Card */}
                   <div className="bg-white rounded-3xl p-6 sm:p-8 border border-purple-200 shadow-lg space-y-6 text-center">
-                    {/* Nova Question Bubble */}
+                    {/* Nova Question Bubble (100% English Zero-L1) */}
                     <div className="p-4 bg-purple-50 border border-purple-200 rounded-2xl flex items-center gap-3 text-left">
                       <span className="text-3xl shrink-0">🦊</span>
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-black uppercase tracking-wider text-purple-600">
-                          Nova hỏi:
+                          NOVA ASKS:
                         </p>
-                        <p className="text-sm sm:text-base font-black text-slate-900">
-                          "{currentQ.question_vi}"
-                        </p>
-                        <p className="text-xs font-medium text-slate-500 italic">
-                          {currentQ.question_en}
+                        <p className="text-base sm:text-lg font-black text-slate-900 leading-snug">
+                          "{currentQ.question_en}"
                         </p>
                       </div>
                       <button
                         type="button"
                         onClick={() => speakText(currentQ.question_en)}
-                        className="shrink-0 p-2 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-xl transition active:scale-95"
-                        title="Nghe Nova đọc câu hỏi"
+                        className="shrink-0 p-2.5 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-xl transition active:scale-95 shadow-sm"
+                        title="Listen to Nova's question"
                       >
-                        <Volume2 size={16} />
+                        <Volume2 size={18} />
                       </button>
                     </div>
 
                     {/* Scaffolded Input Chips */}
                     <div className="space-y-2">
                       <span className="text-[11px] font-black uppercase text-slate-400 tracking-wider block">
-                        🔑 Từ vựng & Cụm từ gợi ý (Chạm để nghe phát âm):
+                        🔑 KEY CHUNKS &amp; VOCABULARY (Tap to listen):
                       </span>
                       <div className="flex flex-wrap items-center justify-center gap-2">
                         {currentQ.chips.map((chip, idx) => (
@@ -915,40 +912,50 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                             key={idx}
                             type="button"
                             onClick={() => speakText(chip)}
-                            className="px-3.5 py-1.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-xl text-xs sm:text-sm font-bold transition active:scale-95 flex items-center gap-1.5 shadow-sm"
+                            className="px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-xl text-xs sm:text-sm font-bold transition active:scale-95 flex items-center gap-1.5 shadow-sm"
                           >
-                            <Volume2 size={12} className="text-indigo-500" />
+                            <Volume2 size={13} className="text-indigo-500" />
                             {chip}
                           </button>
                         ))}
                       </div>
                     </div>
 
-                    {/* Hint Scaffolding Section with 10s Timer */}
+                    {/* Hint Scaffolding Section with 10s Timer & Audio Listen Button */}
                     <div className="space-y-2">
                       {hintSecondsLeft !== null ? (
-                        <div className="p-4 bg-amber-50 border border-amber-300 rounded-2xl space-y-2 animate-in fade-in">
-                          <div className="flex items-center justify-between">
+                        <div className="p-4 bg-amber-50 border border-amber-300 rounded-2xl space-y-3 animate-in fade-in">
+                          <div className="flex items-center justify-between flex-wrap gap-2">
                             <span className="px-2.5 py-0.5 bg-amber-200 text-amber-900 font-black text-[10px] rounded-lg animate-pulse">
-                              ⏳ Gợi ý sẽ tự tắt sau: {hintSecondsLeft}s
+                              ⏳ Hint closes in: {hintSecondsLeft}s
                             </span>
-                            <div className="flex items-center gap-1">
-                              {[
-                                { id: 'full', label: 'Full' },
-                                { id: 'half', label: 'Half' },
-                                { id: 'chunks', label: 'Chunks' },
-                              ].map(({ id, label }) => (
-                                <button
-                                  key={id}
-                                  type="button"
-                                  onClick={() => setStudyScaffold(id)}
-                                  className={`px-2 py-0.5 rounded text-[10px] font-black transition ${
-                                    studyScaffold === id ? 'bg-amber-600 text-white' : 'bg-white text-amber-900 border border-amber-200'
-                                  }`}
-                                >
-                                  {label}
-                                </button>
-                              ))}
+                            <div className="flex items-center gap-2">
+                              {/* Audio Listen Button inside Hint */}
+                              <button
+                                type="button"
+                                onClick={() => speakText(currentQ.sentence)}
+                                className="px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white rounded-lg text-xs font-black flex items-center gap-1 shadow-sm transition active:scale-95"
+                              >
+                                <Volume2 size={13} /> Listen Sentence
+                              </button>
+                              <div className="flex items-center gap-1">
+                                {[
+                                  { id: 'full', label: 'Full' },
+                                  { id: 'half', label: 'Half' },
+                                  { id: 'chunks', label: 'Chunks' },
+                                ].map(({ id, label }) => (
+                                  <button
+                                    key={id}
+                                    type="button"
+                                    onClick={() => setStudyScaffold(id)}
+                                    className={`px-2 py-0.5 rounded text-[10px] font-black transition ${
+                                      studyScaffold === id ? 'bg-amber-700 text-white' : 'bg-white text-amber-900 border border-amber-200'
+                                    }`}
+                                  >
+                                    {label}
+                                  </button>
+                                ))}
+                              </div>
                             </div>
                           </div>
 
@@ -970,9 +977,9 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                           <button
                             type="button"
                             onClick={() => setHintSecondsLeft(10)}
-                            className="px-4 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-slate-200"
+                            className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-black transition flex items-center gap-1.5 border border-slate-200 shadow-sm"
                           >
-                            💡 Xem gợi ý câu (10s Hint)
+                            💡 Show Sentence Hint (10s)
                           </button>
                         </div>
                       )}
@@ -988,7 +995,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                             className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 hover:from-purple-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-purple-500/30 transition hover:scale-105 active:scale-95"
                           >
                             <Mic size={36} className="animate-pulse" />
-                            <span className="text-[10px] font-black uppercase tracking-wider">Thu âm</span>
+                            <span className="text-[10px] font-black uppercase tracking-wider">RECORD</span>
                           </button>
                         ) : (
                           <button
@@ -997,11 +1004,11 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                             className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-rose-500/40 transition animate-bounce"
                           >
                             <Square size={32} fill="currentColor" />
-                            <span className="text-[10px] font-black uppercase tracking-wider">Dừng</span>
+                            <span className="text-[10px] font-black uppercase tracking-wider">STOP</span>
                           </button>
                         )}
                         <p className="text-xs font-black text-slate-600">
-                          {isRecording ? '🔴 Đang thu âm... Hãy kể lại câu này!' : '🦊 Nova: Hãy kể cho cô nghe nào!'}
+                          {isRecording ? '🔴 Recording... Retell what happened!' : '🦊 Nova: "Tell me what happened!"'}
                         </p>
                       </div>
 
@@ -1010,7 +1017,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                         <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-2xl flex flex-col sm:flex-row items-center justify-center gap-3 animate-in fade-in max-w-md mx-auto">
                           <audio controls src={retellRecordings[retellStepIdx]} className="h-9 w-full sm:w-auto rounded-xl" />
                           <span className="text-xs font-bold text-emerald-800 flex items-center gap-1 shrink-0">
-                            <CheckCircle2 size={14} className="text-emerald-600" /> Đã ghi âm
+                            <CheckCircle2 size={14} className="text-emerald-600" /> Recorded
                           </span>
                         </div>
                       )}
@@ -1024,7 +1031,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                         onClick={() => setRetellStepIdx(prev => prev - 1)}
                         className="px-4 py-2 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 text-slate-700 rounded-xl text-xs font-bold transition"
                       >
-                        ◀ Câu trước
+                        ◀ Previous
                       </button>
 
                       <button
@@ -1040,7 +1047,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                         }}
                         className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-xl text-xs sm:text-sm font-black shadow-md transition active:scale-95"
                       >
-                        {isLastStep ? 'Hoàn thành Retell ▶' : 'Câu tiếp theo ▶'}
+                        {isLastStep ? 'Complete Retell ▶' : 'Next Question ▶'}
                       </button>
                     </div>
                   </div>
@@ -1048,17 +1055,17 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
               );
             })()
           ) : (
-            /* Victory Screen */
+            /* Victory Screen (Zero-L1) */
             <div className="bg-white rounded-3xl p-8 sm:p-10 border border-purple-200 shadow-xl text-center space-y-5 animate-in zoom-in-95">
               <div className="w-20 h-20 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner">
                 🏆
               </div>
               <div className="space-y-1">
                 <h3 className="text-2xl font-black text-slate-900">
-                  Tuyệt vời! Bạn là Retell Master!
+                  🌟 Fantastic! You are a Retell Master!
                 </h3>
                 <p className="text-sm font-medium text-slate-600">
-                  Đã hoàn thành toàn bộ 5 câu kể chuyện với Nova (+50 XP)
+                  You successfully retold all 5 story events with Nova (+50 XP)
                 </p>
               </div>
 
@@ -1076,7 +1083,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                   }}
                   className="px-8 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white rounded-2xl font-black text-sm shadow-xl flex items-center gap-2 transition hover:scale-105 animate-bounce"
                 >
-                  🎉 Hoàn thành & Trở về bản đồ ▶
+                  🎉 Return to Quest Map ▶
                 </button>
               </div>
             </div>

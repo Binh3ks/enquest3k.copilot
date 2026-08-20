@@ -19,6 +19,9 @@ export function mapDataToZones(weekData, weekNumber = 33) {
     weekNumber: weekData.weekId || weekNumber,
     theme: weekData.title || weekData.weekTitle_en || "Weekly Theme",
     title_vi: weekData.title_vi || "",
+    rawWeekData: weekData,
+    stations: weekData.stations || {},
+    word_power: weekData.stations?.word_power || weekData.word_power || null,
     
     // ZONE 1: STORY WORLD
     storyWorld: {
@@ -34,12 +37,13 @@ export function mapDataToZones(weekData, weekNumber = 33) {
     // ZONE 2: BATTLE ARENA
     battleArena: {
       flashArena: listeningHub.flash_arena || null,
+      wordPower: weekData.stations?.word_power || weekData.word_power || readingHub.word_power || null,
+      vocab: readingHub.vocab || weekData.stations?.new_words?.vocab || [],
       grammarDrills: listeningHub.grammar_drills || [],
       sentenceBuilder: listeningHub.grammar_drills || [],
       barModel: listeningHub.singapore_math || [],
       scienceLab: listeningHub.science_lab || null,
       dictation: listeningHub.dictation || [],
-      vocab: readingHub.vocab || [],
     },
 
     // ZONE 3: CREATOR STUDIO

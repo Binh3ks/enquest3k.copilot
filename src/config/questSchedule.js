@@ -14,25 +14,25 @@
 export const QUEST_SCHEDULE = [
   {
     day: 1,
-    label: '📖 Read & Discover',
+    label: '📖 The Explorer',
     quests: [
-      { id: 'gear1_webtoon',  label: '3D Webtoon',     zone: 1, gearIndex: 0, station: null,        icon: '📚', minutes: 8 },
-      { id: 'gear2_karaoke',  label: 'Story Karaoke',  zone: 1, gearIndex: 1, station: null,        icon: '🎤', minutes: 7 },
-      { id: 'vocab_explorer', label: 'Word Blitz',      zone: 2, gearIndex: null, station: 'word_blitz', icon: '🔤', minutes: 5 },
+      { id: 'gear1_webtoon',  label: '3D Webtoon',      zone: 1, gearIndex: 0, station: null,             icon: '📚', minutes: 8 },
+      { id: 'gear2_karaoke',  label: 'Story Karaoke',   zone: 1, gearIndex: 1, station: null,             icon: '🎤', minutes: 7 },
+      { id: 'vocab_explorer', label: 'Vocab Explorer',  zone: 2, gearIndex: null, station: 'vocab_explorer', icon: '🔤', minutes: 5 },
     ],
   },
   {
     day: 2,
-    label: '🎯 Speak & Explore',
+    label: '🎯 The Storyteller',
     quests: [
-      { id: 'gear3_retell',    label: 'Retell to Nova',  zone: 1, gearIndex: 2, station: null,        icon: '🎙️', minutes: 8 },
-      { id: 'gear4_clil',      label: 'CLIL Explorer',   zone: 1, gearIndex: 3, station: null,        icon: '🔬', minutes: 8 },
-      { id: 'word_power',      label: 'Word Power',      zone: 2, gearIndex: null, station: 'word_power', icon: '💪', minutes: 5 },
+      { id: 'gear3_retell',    label: 'Retell to Nova',  zone: 1, gearIndex: 2, station: null,             icon: '🎙️', minutes: 8 },
+      { id: 'gear4_clil',      label: 'CLIL Explorer',   zone: 1, gearIndex: 3, station: null,             icon: '🔬', minutes: 8 },
+      { id: 'word_power',      label: 'Word Power',      zone: 2, gearIndex: null, station: 'word_power',     icon: '💪', minutes: 5 },
     ],
   },
   {
     day: 3,
-    label: '⚔️ Battle Day',
+    label: '⚔️ Battle Arena',
     quests: [
       { id: 'word_blitz',      label: 'Word Blitz',      zone: 2, gearIndex: null, station: 'word_blitz',     icon: '⚡', minutes: 5 },
       { id: 'sentence_smash',  label: 'Sentence Smash',  zone: 2, gearIndex: null, station: 'sentence_smash', icon: '🧱', minutes: 5 },
@@ -41,20 +41,20 @@ export const QUEST_SCHEDULE = [
   },
   {
     day: 4,
-    label: '✍️ Create & Write',
+    label: '✍️ Creative Studio',
     quests: [
-      { id: 'story_writer',     label: 'Story Writer',     zone: 3, gearIndex: null, station: 'writing',   icon: '✏️', minutes: 10 },
-      { id: 'broadcast_studio', label: 'Broadcast Studio', zone: 3, gearIndex: null, station: 'broadcast', icon: '📻', minutes: 7 },
-      { id: 'dictation',        label: 'Dictation',        zone: 3, gearIndex: null, station: 'dictation',  icon: '📝', minutes: 5 },
+      { id: 'story_writer',     label: 'Story Writer',    zone: 3, gearIndex: null, station: 'writing',        icon: '✏️', minutes: 10 },
+      { id: 'science_report',   label: 'Science Report',  zone: 3, gearIndex: null, station: 'science_report',  icon: '📝', minutes: 7 },
+      { id: 'shadowing',        label: 'Shadowing',       zone: 4, gearIndex: null, station: 'shadowing',       icon: '🗣️', minutes: 7 },
     ],
   },
   {
     day: 5,
-    label: '🏆 Boss Battle',
+    label: '🏆 Boss Castle',
     quests: [
-      { id: 'boss_listening',  label: 'Listening Boss',   zone: 4, gearIndex: null, station: 'listening_boss', icon: '🎧', minutes: 10 },
-      { id: 'shadowing',       label: 'Shadowing',        zone: 4, gearIndex: null, station: 'shadowing',      icon: '🗣️', minutes: 7 },
-      { id: 'weekly_review',   label: 'Weekly Review',    zone: 4, gearIndex: null, station: 'review',         icon: '⭐', minutes: 5 },
+      { id: 'boss_listening',   label: 'Listening Boss',   zone: 4, gearIndex: null, station: 'listening_boss', icon: '🎧', minutes: 10 },
+      { id: 'broadcast_studio', label: 'Broadcast Studio', zone: 3, gearIndex: null, station: 'broadcast',      icon: '📻', minutes: 7 },
+      { id: 'weekly_review',    label: 'Weekly Review',    zone: 4, gearIndex: null, station: 'review',          icon: '🏆', minutes: 15 },
     ],
   },
 ];

@@ -6,6 +6,7 @@ import SoundSniper from '../../components/zones/SoundSniper';
 import BarModelQuest from '../hubs/station2/LearnMode/BarModelQuest';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
 import WordPower from '../power/WordPower';
+import VocabManager from '../vocab/VocabManager';
 import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
@@ -13,7 +14,13 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 export default function BattleArenaZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
   const arenaData = data?.battleArena || {};
-  const STATION_TO_GAME = { word_blitz: 'word_blitz', word_power: 'word_power', sentence_smash: 'sentence_smash', math_quest: 'bar_model' };
+  const STATION_TO_GAME = {
+    vocab_explorer: 'vocab_explorer',
+    word_power: 'word_power',
+    word_blitz: 'word_blitz',
+    sentence_smash: 'sentence_smash',
+    math_quest: 'bar_model'
+  };
   const [activeGame, setActiveGame] = useState(forcedStation ? (STATION_TO_GAME[forcedStation] || 'word_blitz') : 'word_blitz');
   const [totalXP, setTotalXP] = useState(0);
 
@@ -28,7 +35,8 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
   useEffect(() => {
     if (forcedStation) return;
     const station = searchParams.get('station');
-    if (station === 'word_blitz') setActiveGame('word_blitz');
+    if (station === 'vocab_explorer') setActiveGame('vocab_explorer');
+    else if (station === 'word_blitz') setActiveGame('word_blitz');
     else if (station === 'sentence_smash') setActiveGame('sentence_smash');
     else if (station === 'math_quest') setActiveGame('bar_model');
     else if (station === 'word_power') setActiveGame('word_power');
@@ -133,6 +141,14 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
 
       {/* Active Sub-Component */}
       <div className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">
+        {activeGame === 'vocab_explorer' && (
+          <VocabManager
+            data={data?.stations?.new_words || data?.rawWeekData?.stations?.new_words || { vocab: vocabList }}
+            themeColor="indigo"
+            onReportProgress={() => handleGameComplete(35)}
+          />
+        )}
+
         {activeGame === 'word_blitz' && (
           <FlashArena
             customSets={flashArenaData}
@@ -143,7 +159,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
 
         {activeGame === 'word_power' && (
           <WordPower
-            data={data?.word_power || data?.stations?.word_power || arenaData?.wordPower || data}
+            data={arenaData?.wordPower || data?.word_power || data?.stations?.word_power || data?.rawWeekData?.stations?.word_power || data}
             themeColor="amber"
             onReportProgress={() => handleGameComplete(40)}
           />

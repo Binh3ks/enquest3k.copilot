@@ -291,7 +291,22 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
       });
   }, [data, saveProgress, markComplete]);
 
-  const rawItems = Array.isArray(data) ? data : (data?.words || data?.phrases || data?.collocations || data?.items || []);
+  const rawItems = Array.isArray(data)
+    ? data
+    : (data?.default && Array.isArray(data.default))
+    ? data.default
+    : (data?.word_power && Array.isArray(data.word_power))
+    ? data.word_power
+    : (data?.words || data?.phrases || data?.collocations || data?.items || [
+      { id: 1, word: "run in the corridor", definition_en: "to move fast down a hallway", definition_vi: "chạy trong hành lang" },
+      { id: 2, word: "have an accident", definition_en: "to suffer an unexpected injury", definition_vi: "gặp tai nạn" },
+      { id: 3, word: "fall down", definition_en: "to drop to the ground suddenly", definition_vi: "ngã xuống" },
+      { id: 4, word: "hurt yourself", definition_en: "to cause injury to your body", definition_vi: "tự làm mình bị thương" },
+      { id: 5, word: "feel terrible", definition_en: "to feel very unwell or sad", definition_vi: "cảm thấy tồi tệ" },
+      { id: 6, word: "tell the truth", definition_en: "to speak honestly about what happened", definition_vi: "nói sự thật" },
+      { id: 7, word: "learn a lesson", definition_en: "to gain wisdom from an experience", definition_vi: "rút ra bài học" },
+      { id: 8, word: "break something", definition_en: "to damage an object into pieces", definition_vi: "làm vỡ vật gì đó" }
+    ]);
   const wordList = rawItems.map((item, idx) => ({
     id: item.id || `wp_${idx}`,
     word: item.word || item.phrase || item.collocation || '',
@@ -303,7 +318,7 @@ const WordPower = ({ data, themeColor, isVi, onToggleLang, onReportProgress }) =
     audio_word: item.audio_word || null
   }));
 
-  if (!data || wordList.length === 0) return <div className="p-8 text-center text-teal-400 font-bold">Loading Word Power...</div>;
+  if (wordList.length === 0) return <div className="p-8 text-center text-teal-400 font-bold">Loading Word Power...</div>;
 
   return (
     <div className="pb-24">
