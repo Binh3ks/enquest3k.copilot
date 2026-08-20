@@ -33,12 +33,8 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
     else if (station === 'word_power') setActiveGame('word_blitz');
   }, [searchParams, forcedStation]);
 
-  // Mark quest complete when game is selected/opened
-  useEffect(() => {
-    const GAME_QUEST_MAP = { word_blitz: 'word_blitz', sentence_smash: 'sentence_smash', sound_sniper: 'word_blitz', bar_model: 'math_quest', science_lab: 'sentence_smash' };
-    const questId = GAME_QUEST_MAP[activeGame];
-    if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
-  }, [activeGame, weekNumber]);
+  // Quest completion is now handled by TaskScreen, not by switching games
+  // (removed auto-complete that fired on mount/game change)
 
   // Class Co-op Meter: use global userXP as proxy for session XP earned
   const globalXP = useUserStore((state) => state.userXP || 0);

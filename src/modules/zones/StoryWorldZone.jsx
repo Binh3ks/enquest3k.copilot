@@ -30,14 +30,8 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
   }, [searchParams, forcedGear]);
 
-  // Instant Quest completion tracking whenever currentGear changes
-  useEffect(() => {
-    const GEAR_QUEST_MAP = { 1: 'gear1_webtoon', 2: 'gear2_karaoke', 3: 'gear3_retell', 4: 'gear4_clil' };
-    const questId = GEAR_QUEST_MAP[currentGear];
-    if (questId) {
-      useDailyQuestStore.getState().completeQuest(weekNumber, questId);
-    }
-  }, [currentGear, weekNumber]);
+  // Quest completion is now handled by TaskScreen, not by visiting gears
+  // (removed auto-complete that fired on mount/gear change)
   const [activeFrameIndex, setActiveFrameIndex] = useState(0);
   const [highlightMode, setHighlightMode] = useState('vocab');
   const [selectedHotspot, setSelectedHotspot] = useState(null);

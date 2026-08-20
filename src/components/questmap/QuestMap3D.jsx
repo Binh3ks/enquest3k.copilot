@@ -137,7 +137,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
     <div className="qm3d-container">
       {/* Background */}
       <div className="qm3d-bg" style={{ backgroundImage: `url(${questMapBg})` }} />
-      <div className="qm3d-overlay" />
+      <div className="qm3d-overlay" style={{ pointerEvents: 'none' }} />
 
       {/* Header */}
       <div className="qm3d-header">

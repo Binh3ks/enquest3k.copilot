@@ -31,12 +31,8 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
     else if (station === 'refresh') setActiveTab('brain_refresh');
   }, [searchParams, forcedStation]);
 
-  // Instant Quest completion when activeTab changes
-  useEffect(() => {
-    const TAB_QUEST_MAP = { story_writer: 'story_writer', podcast_creator: 'broadcast_studio', science_report: 'dictation', ai_debate: 'dictation', brain_refresh: 'story_writer' };
-    const questId = TAB_QUEST_MAP[activeTab];
-    if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
-  }, [activeTab, weekNumber]);
+  // Quest completion is now handled by TaskScreen, not by switching tabs
+  // (removed auto-complete that fired on mount/tab change)
 
   // Quest completion: mark current tab's quest when switching away
   const handleTabSwitch = (newTab) => {
