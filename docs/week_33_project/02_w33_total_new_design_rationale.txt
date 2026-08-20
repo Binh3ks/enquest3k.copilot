@@ -1,0 +1,177 @@
+Phản biện: kiến trúc hiện tại thiên lệch kỹ năng, bỏ sót phần lớn định dạng chấm điểm thật
+
+Trước khi đề xuất, cần nhìn thẳng vào một sự thật về cách tính điểm: bài thi Flyers gồm 3 phần thi riêng biệt (Nghe, Đọc-Viết, Nói), mỗi kỹ năng tối đa 5 khiên, tổng 15 khiên, và ở phần Đọc-Viết, mỗi câu đúng chỉ được 1 điểm, riêng Part 7 (viết truyện) được tối đa 5 điểm trên tổng 44 câu. Nghĩa là: phần lớn điểm số thực tế đến từ rất nhiều câu hỏi ngắn, định dạng cụ thể (nối từ, chọn hội thoại, điền chỗ trống...) — không phải từ 1-2 nhiệm vụ "kể chuyện lớn" mà 4 Hub hiện tại đang dồn phần lớn công sức vào. 
+Cambridge English
+Exam Seekers
+
+Kiến trúc 4 Hub hiện tại có xu hướng ưu ái kỹ năng tường thuật dài hơi (đọc truyện tương tác, viết kịch bản phim, hội thoại mở) — đúng về mặt tạo động lực, nhưng bỏ sót gần như toàn bộ kỹ năng định dạng ngắn, cụ thể chiếm đa số điểm số thật của bài thi.
+
+Bảng đối chiếu: 16 phần thi thật ↔ mức độ được 4 Hub hiện tại cover
+
+Reading & Writing (7 phần, 40 phút):
+
+Part	Nội dung thật	Hub hiện tại cover?
+1	Nối 10 định nghĩa với đúng từ trong 15 từ cho sẵn	Một phần (có từ vựng nhưng sai định dạng)
+2	Hoàn thành hội thoại ngắn, chọn câu trả lời đúng từ danh sách A-H	Chưa có
+3	Đọc tìm thông tin cụ thể, nối với tranh/mô tả 
+Exam Seekers
+	Một phần, sai định dạng
+4	Đọc hiểu văn bản thông tin, ngữ pháp đơn giản 
+Exam Seekers
+	Tương đối tốt (Hub 1+2)
+5	Đọc truyện, hoàn thành câu bằng 1-4 từ 
+Exam Seekers
+	Khá tốt (Gap-fill Hub 1)
+6	Đọc đoạn ngắn, điền 5 chỗ trống (open cloze) 
+Exam Seekers
+	Chưa có đúng định dạng
+7	Viết truyện từ 3 tranh, tối thiểu 20 từ 
+Exam Seekers
+	Tốt (Hub 3)
+
+Listening (5 phần, ~25 phút) — toàn bộ đều là lỗ hổng, đúng như đã tự nhận diện:
+
+Part	Nội dung thật
+1-3	Nghe hội thoại, nối tên/thông tin/chi tiết với người-vật-tranh
+4	Nghe 5 hội thoại ngắn, chọn đúng 1/3 tranh mỗi câu 
+Exam Seekers
+
+5	Nghe hội thoại người lớn-trẻ em, tô màu và viết từ theo hướng dẫn trên 1 tranh lớn
+
+Speaking (4 phần, 7-9 phút): 
+cambridge
+
+Part	Nội dung thật	Hub hiện tại cover?
+1	Tìm khác biệt giữa 2 tranh gần giống nhau 
+cambridge
+	Chưa có
+2	Hỏi-đáp 2 chiều về người/vật/tình huống 
+cambridge
+	Chưa có (Nova hiện chỉ hỏi 1 chiều)
+3	Kể chuyện liên tục qua 5 tranh, giám khảo mở đầu tranh 1 
+Scribd
+	Nhầm định dạng (đang dùng 3 tranh Writing, không có phần giám khảo mở đầu)
+4	Trả lời 5 câu hỏi cá nhân 
+Scribd
+	Tốt (5-Turn Talk Show)
+
+Tổng kết: chỉ 4/16 phần được cover tốt hoặc tương đối. 12/16 phần còn thiếu hoặc sai định dạng — trong đó Listening là khối lỗ hổng lớn nhất (5/16 phần, chiếm 1/3 tổng điểm số).
+
+Cảnh báo sư phạm trước khi build: đừng biến app thành "16 bài luyện thi"
+
+Đây là điểm quan trọng nhất với vai trò chuyên gia ESL: không nên chạy đua phủ kín 16 định dạng ngay từ đầu bằng cách nhồi từng định dạng thành 1 mini-game riêng — làm vậy sẽ phá chính triết lý "học qua phiêu lưu, không phải đi thi" mà toàn bộ hệ thống được xây dựng để tránh. Cần tách rõ 2 lớp:
+
+Lớp Kỹ năng lõi (Skill Core) — vẫn dạy qua narrative Hub như hiện tại (đọc hiểu, ngữ pháp, viết, nói tự nhiên). Đây là phần chiếm phần lớn thời gian học hàng tuần, giữ nguyên chất game hóa.
+Lớp Làm quen Định dạng (Format Familiarization) — các định dạng ngắn (nối từ, chọn hội thoại, tô màu theo hướng dẫn...) chỉ cần giao diện gọn, nhẹ, không cần trang trí nặng (khác hẳn mức đầu tư của 4 Hub chính), và nên tăng dần tần suất khi gần W72 — khớp với ý tưởng "Tuần Đánh giá" (Assessment Weeks) đã đề xuất trước đó, không phải xuất hiện dàn trải đều suốt 39 tuần.
+
+Nguyên tắc phân bổ: early weeks ưu tiên Skill Core (Hub hiện tại) → mid-late weeks tăng dần Format Familiarization để trẻ vừa có nền tảng vừa quen mặt đề thi, tránh "sốc định dạng" phòng thi thật — đúng tinh thần transfer-appropriate processing đã đặt ra từ đầu dự án này.
+
+Đề xuất kiến trúc triển khai: tận dụng tối đa component đã build, không xây mới tràn lan
+Nhóm A — Chi phí thấp, làm trước (tái dùng gần như 100% component có sẵn)
+Reading Part 1 (nối từ-định nghĩa): tái dùng trực tiếp Word Treasury/Lexical glossary đã có ở Hub 1 — chỉ cần 1 lớp UI game mới ("Thám Tử Định Nghĩa"), không cần nội dung mới.
+Reading Part 5 & 6: mở rộng engine Gap-fill đã có ở Hub 1, chỉ thêm question_type mới trong Content Bank schema.
+Reading Part 3: mở rộng Check Mode Hub 1 thêm dạng "matching".
+
+→ Nhóm này gần như không tốn công build mới, chỉ tốn công soạn nội dung theo định dạng đúng.
+
+Nhóm B — Chi phí trung bình, tái dùng engine lõi
+Speaking Part 3 (kể chuyện 5 tranh liên tục): ghép lại 2 component đã có — Story Viewer (Hub 1, đổi từ 1 chuỗi tranh thành 5 tranh đúng chuẩn) + STT/chấm giọng nói (đã build cho Hub 4). Không cần công nghệ mới, chỉ cần luồng "AI mở đầu tranh 1 bằng giọng nói, trẻ kể tiếp 4 tranh còn lại".
+Speaking Part 2 (hỏi-đáp 2 chiều): thêm "chế độ đảo vai" vào Nova Talk Show — trẻ phải tự đặt câu hỏi cho Nova, dùng lại answerMatchingEngine của Hub 2 để chấm cấu trúc câu hỏi trẻ đặt ra có đúng ngữ pháp không (liên kết trực tiếp 2 engine đã có, không xây mới).
+Reading Part 2 (hoàn thành hội thoại): xây thành bài khởi động (warm-up) trước khi vào Speaking Part 2 ở Hub 4 — vừa dạy đọc hiểu chức năng ngôn ngữ, vừa làm cầu nối tự nhiên sang luyện nói.
+Nhóm C — Chi phí cao, tách thành dự án riêng (không chen vào lộ trình 3 giai đoạn đã chốt)
+Toàn bộ 5 phần Listening: cần audio đa nhân vật, hội thoại dài, không tái dùng được nhiều từ pipeline TTS 1 người kể chuyện hiện tại. Đề xuất đây là Giai đoạn 4 riêng biệt, khởi động sau khi 4 Hub gốc qua pilot ổn định — không cố nhồi vào Giai đoạn 2/3 đang chạy.
+Speaking Part 1 (tìm khác biệt giữa 2 tranh gần giống): cần sinh 2 tranh gần giống nhau nhưng có khác biệt kiểm soát được — khó hơn hẳn bài toán "giữ nhất quán nhân vật" đã giải quyết trước đó, cần khảo sát riêng năng lực AI agent trước khi cam kết lịch.
+
+# PHỤ LỤC — Ma trận Phủ kín Toàn bộ Định dạng Thi Cambridge Flyers
+### Bổ sung cho EngQuest3K Technical Brief W33-W46
+
+---
+
+## 0. Nguyên tắc chỉ đạo: "Skill Core vs Format Shell"
+
+Không biến app thành 16 bài luyện thi rời rạc. Tách 2 lớp:
+
+- **Lớp Kỹ năng lõi (Skill Core):** giữ nguyên narrative 4 Hub hiện tại, chiếm phần lớn thời lượng học hàng tuần, đầu tư gamification đầy đủ như thiết kế gốc.
+- **Lớp Làm quen Định dạng (Format Familiarization):** các định dạng ngắn, cụ thể (nối từ, chọn hội thoại, tô màu theo hướng dẫn...) — giao diện gọn nhẹ, không cần trang trí nặng như 4 Hub chính, tần suất **tăng dần khi gần mốc thi W72**, gắn với các "Tuần Đánh giá" định kỳ (cứ 4 tuần có 1 tuần) đã đề xuất trước đó.
+
+**Không đảo ngược trình tự này** — build Skill Core trước, Format Shell bổ sung dần sau khi đã có nền tảng ổn định từ pilot.
+
+---
+
+## 1. Ma trận đầy đủ 16 phần thi ↔ Hub hiện tại ↔ Đề xuất bổ sung
+
+### A. Reading & Writing (7 phần, 40 phút, 44 câu, tối đa 5 khiên — mỗi câu 1 điểm, riêng Part 7 = 5 điểm)
+
+| Part | Định dạng thật | Kỹ năng đo | Trạng thái cover | Nhóm ưu tiên | Đề xuất build |
+|---|---|---|---|---|---|
+| 1 | Nối 10 định nghĩa với 15 từ cho sẵn | Vocabulary/definition matching | Một phần (có từ vựng, sai định dạng) | A (thấp) | Game "Thám Tử Định Nghĩa" tái dùng Word Treasury của Hub 1 |
+| 2 | Hoàn thành hội thoại ngắn, chọn đáp án A-H | Functional/social language | Chưa có | B (trung bình) | Module đọc hiểu hội thoại, đặt làm warm-up trước Speaking Part 2 ở Hub 4 |
+| 3 | Đọc tìm thông tin cụ thể, nối với tranh/mô tả | Reading for specific info, matching | Một phần, sai định dạng | A (thấp) | Mở rộng Check Mode Hub 1 thêm dạng "matching" |
+| 4 | Đọc văn bản thông tin, ngữ pháp đơn giản | Reading factual text + grammar | Tương đối tốt | — | Đã cover qua Hub 1 + Hub 2, chỉ cần thêm bài đúng thể loại "văn bản thông tin" (không phải truyện) |
+| 5 | Đọc truyện, hoàn thành câu 1-4 từ | Story comprehension + short answer | Khá tốt | A (thấp) | Mở rộng question_type trong Content Bank, dùng lại Gap-fill engine Hub 1 |
+| 6 | Đọc đoạn ngắn, điền 5 chỗ trống (open cloze) | Open gap-fill | Chưa đúng định dạng | A (thấp) | Thêm question_type "open_cloze" vào Check Mode Hub 1 |
+| 7 | Viết truyện từ 3 tranh, tối thiểu 20 từ | Story writing | Tốt | — | Giữ nguyên Hub 3; sửa lại mục tiêu từ đúng chuẩn Flyers (20+ từ, không phải 35-50 — con số đó là của A2 Key, không phải Flyers) |
+
+### B. Listening (5 phần, ~25 phút, tối đa 5 khiên)
+
+| Part | Định dạng thật | Trạng thái cover | Nhóm ưu tiên |
+|---|---|---|---|
+| 1 | Nghe hội thoại, nối tên với người/vật trong tranh | Chưa có | C (cao) |
+| 2 | Nghe hội thoại 2 người, ghi tên/chính tả/thông tin (điền form) | Chưa có | C (cao) |
+| 3 | Nghe hội thoại, nối từ/tên/chi tiết với tranh | Chưa có | C (cao) |
+| 4 | Nghe 5 hội thoại ngắn, chọn đúng 1/3 tranh mỗi câu | Chưa có | C (cao) |
+| 5 | Nghe hội thoại người lớn-trẻ em, tô màu & viết từ theo hướng dẫn trên 1 tranh lớn | Chưa có | C (cao) |
+
+**Toàn bộ 5 phần đều là lỗ hổng — chiếm 1/3 tổng điểm số bài thi, mức đầu tư sản xuất cao nhất (audio đa nhân vật, hội thoại dài, không tái dùng được pipeline TTS 1 người kể chuyện hiện tại).**
+
+### C. Speaking (4 phần, 7-9 phút, tối đa 5 khiên)
+
+| Part | Định dạng thật | Trạng thái cover | Nhóm ưu tiên | Đề xuất build |
+|---|---|---|---|---|
+| 1 | Tìm khác biệt giữa 2 tranh gần giống nhau | Chưa có | C (cao) | Cần sinh 2 tranh gần giống có khác biệt kiểm soát được — khó hơn bài toán character consistency đã giải quyết, cần khảo sát riêng năng lực AI agent |
+| 2 | Hỏi-đáp 2 chiều về người/vật/tình huống | Chưa có (Nova hiện 1 chiều) | B (trung bình) | Thêm "chế độ đảo vai" vào Nova Talk Show — trẻ đặt câu hỏi, dùng lại answerMatchingEngine của Hub 2 để chấm cấu trúc câu hỏi |
+| 3 | Kể chuyện liên tục qua 5 tranh, giám khảo mở đầu tranh 1 | Nhầm định dạng (đang dùng 3 tranh Writing) | B (trung bình) | Ghép Story Viewer (Hub 1, đổi thành 5 tranh) + STT/chấm giọng (đã có ở Hub 4) |
+| 4 | Trả lời 5 câu hỏi cá nhân | Tốt | — | Giữ nguyên 5-Turn Nova Talk Show |
+
+**Tổng kết:** 4/16 phần cover tốt hoặc tương đối tốt. 5/16 thuộc Nhóm A (chi phí thấp). 3/16 thuộc Nhóm B (chi phí trung bình, tái dùng engine lõi). 6/16 thuộc Nhóm C (chi phí cao — 5 phần Listening + Speaking Part 1).
+
+---
+
+## 2. Lộ trình triển khai theo nhóm ưu tiên
+
+### Nhóm A — Chi phí thấp (đề xuất làm ngay sau khi Giai đoạn 1-3 gốc pilot ổn định)
+- Tái dùng gần như 100% component đã có (Word Treasury, Gap-fill engine, Check Mode).
+- Chủ yếu tốn công soạn nội dung đúng định dạng, không tốn công build kỹ thuật mới.
+- Có thể triển khai song song với việc sản xuất nội dung hàng tuần của 4 Hub gốc, không cần giai đoạn riêng.
+
+### Nhóm B — Chi phí trung bình (đề xuất là Giai đoạn 3.5, sau khi Trạm 3+4 gốc hoàn thành calibration)
+- Ghép các engine đã build (STT, answerMatchingEngine, Story Viewer) theo luồng mới — không xây công nghệ mới, chỉ tái kiến trúc luồng sử dụng.
+- Cần thêm 1 vòng calibration nhỏ cho Speaking Part 2/3 (đối chiếu AI chấm với giám khảo thật), tương tự quy trình đã áp dụng cho Speaking Part 4.
+
+### Nhóm C — Chi phí cao (đề xuất tách thành Giai đoạn 4 độc lập)
+- **Không chen vào lộ trình 3 giai đoạn đã chốt.** Khởi động sau khi 4 Hub gốc đã qua pilot ổn định và có dữ liệu KPI thực tế.
+- Listening: cần đánh giá lại toàn bộ pipeline sản xuất audio (đa nhân vật, hội thoại dài) — không tái dùng được thiết kế TTS 1 người kể chuyện hiện tại của Hub 1.
+- Speaking Part 1: cần khảo sát kỹ thuật riêng về khả năng AI agent sinh 2 ảnh gần giống có khác biệt kiểm soát được, trước khi cam kết lịch trình.
+
+---
+
+## 3. Lịch phân bổ theo tiến độ 39 tuần (W33 → W72) — nguyên tắc phân bổ
+
+```
+W33 ────────────────────────────────────────────────── W72
+│ Early Weeks          │ Mid Weeks           │ Late Weeks (gần thi)  │
+│ Skill Core (4 Hub)    │ + Nhóm A dần vào     │ + Nhóm B, Format      │
+│ chiếm phần lớn        │ Check Mode           │ Familiarization tăng  │
+│ thời lượng học        │ (nối từ, matching,   │ tần suất, Tuần Đánh   │
+│                        │ cloze...)            │ giá mỗi 4 tuần        │
+└────────────────────────────────────────────────────────────────────┘
+                                                    │
+                                          Giai đoạn 4 (Nhóm C — Listening
+                                          + Speaking Part 1): dự án riêng,
+                                          khởi động sau khi có dữ liệu
+                                          pilot ổn định từ 4 Hub gốc.
+```
+
+---
+
+*Tài liệu này là phụ lục bổ sung cho EngQuest3K_Technical_Brief_W33-W46.md — dùng kèm khi giao việc tiếp theo cho Antigravity IDE ở các giai đoạn mở rộng sau Pilot Trạm 2.*
