@@ -268,13 +268,13 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between p-2.5 bg-amber-50 border border-amber-200 rounded-xl text-xs font-black text-slate-800">
                     <div className="flex items-center gap-2">
-                      <span>🥇</span> <span>Minh An</span>
+                      <span>🥇</span> <span>Alex</span>
                     </div>
                     <span className="text-amber-700">1,820 XP</span>
                   </div>
                   <div className="flex items-center justify-between p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-black text-slate-800">
                     <div className="flex items-center gap-2">
-                      <span>🥈</span> <span>Bảo Nam</span>
+                      <span>🥈</span> <span>Leo</span>
                     </div>
                     <span className="text-slate-700">1,640 XP</span>
                   </div>

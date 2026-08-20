@@ -180,9 +180,9 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const getTaskLink = (quest) => `/week/${weekId}/task/${quest.id}`;
 
   const lexioMsg =
-    weekQuestCount === 0 ? "Bắt đầu chuyến phiêu lưu! 🌟" :
-    weekQuestCount >= totalQuests ? "Xuất sắc! Đã hoàn thành tất cả! 🎉" :
-    `Còn ${totalQuests - weekQuestCount} nhiệm vụ nữa! 💪`;
+    weekQuestCount === 0 ? "Start your adventure! 🌟" :
+    weekQuestCount >= totalQuests ? "Outstanding! All quests completed! 🎉" :
+    `${totalQuests - weekQuestCount} quests remaining! 💪`;
 
   // Show narrative toast on first visit
   useEffect(() => {
@@ -248,8 +248,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         <div className="qm3d-narrative-toast">
           <span className="qm3d-narrative-fox">🦊</span>
           <p className="qm3d-narrative-text">
-            Chào mừng đến <strong>Trip {weekId}</strong>! Hành trình khám phá ngôn ngữ bắt đầu đây.
-            5 trạm dừng, 15 nhiệm vụ — xuất phát từ <strong>The Explorer</strong>! 🗺️✨
+            Welcome to <strong>Trip {weekId}</strong>! Your language adventure begins here.
+            5 stations, 15 quests — starting from <strong>Story World</strong>! 🗺️✨
           </p>
         </div>
       )}
@@ -460,7 +460,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                 className="qm3d-cta-btn"
                 onClick={() => navigate(getTaskLink(firstUncompletedTask))}
               >
-                {weekQuestCount === 0 ? '▶ Bắt đầu' : '▶ Tiếp tục'}
+                {weekQuestCount === 0 ? '▶ Start' : '▶ Continue'}
               </button>
             )}
           </div>
@@ -471,8 +471,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
       {weekQuestCount >= totalQuests && (
         <div className="qm3d-all-done">
           <LexioMascot size={80} mood="celebrate" />
-          <h2>🎉 Xuất sắc! Hoàn thành tuần!</h2>
-          <p>Tất cả {totalQuests} nhiệm vụ đã xong!</p>
+          <h2>🎉 Outstanding! Week Completed!</h2>
+          <p>All {totalQuests} quests finished!</p>
         </div>
       )}
 
@@ -481,8 +481,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         isOpen={showPIN}
         onClose={() => setShowPIN(false)}
         onSuccess={() => { setTeacherOverride(true); fireCelebrationConfetti?.('TeacherOverride'); }}
-        title="Mở khóa Quest"
-        subtitle="Nhờ ba/mẹ nhập mã PIN để mở khóa"
+        title="Unlock Station"
+        subtitle="Ask parent to enter PIN to unlock"
       />
     </div>
   );

@@ -667,7 +667,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
                       {isCurrentPlaying && (
                         <div className="inline-flex items-center gap-2 text-xs font-black uppercase text-amber-800 tracking-wider bg-amber-200 px-3 py-1 rounded-full animate-pulse">
-                          <Sparkles size={14} className="animate-spin text-amber-600" /> 🎤 Đang phát âm chuẩn từng từ...
+                          <Sparkles size={14} className="animate-spin text-amber-600" /> 🎤 Playing word-by-word audio...
                         </div>
                       )}
 
@@ -678,7 +678,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                           onClick={() => handleSpeakSentence(sentence, idx)}
                           className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 rounded-2xl font-black text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center gap-2 transition"
                         >
-                          <Volume2 size={20} /> 🔊 Nghe mẫu (Listen)
+                          <Volume2 size={20} /> 🔊 Listen Model Audio
                         </button>
 
                         {sentenceShadowing[idx]?.isRecording ? (
@@ -687,7 +687,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                             onClick={() => stopSentenceShadowing(idx)}
                             className="px-6 py-3.5 bg-rose-600 hover:bg-rose-700 text-white rounded-2xl font-black text-sm sm:text-base shadow-lg flex items-center gap-2 transition animate-pulse"
                           >
-                            <Square size={18} /> ⏹ Dừng thu âm
+                            <Square size={18} /> ⏹ Stop Recording
                           </button>
                         ) : (
                           <button
@@ -699,7 +699,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                                 : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white'
                             }`}
                           >
-                            <Mic size={20} /> 🎙️ Luyện nói (Shadow)
+                            <Mic size={20} /> 🎙️ Voice Shadow
                           </button>
                         )}
                       </div>
@@ -719,10 +719,10 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                             }}
                             className="px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-xl font-black text-xs flex items-center gap-1.5 transition"
                           >
-                            <Play size={14} className="fill-emerald-800" /> Nghe lại giọng mình
+                            <Play size={14} className="fill-emerald-800" /> Play My Voice
                           </button>
                           <span className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-black shadow-sm flex items-center gap-1">
-                            {sentenceShadowing[idx].score >= 70 ? '🌟 Tuyệt vời!' : sentenceShadowing[idx].score >= 40 ? '⭐ Khá tốt!' : '✨ Đã ghi âm!'}
+                            {sentenceShadowing[idx].score >= 70 ? '🌟 Excellent!' : sentenceShadowing[idx].score >= 40 ? '⭐ Great Job!' : '✨ Recorded!'}
                           </span>
                         </div>
                       )}

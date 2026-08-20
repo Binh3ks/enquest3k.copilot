@@ -51,18 +51,18 @@ export const readingHubData = {
     title: "Interactive Story: Corridor Safety Incident",
     text_template: "Jake **was walking carefully** down the school corridor today. First, he **noticed a wet puddle** near the science room. Then, a boy running fast ____1____ on the slippery tiles and ____2____ heavily. ____3____, Jake stopped immediately and ____4____ the school nurse. The nurse arrived quickly with a ____5____ and treated his knee gently.",
     gaps: [
-      { id: 1, target: "slipped", hint: "trượt chân", hint_vi: "trượt chân" },
-      { id: 2, target: "fell down", hint: "ngã xuống", hint_vi: "ngã xuống" },
-      { id: 3, target: "Right away", hint: "ngay lập tức", hint_vi: "ngay lập tức" },
-      { id: 4, target: "called", hint: "gọi", hint_vi: "gọi" },
-      { id: 5, target: "clean bandage", hint: "băng cá nhân sạch", hint_vi: "băng cá nhân sạch" }
+      { id: 1, target: "slipped", hint: "lost balance on wet tiles", hint_en: "lost balance on wet tiles", hint_vi: "trượt chân" },
+      { id: 2, target: "fell down", hint: "dropped to the floor", hint_en: "dropped to the floor", hint_vi: "ngã xuống" },
+      { id: 3, target: "Right away", hint: "without delay / immediately", hint_en: "without delay / immediately", hint_vi: "ngay lập tức" },
+      { id: 4, target: "called", hint: "contacted for help", hint_en: "contacted for help", hint_vi: "gọi" },
+      { id: 5, target: "clean bandage", hint: "medical wrap for cuts", hint_en: "medical wrap for cuts", hint_vi: "băng cá nhân sạch" }
     ],
     hints: {
-      1: "trượt chân",
-      2: "ngã xuống",
-      3: "ngay lập tức",
-      4: "gọi",
-      5: "băng cá nhân sạch"
+      1: "lost balance on wet tiles",
+      2: "dropped to the floor",
+      3: "without delay / immediately",
+      4: "contacted for help",
+      5: "medical wrap for cuts"
     },
     word_bank: ["slipped", "fell down", "Right away", "called", "clean bandage"]
   },
