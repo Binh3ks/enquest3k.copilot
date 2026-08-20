@@ -2,6 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react';
 import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { X, Flame, Edit2, RotateCcw, ShieldCheck, CheckCircle, ArrowRight, Star, Lock, Sparkles, ChevronRight, ChevronLeft } from 'lucide-react';
 import NovaMascot from '../NovaMascot';
+import LexioMascot from '../mascot/LexioMascot';
 import weekIndex from '../../data/weeks/index';
 import { useUserStore } from '../../stores/useUserStore'; // Import the store
 import { calculateStars } from '../../utils/scoringSystem';
@@ -140,7 +141,7 @@ const Sidebar = ({ currentUser, weekId: currentWeekId, learningMode, handleToggl
     <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-72 bg-white border-r border-slate-200 transform transition-transform duration-300 ${setIsSidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 flex flex-col shadow-2xl lg:shadow-none`}>
     <div className="p-4 flex items-center justify-between">
         <div onClick={handleLogoClick} className="flex items-center gap-2 cursor-pointer select-none" title="Click 5x to open Sandbox QA Panel">
-           <NovaMascot size={44} mood="sidebar" />
+           <LexioMascot size={44} mood="happy" />
            <h1 style={{ fontFamily: "'Nunito', 'Quicksand', system-ui, sans-serif", fontWeight: 800, fontSize: '1.6rem', color: '#58cc02', letterSpacing: '-0.5px', lineHeight: 1 }}>Lexio</h1>
         </div>
 

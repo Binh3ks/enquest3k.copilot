@@ -57,6 +57,8 @@ import CreatorStudioZone from './modules/zones/CreatorStudioZone';
 import BossBattleZone from './modules/zones/BossBattleZone';
 import { mapDataToZones } from './config/zoneDataMapper';
 import TodayQuestBar from './components/common/TodayQuestBar';
+import QuestMap from './components/common/QuestMap';
+import OnboardingFlow from './components/onboarding/OnboardingFlow';
 import SubscriptionModal from './components/subscription/SubscriptionModal';
 
 // Lazy-loaded heavy pages
@@ -272,6 +274,7 @@ const MainLayout = () => {
   const [showCheckpoint, setShowCheckpoint] = useState(false);
   const [speakingNudge, setSpeakingNudge] = useState(false);
   const [showAssessment, setShowAssessment] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(() => !localStorage.getItem('engquest_onboarded'));
   const [pendingAssessment, setPendingAssessment] = useState(null);
   
   const scrollContainerRef = useRef(null);
@@ -631,6 +634,10 @@ const MainLayout = () => {
 
   return (
     <>
+      {/* Onboarding — 5-step first-time experience */}
+      {showOnboarding && (
+        <OnboardingFlow onComplete={() => setShowOnboarding(false)} />
+      )}
       <WorksheetGenerator weekData={weekData} />
       <div className="flex h-screen bg-slate-50 text-slate-900 font-sans overflow-hidden screen-only">
         {/* <AIProviderStatus /> */}
@@ -847,79 +854,9 @@ const MainLayout = () => {
               );
             })()}
 
-            {/* Today's Quest Bar — Daily pacing for W33+ */}
-            {weekId >= 33 && (
-              <TodayQuestBar weekId={weekId} />
-            )}
-
-            {/* Station nav — 4 Experiential Zone Cards for W33+ (Story World, Battle Arena, Creator Studio, Boss Battle) */}
+            {/* Quest Map — Vertical quest path replacing Zone tabs for W33+ */}
             {weekId >= 33 ? (
-              <div className="flex flex-nowrap items-center justify-between gap-3 mb-6 px-2 sm:px-4 overflow-x-auto w-full">
-                {[
-                  { 
-                    hubId: 1, 
-                    key: 'story', 
-                    title: 'Zone 1: Story World', 
-                    icon: BookOpen, 
-                    activeColor: 'bg-indigo-600 border-indigo-500 text-white shadow-lg ring-4 ring-indigo-500/20',
-                    inactiveColor: 'bg-indigo-50/90 text-indigo-950 border-indigo-200 hover:bg-indigo-100 hover:border-indigo-300',
-                    iconBg: 'bg-indigo-600 text-white'
-                  },
-                  { 
-                    hubId: 2, 
-                    key: 'arena', 
-                    title: 'Zone 2: Battle Arena', 
-                    icon: Swords, 
-                    activeColor: 'bg-amber-600 border-amber-500 text-white shadow-lg ring-4 ring-amber-500/20',
-                    inactiveColor: 'bg-amber-50/90 text-amber-950 border-amber-200 hover:bg-amber-100 hover:border-amber-300',
-                    iconBg: 'bg-amber-600 text-white'
-                  },
-                  { 
-                    hubId: 3, 
-                    key: 'create', 
-                    title: 'Zone 3: Creator Studio', 
-                    icon: PenTool, 
-                    activeColor: 'bg-purple-600 border-purple-500 text-white shadow-lg ring-4 ring-purple-500/20',
-                    inactiveColor: 'bg-purple-50/90 text-purple-950 border-purple-200 hover:bg-purple-100 hover:border-purple-300',
-                    iconBg: 'bg-purple-600 text-white'
-                  },
-                  { 
-                    hubId: 4, 
-                    key: 'boss', 
-                    title: 'Zone 4: Boss Battle 🏆', 
-                    icon: Radio, 
-                    activeColor: 'bg-rose-600 border-rose-500 text-white shadow-lg ring-4 ring-rose-500/20',
-                    inactiveColor: 'bg-rose-50/90 text-rose-950 border-rose-200 hover:bg-rose-100 hover:border-rose-300',
-                    iconBg: 'bg-rose-600 text-white'
-                  }
-                ].map((h) => {
-                  const isHubActive = 
-                    String(hubId) === String(h.hubId) ||
-                    (h.hubId === 1 && ['story', 'read_explore', 'explore', 'new_words', 'hub1', '1'].includes(tabKey)) ||
-                    (h.hubId === 2 && ['arena', 'grammar', 'logic_lab', 'word_match', 'game_hub', 'hub2', '2'].includes(tabKey)) ||
-                    (h.hubId === 3 && ['create', 'writing', 'dictation', 'hub3', '3'].includes(tabKey)) ||
-                    (h.hubId === 4 && ['boss', 'shadowing', 'ask_ai', 'mindmap_speaking', 'hub4', '4'].includes(tabKey));
-
-                  return (
-                    <Link
-                      key={h.hubId}
-                      to={`/week/${weekId}/hub/${h.hubId}`}
-                      onClick={() => setShowWelcomeCard(false)}
-                      className={`flex-1 min-w-[180px] flex items-center justify-center gap-2.5 px-4 py-3 rounded-2xl transition-all border-2 shrink-0 ${
-                        isHubActive
-                          ? `${h.activeColor} scale-102`
-                          : `${h.inactiveColor} shadow-sm`
-                      }`}
-                    >
-                      <div className={`p-2 rounded-xl shrink-0 shadow-sm ${h.iconBg}`}>
-                        <h.icon size={18} />
-                      </div>
-                      <span className="text-xs font-black tracking-tight whitespace-nowrap">{h.title}</span>
-                    </Link>
-                  );
-                })}
-
-              </div>
+              <QuestMap weekId={weekId} />
             ) : (
               (() => {
                 const PINNED = ['read_explore', 'new_words', 'grammar'];
