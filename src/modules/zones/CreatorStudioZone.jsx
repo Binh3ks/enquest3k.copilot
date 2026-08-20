@@ -19,7 +19,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
     broadcast: 'podcast_creator',
     dictation: 'science_report',
     science_report: 'science_report',
-    shadowing: 'shadowing_studio',
+    ai_debate: 'ai_debate',
   };
   const [activeTab, setActiveTab] = useState(forcedStation ? (STATION_TO_TAB[forcedStation] || 'story_writer') : 'story_writer');
   const [studioXP, setStudioXP] = useState(0);

@@ -34,7 +34,7 @@ const TASK_ROUTING = {
   math_quest:       { zone: 'arena',   station: 'math_quest' },
   story_writer:     { zone: 'create',  station: 'writing' },
   broadcast_studio: { zone: 'create',  station: 'broadcast' },
-  shadowing:        { zone: 'create',  station: 'shadowing' }, // Zone 3 — Creative Studio, Shadowing tab
+  ai_debate:        { zone: 'create',  station: 'ai_debate' },  // Zone 3 — Creative Studio, AI Debate tab
   boss_listening:   { zone: 'boss',    station: 'listening_boss' },
   boss_reading:     { zone: 'boss',    station: 'rw_boss' },
   weekly_review:    { zone: 'boss',    station: 'review' },

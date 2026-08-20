@@ -43,9 +43,9 @@ export const QUEST_SCHEDULE = [
     day: 4,
     label: '✍️ Creative Studio',
     quests: [
-      { id: 'story_writer',     label: 'Story Writer',    zone: 3, gearIndex: null, station: 'writing',        icon: '✏️', minutes: 10 },
-      { id: 'broadcast_studio', label: 'Broadcast Studio',zone: 3, gearIndex: null, station: 'broadcast',      icon: '📻', minutes: 7 },
-      { id: 'shadowing',        label: 'Shadowing Studio',zone: 3, gearIndex: null, station: 'shadowing',       icon: '🗣️', minutes: 7 },
+      { id: 'story_writer',     label: 'Story Writer',     zone: 3, gearIndex: null, station: 'writing',     icon: '✏️', minutes: 10 },
+      { id: 'broadcast_studio', label: 'Broadcast Studio', zone: 3, gearIndex: null, station: 'broadcast',   icon: '📻', minutes: 7 },
+      { id: 'ai_debate',        label: 'AI Debate',        zone: 3, gearIndex: null, station: 'ai_debate',   icon: '🎭', minutes: 7 },
     ],
   },
   {
