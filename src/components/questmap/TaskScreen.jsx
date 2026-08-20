@@ -28,13 +28,13 @@ const TASK_ROUTING = {
   gear3_retell:     { zone: 'story',   gear: 3 },
   gear4_clil:       { zone: 'story',   gear: 4 },
   science_lab:      { zone: 'arena',   station: 'science_lab' },
-  science_report:   { zone: 'create',  station: 'dictation' }, // maps to ScienceReportCreator in CreatorStudioZone
+  science_report:   { zone: 'create',  station: 'science_report' }, // maps to ScienceReportCreator in CreatorStudioZone
   word_blitz:       { zone: 'arena',   station: 'word_blitz' },
   sentence_smash:   { zone: 'arena',   station: 'sentence_smash' },
   math_quest:       { zone: 'arena',   station: 'math_quest' },
   story_writer:     { zone: 'create',  station: 'writing' },
   broadcast_studio: { zone: 'create',  station: 'broadcast' },
-  shadowing:        { zone: 'boss',    station: 'shadowing' },
+  shadowing:        { zone: 'create',  station: 'shadowing' }, // Zone 3 — Creative Studio, Shadowing tab
   boss_listening:   { zone: 'boss',    station: 'listening_boss' },
   boss_reading:     { zone: 'boss',    station: 'rw_boss' },
   weekly_review:    { zone: 'boss',    station: 'review' },

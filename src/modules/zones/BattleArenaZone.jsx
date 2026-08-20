@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import FlashArena from '../hubs/station2/LearnMode/FlashArena';
 import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilderBattle';
 import SoundSniper from '../../components/zones/SoundSniper';
-import BarModelQuest from '../hubs/station2/LearnMode/BarModelQuest';
+import { BarModelQuest } from '../hubs/station2/LearnMode/BarModelQuest';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
 import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';

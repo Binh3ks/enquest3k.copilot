@@ -5,6 +5,8 @@ import RetellRecorder from '../../components/zones/RetellRecorder';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
 import CreatorBrainRefresh from '../../components/zones/CreatorBrainRefresh';
+import Shadowing from '../shadowing/Shadowing';
+import ShadowingErrorBoundary from '../shadowing/ShadowingErrorBoundary';
 import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle, Zap } from 'lucide-react';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
@@ -12,7 +14,13 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
   const studioData = data?.creatorStudio || {};
-  const STATION_TO_TAB = { writing: 'story_writer', broadcast: 'podcast_creator', dictation: 'science_report' };
+  const STATION_TO_TAB = {
+    writing: 'story_writer',
+    broadcast: 'podcast_creator',
+    dictation: 'science_report',
+    science_report: 'science_report',
+    shadowing: 'shadowing_studio',
+  };
   const [activeTab, setActiveTab] = useState(forcedStation ? (STATION_TO_TAB[forcedStation] || 'story_writer') : 'story_writer');
   const [studioXP, setStudioXP] = useState(0);
 
@@ -27,8 +35,9 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
     const station = searchParams.get('station');
     if (station === 'broadcast') setActiveTab('podcast_creator');
     else if (station === 'writing') setActiveTab('story_writer');
-    else if (station === 'dictation') setActiveTab('science_report');
+    else if (station === 'dictation' || station === 'science_report') setActiveTab('science_report');
     else if (station === 'refresh') setActiveTab('brain_refresh');
+    else if (station === 'shadowing') setActiveTab('shadowing_studio');
   }, [searchParams, forcedStation]);
 
   // Quest completion is now handled by TaskScreen, not by switching tabs
@@ -286,6 +295,16 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
             weekNumber={weekNumber}
             onComplete={() => handleTaskComplete(50)}
           />
+        )}
+
+        {activeTab === 'shadowing_studio' && (
+          <ShadowingErrorBoundary>
+            <Shadowing
+              data={data?.stations?.shadowing || data?.rawWeekData?.stations?.shadowing || data?.shadowing || {}}
+              weekNumber={weekNumber}
+              mode="advanced"
+            />
+          </ShadowingErrorBoundary>
         )}
 
         {activeTab === 'ai_debate' && (

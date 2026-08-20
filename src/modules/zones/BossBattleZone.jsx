@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import getBossRotaryConfig from '../../config/bossRotarySchedule';
 import BossIntro from '../../components/zones/BossIntro';
 import SVGLineMatcher from '../../components/cambridge/SVGLineMatcher';
@@ -18,6 +19,7 @@ import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function BossBattleZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
+  const navigate = useNavigate();
   const userShields = useUserStore((state) => state.userShields || 0);
   const rotaryConfig = getBossRotaryConfig(weekNumber);
   const bossData = data?.bossBattle || {};
@@ -199,12 +201,17 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
           <button
             type="button"
             onClick={() => {
-              setHasStarted(false);
-              setActiveTaskIndex(0);
+              if (hideStationTabs) {
+                // Came from TaskScreen — go back to map
+                navigate(`/week/${weekNumber}/hub/1`);
+              } else {
+                setHasStarted(false);
+                setActiveTaskIndex(0);
+              }
             }}
             className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1.5 transition active:scale-95 shadow"
           >
-            ← Exit Battle
+            {hideStationTabs ? '← Map' : '← Exit Battle'}
           </button>
           <div className="p-2 rounded-xl bg-rose-500/20 text-rose-400">
             <Shield size={20} />
@@ -222,26 +229,28 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
           </div>
         </div>
 
-        {/* Task Switcher Pills */}
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-          {currentTasks.map((t, idx) => (
-            <button
-              key={t.id}
-              type="button"
-              onClick={() => setActiveTaskIndex(idx)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 ${
-                activeTaskIndex === idx
-                  ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300'
-                  : earnedShields.includes(t.id)
-                  ? 'bg-emerald-900/80 text-emerald-300 border border-emerald-500/40'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
-              }`}
-            >
-              {earnedShields.includes(t.id) && <CheckCircle2 size={12} className="text-emerald-400" />}
-              Task {idx + 1}
-            </button>
-          ))}
-        </div>
+        {/* Task Switcher Pills — hidden in task mode (TaskScreen provides its own back button) */}
+        {!hideStationTabs && (
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+            {currentTasks.map((t, idx) => (
+              <button
+                key={t.id}
+                type="button"
+                onClick={() => setActiveTaskIndex(idx)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 ${
+                  activeTaskIndex === idx
+                    ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300'
+                    : earnedShields.includes(t.id)
+                    ? 'bg-emerald-900/80 text-emerald-300 border border-emerald-500/40'
+                    : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                }`}
+              >
+                {earnedShields.includes(t.id) && <CheckCircle2 size={12} className="text-emerald-400" />}
+                Task {idx + 1}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Task Content Card */}

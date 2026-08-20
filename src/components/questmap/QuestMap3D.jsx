@@ -350,10 +350,9 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                   {completion.done > 0 && !completion.allDone && (
                     <span className="qm3d-station-count">{completion.done}/{completion.total}</span>
                   )}
-                  {/* START HERE on current suggested station when not finished */}
                   {isSuggested && !completion.allDone && (
                     <div className="qm3d-start-here">
-                      {idx === 0 ? '▶ START HERE' : '▶ TIẾP TỤC'}
+                      {idx === 0 && completion.done === 0 ? '▶ START HERE' : '▶ CONTINUE'}
                     </div>
                   )}
                 </>
