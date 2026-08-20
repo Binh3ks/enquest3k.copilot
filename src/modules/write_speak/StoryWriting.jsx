@@ -169,7 +169,7 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
   // ── REVIEW SCREEN ────────────────────────────────────────────
   if (isReview) {
     return (
-      <div className="flex flex-col gap-4 animate-in fade-in duration-300">
+      <div className="max-w-4xl mx-auto px-4 py-2 flex flex-col gap-4 animate-in fade-in duration-300 w-full">
         {showConfetti && <Confetti recycle={false} numberOfPieces={250} />}
 
         {/* Header */}
@@ -252,7 +252,7 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
   const progressPct = ((panelIdx) / totalPanels) * 100;
 
   return (
-    <div className="flex flex-col gap-3 animate-in fade-in duration-200">
+    <div className="max-w-4xl mx-auto px-4 py-2 flex flex-col gap-3 animate-in fade-in duration-200 w-full">
       {showConfetti && <Confetti recycle={false} numberOfPieces={150} />}
 
       {/* Progress Header */}
