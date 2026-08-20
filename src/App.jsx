@@ -28,6 +28,7 @@ import CompletionCard from './components/common/CompletionCard';
 import CollectionBoard from './pages/CollectionBoard';
 import AvatarCloset from './components/avatar/AvatarCloset';
 import Sidebar from './components/layout/Sidebar';
+import QuestSidebar from './components/questmap/QuestSidebar';
 import AITutorWidget from './modules/ai_tutor/AITutorWidget';
 import TutorWindow from './modules/ai_tutor/components/TutorWindow';
 import useTutorStore from './services/ai_tutor/tutorStore';
@@ -669,24 +670,14 @@ const MainLayout = ({ isTaskMode = false }) => {
           weekId={weekId}
           onToggleSidebar={() => setSidebarOpen(prev => !prev)}
         />
-        {/* Sidebar overlay (hamburger menu) */}
-        {sidebarOpen && (
-          <div className="fixed inset-0 z-[9990]">
-            <div className="absolute inset-0 bg-black/40" onClick={() => setSidebarOpen(false)} />
-            <div className="absolute left-0 top-0 bottom-0 w-72 bg-white shadow-2xl animate-[slideInLeft_0.3s_ease-out]">
-              <Sidebar
-                currentUser={currentUser}
-                isTeacher={isTeacher}
-                weekId={weekId}
-                STATIONS={STATIONS}
-                tabKey={tabKey}
-                onProfileClick={() => setIsProfileModalOpen(true)}
-                sidebarOpen={true}
-                onAdminDashboard={() => setIsAdminDashboardOpen(true)}
-              />
-            </div>
-          </div>
-        )}
+        {/* Modern Adventure QuestSidebar */}
+        <QuestSidebar
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+          currentWeekId={weekId}
+          learningMode={learningMode}
+          onToggleMode={handleToggleMode}
+        />
       </>
     );
   }

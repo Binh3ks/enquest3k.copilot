@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, CheckCircle2, Lock, Settings } from 'lucide-react';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
@@ -120,6 +120,9 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const [expandedStation, setExpandedStation] = useState(null);
   const [showPIN, setShowPIN] = useState(false);
   const [teacherOverride, setTeacherOverride] = useState(false);
+  const [showNarrative, setShowNarrative] = useState(false);
+  const [mascotMood, setMascotMood] = useState('waving');
+  const prevSuggestedIdxRef = useRef(-1);
 
   const { isQuestCompleted, getWeekQuestCount } = useDailyQuestStore();
   const weekQuestCount = getWeekQuestCount(weekId);
@@ -171,6 +174,29 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
     weekQuestCount >= totalQuests ? "Xuất sắc! Đã hoàn thành tất cả! 🎉" :
     `Còn ${totalQuests - weekQuestCount} nhiệm vụ nữa! 💪`;
 
+  // Show narrative toast on first visit
+  useEffect(() => {
+    const key = `lexio_trip_${weekId}_intro_shown`;
+    if (!localStorage.getItem(key)) {
+      setTimeout(() => {
+        setShowNarrative(true);
+        localStorage.setItem(key, '1');
+        setTimeout(() => setShowNarrative(false), 6000);
+      }, 1200);
+    }
+  }, [weekId]);
+
+  // Mascot celebrate when station changes
+  useEffect(() => {
+    if (currentSuggestedIdx !== prevSuggestedIdxRef.current && prevSuggestedIdxRef.current !== -1) {
+      setMascotMood('celebrate');
+      setTimeout(() => setMascotMood(weekQuestCount >= totalQuests ? 'celebrate' : 'happy'), 2000);
+    } else {
+      setMascotMood(weekQuestCount >= totalQuests ? 'celebrate' : weekQuestCount > 0 ? 'happy' : 'waving');
+    }
+    prevSuggestedIdxRef.current = currentSuggestedIdx;
+  }, [currentSuggestedIdx, weekQuestCount, totalQuests]);
+
   const showLexioCTA = weekQuestCount < totalQuests && firstUncompletedTask;
 
   return (
@@ -181,20 +207,42 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
 
       {/* Header */}
       <div className="qm3d-header">
-        <button className="qm3d-hamburger" onClick={onToggleSidebar} aria-label="Menu">
-          <Menu size={22} />
-        </button>
-        <div className="qm3d-week-badge">
-          <span className="qm3d-week-label">TUẦN {weekId}</span>
-          <div className="qm3d-progress-bar">
-            <div className="qm3d-progress-fill" style={{ width: `${progressPercent}%` }} />
+        <div className="qm3d-header-left">
+          <button className="qm3d-hamburger" onClick={onToggleSidebar} aria-label="Menu">
+            <Menu size={22} />
+          </button>
+          <div className="qm3d-logo">
+            <span className="qm3d-logo-fox">🦊</span>
+            <span className="qm3d-logo-text">LEXIO</span>
           </div>
-          <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
+        </div>
+        <div className="qm3d-week-badge">
+          <span className="qm3d-week-label">🗺️ TRIP {weekId}</span>
+          <div className="qm3d-dual-progress">
+            <div className="qm3d-prog-row">
+              <span className="qm3d-prog-icon">🦊</span>
+              <div className="qm3d-progress-bar">
+                <div className="qm3d-progress-fill" style={{ width: `${progressPercent}%` }} />
+              </div>
+              <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
+            </div>
+          </div>
         </div>
         <button className="qm3d-settings" onClick={onToggleSidebar} aria-label="Settings">
           <Settings size={18} />
         </button>
       </div>
+
+      {/* Narrative welcome toast */}
+      {showNarrative && (
+        <div className="qm3d-narrative-toast">
+          <span className="qm3d-narrative-fox">🦊</span>
+          <p className="qm3d-narrative-text">
+            Chào mừng đến <strong>Trip {weekId}</strong>! Hành trình khám phá ngôn ngữ bắt đầu đây.
+            5 trạm dừng, 15 nhiệm vụ — xuất phát từ <strong>The Explorer</strong>! 🗺️✨
+          </p>
+        </div>
+      )}
 
       {/* SVG Path connecting stations */}
       <svg className="qm3d-path-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -272,15 +320,15 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
               aria-label={station.name}
             >
               {completion.allDone ? (
-                <CheckCircle2 size={22} className="qm3d-station-check" />
-              ) : unlocked ? (
-                <span className="qm3d-station-emoji">{station.emoji}</span>
-              ) : (
-                <div className="flex flex-col items-center justify-center">
-                  <span className="qm3d-station-index">{station.index}</span>
-                  <Lock size={11} className="qm3d-station-lock opacity-70" />
-                </div>
-              )}
+              <CheckCircle2 size={22} className="qm3d-station-check" />
+            ) : unlocked ? (
+              <span className="qm3d-station-emoji" style={{ fontSize: isSuggested ? '28px' : '22px' }}>{station.emoji}</span>
+            ) : (
+              <div className="flex flex-col items-center justify-center">
+                <span className="qm3d-station-index">{station.index}</span>
+                <Lock size={11} className="qm3d-station-lock opacity-70" />
+              </div>
+            )}
             </button>
 
             {/* Station label */}
@@ -292,17 +340,21 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
               }}
             >
               {unlocked ? (
-                <>
-                  <span className="font-extrabold">{station.name}</span>
-                  {completion.done > 0 && !completion.allDone && (
-                    <span className="qm3d-station-count"> {completion.done}/{completion.total}</span>
-                  )}
-                </>
-              ) : (
-                <span className="qm3d-station-locked-name">
-                  🔒 {station.name}
-                </span>
-              )}
+              <>
+                <span className="qm3d-station-name-text">{station.emoji} {station.name}</span>
+                {completion.done > 0 && !completion.allDone && (
+                  <span className="qm3d-station-count"> {completion.done}/{completion.total}</span>
+                )}
+                {/* START HERE badge only on explorer when it's current */}
+                {idx === 0 && isSuggested && weekQuestCount === 0 && (
+                  <div className="qm3d-start-here">▶ START HERE</div>
+                )}
+              </>
+            ) : (
+              <span className="qm3d-station-locked-name">
+                🔒 {station.name}
+              </span>
+            )}
             </div>
 
             {/* Expanded task dots */}
@@ -360,17 +412,18 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         );
       })}
 
-      {/* Lexio mascot at current suggested station */}
+      {/* Lexio mascot — CSS transition follows suggested station smoothly */}
       <div
         className="qm3d-lexio"
         style={{
           left: `${pos(suggestedStation).x - (isPortrait ? 2 : 4)}%`,
           top: `${pos(suggestedStation).y - (isPortrait ? 8 : 11)}%`,
+          transition: 'left 1.2s cubic-bezier(0.34,1.56,0.64,1), top 1.2s cubic-bezier(0.34,1.56,0.64,1)',
         }}
       >
         <LexioMascot
           size={isPortrait ? 46 : 58}
-          mood={weekQuestCount >= totalQuests ? 'celebrate' : weekQuestCount > 0 ? 'happy' : 'waving'}
+          mood={mascotMood}
         />
       </div>
 

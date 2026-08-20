@@ -1,0 +1,441 @@
+/* QuestSidebar Styles */
+.qs-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+}
+
+.qs-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.qs-drawer {
+  position: relative;
+  width: 320px;
+  max-width: 85vw;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.qs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fafaf9;
+}
+
+.qs-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qs-brand-fox {
+  font-size: 24px;
+}
+
+.qs-brand-title {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  color: #ea580c;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.qs-brand-sub {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.qs-close-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #f1f5f9;
+  border-radius: 10px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.qs-close-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Profile Card */
+.qs-profile-card {
+  margin: 14px 16px 10px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1.5px solid #fde68a;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qs-profile-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.qs-avatar-wrap {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 16px;
+  border: 2px solid #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+  flex-shrink: 0;
+}
+
+.qs-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.qs-hero-name {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: #78350f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qs-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.qs-level-badge {
+  font-size: 10px;
+  font-weight: 800;
+  background: #f59e0b;
+  color: white;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+.qs-streak-badge {
+  font-size: 10px;
+  font-weight: 800;
+  color: #b45309;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.qs-profile-xp-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.qs-xp-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #92400e;
+}
+
+.qs-xp-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.qs-xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.qs-mode-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+  border-top: 1px dashed rgba(245, 158, 11, 0.3);
+}
+
+.qs-mode-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #78350f;
+}
+
+.qs-mode-btn {
+  padding: 3px 8px;
+  border: 1px solid #d97706;
+  border-radius: 8px;
+  background: white;
+  color: #92400e;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.qs-mode-btn.active {
+  background: #d97706;
+  color: white;
+}
+
+/* Nav Menu */
+.qs-nav-list {
+  flex: 1;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qs-nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.qs-nav-item:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateX(2px);
+}
+
+.qs-nav-item.highlight {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.qs-nav-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qs-nav-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.qs-nav-title {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.qs-nav-desc {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+.qs-teacher-section {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.qs-section-tag {
+  font-size: 9px;
+  font-weight: 900;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* Footer */
+.qs-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  gap: 8px;
+  background: #fafaf9;
+}
+
+.qs-footer-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.qs-footer-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.qs-footer-btn.logout:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+/* Modal for Trip Selector & Co-op */
+.qs-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.qs-trip-modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: 80vh;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.qs-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.qs-modal-title {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+}
+
+.qs-modal-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.qs-modal-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f1f5f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.qs-trip-grid {
+  padding: 16px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.qs-trip-card {
+  padding: 12px 8px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.15s;
+}
+
+.qs-trip-card:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.qs-trip-card.current {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.qs-trip-num {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: #1e293b;
+}
+
+.qs-trip-card.current .qs-trip-num {
+  color: #92400e;
+}
+
+.qs-trip-tag {
+  font-size: 10px;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.qs-trip-card.current .qs-trip-tag {
+  color: #d97706;
+}

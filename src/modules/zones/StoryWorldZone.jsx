@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
 import ExplorerPassport from '../../components/cambridge/ExplorerPassport';
@@ -11,10 +11,12 @@ import { getNovaStage } from '../../services/companionEngine';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
 export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = null, hideGearTabs = false }) {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const storyData = data?.storyWorld || {};
   const [currentGear, setCurrentGear] = useState(forcedGear || 1);
   const [completedGears, setCompletedGears] = useState([1]);
+  const [stepperIdx, setStepperIdx] = useState(0);
 
   // If forcedGear changes, update
   useEffect(() => {
@@ -461,14 +463,35 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                     ◀ Previous
                   </button>
                   <span className="text-xs font-bold text-slate-500">Scene {activeFrameIndex + 1} of {scenes.length}</span>
-                  <button
-                    type="button"
-                    disabled={activeFrameIndex === scenes.length - 1}
-                    onClick={() => setActiveFrameIndex(prev => Math.min(scenes.length - 1, prev + 1))}
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-40 text-white rounded-xl text-xs font-black shadow"
-                  >
-                    Next ▶
-                  </button>
+                  {activeFrameIndex < scenes.length - 1 ? (
+                    <button
+                      type="button"
+                      onClick={() => setActiveFrameIndex(prev => Math.min(scenes.length - 1, prev + 1))}
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-black shadow"
+                    >
+                      Next ▶
+                    </button>
+                  ) : hideGearTabs ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        useDailyQuestStore.getState().completeQuest(weekNumber, 'gear1_webtoon');
+                        fireCelebrationConfetti('Quest_Completed');
+                        navigate(`/week/${weekNumber}/hub/1`);
+                      }}
+                      className="px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-xl text-xs font-black shadow-lg animate-bounce"
+                    >
+                      🎉 Hoàn thành & Về map ▶
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled={true}
+                      className="px-4 py-2 bg-slate-100 opacity-40 text-slate-500 rounded-xl text-xs font-black"
+                    >
+                      Hết cảnh
+                    </button>
+                  )}
                 </div>
               </div>
             )}
@@ -524,49 +547,51 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
               </div>
             </div>
 
-            {/* Sentences with Real Word-by-Word Karaoke */}
-            <div className="space-y-3">
-              {storySentences.map((sentence, idx) => {
-                const isCurrentPlaying = activeSentenceIdx === idx;
-                const isDone = completedKaraokeSentences[idx];
-                const sentenceWords = sentence.split(/\s+/);
+            {/* ── TaskScreen Stepper Mode (1 sentence per screen) OR Legacy List Mode ── */}
+            {hideGearTabs ? (
+              <div className="space-y-6">
+                {/* Stepper Header */}
+                <div className="flex items-center justify-between px-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-black text-amber-900 bg-amber-100 px-3 py-1 rounded-xl">
+                      Câu {stepperIdx + 1} / {storySentences.length}
+                    </span>
+                    <span className="text-xs font-bold text-slate-500">
+                      {completedKaraokeSentences[stepperIdx] ? '✅ Đã luyện tập' : '⏳ Chưa hoàn thành'}
+                    </span>
+                  </div>
+                  <div className="w-36 h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-amber-500 to-emerald-500 transition-all duration-300 rounded-full"
+                      style={{ width: `${((stepperIdx + 1) / storySentences.length) * 100}%` }}
+                    />
+                  </div>
+                </div>
 
-                return (
-                  <div
-                    key={idx}
-                    className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${
-                      isCurrentPlaying
-                        ? 'bg-amber-100/90 border-amber-400 shadow-lg ring-4 ring-amber-300'
-                        : isDone
-                        ? 'bg-emerald-50/70 border-emerald-200 text-slate-800'
-                        : 'bg-slate-50 hover:bg-amber-50/60 border-slate-200 text-slate-800'
-                    }`}
-                  >
-                    <div className="flex items-start gap-3 flex-1">
-                      <span className={`w-7 h-7 rounded-full text-xs font-black flex items-center justify-center shrink-0 mt-0.5 ${
-                        isCurrentPlaying
-                          ? 'bg-amber-500 text-slate-950 font-black animate-pulse'
-                          : isDone
-                          ? 'bg-emerald-500 text-white font-black'
-                          : 'bg-amber-100 text-amber-900'
-                      }`}>
-                        {isDone ? '✓' : idx + 1}
-                      </span>
-                      <div>
-                        {/* Word-by-Word Karaoke Text OR Interactive Dictionary Lookup */}
+                {/* Big Focus Sentence Card */}
+                {(() => {
+                  const idx = stepperIdx;
+                  const sentence = storySentences[idx] || '';
+                  const isCurrentPlaying = activeSentenceIdx === idx;
+                  const isDone = completedKaraokeSentences[idx];
+                  const sentenceWords = sentence.split(/\s+/);
+
+                  return (
+                    <div className="p-6 sm:p-8 bg-gradient-to-b from-amber-50/80 to-white rounded-3xl border-2 border-amber-300 shadow-xl space-y-6 text-center">
+                      <div className="min-h-[100px] flex items-center justify-center">
                         {isCurrentPlaying ? (
-                          <div className="text-sm sm:text-base font-black leading-relaxed flex flex-wrap gap-1">
+                          <div className="text-xl sm:text-2xl md:text-3xl font-black leading-relaxed flex flex-wrap justify-center gap-2">
                             {sentenceWords.map((word, wIdx) => {
                               const isWordActive = activeWordIdx === wIdx;
                               return (
                                 <span
                                   key={wIdx}
-                                  className={`px-1 py-0.5 rounded transition-all ${
+                                  className={`px-2 py-1 rounded-xl transition-all duration-150 ${
                                     isWordActive
-                                      ? 'bg-amber-400 text-slate-950 font-black scale-110 ring-2 ring-amber-300'
+                                      ? 'bg-amber-400 text-slate-950 font-black scale-110 shadow-lg ring-4 ring-amber-300'
                                       : activeWordIdx !== null && wIdx < activeWordIdx
                                       ? 'text-amber-900 font-bold'
-                                      : 'text-slate-900'
+                                      : 'text-slate-800'
                                   }`}
                                 >
                                   {word}
@@ -575,55 +600,54 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                             })}
                           </div>
                         ) : (
-                          <div className="text-sm sm:text-base font-black leading-relaxed text-slate-900">
+                          <div className="text-xl sm:text-2xl md:text-3xl font-black leading-relaxed text-slate-900">
                             {renderParsedText(sentence, 'amber')}
                           </div>
                         )}
-                        {isCurrentPlaying && (
-                          <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase text-amber-800 tracking-wider mt-1 bg-amber-200/80 px-2 py-0.5 rounded-md">
-                            <Sparkles size={12} className="animate-spin text-amber-600" /> 🎤 Real-Time Karaoke Syncing...
-                          </span>
-                        )}
                       </div>
-                    </div>
 
-                    <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2 shrink-0 self-end sm:self-center">
-                      <div className="flex items-center gap-2">
+                      {isCurrentPlaying && (
+                        <div className="inline-flex items-center gap-2 text-xs font-black uppercase text-amber-800 tracking-wider bg-amber-200 px-3 py-1 rounded-full animate-pulse">
+                          <Sparkles size={14} className="animate-spin text-amber-600" /> 🎤 Đang phát âm chuẩn từng từ...
+                        </div>
+                      )}
+
+                      {/* Main Action Buttons */}
+                      <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                         <button
                           type="button"
                           onClick={() => handleSpeakSentence(sentence, idx)}
-                          className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95"
+                          className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 rounded-2xl font-black text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center gap-2 transition"
                         >
-                          <Volume2 size={15} /> Listen
+                          <Volume2 size={20} /> 🔊 Nghe mẫu (Listen)
                         </button>
 
-                        {/* Shadowing = Karaoke highlight + Record simultaneously */}
                         {sentenceShadowing[idx]?.isRecording ? (
                           <button
                             type="button"
                             onClick={() => stopSentenceShadowing(idx)}
-                            className="px-3.5 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition animate-pulse"
+                            className="px-6 py-3.5 bg-rose-600 hover:bg-rose-700 text-white rounded-2xl font-black text-sm sm:text-base shadow-lg flex items-center gap-2 transition animate-pulse"
                           >
-                            <Square size={13} /> Stop
+                            <Square size={18} /> ⏹ Dừng thu âm
                           </button>
                         ) : (
                           <button
                             type="button"
                             onClick={() => startSentenceShadowing(idx, sentence)}
-                            className={`px-3 py-1.5 rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition active:scale-95 ${
+                            className={`px-6 py-3.5 rounded-2xl font-black text-sm sm:text-base shadow-lg hover:shadow-xl flex items-center gap-2 transition active:scale-95 ${
                               shadowingKaraokeIdx === idx
-                                ? 'bg-purple-700 text-white animate-pulse ring-2 ring-purple-400'
+                                ? 'bg-purple-700 text-white animate-pulse ring-4 ring-purple-300'
                                 : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white'
                             }`}
                           >
-                            <Mic size={14} /> Shadow
+                            <Mic size={20} /> 🎙️ Luyện nói (Shadow)
                           </button>
                         )}
                       </div>
 
-                      {/* Playback Student Voice & Instant AI Evaluation */}
+                      {/* Student Voice Playback */}
                       {sentenceShadowing[idx]?.audioUrl && !sentenceShadowing[idx]?.isRecording && (
-                        <div className="flex items-center gap-1.5 pt-1 sm:pt-0">
+                        <div className="flex items-center justify-center gap-3 pt-2">
                           <button
                             type="button"
                             onClick={() => {
@@ -634,20 +658,132 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                                 speakText(sentence);
                               }
                             }}
-                            className="px-2.5 py-1 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-lg font-black text-[11px] flex items-center gap-1 transition"
+                            className="px-4 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-950 border border-emerald-300 rounded-xl font-black text-xs flex items-center gap-1.5 transition"
                           >
-                            <Play size={11} className="fill-emerald-800" /> Play My Voice
+                            <Play size={14} className="fill-emerald-800" /> Nghe lại giọng mình
                           </button>
-                          <span className="px-2.5 py-1 bg-emerald-600 text-white rounded-lg text-[10px] font-black shadow-sm flex items-center gap-1">
-                            {sentenceShadowing[idx].score >= 70 ? '🌟 Awesome!' : sentenceShadowing[idx].score >= 40 ? '⭐ Good Try!' : '✨ Shadowed!'}
+                          <span className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl text-xs font-black shadow-sm flex items-center gap-1">
+                            {sentenceShadowing[idx].score >= 70 ? '🌟 Tuyệt vời!' : sentenceShadowing[idx].score >= 40 ? '⭐ Khá tốt!' : '✨ Đã ghi âm!'}
                           </span>
                         </div>
                       )}
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })()}
+
+                {/* Stepper Navigation Footer */}
+                <div className="flex items-center justify-between pt-2">
+                  <button
+                    type="button"
+                    disabled={stepperIdx === 0}
+                    onClick={() => setStepperIdx(prev => Math.max(0, prev - 1))}
+                    className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 text-slate-800 rounded-xl text-xs sm:text-sm font-black transition"
+                  >
+                    ◀ Câu trước
+                  </button>
+
+                  {stepperIdx < storySentences.length - 1 ? (
+                    <button
+                      type="button"
+                      onClick={() => setStepperIdx(prev => Math.min(storySentences.length - 1, prev + 1))}
+                      className="px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs sm:text-sm font-black shadow-md flex items-center gap-1.5 transition"
+                    >
+                      Câu tiếp theo ▶
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        useDailyQuestStore.getState().completeQuest(weekNumber, 'gear2_karaoke');
+                        fireCelebrationConfetti('Quest_Completed');
+                        navigate(`/week/${weekNumber}/hub/1`);
+                      }}
+                      className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl text-xs sm:text-sm font-black shadow-xl flex items-center gap-2 transition animate-bounce"
+                    >
+                      🎉 Hoàn thành & Về bản đồ ▶
+                    </button>
+                  )}
+                </div>
+              </div>
+            ) : (
+              /* Sentences with Real Word-by-Word Karaoke (List Mode) */
+              <div className="space-y-3">
+                {storySentences.map((sentence, idx) => {
+                  const isCurrentPlaying = activeSentenceIdx === idx;
+                  const isDone = completedKaraokeSentences[idx];
+                  const sentenceWords = sentence.split(/\s+/);
+
+                  return (
+                    <div
+                      key={idx}
+                      className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${
+                        isCurrentPlaying
+                          ? 'bg-amber-100/90 border-amber-400 shadow-lg ring-4 ring-amber-300'
+                          : isDone
+                          ? 'bg-emerald-50/70 border-emerald-200 text-slate-800'
+                          : 'bg-slate-50 hover:bg-amber-50/60 border-slate-200 text-slate-800'
+                      }`}
+                    >
+                      <div className="flex items-start gap-3 flex-1">
+                        <span className={`w-7 h-7 rounded-full text-xs font-black flex items-center justify-center shrink-0 mt-0.5 ${
+                          isCurrentPlaying
+                            ? 'bg-amber-500 text-slate-950 font-black animate-pulse'
+                            : isDone
+                            ? 'bg-emerald-500 text-white font-black'
+                            : 'bg-amber-100 text-amber-900'
+                        }`}>
+                          {isDone ? '✓' : idx + 1}
+                        </span>
+                        <div>
+                          {isCurrentPlaying ? (
+                            <div className="text-sm sm:text-base font-black leading-relaxed flex flex-wrap gap-1">
+                              {sentenceWords.map((word, wIdx) => {
+                                const isWordActive = activeWordIdx === wIdx;
+                                return (
+                                  <span
+                                    key={wIdx}
+                                    className={`px-1 py-0.5 rounded transition-all ${
+                                      isWordActive
+                                        ? 'bg-amber-400 text-slate-950 font-black scale-110 ring-2 ring-amber-300'
+                                        : activeWordIdx !== null && wIdx < activeWordIdx
+                                        ? 'text-amber-900 font-bold'
+                                        : 'text-slate-900'
+                                    }`}
+                                  >
+                                    {word}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <div className="text-sm sm:text-base font-black leading-relaxed text-slate-900">
+                              {renderParsedText(sentence, 'amber')}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row items-end sm:items-center gap-2 shrink-0 self-end sm:self-center">
+                        <button
+                          type="button"
+                          onClick={() => handleSpeakSentence(sentence, idx)}
+                          className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5 transition"
+                        >
+                          <Volume2 size={15} /> Listen
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => startSentenceShadowing(idx, sentence)}
+                          className="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1.5"
+                        >
+                          <Mic size={14} /> Shadow
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       )}
