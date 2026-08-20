@@ -759,7 +759,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                       {/* Headphone Advice Tooltip / Badge */}
                       <div className="flex items-center justify-center">
                         <span className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full shadow-xs" title="Wear headphones to prevent microphone echo when speaking while model audio plays">
-                          🎧 <span>{isVi ? 'Hãy đeo tai nghe khi shadowing để ghi âm rõ và không bị nghẽn tiếng nha!' : 'Please wear headphones during shadowing for the clearest recording!'}</span>
+                          🎧 <span>Please wear headphones during shadowing for the clearest recording!</span>
                         </span>
                       </div>
 
