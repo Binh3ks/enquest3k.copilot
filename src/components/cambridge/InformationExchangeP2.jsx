@@ -4,37 +4,8 @@ import VoiceService from '../../services/voiceService';
 import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
+import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 
-/**
- * Speech Recognition & Response Accuracy Evaluator
- */
-const evaluateSpeechInput = (spokenText, acceptableList) => {
-  if (!spokenText || !acceptableList || acceptableList.length === 0) {
-    return { isCorrect: false, score: 0 };
-  }
-  const cleanSpoken = spokenText.toLowerCase().replace(/[^\w\s']/g, '').trim();
-
-  for (const target of acceptableList) {
-    const cleanTarget = target.toLowerCase().replace(/[^\w\s']/g, '').trim();
-    if (cleanSpoken === cleanTarget || cleanSpoken.includes(cleanTarget) || cleanTarget.includes(cleanSpoken)) {
-      return { isCorrect: true, score: 95 };
-    }
-  }
-
-  // Word overlap check
-  const spokenWords = new Set(cleanSpoken.split(/\s+/));
-  for (const target of acceptableList) {
-    const targetWords = target.toLowerCase().replace(/[^\w\s']/g, '').trim().split(/\s+/);
-    let matchCount = 0;
-    targetWords.forEach(w => { if (spokenWords.has(w)) matchCount++; });
-    const ratio = matchCount / targetWords.length;
-    if (ratio >= 0.5) {
-      return { isCorrect: true, score: Math.round(ratio * 100) };
-    }
-  }
-
-  return { isCorrect: false, score: 0 };
-};
 
 export function InformationExchangeP2({ customData, isStealthMode = false }) {
   const data = customData || {
@@ -242,7 +213,7 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
     const attempts = (attemptCounts[currentField.id] || 0) + 1;
     setAttemptCounts(prev => ({ ...prev, [currentField.id]: attempts }));
 
-    const result = evaluateSpeechInput(textToEval, currentField.acceptable_answers);
+    const result = evaluateSpeechSyntax(textToEval, currentField.acceptable_answers, { mode: 'sentence' });
 
     console.log(`[SPEAKING_P2_DEBUG] Evaluation Result -> Score: ${result.score}%, Status: ${result.isCorrect ? 'PASS' : 'FAIL'}, Attempts: ${attempts}`);
 
@@ -287,7 +258,8 @@ export function InformationExchangeP2({ customData, isStealthMode = false }) {
     const attempts = (attemptCounts[currentField.id] || 0) + 1;
     setAttemptCounts(prev => ({ ...prev, [currentField.id]: attempts }));
 
-    const result = evaluateSpeechInput(textToEval, currentField.acceptable_questions);
+    const result = evaluateSpeechSyntax(textToEval, currentField.acceptable_questions, { mode: 'question', cueWord: currentField.cue_prompt?.split('/')?.[0]?.trim() || '' });
+
 
     console.log(`[SPEAKING_P2_DEBUG] Evaluation Result -> Score: ${result.score}%, Status: ${result.isCorrect ? 'PASS' : 'FAIL'}, Attempts: ${attempts}`);
 

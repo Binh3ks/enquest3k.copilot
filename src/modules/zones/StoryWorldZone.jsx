@@ -9,6 +9,7 @@ import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { getNovaStage } from '../../services/companionEngine';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
+import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 
 export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = null, hideGearTabs = false }) {
   const navigate = useNavigate();
@@ -253,25 +254,20 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
         const audioBlob = new Blob(sentenceChunksRef.current, { type: 'audio/webm' });
         const audioUrl = URL.createObjectURL(audioBlob);
 
-        // Grade based on actual recognized words vs target sentence
-        const spokenText = (recognizedTranscriptRef.current[idx] || '').trim().toLowerCase();
-        const targetClean = targetSentence.toLowerCase().replace(/[^a-z0-9\s]/g, '');
-        const targetWords = targetClean.split(/\s+/).filter(Boolean);
-        const spokenWords = spokenText.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean);
-
-        const matchedWords = targetWords.filter(w => spokenWords.includes(w));
-        let score = targetWords.length > 0 ? Math.round((matchedWords.length / targetWords.length) * 100) : 0;
+        // Grade based on syntax word-order & sequence vs target sentence
+        const spokenText = (recognizedTranscriptRef.current[idx] || '').trim();
+        const evalResult = evaluateSpeechSyntax(spokenText, targetSentence, { mode: 'shadowing', minWords: 2 });
+        const score = evalResult.score;
 
         // If no voice was recognized or duration too short
-        if (spokenWords.length === 0 || durationMs < 1200) {
-          score = 0;
+        if (!spokenText || durationMs < 1200 || !evalResult.isCorrect) {
           setSentenceShadowing(prev => ({
             ...prev,
             [idx]: {
               isRecording: false,
               audioUrl: null,
-              score: 0,
-              feedback: '⚠️ No voice spoken! Please speak out loud while shadowing the highlighted words.'
+              score: score,
+              feedback: evalResult.feedback || '⚠️ Please speak out loud following the sentence word order!'
             }
           }));
           return;
@@ -283,11 +279,12 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             isRecording: false,
             audioUrl,
             score,
-            feedback: `🌟 Great shadowing! Accuracy: ${score}%. ${matchedWords.length}/${targetWords.length} target words matched!`
+            feedback: `🌟 ${evalResult.feedback} Accuracy: ${score}%`
           }
         }));
         fireCelebrationConfetti('Sentence_Shadow_Complete');
       };
+
 
       sentenceMediaRecorderRef.current.start();
       setSentenceShadowing(prev => ({

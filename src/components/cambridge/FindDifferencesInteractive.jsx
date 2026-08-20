@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
-import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Mic, MicOff, Volume2, Eye } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, Mic, MicOff, Volume2, Eye, HelpCircle } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 import CompletionModal from '../common/CompletionModal';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { useUserStore } from '../../stores/useUserStore';
+import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
+import MicFallbackInput from '../common/MicFallbackInput';
 
 export function FindDifferencesInteractive({ customData, onComplete, isStealthMode = false }) {
   const [foundHotspots, setFoundHotspots] = useState([]); // [hotspotId]
   const [activeHotspot, setActiveHotspot] = useState(null);
   const [isRecording, setIsRecording] = useState(false);
-  const [spokenResponses, setSpokenResponses] = useState({}); // { hotspotId: transcript }
+  const [spokenResponses, setSpokenResponses] = useState({}); // { hotspotId: { transcript, evalResult } }
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(null);
+  const recognitionRef = useRef(null);
 
   const differencesData = customData || {
     picA: { title: 'Picture A (Original Scene)', image_url: '/images/week33/w33_diff_scene_a.jpg' },
@@ -26,28 +29,74 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
 
   const [showHint, setShowHint] = useState(false);
 
+  useEffect(() => {
+    return () => {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (_) {}
+      }
+    };
+  }, []);
+
   const handleHotspotClick = (hs) => {
     if (!foundHotspots.includes(hs.id)) {
       setFoundHotspots([...foundHotspots, hs.id]);
     }
     setActiveHotspot(hs);
-    setShowHint(false); // Hide hint by default for authentic Speaking practice
+    setShowHint(false);
   };
 
   const handleToggleRecord = () => {
     if (!activeHotspot) return;
 
     if (isRecording) {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (_) {}
+      }
       setIsRecording(false);
-      // Mock AI speech recognition transcript
-      setSpokenResponses({
-        ...spokenResponses,
-        [activeHotspot.id]: activeHotspot.prompt_en
-      });
-    } else {
-      setIsRecording(true);
+      return;
+    }
+
+    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRec) {
+      // Fallback
+      handleEvaluateText(activeHotspot.prompt_en);
+      return;
+    }
+
+    try {
+      const rec = new SpeechRec();
+      rec.lang = 'en-US';
+      rec.continuous = false;
+      rec.interimResults = false;
+
+      rec.onstart = () => setIsRecording(true);
+      rec.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        handleEvaluateText(transcript);
+      };
+      rec.onerror = () => setIsRecording(false);
+      rec.onend = () => setIsRecording(false);
+
+      recognitionRef.current = rec;
+      rec.start();
+    } catch (e) {
+      setIsRecording(false);
     }
   };
+
+  const handleEvaluateText = (transcript) => {
+    if (!activeHotspot) return;
+    const evalResult = evaluateSpeechSyntax(transcript, activeHotspot.prompt_en, {
+      mode: 'find_diff',
+      minWords: 3
+    });
+
+    setSpokenResponses(prev => ({
+      ...prev,
+      [activeHotspot.id]: { transcript, evalResult }
+    }));
+  };
+
 
   const handleListenExaminerPrompt = async () => {
     if (!activeHotspot) return;
@@ -225,27 +274,48 @@ export function FindDifferencesInteractive({ customData, onComplete, isStealthMo
             </div>
           )}
 
-          <div className="flex items-center gap-3 pt-1">
-            <button
-              onClick={handleToggleRecord}
-              className={`px-5 py-2.5 rounded-xl font-black text-xs transition flex items-center gap-2 shadow-md ${
-                isRecording
-                  ? 'bg-rose-600 text-white animate-pulse'
-                  : 'bg-rose-600 text-white hover:bg-rose-700'
-              }`}
-            >
-              {isRecording ? <MicOff size={16} /> : <Mic size={16} />}
-              <span>{isRecording ? 'Stop Recording' : 'Record Your Speaking Explanation 🎙️'}</span>
-            </button>
+          <div className="space-y-3 pt-1">
 
-            {spokenResponses[activeHotspot.id] && (
-              <span className="text-xs font-bold text-emerald-700 flex items-center gap-1">
-                <CheckCircle2 size={16} /> Explanation Recorded!
-              </span>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                onClick={handleToggleRecord}
+                className={`px-5 py-2.5 rounded-xl font-black text-xs transition flex items-center gap-2 shadow-md ${
+                  isRecording
+                    ? 'bg-rose-600 text-white animate-pulse'
+                    : 'bg-rose-600 text-white hover:bg-rose-700'
+                }`}
+              >
+                {isRecording ? <MicOff size={16} /> : <Mic size={16} />}
+                <span>{isRecording ? 'Stop Recording' : 'Record Your Speaking Explanation 🎙️'}</span>
+              </button>
+
+              {spokenResponses[activeHotspot.id]?.evalResult && (
+                <span className={`text-xs font-bold flex items-center gap-1 ${
+                  spokenResponses[activeHotspot.id].evalResult.isCorrect ? 'text-emerald-700' : 'text-amber-700'
+                }`}>
+                  <CheckCircle2 size={16} />
+                  {spokenResponses[activeHotspot.id].evalResult.feedback} ({spokenResponses[activeHotspot.id].evalResult.score}%)
+                </span>
+              )}
+            </div>
+
+            {/* Transcript & Feedback details */}
+            {spokenResponses[activeHotspot.id]?.transcript && (
+              <div className="p-3 bg-white rounded-xl border border-rose-200 text-xs font-medium text-slate-700 space-y-1">
+                <p><strong>You said:</strong> "{spokenResponses[activeHotspot.id].transcript}"</p>
+              </div>
             )}
+
+            {/* Mic Fallback Typing */}
+            <MicFallbackInput
+              onSubmit={(typed) => handleEvaluateText(typed)}
+              placeholder="e.g. In Picture A the backpack is blue, but in Picture B it is red."
+              buttonLabel="Submit Explanation →"
+            />
           </div>
         </div>
       )}
+
 
       {/* Footer Check & Score */}
       <div className="pt-4 border-t border-slate-200 flex items-center justify-between">

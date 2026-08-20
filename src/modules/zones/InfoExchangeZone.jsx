@@ -4,86 +4,8 @@ import { speakText } from '../../utils/AudioHelper';
 import LexioMascot from '../../components/mascot/LexioMascot';
 import GrammarHintButton from '../../components/common/GrammarHintButton';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
+import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 
-/**
- * Cambridge Syntax & Word-Order Accuracy Evaluator
- * 
- * Strict ESL Pedagogical Checks:
- * 1. WH-Word Position: The question word ('where', 'what', 'what time', 'why', 'who') MUST appear near the start.
- * 2. Sequential Word Order (Subsequence): Verifies syntactic progression [WH -> Aux -> Subject -> Verb]
- *    to strictly prevent inverted errors (e.g. 'Tom get injured where' will FAIL).
- * 3. Levenshtein / Exact Match: Accepts valid grammatical variations.
- */
-const evaluateSpeechInput = (spokenText, acceptableList, cueWord = '') => {
-  if (!spokenText || !acceptableList || acceptableList.length === 0) {
-    return { isCorrect: false, score: 0, feedback: "No speech detected. Please speak clearly!" };
-  }
-  const cleanSpoken = spokenText.toLowerCase().replace(/[^\w\s']/g, '').trim();
-  const spokenTokens = cleanSpoken.split(/\s+/).filter(Boolean);
-
-  if (spokenTokens.length === 0) {
-    return { isCorrect: false, score: 0, feedback: "No speech recognized." };
-  }
-
-  // 1. Check exact match or substring in acceptable list
-  for (const target of acceptableList) {
-    const cleanTarget = target.toLowerCase().replace(/[^\w\s']/g, '').trim();
-    if (cleanSpoken === cleanTarget) {
-      return { isCorrect: true, score: 100, feedback: "Perfect Cambridge question!" };
-    }
-  }
-
-  // 2. Syntax Check: Question word MUST be at the beginning for questions
-  if (cueWord) {
-    const cleanCue = cueWord.toLowerCase().trim();
-    const cueTokens = cleanCue.split(/\s+/);
-    const startsWithCue = cueTokens.every((ct, idx) => spokenTokens[idx] === ct || spokenTokens[idx + 1] === ct);
-    
-    if (!startsWithCue && cleanSpoken.includes(cleanCue)) {
-      return {
-        isCorrect: false,
-        score: 35,
-        feedback: `Syntax error: Put the question word "${cueWord}" at the beginning of your question!`
-      };
-    }
-  }
-
-  // 3. Strict Sequential Word-Order (Subsequence Match)
-  // Verifies that key tokens appear in the correct chronological order in the utterance
-  for (const target of acceptableList) {
-    const cleanTarget = target.toLowerCase().replace(/[^\w\s']/g, '').trim();
-    const targetTokens = cleanTarget.split(/\s+/).filter(Boolean);
-    
-    let targetIdx = 0;
-    let inOrderMatches = 0;
-
-    for (const token of spokenTokens) {
-      if (targetIdx < targetTokens.length && token === targetTokens[targetIdx]) {
-        inOrderMatches++;
-        targetIdx++;
-      } else if (targetIdx < targetTokens.length && targetTokens.slice(targetIdx).includes(token)) {
-        // Advanced token found in order
-        targetIdx = targetTokens.indexOf(token, targetIdx) + 1;
-        inOrderMatches++;
-      }
-    }
-
-    const orderRatio = inOrderMatches / targetTokens.length;
-    if (orderRatio >= 0.6) {
-      return {
-        isCorrect: true,
-        score: Math.round(orderRatio * 100),
-        feedback: orderRatio >= 0.8 ? "Great question!" : "Good question! Clear and understandable."
-      };
-    }
-  }
-
-  return {
-    isCorrect: false,
-    score: 25,
-    feedback: "Word order needs improvement. Check the grammar hint and try again!"
-  };
-};
 
 /**
  * InfoExchangeZone — Authentic Cambridge A2 Flyers Speaking Part 2
@@ -175,7 +97,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       rec.onresult = (event) => {
         const text = event.results[0][0].transcript;
         setTranscriptA(text);
-        const evalRes = evaluateSpeechInput(text, currentCueA?.acceptable_questions || [], currentCueA?.cue_word || '');
+        const evalRes = evaluateSpeechSyntax(text, currentCueA?.acceptable_questions || [], { mode: 'question', cueWord: currentCueA?.cue_word || '' });
         setEvalResultA(evalRes);
         if (evalRes.isCorrect) {
           setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
@@ -211,7 +133,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const handleManualSubmitA = () => {
     if (!manualTextA.trim()) return;
     setTranscriptA(manualTextA);
-    const evalRes = evaluateSpeechInput(manualTextA, currentCueA?.acceptable_questions || [], currentCueA?.cue_word || '');
+    const evalRes = evaluateSpeechSyntax(manualTextA, currentCueA?.acceptable_questions || [], { mode: 'question', cueWord: currentCueA?.cue_word || '' });
     setEvalResultA(evalRes);
     if (evalRes.isCorrect) {
       setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
@@ -272,7 +194,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       rec.onresult = (event) => {
         const text = event.results[0][0].transcript;
         setTranscriptB(text);
-        const evalRes = evaluateSpeechInput(text, currentFieldB?.acceptable_answers || []);
+        const evalRes = evaluateSpeechSyntax(text, currentFieldB?.acceptable_answers || [], { mode: 'sentence' });
         setEvalResultB(evalRes);
         if (!evalRes.isCorrect) {
           setRetryCountB(prev => prev + 1);
@@ -305,7 +227,8 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const handleManualSubmitB = () => {
     if (!manualTextB.trim()) return;
     setTranscriptB(manualTextB);
-    const evalRes = evaluateSpeechInput(manualTextB, currentFieldB?.acceptable_answers || []);
+    const evalRes = evaluateSpeechSyntax(manualTextB, currentFieldB?.acceptable_answers || [], { mode: 'sentence' });
+
     setEvalResultB(evalRes);
     if (!evalRes.isCorrect) {
       setRetryCountB(prev => prev + 1);
