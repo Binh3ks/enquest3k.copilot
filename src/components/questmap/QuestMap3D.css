@@ -152,6 +152,29 @@
   filter: blur(1px);
 }
 
+.qm3d-path-arrow {
+  font-size: 8px;
+  font-weight: 900;
+  fill: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.qm3d-path-arrow.unlocked {
+  fill: #fbbf24;
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.8));
+  animation: qm3d-arrow-pulse 1.5s ease-in-out infinite;
+}
+
+.qm3d-path-arrow.locked {
+  fill: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes qm3d-arrow-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.25); opacity: 1; }
+}
+
 @keyframes qm3d-dash {
   to { stroke-dashoffset: -100; }
 }
@@ -239,8 +262,22 @@
   letter-spacing: -0.2px;
 }
 
-.qm3d-station-label.locked {
+.qm3d-station-index {
+  font-size: 14px;
+  font-weight: 900;
+  color: #64748b;
+  line-height: 1;
+}
+
+.qm3d-station-label.locked-muted {
   opacity: 0.5;
+}
+
+.qm3d-station-locked-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: -0.2px;
 }
 
 .qm3d-station-count {
@@ -395,13 +432,54 @@
   border-radius: 20px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.15);
   backdrop-filter: blur(8px);
-  max-width: 400px;
+  max-width: 480px;
+}
+
+.qm3d-bottom-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: space-between;
 }
 
 .qm3d-bottom-speech {
   font-size: 13px;
-  font-weight: 700;
-  color: #334155;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.qm3d-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
+  animation: qm3d-btn-pulse 2s infinite ease-in-out;
+}
+
+.qm3d-cta-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.55);
+}
+
+.qm3d-cta-btn:active {
+  transform: scale(0.96);
+}
+
+@keyframes qm3d-btn-pulse {
+  0%, 100% { box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4); }
+  50% { box-shadow: 0 4px 20px rgba(234, 88, 12, 0.7); }
 }
 
 /* All-done overlay */
