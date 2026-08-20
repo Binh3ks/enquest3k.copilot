@@ -1,17 +1,54 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Volume2, Mic, Square, CheckCircle2, HelpCircle, ArrowRight, Sparkles, Award } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Volume2, Mic, Square, CheckCircle2, XCircle, HelpCircle, ArrowRight, Sparkles, Award, RotateCcw, Eye, EyeOff } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import LexioMascot from '../../components/mascot/LexioMascot';
 
 /**
+ * Speech Recognition & Response Accuracy Evaluator
+ */
+const evaluateSpeechInput = (spokenText, acceptableList) => {
+  if (!spokenText || !acceptableList || acceptableList.length === 0) {
+    return { isCorrect: false, score: 0, feedback: "No speech detected" };
+  }
+  const cleanSpoken = spokenText.toLowerCase().replace(/[^\w\s']/g, '').trim();
+
+  for (const target of acceptableList) {
+    const cleanTarget = target.toLowerCase().replace(/[^\w\s']/g, '').trim();
+    if (cleanSpoken === cleanTarget || cleanSpoken.includes(cleanTarget) || cleanTarget.includes(cleanSpoken)) {
+      return { isCorrect: true, score: 95, feedback: "Excellent!" };
+    }
+  }
+
+  // Word overlap check
+  const spokenWords = new Set(cleanSpoken.split(/\s+/));
+  for (const target of acceptableList) {
+    const targetWords = target.toLowerCase().replace(/[^\w\s']/g, '').trim().split(/\s+/);
+    let matchCount = 0;
+    targetWords.forEach(w => { if (spokenWords.has(w)) matchCount++; });
+    const ratio = matchCount / targetWords.length;
+    if (ratio >= 0.5) {
+      return { isCorrect: true, score: Math.round(ratio * 100), feedback: "Good question!" };
+    }
+  }
+
+  return { isCorrect: false, score: 30, feedback: "Keep trying!" };
+};
+
+/**
  * InfoExchangeZone — Authentic Cambridge A2 Flyers Speaking Part 2 (Information Exchange)
  * 
- * Strict Cambridge Speaking Standard:
- * - Phase 1 (Table A): Candidate receives a QUESTION CARD with ONLY WH-Cues (e.g. "where / get injured?").
- *                      Candidate must FORMULATE the question verbally using the SPEAK mic.
- *                      No pre-printed full questions are given. Optional grammar structure hint only.
- * - Phase 2 (Table B): Candidate receives an INFORMATION SHEET with full factual details.
- *                      Examiner Nova asks questions, candidate answers verbally using the ANSWER mic.
+ * - Phase 1 (Table A - Candidate Asks):
+ *   - Only WH-Cues shown (e.g., "where / get injured?").
+ *   - Candidate records voice question via Mic.
+ *   - SpeechRecognition transcribes and AI evaluates against acceptable questions.
+ *   - Displays candidate's spoken text, AI feedback, and Model Question for learning.
+ *   - Nova replies verbally, filling in Table A.
+ * 
+ * - Phase 2 (Table B - Candidate Answers):
+ *   - Candidate holds Information Sheet with facts.
+ *   - Examiner's question text is HIDDEN (audio listening only).
+ *   - Candidate records voice answer based on Table B information.
+ *   - Displays AI evaluation and model answer.
  */
 
 export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
@@ -22,16 +59,18 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const [completedIdsA, setCompletedIdsA] = useState(new Set());
   const [isRecordingA, setIsRecordingA] = useState(false);
   const [showHintA, setShowHintA] = useState(false);
-  const [novaRepliedA, setNovaRepliedA] = useState(false);
+  const [transcriptA, setTranscriptA] = useState('');
+  const [evalResultA, setEvalResultA] = useState(null); // { isCorrect, score, feedback }
   
   // Phase 2 (Table B) State
   const [fieldIdxB, setFieldIdxB] = useState(0);
   const [isRecordingB, setIsRecordingB] = useState(false);
-  const [recordedB, setRecordedB] = useState(false);
-  const [showModelB, setShowModelB] = useState(false);
+  const [transcriptB, setTranscriptB] = useState('');
+  const [evalResultB, setEvalResultB] = useState(null);
+  const [showQuestionTextB, setShowQuestionTextB] = useState(false);
   const [shields, setShields] = useState(0);
 
-  const mediaRecorderRef = useRef(null);
+  const recognitionRef = useRef(null);
 
   // Data hydration
   const infoExData = data?.cue_card_info_exchange
@@ -49,19 +88,10 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const fieldsB = tableB?.fields || [];
   const currentFieldB = fieldsB[fieldIdxB] || null;
 
-  // Cleanup media recorder
-  useEffect(() => {
-    return () => {
-      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
-        mediaRecorderRef.current.stop();
-        mediaRecorderRef.current.stream?.getTracks().forEach(t => t.stop());
-      }
-    };
-  }, []);
-
   // Auto-speak Nova's question in Phase 2
   useEffect(() => {
     if (phase === 'table_b' && currentFieldB?.nova_question) {
+      setShowQuestionTextB(false);
       const timer = setTimeout(() => {
         speakText(currentFieldB.nova_question);
       }, 500);
@@ -69,37 +99,88 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
     }
   }, [phase, fieldIdxB, currentFieldB]);
 
-  // Recording handlers for Phase 1 (Asking questions)
-  const startRecordingA = async () => {
+  // Stop speech recognition on unmount
+  useEffect(() => {
+    return () => {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (e) {}
+      }
+    };
+  }, []);
+
+  // ─────────────────────────────────────────────────────────────
+  // SPEECH RECOGNITION (PHASE 1 - ASKING)
+  // ─────────────────────────────────────────────────────────────
+  const startRecordingA = () => {
+    setTranscriptA('');
+    setEvalResultA(null);
+
+    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRec) {
+      // Fallback for browsers without speech recognition
+      const simulatedText = currentCueA?.acceptable_questions?.[0] || '';
+      setTranscriptA(simulatedText);
+      const evalRes = evaluateSpeechInput(simulatedText, currentCueA?.acceptable_questions || []);
+      setEvalResultA(evalRes);
+      setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
+      speakText(currentCueA.nova_reply);
+      return;
+    }
+
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mr = new MediaRecorder(stream);
-      mediaRecorderRef.current = mr;
-      mr.start();
-      setIsRecordingA(true);
-    } catch {
-      handleCandidateAsked();
+      const rec = new SpeechRec();
+      rec.lang = 'en-US';
+      rec.continuous = false;
+      rec.interimResults = false;
+
+      rec.onstart = () => setIsRecordingA(true);
+      rec.onresult = (event) => {
+        const text = event.results[0][0].transcript;
+        setTranscriptA(text);
+        const evalRes = evaluateSpeechInput(text, currentCueA?.acceptable_questions || []);
+        setEvalResultA(evalRes);
+        if (evalRes.isCorrect) {
+          setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
+          setTimeout(() => speakText(currentCueA.nova_reply), 600);
+        }
+      };
+      rec.onerror = (e) => {
+        console.warn('Speech recognition error in Phase 1:', e);
+        setIsRecordingA(false);
+        setEvalResultA({ isCorrect: false, score: 0, feedback: "No speech recognized. Tap to try again!" });
+      };
+      rec.onend = () => setIsRecordingA(false);
+
+      recognitionRef.current = rec;
+      rec.start();
+    } catch (err) {
+      console.warn('SpeechRec start failed:', err);
+      setIsRecordingA(false);
     }
   };
 
   const stopRecordingA = () => {
-    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
-      mediaRecorderRef.current.stop();
-      mediaRecorderRef.current.stream?.getTracks().forEach(t => t.stop());
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch (e) {}
     }
     setIsRecordingA(false);
-    handleCandidateAsked();
   };
 
-  const handleCandidateAsked = () => {
-    if (!currentCueA) return;
-    setNovaRepliedA(true);
+  const handleRetryA = () => {
+    setEvalResultA(null);
+    setTranscriptA('');
+  };
+
+  const handleForceAcceptA = () => {
+    // If student struggled, let them listen to model and accept to advance
     setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
     speakText(currentCueA.nova_reply);
+    setEvalResultA({ isCorrect: true, score: 80, feedback: "Accepted with model guide!" });
   };
 
   const handleNextCueA = () => {
-    setNovaRepliedA(false);
+    setEvalResultA(null);
+    setTranscriptA('');
     setShowHintA(false);
     if (cueIdxA + 1 < cuesA.length) {
       setCueIdxA(i => i + 1);
@@ -109,31 +190,66 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
     }
   };
 
-  // Recording handlers for Phase 2 (Answering Nova)
-  const startRecordingB = async () => {
+  // ─────────────────────────────────────────────────────────────
+  // SPEECH RECOGNITION (PHASE 2 - ANSWERING)
+  // ─────────────────────────────────────────────────────────────
+  const startRecordingB = () => {
+    setTranscriptB('');
+    setEvalResultB(null);
+
+    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRec) {
+      const simulatedText = currentFieldB?.acceptable_answers?.[0] || '';
+      setTranscriptB(simulatedText);
+      const evalRes = evaluateSpeechInput(simulatedText, currentFieldB?.acceptable_answers || []);
+      setEvalResultB(evalRes);
+      return;
+    }
+
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mr = new MediaRecorder(stream);
-      mediaRecorderRef.current = mr;
-      mr.start();
-      setIsRecordingB(true);
-    } catch {
-      setRecordedB(true);
+      const rec = new SpeechRec();
+      rec.lang = 'en-US';
+      rec.continuous = false;
+      rec.interimResults = false;
+
+      rec.onstart = () => setIsRecordingB(true);
+      rec.onresult = (event) => {
+        const text = event.results[0][0].transcript;
+        setTranscriptB(text);
+        const evalRes = evaluateSpeechInput(text, currentFieldB?.acceptable_answers || []);
+        setEvalResultB(evalRes);
+      };
+      rec.onerror = (e) => {
+        console.warn('Speech recognition error in Phase 2:', e);
+        setIsRecordingB(false);
+        setEvalResultB({ isCorrect: false, score: 0, feedback: "No speech recognized. Tap to try again!" });
+      };
+      rec.onend = () => setIsRecordingB(false);
+
+      recognitionRef.current = rec;
+      rec.start();
+    } catch (err) {
+      console.warn('SpeechRec start failed:', err);
+      setIsRecordingB(false);
     }
   };
 
   const stopRecordingB = () => {
-    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
-      mediaRecorderRef.current.stop();
-      mediaRecorderRef.current.stream?.getTracks().forEach(t => t.stop());
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch (e) {}
     }
     setIsRecordingB(false);
-    setRecordedB(true);
+  };
+
+  const handleRetryB = () => {
+    setEvalResultB(null);
+    setTranscriptB('');
   };
 
   const handleNextQuestionB = () => {
-    setRecordedB(false);
-    setShowModelB(false);
+    setEvalResultB(null);
+    setTranscriptB('');
+    setShowQuestionTextB(false);
     if (fieldIdxB + 1 < fieldsB.length) {
       setFieldIdxB(i => i + 1);
     } else {
@@ -331,7 +447,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 </p>
               </div>
 
-              {/* Collapsible Grammar Structure Hint (Does NOT show full question by default) */}
+              {/* Collapsible Grammar Structure Hint */}
               <div className="space-y-2">
                 {!showHintA ? (
                   <button
@@ -363,7 +479,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
               </div>
 
               {/* Central Voice Recording Button */}
-              {!novaRepliedA ? (
+              {!evalResultA ? (
                 <div className="flex flex-col items-center justify-center gap-3 py-3">
                   {!isRecordingA ? (
                     <button
@@ -385,133 +501,240 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     </button>
                   )}
                   <p className="text-xs font-black text-slate-600">
-                    {isRecordingA ? '🔴 Recording... Speak your question clearly!' : 'Tap SPEAK and ask Nova your question'}
+                    {isRecordingA ? '🔴 Listening... Speak your question clearly!' : 'Tap SPEAK and ask Nova your question'}
                   </p>
                 </div>
               ) : (
-                /* Nova Examiner Spoken Reply */
+                /* AI Feedback & Evaluation Card */
                 <div className="space-y-4 animate-in fade-in">
-                  <div className="p-4 bg-emerald-50 border-2 border-emerald-300 rounded-2xl flex items-start gap-3 text-left">
-                    <div className="p-2 bg-emerald-200 rounded-xl shrink-0">
-                      <LexioMascot size={32} mood="speaking" />
+                  {/* Student's Spoken Question & Evaluation */}
+                  <div className={`p-4 rounded-2xl border-2 ${
+                    evalResultA.isCorrect ? 'bg-emerald-50 border-emerald-300' : 'bg-rose-50 border-rose-300'
+                  }`}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className={`text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded ${
+                        evalResultA.isCorrect ? 'bg-emerald-200 text-emerald-900' : 'bg-rose-200 text-rose-900'
+                      }`}>
+                        {evalResultA.isCorrect ? '✓ Question Recognized' : '⚠️ Need Adjustment'}
+                      </span>
+                      <span className="text-xs font-bold text-slate-500">
+                        Accuracy: {evalResultA.score}%
+                      </span>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-200 px-2 py-0.5 rounded">
-                          EXAMINER NOVA REPLIES:
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => speakText(currentCueA?.nova_reply || '')}
-                          className="p-1 bg-emerald-200 hover:bg-emerald-300 text-emerald-900 rounded-lg transition active:scale-95"
-                        >
-                          <Volume2 size={16} />
-                        </button>
-                      </div>
-                      <p className="text-base font-black text-emerald-950 leading-relaxed">
-                        "{currentCueA?.nova_reply}"
-                      </p>
-                    </div>
+                    <p className="text-sm font-bold text-slate-800">
+                      You asked: <span className="italic">"{transcriptA || '(unclear audio)'}"</span>
+                    </p>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={handleNextCueA}
-                    className="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
-                  >
-                    {cueIdxA + 1 < cuesA.length ? 'Next Cue →' : '✓ Table A Complete! Go to Table B →'}
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            /* PHASE 2: EXAMINER ASKS CANDIDATE */
-            <div className="bg-white rounded-3xl p-5 sm:p-7 border border-purple-200 shadow-md space-y-5">
-              {/* Examiner Question Bubble */}
-              <div className="p-4 bg-purple-50 border border-purple-200 rounded-2xl flex items-start gap-3">
-                <div className="p-2 bg-purple-200 rounded-xl shrink-0">
-                  <LexioMascot size={32} mood="speaking" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-purple-800 bg-purple-200 px-2 py-0.5 rounded">
-                      EXAMINER NOVA ASKS ({fieldIdxB + 1}/{fieldsB.length}):
-                    </span>
+                  {/* Model Question For Student Learning */}
+                  <div className="p-3.5 bg-indigo-50 border border-indigo-200 rounded-xl flex items-center justify-between gap-2">
+                    <div className="flex-1">
+                      <span className="text-[10px] font-black uppercase text-indigo-700 block mb-0.5">
+                        📖 Model Question (Cambridge Standard):
+                      </span>
+                      <p className="text-sm font-black text-indigo-950">
+                        "{currentCueA?.acceptable_questions?.[0]}"
+                      </p>
+                    </div>
                     <button
                       type="button"
-                      onClick={() => speakText(currentFieldB?.nova_question || '')}
-                      className="p-1 bg-purple-200 hover:bg-purple-300 text-purple-900 rounded-lg transition active:scale-95"
+                      onClick={() => speakText(currentCueA?.acceptable_questions?.[0] || '')}
+                      className="p-2 bg-indigo-200 hover:bg-indigo-300 text-indigo-900 rounded-lg transition shrink-0"
+                      title="Listen to model question"
                     >
                       <Volume2 size={16} />
                     </button>
                   </div>
-                  <p className="text-base sm:text-lg font-black text-slate-900 leading-snug">
-                    "{currentFieldB?.nova_question}"
-                  </p>
-                </div>
-              </div>
 
-              {/* Big Answer Mic Button */}
-              <div className="flex flex-col items-center justify-center gap-3 py-2">
-                {!isRecordingB ? (
-                  <button
-                    type="button"
-                    onClick={startRecordingB}
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 hover:from-purple-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-purple-500/30 transition hover:scale-105 active:scale-95"
-                  >
-                    <Mic size={36} className="animate-pulse" />
-                    <span className="text-[10px] font-black uppercase tracking-wider">ANSWER</span>
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={stopRecordingB}
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-rose-500/40 animate-bounce"
-                  >
-                    <Square size={32} fill="currentColor" />
-                    <span className="text-[10px] font-black uppercase tracking-wider">STOP</span>
-                  </button>
-                )}
-                <p className="text-xs font-black text-slate-600">
-                  {isRecordingB ? '🔴 Recording... Answer based on your card!' : 'Tap ANSWER to speak your response'}
-                </p>
-              </div>
-
-              {/* Post-Recording Model Check & Next */}
-              {recordedB && (
-                <div className="space-y-3 animate-in fade-in">
-                  {!showModelB ? (
-                    <button
-                      type="button"
-                      onClick={() => setShowModelB(true)}
-                      className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl transition border border-slate-200"
-                    >
-                      💡 Check Model Answer
-                    </button>
-                  ) : (
-                    <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl flex items-start gap-2 animate-in fade-in">
-                      <CheckCircle2 size={16} className="text-emerald-600 shrink-0 mt-0.5" />
-                      <div className="flex-1">
-                        <p className="text-[11px] font-black uppercase text-emerald-800">Model Answer:</p>
-                        <p className="text-sm font-bold text-emerald-950">"{currentFieldB?.acceptable_answers?.[0]}"</p>
+                  {/* Nova's Live Reply (If Correct or Accepted) */}
+                  {evalResultA.isCorrect ? (
+                    <div className="p-4 bg-emerald-50 border-2 border-emerald-300 rounded-2xl flex items-start gap-3 text-left">
+                      <div className="p-2 bg-emerald-200 rounded-xl shrink-0">
+                        <LexioMascot size={32} mood="speaking" />
                       </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-200 px-2 py-0.5 rounded">
+                            EXAMINER NOVA REPLIES:
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => speakText(currentCueA?.nova_reply || '')}
+                            className="p-1 bg-emerald-200 hover:bg-emerald-300 text-emerald-900 rounded-lg transition active:scale-95"
+                          >
+                            <Volume2 size={16} />
+                          </button>
+                        </div>
+                        <p className="text-base font-black text-emerald-950 leading-relaxed">
+                          "{currentCueA?.nova_reply}"
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
                       <button
                         type="button"
-                        onClick={() => speakText(currentFieldB?.acceptable_answers?.[0] || '')}
-                        className="p-1.5 bg-emerald-200 hover:bg-emerald-300 rounded-lg transition"
+                        onClick={handleRetryA}
+                        className="flex-1 py-2.5 bg-amber-500 hover:bg-amber-400 text-white font-black text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow"
                       >
-                        <Volume2 size={14} />
+                        <RotateCcw size={14} /> Try Asking Again
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleForceAcceptA}
+                        className="py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition border border-slate-200"
+                      >
+                        Listen to Nova Anyway →
                       </button>
                     </div>
                   )}
 
+                  {evalResultA.isCorrect && (
+                    <button
+                      type="button"
+                      onClick={handleNextCueA}
+                      className="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
+                    >
+                      {cueIdxA + 1 < cuesA.length ? 'Next Cue →' : '✓ Table A Complete! Go to Table B →'}
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          ) : (
+            /* PHASE 2: EXAMINER ASKS CANDIDATE (AUDIO-ONLY LISTENING) */
+            <div className="bg-white rounded-3xl p-5 sm:p-7 border border-purple-200 shadow-md space-y-5">
+              {/* Examiner Audio Bubble (Question text is HIDDEN by default) */}
+              <div className="p-4 bg-purple-50 border-2 border-purple-200 rounded-2xl space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="p-1.5 bg-purple-200 rounded-lg">
+                      <LexioMascot size={28} mood="speaking" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-wider text-purple-800 bg-purple-200 px-2 py-0.5 rounded">
+                        EXAMINER NOVA ASKS ({fieldIdxB + 1}/{fieldsB.length}):
+                      </span>
+                      <p className="text-xs font-bold text-slate-500 mt-0.5">
+                        🎧 Listen carefully to Nova's question:
+                      </p>
+                    </div>
+                  </div>
                   <button
                     type="button"
-                    onClick={handleNextQuestionB}
-                    className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
+                    onClick={() => speakText(currentFieldB?.nova_question || '')}
+                    className="p-2.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl transition active:scale-95 shadow-md flex items-center gap-1.5 text-xs font-bold"
                   >
-                    {fieldIdxB + 1 < fieldsB.length ? 'Next Question →' : '🏆 Complete Cambridge Speaking Part 2!'}
+                    <Volume2 size={16} /> Replay Audio
                   </button>
+                </div>
+
+                {/* Question Text (Hidden by default, revealable on toggle) */}
+                <div className="pt-1 border-t border-purple-200/60 flex items-center justify-between">
+                  {showQuestionTextB ? (
+                    <p className="text-sm font-black text-purple-950 animate-in fade-in">
+                      "{currentFieldB?.nova_question}"
+                    </p>
+                  ) : (
+                    <span className="text-xs text-purple-600 italic">
+                      [Question hidden — look at Table B on the left to answer!]
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => setShowQuestionTextB(p => !p)}
+                    className="text-[11px] font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1 underline"
+                  >
+                    {showQuestionTextB ? <EyeOff size={13} /> : <Eye size={13} />}
+                    {showQuestionTextB ? 'Hide text' : 'Peek question text'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Big Answer Mic Button */}
+              {!evalResultB ? (
+                <div className="flex flex-col items-center justify-center gap-3 py-2">
+                  {!isRecordingB ? (
+                    <button
+                      type="button"
+                      onClick={startRecordingB}
+                      className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 hover:from-purple-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-purple-500/30 transition hover:scale-105 active:scale-95"
+                    >
+                      <Mic size={36} className="animate-pulse" />
+                      <span className="text-[10px] font-black uppercase tracking-wider">ANSWER</span>
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={stopRecordingB}
+                      className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex flex-col items-center justify-center gap-1 shadow-2xl shadow-rose-500/40 animate-bounce"
+                    >
+                      <Square size={32} fill="currentColor" />
+                      <span className="text-[10px] font-black uppercase tracking-wider">STOP</span>
+                    </button>
+                  )}
+                  <p className="text-xs font-black text-slate-600">
+                    {isRecordingB ? '🔴 Recording... Speak your answer based on Table B!' : 'Tap ANSWER and speak your response'}
+                  </p>
+                </div>
+              ) : (
+                /* AI Feedback & Model Answer Evaluation */
+                <div className="space-y-4 animate-in fade-in">
+                  <div className={`p-4 rounded-2xl border-2 ${
+                    evalResultB.isCorrect ? 'bg-emerald-50 border-emerald-300' : 'bg-amber-50 border-amber-300'
+                  }`}>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className={`text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded ${
+                        evalResultB.isCorrect ? 'bg-emerald-200 text-emerald-900' : 'bg-amber-200 text-amber-900'
+                      }`}>
+                        {evalResultB.isCorrect ? '✓ Good Answer' : '⚠️ Review Answer'}
+                      </span>
+                      <span className="text-xs font-bold text-slate-500">
+                        Accuracy: {evalResultB.score}%
+                      </span>
+                    </div>
+                    <p className="text-sm font-bold text-slate-800">
+                      You said: <span className="italic">"{transcriptB || '(unclear audio)'}"</span>
+                    </p>
+                  </div>
+
+                  {/* Model Answer for Learning */}
+                  <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center justify-between gap-2">
+                    <div className="flex-1">
+                      <span className="text-[10px] font-black uppercase text-emerald-800 block mb-0.5">
+                        ✓ Model Answer:
+                      </span>
+                      <p className="text-sm font-black text-emerald-950">
+                        "{currentFieldB?.acceptable_answers?.[0]}"
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => speakText(currentFieldB?.acceptable_answers?.[0] || '')}
+                      className="p-2 bg-emerald-200 hover:bg-emerald-300 text-emerald-900 rounded-lg transition shrink-0"
+                    >
+                      <Volume2 size={16} />
+                    </button>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    {!evalResultB.isCorrect && (
+                      <button
+                        type="button"
+                        onClick={handleRetryB}
+                        className="py-3 px-4 bg-amber-500 hover:bg-amber-400 text-white font-black text-xs rounded-xl transition flex items-center justify-center gap-1 shadow"
+                      >
+                        <RotateCcw size={14} /> Retry
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={handleNextQuestionB}
+                      className="flex-1 py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
+                    >
+                      {fieldIdxB + 1 < fieldsB.length ? 'Next Question →' : '🏆 Complete Cambridge Speaking Part 2!'}
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
