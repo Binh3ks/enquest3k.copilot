@@ -93,8 +93,8 @@ const RootRedirect = () => {
     if (!currentUser) {
       const { guestLogin } = useUserStore.getState();
       guestLogin();
-      // Also set placement_result so we don't redirect to placement
-      localStorage.setItem('placement_result', JSON.stringify({ startWeek: 1 }));
+      // W33+ system: default start at week 33
+      localStorage.setItem('placement_result', JSON.stringify({ startWeek: 33 }));
       setInitialized(true);
     } else {
       setInitialized(true);
@@ -114,7 +114,8 @@ const RootRedirect = () => {
   if (!placed) return <Navigate replace to="/placement" />;
   try {
     const { startWeek } = JSON.parse(placed);
-    const week = startWeek || 1;
+    // W33+ system: floor at 33
+    const week = Math.max(33, startWeek || 33);
     // SRS-first: check if any words are due today directly from localStorage
     try {
       const raw = localStorage.getItem('engquest_word_bank');
@@ -129,7 +130,7 @@ const RootRedirect = () => {
     } catch { /* ignore — bank may be empty or corrupt */ }
     return <Navigate replace to={`/week/${week}/read_explore`} />;
   } catch {
-    return <Navigate replace to="/week/1/read_explore" />;
+    return <Navigate replace to="/week/33/read_explore" />;
   }
 };
 
@@ -290,8 +291,11 @@ const MainLayout = ({ isTaskMode = false }) => {
   const params = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const weekId = parseInt(params.weekId || 1);
+  const weekId = parseInt(params.weekId || 33);
   const hubId = params.hubId;
+
+  // Redirect any legacy W01-32 URL to W33
+  if (weekId < 33) return <Navigate replace to={`/week/33/hub/1`} />;
 
   // ?reset=all → clear all onboarding/quest/PIN/consent data and reload
   useEffect(() => {
