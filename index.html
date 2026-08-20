@@ -12,27 +12,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EngQuest: Kids Edition</title>
     <script>
-      // Vite dynamic import error handler — auto reloads on new deployment chunk hash change
+      function triggerHardAssetRecovery(reason) {
+        console.warn('[AssetRecovery] Triggering recovery:', reason);
+        var lastReload = parseInt(sessionStorage.getItem('asset_reload_time') || '0', 10);
+        if (Date.now() - lastReload > 3000) {
+          sessionStorage.setItem('asset_reload_time', String(Date.now()));
+          if ('caches' in window) {
+            caches.keys().then(function(keys) {
+              keys.forEach(function(k) { caches.delete(k); });
+            });
+          }
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(regs) {
+              regs.forEach(function(r) { r.unregister(); });
+            });
+          }
+          setTimeout(function() {
+            window.location.reload(true);
+          }, 150);
+        }
+      }
+
+      // 1. Vite preload error
       window.addEventListener('vite:preloadError', function(event) {
-        console.warn('[AssetRecovery] Vite preload error caught:', event);
         event.preventDefault();
-        window.location.reload();
+        triggerHardAssetRecovery('vite:preloadError');
       });
+
+      // 2. Unhandled Promise Rejection (dynamic import() MIME / 404 error)
+      window.addEventListener('unhandledrejection', function(event) {
+        var msg = (event && event.reason && (event.reason.message || event.reason.toString())) || '';
+        if (msg.includes('dynamically imported module') || msg.includes('Failed to load module') || msg.includes('MIME type') || msg.includes('Importing a module script failed')) {
+          event.preventDefault();
+          triggerHardAssetRecovery('Dynamic import rejection: ' + msg);
+        }
+      });
+
+      // 3. Static script tag load failure
       window.addEventListener('error', function(e) {
         if (e && e.target && e.target.tagName === 'SCRIPT' && e.target.src && (e.target.src.includes('/assets/') || e.target.src.includes('chunk') || e.target.src.includes('.js'))) {
-          console.warn('[AssetRecovery] Stale asset load error caught:', e.target.src);
-          var lastReload = parseInt(sessionStorage.getItem('asset_reload_time') || '0', 10);
-          if (Date.now() - lastReload > 2000) {
-            sessionStorage.setItem('asset_reload_time', String(Date.now()));
-            if ('caches' in window) {
-              caches.keys().then(function(keys) {
-                keys.forEach(function(k) { caches.delete(k); });
-              });
-            }
-            setTimeout(function() {
-              window.location.href = window.location.pathname + '?v=' + Date.now();
-            }, 100);
-          }
+          triggerHardAssetRecovery('Script element load error: ' + e.target.src);
         }
       }, true);
     </script>
