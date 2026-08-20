@@ -4,7 +4,8 @@ import StoryWriting from '../write_speak/StoryWriting';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
-import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle } from 'lucide-react';
+import CreatorBrainRefresh from '../../components/zones/CreatorBrainRefresh';
+import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle, Zap } from 'lucide-react';
 import { useStationProgress } from '../../hooks/useStationProgress';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
@@ -20,11 +21,12 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
     if (station === 'broadcast') setActiveTab('podcast_creator');
     else if (station === 'writing') setActiveTab('story_writer');
     else if (station === 'dictation') setActiveTab('science_report');
+    else if (station === 'refresh') setActiveTab('brain_refresh');
   }, [searchParams]);
 
   // Instant Quest completion when activeTab changes
   useEffect(() => {
-    const TAB_QUEST_MAP = { story_writer: 'story_writer', podcast_creator: 'broadcast_studio', science_report: 'dictation', ai_debate: 'dictation' };
+    const TAB_QUEST_MAP = { story_writer: 'story_writer', podcast_creator: 'broadcast_studio', science_report: 'dictation', ai_debate: 'dictation', brain_refresh: 'story_writer' };
     const questId = TAB_QUEST_MAP[activeTab];
     if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
   }, [activeTab, weekNumber]);
@@ -175,7 +177,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
 
       {/* Vibrant Multi-Color Subtabs Selector */}
       <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
           <button
             type="button"
             onClick={() => handleTabSwitch('story_writer')}
@@ -189,6 +191,17 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
           </button>
           <button
             type="button"
+            onClick={() => handleTabSwitch('brain_refresh')}
+            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+              activeTab === 'brain_refresh'
+                ? 'bg-amber-400 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
+                : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
+            }`}
+          >
+            ⚡ BRAIN REFRESH
+          </button>
+          <button
+            type="button"
             onClick={() => handleTabSwitch('podcast_creator')}
             className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
               activeTab === 'podcast_creator'
@@ -196,7 +209,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
                 : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
             }`}
           >
-            🎙️ BROADCAST STUDIO
+            🎙️ BROADCAST
           </button>
           <button
             type="button"
@@ -231,8 +244,12 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
             weekNumber={weekNumber}
             onComplete={(xp, finalText, extraData) => handleStoryComplete(xp, finalText, extraData)}
             onReportProgress={(percent, finalText, extraData) => handleStoryComplete(0, finalText, extraData)}
-            onGoToSpeak={() => handleTabSwitch('podcast_creator')}
+            onGoToSpeak={() => handleTabSwitch('brain_refresh')}
           />
+        )}
+
+        {activeTab === 'brain_refresh' && (
+          <CreatorBrainRefresh onContinue={() => handleTabSwitch('podcast_creator')} />
         )}
 
         {activeTab === 'podcast_creator' && (

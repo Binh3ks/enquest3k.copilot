@@ -44,6 +44,8 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
   const [activeWordIdx, setActiveWordIdx] = useState(null);
   const [shadowingKaraokeIdx, setShadowingKaraokeIdx] = useState(null); // which sentence is in shadowing+karaoke mode
   const [sentenceShadowing, setSentenceShadowing] = useState({}); // { [idx]: { isRecording, audioUrl, score, feedback, startTime } }
+  const [completedKaraokeSentences, setCompletedKaraokeSentences] = useState({}); // { [idx]: true }
+  const [karaokeStreak, setKaraokeStreak] = useState(0);
   const sentenceMediaRecorderRef = useRef(null);
   const sentenceChunksRef = useRef([]);
   const sentenceStreamRef = useRef(null);
@@ -109,6 +111,17 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
     setActiveSentenceIdx(idx);
     setActiveWordIdx(0);
     speakText(sentenceText);
+
+    // Gamification: mark sentence completed & increment streak
+    setCompletedKaraokeSentences(prev => {
+      const updated = { ...prev, [idx]: true };
+      const completedCount = Object.keys(updated).length;
+      if (completedCount === storySentences.length) {
+        fireCelebrationConfetti?.('Gear2_Karaoke_Master');
+      }
+      return updated;
+    });
+    setKaraokeStreak(prev => prev + 1);
 
     const words = sentenceText.split(/\s+/);
     let wordCount = 0;
@@ -487,19 +500,31 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                   <span className="text-xs text-slate-500">Tap any sentence to listen & practice word-by-word karaoke</span>
                 </div>
               </div>
-              <button
-                type="button"
-                onClick={() => speakText(fullStoryText)}
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-md flex items-center gap-1.5"
-              >
-                <Play size={15} /> Play Entire Story Audio
-              </button>
+              <div className="flex items-center gap-2">
+                {/* Gamified Progress & Streak */}
+                <div className="flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200 rounded-xl text-xs font-black text-amber-900">
+                  <span>⭐ {Object.keys(completedKaraokeSentences).length}/{storySentences.length}</span>
+                  {karaokeStreak > 0 && (
+                    <span className="px-2 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] animate-bounce">
+                      🔥 {karaokeStreak} Streak!
+                    </span>
+                  )}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => speakText(fullStoryText)}
+                  className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-md flex items-center gap-1.5"
+                >
+                  <Play size={14} /> Full Story Audio
+                </button>
+              </div>
             </div>
 
             {/* Sentences with Real Word-by-Word Karaoke */}
             <div className="space-y-3">
               {storySentences.map((sentence, idx) => {
                 const isCurrentPlaying = activeSentenceIdx === idx;
+                const isDone = completedKaraokeSentences[idx];
                 const sentenceWords = sentence.split(/\s+/);
 
                 return (
@@ -508,14 +533,20 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                     className={`p-4 rounded-2xl border transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${
                       isCurrentPlaying
                         ? 'bg-amber-100/90 border-amber-400 shadow-lg ring-4 ring-amber-300'
+                        : isDone
+                        ? 'bg-emerald-50/70 border-emerald-200 text-slate-800'
                         : 'bg-slate-50 hover:bg-amber-50/60 border-slate-200 text-slate-800'
                     }`}
                   >
                     <div className="flex items-start gap-3 flex-1">
                       <span className={`w-7 h-7 rounded-full text-xs font-black flex items-center justify-center shrink-0 mt-0.5 ${
-                        isCurrentPlaying ? 'bg-amber-500 text-slate-950 font-black animate-pulse' : 'bg-amber-100 text-amber-900'
+                        isCurrentPlaying
+                          ? 'bg-amber-500 text-slate-950 font-black animate-pulse'
+                          : isDone
+                          ? 'bg-emerald-500 text-white font-black'
+                          : 'bg-amber-100 text-amber-900'
                       }`}>
-                        {idx + 1}
+                        {isDone ? '✓' : idx + 1}
                       </span>
                       <div>
                         {/* Word-by-Word Karaoke Text OR Interactive Dictionary Lookup */}

@@ -6,7 +6,7 @@ export default {
       { id: 1, question_en: "Why is a wet tiled floor slippery?", options: ["Water reduces friction between shoes and tiles", "Water makes shoes heavier", "Water changes floor color"], answer: "Water reduces friction between shoes and tiles" },
       { id: 2, question_en: "What should you do when you see a wet floor sign?", options: ["Walk carefully around it", "Run over it quickly", "Ignore the sign"], answer: "Walk carefully around it" },
       { id: 3, question_en: "Why is a cold pack applied to a bumped knee?", options: ["To reduce swelling and ease pain", "To clean dirt off skin", "To make skin warm"], answer: "To reduce swelling and ease pain" },
-      { id: 4, question_en: "What happens to kinetic momentum when a runner stops suddenly?", options: ["Momentum pushes the body forward causing a slip", "Momentum disappears instantly", "Momentum turns into air"], answer: "Momentum pushes the body forward causing a slip" },
+      { id: 4, question_en: "What happens to your body when you try to stop running suddenly on a wet floor?", options: ["Your moving body keeps pushing forward and causes a slip", "You stop instantly without moving", "You float into the air"], answer: "Your moving body keeps pushing forward and causes a slip" },
       { id: 5, question_en: "Which material increases friction on corridor floors?", options: ["Rubber mats", "Soapy water", "Waxed ice"], answer: "Rubber mats" }
     ]
   },

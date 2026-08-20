@@ -380,10 +380,10 @@ export const listeningHubData = {
       {
         id: "z2",
         label: "Running Fast",
-        correct_label: "Kinetic Momentum",
+        correct_label: "Forward Motion",
         x: 62,
         y: 45,
-        micro_explanation: "⚡ Physics Alert: High running speed increases forward momentum, making it impossible for shoes to stop in time!"
+        micro_explanation: "⚡ Safety Alert: High running speed keeps pushing your body forward, making it hard to stop on wet tiles!"
       },
       {
         id: "z3",

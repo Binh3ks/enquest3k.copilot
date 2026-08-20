@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ChevronUp, Gift, CheckCircle2, Circle, Clock, Sparkles, Trophy } from 'lucide-react';
+import { ChevronDown, ChevronUp, Gift, CheckCircle2, Circle, Clock, Sparkles, Trophy, Award } from 'lucide-react';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { useUserStore } from '../../stores/useUserStore';
 import { DAILY_BONUS_XP, TOTAL_QUEST_DAYS } from '../../config/questSchedule';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import ClassLeaderboardModal from './ClassLeaderboardModal';
 
 /**
  * TodayQuestBar — Persistent bar showing today's 3 quests + daily progress.
@@ -12,6 +13,7 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
  * Soft guidance only — no zone locking.
  */
 export default function TodayQuestBar({ weekId }) {
+  const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
   const {
     getCurrentDay,
     getTodayQuests,
@@ -134,6 +136,14 @@ export default function TodayQuestBar({ weekId }) {
           </div>
           <button
             type="button"
+            onClick={() => setIsLeaderboardOpen(true)}
+            className="px-2.5 py-1 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-xl font-black text-[11px] shadow flex items-center gap-1 transition active:scale-95"
+            title="View Class Leaderboard"
+          >
+            <Trophy size={13} /> Leaderboard
+          </button>
+          <button
+            type="button"
             onClick={toggleBar}
             className="p-1 hover:bg-white/20 rounded-lg transition"
             title="Collapse"
@@ -222,6 +232,12 @@ export default function TodayQuestBar({ weekId }) {
           )}
         </div>
       </div>
+
+      {/* Class Leaderboard Modal */}
+      <ClassLeaderboardModal
+        isOpen={isLeaderboardOpen}
+        onClose={() => setIsLeaderboardOpen(false)}
+      />
     </div>
   );
 }
