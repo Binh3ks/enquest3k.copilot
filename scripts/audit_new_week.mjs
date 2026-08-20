@@ -98,6 +98,24 @@ async function auditWeek(weekNum) {
     errors.push(`Missing root week_${wStr}_real.js file`);
   }
 
+  // 6. Audit Writing Panels & Action Tags (Content Linter)
+  const writingFile = path.join(advDir, 'writing.js');
+  if (fs.existsSync(writingFile)) {
+    const mod = await import(path.resolve(writingFile));
+    const writingData = mod.default || mod;
+    const panels = writingData.picture_mode?.panels;
+    if (Array.isArray(panels)) {
+      panels.forEach((p, idx) => {
+        if (!Array.isArray(p.action_tags) || p.action_tags.length === 0) {
+          errors.push(`writing.js Panel ${idx+1}: missing required 'action_tags' array!`);
+        }
+        if (!p.sentence_frame || p.sentence_frame.trim().length < 5) {
+          errors.push(`writing.js Panel ${idx+1}: missing valid 'sentence_frame'!`);
+        }
+      });
+    }
+  }
+
   // Output results
   if (errors.length === 0) {
     console.log(`✅ WEEK ${wStr} PASSED ALL PIPELINE SCHEMA GATEWAY AUDITS!`);
