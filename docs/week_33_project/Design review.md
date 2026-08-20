@@ -160,11 +160,12 @@ Tất cả các trạm và nhiệm vụ được đặt tên theo **nguyên tắ
     - **Mỗi Panel gồm**:
       1. Bức tranh lớn 16:9 full-bleed nổi bật.
       2. 🤖 Bong bóng lời dẫn Nova + Nút 🔊 nghe hướng dẫn.
-      3. Nhãn gợi ý ngữ pháp (📌 *Past Continuous: was/were + verb-ing*).
-      4. Kho Pills từ vựng riêng cho Panel đó (3-5 cụm từ bôi màu trực quan).
-      5. Nút `💡 Hint (10s)` hiển thị câu khung trong 10 giây rồi tự ẩn.
-      6. Nút `✨ Write freely` cho phép học sinh sáng tạo theo ý mình, ẩn toàn bộ gợi ý.
-      7. Khung `📖 Story So Far` (collapsible) hiển thị câu chuyện đang được ráp nối theo thời gian thực.
+      3. 🏷️ **Character Guide Banner**: Nhãn định danh vai trò nhân vật ngay dưới ảnh (`Jake (walking carefully) vs. Student (running fast)`), xóa tan mọi hiểu nhầm ai là ai trong tranh.
+      4. Nhãn gợi ý ngữ pháp (📌 *Past Continuous: was/were + verb-ing*).
+      5. Kho Pills từ vựng riêng cho Panel đó (3-5 cụm từ bôi màu trực quan).
+      6. Nút `💡 Hint (15s)` hiển thị câu khung trong 15 giây rồi tự ẩn (nghe đọc câu mẫu).
+      7. Nút `✨ Write freely` cho phép học sinh sáng tạo theo ý mình, ẩn toàn bộ gợi ý.
+      8. Khung `📖 Story So Far` (collapsible) hiển thị câu chuyện đang được ráp nối theo thời gian thực.
     - **Màn hình Review**: Tổng hợp toàn bài văn 3 màu (Xanh dương - Setting, Vàng cam - Problem, Tím - Solution), chấm điểm theo 3 tiêu chí Cambridge (Content 2/2, Grammar 2/2, Vocab 1/1) và nút chuyển tiếp sang Hot Mic.
 
 ```
