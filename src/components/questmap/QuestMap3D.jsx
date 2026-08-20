@@ -319,16 +319,21 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
               onClick={() => handleStationClick(idx)}
               aria-label={station.name}
             >
-              {completion.allDone ? (
-              <CheckCircle2 size={22} className="qm3d-station-check" />
-            ) : unlocked ? (
-              <span className="qm3d-station-emoji" style={{ fontSize: isSuggested ? '28px' : '22px' }}>{station.emoji}</span>
-            ) : (
-              <div className="flex flex-col items-center justify-center">
-                <span className="qm3d-station-index">{station.index}</span>
-                <Lock size={11} className="qm3d-station-lock opacity-70" />
-              </div>
-            )}
+              {unlocked ? (
+                <>
+                  <span className="qm3d-station-emoji" style={{ fontSize: isSuggested ? '28px' : '22px' }}>
+                    {station.emoji}
+                  </span>
+                  {completion.allDone && (
+                    <span className="qm3d-station-mini-done">✓</span>
+                  )}
+                </>
+              ) : (
+                <div className="flex flex-col items-center justify-center">
+                  <span className="qm3d-station-index">{station.index}</span>
+                  <Lock size={11} className="qm3d-station-lock opacity-70" />
+                </div>
+              )}
             </button>
 
             {/* Station label */}
@@ -340,21 +345,23 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
               }}
             >
               {unlocked ? (
-              <>
-                <span className="qm3d-station-name-text">{station.emoji} {station.name}</span>
-                {completion.done > 0 && !completion.allDone && (
-                  <span className="qm3d-station-count"> {completion.done}/{completion.total}</span>
-                )}
-                {/* START HERE badge only on explorer when it's current */}
-                {idx === 0 && isSuggested && weekQuestCount === 0 && (
-                  <div className="qm3d-start-here">▶ START HERE</div>
-                )}
-              </>
-            ) : (
-              <span className="qm3d-station-locked-name">
-                🔒 {station.name}
-              </span>
-            )}
+                <>
+                  <span className="qm3d-station-name-text">{station.emoji} {station.name}</span>
+                  {completion.done > 0 && !completion.allDone && (
+                    <span className="qm3d-station-count">{completion.done}/{completion.total}</span>
+                  )}
+                  {/* START HERE on current suggested station when not finished */}
+                  {isSuggested && !completion.allDone && (
+                    <div className="qm3d-start-here">
+                      {idx === 0 ? '▶ START HERE' : '▶ TIẾP TỤC'}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <span className="qm3d-station-locked-name">
+                  🔒 {station.name}
+                </span>
+              )}
             </div>
 
             {/* Expanded task dots */}

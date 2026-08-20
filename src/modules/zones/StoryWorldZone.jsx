@@ -504,19 +504,21 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       {/* ========================================================================= */}
       {currentGear === 2 && (
         <div className="space-y-4">
-          {/* Slim Arcade Instruction Bar */}
-          <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
-            <span className="font-black text-amber-950 flex items-center gap-1.5">
-              🎧 GAME GOAL: Tap any sentence to listen & practice word-by-word karaoke shadowing!
-            </span>
-            <button
-              type="button"
-              onClick={() => handleNextGear(3)}
-              className="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-sm transition"
-            >
-              Next: Gear 3 ▶
-            </button>
-          </div>
+          {/* Slim Arcade Instruction Bar — only in normal zone mode */}
+          {!hideGearTabs && (
+            <div className="p-3 bg-amber-50 border border-amber-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+              <span className="font-black text-amber-950 flex items-center gap-1.5">
+                🎧 GAME GOAL: Tap any sentence to listen & practice word-by-word karaoke shadowing!
+              </span>
+              <button
+                type="button"
+                onClick={() => handleNextGear(3)}
+                className="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-sm transition"
+              >
+                Next: Gear 3 ▶
+              </button>
+            </div>
+          )}
 
           <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
@@ -793,19 +795,21 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       {/* ========================================================================= */}
       {currentGear === 3 && (
         <div className="space-y-4">
-          {/* Goal Bar */}
-          <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
-            <span className="font-black text-purple-950 flex items-center gap-1.5">
-              🎙️ GAME GOAL: Listen to the full story, then retell it in your own words. Earn +50 XP!
-            </span>
-            <button
-              type="button"
-              onClick={() => handleNextGear(4)}
-              className="px-3 py-1 bg-purple-600 hover:bg-purple-500 text-white font-black text-xs rounded-xl shadow-sm transition"
-            >
-              Next: Gear 4 ▶
-            </button>
-          </div>
+          {/* Goal Bar — only in normal zone mode */}
+          {!hideGearTabs && (
+            <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+              <span className="font-black text-purple-950 flex items-center gap-1.5">
+                🎙️ GAME GOAL: Listen to the full story, then retell it in your own words. Earn +50 XP!
+              </span>
+              <button
+                type="button"
+                onClick={() => handleNextGear(4)}
+                className="px-3 py-1 bg-purple-600 hover:bg-purple-500 text-white font-black text-xs rounded-xl shadow-sm transition"
+              >
+                Next: Gear 4 ▶
+              </button>
+            </div>
+          )}
 
           <div className="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200 shadow-md space-y-4">
 

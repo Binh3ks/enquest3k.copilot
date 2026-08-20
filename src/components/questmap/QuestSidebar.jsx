@@ -83,23 +83,6 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
               />
             </div>
           </div>
-
-          {/* Mode Switcher */}
-          <div className="qs-mode-row">
-            <span className="qs-mode-label">Learning Mode:</span>
-            <button
-              className={`qs-mode-btn ${learningMode === 'easy' ? 'active' : ''}`}
-              onClick={() => onToggleMode && onToggleMode('easy')}
-            >
-              🌱 Easy
-            </button>
-            <button
-              className={`qs-mode-btn ${learningMode === 'advanced' ? 'active' : ''}`}
-              onClick={() => onToggleMode && onToggleMode('advanced')}
-            >
-              ⚡ Advanced
-            </button>
-          </div>
         </div>
 
         {/* Navigation Menu */}
@@ -167,20 +150,20 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
           {/* Teacher's Panel (Only for Staff / Teacher / Owner) */}
           {isTeacher && (
             <div className="qs-teacher-section">
-              <div className="qs-section-tag">TEACHER TOOLS</div>
+              <div className="qs-section-tag">TEACHER & OWNER TOOLS</div>
               <button
                 className="qs-nav-item teacher"
                 onClick={() => {
                   onClose();
-                  navigate(`/dashboard`);
+                  useUserStore.getState().setTeacherPanelOpen(true);
                 }}
               >
                 <div className="qs-nav-icon bg-blue-100 text-blue-700">
                   <Shield size={18} />
                 </div>
                 <div className="qs-nav-text">
-                  <div className="qs-nav-title">👨‍🏫 Teacher Dashboard</div>
-                  <div className="qs-nav-desc">Manage students, XP & stats</div>
+                  <div className="qs-nav-title">👨‍🏫 Teacher Panel & Lesson Plans</div>
+                  <div className="qs-nav-desc">Curriculum, student tracking & tools</div>
                 </div>
                 <ChevronRight size={16} className="text-slate-400" />
               </button>
