@@ -27,17 +27,16 @@ const TASK_ROUTING = {
   gear2_karaoke:    { zone: 'story',   gear: 2 },
   gear3_retell:     { zone: 'story',   gear: 3 },
   gear4_clil:       { zone: 'story',   gear: 4 },
-  vocab_explorer:   { zone: 'arena',   station: 'vocab_explorer' },
-  word_power:       { zone: 'arena',   station: 'word_power' },
+  science_lab:      { zone: 'arena',   station: 'science_lab' },
+  science_report:   { zone: 'create',  station: 'dictation' }, // maps to ScienceReportCreator in CreatorStudioZone
   word_blitz:       { zone: 'arena',   station: 'word_blitz' },
   sentence_smash:   { zone: 'arena',   station: 'sentence_smash' },
   math_quest:       { zone: 'arena',   station: 'math_quest' },
   story_writer:     { zone: 'create',  station: 'writing' },
-  science_report:   { zone: 'create',  station: 'dictation' },
   broadcast_studio: { zone: 'create',  station: 'broadcast' },
-  dictation:        { zone: 'create',  station: 'dictation' },
-  boss_listening:   { zone: 'boss',    station: 'listening_boss' },
   shadowing:        { zone: 'boss',    station: 'shadowing' },
+  boss_listening:   { zone: 'boss',    station: 'listening_boss' },
+  boss_reading:     { zone: 'boss',    station: 'rw_boss' },
   weekly_review:    { zone: 'boss',    station: 'review' },
 };
 

@@ -16,18 +16,18 @@ export const QUEST_SCHEDULE = [
     day: 1,
     label: '📖 The Explorer',
     quests: [
-      { id: 'gear1_webtoon',  label: '3D Webtoon',      zone: 1, gearIndex: 0, station: null,             icon: '📚', minutes: 8 },
-      { id: 'gear2_karaoke',  label: 'Story Karaoke',   zone: 1, gearIndex: 1, station: null,             icon: '🎤', minutes: 7 },
-      { id: 'vocab_explorer', label: 'Vocab Explorer',  zone: 2, gearIndex: null, station: 'vocab_explorer', icon: '🔤', minutes: 5 },
+      { id: 'gear1_webtoon',  label: '3D Webtoon',      zone: 1, gearIndex: 0, station: null, icon: '📚', minutes: 8 },
+      { id: 'gear2_karaoke',  label: 'Story Karaoke',   zone: 1, gearIndex: 1, station: null, icon: '🎤', minutes: 7 },
+      { id: 'gear3_retell',   label: 'Retell to Nova',  zone: 1, gearIndex: 2, station: null, icon: '🎙️', minutes: 8 },
     ],
   },
   {
     day: 2,
-    label: '🎯 The Storyteller',
+    label: '🔬 Science Lab',
     quests: [
-      { id: 'gear3_retell',    label: 'Retell to Nova',  zone: 1, gearIndex: 2, station: null,             icon: '🎙️', minutes: 8 },
-      { id: 'gear4_clil',      label: 'CLIL Explorer',   zone: 1, gearIndex: 3, station: null,             icon: '🔬', minutes: 8 },
-      { id: 'word_power',      label: 'Word Power',      zone: 2, gearIndex: null, station: 'word_power',     icon: '💪', minutes: 5 },
+      { id: 'gear4_clil',      label: 'CLIL Explorer',   zone: 1, gearIndex: 3, station: null,           icon: '🔬', minutes: 8 },
+      { id: 'science_lab',     label: 'Science Lab',     zone: 2, gearIndex: null, station: 'science_lab',   icon: '🧪', minutes: 6 },
+      { id: 'science_report',  label: 'Science Report',  zone: 3, gearIndex: null, station: 'science_report',icon: '📝', minutes: 7 },
     ],
   },
   {
@@ -44,17 +44,17 @@ export const QUEST_SCHEDULE = [
     label: '✍️ Creative Studio',
     quests: [
       { id: 'story_writer',     label: 'Story Writer',    zone: 3, gearIndex: null, station: 'writing',        icon: '✏️', minutes: 10 },
-      { id: 'science_report',   label: 'Science Report',  zone: 3, gearIndex: null, station: 'science_report',  icon: '📝', minutes: 7 },
+      { id: 'broadcast_studio', label: 'Broadcast Studio',zone: 3, gearIndex: null, station: 'broadcast',      icon: '📻', minutes: 7 },
       { id: 'shadowing',        label: 'Shadowing',       zone: 4, gearIndex: null, station: 'shadowing',       icon: '🗣️', minutes: 7 },
     ],
   },
   {
     day: 5,
-    label: '🏆 Boss Castle',
+    label: '🏰 Boss Castle',
     quests: [
       { id: 'boss_listening',   label: 'Listening Boss',   zone: 4, gearIndex: null, station: 'listening_boss', icon: '🎧', minutes: 10 },
-      { id: 'broadcast_studio', label: 'Broadcast Studio', zone: 3, gearIndex: null, station: 'broadcast',      icon: '📻', minutes: 7 },
-      { id: 'weekly_review',    label: 'Weekly Review',    zone: 4, gearIndex: null, station: 'review',          icon: '🏆', minutes: 15 },
+      { id: 'boss_reading',     label: 'Reading & Writing',zone: 4, gearIndex: null, station: 'rw_boss',        icon: '📖', minutes: 10 },
+      { id: 'weekly_review',    label: 'Weekly Review',    zone: 4, gearIndex: null, station: 'review',         icon: '🏆', minutes: 15 },
     ],
   },
 ];

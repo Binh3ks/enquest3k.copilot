@@ -49,10 +49,10 @@ const STATIONS = [
     taskPositionsMobile: [{ x: 55, y: 79 }, { x: 70, y: 82 }, { x: 85, y: 85 }],
   },
   {
-    id: 'storyteller',
+    id: 'science_lab',
     index: 2,
-    emoji: '🎙️',
-    name: 'The Storyteller',
+    emoji: '🔬',
+    name: 'Science Lab',
     color: '#10b981',
     glowColor: 'rgba(16,185,129,0.5)',
     position:       { x: 38, y: 48 },
