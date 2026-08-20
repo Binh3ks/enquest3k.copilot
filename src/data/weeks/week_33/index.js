@@ -8,7 +8,7 @@ import grammar from './grammar.js';
 import daily_watch from './daily_watch.js';
 import logic_lab from './logic_lab.js';
 import mindmap_speaking from './mindmap.js';
-import ask_ai from './ask_ai.js';
+import ask_ai, { INFORMATION_EXCHANGE_P2, CUE_CARD_PROMPTS } from './ask_ai.js';
 import writing from './writing.js';
 import dictation from './dictation.js';
 import shadowing from './shadowing.js';
@@ -23,6 +23,10 @@ export const weekData = {
   title: "Corridor Safety & School Care",
   weekTitle_en: "Corridor Safety & School Care",
   title_vi: "An Toàn Hành Lang & Chăm Sóc Trường Học",
+
+  // Top-level for InfoExchangeZone direct hydration
+  cue_card_info_exchange: INFORMATION_EXCHANGE_P2,
+  cue_card_prompts: CUE_CARD_PROMPTS,
 
   readingHub,
   listeningHub,

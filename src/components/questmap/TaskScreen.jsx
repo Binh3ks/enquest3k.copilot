@@ -20,6 +20,7 @@ const StoryWorldZone = React.lazy(() => import('../../modules/zones/StoryWorldZo
 const BattleArenaZone = React.lazy(() => import('../../modules/zones/BattleArenaZone'));
 const CreatorStudioZone = React.lazy(() => import('../../modules/zones/CreatorStudioZone'));
 const BossBattleZone = React.lazy(() => import('../../modules/zones/BossBattleZone'));
+const InfoExchangeZone = React.lazy(() => import('../../modules/zones/InfoExchangeZone'));
 
 // Map taskId to zone + gear/station params
 const TASK_ROUTING = {
@@ -32,9 +33,10 @@ const TASK_ROUTING = {
   word_blitz:       { zone: 'arena',   station: 'word_blitz' },
   sentence_smash:   { zone: 'arena',   station: 'sentence_smash' },
   math_quest:       { zone: 'arena',   station: 'math_quest' },
-  story_writer:     { zone: 'create',  station: 'writing' },
-  broadcast_studio: { zone: 'create',  station: 'broadcast' },
-  ai_debate:        { zone: 'create',  station: 'ai_debate' },  // Zone 3 — Creative Studio, AI Debate tab
+  story_writer:       { zone: 'create',       station: 'writing' },
+  broadcast_studio:  { zone: 'create',       station: 'broadcast' },
+  ai_debate:         { zone: 'create',       station: 'ai_debate' },  // Legacy — kept for backward compat
+  info_exchange:     { zone: 'info_exchange' },  // Cambridge Speaking Part 2 (replaces Debate Arena)
   boss_listening:   { zone: 'boss',    station: 'listening_boss' },
   boss_reading:     { zone: 'boss',    station: 'rw_boss' },
   weekly_review:    { zone: 'boss',    station: 'review' },
@@ -84,9 +86,14 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <ArrowLeft size={18} />
           <span>Map</span>
         </button>
-        <div className="ts-task-info flex items-center gap-2">
-          <LexioMascot size={30} mood="happy" />
-          <span className="ts-task-icon">{taskInfo.icon}</span>
+        <div className="ts-task-info flex items-center">
+          {/* Lexio mascot: explicitly wrapped with right margin so task icon never merges visually */}
+          <div style={{ marginRight: '10px', lineHeight: 0 }}>
+            <LexioMascot size={30} mood="happy" />
+          </div>
+          {/* Vertical divider */}
+          <div style={{ width: '1px', height: '24px', background: '#e2e8f0', marginRight: '10px', flexShrink: 0 }} />
+          <span className="ts-task-icon" style={{ marginRight: '6px' }}>{taskInfo.icon}</span>
           <span className="ts-task-name font-black">{taskInfo.label}</span>
         </div>
         <div className="ts-task-time">
@@ -133,6 +140,12 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
               weekNumber={weekId}
               forcedStation={routing.station}
               hideStationTabs={true}
+            />
+          )}
+          {routing.zone === 'info_exchange' && (
+            <InfoExchangeZone
+              data={weekData || {}}
+              weekNumber={weekId}
             />
           )}
         </Suspense>

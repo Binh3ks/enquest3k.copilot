@@ -41,7 +41,8 @@ export const TASK_METADATA = {
   math_quest:       { label: 'Math Quest', icon: '📐', day: 3, stationName: 'Battle Arena', minutes: 6 },
   story_writer:     { label: 'Story Writer', icon: '✏️', day: 4, stationName: 'Creator Studio', minutes: 10 },
   broadcast_studio: { label: 'Hot Mic', icon: '📻', day: 4, stationName: 'Creator Studio', minutes: 7 },
-  ai_debate:        { label: 'Debate Arena', icon: '🎭', day: 4, stationName: 'Creator Studio', minutes: 7 },
+  ai_debate:        { label: 'Debate Arena', icon: '🎭', day: 4, stationName: 'Creator Studio', minutes: 7 },  // Legacy
+  info_exchange:    { label: 'Info Exchange', icon: '🔄', day: 4, stationName: 'Creator Studio', minutes: 7 }, // Cambridge Speaking Part 2
   boss_listening:   { label: 'Listening Shield', icon: '🎧', day: 5, stationName: 'Boss Castle', minutes: 10 },
   boss_reading:     { label: 'Reading & Writing Shield', icon: '📖', day: 5, stationName: 'Boss Castle', minutes: 10 },
   weekly_review:    { label: 'Speaking & Passport', icon: '🏆', day: 5, stationName: 'Boss Castle', minutes: 15 },
