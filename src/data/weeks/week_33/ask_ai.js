@@ -116,110 +116,132 @@ export const CUE_CARD_PROMPTS = [
 ];
 
 export const INFORMATION_EXCHANGE_P2 = {
-  title: "Nova's Cue-Card Exchange",
-  subtitle: "Table A: Candidate asks questions for missing info (?) • Table B: Candidate answers Nova's questions",
+  title: "Cambridge Speaking Part 2 — Information Exchange",
+  subtitle: "Candidate asks questions from cues (Table A) • Candidate answers Examiner's questions (Table B)",
   table_a: {
-    title: "Table A: Tom's Accident (Candidate Asks Questions)",
+    title: "Tom's Accident",
+    subtitle: "Candidate's Question Card (Ask Nova)",
     person: "Tom",
     fields: [
       {
         id: "field_a1",
-        label: "Who?",
-        value: "Tom",
-        is_missing: false
-      },
-      {
-        id: "field_a2",
-        label: "Injury location?",
+        label: "where / get injured?",
+        cue_word: "where",
         value: "?",
         is_missing: true,
-        cue_prompt: "Where / Tom / get injured?",
+        cue_prompt: "where / get injured?",
+        grammar_scaffold: "Where did Tom get injured?",
         acceptable_questions: [
           "Where did Tom get injured?",
           "Where was Tom injured?",
+          "Where did he get hurt?",
           "Where did he slip?"
         ],
         nova_reply: "Tom got injured in the main school corridor near the science lab."
       },
       {
-        id: "field_a3",
-        label: "Hurt what?",
+        id: "field_a2",
+        label: "what / hurt?",
+        cue_word: "what",
         value: "?",
         is_missing: true,
-        cue_prompt: "What / Tom / hurt?",
+        cue_prompt: "what / hurt?",
+        grammar_scaffold: "What did Tom hurt?",
         acceptable_questions: [
           "What did Tom hurt?",
           "What did he hurt?",
-          "Which part of his body did he hurt?"
+          "Which part of his body did he hurt?",
+          "What was hurt?"
         ],
-        nova_reply: "Tom hurt his left knee when he fell down."
+        nova_reply: "Tom hurt his left knee when he fell on the wet floor."
       },
       {
-        id: "field_a4",
-        label: "Time?",
+        id: "field_a3",
+        label: "what time / slip?",
+        cue_word: "what time",
         value: "?",
         is_missing: true,
-        cue_prompt: "What time / slip?",
+        cue_prompt: "what time / slip?",
+        grammar_scaffold: "What time did Tom slip?",
         acceptable_questions: [
           "What time did Tom slip?",
           "What time did he slip?",
+          "When did Tom slip?",
           "When did the accident happen?"
         ],
-        nova_reply: "He slipped at exactly 9:30 AM."
+        nova_reply: "He slipped at 9:30 in the morning after science class."
+      },
+      {
+        id: "field_a4",
+        label: "why / fall down?",
+        cue_word: "why",
+        value: "?",
+        is_missing: true,
+        cue_prompt: "why / fall down?",
+        grammar_scaffold: "Why did Tom fall down?",
+        acceptable_questions: [
+          "Why did Tom fall down?",
+          "Why did he fall down?",
+          "Why did he slip?",
+          "Why was the floor slippery?"
+        ],
+        nova_reply: "He fell down because he was running fast and the corridor floor was wet."
       }
     ]
   },
   table_b: {
-    title: "Table B: Jake's Action (Examiner Asks Questions)",
+    title: "Jake's Quick Action",
+    subtitle: "Candidate's Information Sheet (Answer Nova)",
     person: "Jake",
     fields: [
       {
         id: "field_b1",
-        label: "Who?",
-        value: "Jake",
-        nova_question: "Who took quick action when Tom fell down?",
+        label: "Action taken",
+        value: "Called the school nurse immediately",
+        nova_question: "What action did Jake take when Tom fell down?",
         acceptable_answers: [
-          "Jake took quick action.",
-          "Jake",
-          "Jake did."
-        ]
-      },
-      {
-        id: "field_b2",
-        label: "Action taken?",
-        value: "Called school nurse",
-        nova_question: "What action did Jake take?",
-        acceptable_answers: [
-          "He called the school nurse.",
-          "Called the school nurse",
+          "He called the school nurse immediately.",
+          "Jake called the school nurse.",
           "He called the nurse for help."
         ]
       },
       {
-        id: "field_b3",
-        label: "First aid item?",
-        value: "Clean bandage & cold pack",
-        nova_question: "What first aid item did the nurse bring?",
+        id: "field_b2",
+        label: "First aid item",
+        value: "Clean bandage and a cold pack",
+        nova_question: "What first aid items did the nurse bring?",
         acceptable_answers: [
           "She brought a clean bandage and a cold pack.",
-          "Clean bandage and cold pack",
-          "A clean bandage"
+          "A clean bandage and cold pack.",
+          "Clean bandage and cold pack."
+        ]
+      },
+      {
+        id: "field_b3",
+        label: "Who helped",
+        value: "The school nurse and Jake",
+        nova_question: "Who helped Tom after the accident?",
+        acceptable_answers: [
+          "The school nurse and Jake helped him.",
+          "The school nurse.",
+          "Jake and the school nurse."
         ]
       },
       {
         id: "field_b4",
-        label: "Feeling?",
-        value: "Relieved & safe",
-        nova_question: "How did everyone feel after that?",
+        label: "How everyone felt",
+        value: "Relieved and safe",
+        nova_question: "How did everyone feel after Tom was treated?",
         acceptable_answers: [
           "Everyone felt relieved and safe.",
-          "Relieved",
-          "They felt relieved."
+          "They felt relieved and safe.",
+          "Relieved and happy."
         ]
       }
     ]
   }
 };
+
 
 export const PICTURE_STORY_CONTINUATION = {
   title: "Safety First at School",

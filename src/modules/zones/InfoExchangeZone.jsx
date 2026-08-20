@@ -1,27 +1,28 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { Volume2, Mic, Square, CheckCircle2, HelpCircle, ArrowRight, Sparkles, MessageSquareQuote, Award } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Volume2, Mic, Square, CheckCircle2, HelpCircle, ArrowRight, Sparkles, Award } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import LexioMascot from '../../components/mascot/LexioMascot';
 
 /**
- * InfoExchangeZone — Cambridge A2 Flyers Speaking Part 2 (Information Exchange)
+ * InfoExchangeZone — Authentic Cambridge A2 Flyers Speaking Part 2 (Information Exchange)
  * 
- * Direct immersive 2-Phase Speaking Arena:
- * - Phase 1 (Table A): Candidate ASKS W-H questions to fill in missing fields (?).
- *                      Features Big Voice Mic, word-scaffolding, and Nova spoken replies.
- * - Phase 2 (Table B): Nova ASKS questions about the candidate's card.
- *                      Candidate records spoken answers with voice feedback.
+ * Strict Cambridge Speaking Standard:
+ * - Phase 1 (Table A): Candidate receives a QUESTION CARD with ONLY WH-Cues (e.g. "where / get injured?").
+ *                      Candidate must FORMULATE the question verbally using the SPEAK mic.
+ *                      No pre-printed full questions are given. Optional grammar structure hint only.
+ * - Phase 2 (Table B): Candidate receives an INFORMATION SHEET with full factual details.
+ *                      Examiner Nova asks questions, candidate answers verbally using the ANSWER mic.
  */
 
 export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const [phase, setPhase] = useState('table_a'); // 'table_a' | 'table_b' | 'complete'
   
   // Phase 1 (Table A) State
-  const [missingIdx, setMissingIdx] = useState(0);
-  const [completedIds, setCompletedIds] = useState(new Set());
+  const [cueIdxA, setCueIdxA] = useState(0);
+  const [completedIdsA, setCompletedIdsA] = useState(new Set());
   const [isRecordingA, setIsRecordingA] = useState(false);
-  const [askedCurrent, setAskedCurrent] = useState(false);
-  const [chosenWords, setChosenWords] = useState([]);
+  const [showHintA, setShowHintA] = useState(false);
+  const [novaRepliedA, setNovaRepliedA] = useState(false);
   
   // Phase 2 (Table B) State
   const [fieldIdxB, setFieldIdxB] = useState(0);
@@ -43,11 +44,12 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
 
   const tableA = infoExData?.table_a;
   const tableB = infoExData?.table_b;
-  const missingFields = tableA?.fields?.filter(f => f.is_missing) || [];
-  const currentMissingField = missingFields[missingIdx] || null;
-  const currentFieldB = tableB?.fields?.[fieldIdxB] || null;
+  const cuesA = tableA?.fields || [];
+  const currentCueA = cuesA[cueIdxA] || null;
+  const fieldsB = tableB?.fields || [];
+  const currentFieldB = fieldsB[fieldIdxB] || null;
 
-  // Cleanup media recorder on unmount
+  // Cleanup media recorder
   useEffect(() => {
     return () => {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
@@ -67,7 +69,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
     }
   }, [phase, fieldIdxB, currentFieldB]);
 
-  // Voice recording handlers for Phase 1
+  // Recording handlers for Phase 1 (Asking questions)
   const startRecordingA = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -76,8 +78,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       mr.start();
       setIsRecordingA(true);
     } catch {
-      // Fallback if mic permission is denied
-      handleQuestionSubmitted(currentMissingField?.acceptable_questions?.[0] || '');
+      handleCandidateAsked();
     }
   };
 
@@ -87,28 +88,28 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       mediaRecorderRef.current.stream?.getTracks().forEach(t => t.stop());
     }
     setIsRecordingA(false);
-    handleQuestionSubmitted(currentMissingField?.acceptable_questions?.[0] || '');
+    handleCandidateAsked();
   };
 
-  const handleQuestionSubmitted = (questionText) => {
-    if (!currentMissingField) return;
-    setAskedCurrent(true);
-    setCompletedIds(prev => new Set([...prev, currentMissingField.id]));
-    speakText(currentMissingField.nova_reply);
+  const handleCandidateAsked = () => {
+    if (!currentCueA) return;
+    setNovaRepliedA(true);
+    setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
+    speakText(currentCueA.nova_reply);
   };
 
-  const handleNextQuestionA = () => {
-    setAskedCurrent(false);
-    setChosenWords([]);
-    if (missingIdx + 1 < missingFields.length) {
-      setMissingIdx(i => i + 1);
+  const handleNextCueA = () => {
+    setNovaRepliedA(false);
+    setShowHintA(false);
+    if (cueIdxA + 1 < cuesA.length) {
+      setCueIdxA(i => i + 1);
     } else {
       setShields(1);
       setPhase('table_b');
     }
   };
 
-  // Voice recording handlers for Phase 2
+  // Recording handlers for Phase 2 (Answering Nova)
   const startRecordingB = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -133,7 +134,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const handleNextQuestionB = () => {
     setRecordedB(false);
     setShowModelB(false);
-    if (fieldIdxB + 1 < (tableB?.fields?.length || 0)) {
+    if (fieldIdxB + 1 < fieldsB.length) {
       setFieldIdxB(i => i + 1);
     } else {
       setShields(2);
@@ -162,13 +163,13 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
         </div>
         <div className="space-y-2">
           <span className="px-4 py-1.5 bg-amber-100 text-amber-900 font-black text-xs uppercase tracking-widest rounded-full">
-            🏆 Cambridge Speaking Part 2 Mastered
+            🏆 Cambridge Speaking Part 2 Completed
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-            Outstanding Info Exchange!
+            Brilliant Speaking Performance!
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto">
-            You successfully asked W-H questions to find missing information on Table A and answered Nova's questions on Table B!
+          <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto leading-relaxed">
+            You successfully formulated WH-questions from cues on Table A, and answered Examiner Nova's questions accurately on Table B!
           </p>
         </div>
 
@@ -195,21 +196,21 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-4 sm:py-6 space-y-5">
-      {/* Top Banner & Phase Switcher */}
+      {/* Top Banner & Phase Navigation */}
       <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3 w-full sm:w-auto">
           <LexioMascot size={42} mood="happy" />
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-black uppercase tracking-wider text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-md">
-                Cambridge Speaking · Part 2
+                Cambridge A2 Flyers · Speaking Part 2
               </span>
               <span className="text-xs font-bold text-slate-400">
-                {phase === 'table_a' ? `Question ${missingIdx + 1} / ${missingFields.length}` : `Question ${fieldIdxB + 1} / ${tableB.fields.length}`}
+                {phase === 'table_a' ? `Cue ${cueIdxA + 1} / ${cuesA.length}` : `Question ${fieldIdxB + 1} / ${fieldsB.length}`}
               </span>
             </div>
             <h1 className="text-lg sm:text-xl font-black text-slate-900">
-              {phase === 'table_a' ? 'Phase 1: You Ask Questions (Table A)' : 'Phase 2: Nova Asks You (Table B)'}
+              {phase === 'table_a' ? 'Phase 1: Ask Questions from Cues' : 'Phase 2: Answer Examiner’s Questions'}
             </h1>
           </div>
         </div>
@@ -219,14 +220,14 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
           <div className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
             phase === 'table_a' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-emerald-100 text-emerald-800'
           }`}>
-            <span>📋 Table A</span>
+            <span>📋 Table A (You Ask)</span>
             {phase === 'table_b' && <CheckCircle2 size={13} />}
           </div>
           <ArrowRight size={14} className="text-slate-300" />
           <div className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1.5 ${
             phase === 'table_b' ? 'bg-purple-600 text-white shadow-sm' : 'bg-slate-100 text-slate-400'
           }`}>
-            <span>🎙️ Table B</span>
+            <span>🎙️ Table B (You Answer)</span>
           </div>
         </div>
       </div>
@@ -234,76 +235,75 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
       {/* Main 2-Column Responsive Workspace */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
         
-        {/* ── LEFT COLUMN: Cambridge Cue Card (5 Cols) ── */}
+        {/* ── LEFT COLUMN: Cambridge Candidate Booklet (5 Cols) ── */}
         <div className="lg:col-span-5 bg-white rounded-3xl border-2 border-indigo-200 shadow-md overflow-hidden">
-          <div className={`px-5 py-3.5 flex items-center justify-between text-white font-black text-sm ${
+          <div className={`px-5 py-4 flex flex-col gap-0.5 text-white ${
             phase === 'table_a' ? 'bg-gradient-to-r from-indigo-600 to-indigo-700' : 'bg-gradient-to-r from-purple-600 to-purple-700'
           }`}>
-            <span className="flex items-center gap-2">
-              <span>📋</span>
+            <span className="font-black text-base flex items-center gap-2">
+              <span>📄</span>
               <span>{phase === 'table_a' ? tableA.title : tableB.title}</span>
             </span>
-            <span className="text-[10px] uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded">
-              {phase === 'table_a' ? 'Your Card' : 'Nova’s Card'}
+            <span className="text-[11px] font-bold text-indigo-200 uppercase tracking-wider">
+              {phase === 'table_a' ? "Candidate's Question Card" : "Candidate's Information Sheet"}
             </span>
           </div>
 
           <div className="divide-y divide-slate-100 p-2">
             {phase === 'table_a' ? (
-              tableA.fields.map((f) => {
-                const isTarget = currentMissingField?.id === f.id;
-                const isDone = completedIds.has(f.id);
+              cuesA.map((cue, idx) => {
+                const isTarget = currentCueA?.id === cue.id;
+                const isDone = completedIdsA.has(cue.id);
 
                 return (
                   <div
-                    key={f.id}
+                    key={cue.id}
                     className={`px-4 py-3.5 rounded-xl transition flex items-center justify-between gap-3 ${
                       isTarget ? 'bg-amber-50 border-2 border-amber-300 shadow-sm' : isDone ? 'bg-emerald-50/70' : 'bg-white'
                     }`}
                   >
-                    <span className="text-xs font-black uppercase tracking-wide text-slate-500 w-32 shrink-0">
-                      {f.label}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono font-bold text-slate-400">0{idx + 1}.</span>
+                      <span className="text-xs sm:text-sm font-black text-slate-800 lowercase tracking-wide">
+                        {cue.label}
+                      </span>
+                    </div>
 
-                    {f.is_missing ? (
-                      <div className="flex items-center gap-2 text-right">
-                        {isDone ? (
-                          <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-xs sm:text-sm">
-                            <span>{f.nova_reply?.split('.')[0] || 'Found'}</span>
-                            <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-                          </div>
-                        ) : (
-                          <span className={`px-3 py-1 rounded-lg text-sm font-black animate-pulse ${
-                            isTarget ? 'bg-amber-400 text-slate-950' : 'bg-slate-200 text-slate-600'
-                          }`}>
-                            ?
-                          </span>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="text-sm font-black text-slate-900">{f.value}</span>
-                    )}
+                    <div className="flex items-center gap-2 text-right">
+                      {isDone ? (
+                        <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-xs">
+                          <span className="max-w-[140px] truncate">{cue.nova_reply?.split('.')[0]}</span>
+                          <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />
+                        </div>
+                      ) : (
+                        <span className={`px-2.5 py-0.5 rounded-md text-xs font-black ${
+                          isTarget ? 'bg-amber-400 text-slate-950 animate-pulse' : 'bg-slate-200 text-slate-500'
+                        }`}>
+                          ?
+                        </span>
+                      )}
+                    </div>
                   </div>
                 );
               })
             ) : (
-              tableB.fields.map((f, idx) => {
+              fieldsB.map((f, idx) => {
                 const isActive = fieldIdxB === idx;
                 const isPassed = fieldIdxB > idx;
 
                 return (
                   <div
                     key={f.id}
-                    className={`px-4 py-3.5 rounded-xl transition flex items-center justify-between gap-3 ${
+                    className={`px-4 py-3.5 rounded-xl transition flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 ${
                       isActive ? 'bg-purple-50 border-2 border-purple-300 shadow-sm' : isPassed ? 'bg-emerald-50/70' : 'bg-white'
                     }`}
                   >
-                    <span className="text-xs font-black uppercase tracking-wide text-slate-500 w-32 shrink-0">
+                    <span className="text-xs font-black uppercase tracking-wider text-slate-500 shrink-0">
                       {f.label}
                     </span>
-                    <div className="flex items-center gap-2 text-right">
-                      <span className="text-sm font-black text-slate-900">{f.value}</span>
-                      {isPassed && <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />}
+                    <div className="flex items-center gap-1.5 text-slate-900 font-bold text-xs sm:text-sm">
+                      <span>{f.value}</span>
+                      {isPassed && <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />}
                     </div>
                   </div>
                 );
@@ -312,54 +312,58 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
           </div>
         </div>
 
-        {/* ── RIGHT COLUMN: Interactive Voice & Speaking Arena (7 Cols) ── */}
+        {/* ── RIGHT COLUMN: Voice Question Formulation & Examiner Arena (7 Cols) ── */}
         <div className="lg:col-span-7 space-y-4">
           {phase === 'table_a' ? (
-            /* PHASE 1 INTERACTION */
+            /* PHASE 1: CANDIDATE FORMS & SPEAKS QUESTION */
             <div className="bg-white rounded-3xl p-5 sm:p-7 border border-amber-200 shadow-md space-y-5">
-              {/* Cue Prompt Header */}
-              <div className="p-4 bg-amber-50 border border-amber-200 rounded-2xl space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-black uppercase text-amber-800 tracking-wider flex items-center gap-1.5">
-                    <HelpCircle size={14} className="text-amber-600" />
-                    CUE PROMPT ({missingIdx + 1}/{missingFields.length}):
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => speakText(currentMissingField?.cue_prompt || '')}
-                    className="p-1 text-amber-800 hover:bg-amber-200 rounded-lg transition"
-                    title="Listen to cue prompt"
-                  >
-                    <Volume2 size={16} />
-                  </button>
-                </div>
-                <p className="text-base sm:text-lg font-black text-amber-950">
-                  {currentMissingField?.cue_prompt}
+              {/* Cue Display (Cambridge Format) */}
+              <div className="p-4 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl space-y-2">
+                <span className="text-[11px] font-black uppercase text-amber-800 tracking-wider flex items-center gap-1.5">
+                  <HelpCircle size={14} className="text-amber-600" />
+                  CUE PROMPT ({cueIdxA + 1}/{cuesA.length}):
+                </span>
+                <p className="text-xl sm:text-2xl font-black text-amber-950 font-mono">
+                  {currentCueA?.cue_prompt}
+                </p>
+                <p className="text-xs font-bold text-amber-800">
+                  Formulate and ask a complete question using this cue!
                 </p>
               </div>
 
-              {/* Target Question Scaffold / Model */}
+              {/* Collapsible Grammar Structure Hint (Does NOT show full question by default) */}
               <div className="space-y-2">
-                <span className="text-[11px] font-black uppercase text-slate-400 tracking-wider block">
-                  💬 SAY THIS QUESTION TO NOVA:
-                </span>
-                <div className="p-3.5 bg-indigo-50 border border-indigo-200 rounded-xl flex items-center justify-between gap-3">
-                  <p className="text-sm sm:text-base font-black text-indigo-950">
-                    "{currentMissingField?.acceptable_questions?.[0]}"
-                  </p>
+                {!showHintA ? (
                   <button
                     type="button"
-                    onClick={() => speakText(currentMissingField?.acceptable_questions?.[0] || '')}
-                    className="p-2 bg-indigo-200 hover:bg-indigo-300 text-indigo-900 rounded-lg transition active:scale-95 shrink-0"
-                    title="Listen to model question"
+                    onClick={() => setShowHintA(true)}
+                    className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-black transition flex items-center gap-1.5 border border-slate-200"
                   >
-                    <Volume2 size={16} />
+                    💡 Need a grammar hint?
                   </button>
-                </div>
+                ) : (
+                  <div className="p-3 bg-indigo-50 border border-indigo-200 rounded-xl space-y-1 animate-in fade-in">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-black uppercase text-indigo-700 tracking-wide">
+                        📌 Question Structure Scaffold:
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setShowHintA(false)}
+                        className="text-[10px] text-indigo-500 font-bold underline"
+                      >
+                        Hide
+                      </button>
+                    </div>
+                    <p className="text-xs font-bold text-indigo-950">
+                      {currentCueA?.cue_word?.toUpperCase()} + did + [subject] + [base verb] ... ?
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Central Voice Recording Button */}
-              {!askedCurrent ? (
+              {!novaRepliedA ? (
                 <div className="flex flex-col items-center justify-center gap-3 py-3">
                   {!isRecordingA ? (
                     <button
@@ -381,11 +385,11 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     </button>
                   )}
                   <p className="text-xs font-black text-slate-600">
-                    {isRecordingA ? '🔴 Recording... Ask your question now!' : 'Tap SPEAK to ask Nova'}
+                    {isRecordingA ? '🔴 Recording... Speak your question clearly!' : 'Tap SPEAK and ask Nova your question'}
                   </p>
                 </div>
               ) : (
-                /* Nova's Live Audio Reply */
+                /* Nova Examiner Spoken Reply */
                 <div className="space-y-4 animate-in fade-in">
                   <div className="p-4 bg-emerald-50 border-2 border-emerald-300 rounded-2xl flex items-start gap-3 text-left">
                     <div className="p-2 bg-emerald-200 rounded-xl shrink-0">
@@ -394,36 +398,36 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-200 px-2 py-0.5 rounded">
-                          NOVA REPLIES:
+                          EXAMINER NOVA REPLIES:
                         </span>
                         <button
                           type="button"
-                          onClick={() => speakText(currentMissingField?.nova_reply || '')}
+                          onClick={() => speakText(currentCueA?.nova_reply || '')}
                           className="p-1 bg-emerald-200 hover:bg-emerald-300 text-emerald-900 rounded-lg transition active:scale-95"
                         >
                           <Volume2 size={16} />
                         </button>
                       </div>
                       <p className="text-base font-black text-emerald-950 leading-relaxed">
-                        "{currentMissingField?.nova_reply}"
+                        "{currentCueA?.nova_reply}"
                       </p>
                     </div>
                   </div>
 
                   <button
                     type="button"
-                    onClick={handleNextQuestionA}
+                    onClick={handleNextCueA}
                     className="w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
                   >
-                    {missingIdx + 1 < missingFields.length ? 'Next Question →' : '✓ Table A Complete! Go to Table B →'}
+                    {cueIdxA + 1 < cuesA.length ? 'Next Cue →' : '✓ Table A Complete! Go to Table B →'}
                   </button>
                 </div>
               )}
             </div>
           ) : (
-            /* PHASE 2 INTERACTION */
+            /* PHASE 2: EXAMINER ASKS CANDIDATE */
             <div className="bg-white rounded-3xl p-5 sm:p-7 border border-purple-200 shadow-md space-y-5">
-              {/* Nova Question Bubble */}
+              {/* Examiner Question Bubble */}
               <div className="p-4 bg-purple-50 border border-purple-200 rounded-2xl flex items-start gap-3">
                 <div className="p-2 bg-purple-200 rounded-xl shrink-0">
                   <LexioMascot size={32} mood="speaking" />
@@ -431,7 +435,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[10px] font-black uppercase tracking-wider text-purple-800 bg-purple-200 px-2 py-0.5 rounded">
-                      NOVA ASKS YOU ({fieldIdxB + 1}/{tableB.fields.length}):
+                      EXAMINER NOVA ASKS ({fieldIdxB + 1}/{fieldsB.length}):
                     </span>
                     <button
                       type="button"
@@ -447,7 +451,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 </div>
               </div>
 
-              {/* Big Mic Button to Answer */}
+              {/* Big Answer Mic Button */}
               <div className="flex flex-col items-center justify-center gap-3 py-2">
                 {!isRecordingB ? (
                   <button
@@ -469,7 +473,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                   </button>
                 )}
                 <p className="text-xs font-black text-slate-600">
-                  {isRecordingB ? '🔴 Recording... Answer Nova now!' : 'Tap ANSWER to speak your response'}
+                  {isRecordingB ? '🔴 Recording... Answer based on your card!' : 'Tap ANSWER to speak your response'}
                 </p>
               </div>
 
@@ -482,7 +486,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                       onClick={() => setShowModelB(true)}
                       className="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl transition border border-slate-200"
                     >
-                      💡 Show Model Answer
+                      💡 Check Model Answer
                     </button>
                   ) : (
                     <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl flex items-start gap-2 animate-in fade-in">
@@ -506,7 +510,7 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                     onClick={handleNextQuestionB}
                     className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2"
                   >
-                    {fieldIdxB + 1 < tableB.fields.length ? 'Next Question →' : '🏆 Complete Speaking Part 2!'}
+                    {fieldIdxB + 1 < fieldsB.length ? 'Next Question →' : '🏆 Complete Cambridge Speaking Part 2!'}
                   </button>
                 </div>
               )}
