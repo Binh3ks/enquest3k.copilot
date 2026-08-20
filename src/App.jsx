@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import NovaMascot from './components/NovaMascot';
-import { BrowserRouter as Router, Routes, Route, Link, Navigate, useParams, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, Printer, Gauge, Sparkles, BookOpen, Swords, PenTool, Radio } from 'lucide-react';
 
 // STORES & API
@@ -284,8 +284,20 @@ const MainLayout = () => {
   
   const params = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const weekId = parseInt(params.weekId || 1);
   const hubId = params.hubId;
+
+  // ?reset=all → clear all onboarding/quest/PIN/consent data and reload
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    if (searchParams.get('reset') === 'all') {
+      ['engquest_onboarded', 'engquest-daily-quest', 'engquest_parent_pin',
+       'engquest_voice_consent', 'engquest_placement_mode'].forEach(k => localStorage.removeItem(k));
+      console.log('✅ All progress reset!');
+      window.location.href = window.location.pathname; // reload without ?reset=all
+    }
+  }, [location.search]);
   
   let tabKey = params.tabKey || 'read_explore';
   if (hubId) {
