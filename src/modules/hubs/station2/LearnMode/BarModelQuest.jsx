@@ -66,9 +66,11 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   const [correctCount, setCorrectCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(90); // 90s total (18s per problem for ages 6-10)
 
-  const rawQuestions = (barModelData && Array.isArray(barModelData) && barModelData.length > 0)
+  const rawQuestions = (Array.isArray(barModelData) && barModelData.length > 0)
     ? barModelData
-    : WEEK33_BAR_QUESTIONS;
+    : (Array.isArray(barModelData?.problems) && barModelData.problems.length > 0)
+      ? barModelData.problems
+      : WEEK33_BAR_QUESTIONS;
 
   const questions = rawQuestions.map((q, idx) => ({
     id: q.id || idx + 1,

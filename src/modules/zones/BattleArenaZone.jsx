@@ -12,10 +12,13 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 export default function BattleArenaZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
   const arenaData = data?.battleArena || {};
+  const logicLabData = data?.stations?.logic_lab || {};
+
   const STATION_TO_GAME = {
     word_blitz: 'word_blitz',
     sentence_smash: 'sentence_smash',
-    math_quest: 'bar_model',
+    math_quest: 'math_quest',
+    bar_model: 'math_quest',
     science_lab: 'science_lab',
   };
   const [activeGame, setActiveGame] = useState(forcedStation ? (STATION_TO_GAME[forcedStation] || 'word_blitz') : 'word_blitz');
@@ -35,11 +38,8 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
     if (station === 'science_lab') setActiveGame('science_lab');
     else if (station === 'word_blitz') setActiveGame('word_blitz');
     else if (station === 'sentence_smash') setActiveGame('sentence_smash');
-    else if (station === 'math_quest') setActiveGame('bar_model');
+    else if (station === 'math_quest' || station === 'bar_model') setActiveGame('math_quest');
   }, [searchParams, forcedStation]);
-
-  // Quest completion is now handled by TaskScreen, not by switching games
-  // (removed auto-complete that fired on mount/game change)
 
   // Class Co-op Meter: use global userXP as proxy for session XP earned
   const globalXP = useUserStore((state) => state.userXP || 0);
@@ -48,17 +48,24 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
   const coopContribution = Math.min(globalXP % 1000, 1000);
   const coopPercent = Math.round((coopContribution / 1000) * 100);
 
-  const flashArenaData = arenaData.vocabSets || null;
-  const grammarDrills = arenaData.grammarDrills || null;
-  const vocabList = arenaData.vocabList || [];
-  const barModelData = arenaData.barModel || null;
-  const scienceLabData = arenaData.scienceLab || null;
+  const flashArenaData = arenaData.vocabSets || data?.stations?.new_words || null;
+  const grammarDrills = arenaData.grammarDrills || data?.stations?.grammar || null;
+  const vocabList = arenaData.vocabList || data?.stations?.new_words?.vocab_list || [];
+  const barModelData = arenaData.barModel || logicLabData.singapore_math || null;
+  const scienceLabData = arenaData.scienceLab || logicLabData.logic_science || null;
 
   const handleGameComplete = (earnedXP = 30) => {
     setTotalXP(prev => prev + earnedXP);
     if (addGlobalXP) addGlobalXP(earnedXP);
     // Track quest completion for Today's Quest
-    const GAME_QUEST_MAP = { word_blitz: 'word_blitz', sentence_smash: 'sentence_smash', sound_sniper: 'word_blitz', bar_model: 'math_quest', science_lab: 'sentence_smash' };
+    const GAME_QUEST_MAP = {
+      word_blitz: 'word_blitz',
+      sentence_smash: 'sentence_smash',
+      sound_sniper: 'word_blitz',
+      math_quest: 'math_quest',
+      bar_model: 'math_quest',
+      science_lab: 'science_lab',
+    };
     const questId = GAME_QUEST_MAP[activeGame];
     if (questId) useDailyQuestStore.getState().completeQuest(weekNumber, questId);
   };
@@ -101,11 +108,11 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
               {[
-                { id: 'word_blitz', label: '⚡ WORD BLITZ', activeBg: 'bg-amber-500 text-slate-950 ring-amber-300', inactiveBg: 'bg-amber-50 text-amber-900 border-amber-200' },
-                { id: 'sentence_smash', label: '🧱 SENTENCE SMASH', activeBg: 'bg-purple-600 text-white ring-purple-300', inactiveBg: 'bg-purple-50 text-purple-900 border-purple-200' },
+                { id: 'word_blitz', label: '⚡ SPEED MATCH', activeBg: 'bg-amber-500 text-slate-950 ring-amber-300', inactiveBg: 'bg-amber-50 text-amber-900 border-amber-200' },
+                { id: 'sentence_smash', label: '🧱 GRAMMAR DUEL', activeBg: 'bg-purple-600 text-white ring-purple-300', inactiveBg: 'bg-purple-50 text-purple-900 border-purple-200' },
                 { id: 'sound_sniper', label: '🎧 SOUND SNIPER', activeBg: 'bg-blue-600 text-white ring-blue-300', inactiveBg: 'bg-blue-50 text-blue-900 border-blue-200' },
                 { id: 'math_quest', label: '📐 MATH QUEST', activeBg: 'bg-orange-500 text-white ring-orange-300', inactiveBg: 'bg-orange-50 text-orange-900 border-orange-200' },
-                { id: 'science_lab', label: '🧪 SCIENCE LAB', activeBg: 'bg-emerald-600 text-white ring-emerald-300', inactiveBg: 'bg-emerald-50 text-emerald-900 border-emerald-200' },
+                { id: 'science_lab', label: '🧪 ACTION LAB', activeBg: 'bg-emerald-600 text-white ring-emerald-300', inactiveBg: 'bg-emerald-50 text-emerald-900 border-emerald-200' },
               ].map((g) => {
                 const isFeatured = featuredGames.includes(g.id);
                 const isSelected = activeGame === g.id;
@@ -179,3 +186,4 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
     </div>
   );
 }
+
