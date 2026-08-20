@@ -684,6 +684,9 @@ export default function NovaTalkShowHub({ data, weekNumber = 33 }) {
             >
               <Mic size={18} /> {isRecording ? 'Stop Recording (Evaluating Shadowing...)' : 'Start Full Shadowing Recording'}
             </button>
+            <p className="text-xs font-semibold text-slate-500 mt-2 flex items-center gap-1">
+              🎧 <span>Please wear headphones during shadowing for the clearest recording!</span>
+            </p>
           </div>
 
           {podcastScore && (

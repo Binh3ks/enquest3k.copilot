@@ -36,7 +36,7 @@ export default function ShadowingHeader({
             <Globe className="w-3 h-3 mr-1" /> {isVi ? 'VI' : 'EN'}
           </button>
         </h2>
-        <div className="flex items-center gap-3 mt-1">
+        <div className="flex items-center gap-3 mt-1 flex-wrap">
           <p className="text-sm text-slate-600 font-bold">
             {isVi ? 'Nghe và Nhắc lại' : 'Listen & Repeat'}
           </p>
@@ -45,6 +45,9 @@ export default function ShadowingHeader({
               {progress}% {isVi ? 'hoàn thành' : 'completed'}
             </span>
           )}
+          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-amber-200/80 px-2 py-0.5 rounded-full border border-amber-300 shadow-2xs" title="Wearing headphones prevents microphone echo and voice cutting when shadowing simultaneously">
+            🎧 {isVi ? 'Đeo tai nghe khi shadowing để có âm thanh rõ nhất' : 'Wear headphones during shadowing for best audio'}
+          </span>
         </div>
       </div>
 
