@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Menu, CheckCircle2, Lock, Trophy, Settings, ChevronLeft } from 'lucide-react';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { useUserStore } from '../../stores/useUserStore';
@@ -243,9 +243,15 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                   const taskDone = isQuestCompleted(weekId, quest.id);
                   const taskPos = station.taskPositions[qi];
                   return (
-                    <Link
+                    <div
                       key={quest.id}
-                      to={getTaskLink(quest)}
+                      role="button"
+                      tabIndex={0}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(getTaskLink(quest));
+                      }}
+                      onKeyDown={(e) => { if (e.key === 'Enter') navigate(getTaskLink(quest)); }}
                       className={`qm3d-task-dot ${taskDone ? 'done' : ''}`}
                       style={{
                         left: `${taskPos.x}%`,
@@ -261,7 +267,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                       )}
                       <span className="qm3d-task-label">{quest.label}</span>
                       <span className="qm3d-task-time">~{quest.minutes}m</span>
-                    </Link>
+                    </div>
                   );
                 })}
                 {/* Connecting lines from station to tasks */}
