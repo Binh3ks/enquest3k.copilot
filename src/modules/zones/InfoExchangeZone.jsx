@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Volume2, Mic, Square, CheckCircle2, XCircle, HelpCircle, ArrowRight, Sparkles, Award, RotateCcw, Eye, EyeOff, Keyboard } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import LexioMascot from '../../components/mascot/LexioMascot';
+import GrammarHintButton from '../../components/common/GrammarHintButton';
+import MicFallbackInput from '../../components/common/MicFallbackInput';
 
 /**
  * Cambridge Syntax & Word-Order Accuracy Evaluator
@@ -521,36 +523,11 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                 </p>
               </div>
 
-              {/* Collapsible Grammar Structure Hint */}
-              <div className="space-y-2">
-                {!showHintA ? (
-                  <button
-                    type="button"
-                    onClick={() => setShowHintA(true)}
-                    className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-black transition flex items-center gap-1.5 border border-slate-200"
-                  >
-                    💡 Need a grammar hint?
-                  </button>
-                ) : (
-                  <div className="p-3 bg-indigo-50 border border-indigo-200 rounded-xl space-y-1 animate-in fade-in">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-black uppercase text-indigo-700 tracking-wide">
-                        📌 Question Structure Scaffold:
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setShowHintA(false)}
-                        className="text-[10px] text-indigo-500 font-bold underline"
-                      >
-                        Hide
-                      </button>
-                    </div>
-                    <p className="text-xs font-bold text-indigo-950">
-                      {currentCueA?.cue_word?.toUpperCase()} + did + [subject] + [base verb] ... ?
-                    </p>
-                  </div>
-                )}
-              </div>
+              {/* Reusable Grammar Structure Hint */}
+              <GrammarHintButton
+                hintText={`${currentCueA?.cue_word?.toUpperCase()} + did + [subject] + [base verb] ... ?`}
+                label="Need a grammar hint?"
+              />
 
               {/* Central Voice Recording / Keyboard Input */}
               {!evalResultA ? (
@@ -579,46 +556,26 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                       <p className="text-xs font-black text-slate-600">
                         {isRecordingA ? '🔴 Listening... Speak your question clearly!' : 'Tap SPEAK and ask Nova your question'}
                       </p>
-                      <button
-                        type="button"
-                        onClick={() => setShowTextInputA(true)}
-                        className="text-[11px] font-bold text-slate-400 hover:text-slate-600 flex items-center gap-1 mt-1 underline"
-                      >
-                        <Keyboard size={13} /> Microphone not working? Type instead
-                      </button>
-                    </>
-                  ) : (
-                    <div className="w-full space-y-3 animate-in fade-in">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-black text-slate-700">Type your question:</span>
-                        <button
-                          type="button"
-                          onClick={() => setShowTextInputA(false)}
-                          className="text-[11px] text-slate-500 underline"
-                        >
-                          Use Mic instead
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        value={manualTextA}
-                        onChange={e => setManualTextA(e.target.value)}
-                        placeholder={`e.g. Where did Tom get injured?`}
-                        className="w-full p-3 rounded-xl border-2 border-amber-300 focus:border-amber-500 outline-none text-sm font-bold text-slate-900"
-                        onKeyDown={e => { if (e.key === 'Enter') handleManualSubmitA(); }}
+                      <MicFallbackInput
+                        onSubmit={(typedText) => {
+                          setManualTextA(typedText);
+                          setTranscriptA(typedText);
+                          const evalRes = evaluateSpeechInput(typedText, currentCueA?.acceptable_questions || [], currentCueA?.cue_word || '');
+                          setEvalResultA(evalRes);
+                          if (evalRes.isCorrect) {
+                            setCompletedIdsA(prev => new Set([...prev, currentCueA.id]));
+                            setTimeout(() => speakText(currentCueA.nova_reply), 600);
+                          } else {
+                            setRetryCountA(prev => prev + 1);
+                          }
+                        }}
+                        placeholder="e.g. Where did Tom get injured?"
                       />
-                      <button
-                        type="button"
-                        onClick={handleManualSubmitA}
-                        disabled={!manualTextA.trim()}
-                        className="w-full py-2.5 bg-amber-500 hover:bg-amber-400 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow transition"
-                      >
-                        Submit Question →
-                      </button>
-                    </div>
-                  )}
+                    </>
+                  ) : null}
                 </div>
               ) : (
+
                 /* AI Feedback & Evaluation Card */
                 <div className="space-y-4 animate-in fade-in">
                   {/* Student's Spoken Question & Evaluation */}
@@ -797,46 +754,24 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
                       <p className="text-xs font-black text-slate-600">
                         {isRecordingB ? '🔴 Listening... Speak your answer based on Table B!' : 'Tap ANSWER and speak your response'}
                       </p>
-                      <button
-                        type="button"
-                        onClick={() => setShowTextInputB(true)}
-                        className="text-[11px] font-bold text-slate-400 hover:text-slate-600 flex items-center gap-1 mt-1 underline"
-                      >
-                        <Keyboard size={13} /> Microphone not working? Type instead
-                      </button>
-                    </>
-                  ) : (
-                    <div className="w-full space-y-3 animate-in fade-in">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-black text-slate-700">Type your answer:</span>
-                        <button
-                          type="button"
-                          onClick={() => setShowTextInputB(false)}
-                          className="text-[11px] text-slate-500 underline"
-                        >
-                          Use Mic instead
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        value={manualTextB}
-                        onChange={e => setManualTextB(e.target.value)}
-                        placeholder={`e.g. He called the school nurse immediately.`}
-                        className="w-full p-3 rounded-xl border-2 border-purple-300 focus:border-purple-500 outline-none text-sm font-bold text-slate-900"
-                        onKeyDown={e => { if (e.key === 'Enter') handleManualSubmitB(); }}
+                      <MicFallbackInput
+                        onSubmit={(typedText) => {
+                          setManualTextB(typedText);
+                          setTranscriptB(typedText);
+                          const evalRes = evaluateSpeechInput(typedText, currentFieldB?.acceptable_answers || []);
+                          setEvalResultB(evalRes);
+                          if (!evalRes.isCorrect) {
+                            setRetryCountB(prev => prev + 1);
+                          }
+                        }}
+                        placeholder="e.g. He called the school nurse immediately."
+                        color="purple"
                       />
-                      <button
-                        type="button"
-                        onClick={handleManualSubmitB}
-                        disabled={!manualTextB.trim()}
-                        className="w-full py-2.5 bg-purple-600 hover:bg-purple-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow transition"
-                      >
-                        Submit Answer →
-                      </button>
-                    </div>
-                  )}
+                    </>
+                  ) : null}
                 </div>
               ) : (
+
                 /* AI Feedback & Model Answer Evaluation */
                 <div className="space-y-4 animate-in fade-in">
                   <div className={`p-4 rounded-2xl border-2 ${

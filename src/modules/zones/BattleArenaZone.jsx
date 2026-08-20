@@ -73,24 +73,16 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
   return (
     <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
       {/* Slim Session XP bar */}
-      <div className="flex items-center justify-between px-3 py-2 bg-amber-50 border border-amber-300 rounded-2xl text-xs">
-        <span className="font-black text-amber-950 flex items-center gap-1.5"><Swords size={13} /> ⚔️ BATTLE ARENA</span>
+      <div className="flex items-center justify-between px-4 py-2.5 bg-amber-50 border border-amber-300 rounded-2xl text-xs shadow-sm">
+        <span className="font-black text-amber-950 flex items-center gap-1.5"><Swords size={14} className="text-amber-600" /> ⚔️ BATTLE ARENA</span>
         <div className="flex items-center gap-2">
-          <span className="text-amber-700 font-bold">Session:</span>
-          <div className="px-3 py-0.5 bg-amber-500 text-slate-950 rounded-xl font-black flex items-center gap-1">
+          <span className="text-amber-700 font-bold">Session XP:</span>
+          <div className="px-3 py-1 bg-amber-500 text-slate-950 rounded-xl font-black flex items-center gap-1 shadow-sm">
             <Trophy size={12} /> +{totalXP} XP
           </div>
         </div>
       </div>
 
-      {/* Class Co-op Strip — compact 1-row */}
-      <div className="flex items-center gap-3 px-3 py-2 bg-gradient-to-r from-indigo-900 to-purple-900 text-white rounded-2xl border border-purple-500/40 text-xs font-sans">
-        <span className="font-black text-amber-300 whitespace-nowrap shrink-0">🤝 CO-OP: {coopContribution}/1000 XP</span>
-        <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full transition-all duration-700" style={{ width: `${Math.max(2, coopPercent)}%` }} />
-        </div>
-        <span className="font-bold text-purple-200 shrink-0">{coopPercent}%</span>
-      </div>
 
       {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}
       {!hideStationTabs && (() => {

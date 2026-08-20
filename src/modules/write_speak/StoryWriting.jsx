@@ -22,6 +22,7 @@ import { renderParsedText } from '../../components/common/HoverWord';
 import { getImageUrl } from '../../utils/imageUrl';
 import { evaluateCambridgeCriteria } from '../../utils/cambridgeCriteria';
 import { speakText } from '../../utils/AudioHelper';
+import GrammarHintButton from '../../components/common/GrammarHintButton';
 
 const DEFAULT_W33_PICTURE_MODE = {
   type: "picture",
@@ -315,13 +316,14 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
         </div>
       )}
 
-      {/* Grammar Hint badge */}
+      {/* Reusable Grammar Hint Button (hidden by default) */}
       {currentPanel?.grammar_hint && !currentFreeMode && (
-        <div className={`flex items-center gap-2 px-3 py-2 ${colors.badge} rounded-xl border ${colors.border} text-xs font-bold`}>
-          <span>📌</span>
-          <span>{currentPanel.grammar_hint}</span>
-        </div>
+        <GrammarHintButton
+          hintText={currentPanel.grammar_hint}
+          label="💡 Need a grammar hint for this scene?"
+        />
       )}
+
 
       {/* Vocabulary Pills — per panel only */}
       {!currentFreeMode && currentPanel?.pills?.length > 0 && (
