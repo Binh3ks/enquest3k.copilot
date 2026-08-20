@@ -136,7 +136,7 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
 
   const handleShowHint = () => {
     setShowHint(true);
-    setHintCountdown(10);
+    setHintCountdown(15);
     if (currentPanel?.sentence_frame) speakText(currentPanel.sentence_frame);
   };
 
@@ -306,6 +306,14 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
           {currentPanel?.caption}
         </span>
       </div>
+
+      {/* Character Role Identification Banner */}
+      {currentPanel?.character_guide && (
+        <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 border border-slate-300/80 rounded-xl text-[11px] font-bold text-slate-700">
+          <span className="text-sm">🏷️</span>
+          <span>Characters: <strong className="text-slate-900">{currentPanel.character_guide}</strong></span>
+        </div>
+      )}
 
       {/* Grammar Hint badge */}
       {currentPanel?.grammar_hint && !currentFreeMode && (

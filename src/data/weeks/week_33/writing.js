@@ -47,12 +47,13 @@ export default {
       {
         id: 1,
         image_url: "/images/week33/writing_panel_1.png",
-        caption: "Panel 1: Running in corridor",
+        caption: "Panel 1: Jake walks carefully while another student runs",
+        character_guide: "Jake (walking carefully) vs. Student (running fast)",
         action_tags: ["running", "walking", "corridor", "warning sign"],
-        nova_question_en: "Where does the story begin? Look closely at the picture — what is happening in the corridor?",
-        pills: ["was running very fast,", "down the school corridor,", "was walking carefully,", "On a Monday morning,", "near the yellow warning sign,"],
-        grammar_hint: "Past Continuous: was/were + verb-ing (e.g. was running, was walking)",
-        sentence_frame: "While a student was running fast in the corridor, Jake...",
+        nova_question_en: "Where does the story begin? Look closely — Jake was walking carefully, but what was another student doing?",
+        pills: ["was walking carefully,", "down the school corridor,", "a student was running fast,", "near the yellow warning sign,", "On a Monday morning,"],
+        grammar_hint: "Past Continuous: was/were + verb-ing (e.g. was walking, was running)",
+        sentence_frame: "Jake was walking carefully when a student ran fast past him.",
         pill_color: "blue",
       },
       {
