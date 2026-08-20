@@ -99,12 +99,13 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
   };
 
-  // Auto-complete Gear 4 (CLIL) quest when user enters it (no "next" button after)
+  // Auto-complete Gear 4 (CLIL) quest when user navigates into it organically
+  // Guard: only fires in normal zone mode (no forcedGear), not when TaskScreen mounts with forcedGear=4
   useEffect(() => {
-    if (currentGear === 4) {
+    if (currentGear === 4 && !forcedGear) {
       useDailyQuestStore.getState().completeQuest(weekNumber, 'gear4_clil');
     }
-  }, [currentGear, weekNumber]);
+  }, [currentGear, weekNumber, forcedGear]);
 
   // Word-by-Word Karaoke Highlighting Simulation
   const handleSpeakSentence = (sentenceText, idx) => {
