@@ -1,0 +1,105 @@
+/* TaskScreen — Full-screen task wrapper */
+
+.ts-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.ts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 50;
+  flex-shrink: 0;
+}
+
+.ts-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ts-back-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.ts-task-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ts-task-icon {
+  font-size: 20px;
+}
+
+.ts-task-name {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  color: #1e293b;
+}
+
+.ts-task-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.ts-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ts-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+}
+
+.ts-loading p {
+  font-size: 14px;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.ts-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  text-align: center;
+}
+
+.ts-error h2 {
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #334155;
+}

@@ -58,6 +58,8 @@ import BossBattleZone from './modules/zones/BossBattleZone';
 import { mapDataToZones } from './config/zoneDataMapper';
 import TodayQuestBar from './components/common/TodayQuestBar';
 import QuestMap from './components/common/QuestMap';
+import QuestMap3D from './components/questmap/QuestMap3D';
+import TaskScreen from './components/questmap/TaskScreen';
 import OnboardingFlow from './components/onboarding/OnboardingFlow';
 import SubscriptionModal from './components/subscription/SubscriptionModal';
 
@@ -214,6 +216,7 @@ const App = () => {
       <Route path="/dashboard/:weekId" element={<ParentDashboard />} />
       <Route path="/parent/children" element={<ParentChildrenPage />} />
       <Route path="/week/:weekId/hub/:hubId" element={<MainLayout />} />
+      <Route path="/week/:weekId/task/:taskId" element={<MainLayout isTaskMode={true} />} />
       <Route path="/week/:weekId/:tabKey" element={<MainLayout />} />
 
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
@@ -235,7 +238,7 @@ const App = () => {
 };
 
 
-const MainLayout = () => {
+const MainLayout = ({ isTaskMode = false }) => {
   // Global state from Zustand store
   const { 
     currentUser, 
@@ -276,6 +279,7 @@ const MainLayout = () => {
   const [showAssessment, setShowAssessment] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(() => !localStorage.getItem('engquest_onboarded'));
   const [pendingAssessment, setPendingAssessment] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   
   const scrollContainerRef = useRef(null);
 
@@ -644,9 +648,52 @@ const MainLayout = () => {
   const isTeacher = STAFF_ROLES.includes(currentUser?.role);
   const CurrentModule = MODULE_COMPONENTS[tabKey] || StationLoading;
 
+  // === TASK MODE: Full-screen individual task (no sidebar, no header) ===
+  if (isTaskMode && weekId >= 33) {
+    const mappedZones = mapDataToZones(weekData, weekId);
+    return (
+      <>
+        {showOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
+        <TaskScreen weekData={mappedZones} weekId={weekId} />
+      </>
+    );
+  }
+
+  // === QUEST MAP 3D MODE: Full-screen adventure map (no sidebar) for W33+ hub views ===
+  const isQuestMapView = weekId >= 33 && (hubId || tabKey === 'read_explore');
+  if (isQuestMapView && !isTaskMode) {
+    return (
+      <>
+        {showOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
+        <QuestMap3D
+          weekId={weekId}
+          onToggleSidebar={() => setSidebarOpen(prev => !prev)}
+        />
+        {/* Sidebar overlay (hamburger menu) */}
+        {sidebarOpen && (
+          <div className="fixed inset-0 z-[9990]">
+            <div className="absolute inset-0 bg-black/40" onClick={() => setSidebarOpen(false)} />
+            <div className="absolute left-0 top-0 bottom-0 w-72 bg-white shadow-2xl animate-[slideInLeft_0.3s_ease-out]">
+              <Sidebar
+                currentUser={currentUser}
+                isTeacher={isTeacher}
+                weekId={weekId}
+                STATIONS={STATIONS}
+                tabKey={tabKey}
+                onProfileClick={() => setIsProfileModalOpen(true)}
+                sidebarOpen={true}
+                onAdminDashboard={() => setIsAdminDashboardOpen(true)}
+              />
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }
+
   return (
     <>
-      {/* Onboarding — 5-step first-time experience */}
+      {/* Onboarding — 7-step first-time experience */}
       {showOnboarding && (
         <OnboardingFlow onComplete={() => setShowOnboarding(false)} />
       )}
