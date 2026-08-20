@@ -253,7 +253,7 @@ graph TD
 #### 15. 🏆 Speaking & Passport (`weekly_review` — 5 Khiên Nói & Hộ Chiếu)
 *   **Speaking Suite**:
     - *Part 1 (Find Differences)*: So sánh 2 bức tranh Side-by-side và nói 4 điểm khác biệt (`In Picture A... but in Picture B...`).
-    - *Part 2 (Information Exchange)*: Đặt câu hỏi W-H ngược lại cho giám khảo dựa trên thẻ thông tin Cue-Card.
+    - *Part 2 (Information Exchange)*: Đặt câu hỏi W-H ngược lại cho giám khảo dựa trên thẻ thông tin Cue-Card chuẩn Cambridge Flyers (`where / get injured?`, `what / hurt?`...).
     - *Part 3 (5-Picture Story)*: Giám khảo dẫn nhập Tranh 1 $\rightarrow$ Thí sinh kể tiếp liên hoàn Tranh 2, 3, 4, 5.
     - *Part 4 (Personal Q&A)*: Trả lời 5 câu hỏi liên hệ bản thân về chủ đề tuần.
 *   **Explorer Passport Seal**: Sau khi hoàn thành, hệ thống tổng kết số khiên đạt được trên tổng số 15 khiên, bắn pháo hoa Confetti và đóng mộc huy hiệu số vào Hộ chiếu Học tập của học sinh.
