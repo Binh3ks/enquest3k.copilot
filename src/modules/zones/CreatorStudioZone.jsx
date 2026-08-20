@@ -179,7 +179,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
       {/* Slim Game Instruction Bar */}
       <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
         <span className="font-black text-purple-950 flex items-center gap-1.5">
-          🎨 CREATOR STUDIO — Produce your story script, broadcast episode, science report or AI debate!
+          🎨 CREATOR STUDIO — Write your story, go on the air, debate, or file your science report!
         </span>
         <div className="px-3 py-1 bg-purple-600 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
           <Trophy size={14} className="text-amber-300" />
@@ -199,7 +199,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
                 : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
             }`}
           >
-            ✏️ STORY WRITER {storySubmission && <span className="ml-1 text-emerald-400">✓</span>}
+            ✏️ AUTHOR'S DEN
           </button>
           <button
             type="button"
@@ -210,7 +210,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
                 : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
             }`}
           >
-            ⚡ BRAIN REFRESH
+            🎧 BRAIN REFRESH
           </button>
           <button
             type="button"
@@ -221,7 +221,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
                 : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
             }`}
           >
-            🎙️ BROADCAST
+            📻 HOT MIC
           </button>
           <button
             type="button"
@@ -232,7 +232,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
                 : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
             }`}
           >
-            🔬 SCIENCE REPORT
+            📝 FIELD REPORT
           </button>
           <button
             type="button"
@@ -243,7 +243,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
                 : 'bg-indigo-50 text-indigo-900 border border-indigo-200 hover:bg-indigo-100'
             }`}
           >
-            🎤 AI DEBATE
+            🎭 DEBATE ARENA
           </button>
         </div>
       </div>}

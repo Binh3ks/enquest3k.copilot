@@ -4,7 +4,7 @@ import { Film, Headphones, Mic, Globe, CheckCircle2 } from 'lucide-react';
 export const STORY_GEARS = [
   {
     level: 1,
-    name: '3D Webtoon',
+    name: 'Scene Scroll',
     icon: Film,
     activeBg: 'bg-cyan-500 text-slate-950 border-cyan-400 ring-2 ring-cyan-300 scale-[1.02]',
     inactiveBg: 'bg-cyan-50 hover:bg-cyan-100 text-cyan-900 border-cyan-200',
@@ -14,33 +14,33 @@ export const STORY_GEARS = [
   },
   {
     level: 2,
-    name: 'Audio Narration',
+    name: 'Echo Drill',
     icon: Headphones,
     activeBg: 'bg-amber-500 text-slate-950 border-amber-400 ring-2 ring-amber-300 scale-[1.02]',
     inactiveBg: 'bg-amber-50 hover:bg-amber-100 text-amber-900 border-amber-200',
     iconActive: 'bg-slate-950 text-amber-300',
     iconInactive: 'bg-amber-200 text-amber-900',
-    desc: 'Listen to full story • Tap any sentence to replay audio instantly'
+    desc: 'Shadowing drill • Listen sentence by sentence, then record your own voice'
   },
   {
     level: 3,
-    name: 'Retell to Nova',
+    name: "Nova's Story Pit",
     icon: Mic,
     activeBg: 'bg-purple-600 text-white border-purple-400 ring-2 ring-purple-300 scale-[1.02]',
     inactiveBg: 'bg-purple-50 hover:bg-purple-100 text-purple-900 border-purple-200',
     iconActive: 'bg-purple-950 text-amber-300',
     iconInactive: 'bg-purple-200 text-purple-900',
-    desc: 'Record 30s voice retell • Get instant cheerful mascot feedback'
+    desc: 'Retell the story to Nova step-by-step • Instant voice feedback'
   },
   {
     level: 4,
-    name: 'CLIL Knowledge Explorer',
+    name: 'Lab Briefing',
     icon: Globe,
     activeBg: 'bg-emerald-600 text-white border-emerald-400 ring-2 ring-emerald-300 scale-[1.02]',
     inactiveBg: 'bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border-emerald-200',
     iconActive: 'bg-emerald-950 text-emerald-300',
     iconInactive: 'bg-emerald-200 text-emerald-900',
-    desc: 'Explore 2 article paragraphs with check questions after each part'
+    desc: 'CLIL world knowledge briefing • Answer 3 check questions per section'
   }
 ];
 
