@@ -12,24 +12,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EngQuest: Kids Edition</title>
     <script>
+      // Vite dynamic import error handler — auto reloads on new deployment chunk hash change
+      window.addEventListener('vite:preloadError', function(event) {
+        console.warn('[AssetRecovery] Vite preload error caught:', event);
+        event.preventDefault();
+        window.location.reload();
+      });
       window.addEventListener('error', function(e) {
-        if (e && e.target && e.target.tagName === 'SCRIPT' && e.target.src && (e.target.src.includes('/assets/') || e.target.src.includes('chunk'))) {
+        if (e && e.target && e.target.tagName === 'SCRIPT' && e.target.src && (e.target.src.includes('/assets/') || e.target.src.includes('chunk') || e.target.src.includes('.js'))) {
           console.warn('[AssetRecovery] Stale asset load error caught:', e.target.src);
           var lastReload = parseInt(sessionStorage.getItem('asset_reload_time') || '0', 10);
-          if (Date.now() - lastReload > 3000) {
+          if (Date.now() - lastReload > 2000) {
             sessionStorage.setItem('asset_reload_time', String(Date.now()));
-            if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.getRegistrations().then(function(regs) {
-                regs.forEach(function(r) { r.unregister(); });
-              });
-            }
             if ('caches' in window) {
               caches.keys().then(function(keys) {
                 keys.forEach(function(k) { caches.delete(k); });
               });
             }
             setTimeout(function() {
-              window.location.href = window.location.pathname + '?r=' + Date.now();
+              window.location.href = window.location.pathname + '?v=' + Date.now();
             }, 100);
           }
         }
