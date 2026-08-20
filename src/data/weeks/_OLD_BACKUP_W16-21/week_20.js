@@ -1,1 +1,0 @@
-export { default } from './week_20/index.js';

@@ -10,43 +10,12 @@ import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
 import useTutorStore from '../../../services/ai_tutor/tutorStore';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
-import week1RealData from '../../../data/weeks/week_01_real'; // Week 1 syllabus
-import week2RealData from '../../../data/weeks/week_02_real?v=3'; // Week 2 syllabus - CACHE BUST (mission_context added)
-import week3RealData from '../../../data/weeks/week_03_real'; // Week 3 syllabus
-import week4RealData from '../../../data/weeks/week_04_real'; // Week 4 syllabus
-import week5RealData from '../../../data/weeks/week_05_real'; // Week 5 syllabus
-import week6RealData from '../../../data/weeks/week_06_real'; // Week 6 syllabus
-import week7RealData from '../../../data/weeks/week_07_real'; // Week 7 syllabus
-import week8RealData from '../../../data/weeks/week_08_real'; // Week 8 syllabus
-import week9RealData from '../../../data/weeks/week_09_real'; // Week 9 syllabus - City Sounds & Sights
-import week10RealData from '../../../data/weeks/week_10_real'; // Week 10 syllabus - The Farm Adventure
-import week11RealData from '../../../data/weeks/week_11_real'; // Week 11 syllabus - Weekend Fun Spots
-import week12RealData from '../../../data/weeks/week_12_real'; // Week 12 syllabus - The Talent Show
-import week13RealData from '../../../data/weeks/week_13_real'; // Week 13 syllabus - Daily Routines
-import week14RealData from '../../../data/weeks/week_14_real'; // Week 14 syllabus - Welcome to My World
-import week15RealData from '../../../data/weeks/week_15_real'; // Week 15 syllabus - The Busy Park
-import week16RealData from '../../../data/weeks/week_16_real'; // Week 16 syllabus - Sports Commentary
-import week17RealData from '../../../data/weeks/week_17_real'; // Week 17 syllabus - Weather & Clothes
-import week18RealData from '../../../data/weeks/week_18_real'; // Week 18 syllabus - The Live Reporter
-import week19RealData from '../../../data/weeks/week_19_real'; // Week 19 syllabus - When I Was Small
-import week20RealData from '../../../data/weeks/week_20_real'; // Week 20 syllabus - The Old Town Mystery
-import week21RealData from '../../../data/weeks/week_21_real'; // Week 21 syllabus - Yesterday's Diary
-import week22RealData from '../../../data/weeks/week_22_real'; // Week 22 syllabus - The Time Detective
-import week23RealData from '../../../data/weeks/week_23_real'; // Week 23 syllabus - The Art Class
-import week24RealData from '../../../data/weeks/week_24_real'; // Week 24 syllabus - Feelings in the Past
-import week25RealData from '../../../data/weeks/week_25_real'; // Week 25 syllabus - The Sequence Challenge
-import week26RealData from '../../../data/weeks/week_26_real'; // Week 26 syllabus - My Weekend Comic Strip
-import week27RealData from '../../../data/weeks/week_27/week_27_real'; // Week 27 syllabus - Maya's Growing Plant
-import week28RealData from '../../../data/weeks/week_28_real'; // Week 28 syllabus - The Tortoise and the Hare
-import week29RealData from '../../../data/weeks/week_29/week_29_real'; // Week 29 syllabus - Off We Go! Irregular Verbs 1
-import week30RealData from '../../../data/weeks/week_30/week_30_real'; // Week 30 syllabus - The Perfect Picnic Irregular Verbs 2
-import week31RealData from '../../../data/weeks/week_31/week_31_real'; // Week 31 syllabus - The Senses Irregular Verbs 3
-import week32RealData from '../../../data/weeks/week_32/week_32_real'; // Week 32 syllabus
-import week33RealData from '../../../data/weeks/week_33/week_33_real'; // Week 33 syllabus - The Mistake Irregular Verbs 5 - The Busy Day Irregular Verbs 4
-import week34RealData from '../../../data/weeks/week_34/week_34_real'; // Week 34 syllabus - Storytelling Fable
-import week35RealData from '../../../data/weeks/week_35/week_35_real'; // Week 35 syllabus - Environmental Issues
-import week36RealData from '../../../data/weeks/week_36_real?v=10'; // Week 36 syllabus - Adventure Stories (CACHE BUST)
-import week37RealData from '../../../data/weeks/week_37_real'; // Week 37 syllabus - The Sports Day Challenge
+// W33+ real data — W01-32 archived at tag v1-w01-w32-final-20260820
+import week33RealData from '../../../data/weeks/week_33/week_33_real'; // Week 33 syllabus
+import week34RealData from '../../../data/weeks/week_34/week_34_real'; // Week 34 syllabus
+import week35RealData from '../../../data/weeks/week_35/week_35_real'; // Week 35 syllabus
+import week36RealData from '../../../data/weeks/week_36/week_36_real'; // Week 36 syllabus
+import week37RealData from '../../../data/weeks/week_37/week_37_real'; // Week 37 syllabus
 import { getAdaptivePromptAdjustment, getRecommendedScaffoldingLevel } from '../../../services/ai_tutor/learnerProfiler'; // 🔥 NEW
 import { useLocation } from 'react-router-dom'; // 🔥 Get weekId from URL pathname
 import TTSSettingsPanel from '../components/TTSSettingsPanel';
@@ -152,8 +121,15 @@ const StoryMissionTab = () => {
   const [currentQuestion, setCurrentQuestion] = useState('');
   const [studentName, setStudentName] = useState(savedData.studentName || user?.display_name || user?.name || user?.username || null); // Pre-seed from profile display name
   
-  // 🔥 Dynamic week data selection based on current week (Fallback: Week 7 - Golden Standard)
-  const weekRealData = weekNumber === 1 ? week1RealData : weekNumber === 2 ? week2RealData : weekNumber === 3 ? week3RealData : weekNumber === 4 ? week4RealData : weekNumber === 5 ? week5RealData : weekNumber === 6 ? week6RealData : weekNumber === 7 ? week7RealData : weekNumber === 8 ? week8RealData : weekNumber === 9 ? week9RealData : weekNumber === 10 ? week10RealData : weekNumber === 11 ? week11RealData : weekNumber === 12 ? week12RealData : weekNumber === 13 ? week13RealData : weekNumber === 14 ? week14RealData : weekNumber === 15 ? week15RealData : weekNumber === 16 ? week16RealData : weekNumber === 17 ? week17RealData : weekNumber === 18 ? week18RealData : weekNumber === 19 ? week19RealData : weekNumber === 20 ? week20RealData : weekNumber === 21 ? week21RealData : weekNumber === 22 ? week22RealData : weekNumber === 23 ? week23RealData : weekNumber === 24 ? week24RealData : weekNumber === 25 ? week25RealData : weekNumber === 26 ? week26RealData : weekNumber === 27 ? week27RealData : weekNumber === 28 ? week28RealData : weekNumber === 29 ? week29RealData : weekNumber === 30 ? week30RealData : weekNumber === 31 ? week31RealData : weekNumber === 32 ? week32RealData : weekNumber === 33 ? week33RealData : weekNumber === 34 ? week34RealData : weekNumber === 35 ? week35RealData : weekNumber === 36 ? week36RealData : weekNumber === 37 ? week37RealData : week7RealData;
+  // W33+ real data map — lookup by weekNumber, fallback to W33
+  const WEEK_REAL_DATA_MAP = {
+    33: week33RealData,
+    34: week34RealData,
+    35: week35RealData,
+    36: week36RealData,
+    37: week37RealData,
+  };
+  const weekRealData = WEEK_REAL_DATA_MAP[weekNumber] ?? week33RealData;
   const currentMission = weekRealData.story_missions?.[currentMissionIndex];
   
   // 🔥 DEBUG: Log week data on mount
