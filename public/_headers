@@ -1,10 +1,11 @@
-# Never cache HTML pages or SPA routes (e.g. /week/*, /dashboard) — ensures latest JS bundle is fetched
+# Never cache HTML pages — forces edge + browser to always revalidate on deploy
 /*
   Cache-Control: no-cache, no-store, must-revalidate
   Pragma: no-cache
-  CDN-Cache-Control: no-store
   Surrogate-Control: no-store
+  CDN-Cache-Control: no-store, must-revalidate
   Cloudflare-CDN-Cache-Control: no-store
+  Vary: Accept-Encoding
 
 # Cache hashed assets forever (filename changes on every build)
 /assets/*
