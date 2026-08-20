@@ -355,9 +355,12 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
   const [phase, setPhase] = useState(PHASES.INTRO);
   const [shieldsEarned, setShieldsEarned] = useState(0);
 
-  // Hydrate data from weekData
+  // Hydrate data — covers all known paths through mappedZones / weekData / rawWeekData
   const infoExData = data?.cue_card_info_exchange
+    || data?.rawWeekData?.cue_card_info_exchange
+    || data?.rawWeekData?.speakingHub?.cue_card_info_exchange
     || data?.speakingHub?.cue_card_info_exchange
+    || data?.bossBattle?.speaking?.p2_cueCard
     || data?.stations?.ask_ai?.cue_card_info_exchange
     || null;
 

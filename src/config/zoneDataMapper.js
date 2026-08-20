@@ -22,7 +22,15 @@ export function mapDataToZones(weekData, weekNumber = 33) {
     rawWeekData: weekData,
     stations: weekData.stations || {},
     word_power: weekData.stations?.word_power || weekData.word_power || null,
-    
+    // Info Exchange — Cambridge Speaking Part 2 (forwarded directly to root)
+    cue_card_info_exchange: weekData.cue_card_info_exchange
+      || weekData.speakingHub?.cue_card_info_exchange
+      || weekData.stations?.ask_ai?.cue_card_info_exchange
+      || null,
+    cue_card_prompts: weekData.cue_card_prompts
+      || weekData.speakingHub?.cue_card_prompts
+      || null,
+
     // ZONE 1: STORY WORLD
     storyWorld: {
       storyScenes: readingHub.story_scenes || readingHub.read_explore?.story_scenes || [],
