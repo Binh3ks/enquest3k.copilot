@@ -4,7 +4,7 @@ import { Film, Headphones, Mic, Globe, CheckCircle2 } from 'lucide-react';
 export const STORY_GEARS = [
   {
     level: 1,
-    name: 'Scene Scroll',
+    name: 'Scene Explorer',
     icon: Film,
     activeBg: 'bg-cyan-500 text-slate-950 border-cyan-400 ring-2 ring-cyan-300 scale-[1.02]',
     inactiveBg: 'bg-cyan-50 hover:bg-cyan-100 text-cyan-900 border-cyan-200',
@@ -14,17 +14,17 @@ export const STORY_GEARS = [
   },
   {
     level: 2,
-    name: 'Echo Drill',
+    name: 'Voice Shadow',
     icon: Headphones,
     activeBg: 'bg-amber-500 text-slate-950 border-amber-400 ring-2 ring-amber-300 scale-[1.02]',
     inactiveBg: 'bg-amber-50 hover:bg-amber-100 text-amber-900 border-amber-200',
     iconActive: 'bg-slate-950 text-amber-300',
     iconInactive: 'bg-amber-200 text-amber-900',
-    desc: 'Shadowing drill • Listen sentence by sentence, then record your own voice'
+    desc: 'Voice shadowing drill • Listen sentence by sentence, then record your own voice'
   },
   {
     level: 3,
-    name: "Nova's Story Pit",
+    name: 'Story Retell',
     icon: Mic,
     activeBg: 'bg-purple-600 text-white border-purple-400 ring-2 ring-purple-300 scale-[1.02]',
     inactiveBg: 'bg-purple-50 hover:bg-purple-100 text-purple-900 border-purple-200',
@@ -34,13 +34,13 @@ export const STORY_GEARS = [
   },
   {
     level: 4,
-    name: 'Lab Briefing',
+    name: 'Fact Finder',
     icon: Globe,
     activeBg: 'bg-emerald-600 text-white border-emerald-400 ring-2 ring-emerald-300 scale-[1.02]',
     inactiveBg: 'bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border-emerald-200',
     iconActive: 'bg-emerald-950 text-emerald-300',
     iconInactive: 'bg-emerald-200 text-emerald-900',
-    desc: 'CLIL world knowledge briefing • Answer 3 check questions per section'
+    desc: 'World knowledge briefing • Answer 3 check questions per section'
   }
 ];
 

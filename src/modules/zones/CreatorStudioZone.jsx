@@ -206,7 +206,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
                 : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
             }`}
           >
-            ✏️ AUTHOR'S DEN
+            ✏️ STORY WRITER
           </button>
           <button
             type="button"
@@ -239,7 +239,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
                 : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
             }`}
           >
-            📝 FIELD REPORT
+            📝 DISCOVERY REPORT
           </button>
           <button
             type="button"
