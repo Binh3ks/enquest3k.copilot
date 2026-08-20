@@ -5,6 +5,7 @@ import { SentenceBuilderBattle } from '../hubs/station2/LearnMode/SentenceBuilde
 import SoundSniper from '../../components/zones/SoundSniper';
 import BarModelQuest from '../hubs/station2/LearnMode/BarModelQuest';
 import ScienceDragDropLab from '../hubs/station2/LearnMode/ScienceDragDropLab';
+import WordPower from '../power/WordPower';
 import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
@@ -12,7 +13,7 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 export default function BattleArenaZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
   const arenaData = data?.battleArena || {};
-  const STATION_TO_GAME = { word_blitz: 'word_blitz', word_power: 'word_blitz', sentence_smash: 'sentence_smash', math_quest: 'bar_model' };
+  const STATION_TO_GAME = { word_blitz: 'word_blitz', word_power: 'word_power', sentence_smash: 'sentence_smash', math_quest: 'bar_model' };
   const [activeGame, setActiveGame] = useState(forcedStation ? (STATION_TO_GAME[forcedStation] || 'word_blitz') : 'word_blitz');
   const [totalXP, setTotalXP] = useState(0);
 
@@ -30,7 +31,7 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
     if (station === 'word_blitz') setActiveGame('word_blitz');
     else if (station === 'sentence_smash') setActiveGame('sentence_smash');
     else if (station === 'math_quest') setActiveGame('bar_model');
-    else if (station === 'word_power') setActiveGame('word_blitz');
+    else if (station === 'word_power') setActiveGame('word_power');
   }, [searchParams, forcedStation]);
 
   // Quest completion is now handled by TaskScreen, not by switching games
@@ -137,6 +138,14 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
             customSets={flashArenaData}
             weekNumber={weekNumber}
             onComplete={(pts) => handleGameComplete(pts > 0 ? 40 : 0)}
+          />
+        )}
+
+        {activeGame === 'word_power' && (
+          <WordPower
+            data={data?.word_power || data?.stations?.word_power || arenaData?.wordPower || data}
+            themeColor="amber"
+            onReportProgress={() => handleGameComplete(40)}
           />
         )}
 

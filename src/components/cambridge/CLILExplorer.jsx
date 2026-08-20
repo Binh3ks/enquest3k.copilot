@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Globe, Volume2, CheckCircle2, AlertCircle, BookOpen, RotateCcw, HelpCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Globe, Volume2, CheckCircle2, AlertCircle, BookOpen, RotateCcw, HelpCircle, ArrowRight, Sparkles, Award } from 'lucide-react';
 import { renderParsedText } from '../common/HoverWord';
 import VoiceService from '../../services/voiceService';
 import { useUserStore } from '../../stores/useUserStore';
+import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 
 export default function CLILExplorer({
@@ -12,12 +14,13 @@ export default function CLILExplorer({
   setHighlightMode,
   targetGrammarRegex = []
 }) {
+  const navigate = useNavigate();
+  const [currentPhase, setCurrentPhase] = useState(1); // 1: Part 1, 2: Part 2, 3: Sentence Builder & Passport
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [activeFlippedCard, setActiveFlippedCard] = useState(null);
 
   // Default Paragraph Split
-  const fullText = clilData.content_en || "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!";
+  const fullText = clilData?.content_en || "Why do we fall on wet floors? The answer is a science concept called Friction. Friction is a force that stops things from sliding. While Jake was walking down the corridor, his rubber shoes created high friction with the dry floor. This kept him safe. But water changes everything! Water acts like a lubricant. While Tom was running fast, his shoes hit the wet puddle. The water reduced the friction to zero!";
   
 
   const paragraphs = React.useMemo(() => {
@@ -66,10 +69,8 @@ export default function CLILExplorer({
 
   // ━━ Sentence Builder Quest — tap scrambled chunks in correct order ━━
   const [sbIdx, setSbIdx] = useState(0);
-  const [sbBuilt, setSbBuilt] = useState([]); // chosen chunks in order
-  const [sbResult, setSbResult] = useState(null); // { correct: bool, msg }
-  const [sbMode, setSbMode] = useState('tap'); // 'tap' | 'type'
-  const [sbTyped, setSbTyped] = useState(''); // free-type input value
+  const [sbBuilt, setSbBuilt] = useState([]);
+  const [sbResult, setSbResult] = useState(null);
 
   const sentenceDrills = [
     {
@@ -94,59 +95,48 @@ export default function CLILExplorer({
 
   const sbDrill = sentenceDrills[sbIdx];
 
-  // Scramble chips (stable order using useMemo)
-  const sbScrambled = React.useMemo(() => {
-    return [...sbDrill.scrambled].sort(() => 0.5 - Math.random());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sbIdx]);
-
-  const sbRemaining = sbScrambled.filter(c => !sbBuilt.includes(c));
+  const sbRemaining = React.useMemo(() => {
+    const builtCounts = {};
+    sbBuilt.forEach(c => { builtCounts[c] = (builtCounts[c] || 0) + 1; });
+    const result = [];
+    sbDrill.scrambled.forEach(c => {
+      if (!builtCounts[c] || builtCounts[c] === 0) {
+        result.push(c);
+      } else {
+        builtCounts[c]--;
+      }
+    });
+    return result;
+  }, [sbBuilt, sbDrill]);
 
   const handleSbSelect = (chunk) => {
-    setSbResult(null);
     setSbBuilt(prev => [...prev, chunk]);
+    setSbResult(null);
   };
 
   const handleSbRemove = (idx) => {
-    setSbResult(null);
     setSbBuilt(prev => prev.filter((_, i) => i !== idx));
-  };
-
-  const handleSbCheck = () => {
-    const isCorrect = JSON.stringify(sbBuilt) === JSON.stringify(sbDrill.correct);
-    if (isCorrect) {
-      setSbResult({ correct: true, msg: '🎉 Perfect sentence! Correct grammar order! +20 XP' });
-      fireCelebrationConfetti('SentenceBuilder_Win');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(20);
-    } else {
-      setSbResult({ correct: false, msg: '💡 Not quite! Check the grammar order: Subject → Verb Phrase → Adverbial. Try again!' });
-    }
-  };
-
-  const handleSbCheckTyped = () => {
-    const typed = sbTyped.toLowerCase().trim();
-    if (!typed) return;
-    // Check that at least 3 of the 4 key chunks appear (case-insensitive substring)
-    const keyChunks = sbDrill.correct.map(c => c.toLowerCase().replace(/[,]/g, '').trim());
-    const hits = keyChunks.filter(k => typed.includes(k));
-    if (hits.length >= Math.ceil(keyChunks.length * 0.75)) {
-      setSbResult({ correct: true, msg: '🎉 Excellent! Your sentence captures the key grammar structures. +20 XP' });
-      fireCelebrationConfetti('SentenceBuilder_Win');
-      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
-      if (userStore?.addXP) userStore.addXP(20);
-    } else {
-      setSbResult({ correct: false, msg: `💡 Try to include: ${keyChunks.filter(k => !typed.includes(k)).join(' • ')}` });
-    }
+    setSbResult(null);
   };
 
   const handleSbReset = () => {
     setSbBuilt([]);
-    setSbTyped('');
     setSbResult(null);
   };
 
-  const handleToggleAudio = async () => {
+  const handleSbCheck = () => {
+    const isCorrect = sbBuilt.every((c, i) => c === sbDrill.correct[i]) && sbBuilt.length === sbDrill.correct.length;
+    if (isCorrect) {
+      setSbResult({ correct: true, msg: '🌟 Excellent! Grammar order is 100% correct!' });
+      fireCelebrationConfetti('SentenceBuilder_Success');
+      const userStore = useUserStore?.getState ? useUserStore.getState() : null;
+      if (userStore?.addXP) userStore.addXP(25);
+    } else {
+      setSbResult({ correct: false, msg: '❌ Not quite right yet. Try resetting and tapping in the correct order!' });
+    }
+  };
+
+  const handleToggleAudio = async (textToPlay) => {
     if (isPlayingAudio) {
       VoiceService.stop();
       setIsPlayingAudio(false);
@@ -155,7 +145,7 @@ export default function CLILExplorer({
 
     setIsPlayingAudio(true);
     try {
-      await VoiceService.speak(fullText, 'explore');
+      await VoiceService.speak(textToPlay || fullText, 'explore');
     } catch (_) {
     } finally {
       setIsPlayingAudio(false);
@@ -166,25 +156,29 @@ export default function CLILExplorer({
     setSelectedAnswers(prev => ({ ...prev, [qId]: option }));
   };
 
-
-
   return (
     <div className="w-full max-w-4xl mx-auto space-y-5 font-sans text-slate-900">
-      {/* Slim Game Instruction Bar */}
-      <div className="p-3 bg-emerald-50 border border-emerald-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
-        <span className="font-black text-emerald-950 flex items-center gap-1.5">
-          🌍 CLIL KNOWLEDGE EXPLORER — Read 2 article paragraphs & complete check questions after each part!
-        </span>
-        <button
-          type="button"
-          onClick={handleToggleAudio}
-          className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1 transition shrink-0"
-        >
-          <Volume2 size={14} /> {isPlayingAudio ? 'Pause' : '🎧 Listen'}
-        </button>
+      {/* Stepper Header */}
+      <div className="flex items-center justify-between px-2">
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-black text-emerald-900 bg-emerald-100 px-3 py-1 rounded-xl">
+            {currentPhase === 1 && '🔬 Phần 1: Ma sát bề mặt khô'}
+            {currentPhase === 2 && '🧪 Phần 2: Nước & Độ trơn trượt'}
+            {currentPhase === 3 && '🎓 Phần 3: Thử thách Ghép câu'}
+          </span>
+          <span className="text-xs font-bold text-slate-500">
+            Chặng {currentPhase} / 3
+          </span>
+        </div>
+        <div className="w-36 h-2.5 bg-slate-200 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300 rounded-full"
+            style={{ width: `${(currentPhase / 3) * 100}%` }}
+          />
+        </div>
       </div>
 
-      {/* Control Bar */}
+      {/* Mode Control Bar */}
       <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between flex-wrap gap-2">
         <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
           <span className="text-[10px] font-black text-slate-400 uppercase px-2">Mode:</span>
@@ -205,284 +199,266 @@ export default function CLILExplorer({
             🔬 Grammar X-Ray
           </button>
         </div>
-        <span className="text-xs text-emerald-800 font-bold bg-emerald-50 px-3 py-1 rounded-xl border border-emerald-200">
-          💡 Click any word for instant dictionary & audio
-        </span>
+        <button
+          type="button"
+          onClick={() => handleToggleAudio(currentPhase === 1 ? paragraphs[0] : paragraphs[1])}
+          className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs rounded-xl shadow-sm flex items-center gap-1.5 transition"
+        >
+          <Volume2 size={15} /> {isPlayingAudio ? 'Tạm dừng' : '🎧 Nghe đoạn này'}
+        </button>
       </div>
 
       {/* ========================================================================= */}
-      {/* PARAGRAPH 1 CARD & PARAGRAPH 1 CHECK QUESTIONS (2 QUESTIONS)              */}
+      {/* PHASE 1: PARAGRAPH 1 + 2 CHECK QUESTIONS                                  */}
       {/* ========================================================================= */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
-        <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-2">
-          <span>📖 PARAGRAPH 1: FRICTION ON DRY SURFACES</span>
-        </div>
-        <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-          {renderParsedText(paragraphs[0], 'emerald', null, false, highlightMode, targetGrammarRegex)}
-        </p>
+      {currentPhase === 1 && (
+        <div className="space-y-4 animate-in fade-in">
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-700 border-b border-slate-100 pb-2">
+              <span>📖 PARAGRAPH 1: FRICTION ON DRY SURFACES</span>
+            </div>
+            <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
+              {renderParsedText(paragraphs[0], 'emerald', null, false, highlightMode, targetGrammarRegex)}
+            </p>
 
-        {/* Paragraph 1 Check Questions (2 Questions) */}
-        <div className="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3 pt-3">
-          <h4 className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1.5">
-            <HelpCircle size={15} className="text-emerald-600" /> Paragraph 1 Check Questions (2 Items)
-          </h4>
-          <div className="space-y-3">
-            {questionsP1.map((q) => {
-              const selected = selectedAnswers[q.id];
-              const isCorrect = selected === q.correct;
+            {/* Paragraph 1 Check Questions */}
+            <div className="p-4 bg-emerald-50/70 rounded-2xl border border-emerald-200 space-y-3 pt-3">
+              <h4 className="text-xs font-black uppercase text-emerald-900 flex items-center gap-1.5">
+                <HelpCircle size={15} className="text-emerald-600" /> Câu hỏi kiểm tra hiểu bài (2 câu)
+              </h4>
+              <div className="space-y-3">
+                {questionsP1.map((q) => {
+                  const selected = selectedAnswers[q.id];
+                  const isCorrect = selected === q.correct;
 
-              return (
-                <div key={q.id} className="p-3 bg-white rounded-xl border border-emerald-200 space-y-2">
-                  <p className="text-xs font-black text-slate-900">{q.question}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {q.options.map((opt, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        onClick={() => handleSelectAnswer(q.id, opt)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition border text-left ${
-                          selected === opt
-                            ? isCorrect
-                              ? 'bg-emerald-600 text-white border-emerald-500 font-black'
-                              : 'bg-rose-600 text-white border-rose-500'
-                            : 'bg-slate-50 hover:bg-emerald-100 text-slate-800 border-slate-200'
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* ========================================================================= */}
-      {/* PARAGRAPH 2 CARD & PARAGRAPH 2 CHECK QUESTIONS (2 QUESTIONS)              */}
-      {/* ========================================================================= */}
-      <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
-        <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-2">
-          <span>📖 PARAGRAPH 2: WATER LUBRICATION & ZERO FRICTION</span>
-        </div>
-        <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
-          {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, highlightMode, targetGrammarRegex)}
-        </p>
-
-        {/* Paragraph 2 Check Questions (2 Questions) */}
-        <div className="p-4 bg-teal-50/70 rounded-2xl border border-teal-200 space-y-3 pt-3">
-          <h4 className="text-xs font-black uppercase text-teal-900 flex items-center gap-1.5">
-            <HelpCircle size={15} className="text-teal-600" /> Paragraph 2 Check Questions (2 Items)
-          </h4>
-          <div className="space-y-3">
-            {questionsP2.map((q) => {
-              const selected = selectedAnswers[q.id];
-              const isCorrect = selected === q.correct;
-
-              return (
-                <div key={q.id} className="p-3 bg-white rounded-xl border border-teal-200 space-y-2">
-                  <p className="text-xs font-black text-slate-900">{q.question}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {q.options.map((opt, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        onClick={() => handleSelectAnswer(q.id, opt)}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition border text-left ${
-                          selected === opt
-                            ? isCorrect
-                              ? 'bg-teal-600 text-white border-teal-500 font-black'
-                              : 'bg-rose-600 text-white border-rose-500'
-                            : 'bg-slate-50 hover:bg-teal-100 text-slate-800 border-slate-200'
-                        }`}
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* ========================================================================= */}
-      {/* SENTENCE BUILDER QUEST — Dual Mode: Tap Order OR Free Type              */}
-      {/* ========================================================================= */}
-      <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md space-y-4">
-        {/* Header row */}
-        <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
-          <div className="flex items-center gap-2">
-            <span className="text-lg">🧩</span>
-            <div>
-              <h4 className="text-sm font-black text-slate-900">Sentence Builder Quest</h4>
-              <p className="text-[10px] text-slate-500">
-                {sbMode === 'tap' ? 'Tap chunks in correct grammar order' : 'Write the sentence freely using the hint words'}
-              </p>
+                  return (
+                    <div key={q.id} className="p-3.5 bg-white rounded-2xl border border-emerald-200 space-y-2">
+                      <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {q.options.map((opt, i) => (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => handleSelectAnswer(q.id, opt)}
+                            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition border text-left ${
+                              selected === opt
+                                ? isCorrect
+                                  ? 'bg-emerald-600 text-white border-emerald-500 font-black shadow-md'
+                                  : 'bg-rose-600 text-white border-rose-500'
+                                : 'bg-slate-50 hover:bg-emerald-100 text-slate-800 border-slate-200'
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-          {/* Mode toggle */}
-          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
-            <button type="button" onClick={() => { setSbMode('tap'); setSbResult(null); }}
-              className={`px-3 py-1 rounded-lg text-[10px] font-black transition ${
-                sbMode === 'tap' ? 'bg-purple-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
-              }`}>
-              🧩 Tap Mode
-            </button>
-            <button type="button" onClick={() => { setSbMode('type'); setSbResult(null); }}
-              className={`px-3 py-1 rounded-lg text-[10px] font-black transition ${
-                sbMode === 'type' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
-              }`}>
-              ✍️ Type Mode
+
+          <div className="flex justify-end pt-2">
+            <button
+              type="button"
+              onClick={() => setCurrentPhase(2)}
+              className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95"
+            >
+              Tiếp tục: Sang Phần 2 ▶
             </button>
           </div>
         </div>
+      )}
 
-        {/* Drill selector + label */}
-        <div className="flex items-center gap-2 flex-wrap">
-          {sentenceDrills.map((d, i) => (
-            <button key={i} type="button" onClick={() => { setSbIdx(i); setSbBuilt([]); setSbTyped(''); setSbResult(null); }}
-              className={`px-2.5 py-1 rounded-lg text-[10px] font-black transition ${
-                sbIdx === i ? 'bg-emerald-600 text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-              }`}>
-              #{i+1} {d.label}
+      {/* ========================================================================= */}
+      {/* PHASE 2: PARAGRAPH 2 + 2 CHECK QUESTIONS                                  */}
+      {/* ========================================================================= */}
+      {currentPhase === 2 && (
+        <div className="space-y-4 animate-in fade-in">
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
+            <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-teal-700 border-b border-slate-100 pb-2">
+              <span>📖 PARAGRAPH 2: WATER LUBRICATION & ZERO FRICTION</span>
+            </div>
+            <p className="text-base sm:text-lg text-slate-900 font-bold leading-relaxed">
+              {renderParsedText(paragraphs[1] || paragraphs[0], 'teal', null, false, highlightMode, targetGrammarRegex)}
+            </p>
+
+            {/* Paragraph 2 Check Questions */}
+            <div className="p-4 bg-teal-50/70 rounded-2xl border border-teal-200 space-y-3 pt-3">
+              <h4 className="text-xs font-black uppercase text-teal-900 flex items-center gap-1.5">
+                <HelpCircle size={15} className="text-teal-600" /> Câu hỏi kiểm tra hiểu bài (2 câu)
+              </h4>
+              <div className="space-y-3">
+                {questionsP2.map((q) => {
+                  const selected = selectedAnswers[q.id];
+                  const isCorrect = selected === q.correct;
+
+                  return (
+                    <div key={q.id} className="p-3.5 bg-white rounded-2xl border border-teal-200 space-y-2">
+                      <p className="text-xs sm:text-sm font-black text-slate-900">{q.question}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {q.options.map((opt, i) => (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => handleSelectAnswer(q.id, opt)}
+                            className={`px-3.5 py-2 rounded-xl text-xs font-bold transition border text-left ${
+                              selected === opt
+                                ? isCorrect
+                                  ? 'bg-teal-600 text-white border-teal-500 font-black shadow-md'
+                                  : 'bg-rose-600 text-white border-rose-500'
+                                : 'bg-slate-50 hover:bg-teal-100 text-slate-800 border-slate-200'
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between pt-2">
+            <button
+              type="button"
+              onClick={() => setCurrentPhase(1)}
+              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-black transition"
+            >
+              ◀ Quay lại Phần 1
             </button>
-          ))}
+            <button
+              type="button"
+              onClick={() => setCurrentPhase(3)}
+              className="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-2xl font-black text-xs sm:text-sm shadow-lg flex items-center gap-2 transition active:scale-95"
+            >
+              Thử thách Ghép câu Khoa học ▶
+            </button>
+          </div>
         </div>
+      )}
 
-        {/* Grammar reminder */}
-        <div className="flex items-center gap-2 text-[10px] text-slate-500 font-medium flex-wrap">
-          <span className="px-2 py-0.5 bg-blue-100 text-blue-800 rounded font-black">Subject</span>
-          <span>→</span>
-          <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-black">Verb Phrase</span>
-          <span>→</span>
-          <span className="px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-black">Adverbial / Result</span>
-        </div>
+      {/* ========================================================================= */}
+      {/* PHASE 3: SENTENCE BUILDER QUEST + PASSPORT STAMP & COMPLETION             */}
+      {/* ========================================================================= */}
+      {currentPhase === 3 && (
+        <div className="space-y-4 animate-in fade-in">
+          <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-md space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🧩</span>
+                <div>
+                  <h4 className="text-sm font-black text-slate-900">Sentence Builder Quest</h4>
+                  <p className="text-[10px] text-slate-500">
+                    Ghép các cụm từ theo đúng cấu trúc ngữ pháp khoa học
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        {/* ── TAP MODE ── */}
-        {sbMode === 'tap' && (
-          <div className="space-y-3 animate-in fade-in">
+            {/* Drill selector */}
+            <div className="flex items-center gap-2 flex-wrap">
+              {sentenceDrills.map((d, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => { setSbIdx(i); setSbBuilt([]); setSbResult(null); }}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-black transition ${
+                    sbIdx === i ? 'bg-emerald-600 text-white shadow-md' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                  #{i+1} {d.label}
+                </button>
+              ))}
+            </div>
+
             {/* Built sentence display */}
-            <div className="min-h-[52px] p-3 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2 items-start">
+            <div className="min-h-[60px] p-4 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 flex flex-wrap gap-2 items-start">
               {sbBuilt.length === 0 ? (
-                <span className="text-xs text-slate-400 italic">Your sentence will appear here as you tap chunks below…</span>
+                <span className="text-xs text-slate-400 italic">Chạm vào các cụm từ bên dưới theo đúng thứ tự…</span>
               ) : (
                 sbBuilt.map((chunk, i) => (
-                  <button key={i} type="button" onClick={() => handleSbRemove(i)}
-                    className="px-2.5 py-1 bg-purple-100 hover:bg-rose-100 text-purple-900 hover:text-rose-700 border border-purple-300 hover:border-rose-300 rounded-lg text-xs font-bold transition active:scale-95" title="Click to remove">
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => handleSbRemove(i)}
+                    className="px-3 py-1.5 bg-purple-100 hover:bg-rose-100 text-purple-900 hover:text-rose-700 border border-purple-300 hover:border-rose-300 rounded-xl text-xs font-bold transition active:scale-95"
+                  >
                     {chunk} ×
                   </button>
                 ))
               )}
             </div>
 
-            {/* Remaining scrambled chips */}
+            {/* Remaining chips */}
             <div className="space-y-1.5">
-              <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Tap chunks in the correct order:</span>
               <div className="flex flex-wrap gap-2">
                 {sbRemaining.map((chunk, i) => (
-                  <button key={i} type="button" onClick={() => handleSbSelect(chunk)}
-                    className="px-3 py-1.5 bg-white hover:bg-emerald-50 text-slate-800 border border-slate-300 hover:border-emerald-400 rounded-xl text-xs font-bold transition active:scale-95 shadow-sm">
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => handleSbSelect(chunk)}
+                    className="px-3.5 py-2 bg-white hover:bg-emerald-50 text-slate-800 border border-slate-300 hover:border-emerald-400 rounded-xl text-xs font-bold transition active:scale-95 shadow-sm"
+                  >
                     {chunk}
                   </button>
                 ))}
-                {sbRemaining.length === 0 && sbBuilt.length > 0 && !sbResult && (
-                  <span className="text-xs text-emerald-600 font-bold italic">✓ All chunks placed! Click “Check” below.</span>
-                )}
               </div>
             </div>
 
             {/* Actions */}
             <div className="flex items-center gap-2 flex-wrap">
-              <button type="button" onClick={handleSbCheck}
-                disabled={sbBuilt.length === 0 || sbRemaining.length > 0}
-                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95">
-                <CheckCircle2 size={14} /> Check Order
+              <button
+                type="button"
+                onClick={handleSbCheck}
+                disabled={sbBuilt.length === 0}
+                className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95"
+              >
+                <CheckCircle2 size={15} /> Kiểm tra câu
               </button>
-              <button type="button" onClick={handleSbReset}
-                className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition">
-                <RotateCcw size={13} /> Reset
-              </button>
-              {sbResult && (
-                <div className={`flex-1 min-w-0 p-2.5 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
-                  sbResult.correct ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
-                }`}>
-                  {sbResult.correct ? <CheckCircle2 size={14} /> : <AlertCircle size={14} />}
-                  {sbResult.msg}
-                  {sbResult.correct && sbIdx < sentenceDrills.length - 1 && (
-                    <button type="button" onClick={() => { setSbIdx(sbIdx+1); setSbBuilt([]); setSbTyped(''); setSbResult(null); }}
-                      className="ml-auto px-2.5 py-0.5 bg-emerald-600 text-white rounded-lg text-[10px] font-black">
-                      Next ▶
-                    </button>
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* ── FREE-TYPE MODE ── */}
-        {sbMode === 'type' && (
-          <div className="space-y-3 animate-in fade-in">
-            {/* Keyword hint pills */}
-            <div className="p-3 bg-indigo-50 rounded-2xl border border-indigo-200 space-y-1.5">
-              <span className="text-[10px] font-black uppercase text-indigo-900 tracking-wider block">
-                💡 Key Words &amp; Chunks to include:
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {sbDrill.correct.map((chunk, i) => (
-                  <button key={i} type="button"
-                    onClick={() => setSbTyped(prev => prev ? `${prev} ${chunk}` : chunk)}
-                    className="px-2.5 py-1 bg-white hover:bg-indigo-100 text-indigo-900 border border-indigo-300 rounded-lg text-xs font-bold transition active:scale-95">
-                    + {chunk}
-                  </button>
-                ))}
-              </div>
-              <p className="text-[10px] text-indigo-600 font-medium italic">
-                Click to insert, or type your own complete sentence below.
-              </p>
-            </div>
-
-            {/* Free textarea */}
-            <textarea
-              rows={3}
-              value={sbTyped}
-              onChange={e => { setSbTyped(e.target.value); setSbResult(null); }}
-              placeholder={`Write a sentence about: “${sbDrill.label}”. Use the key words above.`}
-              className="w-full p-4 rounded-2xl border border-slate-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 text-sm font-medium text-slate-900 outline-none transition"
-            />
-
-            {/* Actions */}
-            <div className="flex items-center gap-2 flex-wrap">
-              <button type="button" onClick={handleSbCheckTyped}
-                disabled={!sbTyped.trim()}
-                className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white font-black text-xs rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95">
-                <CheckCircle2 size={14} /> Check My Sentence
-              </button>
-              <button type="button" onClick={handleSbReset}
-                className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition">
-                <RotateCcw size={13} /> Clear
+              <button
+                type="button"
+                onClick={handleSbReset}
+                className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs rounded-xl flex items-center gap-1.5 transition"
+              >
+                <RotateCcw size={14} /> Xóa
               </button>
               {sbResult && (
                 <div className={`flex-1 min-w-0 p-2.5 rounded-xl border text-xs font-black flex items-center gap-2 animate-in fade-in ${
                   sbResult.correct ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-rose-50 border-rose-300 text-rose-800'
                 }`}>
-                  {sbResult.correct ? <CheckCircle2 size={14} /> : <AlertCircle size={14} />}
+                  {sbResult.correct ? <CheckCircle2 size={15} /> : <AlertCircle size={15} />}
                   {sbResult.msg}
-                  {sbResult.correct && sbIdx < sentenceDrills.length - 1 && (
-                    <button type="button" onClick={() => { setSbIdx(sbIdx+1); setSbBuilt([]); setSbTyped(''); setSbResult(null); }}
-                      className="ml-auto px-2.5 py-0.5 bg-indigo-600 text-white rounded-lg text-[10px] font-black">
-                      Next ▶
-                    </button>
-                  )}
                 </div>
               )}
             </div>
           </div>
-        )}
-      </div>
+
+          <div className="flex items-center justify-between pt-2">
+            <button
+              type="button"
+              onClick={() => setCurrentPhase(2)}
+              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-black transition"
+            >
+              ◀ Quay lại Phần 2
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                useDailyQuestStore.getState().completeQuest(weekNumber, 'gear4_clil');
+                fireCelebrationConfetti('Quest_Completed');
+                navigate(`/week/${weekNumber}/hub/1`);
+              }}
+              className="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl font-black text-sm shadow-xl flex items-center gap-2 transition hover:scale-105 animate-bounce"
+            >
+              🎉 Hoàn thành CLIL & Về bản đồ ▶
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
