@@ -58,10 +58,388 @@ const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, o
 };
 
 // ─────────────────────────────────────────────────────────────
+// PanelStepWriter — W33+ Panel-by-Panel Story Writing (3 steps)
+// Matches UX pattern of Echo Drill (Gear 2) & Nova's Story Pit (Gear 3)
+// ─────────────────────────────────────────────────────────────
+
+const PILL_COLORS = {
+  blue:   { bg: 'bg-sky-50',    border: 'border-sky-200',    pill: 'bg-white border-sky-300 text-sky-950 hover:bg-sky-100',    badge: 'bg-sky-100 text-sky-900',   label: 'text-sky-900' },
+  amber:  { bg: 'bg-amber-50',  border: 'border-amber-200',  pill: 'bg-white border-amber-300 text-amber-950 hover:bg-amber-100',  badge: 'bg-amber-100 text-amber-900', label: 'text-amber-900' },
+  purple: { bg: 'bg-purple-50', border: 'border-purple-200', pill: 'bg-white border-purple-300 text-purple-950 hover:bg-purple-100', badge: 'bg-purple-100 text-purple-900', label: 'text-purple-900' },
+};
+const NOVA_AVATAR = '🤖';
+
+const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markComplete, isVi, onReportProgress, onGoToSpeak }) => {
+  const panels = pictureMode.panels || [];
+  const totalPanels = panels.length; // 3
+
+  const [panelIdx, setPanelIdx] = useState(0);                  // 0-2 = writing, 3 = review
+  const [panelTexts, setPanelTexts] = useState(['', '', '']);    // one text per panel
+  const [freeMode, setFreeMode] = useState([false, false, false]);
+  const [showHint, setShowHint] = useState(false);
+  const [hintCountdown, setHintCountdown] = useState(null);
+  const [showStorySoFar, setShowStorySoFar] = useState(false);
+  const [rubric, setRubric] = useState(null);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const textareaRef = React.useRef(null);
+
+  const isReview = panelIdx >= totalPanels;
+  const currentPanel = panels[panelIdx] || null;
+  const colors = PILL_COLORS[currentPanel?.pill_color || 'blue'];
+  const fullText = panelTexts.filter(Boolean).join(' ');
+  const wordCount = fullText.trim().split(/\s+/).filter(Boolean).length;
+  const panelWordCount = (panelTexts[panelIdx] || '').trim().split(/\s+/).filter(Boolean).length;
+  const currentFreeMode = freeMode[panelIdx];
+
+  // Load saved data on mount
+  useEffect(() => {
+    if (savedData?.panelTexts) setPanelTexts(savedData.panelTexts);
+    if (savedData?.rubric) setRubric(savedData.rubric);
+  }, [weekId]);
+
+  // Auto-focus textarea on panel change
+  useEffect(() => {
+    if (!isReview && textareaRef.current) {
+      setTimeout(() => textareaRef.current?.focus(), 100);
+    }
+  }, [panelIdx, isReview]);
+
+  // 10s hint countdown
+  useEffect(() => {
+    if (hintCountdown === null || hintCountdown <= 0) {
+      if (hintCountdown === 0) setShowHint(false);
+      return;
+    }
+    const t = setInterval(() => setHintCountdown(p => p - 1), 1000);
+    return () => clearInterval(t);
+  }, [hintCountdown]);
+
+  // Debounced auto-save
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const pct = wordCount >= 20 ? 80 : wordCount >= 10 ? 40 : 0;
+      saveProgress({ panelTexts, rubric }, wordCount >= 20, pct);
+      if (onReportProgress) onReportProgress(pct, fullText, { structured: true, fields: { setting: panelTexts[0], action: '', problem: panelTexts[1], solution: panelTexts[2] } });
+    }, 800);
+    return () => clearTimeout(t);
+  }, [panelTexts, rubric, wordCount]);
+
+  const insertPill = (chunk) => {
+    setPanelTexts(prev => {
+      const next = [...prev];
+      next[panelIdx] = prev[panelIdx] ? `${prev[panelIdx]} ${chunk}` : chunk;
+      return next;
+    });
+    textareaRef.current?.focus();
+  };
+
+  const handleShowHint = () => {
+    setShowHint(true);
+    setHintCountdown(10);
+    if (currentPanel?.sentence_frame) speakText(currentPanel.sentence_frame);
+  };
+
+  const handleNext = () => {
+    if (panelIdx < totalPanels - 1) {
+      setPanelIdx(p => p + 1);
+      setShowHint(false);
+      setHintCountdown(null);
+    } else {
+      // Move to review
+      setPanelIdx(totalPanels);
+    }
+  };
+
+  const handleSubmit = () => {
+    const result = scoreWritingTiered({ text: fullText, wordBank: panels.flatMap(p => p.pills || []), promptEn: pictureMode.writing_prompts?.en || '', tier: 2, weekNumber: weekId });
+    setRubric(result);
+    setSubmitted(true);
+    if (result.total >= 6) { setShowConfetti(true); setTimeout(() => setShowConfetti(false), 3500); }
+    markComplete(100);
+    const extraData = { structured: true, fields: { setting: panelTexts[0].trim(), action: '', problem: panelTexts[1].trim(), solution: panelTexts[2].trim() } };
+    if (onReportProgress) onReportProgress(100, fullText, extraData);
+    speakText("Amazing job! You wrote a complete story. Well done!");
+  };
+
+  const toggleFreeMode = () => {
+    setFreeMode(prev => { const n = [...prev]; n[panelIdx] = !n[panelIdx]; return n; });
+  };
+
+  // ── REVIEW SCREEN ────────────────────────────────────────────
+  if (isReview) {
+    return (
+      <div className="flex flex-col gap-4 animate-in fade-in duration-300">
+        {showConfetti && <Confetti recycle={false} numberOfPieces={250} />}
+
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <button onClick={() => setPanelIdx(totalPanels - 1)} className="flex items-center gap-1.5 text-xs font-black text-slate-600 hover:text-indigo-700 transition">
+            <ArrowRight size={14} className="rotate-180" /> Edit Panels
+          </button>
+          <span className="text-xs font-black text-indigo-700 uppercase tracking-wider">📖 Review Your Story</span>
+          <span className={`text-xs font-black px-2 py-0.5 rounded-full ${wordCount >= 20 ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
+            {wordCount} words {wordCount >= 20 ? '✓' : `/ 20 min`}
+          </span>
+        </div>
+
+        {/* 3 panel thumbnails + colored text preview */}
+        <div className="grid grid-cols-3 gap-2">
+          {panels.map((panel, idx) => (
+            <div key={idx} onClick={() => setPanelIdx(idx)}
+              className="cursor-pointer group bg-white rounded-xl border-2 border-slate-200 hover:border-indigo-400 transition overflow-hidden shadow-sm">
+              <div className="relative h-24 overflow-hidden">
+                <img src={panel.image_url} alt={panel.caption} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={e => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }} />
+                <span className="absolute top-1.5 left-1.5 text-[9px] font-black bg-amber-400 text-slate-950 px-1.5 py-0.5 rounded-md">P{idx + 1}</span>
+                {panelTexts[idx]?.trim() && <span className="absolute top-1.5 right-1.5 text-[9px] font-black bg-emerald-500 text-white px-1.5 py-0.5 rounded-md">✓</span>}
+              </div>
+              <div className="p-1.5 text-center">
+                <span className="text-[9px] font-bold text-slate-500 truncate block">✏️ Edit Panel {idx + 1}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Assembled story with color coding */}
+        <div className="bg-gradient-to-br from-indigo-50 to-white p-4 rounded-2xl border-2 border-indigo-200 shadow-sm space-y-1.5">
+          <span className="text-[10px] font-black uppercase text-indigo-700 tracking-wider block">📝 Your Complete Story:</span>
+          <div className="flex flex-wrap gap-1 text-xs leading-relaxed">
+            {panelTexts[0]?.trim() && <span className="bg-sky-100 text-sky-950 px-2 py-1 rounded-lg border border-sky-200 font-medium">{panelTexts[0].trim()}</span>}
+            {panelTexts[1]?.trim() && <span className="bg-amber-100 text-amber-950 px-2 py-1 rounded-lg border border-amber-200 font-medium">{panelTexts[1].trim()}</span>}
+            {panelTexts[2]?.trim() && <span className="bg-purple-100 text-purple-950 px-2 py-1 rounded-lg border border-purple-200 font-medium">{panelTexts[2].trim()}</span>}
+            {!fullText.trim() && <span className="text-slate-400 italic">No text yet — go back and write in each panel!</span>}
+          </div>
+        </div>
+
+        {/* Rubric after submit */}
+        {rubric && (
+          <div className="bg-white p-3 rounded-2xl border border-emerald-200 shadow-sm space-y-2">
+            <span className="text-[10px] font-black uppercase text-emerald-700 tracking-wider block">🏆 Cambridge Story Score</span>
+            <div className="grid grid-cols-3 gap-2 text-center">
+              {[{ label: 'Content', score: rubric.content || 0, max: 2 }, { label: 'Grammar', score: rubric.grammar || 0, max: 2 }, { label: 'Vocab', score: rubric.vocab || 0, max: 1 }].map(m => (
+                <div key={m.label} className={`p-2 rounded-xl border ${m.score >= m.max ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200'}`}>
+                  <div className="text-lg font-black text-emerald-700">{m.score}/{m.max}</div>
+                  <div className="text-[10px] font-black text-slate-500 uppercase">{m.label}</div>
+                </div>
+              ))}
+            </div>
+            {rubric.total >= 4 && <p className="text-xs text-emerald-700 font-bold text-center">🎉 {rubric.total >= 5 ? 'Cambridge-ready writing! Outstanding!' : 'Great work! Keep practising!'}</p>}
+          </div>
+        )}
+
+        {/* Submit / Go to Broadcast */}
+        {!submitted ? (
+          <button onClick={handleSubmit} disabled={wordCount < 5}
+            className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 disabled:opacity-40 text-white font-black text-sm rounded-2xl shadow-lg active:scale-[0.98] transition flex items-center justify-center gap-2">
+            🚀 Submit My Story
+          </button>
+        ) : (
+          <div className="space-y-2">
+            <div className="w-full py-3 bg-emerald-600 text-white font-black text-sm rounded-2xl text-center">✓ Story Submitted! +50 XP</div>
+            {onGoToSpeak && (
+              <button onClick={onGoToSpeak} className="w-full py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-black text-xs rounded-xl shadow active:scale-[0.98] transition flex items-center justify-center gap-1.5">
+                📻 Go to Hot Mic — Broadcast your story! <ArrowRight size={14} />
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── PANEL WRITING SCREEN ─────────────────────────────────────
+  const progressPct = ((panelIdx) / totalPanels) * 100;
+
+  return (
+    <div className="flex flex-col gap-3 animate-in fade-in duration-200">
+      {showConfetti && <Confetti recycle={false} numberOfPieces={150} />}
+
+      {/* Progress Header */}
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex-1">
+          <div className="flex items-center justify-between text-[10px] font-black text-slate-500 uppercase mb-1">
+            <span>Panel {panelIdx + 1} of {totalPanels}</span>
+            <span className={wordCount >= 20 ? 'text-emerald-600' : 'text-slate-400'}>{wordCount} words total {wordCount >= 20 ? '✓' : ''}</span>
+          </div>
+          <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500"
+              style={{ width: `${Math.max(5, progressPct + (panelWordCount > 0 ? 33 * 0.5 : 0))}%` }} />
+          </div>
+        </div>
+        <div className="flex gap-1.5">
+          {panels.map((_, i) => (
+            <div key={i} onClick={() => setPanelIdx(i)}
+              className={`w-6 h-6 rounded-full text-[9px] font-black flex items-center justify-center cursor-pointer border-2 transition ${i === panelIdx ? 'bg-indigo-600 border-indigo-400 text-white scale-110' : panelTexts[i]?.trim() ? 'bg-emerald-500 border-emerald-300 text-white' : 'bg-slate-100 border-slate-300 text-slate-400'}`}>
+              {panelTexts[i]?.trim() ? '✓' : i + 1}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Nova Bubble */}
+      <div className="flex gap-3 items-start bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-3 shadow-sm">
+        <span className="text-2xl shrink-0 mt-0.5">{NOVA_AVATAR}</span>
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-bold text-amber-950 leading-snug">
+            {currentPanel?.nova_question_en || 'Describe what you see in this picture!'}
+          </p>
+        </div>
+        <button type="button" onClick={() => speakText(currentPanel?.nova_question_en || '')}
+          className="shrink-0 w-8 h-8 rounded-full bg-amber-200 hover:bg-amber-300 text-amber-900 flex items-center justify-center text-base transition active:scale-90 shadow-sm">
+          🔊
+        </button>
+      </div>
+
+      {/* Picture — full width, prominent */}
+      <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border-2 border-slate-200 bg-slate-100" style={{ aspectRatio: '16/9' }}>
+        <img
+          src={currentPanel?.image_url || ''}
+          alt={currentPanel?.caption || `Panel ${panelIdx + 1}`}
+          className="w-full h-full object-cover"
+          onError={e => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+        />
+        <span className="absolute top-3 left-3 px-2.5 py-1 bg-amber-400 text-slate-950 rounded-lg text-[11px] font-black uppercase tracking-wider shadow">
+          Panel {panelIdx + 1}
+        </span>
+        <span className="absolute top-3 right-3 px-2.5 py-1 bg-slate-950/80 text-white rounded-lg text-[10px] font-bold backdrop-blur-sm">
+          {currentPanel?.caption}
+        </span>
+      </div>
+
+      {/* Grammar Hint badge */}
+      {currentPanel?.grammar_hint && !currentFreeMode && (
+        <div className={`flex items-center gap-2 px-3 py-2 ${colors.badge} rounded-xl border ${colors.border} text-xs font-bold`}>
+          <span>📌</span>
+          <span>{currentPanel.grammar_hint}</span>
+        </div>
+      )}
+
+      {/* Vocabulary Pills — per panel only */}
+      {!currentFreeMode && currentPanel?.pills?.length > 0 && (
+        <div className={`p-3 ${colors.bg} rounded-xl border ${colors.border} space-y-2`}>
+          <div className="flex items-center justify-between">
+            <span className={`text-[10px] font-black uppercase tracking-wider ${colors.label}`}>
+              ⚡ Tap to insert a chunk:
+            </span>
+            <button type="button" onClick={toggleFreeMode}
+              className="text-[10px] font-black text-indigo-600 hover:text-indigo-800 transition flex items-center gap-1">
+              ✨ Write freely instead
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {currentPanel.pills.map((pill, i) => (
+              <button key={i} type="button" onClick={() => insertPill(pill)}
+                className={`px-2.5 py-1 ${colors.pill} border rounded-lg text-[11px] font-bold transition active:scale-95 shadow-sm`}>
+                + {pill}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Free mode banner */}
+      {currentFreeMode && (
+        <div className="flex items-center justify-between px-3 py-2 bg-indigo-50 border border-indigo-200 rounded-xl">
+          <span className="text-xs font-bold text-indigo-700">✨ Free writing mode — use your own words!</span>
+          <button type="button" onClick={toggleFreeMode} className="text-[10px] font-black text-indigo-500 hover:text-indigo-700 transition">
+            ← Back to guided
+          </button>
+        </div>
+      )}
+
+      {/* Textarea */}
+      <div className="space-y-1.5">
+        <div className="flex items-center justify-between text-[10px] font-black text-slate-500 uppercase">
+          <span>Write {panelIdx === 0 ? '1-2 sentences about Panel 1:' : panelIdx === 1 ? '1-2 sentences about the problem:' : '1-2 sentences about the ending:'}</span>
+          <span className={panelWordCount >= 5 ? 'text-emerald-600' : 'text-slate-400'}>{panelWordCount} words</span>
+        </div>
+        <textarea
+          ref={textareaRef}
+          rows={3}
+          value={panelTexts[panelIdx]}
+          onChange={e => setPanelTexts(prev => { const n = [...prev]; n[panelIdx] = e.target.value; return n; })}
+          placeholder={currentFreeMode
+            ? `Panel ${panelIdx + 1}: Write freely in your own words...`
+            : (currentPanel?.sentence_frame ? `Try starting with: "${currentPanel.sentence_frame}"` : `Write about Panel ${panelIdx + 1}...`)}
+          className="w-full p-3 bg-white border-2 border-indigo-200 focus:border-indigo-500 rounded-xl text-sm font-medium text-slate-900 outline-none resize-none shadow-inner transition leading-relaxed"
+        />
+
+        {/* Hint + Creative encourage row */}
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <div className="flex items-center gap-2">
+            {/* Hint: show sentence_frame for 10s */}
+            {!showHint && (
+              <button type="button" onClick={handleShowHint}
+                className="px-2.5 py-1.5 bg-white border border-amber-300 text-amber-800 rounded-lg text-[11px] font-bold hover:bg-amber-50 transition flex items-center gap-1 shadow-sm active:scale-95">
+                💡 Hint <span className="text-[9px] text-amber-500">(10s)</span>
+              </button>
+            )}
+            {showHint && currentPanel?.sentence_frame && (
+              <div className="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-lg text-[11px] font-bold text-amber-900 flex items-center gap-1.5 animate-in fade-in">
+                <span className="italic">"{currentPanel.sentence_frame}"</span>
+                <span className="text-amber-500 font-black shrink-0">({hintCountdown}s)</span>
+              </div>
+            )}
+          </div>
+          <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-400">
+            <Star size={11} />
+            <span>Try different words for extra stars!</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Story So Far — collapsible */}
+      {fullText.trim().length > 0 && (
+        <div className="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
+          <button type="button" onClick={() => setShowStorySoFar(p => !p)}
+            className="w-full flex items-center justify-between px-3 py-2 text-[10px] font-black text-slate-600 uppercase hover:bg-slate-100 transition">
+            <span>📖 Story so far ({wordCount} words)</span>
+            <span>{showStorySoFar ? '▲' : '▼'}</span>
+          </button>
+          {showStorySoFar && (
+            <div className="px-3 pb-3 flex flex-wrap gap-1 text-xs leading-relaxed animate-in fade-in">
+              {panelTexts[0]?.trim() && <span className="bg-sky-100 text-sky-950 px-2 py-0.5 rounded-md border border-sky-200 font-medium">{panelTexts[0].trim()}</span>}
+              {panelTexts[1]?.trim() && <span className="bg-amber-100 text-amber-950 px-2 py-0.5 rounded-md border border-amber-200 font-medium">{panelTexts[1].trim()}</span>}
+              {panelTexts[2]?.trim() && <span className="bg-purple-100 text-purple-950 px-2 py-0.5 rounded-md border border-purple-200 font-medium">{panelTexts[2].trim()}</span>}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Navigation Footer */}
+      <div className="flex items-center justify-between gap-2 pt-1">
+        <button type="button" onClick={() => setPanelIdx(p => Math.max(0, p - 1))} disabled={panelIdx === 0}
+          className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 text-slate-700 font-black text-xs rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-sm">
+          <ArrowRight size={14} className="rotate-180" /> Back
+        </button>
+        <span className="flex gap-1">
+          {panels.map((_, i) => (
+            <span key={i} className={`w-2 h-2 rounded-full transition ${i === panelIdx ? 'bg-indigo-600 scale-125' : panelTexts[i]?.trim() ? 'bg-emerald-400' : 'bg-slate-300'}`} />
+          ))}
+        </span>
+        <button type="button" onClick={handleNext}
+          className="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black text-xs rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-md">
+          {panelIdx === totalPanels - 1 ? '📖 Review Story' : `Panel ${panelIdx + 2} →`}
+          <ArrowRight size={14} />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────────────────────────
 // PictureMode — Tier 1 & Tier 2 (W16-W35)
+// Routes to PanelStepWriter when enriched panels[] data exists
 // ─────────────────────────────────────────────────────────────
 
 const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, markComplete, isVi, onReportProgress, onGoToSpeak, themeColor = 'pink' }) => {
+  // W33+: if panels array has nova_question_en on first panel, use PanelStepWriter
+  const hasPanelSteps = Array.isArray(pictureMode?.panels) && pictureMode.panels.length === 3 && pictureMode.panels[0]?.nova_question_en;
+  if (hasPanelSteps) {
+    return <PanelStepWriter pictureMode={pictureMode} weekId={weekId} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={onReportProgress} onGoToSpeak={onGoToSpeak} />;
+  }
+
   const currentW = parseInt(weekId, 10) || 16;
   const tier = pictureMode.rubric_tier || 1;
 

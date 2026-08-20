@@ -44,9 +44,36 @@ export default {
     type: "picture",
     image_url: "/images/week33/writing_panel_1.png",
     panels: [
-      { id: 1, image_url: "/images/week33/writing_panel_1.png", caption: "Panel 1: Running in corridor" },
-      { id: 2, image_url: "/images/week33/writing_panel_2.png", caption: "Panel 2: Slipping on wet floor" },
-      { id: 3, image_url: "/images/week33/writing_panel_3.png", caption: "Panel 3: Nurse applying bandage" }
+      {
+        id: 1,
+        image_url: "/images/week33/writing_panel_1.png",
+        caption: "Panel 1: Running in corridor",
+        nova_question_en: "Where does the story begin? Look at the picture — describe who is there and what they are doing!",
+        pills: ["After science class,", "down the school corridor,", "was walking carefully,", "On a Monday morning,", "in the school hallway,"],
+        grammar_hint: "Past Continuous: was/were + verb-ing (e.g. was walking, was running)",
+        sentence_frame: "While a student was running in the corridor, he...",
+        pill_color: "blue",
+      },
+      {
+        id: 2,
+        image_url: "/images/week33/writing_panel_2.png",
+        caption: "Panel 2: Slipping on wet floor",
+        nova_question_en: "Uh oh! What happened suddenly? Describe the problem you see in this picture!",
+        pills: ["slipped on the wet floor,", "fell down heavily,", "hurt his knee badly,", "Suddenly,", "lost his balance,"],
+        grammar_hint: "Simple Past: slipped / fell / hurt (no -ing here!)",
+        sentence_frame: "Suddenly, he slipped on the wet floor and...",
+        pill_color: "amber",
+      },
+      {
+        id: 3,
+        image_url: "/images/week33/writing_panel_3.png",
+        caption: "Panel 3: Nurse applying bandage",
+        nova_question_en: "How does the story end? Who came to help, and how did everyone feel?",
+        pills: ["called the school nurse,", "with a clean bandage,", "felt deeply relieved,", "Everyone praised", "arrived quickly,"],
+        grammar_hint: "Simple Past + Feeling: called / arrived / felt / praised",
+        sentence_frame: "Jake called the school nurse, who arrived with...",
+        pill_color: "purple",
+      }
     ],
     word_bank: ["corridor", "slipped", "fell", "nurse", "bandage", "relieved", "careful"],
     sentence_frames: [
