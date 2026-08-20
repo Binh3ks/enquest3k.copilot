@@ -75,66 +75,55 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
         <span className="font-bold text-purple-200 shrink-0">{coopPercent}%</span>
       </div>
 
-      {/* Vibrant Multi-Color Subtabs Selector */}
-      <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
-          <button
-            type="button"
-            onClick={() => setActiveGame('word_blitz')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'word_blitz'
-                ? 'bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
-                : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
-            }`}
-          >
-            ⚡ WORD BLITZ
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveGame('sentence_smash')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'sentence_smash'
-                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
-                : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
-            }`}
-          >
-            🧱 SENTENCE SMASH
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveGame('sound_sniper')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'sound_sniper'
-                ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-300 scale-[1.02]'
-                : 'bg-blue-50 text-blue-900 border border-blue-200 hover:bg-blue-100'
-            }`}
-          >
-            🎧 SOUND SNIPER
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveGame('math_quest')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'math_quest'
-                ? 'bg-orange-500 text-white shadow-md ring-2 ring-orange-300 scale-[1.02]'
-                : 'bg-orange-50 text-orange-900 border border-orange-200 hover:bg-orange-100'
-            }`}
-          >
-            📐 MATH QUEST
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveGame('science_lab')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeGame === 'science_lab'
-                ? 'bg-emerald-600 text-white shadow-md ring-2 ring-emerald-300 scale-[1.02]'
-                : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
-            }`}
-          >
-            🧪 SCIENCE LAB
-          </button>
-        </div>
-      </div>
+      {/* Vibrant Multi-Color Subtabs Selector — 3 Featured Games per Week (Rotation) */}
+      {(() => {
+        // Enforce 3 featured games per week rotation to prevent cognitive overload
+        const isEvenWeek = weekNumber % 2 === 0;
+        const featuredGames = isEvenWeek
+          ? ['word_blitz', 'sound_sniper', 'science_lab']
+          : ['word_blitz', 'sentence_smash', 'math_quest'];
+
+        return (
+          <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
+            <div className="flex items-center justify-between px-2 pb-1.5 text-[10px] font-black text-slate-500 uppercase tracking-wider">
+              <span>⚔️ Weekly 3 Featured Battle Games</span>
+              <span>Week {weekNumber} Rotation</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
+              {[
+                { id: 'word_blitz', label: '⚡ WORD BLITZ', activeBg: 'bg-amber-500 text-slate-950 ring-amber-300', inactiveBg: 'bg-amber-50 text-amber-900 border-amber-200' },
+                { id: 'sentence_smash', label: '🧱 SENTENCE SMASH', activeBg: 'bg-purple-600 text-white ring-purple-300', inactiveBg: 'bg-purple-50 text-purple-900 border-purple-200' },
+                { id: 'sound_sniper', label: '🎧 SOUND SNIPER', activeBg: 'bg-blue-600 text-white ring-blue-300', inactiveBg: 'bg-blue-50 text-blue-900 border-blue-200' },
+                { id: 'math_quest', label: '📐 MATH QUEST', activeBg: 'bg-orange-500 text-white ring-orange-300', inactiveBg: 'bg-orange-50 text-orange-900 border-orange-200' },
+                { id: 'science_lab', label: '🧪 SCIENCE LAB', activeBg: 'bg-emerald-600 text-white ring-emerald-300', inactiveBg: 'bg-emerald-50 text-emerald-900 border-emerald-200' },
+              ].map((g) => {
+                const isFeatured = featuredGames.includes(g.id);
+                const isSelected = activeGame === g.id;
+
+                return (
+                  <button
+                    key={g.id}
+                    type="button"
+                    onClick={() => setActiveGame(g.id)}
+                    className={`w-full py-2.5 px-2.5 rounded-xl text-xs font-black transition flex flex-col items-center justify-center gap-0.5 text-center truncate ${
+                      isSelected
+                        ? `${g.activeBg} shadow-md ring-2 scale-[1.02]`
+                        : `${g.inactiveBg} border hover:bg-slate-200`
+                    }`}
+                  >
+                    <span>{g.label}</span>
+                    {!isFeatured && (
+                      <span className="text-[8px] font-extrabold px-1.5 py-0.2 bg-slate-200 text-slate-600 rounded-full">
+                        ⏳ Next Week
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Active Sub-Component */}
       <div className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">

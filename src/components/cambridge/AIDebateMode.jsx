@@ -346,20 +346,24 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <button type="button"
-                onClick={() => { setSelectedPosition('agree'); setUserSpeechText('I agree that walking carefully is much safer because '); setDebateStep(2); }}
+                onClick={() => { setSelectedPosition('agree'); setUserSpeechText(isModeA ? "I think it's safer to walk carefully because " : "I agree that walking carefully is much safer because "); setDebateStep(2); }}
                 className={`p-4 rounded-2xl border-2 text-left transition font-bold text-sm space-y-1 ${
                   selectedPosition === 'agree' ? 'bg-emerald-100 border-emerald-500 shadow-md' : 'bg-white border-slate-200 hover:border-emerald-300'
                 }`}>
-                <span className="text-emerald-600 text-base">✅ I agree</span>
-                <p className="text-xs text-slate-700">"Walking carefully <strong>is safer</strong> because running can cause accidents."</p>
+                <span className="text-emerald-600 text-base">✅ {isModeA ? "Share Idea: Walk Carefully" : "I agree"}</span>
+                <p className="text-xs text-slate-700">{isModeA ? '"I think it\'s safer to walk carefully because we stay safe."' : '"Walking carefully is safer because running can cause accidents."'}</p>
               </button>
               <button type="button"
-                onClick={() => { setSelectedPosition('disagree'); setUserSpeechText('I understand your point, but I disagree because '); setDebateStep(2); }}
+                onClick={() => { setSelectedPosition('disagree'); setUserSpeechText(isModeA ? "I have a different idea because " : "I understand your point, but I disagree because "); setDebateStep(2); }}
                 className={`p-4 rounded-2xl border-2 text-left transition font-bold text-sm space-y-1 ${
-                  selectedPosition === 'disagree' ? 'bg-rose-100 border-rose-500 shadow-md' : 'bg-white border-slate-200 hover:border-rose-300'
+                  selectedPosition === 'disagree' ? 'bg-purple-100 border-purple-500 shadow-md' : 'bg-white border-slate-200 hover:border-rose-300'
                 }`}>
-                <span className="text-rose-600 text-base">🚶 I disagree</span>
-                <p className="text-xs text-slate-700">"I understand your point, but running is risky because <strong>friction is reduced</strong> on wet floors."</p>
+                <span className={isModeA ? "text-purple-700 text-base" : "text-rose-600 text-base"}>
+                  {isModeA ? "💡 Share Different Idea" : "🚶 I disagree"}
+                </span>
+                <p className="text-xs text-slate-700">
+                  {isModeA ? '"I have a different idea because running on wet floors can cause slips."' : '"I understand your point, but running is risky because friction is reduced on wet floors."'}
+                </p>
               </button>
             </div>
           </div>
@@ -382,9 +386,11 @@ export default function AIDebateMode({ debateTopics, weekNumber = 33, ageModeOve
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {/* 🎯 Claim Starters */}
               <div className="p-2.5 bg-indigo-50 rounded-xl border border-indigo-200 space-y-1.5">
-                <span className="text-[9px] font-black uppercase text-indigo-900 block">🎯 Claim Starters:</span>
+                <span className="text-[9px] font-black uppercase text-indigo-900 block">
+                  {isModeA ? "💬 Idea Starters:" : "🎯 Claim Starters:"}
+                </span>
                 <div className="flex flex-wrap gap-1">
-                  {["I understand your point, but...", "In my opinion,", "I believe that", "I disagree because"].map((c,i) => (
+                  {activeStarters.map((c,i) => (
                     <button key={i} type="button" onClick={() => setUserSpeechText(prev => prev ? `${prev} ${c}` : c)}
                       className="px-2 py-0.5 bg-white hover:bg-indigo-100 text-indigo-950 border border-indigo-300 rounded-md text-[10px] font-bold transition active:scale-95">
                       +{c}
