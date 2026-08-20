@@ -15,7 +15,7 @@ export default function CreatorBrainRefresh({ onContinue }) {
 
   const WORDS = [
     'corridor', 'friction', 'slippery', 'headmaster', 'bandage',
-    'medical', 'nurse', 'safety', 'momentum', 'velocity'
+    'medical', 'nurse', 'safety', 'caution', 'rubber', 'motion', 'careful'
   ];
 
   const generateRound = () => {

@@ -634,8 +634,8 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
                           >
                             <Play size={11} className="fill-emerald-800" /> Play My Voice
                           </button>
-                          <span className="px-2 py-0.5 bg-emerald-600 text-white rounded-md text-[10px] font-black">
-                            {sentenceShadowing[idx].score}% Match
+                          <span className="px-2.5 py-1 bg-emerald-600 text-white rounded-lg text-[10px] font-black shadow-sm flex items-center gap-1">
+                            {sentenceShadowing[idx].score >= 70 ? '🌟 Awesome!' : sentenceShadowing[idx].score >= 40 ? '⭐ Good Try!' : '✨ Shadowed!'}
                           </span>
                         </div>
                       )}

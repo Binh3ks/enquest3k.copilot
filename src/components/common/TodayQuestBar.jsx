@@ -138,9 +138,9 @@ export default function TodayQuestBar({ weekId }) {
             type="button"
             onClick={() => setIsLeaderboardOpen(true)}
             className="px-2.5 py-1 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-xl font-black text-[11px] shadow flex items-center gap-1 transition active:scale-95"
-            title="View Class Leaderboard"
+            title="View Class Co-op Goal"
           >
-            <Trophy size={13} /> Leaderboard
+            <Trophy size={13} /> Class Co-op
           </button>
           <button
             type="button"
