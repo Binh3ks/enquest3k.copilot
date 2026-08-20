@@ -7,6 +7,7 @@ import { QUEST_SCHEDULE, DAILY_BONUS_XP, TOTAL_QUEST_DAYS } from '../../config/q
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import LexioMascot from '../mascot/LexioMascot';
 import ParentPINGate from '../common/ParentPINGate';
+import { STATION_NAMES } from '../../config/stationLabels';
 import questMapBg from '../../assets/quest-map-forest.jpg';
 import './QuestMap3D.css';
 
@@ -39,8 +40,8 @@ const STATIONS = [
   {
     id: 'explorer',
     index: 1,
-    emoji: '🔍',
-    name: 'The Explorer',
+    emoji: '📖',
+    name: STATION_NAMES[1],
     color: '#6366f1',
     glowColor: 'rgba(99,102,241,0.5)',
     position:       { x: 18, y: 72 },
@@ -52,7 +53,7 @@ const STATIONS = [
     id: 'science_lab',
     index: 2,
     emoji: '🔬',
-    name: 'Science Lab',
+    name: STATION_NAMES[2],
     color: '#10b981',
     glowColor: 'rgba(16,185,129,0.5)',
     position:       { x: 38, y: 48 },
@@ -64,7 +65,7 @@ const STATIONS = [
     id: 'wordhero',
     index: 3,
     emoji: '⚔️',
-    name: 'Battle Arena',
+    name: STATION_NAMES[3],
     color: '#f59e0b',
     glowColor: 'rgba(245,158,11,0.5)',
     position:       { x: 55, y: 55 },
@@ -76,7 +77,7 @@ const STATIONS = [
     id: 'creator',
     index: 4,
     emoji: '✍️',
-    name: 'Creative Studio',
+    name: STATION_NAMES[4],
     color: '#8b5cf6',
     glowColor: 'rgba(139,92,246,0.5)',
     position:       { x: 68, y: 38 },
@@ -88,7 +89,7 @@ const STATIONS = [
     id: 'boss',
     index: 5,
     emoji: '🏰',
-    name: 'Boss Castle',
+    name: STATION_NAMES[5],
     color: '#ef4444',
     glowColor: 'rgba(239,68,68,0.5)',
     position:       { x: 82, y: 22 },
@@ -97,6 +98,7 @@ const STATIONS = [
     taskPositionsMobile: [{ x: 55, y: 12 }, { x: 70, y: 15 }, { x: 85, y: 18 }],
   },
 ];
+
 
 function useIsPortrait() {
   const [isPortrait, setIsPortrait] = useState(

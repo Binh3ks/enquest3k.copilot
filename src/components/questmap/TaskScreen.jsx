@@ -84,9 +84,10 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <ArrowLeft size={18} />
           <span>Map</span>
         </button>
-        <div className="ts-task-info">
+        <div className="ts-task-info flex items-center gap-2">
+          <LexioMascot size={30} mood="happy" />
           <span className="ts-task-icon">{taskInfo.icon}</span>
-          <span className="ts-task-name">{taskInfo.label}</span>
+          <span className="ts-task-name font-black">{taskInfo.label}</span>
         </div>
         <div className="ts-task-time">
           <Clock size={12} />

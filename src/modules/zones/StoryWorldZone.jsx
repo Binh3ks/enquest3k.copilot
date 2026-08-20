@@ -880,25 +880,36 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
                   {/* Main Story Card */}
                   <div className="bg-white rounded-3xl p-6 sm:p-8 border border-purple-200 shadow-lg space-y-6 text-center">
-                    {/* Nova Question Bubble (100% English Zero-L1) */}
-                    <div className="p-4 bg-purple-50 border border-purple-200 rounded-2xl flex items-center gap-3 text-left">
-                      <span className="text-3xl shrink-0">🦊</span>
+                    {/* Scene Visual Anchor Thumbnail + Nova Question Bubble */}
+                    <div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-purple-50 border border-purple-200 rounded-2xl text-left">
+                      {scenes[retellStepIdx] && (
+                        <div className="w-full sm:w-28 h-20 sm:h-20 rounded-xl overflow-hidden shadow-sm shrink-0 border border-purple-300 bg-slate-100">
+                          <img
+                            src={scenes[retellStepIdx].image_url || `/images/week33/read_stem.jpg`}
+                            alt={`Scene ${retellStepIdx + 1}`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+                          />
+                        </div>
+                      )}
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs font-black uppercase tracking-wider text-purple-600">
-                          NOVA ASKS:
-                        </p>
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <span className="text-[10px] font-black uppercase tracking-wider text-purple-700 bg-purple-200/80 px-2 py-0.5 rounded-md">
+                            NOVA ASKS (Step {retellStepIdx + 1}):
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => speakText(currentQ.question_en)}
+                            className="p-1.5 bg-purple-200 hover:bg-purple-300 text-purple-800 rounded-lg transition active:scale-95 shadow-sm"
+                            title="Listen to Nova's question"
+                          >
+                            <Volume2 size={16} />
+                          </button>
+                        </div>
                         <p className="text-base sm:text-lg font-black text-slate-900 leading-snug">
                           "{currentQ.question_en}"
                         </p>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => speakText(currentQ.question_en)}
-                        className="shrink-0 p-2.5 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-xl transition active:scale-95 shadow-sm"
-                        title="Listen to Nova's question"
-                      >
-                        <Volume2 size={18} />
-                      </button>
                     </div>
 
                     {/* Scaffolded Input Chips */}
@@ -1008,9 +1019,10 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                           </button>
                         )}
                         <p className="text-xs font-black text-slate-600">
-                          {isRecording ? '🔴 Recording... Retell what happened!' : '🦊 Nova: "Tell me what happened!"'}
+                          {isRecording ? '🔴 Recording... Speak your answer now!' : 'Tap RECORD to answer Nova'}
                         </p>
                       </div>
+
 
                       {/* Recorded Audio Feedback */}
                       {retellRecordings[retellStepIdx] && (
