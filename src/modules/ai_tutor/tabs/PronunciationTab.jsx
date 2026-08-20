@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Mic, Volume2, CheckCircle2, XCircle, RotateCcw, AlertCircle } from 'lucide-react';
+import VoiceService from '../../../services/voiceService';
+import { evaluateSpeechSyntax } from '../../../utils/speechSyntaxEvaluator';
 import { useUserStore } from '../../../stores/useUserStore';
 import { getCurrentWeekData } from '../../../data/weekData';
 import { textToSpeech } from '../../../services/ai_tutor/ttsEngine';
@@ -461,18 +463,22 @@ Chỉ trả lời JSON, không thêm text nào khác.`;
         }
       } catch (parseError) {
         console.error('Failed to parse AI response:', parseError);
-        // Fallback: simple string matching
-        const isCorrect = spokenText.includes(targetWord) || targetWord.includes(spokenText);
-        const similarity = calculateSimilarity(spokenText, targetWord);
+        // Fallback: evaluate speech syntax
+        const target = isWordMode ? (word.word || word.text || '') : (sentence || '');
+        const syntaxResult = evaluateSpeechSyntax(spokenText, target, {
+          mode: isWordMode ? 'sentence' : 'shadowing',
+          minWords: isWordMode ? 1 : 2
+        });
         
         evaluation = {
-          correct: isCorrect && similarity > 0.6,
-          score: isCorrect ? Math.round(similarity * 100) : 0,
-          feedback: isCorrect 
+          correct: syntaxResult.isCorrect,
+          score: syntaxResult.score,
+          feedback: syntaxResult.isCorrect 
             ? `Khá tốt! Em đã nói "${spokenText}".`
-            : `Hmm, cô nghe em nói "${spokenText}". Hãy thử nói "${targetWord}" lại nhé.`
+            : `Hmm, cô nghe em nói "${spokenText}". Hãy thử nói "${target}" lại nhé.`
         };
       }
+
 
       // Record attempt
       const word = currentWordRef.current;

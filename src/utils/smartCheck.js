@@ -1,4 +1,6 @@
-/* SMART CHECK ENGINE v18.0 (CRITICAL THINKING POLISHED) */
+import { evaluateSpeechSyntax } from './speechSyntaxEvaluator';
+
+/* SMART CHECK ENGINE v19.0 (SPEECH SYNTAX INTEGRATED) */
 
 const getLevenshteinDistance = (a, b) => {
   if (a.length === 0) return b.length;
@@ -24,9 +26,9 @@ export const analyzeAnswer = (userInput, correctAnswers, mode = 'strict', unit =
     return { isCorrect: false, status: 'empty', message: 'Hãy nhập câu trả lời.' };
   }
 
-  let inputOriginal = userInput.toString().trim();
-  inputOriginal = inputOriginal.replace(/\s+/g, ' '); 
+  const inputOriginal = userInput.toString().trim();
 
+  // If no correct answers defined, accept any non-empty input
   if (!correctAnswers) {
     return { isCorrect: true, status: 'perfect', message: 'Chính xác!' };
   }
@@ -35,47 +37,24 @@ export const analyzeAnswer = (userInput, correctAnswers, mode = 'strict', unit =
     ? correctAnswers.filter(Boolean).map(t => t.toString().trim())
     : [correctAnswers.toString().trim()];
 
-  // --- MODE SPEECH (SpeechRecognition input — tolerant but word-accurate) ---
-  // Philosophy: STT noise in short function words is OK. Wrong CONTENT words must fail.
-  // Guard: every content word (≥4 chars) in target must have a close match (Lev ≤ 1) in input.
-  // This catches "pot"≠"past" (Lev=2) and "server"≠"soft" (Lev=5) regardless of sentence length.
+  // --- MODE SPEECH (SpeechRecognition input — syntax and word-order accurate) ---
   if (mode === 'speech') {
-    const normSpeech = (text) => {
-      let str = text.toLowerCase().trim();
-      str = str.replace(/\bwhat's\b/g, 'what is').replace(/\bit's\b/g, 'it is').replace(/\bi'm\b/g, 'i am')
-               .replace(/\bdon't\b/g, 'do not').replace(/\bcan't\b/g, 'cannot').replace(/\bisn't\b/g, 'is not');
-      return str.replace(/[.,!?;:"()\-]/g, '').replace(/\s+/g, ' ').trim();
-    };
-
-    // Every content word (≥4 chars) in target must have a near-match (Lev ≤ 1) in input words.
-    // Lev ≤ 1 catches minor STT glitches ("babie"→"baby") but rejects wrong words ("pot"→"past" Lev=2).
-    const allContentWordsPresent = (inputStr, targetStr) => {
-      const iWords = inputStr.split(' ');
-      const cWords = targetStr.split(' ').filter(w => w.length >= 4);
-      return cWords.every(cw => iWords.some(iw => iw === cw || getLevenshteinDistance(cw, iw) <= 1));
-    };
-
-    const ns = normSpeech(inputOriginal);
-    for (const t of targets) {
-      const nt = normSpeech(t);
-      // 1. Exact normalized match
-      if (ns === nt) return { isCorrect: true, status: 'perfect', message: 'Chính xác tuyệt đối! 🌟' };
-      // 2. Content-word guard — if any key word is wrong, reject immediately
-      if (!allContentWordsPresent(ns, nt)) continue;
-      // 3. Levenshtein ≤ 15% (handles dropped articles, minor function word noise)
-      const dist = getLevenshteinDistance(ns, nt);
-      if (dist <= Math.max(2, Math.floor(nt.length * 0.15))) {
-        return { isCorrect: true, status: 'good', message: 'Rất tốt! Nghe rõ rồi 👏' };
-      }
-      // 4. Word overlap ≥ 88% (all key words present, minor extras/missing articles)
-      const tWords = nt.split(' ').filter(w => w.length > 1);
-      const sWordSet = new Set(ns.split(' '));
-      const overlap = tWords.length > 0 ? tWords.filter(w => sWordSet.has(w)).length / tWords.length : 0;
-      if (overlap >= 0.88) {
-        return { isCorrect: true, status: 'good', message: 'Rất tốt! Nghe rõ rồi 👏' };
-      }
+    const syntaxEval = evaluateSpeechSyntax(inputOriginal, targets, { mode: 'sentence', minWords: 2 });
+    if (syntaxEval.isCorrect) {
+      return {
+        isCorrect: true,
+        status: syntaxEval.score >= 90 ? 'perfect' : 'good',
+        score: syntaxEval.score,
+        message: syntaxEval.feedback || 'Rất tốt! Nghe rõ rồi 👏'
+      };
     }
-    return { isCorrect: false, status: 'warning', message: 'Chưa nghe rõ. Nói to và rõ hơn nhé! 🎤' };
+
+    return {
+      isCorrect: false,
+      status: 'warning',
+      score: syntaxEval.score,
+      message: syntaxEval.feedback || 'Chưa nghe rõ hoặc sai thứ tự từ. Nói to và rõ hơn nhé! 🎤'
+    };
   }
 
   // --- MODE CRITICAL (Ask AI / Explore Critical) ---

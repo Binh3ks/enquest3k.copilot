@@ -1,7 +1,9 @@
-import React, { useState, useRef } from 'react';
-import { Mic, Square, RefreshCw, Volume2, CheckCircle2 } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
+import MicFallbackInput from '../common/MicFallbackInput';
 
 const NARRATIVE_STYLES = {
   setting:  { dot: '🔵', bg: 'bg-blue-50/70',    border: 'border-blue-200',    text: 'text-blue-950'    },
@@ -15,10 +17,22 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
   const [isRecording, setIsRecording] = useState(false);
   const [recordedAudioUrl, setRecordedAudioUrl] = useState(null);
   const [feedback, setFeedback] = useState(null);
+  const [evalResult, setEvalResult] = useState(null);
+  const [spokenTranscript, setSpokenTranscript] = useState('');
   const [tierMode, setTierMode] = useState('tier1');
 
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
+  const recognitionRef = useRef(null);
+  const transcriptRef = useRef('');
+
+  useEffect(() => {
+    return () => {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (_) {}
+      }
+    };
+  }, []);
 
   const DEFAULT_SCENES = [
     {
@@ -52,7 +66,27 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
   const startRecording = async () => {
     setFeedback(null);
+    setEvalResult(null);
     setRecordedAudioUrl(null);
+    transcriptRef.current = '';
+
+    // Start SpeechRecognition in parallel
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      try {
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const rec = new SpeechRec();
+        rec.continuous = true;
+        rec.interimResults = true;
+        rec.lang = 'en-US';
+        rec.onresult = (event) => {
+          const text = Array.from(event.results).map(r => r[0].transcript).join(' ');
+          transcriptRef.current = text;
+        };
+        rec.start();
+        recognitionRef.current = rec;
+      } catch (_) {}
+    }
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaRecorderRef.current = new MediaRecorder(stream);
@@ -63,10 +97,27 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
       };
 
       mediaRecorderRef.current.onstop = () => {
+        if (recognitionRef.current) {
+          try { recognitionRef.current.stop(); } catch (_) {}
+          recognitionRef.current = null;
+        }
+
         const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/wav' });
         const audioUrl = URL.createObjectURL(audioBlob);
         setRecordedAudioUrl(audioUrl);
-        setFeedback({ message: "🎉 Broadcast recorded! Well done — your whole story in one take!" });
+
+        const spoken = transcriptRef.current.trim();
+        setSpokenTranscript(spoken);
+
+        const evaluation = evaluateSpeechSyntax(spoken, fullScriptText, { mode: 'sentence', minWords: 4 });
+        setEvalResult(evaluation);
+
+        setFeedback({
+          message: evaluation.isCorrect
+            ? `🎉 Broadcast recorded! Accuracy: ${evaluation.score}%. Excellent storytelling!`
+            : `⚠️ Broadcast recorded! Accuracy: ${evaluation.score}%. Try speaking with clearer transitions.`
+        });
+
         fireCelebrationConfetti('Broadcast_Record');
         stream.getTracks().forEach(track => track.stop());
         if (onComplete) onComplete(50);
@@ -76,14 +127,25 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
       setIsRecording(true);
     } catch (err) {
       console.warn('Microphone access fallback:', err);
-      setIsRecording(true);
-      setTimeout(() => {
-        setIsRecording(false);
-        setFeedback({ message: "🎉 Broadcast audio saved! Great storytelling performance!" });
-        fireCelebrationConfetti('Broadcast_Record');
-        if (onComplete) onComplete(50);
-      }, 3000);
+      handleManualSubmit(fullScriptText);
     }
+  };
+
+  const handleManualSubmit = (typedText) => {
+    setRecordedAudioUrl('typed_broadcast');
+    setSpokenTranscript(typedText);
+
+    const evaluation = evaluateSpeechSyntax(typedText, fullScriptText, { mode: 'sentence', minWords: 4 });
+    setEvalResult(evaluation);
+
+    setFeedback({
+      message: evaluation.isCorrect
+        ? `🎉 Broadcast script submitted! Accuracy: ${evaluation.score}%. Great syntax!`
+        : `⚠️ Script submitted! Accuracy: ${evaluation.score}%. Check your sentence connectors.`
+    });
+
+    fireCelebrationConfetti('Broadcast_Record');
+    if (onComplete) onComplete(50);
   };
 
   const stopRecording = () => {
@@ -92,6 +154,7 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
       setIsRecording(false);
     }
   };
+
 
   return (
     <div className="w-full max-w-3xl mx-auto space-y-4 text-slate-900 font-sans">
@@ -272,12 +335,43 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
           </div>
         )}
 
-        {feedback && (
+        {evalResult && (
+          <div className={`p-4 rounded-2xl border ${
+            evalResult.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'
+          } text-xs font-black text-left space-y-1.5 max-w-xl mx-auto animate-in fade-in`}>
+            <div className="flex items-center justify-between">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 size={16} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
+                {evalResult.feedback}
+              </span>
+              <span className="px-2 py-0.5 bg-white rounded-md border text-[11px]">
+                Score: {evalResult.score}%
+              </span>
+            </div>
+            {spokenTranscript && (
+              <p className="text-[11px] font-medium text-slate-700 italic">
+                You spoke: "{spokenTranscript}"
+              </p>
+            )}
+          </div>
+        )}
+
+        {feedback && !evalResult && (
           <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-2xl text-emerald-900 text-xs font-black flex items-center justify-center gap-3 animate-in fade-in">
             <CheckCircle2 size={20} className="text-emerald-600 shrink-0" />
             <span>{feedback.message}</span>
           </div>
         )}
+
+        {/* Typing Fallback */}
+        <div className="max-w-xl mx-auto pt-1 text-left">
+          <MicFallbackInput
+            onSubmit={handleManualSubmit}
+            placeholder="Type your story broadcast script here..."
+            buttonLabel="Submit Broadcast Script →"
+            color="purple"
+          />
+        </div>
 
         {!recordedAudioUrl && !isRecording && (
           <p className="text-[11px] text-slate-400 font-medium">
@@ -288,3 +382,4 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
     </div>
   );
 }
+

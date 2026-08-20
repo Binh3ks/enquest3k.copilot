@@ -10,6 +10,8 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { getNovaStage } from '../../services/companionEngine';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
+import MicFallbackInput from '../../components/common/MicFallbackInput';
+import GrammarHintButton from '../../components/common/GrammarHintButton';
 
 export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = null, hideGearTabs = false }) {
   const navigate = useNavigate();
@@ -330,8 +332,32 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
     }
   };
 
-  // Gear 3: Record Voice
+  // Gear 3: Record Voice with AI Syntax Evaluation
+  const retellSpeechRecRef = useRef(null);
+  const retellTranscriptRef = useRef('');
+  const [retellEvaluations, setRetellEvaluations] = useState({}); // { [stepIdx]: { transcript, evalResult } }
+
   const startRetellRecording = async () => {
+    retellTranscriptRef.current = '';
+    const currentQ = RETELL_QUESTIONS[retellStepIdx];
+
+    // Start browser SpeechRecognition in parallel
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      try {
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const rec = new SpeechRec();
+        rec.continuous = true;
+        rec.interimResults = true;
+        rec.lang = 'en-US';
+        rec.onresult = (event) => {
+          const transcript = Array.from(event.results).map(r => r[0].transcript).join(' ');
+          retellTranscriptRef.current = transcript;
+        };
+        rec.start();
+        retellSpeechRecRef.current = rec;
+      } catch (_) {}
+    }
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaRecorderRef.current = new MediaRecorder(stream);
@@ -344,18 +370,34 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       };
 
       mediaRecorderRef.current.onstop = () => {
+        if (retellSpeechRecRef.current) {
+          try { retellSpeechRecRef.current.stop(); } catch (_) {}
+          retellSpeechRecRef.current = null;
+        }
+
         const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
         const audioUrl = URL.createObjectURL(audioBlob);
-        setRetellAudioUrl(audioUrl);
+        setRetellRecordings(prev => ({ ...prev, [retellStepIdx]: audioUrl }));
         setRetellAttemptCount(prev => prev + 1);
-        setShowHint(false);
+
+        const spoken = retellTranscriptRef.current.trim();
+        const evalRes = evaluateSpeechSyntax(spoken, currentQ.sentence, { mode: 'sentence', minWords: 3 });
+
+        setRetellEvaluations(prev => ({
+          ...prev,
+          [retellStepIdx]: { transcript: spoken, evalResult: evalRes }
+        }));
+
         setNovaFeedback({
-          praise: retellAttemptCount === 0 ? "🎉 Fantastic Retelling! You captured the main action with great rhythm." : "⭐ Even better this time! Your transitions are getting smoother.",
-          tip: "💡 Tip: Emphasize action verbs like 'was walking' and 'slipped' for higher marks!"
+          praise: evalRes.isCorrect ? `🎉 ${evalRes.feedback} (Accuracy: ${evalRes.score}%)` : `⚠️ ${evalRes.feedback} (Accuracy: ${evalRes.score}%)`,
+          tip: evalRes.isCorrect ? "💡 Tip: Great syntax and smooth sentence flow!" : `💡 Tip: Try saying: "${currentQ.sentence}"`
         });
-        fireCelebrationConfetti('Retell_Complete');
-        if (!completedGears.includes(3)) {
-          setCompletedGears(prev => [...prev, 3]);
+
+        if (evalRes.isCorrect) {
+          fireCelebrationConfetti('Retell_Complete');
+          if (!completedGears.includes(3)) {
+            setCompletedGears(prev => [...prev, 3]);
+          }
         }
       };
 
@@ -363,20 +405,32 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       setIsRecording(true);
       setNovaFeedback(null);
     } catch (err) {
-      console.warn("Microphone access simulated:", err);
-      setIsRecording(true);
-      setTimeout(() => {
-        setIsRecording(false);
-        setRetellAudioUrl('simulated_retell_audio');
-        setNovaFeedback({
-          praise: "⭐ Wonderful retelling simulated! You spoke with great confidence.",
-          tip: "💡 Keep practicing smooth sentence transitions like 'Suddenly' and 'Right away'."
-        });
-        fireCelebrationConfetti('Retell_Complete');
-        if (!completedGears.includes(3)) {
-          setCompletedGears(prev => [...prev, 3]);
-        }
-      }, 3000);
+      console.warn("Microphone access fallback:", err);
+      // Fallback
+      handleManualRetellSubmit(currentQ.sentence);
+    }
+  };
+
+  const handleManualRetellSubmit = (typedText) => {
+    const currentQ = RETELL_QUESTIONS[retellStepIdx];
+    const evalRes = evaluateSpeechSyntax(typedText, currentQ.sentence, { mode: 'sentence', minWords: 3 });
+
+    setRetellRecordings(prev => ({ ...prev, [retellStepIdx]: 'typed_submission' }));
+    setRetellEvaluations(prev => ({
+      ...prev,
+      [retellStepIdx]: { transcript: typedText, evalResult: evalRes }
+    }));
+
+    setNovaFeedback({
+      praise: evalRes.isCorrect ? `🎉 ${evalRes.feedback} (Accuracy: ${evalRes.score}%)` : `⚠️ ${evalRes.feedback} (Accuracy: ${evalRes.score}%)`,
+      tip: evalRes.isCorrect ? "💡 Tip: Accurate grammar and sentence construction!" : `💡 Tip: Check: "${currentQ.sentence}"`
+    });
+
+    if (evalRes.isCorrect) {
+      fireCelebrationConfetti('Retell_Complete');
+      if (!completedGears.includes(3)) {
+        setCompletedGears(prev => [...prev, 3]);
+      }
     }
   };
 
@@ -386,6 +440,7 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
       setIsRecording(false);
     }
   };
+
 
   const [foundItems, setFoundItems] = useState([]);
 
@@ -1021,16 +1076,38 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                       </div>
 
 
-                      {/* Recorded Audio Feedback */}
-                      {retellRecordings[retellStepIdx] && (
-                        <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-2xl flex flex-col sm:flex-row items-center justify-center gap-3 animate-in fade-in max-w-md mx-auto">
-                          <audio controls src={retellRecordings[retellStepIdx]} className="h-9 w-full sm:w-auto rounded-xl" />
-                          <span className="text-xs font-bold text-emerald-800 flex items-center gap-1 shrink-0">
-                            <CheckCircle2 size={14} className="text-emerald-600" /> Recorded
-                          </span>
+                      {/* Recorded Audio & AI Evaluation Feedback */}
+                      {retellEvaluations[retellStepIdx] && (
+                        <div className="space-y-2 max-w-md mx-auto animate-in fade-in">
+                          <div className={`p-3.5 rounded-2xl border ${
+                            retellEvaluations[retellStepIdx].evalResult.isCorrect
+                              ? 'bg-emerald-50 border-emerald-300 text-emerald-950'
+                              : 'bg-amber-50 border-amber-300 text-amber-950'
+                          } text-left space-y-1`}>
+                            <div className="flex items-center justify-between text-xs font-black">
+                              <span>{retellEvaluations[retellStepIdx].evalResult.feedback}</span>
+                              <span>Score: {retellEvaluations[retellStepIdx].evalResult.score}%</span>
+                            </div>
+                            {retellEvaluations[retellStepIdx].transcript && (
+                              <p className="text-xs font-medium italic">
+                                You said: "{retellEvaluations[retellStepIdx].transcript}"
+                              </p>
+                            )}
+                          </div>
                         </div>
                       )}
+
+                      {/* Fallback Keyboard Input */}
+                      <div className="pt-1 max-w-md mx-auto">
+                        <MicFallbackInput
+                          onSubmit={handleManualRetellSubmit}
+                          placeholder={`e.g. ${currentQ.sentence}`}
+                          buttonLabel="Submit Retell Sentence →"
+                          color="purple"
+                        />
+                      </div>
                     </div>
+
 
                     {/* Step Navigation */}
                     <div className="flex items-center justify-between pt-4 border-t border-slate-100">
