@@ -14,6 +14,13 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
   const studioData = data?.creatorStudio || {};
+  // Fallback: pull writing data from stations.writing if creatorStudio key absent (W33+)
+  const writingData = data?.stations?.writing || {};
+  const storyPrompts = studioData.storyPrompts || {
+    picture_mode: writingData.picture_mode,
+    topic_mode:   writingData.topic_mode,
+  };
+
   const STATION_TO_TAB = {
     writing: 'story_writer',
     broadcast: 'podcast_creator',
@@ -252,7 +259,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
       <div className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">
         {activeTab === 'story_writer' && (
           <StoryWriting
-            storyPrompts={studioData.storyPrompts}
+            storyPrompts={storyPrompts}
             weekNumber={weekNumber}
             onComplete={(xp, finalText, extraData) => handleStoryComplete(xp, finalText, extraData)}
             onReportProgress={(percent, finalText, extraData) => handleStoryComplete(0, finalText, extraData)}

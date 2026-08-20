@@ -129,6 +129,16 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const totalQuests = TOTAL_QUEST_DAYS * 3;
   const progressPercent = Math.round((weekQuestCount / totalQuests) * 100);
 
+  // Owner / super_admin: all stations always unlocked — no sequential gate
+  const { currentUser } = useUserStore();
+  const BYPASS_ROLES = ['super_admin', 'admin', 'teacher', 'team_leader', 'center_director'];
+  const isOwnerBypass = BYPASS_ROLES.includes(currentUser?.role);
+
+  // Sync teacherOverride once on mount when owner is detected
+  useEffect(() => {
+    if (isOwnerBypass) setTeacherOverride(true);
+  }, [isOwnerBypass]);
+
   const pos = useCallback((station) =>
     isPortrait ? station.positionMobile : station.position, [isPortrait]);
   const taskPos = useCallback((station, qi) =>
