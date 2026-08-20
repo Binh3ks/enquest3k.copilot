@@ -310,7 +310,7 @@ const MainLayout = ({ isTaskMode = false }) => {
 
   // Redirect legacy 14-station URLs to clean /week/:weekId/hub/:hubId for Week 33+
   useEffect(() => {
-    if (weekId >= 33 && !hubId) {
+    if (weekId >= 33 && !hubId && !isTaskMode) {
       let targetHub = 1;
       if (['read_explore', 'explore', 'new_words'].includes(tabKey)) targetHub = 1;
       else if (['grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tabKey)) targetHub = 2;
@@ -318,7 +318,7 @@ const MainLayout = ({ isTaskMode = false }) => {
       else if (['shadowing', 'ask_ai', 'mindmap_speaking'].includes(tabKey)) targetHub = 4;
       navigate(`/week/${weekId}/hub/${targetHub}`, { replace: true });
     }
-  }, [weekId, hubId, tabKey, navigate]);
+  }, [weekId, hubId, tabKey, navigate, isTaskMode]);
 
   
   const { data: weekData, loading: isWeekDataLoading, error: weekDataError } = useFetchWeekData(weekId, learningMode);

@@ -58,12 +58,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
 
   const routing = TASK_ROUTING[taskId];
 
-  // Mark quest as completed when entering
-  useEffect(() => {
-    if (taskId) {
-      useDailyQuestStore.getState().completeQuest(weekId, taskId);
-    }
-  }, [taskId, weekId]);
+  // TaskScreen does not auto-complete on mount; completion is triggered when user finishes the activity
 
   const handleBackToMap = () => {
     navigate(`/week/${weekId}/hub/1`);
