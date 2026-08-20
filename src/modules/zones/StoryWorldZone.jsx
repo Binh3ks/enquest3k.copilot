@@ -10,19 +10,25 @@ import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { getNovaStage } from '../../services/companionEngine';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
-export default function StoryWorldZone({ data, weekNumber = 33 }) {
+export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = null, hideGearTabs = false }) {
   const [searchParams] = useSearchParams();
   const storyData = data?.storyWorld || {};
-  const [currentGear, setCurrentGear] = useState(1);
+  const [currentGear, setCurrentGear] = useState(forcedGear || 1);
   const [completedGears, setCompletedGears] = useState([1]);
 
-  // Sync gear from URL query param ?gear=N
+  // If forcedGear changes, update
   useEffect(() => {
+    if (forcedGear) setCurrentGear(forcedGear);
+  }, [forcedGear]);
+
+  // Sync gear from URL query param ?gear=N (only if not forced)
+  useEffect(() => {
+    if (forcedGear) return;
     const gearParam = parseInt(searchParams.get('gear'), 10);
     if (gearParam >= 1 && gearParam <= 4) {
       setCurrentGear(gearParam);
     }
-  }, [searchParams]);
+  }, [searchParams, forcedGear]);
 
   // Instant Quest completion tracking whenever currentGear changes
   useEffect(() => {
@@ -335,11 +341,14 @@ export default function StoryWorldZone({ data, weekNumber = 33 }) {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
       {/* 4-Gear Story World Progression Bar */}
-      <GearIndicator
-        currentGear={currentGear}
-        onSelectGear={setCurrentGear}
-        completedGears={completedGears}
-      />
+      {/* 4-Gear Story World Progression Bar — hidden in task mode */}
+      {!hideGearTabs && (
+        <GearIndicator
+          currentGear={currentGear}
+          onSelectGear={setCurrentGear}
+          completedGears={completedGears}
+        />
+      )}
 
       {/* ========================================================================= */}
       {/* GEAR 1: 🎬 3D PIXAR WEBTOON & INTERACTIVE VOCABULARY HOTSPOTS             */}

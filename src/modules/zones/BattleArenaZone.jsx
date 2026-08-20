@@ -9,20 +9,29 @@ import { Swords, Trophy, Zap, ShieldAlert, Sparkles, BookOpen } from 'lucide-rea
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
-export default function BattleArenaZone({ data, weekNumber = 33 }) {
+export default function BattleArenaZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
   const arenaData = data?.battleArena || {};
-  const [activeGame, setActiveGame] = useState('word_blitz');
+  const STATION_TO_GAME = { word_blitz: 'word_blitz', word_power: 'word_blitz', sentence_smash: 'sentence_smash', math_quest: 'bar_model' };
+  const [activeGame, setActiveGame] = useState(forcedStation ? (STATION_TO_GAME[forcedStation] || 'word_blitz') : 'word_blitz');
   const [totalXP, setTotalXP] = useState(0);
 
-  // Sync activeGame from URL ?station=...
+  // Sync from forcedStation
   useEffect(() => {
+    if (forcedStation && STATION_TO_GAME[forcedStation]) {
+      setActiveGame(STATION_TO_GAME[forcedStation]);
+    }
+  }, [forcedStation]);
+
+  // Sync activeGame from URL ?station=... (only if not forced)
+  useEffect(() => {
+    if (forcedStation) return;
     const station = searchParams.get('station');
     if (station === 'word_blitz') setActiveGame('word_blitz');
     else if (station === 'sentence_smash') setActiveGame('sentence_smash');
     else if (station === 'math_quest') setActiveGame('bar_model');
     else if (station === 'word_power') setActiveGame('word_blitz');
-  }, [searchParams]);
+  }, [searchParams, forcedStation]);
 
   // Mark quest complete when game is selected/opened
   useEffect(() => {
@@ -75,8 +84,8 @@ export default function BattleArenaZone({ data, weekNumber = 33 }) {
         <span className="font-bold text-purple-200 shrink-0">{coopPercent}%</span>
       </div>
 
-      {/* Vibrant Multi-Color Subtabs Selector — 3 Featured Games per Week (Rotation) */}
-      {(() => {
+      {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}
+      {!hideStationTabs && (() => {
         // Enforce 3 featured games per week rotation to prevent cognitive overload
         const isEvenWeek = weekNumber % 2 === 0;
         const featuredGames = isEvenWeek

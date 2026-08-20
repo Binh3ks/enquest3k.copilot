@@ -17,7 +17,7 @@ import { Shield, Trophy, CheckCircle2, RotateCcw, Award, PlayCircle, Star, Spark
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
-export default function BossBattleZone({ data, weekNumber = 33 }) {
+export default function BossBattleZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const userShields = useUserStore((state) => state.userShields || 0);
   const rotaryConfig = getBossRotaryConfig(weekNumber);
   const bossData = data?.bossBattle || {};

@@ -9,20 +9,27 @@ import { PenTool, Mic, TestTube, MessageSquare, Trophy, Sparkles, AlertCircle, Z
 import { useStationProgress } from '../../hooks/useStationProgress';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 
-export default function CreatorStudioZone({ data, weekNumber = 33 }) {
+export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation = null, hideStationTabs = false }) {
   const [searchParams] = useSearchParams();
   const studioData = data?.creatorStudio || {};
-  const [activeTab, setActiveTab] = useState('story_writer');
+  const STATION_TO_TAB = { writing: 'story_writer', broadcast: 'podcast_creator', dictation: 'science_report' };
+  const [activeTab, setActiveTab] = useState(forcedStation ? (STATION_TO_TAB[forcedStation] || 'story_writer') : 'story_writer');
   const [studioXP, setStudioXP] = useState(0);
 
-  // Sync tab from URL ?station=...
+  // Sync from forcedStation
   useEffect(() => {
+    if (forcedStation && STATION_TO_TAB[forcedStation]) setActiveTab(STATION_TO_TAB[forcedStation]);
+  }, [forcedStation]);
+
+  // Sync tab from URL ?station=... (only if not forced)
+  useEffect(() => {
+    if (forcedStation) return;
     const station = searchParams.get('station');
     if (station === 'broadcast') setActiveTab('podcast_creator');
     else if (station === 'writing') setActiveTab('story_writer');
     else if (station === 'dictation') setActiveTab('science_report');
     else if (station === 'refresh') setActiveTab('brain_refresh');
-  }, [searchParams]);
+  }, [searchParams, forcedStation]);
 
   // Instant Quest completion when activeTab changes
   useEffect(() => {
@@ -175,8 +182,8 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
         </div>
       </div>
 
-      {/* Vibrant Multi-Color Subtabs Selector */}
-      <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
+      {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}
+      {!hideStationTabs && <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
           <button
             type="button"
@@ -234,7 +241,7 @@ export default function CreatorStudioZone({ data, weekNumber = 33 }) {
             🎤 AI DEBATE
           </button>
         </div>
-      </div>
+      </div>}
 
       {/* Active Sub-Component */}
       <div className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">
