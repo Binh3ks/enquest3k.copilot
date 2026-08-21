@@ -7,11 +7,15 @@ import { persist } from 'zustand/middleware';
  *
  * Rules:
  *  1. Initial battery: 3 minutes play energy.
- *  2. Milestone Rewards per day (cumulative):
+ *  2. Age-appropriate focus cycle threshold:
+ *     - G1 (W01-W10): 10 mins (600s)
+ *     - G2 (W11-W20): 12 mins (720s)
+ *     - G3 (W21-W32): 15 mins (900s)
+ *     - G4+ (W33+): 18 mins (1080s)
+ *  3. Cumulative study milestone rewards per day:
  *     - 30 mins study (1800s) -> +5 mins (300s) game energy
  *     - 45 mins study (2700s) -> +5 mins (300s) game energy
  *     - 60 mins study (3600s) -> +5 mins (300s) game energy
- *  3. Partialize only saves energy, highScores, and milestones (isArcadeOpen is strictly transient).
  */
 
 export const ARCADE_GAMES = [
@@ -32,7 +36,11 @@ export const ARCADE_GAMES = [
 export const ARCADE_GAME_CATALOG = ARCADE_GAMES;
 
 export function getFocusCycleSeconds(weekNumber) {
-  return 1800; // 30 minutes study target
+  const w = parseInt(weekNumber) || 33;
+  if (w <= 10) return 600;  // 10 mins for Grade 1
+  if (w <= 20) return 720;  // 12 mins for Grade 2
+  if (w <= 32) return 900;  // 15 mins for Grade 3
+  return 1080;              // 18 mins for Grade 4-5
 }
 
 export function getUnlockedGameCount(weekNumber) {
@@ -49,10 +57,13 @@ export const useArcadeStore = create(
       dailyDate: new Date().toDateString(),
       rewardedMilestones: [], // e.g. [1800, 2700, 3600]
       isArcadeOpen: false,
+      showBreakPrompt: false,
+      breakPromptDismissedCycle: false,
       activeGameId: 'bubble_pop',
       highScores: {},
 
       setArcadeOpen: (isOpen) => set({ isArcadeOpen: isOpen }),
+      setShowBreakPrompt: (show) => set({ showBreakPrompt: show }),
       setActiveGame: (gameId) => set({ activeGameId: gameId }),
 
       // Active learning heartbeat (called on real user inputs: clicks, audio, typing)
@@ -97,13 +108,26 @@ export const useArcadeStore = create(
           nextMilestones.push(3600);
         }
 
+        // Check age-appropriate focus cycle threshold (e.g. 18m)
+        const focusReq = getFocusCycleSeconds(weekNumber);
+        let triggerPrompt = false;
+        if (currentStudy >= focusReq && !get().breakPromptDismissedCycle && !get().isArcadeOpen) {
+          triggerPrompt = true;
+        }
+
         set({
           studySeconds: currentStudy,
           playEnergySeconds: get().playEnergySeconds + bonusEnergy,
           rewardedMilestones: nextMilestones,
+          showBreakPrompt: triggerPrompt ? true : get().showBreakPrompt,
           lastActiveTimestamp: now,
           dailyDate: todayStr,
         });
+      },
+
+      // Dismiss break prompt for current cycle
+      dismissBreakPrompt: () => {
+        set({ showBreakPrompt: false, breakPromptDismissedCycle: true });
       },
 
       // Consume play energy while playing games (1s tick)

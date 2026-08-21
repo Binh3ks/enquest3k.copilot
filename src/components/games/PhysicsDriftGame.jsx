@@ -6,8 +6,29 @@ import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * PhysicsDriftGame V3 — Highway Road Runner with 2-Stage Word Zoom & Catch Explosion
+ * PhysicsDriftGame V3 — Highway Road Runner with Top-Down Vertical Car & Realistic Oil Skid Physics
  */
+
+// Synthesize a realistic tire skid brake screech with Web Audio API
+function playTireScreech() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(800, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(180, ctx.currentTime + 0.35);
+
+    gain.gain.setValueAtTime(0.25, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.35);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.38);
+  } catch (_) {}
+}
 
 export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
@@ -21,9 +42,11 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
   const [carXPct, setCarXPct] = useState(50); // 0 to 100%
   const [targetWord, setTargetWord] = useState('');
   const [items, setItems] = useState([]);
+  const [skidMarks, setSkidMarks] = useState([]); // [{ id, xPct, y }]
   const [roadOffset, setRoadOffset] = useState(0);
   const [speedBoost, setSpeedBoost] = useState(false);
-  const [spinout, setSpinout] = useState(false);
+  const [isSkidding, setIsSkidding] = useState(false);
+  const [skidRotation, setSkidRotation] = useState(0);
   const [zoomingWord, setZoomingWord] = useState(null); // Stage 1: { xPct, y, word }
   const [catchBurst, setCatchBurst] = useState(null); // Stage 2: { xPct, y }
   const [feedback, setFeedback] = useState(null);
@@ -68,17 +91,19 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
   const gameLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
 
-    // Smooth keyboard steering
-    if (keysPressed.current['ArrowLeft'] || keysPressed.current['a'] || keysPressed.current['A']) {
-      carXRef.current = Math.max(12, carXRef.current - 1.8);
-      setCarXPct(carXRef.current);
-    }
-    if (keysPressed.current['ArrowRight'] || keysPressed.current['d'] || keysPressed.current['D']) {
-      carXRef.current = Math.min(88, carXRef.current + 1.8);
-      setCarXPct(carXRef.current);
+    // Smooth keyboard steering (disabled during wild oil spinout)
+    if (!isSkidding) {
+      if (keysPressed.current['ArrowLeft'] || keysPressed.current['a'] || keysPressed.current['A']) {
+        carXRef.current = Math.max(12, carXRef.current - 1.8);
+        setCarXPct(carXRef.current);
+      }
+      if (keysPressed.current['ArrowRight'] || keysPressed.current['d'] || keysPressed.current['D']) {
+        carXRef.current = Math.min(88, carXRef.current + 1.8);
+        setCarXPct(carXRef.current);
+      }
     }
 
-    const speed = speedBoost ? 4.8 : spinout ? 0.9 : 2.5;
+    const speed = speedBoost ? 4.8 : isSkidding ? 1.0 : 2.5;
     roadOffsetRef.current = (roadOffsetRef.current + speed) % 60;
     setRoadOffset(roadOffsetRef.current);
 
@@ -169,19 +194,31 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
             pickNextTarget();
           }, 700);
         } else if (item.isObstacle) {
-          // HIT OIL SLICK
+          // HIT OIL SLICK -> REALISTIC 720° SPINOUT & TIRE SCREECH
           scoreRef.current = Math.max(0, scoreRef.current - 5);
           streakRef.current = 0;
           setScore(scoreRef.current);
           setStreak(0);
-          setSpinout(true);
-          setFeedback({ msg: `🛢️ Puddle Skid! (−5 pts)`, type: 'bad' });
+          setIsSkidding(true);
+          setSkidRotation(720);
+
+          // Add skid tire marks behind car
+          setSkidMarks(prev => [...prev.slice(-4), { id: Date.now(), xPct: carXRef.current, y: playerY }]);
+
+          // Swerve car violently left or right
+          const swerveDir = Math.random() > 0.5 ? 18 : -18;
+          carXRef.current = Math.max(15, Math.min(85, carXRef.current + swerveDir));
+          setCarXPct(carXRef.current);
+
+          playTireScreech();
+          setFeedback({ msg: `🛢️ Oil Skid Spinout! (−5 pts)`, type: 'bad' });
           setFoxTrigger(true);
 
           setTimeout(() => {
-            setSpinout(false);
+            setIsSkidding(false);
+            setSkidRotation(0);
             setFeedback(null);
-          }, 1200);
+          }, 1100);
         } else {
           // WRONG WORD
           scoreRef.current = Math.max(0, scoreRef.current - 2);
@@ -202,11 +239,11 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
     setItems(nextItems);
 
     frameRef.current = requestAnimationFrame(gameLoop);
-  }, [speedBoost, spinout, wordBank, pickNextTarget]);
+  }, [speedBoost, isSkidding, wordBank, pickNextTarget]);
 
   // Touch / Click to smoothly steer car to target X
   const handleRoadClick = (e) => {
-    if (gameStateRef.current !== 'playing') return;
+    if (gameStateRef.current !== 'playing' || isSkidding) return;
     const cr = containerRef.current?.getBoundingClientRect();
     if (!cr) return;
     const clickXPct = Math.max(12, Math.min(88, ((e.clientX - cr.left) / cr.width) * 100));
@@ -268,11 +305,13 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
     setGameTimer(60);
     setCarXPct(50);
     setItems([]);
+    setSkidMarks([]);
     setFeedback(null);
     setZoomingWord(null);
     setCatchBurst(null);
     setSpeedBoost(false);
-    setSpinout(false);
+    setIsSkidding(false);
+    setSkidRotation(0);
 
     gameStateRef.current = 'playing';
     setGameState('playing');
@@ -332,7 +371,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
               Highway Word Collector!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Target: Catch <b>{GOAL_WORDS} target words</b> in 60 seconds! Glide your car into words to magnify and blast them for +20 pts!
+              Target: Catch <b>{GOAL_WORDS} target words</b> in 60 seconds! Glide your vertical race car into target word stars! Watch out for oil slicks!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -401,6 +440,16 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
               </React.Fragment>
             ))}
 
+            {/* Skid Marks left on road during spinouts */}
+            {skidMarks.map(sm => (
+              <div key={sm.id} style={{
+                position: 'absolute', left: `${sm.xPct}%`, top: `${sm.y}px`,
+                transform: 'translate(-50%, -50%)', width: '38px', height: '24px',
+                background: 'radial-gradient(ellipse, rgba(0,0,0,0.85) 0%, transparent 80%)',
+                borderRadius: '8px', zIndex: 10, pointerEvents: 'none'
+              }} />
+            ))}
+
             {/* Falling Word Items / Stars */}
             {items.map(item => (
               <div
@@ -415,9 +464,9 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
                   background: item.isTarget
                     ? 'linear-gradient(135deg, #f59e0b, #eab308)'
                     : item.isObstacle
-                    ? 'rgba(15,23,42,0.92)'
+                    ? 'radial-gradient(circle, #0f172a 0%, #000000 100%)'
                     : 'linear-gradient(135deg, #3b82f6, #6366f1)',
-                  border: item.isTarget ? '2.5px solid #ffffff' : '1.5px solid rgba(255,255,255,0.4)',
+                  border: item.isTarget ? '2.5px solid #ffffff' : item.isObstacle ? '2px solid #64748b' : '1.5px solid rgba(255,255,255,0.4)',
                   boxShadow: item.isTarget
                     ? '0 0 20px #f59e0b, 0 6px 16px rgba(0,0,0,0.5)'
                     : '0 4px 12px rgba(0,0,0,0.4)',
@@ -488,22 +537,66 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
               </div>
             )}
 
-            {/* Player's Race Car */}
+            {/* TOP-DOWN VERTICAL RACING CAR (Faces straight UP ⬆️) */}
             <div
               style={{
                 position: 'absolute',
                 left: `${carXPct}%`,
-                bottom: '30px',
-                transform: `translate(-50%, 0) ${spinout ? 'rotate(180deg)' : speedBoost ? 'scale(1.2)' : ''}`,
-                fontSize: '44px',
+                bottom: '24px',
+                transform: `translate(-50%, 0) rotate(${skidRotation}deg) ${speedBoost ? 'scale(1.15)' : ''}`,
                 zIndex: 30,
-                transition: 'left 0.15s ease-out, transform 0.25s',
+                transition: isSkidding ? 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), left 0.4s' : 'left 0.12s ease-out, transform 0.2s',
                 pointerEvents: 'none',
-                filter: spinout ? 'hue-rotate(180deg)' : speedBoost ? 'brightness(1.5)' : 'drop-shadow(0 8px 16px rgba(0,0,0,0.7))',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
               }}
             >
-              🏎️
-              {speedBoost && <div style={{ position: 'absolute', bottom: '-10px', left: '50%', transform: 'translateX(-50%)', fontSize: '18px' }}>🔥</div>}
+              {/* Headlights Light Beams */}
+              <div style={{
+                width: '36px', height: '40px',
+                background: 'linear-gradient(180deg, rgba(254,240,138,0.4) 0%, transparent 100%)',
+                clipPath: 'polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%)',
+                marginBottom: '-12px', opacity: 0.8,
+              }} />
+
+              {/* Crisp Top-Down Vertical Car Body SVG */}
+              <svg width="42" height="68" viewBox="0 0 42 68" fill="none">
+                {/* 4 Tires */}
+                <rect x="0" y="8" width="8" height="16" rx="3" fill="#0f172a" stroke="#334155" />
+                <rect x="34" y="8" width="8" height="16" rx="3" fill="#0f172a" stroke="#334155" />
+                <rect x="0" y="44" width="8" height="18" rx="3" fill="#0f172a" stroke="#334155" />
+                <rect x="34" y="44" width="8" height="18" rx="3" fill="#0f172a" stroke="#334155" />
+
+                {/* Main Aerodynamic Chassis */}
+                <path d="M7 20 C7 8, 14 2, 21 2 C28 2, 35 8, 35 20 L35 56 C35 62, 28 64, 21 64 C14 64, 7 62, 7 56 Z" fill="url(#carPaint)" stroke="#ffffff" strokeWidth="1.5" />
+
+                {/* Front Hood Scoop & Stripes */}
+                <path d="M18 6 L24 6 L22 22 L20 22 Z" fill="#ffffff" opacity="0.9" />
+
+                {/* Windshield Cockpit */}
+                <ellipse cx="21" cy="30" rx="9" ry="11" fill="#0284c7" stroke="#38bdf8" strokeWidth="1.5" />
+                <ellipse cx="19" cy="27" rx="5" ry="6" fill="#7dd3fc" opacity="0.6" />
+
+                {/* Rear Spoiler Wing */}
+                <rect x="4" y="60" width="34" height="6" rx="2" fill="#1e1b4b" stroke="#f59e0b" strokeWidth="1.2" />
+
+                <defs>
+                  <linearGradient id="carPaint" x1="7" y1="2" x2="35" y2="64" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#ef4444" />
+                    <stop offset="0.5" stopColor="#dc2626" />
+                    <stop offset="1" stopColor="#991b1b" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              {/* Fire exhaust / Smoke when skidding */}
+              {speedBoost && (
+                <div style={{ fontSize: '18px', marginTop: '-6px', animation: 'bounce 0.2s infinite' }}>🔥</div>
+              )}
+              {isSkidding && (
+                <div style={{ fontSize: '20px', marginTop: '-10px', filter: 'blur(1px)' }}>💨</div>
+              )}
             </div>
 
             {/* Feedback Banner */}
@@ -566,28 +659,36 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
         </div>
       )}
 
-      {/* GAME OVER STATE */}
+      {/* GAME OVER STATE (Clear Time's Up / Goal indicator) */}
       {gameState === 'done' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px' }}>{wordsCaught >= GOAL_WORDS ? '🏆' : '⭐'}</div>
+          <div style={{ fontSize: '56px' }}>{wordsCaught >= GOAL_WORDS ? '🏆' : '⏱️'}</div>
           <div>
-            <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#4ade80' }}>
-              {wordsCaught >= GOAL_WORDS ? 'Target Achieved! Road Legend!' : 'Highway Run Finished!'}
+            <h3 style={{
+              margin: '0 0 6px', fontSize: '24px', fontWeight: 900,
+              color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#ef4444'
+            }}>
+              {wordsCaught >= GOAL_WORDS ? 'Target Achieved! Road Legend!' : "Time's Up — Game Over!"}
             </h3>
-            <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
-              Caught: <strong style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught} words</strong> (Goal: {GOAL_WORDS})
+            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+              Caught: <strong style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught}/{GOAL_WORDS} words</strong>
+              {wordsCaught < GOAL_WORDS && <span style={{ color: '#94a3b8', fontSize: '12px', display: 'block', marginTop: '4px' }}>Goal was {GOAL_WORDS} words in 60s</span>}
             </p>
-            <p style={{ margin: '6px 0 0', fontSize: '16px', color: '#cbd5e1' }}>
+            <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
               Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
               {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
-            padding: '12px 28px', background: 'linear-gradient(135deg, #059669, #0d9488)',
+            padding: '12px 28px',
+            background: wordsCaught >= GOAL_WORDS
+              ? 'linear-gradient(135deg, #059669, #0d9488)'
+              : 'linear-gradient(135deg, #dc2626, #b91c1c)',
             color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
             border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
           }}>
-            <RotateCcw size={16} /> Race Again
+            <RotateCcw size={16} /> {wordsCaught >= GOAL_WORDS ? 'Race Again' : 'Try Again'}
           </button>
         </div>
       )}

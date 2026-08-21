@@ -65,6 +65,7 @@ import OnboardingFlow from './components/onboarding/OnboardingFlow';
 import SubscriptionModal from './components/subscription/SubscriptionModal';
 import useArcadeStore from './stores/useArcadeStore';
 import ArcadeModal from './components/games/ArcadeModal';
+import ArcadeBreakPromptModal from './components/games/ArcadeBreakPromptModal';
 
 // Lazy-loaded heavy pages
 const GameHub = React.lazy(() => import('./pages/GameHub/GameHub'));
@@ -667,7 +668,10 @@ const MainLayout = ({ isTaskMode = false }) => {
   }
 
   const isQuestMapView = weekId >= 33 && (hubId || tabKey === 'read_explore');
-  const { isArcadeOpen, setArcadeOpen } = useArcadeStore();
+  const {
+    isArcadeOpen, setArcadeOpen,
+    showBreakPrompt, dismissBreakPrompt
+  } = useArcadeStore();
   const isOwner = currentUser?.role === 'owner';
 
   if (isQuestMapView && !isTaskMode) {
@@ -693,6 +697,15 @@ const MainLayout = ({ isTaskMode = false }) => {
           ownerBypass={isOwner}
           onClose={() => setArcadeOpen(false)}
         />
+        {/* Automatic Age-Appropriate Break Nudge Modal */}
+        <ArcadeBreakPromptModal
+          isOpen={showBreakPrompt}
+          onPlay={() => {
+            dismissBreakPrompt();
+            setArcadeOpen(true);
+          }}
+          onSkip={dismissBreakPrompt}
+        />
       </>
     );
   }
@@ -711,6 +724,14 @@ const MainLayout = ({ isTaskMode = false }) => {
         <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} onLogout={logout} currentUser={currentUser} currentWeekId={weekId} />
         <SubscriptionModal isOpen={isUpgradeModalOpen} onClose={() => setIsUpgradeModalOpen(false)} />
         <ArcadeModal isOpen={isArcadeOpen} onClose={() => setArcadeOpen(false)} weekNumber={weekId} ownerBypass={isOwner} />
+        <ArcadeBreakPromptModal
+          isOpen={showBreakPrompt}
+          onPlay={() => {
+            dismissBreakPrompt();
+            setArcadeOpen(true);
+          }}
+          onSkip={dismissBreakPrompt}
+        />
         <AvatarCloset isOpen={isAvatarClosetOpen} onClose={() => setIsAvatarClosetOpen(false)} currentUser={currentUser} />
         <EncounterOverlay isOpen={isEncounterOpen} onClose={() => setIsEncounterOpen(false)} weekNumber={weekId} learningMode={learningMode} />
         <UnboxAnimation
