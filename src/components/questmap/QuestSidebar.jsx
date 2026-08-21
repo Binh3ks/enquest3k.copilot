@@ -161,8 +161,8 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
           <button
             className="qs-nav-item"
             onClick={() => {
+              useArcadeStore.getState().setArcadeOpen(true);
               onClose();
-              setShowArcade(true);
             }}
             style={{ position: 'relative' }}
           >

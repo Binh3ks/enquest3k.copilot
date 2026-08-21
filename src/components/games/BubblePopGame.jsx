@@ -69,7 +69,6 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
     const newBubbles = allWords.map((word, i) => {
       const color = COLORS[i % COLORS.length];
       const isTarget = word === target;
-      const isGolden = currentStreak >= 4 && isTarget;
       const r = word.length > 8 ? 44 : 38;
 
       // Distribute evenly in a grid with jitter so they don't overlap on spawn
@@ -86,7 +85,6 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
         id: `b_${Date.now()}_${i}_${Math.random()}`,
         word,
         isTarget,
-        isGolden,
         x: Math.max(r + 10, Math.min(W - r - 10, initX)),
         y: Math.max(r + 10, Math.min(H - r - 10, initY)),
         vx,
@@ -383,20 +381,16 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
                     width: `${b.r * 2}px`,
                     height: `${b.r * 2}px`,
                     borderRadius: '50%',
-                    background: b.isGolden
-                      ? 'radial-gradient(circle at 35% 30%, #fff 0%, #fef08a 25%, #eab308 60%, #ca8a04 100%)'
-                      : `radial-gradient(circle at 35% 30%, #ffffff88 0%, ${b.color[0]}dd 40%, ${b.color[1]}ee 100%)`,
-                    boxShadow: b.isGolden
-                      ? '0 0 24px #facc15, inset -4px -4px 10px rgba(0,0,0,0.3)'
-                      : `0 4px 16px ${b.color[0]}55, inset -3px -3px 8px rgba(0,0,0,0.35), inset 3px 3px 6px rgba(255,255,255,0.6)`,
+                    background: `radial-gradient(circle at 35% 30%, #ffffff88 0%, ${b.color[0]}dd 40%, ${b.color[1]}ee 100%)`,
+                    boxShadow: `0 4px 16px ${b.color[0]}55, inset -3px -3px 8px rgba(0,0,0,0.35), inset 3px 3px 6px rgba(255,255,255,0.6)`,
                     border: '1.5px solid rgba(255,255,255,0.5)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     cursor: 'pointer',
-                    color: b.isGolden ? '#78350f' : '#ffffff',
+                    color: '#ffffff',
                     fontWeight: 900,
                     fontSize: b.word.length > 8 ? '11px' : '13px',
                     letterSpacing: '0.02em',
-                    textShadow: b.isGolden ? 'none' : '0 1px 4px rgba(0,0,0,0.8)',
+                    textShadow: '0 1px 4px rgba(0,0,0,0.8)',
                     textAlign: 'center',
                     padding: '6px',
                     zIndex: 20,
