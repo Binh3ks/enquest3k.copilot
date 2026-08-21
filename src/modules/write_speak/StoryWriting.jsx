@@ -249,21 +249,21 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
     );
   }
 
-  // ── PANEL WRITING SCREEN ─────────────────────────────────────
+  // ── PANEL WRITING SCREEN (2-Column Zero-Scroll Standard) ──
   const progressPct = ((panelIdx) / totalPanels) * 100;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-2 flex flex-col gap-3 animate-in fade-in duration-200 w-full">
+    <div className="max-w-6xl mx-auto px-2 py-1 flex flex-col gap-2.5 animate-in fade-in duration-200 w-full">
       {showConfetti && <Confetti recycle={false} numberOfPieces={150} />}
 
-      {/* Progress Header */}
-      <div className="flex items-center justify-between gap-2">
+      {/* Compact Progress Header */}
+      <div className="flex items-center justify-between gap-3 bg-white px-3.5 py-1.5 rounded-2xl border border-slate-200 shadow-2xs">
         <div className="flex-1">
-          <div className="flex items-center justify-between text-[10px] font-black text-slate-500 uppercase mb-1">
+          <div className="flex items-center justify-between text-[10px] font-black text-slate-500 uppercase mb-0.5">
             <span>Panel {panelIdx + 1} of {totalPanels}</span>
-            <span className={wordCount >= 20 ? 'text-emerald-600' : 'text-slate-400'}>{wordCount} words total {wordCount >= 20 ? '✓' : ''}</span>
+            <span className={wordCount >= 20 ? 'text-emerald-600 font-bold' : 'text-slate-400'}>{wordCount} words total {wordCount >= 20 ? '✓' : ''}</span>
           </div>
-          <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+          <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
             <div className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500"
               style={{ width: `${Math.max(5, progressPct + (panelWordCount > 0 ? 33 * 0.5 : 0))}%` }} />
           </div>
@@ -271,168 +271,157 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
         <div className="flex gap-1.5">
           {panels.map((_, i) => (
             <div key={i} onClick={() => setPanelIdx(i)}
-              className={`w-6 h-6 rounded-full text-[9px] font-black flex items-center justify-center cursor-pointer border-2 transition ${i === panelIdx ? 'bg-indigo-600 border-indigo-400 text-white scale-110' : panelTexts[i]?.trim() ? 'bg-emerald-500 border-emerald-300 text-white' : 'bg-slate-100 border-slate-300 text-slate-400'}`}>
+              className={`w-6 h-6 rounded-full text-[9px] font-black flex items-center justify-center cursor-pointer border-2 transition ${i === panelIdx ? 'bg-indigo-600 border-indigo-400 text-white scale-110 shadow-xs' : panelTexts[i]?.trim() ? 'bg-emerald-500 border-emerald-300 text-white' : 'bg-slate-100 border-slate-300 text-slate-400'}`}>
               {panelTexts[i]?.trim() ? '✓' : i + 1}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Nova Bubble */}
-      <div className="flex gap-3 items-start bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-3 shadow-sm">
-        <span className="text-2xl shrink-0 mt-0.5">{NOVA_AVATAR}</span>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-amber-950 leading-snug">
-            {currentPanel?.nova_question_en || 'Describe what you see in this picture!'}
-          </p>
-        </div>
-        <button type="button" onClick={() => speakText(currentPanel?.nova_question_en || '')}
-          className="shrink-0 w-8 h-8 rounded-full bg-amber-200 hover:bg-amber-300 text-amber-900 flex items-center justify-center text-base transition active:scale-90 shadow-sm">
-          🔊
-        </button>
-      </div>
-
-      {/* Picture — full width, prominent */}
-      <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border-2 border-slate-200 bg-slate-100" style={{ aspectRatio: '16/9' }}>
-        <img
-          src={currentPanel?.image_url || ''}
-          alt={currentPanel?.caption || `Panel ${panelIdx + 1}`}
-          className="w-full h-full object-cover"
-          onError={e => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
-        />
-        <span className="absolute top-3 left-3 px-2.5 py-1 bg-amber-400 text-slate-950 rounded-lg text-[11px] font-black uppercase tracking-wider shadow">
-          Panel {panelIdx + 1}
-        </span>
-        <span className="absolute top-3 right-3 px-2.5 py-1 bg-slate-950/80 text-white rounded-lg text-[10px] font-bold backdrop-blur-sm">
-          {currentPanel?.caption}
-        </span>
-      </div>
-
-      {/* Character Role Identification Banner */}
-      {currentPanel?.character_guide && (
-        <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 border border-slate-300/80 rounded-xl text-[11px] font-bold text-slate-700">
-          <span className="text-sm">🏷️</span>
-          <span>Characters: <strong className="text-slate-900">{currentPanel.character_guide}</strong></span>
-        </div>
-      )}
-
-      {/* Reusable Grammar Hint Button (hidden by default) */}
-      {currentPanel?.grammar_hint && !currentFreeMode && (
-        <GrammarHintButton
-          hintText={currentPanel.grammar_hint}
-          label="💡 Need a grammar hint for this scene?"
-        />
-      )}
-
-
-      {/* Vocabulary Pills — per panel only */}
-      {!currentFreeMode && currentPanel?.pills?.length > 0 && (
-        <div className={`p-3 ${colors.bg} rounded-xl border ${colors.border} space-y-2`}>
-          <div className="flex items-center justify-between">
-            <span className={`text-[10px] font-black uppercase tracking-wider ${colors.label}`}>
-              ⚡ Tap to insert a chunk:
-            </span>
-            <button type="button" onClick={toggleFreeMode}
-              className="text-[10px] font-black text-indigo-600 hover:text-indigo-800 transition flex items-center gap-1">
-              ✨ Write freely instead
+      {/* Main 2-Column Split-Screen Body */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
+        {/* Left Column (5/12): Nova Bubble + Picture + Characters */}
+        <div className="md:col-span-5 flex flex-col gap-2">
+          {/* Nova Bubble */}
+          <div className="flex gap-2.5 items-start bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-2.5 shadow-2xs">
+            <span className="text-xl shrink-0 mt-0.5">{NOVA_AVATAR}</span>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-bold text-amber-950 leading-snug">
+                {currentPanel?.nova_question_en || 'Describe what you see in this picture!'}
+              </p>
+            </div>
+            <button type="button" onClick={() => speakText(currentPanel?.nova_question_en || '')}
+              className="shrink-0 w-7 h-7 rounded-full bg-amber-200 hover:bg-amber-300 text-amber-900 flex items-center justify-center text-sm transition active:scale-90 shadow-2xs">
+              🔊
             </button>
           </div>
-          <div className="flex flex-wrap gap-1.5">
-            {currentPanel.pills.map((pill, i) => (
-              <button key={i} type="button" onClick={() => insertPill(pill)}
-                className={`px-2.5 py-1 ${colors.pill} border rounded-lg text-[11px] font-bold transition active:scale-95 shadow-sm`}>
-                + {pill}
-              </button>
-            ))}
+
+          {/* Picture — compact max-h-[300px] */}
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-md border-2 border-slate-200 bg-slate-100 aspect-[16/10] max-h-[290px]">
+            <img
+              src={currentPanel?.image_url || ''}
+              alt={currentPanel?.caption || `Panel ${panelIdx + 1}`}
+              className="w-full h-full object-cover"
+              onError={e => { e.target.onerror = null; e.target.src = '/images/week33/read_stem.jpg'; }}
+            />
+            <span className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] font-black uppercase tracking-wider shadow">
+              Panel {panelIdx + 1}
+            </span>
+            <span className="absolute top-2.5 right-2.5 px-2 py-0.5 bg-slate-950/80 text-white rounded-md text-[9px] font-bold backdrop-blur-xs">
+              {currentPanel?.caption}
+            </span>
           </div>
-        </div>
-      )}
 
-      {/* Free mode banner */}
-      {currentFreeMode && (
-        <div className="flex items-center justify-between px-3 py-2 bg-indigo-50 border border-indigo-200 rounded-xl">
-          <span className="text-xs font-bold text-indigo-700">✨ Free writing mode — use your own words!</span>
-          <button type="button" onClick={toggleFreeMode} className="text-[10px] font-black text-indigo-500 hover:text-indigo-700 transition">
-            ← Back to guided
-          </button>
-        </div>
-      )}
-
-      {/* Textarea */}
-      <div className="space-y-1.5">
-        <div className="flex items-center justify-between text-[10px] font-black text-slate-500 uppercase">
-          <span>Write {panelIdx === 0 ? '1-2 sentences about Panel 1:' : panelIdx === 1 ? '1-2 sentences about the problem:' : '1-2 sentences about the ending:'}</span>
-          <span className={panelWordCount >= 5 ? 'text-emerald-600' : 'text-slate-400'}>{panelWordCount} words</span>
-        </div>
-        <textarea
-          ref={textareaRef}
-          rows={3}
-          value={panelTexts[panelIdx]}
-          onChange={e => setPanelTexts(prev => { const n = [...prev]; n[panelIdx] = e.target.value; return n; })}
-          placeholder={currentFreeMode
-            ? `Panel ${panelIdx + 1}: Write freely in your own words...`
-            : (currentPanel?.sentence_frame ? `Try starting with: "${currentPanel.sentence_frame}"` : `Write about Panel ${panelIdx + 1}...`)}
-          className="w-full p-3 bg-white border-2 border-indigo-200 focus:border-indigo-500 rounded-xl text-sm font-medium text-slate-900 outline-none resize-none shadow-inner transition leading-relaxed"
-        />
-
-        {/* Hint + Creative encourage row */}
-        <div className="flex items-center justify-between gap-2 flex-wrap">
-          <div className="flex items-center gap-2">
-            {/* Hint: show sentence_frame for 10s */}
-            {!showHint && (
-              <button type="button" onClick={handleShowHint}
-                className="px-2.5 py-1.5 bg-white border border-amber-300 text-amber-800 rounded-lg text-[11px] font-bold hover:bg-amber-50 transition flex items-center gap-1 shadow-sm active:scale-95">
-                💡 Hint <span className="text-[9px] text-amber-500">(10s)</span>
-              </button>
-            )}
-            {showHint && currentPanel?.sentence_frame && (
-              <div className="px-3 py-1.5 bg-amber-50 border border-amber-300 rounded-lg text-[11px] font-bold text-amber-900 flex items-center gap-1.5 animate-in fade-in">
-                <span className="italic">"{currentPanel.sentence_frame}"</span>
-                <span className="text-amber-500 font-black shrink-0">({hintCountdown}s)</span>
-              </div>
-            )}
-          </div>
-          <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-400">
-            <Star size={11} />
-            <span>Try different words for extra stars!</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Story So Far — collapsible */}
-      {fullText.trim().length > 0 && (
-        <div className="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
-          <button type="button" onClick={() => setShowStorySoFar(p => !p)}
-            className="w-full flex items-center justify-between px-3 py-2 text-[10px] font-black text-slate-600 uppercase hover:bg-slate-100 transition">
-            <span>📖 Story so far ({wordCount} words)</span>
-            <span>{showStorySoFar ? '▲' : '▼'}</span>
-          </button>
-          {showStorySoFar && (
-            <div className="px-3 pb-3 flex flex-wrap gap-1 text-xs leading-relaxed animate-in fade-in">
-              {panelTexts[0]?.trim() && <span className="bg-sky-100 text-sky-950 px-2 py-0.5 rounded-md border border-sky-200 font-medium">{panelTexts[0].trim()}</span>}
-              {panelTexts[1]?.trim() && <span className="bg-amber-100 text-amber-950 px-2 py-0.5 rounded-md border border-amber-200 font-medium">{panelTexts[1].trim()}</span>}
-              {panelTexts[2]?.trim() && <span className="bg-purple-100 text-purple-950 px-2 py-0.5 rounded-md border border-purple-200 font-medium">{panelTexts[2].trim()}</span>}
+          {/* Character Guide */}
+          {currentPanel?.character_guide && (
+            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 border border-slate-200 rounded-xl text-[10px] font-bold text-slate-700">
+              <span className="text-xs">🏷️</span>
+              <span>Characters: <strong className="text-slate-900">{currentPanel.character_guide}</strong></span>
             </div>
           )}
         </div>
-      )}
 
-      {/* Navigation Footer */}
-      <div className="flex items-center justify-between gap-2 pt-1">
-        <button type="button" onClick={() => setPanelIdx(p => Math.max(0, p - 1))} disabled={panelIdx === 0}
-          className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 text-slate-700 font-black text-xs rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-sm">
-          <ArrowRight size={14} className="rotate-180" /> Back
-        </button>
-        <span className="flex gap-1">
-          {panels.map((_, i) => (
-            <span key={i} className={`w-2 h-2 rounded-full transition ${i === panelIdx ? 'bg-indigo-600 scale-125' : panelTexts[i]?.trim() ? 'bg-emerald-400' : 'bg-slate-300'}`} />
-          ))}
-        </span>
-        <button type="button" onClick={handleNext}
-          className="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black text-xs rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-md">
-          {panelIdx === totalPanels - 1 ? '📖 Review Story' : `Panel ${panelIdx + 2} →`}
-          <ArrowRight size={14} />
-        </button>
+        {/* Right Column (7/12): Word Bank + Textarea + Controls */}
+        <div className="md:col-span-7 flex flex-col gap-2 bg-white p-3.5 rounded-3xl border border-slate-200 shadow-sm">
+          {/* Grammar hint */}
+          {currentPanel?.grammar_hint && !currentFreeMode && (
+            <GrammarHintButton
+              hintText={currentPanel.grammar_hint}
+              label="💡 Need a grammar hint for this scene?"
+            />
+          )}
+
+          {/* Vocabulary Pills */}
+          {!currentFreeMode && currentPanel?.pills?.length > 0 && (
+            <div className={`p-2.5 ${colors.bg} rounded-xl border ${colors.border} space-y-1.5`}>
+              <div className="flex items-center justify-between">
+                <span className={`text-[10px] font-black uppercase tracking-wider ${colors.label}`}>
+                  ⚡ Tap to insert a chunk:
+                </span>
+                <button type="button" onClick={toggleFreeMode}
+                  className="text-[10px] font-black text-indigo-600 hover:text-indigo-800 transition flex items-center gap-1">
+                  ✨ Write freely instead
+                </button>
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {currentPanel.pills.map((pill, i) => (
+                  <button key={i} type="button" onClick={() => insertPill(pill)}
+                    className={`px-2 py-1 ${colors.pill} border rounded-lg text-[10.5px] font-bold transition active:scale-95 shadow-2xs`}>
+                    + {pill}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Free mode banner */}
+          {currentFreeMode && (
+            <div className="flex items-center justify-between px-3 py-1.5 bg-indigo-50 border border-indigo-200 rounded-xl">
+              <span className="text-[11px] font-bold text-indigo-700">✨ Free writing mode — use your own words!</span>
+              <button type="button" onClick={toggleFreeMode} className="text-[10px] font-black text-indigo-500 hover:text-indigo-700 transition">
+                ← Back to guided
+              </button>
+            </div>
+          )}
+
+          {/* Textarea */}
+          <div className="space-y-1">
+            <div className="flex items-center justify-between text-[10px] font-black text-slate-500 uppercase">
+              <span>Write {panelIdx === 0 ? '1-2 sentences about Panel 1:' : panelIdx === 1 ? '1-2 sentences about the problem:' : '1-2 sentences about the ending:'}</span>
+              <span className={panelWordCount >= 5 ? 'text-emerald-600 font-bold' : 'text-slate-400'}>{panelWordCount} words</span>
+            </div>
+            <textarea
+              ref={textareaRef}
+              rows={3}
+              value={panelTexts[panelIdx]}
+              onChange={e => setPanelTexts(prev => { const n = [...prev]; n[panelIdx] = e.target.value; return n; })}
+              placeholder={currentFreeMode
+                ? `Panel ${panelIdx + 1}: Write freely in your own words...`
+                : (currentPanel?.sentence_frame ? `Try starting with: "${currentPanel.sentence_frame}"` : `Write about Panel ${panelIdx + 1}...`)}
+              className="w-full p-2.5 bg-slate-50 border-2 border-indigo-200 focus:border-indigo-500 focus:bg-white rounded-xl text-xs sm:text-sm font-medium text-slate-900 outline-none resize-none shadow-inner transition leading-relaxed"
+            />
+
+            {/* Hint + Creative encourage row */}
+            <div className="flex items-center justify-between gap-2 flex-wrap">
+              <div className="flex items-center gap-2">
+                {!showHint && (
+                  <button type="button" onClick={handleShowHint}
+                    className="px-2 py-1 bg-white border border-amber-300 text-amber-800 rounded-lg text-[10px] font-bold hover:bg-amber-50 transition flex items-center gap-1 shadow-2xs active:scale-95">
+                    💡 Hint <span className="text-[8px] text-amber-500">(10s)</span>
+                  </button>
+                )}
+                {showHint && currentPanel?.sentence_frame && (
+                  <div className="px-2.5 py-1 bg-amber-50 border border-amber-300 rounded-lg text-[10px] font-bold text-amber-900 flex items-center gap-1.5 animate-in fade-in">
+                    <span className="italic">"{currentPanel.sentence_frame}"</span>
+                    <span className="text-amber-500 font-black shrink-0">({hintCountdown}s)</span>
+                  </div>
+                )}
+              </div>
+              <div className="flex items-center gap-1 text-[10px] font-bold text-slate-400">
+                <Star size={10} />
+                <span>Try different words for extra stars!</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation Footer */}
+          <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-slate-100">
+            <button type="button" onClick={() => setPanelIdx(p => Math.max(0, p - 1))} disabled={panelIdx === 0}
+              className="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 disabled:opacity-30 text-slate-700 font-black text-xs rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-2xs">
+              <ArrowRight size={13} className="rotate-180" /> Back
+            </button>
+            <span className="flex gap-1">
+              {panels.map((_, i) => (
+                <span key={i} className={`w-2 h-2 rounded-full transition ${i === panelIdx ? 'bg-indigo-600 scale-125' : panelTexts[i]?.trim() ? 'bg-emerald-400' : 'bg-slate-300'}`} />
+              ))}
+            </span>
+            <button type="button" onClick={handleNext}
+              className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black text-xs rounded-xl transition flex items-center gap-1.5 active:scale-95 shadow-md">
+              {panelIdx === totalPanels - 1 ? '📖 Review Story' : `Panel ${panelIdx + 2} →`}
+              <ArrowRight size={13} />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

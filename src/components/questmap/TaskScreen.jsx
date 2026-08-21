@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock } from 'lucide-react';
+import { ArrowLeft, Clock, Trophy, Flame } from 'lucide-react';
 import { QUEST_SCHEDULE } from '../../config/questSchedule';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
@@ -78,6 +78,17 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
     );
   }
 
+  // Gamification: Best score retrieval from local storage
+  const bestScore = useMemo(() => {
+    try {
+      const stored = localStorage.getItem(`engquest_best_${weekId}_${taskId}`);
+      if (stored) return parseInt(stored, 10);
+      return null;
+    } catch (_) {
+      return null;
+    }
+  }, [weekId, taskId]);
+
   return (
     <div className="ts-container">
       {/* Top bar */}
@@ -96,9 +107,17 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <span className="ts-task-icon" style={{ marginRight: '6px' }}>{taskInfo.icon}</span>
           <span className="ts-task-name font-black">{taskInfo.label}</span>
         </div>
-        <div className="ts-task-time">
-          <Clock size={12} />
-          <span>~{taskInfo.minutes}m</span>
+        
+        {/* Gamification Progress & Best Record */}
+        <div className="flex items-center gap-2.5">
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-300 rounded-xl text-xs font-black text-amber-900 shadow-2xs">
+            <Trophy size={13} className="text-amber-500" />
+            <span>{bestScore ? `Best: ${bestScore} PTS` : '⚡ Challenge Mode'}</span>
+          </div>
+          <div className="ts-task-time">
+            <Clock size={12} />
+            <span>~{taskInfo.minutes}m</span>
+          </div>
         </div>
       </div>
 

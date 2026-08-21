@@ -270,7 +270,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
           <div className="space-y-2">
             <h3 className="text-2xl font-black text-amber-300">WORD BLITZ SPEED RUN</h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-              Vượt qua 6 vòng đấu chớp nhoáng (Động từ ➔ Danh từ ➔ Cụm từ ➔ Quy tắc). Chỉ 3-4 cặp mỗi vòng!
+              Clear 6 lightning-fast rounds (Verbs ➔ Nouns ➔ Collocations ➔ Rules). Only 3-4 pairs per round!
             </p>
           </div>
           <button
@@ -278,7 +278,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
             onClick={handleStartGame}
             className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
           >
-            <Play size={22} fill="currentColor" /> ▶️ BẮT ĐẦU WORD BLITZ
+            <Play size={22} fill="currentColor" /> ▶️ START WORD BLITZ
           </button>
         </div>
       )}
@@ -288,7 +288,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
         <div className="p-10 bg-gradient-to-br from-emerald-500/30 to-slate-900 border-2 border-emerald-400 rounded-3xl text-center space-y-3 animate-in zoom-in-95">
           <Sparkles size={48} className="mx-auto text-emerald-400 animate-spin" />
           <h3 className="text-2xl font-black text-emerald-300">⚡ ROUND CLEAR!</h3>
-          <p className="text-sm font-bold text-slate-200">Chuẩn bị cho vòng tiếp theo...</p>
+          <p className="text-sm font-bold text-slate-200">Get ready for the next round...</p>
         </div>
       )}
 
@@ -296,14 +296,14 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
       {gameState === 'paused' && (
         <div className="p-8 bg-slate-900 border-2 border-slate-800 rounded-3xl text-center space-y-4 shadow-inner">
           <Pause size={48} className="mx-auto text-amber-400 animate-pulse" />
-          <h3 className="text-xl font-black text-amber-300">TẠM DỪNG</h3>
-          <p className="text-xs text-slate-400">Bấm tiếp tục khi sẵn sàng!</p>
+          <h3 className="text-xl font-black text-amber-300">PAUSED</h3>
+          <p className="text-xs text-slate-400">Tap resume when you're ready!</p>
           <button
             type="button"
             onClick={handleTogglePause}
             className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-black text-xs shadow-md inline-flex items-center gap-2"
           >
-            <Play size={16} fill="currentColor" /> Tiếp tục chơi
+            <Play size={16} fill="currentColor" /> Resume Game
           </button>
         </div>
       )}
@@ -313,19 +313,19 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
         <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-5 animate-in zoom-in-95">
           <Trophy size={56} className="mx-auto text-amber-400 animate-bounce" />
           <h3 className="text-2xl font-black text-amber-300">
-            {score > 0 ? '🎉 HOÀN THÀNH WORD BLITZ!' : 'HẾT GIỜ — THỬ LẠI!'}
+            {score > 0 ? '🎉 WORD BLITZ CLEARED!' : "TIME'S UP — TRY AGAIN!"}
           </h3>
           <div className="flex items-center justify-center gap-6 text-sm font-bold text-slate-200 flex-wrap">
             <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-              <div className="text-xs text-slate-400">Điểm số</div>
+              <div className="text-xs text-slate-400">Score</div>
               <div className="text-xl font-black text-amber-400">{score} PTS</div>
             </div>
             <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-              <div className="text-xs text-slate-400">Chuỗi Combo Max</div>
+              <div className="text-xs text-slate-400">Max Combo</div>
               <div className="text-xl font-black text-orange-400">{maxStreak}x 🔥</div>
             </div>
             <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-              <div className="text-xs text-slate-400">XP Nhận được</div>
+              <div className="text-xs text-slate-400">XP Earned</div>
               <div className="text-xl font-black text-emerald-400">+50 XP</div>
             </div>
           </div>
@@ -336,14 +336,14 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
               onClick={handleStartGame}
               className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-2xl font-black text-xs inline-flex items-center gap-2 transition"
             >
-              <RotateCcw size={16} /> Chơi lại
+              <RotateCcw size={16} /> Play Again
             </button>
             <button
               type="button"
               onClick={() => navigate(`/week/${weekNumber}/hub/1`)}
               className="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl font-black text-sm shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
             >
-              🎉 Hoàn thành & Về bản đồ ▶
+              🎉 Complete & Back to Map ▶
             </button>
           </div>
         </div>
@@ -355,8 +355,8 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
           {/* English Column */}
           <div className="space-y-3">
             <div className="text-xs font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
-              <span>TIẾNG ANH (ENGLISH)</span>
-              <span className="text-[10px] text-slate-400">Chọn từ bên trái</span>
+              <span>ENGLISH TARGET</span>
+              <span className="text-[10px] text-slate-400">Select English</span>
             </div>
             {shuffledEn.map((item) => {
               const isMatched = matchedIds.includes(item.id);
@@ -393,8 +393,8 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
           {/* Meaning / Definition Column */}
           <div className="space-y-3">
             <div className="text-xs font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
-              <span>NGHĨA / ĐỊNH NGHĨA</span>
-              <span className="text-[10px] text-slate-400">Ghép với bên phải</span>
+              <span>MEANING / DEFINITION</span>
+              <span className="text-[10px] text-slate-400">Match Meaning</span>
             </div>
             {shuffledVi.map((item) => {
               const isMatched = matchedIds.includes(item.id);

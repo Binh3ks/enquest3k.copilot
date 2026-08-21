@@ -8,16 +8,10 @@
   }
 }
 
-/* --- ANTI-COPY PROTECTION --- */
-.no-select, html.no-select, body.no-select {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -ms-user-select: none !important;
-}
-/* Allow typing/selecting inside form controls */
-input, textarea, [contenteditable="true"] {
-  user-select: text !important;
-  -webkit-user-select: text !important;
+/* Allow selecting and copying text across the app */
+body {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 /* --- UI STYLES --- */

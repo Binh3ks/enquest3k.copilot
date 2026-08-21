@@ -12,7 +12,8 @@ export default function CLILExplorer({
   weekNumber = 33,
   highlightMode = 'vocab',
   setHighlightMode,
-  targetGrammarRegex = []
+  targetGrammarRegex = [],
+  onCompleteCLIL
 }) {
   const navigate = useNavigate();
   const [currentPhase, setCurrentPhase] = useState(1); // 1: Part 1, 2: Part 2, 3: Sentence Builder & Passport
@@ -482,11 +483,15 @@ export default function CLILExplorer({
               onClick={() => {
                 useDailyQuestStore.getState().completeQuest(weekNumber, 'gear4_clil');
                 fireCelebrationConfetti('Quest_Completed');
-                navigate(`/week/${weekNumber}/hub/1`);
+                if (onCompleteCLIL) {
+                  onCompleteCLIL();
+                } else {
+                  navigate(`/week/${weekNumber}/hub/1`);
+                }
               }}
               className="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 text-white rounded-2xl font-black text-sm shadow-xl flex items-center gap-2 transition hover:scale-105 animate-bounce"
             >
-              🎉 Complete CLIL & Return to Map ▶
+              🎉 Claim CLIL Passport & Return to Map ▶
             </button>
           </div>
         </div>

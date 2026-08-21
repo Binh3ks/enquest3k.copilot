@@ -113,33 +113,3 @@ if ('serviceWorker' in navigator) {
     regs.forEach(reg => reg.unregister());
   }).catch(() => {});
 }
-
-// --- Anti-copy enforcement: block copy/cut/paste/contextmenu on non-editable UI ---
-const isEditableTarget = (el) => {
-  if (!el) return false;
-  if (el.nodeType !== Node.ELEMENT_NODE) return false;
-  const tag = el.tagName;
-  if (tag === 'INPUT' || tag === 'TEXTAREA') return true;
-  if (el.isContentEditable) return true;
-  if (el.closest && el.closest('input, textarea, [contenteditable="true"]')) return true;
-  return false;
-};
-
-const blockCopyHandler = (e) => {
-  if (!isEditableTarget(e.target)) {
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-  }
-  return true;
-};
-
-document.documentElement.classList.add('no-select');
-document.addEventListener('copy', blockCopyHandler, true);
-document.addEventListener('cut', blockCopyHandler, true);
-document.addEventListener('paste', (e) => {
-  if (!isEditableTarget(e.target)) { e.preventDefault(); e.stopPropagation(); }
-}, true);
-document.addEventListener('contextmenu', (e) => {
-  if (!isEditableTarget(e.target)) { e.preventDefault(); }
-}, true);

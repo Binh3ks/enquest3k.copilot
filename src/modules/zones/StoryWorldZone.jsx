@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import GearIndicator from '../../components/zones/GearIndicator';
 import CLILExplorer from '../../components/cambridge/CLILExplorer';
-import ExplorerPassport from '../../components/cambridge/ExplorerPassport';
+import { CompactPassportBadge, GrandStampModal } from '../../components/cambridge/ExplorerPassport';
 import HoverWord, { renderParsedText } from '../../components/common/HoverWord';
 import { Film, Headphones, Mic, Globe, Volume2, Sparkles, CheckCircle2, ChevronRight, Play, Square, RotateCcw, MessageSquare, Info } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
@@ -70,6 +70,8 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   const [studyScaffold, setStudyScaffold] = useState('full'); // 'full' | 'half' | 'chunks'
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
+  const [showStampModal, setShowStampModal] = useState(false);
+  const [clilStampEarned, setClilStampEarned] = useState(false);
 
   // 10s Hint Countdown Timer
   useEffect(() => {
@@ -1186,17 +1188,25 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
 
 
       {/* ========================================================================= */}
-      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER + EXPLORER PASSPORT (EPIC-1)          */}
+      {/* GEAR 4: 🌍 CLIL KNOWLEDGE EXPLORER + EXPLORER PASSPORT (Zero-Scroll)      */}
       {/* ========================================================================= */}
       {currentGear === 4 && (
-        <div className="space-y-5">
-          {/* Nova Evolution Badge (companionEngine connected) */}
-          <div className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-300 rounded-2xl text-xs font-black text-amber-900 shadow-sm">
-            <span className="text-2xl">{novaStage.avatarIcon}</span>
-            <div>
-              <span className="block text-[11px] uppercase tracking-wider">{novaStage.title}</span>
-              <span className="text-[10px] font-medium text-amber-800">{novaStage.badgeTitle} · Streak {streakDays}d</span>
+        <div className="space-y-4">
+          {/* Top Info Bar: Nova Evolution Badge + Compact Passport Badge */}
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-300 rounded-2xl text-xs font-black text-amber-900 shadow-2xs">
+              <span className="text-xl">{novaStage.avatarIcon}</span>
+              <div>
+                <span className="block text-[11px] uppercase tracking-wider">{novaStage.title}</span>
+                <span className="text-[10px] font-medium text-amber-800">{novaStage.badgeTitle} · Streak {streakDays}d</span>
+              </div>
             </div>
+
+            <CompactPassportBadge
+              stampId="science"
+              isEarned={clilStampEarned}
+              onClick={() => setShowStampModal(true)}
+            />
           </div>
 
           {/* CLIL Knowledge Explorer article */}
@@ -1206,10 +1216,18 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             highlightMode={highlightMode}
             setHighlightMode={setHighlightMode}
             targetGrammarRegex={grammarRegex}
+            onCompleteCLIL={() => {
+              setClilStampEarned(true);
+              setShowStampModal(true);
+            }}
           />
 
-          {/* Explorer Passport — CLIL Stamp Collection (EPIC-1) */}
-          <ExplorerPassport earnedStamps={['science']} />
+          {/* Grand Stamp Slam Animation Modal */}
+          <GrandStampModal
+            isOpen={showStampModal}
+            stampId="science"
+            onClose={() => setShowStampModal(false)}
+          />
         </div>
       )}
     </div>
