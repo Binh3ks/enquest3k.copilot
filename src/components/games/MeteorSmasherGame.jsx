@@ -1,34 +1,17 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { RotateCcw, Volume2, Shield, Zap, Sparkles } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
+import { getWeekArcadeData } from './gameDataHelper';
+import { speakText } from '../../utils/AudioHelper';
+import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * MeteorSmasherGame V3 — Upright Text & Easy Trackpad/Touch Controls
- *
- * Features:
- *  - 100% Upright & Legible Text: Meteor rocks spin on background, but WORDS NEVER ROTATE so kids can read easily.
- *  - Gentle descent speed (0.4 - 0.8 px/frame): gives 6-10s per wave to read definitions comfortably.
- *  - Dual Input: Direct Click/Tap ON meteor OR Drag/Swipe across screen for Macbook trackpads & touchscreens.
- *  - TTS Audio: Automatically pronounces definition & word with repeat audio button.
- *  - 3 Shields protection with rich Answer Reveal banner on wrong hit.
+ * MeteorSmasherGame V3 — Full Week Vocabulary & Upright Text with Lexio Fox Mascot
  */
 
-export default function MeteorSmasherGame({ words = [], onComplete, isStandalone = false }) {
-  const DEFAULT_WORDS = [
-    { word: 'friction', definition: 'A force that slows things down when surfaces rub together.' },
-    { word: 'slippery', definition: 'Very smooth — hard to grip or stand on.' },
-    { word: 'bandage', definition: 'A clean cloth strip used to wrap and protect a wound.' },
-    { word: 'corridor', definition: 'A long hallway inside a school building.' },
-    { word: 'momentum', definition: 'The force that keeps a moving object moving forward.' },
-    { word: 'velocity', definition: 'Speed measured in a specific direction.' },
-    { word: 'caution', definition: 'Careful attention to avoid danger or mistakes.' },
-    { word: 'medical', definition: 'Related to treating illness or injuries.' },
-  ];
-
-  const wordBank = words && words.length >= 4 ? words.map((w, i) => ({
-    word: typeof w === 'string' ? w : (w.word || 'word'),
-    definition: typeof w === 'object' && w.definition ? w.definition : DEFAULT_WORDS[i % DEFAULT_WORDS.length]?.definition || w,
-  })) : DEFAULT_WORDS;
+export default function MeteorSmasherGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
+  const weekData = getWeekArcadeData(weekNumber);
+  const wordBank = (words && words.length >= 4) ? words : weekData.words;
 
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
@@ -38,6 +21,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
   const [laser, setLaser] = useState(null); // { x1, y1, x2, y2, color, hit }
   const [target, setTarget] = useState(null);
   const [feedback, setFeedback] = useState(null);
+  const [foxTrigger, setFoxTrigger] = useState(false);
 
   const meteorsRef = useRef([]);
   const shieldsRef = useRef(3);
@@ -47,29 +31,23 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
   const frameRef = useRef(null);
   const swipeRef = useRef(null);
   const containerRef = useRef(null);
+  const lastCatchTimeRef = useRef(Date.now());
 
   const { consumePlayEnergy, recordHighScore } = useArcadeStore();
 
   const W = 600;
   const H = 420;
 
-  const speak = useCallback((text) => {
-    if (!text) return;
-    try {
-      window.speechSynthesis?.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.rate = 0.88;
-      u.pitch = 1.05;
-      u.lang = 'en-US';
-      window.speechSynthesis?.speak(u);
-    } catch (_) {}
-  }, []);
+  const playDefinitionAudio = useCallback((defText, wordText) => {
+    if (!defText) return;
+    speakText(`Find the word that means: ${defText}`, null, 0.92, null, 'explore', weekNumber);
+  }, [weekNumber]);
 
   const makeMeteor = useCallback((isTarget = false, overrideWord = null, idx = 0) => {
     const pick = overrideWord || wordBank[Math.floor(Math.random() * wordBank.length)];
-    const x = 70 + idx * 160 + (Math.random() - 0.5) * 40;
-    const y = -40 - Math.random() * 60;
-    const r = Math.max(38, Math.min(50, 34 + Math.floor(pick.word.length * 1.5)));
+    const x = 70 + idx * 160 + (Math.random() - 0.5) * 35;
+    const y = -40 - Math.random() * 50;
+    const r = Math.max(38, Math.min(50, 34 + Math.floor(pick.word.length * 1.4)));
 
     return {
       id: `m_${Date.now()}_${idx}_${Math.random()}`,
@@ -101,8 +79,10 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
 
     meteorsRef.current = newMeteors;
     setMeteors([...newMeteors]);
-    speak(currentTarget.definition);
-  }, [wordBank, makeMeteor, speak]);
+    lastCatchTimeRef.current = Date.now();
+    setFoxTrigger(false);
+    playDefinitionAudio(currentTarget.definition_en || currentTarget.definition, currentTarget.word);
+  }, [wordBank, makeMeteor, playDefinitionAudio]);
 
   const pickNextTarget = useCallback(() => {
     const t = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -132,6 +112,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
             msg: `🛡️ Missed: "${targetRef.current?.word}" (−1 shield)`,
             type: 'bad'
           });
+          setFoxTrigger(true);
           setTimeout(() => setFeedback(null), 1200);
 
           if (shieldsRef.current <= 0) {
@@ -150,13 +131,16 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
     frameRef.current = requestAnimationFrame(gameLoop);
   }, [pickNextTarget]);
 
-  // 1-second game timer
+  // 1-second game timer + Fox idle trigger
   useEffect(() => {
     if (gameState !== 'playing') return;
     const iv = setInterval(() => {
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(); return; }
+      }
+      if (Date.now() - lastCatchTimeRef.current > 5000) {
+        setFoxTrigger(true);
       }
       setGameTimer(t => {
         if (t <= 1) { endGame(); return 0; }
@@ -182,6 +166,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
     setGameTimer(60);
     setFeedback(null);
     setLaser(null);
+    setFoxTrigger(false);
 
     gameStateRef.current = 'playing';
     setGameState('playing');
@@ -217,6 +202,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
       scoreRef.current += 20;
       setScore(scoreRef.current);
       setFeedback({ msg: `💥 Laser Hit! "${meteor.word}" (+20 pts)`, type: 'good' });
+      speakText(meteor.word, null, 1.0, null, 'new_word', weekNumber);
 
       meteorsRef.current = meteorsRef.current.map(m =>
         m.id === meteor.id ? { ...m, hit: true } : m
@@ -236,6 +222,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
         msg: `❌ Smashed "${meteor.word}" · Correct word: "${correctWord}"`,
         type: 'bad'
       });
+      setFoxTrigger(true);
 
       meteorsRef.current = meteorsRef.current.map(m =>
         m.id === meteor.id ? { ...m, hit: true } : m
@@ -244,7 +231,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
       setTimeout(() => setFeedback(null), 1600);
       if (shieldsRef.current <= 0) setTimeout(endGame, 500);
     }
-  }, [pickNextTarget, endGame]);
+  }, [pickNextTarget, endGame, weekNumber]);
 
   // Handle Trackpad Drag / Swipe
   const handlePointerDown = (e) => {
@@ -261,8 +248,6 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
     const cr = containerRef.current?.getBoundingClientRect();
     if (!cr) return;
 
-    const sx1 = swipeRef.current.x;
-    const sy1 = swipeRef.current.y;
     const sx2 = (e.clientX - cr.left) * (W / cr.width);
     const sy2 = (e.clientY - cr.top) * (H / cr.height);
     swipeRef.current = null;
@@ -301,7 +286,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
           <span style={{ fontSize: '22px' }}>🛸</span>
           <div>
             <div style={{ fontSize: '12px', fontWeight: 900, color: '#a78bfa', letterSpacing: '0.05em' }}>METEOR SMASHER</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Click or Slice to Fire Laser</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Week {weekNumber} Vocabulary Defense</div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -331,7 +316,7 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
               Meteor Smasher Defense!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '340px', lineHeight: 1.5 }}>
-              Read the definition, then <b>click or swipe across</b> the falling meteor with the correct word to blast it with your laser!
+              Listen to the definition, then <b>click or swipe across</b> the falling meteor with the correct word to blast it with your laser!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -360,12 +345,12 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
                   TARGET MEANING:
                 </div>
                 <div style={{ fontSize: '14px', color: '#f8fafc', fontWeight: 800, fontStyle: 'italic', maxWidth: '500px' }}>
-                  "{target.definition}"
+                  "{target.definition_en || target.definition}"
                 </div>
               </div>
               <button
                 type="button"
-                onClick={() => speak(target.definition)}
+                onClick={() => playDefinitionAudio(target.definition_en || target.definition, target.word)}
                 style={{
                   background: 'rgba(167,139,250,0.25)', border: '1px solid rgba(167,139,250,0.4)',
                   color: '#c4b5fd', borderRadius: '8px', padding: '6px 10px', cursor: 'pointer',
@@ -514,6 +499,13 @@ export default function MeteorSmasherGame({ words = [], onComplete, isStandalone
             }}>
               Click or swipe any meteor to fire laser!
             </div>
+
+            {/* Lexio Fox Mascot Assistant */}
+            <ArcadeFoxHelper
+              hintText={`Laser the "${target?.word}" meteor! (${target?.definition_vi || ''})`}
+              triggerHint={foxTrigger}
+              onHintUsed={() => setFoxTrigger(false)}
+            />
           </div>
         </div>
       )}

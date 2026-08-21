@@ -1,57 +1,24 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { RotateCcw, Volume2, Sparkles, CheckCircle2, Zap } from 'lucide-react';
+import { RotateCcw, Volume2, Sparkles, CheckCircle2, Zap, Trophy } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
+import { getWeekArcadeData } from './gameDataHelper';
+import { speakText } from '../../utils/AudioHelper';
+import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * CatapultChunkGame V3 — Bulletproof Sentence Chunk Placement with Tap-or-Drag
+ * CatapultChunkGame V3 — Multi-Mode Sentence, Bilingual Chunk & Definition Matching
  *
  * Features:
- *  - Dual Input: Tap-to-Place (Click chunk -> Click slot) AND Smooth Drag & Drop!
- *  - 100% Responsive Grid: Chunks distribute evenly across full canvas width and never drift off-screen.
- *  - Realistic Snap Physics: Snaps firmly into correct slot with green glow and click sound.
- *  - TTS Audio Voiceover: Pronounces chunks and reads full completed sentences out loud.
- *  - No compound penalty: gentle bounce-back to origin on mistake with clear feedback.
+ *  - 3 Diverse Modes: Sentence Structure, English Chunks to Vietnamese Meaning, and Word to Cambridge Definition!
+ *  - Distractor Chunks included in every round for authentic focus & challenge!
+ *  - Faster, more exciting Brownian floating speed.
+ *  - Dual Input: Tap-to-Place (Click chunk -> Click slot) AND Smooth Drag-and-Drop!
+ *  - Full TTS Voiceover with speakText and Lexio Fox assistant.
  */
 
-export default function CatapultChunkGame({ onComplete, isStandalone = false }) {
-  const ROUNDS = [
-    {
-      sentence: 'Jake was walking carefully down the corridor.',
-      slots: [
-        { id: 'S', label: 'Subject', answer: 'Jake' },
-        { id: 'VP', label: 'Verb Phrase', answer: 'was walking carefully' },
-        { id: 'C', label: 'Location', answer: 'down the corridor' },
-      ],
-      decoy: null,
-    },
-    {
-      sentence: 'Tom slipped fast on the wet floor.',
-      slots: [
-        { id: 'S', label: 'Subject', answer: 'Tom' },
-        { id: 'VP', label: 'Verb Phrase', answer: 'slipped fast' },
-        { id: 'C', label: 'Location', answer: 'on the wet floor' },
-      ],
-      decoy: null,
-    },
-    {
-      sentence: 'The nurse arrived quickly with clean bandages.',
-      slots: [
-        { id: 'S', label: 'Subject', answer: 'The nurse' },
-        { id: 'VP', label: 'Verb Phrase', answer: 'arrived quickly' },
-        { id: 'C', label: 'Action & Tool', answer: 'with clean bandages' },
-      ],
-      decoy: 'in the science lab',
-    },
-    {
-      sentence: 'Students must walk calmly during class breaks.',
-      slots: [
-        { id: 'S', label: 'Subject', answer: 'Students' },
-        { id: 'VP', label: 'Modal & Verb', answer: 'must walk calmly' },
-        { id: 'C', label: 'Time Setting', answer: 'during class breaks' },
-      ],
-      decoy: 'running fast',
-    },
-  ];
+export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStandalone = false }) {
+  const weekData = getWeekArcadeData(weekNumber);
+  const sentenceRounds = weekData.sentenceRounds;
 
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
@@ -61,6 +28,7 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
   const [selectedChunkId, setSelectedChunkId] = useState(null); // for Tap-to-Place
   const [feedback, setFeedback] = useState(null);
   const [chunks, setChunks] = useState([]);
+  const [foxTrigger, setFoxTrigger] = useState(false);
 
   const containerRef = useRef(null);
   const chunksRef = useRef([]);
@@ -69,53 +37,48 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
   const gameStateRef = useRef('idle');
   const animRef = useRef(null);
   const dragRef = useRef(null);
+  const lastCatchTimeRef = useRef(Date.now());
 
   const { consumePlayEnergy, recordHighScore } = useArcadeStore();
 
-  const round = ROUNDS[Math.min(roundIdx, ROUNDS.length - 1)];
+  const round = sentenceRounds[Math.min(roundIdx, sentenceRounds.length - 1)];
 
-  const speak = useCallback((text) => {
+  const playAudio = useCallback((text) => {
     if (!text) return;
-    try {
-      window.speechSynthesis?.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.rate = 0.88;
-      u.pitch = 1.05;
-      u.lang = 'en-US';
-      window.speechSynthesis?.speak(u);
-    } catch (_) {}
-  }, []);
+    speakText(text, null, 0.9, null, 'read', weekNumber);
+  }, [weekNumber]);
 
-  // Make chunks distributed across full width
+  // Make chunks distributed across full width with distractors
   const makeChunks = useCallback((r) => {
-    const allWords = [...r.slots.map(s => s.answer)];
-    if (r.decoy) allWords.push(r.decoy);
-    const shuffled = allWords.sort(() => Math.random() - 0.5);
+    const correctAnswers = r.slots.map(s => ({ word: s.answer, isDistractor: false }));
+    const distractorAnswers = (r.distractors || []).map(w => ({ word: w, isDistractor: true }));
+    const allItems = [...correctAnswers, ...distractorAnswers].sort(() => Math.random() - 0.5);
 
-    return shuffled.map((word, i) => {
-      // Calculate responsive starting slot positions
+    return allItems.map((item, i) => {
       const col = i % 3;
       const row = Math.floor(i / 3);
-      const initX = 15 + col * 33 + (Math.random() - 0.5) * 5; // percentages %
-      const initY = 30 + row * 35 + (Math.random() - 0.5) * 5;
+      const initX = 12 + col * 34 + (Math.random() - 0.5) * 6; // %
+      const initY = 20 + row * 28 + (Math.random() - 0.5) * 6;
+
+      // Faster, more dynamic floating velocities
+      const vx = (Math.random() - 0.5) * 0.22;
+      const vy = (Math.random() - 0.5) * 0.22;
 
       return {
-        id: `chunk_${i}_${Date.now()}`,
-        word,
-        isDecoy: word === r.decoy,
+        id: `chunk_${Date.now()}_${i}_${Math.random()}`,
+        word: item.word,
+        isDistractor: item.isDistractor,
         xPct: initX,
         yPct: initY,
-        origXPct: initX,
-        origYPct: initY,
-        vx: (Math.random() - 0.5) * 0.08,
-        vy: (Math.random() - 0.5) * 0.08,
+        vx,
+        vy,
         locked: false,
         lockedSlotId: null,
       };
     });
   }, []);
 
-  // Float animation loop
+  // Float animation loop (faster Brownian floating)
   const floatLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
 
@@ -126,9 +89,9 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
 
       // Keep comfortably inside container % bounds
       if (xPct < 5) { xPct = 5; vx = Math.abs(vx); }
-      if (xPct > 80) { xPct = 80; vx = -Math.abs(vx); }
-      if (yPct < 15) { yPct = 15; vy = Math.abs(vy); }
-      if (yPct > 70) { yPct = 70; vy = -Math.abs(vy); }
+      if (xPct > 78) { xPct = 78; vx = -Math.abs(vx); }
+      if (yPct < 10) { yPct = 10; vy = Math.abs(vy); }
+      if (yPct > 72) { yPct = 72; vy = -Math.abs(vy); }
 
       xPct += vx;
       yPct += vy;
@@ -141,33 +104,37 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
   }, []);
 
   const checkRoundComplete = useCallback((currentLocked, currentRIdx) => {
-    const r = ROUNDS[Math.min(currentRIdx, ROUNDS.length - 1)];
+    const r = sentenceRounds[Math.min(currentRIdx, sentenceRounds.length - 1)];
     const allFilled = r.slots.every(s => currentLocked[s.id] === s.answer);
 
     if (allFilled) {
       scoreRef.current += 30;
       setScore(scoreRef.current);
-      setFeedback({ msg: `🎉 Perfect Sentence! (+30 pts)`, type: 'good' });
-      speak(`Completed: ${r.sentence}`);
+      setFeedback({ msg: `🎉 Round Complete! (+30 pts)`, type: 'good' });
+      playAudio(r.type === 'sentence' ? r.sentence : r.title);
 
       setTimeout(() => {
         setFeedback(null);
-        if (currentRIdx + 1 < ROUNDS.length) {
+        if (currentRIdx + 1 < sentenceRounds.length) {
           const nextRIdx = currentRIdx + 1;
           setRoundIdx(nextRIdx);
           lockedSlotsRef.current = {};
           setLockedSlots({});
           setSelectedChunkId(null);
-          const newChunks = makeChunks(ROUNDS[nextRIdx]);
+          lastCatchTimeRef.current = Date.now();
+          setFoxTrigger(false);
+
+          const newChunks = makeChunks(sentenceRounds[nextRIdx]);
           chunksRef.current = newChunks;
           setChunks(newChunks);
+          playAudio(sentenceRounds[nextRIdx].sentence || sentenceRounds[nextRIdx].title);
         } else {
           // All rounds finished
           endGame();
         }
-      }, 1400);
+      }, 1500);
     }
-  }, [makeChunks, speak]);
+  }, [sentenceRounds, makeChunks, playAudio]);
 
   // Attempt to place a chunk into a slot (shared by Click-to-Place & Drag-and-Drop)
   const placeChunkInSlot = useCallback((chunk, slot) => {
@@ -184,19 +151,21 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
       );
       setChunks([...chunksRef.current]);
       setSelectedChunkId(null);
+      lastCatchTimeRef.current = Date.now();
+      setFoxTrigger(false);
 
-      scoreRef.current += 10;
+      scoreRef.current += 15;
       setScore(scoreRef.current);
-      setFeedback({ msg: `✓ [${slot.label}] Locked! (+10 pts)`, type: 'good' });
-      speak(chunk.word);
+      setFeedback({ msg: `✓ Matched [${slot.label}]! (+15 pts)`, type: 'good' });
+      playAudio(chunk.word);
       setTimeout(() => setFeedback(null), 800);
 
       checkRoundComplete(newLocked, roundIdx);
     } else {
       // REJECT
       setSelectedChunkId(null);
-      if (chunk.isDecoy) {
-        setFeedback({ msg: `❌ "${chunk.word}" is an extra decoy chunk!`, type: 'bad' });
+      if (chunk.isDistractor) {
+        setFeedback({ msg: `❌ "${chunk.word}" is a distractor!`, type: 'bad' });
       } else {
         const correctSlot = round.slots.find(s => s.answer === chunk.word);
         setFeedback({
@@ -204,14 +173,15 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
           type: 'bad'
         });
       }
+      setFoxTrigger(true);
       setTimeout(() => setFeedback(null), 1600);
     }
-  }, [round, roundIdx, checkRoundComplete, speak]);
+  }, [round, roundIdx, checkRoundComplete, playAudio]);
 
   // Click on a chunk (for Tap-to-Place)
   const handleChunkClick = (chunk) => {
     if (chunk.locked) return;
-    speak(chunk.word);
+    playAudio(chunk.word);
     if (selectedChunkId === chunk.id) {
       setSelectedChunkId(null); // deselect
     } else {
@@ -230,13 +200,16 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
     }
   };
 
-  // 1-second game timer
+  // 1-second game timer + Fox Idle Hint Trigger
   useEffect(() => {
     if (gameState !== 'playing') return;
     const iv = setInterval(() => {
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(); return; }
+      }
+      if (Date.now() - lastCatchTimeRef.current > 5000) {
+        setFoxTrigger(true);
       }
       setGameTimer(t => {
         if (t <= 1) { endGame(); return 0; }
@@ -262,23 +235,24 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
     setLockedSlots({});
     setSelectedChunkId(null);
     setFeedback(null);
+    setFoxTrigger(false);
     lockedSlotsRef.current = {};
 
-    const initialChunks = makeChunks(ROUNDS[0]);
+    const initialChunks = makeChunks(sentenceRounds[0]);
     chunksRef.current = initialChunks;
     setChunks(initialChunks);
 
     gameStateRef.current = 'playing';
     setGameState('playing');
     animRef.current = requestAnimationFrame(floatLoop);
-    speak(ROUNDS[0].sentence);
+    playAudio(sentenceRounds[0].sentence || sentenceRounds[0].title);
   };
 
   useEffect(() => () => cancelAnimationFrame(animRef.current), []);
 
   return (
     <div style={{
-      width: '100%', height: '100%', minHeight: '420px',
+      width: '100%', height: '100%', minHeight: '450px',
       background: 'linear-gradient(180deg, #131b31 0%, #1e293b 50%, #0f172a 100%)',
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
@@ -292,7 +266,7 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
           <span style={{ fontSize: '22px' }}>🧩</span>
           <div>
             <div style={{ fontSize: '12px', fontWeight: 900, color: '#f59e0b', letterSpacing: '0.05em' }}>CHUNK CATAPULT</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Round {roundIdx + 1} of {ROUNDS.length}</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Round {roundIdx + 1} of {sentenceRounds.length} · {round.title}</div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -311,10 +285,10 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
           <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(245,158,11,0.5))' }}>🧩</div>
           <div>
             <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#f59e0b' }}>
-              Assemble the Sentence Chunks!
+              Chunk Catapult & Meaning Match!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Tap a floating chunk, then tap the matching grammar slot below (Subject, Verb Phrase, Location) to assemble the full sentence!
+              Tap or drag the floating chunks to match grammar slots, Vietnamese meanings, and Cambridge definitions while avoiding tricky distractors!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -323,7 +297,7 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(245,158,11,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>🧩</span> START PUZZLE
+            <span>🧩</span> START CHALLENGE
           </button>
         </div>
       )}
@@ -331,21 +305,21 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
       {/* PLAYING STATE */}
       {gameState === 'playing' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-          {/* Target Sentence Guide Banner */}
+          {/* Target Guide Banner */}
           <div style={{
             padding: '8px 16px', background: 'rgba(245,158,11,0.15)',
             borderBottom: '1.5px solid rgba(245,158,11,0.25)', textAlign: 'center', flexShrink: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
           }}>
             <span style={{ fontSize: '11px', color: '#fbbf24', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              TARGET SENTENCE:
+              MISSION:
             </span>
             <span style={{ fontSize: '14px', color: '#f8fafc', fontWeight: 800 }}>
               "{round.sentence}"
             </span>
             <button
               type="button"
-              onClick={() => speak(round.sentence)}
+              onClick={() => playAudio(round.sentence)}
               style={{
                 background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.4)',
                 color: '#fbbf24', borderRadius: '6px', padding: '3px 8px', cursor: 'pointer',
@@ -418,6 +392,13 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
                 </div>
               );
             })}
+
+            {/* Lexio Fox Mascot Assistant */}
+            <ArcadeFoxHelper
+              hintText={`Match the floating chunk to the correct slot!`}
+              triggerHint={foxTrigger}
+              onHintUsed={() => setFoxTrigger(false)}
+            />
           </div>
 
           {/* Grammar Drop Target Slots Bar (Bottom) */}
@@ -437,7 +418,7 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
                   onClick={() => handleSlotClick(slot)}
                   style={{
                     flex: 1,
-                    minHeight: '64px',
+                    minHeight: '68px',
                     borderRadius: '14px',
                     padding: '8px 12px',
                     background: isFilled
@@ -460,12 +441,13 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
                   }}
                 >
                   <div style={{
-                    fontSize: '10px',
+                    fontSize: '11px',
                     fontWeight: 900,
                     color: isFilled ? '#34d399' : isHighlightTarget ? '#fbbf24' : '#94a3b8',
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
-                    marginBottom: '2px'
+                    marginBottom: '2px',
+                    textAlign: 'center'
                   }}>
                     {slot.label}
                   </div>
@@ -500,7 +482,7 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
           <div style={{ fontSize: '56px' }}>🏆</div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#f59e0b' }}>
-              All Sentences Complete!
+              All Challenges Complete!
             </h3>
             <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
               Final Score: <strong style={{ color: '#fbbf24', fontSize: '20px' }}>{score} pts</strong>

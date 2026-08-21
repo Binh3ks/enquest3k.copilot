@@ -132,10 +132,10 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
 
         {/* Full-height game area */}
         <div style={{ flex: 1, overflow: 'hidden', padding: '12px', display: 'flex', flexDirection: 'column' }}>
-          {selectedGame === 'bubble_pop' && <BubblePopGame onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
-          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'bubble_pop' && <BubblePopGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
           {selectedGame === 'physics_drift' && <PhysicsDriftGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
-          {selectedGame === 'chunk_catapult' && <CatapultChunkGame onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'chunk_catapult' && <CatapultChunkGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
         </div>
 
       </div>

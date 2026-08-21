@@ -1,29 +1,21 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Volume2, RotateCcw, Trophy, Zap, Sparkles } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
+import { getWeekArcadeData } from './gameDataHelper';
+import { speakText } from '../../utils/AudioHelper';
+import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * BubblePopGame V3 — Realistic Floating Bubble Physics
- *
- * Features:
- *  - Continuous 2D bouncing: Bubbles bounce off CEILING, FLOOR, and WALLS realistically like real balloons in a tank.
- *  - Never disappear or escape off-screen unless popped!
- *  - Calibrated, relaxed speed (0.6 - 1.2 px/frame) so kids have ample time to read and catch words.
- *  - Target word audio is spoken automatically with a big repeat audio button.
- *  - Target bubble has a distinct subtle golden shimmer / pulse when streak >= 3.
- *  - Answer Reveal protocol on wrong tap: clear feedback banner + audio re-prompt.
+ * BubblePopGame V3 — Realistic Floating Bubble Physics with Lexio Fox Mascot
  */
 
-export default function BubblePopGame({ words = [], onComplete, isStandalone = false }) {
-  const DEFAULT_WORDS = [
-    'bandage', 'corridor', 'slipped', 'nurse', 'knee',
-    'fast', 'carefully', 'accident', 'rules', 'safety',
-    'friction', 'caution', 'momentum', 'velocity', 'medical'
-  ];
+export default function BubblePopGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
+  const weekData = getWeekArcadeData(weekNumber);
+  const activeWordObjects = (words && words.length >= 4)
+    ? words.map(w => typeof w === 'string' ? { word: w, audio_word: null } : w)
+    : weekData.words;
 
-  const activeWords = words && words.length >= 4
-    ? words.map(w => typeof w === 'string' ? w : (w?.word || w?.text || 'word'))
-    : DEFAULT_WORDS;
+  const activeWords = activeWordObjects.map(w => w.word);
 
   const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'done'
   const [score, setScore] = useState(0);
@@ -34,6 +26,7 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
   const [inkSplat, setInkSplat] = useState(null);
   const [showPenalty, setShowPenalty] = useState(false);
   const [revealMsg, setRevealMsg] = useState(null);
+  const [foxTrigger, setFoxTrigger] = useState(false);
 
   const containerRef = useRef(null);
   const bubblesRef = useRef([]);
@@ -42,6 +35,7 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
   const targetRef = useRef('');
   const animFrameRef = useRef(null);
   const gameStateRef = useRef('idle');
+  const lastCatchTimeRef = useRef(Date.now());
 
   const { consumePlayEnergy, recordHighScore } = useArcadeStore();
 
@@ -57,17 +51,11 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
     ['#ec4899', '#f43f5e'], // pink-rose
   ];
 
-  const speak = useCallback((word) => {
+  const playAudio = useCallback((word) => {
     if (!word) return;
-    try {
-      window.speechSynthesis?.cancel();
-      const u = new SpeechSynthesisUtterance(word);
-      u.rate = 0.85;
-      u.pitch = 1.05;
-      u.lang = 'en-US';
-      window.speechSynthesis?.speak(u);
-    } catch (_) {}
-  }, []);
+    const matchObj = activeWordObjects.find(w => w.word === word);
+    speakText(word, matchObj?.audio_word, 0.9, null, 'new_word', weekNumber);
+  }, [activeWordObjects, weekNumber]);
 
   // Spawn bubbles distributed across the tank
   const spawnBubbles = useCallback((target, currentStreak) => {
@@ -111,8 +99,10 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
 
     bubblesRef.current = newBubbles;
     setBubbles(newBubbles);
-    speak(target);
-  }, [activeWords, speak]);
+    lastCatchTimeRef.current = Date.now();
+    setFoxTrigger(false);
+    playAudio(target);
+  }, [activeWords, playAudio]);
 
   // Physics animation loop — 4-WALL BOUNCE (Ceiling, Floor, Left, Right)
   const runLoop = useCallback(() => {
@@ -178,13 +168,17 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
     animFrameRef.current = requestAnimationFrame(runLoop);
   };
 
-  // 1-second game clock
+  // 1-second game clock + Fox Idle Hint Trigger
   useEffect(() => {
     if (gameState !== 'playing') return;
     const interval = setInterval(() => {
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(); return; }
+      }
+      // If user hasn't caught target for > 5s, trigger Lexio Fox
+      if (Date.now() - lastCatchTimeRef.current > 5000) {
+        setFoxTrigger(true);
       }
       setGameTimer(t => {
         if (t <= 1) { endGame(); return 0; }
@@ -230,12 +224,13 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
       setInkSplat({ x: e.clientX - rect.left, y: e.clientY - rect.top, color: bubble.color[0] });
       setShowPenalty(true);
 
-      setRevealMsg({ text: `❌ Tapped "${bubble.word}" · Catch: "${targetRef.current}"`, type: 'wrong' });
-      speak(`Find: ${targetRef.current}`);
+      setRevealMsg({ text: `✗ Tapped "${bubble.word}" · Catch: "${targetRef.current}"`, type: 'wrong' });
+      playAudio(targetRef.current);
+      setFoxTrigger(true);
       setTimeout(() => { setInkSplat(null); setShowPenalty(false); }, 900);
       setTimeout(() => setRevealMsg(null), 1600);
     }
-  }, [activeWords, spawnBubbles, speak]);
+  }, [activeWords, spawnBubbles, playAudio]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -329,7 +324,7 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
             </span>
             <button
               type="button"
-              onClick={() => speak(targetWord)}
+              onClick={() => playAudio(targetWord)}
               style={{
                 background: 'rgba(14,165,233,0.25)', border: '1px solid rgba(14,165,233,0.4)',
                 color: '#7dd3fc', borderRadius: '8px', padding: '6px 10px', cursor: 'pointer',
@@ -431,6 +426,13 @@ export default function BubblePopGame({ words = [], onComplete, isStandalone = f
             }}>
               Bubbles gently bounce off walls and ceiling · Tap the matching word!
             </div>
+
+            {/* Lexio Fox Mascot Assistant */}
+            <ArcadeFoxHelper
+              hintText={`Pop the "${targetWord}" bubble!`}
+              triggerHint={foxTrigger}
+              onHintUsed={() => setFoxTrigger(false)}
+            />
           </div>
         </>
       )}

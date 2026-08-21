@@ -1,260 +1,200 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { RotateCcw, Volume2, ArrowUp, ArrowDown, Zap, Sparkles, CheckCircle2 } from 'lucide-react';
+import { RotateCcw, Volume2, ArrowLeft, ArrowRight, Zap, Sparkles, Trophy } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
+import { getWeekArcadeData } from './gameDataHelper';
+import { speakText } from '../../utils/AudioHelper';
+import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * PhysicsDriftGame V3 — Intuitive Kids Car Runner with On-Screen Steering & Audio
+ * PhysicsDriftGame V3 — Vertical Highway Road Runner
  *
  * Features:
- *  - 3-Lane Track with Click-to-Steer: Click directly on Lane 1/2/3 OR use ▲/▼ on-screen buttons to steer!
- *  - Automatic TTS Voiceover: Speaks the scenario and both choices out loud with repeat audio button.
- *  - Clear CLIL Decision Choices: Big vibrant buttons with clear science rationale feedback.
- *  - Relaxed obstacle speed: Easy to dodge small puddles and stones.
+ *  - Vertical Scrolling Highway (Top to Bottom) with 3 Lanes: Left, Center, Right.
+ *  - Collect Target Vocabulary Stars: Match the target word displayed at top.
+ *  - Easy Controls: Left/Right keyboard arrows, on-screen ◀ / ▶ buttons, or direct lane taps.
+ *  - Dynamic, fast, exciting road action with Lexio Fox assistant.
  */
 
-const DRIFT_OBSTACLES = {
-  default: {
-    theme: 'Physics & Friction Safety',
-    small: ['💧', '🪨', '🍂'],
-    decisions: [
-      {
-        icon: '💧', label: 'Wet Corridor Floor ahead! Choose footwear:',
-        audioPrompt: 'Wet corridor floor ahead! Choose footwear:',
-        A: { text: 'Rubber Grip Shoes', correct: true, reason: 'High friction stops slipping on wet tiles!' },
-        B: { text: 'Smooth Leather Soles', correct: false, penalty: 'Too smooth — lost all friction and slipped!' },
-      },
-      {
-        icon: '🧊', label: 'Icy Science Lab tiles! Choose your action:',
-        audioPrompt: 'Icy science lab tiles! Choose your action:',
-        A: { text: 'Walk with Grip Pads', correct: true, reason: 'Grip pads increase friction safely!' },
-        B: { text: 'Slide with Socks', correct: false, penalty: 'Zero friction — spun out on the tiles!' },
-      },
-      {
-        icon: '🛢️', label: 'Oil Spill in the hallway! How to brake?',
-        audioPrompt: 'Oil spill in the hallway! How to brake?',
-        A: { text: 'Slam Hard Brakes', correct: false, penalty: 'Hard braking locked the wheels and skidded!' },
-        B: { text: 'Gentle Slow Down', correct: true, reason: 'Gentle slowing maintains tyre grip!' },
-      },
-      {
-        icon: '🪨', label: 'Gravel Pathway! Choose tyre type:',
-        audioPrompt: 'Gravel pathway! Choose tyre type:',
-        A: { text: 'Wide Tread Tyres', correct: true, reason: 'Deep treads grip loose stones firmly!' },
-        B: { text: 'Narrow Smooth Slicks', correct: false, penalty: 'Smooth slicks slid over the gravel!' },
-      },
-    ],
-  },
-  33: {
-    theme: 'Friction & Corridor Safety — Week 33',
-    small: ['💧', '🪨', '🍂'],
-    decisions: [
-      {
-        icon: '💧', label: 'Wet Puddle in Corridor! What should Jake choose?',
-        audioPrompt: 'Wet puddle in corridor! What should Jake choose?',
-        A: { text: 'Rubber Soles & Walk', correct: true, reason: 'Rubber soles give maximum grip on wet floors!' },
-        B: { text: 'Run in Leather Shoes', correct: false, penalty: 'Slipped heavily like Tom did!' },
-      },
-      {
-        icon: '🧊', label: 'Slippery Polished Floor! Choose safety gear:',
-        audioPrompt: 'Slippery polished floor! Choose safety gear:',
-        A: { text: 'Anti-Slip Grippers', correct: true, reason: 'Friction keeps footsteps stable and secure!' },
-        B: { text: 'Smooth Socks Only', correct: false, penalty: 'Spun 180 degrees into the wall!' },
-      },
-      {
-        icon: '⚠️', label: 'Yellow Caution Sign spotted! What to do?',
-        audioPrompt: 'Yellow caution sign spotted! What to do?',
-        A: { text: 'Slow down & Walk calmly', correct: true, reason: 'Walking carefully avoids all corridor accidents!' },
-        B: { text: 'Sprint to beat the bell', correct: false, penalty: 'Lost control near the stairs!' },
-      },
-    ],
-  },
-};
-
-function getObstacleData(weekNumber) {
-  return DRIFT_OBSTACLES[weekNumber] || DRIFT_OBSTACLES.default;
-}
-
-export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStandalone = false }) {
-  const obsData = getObstacleData(weekNumber);
+export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
+  const weekData = getWeekArcadeData(weekNumber);
+  const wordBank = (words && words.length >= 4) ? words : weekData.words;
 
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
+  const [streak, setStreak] = useState(0);
   const [gameTimer, setGameTimer] = useState(60);
-  const [lane, setLane] = useState(1); // 0 = Top, 1 = Mid, 2 = Bot
-  const [decision, setDecision] = useState(null);
-  const [countdown, setCountdown] = useState(0);
-  const [spinout, setSpinout] = useState(false);
+  const [lane, setLane] = useState(1); // 0 = Left, 1 = Center, 2 = Right
+  const [targetWord, setTargetWord] = useState('');
+  const [items, setItems] = useState([]); // Falling word stars and obstacles
+  const [roadOffset, setRoadOffset] = useState(0);
   const [speedBoost, setSpeedBoost] = useState(false);
+  const [spinout, setSpinout] = useState(false);
   const [feedback, setFeedback] = useState(null);
-  const [obstacles, setObstacles] = useState([]);
-  const [trackPos, setTrackPos] = useState(0);
+  const [foxTrigger, setFoxTrigger] = useState(false);
 
   const scoreRef = useRef(0);
+  const streakRef = useRef(0);
   const laneRef = useRef(1);
+  const targetRef = useRef('');
+  const itemsRef = useRef([]);
   const gameStateRef = useRef('idle');
-  const decisionRef = useRef(null);
-  const countdownRef = useRef(0);
-  const spinoutRef = useRef(false);
   const frameRef = useRef(null);
-  const trackPosRef = useRef(0);
-  const nextObsAt = useRef(400);
-  const nextDecisionAt = useRef(700);
+  const roadOffsetRef = useRef(0);
+  const nextSpawnAtRef = useRef(0);
+  const lastCatchTimeRef = useRef(Date.now());
 
   const { consumePlayEnergy, recordHighScore } = useArcadeStore();
 
-  const speak = useCallback((text) => {
-    if (!text) return;
-    try {
-      window.speechSynthesis?.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.rate = 0.9;
-      u.pitch = 1.05;
-      u.lang = 'en-US';
-      window.speechSynthesis?.speak(u);
-    } catch (_) {}
-  }, []);
+  const W = 480;
+  const H = 500;
 
-  const steerToLane = useCallback((targetLane) => {
-    if (spinoutRef.current || gameStateRef.current !== 'playing') return;
+  const playAudio = useCallback((word) => {
+    if (!word) return;
+    const matchObj = wordBank.find(w => w.word === word);
+    speakText(word, matchObj?.audio_word, 0.92, null, 'new_word', weekNumber);
+  }, [wordBank, weekNumber]);
+
+  const steerTo = useCallback((targetLane) => {
+    if (spinout || gameStateRef.current !== 'playing') return;
     const clamped = Math.max(0, Math.min(2, targetLane));
     setLane(clamped);
     laneRef.current = clamped;
-  }, []);
+  }, [spinout]);
 
-  // Physics animation loop
+  const pickNextTarget = useCallback(() => {
+    const t = wordBank[Math.floor(Math.random() * wordBank.length)];
+    targetRef.current = t.word;
+    setTargetWord(t.word);
+    lastCatchTimeRef.current = Date.now();
+    setFoxTrigger(false);
+    playAudio(t.word);
+  }, [wordBank, playAudio]);
+
+  // Game animation loop — vertical scrolling
   const gameLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
 
-    // Slower speed during decision or spinout
-    const speed = spinoutRef.current ? 0.8 : decisionRef.current ? 1.2 : 2.5;
-    trackPosRef.current += speed;
-    setTrackPos(trackPosRef.current);
+    const speed = speedBoost ? 4.5 : spinout ? 0.8 : 2.6;
+    roadOffsetRef.current = (roadOffsetRef.current + speed) % 60;
+    setRoadOffset(roadOffsetRef.current);
 
-    // Move small obstacles
-    setObstacles(prev => {
-      let next = prev
-        .map(o => ({ ...o, x: o.x - speed }))
-        .filter(o => o.x > -60);
+    // Spawn falling word items across lanes
+    if (Date.now() >= nextSpawnAtRef.current) {
+      nextSpawnAtRef.current = Date.now() + (speedBoost ? 1200 : 1600);
 
-      // Spawn small obstacle
-      if (!decisionRef.current && trackPosRef.current >= nextObsAt.current) {
-        nextObsAt.current = trackPosRef.current + 250 + Math.random() * 200;
-        const spawnLane = Math.floor(Math.random() * 3);
-        next = [...next, {
-          id: `obs_${Date.now()}_${Math.random()}`,
-          x: 540,
-          lane: spawnLane,
-          icon: obsData.small[Math.floor(Math.random() * obsData.small.length)],
-          type: 'small',
-          hit: false,
-        }];
+      // Pick 1 lane for target, 1 lane for decoy or coin
+      const lanesAvailable = [0, 1, 2].sort(() => Math.random() - 0.5);
+      const targetLane = lanesAvailable[0];
+      const decoyLane = lanesAvailable[1];
+
+      const decoys = wordBank.filter(w => w.word !== targetRef.current);
+      const decoyWord = decoys[Math.floor(Math.random() * decoys.length)]?.word || 'caution';
+
+      const newItems = [
+        {
+          id: `item_${Date.now()}_tgt`,
+          lane: targetLane,
+          y: -40,
+          word: targetRef.current,
+          isTarget: true,
+          isObstacle: false,
+          icon: '⭐',
+        },
+        {
+          id: `item_${Date.now()}_decoy`,
+          lane: decoyLane,
+          y: -40,
+          word: Math.random() > 0.4 ? decoyWord : '🛢️ Oil Slick',
+          isTarget: false,
+          isObstacle: Math.random() <= 0.4,
+          icon: Math.random() > 0.4 ? '💎' : '🛢️',
+        }
+      ];
+
+      itemsRef.current = [...itemsRef.current, ...newItems];
+    }
+
+    // Move items down vertically
+    const playerY = H - 80;
+    let nextItems = [];
+
+    itemsRef.current.forEach(item => {
+      const nextY = item.y + speed;
+
+      // Check collision with car
+      if (Math.abs(nextY - playerY) < 35 && item.lane === laneRef.current) {
+        if (item.isTarget) {
+          // COLLECTED TARGET STAR!
+          scoreRef.current += 20;
+          streakRef.current += 1;
+          setScore(scoreRef.current);
+          setStreak(streakRef.current);
+          setSpeedBoost(true);
+          setFeedback({ msg: `🌟 Collected "${item.word}"! (+20 pts)`, type: 'good' });
+          playAudio(item.word);
+
+          setTimeout(() => {
+            setSpeedBoost(false);
+            setFeedback(null);
+            pickNextTarget();
+          }, 800);
+        } else if (item.isObstacle) {
+          // BUMPED OIL SLICK
+          scoreRef.current = Math.max(0, scoreRef.current - 5);
+          streakRef.current = 0;
+          setScore(scoreRef.current);
+          setStreak(0);
+          setSpinout(true);
+          setFeedback({ msg: `🛢️ Oil Skid! Avoid obstacles (−5 pts)`, type: 'bad' });
+          setFoxTrigger(true);
+
+          setTimeout(() => {
+            setSpinout(false);
+            setFeedback(null);
+          }, 1400);
+        } else {
+          // WRONG WORD COIN
+          scoreRef.current = Math.max(0, scoreRef.current - 2);
+          setScore(scoreRef.current);
+          setFeedback({ msg: `❌ That was "${item.word}" · Collect "${targetRef.current}"`, type: 'bad' });
+          setFoxTrigger(true);
+          setTimeout(() => setFeedback(null), 1200);
+        }
+        return; // Remove from road
       }
 
-      // Check collision with car (car is at x = 90)
-      next.forEach(o => {
-        if (!o.hit && Math.abs(o.x - 90) < 35 && o.lane === laneRef.current) {
-          o.hit = true;
-          scoreRef.current = Math.max(0, scoreRef.current - 3);
-          setScore(scoreRef.current);
-          setFeedback({ msg: `${o.icon} Puddle Bump! −3 pts`, type: 'bad' });
-          setTimeout(() => setFeedback(null), 800);
-        }
-      });
-
-      return next;
+      if (nextY < H + 50) {
+        nextItems.push({ ...item, y: nextY });
+      }
     });
 
-    // Spawn CLIL Decision obstacle
-    if (!decisionRef.current && trackPosRef.current >= nextDecisionAt.current) {
-      nextDecisionAt.current = trackPosRef.current + 550 + Math.random() * 300;
-      const obs = obsData.decisions[Math.floor(Math.random() * obsData.decisions.length)];
-      decisionRef.current = obs;
-      setDecision(obs);
-      countdownRef.current = 5; // Generous 5 seconds
-      setCountdown(5);
-      speak(`${obs.audioPrompt} Choose: A, ${obs.A.text}, or B, ${obs.B.text}`);
-    }
+    itemsRef.current = nextItems;
+    setItems(nextItems);
 
     frameRef.current = requestAnimationFrame(gameLoop);
-  }, [obsData, speak]);
+  }, [speedBoost, spinout, wordBank, playAudio, pickNextTarget]);
 
-  // Decision timer countdown
-  useEffect(() => {
-    if (!decision) return;
-    const iv = setInterval(() => {
-      countdownRef.current -= 1;
-      setCountdown(countdownRef.current);
-      if (countdownRef.current <= 0) {
-        clearInterval(iv);
-        // Timeout
-        const obs = decisionRef.current;
-        const correctChoice = obs?.A?.correct ? obs.A : obs?.B;
-        triggerSpinout(`⏰ Time's up! · Đúng là: "${correctChoice?.text || 'Grip Shoes'}"`);
-      }
-    }, 1000);
-    return () => clearInterval(iv);
-  }, [decision]);
-
-  const makeDecision = useCallback((choice) => {
-    if (!decisionRef.current) return;
-    const obs = decisionRef.current;
-    const correctChoice = obs.A.correct ? obs.A : obs.B;
-    decisionRef.current = null;
-    setDecision(null);
-
-    if (choice.correct) {
-      scoreRef.current += 15;
-      setScore(scoreRef.current);
-      setSpeedBoost(true);
-      setFeedback({ msg: `✅ ${choice.text}! (+15 pts) · ${choice.reason}`, type: 'good' });
-      speak(`Correct! ${choice.reason}`);
-      setTimeout(() => {
-        setSpeedBoost(false);
-        setFeedback(null);
-      }, 1600);
-    } else {
-      triggerSpinout(`❌ ${choice.penalty || 'Wrong choice!'} · Đúng là: "${correctChoice.text}"`);
-    }
-  }, [speak]);
-
-  const triggerSpinout = useCallback((msg) => {
-    spinoutRef.current = true;
-    setSpinout(true);
-    decisionRef.current = null;
-    setDecision(null);
-    scoreRef.current = Math.max(0, scoreRef.current - 5);
-    setScore(scoreRef.current);
-    setFeedback({ msg, type: 'bad' });
-    speak('Spin out! Be careful with friction!');
-
-    setTimeout(() => {
-      spinoutRef.current = false;
-      setSpinout(false);
-      setFeedback(null);
-    }, 2000);
-  }, [speak]);
-
-  // Keyboard controls support
+  // Keyboard controls
   useEffect(() => {
     if (gameState !== 'playing') return;
     const handleKey = (e) => {
-      if (e.key === 'ArrowUp' || e.key === 'w') steerToLane(laneRef.current - 1);
-      if (e.key === 'ArrowDown' || e.key === 's') steerToLane(laneRef.current + 1);
-      if (decisionRef.current) {
-        if (e.key === 'ArrowLeft' || e.key === '1') makeDecision(decisionRef.current.A);
-        if (e.key === 'ArrowRight' || e.key === '2') makeDecision(decisionRef.current.B);
-      }
+      if (e.key === 'ArrowLeft' || e.key === 'a') steerTo(laneRef.current - 1);
+      if (e.key === 'ArrowRight' || e.key === 'd') steerTo(laneRef.current + 1);
     };
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
-  }, [gameState, steerToLane, makeDecision]);
+  }, [gameState, steerTo]);
 
-  // 1-second clock
+  // 1-second clock + Fox idle trigger
   useEffect(() => {
     if (gameState !== 'playing') return;
     const iv = setInterval(() => {
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(); return; }
+      }
+      if (Date.now() - lastCatchTimeRef.current > 5000) {
+        setFoxTrigger(true);
       }
       setGameTimer(t => {
         if (t <= 1) { endGame(); return 0; }
@@ -274,52 +214,55 @@ export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStanda
 
   const startGame = () => {
     scoreRef.current = 0;
+    streakRef.current = 0;
     laneRef.current = 1;
-    trackPosRef.current = 0;
-    nextObsAt.current = 350;
-    nextDecisionAt.current = 500;
-    decisionRef.current = null;
-    spinoutRef.current = false;
+    itemsRef.current = [];
+    nextSpawnAtRef.current = Date.now() + 500;
 
     setScore(0);
+    setStreak(0);
     setGameTimer(60);
     setLane(1);
-    setTrackPos(0);
-    setObstacles([]);
-    setDecision(null);
-    setSpinout(false);
-    setSpeedBoost(false);
+    setItems([]);
     setFeedback(null);
+    setSpeedBoost(false);
+    setSpinout(false);
 
     gameStateRef.current = 'playing';
     setGameState('playing');
     frameRef.current = requestAnimationFrame(gameLoop);
+    setTimeout(pickNextTarget, 100);
   };
 
   useEffect(() => () => cancelAnimationFrame(frameRef.current), []);
 
-  const stripeOffset = trackPos % 80;
+  const laneX = (l) => `${16.66 + l * 33.33}%`;
 
   return (
     <div style={{
-      width: '100%', height: '100%', minHeight: '420px',
-      background: 'linear-gradient(180deg, #0b1e36 0%, #152e4d 40%, #0d2138 100%)',
+      width: '100%', height: '100%', minHeight: '450px',
+      background: 'linear-gradient(180deg, #091a2e 0%, #0f2744 40%, #091a2e 100%)',
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
     }}>
       {/* Top HUD */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '10px 16px', background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
+        padding: '10px 16px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '22px' }}>🏎️</span>
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 900, color: '#4ade80', letterSpacing: '0.05em' }}>PHYSICS DRIFT RACE</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>{obsData.theme}</div>
+            <div style={{ fontSize: '12px', fontWeight: 900, color: '#4ade80', letterSpacing: '0.05em' }}>ROAD RUNNER HIGHWAY</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Week {weekNumber} Word Collector</div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          {streak >= 3 && (
+            <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Zap size={12} fill="#fbbf24" /> {streak}x STREAK
+            </div>
+          )}
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
             🏆 {score} pts
           </div>
@@ -332,13 +275,13 @@ export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStanda
       {/* IDLE STATE */}
       {gameState === 'idle' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(74,222,128,0.5))' }}>🏎️</div>
+          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(74,222,128,0.6))' }}>🏎️</div>
           <div>
             <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#4ade80' }}>
-              Physics Drift Runner!
+              Highway Word Collector!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '340px', lineHeight: 1.5 }}>
-              Click on any lane or use the <b>▲/▼ buttons</b> to change lanes. When an obstacle barrier appears, listen to the voice and pick the correct friction choice!
+              Steer left and right to collect the target vocabulary words on the highway and avoid oil slicks!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -347,221 +290,204 @@ export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStanda
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(5,150,105,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>🏎️</span> START ENGINE
+            <span>🏎️</span> START HIGHWAY RUN
           </button>
         </div>
       )}
 
       {/* PLAYING STATE */}
       {gameState === 'playing' && (
-        <div style={{ flex: 1, position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-          {/* Main Road Area with 3 Clickable Lanes */}
-          <div style={{ flex: 1, position: 'relative', background: '#1e293b', overflow: 'hidden' }}>
-            {/* Lane 0 (Top) */}
-            <div
-              onClick={() => steerToLane(0)}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+          {/* Target Word Banner */}
+          <div style={{
+            padding: '8px 16px', background: 'rgba(74,222,128,0.18)',
+            borderBottom: '1.5px solid rgba(74,222,128,0.3)', textAlign: 'center', flexShrink: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', zIndex: 10,
+          }}>
+            <span style={{ fontSize: '11px', color: '#86efac', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              COLLECT TARGET:
+            </span>
+            <span style={{ fontSize: '24px', color: '#f8fafc', fontWeight: 900, textShadow: '0 2px 8px rgba(74,222,128,0.8)' }}>
+              {targetWord}
+            </span>
+            <button
+              type="button"
+              onClick={() => playAudio(targetWord)}
               style={{
-                position: 'absolute', top: 0, left: 0, right: 0, height: '33.33%',
-                borderBottom: '2px dashed rgba(251,191,36,0.5)',
-                cursor: 'pointer', background: lane === 0 ? 'rgba(74,222,128,0.08)' : 'transparent',
-                display: 'flex', alignItems: 'center', paddingLeft: '12px',
+                background: 'rgba(74,222,128,0.2)', border: '1px solid rgba(74,222,128,0.4)',
+                color: '#86efac', borderRadius: '6px', padding: '4px 8px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', fontWeight: 800
               }}
             >
-              <span style={{ fontSize: '10px', color: '#64748b', fontWeight: 800 }}>LANE 1 (TOP)</span>
-            </div>
+              <Volume2 size={16} /> <span>Listen</span>
+            </button>
+          </div>
 
-            {/* Lane 1 (Middle) */}
+          {/* Vertical Road Canvas */}
+          <div
+            style={{
+              flex: 1, position: 'relative', background: '#1e293b', overflow: 'hidden',
+              boxShadow: 'inset 0 0 30px rgba(0,0,0,0.6)'
+            }}
+          >
+            {/* 3 Clickable Vertical Lanes */}
             <div
-              onClick={() => steerToLane(1)}
+              onClick={() => steerTo(0)}
               style={{
-                position: 'absolute', top: '33.33%', left: 0, right: 0, height: '33.33%',
-                borderBottom: '2px dashed rgba(251,191,36,0.5)',
-                cursor: 'pointer', background: lane === 1 ? 'rgba(74,222,128,0.08)' : 'transparent',
-                display: 'flex', alignItems: 'center', paddingLeft: '12px',
+                position: 'absolute', top: 0, bottom: 0, left: 0, width: '33.33%',
+                borderRight: '2px dashed rgba(251,191,36,0.6)', cursor: 'pointer',
+                background: lane === 0 ? 'rgba(74,222,128,0.06)' : 'transparent',
               }}
-            >
-              <span style={{ fontSize: '10px', color: '#64748b', fontWeight: 800 }}>LANE 2 (MID)</span>
-            </div>
-
-            {/* Lane 2 (Bottom) */}
+            />
             <div
-              onClick={() => steerToLane(2)}
+              onClick={() => steerTo(1)}
               style={{
-                position: 'absolute', top: '66.66%', left: 0, right: 0, height: '33.33%',
-                cursor: 'pointer', background: lane === 2 ? 'rgba(74,222,128,0.08)' : 'transparent',
-                display: 'flex', alignItems: 'center', paddingLeft: '12px',
+                position: 'absolute', top: 0, bottom: 0, left: '33.33%', width: '33.33%',
+                borderRight: '2px dashed rgba(251,191,36,0.6)', cursor: 'pointer',
+                background: lane === 1 ? 'rgba(74,222,128,0.06)' : 'transparent',
               }}
-            >
-              <span style={{ fontSize: '10px', color: '#64748b', fontWeight: 800 }}>LANE 3 (BOT)</span>
-            </div>
+            />
+            <div
+              onClick={() => steerTo(2)}
+              style={{
+                position: 'absolute', top: 0, bottom: 0, left: '66.66%', width: '33.33%',
+                cursor: 'pointer',
+                background: lane === 2 ? 'rgba(74,222,128,0.06)' : 'transparent',
+              }}
+            />
 
-            {/* Scrolling Road Stripes */}
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+            {/* Falling Road Stripes (Vertical Scrolling) */}
+            {[0, 1, 2, 3, 4, 5, 6, 7].map(i => (
               <React.Fragment key={i}>
                 <div style={{
-                  position: 'absolute', top: '33.33%', height: '6px', width: '40px',
-                  left: `${((i * 80 - stripeOffset + 1200) % 700) - 40}px`,
-                  background: '#fbbf24', borderRadius: '3px', transform: 'translateY(-50%)', opacity: 0.8
+                  position: 'absolute', left: '33.33%', width: '6px', height: '40px',
+                  top: `${((i * 70 + roadOffset * 2) % 560) - 40}px`,
+                  background: '#fbbf24', borderRadius: '3px', transform: 'translateX(-50%)', opacity: 0.8,
+                  pointerEvents: 'none',
                 }} />
                 <div style={{
-                  position: 'absolute', top: '66.66%', height: '6px', width: '40px',
-                  left: `${((i * 80 - stripeOffset + 1200) % 700) - 40}px`,
-                  background: '#fbbf24', borderRadius: '3px', transform: 'translateY(-50%)', opacity: 0.8
+                  position: 'absolute', left: '66.66%', width: '6px', height: '40px',
+                  top: `${((i * 70 + roadOffset * 2) % 560) - 40}px`,
+                  background: '#fbbf24', borderRadius: '3px', transform: 'translateX(-50%)', opacity: 0.8,
+                  pointerEvents: 'none',
                 }} />
               </React.Fragment>
             ))}
 
-            {/* Small obstacles on road */}
-            {obstacles.filter(o => o.type === 'small').map(o => (
-              <div key={o.id} style={{
-                position: 'absolute',
-                left: `${(o.x / 540) * 100}%`,
-                top: `${(o.lane * 33.33) + 16.66}%`,
-                fontSize: '28px',
-                transform: 'translate(-50%, -50%)',
-                filter: o.hit ? 'grayscale(1) opacity(0.3)' : 'drop-shadow(0 2px 6px rgba(0,0,0,0.5))',
-                zIndex: 15,
-                pointerEvents: 'none',
-              }}>
-                {o.icon}
+            {/* Falling Word Items / Stars */}
+            {items.map(item => (
+              <div
+                key={item.id}
+                style={{
+                  position: 'absolute',
+                  left: laneX(item.lane),
+                  top: `${item.y}px`,
+                  transform: 'translate(-50%, -50%)',
+                  padding: item.isObstacle ? '8px 12px' : '10px 16px',
+                  borderRadius: '16px',
+                  background: item.isTarget
+                    ? 'linear-gradient(135deg, #f59e0b, #eab308)'
+                    : item.isObstacle
+                    ? 'rgba(15,23,42,0.9)'
+                    : 'linear-gradient(135deg, #3b82f6, #6366f1)',
+                  border: item.isTarget ? '2.5px solid #ffffff' : '1.5px solid rgba(255,255,255,0.4)',
+                  boxShadow: item.isTarget
+                    ? '0 0 20px #f59e0b, 0 6px 16px rgba(0,0,0,0.5)'
+                    : '0 4px 12px rgba(0,0,0,0.4)',
+                  color: item.isTarget ? '#78350f' : '#ffffff',
+                  fontWeight: 900,
+                  fontSize: '13px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  zIndex: 20,
+                  pointerEvents: 'none',
+                }}
+              >
+                <span>{item.icon}</span>
+                <span>{item.word}</span>
               </div>
             ))}
 
-            {/* The Player's Car */}
-            <div style={{
-              position: 'absolute',
-              left: '90px',
-              top: `${(lane * 33.33) + 16.66}%`,
-              fontSize: '34px',
-              transform: `translate(-50%, -50%) ${spinout ? 'rotate(180deg)' : speedBoost ? 'scale(1.2)' : ''}`,
-              transition: 'top 0.2s cubic-bezier(0.34,1.56,0.64,1), transform 0.3s',
-              zIndex: 25,
-              pointerEvents: 'none',
-              filter: spinout ? 'hue-rotate(180deg)' : speedBoost ? 'brightness(1.5)' : 'drop-shadow(0 4px 10px rgba(0,0,0,0.6))',
-            }}>
+            {/* Player's Race Car */}
+            <div
+              style={{
+                position: 'absolute',
+                left: laneX(lane),
+                bottom: '30px',
+                transform: `translate(-50%, 0) ${spinout ? 'rotate(180deg)' : speedBoost ? 'scale(1.2)' : ''}`,
+                fontSize: '44px',
+                zIndex: 30,
+                transition: 'left 0.18s cubic-bezier(0.34,1.56,0.64,1), transform 0.25s',
+                pointerEvents: 'none',
+                filter: spinout ? 'hue-rotate(180deg)' : speedBoost ? 'brightness(1.5)' : 'drop-shadow(0 8px 16px rgba(0,0,0,0.7))',
+              }}
+            >
               🏎️
-              {speedBoost && <span style={{ position: 'absolute', left: '-26px', top: '-6px', fontSize: '20px' }}>💨</span>}
+              {speedBoost && <div style={{ position: 'absolute', bottom: '-10px', left: '50%', transform: 'translateX(-50%)', fontSize: '18px' }}>🔥</div>}
             </div>
 
-            {/* On-screen Steering Buttons (Left/Bottom Corner) */}
+            {/* Feedback Banner */}
+            {feedback && (
+              <div style={{
+                position: 'absolute', top: '16px', left: '50%', transform: 'translateX(-50%)',
+                zIndex: 50, padding: '8px 20px', borderRadius: '16px', fontWeight: 900, fontSize: '14px',
+                background: feedback.type === 'good' ? 'rgba(16,185,129,0.95)' : 'rgba(239,68,68,0.95)',
+                color: '#fff', boxShadow: '0 8px 28px rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.4)',
+                whiteSpace: 'nowrap',
+              }}>
+                {feedback.msg}
+              </div>
+            )}
+
+            {/* On-Screen Steering Left / Right Buttons */}
             <div style={{
-              position: 'absolute', left: '16px', bottom: '12px',
-              display: 'flex', flexDirection: 'column', gap: '8px', zIndex: 30,
+              position: 'absolute', bottom: '12px', left: '16px', right: '16px',
+              display: 'flex', justifyContent: 'space-between', zIndex: 40, pointerEvents: 'none'
             }}>
               <button
                 type="button"
-                onClick={(e) => { e.stopPropagation(); steerToLane(lane - 1); }}
+                onClick={() => steerTo(lane - 1)}
                 disabled={lane === 0}
                 style={{
-                  width: '46px', height: '46px', borderRadius: '12px',
-                  background: lane === 0 ? 'rgba(255,255,255,0.08)' : 'rgba(74,222,128,0.9)',
-                  border: '1.5px solid rgba(255,255,255,0.4)',
-                  color: lane === 0 ? '#64748b' : '#0f172a',
+                  width: '64px', height: '54px', borderRadius: '14px',
+                  background: lane === 0 ? 'rgba(255,255,255,0.1)' : 'linear-gradient(135deg, #10b981, #059669)',
+                  border: '2px solid rgba(255,255,255,0.4)',
+                  color: lane === 0 ? '#64748b' : '#ffffff',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   cursor: lane === 0 ? 'default' : 'pointer',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+                  boxShadow: '0 6px 16px rgba(0,0,0,0.4)',
+                  pointerEvents: 'auto',
                 }}
-                title="Steer Up"
               >
-                <ArrowUp size={22} strokeWidth={3} />
+                <ArrowLeft size={28} strokeWidth={3} />
               </button>
               <button
                 type="button"
-                onClick={(e) => { e.stopPropagation(); steerToLane(lane + 1); }}
+                onClick={() => steerTo(lane + 1)}
                 disabled={lane === 2}
                 style={{
-                  width: '46px', height: '46px', borderRadius: '12px',
-                  background: lane === 2 ? 'rgba(255,255,255,0.08)' : 'rgba(74,222,128,0.9)',
-                  border: '1.5px solid rgba(255,255,255,0.4)',
-                  color: lane === 2 ? '#64748b' : '#0f172a',
+                  width: '64px', height: '54px', borderRadius: '14px',
+                  background: lane === 2 ? 'rgba(255,255,255,0.1)' : 'linear-gradient(135deg, #10b981, #059669)',
+                  border: '2px solid rgba(255,255,255,0.4)',
+                  color: lane === 2 ? '#64748b' : '#ffffff',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   cursor: lane === 2 ? 'default' : 'pointer',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+                  boxShadow: '0 6px 16px rgba(0,0,0,0.4)',
+                  pointerEvents: 'auto',
                 }}
-                title="Steer Down"
               >
-                <ArrowDown size={22} strokeWidth={3} />
+                <ArrowRight size={28} strokeWidth={3} />
               </button>
             </div>
+
+            {/* Lexio Fox Mascot Assistant */}
+            <ArcadeFoxHelper
+              hintText={`Collect "${targetWord}" in the lane!`}
+              triggerHint={foxTrigger}
+              onHintUsed={() => setFoxTrigger(false)}
+            />
           </div>
-
-          {/* Feedback Banner */}
-          {feedback && (
-            <div style={{
-              position: 'absolute', top: '16px', left: '50%', transform: 'translateX(-50%)',
-              zIndex: 50, padding: '8px 20px', borderRadius: '16px', fontWeight: 900, fontSize: '14px',
-              background: feedback.type === 'good' ? 'rgba(16,185,129,0.95)' : 'rgba(239,68,68,0.95)',
-              color: '#fff', boxShadow: '0 8px 28px rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.4)',
-              whiteSpace: 'nowrap',
-            }}>
-              {feedback.msg}
-            </div>
-          )}
-
-          {/* CLIL DECISION PANEL (when obstacle arrives) */}
-          {decision && (
-            <div style={{
-              padding: '12px 16px', background: 'rgba(15,23,42,0.96)',
-              borderTop: '2px solid #f59e0b', zIndex: 40, flexShrink: 0,
-              boxShadow: '0 -8px 24px rgba(0,0,0,0.6)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span style={{ fontSize: '20px' }}>{decision.icon}</span>
-                  <span style={{ fontSize: '14px', fontWeight: 900, color: '#fbbf24' }}>
-                    {decision.label}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => speak(decision.label)}
-                    style={{
-                      background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)',
-                      color: '#fbbf24', borderRadius: '6px', padding: '3px 8px', cursor: 'pointer',
-                      display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', fontWeight: 800
-                    }}
-                  >
-                    <Volume2 size={14} /> <span>Listen</span>
-                  </button>
-                </div>
-                <div style={{
-                  width: '30px', height: '30px', borderRadius: '50%', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center',
-                  background: countdown <= 2 ? '#ef4444' : '#10b981',
-                  color: '#fff', fontWeight: 900, fontSize: '14px',
-                  boxShadow: `0 0 10px ${countdown <= 2 ? '#ef4444' : '#10b981'}`,
-                }}>
-                  {countdown}
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <button
-                  type="button"
-                  onClick={() => makeDecision(decision.A)}
-                  style={{
-                    flex: 1, padding: '12px 14px', borderRadius: '12px',
-                    background: 'linear-gradient(135deg, rgba(59,130,246,0.25), rgba(59,130,246,0.15))',
-                    border: '2px solid #3b82f6', color: '#bfdbfe', fontWeight: 900, fontSize: '14px',
-                    cursor: 'pointer', textAlign: 'center', boxShadow: '0 4px 12px rgba(59,130,246,0.2)',
-                  }}
-                >
-                  Option A: {decision.A.text}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => makeDecision(decision.B)}
-                  style={{
-                    flex: 1, padding: '12px 14px', borderRadius: '12px',
-                    background: 'linear-gradient(135deg, rgba(168,85,247,0.25), rgba(168,85,247,0.15))',
-                    border: '2px solid #a855f7', color: '#e9d5ff', fontWeight: 900, fontSize: '14px',
-                    cursor: 'pointer', textAlign: 'center', boxShadow: '0 4px 12px rgba(168,85,247,0.2)',
-                  }}
-                >
-                  Option B: {decision.B.text}
-                </button>
-              </div>
-            </div>
-          )}
         </div>
       )}
 
@@ -571,7 +497,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, onComplete, isStanda
           <div style={{ fontSize: '56px' }}>🏆</div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#4ade80' }}>
-              Race Finished!
+              Highway Run Finished!
             </h3>
             <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
               Final Score: <strong style={{ color: '#fbbf24', fontSize: '20px' }}>{score} pts</strong>
