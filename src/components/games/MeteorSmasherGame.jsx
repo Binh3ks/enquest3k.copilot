@@ -3,6 +3,7 @@ import { RotateCcw, Volume2, Shield, Zap, Sparkles, Trophy, Target, AlertTriangl
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
+import { VoiceService } from '../../services/voiceService';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
@@ -35,7 +36,6 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const swipeRef = useRef(null);
   const containerRef = useRef(null);
   const lastCatchTimeRef = useRef(Date.now());
-  const audioLockRef = useRef(0);
 
   const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
   const personalBest = highScores['meteor_smasher'] || 0;
@@ -46,14 +46,18 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const CANNON_X = W / 2;
   const CANNON_Y = H - 24;
 
-  const playDefinitionAudio = useCallback((defText) => {
-    if (!defText) return;
-    const now = Date.now();
-    if (now - audioLockRef.current < 1200) return;
-    audioLockRef.current = now;
+  // Atomically play the definition audio strictly for the given target word
+  const playDefinitionAudio = useCallback((targetWordObj) => {
+    if (!targetWordObj) return;
+    const def = targetWordObj.definition_en || targetWordObj.definition;
+    if (!def) return;
 
+    // 1. Immediately abort any previous voice playback
+    try { VoiceService.stop(); } catch (_) {}
     try { window.speechSynthesis?.cancel(); } catch (_) {}
-    speakText(`Find the word: ${defText}`, null, 0.92, null, 'explore', weekNumber);
+
+    // 2. Speak the exact definition for this word
+    speakText(`Find the word: ${def}`, null, 0.92, null, 'explore', weekNumber);
   }, [weekNumber]);
 
   const makeMeteor = useCallback((isTarget = false, targetWordObj = null, idx = 0) => {
@@ -102,7 +106,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       setCannonAngle(angle);
     }
 
-    playDefinitionAudio(currentTarget.definition_en || currentTarget.definition);
+    playDefinitionAudio(currentTarget);
   }, [wordBank, makeMeteor, playDefinitionAudio, CANNON_X, CANNON_Y]);
 
   const pickNextTarget = useCallback(() => {
@@ -175,6 +179,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     gameStateRef.current = 'done';
     setGameState('done');
     cancelAnimationFrame(frameRef.current);
+    try { VoiceService.stop(); } catch (_) {}
     recordHighScore('meteor_smasher', scoreRef.current);
     if (onComplete) onComplete(scoreRef.current);
   }, [onComplete, recordHighScore]);
@@ -197,7 +202,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     setTimeout(pickNextTarget, 100);
   };
 
-  useEffect(() => () => cancelAnimationFrame(frameRef.current), []);
+  useEffect(() => () => {
+    cancelAnimationFrame(frameRef.current);
+    try { VoiceService.stop(); } catch (_) {}
+  }, []);
 
   // Fire laser with rotating cannon animation
   const fireLaserAtMeteor = useCallback((meteor) => {
@@ -383,7 +391,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
               </div>
               <button
                 type="button"
-                onClick={() => playDefinitionAudio(target.definition_en || target.definition)}
+                onClick={() => playDefinitionAudio(targetRef.current || target)}
                 style={{
                   background: 'rgba(167,139,250,0.25)', border: '1px solid rgba(167,139,250,0.4)',
                   color: '#c4b5fd', borderRadius: '8px', padding: '6px 10px', cursor: 'pointer',
