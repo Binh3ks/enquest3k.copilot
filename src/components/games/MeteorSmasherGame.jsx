@@ -7,7 +7,7 @@ import { VoiceService } from '../../services/voiceService';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * MeteorSmasherGame V3 — Plasma Cannon Turret with Rotating Barrel, Flying Fox & Time's Up Game Over
+ * MeteorSmasherGame V3 — Plasma Cannon Turret with Bulletproof Wave Sync & Clean Definition Audio
  */
 
 export default function MeteorSmasherGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
@@ -36,6 +36,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const swipeRef = useRef(null);
   const containerRef = useRef(null);
   const lastCatchTimeRef = useRef(Date.now());
+  const isTransitioningRef = useRef(false);
 
   const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
   const personalBest = highScores['meteor_smasher'] || 0;
@@ -46,24 +47,23 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const CANNON_X = W / 2;
   const CANNON_Y = H - 24;
 
-  // Atomically play the definition audio strictly for the given target word
+  // Clean, uninterrupted definition speech
   const playDefinitionAudio = useCallback((targetWordObj) => {
     if (!targetWordObj) return;
     const def = targetWordObj.definition_en || targetWordObj.definition;
     if (!def) return;
 
-    // 1. Immediately abort any previous voice playback
     try { VoiceService.stop(); } catch (_) {}
     try { window.speechSynthesis?.cancel(); } catch (_) {}
 
-    // 2. Speak the exact definition for this word
-    speakText(`Find the word: ${def}`, null, 0.92, null, 'explore', weekNumber);
+    // Clean audio speaking definition directly
+    speakText(def, null, 0.90, null, 'explore', weekNumber);
   }, [weekNumber]);
 
   const makeMeteor = useCallback((isTarget = false, targetWordObj = null, idx = 0) => {
     const pick = targetWordObj || wordBank[Math.floor(Math.random() * wordBank.length)];
-    const x = 70 + idx * 160 + (Math.random() - 0.5) * 35;
-    const y = -40 - Math.random() * 50;
+    const x = 80 + idx * 155 + (Math.random() - 0.5) * 30;
+    const y = -45 - Math.random() * 40;
     const r = Math.max(38, Math.min(50, 34 + Math.floor(pick.word.length * 1.4)));
 
     return {
@@ -72,10 +72,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       isTarget,
       x: Math.max(r + 20, Math.min(W - r - 20, x)),
       y,
-      vy: 0.45 + Math.random() * 0.35,
-      vx: (Math.random() - 0.5) * 0.3,
+      vy: 0.28 + Math.random() * 0.16, // Smooth and comfortable fall speed (~20s per wave)
+      vx: (Math.random() - 0.5) * 0.2,
       rot: Math.random() * 360,
-      rotSpeed: (Math.random() - 0.5) * 1.5,
+      rotSpeed: (Math.random() - 0.5) * 1.2,
       r,
       color: isTarget ? '#f59e0b' : ['#6366f1', '#ec4899', '#0ea5e9', '#10b981', '#8b5cf6'][idx % 5],
       hit: false,
@@ -110,15 +110,25 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   }, [wordBank, makeMeteor, playDefinitionAudio, CANNON_X, CANNON_Y]);
 
   const pickNextTarget = useCallback(() => {
+    if (gameStateRef.current !== 'playing') return;
+    if (isTransitioningRef.current) return;
+    isTransitioningRef.current = true;
+
     const t = wordBank[Math.floor(Math.random() * wordBank.length)];
     targetRef.current = t;
     setTarget(t);
     spawnWave(t);
+
+    setTimeout(() => {
+      isTransitioningRef.current = false;
+    }, 600);
   }, [wordBank, spawnWave]);
 
   // Physics animation loop
   const gameLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
+
+    let targetMissed = false;
 
     meteorsRef.current = meteorsRef.current.map(m => {
       if (m.hit) return m;
@@ -131,26 +141,30 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       // Reached bottom without hit
       if (y - r > H) {
         if (m.isTarget && !m.hit) {
-          shieldsRef.current = Math.max(0, shieldsRef.current - 1);
-          setShields(shieldsRef.current);
-          setFeedback({
-            msg: `🛡️ Missed: "${targetRef.current?.word}" (−1 shield)`,
-            type: 'bad'
-          });
-          setFoxTrigger(true);
-          setTimeout(() => setFeedback(null), 1200);
-
-          if (shieldsRef.current <= 0) {
-            endGame();
-            return m;
-          }
-          setTimeout(() => pickNextTarget(), 300);
+          targetMissed = true;
         }
         return { ...m, hit: true };
       }
 
       return { ...m, x, y, vx, vy, rot };
     });
+
+    if (targetMissed && !isTransitioningRef.current) {
+      shieldsRef.current = Math.max(0, shieldsRef.current - 1);
+      setShields(shieldsRef.current);
+      setFeedback({
+        msg: `🛡️ Missed: "${targetRef.current?.word}" (−1 shield)`,
+        type: 'bad'
+      });
+      setFoxTrigger(true);
+      setTimeout(() => setFeedback(null), 1200);
+
+      if (shieldsRef.current <= 0) {
+        endGame();
+        return;
+      }
+      setTimeout(() => pickNextTarget(), 400);
+    }
 
     setMeteors([...meteorsRef.current]);
     frameRef.current = requestAnimationFrame(gameLoop);
@@ -188,6 +202,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     scoreRef.current = 0;
     shieldsRef.current = 3;
     meteorsSmashedRef.current = 0;
+    isTransitioningRef.current = false;
     setScore(0);
     setShields(3);
     setMeteorsSmashed(0);
@@ -209,7 +224,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
 
   // Fire laser with rotating cannon animation
   const fireLaserAtMeteor = useCallback((meteor) => {
-    if (!meteor || meteor.hit || gameStateRef.current !== 'playing') return;
+    if (!meteor || meteor.hit || gameStateRef.current !== 'playing' || isTransitioningRef.current) return;
 
     // Rotate cannon directly towards aimed meteor
     const aimAngle = (Math.atan2(meteor.x - CANNON_X, -(meteor.y - CANNON_Y)) * 180) / Math.PI;
