@@ -133,23 +133,33 @@ const injectAudioUrls = (weekData, forceEasyMode = false) => {
   return weekData;
 };
 
-export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const WEEK_DATA_CACHE = new Map();
 
-  // Create a cache key that includes the learning mode
-  const cacheKey = `week_${weekId}_${learningMode}`;
+export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
+  const isEasy = learningMode === 'easy';
+  const cacheKey = `week_${weekId}_${isEasy ? 'easy' : 'adv'}`;
+  
+  const cached = WEEK_DATA_CACHE.get(cacheKey);
+  const [data, setData] = useState(cached || null);
+  const [loading, setLoading] = useState(!cached);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
+
+    // If already in memory cache, ensure state matches and return immediately (0ms latency)
+    if (WEEK_DATA_CACHE.has(cacheKey)) {
+      const memData = WEEK_DATA_CACHE.get(cacheKey);
+      setData(memData);
+      setLoading(false);
+      return;
+    }
     
     const loadData = async () => {
       setLoading(true);
       setError(null);
       
       try {
-        const isEasy = learningMode === 'easy';
         console.log(`[DataHooks] Fetching Week ${weekId} in ${isEasy ? 'EASY' : 'ADVANCED'} mode`);
 
         // ⚡ Dynamic import - only load requested week
@@ -158,14 +168,18 @@ export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
         if (isMounted) {
           if (rawData) {
             console.log(`[DataHooks] Loaded data title:`, rawData?.weekTitle_en || rawData?.title);
-
             
             // Deep copy before processing to avoid mutation issues
             const deepClonedData = JSON.parse(JSON.stringify(rawData));
             
             // Inject audio URLs
             const processedData = injectAudioUrls(deepClonedData, isEasy);
+            
+            // Save into synchronous in-memory cache
+            WEEK_DATA_CACHE.set(cacheKey, processedData);
+
             setData(processedData);
+            setLoading(false);
 
             // 🚀 Automatically pre-generate ALL Google Cloud TTS cache for the entire week!
             VoiceService.prefetchEntireWeek(weekId, learningMode).catch(() => {});
@@ -173,6 +187,7 @@ export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
             console.warn(`[DataHooks] Week ${weekId} data not found for ${learningMode} mode.`);
             setData(null);
             setError(`Data for week ${weekId} (${learningMode}) not found.`);
+            setLoading(false);
           }
         }
       } catch (err) {
@@ -180,9 +195,6 @@ export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
         if (isMounted) {
           setError(err.message);
           setData(null);
-        }
-      } finally {
-        if (isMounted) {
           setLoading(false);
         }
       }
@@ -193,7 +205,7 @@ export const useFetchWeekData = (weekId, learningMode = 'advanced') => {
     return () => {
       isMounted = false;
     };
-  }, [weekId, learningMode]); // Rerun effect when weekId or learningMode changes
+  }, [weekId, learningMode, cacheKey, isEasy]);
 
   return { data, loading, error };
 };
