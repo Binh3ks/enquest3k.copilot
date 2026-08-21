@@ -156,59 +156,12 @@ const ParentChildrenPage = () => {
   );
 };
 
-const MobileNotSupported = () => (
-  <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex flex-col">
-    <div className="flex-1 flex flex-col items-center justify-center px-6 py-12 text-white text-center">
-      <div className="flex justify-center mb-4">
-        <NovaMascot size={180} />
-      </div>
-      <h1 className="text-3xl font-black mb-2 leading-tight">Lexio</h1>
-      <p className="text-indigo-100 text-sm font-medium mb-8">
-        Nền tảng học tiếng Anh toàn diện<br/>theo chuẩn Cambridge cho học sinh Việt Nam
-      </p>
-      <div className="grid grid-cols-2 gap-3 w-full max-w-xs mb-4">
-        {[
-          { emoji: '📚', text: '156 tuần lộ trình' },
-          { emoji: '🤖', text: 'AI Tutor Nova 24/7' },
-          { emoji: '🎯', text: 'Chuẩn Cambridge A1→B1+' },
-          { emoji: '📊', text: 'Dashboard Phụ huynh' },
-        ].map(f => (
-          <div key={f.text} className="bg-white/15 rounded-2xl p-3 text-center">
-            <span className="text-2xl">{f.emoji}</span>
-            <p className="text-white font-bold text-xs mt-1">{f.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div className="bg-white px-6 py-8 text-center rounded-t-3xl shadow-2xl">
-      <div className="text-4xl mb-3">💻</div>
-      <h2 className="text-lg font-black text-slate-800 mb-2">Cần màn hình lớn hơn</h2>
-      <p className="text-slate-600 text-sm leading-relaxed">
-        Lexio chỉ thích hợp dùng trên<br/>
-        <span className="font-black text-slate-800">máy tính và tablet 10 inch trở lên</span>.
-      </p>
-      <p className="text-slate-400 text-xs mt-3">
-        Vui lòng mở lại trang trên máy tính hoặc tablet của bạn.
-      </p>
-    </div>
-  </div>
-);
-
 const App = () => {
   const [isSandboxQAOpen, setIsSandboxQAOpen] = useState(false);
 
   useEffect(() => {
     window.__openSandboxQA = () => setIsSandboxQAOpen(true);
   }, []);
-
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
-  }, []);
-
-  if (isMobile) return <MobileNotSupported />;
 
   return (
   <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
