@@ -138,12 +138,44 @@ export const useArcadeStore = create(
         return next > 0;
       },
 
+      highScores: {}, // { gameId: number }
+      bestReactionTimes: {}, // { gameId: seconds (e.g. 0.8) }
+      bestSpeedrunTimes: {}, // { gameId: seconds (e.g. 54.2) }
+
       // Record high score
       recordHighScore: (gameId, score) => {
         const scores = { ...get().highScores };
         if (!scores[gameId] || score > scores[gameId]) {
           scores[gameId] = score;
           set({ highScores: scores });
+        }
+      },
+
+      // Record best single reflex reaction time (lower is better)
+      recordBestReaction: (gameId, seconds) => {
+        if (!seconds || seconds <= 0) return;
+        const current = get().bestReactionTimes[gameId];
+        if (!current || seconds < current) {
+          set({
+            bestReactionTimes: {
+              ...get().bestReactionTimes,
+              [gameId]: Number(seconds.toFixed(2))
+            }
+          });
+        }
+      },
+
+      // Record best full-clear speedrun time (lower is better)
+      recordSpeedrunTime: (gameId, seconds) => {
+        if (!seconds || seconds <= 0) return;
+        const current = get().bestSpeedrunTimes[gameId];
+        if (!current || seconds < current) {
+          set({
+            bestSpeedrunTimes: {
+              ...get().bestSpeedrunTimes,
+              [gameId]: Number(seconds.toFixed(1))
+            }
+          });
         }
       }
     }),
@@ -156,6 +188,8 @@ export const useArcadeStore = create(
         rewardedMilestones: state.rewardedMilestones,
         lastActiveTimestamp: state.lastActiveTimestamp,
         highScores: state.highScores,
+        bestReactionTimes: state.bestReactionTimes,
+        bestSpeedrunTimes: state.bestSpeedrunTimes,
       }),
     }
   )

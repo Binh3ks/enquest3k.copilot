@@ -11,7 +11,9 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
   const {
     studySeconds,
     playEnergySeconds,
-    highScores
+    highScores,
+    bestReactionTimes = {},
+    bestSpeedrunTimes = {},
   } = useArcadeStore();
 
   const currentUser = useUserStore(state => state.currentUser);
@@ -331,15 +333,27 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
                   <div style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                     paddingTop: '8px', borderTop: '1px solid rgba(255,255,255,0.05)',
-                    fontSize: '11px'
+                    fontSize: '11px', flexWrap: 'wrap', gap: '4px'
                   }}>
                     {isUnlocked ? (
                       <>
-                        <span style={{ color: '#fbbf24', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '3px' }}>
-                          <Trophy size={11} /> {highScore} pts
-                        </span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <span style={{ color: '#fbbf24', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '3px' }}>
+                            <Trophy size={11} /> {highScore} pts
+                          </span>
+                          {bestReactionTimes[game.id] && (
+                            <span style={{ color: '#fde047', fontWeight: 800, fontSize: '10px' }}>
+                              ⚡ {bestReactionTimes[game.id]}s
+                            </span>
+                          )}
+                          {bestSpeedrunTimes[game.id] && (
+                            <span style={{ color: '#38bdf8', fontWeight: 800, fontSize: '10px' }}>
+                              ⏱️ {bestSpeedrunTimes[game.id]}s
+                            </span>
+                          )}
+                        </div>
                         <span style={{ color: canPlay ? '#60a5fa' : '#374151', fontWeight: 800 }}>
-                          {canPlay ? 'Play 1m ▶' : '🔋 No battery'}
+                          {canPlay ? 'Play 3m ▶' : '🔋 No battery'}
                         </span>
                       </>
                     ) : (

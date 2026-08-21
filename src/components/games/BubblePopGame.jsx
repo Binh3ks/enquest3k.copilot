@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Volume2, RotateCcw, Trophy, Zap, Target, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Volume2, RotateCcw, Trophy, Zap, Target, Sparkles, CheckCircle2, Timer } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 import { getWeekArcadeData } from './gameDataHelper';
 import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * BubblePopGame V3 — Realistic Floating Bubbles with Flying Fox Target Finder
+ * BubblePopGame V3 — Realistic Floating Bubbles with Speedrun Time Attack & Reflex Metric
  */
 
 export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
@@ -28,6 +28,8 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
   const [showPenalty, setShowPenalty] = useState(false);
   const [revealMsg, setRevealMsg] = useState(null);
   const [foxTrigger, setFoxTrigger] = useState(false);
+  const [fastestReflex, setFastestReflex] = useState(null);
+  const [speedrunClearTime, setSpeedrunClearTime] = useState(null);
 
   const containerRef = useRef(null);
   const bubblesRef = useRef([]);
@@ -38,21 +40,26 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
   const animFrameRef = useRef(null);
   const gameStateRef = useRef('idle');
   const lastCatchTimeRef = useRef(Date.now());
+  const spawnTimestampRef = useRef(Date.now());
+  const startTimeRef = useRef(Date.now());
+  const fastestReflexRef = useRef(null);
 
-  const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
-  const personalBest = highScores['bubble_pop'] || 0;
-  const GOAL_WORDS = 10; // Target: 10 words in 60s
+  const { consumePlayEnergy, recordHighScore, highScores, recordBestReaction, recordSpeedrunTime, bestReactionTimes, bestSpeedrunTimes } = useArcadeStore();
+  const personalBestScore = highScores['bubble_pop'] || 0;
+  const storedBestReflex = bestReactionTimes['bubble_pop'] || null;
+  const storedBestSpeedrun = bestSpeedrunTimes['bubble_pop'] || null;
+  const GOAL_WORDS = 20; // 20 words in 3 minutes
 
   const W = 600;
   const H = 420;
 
   const COLORS = [
-    ['#06b6d4', '#0ea5e9'], // cyan-blue
-    ['#a855f7', '#ec4899'], // purple-pink
-    ['#f59e0b', '#f97316'], // amber-orange
-    ['#10b981', '#0d9488'], // emerald-teal
-    ['#6366f1', '#8b5cf6'], // indigo-violet
-    ['#ec4899', '#f43f5e'], // pink-rose
+    ['#06b6d4', '#0ea5e9'],
+    ['#a855f7', '#ec4899'],
+    ['#f59e0b', '#f97316'],
+    ['#10b981', '#0d9488'],
+    ['#6366f1', '#8b5cf6'],
+    ['#ec4899', '#f43f5e'],
   ];
 
   const playAudio = useCallback((word) => {
@@ -73,96 +80,99 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
 
     const newBubbles = allWords.map((word, i) => {
       const color = COLORS[i % COLORS.length];
-      const isTarget = word === target;
-      const r = word.length > 8 ? 44 : 38;
-
-      // Distribute evenly in a grid with jitter so they don't overlap on spawn
+      const radius = Math.max(38, Math.min(52, 34 + word.length * 1.5));
       const col = i % 4;
       const row = Math.floor(i / 4);
-      const initX = 60 + col * 140 + (Math.random() - 0.5) * 30;
-      const initY = 70 + row * 150 + (Math.random() - 0.5) * 30;
 
-      // Gentle, readable floating velocities
-      const vx = (Math.random() - 0.5) * 1.2;
-      const vy = (Math.random() > 0.5 ? 1 : -1) * (0.6 + Math.random() * 0.6);
+      const cellW = (W - 120) / 4;
+      const cellH = (H - 120) / 2;
+
+      const baseX = 60 + col * cellW + cellW / 2;
+      const baseY = 60 + row * cellH + cellH / 2;
+
+      const x = baseX + (Math.random() - 0.5) * 35;
+      const y = baseY + (Math.random() - 0.5) * 35;
+
+      const speedMag = 0.45 + (currentStreak * 0.05);
+      const angle = Math.random() * Math.PI * 2;
 
       return {
         id: `b_${Date.now()}_${i}_${Math.random()}`,
         word,
-        isTarget,
-        x: Math.max(r + 10, Math.min(W - r - 10, initX)),
-        y: Math.max(r + 10, Math.min(H - r - 10, initY)),
-        vx,
-        vy,
-        r,
+        isTarget: word === target,
+        x: Math.max(radius + 15, Math.min(W - radius - 15, x)),
+        y: Math.max(radius + 15, Math.min(H - radius - 15, y)),
+        vx: Math.cos(angle) * speedMag,
+        vy: Math.sin(angle) * speedMag,
+        radius,
         color,
         popped: false,
+        phase: Math.random() * Math.PI * 2,
       };
     });
 
     bubblesRef.current = newBubbles;
     setBubbles(newBubbles);
     lastCatchTimeRef.current = Date.now();
+    spawnTimestampRef.current = Date.now(); // Record spawn time for reflex measurement
     setFoxTrigger(false);
     playAudio(target);
   }, [activeWords, playAudio]);
 
-  // Physics animation loop — 4-WALL BOUNCE (Ceiling, Floor, Left, Right)
+  // Smooth floating physics
   const runLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
 
-    bubblesRef.current = bubblesRef.current.map(b => {
-      if (b.popped) return b;
-      let { x, y, vx, vy, r } = b;
+    const list = bubblesRef.current;
+    for (let i = 0; i < list.length; i++) {
+      const b = list[i];
+      if (b.popped) continue;
 
-      // Left & Right wall bounce
-      if (x - r < 0) {
-        x = r;
-        vx = Math.abs(vx);
-      } else if (x + r > W) {
-        x = W - r;
-        vx = -Math.abs(vx);
-      }
+      b.phase += 0.03;
+      b.x += b.vx + Math.sin(b.phase) * 0.2;
+      b.y += b.vy + Math.cos(b.phase) * 0.2;
 
-      // Ceiling & Floor bounce (REALISTIC BALLOON BOUNCE)
-      if (y - r < 0) {
-        y = r;
-        vy = Math.abs(vy); // Bounce DOWN off ceiling
-      } else if (y + r > H) {
-        y = H - r;
-        vy = -Math.abs(vy); // Bounce UP off floor
-      }
-
-      // Gentle wobble / buoyancy drift
-      vx += (Math.random() - 0.5) * 0.04;
-      vy += (Math.random() - 0.5) * 0.04;
-
-      // Speed limits (keep relaxed for kids)
-      vx = Math.max(-1.4, Math.min(1.4, vx));
-      vy = Math.max(-1.2, Math.min(1.2, vy));
-
-      x += vx;
-      y += vy;
-
-      return { ...b, x, y, vx, vy };
-    });
+      if (b.x - b.radius < 8) { b.x = b.radius + 8; b.vx = Math.abs(b.vx); }
+      if (b.x + b.radius > W - 8) { b.x = W - 8 - b.radius; b.vx = -Math.abs(b.vx); }
+      if (b.y - b.radius < 8) { b.y = b.radius + 8; b.vy = Math.abs(b.vy); }
+      if (b.y + b.radius > H - 8) { b.y = H - 8 - b.radius; b.vy = -Math.abs(b.vy); }
+    }
 
     setBubbles([...bubblesRef.current]);
     animFrameRef.current = requestAnimationFrame(runLoop);
   }, []);
 
+  const endGame = useCallback((isSpeedrunVictory = false) => {
+    gameStateRef.current = 'done';
+    setGameState('done');
+    cancelAnimationFrame(animFrameRef.current);
+
+    if (isSpeedrunVictory) {
+      const elapsedSec = (Date.now() - startTimeRef.current) / 1000;
+      setSpeedrunClearTime(elapsedSec);
+      recordSpeedrunTime('bubble_pop', elapsedSec);
+    }
+
+    recordHighScore('bubble_pop', scoreRef.current);
+  }, [recordHighScore, recordSpeedrunTime]);
+
   const startGame = () => {
     scoreRef.current = 0;
     streakRef.current = 0;
     wordsPoppedRef.current = 0;
+    fastestReflexRef.current = null;
+    startTimeRef.current = Date.now();
+
     setScore(0);
     setStreak(0);
     setWordsPopped(0);
-    setGameTimer(180); // 3 minutes
+    setGameTimer(180);
     setShowPenalty(false);
     setInkSplat(null);
     setRevealMsg(null);
     setFoxTrigger(false);
+    setFastestReflex(null);
+    setSpeedrunClearTime(null);
 
     const target = activeWords[Math.floor(Math.random() * activeWords.length)];
     targetRef.current = target;
@@ -174,41 +184,43 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
     animFrameRef.current = requestAnimationFrame(runLoop);
   };
 
-  // 1-second game clock + Fox Idle Hint Trigger (7s)
+  // 1-second clock
   useEffect(() => {
     if (gameState !== 'playing') return;
     const interval = setInterval(() => {
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
-        if (!ok) { endGame(); return; }
+        if (!ok) { endGame(false); return; }
       }
-      // If user hasn't caught target for > 7s, trigger Lexio Fox
       if (Date.now() - lastCatchTimeRef.current > 7000) {
         setFoxTrigger(true);
       }
       setGameTimer(t => {
-        if (t <= 1) { endGame(); return 0; }
+        if (t <= 1) { endGame(false); return 0; }
         return t - 1;
       });
     }, 1000);
     return () => clearInterval(interval);
-  }, [gameState, isStandalone]);
-
-  const endGame = useCallback(() => {
-    gameStateRef.current = 'done';
-    setGameState('done');
-    cancelAnimationFrame(animFrameRef.current);
-    recordHighScore('bubble_pop', scoreRef.current);
-    if (onComplete) onComplete(scoreRef.current);
-  }, [onComplete, recordHighScore]);
+  }, [gameState, isStandalone, endGame]);
 
   const handleBubbleTap = useCallback((bubble, e) => {
     if (gameStateRef.current !== 'playing') return;
     e.stopPropagation();
 
     if (bubble.isTarget) {
+      // Calculate Reflex Reaction Time
+      const reflexSec = (Date.now() - spawnTimestampRef.current) / 1000;
+      const isLightning = reflexSec <= 1.5;
+      const speedBonus = isLightning ? 5 : 0;
+
+      if (!fastestReflexRef.current || reflexSec < fastestReflexRef.current) {
+        fastestReflexRef.current = reflexSec;
+        setFastestReflex(reflexSec);
+        recordBestReaction('bubble_pop', reflexSec);
+      }
+
       // POP SUCCESS!
-      const pts = 15 + streakRef.current * 2;
+      const pts = 15 + streakRef.current * 2 + speedBonus;
       scoreRef.current += pts;
       streakRef.current += 1;
       wordsPoppedRef.current += 1;
@@ -217,8 +229,21 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
       setStreak(streakRef.current);
       setWordsPopped(wordsPoppedRef.current);
 
-      setRevealMsg({ text: `🎉 Pop: "${bubble.word}" (+${pts} pts)`, type: 'correct' });
-      setTimeout(() => setRevealMsg(null), 800);
+      if (isLightning) {
+        setRevealMsg({ text: `⚡ LIGHTNING REFLEX: ${reflexSec.toFixed(2)}s! (+${pts} pts)`, type: 'lightning' });
+      } else {
+        setRevealMsg({ text: `🎉 Pop: "${bubble.word}" (${reflexSec.toFixed(1)}s) (+${pts} pts)`, type: 'correct' });
+      }
+      setTimeout(() => setRevealMsg(null), 900);
+
+      // Check Speedrun Victory (All 20 words cleared early!)
+      if (wordsPoppedRef.current >= GOAL_WORDS) {
+        const timeBonus = Math.floor(gameTimer * 2);
+        scoreRef.current += timeBonus;
+        setScore(scoreRef.current);
+        endGame(true);
+        return;
+      }
 
       // Pick next target word & respawn
       const nextTarget = activeWords[Math.floor(Math.random() * activeWords.length)];
@@ -239,86 +264,75 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
       setTimeout(() => { setInkSplat(null); setShowPenalty(false); }, 900);
       setTimeout(() => setRevealMsg(null), 1600);
     }
-  }, [activeWords, spawnBubbles, playAudio]);
+  }, [activeWords, spawnBubbles, playAudio, gameTimer, endGame, recordBestReaction]);
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      cancelAnimationFrame(animFrameRef.current);
-      window.speechSynthesis?.cancel();
-    };
+  useEffect(() => () => {
+    cancelAnimationFrame(animFrameRef.current);
+    window.speechSynthesis?.cancel();
   }, []);
 
   const targetBubble = bubbles.find(b => b.isTarget && !b.popped);
 
-  const bgStyle = {
-    width: '100%', height: '100%', minHeight: '420px',
-    background: 'linear-gradient(180deg, #09153e 0%, #12286b 40%, #0d4085 100%)',
-    borderRadius: '16px',
-    display: 'flex', flexDirection: 'column',
-    position: 'relative', overflow: 'hidden',
-    fontFamily: 'system-ui, sans-serif', userSelect: 'none',
-  };
-
   return (
-    <div style={bgStyle}>
-      {/* Top HUD with Target Goal & Personal Best */}
+    <div style={{
+      width: '100%', height: '100%', minHeight: '420px',
+      background: 'linear-gradient(180deg, #09153e 0%, #12286b 40%, #0d4085 100%)',
+      borderRadius: '16px', display: 'flex', flexDirection: 'column',
+      position: 'relative', overflow: 'hidden', fontFamily: 'system-ui, sans-serif', userSelect: 'none',
+    }}>
+      {/* Top HUD with Speed Metrics & Best Reflex */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '10px 16px', background: 'rgba(0,0,0,0.45)',
-        backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
+        padding: '10px 16px', background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <span style={{ fontSize: '22px' }}>🫧</span>
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 900, color: '#7dd3fc', letterSpacing: '0.05em' }}>BUBBLE POP DASH</div>
+            <div style={{ fontSize: '12px', fontWeight: 900, color: '#38bdf8', letterSpacing: '0.05em' }}>BUBBLE POP DASH</div>
             <div style={{ fontSize: '10px', color: '#94a3b8' }}>
-              🎯 Goal: <b style={{ color: wordsPopped >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsPopped}/{GOAL_WORDS} words</b>
+              🎯 Target: <b style={{ color: wordsPopped >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsPopped}/{GOAL_WORDS} words</b>
             </div>
           </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          {personalBest > 0 && (
-            <div style={{ fontSize: '11px', fontWeight: 800, color: '#a78bfa', background: 'rgba(167,139,250,0.12)', border: '1px solid rgba(167,139,250,0.3)', borderRadius: '8px', padding: '3px 8px' }}>
-              🏆 Best: {personalBest}
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          {(fastestReflex || storedBestReflex) && (
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#fde047', background: 'rgba(253,224,71,0.12)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Zap size={12} fill="#fde047" /> ⚡ {(fastestReflex || storedBestReflex).toFixed(2)}s
             </div>
           )}
-          {streak >= 3 && (
-            <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Zap size={12} fill="#fbbf24" /> {streak}x STREAK
+          {storedBestSpeedrun && (
+            <div style={{ fontSize: '11px', fontWeight: 800, color: '#38bdf8', background: 'rgba(56,189,248,0.12)', border: '1px solid rgba(56,189,248,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Timer size={12} /> ⏱️ {storedBestSpeedrun}s
             </div>
           )}
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
             ⭐ {score} pts
           </div>
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
-            ⏱ {gameTimer}s
+            ⏱ {Math.floor(gameTimer / 60)}:{String(gameTimer % 60).padStart(2, '0')}
           </div>
         </div>
       </div>
 
       {/* IDLE STATE */}
       {gameState === 'idle' && (
-        <div style={{
-          flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-          gap: '16px', padding: '24px', textAlign: 'center',
-        }}>
-          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(14,165,233,0.6))' }}>🫧</div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
+          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(56,189,248,0.6))' }}>🫧</div>
           <div>
-            <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#7dd3fc' }}>
-              Catch the Bouncing Bubbles!
+            <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#38bdf8' }}>
+              Speedrun Bubble Dash!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Target: Pop <b>{GOAL_WORDS} words</b> in 60 seconds! Read the target word and tap the matching bubble as it bounces off the ceiling!
+              Pop all <b>{GOAL_WORDS} target bubbles</b> as fast as possible! React in &lt;1.5s for <b>⚡ Lightning Speed Bonus (+5 pts)</b>!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
-            padding: '14px 32px', background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+            padding: '14px 32px', background: 'linear-gradient(135deg, #0284c7, #2563eb)',
             color: '#fff', fontWeight: 900, fontSize: '15px', borderRadius: '14px',
-            border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(14,165,233,0.4)',
+            border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(2,132,199,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>▶</span> START (GOAL: 10 WORDS)
+            <span>🫧</span> START SPEEDRUN (GOAL: 20)
           </button>
         </div>
       )}
@@ -326,110 +340,80 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
       {/* PLAYING STATE */}
       {gameState === 'playing' && (
         <>
-          {/* Target Word Banner + Audio Repeat Button */}
+          {/* Target Word Banner */}
           <div style={{
-            textAlign: 'center', padding: '8px 16px',
-            background: 'rgba(14,165,233,0.18)', borderBottom: '1.5px solid rgba(14,165,233,0.3)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', flexShrink: 0, zIndex: 10,
+            padding: '8px 16px', background: 'rgba(56,189,248,0.18)',
+            borderBottom: '1.5px solid rgba(56,189,248,0.3)', textAlign: 'center', flexShrink: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px',
           }}>
-            <span style={{ fontSize: '11px', fontWeight: 900, color: '#7dd3fc', textTransform: 'uppercase', letterSpacing: '0.08em' }}>POP TARGET:</span>
-            <span style={{ fontSize: '24px', fontWeight: 900, color: '#f8fafc', letterSpacing: '0.04em', textShadow: '0 2px 8px rgba(14,165,233,0.8)' }}>
+            <span style={{ fontSize: '11px', color: '#7dd3fc', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              FIND & POP:
+            </span>
+            <span style={{ fontSize: '24px', color: '#f8fafc', fontWeight: 900, textShadow: '0 2px 8px rgba(56,189,248,0.8)' }}>
               {targetWord}
             </span>
             <button
               type="button"
               onClick={() => playAudio(targetWord)}
               style={{
-                background: 'rgba(14,165,233,0.25)', border: '1px solid rgba(14,165,233,0.4)',
-                color: '#7dd3fc', borderRadius: '8px', padding: '6px 10px', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px', fontWeight: 800
+                background: 'rgba(56,189,248,0.2)', border: '1px solid rgba(56,189,248,0.4)',
+                color: '#7dd3fc', borderRadius: '6px', padding: '4px 8px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', fontWeight: 800
               }}
-              title="Repeat Audio"
             >
               <Volume2 size={16} /> <span>Listen</span>
             </button>
           </div>
 
-          {/* Bubble physics tank */}
-          <div
-            ref={containerRef}
-            style={{ flex: 1, position: 'relative', overflow: 'hidden', touchAction: 'none' }}
-          >
-            {/* Answer Reveal / Feedback Banner */}
+          {/* Ocean Aquarium Canvas */}
+          <div ref={containerRef} style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
             {revealMsg && (
               <div style={{
                 position: 'absolute', top: '16px', left: '50%', transform: 'translateX(-50%)',
                 zIndex: 40, padding: '8px 20px', borderRadius: '16px', fontWeight: 900, fontSize: '14px',
-                background: revealMsg.type === 'correct'
+                background: revealMsg.type === 'lightning'
+                  ? 'linear-gradient(135deg, #eab308, #ca8a04)'
+                  : revealMsg.type === 'correct'
                   ? 'rgba(16,185,129,0.95)'
                   : 'rgba(239,68,68,0.95)',
-                color: '#fff', boxShadow: '0 8px 28px rgba(0,0,0,0.6)',
-                border: '2px solid rgba(255,255,255,0.4)',
-                whiteSpace: 'nowrap', pointerEvents: 'none',
+                color: '#fff', boxShadow: '0 8px 28px rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.4)',
+                whiteSpace: 'nowrap',
               }}>
                 {revealMsg.text}
               </div>
             )}
 
-            {/* Ink splat overlay */}
-            {inkSplat && (
-              <div style={{
-                position: 'absolute', inset: 0, zIndex: 25,
-                background: `radial-gradient(ellipse 220px 160px at ${inkSplat.x}px ${inkSplat.y}px, ${inkSplat.color}99, transparent 75%)`,
-                pointerEvents: 'none', transition: 'opacity 0.3s',
-              }} />
-            )}
+            {/* Floating Bubbles */}
+            {bubbles.filter(b => !b.popped).map(b => (
+              <div
+                key={b.id}
+                onClick={(e) => handleBubbleTap(b, e)}
+                style={{
+                  position: 'absolute',
+                  left: `${(b.x / W) * 100}%`,
+                  top: `${(b.y / H) * 100}%`,
+                  transform: 'translate(-50%, -50%)',
+                  width: `${b.radius * 2}px`,
+                  height: `${b.radius * 2}px`,
+                  borderRadius: '50%',
+                  background: `radial-gradient(circle at 35% 30%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.2) 25%, ${b.color[0]}cc 60%, ${b.color[1]}ee 100%)`,
+                  border: '2px solid rgba(255,255,255,0.6)',
+                  boxShadow: `0 0 16px ${b.color[0]}88, inset -4px -4px 10px rgba(0,0,0,0.4)`,
+                  cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: '#ffffff', fontWeight: 900, fontSize: b.word.length > 8 ? '12px' : '13px',
+                  textShadow: '0 2px 4px rgba(0,0,0,0.8)',
+                  zIndex: 20,
+                  transition: 'transform 0.1s',
+                }}
+                onMouseDown={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(0.92)'; }}
+                onMouseUp={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)'; }}
+              >
+                {b.word}
+              </div>
+            ))}
 
-            {/* Render bouncing bubbles (UNIFORM COLORS, NO GIVEAWAY) */}
-            {bubbles.filter(b => !b.popped).map(b => {
-              const leftPct = (b.x / W) * 100;
-              const topPct = (b.y / H) * 100;
-
-              return (
-                <div
-                  key={b.id}
-                  onClick={(e) => handleBubbleTap(b, e)}
-                  style={{
-                    position: 'absolute',
-                    left: `${leftPct}%`,
-                    top: `${topPct}%`,
-                    transform: 'translate(-50%, -50%)',
-                    width: `${b.r * 2}px`,
-                    height: `${b.r * 2}px`,
-                    borderRadius: '50%',
-                    background: `radial-gradient(circle at 35% 30%, #ffffff88 0%, ${b.color[0]}dd 40%, ${b.color[1]}ee 100%)`,
-                    boxShadow: `0 4px 16px ${b.color[0]}55, inset -3px -3px 8px rgba(0,0,0,0.35), inset 3px 3px 6px rgba(255,255,255,0.6)`,
-                    border: '1.5px solid rgba(255,255,255,0.5)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    cursor: 'pointer',
-                    color: '#ffffff',
-                    fontWeight: 900,
-                    fontSize: b.word.length > 8 ? '11px' : '13px',
-                    letterSpacing: '0.02em',
-                    textShadow: '0 1px 4px rgba(0,0,0,0.8)',
-                    textAlign: 'center',
-                    padding: '6px',
-                    zIndex: 20,
-                    transition: 'transform 0.1s',
-                  }}
-                  onMouseDown={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(0.92)'; }}
-                  onMouseUp={(e) => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)'; }}
-                >
-                  {/* Glossy light reflection on bubble top */}
-                  <div style={{
-                    position: 'absolute', top: '12%', left: '22%',
-                    width: '35%', height: '20%',
-                    borderRadius: '50%',
-                    background: 'rgba(255,255,255,0.7)',
-                    transform: 'rotate(-25deg)',
-                    pointerEvents: 'none',
-                  }} />
-                  <span style={{ position: 'relative', zIndex: 2 }}>{b.word}</span>
-                </div>
-              );
-            })}
-
-            {/* FLYING LEXIO FOX TRACKER (flies right to the target bubble when hint is triggered!) */}
+            {/* Flying Fox Target Finder */}
             {foxTrigger && targetBubble && (
               <div style={{
                 position: 'absolute',
@@ -437,23 +421,13 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
                 top: `${(targetBubble.y / H) * 100}%`,
                 transform: 'translate(-50%, -140%)',
                 zIndex: 45,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                pointerEvents: 'none',
-                animation: 'bounceIn 0.3s ease-out',
+                display: 'flex', flexDirection: 'column', alignItems: 'center',
+                pointerEvents: 'none', animation: 'bounceIn 0.3s ease-out',
               }}>
                 <div style={{
-                  background: '#fde047',
-                  border: '2px solid #ca8a04',
-                  borderRadius: '12px',
-                  padding: '4px 10px',
-                  color: '#713f12',
-                  fontWeight: 900,
-                  fontSize: '11px',
-                  whiteSpace: 'nowrap',
-                  boxShadow: '0 4px 14px rgba(0,0,0,0.4)',
-                  marginBottom: '4px',
+                  background: '#fde047', border: '2px solid #ca8a04', borderRadius: '12px',
+                  padding: '4px 10px', color: '#713f12', fontWeight: 900, fontSize: '11px',
+                  whiteSpace: 'nowrap', boxShadow: '0 4px 14px rgba(0,0,0,0.4)', marginBottom: '4px',
                 }}>
                   🦊 Here! Pop this one! 👇
                 </div>
@@ -473,7 +447,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
         </>
       )}
 
-      {/* GAME OVER STATE */}
+      {/* RESULTS STATE (Speedrun & Reflex Stats) */}
       {gameState === 'done' && (
         <div style={{
           flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
@@ -482,15 +456,26 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isS
           <div style={{ fontSize: '56px' }}>{wordsPopped >= GOAL_WORDS ? '🏆' : '⭐'}</div>
           <div>
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#7dd3fc' }}>
-              {wordsPopped >= GOAL_WORDS ? 'Target Achieved! Bubble Master!' : 'Round Complete!'}
+              {wordsPopped >= GOAL_WORDS ? '⚡ SPEEDRUN CHAMPION — ALL CLEARED!' : 'Time\'s Up — Round Complete!'}
             </h3>
             <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
-              Popped: <strong style={{ color: wordsPopped >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsPopped} words</strong> (Goal: {GOAL_WORDS})
+              Popped: <strong style={{ color: wordsPopped >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsPopped}/{GOAL_WORDS} words</strong>
+              {speedrunClearTime && (
+                <span style={{ color: '#38bdf8', fontWeight: 900, marginLeft: '8px' }}>
+                  (Cleared in {speedrunClearTime.toFixed(1)}s! 🔥)
+                </span>
+              )}
             </p>
-            <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
-              Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
-              {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
-            </p>
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', margin: '8px 0' }}>
+              {fastestReflex && (
+                <div style={{ background: 'rgba(253,224,71,0.15)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fde047', fontWeight: 900, fontSize: '13px' }}>
+                  ⚡ Fastest Reflex: {fastestReflex.toFixed(2)}s
+                </div>
+              )}
+              <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fbbf24', fontWeight: 900, fontSize: '13px' }}>
+                ⭐ Score: {score} pts
+              </div>
+            </div>
           </div>
           <div style={{ display: 'flex', gap: '12px' }}>
             <button type="button" onClick={startGame} style={{
