@@ -261,56 +261,56 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-3 font-sans text-slate-900 animate-in fade-in duration-200">
+    <div className="w-full max-w-5xl mx-auto space-y-2.5 font-sans text-slate-900 animate-in fade-in duration-200">
       {/* ── Mode Switch & Instruction Bar ── */}
-      <div className="p-3 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+      <div className="p-2.5 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-xl flex items-center justify-between flex-wrap gap-2 text-xs">
         <div className="flex items-center gap-2">
-          <span className="text-xl">📹</span>
+          <span className="text-lg">📹</span>
           <div>
-            <h3 className="font-black text-purple-950 text-sm">
-              VIDEO CHALLENGE: Record yourself retelling your story!
+            <h3 className="font-black text-purple-950 text-xs sm:text-sm">
+              Record yourself retelling your story!
             </h3>
-            <p className="text-[11px] font-medium text-purple-800">
-              Look at the camera, smile, and speak your story lines clearly (+50 XP).
+            <p className="text-[10px] sm:text-[11px] font-medium text-purple-800">
+              Look at camera & speak clearly (+50 XP).
             </p>
           </div>
         </div>
 
         {/* Toggle Mode */}
-        <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-purple-200 shadow-2xs">
+        <div className="flex items-center gap-1 bg-white p-0.5 rounded-lg border border-purple-200 shadow-2xs">
           <button
             type="button"
             onClick={() => { setRecordMode('video'); setRecordedMediaUrl(null); }}
-            className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+            className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
               recordMode === 'video' ? 'bg-purple-600 text-white shadow-xs' : 'text-slate-600 hover:text-purple-900'
             }`}
           >
-            <Camera size={13} /> Video Mode
+            <Camera size={12} /> Video
           </button>
           <button
             type="button"
             onClick={() => { setRecordMode('audio'); stopCameraPreview(); setRecordedMediaUrl(null); }}
-            className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+            className={`px-2.5 py-1 rounded-md text-[11px] font-black transition flex items-center gap-1 ${
               recordMode === 'audio' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-indigo-900'
             }`}
           >
-            <Mic size={13} /> Audio Only
+            <Mic size={12} /> Audio
           </button>
         </div>
       </div>
 
       {cameraError && (
-        <div className="p-2.5 bg-amber-50 border border-amber-300 rounded-xl text-xs font-bold text-amber-900">
+        <div className="p-2 bg-amber-50 border border-amber-300 rounded-xl text-xs font-bold text-amber-900">
           ⚠️ {cameraError}
         </div>
       )}
 
-      {/* ── Main 2-Column Split: Left (Camera/Video), Right (Script Teleprompter) ── */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5 items-start">
+      {/* ── Main Unified Viewport ── */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
         
-        {/* Left Column (5/12): Camera Preview / Video Playback & Controls */}
-        <div className="md:col-span-5 flex flex-col gap-2.5">
-          <div className="relative w-full aspect-[4/3] bg-slate-950 rounded-2xl overflow-hidden shadow-lg border-2 border-slate-300 flex items-center justify-center">
+        {/* Left Column (6/12): Camera Preview + Teleprompter + Action Buttons */}
+        <div className="md:col-span-6 flex flex-col gap-2">
+          <div className="relative w-full aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden shadow-md border-2 border-slate-300 flex items-center justify-center">
             
             {/* Live Camera View */}
             {!recordedMediaUrl && recordMode === 'video' && (
@@ -323,8 +323,8 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
                   className="w-full h-full object-cover transform -scale-x-100"
                 />
                 {!cameraActive && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80 gap-2 bg-slate-900">
-                    <Camera size={36} className="animate-pulse text-purple-400" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80 gap-1.5 bg-slate-900">
+                    <Camera size={28} className="animate-pulse text-purple-400" />
                     <span className="text-xs font-bold">Connecting Camera...</span>
                   </div>
                 )}
@@ -333,9 +333,9 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
             {/* Audio Mode Graphic View */}
             {!recordedMediaUrl && recordMode === 'audio' && (
-              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-indigo-950 to-slate-900 text-white space-y-3 p-4">
-                <div className={`w-20 h-20 rounded-full bg-indigo-600/30 border-2 border-indigo-400 flex items-center justify-center shadow-lg ${isRecording ? 'animate-pulse scale-110' : ''}`}>
-                  <Mic size={36} className="text-indigo-300" />
+              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-indigo-950 to-slate-900 text-white space-y-2 p-3">
+                <div className={`w-14 h-14 rounded-full bg-indigo-600/30 border-2 border-indigo-400 flex items-center justify-center shadow-lg ${isRecording ? 'animate-pulse scale-110' : ''}`}>
+                  <Mic size={24} className="text-indigo-300" />
                 </div>
                 <span className="text-xs font-bold text-indigo-200">🎙️ Audio Recording Mode</span>
               </div>
@@ -353,43 +353,45 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             )}
 
             {/* Recorded Audio Playback View */}
-            {recordedMediaUrl && recordedMediaType === 'audio' && (
-              <div className="w-full h-full flex flex-col items-center justify-center bg-slate-900 text-white p-4 space-y-3">
-                <span className="text-2xl">🎧</span>
-                <span className="text-xs font-bold text-emerald-400">Audio Recorded! Listen below:</span>
-                <audio controls src={recordedMediaUrl} className="w-4/5 h-10" />
+            {recordedMediaUrl && (recordedMediaType === 'audio' || recordedMediaUrl === 'typed_mode') && (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-indigo-950 text-white p-3 space-y-2">
+                <CheckCircle2 size={36} className="text-emerald-400" />
+                <span className="text-xs font-black">Audio Clip Ready</span>
+                {recordedMediaUrl !== 'typed_mode' && (
+                  <audio src={recordedMediaUrl} controls className="w-full max-w-xs" />
+                )}
               </div>
             )}
 
-            {/* Recording Pulse Overlay */}
-            {isRecording && (
-              <div className="absolute top-3 left-3 px-2.5 py-1 bg-rose-600 text-white rounded-lg text-[10px] font-black tracking-wider flex items-center gap-1.5 shadow-md animate-pulse">
-                <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-                REC {formatTime(recordingSeconds)}
-              </div>
-            )}
-
-            {/* 3-2-1 Countdown Overlay */}
+            {/* Countdown Overlay (3, 2, 1) */}
             {countdown !== null && (
-              <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center z-20">
-                <div className="text-7xl font-black text-amber-400 animate-bounce scale-125">
+              <div className="absolute inset-0 bg-black/75 flex items-center justify-center z-30">
+                <span className="text-6xl sm:text-7xl font-black text-amber-400 animate-ping">
                   {countdown}
-                </div>
+                </span>
+              </div>
+            )}
+
+            {/* Live Recording HUD */}
+            {isRecording && (
+              <div className="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 bg-rose-600 text-white font-mono font-black text-xs rounded-lg shadow animate-pulse">
+                <div className="w-2 h-2 rounded-full bg-white animate-ping" />
+                REC {formatTime(recordingSeconds)}
               </div>
             )}
           </div>
 
           {/* Action Buttons Dock */}
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             {!isRecording && !recordedMediaUrl && (
               <button
                 type="button"
                 onClick={initiateRecording}
                 disabled={countdown !== null}
-                className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl font-black text-sm shadow-lg active:scale-98 transition flex items-center justify-center gap-2"
+                className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-xl font-black text-xs sm:text-sm shadow-md active:scale-98 transition flex items-center justify-center gap-2"
               >
-                {recordMode === 'video' ? <Video size={18} /> : <Mic size={18} />}
-                {recordMode === 'video' ? '🎬 START VIDEO CHALLENGE' : '🎙️ START AUDIO RECORDING'}
+                {recordMode === 'video' ? <Video size={16} /> : <Mic size={16} />}
+                {recordMode === 'video' ? '🎬 START RECORDING' : '🎙️ START AUDIO RECORDING'}
               </button>
             )}
 
@@ -397,43 +399,43 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
               <button
                 type="button"
                 onClick={stopRecording}
-                className="w-full py-3.5 bg-rose-600 hover:bg-rose-500 text-white rounded-2xl font-black text-sm shadow-xl active:scale-98 transition flex items-center justify-center gap-2 animate-bounce"
+                className="w-full py-2.5 sm:py-3 bg-rose-600 hover:bg-rose-500 text-white rounded-xl font-black text-xs sm:text-sm shadow-md active:scale-98 transition flex items-center justify-center gap-2 animate-bounce"
               >
-                <Square size={18} fill="currentColor" /> ⏹️ FINISH & REVIEW ({formatTime(recordingSeconds)})
+                <Square size={16} fill="currentColor" /> ⏹️ FINISH ({formatTime(recordingSeconds)})
               </button>
             )}
 
             {recordedMediaUrl && (
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     type="button"
                     onClick={handleRetake}
-                    className="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5"
+                    className="py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-black transition flex items-center justify-center gap-1"
                   >
-                    <RefreshCw size={13} /> Retake Video
+                    <RefreshCw size={12} /> Retake
                   </button>
                   {recordedMediaUrl !== 'typed_mode' && (
                     <a
                       href={recordedMediaUrl}
                       download={`engquest_story_video_${Date.now()}.webm`}
-                      className="py-2.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center"
+                      className="py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-lg text-xs font-black transition flex items-center justify-center gap-1 text-center"
                     >
-                      <Download size={13} /> Save Clip 💾
+                      <Download size={12} /> Save Clip 💾
                     </a>
                   )}
                 </div>
 
-                <div className="py-2.5 bg-emerald-600 text-white font-black text-xs rounded-xl text-center shadow-md flex items-center justify-center gap-1.5">
-                  <CheckCircle2 size={15} /> Video Recorded! +50 XP Awarded ⭐
+                <div className="py-2 bg-emerald-600 text-white font-black text-xs rounded-lg text-center shadow-sm flex items-center justify-center gap-1.5">
+                  <CheckCircle2 size={14} /> Video Recorded! +50 XP ⭐
                 </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Right Column (7/12): Story Script Teleprompter */}
-        <div className="md:col-span-7 flex flex-col gap-2.5 bg-white p-3.5 rounded-3xl border border-slate-200 shadow-sm">
+        {/* Right Column (6/12): Story Script Teleprompter Directly Visible */}
+        <div className="md:col-span-6 flex flex-col gap-2 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
           <div className="flex items-center justify-between pb-1 border-b border-slate-100">
             <div className="flex items-center gap-1.5">
               <span className="text-sm">📜</span>
@@ -444,9 +446,9 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
             <button
               type="button"
               onClick={() => speakText(fullScriptText)}
-              className="px-3 py-1 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[11px] flex items-center gap-1 transition active:scale-95"
+              className="px-2.5 py-0.5 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[10px] flex items-center gap-1 transition active:scale-95"
             >
-              <Volume2 size={12} className="text-purple-700" /> Listen Full Story
+              <Volume2 size={11} className="text-purple-700" /> Full Audio
             </button>
           </div>
 

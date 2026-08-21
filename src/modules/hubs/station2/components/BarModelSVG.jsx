@@ -3,10 +3,10 @@ import React from 'react';
 /**
  * Calculates proportional widths and percentages for Part-Whole Bar Models
  * @param {Array<{ value: number, label: string, color?: string }>} bars
- * @param {number} totalWidth (default: 320)
+ * @param {number} totalWidth (default: 380)
  * @returns {Array<{ width: number, percent: number, xOffset: number, label: string, color?: string }>}
  */
-export function calculateBarModelProportions(bars = [], totalWidth = 320) {
+export function calculateBarModelProportions(bars = [], totalWidth = 380) {
   const totalSum = bars.reduce((acc, b) => acc + (Number(b.value) || 0), 0) || 100;
   return bars.map((bar, idx) => {
     const rawVal = Number(bar.value) || 0;
@@ -38,19 +38,19 @@ export function BarModelSVG({ modelData }) {
   if (!modelData) return null;
 
   const { type = 'part_whole', bars = [], totalLabel = '' } = modelData;
-  const computedBars = calculateBarModelProportions(bars, 320);
+  const computedBars = calculateBarModelProportions(bars, 380);
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center">
+    <div className="w-full bg-slate-50 p-1 sm:p-2 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center">
       <svg
-        viewBox="0 0 400 180"
-        className="w-full h-auto max-h-[220px]"
+        viewBox="0 0 400 170"
+        className="w-full h-auto max-h-[260px]"
         xmlns="http://www.w3.org/2000/svg"
       >
         {type === 'part_whole' && (
           <g>
             {/* Main Combined Bar */}
-            <g transform="translate(40, 50)">
+            <g transform="translate(10, 35)">
               {computedBars.map((bar, idx) => {
                 return (
                   <g key={idx}>
@@ -58,18 +58,18 @@ export function BarModelSVG({ modelData }) {
                       x={bar.xOffset}
                       y={0}
                       width={bar.width}
-                      height={44}
+                      height={50}
                       fill={bar.color || (idx === 0 ? '#4f46e5' : '#06b6d4')}
                       stroke="#1e293b"
-                      strokeWidth="2"
-                      rx="4"
+                      strokeWidth="2.5"
+                      rx="6"
                     />
                     <text
                       x={bar.xOffset + bar.width / 2}
-                      y={26}
+                      y={31}
                       fill="#ffffff"
-                      fontSize="14"
-                      fontWeight="bold"
+                      fontSize="17"
+                      fontWeight="900"
                       textAnchor="middle"
                     >
                       {bar.label}
@@ -81,19 +81,19 @@ export function BarModelSVG({ modelData }) {
 
             {/* Total Bracket Line */}
             {totalLabel && (
-              <g transform="translate(40, 110)">
+              <g transform="translate(10, 100)">
                 <path
-                  d="M 0 0 L 0 15 L 160 25 L 320 15 L 320 0"
+                  d="M 0 0 L 0 15 L 190 25 L 380 15 L 380 0"
                   fill="none"
                   stroke="#d97706"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                 />
                 <text
-                  x="160"
-                  y="45"
+                  x="190"
+                  y="48"
                   fill="#d97706"
-                  fontSize="16"
-                  fontWeight="extrabold"
+                  fontSize="18"
+                  fontWeight="900"
                   textAnchor="middle"
                 >
                   Total: {totalLabel}
@@ -106,24 +106,23 @@ export function BarModelSVG({ modelData }) {
         {type === 'comparison' && (
           <g>
             {/* Bar 1 */}
-            <g transform="translate(40, 30)">
-              <text x="-30" y="24" fill="#94a3b8" fontSize="12" fontWeight="bold">
-                {bars[0]?.name || 'A'}
-              </text>
+            <g transform="translate(10, 25)">
               <rect
                 x="0"
                 y="0"
-                width={bars[0]?.width || 240}
-                height={36}
+                width={bars[0]?.width || 380}
+                height={46}
                 fill="#4f46e5"
-                rx="4"
+                stroke="#1e293b"
+                strokeWidth="2.5"
+                rx="6"
               />
               <text
-                x={(bars[0]?.width || 240) / 2}
-                y="22"
-                fill="#fff"
-                fontSize="13"
-                fontWeight="bold"
+                x={(bars[0]?.width || 380) / 2}
+                y="29"
+                fill="#ffffff"
+                fontSize="17"
+                fontWeight="900"
                 textAnchor="middle"
               >
                 {bars[0]?.label}
@@ -131,36 +130,26 @@ export function BarModelSVG({ modelData }) {
             </g>
 
             {/* Bar 2 */}
-            <g transform="translate(40, 85)">
-              <text x="-30" y="24" fill="#94a3b8" fontSize="12" fontWeight="bold">
-                {bars[1]?.name || 'B'}
-              </text>
+            <g transform="translate(10, 85)">
               <rect
                 x="0"
                 y="0"
-                width={bars[1]?.width || 160}
-                height={36}
+                width={bars[1]?.width || 240}
+                height={46}
                 fill="#06b6d4"
-                rx="4"
+                stroke="#1e293b"
+                strokeWidth="2.5"
+                rx="6"
               />
               <text
-                x={(bars[1]?.width || 160) / 2}
-                y="22"
-                fill="#fff"
-                fontSize="13"
-                fontWeight="bold"
+                x={(bars[1]?.width || 240) / 2}
+                y="29"
+                fill="#ffffff"
+                fontSize="17"
+                fontWeight="900"
                 textAnchor="middle"
               >
                 {bars[1]?.label}
-              </text>
-            </g>
-
-            {/* Difference Bracket */}
-            <g transform="translate(200, 45)">
-              <line x1="0" y1="0" x2="80" y2="0" stroke="#f43f5e" strokeDasharray="4" strokeWidth="2" />
-              <line x1="0" y1="40" x2="80" y2="40" stroke="#f43f5e" strokeDasharray="4" strokeWidth="2" />
-              <text x="40" y="24" fill="#f43f5e" fontSize="12" fontWeight="bold" textAnchor="middle">
-                Difference: ?
               </text>
             </g>
           </g>

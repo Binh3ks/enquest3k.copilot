@@ -342,14 +342,10 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
       {/* Active Game Display */}
       {(gameState === 'playing' || gameState === 'paused') && (
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
-          <div className="space-y-2.5 sm:space-y-4">
+          <div className="space-y-2">
             {/* Target Drop Zone Area */}
-            <div className="p-2.5 sm:p-4 bg-indigo-50/60 border-2 border-dashed border-indigo-300 rounded-2xl min-h-[64px] sm:min-h-[80px] flex flex-wrap items-center gap-1.5 sm:gap-2 shadow-inner">
-              {targetBlocks.length === 0 ? (
-                <span className="text-[11px] sm:text-xs text-indigo-400 font-bold italic mx-auto">
-                  (Drag or tap word pills below to construct your sentence...)
-                </span>
-              ) : (
+            <div className="p-2 sm:p-3 bg-indigo-50/70 border border-indigo-200 rounded-xl min-h-[48px] sm:min-h-[56px] flex flex-wrap items-center gap-1.5 shadow-inner">
+              {targetBlocks.length > 0 && (
                 <SortableContext items={targetBlocks.map((b) => b.id)} strategy={horizontalListSortingStrategy}>
                   {targetBlocks.map((block) => (
                     <WordBlock key={block.id} id={block.id} word={block.word} onClick={() => handleBlockClick(block)} />
@@ -359,11 +355,8 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
             </div>
 
             {/* Word Bank Dock */}
-            <div className="p-2.5 sm:p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-1.5 sm:space-y-2">
-              <span className="text-[10px] font-black uppercase text-slate-500 tracking-wider">
-                Word Bank (Tap or drag words to choose):
-              </span>
-              <div className="flex flex-wrap gap-2">
+            <div className="p-2 sm:p-3 bg-slate-50 border border-slate-200 rounded-xl">
+              <div className="flex flex-wrap gap-1.5">
                 {bankBlocks.map((block) => (
                   <WordBlock key={block.id} id={block.id} word={block.word} onClick={() => handleBlockClick(block)} />
                 ))}

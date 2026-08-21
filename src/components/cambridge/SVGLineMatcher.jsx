@@ -197,63 +197,72 @@ export function SVGLineMatcher({ customData, onComplete }) {
   const exampleEndPos = positions[exampleTarget?.id];
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-4 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 shadow-xl font-sans space-y-6">
-      {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-slate-200 gap-2">
-        <div>
-          <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-[11px] font-black rounded-full uppercase tracking-wider">
-            🔗 DRAW THE LINES MISSION
-          </span>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-            Click Name Pill then Click Person in Picture
-          </h2>
-        </div>
+    <div className="w-full max-w-5xl mx-auto my-2 p-3 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-3">
+      {/* Compact Header & Audio Control Bar */}
+      <div className="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-slate-200">
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setIsCalibratorOpen(!isCalibratorOpen)}
-            className={`px-3 py-1.5 font-bold text-xs rounded-xl border transition flex items-center gap-1 shadow-sm ${
-              isCalibratorOpen 
-                ? 'bg-amber-500 text-white border-amber-600 ring-2 ring-amber-300 animate-pulse' 
-                : 'bg-slate-100 text-slate-700 hover:bg-amber-50 hover:text-amber-900 border-slate-300'
-            }`}
+            type="button"
+            onClick={() => {
+              const scriptToSpeak = sceneData?.passage_audio_script || fullListeningScript;
+              VoiceService.speak(
+                scriptToSpeak,
+                'questions',
+                sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
+                33
+              );
+            }}
+            className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
           >
-            <Target size={14} /> Calibrate Pins
+            <Volume2 size={14} /> 🔊 Play Audio
           </button>
+          <span className="text-[11px] sm:text-xs text-slate-600 font-bold">
+            Tap a name pill, then tap the person in the picture.
+          </span>
+        </div>
+
+        <div className="flex items-center gap-1.5">
           <button
             onClick={handleClearLines}
             disabled={isSubmitted || drawnLines.length === 0}
-            className="px-3 py-1.5 bg-rose-50 text-rose-700 hover:bg-rose-100 font-bold text-xs rounded-xl border border-rose-200 transition disabled:opacity-40 flex items-center gap-1"
+            className="px-2.5 py-1 bg-rose-50 text-rose-700 hover:bg-rose-100 font-bold text-xs rounded-lg border border-rose-200 transition disabled:opacity-40 flex items-center gap-1"
           >
-            <Trash2 size={14} /> Clear Lines
+            <Trash2 size={12} /> Clear
+          </button>
+          <button
+            onClick={() => setIsCalibratorOpen(!isCalibratorOpen)}
+            className="px-2.5 py-1 bg-slate-100 text-slate-600 hover:bg-amber-50 font-bold text-xs rounded-lg border border-slate-300 flex items-center gap-1"
+          >
+            <Target size={12} /> Calibrate
           </button>
         </div>
       </div>
 
       {/* 🎯 Dev/Admin Target Calibrator Bar */}
       {isCalibratorOpen && (
-        <div className="p-4 bg-amber-50 border-2 border-amber-300 rounded-2xl space-y-3 animate-fadeIn">
+        <div className="p-3 bg-amber-50 border-2 border-amber-300 rounded-xl space-y-2 animate-fadeIn text-xs">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-black text-amber-950 uppercase tracking-wider flex items-center gap-1.5">
-              🎯 Visual Pin Calibrator Tool: Click target pin below, then click directly on person in the image:
+            <span className="font-black text-amber-950 uppercase tracking-wider">
+              🎯 Pin Calibrator: Click target pin, then click directly on image:
             </span>
             <button
               onClick={handleCopyCalibratedJSON}
-              className="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white font-black text-xs rounded-xl transition flex items-center gap-1 shadow-md"
+              className="px-2.5 py-1 bg-amber-600 hover:bg-amber-700 text-white font-black rounded-lg transition text-xs shadow"
             >
-              {copiedToast ? '✅ Copied!' : '📋 Copy JSON Targets'}
+              {copiedToast ? '✅ Copied!' : '📋 Copy JSON'}
             </button>
           </div>
 
-          <div className="flex flex-wrap gap-2 pt-1">
+          <div className="flex flex-wrap gap-1.5 pt-0.5">
             {calibratedTargets.map((t) => {
               const isActive = activeCalibTargetId === t.id;
               return (
                 <button
                   key={t.id}
                   onClick={() => setActiveCalibTargetId(t.id)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-black transition flex items-center gap-1 border ${
+                  className={`px-2 py-1 rounded-lg text-xs font-black transition flex items-center gap-1 border ${
                     isActive
-                      ? 'bg-amber-600 text-white border-amber-700 ring-4 ring-amber-200 scale-105 shadow'
+                      ? 'bg-amber-600 text-white border-amber-700 ring-2 ring-amber-200'
                       : 'bg-white text-slate-800 border-amber-200 hover:bg-amber-100'
                   }`}
                 >
@@ -266,35 +275,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
         </div>
       )}
 
-      {/* Master Audio Player Bar */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-2xl text-white shadow-lg flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => {
-              const scriptToSpeak = sceneData?.passage_audio_script || fullListeningScript;
-              VoiceService.speak(
-                scriptToSpeak,
-                'questions',
-                sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
-                33
-              );
-            }}
-            className="p-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-2 transition shadow-md shrink-0 active:scale-95"
-          >
-            <Volume2 size={18} /> Play Part 1 Listening Audio 🎧
-          </button>
-          <div>
-            <div className="text-[10px] font-black text-amber-200 uppercase tracking-widest">Listening Part 1 Audio Script:</div>
-            <p className="text-xs font-bold text-white italic">"Listen and draw a line from each name to the correct person in the picture..."</p>
-          </div>
-        </div>
-      </div>
-
       {/* 🌟 UNIFIED SVG CANVAS MASTER WRAPPER 🌟 */}
       <div
         ref={masterContainerRef}
         onMouseMove={handleMouseMove}
-        className="relative w-full space-y-4 select-none"
+        className="relative w-full space-y-2.5 select-none"
       >
         {/* Real-time Dynamic SVG Line Canvas covering entire Master Container */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-20 overflow-visible">
@@ -307,11 +292,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
                 x2={`${exampleEndPos.x}%`}
                 y2={`${exampleEndPos.y}%`}
                 stroke="#f59e0b"
-                strokeWidth="5"
-                strokeDasharray="8 6"
+                strokeWidth="2.5"
+                strokeDasharray="6 4"
                 strokeLinecap="round"
               />
-              <circle cx={`${exampleEndPos.x}%`} cy={`${exampleEndPos.y}%`} r="8" fill="#f59e0b" stroke="#ffffff" strokeWidth="2.5" />
+              <circle cx={`${exampleEndPos.x}%`} cy={`${exampleEndPos.y}%`} r="5" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
             </g>
           )}
 
@@ -333,11 +318,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
                   x2={`${endP.x}%`}
                   y2={`${endP.y}%`}
                   stroke={strokeColor}
-                  strokeWidth="5"
+                  strokeWidth="2.5"
                   strokeDasharray="6 4"
                   strokeLinecap="round"
                 />
-                <circle cx={`${endP.x}%`} cy={`${endP.y}%`} r="8" fill={strokeColor} stroke="#ffffff" strokeWidth="2" />
+                <circle cx={`${endP.x}%`} cy={`${endP.y}%`} r="5" fill={strokeColor} stroke="#ffffff" strokeWidth="1.5" />
               </g>
             );
           })}
@@ -351,11 +336,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
                 x2={`${mousePos.x}%`}
                 y2={`${mousePos.y}%`}
                 stroke="#f59e0b"
-                strokeWidth="4"
+                strokeWidth="2.5"
                 strokeDasharray="4 4"
                 strokeLinecap="round"
               />
-              <circle cx={`${mousePos.x}%`} cy={`${mousePos.y}%`} r="10" fill="#f59e0b" className="animate-ping" />
+              <circle cx={`${mousePos.x}%`} cy={`${mousePos.y}%`} r="6" fill="#f59e0b" className="animate-ping" />
             </g>
           )}
         </svg>
@@ -374,17 +359,17 @@ export function SVGLineMatcher({ customData, onComplete }) {
         )}
 
         {/* Name Selection Ribbon */}
-        <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2 z-10 relative">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-black text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
-              <User size={14} className="text-indigo-600" /> Character Names (Click name pill, then click person below):
+        <div className="p-2 sm:p-2.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5 z-10 relative">
+          <div className="flex items-center justify-between text-[11px]">
+            <span className="font-black text-slate-600 uppercase tracking-wider flex items-center gap-1">
+              <User size={12} className="text-indigo-600" /> Names (Click name pill, then click person below):
             </span>
-            <span className="text-xs font-bold text-indigo-700">
-              {selectedName ? `Selected: ${selectedName.text} (Click person in picture)` : 'Select a name'}
+            <span className="font-bold text-indigo-700">
+              {selectedName ? `Selected: ${selectedName.text}` : 'Select a name'}
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-2.5 pt-1">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5 pt-0.5">
             {sceneData.names.map((name) => {
               const hasLine = drawnLines.some(l => l.nameId === name.id);
               const isSelected = selectedName?.id === name.id;
@@ -395,23 +380,23 @@ export function SVGLineMatcher({ customData, onComplete }) {
                   ref={(el) => (nameButtonRefs.current[name.id] = el)}
                   disabled={isSubmitted || name.isExample}
                   onClick={() => handleSelectName(name)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center gap-1.5 border shadow-sm ${
+                  className={`px-2 py-1 rounded-lg text-xs font-black transition-all flex items-center justify-center gap-1 border shadow-2xs w-full ${
                     name.isExample
-                      ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-2 ring-amber-300'
+                      ? 'bg-amber-100 text-amber-950 border-amber-400 cursor-default ring-1 ring-amber-300'
                       : isSelected
-                      ? 'bg-indigo-600 text-white border-indigo-700 ring-4 ring-indigo-200 scale-105 shadow-md animate-pulse'
+                      ? 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-200 scale-102 shadow-sm animate-pulse'
                       : hasLine
                       ? 'bg-emerald-100 text-emerald-950 border-emerald-400'
                       : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
                   }`}
                 >
-                  <span>{name.text}</span>
+                  <span className="truncate">{name.text}</span>
                   {name.isExample && (
-                    <span className="text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded-md uppercase font-black tracking-wider">
-                      Example
+                    <span className="text-[9px] bg-amber-500 text-white px-1 py-0.2 rounded uppercase font-black">
+                      Ex
                     </span>
                   )}
-                  {hasLine && !name.isExample && <CheckCircle2 size={14} className="text-emerald-700" />}
+                  {hasLine && !name.isExample && <CheckCircle2 size={12} className="text-emerald-700 shrink-0" />}
                 </button>
               );
             })}
@@ -423,7 +408,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
           ref={imageRef}
           onClick={handleImageClickForCalibration}
           onMouseMove={handleImageMouseMoveForCalibration}
-          className={`relative w-full aspect-[1264/848] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-800 ${
+          className={`relative w-full aspect-[1264/848] bg-slate-900 rounded-2xl overflow-hidden shadow-xl border-2 border-slate-800 ${
             isCalibratorOpen ? 'cursor-crosshair ring-4 ring-amber-400' : selectedName ? 'cursor-crosshair' : 'cursor-default'
           }`}
         >
@@ -440,7 +425,7 @@ export function SVGLineMatcher({ customData, onComplete }) {
               style={{ left: `${calibratorHover.x}%`, top: `${calibratorHover.y}%` }}
               className="absolute pointer-events-none z-50 transform -translate-x-1/2 -translate-y-8"
             >
-              <div className="px-2 py-0.5 bg-black/80 text-white font-mono text-[11px] font-black rounded-lg border border-amber-400 whitespace-nowrap shadow-xl">
+              <div className="px-2 py-0.5 bg-black/80 text-white font-mono text-[10px] font-black rounded-lg border border-amber-400 whitespace-nowrap shadow-xl">
                 x:{calibratorHover.x}% y:{calibratorHover.y}%
               </div>
               <div className="w-3 h-3 border-2 border-amber-400 rounded-full bg-amber-400/30 absolute top-6 left-1/2 -translate-x-1/2" />
@@ -468,24 +453,24 @@ export function SVGLineMatcher({ customData, onComplete }) {
                 style={{ left: `${target.x}%`, top: `${target.y}%` }}
                 className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-30 transition-all ${
                   isCalibActive
-                    ? 'scale-150 ring-4 ring-amber-400 z-40'
-                    : selectedName ? 'scale-125 cursor-pointer' : 'hover:scale-110'
+                    ? 'scale-125 ring-2 ring-amber-400 z-40'
+                    : selectedName ? 'scale-110 cursor-pointer' : 'hover:scale-105'
                 }`}
                 title={matchedLine ? `${matchedLine.nameText} -> ${target.label}` : target.label}
               >
                 <div className="relative flex items-center justify-center">
                   {isExamplePin ? (
-                    <span className="px-2.5 py-1 rounded-full border-2 border-white shadow-2xl bg-amber-500 text-white font-black text-xs flex items-center gap-1">
+                    <span className="px-2 py-0.5 rounded-full border border-white shadow-md bg-amber-500 text-white font-black text-[10px] sm:text-xs flex items-center gap-0.5">
                       📍 Jake
                     </span>
                   ) : (
-                    <span className={`px-2.5 py-1 rounded-full border-2 border-white shadow-xl flex items-center justify-center font-black text-xs ${
+                    <span className={`px-2 py-0.5 rounded-full border border-white shadow-md flex items-center justify-center font-black text-[10px] sm:text-xs ${
                       isCalibActive
                         ? 'bg-amber-500 text-white animate-bounce'
                         : matchedLine
                         ? 'bg-indigo-600 text-white'
                         : selectedName
-                        ? 'bg-amber-400 text-slate-950 animate-bounce ring-4 ring-amber-200'
+                        ? 'bg-amber-400 text-slate-950 animate-bounce ring-2 ring-amber-200'
                         : 'bg-rose-600 text-white hover:bg-rose-500'
                     }`}>
                       📍 {matchedLine ? matchedLine.nameText : (isCalibratorOpen ? target.id : '')}
@@ -499,28 +484,28 @@ export function SVGLineMatcher({ customData, onComplete }) {
       </div>
 
       {/* Footer Check & Score */}
-      <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+      <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
         {!isSubmitted ? (
           <button
             onClick={handleCheck}
             disabled={drawnLines.length === 0}
-            className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 disabled:opacity-40"
+            className="w-full sm:w-auto px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-md transition active:scale-95 flex items-center justify-center gap-1.5 disabled:opacity-40"
           >
-            <Sparkles size={18} /> Check SVG Line Matches
+            <Sparkles size={16} /> Check Line Matches
           </button>
         ) : (
-          <div className="w-full flex items-center justify-between bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <div className="w-full flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-6 h-6 text-indigo-600 animate-bounce" />
-              <span className="text-lg font-black text-slate-900">
-                Line Matching Score: {score}%
+              <Sparkles className="w-5 h-5 text-indigo-600 animate-bounce" />
+              <span className="text-sm font-black text-slate-900">
+                Score: {score}%
               </span>
             </div>
             <button
               onClick={handleReset}
-              className="px-5 py-2.5 bg-indigo-100 hover:bg-indigo-200 text-indigo-950 font-bold text-xs rounded-xl transition flex items-center gap-1.5"
+              className="px-4 py-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-950 font-bold text-xs rounded-lg transition flex items-center gap-1"
             >
-              <RefreshCw size={14} /> Try Again
+              <RefreshCw size={12} /> Try Again
             </button>
           </div>
         )}

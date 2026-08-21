@@ -293,15 +293,15 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
             </p>
           </div>
 
-          {/* Bar Model Visual Display */}
-          <div className="p-5 bg-slate-50 rounded-2xl border-2 border-slate-200 flex items-center justify-center shadow-inner min-h-[180px]">
+          {/* Bar Model Visual Display — Full width zoom */}
+          <div className="p-1 sm:p-2 bg-slate-50 rounded-2xl border-2 border-slate-200 flex items-center justify-center shadow-inner w-full overflow-hidden">
             {currentQ.modelData ? (
               <BarModelSVG modelData={currentQ.modelData} />
             ) : (
               <img
                 src={currentQ.svg_url}
                 alt={currentQ.title}
-                className="max-h-[220px] w-auto object-contain drop-shadow-md"
+                className="w-full h-auto max-h-[260px] object-contain drop-shadow-md"
                 onError={(e) => {
                   e.target.style.display = 'none';
                 }}

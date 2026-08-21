@@ -642,49 +642,44 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
             </div>
           )}
 
-          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-md space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 border border-slate-200 shadow-md space-y-3 font-sans">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-2.5 flex-wrap gap-2">
               <div className="flex items-center gap-2">
-                <span className="text-xl">🎙️</span>
-                <div>
-                  <h3 className="text-base font-black text-slate-900">Story Sentence Karaoke</h3>
-                  <span className="text-xs text-slate-500">Tap any sentence to listen & practice word-by-word karaoke</span>
-                </div>
+                <span className="text-xs sm:text-sm font-black text-indigo-600">
+                  🎙️ Tap any sentence to listen & practice word-by-word karaoke
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 {/* Gamified Progress & Streak */}
-                <div className="flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-200 rounded-xl text-xs font-black text-amber-900">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 bg-amber-50 border border-amber-200 rounded-xl text-[11px] font-black text-amber-900">
                   <span>⭐ {Object.keys(completedKaraokeSentences).length}/{storySentences.length}</span>
                   {karaokeStreak > 0 && (
-                    <span className="px-2 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] animate-bounce">
-                      🔥 {karaokeStreak} Streak!
+                    <span className="px-1.5 py-0.5 bg-amber-400 text-slate-950 rounded-md text-[10px] animate-bounce">
+                      🔥 {karaokeStreak}x
                     </span>
                   )}
                 </div>
                 <button
                   type="button"
                   onClick={() => speakText(fullStoryText)}
-                  className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl font-black text-xs shadow-md flex items-center gap-1.5"
+                  className="px-2.5 py-1 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg font-black text-[11px] shadow-sm flex items-center gap-1"
                 >
-                  <Play size={14} /> Full Story Audio
+                  <Play size={12} /> Full Audio
                 </button>
               </div>
             </div>
 
             {/* ── TaskScreen Stepper Mode (1 sentence per screen) OR Legacy List Mode ── */}
             {hideGearTabs ? (
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {/* Stepper Header */}
-                <div className="flex items-center justify-between px-2">
+                <div className="flex items-center justify-between px-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-black text-amber-900 bg-amber-100 px-3 py-1 rounded-xl">
-                      Câu {stepperIdx + 1} / {storySentences.length}
-                    </span>
-                    <span className="text-xs font-bold text-slate-500">
-                      {completedKaraokeSentences[stepperIdx] ? '✅ Đã luyện tập' : '⏳ Chưa hoàn thành'}
+                    <span className="text-xs font-black text-amber-900 bg-amber-100 px-2.5 py-0.5 rounded-lg">
+                      Câu {stepperIdx + 1}/{storySentences.length}
                     </span>
                   </div>
-                  <div className="w-36 h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                  <div className="w-28 sm:w-36 h-2 bg-slate-200 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-gradient-to-r from-amber-500 to-emerald-500 transition-all duration-300 rounded-full"
                       style={{ width: `${((stepperIdx + 1) / storySentences.length) * 100}%` }}
@@ -701,8 +696,8 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                   const sentenceWords = sentence.split(/\s+/);
 
                   return (
-                    <div className="p-6 sm:p-8 bg-gradient-to-b from-amber-50/80 to-white rounded-3xl border-2 border-amber-300 shadow-xl space-y-6 text-center">
-                      <div className="min-h-[100px] flex items-center justify-center">
+                    <div className="p-3.5 sm:p-5 bg-gradient-to-b from-amber-50/80 to-white rounded-2xl border-2 border-amber-300 shadow-md space-y-3 text-center">
+                      <div className="min-h-[60px] flex items-center justify-center">
                         {isCurrentPlaying ? (
                           <div className="text-xl sm:text-2xl md:text-3xl font-black leading-relaxed flex flex-wrap justify-center gap-2">
                             {sentenceWords.map((word, wIdx) => {
@@ -965,39 +960,33 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-2 mb-1">
-                          <span className="text-[10px] font-black uppercase tracking-wider text-purple-700 bg-purple-200/80 px-2 py-0.5 rounded-md">
-                            NOVA ASKS (Step {retellStepIdx + 1}):
-                          </span>
+                        <div className="flex items-center gap-2">
+                          <p className="text-sm sm:text-base font-black text-slate-900 leading-snug">
+                            "{currentQ.question_en}"
+                          </p>
                           <button
                             type="button"
                             onClick={() => speakText(currentQ.question_en)}
-                            className="p-1.5 bg-purple-200 hover:bg-purple-300 text-purple-800 rounded-lg transition active:scale-95 shadow-sm"
-                            title="Listen to Nova's question"
+                            className="p-1 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-lg transition active:scale-95 shadow-2xs shrink-0"
+                            title="Listen"
                           >
-                            <Volume2 size={16} />
+                            <Volume2 size={14} />
                           </button>
                         </div>
-                        <p className="text-base sm:text-lg font-black text-slate-900 leading-snug">
-                          "{currentQ.question_en}"
-                        </p>
                       </div>
                     </div>
 
                     {/* Scaffolded Input Chips */}
-                    <div className="space-y-2">
-                      <span className="text-[11px] font-black uppercase text-slate-400 tracking-wider block">
-                        🔑 KEY CHUNKS &amp; VOCABULARY (Tap to listen):
-                      </span>
-                      <div className="flex flex-wrap items-center justify-center gap-2">
+                    <div className="pt-0.5">
+                      <div className="flex flex-wrap items-center justify-center gap-1.5">
                         {currentQ.chips.map((chip, idx) => (
                           <button
                             key={idx}
                             type="button"
                             onClick={() => speakText(chip)}
-                            className="px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-xl text-xs sm:text-sm font-bold transition active:scale-95 flex items-center gap-1.5 shadow-sm"
+                            className="px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-lg text-xs font-bold transition active:scale-95 flex items-center gap-1 shadow-2xs"
                           >
-                            <Volume2 size={13} className="text-indigo-500" />
+                            <Volume2 size={11} className="text-indigo-500" />
                             {chip}
                           </button>
                         ))}

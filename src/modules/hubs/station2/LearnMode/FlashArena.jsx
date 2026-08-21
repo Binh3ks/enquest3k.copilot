@@ -345,14 +345,14 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
         </div>
       )}
 
-      {/* Active Match Screen: 3-4 Big Punchy Pairs */}
+      {/* Active Match Screen: 3-4 Compact Pairs */}
       {gameState === 'playing' && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 pt-1">
           {/* English Column */}
-          <div className="space-y-3">
-            <div className="text-xs font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
+          <div className="space-y-1.5 sm:space-y-2">
+            <div className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-amber-400 px-1 flex items-center justify-between">
               <span>ENGLISH TARGET</span>
-              <span className="text-[10px] text-slate-400">Select English</span>
+              <span className="text-[9px] text-slate-400">Select English</span>
             </div>
             {shuffledEn.map((item) => {
               const isMatched = matchedIds.includes(item.id);
@@ -361,7 +361,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                 return (
                   <div
                     key={item.id}
-                    className="w-full p-4 rounded-2xl bg-emerald-950/40 border-2 border-emerald-500/40 text-emerald-400 font-black text-sm sm:text-base flex items-center justify-between opacity-40"
+                    className="w-full p-2.5 sm:p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 font-black text-xs sm:text-sm flex items-center justify-between opacity-40"
                   >
                     <span>✓ {item.en}</span>
                   </div>
@@ -373,24 +373,24 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedEn(item)}
-                  className={`w-full p-4 rounded-2xl font-black text-sm sm:text-base transition-all border-2 text-left flex items-center justify-between shadow-md active:scale-95 ${
+                  className={`w-full p-2.5 sm:p-3 rounded-xl font-black text-xs sm:text-sm transition-all border text-left flex items-center justify-between shadow-sm active:scale-95 ${
                     isSelected
-                      ? 'bg-amber-500 text-slate-950 border-amber-300 ring-4 ring-amber-400/50 scale-[1.02] shadow-2xl'
+                      ? 'bg-amber-500 text-slate-950 border-amber-300 ring-2 ring-amber-400/50 scale-[1.01] shadow-lg'
                       : 'bg-slate-900 hover:bg-slate-800 text-white border-slate-700 hover:border-amber-400'
                   }`}
                 >
                   <span className="truncate">{item.en}</span>
-                  {isSelected && <Sparkles size={18} className="text-slate-950 animate-spin shrink-0" />}
+                  {isSelected && <Sparkles size={14} className="text-slate-950 animate-spin shrink-0" />}
                 </button>
               );
             })}
           </div>
 
           {/* Meaning / Definition Column */}
-          <div className="space-y-3">
-            <div className="text-xs font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
+          <div className="space-y-1.5 sm:space-y-2">
+            <div className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-cyan-400 px-1 flex items-center justify-between">
               <span>MEANING / DEFINITION</span>
-              <span className="text-[10px] text-slate-400">Match Meaning</span>
+              <span className="text-[9px] text-slate-400">Match Meaning</span>
             </div>
             {shuffledVi.map((item) => {
               const isMatched = matchedIds.includes(item.id);
@@ -399,7 +399,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                 return (
                   <div
                     key={item.id}
-                    className="w-full p-4 rounded-2xl bg-emerald-950/40 border-2 border-emerald-500/40 text-emerald-400 font-black text-sm sm:text-base flex items-center justify-between opacity-40"
+                    className="w-full p-2.5 sm:p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-400 font-black text-xs sm:text-sm flex items-center justify-between opacity-40"
                   >
                     <span>✓ {item.vi}</span>
                   </div>
@@ -411,14 +411,14 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
                   key={item.id}
                   type="button"
                   onClick={() => setSelectedVi(item)}
-                  className={`w-full p-4 rounded-2xl font-black text-sm sm:text-base transition-all border-2 text-left flex items-center justify-between shadow-md active:scale-95 ${
+                  className={`w-full p-2.5 sm:p-3 rounded-xl font-black text-xs sm:text-sm transition-all border text-left flex items-center justify-between shadow-sm active:scale-95 ${
                     isSelected
-                      ? 'bg-cyan-500 text-slate-950 border-cyan-300 ring-4 ring-cyan-400/50 scale-[1.02] shadow-2xl'
+                      ? 'bg-cyan-500 text-slate-950 border-cyan-300 ring-2 ring-cyan-400/50 scale-[1.01] shadow-lg'
                       : 'bg-slate-900 hover:bg-slate-800 text-slate-100 border-slate-700 hover:border-cyan-400'
                   }`}
                 >
                   <span className="truncate">{item.vi}</span>
-                  {isSelected && <CheckCircle2 size={18} className="text-slate-950 shrink-0" />}
+                  {isSelected && <CheckCircle2 size={14} className="text-slate-950 shrink-0" />}
                 </button>
               );
             })}

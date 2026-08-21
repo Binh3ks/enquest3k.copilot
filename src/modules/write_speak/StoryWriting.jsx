@@ -282,25 +282,26 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
         </div>
       </div>
 
-      {/* Main 2-Column Split-Screen Body */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-start">
-        {/* Left Column (5/12): Nova Bubble + Picture + Characters */}
-        <div className="md:col-span-5 flex flex-col gap-2">
-          {/* Nova Bubble */}
-          <div className="flex gap-2.5 items-start bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-2.5 shadow-2xs">
-            <span className="text-xl shrink-0 mt-0.5">{NOVA_AVATAR}</span>
-            <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-amber-950 leading-snug">
-                {currentPanel?.nova_question_en || 'Describe what you see in this picture!'}
-              </p>
-            </div>
-            <button type="button" onClick={() => speakText(currentPanel?.nova_question_en || '')}
-              className="shrink-0 w-7 h-7 rounded-full bg-amber-200 hover:bg-amber-300 text-amber-900 flex items-center justify-center text-sm transition active:scale-90 shadow-2xs">
-              🔊
-            </button>
-          </div>
+      {/* Full-width Question Prompt Banner (No robot icon, compact font, full width) */}
+      <div className="w-full flex items-center justify-between gap-2 bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-xl px-3 py-1.5 shadow-2xs">
+        <p className="text-[11px] sm:text-xs font-bold text-amber-950 leading-snug flex-1">
+          {currentPanel?.nova_question_en || 'Describe what you see in this picture!'}
+        </p>
+        <button
+          type="button"
+          onClick={() => speakText(currentPanel?.nova_question_en || '')}
+          className="shrink-0 w-6 h-6 rounded-full bg-amber-200 hover:bg-amber-300 text-amber-900 flex items-center justify-center text-xs transition active:scale-90 shadow-2xs"
+          title="Listen Prompt"
+        >
+          🔊
+        </button>
+      </div>
 
-          {/* Picture — compact max-h-[300px] */}
+      {/* Main 2-Column Split-Screen Body */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 items-start">
+        {/* Left Column (5/12): Picture + Characters */}
+        <div className="md:col-span-5 flex flex-col gap-2">
+          {/* Picture — compact max-h-[290px] */}
           <div className="relative w-full rounded-2xl overflow-hidden shadow-md border-2 border-slate-200 bg-slate-100 aspect-[16/10] max-h-[290px]">
             <img
               src={currentPanel?.image_url || ''}

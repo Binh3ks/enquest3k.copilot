@@ -316,15 +316,12 @@ export default function InfoExchangeZone({ data, weekNumber, onComplete }) {
         <div className="flex items-center gap-3 w-full sm:w-auto">
           <LexioMascot size={42} mood="happy" />
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-md">
-                Cambridge A2 Flyers · Speaking Part 2
-              </span>
-              <span className="text-xs font-bold text-slate-400">
+            <div className="flex items-center gap-2 mb-0.5">
+              <span className="text-xs font-bold text-slate-500">
                 {phase === 'table_a' ? `Cue ${cueIdxA + 1} / ${cuesA.length}` : `Question ${fieldIdxB + 1} / ${fieldsB.length}`}
               </span>
             </div>
-            <h1 className="text-lg sm:text-xl font-black text-slate-900">
+            <h1 className="text-base sm:text-lg font-black text-slate-900">
               {phase === 'table_a' ? 'Phase 1: Ask Questions from Cues' : 'Phase 2: Answer Examiner’s Questions'}
             </h1>
           </div>
