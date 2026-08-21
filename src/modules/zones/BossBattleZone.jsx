@@ -126,12 +126,7 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
           rotaryConfig={rotaryConfig}
           onStartBattle={() => setHasStarted(true)}
           userShields={userShields}
-          currentTasks={currentTasks}
-          selectedIndex={activeTaskIndex}
-          onSelectTask={(idx) => {
-            setActiveTaskIndex(idx);
-            setHasStarted(true);
-          }}
+          currentTask={currentTask}
         />
       </div>
     );
@@ -182,54 +177,9 @@ export default function BossBattleZone({ data, weekNumber = 33, forcedStation = 
   }
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-4 animate-in fade-in duration-200 font-sans">
-      {/* Exam Header Status Bar with Exit to Map Button */}
-      <div className="w-full bg-slate-900/90 rounded-2xl p-3 sm:p-4 border border-purple-500/40 text-white flex items-center justify-between flex-wrap gap-3 shadow-xl">
-        <div className="flex items-center gap-2.5">
-          <button
-            type="button"
-            onClick={() => navigate(`/week/${weekNumber}`)}
-            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow"
-          >
-            ← Map
-          </button>
-          <div className="p-1.5 rounded-lg bg-rose-500/20 text-rose-400">
-            <Shield size={18} />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[10px] font-black uppercase text-amber-300">
-                Task {activeTaskIndex + 1}/{currentTasks.length}
-              </span>
-            </div>
-            <h3 className="text-xs sm:text-sm font-black text-white">{currentTask.name}</h3>
-          </div>
-        </div>
-
-        {/* Task Switcher Pills — always visible so student can choose any task */}
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
-          {currentTasks.map((t, idx) => (
-            <button
-              key={t.id}
-              type="button"
-              onClick={() => setActiveTaskIndex(idx)}
-              className={`px-2.5 py-1 rounded-lg text-xs font-black transition-all flex items-center gap-1 ${
-                activeTaskIndex === idx
-                  ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300'
-                  : earnedShields.includes(t.id)
-                  ? 'bg-emerald-900/80 text-emerald-300 border border-emerald-500/40'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
-              }`}
-            >
-              {earnedShields.includes(t.id) && <CheckCircle2 size={12} className="text-emerald-400" />}
-              Task {idx + 1}
-            </button>
-          ))}
-        </div>
-      </div>
-
+    <div className="w-full max-w-5xl mx-auto space-y-3 animate-in fade-in duration-200 font-sans">
       {/* Task Content Card */}
-      <div className="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 border border-slate-200 shadow-xl min-h-[400px]">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 border border-slate-200 shadow-md min-h-[360px]">
         {/* LISTENING P1 */}
         {currentTask.id === 'list_p1' && bossData.listening?.p1 && (
           <SVGLineMatcher

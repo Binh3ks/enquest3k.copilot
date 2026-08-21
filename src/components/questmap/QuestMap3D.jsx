@@ -136,6 +136,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const [teacherOverride, setTeacherOverride] = useState(false);
   const [showNarrative, setShowNarrative] = useState(false);
   const [mascotMood, setMascotMood] = useState('waving');
+  const [mascotQuoteIndex, setMascotQuoteIndex] = useState(0);
   const prevSuggestedIdxRef = useRef(-1);
 
   const { isQuestCompleted, getWeekQuestCount } = useDailyQuestStore();
@@ -193,10 +194,43 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
 
   const getTaskLink = (quest) => `/week/${weekId}/task/${quest.id}`;
 
-  const lexioMsg =
-    weekQuestCount === 0 ? "Start your adventure! 🌟" :
-    weekQuestCount >= totalQuests ? "Outstanding! All quests completed! 🎉" :
-    `${totalQuests - weekQuestCount} quests remaining! 💪`;
+  // Smart Context-Aware Quotes from Lexio
+  const dynamicQuotes = useMemo(() => {
+    if (weekQuestCount >= totalQuests) {
+      return [
+        "Incredible job! Week 33 completed! 👑",
+        "You earned all shields! True champion! 🏆",
+        "Ready for the next week's adventure! 🚀"
+      ];
+    }
+    if (weekQuestCount === 0) {
+      return [
+        "Welcome Adventurer! Let's conquer Day 1! 🌟",
+        "Tap Day 1 to start your learning journey! 🗺️",
+        "15 minutes a day builds English superpowers! ⚡"
+      ];
+    }
+    const uncompletedName = firstUncompletedTask?.label || 'your next quest';
+    return [
+      `Welcome back! Let's tackle "${uncompletedName}"! 🌟`,
+      `You're at ${suggestedStation?.name || 'Hub'} (${weekQuestCount}/${totalQuests} done)! 💪`,
+      `Only ${totalQuests - weekQuestCount} quests to Boss Castle! 🏰`,
+      "Keep practicing every day to earn more shields! 🛡️"
+    ];
+  }, [weekQuestCount, totalQuests, firstUncompletedTask, suggestedStation]);
+
+  const activeMascotQuote = dynamicQuotes[mascotQuoteIndex % dynamicQuotes.length];
+
+  const handleMascotTap = () => {
+    fireCelebrationConfetti('mascot_tap');
+    setMascotMood('celebrate');
+    setMascotQuoteIndex(prev => prev + 1);
+    setTimeout(() => {
+      setMascotMood(weekQuestCount >= totalQuests ? 'celebrate' : 'happy');
+    }, 2000);
+  };
+
+  const lexioMsg = activeMascotQuote;
 
   // Show narrative toast on first visit
   useEffect(() => {
@@ -506,15 +540,18 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
       {/* Floating Duolingo-style Mascot HUD (Top Right, Animated, Interactive) */}
       <div
         className="qm3d-floating-mascot-hud"
-        onClick={() => {
-          fireCelebrationConfetti('mascot_tap');
-          setMascotMood(prev => prev === 'celebrate' ? 'waving' : 'celebrate');
-        }}
+        onClick={handleMascotTap}
         title="Lexio the Fox Companion — Tap for fun!"
       >
+        {/* Dynamic Duo-style Speech Bubble */}
+        <div className="qm3d-mascot-speech-bubble animate-in fade-in zoom-in-95 duration-200">
+          <span className="qm3d-bubble-text">{activeMascotQuote}</span>
+          <div className="qm3d-bubble-tail" />
+        </div>
+
         <div className="qm3d-mascot-glow-ring">
           <LexioMascot
-            size={isPortrait ? 56 : 72}
+            size={isPortrait ? 52 : 68}
             mood={mascotMood}
           />
         </div>

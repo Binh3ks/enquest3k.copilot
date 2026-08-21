@@ -197,89 +197,39 @@ export function SVGLineMatcher({ customData, onComplete }) {
   const exampleEndPos = positions[exampleTarget?.id];
 
   return (
-    <div className="w-full max-w-5xl mx-auto my-2 p-3 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-3">
+    <div className="w-full max-w-5xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
       {/* Compact Header & Audio Control Bar */}
-      <div className="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-slate-200">
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => {
-              const scriptToSpeak = sceneData?.passage_audio_script || fullListeningScript;
-              VoiceService.speak(
-                scriptToSpeak,
-                'questions',
-                sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
-                33
-              );
-            }}
-            className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
-          >
-            <Volume2 size={14} /> 🔊 Play Audio
-          </button>
-          <span className="text-[11px] sm:text-xs text-slate-600 font-bold">
-            Tap a name pill, then tap the person in the picture.
-          </span>
-        </div>
+      <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200">
+        <button
+          type="button"
+          onClick={() => {
+            const scriptToSpeak = sceneData?.passage_audio_script || fullListeningScript;
+            VoiceService.speak(
+              scriptToSpeak,
+              'questions',
+              sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
+              33
+            );
+          }}
+          className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
+        >
+          <Volume2 size={14} /> 🔊 Play Audio
+        </button>
 
-        <div className="flex items-center gap-1.5">
-          <button
-            onClick={handleClearLines}
-            disabled={isSubmitted || drawnLines.length === 0}
-            className="px-2.5 py-1 bg-rose-50 text-rose-700 hover:bg-rose-100 font-bold text-xs rounded-lg border border-rose-200 transition disabled:opacity-40 flex items-center gap-1"
-          >
-            <Trash2 size={12} /> Clear
-          </button>
-          <button
-            onClick={() => setIsCalibratorOpen(!isCalibratorOpen)}
-            className="px-2.5 py-1 bg-slate-100 text-slate-600 hover:bg-amber-50 font-bold text-xs rounded-lg border border-slate-300 flex items-center gap-1"
-          >
-            <Target size={12} /> Calibrate
-          </button>
-        </div>
+        <button
+          onClick={handleClearLines}
+          disabled={isSubmitted || drawnLines.length === 0}
+          className="px-2.5 py-1 bg-rose-50 text-rose-700 hover:bg-rose-100 font-bold text-xs rounded-lg border border-rose-200 transition disabled:opacity-40 flex items-center gap-1"
+        >
+          <Trash2 size={12} /> Clear
+        </button>
       </div>
-
-      {/* 🎯 Dev/Admin Target Calibrator Bar */}
-      {isCalibratorOpen && (
-        <div className="p-3 bg-amber-50 border-2 border-amber-300 rounded-xl space-y-2 animate-fadeIn text-xs">
-          <div className="flex items-center justify-between">
-            <span className="font-black text-amber-950 uppercase tracking-wider">
-              🎯 Pin Calibrator: Click target pin, then click directly on image:
-            </span>
-            <button
-              onClick={handleCopyCalibratedJSON}
-              className="px-2.5 py-1 bg-amber-600 hover:bg-amber-700 text-white font-black rounded-lg transition text-xs shadow"
-            >
-              {copiedToast ? '✅ Copied!' : '📋 Copy JSON'}
-            </button>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 pt-0.5">
-            {calibratedTargets.map((t) => {
-              const isActive = activeCalibTargetId === t.id;
-              return (
-                <button
-                  key={t.id}
-                  onClick={() => setActiveCalibTargetId(t.id)}
-                  className={`px-2 py-1 rounded-lg text-xs font-black transition flex items-center gap-1 border ${
-                    isActive
-                      ? 'bg-amber-600 text-white border-amber-700 ring-2 ring-amber-200'
-                      : 'bg-white text-slate-800 border-amber-200 hover:bg-amber-100'
-                  }`}
-                >
-                  <span>{t.label || t.id}</span>
-                  <span className="text-[10px] opacity-80">({t.x}%, {t.y}%)</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
 
       {/* 🌟 UNIFIED SVG CANVAS MASTER WRAPPER 🌟 */}
       <div
         ref={masterContainerRef}
         onMouseMove={handleMouseMove}
-        className="relative w-full space-y-2.5 select-none"
+        className="relative w-full space-y-2 select-none"
       >
         {/* Real-time Dynamic SVG Line Canvas covering entire Master Container */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-20 overflow-visible">
@@ -352,24 +302,15 @@ export function SVGLineMatcher({ customData, onComplete }) {
               left: `${(exampleStartPos.x + exampleEndPos.x) / 2}%`,
               top: `${(exampleStartPos.y + exampleEndPos.y) / 2}%`
             }}
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none px-3 py-1 bg-amber-500 text-white font-black text-[11px] rounded-full uppercase tracking-wider border-2 border-white shadow-xl flex items-center gap-1 animate-pulse"
+            className="absolute transform -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none px-2.5 py-0.5 bg-amber-500 text-white font-black text-[10px] rounded-full uppercase tracking-wider border-2 border-white shadow-md flex items-center gap-1 animate-pulse"
           >
             ★ EXAMPLE
           </div>
         )}
 
         {/* Name Selection Ribbon */}
-        <div className="p-2 sm:p-2.5 bg-slate-50 border border-slate-200 rounded-xl space-y-1.5 z-10 relative">
-          <div className="flex items-center justify-between text-[11px]">
-            <span className="font-black text-slate-600 uppercase tracking-wider flex items-center gap-1">
-              <User size={12} className="text-indigo-600" /> Names (Click name pill, then click person below):
-            </span>
-            <span className="font-bold text-indigo-700">
-              {selectedName ? `Selected: ${selectedName.text}` : 'Select a name'}
-            </span>
-          </div>
-
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5 pt-0.5">
+        <div className="p-1.5 sm:p-2 bg-slate-50 border border-slate-200 rounded-xl z-10 relative">
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
             {sceneData.names.map((name) => {
               const hasLine = drawnLines.some(l => l.nameId === name.id);
               const isSelected = selectedName?.id === name.id;

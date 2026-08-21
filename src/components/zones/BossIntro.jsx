@@ -1,7 +1,7 @@
 import React from 'react';
-import { Shield, Trophy, PlayCircle, Sparkles } from 'lucide-react';
+import { Shield, Trophy, PlayCircle } from 'lucide-react';
 
-export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0, currentTasks = [], selectedIndex = 0, onSelectTask }) {
+export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0, currentTask }) {
   if (!rotaryConfig) return null;
 
   return (
@@ -33,39 +33,23 @@ export default function BossIntro({ rotaryConfig, onStartBattle, userShields = 0
         </div>
       </div>
 
-      {/* Task Selection Grid — allows student to choose any of the 3 tasks */}
-      {currentTasks.length > 0 && (
-        <div className="space-y-1.5">
-          <span className="text-[10px] font-black uppercase tracking-wider text-purple-300 block">
-            Choose Mission to Challenge:
-          </span>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {currentTasks.map((t, idx) => {
-              const isSelected = selectedIndex === idx;
-              return (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => onSelectTask && onSelectTask(idx)}
-                  className={`p-2.5 rounded-xl border text-left transition active:scale-95 ${
-                    isSelected
-                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 border-amber-400 shadow-lg ring-2 ring-amber-300/40'
-                      : 'bg-slate-900/80 hover:bg-slate-800 border-slate-700 text-slate-300'
-                  }`}
-                >
-                  <div className="text-[10px] font-bold uppercase text-amber-300">Task {idx + 1}</div>
-                  <div className="text-xs font-black text-white truncate">{t.name}</div>
-                </button>
-              );
-            })}
+      {/* Current Task Description */}
+      {currentTask && (
+        <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-700/80 flex items-center justify-between gap-3">
+          <div>
+            <span className="text-[10px] font-black uppercase text-amber-300 block">Mission Objective</span>
+            <div className="text-xs sm:text-sm font-black text-white">{currentTask.name}</div>
           </div>
+          <span className="px-2.5 py-1 bg-purple-600/40 border border-purple-400/40 text-purple-200 rounded-lg text-xs font-bold shrink-0">
+            Cambridge A2 Flyers
+          </span>
         </div>
       )}
 
       {/* Action CTA */}
       <div className="pt-1 flex items-center justify-between flex-wrap gap-2">
         <span className="text-[11px] text-slate-400 font-medium">
-          Cambridge A2 Flyers Challenge (~{rotaryConfig.approxDurationMin}m)
+          ~{rotaryConfig.approxDurationMin}m • Instant official Cambridge score
         </span>
         <button
           type="button"

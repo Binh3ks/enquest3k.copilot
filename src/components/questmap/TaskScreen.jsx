@@ -127,7 +127,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
   const routing = TASK_ROUTING[taskId];
 
   const handleBackToMap = () => {
-    navigate(`/week/${weekId}/hub/1`);
+    navigate(`/week/${weekId}`);
   };
 
   if (!routing || !taskInfo) {
@@ -136,7 +136,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
         <div className="ts-error">
           <LexioMascot size={80} mood="thinking" />
           <h2>Task not found: {taskId}</h2>
-          <button className="ts-back-btn" onClick={handleBackToMap}>← Back to Map</button>
+          <button type="button" className="ts-back-btn" onClick={handleBackToMap}>← Back to Map</button>
         </div>
       </div>
     );

@@ -73,119 +73,86 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto my-6 bg-amber-50 rounded-3xl border-4 border-amber-200 shadow-xl p-6 sm:p-8 relative overflow-hidden">
+    <div className="w-full max-w-2xl mx-auto my-2 bg-amber-50/90 rounded-2xl sm:rounded-3xl border-2 border-amber-200 shadow-md p-3.5 sm:p-5 relative overflow-hidden font-sans space-y-3">
       {/* Top Notepad Spiral Binding Effect */}
-      <div className="absolute top-0 left-0 right-0 h-6 bg-amber-200/80 flex justify-around items-center px-4">
+      <div className="absolute top-0 left-0 right-0 h-4 bg-amber-200/80 flex justify-around items-center px-4">
         {[...Array(12)].map((_, i) => (
-          <div key={i} className="w-3 h-3 rounded-full bg-amber-700 shadow-inner"></div>
+          <div key={i} className="w-2 h-2 rounded-full bg-amber-700 shadow-inner"></div>
         ))}
       </div>
 
-      <div className="mt-4">
-        <div className="flex items-center justify-between border-b-2 border-amber-300 pb-3 mb-6">
-          <div>
-            <span className="text-xs font-black text-amber-700 uppercase tracking-widest">CAMBRIDGE LISTENING PART 2</span>
-            <h3 className="text-xl sm:text-2xl font-black text-amber-950 font-serif">{title || "School Incident Notepad"}</h3>
-          </div>
-          <span className="px-3 py-1 bg-amber-200 text-amber-900 text-xs font-black rounded-full font-mono">
-            5 Notes
-          </span>
-        </div>
-
-        {/* 🎧 Master Global Audio Player Bar (Cambridge Flyers Listening Part 2 Standard) */}
-        <div className="mb-6 p-4 sm:p-5 bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 text-white rounded-2xl shadow-lg border border-amber-500/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 w-full sm:w-auto">
-            <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0 border border-white/30">
-              <Headphones className="w-6 h-6 text-amber-200 animate-pulse" />
-            </div>
-            <div>
-              <span className="text-[10px] font-black text-amber-200 uppercase tracking-widest block">
-                GLOBAL DIALOGUE AUDIO
-              </span>
-              <h4 className="text-sm font-black text-white">
-                Listen to the Full Passage Dialogue
-              </h4>
-              <p className="text-[11px] font-medium text-amber-100/90 italic">
-                Listen carefully to the continuous recording and fill in the 5 notes below.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
+      <div className="pt-2">
+        {/* Compact Header & Audio Bar */}
+        <div className="flex items-center justify-between border-b border-amber-200 pb-2 mb-2.5 flex-wrap gap-2">
+          <div className="flex items-center gap-2">
             <button
               onClick={handleToggleMasterAudio}
-              className={`px-5 py-3 rounded-xl font-black text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 active:scale-95 ${
+              className={`px-3 py-1.5 rounded-xl font-black text-xs transition-all shadow-xs flex items-center gap-1.5 active:scale-95 ${
                 isPlaying
-                  ? 'bg-amber-400 text-amber-950 ring-4 ring-amber-300 animate-pulse'
-                  : 'bg-white text-amber-900 hover:bg-amber-100'
+                  ? 'bg-amber-400 text-amber-950 ring-2 ring-amber-300 animate-pulse'
+                  : 'bg-amber-600 text-white hover:bg-amber-700'
               }`}
             >
-              {isPlaying ? <Pause size={18} className="fill-amber-950" /> : <Play size={18} className="fill-amber-900 ml-0.5" />}
-              <span>{isPlaying ? 'Pause Audio' : 'Play Full Audio 🎧'}</span>
+              {isPlaying ? <Pause size={14} className="fill-amber-950" /> : <Play size={14} className="fill-white ml-0.5" />}
+              <span>{isPlaying ? 'Pause' : '🔊 Play Audio'}</span>
             </button>
-            <button
-              onClick={handleReplayMasterAudio}
-              className="p-3 bg-amber-800/80 hover:bg-amber-900 text-white rounded-xl text-xs transition border border-amber-500/50 active:scale-95"
-              title="Replay from start"
-            >
-              <RotateCcw size={18} />
-            </button>
+            <h3 className="text-xs sm:text-sm font-black text-amber-950">
+              {title || "School Incident Notepad"} (5 Notes)
+            </h3>
           </div>
+
+          <button
+            onClick={handleReplayMasterAudio}
+            className="p-1.5 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-lg text-xs transition border border-amber-300 active:scale-95"
+            title="Replay from start"
+          >
+            <RotateCcw size={13} />
+          </button>
         </div>
 
-        {/* Continuous Audio Text Script Box with Global Lexical Chunks Parser */}
-        <div className="p-4 bg-amber-950/40 rounded-2xl border border-amber-500/30 text-amber-100 text-xs leading-relaxed space-y-1 font-sans">
-          <span className="text-[10px] font-black text-amber-300 uppercase tracking-wider block">
-            📄 Interactive Dialogue Script (Click chunks to inspect meaning):
-          </span>
-          <div>
-            {renderParsedText(fullAudioPassage, 'amber')}
-          </div>
-        </div>
-
-        {/* Notes Form List (NO individual speaker buttons) */}
-        <div className="space-y-4 font-mono">
+        {/* Notes Form List */}
+        <div className="space-y-1.5">
           {defaultNotes.map((note, index) => {
             const userAns = (answers[note.id] || '').trim().toLowerCase();
             const targetAns = note.target.toLowerCase();
             const isCorrect = isSubmitted && (userAns === targetAns || (userAns && targetAns.includes(userAns)));
 
             return (
-              <div key={note.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 bg-white/90 rounded-2xl border border-amber-200 gap-3 shadow-sm">
-                <div className="flex items-center gap-3 flex-1">
-                  <span className="w-7 h-7 rounded-xl bg-amber-200 text-amber-950 font-black text-xs flex items-center justify-center shrink-0">
+              <div key={note.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-2.5 bg-white rounded-xl border border-amber-200 gap-1.5 shadow-2xs">
+                <div className="flex items-center gap-2 flex-1">
+                  <span className="w-5 h-5 rounded-md bg-amber-200 text-amber-950 font-black text-[11px] flex items-center justify-center shrink-0">
                     {index + 1}
                   </span>
                   <div>
-                    <span className="text-sm font-black text-amber-950 font-sans">
+                    <span className="text-xs font-black text-amber-950">
                       {note.label}:
                     </span>
-                    <p className="text-xs text-amber-700 font-sans italic">{note.hint}</p>
+                    <span className="text-[11px] text-amber-700 ml-1.5 italic font-medium">({note.hint})</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 justify-end">
                   <input
                     type="text"
                     disabled={isSubmitted}
                     value={answers[note.id] || ''}
                     onChange={(e) => setAnswers({ ...answers, [note.id]: e.target.value })}
-                    placeholder="Type answer note..."
-                    className={`px-3.5 py-2 rounded-xl border-2 font-bold text-sm text-slate-900 w-48 sm:w-56 focus:outline-none transition-all ${
+                    placeholder="Type note..."
+                    className={`px-2.5 py-1 rounded-lg border font-bold text-xs text-slate-900 w-36 sm:w-48 focus:outline-none transition-all ${
                       isSubmitted
                         ? isCorrect
                           ? 'border-emerald-500 bg-emerald-50 text-emerald-950'
                           : 'border-rose-400 bg-rose-50 text-rose-950'
-                        : 'border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200'
+                        : 'border-amber-300 focus:border-amber-500 focus:ring-1 focus:ring-amber-200'
                     }`}
                   />
                   {isSubmitted && (
                     isCorrect ? (
-                      <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                     ) : (
-                      <div className="flex items-center gap-1">
-                        <AlertCircle className="w-6 h-6 text-rose-500 flex-shrink-0" />
-                        <span className="text-xs font-bold text-rose-600">({note.target})</span>
+                      <div className="flex items-center gap-0.5">
+                        <AlertCircle className="w-4 h-4 text-rose-500 flex-shrink-0" />
+                        <span className="text-[10px] font-bold text-rose-600">({note.target})</span>
                       </div>
                     )
                   )}
@@ -195,29 +162,33 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
           })}
         </div>
 
-        {/* Submit / Score Footer */}
-        <div className="mt-6 pt-4 border-t-2 border-amber-300 flex items-center justify-between">
+        {/* Check Button & Results */}
+        <div className="mt-3 pt-2 border-t border-amber-200 flex items-center justify-between">
           {!isSubmitted ? (
             <button
               onClick={handleCheck}
-              className="w-full sm:w-auto px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-black text-base rounded-2xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
+              disabled={Object.keys(answers).length === 0}
+              className="w-full sm:w-auto px-6 py-2 bg-amber-600 hover:bg-amber-700 text-white font-black text-xs sm:text-sm rounded-xl shadow-sm transition active:scale-95 flex items-center justify-center gap-1.5 disabled:opacity-40"
             >
-              <Sparkles className="w-5 h-5" />
-              Check Notepad Answers
+              <Sparkles size={15} /> Check Notes
             </button>
           ) : (
-            <div className="w-full flex items-center justify-between bg-white/90 p-4 rounded-2xl border border-amber-300">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-amber-600 animate-spin" />
-                <span className="text-lg font-black text-amber-950">
-                  Notepad Score: {score}%
+            <div className="w-full flex items-center justify-between bg-white p-2.5 rounded-xl border border-amber-200">
+              <div className="flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4 text-amber-600 animate-bounce" />
+                <span className="text-xs font-black text-amber-950">
+                  Score: {score}%
                 </span>
               </div>
               <button
-                onClick={() => { setIsSubmitted(false); setAnswers({}); }}
-                className="px-4 py-2 bg-amber-200 hover:bg-amber-300 text-amber-950 font-bold text-sm rounded-xl transition-all"
+                onClick={() => {
+                  setAnswers({});
+                  setIsSubmitted(false);
+                  setScore(0);
+                }}
+                className="px-3 py-1 bg-amber-100 hover:bg-amber-200 text-amber-950 font-bold text-xs rounded-lg transition flex items-center gap-1"
               >
-                Try Again
+                <RotateCcw size={12} /> Try Again
               </button>
             </div>
           )}
