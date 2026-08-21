@@ -50,19 +50,19 @@ export default function VoiceConsentStep({ onAccept, onDecline }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
           <span>✅</span>
           <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>
-            Giọng nói chỉ được xử lý trên thiết bị này
+            Truyền mã hoá an toàn tới công cụ nhận diện giọng nói chuẩn để chấm điểm tức thì
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
           <span>✅</span>
           <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>
-            Không lưu trữ trên máy chủ
+            Xoá ngay sau khi chấm điểm — hoàn toàn không lưu trữ hoặc chia sẻ dữ liệu âm thanh
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span>✅</span>
           <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>
-            Ba/mẹ có thể tắt bất cứ lúc nào trong Cài đặt
+            Ba/mẹ có thể bật/tắt quyền micro bất cứ lúc nào trong Cài đặt
           </span>
         </div>
       </div>

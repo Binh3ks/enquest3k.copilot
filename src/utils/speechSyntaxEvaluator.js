@@ -91,22 +91,37 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
     }
   }
 
-  // 2. Question Mode: WH-Fronting Syntactic Position Check
-  if (mode === 'question' && cueWord) {
+  // 2. Question Mode: WH-Fronting & Question Structure Check
+  if (mode === 'question') {
     const cleanCue = normalizeSpokenText(cueWord);
-    const cueTokens = cleanCue.split(/\s+/);
-    
-    // Check if the WH-tokens appear at index 0 or 1 (allowing small filler like 'so', 'and')
-    const startsWithCue = cueTokens.every((ct, idx) => spokenTokens[idx] === ct || spokenTokens[idx + 1] === ct);
-    
-    if (!startsWithCue && cleanSpoken.includes(cleanCue)) {
-      return {
-        isCorrect: false,
-        score: 35,
-        feedback: `Syntax error: Put the question word "${cueWord}" at the beginning of your question!`,
-        spokenText: cleanSpoken,
-        modelTarget: primaryModel
-      };
+    if (cleanCue) {
+      const cueTokens = cleanCue.split(/\s+/).filter(Boolean);
+      const startsWithCue = cueTokens.every((ct, idx) => spokenTokens[idx] === ct || spokenTokens[idx + 1] === ct);
+      
+      if (!startsWithCue) {
+        return {
+          isCorrect: false,
+          score: 30,
+          feedback: `Please start your question with the question word "${cueWord}"!`,
+          spokenText: cleanSpoken,
+          modelTarget: primaryModel
+        };
+      }
+    } else {
+      // General question check: Must start with question word or auxiliary
+      const QUESTION_STARTERS = ['what', 'where', 'when', 'why', 'who', 'how', 'which', 'whose', 'is', 'are', 'was', 'were', 'do', 'does', 'did', 'can', 'could', 'will', 'would', 'have', 'has', 'had'];
+      const firstToken = spokenTokens[0];
+      const secondToken = spokenTokens[1];
+      const hasStarter = QUESTION_STARTERS.includes(firstToken) || (secondToken && QUESTION_STARTERS.includes(secondToken));
+      if (!hasStarter) {
+        return {
+          isCorrect: false,
+          score: 35,
+          feedback: "Please ask a complete question starting with a question word or helping verb!",
+          spokenText: cleanSpoken,
+          modelTarget: primaryModel
+        };
+      }
     }
   }
 
@@ -124,8 +139,8 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
     }
   }
 
-  // 4. Sequential Subsequence Word-Order Match
-  // Enforces chronological order: token A must precede token B as defined in the target sentence
+  // 4. Sequential Subsequence Word-Order Match with Precision/Recall Balance (F1)
+  // Enforces chronological order AND penalizes noisy extraneous words
   let bestScore = 0;
   let bestTarget = primaryModel;
 
@@ -150,11 +165,17 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
       }
     }
 
-    const orderRatio = targetTokens.length > 0 ? (inOrderMatches / targetTokens.length) : 0;
-    const currentScore = Math.round(orderRatio * 100);
+    // Recall (coverage of target) and Precision (relevance of spoken tokens)
+    const recall = targetTokens.length > 0 ? (inOrderMatches / targetTokens.length) : 0;
+    const precision = spokenTokens.length > 0 ? (inOrderMatches / spokenTokens.length) : 0;
+    
+    // Balanced F1 Harmonic Mean to prevent noisy random babble passing
+    const f1Score = (precision + recall > 0) 
+      ? Math.round((2 * precision * recall / (precision + recall)) * 100)
+      : 0;
 
-    if (currentScore > bestScore) {
-      bestScore = currentScore;
+    if (f1Score > bestScore) {
+      bestScore = f1Score;
       bestTarget = target;
     }
   }
@@ -162,13 +183,13 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
   // Decision Thresholds
   const isPassing = bestScore >= (mode === 'shadowing' ? 55 : 60);
 
-  let feedbackMsg = "Good effort! Try following the grammatical word order.";
+  let feedbackMsg = "Good effort! Try following the sentence structure and pronunciation.";
   if (bestScore >= 85) {
     feedbackMsg = "🌟 Excellent! Clear structure and accurate grammar.";
   } else if (bestScore >= 60) {
     feedbackMsg = "✓ Good response! Clearly understood.";
   } else if (bestScore >= 40) {
-    feedbackMsg = "⚠️ Word order needs adjustment. Listen to the model and try again!";
+    feedbackMsg = "⚠️ Try again! Listen to the model and repeat clearly.";
   }
 
   return {
