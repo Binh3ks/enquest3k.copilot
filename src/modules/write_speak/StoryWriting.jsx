@@ -239,8 +239,8 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
           <div className="space-y-2">
             <div className="w-full py-3 bg-emerald-600 text-white font-black text-sm rounded-2xl text-center">✓ Story Submitted! +50 XP</div>
             {onGoToSpeak && (
-              <button onClick={onGoToSpeak} className="w-full py-2.5 bg-purple-600 hover:bg-purple-500 text-white font-black text-xs rounded-xl shadow active:scale-[0.98] transition flex items-center justify-center gap-1.5">
-                📻 Go to Hot Mic — Broadcast your story! <ArrowRight size={14} />
+              <button onClick={onGoToSpeak} className="w-full py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-black text-xs rounded-xl shadow-md active:scale-[0.98] transition flex items-center justify-center gap-1.5">
+                📹 Go to Video Challenge — Record your story! <ArrowRight size={14} />
               </button>
             )}
           </div>

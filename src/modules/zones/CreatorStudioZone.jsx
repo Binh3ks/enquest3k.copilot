@@ -182,78 +182,82 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
-      {/* Slim Game Instruction Bar */}
-      <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
-        <span className="font-black text-purple-950 flex items-center gap-1.5">
-          🎨 CREATOR STUDIO — Write your story, go on the air, debate, or file your science report!
-        </span>
-        <div className="px-3 py-1 bg-purple-600 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
-          <Trophy size={14} className="text-amber-300" />
-          <span>+{studioXP} XP</span>
+    <div className="w-full max-w-5xl mx-auto space-y-4 animate-in fade-in duration-300 font-sans">
+      {/* Slim Game Instruction Bar — only in full zone mode */}
+      {!hideStationTabs && (
+        <div className="p-3 bg-purple-50 border border-purple-300 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+          <span className="font-black text-purple-950 flex items-center gap-1.5">
+            🎨 CREATOR STUDIO — Write your story, record your video, debate, or file your science report!
+          </span>
+          <div className="px-3 py-1 bg-purple-600 text-white rounded-xl font-black text-xs shadow-sm flex items-center gap-1">
+            <Trophy size={14} className="text-amber-300" />
+            <span>+{studioXP} XP</span>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}
-      {!hideStationTabs && <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('story_writer')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeTab === 'story_writer'
-                ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
-                : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
-            }`}
-          >
-            ✏️ STORY WRITER
-          </button>
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('brain_refresh')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeTab === 'brain_refresh'
-                ? 'bg-amber-400 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
-                : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
-            }`}
-          >
-            🎧 BRAIN REFRESH
-          </button>
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('podcast_creator')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeTab === 'podcast_creator'
-                ? 'bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
-                : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
-            }`}
-          >
-            📻 HOT MIC
-          </button>
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('science_report')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeTab === 'science_report'
-                ? 'bg-emerald-600 text-white shadow-md ring-2 ring-emerald-300 scale-[1.02]'
-                : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
-            }`}
-          >
-            📝 DISCOVERY REPORT
-          </button>
-          <button
-            type="button"
-            onClick={() => handleTabSwitch('ai_debate')}
-            className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
-              activeTab === 'ai_debate'
-                ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300 scale-[1.02]'
-                : 'bg-indigo-50 text-indigo-900 border border-indigo-200 hover:bg-indigo-100'
-            }`}
-          >
-            🎭 DEBATE ARENA
-          </button>
+      {!hideStationTabs && (
+        <div className="w-full p-2 bg-slate-100/90 rounded-2xl border border-slate-200 shadow-inner">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 w-full">
+            <button
+              type="button"
+              onClick={() => handleTabSwitch('story_writer')}
+              className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                activeTab === 'story_writer'
+                  ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-300 scale-[1.02]'
+                  : 'bg-purple-50 text-purple-900 border border-purple-200 hover:bg-purple-100'
+              }`}
+            >
+              ✏️ STORY WRITER
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTabSwitch('brain_refresh')}
+              className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                activeTab === 'brain_refresh'
+                  ? 'bg-amber-400 text-slate-950 shadow-md ring-2 ring-amber-300 scale-[1.02]'
+                  : 'bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100'
+              }`}
+            >
+              🎧 BRAIN REFRESH
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTabSwitch('podcast_creator')}
+              className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                activeTab === 'podcast_creator'
+                  ? 'bg-indigo-600 text-white shadow-md ring-2 ring-indigo-300 scale-[1.02]'
+                  : 'bg-indigo-50 text-indigo-900 border border-indigo-200 hover:bg-indigo-100'
+              }`}
+            >
+              📹 VIDEO CHALLENGE
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTabSwitch('science_report')}
+              className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                activeTab === 'science_report'
+                  ? 'bg-emerald-600 text-white shadow-md ring-2 ring-emerald-300 scale-[1.02]'
+                  : 'bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100'
+              }`}
+            >
+              🧪 SCIENCE REPORT
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTabSwitch('ai_debate')}
+              className={`w-full py-2.5 px-3 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center truncate ${
+                activeTab === 'ai_debate'
+                  ? 'bg-rose-600 text-white shadow-md ring-2 ring-rose-300 scale-[1.02]'
+                  : 'bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100'
+              }`}
+            >
+              🎭 DEBATE ARENA
+            </button>
+          </div>
         </div>
-      </div>}
+      )}
 
       {/* Active Sub-Component */}
       <div className="bg-white rounded-3xl p-5 sm:p-7 border border-slate-200 shadow-md min-h-[420px]">
@@ -273,20 +277,6 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
 
         {activeTab === 'podcast_creator' && (
           <div className="space-y-4">
-            {/* Data Contract Banner: shows mode & story connection */}
-            {storySubmission ? (
-              <div className="flex items-center gap-2 px-3 py-2 bg-emerald-50 border border-emerald-300 rounded-xl text-xs text-emerald-900 font-bold">
-                <span className="text-emerald-600">✓</span>
-                {storySubmission.mode === 'structured'
-                  ? 'Broadcast Studio: 4 Structured Narrative Scenes loaded 1:1 from your Story Writer!'
-                  : 'Broadcast Studio: Story script loaded from your Story Writer!'}
-              </div>
-            ) : (
-              <div className="flex items-center gap-2 px-3 py-2 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-900 font-bold">
-                <AlertCircle size={14} className="text-amber-600 shrink-0" />
-                Tip: Write your story in Story Writer first — your 4-scene script will load here automatically!
-              </div>
-            )}
             <RetellRecorder
               scenes={storySubmission?.podcastScenes || studioData.podcastScenes || []}
               weekNumber={weekNumber}

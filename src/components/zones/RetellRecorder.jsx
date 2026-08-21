@@ -1,76 +1,138 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles } from 'lucide-react';
+import { Video, Mic, Square, RefreshCw, Volume2, CheckCircle2, Sparkles, Download, Camera, VideoOff, Trophy, Play } from 'lucide-react';
 import { speakText } from '../../utils/AudioHelper';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../common/MicFallbackInput';
 
 const NARRATIVE_STYLES = {
-  setting:  { dot: '🔵', bg: 'bg-blue-50/70',    border: 'border-blue-200',    text: 'text-blue-950'    },
-  action:   { dot: '🟢', bg: 'bg-emerald-50/70', border: 'border-emerald-200', text: 'text-emerald-950' },
-  problem:  { dot: '🟠', bg: 'bg-amber-50/70',   border: 'border-amber-200',   text: 'text-amber-950'   },
-  solution: { dot: '🟣', bg: 'bg-purple-50/70',  border: 'border-purple-200',  text: 'text-purple-950'  }
+  setting:  { label: 'Scene 1: Setting', dot: '🔵', bg: 'bg-blue-50/80',    border: 'border-blue-200',    text: 'text-blue-950', badge: 'bg-blue-200 text-blue-900' },
+  action:   { label: 'Scene 2: Action',  dot: '🟢', bg: 'bg-emerald-50/80', border: 'border-emerald-200', text: 'text-emerald-950', badge: 'bg-emerald-200 text-emerald-900' },
+  problem:  { label: 'Scene 3: Problem', dot: '🟠', bg: 'bg-amber-50/80',   border: 'border-amber-200',   text: 'text-amber-950', badge: 'bg-amber-200 text-amber-900' },
+  solution: { label: 'Scene 4: Ending',  dot: '🟣', bg: 'bg-purple-50/80',  border: 'border-purple-200',  text: 'text-purple-950', badge: 'bg-purple-200 text-purple-900' }
 };
 const FUNC_ORDER = ['setting', 'action', 'problem', 'solution'];
 
 export default function RetellRecorder({ scenes = [], onComplete }) {
+  const [recordMode, setRecordMode] = useState('video'); // 'video' | 'audio'
   const [isRecording, setIsRecording] = useState(false);
-  const [recordedAudioUrl, setRecordedAudioUrl] = useState(null);
+  const [countdown, setCountdown] = useState(null);
+  const [recordingSeconds, setRecordingSeconds] = useState(0);
+  const [recordedMediaUrl, setRecordedMediaUrl] = useState(null);
+  const [recordedMediaType, setRecordedMediaType] = useState('video'); // 'video' | 'audio'
   const [feedback, setFeedback] = useState(null);
   const [evalResult, setEvalResult] = useState(null);
   const [spokenTranscript, setSpokenTranscript] = useState('');
-  const [tierMode, setTierMode] = useState('tier1');
+  const [cameraActive, setCameraActive] = useState(false);
+  const [cameraError, setCameraError] = useState(null);
 
+  const previewVideoRef = useRef(null);
+  const streamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
-  const audioChunksRef = useRef([]);
+  const mediaChunksRef = useRef([]);
   const recognitionRef = useRef(null);
   const transcriptRef = useRef('');
-
-  useEffect(() => {
-    return () => {
-      if (recognitionRef.current) {
-        try { recognitionRef.current.stop(); } catch (_) {}
-      }
-    };
-  }, []);
+  const timerIntervalRef = useRef(null);
 
   const DEFAULT_SCENES = [
     {
       id: 1,
       narrative_function: 'setting',
-      en: "After science class, Jake was walking carefully down the school corridor.",
-      radio_starters: ["Welcome back to Corridor Watch!", "Breaking news from the hallway!", "On a sunny Monday morning..."]
+      en: "On a sunny Monday morning, Jake was walking down the school corridor."
     },
     {
       id: 2,
       narrative_function: 'action',
-      en: "Jake was walking carefully while other students were running fast.",
-      radio_starters: ["Right then and there...", "Let's find out what happened next...", "As students were moving..."]
+      en: "He noticed the floor was dry and safe, but someone spilled water ahead."
     },
     {
       id: 3,
       narrative_function: 'problem',
-      en: "Suddenly, a student slipped on the wet floor and fell down heavily.",
-      radio_starters: ["But then, listeners...", "Suddenly, everything changed...", "Unexpectedly..."]
+      en: "Suddenly, a student slipped on the wet puddle and lost balance!"
     },
     {
       id: 4,
       narrative_function: 'solution',
-      en: "The school nurse arrived quickly with a clean bandage to help.",
-      radio_starters: ["And that's why we always...", "To sum it up...", "Fortunately..."]
+      en: "Jake quickly warned everyone and helped his friend stand up safely."
     }
   ];
 
   const activeScenes = (scenes && scenes.length > 0) ? scenes : DEFAULT_SCENES;
   const fullScriptText = activeScenes.map(s => s.en || s.text || '').filter(Boolean).join(' ');
 
-  const startRecording = async () => {
+  // Initialize camera preview on mount if in video mode
+  useEffect(() => {
+    let isMounted = true;
+    if (recordMode === 'video' && !recordedMediaUrl) {
+      startCameraPreview(isMounted);
+    } else {
+      stopCameraPreview();
+    }
+    return () => {
+      isMounted = false;
+      stopCameraPreview();
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch (_) {}
+      }
+      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+    };
+  }, [recordMode, recordedMediaUrl]);
+
+  const startCameraPreview = async (isMounted = true) => {
+    try {
+      setCameraError(null);
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { width: { ideal: 640 }, height: { ideal: 480 }, facingMode: 'user' },
+        audio: true
+      });
+      if (!isMounted) {
+        stream.getTracks().forEach(t => t.stop());
+        return;
+      }
+      streamRef.current = stream;
+      if (previewVideoRef.current) {
+        previewVideoRef.current.srcObject = stream;
+      }
+      setCameraActive(true);
+    } catch (err) {
+      console.warn('Camera preview failed, fallback to audio mode:', err);
+      setCameraError('Camera not available or access denied. Switched to audio mode.');
+      setRecordMode('audio');
+      setCameraActive(false);
+    }
+  };
+
+  const stopCameraPreview = () => {
+    if (streamRef.current) {
+      streamRef.current.getTracks().forEach(t => t.stop());
+      streamRef.current = null;
+    }
+    setCameraActive(false);
+  };
+
+  // Start recording with 3-second countdown
+  const initiateRecording = () => {
+    setCountdown(3);
+    const countTimer = setInterval(() => {
+      setCountdown(prev => {
+        if (prev <= 1) {
+          clearInterval(countTimer);
+          startActualRecording();
+          return null;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  const startActualRecording = async () => {
     setFeedback(null);
     setEvalResult(null);
-    setRecordedAudioUrl(null);
+    setRecordedMediaUrl(null);
+    setRecordingSeconds(0);
     transcriptRef.current = '';
 
-    // Start SpeechRecognition in parallel
+    // Start Speech Recognition
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       try {
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -88,12 +150,29 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
     }
 
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      mediaRecorderRef.current = new MediaRecorder(stream);
-      audioChunksRef.current = [];
+      let stream = streamRef.current;
+      if (!stream || !stream.active) {
+        stream = await navigator.mediaDevices.getUserMedia(
+          recordMode === 'video'
+            ? { video: { width: { ideal: 640 }, height: { ideal: 480 }, facingMode: 'user' }, audio: true }
+            : { audio: true }
+        );
+        streamRef.current = stream;
+      }
 
-      mediaRecorderRef.current.ondataavailable = (event) => {
-        if (event.data.size > 0) audioChunksRef.current.push(event.data);
+      if (recordMode === 'video' && previewVideoRef.current) {
+        previewVideoRef.current.srcObject = stream;
+      }
+
+      const mimeType = recordMode === 'video'
+        ? (MediaRecorder.isTypeSupported('video/webm;codecs=vp8,opus') ? 'video/webm;codecs=vp8,opus' : 'video/webm')
+        : 'audio/webm';
+
+      mediaRecorderRef.current = new MediaRecorder(stream, { mimeType: MediaRecorder.isTypeSupported(mimeType) ? mimeType : undefined });
+      mediaChunksRef.current = [];
+
+      mediaRecorderRef.current.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) mediaChunksRef.current.push(e.data);
       };
 
       mediaRecorderRef.current.onstop = () => {
@@ -102,9 +181,11 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
           recognitionRef.current = null;
         }
 
-        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/wav' });
-        const audioUrl = URL.createObjectURL(audioBlob);
-        setRecordedAudioUrl(audioUrl);
+        const blobType = recordMode === 'video' ? 'video/webm' : 'audio/webm';
+        const blob = new Blob(mediaChunksRef.current, { type: blobType });
+        const mediaUrl = URL.createObjectURL(blob);
+        setRecordedMediaUrl(mediaUrl);
+        setRecordedMediaType(recordMode);
 
         const spoken = transcriptRef.current.trim();
         setSpokenTranscript(spoken);
@@ -114,25 +195,50 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
         setFeedback({
           message: evaluation.isCorrect
-            ? `🎉 Broadcast recorded! Accuracy: ${evaluation.score}%. Excellent storytelling!`
-            : `⚠️ Broadcast recorded! Accuracy: ${evaluation.score}%. Try speaking with clearer transitions.`
+            ? `🎉 Fantastic video performance! Accuracy: ${evaluation.score}%. Your fluency is Cambridge-ready!`
+            : `⭐ Good effort! Accuracy: ${evaluation.score}%. Practice speaking with confident expression!`
         });
 
-        fireCelebrationConfetti('Broadcast_Record');
-        stream.getTracks().forEach(track => track.stop());
+        fireCelebrationConfetti('VideoChallenge_Success');
+        speakText("Awesome video challenge! You told your story brilliantly!");
         if (onComplete) onComplete(50);
       };
 
-      mediaRecorderRef.current.start();
+      mediaRecorderRef.current.start(1000);
       setIsRecording(true);
+
+      timerIntervalRef.current = setInterval(() => {
+        setRecordingSeconds(s => s + 1);
+      }, 1000);
     } catch (err) {
-      console.warn('Microphone access fallback:', err);
+      console.warn('Media recording error:', err);
       handleManualSubmit(fullScriptText);
     }
   };
 
+  const stopRecording = () => {
+    if (timerIntervalRef.current) {
+      clearInterval(timerIntervalRef.current);
+      timerIntervalRef.current = null;
+    }
+    if (mediaRecorderRef.current && isRecording) {
+      mediaRecorderRef.current.stop();
+      setIsRecording(false);
+    }
+  };
+
+  const handleRetake = () => {
+    setRecordedMediaUrl(null);
+    setFeedback(null);
+    setEvalResult(null);
+    setSpokenTranscript('');
+    if (recordMode === 'video') {
+      startCameraPreview();
+    }
+  };
+
   const handleManualSubmit = (typedText) => {
-    setRecordedAudioUrl('typed_broadcast');
+    setRecordedMediaUrl('typed_mode');
     setSpokenTranscript(typedText);
 
     const evaluation = evaluateSpeechSyntax(typedText, fullScriptText, { mode: 'sentence', minWords: 4 });
@@ -140,246 +246,276 @@ export default function RetellRecorder({ scenes = [], onComplete }) {
 
     setFeedback({
       message: evaluation.isCorrect
-        ? `🎉 Broadcast script submitted! Accuracy: ${evaluation.score}%. Great syntax!`
-        : `⚠️ Script submitted! Accuracy: ${evaluation.score}%. Check your sentence connectors.`
+        ? `🎉 Story script submitted! Accuracy: ${evaluation.score}%. Great storytelling syntax!`
+        : `⚠️ Script submitted! Accuracy: ${evaluation.score}%. Keep practicing!`
     });
 
-    fireCelebrationConfetti('Broadcast_Record');
+    fireCelebrationConfetti('VideoChallenge_Success');
     if (onComplete) onComplete(50);
   };
 
-  const stopRecording = () => {
-    if (mediaRecorderRef.current && isRecording) {
-      mediaRecorderRef.current.stop();
-      setIsRecording(false);
-    }
+  const formatTime = (secs) => {
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
   };
 
-
   return (
-    <div className="w-full max-w-3xl mx-auto space-y-4 text-slate-900 font-sans">
+    <div className="w-full max-w-5xl mx-auto space-y-3 font-sans text-slate-900 animate-in fade-in duration-200">
+      {/* ── Mode Switch & Instruction Bar ── */}
+      <div className="p-3 bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl flex items-center justify-between flex-wrap gap-2 text-xs">
+        <div className="flex items-center gap-2">
+          <span className="text-xl">📹</span>
+          <div>
+            <h3 className="font-black text-purple-950 text-sm">
+              VIDEO CHALLENGE: Record yourself retelling your story!
+            </h3>
+            <p className="text-[11px] font-medium text-purple-800">
+              Look at the camera, smile, and speak your story lines clearly (+50 XP).
+            </p>
+          </div>
+        </div>
 
-      {/* ── Goal Banner + Tier Selector ── */}
-      <div className="p-3.5 bg-purple-50 border border-purple-300 rounded-2xl space-y-2 text-xs">
-        <span className="font-black text-purple-950 block">
-          🎙️ {tierMode === 'tier1'
-            ? 'BROADCAST GOAL: Read your story aloud — perform it like a news reporter!'
-            : tierMode === 'tier2'
-            ? 'BROADCAST GOAL: Use a reporter opener, then tell your whole story!'
-            : 'BROADCAST PRO GOAL: Open strong, use transitions & sound effects!'}
-        </span>
-        <div className="flex items-center gap-1.5 pt-1 border-t border-purple-200/70 flex-wrap">
-          <span className="text-[10px] font-black uppercase text-purple-800 mr-1">Studio Mode:</span>
-          {[
-            { id: 'tier1', label: '🌱 Clean Mode',   activeClass: 'bg-purple-600 text-white', inactiveClass: 'bg-white text-purple-900 border border-purple-200 hover:bg-purple-100' },
-            { id: 'tier2', label: '✨ Reporter',      activeClass: 'bg-indigo-600 text-white', inactiveClass: 'bg-white text-indigo-900 border border-indigo-200 hover:bg-indigo-100' },
-            { id: 'tier3', label: '🎙️ Radio Pro',    activeClass: 'bg-amber-500 text-slate-950 ring-1 ring-amber-300', inactiveClass: 'bg-amber-50 text-amber-950 border border-amber-300 hover:bg-amber-100' }
-          ].map(t => (
-            <button
-              key={t.id}
-              type="button"
-              onClick={() => setTierMode(t.id)}
-              className={`px-2.5 py-1 rounded-lg text-[11px] font-black transition ${tierMode === t.id ? t.activeClass : t.inactiveClass}`}
-            >
-              {t.label}
-            </button>
-          ))}
+        {/* Toggle Mode */}
+        <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-purple-200 shadow-2xs">
+          <button
+            type="button"
+            onClick={() => { setRecordMode('video'); setRecordedMediaUrl(null); }}
+            className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+              recordMode === 'video' ? 'bg-purple-600 text-white shadow-xs' : 'text-slate-600 hover:text-purple-900'
+            }`}
+          >
+            <Camera size={13} /> Video Mode
+          </button>
+          <button
+            type="button"
+            onClick={() => { setRecordMode('audio'); stopCameraPreview(); setRecordedMediaUrl(null); }}
+            className={`px-3 py-1 rounded-lg text-xs font-black transition flex items-center gap-1.5 ${
+              recordMode === 'audio' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-indigo-900'
+            }`}
+          >
+            <Mic size={13} /> Audio Only
+          </button>
         </div>
       </div>
 
-      {/* ── Unified Story Script Card — all 4 parts visible, color-coded ── */}
-      <div className="p-5 bg-purple-50/60 rounded-3xl border-2 border-purple-200 shadow-inner space-y-3">
-        <div className="flex items-center justify-between">
-          <span className="text-[11px] font-black uppercase tracking-widest text-purple-800">
-            📖 YOUR STORY SCRIPT
-          </span>
-          <button
-            type="button"
-            onClick={() => speakText(fullScriptText)}
-            className="px-3.5 py-1.5 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-black text-xs shadow-md flex items-center gap-2 transition active:scale-95"
-          >
-            <Volume2 size={14} /> 🔊 Hear My Line
-          </button>
+      {cameraError && (
+        <div className="p-2.5 bg-amber-50 border border-amber-300 rounded-xl text-xs font-bold text-amber-900">
+          ⚠️ {cameraError}
         </div>
+      )}
 
-        {/* 4-part script — all visible simultaneously, static visual cues only */}
-        <div className="space-y-2">
-          {activeScenes.map((scene, idx) => {
-            const func = scene.narrative_function || FUNC_ORDER[idx] || 'setting';
-            const style = NARRATIVE_STYLES[func] || NARRATIVE_STYLES.setting;
-            return (
-              <div
-                key={scene.id || idx}
-                className={`flex items-baseline gap-2.5 px-3 py-2.5 rounded-xl border ${style.bg} ${style.border}`}
-              >
-                <span className="text-base leading-none shrink-0">{style.dot}</span>
-                <p className={`text-base sm:text-lg font-black leading-snug ${style.text}`}>
-                  {scene.en || scene.text || ''}
-                </p>
+      {/* ── Main 2-Column Split: Left (Camera/Video), Right (Script Teleprompter) ── */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5 items-start">
+        
+        {/* Left Column (5/12): Camera Preview / Video Playback & Controls */}
+        <div className="md:col-span-5 flex flex-col gap-2.5">
+          <div className="relative w-full aspect-[4/3] bg-slate-950 rounded-2xl overflow-hidden shadow-lg border-2 border-slate-300 flex items-center justify-center">
+            
+            {/* Live Camera View */}
+            {!recordedMediaUrl && recordMode === 'video' && (
+              <>
+                <video
+                  ref={previewVideoRef}
+                  autoPlay
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover transform -scale-x-100"
+                />
+                {!cameraActive && (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80 gap-2 bg-slate-900">
+                    <Camera size={36} className="animate-pulse text-purple-400" />
+                    <span className="text-xs font-bold">Connecting Camera...</span>
+                  </div>
+                )}
+              </>
+            )}
+
+            {/* Audio Mode Graphic View */}
+            {!recordedMediaUrl && recordMode === 'audio' && (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-indigo-950 to-slate-900 text-white space-y-3 p-4">
+                <div className={`w-20 h-20 rounded-full bg-indigo-600/30 border-2 border-indigo-400 flex items-center justify-center shadow-lg ${isRecording ? 'animate-pulse scale-110' : ''}`}>
+                  <Mic size={36} className="text-indigo-300" />
+                </div>
+                <span className="text-xs font-bold text-indigo-200">🎙️ Audio Recording Mode</span>
               </div>
-            );
-          })}
-        </div>
+            )}
 
-        {/* ─── TIER 2: 3 flat pills ─── */}
-        {tierMode === 'tier2' && (
-          <div className="pt-2.5 border-t border-purple-200/70 space-y-1.5 text-xs">
-            <span className="font-black text-purple-900 uppercase text-[10px] block">
-              ✨ Optional Reporter Openers (tap to hear, then say):
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {[
-                activeScenes[0]?.radio_starters?.[0] || "Welcome back to Corridor Watch!",
-                "SUDDENLY...",
-                "To sum it up..."
-              ].map((pill, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => speakText(pill)}
-                  className="px-2.5 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-950 font-bold rounded-lg text-[11px] shadow-xs transition active:scale-95 flex items-center gap-1"
-                >
-                  <Volume2 size={11} className="text-purple-600" /> {pill}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+            {/* Recorded Video Playback View */}
+            {recordedMediaUrl && recordedMediaType === 'video' && recordedMediaUrl !== 'typed_mode' && (
+              <video
+                src={recordedMediaUrl}
+                controls
+                autoPlay
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            )}
 
-        {/* ─── TIER 3: Radio Pro Suite ─── */}
-        {tierMode === 'tier3' && (
-          <div className="pt-3 border-t border-purple-200/70 space-y-2.5 text-xs animate-in fade-in duration-200">
-            <div className="space-y-1">
-              <span className="font-black text-purple-900 uppercase text-[10px] block">
-                🎙️ Opening Starters (pick 1):
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {(activeScenes[0]?.radio_starters || [
-                  "Welcome back to Corridor Watch!",
-                  "Believe it or not...",
-                  "Stay tuned to hear what happened...",
-                  "Breaking news from the hallway!"
-                ]).map((starter, sIdx) => (
-                  <button key={sIdx} type="button" onClick={() => speakText(starter)}
-                    className="px-2.5 py-1 bg-white hover:bg-purple-100 border border-purple-300 text-purple-950 font-bold rounded-lg text-[11px] shadow-xs transition active:scale-95 flex items-center gap-1">
-                    <Volume2 size={11} className="text-purple-600" /> {starter}
-                  </button>
-                ))}
+            {/* Recorded Audio Playback View */}
+            {recordedMediaUrl && recordedMediaType === 'audio' && (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-slate-900 text-white p-4 space-y-3">
+                <span className="text-2xl">🎧</span>
+                <span className="text-xs font-bold text-emerald-400">Audio Recorded! Listen below:</span>
+                <audio controls src={recordedMediaUrl} className="w-4/5 h-10" />
               </div>
-            </div>
+            )}
 
-            <div className="space-y-1">
-              <span className="font-black text-indigo-900 uppercase text-[10px] block">
-                ✨ Transition Pills (weave in anywhere):
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {["SUDDENLY...", "Wait for it...", "Right then and there!", "To sum it up...", "Let's find out!"].map((m, i) => (
-                  <button key={i} type="button" onClick={() => speakText(m)}
-                    className="px-2 py-0.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 font-black rounded-md text-[10px] transition active:scale-95">
-                    ⚡ {m}
-                  </button>
-                ))}
+            {/* Recording Pulse Overlay */}
+            {isRecording && (
+              <div className="absolute top-3 left-3 px-2.5 py-1 bg-rose-600 text-white rounded-lg text-[10px] font-black tracking-wider flex items-center gap-1.5 shadow-md animate-pulse">
+                <span className="w-2 h-2 rounded-full bg-white animate-ping" />
+                REC {formatTime(recordingSeconds)}
               </div>
-            </div>
+            )}
 
-            <div className="flex items-center justify-between flex-wrap gap-1 pt-1 border-t border-purple-100">
-              <span className="font-black text-purple-900 uppercase text-[10px]">🎛️ Sound Board SFX:</span>
-              <div className="flex items-center gap-1.5 flex-wrap">
-                {[
-                  { label: '⏸️ Pause 2s', text: 'Pause for 2 seconds', cls: 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-300' },
-                  { label: '👟 Footsteps', text: 'Footsteps', cls: 'bg-amber-100 hover:bg-amber-200 text-amber-950 border-amber-300' },
-                  { label: '⚠️ Uh-Oh!', text: 'Uh-oh! Be careful!', cls: 'bg-rose-100 hover:bg-rose-200 text-rose-950 border-rose-300' },
-                  { label: '🔔 Bell Ring', text: 'School bell', cls: 'bg-blue-100 hover:bg-blue-200 text-blue-950 border-blue-300' }
-                ].map((sfx, i) => (
-                  <button key={i} type="button" onClick={() => speakText(sfx.text)}
-                    className={`px-2.5 py-1 border font-bold rounded-lg text-[11px] flex items-center gap-1 shadow-xs active:scale-95 ${sfx.cls}`}>
-                    {sfx.label}
-                  </button>
-                ))}
+            {/* 3-2-1 Countdown Overlay */}
+            {countdown !== null && (
+              <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center z-20">
+                <div className="text-7xl font-black text-amber-400 animate-bounce scale-125">
+                  {countdown}
+                </div>
               </div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* ── Single Record Dock ── */}
-      <div className="p-6 bg-slate-50 rounded-3xl border-2 border-slate-200 text-center space-y-4">
-        {!isRecording ? (
-          <button
-            type="button"
-            onClick={startRecording}
-            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition hover:scale-105 active:scale-95"
-          >
-            <Mic size={22} className="animate-pulse" /> 🎙️ RECORD MY BROADCAST
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={stopRecording}
-            className="px-8 py-4 bg-rose-600 hover:bg-rose-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-3 transition animate-bounce"
-          >
-            <Square size={22} fill="currentColor" /> ⏹️ STOP — DONE!
-          </button>
-        )}
-
-        {recordedAudioUrl && (
-          <div className="pt-2 flex items-center justify-center gap-4 flex-wrap">
-            <audio controls src={recordedAudioUrl} className="h-10 rounded-xl" />
-            <button
-              type="button"
-              onClick={startRecording}
-              className="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-xl text-xs font-black flex items-center gap-1.5"
-            >
-              <RefreshCw size={14} /> Re-record
-            </button>
-          </div>
-        )}
-
-        {evalResult && (
-          <div className={`p-4 rounded-2xl border ${
-            evalResult.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'
-          } text-xs font-black text-left space-y-1.5 max-w-xl mx-auto animate-in fade-in`}>
-            <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 size={16} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
-                {evalResult.feedback}
-              </span>
-              <span className="px-2 py-0.5 bg-white rounded-md border text-[11px]">
-                Score: {evalResult.score}%
-              </span>
-            </div>
-            {spokenTranscript && (
-              <p className="text-[11px] font-medium text-slate-700 italic">
-                You spoke: "{spokenTranscript}"
-              </p>
             )}
           </div>
-        )}
 
-        {feedback && !evalResult && (
-          <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-2xl text-emerald-900 text-xs font-black flex items-center justify-center gap-3 animate-in fade-in">
-            <CheckCircle2 size={20} className="text-emerald-600 shrink-0" />
-            <span>{feedback.message}</span>
+          {/* Action Buttons Dock */}
+          <div className="space-y-2">
+            {!isRecording && !recordedMediaUrl && (
+              <button
+                type="button"
+                onClick={initiateRecording}
+                disabled={countdown !== null}
+                className="w-full py-3.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-2xl font-black text-sm shadow-lg active:scale-98 transition flex items-center justify-center gap-2"
+              >
+                {recordMode === 'video' ? <Video size={18} /> : <Mic size={18} />}
+                {recordMode === 'video' ? '🎬 START VIDEO CHALLENGE' : '🎙️ START AUDIO RECORDING'}
+              </button>
+            )}
+
+            {isRecording && (
+              <button
+                type="button"
+                onClick={stopRecording}
+                className="w-full py-3.5 bg-rose-600 hover:bg-rose-500 text-white rounded-2xl font-black text-sm shadow-xl active:scale-98 transition flex items-center justify-center gap-2 animate-bounce"
+              >
+                <Square size={18} fill="currentColor" /> ⏹️ FINISH & REVIEW ({formatTime(recordingSeconds)})
+              </button>
+            )}
+
+            {recordedMediaUrl && (
+              <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={handleRetake}
+                    className="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5"
+                  >
+                    <RefreshCw size={13} /> Retake Video
+                  </button>
+                  {recordedMediaUrl !== 'typed_mode' && (
+                    <a
+                      href={recordedMediaUrl}
+                      download={`engquest_story_video_${Date.now()}.webm`}
+                      className="py-2.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-900 rounded-xl text-xs font-black transition flex items-center justify-center gap-1.5 text-center"
+                    >
+                      <Download size={13} /> Save Clip 💾
+                    </a>
+                  )}
+                </div>
+
+                <div className="py-2.5 bg-emerald-600 text-white font-black text-xs rounded-xl text-center shadow-md flex items-center justify-center gap-1.5">
+                  <CheckCircle2 size={15} /> Video Recorded! +50 XP Awarded ⭐
+                </div>
+              </div>
+            )}
           </div>
-        )}
-
-        {/* Typing Fallback */}
-        <div className="max-w-xl mx-auto pt-1 text-left">
-          <MicFallbackInput
-            onSubmit={handleManualSubmit}
-            placeholder="Type your story broadcast script here..."
-            buttonLabel="Submit Broadcast Script →"
-            color="purple"
-          />
         </div>
 
-        {!recordedAudioUrl && !isRecording && (
-          <p className="text-[11px] text-slate-400 font-medium">
-            Read your whole story in one go — you can re-record as many times as you want!
-          </p>
-        )}
+        {/* Right Column (7/12): Story Script Teleprompter */}
+        <div className="md:col-span-7 flex flex-col gap-2.5 bg-white p-3.5 rounded-3xl border border-slate-200 shadow-sm">
+          <div className="flex items-center justify-between pb-1 border-b border-slate-100">
+            <div className="flex items-center gap-1.5">
+              <span className="text-sm">📜</span>
+              <span className="text-xs font-black uppercase text-purple-900 tracking-wider">
+                Story Teleprompter (Read Aloud)
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => speakText(fullScriptText)}
+              className="px-3 py-1 bg-purple-100 hover:bg-purple-200 text-purple-950 font-bold rounded-lg text-[11px] flex items-center gap-1 transition active:scale-95"
+            >
+              <Volume2 size={12} className="text-purple-700" /> Listen Full Story
+            </button>
+          </div>
+
+          {/* 4 Story Scenes */}
+          <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
+            {activeScenes.map((scene, idx) => {
+              const func = scene.narrative_function || FUNC_ORDER[idx] || 'setting';
+              const style = NARRATIVE_STYLES[func] || NARRATIVE_STYLES.setting;
+              const sceneText = scene.en || scene.text || '';
+
+              return (
+                <div
+                  key={scene.id || idx}
+                  className={`p-2.5 rounded-xl border ${style.bg} ${style.border} space-y-1`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className={`px-2 py-0.5 rounded-md text-[9.5px] font-black uppercase tracking-wider ${style.badge}`}>
+                      {style.label}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => speakText(sceneText)}
+                      className="p-1 hover:bg-white/80 rounded-md text-slate-600 transition"
+                      title="Hear this sentence"
+                    >
+                      <Volume2 size={13} />
+                    </button>
+                  </div>
+                  <p className={`text-xs sm:text-sm font-bold leading-snug ${style.text}`}>
+                    {sceneText}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Evaluation / Feedback banner */}
+          {evalResult && (
+            <div className={`p-3 rounded-2xl border ${
+              evalResult.isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'
+            } text-xs font-black space-y-1 animate-in fade-in`}>
+              <div className="flex items-center justify-between">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 size={15} className={evalResult.isCorrect ? "text-emerald-600" : "text-amber-600"} />
+                  {evalResult.feedback}
+                </span>
+                <span className="px-2 py-0.5 bg-white rounded-md border text-[10px]">
+                  Score: {evalResult.score}%
+                </span>
+              </div>
+              {spokenTranscript && (
+                <p className="text-[10.5px] font-medium text-slate-700 italic">
+                  Recognized speech: "{spokenTranscript}"
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* Typing fallback */}
+          <div className="pt-1">
+            <MicFallbackInput
+              onSubmit={handleManualSubmit}
+              placeholder="Or type your story script here..."
+              buttonLabel="Submit Script →"
+              color="purple"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-

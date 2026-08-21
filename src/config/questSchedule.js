@@ -61,7 +61,7 @@ export const QUEST_SCHEDULE = [
     label: '✍️ Creator Studio',
     quests: [
       { id: 'story_writer',     label: 'Story Writer',    zone: 3, gearIndex: null, station: 'writing',     icon: '✏️', minutes: 10 },
-      { id: 'broadcast_studio', label: 'Hot Mic',         zone: 3, gearIndex: null, station: 'broadcast',   icon: '📻', minutes: 7 },
+      { id: 'broadcast_studio', label: 'Video Challenge', zone: 3, gearIndex: null, station: 'broadcast',   icon: '📹', minutes: 7 },
       { id: 'info_exchange',    label: 'Info Exchange',   zone: 3, gearIndex: null, station: null,          icon: '🔄', minutes: 7 },
     ],
   },

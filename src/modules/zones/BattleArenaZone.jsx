@@ -72,16 +72,18 @@ export default function BattleArenaZone({ data, weekNumber = 33, forcedStation =
 
   return (
     <div className="w-full max-w-5xl mx-auto space-y-5 animate-in fade-in duration-300 font-sans">
-      {/* Slim Session XP bar */}
-      <div className="flex items-center justify-between px-4 py-2.5 bg-amber-50 border border-amber-300 rounded-2xl text-xs shadow-sm">
-        <span className="font-black text-amber-950 flex items-center gap-1.5"><Swords size={14} className="text-amber-600" /> ⚔️ BATTLE ARENA</span>
-        <div className="flex items-center gap-2">
-          <span className="text-amber-700 font-bold">Session XP:</span>
-          <div className="px-3 py-1 bg-amber-500 text-slate-950 rounded-xl font-black flex items-center gap-1 shadow-sm">
-            <Trophy size={12} /> +{totalXP} XP
+      {/* Slim Session XP bar — only in full zone mode */}
+      {!hideStationTabs && (
+        <div className="flex items-center justify-between px-4 py-2.5 bg-amber-50 border border-amber-300 rounded-2xl text-xs shadow-sm">
+          <span className="font-black text-amber-950 flex items-center gap-1.5"><Swords size={14} className="text-amber-600" /> ⚔️ BATTLE ARENA</span>
+          <div className="flex items-center gap-2">
+            <span className="text-amber-700 font-bold">Session XP:</span>
+            <div className="px-3 py-1 bg-amber-500 text-slate-950 rounded-xl font-black flex items-center gap-1 shadow-sm">
+              <Trophy size={12} /> +{totalXP} XP
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
 
       {/* Vibrant Multi-Color Subtabs Selector — hidden in task mode */}

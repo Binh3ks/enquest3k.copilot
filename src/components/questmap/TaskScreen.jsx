@@ -108,11 +108,11 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <span className="ts-task-name font-black">{taskInfo.label}</span>
         </div>
         
-        {/* Gamification Progress & Best Record */}
+        {/* Unified XP Reward & Time Badge */}
         <div className="flex items-center gap-2.5">
-          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-300 rounded-xl text-xs font-black text-amber-900 shadow-2xs">
+          <div className="px-3 py-1 bg-amber-50 border border-amber-300 text-amber-900 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-2xs">
             <Trophy size={13} className="text-amber-500" />
-            <span>{bestScore ? `Best: ${bestScore} PTS` : '⚡ Challenge Mode'}</span>
+            <span>+{taskInfo.xp || 50} XP</span>
           </div>
           <div className="ts-task-time">
             <Clock size={12} />
