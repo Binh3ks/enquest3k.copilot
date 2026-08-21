@@ -522,9 +522,9 @@
 /* Floating Duolingo-style Mascot HUD (Top Right, Animated, Interactive) */
 .qm3d-floating-mascot-hud {
   position: absolute;
-  top: 72px;
-  right: 14px;
-  z-index: 30;
+  top: 12px;
+  right: 12px;
+  z-index: 25;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -537,8 +537,8 @@
 
 @media (min-width: 768px) {
   .qm3d-floating-mascot-hud {
-    top: 76px;
-    right: 28px;
+    top: 14px;
+    right: 16px;
   }
 }
 
@@ -796,6 +796,18 @@
   animation: qm3d-fade-in 0.2s ease-out;
 }
 
+@media (min-width: 640px) {
+  .qm3d-mobile-drawer-backdrop {
+    align-items: center;
+    padding: 20px;
+  }
+  .qm3d-mobile-drawer {
+    border-radius: 28px !important;
+    padding: 22px 24px !important;
+    animation: qm3d-pop-center 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  }
+}
+
 .qm3d-mobile-drawer {
   width: 100%;
   max-width: 520px;
@@ -805,6 +817,11 @@
   padding: 18px 20px max(28px, env(safe-area-inset-bottom));
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
   animation: qm3d-slide-up 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes qm3d-pop-center {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .qm3d-drawer-header {

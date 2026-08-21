@@ -331,9 +331,11 @@ export function SVGLineMatcher({ customData, onComplete }) {
                       : 'bg-white text-slate-900 border-slate-300 hover:border-indigo-400 hover:bg-indigo-50'
                   }`}
                 >
-                  <span className="truncate">{name.text}</span>
+                  <span className="text-[10px] sm:text-xs font-black break-words leading-tight text-center">
+                    {name.text}
+                  </span>
                   {name.isExample && (
-                    <span className="text-[9px] bg-amber-500 text-white px-1 py-0.2 rounded uppercase font-black">
+                    <span className="text-[9px] bg-amber-500 text-white px-1 py-0.2 rounded uppercase font-black shrink-0">
                       Ex
                     </span>
                   )}

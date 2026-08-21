@@ -242,10 +242,8 @@ const App = () => {
       <Route path="/" element={<RootRedirect />} />
       <Route path="/placement" element={<PlacementTest />} />
       <Route path="/placementtest" element={<PlacementTest />} />
-      <Route path="/placementest" element={<PlacementTest />} />
-      <Route path="/dashboard" element={<ParentDashboard />} />
-      <Route path="/dashboard/:weekId" element={<ParentDashboard />} />
       <Route path="/parent/children" element={<ParentChildrenPage />} />
+      <Route path="/week/:weekId" element={<QuestMapRoute />} />
       <Route path="/week/:weekId/hub/:hubId" element={<QuestMapRoute />} />
       <Route path="/week/:weekId/task/:taskId" element={<TaskRoute />} />
       <Route path="/week/:weekId/:tabKey" element={<MainLayout />} />

@@ -104,9 +104,9 @@ const STATIONS = [
     color: '#ef4444',
     glowColor: 'rgba(239, 68, 68, 0.65)',
     bgGradient: 'radial-gradient(circle at 35% 35%, #fee2e2 0%, #ef4444 70%, #b91c1c 100%)',
-    position:       { x: 82, y: 26 },
+    position:       { x: 82, y: 34 },
     positionMobile: { x: 25, y: 15 },
-    taskPositions:       [{ x: 72, y: 12 }, { x: 84, y: 8 }, { x: 93, y: 18 }],
+    taskPositions:       [{ x: 70, y: 44 }, { x: 82, y: 48 }, { x: 92, y: 44 }],
     taskPositionsMobile: [{ x: 55, y: 12 }, { x: 70, y: 15 }, { x: 85, y: 18 }],
   },
 ];
@@ -479,8 +479,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         );
       })}
 
-      {/* Mobile Bottom Task Drawer */}
-      {isPortrait && expandedStation !== null && STATIONS[expandedStation] && (
+      {/* Universal Task Drawer (Mobile bottom sheet / Desktop centered card) */}
+      {expandedStation !== null && STATIONS[expandedStation] && (
         <div className="qm3d-mobile-drawer-backdrop" onClick={() => setExpandedStation(null)}>
           <div className="qm3d-mobile-drawer" onClick={e => e.stopPropagation()}>
             <div className="qm3d-drawer-header">

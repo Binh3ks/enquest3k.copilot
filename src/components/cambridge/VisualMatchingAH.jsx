@@ -279,8 +279,8 @@ export function VisualMatchingAH({ customData, onComplete }) {
                       className="w-full h-full object-cover" 
                     />
                   </div>
-                  <span className="text-[11px] font-bold text-slate-800 block text-center leading-tight truncate">
-                    {card.name}
+                  <span className="text-[10px] sm:text-xs font-bold text-slate-800 block text-center leading-snug break-words min-h-[28px] flex items-center justify-center">
+                    {card.location_name || card.name}
                   </span>
                 </button>
               );

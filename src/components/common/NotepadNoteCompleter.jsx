@@ -118,27 +118,25 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
             const isCorrect = isSubmitted && (userAns === targetAns || (userAns && targetAns.includes(userAns)));
 
             return (
-              <div key={note.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-2.5 bg-white rounded-xl border border-amber-200 gap-1.5 shadow-2xs">
-                <div className="flex items-center gap-2 flex-1">
+              <div key={note.id} className="p-2 sm:p-2.5 bg-white rounded-xl border border-amber-200 shadow-2xs space-y-1">
+                <div className="flex items-center gap-1.5 flex-wrap">
                   <span className="w-5 h-5 rounded-md bg-amber-200 text-amber-950 font-black text-[11px] flex items-center justify-center shrink-0">
                     {index + 1}
                   </span>
-                  <div>
-                    <span className="text-xs font-black text-amber-950">
-                      {note.label}:
-                    </span>
-                    <span className="text-[11px] text-amber-700 ml-1.5 italic font-medium">({note.hint})</span>
-                  </div>
+                  <span className="text-xs font-black text-amber-950">
+                    {note.label}:
+                  </span>
+                  <span className="text-[11px] text-amber-700 italic font-medium">({note.hint})</span>
                 </div>
 
-                <div className="flex items-center gap-1.5 justify-end">
+                <div className="flex items-center gap-1.5 w-full">
                   <input
                     type="text"
                     disabled={isSubmitted}
                     value={answers[note.id] || ''}
                     onChange={(e) => setAnswers({ ...answers, [note.id]: e.target.value })}
-                    placeholder="Type note..."
-                    className={`px-2.5 py-1 rounded-lg border font-bold text-xs text-slate-900 w-36 sm:w-48 focus:outline-none transition-all ${
+                    placeholder="Type note answer here..."
+                    className={`flex-1 w-full px-3 py-1.5 rounded-lg border font-bold text-xs sm:text-sm text-slate-900 focus:outline-none transition-all ${
                       isSubmitted
                         ? isCorrect
                           ? 'border-emerald-500 bg-emerald-50 text-emerald-950'
@@ -148,11 +146,11 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
                   />
                   {isSubmitted && (
                     isCorrect ? (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+                      <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                     ) : (
-                      <div className="flex items-center gap-0.5">
-                        <AlertCircle className="w-4 h-4 text-rose-500 flex-shrink-0" />
-                        <span className="text-[10px] font-bold text-rose-600">({note.target})</span>
+                      <div className="flex items-center gap-0.5 shrink-0">
+                        <AlertCircle className="w-5 h-5 text-rose-500 flex-shrink-0" />
+                        <span className="text-[11px] font-bold text-rose-600">({note.target})</span>
                       </div>
                     )
                   )}
