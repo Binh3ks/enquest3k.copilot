@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, Map, Trophy, BookOpen, FileText, Settings, LogOut, Flame, Shield, Sparkles, ChevronRight, CheckCircle2, Lock, Printer, Award, Users } from 'lucide-react';
+import { X, Map, Trophy, BookOpen, FileText, Settings, LogOut, Flame, Shield, Sparkles, ChevronRight, CheckCircle2, Lock, Printer, Award, Users, Gamepad2, BatteryCharging } from 'lucide-react';
 import { useUserStore } from '../../stores/useUserStore';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import LexioMascot from '../mascot/LexioMascot';
+import useArcadeStore, { getUnlockedGameCount } from '../../stores/useArcadeStore';
+import ArcadeModal from '../games/ArcadeModal';
 import './QuestSidebar.css';
 
 const TOTAL_TRIPS = 36; // Current syllabus length
@@ -12,6 +14,10 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
   const navigate = useNavigate();
   const [showTripModal, setShowTripModal] = useState(false);
   const [showCoopModal, setShowCoopModal] = useState(false);
+  const [showArcade, setShowArcade] = useState(false);
+
+  const { playEnergySeconds, studySeconds } = useArcadeStore();
+  const unlockedGames = getUnlockedGameCount(currentWeekId);
 
   const currentUser = useUserStore(state => state.currentUser) || { displayName: 'Young Explorer', role: 'student' };
   const userXP = useUserStore(state => state.xp) || 1250;
@@ -20,6 +26,10 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
 
   const STAFF_ROLES = ['admin', 'super_admin', 'teacher', 'team_leader', 'center_director'];
   const isTeacher = STAFF_ROLES.includes(currentUser?.role);
+  const isOwner = currentUser?.role === 'owner';
+
+  const arcadeReady = isOwner || playEnergySeconds > 0;
+  const arcadeFormatEnergy = (s) => `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
 
   const handleSelectTrip = (tripNum) => {
     setShowTripModal(false);
@@ -147,6 +157,42 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
             <ChevronRight size={16} className="text-slate-400" />
           </button>
 
+          {/* Arcade Room */}
+          <button
+            className="qs-nav-item"
+            onClick={() => {
+              onClose();
+              setShowArcade(true);
+            }}
+            style={{ position: 'relative' }}
+          >
+            <div className={`qs-nav-icon ${arcadeReady ? 'bg-blue-100 text-blue-700' : 'bg-slate-100 text-slate-500'}`}>
+              <Gamepad2 size={18} />
+            </div>
+            <div className="qs-nav-text">
+              <div className="qs-nav-title" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                🕹️ Arcade Room
+                {arcadeReady && (
+                  <span style={{ fontSize: '9px', background: '#60a5fa', color: '#fff', borderRadius: '8px', padding: '1px 6px', fontWeight: 900, letterSpacing: '0.03em' }}>
+                    READY
+                  </span>
+                )}
+              </div>
+              <div className="qs-nav-desc">
+                {isOwner
+                  ? `Owner Mode · ${unlockedGames}/12 games`
+                  : arcadeReady
+                  ? `Battery: ${arcadeFormatEnergy(playEnergySeconds)} · ${unlockedGames} games`
+                  : `Study 15m to unlock · ${unlockedGames} games available`
+                }
+              </div>
+            </div>
+            {arcadeReady
+              ? <BatteryCharging size={16} className="text-blue-400" style={{ flexShrink: 0 }} />
+              : <Lock size={14} className="text-slate-400" style={{ flexShrink: 0 }} />
+            }
+          </button>
+
           {/* Teacher's Panel (Only for Staff / Teacher / Owner) */}
           {isTeacher && (
             <div className="qs-teacher-section">
@@ -206,6 +252,14 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
           </button>
         </div>
       </aside>
+
+      {/* Arcade Modal — accessible from anywhere in the app */}
+      <ArcadeModal
+        isOpen={showArcade}
+        weekNumber={currentWeekId}
+        ownerBypass={isOwner}
+        onClose={() => setShowArcade(false)}
+      />
 
       {/* Trip Selector Modal */}
       {showTripModal && (

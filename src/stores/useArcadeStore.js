@@ -22,19 +22,20 @@ export const getUnlockedGameCount = (weekNumber = 33) => {
 };
 
 export const ARCADE_GAME_CATALOG = [
-  { id: 'bubble_pop', num: 1, title: 'Bubble Pop Dash', icon: '🫧', minWeek: 1, color: 'from-cyan-500 to-blue-600', desc: 'Pop floating vocab bubbles before they fly away!' },
-  { id: 'meteor_smasher', num: 2, title: 'Vocab Meteor Smasher', icon: '🛸', minWeek: 11, color: 'from-purple-600 to-indigo-600', desc: 'Blast incoming asteroids with Lexio laser cannon!' },
-  { id: 'physics_drift', num: 3, title: 'Physics Drift Race', icon: '🚗', minWeek: 21, color: 'from-emerald-500 to-teal-600', desc: 'Adjust friction & brake in time to beat the track!' },
-  { id: 'chunk_catapult', num: 4, title: 'Chunk Catapult', icon: '🧩', minWeek: 31, color: 'from-amber-500 to-orange-600', desc: 'Launch word chunks in the correct grammar order!' },
-  { id: 'sound_sniper', num: 5, title: 'Sound Sniper', icon: '🏹', minWeek: 41, color: 'from-rose-500 to-pink-600', desc: 'Target tricky homophones and phonetic minimal pairs.' },
-  { id: 'castle_defense', num: 6, title: 'Castle Tower Defense', icon: '🏰', minWeek: 51, color: 'from-blue-600 to-slate-800', desc: 'Defend the fortress using antonyms and synonyms.' },
-  { id: 'lightning_connect', num: 7, title: 'Lightning Connect', icon: '⚡', minWeek: 61, color: 'from-yellow-400 to-amber-500', desc: 'Chain electric lightning through semantic word webs.' },
-  { id: 'potion_lab', num: 8, title: 'Potion Chemistry Lab', icon: '🧪', minWeek: 71, color: 'from-teal-400 to-emerald-600', desc: 'Mix nouns, verbs and adverbs to brew magic potions.' },
-  { id: 'temple_runner', num: 9, title: 'Temple Runner Chunks', icon: '🏃', minWeek: 81, color: 'from-orange-600 to-red-700', desc: 'Dash past ancient obstacles choosing sentence linkers.' },
-  { id: 'galaxy_orbit', num: 10, title: 'Galaxy Word Orbit', icon: '🌌', minWeek: 91, color: 'from-indigo-700 to-purple-900', desc: 'Align cosmic planets by syllable stress and meter.' },
-  { id: 'dragon_duel', num: 11, title: 'Dragon Spell Duel', icon: '🐉', minWeek: 101, color: 'from-red-600 to-amber-700', desc: 'Cast speed spelling spells to defeat the shadow dragon.' },
-  { id: 'grand_arena', num: 12, title: 'Grand Master Arena', icon: '👑', minWeek: 111, color: 'from-amber-400 via-purple-600 to-indigo-800', desc: 'The ultimate 4-skills boss speed challenge.' }
+  { id: 'bubble_pop',      num: 1,  title: 'Bubble Pop Dash',       icon: '🫧', minWeek: 1,   colorA: '#06b6d4', colorB: '#3b82f6', desc: 'Pop flying vocab bubbles before they escape!' },
+  { id: 'meteor_smasher',  num: 2,  title: 'Vocab Meteor Smasher',  icon: '🛸', minWeek: 11,  colorA: '#7c3aed', colorB: '#4f46e5', desc: 'Swipe-laser incoming meteors with the right word!' },
+  { id: 'physics_drift',   num: 3,  title: 'Physics Drift Race',    icon: '🚗', minWeek: 21,  colorA: '#059669', colorB: '#0d9488', desc: 'Navigate obstacles using CLIL science knowledge!' },
+  { id: 'chunk_catapult',  num: 4,  title: 'Chunk Catapult',        icon: '🧩', minWeek: 31,  colorA: '#d97706', colorB: '#ea580c', desc: 'Drag grammar chunks into exact sentence order!' },
+  { id: 'sound_sniper',    num: 5,  title: 'Sound Sniper',          icon: '🏹', minWeek: 41,  colorA: '#e11d48', colorB: '#db2777', desc: 'Aim & fire at minimal pair pronunciation targets.' },
+  { id: 'castle_defense',  num: 6,  title: 'Castle Tower Defense',  icon: '🏰', minWeek: 51,  colorA: '#1d4ed8', colorB: '#1e293b', desc: 'Place towers to stop antonym/synonym word armies.' },
+  { id: 'lightning_connect', num: 7, title: 'Lightning Connect',    icon: '⚡', minWeek: 61,  colorA: '#ca8a04', colorB: '#b45309', desc: 'Chain lightning through semantic word networks.' },
+  { id: 'potion_lab',      num: 8,  title: 'Potion Chemistry Lab',  icon: '🧪', minWeek: 71,  colorA: '#0d9488', colorB: '#059669', desc: 'Mix prefix/root/suffix to brew perfect word potions.' },
+  { id: 'temple_runner',   num: 9,  title: 'Temple Runner Chunks',  icon: '🏃', minWeek: 81,  colorA: '#c2410c', colorB: '#b91c1c', desc: 'Sprint through gates choosing the right linkers.' },
+  { id: 'galaxy_orbit',    num: 10, title: 'Galaxy Word Orbit',     icon: '🌌', minWeek: 91,  colorA: '#4338ca', colorB: '#7e22ce', desc: 'Hold planets matching syllable stress patterns.' },
+  { id: 'dragon_duel',     num: 11, title: 'Dragon Spell Duel',     icon: '🐉', minWeek: 101, colorA: '#b91c1c', colorB: '#92400e', desc: 'Type-battle the shadow dragon with perfect spelling.' },
+  { id: 'grand_arena',     num: 12, title: 'Grand Master Arena',    icon: '👑', minWeek: 111, colorA: '#b45309', colorB: '#7e22ce', desc: 'The ultimate 4-skills boss battle championship.' }
 ];
+
 
 export const useArcadeStore = create(
   persist(

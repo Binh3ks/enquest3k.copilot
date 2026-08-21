@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-import { X, Play, Lock, BatteryCharging, Battery, Trophy, Sparkles, ArrowLeft, RotateCcw } from 'lucide-react';
+import { X, BatteryCharging, Battery, Trophy, Lock, ArrowLeft } from 'lucide-react';
 import useArcadeStore, { ARCADE_GAME_CATALOG, getUnlockedGameCount, getFocusCycleSeconds } from '../../stores/useArcadeStore';
 import BubblePopGame from './BubblePopGame';
 import MeteorSmasherGame from './MeteorSmasherGame';
 import PhysicsDriftGame from './PhysicsDriftGame';
 import CatapultChunkGame from './CatapultChunkGame';
 
-export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose }) {
+export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, ownerBypass = false }) {
   const {
     studySeconds,
     playEnergySeconds,
-    activeGameId,
-    setActiveGame,
     highScores
   } = useArcadeStore();
 
   const [selectedGame, setSelectedGame] = useState(null);
 
-  const unlockedCount = getUnlockedGameCount(weekNumber);
+  const unlockedCount = ownerBypass ? 12 : getUnlockedGameCount(weekNumber);
   const focusCycleReq = getFocusCycleSeconds(weekNumber);
-  const isBatteryCharged = playEnergySeconds > 0;
+  const isBatteryCharged = ownerBypass || playEnergySeconds > 0;
 
   const formatEnergy = (secs) => {
     const m = Math.floor(secs / 60);
@@ -27,168 +25,275 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose }
     return `${m}:${s.toString().padStart(2, '0')}`;
   };
 
+  const handlePlayGame = (gameId) => {
+    if (!isBatteryCharged && !ownerBypass) return;
+    setSelectedGame(gameId);
+  };
+
   if (!isOpen) return null;
 
+  // When actively playing a game → TRUE FULLSCREEN (covers everything)
+  if (selectedGame) {
+    return (
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 9999,
+          background: '#0f1117',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        {/* Fullscreen header bar */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '10px 16px',
+          background: 'rgba(255,255,255,0.04)',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          flexShrink: 0,
+        }}>
+          <button
+            type="button"
+            onClick={() => setSelectedGame(null)}
+            style={{
+              display: 'flex', alignItems: 'center', gap: '6px',
+              padding: '6px 12px', borderRadius: '10px',
+              background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+              color: '#cbd5e1', fontSize: '12px', fontWeight: 800, cursor: 'pointer'
+            }}
+          >
+            <ArrowLeft size={14} /> Back to Arcade
+          </button>
+          <div style={{
+            fontSize: '11px', fontWeight: 800, color: '#94a3b8',
+            display: 'flex', alignItems: 'center', gap: '6px'
+          }}>
+            <span>🕹️ ARCADE</span>
+            {!ownerBypass && (
+              <span style={{
+                background: 'rgba(52,211,153,0.15)', border: '1px solid rgba(52,211,153,0.3)',
+                color: '#34d399', borderRadius: '8px', padding: '2px 8px'
+              }}>
+                🔋 {formatEnergy(playEnergySeconds)} remaining
+              </span>
+            )}
+            {ownerBypass && (
+              <span style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', color: '#fbbf24', borderRadius: '8px', padding: '2px 8px' }}>
+                👑 Owner Mode
+              </span>
+            )}
+          </div>
+          <button type="button" onClick={onClose} style={{ padding: '6px', borderRadius: '8px', background: 'rgba(255,255,255,0.06)', border: 'none', color: '#64748b', cursor: 'pointer' }}>
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* Full-height game area */}
+        <div style={{ flex: 1, overflow: 'hidden', padding: '12px' }}>
+          {selectedGame === 'bubble_pop' && <BubblePopGame onComplete={() => {}} isStandalone={ownerBypass} />}
+          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame onComplete={() => {}} isStandalone={ownerBypass} />}
+          {selectedGame === 'physics_drift' && <PhysicsDriftGame onComplete={() => {}} isStandalone={ownerBypass} />}
+          {selectedGame === 'chunk_catapult' && <CatapultChunkGame onComplete={() => {}} isStandalone={ownerBypass} />}
+        </div>
+      </div>
+    );
+  }
+
+  // Game catalog view (modal overlay, softer design)
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 backdrop-blur-md p-4 animate-in fade-in duration-200 font-sans">
-      <div className="bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 border-4 border-cyan-500/40 rounded-3xl p-5 sm:p-7 max-w-4xl w-full text-white shadow-2xl relative overflow-hidden flex flex-col justify-between max-h-[92vh]">
-        
-        {/* Arcade Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-cyan-500/30">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-400 to-blue-600 text-slate-950 flex items-center justify-center text-xl font-black shadow-lg shadow-cyan-500/30">
-              🕹️
-            </div>
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 9000,
+      background: 'rgba(15,17,23,0.78)',
+      backdropFilter: 'blur(8px)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      padding: '16px',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      <div style={{
+        background: '#1e2035',
+        border: '1.5px solid #3d4170',
+        borderRadius: '20px',
+        padding: '22px 24px',
+        maxWidth: '860px', width: '100%',
+        maxHeight: '90vh', overflow: 'hidden',
+        display: 'flex', flexDirection: 'column',
+        gap: '16px',
+        color: '#e2e8f0',
+        boxShadow: '0 25px 60px rgba(0,0,0,0.5)',
+      }}>
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{
+              width: '38px', height: '38px', borderRadius: '12px',
+              background: 'linear-gradient(135deg, #60a5fa, #818cf8)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '20px', boxShadow: '0 4px 12px rgba(96,165,250,0.25)'
+            }}>🕹️</div>
             <div>
-              <h3 className="text-base sm:text-lg font-black text-cyan-300 uppercase tracking-wider flex items-center gap-2">
+              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 900, color: '#e2e8f0', letterSpacing: '0.02em' }}>
                 ENGQUEST ARCADE ROOM
-                <span className="text-[10px] bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded-full border border-cyan-500/40">
-                  {unlockedCount}/12 UNLOCKED
+                <span style={{
+                  marginLeft: '8px', fontSize: '10px', background: 'rgba(96,165,250,0.15)',
+                  color: '#60a5fa', border: '1px solid rgba(96,165,250,0.3)',
+                  borderRadius: '8px', padding: '2px 8px', fontWeight: 800
+                }}>
+                  {ownerBypass ? '12' : unlockedCount}/12 UNLOCKED
                 </span>
+                {ownerBypass && (
+                  <span style={{
+                    marginLeft: '6px', fontSize: '10px', background: 'rgba(251,191,36,0.15)',
+                    color: '#fbbf24', border: '1px solid rgba(251,191,36,0.3)',
+                    borderRadius: '8px', padding: '2px 8px', fontWeight: 800
+                  }}>👑 OWNER</span>
+                )}
               </h3>
-              <p className="text-xs text-indigo-300">
-                1-Minute Micro-Break Games · Data-Driven from Week {weekNumber}
+              <p style={{ margin: '2px 0 0', fontSize: '11px', color: '#64748b' }}>
+                1-Minute Micro-Break Games · Trip {weekNumber} Content
               </p>
             </div>
           </div>
 
-          {/* Arcade Battery Status */}
-          <div className="flex items-center gap-3">
-            <div className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-xs font-black ${
-              isBatteryCharged
-                ? 'bg-emerald-500/20 border-emerald-400 text-emerald-300 shadow-emerald-500/20'
-                : 'bg-rose-500/20 border-rose-400 text-rose-300'
-            }`}>
-              {isBatteryCharged ? <BatteryCharging size={16} className="text-emerald-400 animate-pulse" /> : <Battery size={16} />}
-              <span>
-                {isBatteryCharged
-                  ? `PLAY BATTERY: ${formatEnergy(playEnergySeconds)} (Max 3m)`
-                  : `BATTERY EMPTY (${Math.round((studySeconds / focusCycleReq) * 100)}% charged)`}
-              </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '6px',
+              padding: '6px 12px', borderRadius: '10px', fontSize: '12px', fontWeight: 800,
+              background: isBatteryCharged ? 'rgba(52,211,153,0.12)' : 'rgba(248,113,113,0.12)',
+              border: `1px solid ${isBatteryCharged ? 'rgba(52,211,153,0.3)' : 'rgba(248,113,113,0.3)'}`,
+              color: isBatteryCharged ? '#34d399' : '#f87171',
+            }}>
+              {isBatteryCharged
+                ? <><BatteryCharging size={14} /> {ownerBypass ? 'UNLIMITED' : `${formatEnergy(playEnergySeconds)} left`}</>
+                : <><Battery size={14} /> {Math.round((studySeconds / focusCycleReq) * 100)}% charging</>
+              }
             </div>
-
-            <button
-              type="button"
-              onClick={onClose}
-              className="p-2 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition"
-            >
-              <X size={20} />
+            <button type="button" onClick={onClose} style={{
+              padding: '7px', borderRadius: '10px',
+              background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
+              color: '#64748b', cursor: 'pointer', display: 'flex', alignItems: 'center'
+            }}>
+              <X size={18} />
             </button>
           </div>
         </div>
 
-        {/* Main Content Area */}
-        <div className="py-4 flex-1 overflow-y-auto min-h-[380px]">
-          
-          {/* Game Selection Mode */}
-          {!selectedGame && (
-            <div className="space-y-4">
-              {!isBatteryCharged && (
-                <div className="p-3 bg-amber-500/10 border border-amber-400/30 rounded-2xl text-xs text-amber-300 font-bold flex items-center gap-2">
-                  <span>⚡</span>
-                  <span>
-                    Study for 15 minutes in Quests to recharge your 3-minute Arcade Battery! Current progress: {Math.floor(studySeconds / 60)}m / {Math.floor(focusCycleReq / 60)}m.
-                  </span>
-                </div>
-              )}
+        {/* Low battery warning */}
+        {!isBatteryCharged && !ownerBypass && (
+          <div style={{
+            padding: '10px 14px', borderRadius: '10px',
+            background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)',
+            fontSize: '12px', fontWeight: 700, color: '#fbbf24',
+            display: 'flex', alignItems: 'center', gap: '8px'
+          }}>
+            <span>⚡</span>
+            <span>Study for {Math.floor(focusCycleReq / 60)} minutes in any Quest to recharge your 3-minute Arcade Battery! Current: {Math.floor(studySeconds / 60)}m {studySeconds % 60}s</span>
+          </div>
+        )}
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {ARCADE_GAME_CATALOG.map((game, idx) => {
-                  const isUnlocked = idx < unlockedCount;
-                  const highScore = highScores[game.id] || 0;
+        {/* Game Grid */}
+        <div style={{ overflowY: 'auto', flex: 1 }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+            gap: '12px',
+          }}>
+            {ARCADE_GAME_CATALOG.map((game, idx) => {
+              const isUnlocked = ownerBypass || idx < unlockedCount;
+              const canPlay = isUnlocked && isBatteryCharged;
+              const highScore = highScores[game.id] || 0;
 
-                  return (
-                    <div
-                      key={game.id}
-                      onClick={() => {
-                        if (isUnlocked && isBatteryCharged) setSelectedGame(game.id);
-                      }}
-                      className={`p-3.5 rounded-2xl border-2 transition-all relative overflow-hidden flex flex-col justify-between space-y-3 ${
-                        isUnlocked && isBatteryCharged
-                          ? 'bg-slate-900/90 border-cyan-400/50 hover:border-cyan-300 hover:scale-[1.03] cursor-pointer shadow-lg shadow-cyan-500/10 group'
-                          : isUnlocked
-                          ? 'bg-slate-900/60 border-slate-700 opacity-60 cursor-not-allowed'
-                          : 'bg-slate-950/40 border-slate-800 opacity-40 grayscale cursor-not-allowed'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${game.color} flex items-center justify-center text-xl shadow-md`}>
-                          {game.icon}
-                        </div>
-                        <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${
-                          isUnlocked
-                            ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
-                            : 'bg-slate-800 text-slate-500'
-                        }`}>
-                          {isUnlocked ? `GAME #${game.num}` : `W${game.minWeek}+`}
-                        </span>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xs font-black text-white group-hover:text-cyan-300 transition truncate">
-                          {game.title}
-                        </h4>
-                        <p className="text-[10px] text-slate-400 line-clamp-2 mt-0.5">
-                          {game.desc}
-                        </p>
-                      </div>
-
-                      <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[10px]">
-                        {isUnlocked ? (
-                          <>
-                            <span className="text-amber-400 font-bold flex items-center gap-1">
-                              <Trophy size={11} /> {highScore} PTS
-                            </span>
-                            <span className="text-cyan-400 font-bold group-hover:translate-x-0.5 transition">
-                              Play 1m ▶
-                            </span>
-                          </>
-                        ) : (
-                          <span className="text-slate-500 font-bold flex items-center gap-1">
-                            <Lock size={11} /> Unlocks at Week {game.minWeek}
-                          </span>
-                        )}
-                      </div>
+              return (
+                <div
+                  key={game.id}
+                  onClick={() => canPlay && handlePlayGame(game.id)}
+                  style={{
+                    padding: '14px',
+                    borderRadius: '14px',
+                    border: `1.5px solid ${isUnlocked ? '#3d4170' : '#252845'}`,
+                    background: isUnlocked ? '#252845' : 'rgba(30,32,53,0.4)',
+                    opacity: isUnlocked ? 1 : 0.5,
+                    cursor: canPlay ? 'pointer' : 'default',
+                    filter: isUnlocked ? 'none' : 'grayscale(0.6)',
+                    transition: 'transform 0.15s, box-shadow 0.15s, border-color 0.15s',
+                    display: 'flex', flexDirection: 'column', gap: '8px',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!canPlay) return;
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.borderColor = '#60a5fa';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(96,165,250,0.12)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = '';
+                    e.currentTarget.style.borderColor = isUnlocked ? '#3d4170' : '#252845';
+                    e.currentTarget.style.boxShadow = '';
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{
+                      width: '38px', height: '38px', borderRadius: '10px',
+                      background: `linear-gradient(135deg, ${game.colorA}, ${game.colorB})`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: '18px', flexShrink: 0
+                    }}>
+                      {game.icon}
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+                    <span style={{
+                      fontSize: '10px', fontWeight: 800, borderRadius: '6px', padding: '2px 6px',
+                      background: isUnlocked ? 'rgba(96,165,250,0.12)' : 'rgba(100,116,139,0.15)',
+                      color: isUnlocked ? '#60a5fa' : '#64748b',
+                      border: `1px solid ${isUnlocked ? 'rgba(96,165,250,0.25)' : 'rgba(100,116,139,0.2)'}`,
+                    }}>
+                      {isUnlocked ? `G#${game.num}` : `W${game.minWeek}+`}
+                    </span>
+                  </div>
 
-          {/* Active Game Playing Mode */}
-          {selectedGame && (
-            <div className="space-y-3">
-              <button
-                type="button"
-                onClick={() => setSelectedGame(null)}
-                className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-xl text-xs font-black flex items-center gap-1.5 transition"
-              >
-                <ArrowLeft size={14} /> Back to Game Catalog
-              </button>
+                  <div>
+                    <div style={{ fontSize: '13px', fontWeight: 800, color: '#e2e8f0', marginBottom: '3px' }}>
+                      {game.title}
+                    </div>
+                    <div style={{ fontSize: '11px', color: '#64748b', lineHeight: 1.4 }}>
+                      {game.desc}
+                    </div>
+                  </div>
 
-              <div className="w-full">
-                {selectedGame === 'bubble_pop' && (
-                  <BubblePopGame onComplete={() => {}} />
-                )}
-                {selectedGame === 'meteor_smasher' && (
-                  <MeteorSmasherGame onComplete={() => {}} />
-                )}
-                {selectedGame === 'physics_drift' && (
-                  <PhysicsDriftGame onComplete={() => {}} />
-                )}
-                {selectedGame === 'chunk_catapult' && (
-                  <CatapultChunkGame onComplete={() => {}} />
-                )}
-              </div>
-            </div>
-          )}
+                  <div style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    paddingTop: '8px', borderTop: '1px solid rgba(255,255,255,0.05)',
+                    fontSize: '11px'
+                  }}>
+                    {isUnlocked ? (
+                      <>
+                        <span style={{ color: '#fbbf24', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '3px' }}>
+                          <Trophy size={11} /> {highScore} pts
+                        </span>
+                        <span style={{ color: canPlay ? '#60a5fa' : '#374151', fontWeight: 800 }}>
+                          {canPlay ? 'Play 1m ▶' : '🔋 No battery'}
+                        </span>
+                      </>
+                    ) : (
+                      <span style={{ color: '#4b5563', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <Lock size={11} /> Week {game.minWeek}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Arcade Footer */}
-        <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 flex-wrap gap-2">
-          <span>🎮 10-Week Milestone Unlocks · 1 Minute per game session</span>
-          <span className="text-cyan-400 font-bold">15m Study ➔ 3m Arcade Battery Recharge</span>
+        {/* Footer */}
+        <div style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          paddingTop: '12px', borderTop: '1px solid #252845',
+          fontSize: '11px', color: '#4b5563', flexWrap: 'wrap', gap: '6px'
+        }}>
+          <span>🎮 Unlock a new game every 10 weeks · 1 minute per session</span>
+          <span style={{ color: '#60a5fa', fontWeight: 700 }}>15m Study → 3m Arcade Battery</span>
         </div>
       </div>
     </div>
