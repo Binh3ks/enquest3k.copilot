@@ -91,14 +91,16 @@ if (typeof window !== 'undefined') {
   });
 }
 
+import RootErrorBoundary from './components/common/RootErrorBoundary';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <>
+    <RootErrorBoundary>
       <App />
       <SuperAdminLauncher />
       <TeacherLauncher />
       <FloatingUpgradeWrapper />
-    </>
+    </RootErrorBoundary>
   </React.StrictMode>,
 )
 
