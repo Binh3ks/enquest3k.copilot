@@ -177,12 +177,20 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
     const c = getStationCompletion(i);
     return !c.allDone && isStationUnlocked(i);
   });
-  const currentSuggestedIdx = suggestedIdx >= 0 ? suggestedIdx : 0;
-  const suggestedStation = STATIONS[currentSuggestedIdx];
+  // Sequential flatten of all 15 quests in sequence Day 1 -> Day 5
+  const allQuests = useMemo(() => QUEST_SCHEDULE.flatMap((day, dIdx) =>
+    day.quests.map((q, qIdx) => ({
+      ...q,
+      dayIndex: dIdx,
+      questIndex: qIdx,
+      dayLabel: day.label,
+      isDone: isQuestCompleted(weekId, q.id)
+    }))
+  ), [isQuestCompleted, weekId]);
 
-  // Find the first uncompleted task in the suggested station for the CTA button
-  const currentDayQuests = QUEST_SCHEDULE[currentSuggestedIdx]?.quests || [];
-  const firstUncompletedTask = currentDayQuests.find(q => !isQuestCompleted(weekId, q.id)) || currentDayQuests[0];
+  const nextUncompletedQuest = useMemo(() => {
+    return allQuests.find(q => !q.isDone) || allQuests[0];
+  }, [allQuests]);
 
   const handleStationClick = (stationIdx) => {
     if (!isStationUnlocked(stationIdx)) {
@@ -198,26 +206,25 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
   const dynamicQuotes = useMemo(() => {
     if (weekQuestCount >= totalQuests) {
       return [
-        "Incredible job! Week 33 completed! 👑",
-        "You earned all shields! True champion! 🏆",
+        `Incredible job! Week ${weekId} 100% Completed! 🏆`,
+        "You earned all shields! True champion! 👑",
         "Ready for the next week's adventure! 🚀"
       ];
     }
     if (weekQuestCount === 0) {
       return [
-        "Welcome Adventurer! Let's conquer Day 1! 🌟",
-        "Tap Day 1 to start your learning journey! 🗺️",
-        "15 minutes a day builds English superpowers! ⚡"
+        `Welcome Adventurer! Ready for "${nextUncompletedQuest.label}"? 🌟`,
+        "15 minutes a day builds English superpowers! ⚡",
+        "Tap Day 1 to start your learning journey! 🗺️"
       ];
     }
-    const uncompletedName = firstUncompletedTask?.label || 'your next quest';
     return [
-      `Welcome back! Let's tackle "${uncompletedName}"! 🌟`,
-      `You're at ${suggestedStation?.name || 'Hub'} (${weekQuestCount}/${totalQuests} done)! 💪`,
+      `Welcome back! Ready for "${nextUncompletedQuest.label}"? 🌟`,
+      `You've done ${weekQuestCount}/${totalQuests} quests! Keep it up! 💪`,
       `Only ${totalQuests - weekQuestCount} quests to Boss Castle! 🏰`,
-      "Keep practicing every day to earn more shields! 🛡️"
+      "15 minutes a day builds English superpowers! ⚡"
     ];
-  }, [weekQuestCount, totalQuests, firstUncompletedTask, suggestedStation]);
+  }, [weekQuestCount, totalQuests, nextUncompletedQuest, weekId]);
 
   const activeMascotQuote = dynamicQuotes[mascotQuoteIndex % dynamicQuotes.length];
 
@@ -229,8 +236,6 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
       setMascotMood(weekQuestCount >= totalQuests ? 'celebrate' : 'happy');
     }, 2000);
   };
-
-  const lexioMsg = activeMascotQuote;
 
   // Show narrative toast on first visit
   useEffect(() => {
@@ -274,17 +279,11 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
             <span className="qm3d-logo-text">LEXIO</span>
           </div>
         </div>
+        {/* 1-Line Compact Trip Badge */}
         <div className="qm3d-week-badge">
-          <span className="qm3d-week-label">🗺️ TRIP {weekId}</span>
-          <div className="qm3d-dual-progress hidden sm:flex">
-            <div className="qm3d-prog-row">
-              <span className="qm3d-prog-icon">🦊</span>
-              <div className="qm3d-progress-bar">
-                <div className="qm3d-progress-fill" style={{ width: `${progressPercent}%` }} />
-              </div>
-            </div>
-          </div>
-          <span className="qm3d-progress-text font-black text-xs text-amber-600">{weekQuestCount}/{totalQuests}</span>
+          <span className="qm3d-week-label">TRIP {weekId}</span>
+          <span className="qm3d-week-dot">•</span>
+          <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
         </div>
         <button className="qm3d-settings" onClick={onToggleSidebar} aria-label="Settings">
           <Settings size={18} />
@@ -537,28 +536,35 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         </div>
       )}
 
-      {/* Floating Duolingo-style Mascot HUD (Top Right, Animated, Interactive) */}
+      {/* Single Floating Duo-style Mascot Fox Companion (Transparent, Animated, with Bubble & Continue Button) */}
       <div
         className="qm3d-floating-mascot-hud"
         onClick={handleMascotTap}
-        title="Lexio the Fox Companion — Tap for fun!"
+        title="Tap Lexio for cheer!"
       >
-        {/* Dynamic Duo-style Speech Bubble */}
+        {/* Duo-style Speech Bubble with Inline Continue CTA */}
         <div className="qm3d-mascot-speech-bubble animate-in fade-in zoom-in-95 duration-200">
           <span className="qm3d-bubble-text">{activeMascotQuote}</span>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate(getTaskLink(nextUncompletedQuest));
+            }}
+            className="qm3d-bubble-cta"
+          >
+            <span>▶ Continue</span>
+            <span className="opacity-75 font-normal text-[10px]">({nextUncompletedQuest.label})</span>
+          </button>
           <div className="qm3d-bubble-tail" />
         </div>
 
-        <div className="qm3d-mascot-glow-ring">
+        {/* Pure Transparent 3D Mascot Character (No circle backgrounds) */}
+        <div className="qm3d-mascot-character">
           <LexioMascot
-            size={isPortrait ? 52 : 68}
+            size={isPortrait ? 76 : 92}
             mood={mascotMood}
           />
-        </div>
-        <div className="qm3d-mascot-pill">
-          <span className="text-[10px] font-black text-amber-900 flex items-center gap-1">
-            <span>🦊</span> Lexio
-          </span>
         </div>
       </div>
 
@@ -566,24 +572,6 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
       <div className="qm3d-victory-castle">
         <span className="qm3d-castle-icon">🏰</span>
         <span className="qm3d-castle-label">Victory (W156)</span>
-      </div>
-
-      {/* Bottom bar with Lexio CTA */}
-      <div className="qm3d-bottom-bar">
-        <div className="qm3d-bottom-lexio">
-          <LexioMascot size={38} mood={weekQuestCount >= totalQuests ? 'celebrate' : 'happy'} />
-          <div className="qm3d-bottom-content">
-            <span className="qm3d-bottom-speech">{lexioMsg}</span>
-            {showLexioCTA && (
-              <button
-                className="qm3d-cta-btn"
-                onClick={() => navigate(getTaskLink(firstUncompletedTask))}
-              >
-                {weekQuestCount === 0 ? '▶ Start' : '▶ Continue'}
-              </button>
-            )}
-          </div>
-        </div>
       </div>
 
       {/* All done celebration */}

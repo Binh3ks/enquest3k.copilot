@@ -127,7 +127,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
   const routing = TASK_ROUTING[taskId];
 
   const handleBackToMap = () => {
-    navigate(`/week/${weekId}`);
+    navigate(`/week/${weekId}/hub/1`);
   };
 
   if (!routing || !taskInfo) {
@@ -169,9 +169,17 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
     <div className="ts-container">
       {/* Top bar */}
       <div className="ts-header">
-        <button className="ts-back-btn" onClick={handleBackToMap}>
+        <button
+          type="button"
+          className="ts-back-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleBackToMap();
+          }}
+          aria-label="Back to Map"
+        >
           <ArrowLeft size={16} />
-          <span className="hidden xs:inline">Map</span>
+          <span>Map</span>
         </button>
         <div className="ts-task-info">
           <span className="ts-task-icon">{taskInfo.icon}</span>

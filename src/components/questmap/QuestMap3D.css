@@ -98,28 +98,33 @@
 .qm3d-week-badge {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  background: rgba(255,255,255,0.92);
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  gap: 5px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(8px);
+  white-space: nowrap;
 }
 
-.qm3d-dual-progress {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.qm3d-prog-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.qm3d-prog-icon {
+.qm3d-week-label {
+  font-family: 'Nunito', system-ui, sans-serif;
   font-size: 12px;
+  font-weight: 900;
+  color: #1e293b;
+  letter-spacing: -0.2px;
+}
+
+.qm3d-week-dot {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 900;
+}
+
+.qm3d-progress-text {
+  font-size: 12px;
+  font-weight: 900;
+  color: #ea580c;
 }
 
 .qm3d-narrative-toast {
@@ -519,16 +524,16 @@
   to { opacity: 1; }
 }
 
-/* Floating Duolingo-style Mascot HUD (Top Right, Animated, Interactive) */
+/* Floating Duolingo-style Mascot HUD (Bottom Right, Animated, Interactive) */
 .qm3d-floating-mascot-hud {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 25;
+  bottom: 24px;
+  right: 18px;
+  z-index: 45;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 4px;
+  gap: 6px;
   cursor: pointer;
   user-select: none;
   animation: qm3d-duo-floating 3.6s ease-in-out infinite;
@@ -537,38 +542,40 @@
 
 @media (min-width: 768px) {
   .qm3d-floating-mascot-hud {
-    top: 14px;
-    right: 16px;
+    bottom: 32px;
+    right: 28px;
   }
 }
 
 .qm3d-floating-mascot-hud:hover {
-  transform: scale(1.08) translateY(-2px);
+  transform: scale(1.06) translateY(-4px);
 }
 
 .qm3d-floating-mascot-hud:active {
-  transform: scale(0.92) translateY(4px);
+  transform: scale(0.94) translateY(4px);
 }
 
 /* Duolingo-style Speech Bubble above Fox */
 .qm3d-mascot-speech-bubble {
   position: relative;
   background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border: 2px solid #f59e0b;
-  border-radius: 14px;
-  padding: 6px 10px;
-  max-width: 170px;
-  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.25), 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2px;
-  text-align: right;
-  pointer-events: none;
+  border-radius: 16px;
+  padding: 8px 12px;
+  max-width: 210px;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 @media (min-width: 768px) {
   .qm3d-mascot-speech-bubble {
-    max-width: 220px;
-    padding: 8px 12px;
+    max-width: 250px;
+    padding: 10px 14px;
   }
 }
 
@@ -576,8 +583,9 @@
   font-size: 11px;
   font-weight: 800;
   color: #78350f;
-  line-height: 1.25;
+  line-height: 1.3;
   display: block;
+  text-align: right;
 }
 
 @media (min-width: 768px) {
@@ -586,10 +594,32 @@
   }
 }
 
+.qm3d-bubble-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Nunito', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(234, 88, 12, 0.35);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.qm3d-bubble-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.5);
+}
+
 .qm3d-bubble-tail {
   position: absolute;
   bottom: -6px;
-  right: 24px;
+  right: 28px;
   width: 0;
   height: 0;
   border-left: 6px solid transparent;
@@ -597,29 +627,12 @@
   border-top: 6px solid #f59e0b;
 }
 
-.qm3d-mascot-glow-ring {
-  border-radius: 50%;
-  padding: 3px;
-  background: radial-gradient(circle, #ffffff 0%, #fffbeb 70%, #fef3c7 100%);
-  border: 3px solid #f59e0b;
-  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4), 0 2px 8px rgba(0, 0, 0, 0.15);
+.qm3d-mascot-character {
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.qm3d-floating-mascot-hud:hover .qm3d-mascot-glow-ring {
-  transform: scale(1.05) rotate(4deg);
-}
-
-.qm3d-mascot-pill {
-  padding: 2px 8px;
-  background: #ffffff;
-  border: 1.5px solid #fcd34d;
-  border-radius: 9999px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-top: -2px;
 }
 
 @keyframes qm3d-duo-floating {
@@ -669,73 +682,6 @@
 @keyframes qm3d-shimmer {
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 0.9; transform: scale(1.05); }
-}
-
-/* Bottom bar (Floating container, transparent pass-through) */
-.qm3d-bottom-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 90;
-  padding: 8px max(16px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
-  background: linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 100%);
-  pointer-events: none !important; /* 🔥 Background area is pass-through */
-  display: flex;
-  justify-content: center;
-}
-
-.qm3d-bottom-lexio {
-  pointer-events: auto !important; /* Only the card itself is interactive */
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  background: rgba(255,255,255,0.94);
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
-  backdrop-filter: blur(10px);
-  max-width: 440px;
-  width: 100%;
-}
-
-.qm3d-bottom-content {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
-  justify-content: space-between;
-}
-
-.qm3d-bottom-speech {
-  font-size: 13px;
-  font-weight: 800;
-  color: #1e293b;
-}
-
-.qm3d-cta-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, #f59e0b, #ea580c);
-  color: white;
-  border: none;
-  border-radius: 14px;
-  font-family: 'Nunito', system-ui, sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  white-space: nowrap;
-  animation: qm3d-btn-pulse 2s infinite ease-in-out;
-}
-
-.qm3d-cta-btn:hover {
-  transform: scale(1.06);
-  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.55);
 }
 
 .qm3d-cta-btn:active {

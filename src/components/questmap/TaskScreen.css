@@ -29,20 +29,29 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   background: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1;
   border-radius: 10px;
   font-size: 12px;
-  font-weight: 800;
-  color: #475569;
+  font-weight: 900;
+  color: #1e293b;
   cursor: pointer;
+  position: relative;
+  z-index: 100;
+  pointer-events: auto !important;
+  touch-action: manipulation;
   transition: all 0.2s;
 }
 
 .ts-back-btn:hover {
   background: #e2e8f0;
-  color: #1e293b;
+  color: #0f172a;
+  transform: scale(1.04);
+}
+
+.ts-back-btn:active {
+  transform: scale(0.96);
 }
 
 .ts-task-info {
