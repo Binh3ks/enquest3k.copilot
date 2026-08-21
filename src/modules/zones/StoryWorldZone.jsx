@@ -142,8 +142,10 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
   // Split story into individual sentences for Gear 2
   const storySentences = React.useMemo(() => {
     return fullStoryText
-      .split(/(?<=[.!?])\s+/)
-      .filter(s => s.trim().length > 0);
+      .replace(/([.!?])\s+/g, '$1|SPLIT|')
+      .split('|SPLIT|')
+      .map(s => s.trim())
+      .filter(s => s.length > 0);
   }, [fullStoryText]);
 
   const currentScene = scenes[activeFrameIndex] || null;

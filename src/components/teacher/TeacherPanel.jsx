@@ -2400,8 +2400,8 @@ function TabLessonPlan({ sessionsPerWeek = 3, setSessionsPerWeek, students = [],
             if (cpMatch) {
               expanded.push(cpMatch[1].trim()); // "→ Collocation practice:"
               const rest = cpMatch[2].trim();
-              // Split at " b. " " c. " etc.
-              const parts = rest.split(/(?<=\S)\s+(?=[b-z]\.\s)/);
+              // Split at " b. " " c. " etc. safely without lookbehind
+              const parts = rest.replace(/(\S)\s+([b-z]\.\s)/g, '$1|SPLIT|$2').split('|SPLIT|');
               expanded.push(...parts.map(p => p.trim()).filter(Boolean));
             } else {
               expanded.push(s);
@@ -2800,7 +2800,11 @@ ${allParts.map(p => renderPart(p)).join('')}
                     } else if (prependLines.length > 0) {
                       // Fallback: legacy format with passage in prependLines
                       const blob = prependLines[0];
-                      passageLines = blob.split(/(?<=[.!?])\s+(?=[A-Z"])/).map(s => s.trim()).filter(Boolean);
+                      passageLines = blob
+                        .replace(/([.!?])\s+([A-Z"])/g, '$1|SPLIT|$2')
+                        .split('|SPLIT|')
+                        .map(s => s.trim())
+                        .filter(Boolean);
                       exerciseLines = content;
                     }
                   }

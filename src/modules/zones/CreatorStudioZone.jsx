@@ -96,7 +96,11 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
       ];
       setStorySubmission({ mode: 'structured', finalText: storySavedData.text || '', podcastScenes });
     } else if (storySavedData?.text) {
-      const sentences = storySavedData.text.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 10);
+      const sentences = storySavedData.text
+        .replace(/([.!?])\s+/g, '$1|SPLIT|')
+        .split('|SPLIT|')
+        .map(s => s.trim())
+        .filter(s => s.length > 10);
       const third = Math.ceil(sentences.length / 3);
       const podcastScenes = [
         { id: 1, narrative_function: null, title: 'Scene 1: Your Opening', en: sentences.slice(0, third).join(' ') || sentences[0] || storySavedData.text },
@@ -148,8 +152,10 @@ export default function CreatorStudioZone({ data, weekNumber = 33, forcedStation
     } else if (finalText) {
       // Freeform Mode (Tier 3 or legacy v1 schema)
       const sentences = finalText
-        .split(/(?<=[.!?])\s+/)
-        .filter(s => s.trim().length > 10);
+        .replace(/([.!?])\s+/g, '$1|SPLIT|')
+        .split('|SPLIT|')
+        .map(s => s.trim())
+        .filter(s => s.length > 10);
 
       const third = Math.ceil(sentences.length / 3);
       const podcastScenes = [

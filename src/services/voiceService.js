@@ -191,7 +191,11 @@ const _prefetchingWeeks = new Set();
  */
 function chunkTextForTTS(text, maxChunkLen = 100) {
   if (!text || text.length <= maxChunkLen) return [text];
-  const sentences = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const sentences = text
+    .replace(/([.!?])\s+/g, '$1|SPLIT|')
+    .split('|SPLIT|')
+    .map(s => s.trim())
+    .filter(Boolean);
   if (sentences.length <= 1) return [text];
 
   const chunks = [];

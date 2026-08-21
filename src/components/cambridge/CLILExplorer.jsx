@@ -27,7 +27,11 @@ export default function CLILExplorer({
     const parts = fullText.split(/\n\n+/);
     if (parts.length >= 2) return [parts[0], parts.slice(1).join('\n\n')];
 
-    const sentences = fullText.split(/(?<=[.!?])\s+/);
+    const sentences = fullText
+      .replace(/([.!?])\s+/g, '$1|SPLIT|')
+      .split('|SPLIT|')
+      .map(s => s.trim())
+      .filter(Boolean);
     const mid = Math.ceil(sentences.length / 2);
     return [
       sentences.slice(0, mid).join(' '),
