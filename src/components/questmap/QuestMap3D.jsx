@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu, CheckCircle2, Lock, Settings } from 'lucide-react';
+import { Menu, CheckCircle2, Lock } from 'lucide-react';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { useUserStore } from '../../stores/useUserStore';
 import { QUEST_SCHEDULE, DAILY_BONUS_XP, TOTAL_QUEST_DAYS } from '../../config/questSchedule';
@@ -285,9 +285,6 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
           <span className="qm3d-week-dot">•</span>
           <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
         </div>
-        <button className="qm3d-settings" onClick={onToggleSidebar} aria-label="Settings">
-          <Settings size={18} />
-        </button>
       </div>
 
       {/* Narrative welcome toast */}
