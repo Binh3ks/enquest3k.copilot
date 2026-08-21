@@ -88,49 +88,32 @@ const checkpointLoaders = {
 const StationLoading = () => <div className="p-10 text-center text-slate-400 font-black italic">Station loading...</div>;
 
 const RootRedirect = () => {
-  const currentUser = useUserStore(state => state.currentUser);
-  const [initialized, setInitialized] = useState(false);
+  const { currentUser, login, register, guestLogin } = useUserStore();
 
-  // DEV BYPASS: initialize guest user on first render
-  useEffect(() => {
-    if (!currentUser) {
-      const { guestLogin } = useUserStore.getState();
-      guestLogin();
-      // W33+ system: default start at week 33
-      localStorage.setItem('placement_result', JSON.stringify({ startWeek: 33 }));
-      setInitialized(true);
-    } else {
-      setInitialized(true);
-    }
-  }, [currentUser]);
-
-  // Wait for initialization
-  if (!initialized) {
-    return <div className="min-h-screen flex items-center justify-center">Initializing...</div>;
+  // If not logged in, ALWAYS show the Landing / Login Page
+  if (!currentUser) {
+    return (
+      <LandingPage
+        onLogin={login}
+        onRegister={register}
+        onGuestLogin={guestLogin}
+      />
+    );
   }
 
-  // Parent / teacher / admin roles: no placement test needed — go straight to dashboard
+  // Parent / teacher / admin roles: go straight to dashboard
   const NON_STUDENT_ROLES = ['parent', 'teacher', 'admin', 'super_admin', 'team_leader', 'center_director'];
-  if (NON_STUDENT_ROLES.includes(currentUser.role)) return <Navigate replace to="/dashboard" />;
+  if (NON_STUDENT_ROLES.includes(currentUser.role)) {
+    return <Navigate replace to="/dashboard" />;
+  }
+
   const placed = localStorage.getItem('placement_result');
   // No placement yet → go directly to placement test
   if (!placed) return <Navigate replace to="/placement" />;
+
   try {
     const { startWeek } = JSON.parse(placed);
-    // W33+ system: floor at 33
     const week = Math.max(33, startWeek || 33);
-    // SRS-first: check if any words are due today directly from localStorage
-    try {
-      const raw = localStorage.getItem('engquest_word_bank');
-      if (raw) {
-        const bank = JSON.parse(raw);
-        const todayStr = new Date().toISOString().slice(0, 10);
-        const hasDue = Object.values(bank).some(entry =>
-          !entry.next_review_date || entry.next_review_date <= todayStr
-        );
-        if (hasDue) return <Navigate replace to={`/week/${week}/read_explore`} />;
-      }
-    } catch { /* ignore — bank may be empty or corrupt */ }
     return <Navigate replace to={`/week/${week}/read_explore`} />;
   } catch {
     return <Navigate replace to="/week/33/read_explore" />;
