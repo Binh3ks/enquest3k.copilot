@@ -47,66 +47,71 @@ export default function ArcadeFoxHelper({
   return (
     <div style={{
       position: 'absolute',
-      left: '16px',
-      bottom: '14px',
-      zIndex: 50,
+      right: '10px',
+      top: '8px',
+      zIndex: 40,
       display: 'flex',
-      alignItems: 'flex-end',
-      gap: '10px',
-      pointerEvents: 'auto',
+      alignItems: 'center',
+      flexDirection: 'row-reverse',
+      gap: '8px',
+      pointerEvents: 'none',
     }}>
-      {/* Lexio Fox Mascot button on bottom-LEFT */}
+      {/* Lexio Fox Mascot button on top-RIGHT */}
       <div
         onClick={handleFoxClick}
         style={{
-          width: '54px',
-          height: '54px',
+          width: '36px',
+          height: '36px',
           borderRadius: '50%',
           background: 'radial-gradient(circle at 35% 30%, #fb923c, #ea580c)',
-          border: '2.5px solid #ffedd5',
-          boxShadow: '0 6px 20px rgba(234,88,12,0.6)',
+          border: '2px solid #ffedd5',
+          boxShadow: '0 4px 12px rgba(234,88,12,0.5)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
-          fontSize: '28px',
-          transform: isJumping ? 'translateY(-24px) scale(1.15) rotate(-10deg)' : 'translateY(0) scale(1)',
+          fontSize: '18px',
+          transform: isJumping ? 'translateY(-10px) scale(1.15) rotate(-10deg)' : 'translateY(0) scale(1)',
           transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+          pointerEvents: 'auto',
+          flexShrink: 0,
         }}
         title="Click Lexio Fox for a hint!"
-        onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.92)'; }}
+        onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.9)'; }}
         onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; }}
       >
         🦊
       </div>
 
-      {/* Speech Bubble pointing from Fox on the left */}
+      {/* Compact Speech Bubble pointing to Fox on the right */}
       {showBubble && bubbleText && (
         <div style={{
           background: 'linear-gradient(135deg, #fef08a, #fde047)',
-          border: '2.5px solid #ca8a04',
-          borderRadius: '16px',
-          padding: '10px 16px',
+          border: '1.5px solid #ca8a04',
+          borderRadius: '12px',
+          padding: '5px 10px',
           color: '#713f12',
           fontWeight: 900,
-          fontSize: '13px',
-          boxShadow: '0 8px 28px rgba(0,0,0,0.5)',
-          maxWidth: '260px',
+          fontSize: '11px',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
+          maxWidth: '170px',
           animation: 'bounceIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
           whiteSpace: 'normal',
-          lineHeight: 1.4,
+          lineHeight: 1.3,
           position: 'relative',
+          pointerEvents: 'none',
         }}>
-          {/* Bubble tail on left pointing to fox */}
+          {/* Bubble tail on right pointing to fox */}
           <div style={{
             position: 'absolute',
-            left: '-8px',
-            bottom: '14px',
+            right: '-6px',
+            top: '50%',
+            transform: 'translateY(-50%)',
             width: 0,
             height: 0,
-            borderTop: '8px solid transparent',
-            borderBottom: '8px solid transparent',
-            borderRight: '8px solid #fde047',
+            borderTop: '5px solid transparent',
+            borderBottom: '5px solid transparent',
+            borderLeft: '6px solid #fde047',
           }} />
           {bubbleText}
         </div>

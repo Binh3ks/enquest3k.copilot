@@ -166,9 +166,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
       setTimeout(() => setFeedback(null), 1200);
 
       if (shieldsRef.current <= 0) {
-        endGame(false);
+        setTimeout(() => endGame(false), 500);
         return;
       }
+
       setTimeout(() => pickNextTarget(), 400);
     }
 
@@ -216,6 +217,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
     meteorsSmashedRef.current = 0;
     isTransitioningRef.current = false;
     fastestReflexRef.current = null;
+    meteorsRef.current = [];
     startTimeRef.current = Date.now();
 
     setScore(0);
@@ -370,40 +372,35 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
       {/* Top HUD with Speed & Reflex Metrics */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '10px 16px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
+        padding: '6px 12px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{ fontSize: '22px' }}>🛸</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '18px' }}>🛸</span>
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 900, color: '#a78bfa', letterSpacing: '0.05em' }}>METEOR SMASHER</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>
-              🎯 Target: <b style={{ color: meteorsSmashed >= GOAL_METEORS ? '#4ade80' : '#fbbf24' }}>{meteorsSmashed}/{GOAL_METEORS} meteors</b>
+            <div style={{ fontSize: '11px', fontWeight: 900, color: '#a78bfa', letterSpacing: '0.04em' }}>METEOR SMASHER</div>
+            <div style={{ fontSize: '9px', color: '#94a3b8' }}>
+              🎯 <b style={{ color: meteorsSmashed >= GOAL_METEORS ? '#4ade80' : '#fbbf24' }}>{meteorsSmashed}/{GOAL_METEORS} meteors</b>
             </div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           {(fastestReflex || storedBestReflex) && (
-            <div style={{ fontSize: '11px', fontWeight: 800, color: '#fde047', background: 'rgba(253,224,71,0.12)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Zap size={12} fill="#fde047" /> ⚡ {(fastestReflex || storedBestReflex).toFixed(2)}s
-            </div>
-          )}
-          {storedBestSpeedrun && (
-            <div style={{ fontSize: '11px', fontWeight: 800, color: '#38bdf8', background: 'rgba(56,189,248,0.12)', border: '1px solid rgba(56,189,248,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Timer size={12} /> ⏱️ {storedBestSpeedrun}s
+            <div style={{ fontSize: '10px', fontWeight: 800, color: '#fde047', background: 'rgba(253,224,71,0.12)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '6px', padding: '2px 6px', display: 'flex', alignItems: 'center', gap: '3px' }}>
+              <Zap size={10} fill="#fde047" /> ⚡ {(fastestReflex || storedBestReflex).toFixed(2)}s
             </div>
           )}
           {/* Shields */}
-          <div style={{ display: 'flex', gap: '4px', background: 'rgba(0,0,0,0.3)', padding: '4px 8px', borderRadius: '8px' }}>
+          <div style={{ display: 'flex', gap: '2px', background: 'rgba(0,0,0,0.3)', padding: '2px 6px', borderRadius: '6px' }}>
             {[0, 1, 2].map(i => (
-              <span key={i} style={{ fontSize: '14px', filter: i < shields ? 'none' : 'grayscale(1) opacity(0.25)' }}>
+              <span key={i} style={{ fontSize: '11px', filter: i < shields ? 'none' : 'grayscale(1) opacity(0.25)' }}>
                 🛡️
               </span>
             ))}
           </div>
-          <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
-            ⭐ {score} pts
+          <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '6px', padding: '3px 8px' }}>
+            ⭐ {score}
           </div>
-          <div style={{ fontSize: '13px', fontWeight: 900, color: '#a78bfa', background: 'rgba(167,139,250,0.1)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
+          <div style={{ fontSize: '11px', fontWeight: 900, color: '#a78bfa', background: 'rgba(167,139,250,0.1)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '6px', padding: '3px 8px' }}>
             ⏱ {Math.floor(gameTimer / 60)}:{String(gameTimer % 60).padStart(2, '0')}
           </div>
         </div>
@@ -411,23 +408,23 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
 
       {/* IDLE STATE */}
       {gameState === 'idle' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(167,139,250,0.6))' }}>🛸</div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '24px', gap: '10px', padding: '16px', textAlign: 'center' }}>
+          <div style={{ fontSize: '32px', filter: 'drop-shadow(0 0 12px rgba(167,139,250,0.5))' }}>🛸</div>
           <div>
-            <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#a78bfa' }}>
+            <h3 style={{ margin: '0 0 4px', fontSize: '16px', fontWeight: 900, color: '#a78bfa' }}>
               Plasma Cannon Defense!
             </h3>
-            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Speedrun: Blast all <b>{GOAL_METEORS} target meteors</b> as fast as you can! Quick strikes in &lt;2.2s earn <b>⚡ Lightning Bonus (+5 pts)</b>!
+            <p style={{ margin: 0, fontSize: '11px', color: '#cbd5e1', maxWidth: '300px', lineHeight: 1.4 }}>
+              Blast all <b>{GOAL_METEORS} target meteors</b> as fast as you can! Quick strikes earn <b>⚡ Speed Bonus (+5 pts)</b>!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
-            padding: '14px 32px', background: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
-            color: '#fff', fontWeight: 900, fontSize: '15px', borderRadius: '14px',
-            border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(124,58,237,0.4)',
-            display: 'flex', alignItems: 'center', gap: '8px',
+            padding: '10px 24px', background: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
+            color: '#fff', fontWeight: 900, fontSize: '13px', borderRadius: '12px',
+            border: 'none', cursor: 'pointer', boxShadow: '0 4px 14px rgba(124,58,237,0.4)',
+            display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px',
           }}>
-            <span>🛸</span> START SPEEDRUN DEFENSE
+            <span>🛸</span> START DEFENSE
           </button>
         </div>
       )}
@@ -438,15 +435,15 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
           {/* Definition Banner + Listen Audio Button */}
           {target && (
             <div style={{
-              padding: '10px 16px', background: 'rgba(124,58,237,0.2)',
-              borderBottom: '1.5px solid rgba(124,58,237,0.35)', textAlign: 'center', flexShrink: 0,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
+              padding: '6px 12px', background: 'rgba(124,58,237,0.2)',
+              borderBottom: '1px solid rgba(124,58,237,0.35)', textAlign: 'center', flexShrink: 0,
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
             }}>
               <div>
-                <div style={{ fontSize: '10px', color: '#c4b5fd', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                <div style={{ fontSize: '9px', color: '#c4b5fd', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   TARGET MEANING:
                 </div>
-                <div style={{ fontSize: '14px', color: '#f8fafc', fontWeight: 800, fontStyle: 'italic', maxWidth: '500px' }}>
+                <div style={{ fontSize: '12px', color: '#f8fafc', fontWeight: 800, fontStyle: 'italic', maxWidth: '420px' }}>
                   "{target.definition_en || target.definition}"
                 </div>
               </div>
@@ -455,11 +452,11 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
                 onClick={() => playDefinitionAudio(targetRef.current || target)}
                 style={{
                   background: 'rgba(167,139,250,0.25)', border: '1px solid rgba(167,139,250,0.4)',
-                  color: '#c4b5fd', borderRadius: '8px', padding: '6px 10px', cursor: 'pointer',
-                  display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', fontWeight: 800, flexShrink: 0
+                  color: '#c4b5fd', borderRadius: '6px', padding: '3px 8px', cursor: 'pointer',
+                  display: 'flex', alignItems: 'center', gap: '3px', fontSize: '10px', fontWeight: 800, flexShrink: 0
                 }}
               >
-                <Volume2 size={16} /> <span>Listen</span>
+                <Volume2 size={13} /> <span>Listen</span>
               </button>
             </div>
           )}
@@ -602,58 +599,57 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit,
         </div>
       )}
 
-      {/* GAME OVER / RESULTS STATE (Speedrun & Reflex Stats) */}
+      {/* GAME OVER / RESULTS STATE (Lifted, compact) */}
       {gameState === 'done' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px' }}>{meteorsSmashed >= GOAL_METEORS ? '🏆' : '⏱️'}</div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '20px', gap: '10px', padding: '16px', textAlign: 'center' }}>
+          <div style={{ fontSize: '32px' }}>{meteorsSmashed >= GOAL_METEORS ? '🏆' : '⏱️'}</div>
           <div>
             <h3 style={{
-              margin: '0 0 6px', fontSize: '24px', fontWeight: 900,
+              margin: '0 0 4px', fontSize: '17px', fontWeight: 900,
               color: meteorsSmashed >= GOAL_METEORS ? '#4ade80' : '#ef4444'
             }}>
               {meteorsSmashed >= GOAL_METEORS
-                ? '⚡ SPEEDRUN CHAMPION — DEFENSE COMPLETE!'
+                ? '⚡ DEFENSE COMPLETE!'
                 : shields <= 0
                 ? 'Shields Down — Game Over!'
                 : "Time's Up — Game Over!"}
             </h3>
-            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+            <p style={{ margin: '0 0 6px', fontSize: '12px', color: '#cbd5e1' }}>
               Smashed: <strong style={{ color: meteorsSmashed >= GOAL_METEORS ? '#4ade80' : '#fbbf24' }}>{meteorsSmashed}/{GOAL_METEORS} meteors</strong>
               {speedrunClearTime && (
-                <span style={{ color: '#38bdf8', fontWeight: 900, marginLeft: '8px' }}>
-                  (Cleared in {speedrunClearTime.toFixed(1)}s! 🔥)
+                <span style={{ color: '#38bdf8', fontWeight: 900, marginLeft: '6px' }}>
+                  ({speedrunClearTime.toFixed(1)}s! 🔥)
                 </span>
               )}
             </p>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', margin: '8px 0' }}>
+            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', margin: '6px 0', flexWrap: 'wrap' }}>
               {fastestReflex && (
-                <div style={{ background: 'rgba(253,224,71,0.15)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fde047', fontWeight: 900, fontSize: '13px' }}>
-                  ⚡ Quickest Strike: {fastestReflex.toFixed(2)}s
+                <div style={{ background: 'rgba(253,224,71,0.15)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '8px', padding: '4px 10px', color: '#fde047', fontWeight: 900, fontSize: '11px' }}>
+                  ⚡ Reflex: {fastestReflex.toFixed(2)}s
                 </div>
               )}
-              <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fbbf24', fontWeight: 900, fontSize: '13px' }}>
-                ⭐ Final Score: {score} pts
+              <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 10px', color: '#fbbf24', fontWeight: 900, fontSize: '11px' }}>
+                ⭐ Score: {score} pts
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
             <button type="button" onClick={startGame} style={{
-              padding: '12px 28px',
+              padding: '9px 20px',
               background: meteorsSmashed >= GOAL_METEORS
                 ? 'linear-gradient(135deg, #059669, #0d9488)'
                 : 'linear-gradient(135deg, #7c3aed, #4f46e5)',
-              color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
-              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+              color: '#fff', fontWeight: 900, fontSize: '12px', borderRadius: '10px',
+              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px',
             }}>
-              <RotateCcw size={16} /> {meteorsSmashed >= GOAL_METEORS ? 'Play Again' : 'Try Again'}
+              <RotateCcw size={14} /> {meteorsSmashed >= GOAL_METEORS ? 'Play Again' : 'Try Again'}
             </button>
             {onExit && (
               <button type="button" onClick={onExit} style={{
-                padding: '12px 20px',
+                padding: '9px 16px',
                 background: 'rgba(255,255,255,0.1)',
                 border: '1px solid rgba(255,255,255,0.2)',
-                color: '#cbd5e1', fontWeight: 800, fontSize: '14px', borderRadius: '12px',
+                color: '#cbd5e1', fontWeight: 800, fontSize: '12px', borderRadius: '10px',
                 cursor: 'pointer',
               }}>
                 Back to Arcade

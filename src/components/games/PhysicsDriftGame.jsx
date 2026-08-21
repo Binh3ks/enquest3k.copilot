@@ -31,7 +31,10 @@ function playTireScreech() {
 
 export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
-  const wordBank = (words && words.length >= 4) ? words : weekData.words;
+  const wordBank = useMemo(() => {
+    const raw = (words && words.length >= 4) ? words : weekData.words;
+    return raw.map(w => typeof w === 'string' ? { word: w, audio_word: null } : w);
+  }, [words, weekData.words]);
 
   const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
@@ -85,13 +88,15 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
   }, [wordBank, weekNumber]);
 
   const pickNextTarget = useCallback(() => {
+    if (!wordBank || wordBank.length === 0) return;
     const t = wordBank[Math.floor(Math.random() * wordBank.length)];
-    targetRef.current = t.word;
-    setTargetWord(t.word);
+    const wordStr = t?.word || 'caution';
+    targetRef.current = wordStr;
+    setTargetWord(wordStr);
     lastCatchTimeRef.current = Date.now();
-    spawnTimestampRef.current = Date.now(); // Record spawn timestamp
+    spawnTimestampRef.current = Date.now();
     setFoxTrigger(false);
-    playAudio(t.word);
+    playAudio(wordStr);
   }, [wordBank, playAudio]);
 
   const endGame = useCallback((isSpeedrunVictory = false) => {
@@ -319,7 +324,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
     wordsCaughtRef.current = 0;
     carXRef.current = 50;
     itemsRef.current = [];
-    nextSpawnAtRef.current = Date.now() + 500;
+    nextSpawnAtRef.current = Date.now() + 400;
     nextObstacleAtRef.current = Date.now() + 6000;
     fastestReflexRef.current = null;
     startTimeRef.current = Date.now();
@@ -342,15 +347,15 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
 
     gameStateRef.current = 'playing';
     setGameState('playing');
+    pickNextTarget();
     frameRef.current = requestAnimationFrame(gameLoop);
-    setTimeout(pickNextTarget, 100);
   };
 
   useEffect(() => () => cancelAnimationFrame(frameRef.current), []);
 
   return (
     <div style={{
-      width: '100%', height: '100%', minHeight: '450px',
+      width: '100%', height: '100%', minHeight: '420px',
       background: 'linear-gradient(180deg, #091a2e 0%, #0f2744 40%, #091a2e 100%)',
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
@@ -358,61 +363,61 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
       {/* Top HUD with Speed & Reflex Metrics */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '10px 16px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
+        padding: '6px 12px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{ fontSize: '22px' }}>🏎️</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '18px' }}>🏎️</span>
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 900, color: '#4ade80', letterSpacing: '0.05em' }}>ROAD RUNNER HIGHWAY</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>
-              🎯 Target: <b style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught}/{GOAL_WORDS} words</b>
+            <div style={{ fontSize: '11px', fontWeight: 900, color: '#4ade80', letterSpacing: '0.04em' }}>ROAD RUNNER</div>
+            <div style={{ fontSize: '9px', color: '#94a3b8' }}>
+              🎯 <b style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught}/{GOAL_WORDS} words</b>
             </div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           {(fastestReflex || storedBestReflex) && (
-            <div style={{ fontSize: '11px', fontWeight: 800, color: '#fde047', background: 'rgba(253,224,71,0.12)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Zap size={12} fill="#fde047" /> ⚡ {(fastestReflex || storedBestReflex).toFixed(2)}s
-            </div>
-          )}
-          {storedBestSpeedrun && (
-            <div style={{ fontSize: '11px', fontWeight: 800, color: '#38bdf8', background: 'rgba(56,189,248,0.12)', border: '1px solid rgba(56,189,248,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Timer size={12} /> ⏱️ {storedBestSpeedrun}s
+            <div style={{ fontSize: '10px', fontWeight: 800, color: '#fde047', background: 'rgba(253,224,71,0.12)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '6px', padding: '2px 6px', display: 'flex', alignItems: 'center', gap: '3px' }}>
+              <Zap size={10} fill="#fde047" /> ⚡ {(fastestReflex || storedBestReflex).toFixed(2)}s
             </div>
           )}
           {streak >= 3 && (
-            <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Zap size={12} fill="#fbbf24" /> {streak}x
+            <div style={{ fontSize: '10px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '6px', padding: '2px 6px' }}>
+              ⚡ {streak}x
             </div>
           )}
-          <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
-            ⭐ {score} pts
+          <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '6px', padding: '3px 8px' }}>
+            ⭐ {score}
           </div>
-          <div style={{ fontSize: '13px', fontWeight: 900, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
+          <div style={{ fontSize: '11px', fontWeight: 900, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '6px', padding: '3px 8px' }}>
             ⏱ {Math.floor(gameTimer / 60)}:{String(gameTimer % 60).padStart(2, '0')}
           </div>
         </div>
       </div>
 
-      {/* IDLE STATE */}
+      {/* IDLE STATE (Lifted, compact, ultra-responsive start button) */}
       {gameState === 'idle' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(74,222,128,0.6))' }}>🏎️</div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '24px', gap: '10px', padding: '16px', textAlign: 'center' }}>
+          <div style={{ fontSize: '32px', filter: 'drop-shadow(0 0 12px rgba(74,222,128,0.5))' }}>🏎️</div>
           <div>
-            <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#4ade80' }}>
+            <h3 style={{ margin: '0 0 4px', fontSize: '16px', fontWeight: 900, color: '#4ade80' }}>
               Highway Word Collector!
             </h3>
-            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Speedrun: Catch all <b>{GOAL_WORDS} target words</b> in record time! Fast drift catches in &lt;2.0s earn <b>⚡ Lightning Bonus (+5 pts)</b>!
+            <p style={{ margin: 0, fontSize: '11px', color: '#cbd5e1', maxWidth: '300px', lineHeight: 1.4 }}>
+              Catch all <b>{GOAL_WORDS} target words</b> in record time! Fast drift catches earn <b>⚡ Speed Bonus (+5 pts)</b>!
             </p>
           </div>
-          <button type="button" onClick={startGame} style={{
-            padding: '14px 32px', background: 'linear-gradient(135deg, #059669, #0d9488)',
-            color: '#fff', fontWeight: 900, fontSize: '15px', borderRadius: '14px',
-            border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(5,150,105,0.4)',
-            display: 'flex', alignItems: 'center', gap: '8px',
-          }}>
-            <span>🏎️</span> START SPEEDRUN RUN
+          <button
+            type="button"
+            onClick={startGame}
+            onTouchEnd={(e) => { e.preventDefault(); startGame(); }}
+            style={{
+              padding: '10px 24px', background: 'linear-gradient(135deg, #059669, #0d9488)',
+              color: '#fff', fontWeight: 900, fontSize: '13px', borderRadius: '12px',
+              border: 'none', cursor: 'pointer', boxShadow: '0 4px 14px rgba(5,150,105,0.4)',
+              display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px',
+            }}
+          >
+            <span>🏎️</span> START SPEEDRUN
           </button>
         </div>
       )}
@@ -422,14 +427,14 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
           {/* Target Word Banner */}
           <div style={{
-            padding: '8px 16px', background: 'rgba(74,222,128,0.18)',
-            borderBottom: '1.5px solid rgba(74,222,128,0.3)', textAlign: 'center', flexShrink: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', zIndex: 10,
+            padding: '5px 12px', background: 'rgba(74,222,128,0.18)',
+            borderBottom: '1px solid rgba(74,222,128,0.3)', textAlign: 'center', flexShrink: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', zIndex: 10,
           }}>
-            <span style={{ fontSize: '11px', color: '#86efac', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+            <span style={{ fontSize: '10px', color: '#86efac', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
               COLLECT TARGET:
             </span>
-            <span style={{ fontSize: '24px', color: '#f8fafc', fontWeight: 900, textShadow: '0 2px 8px rgba(74,222,128,0.8)' }}>
+            <span style={{ fontSize: '16px', color: '#f8fafc', fontWeight: 900, textShadow: '0 2px 6px rgba(74,222,128,0.8)' }}>
               {targetWord}
             </span>
             <button
@@ -437,11 +442,11 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
               onClick={() => playAudio(targetWord)}
               style={{
                 background: 'rgba(74,222,128,0.2)', border: '1px solid rgba(74,222,128,0.4)',
-                color: '#86efac', borderRadius: '6px', padding: '4px 8px', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', fontWeight: 800
+                color: '#86efac', borderRadius: '6px', padding: '2px 6px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: '3px', fontSize: '10px', fontWeight: 800
               }}
             >
-              <Volume2 size={16} /> <span>Listen</span>
+              <Volume2 size={13} /> <span>Listen</span>
             </button>
           </div>
 
@@ -458,15 +463,15 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
             {[0, 1, 2, 3, 4, 5, 6, 7].map(i => (
               <React.Fragment key={i}>
                 <div style={{
-                  position: 'absolute', left: '33.33%', width: '5px', height: '36px',
+                  position: 'absolute', left: '33.33%', width: '4px', height: '30px',
                   top: `${((i * 65 + roadOffset * 2) % 520) - 40}px`,
-                  background: '#fbbf24', borderRadius: '3px', transform: 'translateX(-50%)', opacity: 0.7,
+                  background: '#fbbf24', borderRadius: '2px', transform: 'translateX(-50%)', opacity: 0.7,
                   pointerEvents: 'none',
                 }} />
                 <div style={{
-                  position: 'absolute', left: '66.66%', width: '5px', height: '36px',
+                  position: 'absolute', left: '66.66%', width: '4px', height: '30px',
                   top: `${((i * 65 + roadOffset * 2) % 520) - 40}px`,
-                  background: '#fbbf24', borderRadius: '3px', transform: 'translateX(-50%)', opacity: 0.7,
+                  background: '#fbbf24', borderRadius: '2px', transform: 'translateX(-50%)', opacity: 0.7,
                   pointerEvents: 'none',
                 }} />
               </React.Fragment>
@@ -632,46 +637,46 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
               </div>
             )}
 
-            {/* Steering Buttons */}
+            {/* Steering Buttons (Compact) */}
             <div style={{
-              position: 'absolute', bottom: '12px', left: '16px', right: '16px',
+              position: 'absolute', bottom: '10px', left: '16px', right: '16px',
               display: 'flex', justifyContent: 'space-between', zIndex: 40, pointerEvents: 'none'
             }}>
               <button
                 type="button"
-                onMouseDown={() => { carXRef.current = Math.max(12, carXRef.current - 16); setCarXPct(carXRef.current); }}
-                onTouchStart={() => { carXRef.current = Math.max(12, carXRef.current - 16); setCarXPct(carXRef.current); }}
+                onMouseDown={() => { carXRef.current = Math.max(12, carXRef.current - 14); setCarXPct(carXRef.current); }}
+                onTouchStart={() => { carXRef.current = Math.max(12, carXRef.current - 14); setCarXPct(carXRef.current); }}
                 style={{
-                  width: '64px', height: '54px', borderRadius: '14px',
+                  width: '46px', height: '40px', borderRadius: '10px',
                   background: 'linear-gradient(135deg, #10b981, #059669)',
-                  border: '2px solid rgba(255,255,255,0.4)',
+                  border: '1.5px solid rgba(255,255,255,0.4)',
                   color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  cursor: 'pointer', boxShadow: '0 6px 16px rgba(0,0,0,0.4)',
+                  cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
                   pointerEvents: 'auto',
                 }}
               >
-                <ArrowLeft size={28} strokeWidth={3} />
+                <ArrowLeft size={20} strokeWidth={3} />
               </button>
               <button
                 type="button"
-                onMouseDown={() => { carXRef.current = Math.min(88, carXRef.current + 16); setCarXPct(carXRef.current); }}
-                onTouchStart={() => { carXRef.current = Math.min(88, carXRef.current + 16); setCarXPct(carXRef.current); }}
+                onMouseDown={() => { carXRef.current = Math.min(88, carXRef.current + 14); setCarXPct(carXRef.current); }}
+                onTouchStart={() => { carXRef.current = Math.min(88, carXRef.current + 14); setCarXPct(carXRef.current); }}
                 style={{
-                  width: '64px', height: '54px', borderRadius: '14px',
+                  width: '46px', height: '40px', borderRadius: '10px',
                   background: 'linear-gradient(135deg, #10b981, #059669)',
-                  border: '2px solid rgba(255,255,255,0.4)',
+                  border: '1.5px solid rgba(255,255,255,0.4)',
                   color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  cursor: 'pointer', boxShadow: '0 6px 16px rgba(0,0,0,0.4)',
+                  cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
                   pointerEvents: 'auto',
                 }}
               >
-                <ArrowRight size={28} strokeWidth={3} />
+                <ArrowRight size={20} strokeWidth={3} />
               </button>
             </div>
 
-            {/* Lexio Fox Helper */}
+            {/* Top-Right Fox Helper */}
             <ArcadeFoxHelper
-              hintText={`Catch "${targetWord}" star on the road!`}
+              hintText={`Catch "${targetWord}" star!`}
               triggerHint={foxTrigger}
               onHintUsed={() => setFoxTrigger(false)}
             />
@@ -679,54 +684,51 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onExit, 
         </div>
       )}
 
-      {/* GAME OVER / RESULTS STATE (Speedrun & Reflex Stats) */}
+      {/* GAME OVER / RESULTS STATE (Lifted, compact) */}
       {gameState === 'done' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px' }}>{wordsCaught >= GOAL_WORDS ? '🏆' : '⏱️'}</div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '20px', gap: '10px', padding: '16px', textAlign: 'center' }}>
+          <div style={{ fontSize: '32px' }}>{wordsCaught >= GOAL_WORDS ? '🏆' : '⏱️'}</div>
           <div>
             <h3 style={{
-              margin: '0 0 6px', fontSize: '24px', fontWeight: 900,
+              margin: '0 0 4px', fontSize: '17px', fontWeight: 900,
               color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#ef4444'
             }}>
-              {wordsCaught >= GOAL_WORDS ? '⚡ SPEEDRUN CHAMPION — ALL WORDS COLLECTED!' : "Time's Up — Game Over!"}
+              {wordsCaught >= GOAL_WORDS ? '⚡ RACE COMPLETE!' : "Time's Up — Game Over!"}
             </h3>
-            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+            <p style={{ margin: '0 0 6px', fontSize: '12px', color: '#cbd5e1' }}>
               Caught: <strong style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught}/{GOAL_WORDS} words</strong>
               {speedrunClearTime && (
-                <span style={{ color: '#38bdf8', fontWeight: 900, marginLeft: '8px' }}>
-                  (Cleared in {speedrunClearTime.toFixed(1)}s! 🔥)
+                <span style={{ color: '#38bdf8', fontWeight: 900, marginLeft: '6px' }}>
+                  ({speedrunClearTime.toFixed(1)}s! 🔥)
                 </span>
               )}
             </p>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', margin: '8px 0' }}>
+            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', margin: '6px 0', flexWrap: 'wrap' }}>
               {fastestReflex && (
-                <div style={{ background: 'rgba(253,224,71,0.15)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fde047', fontWeight: 900, fontSize: '13px' }}>
-                  ⚡ Quickest Drift: {fastestReflex.toFixed(2)}s
+                <div style={{ background: 'rgba(253,224,71,0.15)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '8px', padding: '4px 10px', color: '#fde047', fontWeight: 900, fontSize: '11px' }}>
+                  ⚡ Reflex: {fastestReflex.toFixed(2)}s
                 </div>
               )}
-              <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fbbf24', fontWeight: 900, fontSize: '13px' }}>
+              <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 10px', color: '#fbbf24', fontWeight: 900, fontSize: '11px' }}>
                 ⭐ Score: {score} pts
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
             <button type="button" onClick={startGame} style={{
-              padding: '12px 28px',
-              background: wordsCaught >= GOAL_WORDS
-                ? 'linear-gradient(135deg, #059669, #0d9488)'
-                : 'linear-gradient(135deg, #059669, #0d9488)',
-              color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
-              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
-              boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+              padding: '9px 20px',
+              background: 'linear-gradient(135deg, #059669, #0d9488)',
+              color: '#fff', fontWeight: 900, fontSize: '12px', borderRadius: '10px',
+              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px',
             }}>
-              <RotateCcw size={16} /> {wordsCaught >= GOAL_WORDS ? 'Race Again' : 'Try Again'}
+              <RotateCcw size={14} /> {wordsCaught >= GOAL_WORDS ? 'Race Again' : 'Try Again'}
             </button>
             {onExit && (
               <button type="button" onClick={onExit} style={{
-                padding: '12px 20px',
+                padding: '9px 16px',
                 background: 'rgba(255,255,255,0.1)',
                 border: '1px solid rgba(255,255,255,0.2)',
-                color: '#cbd5e1', fontWeight: 800, fontSize: '14px', borderRadius: '12px',
+                color: '#cbd5e1', fontWeight: 800, fontSize: '12px', borderRadius: '10px',
                 cursor: 'pointer',
               }}>
                 Back to Arcade

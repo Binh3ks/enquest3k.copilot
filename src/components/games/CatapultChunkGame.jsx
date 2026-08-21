@@ -256,61 +256,56 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
       width: '100%', height: '100%', minHeight: '440px',
       background: 'radial-gradient(ellipse at 50% 20%, #1e1b4b 0%, #0f172a 60%, #050208 100%)',
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
-      fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
+      fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden'
     }}>
-      {/* Top HUD with Speed & Reflex Metrics */}
+      {/* Top HUD with Speed Metrics */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '10px 16px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
+        padding: '6px 12px', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{ fontSize: '22px' }}>🎯</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '18px' }}>🎯</span>
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 900, color: '#f59e0b', letterSpacing: '0.05em' }}>CATAPULT CHUNK MATCH</div>
-            <div style={{ fontSize: '10px', color: '#94a3b8' }}>
-              🎯 Target: <b style={{ color: roundsDone >= TOTAL_ROUNDS ? '#4ade80' : '#fbbf24' }}>{roundsDone}/{TOTAL_ROUNDS} Rounds</b>
+            <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', letterSpacing: '0.04em' }}>CHUNK MATCHER</div>
+            <div style={{ fontSize: '9px', color: '#94a3b8' }}>
+              🎯 <b style={{ color: roundsDone >= TOTAL_ROUNDS ? '#4ade80' : '#fbbf24' }}>{roundsDone}/{TOTAL_ROUNDS} Rounds</b>
             </div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           {(fastestReflex || storedBestReflex) && (
-            <div style={{ fontSize: '11px', fontWeight: 800, color: '#fde047', background: 'rgba(253,224,71,0.12)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Zap size={12} fill="#fde047" /> ⚡ {(fastestReflex || storedBestReflex).toFixed(1)}s
+            <div style={{ fontSize: '10px', fontWeight: 800, color: '#fde047', background: 'rgba(253,224,71,0.12)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '6px', padding: '2px 6px', display: 'flex', alignItems: 'center', gap: '3px' }}>
+              <Zap size={10} fill="#fde047" /> ⚡ {(fastestReflex || storedBestReflex).toFixed(1)}s
             </div>
           )}
-          {storedBestSpeedrun && (
-            <div style={{ fontSize: '11px', fontWeight: 800, color: '#38bdf8', background: 'rgba(56,189,248,0.12)', border: '1px solid rgba(56,189,248,0.3)', borderRadius: '8px', padding: '3px 8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Timer size={12} /> ⏱️ {storedBestSpeedrun}s
-            </div>
-          )}
-          <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
-            ⭐ {score} pts
+          <div style={{ fontSize: '11px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '6px', padding: '3px 8px' }}>
+            ⭐ {score}
           </div>
-          <div style={{ fontSize: '13px', fontWeight: 900, color: '#f59e0b', background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
+          <div style={{ fontSize: '11px', fontWeight: 900, color: '#f59e0b', background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: '6px', padding: '3px 8px' }}>
             ⏱ {Math.floor(gameTimer / 60)}:{String(gameTimer % 60).padStart(2, '0')}
           </div>
         </div>
       </div>
 
-      {/* IDLE STATE */}
+      {/* IDLE STATE (Lifted, compact) */}
       {gameState === 'idle' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(245,158,11,0.6))' }}>🎯</div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '24px', gap: '10px', padding: '16px', textAlign: 'center' }}>
+          <div style={{ fontSize: '32px', filter: 'drop-shadow(0 0 12px rgba(245,158,11,0.5))' }}>🎯</div>
           <div>
-            <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#f59e0b' }}>
-              Chunk Catapult Match!
+            <h3 style={{ margin: '0 0 4px', fontSize: '16px', fontWeight: 900, color: '#fbbf24' }}>
+              Grammar & Chunk Matcher!
             </h3>
-            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '380px', lineHeight: 1.5 }}>
-              Speedrun: Complete all <b>{TOTAL_ROUNDS} grammar challenges</b> in record time! Solve rounds in &lt;5s for <b>⚡ Lightning Bonus (+10 pts)</b>!
+            <p style={{ margin: 0, fontSize: '11px', color: '#cbd5e1', maxWidth: '300px', lineHeight: 1.4 }}>
+              Match chunks to slots across <b>{TOTAL_ROUNDS} grammar rounds</b>! Fast rounds earn <b>⚡ Speed Bonus (+10 pts)</b>!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
-            padding: '14px 32px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-            color: '#fff', fontWeight: 900, fontSize: '15px', borderRadius: '14px',
-            border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(245,158,11,0.4)',
-            display: 'flex', alignItems: 'center', gap: '8px',
+            padding: '10px 24px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+            color: '#fff', fontWeight: 900, fontSize: '13px', borderRadius: '12px',
+            border: 'none', cursor: 'pointer', boxShadow: '0 4px 14px rgba(245,158,11,0.4)',
+            display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px',
           }}>
-            <span>🎯</span> START SPEEDRUN MATCH
+            <span>🎯</span> START MATCHING
           </button>
         </div>
       )}
@@ -320,15 +315,15 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
           {/* Target Banner */}
           <div style={{
-            padding: '8px 16px', background: 'rgba(245,158,11,0.15)',
-            borderBottom: '1.5px solid rgba(245,158,11,0.3)', textAlign: 'center', flexShrink: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px',
+            padding: '4px 10px', background: 'rgba(245,158,11,0.15)',
+            borderBottom: '1px solid rgba(245,158,11,0.3)', textAlign: 'center', flexShrink: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
           }}>
-            <span style={{ fontSize: '11px', color: '#fbbf24', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              {round.title ? `MATCH: ${round.title}` : 'BUILD SENTENCE:'}
+            <span style={{ fontSize: '10px', color: '#fbbf24', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              {round.title ? `${round.title}:` : 'MATCH:'}
             </span>
             {round.sentence && (
-              <span style={{ fontSize: '14px', color: '#f8fafc', fontWeight: 800, fontStyle: 'italic', maxWidth: '420px' }}>
+              <span style={{ fontSize: '12px', color: '#f8fafc', fontWeight: 800, fontStyle: 'italic', maxWidth: '380px' }}>
                 "{round.sentence}"
               </span>
             )}
@@ -337,11 +332,11 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
               onClick={() => playAudio(round.sentence || round.title)}
               style={{
                 background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.4)',
-                color: '#fbbf24', borderRadius: '6px', padding: '4px 8px', cursor: 'pointer',
-                display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', fontWeight: 800
+                color: '#fbbf24', borderRadius: '6px', padding: '2px 6px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: '3px', fontSize: '10px', fontWeight: 800
               }}
             >
-              <Volume2 size={16} /> <span>Listen</span>
+              <Volume2 size={13} /> <span>Listen</span>
             </button>
           </div>
 
@@ -349,16 +344,16 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
           <div
             ref={containerRef}
             style={{
-              flex: 1, position: 'relative', overflow: 'hidden', minHeight: '180px',
+              flex: 1, position: 'relative', overflow: 'hidden', minHeight: '160px',
               background: 'radial-gradient(ellipse at 50% 50%, rgba(30,27,75,0.6) 0%, rgba(15,23,42,0.8) 100%)',
             }}
           >
             {feedback && (
               <div style={{
-                position: 'absolute', top: '12px', left: '50%', transform: 'translateX(-50%)',
-                zIndex: 40, padding: '6px 18px', borderRadius: '14px', fontWeight: 900, fontSize: '13px',
+                position: 'absolute', top: '8px', left: '50%', transform: 'translateX(-50%)',
+                zIndex: 40, padding: '4px 12px', borderRadius: '10px', fontWeight: 900, fontSize: '11px',
                 background: feedback.type === 'good' ? 'rgba(16,185,129,0.95)' : 'rgba(239,68,68,0.95)',
-                color: '#fff', boxShadow: '0 8px 24px rgba(0,0,0,0.5)', border: '1.5px solid rgba(255,255,255,0.4)',
+                color: '#fff', boxShadow: '0 4px 14px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.4)',
                 whiteSpace: 'nowrap',
               }}>
                 {feedback.msg}
@@ -377,21 +372,21 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
                     position: 'absolute',
                     left: `${c.x}%`,
                     top: `${c.y}%`,
-                    padding: '8px 16px',
-                    borderRadius: '14px',
+                    padding: '5px 12px',
+                    borderRadius: '10px',
                     background: isSelected
                       ? 'linear-gradient(135deg, #fbbf24, #f59e0b)'
                       : `linear-gradient(135deg, ${c.color}, #1e293b)`,
-                    border: isSelected ? '2.5px solid #ffffff' : '1.5px solid rgba(255,255,255,0.3)',
+                    border: isSelected ? '2px solid #ffffff' : '1px solid rgba(255,255,255,0.3)',
                     boxShadow: isSelected
-                      ? '0 0 25px #fbbf24, 0 6px 16px rgba(0,0,0,0.5)'
-                      : '0 4px 14px rgba(0,0,0,0.4)',
+                      ? '0 0 16px #fbbf24, 0 4px 10px rgba(0,0,0,0.5)'
+                      : '0 2px 8px rgba(0,0,0,0.4)',
                     color: isSelected ? '#78350f' : '#ffffff',
                     fontWeight: 900,
-                    fontSize: '13px',
+                    fontSize: '11.5px',
                     cursor: 'grab',
                     zIndex: isSelected ? 30 : 20,
-                    transform: isSelected ? 'scale(1.1)' : 'scale(1)',
+                    transform: isSelected ? 'scale(1.08)' : 'scale(1)',
                     transition: 'transform 0.15s, box-shadow 0.15s',
                     whiteSpace: 'nowrap',
                   }}
@@ -401,19 +396,19 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
               );
             })}
 
-            {/* Fox Mascot */}
+            {/* Top-Right Fox Helper */}
             <ArcadeFoxHelper
-              hintText={`Tap a floating chunk, then tap its matching destination slot!`}
+              hintText={`Tap a chunk, then tap its matching destination slot!`}
               triggerHint={foxTrigger}
               onHintUsed={() => setFoxTrigger(false)}
             />
           </div>
 
-          {/* Bottom Destination Slots */}
+          {/* Bottom Destination Slots (Clean, compact, no obstruction) */}
           <div style={{
-            padding: '12px 16px', background: 'rgba(15,23,42,0.92)',
-            borderTop: '1.5px solid rgba(255,255,255,0.12)', flexShrink: 0,
-            display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap',
+            padding: '8px 12px', background: 'rgba(15,23,42,0.94)',
+            borderTop: '1px solid rgba(255,255,255,0.12)', flexShrink: 0,
+            display: 'flex', justifyContent: 'center', gap: '8px', flexWrap: 'wrap',
           }}>
             {round.slots.map(slot => {
               const filledWord = lockedSlots[slot.id];
@@ -427,40 +422,40 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
                   onDrop={(e) => handleSlotDrop(slot, e)}
                   onClick={() => handleSlotClick(slot)}
                   style={{
-                    minWidth: '130px', minHeight: '54px', padding: '8px 14px',
-                    borderRadius: '14px',
+                    minWidth: '100px', minHeight: '44px', padding: '5px 10px',
+                    borderRadius: '10px',
                     background: isFilled
                       ? 'linear-gradient(135deg, rgba(16,185,129,0.25), rgba(5,150,105,0.35))'
                       : isHighlightTarget
                       ? 'rgba(251,191,36,0.18)'
                       : 'rgba(255,255,255,0.06)',
                     border: isFilled
-                      ? '2px solid #10b981'
+                      ? '1.5px solid #10b981'
                       : isHighlightTarget
-                      ? '2px dashed #fbbf24'
-                      : '1.5px dashed rgba(255,255,255,0.25)',
+                      ? '1.5px dashed #fbbf24'
+                      : '1px dashed rgba(255,255,255,0.25)',
                     display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                     cursor: isFilled ? 'default' : 'pointer',
-                    boxShadow: isHighlightTarget ? '0 0 16px rgba(251,191,36,0.4)' : 'none',
+                    boxShadow: isHighlightTarget ? '0 0 12px rgba(251,191,36,0.4)' : 'none',
                     transition: 'all 0.15s',
                   }}
                 >
                   <div style={{
-                    fontSize: '10px', color: isFilled ? '#a7f3d0' : '#94a3b8',
-                    fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.06em',
+                    fontSize: '9px', color: isFilled ? '#a7f3d0' : '#94a3b8',
+                    fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.04em',
                     marginBottom: '2px', textAlign: 'center'
                   }}>
                     {slot.label}
                   </div>
 
                   {isFilled ? (
-                    <div style={{ fontSize: '13px', fontWeight: 900, color: '#ffffff', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <CheckCircle2 size={14} color="#34d399" />
+                    <div style={{ fontSize: '11px', fontWeight: 900, color: '#ffffff', display: 'flex', alignItems: 'center', gap: '3px' }}>
+                      <CheckCircle2 size={12} color="#34d399" />
                       <span>{filledWord}</span>
                     </div>
                   ) : (
-                    <div style={{ fontSize: '11px', color: isHighlightTarget ? '#fbbf24' : '#64748b', fontWeight: 800 }}>
-                      {isHighlightTarget ? '👉 Tap here to place' : 'Empty Slot'}
+                    <div style={{ fontSize: '10px', color: isHighlightTarget ? '#fbbf24' : '#64748b', fontWeight: 800 }}>
+                      {isHighlightTarget ? '👉 Tap here' : 'Empty'}
                     </div>
                   )}
                 </div>
@@ -470,47 +465,47 @@ export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalon
         </div>
       )}
 
-      {/* GAME OVER / RESULTS STATE (Speedrun & Reflex Stats) */}
+      {/* RESULTS STATE (Lifted, compact) */}
       {gameState === 'done' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
-          <div style={{ fontSize: '56px' }}>{roundsDone >= TOTAL_ROUNDS ? '🏆' : '⭐'}</div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '20px', gap: '10px', padding: '16px', textAlign: 'center' }}>
+          <div style={{ fontSize: '32px' }}>{roundsDone >= TOTAL_ROUNDS ? '🏆' : '⭐'}</div>
           <div>
-            <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#f59e0b' }}>
-              {roundsDone >= TOTAL_ROUNDS ? '⚡ SPEEDRUN CHAMPION — ALL ROUNDS SOLVED!' : 'Time\'s Up — Round Complete!'}
+            <h3 style={{ margin: '0 0 4px', fontSize: '17px', fontWeight: 900, color: '#f59e0b' }}>
+              {roundsDone >= TOTAL_ROUNDS ? '⚡ ALL ROUNDS SOLVED!' : 'Round Complete!'}
             </h3>
-            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+            <p style={{ margin: '0 0 6px', fontSize: '12px', color: '#cbd5e1' }}>
               Completed: <strong style={{ color: roundsDone >= TOTAL_ROUNDS ? '#4ade80' : '#fbbf24' }}>{roundsDone}/{TOTAL_ROUNDS} Rounds</strong>
               {speedrunClearTime && (
-                <span style={{ color: '#38bdf8', fontWeight: 900, marginLeft: '8px' }}>
-                  (Solved in {speedrunClearTime.toFixed(1)}s! 🔥)
+                <span style={{ color: '#38bdf8', fontWeight: 900, marginLeft: '6px' }}>
+                  ({speedrunClearTime.toFixed(1)}s! 🔥)
                 </span>
               )}
             </p>
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', margin: '8px 0' }}>
+            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', margin: '6px 0', flexWrap: 'wrap' }}>
               {fastestReflex && (
-                <div style={{ background: 'rgba(253,224,71,0.15)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fde047', fontWeight: 900, fontSize: '13px' }}>
-                  ⚡ Quickest Round: {fastestReflex.toFixed(1)}s
+                <div style={{ background: 'rgba(253,224,71,0.15)', border: '1px solid rgba(253,224,71,0.3)', borderRadius: '8px', padding: '4px 10px', color: '#fde047', fontWeight: 900, fontSize: '11px' }}>
+                  ⚡ Reflex: {fastestReflex.toFixed(1)}s
                 </div>
               )}
-              <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '6px 14px', color: '#fbbf24', fontWeight: 900, fontSize: '13px' }}>
+              <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 10px', color: '#fbbf24', fontWeight: 900, fontSize: '11px' }}>
                 ⭐ Score: {score} pts
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
             <button type="button" onClick={startGame} style={{
-              padding: '12px 28px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-              color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
-              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
+              padding: '9px 20px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+              color: '#fff', fontWeight: 900, fontSize: '12px', borderRadius: '10px',
+              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px',
             }}>
-              <RotateCcw size={16} /> Play Again
+              <RotateCcw size={14} /> Play Again
             </button>
             {onExit && (
               <button type="button" onClick={onExit} style={{
-                padding: '12px 20px',
+                padding: '9px 16px',
                 background: 'rgba(255,255,255,0.1)',
                 border: '1px solid rgba(255,255,255,0.2)',
-                color: '#cbd5e1', fontWeight: 800, fontSize: '14px', borderRadius: '12px',
+                color: '#cbd5e1', fontWeight: 800, fontSize: '12px', borderRadius: '10px',
                 cursor: 'pointer',
               }}>
                 Back to Arcade
