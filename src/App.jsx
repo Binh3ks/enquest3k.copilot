@@ -101,15 +101,16 @@ const RootRedirect = () => {
     );
   }
 
-  // Parent / teacher / admin roles: go straight to dashboard
-  const NON_STUDENT_ROLES = ['parent', 'teacher', 'admin', 'super_admin', 'team_leader', 'center_director'];
-  if (NON_STUDENT_ROLES.includes(currentUser.role)) {
+  // Only strictly parent role defaults to dashboard
+  if (currentUser.role === 'parent') {
     return <Navigate replace to="/dashboard" />;
   }
 
+  // All students and owner/guest users go straight to week 33 study
   const placed = localStorage.getItem('placement_result');
-  // No placement yet → go directly to placement test
-  if (!placed) return <Navigate replace to="/placement" />;
+  if (!placed && currentUser.role === 'student' && currentUser.id !== 'user_owner') {
+    return <Navigate replace to="/placement" />;
+  }
 
   try {
     const { startWeek } = JSON.parse(placed);

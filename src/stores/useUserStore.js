@@ -162,15 +162,16 @@ const useUserStore = create(
       
       guestLogin: () => {
         const guestUser = { 
-          id: 'user_owner',
-          name: 'owner', 
-          username: 'owner',
-          displayName: 'owner',
-          role: 'super_admin', 
+          id: 'guest_student_' + Date.now(),
+          name: 'Học sinh', 
+          username: 'guest_student',
+          displayName: 'Học sinh Trải nghiệm',
+          role: 'student', 
           plan: 'unlimited',
           plan_expires_at: '2099-12-31T23:59:59.000Z',
-          avatarUrl: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Owner',
+          avatarUrl: 'https://api.dicebear.com/9.x/fun-emoji/svg?seed=Guest',
         };
+        localStorage.setItem('placement_result', JSON.stringify({ startWeek: 33 }));
         set({ currentUser: guestUser, token: 'guest_token' });
       },
 

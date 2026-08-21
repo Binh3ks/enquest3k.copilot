@@ -470,15 +470,21 @@ export default function ParentDashboard() {
             </h1>
           </div>
         </div>
-        {/* 📚 Hướng dẫn — centered */}
-        <button
-          onClick={() => setShowGuide(true)}
-          className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-md transition-colors"
-          title="Hướng dẫn sử dụng"
-        >
-          📚 Hướng Dẫn
-        </button>
+        {/* 📚 Buttons */}
         <div className="flex items-center gap-2">
+          <button
+            onClick={() => navigate('/week/33/read_explore')}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-black shadow-md transition-colors"
+          >
+            🎮 Vào Học Ngay
+          </button>
+          <button
+            onClick={() => setShowGuide(true)}
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-black shadow-md transition-colors"
+            title="Hướng dẫn sử dụng"
+          >
+            📚 Hướng Dẫn
+          </button>
           {isParent && pushSupported && pushStatus !== 'blocked' && (
             <button
               onClick={pushStatus === 'subscribed' ? undefined : handleSubscribePush}
@@ -491,6 +497,16 @@ export default function ParentDashboard() {
           )}
           <button onClick={handleRefresh} className="p-2 rounded-xl hover:bg-slate-100 transition-colors" title="Làm mới">
             <RefreshCw className={`w-4 h-4 text-slate-400 ${serverLoading ? 'animate-spin' : ''}`} />
+          </button>
+          <button
+            onClick={() => {
+              useUserStore.getState().logout();
+              navigate('/');
+            }}
+            className="px-3 py-1.5 text-xs font-bold text-rose-600 hover:bg-rose-50 border border-rose-200 rounded-xl transition-colors"
+            title="Đăng xuất"
+          >
+            Đăng xuất
           </button>
         </div>
       </header>
