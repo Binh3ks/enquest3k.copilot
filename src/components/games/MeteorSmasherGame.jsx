@@ -6,7 +6,7 @@ import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * MeteorSmasherGame V3 — Vocabulary Defense with Audio Overlap Guard & Goal Tracking
+ * MeteorSmasherGame V3 — Plasma Cannon Turret with Rotating Barrel, Flying Fox & Zero Audio Glitch
  */
 
 export default function MeteorSmasherGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
@@ -19,6 +19,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const [meteorsSmashed, setMeteorsSmashed] = useState(0);
   const [gameTimer, setGameTimer] = useState(60);
   const [meteors, setMeteors] = useState([]);
+  const [cannonAngle, setCannonAngle] = useState(0); // in degrees
   const [laser, setLaser] = useState(null);
   const [target, setTarget] = useState(null);
   const [feedback, setFeedback] = useState(null);
@@ -34,6 +35,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const swipeRef = useRef(null);
   const containerRef = useRef(null);
   const lastCatchTimeRef = useRef(Date.now());
+  const audioLockRef = useRef(0);
 
   const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
   const personalBest = highScores['meteor_smasher'] || 0;
@@ -41,11 +43,18 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
 
   const W = 600;
   const H = 420;
+  const CANNON_X = W / 2;
+  const CANNON_Y = H - 24;
 
-  const playDefinitionAudio = useCallback((defText, wordText) => {
+  const playDefinitionAudio = useCallback((defText) => {
     if (!defText) return;
+    const now = Date.now();
+    // Strict debounce lock: prevent any double-call within 1200ms
+    if (now - audioLockRef.current < 1200) return;
+    audioLockRef.current = now;
+
     try { window.speechSynthesis?.cancel(); } catch (_) {}
-    speakText(`Find the word that means: ${defText}`, null, 0.92, null, 'explore', weekNumber);
+    speakText(`Find the word: ${defText}`, null, 0.92, null, 'explore', weekNumber);
   }, [weekNumber]);
 
   const makeMeteor = useCallback((isTarget = false, overrideWord = null, idx = 0) => {
@@ -86,8 +95,16 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     setMeteors([...newMeteors]);
     lastCatchTimeRef.current = Date.now();
     setFoxTrigger(false);
-    playDefinitionAudio(currentTarget.definition_en || currentTarget.definition, currentTarget.word);
-  }, [wordBank, makeMeteor, playDefinitionAudio]);
+
+    // Aim cannon towards target meteor
+    const tgtM = newMeteors.find(m => m.isTarget);
+    if (tgtM) {
+      const angle = (Math.atan2(tgtM.x - CANNON_X, -(tgtM.y - CANNON_Y)) * 180) / Math.PI;
+      setCannonAngle(angle);
+    }
+
+    playDefinitionAudio(currentTarget.definition_en || currentTarget.definition);
+  }, [wordBank, makeMeteor, playDefinitionAudio, CANNON_X, CANNON_Y]);
 
   const pickNextTarget = useCallback(() => {
     const t = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -183,20 +200,21 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
 
   useEffect(() => () => cancelAnimationFrame(frameRef.current), []);
 
-  // Fire laser at a specific meteor (supports both Direct Click & Drag Slice)
+  // Fire laser with rotating cannon animation
   const fireLaserAtMeteor = useCallback((meteor) => {
     if (!meteor || meteor.hit || gameStateRef.current !== 'playing') return;
 
-    const shipX = W / 2;
-    const shipY = H - 20;
+    // Rotate cannon directly towards aimed meteor
+    const aimAngle = (Math.atan2(meteor.x - CANNON_X, -(meteor.y - CANNON_Y)) * 180) / Math.PI;
+    setCannonAngle(aimAngle);
 
     const isCorrect = meteor.isTarget;
     const laserColor = isCorrect ? '#4ade80' : '#ef4444';
 
-    // Show laser beam from rocket ship to meteor
+    // Show laser beam from cannon turret to meteor
     setLaser({
-      x1: shipX,
-      y1: shipY,
+      x1: CANNON_X,
+      y1: CANNON_Y,
       x2: meteor.x,
       y2: meteor.y,
       color: laserColor,
@@ -205,12 +223,12 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     setTimeout(() => setLaser(null), 300);
 
     if (isCorrect) {
-      // Correct laser strike!
+      // Laser Hit!
       scoreRef.current += 20;
       meteorsSmashedRef.current += 1;
       setScore(scoreRef.current);
       setMeteorsSmashed(meteorsSmashedRef.current);
-      setFeedback({ msg: `💥 Laser Hit! "${meteor.word}" (+20 pts)`, type: 'good' });
+      setFeedback({ msg: `💥 Laser Blast! "${meteor.word}" (+20 pts)`, type: 'good' });
 
       meteorsRef.current = meteorsRef.current.map(m =>
         m.id === meteor.id ? { ...m, hit: true } : m
@@ -221,13 +239,13 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
         pickNextTarget();
       }, 700);
     } else {
-      // Wrong meteor strike → shield damage + Answer Reveal
+      // Wrong meteor hit -> shield damage
       shieldsRef.current = Math.max(0, shieldsRef.current - 1);
       setShields(shieldsRef.current);
 
       const correctWord = targetRef.current?.word || '';
       setFeedback({
-        msg: `❌ Smashed "${meteor.word}" · Correct word: "${correctWord}"`,
+        msg: `❌ Smashed "${meteor.word}" · Correct: "${correctWord}"`,
         type: 'bad'
       });
       setFoxTrigger(true);
@@ -239,7 +257,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       setTimeout(() => setFeedback(null), 1600);
       if (shieldsRef.current <= 0) setTimeout(endGame, 500);
     }
-  }, [pickNextTarget, endGame]);
+  }, [pickNextTarget, endGame, CANNON_X, CANNON_Y]);
 
   // Handle Trackpad Drag / Swipe
   const handlePointerDown = (e) => {
@@ -276,6 +294,8 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       fireLaserAtMeteor(closest);
     }
   };
+
+  const targetMeteor = meteors.find(m => m.isTarget && !m.hit);
 
   return (
     <div style={{
@@ -327,10 +347,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
           <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(167,139,250,0.6))' }}>🛸</div>
           <div>
             <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#a78bfa' }}>
-              Meteor Smasher Defense!
+              Plasma Cannon Defense!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Target: Blast <b>{GOAL_METEORS} target meteors</b> in 60 seconds! Listen to the definition, then click or swipe the matching meteor!
+              Target: Blast <b>{GOAL_METEORS} target meteors</b> in 60 seconds! Rotate the plasma cannon and click or swipe to fire laser beams!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -339,7 +359,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(124,58,237,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>🛸</span> START (GOAL: 10 METEORS)
+            <span>🛸</span> START DEFENSE (GOAL: 10)
           </button>
         </div>
       )}
@@ -364,7 +384,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
               </div>
               <button
                 type="button"
-                onClick={() => playDefinitionAudio(target.definition_en || target.definition, target.word)}
+                onClick={() => playDefinitionAudio(target.definition_en || target.definition)}
                 style={{
                   background: 'rgba(167,139,250,0.25)', border: '1px solid rgba(167,139,250,0.4)',
                   color: '#c4b5fd', borderRadius: '8px', padding: '6px 10px', cursor: 'pointer',
@@ -484,23 +504,78 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
                   x1={laser.x1} y1={laser.y1}
                   x2={laser.x2} y2={laser.y2}
                   stroke="#ffffff"
-                  strokeWidth="3"
+                  strokeWidth="3.5"
                   strokeLinecap="round"
                   opacity="0.95"
                 />
-                <circle cx={laser.x2} cy={laser.y2} r="18" fill={laser.color} opacity="0.6" />
+                <circle cx={laser.x2} cy={laser.y2} r="20" fill={laser.color} opacity="0.7" />
               </svg>
             )}
 
-            {/* Rocket ship at bottom center */}
+            {/* FLYING LEXIO FOX TARGET TRACKER (flies right next to target meteor) */}
+            {foxTrigger && targetMeteor && (
+              <div style={{
+                position: 'absolute',
+                left: `${(targetMeteor.x / W) * 100}%`,
+                top: `${(targetMeteor.y / H) * 100}%`,
+                transform: 'translate(-50%, -140%)',
+                zIndex: 45,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                pointerEvents: 'none',
+                animation: 'bounceIn 0.3s ease-out',
+              }}>
+                <div style={{
+                  background: '#fde047',
+                  border: '2px solid #ca8a04',
+                  borderRadius: '12px',
+                  padding: '4px 10px',
+                  color: '#713f12',
+                  fontWeight: 900,
+                  fontSize: '11px',
+                  whiteSpace: 'nowrap',
+                  boxShadow: '0 4px 14px rgba(0,0,0,0.5)',
+                  marginBottom: '4px',
+                }}>
+                  🦊 Laser this one! 👇
+                </div>
+                <div style={{ fontSize: '32px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.6))' }}>
+                  🦊
+                </div>
+              </div>
+            )}
+
+            {/* ROTATING PLASMA CANNON TURRET AT BOTTOM CENTER */}
             <div style={{
-              position: 'absolute', bottom: '10px', left: '50%',
+              position: 'absolute', bottom: '12px', left: '50%',
               transform: 'translateX(-50%)',
-              fontSize: '32px', zIndex: 15,
-              filter: 'drop-shadow(0 0 10px #a78bfa)',
-              pointerEvents: 'none'
+              zIndex: 35, display: 'flex', flexDirection: 'column', alignItems: 'center', pointerEvents: 'none'
             }}>
-              🚀
+              {/* Cannon Barrel rotating towards aim target */}
+              <div style={{
+                width: '12px', height: '38px',
+                background: 'linear-gradient(180deg, #38bdf8 0%, #0284c7 60%, #0369a1 100%)',
+                borderRadius: '6px 6px 2px 2px',
+                border: '2px solid #bae6fd',
+                boxShadow: '0 0 14px #38bdf8',
+                transformOrigin: '50% 100%',
+                transform: `rotate(${cannonAngle}deg)`,
+                transition: 'transform 0.12s ease-out',
+                marginBottom: '-6px',
+              }} />
+              {/* Turret Base */}
+              <div style={{
+                width: '54px', height: '24px',
+                background: 'radial-gradient(circle at 50% 30%, #a855f7 0%, #6b21a8 70%, #3b0764 100%)',
+                borderRadius: '14px 14px 4px 4px',
+                border: '2px solid #d8b4fe',
+                boxShadow: '0 4px 16px rgba(168,85,247,0.7)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: '#fff', fontSize: '10px', fontWeight: 900
+              }}>
+                TURRET
+              </div>
             </div>
 
             {/* Lexio Fox Mascot Assistant on Bottom-Left */}

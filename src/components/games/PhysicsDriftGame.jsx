@@ -6,7 +6,7 @@ import { speakText } from '../../utils/AudioHelper';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * PhysicsDriftGame V3 — Highway Road Runner with Catch Explosion FX & Goal Tracking
+ * PhysicsDriftGame V3 — Highway Road Runner with 2-Stage Word Zoom & Catch Explosion
  */
 
 export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
@@ -24,7 +24,8 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
   const [roadOffset, setRoadOffset] = useState(0);
   const [speedBoost, setSpeedBoost] = useState(false);
   const [spinout, setSpinout] = useState(false);
-  const [catchBurst, setCatchBurst] = useState(null); // { xPct, y, word }
+  const [zoomingWord, setZoomingWord] = useState(null); // Stage 1: { xPct, y, word }
+  const [catchBurst, setCatchBurst] = useState(null); // Stage 2: { xPct, y }
   const [feedback, setFeedback] = useState(null);
   const [foxTrigger, setFoxTrigger] = useState(false);
 
@@ -130,17 +131,17 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
       });
     }
 
-    // Move items down and check collisions
+    // Move items down and check physical hit collision
     const playerY = 360;
     let nextItems = [];
 
     itemsRef.current.forEach(item => {
       const nextY = item.y + speed;
 
-      // Collision check
-      if (Math.abs(nextY - playerY) < 32 && Math.abs(item.xPct - carXRef.current) < 14) {
+      // Solid bounding box hit detection
+      if (Math.abs(nextY - playerY) < 32 && Math.abs(item.xPct - carXRef.current) < 15) {
         if (item.isTarget) {
-          // COLLECTED TARGET STAR! (VISUAL EXPLOSION FX, NO AUDIO OVERLAP)
+          // HIT TARGET!
           scoreRef.current += 20;
           streakRef.current += 1;
           wordsCaughtRef.current += 1;
@@ -150,9 +151,15 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
           setWordsCaught(wordsCaughtRef.current);
           setSpeedBoost(true);
 
-          // Trigger Starburst Explosion at catch location
-          setCatchBurst({ xPct: item.xPct, y: nextY, word: item.word });
-          setTimeout(() => setCatchBurst(null), 600);
+          // STAGE 1: Zoom word huge at point of hit
+          setZoomingWord({ xPct: item.xPct, y: nextY - 10, word: item.word });
+
+          // STAGE 2: Burst explosion +20 PTS after 220ms
+          setTimeout(() => {
+            setZoomingWord(null);
+            setCatchBurst({ xPct: item.xPct, y: nextY - 10 });
+            setTimeout(() => setCatchBurst(null), 500);
+          }, 220);
 
           setFeedback({ msg: `🌟 Caught "${item.word}"! (+20 pts)`, type: 'good' });
 
@@ -160,7 +167,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
             setSpeedBoost(false);
             setFeedback(null);
             pickNextTarget();
-          }, 600);
+          }, 700);
         } else if (item.isObstacle) {
           // HIT OIL SLICK
           scoreRef.current = Math.max(0, scoreRef.current - 5);
@@ -183,7 +190,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
           setFoxTrigger(true);
           setTimeout(() => setFeedback(null), 1100);
         }
-        return; // Remove from canvas
+        return; // Remove from road
       }
 
       if (nextY < 480) {
@@ -262,6 +269,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
     setCarXPct(50);
     setItems([]);
     setFeedback(null);
+    setZoomingWord(null);
     setCatchBurst(null);
     setSpeedBoost(false);
     setSpinout(false);
@@ -324,7 +332,7 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
               Highway Word Collector!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Target: Catch <b>{GOAL_WORDS} target words</b> in 60 seconds! Tap anywhere or use <b>◀ / ▶</b> to glide into target word stars!
+              Target: Catch <b>{GOAL_WORDS} target words</b> in 60 seconds! Glide your car into words to magnify and blast them for +20 pts!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -429,26 +437,52 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
               </div>
             ))}
 
-            {/* Catch Burst Explosion Effect */}
+            {/* STAGE 1: ZOOMING WORD POPUP (Phóng to chữ cực đại ngay khi hit) */}
+            {zoomingWord && (
+              <div style={{
+                position: 'absolute',
+                left: `${zoomingWord.xPct}%`,
+                top: `${zoomingWord.y}px`,
+                transform: 'translate(-50%, -50%) scale(2.4)',
+                zIndex: 40,
+                pointerEvents: 'none',
+                padding: '10px 18px',
+                borderRadius: '16px',
+                background: 'linear-gradient(135deg, #fef08a, #facc15)',
+                border: '3px solid #ffffff',
+                boxShadow: '0 0 35px #facc15, 0 10px 30px rgba(0,0,0,0.7)',
+                color: '#713f12',
+                fontWeight: 900,
+                fontSize: '15px',
+                letterSpacing: '0.04em',
+                whiteSpace: 'nowrap',
+                animation: 'zoomIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              }}>
+                ⭐ {zoomingWord.word}
+              </div>
+            )}
+
+            {/* STAGE 2: CATCH BURST EXPLOSION (Nổ tung hào quang +20 PTS) */}
             {catchBurst && (
               <div style={{
                 position: 'absolute',
                 left: `${catchBurst.xPct}%`,
                 top: `${catchBurst.y}px`,
-                transform: 'translate(-50%, -50%) scale(1.6)',
-                zIndex: 35,
+                transform: 'translate(-50%, -50%) scale(1.8)',
+                zIndex: 38,
                 pointerEvents: 'none',
                 animation: 'zoomIn 0.3s ease-out',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '4px',
                 background: 'radial-gradient(circle, #fef08a 0%, #eab308 60%, transparent 100%)',
-                padding: '12px 20px',
+                padding: '12px 22px',
                 borderRadius: '30px',
                 color: '#713f12',
                 fontWeight: 900,
-                fontSize: '16px',
-                boxShadow: '0 0 30px #facc15',
+                fontSize: '18px',
+                boxShadow: '0 0 35px #facc15',
+                whiteSpace: 'nowrap',
               }}>
                 <span>💥 +20 PTS!</span>
               </div>
@@ -540,10 +574,10 @@ export default function PhysicsDriftGame({ weekNumber = 33, words = [], onComple
             <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#4ade80' }}>
               {wordsCaught >= GOAL_WORDS ? 'Target Achieved! Road Legend!' : 'Highway Run Finished!'}
             </h3>
-            <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
+            <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
               Caught: <strong style={{ color: wordsCaught >= GOAL_WORDS ? '#4ade80' : '#fbbf24' }}>{wordsCaught} words</strong> (Goal: {GOAL_WORDS})
             </p>
-            <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
+            <p style={{ margin: '6px 0 0', fontSize: '16px', color: '#cbd5e1' }}>
               Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
               {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>

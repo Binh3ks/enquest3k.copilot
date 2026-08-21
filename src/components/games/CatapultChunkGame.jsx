@@ -406,6 +406,46 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
               );
             })}
 
+            {/* FLYING LEXIO FOX TARGET TRACKER */}
+            {foxTrigger && (() => {
+              const unplacedSlot = round.slots.find(s => !lockedSlots[s.id]);
+              const targetChunk = unplacedSlot ? chunks.find(c => c.word === unplacedSlot.answer && !c.locked) : null;
+              if (!targetChunk) return null;
+
+              return (
+                <div style={{
+                  position: 'absolute',
+                  left: `${targetChunk.xPct}%`,
+                  top: `${targetChunk.yPct}%`,
+                  transform: 'translate(-50%, -140%)',
+                  zIndex: 45,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  pointerEvents: 'none',
+                  animation: 'bounceIn 0.3s ease-out',
+                }}>
+                  <div style={{
+                    background: '#fde047',
+                    border: '2px solid #ca8a04',
+                    borderRadius: '12px',
+                    padding: '4px 10px',
+                    color: '#713f12',
+                    fontWeight: 900,
+                    fontSize: '11px',
+                    whiteSpace: 'nowrap',
+                    boxShadow: '0 4px 14px rgba(0,0,0,0.5)',
+                    marginBottom: '4px',
+                  }}>
+                    🦊 Put "{targetChunk.word}" in [{unplacedSlot.label}]! 👇
+                  </div>
+                  <div style={{ fontSize: '32px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.6))' }}>
+                    🦊
+                  </div>
+                </div>
+              );
+            })()}
+
             {/* Lexio Fox Mascot Assistant on Bottom-Left */}
             <ArcadeFoxHelper
               hintText={`Match the floating chunk to the correct slot!`}

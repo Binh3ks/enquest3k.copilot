@@ -2,31 +2,24 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 /**
- * Focus cycle requirements by week stage (Dynamic Focus Cycle):
- * - Stage 1 (Starters, W01-W16): 8 mins (480s)
- * - Stage 2 (Movers, W17-W32): 12 mins (720s)
- * - Stage 3 (Flyers, W33-W52): 15 mins (900s)
- * - Stage 4 (KET/PET, W53+): 20 mins (1200s)
+ * useArcadeStore
+ * Gamified Arcade Store with dynamic time locks & active learning heartbeat.
+ *
+ * Rules:
+ *  1. Initial battery: 3 minutes play energy.
+ *  2. Milestone Rewards per day (cumulative):
+ *     - 30 mins study (1800s) -> +5 mins (300s) game energy
+ *     - 45 mins study (2700s) -> +5 mins (300s) game energy
+ *     - 60 mins study (3600s) -> +5 mins (300s) game energy
+ *  3. Partialize only saves energy, highScores, and milestones (isArcadeOpen is strictly transient).
  */
-export const getFocusCycleSeconds = (weekNumber = 33) => {
-  const w = parseInt(weekNumber, 10) || 33;
-  if (w <= 16) return 480;
-  if (w <= 32) return 720;
-  if (w <= 52) return 900;
-  return 1200;
-};
 
-export const getUnlockedGameCount = (weekNumber = 33) => {
-  const w = parseInt(weekNumber, 10) || 33;
-  return Math.min(12, Math.max(1, Math.floor((w - 1) / 10) + 1));
-};
-
-export const ARCADE_GAME_CATALOG = [
-  { id: 'bubble_pop',      num: 1,  title: 'Bubble Pop Dash',       icon: '🫧', minWeek: 1,   colorA: '#06b6d4', colorB: '#3b82f6', desc: 'Pop flying vocab bubbles before they escape!' },
-  { id: 'meteor_smasher',  num: 2,  title: 'Vocab Meteor Smasher',  icon: '🛸', minWeek: 11,  colorA: '#7c3aed', colorB: '#4f46e5', desc: 'Swipe-laser incoming meteors with the right word!' },
-  { id: 'physics_drift',   num: 3,  title: 'Physics Drift Race',    icon: '🚗', minWeek: 21,  colorA: '#059669', colorB: '#0d9488', desc: 'Navigate obstacles using CLIL science knowledge!' },
-  { id: 'chunk_catapult',  num: 4,  title: 'Chunk Catapult',        icon: '🧩', minWeek: 31,  colorA: '#d97706', colorB: '#ea580c', desc: 'Drag grammar chunks into exact sentence order!' },
-  { id: 'sound_sniper',    num: 5,  title: 'Sound Sniper',          icon: '🏹', minWeek: 41,  colorA: '#e11d48', colorB: '#db2777', desc: 'Aim & fire at minimal pair pronunciation targets.' },
+export const ARCADE_GAMES = [
+  { id: 'bubble_pop',      num: 1,  title: 'Bubble Pop Dash',       icon: '🫧', minWeek: 1,   colorA: '#0284c7', colorB: '#0369a1', desc: 'Pop bubbles floating with 2D physics.' },
+  { id: 'meteor_smasher',  num: 2,  title: 'Meteor Smasher',        icon: '🛸', minWeek: 11,  colorA: '#7c3aed', colorB: '#581c87', desc: 'Turret laser defense matching definitions.' },
+  { id: 'physics_drift',   num: 3,  title: 'Highway Road Runner',   icon: '🏎️', minWeek: 21,  colorA: '#059669', colorB: '#065f46', desc: 'Collect target word stars on the vertical highway.' },
+  { id: 'chunk_catapult',  num: 4,  title: 'Chunk Catapult Match',  icon: '🧩', minWeek: 31,  colorA: '#d97706', colorB: '#92400e', desc: 'Grammar, bilingual chunk & definition match.' },
+  { id: 'neon_rider',      num: 5,  title: 'Neon Gravity Rider',    icon: '⚡', minWeek: 41,  colorA: '#ec4899', colorB: '#be185d', desc: 'Invert gravity jumping across syllable platforms.' },
   { id: 'castle_defense',  num: 6,  title: 'Castle Tower Defense',  icon: '🏰', minWeek: 51,  colorA: '#1d4ed8', colorB: '#1e293b', desc: 'Place towers to stop antonym/synonym word armies.' },
   { id: 'lightning_connect', num: 7, title: 'Lightning Connect',    icon: '⚡', minWeek: 61,  colorA: '#ca8a04', colorB: '#b45309', desc: 'Chain lightning through semantic word networks.' },
   { id: 'potion_lab',      num: 8,  title: 'Potion Chemistry Lab',  icon: '🧪', minWeek: 71,  colorA: '#0d9488', colorB: '#059669', desc: 'Mix prefix/root/suffix to brew perfect word potions.' },
@@ -36,13 +29,25 @@ export const ARCADE_GAME_CATALOG = [
   { id: 'grand_arena',     num: 12, title: 'Grand Master Arena',    icon: '👑', minWeek: 111, colorA: '#b45309', colorB: '#7e22ce', desc: 'The ultimate 4-skills boss battle championship.' }
 ];
 
+export const ARCADE_GAME_CATALOG = ARCADE_GAMES;
+
+export function getFocusCycleSeconds(weekNumber) {
+  return 1800; // 30 minutes study target
+}
+
+export function getUnlockedGameCount(weekNumber) {
+  const w = parseInt(weekNumber) || 33;
+  return ARCADE_GAMES.filter(g => w >= g.minWeek).length;
+}
 
 export const useArcadeStore = create(
   persist(
     (set, get) => ({
       studySeconds: 0,
-      playEnergySeconds: 180, // 3 minutes initially or recharged
+      playEnergySeconds: 180, // 3 minutes initially
       lastActiveTimestamp: Date.now(),
+      dailyDate: new Date().toDateString(),
+      rewardedMilestones: [], // e.g. [1800, 2700, 3600]
       isArcadeOpen: false,
       activeGameId: 'bubble_pop',
       highScores: {},
@@ -56,28 +61,49 @@ export const useArcadeStore = create(
         const prev = get().lastActiveTimestamp;
         const delta = Math.min(10, Math.max(1, Math.round((now - prev) / 1000)));
 
+        // Day check — reset daily study counters if new day
+        const todayStr = new Date().toDateString();
+        let currentStudy = get().studySeconds;
+        let milestones = get().rewardedMilestones || [];
+
+        if (get().dailyDate !== todayStr) {
+          currentStudy = 0;
+          milestones = [];
+        }
+
         // If inactive for > 45s, do not add bulk time (prevents AFK idling)
         if (now - prev > 45000) {
-          set({ lastActiveTimestamp: now });
+          set({ lastActiveTimestamp: now, dailyDate: todayStr });
           return;
         }
 
-        const currentStudy = get().studySeconds + delta;
-        const focusReq = getFocusCycleSeconds(weekNumber);
+        currentStudy += delta;
+        let bonusEnergy = 0;
+        let nextMilestones = [...milestones];
 
-        // If study requirement met (e.g. 15 mins), recharge 3 minutes play energy
-        if (currentStudy >= focusReq && get().playEnergySeconds < 180) {
-          set({
-            studySeconds: 0,
-            playEnergySeconds: 180,
-            lastActiveTimestamp: now
-          });
-        } else {
-          set({
-            studySeconds: currentStudy,
-            lastActiveTimestamp: now
-          });
+        // 30 min milestone (1800s) -> +5m (300s)
+        if (currentStudy >= 1800 && !nextMilestones.includes(1800)) {
+          bonusEnergy += 300;
+          nextMilestones.push(1800);
         }
+        // 45 min milestone (2700s) -> +5m (300s)
+        if (currentStudy >= 2700 && !nextMilestones.includes(2700)) {
+          bonusEnergy += 300;
+          nextMilestones.push(2700);
+        }
+        // 60 min milestone (3600s) -> +5m (300s)
+        if (currentStudy >= 3600 && !nextMilestones.includes(3600)) {
+          bonusEnergy += 300;
+          nextMilestones.push(3600);
+        }
+
+        set({
+          studySeconds: currentStudy,
+          playEnergySeconds: get().playEnergySeconds + bonusEnergy,
+          rewardedMilestones: nextMilestones,
+          lastActiveTimestamp: now,
+          dailyDate: todayStr,
+        });
       },
 
       // Consume play energy while playing games (1s tick)
@@ -102,6 +128,8 @@ export const useArcadeStore = create(
       partialize: (state) => ({
         studySeconds: state.studySeconds,
         playEnergySeconds: state.playEnergySeconds,
+        dailyDate: state.dailyDate,
+        rewardedMilestones: state.rewardedMilestones,
         lastActiveTimestamp: state.lastActiveTimestamp,
         highScores: state.highScores,
       }),
