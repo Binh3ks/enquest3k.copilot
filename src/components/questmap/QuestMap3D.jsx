@@ -177,6 +177,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
     const c = getStationCompletion(i);
     return !c.allDone && isStationUnlocked(i);
   });
+  const currentSuggestedIdx = suggestedIdx >= 0 ? suggestedIdx : 0;
+
   // Sequential flatten of all 15 quests in sequence Day 1 -> Day 5
   const allQuests = useMemo(() => QUEST_SCHEDULE.flatMap((day, dIdx) =>
     day.quests.map((q, qIdx) => ({
@@ -259,8 +261,6 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
     }
     prevSuggestedIdxRef.current = currentSuggestedIdx;
   }, [currentSuggestedIdx, weekQuestCount, totalQuests]);
-
-  const showLexioCTA = weekQuestCount < totalQuests && firstUncompletedTask;
 
   return (
     <div className="qm3d-container">
