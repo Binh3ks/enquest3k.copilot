@@ -28,7 +28,7 @@
             });
           }
           setTimeout(function() {
-            window.location.reload(true);
+            window.location.href = window.location.pathname + '?_v=' + Date.now();
           }, 150);
         }
       }
