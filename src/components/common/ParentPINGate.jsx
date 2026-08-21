@@ -28,7 +28,14 @@ export function isPINSet() {
   return pin && pin !== '0000';
 }
 
-export default function ParentPINGate({ isOpen, onClose, onSuccess, title, subtitle }) {
+export default function ParentPINGate({ 
+  isOpen, 
+  onClose, 
+  onSuccess, 
+  title, 
+  subtitle,
+  allowMathBypass = false // STRICT DEFAULT: false for Quest Map / Hard Lock. Only true for Settings / External Links
+}) {
   const [digits, setDigits] = useState(['', '', '', '']);
   const [error, setError] = useState(false);
   const [shaking, setShaking] = useState(false);
@@ -142,25 +149,45 @@ export default function ParentPINGate({ isOpen, onClose, onSuccess, title, subti
           </p>
         )}
 
-        {/* Switch to Math Challenge or PIN */}
+        {/* Switch to Math Challenge ONLY when allowMathBypass is explicitly enabled (Settings / External Links) */}
         <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <button
-            type="button"
-            onClick={() => {
-              const num1 = Math.floor(Math.random() * 20) + 11;
-              const num2 = Math.floor(Math.random() * 20) + 11;
-              const ans = prompt(`👤 Dành cho Phụ huynh: Hãy giải phép tính sau để mở khóa:\n\n${num1} + ${num2} = ?`);
-              if (ans && parseInt(ans.trim(), 10) === num1 + num2) {
-                onSuccess?.();
-                onClose?.();
-              } else if (ans !== null) {
-                alert('❌ Câu trả lời chưa chính xác.');
-              }
-            }}
-            className="text-xs font-bold text-indigo-600 hover:text-indigo-800 underline"
-          >
-            🧮 Giải toán phụ huynh (Không cần nhớ PIN)
-          </button>
+          {allowMathBypass ? (
+            <button
+              type="button"
+              onClick={() => {
+                const isMultiplication = Math.random() > 0.5;
+                let promptText = '';
+                let expectedAnswer = 0;
+
+                if (isMultiplication) {
+                  const num1 = Math.floor(Math.random() * 35) + 34; // 34..68
+                  const num2 = Math.floor(Math.random() * 4) + 6;   // 6..9
+                  expectedAnswer = num1 * num2;
+                  promptText = `👤 Dành cho Phụ huynh: Hãy giải phép tính sau để xác nhận quyền người lớn:\n\n${num1} × ${num2} = ?`;
+                } else {
+                  const num1 = Math.floor(Math.random() * 250) + 135; // 135..384
+                  const num2 = Math.floor(Math.random() * 130) + 68;  // 68..197
+                  expectedAnswer = num1 + num2;
+                  promptText = `👤 Dành cho Phụ huynh: Hãy giải phép tính sau để xác nhận quyền người lớn:\n\n${num1} + ${num2} = ?`;
+                }
+
+                const ans = prompt(promptText);
+                if (ans && parseInt(ans.trim(), 10) === expectedAnswer) {
+                  onSuccess?.();
+                  onClose?.();
+                } else if (ans !== null) {
+                  alert('❌ Câu trả lời chưa chính xác.');
+                }
+              }}
+              className="text-xs font-bold text-indigo-600 hover:text-indigo-800 underline"
+            >
+              🧮 Giải toán phụ huynh (Apple Gate)
+            </button>
+          ) : (
+            <span className="text-[11px] font-semibold text-slate-400">
+              🔒 Chỉ phụ huynh có mã PIN mới được mở
+            </span>
+          )}
           <span className="text-[11px] font-medium text-slate-300">
             Mặc định: 0000
           </span>
