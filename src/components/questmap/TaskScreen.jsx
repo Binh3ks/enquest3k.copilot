@@ -5,6 +5,8 @@ import { QUEST_SCHEDULE } from '../../config/questSchedule';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import LexioMascot from '../mascot/LexioMascot';
+import useArcadeStore from '../../stores/useArcadeStore';
+import ArcadeModal from '../games/ArcadeModal';
 import './TaskScreen.css';
 
 /**
@@ -89,6 +91,27 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
     }
   }, [weekId, taskId]);
 
+  const {
+    isArcadeOpen,
+    setArcadeOpen,
+    playEnergySeconds,
+    recordActiveInteraction
+  } = useArcadeStore();
+
+  // Active interaction tracker (every 10s while tab is focused)
+  useEffect(() => {
+    const handleUserActivity = () => {
+      recordActiveInteraction(weekId);
+    };
+
+    window.addEventListener('click', handleUserActivity, { passive: true });
+    window.addEventListener('keydown', handleUserActivity, { passive: true });
+    return () => {
+      window.removeEventListener('click', handleUserActivity);
+      window.removeEventListener('keydown', handleUserActivity);
+    };
+  }, [weekId, recordActiveInteraction]);
+
   return (
     <div className="ts-container">
       {/* Top bar */}
@@ -108,8 +131,27 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <span className="ts-task-name font-black">{taskInfo.label}</span>
         </div>
         
-        {/* Unified XP Reward & Time Badge */}
+        {/* Arcade Button + Unified XP Reward & Time Badge */}
         <div className="flex items-center gap-2.5">
+          <button
+            type="button"
+            onClick={() => setArcadeOpen(true)}
+            className={`px-3 py-1 rounded-xl text-xs font-black flex items-center gap-1.5 transition shadow-2xs ${
+              playEnergySeconds > 0
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/30 ring-2 ring-cyan-400/40 hover:scale-105'
+                : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+            }`}
+            title="Open Arcade Room (Study 15m to recharge 3m play battery)"
+          >
+            <span>🕹️</span>
+            <span className="hidden sm:inline">Arcade</span>
+            {playEnergySeconds > 0 ? (
+              <span className="w-2 h-2 rounded-full bg-emerald-300 animate-ping" />
+            ) : (
+              <span className="text-[10px] text-slate-400">🔒</span>
+            )}
+          </button>
+
           <div className="px-3 py-1 bg-amber-50 border border-amber-300 text-amber-900 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-2xs">
             <Trophy size={13} className="text-amber-500" />
             <span>+{taskInfo.xp || 50} XP</span>
@@ -169,6 +211,13 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           )}
         </Suspense>
       </div>
+
+      {/* Arcade Room Modal */}
+      <ArcadeModal
+        isOpen={isArcadeOpen}
+        weekNumber={weekId}
+        onClose={() => setArcadeOpen(false)}
+      />
     </div>
   );
 }
