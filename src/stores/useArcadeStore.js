@@ -98,7 +98,13 @@ export const useArcadeStore = create(
       }
     }),
     {
-      name: 'engquest_arcade_store_v1'
+      name: 'engquest_arcade_store_v1',
+      partialize: (state) => ({
+        studySeconds: state.studySeconds,
+        playEnergySeconds: state.playEnergySeconds,
+        lastActiveTimestamp: state.lastActiveTimestamp,
+        highScores: state.highScores,
+      }),
     }
   )
 );

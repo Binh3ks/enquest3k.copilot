@@ -251,14 +251,6 @@ export default function QuestSidebar({ isOpen, onClose, currentWeekId = 33, lear
         </div>
       </aside>
 
-      {/* Arcade Modal — accessible from anywhere in the app */}
-      <ArcadeModal
-        isOpen={isArcadeOpen}
-        weekNumber={currentWeekId}
-        ownerBypass={isOwner}
-        onClose={() => setArcadeOpen(false)}
-      />
-
       {/* Trip Selector Modal */}
       {showTripModal && (
         <div className="qs-modal-overlay animate-in fade-in duration-200" onClick={() => setShowTripModal(false)}>
