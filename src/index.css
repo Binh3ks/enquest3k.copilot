@@ -8,10 +8,29 @@
   }
 }
 
-/* Allow selecting and copying text across the app */
-body {
+/* Allow selecting and copying text across the app while locking elastic pull bounce */
+html, body {
   user-select: text;
   -webkit-user-select: text;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Safe area padding utilities for notched/dynamic island devices */
+.pt-safe { padding-top: max(12px, env(safe-area-inset-top)); }
+.pb-safe { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+.pl-safe { padding-left: max(12px, env(safe-area-inset-left)); }
+.pr-safe { padding-right: max(12px, env(safe-area-inset-right)); }
+
+/* Standard touch targets for kids (minimum 44x44px Apple HIG) */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- UI STYLES --- */

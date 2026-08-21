@@ -47,22 +47,22 @@ export default function VoiceConsentStep({ onAccept, onDecline }) {
         marginBottom: 20,
         textAlign: 'left',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-          <span>✅</span>
-          <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>
-            Truyền mã hoá an toàn tới công cụ nhận diện giọng nói chuẩn để chấm điểm tức thì
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 10 }}>
+          <span>🔒</span>
+          <span style={{ fontSize: 13, fontWeight: 700, color: '#166534', lineHeight: 1.4 }}>
+            Giọng nói được truyền mã hoá tới công cụ nhận diện giọng nói chuẩn của trình duyệt (Google / Apple) để chuyển thành văn bản chấm điểm.
           </span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 10 }}>
           <span>✅</span>
-          <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>
-            Xoá ngay sau khi chấm điểm — hoàn toàn không lưu trữ hoặc chia sẻ dữ liệu âm thanh
+          <span style={{ fontSize: 13, fontWeight: 700, color: '#166534', lineHeight: 1.4 }}>
+            EngQuest KHÔNG lưu trữ file âm thanh trên hệ thống — chỉ giữ lại kết quả văn bản để theo dõi tiến trình học tập của con.
           </span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span>✅</span>
-          <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>
-            Ba/mẹ có thể bật/tắt quyền micro bất cứ lúc nào trong Cài đặt
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
+          <span>⚙️</span>
+          <span style={{ fontSize: 13, fontWeight: 700, color: '#166534', lineHeight: 1.4 }}>
+            Ba/mẹ có toàn quyền bật hoặc tắt quyền sử dụng micro bất cứ lúc nào trong mục Cài đặt.
           </span>
         </div>
       </div>

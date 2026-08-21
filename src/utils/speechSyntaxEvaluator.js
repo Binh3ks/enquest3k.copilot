@@ -93,10 +93,23 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
 
   // 2. Question Mode: WH-Fronting & Question Structure Check
   if (mode === 'question') {
+    const WH_HOMOPHONES = {
+      'where': ['where', 'wear', "we're", 'ware', 'were', 'we'],
+      'what': ['what', 'wat', 'watt', 'water'],
+      'why': ['why', 'y', 'while', 'white'],
+      'who': ['who', 'hoo', 'whose'],
+      'when': ['when', 'wen', 'win'],
+      'how': ['how', 'house'],
+      'which': ['which', 'witch'],
+      'whose': ['whose', 'who']
+    };
+
     const cleanCue = normalizeSpokenText(cueWord);
     if (cleanCue) {
-      const cueTokens = cleanCue.split(/\s+/).filter(Boolean);
-      const startsWithCue = cueTokens.every((ct, idx) => spokenTokens[idx] === ct || spokenTokens[idx + 1] === ct);
+      const allowedStarters = WH_HOMOPHONES[cleanCue] || [cleanCue];
+      const firstToken = spokenTokens[0];
+      const secondToken = spokenTokens[1];
+      const startsWithCue = allowedStarters.includes(firstToken) || (secondToken && allowedStarters.includes(secondToken)) || (cleanCue === 'where' && firstToken === 'we' && secondToken === 'are');
       
       if (!startsWithCue) {
         return {
@@ -108,8 +121,11 @@ export const evaluateSpeechSyntax = (spokenText, targets, options = {}) => {
         };
       }
     } else {
-      // General question check: Must start with question word or auxiliary
-      const QUESTION_STARTERS = ['what', 'where', 'when', 'why', 'who', 'how', 'which', 'whose', 'is', 'are', 'was', 'were', 'do', 'does', 'did', 'can', 'could', 'will', 'would', 'have', 'has', 'had'];
+      // General question check: Must start with question word or auxiliary (including common ESL homophones)
+      const QUESTION_STARTERS = [
+        'what', 'wat', 'where', 'wear', 'when', 'why', 'who', 'how', 'which', 'whose',
+        'is', 'are', 'was', 'were', 'do', 'does', 'did', 'can', 'could', 'will', 'would', 'have', 'has', 'had'
+      ];
       const firstToken = spokenTokens[0];
       const secondToken = spokenTokens[1];
       const hasStarter = QUESTION_STARTERS.includes(firstToken) || (secondToken && QUESTION_STARTERS.includes(secondToken));

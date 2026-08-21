@@ -142,10 +142,29 @@ export default function ParentPINGate({ isOpen, onClose, onSuccess, title, subti
           </p>
         )}
 
-        {/* Hint */}
-        <p className="text-[11px] font-medium text-slate-300">
-          PIN mặc định: 0000 (đổi trong Cài đặt)
-        </p>
+        {/* Switch to Math Challenge or PIN */}
+        <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <button
+            type="button"
+            onClick={() => {
+              const num1 = Math.floor(Math.random() * 20) + 11;
+              const num2 = Math.floor(Math.random() * 20) + 11;
+              const ans = prompt(`👤 Dành cho Phụ huynh: Hãy giải phép tính sau để mở khóa:\n\n${num1} + ${num2} = ?`);
+              if (ans && parseInt(ans.trim(), 10) === num1 + num2) {
+                onSuccess?.();
+                onClose?.();
+              } else if (ans !== null) {
+                alert('❌ Câu trả lời chưa chính xác.');
+              }
+            }}
+            className="text-xs font-bold text-indigo-600 hover:text-indigo-800 underline"
+          >
+            🧮 Giải toán phụ huynh (Không cần nhớ PIN)
+          </button>
+          <span className="text-[11px] font-medium text-slate-300">
+            Mặc định: 0000
+          </span>
+        </div>
       </div>
 
       <style>{`
