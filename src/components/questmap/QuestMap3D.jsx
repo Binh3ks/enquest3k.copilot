@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Menu, CheckCircle2, Lock, Settings } from 'lucide-react';
 import useDailyQuestStore from '../../stores/useDailyQuestStore';
