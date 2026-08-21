@@ -309,28 +309,30 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
             )}
           </div>
 
-          {/* Answer Form */}
-          <form onSubmit={handleSubmit} className="flex items-center gap-3">
-            <input
-              type="number"
-              value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
-              placeholder="Enter numerical answer..."
-              className="flex-1 p-3.5 bg-slate-50 text-slate-900 rounded-2xl border-2 border-slate-300 font-mono text-base font-black outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-200 transition"
-            />
+          {/* Answer Form — responsive stack on mobile, inline on tablet+ */}
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+            <div className="flex-1 relative flex items-center">
+              <input
+                type="number"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                placeholder="Enter numerical answer..."
+                className="w-full p-3 sm:p-3.5 bg-slate-50 text-slate-900 rounded-2xl border-2 border-slate-300 font-mono text-base font-black outline-none focus:border-amber-500 focus:ring-4 focus:ring-amber-200 transition"
+              />
+              <button
+                type="button"
+                onClick={() => setShowHint(!showHint)}
+                className="absolute right-2 p-2 text-amber-600 hover:text-amber-800 transition"
+                title="Show Hint"
+              >
+                <HelpCircle size={20} />
+              </button>
+            </div>
             <button
               type="submit"
-              className="px-6 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 font-black text-sm rounded-2xl shadow-lg transition active:scale-95 shrink-0"
+              className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 font-black text-sm rounded-2xl shadow-lg transition active:scale-95 flex items-center justify-center gap-2 shrink-0"
             >
-              Submit Answer
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowHint(!showHint)}
-              className="p-3.5 bg-slate-100 hover:bg-slate-200 text-amber-900 rounded-2xl border border-slate-300 transition shrink-0"
-              title="Show Hint"
-            >
-              <HelpCircle size={20} />
+              <span>Submit Answer ▶</span>
             </button>
           </form>
 

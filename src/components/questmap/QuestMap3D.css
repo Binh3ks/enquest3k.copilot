@@ -519,21 +519,31 @@
   to { opacity: 1; }
 }
 
-/* Lexio mascot — Circular Gold Avatar Badge (Floating, never blocks clicks) */
+/* Lexio mascot — Clean Floating Avatar Badge (Floating animation, never blocks clicks) */
 .qm3d-lexio {
   position: absolute;
   z-index: 25;
   transform: translate(-50%, -100%);
-  transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-  background: radial-gradient(circle, #fff7ed 0%, #ffedd5 70%, #fed7aa 100%);
-  border: 3px solid #f97316;
+  transition: left 1.2s cubic-bezier(0.34, 1.56, 0.64, 1), top 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: #ffffff;
+  border: 2.5px solid #f97316;
   border-radius: 50%;
-  padding: 3px;
+  padding: 2px;
   box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45), 0 2px 6px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none !important; /* 🔥 Never intercepts clicks to station crystal underneath */
+  animation: qm3d-mascot-float 2.5s ease-in-out infinite;
+}
+
+@keyframes qm3d-mascot-float {
+  0%, 100% {
+    transform: translate(-50%, -100%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -100%) translateY(-6px);
+  }
 }
 
 /* Victory Castle */
