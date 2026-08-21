@@ -203,31 +203,28 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
   const xpEarned = score > 0 ? 45 : 0;
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-white rounded-3xl border-2 border-teal-300 shadow-xl space-y-6 text-slate-900 font-sans">
+    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border-2 border-teal-300 shadow-xl space-y-3 text-slate-900 font-sans">
       {/* Top Arcade Status Bar */}
-      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-teal-100 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-black text-2xl shadow-md">
+      <div className="flex items-center justify-between flex-wrap gap-2 border-b border-teal-100 pb-2.5">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-black text-base shadow-sm shrink-0">
             🧪
           </div>
-          <div>
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-teal-100 text-teal-900 border border-teal-300">
-              Science Physics CLIL • Arcade Challenge
-            </span>
-            <h3 className="text-lg font-black text-slate-900">🧪 SCIENCE LAB (PHYSICS DRAG & DROP)</h3>
+          <div className="min-w-0">
+            <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">Science Lab (Physics & Friction)</h3>
           </div>
         </div>
 
         {/* Score & Timer Dashboard */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {gameState === 'playing' && (
             <button
               type="button"
               onClick={handleTogglePause}
-              className="p-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl border border-slate-300 transition"
+              className="p-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 transition"
               title="Pause Timer"
             >
-              <Pause size={16} />
+              <Pause size={14} />
             </button>
           )}
 
@@ -235,20 +232,20 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
             <button
               type="button"
               onClick={handleTogglePause}
-              className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-black text-xs flex items-center gap-1 shadow-md"
+              className="px-2.5 py-1 bg-emerald-600 text-white rounded-lg font-black text-[11px] flex items-center gap-1 shadow-sm"
             >
-              <Play size={14} /> Resume
+              <Play size={12} /> Resume
             </button>
           )}
 
-          <div className="px-4 py-2 bg-slate-100 rounded-2xl border border-slate-200 flex items-center gap-2">
-            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-teal-600'} size={18} />
-            <span className={`text-base font-black font-mono ${timeLeft <= 10 ? 'text-rose-600' : 'text-slate-900'}`}>
+          <div className="px-2.5 py-1 bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-1">
+            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-teal-600'} size={13} />
+            <span className={`text-xs font-black font-mono ${timeLeft <= 10 ? 'text-rose-600' : 'text-slate-900'}`}>
               {timeLeft}s
             </span>
           </div>
 
-          <div className="px-4 py-2 bg-teal-100 text-teal-900 rounded-2xl border border-teal-300 font-black text-sm font-mono">
+          <div className="px-2.5 py-1 bg-teal-100 text-teal-900 rounded-lg border border-teal-300 font-black text-xs font-mono">
             {score} PTS
           </div>
         </div>
@@ -256,22 +253,21 @@ export default function ScienceDragDropLab({ scienceData, weekNumber = 33, onCom
 
       {/* Start Screen (Idle) */}
       {gameState === 'idle' && (
-        <div className="p-8 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-3xl text-center space-y-5 shadow-inner">
-          <div className="w-16 h-16 rounded-3xl bg-teal-600 text-white flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+        <div className="p-5 sm:p-6 bg-gradient-to-br from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl text-center space-y-3 shadow-inner">
+          <div className="w-11 h-11 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-black text-2xl mx-auto shadow-md">
             🧪
           </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-black text-slate-900">READY FOR SCIENCE LAB?</h3>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-              Drag and drop the physics principles onto the experiment diagram in 80 seconds. Tap Start when you are ready!
-            </p>
+          <div className="space-y-1">
+            <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
+              READY FOR<br />SCIENCE LAB?
+            </h3>
           </div>
           <button
             type="button"
             onClick={handleStartGame}
-            className="px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+            className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 text-white rounded-xl font-black text-sm shadow-lg inline-flex items-center gap-1.5 transition hover:scale-105 active:scale-95"
           >
-            <Play size={22} fill="currentColor" /> ▶️ START SCIENCE LAB
+            <Play size={18} fill="currentColor" /> ▶ START
           </button>
         </div>
       )}

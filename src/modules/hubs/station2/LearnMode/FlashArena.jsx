@@ -202,50 +202,47 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
   }, [selectedEn, selectedVi, gameState]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-slate-950 text-white rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-6">
+    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-slate-950 text-white rounded-2xl sm:rounded-3xl border-2 border-amber-500/40 shadow-2xl space-y-3 font-sans">
       {/* Top Arcade Status Bar */}
-      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-slate-800 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-lg">
+      <div className="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-2.5">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-base shadow-sm shrink-0">
             ⚡
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/30 text-amber-300 border border-amber-400/40">
-                Round {currentRoundIdx + 1}/{rounds.length} • {currentRound.theme}
-              </span>
-            </div>
-            <h3 className="text-base sm:text-lg font-black text-white">{currentRound.name}</h3>
+          <div className="min-w-0">
+            <span className="text-[10px] font-black uppercase text-amber-400 block truncate">
+              Round {currentRoundIdx + 1}/{rounds.length} • {currentRound.name}
+            </span>
           </div>
         </div>
 
         {/* Dashboard Stats */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {gameState === 'playing' && (
             <button
               type="button"
               onClick={handleTogglePause}
-              className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-xl border border-slate-800 transition"
+              className="p-1.5 bg-slate-900 hover:bg-slate-800 text-slate-300 rounded-lg border border-slate-800 transition"
               title="Pause Timer"
             >
-              <Pause size={16} />
+              <Pause size={14} />
             </button>
           )}
 
           {streak > 1 && (
-            <div className="px-3 py-1 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-xs animate-bounce flex items-center gap-1 shadow-lg">
-              <Flame size={14} /> {streak}x COMBO!
+            <div className="px-2 py-0.5 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full text-white font-black text-[10px] flex items-center gap-1 shadow-sm">
+              <Flame size={12} /> {streak}x
             </div>
           )}
 
-          <div className="px-4 py-2 bg-slate-900 rounded-2xl border border-slate-800 flex items-center gap-2">
-            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={18} />
-            <span className={`text-base font-black font-mono ${timeLeft <= 10 ? 'text-rose-400' : 'text-amber-300'}`}>
+          <div className="px-2.5 py-1 bg-slate-900 rounded-lg border border-slate-800 flex items-center gap-1">
+            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-400'} size={13} />
+            <span className={`text-xs font-black font-mono ${timeLeft <= 10 ? 'text-rose-400' : 'text-amber-300'}`}>
               {timeLeft}s
             </span>
           </div>
 
-          <div className="px-4 py-2 bg-amber-500/20 text-amber-300 rounded-2xl border border-amber-400/40 font-black text-sm font-mono">
+          <div className="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded-lg border border-amber-400/40 font-black text-xs font-mono">
             {score} PTS
           </div>
         </div>
@@ -253,7 +250,7 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
 
       {/* Stepper Progress Bar */}
       {gameState === 'playing' && (
-        <div className="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+        <div className="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
           <div
             className="h-full bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-500 transition-all duration-300 rounded-full"
             style={{ width: `${((currentRoundIdx + (matchedIds.length / activePairs.length)) / rounds.length) * 100}%` }}
@@ -263,22 +260,21 @@ export function FlashArena({ customSets, weekNumber = 33, onComplete }) {
 
       {/* Start Screen (Idle) */}
       {gameState === 'idle' && (
-        <div className="p-8 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-3xl text-center space-y-5 shadow-inner">
-          <div className="w-16 h-16 rounded-3xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+        <div className="p-5 sm:p-6 bg-gradient-to-br from-amber-500/20 via-orange-500/20 to-slate-900 border-2 border-amber-400 rounded-2xl text-center space-y-3 shadow-inner">
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 text-slate-950 flex items-center justify-center font-black text-2xl mx-auto shadow-md">
             ⚡
           </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-black text-amber-300">WORD BLITZ SPEED RUN</h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-              Clear 6 lightning-fast rounds (Verbs ➔ Nouns ➔ Collocations ➔ Rules). Only 3-4 pairs per round!
-            </p>
+          <div className="space-y-1">
+            <h3 className="text-base sm:text-lg font-black text-amber-300 leading-tight">
+              READY FOR<br />WORD BLITZ?
+            </h3>
           </div>
           <button
             type="button"
             onClick={handleStartGame}
-            className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+            className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 text-slate-950 rounded-xl font-black text-sm shadow-lg inline-flex items-center gap-1.5 transition hover:scale-105 active:scale-95"
           >
-            <Play size={22} fill="currentColor" /> ▶️ START WORD BLITZ
+            <Play size={18} fill="currentColor" /> ▶ START
           </button>
         </div>
       )}

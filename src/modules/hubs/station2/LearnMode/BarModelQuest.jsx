@@ -172,30 +172,27 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
   const xpEarned = score > 0 ? 40 : 0;
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-white rounded-3xl border-2 border-amber-300 shadow-xl space-y-6 text-slate-900 font-sans">
+    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border-2 border-amber-300 shadow-xl space-y-3 text-slate-900 font-sans">
       {/* Header Dashboard */}
-      <div className="flex items-center justify-between flex-wrap gap-3 border-b border-amber-100 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-md">
+      <div className="flex items-center justify-between flex-wrap gap-2 border-b border-amber-100 pb-2.5">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-black text-base shadow-sm shrink-0">
             📐
           </div>
-          <div>
-            <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">
-              Singapore Math CLIL • Problem {currentIndex + 1}/{questions.length}
-            </span>
-            <h3 className="text-lg font-black text-slate-900">📐 MATH QUEST (BAR MODEL CHALLENGE)</h3>
+          <div className="min-w-0">
+            <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">Math Quest (Singapore Bar Model)</h3>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {gameState === 'playing' && (
             <button
               type="button"
               onClick={handleTogglePause}
-              className="p-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl border border-slate-300 transition"
+              className="p-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 transition"
               title="Pause Timer"
             >
-              <Pause size={16} />
+              <Pause size={14} />
             </button>
           )}
 
@@ -203,43 +200,46 @@ export function BarModelQuest({ barModelData, weekNumber = 33, onComplete }) {
             <button
               type="button"
               onClick={handleTogglePause}
-              className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-black text-xs flex items-center gap-1 shadow-md"
+              className="px-2.5 py-1 bg-emerald-600 text-white rounded-lg font-black text-[11px] flex items-center gap-1 shadow-sm"
             >
-              <Play size={14} /> Resume
+              <Play size={12} /> Resume
             </button>
           )}
 
-          <div className="px-4 py-2 bg-slate-100 rounded-2xl border border-slate-200 flex items-center gap-2">
-            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-600'} size={18} />
-            <span className={`text-base font-black font-mono ${timeLeft <= 10 ? 'text-rose-600' : 'text-slate-900'}`}>
+          <div className="px-2.5 py-1 bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-1">
+            <Timer className={timeLeft <= 10 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-amber-600'} size={13} />
+            <span className={`text-xs font-black font-mono ${timeLeft <= 10 ? 'text-rose-600' : 'text-slate-900'}`}>
               {timeLeft}s
             </span>
           </div>
 
-          <div className="px-4 py-2 bg-amber-100 text-amber-900 rounded-2xl border border-amber-300 font-black text-sm font-mono">
+          <div className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300 font-black text-xs font-mono">
             {score} PTS
           </div>
+
+          <span className="px-2 py-1 bg-amber-50 text-amber-900 text-[11px] font-mono font-bold rounded-lg border border-amber-200">
+            {currentIndex + 1}/{questions.length}
+          </span>
         </div>
       </div>
 
       {/* Start Screen (Idle) */}
       {gameState === 'idle' && (
-        <div className="p-8 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl text-center space-y-5 shadow-inner">
-          <div className="w-16 h-16 rounded-3xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+        <div className="p-5 sm:p-6 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl text-center space-y-3 shadow-inner">
+          <div className="w-11 h-11 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-2xl mx-auto shadow-md">
             📐
           </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-black text-slate-900">READY FOR MATH QUEST?</h3>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-              Solve 5 Singapore Bar Model problems in 90 seconds (18s per problem). Tap Start when you are ready to begin!
-            </p>
+          <div className="space-y-1">
+            <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
+              READY FOR<br />MATH QUEST?
+            </h3>
           </div>
           <button
             type="button"
             onClick={handleStartGame}
-            className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+            className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 text-slate-950 rounded-xl font-black text-sm shadow-lg inline-flex items-center gap-1.5 transition hover:scale-105 active:scale-95"
           >
-            <Play size={22} fill="currentColor" /> ▶️ START MATH QUEST
+            <Play size={18} fill="currentColor" /> ▶ START
           </button>
         </div>
       )}

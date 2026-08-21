@@ -165,37 +165,6 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
 
   const [showPassportModal, setShowPassportModal] = useState(false);
 
-  // Dynamic Station Badge Helper
-  const renderStationBadge = () => {
-    if (taskId === 'gear4_clil' || taskId === 'explore') {
-      return (
-        <CLILSealStamp
-          stampId="science"
-          level={1}
-          size="sm"
-          onClick={() => setShowPassportModal(true)}
-          className="hover:scale-110"
-        />
-      );
-    }
-    if (routing.zone === 'story') {
-      return <span className="px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-black rounded-lg border border-blue-200">📖 Story</span>;
-    }
-    if (routing.zone === 'arena') {
-      return <span className="px-2 py-0.5 bg-amber-50 text-amber-700 text-xs font-black rounded-lg border border-amber-200">⚔️ Arena</span>;
-    }
-    if (routing.zone === 'creator') {
-      return <span className="px-2 py-0.5 bg-purple-50 text-purple-700 text-xs font-black rounded-lg border border-purple-200">✍️ Studio</span>;
-    }
-    if (routing.zone === 'info') {
-      return <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 text-xs font-black rounded-lg border border-emerald-200">🎙️ AI Tutor</span>;
-    }
-    if (routing.zone === 'boss') {
-      return <span className="px-2 py-0.5 bg-rose-50 text-rose-700 text-xs font-black rounded-lg border border-rose-200">👑 Review</span>;
-    }
-    return null;
-  };
-
   return (
     <div className="ts-container">
       {/* Top bar */}
@@ -209,9 +178,17 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
           <span className="ts-task-name">{taskInfo.label}</span>
         </div>
         
-        {/* Dynamic Header Action: CLIL Stamp / Station Badge + XP Reward */}
+        {/* Dynamic Header Action: CLIL Stamp (CLIL only) + XP Reward */}
         <div className="ts-header-actions">
-          {renderStationBadge()}
+          {(taskId === 'gear4_clil' || taskId === 'explore') && (
+            <CLILSealStamp
+              stampId="science"
+              level={1}
+              size="sm"
+              onClick={() => setShowPassportModal(true)}
+              className="hover:scale-110"
+            />
+          )}
 
           <div className="ts-xp-badge">
             <Trophy size={12} className="text-amber-500" />

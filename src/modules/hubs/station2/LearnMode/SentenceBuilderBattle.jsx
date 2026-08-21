@@ -224,28 +224,23 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
     : (typeof currentDrill?.template === 'string' ? currentDrill.template : 'Build a correct sentence');
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-5 sm:p-7 bg-white rounded-3xl border-2 border-indigo-200 shadow-xl space-y-5 text-slate-900 font-sans">
+    <div className="w-full max-w-4xl mx-auto p-3.5 sm:p-5 bg-white rounded-2xl sm:rounded-3xl border-2 border-indigo-200 shadow-xl space-y-3 text-slate-900 font-sans">
       {/* Header Info */}
-      <div className="flex items-center justify-between pb-4 border-b border-slate-200 flex-wrap gap-2">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-xl shadow-md">
+      <div className="flex items-center justify-between pb-2.5 border-b border-slate-200 flex-wrap gap-2">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-black text-base shadow-sm shrink-0">
             🧱
           </div>
-          <div>
-            <span className="text-[10px] font-black text-indigo-600 uppercase tracking-wider">
-              Sentence Smash • 45s Timed Challenge
-            </span>
-            <h3 className="text-base font-black text-slate-900">{drillTitleText}</h3>
-          </div>
+          <h3 className="text-xs sm:text-sm font-black text-slate-900 truncate">{drillTitleText}</h3>
         </div>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {grammarLesson && (
             <button
               onClick={() => setShowGrammarModal(true)}
-              className="px-3.5 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 text-white text-xs font-black rounded-xl shadow-md flex items-center gap-1.5 transition active:scale-95"
+              className="px-2.5 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 text-white text-[11px] font-black rounded-lg shadow-sm flex items-center gap-1 transition active:scale-95"
             >
-              <BookOpen size={14} className="text-amber-300" /> 📘 Grammar Rules
+              <BookOpen size={12} className="text-amber-300" /> 📘 Rules
             </button>
           )}
 
@@ -253,10 +248,10 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
             <button
               type="button"
               onClick={handleTogglePause}
-              className="p-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl border border-slate-300 transition"
+              className="p-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 transition"
               title="Pause Timer"
             >
-              <Pause size={16} />
+              <Pause size={14} />
             </button>
           )}
 
@@ -264,45 +259,44 @@ export function SentenceBuilderBattle({ customDrills, grammarLesson, onAttemptRe
             <button
               type="button"
               onClick={handleTogglePause}
-              className="px-3 py-1.5 bg-emerald-600 text-white rounded-xl font-black text-xs flex items-center gap-1 shadow-md"
+              className="px-2.5 py-1 bg-emerald-600 text-white rounded-lg font-black text-[11px] flex items-center gap-1 shadow-sm"
             >
-              <Play size={14} /> Resume
+              <Play size={12} /> Resume
             </button>
           )}
 
-          <div className="px-3 py-1.5 bg-slate-100 rounded-xl border border-slate-200 flex items-center gap-1.5 font-mono text-xs font-black">
-            <Timer className={timeLeft <= 8 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-indigo-600'} size={15} />
+          <div className="px-2.5 py-1 bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-1 font-mono text-[11px] font-black">
+            <Timer className={timeLeft <= 8 && gameState === 'playing' ? 'text-rose-500 animate-ping' : 'text-indigo-600'} size={13} />
             <span className={timeLeft <= 8 ? 'text-rose-600' : 'text-slate-900'}>{timeLeft}s</span>
           </div>
 
-          <div className="px-3 py-1.5 bg-amber-100 text-amber-900 rounded-xl border border-amber-300 font-mono text-xs font-black">
+          <div className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-lg border border-amber-300 font-mono text-[11px] font-black">
             {score} PTS
           </div>
 
-          <span className="px-3 py-1 bg-indigo-50 text-indigo-900 text-xs font-mono font-bold rounded-lg border border-indigo-200">
-            {currentDrillIndex + 1} / {totalDrillsCount}
+          <span className="px-2 py-1 bg-indigo-50 text-indigo-900 text-[11px] font-mono font-bold rounded-lg border border-indigo-200">
+            {currentDrillIndex + 1}/{totalDrillsCount}
           </span>
         </div>
       </div>
 
       {/* Start Screen (Idle) */}
       {gameState === 'idle' && (
-        <div className="p-8 bg-indigo-50/80 border-2 border-indigo-200 rounded-3xl text-center space-y-5 shadow-inner">
-          <div className="w-16 h-16 rounded-3xl bg-indigo-600 text-white flex items-center justify-center font-black text-3xl mx-auto shadow-lg">
+        <div className="p-5 sm:p-6 bg-indigo-50/80 border-2 border-indigo-200 rounded-2xl text-center space-y-3 shadow-inner">
+          <div className="w-11 h-11 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-black text-2xl mx-auto shadow-md">
             🧱
           </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-black text-slate-900">READY FOR SENTENCE SMASH?</h3>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-              Drag or tap word pills to build correct English sentences in 45 seconds. Tap Start when ready!
-            </p>
+          <div className="space-y-1">
+            <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
+              READY FOR<br />SENTENCE SMASH?
+            </h3>
           </div>
           <button
             type="button"
             onClick={handleStartGame}
-            className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 text-white rounded-2xl font-black text-base shadow-xl inline-flex items-center gap-2 transition hover:scale-105"
+            className="px-6 py-2.5 sm:py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 text-white rounded-xl font-black text-sm shadow-lg inline-flex items-center gap-1.5 transition hover:scale-105 active:scale-95"
           >
-            <Play size={22} fill="currentColor" /> ▶️ START SENTENCE SMASH
+            <Play size={18} fill="currentColor" /> ▶ START
           </button>
         </div>
       )}
