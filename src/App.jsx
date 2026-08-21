@@ -88,37 +88,42 @@ const checkpointLoaders = {
 const StationLoading = () => <div className="p-10 text-center text-slate-400 font-black italic">Station loading...</div>;
 
 const RootRedirect = () => {
-  const { currentUser, login, register, guestLogin } = useUserStore();
+  const { login, register, guestLogin } = useUserStore();
+  const navigate = useNavigate();
 
-  // If not logged in, ALWAYS show the Landing / Login Page
-  if (!currentUser) {
-    return (
-      <LandingPage
-        onLogin={login}
-        onRegister={register}
-        onGuestLogin={guestLogin}
-      />
-    );
-  }
+  const handleLogin = async (email, password) => {
+    const res = await login(email, password);
+    if (res?.success) {
+      const user = res.user || useUserStore.getState().currentUser;
+      if (user?.role === 'parent') {
+        navigate('/dashboard');
+      } else {
+        navigate('/week/33/read_explore');
+      }
+    }
+    return res;
+  };
 
-  // Only strictly parent role defaults to dashboard
-  if (currentUser.role === 'parent') {
-    return <Navigate replace to="/dashboard" />;
-  }
+  const handleGuest = () => {
+    guestLogin();
+    navigate('/week/33/read_explore');
+  };
 
-  // All students and owner/guest users go straight to week 33 study
-  const placed = localStorage.getItem('placement_result');
-  if (!placed && currentUser.role === 'student' && currentUser.id !== 'user_owner') {
-    return <Navigate replace to="/placement" />;
-  }
+  const handleRegister = async (data) => {
+    const res = await register(data);
+    if (res?.success) {
+      navigate('/week/33/read_explore');
+    }
+    return res;
+  };
 
-  try {
-    const { startWeek } = JSON.parse(placed);
-    const week = Math.max(33, startWeek || 33);
-    return <Navigate replace to={`/week/${week}/read_explore`} />;
-  } catch {
-    return <Navigate replace to="/week/33/read_explore" />;
-  }
+  return (
+    <LandingPage
+      onLogin={handleLogin}
+      onRegister={handleRegister}
+      onGuestLogin={handleGuest}
+    />
+  );
 };
 
 const ParentChildrenPage = () => {
