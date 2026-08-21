@@ -92,12 +92,13 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
         </div>
 
         {/* Full-height game area */}
-        <div style={{ flex: 1, overflow: 'hidden', padding: '12px' }}>
-          {selectedGame === 'bubble_pop' && <BubblePopGame onComplete={() => {}} isStandalone={ownerBypass} />}
-          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame onComplete={() => {}} isStandalone={ownerBypass} />}
-          {selectedGame === 'physics_drift' && <PhysicsDriftGame onComplete={() => {}} isStandalone={ownerBypass} />}
-          {selectedGame === 'chunk_catapult' && <CatapultChunkGame onComplete={() => {}} isStandalone={ownerBypass} />}
+        <div style={{ flex: 1, overflow: 'hidden', padding: '12px', display: 'flex', flexDirection: 'column' }}>
+          {selectedGame === 'bubble_pop' && <BubblePopGame onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
+          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
+          {selectedGame === 'physics_drift' && <PhysicsDriftGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
+          {selectedGame === 'chunk_catapult' && <CatapultChunkGame onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
         </div>
+
       </div>
     );
   }

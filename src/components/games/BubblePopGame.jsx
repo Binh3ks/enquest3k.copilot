@@ -1,213 +1,380 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles, Trophy, Volume2, Flame, Play, RotateCcw } from 'lucide-react';
-import { speakText } from '../../utils/AudioHelper';
-import { fireCelebrationConfetti } from '../../utils/confettiHelper';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Trophy, Volume2, Flame, Play, RotateCcw } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 
+/**
+ * BubblePopGame V2 — Physics-based flying bubbles
+ * - 8-12 bubbles fly from bottom with randomized trajectories + wall bouncing
+ * - TTS speaks target word → tap the MOVING correct bubble
+ * - Tap wrong → ink splat occludes screen for 1s
+ * - Target escapes top → -5pts penalty
+ * - Combo 3+ → speed increases; Combo 5+ → Golden Bubble x3
+ */
 export default function BubblePopGame({ words = [], onComplete, isStandalone = false }) {
   const DEFAULT_WORDS = [
     'friction', 'slippery', 'headmaster', 'bandage', 'medical',
-    'corridor', 'rubber', 'safety', 'caution', 'momentum', 'velocity'
+    'corridor', 'rubber', 'safety', 'caution', 'momentum', 'velocity', 'smooth'
   ];
-  const activeWords = words && words.length > 0 ? words : DEFAULT_WORDS;
+  const activeWords = words?.length > 0 ? words : DEFAULT_WORDS;
 
-  const [gameState, setGameState] = useState('idle'); // 'idle' | 'playing' | 'done'
+  const [gameState, setGameState] = useState('idle');
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
-  const [gameTimer, setGameTimer] = useState(60); // 60s max per round
+  const [gameTimer, setGameTimer] = useState(60);
   const [targetWord, setTargetWord] = useState('');
   const [bubbles, setBubbles] = useState([]);
+  const [inkSplat, setInkSplat] = useState(null); // {x, y, color} for wrong tap
+  const [showPenalty, setShowPenalty] = useState(false);
+
   const containerRef = useRef(null);
+  const animFrameRef = useRef(null);
+  const bubblesRef = useRef([]);
+  const gameStateRef = useRef('idle');
+  const targetRef = useRef('');
+  const scoreRef = useRef(0);
+  const streakRef = useRef(0);
 
   const { consumePlayEnergy, recordHighScore } = useArcadeStore();
 
-  const spawnRound = () => {
-    const target = activeWords[Math.floor(Math.random() * activeWords.length)];
-    setTargetWord(target);
+  const W = 480, H = 340; // virtual canvas size
 
-    // Pick 3 distractors
-    const distractors = activeWords
-      .filter(w => w !== target)
+  const COLORS = [
+    ['#06b6d4', '#0ea5e9'], // cyan-blue
+    ['#a855f7', '#ec4899'], // purple-pink
+    ['#f59e0b', '#f97316'], // amber-orange
+    ['#10b981', '#0d9488'], // emerald-teal
+    ['#6366f1', '#8b5cf6'], // indigo-violet
+    ['#ef4444', '#f43f5e'], // red-rose
+  ];
+
+  const speak = useCallback((word) => {
+    try {
+      const u = new SpeechSynthesisUtterance(word);
+      u.rate = 0.9; u.pitch = 1.1;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(u);
+    } catch (_) {}
+  }, []);
+
+  const spawnBubbles = useCallback((target, currentStreak) => {
+    const wordPool = activeWords.filter(w => w !== target)
       .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
-    const roundWords = [target, ...distractors].sort(() => Math.random() - 0.5);
+      .slice(0, 7 + Math.floor(currentStreak / 3));
 
-    const newBubbles = roundWords.map((word, i) => ({
-      id: `${word}_${Date.now()}_${i}`,
-      word,
-      isTarget: word === target,
-      x: 15 + (i * 22) + (Math.random() * 6 - 3),
-      y: 65 + (Math.random() * 20),
-      speed: 0.8 + Math.random() * 0.5,
-      size: word.length > 8 ? 'w-24 h-24 text-[11px]' : 'w-20 h-20 text-xs',
-      color: i === 0 ? 'from-cyan-400 to-blue-500' : i === 1 ? 'from-purple-400 to-pink-500' : i === 2 ? 'from-amber-300 to-orange-400' : 'from-emerald-300 to-teal-500'
-    }));
+    const allWords = [target, ...wordPool.slice(0, 7)].sort(() => Math.random() - 0.5);
+    const speedMult = 1 + Math.min(currentStreak * 0.1, 1.2);
 
+    const newBubbles = allWords.map((word, i) => {
+      const color = COLORS[i % COLORS.length];
+      const isGolden = currentStreak >= 5 && word === target;
+      const r = word.length > 8 ? 42 : 36;
+      return {
+        id: `b_${Date.now()}_${i}`,
+        word,
+        isTarget: word === target,
+        isGolden,
+        x: r + Math.random() * (W - 2 * r),
+        y: H + r + Math.random() * 60,
+        vx: (Math.random() - 0.5) * 2.5 * speedMult,
+        vy: -(1.8 + Math.random() * 1.5) * speedMult,
+        r,
+        color,
+        opacity: 1,
+        escaped: false,
+      };
+    });
+
+    bubblesRef.current = newBubbles;
     setBubbles(newBubbles);
-    speakText(target);
-  };
+    speak(target);
+  }, [activeWords, speak]);
+
+  // Physics animation loop
+  const runLoop = useCallback(() => {
+    if (gameStateRef.current !== 'playing') return;
+
+    bubblesRef.current = bubblesRef.current.map(b => {
+      if (b.escaped) return b;
+      let { x, y, vx, vy } = b;
+
+      // Wall bounce
+      if (x - b.r < 0) { x = b.r; vx = Math.abs(vx); }
+      if (x + b.r > W) { x = W - b.r; vx = -Math.abs(vx); }
+
+      // Buoyancy (slow deceleration upward)
+      vy += 0.03;
+
+      x += vx;
+      y += vy;
+
+      // Check escape
+      if (y + b.r < 0) {
+        if (b.isTarget) {
+          scoreRef.current = Math.max(0, scoreRef.current - 5);
+          setScore(scoreRef.current);
+          streakRef.current = 0;
+          setStreak(0);
+          // Spawn new round
+          const newTarget = activeWords[Math.floor(Math.random() * activeWords.length)];
+          targetRef.current = newTarget;
+          setTargetWord(newTarget);
+          setTimeout(() => spawnBubbles(newTarget, 0), 200);
+        }
+        return { ...b, escaped: true };
+      }
+
+      return { ...b, x, y, vx, vy };
+    });
+
+    setBubbles([...bubblesRef.current]);
+    animFrameRef.current = requestAnimationFrame(runLoop);
+  }, [activeWords, spawnBubbles]);
 
   const startGame = () => {
+    scoreRef.current = 0;
+    streakRef.current = 0;
     setScore(0);
     setStreak(0);
     setGameTimer(60);
+    setShowPenalty(false);
+    setInkSplat(null);
+
+    const target = activeWords[Math.floor(Math.random() * activeWords.length)];
+    targetRef.current = target;
+    setTargetWord(target);
+    gameStateRef.current = 'playing';
     setGameState('playing');
-    spawnRound();
+    spawnBubbles(target, 0);
+    animFrameRef.current = requestAnimationFrame(runLoop);
   };
 
-  // Timer loop & energy deduction
+  // 1-second game clock
   useEffect(() => {
     if (gameState !== 'playing') return;
     const interval = setInterval(() => {
-      // Consume 1s arcade energy if not standalone
       if (!isStandalone) {
-        const hasEnergy = consumePlayEnergy(1);
-        if (!hasEnergy) {
-          endGame();
-          return;
-        }
+        const ok = consumePlayEnergy(1);
+        if (!ok) { endGame(); return; }
       }
-
       setGameTimer(t => {
-        if (t <= 1) {
-          clearInterval(interval);
-          endGame();
-          return 0;
-        }
+        if (t <= 1) { endGame(); return 0; }
         return t - 1;
       });
     }, 1000);
-
     return () => clearInterval(interval);
   }, [gameState, isStandalone]);
 
-  const endGame = () => {
+  const endGame = useCallback(() => {
+    gameStateRef.current = 'done';
     setGameState('done');
-    recordHighScore('bubble_pop', score);
-    fireCelebrationConfetti('Arcade_BubblePop_Win');
-    if (onComplete) onComplete(score);
-  };
+    cancelAnimationFrame(animFrameRef.current);
+    recordHighScore('bubble_pop', scoreRef.current);
+    if (onComplete) onComplete(scoreRef.current);
+  }, [onComplete, recordHighScore]);
 
-  const handlePop = (bubble) => {
+  const handleBubbleTap = useCallback((bubble, e) => {
+    if (gameStateRef.current !== 'playing') return;
+    e.stopPropagation();
+
     if (bubble.isTarget) {
-      const nextStreak = streak + 1;
-      const pts = 10 + (nextStreak * 2);
-      setScore(s => s + pts);
-      setStreak(nextStreak);
-      spawnRound();
+      const pts = bubble.isGolden ? 30 : 10 + streakRef.current * 2;
+      scoreRef.current += pts;
+      streakRef.current += 1;
+      setScore(scoreRef.current);
+      setStreak(streakRef.current);
+
+      const nextTarget = activeWords[Math.floor(Math.random() * activeWords.length)];
+      targetRef.current = nextTarget;
+      setTargetWord(nextTarget);
+      spawnBubbles(nextTarget, streakRef.current);
     } else {
+      // Wrong tap — ink splat penalty
+      streakRef.current = 0;
       setStreak(0);
-      speakText(`Oops! Find ${targetWord}`);
+      const rect = e.currentTarget.getBoundingClientRect();
+      setInkSplat({ x: e.clientX - rect.left, y: e.clientY - rect.top, color: bubble.color[0] });
+      setShowPenalty(true);
+      speak(`Find: ${targetRef.current}`);
+      setTimeout(() => { setInkSplat(null); setShowPenalty(false); }, 900);
     }
+  }, [activeWords, spawnBubbles, speak]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      cancelAnimationFrame(animFrameRef.current);
+      window.speechSynthesis?.cancel();
+    };
+  }, []);
+
+  const bgStyle = {
+    width: '100%', height: '100%', minHeight: '400px',
+    background: 'linear-gradient(180deg, #0c1445 0%, #1a237e 40%, #0d47a1 100%)',
+    borderRadius: '16px',
+    display: 'flex', flexDirection: 'column',
+    position: 'relative', overflow: 'hidden',
+    fontFamily: 'system-ui, sans-serif', userSelect: 'none',
   };
 
   return (
-    <div className="w-full h-full min-h-[360px] bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 rounded-3xl p-4 text-white relative overflow-hidden flex flex-col justify-between select-none shadow-2xl border-2 border-cyan-500/30">
-      
-      {/* Top HUD Bar */}
-      <div className="flex items-center justify-between z-10 px-2 py-1 bg-slate-900/80 backdrop-blur rounded-2xl border border-cyan-500/30">
-        <div className="flex items-center gap-2">
-          <span className="text-xl">🫧</span>
+    <div style={bgStyle}>
+      {/* HUD */}
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '10px 14px', background: 'rgba(0,0,0,0.35)',
+        backdropFilter: 'blur(4px)', flexShrink: 0, zIndex: 2,
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <span style={{ fontSize: '20px' }}>🫧</span>
           <div>
-            <h4 className="text-xs font-black text-cyan-300 uppercase tracking-wider">Bubble Pop Dash</h4>
-            <span className="text-[10px] text-slate-400 font-bold">Arcade Mini-Game</span>
+            <div style={{ fontSize: '11px', fontWeight: 900, color: '#7dd3fc', letterSpacing: '0.05em' }}>BUBBLE POP DASH</div>
+            <div style={{ fontSize: '10px', color: '#475569' }}>Arcade Mini-Game</div>
           </div>
         </div>
-
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1 text-xs font-black text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-xl border border-amber-400/30">
-            <Trophy size={13} /> {score} PTS
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ fontSize: '12px', fontWeight: 800, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '3px 10px' }}>
+            🏆 {score} pts
           </div>
           {streak >= 2 && (
-            <div className="flex items-center gap-1 text-xs font-black text-rose-400 bg-rose-400/10 px-2 py-1 rounded-xl border border-rose-400/30 animate-pulse">
-              <Flame size={13} /> {streak}x
+            <div style={{ fontSize: '12px', fontWeight: 800, color: '#f87171', background: 'rgba(248,113,113,0.12)', border: '1px solid rgba(248,113,113,0.3)', borderRadius: '8px', padding: '3px 10px', animation: 'pulse 1s infinite' }}>
+              🔥 {streak}x
             </div>
           )}
-          <div className="text-xs font-black px-2.5 py-1 bg-cyan-500/20 text-cyan-300 rounded-xl border border-cyan-400/40">
-            ⏱️ {gameTimer}s
+          <div style={{ fontSize: '12px', fontWeight: 800, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '3px 10px' }}>
+            ⏱ {gameTimer}s
           </div>
         </div>
       </div>
 
-      {/* Game Canvas Area */}
+      {/* IDLE STATE */}
       {gameState === 'idle' && (
-        <div className="flex-1 flex flex-col items-center justify-center text-center space-y-4 py-8 z-10">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-4xl shadow-xl shadow-cyan-500/30 animate-bounce ring-4 ring-cyan-400/40">
-            🫧
-          </div>
-          <div className="space-y-1">
-            <h3 className="text-2xl font-black text-cyan-300">Pop the Matching Vocab Bubble!</h3>
-            <p className="text-xs text-indigo-200 max-w-sm mx-auto">
-              Listen to the word & tap the correct bubble before time runs out. Chain combos for high scores!
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px' }}>
+          <div style={{ fontSize: '64px', animation: 'bounce 1s infinite' }}>🫧</div>
+          <div style={{ textAlign: 'center' }}>
+            <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#7dd3fc' }}>
+              Catch the Flying Vocab Bubbles!
+            </h3>
+            <p style={{ margin: 0, fontSize: '13px', color: '#94a3b8', maxWidth: '320px' }}>
+              Listen to the word, then tap the right bubble while it's flying. Miss it and you lose points!
             </p>
           </div>
-          <button
-            type="button"
-            onClick={startGame}
-            className="px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black rounded-2xl text-sm shadow-xl active:scale-95 transition flex items-center gap-2"
-          >
-            <Play size={18} fill="currentColor" /> START BUBBLE POP (1 MIN)
+          <button type="button" onClick={startGame} style={{
+            padding: '12px 28px', background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+            color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '14px',
+            border: 'none', cursor: 'pointer', boxShadow: '0 6px 20px rgba(14,165,233,0.3)',
+            display: 'flex', alignItems: 'center', gap: '8px'
+          }}>
+            <span>▶</span> START (1 MINUTE)
           </button>
         </div>
       )}
 
+      {/* PLAYING STATE — physics canvas */}
       {gameState === 'playing' && (
-        <div ref={containerRef} className="flex-1 relative overflow-hidden my-2 flex flex-col justify-between">
-          
-          {/* Target Word Display Banner */}
-          <div className="text-center z-10 py-1.5 px-4 bg-cyan-500/10 border border-cyan-400/40 rounded-2xl backdrop-blur-sm mx-auto flex items-center gap-2">
-            <span className="text-[10px] font-black uppercase text-cyan-400">Target Word:</span>
-            <span className="text-xl font-black text-cyan-200 tracking-wide">{targetWord}</span>
-            <button
-              type="button"
-              onClick={() => speakText(targetWord)}
-              className="p-1 hover:bg-cyan-500/20 rounded-lg text-cyan-300 transition"
-              title="Hear word"
-            >
-              <Volume2 size={15} />
+        <>
+          {/* Target word banner */}
+          <div style={{
+            textAlign: 'center', padding: '6px 12px',
+            background: 'rgba(14,165,233,0.15)', borderBottom: '1px solid rgba(14,165,233,0.2)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexShrink: 0,
+          }}>
+            <span style={{ fontSize: '10px', fontWeight: 900, color: '#7dd3fc', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Target:</span>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: '#e0f2fe', letterSpacing: '0.03em' }}>{targetWord}</span>
+            <button type="button" onClick={() => speak(targetWord)} style={{ background: 'none', border: 'none', color: '#7dd3fc', cursor: 'pointer', padding: '2px' }}>
+              <Volume2 size={16} />
             </button>
+            {streak >= 5 && <span style={{ fontSize: '11px', color: '#fbbf24', fontWeight: 800 }}>⭐ GOLDEN BUBBLE ACTIVE!</span>}
           </div>
 
-          {/* Floating Bubbles */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 items-center justify-center p-4 my-auto">
-            {bubbles.map((b) => (
-              <button
-                key={b.id}
-                type="button"
-                onClick={() => handlePop(b)}
-                className={`${b.size} rounded-full bg-gradient-to-br ${b.color} border-2 border-white/80 shadow-lg shadow-cyan-500/20 flex items-center justify-center font-black text-slate-950 p-2 mx-auto text-center transition-all duration-200 hover:scale-110 active:scale-90 animate-in zoom-in`}
-              >
-                {b.word}
-              </button>
-            ))}
+          {/* Bubble physics canvas */}
+          <div
+            ref={containerRef}
+            style={{ flex: 1, position: 'relative', overflow: 'hidden' }}
+          >
+            {/* Ink splat overlay */}
+            {inkSplat && (
+              <div style={{
+                position: 'absolute', inset: 0, zIndex: 10,
+                background: `radial-gradient(ellipse 200px 150px at ${inkSplat.x}px ${inkSplat.y}px, ${inkSplat.color}88, transparent 70%)`,
+                pointerEvents: 'none', transition: 'opacity 0.3s',
+              }} />
+            )}
+
+            {/* Bubbles rendered as absolute positioned circles */}
+            {bubbles.filter(b => !b.escaped && b.y - b.r < H + 100).map(b => {
+              const pct = containerRef.current
+                ? { x: (b.x / W) * 100, y: (b.y / H) * 100 }
+                : { x: 50, y: 80 };
+              return (
+                <button
+                  key={b.id}
+                  type="button"
+                  onClick={(e) => handleBubbleTap(b, e)}
+                  style={{
+                    position: 'absolute',
+                    left: `${(b.x / W) * 100}%`,
+                    top: `${(b.y / H) * 100}%`,
+                    transform: 'translate(-50%, -50%)',
+                    width: `${b.r * 2}px`,
+                    height: `${b.r * 2}px`,
+                    borderRadius: '50%',
+                    background: b.isGolden
+                      ? 'radial-gradient(circle at 35% 35%, #fef08a, #fbbf24, #d97706)'
+                      : `radial-gradient(circle at 35% 35%, ${b.color[0]}cc, ${b.color[1]}, ${b.color[1]}88)`,
+                    border: b.isGolden ? '2px solid #fef08a' : '1.5px solid rgba(255,255,255,0.35)',
+                    boxShadow: b.isGolden
+                      ? '0 0 16px rgba(251,191,36,0.6), inset 0 2px 4px rgba(255,255,255,0.3)'
+                      : `0 4px 12px ${b.color[0]}44, inset 0 2px 4px rgba(255,255,255,0.2)`,
+                    color: '#fff',
+                    fontWeight: 900,
+                    fontSize: b.r > 38 ? '11px' : '10px',
+                    textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+                    cursor: 'pointer',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    textAlign: 'center',
+                    padding: '4px',
+                    transition: 'transform 0.06s',
+                    zIndex: 5,
+                  }}
+                  onMouseDown={(e) => { e.currentTarget.style.transform = 'translate(-50%,-50%) scale(0.9)'; }}
+                  onMouseUp={(e) => { e.currentTarget.style.transform = 'translate(-50%,-50%) scale(1)'; }}
+                >
+                  {b.isGolden ? `⭐ ${b.word}` : b.word}
+                </button>
+              );
+            })}
+
+            {/* Penalty flash */}
+            {showPenalty && (
+              <div style={{
+                position: 'absolute', inset: 0,
+                background: 'rgba(239,68,68,0.15)',
+                pointerEvents: 'none', zIndex: 8,
+              }} />
+            )}
           </div>
 
-          <div className="text-center text-[10px] text-indigo-300 font-bold">
-            Tap the matching bubble to pop!
+          <div style={{ textAlign: 'center', padding: '6px', fontSize: '10px', color: '#475569', flexShrink: 0 }}>
+            Tap the matching bubble before it flies away!
           </div>
-        </div>
+        </>
       )}
 
+      {/* DONE STATE */}
       {gameState === 'done' && (
-        <div className="flex-1 flex flex-col items-center justify-center text-center space-y-4 py-8 z-10 animate-in zoom-in-95">
-          <div className="w-16 h-16 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-3xl shadow-xl font-black">
-            🏆
-          </div>
-          <div className="space-y-1">
-            <h3 className="text-2xl font-black text-amber-300">Round Complete!</h3>
-            <p className="text-sm font-bold text-white">
-              Final Score: <strong className="text-amber-400 text-lg">{score} PTS</strong>
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={startGame}
-              className="px-6 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-xl text-xs transition flex items-center gap-1.5 active:scale-95"
-            >
-              <RotateCcw size={14} /> Play Again
-            </button>
-          </div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '14px', padding: '24px' }}>
+          <div style={{ fontSize: '56px' }}>🏆</div>
+          <h3 style={{ margin: 0, fontSize: '22px', fontWeight: 900, color: '#fbbf24' }}>Round Complete!</h3>
+          <p style={{ margin: 0, fontSize: '14px', color: '#e2e8f0' }}>
+            Final Score: <strong style={{ color: '#fbbf24', fontSize: '18px' }}>{score} pts</strong>
+          </p>
+          <button type="button" onClick={startGame} style={{
+            padding: '10px 24px', background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+            color: '#fff', fontWeight: 900, fontSize: '13px', borderRadius: '12px',
+            border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px'
+          }}>
+            <RotateCcw size={14} /> Play Again
+          </button>
         </div>
       )}
     </div>
