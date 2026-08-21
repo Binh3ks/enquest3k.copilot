@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, Award, Check, ChevronRight, Zap, X, Globe } from 'lucide-react';
 import LoginScreen from './LoginScreen';
-import NovaMascot from '../NovaMascot';
+import LexioMascot from '../mascot/LexioMascot';
 
 const text = {
   vi: {
@@ -68,134 +68,120 @@ const text = {
       '30 năm kinh nghiệm dạy và nghiên cứu ESL',
       'Phiên dịch viên cabin hàng đầu Việt Nam',
       'Là công trình cả đời, trực tiếp viết toàn bộ 156 tuần nội dung',
-      'Xây dựng theo chuẩn Cambridge & phương pháp ESL tiên tiến nhất',
     ],
-    bottomCtaTitle: 'Bắt đầu ngay hôm nay',
-    bottomCtaSub: '14 ngày đầy đủ tính năng, hoàn toàn miễn phí',
-    bottomCtaBtn: '🚀 Đăng ký miễn phí ngay',
-    bottomCtaLogin1: 'Đã có tài khoản?',
-    bottomCtaLogin2: 'Đăng nhập tại đây',
   },
   en: {
-    loginBtn: 'Login',
+    loginBtn: 'Log In',
     homeBtn: 'Home',
     heroTitle1: 'Learn English',
     heroTitle2: 'Cambridge Standard',
-    heroDesc: 'Not just learning English — but learning Math, Science, Critical Thinking IN English. After 3 years: B1+ Cambridge, ready for international education.',
-    trialBadge: '14 days FREE trial — full features',
-    primaryCta: 'Try 14 days free',
-    primaryCtaSub: 'No credit card needed · Sign up in 30 seconds',
+    heroDesc: 'Not just learning English — learn Math, Science, and Critical Thinking through English. After 3 years: B1+ Cambridge, ready for international curricula.',
+    trialBadge: '14-day FREE trial — full features unlocked',
+    primaryCta: 'Start 14-day Free Trial',
+    primaryCtaSub: 'No credit card required · 30-second sign up',
     socialProof: [
-      { n: '156', label: 'Weeks' },
-      { n: '4', label: 'Skills' },
-      { n: '30+', label: 'Years Experience' },
+      { n: '156', label: 'Study weeks' },
+      { n: '4', label: 'Core skills' },
+      { n: '30+', label: 'Years expertise' },
       { n: 'A1→B1+', label: 'Cambridge' },
     ],
     clilBadge: 'Core Difference',
-    clilTitle: 'Lexio is not just ESL',
-    clilDesc: 'This is CLIL — Content & Language Integrated Learning. Students learn Math, Science, Social Studies IN English, not just learning English as a subject.',
+    clilTitle: 'Lexio is more than standard ESL',
+    clilDesc: 'This is CLIL — Content & Language Integrated Learning. Students learn Math, Science, and Social Studies through English, not just English as an isolated subject.',
     clilSubjects: [
-      { emoji: '📐', text: 'Math IN English' },
-      { emoji: '🔬', text: 'Science IN English' },
-      { emoji: '🌍', text: 'Social Studies IN English' },
+      { emoji: '📐', text: 'Critical Math through English' },
+      { emoji: '🔬', text: 'Science through English' },
+      { emoji: '🌍', text: 'Social Studies through English' },
     ],
     clilGoal: '🎯 Goal after 3 years: B1+ Cambridge (IELTS 5.0–5.5)',
-    clilGoalDesc: 'Ready to use English as Medium of Instruction for international education programs (US, Australia, Singapore)',
-    featuresLabel: 'Key Features',
-    featuresTitle: 'Everything in one app',
+    clilGoalDesc: 'Equipped to use English as a Medium of Instruction (MOI) for US, UK, Australia, and Singapore international academic tracks',
+    featuresLabel: 'Core Features',
+    featuresTitle: 'All in One Comprehensive Platform',
     features: [
-      { emoji: '📚', title: 'CLIL · 156 Weeks', desc: 'Learn Math, Science in English. Not just learning English — learn IN English. A1 → B1+ Cambridge.' },
-      { emoji: '🤖', title: 'AI Tutor Nova 24/7', desc: 'Unlimited personal tutor — chat, practice pronunciation, instant essay correction.' },
-      { emoji: '🧠', title: 'Spaced Repetition', desc: 'Most scientific review system — automatic reminders right when your brain is about to forget.' },
-      { emoji: '🎮', title: 'Game Hub + Logic Lab', desc: 'Think in English through games — learning without feeling like learning.' },
-      { emoji: '📊', title: 'Parent Reports', desc: 'Real weekly progress — real data, transparent, not estimates.' },
-      { emoji: '🎙️', title: 'Shadowing & Pronunciation', desc: 'Famous English learning method of cabin interpreters.' },
+      { emoji: '📚', title: 'CLIL · 156 Weeks', desc: 'Learn Math & Science through English. A1 → B1+ Cambridge standard.' },
+      { emoji: '🤖', title: 'AI Tutor Nova 24/7', desc: 'Unlimited personal tutor — speaking conversation, pronunciation, instant essay feedback.' },
+      { emoji: '🧠', title: 'Spaced Repetition', desc: 'Scientific memory optimization — smart SRS review cues before forgetting.' },
+      { emoji: '🎮', title: 'Game Hub + Logic Lab', desc: 'English critical thinking through interactive challenges.' },
+      { emoji: '📊', title: 'Parent Dashboard', desc: 'Transparent, weekly progress tracking with real mastery analytics.' },
+      { emoji: '🎙️', title: 'Shadowing Studio', desc: 'The renowned language technique used by top conference interpreters.' },
     ],
     compareLabel: 'Comparison',
-    compareTitle: 'Why choose Lexio?',
-    compareDesc: 'Lexio is the only app integrating CLIL — learning subjects IN English, not just learning English as a subject',
+    compareTitle: 'Why Choose Lexio?',
+    compareDesc: 'The only comprehensive platform combining CLIL and Cambridge A2-B1+ Mastery',
     comparePillars: [
-      { emoji: '🏫', title: 'CLIL', sub: 'Learn subjects IN English' },
-      { emoji: '🤖', title: 'AI Tutor', sub: 'Real conversation 24/7' },
-      { emoji: '🧠', title: 'Scientific', sub: 'SRS + Shadowing' },
+      { emoji: '🏫', title: 'CLIL', sub: 'Learn academic subjects through English' },
+      { emoji: '🤖', title: 'AI Tutor', sub: 'Real voice conversation 24/7' },
+      { emoji: '🧠', title: 'Science', sub: 'SRS + Cabin Shadowing' },
     ],
-    compareHeader: ['Feature', 'Lexio', 'Duolingo', 'Edupia', 'Lingokids'],
+    compareHeader: ['Features', 'Lexio', 'Duolingo', 'Edupia', 'Lingokids'],
     compareRows: [
-      'CLIL — learn subjects IN English',
-      'Structured A1→B1+ curriculum',
-      'Real AI Tutor conversation',
-      'Spaced Repetition (SRS)',
-      'Cambridge standard (not textbook)',
-      'Shadowing & AI pronunciation',
-      'Writing / instant correction',
-      'Dashboard & parent reports',
-      'Test generator (for teachers & parents)',
-      'Content for Vietnamese students',
-      'Game + Logic Lab thinking',
+      'CLIL — Academic subjects in English',
+      'Structured A1→B1+ Curriculum',
+      'Interactive Conversational AI Tutor',
+      'Spaced Repetition System (SRS)',
+      'Cambridge Aligned (Not basic textbook)',
+      'Shadowing & AI Pronunciation Coach',
+      'Instant Writing & Essay Rubrics',
+      'Parent Dashboard & Detailed Reports',
+      'Quiz & Mock Assessment Generator',
+      'Standardized for Vietnamese Learners',
+      'Game Hub + Logic Laboratory',
     ],
-    compareFooter: '✓ Lexio — the only app integrating CLIL: Math · Science · Social Studies IN English',
-    credentialsTitle: 'Built by experts',
-    credentialsSub: 'Cabin interpreter · ESL researcher · 30 years',
+    compareFooter: '✓ Lexio — The premier CLIL English learning system for academic excellence',
+    credentialsTitle: 'Built by ESL Authorities',
+    credentialsSub: 'Conference Interpreter · ESL Researcher · 30 Years Experience',
     credentials: [
-      '30 years of ESL teaching and research',
-      'Top cabin interpreter in Vietnam',
-      'Life work, personally wrote all 156 weeks of content',
-      'Built on Cambridge standards & most advanced ESL methods',
+      '30 years of ESL pedagogy and curriculum research',
+      'Leading simultaneous conference interpreter in Vietnam',
+      'A lifetime masterwork authoring all 156 structured weeks',
     ],
-    bottomCtaTitle: 'Get started today',
-    bottomCtaSub: '14 days full features, completely free',
-    bottomCtaBtn: '🚀 Sign up free now',
-    bottomCtaLogin1: 'Already have an account?',
-    bottomCtaLogin2: 'Login here',
   }
 };
 
-const FEATURES = [
-  { emoji: '📚', title: 'CLIL · 156 Tuần', desc: 'Học Toán, Khoa học bằng tiếng Anh. Không chỉ là học tiếng Anh — mà học bằng tiếng Anh. A1 → B1+ Cambridge.' },
-  { emoji: '🤖', title: 'AI Tutor Nova 24/7', desc: 'Gia sư riêng không giới hạn — trò chuyện, luyện phát âm, sửa bài viết tức thì.' },
-  { emoji: '🧠', title: 'Spaced Repetition', desc: 'Hệ thống ôn từ khoa học nhất — tự động nhắc đúng lúc não bộ sắp quên.' },
-  { emoji: '🎮', title: 'Game Hub + Logic Lab', desc: 'Tư duy bằng tiếng Anh qua trò chơi — học mà không thấy như học.' },
-  { emoji: '📊', title: 'Báo cáo phụ huynh', desc: 'Tiến độ thực tế từng tuần — dữ liệu thật, minh bạch, không ước tính.' },
-  { emoji: '🎙️', title: 'Shadowing & Phát âm', desc: 'Phương pháp học tiếng Anh nổi tiếng của các phiên dịch Cabin.' },
+const STAT_ICONS = ['📚', '🎯', '👨‍🏫', '🏆'];
+const SUBJECT_GRADIENTS = [
+  'from-indigo-500/20 to-blue-500/20 border-indigo-200',
+  'from-emerald-500/20 to-teal-500/20 border-emerald-200',
+  'from-amber-500/20 to-orange-500/20 border-amber-200',
 ];
-
-const CREDENTIALS = [
-  '30 năm kinh nghiệm dạy và nghiên cứu ESL',
-  'Phiên dịch viên cabin hàng đầu Việt Nam',
-  'Là công trình cả đời, trực tiếp viết toàn bộ 156 tuần nội dung',
-  'Xây dựng theo chuẩn Cambridge & phương pháp ESL tiên tiến nhất',
+const SUBJECT_ICON_BG = [
+  'bg-indigo-100 text-indigo-700',
+  'bg-emerald-100 text-emerald-700',
+  'bg-amber-100 text-amber-700',
 ];
-
 const FEATURE_COLORS = [
-  'bg-indigo-50 border-indigo-100',
-  'bg-violet-50 border-violet-100',
-  'bg-cyan-50 border-cyan-100',
-  'bg-emerald-50 border-emerald-100',
-  'bg-amber-50 border-amber-100',
-  'bg-rose-50 border-rose-100',
+  'bg-indigo-50 border-indigo-100 hover:border-indigo-300',
+  'bg-violet-50 border-violet-100 hover:border-violet-300',
+  'bg-cyan-50 border-cyan-100 hover:border-cyan-300',
+  'bg-emerald-50 border-emerald-100 hover:border-emerald-300',
+  'bg-amber-50 border-amber-100 hover:border-amber-300',
+  'bg-rose-50 border-rose-100 hover:border-rose-300',
+];
+const ICON_CONTAINERS = [
+  'bg-indigo-100', 'bg-violet-100', 'bg-cyan-100',
+  'bg-emerald-100', 'bg-amber-100', 'bg-rose-100',
 ];
 const TITLE_COLORS = [
-  'text-indigo-700', 'text-violet-700', 'text-cyan-700',
-  'text-emerald-700', 'text-amber-700', 'text-rose-700',
+  'text-indigo-950', 'text-violet-950', 'text-cyan-950',
+  'text-emerald-950', 'text-amber-950', 'text-rose-950',
 ];
 const DESC_COLORS = [
   'text-indigo-600', 'text-violet-600', 'text-cyan-700',
   'text-emerald-700', 'text-amber-700', 'text-rose-600',
 ];
 
-// Competitive comparison data
 const COMPARE_ROWS = [
-  { feature: 'CLIL — học môn học bằng tiếng Anh', lexio: true, duolingo: false, edupia: false, lingokids: false },
-  { feature: 'Lộ trình có cấu trúc A1→B1+',    lexio: true,  duolingo: false, edupia: false, lingokids: false },
-  { feature: 'AI Tutor hội thoại thật sự',       lexio: true,  duolingo: false, edupia: false, lingokids: false },
-  { feature: 'Spaced Repetition (SRS)',           lexio: true,  duolingo: true,  edupia: false, lingokids: false },
-  { feature: 'Chuẩn Cambridge (không theo SGK)', lexio: true,  duolingo: false, edupia: false, lingokids: false },
-  { feature: 'Shadowing & luyện phát âm AI',     lexio: true,  duolingo: false, edupia: true,  lingokids: false },
-  { feature: 'Viết câu / sửa bài tức thì',       lexio: true,  duolingo: false, edupia: false, lingokids: false },
-  { feature: 'Dashboard & báo cáo phụ huynh',    lexio: true,  duolingo: false, edupia: true,  lingokids: false },
-  { feature: 'Tạo đề kiểm tra (cho GV & PH)',    lexio: true,  duolingo: false, edupia: false, lingokids: false },
-  { feature: 'Nội dung chuẩn hóa cho HS Việt',  lexio: true,  duolingo: false, edupia: true,  lingokids: false },
-  { feature: 'Game + Logic Lab tư duy',           lexio: true,  duolingo: false, edupia: true,  lingokids: true  },
+  { feature: 'CLIL — Academic subjects in English', lexio: true, duolingo: false, edupia: false, lingokids: false },
+  { feature: 'Structured A1→B1+ Curriculum',    lexio: true,  duolingo: false, edupia: false, lingokids: false },
+  { feature: 'Interactive Conversational AI Tutor',       lexio: true,  duolingo: false, edupia: false, lingokids: false },
+  { feature: 'Spaced Repetition System (SRS)',           lexio: true,  duolingo: true,  edupia: false, lingokids: false },
+  { feature: 'Cambridge Aligned (Not basic textbook)', lexio: true,  duolingo: false, edupia: false, lingokids: false },
+  { feature: 'Shadowing & AI Pronunciation Coach',     lexio: true,  duolingo: false, edupia: true,  lingokids: false },
+  { feature: 'Instant Writing & Essay Rubrics',       lexio: true,  duolingo: false, edupia: false, lingokids: false },
+  { feature: 'Parent Dashboard & Detailed Reports',    lexio: true,  duolingo: false, edupia: true,  lingokids: false },
+  { feature: 'Quiz & Mock Assessment Generator',    lexio: true,  duolingo: false, edupia: false, lingokids: false },
+  { feature: 'Standardized for Vietnamese Learners',  lexio: true,  duolingo: false, edupia: true,  lingokids: false },
+  { feature: 'Game Hub + Logic Laboratory',           lexio: true,  duolingo: false, edupia: true,  lingokids: true  },
 ];
 
 const CheckIcon  = () => <span className="text-emerald-500 font-black text-base">✓</span>;
@@ -232,7 +218,6 @@ export default function LandingPage({ onLogin, onRegister, onGuestLogin }) {
   return (
     <div className="min-h-screen bg-white flex flex-col overflow-y-auto">
 
-      {/* ── Header ── */}
       <header className="flex items-center justify-between px-5 py-4 border-b border-slate-100 sticky top-0 bg-white z-10 shadow-sm">
         <button
           onClick={() => goAuth('login')}
@@ -241,8 +226,8 @@ export default function LandingPage({ onLogin, onRegister, onGuestLogin }) {
           {t.loginBtn}
         </button>
         <div className="flex items-center gap-2">
-          <NovaMascot size={36} mood="sidebar" />
-          <span style={{ fontFamily: "'Nunito', 'Quicksand', system-ui, sans-serif", fontWeight: 800, fontSize: '1.5rem', color: '#58cc02', letterSpacing: '-0.5px', lineHeight: 1 }}>Lexio</span>
+          <span className="text-2xl">🦊</span>
+          <span style={{ fontFamily: "'Nunito', 'Quicksand', system-ui, sans-serif", fontWeight: 900, fontSize: '1.5rem', color: '#ea580c', letterSpacing: '-0.5px', lineHeight: 1 }}>LEXIO</span>
         </div>
         <button
           onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')}
@@ -254,9 +239,11 @@ export default function LandingPage({ onLogin, onRegister, onGuestLogin }) {
       </header>
 
       {/* ── Hero ── */}
-      <div className="bg-gradient-to-br from-rose-500 via-red-400 to-orange-400 px-6 pt-12 pb-10 text-center">
+      <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-amber-600 px-6 pt-12 pb-10 text-center">
         <div className="flex justify-center mb-5">
-          <NovaMascot size={220} mood="landing" />
+          <div className="p-3 bg-white/20 rounded-full backdrop-blur-xs shadow-xl">
+            <LexioMascot size={180} mood="happy" />
+          </div>
         </div>
         <h1 className="text-4xl font-black text-white leading-tight mb-4 tracking-tight">
           {t.heroTitle1}<br />

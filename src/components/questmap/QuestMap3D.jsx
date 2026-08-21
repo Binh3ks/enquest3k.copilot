@@ -42,11 +42,12 @@ const STATIONS = [
     index: 1,
     emoji: '📖',
     name: STATION_NAMES[1],
-    color: '#6366f1',
-    glowColor: 'rgba(99,102,241,0.5)',
-    position:       { x: 18, y: 72 },
+    color: '#3b82f6',
+    glowColor: 'rgba(59, 130, 246, 0.65)',
+    bgGradient: 'radial-gradient(circle at 35% 35%, #dbeafe 0%, #3b82f6 70%, #1d4ed8 100%)',
+    position:       { x: 18, y: 74 },
     positionMobile: { x: 25, y: 82 },
-    taskPositions:       [{ x: 12, y: 64 }, { x: 22, y: 58 }, { x: 30, y: 66 }],
+    taskPositions:       [{ x: 8, y: 62 }, { x: 20, y: 56 }, { x: 30, y: 64 }],
     taskPositionsMobile: [{ x: 55, y: 79 }, { x: 70, y: 82 }, { x: 85, y: 85 }],
   },
   {
@@ -55,10 +56,11 @@ const STATIONS = [
     emoji: '🔬',
     name: STATION_NAMES[2],
     color: '#10b981',
-    glowColor: 'rgba(16,185,129,0.5)',
-    position:       { x: 38, y: 48 },
+    glowColor: 'rgba(16, 185, 129, 0.65)',
+    bgGradient: 'radial-gradient(circle at 35% 35%, #d1fae5 0%, #10b981 70%, #047857 100%)',
+    position:       { x: 38, y: 52 },
     positionMobile: { x: 25, y: 65 },
-    taskPositions:       [{ x: 32, y: 42 }, { x: 42, y: 36 }, { x: 48, y: 44 }],
+    taskPositions:       [{ x: 28, y: 40 }, { x: 38, y: 34 }, { x: 48, y: 42 }],
     taskPositionsMobile: [{ x: 55, y: 62 }, { x: 70, y: 65 }, { x: 85, y: 68 }],
   },
   {
@@ -67,10 +69,11 @@ const STATIONS = [
     emoji: '⚔️',
     name: STATION_NAMES[3],
     color: '#f59e0b',
-    glowColor: 'rgba(245,158,11,0.5)',
-    position:       { x: 55, y: 55 },
+    glowColor: 'rgba(245, 158, 11, 0.65)',
+    bgGradient: 'radial-gradient(circle at 35% 35%, #fef3c7 0%, #f59e0b 70%, #b45309 100%)',
+    position:       { x: 55, y: 58 },
     positionMobile: { x: 25, y: 48 },
-    taskPositions:       [{ x: 50, y: 50 }, { x: 58, y: 46 }, { x: 62, y: 54 }],
+    taskPositions:       [{ x: 45, y: 48 }, { x: 55, y: 42 }, { x: 65, y: 48 }],
     taskPositionsMobile: [{ x: 55, y: 45 }, { x: 70, y: 48 }, { x: 85, y: 51 }],
   },
   {
@@ -79,10 +82,11 @@ const STATIONS = [
     emoji: '✍️',
     name: STATION_NAMES[4],
     color: '#8b5cf6',
-    glowColor: 'rgba(139,92,246,0.5)',
-    position:       { x: 68, y: 38 },
+    glowColor: 'rgba(139, 92, 246, 0.65)',
+    bgGradient: 'radial-gradient(circle at 35% 35%, #ede9fe 0%, #8b5cf6 70%, #6d28d9 100%)',
+    position:       { x: 68, y: 42 },
     positionMobile: { x: 25, y: 31 },
-    taskPositions:       [{ x: 63, y: 32 }, { x: 72, y: 28 }, { x: 76, y: 36 }],
+    taskPositions:       [{ x: 60, y: 30 }, { x: 70, y: 24 }, { x: 80, y: 30 }],
     taskPositionsMobile: [{ x: 55, y: 28 }, { x: 70, y: 31 }, { x: 85, y: 34 }],
   },
   {
@@ -91,10 +95,11 @@ const STATIONS = [
     emoji: '🏰',
     name: STATION_NAMES[5],
     color: '#ef4444',
-    glowColor: 'rgba(239,68,68,0.5)',
-    position:       { x: 82, y: 22 },
+    glowColor: 'rgba(239, 68, 68, 0.65)',
+    bgGradient: 'radial-gradient(circle at 35% 35%, #fee2e2 0%, #ef4444 70%, #b91c1c 100%)',
+    position:       { x: 82, y: 26 },
     positionMobile: { x: 25, y: 15 },
-    taskPositions:       [{ x: 78, y: 16 }, { x: 85, y: 12 }, { x: 88, y: 20 }],
+    taskPositions:       [{ x: 72, y: 12 }, { x: 84, y: 8 }, { x: 93, y: 18 }],
     taskPositionsMobile: [{ x: 55, y: 12 }, { x: 70, y: 15 }, { x: 85, y: 18 }],
   },
 ];
@@ -327,13 +332,14 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
                 top: `${stPos.y}%`,
                 '--station-color': station.color,
                 '--station-glow': station.glowColor,
+                '--station-bg': station.bgGradient,
               }}
               onClick={() => handleStationClick(idx)}
               aria-label={station.name}
             >
               {unlocked ? (
                 <>
-                  <span className="qm3d-station-emoji" style={{ fontSize: isSuggested ? '28px' : '22px' }}>
+                  <span className="qm3d-station-emoji" style={{ fontSize: isSuggested ? '30px' : '24px' }}>
                     {station.emoji}
                   </span>
                   {completion.allDone && (
@@ -353,7 +359,9 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
               className={`qm3d-station-label ${unlocked ? 'unlocked' : 'locked-muted'}`}
               style={{
                 left: `${stPos.x}%`,
-                top: `${stPos.y + (isPortrait ? 5.5 : 7)}%`,
+                top: `${stPos.y + (isPortrait ? 5.5 : 7.5)}%`,
+                '--station-color': station.color,
+                '--station-glow': station.glowColor,
               }}
             >
               {unlocked ? (
