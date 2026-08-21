@@ -6,6 +6,7 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { fireCelebrationConfetti } from '../../utils/confettiHelper';
 import LexioMascot from '../mascot/LexioMascot';
 import useArcadeStore from '../../stores/useArcadeStore';
+import { useUserStore } from '../../stores/useUserStore';
 import ArcadeModal from '../games/ArcadeModal';
 import './TaskScreen.css';
 
@@ -50,6 +51,8 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
   const weekId = propWeekId || parseInt(params.weekId);
   const taskId = params.taskId;
   const [showComplete, setShowComplete] = useState(false);
+  const currentUser = useUserStore(state => state.currentUser);
+  const isOwner = currentUser?.role === 'owner' || ['admin', 'super_admin', 'teacher', 'team_leader', 'center_director'].includes(currentUser?.role);
 
   // Find task info from QUEST_SCHEDULE
   const taskInfo = useMemo(() => {
@@ -216,6 +219,7 @@ export default function TaskScreen({ weekData, weekId: propWeekId }) {
       <ArcadeModal
         isOpen={isArcadeOpen}
         weekNumber={weekId}
+        ownerBypass={isOwner}
         onClose={() => setArcadeOpen(false)}
       />
     </div>

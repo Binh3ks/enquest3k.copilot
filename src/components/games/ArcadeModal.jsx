@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { X, BatteryCharging, Battery, Trophy, Lock, ArrowLeft } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, BatteryCharging, Battery, Trophy, Lock, ArrowLeft, ShieldAlert, Sparkles, Check } from 'lucide-react';
 import useArcadeStore, { ARCADE_GAME_CATALOG, getUnlockedGameCount, getFocusCycleSeconds } from '../../stores/useArcadeStore';
+import { useUserStore } from '../../stores/useUserStore';
 import BubblePopGame from './BubblePopGame';
 import MeteorSmasherGame from './MeteorSmasherGame';
 import PhysicsDriftGame from './PhysicsDriftGame';
@@ -13,11 +14,33 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
     highScores
   } = useArcadeStore();
 
+  const currentUser = useUserStore(state => state.currentUser);
+  const STAFF_ROLES = ['owner', 'admin', 'super_admin', 'teacher', 'team_leader', 'center_director'];
+  const isAutoStaff = STAFF_ROLES.includes(currentUser?.role) || currentUser?.role === 'owner';
+
+  const [isOwnerModeActive, setIsOwnerModeActive] = useState(() => {
+    return ownerBypass || isAutoStaff || localStorage.getItem('arcade_owner_bypass') === 'true';
+  });
+
+  // Sync if prop or user role updates
+  useEffect(() => {
+    if (ownerBypass || isAutoStaff) {
+      setIsOwnerModeActive(true);
+    }
+  }, [ownerBypass, isAutoStaff]);
+
+  const toggleOwnerMode = () => {
+    const next = !isOwnerModeActive;
+    setIsOwnerModeActive(next);
+    localStorage.setItem('arcade_owner_bypass', next ? 'true' : 'false');
+  };
+
   const [selectedGame, setSelectedGame] = useState(null);
 
-  const unlockedCount = ownerBypass ? 12 : getUnlockedGameCount(weekNumber);
+  const effectiveOwnerBypass = isOwnerModeActive;
+  const unlockedCount = effectiveOwnerBypass ? 12 : getUnlockedGameCount(weekNumber);
   const focusCycleReq = getFocusCycleSeconds(weekNumber);
-  const isBatteryCharged = ownerBypass || playEnergySeconds > 0;
+  const isBatteryCharged = effectiveOwnerBypass || playEnergySeconds > 0;
 
   const formatEnergy = (secs) => {
     const m = Math.floor(secs / 60);
@@ -26,7 +49,7 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
   };
 
   const handlePlayGame = (gameId) => {
-    if (!isBatteryCharged && !ownerBypass) return;
+    if (!isBatteryCharged && !effectiveOwnerBypass) return;
     setSelectedGame(gameId);
   };
 
@@ -79,7 +102,7 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
             display: 'flex', alignItems: 'center', gap: '8px'
           }}>
             <span style={{ letterSpacing: '0.04em' }}>🕹️ ARCADE ROOM</span>
-            {!ownerBypass && (
+            {!effectiveOwnerBypass && (
               <span style={{
                 background: 'rgba(52,211,153,0.15)', border: '1px solid rgba(52,211,153,0.3)',
                 color: '#34d399', borderRadius: '8px', padding: '3px 10px', fontWeight: 800
@@ -87,9 +110,9 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
                 🔋 {formatEnergy(playEnergySeconds)} remaining
               </span>
             )}
-            {ownerBypass && (
+            {effectiveOwnerBypass && (
               <span style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.3)', color: '#fbbf24', borderRadius: '8px', padding: '3px 10px', fontWeight: 800 }}>
-                👑 Owner Mode
+                👑 Owner Mode (Unlimited)
               </span>
             )}
           </div>
@@ -109,10 +132,10 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
 
         {/* Full-height game area */}
         <div style={{ flex: 1, overflow: 'hidden', padding: '12px', display: 'flex', flexDirection: 'column' }}>
-          {selectedGame === 'bubble_pop' && <BubblePopGame onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
-          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
-          {selectedGame === 'physics_drift' && <PhysicsDriftGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
-          {selectedGame === 'chunk_catapult' && <CatapultChunkGame onComplete={() => setSelectedGame(null)} isStandalone={ownerBypass} />}
+          {selectedGame === 'bubble_pop' && <BubblePopGame onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'physics_drift' && <PhysicsDriftGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'chunk_catapult' && <CatapultChunkGame onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
         </div>
 
       </div>
@@ -151,22 +174,37 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
               fontSize: '20px', boxShadow: '0 4px 12px rgba(96,165,250,0.25)'
             }}>🕹️</div>
             <div>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 900, color: '#e2e8f0', letterSpacing: '0.02em' }}>
-                ENGQUEST ARCADE ROOM
+              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 900, color: '#e2e8f0', letterSpacing: '0.02em', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px' }}>
+                <span>ENGQUEST ARCADE ROOM</span>
                 <span style={{
-                  marginLeft: '8px', fontSize: '10px', background: 'rgba(96,165,250,0.15)',
+                  fontSize: '10px', background: 'rgba(96,165,250,0.15)',
                   color: '#60a5fa', border: '1px solid rgba(96,165,250,0.3)',
                   borderRadius: '8px', padding: '2px 8px', fontWeight: 800
                 }}>
-                  {ownerBypass ? '12' : unlockedCount}/12 UNLOCKED
+                  {unlockedCount}/12 UNLOCKED
                 </span>
-                {ownerBypass && (
-                  <span style={{
-                    marginLeft: '6px', fontSize: '10px', background: 'rgba(251,191,36,0.15)',
-                    color: '#fbbf24', border: '1px solid rgba(251,191,36,0.3)',
-                    borderRadius: '8px', padding: '2px 8px', fontWeight: 800
-                  }}>👑 OWNER</span>
-                )}
+                <button
+                  type="button"
+                  onClick={toggleOwnerMode}
+                  style={{
+                    fontSize: '10px',
+                    background: effectiveOwnerBypass ? 'rgba(251,191,36,0.2)' : 'rgba(255,255,255,0.08)',
+                    color: effectiveOwnerBypass ? '#fbbf24' : '#94a3b8',
+                    border: `1.5px solid ${effectiveOwnerBypass ? '#fbbf24' : 'rgba(255,255,255,0.2)'}`,
+                    borderRadius: '8px',
+                    padding: '2px 10px',
+                    fontWeight: 900,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    boxShadow: effectiveOwnerBypass ? '0 0 10px rgba(251,191,36,0.3)' : 'none',
+                    transition: 'all 0.15s'
+                  }}
+                  title="Click to toggle Owner Mode (unlocks all 12 games + unlimited battery)"
+                >
+                  <span>👑 {effectiveOwnerBypass ? 'OWNER MODE: ON' : 'OWNER TEST (CLICK TO UNLOCK)'}</span>
+                </button>
               </h3>
               <p style={{ margin: '2px 0 0', fontSize: '11px', color: '#64748b' }}>
                 1-Minute Micro-Break Games · Trip {weekNumber} Content
@@ -183,7 +221,7 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
               color: isBatteryCharged ? '#34d399' : '#f87171',
             }}>
               {isBatteryCharged
-                ? <><BatteryCharging size={14} /> {ownerBypass ? 'UNLIMITED' : `${formatEnergy(playEnergySeconds)} left`}</>
+                ? <><BatteryCharging size={14} /> {effectiveOwnerBypass ? 'UNLIMITED' : `${formatEnergy(playEnergySeconds)} left`}</>
                 : <><Battery size={14} /> {Math.round((studySeconds / focusCycleReq) * 100)}% charging</>
               }
             </div>
@@ -198,15 +236,28 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
         </div>
 
         {/* Low battery warning */}
-        {!isBatteryCharged && !ownerBypass && (
+        {!isBatteryCharged && !effectiveOwnerBypass && (
           <div style={{
             padding: '10px 14px', borderRadius: '10px',
             background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)',
             fontSize: '12px', fontWeight: 700, color: '#fbbf24',
-            display: 'flex', alignItems: 'center', gap: '8px'
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px'
           }}>
-            <span>⚡</span>
-            <span>Study for {Math.floor(focusCycleReq / 60)} minutes in any Quest to recharge your 3-minute Arcade Battery! Current: {Math.floor(studySeconds / 60)}m {studySeconds % 60}s</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span>⚡</span>
+              <span>Study for {Math.floor(focusCycleReq / 60)} minutes in any Quest to recharge battery! Current: {Math.floor(studySeconds / 60)}m {studySeconds % 60}s</span>
+            </div>
+            <button
+              type="button"
+              onClick={toggleOwnerMode}
+              style={{
+                padding: '4px 10px', borderRadius: '8px',
+                background: '#fbbf24', color: '#1e2035',
+                border: 'none', fontWeight: 900, fontSize: '11px', cursor: 'pointer'
+              }}
+            >
+              👑 Unlock with Owner Mode
+            </button>
           </div>
         )}
 
@@ -218,7 +269,7 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
             gap: '12px',
           }}>
             {ARCADE_GAME_CATALOG.map((game, idx) => {
-              const isUnlocked = ownerBypass || idx < unlockedCount;
+              const isUnlocked = effectiveOwnerBypass || idx < unlockedCount;
               const canPlay = isUnlocked && isBatteryCharged;
               const highScore = highScores[game.id] || 0;
 

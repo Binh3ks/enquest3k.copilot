@@ -52,10 +52,10 @@ const StoryWriting = ({ content, storyPrompts, themeColor, isVi, onToggleLang, o
 
   // ── Topic Mode (W36+) ─────────────────────────────────────
   if (topicMode && !pictureMode) {
-    return <TopicMode topicMode={topicMode} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={handleProgress} onGoToSpeak={onGoToSpeak} />;
+    return <TopicMode topicMode={topicMode} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={handleProgress} onGoToSpeak={onGoToSpeak} onComplete={onComplete} />;
   }
 
-  return <PictureMode pictureMode={pictureMode} content={content || { story_prompts: prompts }} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={handleProgress} onGoToSpeak={onGoToSpeak} themeColor={themeColor} />;
+  return <PictureMode pictureMode={pictureMode} content={content || { story_prompts: prompts }} weekId={currentWeek} savedData={savedData} saveProgress={saveProgress} markComplete={markComplete} isVi={isVi} onReportProgress={handleProgress} onGoToSpeak={onGoToSpeak} onComplete={onComplete} themeColor={themeColor} />;
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -432,7 +432,7 @@ const PanelStepWriter = ({ pictureMode, weekId, savedData, saveProgress, markCom
 // Routes to PanelStepWriter when enriched panels[] data exists
 // ─────────────────────────────────────────────────────────────
 
-const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, markComplete, isVi, onReportProgress, onGoToSpeak, themeColor = 'pink' }) => {
+const PictureMode = ({ pictureMode, content, weekId, savedData, saveProgress, markComplete, isVi, onReportProgress, onGoToSpeak, onComplete, themeColor = 'pink' }) => {
   // W33+: if panels array has nova_question_en on first panel, use PanelStepWriter
   const hasPanelSteps = Array.isArray(pictureMode?.panels) && pictureMode.panels.length === 3 && pictureMode.panels[0]?.nova_question_en;
   if (hasPanelSteps) {
