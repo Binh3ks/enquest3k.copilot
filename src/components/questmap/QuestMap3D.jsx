@@ -204,27 +204,27 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
 
   const getTaskLink = (quest) => `/week/${weekId}/task/${quest.id}`;
 
-  // Smart Context-Aware Quotes from Lexio
+  // Smart Context-Aware Concise Quotes from Lexio (Vertical Bubble Optimized)
   const dynamicQuotes = useMemo(() => {
     if (weekQuestCount >= totalQuests) {
       return [
-        `Incredible job! Week ${weekId} 100% Completed! 🏆`,
-        "You earned all shields! True champion! 👑",
-        "Ready for the next week's adventure! 🚀"
+        `Week ${weekId} 100% Done! 🏆`,
+        "True Champion! 👑",
+        "All shields earned! 🚀"
       ];
     }
     if (weekQuestCount === 0) {
       return [
-        `Welcome Adventurer! Ready for "${nextUncompletedQuest.label}"? 🌟`,
-        "15 minutes a day builds English superpowers! ⚡",
-        "Tap Day 1 to start your learning journey! 🗺️"
+        "Welcome! Ready for Day 1? 🌟",
+        "Let's start our quest! 🗺️",
+        "15m a day builds power! ⚡"
       ];
     }
     return [
-      `Welcome back! Ready for "${nextUncompletedQuest.label}"? 🌟`,
-      `You've done ${weekQuestCount}/${totalQuests} quests! Keep it up! 💪`,
-      `Only ${totalQuests - weekQuestCount} quests to Boss Castle! 🏰`,
-      "15 minutes a day builds English superpowers! ⚡"
+      `Ready for ${nextUncompletedQuest.label}? 🌟`,
+      `${weekQuestCount}/${totalQuests} quests done! 💪`,
+      `${totalQuests - weekQuestCount} quests to Boss! 🏰`,
+      "Practice makes perfect! ⚡"
     ];
   }, [weekQuestCount, totalQuests, nextUncompletedQuest, weekId]);
 
@@ -539,7 +539,7 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         onClick={handleMascotTap}
         title="Tap Lexio for cheer!"
       >
-        {/* Duo-style Speech Bubble with Inline Continue CTA */}
+        {/* Vertical Duo-style Speech Bubble with Inline Continue CTA */}
         <div className="qm3d-mascot-speech-bubble animate-in fade-in zoom-in-95 duration-200">
           <span className="qm3d-bubble-text">{activeMascotQuote}</span>
           <button
@@ -549,9 +549,9 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
               navigate(getTaskLink(nextUncompletedQuest));
             }}
             className="qm3d-bubble-cta"
+            title={`Continue: ${nextUncompletedQuest.label}`}
           >
             <span>▶ Continue</span>
-            <span className="opacity-75 font-normal text-[10px]">({nextUncompletedQuest.label})</span>
           </button>
           <div className="qm3d-bubble-tail" />
         </div>

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { CheckCircle2, AlertCircle, Sparkles, RefreshCw, User, Trash2, Volume2, Target } from 'lucide-react';
 import VoiceService from '../../services/voiceService';
 
-export function SVGLineMatcher({ customData, onComplete }) {
+export function SVGLineMatcher({ customData, onComplete, weekNumber = 33 }) {
   const [selectedName, setSelectedName] = useState(null);
   const [drawnLines, setDrawnLines] = useState([]); // [{ nameId, nameText, targetId }]
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -200,23 +200,35 @@ export function SVGLineMatcher({ customData, onComplete }) {
     <div className="w-full max-w-5xl mx-auto my-1 p-2.5 sm:p-4 bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-md font-sans space-y-2.5">
       {/* Compact Header & Audio Control Bar */}
       <div className="flex items-center justify-between gap-2 pb-2 border-b border-slate-200">
-        <button
-          type="button"
-          onClick={() => {
-            const scriptToSpeak = sceneData?.passage_audio_script || fullListeningScript;
-            VoiceService.speak(
-              scriptToSpeak,
-              'questions',
-              sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
-              33
-            );
-          }}
-          className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
-        >
-          <Volume2 size={14} /> 🔊 Play Audio
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              window.location.href = `/week/${weekNumber || 33}/hub/1`;
+            }}
+            className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow shrink-0"
+          >
+            ← Map
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              const scriptToSpeak = sceneData?.passage_audio_script || fullListeningScript;
+              VoiceService.speak(
+                scriptToSpeak,
+                'questions',
+                sceneData?.audio_url || '/audio/week33/listening_p1_full.mp3',
+                33
+              );
+            }}
+            className="px-3 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black rounded-xl text-xs flex items-center gap-1.5 transition shadow-sm active:scale-95 shrink-0"
+          >
+            <Volume2 size={14} /> 🔊 Play Audio
+          </button>
+        </div>
 
         <button
+          type="button"
           onClick={handleClearLines}
           disabled={isSubmitted || drawnLines.length === 0}
           className="px-2.5 py-1 bg-rose-50 text-rose-700 hover:bg-rose-100 font-bold text-xs rounded-lg border border-rose-200 transition disabled:opacity-40 flex items-center gap-1"

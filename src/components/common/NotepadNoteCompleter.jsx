@@ -86,6 +86,16 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
         <div className="flex items-center justify-between border-b border-amber-200 pb-2 mb-2.5 flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <button
+              type="button"
+              onClick={() => {
+                window.location.href = `/week/${weekNumber || 33}/hub/1`;
+              }}
+              className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 rounded-xl text-xs font-black flex items-center gap-1 transition active:scale-95 shadow shrink-0"
+            >
+              ← Map
+            </button>
+            <button
+              type="button"
               onClick={handleToggleMasterAudio}
               className={`px-3 py-1.5 rounded-xl font-black text-xs transition-all shadow-xs flex items-center gap-1.5 active:scale-95 ${
                 isPlaying
@@ -102,6 +112,7 @@ export function NotepadNoteCompleter({ title, notes, passageAudioText, onComplet
           </div>
 
           <button
+            type="button"
             onClick={handleReplayMasterAudio}
             className="p-1.5 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-lg text-xs transition border border-amber-300 active:scale-95"
             title="Replay from start"
