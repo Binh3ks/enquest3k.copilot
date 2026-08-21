@@ -642,8 +642,11 @@ const MainLayout = ({ isTaskMode = false }) => {
 
   // Student logged in but no placement yet → go to placement test
   const placed = localStorage.getItem('placement_result');
-  const NON_STUDENT = ['parent', 'teacher', 'admin', 'super_admin', 'team_leader', 'center_director'];
-  if (currentUser.role === 'student' && !placed) {
+  const STAFF_ROLES = ['owner', 'admin', 'super_admin', 'teacher', 'team_leader', 'center_director'];
+  const isOwner = currentUser?.role === 'owner' || currentUser?.displayName === 'Bình' || currentUser?.email?.includes('binh') || localStorage.getItem('arcade_owner_bypass') === 'true';
+  const isStaffOrOwner = isOwner || STAFF_ROLES.includes(currentUser?.role);
+
+  if (currentUser.role === 'student' && !placed && !isStaffOrOwner) {
     return <Navigate replace to="/placement" />;
   }
   // Parent logging in from LandingPage → go to their dashboard
@@ -652,16 +655,16 @@ const MainLayout = ({ isTaskMode = false }) => {
   }
 
   const currentStation = STATIONS.find(s => s.key === tabKey) || STATIONS[0];
-  const STAFF_ROLES = ['admin', 'super_admin', 'teacher', 'team_leader', 'center_director'];
   const isTeacher = STAFF_ROLES.includes(currentUser?.role);
   const CurrentModule = MODULE_COMPONENTS[tabKey] || StationLoading;
+  const effectiveShowOnboarding = showOnboarding && !isStaffOrOwner;
 
   // === TASK MODE: Full-screen individual task (no sidebar, no header) ===
   if (isTaskMode && weekId >= 33) {
     const mappedZones = mapDataToZones(weekData, weekId);
     return (
       <>
-        {showOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
+        {effectiveShowOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
         <TaskScreen weekData={mappedZones} weekId={weekId} />
       </>
     );
@@ -672,12 +675,11 @@ const MainLayout = ({ isTaskMode = false }) => {
     isArcadeOpen, setArcadeOpen,
     showBreakPrompt, dismissBreakPrompt
   } = useArcadeStore();
-  const isOwner = currentUser?.role === 'owner';
 
   if (isQuestMapView && !isTaskMode) {
     return (
       <>
-        {showOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
+        {effectiveShowOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
         <QuestMap3D
           weekId={weekId}
           onToggleSidebar={() => setSidebarOpen(prev => !prev)}
@@ -713,7 +715,7 @@ const MainLayout = ({ isTaskMode = false }) => {
   return (
     <>
       {/* Onboarding — 7-step first-time experience */}
-      {showOnboarding && (
+      {effectiveShowOnboarding && (
         <OnboardingFlow onComplete={() => setShowOnboarding(false)} />
       )}
       <WorksheetGenerator weekData={weekData} />

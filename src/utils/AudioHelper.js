@@ -120,30 +120,11 @@ export const speakText = async (text, audioUrl = null, rate = 1.0, onEnd = null,
         }
         // No audio element — fall through to estimate-only fallback below.
     } catch (ttsError) {
-        console.warn(`[AudioHelper] TTS server failed (station: ${station}):`, ttsError.message);
-
-        // 📀 2. FALLBACK: Try old MP3 file if available (legacy content)
-        if (audioUrl) {
-            try {
-                await new Promise((resolve, reject) => {
-                    const audio = new Audio(audioUrl);
-                    audio.playbackRate = rate;
-
-                    audio.onended = () => { if(onEnd) onEnd(); resolve(); };
-                    audio.onerror = (e) => reject(new Error(`MP3 load failed: ${e.message || 'Unknown error'}`));
-
-                    audio.play().catch(reject);
-                });
-                console.log(`[AudioHelper] ✅ Used fallback MP3: ${audioUrl}`);
-                return true;
-            } catch (mp3Error) {
-                console.warn(`[AudioHelper] MP3 fallback also failed:`, mp3Error.message);
-            }
+        console.warn(`[AudioHelper] TTS server error handled by VoiceService:`, ttsError.message);
+        if (onEnd) {
+            const fallbackMs = Math.max(2000, (text.length || 0) * 80);
+            setTimeout(onEnd, fallbackMs);
         }
-
-        // 🔊 3. LAST RESORT: Browser native TTS (no custom voice)
-        console.warn('[AudioHelper] Using native browser TTS as last resort');
-        await speakNativeTTS(text, rate, onEnd);
         return true;
     }
 
