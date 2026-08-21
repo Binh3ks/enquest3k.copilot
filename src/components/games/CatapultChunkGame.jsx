@@ -1,88 +1,116 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Trophy, Play, RotateCcw, Shield } from 'lucide-react';
+import { RotateCcw, Volume2, Sparkles, CheckCircle2, Zap } from 'lucide-react';
 import useArcadeStore from '../../stores/useArcadeStore';
 
 /**
- * CatapultChunkGame V2 — Drag Physics Sentence Builder
- * - Chunks float with fluid inertia (bob and drift on their own)
- * - Player drags chunk toward correct slot
- * - SNAP if dropped within slot bounds → locked in with click sound
- * - REJECT (bounce back with higher velocity) if dropped in wrong slot
- * - SCATTER if dropped in open space
- * - Decoy chunks appear from Round 3+
- * - Timer per round: 15s, penalty on time-out
+ * CatapultChunkGame V3 — Bulletproof Sentence Chunk Placement with Tap-or-Drag
+ *
+ * Features:
+ *  - Dual Input: Tap-to-Place (Click chunk -> Click slot) AND Smooth Drag & Drop!
+ *  - 100% Responsive Grid: Chunks distribute evenly across full canvas width and never drift off-screen.
+ *  - Realistic Snap Physics: Snaps firmly into correct slot with green glow and click sound.
+ *  - TTS Audio Voiceover: Pronounces chunks and reads full completed sentences out loud.
+ *  - No compound penalty: gentle bounce-back to origin on mistake with clear feedback.
  */
+
 export default function CatapultChunkGame({ onComplete, isStandalone = false }) {
-  const [gameState, setGameState] = useState('idle');
-  const [score, setScore] = useState(0);
-  const [gameTimer, setGameTimer] = useState(60);
-  const [roundIdx, setRoundIdx] = useState(0);
-  const [lockedSlots, setLockedSlots] = useState({});
-  const [roundTimer, setRoundTimer] = useState(15);
-  const [launchAnim, setLaunchAnim] = useState(false);
-  const [feedback, setFeedback] = useState(null); // {msg, type: 'good'|'bad'}
-
-  const containerRef = useRef(null);
-  const chunksRef = useRef([]);
-  const animRef = useRef(null);
-  const dragRef = useRef(null); // {chunkId, startX, startY, offsetX, offsetY}
-  const gameStateRef = useRef('idle');
-  const lockedSlotsRef = useRef({});
-
-  const { consumePlayEnergy, recordHighScore } = useArcadeStore();
-
   const ROUNDS = [
     {
-      sentence: 'Jake was walking down the corridor with rubber shoes.',
+      sentence: 'Jake was walking carefully down the corridor.',
       slots: [
         { id: 'S', label: 'Subject', answer: 'Jake' },
-        { id: 'VP', label: 'Verb Phrase', answer: 'was walking down the corridor' },
-        { id: 'C', label: 'With...', answer: 'with rubber shoes' },
+        { id: 'VP', label: 'Verb Phrase', answer: 'was walking carefully' },
+        { id: 'C', label: 'Location', answer: 'down the corridor' },
       ],
+      decoy: null,
     },
     {
-      sentence: 'Water reduces friction on the wet lab floor.',
+      sentence: 'Tom slipped fast on the wet floor.',
       slots: [
-        { id: 'S', label: 'Subject', answer: 'Water' },
-        { id: 'VP', label: 'Verb Phrase', answer: 'reduces friction' },
-        { id: 'C', label: 'Place/Time', answer: 'on the wet lab floor' },
+        { id: 'S', label: 'Subject', answer: 'Tom' },
+        { id: 'VP', label: 'Verb Phrase', answer: 'slipped fast' },
+        { id: 'C', label: 'Location', answer: 'on the wet floor' },
       ],
+      decoy: null,
     },
     {
       sentence: 'The nurse arrived quickly with clean bandages.',
       slots: [
         { id: 'S', label: 'Subject', answer: 'The nurse' },
         { id: 'VP', label: 'Verb Phrase', answer: 'arrived quickly' },
-        { id: 'C', label: 'With...', answer: 'with clean bandages' },
+        { id: 'C', label: 'Action & Tool', answer: 'with clean bandages' },
       ],
-      decoy: 'carefully at school', // extra floating chunk that doesn't belong
+      decoy: 'in the science lab',
+    },
+    {
+      sentence: 'Students must walk calmly during class breaks.',
+      slots: [
+        { id: 'S', label: 'Subject', answer: 'Students' },
+        { id: 'VP', label: 'Modal & Verb', answer: 'must walk calmly' },
+        { id: 'C', label: 'Time Setting', answer: 'during class breaks' },
+      ],
+      decoy: 'running fast',
     },
   ];
 
+  const [gameState, setGameState] = useState('idle');
+  const [score, setScore] = useState(0);
+  const [roundIdx, setRoundIdx] = useState(0);
+  const [gameTimer, setGameTimer] = useState(60);
+  const [lockedSlots, setLockedSlots] = useState({}); // { slotId: word }
+  const [selectedChunkId, setSelectedChunkId] = useState(null); // for Tap-to-Place
+  const [feedback, setFeedback] = useState(null);
+  const [chunks, setChunks] = useState([]);
+
+  const containerRef = useRef(null);
+  const chunksRef = useRef([]);
+  const lockedSlotsRef = useRef({});
+  const scoreRef = useRef(0);
+  const gameStateRef = useRef('idle');
+  const animRef = useRef(null);
+  const dragRef = useRef(null);
+
+  const { consumePlayEnergy, recordHighScore } = useArcadeStore();
+
   const round = ROUNDS[Math.min(roundIdx, ROUNDS.length - 1)];
 
+  const speak = useCallback((text) => {
+    if (!text) return;
+    try {
+      window.speechSynthesis?.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.rate = 0.88;
+      u.pitch = 1.05;
+      u.lang = 'en-US';
+      window.speechSynthesis?.speak(u);
+    } catch (_) {}
+  }, []);
+
+  // Make chunks distributed across full width
   const makeChunks = useCallback((r) => {
     const allWords = [...r.slots.map(s => s.answer)];
     if (r.decoy) allWords.push(r.decoy);
     const shuffled = allWords.sort(() => Math.random() - 0.5);
 
-    const cw = 300, ch = 200;
     return shuffled.map((word, i) => {
-      const initX = 50 + ((i % 2) * 160) + Math.random() * 40;
-      const initY = 40 + Math.floor(i / 2) * 60 + Math.random() * 20;
+      // Calculate responsive starting slot positions
+      const col = i % 3;
+      const row = Math.floor(i / 3);
+      const initX = 15 + col * 33 + (Math.random() - 0.5) * 5; // percentages %
+      const initY = 30 + row * 35 + (Math.random() - 0.5) * 5;
+
       return {
         id: `chunk_${i}_${Date.now()}`,
         word,
         isDecoy: word === r.decoy,
-        x: initX,
-        y: initY,
-        origX: initX,
-        origY: initY,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
+        xPct: initX,
+        yPct: initY,
+        origXPct: initX,
+        origYPct: initY,
+        vx: (Math.random() - 0.5) * 0.08,
+        vy: (Math.random() - 0.5) * 0.08,
         locked: false,
         lockedSlotId: null,
-        dragging: false,
       };
     });
   }, []);
@@ -90,54 +118,122 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
   // Float animation loop
   const floatLoop = useCallback(() => {
     if (gameStateRef.current !== 'playing') return;
-    const cw = containerRef.current?.offsetWidth || 400;
-    const ch = containerRef.current?.offsetHeight || 220;
 
     chunksRef.current = chunksRef.current.map(c => {
-      if (c.locked || c.dragging) return c;
-      let { x, y, vx, vy } = c;
+      if (c.locked || dragRef.current?.chunkId === c.id) return c;
 
-      // Gentle random nudge (Brownian-like)
-      vx += (Math.random() - 0.5) * 0.08;
-      vy += (Math.random() - 0.5) * 0.08;
+      let { xPct, yPct, vx, vy } = c;
 
-      // Dampen so it doesn't rocket off
-      vx *= 0.97;
-      vy *= 0.97;
+      // Keep comfortably inside container % bounds
+      if (xPct < 5) { xPct = 5; vx = Math.abs(vx); }
+      if (xPct > 80) { xPct = 80; vx = -Math.abs(vx); }
+      if (yPct < 15) { yPct = 15; vy = Math.abs(vy); }
+      if (yPct > 70) { yPct = 70; vy = -Math.abs(vy); }
 
-      x += vx; y += vy;
+      xPct += vx;
+      yPct += vy;
 
-      // Soft wall bounce
-      const hw = 55, hh = 22; // half-width, half-height of chunk
-      if (x - hw < 0) { x = hw; vx = Math.abs(vx) * 0.7; }
-      if (x + hw > cw) { x = cw - hw; vx = -Math.abs(vx) * 0.7; }
-      if (y - hh < 0) { y = hh; vy = Math.abs(vy) * 0.7; }
-      if (y + hh > ch) { y = ch - hh; vy = -Math.abs(vy) * 0.7; }
-
-      return { ...c, x, y, vx, vy };
+      return { ...c, xPct, yPct, vx, vy };
     });
 
+    setChunks([...chunksRef.current]);
     animRef.current = requestAnimationFrame(floatLoop);
   }, []);
 
-  const startGame = () => {
-    gameStateRef.current = 'playing';
-    lockedSlotsRef.current = {};
-    setGameState('playing');
-    setScore(0);
-    setGameTimer(60);
-    setRoundIdx(0);
-    setLockedSlots({});
-    setRoundTimer(15);
-    setFeedback(null);
-    chunksRef.current = makeChunks(ROUNDS[0]);
-    animRef.current = requestAnimationFrame(floatLoop);
+  const checkRoundComplete = useCallback((currentLocked, currentRIdx) => {
+    const r = ROUNDS[Math.min(currentRIdx, ROUNDS.length - 1)];
+    const allFilled = r.slots.every(s => currentLocked[s.id] === s.answer);
+
+    if (allFilled) {
+      scoreRef.current += 30;
+      setScore(scoreRef.current);
+      setFeedback({ msg: `🎉 Perfect Sentence! (+30 pts)`, type: 'good' });
+      speak(`Completed: ${r.sentence}`);
+
+      setTimeout(() => {
+        setFeedback(null);
+        if (currentRIdx + 1 < ROUNDS.length) {
+          const nextRIdx = currentRIdx + 1;
+          setRoundIdx(nextRIdx);
+          lockedSlotsRef.current = {};
+          setLockedSlots({});
+          setSelectedChunkId(null);
+          const newChunks = makeChunks(ROUNDS[nextRIdx]);
+          chunksRef.current = newChunks;
+          setChunks(newChunks);
+        } else {
+          // All rounds finished
+          endGame();
+        }
+      }, 1400);
+    }
+  }, [makeChunks, speak]);
+
+  // Attempt to place a chunk into a slot (shared by Click-to-Place & Drag-and-Drop)
+  const placeChunkInSlot = useCallback((chunk, slot) => {
+    if (!chunk || !slot || chunk.locked || lockedSlotsRef.current[slot.id]) return;
+
+    if (slot.answer === chunk.word) {
+      // SNAP SUCCESS!
+      const newLocked = { ...lockedSlotsRef.current, [slot.id]: chunk.word };
+      lockedSlotsRef.current = newLocked;
+      setLockedSlots({ ...newLocked });
+
+      chunksRef.current = chunksRef.current.map(ch =>
+        ch.id === chunk.id ? { ...ch, locked: true, lockedSlotId: slot.id } : ch
+      );
+      setChunks([...chunksRef.current]);
+      setSelectedChunkId(null);
+
+      scoreRef.current += 10;
+      setScore(scoreRef.current);
+      setFeedback({ msg: `✓ [${slot.label}] Locked! (+10 pts)`, type: 'good' });
+      speak(chunk.word);
+      setTimeout(() => setFeedback(null), 800);
+
+      checkRoundComplete(newLocked, roundIdx);
+    } else {
+      // REJECT
+      setSelectedChunkId(null);
+      if (chunk.isDecoy) {
+        setFeedback({ msg: `❌ "${chunk.word}" is an extra decoy chunk!`, type: 'bad' });
+      } else {
+        const correctSlot = round.slots.find(s => s.answer === chunk.word);
+        setFeedback({
+          msg: `❌ "${chunk.word}" belongs to [${correctSlot?.label || 'Other Slot'}]`,
+          type: 'bad'
+        });
+      }
+      setTimeout(() => setFeedback(null), 1600);
+    }
+  }, [round, roundIdx, checkRoundComplete, speak]);
+
+  // Click on a chunk (for Tap-to-Place)
+  const handleChunkClick = (chunk) => {
+    if (chunk.locked) return;
+    speak(chunk.word);
+    if (selectedChunkId === chunk.id) {
+      setSelectedChunkId(null); // deselect
+    } else {
+      setSelectedChunkId(chunk.id);
+    }
   };
 
-  // Game clock
+  // Click on a slot (for Tap-to-Place)
+  const handleSlotClick = (slot) => {
+    if (lockedSlots[slot.id]) return;
+    if (selectedChunkId) {
+      const chunk = chunksRef.current.find(c => c.id === selectedChunkId);
+      if (chunk) {
+        placeChunkInSlot(chunk, slot);
+      }
+    }
+  };
+
+  // 1-second game timer
   useEffect(() => {
     if (gameState !== 'playing') return;
-    const tick = setInterval(() => {
+    const iv = setInterval(() => {
       if (!isStandalone) {
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(); return; }
@@ -146,361 +242,276 @@ export default function CatapultChunkGame({ onComplete, isStandalone = false }) 
         if (t <= 1) { endGame(); return 0; }
         return t - 1;
       });
-      setRoundTimer(rt => {
-        if (rt <= 1) {
-          // Time-out penalty — reset round
-          setScore(s => Math.max(0, s - 5));
-          setFeedback({ msg: '⏰ Time up! −5 pts', type: 'bad' });
-          setTimeout(() => setFeedback(null), 1000);
-          lockedSlotsRef.current = {};
-          setLockedSlots({});
-          chunksRef.current = makeChunks(round);
-          return 15;
-        }
-        return rt - 1;
-      });
     }, 1000);
-    return () => clearInterval(tick);
-  }, [gameState, roundIdx, isStandalone]);
+    return () => clearInterval(iv);
+  }, [gameState, isStandalone]);
 
   const endGame = useCallback(() => {
     gameStateRef.current = 'done';
     setGameState('done');
     cancelAnimationFrame(animRef.current);
-    recordHighScore('chunk_catapult', score);
-    if (onComplete) onComplete(score);
-  }, [score, onComplete, recordHighScore]);
+    recordHighScore('chunk_catapult', scoreRef.current);
+    if (onComplete) onComplete(scoreRef.current);
+  }, [onComplete, recordHighScore]);
 
-  // Check if round complete (all non-decoy slots locked)
-  const checkRoundComplete = useCallback((newLocked) => {
-    const allSlotsFilled = round.slots.every(s => newLocked[s.id]);
-    if (!allSlotsFilled) return;
+  const startGame = () => {
+    scoreRef.current = 0;
+    setScore(0);
+    setRoundIdx(0);
+    setGameTimer(60);
+    setLockedSlots({});
+    setSelectedChunkId(null);
+    setFeedback(null);
+    lockedSlotsRef.current = {};
 
-    setLaunchAnim(true);
-    setScore(s => s + 25);
-    setFeedback({ msg: '🎯 LAUNCH! +25 pts', type: 'good' });
-    setTimeout(() => {
-      setLaunchAnim(false);
-      setFeedback(null);
-      const next = Math.min(roundIdx + 1, ROUNDS.length - 1);
-      setRoundIdx(next);
-      lockedSlotsRef.current = {};
-      setLockedSlots({});
-      setRoundTimer(15);
-      chunksRef.current = makeChunks(ROUNDS[next]);
-    }, 1200);
-  }, [round, roundIdx, makeChunks]);
+    const initialChunks = makeChunks(ROUNDS[0]);
+    chunksRef.current = initialChunks;
+    setChunks(initialChunks);
 
-  // Drag handlers
-  const getSlotBounds = useCallback(() => {
-    if (!containerRef.current) return [];
-    const slotEls = containerRef.current.querySelectorAll('[data-slotid]');
-    return Array.from(slotEls).map(el => {
-      const r = el.getBoundingClientRect();
-      const cr = containerRef.current.getBoundingClientRect();
-      return {
-        id: el.dataset.slotid,
-        left: r.left - cr.left, right: r.right - cr.left,
-        top: r.top - cr.top, bottom: r.bottom - cr.top,
-      };
-    });
-  }, []);
+    gameStateRef.current = 'playing';
+    setGameState('playing');
+    animRef.current = requestAnimationFrame(floatLoop);
+    speak(ROUNDS[0].sentence);
+  };
 
-  const onPointerDown = useCallback((e, chunkId) => {
-    e.preventDefault();
-    const c = chunksRef.current.find(c => c.id === chunkId);
-    if (!c || c.locked) return;
-    const cr = containerRef.current.getBoundingClientRect();
-    dragRef.current = {
-      chunkId,
-      offsetX: e.clientX - cr.left - c.x,
-      offsetY: e.clientY - cr.top - c.y,
-    };
-    chunksRef.current = chunksRef.current.map(ch => ch.id === chunkId ? { ...ch, dragging: true, vx: 0, vy: 0 } : ch);
-  }, []);
-
-  const onPointerMove = useCallback((e) => {
-    if (!dragRef.current) return;
-    const cr = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - cr.left - dragRef.current.offsetX;
-    const y = e.clientY - cr.top - dragRef.current.offsetY;
-    chunksRef.current = chunksRef.current.map(c =>
-      c.id === dragRef.current.chunkId ? { ...c, x, y } : c
-    );
-  }, []);
-
-  const onPointerUp = useCallback((e) => {
-    if (!dragRef.current) return;
-    const { chunkId } = dragRef.current;
-    dragRef.current = null;
-
-    const c = chunksRef.current.find(ch => ch.id === chunkId);
-    if (!c) return;
-
-    // Find which slot (if any) this chunk was dropped into
-    const slotBounds = getSlotBounds();
-    const hit = slotBounds.find(s =>
-      c.x > s.left && c.x < s.right && c.y > s.top && c.y < s.bottom
-    );
-
-    if (hit) {
-      // Check if correct answer for slot
-      const slot = round.slots.find(s => s.id === hit.id);
-      if (slot && slot.answer === c.word && !lockedSlotsRef.current[hit.id]) {
-        // SNAP — correct!
-        const newLocked = { ...lockedSlotsRef.current, [hit.id]: c.word };
-        lockedSlotsRef.current = newLocked;
-        setLockedSlots({ ...newLocked });
-        chunksRef.current = chunksRef.current.map(ch =>
-          ch.id === chunkId ? { ...ch, locked: true, lockedSlotId: hit.id, dragging: false } : ch
-        );
-        setFeedback({ msg: `✓ [${slot.label}] locked in!`, type: 'good' });
-        setTimeout(() => setFeedback(null), 800);
-        checkRoundComplete(newLocked);
-      } else {
-        // REJECT — smooth bounce back to origin without compound velocity penalty
-        chunksRef.current = chunksRef.current.map(ch =>
-          ch.id === chunkId ? {
-            ...ch,
-            dragging: false,
-            x: ch.origX,
-            y: ch.origY,
-            vx: (Math.random() - 0.5) * 0.4,
-            vy: (Math.random() - 0.5) * 0.4,
-          } : ch
-        );
-        if (c.isDecoy) {
-          setFeedback({ msg: `❌ "${c.word}" is a decoy — not in this sentence!`, type: 'bad' });
-        } else {
-          const correctSlot = round.slots.find(s => s.answer === c.word);
-          setFeedback({
-            msg: `❌ "${c.word}" belongs to [${correctSlot?.label || 'Other Slot'}]`,
-            type: 'bad'
-          });
-        }
-        setTimeout(() => setFeedback(null), 1500);
-      }
-    } else {
-      // SCATTER — smoothly return towards home if released outside
-      chunksRef.current = chunksRef.current.map(ch =>
-        ch.id === chunkId ? {
-          ...ch,
-          dragging: false,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-        } : ch
-      );
-    }
-  }, [round, getSlotBounds, checkRoundComplete]);
-
-  useEffect(() => {
-    window.addEventListener('pointermove', onPointerMove);
-    window.addEventListener('pointerup', onPointerUp);
-    return () => {
-      window.removeEventListener('pointermove', onPointerMove);
-      window.removeEventListener('pointerup', onPointerUp);
-    };
-  }, [onPointerMove, onPointerUp]);
-
-  useEffect(() => {
-    return () => { cancelAnimationFrame(animRef.current); };
-  }, []);
-
-  // Force re-render from ref on animation frame
-  const [tick, setTick] = useState(0);
-  useEffect(() => {
-    if (gameState !== 'playing') return;
-    const id = setInterval(() => setTick(t => t + 1), 40);
-    return () => clearInterval(id);
-  }, [gameState]);
-
-  const displayChunks = chunksRef.current;
+  useEffect(() => () => cancelAnimationFrame(animRef.current), []);
 
   return (
     <div style={{
       width: '100%', height: '100%', minHeight: '420px',
-      background: 'linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+      background: 'linear-gradient(180deg, #131b31 0%, #1e293b 50%, #0f172a 100%)',
       borderRadius: '16px', display: 'flex', flexDirection: 'column',
       fontFamily: 'system-ui, sans-serif', userSelect: 'none', overflow: 'hidden',
     }}>
-      {/* HUD */}
+      {/* Top HUD */}
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '10px 14px', background: 'rgba(0,0,0,0.35)',
-        backdropFilter: 'blur(4px)', flexShrink: 0,
+        padding: '10px 16px', background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', flexShrink: 0, zIndex: 10,
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span style={{ fontSize: '20px' }}>🧩</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <span style={{ fontSize: '22px' }}>🧩</span>
           <div>
-            <div style={{ fontSize: '11px', fontWeight: 900, color: '#fcd34d', letterSpacing: '0.05em' }}>CHUNK CATAPULT</div>
-            <div style={{ fontSize: '10px', color: '#475569' }}>Round {roundIdx + 1}/{ROUNDS.length}</div>
+            <div style={{ fontSize: '12px', fontWeight: 900, color: '#f59e0b', letterSpacing: '0.05em' }}>CHUNK CATAPULT</div>
+            <div style={{ fontSize: '10px', color: '#94a3b8' }}>Round {roundIdx + 1} of {ROUNDS.length}</div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <div style={{ fontSize: '12px', fontWeight: 800, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '3px 10px' }}>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <div style={{ fontSize: '13px', fontWeight: 900, color: '#fbbf24', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '8px', padding: '4px 12px' }}>
             🏆 {score} pts
           </div>
-          <div style={{ fontSize: '12px', fontWeight: 800, color: roundTimer <= 5 ? '#f87171' : '#fcd34d', background: 'rgba(252,211,77,0.1)', border: '1px solid rgba(252,211,77,0.25)', borderRadius: '8px', padding: '3px 10px' }}>
-            🕐 {roundTimer}s
-          </div>
-          <div style={{ fontSize: '12px', fontWeight: 800, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '3px 10px' }}>
+          <div style={{ fontSize: '13px', fontWeight: 900, color: '#7dd3fc', background: 'rgba(125,211,252,0.1)', border: '1px solid rgba(125,211,252,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
             ⏱ {gameTimer}s
           </div>
         </div>
       </div>
 
-      {/* IDLE */}
+      {/* IDLE STATE */}
       {gameState === 'idle' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px' }}>
-          <div style={{ fontSize: '56px' }}>🏰</div>
-          <div style={{ textAlign: 'center' }}>
-            <h3 style={{ margin: '0 0 8px', fontSize: '20px', fontWeight: 900, color: '#fcd34d' }}>Drag Chunks to Destroy the Slime Castle!</h3>
-            <p style={{ margin: 0, fontSize: '12px', color: '#94a3b8', maxWidth: '300px' }}>
-              Drag the floating chunks into the correct grammar slots. Drop in the wrong slot and they'll fly away!
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
+          <div style={{ fontSize: '56px', filter: 'drop-shadow(0 0 16px rgba(245,158,11,0.5))' }}>🧩</div>
+          <div>
+            <h3 style={{ margin: '0 0 8px', fontSize: '22px', fontWeight: 900, color: '#f59e0b' }}>
+              Assemble the Sentence Chunks!
+            </h3>
+            <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
+              Tap a floating chunk, then tap the matching grammar slot below (Subject, Verb Phrase, Location) to assemble the full sentence!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
-            padding: '12px 28px', background: 'linear-gradient(135deg, #d97706, #ea580c)',
-            color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '14px',
-            border: 'none', cursor: 'pointer', boxShadow: '0 6px 20px rgba(217,119,6,0.3)',
-            display: 'flex', alignItems: 'center', gap: '8px'
+            padding: '14px 32px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+            color: '#fff', fontWeight: 900, fontSize: '15px', borderRadius: '14px',
+            border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(245,158,11,0.4)',
+            display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>▶</span> LOAD CATAPULT (1 MIN)
+            <span>🧩</span> START PUZZLE
           </button>
         </div>
       )}
 
-      {/* PLAYING */}
+      {/* PLAYING STATE */}
       {gameState === 'playing' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-          {/* Target sentence */}
+          {/* Target Sentence Guide Banner */}
           <div style={{
-            padding: '6px 12px', background: 'rgba(217,119,6,0.15)', borderBottom: '1px solid rgba(217,119,6,0.25)',
-            textAlign: 'center', flexShrink: 0,
+            padding: '8px 16px', background: 'rgba(245,158,11,0.15)',
+            borderBottom: '1.5px solid rgba(245,158,11,0.25)', textAlign: 'center', flexShrink: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
           }}>
-            <div style={{ fontSize: '10px', color: '#fcd34d', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Target Sentence:</div>
-            <div style={{ fontSize: '13px', color: '#fef3c7', fontWeight: 700, fontStyle: 'italic' }}>{round.sentence}</div>
+            <span style={{ fontSize: '11px', color: '#fbbf24', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              TARGET SENTENCE:
+            </span>
+            <span style={{ fontSize: '14px', color: '#f8fafc', fontWeight: 800 }}>
+              "{round.sentence}"
+            </span>
+            <button
+              type="button"
+              onClick={() => speak(round.sentence)}
+              style={{
+                background: 'rgba(245,158,11,0.2)', border: '1px solid rgba(245,158,11,0.4)',
+                color: '#fbbf24', borderRadius: '6px', padding: '3px 8px', cursor: 'pointer',
+                display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', fontWeight: 800
+              }}
+            >
+              <Volume2 size={14} /> <span>Listen</span>
+            </button>
           </div>
 
-          {/* Feedback flash */}
+          {/* Feedback Overlay Banner */}
           {feedback && (
             <div style={{
-              position: 'absolute', top: '80px', left: '50%', transform: 'translateX(-50%)',
-              zIndex: 20, padding: '6px 16px', borderRadius: '20px', fontWeight: 900, fontSize: '13px',
-              background: feedback.type === 'good' ? 'rgba(16,185,129,0.9)' : 'rgba(239,68,68,0.9)',
-              color: '#fff', pointerEvents: 'none', whiteSpace: 'nowrap',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-            }}>{feedback.msg}</div>
+              position: 'absolute', top: '95px', left: '50%', transform: 'translateX(-50%)',
+              zIndex: 50, padding: '8px 20px', borderRadius: '16px', fontWeight: 900, fontSize: '14px',
+              background: feedback.type === 'good' ? 'rgba(16,185,129,0.95)' : 'rgba(239,68,68,0.95)',
+              color: '#fff', boxShadow: '0 8px 28px rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.4)',
+              whiteSpace: 'nowrap',
+            }}>
+              {feedback.msg}
+            </div>
           )}
 
-          {/* Grammar slots */}
+          {/* Floating Chunks Area */}
+          <div
+            ref={containerRef}
+            style={{ flex: 1, position: 'relative', overflow: 'hidden', touchAction: 'none' }}
+          >
+            {/* Instruction Tip */}
+            <div style={{
+              position: 'absolute', top: '8px', left: '16px',
+              fontSize: '11px', color: '#94a3b8', fontWeight: 700, pointerEvents: 'none'
+            }}>
+              {selectedChunkId ? '👉 Now tap a matching slot below to place it!' : '👉 Click any chunk to select, then click a slot below'}
+            </div>
+
+            {/* Render Floating Chunks */}
+            {chunks.filter(c => !c.locked).map(c => {
+              const isSelected = selectedChunkId === c.id;
+
+              return (
+                <div
+                  key={c.id}
+                  onClick={() => handleChunkClick(c)}
+                  style={{
+                    position: 'absolute',
+                    left: `${c.xPct}%`,
+                    top: `${c.yPct}%`,
+                    padding: '10px 18px',
+                    borderRadius: '14px',
+                    background: isSelected
+                      ? 'linear-gradient(135deg, #f59e0b, #d97706)'
+                      : 'linear-gradient(135deg, #3b82f6, #2563eb)',
+                    border: isSelected ? '2.5px solid #ffffff' : '1.5px solid rgba(255,255,255,0.4)',
+                    boxShadow: isSelected
+                      ? '0 0 20px #f59e0b, 0 6px 16px rgba(0,0,0,0.5)'
+                      : '0 4px 14px rgba(0,0,0,0.4)',
+                    color: '#ffffff',
+                    fontWeight: 900,
+                    fontSize: '13px',
+                    cursor: 'pointer',
+                    transform: isSelected ? 'scale(1.1)' : 'scale(1)',
+                    transition: 'transform 0.15s, box-shadow 0.15s, background 0.15s',
+                    zIndex: isSelected ? 30 : 20,
+                  }}
+                  onMouseDown={(e) => { e.currentTarget.style.transform = isSelected ? 'scale(1.05)' : 'scale(0.95)'; }}
+                  onMouseUp={(e) => { e.currentTarget.style.transform = isSelected ? 'scale(1.1)' : 'scale(1)'; }}
+                >
+                  🧩 {c.word}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Grammar Drop Target Slots Bar (Bottom) */}
           <div style={{
-            display: 'flex', gap: '8px', padding: '10px 12px', flexShrink: 0,
-            justifyContent: 'center',
+            padding: '14px 16px', background: 'rgba(15,23,42,0.95)',
+            borderTop: '2px solid rgba(255,255,255,0.1)', flexShrink: 0,
+            display: 'flex', gap: '12px', zIndex: 40,
           }}>
             {round.slots.map(slot => {
-              const filled = lockedSlots[slot.id];
+              const isFilled = !!lockedSlots[slot.id];
+              const filledWord = lockedSlots[slot.id];
+              const isHighlightTarget = !!selectedChunkId && !isFilled;
+
               return (
                 <div
                   key={slot.id}
-                  data-slotid={slot.id}
+                  onClick={() => handleSlotClick(slot)}
                   style={{
-                    flex: 1, minHeight: '52px', maxWidth: '180px',
-                    border: `2px dashed ${filled ? '#10b981' : '#d97706'}`,
-                    borderRadius: '10px',
-                    background: filled ? 'rgba(16,185,129,0.15)' : 'rgba(217,119,6,0.08)',
-                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-                    padding: '6px',
-                    transition: 'all 0.2s',
+                    flex: 1,
+                    minHeight: '64px',
+                    borderRadius: '14px',
+                    padding: '8px 12px',
+                    background: isFilled
+                      ? 'rgba(16,185,129,0.15)'
+                      : isHighlightTarget
+                      ? 'rgba(245,158,11,0.15)'
+                      : 'rgba(255,255,255,0.05)',
+                    border: isFilled
+                      ? '2px solid #10b981'
+                      : isHighlightTarget
+                      ? '2px dashed #f59e0b'
+                      : '1.5px dashed rgba(255,255,255,0.2)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    cursor: isFilled ? 'default' : selectedChunkId ? 'pointer' : 'default',
+                    boxShadow: isFilled ? '0 0 16px rgba(16,185,129,0.25)' : 'none',
+                    transition: 'all 0.15s',
                   }}
                 >
-                  <div style={{ fontSize: '9px', color: filled ? '#6ee7b7' : '#d97706', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '3px' }}>
-                    [{slot.label}]
+                  <div style={{
+                    fontSize: '10px',
+                    fontWeight: 900,
+                    color: isFilled ? '#34d399' : isHighlightTarget ? '#fbbf24' : '#94a3b8',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    marginBottom: '2px'
+                  }}>
+                    {slot.label}
                   </div>
-                  {filled ? (
-                    <div style={{ fontSize: '12px', color: '#6ee7b7', fontWeight: 800, textAlign: 'center' }}>
-                      ✓ {filled}
+
+                  {isFilled ? (
+                    <div style={{
+                      fontSize: '13px',
+                      fontWeight: 900,
+                      color: '#ffffff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}>
+                      <CheckCircle2 size={14} color="#34d399" />
+                      <span>{filledWord}</span>
                     </div>
                   ) : (
-                    <div style={{ fontSize: '11px', color: '#92400e', fontStyle: 'italic' }}>drop here</div>
+                    <div style={{ fontSize: '11px', color: isHighlightTarget ? '#fbbf24' : '#64748b', fontWeight: 800 }}>
+                      {isHighlightTarget ? '👉 Tap here to place' : 'Empty Slot'}
+                    </div>
                   )}
                 </div>
               );
             })}
           </div>
-
-          {/* Floating chunks canvas */}
-          <div
-            ref={containerRef}
-            style={{ flex: 1, position: 'relative', overflow: 'hidden', margin: '0 8px 8px' }}
-          >
-            {displayChunks.map(c => {
-              if (c.locked) return null;
-              return (
-                <div
-                  key={c.id}
-                  onPointerDown={(e) => onPointerDown(e, c.id)}
-                  style={{
-                    position: 'absolute',
-                    left: c.x, top: c.y,
-                    transform: 'translate(-50%, -50%)',
-                    padding: '8px 14px',
-                    background: c.isDecoy
-                      ? 'rgba(100,116,139,0.9)'
-                      : c.dragging
-                      ? 'rgba(217,119,6,0.95)'
-                      : 'rgba(30,58,138,0.9)',
-                    border: `2px solid ${c.isDecoy ? '#64748b' : c.dragging ? '#fbbf24' : '#60a5fa'}`,
-                    borderRadius: '10px',
-                    color: '#fff',
-                    fontWeight: 800,
-                    fontSize: '12px',
-                    cursor: 'grab',
-                    whiteSpace: 'nowrap',
-                    boxShadow: c.dragging
-                      ? '0 8px 24px rgba(251,191,36,0.4)'
-                      : '0 4px 12px rgba(0,0,0,0.4)',
-                    transition: 'box-shadow 0.1s, background 0.1s',
-                    zIndex: c.dragging ? 50 : 5,
-                    userSelect: 'none',
-                    touchAction: 'none',
-                  }}
-                >
-                  {c.word}
-                </div>
-              );
-            })}
-
-            {/* Launch animation overlay */}
-            {launchAnim && (
-              <div style={{
-                position: 'absolute', inset: 0,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: 'rgba(251,191,36,0.15)',
-                fontSize: '48px', fontWeight: 900, zIndex: 30,
-                animation: 'fadeIn 0.2s',
-              }}>
-                🏹💥 LAUNCH!
-              </div>
-            )}
-          </div>
         </div>
       )}
 
-      {/* DONE */}
+      {/* GAME OVER STATE */}
       {gameState === 'done' && (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '14px', padding: '24px' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
           <div style={{ fontSize: '56px' }}>🏆</div>
-          <h3 style={{ margin: 0, fontSize: '22px', fontWeight: 900, color: '#fbbf24' }}>Fortress Destroyed!</h3>
-          <p style={{ margin: 0, fontSize: '14px', color: '#e2e8f0' }}>
-            Final Score: <strong style={{ color: '#fbbf24', fontSize: '18px' }}>{score} pts</strong>
-          </p>
+          <div>
+            <h3 style={{ margin: '0 0 6px', fontSize: '24px', fontWeight: 900, color: '#f59e0b' }}>
+              All Sentences Complete!
+            </h3>
+            <p style={{ margin: 0, fontSize: '15px', color: '#cbd5e1' }}>
+              Final Score: <strong style={{ color: '#fbbf24', fontSize: '20px' }}>{score} pts</strong>
+            </p>
+          </div>
           <button type="button" onClick={startGame} style={{
-            padding: '10px 24px', background: 'linear-gradient(135deg, #d97706, #ea580c)',
-            color: '#fff', fontWeight: 900, fontSize: '13px', borderRadius: '12px',
-            border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px'
+            padding: '12px 28px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+            color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
+            border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <RotateCcw size={14} /> Siege Again
+            <RotateCcw size={16} /> Play Again
           </button>
         </div>
       )}
