@@ -504,7 +504,8 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                       <button
                         key={cIdx}
                         type="button"
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           if (!isRevealed) {
                             setRevealedPins(prev => ({ ...prev, [pinKey]: true }));
                           }
@@ -537,26 +538,60 @@ export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = nul
                   })}
 
                   {selectedHotspot && (
-                    <div className="absolute top-3 left-3 max-w-[80%] px-4 py-2.5 bg-white/97 text-slate-900 rounded-2xl border-2 border-amber-400 backdrop-blur-md animate-in fade-in shadow-2xl z-20 space-y-1">
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <div className="text-amber-700 text-[10px] font-black uppercase tracking-wider">✨ Chunk Found:</div>
-                          <div className="text-sm font-black text-slate-900">{selectedHotspot.text}</div>
-                          {selectedHotspot.vi && (
-                            <div className="text-[11px] text-slate-600 italic mt-0.5">{selectedHotspot.vi}</div>
-                          )}
+                    <>
+                      {/* Click outside to dismiss backdrop */}
+                      <div
+                        className="absolute inset-0 bg-black/35 backdrop-blur-[2px] z-20 transition-opacity animate-in fade-in duration-150 cursor-pointer"
+                        onClick={() => setSelectedHotspot(null)}
+                      />
+
+                      {/* High-contrast Compact Centered Modal Card */}
+                      <div
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xs bg-white text-slate-900 rounded-2xl border-2 border-amber-500 shadow-2xl p-4 z-30 animate-in zoom-in-95 duration-150 space-y-2.5"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="space-y-1 flex-1 min-w-0">
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">
+                              ✨ Chunk Found
+                            </span>
+                            <div className="text-base font-black text-slate-950 flex items-center gap-2 flex-wrap">
+                              <span>{selectedHotspot.text}</span>
+                              <button
+                                type="button"
+                                onClick={() => speakText(selectedHotspot.text)}
+                                className="p-1 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-900 transition active:scale-95 shrink-0"
+                                title="Listen again"
+                              >
+                                <Volume2 size={14} />
+                              </button>
+                            </div>
+                            {selectedHotspot.vi && (
+                              <div className="text-xs font-bold text-emerald-900 bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200">
+                                {selectedHotspot.vi}
+                              </div>
+                            )}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setSelectedHotspot(null)}
+                            className="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-black text-xs flex items-center justify-center transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
+                            aria-label="Close"
+                          >
+                            ✕
+                          </button>
                         </div>
+
+                        {/* Dismiss button */}
                         <button
                           type="button"
                           onClick={() => setSelectedHotspot(null)}
-                          className="text-slate-400 hover:text-slate-700 font-black text-xs shrink-0"
-                        >✕</button>
+                          className="w-full py-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-xl shadow-xs transition active:scale-95 text-center"
+                        >
+                          ✓ Got it (Đã hiểu)
+                        </button>
                       </div>
-                      {/* Context Anchor Sentence */}
-                      <div className="text-[10px] text-slate-700 font-semibold bg-amber-50 px-2 py-1 rounded-lg border border-amber-200">
-                        💡 <em>Jake <strong className="text-emerald-700">was walking carefully</strong> down the <strong className="text-amber-700">school corridor</strong> <strong className="text-blue-700">after science class</strong>.</em>
-                      </div>
-                    </div>
+                    </>
                   )}
 
                   <button
