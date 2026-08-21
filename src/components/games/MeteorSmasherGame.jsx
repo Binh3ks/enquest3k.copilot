@@ -7,10 +7,10 @@ import { VoiceService } from '../../services/voiceService';
 import ArcadeFoxHelper from './ArcadeFoxHelper';
 
 /**
- * MeteorSmasherGame V3 — Plasma Cannon Turret with Bulletproof Wave Sync & Clean Definition Audio
+ * MeteorSmasherGame V3 — Plasma Cannon Turret with 3-Minute Duration & Results Screen
  */
 
-export default function MeteorSmasherGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
+export default function MeteorSmasherGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
   const wordBank = (words && words.length >= 4) ? words : weekData.words;
 
@@ -18,7 +18,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
   const [score, setScore] = useState(0);
   const [shields, setShields] = useState(3);
   const [meteorsSmashed, setMeteorsSmashed] = useState(0);
-  const [gameTimer, setGameTimer] = useState(60);
+  const [gameTimer, setGameTimer] = useState(180); // 3 minutes
   const [meteors, setMeteors] = useState([]);
   const [cannonAngle, setCannonAngle] = useState(0); // in degrees
   const [laser, setLaser] = useState(null);
@@ -40,7 +40,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
 
   const { consumePlayEnergy, recordHighScore, highScores } = useArcadeStore();
   const personalBest = highScores['meteor_smasher'] || 0;
-  const GOAL_METEORS = 10;
+  const GOAL_METEORS = 15; // 15 meteors in 3 minutes
 
   const W = 600;
   const H = 420;
@@ -56,14 +56,13 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     try { VoiceService.stop(); } catch (_) {}
     try { window.speechSynthesis?.cancel(); } catch (_) {}
 
-    // Clean audio speaking definition directly
     speakText(def, null, 0.90, null, 'explore', weekNumber);
   }, [weekNumber]);
 
   const makeMeteor = useCallback((isTarget = false, targetWordObj = null, idx = 0) => {
     const pick = targetWordObj || wordBank[Math.floor(Math.random() * wordBank.length)];
     const x = 80 + idx * 155 + (Math.random() - 0.5) * 30;
-    const y = -45 - Math.random() * 40;
+    const y = -15 - Math.random() * 20; // Enters visible canvas in <1.5s
     const r = Math.max(38, Math.min(50, 34 + Math.floor(pick.word.length * 1.4)));
 
     return {
@@ -72,10 +71,10 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
       isTarget,
       x: Math.max(r + 20, Math.min(W - r - 20, x)),
       y,
-      vy: 0.28 + Math.random() * 0.16, // Smooth and comfortable fall speed (~20s per wave)
-      vx: (Math.random() - 0.5) * 0.2,
+      vy: 0.42 + Math.random() * 0.18, // Crisp ~12-14s fall time
+      vx: (Math.random() - 0.5) * 0.25,
       rot: Math.random() * 360,
-      rotSpeed: (Math.random() - 0.5) * 1.2,
+      rotSpeed: (Math.random() - 0.5) * 1.4,
       r,
       color: isTarget ? '#f59e0b' : ['#6366f1', '#ec4899', '#0ea5e9', '#10b981', '#8b5cf6'][idx % 5],
       hit: false,
@@ -121,7 +120,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
 
     setTimeout(() => {
       isTransitioningRef.current = false;
-    }, 600);
+    }, 500);
   }, [wordBank, spawnWave]);
 
   // Physics animation loop
@@ -170,7 +169,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     frameRef.current = requestAnimationFrame(gameLoop);
   }, [pickNextTarget]);
 
-  // 1-second game timer + Fox idle trigger
+  // 1-second game timer + Fox idle trigger (7s)
   useEffect(() => {
     if (gameState !== 'playing') return;
     const iv = setInterval(() => {
@@ -178,7 +177,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(); return; }
       }
-      if (Date.now() - lastCatchTimeRef.current > 5000) {
+      if (Date.now() - lastCatchTimeRef.current > 7000) {
         setFoxTrigger(true);
       }
       setGameTimer(t => {
@@ -195,8 +194,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     cancelAnimationFrame(frameRef.current);
     try { VoiceService.stop(); } catch (_) {}
     recordHighScore('meteor_smasher', scoreRef.current);
-    if (onComplete) onComplete(scoreRef.current);
-  }, [onComplete, recordHighScore]);
+  }, [recordHighScore]);
 
   const startGame = () => {
     scoreRef.current = 0;
@@ -206,7 +204,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
     setScore(0);
     setShields(3);
     setMeteorsSmashed(0);
-    setGameTimer(60);
+    setGameTimer(180); // 3 minutes
     setFeedback(null);
     setLaser(null);
     setFoxTrigger(false);
@@ -358,7 +356,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             ⭐ {score} pts
           </div>
           <div style={{ fontSize: '13px', fontWeight: 900, color: '#a78bfa', background: 'rgba(167,139,250,0.1)', border: '1px solid rgba(167,139,250,0.25)', borderRadius: '8px', padding: '4px 12px' }}>
-            ⏱ {gameTimer}s
+            ⏱ {Math.floor(gameTimer / 60)}:{String(gameTimer % 60).padStart(2, '0')}
           </div>
         </div>
       </div>
@@ -372,7 +370,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
               Plasma Cannon Defense!
             </h3>
             <p style={{ margin: 0, fontSize: '13px', color: '#cbd5e1', maxWidth: '360px', lineHeight: 1.5 }}>
-              Target: Blast <b>{GOAL_METEORS} target meteors</b> in 60 seconds! Rotate the plasma cannon and click or swipe to fire laser beams!
+              Target: Blast <b>{GOAL_METEORS} target meteors</b> in 3 minutes! Rotate the plasma cannon and click or swipe to fire laser beams!
             </p>
           </div>
           <button type="button" onClick={startGame} style={{
@@ -381,7 +379,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             border: 'none', cursor: 'pointer', boxShadow: '0 8px 24px rgba(124,58,237,0.4)',
             display: 'flex', alignItems: 'center', gap: '8px',
           }}>
-            <span>🛸</span> START DEFENSE (GOAL: 10)
+            <span>🛸</span> START 3-MIN DEFENSE (GOAL: 15)
           </button>
         </div>
       )}
@@ -612,7 +610,7 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
         </div>
       )}
 
-      {/* GAME OVER STATE (Clear Time's Up / Shields Down indication) */}
+      {/* GAME OVER / RESULTS STATE (Persists until user clicks Race Again or Exit) */}
       {gameState === 'done' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '24px', textAlign: 'center' }}>
           <div style={{ fontSize: '56px' }}>{meteorsSmashed >= GOAL_METEORS ? '🏆' : '⏱️'}</div>
@@ -629,24 +627,37 @@ export default function MeteorSmasherGame({ weekNumber = 33, words = [], onCompl
             </h3>
             <p style={{ margin: '0 0 6px', fontSize: '15px', color: '#cbd5e1' }}>
               Smashed: <strong style={{ color: meteorsSmashed >= GOAL_METEORS ? '#4ade80' : '#fbbf24' }}>{meteorsSmashed}/{GOAL_METEORS} meteors</strong>
-              {meteorsSmashed < GOAL_METEORS && <span style={{ color: '#94a3b8', fontSize: '12px', display: 'block', marginTop: '4px' }}>Goal was {GOAL_METEORS} meteors in 60s</span>}
+              {meteorsSmashed < GOAL_METEORS && <span style={{ color: '#94a3b8', fontSize: '12px', display: 'block', marginTop: '4px' }}>Goal was {GOAL_METEORS} meteors in 3 mins</span>}
             </p>
             <p style={{ margin: 0, fontSize: '16px', color: '#cbd5e1' }}>
               Final Score: <strong style={{ color: '#fbbf24', fontSize: '22px' }}>{score} pts</strong>
               {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
-          <button type="button" onClick={startGame} style={{
-            padding: '12px 28px',
-            background: meteorsSmashed >= GOAL_METEORS
-              ? 'linear-gradient(135deg, #059669, #0d9488)'
-              : 'linear-gradient(135deg, #dc2626, #b91c1c)',
-            color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
-            border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
-          }}>
-            <RotateCcw size={16} /> {meteorsSmashed >= GOAL_METEORS ? 'Play Again' : 'Try Again'}
-          </button>
+          <div style={{ display: 'flex', gap: '12px' }}>
+            <button type="button" onClick={startGame} style={{
+              padding: '12px 28px',
+              background: meteorsSmashed >= GOAL_METEORS
+                ? 'linear-gradient(135deg, #059669, #0d9488)'
+                : 'linear-gradient(135deg, #7c3aed, #4f46e5)',
+              color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
+              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+            }}>
+              <RotateCcw size={16} /> {meteorsSmashed >= GOAL_METEORS ? 'Play Again' : 'Try Again'}
+            </button>
+            {onExit && (
+              <button type="button" onClick={onExit} style={{
+                padding: '12px 20px',
+                background: 'rgba(255,255,255,0.1)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                color: '#cbd5e1', fontWeight: 800, fontSize: '14px', borderRadius: '12px',
+                cursor: 'pointer',
+              }}>
+                Back to Arcade
+              </button>
+            )}
+          </div>
         </div>
       )}
     </div>

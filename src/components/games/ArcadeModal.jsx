@@ -132,10 +132,10 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
 
         {/* Full-height game area */}
         <div style={{ flex: 1, overflow: 'hidden', padding: '12px', display: 'flex', flexDirection: 'column' }}>
-          {selectedGame === 'bubble_pop' && <BubblePopGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
-          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
-          {selectedGame === 'physics_drift' && <PhysicsDriftGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
-          {selectedGame === 'chunk_catapult' && <CatapultChunkGame weekNumber={weekNumber} onComplete={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'bubble_pop' && <BubblePopGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'meteor_smasher' && <MeteorSmasherGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'physics_drift' && <PhysicsDriftGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
+          {selectedGame === 'chunk_catapult' && <CatapultChunkGame weekNumber={weekNumber} onExit={() => setSelectedGame(null)} isStandalone={effectiveOwnerBypass} />}
         </div>
 
       </div>
@@ -206,8 +206,8 @@ export default function ArcadeModal({ weekNumber = 33, isOpen = false, onClose, 
                   <span>👑 {effectiveOwnerBypass ? 'OWNER MODE: ON' : 'OWNER TEST (CLICK TO UNLOCK)'}</span>
                 </button>
               </h3>
-              <p style={{ margin: '2px 0 0', fontSize: '11px', color: '#64748b' }}>
-                1-Minute Micro-Break Games · Trip {weekNumber} Content
+              <p style={{ margin: '2px 0 0', fontSize: '11px', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <span style={{ color: '#38bdf8', fontWeight: 800 }}>⚡ You have 3 minutes to play any mini game!</span> · Trip {weekNumber} Content
               </p>
             </div>
           </div>

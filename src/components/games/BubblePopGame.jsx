@@ -9,7 +9,7 @@ import ArcadeFoxHelper from './ArcadeFoxHelper';
  * BubblePopGame V3 — Realistic Floating Bubbles with Flying Fox Target Finder
  */
 
-export default function BubblePopGame({ weekNumber = 33, words = [], onComplete, isStandalone = false }) {
+export default function BubblePopGame({ weekNumber = 33, words = [], onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
   const activeWordObjects = (words && words.length >= 4)
     ? words.map(w => typeof w === 'string' ? { word: w, audio_word: null } : w)
@@ -22,7 +22,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
   const [streak, setStreak] = useState(0);
   const [wordsPopped, setWordsPopped] = useState(0);
   const [targetWord, setTargetWord] = useState('');
-  const [gameTimer, setGameTimer] = useState(60);
+  const [gameTimer, setGameTimer] = useState(180);
   const [bubbles, setBubbles] = useState([]);
   const [inkSplat, setInkSplat] = useState(null);
   const [showPenalty, setShowPenalty] = useState(false);
@@ -158,7 +158,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
     setScore(0);
     setStreak(0);
     setWordsPopped(0);
-    setGameTimer(60);
+    setGameTimer(180); // 3 minutes
     setShowPenalty(false);
     setInkSplat(null);
     setRevealMsg(null);
@@ -174,7 +174,7 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
     animFrameRef.current = requestAnimationFrame(runLoop);
   };
 
-  // 1-second game clock + Fox Idle Hint Trigger
+  // 1-second game clock + Fox Idle Hint Trigger (7s)
   useEffect(() => {
     if (gameState !== 'playing') return;
     const interval = setInterval(() => {
@@ -182,8 +182,8 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
         const ok = consumePlayEnergy(1);
         if (!ok) { endGame(); return; }
       }
-      // If user hasn't caught target for > 5s, trigger Lexio Fox
-      if (Date.now() - lastCatchTimeRef.current > 5000) {
+      // If user hasn't caught target for > 7s, trigger Lexio Fox
+      if (Date.now() - lastCatchTimeRef.current > 7000) {
         setFoxTrigger(true);
       }
       setGameTimer(t => {
@@ -492,13 +492,26 @@ export default function BubblePopGame({ weekNumber = 33, words = [], onComplete,
               {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
-          <button type="button" onClick={startGame} style={{
-            padding: '12px 28px', background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
-            color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
-            border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
-          }}>
-            <RotateCcw size={16} /> Play Again
-          </button>
+          <div style={{ display: 'flex', gap: '12px' }}>
+            <button type="button" onClick={startGame} style={{
+              padding: '12px 28px', background: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
+              color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
+              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
+            }}>
+              <RotateCcw size={16} /> Play Again
+            </button>
+            {onExit && (
+              <button type="button" onClick={onExit} style={{
+                padding: '12px 20px',
+                background: 'rgba(255,255,255,0.1)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                color: '#cbd5e1', fontWeight: 800, fontSize: '14px', borderRadius: '12px',
+                cursor: 'pointer',
+              }}>
+                Back to Arcade
+              </button>
+            )}
+          </div>
         </div>
       )}
     </div>

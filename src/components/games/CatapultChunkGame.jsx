@@ -9,7 +9,7 @@ import ArcadeFoxHelper from './ArcadeFoxHelper';
  * CatapultChunkGame V3 — Multi-Mode Sentence & Definition Match with Audio Overlap Guard
  */
 
-export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStandalone = false }) {
+export default function CatapultChunkGame({ weekNumber = 33, onExit, isStandalone = false }) {
   const weekData = getWeekArcadeData(weekNumber);
   const sentenceRounds = weekData.sentenceRounds;
 
@@ -17,7 +17,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
   const [score, setScore] = useState(0);
   const [roundIdx, setRoundIdx] = useState(0);
   const [roundsDone, setRoundsDone] = useState(0);
-  const [gameTimer, setGameTimer] = useState(60);
+  const [gameTimer, setGameTimer] = useState(180); // 3 minutes
   const [lockedSlots, setLockedSlots] = useState({}); // { slotId: word }
   const [selectedChunkId, setSelectedChunkId] = useState(null); // for Tap-to-Place
   const [feedback, setFeedback] = useState(null);
@@ -228,8 +228,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
     setGameState('done');
     cancelAnimationFrame(animRef.current);
     recordHighScore('chunk_catapult', scoreRef.current);
-    if (onComplete) onComplete(scoreRef.current);
-  }, [onComplete, recordHighScore]);
+  }, [recordHighScore]);
 
   const startGame = () => {
     scoreRef.current = 0;
@@ -237,7 +236,7 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
     setScore(0);
     setRoundsDone(0);
     setRoundIdx(0);
-    setGameTimer(60);
+    setGameTimer(180); // 3 minutes
     setLockedSlots({});
     setSelectedChunkId(null);
     setFeedback(null);
@@ -545,13 +544,26 @@ export default function CatapultChunkGame({ weekNumber = 33, onComplete, isStand
               {score > personalBest && <span style={{ color: '#4ade80', fontSize: '13px', marginLeft: '8px', fontWeight: 900 }}>🔥 NEW BEST!</span>}
             </p>
           </div>
-          <button type="button" onClick={startGame} style={{
-            padding: '12px 28px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-            color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
-            border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
-          }}>
-            <RotateCcw size={16} /> Play Again
-          </button>
+          <div style={{ display: 'flex', gap: '12px' }}>
+            <button type="button" onClick={startGame} style={{
+              padding: '12px 28px', background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+              color: '#fff', fontWeight: 900, fontSize: '14px', borderRadius: '12px',
+              border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px',
+            }}>
+              <RotateCcw size={16} /> Play Again
+            </button>
+            {onExit && (
+              <button type="button" onClick={onExit} style={{
+                padding: '12px 20px',
+                background: 'rgba(255,255,255,0.1)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                color: '#cbd5e1', fontWeight: 800, fontSize: '14px', borderRadius: '12px',
+                cursor: 'pointer',
+              }}>
+                Back to Arcade
+              </button>
+            )}
+          </div>
         </div>
       )}
     </div>
