@@ -503,17 +503,17 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         </div>
       )}
 
-      {/* Lexio mascot — CSS transition follows suggested station smoothly */}
+      {/* Lexio mascot — CSS transition follows suggested station smoothly (Floating non-blocking) */}
       <div
-        className="qm3d-lexio"
+        className="qm3d-lexio pointer-events-none"
         style={{
-          left: `${pos(suggestedStation).x - (isPortrait ? 2 : 4)}%`,
-          top: `${pos(suggestedStation).y - (isPortrait ? 8 : 11)}%`,
+          left: `${pos(suggestedStation).x + (isPortrait ? 8 : -4)}%`,
+          top: `${pos(suggestedStation).y - (isPortrait ? 7 : 11)}%`,
           transition: 'left 1.2s cubic-bezier(0.34,1.56,0.64,1), top 1.2s cubic-bezier(0.34,1.56,0.64,1)',
         }}
       >
         <LexioMascot
-          size={isPortrait ? 46 : 58}
+          size={isPortrait ? 38 : 52}
           mood={mascotMood}
         />
       </div>

@@ -145,6 +145,90 @@ const ParentChildrenPage = () => {
   );
 };
 
+const STAFF_ROLES = ['owner', 'admin', 'super_admin', 'teacher', 'team_leader', 'center_director'];
+
+/**
+ * TaskRoute — Dedicated, isolated route handler for /week/:weekId/task/:taskId
+ * 100% pure React lifecycle — zero conditional early returns before hooks!
+ */
+const TaskRoute = () => {
+  const params = useParams();
+  const weekId = parseInt(params.weekId || 33);
+  const { learningMode, currentUser } = useUserStore();
+  const [showOnboarding, setShowOnboarding] = useState(() => !localStorage.getItem('engquest_onboarded'));
+  const isOwner = currentUser?.role === 'owner' || currentUser?.displayName === 'Bình' || currentUser?.email?.includes('binh') || localStorage.getItem('arcade_owner_bypass') === 'true';
+  const isStaffOrOwner = isOwner || STAFF_ROLES.includes(currentUser?.role);
+  const effectiveShowOnboarding = showOnboarding && !isStaffOrOwner;
+
+  const { data: weekData, loading: isWeekDataLoading } = useFetchWeekData(weekId, learningMode);
+
+  if (isWeekDataLoading && !weekData) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white">
+        <div className="text-5xl mb-4 animate-bounce">🧭</div>
+        <p className="font-black text-lg text-amber-400">Loading Quest...</p>
+      </div>
+    );
+  }
+
+  const mappedZones = mapDataToZones(weekData, weekId);
+
+  return (
+    <>
+      {effectiveShowOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
+      <TaskScreen weekData={mappedZones} weekId={weekId} />
+    </>
+  );
+};
+
+/**
+ * QuestMapRoute — Dedicated, isolated route handler for /week/:weekId/hub/:hubId
+ * 100% pure React lifecycle.
+ */
+const QuestMapRoute = () => {
+  const params = useParams();
+  const weekId = parseInt(params.weekId || 33);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { currentUser, learningMode, toggleLearningMode } = useUserStore();
+  const [showOnboarding, setShowOnboarding] = useState(() => !localStorage.getItem('engquest_onboarded'));
+  const isOwner = currentUser?.role === 'owner' || currentUser?.displayName === 'Bình' || currentUser?.email?.includes('binh') || localStorage.getItem('arcade_owner_bypass') === 'true';
+  const isStaffOrOwner = isOwner || STAFF_ROLES.includes(currentUser?.role);
+  const effectiveShowOnboarding = showOnboarding && !isStaffOrOwner;
+
+  const { isArcadeOpen, setArcadeOpen, showBreakPrompt, dismissBreakPrompt } = useArcadeStore();
+
+  return (
+    <>
+      {effectiveShowOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
+      <QuestMap3D
+        weekId={weekId}
+        onToggleSidebar={() => setSidebarOpen(prev => !prev)}
+      />
+      <QuestSidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        currentWeekId={weekId}
+        learningMode={learningMode}
+        onToggleMode={toggleLearningMode}
+      />
+      <ArcadeModal
+        isOpen={isArcadeOpen}
+        weekNumber={weekId}
+        ownerBypass={isOwner}
+        onClose={() => setArcadeOpen(false)}
+      />
+      <ArcadeBreakPromptModal
+        isOpen={showBreakPrompt}
+        onPlay={() => {
+          dismissBreakPrompt();
+          setArcadeOpen(true);
+        }}
+        onSkip={dismissBreakPrompt}
+      />
+    </>
+  );
+};
+
 const App = () => {
   const [isSandboxQAOpen, setIsSandboxQAOpen] = useState(false);
 
@@ -162,8 +246,8 @@ const App = () => {
       <Route path="/dashboard" element={<ParentDashboard />} />
       <Route path="/dashboard/:weekId" element={<ParentDashboard />} />
       <Route path="/parent/children" element={<ParentChildrenPage />} />
-      <Route path="/week/:weekId/hub/:hubId" element={<MainLayout />} />
-      <Route path="/week/:weekId/task/:taskId" element={<MainLayout isTaskMode={true} />} />
+      <Route path="/week/:weekId/hub/:hubId" element={<QuestMapRoute />} />
+      <Route path="/week/:weekId/task/:taskId" element={<TaskRoute />} />
       <Route path="/week/:weekId/:tabKey" element={<MainLayout />} />
 
       <Route path="/gamehub/:weekId" element={<GameHubLayout />} />
@@ -232,6 +316,7 @@ const MainLayout = ({ isTaskMode = false }) => {
 
   const { speed: ttsSpeed, speedPresets, setSpeed: setTTSSpeed } = useTTSStore();
   const { isWidgetOpen } = useTutorStore();
+  const { isArcadeOpen, setArcadeOpen, showBreakPrompt, dismissBreakPrompt } = useArcadeStore();
   
   const params = useParams();
   const navigate = useNavigate();
@@ -239,8 +324,19 @@ const MainLayout = ({ isTaskMode = false }) => {
   const weekId = parseInt(params.weekId || 33);
   const hubId = params.hubId;
 
-  // Redirect any legacy W01-32 URL to W33
-  if (weekId < 33) return <Navigate replace to={`/week/33/hub/1`} />;
+  let tabKey = params.tabKey || 'read_explore';
+  if (hubId) {
+    tabKey = `hub${hubId}`;
+  }
+
+  // Redirect legacy W01-32 or default station URLs to clean /week/:weekId/hub/1 for Week 33+
+  useEffect(() => {
+    if (weekId < 33) {
+      navigate('/week/33/hub/1', { replace: true });
+    } else if (tabKey === 'read_explore' || tabKey === 'hub1' || !tabKey) {
+      navigate(`/week/${weekId}/hub/1`, { replace: true });
+    }
+  }, [weekId, tabKey, navigate]);
 
   // ?reset=all → clear all onboarding/quest/PIN/consent data and reload
   useEffect(() => {
@@ -252,23 +348,6 @@ const MainLayout = ({ isTaskMode = false }) => {
       window.location.href = window.location.pathname; // reload without ?reset=all
     }
   }, [location.search]);
-  
-  let tabKey = params.tabKey || 'read_explore';
-  if (hubId) {
-    tabKey = `hub${hubId}`;
-  }
-
-  // Redirect legacy 14-station URLs to clean /week/:weekId/hub/:hubId for Week 33+
-  useEffect(() => {
-    if (weekId >= 33 && !hubId && !isTaskMode) {
-      let targetHub = 1;
-      if (['read_explore', 'explore', 'new_words'].includes(tabKey)) targetHub = 1;
-      else if (['grammar', 'logic_lab', 'word_match', 'game_hub'].includes(tabKey)) targetHub = 2;
-      else if (['writing', 'dictation'].includes(tabKey)) targetHub = 3;
-      else if (['shadowing', 'ask_ai', 'mindmap_speaking'].includes(tabKey)) targetHub = 4;
-      navigate(`/week/${weekId}/hub/${targetHub}`, { replace: true });
-    }
-  }, [weekId, hubId, tabKey, navigate, isTaskMode]);
 
   
   const { data: weekData, loading: isWeekDataLoading, error: weekDataError } = useFetchWeekData(weekId, learningMode);
@@ -600,67 +679,6 @@ const MainLayout = ({ isTaskMode = false }) => {
   const isTeacher = STAFF_ROLES.includes(currentUser?.role);
   const CurrentModule = MODULE_COMPONENTS[tabKey] || StationLoading;
   const effectiveShowOnboarding = showOnboarding && !isStaffOrOwner;
-
-  // === TASK MODE: Full-screen individual task (no sidebar, no header) ===
-  if (isTaskMode && weekId >= 33) {
-    if (isWeekDataLoading || !weekData) {
-      return (
-        <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white">
-          <div className="text-5xl mb-4 animate-bounce">🧭</div>
-          <p className="font-black text-lg text-amber-400">Loading Quest...</p>
-        </div>
-      );
-    }
-    const mappedZones = mapDataToZones(weekData, weekId);
-    return (
-      <>
-        {effectiveShowOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
-        <TaskScreen weekData={mappedZones} weekId={weekId} />
-      </>
-    );
-  }
-
-  const isQuestMapView = weekId >= 33 && (hubId || tabKey === 'read_explore');
-  const {
-    isArcadeOpen, setArcadeOpen,
-    showBreakPrompt, dismissBreakPrompt
-  } = useArcadeStore();
-
-  if (isQuestMapView && !isTaskMode) {
-    return (
-      <>
-        {effectiveShowOnboarding && <OnboardingFlow onComplete={() => setShowOnboarding(false)} />}
-        <QuestMap3D
-          weekId={weekId}
-          onToggleSidebar={() => setSidebarOpen(prev => !prev)}
-        />
-        {/* Modern Adventure QuestSidebar */}
-        <QuestSidebar
-          isOpen={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
-          currentWeekId={weekId}
-          learningMode={learningMode}
-          onToggleMode={handleToggleMode}
-        />
-        {/* Global Arcade Modal */}
-        <ArcadeModal
-          isOpen={isArcadeOpen}
-          weekNumber={weekId}
-          ownerBypass={isOwner}
-          onClose={() => setArcadeOpen(false)}
-        />
-        {/* Automatic Age-Appropriate Break Nudge Modal */}
-        <ArcadeBreakPromptModal
-          isOpen={showBreakPrompt}
-          onPlay={() => {
-            dismissBreakPrompt();
-            setArcadeOpen(true);
-          }}
-          onSkip={dismissBreakPrompt}
-        />
-      </>
-    );
-  }
 
   return (
     <>

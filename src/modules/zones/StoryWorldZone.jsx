@@ -12,6 +12,7 @@ import useDailyQuestStore from '../../stores/useDailyQuestStore';
 import { evaluateSpeechSyntax } from '../../utils/speechSyntaxEvaluator';
 import MicFallbackInput from '../../components/common/MicFallbackInput';
 import GrammarHintButton from '../../components/common/GrammarHintButton';
+import { useUserStore } from '../../stores/useUserStore';
 
 export default function StoryWorldZone({ data, weekNumber = 33, forcedGear = null, hideGearTabs = false }) {
   const navigate = useNavigate();
