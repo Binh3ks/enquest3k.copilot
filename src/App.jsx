@@ -603,6 +603,14 @@ const MainLayout = ({ isTaskMode = false }) => {
 
   // === TASK MODE: Full-screen individual task (no sidebar, no header) ===
   if (isTaskMode && weekId >= 33) {
+    if (isWeekDataLoading || !weekData) {
+      return (
+        <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white">
+          <div className="text-5xl mb-4 animate-bounce">🧭</div>
+          <p className="font-black text-lg text-amber-400">Loading Quest...</p>
+        </div>
+      );
+    }
     const mappedZones = mapDataToZones(weekData, weekId);
     return (
       <>

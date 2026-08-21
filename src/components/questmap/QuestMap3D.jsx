@@ -230,15 +230,15 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
         </div>
         <div className="qm3d-week-badge">
           <span className="qm3d-week-label">🗺️ TRIP {weekId}</span>
-          <div className="qm3d-dual-progress">
+          <div className="qm3d-dual-progress hidden sm:flex">
             <div className="qm3d-prog-row">
               <span className="qm3d-prog-icon">🦊</span>
               <div className="qm3d-progress-bar">
                 <div className="qm3d-progress-fill" style={{ width: `${progressPercent}%` }} />
               </div>
-              <span className="qm3d-progress-text">{weekQuestCount}/{totalQuests}</span>
             </div>
           </div>
+          <span className="qm3d-progress-text font-black text-xs text-amber-600">{weekQuestCount}/{totalQuests}</span>
         </div>
         <button className="qm3d-settings" onClick={onToggleSidebar} aria-label="Settings">
           <Settings size={18} />
@@ -375,8 +375,8 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
               )}
             </div>
 
-            {/* Expanded task dots */}
-            {isExpanded && unlocked && dayConfig && (
+            {/* Expanded task dots — Desktop Only (Mobile uses Bottom Task Drawer) */}
+            {!isPortrait && isExpanded && unlocked && dayConfig && (
               <>
                 {dayConfig.quests.map((quest, qi) => {
                   const isDone = isQuestCompleted(weekId, quest.id);
@@ -429,6 +429,64 @@ export default function QuestMap3D({ weekId, onToggleSidebar }) {
           </div>
         );
       })}
+
+      {/* Mobile Bottom Task Drawer */}
+      {isPortrait && expandedStation !== null && STATIONS[expandedStation] && (
+        <div className="qm3d-mobile-drawer-backdrop" onClick={() => setExpandedStation(null)}>
+          <div className="qm3d-mobile-drawer" onClick={e => e.stopPropagation()}>
+            <div className="qm3d-drawer-header">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">{STATIONS[expandedStation].emoji}</span>
+                <div>
+                  <h3 className="font-black text-slate-800 text-sm">{STATIONS[expandedStation].name}</h3>
+                  <p className="text-[11px] font-bold text-slate-400">
+                    Station {STATIONS[expandedStation].index} · {getStationCompletion(expandedStation).done}/{getStationCompletion(expandedStation).total} Hoàn thành
+                  </p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setExpandedStation(null)} 
+                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 font-black text-sm"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="qm3d-drawer-tasks space-y-2 mt-3">
+              {(QUEST_SCHEDULE[expandedStation]?.quests || []).map((quest) => {
+                const isDone = isQuestCompleted(weekId, quest.id);
+                return (
+                  <button
+                    key={quest.id}
+                    onClick={() => {
+                      setExpandedStation(null);
+                      navigate(getTaskLink(quest));
+                    }}
+                    className={`w-full p-3 rounded-2xl border-2 flex items-center justify-between text-left transition-all ${
+                      isDone 
+                        ? 'bg-emerald-50/70 border-emerald-300 text-emerald-900' 
+                        : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-800 shadow-sm'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl w-8 text-center">{isDone ? '✅' : quest.icon}</span>
+                      <div>
+                        <p className="font-black text-xs leading-tight">{quest.label}</p>
+                        <p className="text-[10px] font-bold text-slate-400 mt-0.5">⏱️ ~{quest.minutes} phút · +{quest.xp || 50} XP</p>
+                      </div>
+                    </div>
+                    <span className={`px-3 py-1.5 rounded-xl text-[11px] font-black ${
+                      isDone ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-white shadow-xs'
+                    }`}>
+                      {isDone ? 'Làm lại' : 'Bắt đầu ▶'}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Lexio mascot — CSS transition follows suggested station smoothly */}
       <div

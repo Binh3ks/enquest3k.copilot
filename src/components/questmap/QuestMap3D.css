@@ -657,3 +657,69 @@
   color: #64748b;
   margin: 0;
 }
+
+/* ============================================
+   MOBILE BOTTOM TASK DRAWER
+   ============================================ */
+.qm3d-mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 250;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: qm3d-fade-in 0.2s ease-out;
+}
+
+.qm3d-mobile-drawer {
+  width: 100%;
+  max-width: 520px;
+  background: white;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  padding: 18px 20px max(28px, env(safe-area-inset-bottom));
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+  animation: qm3d-slide-up 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.qm3d-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+@keyframes qm3d-slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes qm3d-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .qm3d-week-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    gap: 6px;
+  }
+  .qm3d-week-label {
+    font-size: 12px;
+  }
+  .qm3d-station-label {
+    display: none; /* Mobile uses clean node icons + Bottom Drawer */
+  }
+  .qm3d-station {
+    width: 56px;
+    height: 56px;
+  }
+  .qm3d-station.suggested {
+    width: 66px;
+    height: 66px;
+  }
+}
